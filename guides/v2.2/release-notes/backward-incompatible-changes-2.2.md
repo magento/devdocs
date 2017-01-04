@@ -121,21 +121,32 @@ The `bin/magento setup:config:set` command no longer has the `--definition-forma
 
 ### Database Schema changes
 
-#### Serialize format change
+### Database format change
 
 This release replaces usages of `unserialize` with [`json_decode`]({{page.baseurl}}extension-dev-guide/framework/serializer.html).
 It also comes with upgrade scripts that convert data stored in the database from the PHP serialize format to JSON format.
 
-You need to create a data upgrade script to convert this data if your extension does any of the following:
+Extension developers should review the following cases to see to see what actions they should take:
 
-* Your custom extension stores or adds serialized data to Magento entities (e.g. new/custom attributes for Product).
-* Your custom extension relies on Magento 2.1 logic of serializing/unserializing data.
+**Case 1:**  
+Your extension declared fields for automatic serialization/unserialization using the `_serializableFields` parameter of `\Magento\Framework\Model\ResourceModel\Db\AbstractDb`.  
+**Solution:**  
+Write an [upgrade script]({{page.baseurl}}ext-best-practices/tutorials/data-upgrade-script.html) to convert your extension data to JSON format.
 
-  For example, your extension declared fields for automatic serialization/unserialization using the `_serializableFields` parameter of `\Magento\Framework\Model\ResourceModel\Db\AbstractDb`.
+**Case 2:**  
+Your extension stores or adds serialized data to Magento entities (e.g. new/custom attributes for Product).  
+**Solution:**  
+Update the logic in your extension to convert data to JSON format before storing or adding Magento entities.
 
-<div class="bs-callout bs-callout-warning" markdown="1">
-Your extension will continue working if it uses its own serialize/unserialize implementation and stores data in a new table or field, but we recommend switching to JSON for security reasons.
-</div>
+**Case 3:**  
+Your extension relies on serialized data from Magento entities.  
+**Solution:**  
+Update all usages to expect the data in JSON format.
+
+**Case 4:**  
+The serialize/unserialize logic belongs to your extension and stores data in a new table or field.  
+**Solution:**  
+Your extension will continue working normally, but we recommend switching to JSON for security reasons.
 
 **See:** 
 

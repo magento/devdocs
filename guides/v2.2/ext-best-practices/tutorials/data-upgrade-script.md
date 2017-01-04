@@ -20,12 +20,13 @@ If your extension stores serialized data or adds serialized data to Magento enti
 
 This tutorial uses the following framework API in the following ways:
 
-* `\Magento\Framework\DB\FieldDataConverter` - This class converts value for a field in a table from one format to another. 
 * `\Magento\Framework\DB\DataConverter\DataConverterInterface` - This class provides the interface for a custom class that encapsulates the logic of converting data between different formats.
-* `\Magento\Framework\DB\FieldDataConverterFactory` - This class creates instances of the `FieldDataConverter` with the appropriate converter implementation.
+* `\Magento\Framework\DB\FieldDataConverter` - This class converts value for a field in a table from one format to another. 
+* `\Magento\Framework\DB\FieldDataConverterFactory` - This class creates instances of the `FieldDataConverter` with the appropriate data converter implementation.
 * `\Magento\Framework\Module\Manager` - This class checks the status of a module.
 * `\Magento\Framework\DB\Select\QueryModifierFactory` - This class creates instances of specific implementations of `QueryModifierInterface`.
-  Query modifiers add a condition to the database query to target specific entries.
+* `\Magento\Framework\DB\Select\QueryModifierInterface` - Interface for classes that add a condition to the database query to target specific entries.
+* `\Magento\Framework\DB\Select\InQueryModifier` - An instance of the `QueryModifierInterface` that adds an IN condition to a query.
 
   You can create your own query modifier or use any of the ones listed in the `app/etc/di.xml` file.
 
@@ -33,10 +34,11 @@ This tutorial uses the following framework API in the following ways:
 {:#step-1}
 
 The upgrade script is what gets run during the upgrade step of your extension's [lifecycle][1].
-Create this file in the `Setup` directory inside your extension's root directory.
+Create the `UpgradeData.php` file in the `Setup` directory inside your extension's root directory.
+
+Inside the file, create an implementation of `\Magento\Framework\Setup\UpgradeDataInterface` and name it `UpgradeData`.
 
 The following is an example of the content for your upgrade script.
-The versions and specific upgrade function names may be different from your implementation.
 
 {% collapsible Show upgrade script content%}
 {% highlight php startinline=true %}
@@ -126,7 +128,7 @@ The conversion logic in your script depends on how your extension stores the ser
 
 If your extension stores serialized data in different ways, you will need to use different conversion methods.
 
-### Step 3a: Convert a simple value
+### Step 3a: Convert data in a column for all rows
 {:#step-3a}
 
 You can convert data for a column in a table using the code below.
@@ -144,7 +146,7 @@ $fieldDataConverter->convert(
 {% endhighlight %}
 {% endcollapsible %}
 
-### Step 3b: Convert a custom attribute with a static name
+### Step 3b: Convert data in specific rows using a static condition
 {:#step-3b}
 
 | option_id | code           | value                         |
@@ -185,7 +187,7 @@ $fieldDataConverter->convert(
 {% endcollapsible %}
 
 
-### Step 3c: Convert a custom attribute with a dynamic name
+### Step 3c: Convert data in specific rows using a condition created with values from another table
 {:#step-3c}
 
 | option_id | code                  | value                         |
@@ -195,7 +197,7 @@ $fieldDataConverter->convert(
 | 3         | my_custom_option_1002 | a:1:{s:3:"foo";s:3:"bar";}    |
 | 4         | my_custom_option_1003 | a:1:{s:3:"foo";s:3:"bar";}    |
 
-If your identifier or unique code uses a dynamic naming system, you can convert the data using the following approach shown in the following code sample:
+Use the following approach to construct dynamic values from another table for the query condition.
 
 {% collapsible Show code %}
 {% highlight php startinline=true %}
@@ -242,7 +244,7 @@ If your module uses nested serialized data in the database, create a custom data
 The following example is a custom data converter class that converts data in the `product_options` column in the `sales_order_item` table.
 This field contains nested serialized data that needs conversion.
 
-Since you cannot assume the format of the data when it is initially converted, the following example also checks the format of the top level string and uses the appropriate methods to unserialize and serialize the data using the original format.
+Since you cannot assume the format of the data when initially converted, the following example also checks the format of the top level string and uses the appropriate methods to unserialize and serialize the data using the original format.
 
 
 {% collapsible Show code %}
@@ -318,6 +320,7 @@ class SerializedToJsonDataConverter implements \Magento\Framework\DB\DataConvert
      
     /**
      * Check if value is serialized string
+     *
      * @param string $value
      * @return boolean
      */
@@ -329,7 +332,7 @@ class SerializedToJsonDataConverter implements \Magento\Framework\DB\DataConvert
 {% endhighlight %}
 {% endcollapsible %}
 
-Use a `FieldDataConverterFactory` to create a `FieldDataConverter` instance that uses the custom data converter.
+Use a `FieldDataConverterFactory` to create a `FieldDataConverter` instance with the custom data converter.
 
 {% collapsible Show code %}
 {% highlight php startinline=true %}
