@@ -46,7 +46,11 @@ We automatically back up your production system every six hours. Each production
 
 The coordinating agent that monitors your production system detects failures at the service level (for example, MySQL), and for all cases where an automated recovery is possible, fully automates and coordinates that recovery.
 
-## Scalability {#cloud-arch-scale}
+## Magento Enterprise Cloud Edition production technology stack
+The following figure shows the technology used in a Magento Enterprise Cloud Edition production system
+
+![Magento Enterprise Cloud Edition technology stack]({{ site.baseurl }}common/images/cloud_stack-diagram.png)
+
 Magento Enterprise Cloud Edition seamlessly scales from the smallest six CPU cluster with 11.25GB of RAM to the largest 96 CPU cluster with 180GB of RAM. Our triple-redundant architecture means that upscaling can be conducted swiftly and without downtime: each of the three instances in the cluster is taken out of rotation in turn, upgraded to the new size and returned to rotation.
 
 In addition, extra web servers can be added to an existing cluster should the constriction be at the PHP level rather than the database level. This provides [*horizontal scaling*](https://en.wikipedia.org/wiki/Scalability#Horizontal_and_vertical_scaling){:target="_blank"} to complement the vertical scaling provided by extra CPUs on the database level.

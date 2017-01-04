@@ -206,6 +206,18 @@ The `config.local.php` file contains the following sections:
 <p>While the exported configuration files reside in the <code>app/etc</code> directory, you cannot change the value of the corresponding configuration fields under <b>Store</b> -> <b>Configuration</b> in the Admin Panel. The fields are displayed, but disabled. You need to remove the configuration files from <code>app/etc</code> to make the settings available.</p></span>
 </div> 
 
+### Environment variables filling
+
+To fill environment variables, having `config.local.php` file enter next command:
+
+    magento config:sensitive:set -i
+
+It will iteratively ask to fill each sensitive variable.
+
+To fill specific sensitive variable enter command:
+
+    magento config:sensitive:set {path to config value i.e. default/carriers/fedex/account} {value}
+
 ### Examples
 Following are some example commands.
 

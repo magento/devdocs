@@ -2,9 +2,9 @@
 layout: default
 group: cloud
 subgroup: 40_live
-title: Staging and production
-menu_title: Staging and production
-menu_order: 5
+title: Migrate to staging and production
+menu_title: Migrate to staging and production
+menu_order: 45
 menu_node: 
 level3_menu_node: level3parent
 level3_subgroup: stage-prod
