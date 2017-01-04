@@ -1481,17 +1481,24 @@
 
   	To clear the <code>pub/static</code> directory of all files except <code>.htaccess</code> (which is a hidden file), enter the following command:
 
-  <pre><code>	rm -R pub/static/* *	Using the Magento command line. Several commands support an optional parameter `--clear-static-content`, which cleans generated static view files. 
-
-These commands include:
-
-*	[`magento module:enable` and `magento module:disable`](/guides/v2.0/install-gde/install/cli/install-cli-subcommands-enable.html)
-*	[`magento theme:uninstall`](/guides/v2.0/install-gde/install/cli/install-cli-theme-uninstall.html)
-*	[`magento module:uninstall`](/guides/v2.0/install-gde/install/cli/install-cli-uninstall-mods.html)
+  <pre><code>	rm -R pub/static/*
 </code></pre>
 
   <ul>
-    <li>In the Magento Admin. Go to <strong>System</strong> &gt; Tools &gt; <strong>Cache Management</strong> and click <strong>Flush Static Files Cache</strong>.</li>
+    <li>
+      <p>Using the Magento command line. Several commands support an optional parameter <code>--clear-static-content</code>, which cleans generated static view files.</p>
+
+      <p>These commands include:</p>
+
+      <ul>
+        <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-enable.html"><code>magento module:enable</code> and <code>magento module:disable</code></a></li>
+        <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-theme-uninstall.html"><code>magento theme:uninstall</code></a></li>
+        <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall-mods.html"><code>magento module:uninstall</code></a></li>
+      </ul>
+    </li>
+    <li>
+      <p>In the Magento Admin. Go to <strong>System</strong> &gt; Tools &gt; <strong>Cache Management</strong> and click <strong>Flush Static Files Cache</strong>.</p>
+    </li>
   </ul>
 </div>
 
