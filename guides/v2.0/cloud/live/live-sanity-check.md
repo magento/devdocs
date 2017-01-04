@@ -4,7 +4,7 @@ group: cloud
 subgroup: 40_live
 title: Build and deploy before pushing to staging or production
 menu_title: Build and deploy before pushing to staging or production
-menu_order: 2
+menu_order: 25
 menu_node: 
 version: 2.0
 github_link: cloud/live/live-sanity-check.md
