@@ -38,7 +38,7 @@ If you need to be able to save the expanded/collapsed state, the element must ha
 The element's `id` is also used in deep linking: if the `id` of the content or the `id` of the element that appends the content is specified as an anchor, the content for that element is automatically expanded.
 
 
-Similar to the accordion widget, the header, title and content for collapsible can be defined by the child elements' attributes or passed as widget options. See <a href="{{page.baseurl}}javascript-dev-guide/javascript/widget_accordion.html#accordion_init" target="_blank">Accordion widget initialization</a> for details.
+Similar to the accordion widget, the header, title and content for collapsible can be defined by the child elements' attributes or passed as widget options. See <a href="{{page.baseurl}}javascript-dev-guide/widgets/widget_accordion.html#accordion_init" target="_blank">Accordion widget initialization</a> for details.
 
 <h3>Initialize collapsible with header only</h3>
 You can initialize the collapsible widget without having a container that consists of a header and a content. In this case the initialization is made on the header:

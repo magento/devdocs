@@ -55,7 +55,7 @@ Index of the tab, which is active at the moment of initialization. Starts from "
 
 <h3 id="fedg_tabs_options-ajaxUrlElement"><code>ajaxUrlElement</code></h3> 
 Selector for the tab element, which contains the URL for the Ajax request.
-The option of the <a href="{{page.baseurl}}javascript-dev-guide/javascript/widget_collapsible.html" target="_blank">collapsible</a> widget used by tabs. 
+The option of the <a href="{{page.baseurl}}javascript-dev-guide/widgets/widget_collapsible.html" target="_blank">collapsible</a> widget used by tabs. 
 
 **Type**: String
 

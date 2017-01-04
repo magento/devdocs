@@ -4,7 +4,7 @@ group: cloud
 subgroup: 40_live
 title: Overview of staging and production
 menu_title: Overview of staging and production
-menu_order: 5
+menu_order: 6
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: stage-prod
