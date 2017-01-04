@@ -621,7 +621,7 @@
 <h3 id="avoid-using-low-level-functionality">Avoid using low-level functionality</h3>
 <p>The Magento application is made up of a variety of components that work together to perform different business functions. We discourage the use of low-level functionality such as the PHP <code>curl_*</code> functions and encourage the use of high-level components such as <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/HTTP/Adapter/Curl.php"><code>\Magento\Framework\HTTP\Adapter\Curl</code></a>. The use of low-level functionality can make Magento behave in unexpected ways that effectively disable built-in protection mechanisms, introduce exploitable inconsistencies, or otherwise expose the application to attack.</p>
 
-<p>For a list of discouraged low-level functions, we suggest you look at the <a href="https://github.com/magento-ecg/coding-standard/blob/master/Ecg/Sniffs/Security/ForbiddenFunctionSniff.php" target="_blank">list of forbidden functions</a> for <a href="https://github.com/magento-ecg/coding-standard" target="_blank">Magento’s code sniffer</a>.</p>
+<p>For a list of discouraged low-level functions, we suggest you look at the <a href="https://github.com/magento/marketplace-eqp/blob/master/MEQP1/Sniffs/Security/DiscouragedFunctionSniff.php" target="_blank">list of discouraged functions</a> for <a href="https://github.com/magento/marketplace-eqp" target="_blank">Magento Extension Quality Program Coding Standard</a>.</p>
 
 <h3 id="use-wrappers-instead-of-superglobal-variables">Use wrappers instead of superglobal variables</h3>
 <p>Make sure that your Magento application does not directly use any PHP superglobals such as:
