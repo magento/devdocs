@@ -1060,7 +1060,7 @@
 
 			<h2 id="public-interface">What is a public interface?</h2>
 <p>A <i>public interface</i> is a set of code that third-party developers can call, implement, or build as a plug-in. Magento guarantees that this code will not change in subsequent releases without a major version change.</p>
-<p>Public interfaces for a module reside in the <code>Api</code> folder for a module. For example, the public interfaces for the `Customer` module reside in the `vendor/magento/module-customer/Api directory.</p>
+<p>Public interfaces for a module are marked with <code>@api</code> annotation.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
