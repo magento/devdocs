@@ -20,15 +20,16 @@ If your extension stores serialized data or adds serialized data to Magento enti
 
 This tutorial uses the following framework API in the following ways:
 
-* `\Magento\Framework\DB\DataConverter\DataConverterInterface` - This class provides the interface for classes that convert data between different formats or types of data.
-* `\Magento\Framework\DB\FieldDataConverter` - This class converts value for a field in a table from one format to another. 
+* `\Magento\Framework\DB\FieldDataConverter` - This class converts values for a field in a table from one format to another. 
 * `\Magento\Framework\DB\FieldDataConverterFactory` - This class creates instances of the `FieldDataConverter` with the appropriate data converter implementation.
-* `\Magento\Framework\Module\Manager` - This class checks the status of a module.
-* `\Magento\Framework\DB\Select\QueryModifierFactory` - This class creates instances of specific implementations of `QueryModifierInterface`.
+* `\Magento\Framework\DB\DataConverter\DataConverterInterface` - This interface is for classes that convert data between different formats or types of data.
 * `\Magento\Framework\DB\Select\QueryModifierInterface` - Interface for classes that add a condition to the database query to target specific entries.
+* `\Magento\Framework\DB\Select\QueryModifierFactory` - This class creates instances of specific implementations of `QueryModifierInterface`.
 * `\Magento\Framework\DB\Select\InQueryModifier` - An implementation of the `QueryModifierInterface` that adds an IN condition to a query.
 
   You can create your own query modifier or use any of the ones listed in the `app/etc/di.xml` file.
+
+* `\Magento\Framework\Module\Manager` - This class checks the status of a module.
 
 ## Step 1: Create the basic upgrade script
 {:#step-1}
@@ -108,10 +109,12 @@ class UpgradeData implements \Magento\Framework\Setup\UpgradeDataInterface
 ## Step 2: Check that the module exists
 {:#step-2}
 
-Any module can disable or replace another module in Magento.
-If your extension stores data in the tables of another module, make sure the application has enabled that module before executing the upgrade logic.
+Any module can replace another module in Magento.
+If your extension stores data in the tables of another module, make sure the application uses the module before executing the upgrade logic.
 
 Use the `\Magento\Framework\Module\Manager` class to check the status of the module your extension depends on.
+
+Add this dependency in the constructor of your upgrade script class.
 
 {% collapsible Show code %}
 {% highlight php startinline=true %}
@@ -130,6 +133,8 @@ If your extension stores serialized data in different ways, you will need to use
 
 ### Step 3a: Convert data in a column for all rows
 {:#step-3a}
+
+Use a `FieldDataConverterFactory` to create a `FieldDataConverter` instance with the appropriate data converter.
 
 You can convert data for a column in a table using the code below.
 
@@ -157,7 +162,7 @@ $fieldDataConverter->convert(
 
 If you need to convert specific rows in the column, you can use a query modifier to update values using a condition.
 
-The following code sample upgrades the data for options in the `value` column in the `quote_item_option` table with a static identifier code of `my_option`.
+The following code sample upgrades the data for options in the `value` column in the `quote_item_option` table with the code `my_option`.
 
 {% collapsible Show code %}
 {% highlight php startinline=true %}
@@ -331,7 +336,7 @@ class SerializedToJsonDataConverter implements \Magento\Framework\DB\DataConvert
 {% endhighlight %}
 {% endcollapsible %}
 
-Use a `FieldDataConverterFactory` to create a `FieldDataConverter` instance with the appropriate data converter.
+After creating your custom data converter class, use the `FieldDataConverterFactory` to create a `FieldDataConverter` instance with your custom converter.
 
 {% collapsible Show code %}
 {% highlight php startinline=true %}
@@ -353,7 +358,7 @@ $fieldDataConverter->convert(
 {:#step-3d}
 
 The Magento Enterprise Edition supports storing Quote, Sales and Inventory data in separate databases.
-Use the specific connections for each of these modules to update your extension's stored data for these entities.
+Use the specific connections for each of these modules to update your extension's stored data for the entities of these modules.
 
 The following code sample gets the Sales module connection and uses it during data update.
 {% collapsible Show code %}

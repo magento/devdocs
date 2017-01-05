@@ -124,9 +124,10 @@ The `bin/magento setup:config:set` command no longer has the `--definition-forma
 ### Database data format changes
 
 This release replaces usages of `unserialize` with [`json_decode`]({{page.baseurl}}extension-dev-guide/framework/serializer.html).
-It also comes with upgrade scripts that convert data stored in the database from the PHP serialize format to JSON format.
 
-Extension developers should review the following cases to see what actions they should take:
+The release also provides upgrade scripts that convert Magento data stored in serialized format.
+
+Extension developers should review the following cases to see what actions they should take for their extensions:
 
 **Case 1:**  
 Your extension declared fields for automatic serialization/unserialization using the `_serializableFields` parameter of `\Magento\Framework\Model\ResourceModel\Db\AbstractDb`.  
@@ -136,7 +137,7 @@ Write an [upgrade script]({{page.baseurl}}ext-best-practices/tutorials/data-upgr
 **Case 2:**  
 Your extension stores or adds serialized data to Magento entities (e.g. new/custom attributes for Product).  
 **Solution:**  
-Your extension will still work if it contains the serialize/unserialize logic (Case 4), but we recommend you update the logic in your extension to convert data to JSON format before storing or adding to Magento entities.
+Your extension will continue working normally, but we recommend switching to JSON for security reasons.
 You also need to write an upgrade script for the data in the database.
 
 **Case 3:**  
@@ -148,6 +149,7 @@ Update all usages to expect the data in JSON format.
 The serialize/unserialize logic belongs to your extension and stores data in a new table or field.  
 **Solution:**  
 Your extension will continue working normally, but we recommend switching to JSON for security reasons.
+You also need to write an upgrade script for the data in the database.
 
 **See:** 
 
