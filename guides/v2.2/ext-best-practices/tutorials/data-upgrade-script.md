@@ -20,7 +20,7 @@ If your extension stores serialized data or adds serialized data to Magento enti
 
 This tutorial uses the following framework API in the following ways:
 
-* `\Magento\Framework\DB\DataConverter\DataConverterInterface` - This class provides the interface for a custom class that encapsulates the logic of converting data between different formats.
+* `\Magento\Framework\DB\DataConverter\DataConverterInterface` - This class provides the interface for classes that convert data between different formats or types of data.
 * `\Magento\Framework\DB\FieldDataConverter` - This class converts value for a field in a table from one format to another. 
 * `\Magento\Framework\DB\FieldDataConverterFactory` - This class creates instances of the `FieldDataConverter` with the appropriate data converter implementation.
 * `\Magento\Framework\Module\Manager` - This class checks the status of a module.
@@ -109,7 +109,7 @@ class UpgradeData implements \Magento\Framework\Setup\UpgradeDataInterface
 {:#step-2}
 
 Any module can disable or replace another module in Magento.
-If your extension stores data in the tables of another module, make sure the Magento application has enabled that module before executing the upgrade logic.
+If your extension stores data in the tables of another module, make sure the application has enabled that module before executing the upgrade logic.
 
 Use the `\Magento\Framework\Module\Manager` class to check the status of the module your extension depends on.
 
@@ -155,7 +155,7 @@ $fieldDataConverter->convert(
 | 2         | another_option | &lt;non-serialized string&gt; |
 | 3         | my_option      | a:1:{s:3:"foo";s:3:"bar";}    |
 
-If you need to convert a column for a specific row, you can use a query modifier to update values using a condition.
+If you need to convert specific rows in the column, you can use a query modifier to update values using a condition.
 
 The following code sample upgrades the data for options in the `value` column in the `quote_item_option` table with a static identifier code of `my_option`.
 
@@ -196,7 +196,7 @@ $fieldDataConverter->convert(
 | 3         | my_custom_option_1002 | a:1:{s:3:"foo";s:3:"bar";}    |
 | 4         | my_custom_option_1003 | a:1:{s:3:"foo";s:3:"bar";}    |
 
-Use the following approach to construct dynamic values from another table for the query condition.
+Use the following approach to construct a query condition with values from another table.
 
 {% collapsible Show code %}
 {% highlight php startinline=true %}
@@ -243,7 +243,7 @@ If your module uses nested serialized data in the database, create a custom data
 The following example is a custom data converter class that converts data in the `product_options` column in the `sales_order_item` table.
 This field contains nested serialized data that needs conversion.
 
-Since you cannot assume the format of the data when initially converted, the following example also checks the format of the top level string and uses the appropriate methods to unserialize and serialize the data using the original format.
+Since you cannot assume the format of the data when initially converted, the following example also checks the format and uses the appropriate methods to unserialize and serialize the data using the original format.
 
 
 {% collapsible Show code %}
