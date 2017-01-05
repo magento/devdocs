@@ -47,7 +47,7 @@ where the following table defines parameters and values.
 		<ul><li><code>http[s]://&lt;host or ip>/&lt;your Magento install dir>/</code>.
 		<strong>Note</strong>: The scheme (<code>http://</code> or <code>https://</code>) and a trailing slash are <em>both</em> required.
 		<code>&lt;your Magento install dir></code> is the docroot-relative path in which to install the Magento software. Depending on how you set up your web server and virtual hosts, the path might be <code>magento2</code> or it might be blank.
-		To access Magento on localhost, you can use either <code>http://127.0.0.1/&lt;your Magento install dir>/</code> or <code>http://127.0.0.1/&lt;your Magento install dir>/</code>.</li>
+		To access Magento on localhost, you can use <code>http://127.0.0.1/&lt;your Magento install dir>/</code>.</li>
 		<li><code>&#123;&#123;base_url&#125;&#125;</code> which represents a base URL defined by a virtual host setting or by a virtualization environment like Docker. For example, if you set up a virtual host for Magento with the host name <code>magento.example.com</code>, you can install the Magento software with <code>--base-url=&#123;&#123;base_url&#125;&#125;</code> and access the Magento Admin with a URL like <code>http://magento.example.com/admin</code>.</li></ul>		</td>
 		<td>No</td>
 	</tr>
