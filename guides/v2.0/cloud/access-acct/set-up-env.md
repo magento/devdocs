@@ -93,7 +93,7 @@ If your master branch is already configured, skip this section and continue with
 
 If you're not sure whether or not the master branch has been configured, enter the following command:
 
-		magento-cloud variable:get -e <environment ID>
+	magento-cloud variable:get -e <environment ID>
 
 1.  Set the variable values.
 
@@ -114,22 +114,23 @@ If you're not sure whether or not the master branch has been configured, enter t
 
 	The simplest way to do that is to use the environment routes that display when you redeploy the `master` branch. An example follows:
 
-				Waiting for the activity ksvciptnzxfto (Steve Johnson added variable ADMIN_URL):
-						Building application 'mymagento' (runtime type: php:7.0, tree: 07263ba)
-						Slug already built for this tree id, skipping.
+	<pre class="no-copy">
+	Waiting for the activity ksvciptnzxfto (Steve Johnson added variable ADMIN_URL):
+	  Building application 'mymagento' (runtime type: php:7.0, tree: 07263ba)
+	  Slug already built for this tree id, skipping.
 
-				Re-deploying environment k4wtvm7ogzr5s-master.
-				Environment configuration:
-						mymagento (type: php:7.0, size: S, disk: 2048)
-						mysql (type: mysql:10.0, size: S, disk: 2048)
-						redis (type: redis:3.0, size: S)
-						solr (type: solr:4.10, size: S, disk: 1024)
+	Re-deploying environment k4wtvm7ogzr5s-master.
+	  Environment configuration:
+	    mymagento (type: php:7.0, size: S, disk: 2048)
+	    mysql (type: mysql:10.0, size: S, disk: 2048)
+	    redis (type: redis:3.0, size: S)
+	    solr (type: solr:4.10, size: S, disk: 1024)
 
-				Environment routes:
-						http://master-k4wtvm7ogzr5s.us.magentosite.cloud/ is served by application `mymagento`
-						https://master-k4wtvm7ogzr5s.us.magentosite.cloud/ is served by application `mymagento`
+	  Environment routes:
+	    http://master-k4wtvm7ogzr5s.us.magentosite.cloud/ is served by application `mymagento`
+	    https://master-k4wtvm7ogzr5s.us.magentosite.cloud/ is served by application `mymagento`</pre>
 
-		In the preceding example, go to `http://master-k4wtvm7ogzr5s.us.magentosite.cloud/magento_A8v10` and log in using the user name `meister_x2U8` and password `admin_A456`
+	In the preceding example, go to `http://master-k4wtvm7ogzr5s.us.magentosite.cloud/magento_A8v10` and log in using the user name `meister_x2U8` and password `admin_A456`
 
 {% endcollapsibleh2 %}
 
@@ -147,16 +148,17 @@ After you create the branch, update project dependencies so you can install the 
 
 1.	Do any of the following:
 
-		*   To create a new environment, enter the following command:
+	*   To create a new environment, enter the following command:
 
-				magento-cloud environment:branch <environment name> <parent environment ID>
-		*   To check out an existing environment, enter the following command:
+			magento-cloud environment:branch <environment name> <parent environment ID>
 
-				magento-cloud environment:checkout
+	*   To check out an existing environment, enter the following command:
 
-		For example, to create a new branch named `sprint1` from master, enter
+			magento-cloud environment:checkout
 
-				magento-cloud environment:branch sprint1 master
+	For example, to create a new branch named `sprint1` from master, enter
+
+		magento-cloud environment:branch sprint1 master
 
 3.	After the command completes, update dependencies:
 
