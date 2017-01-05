@@ -91,7 +91,7 @@ We address the following functional issues in this release.
 <!---59142 -->* Admin interface forms now load data as expected after initializing all components. Previously, under certain conditions, the load indicator would spin indefinitely, and the Magento application would not load data. 
 
 
-<!--- 59036-->* We've fixed an issue with using PayPal Express Checkout to order products with custom options. <a href="https://github.com/magento/magento2/issues/5434" target="_blank">(GITHUB-5434)</a>
+<!--- 59036-->* We've fixed an issue with using PayPal Express Checkout to order products with custom options. Previously, although an Admin user could create and configure “File type” custom options, customers could not upload and store files within the order quote. <a href="https://github.com/magento/magento2/issues/5434" target="_blank">(GITHUB-5434)</a>
 
 <!--- 58895-->* Magento no longer redirects you to the Compare Products page if you try to remove a product.
 
