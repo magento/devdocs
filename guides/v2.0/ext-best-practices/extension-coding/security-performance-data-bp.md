@@ -15,7 +15,7 @@ You should make sure that your extension handles data with care in order to prev
 ### Avoid using low-level functionality
   The Magento application is made up of a variety of components that work together to perform different business functions. We discourage the use of low-level functionality such as the PHP `curl_*` functions and encourage the use of high-level components such as [`\Magento\Framework\HTTP\Adapter\Curl`]({{site.mage2000url}}lib/internal/Magento/Framework/HTTP/Adapter/Curl.php). The use of low-level functionality can make Magento behave in unexpected ways that effectively disable built-in protection mechanisms, introduce exploitable inconsistencies, or otherwise expose the application to attack.
 
-  For a list of discouraged low-level functions, we suggest you look at the [list of forbidden functions](https://github.com/magento-ecg/coding-standard/blob/master/Ecg/Sniffs/Security/ForbiddenFunctionSniff.php){:target="_blank"} for [Magento's code sniffer](https://github.com/magento-ecg/coding-standard){:target="_blank"}.
+  For a list of discouraged low-level functions, we suggest you look at the [list of discouraged functions](https://github.com/magento/marketplace-eqp/blob/master/MEQP1/Sniffs/Security/DiscouragedFunctionSniff.php){:target="_blank"} for [Magento Extension Quality Program Coding Standard](https://github.com/magento/marketplace-eqp){:target="_blank"}.
 
 ### Use wrappers instead of superglobal variables
   Make sure that your Magento application does not directly use any PHP superglobals such as:
