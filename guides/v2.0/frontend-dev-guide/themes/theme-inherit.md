@@ -165,11 +165,3 @@ To override module layout instructions (base layout):
 
 * Create a layout file with the same name in the `<theme_dir>/<Vendor>_<Module>/layout/override/base` directory.
 
-
-
-
-
-
-
-
-

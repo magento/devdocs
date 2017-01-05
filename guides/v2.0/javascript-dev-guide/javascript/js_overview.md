@@ -25,7 +25,7 @@ Topics of this chapter describe the following:
 - [JavaScript initialization]({{page.baseurl}}javascript-dev-guide/javascript/js_init.html): how to initialize JavaScript components and widgets in JavaScript files and `.phtml` templates
 - [Use custom JavaScript]({{page.baseurl}}javascript-dev-guide/javascript/custom_js.html): how to extend or replace default JavaScript components/widgets.
 - [Locate JavaScript]({{page.baseurl}}javascript-dev-guide/javascript/js_debug.html) components: how to define which components (scripts) are used on a particular store page.
-- [Magento jQuery widgets]({{page.baseurl}}javascript-dev-guide/javascript/jquery-widgets-about.html): Magento jQuery widget API documentation.
+- [Magento jQuery widgets]({{page.baseurl}}javascript-dev-guide/widgets/jquery-widgets-about.html): Magento jQuery widget API documentation.
 - [Customizing JavaScript illustration]({{page.baseurl}}javascript-dev-guide/javascript/js_practice.html): practical illustration of custom widgets related tasks.
 
 

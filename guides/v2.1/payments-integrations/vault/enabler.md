@@ -43,7 +43,7 @@ Example ([Magento/Braintree/view/frontend/web/template/payment/form.html]({{site
 {% endhighlight %}
 
 
-[The payment UI component]({{site.mage2100url}}app/code/Magento/Braintree/view/frontend/web/js/payment/method-renderer/hosted-fields.js):
+[The payment UI component]({{site.mage2100url}}app/code/Magento/Braintree/view/frontend/web/js/view/payment/method-renderer/hosted-fields.js):
 
 {% highlight javascript %}
 define([

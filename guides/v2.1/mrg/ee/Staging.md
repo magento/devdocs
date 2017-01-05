@@ -256,7 +256,7 @@ You can use public APIs from the [`magento2ee/app/code/Magento/Staging/Api`](htt
 
 ### UI components
 
-You can extend the UI components in the `view/adminhtml/ui_component` directory. For more information, see [UI Listing/Grid Component](http://devdocs.magento.com/guides/v2.1/ui-components/ui-listing-grid.html).
+You can extend the UI components in the `view/adminhtml/ui_component` directory. For more information, see [UI Listing/Grid Component](http://devdocs.magento.com/guides/v2.1/ui_comp_guide/components/ui-listing-grid.html).
 
 ### Layouts
 

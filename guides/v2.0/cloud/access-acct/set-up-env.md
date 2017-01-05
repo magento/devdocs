@@ -313,13 +313,12 @@ A sample result follows:
 	| ADMIN_USERNAME | meister_x2U8  | Yes       | No   |
 	+----------------+---------------+-----------+------+
 
-
-{% endcollapsibleh2 %}
-
-
 <h4>Related topics</h4>
 <ul><li><a href="{{ page.baseurl }}install-gde/install/web/install-web.html">Install the Magento software using the Web Setup Wizard</a></li>
 	<li><a href="{{ page.baseurl }}install-gde/install/cli/install-cli.html">Install the Magento software using the command line</a></li></ul>
+
+{% endcollapsibleh2 %}
+
 
 <h4>Next step</h4>
 <a href="{{ page.baseurl }}cloud/access-acct/fastly.html">Set up Fastly</a>
