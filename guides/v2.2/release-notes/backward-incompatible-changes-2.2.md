@@ -132,7 +132,7 @@ Extension developers should review the following cases to see what actions they 
 **Case 1:**  
 Your extension declared fields for automatic serialization/unserialization using the `_serializableFields` parameter of `\Magento\Framework\Model\ResourceModel\Db\AbstractDb`.  
 **Solution:**  
-Write an [upgrade script]({{page.baseurl}}ext-best-practices/tutorials/data-upgrade-script.html) to convert your extension data to JSON format.
+Write an [upgrade script]({{page.baseurl}}ext-best-practices/tutorials/serialized-to-json-data-upgrade.html) to convert your extension data to JSON format.
 
 **Case 2:**  
 Your extension stores or adds serialized data to Magento entities (e.g. new/custom attributes for Product).  
@@ -153,7 +153,7 @@ You also need to write an upgrade script for the data in the database.
 
 **See:** 
 
-* [Serialize to JSON data upgrade]({{page.baseurl}}ext-best-practices/tutorials/data-upgrade-script.html)
+* [Serialize to JSON data upgrade]({{page.baseurl}}ext-best-practices/tutorials/serialized-to-json-data-upgrade.html)
 * [Serialize Library]({{page.baseurl}}extension-dev-guide/framework/serializer.html)
 
 #### Staging (EE Only)
