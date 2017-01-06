@@ -162,9 +162,7 @@ class OnePageCheckoutTest extends Scenario
 Example test case: `\Magento\Checkout\Test\TestCase\OnePageCheckoutTest`.
 
 - Open `<magento root dir>/dev/tests/functional/tests/app/Magento/Checkout/Test/TestCase/OnePageCheckoutTest.php`.
-- Add `* @isolation none` to the class annotation.
-
-Example:
+- Add `* @isolation none` to the class annotation, for example:
 
 {% highlight php startinline=1 %}
 /**
@@ -181,9 +179,7 @@ Example test case: `\Magento\Checkout\Test\TestCase\OnePageCheckoutTest`.
 Example test: `test()`.
 
 - Open `<magento root dir>/dev/tests/functional/tests/app/Magento/Checkout/Test/TestCase/OnePageCheckoutTest.php`.
-- Add `* @isolation none` to the `test()` method annotation
-
-Example:
+- Add `* @isolation none` to the `test()` method annotation, for example:
 
 {% highlight php startinline=1 %}
 
