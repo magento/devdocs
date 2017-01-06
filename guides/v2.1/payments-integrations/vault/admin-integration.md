@@ -9,9 +9,51 @@ version: 2.1
 github_link: payments-integrations/vault/admin-integration.md
 ---
 
-## Token component provider
-To be able to use vault in Admin order creation, create a token component provider. It must implement the 
-[`TokenUiComponentProviderInterface`]({{site.mage2100url}}app/code/Magento/Vault/Model/Ui/TokenUiComponentProviderInterface.php) interface and contain validation and order placement logic.
+To be able to use vault in Admin order creation, you need to take at least the following steps:
+
+1. Create a token component provider and specify it in the `<your_module_dir>/etc/di.xml`. 
+2. Create a custom vault JS component and specify it in the component provider. 
+3. Create a `.phtml` template, specify it in the component provider and the corresponding layout file.
+
+There are more details about these steps in the following sections. 
+
+## Component provider {#provider_admin}
+
+[Similar to the store front vault implementation]({{page.baseurl}}payments-integrations/vault/token-ui-component-provider.html#token_provider), create a token component provider and specify it in the `di.xml`. The component provider must implement the [`TokenUiComponentProviderInterface`]({{site.mage2100url}}app/code/Magento/Vault/Model/Ui/TokenUiComponentProviderInterface.php) interface.
+
+
+Following is an example of a component provider for Admin:
+
+{% highlight php startinline=1 %}
+class TokenUiComponentProvider implements TokenUiComponentProviderInterface
+{
+    /**
+     * @inheritdoc
+     */
+    public function getComponentForToken(PaymentTokenInterface $paymentToken)
+    {
+        $data = json_decode($paymentToken->getTokenDetails() ?: '{}', true);
+        $component = $this->componentFactory->create(
+            [
+                'config' => [
+                    'code' => ConfigProvider::CC_VAULT_CODE,
+                    'nonceUrl' => $this->getNonceRetrieveUrl(),
+                    TokenUiComponentProviderInterface::COMPONENT_DETAILS => $data,
+                    TokenUiComponentProviderInterface::COMPONENT_PUBLIC_HASH => $paymentToken->getPublicHash(),
+                    'template' => 'Magento_Braintree::form/vault.phtml'
+                ],
+                'name' => Template::class
+            ]
+        );
+
+        return $component;
+    }
+}
+{% endhighlight %}
+
+## Vault JS component
+
+There is no default component implementation for the Admin, so your component must implement all logic for validation and order placing.  
 
 In the most cases, it is enough to implement getting payment code and setting public hash. This implementation might look like following:
 
@@ -59,34 +101,9 @@ This component will set public hash to a hidden input, when a user sets payment 
 
 ## Template
 
-Create a template for displaying token details and specify it in the config provider. Following is an example of such a config provider:
+Create a `.phtml` template for displaying token details and specify it in the [component provider](#provider_admin). 
 
-{% highlight php startinline=1 %}
-class TokenUiComponentProvider implements TokenUiComponentProviderInterface
-{
-    /**
-     * @inheritdoc
-     */
-    public function getComponentForToken(PaymentTokenInterface $paymentToken)
-    {
-        $data = json_decode($paymentToken->getTokenDetails() ?: '{}', true);
-        $component = $this->componentFactory->create(
-            [
-                'config' => [
-                    'code' => ConfigProvider::CC_VAULT_CODE,
-                    'nonceUrl' => $this->getNonceRetrieveUrl(),
-                    TokenUiComponentProviderInterface::COMPONENT_DETAILS => $data,
-                    TokenUiComponentProviderInterface::COMPONENT_PUBLIC_HASH => $paymentToken->getPublicHash(),
-                    'template' => 'Magento_Braintree::form/vault.phtml'
-                ],
-                'name' => Template::class
-            ]
-        );
-
-        return $component;
-    }
-}
-{% endhighlight %}
+For reference, view the Magento default Vault template for Admin: [app/code/Magento/Vault/view/adminhtml/templates/form/vault.phtml]({{site.mage2100url}}app/code/Magento/Vault/view/adminhtml/templates/form/vault.phtml).
 
 In the billing form block for Admin layout (`%module_dir%/view/adminhtml/layout/sales_order_create_index.xml`) 
 specify the payment method code and path to the template. 
@@ -106,8 +123,9 @@ Following is an example of such layout:
 </page>
 {% endhighlight %}
 
-This configuration allow to render vault payments by vault module and create all depending JS components.
+According to this configuration the Magento_Vault module will render vault payments and all depending JS components will be created.
 
+## Specific vault configuration for Admin
 You might have specific request builders, response handlers or other entities for the Admin panel. For example, in your implementation 3D Secure might not be available in Admin. In this case, you need to create corresponding virtual types for the `adminhtml` [area]({{page.baseurl}}architecture/archi_perspectives/components/modules/mod_and_areas.html) in `%module_dir%/etc/adminhtml/di.xml`. 
 
 Example from the `app/code/Magento/Braintree/etc/adminhtml/di.xml`:

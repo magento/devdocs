@@ -9,12 +9,12 @@ version: 2.1
 github_link: payments-integrations/vault/token-ui-component-provider.md
 ---
 
-This topic describes how to display stored tokens on the payment step on checkout page, how to create UI components for custom vault payments, and how to use it to place order from storefront using vault.
+This topic describes how to create custom vault payments UI components, that are used to  display stored tokens on checkout page and order placing using vault. 
 
-## Token component providers
+## Token component provider {#token_provider}
 
 The main logic for displaying tokens on checkout page is located in
-[Vault TokensConfigProvider]({{site.mage2100url}}app/code/Magento/Vault/Model/Ui/TokensConfigProvider.php). You just need to specify token component providers. They should implement the 
+[Vault TokensConfigProvider]({{site.mage2100url}}app/code/Magento/Vault/Model/Ui/TokensConfigProvider.php). You just need to create token component providers. They should implement the 
 [TokenUiComponentProviderInterface]({{site.mage2100url}}app/code/Magento/Vault/Model/Ui/TokenUiComponentProviderInterface.php) interface:
 
 {% highlight php startinline=1 %}
