@@ -81,10 +81,10 @@ We address the following functional issues in this release.
 
 <!--- 61628 -->* The **Match products by rule** option in the Admin interface now works as expected. 
 
-<!--- 62654 --> You can now successfully match products by rule with an AND condition on Category Rule. Previously, this operation did not return any matched products.  
+<!--- 62654 -->* You can now successfully match products by rule with an AND condition on Category Rule. Previously, this operation did not return any matched products.  
 
 
-<!--- 62680 --> Admin users need view permission to the store to which the customers belong in order to see information about those customers. Previously, an Admin user could see information about customers that belonged to websites or stores for which the user did not have explicit permission to view.
+<!--- 62680 -->* Admin users need view permission to the store to which the customers belong in order to see information about those customers. Previously, an Admin user could see information about customers that belonged to websites or stores for which the user did not have explicit permission to view.
 
 
 
@@ -92,7 +92,7 @@ We address the following functional issues in this release.
 
 <!--- 56925 -->* You can now ship items to a country from which you have not authorized payment. Previously, when a customer tried to ship an order to a country from which the store was not authorized to receive payment, the Magento application displays this message, `"No Payment method available"`.
 
-<!--- 62661 --> You can now cancel check out of an order you are making with the Worldpay payment option without emptying your shopping cart. Previously, when you canceled a checkout operation while using this payment method, the Magento application emptied your shopping cart. 
+<!--- 62661 -->* You can now cancel check out of an order you are making with the Worldpay payment option without emptying your shopping cart. Previously, when you canceled a checkout operation while using this payment method, the Magento application emptied your shopping cart. 
 
 
 
