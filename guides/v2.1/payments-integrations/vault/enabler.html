@@ -707,9 +707,19 @@
 			<p>Store customers must have the ability to enable and disable credit cards details storing.
 Magento out-of-the-box provides mechanisms for adding this ability, but your still need to add modifications in your payment method implementation.</p>
 
-<h2 id="checkbox-on-the-payment-form">Checkbox on the payment form</h2>
+<p>These modifications are the following:</p>
 
-<p>First, add the vault enabling controls to the payment form.</p>
+<ol>
+  <li>Adding vault enabling controls.</li>
+  <li>Modifying the payment component (updating of the <code>additional_data</code> property must be added).</li>
+  <li>Creating a request data builder.</li>
+</ol>
+
+<p>The following paragraphs describe these points in details.</p>
+
+<h2 id="add-vault-enabling-controls">Add vault enabling controls</h2>
+
+<p>Add the vault enabling controls to the payment form. In the following example, a check box bound to the Vault enabler is added.</p>
 
 <p>Example (<a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Braintree/view/frontend/web/template/payment/form.html">Magento/Braintree/view/frontend/web/template/payment/form.html</a>):</p>
 
@@ -735,7 +745,13 @@ Magento out-of-the-box provides mechanisms for adding this ability, but your sti
     ...
 <span class="nt">&lt;/form&gt;</span></code></pre></figure>
 
-<p><a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Braintree/view/frontend/web/js/view/payment/method-renderer/hosted-fields.js">The payment UI component</a>:</p>
+<h2 id="modifying-the-payment-component">Modifying the payment component</h2>
+
+<p>The payment component must process the state of the vault-enabling control and update payment <code>additional_data</code> before it is sent to the backend.</p>
+
+<p>Magento has a default vault enabler UI component (<code>Magento_Vault/js/view/payment/vault-enabler</code>). In the payment component, you just need to call its <code>visitAdditionalData</code> to update the <code>additional_data</code> property. The rest is done by the <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Vault/Observer/VaultEnableAssigner.php"><code>\Magento\Vault\Observer\VaultEnableAssigner</code></a> observer.</p>
+
+<p>Example: <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Braintree/view/frontend/web/js/view/payment/method-renderer/hosted-fields.js">the Braintree payment UI component</a></p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">define</span><span class="p">([</span>
     <span class="p">...</span>
@@ -786,34 +802,13 @@ Magento out-of-the-box provides mechanisms for adding this ability, but your sti
     <span class="p">});</span>
 <span class="p">});</span></code></pre></figure>
 
-<p>Magento has a default vault enabler UI component (<code>Magento_Vault/js/view/payment/vault-enabler</code>). In the payment component, you just need to call <code>visitAdditionalData</code> to update the <code>additional_data</code> property.</p>
-
-<p>The rest is done by the <code>\Magento\Vault\Observer\VaultEnableAssigner</code> observer:</p>
-
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">public</span> <span class="k">function</span> <span class="nf">execute</span><span class="p">(</span><span class="nx">\Magento\Framework\Event\Observer</span> <span class="nv">$observer</span><span class="p">)</span>
-<span class="p">{</span>
-    <span class="nv">$data</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">readDataArgument</span><span class="p">(</span><span class="nv">$observer</span><span class="p">);</span>
-    
-    <span class="nv">$additionalData</span> <span class="o">=</span> <span class="nv">$data</span><span class="o">-&gt;</span><span class="na">getData</span><span class="p">(</span><span class="nx">PaymentInterface</span><span class="o">::</span><span class="na">KEY_ADDITIONAL_DATA</span><span class="p">);</span>
-
-    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">is_array</span><span class="p">(</span><span class="nv">$additionalData</span><span class="p">))</span> <span class="p">{</span>
-        <span class="k">return</span><span class="p">;</span>
-    <span class="p">}</span>
-
-    <span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$additionalData</span><span class="p">[</span><span class="nx">VaultConfigProvider</span><span class="o">::</span><span class="na">IS_ACTIVE_CODE</span><span class="p">]))</span> <span class="p">{</span>
-        <span class="nv">$payment</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">readPaymentModelArgument</span><span class="p">(</span><span class="nv">$observer</span><span class="p">);</span>
-        <span class="nv">$payment</span><span class="o">-&gt;</span><span class="na">setAdditionalInformation</span><span class="p">(</span>
-            <span class="nx">VaultConfigProvider</span><span class="o">::</span><span class="na">IS_ACTIVE_CODE</span><span class="p">,</span>
-            <span class="nb">filter_var</span><span class="p">(</span><span class="nv">$additionalData</span><span class="p">[</span><span class="nx">VaultConfigProvider</span><span class="o">::</span><span class="na">IS_ACTIVE_CODE</span><span class="p">],</span> <span class="nx">FILTER_VALIDATE_BOOLEAN</span><span class="p">)</span>
-        <span class="p">);</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
-
 <h2 id="add-request-data-builder">Add request data builder</h2>
 
-<p>Now when we have information about enabling or disabling vault, the payment must send these details to the payment processor. This is done in the <a href="/guides/v2.1/payments-integrations/payment-gateway/request-builder.html">request builder</a>.</p>
+<p>Now when we have information about enabling or disabling vault, the payment must send it to the payment processor. This is done in the <a href="/guides/v2.1/payments-integrations/payment-gateway/request-builder.html">request builder</a>.</p>
 
-<p>In the Braintree vault implementation in the request builder, to pass the data, we set <code>storeInVaultOnSuccess</code> in transaction request:</p>
+<p>You can create a new request builder, or update the existing request builder of the payment method.</p>
+
+<p>In the Braintree request builder, to pass the data, we set <code>storeInVaultOnSuccess</code> in transaction request:</p>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">VaultDataBuilder</span> <span class="k">implements</span> <span class="nx">BuilderInterface</span>
 <span class="p">{</span>

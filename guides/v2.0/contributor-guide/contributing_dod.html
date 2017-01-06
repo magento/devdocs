@@ -460,11 +460,13 @@
 
 </section>
 
-			<h2 id="dod">Magento Definition of Done</h2>
+			<h3 id="overview">Overview</h3>
 
-<h3 id="overview">Overview</h3>
+<p>The “Definition of Done” (DoD) is a collective term for a set of acceptance criteria that is applied to any changes in the product code base.
+The requirements that result from our DoD are applied by default to all user stories and to each task within this user story.</p>
 
-<p>The “Definition of Done” (DoD) is a collective term for a set of acceptance criteria that is applied to any changes in the product code base. The requirements that result from our DoD are applied by default to all user stories and to each task within this user story.  Internally, the Magento development teams follow the DoD to ensure that all work meets consistent release criteria. We encourage our community contributors to also follow the Magento DoD.</p>
+<p>Internally, the Magento development teams follow the DoD to ensure that all work meets consistent release criteria.
+We encourage our community contributors to also follow the Magento DoD.</p>
 
 <p>At a high level, the criteria defined in our “definition of done” revolve around the principle of writing clean code that is reviewed and includes unit tests and solid documentation along with the code.</p>
 
@@ -472,46 +474,56 @@
 
 <h3 id="functional-backward-compatibility">Functional Backward Compatibility</h3>
 
-<p>Existing product features and functionality must be retained during any changes to the code. If backward-incompatible functional changes are made, the documentation should explain the justification and provide the “business value”.</p>
+<p>Existing product features and functionality must be retained during any changes to the code.
+If backward-incompatible functional changes are made, the documentation should explain the justification and provide the “business value”.</p>
 
-<p>For more information, see <a href="/guides/v2.0/architecture/back-compatibility.html">Magento’s backward compatibility policy</a></p>
+<p>For more information, see <a href="/guides/v2.0/architecture/back-compatibility.html">Magento’s backward compatibility policy</a>.</p>
 
 <h3 id="documentation">Documentation</h3>
 
-<p>All changes, additions, and extensions to the product should be documented by the author. The documentation should provide an overview of the change, and information about standard use cases, audience, and procedural instructions for implementing the feature.</p>
+<p>All changes, additions, and extensions to the product should be documented by the author.
+The documentation should provide an overview of the change, and information about standard use cases, audience, and procedural instructions for implementing the feature.</p>
 
-<p>Ideally, the information about the submitted code should be added to the official Magento DevDocs library. Contributors are asked to submit the doc as a Pull Request to the <a href="https://github.com/magento/devdocs" target="_blank">DevDocs Github repo</a>.</p>
+<p>Ideally, the information about the submitted code should be added to the official Magento DevDocs library.
+Contributors are asked to submit the doc as a Pull Request to the <a href="https://github.com/magento/devdocs">DevDocs Github repo</a>.</p>
 
 <p>When submitting either code or documentation, a brief summary of the work should be included in the commit message.</p>
 
-<p>Additionally, the code itself should contain high-quality comments/descriptions for all classes and methods.</p>
+<p>Additionally, the code itself should follow our <a href="/guides/v2.0/coding-standards/docblock-standard-general.html">DocBlock standard</a> and contain high-quality comments and descriptions for all classes and methods.</p>
 
 <p>Any backwards-incompatible changes must also be recorded in the accompanying documentation, using the following format:</p>
 
 <table>
-<tr>
-<th><u>Change</u></th>
-<th><u>Was in Magento 1.x</u></th>
-<th><u>Became in Magento 2.x</u></th>
-</tr>
-<tr>
-<td>description</td>
-<td>example</td>
-<td>example</td>
-</tr>
+  <thead>
+    <tr>
+      <th>Change</th>
+      <th>Was in Magento 1.x</th>
+      <th>Became in Magento 2.x</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>description</td>
+      <td>example</td>
+      <td>example</td>
+    </tr>
+  </tbody>
 </table>
 
-<h3>Tests</h3>
+<h3 id="tests">Tests</h3>
 
-<h4>Automated Tests</h4>
+<h4 id="automated-tests">Automated Tests</h4>
 
 <p>Code changes must be covered by automated tests according to Classification of Magento Automated Tests.</p>
 
-<p>Before committing code changes, author must ensure successful execution of all tests by running all tests or at least those which might be affected by code changes. Continuous integration enforces execution of all tests and author is accountable for broken builds.</p>
+<p>Before committing code changes, author must ensure successful execution of all tests by running all tests or at least those which might be affected by code changes.
+Continuous integration enforces execution of all tests and author is accountable for broken builds.</p>
 
 <h4 id="functional-tests">Functional Tests</h4>
 <p>Must cover new or changed application behavior (functional).
 Added/updated functionality should be covered by a functional autotest(s) related to previous sprint commitment in scope of current sprint.</p>
+
+<p>See <a href="/guides/v2.0/test/testing.html">Functional Tests</a>.</p>
 
 <h4 id="unit-tests">Unit Tests</h4>
 
@@ -545,6 +557,8 @@ Added/updated functionality should be covered by a functional autotest(s) relate
   </li>
 </ul>
 
+<p>See: <a href="/guides/v2.0/test/integration/integration_test_execution.html">Running Integration Tests</a>.</p>
+
 <h4 id="integrity-tests">Integrity Tests</h4>
 
 <p>Code to cover:</p>
@@ -575,7 +589,8 @@ Scan for declarations of templates and invoke “fallback” mechanism to ensure
 <p>Code to cover:</p>
 
 <ul>
-  <li>Must cover any formal backwards-incompatible changes on code level. For more information, see
+  <li>Must cover any formal backwards-incompatible changes on code level.
+For more information, see
 <a href="/guides/v2.0/architecture/back-compatibility.html">Magento’s backward compatibility policy</a>.</li>
 </ul>
 
@@ -588,14 +603,16 @@ Scan for declarations of templates and invoke “fallback” mechanism to ensure
   <li>Should cover 100% of occurrences</li>
 </ul>
 
-<p>Not all changes can be covered. For example, it is possible to scan a file for literals, but it is unfeasible to analyze string concatenation or any other dynamic way of building variable.</p>
+<p>Not all changes can be covered.
+For example, it is possible to scan a file for literals, but it is unfeasible to analyze string concatenation or any other dynamic way of building variable.</p>
 
 <h4 id="functional-manual-tests">Functional Manual Tests</h4>
 <p>Must cover new or changed application behavior (functional).
 Added/updated functionality should be covered by a functional Zephyr test(s) related to current sprint commitment.</p>
 
 <h3 id="review">Review</h3>
-<p>A task, when complete by the author, should be reviewed by another Magento community member through a process of formal code review. The reviewer should check whether the task meets the original acceptance criteria and verify that there are no code defects and that other points of this definition of done are met:</p>
+<p>A task, when complete by the author, should be reviewed by another Magento community member through a process of formal code review.
+The reviewer should check whether the task meets the original acceptance criteria and verify that there are no code defects and that other points of this definition of done are met:</p>
 
 <ul>
   <li>There are no unauthorized backward-incompatible functional changes</li>
@@ -605,6 +622,7 @@ Added/updated functionality should be covered by a functional Zephyr test(s) rel
 </ul>
 
 <p>The work cannot be considered as complete unless all the criteria are verified.</p>
+
 
 		</div>
 		<!-- /.content-wrap -->

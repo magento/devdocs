@@ -769,15 +769,29 @@ sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
     <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-db.html">Create the Magento database schema</a></li>
   </ul>
 
-  <h2 id="instgde-cli-storeconfig">Configure the store</h2>
-  <p>Command usage:</p>
+  <div>
 
-  <pre><code>magento setup:store-config:set [--&lt;parameter_name&gt;=&lt;value&gt;, ...]
+    <h2 id="instgde-cli-fully-secure">Completely secure installation</h2>
+    <p>To use Secure Sockets Layer (SSL), also referred to as HTTPS, for both the Magento Admin and the storefront, you must set all of the following parameters:</p>
+
+    <ul>
+      <li><code>--use-secure</code>: Set to <code>1</code></li>
+      <li><code>--base-url-secure</code>: Set to a secure URL (that is, starting with <code>https://</code>)</li>
+      <li><code>--use-secure-admin</code> Set to <code>1</code>
+<!-- *	`--base-url`: Set to a secure URL (that is, starting with `https://`) --></li>
+    </ul>
+
+    <p>More details about these parameters can be found later in this topic.</p>
+
+    <h2 id="instgde-cli-storeconfig">Configure the store</h2>
+    <p>Command usage:</p>
+
+    <pre><code>magento setup:store-config:set [--&lt;parameter_name&gt;=&lt;value&gt;, ...]
 </code></pre>
 
-  <p>where the following table defines parameters and values.</p>
+    <p>where the following table defines parameters and values.</p>
 
-  <table>
+    <table>
 	<col width="30%" />
 	<col width="50%" />
 	<col width="20%" />
@@ -822,7 +836,7 @@ sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
 	</tr>
 	<tr>
 		<td>--use-secure</td>
-		<td><p><code>1</code> enables the use of Secure Sockets Layer (SSL) in all URLs (both Admin and storefront). Make sure your web server supports SSL before you select this option.</p>
+		<td><p><code>1</code> enables the use of Secure Sockets Layer (SSL) in storefront URLs. Make sure your web server supports SSL before you select this option.</p>
 		<p><code>0</code> disables the use of SSL with Magento. In this case, all other secure URL options are assumed to also be <code>0</code>. This is the default.</p></td>
 		<td>No</td>
 	</tr>
@@ -842,26 +856,27 @@ sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
 	</tbody>
 </table>
 
-  <h4 id="related-topics">Related topics</h4>
+    <h4 id="related-topics">Related topics</h4>
 
-  <ul>
-    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-install.html">Installing the Magento software using the command line</a></li>
-    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-sample-data-other.html">Remove sample data modules or update sample data</a></li>
-    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-enable.html">Enable or disable modules</a></li>
-    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-adminurl.html">Display or change the Admin URI</a></li>
-    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall-mods.html">Uninstall modules</a></li>
-    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-deployment.html">Create or update the deployment configuration</a></li>
-    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-maint.html">Enable or disable maintenance mode</a></li>
-    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-db.html">Create the Magento database schema</a></li>
-    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-db-upgr.html">Update the Magento database schema and data</a></li>
-    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-admin.html">Create or unlock a Magento administrator</a></li>
-    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-backup.html">Back up and roll back the file system, media, and database</a></li>
-    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-theme-uninstall.html">Uninstall themes</a></li>
-    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall-langpk.html">Uninstall language packages</a></li>
-    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall.html#instgde-install-uninstall">Uninstall the Magento software</a></li>
-    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-update">Update the Magento software</a></li>
-    <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-reinstall">Reinstall the Magento software</a></li>
-  </ul>
+    <ul>
+      <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-install.html">Installing the Magento software using the command line</a></li>
+      <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-sample-data-other.html">Remove sample data modules or update sample data</a></li>
+      <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-enable.html">Enable or disable modules</a></li>
+      <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-adminurl.html">Display or change the Admin URI</a></li>
+      <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall-mods.html">Uninstall modules</a></li>
+      <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-deployment.html">Create or update the deployment configuration</a></li>
+      <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-maint.html">Enable or disable maintenance mode</a></li>
+      <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-db.html">Create the Magento database schema</a></li>
+      <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-db-upgr.html">Update the Magento database schema and data</a></li>
+      <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-admin.html">Create or unlock a Magento administrator</a></li>
+      <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-backup.html">Back up and roll back the file system, media, and database</a></li>
+      <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-theme-uninstall.html">Uninstall themes</a></li>
+      <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall-langpk.html">Uninstall language packages</a></li>
+      <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall.html#instgde-install-uninstall">Uninstall the Magento software</a></li>
+      <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-update">Update the Magento software</a></li>
+      <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-reinstall">Reinstall the Magento software</a></li>
+    </ul>
+  </div>
 </div>
 
 		</div>

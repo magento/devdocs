@@ -1013,7 +1013,7 @@ The following file is a sample of a file you must add:</p>
         <span class="nt">&lt;link</span> <span class="na">src=</span><span class="s">&quot;js/sample.js&quot;</span><span class="nt">/&gt;</span>
 		
     	<span class="c">&lt;!-- Add external resources --&gt;</span>
-	    <span class="nt">&lt;css</span> <span class="na">src=</span><span class="s">&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css&quot;</span> <span class="na">src_type=</span><span class="s">&quot;url&quot;</span> <span class="nt">/&gt;</span>
+	<span class="nt">&lt;css</span> <span class="na">src=</span><span class="s">&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css&quot;</span> <span class="na">src_type=</span><span class="s">&quot;url&quot;</span> <span class="nt">/&gt;</span>
         <span class="nt">&lt;script</span> <span class="na">src=</span><span class="s">&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js&quot;</span> <span class="na">src_type=</span><span class="s">&quot;url&quot;</span> <span class="nt">/&gt;</span>
         <span class="nt">&lt;link</span> <span class="na">src=</span><span class="s">&quot;http://fonts.googleapis.com/css?family=Montserrat&quot;</span> <span class="na">src_type=</span><span class="s">&quot;url&quot;</span> <span class="nt">/&gt;</span> 
     <span class="nt">&lt;/head&gt;</span>
@@ -1082,11 +1082,11 @@ A sample follows:</p>
 <p>Example: add links to the page header panel.</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;referenceContainer</span> <span class="na">name=</span><span class="s">&quot;header.panel&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;block</span> <span class="na">class=</span><span class="s">&quot;Magento\Framework\View\Element\Html\Links&quot;</span> <span class="na">name=</span><span class="s">&quot;header.links&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;arguments&gt;</span>
-                <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;css_class&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>header links<span class="nt">&lt;/argument&gt;</span>
-            <span class="nt">&lt;/arguments&gt;</span>
-        <span class="nt">&lt;/block&gt;</span>
+    <span class="nt">&lt;block</span> <span class="na">class=</span><span class="s">&quot;Magento\Framework\View\Element\Html\Links&quot;</span> <span class="na">name=</span><span class="s">&quot;header.links&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;arguments&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;css_class&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>header links<span class="nt">&lt;/argument&gt;</span>
+        <span class="nt">&lt;/arguments&gt;</span>
+    <span class="nt">&lt;/block&gt;</span>
 <span class="nt">&lt;/referenceContainer&gt;</span></code></pre></figure>
 
 <h2 id="xml-manage-block">Create a block</h2>
@@ -1110,9 +1110,9 @@ A sample follows:</p>
 <p>Example: pass the image to the <code>logo</code> block.</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">&quot;logo&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;arguments&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;logo_file&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>images/logo.png<span class="nt">&lt;/argument&gt;</span>
-        <span class="nt">&lt;/arguments&gt;</span>
+    <span class="nt">&lt;arguments&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;logo_file&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>images/logo.png<span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/arguments&gt;</span>
 <span class="nt">&lt;/referenceBlock&gt;</span></code></pre></figure>
 
 <h2 id="set_template">Set a block template</h2>
@@ -1133,9 +1133,9 @@ A sample follows:</p>
 <p><strong>Example 2:</strong></p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"> <span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">&quot;page.main.title&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;arguments&gt;</span>
-            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;template&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>%Namespace_Module::new_template.phtml%<span class="nt">&lt;/argument&gt;</span>
-        <span class="nt">&lt;/arguments&gt;</span>
+     <span class="nt">&lt;arguments&gt;</span>
+         <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;template&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>%Namespace_Module::new_template.phtml%<span class="nt">&lt;/argument&gt;</span>
+     <span class="nt">&lt;/arguments&gt;</span>
  <span class="nt">&lt;/referenceBlock&gt;</span></code></pre></figure>
 
 <p>In both example, the template is specified according to the following:</p>
@@ -1191,12 +1191,12 @@ A sample follows:</p>
 
 <p>Extending layout:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml">	<span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">&quot;page.main.title&quot;</span><span class="nt">&gt;</span>
-		<span class="nt">&lt;arguments&gt;</span>
-		    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;css_class&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>product<span class="nt">&lt;/argument&gt;</span>
-		    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;add_base_attribute&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>itemprop=&quot;name&quot;<span class="nt">&lt;/argument&gt;</span>
-		<span class="nt">&lt;/arguments&gt;</span>
-	<span class="nt">&lt;/referenceBlock&gt;</span></code></pre></figure>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;referenceBlock</span> <span class="na">name=</span><span class="s">&quot;page.main.title&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;arguments&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;css_class&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>product<span class="nt">&lt;/argument&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;add_base_attribute&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>itemprop=&quot;name&quot;<span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/arguments&gt;</span>
+<span class="nt">&lt;/referenceBlock&gt;</span></code></pre></figure>
 
 <p>Example 2: Set a page title using <code>&lt;action&gt;</code>.</p>
 

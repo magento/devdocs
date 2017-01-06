@@ -704,9 +704,50 @@
 
 </section>
 
-			<h2 id="token-component-provider">Token component provider</h2>
-<p>To be able to use vault in Admin order creation, create a token component provider. It must implement the 
-<a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Vault/Model/Ui/TokenUiComponentProviderInterface.php"><code>TokenUiComponentProviderInterface</code></a> interface and contain validation and order placement logic.</p>
+			<p>To be able to use vault in Admin order creation, you need to take at least the following steps:</p>
+
+<ol>
+  <li>Create a token component provider and specify it in the <code>&lt;your_module_dir&gt;/etc/di.xml</code>.</li>
+  <li>Create a custom vault JS component and specify it in the component provider.</li>
+  <li>Create a <code>.phtml</code> template, specify it in the component provider and the corresponding layout file.</li>
+</ol>
+
+<p>There are more details about these steps in the following sections.</p>
+
+<h2 id="provider_admin">Component provider</h2>
+
+<p><a href="/guides/v2.1/payments-integrations/vault/token-ui-component-provider.html#token_provider">Similar to the store front vault implementation</a>, create a token component provider and specify it in the <code>di.xml</code>. The component provider must implement the <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Vault/Model/Ui/TokenUiComponentProviderInterface.php"><code>TokenUiComponentProviderInterface</code></a> interface.</p>
+
+<p>Following is an example of a component provider for Admin:</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">TokenUiComponentProvider</span> <span class="k">implements</span> <span class="nx">TokenUiComponentProviderInterface</span>
+<span class="p">{</span>
+    <span class="sd">/**</span>
+<span class="sd">     * @inheritdoc</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getComponentForToken</span><span class="p">(</span><span class="nx">PaymentTokenInterface</span> <span class="nv">$paymentToken</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$data</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span><span class="nv">$paymentToken</span><span class="o">-&gt;</span><span class="na">getTokenDetails</span><span class="p">()</span> <span class="o">?:</span> <span class="s1">&#39;{}&#39;</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
+        <span class="nv">$component</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">componentFactory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">(</span>
+            <span class="p">[</span>
+                <span class="s1">&#39;config&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+                    <span class="s1">&#39;code&#39;</span> <span class="o">=&gt;</span> <span class="nx">ConfigProvider</span><span class="o">::</span><span class="na">CC_VAULT_CODE</span><span class="p">,</span>
+                    <span class="s1">&#39;nonceUrl&#39;</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getNonceRetrieveUrl</span><span class="p">(),</span>
+                    <span class="nx">TokenUiComponentProviderInterface</span><span class="o">::</span><span class="na">COMPONENT_DETAILS</span> <span class="o">=&gt;</span> <span class="nv">$data</span><span class="p">,</span>
+                    <span class="nx">TokenUiComponentProviderInterface</span><span class="o">::</span><span class="na">COMPONENT_PUBLIC_HASH</span> <span class="o">=&gt;</span> <span class="nv">$paymentToken</span><span class="o">-&gt;</span><span class="na">getPublicHash</span><span class="p">(),</span>
+                    <span class="s1">&#39;template&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Magento_Braintree::form/vault.phtml&#39;</span>
+                <span class="p">],</span>
+                <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="nx">Template</span><span class="o">::</span><span class="na">class</span>
+            <span class="p">]</span>
+        <span class="p">);</span>
+
+        <span class="k">return</span> <span class="nv">$component</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<h2 id="vault-js-component">Vault JS component</h2>
+
+<p>There is no default component implementation for the Admin, so your component must implement all logic for validation and order placing.</p>
 
 <p>In the most cases, it is enough to implement getting payment code and setting public hash. This implementation might look like following:</p>
 
@@ -752,32 +793,9 @@
 
 <h2 id="template">Template</h2>
 
-<p>Create a template for displaying token details and specify it in the config provider. Following is an example of such a config provider:</p>
+<p>Create a <code>.phtml</code> template for displaying token details and specify it in the <a href="#provider_admin">component provider</a>.</p>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">TokenUiComponentProvider</span> <span class="k">implements</span> <span class="nx">TokenUiComponentProviderInterface</span>
-<span class="p">{</span>
-    <span class="sd">/**</span>
-<span class="sd">     * @inheritdoc</span>
-<span class="sd">     */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">getComponentForToken</span><span class="p">(</span><span class="nx">PaymentTokenInterface</span> <span class="nv">$paymentToken</span><span class="p">)</span>
-    <span class="p">{</span>
-        <span class="nv">$data</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span><span class="nv">$paymentToken</span><span class="o">-&gt;</span><span class="na">getTokenDetails</span><span class="p">()</span> <span class="o">?:</span> <span class="s1">&#39;{}&#39;</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
-        <span class="nv">$component</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">componentFactory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">(</span>
-            <span class="p">[</span>
-                <span class="s1">&#39;config&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
-                    <span class="s1">&#39;code&#39;</span> <span class="o">=&gt;</span> <span class="nx">ConfigProvider</span><span class="o">::</span><span class="na">CC_VAULT_CODE</span><span class="p">,</span>
-                    <span class="s1">&#39;nonceUrl&#39;</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getNonceRetrieveUrl</span><span class="p">(),</span>
-                    <span class="nx">TokenUiComponentProviderInterface</span><span class="o">::</span><span class="na">COMPONENT_DETAILS</span> <span class="o">=&gt;</span> <span class="nv">$data</span><span class="p">,</span>
-                    <span class="nx">TokenUiComponentProviderInterface</span><span class="o">::</span><span class="na">COMPONENT_PUBLIC_HASH</span> <span class="o">=&gt;</span> <span class="nv">$paymentToken</span><span class="o">-&gt;</span><span class="na">getPublicHash</span><span class="p">(),</span>
-                    <span class="s1">&#39;template&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Magento_Braintree::form/vault.phtml&#39;</span>
-                <span class="p">],</span>
-                <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="nx">Template</span><span class="o">::</span><span class="na">class</span>
-            <span class="p">]</span>
-        <span class="p">);</span>
-
-        <span class="k">return</span> <span class="nv">$component</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+<p>For reference, view the Magento default Vault template for Admin: <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Vault/view/adminhtml/templates/form/vault.phtml">app/code/Magento/Vault/view/adminhtml/templates/form/vault.phtml</a>.</p>
 
 <p>In the billing form block for Admin layout (<code>%module_dir%/view/adminhtml/layout/sales_order_create_index.xml</code>) 
 specify the payment method code and path to the template.</p>
@@ -795,8 +813,9 @@ specify the payment method code and path to the template.</p>
     <span class="nt">&lt;/body&gt;</span>
 <span class="nt">&lt;/page&gt;</span></code></pre></figure>
 
-<p>This configuration allow to render vault payments by vault module and create all depending JS components.</p>
+<p>According to this configuration the Magento_Vault module will render vault payments and all depending JS components will be created.</p>
 
+<h2 id="specific-vault-configuration-for-admin">Specific vault configuration for Admin</h2>
 <p>You might have specific request builders, response handlers or other entities for the Admin panel. For example, in your implementation 3D Secure might not be available in Admin. In this case, you need to create corresponding virtual types for the <code>adminhtml</code> <a href="/guides/v2.1/architecture/archi_perspectives/components/modules/mod_and_areas.html">area</a> in <code>%module_dir%/etc/adminhtml/di.xml</code>.</p>
 
 <p>Example from the <code>app/code/Magento/Braintree/etc/adminhtml/di.xml</code>:</p>

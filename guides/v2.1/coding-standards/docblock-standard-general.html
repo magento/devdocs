@@ -584,25 +584,85 @@
 
 </section>
 
-			<h2 id="m2devgde-code-DocBlock-intro">Overview</h2>
+			<p>This standard defines Magento requirements and conventions for adding code inline documentation, known as <em>DocBlock</em>s.</p>
 
-<p>This standard defines Magento requirements and conventions for adding code inline documentation, known as <i>DocBlock</i>s.</p>
 <p>Some parts of Magento code might not comply with this standard, but we are working to gradually improve this.</p>
+
 <p>Following these standard is optional for third-party Magento developers, but doing so helps to create consistent, clean, and easy to read inline documentation.</p>
-<p>Use <a href="http://www.ietf.org/rfc/rfc2119.txt">RFC 2119</a> to interpret the "MUST," "MUST NOT," "REQUIRED," "SHALL," "SHALL NOT," "SHOULD," "SHOULD NOT," "RECOMMENDED," "MAY," and "OPTIONAL keywords."</p>
+
+<p>Use <a href="http://www.ietf.org/rfc/rfc2119.txt">RFC 2119</a> to interpret the “MUST,” “MUST NOT,” “REQUIRED,” “SHALL,” “SHALL NOT,” “SHOULD,” “SHOULD NOT,” “RECOMMENDED,” “MAY,” and “OPTIONAL keywords.”</p>
 
 <h2 id="scope">Scope of the standard</h2>
 
-<p>The goal of this standard is to unify usage of code DocBlocks for all files, not specific to a particular language. The following is assumed by default:</p>
+<p>The goal of this standard is to unify usage of code DocBlocks for all files, not specific to a particular language.</p>
+
+<p>The following is assumed by default:</p>
 
 <ul>
-  <li>Formatting according phpDocumentor standard</li>
+  <li>Formatting according <a href="https://www.phpdoc.org/docs/latest/guides/docblocks.html" target="_blank">phpDocumentor</a> standard</li>
   <li>Requirements apply for all files regardless of programming language, but a DocBlock standard for the particular language may override it.</li>
 </ul>
 
+<h2 id="general-principles">General principles</h2>
+
+<p>The documentation should follow two simple principles:</p>
+
+<ol>
+  <li>Be as short as possible.</li>
+  <li>Include all necessary information.</li>
+</ol>
+
+<h3 id="short-documentation">Short documentation</h3>
+
+<p>The documentation should be as short as possible, but it should not skip necessary details.</p>
+
+<p>Below are ways of improving code to help simplify documentation:</p>
+
+<ul>
+  <li>Make code self-explanatory.</li>
+  <li>Put all possible information in the names of classes, methods, and variables. (e.g. use <code>$timeInSec</code> instead of <code>$time</code>)</li>
+  <li>Break down a method into smaller methods with descriptive names.
+See example below:</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php">  <span class="k">public</span> <span class="k">function</span> <span class="nf">getPrice</span><span class="p">()</span>
+  <span class="p">{</span>
+      <span class="nv">$price</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+      <span class="nv">$price</span> <span class="o">+=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getBasePrice</span><span class="p">();</span>
+      <span class="nv">$price</span> <span class="o">-=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getDiscount</span><span class="p">();</span>
+      <span class="k">return</span> <span class="nv">$price</span><span class="p">;</span>
+  <span class="p">}</span>
+
+  <span class="k">private</span> <span class="k">function</span> <span class="nf">getBasePrice</span><span class="p">()</span>
+  <span class="p">{</span>
+      <span class="c1">// calculate base price</span>
+  <span class="p">}</span>
+    
+  <span class="k">private</span> <span class="k">function</span> <span class="nf">getDiscount</span><span class="p">()</span>
+  <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">it</span><span class="err">&#39;</span><span class="nx">s</span> <span class="nx">discount</span> <span class="nb">time</span><span class="p">)</span> <span class="p">{</span>
+      <span class="k">return</span> <span class="mi">10</span><span class="p">;</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="p">}</span> 
+  </code></pre></figure>
+
+<h3 id="include-all-the-necessary-details">Include all the necessary details</h3>
+
+<ol>
+  <li>Identify the details a developer needs to work with your code.</li>
+  <li>
+    <p>Ignore the implementation details (i.e. private methods/properties and method bodies) and focus on what the public interface signature provides.</p>
+
+    <p>If possible, improve the interface to provide more information.</p>
+  </li>
+  <li>Add any remaining information that a developer may need to the DocBlock.</li>
+</ol>
+
 <h2 id="files">Files</h2>
 
-<p>Each Magento source code file must have a DocBlock header with short description of the file. After the short description, there can be a long description.</p>
+<p>Each Magento source code file must have a DocBlock header with short description of the file.
+After the short description, there can be a long description.</p>
 
 <p>Both short and long descriptions (for file headers and herein) must be separated from other elements using one empty line (implied empty line in terms of DocBlock syntax, where any line within DocBlock starts from <code>*</code>.</p>
 
@@ -633,7 +693,8 @@
 
 <h2 id="code-elements">Code structural elements</h2>
 
-<p>A structural element is defined in <a href="http://phpdoc.org/">phpDocumentor</a> as part of imperative source code, such as PHP or JavaScript, or procedural SQL. For example: namespace, class, interface, function, property, method, and so on.</p>
+<p>A structural element is defined in <a href="http://phpdoc.org/">phpDocumentor</a> as part of imperative source code, such as PHP or JavaScript, or procedural SQL.
+For example: namespace, class, interface, function, property, method, and so on.</p>
 
 <p>If the source code file has one and only one standalone structural element (class, interface, function, and so on), as it may be required by language-specific coding standard, the file DocBlock is to be reused for this element.</p>
 
@@ -649,7 +710,8 @@
 <span class="k">class</span> <span class="nc">Autoload</span>
 <span class="p">{</span></code></pre></figure>
 
-<p>But if along with declaring class or function there must be another file with source code included, the inclusion construct must not be before file header and it must not separate element DocBlock from the element. So there are two solutions possible:</p>
+<p>But if along with declaring class or function there must be another file with source code included, the inclusion construct must not be before file header and it must not separate element DocBlock from the element.
+So there are two solutions possible:</p>
 
 <ul>
   <li>Have file header DocBlock separately, then inclusion construct, then a DocBlock for the element with duplicated short description.</li>
@@ -699,11 +761,26 @@
 
 <h3 id="classes-interfaces">Classes and interfaces</h3>
 
-<p>Classes and interfaces must have a short description.</p>
+<p>Classes and interfaces must have a short description that is a human-understandable intention of the class.</p>
+
+<p><strong>Good:</strong></p>
+
+<blockquote>
+  <p>Handler for PHP errors/warnings/notices that converts them to exceptions.</p>
+</blockquote>
+
+<p><strong>Bad:</strong></p>
+
+<blockquote>
+  <p>ErrorHandler -&gt; ErrorHandler</p>
+</blockquote>
+
+<p>If possible, add use cases where developers can or cannot use the class.</p>
 
 <h3 id="short-name-form">Short name form</h3>
 
-<p>It is encouraged to use the short form of the name to encourage readability and consistency with the type hint. The only exception is in the <code>Service/DTO</code> classes due to tooling requirements.</p>
+<p>It is encouraged to use the short form of the name to encourage readability and consistency with the type hint.
+The only exception is in the <code>Service/DTO</code> classes due to tooling requirements.</p>
 
 <p><strong>Example of a Method DocBlock</strong></p>
 
@@ -750,12 +827,50 @@
 
 <ul>
   <li>Short description</li>
-  <li>Declaration of all arguments (if any) using <code>@param</code> tag. Appropriate argument type must be specified.</li>
-  <li>Declaration of return type using <code>@return</code> tag. If there is no such operator, the <code>@return</code> tag must have <code>void</code> as the return value.</li>
-  <li>Declaration of possibly thrown exception using <code>@throws</code> tag, if the actual body of function triggers throwing an exception. All occurrences of <code>@throws</code> in a DocBlock must be after <code>@param</code> and <code>@return</code> (if any).</li>
+  <li>Declaration of all arguments (if any) using <code>@param</code> tag.
+Appropriate argument type must be specified.</li>
+  <li>Declaration of return type using <code>@return</code> tag.
+If there is no such operator, the <code>@return</code> tag must have <code>void</code> as the return value.</li>
+  <li>Declaration of possibly thrown exception using <code>@throws</code> tag, if the actual body of function triggers throwing an exception.
+All occurrences of <code>@throws</code> in a DocBlock must be after <code>@param</code> and <code>@return</code> (if any).</li>
 </ul>
 
-<p>It is encouraged to supply <code>@param</code> and <code>@throws</code> tags with additional description, which comes after the formal declaration of the tag.</p>
+<h4 id="things-to-include">Things to include</h4>
+
+<ul>
+  <li>
+    <p>An explanation of input arguments and return values if it is not obvious from their name and type.</p>
+
+    <p>This is applicable in the following cases:</p>
+
+    <ul>
+      <li>
+        <p>There is more than one possible input/output type.</p>
+
+        <p>For example: <code>@return Config|null</code>.<br />
+The DockBlock needs to explain what situations return <code>null</code>.</p>
+
+        <p>Another example: <code>@param FileInterface | null</code>.<br />
+The DocBlock needs to explain what happens when the value of the parameter is <code>null</code>.</p>
+
+        <p>Ideally, implementations such as these should be avoided.</p>
+      </li>
+      <li>The input/output type is a simple type and the format is not clear from the name.</li>
+      <li>The input/output is an array with a specific structure.</li>
+    </ul>
+  </li>
+  <li>The intent of the method along with when or where it can be used.</li>
+  <li>If an exception is thrown by a method, explain the cause or situation.</li>
+  <li>If the input is confusing or complicated, add examples of the method’s usage in client code or examples of the argument.</li>
+</ul>
+
+<h4 id="things-to-avoid">Things to avoid</h4>
+
+<ul>
+  <li>Copying the algorithm. 
+The algorithm must be self-explanatory and understood by reviewing the code and unit tests.</li>
+  <li>Information that is out of date or has the potential to become out of date.</li>
+</ul>
 
 <p><strong>Example of a Method DocBlock</strong></p>
 
@@ -788,7 +903,7 @@
 
 <h4 id="throws">Divergence in @throws tag</h4>
 
-<p>A general case when <code>@throws</code> tag must be used is if <em>throw</em> language construct is used – for example:</p>
+<p>In general, use the <code>@throws</code> tag when the code uses <em>throw</em>:</p>
 
 <p><strong>Example of Throwing Exception Explicitly</strong></p>
 
@@ -819,7 +934,8 @@
 
 <p>In this general case, if an exception is thrown in a sub-routine, then <code>@throws</code> must not be used in the parent method.</p>
 
-<p>However, if the only purpose of the referred sub-routine is to throw a specific exception – then <code>@throws</code> must be used in the parent method. For example:</p>
+<p>However, if the only purpose of the referred sub-routine is to throw a specific exception – then <code>@throws</code> must be used in the parent method.
+For example:</p>
 
 <p><strong>Throwing Exception Implicitly</strong></p>
 
@@ -881,7 +997,8 @@
 
 <h3 id="DocBlock-templates">DocBlock templates</h3>
 
-<p>If there is declaration of multiple consecutive elements of same type, the same contents of DocBlock may be relevant to all of them. In this case individual DocBlocks for those elements they may be replaced by a DocBlock template.</p>
+<p>If there is declaration of multiple consecutive elements of same type, the same contents of DocBlock may be relevant to all of them.
+In this case individual DocBlocks for those elements they may be replaced by a DocBlock template.</p>
 
 <p>DocBlock template consists of two DocBlock comments:</p>
 
@@ -922,34 +1039,44 @@
 
 <h2 id="documentation-space">Structure of documentation space</h2>
 
-<p><code>@category</code>, <code>@package</code>, and <code>@subpackage</code> MUST NOT be used. Documentation is organized with the use of namespaces.</p>
+<p><code>@category</code>, <code>@package</code>, and <code>@subpackage</code> MUST NOT be used.
+Documentation is organized with the use of namespaces.</p>
 
 <h2 id="other-DocBlock-tags">Other DocBlock tags</h2>
-<h3 id="api">@api tag</h3>
+<p id="api">### @api tag</p>
 <p>The <code>@api</code> tag indicates the code is part of the public API and is subject to the <a href="../extension-dev-guide/backward-compatibility.html">Magento Backward Compatibility Policy</a>.</p>
 
-<p>The <code>@api</code> tag can be applied to a constant, a method, or to the entire class/interface.  If the <code>@api</code> tag is applied at the file level, then all methods within the file are part of the public API. You do not need to annotate each method individually.</p>
+<p>The <code>@api</code> tag can be applied to a constant, a method, or to the entire class/interface.
+ If the <code>@api</code> tag is applied at the file level, then all methods within the file are part of the public API.
+You do not need to annotate each method individually.</p>
 
 <p>See <a href="http://semver.org/">Semantic Versioning 2.0.0</a> for information about changing and updating code while maintaining backward compatibility.</p>
 
 <h3 id="deprecated">@deprecated tag</h3>
 
-<p>A deprecated class or method is one that has been superseded and may cease to exist in the future.  It will be retained to provide backward compatibility until next major component release.</p>
+<p>A deprecated class or method is one that has been superseded and may cease to exist in the future.
+ It will be retained to provide backward compatibility until next major component release.</p>
 
-<p>Use the <code>@deprecated</code> tag to indicate an element is to be deprecated. The text of the <code>@deprecated</code> tag should indicate the version the element was deprecated as well as the version it will be removed. If applicable, also specify what has replaced the deprecated element.</p>
+<p>Use the <code>@deprecated</code> tag to indicate an element is to be deprecated.
+The text of the <code>@deprecated</code> tag should indicate the version the element was deprecated as well as the version it will be removed.
+If applicable, also specify what has replaced the deprecated element.</p>
 
 <p>To maintain backward compatibility, an element should be removed only on major revisions.</p>
 
+<p>Use the <code>@see</code> tag to refer to the new implementation when code is deprecated.</p>
+
 <h3 id="var">@var inline tag</h3>
 
-<p>For purpose of automatic type hinting in an IDE, an inline notation of <code>@var</code> tag can be used wherever the IDE is unable to resolve variable type. This tag declares variables that will emerge in next lines of code as follows:</p>
+<p>For purpose of automatic type hinting in an IDE, an inline notation of <code>@var</code> tag can be used wherever the IDE is unable to resolve variable type.
+This tag declares variables that will emerge in next lines of code as follows:</p>
 
 <p><strong>Inline Type Hinting</strong></p>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/** @var libXMLError $error */</span>
 <span class="k">foreach</span> <span class="p">(</span><span class="nv">$errors</span> <span class="k">as</span> <span class="nv">$error</span><span class="p">)</span> <span class="p">{</span></code></pre></figure>
 
-<p>Some IDEs understand a different notation, where type is specified after variable name. This notation is also valid:</p>
+<p>Some IDEs understand a different notation, where type is specified after variable name.
+This notation is also valid:</p>
 
 <p><strong>Inline Type Hinting Variation</strong></p>
 

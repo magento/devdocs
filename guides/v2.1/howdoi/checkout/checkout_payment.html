@@ -1277,23 +1277,24 @@ This configuration is stored in the <code>window.checkoutConfig</code> variable 
 
                                                                         <span class="c">&lt;!-- Add this if your payment method requires entering a billing address--&gt;</span>
                                                                         <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;%payment_method_code%&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                                                                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;isBillingAddressRequired&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;boolean&quot;</span><span class="nt">&gt;</span>true<span class="nt">&lt;/item&gt;</span>
+                                                                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;isBillingAddressRequired&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;boolean&quot;</span><span class="nt">&gt;</span>true<span class="nt">&lt;/item&gt;</span>
+                                                                        <span class="nt">&lt;/item&gt;</span>
                                                                     <span class="nt">&lt;/item&gt;</span>
                                                                 <span class="nt">&lt;/item&gt;</span>
                                                             <span class="nt">&lt;/item&gt;</span>
-                                                        <span class="nt">&lt;/item&gt;</span>
-                                                        <span class="c">&lt;!-- Declare the payment method (the component that registrates in the list). END --&gt;</span>
-                                                        <span class="c">&lt;!-- Declare additional after payment components. START --&gt;</span>
-                                                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;afterMethods&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                                                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;component&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>uiComponent<span class="nt">&lt;/item&gt;</span>
-                                                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;displayArea&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>afterMethods<span class="nt">&lt;/item&gt;</span>
-                                                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;children&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                                                                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;%your_feature_name%&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-                                                                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;component&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>%path/to/your/feature_js_component%<span class="nt">&lt;/item&gt;</span>
+                                                            <span class="c">&lt;!-- Declare the payment method (the component that registrates in the list). END --&gt;</span>
+                                                            <span class="c">&lt;!-- Declare additional after payment components. START --&gt;</span>
+                                                            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;afterMethods&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                                                                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;component&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>uiComponent<span class="nt">&lt;/item&gt;</span>
+                                                                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;displayArea&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>afterMethods<span class="nt">&lt;/item&gt;</span>
+                                                                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;children&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                                                                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;%your_feature_name%&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                                                                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;component&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>%path/to/your/feature_js_component%<span class="nt">&lt;/item&gt;</span>
+                                                                    <span class="nt">&lt;/item&gt;</span>
                                                                 <span class="nt">&lt;/item&gt;</span>
                                                             <span class="nt">&lt;/item&gt;</span>
+                                                            <span class="c">&lt;!-- Declare additional after payment components. END --&gt;</span>
                                                         <span class="nt">&lt;/item&gt;</span>
-                                                        <span class="c">&lt;!-- Declare additional after payment components. END --&gt;</span>
                                                     <span class="nt">&lt;/item&gt;</span>
                                                 <span class="nt">&lt;/item&gt;</span>
                                             <span class="nt">&lt;/item&gt;</span>
