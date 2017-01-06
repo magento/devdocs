@@ -11,12 +11,12 @@ github_link: contributor-guide/contributing_dod.md
 redirect_from: /guides/v1.0/contributor-guide/contributing_dod.html
 ---
 
-
-<h2 id="dod">Magento Definition of Done</h2>
-
 ### Overview
 
-The "Definition of Done" (DoD) is a collective term for a set of acceptance criteria that is applied to any changes in the product code base. The requirements that result from our DoD are applied by default to all user stories and to each task within this user story.  Internally, the Magento development teams follow the DoD to ensure that all work meets consistent release criteria. We encourage our community contributors to also follow the Magento DoD.
+The "Definition of Done" (DoD) is a collective term for a set of acceptance criteria that is applied to any changes in the product code base.
+The requirements that result from our DoD are applied by default to all user stories and to each task within this user story.
+ Internally, the Magento development teams follow the DoD to ensure that all work meets consistent release criteria.
+We encourage our community contributors to also follow the Magento DoD.
 
 At a high level, the criteria defined in our "definition of done" revolve around the principle of writing clean code that is reviewed and includes unit tests and solid documentation along with the code.
 
@@ -25,15 +25,18 @@ The following sections provide additional details about each of these criteria:
 
 ### Functional Backward Compatibility
 
-Existing product features and functionality must be retained during any changes to the code. If backward-incompatible functional changes are made, the documentation should explain the justification and provide the "business value".
+Existing product features and functionality must be retained during any changes to the code.
+If backward-incompatible functional changes are made, the documentation should explain the justification and provide the "business value".
 
 For more information, see [Magento's backward compatibility policy]({{page.baseurl}}architecture/back-compatibility.html)
 
 ### Documentation
 
-All changes, additions, and extensions to the product should be documented by the author. The documentation should provide an overview of the change, and information about standard use cases, audience, and procedural instructions for implementing the feature.
+All changes, additions, and extensions to the product should be documented by the author.
+The documentation should provide an overview of the change, and information about standard use cases, audience, and procedural instructions for implementing the feature.
 
-Ideally, the information about the submitted code should be added to the official Magento DevDocs library. Contributors are asked to submit the doc as a Pull Request to the <a href="https://github.com/magento/devdocs" target="_blank">DevDocs Github repo</a>.
+Ideally, the information about the submitted code should be added to the official Magento DevDocs library.
+Contributors are asked to submit the doc as a Pull Request to the <a href="https://github.com/magento/devdocs" target="_blank">DevDocs Github repo</a>.
 
 When submitting either code or documentation, a brief summary of the work should be included in the commit message.
 
@@ -60,7 +63,8 @@ Any backwards-incompatible changes must also be recorded in the accompanying doc
 
 Code changes must be covered by automated tests according to Classification of Magento Automated Tests.
 
-Before committing code changes, author must ensure successful execution of all tests by running all tests or at least those which might be affected by code changes. Continuous integration enforces execution of all tests and author is accountable for broken builds.
+Before committing code changes, author must ensure successful execution of all tests by running all tests or at least those which might be affected by code changes.
+Continuous integration enforces execution of all tests and author is accountable for broken builds.
 
 #### Functional Tests
 Must cover new or changed application behavior (functional).
@@ -115,7 +119,8 @@ Expected code coverage: must cover all applicable files in entire code base.
 
 Code to cover:
 
-* Must cover any formal backwards-incompatible changes on code level. For more information, see
+* Must cover any formal backwards-incompatible changes on code level.
+For more information, see
 <a href="{{page.baseurl}}architecture/back-compatibility.html">Magento's backward compatibility policy</a>.
 
 A failure in legacy test must provide comprehensive explanation of an alternative, if there is any.
@@ -125,14 +130,16 @@ Expected code coverage:
 * Must cover majority of occurrences of the backwards-incompatible change
 * Should cover 100% of occurrences
 
-Not all changes can be covered. For example, it is possible to scan a file for literals, but it is unfeasible to analyze string concatenation or any other dynamic way of building variable.
+Not all changes can be covered.
+For example, it is possible to scan a file for literals, but it is unfeasible to analyze string concatenation or any other dynamic way of building variable.
 
 #### Functional Manual Tests
 Must cover new or changed application behavior (functional).
 Added/updated functionality should be covered by a functional Zephyr test(s) related to current sprint commitment.
 
 ### Review
-A task, when complete by the author, should be reviewed by another Magento community member through a process of formal code review. The reviewer should check whether the task meets the original acceptance criteria and verify that there are no code defects and that other points of this definition of done are met:
+A task, when complete by the author, should be reviewed by another Magento community member through a process of formal code review.
+The reviewer should check whether the task meets the original acceptance criteria and verify that there are no code defects and that other points of this definition of done are met:
 
 * There are no unauthorized backward-incompatible functional changes
 * All changes are documented properly
