@@ -47,9 +47,9 @@ The installer is designed to be run multiple times if necessary so you can:
 
 See also <a href="{{page.baseurl}}install-gde/install/cli/install-cli-uninstall.html">Update, reinstall, uninstall</a>.
 
+{% include install/fully-secure.md %}
 
-<h2 id="instgde-cli-help-cmds">Installer help commands</h2>
-
+## Installer help commands {#instgde-cli-help-cmds}
 You can run the following commands to find values for some required arguments:
 
 <table>
@@ -144,7 +144,7 @@ The following table discusses the meanings of installation option names and valu
 		<td><p>Uniform Resource Identifier (<a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec3.2" target="_blank">URI</a>) to access the Magento Admin or omit this parameter to let Magento generate a random URI for you.</p>
 			<p>We recommend a random URI for security purposes. A random URI is harder for hackers or malicious software to exploit.</p>
 			<p>The URI displays at the end of the installation. You can display it later at any time using the <a href="{{page.baseurl}}install-gde/install/cli/install-cli-adminurl.html">magento info:adminuri</a> command.</p>
-			<p>If you choose to enter a value, we recommend you <em>not</em> use a common word like <code>admin</code>, <code>backend</code>, and so on. The Admin URI can contain alphanumeric values, the underscore character (<code>_</code>), and the dash character (<code>-</code>) only. It can be up to 255 characters in length.</p></td>
+			<p>If you choose to enter a value, we recommend you <em>not</em> use a common word like <code>admin</code>, <code>backend</code>, and so on. The Admin URI can contain alphanumeric values and the underscore character (<code>_</code>) only. It can be up to 255 characters in length.</p></td>
 		<td><p>No</p></td>
 	</tr>
 	<tr>
@@ -205,9 +205,9 @@ The following table discusses the meanings of installation option names and valu
 	</tr>
 	<tr>
 		<td><p>--use-secure</p></td>
-		<td><p><code>1</code> enables the use of Secure Sockets Layer (SSL) in all storefront URLs. Make sure your web server supports SSL before you select this option.</p>
+		<td><p><code>1</code> enables the use of Secure Sockets Layer (SSL) in storefront URLs. Make sure your web server supports SSL before you select this option.</p>
 		<p><code>0</code> disables the use of SSL with Magento. In this case, all other secure URL options are assumed to also be <code>0</code>. This is the default.</p>
-		<p>To have a fully secure site, you must enable <em>both</em> <code>--use-secure=1</code> and <code>--base-url-secure=1</code>.</p></td>
+		</td>
 		<td><p>No</p></td>
 	</tr>
 	<tr>
