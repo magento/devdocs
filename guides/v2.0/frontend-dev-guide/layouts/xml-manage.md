@@ -67,7 +67,7 @@ The following file is a sample of a file you must add:
         <link src="js/sample.js"/>
 		
     	<!-- Add external resources -->
-	    <css src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css" src_type="url" />
+	<css src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css" src_type="url" />
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js" src_type="url" />
         <link src="http://fonts.googleapis.com/css?family=Montserrat" src_type="url" /> 
     </head>
@@ -148,11 +148,11 @@ Example: add links to the page header panel.
 
 {%highlight xml%}
 <referenceContainer name="header.panel">
-        <block class="Magento\Framework\View\Element\Html\Links" name="header.links">
-            <arguments>
-                <argument name="css_class" xsi:type="string">header links</argument>
-            </arguments>
-        </block>
+    <block class="Magento\Framework\View\Element\Html\Links" name="header.links">
+        <arguments>
+            <argument name="css_class" xsi:type="string">header links</argument>
+        </arguments>
+    </block>
 </referenceContainer>
 {%endhighlight xml%}
 
@@ -181,9 +181,9 @@ Example: pass the image to the `logo` block.
 
 {%highlight xml%}
 <referenceBlock name="logo">
-        <arguments>
-            <argument name="logo_file" xsi:type="string">images/logo.png</argument>
-        </arguments>
+    <arguments>
+        <argument name="logo_file" xsi:type="string">images/logo.png</argument>
+    </arguments>
 </referenceBlock>
 {%endhighlight xml%}
 
@@ -206,9 +206,9 @@ Both approaches are demonstrated in the following examples of changing the templ
 
 {%highlight xml%}
  <referenceBlock name="page.main.title">
-        <arguments>
-            <argument name="template" xsi:type="string">%Namespace_Module::new_template.phtml%</argument>
-        </arguments>
+     <arguments>
+         <argument name="template" xsi:type="string">%Namespace_Module::new_template.phtml%</argument>
+     </arguments>
  </referenceBlock>
 {%endhighlight%}
 
@@ -267,12 +267,12 @@ Example 1: Set a CSS class and add an attribute for the product page using `<arg
 Extending layout:
 
 {%highlight xml%}
-	<referenceBlock name="page.main.title">
-		<arguments>
-		    <argument name="css_class" xsi:type="string">product</argument>
-		    <argument name="add_base_attribute" xsi:type="string">itemprop="name"</argument>
-		</arguments>
-	</referenceBlock>
+<referenceBlock name="page.main.title">
+    <arguments>
+        <argument name="css_class" xsi:type="string">product</argument>
+        <argument name="add_base_attribute" xsi:type="string">itemprop="name"</argument>
+    </arguments>
+</referenceBlock>
 {%endhighlight xml%}
 
 Example 2: Set a page title using `<action>`. 
