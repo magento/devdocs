@@ -10,23 +10,78 @@ github_link: coding-standards/docblock-standard-general.md
 redirect_from: /guides/v1.0/coding-standards/docblock-standard-general.html
 ---
 
-<h2 id="m2devgde-code-DocBlock-intro">Overview</h2>
+This standard defines Magento requirements and conventions for adding code inline documentation, known as *DocBlock*s.
 
-<p>This standard defines Magento requirements and conventions for adding code inline documentation, known as <i>DocBlock</i>s.</p>
-<p>Some parts of Magento code might not comply with this standard, but we are working to gradually improve this.</p>
-<p>Following these standard is optional for third-party Magento developers, but doing so helps to create consistent, clean, and easy to read inline documentation.</p>
-<p>Use <a href="http://www.ietf.org/rfc/rfc2119.txt">RFC 2119</a> to interpret the "MUST," "MUST NOT," "REQUIRED," "SHALL," "SHALL NOT," "SHOULD," "SHOULD NOT," "RECOMMENDED," "MAY," and "OPTIONAL keywords."</p>
+Some parts of Magento code might not comply with this standard, but we are working to gradually improve this.
 
-<h2 id="scope">Scope of the standard</h2>
+Following these standard is optional for third-party Magento developers, but doing so helps to create consistent, clean, and easy to read inline documentation.
 
-The goal of this standard is to unify usage of code DocBlocks for all files, not specific to a particular language. The following is assumed by default:
+Use [RFC 2119](http://www.ietf.org/rfc/rfc2119.txt) to interpret the "MUST," "MUST NOT," "REQUIRED," "SHALL," "SHALL NOT," "SHOULD," "SHOULD NOT," "RECOMMENDED," "MAY," and "OPTIONAL keywords."
 
-* Formatting according phpDocumentor standard
+## Scope of the standard
+{:#scope}
+
+The goal of this standard is to unify usage of code DocBlocks for all files, not specific to a particular language.
+
+The following is assumed by default:
+
+* Formatting according [phpDocumentor](https://www.phpdoc.org/docs/latest/guides/docblocks.html){:target="_blank"} standard
 * Requirements apply for all files regardless of programming language, but a DocBlock standard for the particular language may override it.
 
-<h2 id="files">Files</h2>
+## General principles
 
-Each Magento source code file must have a DocBlock header with short description of the file. After the short description, there can be a long description.
+The documentation should follow two simple principles:
+
+1. Be as short as possible.
+2. Include all necessary information.
+
+### Short documentation
+
+The documentation should be as short as possible, but it should not skip necessary details.  
+
+Below are ways of improving code to help simplify documentation:
+
+* Make code self-explanatory.
+* Put all possible information in the names of classes, methods, and variables. (e.g. use `$timeInSec` instead of `$time`)
+* Break down a method into smaller methods with descriptive names.
+  See example below:
+  
+  {% highlight php startinline=true %}
+  public function getPrice()
+  {
+      $price = 0;
+      $price += $this->getBasePrice();
+      $price -= $this->getDiscount();
+      return $price;
+  }
+
+  private function getBasePrice()
+  {
+      // calculate base price
+  }
+    
+  private function getDiscount()
+  {
+    if (it's discount time) {
+      return 10;
+    }
+    return 0;
+  } 
+  {% endhighlight %}
+
+### Include all the necessary details
+
+1. Identify the details a developer needs to work with your code.
+2. Ignore the implementation details (i.e. private methods/properties and method bodies) and focus on what the public interface signature provides.
+   
+   If possible, improve the interface to provide more information.
+3. Add any remaining information that a developer may need to the DocBlock.
+
+## Files
+{:#files}
+
+Each Magento source code file must have a DocBlock header with short description of the file.
+After the short description, there can be a long description.
 
 Both short and long descriptions (for file headers and herein) must be separated from other elements using one empty line (implied empty line in terms of DocBlock syntax, where any line within DocBlock starts from `*`.
 
@@ -63,9 +118,11 @@ If description or short description happens to be the first one after DocBlock o
 {% endhighlight %}
 
 
-<h2 id="code-elements">Code structural elements</h2>
+## Code structural elements
+{:#code-elements}
 
-A structural element is defined in [phpDocumentor](http://phpdoc.org/) as part of imperative source code, such as PHP or JavaScript, or procedural SQL. For example: namespace, class, interface, function, property, method, and so on.
+A structural element is defined in [phpDocumentor](http://phpdoc.org/) as part of imperative source code, such as PHP or JavaScript, or procedural SQL.
+For example: namespace, class, interface, function, property, method, and so on.
 
 If the source code file has one and only one standalone structural element (class, interface, function, and so on), as it may be required by language-specific coding standard, the file DocBlock is to be reused for this element.
 
@@ -85,7 +142,8 @@ class Autoload
 {% endhighlight %}
 
 
-But if along with declaring class or function there must be another file with source code included, the inclusion construct must not be before file header and it must not separate element DocBlock from the element. So there are two solutions possible:
+But if along with declaring class or function there must be another file with source code included, the inclusion construct must not be before file header and it must not separate element DocBlock from the element.
+So there are two solutions possible:
 
 * Have file header DocBlock separately, then inclusion construct, then a DocBlock for the element with duplicated short description.
 * Or include after declaring the element (it is possible in PHP and won't cause issues before execution).
@@ -140,13 +198,26 @@ require_once __DIR__ . '/../../functions.php';
 {% endhighlight %}
 
 
-<h3 id="classes-interfaces">Classes and interfaces</h3>
+### Classes and interfaces
+{:#classes-interfaces}
 
-Classes and interfaces must have a short description.
+Classes and interfaces must have a short description that is a human-understandable intention of the class.
 
-<h3 id="short-name-form">Short name form</h3>
+**Good:**
 
-It is encouraged to use the short form of the name to encourage readability and consistency with the type hint. The only exception is in the `Service/DTO` classes due to tooling requirements.
+> Handler for PHP errors/warnings/notices that converts them to exceptions.
+
+**Bad:**
+
+> ErrorHandler -> ErrorHandler
+
+If possible, add use cases where developers can or cannot use the class.
+
+### Short name form
+{:#short-name-form}
+
+It is encouraged to use the short form of the name to encourage readability and consistency with the type hint.
+The only exception is in the `Service/DTO` classes due to tooling requirements.
 
 **Example of a Method DocBlock**
 
@@ -175,7 +246,8 @@ protected function doSomething(Random $mathRandom, StdlibDateTime $dateTime, $nu
 {% endhighlight %}
 
 
-<h3 id="class-attributes">Class attributes</h3>
+### Class attributes
+{:#class-attributes}
 
 Class attributes must have type declaration using `@var` tag.
 
@@ -195,16 +267,46 @@ class Profiler
 {% endhighlight %}
 
 
-<h3 id="functions-methods">Functions and methods</h3>
+### Functions and methods
+{:#functions-methods}
 
 Functions and methods must have:
 
 * Short description
-* Declaration of all arguments (if any) using `@param` tag. Appropriate argument type must be specified.
-* Declaration of return type using `@return` tag. If there is no such operator, the `@return` tag must have `void` as the return value.
-* Declaration of possibly thrown exception using `@throws` tag, if the actual body of function triggers throwing an exception. All occurrences of `@throws` in a DocBlock must be after `@param` and `@return` (if any).
+* Declaration of all arguments (if any) using `@param` tag.
+  Appropriate argument type must be specified.
+* Declaration of return type using `@return` tag.
+  If there is no such operator, the `@return` tag must have `void` as the return value.
+* Declaration of possibly thrown exception using `@throws` tag, if the actual body of function triggers throwing an exception.
+  All occurrences of `@throws` in a DocBlock must be after `@param` and `@return` (if any).
 
-It is encouraged to supply `@param` and `@throws` tags with additional description, which comes after the formal declaration of the tag.
+#### Things to include
+
+* An explanation of input arguments and return values if it is not obvious from their name and type.
+  
+  This is applicable in the following cases:
+
+  * There is more than one possible input/output type.
+
+    For example: `@return Config|null`.  
+    The DockBlock needs to explain what situations return `null`.
+
+    Another example: `@param FileInterface | null`.  
+    The DocBlock needs to explain what happens when the value of the parameter is `null`.
+
+    Ideally, implementations such as these should be avoided.
+
+  * The input/output type is a simple type and the format is not clear from the name.
+  * The input/output is an array with a specific structure.
+* The intent of the method along with when or where it can be used.
+* If an exception is thrown by a method, explain the cause or situation.
+* If the input is confusing or complicated, add examples of the method's usage in client code or examples of the argument.
+
+#### Things to avoid
+
+* Copying the algorithm. 
+  The algorithm must be self-explanatory and understood by reviewing the code and unit tests.
+* Information that is out of date or has the potential to become out of date.
 
 **Example of a Method DocBlock**
 
@@ -239,13 +341,12 @@ protected function merge($configFiles)
 {% endhighlight %}
 
 
-<h4 id="throws">Divergence in @throws tag</h4>
+#### Divergence in @throws tag
+{:#throws}
 
-A general case when `@throws` tag must be used is if *throw* language construct is used – for example:
+In general, use the `@throws` tag when the code uses *throw*:
 
-**Example of Throwing Exception Explicitly**
-
-
+**Example of Throwing Exception Explicitly**  
 {% highlight php startinline=true %}
 /**
  * Set an arbitrary value to specified element
@@ -276,7 +377,8 @@ public function setAttribute($elementId, $attribute, $value)
 
 In this general case, if an exception is thrown in a sub-routine, then `@throws` must not be used in the parent method.
 
-However, if the only purpose of the referred sub-routine is to throw a specific exception – then `@throws` must be used in the parent method. For example:
+However, if the only purpose of the referred sub-routine is to throw a specific exception – then `@throws` must be used in the parent method.
+For example:
 
 **Throwing Exception Implicitly**
 
@@ -321,7 +423,8 @@ If there is no explicit return statement in a method or function, a `@return voi
 
 If the method returns itself, `return $this` should be used.
 
-<h3 id="constants">Constants</h3>
+### Constants
+{:#constants}
 
 Constants must have short description.
 
@@ -344,9 +447,11 @@ class Profiler
 {% endhighlight %}
 
 
-<h3 id="DocBlock-templates">DocBlock templates</h3>
+### DocBlock templates
+{:#DocBlock-templates}
 
-If there is declaration of multiple consecutive elements of same type, the same contents of DocBlock may be relevant to all of them. In this case individual DocBlocks for those elements they may be replaced by a DocBlock template.
+If there is declaration of multiple consecutive elements of same type, the same contents of DocBlock may be relevant to all of them.
+In this case individual DocBlocks for those elements they may be replaced by a DocBlock template.
 
 DocBlock template consists of two DocBlock comments:
 
@@ -385,29 +490,43 @@ class Mage_Core_Model_Layout extends Varien_Simplexml_Config
 {% endhighlight %}
 
 
-<h2 id="documentation-space">Structure of documentation space</h2>
+## Structure of documentation space
+{:#documentation-space}
 
-`@category`, `@package`, and `@subpackage` MUST NOT be used. Documentation is organized with the use of namespaces.
+`@category`, `@package`, and `@subpackage` MUST NOT be used.
+Documentation is organized with the use of namespaces.
 
-<h2 id="other-DocBlock-tags">Other DocBlock tags</h2>
-<h3 id="api">@api tag</h3>
+## Other DocBlock tags
+{:#other-DocBlock-tags}
+### @api tag
+{:#api}
 The `@api` tag indicates the code is part of the public API and is subject to the [Magento Backward Compatibility Policy](../extension-dev-guide/backward-compatibility.html).
 
-The `@api` tag can be applied to a constant, a method, or to the entire class/interface.  If the `@api` tag is applied at the file level, then all methods within the file are part of the public API. You do not need to annotate each method individually.
+The `@api` tag can be applied to a constant, a method, or to the entire class/interface.
+ If the `@api` tag is applied at the file level, then all methods within the file are part of the public API.
+You do not need to annotate each method individually.
 
 See [Semantic Versioning 2.0.0](http://semver.org/) for information about changing and updating code while maintaining backward compatibility.
 
-<h3 id="deprecated">@deprecated tag</h3>
+### @deprecated tag
+{:#deprecated}
 
-A deprecated class or method is one that has been superseded and may cease to exist in the future.  It will be retained to provide backward compatibility until next major component release.
+A deprecated class or method is one that has been superseded and may cease to exist in the future.
+ It will be retained to provide backward compatibility until next major component release.
 
-Use the `@deprecated` tag to indicate an element is to be deprecated. The text of the `@deprecated` tag should indicate the version the element was deprecated as well as the version it will be removed. If applicable, also specify what has replaced the deprecated element.
+Use the `@deprecated` tag to indicate an element is to be deprecated.
+The text of the `@deprecated` tag should indicate the version the element was deprecated as well as the version it will be removed.
+If applicable, also specify what has replaced the deprecated element.
 
-To maintain backward compatibility, an element should be removed only on major revisions.  
+To maintain backward compatibility, an element should be removed only on major revisions.
 
-<h3 id="var">@var inline tag</h3>
+Use the `@see` tag to refer to the new implementation when code is deprecated.
 
-For purpose of automatic type hinting in an IDE, an inline notation of `@var` tag can be used wherever the IDE is unable to resolve variable type. This tag declares variables that will emerge in next lines of code as follows:
+### @var inline tag
+{:#var}
+
+For purpose of automatic type hinting in an IDE, an inline notation of `@var` tag can be used wherever the IDE is unable to resolve variable type.
+This tag declares variables that will emerge in next lines of code as follows:
 
 **Inline Type Hinting**
 
@@ -418,7 +537,8 @@ foreach ($errors as $error) {
 {% endhighlight %}
 
 
-Some IDEs understand a different notation, where type is specified after variable name. This notation is also valid:
+Some IDEs understand a different notation, where type is specified after variable name.
+This notation is also valid:
 
 **Inline Type Hinting Variation**
 
@@ -428,7 +548,8 @@ Some IDEs understand a different notation, where type is specified after variabl
 foreach ($errors as $error) {
 {% endhighlight %}
 
-<h3 id="see">@see tag</h3>
+### @see tag
+{:#see}
 
 Besides the normal way of using `@see` tag as [recommended by phpDocumentor](http://www.phpdoc.org/docs/latest/references/phpdoc/tags/see.html), it may be used as an addition to `@var`, when the `@var` is already used in this comment.
 
@@ -444,13 +565,16 @@ Specifically, this is possible when a PHP-file composed from multiple file inclu
 {% endhighlight %}
 
 
-<h3 id="other-tags">Other tags</h3>
+### Other tags
+{:#other-tags}
 
 Any other valid DocBlock tags may be specified, if author deems necessary, but only if they bring any valuable not obvious information.
 
-<h2 id="format-conventions">Formatting conventions</h2>
+## Formatting conventions
+{:#format-conventions}
 
-<h3 id="padding-tags">Padding tags</h3>
+### Padding tags
+{:#padding-tags}
 
 If there are two or more tags together in one DocBlock, their values may be padded, so that they could be visually aligned.
 
@@ -466,7 +590,8 @@ If there are two or more tags together in one DocBlock, their values may be padd
 {% endhighlight %}
 
 
-<h3 id="format-consistency">Formatting consistency</h3>
+### Formatting consistency
+{:#format-consistency}
 
 In a given DocBlock, style of formatting must be consistent.
 
