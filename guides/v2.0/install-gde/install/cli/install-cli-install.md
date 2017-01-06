@@ -214,7 +214,7 @@ The following table discusses the meanings of installation option names and valu
 		<td><p>--base-url-secure</p></td>
 		<td>Secure base URL to use to access your Magento Admin and storefront in the following format:
 		<code>http[s]://&lt;host or ip>/&lt;your Magento install dir>/</code>
-		<p>To have a fully secure site, you must enable <em>both</em> <code>--use-secure=1</code> and <code>--base-url-secure=1</code>.</p></td>
+		</td>
 		<td><p>No</p></td>
 	</tr>
 
