@@ -47,7 +47,8 @@ Isolation script is run in a web browser and must have corresponding permissions
 - Open `<magento root dir>/dev/tests/functional/config.xml`
 - In `<isolation>`, set `<testCase>after</testCase>`
 
-{% collapsible Show/hide example code %}
+Example:
+
 {%highlight xml%}
 <isolation>
     <resetUrlPath>dev/tests/functional/isolation.php</resetUrlPath>
@@ -56,14 +57,14 @@ Isolation script is run in a web browser and must have corresponding permissions
     <test>none</test>
 </isolation>
 {%endhighlight%}
-{% endcollapsible %}
 
 ### Step 2b: Set isolation script to be run before each test
 
 - Open `<magento root dir>/dev/tests/functional/config.xml`
 - In `<isolation>`, set `<test>after</test>`
 
-{% collapsible Show/hide example code %}
+Example:
+
 {%highlight xml%}
 <isolation>
     <resetUrlPath>dev/tests/functional/isolation.php</resetUrlPath>
@@ -72,14 +73,14 @@ Isolation script is run in a web browser and must have corresponding permissions
     <test>before</test>
 </isolation>
 {%endhighlight%}
-{% endcollapsible %}
 
 ### Step 2c: Set isolation script to be run before and after a test suite
 
 - Open `<magento root dir>/dev/tests/functional/config.xml`
 - In `<isolation>`, set `<testSuite>both</testSuite>`
 
-{% collapsible Show/hide example code %}
+Example:
+
 {%highlight xml%}
 <isolation>
     <resetUrlPath>dev/tests/functional/isolation.php</resetUrlPath>
@@ -88,7 +89,6 @@ Isolation script is run in a web browser and must have corresponding permissions
     <test>none</test>
 </isolation>
 {%endhighlight%}
-{% endcollapsible %}
 
 ## For selective use
 
@@ -99,8 +99,9 @@ Example test case: `\Magento\Checkout\Test\TestCase\OnePageCheckoutTest`.
 - Open `<magento root dir>/dev/tests/functional/tests/app/Magento/Checkout/Test/TestCase/OnePageCheckoutTest.php`
 - Add `* @isolation after` to the class annotation
 
-{% collapsible Show/hide example code %}
-{%highlight php startinline=1%}
+Example:
+
+{% highlight php startinline=1 %}
 /**
  * ...
  * @isolation after
@@ -108,7 +109,6 @@ Example test case: `\Magento\Checkout\Test\TestCase\OnePageCheckoutTest`.
 class OnePageCheckoutTest extends Scenario
 ...
 {%endhighlight%}
-{% endcollapsible %}
 
 ### Step 2b: Set isolation script to be run after each test of a test case
 
@@ -117,16 +117,16 @@ Example test case: `\Magento\Checkout\Test\TestCase\OnePageCheckoutTest`.
 - Open `<magento root dir>/dev/tests/functional/tests/app/Magento/Checkout/Test/TestCase/OnePageCheckoutTest.php`
 - Add `* @isolation test after` to the class annotation
 
-{% collapsible Show/hide example code %}
-{%highlight php startinline=1%}
+Example:
+
+{% highlight php startinline=1 %}
 /**
  * ...
  * @isolation test after
  */
 class OnePageCheckoutTest extends Scenario
 ...
-{%endhighlight%}
-{% endcollapsible %}
+{% endhighlight %}
 
 ### Step 2c: Set isolation script to be run before a test of test case
 
@@ -136,8 +136,9 @@ Example test: `test()`.
 - Open `<magento root dir>/dev/tests/functional/tests/app/Magento/Checkout/Test/TestCase/OnePageCheckoutTest.php`
 - Add `* @isolation before` to the `test()` method annotation
 
-{% collapsible Show/hide example code %}
-{%highlight php startinline=1%}
+Example:
+
+{% highlight php startinline=1 %}
 
     /**
      * ...
@@ -145,8 +146,7 @@ Example test: `test()`.
      */
     public function test()
     ...
-{%endhighlight%}
-{% endcollapsible %}
+{% endhighlight %}
 
 <!-- LINK DEFINITIONS -->
 
