@@ -110,7 +110,7 @@ To redirect traffic to a custom maintenance page:
 
 		set $maintenance off;
 
-		if (-f $MAGE_ROOT/maintenance.enable) {
+		if (-f $MAGE_ROOT/var/.maintenance.flag) {
 		set $maintenance on; 
 		}
 
