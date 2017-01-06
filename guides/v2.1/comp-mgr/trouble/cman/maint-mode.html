@@ -1107,7 +1107,7 @@ set $MAGE_ROOT /var/www/html/magento2;
 
 set $maintenance off;
 
-if (-f $MAGE_ROOT/maintenance.enable) {
+if (-f $MAGE_ROOT/var/.maintenance.flag) {
 set $maintenance on; 
 }
 
