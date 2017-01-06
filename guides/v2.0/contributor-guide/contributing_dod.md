@@ -15,7 +15,8 @@ redirect_from: /guides/v1.0/contributor-guide/contributing_dod.html
 
 The "Definition of Done" (DoD) is a collective term for a set of acceptance criteria that is applied to any changes in the product code base.
 The requirements that result from our DoD are applied by default to all user stories and to each task within this user story.
- Internally, the Magento development teams follow the DoD to ensure that all work meets consistent release criteria.
+
+Internally, the Magento development teams follow the DoD to ensure that all work meets consistent release criteria.
 We encourage our community contributors to also follow the Magento DoD.
 
 At a high level, the criteria defined in our "definition of done" revolve around the principle of writing clean code that is reviewed and includes unit tests and solid documentation along with the code.
@@ -28,7 +29,7 @@ The following sections provide additional details about each of these criteria:
 Existing product features and functionality must be retained during any changes to the code.
 If backward-incompatible functional changes are made, the documentation should explain the justification and provide the "business value".
 
-For more information, see [Magento's backward compatibility policy]({{page.baseurl}}architecture/back-compatibility.html)
+For more information, see [Magento's backward compatibility policy][1].
 
 ### Documentation
 
@@ -36,30 +37,21 @@ All changes, additions, and extensions to the product should be documented by th
 The documentation should provide an overview of the change, and information about standard use cases, audience, and procedural instructions for implementing the feature.
 
 Ideally, the information about the submitted code should be added to the official Magento DevDocs library.
-Contributors are asked to submit the doc as a Pull Request to the <a href="https://github.com/magento/devdocs" target="_blank">DevDocs Github repo</a>.
+Contributors are asked to submit the doc as a Pull Request to the [DevDocs Github repo][4].
 
 When submitting either code or documentation, a brief summary of the work should be included in the commit message.
 
-Additionally, the code itself should contain high-quality comments/descriptions for all classes and methods.
+Additionally, the code itself should follow our [DocBlock standard][0] and contain high-quality comments and descriptions for all classes and methods.
 
 Any backwards-incompatible changes must also be recorded in the accompanying documentation, using the following format:
 
-<table>
-<tr>
-<th><u>Change</u></th>
-<th><u>Was in Magento 1.x</u></th>
-<th><u>Became in Magento 2.x</u></th>
-</tr>
-<tr>
-<td>description</td>
-<td>example</td>
-<td>example</td>
-</tr>
-</table>
+| Change      | Was in Magento 1.x | Became in Magento 2.x |
+| ----------- | ------------------ | --------------------- |
+| description | example            | example               |
 
-<h3>Tests</h3>
+### Tests 
 
-<h4>Automated Tests</h4>
+#### Automated Tests
 
 Code changes must be covered by automated tests according to Classification of Magento Automated Tests.
 
@@ -69,6 +61,8 @@ Continuous integration enforces execution of all tests and author is accountable
 #### Functional Tests
 Must cover new or changed application behavior (functional).
 Added/updated functionality should be covered by a functional autotest(s) related to previous sprint commitment in scope of current sprint.
+
+See [Functional Tests][2].
 
 #### Unit Tests
 
@@ -93,6 +87,8 @@ Code to cover:
 
 	*	If it is impossible to cover due to high code coupling
 	*	If code had only minor modification and in order to cover it with unit test it would require refactoring of code, not related to the original modification
+
+See: [Running Integration Tests][3].
 
 #### Integrity Tests
 
@@ -147,3 +143,10 @@ The reviewer should check whether the task meets the original acceptance criteri
 * Determine if code changes caused any failure in continuous integration builds.
 
 The work cannot be considered as complete unless all the criteria are verified.
+
+
+[0]:{{page.baseurl}}coding-standards/docblock-standard-general.html
+[1]:{{page.baseurl}}architecture/back-compatibility.html
+[2]:{{page.baseurl}}test/testing.html
+[3]:{{page.baseurl}}test/integration/integration_test_execution.html
+[4]:https://github.com/magento/devdocs
