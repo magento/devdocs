@@ -11,12 +11,6 @@ github_link: config-guide/cli/config-cli-subcommands-static-view.md
 redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-static-view.html
 ---
 
-
-#### Contents
-{:.no_toc}
-
-
-
 ## Overview of static view files deployment {#config-cli-static-overview}
 The static view files deployment command enables you to write static files to the Magento file system when the Magento software is set for <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>.
 
@@ -34,14 +28,26 @@ Static view files deployment is affected by Magento modes as follows:
 
 	You must write static view files to the Magento file system manually using the command discussed in this topic; after that, you can restrict permissions to limit your vulnerabilities and to prevent accidental or malicious overwriting of files.
 
-<div class="bs-callout bs-callout-warning">
-  <p><em>Developer mode only</em>: When you install or enable a new module, it might load new JavaScript, CSS, layouts, and so on. To avoid issues with static files, you must clean the old files to make sure you get all the changes for the new module.</p>
-  <p>You can clean generated static view files in any of the following ways:</p>
-  <ul><li>Manually by clearing the <code>pub/static</code> and <code>var/view_preprocessed</code> directories and subdirectories. <em>except</em> for <code>pub/static/.htaccess</code>.<br><br>
-  	To clear the <code>pub/static</code> directory of all files except <code>.htaccess</code> (which is a hidden file), enter the following command:<br>
-  	<code>rm -R pub/static/*</code></li>
-  <li>Using the Magento command line. Several commands support an optional parameter <code>--clear-static-content</code>, which cleans <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview">generated static view files</a>. For example, see <a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands-enable.html">Enable or disable modules</a>.</li>
-<li>In the Magento Admin. Go to <strong>System</strong> > Tools > <strong>Cache Management</strong> and click <strong>Flush Static Files Cache</strong>.</li></ul>
+<div class="bs-callout bs-callout-warning" markdown="1">
+_Developer mode only_: When you install or enable a new module, it might load new JavaScript, CSS, layouts, and so on. To avoid issues with static files, you must clean the old files to make sure you get all the changes for the new module.
+
+You can clean generated static view files in any of the following ways:
+
+*   Manually by clearing the `pub/static` and `var/view_preprocessed` directories and subdirectories _except_ for `pub/static/.htaccess`.
+
+    To clear the `pub/static` directory of all files except `.htaccess` (which is a hidden file), enter the following command:
+
+        rm -R pub/static/*
+        
+*   Using the Magento command line. Several commands support an optional parameter `--clear-static-content`, which cleans generated static view files. 
+
+    These commands include:
+
+    *   [`magento module:enable` and `magento module:disable`]({{ page.baseurl }}install-gde/install/cli/install-cli-subcommands-enable.html)
+    *   [`magento theme:uninstall`]({{ page.baseurl }}install-gde/install/cli/install-cli-theme-uninstall.html)
+    *   [`magento module:uninstall`]({{ page.baseurl }}install-gde/install/cli/install-cli-uninstall-mods.html)
+
+*   In the Magento Admin. Go to **System** > Tools > **Cache Management** and click **Flush Static Files Cache**.
 </div>
 
 ## First steps {#config-cli-before}
@@ -205,6 +211,18 @@ The `config.local.php` file contains the following sections:
 <span class="glyphicon-class">
 <p>While the exported configuration files reside in the <code>app/etc</code> directory, you cannot change the value of the corresponding configuration fields under <b>Store</b> -> <b>Configuration</b> in the Admin Panel. The fields are displayed, but disabled. You need to remove the configuration files from <code>app/etc</code> to make the settings available.</p></span>
 </div> 
+
+### Environment variables filling
+
+To fill environment variables, having `config.local.php` file enter next command:
+
+    magento config:sensitive:set -i
+
+It will iteratively ask to fill each sensitive variable.
+
+To fill specific sensitive variable enter command:
+
+    magento config:sensitive:set {path to config value i.e. default/carriers/fedex/account} {value}
 
 ### Examples
 Following are some example commands.

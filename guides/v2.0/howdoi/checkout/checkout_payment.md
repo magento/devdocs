@@ -273,7 +273,8 @@ In your custom module directory, create a new `<your_module_dir>/view/frontend/l
 
                                                                         <!-- Add this if your payment method requires entering a billing address-->
                                                                         <item name="%payment_method_code%" xsi:type="array">
-                                                                        <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+                                                                            <item name="isBillingAddressRequired" xsi:type="boolean">true</item>
+																		</item>
                                                                     </item>
                                                                 </item>
                                                             </item>

@@ -8,7 +8,7 @@ menu_node:
 menu_order: 2
 version: 2.1
 github_link: install-gde/system-requirements-tech.md
-redirect_from: /guides/v2.1/install-gde/system-requirements-2-1.tech.html
+redirect_from: /guides/v2.1/install-gde/system-requirements-2.1-tech.html
 ---
 
 ### Operating systems (Linux x86-64)
