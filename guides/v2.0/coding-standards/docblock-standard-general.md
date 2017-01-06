@@ -69,11 +69,13 @@ Below are ways of improving code to help simplify documentation:
   } 
   {% endhighlight %}
 
-### Include necessary details
+### Include all the necessary details
 
-Identify the details a developer needs to work with your code.
-Ignore the implementation details (i.e. private methods/properties and method bodies) and focus on what the public interface signature provides.
-Add any remaining information that a developer may need to the DocBlock.
+1. Identify the details a developer needs to work with your code.
+2. Ignore the implementation details (i.e. private methods/properties and method bodies) and focus on what the public interface signature provides.
+   
+   If possible, improve the interface to provide more information.
+3. Add any remaining information that a developer may need to the DocBlock.
 
 ## Files
 {:#files}
@@ -209,6 +211,8 @@ Classes and interfaces must have a short description that is a human-understanda
 
 > ErrorHandler -> ErrorHandler
 
+If possible, add use cases where developers can or cannot use the class.
+
 ### Short name form
 {:#short-name-form}
 
@@ -337,13 +341,12 @@ protected function merge($configFiles)
 {% endhighlight %}
 
 
-<h4 id="throws">Divergence in @throws tag</h4>
+#### Divergence in @throws tag
+{:#throws}
 
-A general case when `@throws` tag must be used is if *throw* language construct is used – for example:
+In general, use the `@throws` tag when the code uses *throw*:
 
-**Example of Throwing Exception Explicitly**
-
-
+**Example of Throwing Exception Explicitly**  
 {% highlight php startinline=true %}
 /**
  * Set an arbitrary value to specified element
@@ -517,6 +520,7 @@ If applicable, also specify what has replaced the deprecated element.
 
 To maintain backward compatibility, an element should be removed only on major revisions.
 
+Use the `@see` tag to refer to the new implementation when code is deprecated.
 
 ### @var inline tag
 {:#var}
