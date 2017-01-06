@@ -44,9 +44,7 @@ By default, [isolation configuration] points to `dev/tests/functional/isolation.
 ## Step 2(a): Globaly set isolation script to be run after each test case
 
 - Open `<magento root dir>/dev/tests/functional/config.xml`.
-- In `<isolation>`, set `<testCase>after</testCase>`.
-
-Example:
+- In `<isolation>`, set `<testCase>after</testCase>`, for example:
 
 {%highlight xml%}
 <isolation>
@@ -60,9 +58,7 @@ Example:
 ## Step 2(b): Globaly set isolation script to be run before each test
 
 - Open `<magento root dir>/dev/tests/functional/config.xml`.
-- In `<isolation>`, set `<test>before</test>`.
-
-Example:
+- In `<isolation>`, set `<test>before</test>`, for example:
 
 {%highlight xml%}
 <isolation>
@@ -76,9 +72,7 @@ Example:
 ## Step 2(c): Globaly set isolation script to be run before and after a test suite
 
 - Open `<magento root dir>/dev/tests/functional/config.xml`.
-- In `<isolation>`, set `<testSuite>both</testSuite>`.
-
-Example:
+- In `<isolation>`, set `<testSuite>both</testSuite>`, for example:
 
 {%highlight xml%}
 <isolation>
@@ -94,9 +88,7 @@ Example:
 Example test case: `\Magento\Checkout\Test\TestCase\OnePageCheckoutTest`.
 
 - Open `<magento root dir>/dev/tests/functional/tests/app/Magento/Checkout/Test/TestCase/OnePageCheckoutTest.php`.
-- Add `* @isolation after` to a class annotation.
-
-Example:
+- Add `* @isolation after` to the class annotation, for example:
 
 {% highlight php startinline=1 %}
 /**
@@ -112,9 +104,7 @@ class OnePageCheckoutTest extends Scenario
 Example test case: `\Magento\Checkout\Test\TestCase\OnePageCheckoutTest`.
 
 - Open `<magento root dir>/dev/tests/functional/tests/app/Magento/Checkout/Test/TestCase/OnePageCheckoutTest.php`.
-- Add `* @isolation test after` to a class annotation.
-
-Example:
+- Add `* @isolation test after` to the class annotation, for example:
 
 {% highlight php startinline=1 %}
 /**
@@ -131,9 +121,7 @@ Example test case: `\Magento\Checkout\Test\TestCase\OnePageCheckoutTest`.
 Example test: `test()`.
 
 - Open `<magento root dir>/dev/tests/functional/tests/app/Magento/Checkout/Test/TestCase/OnePageCheckoutTest.php`
-- Add `* @isolation before` to the `test()` method annotation
-
-Example:
+- Add `* @isolation before` to the `test()` method annotation, for example:
 
 {% highlight php startinline=1 %}
 
@@ -148,12 +136,10 @@ Example:
 ## Step 2(g): Localy set isolation script to be run before a test case and after a test
 
 Example test case: `\Magento\Checkout\Test\TestCase\OnePageCheckoutTest`.
+Example test: `test()`.
 
 - Open `<magento root dir>/dev/tests/functional/tests/app/Magento/Checkout/Test/TestCase/OnePageCheckoutTest.php`.
-- Add `* @isolation before` to a class annotation.
-- Add `* @isolation after` to the `test()` method annotation.
-
-Example:
+- Add `* @isolation before` to the class annotation and `* @isolation after` to the `test()` method annotation, for example:
 
 {% highlight php startinline=1 %}
 /**
@@ -176,7 +162,7 @@ class OnePageCheckoutTest extends Scenario
 Example test case: `\Magento\Checkout\Test\TestCase\OnePageCheckoutTest`.
 
 - Open `<magento root dir>/dev/tests/functional/tests/app/Magento/Checkout/Test/TestCase/OnePageCheckoutTest.php`.
-- Add `* @isolation none` to a class annotation.
+- Add `* @isolation none` to the class annotation.
 
 Example:
 
