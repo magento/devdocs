@@ -12,7 +12,7 @@ github_link: ui_comp_guide/components/ui-form.md
 ## Overview
 Form component allows performing [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) operations on an entity. 
 
-The following is the Form component constructor: `[form.js]({{site.mage2100url}}app/code/Magento/Ui/view/base/web/js/form/form.js)`
+The following is the Form component constructor: [form.js]({{site.mage2100url}}app/code/Magento/Ui/view/base/web/js/form/form.js)
 
 ### Related UI components
 
