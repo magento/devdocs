@@ -10,8 +10,13 @@ github_link: payments-integrations/vault/admin-integration.md
 ---
 
 ## Token component provider
-To be able to use vault in Admin order creation, create a token component provider. It must implement the 
-[`TokenUiComponentProviderInterface`]({{site.mage2100url}}app/code/Magento/Vault/Model/Ui/TokenUiComponentProviderInterface.php) interface and contain validation and order placement logic.
+To be able to use vault in Admin order creation, you need to take the following steps:
+
+1. [Similar to the store front vault implementation]({{page.baseurl}}payments-integrations/vault/token-ui-component-provider.html#token_provider), create a token component provider and specify it in the `di.xml`. The component provider must implement the [`TokenUiComponentProviderInterface`]({{site.mage2100url}}app/code/Magento/Vault/Model/Ui/TokenUiComponentProviderInterface.php) interface.
+2. Create a custom vault JS component and specify in the component provider. There is no default component implementation for the Admin, so your component must implement all logic for validation and order placing.  
+3. Create a template 
+
+
 
 In the most cases, it is enough to implement getting payment code and setting public hash. This implementation might look like following:
 

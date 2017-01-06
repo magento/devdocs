@@ -111,9 +111,11 @@ define([
 
 ## Add request data builder
 
-Now when we have information about enabling or disabling vault, the payment must send these details to the payment processor. This is done in the [request builder]({{page.baseurl}}payments-integrations/payment-gateway/request-builder.html). 
+Now when we have information about enabling or disabling vault, the payment must send it to the payment processor. This is done in the [request builder]({{page.baseurl}}payments-integrations/payment-gateway/request-builder.html). 
 
-In the Braintree vault implementation in the request builder, to pass the data, we set `storeInVaultOnSuccess` in transaction request:
+You can create a new request builder, or update the existing request builder of the payment method.
+
+In the Braintree request builder, to pass the data, we set `storeInVaultOnSuccess` in transaction request:
 
 {% highlight php startinline=1 %}
 class VaultDataBuilder implements BuilderInterface

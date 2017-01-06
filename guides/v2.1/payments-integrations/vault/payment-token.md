@@ -15,7 +15,7 @@ This information is stored in Payment Token.
 
 The basic interface for Payment Token is [PaymentTokenInterface]({{site.mage2100url}}/app/code/Magento/Vault/Api/Data/PaymentTokenInterface.php).
 
-To retrieve and store token details, you need to implement a [response handler]({{page.baseurl}}payments-integrations/payment-gateway/response-handler.html) in your payment integration, create a Payment Token entity, and store it in the payment extension attributes.
+To retrieve and store token details, you need to implement a [response handler]({{page.baseurl}}payments-integrations/payment-gateway/response-handler.html). In the response handler a Payment Token entity is created and stored in the payment extension attributes.
 
 Following sample is an example of the response handler implementation:
 

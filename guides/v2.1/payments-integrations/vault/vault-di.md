@@ -135,5 +135,4 @@ There are two ways to add command manager to the pool:
 </virtualType>
 {% endhighlight %}
 
-In the first case, payment provider will be available for all configured vault payments.  In the second case, only for vault payment related to their payment provider.
-
+In the first case, this pool can be used in any module to perform vault payment commands. In the second case, only specific vault payment integration can use this pool. 
