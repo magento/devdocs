@@ -42,7 +42,7 @@ Magento Enterprise Cloud Edition's built-in build and deploy process is all you 
 
 For details, see TBD.
 
-## Manage your configuration and protect sensitive data
+## Manage your configuration and protect sensitive data {#cloud-config-manage-sens-over}
 Magento's store configuration is usually located in the database, and some values are stored in `app/etc/config.php`. This can make the configuration of multiple systems (such as staging and prodution) difficult and it also potentially exposes sensitive values.
 
 Starting with version 2.1.4, we provide the following options:
@@ -58,8 +58,41 @@ Starting with version 2.1.4, we provide the following options:
 
 The following sections provide more detail.
 
-### Manage system-specific settings
-TBD
+### Manage system-specific settings {#cloud-config-specific-over}
+System-specific settings refer to the configuration in the Magento Admin in **Stores** > Settings > **Configuration**. A list of settings can be found in [List of system-specific configuration settings](#cloud-config-specific-list).
+
+#### Recommended procedure
+
+We recommend you use the following high-level roadmap to manage these settings:
+
+1.	Configure stores and settings in the `master` branch of your local system.
+2.	Push those settings to your integration server's `master` branch.
+3.	Generate `config.local.php` on your integration server.
+4.	Transfer `config.local.php` to your local system so the two systems remain in synchronization with each other.
+5.	Add `config.local.php` to Git (again, in the `master` branch).
+6.	Push `config.local.php` to your integration server.
+7.	Magento assists you in pushing the configuration to your staging or production servers.
+
+Anytime you need to change a configuration setting, repeat the procedure.
+
+All settings in `config.local.php` are unavailable in the Magento Admin; that is, you cannot change them in the Admin.
+
+<div class="bs-callout bs-callout-warning" markdown="1">
+We assume system-specific settings are the same in staging and production. Only sensitive configuration values should change in those systems and you manage them using environment variables.
+
+To use different system-specific settings in staging and production, you can manually edit `config.local.php` but that is beyond the scope of this guide.
+</div>
+
+#### How configuration settings work
+The following diagram shows how we determine values for configuration settings.
+
+![How configuration variable values are determined]({{ site.baseurl }}common/images/cloud_vars_flow-diagram.png)
+
+@@@@
+
+
+#### List of system-specific configuration settings {#cloud-config-specific-list}
+TBD: We don't currently have a reference list of configuration settings
 
 ### Manage sensitive settings
 The Web Interface enables you to specify values of sensitive configuration settings for staging and production systems.
