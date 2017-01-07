@@ -2,8 +2,8 @@
 layout: default
 group: cloud
 subgroup: 40_live
-title: Overview of protecting sensitive data 
-menu_title: Overview of protecting sensitive data  
+title: Overview of deployment performance and sensitive data 
+menu_title: Overview of deployment performance and sensitive data  
 menu_order: 11
 menu_node: 
 level3_menu_node: level3child
@@ -12,64 +12,35 @@ version: 2.1
 github_link: cloud/live/sens-data-over.md
 ---
 
-## Notes -- ignore
+## Deployment and security in a nutshell
+In version 2.1.4, the Magento Enterprise Cloud Edition enables you to dramatically reduce deployment time to a staging or production system and to securely manage sensitive data (such as payment gateway passwords).
 
-Overview:
+Together, these changes make your system faster _and_ more secure.
 
-Option 1: only improve SCD time, SCDdump
+### Performance improvements
+We achieve performance improvements by moving static view file generation from the Magento Cloud Enterprise Edition deployment phase to the _build_ phase. The build phase doesn't affect downtime; the time required to create CSS files, images, and so on, happens before the site deploys.
 
-To change a config setting from stage > prod, have to modify DB or use Admin to modify settings
+Deploying static content in the build phase is dramatically faster because the build phase doesn't result in any downtime in your staging or production system.
 
-CLP doesn't have a lot of settings
+### Protect sensitive data
+Storing data like your payment processor password in `config.php` on the file system isn't secure. Even if it's in source control, there's a risk sensitive data can be exposed to the world.
 
-If you add store/language, have to SSH to paas and rename/delete config.local.php, do stuff in Admin, then rinse/repeat
+We help you protect sensitive data _and_ make it easy to manage environment-specific data as follows:
 
-Option 2 (post 2.1.4): app:config:dump puts all non-sensitive configs in CLP
+*	In your staging and production environments, you manage sensitive data using environment variables. 
 
-can change settings in stage > prod using vars using as-yet-non-existent GUI tool (won't be ready for 2.1.4)
+	These sensitive values are not stored in `config.php`, anywhere in source control, or in the database. 
 
+*	Environment-specific values like whether or not minification is enabled are stored in a new configuration file, `app/etc/config.local.php`, which is managed in source control.
 
+	Managing `config.local.php` in source control means your settings for staging and production are always consistent. For example, you can enable minification in your integration environment but disable it in both staging and production.
 
-i am running the app:config:dump within the SCDdump command and it can be skipped if you use `keep-config` option (edited)
+	In addition, you can optionally manage `config.local.php` usign scripting or automatition tools. Discussion of those tools is beyond the scope of this guide.
 
-if you want to use an existing config.local.php instead of regenerating latest from db
+## Improve performance
+Magento Enterprise Cloud Edition's built-in build and deploy process is all you need to improve deployment performance. You don't need to do anything else.
 
-https://magento2.atlassian.net/wiki/pages/viewpage.action?pageId=85000251
+For details about how it works, see TBD.
 
-    First push to PAAS Master
-    In PAAS Master Create store views/ stores/ websites in admin, set minification settings, js bundling setting etc. ( **TODO** a complete list of items that affect SCD)
-    **OPTIONAL** Back up the local (if user has one already, since these steps will overwrite it.) mv app/etc/config.local.php app/etc/config.local.php.bak
-
-    Get env SSH URL: magento-cloud environment:ssh --pipe -e <env ID>
-
-    Dump config to file: ssh -k itnv3ja4m4duw-prod1-ouhx5wq@ssh.us.magentosite.cloud "php bin/magento app:config:dump" TODO "php bin/magento magento-cloud:SCDdump"
-
-    In local _project root_ dir: rsync -avz -e "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" --progress itnv3ja4m4duw-prod1-ouhx5wq@ssh.us.magentosite.cloud:/app/app/etc/config.local.php ./app/etc
-
-    git add app/etc/config.local.php
-
-    git commit -a -m "SCD in build" && git push
-
-
-
-
-
-
-
-
-
-
-
-Generate/compile on separate host with no DB (don't need this for Cloud)
-
-Install magento-cloud CLI
-
-Git global variables
-
-On host without DB, clone Cloud project and switch to branch
-
-
-magento-cloud project:list
-
-magento-cloud project:get <project ID>
-
+## Manage your configuration and protect sensitive data
+TBD

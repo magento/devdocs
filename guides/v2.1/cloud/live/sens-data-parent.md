@@ -2,8 +2,8 @@
 layout: default
 group: cloud
 subgroup: 40_live
-title: Protect sensitive data 
-menu_title: Protect sensitive data 
+title: Improve deployment performance and protect sensitive data
+menu_title: Improve deployment performance and protect sensitive data
 menu_order: 10
 menu_node: 
 level3_menu_node: level3parent
