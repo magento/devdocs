@@ -35,7 +35,7 @@ We help you protect sensitive data _and_ make it easy to manage system-specific 
 
 	Managing `config.local.php` in source control means your settings for staging and production are always consistent. For example, you can enable minification in your [integration]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-int) system but disable it in both staging and production. After initially setting up the configuration, you don't need to touch it again because it's in source control.
 
-	In addition, you can optionally manage `config.local.php` usign scripting or automatition tools. However, discussion of those tools is beyond the scope of this guide.
+	In addition, you can optionally manage `config.local.php` using scripting or automation tools. However, discussion of those tools is beyond the scope of this guide.
 
 ## Deployment downtime
 Changes we made to Magento Enterprise Cloud Edition's built-in build and deploy process improve deployment performance. You don't need to do anything to realize these performance gains.
@@ -43,7 +43,7 @@ Changes we made to Magento Enterprise Cloud Edition's built-in build and deploy 
 For details, see TBD.
 
 ## Manage your configuration and protect sensitive data {#cloud-config-manage-sens-over}
-Magento's store configuration is usually located in the database, and some values are stored in `app/etc/config.php`. This can make the configuration of multiple systems (such as staging and prodution) difficult and it also potentially exposes sensitive values to malicious exploits.
+Magento's store configuration is usually located in the database, and some values are stored in `app/etc/config.php`. This can make the configuration of multiple systems (such as staging and production) difficult and it also potentially exposes sensitive values to malicious exploits.
 
 Starting with version 2.1.4, we provide the following:
 
