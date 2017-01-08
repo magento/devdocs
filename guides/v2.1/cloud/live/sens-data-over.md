@@ -17,7 +17,7 @@ In version 2.1.4, Magento Enterprise Cloud Edition decreased deployment downtime
 
 *	Dramatically reduced downtime during deployment to a staging or production system.
 *	New method to manage sensitive data (such as payment gateway passwords) without storing them on the file system, database, or source control.
-*	Improved method to manage system-specific configuration data (such as store locale settings and minification settings) in a new configuration file, `app/etc/config.local.php`, which is in source control.
+*	Improved method to manage system-specific configuration data (such as store locale settings and file optmization settings) in a new configuration file, `app/etc/config.local.php`, which is in source control.
 
 ### Performance improvements
 We achieve performance improvements by moving static view file generation from the deployment phase to the _build_ phase. The build phase doesn't affect your site's downtime; the time required to create CSS files, images, and so on, happens before the site deploys.
@@ -29,9 +29,11 @@ Storing data such as your payment processor password in `config.php` on the file
 
 	These sensitive values are not stored in `config.php`, anywhere in source control, or in the database. Only people with access to your Magento Enterprise Cloud Edition project can view the variables.
 
-*	System-specific values such as whether or not minification is enabled are stored in a new configuration file, `app/etc/config.local.php`, which is managed in source control.
+*	System-specific values such as whether or not file optimization is enabled are stored in a new configuration file, `app/etc/config.local.php`, which is managed in source control.
 
-	Managing `config.local.php` in source control means your settings for staging and production are always consistent. For example, you can enable minification in your [integration]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-int) system but disable it in both staging and production. After initially setting up the configuration, you don't need to touch it again because it's in source control.
+	Managing `config.local.php` in source control means your settings for staging and production are always consistent. For example, you can enable file optimization in your [integration]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-int) system but disable it in both staging and production. After initially setting up the configuration, you don't need to touch it again because it's in source control.
+
+	(_File optimization_ means merging and minifying JavaScript and Cascading Style Sheets, and minifying HTML templates.)
 
 	In addition, you can optionally manage `config.local.php` using scripting or automation tools. However, discussion of those tools is beyond the scope of this guide.
 
@@ -47,7 +49,7 @@ Starting with version 2.1.4, we provide the following:
 
 *	System-specific store configuration values are specified in a new configuration file, `app/etc/config.local.php`, which is in source control.
 
-	Using `config.local.php`, you can, for example, enable minification in your integration system (where you are developing and testing) and disable minification in staging and production. Enabling minification has an adverse affect on performance so you should disable it in staging and production.
+	Using `config.local.php`, you can, for example, enable file optimization in your integration system (where you are developing and testing) and disable file optimization in staging and production. Enabling file optimization has an adverse affect on performance so you should disable it in staging and production.
 
 	Settings in `config.local.php` cannot be changed in the Magento Admin. The next section provides an overview of how to change these settings.
 
@@ -59,7 +61,7 @@ The following sections provide more detail.
 ### Manage system-specific settings {#cloud-config-specific-over}
 System-specific settings refer to the configuration in the Magento Admin in **Stores** > Settings > **Configuration**. A list of settings can be found in [List of system-specific configuration settings](#cloud-config-specific-list).
 
-#### Recommended procedure
+#### Recommended procedure {#cloud-config-specific-recomm}
 We recommend you use the following high-level roadmap to manage these settings:
 
 ![Overview of Cloud configuration management]({{ site.baseurl }}common/images/cloud_vars_simple.png){:width="500px"}
