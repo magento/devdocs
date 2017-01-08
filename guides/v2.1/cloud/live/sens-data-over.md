@@ -67,15 +67,24 @@ System-specific settings refer to the configuration in the Magento Admin in **St
 
 We recommend you use the following high-level roadmap to manage these settings:
 
-1.	Configure stores and settings in the `master` branch of your local system.
-2.	Push those settings to your integration server's `master` branch.
-3.	Generate `config.local.php` on your integration server.
-4.	Transfer `config.local.php` to your local system so the two systems remain in synchronization with each other.
-5.	Add `config.local.php` to Git (again, in the `master` branch).
-6.	Push `config.local.php` to your integration server.
-7.	Magento assists you in pushing the configuration to your staging or production servers.
+1.	Push `config.local.php` to your integration server's `master` branch.
 
-Anytime you need to change a configuration setting, repeat the procedure.
+	0.	Configure stores and settings in the `master` branch of your local system.
+	1.	Push those settings to your integration server's `master` branch.
+	2.	Generate `config.local.php` on your integration server.
+	3.	Transfer `config.local.php` to your local system so the two systems remain in synchronization with each other.
+	4.	Add `config.local.php` to Git (again, in the `master` branch).
+	5.	Push `config.local.php` to your integration server.
+
+2.	Magento Enterprise Cloud Edition automatically deploys the settings to your integration server.
+
+	To change settings:
+
+	1.	Make a configuration change in the Admin.
+	2.	Delete `config.local.php` on your integration server.
+	3.	Repeat the preceding procedure.
+
+After you've configured the integration server, Magento assists you in pushing the configuration to your staging or production servers.
 
 All settings in `config.local.php` are unavailable in the Magento Admin; that is, you cannot change them in the Admin.
 
