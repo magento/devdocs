@@ -73,7 +73,7 @@ To create `config.local.php` on the integration server:
 
 {% endcollapsibleh2 %}
 
-{% collpasibleh2 Push config.local.php to the integration server %}
+{% collapsibleh2 Push config.local.php to the integration server %}
 Now that you've created `config.local.php` and transferred it to your local system, commit it to Git and push it to your integration server as follows:
 
 	git add app/etc/config.local.php && git commit -m "Add system-specific configuration" && git push origin master
