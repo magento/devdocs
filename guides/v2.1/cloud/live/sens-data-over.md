@@ -73,19 +73,19 @@ First, configure stores and settings in the `master` branch of your local system
 
 Then:
 
-<ol type="a"><li>Push those settings to your integration server's `master` branch.</li>
-	<li>Generate `config.local.php` on your integration server.</li>
-<li>Transfer `config.local.php` to your local system so the two systems remain in synchronization with each other.</li>
-<li>Add `config.local.php` to Git (again, in the `master` branch).</li>
-<li>Push `config.local.php` to your integration server.</li></ol>
+<ol type="a"><li>Push those settings to your integration server's <code>master</code> branch.</li>
+	<li>Generate <code>config.local.php</code> on your integration server.</li>
+<li>Transfer <code>config.local.php</code> to your local system so the two systems remain in synchronization with each other.</li>
+<li>Add <code>config.local.php</code> to Git (again, in the <code>master</code> branch).</li>
+<li>Push <code>config.local.php</code> to your integration server.</li></ol>
 
 **Step 2**. Magento Enterprise Cloud Edition automatically deploys the settings to your integration server.
 
 **Step 3**. To change settings:
 
-a.	Make a configuration change in the Admin on the integration server.
-b.	Delete `config.local.php` on your integration server.
-c.	Repeat Step 1.
+<ol type="a"><li>Make a configuration change in the Admin on the integration server.</li>
+<li>Delete <code>config.local.php</code> on your integration server.</li>
+<li>Repeat Step 1.</code></li></ol>
 
 After you've configured the integration server, Magento assists you in pushing the configuration to your staging or production servers.
 
@@ -102,8 +102,15 @@ The following diagram shows how we determine values for configuration settings.
 
 ![How configuration variable values are determined]({{ site.baseurl }}common/images/cloud_vars_flow-diagram.png){:width="550px"}
 
-As the diagram shows, 
+As the diagram shows, we get configuration values as follows:
 
+1.	From an environment variable.
+2.	From `config.local.php`.
+3.	From the database.
+
+If no value exists in any of those sources, we use either the default value or NULL.
+
+For an example of how this works, see TBD.
 
 #### List of system-specific configuration settings {#cloud-config-specific-list}
 TBD: We don't currently have a reference list of configuration settings
