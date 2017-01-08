@@ -63,26 +63,29 @@ System-specific settings refer to the configuration in the Magento Admin in **St
 
 #### Recommended procedure
 
-![]({{ site.baseurl }}common/images/cloud_vars_simple.png)
+![]({{ site.baseurl }}common/images/cloud_vars_simple.png){:width="500px"}
 
 We recommend you use the following high-level roadmap to manage these settings:
 
-1.	Push `config.local.php` to your integration server's `master` branch.
+Step 1. Push `config.local.php` to your integration server's `master` branch.
 
-	0.	Configure stores and settings in the `master` branch of your local system.
-	1.	Push those settings to your integration server's `master` branch.
-	2.	Generate `config.local.php` on your integration server.
-	3.	Transfer `config.local.php` to your local system so the two systems remain in synchronization with each other.
-	4.	Add `config.local.php` to Git (again, in the `master` branch).
-	5.	Push `config.local.php` to your integration server.
+First, configure stores and settings in the `master` branch of your local system.
 
-2.	Magento Enterprise Cloud Edition automatically deploys the settings to your integration server.
+Then:
 
-	To change settings:
+a.	Push those settings to your integration server's `master` branch.
+b.	Generate `config.local.php` on your integration server.
+c.	Transfer `config.local.php` to your local system so the two systems remain in synchronization with each other.
+d.	Add `config.local.php` to Git (again, in the `master` branch).
+e.	Push `config.local.php` to your integration server.
 
-	1.	Make a configuration change in the Admin.
-	2.	Delete `config.local.php` on your integration server.
-	3.	Repeat the preceding procedure.
+Step 2. Magento Enterprise Cloud Edition automatically deploys the settings to your integration server.
+
+Step 3. To change settings:
+
+a.	Make a configuration change in the Admin.
+b.	Delete `config.local.php` on your integration server.
+c.	Repeat Step 1.
 
 After you've configured the integration server, Magento assists you in pushing the configuration to your staging or production servers.
 
@@ -97,7 +100,7 @@ To use different system-specific settings in staging and production, you can man
 #### How configuration settings work
 The following diagram shows how we determine values for configuration settings.
 
-![How configuration variable values are determined]({{ site.baseurl }}common/images/cloud_vars_flow-diagram.png){:width="500px"}
+![How configuration variable values are determined]({{ site.baseurl }}common/images/cloud_vars_flow-diagram.png){:width="550px"}
 
 As the diagram shows, 
 
