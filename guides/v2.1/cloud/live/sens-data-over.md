@@ -2,8 +2,8 @@
 layout: default
 group: cloud
 subgroup: 40_live
-title: Overview of deployment performance and sensitive data 
-menu_title: Overview of deployment performance and sensitive data  
+title: Overview of deployment performance and configuration management 
+menu_title: Overview of deployment performance and configuration management  
 menu_order: 11
 menu_node: 
 level3_menu_node: level3child
@@ -12,12 +12,12 @@ version: 2.1
 github_link: cloud/live/sens-data-over.md
 ---
 
-## Deployment and security in a nutshell
+## Deployment and configuration in a nutshell
 In version 2.1.4, Magento Enterprise Cloud Edition decreased deployment downtime and improved how you manage your configuration:
 
 *	Dramatically reduced downtime during deployment to a staging or production system.
-*	Manage sensitive data (such as payment gateway passwords) without storing them on the file system, database, or source control.
-*	Store environment-specific configuration data (such as store locale settings and minification settings) in a new configuration file, `app/etc/config.local.php`, which is managed in source control.
+*	New method to manage sensitive data (such as payment gateway passwords) without storing them on the file system, database, or source control.
+*	Improved method to manage system-specific configuration data (such as store locale settings and minification settings) in a new configuration file, `app/etc/config.local.php`, which is in source control.
 
 ### Performance improvements
 We achieve performance improvements by moving static view file generation from the deployment phase to the _build_ phase. The build phase doesn't affect your site's downtime; the time required to create CSS files, images, and so on, happens before the site deploys.
@@ -25,27 +25,27 @@ We achieve performance improvements by moving static view file generation from t
 ### Configuration improvements
 Storing data such as your payment processor password in `config.php` on the file system and in the database isn't secure. Even if `config.php` is in source control, there's a risk sensitive data can be exposed to the world.
 
-We help you protect sensitive data _and_ make it easy to manage environment-specific data as follows:
+We help you protect sensitive data _and_ make it easy to manage system-specific data as follows:
 
 *	In your [staging]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-stage) and [production]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-prod) systems, you manage sensitive data using environment variables. 
 
-	These sensitive values are not stored in `config.php`, anywhere in source control, or in the database. 
+	These sensitive values are not stored in `config.php`, anywhere in source control, or in the database. Only people with access to your Magento Enterprise Cloud Edition project can view the variables.
 
-*	Environment-specific values like whether or not minification is enabled are stored in a new configuration file, `app/etc/config.local.php`, which is managed in source control.
+*	System-specific values such as whether or not minification is enabled are stored in a new configuration file, `app/etc/config.local.php`, which is managed in source control.
 
 	Managing `config.local.php` in source control means your settings for staging and production are always consistent. For example, you can enable minification in your [integration]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-int) system but disable it in both staging and production. After initially setting up the configuration, you don't need to touch it again because it's in source control.
 
 	In addition, you can optionally manage `config.local.php` usign scripting or automatition tools. However, discussion of those tools is beyond the scope of this guide.
 
 ## Deployment downtime
-Magento Enterprise Cloud Edition's built-in build and deploy process is all you need to improve deployment performance. You don't need to do anything else.
+Changes we made to Magento Enterprise Cloud Edition's built-in build and deploy process improve deployment performance. You don't need to do anything to realize these performance gains.
 
 For details, see TBD.
 
 ## Manage your configuration and protect sensitive data {#cloud-config-manage-sens-over}
-Magento's store configuration is usually located in the database, and some values are stored in `app/etc/config.php`. This can make the configuration of multiple systems (such as staging and prodution) difficult and it also potentially exposes sensitive values.
+Magento's store configuration is usually located in the database, and some values are stored in `app/etc/config.php`. This can make the configuration of multiple systems (such as staging and prodution) difficult and it also potentially exposes sensitive values to malicious exploits.
 
-Starting with version 2.1.4, we provide the following options:
+Starting with version 2.1.4, we provide the following:
 
 *	System-specific store configuration values are specified in a new configuration file, `app/etc/config.local.php`, which is in source control.
 
@@ -53,7 +53,7 @@ Starting with version 2.1.4, we provide the following options:
 
 	Settings in `config.local.php` cannot be changed in the Magento Admin. The next section provides an overview of how to change these settings.
 
-	Because the configuration is in source control, you don't have to remember to change these settings when you deploy code from staging to production. Staging's settings are stored in its `config.local.php`, which is different from production's. You use source control to track and version these settings.
+	Because the configuration is in source control, you don't have to remember to change these settings when you deploy code from staging to production. Staging's settings are stored in its `config.local.php`. You use source control to track and version these settings.
 *	Sensitive values, such as TBD, are specified in environment variables which are  available only to people who have access to your Magento Enterprise Cloud Edition project.
 
 The following sections provide more detail.
@@ -63,29 +63,29 @@ System-specific settings refer to the configuration in the Magento Admin in **St
 
 #### Recommended procedure
 
-![]({{ site.baseurl }}common/images/cloud_vars_simple.png){:width="500px"}
+![Overview of Cloud configuration management]({{ site.baseurl }}common/images/cloud_vars_simple.png){:width="500px"}
 
 We recommend you use the following high-level roadmap to manage these settings:
 
-**Step 1**. Push `config.local.php` to your integration server's `master` branch.
+**Step A**. Push `config.local.php` to your integration server's `master` branch.
 
 First, configure stores and settings in the `master` branch of your local system.
 
 Then:
 
-<ol type="a"><li>Push those settings to your integration server's <code>master</code> branch.</li>
-	<li>Generate <code>config.local.php</code> on your integration server.</li>
-<li>Transfer <code>config.local.php</code> to your local system so the two systems remain in synchronization with each other.</li>
-<li>Add <code>config.local.php</code> to Git (again, in the <code>master</code> branch).</li>
-<li>Push <code>config.local.php</code> to your integration server.</li></ol>
+1.	Push those settings to your integration server's `master` branch.
+2.	Generate `config.local.php` on your integration server.
+3.	Transfer `config.local.php` to your local system so the two systems remain in synchronization with each other.
+4.	Add `config.local.php` to Git (again, in the `master` branch).
+5.	Push `config.local.php` to your integration server.
 
-**Step 2**. Magento Enterprise Cloud Edition automatically deploys the settings to your integration server.
+**Step B**. Magento Enterprise Cloud Edition automatically deploys the settings to your integration server.
 
-**Step 3**. To change settings:
+**Step C**. To change settings:
 
-<ol type="a"><li>Make a configuration change in the Admin on the integration server.</li>
-<li>Delete <code>config.local.php</code> on your integration server.</li>
-<li>Repeat Step 1.</li></ol>
+1.	Make a configuration change in the Admin on the integration server.
+2.	Delete <code>config.local.php</code> on your integration server.
+3.	Repeat Step A.
 
 After you've configured the integration server, Magento assists you in pushing the configuration to your staging or production servers.
 
