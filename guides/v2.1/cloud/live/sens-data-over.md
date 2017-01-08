@@ -63,6 +63,8 @@ System-specific settings refer to the configuration in the Magento Admin in **St
 
 #### Recommended procedure
 
+![]({{ site.baseurl }}common/images/cloud_vars_simple.png)
+
 We recommend you use the following high-level roadmap to manage these settings:
 
 1.	Configure stores and settings in the `master` branch of your local system.
@@ -86,9 +88,9 @@ To use different system-specific settings in staging and production, you can man
 #### How configuration settings work
 The following diagram shows how we determine values for configuration settings.
 
-![How configuration variable values are determined]({{ site.baseurl }}common/images/cloud_vars_flow-diagram.png)
+![How configuration variable values are determined]({{ site.baseurl }}common/images/cloud_vars_flow-diagram.png){:width="500px"}
 
-@@@@
+As the diagram shows, 
 
 
 #### List of system-specific configuration settings {#cloud-config-specific-list}
