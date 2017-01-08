@@ -23,9 +23,7 @@ In version 2.1.4, Magento Enterprise Cloud Edition decreased deployment downtime
 We achieve performance improvements by moving static view file generation from the deployment phase to the _build_ phase. The build phase doesn't affect your site's downtime; the time required to create CSS files, images, and so on, happens before the site deploys.
 
 ### Configuration improvements
-Storing data such as your payment processor password in `config.php` on the file system and in the database isn't secure. Even if `config.php` is in source control, there's a risk sensitive data can be exposed to the world.
-
-We help you protect sensitive data _and_ make it easy to manage system-specific data as follows:
+Storing data such as your payment processor password in `config.php` on the file system and in the database isn't secure enough. We help you protect sensitive data _and_ make it easy to manage system-specific data as follows:
 
 *	In your [staging]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-stage) and [production]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-prod) systems, you manage sensitive data using environment variables. 
 
@@ -83,8 +81,8 @@ Then:
 
 **Step C**. To change settings:
 
-1.	Make a configuration change in the Admin on the integration server.
-2.	Delete <code>config.local.php</code> on your integration server.
+1.	Make configuration changes in the Admin on the integration server.
+2.	Delete `config.local.php` on your integration server.
 3.	Repeat Step A.
 
 After you've configured the integration server, Magento assists you in pushing the configuration to your staging or production servers.
@@ -94,7 +92,7 @@ All settings in `config.local.php` are unavailable in the Magento Admin; that is
 <div class="bs-callout bs-callout-warning" markdown="1">
 We assume system-specific settings are the same in staging and production. Only sensitive configuration values should change in those systems and you manage them using environment variables.
 
-To use different system-specific settings in staging and production, you can manually edit `config.local.php` but that is beyond the scope of this guide.
+If you choose to use different system-specific settings in staging and production, you can manually edit `config.local.php` but that is beyond the scope of this guide.
 </div>
 
 #### How configuration settings work
