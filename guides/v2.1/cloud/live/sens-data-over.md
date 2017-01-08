@@ -85,7 +85,7 @@ Then:
 
 <ol type="a"><li>Make a configuration change in the Admin on the integration server.</li>
 <li>Delete <code>config.local.php</code> on your integration server.</li>
-<li>Repeat Step 1.</code></li></ol>
+<li>Repeat Step 1.</li></ol>
 
 After you've configured the integration server, Magento assists you in pushing the configuration to your staging or production servers.
 
@@ -102,7 +102,7 @@ The following diagram shows how we determine values for configuration settings.
 
 ![How configuration variable values are determined]({{ site.baseurl }}common/images/cloud_vars_flow-diagram.png){:width="550px"}
 
-As the diagram shows, we get configuration values as follows:
+As the diagram shows, we get configuration values in the following order:
 
 1.	From an environment variable.
 2.	From `config.local.php`.
