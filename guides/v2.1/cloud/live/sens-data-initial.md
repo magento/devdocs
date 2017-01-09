@@ -141,4 +141,3 @@ To change other configuration values, see the next section.
 4.	Click **Stores** > Settings > **Configuration** > **Advanced** > **Developer**.
 5.	In the right pane, click **CSS Settings**.
 
-<!-- {% endcollapsibleh2 %}{% endcollapsibleh2 %} -->
