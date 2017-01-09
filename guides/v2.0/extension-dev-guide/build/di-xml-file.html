@@ -1311,7 +1311,7 @@ The object manager uses these mappings to determine what the default implementat
     <span class="nt">&lt;preference</span> <span class="na">for=</span><span class="s">&quot;Magento\Core\Model\UrlInterface&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\Core\Model\Url&quot;</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
-<p>This mapping is in <code>app/etc/di/config.xml</code>, so the object manager injects the <code>Magento\Core\Model\Url</code> implementation class wherever there is a request for the <code>Magento\Core\Model\UrlInterface</code> in the global scope.</p>
+<p>This mapping is in <code>app/etc/di.xml</code>, so the object manager injects the <code>Magento\Core\Model\Url</code> implementation class wherever there is a request for the <code>Magento\Core\Model\UrlInterface</code> in the global scope.</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="c">&lt;!-- File: app/code/core/Magento/Backend/etc/adminhtml/di.xml --&gt;</span>
 <span class="nt">&lt;config&gt;</span>
