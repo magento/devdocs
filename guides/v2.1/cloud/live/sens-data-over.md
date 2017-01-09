@@ -70,7 +70,9 @@ We recommend you use the following high-level roadmap to manage these settings:
 
 **Step A**. Create and configure stores on your integration server
 
-** Step B**. Push `config.local.php` to your integration server's `master` branch.
+**Step B**. Push `config.local.php` to your integration server's `master` branch.
+
+The following procedure is required because you cannot use Git commands directly on the integration server; instead, you generate the configration on the integration server and transfer it to your local machine where you can push it.
 
 1.	Generate `config.local.php` on your integration server.
 3.	Transfer `config.local.php` to your local system so the two systems remain in synchronization with each other.
