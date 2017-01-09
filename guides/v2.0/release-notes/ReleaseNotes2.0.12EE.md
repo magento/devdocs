@@ -4,7 +4,7 @@ group: release-notes
 subgroup: 02_rel-notes
 title: Magento EE 2.0.12 Release Notes
 menu_title: Magento EE 2.0.12 Release Notes
-menu_order: 269
+menu_order: 267
 level3_menu_node: level3child
 level3_subgroup: ee20-relnotes 
 github_link: release-notes/ReleaseNotes2.0.12EE.md
