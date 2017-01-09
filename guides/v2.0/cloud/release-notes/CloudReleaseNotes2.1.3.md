@@ -7,7 +7,7 @@ menu_title: Magento Enterprise Cloud Edition 2.1.3 and 2.0.11 Release Notes
 menu_order: 50
 menu_node: 
 version: 2.1
-github_link: cloud/CloudReleaseNotes2.1.3.md
+github_link: cloud/release-notes/CloudReleaseNotes2.1.3.md
 ---
 
 These Release Notes provide up-to-date information about changes, additions, and fixes to the Magento Enterprise Cloud Edition for versions 2.1.3 and 2.0.11.

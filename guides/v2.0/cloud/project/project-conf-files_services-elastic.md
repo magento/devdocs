@@ -26,7 +26,7 @@ We support Elasticsearch version 1.4.
 [More information about Elasticsearch]({{ site.gdeurl21 }}config-guide/elasticsearch/es-overview.html).
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-If you're upgrading to Magento Enterprise Cloud Edition 2.1.3, you must change your configuration as discussed in [the 2.1.3 Release Notes]({{ page.baseurl }}cloud/CloudReleaseNotes2.1.3.html#cloud-rn-213-es).
+If you're upgrading to Magento Enterprise Cloud Edition 2.1.3, you must change your configuration as discussed in [the 2.1.3 Release Notes]({{ page.baseurl }}cloud/release-notes/CloudReleaseNotes2.1.3.html#cloud-rn-213-es).
 </div>
 
 ### Relationship
