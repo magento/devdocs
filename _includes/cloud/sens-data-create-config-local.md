@@ -1,11 +1,11 @@
 <div markdown="1">
 
-1.	Find the integration server's SSH URL.
+1.	On your local system, find the integration server's SSH URL.
 
 		magento-cloud environment:ssh --pipe -e master
 2.	Create `config.local.php` on the integration server.
 
-		ssh -k <SSH URL>@ssh.us.magentosite.cloud "php bin/magento app:config:dump"
+		ssh -k <SSH URL>@ssh.us.magentosite.cloud "php bin/magento app:config:SCDdump"
 
 	For example,
 

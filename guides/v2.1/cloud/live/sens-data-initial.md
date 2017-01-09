@@ -52,9 +52,7 @@ To get started:
 {% endcollapsibleh2 %}
 
 {% collapsibleh2 Create config.local.php on the integration server %}
-This section discusses how to create `config.local.php` on the integration server. Before you continue, make sure the `master` branch on the integration server is up-to-date with all the store configuration you've created on your local system.
-
-This procedure corresponds to step A, 1&ndash;3 of our [recommended procedure]({{ page.baseurl }}cloud/live/sens-data-over.html#cloud-config-specific-recomm).
+This section discusses how to create `config.local.php` on the integration server. This procedure corresponds to step B, 1&ndash;2 of our [recommended procedure]({{ page.baseurl }}cloud/live/sens-data-over.html#cloud-config-specific-recomm).
 
 To create `config.local.php` on the integration server:
 
@@ -63,9 +61,7 @@ To create `config.local.php` on the integration server:
 {% endcollapsibleh2 %}
 
 {% collapsibleh2 Push config.local.php to the integration server %}
-Now that you've created `config.local.php` and transferred it to your local system, commit it to Git and push it to your integration server.
-
-This procedure corresponds to step A, 4&mdash;5 of our [recommended procedure]({{ page.baseurl }}cloud/live/sens-data-over.html#cloud-config-specific-recomm).
+Now that you've created `config.local.php` and transferred it to your local system, commit it to Git and push it to your integration server. This procedure corresponds to step B, 3&mdash;4 of our [recommended procedure]({{ page.baseurl }}cloud/live/sens-data-over.html#cloud-config-specific-recomm).
 
 	git add app/etc/config.local.php && git commit -m "Add system-specific configuration" && git push origin master
 
@@ -142,7 +138,7 @@ For this example, we'll use file optimization settings. If you've already change
 
 	The following figure shows an example.
 
-	![Set file optimization settings]({{ site.baseurl }}common/images/cloud_vars_set-minify.png)
+	![Set file optimization settings]({{ site.baseurl }}common/images/cloud_vars_set-minify.png){:width="550px"}
 8.	Click **Save Config**.
 
 ### Delete config.local.php on the integration server
