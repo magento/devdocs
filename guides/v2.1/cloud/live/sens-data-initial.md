@@ -2,8 +2,8 @@
 layout: default
 group: cloud
 subgroup: 40_live
-title: Manage file optimization settings 
-menu_title: Manage file optimization settings
+title: Manage system-specific settings 
+menu_title: Manage system-specific settings
 menu_order: 15
 menu_node: 
 level3_menu_node: level3child
@@ -87,8 +87,58 @@ After you push `config.local.php` to your integration server, any values you cha
 
 The following procedure assumes you changed locale settings (such as store time zone).
 
+A snippet from `config.local.php` follows:
+
+<pre class="no-copy">
+ 'store_information' =>
+     array (
+      'name' => 'Our store',
+      'phone' => '1-512-555-1212',
+      'hours' => NULL,
+      'country_id' => 'US',
+      'region_id' => '57',
+      'postcode' => NULL,
+      'city' => NULL,
+      'street_line1' => NULL,
+      'street_line2' => NULL,
+      'merchant_vat_number' => NULL,
+   ),
+</pre>
+
+In this example, several fields, including the name and telephone number of the store, should not be editable in the Admin.
+
 To verify your configuraiton changes:
 
-1.	
+1.	Find your integration server's URL:
+
+		magento-cloud environment:url
+2.	Find your Magento Admin login information:
+
+		magento-cloud variable:list
+3.	Using the information from the preceding steps, log in to the integration server's Admin.
+4.	Click **Stores** > Settings > **Configuration** > General > **General**.
+5.	In the right pane, expand **Store Information**.
+
+	Notice several fields cannot be edited, as shown in the following sample.
+
+	![Can't edit certain values in the Admin]({{ site.baseurl }}cloud_var_not-editable.png)
+
+To change other configuration values, see the next section.
 
 {% endcollapsibleh2 %}
+
+
+
+
+
+
+
+
+
+
+
+3.	Using the information from the preceding steps, log in to the integration server's Admin.
+4.	Click **Stores** > Settings > **Configuration** > **Advanced** > **Developer**.
+5.	In the right pane, click **CSS Settings**.
+
+<!-- {% endcollapsibleh2 %}{% endcollapsibleh2 %} -->
