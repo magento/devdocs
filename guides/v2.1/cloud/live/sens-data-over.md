@@ -17,7 +17,7 @@ In version 2.1.4, Magento Enterprise Cloud Edition decreased deployment downtime
 
 *	Dramatically reduced downtime during deployment to a staging or production system.
 *	New method to manage sensitive data (such as payment gateway passwords).
-*	Improved method to manage system-specific configuration data (such as store locale settings and file optmization settings) in a new configuration file, `app/etc/config.local.php`, which is in source control.
+*	Improved method to manage system-specific configuration data (such as store locale settings and file optimization settings) in a new configuration file, `app/etc/config.local.php`, which is in source control.
 
 ### Performance improvements
 We achieve performance improvements by moving static view file generation from the deployment phase to the _build_ phase. The build phase doesn't affect your site's downtime; the time required to create CSS files, images, and so on, happens before the site deploys.
