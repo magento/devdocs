@@ -98,7 +98,7 @@ A snippet from `config.local.php` follows:
 
 In this example, several fields, including the name and telephone number of the store, should not be editable in the Admin.
 
-To verify your configuraiton changes:
+To verify your configuration changes:
 
 1.	Find your integration server's URL:
 
@@ -146,7 +146,7 @@ For this example, we'll use file optimization settings. If you've already change
 8.	Click **Save Config**.
 
 ### Delete config.local.php on the integration server
-Before you can create a new `config.local.php` on the integration server, you must delete the existing one becuase we don't overwrite an existing file.
+Before you can create a new `config.local.php` on the integration server, you must delete the existing one because we don't overwrite an existing file.
 
 To delete `config.local.php`:
 
