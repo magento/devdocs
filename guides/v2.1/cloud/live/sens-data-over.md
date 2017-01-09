@@ -2,8 +2,8 @@
 layout: default
 group: cloud
 subgroup: 40_live
-title: Overview of deployment performance and configuration management 
-menu_title: Overview of deployment performance and configuration management  
+title: Overview of configuration management 
+menu_title: Overview of configuration management  
 menu_order: 11
 menu_node: 
 level3_menu_node: level3child
@@ -13,21 +13,16 @@ github_link: cloud/live/sens-data-over.md
 ---
 
 ## Deployment and configuration in a nutshell
-In version 2.1.4, Magento Enterprise Cloud Edition decreased deployment downtime and improved how you manage your configuration:
+In version 2.1.4, Magento Enterprise Cloud Edition improves how you manage your configuration:
 
-*	Dramatically reduced downtime during deployment to a staging or production system.
 *	New method to manage sensitive data (such as payment gateway passwords).
 *	Improved method to manage system-specific configuration data (such as store locale settings and file optimization settings) in a new configuration file, `app/etc/config.local.php`, which is in source control.
 
-### Performance improvements
-We achieve performance improvements by moving static view file generation from the deployment phase to the _build_ phase. The build phase doesn't affect your site's downtime; the time required to create CSS files, images, and so on, happens before the site deploys.
-
-### Configuration improvements
 We help you protect sensitive data _and_ make it easy to manage system-specific data as follows:
 
 *	In your [staging]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-stage) and [production]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-prod) systems, you manage sensitive data using environment variables. 
 
-	Only people with access to your Magento Enterprise Cloud Edition project can view the variables.
+	Only people with access to your Magento Enterprise Cloud Edition Web Interface can view the variables.
 
 *	System-specific values such as whether or not file optimization is enabled are stored in a new configuration file, `app/etc/config.local.php`, which is managed in source control.
 
@@ -39,10 +34,9 @@ We help you protect sensitive data _and_ make it easy to manage system-specific 
 
 	In addition, you can optionally manage `config.local.php` using scripting or automation tools. However, discussion of those tools is beyond the scope of this guide.
 
-## Deployment downtime
-Changes we made to Magento Enterprise Cloud Edition's built-in build and deploy process improve deployment performance. You don't need to do anything to realize these performance gains.
-
-For details, see TBD.
+<div class="bs-callout bs-callout-info" markdown="1">
+In version 2.1.4, we also moved static file deployment from the deploy phase to the build phase to optimize deployment time.
+</div>
 
 ## Manage your configuration and protect sensitive data {#cloud-config-manage-sens-over}
 Magento's store configuration is usually located in the database. This can make the configuration of multiple systems (such as staging and production) difficult.
