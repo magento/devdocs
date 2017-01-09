@@ -121,7 +121,7 @@ To verify your configuraiton changes:
 
 	Notice several fields cannot be edited, as shown in the following sample.
 
-	![Can't edit certain values in the Admin]({{ site.baseurl }{cloud_var_not-editable.png)
+	![Can't edit certain values in the Admin]({{ site.baseurl }}common/images/cloud_var_not-editable.png)
 
 To change other configuration values, see the next section.
 
