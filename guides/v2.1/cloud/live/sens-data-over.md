@@ -16,20 +16,22 @@ github_link: cloud/live/sens-data-over.md
 In version 2.1.4, Magento Enterprise Cloud Edition decreased deployment downtime and improved how you manage your configuration:
 
 *	Dramatically reduced downtime during deployment to a staging or production system.
-*	New method to manage sensitive data (such as payment gateway passwords) without storing them on the file system, database, or source control.
+*	New method to manage sensitive data (such as payment gateway passwords).
 *	Improved method to manage system-specific configuration data (such as store locale settings and file optmization settings) in a new configuration file, `app/etc/config.local.php`, which is in source control.
 
 ### Performance improvements
 We achieve performance improvements by moving static view file generation from the deployment phase to the _build_ phase. The build phase doesn't affect your site's downtime; the time required to create CSS files, images, and so on, happens before the site deploys.
 
 ### Configuration improvements
-Storing data such as your payment processor password in `config.php` on the file system and in the database isn't secure enough. We help you protect sensitive data _and_ make it easy to manage system-specific data as follows:
+We help you protect sensitive data _and_ make it easy to manage system-specific data as follows:
 
 *	In your [staging]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-stage) and [production]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-prod) systems, you manage sensitive data using environment variables. 
 
-	These sensitive values are not stored in `config.php`, anywhere in source control, or in the database. Only people with access to your Magento Enterprise Cloud Edition project can view the variables.
+	Only people with access to your Magento Enterprise Cloud Edition project can view the variables.
 
 *	System-specific values such as whether or not file optimization is enabled are stored in a new configuration file, `app/etc/config.local.php`, which is managed in source control.
+
+	Sensitive values are _not_ stored in `app/etc/config.local.php`.
 
 	Managing `config.local.php` in source control means your settings for staging and production are always consistent. For example, you can enable file optimization in your [integration]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-int) system but disable it in both staging and production. After initially setting up the configuration, you don't need to touch it again because it's in source control.
 
@@ -43,7 +45,7 @@ Changes we made to Magento Enterprise Cloud Edition's built-in build and deploy 
 For details, see TBD.
 
 ## Manage your configuration and protect sensitive data {#cloud-config-manage-sens-over}
-Magento's store configuration is usually located in the database, and some values are stored in `app/etc/config.php`. This can make the configuration of multiple systems (such as staging and production) difficult and it also potentially exposes sensitive values to malicious exploits.
+Magento's store configuration is usually located in the database. This can make the configuration of multiple systems (such as staging and production) difficult.
 
 Starting with version 2.1.4, we provide the following:
 

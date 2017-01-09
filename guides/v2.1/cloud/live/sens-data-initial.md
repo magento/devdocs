@@ -54,27 +54,18 @@ To get started:
 {% collapsibleh2 Create config.local.php on the integration server %}
 This section discusses how to create `config.local.php` on the integration server. Before you continue, make sure the `master` branch on the integration server is up-to-date with all the store configuration you've created on your local system.
 
+This procedure corresponds to step A, 1&ndash;3 of our [recommended procedure]({{ page.baseurl }}cloud/live/sens-data-over.html#cloud-config-specific-recomm).
+
 To create `config.local.php` on the integration server:
 
-1.	Find the integration server's SSH URL.
-
-		magento-cloud environment:ssh --pipe -e master
-2.	Create `config.local.php` on the integration server.
-
-		ssh -k <SSH URL>@ssh.us.magentosite.cloud "php bin/magento app:config:dump"
-
-	For example,
-
-		ssh -k itnu84v4m4e5k-prod1-ouhx5wq@ssh.us.magentosite.cloud "php bin/magento app:config:dump"
-3.	If you haven't done so already, change to the project root directory.
-4.	Transfer `config.local.php` to your local system.
-
-		rsync -avz -e "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null" --progress <SSH URL>@ssh.us.magentosite.cloud:/app/app/etc/config.local.php ./app/etc
+{% include cloud/sens-data-create-config-local.md %}
 
 {% endcollapsibleh2 %}
 
 {% collapsibleh2 Push config.local.php to the integration server %}
-Now that you've created `config.local.php` and transferred it to your local system, commit it to Git and push it to your integration server as follows:
+Now that you've created `config.local.php` and transferred it to your local system, commit it to Git and push it to your integration server.
+
+This procedure corresponds to step A, 4&mdash;5 of our [recommended procedure]({{ page.baseurl }}cloud/live/sens-data-over.html#cloud-config-specific-recomm).
 
 	git add app/etc/config.local.php && git commit -m "Add system-specific configuration" && git push origin master
 
@@ -121,23 +112,63 @@ To verify your configuraiton changes:
 
 	Notice several fields cannot be edited, as shown in the following sample.
 
-	![Can't edit certain values in the Admin]({{ site.baseurl }}common/images/cloud_var_not-editable.png)
+	![Can't edit certain values in the Admin]({{ site.baseurl }}common/images/cloud_var_not-editable.png){:width="550px"}
 
 To change other configuration values, see the next section.
 
 {% endcollapsibleh2 %}
 
 
+{% collapsibleh2 Change system-specific configuration settings %}
+This section discusses how to change system-specific settings. Our [recommended procedure]({{ page.baseurl }}cloud/live/sens-data-over.html#cloud-config-specific-recomm) is to make the changes on the integration server and repeat the process of creating `config.local.php` and pushing it back to the integration server.
 
+For this example, we'll use file optimization settings. If you've already changed those settings, you can use this procedure to set other options of your choosing.
 
+### Change configuration values in the integration server Admin
+1.	Find your integration server's URL:
 
+		magento-cloud environment:url
+2.	Find your Magento Admin login information:
 
-
-
-
-
-
+		magento-cloud variable:list
 3.	Using the information from the preceding steps, log in to the integration server's Admin.
 4.	Click **Stores** > Settings > **Configuration** > **Advanced** > **Developer**.
-5.	In the right pane, click **CSS Settings**.
+5.	In the right pane, expand **Template Settings**.
+6.	Clear the **Use default value** check box next to the **Minify Html** list.
+7.	From the **Minify Html** list, click **Yes**.
+5.	In the right pane, expand **CSS Settings**.
+6.	From the **Merge CSS Files** list, click **Yes**.
+7.	From the **Minify CSS Files** list, click **Yes**.
+
+	The following figure shows an example.
+
+	![Set file optimization settings]({{ site.baseurl }}common/images/cloud_vars_set-minify.png)
+8.	Click **Save Config**.
+
+### Delete config.local.php on the integration server
+Before you can create a new `config.local.php` on the integration server, you must delete the existing one becuase we don't overwrite an existing file.
+
+To delete `config.local.php`:
+
+1.	On your local system, make sure you're on the `master` branch.
+2.	SSH to the integration server:
+
+		magento-cloud ssh
+3.	Delete `config.local.php`.
+
+		rm app/etc/config.local.php
+4.	Close the SSH tunnel.
+
+		exit
+
+### Add the changes to config.local.php
+{% include cloud/sens-data-create-config-local.md %}
+
+### 
+
+{% endcollapsibleh2 %}
+
+
+
+
 
