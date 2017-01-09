@@ -26,13 +26,13 @@ We address the following functional issues in this release.
 
 
 ## Checkout
-<!---  58946-->* The Magento application now displays custom address attributes on the checkout summary. 
+<!---  58946-->* Magento now displays custom address attributes on the checkout summary. 
 
 
 <!--- 60877 -->* The **Use Default Checkboxes for Custom Options** option now works as expected. Previously, the checkboxes under the option title and value title were not rendered correctly, and the feature did not work.
 
 
-<!--- 61113 -->* Magento now displays the "Thank you for your purchase!" message after a customer successfully checks out. Previously, the Magento application did not display this message, even though the HTML code was present. <a href="https://github.com/magento/magento2/issues/6968" target="_blank">(GITHUB-6968)</a>
+<!--- 61113 -->* Magento now displays the "Thank you for your purchase!" message after a customer successfully checks out. Previously,  Magento did not display this message, even though the HTML code was present. <a href="https://github.com/magento/magento2/issues/6968" target="_blank">(GITHUB-6968)</a>
 
 
 
@@ -54,9 +54,9 @@ We address the following functional issues in this release.
 
 ## Import/export
 
-<!--- 61264 -->* The Magento application can now import `additional_images` that are tagged with labels that contain a comma separator.
+<!--- 61264 -->* Magento  can now import `additional_images` that are tagged with labels that contain a comma separator.
 
-<!--- 61075 -->* The Magento application no longer deletes a product after you select the Replace option while importing a product. Previously,  Magento deleted the product rather than replacing it.  
+<!--- 61075 -->* Magento  no longer deletes a product after you select the Replace option while importing a product. Previously,  Magento deleted the product rather than replacing it.  
 
 
 
@@ -74,20 +74,20 @@ We address the following functional issues in this release.
 <!--- 61091 -->* The Free Shipping method now shows up as an available option when you create an order in the Magento backend. <a href="https://github.com/magento/magento2/issues/2939" target="_blank">(GITHUB-2939)</a>
 
 
-<!--- 60724 -->* The Magento application now redirects you to the Setup page as expected when you specify a particular port when installing the application using Nginx. Previously, Magento did not redirect you to the Setup page, and instead displayed this message in `var/report`: `You cannot install Magento using the Setup Wizard because the Magento setup directory cannot be accessed`. 
+<!--- 60724 -->* Magento now redirects you to the Setup page as expected when you specify a particular port when installing the application using Nginx. Previously, Magento did not redirect you to the Setup page, and instead displayed this message in `var/report`: `You cannot install Magento using the Setup Wizard because the Magento setup directory cannot be accessed`. 
 
 <!--- 60327 -->* Magento no longer assigns all orders a status of Suspected Fraud in multi-currency store configurations. <a href="https://github.com/magento/magento2/issues/4263" target="_blank">(GITHUB-4263)</a>
 
 <!--- 61146 -->* An Admin user with restricted permissions no longer has access to all orders. 
 
-<!--- 60055 -->* Admin users can no longer create an empty URL key for a category. Previously, the Magento application let Admin users create an empty URL key, which lead to numerous category-related errors.
+<!--- 60055 -->* Admin users can no longer create an empty URL key for a category. Previously, Magento let Admin users create an empty URL key, which lead to numerous category-related errors.
 
 <!--- 60965 -->* New custom attributes are now visible together with other address details when you add a new address. 
 
 <!--- 57519-->* Requests to Edge Side Includes (ESI) now return data. Previously, requests to ESI did not return data because the requested block was absent in the layout. 
 
 
-<!--- 62647 -->* The Magento application now successfully saves a product even when you include an empty Custom Options row (**Products > Catalog > Custom Options**). Previously, under these conditions, Magento displayed the `Invalid option value` error message, and did not save the product.  
+<!--- 62647 -->* Magento now successfully saves a product even when you include an empty Custom Options row (**Products > Catalog > Custom Options**). Previously, under these conditions, Magento displayed the `Invalid option value` error message, and did not save the product.  
 
 <!--- 61628 -->* The **Match products by rule** option in the Admin interface now works as expected. 
 
@@ -100,9 +100,9 @@ We address the following functional issues in this release.
 
 ## Payment methods
 
-<!--- 56925 -->* You can now ship items to a country from which you have not authorized payment. Previously, when a customer tried to ship an order to a country from which the store was not authorized to receive payment, the Magento application displays this message, `"No Payment method available"`.
+<!--- 56925 -->* You can now ship items to a country from which you have not authorized payment. Previously, when a customer tried to ship an order to a country from which the store was not authorized to receive payment, Magento displays this message, `"No Payment method available"`.
 
-<!--- 62661 -->* You can now cancel check out of an order you are making with the Worldpay payment option without emptying your shopping cart. Previously, when you canceled a checkout operation while using this payment method, the Magento application emptied your shopping cart. 
+<!--- 62661 -->* You can now cancel check out of an order you are making with the Worldpay payment option without emptying your shopping cart. Previously, when you canceled a checkout operation while using this payment method,  Magento emptied your shopping cart. 
 
 
 
