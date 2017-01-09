@@ -12,8 +12,6 @@ version: 2.1
 github_link: cloud/live/sens-data-initial.md
 ---
 
-_This topic just started, ignore for now_
-
 This topic discusses how to manage file optimization settings in your integration system. _File optimization_ means merging and minifying JavaScript and Cascading Style Sheets, and minifying HTML templates.
 
 File optimization should be enabled in integration (where you're testing) and disabled in staging and production. File optimization has an adverse affect on performance so you shouldn't enable it in staging or production.
