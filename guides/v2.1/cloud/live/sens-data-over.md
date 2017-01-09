@@ -68,25 +68,22 @@ We recommend you use the following high-level roadmap to manage these settings:
 
 ![Overview of Cloud configuration management]({{ site.baseurl }}common/images/cloud_vars_simple.png){:width="500px"}
 
-**Step A**. Push `config.local.php` to your integration server's `master` branch.
+**Step A**. Create and configure stores on your integration server
 
-First, configure stores and settings in the `master` branch of your local system.
+** Step B**. Push `config.local.php` to your integration server's `master` branch.
 
-Then:
-
-1.	Push those settings to your integration server's `master` branch.
-2.	Generate `config.local.php` on your integration server.
+1.	Generate `config.local.php` on your integration server.
 3.	Transfer `config.local.php` to your local system so the two systems remain in synchronization with each other.
 4.	Add `config.local.php` to Git (again, in the `master` branch).
 5.	Push `config.local.php` to your integration server.
 
-**Step B**. Magento Enterprise Cloud Edition automatically deploys the settings to your integration server.
+**Step C**. Magento Enterprise Cloud Edition automatically deploys the settings to your integration server.
 
-**Step C**. To change settings:
+**Step D**. To change settings:
 
 1.	Make configuration changes in the Admin on the integration server.
 2.	Delete `config.local.php` on your integration server.
-3.	Repeat Step A.
+3.	Repeat Step B.
 
 After you've configured the integration server, Magento assists you in pushing the configuration to your staging or production servers.
 
