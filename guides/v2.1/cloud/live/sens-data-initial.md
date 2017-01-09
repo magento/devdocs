@@ -164,7 +164,12 @@ To delete `config.local.php`:
 ### Add the changes to config.local.php
 {% include cloud/sens-data-create-config-local.md %}
 
-### 
+### Push the changes to Git
+To push your changes, enter the following command:
+
+	git add app/etc/config.local.php && git commit -m "Add system-specific configuration" && git push origin master
+
+Wait for deployment to complete.
 
 {% endcollapsibleh2 %}
 
