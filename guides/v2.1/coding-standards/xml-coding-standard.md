@@ -2,8 +2,8 @@
 layout: default
 group: coding-standards
 subgroup: Coding standards
-title: XML Coding Standards
-menu_title: XML Coding Standards
+title: Layout XML Coding Standards
+menu_title: Layout XML Coding Standards
 menu_order: 100
 contributor_name: SwiftOtter Studios
 contributor_link: https://swiftotter.com/
@@ -11,7 +11,7 @@ version: 2.1
 github_link: coding-standards/xml-coding-standard.md
 ---
 
-# XML Coding Standard
+# Layout XML Coding Standard
 
 ### Name attribute
 
