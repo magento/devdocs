@@ -13,7 +13,16 @@ github_link: magento-devdocs-whatsnew.md
 
 This page contains recent changes that we think you'd like to know about. We exclude from this list proofreading, spelling checks, and all minor updates.
 
-## December 2016
+## January 2017
+Starting in January, 2017, we'll provide the date a change was made instead of the week in which the change was made.
+
+| Description  | Versions applied to  | New or Updated | Date |
+|--------------|--------------|----------------------|--------|
+| [Docblock coding standard]({{ page.baseurl }}coding-standards/docblock-standard-general.html) | 2.x | Updated | Jan 6 |
+| [Use payment vault in the Admin]({{ page.baseurl }}payments-integrations/vault/admin-integration.html) | 2.1 | Updated | Jan 6 |
+
+
+{% collapsibleh2 December 2016 %}
 
 | Description  | Versions applied to  | New or Updated | Week ending |
 |--------------|--------------|----------------------|--------|
@@ -24,6 +33,8 @@ This page contains recent changes that we think you'd like to know about. We exc
 | [Magento EE 2.0.11 Release Notes]({{ site.gdeurl }}release-notes/ReleaseNotes2.0.11EE.html){:target="_blank"}   |  2.0.11  |  New | Dec 16  |
 | [Configure the Magento functional testing framework]({{ page.baseurl }}mtf/configuration.html){:target="_blank"}   | 2.x | New  | Dec 16  |
 | [Add custom integrations and vault payments to the Magento payment provider gateway]({{ page.baseurl }}payments-integrations/bk-payments-integrations.html){:target="_blank"}  |  2.x |  New | Dec 9 |
+
+{% endcollapsibleh2 %}
 
 {% collapsibleh2 November 2016 %}
 
