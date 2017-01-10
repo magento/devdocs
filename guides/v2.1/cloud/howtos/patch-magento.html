@@ -1515,7 +1515,9 @@
   <li>
     <p><a href="#cloud-patch-gen">General patches</a></p>
 
-    <p>These patches are provided for all Magento Enterprise Cloud Edition customers in a GitHub repository that’s referenced in your <code>composer.json</code>. To install general patches, use <code>composer update</code>, test your system, and push the patches to the remote server.</p>
+    <p>These patches are provided for all Magento Enterprise Cloud Edition customers in a GitHub repository that’s referenced in your <code>composer.json</code>. We apply these patches automatically during the build phase.</p>
+
+    <p>To install general patches, use <code>composer update</code>, test your system, and push the patches to the remote server.</p>
   </li>
   <li>
     <p><a href="#cloud-patch-custom">Custom patches</a></p>
@@ -1531,7 +1533,7 @@
 </div>
 
 <h2 id="cloud-patch-gen">Test general patches</h2>
-<p><em>General patches</em> are provided for all Magento Enterprise Cloud Edition customers in a repository referenced in your <code>composer.json</code>. To apply these patches, use <code>composer update</code>.</p>
+<p><em>General patches</em> are provided for all Magento Enterprise Cloud Edition customers in a repository referenced in your <code>composer.json</code>. We apply patches automatically during the build phase when a patch is available. The procedure discussed in this section enables to you test a patch locally anytime you choose.</p>
 
 <p>The procedure you use is slightly different, depending on the type of environment: <a href="/guides/v2.1/cloud/discover-arch.html#cloud-arch-int">integration</a>, <a href="/guides/v2.1/cloud/discover-arch.html#cloud-arch-stage">staging</a>, or <a href="/guides/v2.1/cloud/discover-arch.html#cloud-arch-prod">production</a>.</p>
 
@@ -1662,7 +1664,7 @@ git push origin &lt;branch name&gt;
 </code></pre>
   </li>
   <li>
-    <p>Apply the patch:</p>
+    <p>Apply the patch locally:</p>
 
     <pre><code>git apply vendor/magento/magento-cloud-configuration/patches/&lt;patch file name&gt;
 </code></pre>
