@@ -18,7 +18,9 @@ There are two types of patches:
 
 *   [General patches](#cloud-patch-gen)
 
-    These patches are provided for all Magento Enterprise Cloud Edition customers in a GitHub repository that's referenced in your `composer.json`. To install general patches, use `composer update`, test your system, and push the patches to the remote server. 
+    These patches are provided for all Magento Enterprise Cloud Edition customers in a GitHub repository that's referenced in your `composer.json`. We apply these patches automatically during the build phase.
+
+    To install general patches, use `composer update`, test your system, and push the patches to the remote server. 
 
 *   [Custom patches](#cloud-patch-custom)
 
@@ -30,9 +32,8 @@ There are two types of patches:
 Always test a patch your local system, then your [integration environment]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-int) system (that is, the remote Cloud server). Resolve any issues before you patch either [staging]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-stage) or [production]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-prod).
 </div>
 
-
 ## Test general patches {#cloud-patch-gen}
-*General patches* are provided for all Magento Enterprise Cloud Edition customers in a repository referenced in your `composer.json`. To apply these patches, use `composer update`.
+*General patches* are provided for all Magento Enterprise Cloud Edition customers in a repository referenced in your `composer.json`. We apply patches automatically during the build phase when a patch is available. The procedure discussed in this section enables to you test a patch locally anytime you choose.
 
 The procedure you use is slightly different, depending on the type of environment: [integration]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-int), [staging]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-stage), or [production]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-prod).
 
@@ -79,7 +80,7 @@ After you've successfully tested a patch locally and on your integration environ
 2.	Enter the following commands:
 
 		<Magento project root dir>/composer update
-2.	Apply the patch:
+2.	Apply the patch locally:
 
 		git apply vendor/magento/magento-cloud-configuration/patches/<patch file name>
 3.	Clean the Magento cache:
