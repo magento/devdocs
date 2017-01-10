@@ -709,7 +709,7 @@
 <h2 id="token_provider">Token component provider</h2>
 
 <p>The main logic for displaying tokens on checkout page is located in
-<a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Vault/Model/Ui/TokensConfigProvider.php">Vault TokensConfigProvider</a>. You just need to create token component providers. They should implement the 
+<a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Vault/Model/Ui/TokensConfigProvider.php">Vault TokensConfigProvider</a>. You just need to create a token component provider. It should implement the 
 <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Vault/Model/Ui/TokenUiComponentProviderInterface.php">TokenUiComponentProviderInterface</a> interface:</p>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">interface</span> <span class="nx">TokenUiComponentProviderInterface</span>
@@ -767,7 +767,9 @@
 
 <h2 id="javascript-component-for-vault">JavaScript component for vault</h2>
 
-<p>Custom vault JS component should extend <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Vault/view/frontend/web/js/view/payment/method-renderer/vault.js">vault.js</a>:</p>
+<p>In you custom module directory, create the component’s <code>.js</code> file. It must be located under the <code>&lt;your_module_dir&gt;/view/frontend/web/js/view/</code> directory.</p>
+
+<p>The component should extend <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Vault/view/frontend/web/js/view/payment/method-renderer/vault.js">vault.js</a>:</p>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">define</span><span class="p">([</span>
     <span class="s1">&#39;Magento_Vault/js/view/payment/method-renderer/vault&#39;</span><span class="p">,</span>
