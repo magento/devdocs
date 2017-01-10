@@ -257,7 +257,7 @@ The `preference` node specifies the default implementation:
 </config>
 {% endhighlight %}
 
-This mapping is in `app/etc/di/config.xml`, so the object manager injects the `Magento\Core\Model\Url` implementation class wherever there is a request for the `Magento\Core\Model\UrlInterface` in the global scope.
+This mapping is in `app/etc/di.xml`, so the object manager injects the `Magento\Core\Model\Url` implementation class wherever there is a request for the `Magento\Core\Model\UrlInterface` in the global scope.
 
 {% highlight xml %}
 <!-- File: app/code/core/Magento/Backend/etc/adminhtml/di.xml -->

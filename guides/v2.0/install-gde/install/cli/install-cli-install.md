@@ -144,7 +144,7 @@ The following table discusses the meanings of installation option names and valu
 		<td><p>Uniform Resource Identifier (<a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec3.html#sec3.2" target="_blank">URI</a>) to access the Magento Admin or omit this parameter to let Magento generate a random URI for you.</p>
 			<p>We recommend a random URI for security purposes. A random URI is harder for hackers or malicious software to exploit.</p>
 			<p>The URI displays at the end of the installation. You can display it later at any time using the <a href="{{page.baseurl}}install-gde/install/cli/install-cli-adminurl.html">magento info:adminuri</a> command.</p>
-			<p>If you choose to enter a value, we recommend you <em>not</em> use a common word like <code>admin</code>, <code>backend</code>, and so on. The Admin URI can contain alphanumeric values and the underscore character (<code>_</code>) only. It can be up to 255 characters in length.</p></td>
+			<p>If you choose to enter a value, we recommend you <em>not</em> use a common word like <code>admin</code>, <code>backend</code>, and so on. The Admin URI can contain alphanumeric values and the underscore character (<code>_</code>) only. </p></td>
 		<td><p>No</p></td>
 	</tr>
 	<tr>
@@ -214,7 +214,7 @@ The following table discusses the meanings of installation option names and valu
 		<td><p>--base-url-secure</p></td>
 		<td>Secure base URL to use to access your Magento Admin and storefront in the following format:
 		<code>http[s]://&lt;host or ip>/&lt;your Magento install dir>/</code>
-		<p>To have a fully secure site, you must enable <em>both</em> <code>--use-secure=1</code> and <code>--base-url-secure=1</code>.</p></td>
+		</td>
 		<td><p>No</p></td>
 	</tr>
 
