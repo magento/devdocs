@@ -89,7 +89,7 @@ The following sample from Braintree configuration illustrates how to add the `au
 
 ## Add command manager
 
-You also need to add a command manager for vault, and add it to the command manager pool. This pool is available for vault instance and enables performing payment provider actions.
+You also need to create a command manager for vault. It is configured with the payment integration command pool and allows performing payment commands in any place of code. 
 
 Example of adding a command manager for Braintree vault:
  
@@ -101,6 +101,8 @@ Example of adding a command manager for Braintree vault:
 </virtualType>
 {% endhighlight %}
 
+
+Command manager must be added to the command manager pool. This pool is available for vault instance and enables performing payment provider actions.
 
 There are two ways to add command manager to the pool: 
 
@@ -136,3 +138,5 @@ There are two ways to add command manager to the pool:
 {% endhighlight %}
 
 In the first case, this pool can be used in any module to perform vault payment commands. In the second case, only specific vault payment integration can use this pool. 
+
+You can use the samples as templates for your command manager configuration.You only need to change the Braintree-related names to your custom ones.
