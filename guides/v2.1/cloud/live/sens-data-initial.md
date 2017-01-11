@@ -25,7 +25,6 @@ To complete the tasks discussed in this topic, you must have at minimum a projec
 Before you continue, make sure you have done all of the following:
 
 *	Set up a [local Magento environment]({{ page.baseurl }}cloud/access-acct/set-up-env.html) from the `master` branch of your integration system.
-*	Created and configured stores and pushed the configuration to your integration system.
 *	Reviewed our [recommended procedure]({{ page.baseurl }}cloud/live/sens-data-over.html##cloud-config-specific-recomm) for managing the configuration
 
 {% collapsibleh2 Get started %}
