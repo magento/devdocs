@@ -18,15 +18,12 @@ In version 2.1.4, Magento Enterprise Cloud Edition improves how you manage your 
 *	New method to manage sensitive data (such as payment gateway passwords).
 *	Improved method to manage system-specific configuration data (such as store locale settings and file optimization settings) in a new configuration file, `app/etc/config.local.php`, which is in source control.
 
-We help you protect sensitive data _and_ make it easy to manage system-specific data as follows:
+We help you protect sensitive data and make it easy to manage system-specific data as follows:
 
 *	In your [staging]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-stage) and [production]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-prod) systems, you manage sensitive data using environment variables. 
 
 	To view or change environment variables, a user must have at minimum the project reader role with [environment admin]({{ page.baseurl }}cloud/admin/admin-user-admin.html#cloud-role-env) privileges. You can change sensitive variables using the Magento Enterprise Cloud Edition [Web Interface]({{ page.baseurl }}cloud/project/project-webint-basic.html). 
-
-	To view or change environment variables, the user must have at minimum a project reader role with [environment administrator]({{ page.baseurl }}cloud/admin/admin-user-admin.html#loud-role-env) privileges.
-
-*	System-specific values such as whether or not file optimization is enabled are stored in a new configuration file, `app/etc/config.local.php`, which is managed in source control.
+*	System-specific values related to static content deployment (for example, file optimization) are stored in a new configuration file, `app/etc/config.local.php`, which is managed in source control.
 
 	Sensitive values are _not_ stored in `app/etc/config.local.php`.
 
@@ -47,7 +44,6 @@ Starting with version 2.1.4, we provide the following:
 
 	Settings in `config.local.php` cannot be changed in the Magento Admin. The next section provides an overview of how to change these settings.
 
-	Because the configuration is in source control, you don't have to remember to change these settings when you deploy code from staging to production. Staging's settings are stored in its `config.local.php`. You use source control to track and version these settings.
 *	Sensitive values, such as payment processor settings, are specified in environment variables which are  available only to people who have at minimum a project reader role with [environment administrator]({{ page.baseurl }}cloud/admin/admin-user-admin.html#loud-role-env) privileges.
 
 The following sections provide more detail.
@@ -59,12 +55,12 @@ System-specific settings refer to the configuration in the Magento Admin in **St
 In each of your Magento Enterprise Cloud Edition systems (integration, staging, and production), you have the option of overriding certain configuration settings:
 
 *	Some settings, such as the search engine and caching system, might be the same across all systems
-*	Other settings, such as the port used for caching or file optimization, can be unique to a particular system
+*	Other settings, such as the port used for caching, can be unique to a particular system
 *	Sensitive settings, such as payment processor settings, are set using environment variables
 
 	<div class="bs-callout bs-callout-info" markdown="1">
 	*	You can set _any_ value using environment variables but we emphasize sensitive values for obvious reasons. For a list of all variables you can set, see [List of system-specific configuration settings](#cloud-config-specific-list).
-	*	We assume environment-specific settings are the same in staging and production. Sensitive settings might be different.
+	*	We assume system-specific settings are the same in staging and production. Sensitive settings might be different.
 	</div>
 
 To enable you to set system-specific settings, we use the following override scheme.
@@ -89,6 +85,8 @@ We can, however, help you manage those settings more easily. For example, suppos
 What if someone changes a setting in the staging Admin? You'll have to go back and make the same change on integration; otherwise, next time you deploy to staging, the old settings are enabled.
 
 Instead of doing that, we enable you to store your settings in `app/etc/config.local.php` which is managed in Git. (Because there's no Git user in integration, staging, or production, you must add the changes to `config.local.php` in your local system.) In addition, any setting in `config.local.php` is _not editable_ in the Admin. 
+
+The following figure shows a high-level overview of this process.
 
 ![Overview of Cloud configuration management]({{ site.baseurl }}common/images/cloud_vars_simple.png){:width="650px"}
 
