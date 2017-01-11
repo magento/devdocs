@@ -36,10 +36,6 @@ We help you protect sensitive data _and_ make it easy to manage system-specific 
 
 	In addition, you can optionally manage `config.local.php` using scripting or automation tools. However, discussion of those tools is beyond the scope of this guide.
 
-<div class="bs-callout bs-callout-info" markdown="1">
-In version 2.1.4, we also moved static file deployment from the deploy phase to the build phase to optimize deployment time.
-</div>
-
 ## Manage your configuration and protect sensitive data {#cloud-config-manage-sens-over}
 Magento's store configuration is usually located in the database. This can make the configuration of multiple systems (such as staging and production) difficult.
 
@@ -106,6 +102,10 @@ The following procedure is required because there is no Git user on your integra
 3.	Transfer `config.local.php` to your local system so you can add it to Git.
 4.	Add `config.local.php` to Git (again, in the `master` branch).
 5.	Push `config.local.php` to your integration server.
+
+You generate `config.local.php` using the command `magento app:config:SCDdump`. This command populates `config.local.php` with the minimum values necessary for static content deployment. In version 2.1.4, we moved static file deployment from the deploy phase to the build phase to optimize deployment time.
+
+There is a similar command, `magento app:config:dump`, that is not supported at this time. 
 
 **Step C**. Magento Enterprise Cloud Edition automatically deploys the settings to your integration server.
 
