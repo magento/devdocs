@@ -67,7 +67,8 @@ In each of your Magento Enterprise Cloud Edition systems (integration, staging, 
 *	Sensitive settings, such as payment processor settings, are set using environment variables
 
 	<div class="bs-callout bs-callout-info" markdown="1">
-	You can set _any_value using environment variables but we emphasize sensitive values for obvious reasons. For a list of all variables you can set, see [List of system-specific configuration settings](#cloud-config-specific-list).
+	*	You can set _any_ value using environment variables but we emphasize sensitive values for obvious reasons. For a list of all variables you can set, see [List of system-specific configuration settings](#cloud-config-specific-list).
+	*	We assume environment-specific settings are the same in staging and production. Sensitive settings might be different.
 	</div>
 
 To enable you to set system-specific settings, we use the following override scheme.
