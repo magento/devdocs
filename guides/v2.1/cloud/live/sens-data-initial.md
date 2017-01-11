@@ -12,16 +12,14 @@ version: 2.1
 github_link: cloud/live/sens-data-initial.md
 ---
 
-This topic discusses how to manage file optimization settings in your integration system. _File optimization_ means merging and minifying JavaScript and Cascading Style Sheets, and minifying HTML templates.
+This topic discusses how to manage file optimization settings in your integration system. _File optimization_ means merging and minifying JavaScript and Cascading Style Sheets, and minifying HTML templates. File optimization should be disabled in integration (where you're testing) and enabled in staging and production.  
 
-File optimization should be enabled in integration (where you're testing) and disabled in staging and production. File optimization has an adverse affect on performance so you shouldn't enable it in staging or production.
-
-You can use the procedure discussed in this topic to manage any system-specific configuration settings. 
+These settings are discussed only to explain how the procedure works; you can use the same procedure to manage any available settings. For a complete list of settings, see []({{ page.baseurl }}cloud/live/sens-data-over.html#cloud-config-specific-list). 
 
 To manage _sensitive_ configuration settings, see [Manage sensitive configuration values]({{ page.baseurl }}cloud/live/sens-data-mg-sens.html).
 
 ## Required role
-To complete the tasks discussed in this topic, you must have at minimum a project reader role with [environment contributor]({{ page.baseurl }}cloud/admin/admin-user-admin.html#loud-role-env) privileges.
+To complete the tasks discussed in this topic, you must have at minimum a project reader role with [environment administrator]({{ page.baseurl }}cloud/admin/admin-user-admin.html#loud-role-env) privileges.
 
 ## Prerequisites
 Before you continue, make sure you have done all of the following:
@@ -115,35 +113,13 @@ To change other configuration values, see the next section.
 
 {% endcollapsibleh2 %}
 
-
 {% collapsibleh2 Change system-specific configuration settings %}
 This section discusses how to change system-specific settings. Our [recommended procedure]({{ page.baseurl }}cloud/live/sens-data-over.html#cloud-config-specific-recomm) is to make the changes on the integration server and repeat the process of creating `config.local.php` and pushing it back to the integration server.
 
 For this example, we'll use file optimization settings. If you've already changed those settings, you can use this procedure to set other options of your choosing.
 
-### Change configuration values in the integration server Admin
-1.	Find your integration server's URL:
-
-		magento-cloud environment:url
-2.	Find your Magento Admin login information:
-
-		magento-cloud variable:list
-3.	Using the information from the preceding steps, log in to the integration server's Admin.
-4.	Click **Stores** > Settings > **Configuration** > **Advanced** > **Developer**.
-5.	In the right pane, expand **Template Settings**.
-6.	Clear the **Use default value** check box next to the **Minify Html** list.
-7.	From the **Minify Html** list, click **Yes**.
-5.	In the right pane, expand **CSS Settings**.
-6.	From the **Merge CSS Files** list, click **Yes**.
-7.	From the **Minify CSS Files** list, click **Yes**.
-
-	The following figure shows an example.
-
-	![Set file optimization settings]({{ site.baseurl }}common/images/cloud_vars_set-minify.png){:width="550px"}
-8.	Click **Save Config**.
-
 ### Delete config.local.php on the integration server
-Before you can create a new `config.local.php` on the integration server, you must delete the existing one because we don't overwrite an existing file.
+Before you can change settings on the integration server, you should delete `app/etc/config.local.php` so all settings are available in the Admin. (Any non-default setting in `config.local.php` is uneditable in the Admin.)
 
 To delete `config.local.php`:
 
@@ -157,6 +133,28 @@ To delete `config.local.php`:
 4.	Close the SSH tunnel.
 
 		exit
+
+### Change configuration values in the integration server Admin
+1.	Find your integration server's URL:
+
+		magento-cloud environment:url
+2.	Find your Magento Admin login information:
+
+		magento-cloud variable:list
+3.	Using the information from the preceding steps, log in to the integration server's Admin.
+4.	Click **Stores** > Settings > **Configuration** > **Advanced** > **Developer**.
+5.	In the right pane, expand **Template Settings**.
+6.	Clear the **Use default value** check box next to the **Minify Html** list.
+7.	From the **Minify Html** list, click **No**.
+5.	In the right pane, expand **CSS Settings**.
+6.	From the **Merge CSS Files** list, click **No**.
+7.	From the **Minify CSS Files** list, click **No**.
+
+	The following figure shows an example.
+
+	![Set file optimization settings]({{ site.baseurl }}common/images/cloud_vars_set-minify.png){:width="550px"}
+8.	Click **Save Config**.
+9.	If prompted, [flush the Magento cache](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html){:target="_blank"}.
 
 ### Add the changes to config.local.php
 {% include cloud/sens-data-create-config-local.md %}

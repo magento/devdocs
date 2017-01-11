@@ -92,7 +92,7 @@ We can, however, help you manage those settings more easily. For example, suppos
 
 What if someone changes a setting in the staging Admin? You'll have to go back and make the same change on integration; otherwise, next time you deploy to staging, the old settings are enabled.
 
-Instead of doing that, we enable you to manage your settings in `app/etc/config.local.php` which is managed in Git. (Because there's no Git user in integration, staging, or production, you must add the changes to `config.local.php` in your local system.) In addition, any setting in `config.local.php` is _not editable_ in the Admin. 
+Instead of doing that, we enable you to store your settings in `app/etc/config.local.php` which is managed in Git. (Because there's no Git user in integration, staging, or production, you must add the changes to `config.local.php` in your local system.) In addition, any setting in `config.local.php` is _not editable_ in the Admin. 
 
 ![Overview of Cloud configuration management]({{ site.baseurl }}common/images/cloud_vars_simple.png){:width="650px"}
 
@@ -104,8 +104,6 @@ The following procedure is required because there is no Git user on your integra
 
 1.	Generate `config.local.php` on your integration server's `master` branch.
 3.	Transfer `config.local.php` to your local system so you can add it to Git.
-
-	There is no Git user on your integration system so you can't add it to Git there.
 4.	Add `config.local.php` to Git (again, in the `master` branch).
 5.	Push `config.local.php` to your integration server.
 
@@ -115,7 +113,7 @@ The following procedure is required because there is no Git user on your integra
 
 1.	Delete `config.local.php` on your integration server.
 
-	You must delete it to be able to change the same settings again. In other words, if you changed the store name, that setting isn't editable in the Admin. You must delete `config.local.php` on the integration server to be able to change the store name.
+	You must delete it to be able to change the same settings again. In other words, if you changed the store name, that setting isn't editable in the Admin. You must delete `config.local.php` on the integration server to be able to change the store name again.
 2.	Make configuration changes in the Admin on the integration server.
 3.	Repeat Step B.
 
