@@ -22,12 +22,12 @@ RequireJS improves the perceived page load time because it allows JavaScript to 
 
 You must specify and configure all JavaScript resources used in modules and themes that you added or customized. To ensure correct work of themes and modules, do not edit the JavaScript resources belonging to other modules and themes.
 
-JavaScript resources can be specified as follows:
+JavaScript resources can be added on the following levels:
 
-*	Library level for all libraries in Magento code base (`lib/web`)
-*	Module level for all libraries in a module (`<module_dir>/view/<areaname>/web`)
-*	Theme for all libraries in a theme (`<theme_dir>/<VendorName>_<ModuleName>/web`)
-*	(_Not recommended_) All libraries in a theme  (`<theme_dir>/web`). We do not recommend using this level to specify JavaScript resources.
+*	Module level (`<module_dir>/view/<areaname>/web`). If the module is enabled, resources added here are available in other modules and themes. 
+*	Theme level, for a particular module (`<theme_dir>/<VendorName>_<ModuleName>/web`). Resources added here are available for [inheriting]({{page.baseurl}}frontend-dev-guide/themes/theme-inherit.html) themes.
+*	Theme level  (`<theme_dir>/web`). Resources added here are available for [inheriting]({{page.baseurl}}frontend-dev-guide/themes/theme-inherit.html) themes.
+
 
 We recommend specifying JavaScript resources in the templates rather than in the layout updates to ensure processing of the resources in body of a page.
 
