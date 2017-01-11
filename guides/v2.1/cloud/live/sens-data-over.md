@@ -22,7 +22,9 @@ We help you protect sensitive data _and_ make it easy to manage system-specific 
 
 *	In your [staging]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-stage) and [production]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-prod) systems, you manage sensitive data using environment variables. 
 
-	Only people with access to your Magento Enterprise Cloud Edition Web Interface can view the variables.
+	To view or change environment variables, a user must have at minimum the project reader role with [environment admin]({{ page.baseurl }}cloud/admin/admin-user-admin.html#cloud-role-env) privileges. You can change sensitive variables using the Magento Enterprise Cloud Edition [Web Interface]({{ page.baseurl }}cloud/project/project-webint-basic.html). 
+
+	To view or change environment variables, the user must have at minimum a project reader role with .
 
 *	System-specific values such as whether or not file optimization is enabled are stored in a new configuration file, `app/etc/config.local.php`, which is managed in source control.
 
@@ -60,10 +62,8 @@ System-specific settings refer to the configuration in the Magento Admin in **St
 #### Recommended procedure {#cloud-config-specific-recomm}
 We recommend you use the following high-level roadmap to manage these settings:
 
-REDRAWING THE DIAGRAM
+![Overview of Cloud configuration management]({{ site.baseurl }}common/images/cloud_vars_simple.png){:width="500px"}
 
-<!-- ![Overview of Cloud configuration management]({{ site.baseurl }}common/images/cloud_vars_simple.png){:width="500px"}
- -->
 **Step A**. Create and configure stores on your integration server
 
 **Step B**. Push `config.local.php` to your integration server's `master` branch.
