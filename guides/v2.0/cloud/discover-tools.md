@@ -29,8 +29,8 @@ A project manager could use Magento Enterprise Cloud Edition without ever using 
 Everything in Magento Enterprise Cloud Edition is managed using a Git repository. You can simply modify a couple
 of configuration files and manage almost all aspects of operations that way.
 
-### Seamless Bitbucket and GitHub integrations
-We have perfectly seamless integrations for both Bitbucket and Github. You can
+### Seamless GitHub integration
+We have perfectly seamless integrations for Github. You can
 log in to Magento Enterprise Cloud Edition with your Bitbucket or Github account. And you can have
 Magento Enterprise Cloud Edition environments be automatically created for every pull-request or 
 branch you create and get feedback on deployments right there without 
