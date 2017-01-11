@@ -18,9 +18,8 @@ The Web Interface URL for your project is available in the following ways:
 *	Your welcome e-mail
 *	The Magento Enterprise Cloud Edition command-line interface (CLI)
 
-### Find the project URL using the CLI
+{% collapsibleh3 Find the project URL using the CLI %}
 
-{% collapsible Click to show/hide content %}
 To find the project URL using the CLI:
 
 1.	Log in to the machine on which your SSH keys are stored.
@@ -41,7 +40,7 @@ To find the project URL using the CLI:
 		| pwga254dhx97o | Magento 2    | https://us.magento.cloud/#/projects/pwga254dhx97o |
 		+---------------+--------------+---------------------------------------------------+
 4.	Enter the value in the URL column in a web browser.
-{% endcollapsible %}
+{% endcollapsibleh3 %}
 
 ### Log in to the project
 In a web browser, enter the project URL from your welcome e-mail or that you found using the CLI. When prompted, log in to your project using Bitbucket, GitHub, Google, or a e-mail address and password.
@@ -59,9 +58,7 @@ The Web Interface provides several ways to access your project and environments:
 *	Clone the project using the Magento Enterprise Cloud Edition CLI
 *	Clone the project using Git
 
-{% collapsible Click to show/hide content %}
-
-To access projects and environments:
+{% collapsible To access projects and environments: %}
 
 1.	[Log in to your project](#project-login).
 2.	Hover the mouse pointer over **Access Project** as the following figure shows:
@@ -105,8 +102,7 @@ Configuring an environment means:
 *	Configuring routes
 *	Managing users
 
-{% collapsible Click to show/hide content %}
-To configure an environment:
+{% collapsible To configure an environment: %}
 
 1.	[Log in to your project](#project-login).
 2.	Click **Configure environment** under the project name, as the following figure shows.
@@ -145,6 +141,8 @@ The following table shows available environment settings.
 ### Set environment variables {#project-conf-env-var}
 As discussed in [Overview of environment variables]({{page.baseurl}}cloud/env/environment-vars_over.html), environment variables are settings specific to an environment. Variables can be either text or JSON format.
 
+To view or edit environment variables, you must have at minimum the project reader role with [environment admin]({{ page.baseurl }}cloud/admin/admin-user-admin.html#cloud-role-env) privileges.
+
 For example, you can change the Magento Admin administrative password using environment variables as follows:
 
 1.	Click **Add Variable**.
@@ -174,8 +172,7 @@ An environment's history includes:
 *	Syncs and merges
 *	Code pushes
 
-{% collapsible Click to show/hide content %}
-To view an environment's history:
+{% collapsible To view an environment's history: %}
 
 1.	[Log in to your project](#project-login).
 2.	In the left pane, click the name of an environment.

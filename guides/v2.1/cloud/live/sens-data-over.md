@@ -30,7 +30,7 @@ We help you protect sensitive data _and_ make it easy to manage system-specific 
 
 	Sensitive values are _not_ stored in `app/etc/config.local.php`.
 
-	Managing `config.local.php` in source control means your settings for staging and production are always consistent. For example, you can enable file optimization in your [integration]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-int) system but disable it in both staging and production. After initially setting up the configuration, you don't need to touch it again because it's in source control.
+	Managing `config.local.php` in source control means your settings for staging and production are always consistent. For example, you can disable file optimization in your [integration]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-int) system but enable it in both staging and production. After initially setting up the configuration, you don't need to touch it again because it's in source control.
 
 	(_File optimization_ means merging and minifying JavaScript and Cascading Style Sheets, and minifying HTML templates.)
 
@@ -47,7 +47,7 @@ Starting with version 2.1.4, we provide the following:
 
 *	System-specific store configuration values are specified in a new configuration file, `app/etc/config.local.php`, which is in source control.
 
-	Using `config.local.php`, you can, for example, enable file optimization in your integration system (where you are developing and testing) and disable file optimization in staging and production. Enabling file optimization has an adverse affect on performance so you should disable it in staging and production.
+	Using `config.local.php`, you can, for example, disable file optimization in your integration system (where you are developing and testing) and enable file optimization in staging and production. 
 
 	Settings in `config.local.php` cannot be changed in the Magento Admin. The next section provides an overview of how to change these settings.
 
@@ -62,7 +62,7 @@ System-specific settings refer to the configuration in the Magento Admin in **St
 #### Recommended procedure {#cloud-config-specific-recomm}
 We recommend you use the following high-level roadmap to manage these settings:
 
-![Overview of Cloud configuration management]({{ site.baseurl }}common/images/cloud_vars_simple.png){:width="500px"}
+![Overview of Cloud configuration management]({{ site.baseurl }}common/images/cloud_vars_simple.png){:width="650px"}
 
 **Step A**. Create and configure stores on your integration server
 
@@ -81,8 +81,8 @@ The following procedure is required because there is no Git user on your integra
 
 **Step D**. To change settings:
 
-1.	Make configuration changes in the Admin on the integration server.
-2.	Delete `config.local.php` on your integration server.
+1.	Delete `config.local.php` on your integration server.
+2.	Make configuration changes in the Admin on the integration server.
 3.	Repeat Step B.
 
 All settings in `config.local.php` are unavailable in the Magento Admin; that is, you cannot change them in the Admin.

@@ -21,7 +21,7 @@ You can use the procedure discussed in this topic to manage any system-specific 
 To manage _sensitive_ configuration settings, see TBD.
 
 ## Required role
-To complete the tasks discussed in this topic, you must have at minimum a project reader role with [environment admin]({{ page.baseurl }}) privileges.
+To complete the tasks discussed in this topic, you must have at minimum a project reader role with [environment contributor]({{ page.baseurl }}cloud/admin/admin-user-admin.html#loud-role-env) privileges.
 
 ## Prerequisites
 Before you continue, make sure you have done all of the following:
