@@ -13,3 +13,6 @@ github_link: cloud/live/sens-data-mg-sens.md
 ---
 
 This topic TBD
+
+## Required role
+To complete the tasks discussed in this topic, you must have at minimum a project reader role with [environment admin]({{ page.baseurl }}) privileges.

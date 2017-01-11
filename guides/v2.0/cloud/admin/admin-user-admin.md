@@ -24,7 +24,7 @@ You can assign users to the following roles per project:
 -   Project reader can view all environments in a project but cannot execute any actions on them.
 
 ### Environment-level roles {#cloud-role-env}
-A Project Reader can have one of the following roles per environment:
+A project reader can have one of the following roles per environment:
 
 -   Environment administrator can
     change settings and execute actions on this environment, including merging with the parent environment.

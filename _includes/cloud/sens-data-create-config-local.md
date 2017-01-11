@@ -9,7 +9,7 @@
 
 	For example,
 
-		ssh -k itnu84v4m4e5k-prod1-ouhx5wq@ssh.us.magentosite.cloud "php bin/magento app:config:`SCDdump"
+		ssh -k itnu84v4m4e5k-prod1-ouhx5wq@ssh.us.magentosite.cloud "php bin/magento app:config:SCDdump"
 3.	If you haven't done so already, change to the project root directory.
 4.	Transfer `config.local.php` to your local system.
 

@@ -60,16 +60,20 @@ System-specific settings refer to the configuration in the Magento Admin in **St
 #### Recommended procedure {#cloud-config-specific-recomm}
 We recommend you use the following high-level roadmap to manage these settings:
 
-![Overview of Cloud configuration management]({{ site.baseurl }}common/images/cloud_vars_simple.png){:width="500px"}
+REDRAWING THE DIAGRAM
 
+<!-- ![Overview of Cloud configuration management]({{ site.baseurl }}common/images/cloud_vars_simple.png){:width="500px"}
+ -->
 **Step A**. Create and configure stores on your integration server
 
 **Step B**. Push `config.local.php` to your integration server's `master` branch.
 
-The following procedure is required because you cannot use Git commands directly on the integration server; instead, you generate the configration on the integration server and transfer it to your local machine where you can push it.
+The following procedure is required because there is no Git user on your integration server so you can't use Git commands there. Instead, you generate the configration on the integration server and transfer it to your local machine where you can push it.
 
-1.	Generate `config.local.php` on your integration server.
-3.	Transfer `config.local.php` to your local system so the two systems remain in synchronization with each other.
+1.	Generate `config.local.php` on your integration server's `master` branch.
+3.	Transfer `config.local.php` to your local system so you can add it to Git.
+
+	There is no Git user on your integration system so you can't add it to Git there.
 4.	Add `config.local.php` to Git (again, in the `master` branch).
 5.	Push `config.local.php` to your integration server.
 
@@ -81,9 +85,9 @@ The following procedure is required because you cannot use Git commands directly
 2.	Delete `config.local.php` on your integration server.
 3.	Repeat Step B.
 
-After you've configured the integration server, Magento assists you in pushing the configuration to your staging or production servers.
-
 All settings in `config.local.php` are unavailable in the Magento Admin; that is, you cannot change them in the Admin.
+
+After you've configured the integration server, see [Overview of staging and production]({{ page.baseurl }}cloud/live/stage-prod-over.html) to start the process of migrating to a staging or production system.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
 We assume system-specific settings are the same in staging and production. Only sensitive configuration values should change in those systems and you manage them using environment variables.
