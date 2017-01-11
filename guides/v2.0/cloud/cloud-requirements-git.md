@@ -13,14 +13,14 @@ github_link: cloud/cloud-requirements-git.md
 This page lists detailed requirements for using Git with Magento Enterprise Cloud Edition.
 
 ### Source control with Git {#cloud-require-git}
-Any change you make to your Magento Enterprise Cloud Edition project must be committed to a Git repository. You can use either the repository provided with your account or you can use your own private account on GitHub or Bitbucket. For more information, see [Magento Enterprise Cloud Edition repositories]({{page.baseurl}}cloud/before/before-repos.html).
+Any change you make to your Magento Enterprise Cloud Edition project must be committed to a Git repository. You can use either the repository provided with your account or you can use your own private account on GitHub. For more information, see [Magento Enterprise Cloud Edition repositories]({{page.baseurl}}cloud/before/before-repos.html).
 
-If you don't already have an account, we'll create one for you. However, if you have a GitHub or Bitbucket account and you're already using it in a development workflow, we recommend you use it.
+If you don't already have an account, we'll create one for you. However, if you have a GitHub account and you're already using it in a development workflow, we recommend you use it.
 
 To clone a Magento reference project, you must upload SSH keys to `github.com`.
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>Your project's master branch always uses the provided Git repository. You can use an existing GitHub or Bitbucket account to manage branches of that repository. (Branches are also referred to as <em>environments</em>.</p>
+  <p>Your project's master branch always uses the provided Git repository. You can use an existing GitHub account to manage branches of that repository. (Branches are also referred to as <em>environments</em>.</p>
 </div>
 
 ### Git knowledge
