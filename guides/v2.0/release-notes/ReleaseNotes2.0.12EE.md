@@ -16,7 +16,13 @@ We are pleased to present Magento Enterprise Edition 2.0.12. This release includ
 
 
 ## Highlights
-Magento 2.0.12 contains more than 20 bug fixes and enhancements, including these highlights:
+Magento 2.0.12 contains more than 20 bug fixes and enhancements, including multiple enhancements to:
+
+* **Catalog module**. You can now directly add a configurable product to your shopping cart from the Category page.
+
+* **Sales module**. Fixes include multiple enhancements to the server-side processing of orders.
+
+* **Payment module**. You can now ship items to a country from which you have not authorized payment.
 
 
 ## Functional fixes
