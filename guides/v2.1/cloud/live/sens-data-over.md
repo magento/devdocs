@@ -100,7 +100,7 @@ Instead of doing that, we enable you to manage your settings in `app/etc/config.
 
 **Step B**. Push `config.local.php` to your integration server's `master` branch.
 
-The following procedure is required because there is no Git user on your integration server so you can't use Git commands there. Instead, you generate the configration on the integration server and transfer it to your local machine where you can push it.
+The following procedure is required because there is no Git user on your integration server so you can't use Git commands there. Instead, you generate the configuration on the integration server and transfer it to your local machine where you can push it.
 
 1.	Generate `config.local.php` on your integration server's `master` branch.
 3.	Transfer `config.local.php` to your local system so you can add it to Git.

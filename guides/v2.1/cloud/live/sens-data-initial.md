@@ -39,7 +39,7 @@ To get started:
 
 		magento-cloud login
 3.	Switch to the project root directory.
-4.	Find teh current branch.
+4.	Find the current branch.
 
 		git branch
 4.	If necessary, [merge changes in the current]({{ page.baseurl }}cloud/howtos/environment-tutorial-env-merge.html) branch with the `master` branch.
