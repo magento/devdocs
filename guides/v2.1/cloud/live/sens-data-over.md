@@ -59,8 +59,14 @@ The following sections provide more detail.
 ### Manage system-specific settings {#cloud-config-specific-over}
 System-specific settings refer to the configuration in the Magento Admin in **Stores** > Settings > **Configuration**. A list of settings can be found in [List of system-specific configuration settings](#cloud-config-specific-list).
 
-#### Recommended procedure {#cloud-config-specific-recomm}
-We recommend you use the following high-level roadmap to manage these settings:
+#### Recommended procedure to manage your settings {#cloud-config-specific-recomm}
+Managing store configuration is a complex task that's mostly up to you. What locales do you want to use? What custom themes do you need? Only you can determine the answers to those questions.
+
+We can, however, help you manage those settings more easily. For example, suppose you want to change the name of a store and also change its file optimization settings. Currently, the way you do that is to log in to the Admin on the integration server, save your settings, then (when testing is complete) migrate those settings to staging. 
+
+What if someone changes a setting in the staging Admin? You'll have to go back and make the same change on integration; otherwise, next time you deploy to staging, the old settings are enabled.
+
+Instead of doing that, we enable you to manage your settings in `app/etc/config.local.php` which is managed in Git. (Because there's no Git user in integration, staging, or production, you must add the changes to `config.local.php` in your local system.) In addition, any setting in `config.local.php` is _not editable_ in the Admin. 
 
 ![Overview of Cloud configuration management]({{ site.baseurl }}common/images/cloud_vars_simple.png){:width="650px"}
 
@@ -82,12 +88,12 @@ The following procedure is required because there is no Git user on your integra
 **Step D**. To change settings:
 
 1.	Delete `config.local.php` on your integration server.
+
+	You must delete it to be able to change the same settings again. In other words, if you changed the store name, that setting isn't editable in the Admin. You must delete `config.local.php` on the integration server to be able to change the store name.
 2.	Make configuration changes in the Admin on the integration server.
 3.	Repeat Step B.
 
-All settings in `config.local.php` are unavailable in the Magento Admin; that is, you cannot change them in the Admin.
-
-After you've configured the integration server, see [Overview of staging and production]({{ page.baseurl }}cloud/live/stage-prod-over.html) to start the process of migrating to a staging or production system.
+After you've configured the integration server and tested it thoroughly, see [Overview of staging and production]({{ page.baseurl }}cloud/live/stage-prod-over.html) to start the process of migrating to a staging or production system.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
 We assume system-specific settings are the same in staging and production. Only sensitive configuration values should change in those systems and you manage them using environment variables.
