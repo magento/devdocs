@@ -1510,10 +1510,10 @@
 			<p>Your Magento Enterprise Cloud Edition project can include code located in a private Git repository (for example, a module or theme). To do so, you must add your project’s public SSH key to your private Git repository and update your project’s <code>composer.json</code>.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>To add a deployment key to your private GitHub or Bitbucket repository, you must be the administrator of that repository.</p>
+  <p>To add a deployment key to your private GitHub repository, you must be the administrator of that repository.</p>
 </div>
 
-<p>GitHub and Bitbucket allow you to use a deploy key for one repository only.</p>
+<p>GitHub allows you to use a deploy key for one repository only.</p>
 
 <p>If your project needs to access multiple repositories, you can choose to
 attach an SSH key to an automated user account. Because this account won’t
@@ -1535,14 +1535,7 @@ access to the repositories it needs to manipulate.</p>
     <p><img src="/common/images/cloud_deploy-key.png" alt="Deploy Key" width="500px" /></p>
   </li>
   <li>Copy the deploy key to the clipboard.</li>
-  <li>
-    <p>See one of the following sections:</p>
-
-    <ul>
-      <li><a href="#cloud-deploykey-github">Enter your GitHub deploy key</a></li>
-      <li><a href="#cloud-deploykey-bb">Enter your Bitbucket deployment key</a></li>
-    </ul>
-  </li>
+  <li>See <a href="#cloud-deploykey-github">Enter your GitHub deploy key</a>.</li>
 </ol>
 
 <h3 id="cloud-deploykey-github">Enter your GitHub deploy key</h3>
@@ -1572,24 +1565,18 @@ repository.</p>
   <li>Follow the prompts on your screen to complete the task.</li>
 </ol>
 
-<h3 id="cloud-deploykey-bb">Enter your Bitbucket deployment key</h3>
-<p>To enter your project’s public key as a Bitbucket deploy key:</p>
+<!-- ### Enter your Bitbucket deployment key {#cloud-deploykey-bb}
+To enter your project's public key as a Bitbucket deploy key:
 
-<ol>
-  <li>Log in to your Bitbucket repository as its administrator.</li>
-  <li>
-    <p>In the left navigation bar, click <strong>Settings</strong> as the following figure shows.</p>
+1.	Log in to your Bitbucket repository as its administrator.
+2.	In the left navigation bar, click **Settings** as the following figure shows.
 
-    <p><img src="/common/images/cloud_bb-settings.png" alt="Bitbucket settings" /></p>
-  </li>
-  <li>
-    <p>Click General &gt; <strong>Deployment Keys</strong> as the following figure shows.</p>
+	![Bitbucket settings](/common/images/cloud_bb-settings.png)
+3.	Click General > **Deployment Keys** as the following figure shows.
 
-    <p><img src="/common/images/cloud_bb-deploy-key.png" alt="Bitbucket deploy key" /></p>
-  </li>
-  <li>Click <strong>Add Key</strong>.</li>
-  <li>Follow the prompts on your screen to complete the task.</li>
-</ol>
+	![Bitbucket deploy key](/common/images/cloud_bb-deploy-key.png)
+4.	Click **Add Key**.
+5.	Follow the prompts on your screen to complete the task. -->
 
 <!-- ## Update `composer.json`
 TBD -->
