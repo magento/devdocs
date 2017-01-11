@@ -24,7 +24,7 @@ We help you protect sensitive data _and_ make it easy to manage system-specific 
 
 	To view or change environment variables, a user must have at minimum the project reader role with [environment admin]({{ page.baseurl }}cloud/admin/admin-user-admin.html#cloud-role-env) privileges. You can change sensitive variables using the Magento Enterprise Cloud Edition [Web Interface]({{ page.baseurl }}cloud/project/project-webint-basic.html). 
 
-	To view or change environment variables, the user must have at minimum a project reader role with .
+	To view or change environment variables, the user must have at minimum a project reader role with [environment administrator]({{ page.baseurl }}cloud/admin/admin-user-admin.html#loud-role-env) privileges.
 
 *	System-specific values such as whether or not file optimization is enabled are stored in a new configuration file, `app/etc/config.local.php`, which is managed in source control.
 
@@ -52,12 +52,37 @@ Starting with version 2.1.4, we provide the following:
 	Settings in `config.local.php` cannot be changed in the Magento Admin. The next section provides an overview of how to change these settings.
 
 	Because the configuration is in source control, you don't have to remember to change these settings when you deploy code from staging to production. Staging's settings are stored in its `config.local.php`. You use source control to track and version these settings.
-*	Sensitive values, such as TBD, are specified in environment variables which are  available only to people who have access to your Magento Enterprise Cloud Edition project.
+*	Sensitive values, such as payment processor settings, are specified in environment variables which are  available only to people who have at minimum a project reader role with [environment administrator]({{ page.baseurl }}cloud/admin/admin-user-admin.html#loud-role-env) privileges.
 
 The following sections provide more detail.
 
 ### Manage system-specific settings {#cloud-config-specific-over}
 System-specific settings refer to the configuration in the Magento Admin in **Stores** > Settings > **Configuration**. A list of settings can be found in [List of system-specific configuration settings](#cloud-config-specific-list).
+
+#### How we set system-specific values
+In each of your Magento Enterprise Cloud Edition systems (integration, staging, and production), you have the option of overriding certain configuration settings:
+
+*	Some settings, such as the search engine and caching system, might be the same across all systems
+*	Other settings, such as the port used for caching or file optimization, can be unique to a particular system
+*	Sensitive settings, such as payment processor settings, are set using environment variables
+
+	<div class="bs-callout bs-callout-info" markdown="1">
+	You can set _any_value using environment variables but we emphasize sensitive values for obvious reasons. For a list of all variables you can set, see [List of system-specific configuration settings](#cloud-config-specific-list).
+	</div>
+
+To enable you to set system-specific settings, we use the following override scheme.
+
+![How configuration variable values are determined]({{ site.baseurl }}common/images/cloud_vars_flow-diagram.png){:width="550px"}
+
+As the diagram shows, we get configuration values in the following order:
+
+1.	From an environment variable.
+2.	From `config.local.php`.
+3.	From the database.
+
+If no value exists in any of those sources, we use either the default value or NULL.
+
+For an example of how this works, see [Manage system-specific settings]({{ page.baseurl }}cloud/live/sens-data-initial.html).
 
 #### Recommended procedure to manage your settings {#cloud-config-specific-recomm}
 Managing store configuration is a complex task that's mostly up to you. What locales do you want to use? What custom themes do you need? Only you can determine the answers to those questions.
@@ -101,20 +126,6 @@ We assume system-specific settings are the same in staging and production. Only 
 If you choose to use different system-specific settings in staging and production, you can manually edit `config.local.php` but that is beyond the scope of this guide.
 </div>
 
-#### How to manage configuration settings
-The following diagram shows how we determine values for configuration settings.
-
-![How configuration variable values are determined]({{ site.baseurl }}common/images/cloud_vars_flow-diagram.png){:width="550px"}
-
-As the diagram shows, we get configuration values in the following order:
-
-1.	From an environment variable.
-2.	From `config.local.php`.
-3.	From the database.
-
-If no value exists in any of those sources, we use either the default value or NULL.
-
-For an example of how this works, see TBD.
 
 #### List of system-specific configuration settings {#cloud-config-specific-list}
 TBD: We don't currently have a reference list of configuration settings

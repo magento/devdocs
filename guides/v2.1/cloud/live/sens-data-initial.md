@@ -18,7 +18,7 @@ File optimization should be enabled in integration (where you're testing) and di
 
 You can use the procedure discussed in this topic to manage any system-specific configuration settings. 
 
-To manage _sensitive_ configuration settings, see TBD.
+To manage _sensitive_ configuration settings, see [Manage sensitive configuration values]({{ page.baseurl }}cloud/live/sens-data-mg-sens.html).
 
 ## Required role
 To complete the tasks discussed in this topic, you must have at minimum a project reader role with [environment contributor]({{ page.baseurl }}cloud/admin/admin-user-admin.html#loud-role-env) privileges.
