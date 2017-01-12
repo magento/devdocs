@@ -128,24 +128,24 @@ The table in this section shows the system-specific settings we include in `conf
 
 How to read the table:
 
-*	`Path in the Magento Admin`
+*	`Path in Magento Admin` column
 
 	*	Displays options in boldface and menu labels as plain text.
 	*	Values before the comma are paths in the Admin navigation. Values after the comma are options in the right pane.
-*	`Variable name` is the name of the corresponding environment variable.
+*	`Variable name` column is the name of the corresponding environment variable.
 
 	You have the option of specifying system-specific values for these configuration parameters as environment variables if you wish.
-*	`config_path` defines the variable name and is usually defined in the module's `adminhtml/system.xml`
 
 	*	A variable name is always ALL CAPS
 	*	Start a variable name with `CONFIG__` (note two underscore characters)
 	*	The remainder of the variable name is the value of `config_path` with two underscore characters replacing the slash character
+*	`config_path` column displays the variable name and is usually defined in the module's `adminhtml/system.xml`
 
 | Description  | Path in Magento Admin (omitting **Stores** > **Configuration**) | Variable name | config_path |
 |--------------|--------------|----------------------|--------|
-| Store locale (Default Config scope)  | General > **General**, **Locale Options** > **Locale**  |  `CONFIG__DEFAULT__GENERAL__LOCALE__CODE` |  `system/default/general/locale/code` |
+| Store locale (Default Config scope)  | General > **General**, **Locale Options** > **Locale**  |  `CONFIG__DEFAULT__GENERAL__LOCALE__CODE` | `system/default/general/locale/code` |
 | Static asset signing  |  Advanced > **Developer**, **Static Files Settings** > **Static Files Signing** | `CONFIG__DEFAULT__DEV__STATIC__SIGN`  | `system/default/dev/static/sign`  |
-| Server-side or client-side LESS compilation  |  Advanced > **Developer**, **Frontend Developer Workflow** > **Workflow type** |  `CONFIG__DEFAULT__DEV__FRONT_END_DEVELOPMENT_WORKFLOW` | `system/default/dev/front_end_development_workflow`  |
+| Server-side or client-side LESS compilation  | Advanced > **Developer**, **Frontend Developer Workflow** > **Workflow type** |  `CONFIG__DEFAULT__DEV__FRONT_END_DEVELOPMENT_WORKFLOW` | `system/default/dev/front_end_development_workflow`  |
 |  HTML minification | Advanced > **Developer**, **Template Settings** > **Minify Html**  | `CONFIG__DEFAULT__DEV__TEMPLATE`  | `system/default/dev/template`  |
 | JavaScript minification  | Advanced > **Developer**, **JavaScript Settings** > (several options)  | `CONFIG__DEFAULT__DEV__JS`  |  `system/default/dev/js` |
 | CSS minification  | Advanced > **Developer**, **CSS Settings** > **Merge CSS Files** and **Minify CSS Files**  | `CONFIG__DEFAULT__DEV__CSS`  | `system/default/dev/css`  |
