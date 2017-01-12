@@ -13,11 +13,13 @@ github_link: ui_comp_guide/ui_component_explained.md
 
 Magento UI components are used to represent distinct UI elements, such as tables, buttons, dialogs, and others.
 
-UI Component is a combination of:
+UI component is a combination of:
 
-1. **XML declaration** that specifies the component's configuration settings and inner structure;
+1. **XML declaration** that specifies the component's configuration settings and inner structure.
 
-2. **JavaScript** class inherited from one of the Magento JavaScript Framework UI Components base classes (such as [UIElement]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uielement_concept.html), [UIClass]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uiclass_concept.html) or [UICollection]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uicollection_concept.html))
+2. **JavaScript** class inherited from one of the Magento JavaScript framework UI components base classes (such as [UIElement]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uielement_concept.html), [UIClass]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uiclass_concept.html) or [UICollection]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uicollection_concept.html)).
+
+<p class="q">what are JavaScript framework UI components base classes? Guess we need to give a strict definition</p>
 
 3. **Related template(s)**
 
