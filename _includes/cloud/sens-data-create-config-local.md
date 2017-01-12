@@ -10,6 +10,13 @@
 	For example,
 
 		ssh -k itnu84v4m4e5k-prod1-ouhx5wq@ssh.us.magentosite.cloud "php bin/magento app:config:SCDdump"
+
+	A message similar to the following displays if you have any sensitive settings configured in your system:
+
+	<pre class="no-copy">
+	The configuration file doesn't contain the sensitive data by security reason. The sensitive data can be stored in the next environment variables:
+	CONFIG__DEFAULT__DEV__RESTRICT__ALLOW_IPS for dev/restrict/allow_ips</ore>
+
 3.	If you haven't done so already, change to the project root directory.
 4.	Transfer `config.local.php` to your local system.
 
