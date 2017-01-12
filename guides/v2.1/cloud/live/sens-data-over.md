@@ -150,11 +150,11 @@ How to read the table:
 | JavaScript minification  | Advanced > **Developer**, **JavaScript Settings** > (several options)  | `CONFIG__DEFAULT__DEV__JS`  |  `system/default/dev/js` |
 | CSS minification  | Advanced > **Developer**, **CSS Settings** > **Merge CSS Files** and **Minify CSS Files**  | `CONFIG__DEFAULT__DEV__CSS`  | `system/default/dev/css`  |
 | Disable modules output<sup>[1](#myfootnote1)</sup> |  Advanced > **Advanced** > **Disable Modules Output** | `CONFIG__DEV__ADVANCED__DISABLE_MODULES_OUTPUT`  | `system/default/advanced/modules_disable_output`  |
-| Create, edit, delete stores  | **Stores** > **All Stores**, **Add Store** | `CONFIG__SYSTEM__STORES`  | `system/stores`  |
-| Create, edit, delete websites  | **Stores** > **All Stores**, **Add Website**  | `CONFIG__SYSTEM__WEBSITE`  | `system/websites`  |
+| Create, edit, delete stores <sup>[1](#myfootnote1)</sup> | **Stores** > **All Stores**, **Add Store** | `CONFIG__SYSTEM__STORES`  | `system/stores`  |
+| Create, edit, delete websites<sup>[1](#myfootnote1)</sup>  | **Stores** > **All Stores**, **Add Website**  | `CONFIG__SYSTEM__WEBSITE`  | `system/websites`  |
 |   |   |   |  `scopes` |
 
-<a name="myfootnote1">1</a>: Footnote content goes here
+<a name="myfootnote1">1</a>: These values are located in the indicated path in the Admin. They are not located under **Stores** > **Configuration**.
 
 ### Manage sensitive settings
 The Web Interface enables you to specify values of sensitive configuration settings for staging and production systems.
