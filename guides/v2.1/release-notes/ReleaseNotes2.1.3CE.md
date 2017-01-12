@@ -559,8 +559,21 @@ This release introduces the `Magento\Vault\Block\TokenRendererInterface::getToke
 
 	**Workaround**: You can reduce processing time and performance by increasing your [PHP `memory_limit` setting]({{ page.baseurl }}install-gde/prereq/php-settings.html) to 1 GB.
 
+* **Issue** If using Nginx to serve static content you will see 404 responses for CSS/JS. This is due to requirements for a  rewrite which has been added in pub/static/.htaccess
+```
+    # Remove signature of the static files that is used to overcome the browser cache
+    RewriteRule ^version.+?/(.+)$ $1 [L]
+```
 
-
+ **Workaround** You can add the equivalent Nginx rewrite in your Nginx configuration as below.
+```
+	server {
+		...
+		# Needed for M2 2.1.3+
+                rewrite ^/pub/static/version.+?/(.*)$ /pub/static/$1 last;
+		....
+	}
+```
 
 
 
