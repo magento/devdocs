@@ -16,6 +16,15 @@ This topic discusses how to manage default locale and file optimization settings
 
 These settings are discussed only to explain how the procedure works; you can use the same procedure to manage any available settings. For a complete list of settings, see [List of system-specific configuration settings]({{ page.baseurl }}cloud/live/sens-data-over.html#cloud-config-specific-list). 
 
+This example shows how to:
+
+1.	Set a configuration in the integration server's Admin.
+2.	Change those settings.
+3.	Verify your settings are not editable in the Admin.
+4.	Delete `config.local.php` so you can edit the same values again.
+5.	Change the settings and push `config.local.php` to the integration server.
+6.	Verify the settings are not editable.
+
 To manage _sensitive_ configuration settings, see [Manage sensitive configuration values]({{ page.baseurl }}cloud/live/sens-data-mg-sens.html).
 
 ## Required role
@@ -66,8 +75,12 @@ To change locale and file optimization settings:
 1.	Click **Stores** > Settings > **Configuration** > General > **General**. 
 2.	In the right pane, expand **Locale Options**. 
 3.	From the **Locale** list, change the locale. (You can change it back later.)
+
+	The following figure shows an example.
+
+	![Change the locale]({{ site.baseurl }}common/images/cloud_var_locale.png)
 4.	Click **Save Config**.
-5.	Click **Advanced** > **Developer**.
+5.	In the left navigation pane, click **Advanced** > **Developer**.
 5.	In the right pane, expand **Template Settings**.
 6.	Clear the **Use default value** check box next to the **Minify Html** list.
 7.	From the **Minify Html** list, click **No**.
@@ -85,7 +98,9 @@ To change locale and file optimization settings:
 {% endcollapsibleh2 %}
 
 {% collapsibleh2 Create config.local.php and transfer it to your local system %}
-This section discusses how to create `config.local.php` on the integration server. This procedure corresponds to step B, 1&ndash;2 of our [recommended procedure]({{ page.baseurl }}cloud/live/sens-data-over.html#cloud-config-specific-recomm). After you create `config.local.php`, transfer it to your local system so you can add it to Git.
+This section discusses how to create `config.local.php` on the integration server using a command you run on your local machine. 
+
+This procedure corresponds to step B, 1&ndash;2 of our [recommended procedure]({{ page.baseurl }}cloud/live/sens-data-over.html#cloud-config-specific-recomm). After you create `config.local.php`, transfer it to your local system so you can add it to Git.
 
 To create `config.local.php` on the integration server:
 
@@ -99,7 +114,7 @@ The following snippet from `config.local.php` show an example of changing the de
         'locale' =>
         array (
           'code' => 'en_GB',
-          'timezone' => 'America/Chicago',
+          'timezone' => 'UTC',
         ),
 
         ... more ...
@@ -131,7 +146,8 @@ The following snippet from `config.local.php` show an example of changing the de
 {% collapsibleh2 Push config.local.php to the integration server %}
 Now that you've created `config.local.php` and transferred it to your local system, commit it to Git and push it to your integration server. This procedure corresponds to step B, 3&mdash;4 of our [recommended procedure]({{ page.baseurl }}cloud/live/sens-data-over.html#cloud-config-specific-recomm).
 
-	git add app/etc/config.local.php && git commit -m "Add system-specific configuration" && git push origin master
+	git add app/etc/config.local.php 
+	git commit -m "Add system-specific configuration" && git push origin master
 
 Wait for deployment to complete.
 
@@ -154,8 +170,8 @@ To verify your configuration changes:
 	Notice several fields cannot be edited, as shown in the following sample.
 
 	![Can't edit certain values in the Admin]({{ site.baseurl }}common/images/cloud_var_not-editable.png){:width="550px"}
-6.	Click Click **Stores** > Settings > **Configuration** > Advanced > **Developer**.
-7.	In the right pane, click 
+6.	In the left navigation pane, click Advanced > **Developer**.
+7.	In the right pane, expand **Template Settings**, **JavaScript Settings**, and **CSS Settings**. 
 
 	Notice several fields cannot be edited, as shown in the following sample.
 
