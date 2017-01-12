@@ -97,9 +97,10 @@ Mail Transfer Agent (MTA) or an SMTP server
  
     	<a href="{{page.baseurl}}config-guide/solr/solr-overview.html">Solr search</a> can be used as a search provider. Available for Magento Enterprise Edition (EE) only.
 
-    *	Elasticsearch versions 1.0 and later up to version 5.0
+    *	Elasticsearch versions 1.7 and 2.x (recommended)
 
-    	For additional details, see [Elasticsearch supported versions]({{ page.baseurl }}config-guide/elasticsearch/es-overview.html#es-spt-versions)
+		*	If you get the Elasticsearch software from the Elasticsearch Linux repository, we support versions 2.x.
+		*	If you get the Elasticsearch software from their [Elasticsearch-PHP repository](https://github.com/elastic/elasticsearch-php){:target="_blank"}, we support the `2.0` branch.
 
 	*	RabbitMQ 3.5
 
