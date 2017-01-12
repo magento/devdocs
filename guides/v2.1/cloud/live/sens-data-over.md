@@ -123,9 +123,20 @@ We assume system-specific settings are the same in staging and production. Only 
 If you choose to use different system-specific settings in staging and production, you can manually edit `config.local.php` but that is beyond the scope of this guide.
 </div>
 
+### List of system-specific configuration settings {#cloud-config-specific-list}
+The following table shows the system-specific settings we include in `config.local.php` in version 2.1.4.
 
-#### List of system-specific configuration settings {#cloud-config-specific-list}
-TBD: We don't currently have a reference list of configuration settings
+| Description  | Path in Magento Admin (omitting **Stores** > **Configuration**) | Variable name | config_path |
+|--------------|--------------|----------------------|--------|
+| Store locale (Default Config scope)  | General > **General**, **Locale Options** > **Locale**  |  `CONFIG__DEFAULT__GENERAL__LOCALE__CODE` |  `system/default/general/locale/code` |
+| Static asset signing  |  Advanced > **Developer**, **Static Files Settings** > **Static Files Signing** | `CONFIG__DEFAULT__DEV__STATIC__SIGN`  | `system/default/dev/static/sign`  |
+|   |   |   |   |
+|   |   |   |   |
+|   |   |   |   |
+|   |   |   |   |
+|   |   |   |   |
+|   |   |   |   |
+|   |   |   |  `scopes` |
 
 ### Manage sensitive settings
 The Web Interface enables you to specify values of sensitive configuration settings for staging and production systems.
