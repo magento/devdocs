@@ -149,12 +149,12 @@ How to read the table:
 |  HTML minification | Advanced > **Developer**, **Template Settings** > **Minify Html**  | `CONFIG__DEFAULT__DEV__TEMPLATE`  | `system/default/dev/template`  |
 | JavaScript minification  | Advanced > **Developer**, **JavaScript Settings** > (several options)  | `CONFIG__DEFAULT__DEV__JS`  |  `system/default/dev/js` |
 | CSS minification  | Advanced > **Developer**, **CSS Settings** > **Merge CSS Files** and **Minify CSS Files**  | `CONFIG__DEFAULT__DEV__CSS`  | `system/default/dev/css`  |
-| Disable modules output |  Advanced > **Advanced** > **Disable Modules Output** | `CONFIG__DEV__ADVANCED__DISABLE_MODULES_OUTPUT`  | `system/default/advanced/modules_disable_output`  |
-| Create, edit, delete stores  | **Stores** > **All Stores**, *Add Store** | `CONFIG__SYSTEM__STORES`  | `system/stores`  |
-| Create, edit, delete websites  | **Stores** > **All Stores**, *Add Website**  | `CONFIG__SYSTEM__WEBSITE`  | `system/websites`  |
+| Disable modules output<sup>[1](#myfootnote1)</sup> |  Advanced > **Advanced** > **Disable Modules Output** | `CONFIG__DEV__ADVANCED__DISABLE_MODULES_OUTPUT`  | `system/default/advanced/modules_disable_output`  |
+| Create, edit, delete stores  | **Stores** > **All Stores**, **Add Store** | `CONFIG__SYSTEM__STORES`  | `system/stores`  |
+| Create, edit, delete websites  | **Stores** > **All Stores**, **Add Website**  | `CONFIG__SYSTEM__WEBSITE`  | `system/websites`  |
 |   |   |   |  `scopes` |
 
-[^1]: This setting is not under **Stores** > **Configuration** in the Admin. The table displays the full path to the setting in the Admin.
+<a name="myfootnote1">1</a>: Footnote content goes here
 
 ### Manage sensitive settings
 The Web Interface enables you to specify values of sensitive configuration settings for staging and production systems.
