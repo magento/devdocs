@@ -163,7 +163,7 @@ To verify your configuration changes:
 1.	If you haven't done so already, log out of the integration server's Magento Admin.
 2.	Log back in to the Admin.
 
-	You can find login infomration as discussed in [Step 2: Find Admin login information](#cloud-deploy-admin-login)
+	You can find login information as discussed in [Step 2: Find Admin login information](#cloud-deploy-admin-login)
 4.	Click **Stores** > Settings > **Configuration** > General > **General**.
 5.	In the right pane, expand **Locale Options**.
 
@@ -207,7 +207,7 @@ To change values in the Admin:
 1.	If you haven't done so already, log out of the Magento Admin.
 1.	Log in to the integration server's Admin.
 
-	You can find login infomration as discussed in [Step 2: Find Admin login information](#cloud-deploy-admin-login)
+	You can find login information as discussed in [Step 2: Find Admin login information](#cloud-deploy-admin-login)
 4.	Click **Stores** > Settings > **Configuration** > **Advanced** > **Developer**.
 5.	In the right pane, expand **Template Settings**.
 6.	Clear the **Use default value** check box next to the **Minify Html** list.
