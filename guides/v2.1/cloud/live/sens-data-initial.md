@@ -21,7 +21,7 @@ To manage _sensitive_ configuration settings, see [Manage sensitive configuratio
 ## Required role
 To complete the tasks discussed in this topic, you must have at minimum a project reader role with [environment administrator]({{ page.baseurl }}cloud/admin/admin-user-admin.html#loud-role-env) privileges.
 
-## Prerequisites
+{% collapsibleh2 Prerequisites %}
 Before you continue, make sure you have done all of the following.
 
 ### Reviewed the procedure
@@ -50,18 +50,15 @@ To get started:
 
 		git pull origin master
 		
-#### Step 2: Find Admin login information
+#### Step 2: Find Admin login information {#cloud-deploy-admin-login}
 To find login information for the integration server Admin:
 
 1.	Log in to your local system as the Magento file system owner.
-2.	Log in to your Magento Enterprise Cloud Edition project:
-
-		magento-cloud login
-3.	Find the integration server URL and Admin login information:
+2.	Find the integration server URL and Admin login information:
 
 		magento-cloud environment:url
 		magento-cloud variable:list
-4.	Using the preceding information, log in to the integration server's Admin.
+3.	Using the preceding information, log in to the integration server's Admin.
 
 #### Step 3: Change settings
 To change locale and file optimization settings:
@@ -85,6 +82,8 @@ To change locale and file optimization settings:
 9.	If prompted, [flush the Magento cache](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html){:target="_blank"}.
 10.	Log out of the Magento Admin.
 
+{% endcollapsibleh2 %}
+
 {% collapsibleh2 Create config.local.php and transfer it to your local system %}
 This section discusses how to create `config.local.php` on the integration server. This procedure corresponds to step B, 1&ndash;2 of our [recommended procedure]({{ page.baseurl }}cloud/live/sens-data-over.html#cloud-config-specific-recomm). After you create `config.local.php`, transfer it to your local system so you can add it to Git.
 
@@ -92,7 +91,7 @@ To create `config.local.php` on the integration server:
 
 {% include cloud/sens-data-create-config-local.md %}
 
-The following snippet from `config.local.php` show an example of changing the default locale to `en_GB` and file optimization settings:
+The following snippet from `config.local.php` show an example of changing the default locale to `en_GB` and changing file optimization settings:
 
 <pre class="no-copy">
  'general' =>
@@ -147,6 +146,8 @@ To verify your configuration changes:
 
 1.	If you haven't done so already, log out of the integration server's Magento Admin.
 2.	Log back in to the Admin.
+
+	You can find login infomration as discussed in [Step 2: Find Admin login information](#cloud-deploy-admin-login)
 4.	Click **Stores** > Settings > **Configuration** > General > **General**.
 5.	In the right pane, expand **Locale Options**.
 
@@ -189,6 +190,8 @@ To change values in the Admin:
 
 1.	If you haven't done so already, log out of the Magento Admin.
 1.	Log in to the integration server's Admin.
+
+	You can find login infomration as discussed in [Step 2: Find Admin login information](#cloud-deploy-admin-login)
 4.	Click **Stores** > Settings > **Configuration** > **Advanced** > **Developer**.
 5.	In the right pane, expand **Template Settings**.
 6.	Clear the **Use default value** check box next to the **Minify Html** list.
