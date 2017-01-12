@@ -149,7 +149,7 @@ How to read the table:
 |  HTML minification | Advanced > **Developer**, **Template Settings** > **Minify Html**  | `CONFIG__DEFAULT__DEV__TEMPLATE`  | `system/default/dev/template`  |
 | JavaScript minification  | Advanced > **Developer**, **JavaScript Settings** > (several options)  | `CONFIG__DEFAULT__DEV__JS`  |  `system/default/dev/js` |
 | CSS minification  | Advanced > **Developer**, **CSS Settings** > **Merge CSS Files** and **Minify CSS Files**  | `CONFIG__DEFAULT__DEV__CSS`  | `system/default/dev/css`  |
-| Disable modules output<sup>[1](#myfootnote1)</sup> |  Advanced > **Advanced** > **Disable Modules Output** | `CONFIG__DEV__ADVANCED__DISABLE_MODULES_OUTPUT`  | `system/default/advanced/modules_disable_output`  |
+| Disable modules output |  Advanced > **Advanced** > **Disable Modules Output** | `CONFIG__DEV__ADVANCED__DISABLE_MODULES_OUTPUT`  | `system/default/advanced/modules_disable_output`  |
 | Create, edit, delete stores <sup>[1](#myfootnote1)</sup> | **Stores** > **All Stores**, **Add Store** | `CONFIG__SYSTEM__STORES`  | `system/stores`  |
 | Create, edit, delete websites<sup>[1](#myfootnote1)</sup>  | **Stores** > **All Stores**, **Add Website**  | `CONFIG__SYSTEM__WEBSITE`  | `system/websites`  |
 |   |   |   |  `scopes` |
