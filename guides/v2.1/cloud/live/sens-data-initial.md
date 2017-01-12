@@ -12,7 +12,7 @@ version: 2.1
 github_link: cloud/live/sens-data-initial.md
 ---
 
-This topic discusses how to manage file optimization settings in your integration system. _File optimization_ means merging and minifying JavaScript and Cascading Style Sheets, and minifying HTML templates. File optimization should be disabled in integration (where you're testing) and enabled in staging and production.  
+This topic discusses how to manage default locale and file optimization settings in your integration system. _File optimization_ means merging and minifying JavaScript and Cascading Style Sheets, and minifying HTML templates. File optimization should be disabled in integration (where you're testing) and enabled in staging and production.  
 
 These settings are discussed only to explain how the procedure works; you can use the same procedure to manage any available settings. For a complete list of settings, see []({{ page.baseurl }}cloud/live/sens-data-over.html#cloud-config-specific-list). 
 
@@ -49,8 +49,8 @@ To get started:
 		
 {% endcollapsibleh2 %}
 
-{% collapsibleh2 Create config.local.php on the integration server %}
-This section discusses how to create `config.local.php` on the integration server. This procedure corresponds to step B, 1&ndash;2 of our [recommended procedure]({{ page.baseurl }}cloud/live/sens-data-over.html#cloud-config-specific-recomm).
+{% collapsibleh2 Create config.local.php and transfer it to your local system %}
+This section discusses how to create `config.local.php` on the integration server. This procedure corresponds to step B, 1&ndash;2 of our [recommended procedure]({{ page.baseurl }}cloud/live/sens-data-over.html#cloud-config-specific-recomm). After you create `config.local.php`, transfer it to your local system so you can add it to Git.
 
 To create `config.local.php` on the integration server:
 
