@@ -145,6 +145,9 @@ How to read the table:
 |  HTML minification | Advanced > **Developer**, **Template Settings** > **Minify Html**  | `CONFIG__DEFAULT__DEV__TEMPLATE`  | `system/default/dev/template`  |
 | JavaScript minification  | Advanced > **Developer**, **JavaScript Settings** > (several options)  | `CONFIG__DEFAULT__DEV__JS`  |  `system/default/dev/js` |
 | CSS minification  | Advanced > **Developer**, **CSS Settings** > **Merge CSS Files** and **Minify CSS Files**  | `CONFIG__DEFAULT__DEV__CSS`  | `system/default/dev/css`  |
+|   |   |   | `system/default/advanced/modules_disable_output`  |
+|   |   |   | `system/stores`  |
+|   |   |   | `system/websites`  |
 |   |   |   |   |
 |   |   |   |  `scopes` |
 
