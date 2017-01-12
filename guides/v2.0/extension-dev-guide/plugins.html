@@ -1102,7 +1102,7 @@
 
 <span class="k">class</span> <span class="nc">ProductPlugin</span>
 <span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">aroundSave</span><span class="p">(</span><span class="nx">\Magento\Catalog\Model\Product</span> <span class="nv">$subject</span><span class="p">,</span> <span class="nx">\callable</span> <span class="nv">$proceed</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">aroundSave</span><span class="p">(</span><span class="nx">\Magento\Catalog\Model\Product</span> <span class="nv">$subject</span><span class="p">,</span> <span class="nx">callable</span> <span class="nv">$proceed</span><span class="p">)</span>
     <span class="p">{</span>
         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">doSmthBeforeProductIsSaved</span><span class="p">();</span>
         <span class="nv">$returnValue</span> <span class="o">=</span> <span class="nv">$proceed</span><span class="p">();</span>
@@ -1138,7 +1138,7 @@
 
 <span class="k">class</span> <span class="nc">MyUtilityPlugin</span>
 <span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">aroundSave</span><span class="p">(</span><span class="nx">\My\Module\Model\MyUtility</span> <span class="nv">$subject</span><span class="p">,</span> <span class="nx">\callable</span> <span class="nv">$proceed</span><span class="p">,</span> <span class="nx">SomeType</span> <span class="nv">$obj</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">aroundSave</span><span class="p">(</span><span class="nx">\My\Module\Model\MyUtility</span> <span class="nv">$subject</span><span class="p">,</span> <span class="nx">callable</span> <span class="nv">$proceed</span><span class="p">,</span> <span class="nx">SomeType</span> <span class="nv">$obj</span><span class="p">)</span>
     <span class="p">{</span>
       <span class="c1">//do something</span>
     <span class="p">}</span>
@@ -1154,7 +1154,7 @@
 
 <span class="k">class</span> <span class="nc">MyUtilityPlugin</span>
 <span class="p">{</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">aroundSave</span><span class="p">(</span><span class="nx">\My\Module\Model\MyUtility</span> <span class="nv">$subject</span><span class="p">,</span> <span class="nx">\callable</span> <span class="nv">$proceed</span><span class="p">,</span> <span class="o">...</span><span class="nv">$args</span><span class="p">)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">aroundSave</span><span class="p">(</span><span class="nx">\My\Module\Model\MyUtility</span> <span class="nv">$subject</span><span class="p">,</span> <span class="nx">callable</span> <span class="nv">$proceed</span><span class="p">,</span> <span class="o">...</span><span class="nv">$args</span><span class="p">)</span>
     <span class="p">{</span>
       <span class="c1">//do something</span>
       <span class="nv">$proceed</span><span class="p">(</span><span class="o">...</span><span class="nv">$args</span><span class="p">);</span>
