@@ -135,7 +135,11 @@ How to read the table:
 *	`Variable name` is the name of the corresponding environment variable.
 
 	You have the option of specifying system-specific values for these configuration parameters as environment variables if you wish.
-*	`config_path` is usually defined in the module's `adminhtml/system.xml`
+*	`config_path` defines the variable name and is usually defined in the module's `adminhtml/system.xml`
+
+	*	A variable name is always ALL CAPS
+	*	Start a variable name with `CONFIG__` (note two underscore characters)
+	*	The remainder of the variable name is the value of `config_path` with two underscore characters replacing the slash character
 
 | Description  | Path in Magento Admin (omitting **Stores** > **Configuration**) | Variable name | config_path |
 |--------------|--------------|----------------------|--------|
@@ -145,8 +149,9 @@ How to read the table:
 |  HTML minification | Advanced > **Developer**, **Template Settings** > **Minify Html**  | `CONFIG__DEFAULT__DEV__TEMPLATE`  | `system/default/dev/template`  |
 | JavaScript minification  | Advanced > **Developer**, **JavaScript Settings** > (several options)  | `CONFIG__DEFAULT__DEV__JS`  |  `system/default/dev/js` |
 | CSS minification  | Advanced > **Developer**, **CSS Settings** > **Merge CSS Files** and **Minify CSS Files**  | `CONFIG__DEFAULT__DEV__CSS`  | `system/default/dev/css`  |
-|   |   |   |   |
-|   |   |   |  `scopes` |
+
+
+[^1]: This setting is not under **Stores** > **Configuration** in the Admin. The table displays the full path to the setting in the Admin.
 
 ### Manage sensitive settings
 The Web Interface enables you to specify values of sensitive configuration settings for staging and production systems.
