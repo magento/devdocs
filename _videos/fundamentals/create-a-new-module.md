@@ -1,13 +1,14 @@
 ---
 youtube_id: 682p52tFcmY
+duration: "5:18"
 tags:
 - Module
-group:
+group: "Fundamentals of Magento 2 Development"
 subgroup:
 title: "Create a New Module"
-author: "Magento"
+author: "Magento U"
 menu_title: "Create a New Module"
-menu_order: 0
+menu_order: 1
 github_link:
 ---
 

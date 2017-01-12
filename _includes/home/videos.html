@@ -1,22 +1,17 @@
 <section class="home-videos">
   <div class="container">
     <h2>Video Tutorials</h2>
-    <p class="intro">Seeing is believing! Our developers and community members sharing their knowledge of Magento. Subscribe to our <a href="https://www.youtube.com/watch?v=6qkFVWJWRUI">YouTube channell</a> and never miss new tutorial.</p>
+    <p class="intro">Seeing is believing! Our developers and community members sharing their knowledge of Magento. Subscribe to our <a href="https://www.youtube.com/channel/UCZeJjcZ0_rnvL-pp7p4Aq3A">YouTube channell</a> and never miss new tutorial.</p>
 
     <div class="videos">
-    {% for video in site.videos limit:3 %}
-      <div class="video">
-        <a href="{{ video.url }}">
-          <img class="thumbnail" src="https://img.youtube.com/vi/{{ video.youtube_id }}/0.jpg" />
-          <span class="title">{{ video.title }}</span>
-        </a>
-        <div class="author">by {{ video.author }}</div>
-      </div>
+    {% assign sorted_videos = (site.videos | where: 'layout', 'video' | sort: 'date') | reverse %}
+		{% for video in sorted_videos limit:3 %}
+      {% include video-preview.html %}
     {% endfor %}
     </div>
 
     <div>
-      <a href="{{ site.baseurl }}videos/" class="btn btn-large btn-primary">See all videos</a>
+      <a href="{{ site.baseurl }}videos/" class="btn btn-large btn-primary">See all Videos</a>
     </div>
 
   </div>

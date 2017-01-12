@@ -7,11 +7,14 @@
 		<div class="sidebar-wrapper">
 
 			<ul>
-				<li class=""><span class="nav-header">Getting Stuff Done with Magento 2</span></li>
-				<li class="level-1 active"><a href="">Part 1: Create Skeleton Theme <span class="video-duration">15:34</span></a></li>
-				<li class="level-1"><a href="">Part 2: Kangaroo background image  <span class="video-duration">9:55</span></a></li>
-				<li class="level-1"><a href="">Part 3: Add image to footer  <span class="video-duration">12:22</span></a></li>
+				<h4><span class="playlist-name">Playlist</span> {{ page.group }}</h4>
+				{% assign videos = (site.videos | where: 'group', page.group | where: 'layout', 'video' | sort: 'menu_order' ) %}
+
+				{% for video in videos %}
+					<li class="level-1 {% if video.url == page.url %}active{% assign current = forloop.index %}{% endif %}"><a href="{{ video.url }}">{{ video.title }} <span class="video-duration">{{ video.duration }} </span></a></li>
+				{% endfor %}
 			</ul>
+
 
 		</div>
 	</aside>
@@ -35,7 +38,37 @@
 			{% include page-author.html %}
 			{% include page-tags.html %}
 
+
+
+
 			{{ content }}
+
+
+			<div class="adjaced-pages">
+				<div class="playlist-name">{{page.group}}</div>
+			{% assign prev = current | minus: 2 %}
+			{% if prev >= 0 %}
+				<div class="previous-page">
+					<a href="{{ videos[prev].url }}">
+						<span class="arrow">&larr; Previous</span>
+						<span class="title">{{ videos[prev].title }}</span>
+					</a>
+				</div>
+			{% endif %}
+
+			{% assign next = current %}
+			{% if next < videos.size %}
+				<div class="next-page">
+					<a href="{{ videos[next].url }}">
+						<span class="arrow">Next &rarr;</span>
+						<span class="title">{{ videos[next].title }}</span>
+					</a>
+				</div>
+			{% endif %}
+			</div>
+
+
+
 		</div>
 		<!-- /.content-wrap -->
 

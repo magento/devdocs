@@ -59,13 +59,25 @@ namem2install: "Magento 2 Installation Guide"
 collections:
   videos:
     output: true
+    permalink: /videos/:path/
+  site_tags:
+    output: true
+    permalink: /tag/:name/
 
 defaults:
-  - scope:
+  -
+    scope:
       path: ""
       type: videos
     values:
       layout: video
+      guide_version: "2.1"
+  -
+    scope:
+      path: ""
+      type: site_tags
+    values:
+      layout: tag-index
 
 # toc_baseurl: "https://github.corp.ebay.com/pages/Magento/devdocs_internal"
 
@@ -75,7 +87,7 @@ highlighter: pygments
 kramdown:
   toc_levels: 2..3
 
-incremental: true
+incremental: false
 
 gems:
   - jekyll-redirect-from

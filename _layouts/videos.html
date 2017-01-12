@@ -7,30 +7,38 @@
 		<div class="sidebar-wrapper">
 
 			<ul>
-
-				<li class="level-1 active"><a href="{{ site.baseurl }}videos/">All Videos</a></li>
+				<li class="level-1 {% if page.url == '/videos/' %}active{% endif %}"><a href="{{ site.baseurl }}videos/">All Videos</a></li>
 
 				<li class=""><span class="nav-header">Playlists</span></li>
-				<li class="level-1"><a href="">Getting Things done with Magento 2</a></li>
-				<li class="level-1"><a href="">How-to scripts</a></li>
-				<li class="level-1"><a href="">Creating theme from skratch</a></li>
 
+				{% assign playlists = (site.videos | where: 'layout', 'video' | group_by: 'group') %}
+				{% for playlist in playlists %}
+					{% if playlist.name.size > 0 %}
 
-				<li class=""><span class="nav-header">Tags</span></li>
-				<li class="level-1"><a href="">Frontend</a></li>
-				<li class="level-1"><a href="">Themes</a></li>
-				<li class="level-1"><a href="">Images</a></li>
-				<li class="level-1"><a href="">Database</a></li>
+						{% assign url_parts = playlist.items[0].url | split: '/' %}
+						{% assign url_parts_size = url_parts | size %}
+						{% assign rm = url_parts[2] %}
 
-
-
-
+						<li class="level-1 {% if playlist.name == page.group %}active{% endif %}"><a href="{{site.baseurl}}videos/{{ rm }}/">{{ playlist.name }} <i class="item-count">{{ playlist.items.size }} videos</i></a></li>
+					{% endif %}
+				{% endfor %}
 
 				<li class=""><span class="nav-header">Authors</span></li>
-				<li class="level-1"><a href="">Alan Kent</a></li>
-				<li class="level-1"><a href="">Mangento</a></li>
-				<li class="level-1"><a href="">Random Dude</a></li>
+				{% assign playlists = (site.videos | where: 'layout', 'video' | group_by: 'author' | sort: 'author') | reverse  %}
+				{% for playlist in playlists %}
+					{% if playlist.name.size > 0 %}
+						<li class="level-1 {% if playlist.items[0].author == page.author %}active{% endif %}"><a href="">{{ playlist.name }} <i class="item-count">{{ playlist.items.size }} videos</i></a></li>
+					{% endif %}
+				{% endfor %}
 
+
+				<!--
+				<li class=""><span class="nav-header">Tags</span></li>
+				<li class="tags">
+					{% for tag in site.site_tags %}
+						<a href="{{tag.url}}" class="tag tag-default">{{ tag.title }}</a>
+					{% endfor %}
+				</li>-->
 
 			</ul>
 
@@ -45,26 +53,27 @@
 			{% include page-header.html %}
 			{{ content }}
 
+			<!--
 			<div class=" dropdown">
-				<button class="btn dropdown-toggle" data-toggle="dropdown">Most Popular</button>
+				<button class="btn dropdown-toggle" data-toggle="dropdown">Most Recent</button>
 				<ul class="dropdown-menu dropdown-menu-left">
-					<li><a class="dropdown-item" href="/guides/v2.0/">Most Popular</a></li>
-					<li><a class="dropdown-item" href="/guides/v2.1/">Most Recent</a></li>
+					<li><a class="dropdown-item" href="">Most Popular</a></li>
+					<li><a class="dropdown-item" href="" >Most Recent</a></li>
 				</ul>
-			</div>
+			</div>-->
 
+
+			{% assign sorted_videos = (site.videos | where: 'layout', 'video' | sort: 'date') | reverse %}
+			{% if page.group != nil %}
+				{% assign sorted_videos = (sorted_videos | where: 'group', page.group | sort: 'menu_order') %}
+			{% endif %}
+			{% if page.author != nil %}
+				{% assign sorted_videos = (sorted_videos | where: 'author', page.author ) %}
+			{% endif %}
 			<div class="videos">
-
-			{% for video in site.videos %}
-				<div class="video">
-	  			<a href="{{ video.url }}">
-						<img class="thumbnail" src="https://img.youtube.com/vi/{{ video.youtube_id }}/0.jpg" />
-						<span class="title">{{ video.title }}</span>
-					</a>
-	  			<div class="author">by {{ video.author }}</div>
-				</div>
+			{% for video in sorted_videos %}
+        {% include video-preview.html %}
 			{% endfor %}
-
 			</div>
 
 		</div>

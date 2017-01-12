@@ -1,16 +1,16 @@
 ---
 youtube_id: GMOtt5mai5A
+duration: "6:11"
 tags:
 - Database
-group:
+group: "Fundamentals of Magento 2 Development"
 subgroup:
 title: "How to add a new table to a database"
-author: "Magento"
+author: "Magento U"
 menu_title: "Add A New Table To A Database"
 menu_order: 0
 github_link:
 ---
-
 Module is a structural element of Magento 2 – the whole system is built upon modules. Typically, the first step in creating a customization is building a module.
 
 To create a module, you need to complete the following high-level steps:
