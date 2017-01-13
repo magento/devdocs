@@ -16,7 +16,7 @@ redirect_from:
 
 JavaScript is important for making your storefront dynamic and interactive. However, including JavaScript into the page headers might slow down uploading of the pages. To address this problem, we exclude JavaScript from the page headers and we added the ability to use the <a href="http://requirejs.org" target="_blank">RequireJS library</a>.
 
-RequireJS improves the perceived page load time because it allows JavaScript to load in the background; in particular, because it enables asynchronous or "lazy" JavaScript loading.
+RequireJS improves the perceived page load time because it allows JavaScript to load in the background; in particular, because it enables asynchronous JavaScript loading.
 
 ## Explore and configure JavaScript resources {#m2devgde-js-resources-configuring}
 
