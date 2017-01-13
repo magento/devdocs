@@ -13,10 +13,23 @@ github_link: ext-best-practices/tutorials/data-upgrade-script.md
 
 The following tutorial lists the steps needed to create an upgrade script that converts the data stored in the database from the default PHP serialized format to JSON format.
 
+Use this tutorial to create an upgrade script to update your extension to work with Magento 2.2 and above.
+
 ## Before you begin
 
 Identify the data you need to convert to JSON in the database.
-If your extension stores serialized data or adds serialized data to Magento entities, you must convert them to JSON format to work with Magento 2.2 and above.
+
+Your extension *must* convert data in the following cases:
+
+1. The extension stores serialized data provided by a core module that now uses the JSON format.
+2. The extension uses the automatic serializing mechanism provided by the Magento framework (i.e. the extension declares `\Magento\Framework\Model\ResourceModel\Db\AbstractDb::$_serializableFields`).
+
+Your extension will continue working in Magento 2.2 and above in the following cases, but we recommend you switch to using the JSON format for security reasons:
+
+1. The extension stores its own serialized data.
+2. The extension is responsible for serializing/unserializing data stored in core tables.
+
+### API Overview
 
 This tutorial uses the following framework API in the following ways:
 
@@ -110,7 +123,7 @@ class UpgradeData implements \Magento\Framework\Setup\UpgradeDataInterface
 {:#step-2}
 
 Any module can replace another module in Magento.
-If your extension stores data in the tables of another module, make sure the application uses the module before executing the upgrade logic.
+If your extension stores data in the tables of another module or it serializes/unserializes data stored in core modules, make sure the application uses the module before executing the upgrade logic.
 
 Use the `\Magento\Framework\Module\Manager` class to check the status of the module your extension depends on.
 
