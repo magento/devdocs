@@ -12,13 +12,13 @@ redirect_from:
   - guides/v1.0/config-guide/config/js-resources.html
 ---
 
-<h2 id="m2devgde-js-resources-intro">Overview</h2>
+## Overview {#m2devgde-js-resources-intro}
 
 JavaScript is important for making your storefront dynamic and interactive. However, including JavaScript into the page headers might slow down uploading of the pages. To address this problem, we exclude JavaScript from the page headers and we added the ability to use the <a href="http://requirejs.org" target="_blank">RequireJS library</a>.
 
 RequireJS improves the perceived page load time because it allows JavaScript to load in the background; in particular, because it enables asynchronous or "lazy" JavaScript loading.
 
-<h2 id="m2devgde-js-resources-configuring">Explore and configure JavaScript resources</h2>
+## Explore and configure JavaScript resources {#m2devgde-js-resources-configuring}
 
 You must specify and configure all JavaScript resources used in modules and themes that you added or customized. To ensure correct work of themes and modules, do not edit the JavaScript resources belonging to other modules and themes.
 
@@ -47,7 +47,8 @@ require(["Magento_ConfigurableProduct/js/configurable"], function(Configurable){
 {%endhighlight%}
 
 
-<h3 id="m2devgde-js-resources-dependencies">Specify dependencies between JavaScript resources</h3>
+### Specify dependencies between JavaScript resources {#m2devgde-js-resources-dependencies}
+
 Specifying all dependencies between JavaScript resources might be time consuming. To facilitate this task we implemented ability to build the dependencies via plugin: thus, you will need to specify only dependency of your resource on a plugin, and the latter will pick up all necessary dependencies on other resources automatically.
 
 When creating a new resource, you can select a plugin, on which your resources are to depend, from the [ready-to-go plugin library]({{site.mage2000url}}lib/web/mage) or write a plugin by yourself. Observe the following rules when declaring a plugin:
@@ -95,13 +96,14 @@ When creating a new resource, you can select a plugin, on which your resources a
 </pre>
 </ul>
 </ol>
-<h2 id="m2devgde-js-resources-configrequirejs">Configure the RequireJS library</h2>
+
+## Configure the RequireJS library {#m2devgde-js-resources-configrequirejs}
 
 The <a href="http://requirejs.org" target="_blank">RequireJS library</a> loads JavaScript files and modules. To make this library available in your Magento instance, specify this library along with specific RequireJS configurations in `layout.xml` as follows:
 
 <script src="https://gist.github.com/xcomSteveJohnson/5ec88ab806a29c85f1cf.js"></script>
 
-<h2 id="m2devgde-js-resources-mapping">Specify JavaScript resources mapping</h2>
+## Specify JavaScript resources mapping {#m2devgde-js-resources-mapping}
 
 To work with the RequireJS library, specify the mapping of JavaScript resources; that is, assign the aliases to resources. Use `requirejs-config.js` to create the mapping.
 
@@ -139,7 +141,7 @@ In the example above, `./product/product` is relative path to JavaScript resourc
 
 You should not specify `baseUrl` parameter in the configurations files, since it is generated automatically.
 
-<h2 id="m2devgde-js-resources-adjusting">Adjust RequireJS</h2>
+## Adjust RequireJS {#m2devgde-js-resources-adjusting}
 
 You can adjust RequireJS for your needs in two ways:
 
