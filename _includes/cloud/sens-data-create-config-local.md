@@ -5,11 +5,11 @@
 		magento-cloud environment:ssh --pipe -e master
 2.	Create `config.local.php` on the integration server.
 
-		ssh -k <SSH URL>@ssh.us.magentosite.cloud "php bin/magento app:config:SCDdump"
+		ssh -k <SSH URL>@ssh.us.magentosite.cloud "php bin/magento app:config:scd-dump"
 
 	For example,
 
-		ssh -k itnu84v4m4e5k-prod1-ouhx5wq@ssh.us.magentosite.cloud "php bin/magento app:config:SCDdump"
+		ssh -k itnu84v4m4e5k-prod1-ouhx5wq@ssh.us.magentosite.cloud "php bin/magento app:config:scd-dump"
 
 	A message similar to the following displays if you have any sensitive settings configured in your system:
 
