@@ -36,18 +36,10 @@ Rename the following files in your Magento root directory:
 <ul>
 <li><code>package.json.sample</code> to <code>package.json</code></li>
 <li><code>Gruntfile.js.sample</code> to <code>Gruntfile.js</code></li>
-<li><code>grunt-config.json.sample</code> to <code>grunt-config.json</code></li>
 </ul>
 </li>
 <li>
-Provide path to grunt themes configuration in <code>grunt-config.json</code>:
-<pre>
-{
-    "themes": "dev/tools/grunt/configs/themes"
-}
-</pre>
-</li>
-<li>
+
 Install (or refresh) the <code>node.js</code> project dependency, including Grunt, for your Magento instance. To do this, run the following commands in a command prompt:<br>
 
 <pre>
