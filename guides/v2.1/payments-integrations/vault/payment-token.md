@@ -68,10 +68,12 @@ class VaultDetailsHandler implements HandlerInterface
 }
 {% endhighlight %}
 
- There are two types of `paymentTokenFactory`:
+ There are two types of `paymentTokenFactory` and depends on your payment integration you need to specify a concrete factory to create payment token:
 
  * `CreditCardTokenFactory`: used for credit cards
  * `AccountPaymentTokenFactory`: used for payment accounts, like PayPal
+ 
+Also, you can use `\Magento\Vault\Api\Data\PaymentTokenInterfaceFactory` in your code as common dependency, but in that case you must specify preference for this interface in DI.xml, because `PaymentTokenInterfaceFactory` does not have default preference.
 
 The important thing is the `setGatewayToken()` method. This method gets the gateway token: a hashed value based on some credit card details. Different
 payment providers use different algorithms to create this hash. In most cases, exactly this token is used to perform place order actions.
