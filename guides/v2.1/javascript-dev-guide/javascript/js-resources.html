@@ -709,26 +709,26 @@
 
 <p>JavaScript is important for making your storefront dynamic and interactive. However, including JavaScript into the page headers might slow down uploading of the pages. To address this problem, we exclude JavaScript from the page headers and we added the ability to use the <a href="http://requirejs.org" target="_blank">RequireJS library</a>.</p>
 
-<p>RequireJS improves the perceived page load time because it allows JavaScript to load in the background; in particular, because it enables asynchronous or “lazy” JavaScript loading.</p>
+<p>RequireJS improves the perceived page load time because it allows JavaScript to load in the background; in particular, because it enables asynchronous JavaScript loading.</p>
 
 <h2 id="m2devgde-js-resources-configuring">Explore and configure JavaScript resources</h2>
 
 <p>You must specify and configure all JavaScript resources used in modules and themes that you added or customized. To ensure correct work of themes and modules, do not edit the JavaScript resources belonging to other modules and themes.</p>
 
-<p>JavaScript resources can be specified as follows:</p>
+<p>JavaScript resources can be added on the following levels:</p>
 
 <ul>
-  <li>Library level for all libraries in Magento code base (<code>lib/web</code>)</li>
-  <li>Module level for all libraries in a module (<code>&lt;module_dir&gt;/view/&lt;areaname&gt;/web</code>)</li>
-  <li>Theme for all libraries in a theme (<code>&lt;theme_dir&gt;/&lt;VendorName&gt;_&lt;ModuleName&gt;/web</code>)</li>
-  <li>(<em>Not recommended</em>) All libraries in a theme  (<code>&lt;theme_dir&gt;/web</code>). We do not recommend using this level to specify JavaScript resources.</li>
+  <li>Library level (<code>lib/web</code>)</li>
+  <li>Module level (<code>&lt;module_dir&gt;/view/&lt;areaname&gt;/web</code>). If the module is enabled, resources added here are available in other modules and themes.</li>
+  <li>Theme level, for a particular module (<code>&lt;theme_dir&gt;/&lt;VendorName&gt;_&lt;ModuleName&gt;/web</code>). Resources added here are available for <a href="/guides/v2.1/frontend-dev-guide/themes/theme-inherit.html">inheriting</a> themes.</li>
+  <li>Theme level  (<code>&lt;theme_dir&gt;/web</code>). Resources added here are available for <a href="/guides/v2.1/frontend-dev-guide/themes/theme-inherit.html">inheriting</a> themes.</li>
 </ul>
 
 <p>We recommend specifying JavaScript resources in the templates rather than in the layout updates to ensure processing of the resources in body of a page.</p>
 
 <p>JavaScript resources generated in Magento have IDs of two types:  a RequireJS ID and a Magento modular ID. For example JavaScript resources for configurable product will have the following IDs:</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// Regular ID</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// RequireJS ID</span>
 <span class="nx">require</span><span class="p">([</span><span class="s2">&quot;jquery&quot;</span><span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">){</span>
     <span class="c1">// ...</span>
 <span class="p">});</span>
@@ -739,6 +739,7 @@
 <span class="p">});</span></code></pre></figure>
 
 <h3 id="m2devgde-js-resources-dependencies">Specify dependencies between JavaScript resources</h3>
+
 <p>Specifying all dependencies between JavaScript resources might be time consuming. To facilitate this task we implemented ability to build the dependencies via plugin: thus, you will need to specify only dependency of your resource on a plugin, and the latter will pick up all necessary dependencies on other resources automatically.</p>
 
 <p>When creating a new resource, you can select a plugin, on which your resources are to depend, from the <a href="https://github.com/magento/magento2/blob/2.0/lib/web/mage">ready-to-go plugin library</a> or write a plugin by yourself. Observe the following rules when declaring a plugin:</p>
@@ -786,6 +787,7 @@
 </pre>
 </ul>
 </ol>
+
 <h2 id="m2devgde-js-resources-configrequirejs">Configure the RequireJS library</h2>
 
 <p>The <a href="http://requirejs.org" target="_blank">RequireJS library</a> loads JavaScript files and modules. To make this library available in your Magento instance, specify this library along with specific RequireJS configurations in <code>layout.xml</code> as follows:</p>
