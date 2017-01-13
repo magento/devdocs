@@ -24,17 +24,17 @@ You must specify and configure all JavaScript resources used in modules and them
 
 JavaScript resources can be added on the following levels:
 
+*   Library level (`lib/web`)
 *	Module level (`<module_dir>/view/<areaname>/web`). If the module is enabled, resources added here are available in other modules and themes. 
 *	Theme level, for a particular module (`<theme_dir>/<VendorName>_<ModuleName>/web`). Resources added here are available for [inheriting]({{page.baseurl}}frontend-dev-guide/themes/theme-inherit.html) themes.
 *	Theme level  (`<theme_dir>/web`). Resources added here are available for [inheriting]({{page.baseurl}}frontend-dev-guide/themes/theme-inherit.html) themes.
-
 
 We recommend specifying JavaScript resources in the templates rather than in the layout updates to ensure processing of the resources in body of a page.
 
 JavaScript resources generated in Magento have IDs of two types:  a RequireJS ID and a Magento modular ID. For example JavaScript resources for configurable product will have the following IDs:
 
 {%highlight js%}
-// Regular ID
+// RequireJS ID
 require(["jquery"], function($){
     // ...
 });
