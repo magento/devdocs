@@ -123,7 +123,7 @@ class UpgradeData implements \Magento\Framework\Setup\UpgradeDataInterface
 {:#step-2}
 
 Any module can replace another module in Magento.
-If your extension stores data in the tables of another module or it serializes/unserializes data stored in core modules, make sure the application uses the module before executing the upgrade logic.
+If your extension stores data in the tables of another module or it serializes/unserializes data stored in core modules, make sure the module exists and is active before executing the upgrade logic.
 
 Use the `\Magento\Framework\Module\Manager` class to check the status of the module your extension depends on.
 
