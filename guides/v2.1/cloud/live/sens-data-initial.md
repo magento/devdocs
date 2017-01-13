@@ -78,7 +78,7 @@ To change locale and file optimization settings:
 
 	The following figure shows an example.
 
-	![Change the locale]({{ site.baseurl }}common/images/cloud_var_locale.png)
+	![Change the locale]({{ site.baseurl }}common/images/cloud_var_locale.png){:width="250px"}
 4.	Click **Save Config**.
 5.	In the left navigation pane, click **Advanced** > **Developer**.
 5.	In the right pane, expand **Template Settings**.
@@ -175,7 +175,7 @@ To verify your configuration changes:
 
 	Notice several fields cannot be edited, as shown in the following sample.
 
-	![Can't edit certain values in the Admin ]({{ site.baseurl }}common/images/cloud_var_not-editable2.png)
+	![Can't edit certain values in the Admin ]({{ site.baseurl }}common/images/cloud_var_not-editable2.png){:width="550px"}
 8.	Log out of the Magento Admin.
 
 {% endcollapsibleh2 %}
