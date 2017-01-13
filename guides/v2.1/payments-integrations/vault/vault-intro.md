@@ -16,7 +16,7 @@ The [Magento Vault]({{site.mage2100url}}app/code/Magento/Vault) is implemented u
 
 The following diagram shows a simplified interaction flow between Magento sales management, vault, payment integration and external payment service provider.
 
-![Vault Interaction]({{site.baseurl}}common/images/payments-integrations/vault_interaction_flow.png)
+![Vault Interaction]({{site.baseurl}}common/images/payments-integrations/vault_interaction_flow1.png)
 
 The flow is similar to usual Magento [payment gateway interaction flow]({{page.baseurl}}payment-integrations/payment-gateway/payment-gateway-intro.html). 
 
