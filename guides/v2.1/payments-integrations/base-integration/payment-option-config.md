@@ -9,7 +9,7 @@ version: 2.1
 github_link: payments-integrations/base-integration/payment-option-config.md
 ---
 
-In the `config.xml` file in your `%Vendor_Module%` directory, configure the options of your payment method. The following table contains the default options available for any payment method.
+In the `config.xml` file in your `%Vendor_Module%/etc` directory, configure the options of your payment method. The following table contains the default options available for any payment method.
 
 | Option               | Description                                                                                                                                          | Value type                            |
 |----------------------|------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------|

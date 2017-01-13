@@ -258,9 +258,6 @@ The following table describes the instructions specific for page configuration f
       <td colspan="1">
         <ul>
           <li>
-            <span><code>src</code></span>
-          </li>
-          <li>
             <span><code>defer</code></span>
           </li>
           <li>
@@ -283,6 +280,12 @@ The following table describes the instructions specific for page configuration f
           </li>
           <li>
             <span><code>sizes</code></span>
+          </li>
+          <li>
+            <span><code>src</code></span>
+          </li>
+          <li>
+            <span><code>src_type</code></span>
           </li>
           <li>
             <span><code>target</code></span>
@@ -304,9 +307,6 @@ The following table describes the instructions specific for page configuration f
       <td colspan="1">
         <ul>
           <li>
-            <span><code>src</code></span>
-          </li>
-          <li>
             <span><code>defer</code></span>
           </li>
           <li>
@@ -331,6 +331,12 @@ The following table describes the instructions specific for page configuration f
             <span><code>sizes</code></span>
           </li>
           <li>
+            <span><code>src</code></span>
+          </li>
+          <li>
+            <span><code>src_type</code></span>
+          </li>
+          <li>
             <span><code>target</code></span>
           </li>
           <li>
@@ -350,9 +356,6 @@ The following table describes the instructions specific for page configuration f
       <td colspan="1">
         <ul>
           <li>
-            <span><code>src</code></span>
-          </li>
-          <li>
             <span><code>defer</code></span>
           </li>
           <li>
@@ -363,6 +366,12 @@ The following table describes the instructions specific for page configuration f
           </li>
           <li>
             <span><code>charset</code></span>
+          </li>
+          <li>
+            <span><code>src</code></span>
+          </li>
+          <li>
+            <span><code>src_type</code></span>
           </li>
           <li>
             <span><code>type</code></span>
