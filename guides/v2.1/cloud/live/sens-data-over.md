@@ -144,12 +144,12 @@ How to read the table:
 | Description  | Path in Magento Admin (omitting **Stores** > **Configuration**) | Variable name | 
 |--------------|--------------|----------------------|
 | Store locale (Default Config scope)  | General > **General**, **Locale Options** > **Locale**  |  `CONFIG__DEFAULT__GENERAL__LOCALE__CODE` | 
-| Static asset signing  |  Advanced > **Developer**, **Static Files Settings** > **Static Files Signing** | `CONFIG__DEFAULT__DEV__STATIC__SIGN`  | 
-| Server-side or client-side LESS compilation  | Advanced > **Developer**, **Frontend Developer Workflow** > **Workflow type** |  `CONFIG__DEFAULT__DEV__FRONT_END_DEVELOPMENT_WORKFLOW` | 
+| Static asset signing |  Advanced > **Developer**, **Static Files Settings** > **Static Files Signing** | `CONFIG__DEFAULT__DEV__STATIC__SIGN`  | 
+| Server-side or client-side LESS compilation  | Advanced > **Developer**, **Frontend Developer Workflow** > **Workflow type** |  `CONFIG__DEFAULT__DEV__FRONT_END_DEVELOPMENT_WORKFLOW__TYPE` | 
 |  HTML minification | Advanced > **Developer**, **Template Settings** > **Minify Html**  | `CONFIG__DEFAULT__DEV__TEMPLATE__MINIFY_HTML`  | 
-| JavaScript minification  | Advanced > **Developer**, **JavaScript Settings** > (several options)  | `CONFIG__DEFAULT__DEV__JS`  |  
-| CSS minification  | Advanced > **Developer**, **CSS Settings** > **Merge CSS Files** and **Minify CSS Files**  | `CONFIG__DEFAULT__DEV__CSS`  | 
-| Disable modules output |  Advanced > **Advanced** > **Disable Modules Output** | `CONFIG__DEV__ADVANCED__DISABLE_MODULES_OUTPUT`  | 
+| JavaScript minification  | Advanced > **Developer**, **JavaScript Settings** > (several options)  | `CONFIG__DEFAULT__DEV__JS__MINIFY_FILES` |  
+| CSS minification  | Advanced > **Developer**, **CSS Settings** > **Merge CSS Files** and **Minify CSS Files**  | `CONFIG__DEFAULT__DEV__CSS__MINIFY_FILES` | 
+| Disable modules output |  Advanced > **Advanced** > **Disable Modules Output** | `CONFIG__DEV__ADVANCED__DISABLE_MODULES_OUTPUT__<MODULE NAME>`  | 
 | Create, edit, delete stores <sup>[1](#myfootnote1)</sup> | **Stores** > **All Stores**, **Add Store** | `CONFIG__SYSTEM__STORES`  | 
 | Create, edit, delete websites<sup>[1](#myfootnote1)</sup>  | **Stores** > **All Stores**, **Add Website**  | `CONFIG__SYSTEM__WEBSITE`  | 
 |   |   |   |  `scopes` |

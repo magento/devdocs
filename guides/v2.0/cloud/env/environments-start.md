@@ -147,11 +147,11 @@ Sample output follows:
 
 Use the following command to connect to the database:
 
-	mysql --host=<host> --user='<database user name>' --pass='<user password>' --database='<name>' --port='<port>'
+	mysql --host=<host> --user='<database user name>' --password='<user password>' --port='<port>'
 
 Using the preceding example, the command is:
 
-	mysql --host=database.internal --user='user' --pass='' --database='main' --port='3306'
+	mysql --host='database.internal' --user='user' --password='' --port='3306'
 
 #### Related topics
 *	[Manage your environments]({{page.baseurl}}cloud/env/environments.html)
