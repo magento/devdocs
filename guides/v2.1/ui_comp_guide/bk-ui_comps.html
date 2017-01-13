@@ -702,9 +702,9 @@
 <p>In the meantime, until we have completed this new book, you can also still <a href="http://devdocs.magento.com/guides/v2.0/ui-components/ui-component.html">access the former (v2.0) UI Components docs</a>.</p>
 
 <h2 id="overview-of-ui-components">Overview of UI components</h2>
-<p>Magento UI components are designed for simple and flexible user interface (UI) rendering. They allow you to configure the page manipulating the UI components.</p>
+<p>Magento UI components are used to represent distinct UI elements, such as tables, buttons, dialogs, and others. They are designed for simple and flexible user interface (UI) rendering.</p>
 
-<p>Magento UI components are implemented as a standard module and can be found under <code>Magento\UI</code> namespace.</p>
+<p>Magento UI components are implemented as a standard module named Magento_Ui.</p>
 
 <p>Components are responsible for rendering result page fragments and providing/supporting further interactions of JavaScript components and server.</p>
 
@@ -744,15 +744,14 @@
 
 <p><code>&lt;module root dir&gt;/view/&lt;area&gt;/ui_component/&lt;component_instance_name&gt;.xml</code></p>
 
-<h3 id="configuration">Configuration</h3>
+<h3 id="customization">Customization</h3>
 
-<p>Extension developers cannot introduce new components but can customize existing ones.</p>
-
-<p>XSD file contains rules and limitations shared between all components (both definitions and instance configurations):</p>
+<p>The following XSD file contains rules and limitations shared between all components (both definitions and instance configurations):</p>
 
 <p><code>&lt;your module root dir&gt;/Magento/Ui/etc/ui_definition.xsd</code></p>
 
-<p>It is possible to create custom component by setting <code>class</code>, <code>component</code> and <code>template</code> parameters of the Container UI component.</p>
+<p>Extension developers cannot extend this XSD scheme and introduce new components, but can customize existing ones.</p>
+
 
 		</div>
 		<!-- /.content-wrap -->

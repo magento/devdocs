@@ -699,14 +699,14 @@
 
 <p>Magento UI components are used to represent distinct UI elements, such as tables, buttons, dialogs, and others.</p>
 
-<p>UI Component is a combination of:</p>
+<p>UI component is a combination of:</p>
 
 <ol>
   <li>
-    <p><strong>XML declaration</strong> that specifies the component’s configuration settings and inner structure;</p>
+    <p><strong>XML declaration</strong> that specifies the component’s configuration settings and inner structure.</p>
   </li>
   <li>
-    <p><strong>JavaScript</strong> class inherited from one of the Magento JavaScript Framework UI Components base classes (such as <a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_uielement_concept.html">UIElement</a>, <a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_uiclass_concept.html">UIClass</a> or <a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_uicollection_concept.html">UICollection</a>)</p>
+    <p><strong>JavaScript</strong> class inherited from one of the Magento JavaScript framework UI components base classes (such as <a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_uielement_concept.html">UIElement</a>, <a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_uiclass_concept.html">UIClass</a> or <a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_uicollection_concept.html">UICollection</a>).</p>
   </li>
   <li>
     <p><strong>Related template(s)</strong></p>
@@ -755,46 +755,21 @@
     <p>jQuery widget</p>
   </li>
   <li>
-    <p>Magento 2 UI Component</p>
+    <p>Magento 2 UI component</p>
   </li>
 </ul>
 
-<p>We recommend using UI components as much as possible, and here’s why.</p>
+<p>We recommend using UI components as much as possible and tend to do the same in Magento core.</p>
 
 <h3 id="interaction-with-other-ui-components">Interaction with other UI components</h3>
 
-<p>UI components work well together: they communicate with each other via the <a href="/guides/v2.1/ui_comp_guide/troubleshoot/ui_comp_troubleshoot_js.html#debugging-using-the-uiregistry">uiRegistry service</a> that tracks their asynchronous initialization. Therefore, if we need to:</p>
-
-<ul>
-  <li>
-    <p>extend something that has already been implemented as a hierarchy of UI components</p>
-  </li>
-  <li>
-    <p>add a new feature that should interact with other UI components</p>
-  </li>
-</ul>
-
-<p>it’s easier and more effective to use a UI component.</p>
-
-<!-- The Architect who reviewed the section below asked to remove it because "the words "easily added" can cause offensive reaction from developers, and we don't have a good cross-links for all items from the list"
-
-### UI components are easily added on a page
-
-Even when the target UI is generated from PHTML templates and doesn't contain UI components, you can still easily add a component on a page. For this, you may use:
-
-* XML declaration
-
-* `x-mage-init` JS script
-
-* `data-mage-init` attribute
-
--->
+<p>UI components work well together: they communicate with each other via the <a href="/guides/v2.1/ui_comp_guide/troubleshoot/ui_comp_troubleshoot_js.html#debugging-using-the-uiregistry">uiRegistry service</a> that tracks their asynchronous initialization. Therefore, if we need to extend something that has already been implemented as a hierarchy of UI components or add a new feature that should interact with other UI components, it’s easier and more effective to use a UI component.</p>
 
 <h2 id="things-to-remember-working-with-ui-components">Things to remember working with UI components</h2>
 
 <p><strong>Read the docs</strong></p>
 
-<p>Creating new UI Component is not always intuitive, so we recommend to always read the documentation first.</p>
+<p>Creating new UI component instance is not always intuitive, so we recommend to always read the documentation first.</p>
 
 <p><strong>UI components have different settings</strong></p>
 
@@ -804,13 +779,6 @@ Even when the target UI is generated from PHTML templates and doesn't contain UI
 
 <p>Surprisingly, most issues occur because of the typos and other mistakes in the UI component’s XML configuration. Naming is critical because UI components are heavily cross-referenced.</p>
 
-<!--
-
-**Own designs often require new UI components**
-
-The out-of-the-box set of UI components may be not enough to implement the required design, so developers need to know how to create new UI components.
-
--->
 
 		</div>
 		<!-- /.content-wrap -->
