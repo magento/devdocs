@@ -26,15 +26,12 @@ In the meantime, until we have completed this new book, you can also still [acce
 ## Overview of UI components
 Magento UI components are used to represent distinct UI elements, such as tables, buttons, dialogs, and others. They are designed for simple and flexible user interface (UI) rendering.
 
-Magento UI components are implemented as a standard module and can be found under `Magento\UI` namespace.
-
-<p class="q">Is it a correct notation, about namespace?</p>
+Magento UI components are implemented as a standard module named Magento_Ui.
 
 Components are responsible for rendering result page fragments and providing/supporting further interactions of JavaScript components and server.
 
 To use UI components in your custom module, you need to add a dependency for the Magento_UI module in [your component's composer.json file]({{page.baseurl}}extension-dev-guide/build/composer-integration.html).
 
-<p class="q">Do we really need to say this here? cause it's only one of the steps required to use UI components</p>
 
 ### General structure
 In Magento 2 there are basic and secondary UI components.
@@ -70,12 +67,9 @@ And concrete instances of the components each in separate XML configuration file
 
 ### Customization
 
-Extension developers cannot introduce new components, but can customize existing ones.
-
 The following XSD file contains rules and limitations shared between all components (both definitions and instance configurations):
 
 `<your module root dir>/Magento/Ui/etc/ui_definition.xsd`
 
-It is possible to create custom component by setting `class`, `component` and `template` parameters of the Container UI component.
+Extension developers cannot extend this XSD scheme and introduce new components, but can customize existing ones.
 
-<p class="q">in the first sentence of this paragraph we say that extension devs cannot create custom components</p>
