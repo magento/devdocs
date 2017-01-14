@@ -140,7 +140,7 @@ If you're not sure whether or not the master branch has been configured, enter t
 
 {% endcollapsibleh2 %}
 
-<p id="setenv-new-env">{% collapsibleh2 Step 4: Clone or branch an environment %}
+<p id="setenv-new-env"></p>{% collapsibleh2 Step 4: Clone or branch an environment %}
 
 Now that you've change the Magento Admin variables, you should create a new environment for your development work; this new environment inherits the variable values from master.
 
@@ -169,7 +169,7 @@ After you create the branch, update project dependencies so you can install the 
 
 {% endcollapsibleh2 %}
 
-<p id="setenv-projvar">{% collapsibleh2 Step 5: Set up authentication keys in the project (project administrator) %}
+<p id="setenv-projvar"></p>{% collapsibleh2 Step 5: Set up authentication keys in the project (project administrator) %}
 
 This section discusses how to add authentication keys to the project, which means the keys don't have to be stored in the Git repository. (Developers who need to update Magento dependencies or to install extension need authentication keys locally; this is discussed in the next section.)
 
