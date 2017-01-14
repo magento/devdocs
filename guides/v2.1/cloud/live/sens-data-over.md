@@ -90,7 +90,12 @@ The following figure shows a high-level overview of this process.
 
 ![Overview of Cloud configuration management]({{ site.baseurl }}common/images/cloud_vars_simple.png){:width="650px"}
 
-**Step A**. Create and configure stores on your integration server
+Our recommended method relies on the following important points:
+
+*	Do all of your configuration in your integration system; it is your "source of truth" for configuration management.
+*	Do everything in the `master` branch; that is, both in your local system and in your integration system
+
+**Step A**. Create and configure stores in your integration system.
 
 **Step B**. Push `config.local.php` to your integration server's `master` branch.
 
@@ -139,7 +144,6 @@ How to read the table:
 	*	A variable name is always ALL CAPS
 	*	Start a variable name with `CONFIG__` (note two underscore characters)
 	*	The remainder of the variable name is the value of `config_path` with two underscore characters replacing the slash character
-*	`config_path` column displays the variable name and is usually defined in the module's `adminhtml/system.xml`
 
 | Description  | Path in Magento Admin (omitting **Stores** > **Configuration**) | Variable name | 
 |--------------|--------------|----------------------|
@@ -152,7 +156,7 @@ How to read the table:
 | Disable modules output |  Advanced > **Advanced** > **Disable Modules Output** | `CONFIG__DEV__ADVANCED__DISABLE_MODULES_OUTPUT__<MODULE NAME>`  | 
 | Create, edit, delete stores <sup>[1](#myfootnote1)</sup> | **Stores** > **All Stores**, **Add Store** | `CONFIG__SYSTEM__STORES`  | 
 | Create, edit, delete websites<sup>[1](#myfootnote1)</sup>  | **Stores** > **All Stores**, **Add Website**  | `CONFIG__SYSTEM__WEBSITE`  | 
-|   |   |   |  `scopes` |
+|   |   | `scopes` |
 
 <a name="myfootnote1">1</a>: These values are located in the indicated path in the Admin. They are not located under **Stores** > **Configuration**.
 
