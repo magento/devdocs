@@ -14,34 +14,29 @@ github_link: cloud/live/sens-data-initial.md
 
 This topic discusses how to manage default locale and file optimization settings in your integration system. _File optimization_ means merging and minifying JavaScript and Cascading Style Sheets, and minifying HTML templates. File optimization should be disabled in integration (where you're testing) and enabled in staging and production.  
 
-These settings are discussed only to explain how the procedure works; you can use the same procedure to manage any available settings. For a complete list of settings, see [List of system-specific configuration settings]({{ page.baseurl }}cloud/live/sens-data-over.html#cloud-config-specific-list). 
+These particular settings are discussed only to explain how the procedure works; you can use the same procedure to manage any available settings. For a complete list of settings, see [List of system-specific configuration settings]({{ page.baseurl }}cloud/live/sens-data-over.html#cloud-config-specific-list). 
 
 This example shows how to:
 
-1.	Set a configuration in the integration server's Admin.
-2.	Change those settings.
-3.	Verify your settings are not editable in the Admin.
-4.	Delete `config.local.php` so you can edit the same values again.
-5.	Change the settings and push `config.local.php` to the integration server.
-6.	Verify the settings are not editable.
+1.	Change the configuration in the integration server's Admin.
+2.	Create `config.local.php` and transfer it to your local system.
+3.	Push `config.local.php` to the integration server
+4.	Verify your settings are not editable in the Admin.
+5.	Delete `config.local.php`, change the settings, and push `config.local.php` to the integration server.
 
 To manage _sensitive_ configuration settings, see [Manage sensitive configuration values]({{ page.baseurl }}cloud/live/sens-data-mg-sens.html).
 
 ## Required role
 To complete the tasks discussed in this topic, you must have at minimum a project reader role with [environment administrator]({{ page.baseurl }}cloud/admin/admin-user-admin.html#loud-role-env) privileges.
 
-{% collapsibleh2 Prerequisites %}
-Before you continue, make sure you have done all of the following.
+## Prerequisite
+Before you continue, make sure you review our [recommended procedure]({{ page.baseurl }}cloud/live/sens-data-over.html##cloud-config-specific-recomm) for managing the configuration.
 
-### Reviewed the procedure
-Review our [recommended procedure]({{ page.baseurl }}cloud/live/sens-data-over.html##cloud-config-specific-recomm) for managing the configuration.
+{% collapsibleh2 Get started %}
 
-### Change settings in the integration server Admin
-This section discusses how to change the locale for the Default Config and also how to change file optimization settings in the integration server. You can change different settings if you wish; see [List of system-specific configuration settings]({{ page.baseurl }}cloud/live/sens-data-over.html#cloud-config-specific-list) for details.
+### Step 1: Synchronize with master
 
-#### Step 1: Get started
-
-To get started:
+To synchronize your local system with the `master` branch:
 
 1.	On your local system, switch to the [Magento file system owner]({{ page.baseurl }}install-gde/prereq/file-sys-perms-over.html).
 2.	Log in to your Magento Enterprise Cloud Edition project.
@@ -59,7 +54,7 @@ To get started:
 
 		git pull origin master
 		
-#### Step 2: Find Admin login information {#cloud-deploy-admin-login}
+### Step 2: Find Admin login information {#cloud-deploy-admin-login}
 To find login information for the integration server Admin:
 
 1.	Log in to your local system as the Magento file system owner.
@@ -69,7 +64,12 @@ To find login information for the integration server Admin:
 		magento-cloud variable:list
 3.	Using the preceding information, log in to the integration server's Admin.
 
-#### Step 3: Change settings
+{% endcollapsibleh2 %}
+
+{% collapsibleh2 Step 1: Change the configuration in the integration server Admin %}
+
+This section discusses how to change the locale for the Default Config and also how to change file optimization settings in the integration server. You can change different settings if you wish; see [List of system-specific configuration settings]({{ page.baseurl }}cloud/live/sens-data-over.html#cloud-config-specific-list) for details.
+
 To change locale and file optimization settings:
 
 1.	Click **Stores** > Settings > **Configuration** > General > **General**. 
@@ -97,7 +97,7 @@ To change locale and file optimization settings:
 
 {% endcollapsibleh2 %}
 
-{% collapsibleh2 Create config.local.php and transfer it to your local system %}
+{% collapsibleh2 Step 2: Create config.local.php and transfer it to your local system %}
 This section discusses how to create `config.local.php` on the integration server using a command you run on your local machine. 
 
 This procedure corresponds to step B, 1&ndash;2 of our [recommended procedure]({{ page.baseurl }}cloud/live/sens-data-over.html#cloud-config-specific-recomm). After you create `config.local.php`, transfer it to your local system so you can add it to Git.
@@ -143,7 +143,7 @@ The following snippet from `config.local.php` show an example of changing the de
 
 {% endcollapsibleh2 %}
 
-{% collapsibleh2 Push config.local.php to the integration server %}
+{% collapsibleh2 Step 3: Push config.local.php to the integration server %}
 Now that you've created `config.local.php` and transferred it to your local system, commit it to Git and push it to your integration server. This procedure corresponds to step B, 3&mdash;4 of our [recommended procedure]({{ page.baseurl }}cloud/live/sens-data-over.html#cloud-config-specific-recomm).
 
 	git add app/etc/config.local.php 
@@ -153,7 +153,7 @@ Wait for deployment to complete.
 
 {% endcollapsibleh2 %}
 
-{% collapsibleh2 Verify your configuration changes %}
+{% collapsibleh2 Step 4: Verify your configuration changes %}
 After you push `config.local.php` to your integration server, any values you changed should be unavailable in the Magento Admin.
 
 In this example, the default locale and file optimization settings should not be editable in the Admin.
@@ -180,7 +180,7 @@ To verify your configuration changes:
 
 {% endcollapsibleh2 %}
 
-{% collapsibleh2 Change system-specific configuration settings %}
+{% collapsibleh2 Step 5: Change system-specific configuration settings %}
 This section discusses how to change system-specific settings. Our [recommended procedure]({{ page.baseurl }}cloud/live/sens-data-over.html#cloud-config-specific-recomm) is to make the changes on the integration server and repeat the process of creating `config.local.php` and pushing it back to the integration server.
 
 For this example, we'll use file optimization settings. If you've already changed those settings, you can use this procedure to set other options of your choosing.

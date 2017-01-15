@@ -44,7 +44,7 @@ Starting with version 2.1.4, we provide the following:
 
 	Settings in `config.local.php` cannot be changed in the Magento Admin. The next section provides an overview of how to change these settings.
 
-*	Sensitive values, such as payment processor settings, are specified in environment variables. Viewing or changing environment variables is restricted to people who have at minimum a project reader role with [environment administrator]({{ page.baseurl }}cloud/admin/admin-user-admin.html#loud-role-env) privileges in your Magento Enterprise Cloud Edition project.
+*	Sensitive values, such as payment processor settings, are specified using environment variables. Viewing or changing environment variables is restricted to people who have at minimum a project reader role with [environment administrator]({{ page.baseurl }}cloud/admin/admin-user-admin.html#loud-role-env) privileges.
 
 The following sections provide more detail.
 
@@ -55,7 +55,7 @@ System-specific settings refer to the configuration in the Magento Admin in **St
 In each of your Magento Enterprise Cloud Edition systems (integration, staging, and production), you have the option of overriding certain configuration settings:
 
 *	Some settings, such as the search engine and caching system, might be the same across all systems
-*	Other settings, such as the port used for caching, can be unique to a particular system
+*	Other settings, such as file optmization settings, can be unique to a particular system
 *	Sensitive settings, such as payment processor settings, are set using environment variables
 
 	<div class="bs-callout bs-callout-info" markdown="1">
@@ -70,7 +70,11 @@ To enable you to set system-specific settings, we use the following override sch
 As the diagram shows, we get configuration values in the following order:
 
 1.	From an environment variable.
+
+	Environment variables, if they exist, override all other values.
 2.	From `config.local.php`.
+
+	Values in `config.local.php` override settings in the database.
 3.	From the database.
 
 If no value exists in any of those sources, we use either the default value or NULL.
@@ -80,7 +84,7 @@ For an example of how this works, see [Manage system-specific settings]({{ page.
 #### Recommended procedure to manage your settings {#cloud-config-specific-recomm}
 Managing store configuration is a complex task that's mostly up to you. What locales do you want to use? What custom themes do you need? Only you can determine the answers to those questions.
 
-We can, however, help you manage those settings more easily. For example, suppose you want to change default locale and also change a store's file optimization settings. Currently, the way you do that is to log in to the Admin on the integration server, save your settings, then (when testing is complete) migrate those settings to staging. 
+We can, however, help you manage those settings more easily. For example, suppose you want to change the default locale and also change a store's file optimization settings. Currently, the way you do that is to log in to the Admin on the integration server, save your settings, then (when testing is complete) migrate those settings to staging. 
 
 What if someone changes a setting in the staging Admin? You'll have to go back and make the same change on integration; otherwise, next time you deploy to staging, the old settings are enabled.
 
@@ -93,7 +97,7 @@ The following figure shows a high-level overview of this process.
 Our recommended method relies on the following important points:
 
 *	Do all of your configuration in your integration system; it is your "source of truth" for configuration management.
-*	Do everything in the `master` branch; that is, both in your local system and in your integration system
+*	Do everything in the `master` branch; that is, both in your local system and in your integration system.
 
 **Step A**. Create and configure stores in your integration system.
 
@@ -108,7 +112,9 @@ The following procedure is required because there is no Git user on your integra
 
 You generate `config.local.php` using the command `magento app:config:scd-dump`. This command populates `config.local.php` with the minimum values necessary for static content deployment. In version 2.1.4, we moved static file deployment from the deploy phase to the build phase to optimize deployment time.
 
+<div class="bs-callout bs-callout-info" markdown="1">
 There is a similar command, `magento app:config:dump`, that is not supported at this time. 
+</div>
 
 **Step C**. Magento Enterprise Cloud Edition automatically deploys the settings to your integration server.
 
@@ -143,7 +149,6 @@ How to read the table:
 
 	*	A variable name is always ALL CAPS
 	*	Start a variable name with `CONFIG__` (note two underscore characters)
-	*	The remainder of the variable name is the value of `config_path` with two underscore characters replacing the slash character
 
 | Description  | Path in Magento Admin (omitting **Stores** > **Configuration**) | Variable name | 
 |--------------|--------------|----------------------|
@@ -156,7 +161,7 @@ How to read the table:
 | Disable modules output |  Advanced > **Advanced** > **Disable Modules Output** | `CONFIG__DEV__ADVANCED__DISABLE_MODULES_OUTPUT__<MODULE NAME>`  | 
 | Create, edit, delete stores <sup>[1](#myfootnote1)</sup> | **Stores** > **All Stores**, **Add Store** | `CONFIG__SYSTEM__STORES`  | 
 | Create, edit, delete websites<sup>[1](#myfootnote1)</sup>  | **Stores** > **All Stores**, **Add Website**  | `CONFIG__SYSTEM__WEBSITE`  | 
-|   |   | `scopes` |
+| TBD  |   | `scopes` |
 
 <a name="myfootnote1">1</a>: These values are located in the indicated path in the Admin. They are not located under **Stores** > **Configuration**.
 
