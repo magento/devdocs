@@ -155,7 +155,7 @@ Wait for deployment to complete.
 
 {% endcollapsibleh2 %}
 
-{% collapsibleh2 Step 4: Verify your configuration changes %}
+<p id="cloud-set-verify"></p>{% collapsibleh2 Step 4: Verify your configuration changes %}
 After you push `config.local.php` to your integration server, any values you changed should be unavailable in the Magento Admin.
 
 In this example, the default locale and file optimization settings should not be editable in the Admin.
@@ -234,6 +234,8 @@ To push your changes, enter the following command:
 	git add app/etc/config.local.php && git commit -m "Add system-specific configuration" && git push origin master
 
 Wait for deployment to complete.
+
+Optionally [verify the changes](#cloud-set-verify), and verify that the changes are not editable in the Admin.
 
 {% endcollapsibleh2 %}
 
