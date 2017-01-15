@@ -119,26 +119,23 @@ For Fastly to be used in production, you must merge with the `master` environmen
 
 {% endcollapsibleh3 %}
 
-*	one
-*	Two	
-*	Three
 
-<h2 id="custom-vcl">Custom VCLs</h2>
-<p>You're free to customize your Fastly VCL however you want, provided you follow Fastly's guidelines for <a href="https://docs.fastly.com/guides/vcl/mixing-and-matching-fastly-vcl-with-custom-vcl" target="_blank">Mixing and matching Fastly VCL with custom VCL</a>.
+## Custom VCLs {#custom-vcl}
+You're free to customize your Fastly VCL however you want, provided you follow Fastly's guidelines for <a href="https://docs.fastly.com/guides/vcl/mixing-and-matching-fastly-vcl-with-custom-vcl" target="_blank">Mixing and matching Fastly VCL with custom VCL</a>.
 
-<p>Failure to follow these guidelines means your customizations won't work as expected.</p>
+Failure to follow these guidelines means your customizations won't work as expected.
 
-<h4>Next steps</h4>
-<ul><li>If you have issues with the Fastly extension, see <a href="{{ page.baseurl cloud/trouble/trouble_fastly.html}}">Troubleshoot Fastly</a>.</li>
-	<li><a href="{{ page.baseurl }}cloud/env/environments.html">Manage your environments</a></li>
-	<li><a href="{{ page.baseurl }}cloud/project/project-webint-basic.html">Use the Project Web Interface</a></li>
-	<li>Configure your project:
-		<ul><li><a href="{{ page.baseurl }}cloud/project/project-conf-files_magento-app.html"><code>.magento.app.yaml</code></a></li>
-			<li><a href="{{ page.baseurl}}cloud/project/project-conf-files_routes.html"><code>routes.yaml</code></a></li>
-			<li><a href="{{ page.baseurl }}cloud/project/project-conf-files_services.html"><code>services.yaml</code></a></li>
-		</ul>
-	</li>
-</ul>
+Next steps
+
+*	If you have issues with the Fastly extension, see <a href="{{ page.baseurl cloud/trouble/trouble_fastly.html}}">Troubleshoot Fastly</a>.
+*	<a href="{{ page.baseurl }}cloud/env/environments.html">Manage your environments</a>
+
+	*	<a href="{{ page.baseurl }}cloud/project/project-webint-basic.html">Use the Project Web Interface</a>
+	*	Configure your project:
+
+		*	<a href="{{ page.baseurl }}cloud/project/project-conf-files_magento-app.html"><code>.magento.app.yaml</code></a>
+		*	<a href="{{ page.baseurl}}cloud/project/project-conf-files_routes.html"><code>routes.yaml</code></a>
+		*	<a href="{{ page.baseurl }}cloud/project/project-conf-files_services.html"><code>services.yaml</code></a>
 
 
 
