@@ -38,7 +38,7 @@ In the procedure that follows, make sure you *branch* a new environment; don't u
 
 {% endcollapsible %}
 
-<p id="cloud-fastly-setup">{% collapsibleh3 Install Fastly in your new environment %}
+<p id="cloud-fastly-setup"></p>{% collapsibleh3 Install Fastly in your new environment %}
 
 1.	In your local environment root directory, enter the following commands in the order shown:
 
@@ -55,7 +55,7 @@ In the procedure that follows, make sure you *branch* a new environment; don't u
 
 {% endcollapsibleh3 %}
 
-<p id="cloud-fastly-admin">{% collapsibleh3 Enable Fastly using the Magento Admin %}
+<p id="cloud-fastly-admin"></p>{% collapsibleh3 Enable Fastly using the Magento Admin %}
 
 
 1.	Log in to your local Magento Admin as an administrator. 
@@ -86,7 +86,7 @@ With Fastly version 1.2.0 and later, you no longer need to upload your VCL to Fa
 
 {% endcollapsibleh3 %}
 
-<p id="cloud-fastly-config">{% collapsibleh3 Configure Fastly %}
+<p id="cloud-fastly-config"></p>{% collapsibleh3 Configure Fastly %}
 
 Configure Fastly using the following:
 
@@ -111,13 +111,17 @@ For advanced configuration options, download and customize the [Fastly configura
 
 {% endcollapsibleh3 %}
 
-<p id="cloud-fastly-merge">{% collapsibleh3 Merge your Fastly branch %}
+<p id="cloud-fastly-merge"></p>{% collapsibleh3 Merge your Fastly branch %}
 	
 When you're done with development, [merge your environment]({{ page.baseurl }}cloud/howtos/environment-tutorial-env-merge.html) with its parent environment.
 
 For Fastly to be used in production, you must merge with the `master` environment.
 
 {% endcollapsibleh3 %}
+
+*	one
+*	Two	
+*	Three
 
 <h2 id="custom-vcl">Custom VCLs</h2>
 <p>You're free to customize your Fastly VCL however you want, provided you follow Fastly's guidelines for <a href="https://docs.fastly.com/guides/vcl/mixing-and-matching-fastly-vcl-with-custom-vcl" target="_blank">Mixing and matching Fastly VCL with custom VCL</a>.
