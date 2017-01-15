@@ -127,15 +127,16 @@ Failure to follow these guidelines means your customizations won't work as expec
 
 Next steps
 
-*	If you have issues with the Fastly extension, see <a href="{{ page.baseurl cloud/trouble/trouble_fastly.html}}">Troubleshoot Fastly</a>.
-*	<a href="{{ page.baseurl }}cloud/env/environments.html">Manage your environments</a>
+*	If you have issues with the Fastly extension, see [Troubleshoot Fastly]({{ page.baseurl}}cloud/trouble/trouble_fastly.html)
 
-	*	<a href="{{ page.baseurl }}cloud/project/project-webint-basic.html">Use the Project Web Interface</a>
+*	[Manage your environments]({{ page.baseurl }}cloud/env/environments.html)
+
+	*	[Use the Project Web Interface]({{ page.baseurl }}cloud/project/project-webint-basic.html)
 	*	Configure your project:
 
-		*	<a href="{{ page.baseurl }}cloud/project/project-conf-files_magento-app.html"><code>.magento.app.yaml</code></a>
-		*	<a href="{{ page.baseurl}}cloud/project/project-conf-files_routes.html"><code>routes.yaml</code></a>
-		*	<a href="{{ page.baseurl }}cloud/project/project-conf-files_services.html"><code>services.yaml</code></a>
+		*	[`.magento.app.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_magento-app.html)
+		*	[`routes.yaml`]({{ page.baseurl}}cloud/project/project-conf-files_routes.html)
+		*	[`services.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_services.html)
 
 
 
