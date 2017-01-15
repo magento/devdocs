@@ -13,10 +13,10 @@ github_link: cloud/live/sens-data-over.md
 ---
 
 ## Deployment and configuration in a nutshell
-In version 2.1.4, Magento Enterprise Cloud Edition improves how you manage your configuration:
+In version 2.1.4, Magento Enterprise Cloud Edition improves how you manage your configuration by providing:
 
-*	New method to manage sensitive data (such as payment gateway passwords).
-*	Improved method to manage system-specific configuration data (such as store locale settings and file optimization settings) in a new configuration file, `app/etc/config.local.php`, which is in source control.
+*	A new method to manage sensitive data (such as payment gateway passwords).
+*	An improved method to manage system-specific configuration data (such as store locale settings and file optimization settings) in a new configuration file, `app/etc/config.local.php`, which is in source control.
 
 We help you protect sensitive data and make it easy to manage system-specific data as follows:
 

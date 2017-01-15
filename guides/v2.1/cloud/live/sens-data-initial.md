@@ -22,6 +22,8 @@ This example shows how to:
 2.	Create `config.local.php` and transfer it to your local system.
 3.	Push `config.local.php` to the integration server
 4.	Verify your settings are not editable in the Admin.
+
+	Your changes should not be editable in the Admin.
 5.	Delete `config.local.php`, change the settings, and push `config.local.php` to the integration server.
 
 To manage _sensitive_ configuration settings, see [Manage sensitive configuration values]({{ page.baseurl }}cloud/live/sens-data-mg-sens.html).
