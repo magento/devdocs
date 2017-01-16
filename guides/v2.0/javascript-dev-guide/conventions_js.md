@@ -10,7 +10,7 @@ github_link: javascript-dev-guide/conventions_js.md
 
 ## Conventional notations for paths to modules and themes
 
-Magento application components, including modules, themes, and language packages technically can be located anywhere under the Magento root directory. This refers to both, Magento default and custom components. 
+Magento application components, including modules, themes, and language packages technically can be located anywhere under the Magento root directory. This refers to both Magento default and custom components. 
 
 The following relative paths are used for modules and themes:
 
