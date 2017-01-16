@@ -137,7 +137,7 @@ If you choose to use different system-specific settings in staging and productio
 ### List of system-specific configuration settings {#cloud-config-specific-list}
 The table in this section shows the system-specific settings we include in `config.local.php` in version 2.1.4.
 
-How to read the table:
+How to read the tables:
 
 *	`Path in Magento Admin` column
 
@@ -149,6 +149,9 @@ How to read the table:
 
 	*	A variable name is always ALL CAPS
 	*	Start a variable name with `CONFIG__` (note two underscore characters)
+	*	Variable names are specified in different Magento database tables, as indicated in the following sections.
+
+#### System values (from the `core_config_data` table)
 
 | Description  | Path in Magento Admin (omitting **Stores** > **Configuration**) | Variable name | 
 |--------------|--------------|----------------------|
@@ -159,11 +162,29 @@ How to read the table:
 | JavaScript minification  | Advanced > **Developer**, **JavaScript Settings** > (several options)  | `CONFIG__DEFAULT__DEV__JS__MINIFY_FILES` |  
 | CSS minification  | Advanced > **Developer**, **CSS Settings** > **Merge CSS Files** and **Minify CSS Files**  | `CONFIG__DEFAULT__DEV__CSS__MINIFY_FILES` | 
 | Disable modules output |  Advanced > **Advanced** > **Disable Modules Output** | `CONFIG__DEV__ADVANCED__DISABLE_MODULES_OUTPUT__<MODULE NAME>`  | 
-| Create, edit, delete stores <sup>[1](#myfootnote1)</sup> | **Stores** > **All Stores**, **Add Store** | `CONFIG__SYSTEM__STORES`  | 
-| Create, edit, delete websites<sup>[1](#myfootnote1)</sup>  | **Stores** > **All Stores**, **Add Website**  | `CONFIG__SYSTEM__WEBSITE`  | 
-| TBD  |   | `scopes` |
 
-<a name="myfootnote1">1</a>: These values are located in the indicated path in the Admin. They are not located under **Stores** > **Configuration**.
+#### Scopes values (from the `store`, `store_group`, and `store_website` tables)
+
+*	The `stores` table specifies store view names and codes
+*	The `store_group` table specifies store names and codes
+*	The `store_website` table specifies website names and codes
+
+| Description  | Path in Magento Admin | Variable name | 
+|--------------|--------------|----------------------|
+| Create, edit, delete store views | **Stores** > **All Stores**, **Add Store View** | `CONFIG__STORES__<STORE_VIEW_CODE>`  |
+| Create, edit, delete stores | **Stores** > **All Stores**, **Add Store** | `CONFIG__STORE__GROUP__<STORE_CODE>`  | 
+| Create, edit, delete websites | **Stores** > **All Stores**, **Add Website**  | `CONFIG__STORE__WEBSITE__<WEBSITE_CODE>` | 
+
+To get these values from the database:
+
+{% include cloud/log-in-db.md %}
+
+Examples:
+
+*	Specify the default store view:
+
+		CONFIG__STORES__DEFAULT
+
 
 ### Manage sensitive settings
 The Web Interface enables you to specify values of sensitive configuration settings for staging and production systems.

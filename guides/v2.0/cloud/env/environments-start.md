@@ -118,40 +118,7 @@ To SSH to the environment, use the following command:
 ### Step 3: Enter commands
 Now you can connect to services as if they were running locally.
 
-For example, to connect to the database, use the following command:
-
-Find the database login information:
-
-	php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]))->database);'
-
-Sample output follows:
-
-	Array
-	(
-   		[0] => stdClass Object
-       	(
-           	[username] => user
-           	[password] =>
-           	[ip] => 192.0.2.60
-           	[host] => database.internal
-           	[query] => stdClass Object
-               	(
-             	     	[is_master] => 1
-              		)
-
-           	[path] => main
-           	[scheme] => mysql
-           	[port] => 3306
-       	)
-	)
-
-Use the following command to connect to the database:
-
-	mysql --host=<host> --user='<database user name>' --password='<user password>' --port='<port>'
-
-Using the preceding example, the command is:
-
-	mysql --host='database.internal' --user='user' --password='' --port='3306'
+{% include cloud/log-in-db.md %}
 
 #### Related topics
 *	[Manage your environments]({{page.baseurl}}cloud/env/environments.html)
