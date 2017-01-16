@@ -7,6 +7,7 @@ menu_title: UI component explained
 menu_order: 2
 version: 2.1
 github_link: ui_comp_guide/ui_component_explained.md
+redirect_from: 
 ---
 
 ## What is a UI component?
@@ -63,10 +64,6 @@ We recommend using UI components as much as possible and tend to do the same in 
 UI components work well together: they communicate with each other via the [uiRegistry service]({{page.baseurl}}ui_comp_guide/troubleshoot/ui_comp_troubleshoot_js.html#debugging-using-the-uiregistry) that tracks their asynchronous initialization. Therefore, if we need to extend something that has already been implemented as a hierarchy of UI components or add a new feature that should interact with other UI components, it's easier and more effective to use a UI component.
 
 ## Things to remember working with UI components
-
-**Read the docs**
-
-Creating new UI component instance is not always intuitive, so we recommend to always read the documentation first.
 
 **UI components have different settings**
 

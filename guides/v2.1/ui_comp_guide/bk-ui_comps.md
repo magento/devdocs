@@ -28,10 +28,7 @@ Magento UI components are used to represent distinct UI elements, such as tables
 
 Magento UI components are implemented as a standard module named Magento_Ui.
 
-Components are responsible for rendering result page fragments and providing/supporting further interactions of JavaScript components and server.
-
 To use UI components in your custom module, you need to add a dependency for the Magento_UI module in [your component's composer.json file]({{page.baseurl}}extension-dev-guide/build/composer-integration.html).
-
 
 ### General structure
 In Magento 2 there are basic and secondary UI components.
@@ -49,7 +46,42 @@ All components can be configured both for Admin and storefront.
   <p>You need to configure styles manually for components on storefront.</p>
 </div>
 
-### Using UI component in layout file
+## What is a UI component?
+
+Magento UI components are used to represent distinct UI elements, such as tables, buttons, dialogs, and others.
+
+UI component is a combination of:
+
+1. **XML declaration** that specifies the component's configuration settings and inner structure.
+
+2. **JavaScript** class inherited from one of the Magento JavaScript framework UI components base classes (such as [UIElement]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uielement_concept.html), [UIClass]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uiclass_concept.html) or [UICollection]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uicollection_concept.html)).
+
+
+3. **Related template(s)**
+
+### XML Declaration
+
+XML is widely used in Magento 2, which allows developers to easily reuse existing functionalities and add customizations.
+
+Comparing to XML Layouts, UI Components use more semantical approach to declare and configure User Interface.
+
+An instance of UI component is usually based on the hierarchy of child UI components. For example:
+
+* the Form component has Fieldsets, Tabs, and inner fields
+
+* the Listing component has Filters, Columns, Bookmark component, and others
+
+### JavaScript class
+
+The picture below shows how the JavaScript class of a UI component is implemented.
+
+![JavaScript class implementation of a UI component]({{site.baseurl}}common/images/ui_comp_js_class.png)
+
+### Templates
+
+A UI component can be bound to one or more HTML templates using the KnockoutJS bindings.
+
+## Using UI component in layout file
 
 Using UI component is as simple as adding the following code to the appropriate layout section:
 
