@@ -35,4 +35,4 @@
 
     Using the preceding example, the command is:
 
-	   mysql --host='database.internal' --user='user' --password='' --port='3306' --database='main'
+        mysql --host='database.internal' --user='user' --password='' --port='3306' --database='main'
