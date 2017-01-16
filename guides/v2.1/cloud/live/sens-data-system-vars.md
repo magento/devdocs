@@ -28,6 +28,10 @@ The general format of system-specific variables follows:
 
 *	A specific scope (that is, the setting affects only a specified store, store view, or website)
 
+	Store scope variables, for example, have the following format:
+
+	<pre class="no-copy">CONFIG__STORES__&lt;STORE_VIEW_CODE>__&lt;SYSTEM__VARIABLE></pre>
+
 	For more information, see:
 
 	*	[Scope values](#cloud-system-vars-scopes)
@@ -63,8 +67,8 @@ How to read the tables:
 | Description  | Path in Magento Admin | Variable name | 
 |--------------|--------------|----------------------|
 | Create, edit, delete store views | **Stores** > **All Stores**, **Add Store View** | `CONFIG__STORES__<STORE_VIEW_CODE>`  |
-| Create, edit, delete stores | **Stores** > **All Stores**, **Add Store** | `CONFIG__STORE__GROUP__<STORE_CODE>`  | 
-| Create, edit, delete websites | **Stores** > **All Stores**, **Add Website**  | `CONFIG__STORE__WEBSITE__<WEBSITE_CODE>` | 
+| Create, edit, delete stores | **Stores** > **All Stores**, **Add Store** | `CONFIG__STORES__GROUP__<STORE_CODE>`  | 
+| Create, edit, delete websites | **Stores** > **All Stores**, **Add Website**  | `CONFIG__STORES__WEBSITE__<WEBSITE_CODE>` | 
 
 To get these values from the database:
 
@@ -89,15 +93,15 @@ A sample follows:
 
 For example, to set a configuration variable for Test Website, use the following format:
 
-	CONFIG__STORE__WEBSITE__TEST__<CONFIGURATION_VARIABLE_NAME>
+	CONFIG__STORE__WEBSITE__TEST__<SYSTEM_VARIABLE_NAME>
 
-where `<CONFIGURATION_VARIABLE_NAME>` comes from the next section.
+where `<SYSTEM_VARIABLE_NAME>` comes from the next section.
 
 {% endcollapsibleh2 %}
 
 <p id="cloud-system-vars-sys"></p>{% collapsibleh2 Step 2: Set system variables %}
 
-This section discusses how to set global variables. 
+This section discusses how to set system variables. 
 
 *	To set values for the global scope (that is, all websites, stores, and store views), start the variable name with `CONFIG__DEFAULT__`. 
 
@@ -115,14 +119,25 @@ System values come from the `core_config_data` table.
 |  HTML minification | Advanced > **Developer**, **Template Settings** > **Minify Html**  | `<SCOPE>__DEV__TEMPLATE__MINIFY_HTML`  | 
 | JavaScript minification  | Advanced > **Developer**, **JavaScript Settings** > (several options)  | `<SCOPE>__DEV__JS__MINIFY_FILES` |  
 | CSS minification  | Advanced > **Developer**, **CSS Settings** > **Merge CSS Files** and **Minify CSS Files**  | `<SCOPE>__DEV__CSS__MINIFY_FILES` | 
-| Disable modules output |  Advanced > **Advanced** > **Disable Modules Output** | `CONFIG__DEV__ADVANCED__DISABLE_MODULES_OUTPUT__<MODULE NAME>`  | 
+| Disable modules output |  Advanced > **Advanced** > **Disable Modules Output** | `<SCOPE>__DEV__ADVANCED__DISABLE_MODULES_OUTPUT__<MODULE NAME>`  | 
 
 {% endcollapsibleh2 %}
 
 ## Examples {#cloud-system-vars-ex}
-TBD
+This section shows some sample variables.
 
-### Manage sensitive settings
-The Web Interface enables you to specify values of sensitive configuration settings for staging and production systems.
+**Global HTML template minification**
 
-TBD, cannot show this now because the Web Interface doesn't support it yet
+	CONFIG__DEFAULT__DEV__TEMPLATE__MINIFY_HTML
+
+**HTML minification for a store view**
+
+	CONFIG__STORES__GROUP__FRENCH__DEV__TEMPLATE__MINIFY_HTML
+
+**Global locale code**
+
+	CONFIG__DEFAULT__GENERAL__LOCALE__CODE
+
+**Locale code for a website
+
+	CONFIG__STORES__WEBSITE__FRENCH__GENERAL__LOCALE__CODE
