@@ -32,11 +32,6 @@ middleman between your code and deployment.
 * We use a robust Composer build process.
 * You can increase the amount of memory and CPU as needed.
 
-## Great integrations
-Magento Enterprise Cloud Edition comes out-of-the-box with great integrations for services such
-as GitHub, HipChat, Blackfire, and generic webhooks that enable you 
-to integrate with internal tooling with little effort.
-
 #### Related topics
 *	[Magento Enterprise Cloud Edition requirements]({{page.baseurl}}cloud/cloud-requirements.html)
 *	[Common terms]({{page.baseurl}}cloud/before/terms.html)
