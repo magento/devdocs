@@ -36,7 +36,15 @@ The general format of system-specific variables follows:
 
 `<SYSTEM__VARIABLE>` is the variable you wish to specify. For more information, see [System values](#cloud-system-vars-sys).
 
+<p id="cloud-system-vars-scopes"></p>{% collapsibleh2 Step 1: Find the scope value %}
 
+This section discusses how you can optionally set system-specific configuration values per _scope_ (store, store view, or website). Setting variables per scope is optional; to set system-wide variables, see [System values](#cloud-system-vars-sys).
+
+Scope values come from the `store`, `store_group`, and `store_website` tables.
+
+*	The `stores` table specifies store view names and codes
+*	The `store_group` table specifies store names and codes
+*	The `store_website` table specifies website names and codes
 
 How to read the tables:
 
@@ -51,16 +59,6 @@ How to read the tables:
 	*	A variable name is always ALL CAPS
 	*	Start a variable name with `CONFIG__` (note two underscore characters)
 	*	Variable names are specified in different Magento database tables, as indicated in the following sections.
-
-<p id="cloud-system-vars-scopes"></p>{% collapsibleh2 Step 1: Find the scope value %}
-
-This section discusses how you can optionally set system-specific configuration values per _scope_ (store, store view, or website). Setting variables per scope is optional; to set system-wide variables, see [System values](#cloud-system-vars-sys).
-
-Scope values come from the `store`, `store_group`, and `store_website` tables.
-
-*	The `stores` table specifies store view names and codes
-*	The `store_group` table specifies store names and codes
-*	The `store_website` table specifies website names and codes
 
 | Description  | Path in Magento Admin | Variable name | 
 |--------------|--------------|----------------------|
@@ -97,7 +95,7 @@ where `<CONFIGURATION_VARIABLE_NAME>` comes from the next section.
 
 {$ endcollapsibleh2 %}
 
-<p id="cloud-system-vars-sys"></p>{% collapsibleh2 Set system values %}
+<p id="cloud-system-vars-sys"></p>{% collapsibleh2 Step 2: Set system values %}
 
 This section discusses how to set system variables. 
 
