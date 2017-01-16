@@ -93,7 +93,7 @@ For example, to set a configuration variable for Test Website, use the following
 
 where `<CONFIGURATION_VARIABLE_NAME>` comes from the next section.
 
-{$ endcollapsibleh2 %}
+{% endcollapsibleh2 %}
 
 <p id="cloud-system-vars-sys"></p>{% collapsibleh2 Step 2: Set system values %}
 
@@ -103,7 +103,7 @@ This section discusses how to set system variables.
 
 *	To set a value for a particular scope, start the variable name as discussed in [Scope values](#cloud-system-vars-scopes).
 
-Examples are shown in TBD.
+[See some examples](#cloud-system-vars-ex)
 
 System values come from the `core_config_data` table.
 
