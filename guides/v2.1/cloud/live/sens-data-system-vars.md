@@ -20,9 +20,9 @@ The general format of system-specific variables follows:
 
 `<SCOPE>` can be either:
 
-*	Default scope (that is, the global setting for _all_ scopes)
+*	Global scope (that is, the global setting for _all_ scopes)
 
-	Default scope variables have the following format:
+	Global scope variables have the following format:
 
 	<pre class="no-copy">CONFIG__DEFAULT__&lt;SYSTEM__VARIABLE></pre>
 
@@ -38,7 +38,7 @@ The general format of system-specific variables follows:
 
 <p id="cloud-system-vars-scopes"></p>{% collapsibleh2 Step 1: Find the scope value %}
 
-This section discusses how you can optionally set system-specific configuration values per _scope_ (store, store view, or website). Setting variables per scope is optional; to set system-wide variables, see [System values](#cloud-system-vars-sys).
+This section discusses how you can optionally set system-specific configuration values per _scope_ (store, store view, or website). To set default global scope variables, start the variable name with `CONFIG__DEFAULT__`. For more information, see [System values](#cloud-system-vars-sys).
 
 Scope values come from the `store`, `store_group`, and `store_website` tables.
 
@@ -95,13 +95,13 @@ where `<CONFIGURATION_VARIABLE_NAME>` comes from the next section.
 
 {% endcollapsibleh2 %}
 
-<p id="cloud-system-vars-sys"></p>{% collapsibleh2 Step 2: Set system values %}
+<p id="cloud-system-vars-sys"></p>{% collapsibleh2 Step 2: Set system variables %}
 
-This section discusses how to set system variables. 
+This section discusses how to set global variables. 
 
-*	To set values for the default scope (that is, all websites, stores, and store views), start the variable name with `CONFIG__DEFAULT__`. 
+*	To set values for the global scope (that is, all websites, stores, and store views), start the variable name with `CONFIG__DEFAULT__`. 
 
-*	To set a value for a particular scope, start the variable name as discussed in [Scope values](#cloud-system-vars-scopes).
+*	To set a value for a particular store, store view, or website, start the variable name as discussed in [Scope values](#cloud-system-vars-scopes).
 
 [See some examples](#cloud-system-vars-ex)
 
