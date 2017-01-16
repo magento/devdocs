@@ -135,7 +135,11 @@ If you choose to use different system-specific settings in staging and productio
 </div>
 
 ### List of system-specific configuration settings {#cloud-config-specific-list}
-The table in this section shows the system-specific settings we include in `config.local.php` in version 2.1.4.
+The tables in this section show the system-specific settings we include in `config.local.php` in version 2.1.4.
+
+You can set variable values per scope (default, website, store, or store view). For example, you could set the default locale used in a particular website.
+
+First, determine the scope name as discussed in [Scope values](#cloud-system-vars-scopes), then append to it a system variable as discussed in [System values](#cloud-system-vars-sys).
 
 How to read the tables:
 
@@ -151,19 +155,10 @@ How to read the tables:
 	*	Start a variable name with `CONFIG__` (note two underscore characters)
 	*	Variable names are specified in different Magento database tables, as indicated in the following sections.
 
-#### System values (from the `core_config_data` table)
+#### Scope values {#cloud-system-vars-scopes}
+Setting variables per scope is optional; to set system-wide variables, see [System values](#cloud-system-vars-sys).
 
-| Description  | Path in Magento Admin (omitting **Stores** > **Configuration**) | Variable name | 
-|--------------|--------------|----------------------|
-| Store locale (Default Config scope)  | General > **General**, **Locale Options** > **Locale**  |  `CONFIG__DEFAULT__GENERAL__LOCALE__CODE` | 
-| Static asset signing |  Advanced > **Developer**, **Static Files Settings** > **Static Files Signing** | `CONFIG__DEFAULT__DEV__STATIC__SIGN`  | 
-| Server-side or client-side LESS compilation  | Advanced > **Developer**, **Frontend Developer Workflow** > **Workflow type** |  `CONFIG__DEFAULT__DEV__FRONT_END_DEVELOPMENT_WORKFLOW__TYPE` | 
-|  HTML minification | Advanced > **Developer**, **Template Settings** > **Minify Html**  | `CONFIG__DEFAULT__DEV__TEMPLATE__MINIFY_HTML`  | 
-| JavaScript minification  | Advanced > **Developer**, **JavaScript Settings** > (several options)  | `CONFIG__DEFAULT__DEV__JS__MINIFY_FILES` |  
-| CSS minification  | Advanced > **Developer**, **CSS Settings** > **Merge CSS Files** and **Minify CSS Files**  | `CONFIG__DEFAULT__DEV__CSS__MINIFY_FILES` | 
-| Disable modules output |  Advanced > **Advanced** > **Disable Modules Output** | `CONFIG__DEV__ADVANCED__DISABLE_MODULES_OUTPUT__<MODULE NAME>`  | 
-
-#### Scopes values (from the `store`, `store_group`, and `store_website` tables)
+Scope values come from the `store`, `store_group`, and `store_website` tables.
 
 *	The `stores` table specifies store view names and codes
 *	The `store_group` table specifies store names and codes
@@ -179,12 +174,45 @@ To get these values from the database:
 
 {% include cloud/log-in-db.md %}
 
-Examples:
+After you connect to the database, use the following SQL queries to find the relevant values:
 
-*	Specify the default store view:
+	SELECT * FROM STORES;
+	SELECT * FROM STORE_GROUP;
+	SELECT * FROM STORE_WEBSITE;
 
-		CONFIG__STORES__DEFAULT
+A sample follows:
 
+	MariaDB [main]> select * from store_website;
+	+------------+-------+--------------+------------+------------------+------------+
+	| website_id | code  | name         | sort_order | default_group_id | is_default |
+	+------------+-------+--------------+------------+------------------+------------+
+	|          0 | admin | Admin        |          0 |                0 |          0 |
+	|          1 | base  | Main Website |          0 |                1 |          1 |
+	|          2 | test1 | Test Website |          0 |                3 |          0 |
+	+------------+-------+--------------+------------+------------------+------------+
+
+For example, to set a configuration variable for Test Website, use the following format:
+
+	CONFIG__STORE__WEBSITE__TEST__<CONFIGURATION_VARIABLE_NAME>
+
+where `<CONFIGURATION_VARIABLE_NAME>` comes from the next section.
+
+#### System values {#cloud-system-vars-sys}
+This section discusses how to set system variables. To set values for the default scope (that is, all websites, stores, and store views), start the variable name with `CONFIG__DEFAULT__`. To set a value for a particular scope, start the variable name as discussed in [Scope values](#cloud-system-vars-scopes).
+
+Examples are shown in TBD.
+
+System values come from the `core_config_data` table.
+
+| Description  | Path in Magento Admin (omitting **Stores** > **Configuration**) | Variable name | 
+|--------------|--------------|----------------------|
+| Store locale (Default Config scope)  | General > **General**, **Locale Options** > **Locale**  |  `CONFIG__DEFAULT__GENERAL__LOCALE__CODE` | 
+| Static asset signing |  Advanced > **Developer**, **Static Files Settings** > **Static Files Signing** | `CONFIG__DEFAULT__DEV__STATIC__SIGN`  | 
+| Server-side or client-side LESS compilation  | Advanced > **Developer**, **Frontend Developer Workflow** > **Workflow type** |  `CONFIG__DEFAULT__DEV__FRONT_END_DEVELOPMENT_WORKFLOW__TYPE` | 
+|  HTML minification | Advanced > **Developer**, **Template Settings** > **Minify Html**  | `CONFIG__DEFAULT__DEV__TEMPLATE__MINIFY_HTML`  | 
+| JavaScript minification  | Advanced > **Developer**, **JavaScript Settings** > (several options)  | `CONFIG__DEFAULT__DEV__JS__MINIFY_FILES` |  
+| CSS minification  | Advanced > **Developer**, **CSS Settings** > **Merge CSS Files** and **Minify CSS Files**  | `CONFIG__DEFAULT__DEV__CSS__MINIFY_FILES` | 
+| Disable modules output |  Advanced > **Advanced** > **Disable Modules Output** | `CONFIG__DEV__ADVANCED__DISABLE_MODULES_OUTPUT__<MODULE NAME>`  | 
 
 ### Manage sensitive settings
 The Web Interface enables you to specify values of sensitive configuration settings for staging and production systems.
