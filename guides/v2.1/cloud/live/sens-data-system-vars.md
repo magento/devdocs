@@ -28,11 +28,11 @@ The general format of system-specific variables follows:
 
 *	A specific scope (that is, the setting affects only a specified store, store view, or website)
 
-		For more information, see:
+	For more information, see:
 
-		*	[Scope values](#cloud-system-vars-scopes)
-		*	[Magento User Guide](http://docs.magento.com/m2/ce/user_guide/configuration/scope.html){:target="_blank"}
-		*	[Scope quick reference](http://docs.magento.com/m2/ce/user_guide/stores/store-scope-reference.html){:target="_blank"}
+	*	[Scope values](#cloud-system-vars-scopes)
+	*	[Magento User Guide](http://docs.magento.com/m2/ce/user_guide/configuration/scope.html){:target="_blank"}
+	*	[Scope quick reference](http://docs.magento.com/m2/ce/user_guide/stores/store-scope-reference.html){:target="_blank"}
 
 `<SYSTEM__VARIABLE>` is the variable you wish to specify. For more information, see [System values](#cloud-system-vars-sys).
 
