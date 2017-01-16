@@ -18,11 +18,25 @@ The general format of system-specific variables follows:
 
 <pre class="no-copy">&lt;SCOPE>__&lt;SYSTEM__VARIABLE></pre>
 
-To set a value for the default scope (that is, for _all_ scopes), use the following format:
+`<SCOPE>` can be either:
 
-<pre class="no-copy">CONFIG__DEFAULT__&lt;SYSTEM__VARIABLE></pre>
+*	Default scope (that is, the global setting for _all_ scopes)
 
-First, determine the scope name as discussed in [Scope values](#cloud-system-vars-scopes), then append to it a system variable as discussed in [System values](#cloud-system-vars-sys).
+	Default scope variables have the following format:
+
+	<pre class="no-copy">CONFIG__DEFAULT__&lt;SYSTEM__VARIABLE></pre>
+
+*	A specific scope (that is, the setting affects only a specified store, store view, or website)
+
+		For more information, see:
+
+		*	[Scope values](#cloud-system-vars-scopes)
+		*	[Magento User Guide](http://docs.magento.com/m2/ce/user_guide/configuration/scope.html){:target="_blank"}
+		*	[Scope quick reference](http://docs.magento.com/m2/ce/user_guide/stores/store-scope-reference.html){:target="_blank"}
+
+`<SYSTEM__VARIABLE>` is the variable you wish to specify. For more information, see [System values](#cloud-system-vars-sys).
+
+
 
 How to read the tables:
 
@@ -38,7 +52,8 @@ How to read the tables:
 	*	Start a variable name with `CONFIG__` (note two underscore characters)
 	*	Variable names are specified in different Magento database tables, as indicated in the following sections.
 
-#### Part 1: Find the scope value {#cloud-system-vars-scopes}
+<p id="cloud-system-vars-scopes"></p>{% collapsibleh2 Step 1: Find the scope value %}
+
 This section discusses how you can optionally set system-specific configuration values per _scope_ (store, store view, or website). Setting variables per scope is optional; to set system-wide variables, see [System values](#cloud-system-vars-sys).
 
 Scope values come from the `store`, `store_group`, and `store_website` tables.
@@ -80,7 +95,10 @@ For example, to set a configuration variable for Test Website, use the following
 
 where `<CONFIGURATION_VARIABLE_NAME>` comes from the next section.
 
-#### Part 2: Set system values {#cloud-system-vars-sys}
+{$ endcollapsibleh2 %}
+
+<p id="cloud-system-vars-sys"></p>{% collapsibleh2 Set system values %}
+
 This section discusses how to set system variables. 
 
 *	To set values for the default scope (that is, all websites, stores, and store views), start the variable name with `CONFIG__DEFAULT__`. 
@@ -101,7 +119,9 @@ System values come from the `core_config_data` table.
 | CSS minification  | Advanced > **Developer**, **CSS Settings** > **Merge CSS Files** and **Minify CSS Files**  | `<SCOPE>__DEV__CSS__MINIFY_FILES` | 
 | Disable modules output |  Advanced > **Advanced** > **Disable Modules Output** | `CONFIG__DEV__ADVANCED__DISABLE_MODULES_OUTPUT__<MODULE NAME>`  | 
 
-#### Examples {#cloud-system-vars-ex}
+{% endcollapsibleh2 %}
+
+## Examples {#cloud-system-vars-ex}
 TBD
 
 ### Manage sensitive settings
