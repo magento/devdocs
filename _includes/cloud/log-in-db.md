@@ -12,22 +12,22 @@
     <pre class="no-copy">
     Array
 	   (
-   		  [0] => stdClass Object
-         (
-           [username] => user
-           [password] =>
-           [ip] => 192.0.2.60
-           [host] => database.internal
-           [query] => stdClass Object
-              (
-                 [is_master] => 1
-             )
+          [0] => stdClass Object
+            (
+               [username] => user
+               [password] =>
+               [ip] => 192.0.2.60
+               [host] => database.internal
+               [query] => stdClass Object
+                  (
+                    [is_master] => 1
+                  )
 
-           [path] => main
-           [scheme] => mysql
-           [port] => 3306
-              )
-          )</pre>
+               [path] => main
+               [scheme] => mysql
+               [port] => 3306
+            )
+        )</pre>
 
 3.  Use the following command to connect to the database:
 
