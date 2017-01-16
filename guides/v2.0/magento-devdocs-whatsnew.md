@@ -18,6 +18,8 @@ Starting in January, 2017, we'll provide the date a change was made instead of t
 
 | Description  | Versions applied to  | New or Updated | Date |
 |--------------|--------------|----------------------|--------|
+| [How to test a patch on Magento Enterprise Cloud Edition]({{ page.baseurl }}cloud/howtos/patch-magento.html)  | 2.x  |  Updated  |  Jan 10 |
+|  [Add `type` prefixes and product, project in description of `composer.json`]({{ page.baseurl }}extension-dev-guide/build/composer-integration.html) |  2.x |  Updated  | Jan 9  |
 | [Docblock coding standard]({{ page.baseurl }}coding-standards/docblock-standard-general.html) | 2.x | Updated | Jan 6 |
 | [Use payment vault in the Admin]({{ page.baseurl }}payments-integrations/vault/admin-integration.html) | 2.1 | Updated | Jan 6 |
 
