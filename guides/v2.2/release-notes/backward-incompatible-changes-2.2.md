@@ -121,6 +121,41 @@ The `bin/magento setup:config:set` command no longer has the `--definition-forma
 
 ### Database Schema changes
 
+### Database data format changes
+
+This release replaces usages of `unserialize` with [`json_decode`]({{page.baseurl}}extension-dev-guide/framework/serializer.html).
+
+The release also provides upgrade scripts that convert Magento data stored in serialized format.
+
+Extension developers should review the following cases to see what actions they should take for their extensions:
+
+**Case 1:**  
+Your extension declared fields for automatic serialization/unserialization using the `_serializableFields` parameter of `\Magento\Framework\Model\ResourceModel\Db\AbstractDb`.  
+**Solution:**  
+Write an [upgrade script]({{page.baseurl}}ext-best-practices/tutorials/serialized-to-json-data-upgrade.html) to convert your extension data to JSON format.
+
+**Case 2:**  
+Your extension stores or adds serialized data to Magento entities (e.g. new/custom attributes for Product).  
+**Solution:**  
+Your extension will continue working normally, but we recommend switching to JSON for security reasons.
+You also need to write an upgrade script for the data in the database.
+
+**Case 3:**  
+Your extension relies on serialized data from Magento entities.  
+**Solution:**  
+Update all usages to expect the data in JSON format.
+
+**Case 4:**  
+The serialize/unserialize logic belongs to your extension and stores data in a new table or field.  
+**Solution:**  
+Your extension will continue working normally, but we recommend switching to JSON for security reasons.
+You also need to write an upgrade script for the data in the database.
+
+**See:** 
+
+* [Serialize to JSON data upgrade]({{page.baseurl}}ext-best-practices/tutorials/serialized-to-json-data-upgrade.html)
+* [Serialize Library]({{page.baseurl}}extension-dev-guide/framework/serializer.html)
+
 #### Staging (EE Only)
 
 ### Persistence management
