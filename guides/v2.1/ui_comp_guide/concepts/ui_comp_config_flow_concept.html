@@ -698,13 +698,13 @@
 			<h2 id="overview">Overview</h2>
 <p>The following section covers the configuration flow of UI components within the Magento system. Before a UI component is finally displayed on a web page, its configuration undergoes a series of modifications. Starting from the initial reading of the top-level component instance’s XML declaration, all the way to the merging of module-specific options.</p>
 
-<p>When the server generates a page response, the configuration of these components in the <a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html"><code>.xml</code> declaration file</a> (which are module-agnostic) is then modified by the <code>.php</code> modifiers (which are module-specific), and then finally this combined configuration of module-agnostic and module-specific options is packed into JSON format and added into the HTTP response body.</p>
+<p>When the server generates a page response, the configuration of these components in the <a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html"><code>.xml</code> declaration files</a> is then modified by the <a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_modifier_concept.html"><code>.php</code> modifiers</a>, and then finally this combined configuration is packed into JSON format and added into the HTTP response body.</p>
 
 <p>On the client-side, this JSON is processed by <code>Magento_Ui/js/core/app</code> where <code>Magento_Ui/js/core/app</code> is an alias for the <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/core/app.js"><code>app.js</code></a> file. The JSON could be seen in the page source. The <code>Magento_Ui/js/core/app</code> creates the UI components instances according to the configuration of the JSON using <code>uiLayout</code>.</p>
 
 <p>The Magento JavaScript application bounds these instances to the corresponding <code>.html</code> templates, if there are any <code>.html</code> templates declared in JSON for that particular component. The top-level UI component is bound to the page by the <code>scope</code> Knockout binding.</p>
 
-<h2 id="implementation-details">Implementation Details</h2>
+<h2 id="implementation-details">Implementation details</h2>
 
 <p>This section provides more detailed steps about the configuration flow.</p>
 
