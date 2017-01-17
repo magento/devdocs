@@ -13,17 +13,9 @@ redirect_from: /guides/v1.0/migration/migration-manually.html
 
 ## Common error messages
 
-This section is about the errors that might occur when you run the Data Migration Tool. Here you will find:
+This section is about the errors that might occur when you run the Data Migration Tool, and how to deal with them.
 
-* examples of most common errors
-
-* explanations on why these errors occur
-
-* possible solutions
-
-### Source docs/fields not mapped
-
-#### Error message text
+### Source documents/fields not mapped
 
 {% highlight xml %}
 Source documents are not mapped: <EXTENSION_TABLE>
@@ -33,52 +25,54 @@ Source documents are not mapped: <EXTENSION_TABLE>
 Source fields are not mapped. Document: <EXTENSION_TABLE>. Fields: <EXTENSION_FIELD>
 {% endhighlight %}
 
+In rare cases, the message might mention `Destination documents` or `Destination fields` instead of source ones.
+
 #### Explanation
 
-Your Magento 1 store has extensions installed; extensions cannot be migrated with the Data Migration Tool.
+Some Magento 1 entities (in most cases, coming from extensions) do not exist in the Magento 2 database.
+
+This message appears because the Data Migration Tool runs internal tests to verify that database tables and fields are consistent between *source* (Magento 1) and *destination* (Magento 2).
 
 #### Possible solutions
 
-Migrate your extension using the [Magento Code Migration Toolkit](https://github.com/magento/code-migration) or find the Magento 2 version of your extension on [Magento Marketplace](https://marketplace.magento.com/){:target:"_blank"}.
+1. Install the corresponding Magento 2 extensions from [Magento Marketplace](https://marketplace.magento.com/){:target:"_blank"}.
 
-*QUESTIONS:*
+    If the conflicting data originates from an extension which adds own database structure elements, then the Magento 2 version of the same extension may add such elements to the destination (Magento 2) database, thus fixing the issue.
 
-*0. What do we do EXACTLY to solve the error and run the tool successfully?*
+2. Ignore the problematic data.
 
-*1. Do we have to uninstall the extension to continue with DMT?*
+To ignore database entities, add the `<ignore>` tag to an entity in the `map.xml` file, like this:
+
+{% highlight xml %}
+<ignore>
+   <field>sales_order_address_id</field>
+</ignore>
+{% endhighlight %}
+
+<div class="bs-callout bs-callout-warning">
+   <p>Before ignoring entities, make sure you don't need the affected data in your Magento 2 store.</p>
+</div>
 
 ### Class does not exist but mentioned
 
-#### Error message text
-
 {% highlight xml %}
-Class <EXTENSION_OR_CLASS_NAME> does not exist but mentioned in:
-<EAV_ATTRIBUTE.FRONTEND_MODEL> for <ATTRIBUTE_ID>
+Class <extension/class_name> does not exist but mentioned in:
+<eav_attribute.frontend_model> for <attribute_id=196>
 {% endhighlight %}
 
 #### Explanation
 
-A class from Magento 1 codebase could not be found in Magento 2 codebase during the EAV migration step. In most cases, the missing class belongs to an extension.
+A class from Magento 1 codebase could not be found in Magento 2 codebase during the [EAV migration step]({{page.baseurl}}migration/migration-tool-internal-spec.html#eav). In most cases, the missing class belongs to an extension.
 
 #### Possible solutions
 
-* Install the corresponding Magento 2 extension
+1. Install the corresponding Magento 2 extension
 
-*QUESTIONS:*
+2. Ignore the attribute that causes the issue.
 
-*Install extension 2.0, then run the tool again?*
+    For this, add the attribute to the `ignore` group in the `eav-attribute-groups.xml.dist` file
 
-* Ignore the attribute that causes the issue. For this, add the attribute to the `ignore` group in the `eav-attribute-groups.xml.dist` file
-
-* Add class mapping using the `class-map.xml.dist` file
-
-See the [Mapping files]({{page.baseurl}}/migration/migration-tool-configure.html#migration-config) section for more details.
-
-*QUESTIONS:*
-
-*1. Will this mean mapping the problematic class with the new one that exists in Magento 2?*
-
-*2. Do I have to first create the Magento 2 class, and only then run the DMT?*
+3. Add class mapping using the `class-map.xml.dist` file
 
 ### Foreign key constraint fails
 
@@ -92,15 +86,16 @@ Orphan records id: <ID_1>, <ID_2> from <CHILD_TABLE>.
 
 #### Explanation
 
-The `FIELD_ID` of the `CHILD_TABLE` in Magento database makes a reference to a missing record in the `PARENT_TABLE`.
+The `FIELD_ID` of the `CHILD_TABLE` in Magento database refers to a missing record in the `PARENT_TABLE`.
+
+*Better initial version: In this case there are missing records in `table_parent` to which `table_child`.`some_field_id` is pointing.*
 
 #### Possible solution
 
 Delete the records from the `CHILD_TABLE`, if they are no longer needed.
 
-*QUESTION*
+If you still need the records, you may disable the `Data Integrity Step` in `config.xml`.
 
-*What if a record is needed?*
 
 ### Duplicates in URL rewrites
 
@@ -108,23 +103,19 @@ Delete the records from the `CHILD_TABLE`, if they are no longer needed.
 
 {%highlight xml%}
 There are duplicates in URL rewrites:
-Request path: <PATH.HTML> Store ID: <ID> Target path: <catalog/product/view/id/10>
-Request path: <PATH.HTML> Store ID: <ID> Target path: <catalog/product/view/id/12>
+Request path: towel.html Store ID: 2 Target path: catalog/product/view/id/10
+Request path: towel.html Store ID: 2 Target path: catalog/product/view/id/12
 {%endhighlight%}
 
 #### Explanation
 
-There are multiple Target Paths (each having the same Request Path and Store Id) for a URL rewrite. Magento 2 allows only one Target Path for a particular *Request Path + Store Id* pair in URL rewrites.
+There can only be a unique pair of Request Path + Store ID for a URL rewrite in Magento 2, while you're having two identical pairs with different Target Paths.
 
 #### Possible solution
 
-Set a unique Target Path value for the `auto_resolve_urlrewrite_duplicates` option in your `config.xml` file. In this case, a hash-string will be added to the other (conflicting) record of the URL reqwrite.
+Enable the `auto_resolve_urlrewrite_duplicates` option in your `config.xml` file.
 
-*QUESTION*
-
-*Hash-string: do we need an example here?*
-
-*How EXACTLY will the hash-sting appear in the conflicting record? Will it be added automatically?*
+In this case, the Data Migration Tool will add a hash-string to the conflicting records of the URL reqwrite, and show the resolution result in your command line interface.
 
 ### Mismatch of entities
 
@@ -136,7 +127,7 @@ Mismatch of entities in the document: <DOCUMENT>
 
 #### Explanation
 
-The error occurs during the Volume Check step. It means the Magento 2 database record count is not the same as in Magento 1 before migration.
+The error occurs during the Volume Check step. It means the Magento 2 database record count of the document is not the same as in Magento 1.
 
 **Possible reason:** records may be missing because a customer has placed an order during migration.
 
