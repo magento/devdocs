@@ -730,19 +730,7 @@
 
 <h3 id="using-ui-component-in-layout-file">Using UI component in layout file</h3>
 
-<p>Using UI component is as simple as adding the following code to the appropriate layout section:</p>
-
-<p><code>&lt;uiСomponent name="some_ui_component_instance_name"/&gt;</code></p>
-
-<p>All UI components have base declaration in <a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_config_flow_concept.html"><code>Magento/Ui/view/base/ui_component/etc/definition.xml</code></a>.</p>
-
-<p>UI components configuration reader searches through all active modules and read files:</p>
-
-<p><code>&lt;module root dir&gt;/view/&lt;area&gt;/ui_component/etc/definition.xml</code></p>
-
-<p>And concrete instances of the components each in separate XML configuration file:</p>
-
-<p><code>&lt;module root dir&gt;/view/&lt;area&gt;/ui_component/&lt;component_instance_name&gt;.xml</code></p>
+<p>Basic components are declared in the page layout files; secondary components are declared in the top-level components’ instances configuration files.</p>
 
 <h3 id="customization">Customization</h3>
 
