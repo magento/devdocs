@@ -19,7 +19,7 @@ On the client-side, this JSON is processed by `Magento_Ui/js/core/app` where `Ma
 The Magento JavaScript application bounds these instances to the corresponding `.html` templates, if there are any `.html` templates declared in JSON for that particular component. The top-level UI component is bound to the page by the `scope` Knockout binding.
 
 
-## Implementation Details
+## Implementation details
 
 This section provides more detailed steps about the configuration flow.
 
