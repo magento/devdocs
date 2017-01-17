@@ -12,14 +12,14 @@ github_link: ui_comp_guide/concepts/ui_comp_config_flow_concept.md
 ## Overview
 The following section covers the configuration flow of UI components within the Magento system. Before a UI component is finally displayed on a web page, its configuration undergoes a series of modifications. Starting from the initial reading of the top-level component instance’s XML declaration, all the way to the merging of module-specific options.
 
-When the server generates a page response, the configuration of these components in the [`.xml` declaration file]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html) (which are module-agnostic) is then modified by the `.php` modifiers (which are module-specific), and then finally this combined configuration of module-agnostic and module-specific options is packed into JSON format and added into the HTTP response body.
+When the server generates a page response, the configuration of these components in the [`.xml` declaration files]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html) is then modified by the [`.php` modifiers]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_modifier_concept.html), and then finally this combined configuration is packed into JSON format and added into the HTTP response body.
 
 On the client-side, this JSON is processed by `Magento_Ui/js/core/app` where `Magento_Ui/js/core/app` is an alias for the [`app.js`]({{site.mage2100url}}app/code/Magento/Ui/view/base/web/js/core/app.js) file. The JSON could be seen in the page source. The `Magento_Ui/js/core/app` creates the UI components instances according to the configuration of the JSON using `uiLayout`.
 
 The Magento JavaScript application bounds these instances to the corresponding `.html` templates, if there are any `.html` templates declared in JSON for that particular component. The top-level UI component is bound to the page by the `scope` Knockout binding.
 
 
-## Implementation Details
+## Implementation details
 
 This section provides more detailed steps about the configuration flow.
 
@@ -53,7 +53,7 @@ Now it is the client's turn to process this JSON and generate the UI component's
 
 1. RequireJS requires `Magento_Ui/js/core/app` and passes [JSON configuration]({{page.baseurl}}javascript-dev-guide/javascript/js_init.html#declarative-notation-using-the-script-typetextx-magento-init--tag-decltag) as an parameter.
 2. The `Magento_Ui/js/core/app` calls `layout.js `and passes the UI component’s configuration into the layout: `<Magento_Ui_module_dir>/view/base/web/js/core/renderer/layout.js`.
-3. `layout.js` creates instances of UI Components. That means that each UI component’s configuration must have an explicitly declared `component` property in JSON. This property references the `.js` file. For example, our form has the component declared in JSON like this:	`"my_form":{"component":"Magento_Ui/js/form/form"}`
+3. `layout.js` creates instances of UI components. That means that each UI component’s configuration must have an explicitly declared `component` property in JSON. This property references the `.js` file. For example, our form has the component declared in JSON like this:	`"my_form":{"component":"Magento_Ui/js/form/form"}`
 So the instance of this class is created, and properties from the JSON overwrites the properties from the UI component’s `defaults` property. Then resulting properties become the first-level properties of the newly created UI component's instance, and the original `defaults` property is deleted.
-4. The UI Components’ `.html` templates (if there are any) are rendered by Magento `knockout.js` template engine. This means, that [bootstrap.js]({{site.mage2100url}}app/code/Magento/Ui/view/base/web/js/lib/knockout/bootstrap.js) (required by `app.js`) passes our own [template engine]({{site.mage2100url}}app/code/Magento/Ui/view/base/web/js/lib/knockout/template/engine.js) for the Knockout.
+4. The UI components’ `.html` templates (if there are any) are rendered by Magento `knockout.js` template engine. This means, that [bootstrap.js]({{site.mage2100url}}app/code/Magento/Ui/view/base/web/js/lib/knockout/bootstrap.js) (required by `app.js`) passes our own [template engine]({{site.mage2100url}}app/code/Magento/Ui/view/base/web/js/lib/knockout/template/engine.js) for the Knockout.
 5. The `bootstrap.js` binds the component as a Model behind this View (template) using Knockout bindings. The UI components are now displayed on the page, and are fully interactive.
