@@ -69,7 +69,7 @@ To deploy static view files:
 
 Command options:
 
-	magento setup:static-content:deploy [<list of locales>] [-t|--theme[="<theme>"]] [--exclude-theme[="<theme>"]] [-l|--language[="<language>"]] [--exclude-language[="<language>"]] [-a|--area[="<area>"]] [--exclude-area[="<area>"]] [-j|--jobs[="<number>"]]  [--no-javascript] [--no-css] [--no-less] [--no-images] [--no-fonts] [--no-html] [--no-misc] [--no-html-minify] [-d|--dry-run] 
+	magento setup:static-content:deploy [<list of languages>] [-t|--theme[="<theme>"]] [--exclude-theme[="<theme>"]] [-l|--language[="<language>"]] [--exclude-language[="<language>"]] [-a|--area[="<area>"]] [--exclude-area[="<area>"]] [-j|--jobs[="<number>"]]  [--no-javascript] [--no-css] [--no-less] [--no-images] [--no-fonts] [--no-html] [--no-misc] [--no-html-minify] [-d|--dry-run] 
 
 The following table discusses the meanings of this command's parameters and values. 
 
@@ -179,7 +179,7 @@ The following table discusses the meanings of this command's parameters and valu
 </table>
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-*   If you specify values for both `lang` and `--language`, `lang>` takes precedence.
+*   If you specify values for both `lang` and `--language`, `<lang>` takes precedence.
 *   The following parameters were added in version 2.1.1: `--exclude-language`, `--theme <theme>`, `--exclude-theme <theme>`, `--area (-a)`, `--exclude-area`, `--jobs (-j)`, `--no-javascript`, `--no-css`, `--no-less`, `--no-images`, `--no-fonts`, `--no-html`, `--no-misc`, `--no-html-minify`.
 </div>
 
