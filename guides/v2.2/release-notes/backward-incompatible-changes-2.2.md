@@ -151,6 +151,20 @@ The serialize/unserialize logic belongs to your extension and stores data in a n
 Your extension will continue working normally, but we recommend switching to JSON for security reasons.
 You also need to write an upgrade script for the data in the database.
 
+**Case 5:**  
+Extension access directly values in the `core_config_data` table by the following paths:
+- `payment/braintree/countrycreditcard`
+- `design/theme/ua_regexp`
+- `cataloginventory/item_options/min_sale_qty`
+- `currency/options/customsymbol`
+**Solution:**  
+Update extension to use `\Magento\Framework\Serialize\Serializer\Json` to serialize/unserialize data instead of native PHP serialize/unserialize functions.
+
+**Case 6:**  
+Extension uses backend model to save/load data to/from database, that extends `\Magento\Config\Model\Config\Backend\Serialized`.
+**Solution:**  
+Upgrade data stored by the extension in `core_config_data`.
+
 **See:** 
 
 * [Serialize to JSON data upgrade]({{page.baseurl}}ext-best-practices/tutorials/serialized-to-json-data-upgrade.html)
