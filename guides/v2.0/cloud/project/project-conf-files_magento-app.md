@@ -368,7 +368,7 @@ the application (the repository root).
 
 For example, if you need to increase the PHP memory limit:
 
-	memory_limit = 768M
+	memory_limit = 756M
 
 For a list of recommended PHP configuration settings, see [Required PHP settings]({{ page.baseurl }}install-gde/prereq/php-settings.html).
 

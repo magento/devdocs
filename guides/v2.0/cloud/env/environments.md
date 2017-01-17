@@ -15,7 +15,7 @@ A Magento Enterprise Cloud *environment* consists of a running Magento instance.
 
 Each environment is a branch of the `master` environment (which is your live environment). Every Cloud project has at least one environment, the `master`, which cannot be removed or renamed. You can create up to 6 additional environments. Typically, these environments are used for development and testing.
 
-If you use GitHub or Bitbucket, every pull request or branch can be deployed into its own environment on Magento Enterprise Cloud.
+If you use GitHub, every pull request or branch can be deployed into its own environment on Magento Enterprise Cloud.
 
 ## Master environment
 Every Magento Enterprise Cloud Edition project starts with a `master` environment that corresponds to the `master` branch in Git. The master environment is your live, production environment.

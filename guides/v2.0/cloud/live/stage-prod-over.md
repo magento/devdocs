@@ -4,10 +4,8 @@ group: cloud
 subgroup: 40_live
 title: Overview of staging and production
 menu_title: Overview of staging and production
-menu_order: 6
+menu_order: 3
 menu_node: 
-level3_menu_node: level3child
-level3_subgroup: stage-prod
 version: 2.0
 github_link: cloud/live/stage-prod-over.md
 ---
@@ -89,9 +87,6 @@ Get your Git and SSH URLs from the OneDrive onboarding document you received whe
 
 After you know these URLs, you can access them without further intervention. You can deploy updated code to staging or production using Git commands. 
 
-<div class="bs-callout bs-callout-warning">
-    <p>You should always deploy code and data from integration to staging, and then from staging to production. If you need to fix issues, fix them in development and push them to staging before production.</p>
+<div class="bs-callout bs-callout-warning" markdown="1">
+You should always deploy code and data from the `master` branch of your integration environment to staging, and then from staging to production. If you need to fix issues, fix them in development and push them to staging before production.
 </div>
-
-#### Next step
-[Prepare to migrate data]({{ page.baseurl }}cloud/live/stage-prod-migrate-prereq.html)

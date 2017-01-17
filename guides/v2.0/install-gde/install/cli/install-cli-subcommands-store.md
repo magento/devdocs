@@ -18,11 +18,13 @@ redirect_from:
 {% include install/first-steps-cli.html %}
 In addition to the command arguments discussed here, see <a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands.html#instgde-cli-subcommands-common">Common arguments</a>.
 
-<h2 id="instgde-cli-subcommands-store-prereq">Prerequisites</h2>
+## Prerequisites {#instgde-cli-subcommands-store-prereq}
 Before you run this command, you must do all of the following *or* you must <a href="{{page.baseurl}}install-gde/install/cli/install-cli-install.html">install the Magento software</a>:
 
 *	<a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands-deployment.html">Create or update the deployment configuration</a>
 *	<a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands-db.html">Create the Magento database schema</a>
+
+{% include install/fully-secure.md %}
 
 <h2 id="instgde-cli-storeconfig">Configure the store</h2>
 Command usage:
@@ -47,7 +49,7 @@ where the following table defines parameters and values.
 		<ul><li><code>http[s]://&lt;host or ip>/&lt;your Magento install dir>/</code>.
 		<strong>Note</strong>: The scheme (<code>http://</code> or <code>https://</code>) and a trailing slash are <em>both</em> required.
 		<code>&lt;your Magento install dir></code> is the docroot-relative path in which to install the Magento software. Depending on how you set up your web server and virtual hosts, the path might be <code>magento2</code> or it might be blank.
-		To access Magento on localhost, you can use either <code>http://127.0.0.1/&lt;your Magento install dir>/</code> or <code>http://127.0.0.1/&lt;your Magento install dir>/</code>.</li>
+		To access Magento on localhost, you can use <code>http://127.0.0.1/&lt;your Magento install dir>/</code>.</li>
 		<li><code>&#123;&#123;base_url&#125;&#125;</code> which represents a base URL defined by a virtual host setting or by a virtualization environment like Docker. For example, if you set up a virtual host for Magento with the host name <code>magento.example.com</code>, you can install the Magento software with <code>--base-url=&#123;&#123;base_url&#125;&#125;</code> and access the Magento Admin with a URL like <code>http://magento.example.com/admin</code>.</li></ul>		</td>
 		<td>No</td>
 	</tr>
@@ -76,7 +78,7 @@ where the following table defines parameters and values.
 	</tr>
 	<tr>
 		<td>--use-secure</td>
-		<td><p><code>1</code> enables the use of Secure Sockets Layer (SSL) in all URLs (both Admin and storefront). Make sure your web server supports SSL before you select this option.</p>
+		<td><p><code>1</code> enables the use of Secure Sockets Layer (SSL) in storefront URLs. Make sure your web server supports SSL before you select this option.</p>
 		<p><code>0</code> disables the use of SSL with Magento. In this case, all other secure URL options are assumed to also be <code>0</code>. This is the default.</p></td>
 		<td>No</td>
 	</tr>

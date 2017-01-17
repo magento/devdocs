@@ -1,6 +1,6 @@
 ---
 layout: default
-group: install
+group: 
 subgroup: 02_config
 title: Configure the Magento application
 menu_title: Configure the Magento application
@@ -12,12 +12,12 @@ github_link: install-gde/install/post-install-config.md
 
 Now that you've finished installing the Magento application, you need to configure it. This topic provides some recommended configuration settings for Magento; the list is not complete so watch this space.
 
-## Set up cron {#post-install-cron}
-cron&mdash;the UNIX task scheduler&mdash;is critical to Magento's day-to-day operations. It schedules things like reindexing, newsletters, e-mails, sitemaps, and so on. A *crontab* is a cron configuration.
+<h2 id="post-install-cron">Set up cron</h2>
+cron&mdash;the UNIX task scheduler&mdash;is critical to Magento's day-to-day operations. It schedules things like reindexing, newsletters, e-mails, sitemaps, and so on.
 
-{% include config/setup-cron_2.2_how-to.md %}
+Immediately after finishing your Magento installation, set up a *crontab* for the Magento file system owner.
 
-For more information about cron, including how to remove a crontab and run cron from the command line, see [Configure and run cron]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-cron.html).
+{% include config/setup-cron_2.2.md %}
 
 <h2 id="post-install-secy">Security settings</h2>
 After installation, we recommend the following:
