@@ -1641,7 +1641,7 @@ sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
 
   <p>Command options:</p>
 
-  <pre><code>magento setup:static-content:deploy [&lt;list of locales&gt;] [-t|--theme[="&lt;theme&gt;"]] [--exclude-theme[="&lt;theme&gt;"]] [-l|--language[="&lt;language&gt;"]] [--exclude-language[="&lt;language&gt;"]] [-a|--area[="&lt;area&gt;"]] [--exclude-area[="&lt;area&gt;"]] [-j|--jobs[="&lt;number&gt;"]]  [--no-javascript] [--no-css] [--no-less] [--no-images] [--no-fonts] [--no-html] [--no-misc] [--no-html-minify] [-d|--dry-run] 
+  <pre><code>magento setup:static-content:deploy [&lt;list of languages&gt;] [-t|--theme[="&lt;theme&gt;"]] [--exclude-theme[="&lt;theme&gt;"]] [-l|--language[="&lt;language&gt;"]] [--exclude-language[="&lt;language&gt;"]] [-a|--area[="&lt;area&gt;"]] [--exclude-area[="&lt;area&gt;"]] [-j|--jobs[="&lt;number&gt;"]]  [--no-javascript] [--no-css] [--no-less] [--no-images] [--no-fonts] [--no-html] [--no-misc] [--no-html-minify] [-d|--dry-run] 
 </code></pre>
 
   <p>The following table discusses the meanings of this command’s parameters and values.</p>
@@ -1753,7 +1753,7 @@ sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
 
   <div class="bs-callout bs-callout-info" id="info">
     <ul>
-      <li>If you specify values for both <code>lang</code> and <code>--language</code>, <code>lang&gt;</code> takes precedence.</li>
+      <li>If you specify values for both <code>lang</code> and <code>--language</code>, <code>&lt;lang&gt;</code> takes precedence.</li>
       <li>The following parameters were added in version 2.1.1: <code>--exclude-language</code>, <code>--theme &lt;theme&gt;</code>, <code>--exclude-theme &lt;theme&gt;</code>, <code>--area (-a)</code>, <code>--exclude-area</code>, <code>--jobs (-j)</code>, <code>--no-javascript</code>, <code>--no-css</code>, <code>--no-less</code>, <code>--no-images</code>, <code>--no-fonts</code>, <code>--no-html</code>, <code>--no-misc</code>, <code>--no-html-minify</code>.</li>
     </ul>
   </div>
