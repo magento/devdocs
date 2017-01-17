@@ -131,9 +131,10 @@ After you've configured the integration server and tested it thoroughly, see [Ov
 <div class="bs-callout bs-callout-warning" markdown="1">
 We assume system-specific settings are the same in staging and production. Only sensitive configuration values should change in those systems and you manage them using environment variables.
 
-If you choose to use different system-specific settings in staging and production, you can manually edit `config.local.php`, but that is ` scope of this guide.
+If you choose to use different system-specific settings in staging and production, you can manually edit `config.local.php`, but that is beyond scope of this guide.
 </div>
 
 #### Next steps
 *	[System-specific settings reference]({{ page.baseurl }}cloud/live/sens-data-system-vars.html)
-*	TBD
+*	[Manage system-specific settings]({{ page.baseurl }}cloud/live/sens-data-initial.html)
+*	[Manage sensitive configuration values]({{ page.baseurl }}cloud/live/sens-data-mg-sens.html)

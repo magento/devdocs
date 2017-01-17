@@ -94,6 +94,8 @@ A sample follows:
 	|          2 | test1 | Test Website |          0 |                3 |          0 |
 	+------------+-------+--------------+------------+------------------+------------+
 
+Use the value from the `code` column as the scope name.
+
 For example, to set a configuration variable for Test Website, use the following format:
 
 	CONFIG__STORE__WEBSITE__TEST1__<SYSTEM_VARIABLE_NAME>
@@ -108,7 +110,7 @@ This section discusses how to set system variables.
 
 *	To set values for the global scope (that is, all websites, stores, and store views), start the variable name with `CONFIG__DEFAULT__`. 
 
-*	To set a value for a particular store, store view, or website, start the variable name as discussed in [Scope values](#cloud-system-vars-scopes).
+*	To set a value for a particular store, store view, or website, start the variable name as discussed in [Step 1: Find the scope value](#cloud-system-vars-scopes).
 
 [See some examples](#cloud-system-vars-ex)
 
@@ -116,7 +118,7 @@ Step 2: Set system variables come from the `core_config_data` table.
 
 | Description  | Path in Magento Admin (omitting **Stores** > **Configuration**) | Variable name | 
 |--------------|--------------|----------------------|
-| Store locale (Default Config scope)  | General > **General**, **Locale Options** > **Locale**  |  `<SCOPE>__GENERAL__LOCALE__CODE` | 
+| Store locale  | General > **General**, **Locale Options** > **Locale**  |  `<SCOPE>__GENERAL__LOCALE__CODE` | 
 | Static asset signing |  Advanced > **Developer**, **Static Files Settings** > **Static Files Signing** | `<SCOPE>__DEV__STATIC__SIGN`  | 
 | Server-side or client-side LESS compilation  | Advanced > **Developer**, **Frontend Developer Workflow** > **Workflow type** |  `<SCOPE>__DEV__FRONT_END_DEVELOPMENT_WORKFLOW__TYPE` | 
 |  HTML minification | Advanced > **Developer**, **Template Settings** > **Minify Html**  | `<SCOPE>__DEV__TEMPLATE__MINIFY_HTML`  | 
@@ -141,7 +143,7 @@ This section shows some sample variables.
 
 	CONFIG__DEFAULT__GENERAL__LOCALE__CODE
 
-**Locale code for a website
+**Locale code for a website**
 
 	CONFIG__STORES__WEBSITE__FRENCH__GENERAL__LOCALE__CODE
 
