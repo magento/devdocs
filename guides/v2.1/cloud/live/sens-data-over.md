@@ -54,7 +54,7 @@ System-specific settings refer to the configuration in the Magento Admin in **St
 In each of your Magento Enterprise Cloud Edition systems (integration, staging, and production), you have the option of overriding certain configuration settings:
 
 *	Some settings, such as the search engine and caching system, might be the same across all systems
-*	Other settings, such as file optmization settings, can be unique to a particular system
+*	Other settings, such as file optimization settings, can be unique to a particular system
 *	Sensitive settings, such as payment processor settings, are set using environment variables
 
 	<div class="bs-callout bs-callout-info" markdown="1">
