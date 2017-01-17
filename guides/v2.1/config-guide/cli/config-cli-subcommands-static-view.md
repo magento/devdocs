@@ -178,8 +178,9 @@ The following table discusses the meanings of this command's parameters and valu
 	</tbody>
 </table>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>If you specify values for both <code>&lt;lang></code> and <code>--language</code>, <code>&lt;lang></code> takes precedence.</p>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+*   If you specify values for both `lang` and `--language`, `lang>` takes precedence.
+*   The following parameters were added in version 2.1.1: `--exclude-language`, `--theme <theme>`, `--exclude-theme <theme>`, `--area (-a)`, `--exclude-area`, `--jobs (-j)`, `--no-javascript`, `--no-css`, `--no-less`, `--no-images`, `--no-fonts`, `--no-html`, `--no-misc`, `--no-html-minify`.
 </div>
 
 ### Deploy static view files without installing Magento {#deploy_without_db}
