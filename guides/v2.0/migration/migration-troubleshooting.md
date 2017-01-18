@@ -31,7 +31,7 @@ In rare cases, the message might mention `Destination documents` or `Destination
 
 Some Magento 1 entities (in most cases, coming from extensions) do not exist in the Magento 2 database.
 
-This message appears because the Data Migration Tool runs internal tests to verify that database tables and fields are consistent between *source* (Magento 1) and *destination* (Magento 2).
+This message appears because the Data Migration Tool runs internal tests to verify that tables and fields are consistent between *source* (Magento 1) and *destination* (Magento 2) databases.
 
 #### Possible solutions
 
@@ -80,36 +80,31 @@ A class from Magento 1 codebase could not be found in Magento 2 codebase during 
 
 {% highlight xml %}
 Foreign key <KEY_NAME> constraint fails.
-Orphan records id: <ID_1>, <ID_2> from <CHILD_TABLE>.
-<FIELD_ID> has no referenced records in <PARENT_TABLE>
+Orphan records id: <id_1>, <id_2> from <child_table>.
+<field_id> has no referenced records in <parent_table>
 {% endhighlight %}
 
 #### Explanation
 
-The `FIELD_ID` of the `CHILD_TABLE` in Magento database refers to a missing record in the `PARENT_TABLE`.
-
-*Better initial version: In this case there are missing records in `table_parent` to which `table_child`.`some_field_id` is pointing.*
+There are missing database records in the `parent_table` to which the `field_id` of the `child_table` is pointing to.
 
 #### Possible solution
 
-Delete the records from the `CHILD_TABLE`, if they are no longer needed.
+Delete the records from the `child_table`, if they are no longer needed.
 
-If you still need the records, you may disable the `Data Integrity Step` in `config.xml`.
-
+To keep the records anyway, you may disable the `Data Integrity Step` using the Data Migration Tool's `config.xml`.
 
 ### Duplicates in URL rewrites
 
-#### Error message text
-
-{%highlight xml%}
+{% highlight xml %}
 There are duplicates in URL rewrites:
 Request path: towel.html Store ID: 2 Target path: catalog/product/view/id/10
 Request path: towel.html Store ID: 2 Target path: catalog/product/view/id/12
-{%endhighlight%}
+{% endhighlight %}
 
 #### Explanation
 
-There can only be a unique pair of Request Path + Store ID for a URL rewrite in Magento 2, while you're having two identical pairs with different Target Paths.
+There can only be a unique pair of `Request path` + `Store ID` for a URL rewrite in Magento 2, while you're having two identical pairs with different Target Paths.
 
 #### Possible solution
 
@@ -118,8 +113,6 @@ Enable the `auto_resolve_urlrewrite_duplicates` option in your `config.xml` file
 In this case, the Data Migration Tool will add a hash-string to the conflicting records of the URL reqwrite, and show the resolution result in your command line interface.
 
 ### Mismatch of entities
-
-#### Error message text
 
 {%highlight xml%}
 Mismatch of entities in the document: <DOCUMENT>
