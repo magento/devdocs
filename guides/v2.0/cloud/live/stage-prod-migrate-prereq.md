@@ -4,7 +4,7 @@ group: cloud
 subgroup: 40_live
 title: Prepare to migrate data
 menu_title: Prepare to migrate data
-menu_order: 8
+menu_order: 50
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: stage-prod

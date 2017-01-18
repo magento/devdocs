@@ -13,7 +13,7 @@ $preTags.each( function () {
   var $this = $(this),
       noCopy = $this.hasClass('no-copy');
 
-  var $preWrap = $this.wrap('<div class="pre-wrap"></div>');
+  var $preWrap = $this.wrap('<div class="pre-wrap"></div>').parent();
 
   // Check if should be copied or not
   if ( noCopy ) {

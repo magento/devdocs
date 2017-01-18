@@ -18,6 +18,12 @@ Every branch enables you to develop features, test, or fix bugs, just like you n
 You can test every feature in isolation and put it into production with a 
 single click, or a single command on the command-line.
 
+The following figure shows how it works at a high level.
+
+![High-level view of Magento Enterprise Cloud Edition]({{ site.baseurl }}common/images/cloud_code-flow.png)
+
+You get Magento code from our repository, create a [_project_]({{ page.baseurl }}cloud/project/projects.html) which is based in Git, then do your customization in an [integration system]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-int). You can use the Magento Cloud command line to configure your project and use an [automated deployment process]({{ page.baseurl }}cloud/discover-deploy.html) to push code from integration to [staging]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-stage) and finally to [production]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-prod).
+
 ### Use any methodology
 You can use any methodology you already have or you can invent new ones. For example, you can use a Development -> Staging -> Production workflow.
 

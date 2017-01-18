@@ -177,7 +177,7 @@ namespace My\Module\Plugin;
 
 class ProductPlugin
 {
-    public function aroundSave(\Magento\Catalog\Model\Product $subject, \callable $proceed)
+    public function aroundSave(\Magento\Catalog\Model\Product $subject, callable $proceed)
     {
         $this->doSmthBeforeProductIsSaved();
         $returnValue = $proceed();
@@ -217,7 +217,7 @@ namespace My\Module\Plugin;
 
 class MyUtilityPlugin
 {
-    public function aroundSave(\My\Module\Model\MyUtility $subject, \callable $proceed, SomeType $obj)
+    public function aroundSave(\My\Module\Model\MyUtility $subject, callable $proceed, SomeType $obj)
     {
       //do something
     }
@@ -235,7 +235,7 @@ namespace My\Module\Plugin;
 
 class MyUtilityPlugin
 {
-    public function aroundSave(\My\Module\Model\MyUtility $subject, \callable $proceed, ...$args)
+    public function aroundSave(\My\Module\Model\MyUtility $subject, callable $proceed, ...$args)
     {
       //do something
       $proceed(...$args);
