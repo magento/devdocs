@@ -51,19 +51,7 @@ All components can be configured both for Admin and storefront.
 
 ### Using UI component in layout file
 
-Using UI component is as simple as adding the following code to the appropriate layout section:
-
-`<uiСomponent name="some_ui_component_instance_name"/>`
-
-All UI components have base declaration in [`Magento/Ui/view/base/ui_component/etc/definition.xml`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_config_flow_concept.html).
-
-UI components configuration reader searches through all active modules and read files:
-
-`<module root dir>/view/<area>/ui_component/etc/definition.xml`
-
-And concrete instances of the components each in separate XML configuration file:
-
-`<module root dir>/view/<area>/ui_component/<component_instance_name>.xml`
+Basic components are declared in the page layout files; secondary components are declared in the top-level components’ instances configuration files.
 
 ### Customization
 
