@@ -168,7 +168,7 @@ $fieldDataConverter->convert(
 {:#step-3b}
 
 | option_id | code           | value                         |
-| --------- | -------------- | ----------------------------- |
+| --- | --- | --- |
 | 1         | my_option      | a:1:{s:3:"foo";s:3:"bar";}    |
 | 2         | another_option | &lt;non-serialized string&gt; |
 | 3         | my_option      | a:1:{s:3:"foo";s:3:"bar";}    |
@@ -207,6 +207,19 @@ $fieldDataConverter->convert(
 
 #### Using values from another table in the condition
 
+The following tables show how the `type` and `option_id` columns from the `catalog_product_option` table form the unique `code` value for custom options in the `quote_item_option` table.  
+
+**Table: `catalog_product_option`**
+
+| option_id | product_id | type             |
+| --------- | ---------- | ---------------- |
+| 1001      | 1          | my_custom_option |
+| 1002      | 2          | my_custom_option |
+| 1003      | 5          | my_custom_option |
+
+
+**Table: `quote_item_option`**
+
 | option_id | code                  | value                         |
 | --------- | --------------------- | ----------------------------- |
 | 1         | my_custom_option_1001 | a:1:{s:3:"foo";s:3:"bar";}    |
@@ -214,7 +227,7 @@ $fieldDataConverter->convert(
 | 3         | my_custom_option_1002 | a:1:{s:3:"foo";s:3:"bar";}    |
 | 4         | my_custom_option_1003 | a:1:{s:3:"foo";s:3:"bar";}    |
 
-Use the following approach to construct a query condition with values from another table.
+Use the following approach to update custom options data in the `quote_item_option` table.
 
 {% collapsible Show code %}
 {% highlight php startinline=true %}
