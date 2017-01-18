@@ -12,7 +12,7 @@ Isolation management feature enables you to isolate a test suite, a test case, o
 
 In general, to manage isolation:
 
- - [Create an isolation script.][step 1]
+ - [Create an isolation script][step 1]
  
  - [Set isolation script][step 2]
  
