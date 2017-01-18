@@ -169,6 +169,8 @@ Settings are grouped into the following blocks:
 
 ### `<isolation>` {#isolation}
 
+[Learn about isolation management][isolation management]
+
 **Description:** Settings of a script to be run during functional testing.
 
 |Parameter|Description|Values|
@@ -187,7 +189,9 @@ Values description:
 
 ### `<server>` {#server}
 
-**Description:** Selenium server settings. [Open settings declarations in Selenium repository][Open Selenium code]
+[Open settings declarations in Selenium repository][Open Selenium code]
+
+**Description:** Selenium server settings.
 
 |Parameter|Description |Values|
 |---|---|---|
@@ -240,6 +244,7 @@ Set of parameters to be used for [installation test case].
 <!-- Internal -->
 [handler]: {{page.baseurl}}mtf/mtf_entities/mtf_handler.html
 [installation parameters]: {{page.baseurl}}install-gde/install/cli/install-cli-install.html#instgde-install-cli-magento
+[isolation management]: {{page.baseurl}}mtf/features/isolation.html
 [test case]: {{page.baseurl}}mtf/mtf_entities/mtf_testcase.html
 [test suite]: {{page.baseurl}}mtf/features/test_suite.html#configure
 
