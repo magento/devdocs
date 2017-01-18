@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Troubleshoot the Functional Testing Framework issues</title>
+	<title>Isolation management</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.1/mtf/troubleshooting.html">
+	<link rel="canonical" href="//guides/v2.1/mtf/features/isolation.html">
 
   <script>
     var baseUrl = "/";
@@ -49,9 +49,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/mtf/troubleshooting.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/mtf/features/isolation.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/mtf/troubleshooting.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/mtf/features/isolation.html">Magento 2.1</a></li>
 	
   </ul>
 
@@ -495,7 +495,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/mtf/features/isolation.html">Isolation management</a></li>
+									<li class="level-2  active "><a href="/guides/v2.1/mtf/features/isolation.html">Isolation management</a></li>
 
 									
 
@@ -720,7 +720,7 @@
 
 
 								
-									<li class="level1  active "><a class="nav-header" href="/guides/v2.1/mtf/troubleshooting.html">TROUBLESHOOTING</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/mtf/troubleshooting.html">TROUBLESHOOTING</a></li>
 									
 								
 
@@ -900,7 +900,7 @@
       
 
       <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
-        <span property="name">Troubleshoot the Functional Testing Framework issues</span>
+        <span property="name">Isolation management</span>
         <meta property="position" content="2" />
       </li>
 
@@ -912,26 +912,211 @@
 
 
 	
-	<h1 class="page-heading">Troubleshoot the Functional Testing Framework issues</h1>
+	<h1 class="page-heading">Isolation management</h1>
 
   
 
 
 </section>
 
-			<h3 id="install-issues">Installation issues</h3>
+			<p>Isolation management feature enables you to isolate a test suite, a test case, or a test using custom logic coded in a script. You can use it to return your system to its initial state (drop a database, clean cache, reset filesystem) or perform any other procedures that you need.</p>
 
-<h4 id="selenium-server-issue">Selenium Server issue</h4>
-
-<p>Error message:</p>
-
-<pre><code>PHPUnit_Extensions_Selenium2TestCase_WebDriverException: Unable to connect to host 127.0.0.1 on port 7055 after 45000 ms. Firefox console output: in selenium server console output
-</code></pre>
+<p>In general, to manage isolation:</p>
 
 <ul>
-  <li><strong>Reason</strong>: a Selenium server is <a href="http://docs.seleniumhq.org/about/platforms.jsp#browsers">incompatible with your browser version</a></li>
-  <li><strong>Solution</strong>: <a href="http://docs.seleniumhq.org/download/">download the latest Selenium Standalone Server version</a></li>
+  <li>
+    <p><a href="#step-1">Create an isolation script</a></p>
+  </li>
+  <li>
+    <p><a href="#step-2">Set isolation script</a></p>
+
+    <ul>
+      <li>For all functional tests (globally), set <a href="/guides/v2.1/mtf/configuration.html#isolation">isolation configuration</a>. For example, set isolation script globally to be run <a href="#step-2a">after each test case</a>, <a href="#step-2b">before each test</a>, <a href="#step-2c">before and after a test suite</a>.</li>
+      <li>For certain test or test case, define an isolation strategy parameter in PHP Doc annotation of a test case or a test. For example, set isolation script locally to be run <a href="#step-2d">after a test case</a>, <a href="#step-2e">after each test of a test case</a>, <a href="#step-2f">before test of a test case</a>, <a href="#step-2g">before a test case and after a test</a>; or excluded <a href="#step-2h">for a test case</a>, <a href="#step-2i">for a test</a>.</li>
+    </ul>
+  </li>
 </ul>
+
+<p>Isolation strategy parameter defines when the isolation script must be run relatively to a <a href="/guides/v2.1/mtf/features/test_suite.html">test suite</a>, a <a href="/guides/v2.1/mtf/mtf_entities/mtf_testcase.html">test case</a>, or a <a href="/guides/v2.1/mtf/mtf_entities/mtf_testcase.html#test-method">test</a>: <strong>before</strong>, <strong>after</strong>, <strong>both</strong> (that is run both before and after), <strong>none</strong> (never run).</p>
+
+<p>The following example demonstrates how you can use isolation management.</p>
+
+<h2 id="step-1">Step 1: Create an isolation script</h2>
+
+<p>Assume that we want to return a database, dumped to <code>/var/www/magento/magento.dump.sql</code>, to its initial state. You can implement it using the following code:</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="nb">exec</span><span class="p">(</span><span class="s1">&#39;mysql -umagento -pmagento -e&quot;DROP DATABASE magento; CREATE DATABASE magento CHARACTER SET utf8;&quot;&#39;</span><span class="p">);</span>
+<span class="nb">exec</span><span class="p">(</span><span class="s1">&#39;mysql -umagento -pmagento magento &lt; /var/www/magento/magento.dump.sql&#39;</span><span class="p">);</span></code></pre></figure>
+
+<p>By default, <a href="/guides/v2.1/mtf/configuration.html#isolation">isolation configuration</a> points to <code>dev/tests/functional/isolation.php</code>.</p>
+
+<p>Add the code to <code>&lt;magento root dir&gt;/dev/tests/functional/isolation.php</code>.</p>
+
+<p>It means that during test run the FTF would call <code>http://magento2ce.com/dev/tests/functional/isolation.php</code> (<code>&lt;baseUrl&gt;</code> is set to <code>http://magento2ce.com/</code>) according to selected isolation strategy.</p>
+
+<div class="bs-callout bs-callout-warning">
+  <p>Isolation script is run in a web browser and must be accessible by a web server.</p>
+</div>
+
+<h2 id="step-2">Step 2: Set isolation script</h2>
+
+<p>You can set isolation script globally, in configuration file, or locally, directly in a test case. The following examples show different options.</p>
+
+<div class="bs-callout bs-callout-warning">
+  <p>Isolation management for a certain test or test case has higher priority than global.</p>
+</div>
+
+<h3 id="step-2a">Step 2(a): Globally set isolation script to be run after each test case</h3>
+
+<ul>
+  <li>Open <code>&lt;magento root dir&gt;/dev/tests/functional/config.xml</code>.</li>
+  <li>In <code>&lt;isolation&gt;</code>, set <code>&lt;testCase&gt;after&lt;/testCase&gt;</code>, for example:</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;isolation&gt;</span>
+    <span class="nt">&lt;resetUrlPath&gt;</span>dev/tests/functional/isolation.php<span class="nt">&lt;/resetUrlPath&gt;</span>
+    <span class="nt">&lt;testSuite&gt;</span>none<span class="nt">&lt;/testSuite&gt;</span>
+    <span class="nt">&lt;testCase&gt;</span>after<span class="nt">&lt;/testCase&gt;</span>
+    <span class="nt">&lt;test&gt;</span>none<span class="nt">&lt;/test&gt;</span>
+<span class="nt">&lt;/isolation&gt;</span></code></pre></figure>
+
+<h3 id="step-2b">Step 2(b): Globally set isolation script to be run before each test</h3>
+
+<ul>
+  <li>Open <code>&lt;magento root dir&gt;/dev/tests/functional/config.xml</code>.</li>
+  <li>In <code>&lt;isolation&gt;</code>, set <code>&lt;test&gt;before&lt;/test&gt;</code>, for example:</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;isolation&gt;</span>
+    <span class="nt">&lt;resetUrlPath&gt;</span>dev/tests/functional/isolation.php<span class="nt">&lt;/resetUrlPath&gt;</span>
+    <span class="nt">&lt;testSuite&gt;</span>none<span class="nt">&lt;/testSuite&gt;</span>
+    <span class="nt">&lt;testCase&gt;</span>none<span class="nt">&lt;/testCase&gt;</span>
+    <span class="nt">&lt;test&gt;</span>before<span class="nt">&lt;/test&gt;</span>
+<span class="nt">&lt;/isolation&gt;</span></code></pre></figure>
+
+<h3 id="step-2c">Step 2(c): Globally set isolation script to be run before and after a test suite</h3>
+
+<ul>
+  <li>Open <code>&lt;magento root dir&gt;/dev/tests/functional/config.xml</code>.</li>
+  <li>In <code>&lt;isolation&gt;</code>, set <code>&lt;testSuite&gt;both&lt;/testSuite&gt;</code>, for example:</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;isolation&gt;</span>
+    <span class="nt">&lt;resetUrlPath&gt;</span>dev/tests/functional/isolation.php<span class="nt">&lt;/resetUrlPath&gt;</span>
+    <span class="nt">&lt;testSuite&gt;</span>both<span class="nt">&lt;/testSuite&gt;</span>
+    <span class="nt">&lt;testCase&gt;</span>none<span class="nt">&lt;/testCase&gt;</span>
+    <span class="nt">&lt;test&gt;</span>none<span class="nt">&lt;/test&gt;</span>
+<span class="nt">&lt;/isolation&gt;</span></code></pre></figure>
+
+<h3 id="step-2d">Step 2(d): Locally set isolation script to be run after a test case</h3>
+
+<p>Example test case: <code>\Magento\Checkout\Test\TestCase\OnePageCheckoutTest</code>.</p>
+
+<ul>
+  <li>Open <code>&lt;magento root dir&gt;/dev/tests/functional/tests/app/Magento/Checkout/Test/TestCase/OnePageCheckoutTest.php</code>.</li>
+  <li>Add <code>* @isolation after</code> to the class annotation, for example:</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
+<span class="sd"> * ...</span>
+<span class="sd"> * @isolation after</span>
+<span class="sd"> */</span>
+<span class="k">class</span> <span class="nc">OnePageCheckoutTest</span> <span class="k">extends</span> <span class="nx">Scenario</span>
+<span class="o">...</span></code></pre></figure>
+
+<h3 id="step-2e">Step 2(e): Locally set isolation script to be run after each test of a test case</h3>
+
+<p>Example test case: <code>\Magento\Checkout\Test\TestCase\OnePageCheckoutTest</code>.</p>
+
+<ul>
+  <li>Open <code>&lt;magento root dir&gt;/dev/tests/functional/tests/app/Magento/Checkout/Test/TestCase/OnePageCheckoutTest.php</code>.</li>
+  <li>Add <code>* @isolation test after</code> to the class annotation, for example:</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
+<span class="sd"> * ...</span>
+<span class="sd"> * @isolation test after</span>
+<span class="sd"> */</span>
+<span class="k">class</span> <span class="nc">OnePageCheckoutTest</span> <span class="k">extends</span> <span class="nx">Scenario</span>
+<span class="o">...</span></code></pre></figure>
+
+<h3 id="step-2f">Step 2(f): Locally set isolation script to be run before test of a test case</h3>
+
+<p>Example test case: <code>\Magento\Checkout\Test\TestCase\OnePageCheckoutTest</code>.
+Example test: <code>test()</code>.</p>
+
+<ul>
+  <li>Open <code>&lt;magento root dir&gt;/dev/tests/functional/tests/app/Magento/Checkout/Test/TestCase/OnePageCheckoutTest.php</code></li>
+  <li>Add <code>* @isolation before</code> to the <code>test()</code> method annotation, for example:</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php">    <span class="sd">/**</span>
+<span class="sd">     * ...</span>
+<span class="sd">     * @isolation before</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">test</span><span class="p">()</span>
+    <span class="o">...</span></code></pre></figure>
+
+<h3 id="step-2g">Step 2(g): Locally set isolation script to be run before a test case and after a test</h3>
+
+<p>Example test case: <code>\Magento\Checkout\Test\TestCase\OnePageCheckoutTest</code>.
+Example test: <code>test()</code>.</p>
+
+<ul>
+  <li>Open <code>&lt;magento root dir&gt;/dev/tests/functional/tests/app/Magento/Checkout/Test/TestCase/OnePageCheckoutTest.php</code>.</li>
+  <li>Add <code>* @isolation before</code> to the class annotation and <code>* @isolation after</code> to the <code>test()</code> method annotation, for example:</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
+<span class="sd"> * ...</span>
+<span class="sd"> * @isolation before</span>
+<span class="sd"> */</span>
+<span class="k">class</span> <span class="nc">OnePageCheckoutTest</span> <span class="k">extends</span> <span class="nx">Scenario</span>
+    <span class="p">{</span>
+    <span class="sd">/**</span>
+<span class="sd">     * ...</span>
+<span class="sd">     * @isolation after</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">test</span><span class="p">()</span>
+    <span class="o">...</span>
+    <span class="p">}</span></code></pre></figure>
+
+<h3 id="step-2h">Step 2(h): Locally set isolation script to be excluded for a test case</h3>
+
+<p>Example test case: <code>\Magento\Checkout\Test\TestCase\OnePageCheckoutTest</code>.</p>
+
+<ul>
+  <li>Open <code>&lt;magento root dir&gt;/dev/tests/functional/tests/app/Magento/Checkout/Test/TestCase/OnePageCheckoutTest.php</code>.</li>
+  <li>Add <code>* @isolation none</code> to the class annotation, for example:</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
+<span class="sd"> * ...</span>
+<span class="sd"> * @isolation none</span>
+<span class="sd"> */</span>
+<span class="k">class</span> <span class="nc">OnePageCheckoutTest</span> <span class="k">extends</span> <span class="nx">Scenario</span>
+<span class="o">...</span></code></pre></figure>
+
+<h3 id="step-2i">Step 2(i): Locally set isolation script to be excluded for a test</h3>
+
+<p>Example test case: <code>\Magento\Checkout\Test\TestCase\OnePageCheckoutTest</code>.
+Example test: <code>test()</code>.</p>
+
+<ul>
+  <li>Open <code>&lt;magento root dir&gt;/dev/tests/functional/tests/app/Magento/Checkout/Test/TestCase/OnePageCheckoutTest.php</code>.</li>
+  <li>Add <code>* @isolation none</code> to the <code>test()</code> method annotation, for example:</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php">    <span class="sd">/**</span>
+<span class="sd">     * ...</span>
+<span class="sd">     * @isolation none</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">test</span><span class="p">()</span>
+    <span class="o">...</span></code></pre></figure>
+
+<!-- LINK DEFINITIONS -->
+
 
 		</div>
 		<!-- /.content-wrap -->
@@ -942,14 +1127,14 @@
 
 			
 			 <div class="github-link">
-				 <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/mtf/troubleshooting.md" target="_blank">
+				 <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/mtf/features/isolation.md" target="_blank">
 					 Edit this page on GitHub
 				 </a>
 			 </div>
 			
 
 			<div class="new-issue">
-				<a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/mtf/troubleshooting.html" target="_blank">Give us feedback</a>
+				<a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/mtf/features/isolation.html" target="_blank">Give us feedback</a>
 			</div>
 
 		</div>
