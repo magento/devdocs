@@ -60,61 +60,61 @@ namespace Magento\CustomModule\Setup;
  
 class UpgradeData implements \Magento\Framework\Setup\UpgradeDataInterface
 {
-  /**
-   * @var \Magento\Framework\DB\FieldDataConverterFactory
-   */
-  private $fieldDataConverterFactory;
- 
-  /**
-   * @var \Magento\Framework\DB\Select\QueryModifierFactory
-   */
-  private $queryModifierFactory;
- 
-  /**
-   * @var \Magento\Framework\DB\Query\Generator
-   */
-  private $queryGenerator;
- 
-  /**
-   * Constructor
-   *
-   * @param \Magento\Framework\DB\FieldDataConverterFactory $fieldDataConverterFactory
-   * @param \Magento\Framework\DB\Select\QueryModifierFactory $queryModifierFactory
-   * @param \Magento\Framework\DB\Query\Generator $queryGenerator
-   */ 
-  public function __construct(
-      \Magento\Framework\DB\FieldDataConverterFactory $fieldDataConverterFactory,
-      \Magento\Framework\DB\Select\QueryModifierFactory $queryModifierFactory,
-      \Magento\Framework\DB\Query\Generator $queryGenerator
-  ) {
-      $this->fieldDataConverterFactory = $fieldDataConverterFactory;
-      $this->queryModifierFactory = $queryModifierFactory;
-      $this->queryGenerator = $queryGenerator;
-  }
- 
-  /**
-   * {@inheritdoc}
-   */
-  public function upgrade(
-      \Magento\Framework\Setup\ModuleDataSetupInterface $setup,
-      \Magento\Framework\Setup\ModuleContextInterface $context
-  ) {
-      if (version_compare($context->getVersion(), '2.0.1', '<')) {
-        $this->convertSerializedDataToJson($setup);
-      }
-  }
- 
-  /**
-   * Upgrade to version 2.0.1, convert data for the sales_order_item.product_options and quote_item_option.value
-   * from serialized to JSON format
-   *
-   * @param \Magento\Framework\Setup\ModuleDataSetupInterface $setup
-   * @return void
-   */ 
-  private function convertSerializedDataToJson(\Magento\Framework\Setup\ModuleDataSetupInterface $setup)
-  {
-      // Upgrade logic here
-  }
+    /**
+     * @var \Magento\Framework\DB\FieldDataConverterFactory
+     */
+    private $fieldDataConverterFactory;
+   
+    /**
+     * @var \Magento\Framework\DB\Select\QueryModifierFactory
+     */
+    private $queryModifierFactory;
+   
+    /**
+     * @var \Magento\Framework\DB\Query\Generator
+     */
+    private $queryGenerator;
+   
+    /**
+     * Constructor
+     *
+     * @param \Magento\Framework\DB\FieldDataConverterFactory $fieldDataConverterFactory
+     * @param \Magento\Framework\DB\Select\QueryModifierFactory $queryModifierFactory
+     * @param \Magento\Framework\DB\Query\Generator $queryGenerator
+     */ 
+    public function __construct(
+        \Magento\Framework\DB\FieldDataConverterFactory $fieldDataConverterFactory,
+        \Magento\Framework\DB\Select\QueryModifierFactory $queryModifierFactory,
+        \Magento\Framework\DB\Query\Generator $queryGenerator
+    ) {
+          $this->fieldDataConverterFactory = $fieldDataConverterFactory;
+          $this->queryModifierFactory = $queryModifierFactory;
+          $this->queryGenerator = $queryGenerator;
+    }
+   
+    /**
+     * {@inheritdoc}
+     */
+    public function upgrade(
+        \Magento\Framework\Setup\ModuleDataSetupInterface $setup,
+        \Magento\Framework\Setup\ModuleContextInterface $context
+    ) {
+          if (version_compare($context->getVersion(), '2.0.1', '<')) {
+              $this->convertSerializedDataToJson($setup);
+          }
+    }
+   
+    /**
+     * Upgrade to version 2.0.1, convert data for the sales_order_item.product_options and quote_item_option.value
+     * from serialized to JSON format
+     *
+     * @param \Magento\Framework\Setup\ModuleDataSetupInterface $setup
+     * @return void
+     */ 
+    private function convertSerializedDataToJson(\Magento\Framework\Setup\ModuleDataSetupInterface $setup)
+    {
+        // Upgrade logic here
+    }
 }
 {% endhighlight %}
 {% endcollapsible %}
@@ -154,7 +154,7 @@ You can convert data for a column in a table using the code below.
 {% collapsible Show code %}
 {% highlight php startinline=true %}
 $fieldDataConverter = $this->fieldDataConverterFactory->create(SerializedToJson::class);
-
+    
 $fieldDataConverter->convert(
     $setup->getConnection(),
     $setup->getTable('my_table'),
@@ -185,21 +185,21 @@ $fieldDataConverter = $this->fieldDataConverterFactory->create(
      
 // Convert data for the option with static name in quote_item_option.value
 $queryModifier = $this->queryModifierFactory->create(
-  'in',
-  [
-    'values' => [
-      'code' => [
-        'my_option'
-      ]
+    'in',
+    [
+        'values' => [
+            'code' => [
+                'my_option'
+            ]
+        ]
     ]
-  ]
 );
 $fieldDataConverter->convert(
-  $setup->getConnection(),
-  $setup->getTable('quote_item_option'),
-  'option_id',
-  'value',
-  $queryModifier
+    $setup->getConnection(),
+    $setup->getTable('quote_item_option'),
+    'option_id',
+    'value',
+    $queryModifier
 );
 {% endhighlight %}
 {% endcollapsible %}
@@ -218,38 +218,42 @@ Use the following approach to construct a query condition with values from anoth
 
 {% collapsible Show code %}
 {% highlight php startinline=true %}
+$fieldDataConverter = $this->fieldDataConverterFactory->create(
+    \Magento\Framework\DB\DataConverter\SerializedToJson::class
+);
 // Convert data for the option with dynamic name in quote_item_option.value
 $select = $setup->getConnection()
-  ->select()
-  ->from(
-    $setup->getTable('catalog_product_option'),
-    ['option_id']
-  )
-  ->where('type = ?', 'my_custom_option');
+    ->select()
+    ->from(
+        $setup->getTable('catalog_product_option'),
+        ['option_id']
+    )
+    ->where('type = ?', 'my_custom_option');
 $iterator = $this->queryGenerator->generate('option_id', $select);
 foreach ($iterator as $selectByRange) {
-  $codes = $setup->getConnection()->fetchCol($selectByRange);
-  $codes = array_map(
-    function ($id) {
-      return 'my_custom_option_' . $id;
-    },
-    $codes
-  );
-  $queryModifier = $this->queryModifierFactory->create(
-    'in',
-    [
-      'values' => [
-        'code' => $codes
-      ]
-    ]
-  );
-  $fieldDataConverter->convert(
-    $setup->getConnection(),
-    $setup->getTable('quote_item_option'),
-    'option_id',
-    'value',
-    $queryModifier
-  ); 
+    $codes = $setup->getConnection()->fetchCol($selectByRange);
+    $codes = array_map(
+        function ($id) {
+            return 'my_custom_option_' . $id;
+        },
+        $codes
+    );
+    $queryModifier = $this->queryModifierFactory->create(
+        'in',
+        [
+            'values' => [
+                'code' => $codes
+            ]
+        ]
+    );
+    $fieldDataConverter->convert(
+        $setup->getConnection(),
+        $setup->getTable('quote_item_option'),
+        'option_id',
+        'value',
+        $queryModifier
+    ); 
+}
 {% endhighlight %}
 {% endcollapsible %}
 
@@ -313,22 +317,22 @@ class SerializedToJsonDataConverter implements \Magento\Framework\DB\DataConvert
           ? $this->serialize->unserialize($value)
           : $this->json->unserialize($value);
         if (isset($unserialized['options'])) {
-          foreach ($unserialized['options'] as $key => $option) {
-            if ($option['option_type'] === 'my_custom_option') {
-              $unserialized['options'][$key]['option_value'] = $this->json->serialize(
-                $this->serialize->unserialize(
-                  $option['option_value']
-                )
-              );
+            foreach ($unserialized['options'] as $key => $option) {
+                if ($option['option_type'] === 'my_custom_option') {
+                    $unserialized['options'][$key]['option_value'] = $this->json->serialize(
+                        $this->serialize->unserialize(
+                            $option['option_value']
+                        )
+                    );
+                }
             }
-          }
         }
         if (isset($unserialized['my_option'])) {
-          $unserialized['my_option'] = $this->json->serialize(
-            $this->serialize->unserialize(
-              $unserialized['my_option']
-            )
-          );
+            $unserialized['my_option'] = $this->json->serialize(
+                $this->serialize->unserialize(
+                    $unserialized['my_option']
+                )
+            );
         }
         return $isSerialized
           ? $this->serialize->serialize($unserialized)
@@ -357,12 +361,12 @@ After creating your custom data converter class, use the `FieldDataConverterFact
 // Convert options in sales_order_item.product_options
 $fieldDataConverter = $this->fieldDataConverterFactory->create(
     \Magento\CustomModule\Setup\SerializedToJsonDataConverter::class
-  );
+);
 $fieldDataConverter->convert(
-  $setup->getConnection(),
-  $setup->getTable('sales_order_item'),
-  'item_id',
-  'product_options'
+    $setup->getConnection(),
+    $setup->getTable('sales_order_item'),
+    'item_id',
+    'product_options'
 );
 {% endhighlight %}
 {% endcollapsible %}
