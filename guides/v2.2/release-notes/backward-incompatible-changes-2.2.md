@@ -157,13 +157,14 @@ Extension access directly values in the `core_config_data` table by the followin
 - `design/theme/ua_regexp`
 - `cataloginventory/item_options/min_sale_qty`
 - `currency/options/customsymbol`
+- `admin/magento_logging/actions`
 **Solution:**  
 Update extension to use `\Magento\Framework\Serialize\Serializer\Json` to serialize/unserialize data instead of native PHP serialize/unserialize functions.
 
 **Case 6:**  
 Extension uses backend model to save/load data to/from database, that extends `\Magento\Config\Model\Config\Backend\Serialized`.
 **Solution:**  
-Upgrade data stored by the extension in `core_config_data`.
+Upgrade data stored by the extension in `core_config_data` from serialized to JSON format.
 
 **See:** 
 
