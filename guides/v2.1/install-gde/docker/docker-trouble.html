@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Troubleshoot issues with Magento DevBox</title>
+	<meta name="description" content="Magento 2 Developer Documentation.
+">
+	<meta http-equiv="last-modified" content="" />
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print" />
+	<link rel="canonical" href="//guides/v2.1/install-gde/docker/docker-trouble.html">
+
+  <script>
+    var baseUrl = "/";
+  </script>
+
+	<!-- crazyegg -->
+	<script type="text/javascript">
+	setTimeout(function(){var a=document.createElement("script");
+	var b=document.getElementsByTagName("script")[0];
+	a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0038/0321.js?"+Math.floor(new Date().getTime()/3600000);
+	a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+	</script>
+
+</head>
+<body>
+
+<header class="site-header">
+
+	<nav id="global-nav">
+
+		<div class="menu-btn"><a class="menu-trigger menu-icon" href="#"></a></div>
+
+		<div class="container">
+
+			<a class="logo" href="/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+
+			
+<div class="version-switcher dropdown">
+	<button class="btn dropdown-toggle" data-toggle="dropdown">
+		Magento 2.1
+	</button>
+
+	<ul class="dropdown-menu dropdown-menu-left">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/install-gde/docker/docker-install.html">Magento 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.1/install-gde/docker/docker-install.html">Magento 2.1</a></li>
+	
+  </ul>
+
+</div>
+
+
+
+			<!-- Main Navigation -->
+<div class="nav-main">
+  <ul>
+    <li class="first">
+      <a href="#">Setup and Deployment</a>
+        <ul class="menu nav">
+          <li><a href="/guides/v2.1/install-gde/docker/docker-over.html">DevBox Quick Installation (Beta)</a></li>
+            <li><a href="/guides/v2.1/install-gde/bk-install-guide.html">Installation Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.1/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.1/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/cloud/bk-cloud.html">Enterprise Cloud Edition Guide</a></li>
+          <li class="leaf"><a href="/magento-release-information.html">Release Information</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Development</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.1/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          <li><a href="/guides/v2.1/payments-integrations/bk-payments-integrations.html">Payments Integrations</a></li>
+          <li class="leaf"><a href="/guides/v2.1/architecture/bk-architecture.html">Magento Architecture</a></li>
+          <li class="leaf"><a href="/guides/v2.1/mrg/intro.html">Module Reference Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.1/extension-dev-guide/staging.html">Staging</a></li>
+          
+          <li class="first leaf"><a href="/guides/v2.1/contributor-guide/contributing.html">Contributor Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Frontend</a>
+        <ul class="menu nav">
+          <li class="first leaf"><a href="/guides/v2.1/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.1/ui_comp_guide/bk-ui_comps.html">UI Components Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.1/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li class="leaf"><a href="/guides/v2.1/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">API</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.1/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li class="leaf"><a href="/guides/v2.1/rest/bk-rest.html">REST API Reference</a></li>
+          <li class="leaf"><a href="/guides/v2.1/soap/bk-soap.html">SOAP API Reference</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Testing</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.1/test/testing.html">Magento Testing Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/mtf/mtf_introduction.html">Functional Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.1/test/integration/integration_test_execution.html">Integration Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.1/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.1/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.1/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+        </ul>
+    </li>
+
+    <li>
+      <a href="/guides/v2.1/howdoi/bk-how-do-i.html">How Tos</a>
+    </li>
+  </ul>
+</div><!-- /.nav-main -->
+
+
+			<div class="search-btn">
+				<a class="search-trigger search-icon" href="/search.html"></a>
+			</div>
+
+			<form class="quick-search" action="/search.html" method="get">
+				<input type="search" name="q" placeholder="Search" />
+				<a href="#" class="quick-search-close">&times;</a>
+			</form>
+
+
+
+
+
+		</div>
+
+	</nav><!-- #global-nav -->
+
+</header>
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- .main-container -->
+	<div class="main-container">
+		<a id="main-content"></a>
+
+
+<div class="container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+
+
+
+
+		<ul>
+
+		
+
+		
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+					
+					
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/install-gde/docker/docker-over.html">DevBox (Beta) quick installation overview</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/install-gde/docker/docker-ref.html">DevBox reference</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2  active "><a href="/guides/v2.1/install-gde/docker/docker-trouble.html">Troubleshoot issues with Magento DevBox</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/install-gde/docker/docker-commands.html">Common Docker commands</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+  <nav class="breadcrumbs">
+
+    <a class="breadcrumb-item" href="/"><span>Home</span></a>
+
+    <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+    <!-- Iteration breadcrumb item -->
+    
+    
+    
+
+      <!-- Skip if root -->
+      
+
+
+      <!-- Get breadcrumb title. Insert snippet from configuration description to translates breadcrumb if language plugin is installed and YAML subset is set -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+        <a property="item" typeof="WebPage" href="/guides/v2.1/install-gde/docker/docker-over.html"><span property="name">DevBox Quick Installation (Beta)</span></a>
+        <meta property="position" content="1" />
+      </li>
+
+    
+
+      <!-- Skip if root -->
+      
+
+
+      <!-- Get breadcrumb title. Insert snippet from configuration description to translates breadcrumb if language plugin is installed and YAML subset is set -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
+        <span property="name">Troubleshoot issues with Magento DevBox</span>
+        <meta property="position" content="2" />
+      </li>
+
+    
+
+    </ol>
+
+  </nav>
+
+
+	
+	<h1 class="page-heading">Troubleshoot issues with Magento DevBox</h1>
+
+  
+
+
+</section>
+
+			<p>This topic discusses suggested solutions to issues you might counter when installing or using Magento DevBox.</p>
+
+<h2 id="problem-cannot-install-the-magento-application">Problem: Cannot install the Magento application</h2>
+
+<p>The following error message might display:</p>
+
+<pre><code>Project directory ./ is not empty
+</code></pre>
+
+<p>The preceding error means that the directory into which you’re trying to install the Magento software isn’t empty. To verify which directory is the cause of the error, open <code>docker-compose.yml</code>. The directory name is specified as follows:</p>
+
+<pre><code>volumes:
+   - "Users/me/somepath:/home/magento2/magento2"
+</code></pre>
+
+<p>In this case, delete everything from <code>Users/me/somepath</code></p>
+
+<p>Make sure all files, including all hidden files, are removed from that directory and try again.</p>
+
+<h2 id="problem-error-displays-in-the-magento-admin">Problem: Error displays in the Magento Admin</h2>
+<p>After you log in to the Magento Admin, the following notification error might display:</p>
+
+<pre><code>Your web server is set up incorrectly and allows unauthorized access to sensitive files. Please contact your hosting provider.
+</code></pre>
+
+<p>This error results from the fact that the Magento application is running in developer mode. The message doesn’t indicate any issues. You can ignore it and develop as normal.</p>
+
+<h2 id="problem-404-error-accessing-the-magento-admin-storefront-is-accessible">Problem: 404 error accessing the Magento Admin, storefront is accessible</h2>
+<p>When you access the Magento Admin, the following error displays in the browser:</p>
+
+<pre><code>The requested URL /admin was not found on this server.
+</code></pre>
+
+<p>However, you can access the Magento storefront.</p>
+
+<p>The most likely cause of this error is missing <code>.htaccess</code> files the Magento application uses for URL redirects and other things. To resolve this error, if you use the Mac OS, see <a href="/guides/v2.1/install-gde/docker/docker-over.html#devbox-download">How to download Magento code</a></p>
+
+<h2 id="problem-cannot-access-the-magento-storefront-or-admin">Problem: Cannot access the Magento storefront or Admin</h2>
+
+<p>If you are having trouble accessing your Magento storefront and Magento Admin, connect to the web container and run some additional commands.</p>
+
+<ol>
+  <li>
+    <p>Locate the running web container by running the command: <code>docker-compose ps</code></p>
+
+    <p>The web container has a name like <code>magento2devbox_web_1</code></p>
+  </li>
+  <li>
+    <p>Connect to the web container using the following command:</p>
+
+    <pre><code>docker-compose exec --user=magento2 &lt;service&gt; /bin/bash
+</code></pre>
+  </li>
+  <li>
+    <p>Navigate to the Magento installation and call the compiler by running the following command:</p>
+
+    <pre><code>cd /var/www/magento2/ &amp;&amp; php bin/magento setup:di:compile
+</code></pre>
+  </li>
+  <li>
+    <p>Optional: After the compiler finishes, run the following command to speed up page loads:</p>
+
+    <pre><code>php bin/magento setup:static-content:deploy
+</code></pre>
+  </li>
+  <li>
+    <p>When you’re finished, enter <code>exit</code>.</p>
+  </li>
+</ol>
+
+<h2 id="problem-errors-display-on-windows">Problem: Errors display on Windows</h2>
+<p>During installation errors similar to the following display in your primary command window:</p>
+
+<pre><code>ERROR: for db  Cannot create container for service db: C: drive is not shared. Please share it in Docker for Windows Settings
+ERROR: Encountered errors while bringing up the project.
+</code></pre>
+
+<p>Other errors might display in a secondary command window:</p>
+
+<pre><code>Error response from daemon: No such container: magento2devbox_web_7f927cb82fd5dfc7d21b4d02387a0d12
+Error response from daemon: No such container: magento2devbox_web_7f927cb82fd5dfc7d21b4d02387a0d12
+Error: No such container: magento2devbox_web_7f927cb82fd5dfc7d21b4d02387a0d12
+</code></pre>
+
+<p><em>Solution</em>: <a href="">Set up file sharing</a></p>
+
+<h2 id="problem-you-want-to-start-over">Problem: You want to start over</h2>
+<p>In the event you want to start over with a new Magento application installation, use the following steps from the directory to which you copied the DevBox scripts:</p>
+
+<ol>
+  <li>
+    <p>Kill the Magento Docker containers.</p>
+
+    <pre><code>docker-compose down --rmi all -v --remove-orphans
+</code></pre>
+  </li>
+  <li>
+    <p>Run one of the following commands:</p>
+
+    <ul>
+      <li>
+        <p>Mac OS</p>
+
+        <pre><code>./m2devbox-init.sh
+</code></pre>
+      </li>
+      <li>
+        <p>Windows</p>
+
+        <pre><code>./m2devbox-init.bat
+</code></pre>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+			
+
+			
+			 <div class="github-link">
+				 <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/install-gde/docker/docker-install.md" target="_blank">
+					 Edit this page on GitHub
+				 </a>
+			 </div>
+			
+
+			<div class="new-issue">
+				<a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/install-gde/docker/docker-trouble.html" target="_blank">Give us feedback</a>
+			</div>
+
+		</div>
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.container -->
+
+
+	</div>
+	<!-- /.main-container -->
+
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div id="footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav">
+				<li><a href="/guides/v2.1/contributor-guide/contributing_docs.html">Become a Contributor</a>
+        <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+        <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+        <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+        <li><a href="/guides/v2.1/release-notes/bk-release-notes.html">Release Notes</a></li>
+				<li><a href="/magento-third-party.html">Third-Party Licenses</a></li>
+      </ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2017 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="/common/js/app.min.js"></script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+
