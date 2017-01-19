@@ -22,7 +22,7 @@ A new installation or using an existing Magento installation takes about 15 minu
 Optional sample data takes a few additional minutes.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-Magento DevBox is Beta software. If you encounter issues, contact [Piotr Kaminski](mailto:pikaminski@magento.com).
+Magento DevBox is Beta software. Report any issues on the [DevBox GitHub repository](https://github.com/magento/magento2devbox-web/issues){:target="_blank"}.
 </div>
 
 ## Get Magento DevBox now
