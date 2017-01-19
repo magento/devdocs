@@ -45,6 +45,8 @@ Magento Enterprise Edition (EE) version 2.1.x supports the following Elasticsear
 *	If you get the Elasticsearch software from the Elasticsearch Linux repository, we support versions 2.x.
 *	If you get the Elasticsearch software from their [Elasticsearch-PHP repository](https://github.com/elastic/elasticsearch-php){:target="_blank"}, we support the `2.0` branch.
 
+We also support version 1.7 but recommend you use a later version.
+
 ### Recommended configuration {#es-arch}
 The following figure shows our recommended configuration. All of the tasks we discuss assume you've configured your system this way.
 
