@@ -90,6 +90,7 @@ To prevent access to your store while it's being upgraded, put your store in mai
 		rm -rf <Magento install dir>/var/cache/*
 		rm -rf <Magento install dir>/var/page_cache/*
 		rm -rf <Magento install dir>/var/generation/* 
+Note: if you use cache storage other than filesystem (Redis, Memcached) you need to manually clear cache there as well.
 4. Update the database schema and data:
 
 		php bin/magento setup:upgrade
