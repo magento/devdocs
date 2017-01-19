@@ -66,13 +66,13 @@ A class from Magento 1 codebase could not be found in Magento 2 codebase during 
 
 #### Possible solutions
 
-1. Install the corresponding Magento 2 extension
+1. Install the corresponding Magento 2 extension.
 
 2. Ignore the attribute that causes the issue.
 
-    For this, add the attribute to the `ignore` group in the `eav-attribute-groups.xml.dist` file
+    For this, add the attribute to the `ignore` group in the `eav-attribute-groups.xml.dist` file.
 
-3. Add class mapping using the `class-map.xml.dist` file
+3. Add class mapping using the `class-map.xml.dist` file.
 
 ### Foreign key constraint fails
 
@@ -92,7 +92,7 @@ There are missing database records in the `parent_table` to which the `field_id`
 
 Delete the records from the `child_table`, if they are no longer needed.
 
-To keep the records anyway, you may disable the `Data Integrity Step` using the Data Migration Tool's `config.xml`.
+To keep the records anyway, you may disable the `Data Integrity Step` by modifying the Data Migration Tool's `config.xml`.
 
 ### Duplicates in URL rewrites
 
