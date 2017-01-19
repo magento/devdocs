@@ -35,7 +35,7 @@ This section discusses prerequisites you must complete before you install the Ma
 ### Docker prerequisites
 Before you continue, make sure you install and configure the following:
 
-*	Mac OS<!--  and Windows -->: Install the [Docker software](https://www.docker.com/products/docker-toolbox){:target="_blank"}
+*	Mac OS and Windows: Install the [Docker software](https://www.docker.com/products/docker-toolbox){:target="_blank"}
 *	Windows 10 only: 
 
     *   You must enable Hyper-V
@@ -48,7 +48,7 @@ Before you continue, make sure you install and configure the following:
     You cannot work with Docker, VirtualBox, or Vagrant simultaneously on Windows 10.
     </div>
 
-#### Set up Docker file sharing
+#### Set up Docker file sharing {#devbox-docker-file-share}
 For the Magento application to work, the application must be installed in a directory that Docker uses for file sharing.
 
 **Windows**
@@ -237,5 +237,7 @@ To provide you more control over your Magento installation, we enable you to cho
 {% endcollapsibleh2 %}
 
 <div class="bs-callout bs-callout-info" markdown="1">
-When you run the installation script on Windows, an additional command window opens for Unison sync. Do not close the Unison sync window; otherwise, files you change won't be added to the Magento docroot.
+When you run the installation script on Windows, an additional command window opens for Unison sync. You don't normally need to interact with this command window.
+
+Do not close the Unison sync window; otherwise, files you change won't be added to the Magento docroot.
 </div>

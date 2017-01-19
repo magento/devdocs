@@ -12,7 +12,7 @@ github_link: install-gde/docker/docker-trouble.md
 
 This topic discusses suggested solutions to issues you might counter when installing or using Magento DevBox.
 
-## Problem: Cannot install the Magento application
+{% collapsibleh2 Problem: Cannot install Magento %}
 
 The following error message might display:
 
@@ -25,25 +25,33 @@ The preceding error means that the directory into which you're trying to install
 
 In this case, delete everything from `Users/me/somepath`
 
-Make sure all files, including all hidden files, are removed from that directory and try again.
+_Solution_: Make sure all files, including all hidden files, are removed from that directory and try again.
 
-## Problem: Error displays in the Magento Admin
+{% endcollapsibleh2 %}
+
+{% collapsibleh2 Problem: Error displays in the Magento Admin %}
+
 After you log in to the Magento Admin, the following notification error might display:
 
 	Your web server is set up incorrectly and allows unauthorized access to sensitive files. Please contact your hosting provider.
 
 This error results from the fact that the Magento application is running in developer mode. The message doesn't indicate any issues. You can ignore it and develop as normal.
 
-## Problem: 404 error accessing the Magento Admin, storefront is accessible
+{% endcollapsibleh2 %}
+
+{% collapsibleh2 Problem: 404 error accessing the Magento Admin, storefront is accessible %}
+
 When you access the Magento Admin, the following error displays in the browser:
 
 	The requested URL /admin was not found on this server.
 
 However, you can access the Magento storefront.
 
-The most likely cause of this error is missing `.htaccess` files the Magento application uses for URL redirects and other things. To resolve this error, if you use the Mac OS, see [How to download Magento code]({{ page.baseurl }}install-gde/docker/docker-over.html#devbox-download)
+_Solution_: The most likely cause of this error is missing `.htaccess` files the Magento application uses for URL redirects and other things. To resolve this error, if you use the Mac OS, see [How to download Magento code]({{ page.baseurl }}install-gde/docker/docker-over.html#devbox-download)
 
-## Problem: Cannot access the Magento storefront or Admin
+{% endcollapsibleh2 %}
+
+{% collapsibleh2 Problem: Cannot access the Magento storefront or Admin %}
 
 If you are having trouble accessing your Magento storefront and Magento Admin, connect to the web container and run some additional commands.
 
@@ -61,8 +69,11 @@ If you are having trouble accessing your Magento storefront and Magento Admin, c
         php bin/magento setup:static-content:deploy
 5. When you're finished, enter `exit`.
 
-## Problem: Errors display on Windows
-During installation errors similar to the following display in your primary command window:
+{% endcollapsibleh2 %}
+
+{% collapsibleh2 Problem: Errors display on Windows %}
+
+During installation, errors similar to the following display in your primary command window:
 
 	ERROR: for db  Cannot create container for service db: C: drive is not shared. Please share it in Docker for Windows Settings
 	ERROR: Encountered errors while bringing up the project.
@@ -73,9 +84,12 @@ Other errors might display in a secondary command window:
 	Error response from daemon: No such container: magento2devbox_web_7f927cb82fd5dfc7d21b4d02387a0d12
 	Error: No such container: magento2devbox_web_7f927cb82fd5dfc7d21b4d02387a0d12
 
-*Solution*: [Set up file sharing]()
+*Solution*: [Set up file sharing]({{ page.baseurl }}install-gde/docker/docker-ref.html#devbox-docker-file-share).
 
-## Problem: You want to start over
+{% endcollapsibleh2 %}
+
+{% collapsibleh2 Problem: You want to start over %}
+
 In the event you want to start over with a new Magento application installation, use the following steps from the directory to which you copied the DevBox scripts:
 
 1.	Kill the Magento Docker containers.
@@ -89,6 +103,6 @@ In the event you want to start over with a new Magento application installation,
 
 	*	Windows
 
-			./m2devbox-init.bat
+			m2devbox-init.bat
 
-		
+{% endcollapsibleh2 %}
