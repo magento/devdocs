@@ -53,7 +53,6 @@ We address the following functional issues in this release.
 
 <!---57832 -->* Magento now displays the "This is a required field" message immediately below the product options as needed during checkout. Previously, Magento displayed this message at the bottom of the checkout form. 
 
-### Customer
 
 
 
@@ -116,12 +115,6 @@ We address the following functional issues in this release.
 
 <!--- 59036-->* We've fixed an issue with using PayPal Express Checkout to order products with custom options. Previously, although an Admin user could create and configure “File type” custom options, customers could not upload and store files within the order quote. <a href="https://github.com/magento/magento2/issues/5434" target="_blank">(GITHUB-5434)</a>
 
-
-
-
-
-
-### Sales
 
 
 ### Travis builds
