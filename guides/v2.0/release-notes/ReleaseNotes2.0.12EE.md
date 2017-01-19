@@ -16,14 +16,14 @@ We are pleased to present Magento Enterprise Edition 2.0.12. This release includ
 
 
 ## Highlights
-Magento 2.0.12 contains more than 20 bug fixes and enhancements, including multiple enhancements to:
+Magento 2.0.12 contains more than 20 bug fixes and enhancements, and one security enhancement. It includes these highlights:
 
-* **Catalog module**. You can now directly add a configurable product to your shopping cart from the Category page.
+* **Improvements to Payflow Pro processing**. PayPal Payflow Pro now uses the currency you've specified in your store settings. Previously, Magento converted the total price of a purchase into U.S. dollars, no matter which currency you specified in the store settings. 
 
-* **Sales module**. Fixes include multiple enhancements to the server-side processing of orders.
+* **Removal of vulnerability with the Zend framework `Zend_Mail` library**. For more information, see <a href="https://magento.com/security/news/new-zend-framework-1-security-vulnerability" target="_blank">Magento Security Center</a>.  
 
-* **Payment module**. You can now ship items to a country from which you have not authorized payment.
 
+* **Refinements to catalog indexing**. 
 
 ## Functional fixes
 
