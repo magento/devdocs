@@ -486,9 +486,7 @@
 
 			<p>This topic discusses suggested solutions to issues you might counter when installing or using Magento DevBox.</p>
 
-<h2 id="problem-cannot-install-the-magento-application">Problem: Cannot install the Magento application</h2>
-
-<p>The following error message might display:</p>
+<div class="collapsible collapsible-h2"><h2 class="collapsible-title">Problem: Cannot install Magento </h2><div class="collapsible-content"><p>The following error message might display:</p>
 
 <pre><code>Project directory ./ is not empty
 </code></pre>
@@ -501,29 +499,28 @@
 
 <p>In this case, delete everything from <code>Users/me/somepath</code></p>
 
-<p>Make sure all files, including all hidden files, are removed from that directory and try again.</p>
+<p><em>Solution</em>: Make sure all files, including all hidden files, are removed from that directory and try again.</p>
+</div></div>
 
-<h2 id="problem-error-displays-in-the-magento-admin">Problem: Error displays in the Magento Admin</h2>
-<p>After you log in to the Magento Admin, the following notification error might display:</p>
+<div class="collapsible collapsible-h2"><h2 class="collapsible-title">Problem: Error displays in the Magento Admin </h2><div class="collapsible-content"><p>After you log in to the Magento Admin, the following notification error might display:</p>
 
 <pre><code>Your web server is set up incorrectly and allows unauthorized access to sensitive files. Please contact your hosting provider.
 </code></pre>
 
 <p>This error results from the fact that the Magento application is running in developer mode. The message doesn’t indicate any issues. You can ignore it and develop as normal.</p>
+</div></div>
 
-<h2 id="problem-404-error-accessing-the-magento-admin-storefront-is-accessible">Problem: 404 error accessing the Magento Admin, storefront is accessible</h2>
-<p>When you access the Magento Admin, the following error displays in the browser:</p>
+<div class="collapsible collapsible-h2"><h2 class="collapsible-title">Problem: 404 error accessing the Magento Admin, storefront is accessible </h2><div class="collapsible-content"><p>When you access the Magento Admin, the following error displays in the browser:</p>
 
 <pre><code>The requested URL /admin was not found on this server.
 </code></pre>
 
 <p>However, you can access the Magento storefront.</p>
 
-<p>The most likely cause of this error is missing <code>.htaccess</code> files the Magento application uses for URL redirects and other things. To resolve this error, if you use the Mac OS, see <a href="/guides/v2.0/install-gde/docker/docker-over.html#devbox-download">How to download Magento code</a></p>
+<p><em>Solution</em>: The most likely cause of this error is missing <code>.htaccess</code> files the Magento application uses for URL redirects and other things. To resolve this error, if you use the Mac OS, see <a href="/guides/v2.0/install-gde/docker/docker-over.html#devbox-download">How to download Magento code</a></p>
+</div></div>
 
-<h2 id="problem-cannot-access-the-magento-storefront-or-admin">Problem: Cannot access the Magento storefront or Admin</h2>
-
-<p>If you are having trouble accessing your Magento storefront and Magento Admin, connect to the web container and run some additional commands.</p>
+<div class="collapsible collapsible-h2"><h2 class="collapsible-title">Problem: Cannot access the Magento storefront or Admin </h2><div class="collapsible-content"><p>If you are having trouble accessing your Magento storefront and Magento Admin, connect to the web container and run some additional commands.</p>
 
 <ol>
   <li>
@@ -553,9 +550,9 @@
     <p>When you’re finished, enter <code>exit</code>.</p>
   </li>
 </ol>
+</div></div>
 
-<h2 id="problem-errors-display-on-windows">Problem: Errors display on Windows</h2>
-<p>During installation errors similar to the following display in your primary command window:</p>
+<div class="collapsible collapsible-h2"><h2 class="collapsible-title">Problem: Errors display on Windows </h2><div class="collapsible-content"><p>During installation, errors similar to the following display in your primary command window:</p>
 
 <pre><code>ERROR: for db  Cannot create container for service db: C: drive is not shared. Please share it in Docker for Windows Settings
 ERROR: Encountered errors while bringing up the project.
@@ -568,10 +565,10 @@ Error response from daemon: No such container: magento2devbox_web_7f927cb82fd5df
 Error: No such container: magento2devbox_web_7f927cb82fd5dfc7d21b4d02387a0d12
 </code></pre>
 
-<p><em>Solution</em>: <a href="">Set up file sharing</a></p>
+<p><em>Solution</em>: <a href="/guides/v2.0/install-gde/docker/docker-ref.html#devbox-docker-file-share">Set up file sharing</a>.</p>
+</div></div>
 
-<h2 id="problem-you-want-to-start-over">Problem: You want to start over</h2>
-<p>In the event you want to start over with a new Magento application installation, use the following steps from the directory to which you copied the DevBox scripts:</p>
+<div class="collapsible collapsible-h2"><h2 class="collapsible-title">Problem: You want to start over </h2><div class="collapsible-content"><p>In the event you want to start over with a new Magento application installation, use the following steps from the directory to which you copied the DevBox scripts:</p>
 
 <ol>
   <li>
@@ -593,13 +590,13 @@ Error: No such container: magento2devbox_web_7f927cb82fd5dfc7d21b4d02387a0d12
       <li>
         <p>Windows</p>
 
-        <pre><code>./m2devbox-init.bat
+        <pre><code>m2devbox-init.bat
 </code></pre>
       </li>
     </ul>
   </li>
 </ol>
-
+</div></div>
 
 		</div>
 		<!-- /.content-wrap -->

@@ -486,19 +486,36 @@
 
 			<p>This topic lists Docker commands you might find useful for day-to-day use or when troubleshooting issues. For more information, see the <a href="https://docs.docker.com/engine/reference/commandline" target="_blank">Docker command reference</a>.</p>
 
-<h2 id="enable-cron">Enable cron</h2>
-<p>By default, cron isn’t running in your Magento DevBox because cron consumes resources on your machine. Enabling cron also causes delays if you’re running tests.</p>
+<h2 id="run-cron-populate-the-cache-and-the-storefront">Run cron, populate the cache and the storefront</h2>
 
-<p>Enabling cron is necessary, however, to demonstrate how Magento works and to perform certain tasks. For a discussion of how Magento uses cron, see <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-overview">Configure and use cron</a>.</p>
+<p>Populating the cache and storefront causes the storefront, products, and images to load faster. Use this option after you make changes to the product catalog to pre-deploy static assets and put objects in the cache so the storefront loads faster.</p>
 
-<h3 id="enable-cron-on-a-running-system">Enable cron on a running system</h3>
-<p>If DevBox is running, use the following command:</p>
+<p>You can also start the <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-overview">Magento cron job</a>.</p>
+
+<p>However, enabling these options consumes resources and might drain your battery.</p>
+
+<div class="collapsible collapsible-h3"><h3 class="collapsible-title">Populate the storefront and cache and run cron (running system) </h3><div class="collapsible-content"><p>This section discusses how to populate the cache and storefront, and run cron, on a running DevBox system.</p>
+
+<h4 id="start-the-magento-cron-job-and-populate-the-cache">Start the Magento cron job and populate the cache</h4>
+<p>Use the following command to both start the <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-overview">Magento cron job</a> and populate the cache and storefront:</p>
 
 <pre><code>docker-compose exec --user=magento2 web m2init magento:finalize --magento-warm-up-storefront=1 --magento-cron-run=1 --no-interaction
 </code></pre>
 
-<h3 id="enable-cron-to-run-every-time-magento-starts">Enable cron to run every time Magento starts</h3>
-<p>To enable cron to run every time:</p>
+<h4 id="start-the-magento-cron-job-only">Start the Magento cron job only</h4>
+<p>Use the following command on a running system to only start the Magento cron job. This command might save resources and battery life on your laptop.</p>
+
+<pre><code>docker-compose exec --user=magento2 web m2init magento:finalize --magento-cron-run=1 --no-interaction
+</code></pre>
+
+<h4 id="populate-the-storefront-and-cache-only">Populate the storefront and cache only</h4>
+<p>Use the following command on a running system to only populate the storefront and cache but <em>not</em> run the Magento cron job.</p>
+
+<pre><code>docker-compose exec --user=magento2 web m2init magento:finalize --magento-warm-up-storefront=1 --no-interaction
+</code></pre>
+</div></div>
+
+<div class="collapsible collapsible-h3"><h3 class="collapsible-title">Configure DevBox to always populate the storefront and cache and run cron </h3><div class="collapsible-content"><p>To populate the storefront and cache, and run cron to run every time Magento starts:</p>
 
 <ol>
   <li>
@@ -509,11 +526,29 @@
   </li>
   <li>Open <code>&lt;project root dir&gt;/docker-compose.yml</code> in a text editor.</li>
   <li>
-    <p>Set the values of the following parameters to <code>1</code>:</p>
+    <p>You have the following options:</p>
 
-    <pre><code>MAGENTO_CRON_RUN=1
+    <ul>
+      <li>
+        <p>To enable cron to run only, set the value of the following parameter to <code>1</code>:</p>
+
+        <pre><code>MAGENTO_CRON_RUN=1
+</code></pre>
+      </li>
+      <li>
+        <p>To only populate the storefront and cache but <em>not</em> run the Magento cron job, set the value of the following parameter to <code>1</code>:</p>
+
+        <pre><code>MAGENTO_WARM_UP_STOREFRONT=1
+</code></pre>
+      </li>
+      <li>
+        <p>To both enable the Magento cron job and to always populate the storefront and cache, set the values of both of the following parameters to <code>1</code>:</p>
+
+        <pre><code>MAGENTO_CRON_RUN=1
 MAGENTO_WARM_UP_STOREFRONT=1
 </code></pre>
+      </li>
+    </ul>
   </li>
   <li>Save your changes to <code>docker-compose.yml</code> and exit the text editor.</li>
   <li>
@@ -523,10 +558,9 @@ MAGENTO_WARM_UP_STOREFRONT=1
 </code></pre>
   </li>
 </ol>
+</div></div>
 
-<h2 id="general-purpose-commands">General purpose commands</h2>
-
-<table>
+<div class="collapsible collapsible-h2"><h2 class="collapsible-title">General purpose commands </h2><div class="collapsible-content"><table>
   <thead>
     <tr>
       <th>Description</th>
@@ -572,8 +606,7 @@ MAGENTO_WARM_UP_STOREFRONT=1
     </tr>
   </tbody>
 </table>
-
-<p>FIND IN COMPOSE.YAML</p>
+</div></div>
 
 
 		</div>

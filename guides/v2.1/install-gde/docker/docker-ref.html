@@ -537,7 +537,7 @@
 <p>Before you continue, make sure you install and configure the following:</p>
 
 <ul>
-  <li>Mac OS<!--  and Windows -->: Install the <a href="https://www.docker.com/products/docker-toolbox" target="_blank">Docker software</a></li>
+  <li>Mac OS and Windows: Install the <a href="https://www.docker.com/products/docker-toolbox" target="_blank">Docker software</a></li>
   <li>
     <p>Windows 10 only:</p>
 
@@ -558,7 +558,7 @@
   </li>
 </ul>
 
-<h4 id="set-up-docker-file-sharing">Set up Docker file sharing</h4>
+<h4 id="devbox-docker-file-share">Set up Docker file sharing</h4>
 <p>For the Magento application to work, the application must be installed in a directory that Docker uses for file sharing.</p>
 
 <p><strong>Windows</strong></p>
@@ -802,7 +802,9 @@ cp -r /Users/me/Downloads/Magento-CE-2_1_3_zip-2016-12-16-06-04-03 /Users/me/App
 </div></div>
 
 <div class="bs-callout bs-callout-info">
-    <p>When you run the installation script on Windows, an additional command window opens for Unison sync. Do not close the Unison sync window; otherwise, files you change won’t be added to the Magento docroot.</p>
+    <p>When you run the installation script on Windows, an additional command window opens for Unison sync. You don’t normally need to interact with this command window.</p>
+
+    <p>Do not close the Unison sync window; otherwise, files you change won’t be added to the Magento docroot.</p>
   </div>
 </p>
 
