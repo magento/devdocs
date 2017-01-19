@@ -57,7 +57,7 @@ After you have determined the module, you can search for the layout in the follo
 
 1. `<current_theme_dir>/<Namespace>_<Module>/layout/`
 2. `<parent_theme(s)_dir>/<Namespace>_<Module>/layout/`
-3. `<module_dir>/frontend/layout/`
+3. `<module_dir>/view/frontend/layout/`
 4. `<module_dir>/view/base/layout/`
 
 There is no straightforward algorithm how to define at once the exact layout file, but in most cases layout file names are self descriptive. Also you can search them for mentions of the corresponding templates.

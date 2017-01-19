@@ -49,7 +49,7 @@ define(
 
 ## Add validator to the validators pool {#pool}
 
-Your custom validator must be added to the pool of "additional validators". To do this, in the `<your_module_dir>/view/frontend/web/js` directory create a new `<your-validation>.js` file with the following content:
+Your custom validator must be added to the pool of "additional validators". To do this, in the `<your_module_dir>/view/frontend/web/js/view` directory create a new `<your-validation>.js` file with the following content:
 
 {%highlight js%}
 define(

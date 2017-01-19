@@ -13,56 +13,68 @@ redirect_from:
 ---
 
 ## Overview
-[Composer](https://getcomposer.org/){:target="_blank"} is a dependency manager for PHP. Magento 2 uses Composer to package components and product editions.
+Magento 2 uses [Composer][0]{:target="_blank"}, a PHP dependency manager, to package components and product editions.
 
-Some third-party components that the Magento system uses might not be present in the code base. Instead, they are listed as dependencies in the root `composer.json` file. In addition, the [Component Manager]({{page.baseurl}}comp-mgr/compman-start.html) looks for a `composer.json` in a component's root directory and can perform actions on the component and its dependencies.
+Composer reads a `composer.json` file in Magento's root directory to download third-party dependencies listed in the file.
 
-In particular:
+The [Component Manager][1] uses the `composer.json` file in an extension's root directory to perform the following actions:
 
-*	If a component has `composer.json` *and* the component was installed using Composer (including from [Packagist](https://packagist.org/){:target="_blank"}, the Magento Marketplace, or other source), the Component Manager can update, uninstall, enable, or disable the component.
-*	If the component has `composer.json` but was *not* installed using Composer (for example, custom code a developer wrote), Component Manager can still enable or disable the component.
-*	We strongly recommend you include `composer.json` in your component's root directory whether or not you intend to distribute it to other merchants using Magento.
+*	The Component Manager can update, uninstall, enable, or disable an extension if installed using Composer (including from [Packagist][2]{:target="_blank"}, [Magento Marketplace][6]{:target="_blank"}, or other source) *and* it has a `composer.json` file.
+*	The Component Manager can still enable or disable an extension *not* installed using Composer (e.g. custom code) if it has a `composer.json` file.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Magento does not currently support the <a href="https://getcomposer.org/doc/05-repositories.md#path" target="_blank"><code>path</code></a> repository.</p>
+We recommend you include `composer.json` in your component's root directory even if you do not intend to distribute it to other merchants using Magento.
+
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+Magento does not support the [`path`][3] repository.
 </div>
 
 ## Composer binary location {#composer-binary}
-Magento's `bin/magento` script uses composer from `<Magento root>/vendor/composer` in your Magento 2 installation, not your globally installed composer. Keep this in mind while customizing or updating composer or troubleshooting composer issues while working with Magento 2.
+Magento uses the composer binary in the `<Magento root>/vendor/composer` directory instead of a globally installed composer.
+
+Keep this in mind while customizing, updating, or troubleshooting composer while working with Magento 2.
+
+## Project vs product
+
+In Composer, a "project" package is a template used by the [`composer create-project`][9]{:target="_blank"} to set up the project structure.
+The [installation instructions for system integrators][10] use the Magento CE and EE project packages to set up the Magento directory structure.
+
+A "product" package is the actual application pointed to by the `composer.json` file after you download and install the project package using `composer create-project`.  
 
 ## Descriptions of different composer.json files {#composerjson-overview}
-Certain Magento components and product editions are represented with `composer.json` files.
+The following Magento components and product editions use a `composer.json` file.
 
-### Root
+### Magento Root
 **Location:** `composer.json`
 
 **Name:** `magento/magento2ce`
 
 **Type:** `project`
 
-This is the main `composer.json` file. Magento uses this file to declare dependencies on third-party components. This file is used as a template for any other root `composer.json` files.
+This is Magento's main `composer.json` file which declares dependencies and third-party components.
+
+Other root `composer.json` files use this file as a template.
 
 ----
 
-### CE project
+### Community Edition project
 **Location:** `composer.json`
 
 **Name:** `magento/project-community-edition`
 
 **Type:** `project`
 
-This file represents the Magento Community Edition project. The package includes the `composer.json` file, which declares the dependencies on the Magento product as well as the class autoloader. This can be used by Magento system integrators to deploy Magento using Composer.
+Magento system integrators use this `composer.json` file to deploy the Magento Community Edition product and its dependencies.
 
 ----
 
-### CE product
+### Enterprise Edition project
 **Location:** `composer.json`
 
 **Name:** `magento/product-community-edition`
 
 **Type:** `metapackage`
 
-This file represents Magento Community Edition product. The package includes the `composer.json` file that declares the dependencies on Magento components (modules, themes, and so on) and third-party components. This can be used by Magento system integrators to deploy Magento using Composer.
+Magento system integrators use this `composer.json` file to deploy the Magento Enterpries Edition product and its dependencies.
 
 ----
 
@@ -73,7 +85,7 @@ This file represents Magento Community Edition product. The package includes the
 
 **Type:** `magento2-library`
 
-This file is used only by the framework.
+The Magento application uses this `composer.json` file for its framework packages.
 
 ----
 
@@ -87,7 +99,7 @@ This file is used only by the framework.
 
 **Type:** `magento2-module`
 
-The `composer.json` file for a module extension declares external dependencies that the module needs in order to function.
+The `composer.json` file for a module extension declares external dependencies that it needs to function.
 
 ----
 
@@ -113,43 +125,63 @@ The `composer.json` file for a theme component contains parent theme dependencie
 
 **Type:** `magento2-language`
 
-For language packages, you must use the correct [ISO code](http://www.iso.org/iso/home/standards/language_codes.htm){:target="_blank"} for the language code in the `composer.json` file.
+For language packages, you must use the correct [ISO code][4]{:target="_blank"} for the language code in the `composer.json` file.
 
 ---
 
 ## Magento-specific package types
-Each Magento component can be categorized as a module, theme, or language package. If any component does not fit into a specific category, its type can be generalized as `magento2-component`.
 
-Having an identifier type for each component allows the system to marshall the directories and files of each component to the correct locations, based on the Magento 2 directory structure.
+Magento extensions can be any of the following types:
+
+*  `magento2-module` for modules
+*  `magento2-theme` for themes
+*  `magento2-language` for language packages
+*  `magento2-component` for general extensions that do not fit any of the other types
+
+The extension type tells the system where to install the directories and files of each extension in the Magento directory structure.
 
 ## Naming conventions
-The namespace of Composer packages is global within a package repository (such as [packagist.org](http://packagist.org)). The Composer specification requires that a package name use the format:
+
+Since the namespace of a Composer package is global within a package repository, e.g. [packagist.org][2], use the following format when naming your package:
 
 `<vendor-name>/<package-name>`
 
+Using the Composer naming convention helps distinguish packages from different vendors with a low risk of overlapping.
 
 ### vendor-name
-Using Composer specifications ensures that vendors of different packages are distinguished, and there is a low risk of overlapping (unless two vendors have the same name). All letters in the name must be lowercase. For example, the format for the vendor name for extensions released by Magento Inc is:
 
-`magento/*`
+All letters in the vendor name must be in lowercase.
+For example, the vendor name format for extensions released by Magento Inc is `magento`.
 
 #### Magento Marketplace Extensions
-{:.no_toc}
-If you are planning to submit your extension to the Magento Marketplace, you *must* use the unique Vendor Name created or assigned to you when you created your marketplace account. The Vendor Name specified in your profile is what goes in your `composer.json` file as the `vendor-name` part of the extension name.
 
-When you submit your extension to the Magento Marketplace, the vendor-name will be extracted and compared to your assigned Vendor Name to make sure it matches.
+Magento Marketplace uses `vendor-name` to match an extension to a vendor during the extension submission process.
+If you plan to submit your extension to the [Magento Marketplace][7]{:target="_blank"}, you *must* use the unique Vendor Name created or assigned to you when you created your marketplace account.
 
-Please see the [Marketplace Documentation](http://docs.magento.com/marketplace/user_guide/account/profile-company.html){:target="_blank"} for more information about your unique vendor name.
+In the `composer.json` file, use the value of 'Vendor Name' in your profile for the `vendor-name` part of the extension name.
+
+Please see the [Marketplace Documentation][5]{:target="_blank"} for more information about your unique vendor name.
 
 ### package-name
-The package name is up to the vendor (as long as it is lowercase). If this name is meant to consist of multiple words, the Composer specification recommends separating them with dash. The convention for Magento package names is this:
+
+All letters in the `package-name` must be in lowercase.
+
+If the name contains more than one word, the Composer specification recommends separating them with dashes.
+
+The convention for Magento package names is the following
 
 `magento/<type-prefix>-<suffix>[-<suffix>]...`
 
 Where:
 
-: `type-prefix` is a type of component in a Magento-specific domain.
-: `suffix` is anything that allows distinguishing/disambiguating the component within that type.
+: `type-prefix` is any of the Magento extension types:
+
+  * `module-` for module extensions
+  * `theme-` for theme extensions
+  * `language-` for language extensions
+  * `product-` for [metapackages][8] such as Magento CE or Magento EE
+
+: `suffix` is a unique identifier for extensions of that type.
 
 ## Versioning {#component-version}
 {% include php-dev/component-versioning.md %}
@@ -158,3 +190,15 @@ Where:
 
 **Next:**
 [Define your configuration files]({{page.baseurl}}extension-dev-guide/build/required-configuration-files.html)
+
+[0]: https://getcomposer.org/
+[1]: {{page.baseurl}}comp-mgr/compman-start.html
+[2]: https://packagist.org/
+[3]: https://getcomposer.org/doc/05-repositories.md#path
+[4]: http://www.iso.org/iso/home/standards/language_codes.html
+[5]: http://docs.magento.com/marketplace/user_guide/account/profile-company.html
+[6]: https://marketplace.magento.com/
+[7]: https://marketplace.magento.com
+[8]: {{page.baseurl}}extension-dev-guide/package/package_module.html#package-metapackage
+[9]: https://getcomposer.org/doc/03-cli.md#create-project
+[10]: {{page.baseurl}}install-gde/prereq/integrator_install.html

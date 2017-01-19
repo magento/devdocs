@@ -39,6 +39,7 @@ Rename the following files in your Magento root directory:
 </ul>
 </li>
 <li>
+
 Install (or refresh) the <code>node.js</code> project dependency, including Grunt, for your Magento instance. To do this, run the following commands in a command prompt:<br>
 
 <pre>
