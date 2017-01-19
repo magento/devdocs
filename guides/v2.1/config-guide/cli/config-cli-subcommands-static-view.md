@@ -31,7 +31,9 @@ Static view files deployment is affected by Magento modes as follows:
 <div class="bs-callout bs-callout-warning" markdown="1">
 _Developer mode only_: When you install or enable a new module, it might load new JavaScript, CSS, layouts, and so on. To avoid issues with static files, you must clean the old files to make sure you get all the changes for the new module.
 
+
 You can clean generated static view files in any of the following ways:
+*   In the Magento Admin. Go to **System** > Tools > **Cache Management** and click **Flush Static Files Cache**.
 
 *   Manually by clearing the `pub/static` and `var/view_preprocessed` directories and subdirectories _except_ for `pub/static/.htaccess`.
 
@@ -47,7 +49,6 @@ You can clean generated static view files in any of the following ways:
     *   [`magento theme:uninstall`]({{ page.baseurl }}install-gde/install/cli/install-cli-theme-uninstall.html)
     *   [`magento module:uninstall`]({{ page.baseurl }}install-gde/install/cli/install-cli-uninstall-mods.html)
 
-*   In the Magento Admin. Go to **System** > Tools > **Cache Management** and click **Flush Static Files Cache**.
 </div>
 
 ## First steps {#config-cli-before}
