@@ -18,8 +18,8 @@ The built-in Git repository is at the same time "just a normal Git repository" a
 If you are pushing directly to the Magento Enterprise Cloud Edition Git repository, you will see in your terminal
 what is happening in real-time. The same information is going to get streamed in real-time to the Web Interface.
 
-## GitHub and Bitbucket {#cloud-deploy-over-gh}
-If you are using external Bitbucket or GitHub repositories, the log
+## GitHub {#cloud-deploy-over-gh}
+If you are using external GitHub repositories, the log
 of the operations does not display in the GitHub session. You can still follow what's happening in their interface and in the Magento Enterprise Cloud Edition's Web Interface.
 
 ## Project configuration {#cloud-deploy-conf}

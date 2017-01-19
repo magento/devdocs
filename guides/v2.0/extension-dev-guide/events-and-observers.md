@@ -35,7 +35,7 @@ class MyClass{
   */
   private $eventManager;
 
-  __construct(EventManager $eventManager){
+  public function __construct(\Magento\Framework\Event\Manager $eventManager){
     $this->eventManager = $eventManager;
   }
 
