@@ -559,7 +559,7 @@
 </ul>
 
 <h4 id="devbox-docker-file-share">Set up Docker file sharing</h4>
-<p>For the Magento application to work, the application must be installed in a directory that Docker uses for file sharing.</p>
+<p>For the Magento application to work, the application must be installed in a folder that Docker uses for file sharing.</p>
 
 <p><strong>Windows</strong></p>
 
@@ -587,10 +587,29 @@
   <li>
     <p>In the Preferences dialog box, click the <strong>File Sharing</strong> tab.</p>
 
-    <p>This tab page displays all shared directories that Docker currently knows about. Make sure you install Magento in a directory listed on this tab page.</p>
+    <p>This tab page displays all shared directories that Docker currently knows about. Make sure you install Magento in a folder listed on this tab page.</p>
   </li>
   <li>To add additional directories, follow the prompts on your screen or consult Docker documentation.</li>
 </ol>
+</div></div>
+
+<p id="devbox-fileshare"></p>
+<div class="collapsible collapsible-h2"><h2 class="collapsible-title">How DevBox uses file sharing </h2><div class="collapsible-content"><p>DevBox runs in a Docker container, which is also referred to as the <em>guest operating system</em>. The Magento files and folders are located on your <em>host operating system</em> (Windows or Mac OS). To facilitate development, Magento files and directories are shared by the guest and host operating systems.</p>
+
+<p>When you make a change to files, the changes are automatically synchronized, regardless of which files you change. (In other words, if you change files on the host operating system, those files are synchronized with the guest operating system and vice versa.)</p>
+
+<p>Use the following guidelines:</p>
+
+<ul>
+  <li>
+    <p>New Magento DevBox installations: Files are shared in the <code>shared/webroot</code> folder relative to your Magento installation root folder.</p>
+
+    <p>The Magento installation root folder is typically a subfolder of the folder in which you extracted the <code>.zip</code> file you download from Magento.</p>
+  </li>
+  <li>
+    <p>If you use an existing Magento installation with DevBox: Files are shared in the location to which you downloaded Magento.</p>
+  </li>
+</ul>
 </div></div>
 
 <div class="collapsible collapsible-h2"><h2 class="collapsible-title">Magento authentication prerequisites </h2><div class="collapsible-content"><div>
@@ -652,11 +671,12 @@
 </div>
 </div></div>
 
-<p id="devbox-download"><div class="collapsible collapsible-h2"><h2 class="collapsible-title">How to download Magento code </h2><div class="collapsible-content"><p>This section applies to you if you use an existing Magento installation with DevBox. This means you first download the Magento software using either <a href="/guides/v2.1/install-gde/prereq/integrator_install.html">Composer</a> or a <a href="/guides/v2.1/install-gde/prereq/zip_install.html">compressed archive</a> but you don’t <em>install</em> the software.</p>
+<p id="devbox-download"></p>
+<div class="collapsible collapsible-h2"><h2 class="collapsible-title">How to download Magento code </h2><div class="collapsible-content"><p>This section applies to you if you use an existing Magento installation with DevBox. This means you first download the Magento software using either <a href="/guides/v2.1/install-gde/prereq/integrator_install.html">Composer</a> or a <a href="/guides/v2.1/install-gde/prereq/zip_install.html">compressed archive</a> but you don’t <em>install</em> the software.</p>
 
 <p>Downloading a compressed archive has potential issues on the Mac OS, which extracts known compressed file types like <code>.zip</code> to a folder. The folder contains files that have to be copied in a particular way; otherwise, the Magento DevBox doesn’t perform properly.</p>
 
-<p>If you download a compressed archive on the Mac OS, you must make sure to copy <em>all</em> of the Magento code to an empty folder. In particular, you must copy all Apache <a href="http://httpd.apache.org/docs/current/howto/htaccess.html" target="_blank">distributed configuration files</a>, named <code>.htaccess</code>, to the folder. <code>.htaccess</code> files are located in several Magento directories, including in the root directory.</p>
+<p>If you download a compressed archive on the Mac OS, you must make sure to copy <em>all</em> of the Magento code to an empty folder. In particular, you must copy all Apache <a href="http://httpd.apache.org/docs/current/howto/htaccess.html" target="_blank">distributed configuration files</a>, named <code>.htaccess</code>, to the folder. <code>.htaccess</code> files are located in several Magento directories, including in the root folder.</p>
 
 <p>Failure to copy <code>.htaccess</code> files causes the Magento application to function incorrectly because URL redirects won’t work.</p>
 
@@ -666,7 +686,7 @@
 /Users/&lt;name&gt;/Downloads/&lt;Magento folder name&gt;
 </pre>
 
-<p>To make sure your existing Magento installation works it with DevBox, create an empty directory and copy all of the contents of the Magento compressed file to it as follows:</p>
+<p>To make sure your existing Magento installation works it with DevBox, create an empty folder and copy all of the contents of the Magento compressed file to it as follows:</p>
 
 <pre class="no-copy">
 mkdir -p &lt;path&gt;
@@ -676,7 +696,7 @@ cp -r /Users/&lt;name&gt;/Downloads/&lt;Magento folder name&gt; &lt;path&gt;</pr
   <p>Don’t use arguments like <code>/*</code> in the <code>cp</code> command because hidden files like <code>.htaccess</code> won’t copy.</p>
 </div>
 
-<p>For example, to copy Magento CE 2.1.3 code to a new directory named <code>/Users/me/Applications/Magento</code>, use the following commands:</p>
+<p>For example, to copy Magento CE 2.1.3 code to a new folder named <code>/Users/me/Applications/Magento</code>, use the following commands:</p>
 
 <pre><code>mkdir -p /Users/me/Applications/Magento
 cp -r /Users/me/Downloads/Magento-CE-2_1_3_zip-2016-12-16-06-04-03 /Users/me/Applications/Magento
@@ -801,12 +821,21 @@ cp -r /Users/me/Downloads/Magento-CE-2_1_3_zip-2016-12-16-06-04-03 /Users/me/App
 </table>
 </div></div>
 
-<div class="bs-callout bs-callout-info">
-    <p>When you run the installation script on Windows, an additional command window opens for Unison sync. You don’t normally need to interact with this command window.</p>
+<h2 id="after-the-devbox-wizard-completes">After the DevBox wizard completes</h2>
+<p>After you finish the DevBox wizard, you’re prompted to download a <code>.zip</code> file to any folder on your system. When you extract the <code>.zip</code> file, your operating system might create another folder.</p>
 
-    <p>Do not close the Unison sync window; otherwise, files you change won’t be added to the Magento docroot.</p>
-  </div>
-</p>
+<p>A Windows example follows:</p>
+
+<pre><code>C:\magento\build-18c4e4d3c5a541f37e9cffd35f1bf74e\build-18c4e4d3c5a541f37e9cffd35f1bf74e
+</code></pre>
+
+<p>In the preceding example, the user downloaded <code>build-18c4e4d3c5a541f37e9cffd35f1bf74e.zip</code> to the <code>C:\magento</code> folder. Extracting the <code>.zip</code> created a subfolder. The installation script you must run is located in the subfolder.</p>
+
+<div class="bs-callout bs-callout-info">
+  <p>When you run the installation script on Windows, an additional command window opens for Unison sync. You don’t normally need to interact with this command window.</p>
+
+  <p>Do not close the Unison sync window; otherwise, files you change won’t be added to the Magento docroot.</p>
+</div>
 
 		</div>
 		<!-- /.content-wrap -->
