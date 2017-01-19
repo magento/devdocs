@@ -19,6 +19,8 @@ Immediately after finishing your Magento installation, set up a *crontab* for th
 
 {% include config/setup-cron.md %}
 
+For more information about cron, including how to remove a crontab and run cron from the command line, see [Configure and run cron]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-cron.html).
+
 <h2 id="post-install-secy">Security settings</h2>
 After installation, we recommend the following:
 
