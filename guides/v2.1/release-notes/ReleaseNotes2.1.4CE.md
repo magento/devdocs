@@ -19,11 +19,20 @@ We are pleased to present Magento Community Edition 2.1.4. This release includes
 
 ## Highlights
 
-Magento 2.1.4 contains more than 20 bug fixes and enhancements, including these highlights:
+Magento 2.1.4 contains more than 20 functional fixes and enhancements, and one security enhancement. It includes these highlights:
+
+* **Improvements to Payflow Pro processing**. PayPal Payflow Pro now uses the currency you've specified in your store settings. Previously, Magento converted the total price of a purchase into U.S. dollars, no matter which currency you specified in the store settings. 
+
+* **Removal of vulnerability with the Zend framework `Zend_Mail` library**. For more information, see <a href="https://magento.com/security/news/new-zend-framework-1-security-vulnerability" target="_blank">Magento Security Center</a>.  
 
 
+* **Refinements to catalog indexing**. 
 
 
+## Security enhancement
+
+This release includes an important enhancement to the security of your Magento software. While there are no confirmed attacks related to these issues to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento software to the latest version as soon as possible.
+ 
 
 
 ## Functional fixes and enhancements
@@ -193,7 +202,47 @@ We address the following functional issues in this release.
 
 ## Known issues
 
+<!--- 63213 --> internal only?
 
+<!--- 63123 --> * Extension Manager runs slowly. 
+
+<!--- 63168 --> * Incorrect configuration tests on Travis CI. internal only?
+
+<!--- 63115 --> * Under certain conditions, Magento fails to load new Category images, and displays this message, "Attention. The file was not uploaded". 
+
+<!--- 63050 --> * Magento is not displaying the correct status of products when you add them to Configurable product ipage. 
+
+<!--- 62605 --> * Magento does not provide an accurate preview of the Category page.  
+
+
+<!--- 62523 --> * The Magento server-side Order page is currently not displaying critical information about orders. Specifically, the Payment Information block lacks the following information: 
+
+	* Fraud Detection
+
+	* FDS Filter Action
+
+	* AVS Response
+
+	* Fraud Filters
+
+	* Amount Filter
+
+
+
+<!--- 62283 --> * Server-side LESS compilation is not working as expected. When you set server-side LESS compilation to **ON**,  the `pub/static/frontend` remains. 
+
+
+
+<!--- 62258 --> * You cannot successfully edit an order of a bundle product from the Magento server side. 
+
+
+<!--- 62243 --> * After a customer orders the last unit in your inventory of a Configurable product, Magento still lists the product as in stock.  
+
+
+
+
+ 
+ 
 
 
 ## System requirements
