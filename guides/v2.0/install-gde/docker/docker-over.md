@@ -30,5 +30,5 @@ To get the Magento DevBox now, go to the [Magento download page](https://magento
 
 #### Next steps
 *   [DevBox (Beta) reference]({{ page.baseurl }}install-gde/docker/docker-ref.html)
-*   [Troubleshoot issues with Magento DevBox]({{ page.baseurl }}install-gde/docker/docker-install.html)
+*   [Troubleshoot issues with Magento DevBox]({{ page.baseurl }}install-gde/docker/docker-trouble.html)
 

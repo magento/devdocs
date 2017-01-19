@@ -7,7 +7,7 @@ menu_title: Troubleshoot issues with Magento DevBox
 menu_node: 
 menu_order: 5
 version: 2.0
-github_link: install-gde/docker/docker-install.md
+github_link: install-gde/docker/docker-trouble.md
 ---
 
 This topic discusses suggested solutions to issues you might counter when installing or using Magento DevBox.
