@@ -34,11 +34,11 @@ This message appears because the Data Migration Tool runs internal tests to veri
 
 #### Possible solutions
 
-1. Install the corresponding Magento 2 extensions from [Magento Marketplace](https://marketplace.magento.com/){:target:"_blank"}.
+* Install the corresponding Magento 2 extensions from [Magento Marketplace](https://marketplace.magento.com/){:target:"_blank"}
 
     If the conflicting data originates from an extension which adds own database structure elements, then the Magento 2 version of the same extension may add such elements to the destination (Magento 2) database, thus fixing the issue.
 
-2. Ignore the problematic data.
+* Configure the Tool to ignore the problematic data
 
 To ignore database entities, add the `<ignore>` tag to an entity in the `map.xml` file, like this:
 
@@ -49,7 +49,7 @@ To ignore database entities, add the `<ignore>` tag to an entity in the `map.xml
 {% endhighlight %}
 
 <div class="bs-callout bs-callout-warning">
-   <p>Before ignoring entities, make sure you don't need the affected data in your Magento 2 store.</p>
+   <p>Before ignoring entities, make sure you do not need the affected data in your Magento 2 store.</p>
 </div>
 
 ### Class does not exist but mentioned
@@ -65,13 +65,13 @@ A class from Magento 1 codebase could not be found in Magento 2 codebase during 
 
 #### Possible solutions
 
-1. Install the corresponding Magento 2 extension.
+* Install the corresponding Magento 2 extension
 
-2. Ignore the attribute that causes the issue.
+* Ignore the attribute that causes the issue
 
     For this, add the attribute to the `ignore` group in the `eav-attribute-groups.xml.dist` file.
 
-3. Add class mapping using the `class-map.xml.dist` file.
+* Add class mapping using the `class-map.xml.dist` file
 
 ### Foreign key constraint fails
 
@@ -91,7 +91,7 @@ There are missing database records in the `parent_table` to which the `field_id`
 
 Delete the records from the `child_table`, if they are no longer needed.
 
-To keep the records anyway, you may disable the `Data Integrity Step` by modifying the Data Migration Tool's `config.xml`.
+To keep the records, disable the `Data Integrity Step` by modifying the Data Migration Tool's `config.xml`.
 
 ### Duplicates in URL rewrites
 
@@ -103,7 +103,7 @@ Request path: towel.html Store ID: 2 Target path: catalog/product/view/id/12
 
 #### Explanation
 
-There can only be a unique pair of `Request path` + `Store ID` for a URL rewrite in Magento 2, while you're having two identical pairs with different Target Paths.
+The `Target path` in a URL rewrite must be specified by a unique pair of `Request path` + `Store ID`. This error reports two identical `Request path` + `Store ID` pairs, used for two different `Target paths`, which creates a conflict.
 
 #### Possible solution
 
