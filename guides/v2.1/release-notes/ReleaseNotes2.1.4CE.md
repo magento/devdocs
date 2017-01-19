@@ -202,11 +202,8 @@ We address the following functional issues in this release.
 
 ## Known issues
 
-<!--- 63213 --> internal only?
-
 <!--- 63123 --> * Extension Manager runs slowly. 
 
-<!--- 63168 --> * Incorrect configuration tests on Travis CI. internal only?
 
 <!--- 63115 --> * Under certain conditions, Magento fails to load new Category images, and displays this message, "Attention. The file was not uploaded". 
 
