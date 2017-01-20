@@ -1391,8 +1391,8 @@ Used as follows:
 The specified <a href="/guides/v2.0/frontend-dev-guide/layouts/layout-overview.html#handle" target="_blank">handle</a> is "included" and executed recursively.
 
 <h3 id="argument">&lt;argument&gt;</h3>
-Used to pass an argument.
-
+Used to pass an argument. Must be always enclosed in [`<arguments></arguments>`](#arguments).
+ 
 <table>
    <tbody>
       <tr>
@@ -1465,9 +1465,20 @@ Using the value of <code>css_class</code> in <code><a href="https://github.com/m
 <span class="x">...</span></code></pre></figure>
 
 
+### <arguments> {#arguments}
+
+`<arguments></arguments>` is a required container for `<argument></argument>`. Does not have own attributes.
+
+Example:
 
 
-</p></p></p>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml">...
+<span class="nt">&lt;arguments&gt;</span>
+    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;css_class&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>header links<span class="nt">&lt;/argument&gt;</span>
+<span class="nt">&lt;/arguments&gt;</span>
+...</code></pre></figure>
+
+</arguments></p></p></p>
 
 		</div>
 		<!-- /.content-wrap -->
