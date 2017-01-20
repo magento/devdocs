@@ -273,12 +273,37 @@ class Profiler
 Functions and methods must have:
 
 * Short description
+* Long description that explains the motivation behind the implementation in such cases as:
+   * a workaround/hack is implemented. Explain why it is necessary and include any other details necessary to understand the algorithm
+   * non-obvious implementation: the implementation does not correspond to Technical Vision or other known best practices, it has complicated logic. If you were asked questions from at least one another developer about the implementation, there is something non-obvious in it, so include the explanation in the doc block's description
 * Declaration of all arguments (if any) using `@param` tag.
   Appropriate argument type must be specified.
 * Declaration of return type using `@return` tag.
   If there is no such operator, the `@return` tag must have `void` as the return value.
 * Declaration of possibly thrown exception using `@throws` tag, if the actual body of function triggers throwing an exception.
   All occurrences of `@throws` in a DocBlock must be after `@param` and `@return` (if any).
+* Motivation behind @deprecated annotation. For example:
+
+{% highlight php startinline=true %}
+/**
+ * Get some object
+ *
+ * @deprecated Added to not break backward compatibility of the constructor signature 
+ *             by injecting the new dependency directly. 
+ *             The method can be removed in a future major release, when constructor signature can be changed
+ * @return SomeObjectInterface
+ */
+protected function getSomeObject()
+{
+    ...
+}
+{% endhighlight %}
+
+Exceptions:
+* Constructors may not have short and/or long description
+* Testing methods in Unit tests may not have doc blocks if the test's method name follows the convention (test<MehtodName>)
+   * If the test doesn't follow the convention, it should have a doc block describing which method(s) is covered
+   * Non-testing methods should have doc block with description. It includes data providers and any helper methods
 
 #### Things to include
 
@@ -422,6 +447,68 @@ public function deleteDirectory($path)
 If there is no explicit return statement in a method or function, a `@return void` should be used in the documentation.
 
 If the method returns itself, `return $this` should be used.
+
+<h4 id="inheritdoc">@inheritdoc Tag</h4>
+
+Whenever possible `@inheritdoc` tag MUST be used for child methods, and so avoid duplication of doc blocks.
+
+Though PHPDocumentor understands inheritance and uses parent doc block by default (without `@inheritdoc` tag specified), `@inheritdoc` tag helps ensure that the doc block is not missed at all.
+
+Rules for usage of the tag:
+* Use `@inheritdoc` (notice no braces around) to indicate that the entire doc block should be inherited from the parent method
+* Use inline `{@inheritdoc}` tag (with braces around) in long description to reuse parent's long description. The method MUST have its own short description
+
+**DocBlock for the Intreface**
+{% highlight php startinline=true %}
+/**
+ * Interface for mutable value object for integer values
+ */
+interface MutableInterface
+{
+    /**
+     * Get value
+     *
+     * Returns 0, if no value is available
+     *
+     * @return int
+     */
+    public function getVal();
+ 
+    /**
+     * Set value
+     *
+     * Sets 0 in case a non-integer value is passed
+     *
+     * @param int $value
+     */
+    public function setVal($value);
+}
+{% endhighlight %}
+
+**DocBlock for the implementation**
+{% highlight php startinline=true %}
+/**
+ * Limited mutable value object for integer values
+ */
+class LimitedMutableClass implements MutableInterface
+{
+    /**
+     * @inheritdoc
+     */
+    public function getVal()
+    {
+    }
+ 
+    /**
+     * Set value
+     *
+     * Sets 0 in case the value is bigger than max allowed value. {@inheritdoc}
+     */
+    public function setVal($value)
+    {
+    }
+}
+{% endhighlight %}
 
 ### Constants
 {:#constants}
