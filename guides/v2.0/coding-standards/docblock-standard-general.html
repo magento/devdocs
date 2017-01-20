@@ -745,13 +745,15 @@ So there are two solutions possible:</p>
 <p><strong>Good:</strong></p>
 
 <blockquote>
-  <p>Handler for PHP errors/warnings/notices that converts them to exceptions.</p>
+  <p>Handler for PHP errors/warnings/notices that converts them to exceptions.
+class ErrorHandler { … }</p>
 </blockquote>
 
 <p><strong>Bad:</strong></p>
 
 <blockquote>
-  <p>ErrorHandler -&gt; ErrorHandler</p>
+  <p>Error Handler
+class ErrorHandler { … }</p>
 </blockquote>
 
 <p>If possible, add use cases where developers can or cannot use the class.</p>
@@ -806,13 +808,43 @@ The only exception is in the <code>Service/DTO</code> classes due to tooling req
 
 <ul>
   <li>Short description</li>
+  <li>
+    <p>Long description that explains the motivation behind the implementation. 
+For example:</p>
+
+    <ul>
+      <li>If a workaround or hack is implemented, explain why it is necessary and include any other details necessary to understand the algorithm.</li>
+      <li>For non-obvious implementations where the implementation logic is complicated or does not correspond to the Technical Vision or other known best practices, include an explanation in the doc block’s description.
+An implementation is non-obvious if another developer has questions about it.</li>
+    </ul>
+  </li>
   <li>Declaration of all arguments (if any) using <code>@param</code> tag.
 Appropriate argument type must be specified.</li>
   <li>Declaration of return type using <code>@return</code> tag.
 If there is no such operator, the <code>@return</code> tag must have <code>void</code> as the return value.</li>
   <li>Declaration of possibly thrown exception using <code>@throws</code> tag, if the actual body of function triggers throwing an exception.
 All occurrences of <code>@throws</code> in a DocBlock must be after <code>@param</code> and <code>@return</code> (if any).</li>
+  <li>Motivation behind @deprecated annotation. For example:</li>
 </ul>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
+<span class="sd"> * Get some object</span>
+<span class="sd"> *</span>
+<span class="sd"> * @deprecated Added to not break backward compatibility of the constructor signature </span>
+<span class="sd"> *             by injecting the new dependency directly. </span>
+<span class="sd"> *             The method can be removed in a future major release, when constructor signature can be changed</span>
+<span class="sd"> * @return SomeObjectInterface</span>
+<span class="sd"> */</span>
+<span class="k">protected</span> <span class="k">function</span> <span class="nf">getSomeObject</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="o">...</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Exceptions:
+* Constructors may not have short and/or long description
+* Testing methods in Unit tests may not have doc blocks if the test’s method name follows the convention (test<MethodName>)
+   * If the test does not follow the convention, it should have a doc block describing the covered methods
+   * Non-testing methods should have a doc block with description. It includes data providers and any helper methods</MethodName></p>
 
 <h4 id="things-to-include">Things to include</h4>
 
@@ -955,6 +987,69 @@ For example:</p>
 
 <p>If the method returns itself, <code>return $this</code> should be used.</p>
 
+<h4 id="inheritdoc">@inheritdoc tag</h4>
+
+<p>Whenever possible the <code>@inheritdoc</code> tag MUST be used for child methods to avoid duplication of doc blocks.</p>
+
+<p>Even Though PHPDocumentor understands inheritance and uses the parent doc block by default (without <code>@inheritdoc</code> tag specified), including the tag helps ensure that the doc block is not missed at all.</p>
+
+<p>Rules for usage of the tag:</p>
+
+<ul>
+  <li>Use <code>@inheritdoc</code> (notice no braces around) to indicate that the entire doc block should be inherited from the parent method.</li>
+  <li>Use the inline <code>{@inheritdoc}</code> tag (with braces around) in long descriptions to reuse the parent’s long description. The tagged method MUST have its own short description.</li>
+</ul>
+
+<p><strong>DocBlock for the Intreface</strong></p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
+<span class="sd"> * Interface for mutable value object for integer values</span>
+<span class="sd"> */</span>
+<span class="k">interface</span> <span class="nx">MutableInterface</span>
+<span class="p">{</span>
+    <span class="sd">/**</span>
+<span class="sd">     * Get value</span>
+<span class="sd">     *</span>
+<span class="sd">     * Returns 0, if no value is available</span>
+<span class="sd">     *</span>
+<span class="sd">     * @return int</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getVal</span><span class="p">();</span>
+ 
+    <span class="sd">/**</span>
+<span class="sd">     * Set value</span>
+<span class="sd">     *</span>
+<span class="sd">     * Sets 0 in case a non-integer value is passed</span>
+<span class="sd">     *</span>
+<span class="sd">     * @param int $value</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">setVal</span><span class="p">(</span><span class="nv">$value</span><span class="p">);</span>
+<span class="p">}</span></code></pre></figure>
+
+<p><strong>DocBlock for the implementation</strong></p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
+<span class="sd"> * Limited mutable value object for integer values</span>
+<span class="sd"> */</span>
+<span class="k">class</span> <span class="nc">LimitedMutableClass</span> <span class="k">implements</span> <span class="nx">MutableInterface</span>
+<span class="p">{</span>
+    <span class="sd">/**</span>
+<span class="sd">     * @inheritdoc</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getVal</span><span class="p">()</span>
+    <span class="p">{</span>
+    <span class="p">}</span>
+ 
+    <span class="sd">/**</span>
+<span class="sd">     * Set value</span>
+<span class="sd">     *</span>
+<span class="sd">     * Sets 0 in case the value is bigger than max allowed value. {@inheritdoc}</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">setVal</span><span class="p">(</span><span class="nv">$value</span><span class="p">)</span>
+    <span class="p">{</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
 <h3 id="constants">Constants</h3>
 
 <p>Constants must have short description.</p>
@@ -1022,7 +1117,9 @@ In this case individual DocBlocks for those elements they may be replaced by a D
 Documentation is organized with the use of namespaces.</p>
 
 <h2 id="other-DocBlock-tags">Other DocBlock tags</h2>
-<p id="api">### @api tag</p>
+
+<h3 id="api">@api tag</h3>
+
 <p>The <code>@api</code> tag indicates the code is part of the public API and is subject to the <a href="../extension-dev-guide/backward-compatibility.html">Magento Backward Compatibility Policy</a>.</p>
 
 <p>The <code>@api</code> tag can be applied to a constant, a method, or to the entire class/interface.
