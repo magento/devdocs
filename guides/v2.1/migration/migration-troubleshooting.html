@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Install Data Migration Tool</title>
+	<title>Troubleshooting</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.1/migration/migration-tool-install.html">
+	<link rel="canonical" href="//guides/v2.1/migration/migration-troubleshooting.html">
 
   <script>
     var baseUrl = "/";
@@ -49,9 +49,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/migration/migration-tool-install.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/migration/migration-troubleshooting.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/migration/migration-tool-install.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/migration/migration-troubleshooting.html">Magento 2.1</a></li>
 	
   </ul>
 
@@ -390,7 +390,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.1/migration/migration-tool-install.html">Install Data Migration Tool</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/migration/migration-tool-install.html">Install Data Migration Tool</a></li>
 
 									
 
@@ -516,7 +516,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.1/migration/migration-troubleshooting.html">Troubleshooting</a></li>
+									<li class="level1  active "><a class="nav-header" href="/guides/v2.1/migration/migration-troubleshooting.html">Troubleshooting</a></li>
 									
 								
 
@@ -730,7 +730,7 @@
       
 
       <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
-        <span property="name">Install Data Migration Tool</span>
+        <span property="name">Troubleshooting</span>
         <meta property="position" content="1" />
       </li>
 
@@ -742,143 +742,126 @@
 
 
 	
-	<h1 class="page-heading">Install Data Migration Tool</h1>
+	<h1 class="page-heading">Troubleshooting</h1>
 
   
 
 
 </section>
 
-			<h2 id="data-migrate-prereq">Prerequisite: Versions of Magento and Data Migration Tool must match</h2>
+			<h2 id="common-error-messages">Common error messages</h2>
 
-<p>Make sure you are using <em>the same released version</em> of both Magento 2 and the Data Migration Tool. For example, for Magento version 2.1.2, you must also use the Data Migration Tool version 2.1.2.</p>
+<p>This section is about the errors that might occur when you run the Data Migration Tool, and how to deal with them.</p>
 
-<h3 id="magento-version">Check your Magento 2 version</h3>
+<h3 id="source-documentsfields-not-mapped">Source documents/fields not mapped</h3>
 
-<h4 id="composer-metapackage">Composer metapackage</h4>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml">Source documents are not mapped: <span class="nt">&lt;EXTENSION_TABLE&gt;</span></code></pre></figure>
 
-<p>If you downloaded the Magento software using a Composer metapackage, enter the following command:</p>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml">Source fields are not mapped. Document: <span class="nt">&lt;EXTENSION_TABLE&gt;</span>. Fields: <span class="nt">&lt;EXTENSION_FIELD&gt;</span></code></pre></figure>
 
-<pre><code>php &lt;your Magento install dir&gt;/bin/magento --version
-</code></pre>
+<p>In rare cases, the message might mention <code>Destination documents</code> or <code>Destination fields</code> instead of source ones.</p>
 
-<h4 id="github-repository">Github repository</h4>
+<h4 id="explanation">Explanation</h4>
 
-<p>If you cloned the Magento 2 GitHub repository, enter the following commands:</p>
+<p>Some Magento 1 entities (in most cases, coming from extensions) do not exist in the Magento 2 database.</p>
 
-<pre><code>cd &lt;your Magento 2 clone directory&gt;
-git branch
-</code></pre>
+<p>This message appears because the Data Migration Tool runs internal tests to verify that tables and fields are consistent between <em>source</em> (Magento 1) and <em>destination</em> (Magento 2) databases.</p>
 
-<p>If you’re currently in the <code>develop</code> branch, you must change to a <a href="/guides/v2.1/install-gde/install/cli/dev_downgrade.html">released branch</a> before you continue.</p>
-
-<div class="bs-callout bs-callout-tip">
-	<p>If you haven't installed the Magento software yet, <a href="/guides/v2.1/install-gde/continue.html">install it now</a>.</p>
-
-	<p>If you're cloning the GitHub repository, make sure you check out a release tag as discussed in <a href="/guides/v2.1/install-gde/prereq/dev_install.html">(Contributor) Clone the Magento repository</a>.</p>
-</div>
-
-<h3 id="migration-tool-release-version">Find released versions of Data Migration Tool</h3>
-
-<p>Go to the <a href="https://github.com/magento/data-migration-tool/releases" target="_blank">Releases</a> page of the Data Migration Tool Github repository to find available released versions.</p>
-
-<h2 id="data-migrate-install">Install Data Migration Tool</h2>
-
-<p>You may install the Data Migration Tool from:</p>
+<h4 id="possible-solutions">Possible solutions</h4>
 
 <ul>
   <li>
-    <p><a href="#install-repo"><code>repo.magento.com</code></a></p>
+    <p>Install the corresponding Magento 2 extensions from <a href="https://marketplace.magento.com/">Magento Marketplace</a></p>
+
+    <p>If the conflicting data originates from an extension which adds own database structure elements, then the Magento 2 version of the same extension may add such elements to the destination (Magento 2) database, thus fixing the issue.</p>
   </li>
   <li>
-    <p><a href="#install-github">GitHub</a></p>
+    <p>Configure the Tool to ignore the problematic data</p>
   </li>
 </ul>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Before installing, make sure you have:</p>
-	<ul>
-		<li>
-			Completed all tasks mentioned in the <a href="/guides/v2.1/migration/migration-tool-preconditions.html">Preconditions</a> section
-		</li>
+<p>To ignore database entities, add the <code>&lt;ignore&gt;</code> tag to an entity in the <code>map.xml</code> file, like this:</p>
 
-		<li>
-			<a href="/guides/v2.1/migration/migration-tool-install.html#data-migrate-prereq">Verified the version</a> of the Magento 2 software
-		</li>
-	</ul>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;ignore&gt;</span>
+   <span class="nt">&lt;field&gt;</span>sales_order_address_id<span class="nt">&lt;/field&gt;</span>
+<span class="nt">&lt;/ignore&gt;</span></code></pre></figure>
+
+<div class="bs-callout bs-callout-warning">
+   <p>Before ignoring entities, make sure you do not need the affected data in your Magento 2 store.</p>
 </div>
 
-<h3 id="install-repo">Install from <code>repo.magento.com</code></h3>
+<h3 id="class-does-not-exist-but-mentioned">Class does not exist but mentioned</h3>
 
-<p>To install the Data Migration Tool, you must update <code>composer.json</code> in the Magento root installation directory to provide the location of the Data Migration Tool package.</p>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml">Class <span class="nt">&lt;extension</span><span class="err">/class_name</span><span class="nt">&gt;</span> does not exist but mentioned in:
+<span class="nt">&lt;eav_attribute.frontend_model&gt;</span> for <span class="nt">&lt;attribute_id</span><span class="err">=196</span><span class="nt">&gt;</span></code></pre></figure>
 
-<ol>
-  <li>Log in to your Magento server as, or switch to, <a href="/guides/v2.1/install-gde/prereq/apache-user.html">the Magento file system owner</a>.</li>
-  <li>Change to Magento 2 root directory.</li>
-  <li>
-    <p>Enter the following commands:</p>
+<h4 id="explanation-1">Explanation</h4>
 
-    <pre><code>composer config repositories.magento composer https://repo.magento.com
-composer require magento/data-migration-tool:&lt;version&gt;
-</code></pre>
+<p>A class from Magento 1 codebase could not be found in Magento 2 codebase during the <a href="/guides/v2.1/migration/migration-tool-internal-spec.html#eav">EAV migration step</a>. In most cases, the missing class belongs to an extension.</p>
 
-    <p>where <code>&lt;version&gt;</code> must match the version of the Magento 2 codebase.</p>
-
-    <p>For example, for version 2.1.2, enter:</p>
-
-    <pre><code>composer config repositories.magento composer https://repo.magento.com
-composer require magento/data-migration-tool:2.1.2
-</code></pre>
-  </li>
-  <li>When prompted, enter your <a href="http://devdocs.magento.com/guides/v2.0/install-gde/prereq/connect-auth.html">authentication keys</a>. Your public key is your username; your private key is your password.</li>
-</ol>
-
-<h3 id="install-github">Install from GitHub</h3>
-
-<p>If you’ve cloned Magento 2 from the GitHub repository, follow the steps below to install the Data Migration Tool.</p>
-
-<ol>
-  <li>Log in to your Magento server as, or switch to, <a href="/guides/v2.1/install-gde/prereq/apache-user.html">the Magento file system owner</a>.</li>
-  <li>Change to Magento 2 root directory.</li>
-  <li>
-    <p>Enter the following commands:</p>
-
-    <pre><code>composer config repositories.data-migration-tool git https://github.com/magento/data-migration-tool
-composer require magento/data-migration-tool:&lt;version&gt;
-</code></pre>
-
-    <p>where <code>&lt;version&gt;</code> must match the version of the Magento 2 codebase.</p>
-
-    <p>For example, for version 2.1.2, enter:</p>
-
-    <pre><code>composer config repositories.data-migration-tool git https://github.com/magento/data-migration-tool
-composer require magento/data-migration-tool:2.1.2
-</code></pre>
-  </li>
-</ol>
-
-<h3 id="migration-tool-install-version">Check version of installed Data Migration Tool</h3>
-
-<ol>
-  <li>
-    <p>Change to your Data Migration Tool directory: <code>&lt;vendor&gt;/magento/data-migration-tool</code>.</p>
-  </li>
-  <li>
-    <p>Open <code>composer.json</code> in a text editor.</p>
-  </li>
-  <li>
-    <p>Find the value of the <code>version</code> tag.</p>
-  </li>
-</ol>
-
-<p>This is the version of your Data Migration Tool.</p>
-
-<h2 id="related-topics">Related topics</h2>
+<h4 id="possible-solutions-1">Possible solutions</h4>
 
 <ul>
-  <li><a href="/guides/v2.1/migration/migration-tool-configure.html">Configure migration</a></li>
-  <li><a href="/guides/v2.1/migration/migration-tool-preconditions.html">Preconditions</a></li>
+  <li>
+    <p>Install the corresponding Magento 2 extension</p>
+  </li>
+  <li>
+    <p>Ignore the attribute that causes the issue</p>
+
+    <p>For this, add the attribute to the <code>ignore</code> group in the <code>eav-attribute-groups.xml.dist</code> file.</p>
+  </li>
+  <li>
+    <p>Add class mapping using the <code>class-map.xml.dist</code> file</p>
+  </li>
 </ul>
+
+<h3 id="foreign-key-constraint-fails">Foreign key constraint fails</h3>
+
+<h4 id="error-message-text">Error message text</h4>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml">Foreign key <span class="nt">&lt;KEY_NAME&gt;</span> constraint fails.
+Orphan records id: <span class="nt">&lt;id_1&gt;</span>, <span class="nt">&lt;id_2&gt;</span> from <span class="nt">&lt;child_table&gt;</span>.
+<span class="nt">&lt;field_id&gt;</span> has no referenced records in <span class="nt">&lt;parent_table&gt;</span></code></pre></figure>
+
+<h4 id="explanation-2">Explanation</h4>
+
+<p>There are missing database records in the <code>parent_table</code> to which the <code>field_id</code> of the <code>child_table</code> is pointing to.</p>
+
+<h4 id="possible-solution">Possible solution</h4>
+
+<p>Delete the records from the <code>child_table</code>, if you do not need them.</p>
+
+<p>To keep the records, disable the <code>Data Integrity Step</code> by modifying the Data Migration Tool’s <code>config.xml</code>.</p>
+
+<h3 id="duplicates-in-url-rewrites">Duplicates in URL rewrites</h3>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml">There are duplicates in URL rewrites:
+Request path: towel.html Store ID: 2 Target path: catalog/product/view/id/10
+Request path: towel.html Store ID: 2 Target path: catalog/product/view/id/12</code></pre></figure>
+
+<h4 id="explanation-3">Explanation</h4>
+
+<p>The <code>Target path</code> in a URL rewrite must be specified by a unique pair of <code>Request path</code> + <code>Store ID</code>. This error reports two entries that use the same <code>Request path</code> + <code>Store ID</code> pair with two different <code>Target path</code> values.</p>
+
+<h4 id="possible-solution-1">Possible solution</h4>
+
+<p>Enable the <code>auto_resolve_urlrewrite_duplicates</code> option in your <code>config.xml</code> file.</p>
+
+<p>This configuration adds a hash-string to the conflicting records of URL reqwrites, and shows the resolution result in your command line interface.</p>
+
+<h3 id="mismatch-of-entities">Mismatch of entities</h3>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml">Mismatch of entities in the document: <span class="nt">&lt;DOCUMENT&gt;</span></code></pre></figure>
+
+<h4 id="explanation-4">Explanation</h4>
+
+<p>The error occurs during the Volume Check step. It means the Magento 2 database record count of the document is not the same as in Magento 1.</p>
+
+<p>Missing records happen when a customer places an order during migration.</p>
+
+<h4 id="solution">Solution</h4>
+
+<p>Run the Data Migration Tool in <code>Delta</code> mode to transfer incremental changes.</p>
 
 		</div>
 		<!-- /.content-wrap -->
@@ -889,14 +872,14 @@ composer require magento/data-migration-tool:2.1.2
 
 			
 			 <div class="github-link">
-				 <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/migration/migration-tool-install.md" target="_blank">
+				 <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/migration/migration-troubleshooting.md" target="_blank">
 					 Edit this page on GitHub
 				 </a>
 			 </div>
 			
 
 			<div class="new-issue">
-				<a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/migration/migration-tool-install.html" target="_blank">Give us feedback</a>
+				<a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/migration/migration-troubleshooting.html" target="_blank">Give us feedback</a>
 			</div>
 
 		</div>

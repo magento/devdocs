@@ -510,6 +510,33 @@
 
 
 								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/migration/migration-troubleshooting.html">Troubleshooting</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
 									<li class="level1 "><a class="nav-header" href="/guides/v2.0/migration/migration-migrate-after.html">After Migration</a></li>
 									
 								
@@ -734,36 +761,47 @@
 
 <h2 id="migrate-command-data">Possible consistency errors</h2>
 
-<p>When you migrate data, the Data Migration Tool verifies that tables and fields are consistent between Magento 1 and Magento 2. If they are inconsistent, you will see an error message that lists the problematic tables and fields, for example:</p>
+<p>While running, the Data Migration Tool may report inconsistencies between Magento 1 and Magento 2 databases, and display messages like this:</p>
 
-<pre><code>Source fields are not mapped. Document: &lt;document_name&gt;. Fields: &lt;field_name&gt;
-</code></pre>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml">Source documents are not mapped: <span class="nt">&lt;EXTENSION_TABLE&gt;</span></code></pre></figure>
 
-<p><strong>Possible reason for error:</strong> some database entities belong to Magento 1 extensions that do not exist in the Magento 2 database.</p>
+<p>See the <a href="/guides/v2.0/migration/migration-troubleshooting.html">Troubleshooting</a> section of this guide for more information and recommendations.</p>
 
-<p>Below are the possible ways to handle these errors.</p>
+<!--
 
-<h3 id="fix-errors-install-corresponding-magento-2-extensions">Fix errors: Install corresponding Magento 2 extensions</h3>
+When you migrate data, the Data Migration Tool verifies that tables and fields are consistent between Magento 1 and Magento 2. If they are inconsistent, you will see an error message that lists the problematic tables and fields, for example:
 
-<p>Visit <a href="https://marketplace.magento.com/">Magento Marketplace</a> to find the latest extension versions or contact your extension provider.</p>
+    Source fields are not mapped. Document: <document_name>. Fields: <field_name>
 
-<h3 id="fix-errors-ignore-entities">Fix errors: Ignore entities</h3>
+**Possible reason for error:** some database entities belong to Magento 1 extensions that do not exist in the Magento 2 database.
 
-<p>You may tell the Data Migration Tool to ignore the problematic entites.</p>
+Below are the possible ways to handle these errors.
 
-<p>To do that, add the <code>&lt;ignore&gt;</code> tag to an entity in the <code>map.xml</code> file, like this:</p>
+### Fix errors: Install corresponding Magento 2 extensions
+
+Visit [Magento Marketplace](https://marketplace.magento.com/){:target:"_blank"} to find the latest extension versions or contact your extension provider.
+
+### Fix errors: Ignore entities
+
+You may tell the Data Migration Tool to ignore the problematic entites.
+
+To do that, add the `<ignore>` tag to an entity in the `map.xml` file, like this:
+
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;ignore&gt;</span>
     <span class="nt">&lt;field&gt;</span>sales_order_address_id<span class="nt">&lt;/field&gt;</span>
 <span class="nt">&lt;/ignore&gt;</span></code></pre></figure>
 
+
 <div class="bs-callout bs-callout-warning">
     <p>Before ignoring entities, make sure you don't need the affected data in your Magento 2 store.</p>
 </div>
 
-<h3 id="verify-fixes">Verify fixes</h3>
+### Verify fixes
 
-<p>To know if the issues have been resolved successfully, run the Data Migration Tool again.</p>
+To know if the issues have been resolved successfully, run the Data Migration Tool again.
+
+-->
 
 <h2 id="next-migration-step">Next migration step</h2>
 
