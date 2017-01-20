@@ -24,6 +24,5 @@ Submissions should be Markdown but HTML is welcome also.
 | Contributor name  |  Description or subject |
 |---|---|
 | <a href="http://www.maxpronko.com/" title="Max Pronko">Max Pronko</a>  | How do I develop and maintain my custom Magento 2 extension in a separate repository  |
-| <a href="http://www.alanstorm.com/" title="Alan Storm">Alan Storm</a>  | Which PHP class should I use to read from each `app/etc/` configuration file "type"? (acl.xml, events.xml, module.xml, etc. -- excluding layout XML files)  |
 |   |   |
 
