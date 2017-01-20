@@ -69,14 +69,9 @@ To remove writable permissions to files and directories from the web server user
 		php bin/magento deploy:mode:set production
 3.	Enter the following commands:
 
-		find var vendor pub/static app/etc var/generation var/di var/view_preprocessed -type f -exec chmod u-w {} \;
-		find var vendor pub/static app/etc var/generation var/di var/view_preprocessed -type d -exec chmod u-w {} \;
+		find var vendor pub/static app/etc var/generation var/di var/view_preprocessed \( -type f -or -type d \) -exec chmod u-w {} \;
 		chmod o-rwx app/etc/env.php
 		chmod u+x bin/magento
-
-	You can optionally enter all the preceding commands as one command:
-
-		find pub/static app/etc var/generation var/di var/view_preprocessed -type f -exec chmod u-w {} \; && find pub/static app/etc var/generation var/di var/view_preprocessed -type d -exec chmod u-w {} \; && chmod o-rwx app/etc/env.php && chmod u+x bin/magento
 
 	<div class="bs-callout bs-callout-info" id="info">
   		<p>If you're a contributing developer, replace <code>vendor</code> with <code>app/code</code> in the preceding commands. (A contributing developer <a href="{{page.baseurl}}install-gde/prereq/dev_install.html">clones the Magento 2 GitHub repository</a> so they can contribute to our codebase.)</p>
@@ -167,13 +162,8 @@ To remove writable permissions to files and directories from the web server user
 		php bin/magento deploy:mode:set production
 3.	Enter the following commands as a user with `root` privileges:
 
-		find pub/static app/etc var/generation var/di var/view_preprocessed -type f -exec chmod g-w {} \;
-		find pub/static app/etc var/generation var/di var/view_preprocessed -type d -exec chmod g-w {} \;
+		find pub/static app/etc var/generation var/di var/view_preprocessed \( -type d -or -type f \) -exec chmod g-w {} \;
 		chmod o-rwx app/etc/env.php
-
-	You can optionally enter all the preceding commands as one command:
-
-		find pub/static app/etc var/generation var/di var/view_preprocessed -type f -exec chmod g-w {} \; && find pub/static app/etc var/generation var/di var/view_preprocessed -type d -exec chmod g-w {} \; && chmod o-rwx app/etc/env.php
 
 	<div class="bs-callout bs-callout-info" id="info">
   		<p>If you're a contributing developer, replace <code>vendor</code> with <code>app/code</code> in the preceding commands. (A contributing developer <a href="{{page.baseurl}}install-gde/prereq/dev_install.html">clones the Magento 2 GitHub repository</a> so they can contribute to our codebase.)</p>
@@ -186,13 +176,8 @@ To make files and directories writable so you can update components and upgrade 
 2.	Change to your Magento installation directory.
 3.	Enter the following commands:
 
-		find var vendor lib pub/static pub/media app/etc -type f -exec chmod g+w {} \;
-		find var vendor lib pub/static pub/media app/etc -type d -exec chmod g+w {} \;
+		find var vendor lib pub/static pub/media app/etc \( -type d -or -type f \) -exec chmod g+w {} \;
 		chmod o+rwx app/etc/env.php
-
-	You can optionally enter all the preceding commands as one command as follows:
-
-		find var vendor lib pub/static pub/media app/etc -type f -exec chmod g+w {} \; && find var vendor lib pub/static pub/media app/etc -type d -exec chmod g+w {} \; && chmod o+rwx app/etc/env.php
 
 	<div class="bs-callout bs-callout-info" id="info">
   		<p>If you're a contributing developer, replace <code>vendor</code> with <code>app/code</code> in the preceding commands. (A contributing developer <a href="{{page.baseurl}}install-gde/prereq/dev_install.html">clones the Magento 2 GitHub repository</a> so they can contribute to our codebase.)</p>
