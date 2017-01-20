@@ -284,22 +284,6 @@ Functions and methods must have:
   If there is no such operator, the `@return` tag must have `void` as the return value.
 * Declaration of possibly thrown exception using `@throws` tag, if the actual body of function triggers throwing an exception.
   All occurrences of `@throws` in a DocBlock must be after `@param` and `@return` (if any).
-* Motivation behind @deprecated annotation. For example:
-
-{% highlight php startinline=true %}
-/**
- * Get some object
- *
- * @deprecated Added to not break backward compatibility of the constructor signature 
- *             by injecting the new dependency directly. 
- *             The method can be removed in a future major release, when constructor signature can be changed
- * @return SomeObjectInterface
- */
-protected function getSomeObject()
-{
-    ...
-}
-{% endhighlight %}
 
 Exceptions:
 * Constructors may not have short and/or long description
@@ -604,12 +588,48 @@ A deprecated class or method is one that has been superseded and may cease to ex
  It will be retained to provide backward compatibility until next major component release.
 
 Use the `@deprecated` tag to indicate an element is to be deprecated.
-The text of the `@deprecated` tag should indicate the version the element was deprecated as well as the version it will be removed.
-If applicable, also specify what has replaced the deprecated element.
 
-To maintain backward compatibility, an element should be removed only on major revisions.
+Motivation behind the added `@deprecated` tag MUST be explained.
+`@see` tag MUST be used with reference to new implementation when code is deprecated and there is a new alternative.
 
-Use the `@see` tag to refer to the new implementation when code is deprecated.
+For example:
+
+{% highlight php startinline=true %}
+/**
+ * Get some object
+ *
+ * @deprecated Added to not break backward compatibility of the constructor signature 
+ *             by injecting the new dependency directly. 
+ *             The method can be removed in a future major release, when constructor signature can be changed
+ * @return SomeObjectInterface
+ */
+protected function getSomeObject()
+{
+    ...
+}
+
+/**
+ * Set price
+ *
+ * @deprecated Non-scoped price is not supported anymore
+ * @see setScopedPrice()
+ * @return void
+ */
+public function setPrice($price)
+{
+    ...
+}
+ 
+/**
+ * Set price for specified scope
+ *
+ * @return void
+ */
+public function setScopedPrice($price, $scopeType, $scopeId)
+{
+    ...
+}
+{% endhighlight %}
 
 ### @var inline tag
 {:#var}
