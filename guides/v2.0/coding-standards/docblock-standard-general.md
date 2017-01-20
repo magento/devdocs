@@ -275,9 +275,13 @@ class Profiler
 Functions and methods must have:
 
 * Short description
-* Long description that explains the motivation behind the implementation in such cases as:
-   * a workaround/hack is implemented. Explain why it is necessary and include any other details necessary to understand the algorithm
-   * non-obvious implementation: the implementation does not correspond to Technical Vision or other known best practices, it has complicated logic. If you were asked questions from at least one another developer about the implementation, there is something non-obvious in it, so include the explanation in the doc block's description
+* Long description that explains the motivation behind the implementation. 
+  For example:
+
+   * If a workaround or hack is implemented, explain why it is necessary and include any other details necessary to understand the algorithm.
+   * For non-obvious implementations where the implementation logic is complicated or does not correspond to the Technical Vision or other known best practices, include an explanation in the doc block's description.
+     An implementation is non-obvious if another developer has questions about it.
+
 * Declaration of all arguments (if any) using `@param` tag.
   Appropriate argument type must be specified.
 * Declaration of return type using `@return` tag.
@@ -303,9 +307,9 @@ protected function getSomeObject()
 
 Exceptions:
 * Constructors may not have short and/or long description
-* Testing methods in Unit tests may not have doc blocks if the test's method name follows the convention (test<MehtodName>)
-   * If the test doesn't follow the convention, it should have a doc block describing which method(s) is covered
-   * Non-testing methods should have doc block with description. It includes data providers and any helper methods
+* Testing methods in Unit tests may not have doc blocks if the test's method name follows the convention (test<MethodName>)
+   * If the test does not follow the convention, it should have a doc block describing the covered methods
+   * Non-testing methods should have a doc block with description. It includes data providers and any helper methods
 
 #### Things to include
 
@@ -444,21 +448,24 @@ public function deleteDirectory($path)
 {% endhighlight %}
 
 
-<h4 id="return">@return tag</h4>
+#### @return tag
+{:#return}
 
 If there is no explicit return statement in a method or function, a `@return void` should be used in the documentation.
 
 If the method returns itself, `return $this` should be used.
 
-<h4 id="inheritdoc">@inheritdoc Tag</h4>
+#### @inheritdoc tag
+{:#inheritdoc}
 
-Whenever possible `@inheritdoc` tag MUST be used for child methods, and so avoid duplication of doc blocks.
+Whenever possible the `@inheritdoc` tag MUST be used for child methods to avoid duplication of doc blocks.
 
-Though PHPDocumentor understands inheritance and uses parent doc block by default (without `@inheritdoc` tag specified), `@inheritdoc` tag helps ensure that the doc block is not missed at all.
+Even Though PHPDocumentor understands inheritance and uses the parent doc block by default (without `@inheritdoc` tag specified), including the tag helps ensure that the doc block is not missed at all.
 
 Rules for usage of the tag:
-* Use `@inheritdoc` (notice no braces around) to indicate that the entire doc block should be inherited from the parent method
-* Use inline `{@inheritdoc}` tag (with braces around) in long description to reuse parent's long description. The method MUST have its own short description
+
+* Use `@inheritdoc` (notice no braces around) to indicate that the entire doc block should be inherited from the parent method.
+* Use the inline `{@inheritdoc}` tag (with braces around) in long descriptions to reuse the parent's long description. The tagged method MUST have its own short description.
 
 **DocBlock for the Intreface**
 {% highlight php startinline=true %}
@@ -587,8 +594,10 @@ Documentation is organized with the use of namespaces.
 
 ## Other DocBlock tags
 {:#other-DocBlock-tags}
+
 ### @api tag
 {:#api}
+
 The `@api` tag indicates the code is part of the public API and is subject to the [Magento Backward Compatibility Policy](../extension-dev-guide/backward-compatibility.html).
 
 The `@api` tag can be applied to a constant, a method, or to the entire class/interface.
