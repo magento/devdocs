@@ -89,7 +89,7 @@ There are missing database records in the `parent_table` to which the `field_id`
 
 #### Possible solution
 
-Delete the records from the `child_table`, if they are no longer needed.
+Delete the records from the `child_table`, if you do not need them.
 
 To keep the records, disable the `Data Integrity Step` by modifying the Data Migration Tool's `config.xml`.
 
@@ -103,13 +103,13 @@ Request path: towel.html Store ID: 2 Target path: catalog/product/view/id/12
 
 #### Explanation
 
-The `Target path` in a URL rewrite must be specified by a unique pair of `Request path` + `Store ID`. This error reports two identical `Request path` + `Store ID` pairs, used for two different `Target paths`, which creates a conflict.
+The `Target path` in a URL rewrite must be specified by a unique pair of `Request path` + `Store ID`. This error reports two entries that use the same `Request path` + `Store ID` pair with two different `Target path` values.
 
 #### Possible solution
 
 Enable the `auto_resolve_urlrewrite_duplicates` option in your `config.xml` file.
 
-In this case, the Data Migration Tool will add a hash-string to the conflicting records of the URL reqwrite, and show the resolution result in your command line interface.
+This configuration adds a hash-string to the conflicting records of URL reqwrites, and shows the resolution result in your command line interface.
 
 ### Mismatch of entities
 
@@ -121,7 +121,7 @@ Mismatch of entities in the document: <DOCUMENT>
 
 The error occurs during the Volume Check step. It means the Magento 2 database record count of the document is not the same as in Magento 1.
 
-**Possible reason:** records may be missing because a customer has placed an order during migration.
+Missing records happen when a customer places an order during migration.
 
 #### Solution
 
