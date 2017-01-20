@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Customize checkout</title>
+	<title>Clean static files cache</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.0/howdoi/checkout/checkout_overview.html">
+	<link rel="canonical" href="//guides/v2.0/howdoi/clean_static_cache.html">
 
   <script>
     var baseUrl = "/";
@@ -49,9 +49,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/howdoi/checkout/checkout_overview.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/howdoi/clean_static_cache.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/howdoi/checkout/checkout_overview.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/howdoi/clean_static_cache.html">Magento 2.1</a></li>
 	
   </ul>
 
@@ -659,7 +659,7 @@
 
 
 								
-									<li class="level1  active "><a class="nav-header" href="/guides/v2.0/howdoi/checkout/checkout_overview.html">Customize checkout</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/howdoi/checkout/checkout_overview.html">Customize checkout</a></li>
 									
 								
 
@@ -766,7 +766,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/howdoi/clean_static_cache.html">Clean static files cache</a></li>
+									<li class="level1  active "><a class="nav-header" href="/guides/v2.0/howdoi/clean_static_cache.html">Clean static files cache</a></li>
 									
 								
 
@@ -955,7 +955,7 @@
       
 
       <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
-        <span property="name">Customize checkout</span>
+        <span property="name">Clean static files cache</span>
         <meta property="position" content="2" />
       </li>
 
@@ -967,47 +967,43 @@
 
 
 	
-	<h1 class="page-heading">Customize checkout</h1>
+	<h1 class="page-heading">Clean static files cache</h1>
 
   
 
 
 </section>
 
-			<h2 id="customize-checkout">Customize checkout</h2>
-
-<h3 id="default-checkout-overview">Default checkout overview</h3>
-
-<p>Magento checkout is implemented using the <a href="http://devdocs.magento.com/guides/v2.1/ui_comp_guide/bk-ui_comps.html">UI components</a>. 
-Out of the box, the checkout consists of two steps:</p>
+			<p>You can clean generated static view files in any of the following ways:</p>
 
 <ul>
-  <li>Shipping Information</li>
-  <li>Review and Payment Information</li>
+  <li>
+    <p>In the Magento Admin. Go to <strong>System</strong> &gt; Tools &gt; <strong>Cache Management</strong> and click <strong>Flush Static Files Cache</strong>.</p>
+  </li>
+  <li>
+    <p>Manually by clearing the <code>pub/static</code> and <code>var/view_preprocessed</code> directories and subdirectories <em>except</em> for <code>pub/static/.htaccess</code>.</p>
+  </li>
+  <li>
+    <p>Using the Magento command line.</p>
+    <ul>
+      <li>To clear the <code>pub/static</code> directory of all files except <code>.htaccess</code> (which is a hidden file), enter the following command:</li>
+    </ul>
+
+    <p><code> rm -R pub/static/*</code></p>
+
+    <ul>
+      <li>
+        <p>Several commands support an optional parameter <code>--clear-static-content</code>, which cleans generated static view files:</p>
+
+        <ul>
+          <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-enable.html"><code>magento module:enable</code> and <code>magento module:disable</code></a></li>
+          <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-theme-uninstall.html"><code>magento theme:uninstall</code></a></li>
+          <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-uninstall-mods.html"><code>magento module:uninstall</code></a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
 </ul>
-
-<p>The checkout totals and the corresponding side-bar are only displayed after the first step is completed.</p>
-
-<p>The only exception is checkout of virtual and/or downloadable products: if there are only these  types of products in the shopping cart, checkout is automatically transformed to one-step procedure, because shipping information is not required.</p>
-
-<h3 id="list-of-described-customizations">List of described customizations</h3>
-<p>You can customize the default checkout in many ways. Here the following customizations are described:</p>
-
-<ul>
-  <li><a href="/guides/v2.0/howdoi/checkout/checkout_new_step.html">Add a new checkout step</a></li>
-  <li><a href="/guides/v2.0/howdoi/checkout/checkout_customize.html">Customize the view of an existing step</a></li>
-  <li><a href="/guides/v2.0/howdoi/checkout/checkout_payment.html">Add a custom payment method to checkout</a></li>
-  <li><a href="/guides/v2.0/howdoi/checkout/checkout_order.html">Add custom validations before order placement</a></li>
-  <li><a href="/guides/v2.0/howdoi/checkout/checkout_carrier.html">Add custom shipping carrier validations</a></li>
-  <li><a href="/guides/v2.0/howdoi/checkout/checkout_zip.html">Add custom input mask for ZIP code</a></li>
-  <li><a href="/guides/v2.0/howdoi/checkout/checkout_edit_form.html">Add a custom template for a form field on Checkout page</a></li>
-  <li><a href="/guides/v2.0/howdoi/checkout/checkout_form.html">Add a new input form to checkout</a></li>
-  <li><a href="/guides/v2.0/howdoi/checkout/checkout_new_field.html">Add a new field in address form</a></li>
-  <li><a href="/guides/v2.0/howdoi/checkout/checkout_address.html">Add custom shipping address renderer</a></li>
-</ul>
-
-<p>For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code, add your customizations in a custom module.</p>
-
 
 		</div>
 		<!-- /.content-wrap -->
@@ -1018,14 +1014,14 @@ Out of the box, the checkout consists of two steps:</p>
 
 			
 			 <div class="github-link">
-				 <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/howdoi/checkout/checkout_overview.md" target="_blank">
+				 <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/howdoi/clean_static_cache.md" target="_blank">
 					 Edit this page on GitHub
 				 </a>
 			 </div>
 			
 
 			<div class="new-issue">
-				<a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.0/howdoi/checkout/checkout_overview.html" target="_blank">Give us feedback</a>
+				<a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.0/howdoi/clean_static_cache.html" target="_blank">Give us feedback</a>
 			</div>
 
 		</div>
