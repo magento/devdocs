@@ -824,21 +824,7 @@ Appropriate argument type must be specified.</li>
 If there is no such operator, the <code>@return</code> tag must have <code>void</code> as the return value.</li>
   <li>Declaration of possibly thrown exception using <code>@throws</code> tag, if the actual body of function triggers throwing an exception.
 All occurrences of <code>@throws</code> in a DocBlock must be after <code>@param</code> and <code>@return</code> (if any).</li>
-  <li>Motivation behind @deprecated annotation. For example:</li>
 </ul>
-
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
-<span class="sd"> * Get some object</span>
-<span class="sd"> *</span>
-<span class="sd"> * @deprecated Added to not break backward compatibility of the constructor signature </span>
-<span class="sd"> *             by injecting the new dependency directly. </span>
-<span class="sd"> *             The method can be removed in a future major release, when constructor signature can be changed</span>
-<span class="sd"> * @return SomeObjectInterface</span>
-<span class="sd"> */</span>
-<span class="k">protected</span> <span class="k">function</span> <span class="nf">getSomeObject</span><span class="p">()</span>
-<span class="p">{</span>
-    <span class="o">...</span>
-<span class="p">}</span></code></pre></figure>
 
 <p>Exceptions:
 * Constructors may not have short and/or long description
@@ -1133,13 +1119,47 @@ You do not need to annotate each method individually.</p>
 <p>A deprecated class or method is one that has been superseded and may cease to exist in the future.
  It will be retained to provide backward compatibility until next major component release.</p>
 
-<p>Use the <code>@deprecated</code> tag to indicate an element is to be deprecated.
-The text of the <code>@deprecated</code> tag should indicate the version the element was deprecated as well as the version it will be removed.
-If applicable, also specify what has replaced the deprecated element.</p>
+<p>Use the <code>@deprecated</code> tag to indicate an element is to be deprecated.</p>
 
-<p>To maintain backward compatibility, an element should be removed only on major revisions.</p>
+<p>Motivation behind the added <code>@deprecated</code> tag MUST be explained.
+<code>@see</code> tag MUST be used with reference to new implementation when code is deprecated and there is a new alternative.</p>
 
-<p>Use the <code>@see</code> tag to refer to the new implementation when code is deprecated.</p>
+<p>For example:</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
+<span class="sd"> * Get some object</span>
+<span class="sd"> *</span>
+<span class="sd"> * @deprecated Added to not break backward compatibility of the constructor signature </span>
+<span class="sd"> *             by injecting the new dependency directly. </span>
+<span class="sd"> *             The method can be removed in a future major release, when constructor signature can be changed</span>
+<span class="sd"> * @return SomeObjectInterface</span>
+<span class="sd"> */</span>
+<span class="k">protected</span> <span class="k">function</span> <span class="nf">getSomeObject</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="o">...</span>
+<span class="p">}</span>
+
+<span class="sd">/**</span>
+<span class="sd"> * Set price</span>
+<span class="sd"> *</span>
+<span class="sd"> * @deprecated Non-scoped price is not supported anymore</span>
+<span class="sd"> * @see setScopedPrice()</span>
+<span class="sd"> * @return void</span>
+<span class="sd"> */</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">setPrice</span><span class="p">(</span><span class="nv">$price</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="o">...</span>
+<span class="p">}</span>
+ 
+<span class="sd">/**</span>
+<span class="sd"> * Set price for specified scope</span>
+<span class="sd"> *</span>
+<span class="sd"> * @return void</span>
+<span class="sd"> */</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">setScopedPrice</span><span class="p">(</span><span class="nv">$price</span><span class="p">,</span> <span class="nv">$scopeType</span><span class="p">,</span> <span class="nv">$scopeId</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="o">...</span>
+<span class="p">}</span></code></pre></figure>
 
 <h3 id="var">@var inline tag</h3>
 
