@@ -1088,6 +1088,10 @@ composer update
 rm -rf &lt;Magento install dir&gt;/var/page_cache/*
 rm -rf &lt;Magento install dir&gt;/var/generation/* 
 </code></pre>
+
+    <div class="bs-callout bs-callout-info">
+      <p>If you use a cache storage other than filesystem (e.g., Redis, Memcached, etc.) you need to manually clear the cache there too.</p>
+    </div>
   </li>
   <li>
     <p>Update the database schema and data:</p>
