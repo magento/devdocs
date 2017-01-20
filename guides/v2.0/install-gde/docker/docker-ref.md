@@ -35,7 +35,7 @@ This section discusses prerequisites you must complete before you install the Ma
 ### Docker prerequisites
 Before you continue, make sure you install and configure the following:
 
-*	Mac OS<!--  and Windows -->: Install the [Docker software](https://www.docker.com/products/docker-toolbox){:target="_blank"}
+*	Mac OS and Windows: Install the [Docker software](https://www.docker.com/products/docker-toolbox){:target="_blank"}
 *	Windows 10 only: 
 
     *   You must enable Hyper-V
@@ -48,8 +48,8 @@ Before you continue, make sure you install and configure the following:
     You cannot work with Docker, VirtualBox, or Vagrant simultaneously on Windows 10.
     </div>
 
-#### Set up Docker file sharing
-For the Magento application to work, the application must be installed in a directory that Docker uses for file sharing.
+#### Set up Docker file sharing {#devbox-docker-file-share}
+For the Magento application to work, the application must be installed in a folder that Docker uses for file sharing.
 
 **Windows**
 
@@ -72,8 +72,23 @@ To set up Docker file sharing on the Mac OS:
 2.  From the pop-up menu, click **Preferences**. 
 3.  In the Preferences dialog box, click the **File Sharing** tab. 
 
-    This tab page displays all shared directories that Docker currently knows about. Make sure you install Magento in a directory listed on this tab page.
+    This tab page displays all shared directories that Docker currently knows about. Make sure you install Magento in a folder listed on this tab page.
 5.  To add additional directories, follow the prompts on your screen or consult Docker documentation.
+
+{% endcollapsibleh2 %}
+
+<p id="devbox-fileshare"></p>{% collapsibleh2 How DevBox uses file sharing %}
+
+DevBox runs in a Docker container, which is also referred to as the _guest operating system_. The Magento files and folders are located on your _host operating system_ (Windows or Mac OS). To facilitate development, Magento files and directories are shared by the guest and host operating systems. 
+
+When you make a change to files, the changes are automatically synchronized, regardless of which files you change. (In other words, if you change files on the host operating system, those files are synchronized with the guest operating system and vice versa.)
+
+Use the following guidelines:
+
+*   New Magento DevBox installations: Files are shared in the `shared/webroot` folder relative to your Magento installation root folder.
+
+    The Magento installation root folder is typically a subfolder of the folder in which you extracted the `.zip` file you download from Magento.
+*   If you use an existing Magento installation with DevBox: Files are shared in the location to which you downloaded Magento.
 
 {% endcollapsibleh2 %}
 
@@ -83,13 +98,13 @@ To set up Docker file sharing on the Mac OS:
 
 {% endcollapsibleh2 %}
 
-<p id="devbox-download">{% collapsibleh2 How to download Magento code %}
+<p id="devbox-download"></p>{% collapsibleh2 How to download Magento code %}
 
 This section applies to you if you use an existing Magento installation with DevBox. This means you first download the Magento software using either [Composer]({{ page.baseurl }}install-gde/prereq/integrator_install.html) or a [compressed archive]({{ page.baseurl }}install-gde/prereq/zip_install.html) but you don't _install_ the software.
 
 Downloading a compressed archive has potential issues on the Mac OS, which extracts known compressed file types like `.zip` to a folder. The folder contains files that have to be copied in a particular way; otherwise, the Magento DevBox doesn't perform properly.
 
-If you download a compressed archive on the Mac OS, you must make sure to copy _all_ of the Magento code to an empty folder. In particular, you must copy all Apache [distributed configuration files](http://httpd.apache.org/docs/current/howto/htaccess.html){:target="_blank"}, named `.htaccess`, to the folder. `.htaccess` files are located in several Magento directories, including in the root directory.
+If you download a compressed archive on the Mac OS, you must make sure to copy _all_ of the Magento code to an empty folder. In particular, you must copy all Apache [distributed configuration files](http://httpd.apache.org/docs/current/howto/htaccess.html){:target="_blank"}, named `.htaccess`, to the folder. `.htaccess` files are located in several Magento directories, including in the root folder.
 
 Failure to copy `.htaccess` files causes the Magento application to function incorrectly because URL redirects won't work.
 
@@ -99,7 +114,7 @@ When you download a file on the Mac OS, the file is usually located in the `/Use
 /Users/&lt;name>/Downloads/&lt;Magento folder name>
 </pre>
 
-To make sure your existing Magento installation works it with DevBox, create an empty directory and copy all of the contents of the Magento compressed file to it as follows:
+To make sure your existing Magento installation works it with DevBox, create an empty folder and copy all of the contents of the Magento compressed file to it as follows:
 
 <pre class="no-copy">
 mkdir -p &lt;path>
@@ -109,7 +124,7 @@ cp -r /Users/&lt;name>/Downloads/&lt;Magento folder name> &lt;path></pre>
 Don't use arguments like `/*` in the `cp` command because hidden files like `.htaccess` won't copy.
 </div>
 
-For example, to copy Magento CE 2.1.3 code to a new directory named `/Users/me/Applications/Magento`, use the following commands:
+For example, to copy Magento CE 2.1.3 code to a new folder named `/Users/me/Applications/Magento`, use the following commands:
 
     mkdir -p /Users/me/Applications/Magento
     cp -r /Users/me/Downloads/Magento-CE-2_1_3_zip-2016-12-16-06-04-03 /Users/me/Applications/Magento
@@ -236,6 +251,17 @@ To provide you more control over your Magento installation, we enable you to cho
 
 {% endcollapsibleh2 %}
 
+## After the DevBox wizard completes
+After you finish the DevBox wizard, you're prompted to download a `.zip` file to any folder on your system. When you extract the `.zip` file, your operating system might create another folder.
+
+A Windows example follows:
+
+    C:\magento\build-18c4e4d3c5a541f37e9cffd35f1bf74e\build-18c4e4d3c5a541f37e9cffd35f1bf74e
+
+In the preceding example, the user downloaded `build-18c4e4d3c5a541f37e9cffd35f1bf74e.zip` to the `C:\magento` folder. Extracting the `.zip` created a subfolder. The installation script you must run is located in the subfolder.
+
 <div class="bs-callout bs-callout-info" markdown="1">
-When you run the installation script on Windows, an additional command window opens for Unison sync. Do not close the Unison sync window; otherwise, files you change won't be added to the Magento docroot.
+When you run the installation script on Windows, an additional command window opens for Unison sync. You don't normally need to interact with this command window.
+
+Do not close the Unison sync window; otherwise, files you change won't be added to the Magento docroot.
 </div>
