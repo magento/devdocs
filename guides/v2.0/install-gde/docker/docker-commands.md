@@ -80,6 +80,7 @@ To populate the storefront and cache, and run cron to run every time Magento sta
 | Restart all containers | `docker-compose restart` | 
 | Start all Magento containers | `docker-compose start` |
 | Stop all Magento containers | `docker-compose stop` |
+| Restart all Magento containers | `docker-compose restart` |
 | Remove all Magento containers | `docker-compose kill` | 
 | Run a bash shell in a container | `docker-compose exec --user=magento2 <service> /bin/bash` |
 
