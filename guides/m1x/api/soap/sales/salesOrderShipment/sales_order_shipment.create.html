@@ -552,15 +552,11 @@
 $session = $proxy-&gt;login('apiUser', 'apiKey');
 
 $orderIncrementId = '200000006';
+$orderItemId = 3;
+$qty = 5;
 $itemsQty = array(
-    array(
-        'order_item_id' => 3,
-        'qty' => 3
-    ),
-    array(
-        'order_item_id' => 4,
-        'qty' => 5
-    ));
+	$orderItemId => $qty,
+    );
 
 $result = $proxy-&gt;call(
     $session,
