@@ -15,14 +15,14 @@ github_link: cloud/live/sens-data-over.md
 In version 2.1.4, Magento Enterprise Cloud Edition improves how you manage your configuration by providing:
 
 *	A new method to manage sensitive data (such as payment gateway passwords).
-*	An improved method to manage system-specific configuration data (such as store locale settings and file optimization settings) in a new configuration file, `app/etc/config.local.php`, which is in source control.
+*	An improved method to manage system configuration data (such as store locale settings and file optimization settings) in a new configuration file, `app/etc/config.local.php`, which is in source control.
 
-We help you protect sensitive data and make it easy to manage system-specific data as follows:
+We help you protect sensitive data and make it easy to manage system data as follows:
 
 *	In your [staging]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-stage) and [production]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-prod) systems, you manage sensitive data using environment variables. 
 
 	You can change sensitive variables using the Magento Enterprise Cloud Edition [Web Interface]({{ page.baseurl }}cloud/project/project-webint-basic.html). 
-*	System-specific values related to static content deployment (for example, file optimization) are stored in a new configuration file, `app/etc/config.local.php`, which is managed in source control.
+*	System values related to static content deployment (for example, file optimization) are stored in a new configuration file, `app/etc/config.local.php`, which is managed in source control.
 
 	Sensitive values are _not_ stored in `app/etc/config.local.php`.
 
@@ -37,7 +37,7 @@ Magento's store configuration is stored located in the database and there is one
 
 Starting with version 2.1.4, we provide the following:
 
-*	System-specific store configuration values are specified in a new configuration file, `app/etc/config.local.php`, which is in source control.
+*	Store configuration values are specified in a new configuration file, `app/etc/config.local.php`, which is in source control.
 
 	Using `config.local.php`, you can, for example, disable file optimization in your integration system (where you are developing and testing) and enable file optimization in staging and production. 
 
@@ -47,10 +47,10 @@ Starting with version 2.1.4, we provide the following:
 
 The following sections provide more detail.
 
-### Manage system-specific settings {#cloud-config-specific-over}
-System-specific settings refer to the configuration in the Magento Admin in **Stores** > Settings > **Configuration**. A list of settings can be found in [System-specific settings reference]({{ page.baseurl }}cloud/live/sens-data-system-vars.html).
+### Manage system settings {#cloud-config-specific-over}
+System settings refer to the configuration in the Magento Admin in **Stores** > Settings > **Configuration**. A list of settings can be found in [System settings reference]({{ page.baseurl }}cloud/live/sens-data-system-vars.html).
 
-#### How we set system-specific values
+#### How we set system values
 In each of your Magento Enterprise Cloud Edition systems (integration, staging, and production), you have the option of overriding certain configuration settings:
 
 *	Some settings, such as the search engine and caching system, might be the same across all systems
@@ -58,11 +58,11 @@ In each of your Magento Enterprise Cloud Edition systems (integration, staging, 
 *	Sensitive settings, such as payment processor settings, are set using environment variables
 
 	<div class="bs-callout bs-callout-info" markdown="1">
-	*	You can set _any_ value using environment variables but we emphasize sensitive values for obvious reasons. For a list of all variables you can set, see [System-specific settings reference]({{ page.baseurl }}cloud/live/sens-data-system-vars.html).
-	*	We assume system-specific settings are the same in staging and production. Sensitive settings might be different.
+	*	You can set _any_ value using environment variables but we emphasize sensitive values for obvious reasons. For a list of all variables you can set, see [System settings reference]({{ page.baseurl }}cloud/live/sens-data-system-vars.html).
+	*	We assume system settings are the same in staging and production. Sensitive settings might be different.
 	</div>
 
-To enable you to set system-specific settings, we use the following override scheme.
+To enable you to set system settings, we use the following override scheme.
 
 ![How configuration variable values are determined]({{ site.baseurl }}common/images/cloud_vars_flow-diagram.png){:width="550px"}
 
@@ -78,7 +78,7 @@ As the diagram shows, we get configuration values in the following order:
 
 If no value exists in any of those sources, we use either the default value or NULL.
 
-For an example of how this works, see [Manage system-specific settings]({{ page.baseurl }}cloud/live/sens-data-initial.html).
+For an example of how this works, see [Manage system settings]({{ page.baseurl }}cloud/live/sens-data-initial.html).
 
 #### Recommended procedure to manage your settings {#cloud-config-specific-recomm}
 Managing store configuration is a complex task that's mostly up to you. What locales do you want to use? What custom themes do you need? Only you can determine the answers to those questions.
@@ -109,11 +109,7 @@ The following procedure is required because there is no Git user on your integra
 4.	Add `config.local.php` to Git (again, in the `master` branch).
 5.	Push `config.local.php` to your integration server.
 
-You generate `config.local.php` using the command `magento app:config:scd-dump`. This command populates `config.local.php` with the minimum values necessary for static content deployment. In version 2.1.4, we moved static file deployment from the deploy phase to the build phase to optimize deployment time.
-
-<div class="bs-callout bs-callout-info" markdown="1">
-There is a similar command, `magento app:config:dump`, that is not supported at this time. 
-</div>
+You generate `config.local.php` using the command `magento app:config:dump`. This command populates `config.local.php` with all system configuration parameters _except_ sensitive values.
 
 **Step C**. Magento Enterprise Cloud Edition automatically deploys the settings to your integration server.
 
@@ -128,12 +124,12 @@ There is a similar command, `magento app:config:dump`, that is not supported at 
 After you've configured the integration server and tested it thoroughly, see [Overview of staging and production]({{ page.baseurl }}cloud/live/stage-prod-over.html) to start the process of migrating to a staging or production system.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-We assume system-specific settings are the same in staging and production. Only sensitive configuration values should change in those systems and you manage them using environment variables.
+We assume system settings are the same in staging and production. Only sensitive configuration values should change in those systems and you manage them using environment variables.
 
-If you choose to use different system-specific settings in staging and production, you can manually edit `config.local.php`, but that is beyond scope of this guide.
+If you choose to use different system settings in staging and production, you can manually edit `config.local.php`, but that is beyond scope of this guide.
 </div>
 
 #### Next steps
-*	[System-specific settings reference]({{ page.baseurl }}cloud/live/sens-data-system-vars.html)
-*	[Manage system-specific settings]({{ page.baseurl }}cloud/live/sens-data-initial.html)
+*	[System settings reference]({{ page.baseurl }}cloud/live/sens-data-system-vars.html)
+*	[Manage system settings]({{ page.baseurl }}cloud/live/sens-data-initial.html)
 *	[Manage sensitive configuration values]({{ page.baseurl }}cloud/live/sens-data-mg-sens.html)

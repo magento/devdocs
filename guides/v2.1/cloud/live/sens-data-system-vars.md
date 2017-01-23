@@ -2,8 +2,8 @@
 layout: default
 group: cloud
 subgroup: 40_live
-title: System-specific settings reference
-menu_title: System-specific settings reference
+title: System settings reference
+menu_title: System settings reference
 menu_order: 12
 menu_node: 
 level3_menu_node: level3child
@@ -12,9 +12,9 @@ version: 2.1
 github_link: cloud/live/sens-data-system-vars.md
 ---
 
-This topic discusses how to find and set the system-specific settings we include in `config.local.php` in version 2.1.4. You can set variable values per scope (global, website, store, or store view). For example, you could set the locale used in a particular website.
+This topic discusses how to find and set the system settings we include in `config.local.php` in version 2.1.4. You can set variable values per scope (global, website, store, or store view). For example, you could set the locale used in a particular website.
 
-The general format of system-specific variables follows:
+The general format of system variables follows:
 
 <pre class="no-copy">&lt;SCOPE>__&lt;SYSTEM__VARIABLE></pre>
 
@@ -42,7 +42,7 @@ The general format of system-specific variables follows:
 
 <p id="cloud-system-vars-scopes"></p>{% collapsibleh2 Step 1: Find the scope value %}
 
-This section discusses how you can find and set system-specific configuration values per _scope_ (store, store view, or website). To set default global scope variables, see [Step 2: Set system variables](#cloud-system-vars-sys).
+This section discusses how you can find and set system configuration values per _scope_ (store, store view, or website). To set default global scope variables, see [Step 2: Set system variables](#cloud-system-vars-sys).
 
 Scope values come from the `store`, `store_group`, and `store_website` tables.
 
@@ -59,7 +59,7 @@ How to read the table:
 	Values before the comma are paths in the Admin navigation. Values after the comma are options in the right pane.
 *	`Variable name` column is the name of the corresponding environment variable.
 
-	You have the option of specifying system-specific values for these configuration parameters as environment variables if you wish.
+	You have the option of specifying system values for these configuration parameters as environment variables if you wish.
 
 	*	A variable name is always ALL CAPS
 	*	Start a variable name with `CONFIG__` (note two underscore characters)
@@ -148,7 +148,7 @@ This section shows some sample variables.
 	CONFIG__STORES__WEBSITE__FRENCH__GENERAL__LOCALE__CODE
 
 #### Next step
-[Manage system-specific settings]({{ page.baseurl }}cloud/live/sens-data-initial.html)
+[Manage system settings]({{ page.baseurl }}cloud/live/sens-data-initial.html)
 
 #### Related information
 *	[Magento User Guide discussion of scope](http://docs.magento.com/m2/ce/user_guide/configuration/scope.html){:target="_blank"}
