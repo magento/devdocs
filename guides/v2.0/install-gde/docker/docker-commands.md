@@ -1,11 +1,11 @@
 ---
 layout: default
 group: install-dock
-subgroup: 01_over
+subgroup: 500_comm
 title: Common Docker commands
 menu_title: Common Docker commands
-menu_node: 
-menu_order: 10
+menu_node: parent
+menu_order: 500
 version: 2.0
 github_link: install-gde/docker/docker-commands.md
 ---
@@ -80,6 +80,7 @@ To populate the storefront and cache, and run cron to run every time Magento sta
 | Restart all containers | `docker-compose restart` | 
 | Start all Magento containers | `docker-compose start` |
 | Stop all Magento containers | `docker-compose stop` |
+| Restart all Magento containers | `docker-compose restart` |
 | Remove all Magento containers | `docker-compose kill` | 
 | Run a bash shell in a container | `docker-compose exec --user=magento2 <service> /bin/bash` |
 

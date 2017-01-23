@@ -1,11 +1,11 @@
 ---
 layout: default
 group: install-dock
-subgroup: 01_over
+subgroup: 100_trouble
 title: Troubleshoot issues with Magento DevBox
 menu_title: Troubleshoot issues with Magento DevBox
-menu_node: 
-menu_order: 5
+menu_node: parent
+menu_order: 1
 version: 2.0
 github_link: install-gde/docker/docker-trouble.md
 ---
