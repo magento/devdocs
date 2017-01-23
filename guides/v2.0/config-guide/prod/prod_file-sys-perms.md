@@ -17,9 +17,9 @@ This topic focuses on Magento development and production systems. If you're inst
 
 The sections that follow discuss requirements for one or two Magento file system owners. That means:
 
-*	One user:  Typically, shared hosting providers enable you to log in to the server as one user. This user can log in, transfer files using FTP, and this user also runs the web server.
+*	One user: Typically necessary on shared hosting providers, which allow you to access only one user on the server This user can log in, transfer files using FTP, and this user also runs the web server.
 
-*	Two users: You must have two users if you *cannot* log in to the server as, or switch to, the web server user. This type of setup is typical in private hosting or if you have your own Magento server.
+*	Two users: We recommend two users if you run your own Magento server: one that to transfer files and run command-line utilities, and a separate user for the web server software. When possible, this is preferable because it's more secure.
 
 	Instead, you have separate users:
 
@@ -172,10 +172,9 @@ To make files and directories writable so you can update components and upgrade 
 
 1.	Log in to your Magento server.
 2.	Change to your Magento installation directory.
-3.	Enter the following commands:
+3.	Enter the following command:
 
-		find var vendor lib pub/static pub/media app/etc \( -type d -or -type f \) -exec chmod g+w {} \;
-		chmod o+rwx app/etc/env.php
+		find var vendor lib pub/static pub/media app/etc \( -type d -or -type f \) -exec chmod g+w {} \; && chmod o+rwx app/etc/env.php
 
 	<div class="bs-callout bs-callout-info" id="info" markdown="1">
   	If you're a contributing developer, replace `vendor` with `app/code` in the preceding commands. (A contributing developer <a href="{{page.baseurl}}install-gde/prereq/dev_install.html">clones the Magento 2 GitHub repository</a> so they can contribute to our codebase.)
