@@ -68,11 +68,9 @@ To remove writable permissions to files and directories from the web server user
 3.	Enter the following command to change to production mode:
 
 		php bin/magento deploy:mode:set production
-3.	Enter the following commands:
+3.	Enter the following command:
 
-		find var vendor pub/static app/etc var/generation var/di var/view_preprocessed \( -type f -or -type d \) -exec chmod u-w {} \;
-		chmod o-rwx app/etc/env.php
-		chmod u+x bin/magento
+		find var vendor pub/static app/etc var/generation var/di var/view_preprocessed \( -type f -or -type d \) -exec chmod u-w {} \; && chmod o-rwx app/etc/env.php && chmod u+x bin/magento
 
 	<div class="bs-callout bs-callout-info" id="info">
   		<p>If you're a contributing developer, replace <code>vendor</code> with <code>app/code</code> in the preceding commands. (A contributing developer <a href="{{page.baseurl}}install-gde/prereq/dev_install.html">clones the Magento 2 GitHub repository</a> so they can contribute to our codebase.)</p>
@@ -124,8 +122,8 @@ Files in the following directories must be writable by both users in developer a
 
 Set the [`setgid`](http://linuxg.net/how-to-set-the-setuid-and-setgid-bit-for-files-in-linux-and-unix/){:target="_blank"} bit on directories so permissions always inherit from the parent directory. 
 
-<div class="bs-callout bs-callout-info" id="info">
- 	<p><code>setgid</code> applies to directories only, <em>not</em> to files.</p>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+`setgid` applies to directories only, _not_ to files.
 </div>
 
 In addition, the directories should be writable by the web server group. Because content might already exist in these directories, add the permissions recursively.
@@ -161,10 +159,9 @@ To remove writable permissions to files and directories from the web server user
 3.	As the Magento file system owner, enter the following command to change to production mode:
 
 		php bin/magento deploy:mode:set production
-3.	Enter the following commands as a user with `root` privileges:
+3.	Enter the following command as a user with `root` privileges:
 
-		find pub/static app/etc var/generation var/di var/view_preprocessed \( -type d -or -type f \) -exec chmod g-w {} \;
-		chmod o-rwx app/etc/env.php
+		find pub/static app/etc var/generation var/di var/view_preprocessed \( -type d -or -type f \) -exec chmod g-w {} \; && chmod o-rwx app/etc/env.php
 
 	<div class="bs-callout bs-callout-info" id="info">
   		<p>If you're a contributing developer, replace <code>vendor</code> with <code>app/code</code> in the preceding commands. (A contributing developer <a href="{{page.baseurl}}install-gde/prereq/dev_install.html">clones the Magento 2 GitHub repository</a> so they can contribute to our codebase.)</p>
@@ -180,8 +177,8 @@ To make files and directories writable so you can update components and upgrade 
 		find var vendor lib pub/static pub/media app/etc \( -type d -or -type f \) -exec chmod g+w {} \;
 		chmod o+rwx app/etc/env.php
 
-	<div class="bs-callout bs-callout-info" id="info">
-  		<p>If you're a contributing developer, replace <code>vendor</code> with <code>app/code</code> in the preceding commands. (A contributing developer <a href="{{page.baseurl}}install-gde/prereq/dev_install.html">clones the Magento 2 GitHub repository</a> so they can contribute to our codebase.)</p>
+	<div class="bs-callout bs-callout-info" id="info" markdown="1">
+  	If you're a contributing developer, replace `vendor` with `app/code` in the preceding commands. (A contributing developer <a href="{{page.baseurl}}install-gde/prereq/dev_install.html">clones the Magento 2 GitHub repository</a> so they can contribute to our codebase.)
 	</div>
 {% endcollapsibleh2 %}
 
