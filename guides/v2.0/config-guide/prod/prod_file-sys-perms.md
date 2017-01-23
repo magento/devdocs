@@ -27,9 +27,10 @@ The sections that follow discuss requirements for one or two Magento file system
 
 	*	A *command-line user*, which is a local user account you can use to log in to the server. This user runs Magento cron jobs and command-line utilities.
 
-## Tasks for one Magento file system owner {#mage-owner-one}
-{% collapsible Click to show/hide content %}
+<p id="mage-owner-one"></p>{% collapsibleh2 Production file system ownership for shared hosting (one user) %}
 To use the one-owner setup, you must log in to your Magento server as the same user that runs the web server. This is typical for shared hosting.
+
+Because having one file system owner is less secure, we recommend you deploy Magento in production on a private server instead of on shared hosting, if possible.
 
 ### Set up one owner for default or developer mode {#mage-owner-one-devel}
 In default or developer mode, the following directories must be writable by the user:
@@ -67,16 +68,9 @@ To remove writable permissions to files and directories from the web server user
 3.	Enter the following command to change to production mode:
 
 		php bin/magento deploy:mode:set production
-3.	Enter the following commands:
+3.	Enter the following command:
 
-		find var vendor pub/static app/etc var/generation var/di var/view_preprocessed -type f -exec chmod u-w {} \;
-		find var vendor pub/static app/etc var/generation var/di var/view_preprocessed -type d -exec chmod u-w {} \;
-		chmod o-rwx app/etc/env.php
-		chmod u+x bin/magento
-
-	You can optionally enter all the preceding commands as one command:
-
-		find pub/static app/etc var/generation var/di var/view_preprocessed -type f -exec chmod u-w {} \; && find pub/static app/etc var/generation var/di var/view_preprocessed -type d -exec chmod u-w {} \; && chmod o-rwx app/etc/env.php && chmod u+x bin/magento
+		find var vendor pub/static app/etc var/generation var/di var/view_preprocessed \( -type f -or -type d \) -exec chmod u-w {} \; && chmod o-rwx app/etc/env.php && chmod u+x bin/magento
 
 	<div class="bs-callout bs-callout-info" id="info">
   		<p>If you're a contributing developer, replace <code>vendor</code> with <code>app/code</code> in the preceding commands. (A contributing developer <a href="{{page.baseurl}}install-gde/prereq/dev_install.html">clones the Magento 2 GitHub repository</a> so they can contribute to our codebase.)</p>
@@ -91,13 +85,13 @@ To make files and directories writable so you can update components and upgrade 
 
 		chmod -R u+w .
 		
-	<div class="bs-callout bs-callout-info" id="info">
-  		<p>If you're a contributing developer, replace <code>vendor</code> with <code>app/code</code> in the preceding commands. (A contributing developer <a href="{{page.baseurl}}install-gde/prereq/dev_install.html">clones the Magento 2 GitHub repository</a> so they can contribute to our codebase.)</p>
+	<div class="bs-callout bs-callout-info" id="info" markdown="1">
+  	If you're a contributing developer, replace `vendor` with `app/code` in the preceding commands. (A contributing developer <a href="{{page.baseurl}}install-gde/prereq/dev_install.html">clones the Magento 2 GitHub repository</a> so they can contribute to our codebase.)
 	</div>
-{% endcollapsible %}
 
-## Tasks for two Magento file system owners {#mage-owner-two}
-{% collapsible Click to show/hide content %}
+{% endcollapsibleh2 %}
+
+<p id="mage-owner-two"></p>{% collapsibleh2 Production file system ownership for private hosting (two users) %}
 If you use your own server (including a hosting provider's private server setup), there are two users:
 
 *	The web server user, which runs the Magento Admin (including the Setup Wizard) and storefront.
@@ -107,11 +101,11 @@ If you use your own server (including a hosting provider's private server setup)
 
 	Magento uses this user to run Magento CLI commands and cron.
 
-	<div class="bs-callout bs-callout-info" id="info">
-		<p>The command-line user is also referred to as the <em>Magento file system owner</em>.</p>
+	<div class="bs-callout bs-callout-info" id="info" markdown="1">
+	The command-line user is also referred to as the _Magento file system owner_.
 	</div>
 
-Because these users require access to the same files, we recommend you create a [shared group]({{page.baseurl}}install-gde/prereq/file-system-perms.html#mage-owner-about-group) to which they both belong.
+Because these users require access to the same files, we recommend you create a [shared group]({{page.baseurl}}install-gde/prereq/file-system-perms.html#mage-owner-about-group) to which they both belong. The following procedures assume you have already done this.
 
 See one of the following sections:
 
@@ -128,8 +122,8 @@ Files in the following directories must be writable by both users in developer a
 
 Set the [`setgid`](http://linuxg.net/how-to-set-the-setuid-and-setgid-bit-for-files-in-linux-and-unix/){:target="_blank"} bit on directories so permissions always inherit from the parent directory. 
 
-<div class="bs-callout bs-callout-info" id="info">
- 	<p><code>setgid</code> applies to directories only, <em>not</em> to files.</p>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+`setgid` applies to directories only, _not_ to files.
 </div>
 
 In addition, the directories should be writable by the web server group. Because content might already exist in these directories, add the permissions recursively.
@@ -165,15 +159,9 @@ To remove writable permissions to files and directories from the web server user
 3.	As the Magento file system owner, enter the following command to change to production mode:
 
 		php bin/magento deploy:mode:set production
-3.	Enter the following commands as a user with `root` privileges:
+3.	Enter the following command as a user with `root` privileges:
 
-		find pub/static app/etc var/generation var/di var/view_preprocessed -type f -exec chmod g-w {} \;
-		find pub/static app/etc var/generation var/di var/view_preprocessed -type d -exec chmod g-w {} \;
-		chmod o-rwx app/etc/env.php
-
-	You can optionally enter all the preceding commands as one command:
-
-		find pub/static app/etc var/generation var/di var/view_preprocessed -type f -exec chmod g-w {} \; && find pub/static app/etc var/generation var/di var/view_preprocessed -type d -exec chmod g-w {} \; && chmod o-rwx app/etc/env.php
+		find pub/static app/etc var/generation var/di var/view_preprocessed \( -type d -or -type f \) -exec chmod g-w {} \; && chmod o-rwx app/etc/env.php
 
 	<div class="bs-callout bs-callout-info" id="info">
   		<p>If you're a contributing developer, replace <code>vendor</code> with <code>app/code</code> in the preceding commands. (A contributing developer <a href="{{page.baseurl}}install-gde/prereq/dev_install.html">clones the Magento 2 GitHub repository</a> so they can contribute to our codebase.)</p>
@@ -186,18 +174,13 @@ To make files and directories writable so you can update components and upgrade 
 2.	Change to your Magento installation directory.
 3.	Enter the following commands:
 
-		find var vendor lib pub/static pub/media app/etc -type f -exec chmod g+w {} \;
-		find var vendor lib pub/static pub/media app/etc -type d -exec chmod g+w {} \;
+		find var vendor lib pub/static pub/media app/etc \( -type d -or -type f \) -exec chmod g+w {} \;
 		chmod o+rwx app/etc/env.php
 
-	You can optionally enter all the preceding commands as one command as follows:
-
-		find var vendor lib pub/static pub/media app/etc -type f -exec chmod g+w {} \; && find var vendor lib pub/static pub/media app/etc -type d -exec chmod g+w {} \; && chmod o+rwx app/etc/env.php
-
-	<div class="bs-callout bs-callout-info" id="info">
-  		<p>If you're a contributing developer, replace <code>vendor</code> with <code>app/code</code> in the preceding commands. (A contributing developer <a href="{{page.baseurl}}install-gde/prereq/dev_install.html">clones the Magento 2 GitHub repository</a> so they can contribute to our codebase.)</p>
+	<div class="bs-callout bs-callout-info" id="info" markdown="1">
+  	If you're a contributing developer, replace `vendor` with `app/code` in the preceding commands. (A contributing developer <a href="{{page.baseurl}}install-gde/prereq/dev_install.html">clones the Magento 2 GitHub repository</a> so they can contribute to our codebase.)
 	</div>
-{% endcollapsible %}
+{% endcollapsibleh2 %}
 
 {% include install/file-system-umask.md %}
 

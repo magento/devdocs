@@ -1,12 +1,12 @@
 ---
 layout: default
 group: install-dock
-subgroup: 01_over
+subgroup: 02_ref
 title: DevBox reference
 menu_title: DevBox reference
 landing-page: DevBox Quick Installation (Beta)
-menu_node: 
-menu_order: 2
+menu_node: parent
+menu_order: 1
 version: 2.0
 github_link: install-gde/docker/docker-ref.md
 ---
@@ -23,10 +23,6 @@ Magento DevBox is packaged with the following:
 *	Apache 2.4.10
 *	PHP 7.0.12
 *	MySQL 5.6.34
-
-<div class="bs-callout bs-callout-warning" markdown="1">
-The Magento DevBox should be used in development only. (You should _not_ use it in production.)
-</div>
 
 {% collapsibleh2 Prerequisites %}
 
@@ -76,6 +72,14 @@ To set up Docker file sharing on the Mac OS:
 5.  To add additional directories, follow the prompts on your screen or consult Docker documentation.
 
 {% endcollapsibleh2 %}
+
+## Get Magento DevBox now
+To get Magento DevBox now, go to the [Magento download page](https://magento.com/tech-resources/download){:target="_blank"}.
+
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+*   Magento DevBox should be used in development only. (You should _not_ use it in production.)
+*   Magento DevBox is Beta software. Report any issues on the [DevBox GitHub repository](https://github.com/magento/magento2devbox-web/issues){:target="_blank"}.
+</div>
 
 <p id="devbox-fileshare"></p>{% collapsibleh2 How DevBox uses file sharing %}
 
