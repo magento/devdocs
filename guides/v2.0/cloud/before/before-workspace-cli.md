@@ -28,13 +28,13 @@ To install the Magento Enterprise Cloud Edition CLI:
 
 		 source /home/magento_user/.bashrc
 
-	For more information about the user shell profile, see [.bash_profile vs .bashrc](http://www.joshstaiger.org/archives/2005/07/bash_profile_vs.html){:target="_blank"}
+	For more information about the user shell profile, see [.bash_profile vs .bashrc](http://www.joshstaiger.org/archives/2005/07/bash_profile_vs.html){:target="_blank"}\
 
-3.	Enter the operating system-specific command to add the CLI to your system `$PATH`.
-	
-	For example, on Ubuntu it might be in the following way:
+	You can also add the `<magento user home dir>/.magento-cloud/bin` to the Magento user's `PATH`. 	If the user name is `magento_user`, the command is similar to the following:
 	
 		export PATH=$PATH:/home/magento_user/.magento-cloud/bin
+
+	Consult operating system documentation for details.
 		
 4.	Verify the `magento-cloud` command is in your path by entering the following command:
 
