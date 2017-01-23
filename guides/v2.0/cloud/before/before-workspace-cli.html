@@ -1516,9 +1516,15 @@
     <pre><code> source /home/magento_user/.bashrc
 </code></pre>
 
-    <p>For more information about the user shell profile, see <a href="http://www.joshstaiger.org/archives/2005/07/bash_profile_vs.html" target="_blank">.bash_profile vs .bashrc</a></p>
+    <p>For more information about the user shell profile, see <a href="http://www.joshstaiger.org/archives/2005/07/bash_profile_vs.html" target="_blank">.bash_profile vs .bashrc</a>\</p>
+
+    <p>You can also add the <code>&lt;magento user home dir&gt;/.magento-cloud/bin</code> to the Magento user’s <code>PATH</code>. 	If the user name is <code>magento_user</code>, the command is similar to the following:</p>
+
+    <pre><code>export PATH=$PATH:/home/magento_user/.magento-cloud/bin
+</code></pre>
+
+    <p>Consult operating system documentation for details.</p>
   </li>
-  <li>Enter the operating system-specific command to add the CLI to your system <code>$PATH</code>.</li>
   <li>
     <p>Verify the <code>magento-cloud</code> command is in your path by entering the following command:</p>
 

@@ -1614,17 +1614,9 @@
 </code></pre>
   </li>
   <li>
-    <p>Enter the following commands:</p>
+    <p>Enter the following command:</p>
 
-    <pre><code>find var vendor pub/static app/etc var/generation var/di var/view_preprocessed -type f -exec chmod u-w {} \;
-find var vendor pub/static app/etc var/generation var/di var/view_preprocessed -type d -exec chmod u-w {} \;
-chmod o-rwx app/etc/env.php
-chmod u+x bin/magento
-</code></pre>
-
-    <p>You can optionally enter all the preceding commands as one command:</p>
-
-    <pre><code>find pub/static app/etc var/generation var/di var/view_preprocessed -type f -exec chmod u-w {} \; &amp;&amp; find pub/static app/etc var/generation var/di var/view_preprocessed -type d -exec chmod u-w {} \; &amp;&amp; chmod o-rwx app/etc/env.php &amp;&amp; chmod u+x bin/magento
+    <pre><code>find var vendor pub/static app/etc var/generation var/di var/view_preprocessed \( -type f -or -type d \) -exec chmod u-w {} \; &amp;&amp; chmod o-rwx app/etc/env.php &amp;&amp; chmod u+x bin/magento
 </code></pre>
 
     <div class="bs-callout bs-callout-info" id="info">
@@ -1694,7 +1686,7 @@ chmod u+x bin/magento
 <p>Set the <a href="http://linuxg.net/how-to-set-the-setuid-and-setgid-bit-for-files-in-linux-and-unix/" target="_blank"><code>setgid</code></a> bit on directories so permissions always inherit from the parent directory.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
- 	<p><code>setgid</code> applies to directories only, <em>not</em> to files.</p>
+  <p><code>setgid</code> applies to directories only, <em>not</em> to files.</p>
 </div>
 
 <p>In addition, the directories should be writable by the web server group. Because content might already exist in these directories, add the permissions recursively.</p>
@@ -1742,16 +1734,9 @@ find var pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
 </code></pre>
   </li>
   <li>
-    <p>Enter the following commands as a user with <code>root</code> privileges:</p>
+    <p>Enter the following command as a user with <code>root</code> privileges:</p>
 
-    <pre><code>find pub/static app/etc var/generation var/di var/view_preprocessed -type f -exec chmod g-w {} \;
-find pub/static app/etc var/generation var/di var/view_preprocessed -type d -exec chmod g-w {} \;
-chmod o-rwx app/etc/env.php
-</code></pre>
-
-    <p>You can optionally enter all the preceding commands as one command:</p>
-
-    <pre><code>find pub/static app/etc var/generation var/di var/view_preprocessed -type f -exec chmod g-w {} \; &amp;&amp; find pub/static app/etc var/generation var/di var/view_preprocessed -type d -exec chmod g-w {} \; &amp;&amp; chmod o-rwx app/etc/env.php
+    <pre><code>find pub/static app/etc var/generation var/di var/view_preprocessed \( -type d -or -type f \) -exec chmod g-w {} \; &amp;&amp; chmod o-rwx app/etc/env.php
 </code></pre>
 
     <div class="bs-callout bs-callout-info" id="info">
@@ -1769,19 +1754,13 @@ chmod o-rwx app/etc/env.php
   <li>
     <p>Enter the following commands:</p>
 
-    <pre><code>find var vendor lib pub/static pub/media app/etc -type f -exec chmod g+w {} \;
-find var vendor lib pub/static pub/media app/etc -type d -exec chmod g+w {} \;
+    <pre><code>find var vendor lib pub/static pub/media app/etc \( -type d -or -type f \) -exec chmod g+w {} \;
 chmod o+rwx app/etc/env.php
 </code></pre>
 
-    <p>You can optionally enter all the preceding commands as one command as follows:</p>
-
-    <pre><code>find var vendor lib pub/static pub/media app/etc -type f -exec chmod g+w {} \; &amp;&amp; find var vendor lib pub/static pub/media app/etc -type d -exec chmod g+w {} \; &amp;&amp; chmod o+rwx app/etc/env.php
-</code></pre>
-
     <div class="bs-callout bs-callout-info" id="info">
-  		<p>If you're a <abbr title="A developer who contributes code to the Magento 2 CE codebase">contributing developer</abbr>, replace <code>vendor</code> with <code>app/code</code> in the preceding commands. (A <abbr title="A developer who contributes code to the Magento 2 CE codebase">contributing developer</abbr> <a href="/guides/v2.1/install-gde/prereq/dev_install.html">clones the Magento 2 GitHub repository</a> so they can contribute to our codebase.)</p>
-</div>
+  	If you’re a <abbr title="A developer who contributes code to the Magento 2 CE codebase">contributing developer</abbr>, replace <code>vendor</code> with <code>app/code</code> in the preceding commands. (A <abbr title="A developer who contributes code to the Magento 2 CE codebase">contributing developer</abbr> <a href="/guides/v2.1/install-gde/prereq/dev_install.html">clones the Magento 2 GitHub repository</a> so they can contribute to our codebase.)
+    </div>
   </li>
 </ol>
 </div></div>
