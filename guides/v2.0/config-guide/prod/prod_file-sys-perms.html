@@ -1479,8 +1479,10 @@
   </li>
 </ul>
 
-<h2 id="mage-owner-one">Tasks for one Magento file system owner</h2>
-<div class="collapsible"><b class="collapsible-title">Click to show/hide content </b><div class="collapsible-content"><p>To use the one-owner setup, you must log in to your Magento server as the same user that runs the web server. This is typical for shared hosting.</p>
+<p id="mage-owner-one"></p>
+<div class="collapsible collapsible-h2"><h2 class="collapsible-title">Production file system ownership for shared hosting (one user) </h2><div class="collapsible-content"><p>To use the one-owner setup, you must log in to your Magento server as the same user that runs the web server. This is typical for shared hosting.</p>
+
+<p>Because having one file system owner is less secure, we recommend you deploy Magento in production on a private server instead of on shared hosting, if possible.</p>
 
 <h3 id="mage-owner-one-devel">Set up one owner for default or developer mode</h3>
 <p>In default or developer mode, the following directories must be writable by the user:</p>
@@ -1559,14 +1561,14 @@ chmod u+x bin/magento
 </code></pre>
 
     <div class="bs-callout bs-callout-info" id="info">
-  		<p>If you're a <abbr title="A developer who contributes code to the Magento 2 CE codebase">contributing developer</abbr>, replace <code>vendor</code> with <code>app/code</code> in the preceding commands. (A <abbr title="A developer who contributes code to the Magento 2 CE codebase">contributing developer</abbr> <a href="/guides/v2.0/install-gde/prereq/dev_install.html">clones the Magento 2 GitHub repository</a> so they can contribute to our codebase.)</p>
-</div>
+  	If you’re a <abbr title="A developer who contributes code to the Magento 2 CE codebase">contributing developer</abbr>, replace <code>vendor</code> with <code>app/code</code> in the preceding commands. (A <abbr title="A developer who contributes code to the Magento 2 CE codebase">contributing developer</abbr> <a href="/guides/v2.0/install-gde/prereq/dev_install.html">clones the Magento 2 GitHub repository</a> so they can contribute to our codebase.)
+    </div>
   </li>
 </ol>
 </div></div>
 
-<h2 id="mage-owner-two">Tasks for two Magento file system owners</h2>
-<div class="collapsible"><b class="collapsible-title">Click to show/hide content </b><div class="collapsible-content"><p>If you use your own server (including a hosting provider’s private server setup), there are two users:</p>
+<p id="mage-owner-two"></p>
+<div class="collapsible collapsible-h2"><h2 class="collapsible-title">Production file system ownership for private hosting (two users) </h2><div class="collapsible-content"><p>If you use your own server (including a hosting provider’s private server setup), there are two users:</p>
 
 <ul>
   <li>
@@ -1580,12 +1582,12 @@ chmod u+x bin/magento
     <p>Magento uses this user to run Magento CLI commands and cron.</p>
 
     <div class="bs-callout bs-callout-info" id="info">
-    <p>The command-line user is also referred to as the <em>Magento file system owner</em>.</p>
-</div>
+      <p>The command-line user is also referred to as the <em>Magento file system owner</em>.</p>
+    </div>
   </li>
 </ul>
 
-<p>Because these users require access to the same files, we recommend you create a <a href="/guides/v2.0/install-gde/prereq/file-system-perms.html#mage-owner-about-group">shared group</a> to which they both belong.</p>
+<p>Because these users require access to the same files, we recommend you create a <a href="/guides/v2.0/install-gde/prereq/file-system-perms.html#mage-owner-about-group">shared group</a> to which they both belong. The following procedures assume you have already done this.</p>
 
 <p>See one of the following sections:</p>
 
