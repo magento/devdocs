@@ -1,19 +1,21 @@
 ---
 layout: default
-group: extension-dev-guide
+group: ext-best-practices
 subgroup: Tutorials
 title: Copying fieldsets
 menu_title: Copying fieldsets
 menu_order: 1000
 version: 2.0
-github_link: extension-dev-guide/tutorials/copy-fieldsets.md
+github_link: ext-best-practices/tutorials/copy-fieldsets.md
 ---
 
-In this tutorial, you will learn to copy custom data from a quote object to an order object using the [Magento/Framework/DataObject/Copy](https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/DataObject/Copy.php){:target="_blank"} class.
+## Overview
+In this tutorial, you will learn to copy custom data from a quote object to an order object using the [Magento/Framework/DataObject/Copy][0]{:target="_blank"} class.
 
-## Define your attributes
+## Step 1: Define your attributes
+{:#step-1}
 
-The following code defines a simple [extension attribute]({{page.baseurl}}extension-dev-guide/attributes.html) named `demo` for the Cart and Order objects.
+The following code defines a simple [extension attribute][1] named `demo` for the Cart and Order objects.
 
 **extension_attributes.xml**
 
@@ -28,10 +30,11 @@ The following code defines a simple [extension attribute]({{page.baseurl}}extens
 </config>
 {% endhighlight %}
 
-## Configure the fieldset
+## Step 2: Configure the fieldset
+{:#step-2}
 
 The following code adds the `demo` field to the `sales_convert_quote` fieldset with the `to_order` aspect.
-The code snippet in the next section uses the name of the fieldset and aspect to specify which fields to copy.
+The code snippet in the next step uses the name of the fieldset and aspect to specify which fields to copy.
 
 **fieldset.xml**
 
@@ -47,9 +50,10 @@ The code snippet in the next section uses the name of the fieldset and aspect to
 </config>
 {% endhighlight %}
 
-## Copy the fieldset
+## Step 3: Copy the fieldset
+{:#step-3}
 
-The following code snippets highlight the steps needed to copy a fieldset using the `\Magento\Framework\DataObject\Copy` class.
+The following code snippets highlight the code pieces needed to copy a fieldset using the `\Magento\Framework\DataObject\Copy` class.
 
 {% highlight php startinline %}
 ...
@@ -90,5 +94,9 @@ private function copyQuoteToOrder($quote,$order)
 {% endhighlight %}
 
 
-In the code, an instance of the `Copy` class is obtained from the constructor using [dependency injection]({{page.baseurl}}extension-dev-guide/depend-inj.html).
-The `copyFieldsetToTarget` function is called on the `$quote` and `$order` parameters to copy the fieldset.
+In the code, an instance of the `Copy` class is obtained from the constructor using [dependency injection][2].
+The `copyFieldsetToTarget` function call with the `$quote` and `$order` parameters copies the fieldset for the two objects..
+
+[0]:https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/DataObject/Copy.php
+[1]:{{page.baseurl}}extension-dev-guide/attributes.html
+[2]:{{page.baseurl}}extension-dev-guide/depend-inj.html
