@@ -70,7 +70,7 @@ Magento system integrators use this `composer.json` file to deploy the Magento C
 ### Enterprise Edition project
 **Location:** `composer.json`
 
-**Name:** `magento/product-community-edition`
+**Name:** `magento/product-enterprise-edition`
 
 **Type:** `metapackage`
 
