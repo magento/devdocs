@@ -1,1 +1,1 @@
-../../../v2.0/extension-dev-guide/tutorials/copy-fieldsets.md
+../../../v2.0/ext-best-practices/tutorials/copy-fieldsets.md
