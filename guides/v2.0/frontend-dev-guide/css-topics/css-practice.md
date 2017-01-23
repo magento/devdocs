@@ -75,6 +75,6 @@ To do this, they added an overriding <code>_theme.less</code> file in the <code>
 
 </pre>
 
-After the Grey theme is applied, store pages will look like following:
+After the Grey theme is applied (and [static files cache cleared]({{page.baseurl}}howdoi/clean_static_cache.html)), store pages will look like following:
 
 <img src="{{ site.baseurl }}common/images/css_practice.png" alt="product page when Grey applied">
