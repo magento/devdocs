@@ -436,8 +436,8 @@ Used as follows:
 The specified <a href="{{page.baseurl}}frontend-dev-guide/layouts/layout-overview.html#handle" target="_blank">handle</a> is "included" and executed recursively.
 
 <h3 id="argument">&lt;argument&gt;</h3>
-Used to pass an argument.
-
+Used to pass an argument. Must be always enclosed in [`<arguments></arguments>`](#arguments).
+ 
 <table>
    <tbody>
       <tr>
@@ -510,5 +510,16 @@ $cssClass = $this->getCssClass() ? ' ' . $this->getCssClass() : '';
 ...
 {%endhighlight %}
 
+### <arguments> {#arguments}
 
+`<arguments></arguments>` is a required container for `<argument></argument>`. Does not have own attributes.
 
+Example:
+
+{%highlight xml%}
+...
+<arguments>
+    <argument name="css_class" xsi:type="string">header links</argument>
+</arguments>
+...
+{%endhighlight xml%}
