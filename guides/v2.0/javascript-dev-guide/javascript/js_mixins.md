@@ -4,7 +4,7 @@ group: jsdg
 subgroup: 1_Javascript
 title: Using JavaScript mixins
 menu_title: Using JavaScript mixins
-menu_order: 6
+menu_order: 30
 version: 2.0
 github_link: javascript-dev-guide/javascript/js_mixins.md
 ---

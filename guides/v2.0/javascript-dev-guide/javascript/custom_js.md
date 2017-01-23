@@ -3,7 +3,7 @@ layout: default
 group: jsdg
 subgroup: 1_Javascript
 title: Use custom JavaScript
-menu_order: 3
+menu_order: 15
 menu_title: Use custom JavaScript
 version: 2.0
 github_link: javascript-dev-guide/javascript/custom_js.md
@@ -17,14 +17,27 @@ This topic discusses about how to use custom JavaScript components with the comp
 
 We strongly recommend not changing the source code of default Magento components and widgets. All customizations must be implemented in custom modules or themes.
 
-<h2 id="js_replace">Replace a default JS component</h2>
+## Add a custom JS component 
 
+To add a custom JS component (module) take the following steps:
+
+1. Place the custom component source file in one of the following locations:
+	- Your theme JS files: `<theme_dir>/web/js` or `<theme_dir>/<VendorName>_<ModuleName>/web/js`. In this case the component is available in all modules and themes (if your module is enabled). 
+	- Your module view JS files: `<module_dir>/view/frontend/web/js`. In this case the component is available in your theme and its [child themes]({{page.baseurl}}). 
+2. In the corresponding module or theme, create a `require-config.js` configuration file, if it does not yet exist there. In the file add the following:
+<p class="q">What configuration they should add?</p>
+
+Now you can call this JS component using modular ID or RequireJS alias/map/path?
+<p class="q">RequireJS alias/map/path?</p>
+
+<h2 id="js_replace">Replace a default JS component</h2>
+<p class="q">Should we leave this paragraph or remove?</p>
 
 To use a custom implementation of an existing Magento JS component:
-<ol>
+<ol markdown="1">
 <li>Place the custom component source file in one of the following locations:
 <ul>
-<li>Your theme JS files: <code>&lt;theme_dir&gt;/web/js</code></li>
+<li>Your theme JS files: `<theme_dir>/web/js` or `<theme_dir>/<VendorName>_<ModuleName>/web/js`</li>
 <li>Your module view JS files: <code>&lt;module_dir&gt;/view/frontend/web/js</code></li>
 </ul>
 </li>
