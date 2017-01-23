@@ -1546,10 +1546,10 @@
 
 <ul>
   <li>
-    <p>One user:  Typically, shared hosting providers enable you to log in to the server as one user. This user can log in, transfer files using FTP, and this user also runs the web server.</p>
+    <p>One user: Typically necessary on shared hosting providers, which allow you to access only one user on the server This user can log in, transfer files using FTP, and this user also runs the web server.</p>
   </li>
   <li>
-    <p>Two users: You must have two users if you <em>cannot</em> log in to the server as, or switch to, the web server user. This type of setup is typical in private hosting or if you have your own Magento server.</p>
+    <p>Two users: We recommend two users if you run your own Magento server: one that to transfer files and run command-line utilities, and a separate user for the web server software. When possible, this is preferable because it’s more secure.</p>
 
     <p>Instead, you have separate users:</p>
 
@@ -1752,10 +1752,9 @@ find var pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
   <li>Log in to your Magento server.</li>
   <li>Change to your Magento installation directory.</li>
   <li>
-    <p>Enter the following commands:</p>
+    <p>Enter the following command:</p>
 
-    <pre><code>find var vendor lib pub/static pub/media app/etc \( -type d -or -type f \) -exec chmod g+w {} \;
-chmod o+rwx app/etc/env.php
+    <pre><code>find var vendor lib pub/static pub/media app/etc \( -type d -or -type f \) -exec chmod g+w {} \; &amp;&amp; chmod o+rwx app/etc/env.php
 </code></pre>
 
     <div class="bs-callout bs-callout-info" id="info">
