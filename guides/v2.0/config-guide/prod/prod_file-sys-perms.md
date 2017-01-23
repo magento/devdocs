@@ -27,9 +27,10 @@ The sections that follow discuss requirements for one or two Magento file system
 
 	*	A *command-line user*, which is a local user account you can use to log in to the server. This user runs Magento cron jobs and command-line utilities.
 
-## Tasks for one Magento file system owner {#mage-owner-one}
-{% collapsible Click to show/hide content %}
+<p id="mage-owner-one"></p>{% collapsibleh2 Production file system ownership for shared hosting (one user) %}
 To use the one-owner setup, you must log in to your Magento server as the same user that runs the web server. This is typical for shared hosting.
+
+Because having one file system owner is less secure, we recommend you deploy Magento in production on a private server instead of on shared hosting, if possible.
 
 ### Set up one owner for default or developer mode {#mage-owner-one-devel}
 In default or developer mode, the following directories must be writable by the user:
@@ -91,13 +92,13 @@ To make files and directories writable so you can update components and upgrade 
 
 		chmod -R u+w .
 		
-	<div class="bs-callout bs-callout-info" id="info">
-  		<p>If you're a contributing developer, replace <code>vendor</code> with <code>app/code</code> in the preceding commands. (A contributing developer <a href="{{page.baseurl}}install-gde/prereq/dev_install.html">clones the Magento 2 GitHub repository</a> so they can contribute to our codebase.)</p>
+	<div class="bs-callout bs-callout-info" id="info" markdown="1">
+  	If you're a contributing developer, replace `vendor` with `app/code` in the preceding commands. (A contributing developer <a href="{{page.baseurl}}install-gde/prereq/dev_install.html">clones the Magento 2 GitHub repository</a> so they can contribute to our codebase.)
 	</div>
-{% endcollapsible %}
 
-## Tasks for two Magento file system owners {#mage-owner-two}
-{% collapsible Click to show/hide content %}
+{% endcollapsibleh2 %}
+
+<p id="mage-owner-two"></p>{% collapsibleh2 Production file system ownership for private hosting (two users) %}
 If you use your own server (including a hosting provider's private server setup), there are two users:
 
 *	The web server user, which runs the Magento Admin (including the Setup Wizard) and storefront.
@@ -107,11 +108,11 @@ If you use your own server (including a hosting provider's private server setup)
 
 	Magento uses this user to run Magento CLI commands and cron.
 
-	<div class="bs-callout bs-callout-info" id="info">
-		<p>The command-line user is also referred to as the <em>Magento file system owner</em>.</p>
+	<div class="bs-callout bs-callout-info" id="info" markdown="1">
+	The command-line user is also referred to as the _Magento file system owner_.
 	</div>
 
-Because these users require access to the same files, we recommend you create a [shared group]({{page.baseurl}}install-gde/prereq/file-system-perms.html#mage-owner-about-group) to which they both belong.
+Because these users require access to the same files, we recommend you create a [shared group]({{page.baseurl}}install-gde/prereq/file-system-perms.html#mage-owner-about-group) to which they both belong. The following procedures assume you have already done this.
 
 See one of the following sections:
 
@@ -197,7 +198,7 @@ To make files and directories writable so you can update components and upgrade 
 	<div class="bs-callout bs-callout-info" id="info">
   		<p>If you're a contributing developer, replace <code>vendor</code> with <code>app/code</code> in the preceding commands. (A contributing developer <a href="{{page.baseurl}}install-gde/prereq/dev_install.html">clones the Magento 2 GitHub repository</a> so they can contribute to our codebase.)</p>
 	</div>
-{% endcollapsible %}
+{% endcollapsibleh2 %}
 
 {% include install/file-system-umask.md %}
 
