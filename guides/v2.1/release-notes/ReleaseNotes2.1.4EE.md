@@ -39,9 +39,6 @@ This release includes an important enhancement to the security of your Magento s
 We address the following functional issues in this release.
 
 
-### Checkout 
-
-<!---60293 -->* Magento now successfully estimates shipping costs. Previously, when you tried to estimate shipping costs, the load indicator would spin indefinitely, and Magento displayed this exception, "Object doesn't support this action". <a href="https://github.com/magento/magento2/issues/5358" target="_blank">(GITHUB-5358)</a>, <a href="https://github.com/magento/magento2/issues/7051" target="_blank">(GITHUB-7051)</a>
 
 
 
@@ -53,6 +50,10 @@ We address the following functional issues in this release.
 
 <!---57832 -->* Magento now displays the "This is a required field" message immediately below the product options as needed during checkout. Previously, Magento displayed this message at the bottom of the checkout form. 
 
+
+### Checkout 
+
+<!---60293 -->* Magento now successfully estimates shipping costs. Previously, when you tried to estimate shipping costs, the load indicator would spin indefinitely, and Magento displayed this exception, "Object doesn't support this action". <a href="https://github.com/magento/magento2/issues/5358" target="_blank">(GITHUB-5358)</a>, <a href="https://github.com/magento/magento2/issues/7051" target="_blank">(GITHUB-7051)</a>
 
 
 
