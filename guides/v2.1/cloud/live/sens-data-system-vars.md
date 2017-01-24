@@ -129,10 +129,10 @@ This section discusses how to set system variables.
 
 [See some examples](#cloud-system-vars-ex)
 
-Step 2: Set system variables come from the `core_config_data` table.
+Step 2: System variables from the `core_config_data` table.
 
-<p id="sys-var-table"></p>
-| Description  | Path in Magento Admin (omitting **Stores** > **Configuration**) | Variable name | 
+
+<p id="sys-var-table"></p>| Description  | Path in Magento Admin (omitting **Stores** > **Configuration**) | Variable name | 
 |--------------|--------------|----------------------|
 | Store locale  | General > **General**, **Locale Options** > **Locale**  |  `<SCOPE>__GENERAL__LOCALE__CODE` | 
 | Static asset signing |  Advanced > **Developer**, **Static Files Settings** > **Static Files Signing** | `<SCOPE>__DEV__STATIC__SIGN`  | 
