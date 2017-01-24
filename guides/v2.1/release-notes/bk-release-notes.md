@@ -12,6 +12,8 @@ github_link: release-notes/bk-release-notes.md
 
 ## Magento Community Edition (CE) and Enterprise Edition (EE) Release Notes
 
+<a href="{{page.baseurl}}release-notes/ReleaseNotes2.1.4CE.html" target="_blank">Version 2.1.4</a>
+
 <a href="{{page.baseurl}}release-notes/ReleaseNotes2.1.3CE.html" target="_blank">Version 2.1.3</a>
 
 <a href="{{page.baseurl}}release-notes/ReleaseNotes2.1.2CE.html" target="_blank">Version 2.1.2</a>
@@ -25,6 +27,9 @@ github_link: release-notes/bk-release-notes.md
 
 
 ### Magento Enterprise Edition (EE) 2.1 Release Notes
+
+<a href="{{page.baseurl}}release-notes/ReleaseNotes2.1.4EE.html" target="_blank">Version 2.1.4</a>
+
 
 <a href="{{page.baseurl}}release-notes/ReleaseNotes2.1.3EE.html" target="_blank">Version 2.1.3</a>
 
