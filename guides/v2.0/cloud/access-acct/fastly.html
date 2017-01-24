@@ -1496,26 +1496,7 @@
 
 			<p><a href="https://www.fastly.com/why-fastly" target="_blank">Fastly</a> is required for Magento Enterprise Cloud Edition. It works with Varnish to provide fast caching capabilities and a Content Delivery Network (CDN) for static assets.</p>
 
-<p>See the following sections for more information:</p>
-
-<ul>
-  <li><a href="#cloud-fastly-creds">Get your Fastly credentials</a></li>
-  <li><a href="#cloud-fastly-start">Get started</a></li>
-  <li><a href="#cloud-fastly-setup">Install Fastly in your new environment</a></li>
-  <li><a href="#cloud-fastly-admin">Enable Fastly using the Magento Admin</a></li>
-  <li><a href="https://github.com/fastly/fastly-magento2/blob/master/Documentation/CONFIGURATION.md#further-configuration-options" target="_blank">Configure Fastly</a></li>
-  <li><a href="#cloud-fastly-merge">Merge your Fastly branch</a></li>
-</ul>
-
-<h3 id="cloud-fastly-creds">Get your Fastly credentials</h3>
-<p>To get Fastly credentials, open a <a href="/guides/v2.0/cloud/get-help.html">support ticket</a>. We’ll provide you with the following information so you can enable Fastly:</p>
-
-<ul>
-  <li>Fastly API key</li>
-  <li>Fastly service ID</li>
-</ul>
-
-<h3 id="cloud-fastly-start">Get started</h3>
+<h2 id="cloud-fastly-start">Get started</h2>
 <p>Fastly recommends you do your development in its own branch because fine-tuning Fastly can be a complex process, depending on your needs and eCommerce shop size.</p>
 
 <p>In the procedure that follows, make sure you <em>branch</em> a new environment; don’t use an existing one unless you know this is what you want to do.</p>
@@ -1623,12 +1604,14 @@ composer require fastly/magento2
     <pre><code>magento-cloud var:list
 </code></pre>
   </li>
+  <li>Click <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; <strong>Advanced</strong> &gt; <strong>System</strong>.</li>
   <li>
-    <p>Click <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; <strong>Advanced</strong> &gt; <strong>System</strong> as the following figure shows:</p>
+    <p>In the right pane, expand <strong>Full Page Cache</strong>.</p>
+
+    <p>The page is displayed as follows.</p>
 
     <p><img src="/common/images/cloud_fastly_menu.png" alt="Choose Fastly" width="650px" /></p>
   </li>
-  <li>In the right pane, expand <strong>Full Page Cache</strong>.</li>
   <li>Next to the <strong>Caching Application</strong> list, clear the <strong>Use system value</strong> check box.</li>
   <li>
     <p>From the <strong>Caching Application</strong> list, click <strong>Fastly CDN</strong> as the following figure shows.</p>
@@ -1636,9 +1619,10 @@ composer require fastly/magento2
     <p><img src="/common/images/cloud-fastly_enable-admin.png" alt="Choose Fastly" width="650px" /></p>
   </li>
   <li>Expand <strong>Fastly Configuration</strong>.</li>
-  <li>In the provided fields, enter your Fastly service ID and API key.</li>
+  <li>If you haven’t already created a Fastly account, follow the prompts on your screen to create one.</li>
+  <li>After you receive them, enter your Fastly service ID and API key.</li>
   <li>Click <strong>Test Credentials</strong>.</li>
-  <li>Make sure your credentials are correct before continuing with the next step.</li>
+  <li>Make sure your credentials are correct before continuing.</li>
 </ol>
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -1652,7 +1636,6 @@ composer require fastly/magento2
 <p id="cloud-fastly-config"><div class="collapsible collapsible-h3"><h3 class="collapsible-title">Configure Fastly </h3><div class="collapsible-content"><p>Configure Fastly using the following:</p>
 
 <ul>
-  <li>We provide your Fastly service ID and API key.</li>
   <li>Set most other Fastly configuration options in the Magento Admin.</li>
   <li>You can fine-tune the Fastly configuration as discussed in <a href="#custom-vcl">Custom VCLs</a>.</li>
 </ul>
@@ -1671,7 +1654,7 @@ composer require fastly/magento2
   <li>When you’re done, click <strong>Save Config</strong> at the top of the page.</li>
 </ol>
 
-<p>For details about Fastly configuration, see the <a href="https://github.com/fastly/fastly-magento2/blob/master/Documentation/CONFIGURATION.md#further-configuration-options" target="_blank">Fastly documentation</a>.</p>
+<p>For details about Fastly configuration, see the <a href="https://docs.fastly.com/guides" target="_blank">Fastly documentation</a>.</p>
 
 <h4 id="advanced-configuration-options">Advanced configuration options</h4>
 <p>For advanced configuration options, download and customize the <a href="https://github.com/fastly/fastly-magento2/blob/master/etc/fastly.vcl" target="_blank">Fastly configuration</a>.</p>
