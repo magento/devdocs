@@ -38,6 +38,16 @@ where:
 
 ## Possible consistency errors {#migrate-command-data}
 
+While running, the Data Migration Tool may report inconsistencies between Magento 1 and Magento 2 databases, and display messages like this:
+
+{% highlight xml %}
+Source documents are not mapped: <EXTENSION_TABLE>
+{% endhighlight %}
+
+See the [Troubleshooting]({{page.baseurl}}migration/migration-troubleshooting.html) section of this guide for more information and recommendations.
+
+<!--
+
 When you migrate data, the Data Migration Tool verifies that tables and fields are consistent between Magento 1 and Magento 2. If they are inconsistent, you will see an error message that lists the problematic tables and fields, for example:
 
     Source fields are not mapped. Document: <document_name>. Fields: <field_name>
@@ -69,6 +79,8 @@ To do that, add the `<ignore>` tag to an entity in the `map.xml` file, like this
 ### Verify fixes
 
 To know if the issues have been resolved successfully, run the Data Migration Tool again.
+
+-->
 
 ## Next migration step
 
