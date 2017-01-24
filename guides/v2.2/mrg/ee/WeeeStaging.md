@@ -6,17 +6,10 @@ title: Module Reference Guide
 menu_title: WeeeStaging
 menu_order: 2
 version: 2.2
-
-
 github_link: mrg/ee/WeeeStaging.md
 ---
 
 ![Magento EE logo]({{site.baseurl}}common/images/ee-only_large.png)
-
-<h2>Contents</h2>
-
-
-## Magento_WeeeStaging module
 
 ## Overview
 
@@ -24,9 +17,7 @@ The Magento_WeeeStaging module is a part of the staging functionality in Magento
 
 ## Implementation details
 
-The Magento_WeeeStaging module extends the following Magento_Weee module functionality to be used in staging:
-
-- adds an opportunity to schedule a Fixed Product Tax type attribute using the Schedule Update form of a product
+The Magento_WeeeStaging module extends the Magento_Weee module functionality to be used in staging. It adds an opportunity to schedule a Fixed Product Tax type attribute using the Schedule Update form of a product.
 
 ## Dependencies
 
