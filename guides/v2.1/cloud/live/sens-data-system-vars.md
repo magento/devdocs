@@ -38,7 +38,7 @@ The general format of system variables follows:
 	*	[Magento User Guide](http://docs.magento.com/m2/ce/user_guide/configuration/scope.html){:target="_blank"}
 	*	[Scope quick reference](http://docs.magento.com/m2/ce/user_guide/stores/store-scope-reference.html){:target="_blank"}
 
-`<SYSTEM__VARIABLE>` is the variable you wish to specify. For more information, see [Step 2: Set system variables](#cloud-system-vars-sys).
+`<SYSTEM__VARIABLE__NAME>` is the variable you wish to specify. For more information, see [Step 2: Set system variables](#cloud-system-vars-sys).
 
 <p id="cloud-system-vars-scopes"></p>{% collapsibleh2 Step 1: Find the website or store view scope value %}
 
@@ -63,15 +63,15 @@ How to read the table:
 	*	The entire variable name is always ALL CAPS
 	*	Start a variable name with `CONFIG__` (note two underscore characters)
 	*	You can find the `<STORE_VIEW_CODE>` or `<WEBSITE_CODE>` portion of a variable name in either the Magento Admin or the Magento database, as indicated in the following sections.
-	*	You can find `<SYSTEM__VARIABLE>` as discussed in [Step 2:  Set global, website, or store view variables](#cloud-system-vars-sys).
+	*	You can find `<SYSTEM__VARIABLE__NAME>` as discussed in [Step 2:  Set global, website, or store view variables](#cloud-system-vars-sys).
 
 ### Find a website or store view scope in the Magento Admin
 The following table summarizes how to find website or store view value in the Admin. 
 
 | Description  | Path in Magento Admin | Variable name | 
 |--------------|--------------|----------------------|
-| Create, edit, delete store views | **Stores** > **All Stores** | `CONFIG__STORES__<STORE_VIEW_CODE>__<SYSTEM__VARIABLE>`  |
-| Create, edit, delete websites | **Stores** > **All Stores**  | `CONFIG__WEBSITE__<WEBSITE_CODE>__<SYSTEM__VARIABLE>` | 
+| Create, edit, delete store views | **Stores** > **All Stores** | `CONFIG__STORES__<STORE_VIEW_CODE>__<SYSTEM__VARIABLE__NAME>`  |
+| Create, edit, delete websites | **Stores** > **All Stores**  | `CONFIG__WEBSITE__<WEBSITE_CODE>__<SYSTEM__VARIABLE__NAME>` | 
 
 For example, to find a website or store view scope value in the Admin:
 
@@ -82,10 +82,10 @@ For example, to find a website or store view scope value in the Admin:
 	The right figure is displayed similar to the following.
 
 	![Find a website code]({{ site.baseurl }}common/images/cloud_vars_website-code.png){:width="600px"}
-3.	The scope name is displayed in the Code column.
+3.	The scope name is displayed in the **Code** field.
 4.	Continue with [Step 2:  Set global, website, or store view variables](#cloud-system-vars-sys).
 
-### Find a website or store view scope in the database
+### Find a website or store view scope in the database {#cloud-vars-db}
 To get these values from the database:
 
 {% include cloud/log-in-db.md %}
@@ -110,9 +110,9 @@ Use the value from the `code` column as the scope name, not the `name` value.
 
 For example, to set a configuration variable for Test Website, use the following format:
 
-	CONFIG__STORE__WEBSITE__TEST1__<SYSTEM_VARIABLE_NAME>
+	CONFIG__WEBSITES__TEST1__<SYSTEM__VARIABLE__NAME>
 
-where `<SYSTEM_VARIABLE_NAME>` comes from the next section.
+where `<SYSTEM__VARIABLE__NAME>` comes from the next section.
 
 {% endcollapsibleh2 %}
 
@@ -124,13 +124,14 @@ This section discusses how to set system variables.
 
 *	To set a value for a particular store view or website, start the variable name as discussed in [Step 1: Find the scope value](#cloud-system-vars-scopes):
 
-	*	`CONFIG_WEBSITES`
-	*	`CONFIG_STORES`
+	*	`CONFIG__WEBSITES`
+	*	`CONFIG__STORES`
 
 [See some examples](#cloud-system-vars-ex)
 
 Step 2: Set system variables come from the `core_config_data` table.
 
+<p id="sys-var-table"></p>
 | Description  | Path in Magento Admin (omitting **Stores** > **Configuration**) | Variable name | 
 |--------------|--------------|----------------------|
 | Store locale  | General > **General**, **Locale Options** > **Locale**  |  `<SCOPE>__GENERAL__LOCALE__CODE` | 
@@ -147,10 +148,26 @@ Step 2: Set system variables come from the `core_config_data` table.
 This section shows how to find values of some sample variables.
 
 ### Global HTML minification
-TBD
+To find the variable name for Global HTML minification:
+
+1.	Determine the scope.
+
+	It's the global scope so the variable name starts with `CONFIG__DEFAULT__`
+2.	According to the [preceding table](#sys-var-table), the rest of the variable name is `DEV__TEMPLATE__MINIFY_HTML`.
+
+Result: The variable name is `CONFIG__DEFAULT__DEV__TEMPLATE__MINIFY_HTML`
 
 ### Store view HTML minification
-TBD
+To find the variable name for HTML minification for a store view:
+
+1.	Determine the scope.
+
+	Find the scope in the [databae](#cloud-vars-db). (You can also find the value in the Admin as shown in the [preceding table](#sys-var-table).
+
+	For example, the scope might be `CONFIG__STORES__MYVIEW`.
+2.	According to the [preceding table](#sys-var-table), the rest of the variable name is `DEV__TEMPLATE__MINIFY_HTML`.
+
+Result: The variable name is `CONFIG__STORES__MYVIEW__DEV__TEMPLATE__MINIFY_HTML`
 
 ### Global locale code
 TBD
