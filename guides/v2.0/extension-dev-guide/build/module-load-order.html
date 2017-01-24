@@ -1019,7 +1019,16 @@
 
 <p>Assume you have a component that needs a configuration file from another component:</p>
 
-<p><strong>Component A</strong> introduces <code>gadgetlayout.xml</code>, which updates block <code>gadgetBlock</code> from <strong>component B</strong>. In this case, layout files from <strong>component A</strong> should be loaded before <strong>component B</strong>, so you should specify that in <strong>component B’s</strong> <code>&lt;sequence&gt;</code> entry in module.xml.</p>
+<p><strong>Component A</strong> introduces <code>gadgetlayout.xml</code>, which updates block <code>gadgetBlock</code> from <strong>component B</strong>. In this case, layout files from <strong>component A</strong> should be loaded before <strong>component B</strong>, so you should specify that in <strong>component B’s</strong> <code>&lt;sequence&gt;</code> entry in module.xml. That is to say:</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:Module/etc/module.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">&quot;Vendor_ComponentB&quot;</span> <span class="na">setup_version=</span><span class="s">&quot;0.0.1&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;sequence&gt;</span>
+            <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">&quot;Vendor_ComponentA&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/sequence&gt;</span>
+    <span class="nt">&lt;/module&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <p>For each particular scenario, files of the same type are loaded from different components taking into account the sequence information provided in each component’s <code>module.xml</code> file.</p>
 
