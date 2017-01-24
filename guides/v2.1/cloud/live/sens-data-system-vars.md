@@ -131,8 +131,8 @@ This section discusses how to set system variables.
 
 Step 2: System variables from the `core_config_data` table.
 
-
-<p id="sys-var-table"></p>| Description  | Path in Magento Admin (omitting **Stores** > **Configuration**) | Variable name | 
+<!-- <p id="sys-var-table"></p> -->
+| Description  | Path in Magento Admin (omitting **Stores** > **Configuration**) | Variable name | 
 |--------------|--------------|----------------------|
 | Store locale  | General > **General**, **Locale Options** > **Locale**  |  `<SCOPE>__GENERAL__LOCALE__CODE` | 
 | Static asset signing |  Advanced > **Developer**, **Static Files Settings** > **Static Files Signing** | `<SCOPE>__DEV__STATIC__SIGN`  | 
@@ -148,7 +148,7 @@ Step 2: System variables from the `core_config_data` table.
 This section shows how to find values of some sample variables.
 
 ### Global HTML minification
-To find the variable name for Global HTML minification:
+To find the variable name for global HTML minification:
 
 1.	Determine the scope.
 
