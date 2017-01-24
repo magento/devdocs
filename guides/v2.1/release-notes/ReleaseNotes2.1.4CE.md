@@ -200,9 +200,9 @@ We address the following functional issues in this release.
 
 <!--- 63115 --> * Admin users cannot use the **NEW Category Image Upload** field (**Product > Categories > Content**) to upload new Category images. Currently, Magento fails to load new Category images, and displays this message, "Attention. The file was not uploaded". 
 
-<!--- 63050 --> * Magento does not display the correct status of products when you add them to Configurable product page. 
+<!--- 63050 --> * Magento does not correct display the status of products when you add an item to the Configurable product page. 
 
-<!--- 62605 --> * Magento does not provide an accurate preview of the Category page.  
+<!--- 62605 --> * Magento does not provide an accurate preview of the Category page. Currently, the Category Preview page lacks some of the information present in  the actual Category page.  
 
 
 <!--- 62523 --> * The Magento server-side Order page is currently not displaying critical information about orders. Specifically, the Payment Information block lacks the following information: 
@@ -219,11 +219,11 @@ We address the following functional issues in this release.
 
 
 
-<!--- 62283 --> * Server-side LESS compilation is not working as expected. When you set server-side LESS compilation to **ON**,  the `pub/static/frontend` remains. 
+<!--- 62283 --> * Server-side LESS compilation is not working as expected. When you set server-side LESS compilation to **on**,  the `pub/static/frontend` remains. 
 
 
 
-<!--- 62258 --> * You cannot successfully edit from the Magento server side an order that includes a bundle product. 
+<!--- 62258 --> * You cannot successfully edit an order that includes a bundle product from the Magento server side.
 
 
 <!--- 62243 --> * After a customer orders the last unit in your inventory of a Configurable product, Magento still lists the product as in stock.  
