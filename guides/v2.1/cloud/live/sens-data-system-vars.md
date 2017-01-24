@@ -12,7 +12,7 @@ version: 2.1
 github_link: cloud/live/sens-data-system-vars.md
 ---
 
-This topic discusses how to find and set the system settings we include in `config.local.php` in version 2.1.4. You can set variable values per scope (global, website, store, or store view). For example, you could set the locale used in a particular website.
+This topic discusses how to find and set the system settings we include in `config.local.php` in version 2.1.4. You can set variable values per scope (global, website, or store view). For example, you could set the locale used in a particular website.
 
 The general format of system variables follows:
 
@@ -46,7 +46,7 @@ This section discusses how you can find and set system configuration values per 
 
 Scope values come from the `store`, `store_group`, and `store_website` tables.
 
-*	The `stores` table specifies store view names and codes
+*	The `store` table specifies store view names and codes
 *	The `store_website` table specifies website names and codes
 
 You can also find the code values using the Magento Admin.
@@ -62,12 +62,12 @@ How to read the table:
 
 	*	A variable name is always ALL CAPS
 	*	Start a variable name with `CONFIG__` (note two underscore characters)
-	*	Variable names are specified in different Magento database tables, as indicated in the following sections.
+	*	The final portion of a variable name is specified in Magento database tables, as indicated in the following sections.
 
 | Description  | Path in Magento Admin | Variable name | 
 |--------------|--------------|----------------------|
 | Create, edit, delete store views | **Stores** > **All Stores**, **Add Store View** | `CONFIG__STORES__<STORE_VIEW_CODE>`  |
-| Create, edit, delete websites | **Stores** > **All Stores**, **Add Website**  | `CONFIG__STORES__WEBSITE__<WEBSITE_CODE>` | 
+| Create, edit, delete websites | **Stores** > **All Stores**, **Add Website**  | `CONFIG__WEBSITE__<WEBSITE_CODE>` | 
 
 To get the values from the Admin, refer to the Path in Magento Admin column in the preceding table. Make sure to note the code, _not_ the name.
 
@@ -107,7 +107,10 @@ This section discusses how to set system variables.
 
 *	To set values for the global scope (that is, all websites, stores, and store views), start the variable name with `CONFIG__DEFAULT__`. 
 
-*	To set a value for a particular store view or website, start the variable name as discussed in [Step 1: Find the scope value](#cloud-system-vars-scopes).
+*	To set a value for a particular store view or website, start the variable name as discussed in [Step 1: Find the scope value](#cloud-system-vars-scopes):
+
+	*	`CONFIG_WEBSITE`
+	*	`CONFIG_STORES`
 
 [See some examples](#cloud-system-vars-ex)
 
@@ -142,7 +145,7 @@ This section shows some sample variables.
 
 **Locale code for a website**
 
-	CONFIG__WEBSITES__BASE__DEV__TEMPLATE__MINIFY_HTML
+	CONFIG__WEBSITE__BASE__DEV__TEMPLATE__MINIFY_HTML
 
 #### Next step
 [Manage system settings]({{ page.baseurl }}cloud/live/sens-data-initial.html)
