@@ -42,7 +42,7 @@ The general format of system variables follows:
 
 <p id="cloud-system-vars-scopes"></p>{% collapsibleh2 Step 1: Find the website or store view scope value %}
 
-This section discusses how you can find and set system configuration values per _scope_ (store view or website). To set default global scope variables, see [Step 2: Set system variables](#cloud-system-vars-sys).
+This section discusses how you can find and set system configuration values per _scope_ (store view or website). To set global scope variables, see [Step 2:  Set global, website, or store view variables](#cloud-system-vars-sys).
 
 Scope values come from the `store`, `store_group`, and `store_website` tables.
 
@@ -62,15 +62,26 @@ How to read the table:
 
 	*	The entire variable name is always ALL CAPS
 	*	Start a variable name with `CONFIG__` (note two underscore characters)
-	*	You can find the `<SYSTEM__VARIABLE>` portion of a variable name in either the Magento Admin or the Magento database, as indicated in the following sections.
+	*	You can find the `<STORE_VIEW_CODE>` or `<WEBSITE_CODE>` portion of a variable name in either the Magento Admin or the Magento database, as indicated in the following sections.
+	*	You can find `<SYSTEM__VARIABLE>` as discussed in [Step 2:  Set global, website, or store view variables](#cloud-system-vars-sys).
 
 ### Find a website or store view scope in the Magento Admin
-The following table summarizes how to find website or store view value in the Admin. The value you need is the code value, not the name value.
+The following table summarizes how to find website or store view value in the Admin. 
 
 | Description  | Path in Magento Admin | Variable name | 
 |--------------|--------------|----------------------|
-| Create, edit, delete store views | **Stores** > **All Stores**, **Add Store View** | `CONFIG__STORES__<STORE_VIEW_CODE>`  |
-| Create, edit, delete websites | **Stores** > **All Stores**, **Add Website**  | `CONFIG__WEBSITE__<WEBSITE_CODE>` | 
+| Create, edit, delete store views | **Stores** > **All Stores** | `CONFIG__STORES__<STORE_VIEW_CODE>__<SYSTEM__VARIABLE>`  |
+| Create, edit, delete websites | **Stores** > **All Stores**  | `CONFIG__WEBSITE__<WEBSITE_CODE>__<SYSTEM__VARIABLE>` | 
+
+For example, to find a website scope value:
+
+1.	Log in to the Magento Admin as a user authorized to view websites.
+2.	Click **Stores** > **All Stores**.
+
+	The right figure is displayed similar to the following.
+
+	![]({{ site.baseurl }}common/images/cloud_vars_website-code.png){:width="600px"}
+3.	The scope name is displayed in the Store column.
 
 ### Find a website or store view scope in the database
 To get these values from the database:
@@ -131,7 +142,18 @@ Step 2: Set system variables come from the `core_config_data` table.
 {% endcollapsibleh2 %}
 
 ## Examples {#cloud-system-vars-ex}
-This section shows some sample variables.
+This section shows how to find values of some sample variables.
+
+### Global HTML minification
+TBD
+
+### Store view HTML minification
+TBD
+
+### Global locale code
+TBD
+
+### Website locale code
 
 **Global HTML template minification**
 
