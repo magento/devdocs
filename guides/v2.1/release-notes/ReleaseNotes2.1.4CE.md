@@ -4,7 +4,7 @@ group: release-notes
 subgroup: 02_rel-notes
 title: Magento CE 2.1.4 Release Notes
 menu_title: Magento CE 2.1.4 Release Notes
-menu_order: 11
+menu_order: 9
 version: 2.1
 github_link: release-notes/ReleaseNotes2.1.4CE.md
 ---
@@ -195,12 +195,12 @@ We address the following functional issues in this release.
 
 ## Known issues
 
-<!--- 63123 --> * Extension Manager runs slowly. 
+<!--- 63123 --> * Extension Manager runs slowly when installing or uninstalling extensions. It does not display information as expected about the extension you are installing or uninstalling, and the error console logs do not contain pertinent messages.
 
 
-<!--- 63115 --> * Under certain conditions, Magento fails to load new Category images, and displays this message, "Attention. The file was not uploaded". 
+<!--- 63115 --> * Admin users cannot use the **NEW Category Image Upload** field (**Product > Categories > Content**) to upload new Category images. Currently, Magento fails to load new Category images, and displays this message, "Attention. The file was not uploaded". 
 
-<!--- 63050 --> * Magento is not displaying the correct status of products when you add them to Configurable product ipage. 
+<!--- 63050 --> * Magento does not display the correct status of products when you add them to Configurable product page. 
 
 <!--- 62605 --> * Magento does not provide an accurate preview of the Category page.  
 
@@ -223,7 +223,7 @@ We address the following functional issues in this release.
 
 
 
-<!--- 62258 --> * You cannot successfully edit an order of a bundle product from the Magento server side. 
+<!--- 62258 --> * You cannot successfully edit from the Magento server side an order that includes a bundle product. 
 
 
 <!--- 62243 --> * After a customer orders the last unit in your inventory of a Configurable product, Magento still lists the product as in stock.  

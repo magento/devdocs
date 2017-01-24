@@ -12,7 +12,7 @@ github_link: release-notes/ReleaseNotes2.1.4EE.md
 *	TOC
 {:toc}
 
-We are pleased to present Magento Enterprise Edition 2.1.4. This release includes many functional fixes and enhancements.
+We are pleased to present Magento Enterprise Edition 2.1.4. This release includes many functional fixes and enhancements, plus one important security fix.
 
 
 
@@ -30,7 +30,7 @@ Magento 2.1.4 contains more than 20 functional fixes and enhancements, and one s
 
 ## Security enhancement
 
-This release includes an important enhancement to the security of your Magento software. While there are no confirmed attacks related to these issues to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento software to the latest version as soon as possible.
+This release includes an important enhancement to the security of your Magento software. While there are no confirmed attacks related to this issue to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento software to the latest version as soon as possible.
  
 
 
@@ -192,10 +192,10 @@ We address the following functional issues in this release.
 ## Known issues
 
 
-<!--- 63123 --> * Extension Manager runs slowly. 
+<!--- 63123 --> * Extension Manager runs slowly when installing or uninstalling extensions. It does not display information as expected about the extension you are installing or uninstalling, and the error console logs do not contain pertinent messages.
 
 
-<!--- 63115 --> * Under certain conditions, Magento fails to load new Category images, and displays this message, "Attention. The file was not uploaded". 
+<!--- 63115 --> * Admin users cannot use the **NEW Category Image Upload** field (**Product > Categories > Content**) to upload new Category images. Currently, Magento fails to load new Category images, and displays this message, "Attention. The file was not uploaded". 
 
 <!--- 63050 --> * Magento is not displaying the correct status of products when you add them to Configurable product ipage. 
 
@@ -220,7 +220,7 @@ We address the following functional issues in this release.
 
 
 
-<!--- 62258 --> * You cannot successfully edit an order of a bundle product from the Magento server side. 
+<!--- 62258 --> * You cannot successfully edit from the Magento server side an order that includes a bundle product. 
 
 
 <!--- 62243 --> * After a customer orders the last unit in your inventory of a Configurable product, Magento still lists the product as in stock.  
