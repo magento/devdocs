@@ -73,15 +73,17 @@ The following table summarizes how to find website or store view value in the Ad
 | Create, edit, delete store views | **Stores** > **All Stores** | `CONFIG__STORES__<STORE_VIEW_CODE>__<SYSTEM__VARIABLE>`  |
 | Create, edit, delete websites | **Stores** > **All Stores**  | `CONFIG__WEBSITE__<WEBSITE_CODE>__<SYSTEM__VARIABLE>` | 
 
-For example, to find a website scope value:
+For example, to find a website or store view scope value in the Admin:
 
 1.	Log in to the Magento Admin as a user authorized to view websites.
 2.	Click **Stores** > **All Stores**.
+3.	Click the name of a website or store view.
 
 	The right figure is displayed similar to the following.
 
-	![]({{ site.baseurl }}common/images/cloud_vars_website-code.png){:width="600px"}
-3.	The scope name is displayed in the Store column.
+	![Find a website code]({{ site.baseurl }}common/images/cloud_vars_website-code.png){:width="600px"}
+3.	The scope name is displayed in the Code column.
+4.	Continue with [Step 2:  Set global, website, or store view variables](#cloud-system-vars-sys).
 
 ### Find a website or store view scope in the database
 To get these values from the database:
