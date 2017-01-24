@@ -13,9 +13,6 @@ github_link: mrg/ee/CatalogInventoryStaging.md
 
 ![Magento EE logo]({{site.baseurl}}common/images/ee-only_large.png)
 
-<h2>Contents</h2>
-
-
 ## Magento_CatalogInventoryStaging module
 
 ## Overview

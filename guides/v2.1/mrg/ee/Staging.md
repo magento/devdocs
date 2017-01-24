@@ -6,8 +6,6 @@ title: Module Reference Guide
 menu_title: Staging
 menu_order: 2
 version: 2.1
-
-
 github_link: mrg/ee/Staging.md
 ---
 
@@ -250,9 +248,9 @@ You can find the list of modules that have dependencies on the Magento_Staging m
 
 Extension points enable extension developers to interact with the Magento_Staging module. For more information about the Magento extension mechanism, see [Magento plug-ins](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/plugins.html).
 
-### Public APIs
+### Public API
 
-You can use public APIs from the [`magento2ee/app/code/Magento/Staging/Api`](https://github.com/magento/magento2ee/tree/develop/app/code/Magento/Staging/Api)
+You can use public API defined in the `Api` directory.
 
 ### UI components
 
