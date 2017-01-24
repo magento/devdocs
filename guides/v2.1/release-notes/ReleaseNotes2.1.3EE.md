@@ -4,7 +4,7 @@ group: release-notes
 subgroup: 02_rel-notes
 title: Magento EE 2.1.3 Release Notes
 menu_title: Magento EE 2.1.3 Release Notes
-menu_order: 10
+menu_order: 12
 version: 2.1
 github_link: release-notes/ReleaseNotes2.1.3EE.md
 ---
