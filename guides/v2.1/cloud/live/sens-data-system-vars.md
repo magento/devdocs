@@ -109,7 +109,7 @@ This section discusses how to set system variables.
 
 *	To set a value for a particular store view or website, start the variable name as discussed in [Step 1: Find the scope value](#cloud-system-vars-scopes):
 
-	*	`CONFIG_WEBSITE`
+	*	`CONFIG_WEBSITES`
 	*	`CONFIG_STORES`
 
 [See some examples](#cloud-system-vars-ex)
@@ -145,7 +145,7 @@ This section shows some sample variables.
 
 **Locale code for a website**
 
-	CONFIG__WEBSITE__BASE__DEV__TEMPLATE__MINIFY_HTML
+	CONFIG__WEBSITES__BASE__DEV__TEMPLATE__MINIFY_HTML
 
 #### Next step
 [Manage system settings]({{ page.baseurl }}cloud/live/sens-data-initial.html)
