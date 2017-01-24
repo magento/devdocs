@@ -6,17 +6,10 @@ title: Module Reference Guide
 menu_title: LayeredNavigationStaging
 menu_order: 2
 version: 2.2
-
-
 github_link: mrg/ee/LayeredNavigationStaging.md
 ---
 
 ![Magento EE logo]({{site.baseurl}}common/images/ee-only_large.png)
-
-<h2>Contents</h2>
-
-
-## Magento_LayeredNavigationStaging module
 
 ## Overview
 
