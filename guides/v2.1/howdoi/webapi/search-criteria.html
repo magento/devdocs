@@ -1102,7 +1102,7 @@ searchCriteria[filter_groups][<span class="nt">&lt;index&gt;</span>][filters][<s
     </tr>
     <tr>
       <td><code>in</code></td>
-      <td>In</td>
+      <td>In. The <code>value</code> can contain a comma-separated list of values.</td>
     </tr>
     <tr>
       <td><code>like</code></td>
@@ -1126,7 +1126,7 @@ searchCriteria[filter_groups][<span class="nt">&lt;index&gt;</span>][filters][<s
     </tr>
     <tr>
       <td><code>nin</code></td>
-      <td>Not in</td>
+      <td>Not in. The <code>value</code> can contain a comma-separated list of values.</td>
     </tr>
     <tr>
       <td><code>notnull</code></td>
@@ -1155,6 +1155,7 @@ searchCriteria[filter_groups][<span class="nt">&lt;index&gt;</span>][filters][<s
   <li>To perform a logical OR, specify multiple <code>filters</code> within a <code>filter_groups</code>.</li>
   <li>To perform a logical AND, specify multiple <code>filter_groups</code>.</li>
   <li>You cannot perform a logical OR across different <code>filter_groups</code>, such as <code>(A AND B) OR (X AND Y)</code>. ORs can be performed only within the context of a single <code>filter_groups</code>.</li>
+  <li>You can only search top-level attributes.</li>
 </ul>
 
 <p>The following sections provide examples of each type of search. These examples use the Magento CE sample data.</p>
