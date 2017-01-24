@@ -131,7 +131,7 @@ This section discusses how to set system variables.
 
 Step 2: System variables from the `core_config_data` table.
 
-<!-- <p id="sys-var-table"></p> -->
+
 | Description  | Path in Magento Admin (omitting **Stores** > **Configuration**) | Variable name | 
 |--------------|--------------|----------------------|
 | Store locale  | General > **General**, **Locale Options** > **Locale**  |  `<SCOPE>__GENERAL__LOCALE__CODE` | 
