@@ -153,7 +153,7 @@ To find the variable name for global HTML minification:
 1.	Determine the scope.
 
 	It's the global scope so the variable name starts with `CONFIG__DEFAULT__`
-2.	According to the [table in Step 2](#cloud-system-vars-sys), the rest of the variable name is `DEV__TEMPLATE__MINIFY_HTML`.
+2.	According to the [table in Step 2: Set global, website, or store view variables](#cloud-system-vars-sys), the rest of the variable name is `DEV__TEMPLATE__MINIFY_HTML`.
 
 Result: The variable name is `CONFIG__DEFAULT__DEV__TEMPLATE__MINIFY_HTML`
 
@@ -162,33 +162,12 @@ To find the variable name for HTML minification for a store view:
 
 1.	Determine the scope.
 
-	Find the scope in the [database](#cloud-system-vars-scopes). (You can also find the value in the Admin as shown in the the [table in Step 2](#cloud-system-vars-sys).
+	Find the scope in the [database as discussed in Step 1: Find the website or store view scope value](#cloud-system-vars-scopes). (You can also find the value in the Admin as shown in the the [table in Step 2: Set global, website, or store view variables](#cloud-system-vars-sys).
 
 	For example, the scope might be `CONFIG__STORES__MYVIEW`.
-2.	According to the the [table in Step 2](#cloud-system-vars-sys), the rest of the variable name is `DEV__TEMPLATE__MINIFY_HTML`.
+2.	According to the the [table in Step 2: Set global, website, or store view variables](#cloud-system-vars-sys), the rest of the variable name is `DEV__TEMPLATE__MINIFY_HTML`.
 
 Result: The variable name is `CONFIG__STORES__MYVIEW__DEV__TEMPLATE__MINIFY_HTML`
-
-### Global locale code
-TBD
-
-### Website locale code
-
-**Global HTML template minification**
-
-	CONFIG__DEFAULT__DEV__TEMPLATE__MINIFY_HTML
-
-**HTML minification for a store view**
-
-	CONFIG__STORES__FRENCH__DEV__TEMPLATE__MINIFY_HTML
-
-**Global locale code**
-
-	CONFIG__DEFAULT__GENERAL__LOCALE__CODE
-
-**Locale code for a website**
-
-	CONFIG__WEBSITES__BASE__DEV__TEMPLATE__MINIFY_HTML
 
 #### Next step
 [Manage system settings]({{ page.baseurl }}cloud/live/sens-data-initial.html)
