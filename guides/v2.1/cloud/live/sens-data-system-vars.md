@@ -153,7 +153,7 @@ To find the variable name for global HTML minification:
 1.	Determine the scope.
 
 	It's the global scope so the variable name starts with `CONFIG__DEFAULT__`
-2.	According to the [preceding table](#sys-var-table), the rest of the variable name is `DEV__TEMPLATE__MINIFY_HTML`.
+2.	According to the [table in Step 2](#cloud-system-vars-sys), the rest of the variable name is `DEV__TEMPLATE__MINIFY_HTML`.
 
 Result: The variable name is `CONFIG__DEFAULT__DEV__TEMPLATE__MINIFY_HTML`
 
@@ -162,10 +162,10 @@ To find the variable name for HTML minification for a store view:
 
 1.	Determine the scope.
 
-	Find the scope in the [databae](#cloud-vars-db). (You can also find the value in the Admin as shown in the [preceding table](#sys-var-table).
+	Find the scope in the [database](#cloud-system-vars-scopes). (You can also find the value in the Admin as shown in the the [table in Step 2](#cloud-system-vars-sys).
 
 	For example, the scope might be `CONFIG__STORES__MYVIEW`.
-2.	According to the [preceding table](#sys-var-table), the rest of the variable name is `DEV__TEMPLATE__MINIFY_HTML`.
+2.	According to the the [table in Step 2](#cloud-system-vars-sys), the rest of the variable name is `DEV__TEMPLATE__MINIFY_HTML`.
 
 Result: The variable name is `CONFIG__STORES__MYVIEW__DEV__TEMPLATE__MINIFY_HTML`
 
