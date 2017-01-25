@@ -106,11 +106,11 @@ We address the following functional issues in this release.
 
 <!--- 56695-->* You can now successfully complete Paypal checkout with products that have custom options.  <a href="https://github.com/magento/magento2/issues/5938" target="_blank">(GITHUB-5938)</a>
 
-<!--- 58376-->* PayPal Payflow Pro now uses the currency you've specified in your store settings. Previously, Magento converted the total price  into U.S. dollars, no matter which currency was specified in the store settings. 
+<!--- 58376-->* PayPal Payflow Pro now uses the currency you've specified in your store settings. Previously, Magento converted the total price into U.S. dollars, no matter which currency was specified in the store settings. 
 
 <!--- 55612-->* Magento no longer displays the **No Payment method available** message when a customer tries to shipitems to a billing-restricted country. 
 
-<!--- 62669-->* Third party payment gateways are now visible from the Admin.  <a href="https://github.com/magento/magento2/issues/7891" target="_blank">(GITHUB-7891)</a>
+<!--- 62669-->* Third-party payment gateways are now visible from the Admin.  <a href="https://github.com/magento/magento2/issues/7891" target="_blank">(GITHUB-7891)</a>
 
 <!--- 62428-->* Magento now updates you as expected on order comments and order history after you initiate a refund using Braintree. Previously, when you clicked the **Refund** button (to initiate a refund), Magento did not redirect you to order comments and history information.
 
@@ -128,7 +128,10 @@ We address the following functional issues in this release.
 
 
 <!--- 59680-->* We've fixed a fatal issue that occurred if you ran Travis builds on `imagettfbbox 2.1.2`. Previously, you'd receive this error: 
-			PHP Fatal error: Call to undefined function Magento\Framework\Image\Adapter\imagettfbbox() in /home/travis/build/magento/magento2/lib/internal/Magento/Framework/Image/Adapter/Gd2.php`. 
+
+	```PHP Fatal error: Call to undefined function Magento\Framework\Image\Adapter\imagettfbbox() in /home/travis/build/magento/magento2/lib/internal/Magento/Framework/Image/Adapter/Gd2.php```
+
+
 
 
 
@@ -197,7 +200,7 @@ We address the following functional issues in this release.
 <!--- 63123 --> * Extension Manager runs slowly when installing or uninstalling extensions. It does not display information as expected about the extension you are installing or uninstalling, and the error console logs do not contain pertinent messages.
 
 
-<!--- 63115 --> * Admin users cannot use the **NEW Category Image Upload** field (**Product > Categories > Content**) to upload new Category images. Currently, Magento fails to load new Category images, and displays this message, "Attention. The file was not uploaded". 
+<!--- 63115 --> * Admin users cannot use the **NEW Category Image Upload** field (**Product > Categories > Content**) to upload new Category images. Currently, Magento fails to load new Category images, and displays this message, **Attention. The file was not uploaded**. 
 
 <!--- 63050 --> * Magento does not correctly display the status of products when you add an item to the Configurable product page. 
 
