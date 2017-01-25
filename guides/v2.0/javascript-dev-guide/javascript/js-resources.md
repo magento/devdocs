@@ -122,15 +122,45 @@ var config = {
 
 ## Where the RequireJS library is included {#m2devgde-js-resources-configrequirejs}
 
-To be available for the entire Magento instance, RequireJS library is included `layout.xml` as follows:
+To be available for the entire Magento instance, RequireJS library is included in the following layout files:
 
-<script src="https://gist.github.com/xcomSteveJohnson/5ec88ab806a29c85f1cf.js"></script>
+ * For the `adminhtml` area:
 
-<p class="q">it seems to me everything is completely different now. need info for 2.0 and 2.1 </p>
+    [app/code/Magento/Backend/view/adminhtml/layout/default.xml]({{site.mage2000url}}app/code/Magento/Backend/view/adminhtml/layout/default.xml)
+{%highlight xml%}
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <title>Magento Admin</title>
+        <meta name="viewport" content="width=1024"/>
+        <meta name="format-detection" content="telephone=no"/>
+  <!-- Here's the library included -->       
+		<link src="requirejs/require.js"/>
+        <css src="extjs/resources/css/ext-all.css"/>
+        <css src="extjs/resources/css/ytheme-magento.css"/>
+    </head>
+    <body>
+        <attribute name="id" value="html-body"/>
+       <!-- Here's the basic configuration file require_js.phtml specified -->   
+	 <block name="require.js" class="Magento\Backend\Block\Page\RequireJs" template="Magento_Backend::page/js/require_js.phtml"/>
+        <referenceContainer name="global.notices">
+            <block class="Magento\Backend\Block\Page\Notices" name="global_notices" as="global_notices" template="page/notices.phtml"/>
+        </referenceContainer>
+        <referenceContainer name="header">
+            ...
+        <referenceContainer name="after.body.start">
+            <!-- Here's the main configuration file requirejs-config.js specified -->
+			<block class="Magento\RequireJs\Block\Html\Head\Config" name="requirejs-config"/>
+            <block class="Magento\Translation\Block\Html\Head\Config" name="translate-config"/>
+            <block class="Magento\Translation\Block\Js" name="translate" template="Magento_Translation::translate.phtml"/>
+            <block class="Magento\Framework\View\Element\Js\Components" name="head.components" as="components" template="Magento_Backend::page/js/components.phtml"/>
+            <block class="Magento\Framework\View\Element\Html\Calendar" name="head.calendar" as="calendar" template="Magento_Backend::page/js/calendar.phtml"/>
+        </referenceContainer>
+    </body>
+{%endhighlight%}
+
+* For the `frontend` area the similar configuration is located in [`app/code/Magento/Theme/view/frontend/layout/default.xml`]({{site.mage2000url}}app/code/Magento/Theme/view/frontend/layout/default.xml). 
 
 ## JavaScript resources mapping {#m2devgde-js-resources-mapping}
-
-For the RequireJS library to work with JS resource, they should be mapped in the `requirejs-config.js` configuration files. 
 
 To make the configurations more precise and specific for different modules/themes, `requirejs-config.js` files can be placed in different [locations]({{page.baseurl}}#m2devgde-js-resources-configuring) depending on your needs. 
 
@@ -154,19 +184,11 @@ All configurations are collected and executed in the following order:
 <li>Configurations at the theme level for the current theme.</li>
 </ol>
 
-In addition to standard aliases of RequireJS library, Magento uses module notations or relative paths. You must specify in RequireJS configurations the relative paths to JavaScript resources belonging to the module and the theme module levels. For instance, specifying the path in `app/code/Magento/Catalog/view/frontend/requirejs-config.js` will look as follows:
+The `baseUrl` parameter for RequireJS is specified in the following files:
+* for the `frontend` area: [app/code/Magento/Theme/view/frontend/templates/page/js/require_js.phtml]({{site.mage2000url}}app/code/Magento/Theme/view/frontend/templates/page/js/require_js.phtml)
+* for the `adminhtml` area: [app/code/Magento/Backend/view/adminhtml/templates/page/js/require_js.phtml]({{site.mage2000url}}app/code/Magento/Backend/view/adminhtml/templates/page/js/require_js.phtml)
 
-<pre>var config = {
-    paths: {
-        // configuration for resource 'app/code/Magento/Catalog/view/frontend/product/product.js'
-        "product": "./product/product"
-    }
-};
-</pre>
 
-In the example above, `./product/product` is relative path to JavaScript resources of `Catalog` module.
 
-The `baseUrl` parameter is not specified in the configurations files, since it is generated automatically.
 
-<p class="q">The example requires corrections (smth about the relative path)</p>
 
