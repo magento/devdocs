@@ -108,7 +108,7 @@ We address the following functional issues in this release.
 
 <!--- 58376-->* PayPal Payflow Pro now uses the currency you've specified in your store settings. Previously, Magento converted the total price into U.S. dollars, no matter which currency was specified in the store settings. 
 
-<!--- 55612-->* Magento no longer displays the **No Payment method available** message when a customer tries to shipitems to a billing-restricted country. 
+<!--- 55612-->* Magento no longer displays the **No Payment method available** message when a customer tries to ship items to a billing-restricted country. 
 
 <!--- 62669-->* Third-party payment gateways are now visible from the Admin.  <a href="https://github.com/magento/magento2/issues/7891" target="_blank">(GITHUB-7891)</a>
 
