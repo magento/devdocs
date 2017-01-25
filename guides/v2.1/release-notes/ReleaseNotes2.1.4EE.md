@@ -219,7 +219,7 @@ We address the following functional issues in this release.
 
 
 
-<!--- 62283 --> * Server-side LESS compilation is not working as expected. When you enable server-side LESS compilation,  the `pub/static/frontend` directory remains. 
+<!--- 62283 --> * Server-side LESS compilation is not working as expected. When you enable server-side LESS compilation,  the `pub/static/frontend`  directory remains. 
 
 
 
