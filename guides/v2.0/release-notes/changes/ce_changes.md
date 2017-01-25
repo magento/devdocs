@@ -20,7 +20,50 @@ where each change is displayed in a separate row in the table, with the followin
 - **Target** with the name of an affected class or interface
 - **What changed** with the description of a backward incompatible change
 
-{% include changes/ce_changes.html %}
+### 2.0.4 - 2.0.3
+
+No backward incompatible changes
+
+### 2.0.3 - 2.0.2
+
+#### Changes in classes
+
+|Target|What changed|
+|---|---|
+|`Magento\Framework\Search\Document`|Class was removed.|
+|`Magento\Framework\App\Cron::__construct`|[public] Method parameter changed.|
+|`Magento\Theme\Setup\InstallData::createThemeResource`|[public] Method has been removed.|
+
+### 2.0.2 - 2.0.1
+
+#### Changes in interfaces
+
+|Target |	What Changed |
+|---|---|
+|`Magento\Sales\Api\Data\InvoiceCommentInterface::getComment`| 	[public] Method has been removed.|
+|`Magento\Sales\Api\Data\InvoiceCommentInterface::getCreatedAt`| 	[public] Method has been removed.|
+|`Magento\Sales\Api\Data\InvoiceCommentInterface::setCreatedAt`| 	[public] Method has been removed.|
+|`Magento\Sales\Api\Data\InvoiceCommentInterface::getEntityId`| 	[public] Method has been removed.|
+
+
+### 2.0.1 - 2.0.0
+
+#### Changes in classes
+
+|Target|What changed|
+|---|---|
+|`Magento\Framework\Search\Document`|Class was removed.|
+|`Magento\Framework\App\Cron::__construct`|[public] Method parameter changed.|
+|`Magento\Theme\Setup\InstallData::createThemeResource`|[public] Method has been removed.|
+
+#### Changes in interfaces
+
+|Target |	What Changed |
+|---|---|
+|`Magento\Sales\Api\Data\InvoiceCommentInterface::getComment`| 	[public] Method has been removed.|
+|`Magento\Sales\Api\Data\InvoiceCommentInterface::getCreatedAt`| 	[public] Method has been removed.|
+|`Magento\Sales\Api\Data\InvoiceCommentInterface::setCreatedAt`| 	[public] Method has been removed.|
+|`Magento\Sales\Api\Data\InvoiceCommentInterface::getEntityId`| 	[public] Method has been removed.|
 
 <!-- LINK DEFINITIONS -->
 
