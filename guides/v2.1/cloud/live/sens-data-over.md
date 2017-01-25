@@ -12,38 +12,46 @@ version: 2.1
 github_link: cloud/live/sens-data-over.md
 ---
 
-In version 2.1.4, Magento Enterprise Cloud Edition improves how you manage your configuration by providing:
+In version 2.1.4, Magento Enterprise Cloud Edition provides a better way to manage your configuration by providing:
 
 *	A new method to manage sensitive data (such as payment gateway passwords).
-*	An improved method to manage system configuration data (such as store locale settings and file optimization settings) in a new configuration file, `app/etc/config.local.php`, which is in source control.
+*	An improved method to manage system configuration data (such as store locale settings and static file optimization settings) in a new configuration file, `app/etc/config.local.php`, which is in source control.
+
+<div class="bs-callout bs-callout-info" markdown="1">
+These new methods to manage your configuration are optional. You don't have to use them, although we strongly recommend you do.
+</div>
 
 We help you protect sensitive data and make it easy to manage system data as follows:
 
 *	In your [staging]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-stage) and [production]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-prod) systems, you manage sensitive data using environment variables. 
 
 	You can change sensitive variables using the Magento Enterprise Cloud Edition [Web Interface]({{ page.baseurl }}cloud/project/project-webint-basic.html). 
-*	System values related to static content deployment (for example, file optimization) are stored in a new configuration file, `app/etc/config.local.php`, which is managed in source control.
+*	System values related to static content deployment (for example, static file optimization) are stored in a new configuration file, `app/etc/config.local.php`, which is managed in source control.
 
 	Sensitive values are _not_ stored in `app/etc/config.local.php`.
 
-	Managing `config.local.php` in source control means your settings for staging and production are always consistent. For example, you can disable file optimization in your [integration]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-int) system but enable it in both staging and production. After initially setting up the configuration, you don't need to touch it again because it's in source control.
+	Managing `config.local.php` in source control means your settings for staging and production are always consistent. For example, you can disable static file optimization in your [integration]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-int) system but enable it in both staging and production. After initially setting up the configuration, you don't need to touch it again because it's in source control.
 
-	(_File optimization_ means merging and minifying JavaScript and Cascading Style Sheets, and minifying HTML templates.)
+	(_static file optimization_ means merging and minifying JavaScript and Cascading Style Sheets, and minifying HTML templates.)
 
 	In addition, you can optionally manage `config.local.php` using scripting or automation tools. However, discussion of those tools is beyond the scope of this guide.
 
 ## Manage your configuration and protect sensitive data {#cloud-config-manage-sens-over}
-Magento's store configuration is stored located in the database and there is one database per system. This can make the configuration of multiple systems (such as staging and production) difficult.
+Magento's store configuration is located in the database and there is one database per system. This can make the configuration of multiple systems (such as staging and production) difficult.
 
 Starting with version 2.1.4, we provide the following:
 
 *	Store configuration values are specified in a new configuration file, `app/etc/config.local.php`, which is in source control.
 
-	Using `config.local.php`, you can, for example, disable file optimization in your integration system (where you are developing and testing) and enable file optimization in staging and production. 
+	Using `config.local.php`, you can, for example, disable static file optimization in your integration system (where you are developing and testing) and enable static file optimization in staging and production. 
 
 	Settings in `config.local.php` cannot be changed in the Magento Admin. The next section provides an overview of how to change these settings.
 
 *	Sensitive values, such as payment processor settings, are specified using environment variables. Viewing or changing environment variables is restricted to people who have at minimum a project reader role with [environment administrator]({{ page.baseurl }}cloud/admin/admin-user-admin.html#loud-role-env) privileges.
+
+<div class="bs-callout bs-callout-info" markdown="1">
+These new methods to manage your configuration are optional. You don't have to use them, although we strongly recommend you do.
+</div>
 
 The following sections provide more detail.
 
@@ -54,7 +62,7 @@ System settings refer to the configuration in the Magento Admin in **Stores** > 
 In each of your Magento Enterprise Cloud Edition systems (integration, staging, and production), you have the option of overriding certain configuration settings:
 
 *	Some settings, such as the search engine and caching system, might be the same across all systems
-*	Other settings, such as file optimization settings, can be unique to a particular system
+*	Other settings, such as static file optimization settings, can be unique to a particular system
 *	Sensitive settings, such as payment processor settings, are set using environment variables
 
 	<div class="bs-callout bs-callout-info" markdown="1">
@@ -83,7 +91,7 @@ For an example of how this works, see [Manage system settings]({{ page.baseurl }
 #### Recommended procedure to manage your settings {#cloud-config-specific-recomm}
 Managing store configuration is a complex task that's mostly up to you. What locales do you want to use? What custom themes do you need? Only you can determine the answers to those questions.
 
-We can, however, help you manage those settings more easily. For example, suppose you want to change the default locale and also change a store's file optimization settings. Currently, the way you do that is to log in to the Admin on the integration server, save your settings, then (when testing is complete) migrate those settings to staging. 
+We can, however, help you manage those settings more easily. For example, suppose you want to change the default locale and also change a store's static file optimization settings. Currently, the way you do that is to log in to the Admin on the integration server, save your settings, then (when testing is complete) manually change those settings in staging. 
 
 What if someone changes a setting in the staging Admin? You'll have to go back and make the same change on integration; otherwise, next time you deploy to staging, the old settings are enabled.
 

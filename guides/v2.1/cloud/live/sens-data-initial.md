@@ -12,7 +12,7 @@ version: 2.1
 github_link: cloud/live/sens-data-initial.md
 ---
 
-This topic discusses how to manage default locale and file optimization settings in your integration system. _File optimization_ means merging and minifying JavaScript and Cascading Style Sheets, and minifying HTML templates. File optimization should be disabled in integration (where you're testing) and enabled in staging and production.  
+This topic discusses how to manage default locale and static file optimization settings in your integration system. _static file optimization_ means merging and minifying JavaScript and Cascading Style Sheets, and minifying HTML templates. static file optimization should be disabled in integration (where you're testing) and enabled in staging and production.  
 
 These particular settings are discussed only to explain how the procedure works; you can use the same procedure to manage any available settings. For a complete list of settings, see [List of system-specific configuration settings]({{ page.baseurl }}cloud/live/sens-data-over.html#cloud-config-specific-list). 
 
@@ -70,9 +70,9 @@ To find login information for the integration server Admin:
 
 {% collapsibleh2 Step 1: Change the configuration in the integration server Admin %}
 
-This section discusses how to change the locale for the Default Config and also how to change file optimization settings in the integration server. You can change different settings if you wish; see [List of system-specific configuration settings]({{ page.baseurl }}cloud/live/sens-data-over.html#cloud-config-specific-list) for details.
+This section discusses how to change the locale for the Default Config and also how to change static file optimization settings in the integration server. You can change different settings if you wish; see [List of system-specific configuration settings]({{ page.baseurl }}cloud/live/sens-data-over.html#cloud-config-specific-list) for details.
 
-To change locale and file optimization settings:
+To change locale and static file optimization settings:
 
 1.	Click **Stores** > Settings > **Configuration** > General > **General**. 
 2.	In the right pane, expand **Locale Options**. 
@@ -92,7 +92,7 @@ To change locale and file optimization settings:
 
 	The following figure shows an example.
 
-	![Set file optimization settings]({{ site.baseurl }}common/images/cloud_vars_set-minify.png){:width="550px"}
+	![Set static file optimization settings]({{ site.baseurl }}common/images/cloud_vars_set-minify.png){:width="550px"}
 8.	Click **Save Config**.
 9.	If prompted, [flush the Magento cache](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html){:target="_blank"}.
 10.	Log out of the Magento Admin.
@@ -108,7 +108,7 @@ To create `config.local.php` on the integration server:
 
 {% include cloud/sens-data-create-config-local.md %}
 
-The following snippet from `config.local.php` show an example of changing the default locale to `en_GB` and changing file optimization settings:
+The following snippet from `config.local.php` show an example of changing the default locale to `en_GB` and changing static file optimization settings:
 
 <pre class="no-copy">
  'general' =>
@@ -158,7 +158,7 @@ Wait for deployment to complete.
 <p id="cloud-set-verify"></p>{% collapsibleh2 Step 4: Verify your configuration changes %}
 After you push `config.local.php` to your integration server, any values you changed should be unavailable in the Magento Admin.
 
-In this example, the default locale and file optimization settings should not be editable in the Admin.
+In this example, the default locale and static file optimization settings should not be editable in the Admin.
 
 To verify your configuration changes:
 
@@ -185,7 +185,7 @@ To verify your configuration changes:
 {% collapsibleh2 Step 5: Change system-specific configuration settings %}
 This section discusses how to change system-specific settings. Our [recommended procedure]({{ page.baseurl }}cloud/live/sens-data-over.html#cloud-config-specific-recomm) is to make the changes on the integration server and repeat the process of creating `config.local.php` and pushing it back to the integration server.
 
-For this example, we'll use file optimization settings. If you've already changed those settings, you can use this procedure to set other options of your choosing.
+For this example, we'll use static file optimization settings. If you've already changed those settings, you can use this procedure to set other options of your choosing.
 
 ### Delete config.local.php on the integration server
 Before you can change settings on the integration server, you should delete `app/etc/config.local.php` so all settings are available in the Admin. (Any non-default setting in `config.local.php` is uneditable in the Admin.)
@@ -220,7 +220,7 @@ To change values in the Admin:
 
 	The following figure shows an example.
 
-	![Set file optimization settings]({{ site.baseurl }}common/images/cloud_vars_reset-minify.png){:width="550px"}
+	![Set static file optimization settings]({{ site.baseurl }}common/images/cloud_vars_reset-minify.png){:width="550px"}
 8.	Click **Save Config**.
 9.	If prompted, [flush the Magento cache](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html){:target="_blank"}.
 10.	Log out of the Magento Admin.
