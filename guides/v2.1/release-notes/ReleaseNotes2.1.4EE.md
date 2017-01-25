@@ -221,10 +221,10 @@ We address the following functional issues in this release.
 
 
 
-<!--- 62258 --> * You cannot successfully edit an order that includes a bundle product from the Magento server side.
+<!--- 62258 --> * You cannot use the Magento server side to successfully edit an order that includes a bundle product.
 
 
-<!--- 62243 --> * After a customer orders the last unit in your inventory of a Configurable product, Magento still lists the product as in stock.  
+<!--- 62243 --> * After a customer orders the last unit in your inventory of a Configurable product, Magento still lists the product as being in stock.  
 
 
 

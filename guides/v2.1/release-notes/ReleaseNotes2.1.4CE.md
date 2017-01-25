@@ -59,11 +59,10 @@ We address the following functional issues in this release.
 
 ### Indexers
 
-<!--- 59853-->* The Magento flat indexer now collects correct product data for `ROW_ID`.
 
 <!--- 58893-->* `IndexerHandlerFactory` no longer tries to cast the `$indexer` object to a String if an error occurs. Since `$indexer` is an object of type `IndexerInterface` and does not have a `__toString()` method, attempting to cast the `$indexer` object to a String previously resulted in an error. <a href="https://github.com/magento/magento2/issues/5155" target="_blank">(GITHUB-5155)</a> 
 
-<!--- 58559-->* We've fixed an issue with indexing of flat tables.
+<!--- 58559-->* We've fixed an issue with the indexing of flat tables.
 
 
 
@@ -91,7 +90,7 @@ We address the following functional issues in this release.
 <!---59416 -->* Admin users with appropriate permissions can now reset the passwords of more than one customer at a time. <a href="https://github.com/magento/magento2/issues/5260" target="_blank">(GITHUB-5260)</a>
 
 
-<!---59142 -->* Admin interface forms now load data as expected after initializing all components. Previously, under certain conditions, the load indicator would spin indefinitely, and Magento would not load data. 
+<!---59142 -->* Admin interface forms now load data as expected after initializing all components. Previously, under certain conditions, the load indicator would spin indefinitely, and Magento did not load data. 
 
 
 
@@ -100,7 +99,7 @@ We address the following functional issues in this release.
 <!--- 58895-->* Magento no longer redirects you to the Compare Products page if you try to remove a product.
 
 
-<!--- 58832-->* The order comments history no longer duplicates the time that a comment was made. Previously, the time that a comment was made was listed twice.
+<!--- 58832-->* The order comments history no longer duplicates the time that a comment was made. Previously, the time that a comment was entered was listed twice.
 
 
 
@@ -223,11 +222,7 @@ We address the following functional issues in this release.
 <!--- 62283 --> * Server-side LESS compilation is not working as expected. When you set server-side LESS compilation to **on**,  the `pub/static/frontend` remains. 
 
 
-
-<!--- 62258 --> * You cannot successfully edit an order that includes a bundle product from the Magento server side.
-
-
-<!--- 62243 --> * After a customer orders the last unit in your inventory of a Configurable product, Magento still lists the product as in stock.  
+<!--- 62243 --> * After a customer orders the last unit in your inventory of a Configurable product, Magento still lists the product as being in stock.  
 
 
 
