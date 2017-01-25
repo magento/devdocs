@@ -1,11 +1,7 @@
 {% if page.tags %}
 <div class="page-tags">
-
-
   {% for tag in page.tags %}
-    {% assign site_tag = (site.site_tags | where: "layout", "tag-index" ) %}
-    {{ site_tag.title }}
-    <a href="{{ site.baseurl }}tag/{{ site_tag.slug }}.html" class="tag tag-default">{{ site_tag.name }}</a>
+    <a href="{{ site.baseurl }}tag/{{ site_tag.slug }}.html" class="tag tag-default">{{ tag }}</a>
   {% endfor %}
 </div>
 {% endif %}

@@ -23,11 +23,14 @@
 					{% endif %}
 				{% endfor %}
 
+				<!--
 				<li class=""><span class="nav-header">Authors</span></li>
-				{% assign playlists = (site.videos | where: 'layout', 'video' | group_by: 'author' | sort: 'author') | reverse  %}
-				{% for playlist in playlists %}
-					{% if playlist.name.size > 0 %}
-						<li class="level-1 {% if playlist.items[0].author == page.author %}active{% endif %}"><a href="">{{ playlist.name }} <i class="item-count">{{ playlist.items.size }} videos</i></a></li>
+				{% assign authors = (site.videos | where: 'layout', 'video' | group_by: 'author' | sort: 'author') | reverse  %}
+				{% for author in authors %}
+					{% if author.name.size > 0 %}
+					{% assign auth = site.data.people[author.name] %}
+
+						<li class="level-1 {% if playlist.items[0].author == page.author %}active{% endif %}"><a href="{{ auth.url }}">{{ auth.name }} <i class="item-count">{{ author.items.size }} videos</i></a></li>
 					{% endif %}
 				{% endfor %}
 
