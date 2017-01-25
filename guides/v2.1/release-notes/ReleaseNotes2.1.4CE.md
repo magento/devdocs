@@ -23,7 +23,7 @@ Magento 2.1.4 contains more than 20 functional fixes and enhancements, and one s
 
 * **Improvements to Payflow Pro processing**. PayPal Payflow Pro now uses the currency you've specified in your store settings. Previously, Magento converted the total price of a purchase into U.S. dollars, no matter which currency you specified in the store settings. 
 
-* **Removal of vulnerability with the Zend framework `Zend_Mail` library**. For more information, see <a href="https://magento.com/security/news/new-zend-framework-1-security-vulnerability" target="_blank">Magento Security Center</a>.  
+* **Removal of vulnerability with the Zend framework `Zend_Mail` library**. For more information, see <a href="https://magento.com/security/news/new-zend-framework-1-security-vulnerability" target="_blank">New Zend Framework 1 Security Vulnerability</a>.  
 
 
 * **Refinements to catalog indexing**. 
