@@ -2,8 +2,8 @@
 layout: default
 group: jsdg
 subgroup: 1_Javascript
-title: Configure JavaScript resources
-menu_title: Configure JavaScript resources
+title: JavaScript resources in Magento
+menu_title: JavaScript resources in Magento
 menu_order: 5
 version: 2.0
 github_link: javascript-dev-guide/javascript/js-resources.md
@@ -14,7 +14,7 @@ redirect_from:
 
 ## Overview {#m2devgde-js-resources-intro}
 
-This topic describes the general concepts of work with JavaScript components is organized in Magento. 
+This topic describes the general concepts of how work with JavaScript components is organized in Magento. 
 Including JavaScript into the page headers might slow down uploading of the pages. To address this problem, we exclude JavaScript from the page headers and we added the ability to use the <a href="http://requirejs.org" target="_blank">RequireJS library</a>.
 
 RequireJS improves the perceived page load time because it allows JavaScript to load in the background; in particular, because it enables asynchronous JavaScript loading.
@@ -39,22 +39,61 @@ Library level can only contain core Magento resources. Do not put custom JS file
 We recommend specifying JavaScript resources in the templates rather than in the layout updates to ensure processing of the resources in body of a page.
 
 ## Accessing JS resources
-JavaScript resources generated in Magento have IDs of two types:  a RequireJS ID and a Magento modular ID. For example JavaScript resources for configurable product will have the following IDs:
+
+JS resources are accessed using relative paths.
+
+Examples:
+
+Example 1:
+1. File actual location:
+    app/code/Magento/ConfigurableProduct/view/frontend/web/js/configurable.js
+File published to pub/static:
+    pub/static/frontend/Magento/<theme>/<locale>/Magento_Configurable/js/configurable.js
+
+Called in script:
 
 {%highlight js%}
-// RequireJS ID
-require(["jquery"], function($){
-    // ...
-});
-
-// Modular ID (Magento module: Magento_ConfigurableProduct/js/configurable)
 require(["Magento_ConfigurableProduct/js/configurable"], function(Configurable){
-    // ...
-});
+   }); 
 
 {%endhighlight%}
 
-<p class="q">Let's update this info</p>
+
+{% collapsible Example 2: %}
+1. File actual location:
+    app/code/design/frontend/Magento/blank/web/js/theme.js
+File published to pub/static:
+    pub/static/frontend/Magento/<theme>/<locale>/js/theme.js
+
+Called in script:
+
+{%highlight js%}
+require(["js/theme.js"], function(){
+   }); 
+
+{%endhighlight%}
+
+{% endcollapsible %}
+
+<p class="q">need to improve example</p>
+
+{% collapsible Example 3: %}
+1. File actual location:
+    lib/web/jquery.js
+File published to pub/static:
+    pub/static/<area>/Magento/<theme>/<locale>/jquery.js
+
+Called in script:
+
+{%highlight js%}
+require(["jquery"], function($){
+   }); 
+
+{%endhighlight%}
+
+{% endcollapsible %}
+
+These relative paths are also used in for [mapping and setting `path` in requirejs-config.js configuration files]({{page.baseurl}}). 
 
 ### Specify dependencies between JavaScript resources {#m2devgde-js-resources-dependencies}
 
