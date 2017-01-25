@@ -5,7 +5,7 @@ subgroup: 1_Javascript
 title: About AMD modules and RequireJS
 menu_title: About AMD modules and RequireJS
 menu_order: 8
-version: 2.0
+version: 2.1
 github_link: javascript-dev-guide/javascript/requirejs_concept.md
 redirect_from: ui_comp_guide/concepts/ui_comp_requirejs_concept.md
 ---

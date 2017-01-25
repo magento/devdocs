@@ -1,1 +1,0 @@
-../../v2.0/javascript-dev-guide/ui_comp_requirejs_concept.md

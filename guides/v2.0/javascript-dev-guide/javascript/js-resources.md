@@ -93,12 +93,9 @@ require(["jquery"], function($){
 
 {% endcollapsible %}
 
-These relative paths are also used in for [mapping and setting `path` in requirejs-config.js configuration files]({{page.baseurl}}). 
+These relative paths are also used in for [mapping and setting `path` in requirejs-config.js configuration files]({{page.baseurl}}javascript-dev-guide/javascript/requirejs_concept.md). 
 
-### Specify dependencies between JavaScript resources {#m2devgde-js-resources-dependencies}
-
-Specifying all dependencies between JavaScript resources might be time consuming. To facilitate this task we implemented ability to build the dependencies via plugin: thus, you will need to specify only dependency of your resource on a plugin, and the latter will pick up all necessary dependencies on other resources automatically.
-
+## Dependencies between JavaScript resources {#m2devgde-js-resources-dependencies}
 
 To build a dependency on the third-party plugin, specify a <a href="http://requirejs.org/docs/api.html#config-shim" target="_blank">shim</a> in the following configuration files:
 
