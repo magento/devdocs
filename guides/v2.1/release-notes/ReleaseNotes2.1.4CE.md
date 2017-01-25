@@ -31,7 +31,7 @@ Magento 2.1.4 contains more than 20 functional fixes and enhancements, and one s
 
 ## Security enhancement
 
-This release includes an important enhancement to the security of your Magento software. While there are no confirmed attacks related to these issues to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento software to the latest version as soon as possible.
+This release includes an important enhancement to the security of your Magento software. While there are no confirmed attacks related to the Zend framework `Zend_Mail` library vulnerability to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento software to the latest version as soon as possible.
  
 
 
@@ -48,12 +48,12 @@ We address the following functional issues in this release.
 <!--- 58437-->* The storefront gallery now displays all the images associated with a configurable product. Previously, when you clicked on the swatches associated with a configurable product, the gallery displayed only one of several possible images.  <a href="https://github.com/magento/magento2/issues/6195" target="_blank">(GITHUB-6195)</a>, <a href="https://github.com/magento/magento2/issues/4101" target="_blank">(GITHUB-4101)</a>
 
 
-<!---57832 -->* Magento now displays the "This is a required field" message immediately below the product options as needed during checkout. Previously, Magento displayed this message at the bottom of the checkout form. 
+<!---57832 -->* Magento now displays the **This is a required field** message immediately adjacent to the product options as needed during checkout. Previously, Magento displayed this message at the bottom of the checkout form. 
 
 
 ### Checkout 
 
-<!---60293 -->* Magento now successfully estimates shipping costs. Previously, when you tried to estimate shipping costs, the load indicator would spin indefinitely, and Magento displayed this exception, "Object doesn't support this action". <a href="https://github.com/magento/magento2/issues/5358" target="_blank">(GITHUB-5358)</a>, <a href="https://github.com/magento/magento2/issues/7051" target="_blank">(GITHUB-7051)</a>
+<!---60293 -->* Magento now successfully estimates shipping costs. Previously, when you tried to estimate shipping costs, the load indicator would spin indefinitely, and Magento displayed this exception, ```Object doesn't support this action```. <a href="https://github.com/magento/magento2/issues/5358" target="_blank">(GITHUB-5358)</a>, <a href="https://github.com/magento/magento2/issues/7051" target="_blank">(GITHUB-7051)</a>
 
 
 
@@ -62,14 +62,14 @@ We address the following functional issues in this release.
 
 <!--- 58893-->* `IndexerHandlerFactory` no longer tries to cast the `$indexer` object to a String if an error occurs. Since `$indexer` is an object of type `IndexerInterface` and does not have a `__toString()` method, attempting to cast the `$indexer` object to a String previously resulted in an error. <a href="https://github.com/magento/magento2/issues/5155" target="_blank">(GITHUB-5155)</a> 
 
-<!--- 58559-->* We've fixed an issue with the indexing of flat tables.
+<!--- 58559-->* We've fixed an issue with the indexing of flat tables. Previously, you encountered an error if you re-indexed after enabling the use of flat tables (either product or catalog tables). 
 
 
 
 
 ### Installation, configuration, and deployment
 
-<!--- 62400-->* We've fixed an issue where third-party command line tools failed when you ran `setup:di:compile`.
+<!--- 62400-->* Third-party command line tools no longer fail when you run `setup:di:compile`.
 
 <!--- 62648-->* Magento now correctly applies website configuration parameters to the corresponding store view. <a href="https://github.com/magento/magento2/issues/7943" target="_blank">(GITHUB-7943)</a>
 
@@ -94,9 +94,7 @@ We address the following functional issues in this release.
 
 
 
-
-
-<!--- 58895-->* Magento no longer redirects you to the Compare Products page if you try to remove a product.
+<!--- 58895-->* If you remove an item from the Compare Items list that is displayed on any Category page, Magento no longer redirects you to the Compare Products page.
 
 
 <!--- 58832-->* The order comments history no longer duplicates the time that a comment was made. Previously, the time that a comment was entered was listed twice.
@@ -110,11 +108,11 @@ We address the following functional issues in this release.
 
 <!--- 58376-->* PayPal Payflow Pro now uses the currency you've specified in your store settings. Previously, Magento converted the total price  into U.S. dollars, no matter which currency was specified in the store settings. 
 
-<!--- 55612-->* Magento no longer displays the “No Payment method available” message when a customer tries to ship his items to a billing-restricted country. 
+<!--- 55612-->* Magento no longer displays the **No Payment method available** message when a customer tries to shipitems to a billing-restricted country. 
 
-<!--- 62669-->* Third party payment gateways are now visible from the Admin interface.  <a href="https://github.com/magento/magento2/issues/7891" target="_blank">(GITHUB-7891)</a>
+<!--- 62669-->* Third party payment gateways are now visible from the Admin.  <a href="https://github.com/magento/magento2/issues/7891" target="_blank">(GITHUB-7891)</a>
 
-<!--- 62428-->* Magento now updates you as expected on order comments and order history after you initiate a refund using Braintree. Previously, when you clicked on the Refund button (to initiate a refund), Magento did not redirect you to order comments and history information.
+<!--- 62428-->* Magento now updates you as expected on order comments and order history after you initiate a refund using Braintree. Previously, when you clicked the **Refund** button (to initiate a refund), Magento did not redirect you to order comments and history information.
 
 <!--- 59036-->* We've fixed an issue with using PayPal Express Checkout to order products with custom options. Previously, although an Admin user could create and configure “File type” custom options, customers could not upload and store files within the order quote. <a href="https://github.com/magento/magento2/issues/5434" target="_blank">(GITHUB-5434)</a>
 
@@ -124,12 +122,13 @@ We address the following functional issues in this release.
 ### Travis builds
 
 
-<!--- 62388-->* We've fixed a fatal issue that occurred if you executed the CatalogImportExport test before running a subsequent test. Previously, you'd receive this error: `Failed asserting that false is true`.
+<!--- 62388-->* We've fixed a fatal issue that occurred if you executed the CatalogImportExport test before running a subsequent test. Previously, you'd receive this error: ```Failed asserting that false is true```.
 
 
 
 
-<!--- 59680-->* We've fixed a fatal issue that occurred if you ran Travis builds on `imagettfbbox 2.1.2`. Previously, you'd receive this error: `PHP Fatal error: Call to undefined function Magento\Framework\Image\Adapter\imagettfbbox() in /home/travis/build/magento/magento2/lib/internal/Magento/Framework/Image/Adapter/Gd2.php`. 
+<!--- 59680-->* We've fixed a fatal issue that occurred if you ran Travis builds on `imagettfbbox 2.1.2`. Previously, you'd receive this error: 
+			PHP Fatal error: Call to undefined function Magento\Framework\Image\Adapter\imagettfbbox() in /home/travis/build/magento/magento2/lib/internal/Magento/Framework/Image/Adapter/Gd2.php`. 
 
 
 
@@ -200,12 +199,12 @@ We address the following functional issues in this release.
 
 <!--- 63115 --> * Admin users cannot use the **NEW Category Image Upload** field (**Product > Categories > Content**) to upload new Category images. Currently, Magento fails to load new Category images, and displays this message, "Attention. The file was not uploaded". 
 
-<!--- 63050 --> * Magento does not correct display the status of products when you add an item to the Configurable product page. 
+<!--- 63050 --> * Magento does not correctly display the status of products when you add an item to the Configurable product page. 
 
-<!--- 62605 --> * Magento does not provide an accurate preview of the Category page. Currently, the Category Preview page lacks some of the information present in  the actual Category page.  
+<!--- 62605 --> * Although the Category Preview page omits some details, those details are present in the category on the storefront.  
 
 
-<!--- 62523 --> * The Magento server-side Order page is currently not displaying critical information about orders. Specifically, the Payment Information block lacks the following information: 
+<!--- 62523 --> * The Magento Admin Order page is currently not displaying critical information about orders. Specifically, the Payment Information block lacks the following information: 
 
 	* Fraud Detection
 
@@ -219,7 +218,7 @@ We address the following functional issues in this release.
 
 
 
-<!--- 62283 --> * Server-side LESS compilation is not working as expected. When you set server-side LESS compilation to **on**,  the `pub/static/frontend` remains. 
+<!--- 62283 --> * Server-side LESS compilation is not working as expected. When you enable server-side LESS compilation,  the `pub/static/frontend` directory remains. 
 
 
 <!--- 62243 --> * After a customer orders the last unit in your inventory of a Configurable product, Magento still lists the product as being in stock.  
