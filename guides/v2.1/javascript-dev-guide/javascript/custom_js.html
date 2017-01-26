@@ -318,7 +318,15 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/javascript-dev-guide/javascript/js-resources.html">Configure JavaScript resources</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/javascript-dev-guide/javascript/js-resources.html">JavaScript resources in Magento</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/javascript-dev-guide/javascript/requirejs_concept.html">About AMD modules and RequireJS</a></li>
 
 									
 
@@ -711,9 +719,23 @@
 </section>
 
 			<h2 id="custom_js_overview">Overview</h2>
-<p>This topic discusses about how to use custom JavaScript components with the components provided by Magento or having replaced them with custom implementations.</p>
+<p>This topic discusses how to use custom JavaScript components with the components provided by Magento or having replaced them with custom implementations.</p>
 
 <p>We strongly recommend not changing the source code of default Magento components and widgets. All customizations must be implemented in custom modules or themes.</p>
+
+<h2 id="add-a-custom-js-component">Add a custom JS component</h2>
+
+<p>To add a custom JS component (module), take the following steps:</p>
+
+<ol>
+  <li>Place the custom component source file in one of the following locations:
+    <ul>
+      <li>Your theme JS files: <code>&lt;theme_dir&gt;/web/js</code> or <code>&lt;theme_dir&gt;/&lt;VendorName&gt;_&lt;ModuleName&gt;/web/js</code>. In this case the component is available in your theme and its <a href="/guides/v2.1/frontend-dev-guide/themes/theme-inherit.html">child themes</a>.</li>
+      <li>Your module view JS files: <code>&lt;module_dir&gt;/view/frontend/web/js</code>. In this case the component is available in all modules and themes (if your module is enabled).</li>
+    </ul>
+  </li>
+  <li>Optionally, in the corresponding module or theme, create a <code>require-config.js</code> configuration file, if it does not yet exist there and set path for your resource.</li>
+</ol>
 
 <h2 id="js_replace">Replace a default JS component</h2>
 
@@ -721,10 +743,10 @@
 <ol>
 <li>Place the custom component source file in one of the following locations:
 <ul>
-<li>Your theme JS files: <code>&lt;theme_dir&gt;/web/js</code></li>
+<li>Your theme JS files: `<theme_dir>/web/js` or `<theme_dir>/<VendorName>_<ModuleName>/web/js`&lt;/li&gt;
 <li>Your module view JS files: <code>&lt;module_dir&gt;/view/frontend/web/js</code></li>
-</ul>
-</li>
+&lt;/ul&gt;
+&lt;/li&gt;
 <li>Create a RequireJS configuration file <code>requirejs-config.js</code>, having specified the following:
 
 
@@ -765,16 +787,17 @@ For example, if you want to use custom <code>navigation-menu.js</code> script in
 <li>Your module view files: <code>&lt;module_dir&gt;/view/frontend</code></li>
 </ul>
 </li>
-</ol>
+&lt;/ol&gt;
 
-<p>This way your custom JS component is used instead of the Magento component in all entries all over the frontend area.</p>
+This way your custom JS component is used instead of the Magento component in all entries all over the frontend area.
 
 <h2 id="extend_js">Extend a default JS component</h2>
-<p>You can add a custom JS component/widget, which will extend a default Magento component/widget.</p>
+You can add a custom JS component/widget, which will extend a default Magento component/widget.
 
 <h3 id="extend_js_widget">Extend Magento widget</h3>
 
-<p>To extend a default Magento jQuery widget, create <code>&lt;your_widget_name&gt;.js</code> with the following contents:</p>
+To extend a default Magento jQuery widget, create `<your_widget_name>.js` with the following contents:
+
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">define</span><span class="p">([</span>
   <span class="s1">&#39;jquery&#39;</span><span class="p">,</span>
@@ -787,18 +810,20 @@ For example, if you want to use custom <code>navigation-menu.js</code> script in
   <span class="k">return</span> <span class="nx">$</span><span class="p">.</span><span class="o">&lt;</span><span class="nx">your_namespace</span><span class="o">&gt;</span><span class="p">.</span><span class="o">&lt;</span><span class="nx">your_widget_name</span><span class="o">&gt;</span><span class="p">;</span>
 <span class="p">});</span></code></pre></figure>
 
-<p>Where the following notation is used:</p>
+
+Where the following notation is used:
 <ul>
 <li><code>&lt;your_namespace&gt;.&lt;your_widget_name&gt;</code> - the name of your custom widget. According to the jQuery widgets naming convention, must contain a namespace and name.</li>
 
 <li><code>mage.&lt;widget.name&gt;</code> - the name of the Magento widget that you extend.</li>
 </ul>
 
-<p>For information about how to initialize your custom widget in a <code>.phtml</code> template, see the <a href="/guides/v2.1/javascript-dev-guide/javascript/js_init.html" target="_blank">JavaScript initialization</a> topic.</p>
+For information about how to initialize your custom widget in a `.phtml` template, see the <a href="/guides/v2.1/javascript-dev-guide/javascript/js_init.html" target="_blank">JavaScript initialization</a> topic.
 
 <h3 id="extend_js_component">Extend a default Ui component</h3>
 
-<p>To extend a default JS Ui component, your custom script must contain the following:</p>
+To extend a default JS Ui component, your custom script must contain the following:
+
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">define</span><span class="p">([</span>
   <span class="s1">&#39;&lt;component_path&gt;&#39;</span>
@@ -811,14 +836,16 @@ For example, if you want to use custom <code>navigation-menu.js</code> script in
   <span class="p">});</span>
 <span class="p">});</span></code></pre></figure>
 
-<p>Where the following notation is used:</p>
+
+Where the following notation is used:
 
 <ul>
 <li><code>&lt;component_path&gt;</code>: path to the default component that you extend</li>
 <li><code>&lt;component_alias&gt;</code>: variable containing the default component that you extend</li>
 </ul>
 
-<p>For example, <code>Filters.js</code> script extends the default <code>filters.js</code>:</p>
+For example, <code>Filters.js</code> script extends the default <code>filters.js</code>:
+
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">define</span><span class="p">([</span>
   <span class="s1">&#39;Magento_Ui/js/grid/filters/filters&#39;</span>
@@ -831,11 +858,13 @@ For example, if you want to use custom <code>navigation-menu.js</code> script in
   <span class="p">});</span>
 <span class="p">});</span></code></pre></figure>
 
-<p>For information about how to initialize your custom JS component in a <code>.phtml</code> template, see the <a href="/guides/v2.1/frontend-dev-guide/javascript/js_init.html" target="_blank">JavaScript initialization</a> topic.</p>
+
+
+For information about how to initialize your custom JS component in a `.phtml` template, see the <a href="/guides/v2.1/frontend-dev-guide/javascript/js_init.html" target="_blank">JavaScript initialization</a> topic.
 
 <h2 id="disable_default_js">Disable default Magento JS</h2>
 
-<p>To disable the auto-loading of default Magento JS components and widget initialization:</p>
+To disable the auto-loading of default Magento JS components and widget initialization:
 <ol>
 <li>Create a <code>requirejs-config.js</code> file with the following content:
 
@@ -852,13 +881,19 @@ For example, if you want to use custom <code>navigation-menu.js</code> script in
 </ul>
 </li>
 </ol>
-<p>If you need to enable the loading of default Magento JS components and widget initialization on a certain stage, add the following code in your JS script:</p>
+If you need to enable the loading of default Magento JS components and widget initialization on a certain stage, add the following code in your JS script:
+
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="nx">mage</span><span class="p">.</span><span class="nx">apply</span><span class="p">);</span></code></pre></figure>
 
-<h4 id="related-topic">Related topic</h4>
-<p><a href="/guides/v2.1/javascript-dev-guide/javascript/js-resources.html">Configure JavaScript resources</a></p>
 
+
+#### Related topic
+
+- [JavaScript resources in Magento](/guides/v2.1/javascript-dev-guide/javascript/js-resources.html)
+- [About AMD modules and RequireJS](/guides/v2.1/javascript-dev-guide/javascript/requirejs_concept.html)
+
+</your_widget_name></ModuleName></VendorName></theme_dir></theme_dir></li></ul></li></ol>
 
 		</div>
 		<!-- /.content-wrap -->

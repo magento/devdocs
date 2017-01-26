@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Prompt widget</title>
+	<title>About AMD modules and RequireJS</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.0/javascript-dev-guide/widgets/widget_prompt.html">
+	<link rel="canonical" href="//guides/v2.0/javascript-dev-guide/javascript/requirejs_concept.html">
 
   <script>
     var baseUrl = "/";
@@ -49,9 +49,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/javascript-dev-guide/widgets/widget_prompt.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/javascript-dev-guide/javascript/requirejs_concept.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/javascript-dev-guide/widgets/widget_prompt.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/javascript-dev-guide/javascript/requirejs_concept.html">Magento 2.1</a></li>
 	
   </ul>
 
@@ -320,7 +320,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/javascript-dev-guide/javascript/requirejs_concept.html">About AMD modules and RequireJS</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/javascript-dev-guide/javascript/requirejs_concept.html">About AMD modules and RequireJS</a></li>
 
 									
 
@@ -499,7 +499,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.0/javascript-dev-guide/widgets/widget_prompt.html">Prompt widget</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/javascript-dev-guide/widgets/widget_prompt.html">Prompt widget</a></li>
 
 									
 
@@ -673,7 +673,7 @@
       
 
       <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
-        <span property="name">Prompt widget</span>
+        <span property="name">About AMD modules and RequireJS</span>
         <meta property="position" content="2" />
       </li>
 
@@ -685,129 +685,72 @@
 
 
 	
-	<h1 class="page-heading">Prompt widget</h1>
+	<h1 class="page-heading">About AMD modules and RequireJS</h1>
 
   
 
 
 </section>
 
-			<h2>Overview </h2>
+			<h2 id="overview">Overview</h2>
 
-<p>The Magento prompt widget implements a modal pop-up window with an input field, and a cancel and a confirmation button.</p>
+<p>This topic discusses JavaScript modules and describes the role which RequireJS plays in Magento.</p>
 
-<p>It extends the <a href="/guides/v2.0/javascript-dev-guide/widgets/widget_modal.html">Magento modal widget</a>.</p>
+<p>Magento uses AMD (asynchronous module definition) approach for JavaScript modules loading. Namely, Magento uses RequireJS and its <a href="http://requirejs.org/docs/api.html#config">standard syntax</a>.</p>
 
-<p>The prompt widget source is <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Ui/view/base/web/js/modal/prompt.js">&lt;Magento_Ui_module_dir&gt;/view/base/web/js/modal/prompt.js</a></p>
+<h2 id="config">RequireJS configuration location</h2>
 
-<p>The widget can be used for implementing prompt windows for both, Admin and storefront. The design patterns for the modal pop-up windows in the Admin are described in the <a href="/guides/v2.0/pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html#modals">Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.</a></p>
+<p>As Magento has a modular architecture we have an ability to define <code>requirejs-config.js</code> for each module, separately for each <a href="/guides/v2.0/architecture/archi_perspectives/components/modules/mod_and_areas.html">area</a>: <code>frontend</code> or <code>admin</code>. (Or <code>base</code> if it is same for both, <code>frontend</code> and <code>admin</code>).</p>
 
-<h2 id="prompt_init">Initialize the prompt widget</h2>
+<p>Following is the conventional location of <code>requirejs-config.js</code> (RequireJS configuration file):</p>
 
-<p>The prompt widget can be initialized with or without binding to a certain element.</p>
+<ul>
+  <li>For modules: <code>&lt;Module_dir&gt;/view/&lt;area&gt;/requirejs-config.js</code></li>
+  <li>For themes: <code>&lt;theme_dir&gt;/requirejs-config.js</code></li>
+</ul>
 
-<p><strong>Example1</strong>: initialization on an element</p>
+<h2 id="requirejs-configuration-file">RequireJS configuration file</h2>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#prompt_init&#39;</span><span class="p">).</span><span class="nx">prompt</span><span class="p">({</span>
-    <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Prompt title&#39;</span><span class="p">,</span>
-    <span class="nx">actions</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">confirm</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){},</span> <span class="c1">//callback on &#39;Ok&#39; button click</span>
-        <span class="nx">cancel</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){},</span> <span class="c1">//callback on &#39;Cancel&#39; button click</span>
-        <span class="nx">always</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){}</span>
-    <span class="p">}</span>
-<span class="p">});</span></code></pre></figure>
+<p><code>requirejs-config.js</code> is a valid JavaScript file. It should define the <code>config</code> variable, which is a configuration variable.</p>
 
-<p><strong>Example2</strong>: standalone initialization</p>
+<h3 id="example-of-usages">Example of usages</h3>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">require</span><span class="p">([</span>
-    <span class="s1">&#39;Magento_Ui/js/modal/prompt&#39;</span>
-<span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">prompt</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// Variable that represents the `prompt` function</span>
- 
-    <span class="nx">prompt</span><span class="p">({</span>
-        <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Some title&#39;</span><span class="p">,</span>
-        <span class="nx">content</span><span class="o">:</span> <span class="s1">&#39;Some content&#39;</span><span class="p">,</span>
-        <span class="nx">actions</span><span class="o">:</span> <span class="p">{</span>
-            <span class="nx">confirm</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){},</span>
-            <span class="nx">cancel</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){},</span>
-            <span class="nx">always</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){}</span>
+<p>Lets look at an example, the Catalog module. In the <code>&lt;Magento_Catalog_module_dir&gt;/view/base/requirejs-config.js</code> file we see the configuration variable:</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">map</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s1">&#39;*&#39;</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">categoryForm</span><span class="o">:</span>       <span class="s1">&#39;Magento_Catalog/catalog/category/form&#39;</span><span class="p">,</span>
+            <span class="nx">newCategoryDialog</span><span class="o">:</span>  <span class="s1">&#39;Magento_Catalog/js/new-category-dialog&#39;</span><span class="p">,</span>
+            <span class="nx">categoryTree</span><span class="o">:</span>       <span class="s1">&#39;Magento_Catalog/js/category-tree&#39;</span><span class="p">,</span>
+            <span class="nx">productGallery</span><span class="o">:</span>     <span class="s1">&#39;Magento_Catalog/js/product-gallery&#39;</span><span class="p">,</span>
+            <span class="nx">baseImage</span><span class="o">:</span>          <span class="s1">&#39;Magento_Catalog/catalog/base-image-uploader&#39;</span><span class="p">,</span>
+            <span class="nx">productAttributes</span><span class="o">:</span>  <span class="s1">&#39;Magento_Catalog/catalog/product-attributes&#39;</span>
         <span class="p">}</span>
-    <span class="p">});</span>
- 
-<span class="p">});</span> </code></pre></figure>
+    <span class="p">},</span>
+    <span class="nx">deps</span><span class="o">:</span> <span class="p">[</span>
+        <span class="s1">&#39;Magento_Catalog/catalog/product&#39;</span>
+    <span class="p">]</span>
+<span class="p">};</span></code></pre></figure>
 
-<p>For details about how to initialize a widget in a <code>.phtml</code> template, refer to the <a href="/guides/v2.0/javascript-dev-guide/javascript/js_init.html" target="_blank">Javascript initialization</a> topic.</p>
+<p>The <code>config</code> variable contains properties with the <code>map</code> and <code>deps</code> keys. These properties are equivalent to the native RequireJS properties. For example, in this case  the <code>map</code> property contains an object with the keys that are aliases to files and values that are real paths to files.</p>
 
-<h2 id="prompt_options">Options</h2>
+<p>For a particular area, all modules and themes <code>requirejs-config.js</code> files are merged into a single file. This file is written to the <code>pub/static/requirejs</code> directory. This occurs during the first launch of Magento in <a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html">develop or default mode</a> or during static files generation using the <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-static-view.html">bin/magento setup:static-content:deploy</a> console command.</p>
 
-<ul>
-<li><a href="#prompt_actions">actions</a></li>
-<li><a href="#prompt_autoopen">autoOpen</a></li>
-<li><a href="#prompt_clickableOverlay">clickableOverlay</a></li>
-<li><a href="#prompt_content">content</a></li>
-<li><a href="#prompt_focus">focus</a></li>
-<li><a href="#prompt_title">title</a></li>
-</ul>
+<p>The merged configuration will be loaded on the page right after <code>require.js</code> and will be used by <code>require()</code> and <code>define()</code> functions.</p>
 
-<h3 id="prompt_actions"><code>actions</code></h3>
-<p>Widget callbacks.</p>
+<p>Example of how aliases can be used. Open a browser console on any Magento page and type:</p>
 
-<p><strong>Type</strong>: Object.</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js">	<span class="nx">require</span><span class="p">([</span><span class="s1">&#39;productGallery&#39;</span><span class="p">]);</span> <span class="c1">// load the module on the page</span>
+	<span class="kd">var</span> <span class="nx">gallery1</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;productGallery&#39;</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">gallery2</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;Magento_Catalog/js/product-gallery&#39;</span><span class="p">);</span>
+	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">gallery1</span><span class="p">);</span> <span class="c1">// it does not return a simple type</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">gallery1</span> <span class="o">===</span> <span class="nx">gallery2</span><span class="p">);</span> <span class="c1">// they are the same</span></code></pre></figure>
 
-<p><strong>Default value</strong>:</p>
+<p>Tip: One more way that you can use <code>require</code> object is to retrieve a current configuration during runtime. Just type in a browser console:</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">actions</span><span class="o">:</span> <span class="p">{</span>
-    <span class="nx">confirm</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){},</span>
-    <span class="nx">cancel</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){},</span>
-    <span class="nx">always</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){}</span>
-<span class="p">}</span></code></pre></figure>
-
-<h3 id="prompt_autoopen">autoOpen</h3>
-<p>Automatically open the prompt window when the widget is initialized.</p>
-
-<p><strong>Type</strong>: Boolean</p>
-
-<p><strong>Default value</strong>: <code>false</code></p>
-
-<h3 id="prompt_clickableOverlay">clickableOverlay</h3>
-<p>Close the prompt window when a user clicks on the overlay.</p>
-
-<p><strong>Type</strong>: Boolean</p>
-
-<p><strong>Default value</strong>: <code>true</code></p>
-
-<h3 id="prompt_content"><code>content</code></h3>
-
-<p>The prompt window content.</p>
-
-<p><strong>Type</strong>: String.</p>
-
-<h3 id="prompt_focus"><code>focus</code></h3>
-<p>The selector of the element to be in focus when the prompt window opens.
-If <code>focus</code> is not specified or set to empty string, the focus is on the close button. If focusing is not requried, set <code>focus</code> to <code>none</code>.</p>
-
-<p><strong>Type</strong>: String.</p>
-
-<p><strong>Default value</strong>: <code>''</code></p>
-
-<h3 id="prompt_content"><code>title</code></h3>
-<p>The title of the prompt window.</p>
-
-<p><strong>Type</strong>: String.</p>
-
-<p><strong>Default value</strong>: <code>''</code></p>
-
-<h2 id="prompt_events">Events</h2>
-
-<p>The prompt widget implements the following events:</p>
-
-<ul>
-  <li><code>confirm</code> callback: called when the confirmation button is clicked. The first argument is the value of the input field.</li>
-  <li><code>cancel</code> callback: called when the cancel button is clicked.</li>
-  <li><code>always</code> callback.</li>
-</ul>
-
-<h2 id="prompt_key_navigation">Keyboard navigation</h2>
-<p>The keyboard navigation for the alert windows is similar to the <a href="/guides/v2.0/javascript-dev-guide/widgets/widget_modal.html#key_navigation">navigation of the modal widget</a>.</p>
+<pre><code>require.s.contexts._.config;
+</code></pre>
 
 		</div>
 		<!-- /.content-wrap -->
@@ -818,14 +761,14 @@ If <code>focus</code> is not specified or set to empty string, the focus is on t
 
 			
 			 <div class="github-link">
-				 <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/javascript-dev-guide/widgets/widget_prompt.md" target="_blank">
+				 <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/javascript-dev-guide/javascript/requirejs_concept.md" target="_blank">
 					 Edit this page on GitHub
 				 </a>
 			 </div>
 			
 
 			<div class="new-issue">
-				<a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.0/javascript-dev-guide/widgets/widget_prompt.html" target="_blank">Give us feedback</a>
+				<a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.0/javascript-dev-guide/javascript/requirejs_concept.html" target="_blank">Give us feedback</a>
 			</div>
 
 		</div>

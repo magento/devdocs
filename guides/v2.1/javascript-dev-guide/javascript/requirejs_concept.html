@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Modal widget</title>
+	<title>About AMD modules and RequireJS</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.1/javascript-dev-guide/widgets/widget_modal.html">
+	<link rel="canonical" href="//guides/v2.1/javascript-dev-guide/javascript/requirejs_concept.html">
 
   <script>
     var baseUrl = "/";
@@ -49,9 +49,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/javascript-dev-guide/widgets/widget_modal.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/javascript-dev-guide/javascript/requirejs_concept.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/javascript-dev-guide/widgets/widget_modal.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/javascript-dev-guide/javascript/requirejs_concept.html">Magento 2.1</a></li>
 	
   </ul>
 
@@ -326,7 +326,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/javascript-dev-guide/javascript/requirejs_concept.html">About AMD modules and RequireJS</a></li>
+									<li class="level-2  active "><a href="/guides/v2.1/javascript-dev-guide/javascript/requirejs_concept.html">About AMD modules and RequireJS</a></li>
 
 									
 
@@ -489,7 +489,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.1/javascript-dev-guide/widgets/widget_modal.html">Modal widget</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/javascript-dev-guide/widgets/widget_modal.html">Modal widget</a></li>
 
 									
 
@@ -699,7 +699,7 @@
       
 
       <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
-        <span property="name">Modal widget</span>
+        <span property="name">About AMD modules and RequireJS</span>
         <meta property="position" content="2" />
       </li>
 
@@ -711,188 +711,72 @@
 
 
 	
-	<h1 class="page-heading">Modal widget</h1>
+	<h1 class="page-heading">About AMD modules and RequireJS</h1>
 
   
 
 
 </section>
 
-			<h2 id="modal_overview">Overview</h2>
+			<h2 id="overview">Overview</h2>
 
-<p>The Magento modal widget implements a secondary window that opens on top of the main window. It contains the overlay and modal content. The modal widget configuration enables the following:</p>
+<p>This topic discusses JavaScript modules and describes the role which RequireJS plays in Magento.</p>
 
-<ul>
-<li>Configuring as popup or slide</li>
-<li>Controlling stack of modal widgets</li> 
-<li>Setting buttons for action bar</li>
-</ul>
+<p>Magento uses AMD (asynchronous module definition) approach for JavaScript modules loading. Namely, Magento uses RequireJS and its <a href="http://requirejs.org/docs/api.html#config">standard syntax</a>.</p>
 
-<p>The modal widget source is <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Ui/view/base/web/js/modal/modal.js" target="_blank"><code>&lt;Magento_Ui_module_dir&gt;/view/base/web/js/modal/modal.js</code></a></p>
+<h2 id="config">RequireJS configuration location</h2>
 
-<p>The widget uses the following templates:</p>
+<p>As Magento has a modular architecture we have an ability to define <code>requirejs-config.js</code> for each module, separately for each <a href="/guides/v2.1/architecture/archi_perspectives/components/modules/mod_and_areas.html">area</a>: <code>frontend</code> or <code>admin</code>. (Or <code>base</code> if it is same for both, <code>frontend</code> and <code>admin</code>).</p>
+
+<p>Following is the conventional location of <code>requirejs-config.js</code> (RequireJS configuration file):</p>
 
 <ul>
-  <li><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Ui/view/base/web/templates/modal/modal-popup.html" target="_blank"><code>&lt;Magento_Ui_module_dir&gt;/view/base/web/templates/modal/modal-popup.html</code></a> popup type template.</li>
-  <li><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Ui/view/base/web/templates/modal/modal-slide.html" target="_blank"><code>&lt;Magento_Ui_module_dir&gt;/view/base/web/templates/modal/modal-slide.html</code></a> slide type template.</li>
+  <li>For modules: <code>&lt;Module_dir&gt;/view/&lt;area&gt;/requirejs-config.js</code></li>
+  <li>For themes: <code>&lt;theme_dir&gt;/requirejs-config.js</code></li>
 </ul>
 
-<p>The design patterns for the modal pop-up windows in the Admin are described in the <a href="/guides/v2.1/pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html#modals">Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.</a></p>
+<h2 id="requirejs-configuration-file">RequireJS configuration file</h2>
 
-<h2 id="modal_initialize">Initialize the modal widget</h2>
+<p><code>requirejs-config.js</code> is a valid JavaScript file. It should define the <code>config</code> variable, which is a configuration variable.</p>
 
-<p>To initialize the widget in your script, use the following general notation:</p>
-<pre>
-$('#modal_content').modal({
-    &lt;option1&gt;: &lt;value1&gt;,
-    &lt;option2&gt;: &lt;value2&gt;,
-    ...
-});
-</pre>
+<h3 id="example-of-usages">Example of usages</h3>
 
-<p>For details about how to initialize the widget in a<code>.phtml</code> template, refer to the <a href="/guides/v2.1/javascript-dev-guide/javascript/js_init.html" target="_blank">Javascript initialization</a> topic.</p>
+<p>Lets look at an example, the Catalog module. In the <code>&lt;Magento_Catalog_module_dir&gt;/view/base/requirejs-config.js</code> file we see the configuration variable:</p>
 
-<h2 id="modal_options">Options</h2>
-<p>The modal widget has the following options:</p>
-<ul>
-<li><a href="#modal_autoopen">autoOpen</a></li>
-<li><a href="#modal_buttons">buttons</a></li>
-<li><a href="#modal_clickableOverlay">clickableOverlay</a></li>
-<li><a href="#modal_focus">focus</a></li>
-<li><a href="#modal_innerScroll">innerScroll</a></li>
-<li><a href="#modal_modalClass">modalClass</a></li>
-<li><a href="#modal_modalLeftMargin">modalLeftMargin</a></li>
-<li><a href="#modal_responsive">responsive</a></li>
-<li><a href="#modal_title">title</a></li>
-<li><a href="#modal_type">type</a></li>
-</ul>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">map</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s1">&#39;*&#39;</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">categoryForm</span><span class="o">:</span>       <span class="s1">&#39;Magento_Catalog/catalog/category/form&#39;</span><span class="p">,</span>
+            <span class="nx">newCategoryDialog</span><span class="o">:</span>  <span class="s1">&#39;Magento_Catalog/js/new-category-dialog&#39;</span><span class="p">,</span>
+            <span class="nx">categoryTree</span><span class="o">:</span>       <span class="s1">&#39;Magento_Catalog/js/category-tree&#39;</span><span class="p">,</span>
+            <span class="nx">productGallery</span><span class="o">:</span>     <span class="s1">&#39;Magento_Catalog/js/product-gallery&#39;</span><span class="p">,</span>
+            <span class="nx">baseImage</span><span class="o">:</span>          <span class="s1">&#39;Magento_Catalog/catalog/base-image-uploader&#39;</span><span class="p">,</span>
+            <span class="nx">productAttributes</span><span class="o">:</span>  <span class="s1">&#39;Magento_Catalog/catalog/product-attributes&#39;</span>
+        <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="nx">deps</span><span class="o">:</span> <span class="p">[</span>
+        <span class="s1">&#39;Magento_Catalog/catalog/product&#39;</span>
+    <span class="p">]</span>
+<span class="p">};</span></code></pre></figure>
 
-<h3 id="modal_autoopen">autoOpen</h3>
-<p>Automatically open the modal window when the widget is initialized.</p>
+<p>The <code>config</code> variable contains properties with the <code>map</code> and <code>deps</code> keys. These properties are equivalent to the native RequireJS properties. For example, in this case  the <code>map</code> property contains an object with the keys that are aliases to files and values that are real paths to files.</p>
 
-<p><strong>Type</strong>: Boolean</p>
+<p>For a particular area, all modules and themes <code>requirejs-config.js</code> files are merged into a single file. This file is written to the <code>pub/static/requirejs</code> directory. This occurs during the first launch of Magento in <a href="/guides/v2.1/config-guide/bootstrap/magento-modes.html">develop or default mode</a> or during static files generation using the <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-static-view.html">bin/magento setup:static-content:deploy</a> console command.</p>
 
-<p><strong>Default value</strong>: <code>false</code></p>
+<p>The merged configuration will be loaded on the page right after <code>require.js</code> and will be used by <code>require()</code> and <code>define()</code> functions.</p>
 
-<h3 id="modal_buttons"><code>buttons</code></h3>
-<p>Array of buttons for action pane.</p>
+<p>Example of how aliases can be used. Open a browser console on any Magento page and type:</p>
 
-<p><strong>Type</strong>: Array</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js">	<span class="nx">require</span><span class="p">([</span><span class="s1">&#39;productGallery&#39;</span><span class="p">]);</span> <span class="c1">// load the module on the page</span>
+	<span class="kd">var</span> <span class="nx">gallery1</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;productGallery&#39;</span><span class="p">);</span>
+    <span class="kd">var</span> <span class="nx">gallery2</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;Magento_Catalog/js/product-gallery&#39;</span><span class="p">);</span>
+	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">gallery1</span><span class="p">);</span> <span class="c1">// it does not return a simple type</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">gallery1</span> <span class="o">===</span> <span class="nx">gallery2</span><span class="p">);</span> <span class="c1">// they are the same</span></code></pre></figure>
 
-<p><strong>Structure</strong>:</p>
-<pre>
-buttons: [{
-    text: '',
-    class: '',
-    click: function() {} //handler on button click
-}]
-</pre>
+<p>Tip: One more way that you can use <code>require</code> object is to retrieve a current configuration during runtime. Just type in a browser console:</p>
 
-<p><strong>Default value</strong>:</p>
-<pre>
-buttons: [{
-    text: 'Ok',
-    class: '',
-    click: function() {
-        this.closeModal();
-    }
-}]
-</pre>
-
-<h3 id="modal_clickableOverlay">clickableOverlay</h3>
-<p>Close the modal window when a user clicks on the overlay.</p>
-
-<p><strong>Type</strong>: Boolean</p>
-
-<p><strong>Default value</strong>: <code>true</code></p>
-
-<h3 id="modal_focus"><code>focus</code></h3>
-<p>Selector to focusing when a modal window opens or ‘none’ if focusing is not necessary.</p>
-
-<p><strong>Type</strong>: String</p>
-
-<p><strong>Default value</strong>: <code>''</code></p>
-
-<h3 id="modal_innerScroll"><code>innerScroll</code></h3>
-<p>Modal scroll position.</p>
-
-<p><strong>Type</strong>: Boolean</p>
-
-<p><strong>Default value</strong>: <code>false</code></p>
-
-<h3 id="modal_modalClass"><code>modalClass</code></h3>
-<p>Custom classes for modal window.</p>
-
-<p><strong>Type</strong>: String</p>
-
-<p><strong>Default value</strong>: empty</p>
-
-<h3 id="modal_modalLeftMargin"><code>modalLeftMargin</code></h3>
-<p>Sets a margin between slide modal windows.</p>
-
-<p><strong>Type</strong>: Number</p>
-
-<p><strong>Default value</strong>: 45</p>
-
-<h3 id="modal_responsive"><code>responsive</code></h3>
-<p>Turn popup modal window to slide panel on small screens. Available if the <code>type</code> option is set to <code>modal</code>.</p>
-
-<p><strong>Type</strong>: Boolean</p>
-
-<p><strong>Default value</strong>: <code>false</code></p>
-
-<h3 id="modal_title"><code>title</code></h3>
-<p>Translated title for popup window.</p>
-
-<p><strong>Type</strong>: String</p>
-
-<p><strong>Default value</strong>: empty</p>
-
-<h3 id="modal_type"><code>type</code></h3>
-
-<p>The type of window: popup or slide.</p>
-
-<p><strong>Type</strong>: String</p>
-
-<p><strong>Default value</strong>: <code>popup</code></p>
-
-<h2 id="modal_methods">Methods</h2>
-<p>The modal widget has the following methods:</p>
-<ul>
-<li><a href="#modal_close">closeModal()</a></li>
-<li><a href="#modal_open">openModal()</a></li>
-</ul>
-
-<h3 id="modal_open"><code>openModal()</code></h3>
-<p>Open the modal window.</p>
-
-<h3 id="modal_close"><code>closeModal()</code></h3>
-<p>Close the modal window.</p>
-
-<h2 id="modal_events">Events</h2>
-
-<p>The modal widget is subscribed to the following events:</p>
-<ul>
-<li><a href="#modal_closed">closed</a></li>
-<li><a href="#modal_opened">opened</a></li>
-</ul>
-
-<h3 id="modal_closed"><code>closed</code></h3>
-<p>Called when the modal window is closed.</p>
-
-<h3 id="modal_opened"><code>opened</code></h3>
-<p>Called when the modal window is opened.</p>
-
-<h3 id="modal_opened"><code>always</code></h3>
-<p>….</p>
-
-<h2 id="key_navigation">Keyboard navigation</h2>
-<ul>
-  <li>the ESC key: close the current modal window</li>
-  <li>the TAB key: set focus to the next focusable element (looped inside the modal window)</li>
-  <li>the SHIFT+TAB keys combination: set focus to the previous focusable element (looped inside the modal window)</li>
-</ul>
-
+<pre><code>require.s.contexts._.config;
+</code></pre>
 
 		</div>
 		<!-- /.content-wrap -->
@@ -903,14 +787,14 @@ buttons: [{
 
 			
 			 <div class="github-link">
-				 <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/javascript-dev-guide/widgets/widget_modal.md" target="_blank">
+				 <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/javascript-dev-guide/javascript/requirejs_concept.md" target="_blank">
 					 Edit this page on GitHub
 				 </a>
 			 </div>
 			
 
 			<div class="new-issue">
-				<a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/javascript-dev-guide/widgets/widget_modal.html" target="_blank">Give us feedback</a>
+				<a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/javascript-dev-guide/javascript/requirejs_concept.html" target="_blank">Give us feedback</a>
 			</div>
 
 		</div>
