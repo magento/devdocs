@@ -1,1 +1,0 @@
-../../../v2.0/extension-dev-guide/security/writing-secure-code.md

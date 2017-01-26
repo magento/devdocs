@@ -1,12 +1,12 @@
 ---
 layout: default
-group: extension-dev-guide
+group: ext-best-practices
 subgroup: Security
 title: Writing secure code
 menu_title: Writing secure code
 menu_order: 2100
 version: 2.0
-github_link: extension-dev-guide/security/writing-secure-code.md
+github_link: ext-best-practices/security/writing-secure-code.md
 ---
 
 ## Overview
@@ -29,6 +29,6 @@ Avoid using these functions in your code.
 ## Standard PHP library classes to avoid
 
 * [`ArrayObject`](http://php.net/manual/en/class.arrayobject.php){:target="_blank"} - Using `ArrayObject` class is not recommended because it contains `unserialize` method, which attackers can use to create an exploit.
-  If need to use `ArrayObject` we strongly advice to override `serialize`/`unserialize` methods to don't serialize/unserialize objects. 
+  If you need to use the `ArrayObject` class, override the `serialize`/`unserialize` methods so that they use secure logic. 
   If need to serialize objects, they can be converted to arrays, when unserializing you can reconstruct objects from arrays. 
   You can use `json_encode`/`json_decode` PHP functions for secure way of serializing/unserializing data.
