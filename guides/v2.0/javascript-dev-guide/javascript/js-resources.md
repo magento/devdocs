@@ -96,7 +96,7 @@ require(["jquery"], function($){
 
 <br>
 
-These relative paths are also used in for [mapping and setting `paths` in requirejs-config.js configuration files]({{page.baseurl}}javascript-dev-guide/javascript/requirejs_concept.md). 
+These relative paths are also used in for [mapping and setting `paths` in requirejs-config.js configuration files]({{page.baseurl}}javascript-dev-guide/javascript/requirejs_concept.html). 
 
 ## Dependencies between JavaScript resources {#m2devgde-js-resources-dependencies}
 
@@ -167,7 +167,7 @@ To be available for the entire Magento instance, RequireJS library is included i
 
 ### Mapping JS resources {#m2devgde-js-resources-mapping}
 
-To make the configurations more precise and specific for different modules/themes, `requirejs-config.js` files can be placed in different [locations]({{page.baseurl}}#m2devgde-js-resources-configuring) depending on your needs. 
+To make the configurations more precise and specific for different modules/themes, `requirejs-config.js` files can be placed in different [locations](#m2devgde-js-resources-configuring) depending on your needs. 
 
 All configurations are collected and executed in the following order:
 
