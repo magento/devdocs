@@ -19,7 +19,7 @@ We are pleased to present Magento Community Edition 2.1.4. This release includes
 
 ## Highlights
 
-Magento 2.1.4 contains more than 20 functional fixes and enhancements, and one security enhancement. It includes these highlights:
+Magento 2.1.4 contains more than 20 functional fixes and enhancements, and one security enhancement. Look for the following highlights in this release:
 
 * **Improvements to Payflow Pro processing**. PayPal Payflow Pro now uses the currency you've specified in your store settings. Previously, Magento converted the total price of a purchase into U.S. dollars, no matter which currency you specified in the store settings. 
 
@@ -59,12 +59,14 @@ We address the following functional issues in this release.
 
 ### Indexers
 
-<!--- 59853-->* The Magento flat indexer now collects correct product data for `ROW_ID`.
 
 
 <!--- 58893-->* `IndexerHandlerFactory` no longer tries to cast the `$indexer` object to a String if an error occurs. Since `$indexer` is an object of type `IndexerInterface` and does not have a `__toString()` method, attempting to cast the `$indexer` object to a String previously resulted in an error. <a href="https://github.com/magento/magento2/issues/5155" target="_blank">(GITHUB-5155)</a> 
 
-<!--- 58559-->* We've fixed an issue with the indexing of flat tables. Previously, you encountered an error if you re-indexed after enabling the use of flat tables (either product or catalog tables). 
+<!--- 59853-->* The Magento flat indexer now collects correct product data for `ROW_ID`.
+
+
+<!--- 58559-->* The Magento flat indexer no longer throws an error after flat tables are enabled and reindexed. This fix applies to both product and catalog tables. 
 
 
 
@@ -202,7 +204,7 @@ We address the following functional issues in this release.
 <!--- 63123 --> * Extension Manager runs slowly when installing or uninstalling extensions. It does not display information as expected about the extension you are installing or uninstalling, and the error console logs do not contain pertinent messages.
 
 
-<!--- 63115 --> * Admin users cannot use the **NEW Category Image Upload** field (**Product > Categories > Content**) to upload new Category images. Currently, Magento fails to load new Category images, and displays this message, **Attention. The file was not uploaded**. 
+<!--- 63115 --> * Admin users cannot use the **Category Image** field (**Products > Categories > Content**) to upload new Category images. Currently, Magento fails to load new Category images, and displays this message, **Attention. The file was not uploaded**. 
 
 <!--- 63050 --> * Magento does not correctly display the status of products when you add an item to the Configurable product page. 
 
