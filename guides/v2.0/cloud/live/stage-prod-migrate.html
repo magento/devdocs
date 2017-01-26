@@ -1626,7 +1626,7 @@
 
 <p>You can do this using a text editor or by using the following command:</p>
 
-<pre><code>mysqldump -h &lt;database host&gt; --user=&lt;database user name&gt; --password=&lt;password&gt; --single-transaction main | gzip | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' &gt; /tmp/database_no-definer.sql.gz
+<pre><code>mysqldump -h &lt;database host&gt; --user=&lt;database user name&gt; --password=&lt;password&gt; --single-transaction main  | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' | gzip &gt; /tmp/database_no-definer.sql.gz
 </code></pre>
 
 <p>Use the database dump you just created to <a href="#cloud-live-migrate-db">migrate the database</a>.</p>
