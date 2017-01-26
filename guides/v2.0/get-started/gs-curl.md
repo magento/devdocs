@@ -1,7 +1,7 @@
 ---
 layout: default
 group: get-started
-subgroup: C_REST
+subgroup: 20_REST
 title: Use cURL to run the request
 menu_title: Use cURL to run the request
 menu_order: 2

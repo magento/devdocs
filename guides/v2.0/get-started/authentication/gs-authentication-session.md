@@ -1,7 +1,7 @@
 ---
 layout: default
 group: get-started
-subgroup: B_Authentication
+subgroup: 40_Authentication
 title: Session-based authentication
 menu_title: Session-based authentication
 menu_order: 4

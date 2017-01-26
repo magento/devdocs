@@ -1,13 +1,16 @@
 ---
 layout: default
 group: get-started
-subgroup: D_SOAP
-title: Consuming Services via SOAP
-menu_title: Consuming Services
-menu_order: 2
+subgroup: 30_SOAP
+title: Use SOAP Services
+menu_title: Use SOAP Services
+menu_order: 1
+menu_node: parent
 version: 2.0
 github_link: get-started/soap/soap-web-api-calls.md
-redirect_from: /guides/v1.0/rest/soap/soap-web-api-calls.html
+redirect_from:
+  - /guides/v1.0/rest/soap/soap-web-api-calls.html
+  - /guides/v2.0/get-started/soap/soap-front.html
 
 ---
 
@@ -50,7 +53,7 @@ To consume several services, you must specify them in the WSDL endpoint URL.
    </tbody>
 </table>
 
-The WSDL URL follows the following pattern: 
+The WSDL URL follows the following pattern:
 
 `http://<magento.host>/soap/<optional_store_code>?wsdl&services=<service_name_1>,<service_name_2>`
 
@@ -109,7 +112,7 @@ $serviceArgs = array("id"=>1);
 
 $context = stream_context_create($opts);
 $soapClient = new SoapClient($wsdlUrl, ['version' => SOAP_1_2, 'context' => $context]);
- 
+
 $soapResponse = $soapClient->testModule1AllSoapAndRestV1Item($serviceArgs); ?>
 {% endhighlight %}
 
@@ -117,5 +120,3 @@ $soapResponse = $soapClient->testModule1AllSoapAndRestV1Item($serviceArgs); ?>
 * <a href="{{page.baseurl}}get-started/authentication/gs-authentication-oauth.html">OAuth-based authentication</a>
 * <a href="{{page.baseurl}}extension-dev-guide/service-contracts/service-contracts.html">Service contracts</a>
 * <a href="{{page.baseurl}}soap/bk-soap.html">SOAP Reference</a>
-
-

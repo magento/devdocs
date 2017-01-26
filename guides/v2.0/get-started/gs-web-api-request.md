@@ -1,7 +1,7 @@
 ---
 layout: default
 group: get-started
-subgroup: C_REST
+subgroup: 20_REST
 title: Construct a request
 menu_title: Construct a request
 menu_order: 1

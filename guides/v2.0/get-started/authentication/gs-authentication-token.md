@@ -1,7 +1,7 @@
 ---
 layout: default
 group: get-started
-subgroup: B_Authentication
+subgroup: 40_Authentication
 title: Token-based authentication
 menu_title: Token-based authentication
 menu_order: 1

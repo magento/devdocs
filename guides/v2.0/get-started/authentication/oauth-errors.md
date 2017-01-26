@@ -1,7 +1,7 @@
 ---
 layout: default
 group: get-started
-subgroup: B_Authentication
+subgroup: 40_Authentication
 title: OAuth error codes
 menu_title: OAuth error codes
 menu_order: 3
