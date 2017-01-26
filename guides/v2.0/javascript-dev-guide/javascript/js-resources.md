@@ -24,7 +24,7 @@ RequireJS improves the perceived page load, time because it allows JavaScript to
 
 ### JS resources location 
 
-In Magento out of the box, you can find the JS components on the following levels:
+In Magento, you can find the JS components on the following levels:
 
 *   Library level (`lib/web`). Resources located here are available in any place in Magento.
 *	Module level (`<module_dir>/view/<areaname>/web`). If the module is enabled, resources added here are available in other modules and themes. 
@@ -47,11 +47,8 @@ Examples:
 
 **Example 1**
 
-- File actual location:
-    app/code/Magento/ConfigurableProduct/view/frontend/web/js/configurable.js
-- File published to pub/static:
-    pub/static/frontend/Magento/<theme>/<locale>/Magento_Configurable/js/configurable.js
-  Here `<theme>` and `<locale>` are the currently applied in your instance theme and locale.
+- File actual location: `app/code/Magento/ConfigurableProduct/view/frontend/web/js/configurable.js`
+- File published to `pub/static`: `pub/static/frontend/Magento/<theme>/<locale>/Magento_Configurable/js/configurable.js`. Here `<theme>` and `<locale>` are the currently applied in your instance theme and locale.
 - Called in script:
 
 {%highlight js%}
@@ -63,10 +60,8 @@ require(["Magento_ConfigurableProduct/js/configurable"], function(Configurable){
 
 {% collapsible Example 2 %}
 
-- File actual location:
-    app/code/design/frontend/Magento/blank/web/js/theme.js
-- File published to pub/static:
-    pub/static/frontend/Magento/<theme>/<locale>/js/theme.js
+- File actual location: `app/code/design/frontend/Magento/blank/web/js/theme.js`
+- File published to `pub/static`: `pub/static/frontend/Magento/<theme>/<locale>/js/theme.js`
 - Called in script:
 
 {%highlight js%}
@@ -77,13 +72,10 @@ require(["js/theme.js"], function(){
 
 {% endcollapsible %}
 
-<p class="q">need to improve example</p>
 
 {% collapsible Example 3 %}
-- File actual location:
-    lib/web/jquery.js
-- File published to pub/static:
-    pub/static/<area>/Magento/<theme>/<locale>/jquery.js
+- File actual location: `lib/web/jquery.js`
+- File published to `pub/static`: `pub/static/<area>/Magento/<theme>/<locale>/jquery.js`
 - Called in script:
 
 {%highlight js%}
@@ -94,7 +86,6 @@ require(["jquery"], function($){
 
 {% endcollapsible %}
 
-<br>
 
 These relative paths are also used in for [mapping and setting `paths` in requirejs-config.js configuration files]({{page.baseurl}}javascript-dev-guide/javascript/requirejs_concept.html). 
 
