@@ -685,7 +685,7 @@ The page with a block:
 
 **New Synonym Group page**
 
-A corresponding page object in a functional test is `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Search/Test/Page/Adminhtml/SynonymsIndex.xml`
+A corresponding page object in a functional test is `<magento2_root_dir>/dev/tests/functional/tests/app/Magento/Search/Test/Page/Adminhtml/SynonymsNew.xml`
 
 The page with blocks:
 
