@@ -59,6 +59,8 @@ We address the following functional issues in this release.
 
 ### Indexers
 
+<!--- 59853-->* The Magento flat indexer now collects correct product data for `ROW_ID`.
+
 
 <!--- 58893-->* `IndexerHandlerFactory` no longer tries to cast the `$indexer` object to a String if an error occurs. Since `$indexer` is an object of type `IndexerInterface` and does not have a `__toString()` method, attempting to cast the `$indexer` object to a String previously resulted in an error. <a href="https://github.com/magento/magento2/issues/5155" target="_blank">(GITHUB-5155)</a> 
 
