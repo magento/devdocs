@@ -85,7 +85,7 @@ We address the following functional issues in this release.
 <!--- 62721-->*  The **Allow Gift Wrapping for Order Items** setting now works as expected. Previously, when **Stores > Configuration > Sales > Gift Options** was set to **No**, users  saw the Gift Option link under each product in their shopping cart.  
 
 
-<!--- 60248-->* The **Default Billing Address** and **Default Shipping Address** checkboxes on the Customer page are now saved correctly.
+<!--- 60248-->* Information set by the **Default Billing Address** and **Default Shipping Address** checkboxes on the Customer page are now saved correctly.
 
 <!---59416 -->* Admin users with appropriate permissions can now reset the passwords of more than one customer at a time. <a href="https://github.com/magento/magento2/issues/5260" target="_blank">(GITHUB-5260)</a>
 
