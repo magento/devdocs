@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Coding FAQ</title>
+	<title>Writing secure code</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.0/ext-best-practices/extension-coding/coding-faq.html">
+	<link rel="canonical" href="//guides/v2.0/ext-best-practices/security/writing-secure-code.html">
 
   <script>
     var baseUrl = "/";
@@ -49,9 +49,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/ext-best-practices/extension-coding/coding-faq.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/ext-best-practices/security/writing-secure-code.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/ext-best-practices/extension-coding/coding-faq.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/ext-best-practices/security/writing-secure-code.html">Magento 2.1</a></li>
 	
   </ul>
 
@@ -331,7 +331,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.0/ext-best-practices/extension-coding/coding-faq.html">Coding FAQ</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/ext-best-practices/extension-coding/coding-faq.html">Coding FAQ</a></li>
 
 									
 
@@ -402,7 +402,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/ext-best-practices/security/writing-secure-code.html">Writing secure code</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/ext-best-practices/security/writing-secure-code.html">Writing secure code</a></li>
 
 									
 
@@ -612,7 +612,7 @@
       
 
       <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
-        <span property="name">Coding FAQ</span>
+        <span property="name">Writing secure code</span>
         <meta property="position" content="2" />
       </li>
 
@@ -624,37 +624,45 @@
 
 
 	
-	<h1 class="page-heading">Coding FAQ</h1>
+	<h1 class="page-heading">Writing secure code</h1>
 
   
 
 
 </section>
 
-			<p>This page is a compilation of frequently asked coding questions by the Magento Community.</p>
+			<h2 id="overview">Overview</h2>
 
-<h3 id="what-do-i-need-to-know-to-work-with-the-framework">What do I need to know to work with the framework?</h3>
+<p>Using PHP features that are known to be exploitable or non-secure can lead to remote code execution or weak cryptography.
+As a developer, you should avoid using features that introduce vulnerabilities in your code.</p>
+
+<h2 id="php-functions-to-avoid">PHP functions to avoid</h2>
+
+<p>The following is a list of PHP functions that are known to be vulnerable and exploitable.
+Avoid using these functions in your code.</p>
 
 <ul>
-  <li><a href="https://en.wikipedia.org/wiki/SOLID_(object-oriented_design)" target="_blank">SOLID principles</a> - The essential principles needed to create maintainable and extendible code.</li>
-  <li><a href="http://php.net/" target="_blank">PHP</a> - This is the programming language used for developing Magento 2 code.</li>
-  <li><a href="https://en.wikipedia.org/wiki/HTML" target="_blank">HTML</a>, <a href="https://en.wikipedia.org/wiki/Cascading_Style_Sheets" target="_blank">CSS</a>, and <a href="https://www.javascript.com/" target="_blank">JavaScript</a> - Languages used for <a href="/guides/v2.0/frontend-dev-guide/bk-frontend-dev-guide.html">frontend development</a>.</li>
-  <li><a href="/guides/v2.0/architecture/arch_whatis.html">Magento architecture</a> - Developers should be familiar with the architectural concepts used in Magento such as the <a href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller" target="_blank">Model-View-Controller</a> pattern and the <a href="http://martinfowler.com/bliki/CQRS.html" target="_blank">Command Query Responsibility Segregation</a> principle.</li>
-  <li><a href="/guides/v2.0/extension-dev-guide/depend-inj.html">Dependency Injection</a> - An important design pattern used in Magento to handle dependencies across classes and modules.</li>
+  <li><a href="http://php.net/manual/en/function.eval.php" target="_blank"><code>eval</code></a> - Using <code>eval</code> is considered bad practice because of its ability to <a href="https://www.owasp.org/index.php/PHP_Security_Cheat_Sheet#Code_Injection" target="_blank">execute arbitrary PHP code</a>.</li>
+  <li><a href="http://php.net/manual/en/function.serialize.php" target="_blank"><code>serialize</code></a>/<a href="http://php.net/manual/en/function.unserialize.php" target="_blank"><code>unserialize</code></a> - Attackers can create an exploit for these functions by passing a string with a serialized arbitrary object to the <code>unserialize</code> function to <a href="https://www.owasp.org/index.php/PHP_Object_Injection" target="_blank">run arbitrary code</a>.</li>
+  <li><a href="http://php.net/manual/en/function.md5.php" target="_blank"><code>md5</code></a> - The algorithm for this function is known to have <a href="https://www.owasp.org/index.php/Guide_to_Cryptography#Hashes" target="_blank">cryptographic weaknesses</a>.
+You should never use this function for hashing passwords or any other sensitive data.</li>
+  <li><a href="http://php.net/manual/en/function.srand.php" target="_blank"><code>srand</code></a> - Using a predetermined number to seed the random number generator results in a <a href="http://programmers.stackexchange.com/questions/76229/predicting-the-output-of-phps-rand" target="_blank">predictable sequence of numbers</a>.</li>
+  <li><a href="http://php.net/manual/en/function.mt-rand.php" target="_blank"><code>mt_srand</code></a> - This function is a pseudo-random number generator (PRNG) and is <a href="http://phpsecurity.readthedocs.io/en/latest/Insufficient-Entropy-For-Random-Values.html" target="_blank">not cryptographically secure</a>.</li>
 </ul>
 
-<h3 id="in-magento-2-how-can-my-extension-distinguish-between-the-community-edition-and-the-enterprise-edition">In Magento 2, how can my extension distinguish between the Community Edition and the Enterprise Edition?</h3>
+<h2 id="standard-php-library-classes-to-avoid">Standard PHP library classes to avoid</h2>
 
-<p>The correct edition can be obtained through <code>\Magento\Framework\App\ProductMetadataInterface::getEdition</code>.</p>
+<ul>
+  <li>
+    <p><a href="http://php.net/manual/en/class.arrayobject.php" target="_blank"><code>ArrayObject</code></a> - Using <code>ArrayObject</code> class is not recommended because it contains <code>unserialize</code> method, which attackers can use to create an exploit.</p>
 
-<p>In Magento CE that interface maps to the concrete implementation <code>Magento\Framework\AppInterface\ProductMetadata</code>.
-However, in Magento EE, the Enterprise module will override that mapping and the interface will be implemented by <code>\Magento\Enterprise\Model\ProductMetadata</code>.</p>
+    <p>If you need to use the <code>ArrayObject</code> class, override the <code>serialize</code>/<code>unserialize</code> methods so that they use secure logic. 
+Convert objects into arrays to serialize them, and reconstruct the objects using arrays during unserialization.</p>
 
-<p>Just relying on the interface through dependency injection will get you the right class, and calling “getEdition” will return the right answer.</p>
+    <p>You can use <code>json_encode</code>/<code>json_decode</code> PHP functions for a secure way of serializing/unserializing data.</p>
+  </li>
+</ul>
 
-<h3 id="how-do-i-configure-my-module-so-that-it-appears-in-a-specific-place-on-the-admin">How do I configure my module so that it appears in a specific place on the Admin?</h3>
-
-<p>Use the <code>&lt;Module Directory&gt;/etc/adminhtml/menu.xml</code> file to configure from where on the Admin your extension is accessible.</p>
 
 		</div>
 		<!-- /.content-wrap -->
@@ -665,14 +673,14 @@ However, in Magento EE, the Enterprise module will override that mapping and the
 
 			
 			 <div class="github-link">
-				 <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/ext-best-practices/extension-coding/coding-faq.md" target="_blank">
+				 <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/ext-best-practices/security/writing-secure-code.md" target="_blank">
 					 Edit this page on GitHub
 				 </a>
 			 </div>
 			
 
 			<div class="new-issue">
-				<a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.0/ext-best-practices/extension-coding/coding-faq.html" target="_blank">Give us feedback</a>
+				<a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.0/ext-best-practices/security/writing-secure-code.html" target="_blank">Give us feedback</a>
 			</div>
 
 		</div>
