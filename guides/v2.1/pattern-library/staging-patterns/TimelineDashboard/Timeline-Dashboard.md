@@ -68,8 +68,8 @@ When clicked, a bar on the timeline spawns an overlay window, showing a summary 
 A slider control at the bottom of the page allows users to zoom out from 1 week to 4 weeks, viewing a bigger timeline of updates.
 <img src="img/4-week-zoom.jpg">
 
-#### “Load More” Control:
-On the default timeline view, the number of updates displayed is set to 10. Clicking “Load More” adds more updates on the timeline. A grid menu control changes the number of items displayed per page. 
+#### "Load More" Control:
+On the default timeline view, the number of updates displayed is set to 10. Clicking "Load More" adds more updates on the timeline. A grid menu control changes the number of items displayed per page. 
 <img src="img/load-more.jpg">
 
 #### Horizontal Scrolling for Future Updates:

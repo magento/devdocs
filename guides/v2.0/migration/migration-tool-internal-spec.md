@@ -5,7 +5,7 @@ subgroup: o_mapping
 title: Data Migration Tool Technical Specification
 menu_title: Data Migration Tool Technical Specification
 menu_node: parent
-menu_order: 7
+menu_order: 8
 version: 2.0
 github_link: migration/migration-tool-internal-spec.md
 redirect_from: /guides/v1.0/migration/migration-tool-internal-spec.html
@@ -164,7 +164,7 @@ Configuration file has the following structure:
 
 * options - list of parameters. Contains both mandatory (map_file, settings_map_file, bulk_size) and optional (custom_option, resource_adapter_class_name, prefix_source, prefix_dest, log_file) parameters
 
-Change prefix option in case Magento was installed with prefix in database tables. It can be set for Magento 1 and Magento 2 databases. Use the “source_prefix” and “dest_prefix” configuration options accordingly.
+Change prefix option in case Magento was installed with prefix in database tables. It can be set for Magento 1 and Magento 2 databases. Use the "source_prefix" and "dest_prefix" configuration options accordingly.
 
 Configuration data is accessible via \Migration\Config class.
 
@@ -404,7 +404,7 @@ To ignore documents with similar parts (e.g. document_name_1, document_name_2 e.
 
 This step is quite complex because there are many different algorithms developed in Magento 1 which are not compatible with Magento 2. For different versions of Magento 1 there can be different algorithms. Thus under Step/UrlRewrite folder there are classes that were developed for some of particular versions of Magento and Migration\Step\UrlRewrite\Version191to2000 is one of them. It can transfer URL Rewrites data from Magento 1.9.1 to Magento 2.
 
-#### EAV Step
+#### EAV Step {#eav}
 
 This step transfers all attributes (e.g. product, customer, RMA) from Magento 1 to Magento 2. It uses map-eav.xml file that contains rules similar to the ones in map.xml file for specific cases of processing data.
 

@@ -26,4 +26,7 @@ Major differences from 2.0.x:
 	*	Dropped support for PHP 5.5.x
 	*	*2.1.2 and later*: Added support for PHP 7.0.4
 *	MySQL (*2.1.2 and later*): Compatible with MySQL 5.7
-*	Added support for Elasticsearch 1.0 and later up to 5.0
+*	Added support for Elasticsearch 1.7 and 2.x (recommended)
+
+	*	If you get the Elasticsearch software from the Elasticsearch Linux repository, we support versions 2.x.
+	*	If you get the Elasticsearch software from their [Elasticsearch-PHP repository](https://github.com/elastic/elasticsearch-php){:target="_blank"}, we support the `2.0` branch.

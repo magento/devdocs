@@ -13,10 +13,10 @@ github_link: cloud/project/project-priv-repos.md
 Your Magento Enterprise Cloud Edition project can include code located in a private Git repository (for example, a module or theme). To do so, you must add your project's public SSH key to your private Git repository and update your project's `composer.json`.
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>To add a deployment key to your private GitHub or Bitbucket repository, you must be the administrator of that repository.</p>
+  <p>To add a deployment key to your private GitHub repository, you must be the administrator of that repository.</p>
 </div>
 
-GitHub and Bitbucket allow you to use a deploy key for one repository only. 
+GitHub allows you to use a deploy key for one repository only. 
 
 If your project needs to access multiple repositories, you can choose to
 attach an SSH key to an automated user account. Because this account won't
@@ -36,10 +36,7 @@ To find your project SSH public key (also referred to as a *deploy key*):
 	![Deploy Key]({{ site.baseurl}}common/images/cloud_deploy-key.png){:width="500px"}
 
 4.	Copy the deploy key to the clipboard.
-5.	See one of the following sections:
-
-	*	[Enter your GitHub deploy key](#cloud-deploykey-github)
-	*	[Enter your Bitbucket deployment key](#cloud-deploykey-bb)
+5.	See [Enter your GitHub deploy key](#cloud-deploykey-github).
 
 ### Enter your GitHub deploy key {#cloud-deploykey-github}
 By default, on github, deploy keys are read-only,
@@ -64,7 +61,7 @@ To enter your project's public key as a GitHub deploy key:
 4.	Click **Add deploy key**.
 5.	Follow the prompts on your screen to complete the task.
 
-### Enter your Bitbucket deployment key {#cloud-deploykey-bb}
+<!-- ### Enter your Bitbucket deployment key {#cloud-deploykey-bb}
 To enter your project's public key as a Bitbucket deploy key:
 
 1.	Log in to your Bitbucket repository as its administrator.
@@ -75,7 +72,7 @@ To enter your project's public key as a Bitbucket deploy key:
 
 	![Bitbucket deploy key]({{ site.baseurl}}common/images/cloud_bb-deploy-key.png)
 4.	Click **Add Key**.
-5.	Follow the prompts on your screen to complete the task.
+5.	Follow the prompts on your screen to complete the task. -->
 
 <!-- ## Update `composer.json`
 TBD -->

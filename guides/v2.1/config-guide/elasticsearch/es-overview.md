@@ -45,6 +45,8 @@ Magento Enterprise Edition (EE) version 2.1.x supports the following Elasticsear
 *	If you get the Elasticsearch software from the Elasticsearch Linux repository, we support versions 2.x.
 *	If you get the Elasticsearch software from their [Elasticsearch-PHP repository](https://github.com/elastic/elasticsearch-php){:target="_blank"}, we support the `2.0` branch.
 
+We also support version 1.7 but recommend you use a later version.
+
 ### Recommended configuration {#es-arch}
 The following figure shows our recommended configuration. All of the tasks we discuss assume you've configured your system this way.
 
@@ -128,7 +130,13 @@ To install Elasticsearch:
 	For example, it might be located in `/etc/elasticsearch`.
 5.	Add the following parameter to the `Memory` section:
 
-		index.query.bool.max_clause_count: 4096
+	*	Very large catalogs (40,000 SKUs or more)
+
+			index.query.bool.max_clause_count: 10024 
+
+	*	Catalogs with less than 40,000 SKUs:
+
+			index.query.bool.max_clause_count: 4096
 
 	For more information, see [Setting the BooleanQuery maxClauseCount in Elasticsearch](http://george-stathis.com/2013/10/18/setting-the-booleanquery-maxclausecount-in-elasticsearch){:target="_blank"}.
 6.	Save your changes to `elasticsearch.yml` and exit the text editor.

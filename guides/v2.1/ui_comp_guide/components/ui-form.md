@@ -12,7 +12,7 @@ github_link: ui_comp_guide/components/ui-form.md
 ## Overview
 Form component allows performing [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) operations on an entity. 
 
-The following is the Form component constructor: `[form.js]({{site.mage2100url}}app/code/Magento/Ui/view/base/web/js/form/form.js)`
+The following is the Form component constructor: [form.js]({{site.mage2100url}}app/code/Magento/Ui/view/base/web/js/form/form.js)
 
 ### Related UI components
 
@@ -59,7 +59,7 @@ Example:
 
 Component could be configured in two ways:
 
-* globally: using any module's `view//ui_component/etc/definition.xml` file. All settings declared in     this file will be applied to all component's instances
+* globally: using any module's `view/ui_component/etc/definition.xml` file. All settings declared in     this file will be applied to all component's instances
 * locally: using concrete component instance configuration, such as `<your module root dir>/Magento/Customer/view/base/ui_component/customer_form`
 
 Create configuration file: `<your module root dir>/Magento/Customer/view/base/ui_component/customer_form.xml`
@@ -87,7 +87,7 @@ Nodes are optional and contain parameters required for component:
 
 * js_config -> config -> provider - specifies the name of the component data
 
-* layout - configuration class meets the visualization component. Names for deps and provider are specified with a complete path from the root component with the separator “.”
+* layout - configuration class meets the visualization component. Names for deps and provider are specified with a complete path from the root component with the separator "."
 
 Add a description of the fields in the form using components and Field Fieldset:
 
@@ -188,7 +188,7 @@ An example of the configuration of the DataSource object:
 
 Component configuration:
 
-* argument “dataProvider” - contains configuration, class name and arguments
+* argument "dataProvider" - contains configuration, class name and arguments
 
 * js_config -> component - > JS indication of a responsible component
 

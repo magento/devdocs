@@ -24,7 +24,7 @@ used when deciding when to use a button vs. a hyperlink, icon, or another call t
 
 <h3 id="when-not-to-use">When Not to Use</h3>
 * Do not use buttons to indicate actions that are better suited as hyperlinks such     
-  as “Cancel”. Some exceptions may apply.
+  as "Cancel". Some exceptions may apply.
 * Do not use more than one primary page level action on a single page for 
   different actions. Some exceptions may apply.
 * Do not use buttons to indicate a link to more information or to a task not related 
@@ -228,7 +228,7 @@ Left/Right margin spacing should not be less than 10px<br>
 <img src="img/TableButtonExample.png">
 
 ####  5. Toggle Buttons
-The toggle button acts like a checkbox. When you touch/click on it, the state toggles between “yes” and “no” and/or “on” and “off”.<br>
+The toggle button acts like a checkbox. When you touch/click on it, the state toggles between "yes" and "no" and/or "on" and "off".<br>
 <br>
 **When to Use/When Not to Use**<br>
 Use toggle for:<br>

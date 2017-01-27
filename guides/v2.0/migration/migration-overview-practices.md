@@ -39,4 +39,4 @@ We tested migration on the following system:
 
 * Data migration time: ~9 hrs (all data except URL Rewrites, ~85% of total data)
 
-* Site downtime estimate: a few minutes to reindex and change DNS settings. Additional time required to “warm up” the page cache
+* Site downtime estimate: a few minutes to reindex and change DNS settings. Additional time required to "warm up" the page cache

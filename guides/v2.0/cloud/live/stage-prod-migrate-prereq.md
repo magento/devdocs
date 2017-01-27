@@ -4,7 +4,7 @@ group: cloud
 subgroup: 40_live
 title: Prepare to migrate data
 menu_title: Prepare to migrate data
-menu_order: 8
+menu_order: 50
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: stage-prod
@@ -18,7 +18,7 @@ This topic discusses tasks you must perform before you migrate your database and
 2.	Get your [access URLs](#cloud-live-migrate-urls) for staging and production
 3.	Set up [remote Git repositories](#cloud-live-migrate-git)
 4.	Set up your [SSH agent](#cloud-live-migrate-agent)
-5.	Upload your [Fastly VCL](#cloud-live-migrate-fastly)
+5.	Upload any [Fastly VCL snippets](#cloud-live-migrate-fastly-snip)
 
 After setting this up, your workflow is to code and test in your integration system, then push updates to your staging system using Git commands.
 
@@ -41,7 +41,7 @@ Your Magento Enterprise Cloud Edition OneDrive account includes an onboarding do
 
 *	Web URL format: 
 
-	*	Staging: `http[s]://staging.<your domain>.<project ID>.ent.magento.cloud`
+	*	Staging: `http[s]://staging.<your domain>.c.<project ID>.ent.magento.cloud`
 	*	Production: 
 
 		*	Load balancer URL: `http[s]://<your domain>.c.<project ID>.ent.magento.cloud`
@@ -93,11 +93,13 @@ To set up an SSH agent:
 
 		Identity added: /home/magento_user/.ssh/id_rsa (/home/magento_user/.ssh/id_rsa)
 
-### Upload your Fastly VCL {#cloud-live-migrate-fastly}
-For Fastly to work in staging or production, you must upload the Fastly VCL using the Magento Admin as follows:
+### Upload any Fastly VCL snippets {#cloud-live-migrate-fastly-snip}
+A [Fastly VCL snippet](https://docs.fastly.com/guides/vcl-snippets/about-vcl-snippets){:target="_blank"} is an advanced option that enables you to modify Fastly behavior with service-oriented or versionless objects.
+
+To use snippets, you must upload the Fastly VCL using the Magento Admin as follows:
 
 1.	Log in to the Magento Admin as an administrator. 
-2.	Click **Stores** > **Configuration** > **Advanced** > **System** as the following figure shows:
+2.	Click **Stores** > Settings > **Configuration** > **Advanced** > **System** as the following figure shows:
 
 	![Choose Fastly]({{ site.baseurl }}common/images/cloud_fastly_menu.png){:width="650px"}
 3.	In the right pane, expand **Full Page Cache**. 
@@ -106,7 +108,7 @@ For Fastly to work in staging or production, you must upload the Fastly VCL usin
 	![Upload a Magento VCL to Fastly]({{ site.baseurl }}common/images/cloud_upload-vcl-to-fastly.png)
 
 	<div class="bs-callout bs-callout-info" id="info" markdown="1">
-  		If the **Upload VCL to Fastly** button does not display, you should upgrade the Fastly extension to version 1.1.9 or later. For details, see [Update extensions]({{ page.baseurl cloud/howtos/update-components.html}}). Fastly's Composer name is `fastly/magento2`.
+  		If the **Upload VCL to Fastly** button does not display, you should upgrade the Fastly extension to version 1.2.0 or later. For details, see [Update extensions]({{ page.baseurl}}cloud/howtos/update-components.html). Fastly's Composer name is `fastly/magento2`.
 	</div>
 
 5.	Follow the prompts on your screen to complete the task.

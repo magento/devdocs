@@ -6,17 +6,10 @@ title: Module Reference Guide
 menu_title: Staging
 menu_order: 2
 version: 2.2
-
-
 github_link: mrg/ee/Staging.md
 ---
 
 ![Magento EE logo]({{site.baseurl}}common/images/ee-only_large.png)
-
-<h2>Contents</h2>
-
-
-## Magento_Staging module
 
 ## Overview
 
@@ -29,7 +22,7 @@ With the Magento_Staging module you can:
     - Using APIs
 - Preview a future campaign in Admin
 
-Moreover, the Magento_Staging module is a framework for other [staging](#staging) modules. It declares basic scenarios over the content, while other staging modules perform them. (You can recognize a staging modules by name, each ends with “Staging” and starts with a name of a module, which it extends. For example, Magento_CatalogStaging module extends functionality of Magento_Catalog module.)
+Moreover, the Magento_Staging module is a framework for other [staging](#staging) modules. It declares basic scenarios over the content, while other staging modules perform them. (You can recognize a staging modules by name, each ends with "Staging" and starts with a name of a module, which it extends. For example, Magento_CatalogStaging module extends functionality of Magento_Catalog module.)
 
 You can work with the following entities out of the box:
 
@@ -255,9 +248,9 @@ You can find the list of modules that have dependencies on the Magento_Staging m
 
 Extension points enable extension developers to interact with the Magento_Staging module. For more information about the Magento extension mechanism, see [Magento plug-ins](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/plugins.html).
 
-### Public APIs
+### Public API
 
-You can use public APIs from the [`magento2ee/app/code/Magento/Staging/Api`](https://github.corp.magento.com/magento2/magento2ee/tree/develop/app/code/Magento/Staging/Api)
+You can use public API defined in the `Api` directory.
 
 ### UI components
 

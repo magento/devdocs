@@ -25,7 +25,7 @@ To migrate successfully and avoid issues, you need to thourougly plan and test y
 
 ## Step 2: Plan capacity
 
-Consider whether the new site needs to be designed with more hardware or a more advanced topology with better caching tiers and so on. It’s a good time to make more serious changes to get your site ready for your next level of growth.
+Consider whether the new site needs to be designed with more hardware or a more advanced topology with better caching tiers and so on. It's a good time to make more serious changes to get your site ready for your next level of growth.
 
 ## Step 3: Build and test Magento 2
 
@@ -59,7 +59,7 @@ To prepare for the migration, make sure you do all of the following:
 
 ## Step 5: Update incremental data
 
-Now that you’ve migrated your data, you must incrementally capture data updates that are added in Magento 1 store (such as new orders, reviews and changes in customer profiles) and migrate it to Magento 2 store.
+Now that you've migrated your data, you must incrementally capture data updates that are added in Magento 1 store (such as new orders, reviews and changes in customer profiles) and migrate it to Magento 2 store.
 
 * Start the incremental migration; updates run continually.
 You can stop the updates at any time by pressing `Ctrl+C`

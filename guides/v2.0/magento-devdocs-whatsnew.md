@@ -13,17 +13,34 @@ github_link: magento-devdocs-whatsnew.md
 
 This page contains recent changes that we think you'd like to know about. We exclude from this list proofreading, spelling checks, and all minor updates.
 
-## December 2016
+## January 2017
+Starting in January, 2017, we'll provide the date a change was made instead of the week in which the change was made.
+
+| Description  | Versions applied to  | New or Updated | Date |
+|--------------|--------------|----------------------|--------|
+| [Data Migration Guide troubleshooting]({{ page.baseurl }}migration/migration-troubleshooting.html){:target="_blank"}  | 2.x  | New  |  Jan 20 |
+| [Updated `@deprecated` tag and added requirements for `@inheritdoc`]({{ page.baseurl }}coding-standards/docblock-standard-general.html){:target="_blank"}  |  2.x | Updated  |  Jan 20 |
+| [How to install and use Magento DevBox (easy developer installation)]({{ page.baseurl }}install-gde/docker/docker-over.html){:target="_blank"}  | 2.x  | New  | Jan 19  |
+|  [Functional Testing Framework isolation management tutorial]({{ page.baseurl }}mtf/features/isolation.html){:target="_blank"} | 2.x  | New  | Jan 18  |
+| [How to test a patch on Magento Enterprise Cloud Edition]({{ page.baseurl }}cloud/howtos/patch-magento.html)  | 2.x  |  Updated  |  Jan 10 |
+|  [Add `type` prefixes and product, project in description of `composer.json`]({{ page.baseurl }}extension-dev-guide/build/composer-integration.html){:target="_blank"} |  2.x |  Updated  | Jan 9  |
+| [Docblock coding standard]({{ page.baseurl }}coding-standards/docblock-standard-general.html){:target="_blank"} | 2.x | Updated | Jan 6 |
+| [Use payment vault in the Admin]({{ page.baseurl }}payments-integrations/vault/admin-integration.html){:target="_blank"} | 2.1 | Updated | Jan 6 |
+
+
+{% collapsibleh2 December 2016 %}
 
 | Description  | Versions applied to  | New or Updated | Week ending |
 |--------------|--------------|----------------------|--------|
+| [Magento UI components explained]({{ site.gdeurl21 }}ui_comp_guide/ui_component_explained.html){:target="_blank"} | 2.1.x | New | Dec 30 (includes week ending Dec 23) |
 | [Magento Community Edition (CE) 2.1.3 Release Notes]({{ site.gdeurl21 }}release-notes/ReleaseNotes2.1.3CE.html){:target="_blank"}   | 2.1.3  |  New | Dec 16  |
 | [Magento CE 2.0.11 Release Notes]({{ site.gdeurl }}release-notes/ReleaseNotes2.0.11CE.html){:target="_blank"}   | 2.0.11  |  New | Dec 16  |
-| [Magento Enterprise Edition (EE) 2.1.3 Release Notes]({{ site.gdeurl21 }}release-notes/ReleaseNotes2.1.3EE.html){:target="_blank"}   | 2.1.3  |   | Dec 16  |
+| [Magento Enterprise Edition (EE) 2.1.3 Release Notes]({{ site.gdeurl21 }}release-notes/ReleaseNotes2.1.3EE.html){:target="_blank"}   | 2.1.3  | New  | Dec 16  |
 | [Magento EE 2.0.11 Release Notes]({{ site.gdeurl }}release-notes/ReleaseNotes2.0.11EE.html){:target="_blank"}   |  2.0.11  |  New | Dec 16  |
 | [Configure the Magento functional testing framework]({{ page.baseurl }}mtf/configuration.html){:target="_blank"}   | 2.x | New  | Dec 16  |
-| []({{ page.baseurl }}){:target="_blank"}   |   |   | Dec 16  |
 | [Add custom integrations and vault payments to the Magento payment provider gateway]({{ page.baseurl }}payments-integrations/bk-payments-integrations.html){:target="_blank"}  |  2.x |  New | Dec 9 |
+
+{% endcollapsibleh2 %}
 
 {% collapsibleh2 November 2016 %}
 

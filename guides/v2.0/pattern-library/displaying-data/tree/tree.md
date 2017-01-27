@@ -23,7 +23,7 @@ The tree consists of two main "Anchors" and "Links"
 <img src="img/treecomponents.jpg">
 
 <h4>1. Anchors</h4>
-Anchors are items that always contain at least one child item and offer “expand” / “collapse” functionality by hiding or revealing its direct children.
+Anchors are items that always contain at least one child item and offer "expand" / "collapse" functionality by hiding or revealing its direct children.
 
 <h4>2. Link</h4>
 Link is a leaf level item which user can select to navigate to detail page or display details on same page.
@@ -36,18 +36,18 @@ Link is a leaf level item which user can select to navigate to detail page or di
 All trees must have these baseic functional behaviors.
 
 <h4> 1. 'N' Number of Levels </h4>
-The propose tree can accommodate “n” levels of parent child relation. But only 2 levels of nesting is recommended.
+The propose tree can accommodate "n" levels of parent child relation. But only 2 levels of nesting is recommended.
 
 <h4> 2. Collapsing/Expanding individual tree items.</h4>
 The arrow to the left of the item can be used to expand or collapses the children of an item you are interacting with.
 
 <h4> 3. Expand All </h4>
-Clicking "Expand All" will open all the nodes in the tree structure. Expand All link is the default state. Once “Expand All” is clicked the link changes to “Collapse All” If user manually expand all the items, this control should also be changed to "Collapse All."
+Clicking "Expand All" will open all the nodes in the tree structure. Expand All link is the default state. Once "Expand All" is clicked the link changes to "Collapse All" If user manually expand all the items, this control should also be changed to "Collapse All."
 
 <img src="img/expandall.jpg">
 
 <h4> 4. Collapse All </h4>
-Clickign "Collapse All" will condense all the nodes in the tree structure. Once “Collapse All” is clicked link changes to “Expand All”.  If user manually collapsed all the items, this control should also be changed to "Collapse All."
+Clickign "Collapse All" will condense all the nodes in the tree structure. Once "Collapse All" is clicked link changes to "Expand All".  If user manually collapsed all the items, this control should also be changed to "Collapse All."
 
 <img src="img/collpaseall.jpg">
 
@@ -81,7 +81,7 @@ Icons should always be placed on the left of the icon label and Icons should NOT
 Select All is the default state for tree with multi select functionality. When this functionality is triggered:<br>
 •	All checkboxes are checked <br>
 •	Complete tree DOESN’T highlight. <br>
-•	“Select All” link changes to “Clear All”<br><br>
+•	"Select All" link changes to "Clear All"<br><br>
 
 When Clear All functionality is triggered – All the checkboxes are deselected. The "Clear All" link is only shown when everything is selected.
 
@@ -108,14 +108,14 @@ Otherwise, the link remain "Select All."
 <strong>3. Checking a checkbox for a child item should automatically change its parent state to:</strong>
 
 •	Partially selected – if parent also contains unchecked children<br>
-•	Checked – if all checkboxes for all children are in “checked” state<br>
-•	Unchecked – if all children are in “unchecked” state.<br>
+•	Checked – if all checkboxes for all children are in "checked" state<br>
+•	Unchecked – if all children are in "unchecked" state.<br>
 
 
 <strong>4. Checking a checkbox for a Parent item should automatically change its child state to:</strong>
 
-•	Checked – if the parent state is changed from “unchecked” to “checked” state <br>
-•	Unchecked – if the parent state is changed from “checked” to “unchecked” state <br>
+•	Checked – if the parent state is changed from "unchecked" to "checked" state <br>
+•	Unchecked – if the parent state is changed from "checked" to "unchecked" state <br>
 •	Partial Selection – if parent has a partial selection state, clicking on it will unselect all the child items.
 
 

@@ -1,1 +1,0 @@
-../../../v2.1/ui_comp_guide/concepts/ui_comp_requirejs_concept.md

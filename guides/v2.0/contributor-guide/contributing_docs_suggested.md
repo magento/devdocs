@@ -30,7 +30,7 @@ We have a new section called <a href= "http://devdocs.magento.com/guides/v2.0/ho
  
 *    Add procedural information about using UI Components; document the workflow, coding with UI Components, retrieving data to populate the components, and using the JSON file.
 
-*   Define one or more “business challenges” that your merchants have asked for (that is, What things do merchants want that are do-able with product, but not immediately obvious how to do?). Even if you only define the challenge, that’s useful; maybe another community member can write up HOW to solve it.
+*   Define one or more "business challenges" that your merchants have asked for (that is, What things do merchants want that are do-able with product, but not immediately obvious how to do?). Even if you only define the challenge, that’s useful; maybe another community member can write up HOW to solve it.
 
 *    Write some deeply technical conceptual topics, perhaps about design patterns or DI or best practices with the framework or migrating from M1 to M2, and so on.
 

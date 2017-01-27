@@ -42,7 +42,7 @@ To create a new configuration type, extend the `\Magento\Framework\Config\Reader
 *  `$schemaLocator`. Implements `\Magento\Framework\Config/SchemaLocatorInterface`. This parameter provides the full path to file(s) containing schema(s) for validation of the individual and merged configuration files.</p>
 *  `$validationState`. Implements `\Magento\Framework\Config\ValidationStateInterface`. This parameter defines whether a configuration file should be validated. 
 *  `$fileName`. Name of a configuration file. The Reader looks for the file names specified by this parameter in modules' `etc` directories.
-*  `$idAttributes`. Array of note attribute IDs.
+*  `$idAttributes`. Array of node attribute IDs.
 
     For example, to merge the XML files:
 
