@@ -28,6 +28,8 @@ To get the Magento EE metapackage:
 
 		  Could not find package magento/project-enterprise-edition with version 2.0.0
 
+	If you receive this error after creating keys as specified in the link above, your account may not be authorized to download the enterprise version of Magento. Please contact support to resolve download issues.
+
 	This command creates the project and downloads dependencies for it. The project is in a directory named `<installation directory name>` if you provided the parameter or `project-enterprise-edition` if you did not.
 
 	<div class="bs-callout bs-callout-info" id="info">
