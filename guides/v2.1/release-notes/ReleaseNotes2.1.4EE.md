@@ -20,13 +20,11 @@ We are pleased to present Magento Enterprise Edition 2.1.4. This release include
 
 Magento 2.1.4 contains more than 20 functional fixes and enhancements, and one security enhancement. Look for the following highlights in this release:
 
-* **Improvements to Payflow Pro processing**. PayPal Payflow Pro now uses the currency you've specified in your store settings. Previously, Magento converted the total price of a purchase into U.S. dollars, no matter which currency you specified in the store settings. 
 
 * **Removal of vulnerability with the Zend framework `Zend_Mail` library**. For more information, see <a href="https://magento.com/security/news/new-zend-framework-1-security-vulnerability" target="_blank">New Zend Framework 1 Security Vulnerability</a>.  
 
 
-* **Refinements to catalog indexing**. 
-
+* ** Updates to the catalog, payment, and sales modules**
 
 ## Security enhancement
 
@@ -196,39 +194,73 @@ We address the following functional issues in this release.
 
 ## Known issues
 
+<!---62083-->* **Issue**: You receive the following fatal error while installing 2.1.3 from `repo.magento.com`.
+   
+  > Fatal error: Cannot instantiate interface Magento\Framework\App\Config\Scope\ReaderPoolInterface in /var/www/html/magento2ce/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php on line 73.
+  
+  **Workaround**:  You can avoid this fatal error by taking one of these actions: 
 
-<!--- 63123 --> * Extension Manager runs slowly when installing or uninstalling extensions. It does not display information as expected about the extension you are installing or uninstalling, and the error console logs do not contain pertinent messages.
+	*	If your Magento root directory is `<Magento install dir>/pub`,  then start the Web Setup Wizard from `http://<Magento host or IP>/setup` instead of from `http://<Magento host or IP>`
 
-
-<!--- 63115 --> * Admin users cannot use the **Category Image** field (**Products > Categories > Content**) to upload new Category images. Currently, Magento fails to load new Category images, and displays this message, **Attention. The file was not uploaded**. 
-
-<!--- 63050 --> * Magento does not correctly display the status of products when you add an item to the Configurable product page. 
-
-<!--- 62605 --> * Although the Category Preview page omits some details, those details are present in the category on the storefront.  
-
-
-<!--- 62523 --> * The Magento Admin Order page is currently not displaying critical information about orders. Specifically, the Payment Information block lacks the following information: 
-
-	* Fraud Detection
-
-	* FDS Filter Action
-
-	* AVS Response
-
-	* Fraud Filters
-
-	* Amount Filter
+	*	Install Magento using the [command line]({{ page.baseurl }}comp-mgr/cli/cli-upgrade.html).
 
 
 
-<!--- 62283 --> * Server-side LESS compilation is not working as expected. When you enable server-side LESS compilation,  the `pub/static/frontend`  directory remains. 
+<!---60616-->* **Issue**: Magento fails to validate a customer address or customer attributes as expected during checkout. 
+
+
+<!---60781-->* **Issue**: Installing with Varnish can result in products not appearing on the frontend even after you purge the cache. 
+
+
+<!---60553-->* **Issue**: When editing a product, you cannot edit customizable options on the storeview level. Consequently, a change to one option affects products on all stores. Also, the **Use Default Value** check box for the option title does not work. Clearing this check box, and then changing the option title affects all storeviews. 
 
 
 
-<!--- 62258 --> * You cannot use the Magento server side to successfully edit an order that includes a bundle product.
+<!---60599-->* **Issue**: You cannot use a negative value in the **Quantity** field for a product, even when you activate back orders (**Stores > Configuration > Catalog > Inventory > Product Stock Options > Backorders = Allow Qty Below 0**) <a href="https://github.com/magento/magento2/issues/7401" target="_blank">(GITHUB-7401)</a>
 
 
-<!--- 62243 --> * After a customer orders the last unit in your inventory of a Configurable product, Magento still lists the product as being in stock.  
+  
+<!---61349-->* **Issue**: When you upgrade your Magento installation from the command line, the `bin/magento` commands do not skip the `var/session` folder, as expected. (The `bin/magento` commands include `setup:cron:run`, `setup:upgrade`, and `setup:uninstall`.) **Workaround**: Make `var/session` writeable before you run the `bin/magento` commands.  
+
+
+
+<!---60947-->* **Issue**: The Low Stock Products report (**Admin > Reports > Products > Low Stock**) is not working correctly. 
+
+
+
+<!---60902-->* **Issue**: You cannot re-enable a previously disabled `Magento_AdminGws` module without causing a range of JavaScript errors. Here is a sample error:
+
+```[PDOException] 
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magento.quote_item' doesn't exist```
+
+
+
+<!---60408-->* **Issue**: If you move a product update from one scheduled update to another, Magento will no longer track entity changes. 
+
+
+
+<!---60954-->* **Issue**: You cannot place an order from an account that has multiple shipping addresses available, even after you select one only address. While placing an order, if you select one shipping address from a list of available addresses, and then try to proceed to the Shipping step, Magento displays this type of error: 
+
+```Parse error: syntax error, unexpected ' ', expecting endswitch (T_ENDSWITCH) or case (T_CASE) or default (T_DEFAULT) in /var/www/html/magento2ce/var/view_preprocessed/html/app/code/Magento/GiftMessage/view/frontend/templates/inline.phtml on line 1```
+
+<!---59775-->* **Issue**: You cannot generate secure content if you deploy static content under these conditions: 
+
+	* `pub/static` is in read-only mode
+
+	*  Magento is in production mode
+
+Requests to `pub/static/_requirejs/frontend/Magento/luma/en_US/secure/requirejs-config.js`, and consequently the frontend code,  will fail under these conditions.
+
+
+
+<!---60705-->* **Issue**: Client-side LESS compilation is not working properly. Consequently, page load performance is not optimal. 
+
+
+
+
+
+
+ 
 
 
 
