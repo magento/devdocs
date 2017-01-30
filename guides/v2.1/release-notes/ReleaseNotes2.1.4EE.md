@@ -24,7 +24,7 @@ Magento 2.1.4 contains more than 20 functional fixes and enhancements, and one s
 * **Removal of vulnerability with the Zend framework `Zend_Mail` library**. For more information, see <a href="https://magento.com/security/news/new-zend-framework-1-security-vulnerability" target="_blank">New Zend Framework 1 Security Vulnerability</a>.  
 
 
-* ** Updates to the catalog, payment, and sales modules**
+* **Updates to the catalog, payment, and sales modules**
 
 ## Security enhancement
 
