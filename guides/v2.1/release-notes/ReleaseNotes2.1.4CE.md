@@ -202,7 +202,7 @@ We address the following functional issues in this release.
 
 <!---62083-->* **Issue**: You receive the following fatal error while installing 2.1.3 from `repo.magento.com`.
    
-  > Fatal error: Cannot instantiate interface Magento\Framework\App\Config\Scope\ReaderPoolInterface in /var/www/html/magento2ce/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php on line 73.
+  	> Fatal error: Cannot instantiate interface Magento\Framework\App\Config\Scope\ReaderPoolInterface in /var/www/html/magento2ce/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php on line 73.
   
   **Workaround**:  You can avoid this fatal error by taking one of these actions: 
 
@@ -236,13 +236,18 @@ We address the following functional issues in this release.
 
 <!---60902-->* **Issue**: You cannot re-enable a previously disabled `Magento_AdminGws` module without causing a range of JavaScript errors. Here is a sample error:
 
-```[PDOException] 
-SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magento.quote_item' doesn't exist```
+	```[PDOException] 
+	SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magento.quote_item' doesn't exist```
+
+
+
+<!---60408-->* **Issue**: If you move a product update from one scheduled update to another, Magento will no longer track entity changes. 
+
 
 
 <!---60954-->* **Issue**: You cannot place an order from an account that has multiple shipping addresses available, even after you select one only address. While placing an order, if you select one shipping address from a list of available addresses, and then try to proceed to the Shipping step, Magento displays this type of error: 
 
-```Parse error: syntax error, unexpected ' ', expecting endswitch (T_ENDSWITCH) or case (T_CASE) or default (T_DEFAULT) in /var/www/html/magento2ce/var/view_preprocessed/html/app/code/Magento/GiftMessage/view/frontend/templates/inline.phtml on line 1```
+	```Parse error: syntax error, unexpected ' ', expecting endswitch (T_ENDSWITCH) or case (T_CASE) or default (T_DEFAULT) in /var/www/html/magento2ce/var/view_preprocessed/html/app/code/Magento/GiftMessage/view/frontend/templates/inline.phtml on line 1```
 
 <!---59775-->* **Issue**: You cannot generate secure content if you deploy static content under these conditions: 
 
@@ -250,7 +255,7 @@ SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magento.quote_item' d
 
 	*  Magento is in production mode
 
-Requests to `pub/static/_requirejs/frontend/Magento/luma/en_US/secure/requirejs-config.js`, and consequently the frontend code,  will fail under these conditions.
+	Requests to `pub/static/_requirejs/frontend/Magento/luma/en_US/secure/requirejs-config.js`, and consequently the frontend code,  will fail under these conditions.
 
 
 
@@ -258,8 +263,6 @@ Requests to `pub/static/_requirejs/frontend/Magento/luma/en_US/secure/requirejs-
 
 
 
- 
- 
 
 
 ## System requirements
