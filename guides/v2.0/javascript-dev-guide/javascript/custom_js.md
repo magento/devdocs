@@ -3,7 +3,7 @@ layout: default
 group: jsdg
 subgroup: 1_Javascript
 title: Use custom JavaScript
-menu_order: 3
+menu_order: 15
 menu_title: Use custom JavaScript
 version: 2.0
 github_link: javascript-dev-guide/javascript/custom_js.md
@@ -13,18 +13,28 @@ redirect_from:
 ---
 
 <h2 id="custom_js_overview">Overview</h2>
-This topic discusses about how to use custom JavaScript components with the components provided by Magento or having replaced them with custom implementations.
+This topic discusses how to use custom JavaScript components with the components provided by Magento or having replaced them with custom implementations.
 
 We strongly recommend not changing the source code of default Magento components and widgets. All customizations must be implemented in custom modules or themes.
 
+## Add a custom JS component 
+
+To add a custom JS component (module), take the following steps:
+
+1. Place the custom component source file in one of the following locations:
+	- Your theme JS files: `<theme_dir>/web/js` or `<theme_dir>/<VendorName>_<ModuleName>/web/js`. In this case the component is available in your theme and its [child themes]({{page.baseurl}}frontend-dev-guide/themes/theme-inherit.html). 
+	- Your module view JS files: `<module_dir>/view/frontend/web/js`. In this case the component is available in all modules and themes (if your module is enabled). 
+
+2. Optionally, in the corresponding module or theme, create a `require-config.js` configuration file, if it does not yet exist there and set path for your resource.
+
+
 <h2 id="js_replace">Replace a default JS component</h2>
 
-
 To use a custom implementation of an existing Magento JS component:
-<ol>
+<ol markdown="1">
 <li>Place the custom component source file in one of the following locations:
 <ul>
-<li>Your theme JS files: <code>&lt;theme_dir&gt;/web/js</code></li>
+<li>Your theme JS files: `<theme_dir>/web/js` or `<theme_dir>/<VendorName>_<ModuleName>/web/js`</li>
 <li>Your module view JS files: <code>&lt;module_dir&gt;/view/frontend/web/js</code></li>
 </ul>
 </li>
@@ -171,5 +181,7 @@ $(mage.apply);
 
 
 #### Related topic
-[Configure JavaScript resources]({{ page.baseurl }}javascript-dev-guide/javascript/js-resources.html)
+
+- [JavaScript resources in Magento]({{ page.baseurl }}javascript-dev-guide/javascript/js-resources.html)
+- [About AMD modules and RequireJS]({{page.baseurl}}javascript-dev-guide/javascript/requirejs_concept.html)
 

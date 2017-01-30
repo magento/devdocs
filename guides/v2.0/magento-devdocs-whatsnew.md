@@ -18,10 +18,16 @@ Starting in January, 2017, we'll provide the date a change was made instead of t
 
 | Description  | Versions applied to  | New or Updated | Date |
 |--------------|--------------|----------------------|--------|
+| [Asynchronous module definition and RequireJS concepts]({{ page.baseurl }}javascript-dev-guide/javascript/requirejs_concept.html){:target="_blank"} | 2.1.x | New | Jan 25 |
+| [Added information about the RequireJS library]({{ page.baseurl }}javascript-dev-guide/javascript/js-resources.html){:target="_blank"} | 2.x | Updated | Jan 26 |
+| [Data Migration Guide troubleshooting]({{ page.baseurl }}migration/migration-troubleshooting.html){:target="_blank"}  | 2.x  | New  |  Jan 20 |
+| [Updated `@deprecated` tag and added requirements for `@inheritdoc`]({{ page.baseurl }}coding-standards/docblock-standard-general.html){:target="_blank"}  |  2.x | Updated  |  Jan 20 |
+| [How to install and use Magento DevBox (easy developer installation)]({{ page.baseurl }}install-gde/docker/docker-over.html){:target="_blank"}  | 2.x  | New  | Jan 19  |
+|  [Functional Testing Framework isolation management tutorial]({{ page.baseurl }}mtf/features/isolation.html){:target="_blank"} | 2.x  | New  | Jan 18  |
 | [How to test a patch on Magento Enterprise Cloud Edition]({{ page.baseurl }}cloud/howtos/patch-magento.html)  | 2.x  |  Updated  |  Jan 10 |
-|  [Add `type` prefixes and product, project in description of `composer.json`]({{ page.baseurl }}extension-dev-guide/build/composer-integration.html) |  2.x |  Updated  | Jan 9  |
-| [Docblock coding standard]({{ page.baseurl }}coding-standards/docblock-standard-general.html) | 2.x | Updated | Jan 6 |
-| [Use payment vault in the Admin]({{ page.baseurl }}payments-integrations/vault/admin-integration.html) | 2.1 | Updated | Jan 6 |
+|  [Add `type` prefixes and product, project in description of `composer.json`]({{ page.baseurl }}extension-dev-guide/build/composer-integration.html){:target="_blank"} |  2.x |  Updated  | Jan 9  |
+| [Docblock coding standard]({{ page.baseurl }}coding-standards/docblock-standard-general.html){:target="_blank"} | 2.x | Updated | Jan 6 |
+| [Use payment vault in the Admin]({{ page.baseurl }}payments-integrations/vault/admin-integration.html){:target="_blank"} | 2.1 | Updated | Jan 6 |
 
 
 {% collapsibleh2 December 2016 %}
