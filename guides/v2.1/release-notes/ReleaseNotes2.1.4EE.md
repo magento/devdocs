@@ -196,13 +196,13 @@ We address the following functional issues in this release.
 
 <!---62083-->* **Issue**: You receive the following fatal error while installing 2.1.3 from `repo.magento.com`.
    
-  > Fatal error: Cannot instantiate interface Magento\Framework\App\Config\Scope\ReaderPoolInterface in /var/www/html/magento2ce/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php on line 73.
+  	> Fatal error: Cannot instantiate interface Magento\Framework\App\Config\Scope\ReaderPoolInterface in /var/www/html/magento2ce/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php on line 73.
   
-  **Workaround**:  You can avoid this fatal error by taking one of these actions: 
+  	**Workaround**:  You can avoid this fatal error by taking one of these actions: 
 
-	*	If your Magento root directory is `<Magento install dir>/pub`,  then start the Web Setup Wizard from `http://<Magento host or IP>/setup` instead of from `http://<Magento host or IP>`
+		*	If your Magento root directory is `<Magento install dir>/pub`,  then start the Web Setup Wizard from `http://<Magento host or IP>/setup` instead of from `http://<Magento host or IP>`
 
-	*	Install Magento using the [command line]({{ page.baseurl }}comp-mgr/cli/cli-upgrade.html).
+		*	Install Magento using the [command line]({{ page.baseurl }}comp-mgr/cli/cli-upgrade.html).
 
 
 
@@ -230,8 +230,8 @@ We address the following functional issues in this release.
 
 <!---60902-->* **Issue**: You cannot re-enable a previously disabled `Magento_AdminGws` module without causing a range of JavaScript errors. Here is a sample error:
 
-```[PDOException] 
-SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magento.quote_item' doesn't exist```
+	```[PDOException] 
+	SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magento.quote_item' doesn't exist```
 
 
 
@@ -245,11 +245,11 @@ SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magento.quote_item' d
 
 <!---59775-->* **Issue**: You cannot generate secure content if you deploy static content under these conditions: 
 
-	* `pub/static` is in read-only mode
+		* `pub/static` is in read-only mode
 
-	*  Magento is in production mode
+		*  Magento is in production mode
 
-Requests to `pub/static/_requirejs/frontend/Magento/luma/en_US/secure/requirejs-config.js`, and consequently the frontend code,  will fail under these conditions.
+	Requests to `pub/static/_requirejs/frontend/Magento/luma/en_US/secure/requirejs-config.js`, and consequently the frontend code,  will fail under these conditions.
 
 
 
