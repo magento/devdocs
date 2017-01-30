@@ -21,7 +21,7 @@ We are pleased to present Magento Enterprise Edition 2.1.4. This release include
 Magento 2.1.4 contains more than 20 functional fixes and enhancements, and one security enhancement. Look for the following highlights in this release:
 
 
-* **Removal of vulnerability with the Zend framework `Zend_Mail` library**. For more information, see <a href="https://magento.com/security/news/new-zend-framework-1-security-vulnerability" target="_blank">New Zend Framework 1 Security Vulnerability</a>.  
+* **Removal of vulnerability with the Zend framework `Zend_Mail` library**. For more information, see <a href="https://magento.com/security/news/new-zend-framework-1-security-vulnerability" target="_blank">New Zend Framework 1 Security Vulnerability</a>. 
 
 
 * **Updates to the catalog, payment, and sales modules**
@@ -176,6 +176,7 @@ We address the following functional issues in this release.
 
 <!--- 62429-->
 
+<!--- 62135-->
 
 
 
@@ -190,6 +191,13 @@ We address the following functional issues in this release.
 <!--- 60145-->
 
 <!--- 61950 -->
+
+<!--- 63329-->
+
+<!--- 63168-->
+
+<!--- 60364-->
+
 
 
 ## Known issues

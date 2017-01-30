@@ -182,6 +182,7 @@ We address the following functional issues in this release.
 
 <!--- 62429-->
 
+<!--- 62135-->
 
 
 
@@ -196,6 +197,12 @@ We address the following functional issues in this release.
 <!--- 60145-->
 
 <!--- 61950 -->
+
+<!--- 63329-->
+
+<!--- 63168-->
+
+<!--- 60364-->
 
 
 ## Known issues
