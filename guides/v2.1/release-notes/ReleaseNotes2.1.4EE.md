@@ -198,11 +198,11 @@ We address the following functional issues in this release.
    
   	> Fatal error: Cannot instantiate interface Magento\Framework\App\Config\Scope\ReaderPoolInterface in /var/www/html/magento2ce/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php on line 73.
   
-  	**Workaround**:  You can avoid this fatal error by taking one of these actions: 
+  **Workaround**:  You can avoid this fatal error by taking one of these actions: 
 
-		*	If your Magento root directory is `<Magento install dir>/pub`,  then start the Web Setup Wizard from `http://<Magento host or IP>/setup` instead of from `http://<Magento host or IP>`
+	*	If your Magento root directory is `<Magento install dir>/pub`,  then start the Web Setup Wizard from `http://<Magento host or IP>/setup` instead of from `http://<Magento host or IP>`
 
-		*	Install Magento using the [command line]({{ page.baseurl }}comp-mgr/cli/cli-upgrade.html).
+	*	Install Magento using the [command line]({{ page.baseurl }}comp-mgr/cli/cli-upgrade.html).
 
 
 
@@ -245,9 +245,9 @@ We address the following functional issues in this release.
 
 <!---59775-->* **Issue**: You cannot generate secure content if you deploy static content under these conditions: 
 
-		* `pub/static` is in read-only mode
+	* `pub/static` is in read-only mode
 
-		*  Magento is in production mode
+	*  Magento is in production mode
 
 	Requests to `pub/static/_requirejs/frontend/Magento/luma/en_US/secure/requirejs-config.js`, and consequently the frontend code,  will fail under these conditions.
 
