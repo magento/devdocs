@@ -16,14 +16,18 @@ We are pleased to present Magento Enterprise Edition 2.0.12. This release includ
 
 
 ## Highlights
-Magento 2.0.12 contains more than 20 bug fixes and enhancements, and one security enhancement. It includes these highlights:
 
-* **Improvements to Payflow Pro processing**. PayPal Payflow Pro now uses the currency you've specified in your store settings. Previously, Magento converted the total price of a purchase into U.S. dollars, no matter which currency you specified in the store settings. 
+Magento 2.0.12 contains more than 20 functional fixes and enhancements, and one security enhancement. Look for the following highlights in this release:
 
-* **Removal of vulnerability with the Zend framework `Zend_Mail` library**. For more information, see <a href="https://magento.com/security/news/new-zend-framework-1-security-vulnerability" target="_blank">Magento Security Center</a>.  
+** **Removal of vulnerability with the Zend framework `Zend_Mail` library**. For more information, see <a href="https://magento.com/security/news/new-zend-framework-1-security-vulnerability" target="_blank">New Zend Framework 1 Security Vulnerability</a>.  
 
 
-* **Refinements to catalog indexing**. 
+* **Updates to the catalog, payment, and sales modules**
+
+## Security enhancement
+
+This release includes an important enhancement to the security of your Magento software. While there are no confirmed attacks related to the Zend framework `Zend_Mail` library vulnerability to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento software to the latest version as soon as possible.
+
 
 ## Functional fixes
 
@@ -129,6 +133,7 @@ We address the following functional issues in this release.
 
 <!--- 62121 -->
 
+<!--- 61258 -->
 
 
 
@@ -145,6 +150,45 @@ We address the following functional issues in this release.
 <!--- 62574 --> 
 
 <!--- 62671 --> 
+
+## Known issues
+
+<!--- 61112 -->* **Issue**: Customers cannot view all images that are associated with a configurable product. The gallery does not show all the the images that are associated with a configurable option. github #6195, #4101
+
+<!--- 61708 -->* **Issue**: You cannot use the Web Setup wizard to uninstall a module. 
+
+
+<!--- 61960 -->* **Issue**: Magento does not save a configurable product with specific attribute options under the following conditions: 
+
+	* the configurable product price is derived from its children
+	* the children have been previously created and are in stock
+
+
+<!--- 57165 -->* **Issue**: After you’ve removed all variations of a configurable product (**Admin > Configuration > Remove Product**), the **Add Products Manually** link is not available. **Workaround**: Retain at least one variation or use the **Choose a different product option** option.
+
+<!--- 61970 -->* **Issue**:  Magento saves images and videos as global values, not per store view. This can potentially result in the unwanted duplication of product images across store views. 
+
+<!--- 61208 -->* **Issue**: Magento does not consistently save video information for a product after you edit it. 
+
+<!--- 61100 -->* **Issue**: Client-side LESS compilation is not working properly. Consequently, page load performance is not optimal.
+
+<!--- 61241 -->* **Issue**: You encounter an error when you try to install Magento with the magento/module-cms-sample-data 100.0.5 sample data set: 
+
+<!--- 62049 -->* **Issue**: Magento does not always display the accurate price for configurable product when running Magento in an environment that contains multiple store views and websites. 
+
+<!--- 61279 -->* **Issue**: You cannot use Braintree PayPal to successfully complete purchase of a gift card using Braintree PayPal. Instead, your purchase stays in the processing stage.
+
+<!--- 63212 -->* **Issue**: You cannot successfully create and save a dropdown attribute using Stores > Attributes > Product > Add New Attribute. **Workaround**: Save the attribute with "values required = No" first, before  and re-saving it with "values required = yes".
+
+<!--- 61238 -->* **Issue**: Magento experiences a fatal error when you try to get a refund on an invoice. (Specifically, a fatal error occurs when calling LocalizedException in CreditmemoService.)
+
+<!--- 62131 -->* **Issue**: Search synonyms not working as expected. Typically, Magento redirects users to the URL set in the search term. Currently, Magento ignores the synonym, and searches for the term that  the customer enters. 
+
+<!--- 61973 -->* **Issue**: Magento does not enforce the value that specifies the minimum quantity of a product that a customer can add to the shopping cart. Instead of displaying a message that prompts the user to enter the required minimum, Magento permits a customer to order as few items as they’d like. 
+
+<!--- 61150 -->* **Issue**: When editing a product description, you cannot delete a product image across multiple stores. When you try to save your edits, Magento displays this message: **The image cannot be removed as it has been assigned to the other image role**. 
+
+
 
 
 
