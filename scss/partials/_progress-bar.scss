@@ -1,0 +1,101 @@
+.progress-bar {
+  display: flex;
+  width: 100%;
+  padding: 10px 0 0 0;
+  //background: $light-gray-color;
+
+  ul {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+  }
+
+  .progress-bar-item {
+    flex: 1;
+    position: relative;
+    text-align: center;
+    font-size: small;
+    max-width: 180px;
+    z-index: 2;
+  }
+
+  .progress-bar-item:last-child {
+    z-index: 1;
+    a:before  {
+      left: 0;
+      width: 50%;
+    }
+  }
+
+  .progress-bar-index {
+    font-size: 8px;
+    line-height: 16px;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    text-align: center;
+    z-index: 99;
+  }
+
+  .done {
+    a:before, a:after {
+      background: #43751C;
+    }
+    .progress-bar-index {
+      color: #fff;
+    }
+  }
+
+  .active {
+    a:after {
+      background: #43751C;
+    }
+    .progress-bar-index {
+      color: #fff;
+    }
+
+  }
+
+
+
+  a {
+    position: relative;
+    display: block;
+    padding: 20px 0 10px 0;
+    color: $body-font-color;
+
+    // line:
+    &:before {
+      display: block;
+      content: '';
+      position: absolute;
+      width: 100%;
+      left: 50%;
+      height: 3px;
+      top: 7px;
+      background: darken( $light-gray-color, 10%);
+    }
+
+    // dot:
+    &:after {
+      display: block;
+      content: '';
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      top: 0;
+      left: 50%;
+      margin-left: -8px;
+      border-radius: 50%;
+      background: darken( $light-gray-color, 10%);
+    }
+
+
+
+  }
+
+
+}
