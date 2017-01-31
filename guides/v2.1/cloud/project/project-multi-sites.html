@@ -1544,7 +1544,7 @@
   <p>This section discusses how to configure your <a href="/guides/v2.1/cloud/discover-arch.html#cloud-arch-int">integration environment</a> only. To set up routes in a staging or production environment, you must create a <a href="/guides/v2.1/cloud/get-help.html">Support ticket</a>.</p>
 </div>
 
-<div class="collapsible"><b class="collapsible-title">To configure routes: </b><div class="collapsible-content"><p>To configure routes in an integration environment:</p>
+<p>To configure routes in an integration environment:</p>
 
 <ol>
   <li>Log in to your local environment as, or switch to, the <a href="/guides/v2.1/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a>.</li>
@@ -1572,12 +1572,11 @@
   </li>
   <li>Save your changes to <code>routes.yaml</code> and exit the text editor.</li>
 </ol>
-</div></div>
 
 <h3 id="cloud-multi-stores-admin">Set up websites, stores, and store views</h3>
 <p>Set up in your Magento Enterprise Cloud Edition Admin websites, stores, and store views identical to the ones you set up on your local system.</p>
 
-<div class="collapsible"><b class="collapsible-title">To set up websites, stores, and store views: </b><div class="collapsible-content"><h4 id="get-your-access-information">Get your access information</h4>
+<h4 id="get-your-access-information">Get your access information</h4>
 <p>To get the access information you need to log in to the Magento Admin:</p>
 
 <ol>
@@ -1630,12 +1629,11 @@
 <p>Make sure you name your websites, stores, and store views in your Cloud Admin the same as you did when you set up your local installation.</p>
 
 <p>See <a href="/guides/v2.1/config-guide/multi-site/ms_websites.html">Set up multiple websites, stores, and store views in the Admin</a>.</p>
-</div></div>
 
 <h3 id="cloud-multi-stores-magento-vars">Modify <code>magento-vars.php</code></h3>
 <p>Instead of configuring an nginx virtual host, pass the <code>MAGE_RUN_CODE</code> and <code>MAGE_RUN_TYPE</code> variables using <code>magento-vars.php</code> which is located in your Magento root directory.</p>
 
-<div class="collapsible"><b class="collapsible-title">To modify `magento-vars.php`: </b><div class="collapsible-content"><ol>
+<ol>
   <li>Open <code>magento-vars.php</code> in a text editor.</li>
   <li>Uncomment everything after the first two lines.</li>
   <li>
@@ -1643,20 +1641,32 @@
 
     <p>Following is what the file should look like so far:</p>
 
-    <pre><code>&lt;?php
-// enable, adjust and copy this code for each store you run
-// Store #0, default one
-function isHttpHost($host)
-{
-	if (!isset($_SERVER['HTTP_HOST'])) {
-		return false;
-	}
-	return strpos(str_replace('---', '.', $_SERVER['HTTP_HOST']), $host) === 0;
-}
-if (isHttpHost("example.com")) {
-    $_SERVER["MAGE_RUN_CODE"] = "default";
-    $_SERVER["MAGE_RUN_TYPE"] = "store";
-}
+    <pre class="no-copy">&lt;?php
+    // enable, adjust and copy this code for each store you run
+    // Store #0, default one
+    function isHttpHost($host)
+    {
+       if (!isset($_SERVER['HTTP_HOST'])) {
+           return false;
+    }
+           return strpos(str_replace('---', '.', $_SERVER['HTTP_HOST']), $host) === 0;
+    }
+    if (isHttpHost("example.com")) {
+        $_SERVER["MAGE_RUN_CODE"] = "default";
+        $_SERVER["MAGE_RUN_TYPE"] = "store";
+    }</pre>
+  </li>
+  <li>
+    <p>Change the following line:</p>
+
+    <p>From:</p>
+
+    <pre><code>return strpos(str_replace('---', '.', $_SERVER['HTTP_HOST']), $host) === 0;
+</code></pre>
+
+    <p>To:</p>
+
+    <pre><code>return $_SERVER['HTTP_HOST'] ===  $host;
 </code></pre>
   </li>
   <li>
@@ -1678,22 +1688,20 @@ function isHttpHost($host)
 	if (!isset($_SERVER['HTTP_HOST'])) {
 		return false;
 	}
-	return strpos(str_replace('---', '.', $_SERVER['HTTP_HOST']), $host) === 0;
+	 return $_SERVER['HTTP_HOST'] ===  $host;
 }
 if (isHttpHost("french---branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud")) {
-	$_SERVER["MAGE_RUN_CODE"] = "site2";
+	$_SERVER["MAGE_RUN_CODE"] = "french";
 	$_SERVER["MAGE_RUN_TYPE"] = "website";
 }
 </code></pre>
   </li>
   <li>Save your changes to <code>magento-vars.php</code> and exit the text editor.</li>
 </ol>
-</div></div>
 
 <h3 id="cloud-multi-stores-deploy">Deploy and test on the integration server</h3>
-<p>The final step is to push your changes to your Magento Entperise Cloud Edition server and test your site there.</p>
-
-<p>To deploy and test:</p>
+<p>The final step is to push your changes to your Magento Entperise Cloud Edition server and test your site there.
+To deploy and test:</p>
 
 <ol>
   <li>
@@ -1704,8 +1712,14 @@ git push origin &lt;branch name&gt;
 </code></pre>
   </li>
   <li>Wait for deployment to complete.</li>
-  <li>When deployment is done, in a web browser, go to your site’s base URL.</li>
-  <li>Make sure you test it thoroughly.</li>
+  <li>
+    <p>When deployment is done, in a web browser, go to your site’s base URL.</p>
+
+    <p>The URL must be in the format: <code>http://&lt;magento run_code&gt;---&lt;rest of URL&gt;</code></p>
+
+    <p>For example, <code>http://french---master-benrmky-dyrozemqbw72k.us.magentosite.cloud/</code></p>
+  </li>
+  <li>Make sure you test your site thoroughly.</li>
 </ol>
 
 		</div>
