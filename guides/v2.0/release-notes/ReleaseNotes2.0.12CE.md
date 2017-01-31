@@ -18,7 +18,7 @@ We are pleased to present Magento Community Edition 2.0.12.
 
 Magento 2.0.12 contains more than 20 functional fixes and enhancements, and one security enhancement. Look for the following highlights in this release:
 
-** **Removal of vulnerability with the Zend framework `Zend_Mail` library**. For more information, see <a href="https://magento.com/security/news/new-zend-framework-1-security-vulnerability" target="_blank">New Zend Framework 1 Security Vulnerability</a>.  
+* **Removal of vulnerability with the Zend framework `Zend_Mail` library**. For more information, see <a href="https://magento.com/security/news/new-zend-framework-1-security-vulnerability" target="_blank">New Zend Framework 1 Security Vulnerability</a>.  
 
 
 * **Updates to the catalog, payment, and sales modules**
@@ -80,6 +80,8 @@ We address the following functional issues in this release.
 
 <!--- 61075 -->* Magento  no longer deletes a product after you select the Replace option while importing a product. Previously,  Magento deleted the product rather than replacing it.  
 
+<!--- 63243 -->* You can now use Extension Manager to uninstall extensions that were installed using Composer. 
+
 
 
 ### Miscellaneous
@@ -89,6 +91,14 @@ We address the following functional issues in this release.
 <!--- 57519 -->* Requests to Edge Side Includes (ESI) now return data. Previously, requests to ESI did not return data because the requested block was absent in the layout. 
 
 <!--- 62680 -->* Admin users now need view permission to the store to which the customers belong in order to see information about those customers. Previously, an Admin user could see information about customers that belonged to websites or stores for which the user did not have explicit permission to view.
+
+<!--- 63209 -->* You can now change a category's display mode to Static Block Only when the flat indexer is on. Previously, Magento experienced a fatal error under these conditions.
+
+<!--- 61188 -->* You can now use Composer to install Magento 2.0.x with sample data, and use `deploy:mode:set production`, without incurring an error. Previously, Magento displayed this error when you tried to use `deploy:mode:set production` under these conditions: 
+
+		Start compilation
+		Command returned non-zero exit code:
+		`php -f /var/www/html/20ce/bin/magento setup:di:compile-multi-tenant 2>&1`
 
 
 
@@ -130,6 +140,9 @@ We address the following functional issues in this release.
 
 <!--- 62121 -->
 
+<!--- 62201 -->
+<!--- 62202 -->
+<!--- 61079 -->
 
 
 
