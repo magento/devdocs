@@ -4,7 +4,7 @@ group: jsdg
 subgroup: 1_Javascript
 title: Calling and initializing JavaScript
 menu_title: Calling and initializing JavaScript
-menu_order: 2
+menu_order: 10
 version: 2.0
 github_link: javascript-dev-guide/javascript/js_init.md
 redirect_from:

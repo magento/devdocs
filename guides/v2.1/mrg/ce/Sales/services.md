@@ -128,7 +128,7 @@ The service returns an identifier of the created Invoice.
 
 #### POST Endpoint
 
-`http://<magento_host>/rest/<store_code>/V1/<orderId>/invoice`
+`http://<magento_host>/rest/<store_code>/V1/order/<orderId>/invoice`
 
 #### REST declaration
 
@@ -440,7 +440,7 @@ The service returns an identifier of a created Credit Memo.
 
 #### POST Endpoint
 
-`http://<magento_host>/rest/<store_code>/V1/<invoiceId>/refund`
+`http://<magento_host>/rest/<store_code>/V1/invoice/<invoiceId>/refund`
 
 #### REST Declaration
 
@@ -721,7 +721,7 @@ The service returns an identifier of a created Credit Memo.
 
 #### POST Endpoint
 
-`http://<magento_host>/rest/<store_code>/V1/<orderId>/refund`
+`http://<magento_host>/rest/<store_code>/V1/order/<orderId>/refund`
 
 #### REST Declaration
 
@@ -943,7 +943,7 @@ The service returns the identifier of a created shipment.
 
 #### POST Endpoint
 
-`http://<magento_host>/rest/<store_code>/V1/<orderId>/ship`
+`http://<magento_host>/rest/<store_code>/V1/order/<orderId>/ship`
 
 #### REST Declaration
 

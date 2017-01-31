@@ -7,6 +7,7 @@ menu_title: Using UI components' client-side
 menu_node: parent
 version: 2.0
 github_link: ui-components/ui_components_js.md
+redirect_from: /guides/v2.0/javascript-dev-guide/ui_components_js.html
 ---
 
 ## What's in this topic

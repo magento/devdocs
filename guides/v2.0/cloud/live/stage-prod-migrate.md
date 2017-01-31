@@ -96,7 +96,7 @@ To solve the issue, create another database dump, replacing the `DEFINER` string
 
 You can do this using a text editor or by using the following command:
 
-	mysqldump -h <database host> --user=<database user name> --password=<password> --single-transaction main | gzip | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' > /tmp/database_no-definer.sql.gz
+	mysqldump -h <database host> --user=<database user name> --password=<password> --single-transaction main  | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' | gzip > /tmp/database_no-definer.sql.gz
 
 Use the database dump you just created to [migrate the database](#cloud-live-migrate-db).
 

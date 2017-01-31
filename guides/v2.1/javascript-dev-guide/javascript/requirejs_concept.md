@@ -1,12 +1,13 @@
 ---
 layout: default
-group: UI_Components_guide
-subgroup: concepts
+group: jsdg
+subgroup: 1_Javascript
 title: About AMD modules and RequireJS
 menu_title: About AMD modules and RequireJS
-menu_order: 15
+menu_order: 8
 version: 2.1
-github_link: ui_comp_guide/concepts/ui_comp_requirejs_concept.md
+github_link: javascript-dev-guide/javascript/requirejs_concept.md
+redirect_from: ui_comp_guide/concepts/ui_comp_requirejs_concept.md
 ---
 
 ## Overview
@@ -53,7 +54,7 @@ var config = {
 
 The `config` variable contains properties with the `map` and `deps` keys. These properties are equivalent to the native RequireJS properties. For example, in this case  the `map` property contains an object with the keys that are aliases to files and values that are real paths to files.
 
-For a particular area, all modules and themes `requirejs-config.js` files are merged into a single file. This file is written to the `pub/static` directory. This occurs during the first launch of Magento in [develop or default mode]({{page.baseurl}}config-guide/bootstrap/magento-modes.html) or during static files generation using the [bin/magento setup:static-content:deploy]({{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html) console command.
+For a particular area, all modules and themes `requirejs-config.js` files are merged into a single file. This file is written to the `pub/static/requirejs` directory. This occurs during the first launch of Magento in [develop or default mode]({{page.baseurl}}config-guide/bootstrap/magento-modes.html) or during static files generation using the [bin/magento setup:static-content:deploy]({{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html) console command.
 
 The merged configuration will be loaded on the page right after `require.js` and will be used by `require()` and `define()` functions.
 
