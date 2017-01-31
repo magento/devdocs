@@ -247,11 +247,6 @@ We address the following functional issues in this release.
 	SQLSTATE[42S02]: Base table or view not found: 1146 Table 'magento.quote_item' doesn't exist```
 
 
-
-<!---60408-->* **Issue**: If you move a product update from one scheduled update to another, Magento will no longer track entity changes. 
-
-
-
 <!---60954-->* **Issue**: You cannot place an order from an account that has multiple shipping addresses available, even after you select one only address. While placing an order, if you select one shipping address from a list of available addresses, and then try to proceed to the Shipping step, Magento displays this type of error: 
 
 	```Parse error: syntax error, unexpected ' ', expecting endswitch (T_ENDSWITCH) or case (T_CASE) or default (T_DEFAULT) in /var/www/html/magento2ce/var/view_preprocessed/html/app/code/Magento/GiftMessage/view/frontend/templates/inline.phtml on line 1```
