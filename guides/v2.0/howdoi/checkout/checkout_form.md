@@ -30,7 +30,7 @@ For the sake of compatibility, upgradability, and easy maintenance, do not edit 
 
 ## Create the JS implementation of the form UI component {#component}
 
-In your `<your_module_dir>/view/frontend/web/js/` directory, create a `.js` file implementing the form.
+In your `<your_module_dir>/view/frontend/web/js/view/` directory, create a `.js` file implementing the form.
 
 Example of extending the default form component:
 
