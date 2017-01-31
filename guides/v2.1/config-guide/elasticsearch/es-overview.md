@@ -95,36 +95,38 @@ To install older versions, see the [Elasticsearch reference](https://www.elastic
 To install Elasticsearch:
 
 1.	Log in to your Magento server as a user with `root` privileges.
-2.	Enter the following commands in the order shown:
+2.	_CentOS_: Enter the following commands in the order shown:
 
-	*	CentOS:
+		rpm --import https://packages.elastic.co/GPG-KEY-elasticsearch
+		vim /etc/yum.repos.d/Elasticsearch.repo
 
-			rpm --import https://packages.elastic.co/GPG-KEY-elasticsearch
-			vim /etc/yum.repos.d/Elasticsearch.repo
+	Add the following:
 
-		Add the following:
+		[elasticsearch-2.x]
+		name=Elasticsearch repository for 2.x packages
+		baseurl=http://packages.elastic.co/elasticsearch/2.x/centos
+		gpgcheck=1
+		gpgkey=http://packages.elastic.co/GPG-KEY-elasticsearch
+		enabled=1
 
-			[elasticsearch-2.x]
-			name=Elasticsearch repository for 2.x packages
-			baseurl=http://packages.elastic.co/elasticsearch/2.x/centos
-			gpgcheck=1
-			gpgkey=http://packages.elastic.co/GPG-KEY-elasticsearch
-			enabled=1
+	Enter the following commands:
 
-		Enter the following commands:
+		yum -y install elasticsearch
+		chkconfig --add elasticsearch
 
-			yum -y install elasticsearch
-			chkconfig --add elasticsearch
+2.	_Ubuntu_: Enter the following commands in the order shown:
 
-	*	Ubuntu:
+	Find the [latest 2.x version of Elasticsearch](https://www.elastic.co/downloads/past-releases){:target="_blank"}.
 
-			wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
+	Install the latest 2.x version using [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/_installation.html){:target="_blank"}
 
-			echo "deb https://artifacts.elastic.co/packages/5.x/apt stable main" | sudo tee -a /etc/apt/sources.list.d/elastic-5.x.list
+	For example, to install Elasticsearch version 2.4.4, enter the following commands in the order shown:
 
-			sudo apt-get -y update && sudo apt-get -y install elasticsearch
+		curl -L -O https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/tar/elasticsearch/2.4.4/elasticsearch-2.4.4.tar.gz
+		tar -xvf elasticsearch-2.4.4.tar.gz
+		cd elasticsearch-2.4.4/bin
+		./elasticsearch
 
-	<a href="https://www.elastic.co/guide/en/elasticsearch/reference/2.1/setup-repositories.html" target="_blank">More information about Elasticsearch repositories</a>.
 4.	Open the [Elasticsearch configuration file](https://www.elastic.co/guide/en/elasticsearch/reference/2.0/setup-configuration.html#settings){:target="_blank"}, `elasticsearch.yml`, in a text editor.
 
 	For example, it might be located in `/etc/elasticsearch`.
