@@ -973,69 +973,6 @@ For example:</p>
 
 <p>If the method returns itself, <code>return $this</code> should be used.</p>
 
-<h4 id="inheritdoc">@inheritdoc tag</h4>
-
-<p>Whenever possible the <code>@inheritdoc</code> tag MUST be used for child methods to avoid duplication of doc blocks.</p>
-
-<p>Even Though PHPDocumentor understands inheritance and uses the parent doc block by default (without <code>@inheritdoc</code> tag specified), including the tag helps ensure that the doc block is not missed at all.</p>
-
-<p>Rules for usage of the tag:</p>
-
-<ul>
-  <li>Use <code>@inheritdoc</code> (notice no braces around) to indicate that the entire doc block should be inherited from the parent method.</li>
-  <li>Use the inline <code>{@inheritdoc}</code> tag (with braces around) in long descriptions to reuse the parent’s long description. The tagged method MUST have its own short description.</li>
-</ul>
-
-<p><strong>DocBlock for the Intreface</strong></p>
-
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
-<span class="sd"> * Interface for mutable value object for integer values</span>
-<span class="sd"> */</span>
-<span class="k">interface</span> <span class="nx">MutableInterface</span>
-<span class="p">{</span>
-    <span class="sd">/**</span>
-<span class="sd">     * Get value</span>
-<span class="sd">     *</span>
-<span class="sd">     * Returns 0, if no value is available</span>
-<span class="sd">     *</span>
-<span class="sd">     * @return int</span>
-<span class="sd">     */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">getVal</span><span class="p">();</span>
- 
-    <span class="sd">/**</span>
-<span class="sd">     * Set value</span>
-<span class="sd">     *</span>
-<span class="sd">     * Sets 0 in case a non-integer value is passed</span>
-<span class="sd">     *</span>
-<span class="sd">     * @param int $value</span>
-<span class="sd">     */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">setVal</span><span class="p">(</span><span class="nv">$value</span><span class="p">);</span>
-<span class="p">}</span></code></pre></figure>
-
-<p><strong>DocBlock for the implementation</strong></p>
-
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
-<span class="sd"> * Limited mutable value object for integer values</span>
-<span class="sd"> */</span>
-<span class="k">class</span> <span class="nc">LimitedMutableClass</span> <span class="k">implements</span> <span class="nx">MutableInterface</span>
-<span class="p">{</span>
-    <span class="sd">/**</span>
-<span class="sd">     * @inheritdoc</span>
-<span class="sd">     */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">getVal</span><span class="p">()</span>
-    <span class="p">{</span>
-    <span class="p">}</span>
- 
-    <span class="sd">/**</span>
-<span class="sd">     * Set value</span>
-<span class="sd">     *</span>
-<span class="sd">     * Sets 0 in case the value is bigger than max allowed value. {@inheritdoc}</span>
-<span class="sd">     */</span>
-    <span class="k">public</span> <span class="k">function</span> <span class="nf">setVal</span><span class="p">(</span><span class="nv">$value</span><span class="p">)</span>
-    <span class="p">{</span>
-    <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
-
 <h3 id="constants">Constants</h3>
 
 <p>Constants must have short description.</p>
@@ -1103,6 +1040,69 @@ In this case individual DocBlocks for those elements they may be replaced by a D
 Documentation is organized with the use of namespaces.</p>
 
 <h2 id="other-DocBlock-tags">Other DocBlock tags</h2>
+
+<h3 id="inheritdoc">@inheritdoc tag</h3>
+
+<p>Whenever possible the <code>@inheritdoc</code> tag MUST be used for children to avoid duplication of doc blocks.</p>
+
+<p>Even Though PHPDocumentor understands inheritance and uses the parent doc block by default (without <code>@inheritdoc</code> tag specified), including the tag helps ensure that the doc block is not missed at all.</p>
+
+<p>Rules for usage of the tag:</p>
+
+<ul>
+  <li>Use <code>@inheritdoc</code> (notice no braces around) to indicate that the entire doc block should be inherited from the parent method.</li>
+  <li>Use the inline <code>{@inheritdoc}</code> tag (with braces around) in long descriptions to reuse the parent’s long description. The tagged method MUST have its own short description.</li>
+</ul>
+
+<p><strong>DocBlock for the Intreface</strong></p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
+<span class="sd"> * Interface for mutable value object for integer values</span>
+<span class="sd"> */</span>
+<span class="k">interface</span> <span class="nx">MutableInterface</span>
+<span class="p">{</span>
+    <span class="sd">/**</span>
+<span class="sd">     * Get value</span>
+<span class="sd">     *</span>
+<span class="sd">     * Returns 0, if no value is available</span>
+<span class="sd">     *</span>
+<span class="sd">     * @return int</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getVal</span><span class="p">();</span>
+ 
+    <span class="sd">/**</span>
+<span class="sd">     * Set value</span>
+<span class="sd">     *</span>
+<span class="sd">     * Sets 0 in case a non-integer value is passed</span>
+<span class="sd">     *</span>
+<span class="sd">     * @param int $value</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">setVal</span><span class="p">(</span><span class="nv">$value</span><span class="p">);</span>
+<span class="p">}</span></code></pre></figure>
+
+<p><strong>DocBlock for the implementation</strong></p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
+<span class="sd"> * Limited mutable value object for integer values</span>
+<span class="sd"> */</span>
+<span class="k">class</span> <span class="nc">LimitedMutableClass</span> <span class="k">implements</span> <span class="nx">MutableInterface</span>
+<span class="p">{</span>
+    <span class="sd">/**</span>
+<span class="sd">     * @inheritdoc</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getVal</span><span class="p">()</span>
+    <span class="p">{</span>
+    <span class="p">}</span>
+ 
+    <span class="sd">/**</span>
+<span class="sd">     * Set value</span>
+<span class="sd">     *</span>
+<span class="sd">     * Sets 0 in case the value is bigger than max allowed value. {@inheritdoc}</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">setVal</span><span class="p">(</span><span class="nv">$value</span><span class="p">)</span>
+    <span class="p">{</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
 
 <h3 id="api">@api tag</h3>
 
