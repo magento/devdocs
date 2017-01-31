@@ -439,70 +439,6 @@ If there is no explicit return statement in a method or function, a `@return voi
 
 If the method returns itself, `return $this` should be used.
 
-#### @inheritdoc tag
-{:#inheritdoc}
-
-Whenever possible the `@inheritdoc` tag MUST be used for child methods to avoid duplication of doc blocks.
-
-Even Though PHPDocumentor understands inheritance and uses the parent doc block by default (without `@inheritdoc` tag specified), including the tag helps ensure that the doc block is not missed at all.
-
-Rules for usage of the tag:
-
-* Use `@inheritdoc` (notice no braces around) to indicate that the entire doc block should be inherited from the parent method.
-* Use the inline `{@inheritdoc}` tag (with braces around) in long descriptions to reuse the parent's long description. The tagged method MUST have its own short description.
-
-**DocBlock for the Intreface**
-{% highlight php startinline=true %}
-/**
- * Interface for mutable value object for integer values
- */
-interface MutableInterface
-{
-    /**
-     * Get value
-     *
-     * Returns 0, if no value is available
-     *
-     * @return int
-     */
-    public function getVal();
- 
-    /**
-     * Set value
-     *
-     * Sets 0 in case a non-integer value is passed
-     *
-     * @param int $value
-     */
-    public function setVal($value);
-}
-{% endhighlight %}
-
-**DocBlock for the implementation**
-{% highlight php startinline=true %}
-/**
- * Limited mutable value object for integer values
- */
-class LimitedMutableClass implements MutableInterface
-{
-    /**
-     * @inheritdoc
-     */
-    public function getVal()
-    {
-    }
- 
-    /**
-     * Set value
-     *
-     * Sets 0 in case the value is bigger than max allowed value. {@inheritdoc}
-     */
-    public function setVal($value)
-    {
-    }
-}
-{% endhighlight %}
-
 ### Constants
 {:#constants}
 
@@ -578,6 +514,70 @@ Documentation is organized with the use of namespaces.
 
 ## Other DocBlock tags
 {:#other-DocBlock-tags}
+
+### @inheritdoc tag
+{:#inheritdoc}
+
+Whenever possible the `@inheritdoc` tag MUST be used for children to avoid duplication of doc blocks.
+
+Even Though PHPDocumentor understands inheritance and uses the parent doc block by default (without `@inheritdoc` tag specified), including the tag helps ensure that the doc block is not missed at all.
+
+Rules for usage of the tag:
+
+* Use `@inheritdoc` (notice no braces around) to indicate that the entire doc block should be inherited from the parent method.
+* Use the inline `{@inheritdoc}` tag (with braces around) in long descriptions to reuse the parent's long description. The tagged method MUST have its own short description.
+
+**DocBlock for the Intreface**
+{% highlight php startinline=true %}
+/**
+ * Interface for mutable value object for integer values
+ */
+interface MutableInterface
+{
+    /**
+     * Get value
+     *
+     * Returns 0, if no value is available
+     *
+     * @return int
+     */
+    public function getVal();
+ 
+    /**
+     * Set value
+     *
+     * Sets 0 in case a non-integer value is passed
+     *
+     * @param int $value
+     */
+    public function setVal($value);
+}
+{% endhighlight %}
+
+**DocBlock for the implementation**
+{% highlight php startinline=true %}
+/**
+ * Limited mutable value object for integer values
+ */
+class LimitedMutableClass implements MutableInterface
+{
+    /**
+     * @inheritdoc
+     */
+    public function getVal()
+    {
+    }
+ 
+    /**
+     * Set value
+     *
+     * Sets 0 in case the value is bigger than max allowed value. {@inheritdoc}
+     */
+    public function setVal($value)
+    {
+    }
+}
+{% endhighlight %}
 
 ### @api tag
 {:#api}
