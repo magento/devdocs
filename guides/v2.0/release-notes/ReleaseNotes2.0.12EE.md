@@ -57,20 +57,20 @@ We address the following functional issues in this release.
 
 <!--- 61113 -->* Magento now displays the "Thank you for your purchase!" message after a customer successfully checks out. Previously,  Magento did not display this message, even though the HTML code was present. <a href="https://github.com/magento/magento2/issues/6968" target="_blank">(GITHUB-6968)</a>
 
-<!--- 61022 -->* You can now create a new order from the Magento server side. <a href="https://github.com/magento/magento2/issues/5533" target="_blank">(GITHUB-5533)</a>,  <a href="https://github.com/magento/magento2/issues/6855" target="_blank">(GITHUB-6855)</a>
+<!--- 61022 -->* You can now create a new order from the Magento Admin. <a href="https://github.com/magento/magento2/issues/5533" target="_blank">(GITHUB-5533)</a>,  <a href="https://github.com/magento/magento2/issues/6855" target="_blank">(GITHUB-6855)</a>
 
 
 
 ### Customer
 
 
-<!--- 60965 -->* New custom attributes are now visible together with other address details when you add a new address. 
+<!--- 60965 -->* When you add an address, new custom attributes are now displayed together, along with other address details. 
 
 
 
 ### Gift card
 
-<!--- 57610 -->* You can now use a gift card to complete payment for an order that contains gift wrap. Previously, when you used a gift card to pay for the order, the gift wrap amount remained as a balance, even when the gift card contained sufficient funds to cover the expense of gift wrapping.
+<!--- 57610 -->* You can now use a gift card to complete payment for an order that contains gift wrap. Previously, when you paid for an order with a gift card, the gift wrap amount remained as a balance, even when the gift card contained sufficient funds to cover the expense of gift wrapping.
 
 
 
@@ -115,7 +115,7 @@ We address the following functional issues in this release.
 
 <!--- 61151 -->* Magento now displays an error message as expected when a user tries to add less than the specified minimum quantity of a product to his shopping cart. 
 
-<!--- 61091 -->* The Free Shipping method now shows up as an available option when you create an order from the Magento server side. <a href="https://github.com/magento/magento2/issues/2939" target="_blank">(GITHUB-2939)</a>
+<!--- 61091 -->* The Free Shipping method now shows up as an available option when you create an order from the Magento Admin. <a href="https://github.com/magento/magento2/issues/2939" target="_blank">(GITHUB-2939)</a>
 
 <!--- 60327 -->* Magento no longer assigns all orders a status of Suspected Fraud in multi-currency store configurations. <a href="https://github.com/magento/magento2/issues/4263" target="_blank">(GITHUB-4263)</a>
 
@@ -168,7 +168,7 @@ We address the following functional issues in this release.
 
 <!--- 62661 -->* **Issue**: You cannot cancel check out of an order you are making with the Worldpay payment option without emptying your shopping cart. Currently, when you cancel a checkout operation while using this payment method, Magento empties your shopping cart.
 
-<!--- 61112 -->* **Issue**: Customers cannot view all images that are associated with a configurable product. The gallery does not show all the the images that are associated with a configurable option. <a href="https://github.com/magento/magento2/issues/6195" target="_blank">(GITHUB-6195)</a>, <a href="https://github.com/magento/magento2/issues/4101" target="_blank">(GITHUB-4101)</a>
+<!--- 61112 -->* **Issue**: Customers cannot view all images that are associated with a configurable product. The gallery does not show all the images that are associated with a configurable option. <a href="https://github.com/magento/magento2/issues/6195" target="_blank">(GITHUB-6195)</a>, <a href="https://github.com/magento/magento2/issues/4101" target="_blank">(GITHUB-4101)</a>
 
 <!--- 61708 -->* **Issue**: You cannot use the Web Setup wizard to uninstall a module. 
 
@@ -191,7 +191,7 @@ We address the following functional issues in this release.
 
 <!--- 62049 -->* **Issue**: Magento does not always display the accurate price for a configurable product when running Magento in an environment that contains multiple store views and websites. 
 
-<!--- 61279 -->* **Issue**: You cannot use Braintree PayPal to successfully complete purchase of a gift cardare . Instead, your purchase stays in the processing stage.
+<!--- 61279 -->* **Issue**: You cannot use Braintree PayPal to successfully complete the purchase of a gift card. Instead, your purchase stays in the processing stage.
 
 <!--- 63212 -->* **Issue**: You cannot successfully create and save a dropdown attribute using **Stores > Attributes > Product > Add New Attribute**. **Workaround**: Save the attribute with **values required** set to **no** first, before re-saving it with **values required** set to **yes**.
 
