@@ -162,7 +162,7 @@ We address the following functional issues in this release.
 
 ## Known issues
 
-<!--- 61112 -->* **Issue**: Customers cannot view all images that are associated with a configurable product. The gallery does not show all the the images that are associated with a configurable option. github #6195, #4101
+<!--- 61112 -->* **Issue**: Customers cannot view all images that are associated with a configurable product. (The gallery does not show all the the images that are associated with a configurable option.) <a href="https://github.com/magento/magento2/issues/6195" target="_blank">(GITHUB-6195)</a>, <a href="https://github.com/magento/magento2/issues/4101" target="_blank">(GITHUB-4101)</a>
 
 <!--- 61708 -->* **Issue**: You cannot use the Web Setup wizard to uninstall a module. 
 
@@ -177,25 +177,26 @@ We address the following functional issues in this release.
 
 <!--- 61970 -->* **Issue**:  Magento saves images and videos as global values, not per store view. This can potentially result in the unwanted duplication of product images across store views. 
 
-<!--- 61208 -->* **Issue**: Magento does not consistently save video information for a product after you edit it. 
+<!--- 61208 -->* **Issue**: Magento does not consistently save video information for a product after you edit the information. 
 
 <!--- 61100 -->* **Issue**: Client-side LESS compilation is not working properly. Consequently, page load performance is not optimal.
 
-<!--- 61241 -->* **Issue**: You encounter an error when you try to install Magento with the magento/module-cms-sample-data 100.0.5 sample data set: 
+<!--- 61241 -->* **Issue**: You encounter an error when you try to install Magento with the `magento/module-cms-sample-data 100.0.5` sample data set: **Error in update!** 
 
-<!--- 62049 -->* **Issue**: Magento does not always display the accurate price for configurable product when running Magento in an environment that contains multiple store views and websites. 
+<!--- 62049 -->* **Issue**: Magento does not always display the accurate price for a configurable product when running Magento in an environment that contains multiple store views and websites. 
 
-<!--- 61279 -->* **Issue**: You cannot use Braintree PayPal to successfully complete purchase of a gift card using Braintree PayPal. Instead, your purchase stays in the processing stage.
+<!--- 61279 -->* **Issue**: You cannot use Braintree PayPal to successfully complete purchase of a gift card. Instead, your purchase stays in the processing stage.
 
-<!--- 63212 -->* **Issue**: You cannot successfully create and save a dropdown attribute using Stores > Attributes > Product > Add New Attribute. **Workaround**: Save the attribute with "values required = No" first, before  and re-saving it with "values required = yes".
+<!--- 63212 -->* **Issue**: You cannot successfully create and save a dropdown attribute using **Stores > Attributes > Product > Add New Attribute**. **Workaround**: Save the attribute with **values required** set to **no** first, before re-saving it with **values required** set to **yes**.
 
-<!--- 61238 -->* **Issue**: Magento experiences a fatal error when you try to get a refund on an invoice. (Specifically, a fatal error occurs when calling LocalizedException in CreditmemoService.)
+<!--- 61238 -->* **Issue**: Magento experiences a fatal error when you try to get a refund on an invoice. (Specifically, a fatal error occurs when calling `LocalizedException` in `CreditmemoService`.)
 
-<!--- 62131 -->* **Issue**: Search synonyms not working as expected. Typically, Magento redirects users to the URL set in the search term. Currently, Magento ignores the synonym, and searches for the term that  the customer enters. 
+<!--- 62131 -->* **Issue**: Search synonyms are not working as expected. Typically, Magento redirects users to the URL set in the search term. Currently, Magento ignores the synonym, and searches for the term that the customer enters. 
 
 <!--- 61973 -->* **Issue**: Magento does not enforce the value that specifies the minimum quantity of a product that a customer can add to the shopping cart. Instead of displaying a message that prompts the user to enter the required minimum, Magento permits a customer to order as few items as they’d like. 
 
 <!--- 61150 -->* **Issue**: When editing a product description, you cannot delete a product image across multiple stores. When you try to save your edits, Magento displays this message: **The image cannot be removed as it has been assigned to the other image role**. 
+
 
 ## System requirements
 Our technology stack is built on PHP and MySQL. For more information, see
