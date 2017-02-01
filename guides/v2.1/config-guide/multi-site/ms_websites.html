@@ -561,49 +561,6 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.1/config-guide/log/log-intro.html">Custom logging</a></li>
-									
-								
-
-									
-
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/config-guide/log/log-magento.html">Magento logging in more detail</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/config-guide/log/log-db.html">Example&mdash;logging database activity</a></li>
-
-									
-
-								
-
-
-
-
-						
-
-					
-
-						
-
-						
-
-							
-
-
-								
-
-
-								
 									<li class="level1 "><a class="nav-header" href="/guides/v2.1/config-guide/config/config-magento.html">Magento configuration files</a></li>
 									
 								
@@ -957,6 +914,57 @@
 
 
 								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/config-guide/multi-site/ms_over.html">Multiple websites or stores</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2  active "><a href="/guides/v2.1/config-guide/multi-site/ms_websites.html">Set up multiple websites, stores, and store views in the Admin</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/multi-site/ms_nginx.html">Tutorial&mdash;Set up multiple websites or stores with nginx</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/multi-site/ms_apache.html">Tutorial&mdash;Set up multiple websites with Apache</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
 									<li class="level1 "><a class="nav-header" href="/guides/v2.1/config-guide/cron/custom-cron.html">Set up a custom cron job and cron group</a></li>
 									
 								
@@ -1231,7 +1239,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.1/config-guide/multi-site/ms_over.html">Multiple websites or stores</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/config-guide/log/log-intro.html">Custom logging</a></li>
 									
 								
 
@@ -1242,7 +1250,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.1/config-guide/multi-site/ms_websites.html">Set up multiple websites, stores, and store views in the Admin</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/log/log-magento.html">Magento logging in more detail</a></li>
 
 									
 
@@ -1250,15 +1258,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/config-guide/multi-site/ms_nginx.html">Set up multiple websites or stores with nginx (tutorial)</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/config-guide/multi-site/ms_apache.html">Set up multiple websites with Apache (tutorial)</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/log/log-db.html">Example&mdash;logging database activity</a></li>
 
 									
 
@@ -1549,6 +1549,16 @@
   <li><a href="http://docs.magento.com/m2/ce/user_guide/cms/content-menu.html" target="_blank">Content</a></li>
 </ul>
 
+<div class="bs-callout bs-callout-info" id="info">
+  <p>For example purposes only, we use a French website with website code <code>french</code> in this topic. For step-by-step tutorials, see:</p>
+
+  <ul>
+    <li><a href="/guides/v2.1/config-guide/multi-site/ms_apache.html">Tutorial—Set up multiple websites with Apache</a></li>
+    <li><a href="/guides/v2.1/config-guide/multi-site/ms_nginx.html">Tutorial—Set up multiple websites with nginx</a></li>
+  </ul>
+
+</div>
+
 <h2 id="step-1-create-root-categories">Step 1: Create root categories</h2>
 <p>Creating a root category is optional, but we show how to do it in this tutorial in the event you want each website to have a unique root category. You can create additional categories if you choose.</p>
 
@@ -1640,7 +1650,7 @@ The following figure shows an example.</li>
 </div></div>
 
 <h2 id="step-5-change-a-websites-base-url">Step 5: Change a website’s base URL</h2>
-<p>To access a website using a unique URL like <code>http://french.mysite.mg</code>, you must change the base URL for each site in the Magento Admin.</p>
+<p>To access a website using a unique URL like <code>http://french.magento.mg</code>, you must change the base URL for each site in the Magento Admin.</p>
 
 <div class="collapsible"><b class="collapsible-title">To change the website's base URL: </b><div class="collapsible-content"><ol>
   <li>In the Admin, click <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; General &gt; <strong>Web</strong>.</li>
@@ -1652,7 +1662,7 @@ The following figure shows an example.</li>
   <li>In the right pane, expand <strong>Base URLs</strong>.</li>
   <li>In the Base URL section, clear the <strong>Use Default</strong> check box.</li>
   <li>
-    <p>Enter <code>http://french.mysite.mg</code> as the following example shows.</p>
+    <p>Enter <code>http://french.magento.mg</code> as the following example shows.</p>
 
     <p><img src="/common/images/config_multi-site_base-url.png" alt="Set a base URL" width="650px" /></p>
 
@@ -1662,12 +1672,12 @@ The following figure shows an example.</li>
 </div>
   </li>
   <li>Click <strong>Save Config</strong>.</li>
-  <li>Repeat these tasks for your German website.</li>
+  <li>Repeat these tasks for other websites.</li>
 </ol>
 </div></div>
 
 <h2 id="multi-storecode-baseurl">Step 6: Add the store code to the base URL</h2>
-<p>The Magento application gives you the option to add the store code to the site’s base URL, which simplifies the process of setting up multiple stores. Using this option, you don’t have to create directories on the Magento file system to store <code>index.php</code> and <code>.htaccess</code>.</p>
+<p>Magento gives you the option to add the store code to the site’s base URL, which simplifies the process of setting up multiple stores. Using this option, you don’t have to create directories on the Magento file system to store <code>index.php</code> and <code>.htaccess</code>.</p>
 
 <p>This prevents <code>index.php</code> and <code>.htaccess</code> from getting out of sync with the Magento codebase in future upgrades.</p>
 
@@ -1718,8 +1728,9 @@ The following figure shows an example.</li>
 
 <h4 id="next-step">Next step</h4>
 <ul>
-  <li><a href="/guides/v2.1/config-guide/multi-site/ms_nginx.html">Set up multiple websites or stores with nginx (tutorial)</a></li>
-  <li><a href="/guides/v2.1/config-guide/multi-site/ms_apache.html">Set up multiple websites with Apache (tutorial)</a></li>
+  <li>Magento Enterprise Cloud Edition: <a href="/guides/v2.1/cloud/project/project-multi-sites.html">Set up multiple Cloud websites or stores</a></li>
+  <li><a href="/guides/v2.1/config-guide/multi-site/ms_nginx.html">Tutorial—Set up multiple websites or stores with nginx</a></li>
+  <li><a href="/guides/v2.1/config-guide/multi-site/ms_apache.html">Tutorial—Set up multiple websites with Apache</a></li>
 </ul>
 
 <h4 id="related-information">Related information</h4>
