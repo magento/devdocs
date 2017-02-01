@@ -2,7 +2,7 @@
 layout: default
 group: mtf-guide
 subgroup: 50_Entities
-title: Entities of the Functional Testing Framework
+title: Test case
 menu_title: Test case
 menu_order: 9
 version: 2.0

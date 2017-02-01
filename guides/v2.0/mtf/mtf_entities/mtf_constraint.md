@@ -2,7 +2,7 @@
 layout: default
 group: mtf-guide
 subgroup: 50_Entities
-title: Entities of the Functional Testing Framework
+title: Constraint
 menu_title: Constraint
 menu_order: 7
 version: 2.0

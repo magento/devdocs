@@ -2,7 +2,7 @@
 layout: default
 group: mtf-guide
 subgroup: 50_Entities
-title: Entities of the Functional Testing Framework
+title: Typified element
 menu_title: Typified element
 menu_order: 5
 version: 2.0
