@@ -10,13 +10,6 @@ version: 2.2
 github_link: config-guide/cli/config-cli-subcommands-compiler.md
 ---
 
-#### Contents
-
-*	<a href="#config-cli-subcommands-compile-overview">Overview of code compilation</a>
-*	<a href="#config-cli-before">First steps</a>
-*	[Optional. Compile code before installing the Magento application](#config-cli-subcommands-single-before)
-*	<a href="#config-cli-subcommands-single">Compile code</a>
-
 <h2 id="config-cli-subcommands-compile-overview">Overview of code compilation</h2>
 <p>This section discusses the basics of code compilation.</p>
 <p>Code compilation consists of all of the following in no particular order:</p>
@@ -148,15 +141,15 @@ In order to run compilation without a database, see the following topic: <a href
 
 #### Related topics
 
-*	<a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a>
-*	<a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a>
-*	<a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a>
-*	<a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a>
-*	<a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a>
-*	<a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a>
-*	<a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a>
-*	<a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a>
-*	<a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a>
-*	<a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a>
-*	<a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a>
-*	<a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a>
+*	<a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a>
+*	<a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a>
+*	<a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a>
+*	<a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a>
+*	<a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a>
+*	<a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a>
+*	<a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a>
+*	<a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a>
+*	<a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a>
+*	<a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a>
+*	<a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a>
+*	<a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a>

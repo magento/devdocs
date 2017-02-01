@@ -184,3 +184,4 @@ To make files and directories writable so you can update components and upgrade 
 
 *[contributing developer]: A developer who contributes code to the Magento 2 CE codebase
 *[contributing developers]: Developers who contribute code to the Magento 2 CE codebase
+

@@ -41,9 +41,9 @@ To change versions after cloning:
 
 		git checkout tags/<tag name>  [-b <branch name>]
 
-	For example, to check out the 2.0.6 release tag in a new branch named `2.0.6`, enter
+	For example, to check out the 2.2.0 release tag in a new branch named `2.2.0`, enter
 
-		git checkout tags/2.0.6 -b 2.0.6
+		git checkout tags/2.2.0 -b 2.2.0
 
 5.	Install the Magento software using the <a href="{{page.baseurl}}install-gde/install/cli/install-cli-install.html">command line</a> or <a href="{{page.baseurl}}install-gde/install/web/install-web.html">Setup Wizard</a>.
 
@@ -60,18 +60,13 @@ To change versions after cloning:
 
 		git checkout tags/<tag name>  [-b <branch name>]
 
-	For example, to check out the 2.0.2 release tag in a new branch named `2.0.2`, enter
+	For example, to check out the 2.2.0 release tag in a new branch named `2.2.0`, enter
 
-		git checkout tags/2.0.2 -b 2.0.2
+		git checkout tags/2.2.0 -b 2.2.0
 
-4.	Manually clear Magento `var` and `generated` directories:
+4.	Manually clear Magento `var` directories:
 
-        _For Magento 2.0.x and 2.1.x:_
-		rm -rf <your Magento install dir>/var/cache/* <your Magento install dir>/var/page_cache/* <your Magento install dir>/var/generation/*
-
-        _For Magento 2.2.x:_
-        rm -rf <your Magento install dir>/var/cache/* <your Magento install dir>/var/page_cache/* <your Magento install dir>/generated/code/*
-
+		rm -rf <your Magento install dir>/var/cache/* <your Magento install dir>/var/page_cache/* <your Magento install dir>/generated/code/*
 5.	Install the Magento software in your new database instance.
 
 	You can install using either the <a href="{{page.baseurl}}install-gde/install/cli/install-cli-install.html">command line</a> or <a href="{{page.baseurl}}install-gde/install/web/install-web.html">Setup Wizard</a>.
