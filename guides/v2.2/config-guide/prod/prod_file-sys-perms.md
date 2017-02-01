@@ -71,7 +71,6 @@ To remove writable permissions to files and directories from the web server user
 3.	Enter the following command:
 
 		find var vendor pub/static app/etc generated/code generated/metadata var/view_preprocessed \( -type f -or -type d \) -exec chmod u-w {} \; && chmod o-rwx app/etc/env.php && chmod u+x bin/magento
-
 	<div class="bs-callout bs-callout-info" id="info">
   		<p>If you're a contributing developer, replace <code>vendor</code> with <code>app/code</code> in the preceding commands. (A contributing developer <a href="{{page.baseurl}}install-gde/prereq/dev_install.html">clones the Magento 2 GitHub repository</a> so they can contribute to our codebase.)</p>
 	</div>
@@ -162,7 +161,6 @@ To remove writable permissions to files and directories from the web server user
 3.	Enter the following command as a user with `root` privileges:
 
 		find pub/static app/etc generated/code generated/metadata var/view_preprocessed \( -type d -or -type f \) -exec chmod g-w {} \; && chmod o-rwx app/etc/env.php
-
 	<div class="bs-callout bs-callout-info" id="info">
   		<p>If you're a contributing developer, replace <code>vendor</code> with <code>app/code</code> in the preceding commands. (A contributing developer <a href="{{page.baseurl}}install-gde/prereq/dev_install.html">clones the Magento 2 GitHub repository</a> so they can contribute to our codebase.)</p>
 	</div>
