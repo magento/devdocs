@@ -2,7 +2,7 @@
 layout: default
 group: mtf-guide
 subgroup: 50_Entities
-title: Entities of the Functional Testing Framework
+title: Scenario test
 menu_title: Scenario test
 menu_order: 10
 version: 2.0

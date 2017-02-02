@@ -2,14 +2,12 @@
 layout: default
 group: mtf-guide
 subgroup: 50_Entities
-title: Entities of the Functional Testing Framework
+title: Fixture
 menu_title: Fixture
 menu_order: 1
 version: 2.0
 github_link: mtf/mtf_entities/mtf_fixture.md
 ---
-
-## Overview {#mtf_fixture_overview}
 
 An FTF fixture is a list of properties of the Magento entity under test.
 
