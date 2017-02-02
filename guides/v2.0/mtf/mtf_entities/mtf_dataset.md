@@ -121,7 +121,6 @@ Each variation includes:
 The following table shows structure of the data set:
 {:#dataset_struct_table}
 
-
 <table>
 <col width="1*">
 <col width="1*">
@@ -192,12 +191,12 @@ A data set should be placed in the same directory with a corresponding test case
 
 The FTF enables you to merge data sets from different modules. For example, if you create a new module that adds a menu option to an existing module, the FTF allows you to merge the new data with the existing data sets. As a result, you don't have to edit the existing module to include the new information, and your tests continue to work. If you decide to later remove the same new module, you don't need to clean the data sets in other modules.
    
-You have two options to merge data sets in the FTF:
+There are two options to merge data sets in the FTF:
  
 - [add a new variation]
 - [extend an existing variation]
 
-## HowTos
+## HowTos {#howtos}
 
 A data set is a flexible FTF entity that allows to perform different tasks. Learn their descriptions in the following sections.
  

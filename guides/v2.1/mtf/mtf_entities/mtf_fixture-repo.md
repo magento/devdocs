@@ -2,7 +2,7 @@
 layout: default
 group: mtf-guide
 subgroup: 50_Entities
-title: Fixture Repository
+title: Fixture repository
 menu_title: Fixture Repository
 menu_order: 2
 version: 2.1

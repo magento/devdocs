@@ -9,8 +9,6 @@ version: 2.0
 github_link: mtf/mtf_entities/mtf_fixture-repo.md
 ---
 
-## Overview {#mtf_repository_overview}
-
 The repository stores pre-defined data for the fixture.
 It contains only data sets that are used in the test along with the associated field data.
 Repositories are stored in the `Repository` directory in the module to which they belong.

@@ -9,8 +9,6 @@ version: 2.0
 github_link: mtf/mtf_entities/mtf_handler.md
 ---
 
-## Overview {#mtf_handler_overview}
-
 You can use a handler to set up preconditions and prepare an initial testing environment for particular tests. For example, your scenario requires a particular widget that must be implicitly created before the test is started. You need <a href="{{page.baseurl}}mtf/mtf_entities/mtf_fixture.html">a fixture</a>, a data set, and a handler. The handler transfers data to the application being tested. The data is a list of fields from a fixture and values from data sets.
 
 This topic focuses on handlers, and we'll discuss types of handlers as well as how to create and use one.
