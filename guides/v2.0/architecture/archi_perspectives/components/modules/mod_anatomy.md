@@ -20,23 +20,23 @@ Module structure is defined by both module code components and logical structure
 
 All types of modules contain the following core elements, categorized by directory:
 
-* `/block`
+* `/Block`
 
-* `/controllers`
+* `/Controller`
 
 * `/etc`
 
-* `/helper`
+* `/Helper`
 
-* `/model`
+* `/Model`
 
-* `/sql`
+* `/Setup`
 
 ### Block
 
 <i>Blocks</i> help provide the data used in the View component of the module structure. Blocks coordinate models with the template files. The files in this folder load the data from database and transfer it to the templates in your theme (`PHTML` files).
 
-### Controllers
+### Controller
 
 <i>Controllers</i> represent all business logic actions for the given request. These actions include `dispatch()`, `preDispatch()`, `postDispatch()` methods and delegate commands to other parts of the system. Controllers correspond to the Controller portion of the Model-View-Controller model.
 
@@ -58,7 +58,23 @@ Magento 2.x looks for configuration information for each module in that module's
 
 * webapi.xml
 
-Configuration files that are in the top level of that module's `/etc` directory are global to that component. Configuration files placed in subdirectories (`adminhtml`, `frontend`, `webapi_rest`, `webapi_soap`) apply only to those respective functional areas.
+* system.xml
+
+* adminhtml.xml
+
+* events.xml
+
+* page_types.xml
+
+* routes.xml
+
+* sections.xml
+
+* email_templates.xml
+
+* fieldset.xml
+
+Configuration files that are in the top level of that module's `/etc` directory are global to that component. Configuration files placed in subdirectories (`adminhtml`, `frontend`, `webapi_rest`, `webapi_soap`, `crontab`) apply only to those respective functional areas.
 
 The specific set of configuration files that your module requires depends on the module's purpose and the Magento area in which it functions.
 
@@ -77,7 +93,7 @@ In a typical Model-View-Controller-based application, models are used to connect
 
 A Magento model object contains a reference to a resource model, which it uses to load its data. There's an individual resource model object for each model object. For example, a Product Model has a Product resource model.
 
-### sql
+### Setup
 Structures in this directory handle any custom database tables that are used by the module and process all upgrades to the extension.
 
 ## Related topics {#arch-modules-related}
