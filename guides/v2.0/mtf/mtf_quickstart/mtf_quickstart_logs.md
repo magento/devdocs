@@ -2,7 +2,7 @@
 layout: default
 group: mtf-guide
 subgroup: 30_Quickstart
-title: Quick start with the Functional Testing Framework
+title: Quick start. See logs for failed tests
 menu_title: See logs for failed tests
 menu_order: 4
 version: 2.0

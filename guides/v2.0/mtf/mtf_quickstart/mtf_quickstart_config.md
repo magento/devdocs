@@ -2,7 +2,7 @@
 layout: default
 group: mtf-guide
 subgroup: 30_Quickstart
-title: Quick start with the Functional Testing Framework
+title: Quick start. Adjust configuration
 menu_title: Adjust configuration
 menu_order: 1
 version: 2.0
