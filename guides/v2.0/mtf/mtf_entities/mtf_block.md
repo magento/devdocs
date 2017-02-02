@@ -2,14 +2,12 @@
 layout: default
 group: mtf-guide
 subgroup: 50_Entities
-title: Entities of the Functional Testing Framework
+title: Block
 menu_title: Block
 menu_order: 4
 version: 2.0
 github_link: mtf/mtf_entities/mtf_block.md
 ---
-
-## Overview {#mtf_block_overview}
 
 In functional tests we use Page Object Design Pattern. Under this pattern, a block is an area of the UI that a test interacts with, and a [page]({{page.baseurl}}mtf/mtf_entities/mtf_page.html) is a container for blocks.
 

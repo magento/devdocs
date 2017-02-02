@@ -1,9 +1,9 @@
 ---
 layout: default
 group: config-guide
-subgroup: 500_sites
-title: Set up multiple websites or stores with nginx (tutorial)
-menu_title: Set up multiple websites or stores with nginx (tutorial)
+subgroup: 11_sites
+title: Tutorial&mdash;Set up multiple websites or stores with nginx
+menu_title: Tutorial&mdash;Set up multiple websites or stores with nginx
 menu_order: 3
 menu_node: 
 version: 2.0

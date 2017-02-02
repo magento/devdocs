@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: 11_cron
+subgroup: 12_cron
 title: Configure a custom cron job and cron group (tutorial)
 menu_title: Configure a custom cron job and cron group (tutorial)
 menu_order: 3
