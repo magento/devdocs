@@ -2,14 +2,12 @@
 layout: default
 group: mtf-guide
 subgroup: 50_Entities
-title: Entities of the Functional Testing Framework
+title: Test case
 menu_title: Test case
 menu_order: 9
 version: 2.0
 github_link: mtf/mtf_entities/mtf_testcase.md
 ---
-
-## Overview {#mtf_testcase_overview}
 
 The Magento Functional Testing Framework supports two types of functional tests:
 
