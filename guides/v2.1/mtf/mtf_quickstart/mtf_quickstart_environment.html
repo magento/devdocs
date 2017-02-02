@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Quick start with the Functional Testing Framework</title>
+	<title>Quick start. Prepare environment for test run</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -905,7 +905,7 @@
       
 
       <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
-        <span property="name">Quick start with the Functional Testing Framework</span>
+        <span property="name">Quick start. Prepare environment for test run</span>
         <meta property="position" content="2" />
       </li>
 
@@ -917,48 +917,57 @@
 
 
 	
-	<h1 class="page-heading">Quick start with the Functional Testing Framework</h1>
+	<h1 class="page-heading">Quick start. Prepare environment for test run</h1>
 
   
 
 
 </section>
 
-			<h3 id="mtf_quickstart_env_selenium">Run the Selenium Server</h3>
-<p>The Selenium Server will drive a browser to execute your tests.
+			<h2 id="mtf_quickstart_env_selenium">Run the Selenium Server on default browser</h2>
+
+<p>The Selenium Server drives a browser to execute your tests.
 You can download the Selenium Server from <a href="http://www.seleniumhq.org/download/">Selenium project website</a>.</p>
 
 <div class="bs-callout bs-callout-warning">
-    <p>Install <a href="https://help.ubuntu.com/community/Java">Java</a> to work with Selenium Server.</p>
+  <p>Install <a href="https://help.ubuntu.com/community/Java">Java</a> to work with Selenium Server.</p>
 </div>
 
 <p>Specific versions of the Selenium Server are compatible with specific versions of browsers. <a href="http://docs.seleniumhq.org/about/platforms.jsp">Read more about compatibility of browser version and Selenium server version.</a></p>
+
+<div class="bs-callout bs-callout-info">
+  <p>Use Mozilla Firefox ESR 45 with Selenium 2.5.3.1. Later versions have issues.</p>
+</div>
 
 <p>Enter in terminal:</p>
 
 <pre><code>java -jar &lt;path_to_selenium_directory&gt;/selenium-server.jar
 </code></pre>
 
-<h3 id="mtf_quickstart_env_selenium-non-def">Run tests on non-default browser</h3>
+<h2 id="mtf_quickstart_env_selenium-non-def">Run tests on non-default browser</h2>
 
-<p>If the Selenium Server does not work directly with your browser, find the corresponding <a href="http://docs.seleniumhq.org/about/platforms.jsp">WebDriver</a>.</p>
+<p>If the Selenium Server does not work directly with your browser, find the corresponding <a href="http://docs.seleniumhq.org/about/platforms.jsp">web driver</a>.</p>
 
-<p>In <code>config.xml</code> <a href="/guides/v2.1/mtf/mtf_quickstart/mtf_quickstart_config.html#mtf_quickstart_config_configxml_browser"> define the browser that the <abbr title="Functional Testing Framework">FTF</abbr> will use for tests</a>.</p>
+<p>In <code>config.xml</code> <a href="/guides/v2.1/mtf/mtf_quickstart/mtf_quickstart_config.html#mtf_quickstart_config_configxml_browser">define the browser that the <abbr title="Functional Testing Framework">FTF</abbr> must use for tests</a>.</p>
 
 <p>Run the Selenium Server with an additional argument.</p>
 
-<p>Example for Google Chrome:</p>
+<p>Example for Google Chrome with Selenium 2:</p>
 
 <pre><code>java -jar &lt;path_to_selenium_directory&gt;/selenium-server.jar -Dwebdriver.chrome.driver=&lt;path_to_chrome_driver&gt;/chromedriver.exe
 </code></pre>
 
-<h3 id="mtf_quickstart_env_generator">Run generator</h3>
+<div class="bs-callout bs-callout-info">
+  <p>For Selenium 3 add the web driver to the directory where <code>selenium-server.jar</code> is located and run tests without additional argument: <code>java -jar &lt;path_to_selenium_directory&gt;/selenium-server.jar</code></p>
+</div>
+
+<h2 id="mtf_quickstart_env_generator">Run generator</h2>
 
 <p>Generator generates <a href="/guides/v2.1/mtf/mtf_entities/mtf_fixture.html">fixtures</a>, <a href="/guides/v2.1/mtf/mtf_entities/mtf_fixture-repo.html">repositories</a>, and <a href="/guides/v2.1/mtf/mtf_entities/mtf_page.html">page objects</a>. Once the <abbr title="Functional Testing Framework">FTF</abbr> is initialized, all classes must be pre-generated to facilitate creating and running the tests. Modules in the <abbr title="Functional Testing Framework">FTF</abbr> are processed by generator in the same order that they are processed during Magento loading.</p>
 
 <p>Enter in terminal:</p>
 
-<pre><code>cd &lt;magento2&gt;/dev/tests/functional/utils
+<pre><code>cd &lt;magento2_root_dir&gt;/dev/tests/functional/utils
 php generate.php
 </code></pre>
 
