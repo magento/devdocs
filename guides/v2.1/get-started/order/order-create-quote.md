@@ -55,4 +55,8 @@ The response is the `quoteId`. Some calls refer to this parameter as the `cartId
 
 `4`
 
+### Verify this step {#verify-step}
+
+There are no additional verification steps.`quoteId` values are not displayed on the website or in Admin.
+
 Previous Step: [Create a customer]({{page.baseurl}}/get-started/order/order-create-customer.html) | Next Step: [Add items to the cart]({{page.baseurl}}/get-started/order/order-add-items.html)

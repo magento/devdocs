@@ -337,4 +337,9 @@ The available payment methods are `banktransfer` and `checkmo`. The customer wil
 If you tried this call on your own, and the value of the `shipping_amount` parameter is `0`, then you did not deactivate the "Spend $50 or more - shipping is free!" cart price rule. See [Deactivate a cart price rule]({{page.baseurl}}/get-started/order/order-prereq.html#price-rule) for details.
 </div>
 
+### Verify this step {#verify-step}
+
+Sign in as the customer and go to the checkout page. The payment method is Bank Transfer, the billing and shipping addresses are displayed, and the shipping charges have been calculated.
+
+
 Previous Step: [Add items to the cart]({{page.baseurl}}/get-started/order/order-add-items.html) | Next step: [Create an invoice]({{page.baseurl}}/get-started/order/order-create-order.html)

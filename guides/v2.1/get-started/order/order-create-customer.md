@@ -145,7 +145,7 @@ Magento returns the customer's access token. This token must be specified in the
 
 `q0u66k8h42yaevtchv09uyy3y9gaj2ap`
 
-## Verify this step {#verify-step}
+### Verify this step {#verify-step}
 
 Log in to the Luma website using the email `jdoe@example.com` and password `Password1`. Click Address Book to view the default billing and shipping addresses.
 
