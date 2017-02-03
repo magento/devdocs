@@ -12,34 +12,10 @@ github_link: release-notes/bk-release-notes.md
 
 ## Magento Community Edition (CE) and Enterprise Edition (EE) Release Notes
 
-<a href="{{page.baseurl}}release-notes/ReleaseNotes2.1.4CE.html" target="_blank">Version 2.1.4</a>
-
-<a href="{{page.baseurl}}release-notes/ReleaseNotes2.1.3CE.html" target="_blank">Version 2.1.3</a>
-
-<a href="{{page.baseurl}}release-notes/ReleaseNotes2.1.2CE.html" target="_blank">Version 2.1.2</a>
-
-<a href="{{page.baseurl}}release-notes/ReleaseNotes2.1.1CE.html" target="_blank">Version 2.1.1</a>
-
-<a href="{{page.baseurl}}release-notes/ReleaseNotes2.1.0CE.html" target="_blank">Version 2.1</a>
-
-
-
-
-
-### Magento Enterprise Edition (EE) 2.1 Release Notes
-
-<a href="{{page.baseurl}}release-notes/ReleaseNotes2.1.4EE.html" target="_blank">Version 2.1.4</a>
-
-
-<a href="{{page.baseurl}}release-notes/ReleaseNotes2.1.3EE.html" target="_blank">Version 2.1.3</a>
-
-<a href="{{page.baseurl}}release-notes/ReleaseNotes2.1.2EE.html" target="_blank">Version 2.1.2</a>
-
-<a href="{{page.baseurl}}release-notes/ReleaseNotes2.1.1EE.html" target="_blank">Version 2.1.1</a>
-
-<a href="{{page.baseurl}}release-notes/ReleaseNotes2.1.0EE.html" target="_blank">Version 2.1</a>
 
 Looking for [2.0.x Release Notes]({{ site.gdeurl }}release-notes/bk-release-notes.html)?
+
+{% include install/releasenotes/21_release-notes-links.md %}
 
 
 ### Backward-incompatible changes
@@ -53,5 +29,4 @@ Looking for [2.0.x Release Notes]({{ site.gdeurl }}release-notes/bk-release-note
 *	[Magento EE third-party licenses]({{page.baseurl}}release-notes/thirdparty_ee.html)
 
 
-{% include install/releasenotes/21_release-notes-links.md %}
 
