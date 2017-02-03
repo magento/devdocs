@@ -330,4 +330,8 @@ For this example, we'll configure the Sprite Yoga Companion Kit as follows:
 {% endhighlight %}
 {% endcollapsible %}
 
+## Verify this step {#verify-step}
+
+Sign in as the customer and select the shopping cart.
+
 Previous Step: [Create a quote]({{page.baseurl}}/get-started/order/order-create-quote.html) | Next step: [Prepare for checkout]({{page.baseurl}}/get-started/order/order-prepare-checkout.html)

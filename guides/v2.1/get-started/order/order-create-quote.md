@@ -14,7 +14,7 @@ github_link: get-started/order/order-create-quote.md
 Previous Step: [Create a customer]({{page.baseurl}}/get-started/order/order-create-customer.html) | Next Step: [Add items to the cart]({{page.baseurl}}/get-started/order/order-add-items.html)
 
 
-## Step 5. Create a quote
+## Step 5. Create a quote {#create-quote}
 
 When a customer adds an item to their shopping cart for the first time, Magento creates a quote. Magento uses a quote to perform tasks such as
 
