@@ -14,4 +14,4 @@ Scenario test has two main advantages:
 - Each step in the scenario is separate PHP class that is placed in the module it belongs to.
 - Scenario test reduces code duplication because each step can be used multiple times.
 
-It this topic we will create scenario test step by step.
+In this topic we will create a scenario test step by step.
