@@ -6,8 +6,6 @@ title: Module Reference Guide
 menu_title: ConfigurableProductStaging
 menu_order: 2
 version: 2.1
-
-
 github_link: mrg/ee/ConfigurableProductStaging.md
 ---
 
@@ -23,7 +21,7 @@ The Magento_ConfigurableProductStaging module adds the "Configurations" tab and 
 
 ### Installation details
 
-The Magento_CmsStaging module makes irreversible changes in a database during installation. You cannot uninstall this module.
+The Magento_ConfigurableProductStaging module makes irreversible changes in a database during installation. You cannot uninstall this module.
 
 ## Dependencies
 

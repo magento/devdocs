@@ -15,7 +15,7 @@ This topic discusses how to set up Magento Enterprise Cloud Edition to have mult
 
 To set up multiple stores, you must:
 
-1.	Configure your local installation and test it locally.
+1.	[Configure your local installation]({{ page.baseurl }}config-guide/multi-site/ms_over.html) and test it locally.
 2.	Configure Magento Enterprise Cloud edition routes and variables.
 3.	Push the changes to an [integration environment]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-int) and test it.
 4.	To deploy multiple stores to a [staging]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-stage) or [production]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-prod) environment, create a support ticket.
@@ -37,8 +37,6 @@ Magento Enterprise Edition *routes* define how incoming URLs are processed. The 
 <div class="bs-callout bs-callout-info" id="info">
   <p>This section discusses how to configure your <a href="{{ page.baseurl }}cloud/discover-arch.html#cloud-arch-int">integration environment</a> only. To set up routes in a staging or production environment, you must create a <a href="{{ page.baseurl }}cloud/get-help.html">Support ticket</a>.</p>
 </div>
-
-{% collapsible To configure routes: %}
 
 To configure routes in an integration environment:
 
@@ -64,12 +62,8 @@ To configure routes in an integration environment:
     		upstream: "mymagento:php"
 5.	Save your changes to `routes.yaml` and exit the text editor.
 
-{% endcollapsible %}
-
 ### Set up websites, stores, and store views {#cloud-multi-stores-admin}
 Set up in your Magento Enterprise Cloud Edition Admin websites, stores, and store views identical to the ones you set up on your local system.
-
-{% collapsible To set up websites, stores, and store views: %}
 
 #### Get your access information
 To get the access information you need to log in to the Magento Admin:
@@ -107,12 +101,8 @@ Make sure you name your websites, stores, and store views in your Cloud Admin th
 
 See [Set up multiple websites, stores, and store views in the Admin]({{ page.baseurl }}config-guide/multi-site/ms_websites.html).
 
-{% endcollapsible %}
-
 ### Modify `magento-vars.php` {#cloud-multi-stores-magento-vars}
 Instead of configuring an nginx virtual host, pass the `MAGE_RUN_CODE` and `MAGE_RUN_TYPE` variables using `magento-vars.php` which is located in your Magento root directory.
-
-{% collapsible To modify `magento-vars.php`: %}
 
 1.	Open `magento-vars.php` in a text editor.
 2.	Uncomment everything after the first two lines.
@@ -120,20 +110,29 @@ Instead of configuring an nginx virtual host, pass the `MAGE_RUN_CODE` and `MAGE
 
 	Following is what the file should look like so far:
 
-		<?php
-		// enable, adjust and copy this code for each store you run
-		// Store #0, default one
-		function isHttpHost($host)
-		{
-    		if (!isset($_SERVER['HTTP_HOST'])) {
-        		return false;
-    		}
-    		return strpos(str_replace('---', '.', $_SERVER['HTTP_HOST']), $host) === 0;
-		}
-		if (isHttpHost("example.com")) {
-		    $_SERVER["MAGE_RUN_CODE"] = "default";
-		    $_SERVER["MAGE_RUN_TYPE"] = "store";
-		}
+    <pre class="no-copy">&lt;?php
+        // enable, adjust and copy this code for each store you run
+        // Store #0, default one
+        function isHttpHost($host)
+        {
+           if (!isset($_SERVER['HTTP_HOST'])) {
+               return false;
+        }
+               return strpos(str_replace('---', '.', $_SERVER['HTTP_HOST']), $host) === 0;
+        }
+        if (isHttpHost("example.com")) {
+            $_SERVER["MAGE_RUN_CODE"] = "default";
+            $_SERVER["MAGE_RUN_TYPE"] = "store";
+        }</pre>
+4.	Change the following line:
+
+	From:
+
+		return strpos(str_replace('---', '.', $_SERVER['HTTP_HOST']), $host) === 0;
+
+	To:
+
+		return $_SERVER['HTTP_HOST'] ===  $host;
 4.	Replace the following values in the `if (isHttpHost("example.com"))` block:
 
 	*	`"example.com"` with the base URL of your website, replacing the first period with three dashes. 
@@ -150,19 +149,16 @@ Instead of configuring an nginx virtual host, pass the `MAGE_RUN_CODE` and `MAGE
     		if (!isset($_SERVER['HTTP_HOST'])) {
         		return false;
     		}
-    		return strpos(str_replace('---', '.', $_SERVER['HTTP_HOST']), $host) === 0;
+    		 return $_SERVER['HTTP_HOST'] ===  $host;
 		}
 		if (isHttpHost("french---branch-sbg7pPa-f3dueAiM03tpy.us.magentosite.cloud")) {
-    		$_SERVER["MAGE_RUN_CODE"] = "site2";
+    		$_SERVER["MAGE_RUN_CODE"] = "french";
     		$_SERVER["MAGE_RUN_TYPE"] = "website";
 		}
 5.	Save your changes to `magento-vars.php` and exit the text editor.
 
-{% endcollapsible %}
-
 ### Deploy and test on the integration server {#cloud-multi-stores-deploy}
 The final step is to push your changes to your Magento Entperise Cloud Edition server and test your site there.
-
 To deploy and test:
 
 1.	Enter the following commands in the order shown:
@@ -171,4 +167,8 @@ To deploy and test:
 		git push origin <branch name>
 2.	Wait for deployment to complete.
 3.	When deployment is done, in a web browser, go to your site's base URL.
-4.	Make sure you test it thoroughly.
+
+	The URL must be in the format: `http://<magento run_code>---<rest of URL>`
+
+	For example, `http://french---master-benrmky-dyrozemqbw72k.us.magentosite.cloud/`
+4.	Make sure you test your site thoroughly.

@@ -18,6 +18,8 @@ Starting in January, 2017, we'll provide the date a change was made instead of t
 
 | Description  | Versions applied to  | New or Updated | Date |
 |--------------|--------------|----------------------|--------|
+| [Asynchronous module definition and RequireJS concepts]({{ page.baseurl }}javascript-dev-guide/javascript/requirejs_concept.html){:target="_blank"} | 2.1.x | New | Jan 25 |
+| [Added information about the RequireJS library]({{ page.baseurl }}javascript-dev-guide/javascript/js-resources.html){:target="_blank"} | 2.x | Updated | Jan 26 |
 | [Data Migration Guide troubleshooting]({{ page.baseurl }}migration/migration-troubleshooting.html){:target="_blank"}  | 2.x  | New  |  Jan 20 |
 | [Updated `@deprecated` tag and added requirements for `@inheritdoc`]({{ page.baseurl }}coding-standards/docblock-standard-general.html){:target="_blank"}  |  2.x | Updated  |  Jan 20 |
 | [How to install and use Magento DevBox (easy developer installation)]({{ page.baseurl }}install-gde/docker/docker-over.html){:target="_blank"}  | 2.x  | New  | Jan 19  |

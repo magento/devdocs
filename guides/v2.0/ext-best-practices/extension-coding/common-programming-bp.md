@@ -71,3 +71,10 @@ Avoid using [around method plugins]({{page.baseurl}}extension-dev-guide/plugins.
 The only use case for around method oplugins is when the execution of all further plugins and original methods need termination.
 
 Use after method plugins if you require arguments for replacing or altering function results.
+
+### Test your code
+
+Write testable code and follow the [Magento Testing Guide]({{page.baseurl}}test/testing.html) to create tests for your code.
+Tests help describe what your code does under different conditions and define its functionality.
+
+Make sure your tests cover a variety of conditions to prevent the introduction of bugs when you add new code.

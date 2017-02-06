@@ -6,17 +6,10 @@ title: Module Reference Guide
 menu_title: GiftCardStaging
 menu_order: 2
 version: 2.2
-
-
 github_link: mrg/ee/GiftCardStaging.md
 ---
 
 ![Magento EE logo]({{site.baseurl}}common/images/ee-only_large.png)
-
-<h2>Contents</h2>
-
-
-## Magento_GiftCardStaging module
 
 ## Overview
 

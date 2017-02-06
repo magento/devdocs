@@ -19,7 +19,7 @@ The sections that follow discuss requirements for one or two Magento file system
 
 *	One user: Typically necessary on shared hosting providers, which allow you to access only one user on the server This user can log in, transfer files using FTP, and this user also runs the web server.
 
-*	Two users: We recommend two users if you run your own Magento server: one that to transfer files and run command-line utilities, and a separate user for the web server software. When possible, this is preferable because it's more secure.
+*	Two users: We recommend two users if you run your own Magento server: one to transfer files and run command-line utilities, and a separate user for the web server software. When possible, this is preferable because it's more secure.
 
 	Instead, you have separate users:
 

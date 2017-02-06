@@ -19,7 +19,7 @@ The sections that follow discuss requirements for one or two Magento file system
 
 *	One user: Typically necessary on shared hosting providers, which allow you to access only one user on the server This user can log in, transfer files using FTP, and this user also runs the web server.
 
-*	Two users: We recommend two users if you run your own Magento server: one that to transfer files and run command-line utilities, and a separate user for the web server software. When possible, this is preferable because it's more secure.
+*	Two users: We recommend two users if you run your own Magento server: one to transfer files and run command-line utilities, and a separate user for the web server software. When possible, this is preferable because it's more secure.
 
 	Instead, you have separate users:
 
@@ -71,7 +71,6 @@ To remove writable permissions to files and directories from the web server user
 3.	Enter the following command:
 
 		find var vendor pub/static app/etc generated/code generated/metadata var/view_preprocessed \( -type f -or -type d \) -exec chmod u-w {} \; && chmod o-rwx app/etc/env.php && chmod u+x bin/magento
-
 	<div class="bs-callout bs-callout-info" id="info">
   		<p>If you're a contributing developer, replace <code>vendor</code> with <code>app/code</code> in the preceding commands. (A contributing developer <a href="{{page.baseurl}}install-gde/prereq/dev_install.html">clones the Magento 2 GitHub repository</a> so they can contribute to our codebase.)</p>
 	</div>
@@ -162,7 +161,6 @@ To remove writable permissions to files and directories from the web server user
 3.	Enter the following command as a user with `root` privileges:
 
 		find pub/static app/etc generated/code generated/metadata var/view_preprocessed \( -type d -or -type f \) -exec chmod g-w {} \; && chmod o-rwx app/etc/env.php
-
 	<div class="bs-callout bs-callout-info" id="info">
   		<p>If you're a contributing developer, replace <code>vendor</code> with <code>app/code</code> in the preceding commands. (A contributing developer <a href="{{page.baseurl}}install-gde/prereq/dev_install.html">clones the Magento 2 GitHub repository</a> so they can contribute to our codebase.)</p>
 	</div>
@@ -186,3 +184,4 @@ To make files and directories writable so you can update components and upgrade 
 
 *[contributing developer]: A developer who contributes code to the Magento 2 CE codebase
 *[contributing developers]: Developers who contribute code to the Magento 2 CE codebase
+

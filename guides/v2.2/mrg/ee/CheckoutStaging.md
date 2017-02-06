@@ -6,17 +6,10 @@ title: Module Reference Guide
 menu_title: CheckoutStaging
 menu_order: 2
 version: 2.2
-
-
 github_link: mrg/ee/CheckoutStaging.md
 ---
 
 ![Magento EE logo]({{site.baseurl}}common/images/ee-only_large.png)
-
-<h2>Contents</h2>
-
-
-## Magento_CheckoutStaging module
 
 ## Overview
 
