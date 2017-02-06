@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: 500_sites
+subgroup: 11_sites
 title: Set up multiple websites, stores, and store views in the Admin
 menu_title: Set up multiple websites, stores, and store views in the Admin
 menu_order: 2
@@ -19,6 +19,14 @@ The tasks discussed in this topic provide one way to set up multiple stores. For
 *	[Adding Websites](http://docs.magento.com/m2/ce/user_guide/stores/stores-all-create-website.html){:target="_blank"}
 *	[Store URLs](http://docs.magento.com/m2/ce/user_guide/stores/store-urls.html){:target="_blank"}
 *	[Content](http://docs.magento.com/m2/ce/user_guide/cms/content-menu.html){:target="_blank"}
+
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+For example purposes only, we use a French website with website code `french` in this topic. For step-by-step tutorials, see:
+
+*	[Tutorial&mdash;Set up multiple websites with Apache]({{ page.baseurl }}config-guide/multi-site/ms_apache.html)
+*	[Tutorial&mdash;Set up multiple websites with nginx]({{ page.baseurl }}config-guide/multi-site/ms_nginx.html)
+
+</div>
 
 ## Step 1: Create root categories
 Creating a root category is optional, but we show how to do it in this tutorial in the event you want each website to have a unique root category. You can create additional categories if you choose.
@@ -101,7 +109,7 @@ Creating a root category is optional, but we show how to do it in this tutorial 
 {% endcollapsible %}
 
 ## Step 5: Change a website's base URL
-To access a website using a unique URL like `http://french.mysite.mg`, you must change the base URL for each site in the Magento Admin.
+To access a website using a unique URL like `http://french.magento.mg`, you must change the base URL for each site in the Magento Admin.
 
 {% collapsible To change the website's base URL: %}
 
@@ -112,7 +120,7 @@ To access a website using a unique URL like `http://french.mysite.mg`, you must 
 
 3.	In the right pane, expand **Base URLs**.
 4.	In the Base URL section, clear the **Use Default** check box.
-4.	Enter `http://french.mysite.mg` as the following example shows.
+4.	Enter `http://french.magento.mg` as the following example shows.
 
 	![Set a base URL]({{ site.baseurl }}common/images/config_multi-site_base-url.png){:width="650px"}
 
@@ -121,12 +129,12 @@ To access a website using a unique URL like `http://french.mysite.mg`, you must 
   		<p>If you're setting up a base URL for local testing, use a period.</p>
 	</div>
 5.	Click **Save Config**.
-6.	Repeat these tasks for your German website.
+6.	Repeat these tasks for other websites.
 
 {% endcollapsible %}
 
 ## Step 6: Add the store code to the base URL {#multi-storecode-baseurl}
-The Magento application gives you the option to add the store code to the site's base URL, which simplifies the process of setting up multiple stores. Using this option, you don't have to create directories on the Magento file system to store `index.php` and `.htaccess`. 
+Magento gives you the option to add the store code to the site's base URL, which simplifies the process of setting up multiple stores. Using this option, you don't have to create directories on the Magento file system to store `index.php` and `.htaccess`. 
 
 This prevents `index.php` and `.htaccess` from getting out of sync with the Magento codebase in future upgrades.
 
@@ -172,8 +180,9 @@ You must perform this step last because after it's done, you'll lose access to t
 {% endcollapsible %}
 
 #### Next step
-*	[Set up multiple websites or stores with nginx (tutorial)]({{ page.baseurl }}config-guide/multi-site/ms_nginx.html)
-*	[Set up multiple websites with Apache (tutorial)]({{ page.baseurl }}config-guide/multi-site/ms_apache.html)
+*	Magento Enterprise Cloud Edition: [Set up multiple Cloud websites or stores]({{ page.baseurl }}cloud/project/project-multi-sites.html)
+*	[Tutorial&mdash;Set up multiple websites or stores with nginx]({{ page.baseurl }}config-guide/multi-site/ms_nginx.html)
+*	[Tutorial&mdash;Set up multiple websites with Apache]({{ page.baseurl }}config-guide/multi-site/ms_apache.html)
 
 #### Related information
 [Add content to your websites](http://docs.magento.com/m2/ce/user_guide/cms/content-menu.html){:target="_blank"}
