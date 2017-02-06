@@ -10,7 +10,7 @@ version: 2.1
 github_link: release-notes/bk-release-notes.md
 ---
 
-## Magento Community Edition (CE) and Enterprise Edition (EE) Release Notes
+## Magento Community Edition (CE) and Enterprise Edition (EE) Release Information
 
 {% include install/releasenotes/21_release-notes-links.md %}
 
