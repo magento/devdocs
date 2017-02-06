@@ -6,7 +6,6 @@ title: Magento 2.1 backward incompatible changes
 menu_title: Magento 2.1 backward incompatible changes
 version: 2.1
 menu_node: parent
-menu_order: 1
 github_link: release-notes/backward-incompatible-changes-2.1.md
 ---
 

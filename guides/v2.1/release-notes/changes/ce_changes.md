@@ -1,14 +1,14 @@
 ---
 layout: default
 group: release-notes
-subgroup: 03_BC
+subgroup: 05_BC
 title: Magento CE Backward Incompatible Changes
 menu_title: Magento CE changes
-version: 2.0
+version: 2.1
 github_link: release-notes/changes/ce_changes.md
 ---
 
-This topic provides details about backward incompatible changes made made in Magento CE 2.0.
+This topic provides details about backward incompatible changes made made in Magento CE 2.1.
 
 All changes are aggregated into two tables:
 
@@ -20,53 +20,29 @@ where each change is displayed in a separate row in the table, with the followin
 - **Class** or **Interface** with the name of an affected class or interface
 - **What changed** with the description of a backward incompatible change
 
-## 2.0.11 - 2.0.12
+## 2.1.4 - develop
 
-{% include changes/ce/2011-2012.html %}
+{% include changes/ce/214-develop.html %}
 
-## 2.0.10 - 2.0.11
+## 2.1.3 - 2.1.4
 
-{% include changes/ce/2010-2011.html %}
+{% include changes/ce/213-214.html %}
 
-## 2.0.9 - 2.0.10
+## 2.1.2 - 2.1.3
 
-{% include changes/ce/209-2010.html %}
+{% include changes/ce/212-213.html %}
 
-## 2.0.8 - 2.0.9
+## 2.1.1 - 2.1.2
 
-{% include changes/ce/208-209.html %}
+{% include changes/ce/211-212.html %}
 
-## 2.0.7 - 2.0.8
+## 2.1.0 - 2.1.1
 
-{% include changes/ce/207-208.html %}
+{% include changes/ce/210-211.html %}
 
-## 2.0.6 - 2.0.7
+## 2.0.7 - 2.1.0
 
-{% include changes/ce/206-207.html %}
-
-## 2.0.5 - 2.0.6
-
-{% include changes/ce/205-206.html %}
-
-## 2.0.4 - 2.0.5
-
-{% include changes/ce/204-205.html %}
-
-## 2.0.3 - 2.0.4
-
-{% include changes/ce/203-204.html %}
-
-## 2.0.2 - 2.0.3
-
-{% include changes/ce/202-203.html %}
-
-## 2.0.1 - 2.0.2
-
-{% include changes/ce/201-202.html %}
-
-## 2.0.0 - 2.0.1
-
-{% include changes/ce/200-201.html %}
+{% include changes/ce/207-210.html %}
 
 <!-- LINK DEFINITIONS -->
 
