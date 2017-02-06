@@ -27,13 +27,6 @@ This topic discusses how to can start your Magento Enterprise Cloud Edition proj
   <p>Before you continue, make sure you completed the tasks discussed in <a href="{{page.baseurl}}cloud/before/before-workspace.html">Set up a Magento workspace</a>.</p>
 </div>
 
-What kinds of things will be different in the imported project?
-
- * composer.json and composer.lock, with additional packages
- * authorization files
- * additional file resources used by 3rd party extensions and libraries.
- * possibly 3rd party extensions and themes not retrieved via composer but located in app/code and app/design
-
 To access your project for the first time:
 
 1.  Log in to [your Magento Enterprise Cloud Edition account](https://accounts.magento.cloud){:target="_blank"}.
@@ -66,6 +59,24 @@ To access your project for the first time:
 
 --- DALES TOPIC BELOW THIS LINE ---
 
+## Import files and Magento code
+TBD
+
+https://github.com/magento-cloud/magento-cloud-template/blob/master/README.md
+
+What kinds of things will be different in the imported project?
+
+*   `composer.json` and `composer.lock`, with additional packages
+*   Additional file resources used by third party extensions and libraries
+*   Any third party extensions and themes that you installed without using Composer
+
+    Those themes and extensions are located in the `app/code` and `app/design` directories
+
+<div class="bs-callout bs-callout-warning" id="info" markdown="1">
+The procedure discussed in this topic replaces your new Magento Enterprise Cloud Edition project with the contents of your existing Magento installation. Any data, websites, stores, and so on will be lost.
+
+Before you continue, make sure there is nothing in your Magento Enterprise Cloud Edition project you want to keep.
+</div>
 
 
 ## Git reset
@@ -109,7 +120,7 @@ Add and commit the changes to source control. Once done, force push the branch o
 
 # Data
 
-Note: these steps all involve destroying existing store data and media from the cloud project in order to import this data from a different project. Before importing another project into the cloud environment, make sure there is no media or store data (such as catalog, customer, or order data) on that environment.
+
 
 ## Import database
 
