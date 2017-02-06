@@ -3,7 +3,7 @@ layout: default
 group: get-started
 subgroup: 20_REST
 title: Order Processing Tutorial
-menu_title: Step 9. Create an invoice
+menu_title: Step 8. Create an invoice
 menu_order: 28
 level3_menu_node: level3child
 level3_subgroup: order
@@ -13,11 +13,11 @@ github_link: get-started/order/order-create-invoice.md
 
 Previous Step: [Prepare for checkout]({{page.baseurl}}/get-started/order/order-create-order.html) | Next step: [Create an shipment]({{page.baseurl}}/get-started/order/order-create-shipment.html)
 
-## Step 9. Create an invoice {#create-invoice}
+## Step 8. Create an invoice {#create-invoice}
 
 You create an invoice after you receive payment for an order. In this example, the order was paid offline via a bank transfer. Therefore, you must tell Magento that payment for the order has been captured.
 
-### 1. Capture payment {#capture-payment}
+### Capture payment {#capture-payment}
 
 This example creates a full invoice. You can create a partial invoice by adding to the payload an array of items to be invoiced.
 
@@ -45,7 +45,7 @@ where `3` is the `orderid`
 
 An invoice `id`, such as `3`.
 
-### 2. View the invoice {#view-invoice}
+### View the invoice {#view-invoice}
 
 An invoice is structurally similar to an order, but an order contains more details.
 

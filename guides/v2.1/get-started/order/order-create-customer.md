@@ -3,7 +3,7 @@ layout: default
 group: get-started
 subgroup: 20_REST
 title: Order Processing Tutorial
-menu_title: Step 4. Create a customer
+menu_title: Step 3. Create a customer
 menu_order: 24
 level3_menu_node: level3child
 level3_subgroup: order
@@ -12,7 +12,7 @@ github_link: get-started/order/order-create-customer.md
 ---
 Previous Step: [Get the admin token]({{page.baseurl}}/get-started/order/order-admin-token.html) | Next Step: [Create a shopping cart token]({{page.baseurl}}/get-started/order/order-create-quote.html)
 
-## Step 4. Create a customer {#create-customer}
+## Step 3. Create a customer {#create-customer}
 
 Customers can make purchases in three ways:
 
@@ -22,7 +22,7 @@ Customers can make purchases in three ways:
 
 This tutorial creates an order by a logged-in user. Magento provides additional REST endpoints for handling guest users.
 
-### 1. Create a customer account
+### Create a customer account
 
 Creating a customer account requires admin permissions.
 
@@ -118,7 +118,7 @@ Magento assigned this user `id` value of `2`.
 
 You can log in to the Luma store using the user name `jdoe@example.com` and password `Password1`.
 
-### 2. Get the customer's access token {#get-token}
+### Get the customer's access token {#get-token}
 
 To get a customer's access token, you must specify the customer's username and password in the payload. You do not need to specify an authorization token.
 
@@ -147,6 +147,8 @@ Magento returns the customer's access token. This token must be specified in the
 
 ### Verify this step {#verify-step}
 
-Log in to the Luma website using the email `jdoe@example.com` and password `Password1`. Click Address Book to view the default billing and shipping addresses.
+1. Log in to the Luma website using the email `jdoe@example.com` and password `Password1`.
+2. Click the account name (Jane) in the upper right corner and select **My Account**.
+3. Click **Address Book** to view the default billing and shipping addresses.
 
 Previous Step: [Get the admin token]({{page.baseurl}}/get-started/order/order-admin-token.html) | Next Step: [Create a shopping cart token]({{page.baseurl}}/get-started/order/order-create-quote.html)

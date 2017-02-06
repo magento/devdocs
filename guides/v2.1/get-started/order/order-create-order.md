@@ -3,7 +3,7 @@ layout: default
 group: get-started
 subgroup: 20_REST
 title: Order Processing Tutorial
-menu_title: Step 8. Create an order
+menu_title: Step 7. Create an order
 menu_order: 27
 level3_menu_node: level3child
 level3_subgroup: order
@@ -12,11 +12,11 @@ github_link: get-started/order/order-create-order.md
 ---
 Previous Step: [Prepare for checkout]({{page.baseurl}}/get-started/order/order-prepare-checkout.html) | Next step: [Create an invoice]({{page.baseurl}}/get-started/order/order-create-invoice.html)
 
-## Step 8. Create an order {#create-order}
+## Step 7. Create an order {#create-order}
 
 The shopping cart contains three items totaling $108. The shipping charges are $10, making the grand total $118. We're now ready to convert the quote to an order.
 
-### 1. Send payment information {#send-payment}
+### Send payment information {#send-payment}
 
 When you submit payment information, Magento creates an order and sends an order confirmation to the customer. Since we are using an offline payment method in this tutorial, we do not need to provide detailed payment information. The endpoint used in this example requires only the payment method and billing address information.
 
@@ -60,7 +60,7 @@ When you submit payment information, Magento creates an order and sends an order
 
 An `orderID`, such as `3`.
 
-### 2. Review the order as an admin {#review-order}
+### Review the order as an admin {#review-order}
 
 When you request an order object, the response contains full details about the order, including customer information, payment details, as well as totals and subtotals for the order and each individual item.
 

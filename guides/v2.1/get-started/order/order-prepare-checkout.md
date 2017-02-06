@@ -3,7 +3,7 @@ layout: default
 group: get-started
 subgroup: 20_REST
 title: Order Processing Tutorial
-menu_title: Step 7. Prepare for checkout
+menu_title: Step 6. Prepare for checkout
 menu_order: 26
 level3_menu_node: level3child
 level3_subgroup: order
@@ -14,14 +14,14 @@ github_link: get-started/order/order-prepare-checkout.md
 Previous Step: [Add items to the cart]({{page.baseurl}}/get-started/order/order-add-items.html) | Next step: [Create an invoice]({{page.baseurl}}/get-started/order/order-create-order.html)
 
 
-## Step 7. Prepare for checkout {#prepare-checkout}
+## Step 6. Prepare for checkout {#prepare-checkout}
 
 Now that all the items have been added to the cart, we can prepare the order for checkout. This process includes the following steps:
 
 * Estimate shipping costs
 * Set shipping and billing information
 
-### 1. Estimate shipping costs {#estimate-shipping}
+### Estimate shipping costs {#estimate-shipping}
 
 Magento calculates shipping costs for each shipping method that can be applied to the order. In this tutorial, the `flatrate` ($5 per item) and `tablerate` shipping methods are active.
 
@@ -99,7 +99,7 @@ Note that the cost for the `flatrate` shipping method is $10. The Sprite Yoga Co
 {% endcollapsible %}
 
 
-### 2. Set shipping and billing information {#set-addresses}
+### Set shipping and billing information {#set-addresses}
 
 In this call, you specify the shipping and billing addresses, as well as the selected `carrier_code` and `method_code`. Since the Table Rate shipping method costs only $5, the customer selected this option.
 
@@ -339,7 +339,8 @@ If you tried this call on your own, and the value of the `shipping_amount` param
 
 ### Verify this step {#verify-step}
 
-Sign in as the customer and go to the checkout page. The payment method is Bank Transfer, the billing and shipping addresses are displayed, and the shipping charges have been calculated.
+Sign in as the customer and go to the checkout page.
 
+The payment method is Bank Transfer, the billing and shipping addresses are displayed, and the shipping charges have been calculated.
 
 Previous Step: [Add items to the cart]({{page.baseurl}}/get-started/order/order-add-items.html) | Next step: [Create an invoice]({{page.baseurl}}/get-started/order/order-create-order.html)

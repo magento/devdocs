@@ -3,7 +3,7 @@ layout: default
 group: get-started
 subgroup: 20_REST
 title: Order Processing Tutorial
-menu_title: Step 5. Create a quote
+menu_title: Step 4. Create a quote
 menu_order: 25
 level3_menu_node: level3child
 level3_subgroup: order
@@ -14,7 +14,7 @@ github_link: get-started/order/order-create-quote.md
 Previous Step: [Create a customer]({{page.baseurl}}/get-started/order/order-create-customer.html) | Next Step: [Add items to the cart]({{page.baseurl}}/get-started/order/order-add-items.html)
 
 
-## Step 5. Create a quote {#create-quote}
+## Step 4. Create a quote {#create-quote}
 
 When a customer adds an item to their shopping cart for the first time, Magento creates a quote. Magento uses a quote to perform tasks such as
 
@@ -51,9 +51,12 @@ None
 
 **Response**
 
-The response is the `quoteId`. Some calls refer to this parameter as the `cartId`.
+The response is the `quoteId`: `4`
 
-`4`
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+Some calls refer to this parameter as the `cartId`.
+</div>
+
 
 ### Verify this step {#verify-step}
 

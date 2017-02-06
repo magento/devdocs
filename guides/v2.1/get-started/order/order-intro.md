@@ -3,7 +3,7 @@ layout: default
 group: get-started
 subgroup: 20_REST
 title: Order Processing Tutorial
-menu_title: Step 1. Get started
+menu_title: Overview
 menu_order: 21
 level3_menu_node: level3child
 level3_subgroup: order
@@ -11,9 +11,7 @@ version: 2.1
 github_link: get-started/order/order-intro.md
 ---
 
-## Step 1. Get started
-
-### Overview
+## Overview {#tutorial-overview}
 
 This tutorial uses REST APIs to demonstrate the lifecycle of an order. In general, an order goes through the following phases:
 
@@ -28,7 +26,7 @@ This tutorial uses REST APIs to demonstrate the lifecycle of an order. In genera
 * If the customer requests a refund, issue a credit memo.
 
 
-### Before you begin
+## Before you begin {#before-begin}
 
 To perform this tutorial, you must have the following tools and information:
 

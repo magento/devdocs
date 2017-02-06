@@ -3,7 +3,7 @@ layout: default
 group: get-started
 subgroup: 20_REST
 title: Order Processing Tutorial
-menu_title: Step 10. Create a shipment
+menu_title: Step 9. Create a shipment
 menu_order: 29
 level3_menu_node: level3child
 level3_subgroup: order
@@ -13,7 +13,7 @@ github_link: get-started/order/order-create-shipment.md
 
 Previous Step: [Create an invoice]({{page.baseurl}}/get-started/order/order-create-invoice.html) | Next Step: [Issue a partial refund]({{page.baseurl}}/get-started/order/order-issue-refund.html)
 
-## Step 10. Create a shipment
+## Step 9. Create a shipment
 
 To create a shipment, you need the `order_item_id` of each item to be shipped. Since the Sprite Yoga Companion Kit is a bundle item, you only need to include the top-level `order_item_id` (`5`). The `order_item_id` for the Radiant Tee-M-Orange is `3`.
 
@@ -68,5 +68,7 @@ The `tracks` array optionally allows you to include one or more tracking numbers
 **Response**
 
 A shipment ID, such as `3`.
+
+## Verify this step
 
 Previous Step: [Create an invoice]({{page.baseurl}}/get-started/order/order-create-invoice.html) | Next Step: [Issue a partial refund]({{page.baseurl}}/get-started/order/order-issue-refund.html)

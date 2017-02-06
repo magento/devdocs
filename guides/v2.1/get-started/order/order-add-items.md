@@ -3,7 +3,7 @@ layout: default
 group: get-started
 subgroup: 20_REST
 title: Order Processing Tutorial
-menu_title: Step 6. Add items to the cart
+menu_title: Step 5. Add items to the cart
 menu_order: 26
 level3_menu_node: level3child
 level3_subgroup: order
@@ -13,13 +13,13 @@ github_link: get-started/order/order-add-items.md
 
 Previous Step: [Create a quote]({{page.baseurl}}/get-started/order/order-create-quote.html) | Next step: [Prepare for checkout]({{page.baseurl}}/get-started/order/order-prepare-checkout.html)
 
-## Step 6. Add items to the cart {#add-items}
+## Step 5. Add items to the cart {#add-items}
 
 This article shows how to add a simple product, a downloadable product, and a bundle product to the cart.
 
 All calls are performed on behalf of a customer, and the customer's token is specified in the authorization header.
 
-### 1. Add a simple product to a cart {#add-simple}
+### Add a simple product to a cart {#add-simple}
 
 To add a simple product to a cart, you must provide a `sku`, the quantity, and the quote ID, which was generated when the cart was created.
 
@@ -60,7 +60,7 @@ The following example adds an orange medium-sized  Radiant women's t-shirt (`sku
 }
 {% endhighlight %}
 
-### 2. Add a downloadable product to a cart {#add-downloadable}
+### Add a downloadable product to a cart {#add-downloadable}
 
 The requirements for adding a downloadable product to a cart are the same as a simple product. You must specify the `sku`, the quantity, and quote ID.
 
@@ -112,7 +112,7 @@ The following example adds the downloadable product Advanced Pilates & Yoga (`sk
 {% endhighlight %}
 
 
-### 3. Add a bundle product to a cart {#add-bundle}
+### Add a bundle product to a cart {#add-bundle}
 
 The sample data provides one bundled product, the Sprite Yoga Companion Kit (`sku`: `24-WG080`). The kit contains the following items:
 
