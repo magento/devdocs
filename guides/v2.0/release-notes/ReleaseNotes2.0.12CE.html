@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Magento 2.0 Release Notes</title>
+	<title>Magento CE 2.0.12 Release Notes</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.0/release-notes/release-notes.html">
+	<link rel="canonical" href="//guides/v2.0/release-notes/ReleaseNotes2.0.12CE.html">
 
   <script>
     var baseUrl = "/";
@@ -49,9 +49,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/release-notes/release-notes.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/release-notes/ReleaseNotes2.0.12CE.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/release-notes/release-notes.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/release-notes/ReleaseNotes2.0.12CE.html">Magento 2.1</a></li>
 	
   </ul>
 
@@ -226,7 +226,7 @@
 
 
 								
-									<li class="level1  active "><a class="nav-header" href="/guides/v2.0/release-notes/release-notes.html">Magento 2.0 Release Notes</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/release-notes/release-notes.html">Magento 2.0 Release Notes</a></li>
 									
 								
 
@@ -247,7 +247,7 @@
 									
 
 
-											<li class="level3Child ce20-relnotes " data-menunode="ce20-relnotes"><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.12CE.html">Magento CE 2.0.12 Release Notes</a>
+											<li class="level3Child ce20-relnotes  active " data-menunode="ce20-relnotes"><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.12CE.html">Magento CE 2.0.12 Release Notes</a>
 
 
 									
@@ -886,7 +886,7 @@
       
 
       <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
-        <span property="name">Magento 2.0 Release Notes</span>
+        <span property="name">Magento CE 2.0.12 Release Notes</span>
         <meta property="position" content="1" />
       </li>
 
@@ -898,68 +898,374 @@
 
 
 	
-	<h1 class="page-heading">Magento 2.0 Release Notes</h1>
+	<h1 class="page-heading">Magento CE 2.0.12 Release Notes</h1>
 
   
 
 
 </section>
 
-			<h2 id="magento-community-edition-ce-and-enterprise-edition-ee-release-notes">Magento Community Edition (CE) and Enterprise Edition (EE) Release Notes</h2>
+			<p>We are pleased to present Magento Community Edition 2.0.12.</p>
+
+<h2 id="highlights">Highlights</h2>
+
+<p>Magento 2.0.12 contains more than 20 functional fixes and enhancements, and one security enhancement. Look for the following highlights in this release:</p>
+
+<ul>
+  <li>
+    <p><strong>Removal of vulnerability with the Zend framework <code>Zend_Mail</code> library</strong>. For more information, see <a href="https://magento.com/security/news/new-zend-framework-1-security-vulnerability" target="_blank">New Zend Framework 1 Security Vulnerability</a>.</p>
+  </li>
+  <li>
+    <p><strong>Updates to the catalog, payment, and sales modules</strong></p>
+  </li>
+</ul>
+
+<h2 id="security-enhancement">Security enhancement</h2>
+
+<p>This release includes an important enhancement to the security of your Magento software. While there are no confirmed attacks related to the Zend framework <code>Zend_Mail</code> library vulnerability to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento software to the latest version as soon as possible.</p>
+
+<h2 id="functional-fixes">Functional fixes</h2>
+
+<p>We address the following functional issues in this release.</p>
+
+<h3 id="catalog">Catalog</h3>
+
+<!--- 58504 -->
+<ul>
+  <li>You can now directly add a configurable product (with all possible options defined) to your shopping cart from the category page. Previously,  you had to review a product on the product page before completing the process of adding it to your shopping cart. <a href="https://github.com/magento/magento2/issues/2574" target="_blank">(GITHUB-2574)</a>, <a href="https://github.com/magento/magento2/issues/5850" target="_blank">(GITHUB-5850)</a>, <a href="https://github.com/magento/magento2/issues/5882" target="_blank">(GITHUB-5882)</a>, <a href="https://github.com/magento/magento2/issues/6572" target="_blank">(GITHUB-6572)</a>,  <a href="https://github.com/magento/magento2/issues/5558" target="_blank">(GITHUB-5558)</a></li>
+</ul>
+
+<!--- 60055 -->
+<ul>
+  <li>Admin users can no longer create an empty URL key for a category. Previously, Magento let Admin users create an empty URL key, which lead to category-related errors.</li>
+</ul>
+
+<!--- 62647 -->
+<ul>
+  <li>Magento now successfully saves a product even when you include an empty Custom Options row (<strong>Products &gt; Catalog &gt; Custom Options</strong>). Previously, under these conditions, Magento displayed the <code>Invalid option value</code> error message, and did not save the product.</li>
+</ul>
+
+<h3 id="checkout">Checkout</h3>
+
+<!--- 60877 -->
+<ul>
+  <li>The <strong>Use Default Checkboxes for Custom Options</strong> option now works as expected. Previously, the checkboxes under the option title and value title were not rendered correctly, and the feature did not work.</li>
+</ul>
+
+<!--- 61113 -->
+<ul>
+  <li>Magento now displays the <strong>Thank you for your purchase!</strong> message after a customer successfully checks out. Previously,  Magento did not display this message, even though the HTML code was present. <a href="https://github.com/magento/magento2/issues/6968" target="_blank">(GITHUB-6968)</a></li>
+</ul>
+
+<!--- 61022 -->
+<ul>
+  <li>You can now create a new order from the Magento Admin. <a href="https://github.com/magento/magento2/issues/5533" target="_blank">(GITHUB-5533)</a>,  <a href="https://github.com/magento/magento2/issues/6855" target="_blank">(GITHUB-6855)</a></li>
+</ul>
+
+<h3 id="importexport">Import/export</h3>
+
+<!--- 61264 -->
+<ul>
+  <li>Magento can now import <code>additional_images</code> that are tagged with labels that contain a comma separator.</li>
+</ul>
+
+<!--- 61075 -->
+<ul>
+  <li>Magento  no longer deletes a product after you select the Replace option while importing a product. Previously,  Magento deleted the product rather than replacing it.</li>
+</ul>
+
+<!--- 63243 -->
+<ul>
+  <li>You can now use Extension Manager to uninstall extensions that were installed using Composer.</li>
+</ul>
+
+<h3 id="miscellaneous">Miscellaneous</h3>
+
+<!--- 60724 -->
+<ul>
+  <li>Magento now redirects you to the Setup page as expected when you specify a particular port when installing the application using Nginx. Previously, Magento did not redirect you to the Setup page, and instead displayed this message in <code>var/report</code>: <code>You cannot install Magento using the Setup Wizard because the Magento setup directory cannot be accessed</code>.</li>
+</ul>
+
+<!--- 57519 -->
+<ul>
+  <li>Requests to Edge Side Includes (ESI) now return data. Previously, requests to ESI did not return data because the requested block was absent in the layout.</li>
+</ul>
+
+<!--- 62680 -->
+<ul>
+  <li>Admin users now need view permission to the store to which the customers belong in order to see information about those customers. Previously, an Admin user could see information about customers that belonged to websites or stores for which the user did not have explicit permission to view.</li>
+</ul>
+
+<!--- 63209 -->
+<ul>
+  <li>You can now change a category’s display mode to Static Block Only when the flat indexer is on. Previously, Magento experienced a fatal error under these conditions.</li>
+</ul>
+
+<!--- 61188 -->
+<ul>
+  <li>
+    <p>You can now use Composer to install Magento 2.0.x with sample data, and use <code>deploy:mode:set production</code>, without incurring an error. Previously, Magento displayed this error when you tried to use <code>deploy:mode:set production</code> under these conditions:</p>
+
+    <pre><code>  Start compilation
+  Command returned non-zero exit code:
+  `php -f /var/www/html/20ce/bin/magento setup:di:compile-multi-tenant 2&gt;&amp;1`
+</code></pre>
+  </li>
+</ul>
+
+<h3 id="payment-methods">Payment methods</h3>
+
+<!--- 56925 -->
+<ul>
+  <li>You can now ship items to a country from which you have not authorized payment. Previously, when a customer tried to ship an order to a country from which the store was not authorized to receive payment, Magento displayed this message, <strong>No Payment method available</strong>.</li>
+</ul>
+
+<h3 id="sales">Sales</h3>
+
+<!--- 61151 -->
+<ul>
+  <li>Magento now displays an error message as expected when a user tries to add less than the specified minimum quantity of a product to his shopping cart.</li>
+</ul>
+
+<!--- 61091 -->
+<ul>
+  <li>The Free Shipping method now shows up as an available option when you create an order from the Magento Admin. <a href="https://github.com/magento/magento2/issues/2939" target="_blank">(GITHUB-2939)</a></li>
+</ul>
+
+<!--- 60327 -->
+<ul>
+  <li>Magento no longer assigns all orders a status of Suspected Fraud in multi-currency store configurations. <a href="https://github.com/magento/magento2/issues/4263" target="_blank">(GITHUB-4263)</a></li>
+</ul>
+
+<!--- 61146 -->
+<ul>
+  <li>An Admin user with restricted permissions no longer has access to all orders.</li>
+</ul>
+
+<h3 id="travis-builds">Travis builds</h3>
+
+<!--- 62455 -->
+<ul>
+  <li>We’ve fixed a fatal issue that occurred if you ran Travis builds on <code>imagettfbbox 2.1.2</code>. Previously, you’d receive this error: <code>PHP Fatal error: Call to undefined function Magento\Framework\Image\Adapter\imagettfbbox() in /home/travis/build/magento/magento2/lib/internal/Magento/Framework/Image/Adapter/Gd2.php</code>.</li>
+</ul>
+
+<!--- NOT A BUG -->
+
+<!--- 62727 -->
+
+<!--- 62795 -->
+
+<!--- INTERNAL ONLY -->
+
+<!--- 62121 -->
+
+<!--- 62201 -->
+<!--- 62202 -->
+<!--- 61079 -->
+
+<!--- CANNOT REPRODUCE -->
+
+<!--- 61148 -->
+
+<!--- 62793 -->
+
+<!--- 62581 -->
+
+<!--- 62574 -->
+
+<!--- 62671 -->
+
+<h2 id="known-issues">Known issues</h2>
+
+<!--- 61112 -->
+<ul>
+  <li><strong>Issue</strong>: Customers cannot view all images that are associated with a configurable product. (The gallery does not show all the images that are associated with a configurable option.) <a href="https://github.com/magento/magento2/issues/6195" target="_blank">(GITHUB-6195)</a>, <a href="https://github.com/magento/magento2/issues/4101" target="_blank">(GITHUB-4101)</a></li>
+</ul>
+
+<!--- 61708 -->
+<ul>
+  <li><strong>Issue</strong>: You cannot use the Web Setup wizard to uninstall a module.</li>
+</ul>
+
+<!--- 61960 -->
+<ul>
+  <li>
+    <p><strong>Issue</strong>: Magento does not save a configurable product with specific attribute options under the following conditions:</p>
+
+    <ul>
+      <li>the configurable product price is derived from its children</li>
+      <li>the children have been previously created and are in stock</li>
+    </ul>
+  </li>
+</ul>
+
+<!--- 57165 -->
+<ul>
+  <li><strong>Issue</strong>: After you’ve removed all variations of a configurable product (<strong>Admin &gt; Configuration &gt; Remove Product</strong>), the <strong>Add Products Manually</strong> link is not available. <strong>Workaround</strong>: Retain at least one variation or use the <strong>Choose a different product option</strong> option.</li>
+</ul>
+
+<!--- 61970 -->
+<ul>
+  <li><strong>Issue</strong>:  Magento saves images and videos as global values, not per store view. This can potentially result in the unwanted duplication of product images across store views.</li>
+</ul>
+
+<!--- 61208 -->
+<ul>
+  <li><strong>Issue</strong>: Magento does not consistently save video information for a product after you edit the information.</li>
+</ul>
+
+<!--- 61100 -->
+<ul>
+  <li><strong>Issue</strong>: Client-side LESS compilation is not working properly. Consequently, page load performance is not optimal.</li>
+</ul>
+
+<!--- 61241 -->
+<ul>
+  <li><strong>Issue</strong>: You encounter an error when you try to install Magento with the <code>magento/module-cms-sample-data 100.0.5</code> sample data set: <strong>Error in update!</strong></li>
+</ul>
+
+<!--- 62049 -->
+<ul>
+  <li><strong>Issue</strong>: Magento does not always display the accurate price for a configurable product when running Magento in an environment that contains multiple store views and websites.</li>
+</ul>
+
+<!--- 63212 -->
+<ul>
+  <li><strong>Issue</strong>: You cannot successfully create and save a dropdown attribute using <strong>Stores &gt; Attributes &gt; Product &gt; Add New Attribute</strong>. <strong>Workaround</strong>: Save the attribute with <strong>values required</strong> set to <strong>no</strong> first, before re-saving it with <strong>values required</strong> set to <strong>yes</strong>.</li>
+</ul>
+
+<!--- 61238 -->
+<ul>
+  <li><strong>Issue</strong>: Magento experiences a fatal error when you try to get a refund on an invoice. (Specifically, a fatal error occurs when calling <code>LocalizedException</code> in <code>CreditmemoService</code>.)</li>
+</ul>
+
+<!--- 62131 -->
+<ul>
+  <li><strong>Issue</strong>: Search synonyms are not working as expected. Typically, Magento redirects users to the URL set in the search term. Currently, Magento ignores the synonym, and searches for the term that the customer enters.</li>
+</ul>
+
+<!--- 61973 -->
+<ul>
+  <li><strong>Issue</strong>: Magento does not enforce the value that specifies the minimum quantity of a product that a customer can add to the shopping cart. Instead of displaying a message that prompts the user to enter the required minimum, Magento permits a customer to order as few items as they’d like.</li>
+</ul>
+
+<!--- 61150 -->
+<ul>
+  <li><strong>Issue</strong>: When editing a product description, you cannot delete a product image across multiple stores. When you try to save your edits, Magento displays this message: <strong>The image cannot be removed as it has been assigned to the other image role</strong>.</li>
+</ul>
+
+<h2 id="system-requirements">System requirements</h2>
+<p>Our technology stack is built on PHP and MySQL. For more information, see
+<a href="/guides/v2.0/install-gde/system-requirements.html" target="_blank">System Requirements</a>.</p>
 
 <div>
 
-  <div class="collapsible collapsible-h3"><h3 class="collapsible-title">Magento CE 2.0 Release Notes </h3><div class="collapsible-content"><ul>
-  <li><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.12CE.html" target="_blank">Version 2.0.12</a></li>
-  <li><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.11CE.html" target="_blank">Version 2.0.11</a></li>
-  <li><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.10CE.html" target="_blank">Version 2.0.10</a></li>
-  <li><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.9CE.html" target="_blank">Version 2.0.9</a></li>
-  <li><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.8CE.html" target="_blank">Version 2.0.8</a></li>
-  <li><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.7CE.html" target="_blank">Version 2.0.7</a></li>
-  <li><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.6CE.html" target="_blank">Version 2.0.6</a></li>
-  <li><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.5CE.html" target="_blank">Version 2.0.5</a></li>
-  <li><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.4CE.html" target="_blank">Version 2.0.4</a></li>
-  <li><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.3CE.html" target="_blank">Version 2.0.3</a></li>
-  <li><a href="http://docs.magento.com/m2/ce/user_guide/magento/release-notes-ce-2.0.2.html" target="_blank">Version 2.0.2</a></li>
-  <li><a href="http://docs.magento.com/m2/ce/user_guide/magento/release-notes-ce-2.0.1.html" target="_blank">Version 2.0.1</a></li>
-  <li><a href="http://docs.magento.com/m2/ce/user_guide/magento/release-notes-ce-2.0.html" target="_blank">Version 2.0.0</a></li>
-</ul>
-</div></div>
+  <h2 id="install-the-magento-software">Install the Magento software</h2>
+  <p>See one of the following sections:</p>
 
-  <div class="collapsible collapsible-h3"><h3 class="collapsible-title">Magento EE 2.0 Release Notes </h3><div class="collapsible-content"><ul>
-  <li><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.12EE.html" target="_blank">Version 2.0.12</a></li>
-  <li><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.11EE.html" target="_blank">Version 2.0.11</a></li>
-  <li><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.10EE.html" target="_blank">Version 2.0.10</a></li>
-  <li><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.9EE.html" target="_blank">Version 2.0.9</a></li>
-  <li><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.8EE.html" target="_blank">Version 2.0.8</a></li>
-  <li><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.7EE.html" target="_blank">Version 2.0.7</a></li>
-  <li><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.6EE.html" target="_blank">Version 2.0.6</a></li>
-  <li><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.5EE.html" target="_blank">Version 2.0.5</a></li>
-  <li><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.4EE.html" target="_blank">Version 2.0.4</a></li>
-  <li><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.3EE.html" target="_blank">Version 2.0.3</a></li>
-  <li><a href="http://docs.magento.com/m2/ee/user_guide/magento/release-notes-ee-2.0.2.html" target="_blank">Version 2.0.2</a></li>
-  <li><a href="http://docs.magento.com/m2/ee/user_guide/magento/release-notes-ee-2.0.1.html" target="_blank">Version 2.0.1</a></li>
-  <li><a href="http://docs.magento.com/m2/ee/user_guide/magento/release-notes-ee-2.0.html" target="_blank">Version 2.0.0</a></li>
-</ul>
-</div></div>
+  <ul>
+    <li><a href="#install-ce-composer">Get Magento CE using Composer</a></li>
+    <li><a href="#get-zip">Get Magento CE using a compressed archive</a></li>
+    <li><a href="#install-rc-gh">Get the Magento CE software from GitHub</a></li>
+    <li><a href="#install-complete">Complete the installation</a></li>
+  </ul>
 
-  <h2 id="magento-ce-and-ee-release-candidate-release-notes">Magento CE and EE Release Candidate Release Notes</h2>
+  <h3 id="install-ce-composer" class="no_toc">Get the Magento CE software using Composer</h3>
+
+  <p>This software is available from <code>repo.magento.com</code>. Before installing the CE software using Composer, familiarize yourself with the Composer metapackage  <a href="/guides/v2.0/install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run</p>
+
+  <pre><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=&lt;version&gt; &lt;installation directory name&gt;
+</code></pre>
+
+  <p>where <code>&lt;version&gt;</code> matches the version you want (for example, <code>2.0.10</code>)</p>
+
+  <p>For example, to install Magento CE 2.0.10 in the <code>magento2</code> directory:</p>
+
+  <pre><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=2.0.10 magento2
+</code></pre>
+
+  <h3 id="get-zip" class="no_toc">Get Magento CE using a compressed archive</h3>
 
   <div>
 
-    <div class="collapsible collapsible-h3"><h3 class="collapsible-title">Magento CE 2.1 Release Candidate Notes </h3><div class="collapsible-content"><ul>
-  <li><a href="/guides/v2.0/release-notes/ReleaseNotes2.1_RC3EE.html" target="_blank">CE 2.1 Release Candidate 3 (RC3)</a></li>
-  <li><a href="/guides/v2.0/release-notes/ReleaseNotes2.1_RC2EE.html" target="_blank">CE 2.1 RC2)</a></li>
-  <li><a href="/guides/v2.0/release-notes/ReleaseNotes2.1_RC1EE.html" target="_blank">CE 2.1 RC1</a></li>
-</ul>
-</div></div>
+    <p>The following table discusses where to get the Magento software. We provide the following downloads:</p>
 
-    <div class="collapsible collapsible-h3"><h3 class="collapsible-title">Magento EE 2.1 Release Candidate Notes </h3><div class="collapsible-content"><ul>
-  <li><a href="/guides/v2.0/release-notes/ReleaseNotes2.1_RC3CE.html" target="_blank">EE 2.1 RC3</a></li>
-  <li><a href="/guides/v2.0/release-notes/ReleaseNotes2.1_RC2CE.html" target="_blank">EE 2.1 RC2</a></li>
-  <li><a href="/guides/v2.0/release-notes/ReleaseNotes2.1_RC1CE.html" target="_blank">EE 2.1 RC1</a></li>
-</ul>
-</div></div>
+    <ul>
+      <li>Magento CE software only</li>
+      <li>Magento CE software with sample data (designed to help you learn Magento faster)</li>
+    </ul>
+
+    <p>These packages are easy to get and install. You don’t need to use Composer, all you need to do is to upload a package to your Magento server or hosted platform, unpack it, and run the web-based Setup Wizard.</p>
+
+    <p>Archives are available in the following formats: <code>.zip</code>, <code>.tar.bz2</code>, <code>.tar.gz</code></p>
+
+    <p>To get the Magento CE software archive:</p>
+
+    <ol>
+      <li>Go to <a href="http://magento.com/download" target="_blank">http://magento.com/download</a>.</li>
+      <li>
+        <p>Choose either the software or the software and sample data:</p>
+
+        <ul>
+          <li><code>Magento-CE-&lt;version&gt;.*</code> (without sample data)</li>
+          <li><code>Magento-CE-&lt;version&gt;+Samples.*</code> (with sample data)</li>
+        </ul>
+
+        <p><code>&lt;version&gt;</code> is the three-digit release number (for example, <code>2.0.7</code>, <code>2.1.0</code>, and so on).</p>
+      </li>
+    </ol>
+
+    <h3 id="install-rc-gh" class="no_toc">Get the Magento CE software from GitHub</h3>
+
+    <div class="bs-callout bs-callout-warning">
+    <p>If you clone the Magento 2 GitHub repository, you <em>cannot</em> use the Magento software in a production environment. You cannot have a live store that accepts orders and so on.</p>
+</div>
+
+    <p>Before proceeding, please familiarize yourself with <a href="/guides/v2.0/install-gde/prereq/dev_install.html">these prerequisites</a>, then run</p>
+
+    <pre><code>git clone git@github.com:magento/magento2.git
+cd magento2
+git checkout tags/&lt;version&gt; [-b &lt;version&gt;]
+</code></pre>
+
+    <p>where</p>
+
+    <p><code>&lt;version&gt;</code> matches the version you want (for example, <code>2.0.10</code>)</p>
+
+    <p><code>[-b &lt;version&gt;]</code> optionally checks out a new branch.</p>
+
+    <h3 id="install-complete" class="no_toc">Complete the installation</h3>
+
+    <p>After you get the CE software:</p>
+
+    <ol>
+      <li><a href="/guides/v2.0/install-gde/prereq/file-system-perms.html">Set file system ownership and permissions</a>.</li>
+      <li>
+        <p>Install the Magento software:</p>
+
+        <ul>
+          <li><a href="/guides/v2.0/install-gde/install/web/install-web.html">Web Setup Wizard</a></li>
+          <li><a href="/guides/v2.0/install-gde/install/cli/install-cli.html">Command line</a></li>
+        </ul>
+      </li>
+    </ol>
+
+    <h2 id="upgrade">Upgrade from an earlier version</h2>
+    <p>To upgrade to version 2.0.x from an earlier version:</p>
+
+    <ul>
+      <li><a href="/guides/v2.0/comp-mgr/upgrader/upgrade-start.html">Web Setup Wizard (System Upgrade)</a></li>
+      <li><a href="/guides/v2.0/comp-mgr/cli/cli-upgrade.html">Command-line upgrade</a></li>
+    </ul>
+
+    <h2 id="migration-toolkits">Migration toolkits</h2>
+    <p>The <a href="/guides/v2.0/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="/guides/v2.0/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.</p>
+
+    <p>The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.</p>
+
+    <h2 id="credits">Credits</h2>
+
+    <p>Dear community members, thank you for your suggestions and bug reports.</p>
   </div>
 </div>
 
@@ -972,14 +1278,14 @@
 
 			
 			 <div class="github-link">
-				 <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/release-notes/release-notes.md" target="_blank">
+				 <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/release-notes/ReleaseNotes2.0.12CE.md" target="_blank">
 					 Edit this page on GitHub
 				 </a>
 			 </div>
 			
 
 			<div class="new-issue">
-				<a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.0/release-notes/release-notes.html" target="_blank">Give us feedback</a>
+				<a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.0/release-notes/ReleaseNotes2.0.12CE.html" target="_blank">Give us feedback</a>
 			</div>
 
 		</div>
