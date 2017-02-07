@@ -19,3 +19,8 @@ Removed the MDVA-913 patch because the issue is now fixed in Magento Enterprise 
 ## Fixes in this release
 *	When you disable a module and deploy it to the remote Cloud server, the module stays disabled.
 *	You can now successfully upgrade from Magento Enterprise Cloud Edition 2.0.x to 2.1.x.
+
+#### Related information
+*	[Magento EE 2.0.12 Release Notes]({{ site.gudeurl }}release-notes/ReleaseNotes2.0.12EE.html)
+*	[Magento EE 2.1.4 Release Notes]({{ site.gdeurl21 }}release-notes/ReleaseNotes2.1.4EE.html)
+
