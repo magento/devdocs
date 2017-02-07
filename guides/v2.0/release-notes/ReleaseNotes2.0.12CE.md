@@ -44,8 +44,8 @@ We address the following functional issues in this release.
 
 
 
-
 ### Checkout
+
 
 <!--- 60877 -->* The **Use Default Checkboxes for Custom Options** option now works as expected. Previously, the checkboxes under the option title and value title were not rendered correctly, and the feature did not work.
 
@@ -87,7 +87,6 @@ We address the following functional issues in this release.
 ### Payment methods
 
 <!--- 56925 -->* You can now ship items to a country from which you have not authorized payment. Previously, when a customer tried to ship an order to a country from which the store was not authorized to receive payment, Magento displayed this message, **No Payment method available**.
-
 
 ### Sales
 

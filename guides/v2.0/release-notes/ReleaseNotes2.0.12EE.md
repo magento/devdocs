@@ -129,8 +129,6 @@ We address the following functional issues in this release.
 <!--- 62455 -->* We’ve fixed a fatal issue that occurred if you ran Travis builds on `imagettfbbox 2.1.2`. Previously, you’d receive this error: `PHP Fatal error: Call to undefined function Magento\Framework\Image\Adapter\imagettfbbox() in /home/travis/build/magento/magento2/lib/internal/Magento/Framework/Image/Adapter/Gd2.php`.
 
 
-
-
 <!--- NOT A BUG --> 
 
 <!--- 62727 --> 
