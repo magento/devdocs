@@ -516,6 +516,16 @@
 
 <p><img src="/common/images/payments-integrations/pg_interaction_flow.png" alt="Payment Gateway Interaction" /></p>
 
+<p>Magento payment provider supports the following payment operations:</p>
+
+<ul>
+  <li>authorize: process authorization transaction; funds are blocked on customer account, but not withdrawn</li>
+  <li>sale: process authorization transaction and capture automatically, funds are withdrawn</li>
+  <li>capture: withdraw previously authorized amount</li>
+  <li>refund: return previously withdrawn customer funds</li>
+  <li>void: cancel transfer of funds from customer account</li>
+</ul>
+
 <h3 id="whats-in-this-chapter">What’s in this chapter</h3>
 
 <p>The topics of this chapter are conceptual and describe the components of the Magento payment provider gateway:</p>
