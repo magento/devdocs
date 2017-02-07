@@ -47,8 +47,6 @@ We address the following functional issues in this release.
 
 ### Checkout
 
-<!--- 58946 -->* Magento now displays custom address attributes on the checkout summary. 
-
 <!--- 60877 -->* The **Use Default Checkboxes for Custom Options** option now works as expected. Previously, the checkboxes under the option title and value title were not rendered correctly, and the feature did not work.
 
 
