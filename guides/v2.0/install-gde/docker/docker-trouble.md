@@ -92,10 +92,13 @@ Other errors might display in a secondary command window:
 
 In the event you want to start over with a new Magento application installation, use the following steps from the directory to which you copied the DevBox scripts:
 
-1.	Kill the Magento Docker containers.
+1.	List all Magento Docker containers.
 
-		docker-compose down --rmi all -v --remove-orphans
-2.	Run one of the following commands:
+		docker-compose ps
+2.	Kill the Magento Docker containers.
+
+		docker rm -fv <service>
+3.	Run one of the following commands:
 
 	*	Mac OS
 
