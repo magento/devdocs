@@ -1,13 +1,13 @@
 ---
 layout: default
-group: Contributor Guide
-subgroup: Contributor Guide
-title: DevDocs Contributor Bios
-menu_title: DevDocs Contributor Bios
-menu_node: 
-menu_order: 1
+group: contributor
+subgroup: contributor
+title: Quarterly Contributors
+menu_title: Quarterly Contributors
+menu_order: 1000
 version: 2.0
-github_link: howdoi/howdoi_bios.md
+github_link: contributor-guide/quarterly-contributors.md
+redirect_from: howdoi/howdoi_bios.html
 ---
 
 Thanks so much to the following community members, partners, and Magento fans who have directly contributed substantial content to the DevDocs site.
