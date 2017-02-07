@@ -42,35 +42,17 @@ We address the following functional issues in this release.
 
 <!--- 62647 -->* Magento now successfully saves a product even when you include an empty Custom Options row (**Products > Catalog > Custom Options**). Previously, under these conditions, Magento displayed the `Invalid option value` error message, and did not save the product.  
 
-<!--- 61628 -->* The **Match products by rule** option in the Admin interface now works as expected. 
-
-<!--- 62654 -->* You can now successfully match products by rule with an AND condition on Category Rule. Previously, this operation did not return any matched products.  
-
 
 
 ### Checkout
 
-<!--- 58946 -->* Magento now displays custom address attributes on the checkout summary. 
 
 <!--- 60877 -->* The **Use Default Checkboxes for Custom Options** option now works as expected. Previously, the checkboxes under the option title and value title were not rendered correctly, and the feature did not work.
 
 
-<!--- 61113 -->* Magento now displays the "Thank you for your purchase!" message after a customer successfully checks out. Previously,  Magento did not display this message, even though the HTML code was present. <a href="https://github.com/magento/magento2/issues/6968" target="_blank">(GITHUB-6968)</a>
+<!--- 61113 -->* Magento now displays the **Thank you for your purchase!** message after a customer successfully checks out. Previously,  Magento did not display this message, even though the HTML code was present. <a href="https://github.com/magento/magento2/issues/6968" target="_blank">(GITHUB-6968)</a>
 
 <!--- 61022 -->* You can now create a new order from the Magento Admin. <a href="https://github.com/magento/magento2/issues/5533" target="_blank">(GITHUB-5533)</a>,  <a href="https://github.com/magento/magento2/issues/6855" target="_blank">(GITHUB-6855)</a>
-
-
-
-### Customer
-
-<!--- 60965 -->* When you add an address, new custom attributes are now displayed together, along with other address details. 
-
-
-
-### Gift card
-
-<!--- 57610 -->* You can now use a gift card to complete payment for an order that contains gift wrap. Previously, when you paid for an order with a gift card, the gift wrap amount remained as a balance, even when the gift card contained sufficient funds to cover the expense of gift wrapping.
-
 
 
 
@@ -104,8 +86,7 @@ We address the following functional issues in this release.
 
 ### Payment methods
 
-<!--- 56925 -->* You can now ship items to a country from which you have not authorized payment. Previously, when a customer tried to ship an order to a country from which the store was not authorized to receive payment, Magento displayed this message, `"No Payment method available"`.
-
+<!--- 56925 -->* You can now ship items to a country from which you have not authorized payment. Previously, when a customer tried to ship an order to a country from which the store was not authorized to receive payment, Magento displayed this message, **No Payment method available**.
 
 ### Sales
 
@@ -184,8 +165,6 @@ We address the following functional issues in this release.
 <!--- 61241 -->* **Issue**: You encounter an error when you try to install Magento with the `magento/module-cms-sample-data 100.0.5` sample data set: **Error in update!** 
 
 <!--- 62049 -->* **Issue**: Magento does not always display the accurate price for a configurable product when running Magento in an environment that contains multiple store views and websites. 
-
-<!--- 61279 -->* **Issue**: You cannot use Braintree PayPal to successfully complete purchase of a gift card. Instead, your purchase stays in the processing stage.
 
 <!--- 63212 -->* **Issue**: You cannot successfully create and save a dropdown attribute using **Stores > Attributes > Product > Add New Attribute**. **Workaround**: Save the attribute with **values required** set to **no** first, before re-saving it with **values required** set to **yes**.
 
