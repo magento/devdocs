@@ -55,7 +55,7 @@ We address the following functional issues in this release.
 <!--- 60877 -->* The **Use Default Checkboxes for Custom Options** option now works as expected. Previously, the checkboxes under the option title and value title were not rendered correctly, and the feature did not work.
 
 
-<!--- 61113 -->* Magento now displays the "Thank you for your purchase!" message after a customer successfully checks out. Previously,  Magento did not display this message, even though the HTML code was present. <a href="https://github.com/magento/magento2/issues/6968" target="_blank">(GITHUB-6968)</a>
+<!--- 61113 -->* Magento now displays the **Thank you for your purchase!** message after a customer successfully checks out. Previously,  Magento did not display this message, even though the HTML code was present. <a href="https://github.com/magento/magento2/issues/6968" target="_blank">(GITHUB-6968)</a>
 
 <!--- 61022 -->* You can now create a new order from the Magento Admin. <a href="https://github.com/magento/magento2/issues/5533" target="_blank">(GITHUB-5533)</a>,  <a href="https://github.com/magento/magento2/issues/6855" target="_blank">(GITHUB-6855)</a>
 
@@ -106,7 +106,7 @@ We address the following functional issues in this release.
 
 ### Payment methods
 
-<!--- 56925 -->* You can now ship items to a country from which you have not authorized payment. Previously, when a customer tried to ship an order to a country from which the store was not authorized to receive payment, Magento displays this message, `"No Payment method available"`.
+<!--- 56925 -->* You can now ship items to a country from which you have not authorized payment. Previously, when a customer tried to ship an order to a country from which the store was not authorized to receive payment, Magento displays this message, **No Payment method available**.
 
 
 
