@@ -8,7 +8,7 @@ version: 2.0
 github_link: release-notes/changes/ee_changes.md
 ---
 
-This topic provides details about backward incompatible changes made made in Magento EE 2.0.
+This topic provides details about backward incompatible changes made in Magento EE 2.0.
 
 All changes are aggregated into two tables:
 
