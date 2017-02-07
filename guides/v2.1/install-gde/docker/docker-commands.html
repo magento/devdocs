@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Common Docker commands</title>
+	<title>Common DevBox commands</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -384,6 +384,65 @@
 
 
 								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/install-gde/docker/docker-phpstorm-parent.html">Debug and test using PhpStorm</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/install-gde/docker/docker-phpstorm-prereq.html">PhpStorm prerequisites</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/install-gde/docker/docker-phpstorm-project.html">Set up your PhpStorm project</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/install-gde/docker/docker-phpstorm-test.html">Run PHPUnit</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/install-gde/docker/docker-phpstorm-debug.html">Debug in PhpStorm and browser</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
 									<li class="level1 "><a class="nav-header" href="/guides/v2.1/install-gde/docker/docker-trouble.html">Troubleshoot issues with Magento DevBox</a></li>
 									
 								
@@ -411,7 +470,7 @@
 
 
 								
-									<li class="level1  active "><a class="nav-header" href="/guides/v2.1/install-gde/docker/docker-commands.html">Common Docker commands</a></li>
+									<li class="level1  active "><a class="nav-header" href="/guides/v2.1/install-gde/docker/docker-commands.html">Common DevBox commands</a></li>
 									
 								
 
@@ -548,7 +607,7 @@
       
 
       <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
-        <span property="name">Common Docker commands</span>
+        <span property="name">Common DevBox commands</span>
         <meta property="position" content="2" />
       </li>
 
@@ -560,14 +619,14 @@
 
 
 	
-	<h1 class="page-heading">Common Docker commands</h1>
+	<h1 class="page-heading">Common DevBox commands</h1>
 
   
 
 
 </section>
 
-			<p>This topic lists Docker commands you might find useful for day-to-day use or when troubleshooting issues. For more information, see the <a href="https://docs.docker.com/engine/reference/commandline" target="_blank">Docker command reference</a>.</p>
+			<p>This topic lists DevBox commands you might find useful for day-to-day use or when troubleshooting issues. For more information about the Docker commands on which many of these are based, see the <a href="https://docs.docker.com/engine/reference/commandline" target="_blank">Docker command reference</a>.</p>
 
 <h2 id="run-cron-populate-the-cache-and-the-storefront">Run cron, populate the cache and the storefront</h2>
 
@@ -643,6 +702,70 @@ MAGENTO_WARM_UP_STOREFRONT=1
 </ol>
 </div></div>
 
+<p id="cloud-docker-cmds-stopstart"></p>
+<div class="collapsible collapsible-h2"><h2 class="collapsible-title">Stop, start, restart, and view port mappings </h2><div class="collapsible-content"><p>You can use the following commands to start, stop, and restart services; and you can find the ports currently being used by the services.</p>
+
+<p>Run all commands from your <a href="/guides/v2.1/install-gde/docker/docker-ref.html#devbox-root-dir">DevBox root folder</a>.</p>
+
+<h3 id="restart-the-containers-after-rebooting">Restart the containers after rebooting</h3>
+<p>After you restart your computer, we recommend you use the following command, which restarts all services and assigns them new ports:</p>
+
+<pre><code>m2devbox-reset[.bat|sh]
+</code></pre>
+
+<h3 id="find-currently-used-ports">Find currently used ports</h3>
+<p>If you’re not sure what ports on which DevBox services are running, use the <code>docker-compose ps</code> command as follows:</p>
+
+<div>
+
+  <pre class="no-copy">
+docker-compose ps
+
+                         Name                                        Command               State                                                 Ports                                              
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+magento2devbox_db_709831d587f2feef1e27fa41d4e70219        docker-entrypoint.sh mysqld      Up      0.0.0.0:32780-&gt;3306/tcp                                                                          
+magento2devbox_elastic_709831d587f2feef1e27fa41d4e70219   /docker-entrypoint.sh elas ...   Up      0.0.0.0:32777-&gt;9200/tcp, 9300/tcp                                                                
+magento2devbox_rabbit_709831d587f2feef1e27fa41d4e70219    docker-entrypoint.sh rabbi ...   Up      15671/tcp, 0.0.0.0:32778-&gt;15672/tcp, 25672/tcp, 4369/tcp, 5671/tcp, 0.0.0.0:32779-&gt;5672/tcp      
+magento2devbox_redis_709831d587f2feef1e27fa41d4e70219     docker-entrypoint.sh redis ...   Up      6379/tcp                                                                                         
+magento2devbox_web_709831d587f2feef1e27fa41d4e70219       /usr/local/bin/entrypoint.sh     Up      22/tcp, 0.0.0.0:22-&gt;32705/tcp, 44100/tcp, 0.0.0.0:32781-&gt;5000/tcp, 0.0.0.0:32782-&gt;80/tcp, 9000/tcp</pre>
+
+  <p>In the preceding example:</p>
+
+  <ul>
+    <li>The database listens on port 32780</li>
+    <li>Elasticsearch listens on ports 32777 and 9300</li>
+    <li>RabbitMQ listens on ports 15671, 32778, 25672, 4369, 5671, and 32779</li>
+    <li>Redis listens on port 6379</li>
+    <li>
+      <p>In the web container, the following ports are used:</p>
+
+      <ul>
+        <li>SSH listens on port 32795</li>
+        <li>Unison synchronization (Windows only) listens on port 32781</li>
+        <li>The web server listens on port 32782</li>
+      </ul>
+    </li>
+  </ul>
+
+  <div class="bs-callout bs-callout-info" id="info">
+    <p>You can use any unmapped ports anyway you like. (An example of an unmapped port is port 9000 in the web container in the preceding example.)</p>
+  </div>
+
+  <h3 id="start-stop-restart-services">Start, stop, restart services</h3>
+  <p>DevBox uses two service names: <code>web</code> and <code>db</code>. To start, stop, or restart them, use the following commands:</p>
+
+  <pre><code>docker-compose start &lt;service&gt;
+docker-compose stop &lt;service&gt;
+docker-compose restart &lt;service&gt;
+</code></pre>
+
+  <p>For example, to restart the web service:</p>
+
+  <pre><code>docker-compose restart web
+</code></pre>
+</div>
+</div></div>
+
 <div class="collapsible collapsible-h2"><h2 class="collapsible-title">General purpose commands </h2><div class="collapsible-content"><table>
   <thead>
     <tr>
@@ -652,7 +775,7 @@ MAGENTO_WARM_UP_STOREFRONT=1
   </thead>
   <tbody>
     <tr>
-      <td>List all Magento containers</td>
+      <td>List all Magento containers, shows port mappings</td>
       <td><code>docker-compose ps </code></td>
     </tr>
     <tr>

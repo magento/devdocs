@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>DevBox (Beta) quick installation overview</title>
+	<title>PhpStorm prerequisites</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.0/install-gde/docker/docker-over.html">
+	<link rel="canonical" href="//guides/v2.0/install-gde/docker/docker-phpstorm-prereq.html">
 
   <script>
     var baseUrl = "/";
@@ -49,9 +49,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/install-gde/docker/docker-over.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/install-gde/docker/docker-phpstorm-prereq.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/install-gde/docker/docker-over.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/install-gde/docker/docker-phpstorm-prereq.html">Magento 2.1</a></li>
 	
   </ul>
 
@@ -324,7 +324,7 @@
 
 
 								
-									<li class="level1  active "><a class="nav-header" href="/guides/v2.0/install-gde/docker/docker-over.html">DevBox (Beta) quick installation overview</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/docker/docker-over.html">DevBox (Beta) quick installation overview</a></li>
 									
 								
 
@@ -389,7 +389,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/docker/docker-phpstorm-prereq.html">PhpStorm prerequisites</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/install-gde/docker/docker-phpstorm-prereq.html">PhpStorm prerequisites</a></li>
 
 									
 
@@ -581,7 +581,7 @@
       
 
       <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
-        <span property="name">DevBox (Beta) quick installation overview</span>
+        <span property="name">PhpStorm prerequisites</span>
         <meta property="position" content="2" />
       </li>
 
@@ -593,39 +593,116 @@
 
 
 	
-	<h1 class="page-heading">DevBox (Beta) quick installation overview</h1>
+	<h1 class="page-heading">PhpStorm prerequisites</h1>
 
   
 
 
 </section>
 
-			<p>The Magento DevBox is the simplest way yet to install a Magento development system. DevBox puts the Magento application in a <a href="https://www.docker.com" target="_blank">Docker</a> container but all <em>you</em> have to do to set it up is run a script. No more installing an operating system, web server, PHP, and so on.</p>
+			<p>This topic discusses tasks you must perform before you can use PhPStorm with DevBox.</p>
 
-<p>DevBox is primarily intended for developers but anyone can use it, whether you’re a Magento newbie or just want to check out the Magento application. You should <em>not</em> use Magento DevBox in production.</p>
+<h2 id="find-a-service-port">Find a service port</h2>
+<p>DevBox randomly assigns ports to services every time a container starts. To use DevBox with PhPStorm, you must know some of these ports (especially the SSH and the web server listen ports).</p>
 
-<p>Magento’s DevBox installation is a step-by-step wizard that enables you to download a personalized script that sets up Magento DevBox on your machine. The script either installs the Magento software in a Docker container or creates a shared file system between existing Magento code and a Docker container.</p>
+<h3 id="devbox-phpstorm-ssh-find">Determine a listen port</h3>
+<p>To determine a listen port:</p>
 
-<p>A new installation or using an existing Magento installation takes about 15 minutes.</p>
+<p>In a command window, find your container identifiers:</p>
 
-<p>Optional sample data takes a few additional minutes.</p>
+<pre><code>docker-compose ps
+</code></pre>
 
-<h2 id="get-magento-devbox-now">Get Magento DevBox now</h2>
-<p>To get Magento DevBox now, go to the <a href="https://magento.com/tech-resources/download" target="_blank">Magento download page</a>.</p>
+<p>The command displays the listen ports. An example follows:</p>
 
-<div class="bs-callout bs-callout-info" id="info">
+<div>
+
+  <pre class="no-copy">
+docker-compose ps
+
+                         Name                                        Command               State                                                 Ports                                              
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+magento2devbox_db_709831d587f2feef1e27fa41d4e70219        docker-entrypoint.sh mysqld      Up      0.0.0.0:32780-&gt;3306/tcp                                                                          
+magento2devbox_elastic_709831d587f2feef1e27fa41d4e70219   /docker-entrypoint.sh elas ...   Up      0.0.0.0:32777-&gt;9200/tcp, 9300/tcp                                                                
+magento2devbox_rabbit_709831d587f2feef1e27fa41d4e70219    docker-entrypoint.sh rabbi ...   Up      15671/tcp, 0.0.0.0:32778-&gt;15672/tcp, 25672/tcp, 4369/tcp, 5671/tcp, 0.0.0.0:32779-&gt;5672/tcp      
+magento2devbox_redis_709831d587f2feef1e27fa41d4e70219     docker-entrypoint.sh redis ...   Up      6379/tcp                                                                                         
+magento2devbox_web_709831d587f2feef1e27fa41d4e70219       /usr/local/bin/entrypoint.sh     Up      22/tcp, 0.0.0.0:22-&gt;32705/tcp, 44100/tcp, 0.0.0.0:32781-&gt;5000/tcp, 0.0.0.0:32782-&gt;80/tcp, 9000/tcp</pre>
+
+  <p>In the preceding example:</p>
+
   <ul>
-    <li>Magento DevBox should be used in development only. (You should <em>not</em> use it in production.)</li>
-    <li>Magento DevBox is Beta software. Report any issues on the <a href="https://github.com/magento/magento2devbox-web/issues" target="_blank">DevBox GitHub repository</a>.</li>
+    <li>The database listens on port 32780</li>
+    <li>Elasticsearch listens on ports 32777 and 9300</li>
+    <li>RabbitMQ listens on ports 15671, 32778, 25672, 4369, 5671, and 32779</li>
+    <li>Redis listens on port 6379</li>
+    <li>
+      <p>In the web container, the following ports are used:</p>
+
+      <ul>
+        <li>SSH listens on port 32795</li>
+        <li>Unison synchronization (Windows only) listens on port 32781</li>
+        <li>The web server listens on port 32782</li>
+      </ul>
+    </li>
   </ul>
+
+  <div class="bs-callout bs-callout-info" id="info">
+    <p>You can use any unmapped ports anyway you like. (An example of an unmapped port is port 9000 in the web container in the preceding example.)</p>
+  </div>
+
+  <h2 id="devbox-ssh-windows">Create an SSH tunnel on Windows</h2>
+  <p>To use Xdebug with Docker on Windows, you must set up an SSH tunnel because Windows doesn’t have a native SSH client.</p>
+
+  <p>The following procedure shows an example of creating an SSH tunnel using <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html" target="_blank">Putty</a>. You can use other applications (such as Cygwin); for more information, consult the documentation provided with those applications.</p>
+
+  <p>To set up an SSH tunnel on Windows using Putty:</p>
+
+  <ol>
+    <li>If you haven’t already done so, download <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html" target="_blank">Putty</a>.</li>
+    <li>Start Putty.</li>
+    <li>In the Category pane, click <strong>Session</strong>.</li>
+    <li>
+      <p>Enter the following information:</p>
+
+      <ul>
+        <li><strong>Host Name (or IP address)</strong> field: Enter <code>127.0.0.1</code></li>
+        <li><strong>Port</strong> field: Enter the <a href="/guides/v2.0/install-gde/docker/docker-phpstorm-prereq.html">SSH listen port</a></li>
+      </ul>
+
+      <p><img src="/common/images/install_docker_putty-session.png" alt="Set up Putty" width="350px" /></p>
+    </li>
+    <li>In the Category pane, click <strong>Connection</strong> &gt; <strong>SSH</strong> &gt; <strong>Tunnels</strong>.</li>
+    <li>
+      <p>Enter the following information:</p>
+
+      <ul>
+        <li><strong>Source port</strong> field: Enter <code>9000</code></li>
+        <li><strong>Destination</strong> field: Enter <code>127.0.0.1:9000</code></li>
+        <li>Click <strong>Remote</strong></li>
+      </ul>
+    </li>
+    <li>
+      <p>Click <strong>Add</strong>.</p>
+
+      <p>The following figure shows an example.</p>
+
+      <p><img src="/common/images/install_docker_putty-tunnels.png" alt="Create an SSH tunnel in Putty" width="350px" /></p>
+    </li>
+    <li>In the Category pane, click <strong>Session</strong>.</li>
+    <li>In the <strong>Saved Sessions</strong> field, enter a name for this SSH tunnel.</li>
+    <li>
+      <p>Click <strong>Save</strong> as the following figure shows.</p>
+
+      <p><img src="/common/images/install_docker_putty-session-save.png" alt="Save your SSH tunnel" width="350px" /></p>
+    </li>
+    <li>To test the SSH tunnel, click <strong>Load</strong>, then click <strong>Open</strong>.</li>
+  </ol>
+
+  <p>If an “unable to connect” error displays, verify all of the preceding information and try again.</p>
+
+  <h4 id="next-step">Next step</h4>
+  <p><a href="/guides/v2.0/install-gde/docker/docker-phpstorm-project.html">Set up your PhPStorm project</a></p>
 </div>
-
-<h4 id="next-steps">Next steps</h4>
-<ul>
-  <li><a href="/guides/v2.0/install-gde/docker/docker-ref.html">DevBox (Beta) reference</a></li>
-  <li><a href="/guides/v2.0/install-gde/docker/docker-trouble.html">Troubleshoot issues with Magento DevBox</a></li>
-</ul>
-
 
 		</div>
 		<!-- /.content-wrap -->
@@ -636,14 +713,14 @@
 
 			
 			 <div class="github-link">
-				 <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/install-gde/docker/docker-over.md" target="_blank">
+				 <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/install-gde/docker/docker-phpstorm-prereq.md" target="_blank">
 					 Edit this page on GitHub
 				 </a>
 			 </div>
 			
 
 			<div class="new-issue">
-				<a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.0/install-gde/docker/docker-over.html" target="_blank">Give us feedback</a>
+				<a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.0/install-gde/docker/docker-phpstorm-prereq.html" target="_blank">Give us feedback</a>
 			</div>
 
 		</div>

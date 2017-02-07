@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Troubleshoot issues with Magento DevBox</title>
+	<title>PhpStorm prerequisites</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.1/install-gde/docker/docker-trouble.html">
+	<link rel="canonical" href="//guides/v2.1/install-gde/docker/docker-phpstorm-prereq.html">
 
   <script>
     var baseUrl = "/";
@@ -49,9 +49,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/install-gde/docker/docker-trouble.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/install-gde/docker/docker-phpstorm-prereq.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/install-gde/docker/docker-trouble.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/install-gde/docker/docker-phpstorm-prereq.html">Magento 2.1</a></li>
 	
   </ul>
 
@@ -395,7 +395,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/install-gde/docker/docker-phpstorm-prereq.html">PhpStorm prerequisites</a></li>
+									<li class="level-2  active "><a href="/guides/v2.1/install-gde/docker/docker-phpstorm-prereq.html">PhpStorm prerequisites</a></li>
 
 									
 
@@ -443,7 +443,7 @@
 
 
 								
-									<li class="level1  active "><a class="nav-header" href="/guides/v2.1/install-gde/docker/docker-trouble.html">Troubleshoot issues with Magento DevBox</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/install-gde/docker/docker-trouble.html">Troubleshoot issues with Magento DevBox</a></li>
 									
 								
 
@@ -607,7 +607,7 @@
       
 
       <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
-        <span property="name">Troubleshoot issues with Magento DevBox</span>
+        <span property="name">PhpStorm prerequisites</span>
         <meta property="position" content="2" />
       </li>
 
@@ -619,132 +619,116 @@
 
 
 	
-	<h1 class="page-heading">Troubleshoot issues with Magento DevBox</h1>
+	<h1 class="page-heading">PhpStorm prerequisites</h1>
 
   
 
 
 </section>
 
-			<p>This topic discusses suggested solutions to issues you might counter when installing or using Magento DevBox.</p>
+			<p>This topic discusses tasks you must perform before you can use PhPStorm with DevBox.</p>
 
-<div class="collapsible collapsible-h2"><h2 class="collapsible-title">Problem: Cannot install Magento </h2><div class="collapsible-content"><p>The following error message might display:</p>
+<h2 id="find-a-service-port">Find a service port</h2>
+<p>DevBox randomly assigns ports to services every time a container starts. To use DevBox with PhPStorm, you must know some of these ports (especially the SSH and the web server listen ports).</p>
 
-<pre><code>Project directory ./ is not empty
+<h3 id="devbox-phpstorm-ssh-find">Determine a listen port</h3>
+<p>To determine a listen port:</p>
+
+<p>In a command window, find your container identifiers:</p>
+
+<pre><code>docker-compose ps
 </code></pre>
 
-<p>The preceding error means that the directory into which you’re trying to install the Magento software isn’t empty. To verify which directory is the cause of the error, open <code>docker-compose.yml</code>. The directory name is specified as follows:</p>
+<p>The command displays the listen ports. An example follows:</p>
 
-<pre><code>volumes:
-   - "Users/me/somepath:/home/magento2/magento2"
-</code></pre>
+<div>
 
-<p>In this case, delete everything from <code>Users/me/somepath</code></p>
+  <pre class="no-copy">
+docker-compose ps
 
-<p><em>Solution</em>: Make sure all files, including all hidden files, are removed from that directory and try again.</p>
-</div></div>
+                         Name                                        Command               State                                                 Ports                                              
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+magento2devbox_db_709831d587f2feef1e27fa41d4e70219        docker-entrypoint.sh mysqld      Up      0.0.0.0:32780-&gt;3306/tcp                                                                          
+magento2devbox_elastic_709831d587f2feef1e27fa41d4e70219   /docker-entrypoint.sh elas ...   Up      0.0.0.0:32777-&gt;9200/tcp, 9300/tcp                                                                
+magento2devbox_rabbit_709831d587f2feef1e27fa41d4e70219    docker-entrypoint.sh rabbi ...   Up      15671/tcp, 0.0.0.0:32778-&gt;15672/tcp, 25672/tcp, 4369/tcp, 5671/tcp, 0.0.0.0:32779-&gt;5672/tcp      
+magento2devbox_redis_709831d587f2feef1e27fa41d4e70219     docker-entrypoint.sh redis ...   Up      6379/tcp                                                                                         
+magento2devbox_web_709831d587f2feef1e27fa41d4e70219       /usr/local/bin/entrypoint.sh     Up      22/tcp, 0.0.0.0:22-&gt;32705/tcp, 44100/tcp, 0.0.0.0:32781-&gt;5000/tcp, 0.0.0.0:32782-&gt;80/tcp, 9000/tcp</pre>
 
-<div class="collapsible collapsible-h2"><h2 class="collapsible-title">Problem: Error displays in the Magento Admin </h2><div class="collapsible-content"><p>After you log in to the Magento Admin, the following notification error might display:</p>
+  <p>In the preceding example:</p>
 
-<pre><code>Your web server is set up incorrectly and allows unauthorized access to sensitive files. Please contact your hosting provider.
-</code></pre>
+  <ul>
+    <li>The database listens on port 32780</li>
+    <li>Elasticsearch listens on ports 32777 and 9300</li>
+    <li>RabbitMQ listens on ports 15671, 32778, 25672, 4369, 5671, and 32779</li>
+    <li>Redis listens on port 6379</li>
+    <li>
+      <p>In the web container, the following ports are used:</p>
 
-<p>This error results from the fact that the Magento application is running in developer mode. The message doesn’t indicate any issues. You can ignore it and develop as normal.</p>
-</div></div>
+      <ul>
+        <li>SSH listens on port 32795</li>
+        <li>Unison synchronization (Windows only) listens on port 32781</li>
+        <li>The web server listens on port 32782</li>
+      </ul>
+    </li>
+  </ul>
 
-<div class="collapsible collapsible-h2"><h2 class="collapsible-title">Problem: 404 error accessing the Magento Admin, storefront is accessible </h2><div class="collapsible-content"><p>When you access the Magento Admin, the following error displays in the browser:</p>
+  <div class="bs-callout bs-callout-info" id="info">
+    <p>You can use any unmapped ports anyway you like. (An example of an unmapped port is port 9000 in the web container in the preceding example.)</p>
+  </div>
 
-<pre><code>The requested URL /admin was not found on this server.
-</code></pre>
+  <h2 id="devbox-ssh-windows">Create an SSH tunnel on Windows</h2>
+  <p>To use Xdebug with Docker on Windows, you must set up an SSH tunnel because Windows doesn’t have a native SSH client.</p>
 
-<p>However, you can access the Magento storefront.</p>
+  <p>The following procedure shows an example of creating an SSH tunnel using <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html" target="_blank">Putty</a>. You can use other applications (such as Cygwin); for more information, consult the documentation provided with those applications.</p>
 
-<p><em>Solution</em>: The most likely cause of this error is missing <code>.htaccess</code> files the Magento application uses for URL redirects and other things. To resolve this error, if you use the Mac OS, see <a href="/guides/v2.1/install-gde/docker/docker-over.html#devbox-download">How to download Magento code</a></p>
-</div></div>
+  <p>To set up an SSH tunnel on Windows using Putty:</p>
 
-<div class="collapsible collapsible-h2"><h2 class="collapsible-title">Problem: Cannot access the Magento storefront or Admin </h2><div class="collapsible-content"><p>If you are having trouble accessing your Magento storefront and Magento Admin, connect to the web container and run some additional commands.</p>
+  <ol>
+    <li>If you haven’t already done so, download <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html" target="_blank">Putty</a>.</li>
+    <li>Start Putty.</li>
+    <li>In the Category pane, click <strong>Session</strong>.</li>
+    <li>
+      <p>Enter the following information:</p>
 
-<ol>
-  <li>
-    <p>Locate the running web container by running the command: <code>docker-compose ps</code></p>
+      <ul>
+        <li><strong>Host Name (or IP address)</strong> field: Enter <code>127.0.0.1</code></li>
+        <li><strong>Port</strong> field: Enter the <a href="/guides/v2.1/install-gde/docker/docker-phpstorm-prereq.html">SSH listen port</a></li>
+      </ul>
 
-    <p>The web container has a name like <code>magento2devbox_web_1</code></p>
-  </li>
-  <li>
-    <p>Connect to the web container using the following command:</p>
+      <p><img src="/common/images/install_docker_putty-session.png" alt="Set up Putty" width="350px" /></p>
+    </li>
+    <li>In the Category pane, click <strong>Connection</strong> &gt; <strong>SSH</strong> &gt; <strong>Tunnels</strong>.</li>
+    <li>
+      <p>Enter the following information:</p>
 
-    <pre><code>docker-compose exec --user=magento2 &lt;service&gt; /bin/bash
-</code></pre>
-  </li>
-  <li>
-    <p>Navigate to the Magento installation and call the compiler by running the following command:</p>
+      <ul>
+        <li><strong>Source port</strong> field: Enter <code>9000</code></li>
+        <li><strong>Destination</strong> field: Enter <code>127.0.0.1:9000</code></li>
+        <li>Click <strong>Remote</strong></li>
+      </ul>
+    </li>
+    <li>
+      <p>Click <strong>Add</strong>.</p>
 
-    <pre><code>cd /var/www/magento2/ &amp;&amp; php bin/magento setup:di:compile
-</code></pre>
-  </li>
-  <li>
-    <p>Optional: After the compiler finishes, run the following command to speed up page loads:</p>
+      <p>The following figure shows an example.</p>
 
-    <pre><code>php bin/magento setup:static-content:deploy
-</code></pre>
-  </li>
-  <li>
-    <p>When you’re finished, enter <code>exit</code>.</p>
-  </li>
-</ol>
-</div></div>
+      <p><img src="/common/images/install_docker_putty-tunnels.png" alt="Create an SSH tunnel in Putty" width="350px" /></p>
+    </li>
+    <li>In the Category pane, click <strong>Session</strong>.</li>
+    <li>In the <strong>Saved Sessions</strong> field, enter a name for this SSH tunnel.</li>
+    <li>
+      <p>Click <strong>Save</strong> as the following figure shows.</p>
 
-<div class="collapsible collapsible-h2"><h2 class="collapsible-title">Problem: Errors display on Windows </h2><div class="collapsible-content"><p>During installation, errors similar to the following display in your primary command window:</p>
+      <p><img src="/common/images/install_docker_putty-session-save.png" alt="Save your SSH tunnel" width="350px" /></p>
+    </li>
+    <li>To test the SSH tunnel, click <strong>Load</strong>, then click <strong>Open</strong>.</li>
+  </ol>
 
-<pre><code>ERROR: for db  Cannot create container for service db: C: drive is not shared. Please share it in Docker for Windows Settings
-ERROR: Encountered errors while bringing up the project.
-</code></pre>
+  <p>If an “unable to connect” error displays, verify all of the preceding information and try again.</p>
 
-<p>Other errors might display in a secondary command window:</p>
-
-<pre><code>Error response from daemon: No such container: magento2devbox_web_7f927cb82fd5dfc7d21b4d02387a0d12
-Error response from daemon: No such container: magento2devbox_web_7f927cb82fd5dfc7d21b4d02387a0d12
-Error: No such container: magento2devbox_web_7f927cb82fd5dfc7d21b4d02387a0d12
-</code></pre>
-
-<p><em>Solution</em>: <a href="/guides/v2.1/install-gde/docker/docker-ref.html#devbox-docker-file-share">Set up file sharing</a>.</p>
-</div></div>
-
-<div class="collapsible collapsible-h2"><h2 class="collapsible-title">Problem: You want to start over </h2><div class="collapsible-content"><p>In the event you want to start over with a new Magento application installation, use the following steps from the directory to which you copied the DevBox scripts:</p>
-
-<ol>
-  <li>
-    <p>List all Magento Docker containers.</p>
-
-    <pre><code>docker-compose ps
-</code></pre>
-  </li>
-  <li>
-    <p>Kill the Magento Docker containers.</p>
-
-    <pre><code>docker rm -fv &lt;service&gt;
-</code></pre>
-  </li>
-  <li>
-    <p>Run one of the following commands:</p>
-
-    <ul>
-      <li>
-        <p>Mac OS</p>
-
-        <pre><code>./m2devbox-init.sh
-</code></pre>
-      </li>
-      <li>
-        <p>Windows</p>
-
-        <pre><code>m2devbox-init.bat
-</code></pre>
-      </li>
-    </ul>
-  </li>
-</ol>
-</div></div>
+  <h4 id="next-step">Next step</h4>
+  <p><a href="/guides/v2.1/install-gde/docker/docker-phpstorm-project.html">Set up your PhPStorm project</a></p>
+</div>
 
 		</div>
 		<!-- /.content-wrap -->
@@ -755,14 +739,14 @@ Error: No such container: magento2devbox_web_7f927cb82fd5dfc7d21b4d02387a0d12
 
 			
 			 <div class="github-link">
-				 <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/install-gde/docker/docker-trouble.md" target="_blank">
+				 <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/install-gde/docker/docker-phpstorm-prereq.md" target="_blank">
 					 Edit this page on GitHub
 				 </a>
 			 </div>
 			
 
 			<div class="new-issue">
-				<a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/install-gde/docker/docker-trouble.html" target="_blank">Give us feedback</a>
+				<a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/install-gde/docker/docker-phpstorm-prereq.html" target="_blank">Give us feedback</a>
 			</div>
 
 		</div>

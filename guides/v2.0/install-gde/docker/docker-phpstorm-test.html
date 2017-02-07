@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>DevBox (Beta) quick installation overview</title>
+	<title>Run PHPUnit</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.0/install-gde/docker/docker-over.html">
+	<link rel="canonical" href="//guides/v2.0/install-gde/docker/docker-phpstorm-test.html">
 
   <script>
     var baseUrl = "/";
@@ -49,9 +49,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/install-gde/docker/docker-over.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/install-gde/docker/docker-phpstorm-test.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/install-gde/docker/docker-over.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/install-gde/docker/docker-phpstorm-test.html">Magento 2.1</a></li>
 	
   </ul>
 
@@ -324,7 +324,7 @@
 
 
 								
-									<li class="level1  active "><a class="nav-header" href="/guides/v2.0/install-gde/docker/docker-over.html">DevBox (Beta) quick installation overview</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/docker/docker-over.html">DevBox (Beta) quick installation overview</a></li>
 									
 								
 
@@ -405,7 +405,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/install-gde/docker/docker-phpstorm-test.html">Run PHPUnit</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/install-gde/docker/docker-phpstorm-test.html">Run PHPUnit</a></li>
 
 									
 
@@ -581,7 +581,7 @@
       
 
       <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
-        <span property="name">DevBox (Beta) quick installation overview</span>
+        <span property="name">Run PHPUnit</span>
         <meta property="position" content="2" />
       </li>
 
@@ -593,39 +593,152 @@
 
 
 	
-	<h1 class="page-heading">DevBox (Beta) quick installation overview</h1>
+	<h1 class="page-heading">Run PHPUnit</h1>
 
   
 
 
 </section>
 
-			<p>The Magento DevBox is the simplest way yet to install a Magento development system. DevBox puts the Magento application in a <a href="https://www.docker.com" target="_blank">Docker</a> container but all <em>you</em> have to do to set it up is run a script. No more installing an operating system, web server, PHP, and so on.</p>
+			<p>This topic discusses how to run PHPUnit tests from the command line or from PhPStorm. For demonstration purposes, this topic discusses how to test Magento modules. Typically, you’ll test your own modules; replace the paths shown in the examples with the paths to your test files.</p>
 
-<p>DevBox is primarily intended for developers but anyone can use it, whether you’re a Magento newbie or just want to check out the Magento application. You should <em>not</em> use Magento DevBox in production.</p>
+<div>
 
-<p>Magento’s DevBox installation is a step-by-step wizard that enables you to download a personalized script that sets up Magento DevBox on your machine. The script either installs the Magento software in a Docker container or creates a shared file system between existing Magento code and a Docker container.</p>
+  <div class="bs-callout bs-callout-info">
+    <p>PhPStorm notes:</p>
 
-<p>A new installation or using an existing Magento installation takes about 15 minutes.</p>
+    <ul>
+      <li>The instructions in this topic are based on PhPStorm version 2016.3.2. If you use a different version, some steps might be different. Consult your PhPStorm documentation for details.</li>
+      <li>
+        <p>PhPStorm has a commonly used window that has a different name in Windows and Mac OS:</p>
 
-<p>Optional sample data takes a few additional minutes.</p>
+        <ul>
+          <li>Windows: The window is named Settings and you access it by clicking <strong>File</strong> &gt; <strong>Settings</strong>.</li>
+          <li>Mac OS: The window is named Preferences and you access it by clicking <strong>PhPStorm</strong> &gt; <strong>Preferences</strong>.</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
 
-<h2 id="get-magento-devbox-now">Get Magento DevBox now</h2>
-<p>To get Magento DevBox now, go to the <a href="https://magento.com/tech-resources/download" target="_blank">Magento download page</a>.</p>
+  <h2 id="prerequisites">Prerequisites</h2>
+  <p>Before you begin, make sure you have completed all of the following tasks:</p>
 
-<div class="bs-callout bs-callout-info" id="info">
   <ul>
-    <li>Magento DevBox should be used in development only. (You should <em>not</em> use it in production.)</li>
-    <li>Magento DevBox is Beta software. Report any issues on the <a href="https://github.com/magento/magento2devbox-web/issues" target="_blank">DevBox GitHub repository</a>.</li>
+    <li><a href="/guides/v2.0/install-gde/docker/docker-phpstorm-prereq.html">PhPStorm prerequisites</a></li>
+    <li><a href="/guides/v2.0/install-gde/docker/docker-phpstorm-project.html">Set up your PhPStorm project</a></li>
   </ul>
+
+  <div class="bs-callout bs-callout-info">
+    <p>The instructions in this topic are based on PhPStorm version 2016.3.2. If you use a different version, some steps might be different. Consult your PhPStorm documentation for details.</p>
+  </div>
+
+  <h2 id="run-unit-tests-from-the-command-line">Run unit tests from the command line</h2>
+  <p>To run PHPUnit unit tests from the command line:</p>
+
+  <ol>
+    <li>
+      <p>Enter the following command to run a Bash shell in the web container.</p>
+
+      <pre><code>docker-compose exec --user=magento2 web /bin/bash
+</code></pre>
+    </li>
+    <li>
+      <p>In the Bash shell, change to the directory containing the objects to test.</p>
+
+      <p>For example, to run tests for the Admin notification module, change to the following directory:</p>
+
+      <pre><code>cd /var/www/magento2/vendor/magento/module-admin-notification/Test/Unit
+</code></pre>
+    </li>
+    <li>
+      <p>Run PHPUnit as follows:</p>
+
+      <pre><code>&lt;path to phpunit&gt; -c &lt;path to phpunit.xml&gt; .
+</code></pre>
+
+      <p>For example,</p>
+
+      <pre><code>/var/www/magento2/vendor/bin/phpunit -c /var/www/magento2/dev/tests/unit/phpunit.xml .
+</code></pre>
+
+      <p>Notes:</p>
+
+      <ul>
+        <li>To run a single test, replace <code>.</code> with the name of the PHP file that defines the tests to run.</li>
+        <li>If there is no <code>phpunit.xml</code>, use <code>phpunit.xml.dist</code> instead.</li>
+      </ul>
+    </li>
+  </ol>
+
+  <h2 id="run-integration-tests-from-the-command-line">Run integration tests from the command line</h2>
+  <p>To run PHPUnit integration tests from the command line:</p>
+
+  <ol>
+    <li>
+      <p>Enter the following command to run a Bash shell in the web container.</p>
+
+      <pre><code>docker-compose exec --user=magento2 web /bin/bash
+</code></pre>
+    </li>
+    <li>
+      <p>In the Bash shell, change to the following directory:</p>
+
+      <pre><code>cd /var/www/magento2/vendor/bin/phpunit 
+</code></pre>
+    </li>
+    <li>
+      <p>Following is a sample command to run a test suite:</p>
+
+      <pre><code>/var/www/magento2/vendor/bin/phpunit /var/www/magento2/dev/tests/integration/testsuite/Magento/Integration/Model/Config/Integration
+</code></pre>
+
+      <p>If there is no <code>phpunit.xml</code>, use <code>phpunit.xml.dist</code> instead.</p>
+    </li>
+  </ol>
+
+  <h2 id="run-phpunit-tests-from-phpstorm">Run PHPUnit tests from PhPStorm</h2>
+  <p>This section discusses one way to run PHPUnit tests in PhPStorm. For more information about defining tests, consult the PhPStorm documentation.</p>
+
+  <h3 id="set-up-and-run-a-test">Set up and run a test</h3>
+  <p>To run PHPUnit tests from PhpStorm:</p>
+
+  <ol>
+    <li>Open your DevBox PhPStorm project.</li>
+    <li>
+      <p>Expand the files in the left pane until you locate a test to run.</p>
+
+      <p>Tests are located in <code>&lt;DevBox root folder&gt;/vendor/&lt;module vendor&gt;/&lt;module name&gt;/Test/Unit</code></p>
+    </li>
+    <li>Right-click the name of the test.</li>
+    <li>
+      <p>From the pop-up menu, click <strong>Run &lt;test name&gt;</strong>.</p>
+
+      <p>For example, the following figure shows how to run the SearchDataTest.</p>
+
+      <p><img src="/common/images/install_docker_php-storm_unit-searchdata.png" alt="Run a sample unit test" /></p>
+    </li>
+  </ol>
+
+  <p>Test results are displayed in the right pane. If errors display, see the next section.</p>
+
+  <h3 id="troubleshoot-unit-tests">Troubleshoot unit tests</h3>
+  <p>If your remote CLI interpreter or Xdebug options aren’t set up properly, the following messages are displayed:</p>
+
+  <pre><code>ssh://magento2@127.0.0.1:32795/usr/local/bin/php -dxdebug.remote_host=127.0.0.1 /home/magento2/.phpstorm_helpers/phpunit.php --no-configuration Magento\\AdvancedSearch\\Test\\Unit\\Block\\SearchDataTest /var/www/magento2/vendor/magento/module-advanced-search/Test/Unit/Block/SearchDataTest.php
+Testing started at 6:13 PM ...
+
+Process finished with exit code 1
+Cannot find PHPUnit in include path (.:/usr/local/lib/php)
+</code></pre>
+
+  <p>To resolve this issue, make sure you set up your remote CLI interpreter as discussed in <a href="/guides/v2.0/install-gde/docker/docker-phpstorm-project.html#devbox-phpunit-setup">Set up PHPUnit</a>.</p>
+
+  <p>Also make sure Xdebug configuration options are set properly as discussed in <a href="/guides/v2.0/install-gde/docker/docker-phpstorm-project.html#devbox-xdebug-remote">Create the Xdebug remote host</a>.</p>
+
+  <h4 id="next-step">Next step</h4>
+
+  <p><a href="/guides/v2.0/install-gde/docker/docker-phpstorm-debug.html">Debug in PhPStorm and browser</a></p>
 </div>
-
-<h4 id="next-steps">Next steps</h4>
-<ul>
-  <li><a href="/guides/v2.0/install-gde/docker/docker-ref.html">DevBox (Beta) reference</a></li>
-  <li><a href="/guides/v2.0/install-gde/docker/docker-trouble.html">Troubleshoot issues with Magento DevBox</a></li>
-</ul>
-
 
 		</div>
 		<!-- /.content-wrap -->
@@ -636,14 +749,14 @@
 
 			
 			 <div class="github-link">
-				 <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/install-gde/docker/docker-over.md" target="_blank">
+				 <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/install-gde/docker/docker-phpstorm-test.md" target="_blank">
 					 Edit this page on GitHub
 				 </a>
 			 </div>
 			
 
 			<div class="new-issue">
-				<a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.0/install-gde/docker/docker-over.html" target="_blank">Give us feedback</a>
+				<a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.0/install-gde/docker/docker-phpstorm-test.html" target="_blank">Give us feedback</a>
 			</div>
 
 		</div>

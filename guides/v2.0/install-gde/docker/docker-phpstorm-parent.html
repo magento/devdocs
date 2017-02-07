@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>DevBox (Beta) quick installation overview</title>
+	<title>Debug and test using PhpStorm</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.0/install-gde/docker/docker-over.html">
+	<link rel="canonical" href="//guides/v2.0/install-gde/docker/docker-phpstorm-parent.html">
 
   <script>
     var baseUrl = "/";
@@ -49,9 +49,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/install-gde/docker/docker-over.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/install-gde/docker/docker-phpstorm-parent.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/install-gde/docker/docker-over.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/install-gde/docker/docker-phpstorm-parent.html">Magento 2.1</a></li>
 	
   </ul>
 
@@ -324,7 +324,7 @@
 
 
 								
-									<li class="level1  active "><a class="nav-header" href="/guides/v2.0/install-gde/docker/docker-over.html">DevBox (Beta) quick installation overview</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/docker/docker-over.html">DevBox (Beta) quick installation overview</a></li>
 									
 								
 
@@ -378,7 +378,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/install-gde/docker/docker-phpstorm-parent.html">Debug and test using PhpStorm</a></li>
+									<li class="level1  active "><a class="nav-header" href="/guides/v2.0/install-gde/docker/docker-phpstorm-parent.html">Debug and test using PhpStorm</a></li>
 									
 								
 
@@ -581,7 +581,7 @@
       
 
       <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
-        <span property="name">DevBox (Beta) quick installation overview</span>
+        <span property="name">Debug and test using PhpStorm</span>
         <meta property="position" content="2" />
       </li>
 
@@ -593,39 +593,26 @@
 
 
 	
-	<h1 class="page-heading">DevBox (Beta) quick installation overview</h1>
+	<h1 class="page-heading">Debug and test using PhpStorm</h1>
 
   
 
 
 </section>
 
-			<p>The Magento DevBox is the simplest way yet to install a Magento development system. DevBox puts the Magento application in a <a href="https://www.docker.com" target="_blank">Docker</a> container but all <em>you</em> have to do to set it up is run a script. No more installing an operating system, web server, PHP, and so on.</p>
+			<p>These topics discuss how to configure Xdebug, PHPUnit, and PhpStorm to test and debug Magento DevBox code:</p>
 
-<p>DevBox is primarily intended for developers but anyone can use it, whether you’re a Magento newbie or just want to check out the Magento application. You should <em>not</em> use Magento DevBox in production.</p>
-
-<p>Magento’s DevBox installation is a step-by-step wizard that enables you to download a personalized script that sets up Magento DevBox on your machine. The script either installs the Magento software in a Docker container or creates a shared file system between existing Magento code and a Docker container.</p>
-
-<p>A new installation or using an existing Magento installation takes about 15 minutes.</p>
-
-<p>Optional sample data takes a few additional minutes.</p>
-
-<h2 id="get-magento-devbox-now">Get Magento DevBox now</h2>
-<p>To get Magento DevBox now, go to the <a href="https://magento.com/tech-resources/download" target="_blank">Magento download page</a>.</p>
-
-<div class="bs-callout bs-callout-info" id="info">
-  <ul>
-    <li>Magento DevBox should be used in development only. (You should <em>not</em> use it in production.)</li>
-    <li>Magento DevBox is Beta software. Report any issues on the <a href="https://github.com/magento/magento2devbox-web/issues" target="_blank">DevBox GitHub repository</a>.</li>
-  </ul>
-</div>
-
-<h4 id="next-steps">Next steps</h4>
 <ul>
-  <li><a href="/guides/v2.0/install-gde/docker/docker-ref.html">DevBox (Beta) reference</a></li>
+  <li><a href="/guides/v2.0/install-gde/docker/docker-phpstorm-prereq.html">PhPStorm prerequisites</a></li>
+  <li><a href="/guides/v2.0/install-gde/docker/docker-phpstorm-project.html">Set up your PhPStorm project</a></li>
+  <li><a href="/guides/v2.0/install-gde/docker/docker-phpstorm-test.html">Run PHPUnit</a></li>
+  <li><a href="/guides/v2.0/install-gde/docker/docker-phpstorm-debug.html">Debug in PhpStorm and browser</a></li>
+  <li><a href="/guides/v2.0/install-gde/docker/docker-commands.html">Common DevBox commands</a></li>
   <li><a href="/guides/v2.0/install-gde/docker/docker-trouble.html">Troubleshoot issues with Magento DevBox</a></li>
 </ul>
 
+<h4 id="see-also">See also</h4>
+<p><a href="/guides/v2.0/install-gde/docker/docker-ref.html">DevBox reference</a></p>
 
 		</div>
 		<!-- /.content-wrap -->
@@ -636,14 +623,14 @@
 
 			
 			 <div class="github-link">
-				 <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/install-gde/docker/docker-over.md" target="_blank">
+				 <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/install-gde/docker/docker-phpstorm-parent.md" target="_blank">
 					 Edit this page on GitHub
 				 </a>
 			 </div>
 			
 
 			<div class="new-issue">
-				<a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.0/install-gde/docker/docker-over.html" target="_blank">Give us feedback</a>
+				<a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.0/install-gde/docker/docker-phpstorm-parent.html" target="_blank">Give us feedback</a>
 			</div>
 
 		</div>

@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Troubleshoot issues with Magento DevBox</title>
+	<title>Debug in PhpStorm and browser</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.1/install-gde/docker/docker-trouble.html">
+	<link rel="canonical" href="//guides/v2.1/install-gde/docker/docker-phpstorm-debug.html">
 
   <script>
     var baseUrl = "/";
@@ -49,9 +49,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/install-gde/docker/docker-trouble.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/install-gde/docker/docker-phpstorm-debug.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/install-gde/docker/docker-trouble.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/install-gde/docker/docker-phpstorm-debug.html">Magento 2.1</a></li>
 	
   </ul>
 
@@ -419,7 +419,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/install-gde/docker/docker-phpstorm-debug.html">Debug in PhpStorm and browser</a></li>
+									<li class="level-2  active "><a href="/guides/v2.1/install-gde/docker/docker-phpstorm-debug.html">Debug in PhpStorm and browser</a></li>
 
 									
 
@@ -443,7 +443,7 @@
 
 
 								
-									<li class="level1  active "><a class="nav-header" href="/guides/v2.1/install-gde/docker/docker-trouble.html">Troubleshoot issues with Magento DevBox</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/install-gde/docker/docker-trouble.html">Troubleshoot issues with Magento DevBox</a></li>
 									
 								
 
@@ -607,7 +607,7 @@
       
 
       <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
-        <span property="name">Troubleshoot issues with Magento DevBox</span>
+        <span property="name">Debug in PhpStorm and browser</span>
         <meta property="position" content="2" />
       </li>
 
@@ -619,132 +619,156 @@
 
 
 	
-	<h1 class="page-heading">Troubleshoot issues with Magento DevBox</h1>
+	<h1 class="page-heading">Debug in PhpStorm and browser</h1>
 
   
 
 
 </section>
 
-			<p>This topic discusses suggested solutions to issues you might counter when installing or using Magento DevBox.</p>
+			<p>This topic discusses how to debug custom code using PhpStorm and the Chrome web browser using Xdebug.</p>
 
-<div class="collapsible collapsible-h2"><h2 class="collapsible-title">Problem: Cannot install Magento </h2><div class="collapsible-content"><p>The following error message might display:</p>
+<div>
 
-<pre><code>Project directory ./ is not empty
-</code></pre>
-
-<p>The preceding error means that the directory into which you’re trying to install the Magento software isn’t empty. To verify which directory is the cause of the error, open <code>docker-compose.yml</code>. The directory name is specified as follows:</p>
-
-<pre><code>volumes:
-   - "Users/me/somepath:/home/magento2/magento2"
-</code></pre>
-
-<p>In this case, delete everything from <code>Users/me/somepath</code></p>
-
-<p><em>Solution</em>: Make sure all files, including all hidden files, are removed from that directory and try again.</p>
-</div></div>
-
-<div class="collapsible collapsible-h2"><h2 class="collapsible-title">Problem: Error displays in the Magento Admin </h2><div class="collapsible-content"><p>After you log in to the Magento Admin, the following notification error might display:</p>
-
-<pre><code>Your web server is set up incorrectly and allows unauthorized access to sensitive files. Please contact your hosting provider.
-</code></pre>
-
-<p>This error results from the fact that the Magento application is running in developer mode. The message doesn’t indicate any issues. You can ignore it and develop as normal.</p>
-</div></div>
-
-<div class="collapsible collapsible-h2"><h2 class="collapsible-title">Problem: 404 error accessing the Magento Admin, storefront is accessible </h2><div class="collapsible-content"><p>When you access the Magento Admin, the following error displays in the browser:</p>
-
-<pre><code>The requested URL /admin was not found on this server.
-</code></pre>
-
-<p>However, you can access the Magento storefront.</p>
-
-<p><em>Solution</em>: The most likely cause of this error is missing <code>.htaccess</code> files the Magento application uses for URL redirects and other things. To resolve this error, if you use the Mac OS, see <a href="/guides/v2.1/install-gde/docker/docker-over.html#devbox-download">How to download Magento code</a></p>
-</div></div>
-
-<div class="collapsible collapsible-h2"><h2 class="collapsible-title">Problem: Cannot access the Magento storefront or Admin </h2><div class="collapsible-content"><p>If you are having trouble accessing your Magento storefront and Magento Admin, connect to the web container and run some additional commands.</p>
-
-<ol>
-  <li>
-    <p>Locate the running web container by running the command: <code>docker-compose ps</code></p>
-
-    <p>The web container has a name like <code>magento2devbox_web_1</code></p>
-  </li>
-  <li>
-    <p>Connect to the web container using the following command:</p>
-
-    <pre><code>docker-compose exec --user=magento2 &lt;service&gt; /bin/bash
-</code></pre>
-  </li>
-  <li>
-    <p>Navigate to the Magento installation and call the compiler by running the following command:</p>
-
-    <pre><code>cd /var/www/magento2/ &amp;&amp; php bin/magento setup:di:compile
-</code></pre>
-  </li>
-  <li>
-    <p>Optional: After the compiler finishes, run the following command to speed up page loads:</p>
-
-    <pre><code>php bin/magento setup:static-content:deploy
-</code></pre>
-  </li>
-  <li>
-    <p>When you’re finished, enter <code>exit</code>.</p>
-  </li>
-</ol>
-</div></div>
-
-<div class="collapsible collapsible-h2"><h2 class="collapsible-title">Problem: Errors display on Windows </h2><div class="collapsible-content"><p>During installation, errors similar to the following display in your primary command window:</p>
-
-<pre><code>ERROR: for db  Cannot create container for service db: C: drive is not shared. Please share it in Docker for Windows Settings
-ERROR: Encountered errors while bringing up the project.
-</code></pre>
-
-<p>Other errors might display in a secondary command window:</p>
-
-<pre><code>Error response from daemon: No such container: magento2devbox_web_7f927cb82fd5dfc7d21b4d02387a0d12
-Error response from daemon: No such container: magento2devbox_web_7f927cb82fd5dfc7d21b4d02387a0d12
-Error: No such container: magento2devbox_web_7f927cb82fd5dfc7d21b4d02387a0d12
-</code></pre>
-
-<p><em>Solution</em>: <a href="/guides/v2.1/install-gde/docker/docker-ref.html#devbox-docker-file-share">Set up file sharing</a>.</p>
-</div></div>
-
-<div class="collapsible collapsible-h2"><h2 class="collapsible-title">Problem: You want to start over </h2><div class="collapsible-content"><p>In the event you want to start over with a new Magento application installation, use the following steps from the directory to which you copied the DevBox scripts:</p>
-
-<ol>
-  <li>
-    <p>List all Magento Docker containers.</p>
-
-    <pre><code>docker-compose ps
-</code></pre>
-  </li>
-  <li>
-    <p>Kill the Magento Docker containers.</p>
-
-    <pre><code>docker rm -fv &lt;service&gt;
-</code></pre>
-  </li>
-  <li>
-    <p>Run one of the following commands:</p>
+  <div class="bs-callout bs-callout-info">
+    <p>PhPStorm notes:</p>
 
     <ul>
+      <li>The instructions in this topic are based on PhPStorm version 2016.3.2. If you use a different version, some steps might be different. Consult your PhPStorm documentation for details.</li>
       <li>
-        <p>Mac OS</p>
+        <p>PhPStorm has a commonly used window that has a different name in Windows and Mac OS:</p>
 
-        <pre><code>./m2devbox-init.sh
-</code></pre>
-      </li>
-      <li>
-        <p>Windows</p>
-
-        <pre><code>m2devbox-init.bat
-</code></pre>
+        <ul>
+          <li>Windows: The window is named Settings and you access it by clicking <strong>File</strong> &gt; <strong>Settings</strong>.</li>
+          <li>Mac OS: The window is named Preferences and you access it by clicking <strong>PhPStorm</strong> &gt; <strong>Preferences</strong>.</li>
+        </ul>
       </li>
     </ul>
-  </li>
-</ol>
-</div></div>
+  </div>
+
+  <h2 id="devbox-xdebug-tunnel">Create an SSH tunnel</h2>
+  <p>Before you run Xdebug, you must create an SSH tunnel to the DevBox container.</p>
+
+  <h3 id="ssh-tunnel-windows">SSH tunnel: Windows</h3>
+  <p>To use an SSH tunnel on Windows:</p>
+
+  <ol>
+    <li>See <a href="/guides/v2.1/install-gde/docker/docker-phpstorm-prereq.html#devbox-ssh-windows">Create an SSH tunnel on Windows</a>.</li>
+    <li>Start Putty.</li>
+    <li>From the <strong>Saved Sessions</strong> list, click the name of your DevBox SSH session and click <strong>Load</strong>.</li>
+    <li>Click <strong>Open</strong>.</li>
+    <li>At the <code>Login as</code> prompt, enter <code>magento2</code></li>
+  </ol>
+
+  <h3 id="ssh-tunnel-mac-os">SSH tunnel: Mac OS</h3>
+  <p>To create an SSH tunnel on Mac OS, open a Terminal window and enter the following command:</p>
+
+  <pre><code>./&lt;DevBox root folder&gt;/m2devbox-debug.sh
+</code></pre>
+
+  <h2 id="debug-code-with-xdebug">Debug code with Xdebug</h2>
+  <p>This section discusses how to debug code using Xdebug using PhPStorm and a web browser. For demonstration purposes, this topic discusses how to test Magento modules. Typically, you’ll test your own code; adjust the procedures as required.</p>
+
+  <h3 id="debug-with-phpstorm-and-xdebug">Debug with PhPStorm and Xdebug</h3>
+  <p>This topic discusses one way to debug code using PhPStorm. For additional information, consult the PhPStorm documentation.</p>
+
+  <p>To debug code with PhPStorm and Xdebug:</p>
+
+  <ol>
+    <li>Create an <a href="#devbox-xdebug-tunnel">SSH tunnel</a> to the DevBox container.</li>
+    <li>Open your DevBox PhPStorm project.</li>
+    <li>In the navigation window, expand the code to reveal a PHP file to test.</li>
+    <li>Double-click the file to open it.</li>
+    <li>
+      <p>In the right pane, in the gray area next to a line number, click to set a breakpoint (<img src="/common/images/install_docker_php-storm_xdebug-breakpoint.png" alt="Set a breakpoint" width="25px" />).</p>
+
+      <p>The following figure shows an example.</p>
+
+      <p><img src="/common/images/install_docker_php-storm_xdebug-breakpoint-set.png" alt="Set a breakpoint in code" width="700px" /></p>
+    </li>
+    <li>
+      <p>In the top navigation bar, click <img src="/common/images/install_docker_php-storm_xdebug-debug.png" alt="Debug" width="25px" /> (<strong>Debug</strong>).</p>
+
+      <p>If the navigation bar doesn’t display, click <strong>View</strong> &gt; <strong>Navigation Bar</strong>.</p>
+
+      <p>You can also right-click the PHP file name in the left pane and, from the pop-up menu, click <strong>Debug</strong>. (If more than one debug option is displayed, click the PHP option <img src="/common/images/install_docker_php-storm_xdebug-flyout.png" alt="Run a PHP Xdebug test" />.</p>
+
+      <p>Results are displayed in the console pane as follows:</p>
+
+      <p><img src="/common/images/install_docker_php-storm_xdebug-success.png" alt="Run an Xdebug test" /></p>
+    </li>
+  </ol>
+
+  <h4 id="troubleshooting">Troubleshooting</h4>
+  <p>This section discusses possible errors and how to solve them.</p>
+
+  <ul>
+    <li>
+      <p><em>Problem</em>: The following error is displayed:</p>
+
+      <pre><code>Connection with 'xdebug 2.5.0' was not established. Validate installation.
+</code></pre>
+
+      <p><em>Solution</em>: Make sure you created an <a href="#devbox-xdebug-tunnel">SSH tunnel</a> to the DevBox container and try again.</p>
+    </li>
+    <li>
+      <p><em>Problem</em>: When you debug a PHP file, a web browser window opens.</p>
+
+      <p><em>Solution</em>:</p>
+
+      <ol>
+        <li>
+          <p>In the PhPStorm toolbar, click <strong>Edit Configurations</strong> from the Run/Edit Configurations button as the following figure shows.</p>
+
+          <p><img src="/common/images/install_docker_php-storm_xdebug-edit-config.png" alt="Edit the run configuration" width="250px" /></p>
+        </li>
+        <li>
+          <p>If there is a JavaScript configuration defined, click its name and delete it as the following figure shows.</p>
+
+          <p><img src="/common/images/install_docker_php-storm_xdebug-js-config.png" alt="Delete JS configuration" width="150px" /></p>
+        </li>
+        <li>
+          <p>Click <strong>OK</strong> and try your test again.</p>
+        </li>
+      </ol>
+    </li>
+  </ul>
+
+  <h2 id="use-xdebug-in-a-browser">Use Xdebug in a browser</h2>
+  <p>This section discusses how to use Xdebug in Chrome using the Xdebug Helper extension. For information about Xdebug tools for other browsers, consult the browser documentation.</p>
+
+  <p>To use Xdebug Helper with Chrome:</p>
+
+  <ol>
+    <li>Create an <a href="#devbox-xdebug-tunnel">SSH tunnel</a> to the DevBox container.</li>
+    <li>Install the <a href="https://chrome.google.com/webstore/detail/xdebug-helper/eadndfjplgieldjbigjakmdgkmoaaaoc?hl=en" target="_blank">Xdebug Helper extension</a> from the Chrome store.</li>
+    <li>
+      <p>Enable the extension in Chrome as shown in the following figure.</p>
+
+      <p><img src="/common/images/install_docker_php-storm_xdebug-chrome.png" alt="Enable the Xdebug extension in Chrome" /></p>
+    </li>
+    <li>Open your DevBox PhpStorm project.</li>
+    <li>
+      <p>In the top navigation bar, click <img src="/common/images/install_docker_php-storm_xdebug-start-listening.png" alt="Start listening for connections" width="25px" />  (<strong>Start listening</strong>).</p>
+
+      <p>If the navigation bar isn’t displayed, click <strong>View</strong> &gt; <strong>Navigation Bar</strong>.</p>
+    </li>
+    <li>In the PhpStorm navigation pane, double-click the PHP file to test.</li>
+    <li>
+      <p>In the right pane, in the gray area next to a line number, click to set a breakpoint (<img src="/common/images/install_docker_php-storm_xdebug-breakpoint.png" alt="Set a breakpoint" width="25px" />).</p>
+
+      <p>For example, you can set a breakpoint in <code>&lt;DevBox root folder&gt;/index.php</code></p>
+    </li>
+    <li>
+      <p>In Chrome, go to a URL that invokes the breakpoint.</p>
+
+      <p>If Chrome is already displaying the URL, click <strong>Refresh</strong> in the Chrome toolbar.</p>
+
+      <p>If the Incoming Connection from Xdebug dialog box displays, select the same file in which you set the breakpoint and click <strong>OK</strong>.</p>
+    </li>
+  </ol>
+
+</div>
 
 		</div>
 		<!-- /.content-wrap -->
@@ -755,14 +779,14 @@ Error: No such container: magento2devbox_web_7f927cb82fd5dfc7d21b4d02387a0d12
 
 			
 			 <div class="github-link">
-				 <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/install-gde/docker/docker-trouble.md" target="_blank">
+				 <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/install-gde/docker/docker-phpstorm-debug.md" target="_blank">
 					 Edit this page on GitHub
 				 </a>
 			 </div>
 			
 
 			<div class="new-issue">
-				<a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/install-gde/docker/docker-trouble.html" target="_blank">Give us feedback</a>
+				<a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/install-gde/docker/docker-phpstorm-debug.html" target="_blank">Give us feedback</a>
 			</div>
 
 		</div>
