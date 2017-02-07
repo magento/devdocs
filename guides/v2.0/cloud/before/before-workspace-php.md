@@ -24,7 +24,7 @@ Before working with your Magento Enterprise Cloud Edition project, make sure you
 		php --ini
 		
 	Use the value of `Loaded Configuration File`.
-2.	Open `php.ini` in a text editor.
+2.	As a user with `root` privileges, open `php.ini` in a text editor.
 3.	Change the value of `memory_limit` to at least `1G` for normal use or at least `2G` for debugging.
 4.	Save your changes to `php.ini` and exit the text editor.
 5.	Restart your web server:
