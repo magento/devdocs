@@ -42,7 +42,6 @@ We address the following functional issues in this release.
 
 <!--- 62647 -->* Magento now successfully saves a product even when you include an empty Custom Options row (**Products > Catalog > Custom Options**). Previously, under these conditions, Magento displayed the `Invalid option value` error message, and did not save the product.  
 
-<!--- 61628 -->* The **Match products by rule** option in the Admin interface now works as expected. 
 
 <!--- 62654 -->* You can now successfully match products by rule with an AND condition on Category Rule. Previously, this operation did not return any matched products.  
 
@@ -64,12 +63,6 @@ We address the following functional issues in this release.
 ### Customer
 
 <!--- 60965 -->* When you add an address, new custom attributes are now displayed together, along with other address details. 
-
-
-
-### Gift card
-
-<!--- 57610 -->* You can now use a gift card to complete payment for an order that contains gift wrap. Previously, when you paid for an order with a gift card, the gift wrap amount remained as a balance, even when the gift card contained sufficient funds to cover the expense of gift wrapping.
 
 
 
@@ -184,8 +177,6 @@ We address the following functional issues in this release.
 <!--- 61241 -->* **Issue**: You encounter an error when you try to install Magento with the `magento/module-cms-sample-data 100.0.5` sample data set: **Error in update!** 
 
 <!--- 62049 -->* **Issue**: Magento does not always display the accurate price for a configurable product when running Magento in an environment that contains multiple store views and websites. 
-
-<!--- 61279 -->* **Issue**: You cannot use Braintree PayPal to successfully complete purchase of a gift card. Instead, your purchase stays in the processing stage.
 
 <!--- 63212 -->* **Issue**: You cannot successfully create and save a dropdown attribute using **Stores > Attributes > Product > Add New Attribute**. **Workaround**: Save the attribute with **values required** set to **no** first, before re-saving it with **values required** set to **yes**.
 
