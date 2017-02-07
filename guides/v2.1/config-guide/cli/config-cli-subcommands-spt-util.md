@@ -60,7 +60,7 @@ where
 
 For example, to create a code backup named `/var/www/html/magento2/var/log/mycodebackup.tar.gz`, enter:
 
-	magento magento support:backup:code --name mycodebackup -o /var/www/html/magento2/var/log
+	magento support:backup:code --name mycodebackup -o /var/www/html/magento2/var/log
 
 After the command completes, provide the code backup to Magento Support.
 

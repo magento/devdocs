@@ -255,17 +255,39 @@ To provide you more control over your Magento installation, we enable you to cho
 
 {% endcollapsibleh2 %}
 
-## After the DevBox wizard completes
+## Run scripts {#devbox-root-dir}
 After you finish the DevBox wizard, you're prompted to download a `.zip` file to any folder on your system. When you extract the `.zip` file, your operating system might create another folder.
 
-A Windows example follows:
+In the following example, the user downloaded `build-18c4e4d3c5a541f37e9cffd35f1bf74e.zip` to a `C:\magento` folder on Windows. Extracting the `.zip` created a subfolder. 
 
     C:\magento\build-18c4e4d3c5a541f37e9cffd35f1bf74e\build-18c4e4d3c5a541f37e9cffd35f1bf74e
 
-In the preceding example, the user downloaded `build-18c4e4d3c5a541f37e9cffd35f1bf74e.zip` to the `C:\magento` folder. Extracting the `.zip` created a subfolder. The installation script you must run is located in the subfolder.
+An equivalent folder on Mac OS follows:
+
+    /Users/me/Downloads/build-18c4e4d3c5a541f37e9cffd35f1bf74e
+
+The preceding sample paths are referred to as the _DevBox root folder_.
+
+To run the scripts, you should open a DOS command prompt (Windows) or Terminal (Mac) window and change to the DevBox root folder.
+
+The following DevBox scripts and configuration files are located in the root folder:
+
+*   `m2devbox-init.[bat|sh]` which starts the DevBox installation.
+*   `m2devbox-reset.[bat|sh]` which restarts the DevBox installation.
+
+    You can run this script, for example, after you stop and start your computer or Docker. DevBox assigns new ports to services; to find the new ports, see [Stop, start, restart, and view port mappings]({{ page.baseurl }}install-gde/docker/docker-commands.html#cloud-docker-cmds-stopstart).
+
+*   `docker-compose.yml` DevBox configuration file.
+
+    To set static listen ports so you don't have to reconfigure PhPStorm every time you start DevBox, see [Set static ports](#devbox-static-port).
+*   _Windows only_: `m2devbox-unison-sync.bat`, which runs Unison file synchronization. You should not run this script by itself; one of the other scripts starts it automatically.
+*   _Mac OS only_: `m2devbox-debug.sh`, which opens an SSH tunnel to the Docker container so PhPStorm can connect to it.
 
 <div class="bs-callout bs-callout-info" markdown="1">
 When you run the installation script on Windows, an additional command window opens for Unison sync. You don't normally need to interact with this command window.
 
 Do not close the Unison sync window; otherwise, files you change won't be added to the Magento docroot.
 </div>
+
+#### Next step
+[PhPStorm prerequisites]({{ page.baseurl }}install-gde/docker/docker-phpstorm-prereq.html)
