@@ -4,7 +4,9 @@ group: release-notes
 subgroup: 02_rel-notes
 title: Magento CE 2.1.3 Release Notes
 menu_title: Magento CE 2.1.3 Release Notes
-menu_order: 9
+menu_order: 169
+level3_menu_node: level3child
+level3_subgroup: ce21-relnotes
 version: 2.1
 github_link: release-notes/ReleaseNotes2.1.3CE.md
 ---

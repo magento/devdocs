@@ -1,7 +1,8 @@
 <div markdown="1">
 
 {% collapsibleh3 Magento CE 2.0 Release Notes %} 
- 
+
+*	[Version 2.0.12]({{page.baseurl}}release-notes/ReleaseNotes2.0.12CE.html){:target="_blank"}
 *	[Version 2.0.11]({{page.baseurl}}release-notes/ReleaseNotes2.0.11CE.html){:target="_blank"}
 *	[Version 2.0.10]({{page.baseurl}}release-notes/ReleaseNotes2.0.10CE.html){:target="_blank"}
 *	[Version 2.0.9]({{page.baseurl}}release-notes/ReleaseNotes2.0.9CE.html){:target="_blank"}
@@ -19,6 +20,8 @@
 
 {% collapsibleh3 Magento EE 2.0 Release Notes %} 
 
+
+*	[Version 2.0.12]({{page.baseurl}}release-notes/ReleaseNotes2.0.12EE.html){:target="_blank"}
 *	[Version 2.0.11]({{page.baseurl}}release-notes/ReleaseNotes2.0.11EE.html){:target="_blank"}
 *	[Version 2.0.10]({{page.baseurl}}release-notes/ReleaseNotes2.0.10EE.html){:target="_blank"}
 *	[Version 2.0.9]({{page.baseurl}}release-notes/ReleaseNotes2.0.9EE.html){:target="_blank"}
