@@ -16,6 +16,7 @@ github_link: release-notes/ReleaseNotes2.1.4EE.md
 We are pleased to present Magento Enterprise Edition 2.1.4. This release includes many functional fixes and enhancements, plus one important security fix.
 
 
+Looking for the <a href="http://devdocs.magento.com/guides/v2.0/cloud/release-notes/CloudReleaseNotes2.1.4.html" target="_blank">Magento Enterprise Cloud Edition 2.1.4 and 2.0.12 Release Notes</a>?
 
 ## Highlights
 
