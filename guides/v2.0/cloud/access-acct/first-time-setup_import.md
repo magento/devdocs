@@ -4,10 +4,8 @@ group: cloud
 subgroup: 08_setup
 title: Import an existing Magento project
 menu_title: Import an existing Magento project
-menu_order: 52
+menu_order: 60
 menu_node: 
-level3_menu_node: level3child
-level3_subgroup: newproj
 version: 2.0
 github_link: cloud/access-acct/first-time-setup_import.md
 ---

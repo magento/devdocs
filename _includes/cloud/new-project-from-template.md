@@ -29,4 +29,6 @@ To access your project for the first time:
 	The following figure shows an example. 
 
 	![You can now visit your site or configure your project]({{ site.baseurl }}common/images/cloud_project-options.png){:width="650px"}
+
+	You can now visit your site or configure your project.
   
