@@ -2,21 +2,6 @@
 layout: default
 group: cloud
 subgroup: 08_setup
-title: Step 5, set up authentication keys
-menu_title: Step 5, set up authentication keys
-menu_node: 65
-level3_menu_node: level3child
-level3_subgroup: setupenv
-version: 2.0
-github_link: cloud/before/before-setup-env-keys.md
----
-
-<p id="setenv-keys">{% collapsibleh2 Step 6: Add your local authentication keys %}
-
----
-layout: default
-group: cloud
-subgroup: 08_setup
 title: Step 6, Set file system permissions and ownership
 menu_title: Step 6, Set file system permissions and ownership
 menu_node: 66
