@@ -14,7 +14,7 @@ github_link: cloud/before/before-setup-env-1_get-started.md
 
 {::options syntax_highlighter="rouge" /}
 
-This topic discusses how to get started developing on Magento Enterprise Cloud Edition. All developers should perform the tasks discussed in this topic.
+The topics in this section discuss how to get started developing on Magento Enterprise Cloud Edition. All developers should perform the tasks discussed in these topics.
 
 ## Set up SSH {#setup-env-setup}
 This is a one-time setup that was covered previously in this guide; skip this section if you've already enabled SSH.

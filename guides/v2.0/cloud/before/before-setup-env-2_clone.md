@@ -14,10 +14,7 @@ github_link: cloud/before/before-setup-env-2_clone.md
 
 {::options syntax_highlighter="rouge" /}
 
-This topic discusses how to get started developing on Magento Enterprise Cloud Edition. All developers should perform the tasks discussed in this topic.
-
-## Clone the master environment {#setup-env-setup}
-To clone the master environment:
+To clone the project's `master` environment:
 
 1.	Log in to your local development machine as, or switch to, the [Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html).
 2.  Change to the web server or virtual host docroot.
@@ -78,23 +75,22 @@ If you're not sure whether or not the master branch has been configured, enter t
 
 	The simplest way to do that is to use the environment routes that display when you redeploy the `master` branch. An example follows:
 
-				Waiting for the activity ksvciptnzxfto (Steve Johnson added variable ADMIN_URL):
-						Building application 'mymagento' (runtime type: php:7.0, tree: 07263ba)
-						Slug already built for this tree id, skipping.
+	<pre class="no-copy">Waiting for the activity ksvciptnzxfto (Steve Johnson added variable ADMIN_URL):
+		Building application 'mymagento' (runtime type: php:7.0, tree: 07263ba)
+		Slug already built for this tree id, skipping.
 
-				Re-deploying environment k4wtvm7ogzr5s-master.
-				Environment configuration:
-						mymagento (type: php:7.0, size: S, disk: 2048)
-						mysql (type: mysql:10.0, size: S, disk: 2048)
-						redis (type: redis:3.0, size: S)
-						solr (type: solr:4.10, size: S, disk: 1024)
+		Re-deploying environment k4wtvm7ogzr5s-master.
+		Environment configuration:
+			mymagento (type: php:7.0, size: S, disk: 2048)
+			mysql (type: mysql:10.0, size: S, disk: 2048)
+			redis (type: redis:3.0, size: S)
+			solr (type: solr:4.10, size: S, disk: 1024)
 
-				Environment routes:
-						http://master-k4wtvm7ogzr5s.us.magentosite.cloud/ is served by application `mymagento`
-						https://master-k4wtvm7ogzr5s.us.magentosite.cloud/ is served by application `mymagento`
+		Environment routes:
+			http://master-k4wtvm7ogzr5s.us.magentosite.cloud/ is served by application `mymagento`
+			https://master-k4wtvm7ogzr5s.us.magentosite.cloud/ is served by application `mymagento`
 
 		In the preceding example, go to `http://master-k4wtvm7ogzr5s.us.magentosite.cloud/magento_A8v10` and log in using the user name `meister_x2U8` and password `admin_A456`
 
-
 #### Next step
-[Step 3, set up cron]({{ page.baseurl }}cloud/before/before-setup-env-cron.html)
+[Step 3, Set up cron]({{ page.baseurl }}cloud/before/before-setup-env-cron.html)

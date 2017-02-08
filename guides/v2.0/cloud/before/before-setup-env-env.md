@@ -21,16 +21,16 @@ After you create the branch, update project dependencies so you can install the 
 
 1.	Do any of the following:
 
-		*   To create a new environment, enter the following command:
+	*   To create a new environment, enter the following command:
 
-				magento-cloud environment:branch <environment name> <parent environment ID>
-		*   To check out an existing environment, enter the following command:
+			magento-cloud environment:branch <environment name> <parent environment ID>
+	*   To check out an existing environment, enter the following command:
 
-				magento-cloud environment:checkout
+			magento-cloud environment:checkout
 
-		For example, to create a new branch named `sprint1` from master, enter
+	For example, to create a new branch named `sprint1` from master, enter
 
-				magento-cloud environment:branch sprint1 master
+			magento-cloud environment:branch sprint1 master
 
 3.	After the command completes, update dependencies:
 
