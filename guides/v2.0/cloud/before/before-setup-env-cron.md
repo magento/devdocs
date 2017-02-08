@@ -2,8 +2,8 @@
 layout: default
 group: cloud
 subgroup: 08_setup
-title: Step 3, set up cron
-menu_title: Step 3, set up cron
+title: Step 3, Set up cron
+menu_title: Step 3, Set up cron
 menu_order: 63
 menu_node: 
 level3_menu_node: level3child
