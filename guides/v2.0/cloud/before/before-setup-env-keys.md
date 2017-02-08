@@ -2,56 +2,16 @@
 layout: default
 group: cloud
 subgroup: 08_setup
-title: Set up an environment and install the Magento software locally
-menu_title: Set up an environment and install the Magento software locally
-menu_order: 60
+title: Step 5, set up authentication keys
+menu_title: Step 5, set up authentication keys
 menu_node: 
-level3_menu_node: level3parent
+level3_menu_node: level3child
 level3_subgroup: setupenv
 version: 2.0
-github_link: cloud/before/before-setup-env-parent.md
-redirect_from: 
-  - /guides/v2.0/cloud/access-acct/set-up-env.html
-  - /guides/v2.0/cloud/howtos/environment-tutorial-set-mage-vars.html
-  - /guides/v2.1/cloud/howtos/environment-tutorial-set-mage-vars.html
-  - /guides/v2.0/cloud/env/environment-tutorial-set-mage-vars.html
-  - /guides/v2.1/cloud/env/environment-tutorial-set-mage-vars.html
-  - /guides/v2.0/cloud/access-acct/admin-env-vars.html
-  - /guides/v2.1/cloud/access-acct/admin-env-vars.html
+github_link: cloud/before/before-setup-env-keys.md
 ---
 
 {::options syntax_highlighter="rouge" /}
-
-
-<p id="setenv-new-env">{% collapsibleh2 Step 4: Clone or branch an environment %}
-
-Now that you've change the Magento Admin variables, you should create a new environment for your development work; this new environment inherits the variable values from master.
-
-After you create the branch, update project dependencies so you can install the Magento software locally.
-
-1.	Do any of the following:
-
-		*   To create a new environment, enter the following command:
-
-				magento-cloud environment:branch <environment name> <parent environment ID>
-		*   To check out an existing environment, enter the following command:
-
-				magento-cloud environment:checkout
-
-		For example, to create a new branch named `sprint1` from master, enter
-
-				magento-cloud environment:branch sprint1 master
-
-3.	After the command completes, update dependencies:
-
-		composer --no-ansi --no-interaction install --no-progress --prefer-dist --optimize-autoloader
-4.  Create a [snapshot]({{page.baseurl}}cloud/admin/admin-snap.html) of the environment.
-
-		magento-cloud snapshot:create -e <environment ID>
-
-{% endcollapsibleh2 %}
-
-<p id="setenv-projvar">{% collapsibleh2 Step 5: Set up authentication keys in the project (project administrator) %}
 
 This section discusses how to add authentication keys to the project, which means the keys don't have to be stored in the Git repository. (Developers who need to update Magento dependencies or to install extension need authentication keys locally; this is discussed in the next section.)
 
@@ -98,6 +58,9 @@ To set up authentication keys in the project:
 		git rm auth.json
 		git add -A && git commit -m "Remove auth.json" && git push origin <branch name>
 12.	Wait for the project to build and deploy.
+
+#### Next step
+[]()
 
 {% endcollapsibleh2 %}
 

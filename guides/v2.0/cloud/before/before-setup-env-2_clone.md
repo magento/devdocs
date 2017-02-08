@@ -17,6 +17,7 @@ github_link: cloud/before/before-setup-env-2_clone.md
 This topic discusses how to get started developing on Magento Enterprise Cloud Edition. All developers should perform the tasks discussed in this topic.
 
 ## Clone the master environment {#setup-env-setup}
+To clone the master environment:
 
 1.	Log in to your local development machine as, or switch to, the [Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html).
 2.  Change to the web server or virtual host docroot.
@@ -49,5 +50,52 @@ This topic discusses how to get started developing on Magento Enterprise Cloud E
 
 		git pull origin <environment ID>
 
+## Change the Magento Admin URL, user name, and password
+This section discusses how to change Magento Admin parameters for security reasons. If you change the variables in the `master` branch, you have to do it only once because other environments inherit the variables from `master`.
+
+If your master branch is already configured, skip this section and continue with [Step 3: Clone or branch an environment](#setenv-new-env).
+
+If you're not sure whether or not the master branch has been configured, enter the following command:
+
+		magento-cloud variable:get -e <environment ID>
+
+1.  Set the variable values.
+
+		magento-cloud variable:set <name> <value> -e <environment ID>
+2.  To set the administrator's user name to `meister_x2U8` in the `master` environment, enter:
+
+		magento-cloud variable:set ADMIN_USERNAME meister_x2U8 -e master
+3.  Wait for the project to redeploy.
+2.  To set the administrator's password to `admin_A456`, enter:
+
+		magento-cloud variable:set ADMIN_PASSWORD admin_A456 -e master
+6.  Wait while the project redeploys.
+7.  To set the Admin URI to `magento_A8v10`, enter:
+
+		magento-cloud variable:set ADMIN_URL magento_A8v10 -e master
+6.  Wait while the project redeploys.
+7.  Log in to the Magento Admin using the values you just changed.
+
+	The simplest way to do that is to use the environment routes that display when you redeploy the `master` branch. An example follows:
+
+				Waiting for the activity ksvciptnzxfto (Steve Johnson added variable ADMIN_URL):
+						Building application 'mymagento' (runtime type: php:7.0, tree: 07263ba)
+						Slug already built for this tree id, skipping.
+
+				Re-deploying environment k4wtvm7ogzr5s-master.
+				Environment configuration:
+						mymagento (type: php:7.0, size: S, disk: 2048)
+						mysql (type: mysql:10.0, size: S, disk: 2048)
+						redis (type: redis:3.0, size: S)
+						solr (type: solr:4.10, size: S, disk: 1024)
+
+				Environment routes:
+						http://master-k4wtvm7ogzr5s.us.magentosite.cloud/ is served by application `mymagento`
+						https://master-k4wtvm7ogzr5s.us.magentosite.cloud/ is served by application `mymagento`
+
+		In the preceding example, go to `http://master-k4wtvm7ogzr5s.us.magentosite.cloud/magento_A8v10` and log in using the user name `meister_x2U8` and password `admin_A456`
+
+{% endcollapsibleh2 %}
+
 #### Next step
-[]()
+[Step 3, set up cron]({{ page.baseurl }}cloud/before/before-setup-env-cron.html)
