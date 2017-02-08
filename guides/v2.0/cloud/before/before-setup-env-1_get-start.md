@@ -2,12 +2,14 @@
 layout: default
 group: cloud
 subgroup: 08_setup
-title: Set up an environment and install the Magento software locally
-menu_title: Set up an environment and install the Magento software locally
-menu_order: 60
+title: Step 1, Get started
+menu_title: Step 1, Get started
+menu_order: 61
 menu_node: 
+level3_menu_node: level3child
+level3_subgroup: setupenv
 version: 2.0
-github_link: cloud/access-acct/set-up-env.md
+github_link: cloud/before/before-setup-env-parent.md
 redirect_from: 
   - /guides/v2.0/cloud/access-acct/set-up-env.html
   - /guides/v2.0/cloud/howtos/environment-tutorial-set-mage-vars.html
