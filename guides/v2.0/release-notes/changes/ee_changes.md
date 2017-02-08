@@ -67,8 +67,3 @@ where each change is displayed in a separate row in the table, with the followin
 ## 2.0.0 - 2.0.1
 
 {% include changes/ee/200-201.html %}
-
-<!-- LINK DEFINITIONS -->
-
-[Class]: #class
-[Interface]: #interface

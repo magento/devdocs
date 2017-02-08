@@ -20,10 +20,6 @@ where each change is displayed in a separate row in the table, with the followin
 - **Class** or **Interface** with the name of an affected class or interface
 - **What changed** with the description of a backward incompatible change
 
-## 2.1.4 - develop
-
-{% include changes/ee/214-develop.html %}
-
 ## 2.1.3 - 2.1.4
 
 {% include changes/ee/213-214.html %}
@@ -43,8 +39,3 @@ where each change is displayed in a separate row in the table, with the followin
 ## 2.0.7 - 2.1.0
 
 {% include changes/ee/207-210.html %}
-
-<!-- LINK DEFINITIONS -->
-
-[Class]: #class
-[Interface]: #interface

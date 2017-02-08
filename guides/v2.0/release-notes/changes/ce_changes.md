@@ -67,11 +67,3 @@ where each change is displayed in a separate row in the table, with the followin
 ## 2.0.0 - 2.0.1
 
 {% include changes/ce/200-201.html %}
-
-<!-- LINK DEFINITIONS -->
-
-[Magento CE mainline]: https://github.com/magento/magento2
-[Magento 2.0.0]: https://github.com/magento/magento2/tree/4cae5d058b7ad877b2ec7d2b6fa0a500f7c16860
-
-[Class]: #class
-[Interface]: #interface
