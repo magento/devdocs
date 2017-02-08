@@ -18,8 +18,6 @@ This topic discusses how to get started developing on Magento Enterprise Cloud E
 
 ## Clone the master environment {#setup-env-setup}
 
-{% collapsible To clone a project and environment: %}
-
 1.	Log in to your local development machine as, or switch to, the [Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html).
 2.  Change to the web server or virtual host docroot.
 2.	Log in to your project:
