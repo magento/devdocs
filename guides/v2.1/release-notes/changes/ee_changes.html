@@ -1,0 +1,1736 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Magento EE Backward Incompatible Changes</title>
+	<meta name="description" content="Magento 2 Developer Documentation.
+">
+	<meta http-equiv="last-modified" content="" />
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print" />
+	<link rel="canonical" href="//guides/v2.1/release-notes/changes/ee_changes.html">
+
+  <script>
+    var baseUrl = "/";
+  </script>
+
+	<!-- crazyegg -->
+	<script type="text/javascript">
+	setTimeout(function(){var a=document.createElement("script");
+	var b=document.getElementsByTagName("script")[0];
+	a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0038/0321.js?"+Math.floor(new Date().getTime()/3600000);
+	a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+	</script>
+
+</head>
+<body>
+
+<header class="site-header">
+
+	<nav id="global-nav">
+
+		<div class="menu-btn"><a class="menu-trigger menu-icon" href="#"></a></div>
+
+		<div class="container">
+
+			<a class="logo" href="/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+
+			
+<div class="version-switcher dropdown">
+	<button class="btn dropdown-toggle" data-toggle="dropdown">
+		Magento 2.1
+	</button>
+
+	<ul class="dropdown-menu dropdown-menu-left">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/release-notes/changes/ee_changes.html">Magento 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.1/release-notes/changes/ee_changes.html">Magento 2.1</a></li>
+	
+  </ul>
+
+</div>
+
+
+
+			<!-- Main Navigation -->
+<div class="nav-main">
+  <ul>
+    <li class="first">
+      <a href="#">Setup and Deployment</a>
+        <ul class="menu nav">
+          <li><a href="https://magento.com/tech-resources/download" target="_blank">Get Started with Magento DevBox Beta</a></li>
+            <li><a href="/guides/v2.1/install-gde/bk-install-guide.html">Installation Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.1/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.1/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/cloud/bk-cloud.html">Enterprise Cloud Edition Guide</a></li>
+          <li class="leaf"><a href="/magento-release-information.html">Release Information</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Development</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.1/architecture/bk-architecture.html">Architecture Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          <li><a href="/guides/v2.1/payments-integrations/bk-payments-integrations.html">Payments Integrations</a></li>
+          <li class="leaf"><a href="/guides/v2.1/mrg/intro.html">Module Reference Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.1/extension-dev-guide/staging.html">Staging</a></li>
+          
+          <li class="first leaf"><a href="/guides/v2.1/contributor-guide/contributing.html">Contributor Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Frontend</a>
+        <ul class="menu nav">
+          <li class="first leaf"><a href="/guides/v2.1/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.1/ui_comp_guide/bk-ui_comps.html">UI Components Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.1/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li class="leaf"><a href="/guides/v2.1/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">API</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.1/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li class="leaf"><a href="/guides/v2.1/rest/bk-rest.html">REST API Reference</a></li>
+          <li class="leaf"><a href="/guides/v2.1/soap/bk-soap.html">SOAP API Reference</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Testing</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.1/test/testing.html">Magento Testing Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/mtf/mtf_introduction.html">Functional Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.1/test/integration/integration_test_execution.html">Integration Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.1/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.1/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.1/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+        </ul>
+    </li>
+
+    <li>
+      <a href="/guides/v2.1/howdoi/bk-how-do-i.html">How Tos</a>
+    </li>
+  </ul>
+</div><!-- /.nav-main -->
+
+
+			<div class="search-btn">
+				<a class="search-trigger search-icon" href="/search.html"></a>
+			</div>
+
+			<form class="quick-search" action="/search.html" method="get">
+				<input type="search" name="q" placeholder="Search" />
+				<a href="#" class="quick-search-close">&times;</a>
+			</form>
+
+
+
+
+
+		</div>
+
+	</nav><!-- #global-nav -->
+
+</header>
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- .main-container -->
+	<div class="main-container">
+		<a id="main-content"></a>
+
+
+<div class="container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+<h4>Release Information</h4>
+
+
+
+
+
+
+		<ul>
+
+		
+
+		
+
+				
+
+					
+					
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/release-notes/bk-release-notes.html">2.1.x Release Information</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/release-notes/release-notes.html">Magento 2.1 Release Notes</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+										<li class="level3Parent " id="ce21-relnotes"><a href="#">Magento CE 2.1.x Release Notes</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child ce21-relnotes " data-menunode="ce21-relnotes"><a href="/guides/v2.1/release-notes/ReleaseNotes2.1.4CE.html">Magento CE 2.1.4 Release Notes</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child ce21-relnotes " data-menunode="ce21-relnotes"><a href="/guides/v2.1/release-notes/ReleaseNotes2.1.3CE.html">Magento CE 2.1.3 Release Notes</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child ce21-relnotes " data-menunode="ce21-relnotes"><a href="/guides/v2.1/release-notes/ReleaseNotes2.1.2CE.html">Magento CE 2.1.2 Release Notes</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child ce21-relnotes " data-menunode="ce21-relnotes"><a href="/guides/v2.1/release-notes/ReleaseNotes2.1.1CE.html">Magento CE 2.1.1 Release Notes</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child ce21-relnotes " data-menunode="ce21-relnotes"><a href="/guides/v2.1/release-notes/ReleaseNotes2.1.0CE.html">Magento CE 2.1.0  Release Notes</a>
+
+
+									
+
+								
+
+									
+
+										<li class="level3Parent " id="ee21-relnotes"><a href="#">Magento EE 2.1.x Release Notes</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child ee21-relnotes " data-menunode="ee21-relnotes"><a href="/guides/v2.1/release-notes/ReleaseNotes2.1.4EE.html">Magento EE 2.1.4 Release Notes</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child ee21-relnotes " data-menunode="ee21-relnotes"><a href="/guides/v2.1/release-notes/ReleaseNotes2.1.3EE.html">Magento EE 2.1.3 Release Notes</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child ee21-relnotes " data-menunode="ee21-relnotes"><a href="/guides/v2.1/release-notes/ReleaseNotes2.1.2EE.html">Magento EE 2.1.2 Release Notes</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child ee21-relnotes " data-menunode="ee21-relnotes"><a href="/guides/v2.1/release-notes/ReleaseNotes2.1.1EE.html">Magento EE 2.1.1 Release Notes</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child ee21-relnotes " data-menunode="ee21-relnotes"><a href="/guides/v2.1/release-notes/ReleaseNotes2.1.0EE.html">Magento EE 2.1.0 Release Notes</a>
+
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/release-notes/backward-incompatible-changes-2.1.html">Magento 2.1 backward incompatible changes</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/release-notes/changes/ce_changes.html">Magento CE changes</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2  active "><a href="/guides/v2.1/release-notes/changes/ee_changes.html">Magento EE changes</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/release-notes/tech_bull_parent.html">Magento 2.1 technical bulletins</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/release-notes/tech_bull_tls-repo.html">Transport Layer Security (TLS) 1.1+ requirement for repo.magento.com (June 30, 2016)</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/release-notes/tech_bull_21-upgrade.html">Upgrade to Magento version 2.1 (June 22, 2016)</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/release-notes/thirdparty_parent.html">Third-party licenses</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/release-notes/thirdparty_ce.html">Magento CE third-party licenses</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/release-notes/thirdparty_ee.html">Magento EE third-party licenses</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+  <nav class="breadcrumbs">
+
+    <a class="breadcrumb-item" href="/"><span>Home</span></a>
+
+    <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+    <!-- Iteration breadcrumb item -->
+    
+    
+    
+
+      <!-- Skip if root -->
+      
+
+
+      <!-- Get breadcrumb title. Insert snippet from configuration description to translates breadcrumb if language plugin is installed and YAML subset is set -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
+        <span property="name">Magento EE Backward Incompatible Changes</span>
+        <meta property="position" content="1" />
+      </li>
+
+    
+
+    </ol>
+
+  </nav>
+
+
+	
+	<h1 class="page-heading">Magento EE Backward Incompatible Changes</h1>
+
+  
+
+
+</section>
+
+			<p>This topic provides details about backward incompatible changes made in Magento EE 2.1.</p>
+
+<p>All changes are aggregated into two tables:</p>
+
+<ul>
+  <li>that contains backward incompatible changes made to Magento classes</li>
+  <li>that contains backward incompatible changes made to the Magento interfaces</li>
+</ul>
+
+<p>where each change is displayed in a separate row in the table, with the following columns:</p>
+
+<ul>
+  <li><strong>Class</strong> or <strong>Interface</strong> with the name of an affected class or interface</li>
+  <li><strong>What changed</strong> with the description of a backward incompatible change</li>
+</ul>
+
+<h2 id="section">2.1.3 - 2.1.4</h2>
+
+<h3 id="no-changes-213-214">No changes</h3>
+<p>No backward incompatible changes.</p>
+
+<h2 id="section-1">2.1.2 - 2.1.3</h2>
+
+<h3 id="class-212-213">Changes in classes</h3>
+<table><tbody>
+    <tr>
+        <th>Class</th>
+        <th>What Changed</th>
+    </tr>
+    <tr>
+        <td>Magento\ScalableCheckout\Model\Product\Plugin\RemoveQuoteItems</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\MysqlMq\Setup\InstallData</td>
+        <td>Class was removed.</td>
+    </tr>
+</tbody></table>
+
+<h2 id="section-2">2.1.1 - 2.1.2</h2>
+
+<h3 id="no-changes-211-212">No changes</h3>
+<p>No backward incompatible changes.</p>
+
+<h2 id="section-3">2.1.0 - 2.1.1</h2>
+
+<h3 id="no-changes-210-211">No changes</h3>
+<p>No backward incompatible changes.</p>
+
+<h2 id="section-4">2.0.7 - 2.1.0</h2>
+
+<h3 id="class-207-210">Changes in classes</h3>
+<table><tbody>
+    <tr>
+        <th>Class</th>
+        <th>What Changed</th>
+    </tr>
+    <tr>
+        <td>Magento\Framework\MessageQueue\PublisherFactory</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\MessageQueue\PublisherProxy</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\MessageQueue\Config\Converter</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\MessageQueue\Config\Reader</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\MessageQueue\Config\SchemaLocator</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VisualMerchandiser\Block\Adminhtml\Category\Plugin</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VisualMerchandiser\Block\Adminhtml\Category\Tab\Merchandiser</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VisualMerchandiser\Block\Adminhtml\Category\Tab\Merchandiser\Grid</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VisualMerchandiser\Block\Adminhtml\Category\Tab\Merchandiser\Tile</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Setup\InstallData</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Observer\Backend\AdminUserDeleteAfterObserver</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Observer\Backend\PrepareFormObserver</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Observer\Backend\RemoveVersionCallback</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Model\Config</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Model\Increment</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Model\Source\Versioning</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Model\ResourceModel\Page\Revision</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Model\ResourceModel\Page\Version</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Model\ResourceModel\Page\Version\Collection</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Model\ResourceModel\Page\Revision\Collection</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Model\ResourceModel\Page\Collection\AbstractCollection</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Model\Plugin\CmsPage</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Model\Page\Revision</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Model\Page\RevisionManagement</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Model\Page\RevisionProvider</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Model\Page\RevisionRepository</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Model\Page\Version</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Model\Page\VersionRepository</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Controller\Page\Revision\Drop</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Controller\Adminhtml\Cms\Page\MassDeleteVersions</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Controller\Adminhtml\Cms\Page\Versions</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Controller\Adminhtml\Cms\Page\Version\Delete</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Controller\Adminhtml\Cms\Page\Version\Edit</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Controller\Adminhtml\Cms\Page\Version\MassDeleteRevisions</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Controller\Adminhtml\Cms\Page\Version\MassDeleteVersions</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Controller\Adminhtml\Cms\Page\Version\NewAction</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Controller\Adminhtml\Cms\Page\Version\Revisions</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Controller\Adminhtml\Cms\Page\Version\Save</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Controller\Adminhtml\Cms\Page\Version\VersionProvider</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Controller\Adminhtml\Cms\Page\Version\Versions</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Controller\Adminhtml\Cms\Page\Revision\Delete</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Controller\Adminhtml\Cms\Page\Revision\Edit</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Controller\Adminhtml\Cms\Page\Revision\MassDeleteVersions</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Controller\Adminhtml\Cms\Page\Revision\NewAction</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Controller\Adminhtml\Cms\Page\Revision\Preview</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Controller\Adminhtml\Cms\Page\Revision\Publish</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Controller\Adminhtml\Cms\Page\Revision\Save</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Controller\Adminhtml\Cms\Page\Revision\Versions</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Block\Adminhtml\Cms\Page</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Block\Adminhtml\Cms\Page\Edit</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Block\Adminhtml\Cms\Page\Version\Edit</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Block\Adminhtml\Cms\Page\Version\Edit\Form</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Block\Adminhtml\Cms\Page\Version\Edit\Revisions</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Block\Adminhtml\Cms\Page\Revision\Edit</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Block\Adminhtml\Cms\Page\Revision\Edit\Form</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Block\Adminhtml\Cms\Page\Revision\Edit\Info</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Block\Adminhtml\Cms\Page\Revision\Edit\Tabs</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Block\Adminhtml\Cms\Page\Revision\Edit\Tab\Content</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Block\Adminhtml\Cms\Page\Revision\Edit\Tab\Design</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Block\Adminhtml\Cms\Page\Revision\Edit\Tab\Meta</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Block\Adminhtml\Cms\Page\Preview\Buttons</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Block\Adminhtml\Cms\Page\Preview\Form</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Block\Adminhtml\Cms\Page\Preview\Revision</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Block\Adminhtml\Cms\Page\Edit\Tab\Versions</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\App\Preview</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\App\FrontController\AdminSessionPlugin</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\App\Action\Plugin\Design</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Solr\Model\ResourceModel\Index</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Solr\Model\Indexer\Fulltext\Plugin\CustomerGroup</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Solr\Model\Client\SolariumFactory</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Solr\Controller\Adminhtml\Search\System\Config\TestConnection\Ping</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reward\Observer\PrepareSalesruleForm</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reward\Observer\SaveRewardNotifications</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\PromotionPermissions\Block\Adminhtml\Promo\Quote\Edit\Plugin</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\PromotionPermissions\Block\Adminhtml\Promo\Catalog\Edit\Plugin</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\PricePermissions\Observer\AdminhtmlCatalogProductEditPrepareFormObserver</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\PersistentHistory\Observer\SkipWebsiteRestrictionObserver</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\GoogleTagManager\Block\Plugin\Checkout\Cart\Sidebar</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogPermissions\Model\Indexer\Plugin\IndexerState</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogPermissions\Model\Adminhtml\AddPermissionTabOnCategoryEditPageObserver</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogEvent\Block\Adminhtml\Catalog\Category\Edit\Buttons</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Banner\Block\Adminhtml\Permission\Monitor</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Amqp\Setup\InstallData</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\MessageQueue\BatchConsumer::configure</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\MessageQueue\BatchConsumer::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\MessageQueue\Consumer::configure</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\MessageQueue\Consumer::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\MessageQueue\ConsumerConfiguration::getCallback</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\MessageQueue\ConsumerConfiguration::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\MessageQueue\ConsumerConfiguration::CALLBACK</td>
+        <td>Constant has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\MessageQueue\ConsumerFactory::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\MessageQueue\MessageEncoder::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\MessageQueue\Publisher::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\MessageQueue\Config\Data::getExchangeByTopic</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\MessageQueue\Config\Data::getQueuesByTopic</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\MessageQueue\Config\Data::getConnectionByTopic</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\MessageQueue\Config\Data::getConnectionByConsumer</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\MessageQueue\Config\Data::getMessageSchemaType</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\MessageQueue\Config\Data::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VisualMerchandiser\Controller\Adminhtml\Products\MassAssign::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Observer\Backend\CmsPageSaveAfterObserver::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Observer\Backend\CmsPageSaveBeforeObserver::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Model\Logging::postDispatchCmsRevisionPreview</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Model\Logging::postDispatchCmsRevisionPublish</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Model\ResourceModel\Hierarchy\Node::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Model\ResourceModel\Hierarchy\Node\Collection::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Controller\Adminhtml\Cms\Page\Edit::__construct</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Controller\Adminhtml\Cms\Page\Edit::execute</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Support\Model\Report::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Support\Model\Report\DataProvider::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Support\Model\Report\Group\Data\AbstractDataGroup::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Support\Controller\Adminhtml\Backup\Download::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Solr\SearchAdapter\ConnectionManager::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Solr\Model\Indexer\IndexerHandler::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Solr\Model\Adapter\AbstractAdapter::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Solr\Model\Adapter\FieldMapper::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Solr\Helper\Data::isThirdPartyEngineAvailable</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\ResourceConnections\DB\ConnectionAdapter\Mysql::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\ResourceConnections\DB\ConnectionAdapter\Mysql\Builder::build</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\ResourceConnections\DB\Adapter\Pdo\MysqlProxy::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reminder\Controller\Adminhtml\Reminder::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\PersistentHistory\Model\CustomerEmulator::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\PersistentHistory\Model\Observer::emulateCompareProductsBlock</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\PersistentHistory\Model\Observer::initReorderSidebar</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\MysqlMq\Setup\InstallData::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\MysqlMq\Model\Driver\Exchange::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\MysqlMq\Model\Driver\Queue::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\MultipleWishlist\Controller\Index\Add::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\MultipleWishlist\Controller\Index\Copyitem::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\MultipleWishlist\Controller\Index\Copyitems::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\MultipleWishlist\Controller\Index\Deletewishlist::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\MultipleWishlist\Controller\Index\Editwishlist::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\MultipleWishlist\Controller\Index\Moveitem::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\MultipleWishlist\Controller\Index\Moveitems::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\MessageQueue\Console\ConsumerListCommand::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\MessageQueue\Console\StartConsumerCommand::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftWrapping\Setup\UpgradeData::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftRegistry\Helper\Data::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftCard\Pricing\Price\ConfiguredPrice::getAmount</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftCard\Model\Attribute\Backend\Giftcard\Amount::__construct</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftCard\Model\Attribute\Backend\Giftcard\Amount::afterLoad</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftCard\Model\Attribute\Backend\Giftcard\Amount::afterSave</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftCard\Model\Attribute\Backend\Giftcard\Amount::afterDelete</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\CustomerSegment\Model\Segment\Condition\Segment::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogPermissions\Model\Indexer\AbstractAction::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogPermissions\Model\Indexer\Category\Action\Rows::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogPermissions\Block\Adminhtml\Catalog\Category\Tab\Permissions::canShowTab</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogPermissions\Block\Adminhtml\Catalog\Category\Tab\Permissions::isHidden</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogEvent\Model\ResourceModel\Event::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogEvent\Model\ResourceModel\Event\Collection::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogEvent\Block\Event\AbstractEvent::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogEvent\Block\Event\Lister::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogEvent\Block\Catalog\Product\Event::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogEvent\Block\Catalog\Category\Event::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Amqp\Model\Exchange::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Amqp\Model\Queue::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Amqp\Model\Topology::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\AdminGws\Model\Blocks::widgetCatalogEventCategoryEditButtons</td>
+        <td> Method has been removed.</td>
+    </tr>
+</tbody></table>
+
+<h3 id="interface-207-210">Changes in interfaces</h3>
+<table><tbody>
+    <tr>
+        <th>Interface</th>
+        <th>What Changed</th>
+    </tr>
+    <tr>
+        <td>Magento\GiftCard\Api\Data\GiftcardAmountInterface::getAttributeId</td>
+        <td> Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftCard\Api\Data\GiftcardAmountInterface::setAttributeId</td>
+        <td> Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Controller\Adminhtml\Cms\Page\RevisionInterface</td>
+        <td>Interface was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Api\PageRevisionManagementInterface</td>
+        <td>Interface was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Api\PageRevisionRepositoryInterface</td>
+        <td>Interface was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Api\PageVersionRepositoryInterface</td>
+        <td>Interface was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Api\Data\PageRevisionInterface</td>
+        <td>Interface was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Api\Data\PageRevisionSearchResultsInterface</td>
+        <td>Interface was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Api\Data\PageVersionInterface</td>
+        <td>Interface was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Api\Data\PageVersionSearchResultsInterface</td>
+        <td>Interface was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Solr\Model\Client\FactoryInterface</td>
+        <td>Interface was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Solr\Helper\ClientOptionsInterface</td>
+        <td>Interface was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\MessageQueue\ConsumerConfigurationInterface::getCallback</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\MessageQueue\ConsumerConfigurationInterface::getType</td>
+        <td> Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\MessageQueue\ConsumerConfigurationInterface::getHandlers</td>
+        <td> Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\MessageQueue\ConsumerConfigurationInterface::getTopicNames</td>
+        <td> Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\MessageQueue\ConsumerConfigurationInterface::getMessageSchemaType</td>
+        <td> Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\MessageQueue\ConsumerConfigurationInterface::getQueue</td>
+        <td> Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\MessageQueue\ConsumerInterface::configure</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\MessageQueue\QueueInterface::push</td>
+        <td> Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftCardAccount\Api\GuestGiftCardAccountManagementInterface::deleteByQuoteId</td>
+        <td> Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Worldpay\Api\GuestPaymentInformationManagementProxyInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Api\HierarchyNodeRepositoryInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Api\Data\HierarchyNodeInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Api\Data\HierarchyNodeSearchResultsInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Staging\Model\Entity\Update\Action\ActionInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Staging\Api\UpdateRepositoryInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Staging\Api\Data\UpdateInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Staging\Api\Data\UpdateSearchResultInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\ScalableInventory\Api\Counter\ItemInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\ScalableInventory\Api\Counter\ItemsInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\SalesRuleStaging\Api\SalesRuleStagingInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Reward\Api\RewardManagementInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftWrapping\Api\Data\WrappingInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftWrapping\Api\Data\WrappingSearchResultsInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftRegistry\Api\ShippingMethodManagementInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftRegistry\Api\GuestCart\ShippingMethodManagementInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftCardAccount\Api\GiftCardAccountManagementInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftCardAccount\Api\GiftCardAccountRepositoryInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftCardAccount\Api\GuestGiftCardAccountManagementInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftCardAccount\Api\Data\GiftCardAccountInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftCardAccount\Api\Data\GiftCardAccountSearchResultInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftCard\Api\Data\GiftCardOptionInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CmsStaging\Api\BlockStagingInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CmsStaging\Api\PageStagingInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogStaging\Api\CategoryStagingInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogStaging\Api\ProductStagingInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogRuleStaging\Api\CatalogRuleStagingInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+</tbody></table>
+
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+			
+
+			
+			 <div class="github-link">
+				 <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/release-notes/changes/ee_changes.md" target="_blank">
+					 Edit this page on GitHub
+				 </a>
+			 </div>
+			
+
+			<div class="new-issue">
+				<a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/release-notes/changes/ee_changes.html" target="_blank">Give us feedback</a>
+			</div>
+
+		</div>
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.container -->
+
+
+	</div>
+	<!-- /.main-container -->
+
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div id="footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav">
+				<li><a href="/guides/v2.1/contributor-guide/contributing_docs.html">Become a Contributor</a>
+        <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+        <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+        <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+        <li><a href="/guides/v2.1/release-notes/bk-release-notes.html">Release Notes</a></li>
+				<li><a href="/magento-third-party.html">Third-Party Licenses</a></li>
+      </ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2017 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="/common/js/app.min.js"></script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+

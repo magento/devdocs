@@ -1,0 +1,3756 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Magento CE Backward Incompatible Changes</title>
+	<meta name="description" content="Magento 2 Developer Documentation.
+">
+	<meta http-equiv="last-modified" content="" />
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print" />
+	<link rel="canonical" href="//guides/v2.1/release-notes/changes/ce_changes.html">
+
+  <script>
+    var baseUrl = "/";
+  </script>
+
+	<!-- crazyegg -->
+	<script type="text/javascript">
+	setTimeout(function(){var a=document.createElement("script");
+	var b=document.getElementsByTagName("script")[0];
+	a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0038/0321.js?"+Math.floor(new Date().getTime()/3600000);
+	a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+	</script>
+
+</head>
+<body>
+
+<header class="site-header">
+
+	<nav id="global-nav">
+
+		<div class="menu-btn"><a class="menu-trigger menu-icon" href="#"></a></div>
+
+		<div class="container">
+
+			<a class="logo" href="/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+
+			
+<div class="version-switcher dropdown">
+	<button class="btn dropdown-toggle" data-toggle="dropdown">
+		Magento 2.1
+	</button>
+
+	<ul class="dropdown-menu dropdown-menu-left">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/release-notes/changes/ce_changes.html">Magento 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.1/release-notes/changes/ce_changes.html">Magento 2.1</a></li>
+	
+  </ul>
+
+</div>
+
+
+
+			<!-- Main Navigation -->
+<div class="nav-main">
+  <ul>
+    <li class="first">
+      <a href="#">Setup and Deployment</a>
+        <ul class="menu nav">
+          <li><a href="https://magento.com/tech-resources/download" target="_blank">Get Started with Magento DevBox Beta</a></li>
+            <li><a href="/guides/v2.1/install-gde/bk-install-guide.html">Installation Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.1/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.1/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/cloud/bk-cloud.html">Enterprise Cloud Edition Guide</a></li>
+          <li class="leaf"><a href="/magento-release-information.html">Release Information</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Development</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.1/architecture/bk-architecture.html">Architecture Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          <li><a href="/guides/v2.1/payments-integrations/bk-payments-integrations.html">Payments Integrations</a></li>
+          <li class="leaf"><a href="/guides/v2.1/mrg/intro.html">Module Reference Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.1/extension-dev-guide/staging.html">Staging</a></li>
+          
+          <li class="first leaf"><a href="/guides/v2.1/contributor-guide/contributing.html">Contributor Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Frontend</a>
+        <ul class="menu nav">
+          <li class="first leaf"><a href="/guides/v2.1/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.1/ui_comp_guide/bk-ui_comps.html">UI Components Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.1/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li class="leaf"><a href="/guides/v2.1/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">API</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.1/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li class="leaf"><a href="/guides/v2.1/rest/bk-rest.html">REST API Reference</a></li>
+          <li class="leaf"><a href="/guides/v2.1/soap/bk-soap.html">SOAP API Reference</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Testing</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.1/test/testing.html">Magento Testing Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/mtf/mtf_introduction.html">Functional Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.1/test/integration/integration_test_execution.html">Integration Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.1/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.1/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.1/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+        </ul>
+    </li>
+
+    <li>
+      <a href="/guides/v2.1/howdoi/bk-how-do-i.html">How Tos</a>
+    </li>
+  </ul>
+</div><!-- /.nav-main -->
+
+
+			<div class="search-btn">
+				<a class="search-trigger search-icon" href="/search.html"></a>
+			</div>
+
+			<form class="quick-search" action="/search.html" method="get">
+				<input type="search" name="q" placeholder="Search" />
+				<a href="#" class="quick-search-close">&times;</a>
+			</form>
+
+
+
+
+
+		</div>
+
+	</nav><!-- #global-nav -->
+
+</header>
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- .main-container -->
+	<div class="main-container">
+		<a id="main-content"></a>
+
+
+<div class="container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+<h4>Release Information</h4>
+
+
+
+
+
+
+		<ul>
+
+		
+
+		
+
+				
+
+					
+					
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/release-notes/bk-release-notes.html">2.1.x Release Information</a></li>
+									
+								
+
+									
+
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/release-notes/release-notes.html">Magento 2.1 Release Notes</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+										<li class="level3Parent " id="ce21-relnotes"><a href="#">Magento CE 2.1.x Release Notes</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child ce21-relnotes " data-menunode="ce21-relnotes"><a href="/guides/v2.1/release-notes/ReleaseNotes2.1.4CE.html">Magento CE 2.1.4 Release Notes</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child ce21-relnotes " data-menunode="ce21-relnotes"><a href="/guides/v2.1/release-notes/ReleaseNotes2.1.3CE.html">Magento CE 2.1.3 Release Notes</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child ce21-relnotes " data-menunode="ce21-relnotes"><a href="/guides/v2.1/release-notes/ReleaseNotes2.1.2CE.html">Magento CE 2.1.2 Release Notes</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child ce21-relnotes " data-menunode="ce21-relnotes"><a href="/guides/v2.1/release-notes/ReleaseNotes2.1.1CE.html">Magento CE 2.1.1 Release Notes</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child ce21-relnotes " data-menunode="ce21-relnotes"><a href="/guides/v2.1/release-notes/ReleaseNotes2.1.0CE.html">Magento CE 2.1.0  Release Notes</a>
+
+
+									
+
+								
+
+									
+
+										<li class="level3Parent " id="ee21-relnotes"><a href="#">Magento EE 2.1.x Release Notes</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child ee21-relnotes " data-menunode="ee21-relnotes"><a href="/guides/v2.1/release-notes/ReleaseNotes2.1.4EE.html">Magento EE 2.1.4 Release Notes</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child ee21-relnotes " data-menunode="ee21-relnotes"><a href="/guides/v2.1/release-notes/ReleaseNotes2.1.3EE.html">Magento EE 2.1.3 Release Notes</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child ee21-relnotes " data-menunode="ee21-relnotes"><a href="/guides/v2.1/release-notes/ReleaseNotes2.1.2EE.html">Magento EE 2.1.2 Release Notes</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child ee21-relnotes " data-menunode="ee21-relnotes"><a href="/guides/v2.1/release-notes/ReleaseNotes2.1.1EE.html">Magento EE 2.1.1 Release Notes</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child ee21-relnotes " data-menunode="ee21-relnotes"><a href="/guides/v2.1/release-notes/ReleaseNotes2.1.0EE.html">Magento EE 2.1.0 Release Notes</a>
+
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/release-notes/backward-incompatible-changes-2.1.html">Magento 2.1 backward incompatible changes</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2  active "><a href="/guides/v2.1/release-notes/changes/ce_changes.html">Magento CE changes</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/release-notes/changes/ee_changes.html">Magento EE changes</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/release-notes/tech_bull_parent.html">Magento 2.1 technical bulletins</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/release-notes/tech_bull_tls-repo.html">Transport Layer Security (TLS) 1.1+ requirement for repo.magento.com (June 30, 2016)</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/release-notes/tech_bull_21-upgrade.html">Upgrade to Magento version 2.1 (June 22, 2016)</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/release-notes/thirdparty_parent.html">Third-party licenses</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/release-notes/thirdparty_ce.html">Magento CE third-party licenses</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/release-notes/thirdparty_ee.html">Magento EE third-party licenses</a></li>
+
+									
+
+								
+
+
+
+
+						
+
+					
+
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+  <nav class="breadcrumbs">
+
+    <a class="breadcrumb-item" href="/"><span>Home</span></a>
+
+    <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+    <!-- Iteration breadcrumb item -->
+    
+    
+    
+
+      <!-- Skip if root -->
+      
+
+
+      <!-- Get breadcrumb title. Insert snippet from configuration description to translates breadcrumb if language plugin is installed and YAML subset is set -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
+        <span property="name">Magento CE Backward Incompatible Changes</span>
+        <meta property="position" content="1" />
+      </li>
+
+    
+
+    </ol>
+
+  </nav>
+
+
+	
+	<h1 class="page-heading">Magento CE Backward Incompatible Changes</h1>
+
+  
+
+
+</section>
+
+			<p>This topic provides details about backward incompatible changes made in Magento CE 2.1.</p>
+
+<p>All changes are aggregated into two tables:</p>
+
+<ul>
+  <li>that contains backward incompatible changes made to Magento classes</li>
+  <li>that contains backward incompatible changes made to the Magento interfaces</li>
+</ul>
+
+<p>where each change is displayed in a separate row in the table, with the following columns:</p>
+
+<ul>
+  <li><strong>Class</strong> or <strong>Interface</strong> with the name of an affected class or interface</li>
+  <li><strong>What changed</strong> with the description of a backward incompatible change</li>
+</ul>
+
+<h2 id="section">2.1.3 - 2.1.4</h2>
+
+<h3 id="no-changes-213-214">No changes</h3>
+<p>No backward incompatible changes.</p>
+
+<h2 id="section-1">2.1.2 - 2.1.3</h2>
+
+<h3 id="class-212-213">Changes in classes</h3>
+<table><tbody>
+    <tr>
+        <th>Class</th>
+        <th>What Changed</th>
+    </tr>
+    <tr>
+        <td>Magento\Store\Model\Config\Reader\DefaultReader</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Store\Model\Config\Reader\ReaderPool</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Store\Model\Config\Reader\Store</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Store\Model\Config\Reader\Website</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Quote\Setup\Recurring</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\ConfigurableProduct\Plugin\Model\Product</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\ConfigurableProduct\Block\Plugin\Product\Media\Gallery</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Vault\Plugin\PaymentVaultAttributesLoad::aroundGetExtensionAttributes</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Store\Model\Config\Converter::__construct</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Deploy\Model\Deployer::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogUrlRewrite\Model\Category\Plugin\Store\View::aroundSave</td>
+        <td> Method has been removed.</td>
+    </tr>
+</tbody></table>
+
+<h3 id="interface-212-213">Changes in interfaces</h3>
+<table><tbody>
+    <tr>
+        <th>Interface</th>
+        <th>What Changed</th>
+    </tr>
+    <tr>
+        <td>Magento\Vault\Block\CardRendererInterface::getIconUrl</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Vault\Block\CardRendererInterface::getIconHeight</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Vault\Block\CardRendererInterface::getIconWidth</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Vault\Block\CardRendererInterface::getToken</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Vault\Block\TokenRendererInterface::getToken</td>
+        <td> Method has been added.</td>
+    </tr>
+</tbody></table>
+
+<h2 id="section-2">2.1.1 - 2.1.2</h2>
+
+<h3 id="class-211-212">Changes in classes</h3>
+<table><tbody>
+    <tr>
+        <th>Class</th>
+        <th>What Changed</th>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Model\Order\InvoiceDocumentFactory</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Model\Order\PaymentAdapter</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Model\Order\ShipmentDocumentFactory</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Model\Order\Shipment\CreationArguments</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Model\Order\Shipment\Notifier</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Model\Order\Shipment\Package</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Model\Order\Shipment\PackageCreation</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Model\Order\Invoice\CreationArguments</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Model\Order\Invoice\Notifier</td>
+        <td>Class was added.</td>
+    </tr>
+</tbody></table>
+
+<h3 id="interface-211-212">Changes in interfaces</h3>
+<table><tbody>
+    <tr>
+        <th>Interface</th>
+        <th>What Changed</th>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\InvoiceCommentInterface::getComment</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\InvoiceCommentInterface::getCreatedAt</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\InvoiceCommentInterface::setCreatedAt</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\InvoiceCommentInterface::getEntityId</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\InvoiceCommentInterface::setEntityId</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\InvoiceCommentInterface::getIsVisibleOnFront</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\InvoiceCommentInterface::setIsVisibleOnFront</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\InvoiceCommentInterface::setComment</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\InvoiceCommentInterface::ENTITY_ID</td>
+        <td>Constant has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\InvoiceCommentInterface::IS_VISIBLE_ON_FRONT</td>
+        <td>Constant has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\InvoiceCommentInterface::COMMENT</td>
+        <td>Constant has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\InvoiceCommentInterface::CREATED_AT</td>
+        <td>Constant has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\InvoiceItemInterface::getOrderItemId</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\InvoiceItemInterface::getQty</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\InvoiceItemInterface::setQty</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\InvoiceItemInterface::setOrderItemId</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\ShipmentCommentInterface::getComment</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\ShipmentCommentInterface::getCreatedAt</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\ShipmentCommentInterface::setCreatedAt</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\ShipmentCommentInterface::getEntityId</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\ShipmentCommentInterface::setEntityId</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\ShipmentCommentInterface::getIsVisibleOnFront</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\ShipmentCommentInterface::setIsVisibleOnFront</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\ShipmentCommentInterface::setComment</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\ShipmentCommentInterface::ENTITY_ID</td>
+        <td>Constant has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\ShipmentCommentInterface::IS_VISIBLE_ON_FRONT</td>
+        <td>Constant has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\ShipmentCommentInterface::COMMENT</td>
+        <td>Constant has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\ShipmentCommentInterface::CREATED_AT</td>
+        <td>Constant has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\ShipmentItemInterface::getOrderItemId</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\ShipmentItemInterface::getQty</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\ShipmentItemInterface::setQty</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\ShipmentItemInterface::setOrderItemId</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\ShipmentTrackInterface::getCarrierCode</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\ShipmentTrackInterface::getTitle</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\ShipmentTrackInterface::getTrackNumber</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\ShipmentTrackInterface::setTrackNumber</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\ShipmentTrackInterface::setTitle</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\ShipmentTrackInterface::setCarrierCode</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Model\Order\InvoiceNotifierInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Model\Order\InvoiceStatisticInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Model\Order\OrderStateResolverInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Model\Order\PaymentAdapterInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Model\Order\Shipment\NotifierInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Model\Order\Shipment\OrderRegistrarInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Model\Order\Invoice\NotifierInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\InvoiceOrderInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\ShipOrderInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Exception\CouldNotInvoiceExceptionInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Exception\CouldNotShipExceptionInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Exception\DocumentValidationExceptionInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\CommentInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\EntityInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\InvoiceCommentCreationInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\InvoiceCreationArgumentsInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\InvoiceItemCreationInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\LineItemInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\ShipmentCommentCreationInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\ShipmentCreationArgumentsInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\ShipmentItemCreationInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\ShipmentPackageCreationInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\ShipmentTrackCreationInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\TrackInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+</tbody></table>
+
+<h2 id="section-3">2.1.0 - 2.1.1</h2>
+
+<h3 id="no-changes-210-211">No changes</h3>
+<p>No backward incompatible changes.</p>
+
+<h2 id="section-4">2.0.7 - 2.1.0</h2>
+
+<h3 id="class-207-210">Changes in classes</h3>
+<table><tbody>
+    <tr>
+        <th>Class</th>
+        <th>What Changed</th>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Search\Document</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Search\DocumentField</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\App\Response\XFrameOptPlugin</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\App\Cache\Type\Webapi</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Weee\Observer\Total\Webapi\ItemObserver</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Theme\Observer\ThemeRegistrationObserver</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\SalesRule\Block\Adminhtml\Promo\Quote\Edit</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\SalesRule\Block\Adminhtml\Promo\Quote\Edit\Form</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\SalesRule\Block\Adminhtml\Promo\Quote\Edit\Tabs</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\SalesRule\Block\Adminhtml\Promo\Quote\Edit\Tab\Main</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\SalesRule\Block\Adminhtml\Promo\Quote\Edit\Tab\Main\Renderer\Checkbox</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\ProductVideo\Setup\UpgradeData</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\ProductVideo\Model\Plugin\BaseImage</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\ProductVideo\Model\Plugin\ExternalVideoEntryProcessor</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Paypal\Model\Payflow\Service\Response\Validator\AbstractFilterValidator</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\PageCache\Observer\InvalidateCacheIfChanged</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\OfflineShipping\Observer\SalesRule\ActionsTabPrepareFormObserver</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Indexer\Model\Processor\InvalidateCache</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\GoogleOptimizer\Observer\Block\Category\AddGoogleExperimentFieldsObserver</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\GoogleOptimizer\Observer\Block\Category\AddGoogleExperimentTabObserver</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\GoogleOptimizer\Block\Adminhtml\Catalog\Category\Edit\Tab\Googleoptimizer</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Downloadable\Model\Plugin\AfterProductLoad</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Downloadable\Model\Plugin\AroundProductRepositorySave</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\ConfigurableProduct\Model\Product\VariationMediaAttributes</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\ConfigurableProduct\Model\Plugin\AfterProductLoad</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Cms\Block\Adminhtml\Page\Edit</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Cms\Block\Adminhtml\Page\Edit\Form</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Cms\Block\Adminhtml\Page\Edit\Tabs</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Cms\Block\Adminhtml\Page\Edit\Tab\Content</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Cms\Block\Adminhtml\Page\Edit\Tab\Design</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Cms\Block\Adminhtml\Page\Edit\Tab\Main</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Cms\Block\Adminhtml\Page\Edit\Tab\Meta</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Cms\Block\Adminhtml\Block\Edit</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Cms\Block\Adminhtml\Block\Edit\Form</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogRule\Block\Adminhtml\Promo\Catalog\Edit</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogRule\Block\Adminhtml\Promo\Catalog\Edit\Form</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogRule\Block\Adminhtml\Promo\Catalog\Edit\Js</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogRule\Block\Adminhtml\Promo\Catalog\Edit\Tabs</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogRule\Block\Adminhtml\Promo\Catalog\Edit\Tab\Actions</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogRule\Block\Adminhtml\Promo\Catalog\Edit\Tab\Main</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogInventory\Observer\AddStockStatusToCollectionObserver</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Observer\AddCatalogToTopmenuItemsObserver</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Model\Webapi\Product\Option\Type\File\Validator</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Model\ResourceModel\Product\Attribute\Backend\Media</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Model\Product\Attribute\Backend\AbstractMedia</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Model\Product\Attribute\Backend\Media</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Model\Indexer\Product\AffectCache</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Model\Indexer\Category\AffectCache</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Model\Indexer\Category\Product\Plugin\IndexerState</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Block\Adminhtml\Product\Helper\Form\BaseImage</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Block\Adminhtml\Category\Tabs</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Block\Adminhtml\Category\Tab\Attributes</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Block\Adminhtml\Category\Tab\Design</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Block\Adminhtml\Category\Edit\Form</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Bundle\Model\Plugin\BundleLoadOptions</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Bundle\Model\Plugin\BundleSaveOptions</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Observer\DeleteBraintreeCustomer</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Observer\ProcessBraintreeAddress</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Observer\ProcessBraintreePayment</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Model\Checkout</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Model\Config</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Model\ConfigProvider</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Model\PaymentMethod</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Model\Vault</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Model\System\Config\Source\Country</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Model\System\Config\Backend\Countrycreditcard</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Model\System\Config\Backend\Usevault</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Model\Source\CaptureAction</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Model\Source\CcType</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Model\Source\Environment</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Model\Source\PaymentAction</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Model\Plugin\Sales\Order\PaymentPlugin</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Model\PaymentMethod\PayPal</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Model\ConfigProvider\PayPal</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Model\Config\Cc</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Model\Config\PayPal</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Model\Adapter\BraintreeClientToken</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Model\Adapter\BraintreeConfiguration</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Model\Adapter\BraintreeCreditCard</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Model\Adapter\BraintreeCustomer</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Model\Adapter\BraintreePaymentMethod</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Model\Adapter\BraintreeTransaction</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Helper\Createorder</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Helper\Data</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Helper\Error</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Controller\MyCreditCards</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Controller\PayPal</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Controller\PayPal\PlaceOrder</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Controller\PayPal\Review</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Controller\PayPal\SaveShippingMethod</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Controller\Creditcard\AjaxSave</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Controller\Creditcard\Delete</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Controller\Creditcard\DeleteConfirm</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Controller\Creditcard\Edit</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Controller\Creditcard\Generate</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Controller\Creditcard\Index</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Controller\Creditcard\NewCard</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Controller\Creditcard\Save</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Block\Datajs</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Block\PayPal\Shortcut</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Block\Info\PayPal</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Block\Directory\Data</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Block\Creditcard\Management</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Block\Checkout\Review</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Block\Adminhtml\Form\Field\Cctypes</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Block\Adminhtml\Form\Field\Countrycreditcard</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Url::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\View\Template\Html\Minifier::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\View\Element\UiComponent\Context::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool::applyFilters</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\View\Element\UiComponent\DataProvider\FulltextFilter::apply</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\View\Element\UiComponent\DataProvider\RegularFilter::apply</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\View\Element\UiComponent\Config\FileCollector\AggregatedFileCollector::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\View\Design\FileResolution\Fallback\Resolver\Alternative::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\View\Design\FileResolution\Fallback\Resolver\Simple::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\View\Asset\Source::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Validator\Factory::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Search\Adapter\Mysql\Aggregation\Builder::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\ObjectManager\Relations\Runtime::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\ObjectManager\Definition\Compiled::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\ObjectManager\Definition\Runtime::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Model\ResourceModel\Type\Db\Pdo\Mysql::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Model\ResourceModel\Db\AbstractDb::afterLoad</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Data\Form\Filter\Date::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\DB\Select::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\DB\Adapter\Pdo\Mysql::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Composer\ComposerInformation::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\App\Cron::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\App\View\Asset\Publisher::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\App\Action\Plugin\Design::aroundDispatch</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\App\Action\Plugin\Design::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Wishlist\Controller\Index\Add::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Wishlist\Controller\Index\Cart::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Wishlist\Controller\Index\Fromcart::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Wishlist\Controller\Index\Remove::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Wishlist\Controller\Index\UpdateItemOptions::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Webapi\Model\AbstractSchemaGenerator::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Webapi\Model\Config::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Webapi\Model\ServiceMetadata::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Webapi\Model\Soap\Server::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Webapi\Model\Soap\Wsdl\Generator::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Webapi\Model\Rest\Swagger\Generator::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Webapi\Model\Plugin\Manager::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Webapi\Controller\Rest::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Webapi\Controller\Soap\Request\Handler::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\User\Observer\Backend\TrackAdminNewPasswordObserver::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\User\Block\Role\Tab\Edit::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Theme\Setup\InstallData::createThemeResource</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Theme\Setup\InstallData::createTheme</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Theme\Setup\InstallData::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Theme\Model\Uploader\Service::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Theme\Model\Theme\ThemeProvider::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Theme\Model\Theme\Plugin\Registration::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Swatches\Helper\Data::loadFirstVariationSwatchImage</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Swatches\Helper\Data::loadFirstVariationImage</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Swatches\Helper\Data::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Swatches\Helper\Data::loadFirstVariationWithSwatchImage</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Swatches\Helper\Data::loadVariationByFallback</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Swatches\Helper\Data::loadFirstVariationWithImage</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Swatches\Helper\Data::getProductMediaGallery</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Swatches\Helper\Data::CATALOG_PRODUCT_MEDIA_PATH</td>
+        <td>Constant has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Swatches\Block\Product\Renderer\Configurable::EMPTY_IMAGE_VALUE</td>
+        <td>Constant has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sitemap\Model\ResourceModel\Catalog\Category::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sitemap\Model\ResourceModel\Catalog\Product::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Search\Helper\Data::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\ProductVideo\Model\Plugin\ExternalVideoResourceBackend::afterDuplicate</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Persistent\Observer\EmulateCustomerObserver::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Paypal\Model\ExpressConfigProvider::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Paypal\Model\Payflow\Transparent::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Paypal\Model\Payflow\Service\Response\Validator\AVSResponse::validate</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Paypal\Model\Payflow\Service\Response\Validator\CVV2Match::validate</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Paypal\Model\Payflow\Service\Response\Validator\ResponseValidator::validate</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Paypal\Model\Payflow\Service\Response\Validator\SecureToken::validate</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Paypal\Model\Hostedpro\Request::setOrder</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Paypal\Controller\Transparent\Response::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Paypal\Block\Express\Shortcut::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Gateway\Command\GatewayCommand::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\OfflineShipping\Model\ResourceModel\Carrier\Tablerate::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\OfflineShipping\Model\Carrier\Flatrate::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Integration\Model\ConfigBasedIntegrationManager::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Integration\Model\Plugin\Integration::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\GroupedProduct\Model\ResourceModel\Product\Link::saveGroupedLinks</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftMessage\Model\Plugin\OrderGet::aroundGet</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftMessage\Model\Plugin\OrderSave::aroundSave</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\EncryptionKey\Model\ResourceModel\Key\Change::getRandom</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\EncryptionKey\Model\ResourceModel\Key\Change::setRandom</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\EncryptionKey\Model\ResourceModel\Key\Change::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Eav\Model\ResourceModel\Entity\Attribute\Group::TAB_GENERAL_CODE</td>
+        <td>Constant has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Eav\Model\ResourceModel\Entity\Attribute\Group::TAB_IMAGE_MANAGEMENT_CODE</td>
+        <td>Constant has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Downloadable\Block\Sales\Order\Email\Items\Downloadable::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Directory\Model\ResourceModel\Country\Collection::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Developer\Console\Command\XmlCatalogGenerateCommand::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Deploy\Model\Filesystem::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\CustomerImportExport\Model\Import\Address::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Observer\AfterAddressSaveObserver::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Model\Account\Redirect::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Block\Widget\Dob::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Block\Address\Renderer\DefaultRenderer::getFormat</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Cron\Observer\ProcessCronQueueObserver::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\ConfigurableProduct\Model\OptionRepository::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\ConfigurableProduct\Model\ResourceModel\Product\Type\Configurable::saveProducts</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\ConfigurableProduct\Model\Product\VariationHandler::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\ConfigurableProduct\Model\Product\Type\Configurable::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\ConfigurableProduct\Model\Plugin\AroundProductRepositorySave::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\ConfigurableProduct\Controller\Adminhtml\Product\Initialization\Helper\Plugin\Configurable::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\ConfigurableProduct\Controller\Adminhtml\Product\Initialization\Helper\Plugin\Configurable::afterInitialize</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\ConfigurableProduct\Block\Adminhtml\Product\Steps\Bulk::setProductFactory</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\ConfigurableProduct\Block\Adminhtml\Product\Steps\Bulk::setCatalogProductMediaConfig</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\ConfigurableProduct\Block\Adminhtml\Product\Steps\Bulk::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\ConfigurableProduct\Block\Adminhtml\Product\Edit\Tab\Variations\Config::isConfigurableProduct</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\ConfigurableProduct\Block\Adminhtml\Product\Edit\Tab\Variations\Config::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\ConfigurableProduct\Block\Adminhtml\Product\Edit\Tab\Variations\Config\Matrix::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Cms\Model\Wysiwyg\Config::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Cms\Model\ResourceModel\AbstractCollection::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Cms\Model\ResourceModel\Block::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Cms\Model\ResourceModel\Page::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Cms\Model\ResourceModel\Page\Grid\Collection::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Cms\Model\ResourceModel\Block\Grid\Collection::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Cms\Controller\Adminhtml\Page\Save::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogUrlRewrite\Plugin\Catalog\Block\Adminhtml\Category\Tab\Attributes::afterSetForm</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogSearch\Model\Search\IndexBuilder::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogSearch\Model\Indexer\IndexerHandler::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogSearch\Model\Indexer\Fulltext\Action\DataProvider::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogInventory\Model\Plugin\AroundProductRepositorySave::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Setup\UpgradeData::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Plugin\Model\Product\Action\UpdateAttributesFlushCache::aroundUpdateAttributes</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Model\Product::getGalleryAttributeBackend</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Model\ResourceModel\Product::getAssignedImages</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Model\Product\Option::saveOptions</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Model\Product\Media\Config::setAttributeHelper</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Controller\Adminhtml\Product\SuggestAttributes::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Controller\Adminhtml\Product\Attribute\Save::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Controller\Adminhtml\Category\Save::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Block\Adminhtml\Product\Helper\Form\Gallery::getLabel</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Block\Adminhtml\Product\Helper\Form\Gallery::getAttributeReadonly</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Block\Adminhtml\Product\Helper\Form\Gallery::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Bundle\Controller\Adminhtml\Product\Initialization\Helper\Plugin\Bundle::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Observer\AddPaypalShortcuts::__construct</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Block\Form::setMethodInfo</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Block\Form::getStoredCards</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Block\Form::canSaveCard</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Block\Form::isCustomerLoggedIn</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Block\Form::isCcDetectionEnabled</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Block\Form::useVault</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Block\Form::is3dSecureEnabled</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Block\Form::getBraintreeDataJs</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Block\Form::isFraudDetectionEnabled</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Block\Form::getConfigData</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Block\Form::getClientToken</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Block\Form::getTodayMonth</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Block\Form::getTodayYear</td>
+        <td> Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Block\Form::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Braintree\Block\Adminhtml\Form\Field\Countries::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Model\Url::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Backend\Model\Locale\Manager::__construct</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Stdlib\DateTime::isEmptyDate</td>
+        <td> Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Stdlib\DateTime::gmDate</td>
+        <td> Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Stdlib\DateTime::strToTime</td>
+        <td> Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Stdlib\DateTime::DATETIME_INTERNAL_FORMAT</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Stdlib\DateTime::DATE_INTERNAL_FORMAT</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Stdlib\DateTime::DATETIME_PHP_FORMAT</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Stdlib\DateTime::DATE_PHP_FORMAT</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Stdlib\DateTime::YEAR_MIN_VALUE</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Stdlib\DateTime::YEAR_MAX_VALUE</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Event</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Filesystem</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Profiler</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Registry</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\View\Context</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\View\FileSystem</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\View\Result\Layout</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\View\Result\LayoutFactory</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\View\Result\Page</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\View\Result\PageFactory</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\View\Render\RenderFactory</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\View\Page\Config</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\View\Page\Title</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\View\Element\BlockFactory</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\View\Element\Context</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\View\Element\FormKey</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\View\Element\RendererList</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\View\Element\UiComponentFactory</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\View\Element\UiComponent\DataProvider\FilterPool</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\View\Asset\Repository</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Stdlib\ArrayManager</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Stdlib\ArrayUtils</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Stdlib\BooleanUtils</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Stdlib\StringUtils</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Model\Context</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Math\Calculator</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Math\Division</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Math\Random</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Exception\LocalizedException</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Event\Observer</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Component\ComponentRegistrar</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\App\ActionFactory</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\App\View\Asset\Publisher</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\App\Language\Dictionary</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\App\Area\FrontNameResolverFactory</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\App\Action\Context</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Vault\Model\Ui\TokensConfigProvider</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Vault\Model\Ui\Adminhtml\TokensConfigProvider</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Vault\Block\AbstractCardRenderer</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Observer\AbstractDataAssignObserver</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Model\CcConfigProvider</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Gateway\Validator\AbstractValidator</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Gateway\Validator\CountryValidator</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Gateway\Validator\ValidatorComposite</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Gateway\Validator\ValidatorPool</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Gateway\Response\HandlerChain</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Gateway\Request\BuilderComposite</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Gateway\Http\ClientException</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Gateway\Http\ConverterException</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Gateway\Http\TransferBuilder</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Gateway\Http\Converter\HtmlFormConverter</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Gateway\Http\Converter\Soap\ObjectToArrayConverter</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Gateway\Http\Client\Soap</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Gateway\Http\Client\Zend</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Gateway\Command\CommandException</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Gateway\Command\CommandManager</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Gateway\Command\CommandManagerPool</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Gateway\Command\CommandPool</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Gateway\Command\GatewayCommand</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Block\ConfigurableInfo</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\Eav</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Model\Product\Type\AbstractType</td>
+        <td>Class was added.</td>
+    </tr>
+</tbody></table>
+
+<h3 id="interface-207-210">Changes in interfaces</h3>
+<table><tbody>
+    <tr>
+        <th>Interface</th>
+        <th>What Changed</th>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Model\MethodInterface::setStore</td>
+        <td> Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Model\MethodInterface::getStore</td>
+        <td> Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Model\MethodInterface::canUseInternal</td>
+        <td> Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Model\MethodInterface::canUseCheckout</td>
+        <td> Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Model\MethodInterface::canUseForCountry</td>
+        <td> Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Model\MethodInterface::canUseForCurrency</td>
+        <td> Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Model\MethodInterface::getConfigData</td>
+        <td> Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Model\MethodInterface::isAvailable</td>
+        <td> Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Model\MethodInterface::isActive</td>
+        <td> Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\AccountManagementInterface::createAccount</td>
+        <td> Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\GroupManagementInterface::isReadonly</td>
+        <td> Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\AddressInterface::getId</td>
+        <td> Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\AttributeMetadataInterface::getFrontendInput</td>
+        <td> Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\AttributeMetadataInterface::getIsUsedInGrid</td>
+        <td> Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\AttributeMetadataInterface::getIsVisibleInGrid</td>
+        <td> Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\AttributeMetadataInterface::getIsFilterableInGrid</td>
+        <td> Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\AttributeMetadataInterface::getIsSearchableInGrid</td>
+        <td> Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\AttributeMetadataInterface::setIsUsedInGrid</td>
+        <td> Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\AttributeMetadataInterface::setIsVisibleInGrid</td>
+        <td> Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\AttributeMetadataInterface::setIsFilterableInGrid</td>
+        <td> Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\AttributeMetadataInterface::setIsSearchableInGrid</td>
+        <td> Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\CustomerInterface::getId</td>
+        <td> Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\GroupInterface::getId</td>
+        <td> Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\OptionInterface::getLabel</td>
+        <td> Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\RegionInterface::getRegionCode</td>
+        <td> Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\ValidationResultsInterface::isValid</td>
+        <td> Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\ValidationRuleInterface::getName</td>
+        <td> Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Cms\Api\Data\PageInterface::getMetaTitle</td>
+        <td> Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Cms\Api\Data\PageInterface::setMetaTitle</td>
+        <td> Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Api\ProductCustomOptionRepositoryInterface::duplicate</td>
+        <td> Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\AppInterface::VERSION</td>
+        <td>Constant has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\View\Element\UiComponent\ContextInterface::addHtmlBlocks</td>
+        <td> Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\View\Element\UiComponent\ContextInterface::getUiComponentFactory</td>
+        <td> Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\View\Element\UiComponent\DataProvider\FilterApplierInterface::apply</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\View\Element\UiComponent\Control\ActionPoolInterface::addHtmlBlock</td>
+        <td> Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Stdlib\DateTime\TimezoneInterface::convertConfigTimeToUtc</td>
+        <td> Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Setup\SetupInterface::getTablePlaceholder</td>
+        <td> Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\DB\Adapter\AdapterInterface::getAutoIncrementField</td>
+        <td> Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\App\ScopeInterface::getScopeType</td>
+        <td> Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\App\ScopeInterface::getScopeTypeName</td>
+        <td> Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\App\ScopeInterface::getName</td>
+        <td> Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Paypal\Model\Payflow\Service\Response\ValidatorInterface::validate</td>
+        <td> Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Api\CategoryLinkManagementInterface::assignProductToCategories</td>
+        <td> Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Api\ProductCustomOptionRepositoryInterface::getProductOptions</td>
+        <td> Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Api\ProductLinkRepositoryInterface::getList</td>
+        <td> Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\TransactionInterface::TYPE_PAYMENT</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\TransactionInterface::TYPE_ORDER</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\TransactionInterface::TYPE_AUTH</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\TransactionInterface::TYPE_CAPTURE</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\TransactionInterface::TYPE_VOID</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\TransactionInterface::TYPE_REFUND</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Quote\Api\Data\CartInterface::KEY_ENTITY_ID</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\AccountManagementInterface::ACCOUNT_CONFIRMED</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\AccountManagementInterface::ACCOUNT_CONFIRMATION_REQUIRED</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\AccountManagementInterface::ACCOUNT_CONFIRMATION_NOT_REQUIRED</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\AccountManagementInterface::MAX_PASSWORD_LENGTH</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\AddressInterface::ID</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\AddressInterface::CUSTOMER_ID</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\AddressInterface::REGION</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\AddressInterface::REGION_ID</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\AddressInterface::COUNTRY_ID</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\AddressInterface::STREET</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\AddressInterface::COMPANY</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\AddressInterface::TELEPHONE</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\AddressInterface::FAX</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\AddressInterface::POSTCODE</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\AddressInterface::CITY</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\AddressInterface::FIRSTNAME</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\AddressInterface::LASTNAME</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\AddressInterface::MIDDLENAME</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\AddressInterface::PREFIX</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\AddressInterface::SUFFIX</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\AddressInterface::VAT_ID</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\AddressInterface::DEFAULT_BILLING</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\AddressInterface::DEFAULT_SHIPPING</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\AttributeMetadataInterface::ATTRIBUTE_CODE</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\AttributeMetadataInterface::FRONTEND_INPUT</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\AttributeMetadataInterface::INPUT_FILTER</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\AttributeMetadataInterface::STORE_LABEL</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\AttributeMetadataInterface::VALIDATION_RULES</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\AttributeMetadataInterface::OPTIONS</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\AttributeMetadataInterface::VISIBLE</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\AttributeMetadataInterface::REQUIRED</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\AttributeMetadataInterface::MULTILINE_COUNT</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\AttributeMetadataInterface::DATA_MODEL</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\AttributeMetadataInterface::USER_DEFINED</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\AttributeMetadataInterface::FRONTEND_CLASS</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\AttributeMetadataInterface::SORT_ORDER</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\AttributeMetadataInterface::FRONTEND_LABEL</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\AttributeMetadataInterface::SYSTEM</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\AttributeMetadataInterface::NOTE</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\AttributeMetadataInterface::BACKEND_TYPE</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\AttributeMetadataInterface::IS_USED_IN_GRID</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\AttributeMetadataInterface::IS_VISIBLE_IN_GRID</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\AttributeMetadataInterface::IS_FILTERABLE_IN_GRID</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\AttributeMetadataInterface::IS_SEARCHABLE_IN_GRID</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\CustomerInterface::ID</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\CustomerInterface::CONFIRMATION</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\CustomerInterface::CREATED_AT</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\CustomerInterface::UPDATED_AT</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\CustomerInterface::CREATED_IN</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\CustomerInterface::DOB</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\CustomerInterface::EMAIL</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\CustomerInterface::FIRSTNAME</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\CustomerInterface::GENDER</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\CustomerInterface::GROUP_ID</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\CustomerInterface::LASTNAME</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\CustomerInterface::MIDDLENAME</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\CustomerInterface::PREFIX</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\CustomerInterface::STORE_ID</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\CustomerInterface::SUFFIX</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\CustomerInterface::TAXVAT</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\CustomerInterface::WEBSITE_ID</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\CustomerInterface::DEFAULT_BILLING</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\CustomerInterface::DEFAULT_SHIPPING</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\CustomerInterface::KEY_ADDRESSES</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\CustomerInterface::DISABLE_AUTO_GROUP_CHANGE</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\GroupInterface::ID</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\GroupInterface::CODE</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\GroupInterface::TAX_CLASS_ID</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\GroupInterface::TAX_CLASS_NAME</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\GroupInterface::NOT_LOGGED_IN_ID</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\GroupInterface::CUST_GROUP_ALL</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\GroupInterface::GROUP_CODE_MAX_LENGTH</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\OptionInterface::LABEL</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\OptionInterface::VALUE</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\OptionInterface::OPTIONS</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\RegionInterface::REGION_CODE</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\RegionInterface::REGION</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\RegionInterface::REGION_ID</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\ValidationResultsInterface::VALID</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\ValidationResultsInterface::MESSAGES</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\ValidationRuleInterface::NAME</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\Data\ValidationRuleInterface::VALUE</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Cms\Api\Data\PageInterface::META_TITLE</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Api\Data\ProductAttributeInterface::CODE_TIER_PRICE_FIELD_PRICE</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Api\Data\ProductAttributeInterface::CODE_HAS_WEIGHT</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Api\Data\ProductAttributeInterface::CODE_SPECIAL_PRICE</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Api\Data\ProductAttributeInterface::CODE_PRICE</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Api\Data\ProductAttributeInterface::CODE_TIER_PRICE_FIELD_PRICE_QTY</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Api\Data\ProductAttributeInterface::CODE_SHORT_DESCRIPTION</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Api\Data\ProductAttributeInterface::CODE_SEO_FIELD_META_TITLE</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Api\Data\ProductAttributeInterface::CODE_STATUS</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Api\Data\ProductAttributeInterface::CODE_NAME</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Api\Data\ProductAttributeInterface::CODE_SKU</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Api\Data\ProductAttributeInterface::CODE_SEO_FIELD_META_KEYWORD</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Api\Data\ProductAttributeInterface::CODE_DESCRIPTION</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Api\Data\ProductAttributeInterface::CODE_COST</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Api\Data\ProductAttributeInterface::CODE_SEO_FIELD_URL_KEY</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Api\Data\ProductAttributeInterface::CODE_TIER_PRICE</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Api\Data\ProductAttributeInterface::CODE_SEO_FIELD_META_DESCRIPTION</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Api\Data\ProductAttributeInterface::CODE_WEIGHT</td>
+        <td>Constant has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\AppInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\AuthorizationInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\CurrencyInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\ObjectManagerInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\UrlInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\View\ConfigInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\View\LayoutInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\View\RenderInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\View\Url\ConfigInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\View\Template\Html\MinifierInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\View\Page\FaviconInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\View\File\CollectorInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\View\Element\BlockInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\View\Element\RendererInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\View\Element\UiComponent\DataProvider\DataProviderInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\View\Design\Theme\FileProviderInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\View\Design\Theme\ListInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\View\Design\Theme\Label\ListInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\View\Asset\ConfigInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Stdlib\DateTime\TimezoneInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Shell\CommandRendererInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Setup\InstallDataInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Setup\InstallSchemaInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Setup\LoggerInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Setup\ModuleDataSetupInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Setup\SetupInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Setup\UninstallInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Setup\UpgradeDataInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Setup\UpgradeSchemaInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Phrase\RendererInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Indexer\ConfigInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Indexer\IndexStructureInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Indexer\IndexerInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Indexer\SaveHandler\IndexerInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Filesystem\DriverInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Data\OptionSourceInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Data\Form\Filter\FilterInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Data\Argument\InterpreterInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Controller\ResultInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Console\CommandListInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Config\DesignResolverInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\App\ActionInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\App\RequestInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\App\ResponseInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\App\Request\DataPersistorInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\App\Request\PathInfoProcessorInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Vault\Model\VaultPaymentInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Vault\Model\Ui\TokenUiComponentInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Vault\Model\Ui\TokenUiComponentProviderInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Vault\Block\CardRendererInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Vault\Block\TokenRendererInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Vault\Api\PaymentTokenManagementInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Vault\Api\PaymentTokenRepositoryInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Vault\Api\Data\PaymentTokenInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Vault\Api\Data\PaymentTokenSearchResultsInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Theme\Api\DesignConfigRepositoryInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Theme\Api\Data\DesignConfigDataInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Theme\Api\Data\DesignConfigInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Tax\Api\OrderTaxManagementInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Tax\Api\Data\GrandTotalDetailsInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Tax\Api\Data\GrandTotalRatesInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Tax\Api\Data\OrderTaxDetailsAppliedTaxInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Tax\Api\Data\OrderTaxDetailsInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Tax\Api\Data\OrderTaxDetailsItemInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Search\Api\SearchInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Search\Api\SynonymAnalyzerInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Search\Api\SynonymGroupRepositoryInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Search\Api\Data\SynonymGroupInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\ShippingAssignmentInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\ShippingInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\TotalInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Quote\Api\CartTotalManagementInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Quote\Api\GuestCartTotalManagementInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Quote\Api\GuestShipmentEstimationInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Quote\Api\ShipmentEstimationInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Quote\Api\Data\AddressAdditionalDataInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Quote\Api\Data\ProductOptionInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Quote\Api\Data\ShippingAssignmentInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Quote\Api\Data\ShippingInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Quote\Api\Data\TotalsAdditionalDataInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Gateway\CommandInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Gateway\ConfigFactoryInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Gateway\ConfigInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Gateway\Validator\ResultInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Gateway\Validator\ValidatorInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Gateway\Validator\ValidatorPoolInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Gateway\Response\HandlerInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Gateway\Request\BuilderInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Gateway\Http\ClientInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Gateway\Http\ConverterInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Gateway\Http\TransferFactoryInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Gateway\Http\TransferInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Gateway\Data\AddressAdapterInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Gateway\Data\OrderAdapterInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Gateway\Data\PaymentDataObjectInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Gateway\Config\ValueHandlerInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Gateway\Config\ValueHandlerPoolInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Gateway\Command\CommandManagerInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Gateway\Command\CommandManagerPoolInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Gateway\Command\CommandPoolInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Payment\Gateway\Command\ResultInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftMessage\Api\Data\MessageInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Eav\Api\Data\AttributeFrontendLabelInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Eav\Api\Data\AttributeGroupInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Eav\Api\Data\AttributeGroupSearchResultsInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Eav\Api\Data\AttributeInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Eav\Api\Data\AttributeOptionInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Eav\Api\Data\AttributeOptionLabelInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Eav\Api\Data\AttributeSearchResultsInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Eav\Api\Data\AttributeSetInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Eav\Api\Data\AttributeSetSearchResultsInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Eav\Api\Data\AttributeValidationRuleInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Downloadable\Api\LinkRepositoryInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Downloadable\Api\Data\DownloadableOptionInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Downloadable\Api\Data\LinkInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Downloadable\Api\Data\ProductAttributeInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Downloadable\Api\Data\SampleInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Downloadable\Api\Data\File\ContentInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Downloadable\Api\Data\File\ContentUploaderInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\AddressMetadataInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\AddressMetadataManagementInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\CustomerMetadataInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\CustomerMetadataManagementInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Api\CustomerNameGenerationInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\ConfigurableProduct\Api\Data\OptionInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\ConfigurableProduct\Api\Data\OptionValueInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CheckoutAgreements\Api\Data\AgreementInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Checkout\Model\ConfigProviderInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Checkout\Api\AgreementsValidatorInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Checkout\Api\GuestTotalsInformationManagementInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Checkout\Api\TotalsInformationManagementInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Checkout\Api\Data\PaymentDetailsInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Checkout\Api\Data\ShippingInformationInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Checkout\Api\Data\TotalsInformationInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogRule\Api\CatalogRuleRepositoryInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogRule\Api\Data\ConditionInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogRule\Api\Data\RuleInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Api\AttributeSetFinderInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Api\ProductWebsiteLinkRepositoryInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Api\Data\CategoryProductSearchResultInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Api\Data\ProductOptionInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+</tbody></table>
+
+<!-- LINK DEFINITIONS -->
+
+
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+			
+
+			
+			 <div class="github-link">
+				 <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/release-notes/changes/ce_changes.md" target="_blank">
+					 Edit this page on GitHub
+				 </a>
+			 </div>
+			
+
+			<div class="new-issue">
+				<a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/release-notes/changes/ce_changes.html" target="_blank">Give us feedback</a>
+			</div>
+
+		</div>
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.container -->
+
+
+	</div>
+	<!-- /.main-container -->
+
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div id="footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav">
+				<li><a href="/guides/v2.1/contributor-guide/contributing_docs.html">Become a Contributor</a>
+        <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+        <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+        <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+        <li><a href="/guides/v2.1/release-notes/bk-release-notes.html">Release Notes</a></li>
+				<li><a href="/magento-third-party.html">Third-Party Licenses</a></li>
+      </ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2017 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="/common/js/app.min.js"></script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+
