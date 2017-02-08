@@ -32,4 +32,4 @@ To set global Git variables required to commit or push to an environment (that i
 For more information, see [First-Time Git Setup](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup#_first_time){:target="_blank"}
 
 #### Next step
-[]()
+[Step 2, Clone the project]({{ page.baseurl }}cloud/before/before-setup-env-2_clone.html)
