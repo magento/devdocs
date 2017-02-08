@@ -36,5 +36,4 @@ A sample result follows:
 <ul><li><a href="{{ page.baseurl }}install-gde/install/web/install-web.html">Install the Magento software using the Web Setup Wizard</a></li>
 	<li><a href="{{ page.baseurl }}install-gde/install/cli/install-cli.html">Install the Magento software using the command line</a></li></ul>
 
-{% endcollapsibleh2 %}
 
