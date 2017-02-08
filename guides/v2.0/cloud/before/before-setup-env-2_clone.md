@@ -95,7 +95,6 @@ If you're not sure whether or not the master branch has been configured, enter t
 
 		In the preceding example, go to `http://master-k4wtvm7ogzr5s.us.magentosite.cloud/magento_A8v10` and log in using the user name `meister_x2U8` and password `admin_A456`
 
-{% endcollapsibleh2 %}
 
 #### Next step
 [Step 3, set up cron]({{ page.baseurl }}cloud/before/before-setup-env-cron.html)
