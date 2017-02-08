@@ -4,8 +4,9 @@ group: release-notes
 subgroup: 02_rel-notes
 title: Magento CE 2.1.5 Release Notes
 menu_title: Magento CE 2.1.5 Release Notes
-menu_order: 9
-version: 2.1
+menu_order: 166
+level3_menu_node: level3child
+level3_subgroup: ce21-relnotes 
 github_link: release-notes/ReleaseNotes2.1.5CE.md
 ---
 
@@ -13,8 +14,10 @@ github_link: release-notes/ReleaseNotes2.1.5CE.md
 {:toc}
 
 
-We are pleased to present Magento Community Edition 2.1.5. This release includes only one enhancement: an updated copyright date on all files.
+We are pleased to present Magento Community Edition 2.1.5. This release includes only one change: an update to our copyright date. 
 
+
+**This release contains no functional changes**. Updating the copyright to 2017 affects the entire code base, however, which is why we are packaging this simple but pervasive change in its own release. 
 
 
 

@@ -4,16 +4,19 @@ group: release-notes
 subgroup: 02_rel-notes
 title: Magento EE 2.1.5 Release Notes
 menu_title: Magento EE 2.1.5 Release Notes
-menu_order: 10
-version: 2.1
+menu_order: 265
+level3_menu_node: level3child
+level3_subgroup: ee21-relnotes 
 github_link: release-notes/ReleaseNotes2.1.5EE.md
 ---
 
 *	TOC
 {:toc}
 
-We are pleased to present Magento Enterprise Edition 2.1.5. This release includes only one enhancement: an update to our copy right date.
+We are pleased to present Magento Enterprise Edition 2.1.5. This release includes only one change: an update to our copyright date. 
 
+
+**This release contains no functional changes**. Updating the copyright to 2017 affects the entire code base, however, which is why we are packaging this simple but pervasive change in its own release. 
 
 
 
