@@ -38,31 +38,97 @@ The following components are used to extend the Form component:
 <p class="q">What about those options above?</p>
 Form configuration extends the uiCollection configuration.
 
-| Option                               | Description                                                                     | Type                 | Default                    |
-|--------------------------------------|---------------------------------------------------------------------------------|----------------------|----------------------------|
-| additionalFields                     |                                                                                 |                      |                            |
-| selectorPrefix                       |                                                                                 | String               | '.page-content'            |
-| messagesClass                        |                                                                                 | String               | 'messages'                 |
-| errorClass                           | The class that will be added to the component DOM block when error is appeared. | String               | '.admin__field._error'     |
-| ajaxSave                             | Save form values by ajax.                                                       | Boolean              | false                      |
-| ajaxSaveType                         |                                                                                 | String               | default                    |
-| imports
- - `reloadUrl`                    | 	
-Used for tracking changes of an external entity property. `imports`’s value is an object, composed of the following:
+<table>
+   <tbody>
+      <tr>
+         <th>Option</th>
+         <th>Description</th>
+         <th>Type</th>
+         <th>Default</th>
+      </tr>
+      <tr class="even">
+         <td>`additionalFields`</td>
+         <td></td>
+         <td></td>
+         <td></td>
+      </tr>
+      <tr class="odd">
+         <td>`selectorPrefix`</td>
+         <td>Name that can be used to address the block to which this attribute is assigned. The name must be unique per generated page. If not specified, an automatic name will be assigned in the format <code>ANONYMOUS_<em>n</em></code></td>
+         <td>String</td>
+         <td>	
+`'.page-content'`</td>
+      </tr>
+      <tr class="even">
+         <td>`messagesClass`</td>
+         <td></td>
+         <td>String</td>
+         <td>`'messages'`</td>
+      </tr>
+      <tr class="odd">
+         <td>`errorClass`</td>
+         <td>The class that will be added to the component DOM block 
+when error is appeared.</td>
+         <td>String</td>
+         <td>`'.admin__field._error'`</td>
+      </tr>
+      <tr class="even">
+         <td>`ajaxSave`</td>
+         <td>Save form values by ajax.</td>
+         <td>Boolean</td>
+         <td>`false`</td>
+      </tr>
+      <tr class="odd">
+         <td>ajaxSaveType</td>
+         <td></td>
+         <td>String</td>
+         <td>`default`</td>
+      </tr>
+      <tr class="odd">
+         <td>	
+imports
+<ul>
+<li>reloadUrl</li></ul></td>
+         <td>Used for tracking changes of an external entity property. `imports`’s value is an object, composed of the following:
+<ul>
+ <li> `key`: name of the internal property or method which receives the notifications.</li>
+<li>`value`: name of the property or method which is tracked for changes. Can use string templates.   </li></ul> </td>
+         <td>Object
+<ul>
+<li>String</li></ul></td>
+         <td>'${ $.provider}:reloadUrl'/td>
+      </tr>
 
- - `key`: name of the internal property or method which receives the notifications.
-- `value`: name of the property or method which is tracked for changes. Can use string templates.                                                                               | Object String        | '${ $.provider}:reloadUrl' |
-| exports 
- - `selectorPrefix`
- - `messagesClass` | Used to notify some external entity about property changing. exports value is an object, composed of the following:
- - `key`: name of the internal property or method which is tracked for changes.
- - `value`: name of the property or method which receives the notification. Can use string templates.                                                                              | Object
- - String
- - String |                            |
-| component                            | 	
-The path to the component’s .js file in terms of RequireJS.                                                                              | String               | Magento_Ui/js/form/form    |
-| template                             | 	
-The path to the component’s .html template.                                                                               | String               | templates/form/default     |
+      <tr class="odd">
+<ul>         <td>exports
+<li>selectorPrefix</li>
+<li>messagesClass</li></ul></td>
+         <td>Used to notify some external entity about property changing. `exports` value is an object, composed of the following:
+<ul><li> `key`: name of the internal property or method which is tracked for changes.</li>
+<li> `value`: name of the property or method which receives the notification. Can use string templates.</li></ul></td>
+         <td>Object
+<ul><li>
+String</li>
+<li>String</li></ul></td>
+         <td><p class="q"></p></td>
+      </tr>
+      <tr class="even">
+         <td>`component`</td>
+         <td>The path to the component’s .js file in terms of RequireJS. </td>
+         <td>String</td>
+         <td>`Magento_Ui/js/form/form`</td>
+      </tr>
+      <tr class="odd">
+         <td>template</td>
+         <td>The path to the component’s .html template.</td>
+         <td>String</td>
+         <td>`	
+'ui/form/field'`</td>
+      </tr>    
+   </tbody>
+</table>
+
+
 
 ## Create an instance of the Form component
 
