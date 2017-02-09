@@ -668,6 +668,22 @@
 
 									
 
+									<li class="level-2 "><a href="/guides/v2.0/cloud/project/project-multi-sites.html">Set up multiple Cloud websites or stores</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/cloud/project/project-upgrade.html">Upgrade Magento</a></li>
+
+									
+
+								
+
+									
+
 									<li class="level-2 "><a href="/guides/v2.0/cloud/project/project-conf-files_magento-app.html">.magento.app.yaml</a></li>
 
 									
@@ -823,14 +839,6 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/cloud/project/project-multi-sites.html">Set up multiple Cloud websites or stores</a></li>
-
-									
-
-								
-
-									
-
 									<li class="level-2 "><a href="/guides/v2.0/cloud/project/project-priv-repos.html">Pull code from a private Git repository</a></li>
 
 									
@@ -966,7 +974,7 @@
 									
 
 
-											<li class="level3Child update-magento " data-menunode="update-magento"><a href="/guides/v2.0/cloud/howtos/upgrade-magento.html">Upgrade the Magento application</a>
+											<li class="level3Child update-magento " data-menunode="update-magento"><a href="/guides/v2.0/cloud/howtos/patch-magento.html">Test a patch</a>
 
 
 									
@@ -976,7 +984,7 @@
 									
 
 
-											<li class="level3Child update-magento " data-menunode="update-magento"><a href="/guides/v2.0/cloud/howtos/patch-magento.html">Test a patch</a>
+											<li class="level3Child env-tut " data-menunode="env-tut"><a href="/guides/v2.0/cloud/howtos/upgrade-magento.html">Upgrade Magento</a>
 
 
 									
@@ -2012,12 +2020,12 @@ auth.json
 
   <p>To optionally enter all commands on one line, enter the following assuming Magento is installed in <code>/var/www/html/magento2</code> and the web server group name is <code>apache</code>:</p>
 
-  <pre><code>cd /var/www/html/magento2 &amp;&amp; find var generated vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \; &amp;&amp; find var generated vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \; &amp;&amp; chown -R :apache . &amp;&amp; chmod u+x bin/magento
+  <pre><code>cd /var/www/html/magento2 &amp;&amp; find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \; &amp;&amp; find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \; &amp;&amp; chown -R :apache . &amp;&amp; chmod u+x bin/magento
 </code></pre>
 
   <p>In the event file system permissions are set improperly and can’t be changed by the Magento file system owner, you can enter the command as a user with <code>root</code> privileges:</p>
 
-  <pre><code>cd /var/www/html/magento2 &amp;&amp; sudo find var generated vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \; &amp;&amp; sudo find var generated vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \; &amp;&amp; sudo chown -R :apache . &amp;&amp; sudo chmod u+x bin/magento
+  <pre><code>cd /var/www/html/magento2 &amp;&amp; sudo find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \; &amp;&amp; sudo find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \; &amp;&amp; sudo chown -R :apache . &amp;&amp; sudo chmod u+x bin/magento
 </code></pre>
 </div>
 </div></div>

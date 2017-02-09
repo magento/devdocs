@@ -649,15 +649,15 @@
   <p>If you have already set up a PhpStorm project, you can skip this topic and continue with:</p>
 
   <ul>
-    <li><a href="/guides/v2.1/install-gde/docker/docker-phpstorm-debug.html">Debug in PhPStorm and browser</a></li>
+    <li><a href="/guides/v2.1/install-gde/docker/docker-phpstorm-debug.html">Debug in PhpStorm and browser</a></li>
     <li><a href="/guides/v2.1/install-gde/docker/docker-phpstorm-test.html">Run PHPUnit</a></li>
   </ul>
 
   <h2 id="prerequisites">Prerequisites</h2>
-  <p>Before you continue, complete the tasks discussed in <a href="/guides/v2.1/install-gde/docker/docker-phpstorm-prereq.html">PhPStorm prerequisites</a>.</p>
+  <p>Before you continue, complete the tasks discussed in <a href="/guides/v2.1/install-gde/docker/docker-phpstorm-prereq.html">PhpStorm prerequisites</a>.</p>
 
-  <h2 id="devbox-phpstorm-project">Set up your PhpStorm project</h2>
-  <p>This section discusses how to set up a new PhPStorm project to work with Magento DevBox.</p>
+  <h2 id="devbox-PhpStorm-project">Set up your PhpStorm project</h2>
+  <p>This section discusses how to set up a new PhpStorm project to work with Magento DevBox.</p>
 
   <h3 id="create-the-project-from-existing-files">Create the project from existing files</h3>
   <p>To set up a new PhpStorm project to work with Magento DevBox:</p>
@@ -669,26 +669,26 @@
 
       <p>The Create New Project: Choose Your Scenario dialog box is displayed as follows.</p>
 
-      <p><img src="/common/images/install_docker_php-storm_new-project.png" alt="Create a new PhPStorm project from existing files" width="500px" /></p>
+      <p><img src="/common/images/install_docker_php-storm_new-project.png" alt="Create a new PhpStorm project from existing files" width="500px" /></p>
     </li>
     <li>
       <p>Click <strong>Source files are in a local directory, no Web server is yet configured</strong> and click <strong>Next</strong>.</p>
 
-      <p>For a description of other options, consult the PhPStorm documentation.</p>
+      <p>For a description of other options, consult the PhpStorm documentation.</p>
     </li>
     <li>
-      <p>In the Create New Project: Choose Project Directory dialog box, browse to locate the <code>&lt;DevBox root folder&gt;/shared/webroot</code> folder.</p>
+      <p>In the Create New Project: Choose Project Directory dialog box, browse to locate the <code>&lt;DevBox root folder&gt;/shared/webroot/pub</code> folder.</p>
 
-      <p>Sample path on Windows: <code>C:\magento\build-18c4e4d3c5a541f37e9cffd35f1bf74e\build-18c4e4d3c5a541f37e9cffd35f1bf74e\shared\webroot</code></p>
+      <p>Sample path on Windows: <code>C:\magento\build-18c4e4d3c5a541f37e9cffd35f1bf74e\build-18c4e4d3c5a541f37e9cffd35f1bf74e\shared\webroot\pub</code></p>
 
-      <p>Sample path on Mac OS: <code>/Users/me/build-18c4e4d3c5a541f37e9cffd35f1bf74e\shared\webroot</code></p>
+      <p>Sample path on Mac OS: <code>/Users/me/build-18c4e4d3c5a541f37e9cffd35f1bf74e/shared/webroot/pub</code></p>
 
       <p>The following figure shows an example.</p>
 
       <p><img src="/common/images/install_docker_php-storm_new-project-root.png" alt="Locate your project root directory" width="500px" /></p>
     </li>
     <li>Click <strong>Project Root</strong> and click <strong>Finish</strong>.</li>
-    <li>Wait while PhPStorm indexes the project.</li>
+    <li>Wait while PhpStorm indexes the project.</li>
   </ol>
 
   <h3 id="add-a-remote-php-cli-interpreter">Add a remote PHP CLI interpreter</h3>
@@ -696,7 +696,7 @@
 
   <ol>
     <li>
-      <p>In your PhPStorm Settings window, do one of the following:</p>
+      <p>In your PhpStorm Settings window, do one of the following:</p>
 
       <ul>
         <li>Mac OS: Click <strong>PhpStorm</strong> &gt; <strong>Preferences</strong>.</li>
@@ -783,12 +783,12 @@
   <p>If both name and value do not display, click <strong>Refresh</strong> in the General section and try again.</p>
 
   <h3 id="add-path-mappings">Add path mappings</h3>
-  <p>Because Magento uses symlinks, you must create path mappings so PhPStorm can properly locate files.</p>
+  <p>Because Magento uses symlinks, you must create path mappings so PhpStorm can properly locate files.</p>
 
   <p>To add path mappings:</p>
 
   <ol>
-    <li>In your PhPStorm Settings window, click <strong>Languages &amp; Frameworks</strong> &gt; <strong>PHP</strong>.</li>
+    <li>In your PhpStorm Settings window, click <strong>Languages &amp; Frameworks</strong> &gt; <strong>PHP</strong>.</li>
     <li>In the right pane, from the <strong>CLI Interpreter</strong> list, click the name of the DevBox remote CLI interpreter.</li>
     <li>
       <p>In the right pane, next to the <strong>Path Mappings</strong> field, click <img src="/common/images/install_docker_php-storm-ellipsis.png" alt="Add path mappings" width="20px" />.</p>
@@ -815,7 +815,7 @@
   <p>To set up PHPUnit:</p>
 
   <ol>
-    <li>In your PhPStorm Settings window, expand <strong>Languages &amp; Frameworks</strong> &gt; <strong>PHP</strong> &gt; <strong>PHPUnit</strong>.</li>
+    <li>In your PhpStorm Settings window, expand <strong>Languages &amp; Frameworks</strong> &gt; <strong>PHP</strong> &gt; <strong>PHPUnit</strong>.</li>
     <li>
       <p>In the right pane, click <strong>Use Composer autoloader</strong> as the following figure shows.</p>
 
@@ -829,8 +829,8 @@
 
       <p>Sample path on Windows: <code>C:\magento\build-18c4e4d3c5a541f37e9cffd35f1bf74e\build-18c4e4d3c5a541f37e9cffd35f1bf74e\shared\webroot\vendor</code></p>
     </li>
-    <li>Click <strong>Open</strong>.</li>
-    <li>In the Test Runner section, select both the the <strong>Default configuration file</strong> and the <strong>Default bootstrap file</strong> check boxes.</li>
+    <li>Click <strong>Open</strong>.
+&lt;!– 5.	In the Test Runner section, select both the the <strong>Default configuration file</strong> and the <strong>Default bootstrap file</strong> check boxes.</li>
     <li>
       <p>Click <img src="/common/images/install_docker_php-storm-ellipsis.png" alt="Edit the interpreter" width="20px" /> (<strong>Browse</strong>) next to each check box and enter the following information:</p>
 
@@ -841,7 +841,7 @@
       <p>You can choose <code>phpunit.xml.dist</code> if the <code>.xml</code> file doesn’t exist.</p>
 
       <ul>
-        <li>Default bootstrap file: Browse to locate <code>&lt;PhpStorm project root&gt;/dev/tests/unit/framework/bootstrap.php</code></li>
+        <li>Default bootstrap file: Browse to locate <code>&lt;PhpStorm project root&gt;/dev/tests/unit/framework/bootstrap.php</code> –&gt;</li>
       </ul>
     </li>
     <li>In the Preferences window, click <strong>OK</strong>.</li>
@@ -850,7 +850,7 @@
   <h3 id="set-up-phpunit-to-use-the-remote-cli-interpreter">Set up PHPUnit to use the remote CLI interpreter</h3>
 
   <ol>
-    <li>In your PhPStorm Settings window, expand <strong>Languages &amp; Frameworks</strong> &gt; <strong>PHP</strong> &gt; <strong>PHPUnit</strong>.</li>
+    <li>In your PhpStorm Settings window, expand <strong>Languages &amp; Frameworks</strong> &gt; <strong>PHP</strong> &gt; <strong>PHPUnit</strong>.</li>
     <li>In the center pane, click <img src="/common/images/install_docker_php-storm-add-new.png" alt="Add an interpreter" width="25px" /> (<strong>Add</strong>).</li>
     <li>
       <p>From the list, click <strong>By remote interpreter</strong> as the following figure shows.</p>
@@ -870,7 +870,7 @@
   <p>To set up a PHP server for debugging:</p>
 
   <ol>
-    <li>In your PhPStorm Settings window, click <strong>Languages &amp; Frameworks</strong> &gt; <strong>PHP</strong> &gt; <strong>Servers</strong>.</li>
+    <li>In your PhpStorm Settings window, click <strong>Languages &amp; Frameworks</strong> &gt; <strong>PHP</strong> &gt; <strong>Servers</strong>.</li>
     <li>
       <p>In the center pane, click <img src="/common/images/install_docker_php-storm-add-new.png" alt="New PHP server" /> (<strong>Add</strong>).</p>
 
@@ -904,7 +904,7 @@
 
   <ul>
     <li><a href="/guides/v2.1/install-gde/docker/docker-phpstorm-test.html">Run PHPUnit</a></li>
-    <li><a href="/guides/v2.1/install-gde/docker/docker-phpstorm-debug.html">Debug in PhPStorm and browser</a></li>
+    <li><a href="/guides/v2.1/install-gde/docker/docker-phpstorm-debug.html">Debug in PhpStorm and browser</a></li>
   </ul>
 
 </div>

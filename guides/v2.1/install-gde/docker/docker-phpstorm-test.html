@@ -626,7 +626,7 @@
 
 </section>
 
-			<p>This topic discusses how to run PHPUnit tests from the command line or from PhPStorm. For demonstration purposes, this topic discusses how to test Magento modules. Typically, you’ll test your own modules; replace the paths shown in the examples with the paths to your test files.</p>
+			<p>This topic discusses how to run PHPUnit tests from the command line or from PhpStorm. For demonstration purposes, this topic discusses how to test Magento modules. Typically, you’ll test your own modules; replace the paths shown in the examples with the paths to your test files.</p>
 
 <div>
 
@@ -650,12 +650,12 @@
   <p>Before you begin, make sure you have completed all of the following tasks:</p>
 
   <ul>
-    <li><a href="/guides/v2.1/install-gde/docker/docker-phpstorm-prereq.html">PhPStorm prerequisites</a></li>
-    <li><a href="/guides/v2.1/install-gde/docker/docker-phpstorm-project.html">Set up your PhPStorm project</a></li>
+    <li><a href="/guides/v2.1/install-gde/docker/docker-phpstorm-prereq.html">PhpStorm prerequisites</a></li>
+    <li><a href="/guides/v2.1/install-gde/docker/docker-phpstorm-project.html">Set up your PhpStorm project</a></li>
   </ul>
 
   <div class="bs-callout bs-callout-info">
-    <p>The instructions in this topic are based on PhPStorm version 2016.3.2. If you use a different version, some steps might be different. Consult your PhPStorm documentation for details.</p>
+    <p>The instructions in this topic are based on PhpStorm version 2016.3.2. If you use a different version, some steps might be different. Consult your PhpStorm documentation for details.</p>
   </div>
 
   <h2 id="run-unit-tests-from-the-command-line">Run unit tests from the command line</h2>
@@ -709,7 +709,7 @@
     <li>
       <p>In the Bash shell, change to the following directory:</p>
 
-      <pre><code>cd /var/www/magento2/vendor/bin/phpunit 
+      <pre><code>cd /var/www/magento2/dev/tests/integration 
 </code></pre>
     </li>
     <li>
@@ -717,19 +717,17 @@
 
       <pre><code>/var/www/magento2/vendor/bin/phpunit /var/www/magento2/dev/tests/integration/testsuite/Magento/Integration/Model/Config/Integration
 </code></pre>
-
-      <p>If there is no <code>phpunit.xml</code>, use <code>phpunit.xml.dist</code> instead.</p>
     </li>
   </ol>
 
-  <h2 id="run-phpunit-tests-from-phpstorm">Run PHPUnit tests from PhPStorm</h2>
-  <p>This section discusses one way to run PHPUnit tests in PhPStorm. For more information about defining tests, consult the PhPStorm documentation.</p>
+  <h2 id="run-phpunit-tests-from-phpstorm">Run PHPUnit tests from PhpStorm</h2>
+  <p>This section discusses one way to run PHPUnit tests in PhpStorm. For more information about defining tests, consult the PhpStorm documentation.</p>
 
   <h3 id="set-up-and-run-a-test">Set up and run a test</h3>
   <p>To run PHPUnit tests from PhpStorm:</p>
 
   <ol>
-    <li>Open your DevBox PhPStorm project.</li>
+    <li>Open your DevBox PhpStorm project.</li>
     <li>
       <p>Expand the files in the left pane until you locate a test to run.</p>
 
@@ -750,7 +748,7 @@
   <h3 id="troubleshoot-unit-tests">Troubleshoot unit tests</h3>
   <p>If your remote CLI interpreter or Xdebug options aren’t set up properly, the following messages are displayed:</p>
 
-  <pre><code>ssh://magento2@127.0.0.1:32795/usr/local/bin/php -dxdebug.remote_host=127.0.0.1 /home/magento2/.phpstorm_helpers/phpunit.php --no-configuration Magento\\AdvancedSearch\\Test\\Unit\\Block\\SearchDataTest /var/www/magento2/vendor/magento/module-advanced-search/Test/Unit/Block/SearchDataTest.php
+  <pre><code>ssh://magento2@127.0.0.1:32795/usr/local/bin/php -dxdebug.remote_host=127.0.0.1 /home/magento2/.PhpStorm_helpers/phpunit.php --no-configuration Magento\\AdvancedSearch\\Test\\Unit\\Block\\SearchDataTest /var/www/magento2/vendor/magento/module-advanced-search/Test/Unit/Block/SearchDataTest.php
 Testing started at 6:13 PM ...
 
 Process finished with exit code 1
@@ -763,7 +761,7 @@ Cannot find PHPUnit in include path (.:/usr/local/lib/php)
 
   <h4 id="next-step">Next step</h4>
 
-  <p><a href="/guides/v2.1/install-gde/docker/docker-phpstorm-debug.html">Debug in PhPStorm and browser</a></p>
+  <p><a href="/guides/v2.1/install-gde/docker/docker-phpstorm-debug.html">Debug in PhpStorm and browser</a></p>
 </div>
 
 		</div>

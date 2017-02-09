@@ -740,7 +740,11 @@ magento2devbox_web_709831d587f2feef1e27fa41d4e70219       /usr/local/bin/entrypo
       <p>In the web container, the following ports are used:</p>
 
       <ul>
-        <li>SSH listens on port 32795</li>
+        <li>
+          <p>SSH listens on port 32795</p>
+
+          <p>Applications like PhpStorm communicate with DevBox on the SSH listen port. It’s very important to know this port.</p>
+        </li>
         <li>Unison synchronization (Windows only) listens on port 32781</li>
         <li>The web server listens on port 32782</li>
       </ul>

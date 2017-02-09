@@ -684,6 +684,15 @@ Error: No such container: magento2devbox_web_7f927cb82fd5dfc7d21b4d02387a0d12
 <p><em>Solution</em>: <a href="/guides/v2.0/install-gde/docker/docker-ref.html#devbox-docker-file-share">Set up file sharing</a>.</p>
 </div></div>
 
+<div class="collapsible collapsible-h2"><h2 class="collapsible-title">Problem: Error during installation </h2><div class="collapsible-content"><p>During DevBox installation, the following error might display:</p>
+
+<pre class="no-copy">ERROR: could not find an available, non-overlapping IPv4 address pool among the defaults to assign to the network</pre>
+
+<p><em>Solution</em>: This error typically happens when you are connected to a network using VPN. End your VPN session and try to install DevBox again.</p>
+
+<p>For more information, see the <a href="https://github.com/docker/libnetwork/issues/779" target="_blank">Docker GitHub issue</a>.</p>
+</div></div>
+
 <div class="collapsible collapsible-h2"><h2 class="collapsible-title">Problem: You want to start over </h2><div class="collapsible-content"><p>In the event you want to start over with a new Magento application installation, use the following steps from the directory to which you copied the DevBox scripts:</p>
 
 <ol>

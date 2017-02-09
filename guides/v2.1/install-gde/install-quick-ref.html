@@ -1159,7 +1159,7 @@ sudo passwd magento_user
     <p>Enter the following commands in the order shown:</p>
 
     <pre><code>cd &lt;your Magento install dir&gt;
-find var generated vendor pub/static pub/media app/etc -type f -exec chmod g+w \;
+find var vendor pub/static pub/media app/etc -type f -exec chmod g+w \;
 find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
 chown -R :&lt;web server group&gt; .
 chmod u+x bin/magento
@@ -1171,12 +1171,12 @@ chmod u+x bin/magento
 
   <p>To optionally enter all commands on one line, enter the following assuming Magento is installed in <code>/var/www/html/magento2</code> and the web server group name is <code>apache</code>:</p>
 
-  <pre><code>cd /var/www/html/magento2 &amp;&amp; find var generated vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \; &amp;&amp; find var generated vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \; &amp;&amp; chown -R :apache . &amp;&amp; chmod u+x bin/magento
+  <pre><code>cd /var/www/html/magento2 &amp;&amp; find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \; &amp;&amp; find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \; &amp;&amp; chown -R :apache . &amp;&amp; chmod u+x bin/magento
 </code></pre>
 
   <p>In the event file system permissions are set improperly and can’t be changed by the Magento file system owner, you can enter the command as a user with <code>root</code> privileges:</p>
 
-  <pre><code>cd /var/www/html/magento2 &amp;&amp; sudo find var generated vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \; &amp;&amp; sudo find var generated vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \; &amp;&amp; sudo chown -R :apache . &amp;&amp; sudo chmod u+x bin/magento
+  <pre><code>cd /var/www/html/magento2 &amp;&amp; sudo find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \; &amp;&amp; sudo find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \; &amp;&amp; sudo chown -R :apache . &amp;&amp; sudo chmod u+x bin/magento
 </code></pre>
 
   <h3 id="next-step">Next step</h3>
