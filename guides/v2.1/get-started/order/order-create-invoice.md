@@ -255,4 +255,8 @@ You will use the `order_item_id` values to create a shipment in the next step.
 {% endhighlight %}
 {% endcollapsible %}
 
+### Verify this step {#verify-step}
+
+Log in to Admin. Click **Sales > Invoices**. The invoice is displayed in the grid.
+
 Previous Step: [Prepare for checkout]({{page.baseurl}}/get-started/order/order-create-order.html) | Next step: [Create an shipment]({{page.baseurl}}/get-started/order/order-create-shipment.html)

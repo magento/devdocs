@@ -17,7 +17,7 @@ Previous Step: [Get Started]({{page.baseurl}}/get-started/order/order-intro.html
 
 The default Luma store needs additional configuration to run the REST calls mentioned in this tutorial.
 
-If you are using the DevBox installation, the URL to Admin is `1http://127.0.0.1:32772/admin`.
+If you are using the DevBox installation, the URL to Admin is `http://127.0.0.1:32772/admin`.
 
 ### Set the payment method {#set-payment}
 

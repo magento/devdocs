@@ -71,4 +71,6 @@ A shipment ID, such as `3`.
 
 ## Verify this step
 
+Log in to Admin. Click **Sales > Shipments**. The shipment is displayed in the grid.
+
 Previous Step: [Create an invoice]({{page.baseurl}}/get-started/order/order-create-invoice.html) | Next Step: [Issue a partial refund]({{page.baseurl}}/get-started/order/order-issue-refund.html)

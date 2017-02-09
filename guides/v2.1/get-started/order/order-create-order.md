@@ -1291,4 +1291,9 @@ Not applicable
 {% endhighlight %}
 {% endcollapsible %}
 
+### Verify this step {#verify-step}
+
+1. Log in to the Luma store as the customer. The dashboard shows the order.
+2. Log in to Admin. Click **Sales > Orders**. The order is displayed in the grid.
+
 Previous Step: [Prepare for checkout]({{page.baseurl}}/get-started/order/order-prepare-checkout.html) | Next step: [Create an invoice]({{page.baseurl}}/get-started/order/order-create-invoice.html)
