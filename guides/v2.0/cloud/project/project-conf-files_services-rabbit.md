@@ -4,7 +4,7 @@ group: cloud
 subgroup: 10_project
 title: Set up the rabbitmq service
 menu_title: Set up the rabbitmq service
-menu_order: 35
+menu_order: 86
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: services

@@ -1,7 +1,7 @@
 ---
 layout: default
 group: install-dock
-subgroup: 05_phpstorm
+subgroup: 05_PhpStorm
 title: PhpStorm prerequisites
 menu_title: PhpStorm prerequisites
 menu_node: 
@@ -10,12 +10,12 @@ version: 2.0
 github_link: install-gde/docker/docker-phpstorm-prereq.md
 ---
 
-This topic discusses tasks you must perform before you can use PhPStorm with DevBox.
+This topic discusses tasks you must perform before you can use PhpStorm with DevBox.
 
 ## Find a service port
-DevBox randomly assigns ports to services every time a container starts. To use DevBox with PhPStorm, you must know some of these ports (especially the SSH and the web server listen ports). 
+DevBox randomly assigns ports to services every time a container starts. To use DevBox with PhpStorm, you must know some of these ports (especially the SSH and the web server listen ports). 
 
-### Determine a listen port {#devbox-phpstorm-ssh-find}
+### Determine a listen port {#devbox-PhpStorm-ssh-find}
 To determine a listen port:
 
 In a command window, find your container identifiers:
@@ -28,6 +28,10 @@ The command displays the listen ports. An example follows:
 
 ## Create an SSH tunnel on Windows {#devbox-ssh-windows}
 To use Xdebug with Docker on Windows, you must set up an SSH tunnel because Windows doesn't have a native SSH client.
+
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+You don't need to use a third-party SSH client on Mac OS because it has a native client. Instead, run the `m2devbox-debug.sh` script before you need to create a tunnel to DevBox. One example of doing this is to run [Xdebug]({{ page.baseurl }}install-gde/docker/docker-phpstorm-debug.html).
+</div>
 
 The following procedure shows an example of creating an SSH tunnel using [Putty](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html){:target="_blank"}. You can use other applications (such as Cygwin); for more information, consult the documentation provided with those applications.
 
@@ -62,5 +66,26 @@ To set up an SSH tunnel on Windows using Putty:
 
 If an "unable to connect" error displays, verify all of the preceding information and try again.
 
+## Set the user's bash profile
+This section discusses an optional step of changing to the `/var/www/magento2` directory in the DevBox's user's bash profile. This means every time you start an interactive session in a command shell, you're executing commands from that directory.
+
+To set the user's bash profile:
+
+1.	Open a DOS command prompt (Windows) or Terminal (Mac OS) window.
+2.	Enter the following command:
+
+		docker-compose exec --user=magento2 web /bin/bash
+
+	This commands opens an SSH shell.
+3.	In the shell prompt, enter the following command:
+
+		vim ~/.bash_profile
+4.	Press `i` (insert).
+5.	Enter the following command in the vim window:
+
+		cd /var/www/magento2
+6.	Press `:wq` to save the file and exit vim.
+7.	Enter `exit` to exit the SSH shell and return to your command prompt.
+
 #### Next step
-[Set up your PhPStorm project]({{ page.baseurl }}install-gde/docker/docker-phpstorm-project.html)
+[Set up your PhpStorm project]({{ page.baseurl }}install-gde/docker/docker-phpstorm-project.html)

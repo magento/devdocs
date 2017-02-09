@@ -188,6 +188,6 @@ Note the following issue in this release:
 
 The `magento setup:install` command (used for deployment) succeeds in either a staging or production system if a Magento database already exists.
 
-#### Related information
+### Magento EE Release Notes
 * [Magento EE 2.0.11 Release Notes]({{ site.gudeurl }}release-notes/ReleaseNotes2.0.11EE.html)
 * [Magento EE 2.1.3 Release Notes]({{ site.gdeurl21 }}release-notes/ReleaseNotes2.1.3EE.html)

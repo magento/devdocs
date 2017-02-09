@@ -1,19 +1,19 @@
 ---
 layout: default
 group: install-dock
-subgroup: 05_phpstorm
+subgroup: 05_PhpStorm
 title: Debug and test using PhpStorm
 menu_title: Debug and test using PhpStorm
 menu_node: parent
 menu_order: 1
 version: 2.0
-github_link: install-gde/docker/docker-phpstorm-parent.md
+github_link: install-gde/docker/docker-PhpStorm-parent.md
 ---
 
 These topics discuss how to configure Xdebug, PHPUnit, and PhpStorm to test and debug Magento DevBox code:
 
-*	[PhPStorm prerequisites]({{ page.baseurl }}install-gde/docker/docker-phpstorm-prereq.html)
-*	[Set up your PhPStorm project]({{ page.baseurl }}install-gde/docker/docker-phpstorm-project.html)
+*	[PhpStorm prerequisites]({{ page.baseurl }}install-gde/docker/docker-phpstorm-prereq.html)
+*	[Set up your PhpStorm project]({{ page.baseurl }}install-gde/docker/docker-phpstorm-project.html)
 *	[Run PHPUnit]({{ page.baseurl }}install-gde/docker/docker-phpstorm-test.html)
 *	[Debug in PhpStorm and browser]({{ page.baseurl }}install-gde/docker/docker-phpstorm-debug.html)
 *	[Common DevBox commands]({{ page.baseurl }}install-gde/docker/docker-commands.html)
