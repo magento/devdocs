@@ -28,7 +28,7 @@ Creating a customer account requires admin permissions.
 
 **Endpoint**
 
-`POST /V1/customers`
+`POST http://<host>/rest/default/V1/customers`
 
 **Headers**
 
@@ -124,7 +124,7 @@ To get a customer's access token, you must specify the customer's username and p
 
 **Endpoint**
 
-`POST /V1/integration/customer/token`
+`POST http://<host>/rest/default/V1/integration/customer/token`
 
 **Headers**
 

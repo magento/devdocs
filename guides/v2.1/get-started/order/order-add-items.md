@@ -27,7 +27,7 @@ The following example adds an orange medium-sized  Radiant women's t-shirt (`sku
 
 **Endpoint**
 
-`POST V1/carts/mine/items`
+`POST http://<host>/rest/default/V1/carts/mine/items`
 
 **Headers**
 
@@ -68,7 +68,7 @@ The following example adds the downloadable product Advanced Pilates & Yoga (`sk
 
 **Endpoint**
 
-`POST V1/carts/mine/items`
+`POST http://<host>/rest/default/V1/carts/mine/items`
 
 **Headers**
 
@@ -123,7 +123,7 @@ The sample data provides one bundled product, the Sprite Yoga Companion Kit (`sk
 
 To add a bundle product to a cart, you must specify the `sku` of the bundle product, but not the individual items. You add individual items to the bundle product by specifying the `id` defined in the item's `product_links` object. The `product_links` object primarily describes the ordering and placement of options on the customization page, but it also links an item's `sku` and `id` to the `sku` of the bundle product.
 
-The `GET V1/bundle-products/24-WG080/options/all` call returns `id` values, as shown in the following simplified respose:
+The `GET http://<host>/rest/default/V1/bundle-products/24-WG080/options/all` call returns `id` values, as shown in the following simplified respose:
 
 {% collapsible Click to show/hide %}
 {% highlight json %}
@@ -230,7 +230,7 @@ For this example, we'll configure the Sprite Yoga Companion Kit as follows:
 
 **Endpoint**
 
-`POST V1/carts/mine/items`
+`POST http://<host>/rest/default/V1/carts/mine/items`
 
 **Headers**
 

@@ -23,7 +23,7 @@ If the call is successful on a full shipment, Magento changes the status of an o
 
 **Endpoint**
 
-`POST /V1/order/3/ship`
+`POST http://<host>/rest/default/V1/order/3/ship`
 
 where `3` is the order id.
 

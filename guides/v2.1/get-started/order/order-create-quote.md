@@ -37,7 +37,7 @@ This tutorial manages a the cart of a logged-in customer. Unless otherwise noted
 
 **Endpoint**
 
-`POST /V1/carts/mine`
+`POST http://<host>/rest/default//V1/carts/mine`
 
 **Headers**
 

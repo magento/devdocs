@@ -22,7 +22,7 @@ When you submit payment information, Magento creates an order and sends an order
 
 **Endpoint**
 
-`POST V1/carts/mine/payment-information`
+`POST http://<host>/rest/default/V1/carts/mine/payment-information`
 
 **Headers**
 
@@ -66,7 +66,7 @@ When you request an order object, the response contains full details about the o
 
 **Endpoint**
 
-`GET V1/orders/3`
+`GET http://<host>/rest/default/V1/orders/3`
 
 where `3` is the `orderid`
 

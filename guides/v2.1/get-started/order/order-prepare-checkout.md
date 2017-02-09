@@ -27,7 +27,7 @@ Magento calculates shipping costs for each shipping method that can be applied t
 
 **Endpoint**
 
-`POST V1/carts/mine/estimate-shipping-methods`
+`POST http://<host>/rest/default/V1/carts/mine/estimate-shipping-methods`
 
 **Headers**
 
@@ -107,7 +107,7 @@ Magento returns a list of payment options and calculates the order totals.
 
 **Endpoint**
 
-`POST V1/carts/mine/shipping-information`
+`POST http://<host>/rest/default/V1/carts/mine/shipping-information`
 
 **Headers**
 

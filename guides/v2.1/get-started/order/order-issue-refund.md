@@ -34,7 +34,7 @@ The `return_to_stock_items` array specifies which `order_item_id`s can be return
 
 **Endpoint**
 
-`POST /V1/order/5/refund`
+`POST http://<host>/rest/default/V1/order/5/refund`
 
 **Headers**
 
