@@ -1,7 +1,7 @@
 ---
 layout: default
 group: install-dock
-subgroup: 05_phpstorm
+subgroup: 05_PhpStorm
 title: Set up your PhpStorm project
 menu_title: Set up your PhpStorm project
 menu_node: 
@@ -16,14 +16,14 @@ This topic discusses how to set up a PhpStorm project to work with Magento DevBo
 
 If you have already set up a PhpStorm project, you can skip this topic and continue with:
 
-*	[Debug in PhPStorm and browser]({{ page.baseurl }}install-gde/docker/docker-phpstorm-debug.html)
+*	[Debug in PhpStorm and browser]({{ page.baseurl }}install-gde/docker/docker-phpstorm-debug.html)
 *	[Run PHPUnit]({{ page.baseurl }}install-gde/docker/docker-phpstorm-test.html)
 
 ## Prerequisites
-Before you continue, complete the tasks discussed in [PhPStorm prerequisites]({{ page.baseurl }}install-gde/docker/docker-phpstorm-prereq.html).
+Before you continue, complete the tasks discussed in [PhpStorm prerequisites]({{ page.baseurl }}install-gde/docker/docker-phpstorm-prereq.html).
 
-## Set up your PhpStorm project {#devbox-phpstorm-project}
-This section discusses how to set up a new PhPStorm project to work with Magento DevBox.
+## Set up your PhpStorm project {#devbox-PhpStorm-project}
+This section discusses how to set up a new PhpStorm project to work with Magento DevBox.
 
 ### Create the project from existing files
 To set up a new PhpStorm project to work with Magento DevBox:
@@ -33,27 +33,27 @@ To set up a new PhpStorm project to work with Magento DevBox:
 
 	The Create New Project: Choose Your Scenario dialog box is displayed as follows.
 
-	![Create a new PhPStorm project from existing files]({{ site.baseurl }}common/images/install_docker_php-storm_new-project.png){:width="500px"}
+	![Create a new PhpStorm project from existing files]({{ site.baseurl }}common/images/install_docker_php-storm_new-project.png){:width="500px"}
 
 3.	Click **Source files are in a local directory, no Web server is yet configured** and click **Next**.
 
-	For a description of other options, consult the PhPStorm documentation.
-4.	In the Create New Project: Choose Project Directory dialog box, browse to locate the `<DevBox root folder>/shared/webroot` folder.
+	For a description of other options, consult the PhpStorm documentation.
+4.	In the Create New Project: Choose Project Directory dialog box, browse to locate the `<DevBox root folder>/shared/webroot/pub` folder.
 
-	Sample path on Windows: `C:\magento\build-18c4e4d3c5a541f37e9cffd35f1bf74e\build-18c4e4d3c5a541f37e9cffd35f1bf74e\shared\webroot`
+	Sample path on Windows: `C:\magento\build-18c4e4d3c5a541f37e9cffd35f1bf74e\build-18c4e4d3c5a541f37e9cffd35f1bf74e\shared\webroot\pub`
 
-	Sample path on Mac OS: `/Users/me/build-18c4e4d3c5a541f37e9cffd35f1bf74e\shared\webroot`
+	Sample path on Mac OS: `/Users/me/build-18c4e4d3c5a541f37e9cffd35f1bf74e/shared/webroot/pub`
 
 	The following figure shows an example.
 
 	![Locate your project root directory]({{ site.baseurl }}common/images/install_docker_php-storm_new-project-root.png){:width="500px"}
 5.	Click **Project Root** and click **Finish**.
-7.	Wait while PhPStorm indexes the project.
+7.	Wait while PhpStorm indexes the project.
 
 ### Add a remote PHP CLI interpreter
 This section discusses how to add a remote PHP 7 CLI interpreter.
 
-1.	In your PhPStorm Settings window, do one of the following:
+1.	In your PhpStorm Settings window, do one of the following:
 
 	*	Mac OS: Click **PhpStorm** > **Preferences**.
 	*	Windows: Click **File** > **Settings**.
@@ -114,11 +114,11 @@ To create the Xdebug remote host:
 If both name and value do not display, click **Refresh** in the General section and try again.
 
 ### Add path mappings
-Because Magento uses symlinks, you must create path mappings so PhPStorm can properly locate files.
+Because Magento uses symlinks, you must create path mappings so PhpStorm can properly locate files.
 
 To add path mappings:
 
-1.	In your PhPStorm Settings window, click **Languages & Frameworks** > **PHP**.
+1.	In your PhpStorm Settings window, click **Languages & Frameworks** > **PHP**.
 4.	In the right pane, from the **CLI Interpreter** list, click the name of the DevBox remote CLI interpreter.
 5.	In the right pane, next to the **Path Mappings** field, click ![Add path mappings]({{ site.baseurl }}common/images/install_docker_php-storm-ellipsis.png){:width="20px"}.
 
@@ -139,7 +139,7 @@ To add path mappings:
 ## Set up PHPUnit {#devbox-phpunit-setup}
 To set up PHPUnit:
 
-1.	In your PhPStorm Settings window, expand **Languages & Frameworks** > **PHP** > **PHPUnit**.
+1.	In your PhpStorm Settings window, expand **Languages & Frameworks** > **PHP** > **PHPUnit**.
 2.	In the right pane, click **Use Composer autoloader** as the following figure shows.
 
 	![Set up PHPUnit]({{ site.baseurl }}common/images/install_docker_php-storm-phpunit.png){:width="650px"}
@@ -151,19 +151,19 @@ To set up PHPUnit:
 
 	Sample path on Windows: `C:\magento\build-18c4e4d3c5a541f37e9cffd35f1bf74e\build-18c4e4d3c5a541f37e9cffd35f1bf74e\shared\webroot\vendor`
 4.	Click **Open**.
-5.	In the Test Runner section, select both the the **Default configuration file** and the **Default bootstrap file** check boxes.
+<!-- 5.	In the Test Runner section, select both the the **Default configuration file** and the **Default bootstrap file** check boxes.
 5.	Click ![Edit the interpreter]({{ site.baseurl }}common/images/install_docker_php-storm-ellipsis.png){:width="20px"} (**Browse**) next to each check box and enter the following information:
 
 	*	Default configuration file: Browse to locate `<PhpStorm project root>/dev/tests/unit/phpunit.xml`
 
 	You can choose `phpunit.xml.dist` if the `.xml` file doesn't exist.
 
-	*	Default bootstrap file: Browse to locate `<PhpStorm project root>/dev/tests/unit/framework/bootstrap.php`
+	*	Default bootstrap file: Browse to locate `<PhpStorm project root>/dev/tests/unit/framework/bootstrap.php` -->
 6.	In the Preferences window, click **OK**.
 
 ### Set up PHPUnit to use the remote CLI interpreter
 
-1.	In your PhPStorm Settings window, expand **Languages & Frameworks** > **PHP** > **PHPUnit**.
+1.	In your PhpStorm Settings window, expand **Languages & Frameworks** > **PHP** > **PHPUnit**.
 9.	In the center pane, click ![Add an interpreter]({{ site.baseurl }}common/images/install_docker_php-storm-add-new.png){:width="25px"} (**Add**).
 10.	From the list, click **By remote interpreter** as the following figure shows.
 
@@ -177,7 +177,7 @@ To set up PHPUnit:
 ### Set up a PHP server
 To set up a PHP server for debugging:
 
-1.	In your PhPStorm Settings window, click **Languages & Frameworks** > **PHP** > **Servers**.
+1.	In your PhpStorm Settings window, click **Languages & Frameworks** > **PHP** > **Servers**.
 2.	In the center pane, click ![New PHP server]({{ site.baseurl }}common/images/install_docker_php-storm-add-new.png) (**Add**).
 
 	The following figure shows an example.
@@ -200,6 +200,6 @@ To set up a PHP server for debugging:
 #### Next steps
 
 *	[Run PHPUnit]({{ page.baseurl }}install-gde/docker/docker-phpstorm-test.html)
-*	[Debug in PhPStorm and browser]({{ page.baseurl }}install-gde/docker/docker-phpstorm-debug.html)
+*	[Debug in PhpStorm and browser]({{ page.baseurl }}install-gde/docker/docker-phpstorm-debug.html)
 
 

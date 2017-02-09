@@ -4,7 +4,7 @@ group: cloud
 subgroup: 10_project
 title: Set up the elasticsearch service
 menu_title: Set up the elasticsearch service
-menu_order: 34
+menu_order: 85
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: services

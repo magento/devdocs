@@ -4,7 +4,7 @@ group: cloud
 subgroup: 10_project
 title: Configure services
 menu_title: Configure services
-menu_order: 25
+menu_order: 80
 menu_node: 
 level3_menu_node: level3parent
 level3_subgroup: services

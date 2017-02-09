@@ -88,6 +88,18 @@ Other errors might display in a secondary command window:
 
 {% endcollapsibleh2 %}
 
+{% collapsibleh2 Problem: Error during installation %}
+
+During DevBox installation, the following error might display:
+
+<pre class="no-copy">ERROR: could not find an available, non-overlapping IPv4 address pool among the defaults to assign to the network</pre>
+
+_Solution_: This error typically happens when you are connected to a network using VPN. End your VPN session and try to install DevBox again.
+
+For more information, see the [Docker GitHub issue](https://github.com/docker/libnetwork/issues/779){:target="_blank"}.
+
+{% endcollapsibleh2 %}
+
 {% collapsibleh2 Problem: You want to start over %}
 
 In the event you want to start over with a new Magento application installation, use the following steps from the directory to which you copied the DevBox scripts:
