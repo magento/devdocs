@@ -10,7 +10,9 @@ github_link: ui_comp_guide/components/ui-form.md
 
 
 ## Overview
-Form component allows performing [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) operations on an entity. 
+The Form component allows performing [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) operations on an entity. 
+
+Form extends uiCollection.
 
 The following is the Form component constructor: [form.js]({{site.mage2100url}}app/code/Magento/Ui/view/base/web/js/form/form.js)
 
@@ -32,6 +34,35 @@ The following components are used to extend the Form component:
  
 * layout - configuration class meets the visualization component
     (See examples in 'Configuring' section)
+
+<p class="q">What about those options above?</p>
+Form configuration extends the uiCollection configuration.
+
+| Option                               | Description                                                                     | Type                 | Default                    |
+|--------------------------------------|---------------------------------------------------------------------------------|----------------------|----------------------------|
+| additionalFields                     |                                                                                 |                      |                            |
+| selectorPrefix                       |                                                                                 | String               | '.page-content'            |
+| messagesClass                        |                                                                                 | String               | 'messages'                 |
+| errorClass                           | The class that will be added to the component DOM block when error is appeared. | String               | '.admin__field._error'     |
+| ajaxSave                             | Save form values by ajax.                                                       | Boolean              | false                      |
+| ajaxSaveType                         |                                                                                 | String               | default                    |
+| imports
+ - `reloadUrl`                    | 	
+Used for tracking changes of an external entity property. `imports`’s value is an object, composed of the following:
+
+ - `key`: name of the internal property or method which receives the notifications.
+- `value`: name of the property or method which is tracked for changes. Can use string templates.                                                                               | Object String        | '${ $.provider}:reloadUrl' |
+| exports 
+ - `selectorPrefix`
+ - `messagesClass` | Used to notify some external entity about property changing. exports value is an object, composed of the following:
+ - `key`: name of the internal property or method which is tracked for changes.
+ - `value`: name of the property or method which receives the notification. Can use string templates.                                                                              | Object
+ - String
+ - String |                            |
+| component                            | 	
+The path to the component’s .js file in terms of RequireJS.                                                                              | String               | Magento_Ui/js/form/form    |
+| template                             | 	
+The path to the component’s .html template.                                                                               | String               | templates/form/default     |
 
 ## Create an instance of the Form component
 
