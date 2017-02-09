@@ -28,7 +28,7 @@ where:
 Element | Description
 --- | ---
 `HTTP verb` | One of `GET`, `POST`, `PUT`, or `DELETE`
-`host` | The host name or IP address (and optionally, port) of the Magento installation. If you are using the DevBox installation, the value of `<host>` is similar to `127.0.0.1:32772`.
+`host` | The host name or IP address (and optionally, port) of the Magento installation. If you are using the DevBox installation, the value of `<host>` is `127.0.0.1:32772`.
 `scope` | Specifies which store the call affects. In this tutorial, this value is `default`.
 `endpoint` | The full URI (Uniform Resource Indentifier) to the endpoint. These values always start with `/V1`. For example, `/V1/orders/4`.
 

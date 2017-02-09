@@ -17,6 +17,8 @@ Previous Step: [Get Started]({{page.baseurl}}/get-started/order/order-intro.html
 
 The default Luma store needs additional configuration to run the REST calls mentioned in this tutorial.
 
+If you are using the DevBox installation, the URL to Admin is `1http://127.0.0.1:32772/admin`.
+
 ### Set the payment method {#set-payment}
 
 Since the Luma store is for demonstration purposes only, it is not set up to handle credit card payments. However, it can simulate any of the following offline payment methods:
