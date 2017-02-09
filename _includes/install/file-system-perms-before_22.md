@@ -13,7 +13,7 @@ The procedure you use is different, depending on whether you use [shared hosting
 This section discusses how to set pre-installation permissions if you log in to the Magento server as the same user that also runs the web server. This type of setup is common in shared hosting environments.
 
 {% collapsible To set ownership and permissions for a one-user system: %}
-{% include install/file-system-perms-oneuser.md %}
+{% include install/file-system-perms-oneuser_22.md %}
 {% endcollapsible %}
 
 ## Set ownership and permissions for two users {#perms-private}
