@@ -13,10 +13,7 @@ github_link: release-notes/ReleaseNotes2.1.5EE.md
 *	TOC
 {:toc}
 
-We are pleased to present Magento Enterprise Edition 2.1.5. This release includes only one change: an update to our copyright date. 
-
-
-**This release contains no functional changes**. Updating the copyright to 2017 affects the entire code base, however, which is why we are packaging this simple but pervasive change in its own release. 
+We are pleased to present Magento Enterprise Edition 2.1.5. **This release contains no functional changes or security improvements**. It includes only one change: an update to our copyright date. 
 
 
 
