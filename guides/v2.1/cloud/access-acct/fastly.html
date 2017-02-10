@@ -1530,7 +1530,7 @@
 
 			<p><a href="https://www.fastly.com/why-fastly" target="_blank">Fastly</a> is required for Magento Enterprise Cloud Edition. It works with Varnish to provide fast caching capabilities and a Content Delivery Network (CDN) for static assets.</p>
 
-<h3 id="cloud-fastly-creds">Get your Fastly credentials</h3>
+<h2 id="cloud-fastly-creds">Get your Fastly credentials</h2>
 <p>To get Fastly credentials, open a <a href="/guides/v2.1/cloud/get-help.html">support ticket</a>. You must provide your fully-qualified domain name.</p>
 
 <p>We’ll provide you with the following information so you can enable Fastly:</p>
@@ -1615,7 +1615,8 @@
 </div>
 </div></div>
 
-<p id="cloud-fastly-setup"><div class="collapsible collapsible-h3"><h3 class="collapsible-title">Install Fastly in your new environment </h3><div class="collapsible-content"><ol>
+<h2 id="cloud-fastly-setup">Install Fastly in your new environment</h2>
+<ol>
   <li>
     <p>In your local environment root directory, enter the following commands in the order shown:</p>
 
@@ -1637,9 +1638,9 @@ composer require fastly/magento2
 </code></pre>
   </li>
 </ol>
-</div></div>
 
-<p id="cloud-fastly-admin"><div class="collapsible collapsible-h3"><h3 class="collapsible-title">Enable Fastly using the Magento Admin </h3><div class="collapsible-content"><ol>
+<h2 id="cloud-fastly-admin">Enable Fastly using the Magento Admin</h2>
+<ol>
   <li>
     <p>Log in to your local Magento Admin as an administrator.</p>
 
@@ -1678,9 +1679,9 @@ composer require fastly/magento2
 
 <!-- After you receive a Magento VCL from Fastly, [upload it to your staging or production system](/guides/v2.1/cloud/live/stage-prod-migrate-prereq.html#cloud-live-migrate-fastly).
  -->
-</div></div>
 
-<p id="cloud-fastly-config"><div class="collapsible collapsible-h3"><h3 class="collapsible-title">Configure Fastly </h3><div class="collapsible-content"><p>Configure Fastly using the following:</p>
+<h2 id="cloud-fastly-config">Configure Fastly</h2>
+<p>Configure Fastly using the following:</p>
 
 <ul>
   <li>We provide your Fastly service ID and API key.</li>
@@ -1708,14 +1709,38 @@ composer require fastly/magento2
 
 <p>For details about Fastly configuration, see the <a href="https://docs.fastly.com/guides" target="_blank">Fastly documentation</a>.</p>
 
-<h4 id="advanced-configuration-options">Advanced configuration options</h4>
-<p>For advanced configuration options, download and customize the <a href="https://github.com/fastly/fastly-magento2/blob/master/etc/fastly.vcl" target="_blank">Fastly configuration</a>.</p>
-</div></div>
+<h3 id="fastly-errpg">Create a custom error/maintenance page</h3>
+<p>You can optionally create a custom HTML page for errors or when your site is down for maintenance. This page can give confidence to your customers; instead of seeing HTTP error codes, they’ll see a page that explains that your site is down temporarily.</p>
 
-<p id="cloud-fastly-merge"><div class="collapsible collapsible-h3"><h3 class="collapsible-title">Merge your Fastly branch </h3><div class="collapsible-content"><p>When you’re done with development, <a href="/guides/v2.1/cloud/howtos/environment-tutorial-env-merge.html">merge your environment</a> with its parent environment.</p>
+<p>To create a custom error/maintenance page:</p>
+
+<ol>
+  <li>
+    <p>In the Admin, in the Fastly Configuration section, expand <strong>Error/Maintenance Page</strong> as the following figure shows.</p>
+
+    <p><img src="/common/images/cloud-fastly_err-pg.png" alt="Custom Fastly error page" width="650px" /></p>
+  </li>
+  <li>Click <strong>Set HTML</strong>.</li>
+  <li>
+    <p>In the provided field, enter your HTML.</p>
+
+    <p>The HTML you enter can be a maximum of 65,535 bytes in length.</p>
+
+    <div class="bs-callout bs-callout-info" id="info">
+      <p>Avoid using images on your site in the event Fastly is not available. To use images, refer to <a href="https://css-tricks.com/data-uris/" target="_blank">Data URIs on the css-tricks site</a>.</p>
+    </div>
+  </li>
+  <li>When you’re done, click <strong>Upload</strong>.</li>
+  <li>In the Magento Admin, click <strong>Save Config</strong>.</li>
+</ol>
+
+<h3 id="advanced-configuration-options">Advanced configuration options</h3>
+<p>For advanced configuration options, download and customize the <a href="https://github.com/fastly/fastly-magento2/blob/master/etc/fastly.vcl" target="_blank">Fastly configuration</a>.</p>
+
+<h2 id="cloud-fastly-merge">Merge your Fastly branch</h2>
+<p>When you’re done with development, <a href="/guides/v2.1/cloud/howtos/environment-tutorial-env-merge.html">merge your environment</a> with its parent environment.</p>
 
 <p>For Fastly to be used in production, you must merge with the <code>master</code> environment.</p>
-</div></div>
 
 <h2 id="custom-vcl">Custom VCLs</h2>
 <p>You're free to customize your Fastly VCL however you want, provided you follow Fastly's guidelines for <a href="https://docs.fastly.com/guides/vcl/mixing-and-matching-fastly-vcl-with-custom-vcl" target="_blank">Mixing and matching Fastly VCL with custom VCL</a>.
@@ -1736,7 +1761,7 @@ composer require fastly/magento2
 
 
 
-</p></p></p></p></p>
+</p>
 
 		</div>
 		<!-- /.content-wrap -->
