@@ -4,7 +4,7 @@ group: cloud
 subgroup: 10_project
 title: services.yaml
 menu_title: services.yaml
-menu_order: 30
+menu_order: 81
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: services
