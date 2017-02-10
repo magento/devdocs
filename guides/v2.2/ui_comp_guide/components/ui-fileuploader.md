@@ -1,28 +1,25 @@
 ---
 layout: default
-group:  UI Library
-subgroup: C_Listing/Grid Secondary Components
-title: File Uploader Component
-menu_title: File Uploader Component
-menu_node:
-menu_order: 13
-version: 2.0
-github_link: ui-components/ui-secondary-uploader.md
-redirect_from: /guides/v2.0/ui-library/ui-secondary-uploader.html
+group: UI_Components_guide
+subgroup: components
+title: FileUploader component
+menu_title: Textarea component
+version: 2.2
+github_link: ui_comp_guide/components/ui-textarea.md
 ---
 
-<h2 id="filter">Overview</h2>
+## Overview {#filter}
 
 UI File Uploader component is an adapter for <a href="https://github.com/blueimp/jQuery-File-Upload/wiki">jQuery-File-Upload</a> plugin used in Magento. Component is used to integrate file upload functionality with UI components.
 
-<h2 id="elements">Component elements</h2>
+## Component elements {#elements}
 
 * Constructor: `<Magento_Ui_module_dir>/view/base/web/js/form/element/file-uploader.js`
 * JQuery file upload plugin: `jquery/fileUploader/jquery.fileupload-fp`
 * Default template: `<Magento_Ui_module_dir>/view/base/web/templates/form/element/uploader/uploader.html`
 * Preview template: `<Magento_Ui_module_dir>/view/base/web/templates/form/element/uploader/preview.html`
 
-<h2 id="structure">Component options</h2>
+## Component options {#structure}
 
 <table>
 <tbody>
@@ -38,14 +35,14 @@ UI File Uploader component is an adapter for <a href="https://github.com/blueimp
     <td>Path to the files' preview template</td>
     <td>No</td>
     <td>String</td>
-    <td>Magento_Ui_module_dir/view/base/web/templates/form/element/uploader/preview.html</td>
+    <td>ui/form/element/uploader/preview</td>
 </tr>
 <tr>
     <td>maxFileSize</td>
-    <td>Defines maximum size of a file (in bytes</td>
+    <td>Defines maximum size of a file (in bytes) <p class="q">What true/false means in this case?</p></td>
     <td>No</td>
-    <td>Number</td>
-    <td>Infinite</td>
+    <td>Boolean/Number</td>
+    <td>false</td>
 </tr>
 <tr>
     <td>isMultipleFiles</td>
@@ -56,10 +53,10 @@ UI File Uploader component is an adapter for <a href="https://github.com/blueimp
 </tr>
 <tr>
     <td>allowedExtensions</td>
-    <td>List of allowed file extensions</td>
+    <td>List of allowed file extensions. For example, 'jpg jpeg gif png svg'/ <p class="q">What true/false means in this case?</p></td>
     <td>No</td>
-    <td>String/Array</td>
-    <td>*</td>
+    <td>Boolean/String</td>
+    <td>false</td>
 </tr>
 <tr>
     <td>dropZone</td>
@@ -69,19 +66,62 @@ UI File Uploader component is an adapter for <a href="https://github.com/blueimp
     <td>[data-role=drop-zone]</td>
 </tr>
 <tr>
-    <td>uploaderConfig</td>
-    <td>Configuration which will be passed to jquery-file-upload plugin</td>
+    <td>uploaderConfig 
+<ul>
+<li>dataType</li>
+<li>sequentialUploads</li>
+<li>formData</li>
+</ul>
+</td>
+    <td>Configuration which will be passed to jquery-file-upload plugin:
+<ul>
+<li>Type of data</li>
+<li>Sequential data uploads</li>
+<li>Additional form data</li>
+</ul>
+</td>
     <td>Yes</td>
-    <td>Object</td>
+    <td>Object
+<ul>
+<li>String</li>
+<li>Boolean</li>
+<li>Object</li>
+</ul>
+</td>
+    <td>
+<ul>
+<li>json</li>
+<li>true</li>
+<li>
+{
+'form_key': window.FORM_KEY
+}
+</li>
+</ul>
+</td>
+</tr>
+   <tr>
+    <td>placeholderType</td>
+    <td>Defines placeholder type. </td>
     <td></td>
-</tr>
-<tr>
-    <td>uploaderConfig.url</td>
-    <td>Route to server controller which will handle file uploading process</td>
-    <td>Yes</td>
+    <td>'document'|'image'|'video'</td>
+    <td>document</td>
+  </tr>
+  <tr>
+    <td>component</td>
+    <td>The path to the component’s .js file in terms of RequireJS.</td>
+    <td></td>
     <td>String</td>
-    <td>null</td>
-</tr>
+    <td>Magento_Ui/js/form/element/file-uploader</td>
+  </tr>
+  <tr>
+    <td>template</td>
+    <td>The path to the component’s .html template.</td>
+    <td></td>
+    <td>String</td>
+    <td>ui/form/element/uploader/uploader</td>
+  </tr>
+
 </tbody>
 </table>
 
