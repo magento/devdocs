@@ -1333,19 +1333,27 @@ bin/magento setup:static-content:deploy --theme=Magento/luma de_D
   </li>
 </ul>
 
-<p>!—62083–&gt;
-* <strong>Issue</strong>: You receive the following fatal error while installing 2.1.3 from <code>repo.magento.com</code>.</p>
+<!---62083-->
+<ul>
+  <li>
+    <p><strong>Issue</strong>: You receive the following fatal error while installing 2.1.3 from <code>repo.magento.com</code>.</p>
 
-<blockquote>
-  <p>Fatal error: Cannot instantiate interface Magento\Framework\App\Config\Scope\ReaderPoolInterface in /var/www/html/magento2ce/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php on line 73.</p>
-</blockquote>
+    <blockquote>
+      <p>Fatal error: Cannot instantiate interface Magento\Framework\App\Config\Scope\ReaderPoolInterface in /var/www/html/magento2ce/vendor/magento/framework/ObjectManager/Factory/Dynamic/Developer.php on line 73.</p>
+    </blockquote>
 
-<p><strong>Workaround</strong>:  You can avoid this fatal error by taking one of these actions:</p>
+    <p><strong>Workaround</strong>:  You can avoid this fatal error by taking one of these actions:</p>
 
-<pre><code>*	If your Magento root directory is `&lt;Magento install dir&gt;/pub`,  then start the Web Setup Wizard from `http://&lt;Magento host or IP&gt;/setup` instead of from `http://&lt;Magento host or IP&gt;`
-
-*	Install Magento using the [command line](/guides/v2.1/comp-mgr/cli/cli-upgrade.html).
-</code></pre>
+    <ul>
+      <li>
+        <p>If your Magento root directory is <code>&lt;Magento install dir&gt;/pub</code>,  then start the Web Setup Wizard from <code>http://&lt;Magento host or IP&gt;/setup</code> instead of from <code>http://&lt;Magento host or IP&gt;</code></p>
+      </li>
+      <li>
+        <p>Install Magento using the <a href="/guides/v2.1/comp-mgr/cli/cli-upgrade.html">command line</a>.</p>
+      </li>
+    </ul>
+  </li>
+</ul>
 
 <!---60553-->
 <ul>
