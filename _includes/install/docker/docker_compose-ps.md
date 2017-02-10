@@ -20,6 +20,8 @@ In the preceding example:
 *	In the web container, the following ports are used:
 
 	*	SSH listens on port 32795
+
+		Applications like PhpStorm communicate with DevBox on the SSH listen port. It's very important to know this port.
 	*	Unison synchronization (Windows only) listens on port 32781
 	*	The web server listens on port 32782
 

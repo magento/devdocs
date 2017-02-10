@@ -1,7 +1,7 @@
 ---
 layout: default
 group: install-dock
-subgroup: 05_phpstorm
+subgroup: 05_PhpStorm
 title: Debug in PhpStorm and browser
 menu_title: Debug in PhpStorm and browser
 menu_node: 
@@ -32,15 +32,15 @@ To create an SSH tunnel on Mac OS, open a Terminal window and enter the followin
 	./<DevBox root folder>/m2devbox-debug.sh
 
 ## Debug code with Xdebug
-This section discusses how to debug code using Xdebug using PhPStorm and a web browser. For demonstration purposes, this topic discusses how to test Magento modules. Typically, you'll test your own code; adjust the procedures as required.
+This section discusses how to debug code using Xdebug using PhpStorm and a web browser. For demonstration purposes, this topic discusses how to test Magento modules. Typically, you'll test your own code; adjust the procedures as required.
 
-### Debug with PhPStorm and Xdebug
-This topic discusses one way to debug code using PhPStorm. For additional information, consult the PhPStorm documentation.
+### Debug with PhpStorm and Xdebug
+This topic discusses one way to debug code using PhpStorm. For additional information, consult the PhpStorm documentation.
 
-To debug code with PhPStorm and Xdebug:
+To debug code with PhpStorm and Xdebug:
 
 1.	Create an [SSH tunnel](#devbox-xdebug-tunnel) to the DevBox container.
-2.	Open your DevBox PhPStorm project.
+2.	Open your DevBox PhpStorm project.
 3.	In the navigation window, expand the code to reveal a PHP file to test.
 4.	Double-click the file to open it.
 5.	In the right pane, in the gray area next to a line number, click to set a breakpoint (![Set a breakpoint]({{ site.baseurl }}common/images/install_docker_php-storm_xdebug-breakpoint.png){:width="25px"}).
@@ -70,7 +70,7 @@ This section discusses possible errors and how to solve them.
 
 	_Solution_:
 
-	1.	In the PhPStorm toolbar, click **Edit Configurations** from the Run/Edit Configurations button as the following figure shows.
+	1.	In the PhpStorm toolbar, click **Edit Configurations** from the Run/Edit Configurations button as the following figure shows.
 
 		![Edit the run configuration]({{ site.baseurl }}common/images/install_docker_php-storm_xdebug-edit-config.png){:width="250px"}
 
@@ -96,14 +96,11 @@ To use Xdebug Helper with Chrome:
 	If the navigation bar isn't displayed, click **View** > **Navigation Bar**.
 3.	In the PhpStorm navigation pane, double-click the PHP file to test.
 5.	In the right pane, in the gray area next to a line number, click to set a breakpoint (![Set a breakpoint]({{ site.baseurl }}common/images/install_docker_php-storm_xdebug-breakpoint.png){:width="25px"}).
-
-	For example, you can set a breakpoint in `<DevBox root folder>/index.php`
-
 8.	In Chrome, go to a URL that invokes the breakpoint.
 
 	If Chrome is already displaying the URL, click **Refresh** in the Chrome toolbar.
 
-	If the Incoming Connection from Xdebug dialog box displays, select the same file in which you set the breakpoint and click **OK**.
+	If the Incoming Connection from Xdebug dialog box displays, select the same file in which you set the breakpoint and click **Accept**.
 	
 
 

@@ -12,7 +12,7 @@ github_link: cloud/access-acct/fastly.md
 
 [Fastly](https://www.fastly.com/why-fastly){:target="_blank"} is required for Magento Enterprise Cloud Edition. It works with Varnish to provide fast caching capabilities and a Content Delivery Network (CDN) for static assets.
 
-### Get your Fastly credentials {#cloud-fastly-creds}
+## Get your Fastly credentials {#cloud-fastly-creds}
 To get Fastly credentials, open a [support ticket]({{ page.baseurl }}cloud/get-help.html). You must provide your fully-qualified domain name.
 
 We'll provide you with the following information so you can enable Fastly:
@@ -31,8 +31,7 @@ In the procedure that follows, make sure you *branch* a new environment; don't u
 
 {% endcollapsible %}
 
-<p id="cloud-fastly-setup">{% collapsibleh3 Install Fastly in your new environment %}
-
+## Install Fastly in your new environment {#cloud-fastly-setup}
 1.	In your local environment root directory, enter the following commands in the order shown:
 
 		composer config repositories.fastly-magento2 git "https://github.com/fastly/fastly-magento2.git"
@@ -46,10 +45,7 @@ In the procedure that follows, make sure you *branch* a new environment; don't u
 
 		git add -A; git commit -m "Install Fastly"; git push origin <branch name>
 
-{% endcollapsibleh3 %}
-
-<p id="cloud-fastly-admin">{% collapsibleh3 Enable Fastly using the Magento Admin %}
-
+## Enable Fastly using the Magento Admin {#cloud-fastly-admin}
 1.	Log in to your local Magento Admin as an administrator. 
 
 	If you don't remember your login information, enter the following command:
@@ -79,10 +75,7 @@ In the procedure that follows, make sure you *branch* a new environment; don't u
 <!-- After you receive a Magento VCL from Fastly, [upload it to your staging or production system]({{ page.baseurl }}cloud/live/stage-prod-migrate-prereq.html#cloud-live-migrate-fastly).
  -->
 
-{% endcollapsibleh3 %}
-
-<p id="cloud-fastly-config">{% collapsibleh3 Configure Fastly %}
-
+## Configure Fastly {#cloud-fastly-config}
 Configure Fastly using the following:
 
 *	We provide your Fastly service ID and API key.
@@ -104,18 +97,32 @@ To configure Fastly in the Admin:
 
 For details about Fastly configuration, see the [Fastly documentation](https://docs.fastly.com/guides){:target="_blank"}.
 
-#### Advanced configuration options
+### Create a custom error/maintenance page {#fastly-errpg}
+You can optionally create a custom HTML page for errors or when your site is down for maintenance. This page can give confidence to your customers; instead of seeing HTTP error codes, they'll see a page that explains that your site is down temporarily.
+
+To create a custom error/maintenance page:
+
+1.	In the Admin, in the Fastly Configuration section, expand **Error/Maintenance Page** as the following figure shows.
+
+	![Custom Fastly error page]({{ site.baseurl }}common/images/cloud-fastly_err-pg.png){:width="650px"}
+2.	Click **Set HTML**.
+3.	In the provided field, enter your HTML.
+
+	The HTML you enter can be a maximum of 65,535 bytes in length.
+
+	<div class="bs-callout bs-callout-info" id="info" markdown="1">
+	Avoid using images on your site in the event Fastly is not available. To use images, refer to [Data URIs on the css-tricks site](https://css-tricks.com/data-uris/){:target="_blank"}.
+	</div>
+4.	When you're done, click **Upload**.
+5.	In the Magento Admin, click **Save Config**.
+
+### Advanced configuration options
 For advanced configuration options, download and customize the [Fastly configuration](https://github.com/fastly/fastly-magento2/blob/master/etc/fastly.vcl){:target="_blank"}.
 
-{% endcollapsibleh3 %}
-
-<p id="cloud-fastly-merge">{% collapsibleh3 Merge your Fastly branch %}
-	
+## Merge your Fastly branch {#cloud-fastly-merge}
 When you're done with development, [merge your environment]({{ page.baseurl }}cloud/howtos/environment-tutorial-env-merge.html) with its parent environment.
 
 For Fastly to be used in production, you must merge with the `master` environment.
-
-{% endcollapsibleh3 %}
 
 <h2 id="custom-vcl">Custom VCLs</h2>
 <p>You're free to customize your Fastly VCL however you want, provided you follow Fastly's guidelines for <a href="https://docs.fastly.com/guides/vcl/mixing-and-matching-fastly-vcl-with-custom-vcl" target="_blank">Mixing and matching Fastly VCL with custom VCL</a>.
