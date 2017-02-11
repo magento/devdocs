@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Remove sample data modules or update sample data</title>
+	<title>Install using Composer</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.1/install-gde/install/sample-data-other-cmds.html">
+	<link rel="canonical" href="//guides/v2.1/install-gde/install/sample-data-before-composer.html">
 
   <script>
     var baseUrl = "/";
@@ -49,9 +49,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/install-gde/install/sample-data-other-cmds.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/install-gde/install/sample-data-before-composer.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/install-gde/install/sample-data-other-cmds.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/install-gde/install/sample-data-before-composer.html">Magento 2.1</a></li>
 	
   </ul>
 
@@ -389,7 +389,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/install-gde/install/sample-data-before-composer.html">Install using Composer</a></li>
+									<li class="level-2  active "><a href="/guides/v2.1/install-gde/install/sample-data-before-composer.html">Install using Composer</a></li>
 
 									
 
@@ -405,7 +405,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.1/install-gde/install/sample-data-other-cmds.html">Remove sample data modules or update sample data</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/install-gde/install/sample-data-other-cmds.html">Remove sample data modules or update sample data</a></li>
 
 									
 
@@ -474,7 +474,7 @@
       
 
       <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
-        <span property="name">Remove sample data modules or update sample data</span>
+        <span property="name">Install using Composer</span>
         <meta property="position" content="1" />
       </li>
 
@@ -486,7 +486,7 @@
 
 
 	
-	<h1 class="page-heading">Remove sample data modules or update sample data</h1>
+	<h1 class="page-heading">Install using Composer</h1>
 
   
 
@@ -495,113 +495,44 @@
 
 			<div>
 
-  <h2 id="instgde-prereq-sample-intro">Remove sample data modules or update sample data</h2>
-
-  <p>This topic discusses how to:</p>
+  <h2 id="install-sample-data-using-composer">Install sample data using Composer</h2>
+  <p>This section discusses how to install sample data if you got the Magento software in any of the following ways:</p>
 
   <ul>
-    <li>
-      <p><a href="#inst-sample-remove">Remove sample data modules</a> from the Magento installation <code>composer.json</code></p>
-
-      <p>This option does <em>not</em> remove sample data from the database.</p>
-    </li>
-    <li>
-      <p><a href="#inst-sample-reset">Prepare to update sample data</a> (for example, before updating the Magento application).</p>
-    </li>
+    <li>Downloaded a compressed archive</li>
+    <li>Used <code>composer create-project</code></li>
   </ul>
 
-  <h2 id="sample-first">First steps</h2>
+  <p>You can use this method of getting sample data if you used Magento Community Edition (CE) or Enterprise Edition (EE). You can use it either before or after you install the Magento software; however, there might be <a href="/guides/v2.1/install-gde/install/sample-data.html">additional tasks</a> for installing sample data after you install the Magento software.</p>
 
-  <div>
+  <p>If you’re a <abbr title="A developer who contributes code to the Magento 2 CE codebase">contributing developer</abbr>, see one of the other topics on the left side of this page.</p>
 
-    <ol>
-      <li>
-        <p>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.1/install-gde/prereq/file-sys-perms-over.html">switch to the Magento file system owner</a>.</p>
-
-        <p>If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:</p>
-
-        <pre><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt; If the Magento file system owner does not allow logins you can do the following
-
-sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
-</code></pre>
-      </li>
-      <li>
-        <p>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.</p>
-
-        <p>Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.</p>
-
-        <p>bash shell example for CentOS:</p>
-
-        <pre><code>export PATH=$PATH:/var/www/html/magento2/bin
-</code></pre>
-      </li>
-    </ol>
-
-    <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>You can also run the commands in the following ways:</p>
-<ul><li><code>cd &lt;your Magento install dir&gt;/bin</code> and run them as <code>./magento &lt;command name&gt;</code></li>
-<li><code>php &lt;your Magento install dir&gt;/bin/magento &lt;command name&gt;</code></li></ul>
-<p><code>&lt;your Magento install dir&gt;</code> is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="/guides/v2.1/install-gde/basics/basics_docroot.html">here</a>.</p></span>
+  <div class="bs-callout bs-callout-warning">
+    <p>Do not install sample data if your Magento application is set for <a href="/guides/v2.1/config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>. Switch to <a href="/guides/v2.1/config-guide/bootstrap/magento-modes.html#mode-developer">developer mode</a> first. Installing sample data in production mode <a href="/guides/v2.1/install-gde/trouble/tshoot_sample-data.html#trouble-samp-prod">fails</a>.</p>
 </div>
 
-    <h2 id="inst-sample-remove">Remove sample data modules</h2>
-    <p>Enter the following command:</p>
+  <p>To install sample data using the command line, enter the following command as the Magento file system owner:</p>
 
-    <pre><code>magento sampledata:remove 
+  <pre><code>php &lt;your Magento install dir&gt;/bin/magento sampledata:deploy
 </code></pre>
 
-    <!-- where `[module-list]` is an optional space-separated list of sample data modules to install. Omit this parameter to remove all sample data modules.
-
-The complete list of sample data modules follows:
-
-<div markdown="1">
-
-Magento CE and Magento EE:
-
-*	magento/module-bundle-sample-data
-*	magento/module-catalog-rule-sample-data
-*	magento/module-catalog-sample-data
-*	magento/module-cms-sample-data
-*	magento/module-configurable-sample-data
-*	magento/module-customer-sample-data
-*	magento/module-downloadable-sample-data
-*	magento/module-grouped-product-sample-data
-*	magento/module-msrp-sample-data
-*	magento/module-offline-shipping-sample-data
-*	magento/module-product-links-sample-data
-*	magento/module-review-sample-data
-*	magento/module-sales-rule-sample-data
-*	magento/module-sales-sample-data
-*	magento/module-sample-data
-*	magento/module-swatches-sample-data
-*	magento/module-tax-sample-data
-*	magento/module-theme-sample-data
-*	magento/module-widget-sample-data
-*	magento/module-wishlist-sample-data
-*	magento/sample-data
-*	magento/sample-data-media
-
-Magento EE only:
-
-*	magento/module-customer-balance-sample-data
-*	magento/module-gift-card-sample-data
-*	magento/module-gift-registry-sample-data
-*	magento/module-multiple-wishlist-sample-data
-*	magento/module-target-rule-sample-data
+  <!-- where `[module-list]` is an optional space-separated list of <a href="#sample-data-modules">sample data modules</a> to install. Omit this parameter to install all sample data modules.
  -->
+  <p>You are required to <a href="/guides/v2.1/install-gde/prereq/connect-auth.html">authenticate</a> to complete the action.</p>
 
-    <h2 id="inst-sample-reset">Prepare to update sample data</h2>
-    <p>This command enables you to update sample data before you update the Magento application.</p>
+  <h3 id="authentication-error">Authentication error</h3>
 
-    <p>To prepare sample data for updating, enter the following command:</p>
+  <p>The following error might display:</p>
 
-    <pre><code>magento sampledata:reset
+  <pre><code>[Composer\Downloader\TransportException]
+The 'https://repo.magento.com/packages.json' URL required authentication.
+You must be using the interactive console to authenticate
 </code></pre>
 
-    <p>After that, <a href="/guides/v2.1/install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-update">update the Magento application</a>.</p>
+  <p>If the error displays, change to your Magento installation directory and run <code>composer update</code>, which will prompt you for your <a href="/guides/v2.1/install-gde/prereq/connect-auth.html">authentication keys</a>.</p>
 
-  </div>
+  <!-- ABBREVIATIONS -->
+
 </div>
 
 		</div>
@@ -613,14 +544,14 @@ Magento EE only:
 
 			
 			 <div class="github-link">
-				 <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/install-gde/install/sample-data-other-cmds.md" target="_blank">
+				 <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/install-gde/install/sample-data-before-composer.md" target="_blank">
 					 Edit this page on GitHub
 				 </a>
 			 </div>
 			
 
 			<div class="new-issue">
-				<a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/install-gde/install/sample-data-other-cmds.html" target="_blank">Give us feedback</a>
+				<a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/install-gde/install/sample-data-before-composer.html" target="_blank">Give us feedback</a>
 			</div>
 
 		</div>

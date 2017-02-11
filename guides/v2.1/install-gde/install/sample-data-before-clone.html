@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Remove sample data modules or update sample data</title>
+	<title>Install by cloning repositories</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.1/install-gde/install/sample-data-other-cmds.html">
+	<link rel="canonical" href="//guides/v2.1/install-gde/install/sample-data-before-clone.html">
 
   <script>
     var baseUrl = "/";
@@ -49,9 +49,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/install-gde/install/sample-data-other-cmds.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/install-gde/install/sample-data-before-clone.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/install-gde/install/sample-data-other-cmds.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/install-gde/install/sample-data-before-clone.html">Magento 2.1</a></li>
 	
   </ul>
 
@@ -397,7 +397,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/install-gde/install/sample-data-before-clone.html">Install by cloning repositories</a></li>
+									<li class="level-2  active "><a href="/guides/v2.1/install-gde/install/sample-data-before-clone.html">Install by cloning repositories</a></li>
 
 									
 
@@ -405,7 +405,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.1/install-gde/install/sample-data-other-cmds.html">Remove sample data modules or update sample data</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/install-gde/install/sample-data-other-cmds.html">Remove sample data modules or update sample data</a></li>
 
 									
 
@@ -474,7 +474,7 @@
       
 
       <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
-        <span property="name">Remove sample data modules or update sample data</span>
+        <span property="name">Install by cloning repositories</span>
         <meta property="position" content="1" />
       </li>
 
@@ -486,7 +486,7 @@
 
 
 	
-	<h1 class="page-heading">Remove sample data modules or update sample data</h1>
+	<h1 class="page-heading">Install by cloning repositories</h1>
 
   
 
@@ -495,113 +495,168 @@
 
 			<div>
 
-  <h2 id="instgde-prereq-sample-intro">Remove sample data modules or update sample data</h2>
+  <h2 id="sample-clone">Install sample data by cloning repositories</h2>
+  <p>This topic discusses how to get the Magento sample data if you cloned the Magento GitHub repository. This method is intended only for <abbr title="Developers who contribute code to the Magento 2 CE codebase">contributing developers</abbr> (that is, developers who plan to contribute to the Magento 2 codebase).</p>
 
-  <p>This topic discusses how to:</p>
+  <p>If you’re not a <abbr title="A developer who contributes code to the Magento 2 CE codebase">contributing developer</abbr>, choose one of the other options displayed in the table of contents on the left side of the page.</p>
+
+  <p><abbr title="Developers who contribute code to the Magento 2 CE codebase">Contributing developers</abbr> can use this method of installing sample data <em>only</em> if all of the following are true:</p>
 
   <ul>
-    <li>
-      <p><a href="#inst-sample-remove">Remove sample data modules</a> from the Magento installation <code>composer.json</code></p>
-
-      <p>This option does <em>not</em> remove sample data from the database.</p>
-    </li>
-    <li>
-      <p><a href="#inst-sample-reset">Prepare to update sample data</a> (for example, before updating the Magento application).</p>
-    </li>
+    <li>You use Magento CE</li>
+    <li>You <a href="/guides/v2.1/install-gde/prereq/dev_install.html">cloned the Magento 2 repository</a>.</li>
   </ul>
 
-  <h2 id="sample-first">First steps</h2>
-
-  <div>
-
-    <ol>
-      <li>
-        <p>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.1/install-gde/prereq/file-sys-perms-over.html">switch to the Magento file system owner</a>.</p>
-
-        <p>If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:</p>
-
-        <pre><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt; If the Magento file system owner does not allow logins you can do the following
-
-sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
-</code></pre>
-      </li>
-      <li>
-        <p>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.</p>
-
-        <p>Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.</p>
-
-        <p>bash shell example for CentOS:</p>
-
-        <pre><code>export PATH=$PATH:/var/www/html/magento2/bin
-</code></pre>
-      </li>
-    </ol>
-
-    <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>You can also run the commands in the following ways:</p>
-<ul><li><code>cd &lt;your Magento install dir&gt;/bin</code> and run them as <code>./magento &lt;command name&gt;</code></li>
-<li><code>php &lt;your Magento install dir&gt;/bin/magento &lt;command name&gt;</code></li></ul>
-<p><code>&lt;your Magento install dir&gt;</code> is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="/guides/v2.1/install-gde/basics/basics_docroot.html">here</a>.</p></span>
+  <div class="bs-callout bs-callout-warning">
+    <p>You can use sample data with either the <code>develop</code> branch (more current) or a released branch (such as <code>2.0</code> or <code>2.0.1</code> (more stable)). We recommend you use a released branch because it's more stable. If you're contributing code to the Magento 2 repository and you need the most recent code, use the <code>develop</code> branch.</p>
+    <p>Regardless of the branch you choose, you must <a href="/guides/v2.1/install-gde/prereq/dev_install.html">clone</a> the corresponding branch of the Magento 2 GitHub repository. For example, sample data for the <code>develop</code> branch can be used <em>only</em> with the Magento 2 <code>develop</code> branch.</p>
 </div>
 
-    <h2 id="inst-sample-remove">Remove sample data modules</h2>
-    <p>Enter the following command:</p>
+  <p>See the following sections:</p>
 
-    <pre><code>magento sampledata:remove 
+  <ul>
+    <li><a href="#clone-sample-repo">Clone the sample data repository</a></li>
+    <li><a href="#samp-data-perms">Set file system ownership and permissions</a></li>
+  </ul>
+
+  <h2 id="clone-sample-repo">Clone the sample data repository</h2>
+  <p>This section discusses how to install Magento sample data by cloning the sample data repository. You can clone the sample data repository in any of the following ways:</p>
+
+  <ul>
+    <li>Clone with the <a href="#instgde-prereq-sample-clone-ssh">SSH protocol</a></li>
+    <li>Clone with the <a href="#instgde-prereq-compose-clone-https">HTTPS protocol</a></li>
+  </ul>
+
+  <h3 id="clone-sample-repo-ssh">Clone with SSH</h3>
+  <p>To clone the Magento sample data GitHub repository using the SSH protocol:</p>
+
+  <ol>
+    <li>In a web browser, go to <a href="https://github.com/magento/magento2-sample-data" target="_blank">the Magento sample data repository</a>.</li>
+    <li>Next to the name of the branch, click <strong>SSH</strong> from the list.</li>
+    <li>
+      <p>Click <strong>Copy to clipboard</strong></p>
+
+      <p>The following figure shows an example.</p>
+
+      <p><img src="/common/images/install_mage2_clone-ssh.png" width="650px" alt="Clone the Magento GitHub repository using SSH" /></p>
+    </li>
+    <li>
+      <p>Change to your web server’s docroot directory.</p>
+
+      <p>Typically, for Ubuntu, it’s <code>/var/www</code> and for CentOS it’s <code>/var/www/html</code>.</p>
+
+      <p>Need <a href="/guides/v2.1/install-gde/basics/basics_docroot.html">help locating the docroot?</a></p>
+    </li>
+    <li>
+      <p>Enter <code>git clone</code> and paste the value you obtained from step 1.</p>
+
+      <p>An example follows:</p>
+
+      <pre><code>git clone git@github.com:magento/magento2-sample-data.git
+</code></pre>
+    </li>
+    <li>
+      <p>Wait for the repository to clone on your server.</p>
+
+      <div class="bs-callout bs-callout-info" id="info">
+    <p>If the following error displays, make sure you <a href="https://help.github.com/articles/generating-ssh-keys/" target="_blank">shared your SSH key</a> with GitHub: </p>
+        <pre>Cloning into 'magento2'...
+Permission denied (publickey).
+fatal: The remote end hung up unexpectedly</pre>
+</div>
+    </li>
+    <li>Change to the <code>&lt;your Magento sample data clone dir&gt;/dev/tools</code> directory.</li>
+    <li>
+      <p>Enter the following command to create symbolic links between the files you just cloned so sample data works properly:</p>
+
+      <pre><code>php -f build-sample-data.php -- --ce-source="&lt;your Magento CE install dir&gt;"
+</code></pre>
+    </li>
+    <li>
+      <p>Wait for the command to complete.</p>
+    </li>
+    <li>See <a href="#instgde-prereq-compose-clone-perms">Set file system permissions and ownership</a>.</li>
+  </ol>
+
+  <h3 id="instgde-prereq-compose-clone-https">Clone with HTTPS</h3>
+  <p>To clone the Magento sample data GitHub repository using the HTTPS protocol:</p>
+
+  <ol>
+    <li>In a web browser, go to <a href="https://github.com/magento/magento2-sample-data" target="_blank">the Magento sample data repository</a>.</li>
+    <li>On the right side of the page, under the <strong>clone URL</strong> field, click <strong>HTTPS</strong>.</li>
+    <li>
+      <p>Click <strong>Copy to clipboard</strong>.</p>
+
+      <p>The following figure shows an example.</p>
+
+      <p><img src="/common/images/install_mage2_clone-https.png" width="650px" alt="Clone the Magento GitHub repository using HTTPS" /></p>
+    </li>
+    <li>
+      <p>Change to your web server’s docroot directory.</p>
+
+      <p>Typically, for Ubuntu, it’s <code>/var/www</code> and for CentOS it’s <code>/var/www/html</code>.</p>
+    </li>
+    <li>
+      <p>Enter <code>git clone</code> and paste the value you obtained from step 1.</p>
+
+      <p>An example follows:</p>
+
+      <pre><code>git clone https://github.com/magento/magento2-sample-data.git
+</code></pre>
+    </li>
+    <li>Wait for the repository to clone on your server.</li>
+    <li>Change to the <code>&lt;your Magento sample data clone dir&gt;/dev/tools</code> directory.</li>
+    <li>
+      <p>Enter the following command to create symbolic links between the files you just cloned so sample data works properly:</p>
+
+      <pre><code>php -f build-sample-data.php -- --ce-source="&lt;your Magento CE install dir&gt;"
 </code></pre>
 
-    <!-- where `[module-list]` is an optional space-separated list of sample data modules to install. Omit this parameter to remove all sample data modules.
+      <p>For example,</p>
 
-The complete list of sample data modules follows:
+      <pre><code>php build-sample-data.php -- --ce-source="/var/www/magento2"
+</code></pre>
+    </li>
+    <li>Wait for the command to complete.</li>
+    <li>See the next section.</li>
+  </ol>
 
-<div markdown="1">
+  <h2 id="samp-data-perms">Set file system ownership and permissions</h2>
+  <p>Because the <code>php build-sample-data.php</code> script creates symlinks between the sample data repository and your Magento 2 repository, you must set file system permissions and ownership in the sample data repository. Failure to do so results in errors accessing the storefront.</p>
 
-Magento CE and Magento EE:
+  <p>To set file system permissions and ownership on the sample data repository:</p>
 
-*	magento/module-bundle-sample-data
-*	magento/module-catalog-rule-sample-data
-*	magento/module-catalog-sample-data
-*	magento/module-cms-sample-data
-*	magento/module-configurable-sample-data
-*	magento/module-customer-sample-data
-*	magento/module-downloadable-sample-data
-*	magento/module-grouped-product-sample-data
-*	magento/module-msrp-sample-data
-*	magento/module-offline-shipping-sample-data
-*	magento/module-product-links-sample-data
-*	magento/module-review-sample-data
-*	magento/module-sales-rule-sample-data
-*	magento/module-sales-sample-data
-*	magento/module-sample-data
-*	magento/module-swatches-sample-data
-*	magento/module-tax-sample-data
-*	magento/module-theme-sample-data
-*	magento/module-widget-sample-data
-*	magento/module-wishlist-sample-data
-*	magento/sample-data
-*	magento/sample-data-media
+  <ol>
+    <li>Change to your sample data clone directory.</li>
+    <li>
+      <p>Set ownership:</p>
 
-Magento EE only:
-
-*	magento/module-customer-balance-sample-data
-*	magento/module-gift-card-sample-data
-*	magento/module-gift-registry-sample-data
-*	magento/module-multiple-wishlist-sample-data
-*	magento/module-target-rule-sample-data
- -->
-
-    <h2 id="inst-sample-reset">Prepare to update sample data</h2>
-    <p>This command enables you to update sample data before you update the Magento application.</p>
-
-    <p>To prepare sample data for updating, enter the following command:</p>
-
-    <pre><code>magento sampledata:reset
+      <pre><code>chown -R :&lt;your web server group name&gt; .
 </code></pre>
 
-    <p>After that, <a href="/guides/v2.1/install-gde/install/cli/install-cli-uninstall.html#instgde-install-magento-update">update the Magento application</a>.</p>
+      <p>Typical examples:</p>
 
-  </div>
+      <p>CentOS: <code>chown -R :apache .</code></p>
+
+      <p>Ubuntu: <code>chown -R :www-data .</code></p>
+    </li>
+    <li>
+      <p>Set permissions:</p>
+
+      <pre><code>find . -type d -exec chmod g+ws {} \;
+</code></pre>
+    </li>
+    <li>
+      <p>Clear static files:</p>
+
+      <pre><code>cd &lt;your Magento CE install dir&gt;/var
+rm -rf cache/* page_cache/* generation/*
+</code></pre>
+    </li>
+  </ol>
+
+  <!-- ABBREVIATIONS -->
+
 </div>
 
 		</div>
@@ -613,14 +668,14 @@ Magento EE only:
 
 			
 			 <div class="github-link">
-				 <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/install-gde/install/sample-data-other-cmds.md" target="_blank">
+				 <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/install-gde/install/sample-data-before-clone.md" target="_blank">
 					 Edit this page on GitHub
 				 </a>
 			 </div>
 			
 
 			<div class="new-issue">
-				<a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/install-gde/install/sample-data-other-cmds.html" target="_blank">Give us feedback</a>
+				<a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/install-gde/install/sample-data-before-clone.html" target="_blank">Give us feedback</a>
 			</div>
 
 		</div>
