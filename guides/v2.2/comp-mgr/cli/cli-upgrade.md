@@ -93,6 +93,9 @@ To prevent access to your store while it's being upgraded, put your store in mai
 4. Update the database schema and data:
 
 		php bin/magento setup:upgrade
+5.	Put your storefront online (that is, cancel maintenance mode):
+
+		php bin/magento maintenance:disable
 5.	Restart Varnish if you use it for page caching.
 
 		service varnish restart

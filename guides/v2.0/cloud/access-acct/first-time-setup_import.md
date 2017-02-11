@@ -1,4 +1,4 @@
----
+
 layout: default
 group: cloud
 subgroup: 08_setup
@@ -10,7 +10,17 @@ version: 2.0
 github_link: cloud/access-acct/first-time-setup_import.md
 ---
 
-This topic discusses how to can start your Magento Enterprise Cloud Edition project from an existing Magento installation. This is our recommended workflow:
+This topic discusses how to can start your Magento Enterprise Cloud Edition project from an existing Magento Enterprise Edition (EE) installation. 
+
+## Prerequisites
+Before you continue, make sure you have done all of the following:
+
+*   Your existing Magento EE code must be in Git. 
+
+    If not, you must add it to Git before continuing.
+*   Complete the tasks discussed in <a href="{{page.baseurl}}cloud/before/before-workspace.html">Set up a Magento workspace</a>.
+
+This is our recommended workflow:
 
 1.  Create a new, empty Magento Enterprise Cloud Edition project from a template.
 
@@ -21,16 +31,91 @@ This topic discusses how to can start your Magento Enterprise Cloud Edition proj
 3.  Import your Magento database into your Magento Enterprise Cloud Edition project.
 4.  TBD
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Before you continue, make sure you completed the tasks discussed in <a href="{{page.baseurl}}cloud/before/before-workspace.html">Set up a Magento workspace</a>.</p>
-</div>
-
 {% include cloud/new-project-from-template.md %}
 
 --- DALES TOPIC BELOW THIS LINE ---
 
 ## Import files and Magento code
+This section discusses how to import code from your existing Magento EE project to your Magento Enterprise Cloud Edition's Git repository `master` branch.
+
+<div class="bs-callout bs-callout-warning" id="warning" markdown="1">
+The procedure discussed in this topic replaces your new Magento Enterprise Cloud Edition project with the contents of your existing Magento installation. Any data, websites, stores, and so on will be lost.
+
+Before you continue, make sure there is nothing in your Magento Enterprise Cloud Edition project you want to keep.</div>
+
+Following is a summary of the process:
+
+1.  In your Cloud Git repository, create a Git remote reference to the Git repo in which your Magento EE code is located.
+2.  Push code from your existing Git repository to the Cloud Git repository.
+3.  Merge your existing `composer.json` with the Cloud `composer.json`.
+
+    Your existing `composer.json` contains references to third-party libraries, extensions, and other code you'll need to preserve in Magento Enterprise Cloud Edition.
+
+### Step 1: Create a remote Git reference {#cloud-import-ref}
+This section discusses how to create a remote Git reference from your Cloud Git repository to the repository in which your Magento EE installation is located.
+
+Before you continue, make sure you know the SSH or HTTPS URL for your Magento EE installation Git repository.
+
+To create a remote Git reference:
+
+1.  Log in to your local Cloud development machine as, or switch to, the Magento file system owner.
+2.  Make a copy of `composer.json` so it doesn't get overwritten.
+
+        cp composer.json composer.json.cloud
+3.  Rename your Cloud Git remote from `origin` to `cloud-project` to make it clear which repository is which:
+
+        git remote rename origin cloud-project
+4.  Add a remote upstream for your existing Magento EE installation:
+
+        git remote add prev-project <git url>
+5.  Confirm what you've done so far.
+
+        git remote -v
+
+    Results are displayed as follows.
+
+        cloud-project   ikyyrqvlgnrai@git.us.magento.cloud:ikyykimjgnrao.git (fetch)
+        cloud-project   ikyyrqvlgnrai@git.us.magento.cloud:ikyykimjgnrao.git (push)
+        magento ikyyrqvlgnrai@git.us.magento.cloud:ikyykimjgnrao.git (fetch)
+        magento ikyyrqvlgnrai@git.us.magento.cloud:ikyykimjgnrao.git (push)
+        prev-project    git@github.com:mygitusername/myeereponame.git (fetch)
+        prev-project    git@github.com:mygitusername/myeereponame.git (push)
+6.  Make sure you're on the Cloud project `master` branch.
+
+        magento-cloud environment:checkout master
+7.  Make sure this `master` branch is set up to import code to the Cloud project.
+
+        git branch -u cloud-project/master
+
+### Step 2: Import your Magento EE code to your Cloud project {#cloud-import-imp}
+Before you continue, make sure you've completed all tasks discussed in the preceding section.
+
+To import your Magento EE code to Cloud:
+
+1.  Fetch the Magento EE branch.
+
+        git fetch prev-project
+2.  Reset your Cloud `master` branch to contain the code and the commit history of your Magento EE branch:
+
+        git reset --hard prev-project <branch name>
+3.  Push code from your Magento EE project to your Magento Enterprise Cloud Edition project, overwriting the previous contents and commit history with that of your project:
+
+        git push -f cloud-project master
+
+### Step 3: Merge your `composer.json` {#cloud-import-composer}
 TBD
+
+
+
+Let's say you want to import your existing codebase into the master branch of your cloud environment. In the same repository create two remote references, one for the remote repository for your cloud server, and the other for the remote repository of the project you want to import. Then use git-reset to push a branch from your existing project onto a branch of the cloud project. 
+
+In this example, we are going to take code from the "develop" branch of an existing repo, and push it to the "master" branch of our cloud project. The project could be an integration environment, staging, or technically production (although obviously you would not directly import to a live production site). For the purpose of this demonstration, the kind of project you are importing code to does not matter.
+
+
+
+
+
+
 
 https://github.com/magento-cloud/magento-cloud-template/blob/master/README.md
 
@@ -42,40 +127,11 @@ What kinds of things will be different in the imported project?
 
     Those themes and extensions are located in the `app/code` and `app/design` directories
 
-<div class="bs-callout bs-callout-warning" id="info" markdown="1">
-The procedure discussed in this topic replaces your new Magento Enterprise Cloud Edition project with the contents of your existing Magento installation. Any data, websites, stores, and so on will be lost.
-
-Before you continue, make sure there is nothing in your Magento Enterprise Cloud Edition project you want to keep.
-</div>
 
 
 ## Git reset
 
-Let's say you want to import your existing codebase into the master branch of your cloud environment. In the same repository create two remote references, one for the remote repository for your cloud server, and the other for the remote repository of the project you want to import. Then use git-reset to push a branch from your existing project onto a branch of the cloud project. In this example, we are going to take code from the "develop" branch of an existing repo, and push it to the "master" branch of our cloud project. The project could be an integration environment, staging, or technically production (although obviously you would not directly import to a live production site). For the purpose of this demonstration, the kind of project you are importing code to does not matter.
 
-    git clone <cloud project git url> mece-project
-    cd mece-project
-
-
-    # This will clarify which remote points to which project
-    git remote rename origin cloud-project
-
-
-    # Add a reference to the project we will import from
-    git remote add prev-project <git url>
-
-
-    # Here, do 'git checkout -b master' if branch does not exist yet
-    git checkout master
-
-    # Make sure this branch points to where we want to import code to       
-    git branch -u cloud-project/master
-
-    # Reset this branch to contain the code and the commit history of the branch being imported
-    git reset --hard prev-project/develop
-
-    # Push into cloud project, overwriting previous contents and commit history with that of your project
-    git push -f cloud-project master
 
 ## Copy project files
 
