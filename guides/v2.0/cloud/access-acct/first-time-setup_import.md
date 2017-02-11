@@ -41,7 +41,8 @@ This section discusses how to import code from your existing Magento EE project 
 <div class="bs-callout bs-callout-warning" id="warning" markdown="1">
 The procedure discussed in this topic replaces your new Magento Enterprise Cloud Edition project with the contents of your existing Magento installation. Any data, websites, stores, and so on will be lost.
 
-Before you continue, make sure there is nothing in your Magento Enterprise Cloud Edition project you want to keep.</div>
+Before you continue, make sure there is nothing in your Magento Enterprise Cloud Edition project you want to keep.
+</div>
 
 Following is a summary of the process:
 
