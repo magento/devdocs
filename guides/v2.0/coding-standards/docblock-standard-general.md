@@ -117,6 +117,64 @@ If description or short description happens to be the first one after DocBlock o
 -->
 {% endhighlight %}
 
+### License Notice and Copyright
+
+<div class="bs-callout bs-callout-info" id="info">
+This section is applicable to Magento core files only. Please follow it if you are a contributing developer.
+</div>
+
+Any file in Magento source should have a header with license and copyright notice.
+Exceptions are files with format that doesn't support comments, and so no meta information can be added.
+ 
+License notice and copyright MUST be declared in the very beginning of the file.
+If the file contains a structural element (for example, a class), description for the element should be declared as a separate DocBlock.
+
+Use the following templates for the license notice and copyright blocks:
+
+**Template for PHP Files**
+ 
+{% highlight php %}
+<?php
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+namespace Magento\Framework\Api;
+
+/**
+ * Provides metadata about an attribute.
+ *
+ * @api
+ */
+interface MetadataObjectInterface
+{
+   ...
+}
+{% endhighlight %}
+
+**Template for XML Files**
+
+{% highlight xml %}
+
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+{% endhighlight %}
+
+**Template for JS Files**
+
+{% highlight js %}
+
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+{% endhighlight %}
 
 ## Code structural elements
 {:#code-elements}
