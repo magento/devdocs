@@ -9,7 +9,7 @@ menu_node:
 version: 2.0
 github_link: cloud/access-acct/first-time-setup_import.md
 ---
-
+ 
 This topic discusses how to can start your Magento Enterprise Cloud Edition project from an existing Magento Enterprise Edition (EE) installation. 
 
 ## Prerequisites
@@ -18,7 +18,7 @@ Before you continue, make sure you have done all of the following:
 *   Your existing Magento EE code must be in Git. 
 
     If not, you must add it to Git before continuing.
-*   Complete the tasks discussed in <a href="{{page.baseurl}}cloud/before/before-workspace.html">Set up a Magento workspace</a>.
+*   Complete the tasks discussed in [Set up a Magento workspace]({{page.baseurl}}cloud/before/before-workspace.html).
 
 This is our recommended workflow:
 
