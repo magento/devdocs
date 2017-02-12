@@ -94,7 +94,18 @@ During DevBox installation, the following error might display:
 
 <pre class="no-copy">ERROR: could not find an available, non-overlapping IPv4 address pool among the defaults to assign to the network</pre>
 
-_Solution_: This error typically happens when you are connected to a network using VPN. End your VPN session and try to install DevBox again.
+_Solution_: Try the following:
+
+*	If you're connected to a VPN network, end your VPN session and try to install DevBox again.
+*	Check the total number of active Docker networks:
+
+		docker network ls
+
+	If there are more than 32 networks, delete the networks you're not using and try again. (Docker has a limit of 32 active network connections.)
+
+	The following command deletes _all_ Docker networks; use it with caution:
+
+		docker network rm $(docker network ls -q)
 
 For more information, see the [Docker GitHub issue](https://github.com/docker/libnetwork/issues/779){:target="_blank"}.
 
