@@ -33,8 +33,6 @@ This is our recommended workflow:
 
 {% include cloud/new-project-from-template.md %}
 
---- DALES TOPIC BELOW THIS LINE ---
-
 ## Import files and Magento code
 This section discusses how to import code from your existing Magento EE project to your Magento Enterprise Cloud Edition's Git repository `master` branch.
 
@@ -62,7 +60,7 @@ To create a remote Git reference:
 1.  Log in to your local Cloud development machine as, or switch to, the Magento file system owner.
 2.  Make a copy of `composer.json` so it doesn't get overwritten.
 
-        cp composer.json composer.json.cloud
+        cp composer.json ../composer.json.cloud
 3.  Rename your Cloud Git remote from `origin` to `cloud-project` to make it clear which repository is which:
 
         git remote rename origin cloud-project
@@ -75,12 +73,12 @@ To create a remote Git reference:
 
     Results are displayed as follows.
 
-        cloud-project   ikyyrqvlgnrai@git.us.magento.cloud:ikyykimjgnrao.git (fetch)
-        cloud-project   ikyyrqvlgnrai@git.us.magento.cloud:ikyykimjgnrao.git (push)
-        magento ikyyrqvlgnrai@git.us.magento.cloud:ikyykimjgnrao.git (fetch)
-        magento ikyyrqvlgnrai@git.us.magento.cloud:ikyykimjgnrao.git (push)
-        prev-project    git@github.com:mygitusername/myeereponame.git (fetch)
-        prev-project    git@github.com:mygitusername/myeereponame.git (push)
+    <pre class="no-copy">cloud-project   ikyyrqvlgnrai@git.us.magento.cloud:ikyykimjgnrao.git (fetch)
+    cloud-project   ikyyrqvlgnrai@git.us.magento.cloud:ikyykimjgnrao.git (push)
+    magento ikyyrqvlgnrai@git.us.magento.cloud:ikyykimjgnrao.git (fetch)
+    magento ikyyrqvlgnrai@git.us.magento.cloud:ikyykimjgnrao.git (push)
+    prev-project    git@github.com:mygitusername/myeereponame.git (fetch)
+    prev-project    git@github.com:mygitusername/myeereponame.git (push)</pre>
 6.  Make sure you're on the Cloud project `master` branch.
 
         magento-cloud environment:checkout master
@@ -98,7 +96,7 @@ To import your Magento EE code to Cloud:
         git fetch prev-project
 2.  Reset your Cloud `master` branch to contain the code and the commit history of your Magento EE branch:
 
-        git reset --hard prev-project <branch name>
+        git reset --hard prev-project/<branch name>
 3.  Push code from your Magento EE project to your Magento Enterprise Cloud Edition project, overwriting the previous contents and commit history with that of your project:
 
         git push -f cloud-project master
