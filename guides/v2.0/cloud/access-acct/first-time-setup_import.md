@@ -58,7 +58,7 @@ To add required files to your Magento EE system:
 
     The following figure shows an example of switching to the `2.1.4` branch.
 
-    ![Switch to your current EE branch]({{ site.baseurl }}common/images/cloud_cloud-git-214.png)
+    ![Switch to your current EE branch]({{ site.baseurl }}common/images/cloud_cloud-git-214.png){:width="600px"}
 
     In the procedure that follows, you'll copy the contents of some of these files to your Magento EE system.
 3.  Log in to your Magento EE system as, or switch to, the Magento file system owner.
@@ -78,11 +78,13 @@ To add required files to your Magento EE system:
     1.  In the  Magento Enterprise Cloud Edition GitHub, click **.magento.app.yaml**.
     2.  In the upper right, click **Raw**, as the following figure shows.
 
-        ![View the raw version of the file]({{ site.baseurl }}common/images/cloud_cloud-git_raw.png)
+        ![View the raw version of the file]({{ site.baseurl }}common/images/cloud_cloud-git_raw.png){:width="600px"}
     3.  In your Magento EE project, open a text editor in the Magento EE installation directory (for example, `/var/www/html/magento2`).
     4.  Paste the raw contents of `.magento.app.yaml` from GitHub into the text editor.
     5.  Make sure the file is named `.magento.app.yaml` when you save the file.
     6.  Repeat these tasks for the other files.
+
+        Make sure to create `routes.yaml` and `services.yaml` in the `.magento` subdirectory.
 6.  When you're done, commit the changes to GitHub:
 
         cd <Magento EE install dir>
