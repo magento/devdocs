@@ -14,7 +14,10 @@ This topic discusses suggested solutions to issues you might counter when instal
 
 {% collapsibleh2 Problem: Cannot install Magento %}
 
-The following error message might display:
+This section discusses errors that prevent you from installing DevBox.
+
+### Directory not empty
+The following error message might be displayed:
 
 	Project directory ./ is not empty
 
@@ -26,6 +29,18 @@ The preceding error means that the directory into which you're trying to install
 In this case, delete everything from `Users/me/somepath`
 
 _Solution_: Make sure all files, including all hidden files, are removed from that directory and try again.
+
+### SQLSTATE[HY000] [2002] Connection refused
+The following error message might be displayed:
+
+	Executing shell command:
+	cd /var/www/magento2 && php bin/magento setup:install --base-url=http://127.0.0.1:32774/ --db-host=db --db-name=magento2 --db-user=root --db-password=root --admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com --admin-user=admin --admin-password=admin123 --language=en_US --currency=USD --timezone=America/Chicago --use-rewrites=1 --backend-frontname=admin
+	SQLSTATE[HY000] [2002] Connection refused
+
+ 	  [InvalidArgumentException]   
+	  Parameter validation failed
+
+_Solution_: Run the Terminal (Mac OS) as `root` or run DOS Command Prompt (Windows) as Administrator.
 
 {% endcollapsibleh2 %}
 
