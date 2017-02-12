@@ -33,6 +33,76 @@ This is our recommended workflow:
 
 {% include cloud/new-project-from-template.md %}
 
+## Prepare to import Magento files and database {#cloud-import-prepare}
+This section discusses tasks you must perform in your existing Magento EE installation to prepare it to be imported into a Magento Enterprise Cloud Edition project.
+
+Before you continue, push all pending changes to Git.
+
+You must do the following:
+
+*   Add Cloud-specific files and directories to Magento EE. Without these files and directories, your Magento EE code can't be imported to Cloud.
+*   Dump your Magento EE database.
+
+### Prepare Magento EE files {#cloud-import-prepare-files}
+For your Magento EE code to import to a Magento Enterprise Cloud Edition project, you must have a directory and some files required by Cloud. Following is the list of those files:
+
+ *  [`.magento/routes.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_routes.html)
+ *  [`.magento/services.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_services.html)
+ *  [`.magento.app.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_magento-app.html)
+ *  `magento-vars.php`
+
+To add required files to your Magento EE system:
+
+1.  Go to the [Magento Enterprise Cloud Edition GitHub](https://github.com/magento/magento-cloud){:target="_blank"}.
+2.  Switch to the branch corresponding to the Magento EE version you currently have.
+
+    The following figure shows an example of switching to the `2.1.4` branch.
+
+    ![Switch to your current EE branch]({{ site.baseurl }}common/images/cloud_cloud-git-214.png)
+
+    In the procedure that follows, you'll copy the contents of some of these files to your Magento EE system.
+3.  Log in to your Magento EE system as, or switch to, the Magento file system owner.
+4.  Enter the following commands in the order shown:
+
+        cd <Magento installation dir>
+        mkdir .magento
+5.  One at a time, create the following files in your Magento EE system using the contents of the files in the Magento Enterprise Cloud Edition GitHub:
+
+    *   `<Magento EE install dir>/.magento.app.yaml`
+    *   `<Magento EE install dir>/magento-vars.php`
+    *   `<Magento EE install dir>/.magento/services.yaml`
+    *   `<Magento EE install dir>/.magento/routes.yaml`
+
+    For example, to create `<Magento EE install dir>/.magento.app.yaml`:
+
+    1.  In the  Magento Enterprise Cloud Edition GitHub, click **.magento.app.yaml**.
+    2.  In the upper right, click **Raw**, as the following figure shows.
+
+        ![View the raw version of the file]({{ site.baseurl }}common/images/cloud_cloud-git_raw.png)
+    3.  In your Magento EE project, open a text editor in the Magento EE installation directory (for example, `/var/www/html/magento2`).
+    4.  Paste the raw contents of `.magento.app.yaml` from GitHub into the text editor.
+    5.  Make sure the file is named `.magento.app.yaml` when you save the file.
+    6.  Repeat these tasks for the other files.
+6.  When you're done, commit the changes to GitHub:
+
+        cd <Magento EE install dir>
+        git add -A && git commit -m "Add Cloud files" && git push origin <branch name>
+
+### Prepare the Magento EE database  {#cloud-import-prepare-db}
+Create a dump of the database you want to import using mysqldump. 
+
+The following example shows how to compress the dump so it doesn't significantly interfere with traffic from in live site. 
+
+In the example, the dump file is named `db.sql.gz`, but it is a good idea to include the date in the filename if you do multiple dumps over time.
+
+Command syntax follows:
+
+    mysqldump -h <db-host> -P <db-port> -p -u <db-user> <db-name> --single-transaction --no-autocommit --quick | gzip > db.sql.gz
+
+Example if your database is on localhost with the default port (3306) and the database user name is `magento`:
+
+    mysqldump -p -u magento --single-transaction --no-autocommit --quick | gzip > db.sql.gz
+
 ## Import files and Magento code
 This section discusses how to import code from your existing Magento EE project to your Magento Enterprise Cloud Edition's Git repository `master` branch.
 
@@ -128,26 +198,6 @@ What kinds of things will be different in the imported project?
 
 
 
-## Git reset
-
-
-
-## Copy project files
-
-There are some Cloud-specific project files that need to be added to a new Cloud project. Go to github.com/magento/magento-cloud, find the branch that corresponds to your Magento version, and copy the following files in from that project.
-
- * `.magento/routes.yaml`
- * `.magento/services.yaml`
- * `.magento.app.yaml`
- * `magento-vars.php`
-
-Add and commit the changes to source control. Once done, force push the branch onto the branch that corresponds to the Cloud environment. (Make sure there is no work that has been on that branch that has not been backed up to a different branch. The force push will effectively destroy the previous content of the branch that is being pushed to.)
-
-# Data
-
-
-
-## Import database
 
 ### Getting access information
 
@@ -166,9 +216,7 @@ The name of the database can be found in the `$MAGENTO_CLOUD_RELATIONSHIPS` envi
 
 ### Creating a database dump
 
-Create a dump of the database you want to import (from your local or your existing development environment) using mysqldump. You can also compress it, and provide options to prevent your dump from significantly interfering with traffic from a live site. For the purpose of this tutorial we'll call the dump db.sql.gz, but it is a good idea to include the data in the filename to keep things organized if you do multiple dumps.
 
-  mysqldump -h <db-host> -P <db-port> -p -u <db-user> <db-name> --single-transaction --no-autocommit --quick | gzip > db.sql.gz
 
 ### Importing the database dump
 
