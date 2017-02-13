@@ -228,17 +228,12 @@ To create a remote Git reference:
 
         git branch -u cloud-project/master
 
-
-
 ### Step 4: Import your Magento EE code to your Cloud project {#cloud-import-imp}
 Before you continue, make sure you've completed all tasks discussed in the preceding section.
 
 To import your Magento EE code to Cloud:
 
-1.  Add and commit your changes to `composer.json` and `auth.json`:
-
-        git add -A && git commit -m "Add or update files"
-2.  Fetch the Magento EE branch.
+1.  Fetch the Magento EE branch.
 
         git fetch prev-project
 3.  Reset your Cloud `master` branch to contain the code and the commit history of your Magento EE branch:
