@@ -60,6 +60,6 @@ If necessary, set `auto_increment_increment` to 3:
 
 {% endcollapsible %}
 
-#### Next steps
-*	If the Magento software isn't installed in a Cloud environment, see [create a new project from a template]({{ page.baseurl }}cloud/access-acct/first-time-setup_template.html) or [import an existing project]({{ page.baseurl }}cloud/access-acct/first-time-setup_import.html)
-*	Otherwise, see [Set up an environment and install the Magento software locally]({{ page.baseurl }}cloud/access-acct/set-up-env.html)
+#### Next step
+*	If Magento isn't installed in a Cloud environment, see [create a new project from a template]({{ page.baseurl }}cloud/access-acct/first-time-setup_template.html)
+*	If Magento _is_ installed already, see [Set up an environment and install the Magento software locally]({{ page.baseurl }}cloud/access-acct/set-up-env.html)
