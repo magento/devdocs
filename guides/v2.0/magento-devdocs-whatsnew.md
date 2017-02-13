@@ -17,6 +17,13 @@ This page contains recent changes that we think you'd like to know about. We exc
 
 | Description  | Versions applied to  | New or Updated | Date |
 |--------------|--------------|----------------------|--------|
+| [How to create a Fastly error or maintenance page]({{ page.baseurl }}cloud/access-acct/fastly.html#fastly-errpg){:target="_blank"}  | 2.x  |  Updated |  Feb 10 |
+| [Magento Enterprise Cloud Edition 2.1.4 and 2.0.12 Release Notes]({{ page.baseurl }}cloud/release-notes/CloudReleaseNotes2.1.4.html){:target="_blank"}  |  2.x | New  | Feb 7  |
+| [Magento Community Edition (CE) 2.0.12 Release Notes]({{ site.gdeurl }}release-notes/ReleaseNotes2.0.12CE.html){:target="_blank"}  | 2.0.x  | New  | Feb 7  |
+| [Magento Enterprise Edition (EE) 2.0.12 Release Notes]({{ site.gdeurl }}release-notes/ReleaseNotes2.0.12EE.html){:target="_blank"}  |  2.0.x | New  |  Feb 7 |
+| [Magento CE 2.1.4 Release Notes]({{ site.gdeurl21 }}release-notes/ReleaseNotes2.1.4CE.html){:target="_blank"}  | 2.1.x  | New  |  Feb 7 |
+| [Magento EE 2.1.4 Release Notes]({{ site.gdeurl21 }}release-notes/ReleaseNotes2.1.4EE.html){:target="_blank"}  |  2.1.x |  New | Feb 7  |
+|  [Use PhpStorm, PHPUnit, and Xdebug with DevBox]({{ page.baseurl }}install-gde/docker/docker-phpstorm-parent.html){:target="_blank"} | 2.x  | New  | Feb 8  |
 | [Clarify file system permissions for production]({{ page.baseurl }}config-guide/prod/prod_file-sys-perms.html){:target="_blank"}  | 2.x  | Updated  | Jan 27  |
 | [Corrected instructions to set up multiple websites or stores on Magento Enterprise Cloud Edition]({{ page.baseurl }}cloud/project/project-multi-sites.html){:target="_blank"} | 2.x  | Updated  | Jan 31  |
 
