@@ -51,6 +51,8 @@ For your Magento EE code to import to a Magento Enterprise Cloud Edition project
 *  [`.magento.app.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_magento-app.html)
 *  `magento-vars.php`
 
+#### Add required configuration files {#cloud-import-prepare-files-config}
+
 To add required files to your Magento EE system:
 
 1.  Go to the [Magento Enterprise Cloud Edition GitHub](https://github.com/magento/magento-cloud){:target="_blank"}.
@@ -85,6 +87,67 @@ To add required files to your Magento EE system:
     6.  Repeat these tasks for the other files.
 
         Make sure to create `routes.yaml` and `services.yaml` in the `.magento` subdirectory.
+
+#### Add or update `auth.json` {#cloud-import-authjson}
+To enable you to install and update Magento Enterprise Cloud Edition, you must have an `auth.json` file in your project's root directory. `auth.json` contains your Magento EE [authorization credentials](http://devdocs.magento.com/guides/v2.1/install-gde/prereq/connect-auth.html) for Magento Enterprise Cloud Edition.
+
+These credentials could be different from your existing Magento EE credentials, so be sure to check them and change them if required.
+
+In some cases, you might already have `auth.json` so check to see if it exists and has your authentication credentials before you create a new one.
+
+[Get a sample `auth.json`](https://github.com/magento/magento-cloud/blob/master/auth.json.sample){:target="_blank"}
+
+To create a new `auth.json` in the event you don't have one:
+
+1.  Copy the provided sample using the following command:
+
+        cp auth.json.sample auth.json
+2.  Open `auth.json` in a text editor.
+3.  Replace `<public-key>` and `<private-key>` with your Magento Enterprise Cloud Edition authentication credentials.
+
+    See the following example:
+
+        "http-basic": {
+           "repo.magento.com": {
+              "username": "<public-key>",
+              "password": "<private-key>"
+            }
+        }
+3.  Save your changes to `auth.json` and exit the text editor.
+
+### Edit `composer.json` {#cloud-import-composer}
+Before you push code to the Magento Enterprise Cloud Edition Git repository, you must change your `composer.json` so it meets Cloud requirements.
+
+[View a sample `composer.json`](https://github.com/magento/magento-cloud/blob/master/composer.json){:target="_blank"}
+
+To edit `composer.json`:
+
+1.  If you haven't done so already, log in to your Magento Enterprise Cloud Edition server as, or switch to, the Magento file system owner.
+2.  In a text editor, open `composer.json` in the project root directory.
+3.  Substitute the following value in the `require` section:
+
+        "magento/product-enterprise-edition": "<version>",
+
+    with
+
+        "magento/magento-cloud-metapackage": "<version>",
+4.  Update the `"files"` directive in the `autoload` section to refer to `app/etc/NonComposerComponentRegistration.php` as follows:
+
+        "autoload": {
+        "psr-4": {
+            "Magento\\Framework\\": "lib/internal/Magento/Framework/",
+            "Magento\\Setup\\": "setup/src/Magento/Setup/",
+            "Magento\\": "app/code/Magento/"
+        },
+        "psr-0": {
+            "": "app/code/"
+        },
+        "files": [
+            "app/etc/NonComposerComponentRegistration.php"
+        ]
+    }
+5.  Save your changes to `composer.json` and exit the text editor.
+
 6.  When you're done, commit the changes to GitHub:
 
         cd <Magento EE install dir>
@@ -165,65 +228,7 @@ To create a remote Git reference:
 
         git branch -u cloud-project/master
 
-### Step 2: Add or update `auth.json` {#cloud-import-authjson}
-To enable you to install and update Magento Enterprise Cloud Edition, you must have an `auth.json` file in your project's root directory. `auth.json` contains your Magento EE [authorization credentials](http://devdocs.magento.com/guides/v2.1/install-gde/prereq/connect-auth.html) for Magento Enterprise Cloud Edition.
 
-These credentials could be different from your existing Magento EE credentials, so be sure to check them and change them if required.
-
-In some cases, you might already have `auth.json` so check to see if it exists and has your authentication credentials before you create a new one.
-
-[Get a sample `auth.json`](https://github.com/magento/magento-cloud/blob/master/auth.json.sample){:target="_blank"}
-
-To create a new `auth.json` in the event you don't have one:
-
-1.  Copy the provided sample using the following command:
-
-        cp auth.json.sample auth.json
-2.  Open `auth.json` in a text editor.
-3.  Replace `<public-key>` and `<private-key>` with your Magento Enterprise Cloud Edition authentication credentials.
-
-    See the following example:
-
-        "http-basic": {
-           "repo.magento.com": {
-              "username": "<public-key>",
-              "password": "<private-key>"
-            }
-        }
-3.  Save your changes to `auth.json` and exit the text editor.
-
-### Step 3: Edit `composer.json` {#cloud-import-composer}
-Before you push code to the Magento Enterprise Cloud Edition Git repository, you must change your `composer.json` so it meets Cloud requirements.
-
-[View a sample `composer.json`](https://github.com/magento/magento-cloud/blob/master/composer.json){:target="_blank"}
-
-To edit `composer.json`:
-
-1.  If you haven't done so already, log in to your Magento Enterprise Cloud Edition server as, or switch to, the Magento file system owner.
-2.  In a text editor, open `composer.json` in the project root directory.
-3.  Substitute the following value in the `require` section:
-
-        "magento/product-enterprise-edition": "<version>",
-
-    with
-
-        "magento/magento-cloud-metapackage": "<version>",
-4.  Update the `"files"` directive in the `autoload` section to refer to `app/etc/NonComposerComponentRegistration.php` as follows:
-
-        "autoload": {
-        "psr-4": {
-            "Magento\\Framework\\": "lib/internal/Magento/Framework/",
-            "Magento\\Setup\\": "setup/src/Magento/Setup/",
-            "Magento\\": "app/code/Magento/"
-        },
-        "psr-0": {
-            "": "app/code/"
-        },
-        "files": [
-            "app/etc/NonComposerComponentRegistration.php"
-        ]
-    }
-5.  Save your changes to `composer.json` and exit the text editor.
 
 ### Step 4: Import your Magento EE code to your Cloud project {#cloud-import-imp}
 Before you continue, make sure you've completed all tasks discussed in the preceding section.
