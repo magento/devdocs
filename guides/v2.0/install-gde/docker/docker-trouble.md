@@ -14,7 +14,10 @@ This topic discusses suggested solutions to issues you might counter when instal
 
 {% collapsibleh2 Problem: Cannot install Magento %}
 
-The following error message might display:
+This section discusses errors that prevent you from installing DevBox.
+
+### Directory not empty
+The following error message might be displayed:
 
 	Project directory ./ is not empty
 
@@ -26,6 +29,18 @@ The preceding error means that the directory into which you're trying to install
 In this case, delete everything from `Users/me/somepath`
 
 _Solution_: Make sure all files, including all hidden files, are removed from that directory and try again.
+
+### SQLSTATE[HY000] [2002] Connection refused
+The following error message might be displayed:
+
+	Executing shell command:
+	cd /var/www/magento2 && php bin/magento setup:install --base-url=http://127.0.0.1:32774/ --db-host=db --db-name=magento2 --db-user=root --db-password=root --admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com --admin-user=admin --admin-password=admin123 --language=en_US --currency=USD --timezone=America/Chicago --use-rewrites=1 --backend-frontname=admin
+	SQLSTATE[HY000] [2002] Connection refused
+
+ 	  [InvalidArgumentException]   
+	  Parameter validation failed
+
+_Solution_: Run the Terminal (Mac OS) as `root` or run DOS Command Prompt (Windows) as Administrator.
 
 {% endcollapsibleh2 %}
 
@@ -94,7 +109,18 @@ During DevBox installation, the following error might display:
 
 <pre class="no-copy">ERROR: could not find an available, non-overlapping IPv4 address pool among the defaults to assign to the network</pre>
 
-_Solution_: This error typically happens when you are connected to a network using VPN. End your VPN session and try to install DevBox again.
+_Solution_: Try the following:
+
+*	If you're connected to a VPN network, end your VPN session and try to install DevBox again.
+*	Check the total number of active Docker networks:
+
+		docker network ls
+
+	If there are more than 32 networks, delete the networks you're not using and try again. (Docker has a limit of 32 active network connections.)
+
+	The following command deletes _all_ Docker networks; use it with caution:
+
+		docker network rm $(docker network ls -q)
 
 For more information, see the [Docker GitHub issue](https://github.com/docker/libnetwork/issues/779){:target="_blank"}.
 

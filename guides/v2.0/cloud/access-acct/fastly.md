@@ -117,7 +117,9 @@ To create a custom error/maintenance page:
 5.	In the Magento Admin, click **Save Config**.
 
 ### Advanced configuration options
-For advanced configuration options, download and customize the [Fastly configuration](https://github.com/fastly/fastly-magento2/blob/master/etc/fastly.vcl){:target="_blank"}.
+For advanced configuration options, customize the [Fastly configuration](https://github.com/fastly/fastly-magento2/blob/master/etc/fastly.vcl){:target="_blank"}.
+
+For more information, see [Fastly documentation](https://docs.fastly.com/guides/vcl/guide-to-vcl){:target="_blank"}.
 
 ## Merge your Fastly branch {#cloud-fastly-merge}
 When you're done with development, [merge your environment]({{ page.baseurl }}cloud/howtos/environment-tutorial-env-merge.html) with its parent environment.
