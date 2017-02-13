@@ -2,15 +2,15 @@
 layout: default
 group: install-dock
 subgroup: 500_comm
-title: Common Docker commands
-menu_title: Common Docker commands
+title: Common DevBox commands
+menu_title: Common DevBox commands
 menu_node: parent
 menu_order: 500
 version: 2.0
 github_link: install-gde/docker/docker-commands.md
 ---
 
-This topic lists Docker commands you might find useful for day-to-day use or when troubleshooting issues. For more information, see the [Docker command reference](https://docs.docker.com/engine/reference/commandline){:target="_blank"}.
+This topic lists DevBox commands you might find useful for day-to-day use or when troubleshooting issues. For more information about the Docker commands on which many of these are based, see the [Docker command reference](https://docs.docker.com/engine/reference/commandline){:target="_blank"}.
 
 ## Run cron, populate the cache and the storefront
 
@@ -69,11 +69,40 @@ To populate the storefront and cache, and run cron to run every time Magento sta
 
 {% endcollapsibleh3 %}
 
+<p id="cloud-docker-cmds-stopstart"></p>{% collapsibleh2 Stop, start, restart, and view port mappings %}
+
+You can use the following commands to start, stop, and restart services; and you can find the ports currently being used by the services.
+
+Run all commands from your [DevBox root folder]({{ page.baseurl }}install-gde/docker/docker-ref.html#devbox-root-dir).
+
+### Restart the containers after rebooting
+After you restart your computer, we recommend you use the following command, which restarts all services and assigns them new ports:
+
+	m2devbox-reset[.bat|sh]
+
+### Find currently used ports
+If you're not sure what ports on which DevBox services are running, use the `docker-compose ps` command as follows:
+
+{% include install/docker/docker_compose-ps.md %}
+
+### Start, stop, restart services
+DevBox uses two service names: `web` and `db`. To start, stop, or restart them, use the following commands:
+
+	docker-compose start <service>
+	docker-compose stop <service>
+	docker-compose restart <service>
+
+For example, to restart the web service:
+
+	docker-compose restart web
+
+{% endcollapsibleh2 %}
+
 {% collapsibleh2 General purpose commands %}
 		
 | Description  | Command  | 
 |--------------|--------------|
-| List all Magento containers | `docker-compose ps ` |
+| List all Magento containers, shows port mappings | `docker-compose ps ` |
 | Start a container | `docker-compose start <service>` |
 | Stop a container | `docker-compose stop <service>` |
 | Restart a container | `docker-compose restart <service>` | 

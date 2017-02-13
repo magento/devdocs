@@ -30,6 +30,7 @@
 <p>These Release Notes contain the following information:</p>
 <ul class="level1"><li><a href="#upgrade">Important Upgrade Information</a></li>
 <li><a href="#ce19-patches">Recent Patches</a></li>
+<li><a href="#ce19-1932">Magento CE 1.9.3.2 Release Notes</a></li>
 <li><a href="#ce19-1931">Magento CE 1.9.3.1 Release Notes</a></li>
 <li><a href="#ce19-1930">Magento CE 1.9.3.0 Release Notes</a></li>
 <li><a href="http://docs.magento.com/m1/ce/user_guide/magento/release-notes-ce-1.9.2.4.html" target="_blank">Magento CE 1.9.2.4 Release Notes</a></li>
@@ -47,6 +48,11 @@
 
 <h2 id="upgrade">Important Upgrade Information</h2>
 <div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: Use CE 1.9.3.0 or later for <em>all new CE installations and upgrades</em> to get the latest fixes, features, and security updates.</span></div>
+
+<h2 id="ce19-1932">Magento CE 1.9.3.2 Release Notes</h2>
+<p>This patch addresses the following issues:</p>
+<ul><li>Removal of vulnerability with the Zend framework <code>Zend_Mail</code> library. For more information, see <a href="https://magento.com/security/patches/supee-9652" target="_blank">Magento Security Center</a>. </li>
+	<li>Updated the copyright year to 2017.</li></ul>
  
 <h2 id="ce19-1931">Magento CE 1.9.3.1 Release Notes</h2>
 <p>This patch addresses the following issues:</p>
@@ -289,8 +295,6 @@ skin/adminhtml/default/default/media/uploaderSingle.swf</pre>
 	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-5155" target="_blank">MPERF-5155</a> --> When you manage product attributes, selecting an action from <strong>Actions</strong> works properly. </li>
 	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-3281" target="_blank">MPERF-3281</a> --> You can now add a configurable product by SKU to an order using the Admin Panel. </li>
 	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-2615" target="_blank">MPERF-2615</a> --> You can now save a product's weight attribute. </li>
-	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-1808" target="_blank">MPERF-1808</a> --> You can now save changes to a CMS page hierarchy when hierarchy metadata is disabled. </li>
-	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-5798" target="_blank">MPERF-5798</a>  -->You can now save a banner after upgrading. </li>
 	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-7047" target="_blank">MPERF-7047</a> --> Using a Portable Network Graphics (<code>.png</code>) image on a CMS page no longer results in a <code>HEADERS_ALREADY_SENT</code> message to be logged. </li>
 	<li>Fixed an exception related to an unknown database table. </li>
 	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-7059" target="_blank">MPERF-7059</a> --> Fixed an issue with JavaScript merging. </li>

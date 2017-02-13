@@ -4,7 +4,7 @@ group: cloud
 subgroup: 10_project
 title: .magento.app.yaml
 menu_title: .magento.app.yaml
-menu_order: 11
+menu_order: 50
 menu_node: 
 version: 2.0
 github_link: cloud/project/project-conf-files_magento-app.md

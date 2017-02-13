@@ -123,7 +123,7 @@ This page will contain a list of all Magento UI components. This topic is being 
 
 
 {% collapsible Modal %}
-- **UI Component**: [Modal](http://devdocs.magento.com/guides/v2.1/ui_comp_guide/ui-modal.html)
+- **UI Component**: [Modal](http://devdocs.magento.com/guides/v2.1/ui_comp_guide/components/ui-modal.html)
 - **Link to constructor**: [modal-component.js]({{site.mage2100url}}app/code/Magento/Ui/view/base/web/js/modal/modal-component.js)
 - **Node name in `definition.xml`**: `<modal>`
 - **Is top-level**: No
