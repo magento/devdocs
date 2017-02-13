@@ -151,14 +151,6 @@ To set up PHPUnit:
 
 	Sample path on Windows: `C:\magento\build-18c4e4d3c5a541f37e9cffd35f1bf74e\build-18c4e4d3c5a541f37e9cffd35f1bf74e\shared\webroot\vendor`
 4.	Click **Open**.
-<!-- 5.	In the Test Runner section, select both the the **Default configuration file** and the **Default bootstrap file** check boxes.
-5.	Click ![Edit the interpreter]({{ site.baseurl }}common/images/install_docker_php-storm-ellipsis.png){:width="20px"} (**Browse**) next to each check box and enter the following information:
-
-	*	Default configuration file: Browse to locate `<PhpStorm project root>/dev/tests/unit/phpunit.xml`
-
-	You can choose `phpunit.xml.dist` if the `.xml` file doesn't exist.
-
-	*	Default bootstrap file: Browse to locate `<PhpStorm project root>/dev/tests/unit/framework/bootstrap.php` -->
 6.	In the Preferences window, click **OK**.
 
 ### Set up PHPUnit to use the remote CLI interpreter
