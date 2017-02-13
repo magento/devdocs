@@ -46,10 +46,10 @@ You must do the following:
 ### Prepare Magento EE files {#cloud-import-prepare-files}
 For your Magento EE code to import to a Magento Enterprise Cloud Edition project, you must have a directory and some files required by Cloud. Following is the list of those files:
 
- *  [`.magento/routes.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_routes.html)
- *  [`.magento/services.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_services.html)
- *  [`.magento.app.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_magento-app.html)
- *  `magento-vars.php`
+*  [`.magento/routes.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_routes.html)
+*  [`.magento/services.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_services.html)
+*  [`.magento.app.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_magento-app.html)
+*  `magento-vars.php`
 
 To add required files to your Magento EE system:
 
@@ -90,6 +90,13 @@ To add required files to your Magento EE system:
         cd <Magento EE install dir>
         git add -A && git commit -m "Add Cloud files" && git push origin <branch name>
 
+#### More information
+For more information about the `.yaml` configuration files, see:
+
+ *  [`.magento/routes.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_routes.html)
+ *  [`.magento/services.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_services.html)
+ *  [`.magento.app.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_magento-app.html)
+
 ### Prepare the Magento EE database  {#cloud-import-prepare-db}
 Create a dump of the database you want to import using mysqldump. 
 
@@ -105,7 +112,7 @@ Example if your database is on localhost with the default port (3306) and the da
 
     mysqldump -p -u magento --single-transaction --no-autocommit --quick | gzip > db.sql.gz
 
-## Import files and Magento code
+## Import files and Magento code {#cloud-import-files-and-db}
 This section discusses how to import code from your existing Magento EE project to your Magento Enterprise Cloud Edition's Git repository `master` branch.
 
 <div class="bs-callout bs-callout-warning" id="warning" markdown="1">
@@ -130,7 +137,7 @@ Before you continue, make sure you know the SSH or HTTPS URL for your Magento EE
 To create a remote Git reference:
 
 1.  Log in to your local Cloud development machine as, or switch to, the Magento file system owner.
-2.  Make a copy of `composer.json` so it doesn't get overwritten.
+2.  Make a copy of `composer.json` _in a non-tracked directory_ so it doesn't get overwritten.
 
         cp composer.json ../composer.json.cloud
 3.  Rename your Cloud Git remote from `origin` to `cloud-project` to make it clear which repository is which:
@@ -158,23 +165,85 @@ To create a remote Git reference:
 
         git branch -u cloud-project/master
 
-### Step 2: Import your Magento EE code to your Cloud project {#cloud-import-imp}
+### Step 2: Add or update `auth.json` {#cloud-import-authjson}
+To enable you to install and update Magento Enterprise Cloud Edition, you must have an `auth.json` file in your project's root directory. `auth.json` contains your Magento EE [authorization credentials](http://devdocs.magento.com/guides/v2.1/install-gde/prereq/connect-auth.html) for Magento Enterprise Cloud Edition.
+
+These credentials could be different from your existing Magento EE credentials, so be sure to check them and change them if required.
+
+In some cases, you might already have `auth.json` so check to see if it exists and has your authentication credentials before you create a new one.
+
+[Get a sample `auth.json`](https://github.com/magento/magento-cloud/blob/master/auth.json.sample){:target="_blank"}
+
+To create a new `auth.json` in the event you don't have one:
+
+1.  Copy the provided sample using the following command:
+
+        cp auth.json.sample auth.json
+2.  Open `auth.json` in a text editor.
+3.  Replace `<public-key>` and `<private-key>` with your Magento Enterprise Cloud Edition authentication credentials.
+
+    See the following example:
+
+        "http-basic": {
+           "repo.magento.com": {
+              "username": "<public-key>",
+              "password": "<private-key>"
+            }
+        }
+3.  Save your changes to `auth.json` and exit the text editor.
+
+### Step 3: Edit `composer.json` {#cloud-import-composer}
+Before you push code to the Magento Enterprise Cloud Edition Git repository, you must change your `composer.json` so it meets Cloud requirements.
+
+[View a sample `composer.json`](https://github.com/magento/magento-cloud/blob/master/composer.json){:target="_blank"}
+
+To edit `composer.json`:
+
+1.  If you haven't done so already, log in to your Magento Enterprise Cloud Edition server as, or switch to, the Magento file system owner.
+2.  In a text editor, open `composer.json` in the project root directory.
+3.  Substitute the following value in the `require` section:
+
+        "magento/product-enterprise-edition": "<version>",
+
+    with
+
+        "magento/magento-cloud-metapackage": "<version>",
+4.  Update the `"files"` directive in the `autoload` section to refer to `app/etc/NonComposerComponentRegistration.php` as follows:
+
+        "autoload": {
+        "psr-4": {
+            "Magento\\Framework\\": "lib/internal/Magento/Framework/",
+            "Magento\\Setup\\": "setup/src/Magento/Setup/",
+            "Magento\\": "app/code/Magento/"
+        },
+        "psr-0": {
+            "": "app/code/"
+        },
+        "files": [
+            "app/etc/NonComposerComponentRegistration.php"
+        ]
+    }
+5.  Save your changes to `composer.json` and exit the text editor.
+
+### Step 4: Import your Magento EE code to your Cloud project {#cloud-import-imp}
 Before you continue, make sure you've completed all tasks discussed in the preceding section.
 
 To import your Magento EE code to Cloud:
 
-1.  Fetch the Magento EE branch.
+1.  Add and commit your changes to `composer.json` and `auth.json`:
+
+        git add -A && git commit -m "Add or update files"
+2.  Fetch the Magento EE branch.
 
         git fetch prev-project
-2.  Reset your Cloud `master` branch to contain the code and the commit history of your Magento EE branch:
+3.  Reset your Cloud `master` branch to contain the code and the commit history of your Magento EE branch:
 
         git reset --hard prev-project/<branch name>
-3.  Push code from your Magento EE project to your Magento Enterprise Cloud Edition project, overwriting the previous contents and commit history with that of your project:
+4.  Push code from your Magento EE project to your Magento Enterprise Cloud Edition project, overwriting the previous contents and commit history with that of your project:
 
         git push -f cloud-project master
 
-### Step 3: Merge your `composer.json` {#cloud-import-composer}
-TBD
+
 
 
 
