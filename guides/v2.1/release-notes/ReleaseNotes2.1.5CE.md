@@ -13,9 +13,11 @@ github_link: release-notes/ReleaseNotes2.1.5CE.md
 *	TOC
 {:toc}
 
-We are pleased to present Magento Enterprise Edition 2.1.5. **This release contains no functional changes or security improvements**. It includes only one change: an update to our copyright date. 
+We are pleased to present Magento Enterprise Edition 2.1.5. 
 
-
+<div class="bs-callout bs-callout-warning" markdown="1">
+This release updates the copyright date in every file. It does not contain any functional changes or security improvements.
+</div>
 
 
 ## System requirements
