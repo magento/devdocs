@@ -20,10 +20,6 @@ This release updates the copyright date in every file. It does not contain any f
 </div>
 
 
-
-This release updates the copyright date in every file. It does not contain any functional changes or security improvements. 
-
-
 ## System requirements
 Our technology stack is built on PHP and MySQL. For more information, see
 <a href="{{ page.baseurl }}install-gde/system-requirements.html" target="_blank">System Requirements</a>.
