@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide 
-subgroup: 05_log
+subgroup: 500_log
 title: Magento logging in more detail
 menu_title: Magento logging in more detail
 menu_node: 

@@ -1,7 +1,7 @@
 ---
 layout: default
 group: get-started
-subgroup: B_Authentication
+subgroup: 40_Authentication
 title: Authentication
 menu_title: Authentication
 menu_order: 1
@@ -13,15 +13,15 @@ redirect_from: /guides/v1.0/get-started/authentication/gs-authentication.html
 
 <h2 id="overview-authenticate">Web API authentication overview</h2>
 <p>
-Magento allows developers to define web API resources and their permissions in a configuration file <code>webapi.xml</code>. 
-Here are more details on exposing <a href="http://devdocs.magento.com/guides/v1.0/extension-dev-guide/service-contracts/service-to-web-service.html">services as Web APIs.</a> 
+Magento allows developers to define web API resources and their permissions in a configuration file <code>webapi.xml</code>.
+Here are more details on exposing <a href="http://devdocs.magento.com/guides/v1.0/extension-dev-guide/service-contracts/service-to-web-service.html">services as Web APIs.</a>
 
 Before you can make web API calls, you must authenticate your identity and have necessary permissions (authorization) to access the API resource. Authentication allows Magento to identify the caller's user type. Based on the user's (administrator, integration, customer or guest) access rights, API calls' resource accessibility is determined.
 </p>
 
 <h3 id="accessible-resources">Accessible resources</h3>
-<p>The list of resources that you can access depends on your user type. All customers have the same permissions, and as a result the same resources accessible. The preceding statement is true for guest users as well. 
-Each administrator or integration user can have a unique set of permissions which is configured in the Magento Admin. 
+<p>The list of resources that you can access depends on your user type. All customers have the same permissions, and as a result the same resources accessible. The preceding statement is true for guest users as well.
+Each administrator or integration user can have a unique set of permissions which is configured in the Magento Admin.
 Permissions required to access particular resource are configured in the <code>webapi.xml</code> file. This table lists the resources that each user type can access:</p>
 <table style="width:100%">
    <tr bgcolor="lightgray">

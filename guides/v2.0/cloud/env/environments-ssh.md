@@ -11,7 +11,7 @@ github_link: cloud/env/environments-ssh.md
 ---
 
 ## Connect to the environment using SSH {#env-ssh}
-Before you can use SSH to connect to an environment, you must add your [SSH public key]({{page.baseurl}}cloud/before/before-workspace.html#cloud-ssh-cli-ssh) 
+Before you can use SSH to connect to an environment, you must add your [SSH public key]({{page.baseurl}}cloud/before/before-workspace-ssh.html) 
 to your account. For security reasons, in order to add your public key to a production or staging environment,
  you must create a support ticket requesting the key to be added.
 
