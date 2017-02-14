@@ -5,8 +5,6 @@ subgroup: 15_howto
 title: Test a Magento patch
 menu_title: Test a Magento patch
 menu_order: 4
-level3_menu_node: level3child
-level3_subgroup: update-magento
 menu_node: 
 version: 2.0
 github_link: cloud/howtos/patch-magento.md
