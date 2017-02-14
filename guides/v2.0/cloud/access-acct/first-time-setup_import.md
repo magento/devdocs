@@ -53,12 +53,12 @@ For your Magento EE code to import to a Magento Enterprise Cloud Edition project
 
 #### Add required configuration files {#cloud-import-prepare-files-config}
 
-To add required files to your Magento EE system:
+To add required files to your Magento EE code:
 
 1.  Go to the [Magento Enterprise Cloud Edition GitHub](https://github.com/magento/magento-cloud){:target="_blank"}.
-2.  Switch to the branch corresponding to the Magento EE version you currently have.
+2.  Select the branch corresponding to the Magento EE version you currently have.
 
-    The following figure shows an example of switching to the `2.1.4` branch.
+    The following figure shows an example of selecting the `2.1.4` branch.
 
     ![Switch to your current EE branch]({{ site.baseurl }}common/images/cloud_cloud-git-214.png){:width="600px"}
 
@@ -75,9 +75,9 @@ To add required files to your Magento EE system:
     *   `<Magento EE install dir>/.magento/services.yaml`
     *   `<Magento EE install dir>/.magento/routes.yaml`
 
-    For example, to create `<Magento EE install dir>/.magento.app.yaml`:
+    For example, to create `<Magento EE install dir>/.magento.app.yaml` from the 2.1.4 branch:
 
-    1.  In the  Magento Enterprise Cloud Edition GitHub, click **.magento.app.yaml**.
+    1.  In the  Magento Enterprise Cloud Edition GitHub, click [**.magento.app.yaml**](https://github.com/magento/magento-cloud/blob/2.1.4/.magento.app.yaml){:target="_blank"}.
     2.  In the upper right, click **Raw**, as the following figure shows.
 
         ![View the raw version of the file]({{ site.baseurl }}common/images/cloud_cloud-git_raw.png){:width="600px"}
@@ -86,24 +86,27 @@ To add required files to your Magento EE system:
     5.  Make sure the file is named `.magento.app.yaml` when you save the file.
     6.  Repeat these tasks for the other files.
 
+        Make sure to create `magento-vars.php` in the Magento root directory.
+
         Make sure to create `routes.yaml` and `services.yaml` in the `.magento` subdirectory.
+
+Modify these files as necessary as discussed in the following topics:
+
+*  [`.magento/routes.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_routes.html)
+*  [`.magento/services.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_services.html)
+*  [`.magento.app.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_magento-app.html)
 
 #### Add or update `auth.json` {#cloud-import-authjson}
 To enable you to install and update Magento Enterprise Cloud Edition, you must have an `auth.json` file in your project's root directory. `auth.json` contains your Magento EE [authorization credentials](http://devdocs.magento.com/guides/v2.1/install-gde/prereq/connect-auth.html) for Magento Enterprise Cloud Edition.
 
-These credentials could be different from your existing Magento EE credentials, so be sure to check them and change them if required.
+In some cases, you might already have `auth.json` so check to see if it exists and has your authentication credentials before you create a new one. It's located in your Magento root directory.
 
-In some cases, you might already have `auth.json` so check to see if it exists and has your authentication credentials before you create a new one.
-
-[Get a sample `auth.json`](https://github.com/magento/magento-cloud/blob/master/auth.json.sample){:target="_blank"}
+[Get a sample `auth.json`](https://raw.githubusercontent.com/magento/magento-cloud/master/auth.json.sample){:target="_blank"}
 
 To create a new `auth.json` in the event you don't have one:
 
-1.  Copy the provided sample using the following command:
-
-        cp auth.json.sample auth.json
-2.  Open `auth.json` in a text editor.
-3.  Replace `<public-key>` and `<private-key>` with your Magento Enterprise Cloud Edition authentication credentials.
+1.  Use a text editor to create a file named `auth.json` in your Magento root directory.
+3.  Replace `<public-key>` and `<private-key>` with your Magento EE authentication credentials.
 
     See the following example:
 
@@ -118,7 +121,7 @@ To create a new `auth.json` in the event you don't have one:
 ### Edit `composer.json` {#cloud-import-composer}
 Before you push code to the Magento Enterprise Cloud Edition Git repository, you must change your `composer.json` so it meets Cloud requirements.
 
-[View a sample `composer.json`](https://github.com/magento/magento-cloud/blob/master/composer.json){:target="_blank"}
+[View a sample `composer.json`](https://raw.githubusercontent.com/magento/magento-cloud/master/composer.json){:target="_blank"}
 
 To edit `composer.json`:
 
@@ -131,6 +134,11 @@ To edit `composer.json`:
     with
 
         "magento/magento-cloud-metapackage": "<version>",
+    
+    <div class="bs-callout bs-callout-info" id="info" markdown="1">
+    Both `<version>` values _must be the same_. In other words, if your current EE version is 2.1.3, your `magento-cloud-metapackage` version must also be 2.1.3.
+    </div>
+
 4.  Update the `"files"` directive in the `autoload` section to refer to `app/etc/NonComposerComponentRegistration.php` as follows:
 
         "autoload": {
@@ -153,13 +161,6 @@ To edit `composer.json`:
         cd <Magento EE install dir>
         git add -A && git commit -m "Add Cloud files" && git push origin <branch name>
 
-#### More information
-For more information about the `.yaml` configuration files, see:
-
- *  [`.magento/routes.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_routes.html)
- *  [`.magento/services.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_services.html)
- *  [`.magento.app.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_magento-app.html)
-
 ### Prepare the Magento EE database  {#cloud-import-prepare-db}
 Create a dump of the database you want to import using mysqldump. 
 
@@ -167,13 +168,15 @@ The following example shows how to compress the dump so it doesn't significantly
 
 In the example, the dump file is named `db.sql.gz`, but it is a good idea to include the date in the filename if you do multiple dumps over time.
 
+Because the database dump can be large, we recommend you create it in a directory not tracked by Git.
+
 Command syntax follows:
 
-    mysqldump -h <db-host> -P <db-port> -p -u <db-user> <db-name> --single-transaction --no-autocommit --quick | gzip > db.sql.gz
+    mysqldump -h <db-host> -P <db-port> -p -u <db-user> <db-name> --single-transaction --no-autocommit --quick | gzip > ~/db.sql.gz
 
 Example if your database is on localhost with the default port (3306) and the database user name is `magento`:
 
-    mysqldump -p -u magento --single-transaction --no-autocommit --quick | gzip > db.sql.gz
+    mysqldump -p -u magento --single-transaction --no-autocommit --quick | gzip > ~/db.sql.gz
 
 ## Import files and Magento code {#cloud-import-files-and-db}
 This section discusses how to import code from your existing Magento EE project to your Magento Enterprise Cloud Edition's Git repository `master` branch.
