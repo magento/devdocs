@@ -1,7 +1,7 @@
 ---
 layout: default
 group: install-dock
-subgroup: 05_phpstorm
+subgroup: 05_PhpStorm
 title: Run PHPUnit
 menu_title: Run PHPUnit
 menu_node: 
@@ -10,18 +10,18 @@ version: 2.0
 github_link: install-gde/docker/docker-phpstorm-test.md
 ---
 
-This topic discusses how to run PHPUnit tests from the command line or from PhPStorm. For demonstration purposes, this topic discusses how to test Magento modules. Typically, you'll test your own modules; replace the paths shown in the examples with the paths to your test files.
+This topic discusses how to run PHPUnit tests from the command line or from PhpStorm. For demonstration purposes, this topic discusses how to test Magento modules. Typically, you'll test your own modules; replace the paths shown in the examples with the paths to your test files.
 
 {% include install/docker/docker-phpstorm.md %}
 
 ## Prerequisites
 Before you begin, make sure you have completed all of the following tasks:
 
-*	[PhPStorm prerequisites]({{ page.baseurl }}install-gde/docker/docker-phpstorm-prereq.html)
-*	[Set up your PhPStorm project]({{ page.baseurl }}install-gde/docker/docker-phpstorm-project.html)
+*	[PhpStorm prerequisites]({{ page.baseurl }}install-gde/docker/docker-phpstorm-prereq.html)
+*	[Set up your PhpStorm project]({{ page.baseurl }}install-gde/docker/docker-phpstorm-project.html)
 
 <div class="bs-callout bs-callout-info" markdown="1">
-The instructions in this topic are based on PhPStorm version 2016.3.2. If you use a different version, some steps might be different. Consult your PhPStorm documentation for details.
+The instructions in this topic are based on PhpStorm version 2016.3.2. If you use a different version, some steps might be different. Consult your PhpStorm documentation for details.
 </div>
 
 ## Run unit tests from the command line
@@ -56,20 +56,18 @@ To run PHPUnit integration tests from the command line:
 		docker-compose exec --user=magento2 web /bin/bash
 2.	In the Bash shell, change to the following directory:
 
-		cd /var/www/magento2/vendor/bin/phpunit 
+		cd /var/www/magento2/dev/tests/integration 
 3.	Following is a sample command to run a test suite:
 
 		/var/www/magento2/vendor/bin/phpunit /var/www/magento2/dev/tests/integration/testsuite/Magento/Integration/Model/Config/Integration
 
-	If there is no `phpunit.xml`, use `phpunit.xml.dist` instead.
-
-## Run PHPUnit tests from PhPStorm
-This section discusses one way to run PHPUnit tests in PhPStorm. For more information about defining tests, consult the PhPStorm documentation.
+## Run PHPUnit tests from PhpStorm
+This section discusses one way to run PHPUnit tests in PhpStorm. For more information about defining tests, consult the PhpStorm documentation.
 
 ### Set up and run a test
 To run PHPUnit tests from PhpStorm:
 
-1.	Open your DevBox PhPStorm project.
+1.	Open your DevBox PhpStorm project.
 2.	Expand the files in the left pane until you locate a test to run.
 
 	Tests are located in `<DevBox root folder>/vendor/<module vendor>/<module name>/Test/Unit`
@@ -85,7 +83,7 @@ Test results are displayed in the right pane. If errors display, see the next se
 ### Troubleshoot unit tests
 If your remote CLI interpreter or Xdebug options aren't set up properly, the following messages are displayed:
 
-	ssh://magento2@127.0.0.1:32795/usr/local/bin/php -dxdebug.remote_host=127.0.0.1 /home/magento2/.phpstorm_helpers/phpunit.php --no-configuration Magento\\AdvancedSearch\\Test\\Unit\\Block\\SearchDataTest /var/www/magento2/vendor/magento/module-advanced-search/Test/Unit/Block/SearchDataTest.php
+	ssh://magento2@127.0.0.1:32795/usr/local/bin/php -dxdebug.remote_host=127.0.0.1 /home/magento2/.PhpStorm_helpers/phpunit.php --no-configuration Magento\\AdvancedSearch\\Test\\Unit\\Block\\SearchDataTest /var/www/magento2/vendor/magento/module-advanced-search/Test/Unit/Block/SearchDataTest.php
 	Testing started at 6:13 PM ...
 
 	Process finished with exit code 1
@@ -97,4 +95,4 @@ Also make sure Xdebug configuration options are set properly as discussed in [Cr
 
 #### Next step
 
-[Debug in PhPStorm and browser]({{ page.baseurl }}install-gde/docker/docker-phpstorm-debug.html)
+[Debug in PhpStorm and browser]({{ page.baseurl }}install-gde/docker/docker-phpstorm-debug.html)

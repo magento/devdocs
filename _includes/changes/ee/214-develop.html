@@ -1,8 +1,8 @@
 
-<h3 id="class-214-develop">Changes in classes</h3>
+<h2 id="class">Class</h2>
 <table><tbody>
     <tr>
-        <th>Class</th>
+        <th>Target</th>
         <th>What Changed</th>
     </tr>
     <tr>
@@ -23,198 +23,282 @@
     </tr>
     <tr>
         <td>Magento\Framework\MessageQueue\MessageValidator::__construct</td>
-        <td> Method has been removed.</td>
+        <td>[public] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\Framework\MessageQueue\Rpc\Publisher::publishToQueue</td>
-        <td> Method has been removed.</td>
+        <td>[public] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\Framework\ForeignKey\ObjectRelationProcessor\Plugin::__construct</td>
-        <td> Method parameter changed.</td>
+        <td>[public] Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\VersionsCms\Observer\AddCmsToTopmenuItems::_isCmsNodeActive</td>
+        <td>[protected] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\Staging\Ui\Component\Listing\Column\Entity\UpdateActions::__construct</td>
-        <td> Method parameter changed.</td>
+        <td>[public] Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Staging\Ui\Component\Listing\Column\Entity\UpdateActions::$entityIdentifier</td>
+        <td>[protected] Property has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Staging\Ui\Component\Listing\Column\Entity\UpdateActions::$entityColumn</td>
+        <td>[protected] Property has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Staging\Ui\Component\Listing\Column\Entity\UpdateActions::$jsModalProvider</td>
+        <td>[protected] Property has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Staging\Ui\Component\Listing\Column\Entity\UpdateActions::$jsLoaderProvider</td>
+        <td>[protected] Property has been removed.</td>
     </tr>
     <tr>
         <td>Magento\Staging\Model\StagingApplier::__construct</td>
-        <td> Method parameter changed.</td>
+        <td>[public] Method parameter changed.</td>
     </tr>
     <tr>
         <td>Magento\SalesRuleStaging\Setup\InstallSchema::__construct</td>
-        <td> Method parameter changed.</td>
+        <td>[public] Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\SalesRuleStaging\Setup\InstallSchema::$salesRuleMigrationFactory</td>
+        <td>[protected] Property has been removed.</td>
     </tr>
     <tr>
         <td>Magento\SalesArchive\Model\ResourceModel\Plugin\Grid::aroundRefresh</td>
-        <td> Method has been removed.</td>
+        <td>[public] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\SalesArchive\Model\ResourceModel\Plugin\Grid::$gridPool</td>
+        <td>[protected] Property has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\SalesArchive\Model\ResourceModel\Plugin\Grid::$archive</td>
+        <td>[protected] Property has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\SalesArchive\Model\ResourceModel\Plugin\Grid::$resource</td>
+        <td>[protected] Property has been removed.</td>
     </tr>
     <tr>
         <td>Magento\Reward\Model\Plugin\CartTotalRepository::aroundGet</td>
-        <td> Method has been removed.</td>
+        <td>[public] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\Reward\Model\Plugin\OrderRepository::aroundGet</td>
-        <td> Method has been removed.</td>
+        <td>[public] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\Reward\Model\Plugin\RewardPointsRefund::aroundSave</td>
-        <td> Method has been removed.</td>
+        <td>[public] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\Reward\Model\Plugin\RuleRepositoryPlugin::aroundGetById</td>
-        <td> Method has been removed.</td>
+        <td>[public] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\Reward\Model\Plugin\RuleRepositoryPlugin::aroundSave</td>
-        <td> Method has been removed.</td>
+        <td>[public] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\PromotionPermissions\Block\Adminhtml\Reminder\Plugin::aroundCanRender</td>
-        <td> Method has been removed.</td>
+        <td>[public] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\PromotionPermissions\Block\Adminhtml\Reminder\Plugin::$restrictedButtons</td>
+        <td>[protected] Property has been removed.</td>
     </tr>
     <tr>
         <td>Magento\PromotionPermissions\Block\Adminhtml\Reminder\Edit\Plugin::aroundCanRender</td>
-        <td> Method has been removed.</td>
+        <td>[public] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\PromotionPermissions\Block\Adminhtml\Reminder\Edit\Plugin::$restrictedButtons</td>
+        <td>[protected] Property has been removed.</td>
     </tr>
     <tr>
         <td>Magento\PromotionPermissions\Block\Adminhtml\Promo\Quote\Plugin::aroundCanRender</td>
-        <td> Method has been removed.</td>
+        <td>[public] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\PromotionPermissions\Block\Adminhtml\Promo\Quote\Plugin::$restrictedButtons</td>
+        <td>[protected] Property has been removed.</td>
     </tr>
     <tr>
         <td>Magento\PromotionPermissions\Block\Adminhtml\Promo\Catalog\Plugin::aroundCanRender</td>
-        <td> Method has been removed.</td>
+        <td>[public] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\PromotionPermissions\Block\Adminhtml\Promo\Catalog\Plugin::$restrictedButtons</td>
+        <td>[protected] Property has been removed.</td>
     </tr>
     <tr>
         <td>Magento\PricePermissions\Ui\DataProvider\Product\Form\Modifier\Plugin\Eav::aroundSetupAttributeMeta</td>
-        <td> Method has been removed.</td>
+        <td>[public] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\PricePermissions\Ui\DataProvider\Product\Form\Modifier\Plugin\Eav::aroundSetupAttributeContainerMeta</td>
-        <td> Method has been removed.</td>
+        <td>[public] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\PricePermissions\Ui\DataProvider\Product\Form\Modifier\Plugin\Eav::aroundSetupAttributeData</td>
-        <td> Method has been removed.</td>
+        <td>[public] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\PricePermissions\Model\Entity\Attribute\Backend\Plugin\AbstractBackend::aroundValidate</td>
-        <td> Method has been removed.</td>
+        <td>[public] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\Logging\App\Action\Plugin\Log::aroundDispatch</td>
-        <td> Method has been removed.</td>
+        <td>[public] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\GiftWrapping\Model\Plugin\MessageCartRepository::aroundSave</td>
-        <td> Method has been removed.</td>
+        <td>[public] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftWrapping\Model\Plugin\MessageCartRepository::$helper</td>
+        <td>[protected] Property has been removed.</td>
     </tr>
     <tr>
         <td>Magento\GiftWrapping\Model\Plugin\MessageItemRepository::aroundSave</td>
-        <td> Method has been removed.</td>
+        <td>[public] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftWrapping\Model\Plugin\MessageItemRepository::$helper</td>
+        <td>[protected] Property has been removed.</td>
     </tr>
     <tr>
         <td>Magento\GiftWrapping\Model\Plugin\TotalsConverter::aroundProcess</td>
-        <td> Method has been removed.</td>
+        <td>[public] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\GiftRegistry\Model\Plugin\ConvertQuoteAddressToOrderAddress::aroundConvert</td>
-        <td> Method has been removed.</td>
+        <td>[public] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\GiftRegistry\Model\Plugin\OrderAddressName::aroundGetName</td>
-        <td> Method has been removed.</td>
+        <td>[public] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\GiftRegistry\Model\Plugin\QuoteItem::aroundConvert</td>
-        <td> Method has been removed.</td>
+        <td>[public] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\GiftCardAccount\Model\Plugin\InvoiceRepository::beforeSave</td>
-        <td> Method parameter changed.</td>
+        <td>[public] Method parameter changed.</td>
     </tr>
     <tr>
         <td>Magento\GiftCardAccount\Model\Plugin\TotalsConverter::aroundProcess</td>
-        <td> Method has been removed.</td>
+        <td>[public] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\GiftCardAccount\Model\Plugin\TotalsConverter::__construct</td>
-        <td> Method parameter changed.</td>
+        <td>[public] Method parameter changed.</td>
     </tr>
     <tr>
         <td>Magento\GiftCard\Observer\GenerateGiftCardAccounts::__construct</td>
-        <td> Method parameter changed.</td>
+        <td>[public] Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftCard\Observer\GenerateGiftCardAccounts::$invoiceRepository</td>
+        <td>[protected] Property has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftCard\Observer\GenerateGiftCardAccounts::$itemsFactory</td>
+        <td>[protected] Property has been removed.</td>
     </tr>
     <tr>
         <td>Magento\GiftCard\Model\Plugin\QuoteItem::aroundConvert</td>
-        <td> Method has been removed.</td>
+        <td>[public] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\GiftCard\Model\Plugin\QuoteItem::$_scopeConfig</td>
+        <td>[protected] Property has been removed.</td>
     </tr>
     <tr>
         <td>Magento\GiftCard\Helper\GiftRegistry\Plugin::aroundCanAddToGiftRegistry</td>
-        <td> Method has been removed.</td>
+        <td>[public] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\Enterprise\Model\Plugin\StoreSwitcher::aroundGetHintUrl</td>
-        <td> Method has been removed.</td>
+        <td>[public] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\CustomerSegment\Model\ResourceModel\Grid\Collection::_initSelect</td>
+        <td>[protected] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\CustomerSegment\Model\Checkout\Block\Cart\Shipping\Plugin::aroundCollect</td>
-        <td> Method has been removed.</td>
+        <td>[public] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\CustomerCustomAttributes\Model\Plugin\ConvertQuoteAddressToOrderAddress::aroundConvert</td>
-        <td> Method has been removed.</td>
+        <td>[public] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\CustomerBalance\Model\Plugin\InvoiceRepository::beforeSave</td>
-        <td> Method parameter changed.</td>
+        <td>[public] Method parameter changed.</td>
     </tr>
     <tr>
         <td>Magento\CheckoutStaging\Plugin\SavePreviewQuotaPlugin::aroundSave</td>
-        <td> Method has been removed.</td>
+        <td>[public] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\CatalogStaging\Plugin\Model\Indexer\Product\Flat\Table\Builder::__construct</td>
-        <td> Method parameter changed.</td>
+        <td>[public] Method parameter changed.</td>
     </tr>
     <tr>
         <td>Magento\CatalogStaging\Model\Plugin\ResourceModel\Product\Collection::aroundJoinAttribute</td>
-        <td> Method has been removed.</td>
+        <td>[public] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\CatalogRuleStaging\Setup\InstallSchema::__construct</td>
-        <td> Method parameter changed.</td>
+        <td>[public] Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogRuleStaging\Setup\InstallSchema::$catalogRuleSetupFactory</td>
+        <td>[protected] Property has been removed.</td>
     </tr>
     <tr>
         <td>Magento\CatalogPermissions\Model\Indexer\Plugin\IndexerConfigData::aroundGet</td>
-        <td> Method has been removed.</td>
+        <td>[public] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\CatalogPermissions\Model\Indexer\Plugin\Store\Group::aroundSave</td>
-        <td> Method has been removed.</td>
+        <td>[public] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\CatalogPermissions\Model\Indexer\Plugin\Store\View::aroundSave</td>
-        <td> Method has been removed.</td>
+        <td>[public] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\CatalogPermissions\Model\Indexer\Plugin\Product\Action::aroundUpdateAttributes</td>
-        <td> Method has been removed.</td>
+        <td>[public] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\CatalogPermissions\Model\Indexer\Plugin\Product\Action::aroundUpdateWebsites</td>
-        <td> Method has been removed.</td>
+        <td>[public] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\Amqp\Setup\Recurring::__construct</td>
-        <td> Method parameter changed.</td>
+        <td>[public] Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Amqp\Setup\Recurring::$topology</td>
+        <td>[protected] Property has been removed.</td>
     </tr>
 </tbody></table>
 
-<h3 id="interface-214-develop">Changes in interfaces</h3>
+<h2 id="interface">Interface</h2>
 <table><tbody>
     <tr>
-        <th>Interface</th>
+        <th>Target</th>
         <th>What Changed</th>
     </tr>
     <tr>

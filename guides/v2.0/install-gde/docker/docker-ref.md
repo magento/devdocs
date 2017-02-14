@@ -279,9 +279,9 @@ The following DevBox scripts and configuration files are located in the root fol
 
 *   `docker-compose.yml` DevBox configuration file.
 
-    To set static listen ports so you don't have to reconfigure PhPStorm every time you start DevBox, see [Set static ports](#devbox-static-port).
+    To set static listen ports so you don't have to reconfigure PhpStorm every time you start DevBox, see [Set static ports](#devbox-static-port).
 *   _Windows only_: `m2devbox-unison-sync.bat`, which runs Unison file synchronization. You should not run this script by itself; one of the other scripts starts it automatically.
-*   _Mac OS only_: `m2devbox-debug.sh`, which opens an SSH tunnel to the Docker container so PhPStorm can connect to it.
+*   _Mac OS only_: `m2devbox-debug.sh`, which opens an SSH tunnel to the Docker container so PhpStorm can connect to it.
 
 <div class="bs-callout bs-callout-info" markdown="1">
 When you run the installation script on Windows, an additional command window opens for Unison sync. You don't normally need to interact with this command window.
@@ -290,4 +290,4 @@ Do not close the Unison sync window; otherwise, files you change won't be added 
 </div>
 
 #### Next step
-[PhPStorm prerequisites]({{ page.baseurl }}install-gde/docker/docker-phpstorm-prereq.html)
+[PhpStorm prerequisites]({{ page.baseurl }}install-gde/docker/docker-phpstorm-prereq.html)
