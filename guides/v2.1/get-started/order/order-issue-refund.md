@@ -2,7 +2,7 @@
 layout: tutorial
 group: get-started
 subgroup: 20_REST
-title: Order Processing Tutorial
+title: Order Processing with REST APIs Tutorial
 menu_title: Step 10. Issue a partial refund
 menu_order: 10
 level3_menu_node: level3child
@@ -77,3 +77,11 @@ Log in to Admin. Click **Sales > Credit memos**. The invoice is displayed in the
 {:.no_toc}
 
 ## Related topics
+
+* Get Started with Web APIs (front page)
+REST Overview
+Swagger
+
+* [Getting Started with Magento Web APIs]({{page.baseurl}}get-started/bk-get-started-api.html)
+* [REST API Reference Overview]({{page.baseurl}}rest/bk-rest.html)
+* [REST API documentation](http://devdocs.magento.com/swagger/){:target="_blank"}
