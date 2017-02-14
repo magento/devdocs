@@ -31,7 +31,7 @@ When you submit payment information, Magento creates an order and sends an order
 
 **Payload**
 
-{% collapsible Click to show/hide %}
+{% collapsible Show/hide code sample %}
 {% highlight json %}
 
 {
@@ -81,7 +81,7 @@ Not applicable
 
 **Response**
 
-{% collapsible Click to show/hide %}
+{% collapsible Show/hide code sample %}
 {% highlight json %}
 
 {

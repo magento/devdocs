@@ -65,7 +65,7 @@ Not applicable
 
 You will use the `order_item_id` values to create a shipment in the next step.
 
-{% collapsible Click to show/hide %}
+{% collapsible Show/hide code sample %}
 {% highlight json %}
 {
   "base_currency_code": "USD",

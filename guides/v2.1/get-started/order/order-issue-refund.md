@@ -78,10 +78,6 @@ Log in to Admin. Click **Sales > Credit memos**. The invoice is displayed in the
 
 ## Related topics
 
-* Get Started with Web APIs (front page)
-REST Overview
-Swagger
-
 * [Getting Started with Magento Web APIs]({{page.baseurl}}get-started/bk-get-started-api.html)
 * [REST API Reference Overview]({{page.baseurl}}rest/bk-rest.html)
 * [REST API documentation](http://devdocs.magento.com/swagger/){:target="_blank"}
