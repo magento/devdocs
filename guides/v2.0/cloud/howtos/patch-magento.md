@@ -2,8 +2,8 @@
 layout: default
 group: cloud
 subgroup: 15_howto
-title: Test a patch
-menu_title: Test a patch
+title: Test a Magento patch
+menu_title: Test a Magento patch
 menu_order: 4
 level3_menu_node: level3child
 level3_subgroup: update-magento

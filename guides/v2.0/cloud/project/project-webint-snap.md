@@ -2,8 +2,8 @@
 layout: default
 group: cloud
 subgroup: 10_project
-title: Project backup and restore (snapshot)
-menu_title: Project backup and restore (snapshot)
+title: Backup and restore (snapshot)
+menu_title: Backup and restore (snapshot)
 menu_order: 7
 menu_node: 
 level3_menu_node: level3child

@@ -187,14 +187,6 @@ The procedure discussed in this topic replaces your new Magento Enterprise Cloud
 Before you continue, make sure there is nothing in your Magento Enterprise Cloud Edition project you want to keep.
 </div>
 
-Following is a summary of the process:
-
-1.  In your Cloud Git repository, create a Git remote reference to the Git repo in which your Magento EE code is located.
-2.  Push code from your existing Git repository to the Cloud Git repository.
-3.  Merge your existing `composer.json` with the Cloud `composer.json`.
-
-    Your existing `composer.json` contains references to third-party libraries, extensions, and other code you'll need to preserve in Magento Enterprise Cloud Edition.
-
 ### Step 1: Create a remote Git reference {#cloud-import-ref}
 This section discusses how to create a remote Git reference from your Cloud Git repository to the repository in which your Magento EE installation is located.
 
@@ -202,7 +194,7 @@ Before you continue, make sure you know the SSH or HTTPS URL for your Magento EE
 
 To create a remote Git reference:
 
-1.  Log in to your local Cloud development machine as, or switch to, the Magento file system owner.
+1.  Log in to your local Magento Enterprise Cloud Edition development machine as, or switch to, the Magento file system owner.
 2.  Make a copy of `composer.json` _in a non-tracked directory_ so it doesn't get overwritten.
 
         cp composer.json ../composer.json.cloud
@@ -231,7 +223,7 @@ To create a remote Git reference:
 
         git branch -u cloud-project/master
 
-### Step 4: Import your Magento EE code to your Cloud project {#cloud-import-imp}
+### Step 2: Import your Magento EE code to your Cloud project {#cloud-import-imp}
 Before you continue, make sure you've completed all tasks discussed in the preceding section.
 
 To import your Magento EE code to Cloud:
