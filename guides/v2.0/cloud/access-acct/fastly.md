@@ -104,10 +104,6 @@ To create a custom error/maintenance page:
 
 1.	In the Admin, in the Fastly Configuration section, expand **Error/Maintenance Page** as the following figure shows.
 
-<<<<<<< HEAD
-<p id="cloud-fastly-merge"></p>{% collapsibleh3 Merge your Fastly branch %}
-	
-=======
 	![Custom Fastly error page]({{ site.baseurl }}common/images/cloud-fastly_err-pg.png){:width="650px"}
 2.	Click **Set HTML**.
 3.	In the provided field, enter your HTML.
