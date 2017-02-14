@@ -20,6 +20,6 @@ See the following topics for more information:
 *	[Build and deploy before pushing to staging or production]({{ page.baseurl }}cloud/live/live-sanity-check.html)
 *	Migrate data to staging and production:
 
-	*	[Prepare to migrate data]({{ site.baseurl }}cloud/live/stage-prod-migrate-prereq.html)
+	*	[Prepare to migrate data]({{ page.baseurl }}cloud/live/stage-prod-migrate-prereq.html)
 	*	[Migrate data]({{ page.baseurl }}cloud/live/stage-prod-migrate.html)
 	*	[Testing]({{ page.baseurl }}cloud/live/stage-prod-test.html)

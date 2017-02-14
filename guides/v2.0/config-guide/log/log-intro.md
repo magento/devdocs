@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide 
-subgroup: 05_log
+subgroup: 500_log
 title: Custom logging
 menu_title: Custom logging
 menu_node: parent

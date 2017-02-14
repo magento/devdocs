@@ -4,7 +4,7 @@ group: jsdg
 subgroup: 1_Javascript
 title: Customizing JavaScript illustration
 menu_title: Customizing JavaScript illustration
-menu_order: 5
+menu_order: 25
 version: 2.0
 github_link: javascript-dev-guide/javascript/js_practice.md
 redirect_from:

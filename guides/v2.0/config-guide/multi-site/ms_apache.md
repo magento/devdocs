@@ -1,9 +1,9 @@
 ---
 layout: default
 group: config-guide
-subgroup: 500_sites
-title: Set up multiple websites with Apache (tutorial)
-menu_title: Set up multiple websites with Apache (tutorial)
+subgroup: 11_sites
+title: Tutorial&mdash;Set up multiple websites with Apache
+menu_title: Tutorial&mdash;Set up multiple websites with Apache
 menu_order: 9
 menu_node: 
 version: 2.0
