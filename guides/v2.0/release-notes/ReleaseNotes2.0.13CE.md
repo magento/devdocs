@@ -11,10 +11,17 @@ level3_subgroup: ce20-relnotes
 github_link: release-notes/ReleaseNotes2.0.13CE.md
 ---
 
-We are pleased to present Magento Community Edition 2.0.13. This release includes only one change: an update to our copyright date. 
+We are pleased to present Magento Community Edition 2.0.13. 
+
+<div class="bs-callout bs-callout-warning" markdown="1">
+This release updates the copyright date in every file. It does not contain any functional changes or security improvements.
+</div>
 
 
-**This release contains no functional changes**. Updating the copyright to 2017 affects the entire code base, however, which is why we are packaging this simple but pervasive change in its own release. 
+Looking for the <a href="http://devdocs.magento.com/guides/v2.1/cloud/release-notes/CloudReleaseNotes.html" target="_blank">Magento Enterprise Cloud Edition Release Notes</a>?
+
+
+
 
 
 

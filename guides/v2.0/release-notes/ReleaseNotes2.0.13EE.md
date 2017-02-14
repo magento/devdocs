@@ -10,6 +10,18 @@ level3_subgroup: ee20-relnotes
 github_link: release-notes/ReleaseNotes2.0.13EE.md
 ---
 
+We are pleased to present Magento Enterprise Edition 2.0.13. 
+
+<div class="bs-callout bs-callout-warning" markdown="1">
+This release updates the copyright date in every file. It does not contain any functional changes or security improvements.
+</div>
+
+
+Looking for the <a href="http://devdocs.magento.com/guides/v2.1/cloud/release-notes/CloudReleaseNotes.html" target="_blank">Magento Enterprise Cloud Edition Release Notes</a>?
+
+
+
+
 We are pleased to present Magento Enterprise Edition 2.0.13. This release includes only one change: an update to our copyright date. 
 
 
