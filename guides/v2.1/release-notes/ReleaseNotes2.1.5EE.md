@@ -19,6 +19,8 @@ We are pleased to present Magento Enterprise Edition 2.1.5.
 This release updates the copyright date in every file. It does not contain any functional changes or security improvements.
 </div>
 
+Looking for the <a href="http://devdocs.magento.com/guides/v2.1/cloud/release-notes/CloudReleaseNotes.html" target="_blank">Magento Enterprise Cloud Edition Release Notes</a>?
+
 
 ## System requirements
 Our technology stack is built on PHP and MySQL. For more information, see
