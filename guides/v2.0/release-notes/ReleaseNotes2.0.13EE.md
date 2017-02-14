@@ -20,16 +20,6 @@ This release updates the copyright date in every file. It does not contain any f
 Looking for the <a href="http://devdocs.magento.com/guides/v2.1/cloud/release-notes/CloudReleaseNotes.html" target="_blank">Magento Enterprise Cloud Edition Release Notes</a>?
 
 
-
-
-We are pleased to present Magento Enterprise Edition 2.0.13. This release includes only one change: an update to our copyright date. 
-
-
-**This release contains no functional changes**. Updating the copyright to 2017 affects the entire code base, however, which is why we are packaging this simple but pervasive change in its own release. 
-
-
-
-
 ## System requirements
 Our technology stack is built on PHP and MySQL. See
 <a href="{{ page.baseurl }}install-gde/system-requirements.html" target="_blank">System Requirements</a>.
