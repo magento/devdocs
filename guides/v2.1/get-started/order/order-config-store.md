@@ -1,18 +1,16 @@
 ---
-layout: default
+layout: tutorial
 group: get-started
 subgroup: 20_REST
 title: Order Processing Tutorial
 menu_title: Step 1. Configure the store
-menu_order: 22
+menu_order: 1
 level3_menu_node: level3child
 level3_subgroup: order
 version: 2.1
 github_link: get-started/order/order-config-store.md
+ee_only: true
 ---
-
-Previous Step: [Get Started]({{page.baseurl}}/get-started/order/order-intro.html) | Next Step: [Get the admin token]({{page.baseurl}}/get-started/order/order-admin-token.html)
-
 ## Step 1. Configure the store {#config-store}
 
 The default Luma store needs additional configuration to run the REST calls mentioned in this tutorial.
@@ -56,6 +54,3 @@ Free shipping | `freeshipping` | No
 If you want to change which offline shipping methods are available, select **Stores > Configuration > Sales > Shipping Methods** in Admin. Enable or disable the shipping methods as desired, then click **Save**.
 
 Upon clicking **Save**, a notification message states that the cache needs to be refreshed. Click the **Cache Management** link to refresh the cache.
-
-
-Previous Step: [Get Started]({{page.baseurl}}/get-started/order/order-intro.html) | Next Step: [Get the admin token]({{page.baseurl}}/get-started/order/order-admin-token.html)

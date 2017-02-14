@@ -1,17 +1,16 @@
 ---
-layout: default
+layout: tutorial
 group: get-started
 subgroup: 20_REST
 title: Order Processing Tutorial
 menu_title: Step 3. Create a customer
-menu_order: 24
+menu_order: 3
 level3_menu_node: level3child
 level3_subgroup: order
 version: 2.1
 github_link: get-started/order/order-create-customer.md
+ee_only: true
 ---
-Previous Step: [Get the admin token]({{page.baseurl}}/get-started/order/order-admin-token.html) | Next Step: [Create a shopping cart token]({{page.baseurl}}/get-started/order/order-create-quote.html)
-
 ## Step 3. Create a customer {#create-customer}
 
 Customers can make purchases in three ways:
@@ -150,5 +149,3 @@ Magento returns the customer's access token. This token must be specified in the
 1. Log in to the Luma website using the email `jdoe@example.com` and password `Password1`.
 2. Click the account name (Jane) in the upper right corner and select **My Account**.
 3. Click **Address Book** to view the default billing and shipping addresses.
-
-Previous Step: [Get the admin token]({{page.baseurl}}/get-started/order/order-admin-token.html) | Next Step: [Create a shopping cart token]({{page.baseurl}}/get-started/order/order-create-quote.html)

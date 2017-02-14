@@ -1,17 +1,17 @@
 ---
-layout: default
+layout: tutorial
 group: get-started
 subgroup: 20_REST
 title: Order Processing Tutorial
 menu_title: Overview
-menu_order: 21
+menu_order: 0
 level3_menu_node: level3child
 level3_subgroup: order
 version: 2.1
 github_link: get-started/order/order-intro.md
+ee_only: true
 ---
-
-## Overview {#tutorial-overview}
+## Overview
 
 This tutorial uses REST APIs to demonstrate the lifecycle of an order. You will create a customer, add items to her cart, go through checkout, create an order and invoice, then ship the order. In addition, you will issue a refund on one of the items.
 
@@ -19,7 +19,8 @@ To complete this tutorial, you must install Magento CE 2.1.3 or later with sampl
 
 The tutorial should take no more than 30 minutes to complete.
 
-## Before you begin {#before-begin}
+## Before you begin
+{:.tutorial-before}
 
 To perform this tutorial, you must have the following tools and information:
 
@@ -32,5 +33,3 @@ To perform this tutorial, you must have the following tools and information:
 * **Magento REST API documentation.** You can view the [static REST API documentation on devdocs](http://devdocs.magento.com/swagger/){:target="_blank"} or [generate a local API reference].
 
 * **Magento Merchant documentation.** Refer to [Getting Started with Magento Community Edition 2.1](http://docs.magento.com/m2/ce/user_guide/getting-started.html) for information about the Luma store that is created when you install Magento with the sample data.
-
-Next step: [Configure the store]({{page.baseurl}}/get-started/order/order-config-store.html)
