@@ -1,17 +1,16 @@
 ---
-layout: default
+layout: tutorial
 group: get-started
 subgroup: 20_REST
 title: Order Processing Tutorial
 menu_title: Step 7. Create an order
-menu_order: 27
+menu_order: 7
 level3_menu_node: level3child
 level3_subgroup: order
 version: 2.1
 github_link: get-started/order/order-create-order.md
+ee_only: true
 ---
-Previous Step: [Prepare for checkout]({{page.baseurl}}/get-started/order/order-prepare-checkout.html) | Next step: [Create an invoice]({{page.baseurl}}/get-started/order/order-create-invoice.html)
-
 ## Step 7. Create an order {#create-order}
 
 The shopping cart contains three items totaling $108. The shipping charges are $10, making the grand total $118. We're now ready to convert the quote to an order.
@@ -1295,5 +1294,3 @@ Not applicable
 
 1. Log in to the Luma store as the customer. The dashboard shows the order.
 2. Log in to Admin. Click **Sales > Orders**. The order is displayed in the grid.
-
-Previous Step: [Prepare for checkout]({{page.baseurl}}/get-started/order/order-prepare-checkout.html) | Next step: [Create an invoice]({{page.baseurl}}/get-started/order/order-create-invoice.html)

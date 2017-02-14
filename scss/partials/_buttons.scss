@@ -1,10 +1,10 @@
 .btn {
   border-radius: 2px;
   display: inline-block;
-  padding: 4px 10px;
+  padding: 14px 30px 16px 30px;
   margin-bottom: 0;
-  font-size: 14px;
-  line-height: 20px;
+  font-size: 15px;
+  line-height: 1em;
   text-align: center;
   vertical-align: middle;
   cursor: pointer;
@@ -14,6 +14,10 @@
   background-repeat: repeat-x;
   border: none;
   transition: .3s;
+}
+
+.btn:visited {
+  color: $body-font-color;
 }
 
 .btn:hover, .btn:focus, .btn:active, .btn.active, .btn.disabled, .btn[disabled] {
@@ -52,29 +56,22 @@
   font-size: 20px;
 }
 
+
+
 .btn-large [class^="icon-"], .btn-large [class*=" icon-"] {
   margin-top: 4px;
 }
+
 .btn-small {
-  padding: 2px 10px;
-  font-size: 11.9px;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
+  padding: 10px 20px;
+  font-size: 13px;
   border-radius: 3px;
 }
+
 .btn-small [class^="icon-"], .btn-small [class*=" icon-"] {
-   margin-top: 0;
+  margin-top: 0;
 }
-.btn-mini [class^="icon-"], .btn-mini [class*=" icon-"] {
-   margin-top: -1px;
-}
-.btn-mini {
-  padding: 0 6px;
-  font-size: 10.5px;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
-}
+
 
 
 .btn-block {
@@ -121,46 +118,66 @@ input[type="submit"].btn-block, input[type="reset"].btn-block, input[type="butto
 }
 
 
+.btn-next {
+  position: relative;
+
+  &:hover:after {
+    background: darken($btn-primary-bg-color,10%);
+  }
+
+  &:after {
+    display: block;
+    content: '';
+    height: 32px;
+    width: 32px;
+    border-radius: 2px;
+    transform: rotate(45deg);
+    top: 7px;
+    right: -15px;
+    position: absolute;
+    background: $btn-primary-bg-color;
+    transition: .3s;
+  }
+}
+
 
 .btn-inverse {
-   color: #ffffff;
-   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
-   background-color: #363636;
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #363636;
 }
 .btn-inverse:hover, .btn-inverse:focus, .btn-inverse:active, .btn-inverse.active, .btn-inverse.disabled, .btn-inverse[disabled] {
-   color: #ffffff;
-   background-color: #222222;
-   *background-color: #151515;
+  color: #ffffff;
+  background-color: #222222;
+  *background-color: #151515;
 }
 .btn-inverse:active, .btn-inverse.active {
-   background-color: #080808 \9;
+  background-color: #080808 \9;
 }
 button.btn, input[type="submit"].btn {
-   *padding-top: 3px;
-   *padding-bottom: 3px;
+  *padding-top: 3px;
+  *padding-bottom: 3px;
 }
 button.btn::-moz-focus-inner, input[type="submit"].btn::-moz-focus-inner {
-   padding: 0;
-   border: 0;
+  padding: 0;
+  border: 0;
 }
 button.btn.btn-large, input[type="submit"].btn.btn-large {
-   *padding-top: 7px;
-   *padding-bottom: 7px;
+  *padding-top: 7px;
+  *padding-bottom: 7px;
 }
 button.btn.btn-small, input[type="submit"].btn.btn-small {
-   *padding-top: 3px;
-   *padding-bottom: 3px;
+  *padding-top: 3px;
+  *padding-bottom: 3px;
 }
 button.btn.btn-mini, input[type="submit"].btn.btn-mini {
-   *padding-top: 1px;
-   *padding-bottom: 1px;
+  *padding-top: 1px;
+  *padding-bottom: 1px;
 }
 .btn-link, .btn-link:active, .btn-link[disabled] {
-   background-color: transparent;
-   background-image: none;
-   -webkit-box-shadow: none;
-   -moz-box-shadow: none;
-   box-shadow: none;
+  background-color: transparent;
+  background-image: none;
+  box-shadow: none;
 }
 
 .btn-link {
@@ -195,16 +212,14 @@ button.btn.btn-mini, input[type="submit"].btn.btn-mini {
   -webkit-transition: 0.4s
 }
 
-.btn.outline {
-  color: #fff;
-  background: transparent;
-  border: 3px solid #fff;
-  box-shadow: inset 0 0 0 0 #fff
+.btn-hollow {
+  color: #2D9297;
+  background: #fff;
+  border: 1px solid #2D9297;
 }
 
-.btn.outline:hover {
-  color: #31302b;
-  box-shadow: inset 0 100px 0 0 #fff
+.btn-hollow:hover {
+  background: #ebebea;
 }
 
 .btn.charcoal {

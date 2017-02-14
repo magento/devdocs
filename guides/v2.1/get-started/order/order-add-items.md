@@ -1,18 +1,16 @@
 ---
-layout: default
+layout: tutorial
 group: get-started
 subgroup: 20_REST
 title: Order Processing Tutorial
 menu_title: Step 5. Add items to the cart
-menu_order: 26
+menu_order: 5
 level3_menu_node: level3child
 level3_subgroup: order
 version: 2.1
 github_link: get-started/order/order-add-items.md
+ee_only: true
 ---
-
-Previous Step: [Create a quote]({{page.baseurl}}/get-started/order/order-create-quote.html) | Next step: [Prepare for checkout]({{page.baseurl}}/get-started/order/order-prepare-checkout.html)
-
 ## Step 5. Add items to the cart {#add-items}
 
 This article shows how to add a simple product, a downloadable product, and a bundle product to the cart.
@@ -333,5 +331,3 @@ For this example, we'll configure the Sprite Yoga Companion Kit as follows:
 ### Verify this step {#verify-step}
 
 Sign in as the customer and click on the shopping cart. These three items are displayed.
-
-Previous Step: [Create a quote]({{page.baseurl}}/get-started/order/order-create-quote.html) | Next step: [Prepare for checkout]({{page.baseurl}}/get-started/order/order-prepare-checkout.html)

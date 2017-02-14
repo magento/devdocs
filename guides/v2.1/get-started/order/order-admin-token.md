@@ -1,18 +1,16 @@
 ---
-layout: default
+layout: tutorial
 group: get-started
 subgroup: 20_REST
 title: Order Processing Tutorial
 menu_title: Step 2. Get the admin token
-menu_order: 23
+menu_order: 2
 level3_menu_node: level3child
 level3_subgroup: order
 version: 2.1
 github_link: get-started/order/order-admin-token.md
+ee_only: true
 ---
-
-Previous Step: [Configure the Store]({{page.baseurl}}/get-started/order/order-config-store.html) | Next Step: [Create a customer]({{page.baseurl}}/get-started/order/order-create-customer.html)
-
 ## Step 2. Get the admin token
 
 Each step in this tutorial provides the following information:
@@ -78,5 +76,3 @@ This token must be specified in the authorization header of every call that requ
 ### Verify this step {#verify-step}
 
 There are no additional verification steps. Tokens are not displayed in Admin.
-
-Previous Step: [Configure the Store]({{page.baseurl}}/get-started/order/order-config-store.html) | Next Step: [Create a customer]({{page.baseurl}}/get-started/order/order-create-customer.html)

@@ -1,18 +1,16 @@
 ---
-layout: default
+layout: tutorial
 group: get-started
 subgroup: 20_REST
 title: Order Processing Tutorial
 menu_title: Step 10. Issue a partial refund
-menu_order: 30
+menu_order: 10
 level3_menu_node: level3child
 level3_subgroup: order
 version: 2.1
 github_link: get-started/order/order-issue-refund.md
+ee_only: true
 ---
-
-Previous Step: [Create an shipment]({{page.baseurl}}/get-started/order/order-create-shipment.html)
-
 ## Step 10. Issue a partial refund
 
 Magento 2.1.3 introduced two endpoints that streamline the process of issuing a refund by creating a creditmemo and updating the order or invoice in one call.
@@ -79,6 +77,3 @@ Log in to Admin. Click **Sales > Credit memos**. The invoice is displayed in the
 {:.no_toc}
 
 ## Related topics
-
-* First Step: [Order processing tutorial]({{page.baseurl}}/get-started/order/order-intro.html)
-* Previous Step: [Create an shipment]({{page.baseurl}}/get-started/order/order-create-shipment.html)
