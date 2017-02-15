@@ -2,7 +2,7 @@
 layout: tutorial
 group: get-started
 subgroup: 20_REST
-title: Order Processing Tutorial
+title: Order Processing with REST APIs Tutorial
 menu_title: Step 9. Create a shipment
 menu_order: 9
 level3_menu_node: level3child
@@ -35,7 +35,7 @@ where `3` is the order id.
 
 The `tracks` array optionally allows you to include one or more tracking numbers for the shipment.
 
-{% collapsible Click to show/hide %}
+{% collapsible Show/hide code sample %}
 {% highlight json %}
 
 {

@@ -2,7 +2,7 @@
 layout: tutorial
 group: get-started
 subgroup: 20_REST
-title: Order Processing Tutorial
+title: Order Processing with REST APIs Tutorial
 menu_title: Step 3. Create a customer
 menu_order: 3
 level3_menu_node: level3child
@@ -39,7 +39,7 @@ Creating a customer account requires admin permissions.
 
 It is recommended that you substitute the value of the `email` parameter with a real email address so that you receive all notifications.
 
-{% collapsible Click to show/hide %}
+{% collapsible Show/hide code sample %}
 {% highlight json %}
 {
 	"customer": {
@@ -72,7 +72,7 @@ It is recommended that you substitute the value of the `email` parameter with a 
 
 Magento assigned this user `id` value of `2`.
 
-{% collapsible Click to show/hide %}
+{% collapsible Show/hide code sample %}
 {% highlight json %}
 {
   "id": 2,

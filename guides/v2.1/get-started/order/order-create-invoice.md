@@ -2,7 +2,7 @@
 layout: tutorial
 group: get-started
 subgroup: 20_REST
-title: Order Processing Tutorial
+title: Order Processing with REST APIs Tutorial
 menu_title: Step 8. Create an invoice
 menu_order: 8
 level3_menu_node: level3child
@@ -65,7 +65,7 @@ Not applicable
 
 You will use the `order_item_id` values to create a shipment in the next step.
 
-{% collapsible Click to show/hide %}
+{% collapsible Show/hide code sample %}
 {% highlight json %}
 {
   "base_currency_code": "USD",

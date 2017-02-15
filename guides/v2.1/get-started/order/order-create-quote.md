@@ -2,7 +2,7 @@
 layout: tutorial
 group: get-started
 subgroup: 20_REST
-title: Order Processing Tutorial
+title: Order Processing with REST APIs Tutorial
 menu_title: Step 4. Create a quote
 menu_order: 4
 level3_menu_node: level3child
