@@ -29,7 +29,6 @@ To get Magento DevBox now, go to the [Magento download page](https://magento.com
 *   Magento DevBox is Beta software. Report any issues on the [DevBox GitHub repository](https://github.com/magento/magento2devbox-web/issues){:target="_blank"}.
 </div>
 
-
 #### Next steps
 *   [DevBox (Beta) reference]({{ page.baseurl }}install-gde/docker/docker-ref.html)
 *   [Troubleshoot issues with Magento DevBox]({{ page.baseurl }}install-gde/docker/docker-trouble.html)

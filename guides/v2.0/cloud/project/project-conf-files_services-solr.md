@@ -4,7 +4,7 @@ group: cloud
 subgroup: 10_project
 title: Set up the solr service
 menu_title: Set up the solr service
-menu_order: 33
+menu_order: 84
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: services
