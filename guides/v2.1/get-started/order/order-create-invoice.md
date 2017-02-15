@@ -5,6 +5,8 @@ subgroup: 20_REST
 title: Order Processing with REST APIs Tutorial
 menu_title: Step 8. Create an invoice
 menu_order: 8
+level3_menu_node: level3child
+level3_subgroup: order
 version: 2.1
 github_link: get-started/order/order-create-invoice.md
 ee_only: false

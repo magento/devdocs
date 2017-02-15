@@ -5,6 +5,8 @@ subgroup: 20_REST
 title: Order Processing with REST APIs Tutorial
 menu_title: Step 1. Configure the store
 menu_order: 1
+level3_menu_node: level3child
+level3_subgroup: order
 version: 2.1
 github_link: get-started/order/order-config-store.md
 ee_only: false

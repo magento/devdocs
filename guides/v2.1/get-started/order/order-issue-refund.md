@@ -5,6 +5,8 @@ subgroup: 20_REST
 title: Order Processing with REST APIs Tutorial
 menu_title: Step 10. Issue a partial refund
 menu_order: 10
+level3_menu_node: level3child
+level3_subgroup: order
 version: 2.1
 github_link: get-started/order/order-issue-refund.md
 ee_only: false

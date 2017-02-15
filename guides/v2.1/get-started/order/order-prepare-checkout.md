@@ -5,6 +5,8 @@ subgroup: 20_REST
 title: Order Processing with REST APIs Tutorial
 menu_title: Step 6. Prepare for checkout
 menu_order: 6
+level3_menu_node: level3child
+level3_subgroup: order
 version: 2.1
 github_link: get-started/order/order-prepare-checkout.md
 ee_only: false
