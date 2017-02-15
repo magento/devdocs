@@ -95,19 +95,31 @@ a:active {
   text-decoration: none;
 }
 
+// Style the external URL (only in content area)
+.content-wrap a[href^='http://']:not([href*='magento.com']),
+.content-wrap a[href^='https://']:not([href*='magento.com']){
+
+  &:after {
+    content: '';
+    margin: -2px 0 0 1px;
+    display: inline-block;
+    vertical-align: middle;
+    width: 16px;
+    height: 16px;
+    background: url(../i/icons/external.svg) no-repeat center;
+  }
+
+  &:hover:after {
+    filter: hue-rotate(160deg);
+  }
 
 
 
-
-a.pdf {
-  background: url(/i/icons/ico-pdf.png) right center no-repeat;
-  padding-right: 26px;
-  margin-right: 4px
 }
 
 
 .main-container h2:first-child {
-  margin-top: 0
+  margin-top: 0;
 }
 
 
@@ -276,7 +288,7 @@ dl dd {
 /* SRJ - reviewer question */
 
 p.q {
-	font-size: 15pt;
+	font-size: 15px;
 	color: red;
 	/* display: none; */
 }

@@ -5,6 +5,14 @@ $body-font-family: 'Open Sans', 'Helvetica', 'Arial', sans-serif;
 
 $header-height: 56px;
 
+// Font sizes
+
+$line-height: 1.3;
+$font-size-sm: 12px;
+$font-size-base: 14px;
+
+
+
 // Breakpoints
 $small-screen: 'max-width: 768px';
 $medium-screen: 'max-width: 1023px';
@@ -36,9 +44,13 @@ $btn-bg-color: #ccc;
 $btn-primary-color: #fff;
 $btn-primary-bg-color: $brand-color;
 
+$btn-secondary-color: #fff;
+$btn-secondary-bg-color: #35ACB2;
 
 
-
+// Misc
+$border-radius: 2px;
+$transition-duration: .3s;
 
 
 // Dropdown
@@ -61,7 +73,3 @@ $dropdown-header-color: #ccc;
 $caret-width: .3em;
 $caret-width-lg: $caret-width;
 $zindex-dropdown: 9999;
-$font-size-base: 14px;
-$border-radius: 0;
-$line-height: 1.3;
-$font-size-sm: 12px;
