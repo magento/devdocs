@@ -8,6 +8,8 @@ version: 2.2
 github_link: ui_comp_guide/components/listing/ui-datecolumn.md
 ---
 
+DateColumn сonstructor: [<Magento_Ui_module_dir>/view/base/web/js/grid/columns/date.js]({{mage.2200url}app/code/Magento/Ui/view/base/web/js/grid/columns/date.js})
+
 ## DateColumn configuration
 
 Extends all [Column]({{page.baseurl}}ui_comp_guide/components/listing/ui-column.md) configuration.
