@@ -10,6 +10,7 @@
   cursor: pointer;
   color: $body-font-color;
 
+  font-weight: semibold;
   line-height: 1em;
   text-align: center;
   vertical-align: middle;
@@ -106,6 +107,21 @@
     background-color: darken($btn-secondary-bg-color, 10%);
   }
 
+}
+
+
+.btn-link {
+  color: $link-color;
+  background: transparent;
+
+  &:visited {
+    color: $link-color;
+  }
+
+  &:hover, &:visited:hover {
+    color: $link-hover-color;
+    background: #EBEBEA;
+  }
 }
 
 
