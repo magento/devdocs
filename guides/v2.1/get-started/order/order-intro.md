@@ -5,11 +5,9 @@ subgroup: 20_REST
 title: Order Processing with REST APIs Tutorial
 menu_title: Before you begin
 menu_order: 0
-level3_menu_node: level3child
-level3_subgroup: order
 version: 2.1
 github_link: get-started/order/order-intro.md
-ee_only: true
+ee_only: false
 ---
 
 ## Before you begin
@@ -25,7 +23,7 @@ The tutorial should take no more than 30 minutes to complete.
 
 To perform this tutorial, you must have the following tools and information:
 
-* **A Magento CE 2.1.3 (or later) instance with sample data installed.**  You can use the [Magento DevBox]({{page.baseurl}}install-gde/docker/docker-over.html) to quickly install a Magento development system.
+* **A Magento CE 2.1.3 (or later) instance with sample data installed.**  You can use the [Magento DevBox]({{page.baseurl}}install-gde/docker/docker-over.html) to quickly install a Magento development system. This tutorial works on the Magento DevBox.
 
 * **A REST client.** You can use any REST client to send calls to Magento. [Postman](https://www.getpostman.com/){:target="_blank"} is recommended.
 

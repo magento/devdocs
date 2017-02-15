@@ -5,11 +5,9 @@ subgroup: 20_REST
 title: Order Processing with REST APIs Tutorial
 menu_title: Step 3. Create a customer
 menu_order: 3
-level3_menu_node: level3child
-level3_subgroup: order
 version: 2.1
 github_link: get-started/order/order-create-customer.md
-ee_only: true
+ee_only: false
 ---
 ## Step 3. Create a customer {#create-customer}
 

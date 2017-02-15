@@ -5,11 +5,9 @@ subgroup: 20_REST
 title: Order Processing with REST APIs Tutorial
 menu_title: Step 5. Add items to the cart
 menu_order: 5
-level3_menu_node: level3child
-level3_subgroup: order
 version: 2.1
 github_link: get-started/order/order-add-items.md
-ee_only: true
+ee_only: false
 ---
 ## Step 5. Add items to the cart {#add-items}
 
