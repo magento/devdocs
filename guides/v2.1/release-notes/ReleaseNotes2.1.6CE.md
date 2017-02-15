@@ -36,31 +36,37 @@ Magento 2.1.6 contains 15 security enhancements. Look for the following highligh
 
 ## Security enhancements
 
-<!--- 64635 -->*
+<!--- 64635 -->
+
 <!--- 64049 -->* We’ve updated several vulnerable moment.js libraries (query-migrate, query, jquery-ui-1.9.2.js)
 
 <!--- 63879 -->* You can no longer instantiate an arbitrary object while adding conditions to an email reminder rule. 
 
 <!--- 63877 -->* The Admin URL in the response body of an HTTP request is no longer visible to unauthenticated users 
-<!--- 63869 -->*
+
+<!--- 63869 -->
+
 <!--- 63866 -->* Admin users without proper permissions can no longer delete store backups or system support reports. 
 
 <!--- 63864 -->* Customer-authenticated APIs are no longer vulnerable to CSRF.
 
-<!--- 63862 -->*
-<!--- 63680 -->*
-<!--- 63632-->*
-<!--- 63527 -->*
-<!--- 63517 -->*
+<!--- 63862 -->
+
+<!--- 63680 -->
+
+<!--- 63632-->
+
+<!--- 63527 -->
+
+<!--- 63517 -->
+
 <!--- 62475 -->* Magento now displays a 404 page when you try to route a request to index.phpadmin. Previously, Magento displayed an Admin page.
 
-<!--- 62313 -->* We’ve removed  the PHP serialized object from  the JSON report_data component  from the \Magento\Support\Ui\Component\Listing\Column\ReportActions response. 
+<!--- 62313 -->* We’ve removed  the PHP serialized object from  the JSON report_data component from the \Magento\Support\Ui\Component\Listing\Column\ReportActions response. 
 
 <!--- 61015 -->* Action logs no longer display plain-text passwords. 
 
-<!--- 59097 -->*
-
-
+<!--- 59097 -->
 
 
 
