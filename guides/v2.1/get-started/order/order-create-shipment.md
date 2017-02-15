@@ -35,7 +35,7 @@ where `3` is the order id.
 
 The `tracks` array optionally allows you to include one or more tracking numbers for the shipment.
 
-{% collapsible Show/hide code sample %}
+{% collapsible Show code sample %}
 {% highlight json %}
 
 {

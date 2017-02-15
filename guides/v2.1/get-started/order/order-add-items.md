@@ -123,7 +123,7 @@ To add a bundle product to a cart, you must specify the `sku` of the bundle prod
 
 The `GET http://<host>/rest/default/V1/bundle-products/24-WG080/options/all` call returns `id` values, as shown in the following simplified respose:
 
-{% collapsible Show/hide code sample %}
+{% collapsible Show code sample %}
 {% highlight json %}
 [
   {
@@ -238,7 +238,7 @@ For this example, we'll configure the Sprite Yoga Companion Kit as follows:
 
 **Payload**
 
-{% collapsible Show/hide code sample %}
+{% collapsible Show code sample %}
 {% highlight json %}
 
 {
@@ -280,7 +280,7 @@ For this example, we'll configure the Sprite Yoga Companion Kit as follows:
 
 **Response**
 
-{% collapsible Show/hide code sample %}
+{% collapsible Show code sample %}
 {% highlight json %}
 {
   "item_id": 9,
