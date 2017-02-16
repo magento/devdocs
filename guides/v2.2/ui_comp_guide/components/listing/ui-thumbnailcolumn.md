@@ -8,12 +8,11 @@ version: 2.2
 github_link: ui_comp_guide/components/listing/ui-thumbnailcolumn.md
 ---
 
-
 Constructor: [<Magento_Ui_module_dir>/view/base/web/js/grid/columns/thumbnail.js]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/grid/columns/thumbnail.js)
 
 ## ThumbnailColumn configuration
 
-Extends all [Column]({{page.baseurl}}ui_comp_guide/components/listing/ui-column.md) configuration.
+Extends all [Column]({{page.baseurl}}ui_comp_guide/components/listing/ui-column.html) configuration.
 
 ThumbnailColumn specific configuration:
 
