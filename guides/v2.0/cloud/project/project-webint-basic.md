@@ -59,9 +59,7 @@ The Web Interface provides several ways to access your project and environments:
 *	Clone the project using the Magento Enterprise Cloud Edition CLI
 *	Clone the project using Git
 
-{% collapsible Click to show/hide content %}
-
-To access projects and environments:
+{% collapsible To access projects and environments: %}
 
 1.	[Log in to your project](#project-login).
 2.	Hover the mouse pointer over **Access Project** as the following figure shows:

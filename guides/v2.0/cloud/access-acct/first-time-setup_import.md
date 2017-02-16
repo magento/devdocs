@@ -328,7 +328,34 @@ Now that you have created the dump, move it to the var directory of the applicat
 
 ### Drop and re-create the Cloud database
 
-SSH into the cloud environment and empty the existing database, if it is populated. If you have done any work you would like to refer to later that's been done in the Cloud environment, then make a backup of that first. Drop and recreate the database.
+SSH into the cloud environment and empty the existing database, if it is populated. If you have done any work you would like to refer to later that's been done in the Cloud environment, then make a backup of that first. 
+
+To drop and re-create the Cloud database:
+
+1.  SSH to the Cloud environnment.
+
+        magento-cloud environment:ssh
+2.  Connect to the database.
+
+        mysql -h <db-host> -P <db-port> -p -u <db-user> <db-name>
+
+    For example, if your Cloud databases uses default values, enter:
+
+        mysql -h database.internal -u user main
+3.  Drop the database. At the `MariaDB [main]>` prompt, enter:
+
+        drop database main;
+4.  Re-create the database and give a user access:
+
+        create database <database name>;
+        GRANT ALL ON <database name>.* TO <user name>@database.internal IDENTIFIED BY '<user name>';
+
+    For example, to create a database named `main` and give a user named `user` access to it:
+
+        create database main;
+        GRANT ALL ON main.* TO user@database.internal IDENTIFIED BY 'user';
+
+Drop and recreate the database.
 
 Now import the dump into the cloud environment's database:
 
