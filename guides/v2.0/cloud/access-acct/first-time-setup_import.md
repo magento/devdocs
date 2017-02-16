@@ -165,12 +165,13 @@ To edit `composer.json`:
 
         cd <Magento EE install dir>
         git add -A && git commit -m "Add Cloud files" && git push origin <branch name>
+
 ### Prepare the Magento EE database  {#cloud-import-prepare-db}
 Create a dump of the database you want to import using mysqldump. 
 
 The following example shows how to compress the dump so it doesn't significantly interfere with traffic from in live site. 
 
-In the example, the dump file is named `db.sql.gz`, but it is a good idea to include the date in the filename if you do multiple dumps over time.
+In the example, the dump file is named `db.sql.gz`. It's a good idea to include the date in the filename if you do multiple dumps over time.
 
 Because the database dump can be large, we recommend you create it in a directory not tracked by Git.
 
@@ -242,57 +243,90 @@ To import your Magento EE code to Cloud:
 
         git push -f cloud-project master
 
+As the project builds and deploys, many messages are displayed on the screen. A successful deployment is incidated by the following messages:
 
+    Re-deploying environment 43biovskhelhy-master-l5ut8gq.
+       Environment configuration:
+         mymagento (type: php:7.0, size: S, disk: 2048)
+         mysql (type: mysql:10.0, size: S, disk: 2048)
+         redis (type: redis:3.0, size: S)
+         solr (type: solr:4.10, size: S, disk: 1024)
 
+    Environment routes:
+       http://master-o9gv6gq-43biovskhelhy.us.magentosite.cloud/ is served by application `mymagento`
+       https://master-o9gv6gq-43biovskhelhy.us.magentosite.cloud/ is served by application `mymagento`
 
+To 43biovskhelhy@git.us.magento.cloud:43bmmwdkhelhy.git
+   445b5e8..b597726  master -> master
 
-Let's say you want to import your existing codebase into the master branch of your cloud environment. In the same repository create two remote references, one for the remote repository for your cloud server, and the other for the remote repository of the project you want to import. Then use git-reset to push a branch from your existing project onto a branch of the cloud project. 
+## Import the Magento database
+Before you can use your existing Magento EE clode in Magento Enterprise Cloud Edition, you must import the database.
 
-In this example, we are going to take code from the "develop" branch of an existing repo, and push it to the "master" branch of our cloud project. The project could be an integration environment, staging, or technically production (although obviously you would not directly import to a live production site). For the purpose of this demonstration, the kind of project you are importing code to does not matter.
+To import the Magento database in Magento Enterprise Cloud Edition, you must know:
 
+*   The Magento Enterprise Cloud Edition environment's SSH URL
+*   The database name, user name, and password of the Cloud database
 
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+This topic discusses how to import the [integration system]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-int) database. The database connection information is different for [staging]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-stage) and [production]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-prod) systems. You'll need the assistance of Magento Support before you can migrate your integration system database to staging or production.
+</div>
 
+### Find the SSH URL
+You can find the environment's SSH URL in any of the following ways:
 
+*   From the [project Web Interface]({{ page.baseurl }}cloud/project/project-webint-basic.html#project-access)
+*   Using the following command:
 
+        magento-cloud environment:ssh --pipe
 
+An SSH URL is similar to the following:
 
-https://github.com/magento-cloud/magento-cloud-template/blob/master/README.md
+    43bkopvkhelhy-master-l8uv4kp@ssh.us.magentosite.cloud
 
-What kinds of things will be different in the imported project?
-
-*   `composer.json` and `composer.lock`, with additional packages
-*   Additional file resources used by third party extensions and libraries
-*   Any third party extensions and themes that you installed without using Composer
-
-    Those themes and extensions are located in the `app/code` and `app/design` directories
-
-
-
-
-### Getting access information
-
-First we need to find some information about the Cloud environment and the database there. We'll need the SSH url, and the name and password of the database for the environment.
-
-#### SSH url
-
- * For your integration environments (the ones you can manage through the web interface), go the the project management page, select your project on the left hand side, click Access Site, and copy the URL from the "SSH Access" field.
-    
- * For staging and production environments, the url will be provided by the Cloud team when your environment is provisioned.
 #### Database access
-
 The name of the database can be found in the `$MAGENTO_CLOUD_RELATIONSHIPS` environment variable. Display the variable with the following command. The database name is stored under `databases->path`. The password is found under `databases->password`.
 
-  echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 -d | json_pp
+To find database access information:
 
-### Creating a database dump
+1.  If you haven't already done so, log in to your local system as the Magento file system owner.
+2.  Enter the following command:
 
+        magento-cloud environment:ssh
+3.  At the command prompt, enter the following command:
 
+        echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 -d | json_pp
 
-### Importing the database dump
+The database connection information is displayed:
+
+{% highlight yaml %}
+
+"database" : [
+      {
+         "username" : "user",
+         "query" : {
+            "is_master" : true
+         },
+         "path" : "main",
+         "port" : 3306,
+         "host" : "database.internal",
+         "password" : "",
+         "scheme" : "mysql",
+         "ip" : "192.0.2.150"
+      }
+   ]
+
+{% endhighlight %}
+
+In the preceding example, the database name is `main`, its listen port is `3306`, its host name is `database.internal`, its root user name is `user` and the user has no password.
+
+### Transfer the database dump from Magento EE to Cloud
+Use the `rsync` command as follows to transfer the database dump from your Magento EE system to the Magento Enterprise Cloud Edition environment.
 
 Now that you have created the dump, move it to the var directory of the application you are importing into:
 
-  rsync db.sql <ssh url>:var/db.sql
+    rsync <db dump file name> <cloud ssh url>:var/db.sql.gz
+
+### Drop and re-create the Cloud database
 
 SSH into the cloud environment and empty the existing database, if it is populated. If you have done any work you would like to refer to later that's been done in the Cloud environment, then make a backup of that first. Drop and recreate the database.
 
