@@ -4,7 +4,7 @@ group: cloud
 subgroup: 10_project
 title: Manage environments (branches)
 menu_title: Manage environments (branches)
-menu_order: 5
+menu_order: 23
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: project

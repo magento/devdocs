@@ -4,7 +4,7 @@ group: cloud
 subgroup: 10_project
 title: Basic project information
 menu_title: Basic project information
-menu_order: 4
+menu_order: 21
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: project

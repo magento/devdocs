@@ -4,7 +4,7 @@ group: cloud
 subgroup: 10_project
 title: Backup and restore (snapshot)
 menu_title: Backup and restore (snapshot)
-menu_order: 7
+menu_order: 25
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: project

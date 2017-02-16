@@ -4,10 +4,11 @@ group: cloud
 subgroup: 30_admin
 title: Manage users
 menu_title: Manage users
-menu_order: 2
+menu_order: 5
 menu_node: 
 version: 2.0
-github_link: cloud/admin/admin-user-admin.md
+github_link: cloud/project/user-admin.md
+redirect_from: guides/v2.0/cloud/admin/admin-user-admin.html
 ---
 
 ## Overview of Magento Enterprise Cloud Edition user management {#cloud-user-over}
