@@ -23,33 +23,35 @@ Looking for the <a href="http://devdocs.magento.com/guides/v2.1/cloud/release-no
 
 <!--- 64584 -->
 
-<!--- 64051 -->
+<!--- 64051 --> 
 
-<!--- 63880 -->
+<!--- 63880 -->* You can no longer instantiate an arbitrary object while adding conditions to an email reminder rule. 
 
-<!--- 63878 -->
+<!--- 63878 -->* The Admin URL in the response body of an HTTP request is no longer visible to unauthenticated users 
 
-<!--- 63876 -->
+<!--- 63876 -->* Magento now displays a 404 page when you try to route a request to index.phpadmin. Previously, Magento displayed an Admin page.
 
 <!--- 63871 -->
 
 <!--- 63868 -->
 
-<!--- 63865 -->
+<!--- 63865 -->* Customer-authenticated APIs are no longer vulnerable to CSRF.
 
 <!--- 63863 -->
 
-<!--- 63681 -->
+<!--- 63681 -->* We’ve updated several vulnerable moment.js libraries (query-migrate, query, jquery-ui-1.9.2.js)
 
-<!--- 63633 -->
+<!--- 63633 -->* Zend mail
 
 <!--- 63518 -->
 
-<!--- 62314 -->
+<!--- 62314 -->* We’ve removed  the PHP serialized object from  the JSON report_data component from the \Magento\Support\Ui\Component\Listing\Column\ReportActions response. 
 
-<!--- 61016 -->
+<!--- 61016 -->* Action logs no longer display plain-text passwords.
 
 <!--- 59096 -->
+
+
 
 ## System requirements
 Our technology stack is built on PHP and MySQL. For more information, see
