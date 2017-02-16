@@ -9,7 +9,7 @@ level3_menu_node: level3child
 level3_subgroup: order
 version: 2.1
 github_link: get-started/order/order-create-shipment.md
-ee_only: true
+ee_only: false
 ---
 ## Step 9. Create a shipment
 
@@ -35,7 +35,7 @@ where `3` is the order id.
 
 The `tracks` array optionally allows you to include one or more tracking numbers for the shipment.
 
-{% collapsible Show/hide code sample %}
+{% collapsible Show code sample %}
 {% highlight json %}
 
 {

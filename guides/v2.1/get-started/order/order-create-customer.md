@@ -9,7 +9,7 @@ level3_menu_node: level3child
 level3_subgroup: order
 version: 2.1
 github_link: get-started/order/order-create-customer.md
-ee_only: true
+ee_only: false
 ---
 ## Step 3. Create a customer {#create-customer}
 
@@ -39,7 +39,7 @@ Creating a customer account requires admin permissions.
 
 It is recommended that you substitute the value of the `email` parameter with a real email address so that you receive all notifications.
 
-{% collapsible Show/hide code sample %}
+{% collapsible Show code sample %}
 {% highlight json %}
 {
 	"customer": {
@@ -72,7 +72,7 @@ It is recommended that you substitute the value of the `email` parameter with a 
 
 Magento assigned this user `id` value of `2`.
 
-{% collapsible Show/hide code sample %}
+{% collapsible Show code sample %}
 {% highlight json %}
 {
   "id": 2,

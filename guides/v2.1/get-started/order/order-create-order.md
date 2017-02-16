@@ -9,7 +9,7 @@ level3_menu_node: level3child
 level3_subgroup: order
 version: 2.1
 github_link: get-started/order/order-create-order.md
-ee_only: true
+ee_only: false
 ---
 ## Step 7. Create an order {#create-order}
 
@@ -31,26 +31,26 @@ When you submit payment information, Magento creates an order and sends an order
 
 **Payload**
 
-{% collapsible Show/hide code sample %}
+{% collapsible Show code sample %}
 {% highlight json %}
 
 {
 	"paymentMethod": {
-  		"method": "banktransfer"
+    	    	"method": "banktransfer"
 	 },
 	"billing_address": {
-		"email": "jdoe@example.com",
-  	  "region": "New York",
-      "region_id": 43,
-		  "region_code": "NY",
-    	"country_id": "US",
-    	"street": ["123 Oak Ave"],
-    	"postcode": "10577",
-    	"city": "Purchase",
-    	"telephone": "512-555-1111",
-    	"firstname": "Jane",
-    	"lastname": "Doe"
-  }
+    	    	"email": "jdoe@example.com",
+  	      	"region": "New York",
+          	"region_id": 43,
+          	"region_code": "NY",
+    	    	"country_id": "US",
+    	    	"street": ["123 Oak Ave"],
+    	    	"postcode": "10577",
+    	    	"city": "Purchase",
+    	    	"telephone": "512-555-1111",
+    	    	"firstname": "Jane",
+    	    	"lastname": "Doe"
+	 }
 }
 {% endhighlight %}
 {% endcollapsible %}
@@ -81,7 +81,7 @@ Not applicable
 
 **Response**
 
-{% collapsible Show/hide code sample %}
+{% collapsible Show code sample %}
 {% highlight json %}
 
 {

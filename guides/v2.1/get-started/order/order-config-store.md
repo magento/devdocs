@@ -9,7 +9,7 @@ level3_menu_node: level3child
 level3_subgroup: order
 version: 2.1
 github_link: get-started/order/order-config-store.md
-ee_only: true
+ee_only: false
 ---
 ## Step 1. Configure the store {#config-store}
 

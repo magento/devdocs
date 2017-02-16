@@ -9,7 +9,7 @@ level3_menu_node: level3child
 level3_subgroup: order
 version: 2.1
 github_link: get-started/order/order-prepare-checkout.md
-ee_only: true
+ee_only: false
 ---
 ## Step 6. Prepare for checkout {#prepare-checkout}
 
@@ -36,7 +36,7 @@ Magento calculates shipping costs for each shipping method that can be applied t
 
 The payload contains the shipping address.
 
-{% collapsible Show/hide code sample %}
+{% collapsible Show code sample %}
 {% highlight json %}
 {  "address": {
       "region": "New York",
@@ -63,7 +63,7 @@ The payload contains the shipping address.
 
 Note that the cost for the `flatrate` shipping method is $10. The Sprite Yoga Companion Kit bundled product counts as one item. The Advanced Pilates & Yoga item does not have a shipping charge because the customer downloads this item.
 
-{% collapsible Show/hide code sample %}
+{% collapsible Show code sample %}
 {% highlight json %}
 
 [
@@ -113,7 +113,7 @@ Magento returns a list of payment options and calculates the order totals.
 `Authorization` `Bearer <customer token>`
 
 **Payload**
-{% collapsible Show/hide code sample %}
+{% collapsible Show code sample %}
 {% highlight json %}
 
 {  "addressInformation": {
@@ -160,7 +160,7 @@ The subtotal of the order is $108, and shipping charges are $5. The grand total 
 
 The available payment methods are `banktransfer` and `checkmo`. The customer will specify a payment method in the next step.
 
-{% collapsible Show/hide code sample %}
+{% collapsible Show code sample %}
 {% highlight json %}
 
 {

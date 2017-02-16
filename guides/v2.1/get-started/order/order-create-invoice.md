@@ -9,7 +9,7 @@ level3_menu_node: level3child
 level3_subgroup: order
 version: 2.1
 github_link: get-started/order/order-create-invoice.md
-ee_only: true
+ee_only: false
 ---
 ## Step 8. Create an invoice {#create-invoice}
 
@@ -65,7 +65,7 @@ Not applicable
 
 You will use the `order_item_id` values to create a shipment in the next step.
 
-{% collapsible Show/hide code sample %}
+{% collapsible Show code sample %}
 {% highlight json %}
 {
   "base_currency_code": "USD",

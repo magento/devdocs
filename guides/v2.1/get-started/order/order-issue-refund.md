@@ -9,7 +9,7 @@ level3_menu_node: level3child
 level3_subgroup: order
 version: 2.1
 github_link: get-started/order/order-issue-refund.md
-ee_only: true
+ee_only: false
 ---
 ## Step 10. Issue a partial refund
 
@@ -73,7 +73,7 @@ A credit memo id, such as `3`.
 Log in to Admin. Click **Sales > Credit memos**. The invoice is displayed in the grid.
 
 
-## Congratulations! You're finished.
+## Congratulations! You've finished.
 {:.no_toc}
 
 ## Related topics
