@@ -41,6 +41,9 @@ Before you continue, push all pending changes to Git.
 You must do the following:
 
 *   Add Cloud-specific files and directories to Magento EE. Without these files and directories, your Magento EE code can't be imported to Cloud.
+*   Modify your existing `composer.json` to specify Cloud-specific dependencies.
+*   Add `composer.lock` to Git because Cloud reads it, and not `composer.json`, during the build and deploy process.
+*   Add your Magento EE authentication credentials to `auth.json` if you haven't done so already.
 *   Dump your Magento EE database.
 
 ### Prepare Magento EE files {#cloud-import-prepare-files}
@@ -52,7 +55,6 @@ For your Magento EE code to import to a Magento Enterprise Cloud Edition project
 *  `magento-vars.php`
 
 #### Add required configuration files {#cloud-import-prepare-files-config}
-
 To add required files to your Magento EE code:
 
 1.  Go to the [Magento Enterprise Cloud Edition GitHub](https://github.com/magento/magento-cloud){:target="_blank"}.
@@ -155,12 +157,14 @@ To edit `composer.json`:
         ]
     }
 5.  Save your changes to `composer.json` and exit the text editor.
+6.  Run `composer update` to update `composer.lock`:
 
+        composer update
+7.  Wait while dependencies are updated.
 6.  When you're done, commit the changes to GitHub:
 
         cd <Magento EE install dir>
         git add -A && git commit -m "Add Cloud files" && git push origin <branch name>
-
 ### Prepare the Magento EE database  {#cloud-import-prepare-db}
 Create a dump of the database you want to import using mysqldump. 
 
