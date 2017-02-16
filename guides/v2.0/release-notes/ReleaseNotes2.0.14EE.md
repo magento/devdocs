@@ -22,8 +22,6 @@ Looking for the <a href="http://devdocs.magento.com/guides/v2.1/cloud/release-no
 ## Security enhancements
 
 
-<!--- 64584 -->
-
 <!--- 64051 --> 
 
 <!--- 63880 -->* You can no longer instantiate an arbitrary object while adding conditions to an email reminder rule. 
@@ -46,13 +44,17 @@ Looking for the <a href="http://devdocs.magento.com/guides/v2.1/cloud/release-no
 
 <!--- 63518 -->
 
-<!--- 62314 -->* We’ve removed  the PHP serialized object from  the JSON report_data component from the \Magento\Support\Ui\Component\Listing\Column\ReportActions response. 
+<!--- 62314 -->* We’ve removed  the PHP serialized object from  the JSON report_data component from the `\Magento\Support\Ui\Component\Listing\Column\ReportActions` response. 
 
 <!--- 61016 -->* Action logs no longer display plain-text passwords.
 
 <!--- 59096 -->
 
 
+
+<!--- internal only -->
+
+<!--- 64584 -->
 
 
 

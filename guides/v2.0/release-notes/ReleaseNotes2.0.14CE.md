@@ -45,7 +45,7 @@ Looking for the <a href="http://devdocs.magento.com/guides/v2.1/cloud/release-no
 
 <!--- 63518 -->
 
-<!--- 62314 -->* We’ve removed  the PHP serialized object from  the JSON report_data component from the \Magento\Support\Ui\Component\Listing\Column\ReportActions response. 
+<!--- 62314 -->* We’ve removed  the PHP serialized object from  the JSON report_data component from the `\Magento\Support\Ui\Component\Listing\Column\ReportActions` response. 
 
 <!--- 61016 -->* Action logs no longer display plain-text passwords.
 
