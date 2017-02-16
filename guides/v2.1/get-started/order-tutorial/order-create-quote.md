@@ -1,17 +1,17 @@
 ---
 layout: tutorial
 group: get-started
-subgroup: 20_REST
-title: Order Processing with REST APIs Tutorial
-menu_title: Step 4. Create a quote
+subgroup:
+title: Step 4. Create a quote
+subtitle: Order Processing with REST APIs Tutorial
+menu_title:
 menu_order: 4
-level3_menu_node: level3child
-level3_subgroup: order
+level3_menu_node:
+level3_subgroup: order-tutorial
 version: 2.1
-github_link: get-started/order/order-create-quote.md
+github_link: get-started/order-tutorial/order-create-quote.md
 ee_only: false
 ---
-## Step 4. Create a quote {#create-quote}
 
 When a customer adds an item to their shopping cart for the first time, Magento creates a quote. Magento uses a quote to perform tasks such as
 

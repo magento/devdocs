@@ -1,17 +1,17 @@
 ---
 layout: tutorial
 group: get-started
-subgroup: 20_REST
-title: Order Processing with REST APIs Tutorial
-menu_title: Step 1. Configure the store
+subgroup:
+title: Step 1. Configure the store
+subtitle: Order Processing with REST APIs Tutorial
+menu_title:
 menu_order: 1
-level3_menu_node: level3child
-level3_subgroup: order
+level3_menu_node:
+level3_subgroup: order-tutorial
 version: 2.1
-github_link: get-started/order/order-config-store.md
+github_link: get-started/order-tutorial/order-config-store.md
 ee_only: false
 ---
-## Step 1. Configure the store {#config-store}
 
 The default Luma store needs additional configuration to run the REST calls mentioned in this tutorial.
 

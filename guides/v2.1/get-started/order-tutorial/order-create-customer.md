@@ -1,17 +1,17 @@
 ---
 layout: tutorial
 group: get-started
-subgroup: 20_REST
-title: Order Processing with REST APIs Tutorial
-menu_title: Step 3. Create a customer
+subgroup:
+title: Step 3. Create a customer
+subtitle: Order Processing with REST APIs Tutorial
+menu_title:
 menu_order: 3
-level3_menu_node: level3child
-level3_subgroup: order
+level3_menu_node:
+level3_subgroup: order-tutorial
 version: 2.1
-github_link: get-started/order/order-create-customer.md
+github_link: get-started/order-tutorial/order-create-customer.md
 ee_only: false
 ---
-## Step 3. Create a customer {#create-customer}
 
 Customers can make purchases in three ways:
 

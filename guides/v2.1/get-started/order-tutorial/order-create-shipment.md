@@ -1,17 +1,17 @@
 ---
 layout: tutorial
 group: get-started
-subgroup: 20_REST
-title: Order Processing with REST APIs Tutorial
-menu_title: Step 9. Create a shipment
+subgroup:
+title: Step 9. Create a shipment
+subtitle: Order Processing with REST APIs Tutorial
+menu_title:
 menu_order: 9
-level3_menu_node: level3child
-level3_subgroup: order
+level3_menu_node:
+level3_subgroup: order-tutorial
 version: 2.1
-github_link: get-started/order/order-create-shipment.md
+github_link: get-started/order-tutorial/order-create-shipment.md
 ee_only: false
 ---
-## Step 9. Create a shipment
 
 To create a shipment, you need the `order_item_id` of each item to be shipped. Since the Sprite Yoga Companion Kit is a bundle item, you only need to include the top-level `order_item_id` (`5`). The `order_item_id` for the Radiant Tee-M-Orange is `3`.
 

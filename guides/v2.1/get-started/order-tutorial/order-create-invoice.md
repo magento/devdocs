@@ -1,17 +1,17 @@
 ---
 layout: tutorial
 group: get-started
-subgroup: 20_REST
-title: Order Processing with REST APIs Tutorial
-menu_title: Step 8. Create an invoice
+subgroup:
+title: Step 8. Create an invoice
+subtitle: Order Processing with REST APIs Tutorial
+menu_title:
 menu_order: 8
-level3_menu_node: level3child
-level3_subgroup: order
+level3_menu_node:
+level3_subgroup: order-tutorial
 version: 2.1
-github_link: get-started/order/order-create-invoice.md
+github_link: get-started/order-tutorial/order-create-invoice.md
 ee_only: false
 ---
-## Step 8. Create an invoice {#create-invoice}
 
 You create an invoice after you receive payment for an order. In this example, the order was paid offline via a bank transfer. Therefore, you must tell Magento that payment for the order has been captured.
 

@@ -1,17 +1,17 @@
 ---
 layout: tutorial
 group: get-started
-subgroup: 20_REST
-title: Order Processing with REST APIs Tutorial
-menu_title: Step 7. Create an order
+subgroup:
+title: Step 7. Create an order
+subtitle: Order Processing with REST APIs Tutorial
+menu_title:
 menu_order: 7
-level3_menu_node: level3child
-level3_subgroup: order
+level3_menu_node:
+level3_subgroup: order-tutorial
 version: 2.1
-github_link: get-started/order/order-create-order.md
+github_link: get-started/order-tutorial/order-create-order.md
 ee_only: false
 ---
-## Step 7. Create an order {#create-order}
 
 The shopping cart contains three items totaling $108. The shipping charges are $10, making the grand total $118. We're now ready to convert the quote to an order.
 

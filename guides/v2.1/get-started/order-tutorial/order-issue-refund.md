@@ -1,17 +1,17 @@
 ---
 layout: tutorial
 group: get-started
-subgroup: 20_REST
-title: Order Processing with REST APIs Tutorial
-menu_title: Step 10. Issue a partial refund
+subgroup:
+title: Step 10. Issue a partial refund
+subtitle: Order Processing with REST APIs Tutorial
+menu_title:
 menu_order: 10
-level3_menu_node: level3child
-level3_subgroup: order
+level3_menu_node:
+level3_subgroup: order-tutorial
 version: 2.1
-github_link: get-started/order/order-issue-refund.md
+github_link: get-started/order-tutorial/order-issue-refund.md
 ee_only: false
 ---
-## Step 10. Issue a partial refund
 
 Magento 2.1.3 introduced two endpoints that streamline the process of issuing a refund by creating a creditmemo and updating the order or invoice in one call.
 

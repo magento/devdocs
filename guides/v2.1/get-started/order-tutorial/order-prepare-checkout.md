@@ -1,17 +1,17 @@
 ---
 layout: tutorial
 group: get-started
-subgroup: 20_REST
-title: Order Processing with REST APIs Tutorial
-menu_title: Step 6. Prepare for checkout
+subgroup:
+title: Step 6. Prepare for checkout
+subtitle: Order Processing with REST APIs Tutorial
+menu_title:
 menu_order: 6
-level3_menu_node: level3child
-level3_subgroup: order
+level3_menu_node:
+level3_subgroup: order-tutorial
 version: 2.1
-github_link: get-started/order/order-prepare-checkout.md
+github_link: get-started/order-tutorial/order-prepare-checkout.md
 ee_only: false
 ---
-## Step 6. Prepare for checkout {#prepare-checkout}
 
 Now that all the items have been added to the cart, we can prepare the order for checkout. This process includes the following steps:
 
