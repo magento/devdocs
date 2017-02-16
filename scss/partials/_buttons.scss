@@ -95,16 +95,16 @@
 
 .btn-secondary {
   color: $btn-secondary-color;
-  background-color: $btn-secondary-bg-color;
+  background-color: #fff;
 
   &:visited {
     color: $btn-secondary-color;
-    background-color: $btn-secondary-bg-color;
+    background-color: #fff;
   }
 
   &:hover, &:active  {
     color: $btn-secondary-color;
-    background-color: darken($btn-secondary-bg-color, 10%);
+    background-color: #ebebea;
   }
 
 }

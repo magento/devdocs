@@ -23,12 +23,13 @@
 .sidebar .back-link {
   color: #fff;
   margin-top: -10px;
+  margin-bottom: 5px;
   position: relative;
 
   .back-link-arrow {
     display: block;
     position: absolute;
-    top: 10px;
+    top: 13px;
     left: 5px;
     width: 0;
     height: 0;
@@ -45,7 +46,7 @@
     background: #7b756f;
     display: block;
     color: #fff;
-    padding: 5px 10px 10px 15px;
+    padding: 8px 10px 10px 15px;
     font-size: 13px;
   }
 

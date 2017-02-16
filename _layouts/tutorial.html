@@ -7,9 +7,9 @@
   	<div class="sidebar-wrapper">
 
       <div class="back-link">
-        <a href="../">
+        <a href="../bk-get-started-api.html">
           <i class="back-link-arrow"></i>
-          <span class="back-link-subtitle">Return to</span>
+          <!--<span class="back-link-subtitle">Return to</span>-->
           <span class="back-link-title">Get Started with Magento API's</span>
         </a>
       </div>
@@ -19,7 +19,7 @@
       <ul>
       {% for step in steps %}
         <li class="level1{% if step.url == page.url %}{% assign index = forloop.index %}  active{% endif %}">
-          <a href="{{ site.toc_baseurl }}{{ step.url }}">{{ step.menu_title }}</a>
+          <a href="{{ site.toc_baseurl }}{{ step.url }}">{% if step.menu_title %}{{step.menu_title}}{% else %}{{step.title}}{% endif %}</a>
         </li>
       {% endfor %}
       </ul>
