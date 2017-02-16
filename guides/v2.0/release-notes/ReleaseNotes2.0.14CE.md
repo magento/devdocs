@@ -21,7 +21,6 @@ Looking for the <a href="http://devdocs.magento.com/guides/v2.1/cloud/release-no
 
 ## Security enhancements
 
-<!--- 64584 -->
 
 <!--- 64051 --> 
 
@@ -50,6 +49,11 @@ Looking for the <a href="http://devdocs.magento.com/guides/v2.1/cloud/release-no
 <!--- 61016 -->* Action logs no longer display plain-text passwords.
 
 <!--- 59096 -->
+
+
+<!--- internal only -->
+
+<!--- 64584 -->
 
 
 
