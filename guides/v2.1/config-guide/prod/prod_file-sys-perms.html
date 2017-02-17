@@ -1589,8 +1589,8 @@
 <p>When you’re ready to deploy your site to production, you should remove write access from files in the following directories for improved security:</p>
 
 <ul>
-  <li><code>vendor</code> (Composer or compressed archive installation)</li>
-  <li><code>app/code</code> (<abbr title="Developers who contribute code to the Magento 2 CE codebase">contributing developers</abbr> only)</li>
+  <li><code>vendor</code></li>
+  <li><code>app/code</code></li>
   <li><code>app/etc</code></li>
   <li><code>pub/static</code></li>
   <li>Any other static resources</li>
@@ -1616,11 +1616,11 @@
   <li>
     <p>Enter the following command:</p>
 
-    <pre><code>find var vendor pub/static app/etc var/generation var/di var/view_preprocessed \( -type f -or -type d \) -exec chmod u-w {} \; &amp;&amp; chmod o-rwx app/etc/env.php &amp;&amp; chmod u+x bin/magento
+    <pre><code>find app/code pub/static app/etc var/generation var/di var/view_preprocessed vendor \( -type f -or -type d \) -exec chmod u-w {} \; &amp;&amp; chmod o-rwx app/etc/env.php &amp;&amp; chmod u+x bin/magento
 </code></pre>
 
     <div class="bs-callout bs-callout-info" id="info">
-  		<p>If you're a <abbr title="A developer who contributes code to the Magento 2 CE codebase">contributing developer</abbr>, replace <code>vendor</code> with <code>app/code</code> in the preceding commands. (A <abbr title="A developer who contributes code to the Magento 2 CE codebase">contributing developer</abbr> <a href="/guides/v2.1/install-gde/prereq/dev_install.html">clones the Magento 2 GitHub repository</a> so they can contribute to our codebase.)</p>
+  		<p>If you're a contributing developer, replace <code>vendor</code> with <code>app/code</code> in the preceding commands. (A contributing developer <a href="/guides/v2.1/install-gde/prereq/dev_install.html">clones the Magento 2 GitHub repository</a> so they can contribute to our codebase.)</p>
 </div>
   </li>
 </ol>
@@ -1638,7 +1638,7 @@
 </code></pre>
 
     <div class="bs-callout bs-callout-info" id="info">
-  	If you’re a <abbr title="A developer who contributes code to the Magento 2 CE codebase">contributing developer</abbr>, replace <code>vendor</code> with <code>app/code</code> in the preceding commands. (A <abbr title="A developer who contributes code to the Magento 2 CE codebase">contributing developer</abbr> <a href="/guides/v2.1/install-gde/prereq/dev_install.html">clones the Magento 2 GitHub repository</a> so they can contribute to our codebase.)
+  	If you’re a contributing developer, replace <code>vendor</code> with <code>app/code</code> in the preceding commands. (A contributing developer <a href="/guides/v2.1/install-gde/prereq/dev_install.html">clones the Magento 2 GitHub repository</a> so they can contribute to our codebase.)
     </div>
   </li>
 </ol>
@@ -1710,8 +1710,8 @@ find var pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
 <p>When you’re ready to deploy your site to production, you should remove write access from files in the following directories for improved security:</p>
 
 <ul>
-  <li><code>vendor</code> (Composer or compressed archive installation)</li>
-  <li><code>app/code</code> (<abbr title="Developers who contribute code to the Magento 2 CE codebase">contributing developers</abbr> only)</li>
+  <li><code>vendor</code></li>
+  <li><code>app/code</code></li>
   <li><code>app/etc</code></li>
   <li><code>lib</code></li>
   <li><code>pub/static</code></li>
@@ -1736,11 +1736,11 @@ find var pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
   <li>
     <p>Enter the following command as a user with <code>root</code> privileges:</p>
 
-    <pre><code>find pub/static app/etc var/generation var/di var/view_preprocessed \( -type d -or -type f \) -exec chmod g-w {} \; &amp;&amp; chmod o-rwx app/etc/env.php
+    <pre><code>find app/code lib pub/static app/etc var/generation var/di var/view_preprocessed vendor \( -type d -or -type f \) -exec chmod g-w {} \; &amp;&amp; chmod o-rwx app/etc/env.php
 </code></pre>
 
     <div class="bs-callout bs-callout-info" id="info">
-  		<p>If you're a <abbr title="A developer who contributes code to the Magento 2 CE codebase">contributing developer</abbr>, replace <code>vendor</code> with <code>app/code</code> in the preceding commands. (A <abbr title="A developer who contributes code to the Magento 2 CE codebase">contributing developer</abbr> <a href="/guides/v2.1/install-gde/prereq/dev_install.html">clones the Magento 2 GitHub repository</a> so they can contribute to our codebase.)</p>
+  		<p>If you're a contributing developer, replace <code>vendor</code> with <code>app/code</code> in the preceding commands. (A contributing developer <a href="/guides/v2.1/install-gde/prereq/dev_install.html">clones the Magento 2 GitHub repository</a> so they can contribute to our codebase.)</p>
 </div>
   </li>
 </ol>
@@ -1754,11 +1754,11 @@ find var pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
   <li>
     <p>Enter the following command:</p>
 
-    <pre><code>find var vendor lib pub/static pub/media app/etc \( -type d -or -type f \) -exec chmod g+w {} \; &amp;&amp; chmod o+rwx app/etc/env.php
+    <pre><code>find app/code lib var pub/static pub/media vendor app/etc \( -type d -or -type f \) -exec chmod g+w {} \; &amp;&amp; chmod o+rwx app/etc/env.php
 </code></pre>
 
     <div class="bs-callout bs-callout-info" id="info">
-  	If you’re a <abbr title="A developer who contributes code to the Magento 2 CE codebase">contributing developer</abbr>, replace <code>vendor</code> with <code>app/code</code> in the preceding commands. (A <abbr title="A developer who contributes code to the Magento 2 CE codebase">contributing developer</abbr> <a href="/guides/v2.1/install-gde/prereq/dev_install.html">clones the Magento 2 GitHub repository</a> so they can contribute to our codebase.)
+  	If you’re a contributing developer, replace <code>vendor</code> with <code>app/code</code> in the preceding commands. (A contributing developer <a href="/guides/v2.1/install-gde/prereq/dev_install.html">clones the Magento 2 GitHub repository</a> so they can contribute to our codebase.)
     </div>
   </li>
 </ol>

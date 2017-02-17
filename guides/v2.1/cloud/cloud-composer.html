@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Magento Enterprise Cloud Edition 2.1.4 and 2.0.12 Release Notes</title>
+	<title>How Cloud Uses Composer</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.1/cloud/release-notes/CloudReleaseNotes2.1.4.html">
+	<link rel="canonical" href="//guides/v2.1/cloud/cloud-composer.html">
 
   <script>
     var baseUrl = "/";
@@ -49,9 +49,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/cloud/release-notes/CloudReleaseNotes2.1.4.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/cloud/access-acct/cloud-composer.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/cloud/release-notes/CloudReleaseNotes2.1.4.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/cloud/access-acct/cloud-composer.html">Magento 2.1</a></li>
 	
   </ul>
 
@@ -259,7 +259,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/cloud/cloud-composer.html">How Cloud Uses Composer</a></li>
+									<li class="level-2  active "><a href="/guides/v2.1/cloud/cloud-composer.html">How Cloud Uses Composer</a></li>
 
 									
 
@@ -345,7 +345,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.1/cloud/release-notes/CloudReleaseNotes2.1.4.html">Magento Enterprise Cloud Edition 2.1.4 and 2.0.12 Release Notes</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/cloud/release-notes/CloudReleaseNotes2.1.4.html">Magento Enterprise Cloud Edition 2.1.4 and 2.0.12 Release Notes</a></li>
 
 									
 
@@ -1517,7 +1517,7 @@
       
 
       <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
-        <span property="name">Magento Enterprise Cloud Edition 2.1.4 and 2.0.12 Release Notes</span>
+        <span property="name">How Cloud Uses Composer</span>
         <meta property="position" content="2" />
       </li>
 
@@ -1529,30 +1529,110 @@
 
 
 	
-	<h1 class="page-heading">Magento Enterprise Cloud Edition 2.1.4 and 2.0.12 Release Notes</h1>
+	<h1 class="page-heading">How Cloud Uses Composer</h1>
 
   
 
 
 </section>
 
-			<p>These Release Notes provide up-to-date information about changes, additions, and fixes to the Magento Enterprise Cloud Edition for versions 2.1.4 and 2.0.12.</p>
+			<p>This topic discusses how we use <a href="https://getcomposer.org/doc" target="_blank">Composer</a> to manage dependencies and upgrades in Magento Enterprise Cloud Edition, and provides context about the packages that comprise Cloud, what the packages do, and how they fit together.</p>
 
-<h2 id="change-in-this-release">Change in this release</h2>
+<h2 id="your-projects-composer-files">Your project’s Composer files</h2>
+<p>Your project root directory contains <code>composer.json</code> and <code>composer.lock</code>.</p>
 
-<p>Removed the MDVA-913 patch because the issue is now fixed in Magento Enterprise Edition 2.1.4.</p>
+<p>You edit <code>composer.json</code> to specify dependencies for your Magento Enterprise Cloud Edition project. (For example, when you install an extension, you update <code>composer.json</code>. you can either edit it manually or the <a href="/guides/v2.1/comp-mgr/bk-compman-upgrade-guide.html">Component Manager</a> can do it for you.)</p>
 
-<h2 id="fixes-in-this-release">Fixes in this release</h2>
+<p><code>composer.lock</code> stores a set of exact version dependencies that satisfy all of the version constraints of every requirement for every package in the dependency tree of the project.</p>
+
+<p>The following commands determine what’s in <code>composer.lock</code>:</p>
+
 <ul>
-  <li>When you disable a module and deploy it to the remote Cloud server, the module stays disabled.</li>
-  <li>You can now successfully upgrade from Magento Enterprise Cloud Edition 2.0.x to 2.1.x.</li>
+  <li>
+    <p><code>composer update</code>, which you must run every time you add or remove dependencies in <code>composer.json</code>.</p>
+
+    <p><code>composer update</code> updates <code>composer.lock</code>.</p>
+  </li>
+  <li>
+    <p><code>composer install</code> reads <code>composer.lock</code>, not <code>composer.json</code>, to download dependencies.</p>
+
+    <p>Therefore, you must keep an up-to-date copy of <code>composer.lock</code> in your Cloud Git repository.</p>
+  </li>
 </ul>
 
-<h3 id="magento-ee-release-notes">Magento EE Release Notes</h3>
+<p>The workflow is as follows:</p>
+
+<ol>
+  <li>Make a change to <code>composer.json</code> (for example, install an extension).</li>
+  <li>Run <code>composer update</code></li>
+  <li>Add <code>composer.lock</code> to or update it in your Cloud Git repository.</li>
+  <li>Push the changes to the Cloud environment, which causes Cloud to build and deploy the environment.</li>
+</ol>
+
+<p>During the <a href="/guides/v2.1/cloud/discover-deploy.html">build phase</a>, the Cloud environment runs <code>composer install</code> on a fresh clone of your Git branch to retrieve the latest dependencies.</p>
+
+<h2 id="magento-enterprise-cloud-edition-packages">Magento Enterprise Cloud Edition packages</h2>
+<p>The following sections discuss the Composer packages used by Magento Enterprise Cloud Edition:</p>
+
 <ul>
-  <li><a href="release-notes/ReleaseNotes2.0.12EE.html">Magento EE 2.0.12 Release Notes</a></li>
-  <li><a href="/guides/v2.1/release-notes/ReleaseNotes2.1.4EE.html">Magento EE 2.1.4 Release Notes</a></li>
+  <li><a href="#cloud-composer-cloudmeta"><code>magento/magento-cloud-metapackage</code></a></li>
+  <li><a href="#cloud-composer-cloudconfig"><code>magento/magento-cloud-configuration</code></a></li>
+  <li><a href="#cloud-composer-prodee"><code>magento/product-enterprise-edition</code></a></li>
 </ul>
+
+<h3 id="cloud-composer-cloudmeta"><code>magento/magento-cloud-metapackage</code></h3>
+<p><code>magento/magento-cloud-metapackage</code> should be the only package in the <code>require</code> section of your <code>composer.json</code>. This is a <a href="https://getcomposer.org/doc/04-schema.md#type" target="_blank"><em>metapackage</em></a> and does not contain any code.</p>
+
+<p>The metapackage depends on the appropriate versions of <a href="#cloud-composer-cloudconfig"><code>magento/magento-cloud-configuration</code></a> and <a href="#cloud-composer-prodee"><code>magento/product-enterprise-edition</code></a>. At any given version, this package requires the same version of <code>magento/product-enterprise-edition</code>. Therefore, to use Magento EE version 2.1.4, for example, <code>composer.json</code> must specify a requirement for <code>magento/magento-cloud-metapackage</code> version 2.1.4.</p>
+
+<p>This package depends on a floating version of <code>magento/magento-cloud-configuration</code> (abbreviated <em>MCC</em>). It depends on the major and minor version of MCC that correspond to the specified Magento EE version, and floats on the patch version so that compatible updates to this packages can be automatically pulled by running <code>composer update</code>.</p>
+
+<h3 id="cloud-composer-cloudconfig"><code>magento/magento-cloud-configuration</code> (MCC)</h3>
+<p>This package contains the following scripts and <code>magento</code> commands that automatically perform building and deployment of the codebase on the cloud environment:</p>
+
+<ul>
+  <li><code>pre-deploy.php</code></li>
+  <li><code>bin/magento magento-cloud:deploy</code></li>
+  <li><code>bin/magento magento-cloud:build</code></li>
+</ul>
+
+<p><code>magento/magento-cloud-configuration</code> also contains patch files that are specific to Cloud.</p>
+
+<p>There is a many-to-one relationship between the MCC version and Magento versions.</p>
+
+<p>For Magento EE, versions are specified as <code>2.&lt;x&gt;.&lt;y&gt;</code>.</p>
+
+<p>MCC versions are specified as: <code>&lt;100 + x&gt;.&lt;y&gt;.*</code>. For example, Magento EE 2.1.4 is associated with MCC 101.4.0. Subsequently, a new version of MCC could be released that corresponds to the same Magento EE version, and it would be 101.4.1.</p>
+
+<p>We release updated MCC code to add a new patch or to improve the build and deploy hooks.</p>
+
+<h3 id="cloud-composer-prodee"><code>magento/product-enterprise-edition</code></h3>
+<p>This metapackage requires Magento application components, including modules, frameworks, themes, and so on.</p>
+
+<h2 id="base-packages-and-file-marshaling">Base packages and file marshaling</h2>
+<p>Magento contains two base packages, <code>magento/magento2-base</code> and <code>magento/magento2-ee-base</code>. These packages contain interstitial files that cannot be classified as extensions, themes, frameworks, or language packages; for example, sample server configuration files, PHP entry points, and so on.</p>
+
+<p>These files are location-dependent, and cannot reside in the <code>vendor</code> directory. They are distributed as part of the base packages, and they rely on hooks located in the <code>magento/magento-composer-installer</code> package, which marshals them to the appropriate locations.</p>
+
+<p>One way in which Magento Enterprise Cloud Edition deploys differently than other Magento installations is that it does not marshal base packages on the Cloud environment. This could change in a future Cloud release, but for now, on the Cloud environment specifically, the marshaling functionality of <code>magento/magento-composer-installer</code> is disabled.</p>
+
+<p>Therefore, when upgrading to a new Cloud version or adding, removing, or changing any packages that rely on file marshaling, you must:</p>
+
+<ol>
+  <li>
+    <p>Run <code>composer update</code> locally</p>
+
+    <p>The new version of the base packages are marshaled out into the Cloud project root directory, which means files are added, removed, and changed.</p>
+
+    <p>File marshaling works on your local system but <em>not</em> on the Cloud server.</p>
+  </li>
+  <li>Add and commit these updated files to your Cloud Git repository.</li>
+  <li>Push the changes to your Cloud integration environment.</li>
+</ol>
+
+<p>For more information, see <a href="/guides/v2.1/cloud/project/project-upgrade.html">Test a Magento patch</a>.</p>
+
+<p>This makes sure that base files are placed in the correct location and are under source control. If you notice any problems after a deploying an updated version of Magento, one of the first things to check should be whether all of the base package files were added to source control.</p>
 
 
 		</div>
@@ -1564,14 +1644,14 @@
 
 			
 			 <div class="github-link">
-				 <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/cloud/release-notes/CloudReleaseNotes2.1.4.md" target="_blank">
+				 <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/access-acct/cloud-composer.md" target="_blank">
 					 Edit this page on GitHub
 				 </a>
 			 </div>
 			
 
 			<div class="new-issue">
-				<a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/cloud/release-notes/CloudReleaseNotes2.1.4.html" target="_blank">Give us feedback</a>
+				<a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/cloud/cloud-composer.html" target="_blank">Give us feedback</a>
 			</div>
 
 		</div>
