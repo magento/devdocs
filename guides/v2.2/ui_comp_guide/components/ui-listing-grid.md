@@ -11,6 +11,92 @@ github_link: ui_comp_guide/components/ui-listing-grid.md
 ## Overview
 Listing is a basic component responsible for rendering grids, lists and tiles, providing filtering, pagination, sorting and other features.
 
+## Structure
+
+Constructor: [<Magento_Ui_module_dir>/view/base/web/js/grid/listing.js]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/grid/listing.js)
+
+## Configuration
+
+<table>
+  <tr>
+    <th>Option</th>
+    <th>Description</th>
+    <th>Type</th>
+    <th>Default</th>
+  </tr>
+  <tr>
+    <td>displayMode</td>
+    <td>The initial display mode.</td>
+    <td>String</td>
+    <td>grid</td>
+  </tr>
+  <tr>
+    <td>displayModes</td>
+    <td>A list of available display modes.</td>
+    <td>{<br>[name: string]: <a href="#displaymode">DisplayMode</a><br>}</td>
+    <td>{<br>value: 'grid',<br>label: 'Grid',<br>template: 'ui/grid/listing'<br>}</td>
+  </tr>
+  <tr>
+    <td>dndConfig</td>
+    <td>Configuration of the DragAndDrop component.</td>
+    <td>Object</td>
+    <td>Specified in the <a href="{{page.baseurl}}ui_comp_guide/components/listing/ui-draganddrop.html">DragAndDrop component configuration</a>.</td>
+  </tr>
+  <tr>
+    <td>stickyTmpl</td>
+    <td>Path to the tollbar's template that will be used when it receives a fixed position.</td>
+    <td>String</td>
+    <td>ui/grid/sticky/listing</td>
+  </tr>
+  <tr>
+    <td>template</td>
+    <td>The path to the component’s .html template.</td>
+    <td>String</td>
+    <td>ui/grid/listing</td>
+  </tr>
+  <tr>
+    <td>editorConfig</td>
+    <td>Configuration of the InlineEditing component.</td>
+    <td>Object</td>
+    <td>Specified in the <a href="{{page.baseurl}}ui_comp_guide/components/listing/ui-inlineediting.html">InlineEditing component configuration</a>.</td>
+  </tr>
+  <tr>
+    <td>viewSwitcherTmpl</td>
+    <td>Path to the template which renders a list of available display modes (not used by default).</td>
+    <td>String</td>
+    <td>ui/grid/view-switcher</td>
+  </tr>
+</table>
+
+### DisplayMode interface {#displaymode}
+
+<table>
+  <tr>
+    <th>Option</th>
+    <th>Description</th>
+    <th>Type</th>
+    <th>Required</th>
+  </tr>
+  <tr>
+    <td>label</td>
+    <td>Label to be displayed in a list of available modes.</td>
+    <td>String</td>
+    <td>Optional</td>
+  </tr>
+  <tr>
+    <td>template</td>
+    <td>Html template used to render listing in this mode.</td>
+    <td>String</td>
+    <td>Optional</td>
+  </tr>
+  <tr>
+    <td>value</td>
+    <td>Mode's identifier.</td>
+    <td>String</td>
+    <td>Optional</td>
+  </tr>
+</table>
+
 ## Integration
 
 Example configuration of Listing component instance:

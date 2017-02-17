@@ -1,0 +1,50 @@
+---
+layout: default
+group: UI_Components_guide
+subgroup: components
+title: DragAndDrop component
+menu_title: DragAndDrop component
+version: 2.2
+github_link: ui_comp_guide/components/listing/ui-draganddrop.md
+---
+
+Constructor: [<Magento_Ui_module_dir>/view/base/web/js/grid/dnd.js]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/grid/dnd.js)
+
+## DragAndDrop configuration
+
+Extends all [UiCollection]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uicollection_concept.html) configuration.
+
+DragAndDrop own configuration:
+
+<table>
+  <tr>
+    <th>Option</th>
+    <th>Description</th>
+    <th>Type</th>
+    <th>Default</th>
+  </tr>
+  <tr>
+    <td>enabled</td>
+    <td>Whether it's allowed to change the position of columns.</td>
+    <td>Boolean</td>
+    <td>true</td>
+  </tr>
+  <tr>
+    <td>fixedX</td>
+    <td>Whether collumn has a fixed positon on the X-axis, i.e. it can or can not be moved horizontally.</td>
+    <td>Boolean</td>
+    <td>false</td>
+  </tr>
+  <tr>
+    <td>fixedY</td>
+    <td>Whether collumn has a fixed positon on the Y-axis, i.e. it can or can not be moved vertically.</td>
+    <td>Boolean</td>
+    <td>true</td>
+  </tr>
+  <tr>
+    <td>noSelectClass</td>
+    <td>CSS class applied to the table when one of it's columns is being dragged.</td>
+    <td>String</td>
+    <td>_no-select</td>
+  </tr>
+</table>
