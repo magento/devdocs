@@ -16,7 +16,7 @@ github_link: release-notes/ReleaseNotes2.1.5CE.md
 We are pleased to present Magento Community Edition 2.1.5. 
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-This release updates the copyright date in every file. It does not contain any functional changes or security improvements.
+This release updates the copyright date in every file. It does not contain any functional changes or security improvements. Isolating these changes in a single release is intended to simplify future updates and developer workflow.
 </div>
 
 
