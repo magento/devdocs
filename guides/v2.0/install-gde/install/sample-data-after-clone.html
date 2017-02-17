@@ -698,6 +698,13 @@ fatal: The remote end hung up unexpectedly</pre>
     <li>See the next section.</li>
   </ol>
 
+  <div class="bs-callout bs-callout-warning">
+    <p>If you’re installing sample data <em>after</em> installing Magento, you must also run the following command to update the database and schema:</p>
+
+    <pre><code>php &lt;your Magento install dir&gt;/bin/magento setup:upgrade
+</code></pre>
+  </div>
+
   <h2 id="samp-data-perms">Set file system ownership and permissions</h2>
   <p>Because the <code>php build-sample-data.php</code> script creates symlinks between the sample data repository and your Magento 2 repository, you must set file system permissions and ownership in the sample data repository. Failure to do so results in errors accessing the storefront.</p>
 

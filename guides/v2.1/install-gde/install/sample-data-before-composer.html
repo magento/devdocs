@@ -516,8 +516,13 @@
   <pre><code>php &lt;your Magento install dir&gt;/bin/magento sampledata:deploy
 </code></pre>
 
-  <!-- where `[module-list]` is an optional space-separated list of <a href="#sample-data-modules">sample data modules</a> to install. Omit this parameter to install all sample data modules.
- -->
+  <div class="bs-callout bs-callout-warning">
+    <p>If you’re installing sample data <em>after</em> installing Magento, you must also run the following command to update the database and schema:</p>
+
+    <pre><code>php &lt;your Magento install dir&gt;/bin/magento setup:upgrade
+</code></pre>
+  </div>
+
   <p>You are required to <a href="/guides/v2.1/install-gde/prereq/connect-auth.html">authenticate</a> to complete the action.</p>
 
   <h3 id="authentication-error">Authentication error</h3>
