@@ -28,7 +28,7 @@ Plugins cannot be used with any of the following:
 * Final classes
 * Any class that contains at least one final public method
 * Non-public methods
-* Class methods (such as static methods)
+* Static methods
 * `__construct`
 * Virtual types
 
