@@ -2,8 +2,8 @@
 layout: default
 group:  UI Library
 subgroup: C_Listing/Grid Secondary Components
-title: MassAction Component
-menu_title: MassAction Component
+title: MassActions Component
+menu_title: MassActions Component
 menu_node:
 menu_order: 3
 version: 2.0
@@ -12,7 +12,7 @@ redirect_from: /guides/v2.0/ui-library/ui-secondary-massaction.html
 
 ---
 
-### MassAction JS component structure
+### MassActions JS component structure
 
 MassActions component adds ability to be selectable (by attaching it's template to each item in Listing) to items in Listing and creates actions to perform with selected items (for example: 'Delete', 'Update attributes' and so on).
 

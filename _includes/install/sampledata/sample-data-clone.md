@@ -93,6 +93,12 @@ To clone the Magento sample data GitHub repository using the HTTPS protocol:
 7.  Wait for the command to complete.
 8.  See the next section.
 
+<div class="bs-callout bs-callout-warning" markdown="1">
+If you're installing sample data _after_ installing Magento, you must also run the following command to update the database and schema:
+
+    php <your Magento install dir>/bin/magento setup:upgrade
+</div>
+
 ## Set file system ownership and permissions {#samp-data-perms}
 Because the `php build-sample-data.php` script creates symlinks between the sample data repository and your Magento 2 repository, you must set file system permissions and ownership in the sample data repository. Failure to do so results in errors accessing the storefront.
 
