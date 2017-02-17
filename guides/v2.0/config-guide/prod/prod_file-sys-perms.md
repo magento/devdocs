@@ -35,7 +35,7 @@ Because having one file system owner is less secure, we recommend you deploy Mag
 ### Set up one owner for default or developer mode {#mage-owner-one-devel}
 In default or developer mode, the following directories must be writable by the user:
 
-*	`vendor` (Composer or compressed archive installation)
+*	`vendor` 
 *	`app/etc`
 *	`pub/static`
 *	`var`
