@@ -11,7 +11,6 @@ github_link: cloud/project/user-admin.md
 redirect_from: guides/v2.0/cloud/admin/admin-user-admin.html
 ---
 
-## Overview of Magento Enterprise Cloud Edition user management {#cloud-user-over}
 Magento Enterprise Cloud Edition enables you to administer users by assigning them one or more roles. A *role* provides access and
 improves security in your project. Different roles are authorized to do different things with your applications, environments, and users. 
 
@@ -81,21 +80,21 @@ Available commands:
 
 For example, the following command adds the project administrator (`admin`) role to `alice@example.com` and gives her `contributor` privileges to the `development` environment:
 
-The following prompts display:
+The following prompts are displayed:
 
-	magento-cloud user:add
+<pre class="no-copy">magento-cloud user:add
 
-	Email address: alice@example.com
-	The user's project role can be 'viewer' ('v') or 'admin' ('a').
-	Project role [V/a]: a
-	The user's environment-level roles can be 'viewer', 'contributor', or 'admin'.
-	development environment role [V/c/a]: c
-	Summary:
-	    Email address: alice@example.com
-	    Project role: contributor
-	Adding users can result in additional charges.
-	Are you sure you want to add this user? [Y/n]
-	User alice@example.com created
+Email address: alice@example.com
+The user's project role can be 'viewer' ('v') or 'admin' ('a').
+Project role [V/a]: a
+The user's environment-level roles can be 'viewer', 'contributor', or 'admin'.
+development environment role [V/c/a]: c
+Summary:
+  Email address: alice@example.com
+  Project role: contributor
+Adding users can result in additional charges.
+Are you sure you want to add this user? [Y/n]
+User alice@example.com created</pre>
 
 After this has been done, the user will receive an e-mail asking her to confirm
 her details and register an account name and a password.
