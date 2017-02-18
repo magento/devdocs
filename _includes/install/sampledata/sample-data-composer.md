@@ -18,8 +18,12 @@ To install sample data using the command line, enter the following command as th
 
     php <your Magento install dir>/bin/magento sampledata:deploy
 
-<!-- where `[module-list]` is an optional space-separated list of <a href="#sample-data-modules">sample data modules</a> to install. Omit this parameter to install all sample data modules.
- -->
+<div class="bs-callout bs-callout-warning" markdown="1">
+If you're installing sample data _after_ installing Magento, you must also run the following command to update the database and schema:
+
+	php <your Magento install dir>/bin/magento setup:upgrade
+</div>
+
 You are required to <a href="{{page.baseurl}}install-gde/prereq/connect-auth.html">authenticate</a> to complete the action.
 
 ### Authentication error

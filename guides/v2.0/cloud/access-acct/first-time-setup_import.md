@@ -348,16 +348,6 @@ To drop and re-create the Cloud database:
 4.  Re-create the database and give a user access:
 
         create database <database name>;
-        GRANT ALL ON <database name>.* TO <user name>@database.internal IDENTIFIED BY '<user name>';
-
-    For example, to create a database named `main` and give a user named `user` access to it:
-
-        create database main;
-        GRANT ALL ON main.* TO user@database.internal IDENTIFIED BY 'user';
-
-Drop and recreate the database.
-
-Now import the dump into the cloud environment's database:
 
   gunzip var/db.sql.gz | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' | mysql -h <db-host> -P <db-port> -p -u <db-user> <db-name>
 
