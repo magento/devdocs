@@ -88,6 +88,10 @@ To make files and directories writable so you can update components and upgrade 
   	If you're a contributing developer, replace `vendor` with `app/code` in the preceding commands. (A contributing developer <a href="{{page.baseurl}}install-gde/prereq/dev_install.html">clones the Magento 2 GitHub repository</a> so they can contribute to our codebase.)
 	</div>
 
+### Optionally set `magento_umask`
+
+{% include install/file-system-umask.md %}
+
 {% endcollapsibleh2 %}
 
 <p id="mage-owner-two"></p>{% collapsibleh2 Production file system ownership for private hosting (two users) %}
@@ -179,9 +183,8 @@ To make files and directories writable so you can update components and upgrade 
 	</div>
 {% endcollapsibleh2 %}
 
-{% include install/file-system-umask.md %}
 
 
-*[contributing developer]: A developer who contributes code to the Magento 2 CE codebase
-*[contributing developers]: Developers who contribute code to the Magento 2 CE codebase
+
+
 
