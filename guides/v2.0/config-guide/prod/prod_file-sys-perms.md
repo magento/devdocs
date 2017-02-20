@@ -72,10 +72,6 @@ To remove writable permissions to files and directories from the web server user
 
 		find app/code pub/static app/etc var/generation var/di var/view_preprocessed vendor \( -type f -or -type d \) -exec chmod u-w {} \; && chmod o-rwx app/etc/env.php && chmod u+x bin/magento
 
-	<div class="bs-callout bs-callout-info" id="info">
-  		<p>If you're a contributing developer, replace <code>vendor</code> with <code>app/code</code> in the preceding commands. (A contributing developer <a href="{{page.baseurl}}install-gde/prereq/dev_install.html">clones the Magento 2 GitHub repository</a> so they can contribute to our codebase.)</p>
-	</div>
-
 #### Make files and directories writable:
 To make files and directories writable so you can update components and upgrade the Magento software:
 
@@ -167,10 +163,6 @@ To remove writable permissions to files and directories from the web server user
 
 		find app/code lib pub/static app/etc var/generation var/di var/view_preprocessed vendor \( -type d -or -type f \) -exec chmod g-w {} \; && chmod o-rwx app/etc/env.php
 
-	<div class="bs-callout bs-callout-info" id="info">
-  		<p>If you're a contributing developer, replace <code>vendor</code> with <code>app/code</code> in the preceding commands. (A contributing developer <a href="{{page.baseurl}}install-gde/prereq/dev_install.html">clones the Magento 2 GitHub repository</a> so they can contribute to our codebase.)</p>
-	</div>
-
 #### Make files and directories writable:
 To make files and directories writable so you can update components and upgrade the Magento software:
 
@@ -180,9 +172,6 @@ To make files and directories writable so you can update components and upgrade 
 
 		find app/code lib var pub/static pub/media vendor app/etc \( -type d -or -type f \) -exec chmod g+w {} \; && chmod o+rwx app/etc/env.php
 
-	<div class="bs-callout bs-callout-info" id="info" markdown="1">
-  	If you're a contributing developer, replace `vendor` with `app/code` in the preceding commands. (A contributing developer <a href="{{page.baseurl}}install-gde/prereq/dev_install.html">clones the Magento 2 GitHub repository</a> so they can contribute to our codebase.)
-	</div>
 {% endcollapsibleh2 %}
 
 
