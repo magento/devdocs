@@ -1533,10 +1533,6 @@
 
     <pre><code>find app/code pub/static app/etc var/generation var/di var/view_preprocessed vendor \( -type f -or -type d \) -exec chmod u-w {} \; &amp;&amp; chmod o-rwx app/etc/env.php &amp;&amp; chmod u+x bin/magento
 </code></pre>
-
-    <div class="bs-callout bs-callout-info" id="info">
-  		<p>If you're a contributing developer, replace <code>vendor</code> with <code>app/code</code> in the preceding commands. (A contributing developer <a href="/guides/v2.0/install-gde/prereq/dev_install.html">clones the Magento 2 GitHub repository</a> so they can contribute to our codebase.)</p>
-</div>
   </li>
 </ol>
 
@@ -1703,10 +1699,6 @@ find var pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
 
     <pre><code>find app/code lib pub/static app/etc var/generation var/di var/view_preprocessed vendor \( -type d -or -type f \) -exec chmod g-w {} \; &amp;&amp; chmod o-rwx app/etc/env.php
 </code></pre>
-
-    <div class="bs-callout bs-callout-info" id="info">
-  		<p>If you're a contributing developer, replace <code>vendor</code> with <code>app/code</code> in the preceding commands. (A contributing developer <a href="/guides/v2.0/install-gde/prereq/dev_install.html">clones the Magento 2 GitHub repository</a> so they can contribute to our codebase.)</p>
-</div>
   </li>
 </ol>
 
@@ -1721,10 +1713,6 @@ find var pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
 
     <pre><code>find app/code lib var pub/static pub/media vendor app/etc \( -type d -or -type f \) -exec chmod g+w {} \; &amp;&amp; chmod o+rwx app/etc/env.php
 </code></pre>
-
-    <div class="bs-callout bs-callout-info" id="info">
-  	If you’re a contributing developer, replace <code>vendor</code> with <code>app/code</code> in the preceding commands. (A contributing developer <a href="/guides/v2.0/install-gde/prereq/dev_install.html">clones the Magento 2 GitHub repository</a> so they can contribute to our codebase.)
-    </div>
   </li>
 </ol>
 </div></div>
