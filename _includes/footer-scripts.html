@@ -6,9 +6,9 @@
     (function() {
         var didInit = false;
         function initMunchkin() {
-            if(didInit === false) {
+            if(didInit === false && typeof window.Munchkin == 'function') {
                 didInit = true;
-                Munchkin.init('585-GGD-959', {cookieAnon: false});
+                window.Munchkin.init('585-GGD-959', {cookieAnon: false});
             }
         }
         var s = document.createElement('script');
