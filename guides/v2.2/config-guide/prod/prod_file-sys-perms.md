@@ -80,10 +80,6 @@ To make files and directories writable so you can update components and upgrade 
 3.	Enter the following commands:
 
 		chmod -R u+w .
-		
-	<div class="bs-callout bs-callout-info" id="info" markdown="1">
-  	If you're a contributing developer, replace `vendor` with `app/code` in the preceding commands. (A contributing developer <a href="{{page.baseurl}}install-gde/prereq/dev_install.html">clones the Magento 2 GitHub repository</a> so they can contribute to our codebase.)
-	</div>
 
 ### Optionally set `magento_umask`
 
