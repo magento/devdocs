@@ -15,7 +15,7 @@
       </div>
 
       {% assign steps = site.pages | where: "guide_version", page.guide_version | where: "level3_subgroup", page.level3_subgroup | sort: "menu_order" %}
-
+      {% assign first_step = steps[0] %}
       <ul>
       {% for step in steps %}
         <li class="level1{% if step.url == page.url %}{% assign index = forloop.index %}  active{% endif %}">
