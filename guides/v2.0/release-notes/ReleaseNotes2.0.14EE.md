@@ -5,6 +5,7 @@ subgroup: 02_rel-notes
 title: Magento EE 2.0.14 Release Notes
 menu_title: Magento EE 2.0.14 Release Notes
 menu_order: 265
+version: 2.0
 level3_menu_node: level3child
 level3_subgroup: ee20-relnotes 
 github_link: release-notes/ReleaseNotes2.0.14EE.md
