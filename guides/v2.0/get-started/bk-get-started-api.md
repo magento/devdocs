@@ -3,7 +3,7 @@ layout: default
 group: get-started
 subgroup: 01_Introduction
 title: Getting Started with Magento Web APIs
-landing-page: Getting Started
+landing-page: Getting Started with Web APIs
 menu_title: Introduction
 menu_order: 1
 menu_node: parent

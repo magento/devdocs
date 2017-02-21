@@ -1,8 +1,7 @@
 {% capture url %}{% if page.language%}{{ page.url | remove: "/" | remove: page.language }}{% else %}{{ page.url | remove: "/" }}{% endif %}{% endcapture %}
 {% if url.size > 0 %}
   <nav class="breadcrumbs">
-
-    <a class="breadcrumb-item" href="{% if page.guide_version == site.version %}{{site.baseurl}}{% else %}{{page.baseurl}}{% endif %}"><span>Home</span></a>
+    <a class="breadcrumb-item" href="{% if page.guide_version == site.version %}{{ site.baseurl }}{% else %}{{ page.baseurl }}{% endif %}"><span>Home</span></a>
 
     <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
 
@@ -16,9 +15,12 @@
         {% continue %}
       {% endif %}
 
-
       <!-- Get breadcrumb title. Insert snippet from configuration description to translates breadcrumb if language plugin is installed and YAML subset is set -->
-      {% assign caption = crumb.title %}
+      {% if crumb.menu_title %}
+        {% assign caption = crumb.menu_title %}
+      {% else %}
+        {% assign caption = crumb.title %}
+      {% endif %}
 
       <!-- SEO data -->
       {% assign position = position  | plus: 1 %}

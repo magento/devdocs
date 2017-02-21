@@ -6,11 +6,12 @@
   	<a href="#" class="toc-toggler">Table of Contents</a>
   	<div class="sidebar-wrapper">
 
+      {% assign parent = page.breadcrumbs[0] %}
       <div class="back-link">
-        <a href="../bk-get-started-api.html">
+        <a href="{{ page.baseurl }}{{ parent.url }}">
           <i class="back-link-arrow"></i>
-          <!--<span class="back-link-subtitle">Return to</span>-->
-          <span class="back-link-title">Getting Started with Magento Web API's</span>
+          <span class="back-link-subtitle">Return to</span>
+          <span class="back-link-title">{{ parent.title }}</span>
         </a>
       </div>
 
@@ -32,7 +33,6 @@
 		<div class="content-wrap">
 			{% include page-header.html %}
 			{{ content }}
-
 
       <div class="horisontal-nav">
         {% assign steps_size = steps | size %}
