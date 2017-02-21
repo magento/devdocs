@@ -21,6 +21,7 @@ $large-screen: 'min-width: 1500px';
 
 // Colors
 $brand-color: #F26322;
+$secondary-color: #35ACB2;
 $body-font-color: #333;
 
 $light-gray-color: #F1F1F1;
@@ -36,6 +37,8 @@ $link-hover-color: #cc0000;
 $link-active-color: #EC632E;
 $link-visited-color: #609;
 
+$outline-color: #7FDCE1;
+
 
 // buttons
 $btn-color: $body-font-color;
@@ -44,8 +47,8 @@ $btn-bg-color: #ccc;
 $btn-primary-color: #fff;
 $btn-primary-bg-color: $brand-color;
 
-$btn-secondary-color: #fff;
-$btn-secondary-bg-color: #35ACB2;
+$btn-secondary-color: $brand-color;
+$btn-secondary-bg-color: #fff;
 
 
 // Misc
@@ -70,6 +73,6 @@ $dropdown-link-active-bg: $link-color;
 $dropdown-link-disabled-color: #ccc;
 $dropdown-header-color: #ccc;
 
-$caret-width: .3em;
+$caret-width: 4px;
 $caret-width-lg: $caret-width;
 $zindex-dropdown: 9999;

@@ -1,10 +1,10 @@
 {% if site.versions %}
 <div class="version-switcher dropdown">
-	<button class="btn btn-small dropdown-toggle" data-toggle="dropdown">
+	<button id="version-switcher-button" class="btn btn-small dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 		Magento {{ page.guide_version }}
 	</button>
 
-	<ul class="dropdown-menu dropdown-menu-left">
+	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	{%for version in site.versions %}
 		<li><a class="dropdown-item" href="{{ site.baseurl }}{{ version.url }}{{ page.github_link | replace: ".md",".html" }}">Magento {{ version.name }}</a></li>
 	{% endfor %}

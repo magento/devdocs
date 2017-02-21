@@ -1,32 +1,32 @@
 
-
 .dropdown {
   position: relative;
 }
 
 .dropdown .dropdown-toggle {
-   text-transform: none;
 
-   padding-right: 3px;
+  padding-right: 3px;
    // Generate the caret automatically
-   &::after {
-      display: inline-block;
-      width: 0;
-      height: 0;
-      margin-right: .25rem;
-      margin-left: .25rem;
-      vertical-align: middle;
-      content: "";
-      border-top: $caret-width solid;
-      border-right: $caret-width solid transparent;
-      border-left: $caret-width solid transparent;
-      transition: transform .2s;
-   }
+
+  &::after {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-right: .25rem;
+    margin-left: .25rem;
+    margin-top: -1px;
+    vertical-align: middle;
+    content: "";
+    border-top: $caret-width solid;
+    border-right: $caret-width solid transparent;
+    border-left: $caret-width solid transparent;
+    transition: transform $transition-duration;
+  }
 
   // Prevent the focus on the dropdown toggle when closing dropdowns
-  &:focus {
+  /*&:focus {
     outline: 0;
-  }
+  }*/
 }
 
 
@@ -65,24 +65,23 @@
 //
 // `<button>`-specific styles are denoted with `// For <button>s`
 .dropdown-menu .dropdown-item {
-   display: block;
-   padding: 5px 20px;
-   margin: 0;
-   clear: both;
-   font-weight: normal;
-   font-size: $font-size-base;
-   line-height: $line-height;
-   color: $dropdown-link-color;
-   text-align: inherit;
-   white-space: nowrap; // prevent links from randomly breaking onto new lines
-   background: none; // For `<button>`s
-   border: 0; // For `<button>`s
-   text-decoration: none;
+  display: block;
+  padding: 10px 30px;
+  margin: 0;
+  clear: both;
+  font-size: $font-size-base;
+  line-height: $line-height;
+  color: $dropdown-link-color;
+  text-align: inherit;
+  white-space: nowrap; // prevent links from randomly breaking onto new lines
+  background: none; // For `<button>`s
+  border: 0; // For `<button>`s
+  text-decoration: none;
 
-   &:hover {
-      background: $dropdown-link-hover-bg;
-      color: $dropdown-link-hover-color;
-   }
+  &:hover {
+    background: $dropdown-link-hover-bg;
+    color: $dropdown-link-hover-color;
+  }
 
 /*
   @include hover-focus {
@@ -130,7 +129,7 @@
   }
 
   .dropdown-toggle:after {
-     transform: rotate(180deg);
+    transform: rotate(180deg);
  }
 
   // Remove the outline when :focus is triggered
@@ -148,8 +147,8 @@
   left: auto; // Reset the default from `.dropdown-menu`
 }
 .dropdown-menu.dropdown-menu-left {
-    left: 0;
-    right: auto;
+  left: 0;
+  right: auto;
 }
 // With v3, we enabled auto-flipping if you have a dropdown within a right
 // aligned nav component. To enable the undoing of that, we provide an override
