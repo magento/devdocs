@@ -17,6 +17,8 @@ This page contains recent changes that we think you'd like to know about. We exc
 
 | Description  | Versions applied to  | New or Updated | Date |
 |--------------|--------------|----------------------|--------|
+| [How Magento Enterprise Cloud Edition uses Composer]({{ page.baseurl }}cloud/cloud-composer.html){:target="_blank"}  | 2.x  |  New | Feb 17  |
+|  [Prohibit usage of DocBlock templates, add License Notice and Copyright]({{ page.baseurl }}coding-standards/docblock-standard-general.html){:target="_blank"}  | 2.x  |  Updated | Feb 11  |
 | [How to create a Fastly error or maintenance page]({{ page.baseurl }}cloud/access-acct/fastly.html#fastly-errpg){:target="_blank"}  | 2.x  |  Updated |  Feb 10 |
 | [Magento Enterprise Cloud Edition 2.1.4 and 2.0.12 Release Notes]({{ page.baseurl }}cloud/release-notes/CloudReleaseNotes2.1.4.html){:target="_blank"}  |  2.x | New  | Feb 7  |
 | [Magento Community Edition (CE) 2.0.12 Release Notes]({{ site.gdeurl }}release-notes/ReleaseNotes2.0.12CE.html){:target="_blank"}  | 2.0.x  | New  | Feb 7  |
