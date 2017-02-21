@@ -17,6 +17,6 @@ This release updates the copyright date in every file. It does not contain any f
 
 
 ### Magento EE Release Notes
-*	[Magento EE 2.0.13 Release Notes]({{ site.gudeurl }}release-notes/ReleaseNotes2.0.13EE.html)
+*	[Magento EE 2.0.13 Release Notes]({{ site.gdeurl }}release-notes/ReleaseNotes2.0.13EE.html)
 *	[Magento EE 2.1.5 Release Notes]({{ site.gdeurl21 }}release-notes/ReleaseNotes2.1.5EE.html)
 

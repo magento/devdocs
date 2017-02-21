@@ -47,5 +47,5 @@ This is a known issue with Magento core software; we're actively working to addr
 </div>
 
 ### Magento EE Release Notes
-*	[Magento EE 2.0.10 Release Notes]({{ site.gudeurl }}release-notes/ReleaseNotes2.0.10EE.html)
+*	[Magento EE 2.0.10 Release Notes]({{ site.gdeurl }}release-notes/ReleaseNotes2.0.10EE.html)
 *	[Magento EE 2.1.2 Release Notes]({{ site.gdeurl21 }}release-notes/ReleaseNotes2.1.2EE.html)

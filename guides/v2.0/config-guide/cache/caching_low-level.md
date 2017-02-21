@@ -22,7 +22,7 @@ Magento extends <a href="http://framework.zend.com/manual/1.12/en/zend.cache.fro
 In general, the Magento application works with any backend cache that <a href="http://framework.zend.com/manual/1.12/en/zend.cache.backends.html" target="_blank">Zend_Cache Backends</a> supports. However, this guide covers only the following low-level backend caches:
 
 *   <a href="{{page.baseurl}}config-guide/redis/config-redis.html">Redis</a>
-*   <a href="{{page.baseurl}}config-guide/database/database.html">Database</a>
+*   <a href="{{page.baseurl}}config-guide/cache/caching-database.html">Database</a>
 *   File system (default): No configuration is necessary to use file system caching.
 
 <a href="{{page.baseurl}}config-guide/varnish/config-varnish.html">Varnish</a> doesn't require setting up a low-level cache backend.
