@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Magento CE 2.0.10 Release Notes</title>
+	<title>Magento EE 2.0.14 Release Notes</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.0/release-notes/ReleaseNotes2.0.10CE.html">
+	<link rel="canonical" href="//guides/v2.0/release-notes/ReleaseNotes2.0.14EE.html">
 
   <script>
     var baseUrl = "/";
@@ -49,9 +49,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/release-notes/ReleaseNotes2.0.10CE.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/release-notes/ReleaseNotes2.0.14EE.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/release-notes/ReleaseNotes2.0.10CE.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/release-notes/ReleaseNotes2.0.14EE.html">Magento 2.1</a></li>
 	
   </ul>
 
@@ -287,7 +287,7 @@
 									
 
 
-											<li class="level3Child ce20-relnotes  active " data-menunode="ce20-relnotes"><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.10CE.html">Magento CE 2.0.10 Release Notes</a>
+											<li class="level3Child ce20-relnotes " data-menunode="ce20-relnotes"><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.10CE.html">Magento CE 2.0.10 Release Notes</a>
 
 
 									
@@ -376,7 +376,7 @@
 									
 
 
-											<li class="level3Child ee20-relnotes " data-menunode="ee20-relnotes"><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.14EE.html">Magento EE 2.0.14 Release Notes</a>
+											<li class="level3Child ee20-relnotes  active " data-menunode="ee20-relnotes"><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.14EE.html">Magento EE 2.0.14 Release Notes</a>
 
 
 									
@@ -926,7 +926,7 @@
       
 
       <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
-        <span property="name">Magento CE 2.0.10 Release Notes</span>
+        <span property="name">Magento EE 2.0.14 Release Notes</span>
         <meta property="position" content="1" />
       </li>
 
@@ -938,296 +938,140 @@
 
 
 	
-	<h1 class="page-heading">Magento CE 2.0.10 Release Notes</h1>
+	<h1 class="page-heading">Magento EE 2.0.14 Release Notes</h1>
 
   
 
 
 </section>
 
-			<p>We are pleased to present Magento Community Edition 2.0.10. This release includes multiple security and functional enhancements as well as enhancements to the Sales API. New Sales API methods allow third party solutions, such as shipping or ERP applications, to use APIs when they create an invoice or shipment.</p>
+			<p>We are pleased to present Magento Enterprise Edition 2.0.14. This release includes many functional fixes and enhancements.</p>
 
-<p>Backward-incompatible changes are documented in <a href="/guides/v2.0/release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.</p>
+<p>Looking for the <a href="http://devdocs.magento.com/guides/v2.0/cloud/release-notes/CloudReleaseNotes2.1.4.html" target="_blank">Magento Enterprise Cloud Edition 2.1.4 and 2.0.12 Release Notes</a>?</p>
 
 <h2 id="highlights">Highlights</h2>
 
-<ul>
-  <li>
-    <p>Patch 2.0.10 is now <i>compatible with MySQL 5.7</i>.</p>
-  </li>
-  <li>
-    <p>Patch 2.0.10 introduces <i>two new web APIs (or service contracts) for the Sales module</i> that incorporate functionality into the Sales API that is currently available in the Admin interface. After you install this patch, you’ll be able to use the Sales API <code>ShipOrder</code> and <code>InvoiceOrder</code> methods to capture payment and ship product. For more information on these API enhancements, see the <a href="/guides/v2.0/mrg/ce/Sales/services.html#invoiceorder" target="_blank">Sales API</a> discussion in the <a href="/guides/v2.0/mrg/intro.html" target="_blank">Module Reference Guide</a>.</p>
-  </li>
-</ul>
-
-<h3 class="no_toc" id="why-are-we-adding-new-apis-in-a-patch-release">Why are we adding new APIs in a patch release?</h3>
-
-<p><i>These new interfaces will not break any existing customizations or extensions</i>.   See <a href="https://alankent.me/category/magento/" target="_blank">Alan Kent’s blog about Magento</a> for more information about these features and Magento’s use of semantic versioning.</p>
+<p>Magento 2.0.12 contains more than  security enhancement. Look for the following highlights in this release:</p>
 
 <h2 id="security-enhancements">Security enhancements</h2>
 
-<p>This release includes  enhancements to improve the security of your Magento software. While there are no confirmed attacks related to these issues to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento software to the latest version as soon as possible.</p>
+<p>This release includes an important enhancement to the security of your Magento software. While there are no confirmed attacks related to the Zend framework <code>Zend_Mail</code> library vulnerability to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento software to the latest version as soon as possible.</p>
 
-<p>The following list provides an overview of the security issues fixed in this release. We describe each issue in greater detail in the <a href="https://magento.com/security/patches/magento-2010-and-212-security-update" target="_blank">Magento Security Center</a>.</p>
-
-<h3 class="no_toc" id="general-security">General security</h3>
-
-<!--- 57811 -->
-<ul>
-  <li>You can no longer delete a currently logged-in user.</li>
-</ul>
-
-<!--- 51376 -->
-<ul>
-  <li>Fixed issue that occurred during update with disclosure of the application’s internal path.</li>
-</ul>
-
-<!--- 51370 -->
-<ul>
-  <li>Fixed issue that occurred during setup with disclosure of the application’s internal path.</li>
-</ul>
-
-<!--- 56930 -->
-<ul>
-  <li>Sessions now expire as expected after logout.</li>
-</ul>
-
-<!--- 57582/1488 -->
-<ul>
-  <li>Fixed issue with using the Magento Enterprise Edition invitations feature to insert malicious JavaScript and subsequently execute it in the Admin context.</li>
-</ul>
-
-<!--- 57566-->
-<ul>
-  <li>You can no longer change or fake a product price from the Magento storefront and then complete an order with that fake price.</li>
-</ul>
-
-<!--- 56902, 56834  -->
-<ul>
-  <li>A user with lesser privileges can no longer use a JSON call to force an Admin user to add his private or public key.</li>
-</ul>
-
-<!--- 56851 -->
-<ul>
-  <li>Fixed remote code execution issue in checkout.</li>
-</ul>
-
-<!--- 57579 -->
-<ul>
-  <li>Upgrade now places stores in maintenance mode as expected. <a href="https://github.com/magento/magento2/issues/3191" target="_blank">(GITHUB-3191)</a></li>
-</ul>
-
-<!--- 56542/1480 -->
-<ul>
-  <li>Resolved issue with potential SQL injection through the use of the ordering or grouping parameters.</li>
-</ul>
-
-<!--- 56905 -->
-<ul>
-  <li>Fixed issue with retrieving potentially sensitive information through the use of backend media.</li>
-</ul>
-
-<h3 class="no_toc" id="denial-of-service-dos-attacks-and-brute-force-attacks">Denial-of-service (DoS) attacks and brute force attacks</h3>
-
-<!--- 57464 -->
-<ul>
-  <li>The Guest order view protection code is no longer vulnerable to brute force attacks.</li>
-</ul>
-
-<!--- 57303 -->
-<ul>
-  <li>Fixed vulnerability to DoS attacks by full page cache poisoning.</li>
-</ul>
-
-<h3 class="no_toc" id="cross-site-request-forgery--csrf">Cross-Site Request Forgery  (CSRF)</h3>
-
-<!--- 45757 -->
-<ul>
-  <li>Removed vulnerability in cart checkout experience by enhancing server-side CSRF validation.</li>
-</ul>
-
-<!--- 57580/1433 -->
-<ul>
-  <li>Resolved a potential  vulnerability in which customer addresses could be deleted. You can no longer deceive a user into deleting his store address book entries.</li>
-</ul>
-
-<h3 class="no_toc" id="cross-site-scripting--xss">Cross-site scripting  (XSS)</h3>
-
-<!--- 57803/1539 -->
-<ul>
-  <li>Fixed issue with XSS reflection in the loading section of REST requests.</li>
-</ul>
-
-<!--- 57363 -->
-<ul>
-  <li>Fixed issue with potential storage of malicious XSS code in the body of an email template. (A malicious user could use this this script to steal user information and cookies, or to bypass cross-site request forgery protection.)</li>
-</ul>
-
-<h2 id="functional-fixes">Functional fixes</h2>
-
-<p>We address the following functional issues in this release.</p>
-
-<h3 class="no_toc" id="sales-api-enhancements">Sales API enhancements</h3>
-
-<!--- 56429 -->
+<!---  -->
 <ul>
   <li>
-    <p>We’ve added the ability to change the status of a shipment through the web API.  The new <code>ShipOrder</code> interface support tasks you can already do through the Admin dashboard, including the ability to:</p>
-
+    <!---  -->
     <ul>
       <li>
-        <p>create a shipment document (full or partial)</p>
-      </li>
-      <li>
-        <p>add details about shipped items into an order</p>
-      </li>
-      <li>
-        <p>change status and state of an order according to performed actions</p>
-      </li>
-      <li>
-        <p>notify customer about new shipment document</p>
+        <!---  -->
+        <ul>
+          <li>
+            <!---  -->
+            <ul>
+              <li>
+                <!---  -->
+                <ul>
+                  <li>
+                    <!---  -->
+                    <ul>
+                      <li>
+                        <!---  -->
+                        <ul>
+                          <li>
+                            <!--- 64051 -->
+                            <ul>
+                              <li>
+                                <!--- 63880 -->
+                                <ul>
+                                  <li>
+                                    <!--- 63878 -->
+                                    <ul>
+                                      <li>
+                                        <!--- 63876 -->
+                                        <ul>
+                                          <li>
+                                            <!--- 63871 -->
+                                            <ul>
+                                              <li>
+                                                <!--- 63868 -->
+                                                <ul>
+                                                  <li>
+                                                    <!--- 63865 -->
+                                                    <ul>
+                                                      <li>
+                                                        <!--- 63863 -->
+                                                        <ul>
+                                                          <li>
+                                                            <!--- 63681 -->
+                                                            <ul>
+                                                              <li>
+                                                                <!--- 63633 -->
+                                                                <ul>
+                                                                  <li>
+                                                                    <!--- 63528 -->
+                                                                    <ul>
+                                                                      <li>
+                                                                        <!--- 63518 -->
+                                                                        <ul>
+                                                                          <li>
+                                                                            <!--- 62314 -->
+                                                                            <ul>
+                                                                              <li>
+                                                                                <!--- 61016 -->
+                                                                                <ul>
+                                                                                  <li>
+                                                                                    <!--- 59096 -->
+                                                                                    <ul>
+                                                                                      <li></li>
+                                                                                    </ul>
+                                                                                  </li>
+                                                                                </ul>
+                                                                              </li>
+                                                                            </ul>
+                                                                          </li>
+                                                                        </ul>
+                                                                      </li>
+                                                                    </ul>
+                                                                  </li>
+                                                                </ul>
+                                                              </li>
+                                                            </ul>
+                                                          </li>
+                                                        </ul>
+                                                      </li>
+                                                    </ul>
+                                                  </li>
+                                                </ul>
+                                              </li>
+                                            </ul>
+                                          </li>
+                                        </ul>
+                                      </li>
+                                    </ul>
+                                  </li>
+                                </ul>
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
       </li>
     </ul>
   </li>
 </ul>
 
-<!--- 56428 -->
-<ul>
-  <li>
-    <p>We’ve added the ability to change the status of an invoice through the web API.  The new <code>InvoiceOrder</code> interface supports tasks you can already do through the Admin dashboard, including the ability to:</p>
-
-    <ul>
-      <li>
-        <p>create an invoice document (full or partial)</p>
-      </li>
-      <li>
-        <p>capture money placed with order payment</p>
-      </li>
-      <li>
-        <p>notify a customer about document creation</p>
-      </li>
-      <li>
-        <p>change order status and state</p>
-      </li>
-    </ul>
-  </li>
-</ul>
-
-<p>For more information on these API enhancements, see <a href="/guides/v2.0/mrg/ce/Sales/services.html" target="_blank">Magento Sales API</a>.</p>
-
-<h3 class="no_toc" id="performance">Performance</h3>
-
-<!--- 55300 -->
-<ul>
-  <li>We’ve improved the load speed of the configurable product form.</li>
-</ul>
-
-<!--- 55791 -->
-<ul>
-  <li>We’ve improved the load speed of the review step for the wizard used to create a configurable product.</li>
-</ul>
-
-<h3 class="no_toc" id="tracking-and-shipping">Tracking and shipping</h3>
-
-<!--- 57098 -->
-<ul>
-  <li>Changing the city field of an order now affects the shipping rate as expected. Previously, the shipping rate was not updated when you changed the city on your order form.</li>
-</ul>
-
-<!--- 56908 -->
-<ul>
-  <li>Magento now returns UPS shipping rates for Puerto Rico.</li>
-</ul>
-
-<!--- 57461 -->
-<ul>
-  <li>Magento no longer throws an exception if you enter an invalid FedEx shipment tracking number.</li>
-</ul>
-
-<h3 class="no_toc" id="cart-and-checkout">Cart and checkout</h3>
-
-<!--- 56953 -->
-<ul>
-  <li>Magento now updates the mini cart as expected when you reorder an item. Previously, Magento added the reordered items to the shopping cart, but the mini cart did not update its item count. <a href="https://github.com/magento/magento2/issues/6121" target="_blank">(GITHUB-6121)</a></li>
-</ul>
-
-<!--- 56911 -->
-<ul>
-  <li>You can now use an alternative Merchant Account ID when using Braintree as a payment method. <a href="https://github.com/magento/magento2/issues/5910" target="_blank">(GITHUB-5910)</a></li>
-</ul>
-
-<h3 class="no_toc" id="general-fixes">General fixes</h3>
-
-<!--- 57065 -->
-<ul>
-  <li>Magento now returns you to the Admin dashboard after you’ve successfully changed your Admin password. Previously, Magento prompted you to change your password even after you just successfully changed it. <a href="https://github.com/magento/magento2/issues/4331" target="_blank">(GITHUB-4331)</a></li>
-</ul>
-
-<!--- 55054 -->
-<ul>
-  <li>You can now update multiselect attribute values for multiple products from the server side.  <a href="https://github.com/magento/magento2/issues/5459" target="_blank">(GITHUB-5459)</a></li>
-</ul>
-
-<!--- 56963, 57069 -->
-<ul>
-  <li>State/Province field is now displayed as required on the Add New Address page. <a href="https://github.com/magento/magento2/issues/5279" target="_blank">(GITHUB-5279)</a></li>
-</ul>
-
-<!--- 57072 -->
-<ul>
-  <li>Maestro credit card now passes validation.</li>
-</ul>
-
-<!--- 57390 -->
-<ul>
-  <li>The cursor now appears as expected when you edit a product description.</li>
-</ul>
-
-<!--- 58674 -->
-<ul>
-  <li>Visual swatches are now displayed when in search results.</li>
-</ul>
-
-<!--- 58695 -->
-<ul>
-  <li>GiftRegistry *.less file is not properly packaged in the composer package</li>
-</ul>
-
-<!--- 58933 -->
-<ul>
-  <li>Delete paging functionality for configurable product variations.</li>
-</ul>
-
-<!--- 56700 -->
-<ul>
-  <li>The order comment timestamp now correctly reflects the time that the comment was submitted, not when the page was last refreshed. <a href="https://github.com/magento/magento2/issues/5719" target="_blank">(GITHUB-5719)</a>, <a href="https://github.com/magento/magento2/issues/5890" target="_blank">(GITHUB-5890)</a></li>
-</ul>
-
-<!--- Omitted (can't be reproduced or won't fix) 57800 (CLONES: 58314, 58798, 58695, 58883) (CANNOT REPRO: 53971, 53431) (INTERNAL ONLY: 58816, 558874, 56759, 58167, 57879, 57577, 57568, 57294, 57546), 57303, 55862, 52239, 58626, 58625, 58666, 58933, 58923 (WONT FIX: 58671-->
-
-<h2 id="known-issues">Known issues</h2>
-
-<ul>
-  <li><strong>Issue</strong>:  Logo Email for transactional emails can not be uploaded successfully <a href="https://github.com/magento/magento2/issues/6275" target="_blank">(GITHUB-6275)</a>. <strong>Workaround</strong>: Create a header template and reference the image location absolutely.</li>
-</ul>
-
-<!-- 59428 -->
-
-<ul>
-  <li><strong>Issue</strong>: Cannot save a custom transactional email logo. <strong>Workaround</strong>: None.</li>
-</ul>
-
-<!-- 53010 -->
-
-<ul>
-  <li><strong>Issue</strong>: The scope selector on the Product page does not display all websites associated with a restricted user. <strong>Workaround</strong>: None.</li>
-</ul>
-
-<!--- 57004 -->
+<p><a href="https://github.com/magento/magento2/issues/5558" target="_blank">(GITHUB-5558)</a></p>
 
 <h2 id="system-requirements">System requirements</h2>
-<p>Our technology stack is built on PHP and MySQL. For more information, see
-<a href="/magento-system-requirements.html" target="_blank">System Requirements</a>.</p>
+<p>Our technology stack is built on PHP and MySQL. See
+<a href="/guides/v2.0/install-gde/system-requirements.html" target="_blank">System Requirements</a>.</p>
 
 <div>
 
@@ -1235,79 +1079,61 @@
   <p>See one of the following sections:</p>
 
   <ul>
-    <li><a href="#install-ce-composer">Get Magento CE using Composer</a></li>
-    <li><a href="#get-zip">Get Magento CE using a compressed archive</a></li>
-    <li><a href="#install-rc-gh">Get the Magento CE software from GitHub</a></li>
+    <li><a href="#install-rc-composer">Get Magento EE using Composer</a></li>
+    <li><a href="#get-zip">Get Magento EE using a compressed archive</a></li>
     <li><a href="#install-complete">Complete the installation</a></li>
   </ul>
 
-  <h3 id="install-ce-composer" class="no_toc">Get the Magento CE software using Composer</h3>
+  <h3 id="install-rc-composer" class="no_toc">Get Magento EE using Composer</h3>
 
-  <p>This software is available from <code>repo.magento.com</code>. Before installing the CE software using Composer, familiarize yourself with the Composer metapackage  <a href="/guides/v2.0/install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run</p>
+  <p>This software is available from <code>repo.magento.com</code>. Before installing the Magento EE software using Composer,  familiarize yourself with these  <a href="/guides/v2.0/install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run:</p>
 
-  <pre><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=&lt;version&gt; &lt;installation directory name&gt;
+  <pre><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=&lt;version&gt; &lt;installation directory name&gt;
 </code></pre>
 
   <p>where <code>&lt;version&gt;</code> matches the version you want (for example, <code>2.0.10</code>)</p>
 
-  <p>For example, to install Magento CE 2.0.10 in the <code>magento2</code> directory:</p>
+  <p>For example, to install 2.0.10 in the <code>magento2</code> directory:</p>
 
-  <pre><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition=2.0.10 magento2
+  <pre><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=2.0.10 magento2
 </code></pre>
 
-  <h3 id="get-zip" class="no_toc">Get Magento CE using a compressed archive</h3>
+  <h3 id="get-zip" class="no_toc">Get Magento EE using a compressed archive</h3>
 
   <div>
 
     <p>The following table discusses where to get the Magento software. We provide the following downloads:</p>
 
     <ul>
-      <li>Magento CE software only</li>
-      <li>Magento CE software with sample data (designed to help you learn Magento faster)</li>
+      <li>Magento EE software only</li>
+      <li>Magento EE software with sample data (designed to help you learn Magento faster)</li>
     </ul>
 
     <p>These packages are easy to get and install. You don’t need to use Composer, all you need to do is to upload a package to your Magento server or hosted platform, unpack it, and run the web-based Setup Wizard.</p>
 
     <p>Archives are available in the following formats: <code>.zip</code>, <code>.tar.bz2</code>, <code>.tar.gz</code></p>
 
-    <p>To get the Magento CE software archive:</p>
+    <p>To get the Magento EE archive:</p>
 
     <ol>
-      <li>Go to <a href="http://magento.com/download" target="_blank">http://magento.com/download</a>.</li>
+      <li>Go to <a href="https://www.magentocommerce.com/products/customer/account/login/" target="_blank">your account on magento.com</a>.</li>
+      <li>Log in with your Magento user name and password.</li>
+      <li>In the left navigation bar, click <strong>Downloads</strong>.</li>
+      <li>In the right pane, click <strong>Magento Enterprise Edition 2.X</strong> &gt; <strong>Full Release</strong> or <strong>Magento Enterprise Edition 2.X</strong> &gt; <strong>Full Release + Sample Data</strong> for the software.</li>
       <li>
-        <p>Choose either the software or the software and sample data:</p>
+        <p>Follow the instructions on your screen to complete the Magento EE download:</p>
 
         <ul>
-          <li><code>Magento-CE-&lt;version&gt;.*</code> (without sample data)</li>
-          <li><code>Magento-CE-&lt;version&gt;+Samples.*</code> (with sample data)</li>
+          <li><code>Magento-EE-&lt;version&gt;.*</code> (without sample data)</li>
+          <li><code>Magento-EE-&lt;version&gt;+Samples.*</code> (with sample data)</li>
         </ul>
-
-        <p><code>&lt;version&gt;</code> is the three-digit release number (for example, <code>2.0.7</code>, <code>2.1.0</code>, and so on).</p>
       </li>
+      <li>Transfer the installation package to your development system.</li>
     </ol>
-
-    <h3 id="install-rc-gh" class="no_toc">Get the Magento CE software from GitHub</h3>
-
-    <div class="bs-callout bs-callout-warning">
-    <p>If you clone the Magento 2 GitHub repository, you <em>cannot</em> use the Magento software in a production environment. You cannot have a live store that accepts orders and so on.</p>
-</div>
-
-    <p>Before proceeding, please familiarize yourself with <a href="/guides/v2.0/install-gde/prereq/dev_install.html">these prerequisites</a>, then run</p>
-
-    <pre><code>git clone git@github.com:magento/magento2.git
-cd magento2
-git checkout tags/&lt;version&gt; [-b &lt;version&gt;]
-</code></pre>
-
-    <p>where</p>
-
-    <p><code>&lt;version&gt;</code> matches the version you want (for example, <code>2.0.10</code>)</p>
-
-    <p><code>[-b &lt;version&gt;]</code> optionally checks out a new branch.</p>
 
     <h3 id="install-complete" class="no_toc">Complete the installation</h3>
 
-    <p>After you get the CE software:</p>
+    <p>After you get the EE software:</p>
 
     <ol>
       <li><a href="/guides/v2.0/install-gde/prereq/file-system-perms.html">Set file system ownership and permissions</a>.</li>
@@ -1333,6 +1159,10 @@ git checkout tags/&lt;version&gt; [-b &lt;version&gt;]
     <p>The <a href="/guides/v2.0/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="/guides/v2.0/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.</p>
 
     <p>The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.</p>
+
+    <h2 id="credits">Credits</h2>
+
+    <p>Dear community members, thank you for your suggestions and bug reports.</p>
   </div>
 </div>
 
@@ -1345,14 +1175,14 @@ git checkout tags/&lt;version&gt; [-b &lt;version&gt;]
 
 			
 			 <div class="github-link">
-				 <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/release-notes/ReleaseNotes2.0.10CE.md" target="_blank">
+				 <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v/release-notes/ReleaseNotes2.0.14EE.md" target="_blank">
 					 Edit this page on GitHub
 				 </a>
 			 </div>
 			
 
 			<div class="new-issue">
-				<a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.0/release-notes/ReleaseNotes2.0.10CE.html" target="_blank">Give us feedback</a>
+				<a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.0/release-notes/ReleaseNotes2.0.14EE.html" target="_blank">Give us feedback</a>
 			</div>
 
 		</div>
