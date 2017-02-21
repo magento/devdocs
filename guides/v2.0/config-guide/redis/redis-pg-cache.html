@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Use Redis for page caching</title>
+	<title>Use Redis for the Magento page and default cache</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -742,7 +742,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.0/config-guide/redis/redis-pg-cache.html">Use Redis for page caching</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/config-guide/redis/redis-pg-cache.html">Use Redis for the Magento page and default cache</a></li>
 
 									
 
@@ -1433,7 +1433,7 @@
       
 
       <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
-        <span property="name">Use Redis for page caching</span>
+        <span property="name">Use Redis for the Magento page and default cache</span>
         <meta property="position" content="2" />
       </li>
 
@@ -1445,7 +1445,7 @@
 
 
 	
-	<h1 class="page-heading">Use Redis for page caching</h1>
+	<h1 class="page-heading">Use Redis for the Magento page and default cache</h1>
 
   
 
@@ -1455,8 +1455,10 @@
 			<h2 id="reds-sess-prereq">Prerequisite</h2>
 <p>Before you continue, install Redis as discussed in <a href="/guides/v2.0/config-guide/redis/config-redis.html">Use Redis for page caching or session storage</a>.</p>
 
-<h2 id="config-redis-config">Configure Magento to use Redis for page caching</h2>
-<p>Following is a sample configuration to add to <code>&lt;your Magento install dir&gt;app/etc/env.php</code>:</p>
+<h2 id="config-redis-config">Configure Magento to use Redis for page and default caching</h2>
+<p>Following is a sample configuration that causes Magento to use Redis for both the default cache (<code>default</code> array) and the full page cache (<code>page_cache</code> array). Magento’s caching is implemented by <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/App/CacheInterface.php" target="_blank"><code>Magento\Framework\App\CacheInterface</code></a>.</p>
+
+<p>Add a configuration similar to the following to <code>&lt;your Magento install dir&gt;app/etc/env.php</code>:</p>
 
 <pre><code>'cache' =&gt;
 array(
@@ -1589,6 +1591,7 @@ array(
   <h4 id="related-topics">Related topics</h4>
 
   <ul>
+    <li><a href="/guides/v2.0/config-guide/redis/redis-session.html">Use Redis for session storage</a></li>
     <li><a href="/guides/v2.0/config-guide/config/config-create.html">Create or extend configuration types</a></li>
     <li><a href="/guides/v2.0/config-guide/config/config-php.html">Magento’s deployment configuration</a></li>
   </ul>
