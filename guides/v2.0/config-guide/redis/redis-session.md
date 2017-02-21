@@ -11,7 +11,7 @@ github_link: config-guide/redis/redis-session.md
 ---
 
 <h2 id="reds-cache-prereq">Prerequisite</h2>
-Before you continue, install Redis as discussed in <a href="{{page.baseurl}}config-guide/redis/config-redis.html">Use Redis for page caching or session storage</a>.
+Before you continue, [install Redis]({{page.baseurl}}config-guide/redis/config-redis.html#config-redis-install).
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
