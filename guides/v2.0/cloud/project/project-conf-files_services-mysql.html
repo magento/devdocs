@@ -1537,6 +1537,55 @@ following command:</p>
 <pre><code>mysql -h database.internal -u user
 </code></pre>
 
+<h2 id="set-up-multiple-database-users">Set up multiple database users</h2>
+<p>You can optionally set up multiple databases as well as multiple users with different permissions. By default, there is one endpoint named <code>mysql</code> that has administrator access to all defined databases.</p>
+
+<p>To set up multiple databases and users, you must specify multiple endpoints. An <em>endpoint</em> is a user who has privileges you specify.</p>
+
+<div class="bs-callout bs-callout-warning" id="warning">
+  <p>You can’t use multiple <em>databases</em> with Magento Enterprise Cloud Edition at this time. You can, however, create multiple endpoints to restrict access to the <code>main</code> database.</p>
+</div>
+
+<p>To specify user access, use the <code>endpoints</code> nested array. Each endpoint can have access to one or more schemas (databases), and can have different levels of permission on each.</p>
+
+<p>The valid permission levels are:</p>
+
+<ul>
+  <li><code>ro</code>: Only SELECT queries are allowed.</li>
+  <li><code>rw</code>: SELECT queries as well as INSERT/UPDATE/DELETE queries are allowed.</li>
+  <li><code>admin</code>: All queries are allowed, including DDL queries (CREATE TABLE, DROP TABLE, and so on).</li>
+</ul>
+
+<p>If no endpoints are defined, a single endpoint named <code>mysql</code> has <code>admin</code> access to the <code>main</code> database.</p>
+
+<p>Example:</p>
+
+<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">mysqldb</span><span class="p-Indicator">:</span>
+    <span class="l-Scalar-Plain">type</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">mysql:10.0</span>
+    <span class="l-Scalar-Plain">disk</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">2048</span>
+    <span class="l-Scalar-Plain">configuration</span><span class="p-Indicator">:</span>
+        <span class="l-Scalar-Plain">schemas</span><span class="p-Indicator">:</span>
+            <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">main</span>
+        <span class="l-Scalar-Plain">endpoints</span><span class="p-Indicator">:</span>
+            <span class="l-Scalar-Plain">admin</span><span class="p-Indicator">:</span>
+                <span class="l-Scalar-Plain">default_schema</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">main</span>
+                <span class="l-Scalar-Plain">privileges</span><span class="p-Indicator">:</span>
+                    <span class="l-Scalar-Plain">main</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">admin</span>
+            <span class="l-Scalar-Plain">reporter</span><span class="p-Indicator">:</span>
+                <span class="l-Scalar-Plain">privileges</span><span class="p-Indicator">:</span>
+                    <span class="l-Scalar-Plain">main</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">ro</span>
+            <span class="l-Scalar-Plain">importer</span><span class="p-Indicator">:</span>
+                <span class="l-Scalar-Plain">privileges</span><span class="p-Indicator">:</span>
+                    <span class="l-Scalar-Plain">main</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">rw</span></code></pre></figure>
+
+<p>In the preceding example, the endpoint (that is, user) <code>reporter</code> has <code>ro</code> privileges to the <code>main</code> database and endpoint <code>importer</code> has <code>rw</code> access to the <code>main</code> database. This means that:</p>
+
+<ul>
+  <li>The <code>admin</code> user has full control of the database.</li>
+  <li>The <code>repoter</code> user has SELECT privileges only.</li>
+  <li>The <code>importer</code> user has SELECT, INSERT, UPDATE, and DELETE privileges.</li>
+</ul>
+
 <h2 id="relationship">Relationship</h2>
 <p>The format exposed in the <a href="/guides/v2.0/cloud/env/environment-vars_cloud.html"><code>$MAGENTO_CLOUD_RELATIONSHIPS</code></a> follows:</p>
 
@@ -1591,11 +1640,13 @@ following command:</p>
   <span class="nv">$container</span><span class="o">-&gt;</span><span class="na">setParameter</span><span class="p">(</span><span class="s1">&#39;database_path&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">);</span>
 <span class="p">}</span></code></pre></figure>
 
-<h4 id="notes">Notes</h4>
-<ul>
-  <li>There is a single MySQL user, so you can not use the <a href="http://dev.mysql.com/doc/refman/5.6/en/show-grants.html" target="_blank"><code>DEFINER</code></a> access control mechanism for stored procedures and views.</li>
-  <li>MySQL errors such as <code>PDO Exception 'MySQL server has gone away</code> are usually simply the result of exhausting your existing disk space. Be sure you have sufficient space allocated to the service in <a href="/guides/v2.0/cloud/project/project-conf-files_magento-app.html#cloud-yaml-platform-disk"><code>.magento/services.yaml</code></a>.</li>
-</ul>
+<div class="bs-callout bs-callout-info" id="info">
+  <ul>
+    <li>If you configure one MySQL user, you cannot use the <a href="http://dev.mysql.com/doc/refman/5.6/en/show-grants.html" target="_blank"><code>DEFINER</code></a> access control mechanism for stored procedures and views.</li>
+    <li>MySQL errors such as <code>PDO Exception 'MySQL server has gone away</code> are usually the result of exhausting your existing disk space. Be sure you have sufficient space allocated to the service in <a href="/guides/v2.0/cloud/project/project-conf-files_magento-app.html#cloud-yaml-platform-disk"><code>.magento/services.yaml</code></a>.</li>
+  </ul>
+</div>
+
 
 		</div>
 		<!-- /.content-wrap -->
