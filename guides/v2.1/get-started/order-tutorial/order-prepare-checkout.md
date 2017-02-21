@@ -331,7 +331,7 @@ The available payment methods are `banktransfer` and `checkmo`. The customer wil
 
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-If you tried this call on your own, and the value of the `shipping_amount` parameter is `0`, then you did not deactivate the "Spend $50 or more - shipping is free!" cart price rule. See [Deactivate a cart price rule]({{page.baseurl}}/get-started/order/order-prereq.html#price-rule) for details.
+If you tried this call on your own, and the value of the `shipping_amount` parameter is `0`, then you did not deactivate the "Spend $50 or more - shipping is free!" cart price rule. See [Deactivate a cart price rule](order-config-store.html#price-rule) for details.
 </div>
 
 ### Verify this step {#verify-step}
