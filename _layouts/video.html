@@ -40,26 +40,7 @@
 			{% include page-tags.html %}
 			</div>
 
-
-
-			<div class="progress-bar">
-				<ul>
-			{% for video in videos %}
-					<li class="progress-bar-item {% if forloop.index < current %}done{% endif %} {% if video.url == page.url %}active{% endif %}">
-						<a href="{{ video.url }}">
-							<span class="progress-bar-index">{{forloop.index}}</span>
-							{{ video.title }}
-						</a>
-					</li>
-			{% endfor %}
-				</li>
-			</div>
-
-
-
-
 			{{ content }}
-
 
 			<div class="adjaced-pages">
 				<div class="playlist-name">{{page.group}}</div>
