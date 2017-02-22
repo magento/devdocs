@@ -133,7 +133,7 @@ The .md (Markdown) file's metadata is a set of key-value pairs (where the key is
     menu_node: parent
     menu_order: 1
     version: 2.0
-github_link: install-gde/continue.md
+    github_link: install-gde/continue.md
     ---	
 
 ### Definitions
