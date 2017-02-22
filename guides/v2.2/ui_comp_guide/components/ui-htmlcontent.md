@@ -95,4 +95,4 @@ HtmlContent own options:
         <block class="Magento\GiftRegistry\Block\Adminhtml\Customer\Edit\Tab\Giftregistry" name="giftregistry"/>
     </htmlContent>
 </form>
-{%endhiglight%}
+{%endhighlight%}
