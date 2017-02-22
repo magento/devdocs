@@ -11,11 +11,6 @@ github_link: extension-dev-guide/cli-cmds/cli-howto.md
 redirect_from: /guides/v2.0/extension-dev-guide/cli-howto.html
 ---
 
-#### Contents
-*	<a href="#cli-add-over">Overview of adding CLI commands</a>
-*	<a href="#cli-sample">Add CLI commands using dependency injection</a>
-*	<a href="#cli-autoload">Add CLI commands using the Composer autoloader</a>
-
 <h2 id="cli-add-over">Overview of adding CLI commands</h2>
 Magento enables your component to add commands to our Symfony-like command-line interface (CLI). 
 

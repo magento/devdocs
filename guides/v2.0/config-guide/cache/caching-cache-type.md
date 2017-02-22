@@ -10,7 +10,7 @@ level3_menu_node: level3child
 level3_subgroup: cache-types
 version: 2.0
 github_link: config-guide/cache/caching-cache-type.md
-redirect_from: /guides/v2.0/config-guide/config/caching-cache-type.html
+redirect_from: /guides/v2.0/config-guide/cache/caching-cache-type.html
 ---
 
 A *cache type* enables you to specify what is cached and enables merchants to clear that cache type using the Cache Management page in the Magento Admin.

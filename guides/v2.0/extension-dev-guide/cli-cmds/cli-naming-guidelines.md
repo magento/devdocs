@@ -14,12 +14,6 @@ redirect_from: /guides/v2.0/extension-dev-guide/cli-naming-guidelines.html
 <!-- http://olgakopylova.espritica.com/naming-conventions-for-cli-commands-in-magento-2/
  -->
 
-#### Contents
-*	<a href="#cli-over">Naming guideline overview</a>
-*	<a href="#cli-name">Command name</a>
-*	<a href="#cli-args">Command options and arguments</a>
-*	<a href="#cli-collision">Recommendations to avoid naming collisions</a>
-
 <h2 id="cli-over">Naming guideline overview</h2>
 Magento 2 introduces a new command-line interface (CLI) that enables component developers to plug in commands provided by modules.
 
