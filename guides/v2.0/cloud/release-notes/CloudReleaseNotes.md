@@ -6,7 +6,7 @@ title: Magento Enterprise Cloud Edition Release Notes
 menu_title: Magento Enterprise Cloud Edition Release Notes
 menu_order: 1
 menu_node: parent
-version: 2.1
+version: 2.0
 github_link: cloud/release-notes/CloudReleaseNotes.md
 ---
 

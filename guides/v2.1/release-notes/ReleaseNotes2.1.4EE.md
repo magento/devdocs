@@ -7,6 +7,7 @@ menu_title: Magento EE 2.1.4 Release Notes
 menu_order: 267
 level3_menu_node: level3child
 level3_subgroup: ee21-relnotes 
+version: 2.1
 github_link: release-notes/ReleaseNotes2.1.4EE.md
 ---
 
@@ -16,7 +17,7 @@ github_link: release-notes/ReleaseNotes2.1.4EE.md
 We are pleased to present Magento Enterprise Edition 2.1.4. This release includes many functional fixes and enhancements, plus one important security fix.
 
 
-Looking for the <a href="http://devdocs.magento.com/guides/v2.0/cloud/release-notes/CloudReleaseNotes2.1.4.html" target="_blank">Magento Enterprise Cloud Edition 2.1.4 and 2.0.12 Release Notes</a>?
+Looking for the <a href="{{ page.baseurl }}cloud/release-notes/CloudReleaseNotes2.1.4.html" target="_blank">Magento Enterprise Cloud Edition 2.1.4 and 2.0.12 Release Notes</a>?
 
 ## Highlights
 

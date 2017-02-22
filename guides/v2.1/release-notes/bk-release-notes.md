@@ -10,7 +10,6 @@ version: 2.1
 github_link: release-notes/bk-release-notes.md
 ---
 
-## Magento Community Edition (CE) and Enterprise Edition (EE) Release Information
 
 {% include install/releasenotes/21_release-notes-links.md %}
 
@@ -19,12 +18,12 @@ Looking for [2.0.x Release Notes]({{ site.gdeurl }}release-notes/bk-release-note
 
 
 
-### Backward-incompatible changes
+## Backward-incompatible changes
 
 *	Overview of backward-incompatible changes between the 2.0 and 2.1 releases: [Magento 2.1 Backward Incompatible Changes]({{ page.baseurl }}release-notes/backward-incompatible-changes-2.1.html)
 
 
-### Third-party license agreements
+## Third-party license agreements
 
 *	[Magento CE third-party licenses]({{page.baseurl}}release-notes/thirdparty_ce.html)
 *	[Magento EE third-party licenses]({{page.baseurl}}release-notes/thirdparty_ee.html)
