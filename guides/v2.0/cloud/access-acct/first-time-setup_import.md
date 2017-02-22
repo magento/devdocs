@@ -179,9 +179,9 @@ Command syntax follows:
 
     mysqldump -h <db-host> -P <db-port> -p -u <db-user> <db-name> --single-transaction --no-autocommit --quick | gzip > ~/db.sql.gz
 
-Example if your database is on localhost with the default port (3306) and the database user name is `magento`:
+Example if your database is on localhost with the default port (3306), database user name is `magento`, and database name is also `magento`:
 
-    mysqldump -p -u magento --single-transaction --no-autocommit --quick | gzip > ~/db.sql.gz
+    mysqldump -p -u magento magento --single-transaction --no-autocommit --quick | gzip > ~/db.sql.gz
 
 ## Import files and Magento code {#cloud-import-files-and-db}
 This section discusses how to import code from your existing Magento EE project to your Magento Enterprise Cloud Edition's Git repository `master` branch.
@@ -349,7 +349,7 @@ To drop and re-create the Cloud database:
 
         create database <database name>;
 
-  gunzip var/db.sql.gz | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' | mysql -h <db-host> -P <db-port> -p -u <db-user> <db-name>
+  zcat var/db.sql.gz | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' | mysql -h <db-host> -P <db-port> -p -u <db-user> <db-name> 
 
 ### Update environment-specific configurations
 
