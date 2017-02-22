@@ -7,7 +7,7 @@ menu_title: Debug and test using PhpStorm
 menu_node: parent
 menu_order: 1
 version: 2.0
-github_link: install-gde/docker/docker-PhpStorm-parent.md
+github_link: install-gde/docker/docker-phpstorm-parent.md
 ---
 
 These topics discuss how to configure Xdebug, PHPUnit, and PhpStorm to test and debug Magento DevBox code:

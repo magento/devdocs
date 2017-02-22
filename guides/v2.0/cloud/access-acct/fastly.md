@@ -82,9 +82,6 @@ Configure Fastly using the following:
 *	Set most other Fastly configuration options in the Magento Admin.
 *	You can fine-tune the Fastly configuration as discussed in [Custom VCLs](#custom-vcl).
 
-*	Set most other Fastly configuration options in the Magento Admin.
-*	You can fine-tune the Fastly configuration as discussed in [Custom VCLs](#custom-vcl).
-
 To configure Fastly in the Admin:
 
 1.	Log in to the Magento Admin as an administrator.

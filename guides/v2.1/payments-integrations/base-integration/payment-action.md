@@ -13,7 +13,7 @@ For each payment action available for the payment method, you must implement the
 
 - Creating a request with payment details. Described in [Get payment information from frontend to backend]({{page.baseurl}}payments-integrations/base-integration/get-payment-info.html).
 - Request processing using [response handler]({{page.baseurl}}payments-integrations/payment-gateway/response-handler.html) and [response validator]({{page.baseurl}}payments-integrations/payment-gateway/response-validator.html).
-- Specify and configure the gateway command. Described in the [Gateway Command](({{page.baseurl}}/payments-integrations/payment-gateway/gateway-command.html#adding-gateway-commands) topic.
+- Specify and configure the gateway command. Described in the [Gateway Command]({{page.baseurl}}payments-integrations/payment-gateway/gateway-command.html#adding-gateway-commands) topic.
 - Add the command to the commands pool, as described in [Command Pool]({{page.baseurl}}/payments-integrations/payment-gateway/command-pool.html#command-pool-configuration-for-a-particular-provider).
 
 

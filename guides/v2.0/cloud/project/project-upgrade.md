@@ -2,8 +2,8 @@
 layout: default
 group: cloud
 subgroup: 10_project
-title: Upgrade Magento
-menu_title: Upgrade Magento
+title: Test a Magento patch
+menu_title: Test a Magento patch
 menu_order: 15
 menu_node: 
 version: 2.0
