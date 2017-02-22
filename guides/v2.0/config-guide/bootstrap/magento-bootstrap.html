@@ -1523,7 +1523,7 @@
 <p><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/App/Http" target="_blank">\Magento\Framework\App\Http</a> operates as follows:</p>
 
 <ol>
-  <li>Determines the <a href="/guides/v2.0/architecture/modules/mod_and_areas.html">application area</a>.</li>
+  <li>Determines the <a href="/guides/v2.0/architecture/archi_perspectives/components/modules/mod_and_areas.html">application area</a>.</li>
   <li>Starts the front controller and routing systems in order to find and execute a controller action.</li>
   <li>Uses an HTTP response object to return result obtained from the controller action.</li>
   <li>Error handling (in the following priority order):
@@ -1551,7 +1551,7 @@
   <p>The entry point for static view files is not used in <a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html#mode-production">production mode</a> to avoid potential exploits on the server. In production mode, the Magento application expects that all necessary resources already exist in the <code>&lt;your Magento install dir&gt;/pub/static</code> directory.</p></span>
 </div>
 
-<p>In default or developer mode, a request for a non-existent static resource is redirected to the static entry point according to the rewrite rules specified by the appropriate <code>.htaccess</code>. 
+<p>In default or developer mode, a request for a non-existent static resource is redirected to the static entry point according to the rewrite rules specified by the appropriate <code>.htaccess</code>.
 When the request is redirected to the entry point, the Magento application parses the requested URL based on retrieved parameters and finds the requested resource.</p>
 
 <ul>
@@ -1576,7 +1576,6 @@ When the request is redirected to the entry point, the Magento application parse
   <li><a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html">Set the mode (MAGE_MODE)</a></li>
   <li><a href="/guides/v2.0/config-guide/bootstrap/mage-profiler.html">Enable an HTML profiler (MAGE_PROFILER)</a></li>
 </ul>
-
 
 		</div>
 		<!-- /.content-wrap -->
