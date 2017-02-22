@@ -10,7 +10,7 @@ github_link: coding-standards/code-standard-php.md
 redirect_from: /guides/v1.0/coding-standards/code-standard-php.html
 ---
 
-The Magento core development team uses the [Basic Coding Standard](http://www.php-fig.org/psr/psr-1/){:target="_blank"} and [Coding Style Guide](http://www.php-fig.org/psr/psr-2/){:target="_blank"}.
+The Magento core development team uses the [PSR-1: Basic Coding Standard](http://www.php-fig.org/psr/psr-1/){:target="_blank"} and [PSR-2: Coding Style Guide](http://www.php-fig.org/psr/psr-2/){:target="_blank"}.
 Magento recommends that developers who create Magento extensions and customizations also use these standards.
 
 Where possible, use [`PHP_CodeSniffer`](https://github.com/squizlabs/PHP_CodeSniffer){:target="_blank"} to automatically enforce these standards.
