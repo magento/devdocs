@@ -20,16 +20,16 @@ Extends all `abstract` configuration.
     <th>Default</th>
   </tr>
   <tr>
-    <td>multiple</td>
-    <td>Is responsible for changes input type in the UI (checkbox or radio). In case when multiple property state is "true" input type is checkbox.</td>
-    <td>Boolean</td>
-    <td>false</td>
-  </tr>
-  <tr>
     <td>component</td>
     <td>The path to the component’s .js file in terms of RequireJS.</td>
     <td>String</td>
     <td>Magento_Ui/js/form/element/checkbox-set</td>
+  </tr>
+  <tr>
+    <td>multiple</td>
+    <td>Is responsible for changes input type in the UI (checkbox or radio). In case when multiple property state is "true" input type is checkbox.</td>
+    <td>Boolean</td>
+    <td>false</td>
   </tr>
   <tr>
     <td>template</td>

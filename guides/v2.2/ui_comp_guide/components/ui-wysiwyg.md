@@ -21,10 +21,10 @@ Extends all `abstract` configuration.
     <th>Default</th>
   </tr>
   <tr>
-    <td>$wysiwygEditorButton</td>
-    <td></td>
+    <td>component</td>
+    <td>The path to the component’s .js file in terms of RequireJS.</td>
     <td>String</td>
-    <td>''</td>
+    <td>Magento_Ui/js/form/element/wysiwyg</td>
   </tr>
   <tr>
     <td>content</td>
@@ -39,16 +39,16 @@ Extends all `abstract` configuration.
     <td>'textarea'</td>
   </tr>
   <tr>
-    <td>links<br>value</td>
+    <td>elementTmpl</td>
+    <td>The path to the child component’s .html template. which child?</td>
+    <td>String</td>
+    <td>'ui/form/element/wysiwyg'</td>
+  </tr>
+  <tr>
+    <td>links value</td>
     <td>Look property "template" in dictionary properties block <br>Links the component property "value" with provider uses path that is declared in the "dataScope" property</td>
     <td>Object<br>String</td>
     <td>${ $.provider }:${ $.dataScope }'</td>
-  </tr>
-  <tr>
-    <td>component</td>
-    <td>The path to the component’s .js file in terms of RequireJS.</td>
-    <td>String</td>
-    <td>Magento_Ui/js/form/element/wysiwyg</td>
   </tr>
   <tr>
     <td>template</td>
@@ -57,9 +57,9 @@ Extends all `abstract` configuration.
     <td>'ui/form/field'</td>
   </tr>
   <tr>
-    <td>elementTmpl</td>
-    <td>The path to the child component’s .html template. which child?</td>
+    <td>$wysiwygEditorButton</td>
+    <td></td>
     <td>String</td>
-    <td>'ui/form/element/wysiwyg'</td>
+    <td>''</td>
   </tr>
 </table> 

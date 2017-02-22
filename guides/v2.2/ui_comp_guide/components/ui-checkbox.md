@@ -8,7 +8,7 @@ version: 2.2
 github_link: ui_comp_guide/components/ui-checkbox.md
 ---
 
-## checkbox component
+## Сheckbox configuration
 
 Extends all `abstract` configuration. 
 
