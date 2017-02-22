@@ -22,7 +22,7 @@ For detailed information about working with themes, refer to  <a href="{{page.ba
 
 * <a href="{{page.baseurl}}architecture/arch_asmodsys.html">Magento as a modular system</a>
 
-* <a href="{{page.baseurl}}architecture/modules/mod_intro.html">Modules</a>
+* <a href="{{page.baseurl}}architecture/archi_perspectives/components/modules/mod_intro.html">Modules</a>
 
 * <a href="{{page.baseurl}}architecture/arch_libraries.html">Libraries</a>
 
