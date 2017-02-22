@@ -10,6 +10,7 @@ level3_menu_node: level3child
 level3_subgroup: ce20-relnotes 
 github_link: release-notes/ReleaseNotes2.0.14CE.md
 ---
+<<<<<<< HEAD
 We are pleased to present Magento Community Edition 2.0.14. This release includes important enhancements to the security of your Magento software.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
@@ -54,6 +55,56 @@ Looking for the <a href="http://devdocs.magento.com/guides/v2.1/cloud/release-no
 <!--- internal only -->
 
 <!--- 64584 -->
+=======
+We are pleased to present Magento Community Edition 2.0.14. 
+
+
+
+## Highlights
+
+Magento 2.0.14 contains more than security enhancements. Look for the following highlights in this release:
+
+
+
+## Security enhancements
+
+This release includes an important enhancement to the security of your Magento software. While there are no confirmed attacks related to the Zend framework `Zend_Mail` library vulnerability to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento software to the latest version as soon as possible.
+
+<!---  -->* 
+<!---  -->* 
+<!---  -->* 
+<!---  -->* 
+<!---  -->* 
+<!---  -->* 
+<!---  -->* 
+<!--- 64051 -->* 
+<!--- 63880 -->* 
+<!--- 63878 -->* 
+<!--- 63876 -->* 
+<!--- 63871 -->* 
+<!--- 63868 -->* 
+<!--- 63865 -->* 
+<!--- 63863 -->* 
+<!--- 63681 -->* 
+<!--- 63633 -->* 
+<!--- 63528 -->* 
+<!--- 63518 -->* 
+<!--- 62314 -->* 
+<!--- 61016 -->* 
+<!--- 59096 -->* 
+
+
+
+<a href="https://github.com/magento/magento2/issues/5558" target="_blank">(GITHUB-5558)</a>
+
+
+
+### Miscellaneous
+
+
+
+## Known issues
+>>>>>>> ba4b3e193c76c8521fc557c1d21183d032df7ebe
 
 
 

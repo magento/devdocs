@@ -5,11 +5,16 @@ subgroup: 02_rel-notes
 title: Magento EE 2.0.14 Release Notes
 menu_title: Magento EE 2.0.14 Release Notes
 menu_order: 265
+<<<<<<< HEAD
+=======
+version: 2.0
+>>>>>>> ba4b3e193c76c8521fc557c1d21183d032df7ebe
 level3_menu_node: level3child
 level3_subgroup: ee20-relnotes 
 github_link: release-notes/ReleaseNotes2.0.14EE.md
 ---
 
+<<<<<<< HEAD
 We are pleased to present Magento Enterprise Edition 2.0.14. This release includes important enhancements to the security of your Magento software.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
@@ -55,6 +60,52 @@ Looking for the <a href="http://devdocs.magento.com/guides/v2.1/cloud/release-no
 <!--- internal only -->
 
 <!--- 64584 -->
+=======
+We are pleased to present Magento Enterprise Edition 2.0.14. This release includes many functional fixes and enhancements. 
+
+Looking for the <a href="http://devdocs.magento.com/guides/v2.0/cloud/release-notes/CloudReleaseNotes2.1.4.html" target="_blank">Magento Enterprise Cloud Edition 2.1.4 and 2.0.12 Release Notes</a>?
+
+
+
+## Highlights
+
+Magento 2.0.12 contains more than  security enhancement. Look for the following highlights in this release:
+
+
+
+## Security enhancements
+
+This release includes an important enhancement to the security of your Magento software. While there are no confirmed attacks related to the Zend framework `Zend_Mail` library vulnerability to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento software to the latest version as soon as possible.
+
+
+
+
+<!---  -->* 
+<!---  -->* 
+<!---  -->* 
+<!---  -->* 
+<!---  -->* 
+<!---  -->* 
+<!---  -->* 
+<!--- 64051 -->* 
+<!--- 63880 -->* 
+<!--- 63878 -->* 
+<!--- 63876 -->* 
+<!--- 63871 -->* 
+<!--- 63868 -->* 
+<!--- 63865 -->* 
+<!--- 63863 -->* 
+<!--- 63681 -->* 
+<!--- 63633 -->* 
+<!--- 63528 -->* 
+<!--- 63518 -->* 
+<!--- 62314 -->* 
+<!--- 61016 -->* 
+<!--- 59096 -->* 
+
+<a href="https://github.com/magento/magento2/issues/5558" target="_blank">(GITHUB-5558)</a>
+
+>>>>>>> ba4b3e193c76c8521fc557c1d21183d032df7ebe
 
 
 

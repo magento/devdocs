@@ -10,5 +10,6 @@ version: 2.0
 github_link: install-gde/install/post-install-umask.md
 ---
 
+## Optionally set `magento_umask` {#mage-owner-umask}
 
 {% include install/file-system-umask.md %}
