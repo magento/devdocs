@@ -1,12 +1,17 @@
-<h3 id="class-209-210">Changes in classes</h3>
+
+<h2 id="class">Class</h2>
 <table><tbody>
     <tr>
-        <th>Class</th>
+        <th>Target</th>
         <th>What Changed</th>
     </tr>
     <tr>
         <td>Magento\User\Observer\Backend\TrackAdminNewPasswordObserver::__construct</td>
-        <td> Method parameter changed.</td>
+        <td>[public] Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\User\Observer\Backend\TrackAdminNewPasswordObserver::$encryptor</td>
+        <td>[protected] Property has been removed.</td>
     </tr>
     <tr>
         <td>Magento\Sales\Model\Order\InvoiceDocumentFactory</td>
@@ -46,43 +51,43 @@
     </tr>
 </tbody></table>
 
-<h3 id="interface-209-210">Changes in interfaces</h3>
+<h2 id="interface">Interface</h2>
 <table><tbody>
     <tr>
-        <th>Interface</th>
+        <th>Target</th>
         <th>What Changed</th>
     </tr>
     <tr>
         <td>Magento\Sales\Api\Data\InvoiceCommentInterface::getComment</td>
-        <td> Method has been removed.</td>
+        <td>[public] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\Sales\Api\Data\InvoiceCommentInterface::getCreatedAt</td>
-        <td> Method has been removed.</td>
+        <td>[public] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\Sales\Api\Data\InvoiceCommentInterface::setCreatedAt</td>
-        <td> Method has been removed.</td>
+        <td>[public] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\Sales\Api\Data\InvoiceCommentInterface::getEntityId</td>
-        <td> Method has been removed.</td>
+        <td>[public] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\Sales\Api\Data\InvoiceCommentInterface::setEntityId</td>
-        <td> Method has been removed.</td>
+        <td>[public] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\Sales\Api\Data\InvoiceCommentInterface::getIsVisibleOnFront</td>
-        <td> Method has been removed.</td>
+        <td>[public] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\Sales\Api\Data\InvoiceCommentInterface::setIsVisibleOnFront</td>
-        <td> Method has been removed.</td>
+        <td>[public] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\Sales\Api\Data\InvoiceCommentInterface::setComment</td>
-        <td> Method has been removed.</td>
+        <td>[public] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\Sales\Api\Data\InvoiceCommentInterface::ENTITY_ID</td>
@@ -93,56 +98,60 @@
         <td>Constant has been removed.</td>
     </tr>
     <tr>
+        <td>Magento\Sales\Api\Data\InvoiceCommentInterface::COMMENT</td>
+        <td>Constant has been removed.</td>
+    </tr>
+    <tr>
         <td>Magento\Sales\Api\Data\InvoiceCommentInterface::CREATED_AT</td>
         <td>Constant has been removed.</td>
     </tr>
     <tr>
         <td>Magento\Sales\Api\Data\InvoiceItemInterface::getOrderItemId</td>
-        <td> Method has been removed.</td>
+        <td>[public] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\Sales\Api\Data\InvoiceItemInterface::getQty</td>
-        <td> Method has been removed.</td>
+        <td>[public] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\Sales\Api\Data\InvoiceItemInterface::setQty</td>
-        <td> Method has been removed.</td>
+        <td>[public] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\Sales\Api\Data\InvoiceItemInterface::setOrderItemId</td>
-        <td> Method has been removed.</td>
+        <td>[public] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\Sales\Api\Data\ShipmentCommentInterface::getComment</td>
-        <td> Method has been removed.</td>
+        <td>[public] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\Sales\Api\Data\ShipmentCommentInterface::getCreatedAt</td>
-        <td> Method has been removed.</td>
+        <td>[public] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\Sales\Api\Data\ShipmentCommentInterface::setCreatedAt</td>
-        <td> Method has been removed.</td>
+        <td>[public] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\Sales\Api\Data\ShipmentCommentInterface::getEntityId</td>
-        <td> Method has been removed.</td>
+        <td>[public] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\Sales\Api\Data\ShipmentCommentInterface::setEntityId</td>
-        <td> Method has been removed.</td>
+        <td>[public] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\Sales\Api\Data\ShipmentCommentInterface::getIsVisibleOnFront</td>
-        <td> Method has been removed.</td>
+        <td>[public] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\Sales\Api\Data\ShipmentCommentInterface::setIsVisibleOnFront</td>
-        <td> Method has been removed.</td>
+        <td>[public] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\Sales\Api\Data\ShipmentCommentInterface::setComment</td>
-        <td> Method has been removed.</td>
+        <td>[public] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\Sales\Api\Data\ShipmentCommentInterface::ENTITY_ID</td>
@@ -162,47 +171,195 @@
     </tr>
     <tr>
         <td>Magento\Sales\Api\Data\ShipmentItemInterface::getOrderItemId</td>
-        <td> Method has been removed.</td>
+        <td>[public] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\Sales\Api\Data\ShipmentItemInterface::getQty</td>
-        <td> Method has been removed.</td>
+        <td>[public] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\Sales\Api\Data\ShipmentItemInterface::setQty</td>
-        <td> Method has been removed.</td>
+        <td>[public] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\Sales\Api\Data\ShipmentItemInterface::setOrderItemId</td>
-        <td> Method has been removed.</td>
+        <td>[public] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\Sales\Api\Data\ShipmentTrackInterface::getCarrierCode</td>
-        <td> Method has been removed.</td>
+        <td>[public] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\Sales\Api\Data\ShipmentTrackInterface::getTitle</td>
-        <td> Method has been removed.</td>
+        <td>[public] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\Sales\Api\Data\ShipmentTrackInterface::getTrackNumber</td>
-        <td> Method has been removed.</td>
+        <td>[public] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\Sales\Api\Data\ShipmentTrackInterface::setTrackNumber</td>
-        <td> Method has been removed.</td>
+        <td>[public] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\Sales\Api\Data\ShipmentTrackInterface::setTitle</td>
-        <td> Method has been removed.</td>
+        <td>[public] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\Sales\Api\Data\ShipmentTrackInterface::setCarrierCode</td>
-        <td> Method has been removed.</td>
+        <td>[public] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\InvoiceCommentInterface::getComment</td>
+        <td>[public] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\InvoiceCommentInterface::getCreatedAt</td>
+        <td>[public] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\InvoiceCommentInterface::setCreatedAt</td>
+        <td>[public] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\InvoiceCommentInterface::getEntityId</td>
+        <td>[public] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\InvoiceCommentInterface::setEntityId</td>
+        <td>[public] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\InvoiceCommentInterface::getIsVisibleOnFront</td>
+        <td>[public] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\InvoiceCommentInterface::setIsVisibleOnFront</td>
+        <td>[public] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\InvoiceCommentInterface::setComment</td>
+        <td>[public] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\InvoiceCommentInterface::ENTITY_ID</td>
+        <td>Constant has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\InvoiceCommentInterface::IS_VISIBLE_ON_FRONT</td>
+        <td>Constant has been removed.</td>
     </tr>
     <tr>
         <td>Magento\Sales\Api\Data\InvoiceCommentInterface::COMMENT</td>
         <td>Constant has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\InvoiceCommentInterface::CREATED_AT</td>
+        <td>Constant has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\InvoiceItemInterface::getOrderItemId</td>
+        <td>[public] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\InvoiceItemInterface::getQty</td>
+        <td>[public] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\InvoiceItemInterface::setQty</td>
+        <td>[public] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\InvoiceItemInterface::setOrderItemId</td>
+        <td>[public] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\ShipmentCommentInterface::getComment</td>
+        <td>[public] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\ShipmentCommentInterface::getCreatedAt</td>
+        <td>[public] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\ShipmentCommentInterface::setCreatedAt</td>
+        <td>[public] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\ShipmentCommentInterface::getEntityId</td>
+        <td>[public] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\ShipmentCommentInterface::setEntityId</td>
+        <td>[public] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\ShipmentCommentInterface::getIsVisibleOnFront</td>
+        <td>[public] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\ShipmentCommentInterface::setIsVisibleOnFront</td>
+        <td>[public] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\ShipmentCommentInterface::setComment</td>
+        <td>[public] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\ShipmentCommentInterface::ENTITY_ID</td>
+        <td>Constant has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\ShipmentCommentInterface::IS_VISIBLE_ON_FRONT</td>
+        <td>Constant has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\ShipmentCommentInterface::COMMENT</td>
+        <td>Constant has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\ShipmentCommentInterface::CREATED_AT</td>
+        <td>Constant has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\ShipmentItemInterface::getOrderItemId</td>
+        <td>[public] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\ShipmentItemInterface::getQty</td>
+        <td>[public] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\ShipmentItemInterface::setQty</td>
+        <td>[public] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\ShipmentItemInterface::setOrderItemId</td>
+        <td>[public] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\ShipmentTrackInterface::getCarrierCode</td>
+        <td>[public] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\ShipmentTrackInterface::getTitle</td>
+        <td>[public] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\ShipmentTrackInterface::getTrackNumber</td>
+        <td>[public] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\ShipmentTrackInterface::setTrackNumber</td>
+        <td>[public] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\ShipmentTrackInterface::setTitle</td>
+        <td>[public] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Api\Data\ShipmentTrackInterface::setCarrierCode</td>
+        <td>[public] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\Sales\Model\Order\InvoiceNotifierInterface</td>
