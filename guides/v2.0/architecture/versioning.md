@@ -240,6 +240,6 @@ The following steps demonstrate the packaging and backward compatibility story f
 
 ## Related topics
 
-<a href="{{page.baseurl}}architecture/backward-compatibility.html">Backward compatibility</a>
+<a href="{{page.baseurl}}architecture/back-compatibility.html">Backward compatibility</a>
 
 <a href="{{page.baseurl}}architecture/archi_perspectives/ABasics_intro.html">Architectural basics</a>

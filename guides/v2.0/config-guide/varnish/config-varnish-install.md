@@ -5,7 +5,7 @@ subgroup: 09_Varnish
 title: Install Varnish
 menu_title: Install Varnish
 menu_order: 5
-menu_node: 
+menu_node:
 version: 2.0
 github_link: config-guide/varnish/config-varnish-install.md
 ---
