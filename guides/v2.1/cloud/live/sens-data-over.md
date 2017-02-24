@@ -32,7 +32,7 @@ We help you protect sensitive data and make it easy to manage system data as fol
 
 	Managing `config.local.php` in source control means your settings for staging and production are always consistent. For example, you can disable static file optimization in your [integration]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-int) system but enable it in both staging and production. After initially setting up the configuration, you don't need to touch it again because it's in source control.
 
-	(_static file optimization_ means merging and minifying JavaScript and Cascading Style Sheets, and minifying HTML templates.)
+	(_Static file optimization_ means merging and minifying JavaScript and Cascading Style Sheets, and minifying HTML templates.)
 
 	In addition, you can optionally manage `config.local.php` using scripting or automation tools. However, discussion of those tools is beyond the scope of this guide.
 
@@ -117,7 +117,11 @@ The following procedure is required because there is no Git user on your integra
 4.	Add `config.local.php` to Git (again, in the `master` branch).
 5.	Push `config.local.php` to your integration server.
 
-You generate `config.local.php` using the command `magento app:config:dump`. This command populates `config.local.php` with all system configuration parameters _except_ sensitive values.
+You generate `config.local.php` using one of the following command:
+
+*	`magento app:config:dump` populates `config.local.php` with all system configuration values _except_ sensitive values.
+
+*	`magento app:config:SCDDump` populates `config.local.php` with only the configuration values necessary for static content deployment.
 
 **Step C**. Magento Enterprise Cloud Edition automatically deploys the settings to your integration server.
 

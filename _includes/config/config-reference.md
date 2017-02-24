@@ -94,25 +94,8 @@ Enabled | `currency/import/enabled`
 Service | `currency/import/service`
 Start Time | `currency/import/time`
 Frequency | `currency/import/frequency`
-Error Email Recipient | `currency/import/error_email`
 Error Email Sender | `currency/import/error_email_identity`
 Error Email Template | `currency/import/error_email_template`
-
-### Store email address variables
-These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Email Configuration** > **General** > **Store Email Addresses**. 
-
-Name  | Config path
-|--------------|--------------|
-Sender Name | `trans_email/ident_general/name`
-Sender Email | `trans_email/ident_general/email`
-Sender Name | `trans_email/ident_sales/name`
-Sender Email | `trans_email/ident_sales/email`
-Sender Name | `trans_email/ident_support/name`
-Sender Email | `trans_email/ident_support/email`
-Sender Name | `trans_email/ident_custom1/name`
-Sender Email | `trans_email/ident_custom1/email`
-Sender Name | `trans_email/ident_custom2/name`
-Sender Email | `trans_email/ident_custom2/email`
 
 ### Contacts variables
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **General** > **Contacts**.
@@ -120,7 +103,6 @@ These configuration values are availabe in the Magento Admin in **Stores** > Set
 Name  | Config path
 |--------------|--------------|
 Enable Contact Us | `contact/contact/enabled`
-Send Emails To | `contact/email/recipient_email`
 Email Sender | `contact/email/sender_email_identity`
 Email Template | `contact/email/email_template`
 
@@ -151,10 +133,6 @@ Name  | Config path
 Enable New Relic Integration | `newrelicreporting/general/enable`
 New Relic API URL | `newrelicreporting/general/api_url`
 Insights API URL | `newrelicreporting/general/insights_api_url`
-New Relic Account ID | `newrelicreporting/general/account_id`
-New Relic Application ID | `newrelicreporting/general/app_id`
-New Relic API Key | `newrelicreporting/general/api`
-Insights API Key | `newrelicreporting/general/insights_insert_key`
 New Relic Application Name | `newrelicreporting/general/app_name`
 Enable Cron | `newrelicreporting/cron/enable_cron`
 
@@ -189,13 +167,11 @@ Stock Alert Email Template | `catalog/productalert/email_stock_template`
 Alert Email Sender | `catalog/productalert/email_identity`
 Frequency | `catalog/productalert_cron/frequency`
 Start Time | `catalog/productalert_cron/time`
-Error Email Recipient | `catalog/productalert_cron/error_email`
 Error Email Sender | `catalog/productalert_cron/error_email_identity`
 Error Email Template | `catalog/productalert_cron/error_email_template`
 Show for Current | `catalog/recently_products/scope`
 Default Recently Viewed Products Count | `catalog/recently_products/viewed_count`
 Default Recently Compared Products Count | `catalog/recently_products/compared_count`
-YouTube API Key | `catalog/product_video/youtube_api_key`
 Autostart base video | `catalog/product_video/play_if_base`
 Show related video | `catalog/product_video/show_related`
 Auto restart video | `catalog/product_video/video_auto_restart`
@@ -320,7 +296,6 @@ Priority | `sitemap/page/priority`
 Enabled | `sitemap/generate/enabled`
 Start Time | `sitemap/generate/time`
 Frequency | `sitemap/generate/frequency`
-Error Email Recipient | `sitemap/generate/error_email`
 Error Email Sender | `sitemap/generate/error_email_identity`
 Error Email Template | `sitemap/generate/error_email_template`
 Maximum No of URLs Per File | `sitemap/limit/max_lines`
@@ -615,49 +590,41 @@ Enabled | `sales_email/order/enabled`
 New Order Confirmation Email Sender | `sales_email/order/identity`
 New Order Confirmation Template | `sales_email/order/template`
 New Order Confirmation Template for Guest | `sales_email/order/guest_template`
-Send Order Email Copy To | `sales_email/order/copy_to`
 Send Order Email Copy Method | `sales_email/order/copy_method`
 Enabled | `sales_email/order_comment/enabled`
 Order Comment Email Sender | `sales_email/order_comment/identity`
 Order Comment Email Template | `sales_email/order_comment/template`
 Order Comment Email Template for Guest | `sales_email/order_comment/guest_template`
-Send Order Comment Email Copy To | `sales_email/order_comment/copy_to`
 Send Order Comments Email Copy Method | `sales_email/order_comment/copy_method`
 Enabled | `sales_email/invoice/enabled`
 Invoice Email Sender | `sales_email/invoice/identity`
 Invoice Email Template | `sales_email/invoice/template`
 Invoice Email Template for Guest | `sales_email/invoice/guest_template`
-Send Invoice Email Copy To | `sales_email/invoice/copy_to`
 Send Invoice Email Copy Method | `sales_email/invoice/copy_method`
 Enabled | `sales_email/invoice_comment/enabled`
 Invoice Comment Email Sender | `sales_email/invoice_comment/identity`
 Invoice Comment Email Template | `sales_email/invoice_comment/template`
 Invoice Comment Email Template for Guest | `sales_email/invoice_comment/guest_template`
-Send Invoice Comment Email Copy To | `sales_email/invoice_comment/copy_to`
 Send Invoice Comments Email Copy Method | `sales_email/invoice_comment/copy_method`
 Enabled | `sales_email/shipment/enabled`
 Shipment Email Sender | `sales_email/shipment/identity`
 Shipment Email Template | `sales_email/shipment/template`
 Shipment Email Template for Guest | `sales_email/shipment/guest_template`
-Send Shipment Email Copy To | `sales_email/shipment/copy_to`
 Send Shipment Email Copy Method | `sales_email/shipment/copy_method`
 Enabled | `sales_email/shipment_comment/enabled`
 Shipment Comment Email Sender | `sales_email/shipment_comment/identity`
 Shipment Comment Email Template | `sales_email/shipment_comment/template`
 Shipment Comment Email Template for Guest | `sales_email/shipment_comment/guest_template`
-Send Shipment Comment Email Copy To | `sales_email/shipment_comment/copy_to`
 Send Shipment Comments Email Copy Method | `sales_email/shipment_comment/copy_method`
 Enabled | `sales_email/creditmemo/enabled`
 Credit Memo Email Sender | `sales_email/creditmemo/identity`
 Credit Memo Email Template | `sales_email/creditmemo/template`
 Credit Memo Email Template for Guest | `sales_email/creditmemo/guest_template`
-Send Credit Memo Email Copy To | `sales_email/creditmemo/copy_to`
 Send Credit Memo Email Copy Method | `sales_email/creditmemo/copy_method`
 Enabled | `sales_email/creditmemo_comment/enabled`
 Credit Memo Comment Email Sender | `sales_email/creditmemo_comment/identity`
 Credit Memo Comment Email Template | `sales_email/creditmemo_comment/template`
 Credit Memo Comment Email Template for Guest | `sales_email/creditmemo_comment/guest_template`
-Send Credit Memo Comment Email Copy To | `sales_email/creditmemo_comment/copy_to`
 Send Credit Memo Comments Email Copy Method | `sales_email/creditmemo_comment/copy_method`
 Enabled | `sales_email/magento_rma/enabled`
 RMA Email Sender | `sales_email/magento_rma/identity`
@@ -753,7 +720,6 @@ Maximum Display Recently Added Item(s) | `checkout/sidebar/count`
 Payment Failed Email Sender | `checkout/payment_failed/identity`
 Payment Failed Email Receiver | `checkout/payment_failed/receiver`
 Payment Failed Template | `checkout/payment_failed/template`
-Send Payment Failed Email Copy To | `checkout/payment_failed/copy_to`
 Send Payment Failed Email Copy Method | `checkout/payment_failed/copy_method`
 
 ### Shipping settings variables
@@ -761,12 +727,6 @@ These configuration values are availabe in the Magento Admin in **Stores** > Set
 
 Name  | Config path
 |--------------|--------------|
-Country | `shipping/origin/country_id`
-Region/State | `shipping/origin/region_id`
-ZIP/Postal Code | `shipping/origin/postcode`
-City | `shipping/origin/city`
-Street Address | `shipping/origin/street_line1`
-Street Address Line 2 | `shipping/origin/street_line2`
 Apply custom Shipping Policy | `shipping/shipping_policy/enable_shipping_policy`
 Shipping Policy | `shipping/shipping_policy/shipping_policy_content`
 
@@ -822,20 +782,14 @@ Enabled for Checkout | `carriers/ups/active`
 Enabled for RMA | `carriers/ups/active_rma`
 UPS Type | `carriers/ups/type`
 Live Account | `carriers/ups/is_account_live`
-Gateway XML URL | `carriers/ups/gateway_xml_url`
 Mode | `carriers/ups/mode_xml`
-User ID | `carriers/ups/username`
-Password | `carriers/ups/password`
-Access License Number | `carriers/ups/access_license_number`
 Origin of the Shipment | `carriers/ups/origin_shipment`
 Gateway URL | `carriers/ups/gateway_url`
 Title | `carriers/ups/title`
 Enable Negotiated Rates | `carriers/ups/negotiated_active`
 Packages Request Type | `carriers/ups/shipment_requesttype`
-Shipper Number | `carriers/ups/shipper_number`
 Container | `carriers/ups/container`
 Weight Unit | `carriers/ups/unit_of_measure`
-Tracking XML URL | `carriers/ups/tracking_xml_url`
 Destination Type | `carriers/ups/dest_type`
 Maximum Package Weight (Please consult your shipping carrier for maximum supported shipping weight) | `carriers/ups/max_package_weight`
 Pickup Method | `carriers/ups/pickup`
@@ -855,11 +809,6 @@ Debug | `carriers/ups/debug`
 Sort Order | `carriers/ups/sort_order`
 Enabled for Checkout | `carriers/usps/active`
 Enabled for RMA | `carriers/usps/active_rma`
-Gateway URL | `carriers/usps/gateway_url`
-Secure Gateway URL | `carriers/usps/gateway_secure_url`
-Title | `carriers/usps/title`
-User ID | `carriers/usps/userid`
-Password | `carriers/usps/password`
 Mode | `carriers/usps/mode`
 Packages Request Type | `carriers/usps/shipment_requesttype`
 Container | `carriers/usps/container`
@@ -1026,9 +975,7 @@ Forgot and Reset Email Sender | `admin/emails/forgot_email_identity`
 User Notification Template | `admin/emails/user_notification_template`
 Startup Page | `admin/startup/menu_item_id`
 Use Custom Admin URL | `admin/url/use_custom`
-Custom Admin URL | `admin/url/custom`
 Use Custom Admin Path | `admin/url/use_custom_path`
-Custom Admin Path | `admin/url/custom_path`
 Admin Account Sharing | `admin/security/admin_account_sharing`
 Password Reset Protection Type | `admin/security/password_reset_protection_type`
 Recovery Link Expiration Period (hours) | `admin/security/password_reset_link_expiration_period`
@@ -1117,7 +1064,6 @@ These configuration values are availabe in the Magento Admin in **Stores** > Set
 Name  | Config path
 |--------------|--------------|
 Workflow type | `dev/front_end_development_workflow/type`
-Allowed IPs (comma separated) | `dev/restrict/allow_ips`
 Allow Symlinks | `dev/template/allow_symlink`
 Minify Html | `dev/template/minify_html`
 Enabled Template Path Hints for Storefront | `dev/debug/template_hints_storefront`

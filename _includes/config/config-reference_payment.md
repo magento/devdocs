@@ -29,12 +29,10 @@ Enable SSL verification | `payment/hosted_pro/verify_peer`
 
 Name  | Config path
 |--------------|--------------|
-Email Associated with PayPal Merchant Account (Optional) | `paypal/general/business_account`
 Enable this Solution | `payment/payflowpro/active`
 Enable In-Context Checkout Experience | `payment/paypal_express/in_context`
 Enable PayPal Credit | `payment/payflow_express_bml/active`
 Enable PayPal Credit | `payment/paypal_express_bml/active`
-Publisher ID | `payment/paypal_express_bml/publisher_id`
 Display | `payment/paypal_express_bml/homepage_display`
 Position | `payment/paypal_express_bml/homepage_position`
 Size | `payment/paypal_express_bml/homepage_size`
@@ -71,11 +69,7 @@ Debug Mode | `payment/paypal_billing_agreement/debug`
 Enable SSL verification | `payment/paypal_billing_agreement/verify_peer`
 Transfer Cart Line Items | `payment/paypal_billing_agreement/line_items_enabled`
 Allow in Billing Agreement Wizard | `payment/paypal_billing_agreement/allow_billing_agreement_wizard`
-Login | `paypal/fetch_reports/ftp_login`
-Password | `paypal/fetch_reports/ftp_password`
 Sandbox Mode | `paypal/fetch_reports/ftp_sandbox`
-Custom Endpoint Hostname or IP-Address | `paypal/fetch_reports/ftp_ip`
-Custom Path | `paypal/fetch_reports/ftp_path`
 Enable Automatic Fetching | `paypal/fetch_reports/active`
 Schedule | `paypal/fetch_reports/schedule`
 Time of Day | `paypal/fetch_reports/time`
@@ -86,7 +80,6 @@ Header Background Color | `paypal/style/paypal_hdrbackcolor`
 Header Border Color | `paypal/style/paypal_hdrbordercolor`
 Page Background Color | `paypal/style/paypal_payflowcolor`
 Enable this Solution | `payment/paypal_express/active`
-Merchant Account ID | `payment/paypal_express/merchant_id`
 Sort Order PayPal Credit | `payment/paypal_express_bml/sort_order`
 Title | `payment/paypal_express/title`
 Sort Order | `payment/paypal_express/sort_order`
@@ -109,14 +102,8 @@ PayPal Merchant Pages Style | `payment_all_paypal/express_checkout/settings_ec/s
 Name  | Config path
 |--------------|--------------|
 API Authentication Methods | `paypal/wpp/api_authentication`
-API Username | `paypal/wpp/api_username`
-API Password | `paypal/wpp/api_password`
-API Signature | `paypal/wpp/api_signature`
-API Certificate | `paypal/wpp/api_cert`
 Sandbox Mode | `paypal/wpp/sandbox_flag`
 API Uses Proxy | `paypal/wpp/use_proxy`
-Proxy Host | `paypal/wpp/proxy_host`
-Proxy Port | `paypal/wpp/proxy_port`
 SFTP Credentials | `payment_all_paypal/payments_pro_hosted_solution/pphs_settings/pphs_settings_advanced/pphs_settlement_report/heading_sftp`
 Scheduled Fetching | `payment_all_paypal/payments_pro_hosted_solution/pphs_settings/pphs_settings_advanced/pphs_settlement_report/heading_schedule`
 SFTP Credentials | `payment_all_paypal/payments_pro_hosted_solution_without_bml/pphs_settings/pphs_settings_advanced/pphs_settlement_report/heading_sftp`
@@ -146,14 +133,9 @@ AVS Street Does Not Match | `payment/payflowpro/avs_street`
 AVS Zip Does Not Match | `payment/payflowpro/avs_zip`
 International AVS Indicator Does Not Match | `payment/payflowpro/avs_international`
 Card Security Code Does Not Match | `payment/payflowpro/avs_security_code`
-Partner | `payment/payflowpro/partner`
-User | `payment/payflowpro/user`
 Vendor | `payment/payflowpro/vendor`
-Password | `payment/payflowpro/pwd`
 Test Mode | `payment/payflowpro/sandbox_flag`
 Use Proxy | `payment/payflowpro/use_proxy`
-Proxy Host | `payment/payflowpro/proxy_host`
-Proxy Port | `payment/payflowpro/proxy_port`
 Title | `payment/payflow_express/title`
 Sort Order | `payment/payflow_express/sort_order`
 Payment Action | `payment/payflow_express/payment_action`
@@ -162,8 +144,6 @@ Scheduled Fetching | `payment_all_paypal/paypal_payflowpro/settings_paypal_payfl
 PayPal Merchant Pages Style | `payment_all_paypal/payflow_link/settings_payflow_link/settings_payflow_link_advanced/payflow_link_frontend/paypal_pages`
 Partner | `payment/payflow_advanced/partner`
 Vendor | `payment/payflow_advanced/vendor`
-User | `payment/payflow_advanced/user`
-Password | `payment/payflow_advanced/pwd`
 Test Mode | `payment/payflow_advanced/sandbox_flag`
 Use Proxy | `payment/payflow_advanced/use_proxy`
 Proxy Host | `payment/payflow_advanced/proxy_host`
@@ -189,8 +169,6 @@ Name  | Config path
 |--------------|--------------|
 Partner | `payment/payflow_link/partner`
 Vendor | `payment/payflow_link/vendor`
-User | `payment/payflow_link/user`
-Password | `payment/payflow_link/pwd`
 Test Mode | `payment/payflow_link/sandbox_flag`
 Use Proxy | `payment/payflow_link/use_proxy`
 Proxy Host | `payment/payflow_link/proxy_host`
