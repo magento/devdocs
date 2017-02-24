@@ -199,14 +199,14 @@ For more details see the <a href="{{page.baseurl}}ui_comp_guide/concepts/ui_comp
     </tr>
     <tr>
       <td>
-        `messagesClass`
+        messagesClass
       </td>
-      <td></td>
+      <td>The CSS class assigned to the &lt;div&gt; element, where the form elements validation error is rendered.</td>
       <td>
         String
       </td>
       <td>
-        `'messages'`
+        'messages'
       </td>
     </tr>
     <tr>
