@@ -1,9 +1,16 @@
 <div markdown="1">
 
-## Sensitive variables
+## General category sensitive variables
+This section lists variable names and config paths available for options in the Admin under **Stores** > Settings > **Configuration** > **General**.
 
+### Currency setup sensitive variables
+These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **General** > **Currency setup**.
 
-### Store email address variables
+Name  | Config path
+|--------------|--------------|
+Error Email Recipient | `currency/import/error_email`
+
+### Store email address sensitive variables
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Email Configuration** > **General** > **Store Email Addresses**. 
 
 Name  | Config path
@@ -19,70 +26,27 @@ Sender Email | `trans_email/ident_custom1/email`
 Sender Name | `trans_email/ident_custom2/name`
 Sender Email | `trans_email/ident_custom2/email`
 
-### Admin variables
-These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Advanced** > **Admin**.
-
-Name  | Config path
-|--------------|--------------|
-Custom Admin URL | `admin/url/custom`
-Custom Admin Path | `admin/url/custom_path`
-
-
-### Shipping settings variables
-These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Shipping Settings**.
-
-Name  | Config path
-|--------------|--------------|
-Country | `shipping/origin/country_id`
-Region/State | `shipping/origin/region_id`
-ZIP/Postal Code | `shipping/origin/postcode`
-City | `shipping/origin/city`
-Street Address | `shipping/origin/street_line1`
-Street Address Line 2 | `shipping/origin/street_line2`
-
-
-
-### Sales emails variables
-These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Sales Emails**.
-
-Name  | Config path
-|--------------|--------------|
-Send Order Email Copy To | `sales_email/order/copy_to`
-Send Order Comment Email Copy To | `sales_email/order_comment/copy_to`
-Send Invoice Email Copy To | `sales_email/invoice/copy_to`
-Send Invoice Comment Email Copy To | `sales_email/invoice_comment/copy_to`
-Send Shipment Email Copy To | `sales_email/shipment/copy_to`
-Send Shipment Comment Email Copy To | `sales_email/shipment_comment/copy_to`
-Send Credit Memo Email Copy To | `sales_email/creditmemo/copy_to`
-Send Credit Memo Comment Email Copy To | `sales_email/creditmemo_comment/copy_to`
-
-
-### Currency setup variables
-These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **General** > **Currency setup**.
-
-Name  | Config path
-|--------------|--------------|
-Error Email Recipient | `currency/import/error_email`
-
-
-
-### Checkout variables
-These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Checkout**.
-
-Name  | Config path
-|--------------|--------------|
-Send Payment Failed Email Copy To | `checkout/payment_failed/copy_to`
-
-
-### Contacts variables
+### Contacts sensitive variables
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **General** > **Contacts**.
 
 Name  | Config path
 |--------------|--------------|
 Send Emails To | `contact/email/recipient_email`
 
+### New Relic reporting sensitive variables
+These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **General** > **New Relic Reporting**.
 
-### Catalog variables
+Name  | Config path
+|--------------|--------------|
+New Relic Account ID | `newrelicreporting/general/account_id`
+New Relic Application ID | `newrelicreporting/general/app_id`
+New Relic API Key | `newrelicreporting/general/api`
+Insights API Key | `newrelicreporting/general/insights_insert_key`
+
+## Catalog category
+This section lists variable names and config paths available for options in the Admin under **Stores** > Settings > **Configuration** > **Catalog**.
+
+### Catalog sensitive variables
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Catalog** > **Catalog**.
 
 Name  | Config path
@@ -98,31 +62,57 @@ Elasticsearch Server Hostname | `catalog/search/elasticsearch_server_hostname`
 Elasticsearch Server Port | `catalog/search/elasticsearch_server_port`
 Elasticsearch Index Prefix | `catalog/search/elasticsearch_index_prefix`
 
-### System variables
-These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Advanced** > **System**.
+### XML sitemap sensitive variables
+These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Catalog** > **XML Sitemap**.
 
 Name  | Config path
 |--------------|--------------|
-Error Email Recipient | `system/magento_scheduled_import_export_log/error_email`
+Error Email Recipient | `sitemap/generate/error_email`
 
+## Sales category
+This section lists variable names and config paths available for options in the Admin under **Stores** > Settings > **Configuration** > **Sales**.
 
-### Google API variables 
+### Shipping settings sensitive variables
+These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Shipping Settings**.
+
+Name  | Config path
+|--------------|--------------|
+Country | `shipping/origin/country_id`
+Region/State | `shipping/origin/region_id`
+ZIP/Postal Code | `shipping/origin/postcode`
+City | `shipping/origin/city`
+Street Address | `shipping/origin/street_line1`
+Street Address Line 2 | `shipping/origin/street_line2`
+
+### Sales emails sensitive variables
+These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Sales Emails**.
+
+Name  | Config path
+|--------------|--------------|
+Send Order Email Copy To | `sales_email/order/copy_to`
+Send Order Comment Email Copy To | `sales_email/order_comment/copy_to`
+Send Invoice Email Copy To | `sales_email/invoice/copy_to`
+Send Invoice Comment Email Copy To | `sales_email/invoice_comment/copy_to`
+Send Shipment Email Copy To | `sales_email/shipment/copy_to`
+Send Shipment Comment Email Copy To | `sales_email/shipment_comment/copy_to`
+Send Credit Memo Email Copy To | `sales_email/creditmemo/copy_to`
+Send Credit Memo Comment Email Copy To | `sales_email/creditmemo_comment/copy_to`
+
+### Checkout sensitive variables
+These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Checkout**.
+
+Name  | Config path
+|--------------|--------------|
+Send Payment Failed Email Copy To | `checkout/payment_failed/copy_to`
+
+### Google API sensitive variables 
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Google API**.
 
 Name  | Config path
 |--------------|--------------|
 Container Id | `google/analytics/container_id`
 
-
-### Developer variables
-These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Advanced** > **Developer**.
-
-Name  | Config path
-|--------------|--------------|
-Allowed IPs (comma separated) | `dev/restrict/allow_ips`
-
-
-### Shipping methods variables
+### Shipping methods sensitive variables
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Shipping Methods**.
 
 Name  | Config path
@@ -146,15 +136,7 @@ Access ID | `carriers/dhl/id`
 Password | `carriers/dhl/password`
 Account Number | `carriers/dhl/account`
 
-### XML sitemap variables
-These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Catalog** > **XML Sitemap**.
-
-Name  | Config path
-|--------------|--------------|
-Error Email Recipient | `sitemap/generate/error_email`
-
-
-### Sales variables
+### Sales sensitive variables
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Sales**.
 
 Name  | Config path
@@ -171,10 +153,35 @@ Send RMA Authorization Email Copy To | `sales_email/magento_rma_auth/copy_to`
 Send RMA Comment Email Copy To | `sales_email/magento_rma_comment/copy_to`
 Send RMA Comment Email Copy To | `sales_email/magento_rma_customer_comment/copy_to`
 
+## Advanced category
+This section lists variable names and config paths available for options in the Admin under **Stores** > Settings > **Configuration** > **Advanced**.
 
+### Admin sensitive variables
+These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Advanced** > **Admin**.
 
+Name  | Config path
+|--------------|--------------|
+Custom Admin URL | `admin/url/custom`
+Custom Admin Path | `admin/url/custom_path`
 
-### PayPal variables
+### System sensitive variables
+These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Advanced** > **System**.
+
+Name  | Config path
+|--------------|--------------|
+Error Email Recipient | `system/magento_scheduled_import_export_log/error_email`
+
+### Developer sensitive variables
+These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Advanced** > **Developer**.
+
+Name  | Config path
+|--------------|--------------|
+Allowed IPs (comma separated) | `dev/restrict/allow_ips`
+
+## Payment sensitive variables
+This section lists variable names and config paths available for options in the Admin under **Stores** > Settings > **Configuration** > **Sales** > **Payment**.
+
+### PayPal sensitive variables
 
 Name  | Config path
 |--------------|--------------|
@@ -186,8 +193,7 @@ Login | `paypal/fetch_reports/ftp_login`
 Custom Endpoint Hostname or IP-Address | `paypal/fetch_reports/ftp_ip`
 Custom Path | `paypal/fetch_reports/ftp_path`
 
-
-### PayPal Payflow Pro
+### PayPal Payflow Pro sensitive variables
 
 Name  | Config path
 |--------------|--------------|
@@ -199,16 +205,14 @@ Partner | `payment/payflowpro/partner`
 Proxy Host | `payment/payflowpro/proxy_host`
 Proxy Port | `payment/payflowpro/proxy_port`
 
-
-### PayPal Payflow Link
+### PayPal Payflow Link sensitive variables
 
 Name  | Config path
 |--------------|--------------|
 User | `payment/payflow_link/user`
 Password | `payment/payflow_link/pwd`
 
-
-### PayPal Payments Pro
+### PayPal Payments Pro sensitive variables
 
 Name  | Config path
 |--------------|--------------|
@@ -219,7 +223,7 @@ API Certificate | `paypal/wpp/api_cert`
 Proxy Host | `paypal/wpp/proxy_host`
 Proxy Port | `paypal/wpp/proxy_port`
 
-### Braintree variables
+### Braintree sensitive variables
 
 Name  | Config path
 |--------------|--------------|
@@ -231,8 +235,7 @@ Kount Merchant ID | `payment/braintree/kount_id`
 Override Merchant Name | `payment/braintree_paypal/merchant_name_override`
 Merchant's Email | `payment/authorizenet_directpost/merchant_email`
 
-
-### Worldpay variables
+### Worldpay sensitive variables
 
 Name  | Config path
 |--------------|--------------|
@@ -243,9 +246,7 @@ Remote Admin Authorisation Password | `payment/worldpay/auth_password`
 MD5 Secret for Transactions | `payment/worldpay/md5_secret`
 Signature Fields | `payment/worldpay/signature_fields`
 
-
-
-### Authorize.net Direct Post variables
+### Authorize.net Direct Post sensitive variables
 
 Name  | Config path
 |--------------|--------------|
@@ -253,7 +254,7 @@ API Login ID | `payment/authorizenet_directpost/login`
 Transaction Key | `payment/authorizenet_directpost/trans_key`
 Merchant MD5 | `payment/authorizenet_directpost/trans_md5`
 
-### eWAY variables
+### eWAY sensitive variables
 
 Name  | Config path
 |--------------|--------------|
@@ -264,8 +265,7 @@ Sandbox API Key | `payment/eway/sandbox_api_key`
 Sandbox API Password | `payment/eway/sandbox_api_password`
 Sandbox Client-side Encryption Key | `payment/eway/sandbox_encryption_key`
 
-
-### Cybersource variables
+### Cybersource sensitive variables
 
 Name  | Config path
 |--------------|--------------|
@@ -274,15 +274,3 @@ Transaction Key | `payment/cybersource/transaction_key`
 Profile ID | `payment/cybersource/profile_id`
 Access Key | `payment/cybersource/access_key`
 Secret Key | `payment/cybersource/secret_key`
-
-
-
-### New Relic reporting variables
-These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **General** > **New Relic Reporting**.
-
-Name  | Config path
-|--------------|--------------|
-New Relic Account ID | `newrelicreporting/general/account_id`
-New Relic Application ID | `newrelicreporting/general/app_id`
-New Relic API Key | `newrelicreporting/general/api`
-Insights API Key | `newrelicreporting/general/insights_insert_key`
