@@ -4,7 +4,7 @@ group: cloud
 subgroup: 40_live
 title: Configuration reference
 menu_title: Configuration reference
-menu_order: 45
+menu_order: 80
 menu_node: 
 level3_menu_node: level3parent
 level3_subgroup: config-ref

@@ -4,7 +4,7 @@ group: cloud
 subgroup: 40_live
 title: app:config:SCDDump configuration variables
 menu_title: app:config:SCDDump configuration variables
-menu_order: 47
+menu_order: 83
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: config-ref
