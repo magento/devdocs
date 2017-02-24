@@ -12,3 +12,4 @@ version: 2.0
 github_link: cloud/live/config-reference-payment.md
 ---
 
+{% include config/config-reference_payment.md %}
