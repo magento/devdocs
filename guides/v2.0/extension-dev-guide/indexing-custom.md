@@ -26,7 +26,7 @@ Your custom indexer class should implement <a href="{{ site.mage2000url }}lib/in
 
 *	Row reindex: processing a single entry from a dictionary; responsibility of `executeRow($id)`
 *	List reindex: processing a set of dictionary entries; responsibility of `executeList($ids)`, where `$ids` is an array of entity IDs
-*	Rull reindex: processing all entities from a specific dictionary; responsibility of `executeFull()`
+*	Full reindex: processing all entities from a specific dictionary; responsibility of `executeFull()`
 
 <h3 id="m2devgde-indexing-customconfiguration">Indexer configuration</h3>
 In the `etc` directory of your module, add `indexer.xml` with the following:

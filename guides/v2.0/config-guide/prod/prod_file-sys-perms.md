@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: 90_prod
+subgroup: 999_prod
 title: Magento ownership and permissions in development and production
 menu_title: Magento ownership and permissions in development and production
 menu_node:
@@ -35,7 +35,7 @@ Because having one file system owner is less secure, we recommend you deploy Mag
 ### Set up one owner for default or developer mode {#mage-owner-one-devel}
 In default or developer mode, the following directories must be writable by the user:
 
-*	`vendor` (Composer or compressed archive installation)
+*	`vendor` 
 *	`app/etc`
 *	`pub/static`
 *	`var`
@@ -60,7 +60,7 @@ When you're ready to deploy your site to production, you should remove write acc
 
 To update components, install new components, or to upgrade the Magento software, all of the preceding directories must be read-write.
 
-#### Make files and directories read-only
+#### Make code files and directories read-only
 To remove writable permissions to files and directories from the web server user's group:
 
 1.	Log in to your Magento server.
@@ -72,11 +72,7 @@ To remove writable permissions to files and directories from the web server user
 
 		find app/code pub/static app/etc var/generation var/di var/view_preprocessed vendor \( -type f -or -type d \) -exec chmod u-w {} \; && chmod o-rwx app/etc/env.php && chmod u+x bin/magento
 
-	<div class="bs-callout bs-callout-info" id="info">
-  		<p>If you're a contributing developer, replace <code>vendor</code> with <code>app/code</code> in the preceding commands. (A contributing developer <a href="{{page.baseurl}}install-gde/prereq/dev_install.html">clones the Magento 2 GitHub repository</a> so they can contribute to our codebase.)</p>
-	</div>
-
-#### Make files and directories writable:
+#### Make code files and directories writable:
 To make files and directories writable so you can update components and upgrade the Magento software:
 
 1.	Log in to your Magento server.
@@ -84,10 +80,10 @@ To make files and directories writable so you can update components and upgrade 
 3.	Enter the following commands:
 
 		chmod -R u+w .
-		
-	<div class="bs-callout bs-callout-info" id="info" markdown="1">
-  	If you're a contributing developer, replace `vendor` with `app/code` in the preceding commands. (A contributing developer <a href="{{page.baseurl}}install-gde/prereq/dev_install.html">clones the Magento 2 GitHub repository</a> so they can contribute to our codebase.)
-	</div>
+
+### Optionally set `magento_umask`
+
+{% include install/file-system-umask.md %}
 
 {% endcollapsibleh2 %}
 
@@ -151,7 +147,7 @@ When you're ready to deploy your site to production, you should remove write acc
 *	`var/di`
 *	`var/view_preprocessed`
 
-#### Make files and directories read-only
+#### Make code files and directories read-only
 To remove writable permissions to files and directories from the web server user's group:
 
 1.	Log in to your Magento server.
@@ -163,11 +159,7 @@ To remove writable permissions to files and directories from the web server user
 
 		find app/code lib pub/static app/etc var/generation var/di var/view_preprocessed vendor \( -type d -or -type f \) -exec chmod g-w {} \; && chmod o-rwx app/etc/env.php
 
-	<div class="bs-callout bs-callout-info" id="info">
-  		<p>If you're a contributing developer, replace <code>vendor</code> with <code>app/code</code> in the preceding commands. (A contributing developer <a href="{{page.baseurl}}install-gde/prereq/dev_install.html">clones the Magento 2 GitHub repository</a> so they can contribute to our codebase.)</p>
-	</div>
-
-#### Make files and directories writable:
+#### Make code files and directories writable:
 To make files and directories writable so you can update components and upgrade the Magento software:
 
 1.	Log in to your Magento server.
@@ -176,12 +168,8 @@ To make files and directories writable so you can update components and upgrade 
 
 		find app/code lib var pub/static pub/media vendor app/etc \( -type d -or -type f \) -exec chmod g+w {} \; && chmod o+rwx app/etc/env.php
 
-	<div class="bs-callout bs-callout-info" id="info" markdown="1">
-  	If you're a contributing developer, replace `vendor` with `app/code` in the preceding commands. (A contributing developer <a href="{{page.baseurl}}install-gde/prereq/dev_install.html">clones the Magento 2 GitHub repository</a> so they can contribute to our codebase.)
-	</div>
 {% endcollapsibleh2 %}
 
-{% include install/file-system-umask.md %}
 
 
 

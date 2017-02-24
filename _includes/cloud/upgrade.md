@@ -3,7 +3,7 @@
 This topic discusses how to upgrade the Magento Enterprise Cloud Edition software from any version after 2.0.4. If you're currently using version 2.0.4, see [Upgrade from version 2.0.4](#cloud-upgrade-204).
 
 <div class="bs-callout bs-callout-warning">
-    <p>Always upgrade your local system first, then your <a href="{{ page.baseurl }}cloud/discover-arch.html#cloud-arch-int">integration environment</a> system (that is, the remote Cloud server). Resolve any issues before upgrading to either <a href="{{ page.baseurl }}cloud/discover-arch.html#cloud-arch-stage">staging</a> or <a href="{{ page.baseurl }}cloud/discover-arch.html#cloud-arch-prod">production</a>.</p>
+    <p>Always upgrade your local system first, then your <a href="{{ page.baseurl }}cloud/discover-arch.html#cloud-arch-int">integration environment</a> system (that is, the remote Cloud server). Resolve any issues before upgrading either <a href="{{ page.baseurl }}cloud/discover-arch.html#cloud-arch-stage">staging</a> or <a href="{{ page.baseurl }}cloud/discover-arch.html#cloud-arch-prod">production</a>.</p>
 </div>
 
 ## Get started
@@ -14,12 +14,14 @@ This topic discusses how to upgrade the Magento Enterprise Cloud Edition softwar
 
 {% endcollapsible %}
 
+### Prerequisite: create `auth.json` (if necessary)
+
+{% include cloud/auth-json.md %}
+
 ## Upgrade to the latest version
 We recommend you start by backing up all of the databases you're about to change (local, remote integration, and staging or production).
 
-### Step 1: Back up your local system (database, code, and media)
-
-{% collapsible To back up your local system: %}
+{% collapsibleh3 Step 1: Back up your local system (database, code, and media) %}
 
 Enter the following command:
 
@@ -29,21 +31,17 @@ You can omit `[--media]` if you have a large number of media files and if you do
 
 If the upgrade fails, you can roll back your backup using the [`magento setup:rollback` command]({{ page.baseurl }}install-gde/install/cli/install-cli-backup.html#instgde-cli-uninst-roll).
 
-{% endcollapsible %}
+{% endcollapsibleh3 %}
 
-### Step 2: Back up your remote integration database
-
-{% collapsible To back up your remote integration database: %}
+{% collapsibleh3 Step 2: Back up your remote integration database %}
 
 Enter the following command to make a local backup of the remote database:
 
     magento-cloud environment:mysql-dump
 
-{% endcollapsible %} 
+{% endcollapsibleh3 %} 
 
-### Step 3: Back up your staging and production databases
-
-{% collapsible To back up your staging and production databases: %}
+{% collapsibleh3 Step 3: Back up your staging and production databases %}
 
 1.  Open an SSH connection to your staging or production server:
 
@@ -58,11 +56,9 @@ Enter the following command to make a local backup of the remote database:
         mysqldump -h <database host> --user=<database user name> --password=<password> --single-transaction main | gzip - > /tmp/database.sql.gz
 8.  Enter `exit` to terminate the SSH connection.
 
-{% endcollapsible %} 
+{% endcollapsibleh3 %} 
 
-### Step 4: Verify other changes
-
-{% collapsible To verify other changes: %}
+{% collapsibleh3 Step 4: Verify other changes %}
 
 Verify other changes you're going to submit to source control before you start the upgrade:
 
@@ -72,11 +68,9 @@ Verify other changes you're going to submit to source control before you start t
         git status
 3.  If there are changes you do *not* want to submit to source control, branch or stash them now.
 
-{% endcollapsible %} 
+{% endcollapsibleh3 %} 
 
-### Step 5: Complete the upgrade
-
-{% collapsible To complete the upgrade: %}
+{% collapsibleh3 Step 5: Complete the upgrade %}
 
 1.  Change to your Magento base directory and enter the following commands in the order shown:
 
@@ -103,7 +97,7 @@ Verify other changes you're going to submit to source control before you start t
         magento-cloud snapshot:create -e <environment ID>
 6.  [Verify your upgrade](#upgrade-verify).
 
-{% endcollapsible %}
+{% endcollapsibleh3 %}
 
 ## Upgrade from version 2.0.4 {#cloud-upgrade-204}
 This section discusses steps to upgrade *only* if your current Magento Enterprise Cloud Edition version is 2.0.4.
@@ -229,15 +223,11 @@ Verify your upgrade as discussed in the next section.
 This section discusses how to verify your upgrade on your local development machine and in the cloud.
 
 ### Verify the upgrade locally
-To verify your upgrade locally, enter the following command from your Magento root directory:
+To verify the upgrade in your local Cloud integration environment and in the Magento Admin:
 
-    php bin/magento --version
+1.  Enter the following command from your Magento root directory:
 
-You can also log in to the Magento Admin; the version displays in the lower right corner of the page.
-
-### Verify the upgrade locally
-To verify the upgrade in your local Cloud integration environment:
-
+        php bin/magento --version
 1.  Find the base URL for your integration environment:
 
         magento-cloud environment:url
@@ -260,13 +250,12 @@ In some cases, an error similar to the following displays when you try to access
 To view error details locally, open the indicated file name in the `<Magento root dir>/var/report` directory. 
 
 #### View error details on the server
-To view the error in your Cloud integration environment, enter the following commands:
+To view the error in your Cloud integration environment, [SSH to the server]({{ page.baseurl }}cloud/env/environments-ssh.html) and enter the following command:
 
-    magento-cloud environment:ssh
-    vim /app/var/report/<error number>
+    vi /app/var/report/<error number>
 
 #### Resolve the error
-If the error includes the following, run the `bin/magento setup:upgrade` command to resolve it:
+One possible error is the following::
 
     a:4:{i:0;s:433:"Please upgrade your database: Run "bin/magento setup:upgrade" from the Magento root directory.
     The following modules are outdated:
@@ -276,14 +265,11 @@ If the error includes the following, run the `bin/magento setup:upgrade` command
 
 To resolve the error:
 
-1.  If the error is in your integration environment, SSH to the environment:
+1.  [SSH to the server]({{ page.baseurl }}cloud/env/environments-ssh.html).
+2.  [Examine the logs]({{ page.baseurl }}cloud/trouble/environments-logs.html) to determine the source of the issue.
+3.  After you fix the source of the issue, push the change to the server, which causes the upgrade to restart.
 
-        magento-cloud environment:ssh
-2.  Enter the following command:
-
-        php <Magento root dir>/bin/magento setup:upgrade
-3.  Wait for the command to complete.
-4.  *Local environment only*. Update the branch:
+    For example, on a local branch, enter the following commands:
 
         git add -A && git commit -m "Update"
         git push origin <branch name>

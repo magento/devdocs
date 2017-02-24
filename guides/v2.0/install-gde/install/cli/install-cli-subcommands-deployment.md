@@ -89,7 +89,7 @@ The following table discusses the meanings of installation parameters and values
 	<tr>
 		<td><p>--session-save</p></td>
 		<td><p>Use any of the following:</p>
-		<ul><li><code>db</code> to store session data in the <a href="{{page.baseurl}}config-guide/database/database.html">database</a>. Choose database storage if you have a clustered database; otherwise, there might not be much benefit over file-based storage.</li>
+		<ul><li><code>db</code> to store session data in the <a href="{{page.baseurl}}config-guide/cache/caching-database.html">database</a>. Choose database storage if you have a clustered database; otherwise, there might not be much benefit over file-based storage.</li>
 			
 			<li><code>files</code> to store session data in the file system. File-based session storage is appropriate unless the Magento file system access is slow or you have a clustered database.</li>
 	</ul></td>
@@ -133,7 +133,7 @@ The following table discusses the meanings of installation parameters and values
 If applicable, continue your Magento software installation:
 
 *	<a href="{{page.baseurl}}install-gde/install/cli/install-cli-install.html">Command line installation</a>
-*	<a href="{{page.baseurl}}install-gde/install/install-web.html">Setup Wizard installation</a>
+*	<a href="{{page.baseurl}}install-gde/install/web/install-web.html">Setup Wizard installation</a>
 
 <!-- <h2 id="instgde-cli-subcommands-dep-config-enable-modules">About enabling and disabling modules</h2>
 {% include install/enable-disable-modules.html %} -->

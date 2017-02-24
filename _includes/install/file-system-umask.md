@@ -1,6 +1,5 @@
 <div markdown="1">
 
-## Optionally set `magento_umask` {#mage-owner-umask}
 The web server group must have write permissions to certain directories in the Magento file system; however, you might want tighter security, especially in production. We provide the flexibility for you to further restrict those permissions using a [umask](http://www.cyberciti.biz/tips/understanding-linux-unix-umask-value-usage.html){:target="_blank"}.
 
 Our solution is to enable you to optionally create a file named `magento_umask` in your Magento root directory that restricts permissions for the web server group and everyone else. 
