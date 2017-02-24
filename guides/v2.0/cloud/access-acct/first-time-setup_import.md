@@ -360,11 +360,53 @@ To drop and re-create the Cloud database:
 
   zcat var/db.sql.gz | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' | mysql -h <db-host> -P <db-port> -p -u <db-user> <db-name> 
 
-### Update environment-specific configurations
+### Update base URLs
+Before you can access Magento from your local Cloud development system, you must change the Base URLs in the Magento database. Base URLs are stored in the `core_config_data` table.
 
-You'll need to update the base_url configuration (web/[secure|unsecure]/base_url) for the default configuration scope and for each store view, store, and website scope.
+The following example shows how to change _only_ the insecure URL but you can use the same procedure to change secure URLs as well.
 
-Additionally, in order to be able to decrypt encrypted data from your imported database, copy your encryption from your old `env.php` file into the `env.php` file of your new application. `env.php` contains a nested PHP array storing configuration data. Place the encryption key in the path: `crypt->key`.
+To update the unsecure base URL:
+
+1.  In your Cloud development system, find the value of the integration system URL:
+
+        magento-cloud url
+2.  SSH to the Cloud integration server:
+
+        magento-cloud ssh
+3.  Connect to the database.
+
+        mysql -h <db-host> -P <db-port> -p -u <db-user> <db-name>
+
+    For example, if your Cloud databases uses default values, enter:
+
+        mysql -h database.internal -u user main
+4.  Show the contents of the `core_config_data` table.
+
+        SHOW * from core_config_data;
+
+    Note the `path` of `web/unsecure/base_url`; this is the value you'll change.
+5.  Enter the following command to change the value of `path` to your integration server's unsecure base URL:
+
+        UPDATE core_config_data SET value=<Cloud unsecure base URL> WHERE path=web/unsecure/base_url;
+6.  Confirm the change by entering the following command:
+
+        SHOW * from core_config_data;
+7.  If the change was successful, enter `exit` to exit the `[Maria DB]` prompt.
+8.  Continue with the next section.
+
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+For your system to be fully functional, you must also set unsecure and secure URLs for the default scope as well as for all websites, stores, and store views.
+</div>
+
+### Copy the encryption key
+To be able to decrypt encrypted data from your imported database, copy your encryption from your old `env.php` file into the `env.php` file of your new application. `env.php` contains a nested PHP array storing configuration data. 
+
+1.  In your Magento EE system, open `<Magento install dir>/app/etc/env.php` in a text editor.
+2.  Search for the value of `key` (it's in the `crypt` array).
+3.  Copy the value to the clipboard.
+4.  In your Cloud system, open `app/etc/env.php` in a text editor.
+5.  Replace the existing value of `key` with your Magento EE key.
+6.  Save your changes to `env.php` and exit the text editor.
 
 If `env.php` does not exist, create it with the following contents:
 
@@ -372,7 +414,7 @@ If `env.php` does not exist, create it with the following contents:
 return array (
   'crypt' =>
   array (
-    'key' => '331724b9bf288722d3da80b56e38b440',
+    'key' => '<your encryption key>',
   ),
 );
 {% endhighlight %}
@@ -402,6 +444,12 @@ On the Cloud environment, flush the cache:
 
     bin/magento cache:flush
 
+After the cache flushes, enter `exit` to close the SSH tunnel.
+
 ## Verify the import
+To verify everything imported properly, perform the following tasks in your local Cloud development environment:
 
+1.  On your Cloud environment, enter the following commands to find the information to log in to the Magento Admin and to view the storefront:
 
+        magento-cloud environment:url
+        magento-cloud variable:list
