@@ -10,18 +10,16 @@ version: 2.0
 github_link: cloud/env/environments-ssh.md
 ---
 
-## Connect to the environment using SSH {#env-ssh}
-Before you can use SSH to connect to an environment, you must add your [SSH public key]({{page.baseurl}}cloud/before/before-workspace-ssh.html) 
-to your account. For security reasons, in order to add your public key to a production or staging environment,
- you must create a support ticket requesting the key to be added.
+Before you can use SSH to connect to an [integration]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-int) environment, you must add your [SSH public key]({{page.baseurl}}cloud/before/before-workspace-ssh.html) to your account. 
+
+For security reasons, to add your public key to a [production]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-prod) or [staging]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-stage) system, you must create a [support ticket]({{ page.baseurl }}cloud/get-help.html).
 
 You can then connect using SSH in any of the following ways:
 
-## Integration environments
+## Integration systems {#cloud-ssh-int}
+Following are methods to SSH into your integration system.
 
-Following are methods to SSH into your integration environment.
-
-###$# SSH using the magento-cloud tool
+{% collapsibleh3 SSH using the command line %}
 
 To SSH to an environment using the `magento-cloud` command line:
 
@@ -38,21 +36,23 @@ To SSH to an environment using the `magento-cloud` command line:
 
 		magento-cloud ssh -p <project ID> -e <environment ID>
 
-###$# Find SSH connection details using the Web Interface
+{% endcollapsibleh3 %}
+
+{% collapsibleh3 Find SSH connection details using the Web Interface %}
+
 To SSH to an environment using the Web Interface:
 
 1.	Log in to the Web Interface.
 2.	Hover the mouse pointer over **Access Site** in the desired environment as the following figure shows.
 
-	![Find the SSH URL using the Web Interface]({{ site.baseurl }}common/images/cloud_ssh-access.png){:width="500px"}
+	![Find the SSH URL using the Web Interface]({{ site.baseurl }}common/images/cloud_ssh-access.png){:width="400px"}
 
 3.	Click the clipboard button to copy the full SSH command to the clipboard. Enter the command in a terminal window.
 
-## Staging and Production environments
+{% endcollapsibleh3 %}
 
-The `magento-cloud` tool is not used to SSH into staging and production environments. To SSH into staging and production 
-environments, first create a support ticket requesting for your public key to be added to the environment. The user and 
-URL will have been supplied when the environment was provisioned.
+## Staging and production systems {#cloud-ssh-stage}
+You can't use the `magento-cloud` command line to SSH into staging and production systems. To SSH into staging and production systems, first create a [support ticket]({{ page.baseurl }}cloud/get-help.html) requesting for your public key to be added to the system. The user and  URL will have been supplied when the system was provisioned.
 
 #### Related topics
 *	[Manage your environments]({{page.baseurl}}cloud/env/environments.html)
