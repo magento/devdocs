@@ -378,53 +378,30 @@ return array (
 {% endhighlight %}
 
 ### Import media
-Now copy over media files inside pub/media. On your existing project, from the application's root directory, create a tarball of media assets (product images, etc) on your existing project.
+To import media files into your Cloud environment:
 
-  tar -czf media.tgz pub/media
+1.  Copy the media tarball to the application's var directory on the cloud environment. 
 
-Copy the media tarball to the application's var directory on the cloud environment
+    As the Magento file system owner on your Magento EE system, enter the following command:
 
-  rsync media.tgz <ssh url>:var/media.tgz
+    rsync <Magento EE install dir>/var/backups/<backup file name> <cloud ssh url>:var/media.tgz
 
-On the cloud environment, clear existing media files:
+    For example,
 
-  rm -rf pub/media/*
+        rsync /var/www/html/magento2/var/backups/1487962699_filesystem_media.tgz 43bkopvkhelhy-master-l8uv4kp@ssh.us.magentosite.cloud:var/media.tgz
+2.  SSH to your Cloud environment.
+3.  Enter the following command to clear existing media files:
 
-Unpack the media tarball into the pub/media directory:
+        rm -rf pub/media/*
+4.  Enter the following command to extract the media files to the `pub/media` directory:
 
-  tar -xzf var/media.tgz pub/media
+        tar -xzf var/media.tgz pub/media
 
 ### Cleanup
-On the cloud environment, flush the cache:
+On the Cloud environment, flush the cache:
 
-  bin/magento cache:flush
+    bin/magento cache:flush
+
+## Verify the import
 
 
-
---- EXISTING TOPIC BELOW THIS LINE TBD ---
-
-## Before you push your imported project {#cloud-import-before}
-Before you push your Magento project code, you *must* add `auth.json` to the project root directory and you *should* add configuration files as well.
-
-### Add `auth.json`
-
-{% include cloud/auth-json.md %}
-
-### Configuration files
-Magento Enterprise Cloud Edition enables you to specify information like the Magento docroot, details about services (like the database, Redis, and so on), and routes in `yaml` files.
-
-These files must be created before you push to your repository for Magento to be properly deployed.
-
-<!-- https://docs.platform.sh/drupal_migrate/guides/configuration/drupal_application.html 
-  https://docs.platform.sh/drupal_migrate/guides/type/php/drupal/migrate/import-database.html
-  https://docs.platform.sh/drupal_migrate/guides/type/php/drupal/migrate/import-files.html -->
-
-#### More information
-
-*	[`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)
-*	[`routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html)
-*	[`services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html)
-
-#### Next steps
-* [Set up an environment]({{ page.baseurl }}cloud/access-acct/set-up-env.html)
-* [Set Magento Admin environment variables]({{ page.baseurl }}cloud/access-acct/set-up-env.html)
