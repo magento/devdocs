@@ -166,6 +166,15 @@ To edit `composer.json`:
         cd <Magento EE install dir>
         git add -A && git commit -m "Add Cloud files" && git push origin <branch name>
 
+### Back up media files
+This section discusses how to use the [`magento setup:backup --media`]({{ page.basesurl }}install/cli/install-cli-backup.html) to back up media files.
+
+To back up media files, enter the following command:
+
+    php <Magento EE install dir>/bin/magento setup:backup --media
+
+The backup is stored in the `<Magento EE install dir>/var/backups` directory.
+
 ### Prepare the Magento EE database  {#cloud-import-prepare-db}
 Create a dump of the database you want to import using mysqldump. 
 
