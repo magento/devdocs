@@ -906,14 +906,6 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/cloud/env/environments-logs.html">Viewing logs from your environment</a></li>
-
-									
-
-								
-
-									
-
 										<li class="level3Parent " id="vars"><a href="#">Environment variables</a>
 
 
@@ -1249,6 +1241,14 @@
 
 									
 
+									<li class="level-2 "><a href="/guides/v2.0/cloud/trouble/environments-logs.html">Use logs for troubleshooting</a></li>
+
+									
+
+								
+
+									
+
 									<li class="level-2 "><a href="/guides/v2.0/cloud/trouble/trouble_proj-startover.html">Resolve issues with a new project</a></li>
 
 									
@@ -1561,7 +1561,7 @@ is used in the <a href="/guides/v2.0/cloud/project/project-conf-files_routes.htm
 <h2 id="cloud-yaml-platform-type"><code>type</code> and <code>build</code></h2>
 <p>The <code>type</code>  and <code>build</code> properties are used to build and run the project. The only supported <code>type</code> currently is PHP.</p>
 
-<div class="collapsible"><b class="collapsible-title">type and build properties </b><div class="collapsible-content"><p>Supported versions:</p>
+<p>Supported versions:</p>
 
 <pre><code>type: php:5.5
 type: php:5.6
@@ -1576,7 +1576,6 @@ type: php:7.0
 build:
     flavor: composer
 </code></pre>
-</div></div>
 
 <h2 id="cloud-yaml-platform-access"><code>access</code></h2>
 <p><code>access</code> defines the user roles who can log in using SSH to the
@@ -1594,7 +1593,7 @@ ssh: viewer
 <p><code>relationships</code> defines how services are mapped in your
 application.</p>
 
-<div class="collapsible"><b class="collapsible-title">relationships: </b><div class="collapsible-content"><p>The left-hand side is the name of the relationship as it will be exposed
+<div class="collapsible"><b class="collapsible-title">relationships </b><div class="collapsible-content"><p>The left-hand side is the name of the relationship as it will be exposed
 to the application in the <code>MAGENTO_CLOUD_RELATIONSHIPS</code> environment
 variable. The right-hand side is in the form
 <code>&lt;service name&gt;:&lt;endpoint name&gt;</code>, where <code>&lt;service name&gt;</code> comes from 
@@ -1615,7 +1614,7 @@ search: "searchengine:solr"
 <h2 id="cloud-yaml-platform-web"><code>web</code></h2>
 <p><code>web</code> defines how your application is exposed to the web (in HTTP). Here we tell the web application how to serve content, from the front-controller script to a non-static request to an <code>index.php</code> file on the root. We support any directory structure so the static file can be in a sub directory, and the <code>index.php</code> file can be further down.</p>
 
-<div class="collapsible"><b class="collapsible-title">web: </b><div class="collapsible-content"><p><code>web</code> supports the following:</p>
+<div class="collapsible"><b class="collapsible-title">web </b><div class="collapsible-content"><p><code>web</code> supports the following:</p>
 
 <ul>
   <li><code>document_root</code>: The path relative to the root of the application
@@ -1664,7 +1663,7 @@ application in MB.</p>
 <p><code>mounts</code> is an object whose keys are paths relative to the root of
 the application. It’s in the form <code>volume_id[/subpath]</code>.</p>
 
-<div class="collapsible"><b class="collapsible-title">mounts: </b><div class="collapsible-content"><p>The format is:</p>
+<div class="collapsible"><b class="collapsible-title">mounts property </b><div class="collapsible-content"><p>The format is:</p>
 
 <pre><code>"/public/sites/default/files": "shared:files/files"
 </code></pre>
@@ -1678,7 +1677,7 @@ the application. It’s in the form <code>volume_id[/subpath]</code>.</p>
 <p><code>dependencies</code> enables you to specify dependencies that your
 application might need during the build process.</p>
 
-<div class="collapsible"><b class="collapsible-title">dependencies: </b><div class="collapsible-content"><p>Magento Enterprise Cloud Edition supports dependencies on the following
+<div class="collapsible"><b class="collapsible-title">dependencies property </b><div class="collapsible-content"><p>Magento Enterprise Cloud Edition supports dependencies on the following
 languages:</p>
 
 <ul>
@@ -1707,7 +1706,7 @@ commands to run during the deployment process.</p>
 <p>They can be executed at various points in the lifecycle of the
 application.</p>
 
-<div class="collapsible"><b class="collapsible-title">hooks: </b><div class="collapsible-content"><p>Possible hooks are:</p>
+<div class="collapsible"><b class="collapsible-title">hooks property </b><div class="collapsible-content"><p>Possible hooks are:</p>
 
 <ul>
   <li><code>build</code>: We run build hooks before your application has been
@@ -1803,7 +1802,7 @@ cronrun:
 <pre><code>php -m
 </code></pre>
 
-<div class="collapsible"><b class="collapsible-title">View PHP extensions: </b><div class="collapsible-content"><p>Magento requires the following PHP extensions that are enabled by default:</p>
+<p>Magento requires the following PHP extensions that are enabled by default:</p>
 
 <ul>
   <li><a href="http://php.net/manual/en/book.curl.php" target="_blank">curl</a></li>
@@ -1863,7 +1862,6 @@ cronrun:
   <li><a href="http://php.net/manual/en/book.xhprof.php" target="_blank">xhprof</a></li>
   <li><a href="http://php.net/manual/en/book.xmlrpc.php" target="_blank">xmlrpc</a></li>
 </ul>
-</div></div>
 
 <h3 id="cloud-yaml-platform-php-set">Customize <code>php.ini</code> settings</h3>
 <p>You can also create and push a <code>php.ini</code> file that is appended to
@@ -1884,7 +1882,7 @@ the application (the repository root).</p>
 <p>For a list of recommended PHP configuration settings, see <a href="/guides/v2.0/install-gde/prereq/php-settings.html">Required PHP settings</a>.</p>
 
 <p>After pushing your file, you can check that the custom PHP configuration
-has been added to your environment by SSHing into your environment and entering:</p>
+has been added to your environment by <a href="/guides/v2.0/cloud/env/environments-start.html#env-start-tunn">creating an SSH tunnel</a> to your environment and entering:</p>
 
 <pre><code>cat /etc/php5/fpm/php.ini
 </code></pre>

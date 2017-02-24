@@ -906,14 +906,6 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/cloud/env/environments-logs.html">Viewing logs from your environment</a></li>
-
-									
-
-								
-
-									
-
 										<li class="level3Parent " id="vars"><a href="#">Environment variables</a>
 
 
@@ -1249,6 +1241,14 @@
 
 									
 
+									<li class="level-2 "><a href="/guides/v2.0/cloud/trouble/environments-logs.html">Use logs for troubleshooting</a></li>
+
+									
+
+								
+
+									
+
 									<li class="level-2 "><a href="/guides/v2.0/cloud/trouble/trouble_proj-startover.html">Resolve issues with a new project</a></li>
 
 									
@@ -1531,7 +1531,7 @@
   <p>This topic discusses how to upgrade the Magento Enterprise Cloud Edition software from any version after 2.0.4. If you’re currently using version 2.0.4, see <a href="#cloud-upgrade-204">Upgrade from version 2.0.4</a>.</p>
 
   <div class="bs-callout bs-callout-warning">
-    <p>Always upgrade your local system first, then your <a href="/guides/v2.0/cloud/discover-arch.html#cloud-arch-int">integration environment</a> system (that is, the remote Cloud server). Resolve any issues before upgrading to either <a href="/guides/v2.0/cloud/discover-arch.html#cloud-arch-stage">staging</a> or <a href="/guides/v2.0/cloud/discover-arch.html#cloud-arch-prod">production</a>.</p>
+    <p>Always upgrade your local system first, then your <a href="/guides/v2.0/cloud/discover-arch.html#cloud-arch-int">integration environment</a> system (that is, the remote Cloud server). Resolve any issues before upgrading either <a href="/guides/v2.0/cloud/discover-arch.html#cloud-arch-stage">staging</a> or <a href="/guides/v2.0/cloud/discover-arch.html#cloud-arch-prod">production</a>.</p>
 </div>
 
   <h2 id="get-started">Get started</h2>
@@ -1606,12 +1606,29 @@
 </div>
 </div></div>
 
-  <h2 id="upgrade-to-the-latest-version">Upgrade to the latest version</h2>
-  <p>We recommend you start by backing up all of the databases you’re about to change (local, remote integration, and staging or production).</p>
+  <h3 id="prerequisite-create-authjson-if-necessary">Prerequisite: create <code>auth.json</code> (if necessary)</h3>
 
-  <h3 id="step-1-back-up-your-local-system-database-code-and-media">Step 1: Back up your local system (database, code, and media)</h3>
+  <div>
 
-  <div class="collapsible"><b class="collapsible-title">To back up your local system: </b><div class="collapsible-content"><p>Enter the following command:</p>
+    <p>Because the Composer repository that contains Magento Enterprise Cloud Edition requires authentication, you must add a file named <code>auth.json</code> to your project’s root directory. This file contains your authentication keys. Without <code>auth.json</code>, the Magento software won’t download.</p>
+
+    <p>Add <code>auth.json</code> in your Magento Enterprise Cloud Edition project root folder if there isn’t one already.</p>
+
+    <p>Replace the values in the following sample with your Magento Enterprise Cloud Edition public and private keys. You can get these keys from your account owner (that is, the person who created the Cloud account).</p>
+
+    <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+   <span class="nt">&quot;http-basic&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;repo.magento.com&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;username&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;your public key&gt;&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;your private key&gt;&quot;</span>
+      <span class="p">}</span>
+   <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+    <h2 id="upgrade-to-the-latest-version">Upgrade to the latest version</h2>
+    <p>We recommend you start by backing up all of the databases you’re about to change (local, remote integration, and staging or production).</p>
+
+    <div class="collapsible collapsible-h3"><h3 class="collapsible-title">Step 1: Back up your local system (database, code, and media) </h3><div class="collapsible-content"><p>Enter the following command:</p>
 
 <pre><code>php &lt;Magento root dir&gt;/bin/magento setup:backup --code --db [--media]
 </code></pre>
@@ -1621,17 +1638,13 @@
 <p>If the upgrade fails, you can roll back your backup using the <a href="/guides/v2.0/install-gde/install/cli/install-cli-backup.html#instgde-cli-uninst-roll"><code>magento setup:rollback</code> command</a>.</p>
 </div></div>
 
-  <h3 id="step-2-back-up-your-remote-integration-database">Step 2: Back up your remote integration database</h3>
-
-  <div class="collapsible"><b class="collapsible-title">To back up your remote integration database: </b><div class="collapsible-content"><p>Enter the following command to make a local backup of the remote database:</p>
+    <div class="collapsible collapsible-h3"><h3 class="collapsible-title">Step 2: Back up your remote integration database </h3><div class="collapsible-content"><p>Enter the following command to make a local backup of the remote database:</p>
 
 <pre><code>magento-cloud environment:mysql-dump
 </code></pre>
 </div></div>
 
-  <h3 id="step-3-back-up-your-staging-and-production-databases">Step 3: Back up your staging and production databases</h3>
-
-  <div class="collapsible"><b class="collapsible-title">To back up your staging and production databases: </b><div class="collapsible-content"><ol>
+    <div class="collapsible collapsible-h3"><h3 class="collapsible-title">Step 3: Back up your staging and production databases </h3><div class="collapsible-content"><ol>
   <li>
     <p>Open an SSH connection to your staging or production server:</p>
 
@@ -1658,9 +1671,7 @@
 </ol>
 </div></div>
 
-  <h3 id="step-4-verify-other-changes">Step 4: Verify other changes</h3>
-
-  <div class="collapsible"><b class="collapsible-title">To verify other changes: </b><div class="collapsible-content"><p>Verify other changes you’re going to submit to source control before you start the upgrade:</p>
+    <div class="collapsible collapsible-h3"><h3 class="collapsible-title">Step 4: Verify other changes </h3><div class="collapsible-content"><p>Verify other changes you’re going to submit to source control before you start the upgrade:</p>
 
 <ol>
   <li>If you haven’t done so already, change to your project root directory.</li>
@@ -1674,9 +1685,7 @@
 </ol>
 </div></div>
 
-  <h3 id="step-5-complete-the-upgrade">Step 5: Complete the upgrade</h3>
-
-  <div class="collapsible"><b class="collapsible-title">To complete the upgrade: </b><div class="collapsible-content"><ol>
+    <div class="collapsible collapsible-h3"><h3 class="collapsible-title">Step 5: Complete the upgrade </h3><div class="collapsible-content"><ol>
   <li>
     <p>Change to your Magento base directory and enter the following commands in the order shown:</p>
 
@@ -1713,10 +1722,10 @@ git push origin &lt;branch name&gt;
 </ol>
 </div></div>
 
-  <h2 id="cloud-upgrade-204">Upgrade from version 2.0.4</h2>
-  <p>This section discusses steps to upgrade <em>only</em> if your current Magento Enterprise Cloud Edition version is 2.0.4.</p>
+    <h2 id="cloud-upgrade-204">Upgrade from version 2.0.4</h2>
+    <p>This section discusses steps to upgrade <em>only</em> if your current Magento Enterprise Cloud Edition version is 2.0.4.</p>
 
-  <div class="collapsible"><b class="collapsible-title">To upgrade from version 2.0.4 </b><div class="collapsible-content"><h3 id="create-an-authorization-file">Create an authorization file</h3>
+    <div class="collapsible"><b class="collapsible-title">To upgrade from version 2.0.4 </b><div class="collapsible-content"><h3 id="create-an-authorization-file">Create an authorization file</h3>
 <p>To enable you to install and update the Magento software, you must have an <code>auth.json</code> file in your project’s root directory. <code>auth.json</code> contains your Magento EE <a href="http://devdocs.magento.com/guides/v2.1/install-gde/prereq/connect-auth.html">authorization credentials</a>.</p>
 
 <p>In some cases, you might already have <code>auth.json</code> so check to see if it exists and has your authentication credentials before you create a new one.</p>
@@ -1837,100 +1846,89 @@ php.ini
 <p>Verify your upgrade as discussed in the next section.</p>
 </div></div>
 
-  <h2 id="upgrade-verify">Verify your upgrade</h2>
-  <p>This section discusses how to verify your upgrade on your local development machine and in the cloud.</p>
+    <h2 id="upgrade-verify">Verify your upgrade</h2>
+    <p>This section discusses how to verify your upgrade on your local development machine and in the cloud.</p>
 
-  <h3 id="verify-the-upgrade-locally">Verify the upgrade locally</h3>
-  <p>To verify your upgrade locally, enter the following command from your Magento root directory:</p>
+    <h3 id="verify-the-upgrade-locally">Verify the upgrade locally</h3>
+    <p>To verify the upgrade in your local Cloud integration environment and in the Magento Admin:</p>
 
-  <pre><code>php bin/magento --version
+    <ol>
+      <li>
+        <p>Enter the following command from your Magento root directory:</p>
+
+        <pre><code>php bin/magento --version
 </code></pre>
+      </li>
+      <li>
+        <p>Find the base URL for your integration environment:</p>
 
-  <p>You can also log in to the Magento Admin; the version displays in the lower right corner of the page.</p>
-
-  <h3 id="verify-the-upgrade-locally-1">Verify the upgrade locally</h3>
-  <p>To verify the upgrade in your local Cloud integration environment:</p>
-
-  <ol>
-    <li>
-      <p>Find the base URL for your integration environment:</p>
-
-      <pre><code>magento-cloud environment:url
+        <pre><code>magento-cloud environment:url
 </code></pre>
-    </li>
-    <li>When prompted, choose the HTTP or HTTPS URL.</li>
-    <li>
-      <p>Find the values of the Admin URL, user name, and password:</p>
+      </li>
+      <li>When prompted, choose the HTTP or HTTPS URL.</li>
+      <li>
+        <p>Find the values of the Admin URL, user name, and password:</p>
 
-      <pre><code>magento-cloud variable:list
+        <pre><code>magento-cloud variable:list
 </code></pre>
-    </li>
-    <li>
-      <p>Log in to the Magento Admin.</p>
+      </li>
+      <li>
+        <p>Log in to the Magento Admin.</p>
 
-      <p>The version displays in the lower right corner of the page.</p>
-    </li>
-  </ol>
+        <p>The version displays in the lower right corner of the page.</p>
+      </li>
+    </ol>
 
-  <h3 id="upgrade-verify-tshoot">Troubleshoot your upgrade</h3>
-  <p>In some cases, an error similar to the following displays when you try to access your storefront or the Magento Admin in a browser:</p>
+    <h3 id="upgrade-verify-tshoot">Troubleshoot your upgrade</h3>
+    <p>In some cases, an error similar to the following displays when you try to access your storefront or the Magento Admin in a browser:</p>
 
-  <pre><code>There has been an error processing your request
+    <pre><code>There has been an error processing your request
 Exception printing is disabled by default for security reasons.
   Error log record number: &lt;error number&gt;
 </code></pre>
 
-  <h4 id="view-error-details-locally">View error details locally</h4>
-  <p>To view error details locally, open the indicated file name in the <code>&lt;Magento root dir&gt;/var/report</code> directory.</p>
+    <h4 id="view-error-details-locally">View error details locally</h4>
+    <p>To view error details locally, open the indicated file name in the <code>&lt;Magento root dir&gt;/var/report</code> directory.</p>
 
-  <h4 id="view-error-details-on-the-server">View error details on the server</h4>
-  <p>To view the error in your Cloud integration environment, enter the following commands:</p>
+    <h4 id="view-error-details-on-the-server">View error details on the server</h4>
+    <p>To view the error in your Cloud integration environment, <a href="/guides/v2.0/cloud/env/environments-ssh.html">SSH to the server</a> and enter the following command:</p>
 
-  <pre><code>magento-cloud environment:ssh
-vim /app/var/report/&lt;error number&gt;
+    <pre><code>vi /app/var/report/&lt;error number&gt;
 </code></pre>
 
-  <h4 id="resolve-the-error">Resolve the error</h4>
-  <p>If the error includes the following, run the <code>bin/magento setup:upgrade</code> command to resolve it:</p>
+    <h4 id="resolve-the-error">Resolve the error</h4>
+    <p>One possible error is the following::</p>
 
-  <pre><code>a:4:{i:0;s:433:"Please upgrade your database: Run "bin/magento setup:upgrade" from the Magento root directory.
+    <pre><code>a:4:{i:0;s:433:"Please upgrade your database: Run "bin/magento setup:upgrade" from the Magento root directory.
 The following modules are outdated:
 Magento_Sales schema: current version - 2.0.2, required version - 2.0.3
 Magento_Sales data: current version - 2.0.2, required version - 2.0.3
 Magento_CatalogStaging schema: current version - 2.0.0, required version - 2.1.0
 </code></pre>
 
-  <p>To resolve the error:</p>
+    <p>To resolve the error:</p>
 
-  <ol>
-    <li>
-      <p>If the error is in your integration environment, SSH to the environment:</p>
+    <ol>
+      <li><a href="/guides/v2.0/cloud/env/environments-ssh.html">SSH to the server</a>.</li>
+      <li><a href="/guides/v2.0/cloud/trouble/environments-logs.html">Examine the logs</a> to determine the source of the issue.</li>
+      <li>
+        <p>After you fix the source of the issue, push the change to the server, which causes the upgrade to restart.</p>
 
-      <pre><code>magento-cloud environment:ssh
-</code></pre>
-    </li>
-    <li>
-      <p>Enter the following command:</p>
+        <p>For example, on a local branch, enter the following commands:</p>
 
-      <pre><code>php &lt;Magento root dir&gt;/bin/magento setup:upgrade
-</code></pre>
-    </li>
-    <li>Wait for the command to complete.</li>
-    <li>
-      <p><em>Local environment only</em>. Update the branch:</p>
-
-      <pre><code>git add -A &amp;&amp; git commit -m "Update"
+        <pre><code>git add -A &amp;&amp; git commit -m "Update"
 git push origin &lt;branch name&gt;
 </code></pre>
-    </li>
-  </ol>
+      </li>
+    </ol>
 
-  <h4 id="related-topic">Related topic</h4>
-  <ul>
-    <li><a href="/guides/v2.0/cloud/howtos/install-components.html">Install components</a></li>
-    <li><a href="/guides/v2.0/cloud/howtos/sample-data.html">Install optional sample data</a></li>
-    <li><a href="/guides/v2.0/cloud/howtos/environment-tutorial-env-merge.html">Merge and delete an environment</a></li>
-  </ul>
+    <h4 id="related-topic">Related topic</h4>
+    <ul>
+      <li><a href="/guides/v2.0/cloud/howtos/install-components.html">Install components</a></li>
+      <li><a href="/guides/v2.0/cloud/howtos/sample-data.html">Install optional sample data</a></li>
+      <li><a href="/guides/v2.0/cloud/howtos/environment-tutorial-env-merge.html">Merge and delete an environment</a></li>
+    </ul>
+  </div>
 </div>
 
 		</div>

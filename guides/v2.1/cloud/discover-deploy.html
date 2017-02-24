@@ -908,7 +908,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/cloud/env/environments-logs.html">Viewing logs from your environment</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/cloud/env/environments-ssh.html">SSH into your environment</a></li>
 
 									
 
@@ -1251,6 +1251,14 @@
 
 									
 
+									<li class="level-2 "><a href="/guides/v2.1/cloud/trouble/environments-logs.html">Use logs for troubleshooting</a></li>
+
+									
+
+								
+
+									
+
 									<li class="level-2 "><a href="/guides/v2.1/cloud/trouble/trouble_proj-startover.html">Resolve issues with a new project</a></li>
 
 									
@@ -1573,7 +1581,7 @@ example, that Magento uses MySQL, some PHP extensions, and Elasticsearch. (These
 </ol>
 
 <h3 id="cloud-deploy-over-phases-conf">Phase 1: Configuration validation and code retrieval</h3>
-<p>The remote server gets your code using Git. When you initially set up a project from a template, we retrieve the code from the <a href="https://github.com/magento/magento-cloud" target="_blank">the Magento ECE template</a>.</p>
+<p>The remote server gets your code using Git. When you initially set up a project from a template, we retrieve the code from the <a href="https://github.com/magento-cloud/magento-cloud" target="_blank">the Magento ECE template</a>.</p>
 
 <p>The built-in Git server checks what you are pushing: if you have a syntax error in a configuration file, our Git server refuses the push.</p>
 
@@ -1590,8 +1598,8 @@ make Magento Enterprise Cloud Edition so fast in deployment.</p>
 <p>The default Magento build hook is a CLI command called <code>magento-cloud:build</code>. It does the following:</p>
 
 <ul>
-  <li>Applies patches located in vendor/magento/magento-cloud-configuration/patches, as well as optional project-specific patches in m2-hotfixes</li>
-  <li>Enables all modules</li>
+  <li>Applies patches located in <code>vendor/magento/magento-cloud-configuration/patches</code>, as well as optional project-specific patches in <code>m2-hotfixes</code></li>
+  <li>Enables all extensions</li>
   <li>Regenerates code and the dependency injection configuration (that is, the Magento <code>var/generation</code> and <code>var/di</code> directories) using <code>bin/magento setup:di:compile</code>.</li>
 </ul>
 

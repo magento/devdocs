@@ -908,7 +908,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/cloud/env/environments-logs.html">Viewing logs from your environment</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/cloud/env/environments-ssh.html">SSH into your environment</a></li>
 
 									
 
@@ -1251,6 +1251,14 @@
 
 									
 
+									<li class="level-2 "><a href="/guides/v2.1/cloud/trouble/environments-logs.html">Use logs for troubleshooting</a></li>
+
+									
+
+								
+
+									
+
 									<li class="level-2 "><a href="/guides/v2.1/cloud/trouble/trouble_proj-startover.html">Resolve issues with a new project</a></li>
 
 									
@@ -1570,60 +1578,20 @@
 
 <div class="collapsible"><b class="collapsible-title">To create authentication keys: </b><div class="collapsible-content"><div>
 
-  <h2 id="auth-overview">Overview of Magento authentication</h2>
-  <p>The <code>repo.magento.com</code> repository, where Magento 2 and third-party component Composer packages are stored, requires authentication. To provide secure authentication, we enable you to generate a pair 32-character <em>authentication tokens</em> you can use to access the repository. You generate, access, and can also delete or regenerate your keys using Magento Marketplace.</p>
+  <p>Because the Composer repository that contains Magento Enterprise Cloud Edition requires authentication, you must add a file named <code>auth.json</code> to your project’s root directory. This file contains your authentication keys. Without <code>auth.json</code>, the Magento software won’t download.</p>
 
-  <p>To get your authentication keys:</p>
+  <p>Add <code>auth.json</code> in your Magento Enterprise Cloud Edition project root folder if there isn’t one already.</p>
 
-  <ol>
-    <li>Go to <a href="https://marketplace.magento.com" target="_blank">Magento Marketplace</a>.</li>
-    <li>
-      <p>Click <strong>Sign In</strong> and enter your login credentials.</p>
+  <p>Replace the values in the following sample with your Magento Enterprise Cloud Edition public and private keys. You can get these keys from your account owner (that is, the person who created the Cloud account).</p>
 
-      <p>If you don’t have a free account, click <strong>Create an Account</strong>.</p>
-    </li>
-    <li>
-      <p>After you log in, click <strong>My Access Keys</strong> as the following figure shows.</p>
-
-      <p><img src="/common/images/install_mkpl_access-keys.png" alt="Get your secure access keys on Magento Marketplace" width="500px" /></p>
-    </li>
-    <li>If you already have keys, use the <strong>Public Key</strong> as your user name and the <strong>Private Key</strong> as your password.</li>
-    <li>
-      <p>To create a new key pair, click <strong>Create a New Access Key</strong>.</p>
-
-      <p>The following figure shows an example.</p>
-
-      <p><img src="/common/images/install_mkpl_access-keys-detail.png" alt="" width="500px" /></p>
-    </li>
-    <li>When prompted, enter a descriptive name to identify the key pair.</li>
-    <li>
-      <p>Click <strong>Generate New</strong>.</p>
-
-      <p>Use the <strong>Public key</strong> as your user name and the <strong>Private key</strong> as your password.</p>
-    </li>
-  </ol>
-
-  <h4 id="manage-your-authentiation-keys">Manage your authentiation keys</h4>
-  <p>You can optionally disable or delete authentication keys you created. For example, you can disable or delete keys for security reasons after someone left your organization.</p>
-
-  <ul>
-    <li>To disable keys: Click <strong>Disable</strong>. You can do this if you want to suspend use of your keys.</li>
-    <li>To enable a previously disabled key: Click <strong>Enable</strong>.</li>
-    <li>To delete keys: Click <strong>Delete</strong>.</li>
-  </ul>
-
-  <p>You cannot delete or disable keys you created by signing in to <code>magento.com</code>. To manage those keys:</p>
-
-  <ol>
-    <li><a href="https://www.magentocommerce.com/products/customer/account/login" target="_blank">Log in</a> to your <code>magento.com</code> account.</li>
-    <li>In the top navigation bar, click <strong>Connect</strong>.</li>
-    <li>
-      <p>In the left pane, click <strong>Secure keys</strong>.</p>
-
-      <p><img src="/common/images/connect_keys1.png" alt="Access your keys" width="200px" /></p>
-    </li>
-    <li>Enable or disable the desired keys.</li>
-  </ol>
+  <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+   <span class="nt">&quot;http-basic&quot;</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">&quot;repo.magento.com&quot;</span><span class="p">:</span> <span class="p">{</span>
+         <span class="nt">&quot;username&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;your public key&gt;&quot;</span><span class="p">,</span>
+         <span class="nt">&quot;password&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;your private key&gt;&quot;</span>
+      <span class="p">}</span>
+   <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
 </div>
 </div></div>
 

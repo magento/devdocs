@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Set up a Magento workspace</title>
+	<title>Use logs for troubleshooting</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.1/cloud/before/before-workspace-parent.html">
+	<link rel="canonical" href="//guides/v2.1/cloud/trouble/environments-logs.html">
 
   <script>
     var baseUrl = "/";
@@ -49,9 +49,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/cloud/before/before-workspace-parent.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/cloud/trouble/environments-logs.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/cloud/before/before-workspace-parent.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/cloud/trouble/environments-logs.html">Magento 2.1</a></li>
 	
   </ul>
 
@@ -474,7 +474,7 @@
 
 									
 
-										<li class="level3Parent  active " id="workspace"><a href="#">Set up a Magento workspace</a>
+										<li class="level3Parent " id="workspace"><a href="#">Set up a Magento workspace</a>
 
 
 									
@@ -1251,7 +1251,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/cloud/trouble/environments-logs.html">Use logs for troubleshooting</a></li>
+									<li class="level-2  active "><a href="/guides/v2.1/cloud/trouble/environments-logs.html">Use logs for troubleshooting</a></li>
 
 									
 
@@ -1533,7 +1533,7 @@
       
 
       <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
-        <span property="name">Set up a Magento workspace</span>
+        <span property="name">Use logs for troubleshooting</span>
         <meta property="position" content="2" />
       </li>
 
@@ -1545,14 +1545,51 @@
 
 
 	
-	<h1 class="page-heading">Set up a Magento workspace</h1>
+	<h1 class="page-heading">Use logs for troubleshooting</h1>
 
   
 
 
 </section>
 
-			
+			<p>This topic discusses how you can use logs to troubleshoot problems related to Magento Enterprise Cloud Edition <a href="/guides/v2.1/cloud/discover-deploy.html#cloud-deploy-over-phases-build">build hooks</a> and <a href="/guides/v2.1/cloud/discover-deploy.html#cloud-deploy-over-phases-hook">deploy hooks</a>.</p>
+
+<h2 id="build-logs">Build logs</h2>
+<p>After pushing to your environment, you can see the results of the both hooks. Logs from the build hook are redirected to the output stream of <code>git push</code>, so you can observe them in the terminal or capture them (along with error messages) with
+<code>git push &gt; build.log 2&gt;&amp;1</code>.</p>
+
+<h2 id="log-deploy-log">Deploy logs</h2>
+<p>Logs from the deploy hook are located on the server in the following locations:</p>
+
+<ul>
+  <li><a href="/guides/v2.1/cloud/discover-arch.html#cloud-arch-int">Integration system</a>: <code>/tmp/log/deploy.log</code></li>
+  <li>
+    <p><a href="/guides/v2.1/cloud/discover-arch.html#cloud-arch-stage">Staging</a> or <a href="/guides/v2.1/cloud/discover-arch.html#cloud-arch-prod">production</a> systems: <code>/var/log/platform/&lt;user&gt;/post_deploy.log</code></p>
+
+    <p>The value of <code>&lt;user&gt;</code> depends on the project ID and whether the environment is staging or production. For example, with a project ID of <code>yw1unoukjcawe</code>, the staging environment user is <code>yw1unoukjcawe_stg</code> and the production environment user is <code>yw1unoukjcawe</code>.</p>
+
+    <p>So on a staging environment for project <code>yw1unoukjcawe</code>, the deploy log is located at <code>/var/log/platform/yw1unoukjcawe_stg/post_deploy.log</code>.</p>
+  </li>
+</ul>
+
+<p>Logs for all deployments that have happened on this environment are appended to
+this file, so check the timestamps on log entries to verify that you’re seeing the logs that correspond to the deployment that you are interested in.</p>
+
+<p>The actual log output is highly verbose to allow troubleshooting. Following is a condensed example:</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml">[2016-10-11 22:15:38] Starting pre-deploy.
+...
+[2016-10-11 22:15:39] Pre-deploy complete.
+[2016-10-11 22:15:42] Start deploy.
+[2016-10-11 22:15:42] Preparing environment specific data.
+[2016-10-11 22:15:42] Initializing routes.
+
+... more ...
+
+[2016-10-11 22:15:46] Deployment complete.</code></pre></figure>
+
+<p>The deploy log contains start and stop messages for each of the two hooks: 
+<code>Starting pre-deploy</code>, <code>Pre-deploy complete.</code>, <code>Start deploy.</code>, and <code>Deployment complete.</code>.</p>
 
 		</div>
 		<!-- /.content-wrap -->
@@ -1563,14 +1600,14 @@
 
 			
 			 <div class="github-link">
-				 <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/before/before-workspace-parent.md" target="_blank">
+				 <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/trouble/environments-logs.md" target="_blank">
 					 Edit this page on GitHub
 				 </a>
 			 </div>
 			
 
 			<div class="new-issue">
-				<a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/cloud/before/before-workspace-parent.html" target="_blank">Give us feedback</a>
+				<a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/cloud/trouble/environments-logs.html" target="_blank">Give us feedback</a>
 			</div>
 
 		</div>

@@ -906,14 +906,6 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/cloud/env/environments-logs.html">Viewing logs from your environment</a></li>
-
-									
-
-								
-
-									
-
 										<li class="level3Parent " id="vars"><a href="#">Environment variables</a>
 
 
@@ -1249,6 +1241,14 @@
 
 									
 
+									<li class="level-2 "><a href="/guides/v2.0/cloud/trouble/environments-logs.html">Use logs for troubleshooting</a></li>
+
+									
+
+								
+
+									
+
 									<li class="level-2 "><a href="/guides/v2.0/cloud/trouble/trouble_proj-startover.html">Resolve issues with a new project</a></li>
 
 									
@@ -1574,11 +1574,16 @@
 <p>Before you push your Magento project code, you <em>must</em> add <code>auth.json</code> to the project root directory and you <em>should</em> add configuration files as well.</p>
 
 <h3 id="add-authjson">Add <code>auth.json</code></h3>
-<p>Because the Composer repository that contains Magento Enterprise Cloud Edition requires authentication, you must add a file named <code>auth.json</code> to your project’s root directory. This file contains your authentication keys. Without <code>auth.json</code>, the Magento software won’t download.</p>
 
-<p>Add <code>auth.json</code>, replacing the sample values with your public and private keys.</p>
+<div>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <p>Because the Composer repository that contains Magento Enterprise Cloud Edition requires authentication, you must add a file named <code>auth.json</code> to your project’s root directory. This file contains your authentication keys. Without <code>auth.json</code>, the Magento software won’t download.</p>
+
+  <p>Add <code>auth.json</code> in your Magento Enterprise Cloud Edition project root folder if there isn’t one already.</p>
+
+  <p>Replace the values in the following sample with your Magento Enterprise Cloud Edition public and private keys. You can get these keys from your account owner (that is, the person who created the Cloud account).</p>
+
+  <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
    <span class="nt">&quot;http-basic&quot;</span><span class="p">:</span> <span class="p">{</span>
       <span class="nt">&quot;repo.magento.com&quot;</span><span class="p">:</span> <span class="p">{</span>
          <span class="nt">&quot;username&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;your public key&gt;&quot;</span><span class="p">,</span>
@@ -1587,28 +1592,29 @@
    <span class="p">}</span>
 <span class="p">}</span></code></pre></figure>
 
-<h3 id="configuration-files">Configuration files</h3>
-<p>Magento Enterprise Cloud Edition enables you to specify information like the Magento docroot, details about services (like the database, Redis, and so on), and routes in <code>yaml</code> files.</p>
+  <h3 id="configuration-files">Configuration files</h3>
+  <p>Magento Enterprise Cloud Edition enables you to specify information like the Magento docroot, details about services (like the database, Redis, and so on), and routes in <code>yaml</code> files.</p>
 
-<p>These files must be created before you push to your repository for Magento to be properly deployed.</p>
+  <p>These files must be created before you push to your repository for Magento to be properly deployed.</p>
 
-<!-- https://docs.platform.sh/drupal_migrate/guides/configuration/drupal_application.html 
+  <!-- https://docs.platform.sh/drupal_migrate/guides/configuration/drupal_application.html 
   https://docs.platform.sh/drupal_migrate/guides/type/php/drupal/migrate/import-database.html
   https://docs.platform.sh/drupal_migrate/guides/type/php/drupal/migrate/import-files.html -->
 
-<h4 id="more-information">More information</h4>
+  <h4 id="more-information">More information</h4>
 
-<ul>
-  <li><a href="/guides/v2.0/cloud/project/project-conf-files_magento-app.html"><code>.magento.app.yaml</code></a></li>
-  <li><a href="/guides/v2.0/cloud/project/project-conf-files_routes.html"><code>routes.yaml</code></a></li>
-  <li><a href="/guides/v2.0/cloud/project/project-conf-files_services.html"><code>services.yaml</code></a></li>
-</ul>
+  <ul>
+    <li><a href="/guides/v2.0/cloud/project/project-conf-files_magento-app.html"><code>.magento.app.yaml</code></a></li>
+    <li><a href="/guides/v2.0/cloud/project/project-conf-files_routes.html"><code>routes.yaml</code></a></li>
+    <li><a href="/guides/v2.0/cloud/project/project-conf-files_services.html"><code>services.yaml</code></a></li>
+  </ul>
 
-<h4 id="next-steps">Next steps</h4>
-<ul>
-  <li><a href="/guides/v2.0/cloud/access-acct/set-up-env.html">Set up an environment</a></li>
-  <li><a href="/guides/v2.0/cloud/access-acct/set-up-env.html">Set Magento Admin environment variables</a></li>
-</ul>
+  <h4 id="next-steps">Next steps</h4>
+  <ul>
+    <li><a href="/guides/v2.0/cloud/access-acct/set-up-env.html">Set up an environment</a></li>
+    <li><a href="/guides/v2.0/cloud/access-acct/set-up-env.html">Set Magento Admin environment variables</a></li>
+  </ul>
+</div>
 
 		</div>
 		<!-- /.content-wrap -->

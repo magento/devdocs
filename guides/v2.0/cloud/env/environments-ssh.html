@@ -906,14 +906,6 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/cloud/env/environments-logs.html">Viewing logs from your environment</a></li>
-
-									
-
-								
-
-									
-
 										<li class="level3Parent " id="vars"><a href="#">Environment variables</a>
 
 
@@ -1249,6 +1241,14 @@
 
 									
 
+									<li class="level-2 "><a href="/guides/v2.0/cloud/trouble/environments-logs.html">Use logs for troubleshooting</a></li>
+
+									
+
+								
+
+									
+
 									<li class="level-2 "><a href="/guides/v2.0/cloud/trouble/trouble_proj-startover.html">Resolve issues with a new project</a></li>
 
 									
@@ -1526,20 +1526,16 @@
 
 </section>
 
-			<h2 id="env-ssh">Connect to the environment using SSH</h2>
-<p>Before you can use SSH to connect to an environment, you must add your <a href="/guides/v2.0/cloud/before/before-workspace-ssh.html">SSH public key</a> 
-to your account. For security reasons, in order to add your public key to a production or staging environment,
- you must create a support ticket requesting the key to be added.</p>
+			<p>Before you can use SSH to connect to an <a href="/guides/v2.0/cloud/discover-arch.html#cloud-arch-int">integration</a> environment, you must add your <a href="/guides/v2.0/cloud/before/before-workspace-ssh.html">SSH public key</a> to your account.</p>
+
+<p>For security reasons, to add your public key to a <a href="/guides/v2.0/cloud/discover-arch.html#cloud-arch-prod">production</a> or <a href="/guides/v2.0/cloud/discover-arch.html#cloud-arch-stage">staging</a> system, you must create a <a href="/guides/v2.0/cloud/get-help.html">support ticket</a>.</p>
 
 <p>You can then connect using SSH in any of the following ways:</p>
 
-<h2 id="integration-environments">Integration environments</h2>
+<h2 id="cloud-ssh-int">Integration systems</h2>
+<p>Following are methods to SSH into your integration system.</p>
 
-<p>Following are methods to SSH into your integration environment.</p>
-
-<p>###$# SSH using the magento-cloud tool</p>
-
-<p>To SSH to an environment using the <code>magento-cloud</code> command line:</p>
+<div class="collapsible collapsible-h3"><h3 class="collapsible-title">SSH using the command line </h3><div class="collapsible-content"><p>To SSH to an environment using the <code>magento-cloud</code> command line:</p>
 
 <ol>
   <li>
@@ -1567,25 +1563,23 @@ to your account. For security reasons, in order to add your public key to a prod
 </code></pre>
   </li>
 </ol>
+</div></div>
 
-<p>###$# Find SSH connection details using the Web Interface
-To SSH to an environment using the Web Interface:</p>
+<div class="collapsible collapsible-h3"><h3 class="collapsible-title">Find SSH connection details using the Web Interface </h3><div class="collapsible-content"><p>To SSH to an environment using the Web Interface:</p>
 
 <ol>
   <li>Log in to the Web Interface.</li>
   <li>
     <p>Hover the mouse pointer over <strong>Access Site</strong> in the desired environment as the following figure shows.</p>
 
-    <p><img src="/common/images/cloud_ssh-access.png" alt="Find the SSH URL using the Web Interface" width="500px" /></p>
+    <p><img src="/common/images/cloud_ssh-access.png" alt="Find the SSH URL using the Web Interface" width="400px" /></p>
   </li>
   <li>Click the clipboard button to copy the full SSH command to the clipboard. Enter the command in a terminal window.</li>
 </ol>
+</div></div>
 
-<h2 id="staging-and-production-environments">Staging and Production environments</h2>
-
-<p>The <code>magento-cloud</code> tool is not used to SSH into staging and production environments. To SSH into staging and production 
-environments, first create a support ticket requesting for your public key to be added to the environment. The user and 
-URL will have been supplied when the environment was provisioned.</p>
+<h2 id="cloud-ssh-stage">Staging and production systems</h2>
+<p>You can’t use the <code>magento-cloud</code> command line to SSH into staging and production systems. To SSH into staging and production systems, first create a <a href="/guides/v2.0/cloud/get-help.html">support ticket</a> requesting for your public key to be added to the system. The user and  URL will have been supplied when the system was provisioned.</p>
 
 <h4 id="related-topics">Related topics</h4>
 <ul>
