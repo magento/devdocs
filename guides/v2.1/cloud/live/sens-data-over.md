@@ -12,7 +12,7 @@ version: 2.1
 github_link: cloud/live/sens-data-over.md
 ---
 
-In version 2.1.4, Magento Enterprise Cloud Edition provides a better way to manage your configuration by providing:
+In version 2.1.TBD, Magento Enterprise Cloud Edition provides a better way to manage your configuration by providing:
 
 *	A new method to manage sensitive data (such as payment gateway passwords).
 *	An improved method to manage system configuration data (such as store locale settings and static file optimization settings) in a new configuration file, `app/etc/config.local.php`, which is in source control.
@@ -39,7 +39,7 @@ We help you protect sensitive data and make it easy to manage system data as fol
 ## Manage your configuration and protect sensitive data {#cloud-config-manage-sens-over}
 Magento's store configuration is located in the database and there is one database per system. This can make the configuration of multiple systems (such as staging and production) difficult.
 
-Starting with version 2.1.4, we provide the following:
+Starting with version 2.1.TBD, we provide the following:
 
 *	Store configuration values are specified in a new configuration file, `app/etc/config.local.php`, which is in source control.
 

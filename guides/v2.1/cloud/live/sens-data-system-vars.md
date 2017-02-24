@@ -12,7 +12,7 @@ version: 2.1
 github_link: cloud/live/sens-data-system-vars.md
 ---
 
-This topic discusses how to find and set the system settings we include in `config.local.php` in version 2.1.4. You can set variable values per scope (global, website, or store view). For example, you could set the locale used in a particular website.
+This topic discusses how to find and set the system settings we include in `config.local.php` in version 2.1.TBD. You can set variable values per scope (global, website, or store view). For example, you could set the locale used in a particular website.
 
 The general format of system variables follows:
 
