@@ -49,20 +49,8 @@ To access your project for the first time:
 Before you push your Magento project code, you *must* add `auth.json` to the project root directory and you *should* add configuration files as well.
 
 ### Add `auth.json`
-Because the Composer repository that contains Magento Enterprise Cloud Edition requires authentication, you must add a file named `auth.json` to your project's root directory. This file contains your authentication keys. Without `auth.json`, the Magento software won't download.
 
-Add `auth.json`, replacing the sample values with your public and private keys.
-
-{% highlight json %}
-{
-   "http-basic": {
-      "repo.magento.com": {
-         "username": "<your public key>",
-         "password": "<your private key>"
-      }
-   }
-}
-{% endhighlight %}
+{% include cloud/auth-json.md %}
 
 ### Configuration files
 Magento Enterprise Cloud Edition enables you to specify information like the Magento docroot, details about services (like the database, Redis, and so on), and routes in `yaml` files.
