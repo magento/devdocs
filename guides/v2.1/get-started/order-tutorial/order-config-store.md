@@ -15,7 +15,7 @@ ee_only: false
 
 The default Luma store needs additional configuration to run the REST calls mentioned in this tutorial.
 
-If you are using the DevBox installation, the URL to Admin is `http://127.0.0.1:32772/admin`.
+If you are using the DevBox installation, the URL to Admin is `http://127.0.0.1:<port>/admin`. Use the `docker-compose ps` command to determine the web server listen port, as discussed in [Stop, start, restart, and view port mappings]({{page.baseurl}}install-gde/docker/docker-commands.html#Stop-start-restart-and-view-port-mappings-). 
 
 ### Set the payment method {#set-payment}
 
