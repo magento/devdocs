@@ -5,11 +5,16 @@ These configuration values are availabe in the Magento Admin in **Stores** > Set
 
 The settings are further organized by payment method.
 
-### General variable
+### General variable {#vars-merch-country}
 
 Name  | Config path
 |--------------|--------------|
 Merchant Country | `paypal/general/merchant_country`
+
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+Your choice for this variable determines which [International variables](#vars-intl-list) you can use.
+</div>
+
 
 ### Unknown, TBD
 
@@ -368,7 +373,11 @@ Payment from Applicable Countries | `payment/eway/allowspecific`
 Payment from Specific Countries | `payment/eway/specificcountry`
 Sort Order | `payment/eway/sort_order`
 
-### International variables
+### International variables {#vars-intl-list}
+
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+The variable values available are determined by your choice of [Merchant country](#vars-merch-country).
+</div>
 
 Name  | Config path
 |--------------|--------------|
@@ -1750,7 +1759,6 @@ Sort Order | `payment_gb/eway/sort_order`
 SFTP Credentials | `payment_us/paypal_alternative_payment_methods/express_checkout_us/settings_ec/settings_ec_advanced/express_checkout_settlement_report/heading_sftp`
 Scheduled Fetching | `payment_us/paypal_alternative_payment_methods/express_checkout_us/settings_ec/settings_ec_advanced/express_checkout_settlement_report/heading_schedule`
 PayPal Merchant Pages Style | `payment_us/paypal_alternative_payment_methods/express_checkout_us/settings_ec/settings_ec_advanced/express_checkout_frontend/paypal_pages`
-
 Scheduled Fetching | `payment_us/paypal_group_all_in_one/payflow_advanced/settings_payments_advanced/settings_payments_advanced_advanced/settlement_report/heading_schedule`
 PayPal Merchant Pages Style | `payment_us/paypal_group_all_in_one/payflow_advanced/settings_payments_advanced/settings_payments_advanced_advanced/frontend/paypal_pages`
 Credit Card Settings | `payment_us/paypal_group_all_in_one/wpp_usuk/settings_paypal_payflow/heading_cc`
