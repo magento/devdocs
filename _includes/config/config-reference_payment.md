@@ -197,16 +197,11 @@ Name  | Config path
 Title | `payment/braintree/title`
 Environment | `payment/braintree/environment`
 Payment Action | `payment/braintree/payment_action`
-Merchant ID | `payment/braintree/merchant_id`
-Public Key | `payment/braintree/public_key`
-Private Key | `payment/braintree/private_key`
 Enable this Solution | `payment/braintree/active`
 Enable PayPal through Braintree | `payment/braintree_paypal/active`
 Vault Enabled | `payment/braintree_cc_vault/active`
 Vault Title | `payment/braintree_cc_vault/title`
-Merchant Account ID | `payment/braintree/merchant_account_id`
 Advanced Fraud Protection | `payment/braintree/fraudprotection`
-Kount Merchant ID | `payment/braintree/kount_id`
 Debug | `payment/braintree/debug`
 CVV Verification | `payment/braintree/useccv`
 Credit Card Types | `payment/braintree/cctypes`
@@ -217,7 +212,6 @@ Country Specific Credit Card Types | `payment/braintree/countrycreditcard`
 Title | `payment/braintree_paypal/title`
 Vault Enabled | `payment/braintree_paypal_vault/active`
 Sort Order | `payment/braintree_paypal/sort_order`
-Override Merchant Name | `payment/braintree_paypal/merchant_name_override`
 Payment Action | `payment/braintree_paypal/payment_action`
 Payment from Applicable Countries | `payment/braintree_paypal/allowspecific`
 Payment from Specific Countries | `payment/braintree_paypal/specificcountry`
@@ -309,9 +303,6 @@ Name  | Config path
 Enabled | `payment/authorizenet_directpost/active`
 Payment Action | `payment/authorizenet_directpost/payment_action`
 Title | `payment/authorizenet_directpost/title`
-API Login ID | `payment/authorizenet_directpost/login`
-Transaction Key | `payment/authorizenet_directpost/trans_key`
-Merchant MD5 | `payment/authorizenet_directpost/trans_md5`
 New Order Status | `payment/authorizenet_directpost/order_status`
 Test Mode | `payment/authorizenet_directpost/test`
 Gateway URL | `payment/authorizenet_directpost/cgi_url`
@@ -319,7 +310,6 @@ Transaction Details URL | `payment/authorizenet_directpost/cgi_url_td`
 Accepted Currency | `payment/authorizenet_directpost/currency`
 Debug | `payment/authorizenet_directpost/debug`
 Email Customer | `payment/authorizenet_directpost/email_customer`
-Merchant's Email | `payment/authorizenet_directpost/merchant_email`
 Credit Card Types | `payment/authorizenet_directpost/cctypes`
 Credit Card Verification | `payment/authorizenet_directpost/useccv`
 Payment from Applicable Countries | `payment/authorizenet_directpost/allowspecific`
@@ -335,11 +325,6 @@ Name  | Config path
 Enabled | `payment/cybersource/active`
 Payment Action | `payment/cybersource/payment_action`
 Title | `payment/cybersource/title`
-Merchant ID | `payment/cybersource/merchant_id`
-Transaction Key | `payment/cybersource/transaction_key`
-Profile ID | `payment/cybersource/profile_id`
-Access Key | `payment/cybersource/access_key`
-Secret Key | `payment/cybersource/secret_key`
 New Order Status | `payment/cybersource/order_status`
 Test Mode | `payment/cybersource/sandbox_flag`
 Debug | `payment/cybersource/debug`
@@ -356,14 +341,8 @@ Name  | Config path
 |--------------|--------------|
 Enabled | `payment/worldpay/active`
 Title | `payment/worldpay/title`
-Installation ID | `payment/worldpay/installation_id`
-Payment Response Password | `payment/worldpay/response_password`
-Remote Admin Installation ID | `payment/worldpay/admin_installation_id`
-Remote Admin Authorisation Password | `payment/worldpay/auth_password`
-MD5 Secret for Transactions | `payment/worldpay/md5_secret`
 Allow To Edit Contact Information | `payment/worldpay/fix_contact`
 Hide Contact Information | `payment/worldpay/hide_contact`
-Signature Fields | `payment/worldpay/signature_fields`
 Debug | `payment/worldpay/debug`
 Test Mode | `payment/worldpay/sandbox_flag`
 Payment Action for Test | `payment/worldpay/test_action`
@@ -382,12 +361,6 @@ Enabled | `payment/eway/active`
 Connection Type | `payment/eway/connection_type`
 Title | `payment/eway/title`
 Sandbox Mode | `payment/eway/sandbox_flag`
-Live API Key | `payment/eway/live_api_key`
-Live API Password | `payment/eway/live_api_password`
-Live Client-side Encryption Key | `payment/eway/live_encryption_key`
-Sandbox API Key | `payment/eway/sandbox_api_key`
-Sandbox API Password | `payment/eway/sandbox_api_password`
-Sandbox Client-side Encryption Key | `payment/eway/sandbox_encryption_key`
 Payment Action | `payment/eway/payment_action`
 Debug | `payment/eway/debug`
 Credit Card Types | `payment/eway/cctypes`

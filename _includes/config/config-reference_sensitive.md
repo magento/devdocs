@@ -89,7 +89,29 @@ Name  | Config path
 |--------------|--------------|
 Error Email Recipient | `catalog/productalert_cron/error_email`
 YouTube API Key | `catalog/product_video/youtube_api_key`
+Solr Server Hostname | `catalog/search/solr_server_hostname`
+Solr Server Port | `catalog/search/solr_server_port`
+Solr Server Username | `catalog/search/solr_server_username`
+Solr Server Password | `catalog/search/solr_server_password`
+Solr Server Path | `catalog/search/solr_server_path`
+Elasticsearch Server Hostname | `catalog/search/elasticsearch_server_hostname`
+Elasticsearch Server Port | `catalog/search/elasticsearch_server_port`
+Elasticsearch Index Prefix | `catalog/search/elasticsearch_index_prefix`
 
+### System variables
+These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Advanced** > **System**.
+
+Name  | Config path
+|--------------|--------------|
+Error Email Recipient | `system/magento_scheduled_import_export_log/error_email`
+
+
+### Google API variables 
+These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Google API**.
+
+Name  | Config path
+|--------------|--------------|
+Container Id | `google/analytics/container_id`
 
 
 ### Developer variables
@@ -116,7 +138,13 @@ Access License Number | `carriers/ups/access_license_number`
 Tracking XML URL | `carriers/ups/tracking_xml_url`
 Gateway XML URL | `carriers/ups/gateway_xml_url`
 Shipper Number | `carriers/ups/shipper_number`
-
+Account ID | `carriers/fedex/account`
+Key | `carriers/fedex/key`
+Meter Number | `carriers/fedex/meter_number`
+Password | `carriers/fedex/password`
+Access ID | `carriers/dhl/id`
+Password | `carriers/dhl/password`
+Account Number | `carriers/dhl/account`
 
 ### XML sitemap variables
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Catalog** > **XML Sitemap**.
@@ -124,6 +152,26 @@ These configuration values are availabe in the Magento Admin in **Stores** > Set
 Name  | Config path
 |--------------|--------------|
 Error Email Recipient | `sitemap/generate/error_email`
+
+
+### Sales variables
+These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Sales**.
+
+Name  | Config path
+|--------------|--------------|
+Contact Name | `sales/magento_rma/store_name`
+Street Address | `sales/magento_rma/address`
+Street Address | `sales/magento_rma/address1`
+City | `sales/magento_rma/city`
+State/Province | `sales/magento_rma/region_id`
+ZIP/Postal Code | `sales/magento_rma/zip`
+Country | `sales/magento_rma/country_id`
+Send RMA Email Copy To | `sales_email/magento_rma/copy_to`
+Send RMA Authorization Email Copy To | `sales_email/magento_rma_auth/copy_to`
+Send RMA Comment Email Copy To | `sales_email/magento_rma_comment/copy_to`
+Send RMA Comment Email Copy To | `sales_email/magento_rma_customer_comment/copy_to`
+
+
 
 
 ### PayPal variables
@@ -170,6 +218,63 @@ API Signature | `paypal/wpp/api_signature`
 API Certificate | `paypal/wpp/api_cert`
 Proxy Host | `paypal/wpp/proxy_host`
 Proxy Port | `paypal/wpp/proxy_port`
+
+### Braintree variables
+
+Name  | Config path
+|--------------|--------------|
+Merchant ID | `payment/braintree/merchant_id`
+Public Key | `payment/braintree/public_key`
+Private Key | `payment/braintree/private_key`
+Merchant Account ID | `payment/braintree/merchant_account_id`
+Kount Merchant ID | `payment/braintree/kount_id`
+Override Merchant Name | `payment/braintree_paypal/merchant_name_override`
+Merchant's Email | `payment/authorizenet_directpost/merchant_email`
+
+
+### Worldpay variables
+
+Name  | Config path
+|--------------|--------------|
+Installation ID | `payment/worldpay/installation_id`
+Payment Response Password | `payment/worldpay/response_password`
+Remote Admin Installation ID | `payment/worldpay/admin_installation_id`
+Remote Admin Authorisation Password | `payment/worldpay/auth_password`
+MD5 Secret for Transactions | `payment/worldpay/md5_secret`
+Signature Fields | `payment/worldpay/signature_fields`
+
+
+
+### Authorize.net Direct Post variables
+
+Name  | Config path
+|--------------|--------------|
+API Login ID | `payment/authorizenet_directpost/login`
+Transaction Key | `payment/authorizenet_directpost/trans_key`
+Merchant MD5 | `payment/authorizenet_directpost/trans_md5`
+
+### eWAY variables
+
+Name  | Config path
+|--------------|--------------|
+Live API Key | `payment/eway/live_api_key`
+Live API Password | `payment/eway/live_api_password`
+Live Client-side Encryption Key | `payment/eway/live_encryption_key`
+Sandbox API Key | `payment/eway/sandbox_api_key`
+Sandbox API Password | `payment/eway/sandbox_api_password`
+Sandbox Client-side Encryption Key | `payment/eway/sandbox_encryption_key`
+
+
+### Cybersource variables
+
+Name  | Config path
+|--------------|--------------|
+Merchant ID | `payment/cybersource/merchant_id`
+Transaction Key | `payment/cybersource/transaction_key`
+Profile ID | `payment/cybersource/profile_id`
+Access Key | `payment/cybersource/access_key`
+Secret Key | `payment/cybersource/secret_key`
+
 
 
 ### New Relic reporting variables
