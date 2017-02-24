@@ -40,7 +40,7 @@ Extends all [`uiCollection`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uico
   </tr>
   <tr>
     <td>disabled</td>
-    <td>Initial component's state. When set to "true", the component is unusable and un-clickable.</td>
+    <td>Initial component's state. When set to "true", users can't take action on the element.</td>
     <td>Boolean</td>
     <td>false</td>
   </tr>

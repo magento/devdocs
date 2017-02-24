@@ -75,19 +75,19 @@ Extends all `abstract` and [Select]({{page.baseurl}}ui_comp_guide/components/ui-
   </tr>
   <tr>
     <td>elementTmpl</td>
-    <td>The path to the child component’s .html template.</td>
+    <td>The path to the .html template of the particular field type (multiselect).</td>
     <td>String</td>
     <td>ui/form/element/multiselect</td>
   </tr>
   <tr>
     <td>size</td>
-    <td>The quantity of options that are shown in the multi-select UI.</td>
+    <td>The number of options that are displayed in the multi-select UI.</td>
     <td>Number</td>
     <td>6</td>
   </tr>
   <tr>
     <td>template</td>
-    <td>The path to the component’s .html template.</td>
+    <td>The path to the general field .html template.</td>
     <td>String</td>
     <td>ui/form/field</td>
   </tr>

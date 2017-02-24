@@ -27,7 +27,7 @@ Extends all `abstract` configuration.
   </tr>
   <tr>
     <td>multiple</td>
-    <td>Is responsible for changes input type in the UI (checkbox or radio). In case when multiple property state is "true" input type is checkbox.</td>
+    <td>Set the input type in the UI (checkbox or radio button). By default is set to "true", and the input type is checkbox.</td>
     <td>Boolean</td>
     <td>true</td>
   </tr>

@@ -23,7 +23,7 @@ Extends all `abstract` configuration.
     <td>component</td>
     <td>The path to the component’s .js file in terms of RequireJS.</td>
     <td>String</td>
-    <td>??</td>
+    <td></td>
   </tr>
   <tr>
     <td>template</td>

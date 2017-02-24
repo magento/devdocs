@@ -20,15 +20,15 @@ Extends all `abstract` configuration.
   </tr>
   <tr>
     <td>caption</td>
-    <td>Caption for DOM select element. &lt;p class="q"&gt;need better explanation&lt;/p&gt;</td>
+    <td>Caption for DOM select element.</td>
     <td>String</td>
     <td>''</td>
   </tr>
   <tr>
     <td>elementTmpl</td>
-    <td>The path to the child component’s .html template.</td>
+    <td>The path to the .html template of the particular type of field (select).</td>
     <td>String</td>
-    <td></td>
+    <td>ui/form/element/select</td>
   </tr>
   <tr>
     <td>options</td>
@@ -44,7 +44,7 @@ Extends all `abstract` configuration.
   </tr>
   <tr>
     <td>template</td>
-    <td>The path to the component’s .html template.</td>
+    <td>The path to the general field .html template.</td>
     <td>String</td>
     <td>ui/form/field</td>
   </tr>

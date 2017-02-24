@@ -26,9 +26,9 @@ Extends all `abstract` configuration.
     <td>Magento_Ui/js/dynamic-rows/action-delete</td>
   </tr>
   <tr>
-    <td>links<br>value</td>
-    <td>Used for mutual tracking property changes. links’s value is an object, composed of the following:<br>key: name of the internal property or method which sends and receives the notifications.<br>value - name of the property or method which sends and receives the notifications. Can use string templates.</td>
-    <td>Object<br>Boolean</td>
+    <td>links<li>value</li></td>
+    <td>Used to break the link established in the <code>link</code> property of the parent (abstract) component.</td>
+    <td>Object<li>Boolean</li></td>
     <td>false</td>
   </tr>
   <tr>
