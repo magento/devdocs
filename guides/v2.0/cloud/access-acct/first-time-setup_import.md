@@ -446,6 +446,9 @@ On the Cloud environment, flush the cache:
 
 After the cache flushes, enter `exit` to close the SSH tunnel.
 
+## Push the changes
+
+
 ## Verify the import
 To verify everything imported properly, perform the following tasks in your local Cloud development environment:
 
