@@ -1,9 +1,9 @@
 <div markdown="1">
 
-This topic discusses how to upgrade the Magento Enterprise Cloud Edition software from any version after 2.0.4. If you're currently using version 2.0.4, see [Upgrade from version 2.0.4](#cloud-upgrade-204).
+This topic discusses how to upgrade Magento Enterprise Cloud Edition from any version after 2.0.4. If you're currently using version 2.0.4, see [Upgrade from version 2.0.4](#cloud-upgrade-204).
 
-<div class="bs-callout bs-callout-warning">
-    <p>Always upgrade your local system first, then your <a href="{{ page.baseurl }}cloud/discover-arch.html#cloud-arch-int">integration environment</a> system (that is, the remote Cloud server). Resolve any issues before upgrading either <a href="{{ page.baseurl }}cloud/discover-arch.html#cloud-arch-stage">staging</a> or <a href="{{ page.baseurl }}cloud/discover-arch.html#cloud-arch-prod">production</a>.</p>
+<div class="bs-callout bs-callout-warning" markdown="1">
+Always upgrade your local system first, then your <a href="{{ page.baseurl }}cloud/discover-arch.html#cloud-arch-int">integration environment</a> system (that is, the remote Cloud server). Resolve any issues before upgrading either <a href="{{ page.baseurl }}cloud/discover-arch.html#cloud-arch-stage">staging</a> or <a href="{{ page.baseurl }}cloud/discover-arch.html#cloud-arch-prod">production</a>.
 </div>
 
 ## Get started
@@ -77,9 +77,9 @@ Verify other changes you're going to submit to source control before you start t
         composer require magento/magento-cloud-metapackage <requiredversion> --no-update
         composer update
 
-    For example, to upgrade to version 2.1.2:
+    For example, to upgrade to version 2.1.5:
 
-        composer require magento/magento-cloud-metapackage 2.1.2 --no-update
+        composer require magento/magento-cloud-metapackage 2.1.5 --no-update
         composer update
 2.  Wait for dependencies to update.
 4.  Add, commit, and push your changes to start deployment:
