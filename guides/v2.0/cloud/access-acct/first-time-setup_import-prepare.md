@@ -31,11 +31,11 @@ This is our recommended workflow:
 
     This replaces not only Magento code but static and compiled assets as well.
 3.  Import your Magento database into your Magento Enterprise Cloud Edition project.
-4.  TBD
+4.  Clear the cache and verify the project imported successfully.
 
 {% include cloud/new-project-from-template.md %}
 
-## Prepare to import Magento files and database {#cloud-import-prepare}
+## Process overview {#cloud-import-prepare}
 This section discusses tasks you must perform in your existing Magento EE installation to prepare it to be imported into a Magento Enterprise Cloud Edition project.
 
 Before you continue, push all pending changes to Git.
@@ -45,10 +45,11 @@ You must do the following:
 *   Add Cloud-specific files and directories to Magento EE. Without these files and directories, your Magento EE code can't be imported to Cloud.
 *   Modify your existing `composer.json` to specify Cloud-specific dependencies.
 *   Add `composer.lock` to Git because Cloud reads it, and not `composer.json`, during the build and deploy process.
+*   Transfer media files to Cloud.
 *   Add your Magento EE authentication credentials to `auth.json` if you haven't done so already.
 *   Dump your Magento EE database.
 
-### Prepare Magento EE files {#cloud-import-prepare-files}
+## Prepare Magento EE files {#cloud-import-prepare-files}
 For your Magento EE code to import to a Magento Enterprise Cloud Edition project, you must have a directory and some files required by Cloud. Following is the list of those files:
 
 *  [`.magento/routes.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_routes.html)
@@ -56,7 +57,7 @@ For your Magento EE code to import to a Magento Enterprise Cloud Edition project
 *  [`.magento.app.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_magento-app.html)
 *  `magento-vars.php`
 
-#### Add required configuration files {#cloud-import-prepare-files-config}
+### Add required configuration files {#cloud-import-prepare-files-config}
 To add required files to your Magento EE code:
 
 1.  Go to the [Magento Enterprise Cloud Edition GitHub](https://github.com/magento/magento-cloud){:target="_blank"}.
@@ -100,7 +101,7 @@ Modify these files as necessary as discussed in the following topics:
 *  [`.magento/services.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_services.html)
 *  [`.magento.app.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_magento-app.html)
 
-#### Add or update `auth.json` {#cloud-import-authjson}
+### Add or update `auth.json` {#cloud-import-authjson}
 To enable you to install and update Magento Enterprise Cloud Edition, you must have an `auth.json` file in your project's root directory. `auth.json` contains your Magento EE [authorization credentials](http://devdocs.magento.com/guides/v2.1/install-gde/prereq/connect-auth.html) for Magento Enterprise Cloud Edition.
 
 In some cases, you might already have `auth.json` so check to see if it exists and has your authentication credentials before you create a new one. It's located in your Magento root directory.
@@ -193,7 +194,7 @@ To be able to decrypt encrypted data from your imported database, copy your encr
 
     You must paste the encryption key into your Magento Enterprise Cloud Edition `env.php` file later.
 
-### Prepare the Magento EE database  {#cloud-import-prepare-db}
+## Prepare the Magento EE database  {#cloud-import-prepare-db}
 Create a dump of the database you want to import using mysqldump. 
 
 The following example shows how to compress the dump so it doesn't significantly interfere with traffic from in live site. 

@@ -13,8 +13,7 @@ github_link: cloud/access-acct/first-time-setup_import-import.md
 ---
  
 
-## Import files and Magento code {#cloud-import-files-and-db}
-This section discusses how to import code from your existing Magento EE project to your Magento Enterprise Cloud Edition's Git repository `master` branch.
+This topic discusses how to import code from your existing Magento EE project to your Magento Enterprise Cloud Edition's Git repository `master` branch.
 
 <div class="bs-callout bs-callout-warning" id="warning" markdown="1">
 The procedure discussed in this topic replaces your new Magento Enterprise Cloud Edition project with the contents of your existing Magento installation. Any data, websites, stores, and so on will be lost.
@@ -22,7 +21,7 @@ The procedure discussed in this topic replaces your new Magento Enterprise Cloud
 Before you continue, make sure there is nothing in your Magento Enterprise Cloud Edition project you want to keep.
 </div>
 
-### Step 1: Create a remote Git reference {#cloud-import-ref}
+## Create a remote Git reference {#cloud-import-ref}
 This section discusses how to create a remote Git reference from your Cloud Git repository to the repository in which your Magento EE installation is located.
 
 Before you continue, make sure you know the SSH or HTTPS URL for your Magento EE installation Git repository.
@@ -58,7 +57,7 @@ To create a remote Git reference:
 
         git branch -u cloud-project/master
 
-### Step 2: Import your Magento EE code to your Cloud project {#cloud-import-imp}
+## Import your Magento EE code to your Cloud project {#cloud-import-imp}
 Before you continue, make sure you've completed all tasks discussed in the preceding section.
 
 To import your Magento EE code to Cloud:
@@ -113,7 +112,7 @@ An SSH URL is similar to the following:
 
     43bkopvkhelhy-master-l8uv4kp@ssh.us.magentosite.cloud
 
-#### Database access
+### Database access
 The name of the database can be found in the `$MAGENTO_CLOUD_RELATIONSHIPS` environment variable. Display the variable with the following command. The database name is stored under `databases->path`. The password is found under `databases->password`.
 
 To find database access information:
@@ -226,7 +225,7 @@ To update the unsecure base URL:
 For your system to be fully functional, you must also set unsecure and secure URLs for the default scope as well as for all websites, stores, and store views.
 </div>
 
-### Copy the encryption key
+## Copy the encryption key
 
 1.  SSH to the Cloud environnment.
 
@@ -246,7 +245,7 @@ return array (
 );
 {% endhighlight %}
 
-### Import media
+## Import media
 To import media files into your Cloud environment:
 
 1.  SSH to the Cloud environnment.
@@ -259,7 +258,7 @@ To import media files into your Cloud environment:
 
         tar -xzf var/media.tgz pub/media
 
-### Cleanup
+## Clear the cache
 On the Cloud environment, flush the cache:
 
     bin/magento cache:flush
