@@ -4,10 +4,12 @@ group: cloud
 subgroup: 08_setup
 title: Import an existing Magento project
 menu_title: Import an existing Magento project
-menu_order: 76
+menu_order: 78
 menu_node: 
+level3_menu_node: level3child
+level3_subgroup: import
 version: 2.0
-github_link: cloud/access-acct/first-time-setup_import.md
+github_link: cloud/access-acct/first-time-setup_import-import.md
 ---
  
 This topic discusses how to can start your Magento Enterprise Cloud Edition project from an existing Magento Enterprise Edition (EE) installation. 

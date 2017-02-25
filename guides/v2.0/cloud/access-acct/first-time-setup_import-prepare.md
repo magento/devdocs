@@ -4,10 +4,12 @@ group: cloud
 subgroup: 08_setup
 title: Import an existing Magento project
 menu_title: Import an existing Magento project
-menu_order: 76
+menu_order: 77
 menu_node: 
+level3_menu_node: level3child
+level3_subgroup: import
 version: 2.0
-github_link: cloud/access-acct/first-time-setup_import.md
+github_link: cloud/access-acct/first-time-setup_import-prepare.md
 ---
  
 This topic discusses how to can start your Magento Enterprise Cloud Edition project from an existing Magento Enterprise Edition (EE) installation. 
@@ -169,11 +171,27 @@ To edit `composer.json`:
 ### Back up media files
 This section discusses how to use the [`magento setup:backup --media`]({{ page.basesurl }}install/cli/install-cli-backup.html) to back up media files.
 
-To back up media files, enter the following command:
+1.  To back up media files, enter the following command:
 
-    php <Magento EE install dir>/bin/magento setup:backup --media
+        php <Magento EE install dir>/bin/magento setup:backup --media
 
-The backup is stored in the `<Magento EE install dir>/var/backups` directory.
+    The backup is stored in the `<Magento EE install dir>/var/backups` directory.
+2.  Transfer the media file to your Magento Enteprise Cloud Edition system:
+
+        rsync <Magento EE install dir>/var/backups/<backup file name> <cloud ssh url>:var/media.tgz
+
+    For example,
+
+        rsync /var/www/html/magento2/var/backups/1487962699_filesystem_media.tgz 43bkopvkhelhy-master-l8uv4kp@ssh.us.magentosite.cloud:var/media.tgz
+
+### Copy the encryption key
+To be able to decrypt encrypted data from your imported database, copy your encryption from your existing `env.php` file. `env.php` contains a nested PHP array storing configuration data. 
+
+1.  Open `<Magento install dir>/app/etc/env.php` in a text editor.
+2.  Search for the value of `key` (it's in the `crypt` array).
+3.  Copy the value to the clipboard and save it.
+
+    You must paste the encryption key into your Magento Enterprise Cloud Edition `env.php` file later.
 
 ### Prepare the Magento EE database  {#cloud-import-prepare-db}
 Create a dump of the database you want to import using mysqldump. 
