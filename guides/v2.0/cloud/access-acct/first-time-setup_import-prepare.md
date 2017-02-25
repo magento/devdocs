@@ -20,7 +20,10 @@ Before you continue, make sure you have done all of the following:
 *   Your existing Magento EE code must be in Git. 
 
     If not, you must add it to Git before continuing.
-*   Complete the tasks discussed in [Set up a Magento workspace]({{page.baseurl}}cloud/before/before-workspace.html).
+*   Complete all of the tasks in your Magento EE system:
+
+    1.  [Install the CLI]({{ page.baseurl }}cloud/before/before-workspace-cli.html).
+    2.  [Set up SSH]({{ page.baseurl }}cloud/before/before-workspace-ssh.html)
 
 This is our recommended workflow:
 
@@ -68,7 +71,7 @@ To add required files to your Magento EE code:
     ![Switch to your current EE branch]({{ site.baseurl }}common/images/cloud_cloud-git-214.png){:width="600px"}
 
     In the procedure that follows, you'll copy the contents of some of these files to your Magento EE system.
-3.  Log in to your Magento EE system as, or switch to, the Magento file system owner.
+3.  Log in to your Magento EE system as, or switch to, the [Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html).
 4.  Enter the following commands in the order shown:
 
         cd <Magento installation dir>
@@ -130,7 +133,7 @@ Before you push code to the Magento Enterprise Cloud Edition Git repository, you
 
 To edit `composer.json`:
 
-1.  If you haven't done so already, log in to your Magento Enterprise Cloud Edition server as, or switch to, the Magento file system owner.
+1.  If you haven't done so already, log in to your Magento Enterprise Cloud Edition server as, or switch to, the [Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html).
 2.  In a text editor, open `composer.json` in the project root directory.
 3.  Substitute the following value in the `require` section:
 
@@ -172,7 +175,14 @@ To edit `composer.json`:
 ### Back up media files
 This section discusses how to use the [`magento setup:backup --media`]({{ page.basesurl }}install/cli/install-cli-backup.html) to back up media files.
 
-1.  To back up media files, enter the following command:
+1.  Get the  [integration system]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-int).
+
+    On your Cloud integration system, enter the following command:
+
+        magento-cloud environment:ssh --pipe
+
+    For more information, see [SSH into your environment]({{ page.baseurl }}cloud/env/environments-ssh.html).
+2.  To back up media files, enter the following command:
 
         php <Magento EE install dir>/bin/magento setup:backup --media
 
@@ -185,7 +195,7 @@ This section discusses how to use the [`magento setup:backup --media`]({{ page.b
 
         rsync /var/www/html/magento2/var/backups/1487962699_filesystem_media.tgz 43bkopvkhelhy-master-l8uv4kp@ssh.us.magentosite.cloud:var/media.tgz
 
-### Copy the encryption key
+### Copy the encryption key {#cloud-import-copykey}
 To be able to decrypt encrypted data from your imported database, copy your encryption from your existing `env.php` file. `env.php` contains a nested PHP array storing configuration data. 
 
 1.  Open `<Magento install dir>/app/etc/env.php` in a text editor.
@@ -211,3 +221,5 @@ Example if your database is on localhost with the default port (3306), database 
 
     mysqldump -p -u magento magento --single-transaction --no-autocommit --quick | gzip > ~/db.sql.gz
 
+#### Next step
+[Import Magento EE into Magento Enterprise Cloud Edition]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-import.html)

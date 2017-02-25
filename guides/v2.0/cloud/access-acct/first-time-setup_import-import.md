@@ -28,7 +28,7 @@ Before you continue, make sure you know the SSH or HTTPS URL for your Magento EE
 
 To create a remote Git reference:
 
-1.  Log in to your local Magento Enterprise Cloud Edition development machine as, or switch to, the Magento file system owner.
+1.  Log in to your local Magento Enterprise Cloud Edition development machine as, or switch to, the [Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html).
 2.  Make a copy of `composer.json` _in a non-tracked directory_ so it doesn't get overwritten.
 
         cp composer.json ../composer.json.cloud
@@ -117,7 +117,7 @@ The name of the database can be found in the `$MAGENTO_CLOUD_RELATIONSHIPS` envi
 
 To find database access information:
 
-1.  If you haven't already done so, log in to your local system as the Magento file system owner.
+1.  If you haven't already done so, log in to your local system as the [Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html).
 2.  Enter the following command:
 
         magento-cloud environment:ssh
