@@ -108,7 +108,7 @@ You can find the environment's SSH URL in any of the following ways:
 
 An SSH URL is similar to the following:
 
-    43bkopvkhelhy-master-l8uv4kp@ssh.us.magentosite.cloud
+<pre class="no-copy">43bkopvkhelhy-master-l8uv4kp@ssh.us.magentosite.cloud</pre>
 
 ### Database access
 The name of the database can be found in the `$MAGENTO_CLOUD_RELATIONSHIPS` environment variable. Display the variable with the following command. The database name is stored under `databases->path`. The password is found under `databases->password`.
@@ -146,13 +146,6 @@ The database connection information is displayed:
 
 In the preceding example, the database name is `main`, its listen port is `3306`, its host name is `database.internal`, its root user name is `user` and the user has no password.
 
-### Transfer the database dump from Magento EE to Cloud
-Use the `rsync` command as follows to transfer the database dump from your Magento EE system to the Magento Enterprise Cloud Edition environment.
-
-Now that you have created the dump, move it to the var directory of the application you are importing into:
-
-    rsync <db dump file name> <cloud ssh url>:var/db.sql.gz
-
 ### Drop and re-create the Cloud database
 SSH into the cloud environment and empty the existing database, if it is populated. If you have done any work you would like to refer to later that's been done in the Cloud environment, then make a backup of that first. 
 
@@ -173,7 +166,7 @@ To drop and re-create the Cloud database:
         drop database main;
 4.  Re-create the database:
 
-        create database <database name>;
+        create database main;
 5.  Exit the `MariaDB [main]>` prompt.
 
         exit
@@ -183,7 +176,8 @@ To drop and re-create the Cloud database:
 
     For example,
 
-         zcat var/db.sql.gz | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' | mysql -h database.internal -p -u user main
+        zcat var/db.sql.gz | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' | mysql -h database.internal -p -u user main
+7.  At the command prompt, enter `exit` to close the SSH tunnel.
 
 ### Update base URLs
 Before you can access Magento from your local Cloud development system, you must change the Base URLs in the Magento database. Base URLs are stored in the `core_config_data` table.
@@ -195,6 +189,7 @@ To update the unsecure base URL:
 1.  Find the value of the integration system URL:
 
         magento-cloud url
+2.  Copy the `http://` URL to the clipboard.
 2.  SSH to the Cloud integration server:
 
         magento-cloud ssh
@@ -207,15 +202,19 @@ To update the unsecure base URL:
         mysql -h database.internal -u user main
 4.  Show the contents of the `core_config_data` table.
 
-        SHOW * from core_config_data;
+        SELECT * from core_config_data;
 
     Note the `path` of `web/unsecure/base_url`; this is the value you'll change.
 5.  Enter the following command to change the value of `path` to your integration server's unsecure base URL:
 
-        UPDATE core_config_data SET value=<Cloud unsecure base URL> WHERE path=web/unsecure/base_url;
+        UPDATE core_config_data SET value='<Cloud unsecure base URL>' WHERE path='web/unsecure/base_url';
+
+    <div class="bs-callout bs-callout-warning" id="warning" markdown="1">
+    The base URL _must_ end with a `/` character.
+</div> 
 6.  Confirm the change by entering the following command:
 
-        SHOW * from core_config_data;
+        SELECT * from core_config_data;
 7.  If the change was successful, enter `exit` to exit the `[Maria DB]` prompt.
 8.  Continue with the next section.
 
@@ -225,7 +224,7 @@ For your system to be fully functional, you must also set unsecure and secure UR
 
 ## Copy the encryption key
 
-1.  SSH to the Cloud environnment.
+1.  If you haven't done so already, SSH to the Cloud environnment.
 
         magento-cloud environment:ssh
 2.  Open `app/etc/env.php` in a text editor.
@@ -246,7 +245,7 @@ return array (
 ## Import media
 To import media files into your Cloud environment:
 
-1.  SSH to the Cloud environnment.
+1.  If you haven't done so already, SSH to the Cloud environnment.
 
         magento-cloud environment:ssh
 2.  Enter the following command to clear existing media files:

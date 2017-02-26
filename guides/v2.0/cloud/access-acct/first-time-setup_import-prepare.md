@@ -207,6 +207,7 @@ To be able to decrypt encrypted data from your imported database, copy your encr
 ## Prepare the Magento EE database  {#cloud-import-prepare-db}
 Create a dump of the database you want to import using mysqldump. 
 
+### Create a database dump
 The following example shows how to compress the dump so it doesn't significantly interfere with traffic from in live site. 
 
 In the example, the dump file is named `db.sql.gz`. It's a good idea to include the date in the filename if you do multiple dumps over time.
@@ -220,6 +221,14 @@ Command syntax follows:
 Example if your database is on localhost with the default port (3306), database user name is `magento`, and database name is also `magento`:
 
     mysqldump -p -u magento magento --single-transaction --no-autocommit --quick | gzip > ~/db.sql.gz
+
+### Transfer the database dump from Magento EE to Cloud
+Use the `rsync` command as follows to transfer the database dump from your Magento EE system to the Magento Enterprise Cloud Edition environment.
+
+Now that you have created the dump, move it to the var directory of the application you are importing into:
+
+    rsync <db dump file name> <cloud ssh url>:var/db.sql.gz
+
 
 #### Next step
 [Import Magento EE into Magento Enterprise Cloud Edition]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-import.html)
