@@ -73,7 +73,7 @@ To import your Magento EE code to Cloud:
 
         git push -f cloud-project master
 
-As the project builds and deploys, many messages are displayed on the screen. A successful deployment is incidated by the following messages:
+As the project builds and deploys, many messages are displayed on the screen. A successful deployment is indicated by the following messages:
 
     Re-deploying environment 43biovskhelhy-master-l5ut8gq.
        Environment configuration:
@@ -87,7 +87,7 @@ As the project builds and deploys, many messages are displayed on the screen. A 
        https://master-o9gv6gq-43biovskhelhy.us.magentosite.cloud/ is served by application `mymagento`
 
 ## Import the Magento database
-Before you can use your existing Magento EE clode in Magento Enterprise Cloud Edition, you must import the database.
+Before you can use your existing Magento EE code in Magento Enterprise Cloud Edition, you must import the database.
 
 To import the Magento database in Magento Enterprise Cloud Edition, you must know:
 
@@ -151,7 +151,7 @@ SSH into the cloud environment and empty the existing database, if it is populat
 
 To drop and re-create the Cloud database:
 
-1.  If you haven't done so already, SSH to the Cloud environnment.
+1.  If you haven't done so already, SSH to the Cloud environment.
 
         magento-cloud environment:ssh
 2.  Connect to the database.
@@ -170,7 +170,7 @@ To drop and re-create the Cloud database:
 5.  Exit the `MariaDB [main]>` prompt.
 
         exit
-6.  At the shell command prompt, enter the followign command to re-create the database.
+6.  At the shell command prompt, enter the following command to re-create the database.
 
         zcat var/db.sql.tgz | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' | mysql -h <db-host> -P <db-port> -p -u <db-user> <db-name> 
 
@@ -225,7 +225,7 @@ For your system to be fully functional, you must also set unsecure and secure UR
 
 ## Copy the encryption key
 
-1.  If you haven't done so already, SSH to the Cloud environnment.
+1.  If you haven't done so already, SSH to the Cloud environment.
 
         magento-cloud environment:ssh
 2.  Open `app/etc/env.php` in a text editor.
@@ -246,7 +246,7 @@ return array (
 ## Import media
 To import media files into your Cloud environment:
 
-1.  If you haven't done so already, SSH to the Cloud environnment.
+1.  If you haven't done so already, SSH to the Cloud environment.
 
         magento-cloud environment:ssh
 2.  Enter the following command to clear existing media files:

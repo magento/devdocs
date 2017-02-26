@@ -187,7 +187,7 @@ This section discusses how to use the [`magento setup:backup --media`]({{ page.b
         php <Magento EE install dir>/bin/magento setup:backup --media
 
     The backup is stored in the `<Magento EE install dir>/var/backups` directory.
-2.  Transfer the media file to your Magento Enteprise Cloud Edition system:
+2.  Transfer the media file to your Magento Enterprise Cloud Edition system:
 
         rsync <Magento EE install dir>/var/backups/<backup file name> <cloud ssh url>:var/media.tgz
 
@@ -210,7 +210,7 @@ Create a dump of the database you want to import using mysqldump.
 ### Create a database dump
 The following example shows how to compress the dump so it doesn't significantly interfere with traffic from in live site. 
 
-In the example, the dump file is named `db.sql.gz`. It's a good idea to include the date in the filename if you do multiple dumps over time.
+In the example, the dump file is named `db.sql.gz`. It's a good idea to include the date in the file name if you do multiple dumps over time.
 
 Because the database dump can be large, we recommend you create it in a directory not tracked by Git.
 
