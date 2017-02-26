@@ -151,7 +151,7 @@ SSH into the cloud environment and empty the existing database, if it is populat
 
 To drop and re-create the Cloud database:
 
-1.  SSH to the Cloud environnment.
+1.  If you haven't done so already, SSH to the Cloud environnment.
 
         magento-cloud environment:ssh
 2.  Connect to the database.
@@ -172,11 +172,11 @@ To drop and re-create the Cloud database:
         exit
 6.  At the shell command prompt, enter the followign command to re-create the database.
 
-        zcat var/db.sql.gz | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' | mysql -h <db-host> -P <db-port> -p -u <db-user> <db-name> 
+        zcat var/db.sql.tgz | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' | mysql -h <db-host> -P <db-port> -p -u <db-user> <db-name> 
 
     For example,
 
-        zcat var/db.sql.gz | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' | mysql -h database.internal -p -u user main
+        zcat var/db.sql.tgz | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' | mysql -h database.internal -p -u user main
 7.  At the command prompt, enter `exit` to close the SSH tunnel.
 
 ### Update base URLs
@@ -211,10 +211,11 @@ To update the unsecure base URL:
 
     <div class="bs-callout bs-callout-warning" id="warning" markdown="1">
     The base URL _must_ end with a `/` character.
-</div> 
+    </div> 
 6.  Confirm the change by entering the following command:
 
         SELECT * from core_config_data;
+
 7.  If the change was successful, enter `exit` to exit the `[Maria DB]` prompt.
 8.  Continue with the next section.
 
@@ -256,14 +257,13 @@ To import media files into your Cloud environment:
         tar -xzf var/media.tgz pub/media
 
 ## Clear the cache
-On the Cloud environment, flush the cache:
+On the Cloud environment, enter the following commands in the order shown:
 
+    bin/magento setup:upgrade
+    bin/magento magento setup:static-content:deploy
     bin/magento cache:flush
 
 After the cache flushes, enter `exit` to close the SSH tunnel.
-
-## Push the changes
-TBD
 
 ## Verify the import
 To verify everything imported properly, perform the following tasks in your local Cloud development environment:
@@ -271,4 +271,8 @@ To verify everything imported properly, perform the following tasks in your loca
 1.  On your Cloud environment, enter the following commands to find the information to log in to the Magento Admin and to view the storefront:
 
         magento-cloud environment:url
-        magento-cloud variable:list
+2.  Log in to the Magento Admin using the user name and password of your Magento EE system.
+3.  Make sure settings in the Admin are the same as your Magento EE system.
+3.  Access the storefront.
+4.  Make sure categories, products, and so on display as you expect.
+5.  Test everything thoroughly.

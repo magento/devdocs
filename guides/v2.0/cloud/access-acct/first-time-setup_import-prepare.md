@@ -172,7 +172,7 @@ To edit `composer.json`:
         cd <Magento EE install dir>
         git add -A && git commit -m "Add Cloud files" && git push origin <branch name>
 
-### Back up media files
+### Back up and transfer media files
 This section discusses how to use the [`magento setup:backup --media`]({{ page.basesurl }}install/cli/install-cli-backup.html) to back up media files.
 
 1.  Get the  [integration system]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-int).
