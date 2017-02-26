@@ -55,6 +55,7 @@ To create a remote Git reference:
         magento-cloud environment:checkout master
 7.  Make sure this `master` branch is set up to import code to the Cloud project.
 
+        git fetch cloud-project
         git branch -u cloud-project/master
 
 ## Import your Magento EE code to your Cloud project {#cloud-import-imp}
@@ -84,9 +85,6 @@ As the project builds and deploys, many messages are displayed on the screen. A 
     Environment routes:
        http://master-o9gv6gq-43biovskhelhy.us.magentosite.cloud/ is served by application `mymagento`
        https://master-o9gv6gq-43biovskhelhy.us.magentosite.cloud/ is served by application `mymagento`
-
-To 43biovskhelhy@git.us.magento.cloud:43bmmwdkhelhy.git
-   445b5e8..b597726  master -> master
 
 ## Import the Magento database
 Before you can use your existing Magento EE clode in Magento Enterprise Cloud Edition, you must import the database.
