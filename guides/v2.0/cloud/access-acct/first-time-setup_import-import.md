@@ -21,6 +21,29 @@ The procedure discussed in this topic replaces your new Magento Enterprise Cloud
 Before you continue, make sure there is nothing in your Magento Enterprise Cloud Edition project you want to keep.
 </div>
 
+## Required information
+This section discusses information you must know to complete the tasks discussed in this topic:
+
+*   Magento Enterprise Cloud Edition environment SSH URL.
+
+    You can find it using:
+
+    *   The command line:
+
+            magento-cloud environment:ssh --pipe
+
+    *   The project [Web Interface]({{ page.baseurl }}cloud/project/project-webint-basic.html).
+*   Environment's unsecure base URL.
+
+    You can find it using:
+
+    *   The command line:
+
+            magento-cloud url
+
+    *   The project [Web Interface]({{ page.baseurl }}cloud/project/project-webint-basic.html).
+*   [Encryption key]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-prepare.html) from your Magento EE system.
+
 ## Create a remote Git reference {#cloud-import-ref}
 This section discusses how to create a remote Git reference from your Cloud Git repository to the repository in which your Magento EE installation is located.
 
@@ -151,10 +174,7 @@ SSH into the cloud environment and empty the existing database, if it is populat
 
 To drop and re-create the Cloud database:
 
-1.  If you haven't done so already, SSH to the Cloud environment.
-
-        magento-cloud environment:ssh
-2.  Connect to the database.
+1.  Connect to the database.
 
         mysql -h <db-host> -P <db-port> -p -u <db-user> <db-name>
 
@@ -163,13 +183,13 @@ To drop and re-create the Cloud database:
         mysql -h database.internal -u user main
 3.  Drop the database. At the `MariaDB [main]>` prompt, enter:
 
-        drop database main;
+        drop database <name>;
+
+    By default, the database name is `main`.
 4.  Re-create the database:
 
         create database main;
-5.  Exit the `MariaDB [main]>` prompt.
-
-        exit
+5.  At the `MariaDB [main]>` prompt, enter `exit`.
 6.  At the shell command prompt, enter the following command to re-create the database.
 
         zcat var/db.sql.tgz | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' | mysql -h <db-host> -P <db-port> -p -u <db-user> <db-name> 
@@ -177,7 +197,6 @@ To drop and re-create the Cloud database:
     For example,
 
         zcat var/db.sql.tgz | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' | mysql -h database.internal -p -u user main
-7.  At the command prompt, enter `exit` to close the SSH tunnel.
 
 ### Update base URLs
 Before you can access Magento from your local Cloud development system, you must change the Base URLs in the Magento database. Base URLs are stored in the `core_config_data` table.
@@ -186,11 +205,7 @@ The following example shows how to change _only_ the insecure URL but you can us
 
 To update the unsecure base URL:
 
-1.  Find the value of the integration system URL:
-
-        magento-cloud url
-2.  Copy the `http://` URL to the clipboard.
-2.  SSH to the Cloud integration server:
+1.  If you haven't already done so, SSH to the Cloud integration server:
 
         magento-cloud ssh
 3.  Connect to the database.
@@ -229,7 +244,7 @@ For your system to be fully functional, you must also set unsecure and secure UR
 
         magento-cloud environment:ssh
 2.  Open `app/etc/env.php` in a text editor.
-3.  Replace the existing value of `key` with your Magento EE key.
+3.  Replace the existing value of `key` with your [Magento EE key]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-prepare.html#cloud-import-copykey).
 4.  Save your changes to `env.php` and exit the text editor.
 
 If `env.php` does not exist, create it with the following contents:
