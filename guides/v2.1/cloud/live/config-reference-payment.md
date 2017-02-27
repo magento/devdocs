@@ -12,7 +12,10 @@ version: 2.0
 github_link: cloud/live/config-reference-payment.md
 ---
 
-This topic lists payment-related configuration paths.
+This topic lists payment-related configuration paths. For a list of other configuration patns, see:
+
+*	[All configuration paths except payments]({{ page.baseurl }}cloud/live/config-reference-most.html).
+*	[Sensitive configuration paths]({{ page.baseurl }}cloud/live/config-reference-sens.html)
 
 {% include cloud/config-vars.md %}
 

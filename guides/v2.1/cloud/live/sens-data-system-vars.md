@@ -14,6 +14,9 @@ github_link: cloud/live/sens-data-system-vars.md
 
 This topic discusses how to find and set the system settings we include in `config.local.php` in version 2.1.4.1. You can set variable values per scope (global, website, or store view). For example, you could set the locale used in a particular website.
 
+## Overview of configuration variable naming
+A configuration variable name consists of its scope followed by its configuration path. The following sections discuss how to determine a variable name in more detail.
+
 ### Variable names
 The general format of system settings variable names follows:
 
