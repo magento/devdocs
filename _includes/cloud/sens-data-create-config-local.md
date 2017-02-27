@@ -5,7 +5,7 @@
 		magento-cloud environment:ssh --pipe -e master
 2.	Create `config.local.php` on the integration server.
 
-		ssh -k <SSH URL>@ssh.us.magentosite.cloud "php bin/magento app:config:scd-dump"
+		ssh -k <SSH URL>@ssh.us.magentosite.cloud "php bin/magento app:config:SCDDump"
 
 	For example,
 

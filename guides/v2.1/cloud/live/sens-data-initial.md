@@ -2,8 +2,8 @@
 layout: default
 group: cloud
 subgroup: 40_live
-title: Manage system-specific settings 
-menu_title: Manage system-specific settings
+title: Example of managing system-specific settings 
+menu_title: Example of managing system-specific settings
 menu_order: 15
 menu_node: 
 level3_menu_node: level3child
@@ -12,9 +12,12 @@ version: 2.1
 github_link: cloud/live/sens-data-initial.md
 ---
 
-This topic discusses how to manage default locale and static file optimization settings in your integration system. _static file optimization_ means merging and minifying JavaScript and Cascading Style Sheets, and minifying HTML templates. static file optimization should be disabled in integration (where you're testing) and enabled in staging and production.  
+This topic discusses how to manage default locale and static file optimization settings in your integration system. _Static file optimization_ means merging and minifying JavaScript and Cascading Style Sheets, and minifying HTML templates. static file optimization should be disabled in integration (where you're testing) and enabled in staging and production.  
 
-These particular settings are discussed only to explain how the procedure works; you can use the same procedure to manage any available settings. For a complete list of settings, see [List of system-specific configuration settings]({{ page.baseurl }}cloud/live/sens-data-over.html#cloud-config-specific-list). 
+These particular settings are discussed only to explain how the procedure works; you can use the same procedure to manage any available settings. For a complete list of settings, see:
+
+*	TBD
+*	TBD 
 
 This example shows how to:
 
@@ -22,11 +25,7 @@ This example shows how to:
 2.	Create `config.local.php` and transfer it to your local system.
 3.	Push `config.local.php` to the integration server
 4.	Verify your settings are not editable in the Admin.
-
-	Your changes should not be editable in the Admin.
 5.	Delete `config.local.php`, change the settings, and push `config.local.php` to the integration server.
-
-To manage _sensitive_ configuration settings, see [Manage sensitive configuration values]({{ page.baseurl }}cloud/live/sens-data-mg-sens.html).
 
 ## Required role
 To complete the tasks discussed in this topic, you must have at minimum a project reader role with [environment administrator]({{ page.baseurl }}cloud/admin/admin-user-admin.html#loud-role-env) privileges.
@@ -74,13 +73,14 @@ This section discusses how to change the locale for the Default Config and also 
 
 To change locale and static file optimization settings:
 
+1.	Log in to the integration server Admin with the information you found in [Step 2: Find Admin login information](#cloud-deploy-admin-login).
 1.	Click **Stores** > Settings > **Configuration** > General > **General**. 
 2.	In the right pane, expand **Locale Options**. 
 3.	From the **Locale** list, change the locale. (You can change it back later.)
 
 	The following figure shows an example.
 
-	![Change the locale]({{ site.baseurl }}common/images/cloud_var_locale.png){:width="250px"}
+	![Change the locale]({{ site.baseurl }}common/images/cloud_var_locale.png){:width="300px"}
 4.	Click **Save Config**.
 5.	In the left navigation pane, click **Advanced** > **Developer**.
 5.	In the right pane, expand **Template Settings**.
