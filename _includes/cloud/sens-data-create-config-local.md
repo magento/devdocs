@@ -9,7 +9,7 @@
 
 	For example,
 
-		ssh -k itnu84v4m4e5k-prod1-ouhx5wq@ssh.us.magentosite.cloud "php bin/magento app:config:scd-dump"
+		ssh -k itnu84v4m4e5k-prod1-ouhx5wq@ssh.us.magentosite.cloud "php bin/magento app:config:SCDDump"
 
 	A message similar to the following displays if you have any sensitive settings configured in your system:
 
