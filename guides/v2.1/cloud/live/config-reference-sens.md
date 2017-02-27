@@ -12,4 +12,8 @@ version: 2.0
 github_link: cloud/live/config-reference-sens.md
 ---
 
+This topic lists only configuration paths for sensitive settings.
+
+{% include cloud/config-vars.md %}
+
 {% include config/config-reference_sensitive.md %}

@@ -2,8 +2,8 @@
 layout: default
 group: cloud
 subgroup: 40_live
-title: System settings reference
-menu_title: System settings reference
+title: How to name configuration variables
+menu_title: How to name configuration variables
 menu_order: 12
 menu_node: 
 level3_menu_node: level3child
@@ -141,12 +141,7 @@ This section discusses how to set system variables.
 
 [See some examples](#cloud-system-vars-ex)
 
-A few examples of variables related to static content deployment are shown in the table that follows. A complete list of values can be found in:
-
-*	[All configuration variables except paths]({{ page.baseurl }}cloud/live/config-reference-most.html)
-*	[Payment configuration paths]({{ page.baseurl }}cloud/live/config-reference-payment.html)
-
-The following table shows a few sample values.
+The following table shows a few sample variables related to static content deployment.
 
 | Description  | Path in Magento Admin (omitting **Stores** > **Configuration**) | Variable name | 
 |--------------|--------------|----------------------|
@@ -157,6 +152,11 @@ The following table shows a few sample values.
 | JavaScript minification  | Advanced > **Developer**, **JavaScript Settings** > (several options)  | `<SCOPE>__DEV__JS__MINIFY_FILES` |  
 | CSS minification  | Advanced > **Developer**, **CSS Settings** > **Merge CSS Files** and **Minify CSS Files**  | `<SCOPE>__DEV__CSS__MINIFY_FILES` | 
 | Disable modules output |  Advanced > **Advanced** > **Disable Modules Output** | `<SCOPE>__DEV__ADVANCED__DISABLE_MODULES_OUTPUT__<MODULE NAME>`  | 
+
+A complete list of values can be found in:
+
+*	[All configuration variables except paths]({{ page.baseurl }}cloud/live/config-reference-most.html)
+*	[Payment configuration paths]({{ page.baseurl }}cloud/live/config-reference-payment.html)
 
 {% endcollapsibleh2 %}
 

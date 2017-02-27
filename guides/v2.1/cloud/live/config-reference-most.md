@@ -12,7 +12,9 @@ version: 2.0
 github_link: cloud/live/config-reference-most.md
 ---
 
-This topic lists all configuration variables _except_ payment variables. Payment variables are listed in [Payment configuration variables]({{ page.baseurl }}cloud/live/config-reference-payment.html).
+This topic lists all configuration paths _except_ payment variables. Payment paths are listed in [Payment configuration paths]({{ page.baseurl }}cloud/live/config-reference-payment.html).
+
+{% include cloud/config-vars.md %}
 
 {% include config/config-reference.md %}
 

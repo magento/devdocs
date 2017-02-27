@@ -12,4 +12,8 @@ version: 2.0
 github_link: cloud/live/config-reference-payment.md
 ---
 
+This topic lists payment-related configuration paths.
+
+{% include cloud/config-vars.md %}
+
 {% include config/config-reference_payment.md %}
