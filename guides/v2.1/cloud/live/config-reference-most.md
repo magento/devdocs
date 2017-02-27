@@ -19,7 +19,5 @@ For those configuration paths, see:
 *	[Payment configuration paths]({{ page.baseurl }}cloud/live/config-reference-payment.html)
 *	[Sensitive configuration paths]({{ page.baseurl }}cloud/live/config-reference-sens.html)
 
-{% include cloud/config-vars.md %}
-
 {% include config/config-reference.md %}
 

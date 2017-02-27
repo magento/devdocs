@@ -17,6 +17,4 @@ This topic lists payment-related configuration paths. For a list of other config
 *	[All configuration paths except payments]({{ page.baseurl }}cloud/live/config-reference-most.html)
 *	[Sensitive configuration paths]({{ page.baseurl }}cloud/live/config-reference-sens.html)
 
-{% include cloud/config-vars.md %}
-
 {% include config/config-reference_payment.md %}
