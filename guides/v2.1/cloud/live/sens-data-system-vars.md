@@ -12,11 +12,12 @@ version: 2.1
 github_link: cloud/live/sens-data-system-vars.md
 ---
 
-This topic discusses how to find and set the system settings we include in `config.local.php` in version 2.1.TBD. You can set variable values per scope (global, website, or store view). For example, you could set the locale used in a particular website.
+This topic discusses how to find and set the system settings we include in `config.local.php` in version 2.1.4.1. You can set variable values per scope (global, website, or store view). For example, you could set the locale used in a particular website.
 
-The general format of system variables follows:
+### Variable names
+The general format of system settings variable names follows:
 
-<pre class="no-copy">&lt;SCOPE>__&lt;SYSTEM__VARIABLE></pre>
+<pre class="no-copy">&lt;SCOPE>__&lt;SYSTEM__VARIABLE__NAME></pre>
 
 `<SCOPE>` can be either:
 
@@ -24,13 +25,13 @@ The general format of system variables follows:
 
 	Global scope variables have the following format:
 
-	<pre class="no-copy">CONFIG__DEFAULT__&lt;SYSTEM__VARIABLE></pre>
+	<pre class="no-copy">CONFIG__DEFAULT__&lt;SYSTEM__VARIABLE__NAME></pre>
 
 *	A specific scope (that is, the setting affects only a specified store view or website)
 
 	Store view scope variables, for example, have the following format:
 
-	<pre class="no-copy">CONFIG__STORES__ &lt;STORE_VIEW_CODE>__&lt;SYSTEM__VARIABLE></pre>
+	<pre class="no-copy">CONFIG__STORES__ &lt;STORE_VIEW_CODE>__&lt;SYSTEM__VARIABLE__NAME></pre>
 
 	For more information about scopes, see:
 
@@ -39,6 +40,16 @@ The general format of system variables follows:
 	*	[Scope quick reference](http://docs.magento.com/m2/ce/user_guide/stores/store-scope-reference.html){:target="_blank"}
 
 `<SYSTEM__VARIABLE__NAME>` is the variable you wish to specify. For more information, see [Step 2: Set system variables](#cloud-system-vars-sys).
+
+### Variable format
+`<SCOPE>` is separated from `<SYSTEM__VARIABLE__NAME>` by two underscore characters. 
+
+`<SYSTEM__VARIABLE__NAME>` is derived from a configuration setting's _configuration path_, which is a `/` delimited string that uniquely identifies a particular setting. Replace each `/` character in the configuration path with two underscore characters to create the system variable.
+
+A complete list of configuration paths can be found in:
+
+*	[All configuration variables except payments]({{ page.baseurl }}cloud/live/config-reference-most.html)
+*	[Payment configuration variables]({{ page.baseurl }}cloud/live/config-reference-payment.html)
 
 <p id="cloud-system-vars-scopes"></p>{% collapsibleh2 Step 1: Find the website or store view scope value %}
 
@@ -129,8 +140,7 @@ This section discusses how to set system variables.
 
 [See some examples](#cloud-system-vars-ex)
 
-Step 2: System variables from the `core_config_data` table.
-
+System variables from the `core_config_data` table.
 
 | Description  | Path in Magento Admin (omitting **Stores** > **Configuration**) | Variable name | 
 |--------------|--------------|----------------------|

@@ -1,9 +1,9 @@
 <div markdown="1">
 
 ## General category
-This section lists variable names and config paths available for options in the Admin under **Stores** > Settings > **Configuration** > **General**.
+This section lists variable names and configuration paths available for options in the Admin under **Stores** > Settings > **Configuration** > **General**.
 
-### General variables
+### General paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **General** > **General**.
 
 Name  | Config path
@@ -37,7 +37,7 @@ Street Address Line 2 | `general/store_information/street_line2`
 VAT Number | `general/store_information/merchant_vat_number`
 Enable Single-Store Mode | `general/single_store_mode/enabled`
 
-### Web variables
+### Web paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **General** > **Web**.
 
 Name  | Config path
@@ -79,7 +79,7 @@ Show Notice if JavaScript is Disabled | `web/browser_capabilities/javascript`
 Show Notice if Local Storage is Disabled | `web/browser_capabilities/local_storage`
 Add Store Code to Urls | `web/url
 
-### Currency setup variables
+### Currency setup paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **General** > **Currency setup**.
 
 Name  | Config path
@@ -97,7 +97,7 @@ Frequency | `currency/import/frequency`
 Error Email Sender | `currency/import/error_email_identity`
 Error Email Template | `currency/import/error_email_template`
 
-### Contacts variables
+### Contacts paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **General** > **Contacts**.
 
 Name  | Config path
@@ -106,7 +106,7 @@ Enable Contact Us | `contact/contact/enabled`
 Email Sender | `contact/email/sender_email_identity`
 Email Template | `contact/email/email_template`
 
-### Reports variables
+### Reports paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **General** > **Reports**.
 
 Name  | Config path
@@ -114,7 +114,7 @@ Name  | Config path
 Year-To-Date Starts | `reports/dashboard/ytd_start`
 Current Month Starts | `reports/dashboard/mtd_start`
 
-### Content management variables
+### Content management paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **General** > **Content Management**.
 
 Name  | Config path
@@ -125,7 +125,7 @@ Enable Hierarchy Functionality | `cms/hierarchy/enabled`
 Enable Hierarchy Metadata | `cms/hierarchy/metadata_enabled`
 Default Layout for Hierarchy Menu | `cms/hierarchy/menu_layout`
 
-### New Relic reporting variables
+### New Relic reporting paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **General** > **New Relic Reporting**.
 
 Name  | Config path
@@ -139,7 +139,7 @@ Enable Cron | `newrelicreporting/cron/enable_cron`
 ## Catalog category
 This section lists variable names and config paths available for options in the Admin under **Stores** > Settings > **Configuration** > **Catalog**.
 
-### Catalog variables
+### Catalog paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Catalog** > **Catalog**.
 
 Name  | Config path
@@ -242,7 +242,7 @@ Maximum Number of Products in Upsell Product List | `catalog/magento_targetrule/
 Show Upsell Products | `catalog/magento_targetrule/upsell_position_behavior`
 Rotation Mode for Products in Upsell Product List | `catalog/magento_targetrule/upsell_rotation_mode`
 
-### Inventory variables
+### Inventory paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Catalog** > **Inventory**.
 
 Name  | Config path
@@ -263,7 +263,7 @@ Enable Qty Increments | `cataloginventory/item_options/enable_qty_increments`
 Qty Increments | `cataloginventory/item_options/qty_increments`
 Automatically Return Credit Memo Item to Stock | `cataloginventory/item_options/auto_return`
 
-### Visual Merchadiser variables
+### Visual Merchadiser paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Catalog** > **Visual Merchandiser**.
 
 Name  | Config path
@@ -273,7 +273,7 @@ Minimum Stock Threshold | `visualmerchandiser/options/minimum_stock_threshold`
 Color Attribute Code | `visualmerchandiser/options/color_attribute_code`
 Color Order | `visualmerchandiser/options/color_order`
 
-### XML sitemap variables
+### XML sitemap paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Catalog** > **XML Sitemap**.
 
 Name  | Config path
@@ -294,7 +294,7 @@ Maximum No of URLs Per File | `sitemap/limit/max_lines`
 Maximum File Size | `sitemap/limit/max_file_size`
 Enable Submission to Robots.txt | `sitemap/search_engines/submission_robots`
 
-### RSS Feeds variables
+### RSS Feeds paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Catalog** > **RSS Feeds**.
 
 Name  | Config path
@@ -307,7 +307,7 @@ Coupons/Discounts | `rss/catalog/discounts`
 Top Level Category | `rss/catalog/category`
 Customer Order Status Notification | `rss/order/status`
 
-### Email to a friend variables
+### Email to a friend paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Catalog** > **Email to a Friend**.
 
 Name  | Config path
@@ -322,7 +322,7 @@ Limit Sending By | `sendfriend/email/check_by`
 ## Customers category
 This section lists variable names and config paths available for options in the Admin under **Stores** > Settings > **Configuration** > **Customers**.
 
-### Newsletter variables
+### Newsletter paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Customers** > **Newsletter**.
 
 Name  | Config path
@@ -336,7 +336,7 @@ Success Email Template | `newsletter/subscription/success_email_template`
 Unsubscription Email Sender | `newsletter/subscription/un_email_identity`
 Unsubscription Email Template | `newsletter/subscription/un_email_template`
 
-### Customer configuration variables
+### Customer configuration paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Customers** > **Customer Configuration**.
 
 Name  | Config path
@@ -404,7 +404,7 @@ Number of Symbols | `customer/captcha/length`
 Symbols Used in CAPTCHA | `customer/captcha/symbols`
 Case Sensitive | `customer/captcha/case_sensitive`
 
-### Wish list variables
+### Wish list paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Customers** > **Wish List**.
 
 Name  | Config path
@@ -418,7 +418,7 @@ Max Emails Allowed to be Sent | `wishlist/email/number_limit`
 Email Text Length Limit | `wishlist/email/text_limit`
 Display Wish Lists Summary | `wishlist/wishlist_link/use_qty`
 
-### Invitations variables
+### Invitations paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Customers** > **Invitations**.
 
 Name  | Config path
@@ -432,7 +432,7 @@ Max Invitations Allowed to be Sent at One Time | `magento_invitation/general/max
 Customer Invitation Email Sender | `magento_invitation/email/identity`
 Customer Invitation Email Template | `magento_invitation/email/template`
 
-### Reward points variables
+### Reward points paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Customers** > **Reward Points**.
 
 Name  | Config path
@@ -463,7 +463,7 @@ Balance Update Email | `magento_reward/notification/balance_update_template`
 Reward Points Expiry Warning Email | `magento_reward/notification/expiry_warning_template`
 Expiry Warning Before (days) | `magento_reward/notification/expiry_day_before`
 
-### Promotions variables
+### Promotions paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Customers** > **Promotions**.
 
 Name  | Config path
@@ -482,7 +482,7 @@ Code Prefix | `promo/auto_generated_coupon_codes/prefix`
 Code Suffix | `promo/auto_generated_coupon_codes/suffix`
 Dash Every X Characters | `promo/auto_generated_coupon_codes/dash`
 
-### Gift registry variables
+### Gift registry paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Customers** > **Gift Registry**.
 
 Name  | Config path
@@ -497,7 +497,7 @@ Maximum Sent Emails Threshold | `magento_giftregistry/sharing_email/send_limit`
 Email Template | `magento_giftregistry/update_email/template`
 Email Sender | `magento_giftregistry/update_email/identity`
 
-### Persistent shopping cart variables
+### Persistent shopping cart paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Customers** > **Persistent Shopping Cart**.
 
 Name  | Config path
@@ -518,7 +518,7 @@ Persist Customer Group Membership and Segmentation | `persistent/options/custome
 ## Sales category
 This section lists variable names and config paths available for options in the Admin under **Stores** > Settings > **Configuration** > **Sales**.
 
-### Sales variables
+### Sales paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Sales**.
 
 Name  | Config path
@@ -567,7 +567,7 @@ Enable RMA on Product Level | `sales/magento_rma/enabled_on_product`
 Use Store Address | `sales/magento_rma/use_store_address`
 
 
-### Sales emails variables
+### Sales emails paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Sales Emails**.
 
 Name  | Config path
@@ -637,7 +637,7 @@ Display Order ID in Header | `sales_pdf/invoice/put_order_id`
 Display Order ID in Header | `sales_pdf/shipment/put_order_id`
 Display Order ID in Header | `sales_pdf/creditmemo/put_order_id`
 
-### Tax variables
+### Tax paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Tax**.
 
 Name  | Config path
@@ -683,7 +683,7 @@ Display Prices In Emails | `tax/weee/display_email`
 Apply Tax To FPT | `tax/weee/apply_vat`
 Include FPT In Subtotal | `tax/weee/include_in_subtotal`
 
-### Checkout variables
+### Checkout paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Checkout**.
 
 Name  | Config path
@@ -705,7 +705,7 @@ Payment Failed Email Receiver | `checkout/payment_failed/receiver`
 Payment Failed Template | `checkout/payment_failed/template`
 Send Payment Failed Email Copy Method | `checkout/payment_failed/copy_method`
 
-### Shipping settings variables
+### Shipping settings paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Shipping Settings**.
 
 Name  | Config path
@@ -713,7 +713,7 @@ Name  | Config path
 Apply custom Shipping Policy | `shipping/shipping_policy/enable_shipping_policy`
 Shipping Policy | `shipping/shipping_policy/shipping_policy_content`
 
-### Multishipping settings variables
+### Multishipping settings paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Multishipping Settings**.
 
 Name  | Config path
@@ -721,7 +721,7 @@ Name  | Config path
 Allow Shipping to Multiple Addresses | `multishipping/options/checkout_multiple`
 Maximum Qty Allowed for Shipping to Multiple Addresses | `multishipping/options/checkout_multiple_maximum_qty`
 
-### Shipping methods variables
+### Shipping methods paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Shipping Methods**.
 
 Name  | Config path
@@ -869,7 +869,7 @@ Show Method if Not Applicable | `carriers/dhl/showmethod`
 Debug | `carriers/dhl/debug`
 Sort Order | `carriers/dhl/sort_order`
 
-### Google API variables 
+### Google API paths 
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Google API**.
 
 Name  | Config path
@@ -893,7 +893,7 @@ Conversion Label | `google/adwords/conversion_label`
 Conversion Value Type | `google/adwords/conversion_value_type`
 Conversion Value | `google/adwords/conversion_value`
 
-### Gift cards variables
+### Gift cards paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Gift Cards**.
 
 Name  | Config path
@@ -918,7 +918,7 @@ Low Code Pool Threshold | `giftcard/giftcardaccount_general/pool_threshold`
 ## Services category
 This section lists variable names and config paths available for options in the Admin under **Stores** > Settings > **Configuration** > **Services**.
 
-### Magento Web API variables
+### Magento Web API paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Services** > **Web API**.
 
 Name  | Config path
@@ -926,7 +926,7 @@ Name  | Config path
 Default Response Charset | `webapi/soap/charset`
 Allow Anonymous Guest Access | `webapi/webapisecurity/allow_insecure`
 
-### OAuth variables
+### OAuth paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Services** > **OAuth**.
 
 Name  | Config path
@@ -940,7 +940,7 @@ OAuth consumer credentials HTTP Post timeout | `oauth/consumer/post_timeout`
 ## Advanced category
 This section lists variable names and config paths available for options in the Admin under **Stores** > Settings > **Configuration** > **Advanced**.
 
-### Admin variables
+### Admin paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Advanced** > **Admin**.
 
 Name  | Config path
@@ -975,7 +975,7 @@ Symbols Used in CAPTCHA | `admin/captcha/symbols`
 Case Sensitive | `admin/captcha/case_sensitive`
 Enabled Actions | `admin/magento_logging/actions`
 
-### System variables
+### System paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Advanced** > **System**.
 
 Name  | Config path
@@ -1032,7 +1032,7 @@ Frequency | `system/magento_scheduled_import_export_log/frequency`
 Error Email Sender | `system/magento_scheduled_import_export_log/error_email_identity`
 Error Email Template | `system/magento_scheduled_import_export_log/error_email_template`
 
-### Developer variables
+### Developer paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Advanced** > **Developer**.
 
 Name  | Config path

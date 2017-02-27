@@ -12,7 +12,7 @@ version: 2.1
 github_link: cloud/live/sens-data-over.md
 ---
 
-In version 2.1.TBD, Magento Enterprise Cloud Edition provides a better way to manage your configuration by providing:
+In version 2.1.4.1, Magento Enterprise Cloud Edition provides a better way to manage your configuration by providing:
 
 *	A new method to manage sensitive data (such as payment gateway passwords).
 *	An improved method to manage system configuration data (such as store locale settings and static file optimization settings) in a new configuration file, `app/etc/config.local.php`, which is in source control.
@@ -39,7 +39,7 @@ We help you protect sensitive data and make it easy to manage system data as fol
 ## Manage your configuration and protect sensitive data {#cloud-config-manage-sens-over}
 Magento's store configuration is located in the database and there is one database per system. This can make the configuration of multiple systems (such as staging and production) difficult.
 
-Starting with version 2.1.TBD, we provide the following:
+Starting with version 2.1.4.1, we provide the following:
 
 *	Store configuration values are specified in a new configuration file, `app/etc/config.local.php`, which is in source control.
 
@@ -95,7 +95,7 @@ We can, however, help you manage those settings more easily. For example, suppos
 
 What if someone changes a setting in the staging Admin? You'll have to go back and make the same change on integration; otherwise, next time you deploy to staging, the old settings are enabled.
 
-Instead of doing that, we enable you to store your settings in `app/etc/config.local.php` which is managed in Git. (Because there's no Git user in integration, staging, or production, you must add the changes to `config.local.php` in your local system.) In addition, any setting in `config.local.php` is _not editable_ in the Admin. 
+Instead of doing that, we enable you to store your settings in `app/etc/config.local.php` which is managed in Git. (Because there's no Git user in integration, staging, or production, you must add the changes to `config.local.php` in your local system and push it to the integration server.) In addition, any setting in `config.local.php` is _not editable_ in the Admin. 
 
 The following figure shows a high-level overview of this process.
 

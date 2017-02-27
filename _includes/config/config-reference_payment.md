@@ -1,6 +1,6 @@
 <div markdown="1">
 
-## Payment methods variables
+## Payment methods paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Payment Methods**.
 
 The settings are further organized by payment method.
@@ -12,7 +12,7 @@ Name  | Config path
 Merchant Country | `paypal/general/merchant_country`
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-Your choice for this variable determines which [International variables](#vars-intl-list) you can use.
+Your choice for this variable determines which [International paths](#vars-intl-list) you can use.
 </div>
 
 
@@ -30,7 +30,7 @@ Countries Payment Applicable From | `payment/hosted_pro/specificcountry`
 Debug Mode | `payment/hosted_pro/debug`
 Enable SSL verification | `payment/hosted_pro/verify_peer`
 
-### PayPal variables
+### PayPal paths
 
 Name  | Config path
 |--------------|--------------|
@@ -195,7 +195,7 @@ Title | `payment/payflow_link/title`
 Sort Order | `payment/payflow_link/sort_order`
 Payment Action | `payment/payflow_link/payment_action`
 
-### Braintree variables
+### Braintree paths
 
 Name  | Config path
 |--------------|--------------|
@@ -233,7 +233,7 @@ Name | `payment/braintree/descriptor_name`
 Phone | `payment/braintree/descriptor_phone`
 URL | `payment/braintree/descriptor_url`
 
-### Zero Subtotal Checkout variables
+### Zero Subtotal Checkout paths
 
 Name  | Config path
 |--------------|--------------|
@@ -245,7 +245,7 @@ Payment from Applicable Countries | `payment/free/allowspecific`
 Payment from Specific Countries | `payment/free/specificcountry`
 Sort Order | `payment/free/sort_order`
 
-### Cash on Delivery Payment variables
+### Cash on Delivery Payment paths
 
 Name  | Config path
 |--------------|--------------|
@@ -259,7 +259,7 @@ Minimum Order Total | `payment/cashondelivery/min_order_total`
 Maximum Order Total | `payment/cashondelivery/max_order_total`
 Sort Order | `payment/cashondelivery/sort_order`
 
-### Bank Transfer Payment variables
+### Bank Transfer Payment paths
 
 Name  | Config path
 |--------------|--------------|
@@ -273,7 +273,7 @@ Minimum Order Total | `payment/banktransfer/min_order_total`
 Maximum Order Total | `payment/banktransfer/max_order_total`
 Sort Order | `payment/banktransfer/sort_order`
 
-### Check / Money Order variables
+### Check / Money Order paths
 
 Name  | Config path
 |--------------|--------------|
@@ -288,7 +288,7 @@ Minimum Order Total | `payment/checkmo/min_order_total`
 Maximum Order Total | `payment/checkmo/max_order_total`
 Sort Order | `payment/checkmo/sort_order`
 
-### Purchase Order variables
+### Purchase Order paths
 
 Name  | Config path
 |--------------|--------------|
@@ -301,7 +301,7 @@ Minimum Order Total | `payment/purchaseorder/min_order_total`
 Maximum Order Total | `payment/purchaseorder/max_order_total`
 Sort Order | `payment/purchaseorder/sort_order`
 
-### Authorize.net Direct Post variables
+### Authorize.net Direct Post paths
 
 Name  | Config path
 |--------------|--------------|
@@ -323,7 +323,7 @@ Minimum Order Total | `payment/authorizenet_directpost/min_order_total`
 Maximum Order Total | `payment/authorizenet_directpost/max_order_total`
 Sort Order | `payment/authorizenet_directpost/sort_order`
 
-### Cybersource variables
+### Cybersource paths
 
 Name  | Config path
 |--------------|--------------|
@@ -340,7 +340,7 @@ Minimum Order Total | `payment/cybersource/min_order_total`
 Maximum Order Total | `payment/cybersource/max_order_total`
 Sort Order | `payment/cybersource/sort_order`
 
-### Worldpay variables
+### Worldpay paths
 
 Name  | Config path
 |--------------|--------------|
@@ -358,7 +358,7 @@ Set Order Status to Suspected Fraud for CVV | `payment/worldpay/cvv_fraud_case`
 Set Order Status to Suspected Fraud for Postcode AVS | `payment/worldpay/avs_fraud_case`
 Sort Order | `payment/worldpay/sort_order`
 
-### eWAY variables
+### eWAY paths
 
 Name  | Config path
 |--------------|--------------|
@@ -373,7 +373,7 @@ Payment from Applicable Countries | `payment/eway/allowspecific`
 Payment from Specific Countries | `payment/eway/specificcountry`
 Sort Order | `payment/eway/sort_order`
 
-### International variables {#vars-intl-list}
+### International paths {#vars-intl-list}
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 The variable values available are determined by your choice of [Merchant country](#vars-merch-country).
