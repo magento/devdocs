@@ -48,8 +48,8 @@ The general format of system settings variable names follows:
 
 A complete list of configuration paths can be found in:
 
-*	[All configuration variables except payments]({{ page.baseurl }}cloud/live/config-reference-most.html)
-*	[Payment configuration variables]({{ page.baseurl }}cloud/live/config-reference-payment.html)
+*	[All configuration variables except paths]({{ page.baseurl }}cloud/live/config-reference-most.html)
+*	[Payment configuration paths]({{ page.baseurl }}cloud/live/config-reference-payment.html)
 
 <p id="cloud-system-vars-scopes"></p>{% collapsibleh2 Step 1: Find the website or store view scope value %}
 
@@ -143,8 +143,8 @@ This section discusses how to set system variables.
 
 A few examples of variables related to static content deployment are shown in the table that follows. A complete list of values can be found in:
 
-*	[All configuration variables except payments]({{ page.baseurl }}cloud/live/config-reference-most.html)
-*	[Payment configuration variables]({{ page.baseurl }}cloud/live/config-reference-payment.html)
+*	[All configuration variables except paths]({{ page.baseurl }}cloud/live/config-reference-most.html)
+*	[Payment configuration paths]({{ page.baseurl }}cloud/live/config-reference-payment.html)
 
 The following table shows a few sample values.
 
