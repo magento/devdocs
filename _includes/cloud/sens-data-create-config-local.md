@@ -2,7 +2,7 @@
 
 1.	On your local system, create an SSH tunnel to the integration server.
 
-		magento-cloud
+		magento-cloud ssh
 2.	Create `config.local.php` on the integration server.
 
 		bin/magento app:config:scd-dump
