@@ -2,7 +2,7 @@
 layout: default
 group: mrg
 subgroup: Enterprise Edition
-title: Module Reference Guide
+title: Magento_ConfigurableProductStaging module
 menu_title: ConfigurableProductStaging
 menu_order: 2
 version: 2.1
