@@ -2,17 +2,17 @@
 layout: default
 group: cloud
 subgroup: 15_howto
-title: Merge and delete an environment
-menu_title: Merge and delete an environment
+title: Merge and delete an environment (tutorial)
+menu_title: Merge and delete an environment (tutorial)
 menu_order: 51
 menu_node: 
-level3_menu_node: level3child
-level3_subgroup: env-tut
 version: 2.0
 github_link: cloud/howtos/environment-tutorial-env-merge.md
 redirect_from: 
   - guides/v2.0/cloud/env/environment-tutorial-env-merge.html
   - guides/v2.1/cloud/env/environment-tutorial-env-merge.html
+  - guides/v2.0/cloud/env/environment-tutorial-parent.html
+  - guides/v2.1/cloud/env/environment-tutorial-parent.html
 ---
 
 ## Merge an environment {#tut-env-merge}
