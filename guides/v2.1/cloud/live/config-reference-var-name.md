@@ -4,7 +4,7 @@ group: cloud
 subgroup: 40_live
 title: How to name configuration variables
 menu_title: How to name configuration variables
-menu_order: 12
+menu_order: 86
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: config-ref
