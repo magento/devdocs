@@ -21,19 +21,19 @@ Extends all [`uiElement`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uieleme
   </tr>
   <tr>
     <td>autoRender</td>
-    <td>When set to 'true', the Listing component is automatically rendered during Insert's initialization. Otherwise, Insert's 'render' method should be called to render Listing.</td>
+    <td>When set to true, the Listing component is automatically rendered during insertListing initialization. Otherwise, insertListing's 'render' method should be called to render the Listing.</td>
     <td>Boolean</td>
     <td>false</td>
   </tr>
   <tr>
     <td>behaviourType</td>
-    <td>Can be 'simple' or 'edit', where 'edit' means that insertListing also includes changes from listing's inlineEdit into value.In this case listing must be configured with enabled inline editing.</td>
+    <td>Can be 'simple' or 'edit'. Where 'edit' means that insertListing also includes changes from Listing's inlineEdit into value. In this case Listing must be configured with enabled inline editing.</td>
     <td>String ('simple'|'edit')</td>
     <td>simple</td>
   </tr>
   <tr>
     <td>component</td>
-    <td>The path to the component’s .js file in terms of RequireJS.</td>
+    <td>The path to the component’s JS constructor in terms of RequireJS.</td>
     <td>String</td>
     <td>Magento_Ui/js/form/components/insert-listing</td>
   </tr>

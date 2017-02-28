@@ -3,9 +3,9 @@ layout: default
 group: UI_Components_guide
 subgroup: components
 title: FileUploader component
-menu_title: Textarea component
+menu_title: FileUploader component
 version: 2.2
-github_link: ui_comp_guide/components/ui-textarea.md
+github_link: ui_comp_guide/components/ui-fileuploader.md
 ---
 
 ## Overview {#filter}
@@ -32,7 +32,7 @@ UI File Uploader component is an adapter for <a href="https://github.com/blueimp
 </tr>
 <tr>
     <td>allowedExtensions</td>
-    <td>List of allowed file extensions. For example, 'jpg jpeg gif png svg'/ <p class="q">What true/false means in this case? True - any, false - none</p></td>
+    <td>List of allowed file extensions. For example, 'jpg jpeg gif png svg'. If set to "false" - then no extion is allowed, "true" - any extension is allowed.</td>
     <td>No</td>
     <td>Boolean/String</td>
     <td>false</td>
@@ -60,14 +60,14 @@ UI File Uploader component is an adapter for <a href="https://github.com/blueimp
 </tr>
 <tr>
     <td>maxFileSize</td>
-    <td>Define the maximum allowed file size in bytes<p class="q">What true/false means in this case?</p></td>
+    <td>Define the maximum allowed file size in bytes. </td>
     <td>No</td>
     <td>Boolean/Number</td>
     <td>false</td>
 </tr>
    <tr>
     <td>placeholderType</td>
-    <td>Defines the preview type.</td>
+    <td>Defines the preview type. (When set to "document", the file information is displayed.)</td>
     <td></td>
     <td>'document'|'image'|'video'</td>
     <td>document</td>

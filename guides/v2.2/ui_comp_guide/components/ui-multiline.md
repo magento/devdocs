@@ -27,7 +27,7 @@ Extends all [`uiCollection`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uico
   </tr>
   <tr>
     <td>breakLine</td>
-    <td>Adds a class to multiline DOM element.</td>
+    <td>Add a CSS class to multiline's DOM element. When set to "true", the admin__control-fields class is added, when "false" - admin__control-grouped.</td>
     <td>Boolean</td>
     <td>true</td>
   </tr>

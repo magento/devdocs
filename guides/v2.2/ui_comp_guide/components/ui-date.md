@@ -33,13 +33,13 @@ Extends all `abstract` configuration.
   </tr>
   <tr>
     <td>inputDateFormat</td>
-    <td>Date format received from the server (ICU Date Format).Used only in date picker mode (this.options.showsTime == false).</td>
+    <td>Format of the date received from the server (ICU Date Format). Used only in date picker mode (this.options.showsTime == false).</td>
     <td>String</td>
     <td>y-MM-dd</td>
   </tr>
   <tr>
     <td>outputDateFormat</td>
-    <td>Date format sent to the server (ICU Date Format). Used only in date picker mode (this.options.showsTime == false)</td>
+    <td>Format of the date sent to the server (ICU Date Format). Used only in date picker mode (this.options.showsTime == false)</td>
     <td>String</td>
     <td>MM/dd/y</td>
   </tr>
@@ -63,7 +63,7 @@ Extends all `abstract` configuration.
   </tr>
   <tr>
     <td>timezoneFormat</td>
-    <td>Timezone format needed by the moment for conversion.</td>
+    <td>Timezone format, required for the <a href="https://momentjs.com/">moment.js library</a> for conversion.</td>
     <td>String</td>
     <td>YYYY-MM-DD HH:mm</td>
   </tr>
