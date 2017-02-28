@@ -7,15 +7,23 @@ menu_title: How to name configuration variables
 menu_order: 12
 menu_node: 
 level3_menu_node: level3child
-level3_subgroup: sens-data
+level3_subgroup: config-ref
 version: 2.1
-github_link: cloud/live/sens-data-system-vars.md
+github_link: cloud/live/config-reference-var-name.md
 ---
 
-This topic discusses how to find and set the system settings we include in `config.local.php` in version 2.1.4.1. You can set variable values per scope (global, website, or store view). For example, you could set the locale used in a particular website.
 
-## Overview of configuration variable naming
 A configuration variable name consists of its scope followed by its configuration path. The following sections discuss how to determine a variable name in more detail.
+
+You can use variables for any of the following:
+
+*	You _must_ set [sensitive values]({{ page.baseurl }}cloud/live/config-reference-sens.html) using configuration variables.
+*	You can optionally use configuration variables to override system-specific settings.
+
+	Configuration paths for system-specific settings can be found in:
+
+	*	[All configuration paths except payments reference]({{ page.baseurl }}cloud/live/config-reference-most.html)
+	*	[Payment configuration paths reference]({{ page.baseurl }}cloud/live/config-reference-payment.html)
 
 ### Variable names
 The general format of system settings variable names follows:
