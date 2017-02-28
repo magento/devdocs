@@ -158,7 +158,5 @@ We assume system settings are the same in staging and production. Only sensitive
 If you choose to use different system settings in staging and production, you can manually edit `config.local.php`, but that is beyond scope of this guide.
 </div>
 
-#### Next steps
-*	[System settings reference]({{ page.baseurl }}cloud/live/config-reference-var-name.html)
-*	[Manage system settings]({{ page.baseurl }}cloud/live/sens-data-initial.html)
-*	[Manage sensitive configuration values]({{ page.baseurl }}cloud/live/sens-data-mg-sens.html)
+#### Next step
+[Example of managing system-specific settings]({{ page.baseurl }}cloud/live/sens-data-initial.html)
