@@ -12,7 +12,7 @@ version: 2.1
 github_link: cloud/live/sens-data-over.md
 ---
 
-In version 2.1.4.1, Magento Enterprise Cloud Edition provides a better way to manage your configuration and improve static files deployment performance by providing the following.
+In `magento-cloud-configuration` release 101.4.1 on Magento Enterprise Cloud Editio 2.1.4, we provide a better way to manage your configuration and improve static files deployment performance by providing the following.
 
 ### Managing the configuration
 
@@ -44,10 +44,13 @@ In other words, Cloud's build phase is less time-consuming than deployment. Ther
 ### Configuration settings locked in the Maento Admin
 Settings in `config.local.php` are not editable in the Magento Admin. This also helps keep your settings consistent across the integration, staging, and production systems.
 
+### How to get `magento-cloud-configuration` release 101.4.1
+
+
 ## Manage your configuration and protect sensitive settings {#cloud-config-manage-sens-over}
 Magento's store configuration is located in the database and there is one database per system. This can make the configuration of multiple systems (such as staging and production) difficult.
 
-Starting with version 2.1.4.1, we provide the following:
+Starting with version `magento-cloud-configuration` release 101.4.1 on Magento Enterprise Cloud Editio 2.1.4, we provide the following:
 
 *	Store configuration values are specified in a new configuration file, `app/etc/config.local.php`, which is in source control.
 
