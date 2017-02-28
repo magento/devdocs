@@ -99,7 +99,7 @@ Verify other changes you're going to submit to source control before you start t
 
 {% endcollapsibleh3 %}
 
-<p id="cloud-upgrade-204"></p>{% colllapsibleh2 Upgrade from version 2.0.4 %}
+<p id="cloud-upgrade-204"></p>{% collapsibleh2 Upgrade from version 2.0.4 %}
 
 This section discusses steps to upgrade *only* if your current Magento Enterprise Cloud Edition version is 2.0.4.
 
