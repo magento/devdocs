@@ -12,8 +12,6 @@ version: 2.1
 github_link: cloud/live/sens-data-over.md
 ---
 
-## Overview of managing the configuration
-
 In version 2.1.4.1, Magento Enterprise Cloud Edition provides a better way to manage your configuration and improve static files deployment performance by providing the following.
 
 ### Managing the configuration
@@ -41,7 +39,7 @@ We help you protect sensitive settings and make it easy to manage system setting
 ### Static content deployment performance
 If you have a `config.local.php`, static files are deployed in the Magento Enterprise Cloud Edition [build phase]({{ page.baseurl}}cloud/discover-deploy.htmlcloud-deploy-over-phases-build) instead of in the [deployment phase]({{ page.baseurl}}cloud/discover-deploy.htmlcloud-deploy-over-phases-hook), which decreases the amount of time required to deploy changes to Cloud. 
 
-In other words, Cloud's build phase is less time-consuming than deployment. Therefore, any change you make to your Cloud project deploys faster overall if there is a `config.local.php` compared to having no a `config.local.php`.
+In other words, Cloud's build phase is less time-consuming than deployment. Therefore, any change you make to your Cloud project deploys faster overall if there is a `config.local.php` compared to having no `config.local.php`.
 
 ### Configuration settings locked in the Maento Admin
 Settings in `config.local.php` are not editable in the Magento Admin. This also helps keep your settings consistent across the integration, staging, and production systems.
