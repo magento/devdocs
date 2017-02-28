@@ -29,7 +29,7 @@ This example shows how to:
 5.	Delete `config.local.php`, change the settings, and push `config.local.php` to the integration server.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-This example shows how you can set and lock configuration values for everything _except_ sensitive settings. You must set sensitive settings as configuration variables. For more information, see [Sensitive configuration paths]({{ page.baseurl }}cloud/live/config-reference-sens.html).
+This example shows how you can set and lock configuration values for everything _except_ sensitive settings. You must set sensitive settings either as configuration variables or in the Magento Admin. For more information, see [Sensitive configuration paths]({{ page.baseurl }}cloud/live/config-reference-sens.html).
 </div>
 
 ## Required role
@@ -85,7 +85,7 @@ To change locale and static file optimization settings:
 
 	The following figure shows an example.
 
-	![Change the locale]({{ site.baseurl }}common/images/cloud_var_locale.png){:width="300px"}
+	![Change the locale]({{ site.baseurl }}common/images/cloud_var_locale.png){:width="400px"}
 4.	Click **Save Config**.
 5.	In the left navigation pane, click **Advanced** > **Developer**.
 5.	In the right pane, expand **Template Settings**.
