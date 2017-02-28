@@ -12,9 +12,14 @@ version: 2.1
 github_link: cloud/live/sens-data-over.md
 ---
 
-In `magento-cloud-configuration` release 101.4.1 on Magento Enterprise Cloud Editio 2.1.4, we provide a better way to manage your configuration and improve static files deployment performance by providing the following.
+In `magento-cloud-configuration` release 101.4.1 on Magento Enterprise Cloud Editio 2.1.4, we provide the following improvements:
 
-### Managing the configuration
+*	Better way to [manage the configuration](#cloud-confman-over) so your integration, staging, and production systems stay in synchronization with each other more easily
+
+	Sensitive data, such as payment processor passwords and API keys, are managed using either environment variables or using the Magento Admin only
+*	Less time required to [build](#cloud-confman-scd-over) and deploy your project by reducing the time required for static file deployment
+
+### Managing the configuration {#cloud-confman-over}
 
 *	A new method to manage sensitive settings (such as payment gateway passwords).
 *	An improved method to manage system configuration settings (such as store locale settings and static file optimization settings) in a new configuration file, `app/etc/config.local.php`, which is in source control.
@@ -36,12 +41,12 @@ We help you protect sensitive settings and make it easy to manage system setting
 
 	(_Static file optimization_ means merging and minifying JavaScript and Cascading Style Sheets, and minifying HTML templates.)
 
-### Static content deployment performance
+### Static content deployment performance {#cloud-confman-scd-over}
 If you have a `config.local.php`, static files are deployed in the Magento Enterprise Cloud Edition [build phase]({{ page.baseurl}}cloud/discover-deploy.htmlcloud-deploy-over-phases-build) instead of in the [deployment phase]({{ page.baseurl}}cloud/discover-deploy.htmlcloud-deploy-over-phases-hook), which decreases the amount of time required to deploy changes to Cloud. 
 
 In other words, Cloud's build phase is less time-consuming than deployment. Therefore, any change you make to your Cloud project deploys faster overall if there is a `config.local.php` compared to having no `config.local.php`.
 
-### Configuration settings locked in the Maento Admin
+### Configuration settings locked in the Maento Admin {#cloud-confman-locked-over}
 Settings in `config.local.php` are not editable in the Magento Admin. This also helps keep your settings consistent across the integration, staging, and production systems.
 
 ### How to get `magento-cloud-configuration` release 101.4.1
