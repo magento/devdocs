@@ -103,8 +103,6 @@ Verify other changes you're going to submit to source control before you start t
 
 This section discusses steps to upgrade *only* if your current Magento Enterprise Cloud Edition version is 2.0.4.
 
-{% collapsible To upgrade from version 2.0.4 %}
-
 ### Create an authorization file
 To enable you to install and update the Magento software, you must have an `auth.json` file in your project's root directory. `auth.json` contains your Magento EE [authorization credentials](http://devdocs.magento.com/guides/v2.1/install-gde/prereq/connect-auth.html).
 
@@ -217,8 +215,6 @@ php.ini
 ``composer.json`` fetches the Magento Enterprise Edition and some configuration scripts to prepare your application.
 
 Verify your upgrade as discussed in the next section.
-
-{% endcollapsible %}
 
 ## Verify your upgrade {#upgrade-verify}
 This section discusses how to verify your upgrade on your local development machine and in the cloud.
