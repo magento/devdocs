@@ -12,7 +12,7 @@ version: 2.1
 github_link: cloud/live/sens-data-initial.md
 ---
 
-This topic discusses how to manage default locale and static file optimization settings in your integration system. _Static file optimization_ means merging and minifying JavaScript and Cascading Style Sheets, and minifying HTML templates. static file optimization should be disabled in integration (where you're testing) and enabled in staging and production.  
+This topic discusses how to manage default locale and static file optimization settings in your integration system. _Static file optimization_ means merging and minifying JavaScript and Cascading Style Sheets, and minifying HTML templates. Static file optimization should be disabled in integration (where you're testing) and enabled in staging and production.  
 
 These particular settings are discussed only to explain how the procedure works; you can use the same procedure to manage any available settings. 
 
@@ -22,7 +22,9 @@ This example shows how to:
 2.	Create `config.local.php` and transfer it to your local system.
 3.	Push `config.local.php` to the integration server
 4.	Verify your settings are not editable in the Admin.
-5.	Delete `config.local.php`, change the settings, and push `config.local.php` to the integration server.
+5.	Delete `config.local.php` on the integration server.
+6.	Change configuration settings on the integration server.
+7.	Re-create and push the updated `config.local.php` to the integration server.
 
 <!-- <div class="bs-callout bs-callout-info" id="info" markdown="1">
 This example shows how you can set and lock configuration values for everything _except_ sensitive settings. You must set sensitive settings either as configuration variables or in the Magento Admin. For more information, see [Sensitive configuration paths]({{ page.baseurl }}cloud/live/config-reference-sens.html).
@@ -30,6 +32,19 @@ This example shows how you can set and lock configuration values for everything 
 
 ## Required role
 To complete the tasks discussed in this topic, you must have at minimum a project reader role with [environment administrator]({{ page.baseurl }}cloud/admin/admin-user-admin.html#loud-role-env) privileges.
+
+## Configuration settings you can change
+The following table shows which configuration settings you can change. 
+
+| Description  | Path in Magento Admin (omitting **Stores** > **Configuration**) | 
+|--------------|--------------|----------------------|
+| Store locale  | General > **General**, **Locale Options** > **Locale**  |  
+| Static asset signing |  Advanced > **Developer**, **Static Files Settings** > **Static Files Signing** 
+| Server-side or client-side LESS compilation  | Advanced > **Developer**, **Frontend Developer Workflow** > **Workflow type** 
+|  HTML minification | Advanced > **Developer**, **Template Settings** > **Minify Html**  
+| JavaScript minification  | Advanced > **Developer**, **JavaScript Settings** > (several options)   
+| CSS minification  | Advanced > **Developer**, **CSS Settings** > **Merge CSS Files** and **Minify CSS Files**
+| Disable modules output |  Advanced > **Advanced** > **Disable Modules Output** |
 
 ## Prerequisite
 Before you continue, make sure you review our [recommended procedure]({{ page.baseurl }}cloud/live/sens-data-over.html##cloud-config-specific-recomm) for managing the configuration.
@@ -226,7 +241,7 @@ To change values in the Admin:
 9.	If prompted, [flush the Magento cache](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html){:target="_blank"}.
 10.	Log out of the Magento Admin.
 
-### Add the changes to config.local.php
+### Add the changes to a new version of config.local.php
 {% include cloud/sens-data-create-config-local.md %}
 
 ### Push the changes to Git
