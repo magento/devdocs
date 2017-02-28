@@ -33,8 +33,8 @@ This example shows how you can set and lock configuration values for everything 
 ## Required role
 To complete the tasks discussed in this topic, you must have at minimum a project reader role with [environment administrator]({{ page.baseurl }}cloud/admin/admin-user-admin.html#loud-role-env) privileges.
 
-## Configuration settings you can change
-The following table shows which configuration settings you can change. 
+## Configuration settings you can change {#cloud-clp-settings}
+The following table shows the configuration settings affected by the `magento app:config:scd-dump` command. These are the configuration settings you can manage in Git.
 
 | Description  | Path in Magento Admin (omitting **Stores** > **Configuration**) | 
 |--------------|--------------|----------------------|
