@@ -2,8 +2,8 @@
 layout: default
 group: cloud
 subgroup: 40_live
-title: Payment configuration paths
-menu_title: Payment configuration paths
+title: Payment configuration paths reference
+menu_title: Payment configuration paths reference
 menu_order: 82
 menu_node: 
 level3_menu_node: level3child

@@ -2,8 +2,8 @@
 layout: default
 group: cloud
 subgroup: 40_live
-title: All configuration paths except payments
-menu_title: All configuration paths except payments
+title: All configuration paths except payments reference
+menu_title: All configuration paths except payments reference
 menu_order: 81
 menu_node: 
 level3_menu_node: level3child

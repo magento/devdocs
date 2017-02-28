@@ -27,6 +27,10 @@ This example shows how to:
 4.	Verify your settings are not editable in the Admin.
 5.	Delete `config.local.php`, change the settings, and push `config.local.php` to the integration server.
 
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+This example shows how you can set and lock configuration values for everything _except_ sensitive settings. You must set sensitive settings as configuration variables. For more information, see [Sensitive configuration paths]({{ page.baseurl }}cloud/live/config-reference-sens.html).
+</div>
+
 ## Required role
 To complete the tasks discussed in this topic, you must have at minimum a project reader role with [environment administrator]({{ page.baseurl }}cloud/admin/admin-user-admin.html#loud-role-env) privileges.
 

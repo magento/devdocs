@@ -144,49 +144,44 @@ This section discusses how to set system variables.
 
 [See some examples](#cloud-system-vars-ex)
 
-The following table shows a few sample variables related to static content deployment.
+The following table shows a few sample variables.
 
 | Description  | Path in Magento Admin (omitting **Stores** > **Configuration**) | Variable name | 
 |--------------|--------------|----------------------|
-| Store locale  | General > **General**, **Locale Options** > **Locale**  |  `<SCOPE>__GENERAL__LOCALE__CODE` | 
-| Static asset signing |  Advanced > **Developer**, **Static Files Settings** > **Static Files Signing** | `<SCOPE>__DEV__STATIC__SIGN`  | 
-| Server-side or client-side LESS compilation  | Advanced > **Developer**, **Frontend Developer Workflow** > **Workflow type** |  `<SCOPE>__DEV__FRONT_END_DEVELOPMENT_WORKFLOW__TYPE` | 
-|  HTML minification | Advanced > **Developer**, **Template Settings** > **Minify Html**  | `<SCOPE>__DEV__TEMPLATE__MINIFY_HTML`  | 
-| JavaScript minification  | Advanced > **Developer**, **JavaScript Settings** > (several options)  | `<SCOPE>__DEV__JS__MINIFY_FILES` |  
-| CSS minification  | Advanced > **Developer**, **CSS Settings** > **Merge CSS Files** and **Minify CSS Files**  | `<SCOPE>__DEV__CSS__MINIFY_FILES` | 
-| Disable modules output |  Advanced > **Advanced** > **Disable Modules Output** | `<SCOPE>__DEV__ADVANCED__DISABLE_MODULES_OUTPUT__<MODULE NAME>`  | 
+| Elasticsearch server hostname  | Catalog > **Catalog**, **Elasticsearch Server Hostname**   |  `<SCOPE>__CATALOG__SEARCH__ELASTICSEARCH_SERVER_HOSTNAME` | 
+| Elasticsearch server port |  Catalog > **Catalog**, **Elasticsearch Server Port** | `<SCOPE>__CATALOG__SEARCH__ELASTICSEARCH_SERVER_PORT`  | 
+| Shipping country origin  | Sales > **Shipping Settings** |  `<SCOPE>SHIPPING__ORIGIN__COUNTRY_ID` | 
+| Custom Admin URL | Advanced > **Admin**  | `<SCOPE>__ADMIN__URL__CUSTOM`  | 
+| Custom Admin Path  | Advanced > **Admin** | `<SCOPE>__ADMIN__URL__CUSTOM_PATH` |  
 
-A complete list of values can be found in:
-
-*	[All configuration variables except paths]({{ page.baseurl }}cloud/live/config-reference-most.html)
-*	[Payment configuration paths]({{ page.baseurl }}cloud/live/config-reference-payment.html)
+A complete list of values can be found in [Sensitive configuration paths]({{ page.baseurl }}cloud/live/config-reference-sens.html).
 
 {% endcollapsibleh2 %}
 
 ## Examples {#cloud-system-vars-ex}
 This section shows how to find values of some sample variables.
 
-### Global HTML minification
+### Elasticsearch server hostname
 To find the variable name for global HTML minification:
 
 1.	Determine the scope.
 
 	It's the global scope so the variable name starts with `CONFIG__DEFAULT__`
-2.	According to the [table in Step 2: Set global, website, or store view variables](#cloud-system-vars-sys), the rest of the variable name is `DEV__TEMPLATE__MINIFY_HTML`.
+2.	The rest of the variable name is `CATALOG__SEARCH__ELASTICSEARCH_SERVER_HOSTNAME`.
 
-**Result**: The variable name is `CONFIG__DEFAULT__DEV__TEMPLATE__MINIFY_HTML`
+**Result**: The variable name is `CONFIG__DEFAULT__CATALOG__SEARCH__ELASTICSEARCH_SERVER_HOSTNAME`
 
-### Store view HTML minification
+### Shipping country origin
 To find the variable name for HTML minification for a store view:
 
 1.	Determine the scope.
 
 	Find the scope in the [database](#cloud-system-vars-scopes) as discussed in Step 1: Find the website or store view scope value. (You can also find the value in the Admin as shown in the the [table in Step 2: Set global, website, or store view variables](#cloud-system-vars-sys).
 
-	For example, the scope might be `CONFIG__STORES__MYVIEW`.
-2.	According to the the [table in Step 2: Set global, website, or store view variables](#cloud-system-vars-sys), the rest of the variable name is `DEV__TEMPLATE__MINIFY_HTML`.
+	For example, the scope might be `CONFIG__WEBSITE__DEFAULT`.
+2.	The rest of the variable name is `SHIPPING__ORIGIN__COUNTRY_ID`.
 
-**Result**: The variable name is `CONFIG__STORES__MYVIEW__DEV__TEMPLATE__MINIFY_HTML`
+**Result**: The variable name is `CONFIG__WEBSITE__DEFAULT__SHIPPING__ORIGIN__COUNTRY_ID`
 
 #### Next step
 [Manage system settings]({{ page.baseurl }}cloud/live/sens-data-initial.html)
