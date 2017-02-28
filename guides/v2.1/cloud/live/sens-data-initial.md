@@ -164,8 +164,7 @@ The following snippet from `config.local.php` show an example of changing the de
 {% collapsibleh2 Step 3: Push config.local.php to the integration server %}
 Now that you've created `config.local.php` and transferred it to your local system, commit it to Git and push it to your integration server. This procedure corresponds to step B, 3&mdash;4 of our [recommended procedure]({{ page.baseurl }}cloud/live/sens-data-over.html#cloud-config-specific-recomm).
 
-	git add app/etc/config.local.php 
-	git commit -m "Add system-specific configuration" && git push origin master
+	git add app/etc/config.local.php && git commit -m "Add system-specific configuration" && git push origin master
 
 Wait for deployment to complete.
 
