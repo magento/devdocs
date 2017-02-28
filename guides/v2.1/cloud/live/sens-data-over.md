@@ -14,19 +14,19 @@ github_link: cloud/live/sens-data-over.md
 
 In `magento-cloud-configuration` release 101.4.1 on Magento Enterprise Cloud Editio 2.1.4, we provide the following improvements:
 
-*	Better way to [manage the configuration](#cloud-confman-over) so your integration, staging, and production systems stay in synchronization with each other more easily
+*	Better way to [manage the configuration](#cloud-confman-over) so your integration, staging, and production systems stay in synchronization with each other more easily.
 
-	Sensitive data, such as payment processor passwords and API keys, are managed using either environment variables or using the Magento Admin only
-*	Less time required to [build](#cloud-confman-scd-over) and deploy your project by reducing the time required for static file deployment
+	Sensitive data, such as payment processor passwords and API keys, are managed using either environment variables or using the Magento Admin only.
+*	Less time required to [build](#cloud-confman-scd-over) and deploy your project by reducing the time required for static file deployment.
+
+<div class="bs-callout bs-callout-info" markdown="1">
+These new methods to manage your configuration are optional. You don't have to use them, although we strongly recommend you do.
+</div>
 
 ### Managing the configuration {#cloud-confman-over}
 
 *	A new method to manage sensitive settings (such as payment gateway passwords).
 *	An improved method to manage system configuration settings (such as store locale settings and static file optimization settings) in a new configuration file, `app/etc/config.local.php`, which is in source control.
-
-<div class="bs-callout bs-callout-info" markdown="1">
-These new methods to manage your configuration are optional. You don't have to use them, although we strongly recommend you do.
-</div>
 
 We help you protect sensitive settings and make it easy to manage system settings as follows:
 
@@ -37,12 +37,12 @@ We help you protect sensitive settings and make it easy to manage system setting
 
 	Sensitive values are _not_ stored in `app/etc/config.local.php`.
 
-	Managing `config.local.php` in source control means your settings for staging and production are always consistent. For example, you can disable static file optimization in your [integration]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-int) system but enable it in both staging and production. After initially setting up the configuration, you don't need to touch it again because it's in source control.
+	`config.local.php` is a convenient way to move settings between systems. Managing `config.local.php` in source control means your settings for staging and production are always consistent. For example, you can disable static file optimization in your [integration]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-int) system but enable it in both staging and production. After initially setting up the configuration, you don't need to touch it again because it's in source control.
 
 	(_Static file optimization_ means merging and minifying JavaScript and Cascading Style Sheets, and minifying HTML templates.)
 
 ### Static content deployment performance {#cloud-confman-scd-over}
-If you have a `config.local.php`, static files are deployed in the Magento Enterprise Cloud Edition [build phase]({{ page.baseurl}}cloud/discover-deploy.htmlcloud-deploy-over-phases-build) instead of in the [deployment phase]({{ page.baseurl}}cloud/discover-deploy.htmlcloud-deploy-over-phases-hook), which decreases the amount of time required to deploy changes to Cloud. 
+If you have a `config.local.php`, static files are deployed in the Magento Enterprise Cloud Edition [build phase]({{ page.baseurl}}cloud/discover-deploy.html#cloud-deploy-over-phases-build) instead of in the [deployment phase]({{ page.baseurl}}cloud/discover-deploy.html#cloud-deploy-over-phases-hook), which decreases the amount of time required to deploy changes to Cloud. 
 
 In other words, Cloud's build phase is less time-consuming than deployment. Therefore, any change you make to your Cloud project deploys faster overall if there is a `config.local.php` compared to having no `config.local.php`.
 
@@ -52,7 +52,7 @@ Settings in `config.local.php` are not editable in the Magento Admin. This also 
 ### How to get `magento-cloud-configuration` release 101.4.1
 Magento Enterprise Cloud Edition periodically provides patch releases in components like `magento-cloud-configuration`.
 
-To test and apply the patch, see [Test a Magento patch]({{ page.baseurl }}cloud/project/project-patch.html#cloud-patch-gen).
+To test and apply the patch, see [Test general patches]({{ page.baseurl }}cloud/project/project-patch.html#cloud-patch-gen).
 
 ## Manage your configuration and protect sensitive settings {#cloud-config-manage-sens-over}
 Magento's store configuration is located in the database and there is one database per system. This can make the configuration of multiple systems (such as staging and production) difficult.
@@ -121,8 +121,8 @@ The following figure shows a high-level overview of this process.
 
 Our recommended method relies on the following important points:
 
-*	Do all of your configuration in your integration system; it is your "source of truth" for configuration management.
-*	Do everything in the `master` branch; that is, both in your local system and in your integration system.
+*	Do all of your configuration in your integration system's `master` branch; the `master` branch is your "source of truth" for configuration management.
+*	Transfer those settings using `config.local.php` to the other systems (local, staging, and production).
 
 **Step A**. Create and configure stores in your integration system.
 
@@ -131,15 +131,14 @@ Our recommended method relies on the following important points:
 The following procedure is required because there is no Git user on your integration server so you can't use Git commands there. Instead, you generate the configuration on the integration server and transfer it to your local machine where you can push it.
 
 1.	Generate `config.local.php` on your integration server's `master` branch.
-3.	Transfer `config.local.php` to your local system so you can add it to Git.
+3.	Transfer `config.local.php` to your local system using `rsync` or `scp` so you can add it to Git.
 4.	Add `config.local.php` to Git (again, in the `master` branch).
 5.	Push `config.local.php` to your integration server.
 
 You generate `config.local.php` using one of the following command:
 
 *	`magento app:config:dump` populates `config.local.php` with all system configuration values _except_ sensitive values.
-
-*	`magento app:config:SCDDump` populates `config.local.php` with only the configuration values necessary for static content deployment.
+*	`magento app:config:scd-dump` populates `config.local.php` with only the configuration values necessary for static content deployment.
 
 **Step C**. Magento Enterprise Cloud Edition automatically deploys the settings to your integration server.
 
