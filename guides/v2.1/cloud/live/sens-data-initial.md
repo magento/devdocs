@@ -22,9 +22,10 @@ This example shows how to:
 2.	Create `config.local.php` and transfer it to your local system.
 3.	Push `config.local.php` to the integration server
 4.	Verify your settings are not editable in the Admin.
-5.	Delete `config.local.php` on the integration server.
-6.	Change configuration settings on the integration server.
-7.	Re-create and push the updated `config.local.php` to the integration server.
+5.	Change settings again.
+	1.	Delete `config.local.php` on the integration server.
+	2.	Change configuration settings on the integration server.
+	3.	Re-create and push the updated `config.local.php` to the integration server.
 
 <!-- <div class="bs-callout bs-callout-info" id="info" markdown="1">
 This example shows how you can set and lock configuration values for everything _except_ sensitive settings. You must set sensitive settings either as configuration variables or in the Magento Admin. For more information, see [Sensitive configuration paths]({{ page.baseurl }}cloud/live/config-reference-sens.html).
