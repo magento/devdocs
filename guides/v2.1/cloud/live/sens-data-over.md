@@ -12,18 +12,22 @@ version: 2.1
 github_link: cloud/live/sens-data-over.md
 ---
 
-In version 2.1.4.1, Magento Enterprise Cloud Edition provides a better way to manage your configuration by providing:
+## Overview of managing the configuration
 
-*	A new method to manage sensitive data (such as payment gateway passwords).
-*	An improved method to manage system configuration data (such as store locale settings and static file optimization settings) in a new configuration file, `app/etc/config.local.php`, which is in source control.
+In version 2.1.4.1, Magento Enterprise Cloud Edition provides a better way to manage your configuration and improve static files deployment performance by providing the following.
+
+### Managing the configuration
+
+*	A new method to manage sensitive settings (such as payment gateway passwords).
+*	An improved method to manage system configuration settings (such as store locale settings and static file optimization settings) in a new configuration file, `app/etc/config.local.php`, which is in source control.
 
 <div class="bs-callout bs-callout-info" markdown="1">
 These new methods to manage your configuration are optional. You don't have to use them, although we strongly recommend you do.
 </div>
 
-We help you protect sensitive data and make it easy to manage system data as follows:
+We help you protect sensitive settings and make it easy to manage system settings as follows:
 
-*	In your [staging]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-stage) and [production]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-prod) systems, you manage sensitive data by defining environment variables. 
+*	In your [staging]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-stage) and [production]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-prod) systems, you manage sensitive settings by defining environment variables. 
 
 	You can change sensitive variables using the Magento Enterprise Cloud Edition [Web Interface]({{ page.baseurl }}cloud/project/project-webint-basic.html). 
 *	System values related to static content deployment (for example, static file optimization) are stored in a new configuration file, `app/etc/config.local.php`, which is managed in source control.
@@ -34,9 +38,15 @@ We help you protect sensitive data and make it easy to manage system data as fol
 
 	(_Static file optimization_ means merging and minifying JavaScript and Cascading Style Sheets, and minifying HTML templates.)
 
-	In addition, you can optionally manage `config.local.php` using scripting or automation tools. However, discussion of those tools is beyond the scope of this guide.
+### Static content deployment performance
+If you have a `config.local.php`, static files are deployed in the Magento Enterprise Cloud Edition [build phase]({{ page.baseurl}}cloud/discover-deploy.htmlcloud-deploy-over-phases-build) instead of in the [deployment phase]({{ page.baseurl}}cloud/discover-deploy.htmlcloud-deploy-over-phases-hook), which decreases the amount of time required to deploy changes to Cloud. 
 
-## Manage your configuration and protect sensitive data {#cloud-config-manage-sens-over}
+In other words, Cloud's build phase is less time-consuming than deployment. Therefore, any change you make to your Cloud project deploys faster overall if there is a `config.local.php` compared to having no a `config.local.php`.
+
+### Configuration settings locked in the Maento Admin
+Settings in `config.local.php` are not editable in the Magento Admin. This also helps keep your settings consistent across the integration, staging, and production systems.
+
+## Manage your configuration and protect sensitive settings {#cloud-config-manage-sens-over}
 Magento's store configuration is located in the database and there is one database per system. This can make the configuration of multiple systems (such as staging and production) difficult.
 
 Starting with version 2.1.4.1, we provide the following:
