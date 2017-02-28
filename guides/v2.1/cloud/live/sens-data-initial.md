@@ -16,8 +16,9 @@ This topic discusses how to manage default locale and static file optimization s
 
 These particular settings are discussed only to explain how the procedure works; you can use the same procedure to manage any available settings. For a complete list of settings, see:
 
-*	TBD
-*	TBD 
+*	[All configuration paths except payments reference]({{ page.baseurl }}cloud/live/config-reference-most.html)
+*	[Payment configuration paths reference]({{ page.baseurl }}cloud/live/config-reference-payment.html)
+*	[Sensitive configuration paths reference]({{ page.baseurl }}cloud/live/config-reference-sens.html)
 
 This example shows how to:
 
