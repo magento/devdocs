@@ -22,7 +22,7 @@ This section lists public outbound IP addresses for integration environments.
 
 50.17.163.75
 
-## EU region
+### EU region
 52.51.163.159
 
 52.209.44.60
