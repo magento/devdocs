@@ -2,12 +2,10 @@
 layout: default
 group: mrg
 subgroup: Enterprise Edition
-title: Module Reference Guide
+title: Magento_ProductVideoStaging module
 menu_title: ProductVideoStaging
 menu_order: 2
 version: 2.1
-
-
 github_link: mrg/ee/ProductVideoStaging.md
 ---
 
