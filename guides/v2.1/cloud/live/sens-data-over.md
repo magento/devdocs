@@ -24,12 +24,11 @@ These new methods to manage your configuration are optional. You don't have to u
 </div>
 
 ### Managing the configuration {#cloud-confman-over}
+We <!-- help you protect sensitive settings and  -->make it easy to manage system settings as follows:
 
 <!-- *	A new method to manage sensitive settings (such as payment gateway passwords).
  -->
  *	An improved method to manage system configuration settings (such as store locale settings and static file optimization settings) in a new configuration file, `app/etc/config.local.php`, which is in source control.
-
-We <!-- help you protect sensitive settings and  -->make it easy to manage system settings as follows:
 
 <!-- *	In your [staging]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-stage) and [production]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-prod) systems, you manage sensitive settings by defining environment variables. 
 
