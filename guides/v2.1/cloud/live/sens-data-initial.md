@@ -14,11 +14,7 @@ github_link: cloud/live/sens-data-initial.md
 
 This topic discusses how to manage default locale and static file optimization settings in your integration system. _Static file optimization_ means merging and minifying JavaScript and Cascading Style Sheets, and minifying HTML templates. static file optimization should be disabled in integration (where you're testing) and enabled in staging and production.  
 
-These particular settings are discussed only to explain how the procedure works; you can use the same procedure to manage any available settings. For a complete list of settings, see:
-
-*	[All configuration paths except payments reference]({{ page.baseurl }}cloud/live/config-reference-most.html)
-*	[Payment configuration paths reference]({{ page.baseurl }}cloud/live/config-reference-payment.html)
-*	[Sensitive configuration paths reference]({{ page.baseurl }}cloud/live/config-reference-sens.html)
+These particular settings are discussed only to explain how the procedure works; you can use the same procedure to manage any available settings. 
 
 This example shows how to:
 
@@ -28,9 +24,9 @@ This example shows how to:
 4.	Verify your settings are not editable in the Admin.
 5.	Delete `config.local.php`, change the settings, and push `config.local.php` to the integration server.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
+<!-- <div class="bs-callout bs-callout-info" id="info" markdown="1">
 This example shows how you can set and lock configuration values for everything _except_ sensitive settings. You must set sensitive settings either as configuration variables or in the Magento Admin. For more information, see [Sensitive configuration paths]({{ page.baseurl }}cloud/live/config-reference-sens.html).
-</div>
+</div> -->
 
 ## Required role
 To complete the tasks discussed in this topic, you must have at minimum a project reader role with [environment administrator]({{ page.baseurl }}cloud/admin/admin-user-admin.html#loud-role-env) privileges.

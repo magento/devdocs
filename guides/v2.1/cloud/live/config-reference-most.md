@@ -1,6 +1,6 @@
 ---
 layout: default
-group: cloud
+group: 
 subgroup: 40_live
 title: All configuration paths except payments reference
 menu_title: All configuration paths except payments reference

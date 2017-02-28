@@ -1,6 +1,6 @@
 ---
 layout: default
-group: cloud
+group: 
 subgroup: 40_live
 title: How to name configuration variables
 menu_title: How to name configuration variables

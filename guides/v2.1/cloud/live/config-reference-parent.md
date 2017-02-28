@@ -1,6 +1,6 @@
 ---
 layout: default
-group: cloud
+group: 
 subgroup: 40_live
 title: Configuration reference
 menu_title: Configuration reference
