@@ -45,7 +45,9 @@ In other words, Cloud's build phase is less time-consuming than deployment. Ther
 Settings in `config.local.php` are not editable in the Magento Admin. This also helps keep your settings consistent across the integration, staging, and production systems.
 
 ### How to get `magento-cloud-configuration` release 101.4.1
+Magento Enterprise Cloud Edition periodically provides patch releases in components like `magento-cloud-configuration`.
 
+To test and apply the patch, see [Test a Magento patch]({{ page.baseurl }}cloud/project/project-patch.html#cloud-patch-gen).
 
 ## Manage your configuration and protect sensitive settings {#cloud-config-manage-sens-over}
 Magento's store configuration is located in the database and there is one database per system. This can make the configuration of multiple systems (such as staging and production) difficult.
