@@ -29,14 +29,14 @@ These new methods to manage your configuration are optional. You don't have to u
  -->
  *	An improved method to manage system configuration settings (such as store locale settings and static file optimization settings) in a new configuration file, `app/etc/config.local.php`, which is in source control.
 
-We help you protect sensitive settings and make it easy to manage system settings as follows:
+We <!-- help you protect sensitive settings and  -->make it easy to manage system settings as follows:
 
 <!-- *	In your [staging]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-stage) and [production]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-prod) systems, you manage sensitive settings by defining environment variables. 
 
 	You can change sensitive variables using the Magento Enterprise Cloud Edition [Web Interface]({{ page.baseurl }}cloud/project/project-webint-basic.html).  -->
 *	System values related to static content deployment (for example, static file optimization) are stored in a new configuration file, `app/etc/config.local.php`, which is managed in source control.
 
-	Sensitive values are _not_ stored in `app/etc/config.local.php`.
+	<!-- Sensitive values are _not_ stored in `app/etc/config.local.php`. -->
 
 	`config.local.php` is a convenient way to move settings between systems. Managing `config.local.php` in source control means your settings for staging and production are always consistent. For example, you can disable static file optimization in your [integration]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-int) system but enable it in both staging and production. After initially setting up the configuration, you don't need to touch it again because it's in source control.
 
@@ -58,11 +58,9 @@ To test and apply the patch, see [Test general patches]({{ page.baseurl }}cloud/
 ## Manage your configuration <!-- and protect sensitive settings --> {#cloud-config-manage-sens-over}
 Magento's store configuration is located in the database and there is one database per system. This can make the configuration of multiple systems (such as staging and production) difficult.
 
-Starting with version `magento-cloud-configuration` release 101.4.1 on Magento Enterprise Cloud Editio 2.1.4, we provide store configuration values are specified in a new configuration file, `app/etc/config.local.php`, which is in source control.
+Starting with version `magento-cloud-configuration` release 101.4.1 on Magento Enterprise Cloud Editio 2.1.4, we store configuration values are specified in a new configuration file, `app/etc/config.local.php`, which is in source control.
 
 Using `config.local.php`, you can, for example, disable static file optimization in your integration system (where you are developing and testing) and enable static file optimization in staging and production. 
-
-	overview of how to change these settings.
 
 <!-- *	Sensitive values, such as payment processor settings, are specified using environment variables. Viewing or changing environment variables is restricted to people who have at minimum a project reader role with [environment administrator]({{ page.baseurl }}cloud/admin/admin-user-admin.html#loud-role-env) privileges.
  -->
