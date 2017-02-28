@@ -56,7 +56,7 @@ These new methods to manage your configuration are optional. You don't have to u
 The following sections provide more detail.
 
 ### Manage system settings {#cloud-config-specific-over}
-System settings refer to the configuration in the Magento Admin in **Stores** > Settings > **Configuration**. A list of settings can be found in [System settings reference]({{ page.baseurl }}cloud/live/sens-data-system-vars.html).
+System settings refer to the configuration in the Magento Admin in **Stores** > Settings > **Configuration**. A list of settings can be found in [System settings reference]({{ page.baseurl }}cloud/live/config-reference-var-name.html).
 
 #### How we set system values
 In each of your Magento Enterprise Cloud Edition systems (integration, staging, and production), you have the option of overriding certain configuration settings:
@@ -66,7 +66,7 @@ In each of your Magento Enterprise Cloud Edition systems (integration, staging, 
 *	Sensitive settings, such as payment processor settings, are set using environment variables
 
 	<div class="bs-callout bs-callout-info" markdown="1">
-	*	You can set _any_ value using environment variables but we emphasize sensitive values for obvious reasons. For a list of all variables you can set, see [System settings reference]({{ page.baseurl }}cloud/live/sens-data-system-vars.html).
+	*	You can set _any_ value using environment variables but we emphasize sensitive values for obvious reasons. For a list of all variables you can set, see [System settings reference]({{ page.baseurl }}cloud/live/config-reference-var-name.html).
 	*	We assume system settings are the same in staging and production. Sensitive settings might be different.
 	</div>
 
@@ -142,6 +142,6 @@ If you choose to use different system settings in staging and production, you ca
 </div>
 
 #### Next steps
-*	[System settings reference]({{ page.baseurl }}cloud/live/sens-data-system-vars.html)
+*	[System settings reference]({{ page.baseurl }}cloud/live/config-reference-var-name.html)
 *	[Manage system settings]({{ page.baseurl }}cloud/live/sens-data-initial.html)
 *	[Manage sensitive configuration values]({{ page.baseurl }}cloud/live/sens-data-mg-sens.html)
