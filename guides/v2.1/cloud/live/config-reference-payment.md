@@ -1,6 +1,6 @@
 ---
 layout: default
-group: cloud
+group: 
 subgroup: 40_live
 title: Payment configuration paths reference
 menu_title: Payment configuration paths reference

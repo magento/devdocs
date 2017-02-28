@@ -74,7 +74,7 @@ These new methods to manage your configuration are optional. You don't have to u
 The following sections provide more detail.
 
 ### Manage system settings {#cloud-config-specific-over}
-System settings refer to the configuration in the Magento Admin in **Stores** > Settings > **Configuration**. A list of settings can be found in [System settings reference]({{ page.baseurl }}cloud/live/config-reference-var-name.html).
+System settings refer to the configuration in the Magento Admin in **Stores** > Settings > **Configuration**. A list of settings can be found in [TBD]({{ page.baseurl }}cloud/live/TBD.html).
 
 #### How we set system values
 In each of your Magento Enterprise Cloud Edition systems (integration, staging, and production), you have the option of overriding certain configuration settings:
