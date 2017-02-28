@@ -21,7 +21,7 @@ Extends all [`uiElement`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uieleme
   </tr>
   <tr>
     <td>autoRender</td>
-    <td>When set to 'true', foster component is automatically rendered during Insert's initialization. Otherwise, Insert's 'render' method should be called to render foster component.</td>
+    <td>When set to 'true', the form component is automatically rendered during Insertform initialization. Otherwise, Insertform's 'render' method should be called to render the form component.</td>
     <td>Boolean</td>
     <td>false</td>
   </tr>
@@ -32,9 +32,18 @@ Extends all [`uiElement`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uieleme
     <td>Magento_Ui/js/form/components/insert-form</td>
   </tr>
   <tr>
-    <td>dataLinks<br>imports<br>exports</td>
-    <td>Flags that enable linking between Insert's externalValue and foster component (aggregated) value.<br>Enable import from foster component (aggregated) value to the Insert's externalValue.<br>Enable export from Insert's externalValue to the foster component (aggregated) value.</td>
-    <td>Object<br>Boolean<br>Boolean</td>
+    <td>dataLinks <ul><li>imports</li><li>exports</li></ul></td>
+    <td>Flags that enable linking between Insertform's externalValue (the object that stores form information) and form (aggregated) value.
+<ul>
+<li>
+Enable import from foster component (aggregated) value to the Insert's externalValue.</li>
+<li>Enable export from Insert's externalValue to the foster component (aggregated) value.</li></li>
+</td>
+    <td>Object
+<ul>
+<li>
+Boolean</li>
+<li>Boolean</li></ul></td>
     <td>false<br>false</td>
   </tr>
   <tr>

@@ -27,19 +27,20 @@ Extends all `abstract` configuration.
   </tr>
   <tr>
     <td>elementTmpl</td>
-    <td>The path to the child component’s .html template.</td>
+    <td>The path to the .html template for the particular type of the field component (image).</td>
     <td>String</td>
     <td>ui/form/element/media</td>
   </tr>
   <tr>
     <td>links <ul><li>value</li></ul></td>
-    <td>Used for mutual tracking property changes. links’s value is an object, composed of the following:key: name of the internal property or method which sends and receives the notifications.value - name of the property or method which sends and receives the notifications. Can use string templates.Unlinks the component property "value" &lt;p class="q"&gt;this needs explanation&lt;/p&gt;</td>
-    <td>Object<br>&lt;li&gt;Boolean&lt;/li&gt;</td>
+    <td>Used to break the link established in the <code>link</code> property of the parent (abstract) component.</td>
+    <td>Object
+<li>Boolean</li></td>
     <td>false</td>
   </tr>
   <tr>
     <td>template</td>
-    <td>The path to the component’s .html template.</td>
+    <td>The path to the field general .html template.</td>
     <td>String</td>
     <td>ui/form/field</td>
   </tr>

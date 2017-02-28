@@ -27,19 +27,19 @@ Extends all `abstract` configuration.
   </tr>
   <tr>
     <td>elementTmpl</td>
-    <td>The path to the child component’s .html template.</td>
+    <td>The path to the .html template of the particular field type component (date).</td>
     <td>String</td>
     <td>ui/form/element/date</td>
   </tr>
   <tr>
     <td>inputDateFormat</td>
-    <td>Format of date that comes from the server (ICU Date Format).Used only in date picker mode (this.options.showsTime == false).</td>
+    <td>Date format received from the server (ICU Date Format).Used only in date picker mode (this.options.showsTime == false).</td>
     <td>String</td>
     <td>y-MM-dd</td>
   </tr>
   <tr>
     <td>outputDateFormat</td>
-    <td>Format of date that should be sent to the server (ICU Date Format).Used only in date picker mode (this.options.showsTime == false)</td>
+    <td>Date format sent to the server (ICU Date Format). Used only in date picker mode (this.options.showsTime == false)</td>
     <td>String</td>
     <td>MM/dd/y</td>
   </tr>
@@ -51,19 +51,19 @@ Extends all `abstract` configuration.
   </tr>
   <tr>
     <td>shiftedValue</td>
-    <td>Date/time value shifted to corresponding timezoneaccording to this.storeTimeZone property. This value will be sent to the server.</td>
+    <td>Date/time value shifted to corresponding timezone, according to this.storeTimeZone property. This value is sent to the server.</td>
     <td>String</td>
     <td>''</td>
   </tr>
   <tr>
     <td>template</td>
-    <td>The path to the component’s .html template.</td>
+    <td>The path to the general field .html template.</td>
     <td>String</td>
     <td>ui/form/field</td>
   </tr>
   <tr>
     <td>timezoneFormat</td>
-    <td>Format needed by moment timezone for conversion.</td>
+    <td>Timezone format needed by the moment for conversion.</td>
     <td>String</td>
     <td>YYYY-MM-DD HH:mm</td>
   </tr>

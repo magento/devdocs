@@ -27,13 +27,13 @@ Extends all `abstract` configuration.
   </tr>
   <tr>
     <td>elementTmpl</td>
-    <td>The path to the child component’s .html template.</td>
+    <td>The path to the .html template of the particular field type.</td>
     <td>String</td>
     <td>ui/form/element/input</td>
   </tr>
   <tr>
     <td>template</td>
-    <td>The path to the component’s .html template.</td>
+    <td>The path to the general field .html template.</td>
     <td>String</td>
     <td>ui/form/field</td>
   </tr>

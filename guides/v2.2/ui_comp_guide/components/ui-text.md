@@ -26,6 +26,12 @@ Extends all [uiElement]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uielement
     <td>Magento_Ui/js/form/element/text</td>
   </tr>
   <tr>
+    <td>disabled</td>
+    <td>Initial component's state. When set to "true", users can't take action on the element.</td>
+    <td>Boolean</td>
+    <td>false</td>
+  </tr>
+  <tr>
     <td>label</td>
     <td>Field label</td>
     <td>String</td>
@@ -33,19 +39,14 @@ Extends all [uiElement]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uielement
   </tr>
   <tr>
     <td>links<br>&lt;li&gt;value&lt;/li&gt;</td>
-    <td>Links the component property "value" with provider uses path that is declared in the "dataScope" property</td>
+    <td><a href="{{page.baseurl}}ui_comp_guide/concepts/ui_comp_linking_concept.html">Links</a> the component's "value" property with provider using the declared in the "dataScope" property of the parent component.</td>
     <td>Object<br>&lt;li&gt;Boolean&lt;/li&gt;</td>
     <td>${ $.provider }:${ $.dataScope }' <p class="q">Strange value for a boolean</p></td>
   </tr>
-  <tr>
-    <td>disabled</td>
-    <td>Is responsible for initial component disabled state. In case when state is "true" makes the component UI immutable.</td>
-    <td>Boolean</td>
-    <td>false</td>
-  </tr>
+
   <tr>
     <td>visible</td>
-    <td>Is responsible for initial component visibility state. In case when state is "false" to the component DOM block adds css style "display: none".</td>
+    <td>Initial component's visibility. When set to "false", the "display: none" CSS style is added to the component's DOM block.</td>
     <td>Boolean</td>
     <td>true</td>
   </tr>

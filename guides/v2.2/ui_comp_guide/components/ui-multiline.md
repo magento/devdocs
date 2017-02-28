@@ -21,19 +21,19 @@ Extends all [`uiCollection`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uico
   </tr>
   <tr>
     <td>additionalClasses</td>
-    <td>Sets custom classes to the component DOM block.</td>
+    <td>Sets custom classes to the component's DOM block.</td>
     <td>Object</td>
     <td>{}</td>
   </tr>
   <tr>
     <td>breakLine</td>
-    <td>Is responsible for structures multiline UI. (Under the hood adds classes to multiline DOM block)  &lt;p class="q"&gt;Not clear&lt;/p&gt;</td>
+    <td>Adds a class to multiline DOM element.</td>
     <td>Boolean</td>
     <td>true</td>
   </tr>
   <tr>
     <td>cols</td>
-    <td>The number of columns that will be added to the cols attribute in textarea DOM element<br>&lt;p class="q"&gt;need explanation&lt;/p&gt;.</td>
+    <td>The number of columns that will be specified in the "cols" attribute of the textarea DOM element.</td>
     <td>Number</td>
     <td>15</td>
   </tr>
@@ -45,43 +45,43 @@ Extends all [`uiCollection`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uico
   </tr>
   <tr>
     <td>fieldTemplate</td>
-    <td>The path to template that will be uses for all child component that will be rendered multiline component.</td>
+    <td>The path to .html template that will be used for all child components rendered by the multiline component.</td>
     <td>String</td>
     <td>ui/form/field</td>
   </tr>
   <tr>
     <td>label</td>
-    <td>The data that will be rendered as component label</td>
+    <td>Component's UI label</td>
     <td>String</td>
     <td>''</td>
   </tr>
   <tr>
     <td>required</td>
-    <td>Makes component required to fill or not.</td>
+    <td>Define whether the rendered field is required.</td>
     <td>Boolean</td>
     <td>false</td>
   </tr>
   <tr>
     <td>showLabel</td>
-    <td>Is responsible for label rendering. &lt;p class="q"&gt;Not clear&lt;/p&gt;</td>
+    <td>Define if label is rendered.</td>
     <td>Boolean</td>
     <td>''</td>
   </tr>
   <tr>
     <td>template</td>
-    <td>The path to the component’s .html template.</td>
+    <td>The path to the general field's .html template.</td>
     <td>String</td>
     <td>ui/group/group</td>
   </tr>
   <tr>
     <td>validateWholeGroup</td>
-    <td>&lt;p class="q"&gt;???&lt;/p&gt;</td>
+    <td>Add a block with validation results for all fields in the group. </td>
     <td>Boolean</td>
     <td></td>
   </tr>
   <tr>
     <td>visible</td>
-    <td>Is responsible for initial component visibility state. In case when state is "false" to the component DOM block adds css style "display: none".</td>
+    <td>Initial component's visibility. When set to "false", the "display: none" CSS style is added to the component's DOM block.</td>
     <td>Boolean</td>
     <td></td>
   </tr>
