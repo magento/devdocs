@@ -23,7 +23,7 @@ These new methods to manage your configuration are optional. You don't have to u
 
 We help you protect sensitive data and make it easy to manage system data as follows:
 
-*	In your [staging]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-stage) and [production]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-prod) systems, you manage sensitive data using environment variables. 
+*	In your [staging]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-stage) and [production]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-prod) systems, you manage sensitive data by defining environment variables. 
 
 	You can change sensitive variables using the Magento Enterprise Cloud Edition [Web Interface]({{ page.baseurl }}cloud/project/project-webint-basic.html). 
 *	System values related to static content deployment (for example, static file optimization) are stored in a new configuration file, `app/etc/config.local.php`, which is managed in source control.
