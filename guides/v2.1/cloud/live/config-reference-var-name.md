@@ -148,7 +148,7 @@ This section discusses how to set system variables.
 
 	*	`CONFIG__WEBSITES`
 	*	`CONFIG__STORES`
-*	The last part of the varibale name is the configuration path, which is unique for each configuration setting.
+*	The last part of the variable name is the configuration path, which is unique for each configuration setting.
 
 [See some examples](#cloud-system-vars-ex)
 

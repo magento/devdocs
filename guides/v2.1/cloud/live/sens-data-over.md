@@ -12,7 +12,7 @@ version: 2.1
 github_link: cloud/live/sens-data-over.md
 ---
 
-In `magento-cloud-configuration` release 101.4.1 on Magento Enterprise Cloud Editio 2.1.4, we provide the following improvements:
+In `magento-cloud-configuration` release 101.4.1 on Magento Enterprise Cloud Edition 2.1.4, we provide the following improvements:
 
 *	Better way to [manage the configuration](#cloud-confman-over) so your integration, staging, and production systems stay in synchronization with each other more easily.
 
@@ -46,7 +46,7 @@ If you have a `config.local.php`, static files are deployed in the Magento Enter
 
 In other words, Cloud's build phase is less time-consuming than deployment. Therefore, any change you make to your Cloud project deploys faster overall if there is a `config.local.php` compared to having no `config.local.php`.
 
-### Configuration settings locked in the Maento Admin {#cloud-confman-locked-over}
+### Configuration settings locked in the Magento Admin {#cloud-confman-locked-over}
 Settings in `config.local.php` are not editable in the Magento Admin. This also helps keep your settings consistent across the integration, staging, and production systems.
 
 ### How to get `magento-cloud-configuration` release 101.4.1
@@ -57,7 +57,7 @@ To test and apply the patch, see [Test general patches]({{ page.baseurl }}cloud/
 ## Manage your configuration <!-- and protect sensitive settings --> {#cloud-config-manage-sens-over}
 Magento's store configuration is located in the database and there is one database per system. This can make the configuration of multiple systems (such as staging and production) difficult.
 
-Starting with version `magento-cloud-configuration` release 101.4.1 on Magento Enterprise Cloud Editio 2.1.4, we store configuration values are specified in a new configuration file, `app/etc/config.local.php`, which is in source control.
+Starting with version `magento-cloud-configuration` release 101.4.1 on Magento Enterprise Cloud Edition 2.1.4, we store configuration values are specified in a new configuration file, `app/etc/config.local.php`, which is in source control.
 
 Using `config.local.php`, you can, for example, disable static file optimization in your integration system (where you are developing and testing) and enable static file optimization in staging and production. 
 
