@@ -25,7 +25,7 @@ You can find it using:
 
 *   The command line:
 
-       magento-cloud environment:ssh --pipe
+        magento-cloud environment:ssh --pipe
 
 *   The project [Web Interface]({{ page.baseurl }}cloud/project/project-webint-basic.html).
 
@@ -39,8 +39,7 @@ The name of the database can be found in the `$MAGENTO_CLOUD_RELATIONSHIPS` envi
 
 To find database access information:
 
-1.  If you haven't already done so, log in to your local system as the [Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html).
-2.  Enter the following command:
+1.  SSH to your integration system:
 
         magento-cloud environment:ssh
 3.  At the command prompt, enter the following command:
@@ -49,9 +48,7 @@ To find database access information:
 
 The database connection information is displayed:
 
-{% highlight yaml %}
-
-"database" : [
+<pre class="no-copy">database" : [
       {
          "username" : "user",
          "query" : {
@@ -64,9 +61,7 @@ The database connection information is displayed:
          "scheme" : "mysql",
          "ip" : "192.0.2.150"
       }
-   ]
-
-{% endhighlight %}
+   ]</pre>
 
 In the preceding example, the database name is `main`, its listen port is `3306`, its host name is `database.internal`, its root user name is `user` and the user has no password.
 
@@ -83,4 +78,4 @@ You can find it using:
 
 
 #### Next step
-Prepare your existing Magento EE system]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-prepare.html)
+[Prepare your existing Magento EE system]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-prepare.html)
