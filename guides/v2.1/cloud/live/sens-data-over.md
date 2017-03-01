@@ -117,7 +117,7 @@ Our recommended method relies on the following important points:
 *	Do all of your configuration in your integration system's `master` branch; the `master` branch is your "source of truth" for configuration management.
 *	Transfer those settings using `config.local.php` to the other systems (local, staging, and production).
 
-**Step A**. Create and configure stores in your integration system and create `config.local.php`.
+**Step A**. Create and configure stores and create `config.local.php` in your integration system.
 
 **Step B**. Push `config.local.php` to your integration server's `master` branch.
 
