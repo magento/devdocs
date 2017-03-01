@@ -89,7 +89,7 @@ As the project builds and deploys, many messages are displayed on the screen. A 
        http://master-o9gv6gq-43biovskhelhy.us.magentosite.cloud/ is served by application `mymagento`
        https://master-o9gv6gq-43biovskhelhy.us.magentosite.cloud/ is served by application `mymagento`
 
-## Import the Magento database
+## Import the Magento database {#cloud-import-db}
 Before you can use your existing Magento EE code in Magento Enterprise Cloud Edition, you must import the database.
 
 To import the Magento database in Magento Enterprise Cloud Edition, you must know:
@@ -172,7 +172,7 @@ To update the unsecure base URL:
 For your system to be fully functional, you must also set unsecure and secure URLs for the default scope as well as for all websites, stores, and store views.
 </div>
 
-## Copy the encryption key
+## Copy the encryption key {#cloud-import-key}
 To copy your Magento EE encryption key:
 
 1.  If you haven't done so already, SSH to the Cloud environment.
@@ -193,7 +193,7 @@ return array (
 );
 {% endhighlight %}
 
-## Import media
+## Import media {#cloud-import-media}
 To import media files into your Cloud environment:
 
 1.  If you haven't done so already, SSH to the Cloud environment.
