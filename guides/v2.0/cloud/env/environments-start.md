@@ -10,7 +10,6 @@ version: 2.0
 github_link: cloud/env/environments-start.md
 ---
 
-
 ## Common commands {#env-start-comm}
 The following commands can be run from any directory. However, it's simpler to run them from a project directory. If 
 so, you can omit the `-p <project ID>` parameter. These commands are meant to be used to manage integration environments.
@@ -37,7 +36,6 @@ The environment _name_ is different from the environment _ID_ only if you use sp
 
 An environment name _cannot_ include characters reserved for your Linux shell or for regular expressions. Forbidden characters include curly braces (`{ }`), parentheses, asterisk (`*`), angle brackets (`< >`), ampersand (`&`), percent (`%`), and other characters.
 </div>
-
 
 `magento-cloud environment:checkout <environment ID>`
 :	Check out an existing environment
@@ -67,40 +65,7 @@ To SSH to the environment, see [SSH into your environment]({{ page.baseurl }}clo
 ### Step 3: Enter commands
 Now you can connect to services as if they were running locally.
 
-For example, to connect to the database, use the following command:
-
-Find the database login information:
-
-	php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]))->database);'
-
-Sample output follows:
-
-	Array
-	(
-   		[0] => stdClass Object
-       	(
-           	[username] => user
-           	[password] =>
-           	[ip] => 192.0.2.60
-           	[host] => database.internal
-           	[query] => stdClass Object
-               	(
-             	     	[is_master] => 1
-              		)
-
-           	[path] => main
-           	[scheme] => mysql
-           	[port] => 3306
-       	)
-	)
-
-Use the following command to connect to the database:
-
-	mysql --host=<host> --user='<database user name>' --pass='<user password>' --database='<name>' --port='<port>'
-
-Using the preceding example, the command is:
-
-	mysql --host=database.internal --user='user' --pass='' --database='main' --port='3306'
+{% include cloud/log-in-db.md %}
 
 #### Related topics
 *	[Manage your environments]({{page.baseurl}}cloud/env/environments.html)

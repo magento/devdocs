@@ -1,9 +1,9 @@
 <div markdown="1">
 
-This topic discusses how to upgrade the Magento Enterprise Cloud Edition software from any version after 2.0.4. If you're currently using version 2.0.4, see [Upgrade from version 2.0.4](#cloud-upgrade-204).
+This topic discusses how to upgrade Magento Enterprise Cloud Edition from any version after 2.0.4. If you're currently using version 2.0.4, see [Upgrade from version 2.0.4](#cloud-upgrade-204).
 
-<div class="bs-callout bs-callout-warning">
-    <p>Always upgrade your local system first, then your <a href="{{ page.baseurl }}cloud/discover-arch.html#cloud-arch-int">integration environment</a> system (that is, the remote Cloud server). Resolve any issues before upgrading either <a href="{{ page.baseurl }}cloud/discover-arch.html#cloud-arch-stage">staging</a> or <a href="{{ page.baseurl }}cloud/discover-arch.html#cloud-arch-prod">production</a>.</p>
+<div class="bs-callout bs-callout-warning" markdown="1">
+Always upgrade your local system first, then your <a href="{{ page.baseurl }}cloud/discover-arch.html#cloud-arch-int">integration environment</a> system (that is, the remote Cloud server). Resolve any issues before upgrading either <a href="{{ page.baseurl }}cloud/discover-arch.html#cloud-arch-stage">staging</a> or <a href="{{ page.baseurl }}cloud/discover-arch.html#cloud-arch-prod">production</a>.
 </div>
 
 ## Get started
@@ -77,9 +77,9 @@ Verify other changes you're going to submit to source control before you start t
         composer require magento/magento-cloud-metapackage <requiredversion> --no-update
         composer update
 
-    For example, to upgrade to version 2.1.2:
+    For example, to upgrade to version 2.1.5:
 
-        composer require magento/magento-cloud-metapackage 2.1.2 --no-update
+        composer require magento/magento-cloud-metapackage 2.1.5 --no-update
         composer update
 2.  Wait for dependencies to update.
 4.  Add, commit, and push your changes to start deployment:
@@ -99,10 +99,9 @@ Verify other changes you're going to submit to source control before you start t
 
 {% endcollapsibleh3 %}
 
-## Upgrade from version 2.0.4 {#cloud-upgrade-204}
-This section discusses steps to upgrade *only* if your current Magento Enterprise Cloud Edition version is 2.0.4.
+<p id="cloud-upgrade-204"></p>{% collapsibleh2 Upgrade from version 2.0.4 %}
 
-{% collapsible To upgrade from version 2.0.4 %}
+This section discusses steps to upgrade *only* if your current Magento Enterprise Cloud Edition version is 2.0.4.
 
 ### Create an authorization file
 To enable you to install and update the Magento software, you must have an `auth.json` file in your project's root directory. `auth.json` contains your Magento EE [authorization credentials](http://devdocs.magento.com/guides/v2.1/install-gde/prereq/connect-auth.html).
@@ -217,8 +216,6 @@ php.ini
 
 Verify your upgrade as discussed in the next section.
 
-{% endcollapsible %}
-
 ## Verify your upgrade {#upgrade-verify}
 This section discusses how to verify your upgrade on your local development machine and in the cloud.
 
@@ -273,6 +270,8 @@ To resolve the error:
 
         git add -A && git commit -m "Update"
         git push origin <branch name>
+
+{% endcollapsibleh2 %}
 
 #### Related topic
 *   [Install components]({{page.baseurl}}cloud/howtos/install-components.html)
