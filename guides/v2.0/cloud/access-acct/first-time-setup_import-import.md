@@ -22,27 +22,7 @@ Before you continue, make sure there is nothing in your Magento Enterprise Cloud
 </div>
 
 ## Required information
-This section discusses information you must know to complete the tasks discussed in this topic:
-
-*   Magento Enterprise Cloud Edition environment SSH URL.
-
-    You can find it using:
-
-    *   The command line:
-
-            magento-cloud environment:ssh --pipe
-
-    *   The project [Web Interface]({{ page.baseurl }}cloud/project/project-webint-basic.html).
-*   Environment's unsecure base URL.
-
-    You can find it using:
-
-    *   The command line:
-
-            magento-cloud url
-
-    *   The project [Web Interface]({{ page.baseurl }}cloud/project/project-webint-basic.html).
-*   [Encryption key]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-prepare.html) from your Magento EE system.
+Before you continue, make sure you have the [encryption key]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-prepare.html) from your Magento EE system.
 
 ## Create a remote Git reference {#cloud-import-ref}
 This section discusses how to create a remote Git reference from your Cloud Git repository to the repository in which your Magento EE installation is located.
@@ -122,52 +102,12 @@ This topic discusses how to import the [integration system]({{ page.baseurl }}cl
 </div>
 
 ### Find the SSH URL
-You can find the environment's SSH URL in any of the following ways:
-
-*   From the [project Web Interface]({{ page.baseurl }}cloud/project/project-webint-basic.html#project-access)
-*   Using the following command:
-
-        magento-cloud environment:ssh --pipe
-
-An SSH URL is similar to the following:
+Find the integration system's [SSH URL]({{ page.baseurl cloud/access-acct/first-time-setup_import-prereq.html#cloud-import-pre-sshurl}}).
 
 <pre class="no-copy">43bkopvkhelhy-master-l8uv4kp@ssh.us.magentosite.cloud</pre>
 
 ### Database access
-The name of the database can be found in the `$MAGENTO_CLOUD_RELATIONSHIPS` environment variable. Display the variable with the following command. The database name is stored under `databases->path`. The password is found under `databases->password`.
-
-To find database access information:
-
-1.  If you haven't already done so, log in to your local system as the [Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html).
-2.  Enter the following command:
-
-        magento-cloud environment:ssh
-3.  At the command prompt, enter the following command:
-
-        echo $MAGENTO_CLOUD_RELATIONSHIPS | base64 -d | json_pp
-
-The database connection information is displayed:
-
-{% highlight yaml %}
-
-"database" : [
-      {
-         "username" : "user",
-         "query" : {
-            "is_master" : true
-         },
-         "path" : "main",
-         "port" : 3306,
-         "host" : "database.internal",
-         "password" : "",
-         "scheme" : "mysql",
-         "ip" : "192.0.2.150"
-      }
-   ]
-
-{% endhighlight %}
-
-In the preceding example, the database name is `main`, its listen port is `3306`, its host name is `database.internal`, its root user name is `user` and the user has no password.
+Find the integration system's [database host, user name, and password]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-prereq.html#cloud-import-pre-cloudb)
 
 ### Drop and re-create the Cloud database
 SSH into the cloud environment and empty the existing database, if it is populated. If you have done any work you would like to refer to later that's been done in the Cloud environment, then make a backup of that first. 
@@ -239,6 +179,7 @@ For your system to be fully functional, you must also set unsecure and secure UR
 </div>
 
 ## Copy the encryption key
+To copy your Magento EE encryption key:
 
 1.  If you haven't done so already, SSH to the Cloud environment.
 
