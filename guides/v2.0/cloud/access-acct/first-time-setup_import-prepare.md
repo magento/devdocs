@@ -210,19 +210,20 @@ Because the database dump can be large, we recommend you create it in a director
 
 Command syntax follows:
 
-    mysqldump -h <db-host> -P <db-port> -p -u <db-user> <db-name> --single-transaction --no-autocommit --quick | gzip > ~/db.sql.gz
+    mysqldump -h <db-host> -P <db-port> -p -u <db-user> <db-name> --single-transaction --no-autocommit --quick | gzip > ~/db.sql.tgz
 
 Example if your database is on localhost with the default port (3306), database user name is `magento`, and database name is also `magento`:
 
-    mysqldump -p -u magento magento --single-transaction --no-autocommit --quick | gzip > ~/db.sql.gz
+    mysqldump -p -u magento magento --single-transaction --no-autocommit --quick | gzip > ~/db.sql.tgz
 
 ### Transfer the database dump from Magento EE to Cloud
 Use the `rsync` command as follows to transfer the database dump from your Magento EE system to the Magento Enterprise Cloud Edition environment.
 
 Now that you have created the dump, move it to the var directory of the application you are importing into:
 
-    rsync <db dump file name> <cloud ssh url>:var/db.sql.gz
+    rsync <db dump file name> <cloud SSH URL>:var/db.sql.gz
 
+To find `<cloud SSH URL>`, see [Find the information you need for your import]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-prereq.html#cloud-import-pre-sshurl).
 
 #### Next step
 [Import Magento EE into Magento Enterprise Cloud Edition]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-import.html)
