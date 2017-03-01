@@ -42,4 +42,4 @@ Following is our recommended workflow:
 {% include cloud/new-project-from-template.md %}
 
 #### Next step
-[Find the information you need for your import]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-prereq..html)
+[Find the information you need for your import]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-prereq.html)
