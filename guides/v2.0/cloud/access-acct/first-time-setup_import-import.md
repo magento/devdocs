@@ -104,6 +104,8 @@ This topic discusses how to import the [integration system]({{ page.baseurl }}cl
 ### Find the SSH URL
 Find the integration system's [SSH URL]({{ page.baseurl cloud/access-acct/first-time-setup_import-prereq.html#cloud-import-pre-sshurl}}).
 
+Example:
+
 <pre class="no-copy">43bkopvkhelhy-master-l8uv4kp@ssh.us.magentosite.cloud</pre>
 
 ### Database access

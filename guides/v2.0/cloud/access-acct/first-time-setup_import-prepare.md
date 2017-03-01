@@ -22,7 +22,7 @@ Before you continue, make sure you have done all of the following:
     If not, you must add it to Git before continuing.
 *   Complete all of the tasks in your Magento EE system:
 
-    1.  [Install the CLI]({{ page.baseurl }}cloud/before/before-workspace-cli.html).
+    1.  [Install the CLI]({{ page.baseurl }}cloud/before/before-workspace-cli.html)
     2.  [Set up SSH]({{ page.baseurl }}cloud/before/before-workspace-ssh.html)
 
 This is our recommended workflow:
@@ -118,11 +118,12 @@ To create a new `auth.json` in the event you don't have one:
 
     See the following example:
 
-        "http-basic": {
+        { "http-basic": {
            "repo.magento.com": {
               "username": "<public-key>",
               "password": "<private-key>"
             }
+        }
         }
 3.  Save your changes to `auth.json` and exit the text editor.
 
