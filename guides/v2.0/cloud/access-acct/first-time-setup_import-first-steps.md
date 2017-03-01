@@ -34,7 +34,7 @@ Following is our recommended workflow:
 2.  [Replace the contents]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-import.html) of this project with your code using Git.
 3.  [Import your Magento database]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-import.html#cloud-import-db) into your Magento Enterprise Cloud Edition project.
 4.  [Import your static files]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-import.html#cloud-import-media) into your Magento Enterprise Cloud Edition project.
-5.  Copy your Magento EE [encryption key]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-import.htmlcloud-import-key) to your Magento Enterprise Cloud Edition project.
+5.  Copy your Magento EE [encryption key]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-import.html#cloud-import-key) to your Magento Enterprise Cloud Edition project.
 6.  Clear the cache and verify the project imported successfully.
 
 ## Create a new, empty Magento Enterprise Edition project {#cloud-import-proj}
