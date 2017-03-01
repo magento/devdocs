@@ -192,7 +192,7 @@ To find the variable name for HTML minification for a store view:
 **Result**: The variable name is `CONFIG__WEBSITE__DEFAULT__SHIPPING__ORIGIN__COUNTRY_ID`
 
 #### Next step
-[Manage system settings]({{ page.baseurl }}cloud/live/sens-data-initial.html)
+[Example of managing system-specific settings]({{ page.baseurl }}cloud/live/sens-data-initial.html)
 
 #### Related information
 *	[Magento User Guide discussion of scope](http://docs.magento.com/m2/ce/user_guide/configuration/scope.html){:target="_blank"}

@@ -24,7 +24,7 @@ These new methods to manage your configuration are optional. You don't have to u
 </div>
 
 ### Managing the configuration {#cloud-confman-over}
-We <!-- help you protect sensitive settings and  -->make it easy to manage system settings as follows:
+We <!-- help you protect sensitive settings and  -->make it easy to Example of managing system-specific settings as follows:
 
 <!-- *	A new method to manage sensitive settings (such as payment gateway passwords).
  -->
@@ -33,7 +33,7 @@ We <!-- help you protect sensitive settings and  -->make it easy to manage syste
 <!-- *	In your [staging]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-stage) and [production]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-prod) systems, you manage sensitive settings by defining environment variables. 
 
 	You can change sensitive variables using the Magento Enterprise Cloud Edition [Web Interface]({{ page.baseurl }}cloud/project/project-webint-basic.html).  -->
-*	System values related to static content deployment (for example, static file optimization) are stored in a new configuration file, `app/etc/config.local.php`, which is managed in source control.
+*	System values related to static content deployment (for example, static file optimization) are also stored in `app/etc/config.local.php`.
 
 	<!-- Sensitive values are _not_ stored in `app/etc/config.local.php`. -->
 
@@ -63,14 +63,11 @@ Using `config.local.php`, you can, for example, disable static file optimization
 
 <!-- *	Sensitive values, such as payment processor settings, are specified using environment variables. Viewing or changing environment variables is restricted to people who have at minimum a project reader role with [environment administrator]({{ page.baseurl }}cloud/admin/admin-user-admin.html#loud-role-env) privileges.
  -->
-<div class="bs-callout bs-callout-info" markdown="1">
-These new methods to manage your configuration are optional. You don't have to use them, although we strongly recommend you do.
-</div>
 
 The following sections provide more detail.
 
-### Manage system settings {#cloud-config-specific-over}
-System settings refer to the configuration in the Magento Admin in **Stores** > Settings > **Configuration**. A list of settings can be found in [TBD]({{ page.baseurl }}cloud/live/TBD.html).
+### Example of managing system-specific settings {#cloud-config-specific-over}
+System settings refer to the configuration in the Magento Admin in **Stores** > Settings > **Configuration**. A list of settings can be found in [Configuration settings you can change]({{ page.baseurl }}cloud/live/cloud/live/sens-data-initial.html#cloud-clp-settings).
 
 <!-- #### How we set system values
 In each of your Magento Enterprise Cloud Edition systems (integration, staging, and production), you have the option of overriding certain configuration settings:
@@ -100,7 +97,7 @@ As the diagram shows, we get configuration values in the following order:
 
 If no value exists in any of those sources, we use either the default value or NULL.
 
-For an example of how this works, see [Manage system settings]({{ page.baseurl }}cloud/live/sens-data-initial.html).
+For an example of how this works, see [Example of managing system-specific settings]({{ page.baseurl }}cloud/live/sens-data-initial.html).
 
 #### Recommended procedure to manage your settings {#cloud-config-specific-recomm}
 Managing store configuration is a complex task that's mostly up to you. What locales do you want to use? What custom themes do you need? Only you can determine the answers to those questions.
@@ -120,7 +117,7 @@ Our recommended method relies on the following important points:
 *	Do all of your configuration in your integration system's `master` branch; the `master` branch is your "source of truth" for configuration management.
 *	Transfer those settings using `config.local.php` to the other systems (local, staging, and production).
 
-**Step A**. Create and configure stores in your integration system.
+**Step A**. Create and configure stores in your integration system and create `config.local.php`.
 
 **Step B**. Push `config.local.php` to your integration server's `master` branch.
 
@@ -144,7 +141,7 @@ You generate `config.local.php` using `magento app:config:scd-dump`, which popul
 
 	You must delete it to be able to change the same settings again. In other words, if you changed the store name, that setting isn't editable in the Admin. You must delete `config.local.php` on the integration server to be able to change the store name again.
 2.	Make configuration changes in the Admin on the integration server.
-3.	Repeat Step B.
+3.	Re-create `config.local.php` and repeat Step B.
 
 After you've configured the integration server and tested it thoroughly, see [Overview of staging and production]({{ page.baseurl }}cloud/live/stage-prod-over.html) to start the process of migrating to a staging or production system.
 
