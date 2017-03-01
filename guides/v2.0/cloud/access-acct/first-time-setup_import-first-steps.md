@@ -28,16 +28,16 @@ Before you continue, make sure you have done all of the following:
 ## Recommended workflow
 Following is our recommended workflow:
 
-1.  Create a new, empty Magento Enterprise Cloud Edition project from a template.
+1.  Create a new, empty Magento Enterprise Cloud Edition [project from a template](#cloud-import-proj).
 
     This new project has files and directories specific to Magento Enterprise Cloud Edition.
-2.  Replace the contents of this project with your code.
+2.  [Replace the contents]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-import.html) of this project with your code using Git.
+3.  [Import your Magento database]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-import.html#cloud-import-db) into your Magento Enterprise Cloud Edition project.
+4.  [Import your static files]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-import.html#cloud-import-media) into your Magento Enterprise Cloud Edition project.
+5.  Copy your Magento EE [encrytption key]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-import.htmlcloud-import-key) to your Magento Enterprise Cloud Edition project.
+6.  Clear the cache and verify the project imported successfully.
 
-    This replaces not only Magento code but static and compiled assets as well.
-3.  Import your Magento database into your Magento Enterprise Cloud Edition project.
-4.  Clear the cache and verify the project imported successfully.
-
-## Create a new, empty Magento Enterprise Edition project
+## Create a new, empty Magento Enterprise Edition project {#cloud-import-proj}
 
 {% include cloud/new-project-from-template.md %}
 
