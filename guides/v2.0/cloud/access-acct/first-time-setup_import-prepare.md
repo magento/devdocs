@@ -170,7 +170,6 @@ To edit `composer.json`:
 7.  Wait while dependencies are updated.
 6.  When you're done, commit the changes to GitHub:
 
-        cd <Magento EE install dir>
         git add -A && git commit -m "Add Cloud files" && git push origin <branch name>
 
 ### Back up and transfer media files

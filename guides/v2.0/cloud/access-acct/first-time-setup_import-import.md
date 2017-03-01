@@ -94,28 +94,21 @@ Before you can use your existing Magento EE code in Magento Enterprise Cloud Edi
 
 To import the Magento database in Magento Enterprise Cloud Edition, you must know:
 
-*   The Magento Enterprise Cloud Edition environment's SSH URL
-*   The database name, user name, and password of the Cloud database
+*   The Magento Enterprise Cloud Edition environment's [SSH URL]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-prepare.html#cloud-import-pre-sshurl)
+*   The database name, user name, and password of the [Cloud database]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-prepare.html#cloud-import-pre-cloudb)
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 This topic discusses how to import the [integration system]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-int) database. The database connection information is different for [staging]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-stage) and [production]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-prod) systems. You'll need the assistance of Magento Support before you can migrate your integration system database to staging or production.
 </div>
-
-### Find the SSH URL
-Find the integration system's [SSH URL]({{ page.baseurl cloud/access-acct/first-time-setup_import-prereq.html#cloud-import-pre-sshurl}}).
-
-Example:
-
-<pre class="no-copy">43bkopvkhelhy-master-l8uv4kp@ssh.us.magentosite.cloud</pre>
-
-### Database access
-Find the integration system's [database host, user name, and password]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-prereq.html#cloud-import-pre-cloudb)
 
 ### Drop and re-create the Cloud database
 SSH into the cloud environment and empty the existing database, if it is populated. If you have done any work you would like to refer to later that's been done in the Cloud environment, then make a backup of that first. 
 
 To drop and re-create the Cloud database:
 
+1.  SSH to the integration system.
+
+        magento-cloud ssh
 1.  Connect to the database.
 
         mysql -h <db-host> -P <db-port> -p -u <db-user> <db-name>
@@ -125,9 +118,8 @@ To drop and re-create the Cloud database:
         mysql -h database.internal -u user main
 3.  Drop the database. At the `MariaDB [main]>` prompt, enter:
 
-        drop database <name>;
+        drop database main;
 
-    By default, the database name is `main`.
 4.  Re-create the database:
 
         create database main;
