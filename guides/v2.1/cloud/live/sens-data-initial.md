@@ -48,7 +48,7 @@ The following table shows the configuration settings affected by the `magento ap
 | Disable modules output |  Advanced > **Advanced** > **Disable Modules Output** |
 
 ## Prerequisite
-Before you continue, make sure you review our [recommended procedure]({{ page.baseurl }}cloud/live/sens-data-over.html##cloud-config-specific-recomm) for managing the configuration.
+Before you continue, make sure you review our [recommended procedure]({{ page.baseurl }}cloud/live/sens-data-over.html#cloud-config-specific-recomm) for managing the configuration.
 
 {% collapsibleh2 Get started %}
 
