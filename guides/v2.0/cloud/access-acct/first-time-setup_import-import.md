@@ -4,7 +4,7 @@ group: cloud
 subgroup: 08_setup
 title: Import Magento EE into Magento Enterprise Cloud Edition
 menu_title: Import Magento EE into Magento Enterprise Cloud Edition
-menu_order: 78
+menu_order: 79
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: import
