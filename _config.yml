@@ -60,9 +60,7 @@ collections:
   videos:
     output: true
     permalink: /videos/:path/
-  site_tags:
-    output: true
-    permalink: /tag/:name/
+
 
 defaults:
   -
@@ -72,12 +70,6 @@ defaults:
     values:
       layout: video
       guide_version: "2.1"
-  -
-    scope:
-      path: ""
-      type: site_tags
-    values:
-      layout: tag-index
 
 # toc_baseurl: "https://github.corp.ebay.com/pages/Magento/devdocs_internal"
 

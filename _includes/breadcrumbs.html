@@ -1,4 +1,3 @@
-{{page.aaa}}
 {% capture url %}{% if page.language%}{{ page.url | remove: "/" | remove: page.language }}{% else %}{{ page.url | remove: "/" }}{% endif %}{% endcapture %}
 {% if url.size > 0 %}
   <nav class="breadcrumbs">
