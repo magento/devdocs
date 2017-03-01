@@ -4,7 +4,7 @@ group: cloud
 subgroup: 08_setup
 title: Prepare your existing Magento EE system
 menu_title: Prepare your existing Magento EE system
-menu_order: 77
+menu_order: 78
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: import
@@ -12,7 +12,7 @@ version: 2.0
 github_link: cloud/access-acct/first-time-setup_import-prepare.md
 ---
  
-This topic discusses how to can start your Magento Enterprise Cloud Edition project from an existing Magento Enterprise Edition (EE) installation. 
+This topic discusses how to prepare your existing Magento Enterprise Edition (EE) system so you can import it to Magento Enterprise Cloud Edition project.
 
 ## Prerequisites
 Before you continue, make sure you have done all of the following:
@@ -25,7 +25,8 @@ Before you continue, make sure you have done all of the following:
     1.  [Install the CLI]({{ page.baseurl }}cloud/before/before-workspace-cli.html)
     2.  [Set up SSH]({{ page.baseurl }}cloud/before/before-workspace-ssh.html)
 
-This is our recommended workflow:
+## Recommended workflow
+Following is our recommended workflow:
 
 1.  Create a new, empty Magento Enterprise Cloud Edition project from a template.
 
@@ -35,6 +36,8 @@ This is our recommended workflow:
     This replaces not only Magento code but static and compiled assets as well.
 3.  Import your Magento database into your Magento Enterprise Cloud Edition project.
 4.  Clear the cache and verify the project imported successfully.
+
+## Create a new, empty Magento Enterprise Edition project
 
 {% include cloud/new-project-from-template.md %}
 
