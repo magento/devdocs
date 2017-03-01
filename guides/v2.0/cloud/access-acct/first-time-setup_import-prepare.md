@@ -91,12 +91,13 @@ To create a new `auth.json` in the event you don't have one:
 
     See the following example:
 
-        { "http-basic": {
-           "repo.magento.com": {
+        { 
+           "http-basic": {
+              "repo.magento.com": {
               "username": "<public-key>",
               "password": "<private-key>"
             }
-        }
+          }
         }
 3.  Save your changes to `auth.json` and exit the text editor.
 
