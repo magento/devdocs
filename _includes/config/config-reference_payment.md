@@ -15,21 +15,6 @@ Merchant Country | `paypal/general/merchant_country`
 Your choice for this variable determines which [International paths](#vars-intl-list) you can use.
 </div>
 
-
-### Unknown, TBD
-
-Name  | Config path
-|--------------|--------------|
-Enable this Solution | `payment/hosted_pro/active`
-Title | `payment/hosted_pro/title`
-Sort Order | `payment/hosted_pro/sort_order`
-Payment Action | `payment/hosted_pro/payment_action`
-Display Express Checkout in the Payment Information step | `payment/hosted_pro/display_ec`
-Payment Applicable From | `payment/hosted_pro/allowspecific`
-Countries Payment Applicable From | `payment/hosted_pro/specificcountry`
-Debug Mode | `payment/hosted_pro/debug`
-Enable SSL verification | `payment/hosted_pro/verify_peer`
-
 ### PayPal paths
 
 Name  | Config path
@@ -114,6 +99,21 @@ Scheduled Fetching | `payment_all_paypal/payments_pro_hosted_solution/pphs_setti
 SFTP Credentials | `payment_all_paypal/payments_pro_hosted_solution_without_bml/pphs_settings/pphs_settings_advanced/pphs_settlement_report/heading_sftp`
 Scheduled Fetching | `payment_all_paypal/payments_pro_hosted_solution_without_bml/pphs_settings/pphs_settings_advanced/pphs_settlement_report/heading_schedule`
 
+
+### Payments Pro Hosted Solution (United Kingdom)
+These options are available only if you chose the United Kingdom as the [merchant country](#vars-merch-country). 
+
+Name  | Config path
+|--------------|--------------|
+Enable this Solution | `payment/hosted_pro/active`
+Title | `payment/hosted_pro/title`
+Sort Order | `payment/hosted_pro/sort_order`
+Payment Action | `payment/hosted_pro/payment_action`
+Display Express Checkout in the Payment Information step | `payment/hosted_pro/display_ec`
+Payment Applicable From | `payment/hosted_pro/allowspecific`
+Countries Payment Applicable From | `payment/hosted_pro/specificcountry`
+Debug Mode | `payment/hosted_pro/debug`
+Enable SSL verification | `payment/hosted_pro/verify_peer`
 
 ### PayPal Payments Standard
 
