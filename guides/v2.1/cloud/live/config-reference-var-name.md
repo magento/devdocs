@@ -12,7 +12,7 @@ version: 2.1
 github_link: cloud/live/config-reference-var-name.md
 ---
 
-
+ 
 A configuration variable name consists of its scope followed by its configuration path. The following sections discuss how to determine a variable name in more detail.
 
 You can use variables for any of the following:

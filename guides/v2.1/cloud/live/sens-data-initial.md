@@ -11,7 +11,7 @@ level3_subgroup: sens-data
 version: 2.1
 github_link: cloud/live/sens-data-initial.md
 ---
-
+ 
 This topic discusses how to manage default locale and static file optimization settings in your integration system. _Static file optimization_ means merging and minifying JavaScript and Cascading Style Sheets, and minifying HTML templates. Static file optimization should be disabled in integration (where you're testing) and enabled in staging and production.  
 
 These particular settings are discussed only to explain how the procedure works; you can use the same procedure to manage any available settings. 

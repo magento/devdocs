@@ -11,7 +11,7 @@ level3_subgroup: sens-data
 version: 2.1
 github_link: cloud/live/sens-data-over.md
 ---
-
+ 
 In `magento-cloud-configuration` release 101.4.1 on Magento Enterprise Cloud Edition 2.1.4, we provide the following improvements:
 
 *	Better way to [manage the configuration](#cloud-confman-over) so your integration, staging, and production systems stay in synchronization with each other more easily.

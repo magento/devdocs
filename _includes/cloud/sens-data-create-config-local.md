@@ -1,5 +1,5 @@
 <div markdown="1">
-
+ 
 1.	On your local system, find the integration server's SSH URL.
 
 		magento-cloud environment:ssh --pipe
