@@ -13,7 +13,6 @@ github_link: ui_comp_guide/components/ui-tab.md
 Extends all [`uiCollection`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uicollection_concept.html) configuration.
 
 Extends all `tab` configuration.
-<p class="q">??</p>
 
 <table>
   <tr>
@@ -24,7 +23,7 @@ Extends all `tab` configuration.
   </tr>
   <tr>
     <td>component</td>
-    <td>The path to the component’s .js file in terms of RequireJS.</td>
+    <td>The path to the component’s JS constructor, in terms of RequireJS.</td>
     <td>String</td>
     <td>Magento_Ui/js/form/components/area</td>
   </tr>

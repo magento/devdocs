@@ -66,7 +66,7 @@ Boolean</li>
   </tr>
   <tr>
     <td>realTimeLink</td>
-    <td>Enable link between insertForms's externalValue and value.
+    <td>Enables link between insertForms's externalValue and value.
 Here 'link' means the two-way <a href="{{page.baseurl}}ui_comp_guide/concepts/ui_comp_linking_concept.html#links">links property</a> of UI components, which allows immediate update.</td>
     <td>Boolean</td>
     <td>false</td>

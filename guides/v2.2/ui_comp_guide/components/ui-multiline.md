@@ -27,7 +27,7 @@ Extends all [`uiCollection`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uico
   </tr>
   <tr>
     <td>breakLine</td>
-    <td>Add a CSS class to multiline's DOM element. When set to "true", the admin__control-fields class is added, when "false" - admin__control-grouped.</td>
+    <td>Adds a CSS class to multiline's DOM element. When set to "true", the admin__control-fields class is added, when "false" - admin__control-grouped.</td>
     <td>Boolean</td>
     <td>true</td>
   </tr>
@@ -57,13 +57,13 @@ Extends all [`uiCollection`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uico
   </tr>
   <tr>
     <td>required</td>
-    <td>Define whether the rendered field is required.</td>
+    <td>Defines whether the rendered field is required.</td>
     <td>Boolean</td>
     <td>false</td>
   </tr>
   <tr>
     <td>showLabel</td>
-    <td>Define if label is rendered.</td>
+    <td>Defines if the label is rendered.</td>
     <td>Boolean</td>
     <td>''</td>
   </tr>
@@ -75,7 +75,7 @@ Extends all [`uiCollection`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uico
   </tr>
   <tr>
     <td>validateWholeGroup</td>
-    <td>Add a block with validation results for all fields in the group. </td>
+    <td>Adds a block with validation results for all fields in the group. </td>
     <td>Boolean</td>
     <td></td>
   </tr>

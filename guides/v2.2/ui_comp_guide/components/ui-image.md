@@ -21,7 +21,7 @@ Extends all `abstract` configuration.
   </tr>
   <tr>
     <td>component</td>
-    <td>The path to the component’s .js file in terms of RequireJS.</td>
+    <td>The path to the component’s JS constructor in terms of RequireJS.</td>
     <td>String</td>
     <td>Magento_Ui/js/form/element/media</td>
   </tr>

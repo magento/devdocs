@@ -42,13 +42,13 @@ HtmlContent own options:
   </tr>
   <tr>
     <td>component</td>
-    <td>The path to the component’s .js file in terms of RequireJS.</td>
+    <td>The path to the component’s JS constructor in terms of RequireJS.</td>
     <td>String</td>
     <td>Magento_Ui/js/form/components/html</td>
   </tr>
   <tr>
     <td>content</td>
-    <td>HTML content that should be showed.</td>
+    <td>HTML content to be displayed.</td>
     <td>String</td>
     <td>''</td>
   </tr>
@@ -60,7 +60,7 @@ HtmlContent own options:
   </tr>
   <tr>
     <td>visible</td>
-    <td>Is responsible for initial component visibility state. In case when state is "false" to the component DOM block adds css style "display: none"</td>
+    <td>Initial component's visibility. When set to "false", the "display: none" CSS style is added to the component's DOM block.</td>
     <td>Boolean</td>
     <td>true</td>
   </tr>

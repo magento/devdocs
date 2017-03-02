@@ -39,13 +39,18 @@ Extends all [`uiElement`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uieleme
   </tr>
   <tr>
     <td>dataLinks<br>imports<br>exports</td>
-    <td>Flags that enable linking between Insert's externalValue and foster component (aggregated) value.<br>Enable import from foster component (aggregated) value to the Insert's externalValue.<br>Enable export from Insert's externalValue to the foster component (aggregated) value.</td>
+    <td>Flags that enable linking between insertListing's externalValue (the object that stores Listing information) and Listing value.
+<ul>
+<li>
+Enable import from the inserted Listing value to the insertListing's externalValue.</li>
+<li>Enable export from the insertListing's externalValue to the inserted Listing aggregated value.</li></li></td>
     <td>Object<br>Boolean<br>Boolean</td>
     <td>true<br>false</td>
   </tr>
   <tr>
     <td>realTimeLink</td>
-    <td>Enable link between Insert's externalValue and valueHere 'link' mean the two-way 'links' property of UI component, which allow immediate update</td>
+    <td>Enable link between insertListing's externalValue and value.
+Here 'link' means the two-way <a href="{{page.baseurl}}ui_comp_guide/concepts/ui_comp_linking_concept.html#links">links property</a> of UI components, which allows immediate update.</td>
     <td>Boolean</td>
     <td>true</td>
   </tr>
@@ -57,7 +62,7 @@ Extends all [`uiElement`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uieleme
   </tr>
   <tr>
     <td>update_url</td>
-    <td>Here ajax request will go in order to retrieve,foster component update data.It will be in json format by default and will be automatically set into externalProvider.data</td>
+    <td>Here AJAX request will go in order to retrieve, foster component update data.It will be in json format by default and will be automatically set into externalProvider.data</td>
     <td>Url</td>
     <td>mui/index/render</td>
   </tr>

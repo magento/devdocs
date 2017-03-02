@@ -39,7 +39,7 @@ UI File Uploader component is an adapter for <a href="https://github.com/blueimp
 </tr>
   <tr>
     <td>component</td>
-    <td>The path to the component’s .js file in terms of RequireJS.</td>
+    <td>The path to the component’s JS constructor in terms of RequireJS.</td>
     <td></td>
     <td>String</td>
     <td>Magento_Ui/js/form/element/file-uploader</td>
@@ -53,14 +53,14 @@ UI File Uploader component is an adapter for <a href="https://github.com/blueimp
 </tr>
 <tr>
     <td>isMultipleFiles</td>
-    <td>Define whether multiple files can be uploaded.</td>
+    <td>Defines whether multiple files can be uploaded.</td>
     <td>No</td>
     <td>Boolean</td>
     <td>false</td>
 </tr>
 <tr>
     <td>maxFileSize</td>
-    <td>Define the maximum allowed file size in bytes. </td>
+    <td>Defines the maximum allowed file size in bytes. </td>
     <td>No</td>
     <td>Boolean/Number</td>
     <td>false</td>

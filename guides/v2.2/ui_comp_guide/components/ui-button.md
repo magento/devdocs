@@ -28,13 +28,14 @@ Extends all [`uiElement`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uieleme
   </tr>
   <tr>
     <td>disabled</td>
-    <td>Is responsible for initial component disabled state. In case when state is "true" makes the component UI immutable.</td>
+    <td>	
+Initial component's state. When set to "true", users can't take action on the element.</td>
     <td>Boolean</td>
     <td>false</td>
   </tr>
   <tr>
     <td>displayArea</td>
-    <td>Is responsible for rendering the component in the specified place that was declared in layout.</td>
+    <td>Renders the component in the particular place that was declared in layout.</td>
     <td>String</td>
     <td>outsideGroup</td>
   </tr>
@@ -58,7 +59,7 @@ Extends all [`uiElement`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uieleme
   </tr>
   <tr>
     <td>visible</td>
-    <td>Is responsible for initial component visibility state. In case when state is "false" to the component DOM block adds css style "display: none"</td>
+    <td>Initial component's visibility. When set to "false", the "display: none" CSS style is added to the component's DOM block.</td>
     <td>Boolean</td>
     <td>true</td>
   </tr>

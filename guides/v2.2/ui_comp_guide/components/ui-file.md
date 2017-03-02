@@ -21,7 +21,7 @@ Extends all `abstract` configuration.
   </tr>
   <tr>
     <td>component</td>
-    <td>The path to the component’s .js file in terms of RequireJS.</td>
+    <td>The path to the component’s JS constructor in terms of RequireJS.</td>
     <td>String</td>
     <td>Magento_Ui/js/form/element/text</td>
   </tr>
@@ -32,7 +32,7 @@ Extends all `abstract` configuration.
     <td>''</td>
   </tr>
   <tr>
-    <td>links<br>&lt;li&gt;value&lt;/li&gt;</td>
+    <td>links<li>value</li></td>
     <td><a href="{{page.baseurl}}ui_comp_guide/concepts/ui_comp_linking_concept.html">Links</a> the component's "value" property with provider using the declared in the "dataScope" property of the parent component.</td>
     <td>Object<br>&lt;li&gt;Boolean&lt;/li&gt;</td>
     <td>${ $.provider }:${ $.dataScope }' <p class="q">Strange value for a boolean</p></td>
