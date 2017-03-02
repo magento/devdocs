@@ -1,0 +1,1382 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Sensitive configuration paths reference</title>
+	<meta name="description" content="Magento 2 Developer Documentation.
+">
+	<meta http-equiv="last-modified" content="" />
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print" />
+	<link rel="canonical" href="//guides/v2.1/cloud/live/config-reference-sens.html">
+
+  <script>
+    var baseUrl = "/";
+  </script>
+
+	<!-- crazyegg -->
+	<script type="text/javascript">
+	setTimeout(function(){var a=document.createElement("script");
+	var b=document.getElementsByTagName("script")[0];
+	a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0038/0321.js?"+Math.floor(new Date().getTime()/3600000);
+	a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+	</script>
+
+</head>
+<body>
+
+<header class="site-header">
+
+	<nav id="global-nav">
+
+		<div class="menu-btn"><a class="menu-trigger menu-icon" href="#"></a></div>
+
+		<div class="container">
+
+			<a class="logo" href="/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+
+			
+<div class="version-switcher dropdown">
+	<button class="btn dropdown-toggle" data-toggle="dropdown">
+		Magento 2.1
+	</button>
+
+	<ul class="dropdown-menu dropdown-menu-left">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/cloud/live/config-reference-sens.html">Magento 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.1/cloud/live/config-reference-sens.html">Magento 2.1</a></li>
+	
+  </ul>
+
+</div>
+
+
+
+			<!-- Main Navigation -->
+<div class="nav-main">
+  <ul>
+    <li class="first">
+      <a href="#">Setup and Deployment</a>
+        <ul class="menu nav">
+          <li><a href="https://magento.com/tech-resources/download" target="_blank">Get Started with Magento DevBox Beta</a></li>
+            <li><a href="/guides/v2.1/install-gde/bk-install-guide.html">Installation Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.1/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.1/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/cloud/bk-cloud.html">Enterprise Cloud Edition Guide</a></li>
+          <li class="leaf"><a href="/magento-release-information.html">Release Information</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Development</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.1/architecture/bk-architecture.html">Architecture Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          <li><a href="/guides/v2.1/payments-integrations/bk-payments-integrations.html">Payments Integrations</a></li>
+          <li class="leaf"><a href="/guides/v2.1/mrg/intro.html">Module Reference Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.1/extension-dev-guide/staging.html">Staging</a></li>
+          
+          <li class="first leaf"><a href="/guides/v2.1/contributor-guide/contributing.html">Contributor Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Frontend</a>
+        <ul class="menu nav">
+          <li class="first leaf"><a href="/guides/v2.1/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.1/ui_comp_guide/bk-ui_comps.html">UI Components Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.1/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li class="leaf"><a href="/guides/v2.1/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">API</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.1/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li class="leaf"><a href="/guides/v2.1/rest/bk-rest.html">REST API Reference</a></li>
+          <li class="leaf"><a href="/guides/v2.1/soap/bk-soap.html">SOAP API Reference</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Testing</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.1/test/testing.html">Magento Testing Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/mtf/mtf_introduction.html">Functional Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.1/test/integration/integration_test_execution.html">Integration Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.1/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.1/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.1/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+        </ul>
+    </li>
+
+    <li>
+      <a href="/guides/v2.1/howdoi/bk-how-do-i.html">How Tos</a>
+    </li>
+  </ul>
+</div><!-- /.nav-main -->
+
+
+			<div class="search-btn">
+				<a class="search-trigger search-icon" href="/search.html"></a>
+			</div>
+
+			<form class="quick-search" action="/search.html" method="get">
+				<input type="search" name="q" placeholder="Search" />
+				<a href="#" class="quick-search-close">&times;</a>
+			</form>
+
+
+
+
+
+		</div>
+
+	</nav><!-- #global-nav -->
+
+</header>
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- .main-container -->
+	<div class="main-container">
+		<a id="main-content"></a>
+
+
+<div class="container">
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+
+
+
+
+		<ul>
+
+		
+
+		
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+  <nav class="breadcrumbs">
+
+    <a class="breadcrumb-item" href="/"><span>Home</span></a>
+
+    <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+    <!-- Iteration breadcrumb item -->
+    
+    
+    
+
+    </ol>
+
+  </nav>
+
+
+	
+	<h1 class="page-heading">Sensitive configuration paths reference</h1>
+
+  
+
+
+</section>
+
+			<p>This topic lists only configuration paths for sensitive settings. For a list of other configuration paths, see:</p>
+
+<ul>
+  <li><a href="/guides/v2.1/cloud/live/config-reference-most.html">All configuration paths except payments</a></li>
+  <li><a href="/guides/v2.1/cloud/live/config-reference-payment.html">Payment configuration paths</a>.</li>
+</ul>
+
+<div>
+
+  <p>To use a configuration path as a variable:</p>
+
+  <ul>
+    <li>All text must be ALL CAPS.</li>
+    <li>Prefix the configuration path with the scope (the default scope, <code>CONFIG__DEFAULT</code>, or a specific scope).</li>
+    <li>Replace <code>/</code> characters in the configuration path with two underscore characters.</li>
+  </ul>
+
+  <p>For more information, see <a href="/guides/v2.1/cloud/live/sens-data-system-vars.html">How to name configuration variables</a>.</p>
+
+  <div>
+
+    <h2 id="general-category-sensitive-paths">General category sensitive paths</h2>
+    <p>This section lists variable names and configuration paths available for options in the Admin under <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; <strong>General</strong>.</p>
+
+    <h3 id="currency-setup-sensitive-paths">Currency setup sensitive paths</h3>
+    <p>These configuration values are availabe in the Magento Admin in <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; <strong>General</strong> &gt; <strong>Currency setup</strong>.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Config path</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Error Email Recipient</td>
+          <td><code>currency/import/error_email</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 id="store-email-address-sensitive-paths">Store email address sensitive paths</h3>
+    <p>These configuration values are availabe in the Magento Admin in <strong>Stores</strong> &gt; Settings &gt; <strong>Email Configuration</strong> &gt; <strong>General</strong> &gt; <strong>Store Email Addresses</strong>.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Config path</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Sender Name</td>
+          <td><code>trans_email/ident_general/name</code></td>
+        </tr>
+        <tr>
+          <td>Sender Email</td>
+          <td><code>trans_email/ident_general/email</code></td>
+        </tr>
+        <tr>
+          <td>Sender Name</td>
+          <td><code>trans_email/ident_sales/name</code></td>
+        </tr>
+        <tr>
+          <td>Sender Email</td>
+          <td><code>trans_email/ident_sales/email</code></td>
+        </tr>
+        <tr>
+          <td>Sender Name</td>
+          <td><code>trans_email/ident_support/name</code></td>
+        </tr>
+        <tr>
+          <td>Sender Email</td>
+          <td><code>trans_email/ident_support/email</code></td>
+        </tr>
+        <tr>
+          <td>Sender Name</td>
+          <td><code>trans_email/ident_custom1/name</code></td>
+        </tr>
+        <tr>
+          <td>Sender Email</td>
+          <td><code>trans_email/ident_custom1/email</code></td>
+        </tr>
+        <tr>
+          <td>Sender Name</td>
+          <td><code>trans_email/ident_custom2/name</code></td>
+        </tr>
+        <tr>
+          <td>Sender Email</td>
+          <td><code>trans_email/ident_custom2/email</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 id="contacts-sensitive-paths">Contacts sensitive paths</h3>
+    <p>These configuration values are availabe in the Magento Admin in <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; <strong>General</strong> &gt; <strong>Contacts</strong>.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Config path</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Send Emails To</td>
+          <td><code>contact/email/recipient_email</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 id="new-relic-reporting-sensitive-paths">New Relic reporting sensitive paths</h3>
+    <p>These configuration values are availabe in the Magento Admin in <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; <strong>General</strong> &gt; <strong>New Relic Reporting</strong>.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Config path</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>New Relic Account ID</td>
+          <td><code>newrelicreporting/general/account_id</code></td>
+        </tr>
+        <tr>
+          <td>New Relic Application ID</td>
+          <td><code>newrelicreporting/general/app_id</code></td>
+        </tr>
+        <tr>
+          <td>New Relic API Key</td>
+          <td><code>newrelicreporting/general/api</code></td>
+        </tr>
+        <tr>
+          <td>Insights API Key</td>
+          <td><code>newrelicreporting/general/insights_insert_key</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 id="catalog-category">Catalog category</h2>
+    <p>This section lists variable names and config paths available for options in the Admin under <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; <strong>Catalog</strong>.</p>
+
+    <h3 id="catalog-sensitive-paths">Catalog sensitive paths</h3>
+    <p>These configuration values are availabe in the Magento Admin in <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; <strong>Catalog</strong> &gt; <strong>Catalog</strong>.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Config path</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Error Email Recipient</td>
+          <td><code>catalog/productalert_cron/error_email</code></td>
+        </tr>
+        <tr>
+          <td>YouTube API Key</td>
+          <td><code>catalog/product_video/youtube_api_key</code></td>
+        </tr>
+        <tr>
+          <td>Solr Server Hostname</td>
+          <td><code>catalog/search/solr_server_hostname</code></td>
+        </tr>
+        <tr>
+          <td>Solr Server Port</td>
+          <td><code>catalog/search/solr_server_port</code></td>
+        </tr>
+        <tr>
+          <td>Solr Server Username</td>
+          <td><code>catalog/search/solr_server_username</code></td>
+        </tr>
+        <tr>
+          <td>Solr Server Password</td>
+          <td><code>catalog/search/solr_server_password</code></td>
+        </tr>
+        <tr>
+          <td>Solr Server Path</td>
+          <td><code>catalog/search/solr_server_path</code></td>
+        </tr>
+        <tr>
+          <td>Elasticsearch Server Hostname</td>
+          <td><code>catalog/search/elasticsearch_server_hostname</code></td>
+        </tr>
+        <tr>
+          <td>Elasticsearch Server Port</td>
+          <td><code>catalog/search/elasticsearch_server_port</code></td>
+        </tr>
+        <tr>
+          <td>Elasticsearch Index Prefix</td>
+          <td><code>catalog/search/elasticsearch_index_prefix</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 id="xml-sitemap-sensitive-paths">XML sitemap sensitive paths</h3>
+    <p>These configuration values are availabe in the Magento Admin in <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; <strong>Catalog</strong> &gt; <strong>XML Sitemap</strong>.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Config path</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Error Email Recipient</td>
+          <td><code>sitemap/generate/error_email</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 id="sales-category">Sales category</h2>
+    <p>This section lists variable names and config paths available for options in the Admin under <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; <strong>Sales</strong>.</p>
+
+    <h3 id="shipping-settings-sensitive-paths">Shipping settings sensitive paths</h3>
+    <p>These configuration values are availabe in the Magento Admin in <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; <strong>Sales</strong> &gt; <strong>Shipping Settings</strong>.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Config path</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Country</td>
+          <td><code>shipping/origin/country_id</code></td>
+        </tr>
+        <tr>
+          <td>Region/State</td>
+          <td><code>shipping/origin/region_id</code></td>
+        </tr>
+        <tr>
+          <td>ZIP/Postal Code</td>
+          <td><code>shipping/origin/postcode</code></td>
+        </tr>
+        <tr>
+          <td>City</td>
+          <td><code>shipping/origin/city</code></td>
+        </tr>
+        <tr>
+          <td>Street Address</td>
+          <td><code>shipping/origin/street_line1</code></td>
+        </tr>
+        <tr>
+          <td>Street Address Line 2</td>
+          <td><code>shipping/origin/street_line2</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 id="sales-emails-sensitive-paths">Sales emails sensitive paths</h3>
+    <p>These configuration values are availabe in the Magento Admin in <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; <strong>Sales</strong> &gt; <strong>Sales Emails</strong>.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Config path</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Send Order Email Copy To</td>
+          <td><code>sales_email/order/copy_to</code></td>
+        </tr>
+        <tr>
+          <td>Send Order Comment Email Copy To</td>
+          <td><code>sales_email/order_comment/copy_to</code></td>
+        </tr>
+        <tr>
+          <td>Send Invoice Email Copy To</td>
+          <td><code>sales_email/invoice/copy_to</code></td>
+        </tr>
+        <tr>
+          <td>Send Invoice Comment Email Copy To</td>
+          <td><code>sales_email/invoice_comment/copy_to</code></td>
+        </tr>
+        <tr>
+          <td>Send Shipment Email Copy To</td>
+          <td><code>sales_email/shipment/copy_to</code></td>
+        </tr>
+        <tr>
+          <td>Send Shipment Comment Email Copy To</td>
+          <td><code>sales_email/shipment_comment/copy_to</code></td>
+        </tr>
+        <tr>
+          <td>Send Credit Memo Email Copy To</td>
+          <td><code>sales_email/creditmemo/copy_to</code></td>
+        </tr>
+        <tr>
+          <td>Send Credit Memo Comment Email Copy To</td>
+          <td><code>sales_email/creditmemo_comment/copy_to</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 id="checkout-sensitive-paths">Checkout sensitive paths</h3>
+    <p>These configuration values are availabe in the Magento Admin in <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; <strong>Sales</strong> &gt; <strong>Checkout</strong>.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Config path</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Send Payment Failed Email Copy To</td>
+          <td><code>checkout/payment_failed/copy_to</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 id="google-api-sensitive-paths">Google API sensitive paths</h3>
+    <p>These configuration values are availabe in the Magento Admin in <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; <strong>Sales</strong> &gt; <strong>Google API</strong>.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Config path</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Container Id</td>
+          <td><code>google/analytics/container_id</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 id="shipping-methods-sensitive-paths">Shipping methods sensitive paths</h3>
+    <p>These configuration values are availabe in the Magento Admin in <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; <strong>Sales</strong> &gt; <strong>Shipping Methods</strong>.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Config path</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Gateway URL</td>
+          <td><code>carriers/usps/gateway_url</code></td>
+        </tr>
+        <tr>
+          <td>Secure Gateway URL</td>
+          <td><code>carriers/usps/gateway_secure_url</code></td>
+        </tr>
+        <tr>
+          <td>Title</td>
+          <td><code>carriers/usps/title</code></td>
+        </tr>
+        <tr>
+          <td>User ID</td>
+          <td><code>carriers/usps/userid</code></td>
+        </tr>
+        <tr>
+          <td>Password</td>
+          <td><code>carriers/usps/password</code></td>
+        </tr>
+        <tr>
+          <td>User ID</td>
+          <td><code>carriers/ups/username</code></td>
+        </tr>
+        <tr>
+          <td>Password</td>
+          <td><code>carriers/ups/password</code></td>
+        </tr>
+        <tr>
+          <td>Access License Number</td>
+          <td><code>carriers/ups/access_license_number</code></td>
+        </tr>
+        <tr>
+          <td>Tracking XML URL</td>
+          <td><code>carriers/ups/tracking_xml_url</code></td>
+        </tr>
+        <tr>
+          <td>Gateway XML URL</td>
+          <td><code>carriers/ups/gateway_xml_url</code></td>
+        </tr>
+        <tr>
+          <td>Shipper Number</td>
+          <td><code>carriers/ups/shipper_number</code></td>
+        </tr>
+        <tr>
+          <td>Account ID</td>
+          <td><code>carriers/fedex/account</code></td>
+        </tr>
+        <tr>
+          <td>Key</td>
+          <td><code>carriers/fedex/key</code></td>
+        </tr>
+        <tr>
+          <td>Meter Number</td>
+          <td><code>carriers/fedex/meter_number</code></td>
+        </tr>
+        <tr>
+          <td>Password</td>
+          <td><code>carriers/fedex/password</code></td>
+        </tr>
+        <tr>
+          <td>Access ID</td>
+          <td><code>carriers/dhl/id</code></td>
+        </tr>
+        <tr>
+          <td>Password</td>
+          <td><code>carriers/dhl/password</code></td>
+        </tr>
+        <tr>
+          <td>Account Number</td>
+          <td><code>carriers/dhl/account</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 id="sales-sensitive-paths">Sales sensitive paths</h3>
+    <p>These configuration values are availabe in the Magento Admin in <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; <strong>Sales</strong> &gt; <strong>Sales</strong>.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Config path</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Contact Name</td>
+          <td><code>sales/magento_rma/store_name</code></td>
+        </tr>
+        <tr>
+          <td>Street Address</td>
+          <td><code>sales/magento_rma/address</code></td>
+        </tr>
+        <tr>
+          <td>Street Address</td>
+          <td><code>sales/magento_rma/address1</code></td>
+        </tr>
+        <tr>
+          <td>City</td>
+          <td><code>sales/magento_rma/city</code></td>
+        </tr>
+        <tr>
+          <td>State/Province</td>
+          <td><code>sales/magento_rma/region_id</code></td>
+        </tr>
+        <tr>
+          <td>ZIP/Postal Code</td>
+          <td><code>sales/magento_rma/zip</code></td>
+        </tr>
+        <tr>
+          <td>Country</td>
+          <td><code>sales/magento_rma/country_id</code></td>
+        </tr>
+        <tr>
+          <td>Send RMA Email Copy To</td>
+          <td><code>sales_email/magento_rma/copy_to</code></td>
+        </tr>
+        <tr>
+          <td>Send RMA Authorization Email Copy To</td>
+          <td><code>sales_email/magento_rma_auth/copy_to</code></td>
+        </tr>
+        <tr>
+          <td>Send RMA Comment Email Copy To</td>
+          <td><code>sales_email/magento_rma_comment/copy_to</code></td>
+        </tr>
+        <tr>
+          <td>Send RMA Comment Email Copy To</td>
+          <td><code>sales_email/magento_rma_customer_comment/copy_to</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 id="advanced-category">Advanced category</h2>
+    <p>This section lists variable names and config paths available for options in the Admin under <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; <strong>Advanced</strong>.</p>
+
+    <h3 id="admin-sensitive-paths">Admin sensitive paths</h3>
+    <p>These configuration values are availabe in the Magento Admin in <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; <strong>Advanced</strong> &gt; <strong>Admin</strong>.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Config path</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Custom Admin URL</td>
+          <td><code>admin/url/custom</code></td>
+        </tr>
+        <tr>
+          <td>Custom Admin Path</td>
+          <td><code>admin/url/custom_path</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 id="system-sensitive-paths">System sensitive paths</h3>
+    <p>These configuration values are availabe in the Magento Admin in <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; <strong>Advanced</strong> &gt; <strong>System</strong>.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Config path</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Error Email Recipient</td>
+          <td><code>system/magento_scheduled_import_export_log/error_email</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 id="developer-sensitive-paths">Developer sensitive paths</h3>
+    <p>These configuration values are availabe in the Magento Admin in <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; <strong>Advanced</strong> &gt; <strong>Developer</strong>.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Config path</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Allowed IPs (comma separated)</td>
+          <td><code>dev/restrict/allow_ips</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 id="payment-sensitive-paths">Payment sensitive paths</h2>
+    <p>This section lists variable names and config paths available for options in the Admin under <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; <strong>Sales</strong> &gt; <strong>Payment</strong>.</p>
+
+    <h3 id="paypal-sensitive-paths">PayPal sensitive paths</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Config path</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Email Associated with PayPal Merchant Account (Optional)</td>
+          <td><code>paypal/general/business_account</code></td>
+        </tr>
+        <tr>
+          <td>Merchant Account ID</td>
+          <td><code>payment/paypal_express/merchant_id</code></td>
+        </tr>
+        <tr>
+          <td>Publisher ID</td>
+          <td><code>payment/paypal_express_bml/publisher_id</code></td>
+        </tr>
+        <tr>
+          <td>Password</td>
+          <td><code>paypal/fetch_reports/ftp_password</code></td>
+        </tr>
+        <tr>
+          <td>Login</td>
+          <td><code>paypal/fetch_reports/ftp_login</code></td>
+        </tr>
+        <tr>
+          <td>Custom Endpoint Hostname or IP-Address</td>
+          <td><code>paypal/fetch_reports/ftp_ip</code></td>
+        </tr>
+        <tr>
+          <td>Custom Path</td>
+          <td><code>paypal/fetch_reports/ftp_path</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 id="paypal-payflow-pro-sensitive-paths">PayPal Payflow Pro sensitive paths</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Config path</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>User</td>
+          <td><code>payment/payflow_advanced/user</code></td>
+        </tr>
+        <tr>
+          <td>Password</td>
+          <td><code>payment/payflow_advanced/pwd</code></td>
+        </tr>
+        <tr>
+          <td>User</td>
+          <td><code>payment/payflowpro/user</code></td>
+        </tr>
+        <tr>
+          <td>Password</td>
+          <td><code>payment/payflowpro/pwd</code></td>
+        </tr>
+        <tr>
+          <td>Partner</td>
+          <td><code>payment/payflowpro/partner</code></td>
+        </tr>
+        <tr>
+          <td>Proxy Host</td>
+          <td><code>payment/payflowpro/proxy_host</code></td>
+        </tr>
+        <tr>
+          <td>Proxy Port</td>
+          <td><code>payment/payflowpro/proxy_port</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 id="paypal-payflow-link-sensitive-paths">PayPal Payflow Link sensitive paths</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Config path</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>User</td>
+          <td><code>payment/payflow_link/user</code></td>
+        </tr>
+        <tr>
+          <td>Password</td>
+          <td><code>payment/payflow_link/pwd</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 id="paypal-payments-pro-sensitive-paths">PayPal Payments Pro sensitive paths</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Config path</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>API Username</td>
+          <td><code>paypal/wpp/api_username</code></td>
+        </tr>
+        <tr>
+          <td>API Password</td>
+          <td><code>paypal/wpp/api_password</code></td>
+        </tr>
+        <tr>
+          <td>API Signature</td>
+          <td><code>paypal/wpp/api_signature</code></td>
+        </tr>
+        <tr>
+          <td>API Certificate</td>
+          <td><code>paypal/wpp/api_cert</code></td>
+        </tr>
+        <tr>
+          <td>Proxy Host</td>
+          <td><code>paypal/wpp/proxy_host</code></td>
+        </tr>
+        <tr>
+          <td>Proxy Port</td>
+          <td><code>paypal/wpp/proxy_port</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 id="braintree-sensitive-paths">Braintree sensitive paths</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Config path</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Merchant ID</td>
+          <td><code>payment/braintree/merchant_id</code></td>
+        </tr>
+        <tr>
+          <td>Public Key</td>
+          <td><code>payment/braintree/public_key</code></td>
+        </tr>
+        <tr>
+          <td>Private Key</td>
+          <td><code>payment/braintree/private_key</code></td>
+        </tr>
+        <tr>
+          <td>Merchant Account ID</td>
+          <td><code>payment/braintree/merchant_account_id</code></td>
+        </tr>
+        <tr>
+          <td>Kount Merchant ID</td>
+          <td><code>payment/braintree/kount_id</code></td>
+        </tr>
+        <tr>
+          <td>Override Merchant Name</td>
+          <td><code>payment/braintree_paypal/merchant_name_override</code></td>
+        </tr>
+        <tr>
+          <td>Merchant’s Email</td>
+          <td><code>payment/authorizenet_directpost/merchant_email</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 id="worldpay-sensitive-paths">Worldpay sensitive paths</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Config path</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Installation ID</td>
+          <td><code>payment/worldpay/installation_id</code></td>
+        </tr>
+        <tr>
+          <td>Payment Response Password</td>
+          <td><code>payment/worldpay/response_password</code></td>
+        </tr>
+        <tr>
+          <td>Remote Admin Installation ID</td>
+          <td><code>payment/worldpay/admin_installation_id</code></td>
+        </tr>
+        <tr>
+          <td>Remote Admin Authorisation Password</td>
+          <td><code>payment/worldpay/auth_password</code></td>
+        </tr>
+        <tr>
+          <td>MD5 Secret for Transactions</td>
+          <td><code>payment/worldpay/md5_secret</code></td>
+        </tr>
+        <tr>
+          <td>Signature Fields</td>
+          <td><code>payment/worldpay/signature_fields</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 id="authorizenet-direct-post-sensitive-paths">Authorize.net Direct Post sensitive paths</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Config path</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>API Login ID</td>
+          <td><code>payment/authorizenet_directpost/login</code></td>
+        </tr>
+        <tr>
+          <td>Transaction Key</td>
+          <td><code>payment/authorizenet_directpost/trans_key</code></td>
+        </tr>
+        <tr>
+          <td>Merchant MD5</td>
+          <td><code>payment/authorizenet_directpost/trans_md5</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 id="eway-sensitive-paths">eWAY sensitive paths</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Config path</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Live API Key</td>
+          <td><code>payment/eway/live_api_key</code></td>
+        </tr>
+        <tr>
+          <td>Live API Password</td>
+          <td><code>payment/eway/live_api_password</code></td>
+        </tr>
+        <tr>
+          <td>Live Client-side Encryption Key</td>
+          <td><code>payment/eway/live_encryption_key</code></td>
+        </tr>
+        <tr>
+          <td>Sandbox API Key</td>
+          <td><code>payment/eway/sandbox_api_key</code></td>
+        </tr>
+        <tr>
+          <td>Sandbox API Password</td>
+          <td><code>payment/eway/sandbox_api_password</code></td>
+        </tr>
+        <tr>
+          <td>Sandbox Client-side Encryption Key</td>
+          <td><code>payment/eway/sandbox_encryption_key</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3 id="cybersource-sensitive-paths">Cybersource sensitive paths</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Config path</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Merchant ID</td>
+          <td><code>payment/cybersource/merchant_id</code></td>
+        </tr>
+        <tr>
+          <td>Transaction Key</td>
+          <td><code>payment/cybersource/transaction_key</code></td>
+        </tr>
+        <tr>
+          <td>Profile ID</td>
+          <td><code>payment/cybersource/profile_id</code></td>
+        </tr>
+        <tr>
+          <td>Access Key</td>
+          <td><code>payment/cybersource/access_key</code></td>
+        </tr>
+        <tr>
+          <td>Secret Key</td>
+          <td><code>payment/cybersource/secret_key</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+			
+
+			
+			 <div class="github-link">
+				 <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/live/config-reference-sens.md" target="_blank">
+					 Edit this page on GitHub
+				 </a>
+			 </div>
+			
+
+			<div class="new-issue">
+				<a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/cloud/live/config-reference-sens.html" target="_blank">Give us feedback</a>
+			</div>
+
+		</div>
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.container -->
+
+
+	</div>
+	<!-- /.main-container -->
+
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div id="footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav">
+				<li><a href="/guides/v2.1/contributor-guide/contributing_docs.html">Become a Contributor</a>
+        <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+        <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+        <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+        <li><a href="/guides/v2.1/release-notes/bk-release-notes.html">Release Notes</a></li>
+				<li><a href="/magento-third-party.html">Third-Party Licenses</a></li>
+      </ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2017 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="/common/js/app.min.js"></script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+

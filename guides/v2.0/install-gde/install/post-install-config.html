@@ -632,10 +632,9 @@ For more information, see <a href="/guides/v2.0/install-gde/prereq/php-settings.
 
   <p>A text editor displays. (You might need to choose a text editor first.)</p>
 
-  <pre><code>* * * * * &lt;path to php binary&gt; &lt;magento install dir&gt;/bin/magento cron:run | grep -v "Ran jobs by schedule" &gt;&gt; &lt;magento install dir&gt;/var/log/magento.cron.log
+  <pre class="no-copy">* * * * * &lt;path to php binary&gt; &lt;magento install dir&gt;/bin/magento cron:run | grep -v "Ran jobs by schedule" &gt;&gt; &lt;magento install dir&gt;/var/log/magento.cron.log
 * * * * * &lt;path to php binary&gt; &lt;magento install dir&gt;/update/cron.php &gt;&gt; &lt;magento install dir&gt;/var/log/update.cron.log
-* * * * * &lt;path to php binary&gt; &lt;magento install dir&gt;/bin/magento setup:cron:run &gt;&gt; &lt;magento install dir&gt;/var/log/setup.cron.log
-</code></pre>
+* * * * * &lt;path to php binary&gt; &lt;magento install dir&gt;/bin/magento setup:cron:run &gt;&gt; &lt;magento install dir&gt;/var/log/setup.cron.log</pre>
 
   <p>where</p>
 

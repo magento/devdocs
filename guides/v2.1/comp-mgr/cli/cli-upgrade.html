@@ -1100,6 +1100,12 @@ rm -rf &lt;Magento install dir&gt;/var/generation/*
 </code></pre>
   </li>
   <li>
+    <p>Put your storefront online (that is, cancel maintenance mode):</p>
+
+    <pre><code>php bin/magento maintenance:disable
+</code></pre>
+  </li>
+  <li>
     <p>Restart Varnish if you use it for page caching.</p>
 
     <pre><code>service varnish restart
