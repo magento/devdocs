@@ -25,7 +25,7 @@ LinkColumn specific configuration:
   </tr>
   <tr>
     <td>link</td>
-    <td>Key in a field's record object upon which to perform a lookup for the link's address.</td>
+    <td>The key in a field's record object that contains link value.</td>
     <td>String</td>
     <td>link</td>
   </tr>

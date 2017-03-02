@@ -25,8 +25,8 @@ SelectColumn specific configuration:
   </tr>
   <tr>
     <td>options</td>
-    <td>An array of objects used to display field's content by matching an associated record's value
-with the value of one of the provided elements in options.</td>
+    <td>An array of objects used to display field's content by matching the associated record's value
+with the value of one of the elements provided in options.</td>
     <td>Array<Option></td>
     <td>ui/grid/cells/thumbnail</td>
   </tr>
@@ -40,19 +40,19 @@ with the value of one of the provided elements in options.</td>
     <th>Option</th>
     <th>Description</th>
     <th>Type</th>
-    <th>Default</th>
+    <th>Required</th>
   </tr>
   <tr>
     <td>value</td>
     <td>Option's identifier.</td>
     <td>String | Number</td>
-    <td>true</td>
+    <td>Required</td>
   </tr>
   <tr>
     <td>label</td>
     <td>Label to be displayed in a column's field.</td>
     <td>String</td>
-    <td>true</td>
+    <td>Required</td>
   </tr>
 </table>
 

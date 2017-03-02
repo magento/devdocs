@@ -25,7 +25,7 @@ DateColumn specific configuration:
   </tr>
   <tr>
     <td>dateFormat</td>
-    <td>Date format in which column's value needs to be shown.</td>
+    <td>Date format for the displayed column's values.</td>
     <td>String</td>
     <td>MMM d, YYYY h:mm:ss A</td>
   </tr>

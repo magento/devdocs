@@ -25,13 +25,13 @@ ThumbnailColumn specific configuration:
   </tr>
   <tr>
     <td>bodyTmpl</td>
-    <td>Path to the template that is used to render column's field a table's body.</td>
+    <td>Path to the template used for rendering column's fields in the table's body.</td>
     <td>String</td>
     <td>ui/grid/cells/thumbnail</td>
   </tr>
   <tr>
     <td>fieldClass</td>
-    <td>Additonal CSS classes added to the column's field element.</td>
+    <td>Additonal CSS classes added to the column's field elements.</td>
     <td>{[name: string]: boolean}</td>
     <td>{'data-grid-thumbnail-cell': true}</td>
   </tr>
