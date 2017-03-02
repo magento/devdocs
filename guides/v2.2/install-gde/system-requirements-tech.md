@@ -36,7 +36,7 @@ MariaDB and Percona are compatible with Magento because we support MySQL 5.6 API
 	
 ### PHP 
 
-{% include install/php_2.1.md %}
+{% include install/php_2.2.md %}
 
 PHP documentation: <a href="{{page.baseurl}}install-gde/prereq/php-centos.html" target="_blank">CentOS</a>, <a href="{{page.baseurl}}install-gde/prereq/php-ubuntu.html" target="_blank">Ubuntu</a>
 
