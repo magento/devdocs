@@ -21,9 +21,9 @@ Extends all `abstract` configuration.
   </tr>
   <tr>
     <td>component</td>
-    <td>The path to the component’s .js file in terms of RequireJS.</td>
+    <td>The path to the component’s <code>.js</code> file in terms of RequireJS.</td>
     <td>String</td>
-    <td>Magento_Ui/js/form/element/checkbox-set</td>
+    <td><code>Magento_Ui/js/form/element/checkbox-set</code></td>
   </tr>
   <tr>
     <td>multiple</td>
@@ -33,8 +33,8 @@ Extends all `abstract` configuration.
   </tr>
   <tr>
     <td>template</td>
-    <td>The path to the component’s .html template.</td>
+    <td>The path to the component’s <code>.html</code> template.</td>
     <td>String</td>
-    <td>ui/form/element/checkbox-set</td>
+    <td><code>ui/form/element/checkbox-set</code></td>
   </tr>
 </table>

@@ -8,7 +8,7 @@ version: 2.2
 github_link: ui_comp_guide/components/ui-radioset.md
 ---
 
-## Radioset options 
+## Radioset options
 
 Extends all `abstract` configuration.
 
@@ -21,20 +21,20 @@ Extends all `abstract` configuration.
   </tr>
   <tr>
     <td>component</td>
-    <td>The path to the component’s .js file in terms of RequireJS.</td>
+    <td>The path to the component’s <code>.js</code> file in terms of RequireJS.</td>
     <td>String</td>
-    <td>Magento_Ui/js/form/element/checkbox-set</td>
+    <td><code>Magento_Ui/js/form/element/checkbox-set</code></td>
   </tr>
   <tr>
     <td>multiple</td>
-    <td>Set the input type in the UI (checkbox or radio button). By default set to "false", and input type is radio button.</td>
+    <td>Set the input type in the UI (checkbox or radio button). By default set to "false", and the input type is radio button.</td>
     <td>Boolean</td>
     <td>false</td>
   </tr>
   <tr>
     <td>template</td>
-    <td>The path to the component’s .html template.</td>
+    <td>The path to the component’s <code>.html</code> template.</td>
     <td>String</td>
-    <td>ui/form/element/checkbox-set</td>
+    <td><code>ui/form/element/checkbox-set</code></td>
   </tr>
 </table>

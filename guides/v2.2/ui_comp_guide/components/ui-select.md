@@ -26,9 +26,9 @@ Extends all `abstract` configuration.
   </tr>
   <tr>
     <td>elementTmpl</td>
-    <td>The path to the .html template of the particular type of field (select).</td>
+    <td>The path to the <code>.html</code> template of the particular type of field (select).</td>
     <td>String</td>
-    <td>ui/form/element/select</td>
+    <td><code>ui/form/element/select</code></td>
   </tr>
   <tr>
     <td>options</td>
@@ -38,14 +38,14 @@ Extends all `abstract` configuration.
   </tr>
   <tr>
     <td>component</td>
-    <td>The path to the component’s .js file in terms of RequireJS.</td>
+    <td>The path to the component’s <code>.js</code> file in terms of RequireJS.</td>
     <td>String</td>
-    <td>Magento_Ui/js/form/element/select</td>
+    <td><code>Magento_Ui/js/form/element/select</code></td>
   </tr>
   <tr>
     <td>template</td>
-    <td>The path to the general field .html template.</td>
+    <td>The path to the general field <code>.html</code> template.</td>
     <td>String</td>
-    <td>ui/form/field</td>
+    <td><code>ui/form/field</code></td>
   </tr>
 </table>

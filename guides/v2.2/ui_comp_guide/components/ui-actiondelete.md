@@ -10,7 +10,7 @@ github_link: ui_comp_guide/components/ui-actiondelete.md
 
 ## actionDelete options
 
-Extends all `abstract` configuration. 
+Extends all `abstract` configuration.
 
 <table>
   <tr>
@@ -21,20 +21,20 @@ Extends all `abstract` configuration.
   </tr>
   <tr>
     <td>component</td>
-    <td>The path to the component’s .js file in terms of RequireJS.</td>
+    <td>The path to the component’s <code>.js</code> file in terms of RequireJS.</td>
     <td>String</td>
-    <td>Magento_Ui/js/dynamic-rows/action-delete</td>
+    <td><code>Magento_Ui/js/dynamic-rows/action-delete</code></td>
   </tr>
   <tr>
     <td>links<li>value</li></td>
-    <td>Used to break the link established in the <code>link</code> property of the parent (abstract) component.</td>
+    <td>Breaks the link established in the <code>link</code> property of the parent (abstract) component.</td>
     <td>Object<li>Boolean</li></td>
     <td>false</td>
   </tr>
   <tr>
     <td>template</td>
-    <td>The path to the component’s .html template.</td>
+    <td>The path to the component’s <code>.html</code> template.</td>
     <td>String</td>
-    <td>ui/dynamic-rows/cells/action-delete</td>
+    <td<code>>ui/dynamic-rows/cells/action-delete</code></td>
   </tr>
 </table>

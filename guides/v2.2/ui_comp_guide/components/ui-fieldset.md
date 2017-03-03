@@ -8,7 +8,7 @@ version: 2.2
 github_link: ui_comp_guide/components/ui-fieldset.md
 ---
 
-The Fieldset component is a container for visually grouped form elements (i.e. buttons, form fields).
+The Fieldset component is a container for visually grouped form elements, such as buttons and form fields.
 
 ## Fieldset options
 Extends all [`uiCollection`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uicollection_concept.html) and `collapsible` configuration.
@@ -36,7 +36,7 @@ Extends all [`uiCollection`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uico
     <td>component</td>
     <td>The path to the component’s .js file in terms of RequireJS.</td>
     <td>String</td>
-    <td>Magento_Ui/js/form/components/fieldset</td>
+    <td><code>Magento_Ui/js/form/components/fieldset</code></td>
   </tr>
   <tr>
     <td>disabled</td>
@@ -46,13 +46,13 @@ Extends all [`uiCollection`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uico
   </tr>
   <tr>
     <td>template</td>
-    <td>The path to the component’s .html template.</td>
+    <td>The path to the component’s <code>.html</code> template.</td>
     <td>String</td>
-    <td>ui/form/fieldset</td>
+    <td><code>ui/form/fieldset</code></td>
   </tr>
   <tr>
     <td>visible</td>
-    <td>Initial component's visibility. When set to "false", the "display: none" CSS style is added to the component's DOM block.</td>
+    <td>Initial component's visibility. When set to "false", the <code>display: none</code> CSS style is added to the component's DOM block.</td>
     <td>Boolean</td>
     <td>true</td>
   </tr>
