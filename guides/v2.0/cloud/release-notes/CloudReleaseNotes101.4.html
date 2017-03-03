@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Overview of staging and production</title>
+	<title>magento-cloud-configuration release 101.4.1 Release Notes</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.0/cloud/live/stage-prod-over.html">
+	<link rel="canonical" href="//guides/v2.0/cloud/release-notes/CloudReleaseNotes101.4.html">
 
   <script>
     var baseUrl = "/";
@@ -49,9 +49,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/cloud/live/stage-prod-over.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/cloud/release-notes/CloudReleaseNotes101.4.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/cloud/live/stage-prod-over.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/cloud/release-notes/CloudReleaseNotes101.4.html">Magento 2.1</a></li>
 	
   </ul>
 
@@ -335,7 +335,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/cloud/release-notes/CloudReleaseNotes101.4.html">magento-cloud-configuration release 101.4.1 Release Notes</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/cloud/release-notes/CloudReleaseNotes101.4.html">magento-cloud-configuration release 101.4.1 Release Notes</a></li>
 
 									
 
@@ -1187,7 +1187,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.0/cloud/live/stage-prod-over.html">Overview of staging and production</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/cloud/live/stage-prod-over.html">Overview of staging and production</a></li>
 
 									
 
@@ -1551,7 +1551,7 @@
       
 
       <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
-        <span property="name">Overview of staging and production</span>
+        <span property="name">magento-cloud-configuration release 101.4.1 Release Notes</span>
         <meta property="position" content="2" />
       </li>
 
@@ -1563,110 +1563,39 @@
 
 
 	
-	<h1 class="page-heading">Overview of staging and production</h1>
+	<h1 class="page-heading">magento-cloud-configuration release 101.4.1 Release Notes</h1>
 
   
 
 
 </section>
 
-			<style>
-td.blank {border: none!important;
-background: none!important;
-}
-</style>
+			<p>These Release Notes provide up-to-date information about changes, additions, and fixes to the Magento Enterprise Cloud Edition version 2.1.4, <code>magento-cloud-configuration</code> release 101.4.1.</p>
 
-<p>As discussed in more detail in <a href="/guides/v2.0/cloud/discover-arch.html">Architecture</a>, Magento Enterprise Cloud Edition has three types of systems:</p>
+<h2 id="changes-in-this-release">Changes in this release</h2>
+<p>In <code>magento-cloud-configuration</code> release 101.4.1 on Magento Enterprise Cloud Edition 2.1.4, we provide the following improvements:</p>
 
 <ul>
   <li>
-    <p><em>Integration</em>, used by a developer to write custom code and test it.</p>
+    <p>Better way to <a href="/guides/v2.1/cloud/live/sens-data-over.html#cloud-confman-over">manage the configuration</a> so your integration, staging, and production systems stay in synchronization with each other more easily.</p>
 
-    <p>You can have up to eight environments in your integration system.</p>
+    <!-- Sensitive data, such as payment processor passwords and API keys, are managed using either environment variables or using the Magento Admin only. -->
   </li>
   <li>
-    <p><em>Staging</em>, which runs on hardware similar to production.</p>
-
-    <p>Staging is where you test your finalized code before deploying to your live production system.</p>
-  </li>
-  <li>
-    <p><em>Production</em>, which runs your public-facing store on triple-redundant hardware.</p>
+    <p>Less time required to <a href="/guides/v2.1/cloud/live/sens-data-over.html#cloud-confman-scd-over">build</a> and deploy your project by reducing the time required for static file deployment.</p>
   </li>
 </ul>
 
-<p>The differences between integration, staging, and production follow:</p>
+<p>For details, see <a href="/guides/v2.1/cloud/live/sens-data-over.html">Overview of configuration management</a>.</p>
 
-<table>
-    <tbody>
-        
-    <tr>
-        <td class="blank"></td>
-        <th>Integration</th>
-        <th>Staging</th>
-        <th>Production</th>
-    </tr>
-    <tr><td>Managed by a UI</td>
-    <td>Yes</td>
-    <td>No</td>
-    <td>No</td>
-    </tr>
-    <tr><td>Uses <code>.yaml</code> files for configuration</td>
-    <td>Yes</td>
-    <td>Requires support ticket for deployment settings</td>
-    <td>Requires support ticket for deployment settings</td>
-    </tr>
-    <tr><td>Multiple environments</td>
-    <td>Yes</td>
-    <td>No (master only)</td>
-    <td>No (master only)</td>
-    </tr>
-    <tr><td>Runs on dedicated hardware</td>
-    <td>No</td>
-    <td>Yes</td>
-    <td>Yes</td>
-    </tr>
-    
-</tbody>
-</table>
+<h2 id="how-to-get-magento-cloud-configuration-release-10141">How to get <code>magento-cloud-configuration</code> release 101.4.1</h2>
+<p>Magento Enterprise Cloud Edition periodically provides patch releases in components like <code>magento-cloud-configuration</code>.</p>
 
-<p>The following diagram illustrates how the three systems work on a high level:</p>
+<p>To test and apply the patch, see <a href="/guides/v2.1/cloud/project/project-patch.html#cloud-patch-gen">Test general patches</a>.</p>
 
-<p><img src="/common/images/cloud_stage-prod-concept1.png" alt="How test, staging, and production works" width="600px" /></p>
+<h3 id="magento-ee-release-notes">Magento EE Release Notes</h3>
+<p>This Magento Enterprise Cloud Edition release has no corresponding Magento EE release.</p>
 
-<p>In your integration system, you can create up to eight environments however you want. For example, you could have a feature branch and iterate development over several sprints. At the end of a sprint, you could merge (that is, push) code the the parent branch (labeled Feature1 in the preceding diagram). To start another sprint you could sync (that is, pull) code from Feature1 to your next sprint.</p>
-
-<p>After you fix bugs, you merge Feature1 with master, making that code potentially ready for deployment to staging and then to production.</p>
-
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Although the integration system can have many branches, staging and production have only one, <code>master</code>.</p>
-</div>
-
-<p><em>Assisted deployment</em> means that your staging and production systems require you to perform the tasks discussed in the following paragraphs.</p>
-
-<h3 id="support-ticket">Support ticket</h3>
-<p>Create a <a href="/guides/v2.0/cloud/get-help.html">support ticket</a> to notify us you’re ready to move to either staging or production.</p>
-
-<div>
-
-  <p>For technical reasons, Magento Enterprise Cloud Edition staging and production systems don’t implement any deployment hooks automatically. These hooks, defined in the <code>hooks</code> section of your <a href="/guides/v2.0/cloud/project/project-conf-files_magento-app.html#cloud-yaml-platform-hooks"><code>.magento.app.yaml</code> file</a>, must be manually migrated to staging or production.</p>
-
-  <p>Create a <a href="/guides/v2.0/cloud/get-help.html">support ticket</a> to let us help you implement any deployment hooks you set up.</p>
-
-  <p>Among the settings you can request us to enable are Xdebug and PHPUnit, which assists you in troubleshooting any coding issues you might have during deployment. Because of its memory requirements, we recommend you disable Xdebug before your site is live.</p>
-
-  <div class="bs-callout bs-callout-info" id="info">
-  <p>You can optionally replace the <code>hooks</code> section with a shell script that you can maintain without intervention. You need only to create a support ticket the first time you'd like to use the shell script.</p>
-</div>
-
-  <h3 id="git-and-ssh-urls">Git and SSH URLs</h3>
-  <p>Get your Git and SSH URLs from the OneDrive onboarding document you received when you signed up for Magento Enterprise Cloud Edition.</p>
-
-  <p>After you know these URLs, you can access them without further intervention. You can deploy updated code to staging or production using Git commands.</p>
-
-  <div class="bs-callout bs-callout-warning">
-    <p>You should always deploy code and data from the <code>master</code> branch of your integration environment to staging, and then from staging to production. If you need to fix issues, fix them in development and push them to staging before production.</p>
-  </div>
-</div>
 
 		</div>
 		<!-- /.content-wrap -->
@@ -1677,14 +1606,14 @@ background: none!important;
 
 			
 			 <div class="github-link">
-				 <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/live/stage-prod-over.md" target="_blank">
+				 <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/release-notes/CloudReleaseNotes101.4.md" target="_blank">
 					 Edit this page on GitHub
 				 </a>
 			 </div>
 			
 
 			<div class="new-issue">
-				<a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.0/cloud/live/stage-prod-over.html" target="_blank">Give us feedback</a>
+				<a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.0/cloud/release-notes/CloudReleaseNotes101.4.html" target="_blank">Give us feedback</a>
 			</div>
 
 		</div>

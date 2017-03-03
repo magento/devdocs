@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Overview of a Magento workspace</title>
+	<title>magento-cloud-configuration release 101.4.1 Release Notes</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.1/cloud/before/before-workspace.html">
+	<link rel="canonical" href="//guides/v2.1/cloud/release-notes/CloudReleaseNotes101.4.html">
 
   <script>
     var baseUrl = "/";
@@ -49,9 +49,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/cloud/before/before-workspace.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/cloud/release-notes/CloudReleaseNotes101.4.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/cloud/before/before-workspace.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/cloud/release-notes/CloudReleaseNotes101.4.html">Magento 2.1</a></li>
 	
   </ul>
 
@@ -345,7 +345,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/cloud/release-notes/CloudReleaseNotes101.4.html">magento-cloud-configuration release 101.4.1 Release Notes</a></li>
+									<li class="level-2  active "><a href="/guides/v2.1/cloud/release-notes/CloudReleaseNotes101.4.html">magento-cloud-configuration release 101.4.1 Release Notes</a></li>
 
 									
 
@@ -484,7 +484,7 @@
 									
 
 
-											<li class="level3Child workspace  active " data-menunode="workspace"><a href="/guides/v2.1/cloud/before/before-workspace.html">Overview of a Magento workspace</a>
+											<li class="level3Child workspace " data-menunode="workspace"><a href="/guides/v2.1/cloud/before/before-workspace.html">Overview of a Magento workspace</a>
 
 
 									
@@ -1606,7 +1606,7 @@
       
 
       <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
-        <span property="name">Overview of a Magento workspace</span>
+        <span property="name">magento-cloud-configuration release 101.4.1 Release Notes</span>
         <meta property="position" content="2" />
       </li>
 
@@ -1618,30 +1618,38 @@
 
 
 	
-	<h1 class="page-heading">Overview of a Magento workspace</h1>
+	<h1 class="page-heading">magento-cloud-configuration release 101.4.1 Release Notes</h1>
 
   
 
 
 </section>
 
-			<p>The following sections discuss your options for setting up a Magento Enterprise Cloud Edition project.</p>
+			<p>These Release Notes provide up-to-date information about changes, additions, and fixes to the Magento Enterprise Cloud Edition version 2.1.4, <code>magento-cloud-configuration</code> release 101.4.1.</p>
 
-<p>We assume you’ll install the Magento software so you can use the command line and the Magento Admin on your laptop. That means you must set up the <a href="/guides/v2.1/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a> on your laptop so files and directories you created are owned by that user.</p>
-
-<p>To be able to manage your projects, environments, and services, you must set up the Magento Enterprise Cloud Edition command-line interface (CLI) and Secure Shell (SSH). These tools enable you to perform tasks like:</p>
+<h2 id="changes-in-this-release">Changes in this release</h2>
+<p>In <code>magento-cloud-configuration</code> release 101.4.1 on Magento Enterprise Cloud Edition 2.1.4, we provide the following improvements:</p>
 
 <ul>
-  <li>Work on a local branch</li>
-  <li>Branch and merge in your project</li>
-  <li>Push changes to the parent branch</li>
-  <li>Pull changes from the parent branch</li>
+  <li>
+    <p>Better way to <a href="/guides/v2.1/cloud/live/sens-data-over.html#cloud-confman-over">manage the configuration</a> so your integration, staging, and production systems stay in synchronization with each other more easily.</p>
+
+    <!-- Sensitive data, such as payment processor passwords and API keys, are managed using either environment variables or using the Magento Admin only. -->
+  </li>
+  <li>
+    <p>Less time required to <a href="/guides/v2.1/cloud/live/sens-data-over.html#cloud-confman-scd-over">build</a> and deploy your project by reducing the time required for static file deployment.</p>
+  </li>
 </ul>
 
-<p>This guide assumes you’re working on a UNIX system or in a UNIX shell environment. On Windows, you can use a UNIX environment like Cygwin or you can use Putty. The tool you use is up to you.</p>
+<p>For details, see <a href="/guides/v2.1/cloud/live/sens-data-over.html">Overview of configuration management</a>.</p>
 
-<h4 id="next-step">Next step</h4>
-<p><a href="/guides/v2.1/cloud/before/before-workspace-cloud-account.html">Step 1, Set up an account</a></p>
+<h2 id="how-to-get-magento-cloud-configuration-release-10141">How to get <code>magento-cloud-configuration</code> release 101.4.1</h2>
+<p>Magento Enterprise Cloud Edition periodically provides patch releases in components like <code>magento-cloud-configuration</code>.</p>
+
+<p>To test and apply the patch, see <a href="/guides/v2.1/cloud/project/project-patch.html#cloud-patch-gen">Test general patches</a>.</p>
+
+<h3 id="magento-ee-release-notes">Magento EE Release Notes</h3>
+<p>This Magento Enterprise Cloud Edition release has no corresponding Magento EE release.</p>
 
 
 		</div>
@@ -1653,14 +1661,14 @@
 
 			
 			 <div class="github-link">
-				 <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/before/before-workspace.md" target="_blank">
+				 <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/release-notes/CloudReleaseNotes101.4.md" target="_blank">
 					 Edit this page on GitHub
 				 </a>
 			 </div>
 			
 
 			<div class="new-issue">
-				<a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/cloud/before/before-workspace.html" target="_blank">Give us feedback</a>
+				<a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/cloud/release-notes/CloudReleaseNotes101.4.html" target="_blank">Give us feedback</a>
 			</div>
 
 		</div>
