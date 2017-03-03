@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: 90_prod
+subgroup: 999_prod
 title: Deploy Magento to production
 menu_title: Deploy Magento to production
 menu_node: parent

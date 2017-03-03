@@ -2,7 +2,7 @@
 layout: default
 group: mrg
 subgroup: Enterprise Edition
-title: Module Reference Guide
+title: Magento_Staging module
 menu_title: Staging
 menu_order: 2
 version: 2.1

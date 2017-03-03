@@ -4,7 +4,7 @@ group: cloud
 subgroup: 10_project
 title: Set up multiple Cloud websites or stores
 menu_title: Set up multiple Cloud websites or stores
-menu_order: 10
+menu_order: 35
 menu_node: 
 version: 2.0
 github_link: cloud/project/project-multi-sites.md

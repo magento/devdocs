@@ -17,6 +17,15 @@ This page contains recent changes that we think you'd like to know about. We exc
 
 | Description  | Versions applied to  | New or Updated | Date |
 |--------------|--------------|----------------------|--------|
+| [Magento Enterprise Cloud Edition (MECE) deployment]({{ page.baseurl }}cloud/discover-deploy.html){:target="_blank"} | 2.x | Updated | Feb 23 |
+| [How to use logs to troubleshoot MECE]({{ page.baseurl }}cloud/trouble/environments-logs.html){:target="_blank"} | 2.x | New | Feb 23 |
+| [How to SSH in to an MECE integration, staging, or production system]({{ page.baseurl }}cloud/env/environments-ssh.html){:target="_blank"} | 2.x | Updated | Feb 23 |
+| [Set up multiple MECE database users]({{ page.baseurl }}cloud/project/project-conf-files_services-mysql.html#cloud-appyaml-mysqlusers){:target="_blank"} | 2.x | New | Feb 21 |
+| [MECE 2.1.5 and 2.0.13 Release Notes]({{ page.baseurl }}cloud/release-notes/CloudReleaseNotes2.1.5.html){:target="_blank"} | 2.1.5 | New | Feb 21 |
+| [Magento Community Edition (CE) 2.1.5 Release Notes]({{ site.gdeurl21 }}release-notes/ReleaseNotes2.1.5CE.html){:target="_blank"} | 2.1.5 | New | Feb 21 |
+| [Magento Enterprise Edition (EE) 2.1.5 Release Notes]({{ site.gdeurl21 }}release-notes/ReleaseNotes2.1.5EE.html){:target="_blank"} | 2.1.5 | New | Feb 21 |
+| [Magento CE 2.0.13 Release Notes]({{ site.gdeurl }}release-notes/ReleaseNotes2.0.13CE.html){:target="_blank"} | 2.0.13 | New | Feb 21 |
+| [Magento EE 2.0.13 Release Notes]({{ site.gdeurl }}release-notes/ReleaseNotes2.0.13EE.html){:target="_blank"} | 2.0.13 | New | Feb 21 |
 | [How Magento Enterprise Cloud Edition uses Composer]({{ page.baseurl }}cloud/cloud-composer.html){:target="_blank"}  | 2.x  |  New | Feb 17  |
 |  [Prohibit usage of DocBlock templates, add License Notice and Copyright]({{ page.baseurl }}coding-standards/docblock-standard-general.html){:target="_blank"}  | 2.x  |  Updated | Feb 11  |
 | [How to create a Fastly error or maintenance page]({{ page.baseurl }}cloud/access-acct/fastly.html#fastly-errpg){:target="_blank"}  | 2.x  |  Updated |  Feb 10 |
@@ -70,7 +79,7 @@ This page contains recent changes that we think you'd like to know about. We exc
 | [Install the Magento data migration tool]({{ page.baseurl }}migration/migration-tool-install.html){:target="_blank"} | 2.x  | Updated  |  Dec 2 |
 | [Upgrade the Magento data migration tool]({{ page.baseurl }}migration/migration-tool-upgrade.html){:target="_blank"} |  2.x | Updated  | Dec 2  |
 | [Add REST APIs for Magento Enterprise Edition]({{ page.baseurl }}rest/list.html){:target="_blank"} | 2.x  | Updated  |  Dec 2 |
-| [Add REST API endoints for Magento EE]({{ page.baseurl }}rest/rest_endpoints.html){:target="_blank"} | 2.x  |  Updated |  Dec 2 |
+| [Add REST API endpoints for Magento EE]({{ page.baseurl }}rest/rest_endpoints.html){:target="_blank"} | 2.x  |  Updated |  Dec 2 |
 | [Use Jasmine for JavaScript unit testing]({{ page.baseurl }}test/js/jasmine.html){:target="_blank"} | 2.x | New | Nov 25 |
 | [Use adapters with third-party libraries]({{ page.baseurl }}extension-dev-guide/adapters.html){:target="_blank"} | 2.x | New | Nov 25 |
 | [Debug the Fastly extension with Magento Enterprise Cloud Edition]({{ page.baseurl }}cloud/trouble/trouble_fastly.html){:target="_blank"} | 2.x | New | Nov 25 |
