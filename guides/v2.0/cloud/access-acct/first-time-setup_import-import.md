@@ -112,10 +112,6 @@ To drop and re-create the Cloud database:
 1.  Connect to the database.
 
         mysql -h <db-host> -P <db-port> -p -u <db-user> <db-name>
-
-    For example, if your Cloud databases uses default values, enter:
-
-        mysql -h database.internal -u user main
 3.  Drop the database. At the `MariaDB [main]>` prompt, enter:
 
         drop database main;
@@ -145,10 +141,6 @@ To update the unsecure base URL:
 3.  Connect to the database.
 
         mysql -h <db-host> -P <db-port> -p -u <db-user> <db-name>
-
-    For example, if your Cloud databases uses default values, enter:
-
-        mysql -h database.internal -u user main
 4.  Show the contents of the `core_config_data` table.
 
         SELECT * from core_config_data;

@@ -76,6 +76,5 @@ You can find it using:
 
 *   The project [Web Interface]({{ page.baseurl }}cloud/project/project-webint-basic.html).
 
-
 #### Next step
 [Prepare your existing Magento EE system]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-prepare.html)
