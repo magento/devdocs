@@ -25,18 +25,18 @@ Extends all `tab` configuration.
     <td>component</td>
     <td>The path to the component’s JS constructor, in terms of RequireJS.</td>
     <td>String</td>
-    <td>Magento_Ui/js/form/components/area</td>
+    <td><code>Magento_Ui/js/form/components/area</code></td>
   </tr>
   <tr>
     <td>template</td>
     <td>The path to the component’s .html template.</td>
     <td>String</td>
-    <td>templates/layout/tabs/tab/default</td>
+    <td><code>templates/layout/tabs/tab/default</code></td>
   </tr>
   <tr>
     <td>uniqueNs</td>
     <td>Unique namespace for the component.</td>
     <td>String</td>
-    <td>params.activeArea</td>
+    <td><code>params.activeArea</code></td>
   </tr>
 </table>

@@ -10,7 +10,7 @@ github_link: ui_comp_guide/components/ui-fileuploader.md
 
 ## Overview {#filter}
 
-UI File Uploader component is an adapter for <a href="https://github.com/blueimp/jQuery-File-Upload/wiki">jQuery-File-Upload</a> plugin used in Magento. Component is used to integrate file upload functionality with UI components.
+UI File Uploader component is an adapter for <a href="https://github.com/blueimp/jQuery-File-Upload/wiki">jQuery-File-Upload</a> plugin used in Magento. This component integrates file upload functionality with UI components.
 
 ## Component elements {#elements}
 
@@ -32,7 +32,7 @@ UI File Uploader component is an adapter for <a href="https://github.com/blueimp
 </tr>
 <tr>
     <td>allowedExtensions</td>
-    <td>List of allowed file extensions. For example, 'jpg jpeg gif png svg'. If set to "false" - then no extion is allowed, "true" - any extension is allowed.</td>
+    <td>List of allowed file extensions. For example, <code>'jpg jpeg gif png svg'</code>. If set to "false" - then no extion is allowed, "true" - any extension is allowed.</td>
     <td>No</td>
     <td>Boolean/String</td>
     <td>false</td>
@@ -42,7 +42,7 @@ UI File Uploader component is an adapter for <a href="https://github.com/blueimp
     <td>The path to the component’s JS constructor in terms of RequireJS.</td>
     <td></td>
     <td>String</td>
-    <td>Magento_Ui/js/form/element/file-uploader</td>
+    <td><code>Magento_Ui/js/form/element/file-uploader</code></td>
   </tr>
 <tr>
     <td>dropZone</td>
@@ -67,27 +67,27 @@ UI File Uploader component is an adapter for <a href="https://github.com/blueimp
 </tr>
    <tr>
     <td>placeholderType</td>
-    <td>Defines the preview type. (When set to "document", the file information is displayed.)</td>
+    <td>Defines the preview type. (When set to <code>document</code>, the file information is displayed.)</td>
     <td></td>
-    <td>'document'|'image'|'video'</td>
+    <td><code>document</code> | <code>image</code> | <code>video</code></td>
     <td>document</td>
   </tr>
 <tr>
     <td>previewTmpl</td>
-    <td>Path to the file's preview .html template</td>
+    <td>Path to the file's preview <code>.html</code> template</td>
     <td>No</td>
     <td>String</td>
-    <td>ui/form/element/uploader/preview</td>
+    <td><code>ui/form/element/uploader/preview</code></td>
 </tr>
   <tr>
     <td>template</td>
-    <td>The path to the field’s general .html template.</td>
+    <td>The path to the field’s general <code>.html<code> template.</td>
     <td></td>
     <td>String</td>
-    <td>ui/form/element/uploader/uploader</td>
+    <td><code>ui/form/element/uploader/uploader</code></td>
   </tr>
 <tr>
-    <td>uploaderConfig 
+    <td>uploaderConfig
 <ul>
 <li>dataType</li>
 <li>sequentialUploads</li>
@@ -111,12 +111,12 @@ UI File Uploader component is an adapter for <a href="https://github.com/blueimp
 </td>
     <td>
 <ul>
-<li>json</li>
+<li><code>json</code></li>
 <li>true</li>
 <li>
-{
+<code>{
 'form_key': window.FORM_KEY
-}
+}</code>
 </li>
 </ul>
 </td>

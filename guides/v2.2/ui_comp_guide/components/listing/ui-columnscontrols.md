@@ -25,13 +25,13 @@ ColumnsControls specific configuration:
   </tr>
   <tr>
     <td>minVisible</td>
-    <td></td>
+    <td>Minimum number of columns that must be visible.</td>
     <td>Number</td>
     <td>1</td>
   </tr>
   <tr>
     <td>maxVisible</td>
-    <td></td>
+    <td>Maximum number of columns that can be visible.</td>
     <td>Number</td>
     <td>30</td>
   </tr>

@@ -10,11 +10,10 @@ github_link: ui_comp_guide/components/ui-htmlcontent.md
 
 ## HtmlContent overview
 
-HtmlContent is a UI component that provides the ability to process and render layout structure or Magento block directly inside a UI component configuration.
-Processing and rendering is executed on the server side. 
+HtmlContent is a UI component that provides the ability to process and render a layout structure or a Magento block directly inside a UI component configuration. Processing and rendering is executed on the server side.
 
-The layout structure inside HtmlContent must contain only one top level block. The top level block may contain as child blocks or containers as required.
-All blocks inside HtmlContent are integrated into layout and external blocks can refer to them and vice versa.
+The layout structure inside HtmlContent must contain only one top-level block. The top-level block may contain as many child blocks or containers as required.
+All blocks inside HtmlContent are integrated into layout, and external blocks can refer to them and vice versa.
 
 ## HtmlContent structure
 The HtmlContent UI component comprises the following files:
@@ -44,7 +43,7 @@ HtmlContent own options:
     <td>component</td>
     <td>The path to the component’s JS constructor in terms of RequireJS.</td>
     <td>String</td>
-    <td>Magento_Ui/js/form/components/html</td>
+    <td><code>Magento_Ui/js/form/components/html</code></td>
   </tr>
   <tr>
     <td>content</td>
@@ -54,13 +53,13 @@ HtmlContent own options:
   </tr>
   <tr>
     <td>template</td>
-    <td>The path to the component’s .html template.</td>
+    <td>The path to the component’s <code>.html</code> template.</td>
     <td>String</td>
-    <td>ui/content/content</td>
+    <td><code>ui/content/content</code></td>
   </tr>
   <tr>
     <td>visible</td>
-    <td>Initial component's visibility. When set to "false", the "display: none" CSS style is added to the component's DOM block.</td>
+    <td>Initial component's visibility. When set to "false", the <code>display: none</code> CSS style is added to the component's DOM block.</td>
     <td>Boolean</td>
     <td>true</td>
   </tr>
@@ -90,7 +89,7 @@ HtmlContent own options:
 
 {%highlight xml%}
 
-<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">  
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <htmlContent name="giftregistry">
         <block class="Magento\GiftRegistry\Block\Adminhtml\Customer\Edit\Tab\Giftregistry" name="giftregistry"/>
     </htmlContent>

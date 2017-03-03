@@ -10,7 +10,7 @@ github_link: ui_comp_guide/components/ui-button.md
 
 ## Button configuration
 
-	
+
 Extends all [`uiElement`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uielement_concept.html) configuration.
 
 <table>
@@ -28,26 +28,26 @@ Extends all [`uiElement`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uieleme
   </tr>
   <tr>
     <td>disabled</td>
-    <td>	
+    <td>
 Initial component's state. When set to "true", users can't take action on the element.</td>
     <td>Boolean</td>
     <td>false</td>
   </tr>
   <tr>
     <td>displayArea</td>
-    <td>Renders the component in the particular place that was declared in layout.</td>
+    <td>Renders the component in the location that was declared in the layout.</td>
     <td>String</td>
     <td>outsideGroup</td>
   </tr>
   <tr>
     <td>displayAsLink</td>
-    <td>Show button as a link.</td>
+    <td>Show the button as a link.</td>
     <td>Boolean</td>
     <td>false</td>
   </tr>
   <tr>
     <td>elementTmpl</td>
-    <td>The path to the child component’s .html template.</td>
+    <td>The path to the child component’s <code>.html</code> template.</td>
     <td>String</td>
     <td>''</td>
   </tr>
@@ -59,7 +59,7 @@ Initial component's state. When set to "true", users can't take action on the el
   </tr>
   <tr>
     <td>visible</td>
-    <td>Initial component's visibility. When set to "false", the "display: none" CSS style is added to the component's DOM block.</td>
+    <td>Initial component's visibility. When set to "false", the <code>"display: none</code> CSS style is added to the component's DOM block.</td>
     <td>Boolean</td>
     <td>true</td>
   </tr>

@@ -25,13 +25,13 @@ Range own configuration:
   </tr>
   <tr>
     <td>rangeType</td>
-    <td>Defines what kind of input elements range consists of. E.g. if the value is 'date' then range will include two date fields.</td>
+    <td>Defines what kind of input elements the range contains. For example, if the value is 'date', then range includes two date fields.</td>
     <td>String</td>
     <td>-</td>
   </tr>
   <tr>
     <td>template</td>
-    <td>The path to the component’s .html template.</td>
+    <td>Path to the component’s .html template.</td>
     <td>String</td>
     <td>ui/grid/filters/elements/group</td>
   </tr>

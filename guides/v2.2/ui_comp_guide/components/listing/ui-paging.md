@@ -25,7 +25,7 @@ Paging own configuration:
   </tr>
   <tr>
     <td>totalTmpl</td>
-    <td>Path to the template which shows the total amount of found records.</td>
+    <td>Path to the .htnk template for rendering the total amount of found records.</td>
     <td>String</td>
     <td>ui/grid/paging-total</td>
   </tr>

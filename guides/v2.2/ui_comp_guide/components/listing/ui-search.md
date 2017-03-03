@@ -31,19 +31,19 @@ Search own configuration:
   </tr>
   <tr>
     <td>placeholder</td>
-    <td>Value that will be shown when the search field is empty.</td>
+    <td>Value displayed when the search field is empty.</td>
     <td>String</td>
     <td>Search by keyword</td>
   </tr>
   <tr>
     <td>statefull</td>
-    <td>Defines a list of component's properties value of which will be automatically saved in the configured storage (localStorage by default)whenever it changes. Here, key references property's name and the value tells whether it's state will be synchronized or not.</td>
+    <td>Defines a list of component's properties whose values are automatically saved in the configured storage if they change. Where key is the property's name and the value defines whether its saved.</td>
     <td>{<br>[name: string]: boolean<br>}</td>
     <td>{value: true}</td>
   </tr>
   <tr>
     <td>template</td>
-    <td>The path to the component’s .html template.</td>
+    <td>Зath to the component’s .html template.</td>
     <td>String</td>
     <td>ui/grid/search/search</td>
   </tr>

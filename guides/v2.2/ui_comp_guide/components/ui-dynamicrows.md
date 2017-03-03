@@ -45,7 +45,7 @@ Extends all [`uiCollection`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uico
   </tr>
   <tr>
     <td>deleteProperty</td>
-    <td>The property added to record data object when the record is deleted. Applied if the deleteValue option is enabled.</td>
+    <td>The property added to a record data object when the record is deleted. Applied if the <code>deleteValue</code> option is enabled.</td>
     <td>String</td>
     <td>delete</td>
   </tr>
@@ -58,11 +58,11 @@ Extends all [`uiCollection`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uico
 </ul>
     <td>Configuration of the drag and drop (DND) plugin for dynamicRows:
 <ul>
-<li>Link to the DND plugin .js file.</li>
-<li>Link to the DND plugin .html template file.</li>
+<li>Link to the DND plugin <code>.js</code> file.</li>
+<li>Link to the DND plugin <code>.html</code> template file.</li>
 <li>Enables or disables DND for dynamicRows</td>
     <td>Object<br>String<br>String<br>Boolean</li>
-    <td><ul><li>Magento_Ui/js/dynamic-rows/dnd</li><li>ui/dynamic-rows/cells/dnd</li><li>true</li>
+    <td><ul><li><code>Magento_Ui/js/dynamic-rows/dnd</code></li><li><code>ui/dynamic-rows/cells/dnd</code></li><li>true</li>
   </tr>
   <tr>
     <td>collapsibleHeader</td>
@@ -86,7 +86,7 @@ Extends all [`uiCollection`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uico
     <td>component</td>
     <td>The path to the component’s JS constructor in terms of RequireJS.</td>
     <td>String</td>
-    <td>Magento_Ui/js/dynamic-rows/dynamic-rows</td>
+    <td><code>Magento_Ui/js/dynamic-rows/dynamic-rows</code></td>
   </tr>
   <tr>
     <td>currentPage</td>
@@ -96,22 +96,22 @@ Extends all [`uiCollection`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uico
   </tr>
   <tr>
     <td>deleteValue</td>
-    <td>Adds the "deleteProperty" property in the data object for the deleted record.</td>
+    <td>Adds the <code>deleteProperty</code> property in the data object for the deleted record.</td>
     <td>Boolean</td>
     <td>false</td>
   </tr>
   <tr>
     <td>disabled</td>
-    <td>	
+    <td>
 Initial component's state. When set to "true", users can't take action on the element.</td>
     <td>Boolean</td>
     <td>false</td>
   </tr>
   <tr>
     <td>fallbackResetTpl</td>
-    <td>The path to the fallback reset (restore to default button) .html template.</td>
+    <td>The path to the fallback reset (restore to default button) <code>.html</code> template.</td>
     <td>String</td>
-    <td>ui/form/element/helper/fallback-reset-link</td>
+    <td><code>ui/form/element/helper/fallback-reset-link</code></td>
   </tr>
   <tr>
     <td>identificationProperty</td>
@@ -127,19 +127,19 @@ Initial component's state. When set to "true", users can't take action on the el
   </tr>
   <tr>
     <td>recordTemplate</td>
-    <td>The path to the .html template of a records(row). Templates list was declared in "templates" component property. <p class="q">where is this property and what list</p></td>
+    <td>The path to the .html template of a records(row). Templates list was declared in the <code>templates</code> component property. <p class="q">where is this property and what list</p></td>
     <td>String</td>
     <td>record</td>
   </tr>
   <tr>
     <td>template</td>
-    <td>The path to the component’s .html template.</td>
+    <td>The path to the component’s <code>.html</code> template.</td>
     <td>String</td>
-    <td>ui/dynamic-rows/templates/default</td>
+    <td><code>ui/dynamic-rows/templates/default</code></td>
   </tr>
   <tr>
     <td>visible</td>
-    <td>Initial component's visibility. When set to "false", the "display: none" CSS style is added to the component's DOM block.</td>
+    <td>Initial component's visibility. When set to "false", the <code>display: none<code> CSS style is added to the component's DOM block.</td>
     <td>Boolean</td>
     <td>true</td>
   </tr>

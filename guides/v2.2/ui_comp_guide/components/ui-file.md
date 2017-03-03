@@ -23,7 +23,7 @@ Extends all `abstract` configuration.
     <td>component</td>
     <td>The path to the component’s JS constructor in terms of RequireJS.</td>
     <td>String</td>
-    <td>Magento_Ui/js/form/element/text</td>
+    <td><code>Magento_Ui/js/form/element/text</code></td>
   </tr>
   <tr>
     <td>label</td>
@@ -33,9 +33,9 @@ Extends all `abstract` configuration.
   </tr>
   <tr>
     <td>links<li>value</li></td>
-    <td><a href="{{page.baseurl}}ui_comp_guide/concepts/ui_comp_linking_concept.html">Links</a> the component's "value" property with provider using the declared in the "dataScope" property of the parent component.</td>
+    <td><a href="{{page.baseurl}}ui_comp_guide/concepts/ui_comp_linking_concept.html">Links</a> the component's <code>value</code> property with provider using the declared in the <code>dataScope</code> property of the parent component.</td>
     <td>Object<br>&lt;li&gt;Boolean&lt;/li&gt;</td>
-    <td>${ $.provider }:${ $.dataScope }' <p class="q">Strange value for a boolean</p></td>
+    <td><code>${ $.provider }:${ $.dataScope }</code> <p class="q">Strange value for a boolean</p></td>
   </tr>
   <tr>
     <td>disabled</td>
@@ -45,7 +45,7 @@ Extends all `abstract` configuration.
   </tr>
   <tr>
     <td>visible</td>
-    <td>Initial component's visibility. When set to "false", the "display: none" CSS style is added to the component's DOM block.</td>
+    <td>Initial component's visibility. When set to "false", the <code>display: none<code> CSS style is added to the component's DOM block.</td>
     <td>Boolean</td>
     <td>true</td>
   </tr>

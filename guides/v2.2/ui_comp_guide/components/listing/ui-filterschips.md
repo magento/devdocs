@@ -26,7 +26,7 @@ FiltersChips own configuration:
  
   <tr>
     <td>template</td>
-    <td>The path to the component’s .html template.</td>
+    <td>Path to the component’s .html template.</td>
     <td>String</td>
     <td>uui/grid/filters/chips</td>
   </tr>

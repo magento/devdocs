@@ -63,7 +63,7 @@ Extends all `abstract` configuration.
   </tr>
   <tr>
     <td>template</td>
-    <td>The path to the component’s </ode>.html</code> template.</td>
+    <td>The path to the component’s <code>.html</code> template.</td>
     <td>String</td>
     <td><code>ui/form/field</code></td>
   </tr>

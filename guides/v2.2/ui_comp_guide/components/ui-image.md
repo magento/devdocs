@@ -23,13 +23,13 @@ Extends all `abstract` configuration.
     <td>component</td>
     <td>The path to the component’s JS constructor in terms of RequireJS.</td>
     <td>String</td>
-    <td>Magento_Ui/js/form/element/media</td>
+    <td><code>Magento_Ui/js/form/element/media</code></td>
   </tr>
   <tr>
     <td>elementTmpl</td>
-    <td>The path to the .html template for the particular type of the field component (image).</td>
+    <td>The path to the <code>.html</code> template for the particular type of the field component (image).</td>
     <td>String</td>
-    <td>ui/form/element/media</td>
+    <td><code>ui/form/element/media</code></td>
   </tr>
   <tr>
     <td>links <ul><li>value</li></ul></td>
@@ -40,8 +40,8 @@ Extends all `abstract` configuration.
   </tr>
   <tr>
     <td>template</td>
-    <td>The path to the field general .html template.</td>
+    <td>The path to the field general <code>.html</code> template.</td>
     <td>String</td>
-    <td>ui/form/field</td>
+    <td><code>ui/form/field</code></td>
   </tr>
 </table>

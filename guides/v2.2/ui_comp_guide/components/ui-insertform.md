@@ -21,7 +21,7 @@ Extends all [`uiElement`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uieleme
   </tr>
   <tr>
     <td>autoRender</td>
-    <td>When set to true, the Form component is automatically rendered during Insertform initialization. Otherwise, insertListing's 'render' method should be called to render the Form.</td>
+    <td>When set to true, the Form component is automatically rendered during Insertform initialization. Otherwise, insertListing's <code>render</code> method should be called to render the Form.</td>
     <td>Boolean</td>
     <td>false</td>
   </tr>
@@ -29,7 +29,7 @@ Extends all [`uiElement`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uieleme
     <td>component</td>
     <td>The path to the component’s JS constructor file in terms of RequireJS.</td>
     <td>String</td>
-    <td>Magento_Ui/js/form/components/insert-form</td>
+    <td><code>Magento_Ui/js/form/components/insert-form</code></td>
   </tr>
   <tr>
     <td>dataLinks <ul><li>imports</li><li>exports</li></ul></td>
@@ -73,14 +73,14 @@ Here 'link' means the two-way <a href="{{page.baseurl}}ui_comp_guide/concepts/ui
   </tr>
   <tr>
     <td>render_url</td>
-    <td>With default render_url(mui/index/render) form will be without form buttons. To get Form with buttons url must be changed to mui/index/render_handle and next GET parameters:
+    <td>With default <code>render_url(mui/index/render)</code> form will be without form buttons. To get Form with buttons, url must be changed to <code>mui/index/render_handle</code> and next GET parameters:
 <ul>
 <li>buttons=1 (flag to get buttons)</li>
 <li>handle= (buttons scope</li>
 </ul>
 </td>
     <td>Url</td>
-    <td>mui/index/render</td>
+    <td><code>mui/index/render</code></td>
   </tr>
   <tr>
     <td>showSpinner</td>
@@ -90,7 +90,7 @@ Here 'link' means the two-way <a href="{{page.baseurl}}ui_comp_guide/concepts/ui
   </tr>
   <tr>
     <td>toolbarContainer</td>
-    <td>Path to component that have toolbarSection property with reference to HTML element. Component will insert Form buttons to this section.</td>
+    <td>Path to component that has toolbarSection property with reference to HTML element. Component will insert Form buttons to this section.</td>
     <td>String</td>
     <td>''</td>
   </tr>

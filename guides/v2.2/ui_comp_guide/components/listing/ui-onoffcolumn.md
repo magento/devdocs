@@ -25,19 +25,19 @@ OnOffColumn specific configuration:
   </tr>
   <tr>
     <td>bodyTmpl</td>
-    <td>Path to the template that is used to render column's field a table's body.</td>
+    <td>Path to the template that is used to render column's field in the table's body.</td>
     <td>String</td>
     <td>ui/grid/cells/onoff</td>
   </tr>
   <tr>
     <td>fieldClass</td>
-    <td>Additonal CSS classes added to the column's field element.</td>
+    <td>Additonal CSS classes added to the column's field elements.</td>
     <td>{<br>[name: string]: boolean<br>}</td>
     <td>{<br>'admin__scope-old': true,<br>'data-grid-onoff-cell': true,<br>'data-grid-checkbox-cell': false<br>}</td>
   </tr>
   <tr>
     <td>headerTmpl</td>
-    <td>Defines path to the tamplate that will be used to render column's header cell.</td>
+    <td>Path to the .html template for the column's header.</td>
     <td>String</td>
     <td>ui/grid/columns/onoff</td>
   </tr>

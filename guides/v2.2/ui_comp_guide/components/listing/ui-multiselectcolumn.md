@@ -25,43 +25,43 @@ MultiselectColumn specific configuration:
   </tr>
   <tr>
     <td>bodyTmpl</td>
-    <td>Path to the template that is used to render column's field a table's body.</td>
+    <td>Path to the template that is used to render column's field in the table's body.</td>
     <td>String</td>
     <td>ui/grid/cells/multiselect</td>
   </tr>
   <tr>
     <td>controlVisibility</td>
-    <td>Whether columns visibility can be controlled by user in the corresponding ColumnsControls component.</td>
+    <td>Whether a user can control column's visibility handled by the <a href="{{page.baseurl}}ui_comp_guide/components/listing/ui-сolumnsсontrols.html">ColumnsControls component</a>.</td>
     <td>String</td>
     <td>false</td>
   </tr>
   <tr>
     <td>draggable</td>
-    <td>Defines whether user can change column's position in a table by grabbing column's header and draging it across the table.</td>
+    <td>Defines if a user can change column's position in the table by grabbing column's header and dragging it across the table.</td>
     <td>Boolean</td>
     <td>false</td>
   </tr>
   <tr>
     <td>fieldClass</td>
-    <td>Additonal CSS classes added to the column's field element.</td>
+    <td>Additonal CSS classes added to the column's field elements.</td>
     <td>{<br>[name: string]: boolean<br>}</td>
     <td>{<br>'data-grid-checkbox-cell': true<br>}</td>
   </tr>
   <tr>
     <td>headerTmpl</td>
-    <td>Defines path to the tamplate that will be used to render column's header cell.</td>
+    <td>Path to the .html template for the column's header.</td>
     <td>String</td>
     <td>ui/grid/columns/multiselect</td>
   </tr>
   <tr>
     <td>preserveSelectionsOnFilter</td>
-    <td>Whether to preserve or drop selected items when a new filter value is applied.</td>
+    <td>Whether to preserve selected items when a new filter value is applied.</td>
     <td>Boolean</td>
     <td>false</td>
   </tr>
   <tr>
     <td>sortable</td>
-    <td>Whether column's fields can be used to sort records in a table.</td>
+    <td>Whether column's fields can be used to sort records in the table.</td>
     <td>Boolean</td>
     <td>false</td>
   </tr>

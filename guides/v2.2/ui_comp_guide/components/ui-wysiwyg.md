@@ -8,7 +8,6 @@ version: 2.2
 github_link: ui_comp_guide/components/ui-wysiwyg.md
 ---
 
-
 ## Wysiwyg options
 
 Extends all `abstract` configuration.

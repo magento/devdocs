@@ -29,7 +29,7 @@ Extends all `uiComponent` and `collapsible` configuration.
     <td>component</td>
     <td>The path to the component’s JS constructor, in terms of RequireJS.</td>
     <td>String</td>
-    <td>Magento_Ui/js/form/components/tab_group</td>
+    <td><code>Magento_Ui/js/form/components/tab_group</code></td>
   </tr>
   <tr>
     <td>opened</td>
@@ -39,8 +39,8 @@ Extends all `uiComponent` and `collapsible` configuration.
   </tr>
   <tr>
     <td>template</td>
-    <td>The path to the component’s .html template.</td>
+    <td>The path to the component’s <code>.html</code> template.</td>
     <td>String</td>
-    <td>ui/tab</td>
+    <td><code>ui/tab</code></td>
   </tr>
 </table>

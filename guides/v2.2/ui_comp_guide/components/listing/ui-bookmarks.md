@@ -25,25 +25,19 @@ Bookmarks specific configuration:
   </tr>
   <tr>
     <td>newViewLabel</td>
-    <td>Default label of a new bookmark.</td>
+    <td>Default label for a new bookmark.</td>
     <td></td>
     <td>New View</td>
   </tr>
   <tr>
-    <td>storageConfig</td>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-  <tr>
     <td>template</td>
-    <td>The path to the component’s .html template.</td>
+    <td>Path to the component’s .html template.</td>
     <td>String</td>
-    <td>-</td>
+    <td>ui/grid/controls/bookmarks/bookmarks</td>
   </tr>
   <tr>
     <td>viewTmpl</td>
-    <td>Path to the template used to render every single bookmark in the list.</td>
+    <td>Path to the .html template used to render each bookmark in the list.</td>
     <td>String</td>
     <td>ui/grid/controls/bookmarks/view</td>
   </tr>
