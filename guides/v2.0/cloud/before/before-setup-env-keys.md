@@ -4,9 +4,9 @@ group: cloud
 subgroup: 08_setup
 title: Step 7, Set up authentication keys
 menu_title: Step 7, Set up authentication keys
-menu_node: 257
+menu_node: 66
 level3_menu_node: level3child
-level3_subgroup: workspace
+level3_subgroup: setupenv
 version: 2.0
 github_link: cloud/before/before-setup-env-keys.md
 ---

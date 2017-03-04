@@ -4,7 +4,7 @@ group: cloud
 subgroup: 08_setup
 title: Step 5, Install Magento
 menu_title: Step 5, Install Magento
-menu_node: 258
+menu_node: 65
 level3_menu_node: level3child
 level3_subgroup: setupenv
 version: 2.0
