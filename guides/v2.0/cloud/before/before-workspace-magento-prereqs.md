@@ -4,7 +4,7 @@ group: cloud
 subgroup: 08_setup
 title: Step 4, Install Magento prerequisites
 menu_title: Step 4, Install Magento prerequisites
-menu_order: 57
+menu_order: 56
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: workspace
