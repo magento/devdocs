@@ -4,7 +4,7 @@ group: cloud
 subgroup: 08_setup
 title: Step 3, Enable Secure Shell (SSH)
 menu_title: Step 3, Enable Secure Shell (SSH)
-menu_order: 255
+menu_order: 55
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: workspace

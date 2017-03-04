@@ -4,7 +4,7 @@ group: cloud
 subgroup: 08_setup
 title: Step 3, Set up authentication keys
 menu_title: Step 3, Set up authentication keys
-menu_order: 63
+menu_order: 163
 level3_menu_node: level3child
 level3_subgroup: setupenv
 version: 2.0

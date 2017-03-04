@@ -4,7 +4,7 @@ group: cloud
 subgroup: 08_setup
 title: Step 5, Set up PHP and MySQL
 menu_title: Step 5, Set up PHP and MySQL
-menu_order: 256
+menu_order: 56
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: workspace

@@ -4,7 +4,7 @@ group: cloud
 subgroup: 08_setup
 title: Step 4, Set up cron
 menu_title: Step 4, Set up cron
-menu_order: 64
+menu_order: 164
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: setupenv
