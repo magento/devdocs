@@ -4,7 +4,7 @@ group: cloud
 subgroup: 08_setup
 title: Prepare your existing Magento EE system
 menu_title: Prepare your existing Magento EE system
-menu_order: 78
+menu_order: 153
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: import

@@ -2,9 +2,9 @@
 layout: default
 group: cloud
 subgroup: 08_setup
-title: Step 3, Install the CLI
-menu_title: Step 3, Install the CLI
-menu_order: 12
+title: Step 2, Install the CLI
+menu_title: Step 2, Install the CLI
+menu_order: 54
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: workspace
@@ -41,4 +41,4 @@ To install the Magento Enterprise Cloud Edition CLI:
 		magento-cloud list
 
 #### Next step
-[Enable Secure Shell (SSH)]({{ page.baseurl }}cloud/before/before-workspace-ssh.html)
+[Step 3, Enable Secure Shell (SSH)]({{ page.baseurl }}cloud/before/before-workspace-ssh.html)

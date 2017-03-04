@@ -4,7 +4,7 @@ group: cloud
 subgroup: 08_setup
 title: Public IP addresses for integration environments
 menu_title: Public IP addresses for integration environments
-menu_order: 500
+menu_order: 900
 menu_node: 
 version: 2.0
 github_link: cloud/before/integration-ip-addr.md

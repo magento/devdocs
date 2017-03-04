@@ -2,9 +2,9 @@
 layout: default
 group: cloud
 subgroup: 08_setup
-title: Step 2, Set up the Magento file system owner
-menu_title: Step 2, Set up the Magento file system owner
-menu_order: 10
+title: Step 6, Set up the Magento file system owner
+menu_title: Step 6, Set up the Magento file system owner
+menu_order: 58
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: workspace
@@ -95,6 +95,5 @@ This section discusses how to set permissions so you can install, upgrade, and a
 {% include install/file-system-perms-twouser_cmds-only.md %}
 
 #### Next step
-[Install the CLI]({{ page.baseurl }}cloud/before/before-workspace-cli.html)
-
-
+*	If you're setting up a new Magento Enterprise Cloud Edition project for the first time, see [Create a new Magento project]({{ page.baseurl }}cloud/access-acct/first-time-setup_template.html)
+*	If you're importing existing Magento Enterprise Edition code into Magento Enterprise Cloud Edition, see [First steps for importing Magento EE]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-first-steps.html)

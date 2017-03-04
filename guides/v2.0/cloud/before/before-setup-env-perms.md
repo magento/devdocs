@@ -2,9 +2,9 @@
 layout: default
 group: cloud
 subgroup: 08_setup
-title: Step 6, Set file system permissions and ownership
-menu_title: Step 6, Set file system permissions and ownership
-menu_node: 66
+title: Step 7, Set file system permissions and ownership
+menu_title: Step 7, Set file system permissions and ownership
+menu_order: 167
 level3_menu_node: level3child
 level3_subgroup: setupenv
 version: 2.0
