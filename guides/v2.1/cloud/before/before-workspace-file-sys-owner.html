@@ -524,6 +524,16 @@
 									
 
 
+											<li class="level3Child workspace " data-menunode="workspace"><a href="/guides/v2.1/cloud/before/before-workspace-magento-prereqs.html">Step 4, Install Magento prerequisites</a>
+
+
+									
+
+								
+
+									
+
+
 											<li class="level3Child workspace " data-menunode="workspace"><a href="/guides/v2.1/cloud/before/before-workspace-php.html">Step 5, Set up PHP and MySQL</a>
 
 
@@ -1740,27 +1750,11 @@ sudo passwd magento_user
 </ul>
 </div></div>
 
-<h3 id="step-4-set-permissions">Step 4: Set permissions</h3>
-<p>This section discusses how to set permissions so you can install, upgrade, and access Magento on your laptop. Enter the following commands as the Magento file system owner (that is, the user you created as discussed in this topic).</p>
-
-<div>
-
-  <p>To optionally enter all commands on one line, enter the following assuming Magento is installed in <code>/var/www/html/magento2</code> and the web server group name is <code>apache</code>:</p>
-
-  <pre><code>cd /var/www/html/magento2 &amp;&amp; find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \; &amp;&amp; find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \; &amp;&amp; chown -R :apache . &amp;&amp; chmod u+x bin/magento
-</code></pre>
-
-  <p>In the event file system permissions are set improperly and can’t be changed by the Magento file system owner, you can enter the command as a user with <code>root</code> privileges:</p>
-
-  <pre><code>cd /var/www/html/magento2 &amp;&amp; sudo find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \; &amp;&amp; sudo find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \; &amp;&amp; sudo chown -R :apache . &amp;&amp; sudo chmod u+x bin/magento
-</code></pre>
-
-  <h4 id="next-step">Next step</h4>
-  <ul>
-    <li>If you’re setting up a new Magento Enterprise Cloud Edition project for the first time, see <a href="/guides/v2.1/cloud/access-acct/first-time-setup_template.html">Create a new Magento project</a></li>
-    <li>If you’re importing existing Magento Enterprise Edition code into Magento Enterprise Cloud Edition, see <a href="/guides/v2.1/cloud/access-acct/first-time-setup_import-first-steps.html">First steps for importing Magento EE</a></li>
-  </ul>
-</div>
+<h4 id="next-step">Next step</h4>
+<ul>
+  <li>If you’re setting up a new Magento Enterprise Cloud Edition project for the first time, see <a href="/guides/v2.1/cloud/access-acct/first-time-setup_template.html">Create a new Magento project</a></li>
+  <li>If you’re importing existing Magento Enterprise Edition code into Magento Enterprise Cloud Edition, see <a href="/guides/v2.1/cloud/access-acct/first-time-setup_import-first-steps.html">First steps for importing Magento EE</a></li>
+</ul>
 
 		</div>
 		<!-- /.content-wrap -->
