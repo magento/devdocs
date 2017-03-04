@@ -89,6 +89,11 @@ To complete the task, restart the web server:
 
 {% endcollapsible %}
 
+### Step 4: Set permissions
+This section discusses how to set permissions so you can install, upgrade, and access Magento on your laptop. Enter the following commands as the Magento file system owner (that is, the user you created as discussed in this topic).
+
+{% include install/file-system-perms-twouser_cmds-only.md %}
+
 #### Next step
 [Install the CLI]({{ page.baseurl }}cloud/before/before-workspace-cli.html)
 
