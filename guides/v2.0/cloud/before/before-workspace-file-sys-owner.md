@@ -4,7 +4,7 @@ group: cloud
 subgroup: 08_setup
 title: Step 5, Set up the Magento file system owner
 menu_title: Step 5, Set up the Magento file system owner
-menu_order: 57
+menu_order: 58
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: workspace
@@ -89,7 +89,6 @@ To complete the task, restart the web server:
 
 {% endcollapsible %}
 
-#### Next step
-[Install the CLI]({{ page.baseurl }}cloud/before/before-workspace-cli.html)
+
 
 

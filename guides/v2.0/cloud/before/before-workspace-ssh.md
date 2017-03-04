@@ -18,5 +18,5 @@ The [SSH protocol ](https://en.wikipedia.org/wiki/Secure_Shell){:target="_blank"
 
 
 #### Next step
-[Set up PHP]({{ page.baseurl }}cloud/before/before-workspace-php.html)
+[Step 4, Install Magento prerequisites]({{ page.baseurl }}cloud/before/before-workspace-magento-prereqs.html)
 

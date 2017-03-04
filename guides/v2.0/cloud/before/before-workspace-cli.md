@@ -41,4 +41,4 @@ To install the Magento Enterprise Cloud Edition CLI:
 		magento-cloud list
 
 #### Next step
-[Enable Secure Shell (SSH)]({{ page.baseurl }}cloud/before/before-workspace-ssh.html)
+[Step 3, Enable Secure Shell (SSH)]({{ page.baseurl }}cloud/before/before-workspace-ssh.html)

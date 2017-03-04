@@ -17,4 +17,4 @@ Before you can access your Magento Enterprise Cloud Edition project, you must [c
 Usually, you'll receive an e-mail invitation to set up an account to use the project. If you don't see the invitation, check your junk e-mail folder.
 
 #### Next step
-[Step 2, Set up the Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html)
+[Step 2, Install the CLI]({{ page.baseurl }}cloud/before/before-workspace-cli.html)
