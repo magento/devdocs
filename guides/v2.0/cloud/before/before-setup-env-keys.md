@@ -4,7 +4,7 @@ group: cloud
 subgroup: 08_setup
 title: Step 7, Set up authentication keys
 menu_title: Step 7, Set up authentication keys
-menu_node: 65
+menu_node: 257
 level3_menu_node: level3child
 level3_subgroup: workspace
 version: 2.0

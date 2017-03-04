@@ -4,7 +4,7 @@ group: cloud
 subgroup: 08_setup
 title: Step 8, Set file system permissions and ownership
 menu_title: Step 8, Set file system permissions and ownership
-menu_node: 66
+menu_node: 259
 level3_menu_node: level3child
 level3_subgroup: workspace
 version: 2.0

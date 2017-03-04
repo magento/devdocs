@@ -4,7 +4,7 @@ group: cloud
 subgroup: 08_setup
 title: Step 3, Set up the Magento file system owner
 menu_title: Step 3, Set up the Magento file system owner
-menu_order: 10
+menu_order: 253
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: workspace

@@ -4,7 +4,7 @@ group: cloud
 subgroup: 08_setup
 title: Step 2, Clone the project
 menu_title: Step 2, Clone the project
-menu_order: 62
+menu_order: 252
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: setupenv

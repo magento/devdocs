@@ -4,7 +4,7 @@ group: cloud
 subgroup: 08_setup
 title: Import an existing Magento project
 menu_title: Import an existing Magento project
-menu_order: 75
+menu_order: 400
 menu_node: 
 level3_menu_node: level3parent
 level3_subgroup: import

@@ -4,7 +4,7 @@ group: cloud
 subgroup: 08_setup
 title: Step 4, Install the CLI
 menu_title: Step 4, Install the CLI
-menu_order: 12
+menu_order: 254
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: workspace

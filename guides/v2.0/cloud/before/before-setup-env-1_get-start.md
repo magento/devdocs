@@ -4,7 +4,7 @@ group: cloud
 subgroup: 08_setup
 title: Step 1, Get started
 menu_title: Step 1, Get started
-menu_order: 61
+menu_order: 251
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: setupenv
