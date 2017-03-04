@@ -23,6 +23,6 @@ When you initially set up a project from a template, we retrieve the code from t
 {% include cloud/new-project-from-template.md %}
 	
 #### Next step
-[Set up an environment and install the Magento software locally]({{ page.baseurl }}cloud/access-acct/set-up-env.html)
+[Set up an environment and install the Magento software locally]({{ page.baseurl }}cloud/before/before-setup-env-1_get-started.html)
 
 

@@ -21,4 +21,4 @@ After you receive an invitation, you can complete the following tasks:
 
 	*	[Create a sample Magento project from a template]({{ page.baseurl }}cloud/access-acct/first-time-setup_template.html)
 	*	[Import an existing Magento project]({{ page.baseurl }}cloud/access-acct/first-time-setup_import.html)
-*	[Set up your local environment and install the Magento software]({{ page.baseurl }}cloud/access-acct/set-up-env.html)
+*	[Step 1, Get started setting up an environment]({{ page.baseurl }}cloud/before/before-setup-env-1_get-started.html)
