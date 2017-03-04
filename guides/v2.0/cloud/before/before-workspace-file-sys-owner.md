@@ -2,8 +2,8 @@
 layout: default
 group: cloud
 subgroup: 08_setup
-title: Step 2, Set up the Magento file system owner
-menu_title: Step 2, Set up the Magento file system owner
+title: Step 3, Set up the Magento file system owner
+menu_title: Step 3, Set up the Magento file system owner
 menu_order: 10
 menu_node: 
 level3_menu_node: level3child
@@ -88,11 +88,6 @@ To complete the task, restart the web server:
 *	CentOS: `service httpd restart`
 
 {% endcollapsible %}
-
-### Step 4: Set permissions
-This section discusses how to set permissions so you can install, upgrade, and access Magento on your laptop. Enter the following commands as the Magento file system owner (that is, the user you created as discussed in this topic).
-
-{% include install/file-system-perms-twouser_cmds-only.md %}
 
 #### Next step
 [Install the CLI]({{ page.baseurl }}cloud/before/before-workspace-cli.html)

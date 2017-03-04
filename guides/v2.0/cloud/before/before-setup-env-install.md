@@ -6,7 +6,7 @@ title: Step 7, Install Magento
 menu_title: Step 7, Install Magento
 menu_node: 67
 level3_menu_node: level3child
-level3_subgroup: setupenv
+level3_subgroup: workspace
 version: 2.0
 github_link: cloud/before/before-setup-env-install.md
 ---
