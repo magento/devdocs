@@ -4,7 +4,7 @@ group: cloud
 subgroup: 08_setup
 title: First steps for importing Magento EE
 menu_title: First steps for importing Magento EE
-menu_order: 201
+menu_order: 151
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: import
