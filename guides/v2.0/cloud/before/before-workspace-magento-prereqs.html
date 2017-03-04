@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Overview of a Magento workspace</title>
+	<title>Step 4, Install Magento prerequisites</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.0/cloud/before/before-workspace.html">
+	<link rel="canonical" href="//guides/v2.0/cloud/before/before-workspace-magento-prereqs.html">
 
   <script>
     var baseUrl = "/";
@@ -49,9 +49,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/cloud/before/before-workspace.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/cloud/before/before-workspace-magento-prereqs.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/cloud/before/before-workspace.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/cloud/before/before-workspace-magento-prereqs.html">Magento 2.1</a></li>
 	
   </ul>
 
@@ -474,7 +474,7 @@
 									
 
 
-											<li class="level3Child workspace  active " data-menunode="workspace"><a href="/guides/v2.0/cloud/before/before-workspace.html">Overview of a Magento workspace</a>
+											<li class="level3Child workspace " data-menunode="workspace"><a href="/guides/v2.0/cloud/before/before-workspace.html">Overview of a Magento workspace</a>
 
 
 									
@@ -514,7 +514,7 @@
 									
 
 
-											<li class="level3Child workspace " data-menunode="workspace"><a href="/guides/v2.0/cloud/before/before-workspace-magento-prereqs.html">Step 4, Install Magento prerequisites</a>
+											<li class="level3Child workspace  active " data-menunode="workspace"><a href="/guides/v2.0/cloud/before/before-workspace-magento-prereqs.html">Step 4, Install Magento prerequisites</a>
 
 
 									
@@ -1591,7 +1591,7 @@
       
 
       <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
-        <span property="name">Overview of a Magento workspace</span>
+        <span property="name">Step 4, Install Magento prerequisites</span>
         <meta property="position" content="2" />
       </li>
 
@@ -1603,31 +1603,41 @@
 
 
 	
-	<h1 class="page-heading">Overview of a Magento workspace</h1>
+	<h1 class="page-heading">Step 4, Install Magento prerequisites</h1>
 
   
 
 
 </section>
 
-			<p>The following sections discuss your options for setting up a Magento Enterprise Cloud Edition project.</p>
-
-<p>We assume you’ll install the Magento software so you can use the command line and the Magento Admin on your laptop. That means you must set up the Magento file system owner on your laptop so files and directories you created are owned by that user.</p>
-
-<p>To be able to manage your projects, environments, and services, you must set up the Magento Enterprise Cloud Edition command-line interface (CLI) and Secure Shell (SSH). These tools enable you to perform tasks like:</p>
+			<p>For you to install Magento locally, you must install the prequisite software:</p>
 
 <ul>
-  <li>Work on a local branch</li>
-  <li>Branch and merge in your project</li>
-  <li>Push changes to the parent branch</li>
-  <li>Pull changes from the parent branch</li>
+  <li><a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git" target="_blank">Git</a> so you can interact with the Magento Enterprise Cloud Edition’s Git server.</li>
+  <li>
+    <p><a href="/guides/v2.0/install-gde/prereq/apache.html">Apache</a></p>
+
+    <p>You can also use nginx but those instructions aren’t documented at this time.</p>
+  </li>
+  <li>
+    <p>PHP</p>
+
+    <ul>
+      <li><a href="/guides/v2.0/install-gde/prereq/php-centos.html">CentOS</a></li>
+      <li><a href="/guides/v2.0/install-gde/prereq/php-ubuntu.html">Ubuntu</a></li>
+    </ul>
+  </li>
+  <li><a href="/guides/v2.0/install-gde/prereq/mysql.html">MySQL</a></li>
 </ul>
 
-<p>This guide assumes you’re working on a UNIX system or in a UNIX shell environment. On Windows, you can use a UNIX environment like Cygwin or you can use Putty. The tool you use is up to you.</p>
+<p>You can also install <a href="/guides/v2.0/install-gde/prereq/optional.html">optional software</a> as well.</p>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>Magento documentation disucsses installing prerequisite software on CentOS or Ubuntu only. For information on installing software on Windows or MacOS, consult a community resource.</p>
+</div>
 
 <h4 id="next-step">Next step</h4>
-<p><a href="/guides/v2.0/cloud/before/before-workspace-cloud-account.html">Step 1, Set up an account</a></p>
-
+<p><a href="/guides/v2.0/cloud/before/before-workspace-php.html">Step 5, Set up PHP and MySQL</a></p>
 
 		</div>
 		<!-- /.content-wrap -->
@@ -1638,14 +1648,14 @@
 
 			
 			 <div class="github-link">
-				 <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/before/before-workspace.md" target="_blank">
+				 <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/before/before-workspace-magento-prereqs.md" target="_blank">
 					 Edit this page on GitHub
 				 </a>
 			 </div>
 			
 
 			<div class="new-issue">
-				<a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.0/cloud/before/before-workspace.html" target="_blank">Give us feedback</a>
+				<a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.0/cloud/before/before-workspace-magento-prereqs.html" target="_blank">Give us feedback</a>
 			</div>
 
 		</div>
