@@ -4,7 +4,7 @@ group: cloud
 subgroup: 08_setup
 title: Overview of a Magento workspace
 menu_title: Overview of a Magento workspace
-menu_order: 6
+menu_order: 251
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: workspace

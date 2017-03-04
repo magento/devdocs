@@ -4,7 +4,7 @@ group: cloud
 subgroup: 08_setup
 title: Step 1, Set up an account
 menu_title: Step 1, Set up an account
-menu_order: 7
+menu_order: 252
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: workspace
