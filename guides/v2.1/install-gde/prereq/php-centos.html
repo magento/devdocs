@@ -944,34 +944,61 @@
 
 <div>
 
-  <ul>
-    <li>
-      <p>All 2.1.x versions support: 7.0.2, 7.0.6–7.0.x</p>
-
-      <p>There is a <a href="https://bugs.php.net/bug.php?id=71914" target="_blank">known PHP 7.0.5 issue</a> that affects our <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-compiler.html">code compiler</a>; to avoid the issue, do not use PHP 7.0.5.</p>
-    </li>
-    <li>2.1.0 and 2.1.1 support 5.6.x (versions 2.1.0 and 2.1.1)</li>
-    <li>
-      <p>2.1.2 and later supports:</p>
-
-      <ul>
-        <li>PHP 5.6.5 and later</li>
-        <li>7.0.4 (in addition to the versions listed previously)</li>
-      </ul>
-    </li>
-    <li>
-      <p><em>Not</em> supported by any 2.1.x version:</p>
-
-      <ul>
-        <li>PHP 7.1</li>
-        <li>PHP 5.5</li>
-      </ul>
-    </li>
-  </ul>
+  <table>
+    <tbody>
+      <tr>
+        <td>7.0.0, 7.0.1</td>
+        <td>7.0.2</td>
+        <td>7.0.3</td>
+        <td>7.0.4</td>
+        <td>7.0.5</td>
+        <td>7.0.6–7.0.x</td>
+        <td>7.1.x</td>
+      </tr>
+      <tr>
+        <td><img src="/common/images/red-x.png" alt="Not supported" /></td>
+        <td><img src="/common/images/green-check.png" alt="Supported" /></td>
+        <td><img src="/common/images/red-x.png" alt="Not supported" /></td>
+        <td><img src="/common/images/green-check.png" alt="Supported" /></td>
+        <td><img src="/common/images/red-x.png" alt="Not supported" /></td>
+        <td><img src="/common/images/green-check.png" alt="Supported (2.1.2 and later)" /></td>
+        <td><img src="/common/images/red-x.png" alt="Not supported" /></td>
+      </tr>
+      <tr>
+        <td><img src="/common/images/green-check.png" alt="Supported (2.1.2 and later)" /></td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td><img src="/common/images/red-x.png" alt="Not supported" /></td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+      </tr>
+    </tbody>
+  </table>
 
   <p><strong>PHP 5.6</strong>
 | 5.6.0–5.6.4 | 5.6.5–5.6.x |
 | <img src="/common/images/red-x.png" alt="Not supported" /> | <img src="/common/images/green-check.png" alt="Supported" /> |</p>
+
+  <table>
+    <tbody>
+      <tr>
+        <td>5.5.x</td>
+      </tr>
+      <tr>
+        <td><img src="/common/images/red-x.png" alt="Not supported" /></td>
+      </tr>
+    </tbody>
+  </table>
 
   <div class="bs-callout bs-callout-info" id="info">
 	<p>Magento 2.1.x no longer supports PHP 5.5.</p>
