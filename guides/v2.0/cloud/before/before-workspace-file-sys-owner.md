@@ -89,6 +89,6 @@ To complete the task, restart the web server:
 
 {% endcollapsible %}
 
-
-
-
+#### Next step
+*	If you're setting up a new Magento Enterprise Cloud Edition project for the first time, see [Create a new Magento project]({{ page.baseurl }}cloud/access-acct/first-time-setup_template.html)
+*	If you're importing existing Magento Enterprise Edition code into Magento Enterprise Cloud Edition, see [First steps for importing Magento EE]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-first-steps.html)

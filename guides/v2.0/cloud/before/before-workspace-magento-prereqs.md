@@ -31,4 +31,4 @@ Magento documentation disucsses installing prerequisite software on CentOS or Ub
 </div>
 
 #### Next step
-[Step 4, Set up PHP and MySQL]({{ page.baseurl }}cloud/before/before-workspace-php.html)
+[Step 5, Set up PHP and MySQL]({{ page.baseurl }}cloud/before/before-workspace-php.html)
