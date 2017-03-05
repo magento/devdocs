@@ -31,7 +31,7 @@ Following is a sample configuration to add to `<your Magento install dir>app/etc
 		'password' => '',
 		'timeout' => '2.5',
 		'persistent_identifier' => '',
-		'database' => '0',
+		'database' => '2',
 		'compression_threshold' => '2048',
 		'compression_library' => 'gzip',
 		'log_level' => '1',
@@ -84,7 +84,8 @@ where
 </tr>
 <tr>
 	<td>database</td>
-	<td>Unique Redis database number, which is recommended to protect against data loss.</td>
+	<td><p>Unique Redis database number, which is recommended to protect against data loss.</p>
+		<p><strong>Important</strong>: If you use Redis for more than one type of caching (for example, page cache and session cache), the database numbers must be different.</p></td>
 	<td>0</td>
 </tr>
 <tr>
