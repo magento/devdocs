@@ -1558,7 +1558,7 @@
 	'password' =&gt; '',
 	'timeout' =&gt; '2.5',
 	'persistent_identifier' =&gt; '',
-	'database' =&gt; '0',
+	'database' =&gt; '2',
 	'compression_threshold' =&gt; '2048',
 	'compression_library' =&gt; 'gzip',
 	'log_level' =&gt; '1',
@@ -1612,7 +1612,8 @@
 </tr>
 <tr>
 	<td>database</td>
-	<td>Unique Redis database number, which is recommended to protect against data loss.</td>
+	<td><p>Unique Redis database number, which is recommended to protect against data loss.</p>
+		<p><strong>Important</strong>: If you use Redis for more than one type of caching (for example, page cache and session cache), the database numbers must be different.</p></td>
 	<td>0</td>
 </tr>
 <tr>

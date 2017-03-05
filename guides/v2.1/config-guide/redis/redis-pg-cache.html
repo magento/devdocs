@@ -1540,7 +1540,7 @@
 			<h2 id="reds-sess-prereq">Prerequisite</h2>
 <p>Before you continue, <a href="/guides/v2.1/config-guide/redis/config-redis.html#config-redis-install">install Redis</a>.</p>
 
-<h2 id="config-redis-config">Configure Magento to use Redis for page and default caching</h2>
+<h2 id="config-redis-config">Configure Magento to use Redis for default and page caching</h2>
 <p>Following is a sample configuration that causes Magento to use Redis for both the default cache (<code>default</code> array) and the full page cache (<code>page_cache</code> array). Magento’s caching is implemented by <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/App/CacheInterface.php" target="_blank"><code>Magento\Framework\App\CacheInterface</code></a>.</p>
 
 <p>Add a configuration similar to the following to <code>&lt;your Magento install dir&gt;app/etc/env.php</code>:</p>
@@ -1555,6 +1555,7 @@ array(
          'backend_options' =&gt;
          array(
             'server' =&gt; '127.0.0.1',
+            'database' =&gt; '0',
             'port' =&gt; '6379'
             ),
     ),
@@ -1596,7 +1597,8 @@ array(
 </tr>
 <tr>
 	<td>database</td>
-	<td>Required if you use Redis for both the default and full page cache. You must specify the database number of one of the caches; the other cache uses 0 by default.</td>
+	<td><p>Required if you use Redis for both the default and full page cache. You must specify the database number of one of the caches; the other cache uses <code>0</code> by default.</p>
+	<p><strong>Important</strong>: If you use Redis for more than one type of caching (for example, page cache and session cache), the database numbers must be different.</p></td>
 </tr>
 <tr>
 	<td>password</td>
