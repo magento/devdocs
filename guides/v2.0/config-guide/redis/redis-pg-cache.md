@@ -70,7 +70,7 @@ where
 <tr>
 	<td>database</td>
 	<td><p>Required if you use Redis for both the default and full page cache. You must specify the database number of one of the caches; the other cache uses <code>0</code> by default.</p>
-	<p><strong>Important</strong>: If you use Redis for more than one type of caching (for example, page cache and session cache), the database numbers must be different.</p></td>
+	<p><strong>Important</strong>: If you use Redis for more than one type of caching (for example, default cache and page cache), the database numbers must be different.</p></td>
 </tr>
 <tr>
 	<td>password</td>
