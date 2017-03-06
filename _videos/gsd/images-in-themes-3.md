@@ -12,14 +12,3 @@ menu_title: "Images in Themes part 3"
 menu_order: 3
 github_link:
 ---
-Every album in the collection could be listed on a single page with a template:
-
-## Heading 1
-
-safaofnagnagklng lang ag lkasdg
-a sdgk sanglasg
-
-## Heading 2
-
-asfoasglakgnlak
- 

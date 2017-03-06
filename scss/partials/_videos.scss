@@ -67,11 +67,6 @@
       font-weight: 600;
     }
 
-    .author {
-      font-size: $font-size-sm;
-      color: $dark-gray-color;
-    }
-
   }
 }
 
@@ -102,20 +97,6 @@
   }
 }
 
-.videos-list {
-  .tags {
-    padding: 0 0 0 10px;
-  }
-  .tag {
-    display: inline-block;
-    padding: 4px 5px;
-    margin: 0 0 5px 0;
-    color: #fff;
-    border-radius: 2px;
-  }
-}
-
-
 .video-page {
   .sidebar ul li .video-duration {
     position: absolute;
@@ -136,6 +117,9 @@
 }
 
 
+.video-player-wrap {
+  margin: 0 0 1em 0;
+}
 
 .video-player.affix {
   position: fixed;
@@ -198,24 +182,4 @@
     background: darken( $light-gray-color, 3%);
     text-decoration: none;
   }
-}
-
-
-.page-meta {
-  &:after {
-    display: block;
-    clear: both;
-    content: '';
-  }
-}
-
-.page-tags {
-  float: left;
-  margin: 8px 0;
-}
-
-.page-author {
-  float: left;
-  font-size: $font-size-sm;
-  margin: 10px 20px 10px 0;
 }

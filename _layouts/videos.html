@@ -7,7 +7,7 @@
 		<div class="sidebar-wrapper">
 
 			<ul>
-				<li class="level-1 {% if page.url == '/videos/' %}active{% endif %}"><a href="{{ site.baseurl }}videos/">All Videos</a></li>
+				<li class="level-1 {% if page.url == '/videos/' %}active{% endif %}"><a href="{{ site.baseurl }}/videos/">All Videos</a></li>
 
 				<li class=""><span class="nav-header">Playlists</span></li>
 
@@ -19,52 +19,20 @@
 						{% assign url_parts_size = url_parts | size %}
 						{% assign rm = url_parts[2] %}
 
-						<li class="level-1 {% if playlist.name == page.group %}active{% endif %}"><a href="{{site.baseurl}}videos/{{ rm }}/">{{ playlist.name }} <i class="item-count">{{ playlist.items.size }} videos</i></a></li>
+						<li class="level-1 {% if playlist.name == page.group %}active{% endif %}"><a href="{{site.baseurl}}/videos/{{ rm }}/">{{ playlist.name }} <i class="item-count">{{ playlist.items.size }} videos</i></a></li>
 					{% endif %}
 				{% endfor %}
-
-				<!--
-				<li class=""><span class="nav-header">Authors</span></li>
-				{% assign authors = (site.videos | where: 'layout', 'video' | group_by: 'author' | sort: 'author') | reverse  %}
-				{% for author in authors %}
-					{% if author.name.size > 0 %}
-					{% assign auth = site.data.people[author.name] %}
-
-						<li class="level-1 {% if playlist.items[0].author == page.author %}active{% endif %}"><a href="{{ auth.url }}">{{ auth.name }} <i class="item-count">{{ author.items.size }} videos</i></a></li>
-					{% endif %}
-				{% endfor %}
-
-
-				<!--
-				<li class=""><span class="nav-header">Tags</span></li>
-				<li class="tags">
-					{% for tag in site.site_tags %}
-						<a href="{{tag.url}}" class="tag tag-default">{{ tag.title }}</a>
-					{% endfor %}
-				</li>-->
 
 			</ul>
 
 		</div>
 	</aside>
 
-
-
 	<section class="content">
 		<div class="content-wrap">
 
 			{% include page-header.html %}
 			{{ content }}
-
-			<!--
-			<div class=" dropdown">
-				<button class="btn dropdown-toggle" data-toggle="dropdown">Most Recent</button>
-				<ul class="dropdown-menu dropdown-menu-left">
-					<li><a class="dropdown-item" href="">Most Popular</a></li>
-					<li><a class="dropdown-item" href="" >Most Recent</a></li>
-				</ul>
-			</div>-->
-
 
 			{% assign sorted_videos = (site.videos | where: 'layout', 'video' | sort: 'date') | reverse %}
 			{% if page.group != nil %}
@@ -75,7 +43,7 @@
 			{% endif %}
 			<div class="videos">
 			{% for video in sorted_videos %}
-        {% include video-preview.html %}
+        {% include video/preview.html %}
 			{% endfor %}
 			</div>
 
