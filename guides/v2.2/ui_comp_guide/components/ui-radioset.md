@@ -27,7 +27,7 @@ Extends all `abstract` configuration.
   </tr>
   <tr>
     <td>multiple</td>
-    <td>Set the input type in the UI (checkbox or radio button). By default set to "false", and the input type is radio button.</td>
+    <td>Set the input type in the UI: true for checkbox, false for radio button.</td>
     <td>Boolean</td>
     <td>false</td>
   </tr>

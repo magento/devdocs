@@ -25,7 +25,7 @@ Sizes own configuration:
   </tr>
   <tr>
     <td>maxSize</td>
-    <td>Maximum number of items.</td>
+    <td>Maximum allowed number of items.</td>
     <td>Number</td>
     <td>20</td>
   </tr>
@@ -43,13 +43,13 @@ Sizes own configuration:
   </tr>
   <tr>
     <td>template</td>
-    <td>The path to the component’s .html template.</td>
+    <td>Зath to the component’s .html template.</td>
     <td>String</td>
     <td>ui/grid/paging/sizes</td>
   </tr>
   <tr>
     <td>value</td>
-    <td>The intital number of items per page.</td>
+    <td>Initial number of items per page.</td>
     <td>Number</td>
     <td>20</td>
   </tr>
@@ -66,7 +66,7 @@ Sizes own configuration:
   </tr>
   <tr>
     <td>label</td>
-    <td>Label displayed in a rendered options list. It's value is usually equal to the corresponding "value" property.</td>
+    <td>Label displayed in the rendered options list. This label is usually equal to the corresponding "value" property.</td>
     <td>String|Number</td>
     <td>Required</td>
   </tr>

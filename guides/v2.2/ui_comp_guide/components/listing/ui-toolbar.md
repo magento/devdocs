@@ -24,25 +24,25 @@ Toolbar own configuration:
   </tr>
   <tr>
     <td>sticky</td>
-    <td>Tells whether the toolbar has a fixed position, e.g., if set to true, elements like paging, filters and table's headerwill stay in the viewport's area no matter where the scroll position is.</td>
+    <td>Whether the toolbar has a fixed position. When set to true, elements like paging, filters, and table's header stay in the viewport's area no matter where the scroll position is.</td>
     <td>Boolean</td>
     <td>false</td>
   </tr>
   <tr>
     <td>stickyClass</td>
-    <td>A list of aditional CSS classes applied to the root node of the sticky template.</td>
+    <td>A list of aditional CSS classes added to the root node of the sticky template.</td>
     <td>{<br>[name:string]: boolean<br>}</td>
     <td>{<br>'sticky-header': true<br>}</td>
   </tr>
   <tr>
     <td>stickyTmpl</td>
-    <td>Path to the tollbar's template that will be used when it receives a fixed position.</td>
+    <td>Path to the tollbar's template for the fixed position.</td>
     <td>String</td>
     <td>ui/grid/sticky/sticky</td>
   </tr>
   <tr>
     <td>template</td>
-    <td>The path to the component’s .html template.</td>
+    <td>Path to the component’s .html template.</td>
     <td>String</td>
     <td>ui/grid/toolbar</td>
   </tr>

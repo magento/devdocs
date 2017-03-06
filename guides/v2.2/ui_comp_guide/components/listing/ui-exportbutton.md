@@ -41,25 +41,25 @@ ExportButton own configuration:
   </tr>
   <tr>
     <td>additionalParams</td>
-    <td>A list of additional parameters that will be added to an every performed request.</td>
+    <td>List of additional parameters that will be added to an every performed request.</td>
     <td>{<br>[name: string]: string<br>}</td>
     <td>-</td>
   </tr>
   <tr>
     <td>options</td>
-    <td>Array</td>
-    <td>Array&amp;lt;ExportOption&amp;gt; </td>
+    <td>List of available formats in which the table's data can be exported.</td>
+    <td>Array<a href="#exportoption">&lt;ExportOption&gt;</a> </td>
     <td>[{<br>value: "csv",<br>label: "CSV",<br>url: "mui/export/gridToCsv"<br>}, {<br>value: "xml",<br>label: "Excel XML",<br>url: "mui/export/gridToXml"<br>}]</td>
   </tr>
   <tr>
     <td>template</td>
-    <td>The path to the component’s .html template.</td>
+    <td>Path to the component’s .html template.</td>
     <td>String</td>
     <td>ui/grid/exportButton</td>
   </tr>
 </table>
 
-### `ExportOption` interface 
+### `ExportOption` interface {#exportoption}
 
 <table>
   <tr>
@@ -70,7 +70,7 @@ ExportButton own configuration:
   </tr>
   <tr>
     <td>label</td>
-    <td>Option's label with which it will be rendered.</td>
+    <td>Option's label.</td>
     <td>String</td>
     <td>Required</td>
   </tr>

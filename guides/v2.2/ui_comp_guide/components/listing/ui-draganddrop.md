@@ -31,19 +31,19 @@ DragAndDrop own configuration:
   </tr>
   <tr>
     <td>fixedX</td>
-    <td>Whether collumn has a fixed positon on the X-axis, i.e. it can or can not be moved horizontally.</td>
+    <td>Whether the column has a fixed positon on the X-axis, that is, whether it can be moved horizontally.</td>
     <td>Boolean</td>
     <td>false</td>
   </tr>
   <tr>
     <td>fixedY</td>
-    <td>Whether collumn has a fixed positon on the Y-axis, i.e. it can or can not be moved vertically.</td>
+    <td>Whether the column has a fixed positon on the Y-axis,  that is whether it can be moved vertically.</td>
     <td>Boolean</td>
     <td>true</td>
   </tr>
   <tr>
     <td>noSelectClass</td>
-    <td>CSS class applied to the table when one of it's columns is being dragged.</td>
+    <td>CSS class applied to the table when one of its columns is being dragged.</td>
     <td>String</td>
     <td>_no-select</td>
   </tr>

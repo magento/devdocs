@@ -26,43 +26,43 @@ Constructor: [<Magento_Ui_module_dir>/view/base/web/js/grid/listing.js]({{site.m
   </tr>
   <tr>
     <td>displayMode</td>
-    <td>The initial display mode.</td>
+    <td>Initial display mode.</td>
     <td>String</td>
     <td>grid</td>
   </tr>
   <tr>
     <td>displayModes</td>
-    <td>A list of available display modes.</td>
+    <td>List of available display modes.</td>
     <td>{<br>[name: string]: <a href="#displaymode">DisplayMode</a><br>}</td>
     <td>{<br>value: 'grid',<br>label: 'Grid',<br>template: 'ui/grid/listing'<br>}</td>
   </tr>
   <tr>
     <td>dndConfig</td>
-    <td>Configuration of the DragAndDrop component.</td>
+    <td>Configuration of the [DragAndDrop component]({{page.baseurl}}ui_comp_guide/components/listing/ui-draganddrop.html).</td>
     <td>Object</td>
     <td>Specified in the <a href="{{page.baseurl}}ui_comp_guide/components/listing/ui-draganddrop.html">DragAndDrop component configuration</a>.</td>
   </tr>
   <tr>
     <td>stickyTmpl</td>
-    <td>Path to the tollbar's template that will be used when it receives a fixed position.</td>
+    <td>Path to the toolbar's template that will be used when it receives a fixed position.</td>
     <td>String</td>
     <td>ui/grid/sticky/listing</td>
   </tr>
   <tr>
     <td>template</td>
-    <td>The path to the component’s .html template.</td>
+    <td>Path to the component’s .html template.</td>
     <td>String</td>
     <td>ui/grid/listing</td>
   </tr>
   <tr>
     <td>editorConfig</td>
-    <td>Configuration of the InlineEditing component.</td>
+    <td>Configuration of the [InlineEditing component]({{page.baseurl}}ui_comp_guide/components/listing/ui-inlineediting.html).</td>
     <td>Object</td>
     <td>Specified in the <a href="{{page.baseurl}}ui_comp_guide/components/listing/ui-inlineediting.html">InlineEditing component configuration</a>.</td>
   </tr>
   <tr>
     <td>viewSwitcherTmpl</td>
-    <td>Path to the template which renders a list of available display modes (not used by default).</td>
+    <td>Path to the .html template for rendering the list of available display modes (not used by default).</td>
     <td>String</td>
     <td>ui/grid/view-switcher</td>
   </tr>
@@ -79,13 +79,13 @@ Constructor: [<Magento_Ui_module_dir>/view/base/web/js/grid/listing.js]({{site.m
   </tr>
   <tr>
     <td>label</td>
-    <td>Label to be displayed in a list of available modes.</td>
+    <td>Label for the list of available modes.</td>
     <td>String</td>
     <td>Optional</td>
   </tr>
   <tr>
     <td>template</td>
-    <td>Html template used to render listing in this mode.</td>
+    <td>Path to the .html template used to render listing in this mode.</td>
     <td>String</td>
     <td>Optional</td>
   </tr>

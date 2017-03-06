@@ -31,6 +31,7 @@ Dependency on the following components:
 
 #### MassActions configuration
 
+Extends Collapsible configuration with the following options:
 <table>
   <tr>
     <th>Option</th>
@@ -46,19 +47,19 @@ Dependency on the following components:
   </tr>
   <tr>
     <td>noItemsMsg</td>
-    <td>Message that is shown when user attempts to perform an action without any selected items.</td>
+    <td>Message displayed when a user attempts to perform an action without any selected items.</td>
     <td>String</td>
     <td>You haven't selected any items!</td>
   </tr>
   <tr>
     <td>stickyTmpl</td>
-    <td>Additional component's template that is used when it's parent Toolbar component receives a fixed position.</td>
+    <td>Additional component's template that is used when its parent [Toolbar]({{page.baseurl}}) component receives a fixed position.</td>
     <td>String</td>
     <td>ui/grid/sticky/actions</td>
   </tr>
   <tr>
     <td>template</td>
-    <td>The path to the component’s .html template.</td>
+    <td>Path to the component’s .html template.</td>
     <td>String</td>
     <td>ui/grid/paging/sizes</td>
   </tr>
@@ -77,31 +78,31 @@ Dependency on the following components:
     <td>callback</td>
     <td></td>
     <td><a href="{{page.baseurl}}i_comp_guide/components/listing/ui-column.html#column_action">ColumnAction</a></td>
-    <td>Not requried</td>
+    <td>Optional</td>
   </tr>
   <tr>
     <td>confirm</td>
-    <td>Confirmation message to be shown before applying action.</td>
+    <td>Confirmation message displayed before applying the action.</td>
     <td>{<br>title: string;<br>message: string;<br>}</td>
-    <td>Not requried</td>
+    <td>Optional</td>
   </tr>
   <tr>
     <td>label</td>
     <td>Label to be displayed in a list of actions.</td>
     <td>String</td>
-    <td>required</td>
+    <td>Required</td>
   </tr>
   <tr>
     <td>type</td>
     <td>Action's identifier.</td>
     <td>String</td>
-    <td>required</td>
+    <td>Required</td>
   </tr>
   <tr>
     <td>url</td>
-    <td>ath to contoller responsible for handling of action.</td>
+    <td>Path to the contoller responsible for action handling.</td>
     <td>String</td>
-    <td>Not requried</td>
+    <td>Optional</td>
   </tr>
 </table>
 

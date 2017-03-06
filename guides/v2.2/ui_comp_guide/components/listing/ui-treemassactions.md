@@ -25,13 +25,13 @@ TreeMassActions own configuration:
   </tr>
   <tr>
     <td>submenuTemplate</td>
-    <td>Path to the template used to render nested actions.</td>
+    <td>Path to the .html template used to render nested actions.</td>
     <td>String</td>
     <td>ui/grid/submenu</td>
   </tr>
   <tr>
     <td>template</td>
-    <td>The path to the component’s .html template.</td>
+    <td>Path to the component’s .html template.</td>
     <td>String</td>
     <td>ui/grid/tree-massactions</td>
   </tr>
