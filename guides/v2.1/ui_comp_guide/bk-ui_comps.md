@@ -30,7 +30,7 @@ In the meantime, until we have completed this new book, you can also still [acce
 
 They are designed for simple and flexible user interface (UI) rendering. Components are responsible for rendering result page fragments and providing/supporting further interactions of JavaScript components and server.
 
-Magento UI components are implemented as a standard module named Magento_Ui.
+Magento UI components are implemented as a standard module named Magento_UI.
 
 To use UI components in your custom module, you need to add a dependency for the Magento_UI module in [your component's composer.json file]({{page.baseurl}}extension-dev-guide/build/composer-integration.html).
 

@@ -4,7 +4,7 @@ group: cloud
 subgroup: 08_setup
 title: Set up Fastly
 menu_title: Set up Fastly
-menu_order: 70
+menu_order: 500
 menu_node: 
 version: 2.0
 github_link: cloud/access-acct/fastly.md
@@ -123,22 +123,20 @@ When you're done with development, [merge your environment]({{ page.baseurl }}cl
 
 For Fastly to be used in production, you must merge with the `master` environment.
 
-<h2 id="custom-vcl">Custom VCLs</h2>
-<p>You're free to customize your Fastly VCL however you want, provided you follow Fastly's guidelines for <a href="https://docs.fastly.com/guides/vcl/mixing-and-matching-fastly-vcl-with-custom-vcl" target="_blank">Mixing and matching Fastly VCL with custom VCL</a>.
+## Custom VCLs {#custom-vcl}
+You're free to customize your Fastly VCL however you want, provided you follow Fastly's guidelines for <a href="https://docs.fastly.com/guides/vcl/mixing-and-matching-fastly-vcl-with-custom-vcl" target="_blank">Mixing and matching Fastly VCL with custom VCL</a>.
 
-<p>Failure to follow these guidelines means your customizations won't work as expected.</p>
+Failure to follow these guidelines means your customizations won't work as expected.
 
-<h4>Next steps</h4>
-<ul><li>If you have issues with the Fastly extension, see <a href="{{ page.baseurl cloud/trouble/trouble_fastly.html}}">Troubleshoot Fastly</a>.</li>
-	<li><a href="{{ page.baseurl }}cloud/env/environments.html">Manage your environments</a></li>
-	<li><a href="{{ page.baseurl }}cloud/project/project-webint-basic.html">Use the Project Web Interface</a></li>
-	<li>Configure your project:
-		<ul><li><a href="{{ page.baseurl }}cloud/project/project-conf-files_magento-app.html"><code>.magento.app.yaml</code></a></li>
-			<li><a href="{{ page.baseurl}}cloud/project/project-conf-files_routes.html"><code>routes.yaml</code></a></li>
-			<li><a href="{{ page.baseurl }}cloud/project/project-conf-files_services.html"><code>services.yaml</code></a></li>
-		</ul>
-	</li>
-</ul>
+Next steps
 
+*	If you have issues with the Fastly extension, see [Troubleshoot Fastly]({{ page.baseurl}}cloud/trouble/trouble_fastly.html)
 
+*	[Manage your environments]({{ page.baseurl }}cloud/env/environments.html)
 
+	*	[Use the Project Web Interface]({{ page.baseurl }}cloud/project/project-webint-basic.html)
+	*	Configure your project:
+
+		*	[`.magento.app.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_magento-app.html)
+		*	[`routes.yaml`]({{ page.baseurl}}cloud/project/project-conf-files_routes.html)
+		*	[`services.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_services.html)

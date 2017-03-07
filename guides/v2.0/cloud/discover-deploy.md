@@ -53,8 +53,8 @@ Magento Enterprise Cloud Edition builds the codebase. It runs hooks in the `buil
 
 The default Magento build hook is a CLI command called `magento-cloud:build`. It does the following:
 
-*   Applies patches located in vendor/magento/magento-cloud-configuration/patches, as well as optional project-specific patches in m2-hotfixes
-*	Enables all modules
+*   Applies patches located in `vendor/magento/magento-cloud-configuration/patches`, as well as optional project-specific patches in `m2-hotfixes`
+*	Enables all extensions
 *	Regenerates code and the dependency injection configuration (that is, the Magento `var/generation` and `var/di` directories) using `bin/magento setup:di:compile`.
 
 It is important to note that at this point the cluster has not been

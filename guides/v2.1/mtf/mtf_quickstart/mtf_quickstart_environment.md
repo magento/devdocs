@@ -21,7 +21,7 @@ Install [Java](https://help.ubuntu.com/community/Java) to work with Selenium Ser
 Specific versions of the Selenium Server are compatible with specific versions of browsers. <a href="http://docs.seleniumhq.org/about/platforms.jsp">Read more about compatibility of browser version and Selenium server version.</a>
 
 <div class="bs-callout bs-callout-info" markdown="1">
-Use Mozilla Firefox ESR 45 with Selenium 2.5.3.1. Later versions have issues.
+Use Mozilla Firefox ESR 45 with Selenium 2.53.1. Later versions have compatibility issues.
 </div>
 
 Enter in terminal:

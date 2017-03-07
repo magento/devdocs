@@ -61,5 +61,5 @@ You can find more information about configuring Redis from the following:
 
 #### Next
 
-*	<a href="{{page.baseurl}}config-guide/redis/redis-session.html">Redis for session storage</a>
-*	<a href="{{page.baseurl}}config-guide/redis/redis-pg-cache.html">Redis for page caching</a>
+*	<a href="{{page.baseurl}}config-guide/redis/redis-pg-cache.html">Use Redis for the Magento page and default cache</a>
+*	<a href="{{page.baseurl}}config-guide/redis/redis-session.html">Use Redis for session storage</a>

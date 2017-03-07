@@ -133,7 +133,7 @@ The following table discusses the meanings of installation parameters and values
 If applicable, continue your Magento software installation:
 
 *	<a href="{{page.baseurl}}install-gde/install/cli/install-cli-install.html">Command line installation</a>
-*	<a href="{{page.baseurl}}install-gde/install/install-web.html">Setup Wizard installation</a>
+*	<a href="{{page.baseurl}}install-gde/install/web/install-web.html">Setup Wizard installation</a>
 
 <!-- <h2 id="instgde-cli-subcommands-dep-config-enable-modules">About enabling and disabling modules</h2>
 {% include install/enable-disable-modules.html %} -->

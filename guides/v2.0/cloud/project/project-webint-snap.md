@@ -2,9 +2,9 @@
 layout: default
 group: cloud
 subgroup: 10_project
-title: Project backup and restore (snapshot)
-menu_title: Project backup and restore (snapshot)
-menu_order: 7
+title: Backup and restore (snapshot)
+menu_title: Backup and restore (snapshot)
+menu_order: 25
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: project
@@ -13,6 +13,11 @@ github_link: cloud/project/project-webint-snap.md
 ---
 
 You can back up and restore an environment at any time using a *snapshot*. Creating a snapshot backs up the environment and because an environment is deployed as a read-only file system, restoring a snapshot is very fast.
+
+A *snapshot* is a complete backup of an environment. It includes all
+persistent data from all running services (for example, your MySQL database, Redis, and so on) and any files stored on the mounted volumes.
+
+You can *restore* a snapshot up to 14 days after the snapshot was created.
 
 ## Create a snapshot (back up)
 To back up an environment by creating a snapshot:
