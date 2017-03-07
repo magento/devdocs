@@ -2,8 +2,8 @@
 layout: default
 group: UI_Components_guide
 subgroup: components
-title: checkbox component
-menu_title: checkbox component
+title: Checkbox component
+menu_title: Checkbox component
 version: 2.2
 github_link: ui_comp_guide/components/ui-checkbox.md
 ---
@@ -27,7 +27,7 @@ Extends all `abstract` configuration.
   </tr>
   <tr>
     <td>multiple</td>
-    <td>Render multiple elements.</td>
+    <td>Renders multiple elements.</td>
     <td>Boolean</td>
     <td>false</td>
   </tr>
@@ -52,7 +52,7 @@ Extends all `abstract` configuration.
 </ul>
 </td>
     <td>Paths to templates for all possible types of input elements. The exact template to be used for rendering is defined by the <code>prefer</code> property.</td>
-    <td>Object<br>String<br>String<br>String</td>
+    <td>Object<ul><li>String</li><li>String</li><li>String</li></ul></td>
     <td><code>ui/form/components/single/radio<br>ui/form/components/single/checkbox<br>ui/form/components/single/switcher</code></td>
   </tr>
   <tr>

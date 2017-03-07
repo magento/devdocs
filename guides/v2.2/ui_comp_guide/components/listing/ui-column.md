@@ -101,7 +101,7 @@ Extends all [`UiElement`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uieleme
     <td>{visible: true, sorting: true}</td>
   </tr>
   <tr>
-    <td>templates.fieldAction</td>
+    <td>fieldAction</td>
     <td>The action performed on the column's field click.</td>
     <td><a href="#column_action">ColumnAction</a></td>
     <td>-</td>

@@ -44,7 +44,7 @@ Constructor: [<Magento_Ui_module_dir>/view/base/web/js/grid/listing.js]({{site.m
   </tr>
   <tr>
     <td>stickyTmpl</td>
-    <td>Path to the toolbar's template that will be used when it receives a fixed position.</td>
+    <td>Path to the .html template used for the <a href="{{page.baseurl}}ui_comp_guide/components/listing/ui-toolbar.html">Toolbar component</a> when it receives a fixed position.</td>
     <td>String</td>
     <td>ui/grid/sticky/listing</td>
   </tr>
@@ -62,7 +62,7 @@ Constructor: [<Magento_Ui_module_dir>/view/base/web/js/grid/listing.js]({{site.m
   </tr>
   <tr>
     <td>viewSwitcherTmpl</td>
-    <td>Path to the .html template for rendering the list of available display modes (not used by default).</td>
+    <td>Path to the .html template for rendering the list of available display modes. By default this list is not displayed.</td>
     <td>String</td>
     <td>ui/grid/view-switcher</td>
   </tr>
@@ -85,7 +85,7 @@ Constructor: [<Magento_Ui_module_dir>/view/base/web/js/grid/listing.js]({{site.m
   </tr>
   <tr>
     <td>template</td>
-    <td>Path to the .html template used to render listing in this mode.</td>
+    <td>Path to the .html template used to render listing in the selected mode.</td>
     <td>String</td>
     <td>Optional</td>
   </tr>

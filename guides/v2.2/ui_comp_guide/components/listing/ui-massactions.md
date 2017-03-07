@@ -41,9 +41,9 @@ Extends Collapsible configuration with the following options:
   </tr>
   <tr>
     <td>actions</td>
-    <td>-</td>
-    <td>Array</td>
     <td>A list of available actions.</td>
+    <td>Array</td>
+    <td>-</td>
   </tr>
   <tr>
     <td>noItemsMsg</td>
@@ -88,7 +88,7 @@ Extends Collapsible configuration with the following options:
   </tr>
   <tr>
     <td>label</td>
-    <td>Label to be displayed in a list of actions.</td>
+    <td>Action's label displayed in the list of actions.</td>
     <td>String</td>
     <td>Required</td>
   </tr>

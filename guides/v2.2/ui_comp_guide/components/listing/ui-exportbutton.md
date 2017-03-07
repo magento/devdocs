@@ -24,7 +24,7 @@ To enable the ExportButton сomponent, add the `exportButton` element with speci
 
 ## Structure
 
-Constructor: [<Magento_Ui_module_dir>/view/base/web/js/grid/export.js]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/grid/export.js)
+Constructor: [app/code/Magento/Ui/view/base/web/js/grid/export.js]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/grid/export.js)
 
 ## ExportButton configuration
 
@@ -41,7 +41,7 @@ ExportButton own configuration:
   </tr>
   <tr>
     <td>additionalParams</td>
-    <td>List of additional parameters that will be added to an every performed request.</td>
+    <td>List of additional parameters added to each performed request.</td>
     <td>{<br>[name: string]: string<br>}</td>
     <td>-</td>
   </tr>

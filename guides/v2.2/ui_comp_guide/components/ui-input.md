@@ -2,8 +2,8 @@
 layout: default
 group: UI_Components_guide
 subgroup: components
-title: input component
-menu_title: input component
+title: Input component
+menu_title: Input component
 version: 2.2
 github_link: ui_comp_guide/components/ui-input.md
 ---

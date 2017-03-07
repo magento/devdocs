@@ -2,8 +2,8 @@
 layout: default
 group: UI_Components_guide
 subgroup: components
-title: hidden component
-menu_title: hidden component
+title: Hidden component
+menu_title: Hidden component
 version: 2.2
 github_link: ui_comp_guide/components/ui-hidden.md
 ---

@@ -25,31 +25,31 @@ Sizes own configuration:
   </tr>
   <tr>
     <td>maxSize</td>
-    <td>Maximum allowed number of items.</td>
+    <td>Maximum allowed number of rows.</td>
     <td>Number</td>
     <td>20</td>
   </tr>
   <tr>
     <td>minSize</td>
-    <td>Minimun allowed number of items.</td>
+    <td>Minimun allowed number of rows.</td>
     <td>Number</td>
     <td>1</td>
   </tr>
   <tr>
     <td>options</td>
-    <td>The initial list of available sizes.</td>
+    <td>The initial list of available table sizes (number of rows).</td>
     <td><br>{<br>[name: number]: SizeOption<br>}<br></td>
     <td>[20, 30, 50, 100, 200]</td>
   </tr>
   <tr>
     <td>template</td>
-    <td>Зath to the component’s .html template.</td>
+    <td>Path to the component’s .html template.</td>
     <td>String</td>
     <td>ui/grid/paging/sizes</td>
   </tr>
   <tr>
     <td>value</td>
-    <td>Initial number of items per page.</td>
+    <td>Initial number of rows per page.</td>
     <td>Number</td>
     <td>20</td>
   </tr>
@@ -72,7 +72,7 @@ Sizes own configuration:
   </tr>
   <tr>
     <td>value</td>
-    <td>Options identifier which reprsents the page size.</td>
+    <td>Options identifier which reprsents the table size.</td>
     <td>Number</td>
     <td>Required</td>
   </tr>

@@ -30,13 +30,13 @@ Toolbar own configuration:
   </tr>
   <tr>
     <td>stickyClass</td>
-    <td>A list of aditional CSS classes added to the root node of the sticky template.</td>
+    <td>A list of aditional CSS classes added to the root node of the .html template specified in StickyTmpl.</td>
     <td>{<br>[name:string]: boolean<br>}</td>
     <td>{<br>'sticky-header': true<br>}</td>
   </tr>
   <tr>
     <td>stickyTmpl</td>
-    <td>Path to the tollbar's template for the fixed position.</td>
+    <td>Path to the toolbar's template for the fixed position.</td>
     <td>String</td>
     <td>ui/grid/sticky/sticky</td>
   </tr>

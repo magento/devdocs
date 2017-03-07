@@ -52,6 +52,12 @@ Initial component's state. When set to "true", users can't take action on the el
     <td>''</td>
   </tr>
   <tr>
+    <td>template</td>
+    <td>Path to the general .html template for a button.</td>
+    <td>String</td>
+    <td>''</td>
+  </tr>
+  <tr>
     <td>title</td>
     <td>Button title.</td>
     <td>String</td>

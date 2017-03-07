@@ -8,7 +8,7 @@ version: 2.2
 github_link: ui_comp_guide/components/listing/ui-actionscolumn.md
 ---
 
-Constructor: [<Magento_Ui_module_dir>/view/base/web/js/grid/columns/actions.js]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js)
+Constructor: [app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js)
 
 ## ActionsColumn configuration
 

@@ -14,39 +14,103 @@ Extends all `abstract` configuration.
 
 <table>
   <tr>
-    <th>Option </th>
-    <th>Description</th>
-    <th>Type</th>
-    <th>Default</th>
+    <th>
+      Option
+    </th>
+    <th>
+      Description
+    </th>
+    <th>
+      Type
+    </th>
+    <th>
+      Default
+    </th>
   </tr>
   <tr>
-    <td>component</td>
-    <td>The path to the component’s JS constructor in terms of RequireJS.</td>
-    <td>String</td>
-    <td><code>Magento_Ui/js/form/element/text</code></td>
+    <td>
+      component
+    </td>
+    <td>
+      The path to the component’s JS constructor in terms of
+      RequireJS.
+    </td>
+    <td>
+      String
+    </td>
+    <td>
+      <code>Magento_Ui/js/form/element/text</code>
+    </td>
   </tr>
   <tr>
-    <td>label</td>
-    <td>Field label</td>
-    <td>String</td>
-    <td>''</td>
+    <td>
+      label
+    </td>
+    <td>
+      Field label
+    </td>
+    <td>
+      String
+    </td>
+    <td>
+      ''
+    </td>
   </tr>
   <tr>
-    <td>links<li>value</li></td>
-    <td><a href="{{page.baseurl}}ui_comp_guide/concepts/ui_comp_linking_concept.html">Links</a> the component's <code>value</code> property with provider using the declared in the <code>dataScope</code> property of the parent component.</td>
-    <td>Object<br>&lt;li&gt;Boolean&lt;/li&gt;</td>
-    <td><code>${ $.provider }:${ $.dataScope }</code> <p class="q">Strange value for a boolean</p></td>
+    <td>
+      links
+      <ul>
+        <li>value
+        </li>
+      </ul>
+    </td>
+    <td>
+      <a href=
+      "{{page.baseurl}}ui_comp_guide/concepts/ui_comp_linking_concept.html">
+      Links</a> the component's <code>value</code> property with
+      provider using the declared in the <code>dataScope</code>
+      property of the parent component.
+    </td>
+    <td>
+      Object
+      <ul>
+        <li>Boolean
+        </li>
+      </ul>
+    </td>
+    <td>
+      <code>false</code>
+    </td>
   </tr>
   <tr>
-    <td>disabled</td>
-    <td>Initial component's state. When set to "true", users can't take action on the element.</td>
-    <td>Boolean</td>
-    <td>false</td>
+    <td>
+      disabled
+    </td>
+    <td>
+      Initial component's state. When set to "true", users can't
+      take action on the element.
+    </td>
+    <td>
+      Boolean
+    </td>
+    <td>
+      false
+    </td>
   </tr>
   <tr>
-    <td>visible</td>
-    <td>Initial component's visibility. When set to "false", the <code>display: none<code> CSS style is added to the component's DOM block.</td>
-    <td>Boolean</td>
-    <td>true</td>
+    <td>
+      visible
+    </td>
+    <td>
+      Initial component's visibility. When set to "false", the
+      <code>display: none</code> CSS style is added to the
+      component's DOM block.
+    </td>
+    <td>
+      Boolean
+    </td>
+    <td>
+      true
+    </td>
   </tr>
 </table>
