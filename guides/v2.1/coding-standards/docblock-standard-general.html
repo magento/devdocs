@@ -642,14 +642,14 @@ See example below:</li>
   <span class="p">{</span>
       <span class="c1">// calculate base price</span>
   <span class="p">}</span>
-    
+
   <span class="k">private</span> <span class="k">function</span> <span class="nf">getDiscount</span><span class="p">()</span>
   <span class="p">{</span>
     <span class="k">if</span> <span class="p">(</span><span class="nx">it</span><span class="err">&#39;</span><span class="nx">s</span> <span class="nx">discount</span> <span class="nb">time</span><span class="p">)</span> <span class="p">{</span>
       <span class="k">return</span> <span class="mi">10</span><span class="p">;</span>
     <span class="p">}</span>
     <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-  <span class="p">}</span> 
+  <span class="p">}</span>
   </code></pre></figure>
 
 <h3 id="include-all-the-necessary-details">Include all the necessary details</h3>
@@ -886,7 +886,7 @@ The only exception is in the <code>Service/DTO</code> classes due to tooling req
 <ul>
   <li>Short description</li>
   <li>
-    <p>Long description that explains the motivation behind the implementation. 
+    <p>Long description that explains the motivation behind the implementation.
 For example:</p>
 
     <ul>
@@ -903,11 +903,25 @@ If there is no such operator, the <code>@return</code> tag must have <code>void<
 All occurrences of <code>@throws</code> in a DocBlock must be after <code>@param</code> and <code>@return</code> (if any).</li>
 </ul>
 
-<p>Exceptions:
-* Constructors may not have short and/or long description
-* Testing methods in Unit tests may not have doc blocks if the test’s method name follows the convention (test<MethodName>)
-   * If the test does not follow the convention, it should have a doc block describing the covered methods
-   * Non-testing methods should have a doc block with description. It includes data providers and any helper methods</MethodName></p>
+<p><strong>Exceptions to these rules:</strong></p>
+
+<ul>
+  <li>
+    <p>Constructors may not have short and/or long description</p>
+  </li>
+  <li>
+    <p>Testing methods in Unit tests may not have doc blocks if the test’s method name follows the convention (test<MethodName>)</MethodName></p>
+
+    <ul>
+      <li>
+        <p>If the test does not follow the convention, it should have a doc block describing the covered methods</p>
+      </li>
+      <li>
+        <p>Non-testing methods should have a doc block with description. It includes data providers and any helper methods</p>
+      </li>
+    </ul>
+  </li>
+</ul>
 
 <h4 id="things-to-include">Things to include</h4>
 
@@ -921,10 +935,10 @@ All occurrences of <code>@throws</code> in a DocBlock must be after <code>@param
       <li>
         <p>There is more than one possible input/output type.</p>
 
-        <p>For example: <code>@return Config|null</code>.<br />
+        <p>For example: <code>@return Config|null</code>.
 The DockBlock needs to explain what situations return <code>null</code>.</p>
 
-        <p>Another example: <code>@param FileInterface | null</code>.<br />
+        <p>Another example: <code>@param FileInterface | null</code>.
 The DocBlock needs to explain what happens when the value of the parameter is <code>null</code>.</p>
 
         <p>Ideally, implementations such as these should be avoided.</p>
@@ -941,7 +955,7 @@ The DocBlock needs to explain what happens when the value of the parameter is <c
 <h4 id="things-to-avoid">Things to avoid</h4>
 
 <ul>
-  <li>Copying the algorithm. 
+  <li>Copying the algorithm.
 The algorithm must be self-explanatory and understood by reviewing the code and unit tests.</li>
   <li>Information that is out of date or has the potential to become out of date.</li>
 </ul>
@@ -1111,7 +1125,7 @@ Documentation is organized with the use of namespaces.</p>
 <span class="sd">     * @return int</span>
 <span class="sd">     */</span>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">getVal</span><span class="p">();</span>
- 
+
     <span class="sd">/**</span>
 <span class="sd">     * Set value</span>
 <span class="sd">     *</span>
@@ -1135,7 +1149,7 @@ Documentation is organized with the use of namespaces.</p>
     <span class="k">public</span> <span class="k">function</span> <span class="nf">getVal</span><span class="p">()</span>
     <span class="p">{</span>
     <span class="p">}</span>
- 
+
     <span class="sd">/**</span>
 <span class="sd">     * Set value</span>
 <span class="sd">     *</span>
@@ -1171,8 +1185,8 @@ You do not need to annotate each method individually.</p>
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
 <span class="sd"> * Get some object</span>
 <span class="sd"> *</span>
-<span class="sd"> * @deprecated Added to not break backward compatibility of the constructor signature </span>
-<span class="sd"> *             by injecting the new dependency directly. </span>
+<span class="sd"> * @deprecated Added to not break backward compatibility of the constructor signature</span>
+<span class="sd"> *             by injecting the new dependency directly.</span>
 <span class="sd"> *             The method can be removed in a future major release, when constructor signature can be changed</span>
 <span class="sd"> * @return SomeObjectInterface</span>
 <span class="sd"> */</span>
@@ -1192,7 +1206,7 @@ You do not need to annotate each method individually.</p>
 <span class="p">{</span>
     <span class="o">...</span>
 <span class="p">}</span>
- 
+
 <span class="sd">/**</span>
 <span class="sd"> * Set price for specified scope</span>
 <span class="sd"> *</span>
