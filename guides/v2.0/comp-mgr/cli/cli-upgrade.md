@@ -70,14 +70,14 @@ To prevent access to your store while it's being upgraded, put your store in mai
 		composer require <product> <version> --no-update
 		composer update
 
-	For example, to upgrade to Magento CE version 2.0.11, enter:
+	For example, to upgrade to Magento CE version 2.0.13, enter:
 
-		composer require magento/product-community-edition 2.0.11 --no-update
+		composer require magento/product-community-edition 2.0.13 --no-update
 		composer update
 
-	To upgrade to Magento EE version 2.0.11, enter:
+	To upgrade to Magento EE version 2.0.13, enter:
 
-		composer require magento/product-enterprise-edition 2.0.11 --no-update
+		composer require magento/product-enterprise-edition 2.0.13 --no-update
 		composer update
 	
 	<div class="bs-callout bs-callout-info" id="info">
