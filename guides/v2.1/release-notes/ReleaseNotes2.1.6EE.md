@@ -13,61 +13,95 @@ github_link: release-notes/ReleaseNotes2.1.6EE.md
 *	TOC
 {:toc}
 
-We are pleased to present Magento Enterprise Edition 2.1.6. This release includes important enhancements to the security of your Magento software.
+We are pleased to present Magento Enterprise Edition 2.1.6. This release includes important performance enhancements for your Magento software.
 
 
-<div class="bs-callout bs-callout-warning" markdown="1">
-While there are no confirmed attacks related to these vulnerabilities to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento software to the latest version as soon as possible.
-</div>
+Improved the performance of configurable products
 
-Looking for the <a href="http://devdocs.magento.com/guides/v2.0/cloud/release-notes/CloudReleaseNotes2.1.4.html" target="_blank">Magento Enterprise Cloud Edition 2.1.4 and 2.0.12 Release Notes</a>?
+Magento Performance team introduced bunch of optimizations to configurable product called to support large number of options with minimal impact on response time for both side of store: storefront and admin. Meanwhile when using configurable [big configurable] products together with Swatches module merchants report significant performance drop. Each option data is read and processed separately, moreover data processing duplication takes place. Goal of this story is to make configurable products pages responsiveness with swatches close to responsiveness without swatches.
+
+
+
+
+performance enhancements:
+
+configurable products loading — removed redundancies
+
+enhance performance of swatch behavior, and added an option to turn off swatches for a category
+
+
+
+
+Looking for the <a href="http://devdocs.magento.com/guides/v2.0/cloud/release-notes/CloudReleaseNotes2.1.4.html" target="_blank">Magento Enterprise Cloud Edition Release Notes</a>?
 
 
 ## Highlights
 
 Magento 2.1.6 contains 15 security enhancements. Look for the following highlights in this release:
 
-* **Removal of vulnerability with the Zend framework `Zend_Mail` library**. For more information, see <a href="https://magento.com/security/news/new-zend-framework-1-security-vulnerability" target="_blank">New Zend Framework 1 Security Vulnerability</a>.  
 
 
 
-## Security enhancements
+## Functional enhancements
 
-<!--- 64635 -->
+<!--- 65404 -->
 
-<!--- 64049 -->* We’ve updated several vulnerable moment.js libraries (query-migrate, query, jquery-ui-1.9.2.js)
 
-<!--- 63879 -->* You can no longer instantiate an arbitrary object while adding conditions to an email reminder rule. 
+<!--- 65403 -->
 
-<!--- 63877 -->* The Admin URL in the response body of an HTTP request is no longer visible to unauthenticated users 
+<!--- 65402 -->
 
-<!--- 63869 -->
+<!--- 65362 -->
 
-<!--- 63866 -->* Admin users without proper permissions can no longer delete store backups or system support reports. 
+<!--- 65339 -->
 
-<!--- 63864 -->* Customer-authenticated APIs are no longer vulnerable to CSRF.
-
-<!--- 63862 -->
-
-<!--- 63680 -->
-
-<!--- 63632-->
-
-<!--- 63527 -->
-
-<!--- 63517 -->
-
-<!--- 62475 -->* Magento now displays a 404 page when you try to route a request to index.phpadmin. Previously, Magento displayed an Admin page.
-
-<!--- 62313 -->* We’ve removed  the PHP serialized object from  the JSON report_data component from the \Magento\Support\Ui\Component\Listing\Column\ReportActions response. 
-
-<!--- 61015 -->* Action logs no longer display plain-text passwords. 
-
-<!--- 59097 -->
+<!--- 65324 -->
 
 
 
+<!--- 65251 -->* 
 
+<!--- 65249 --> OMIT
+
+<!--- 65248 -->
+
+<!--- 65247 -->
+
+<!--- 65246 -->
+
+<!--- 64857 -->OMIT
+
+<!--- 64856 -->
+
+<!--- 65250 -->
+
+
+<!--- 60565 --> OMIT
+
+
+<!--- 65484 -->
+
+<!--- 65483 -->
+
+
+<!--- 65482 -->
+
+
+<!--- 65481 -->
+
+<!--- 65480 -->
+
+<!--- 65609 -->
+
+
+
+
+
+<!--- DUPLICATE -->
+<!--- 65252 -->
+
+<!--- INTERNAL ONLY -->
+<!--- 65203 -->
 
 
 ## System requirements
