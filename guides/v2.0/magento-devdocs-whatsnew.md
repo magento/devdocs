@@ -13,10 +13,19 @@ github_link: magento-devdocs-whatsnew.md
 
 This page contains recent changes that we think you'd like to know about. We exclude from this list proofreading, spelling checks, and all minor updates.
 
-## Feb 2017
+## March 2017
 
 | Description  | Versions applied to  | New or Updated | Date |
 |--------------|--------------|----------------------|--------|
+| [Import a Magento EE project into Magento Enterprise Cloud Edition (MECE)]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-first-steps.html){:target="_blank"}  | 2.x  |  New | Mar 1  |
+| [MECE configuration management]({{ site.gdeurl21 }}cloud/live/sens-data-over.html){:target="_blank"}  | 2.1.x  |  New |  Mar 3 |
+| [Reorganize and update how to get started with an MECE environment]({{ page.baseurl }}cloud/before/before-setup-env-1_get-start.html){:target="_blank"}  | 2.x  |  Updated |  Mar 3 |
+| [Reorganize and correct issues with MECE workspace]({{ page.baseurl }}cloud/before/before-workspace.html){:target="_blank"} | 2.x  | Updated  |  Mar 2 |
+|  [Magento Functional Test Framework scenario test]({{ page.baseurl }}mtf/mtf_entities/mtf_scenariotest.html) | 2.x  | New  |  Mar 3 |
+
+
+{% collapsibleh2 Feb 2017 %}
+
 | [Magento Enterprise Cloud Edition (MECE) deployment]({{ page.baseurl }}cloud/discover-deploy.html){:target="_blank"} | 2.x | Updated | Feb 23 |
 | [How to use logs to troubleshoot MECE]({{ page.baseurl }}cloud/trouble/environments-logs.html){:target="_blank"} | 2.x | New | Feb 23 |
 | [How to SSH in to an MECE integration, staging, or production system]({{ page.baseurl }}cloud/env/environments-ssh.html){:target="_blank"} | 2.x | Updated | Feb 23 |
@@ -37,6 +46,8 @@ This page contains recent changes that we think you'd like to know about. We exc
 |  [Use PhpStorm, PHPUnit, and Xdebug with DevBox]({{ page.baseurl }}install-gde/docker/docker-phpstorm-parent.html){:target="_blank"} | 2.x  | New  | Feb 8  |
 | [Clarify file system permissions for production]({{ page.baseurl }}config-guide/prod/prod_file-sys-perms.html){:target="_blank"}  | 2.x  | Updated  | Jan 27  |
 | [Corrected instructions to set up multiple websites or stores on Magento Enterprise Cloud Edition]({{ page.baseurl }}cloud/project/project-multi-sites.html){:target="_blank"} | 2.x  | Updated  | Jan 31  |
+
+{% endcollapsibleh2 %}
 
 
 {% collapsibleh2 January 2017 %}

@@ -4,7 +4,7 @@ group: cloud
 subgroup: 08_setup
 title: Step 5, Set up PHP and MySQL
 menu_title: Step 5, Set up PHP and MySQL
-menu_order: 20
+menu_order: 57
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: workspace
@@ -61,5 +61,4 @@ If necessary, set `auto_increment_increment` to 3:
 {% endcollapsible %}
 
 #### Next step
-*	If Magento isn't installed in a Cloud environment, see [create a new project from a template]({{ page.baseurl }}cloud/access-acct/first-time-setup_template.html)
-*	If Magento _is_ installed already, see [Set up an environment and install the Magento software locally]({{ page.baseurl }}cloud/access-acct/set-up-env.html)
+[Step 6, Set up the Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html)

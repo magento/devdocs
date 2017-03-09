@@ -34,7 +34,6 @@ The following image shows a page where the strings meant to be changed are used:
 
 <div style="border: 1px solid #ABABAB">
 <img width="700px" src="{{ site.baseurl }}common/images/fdg_trans_bag.png" alt="Product page where the Add to Compare string is displayed">
-</img>
 </div>
 
 To override the strings, OrangeCo plan to use the en_US dictionary file. 

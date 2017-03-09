@@ -4,7 +4,7 @@ group: cloud
 subgroup: 08_setup
 title: Prepare your existing Magento EE system
 menu_title: Prepare your existing Magento EE system
-menu_order: 78
+menu_order: 153
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: import
@@ -149,7 +149,7 @@ To edit `composer.json`:
 ### Back up and transfer media files
 This section discusses how to use the [`magento setup:backup --media`]({{ page.basesurl }}install/cli/install-cli-backup.html) to back up media files.
 
-1.  Get the  integration system's [SSH URL]({{ page.baseurl cloud/access-acct/first-time-setup_import-prereq.html#cloud-import-pre-sshurl}}).
+1.  Get the  integration system's [SSH URL]({{ page.baseurl}}cloud/access-acct/first-time-setup_import-prereq.html#cloud-import-pre-sshurl).
 2.  To back up media files, enter the following command:
 
         php <Magento EE install dir>/bin/magento setup:backup --media

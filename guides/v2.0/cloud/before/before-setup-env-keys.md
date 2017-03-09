@@ -2,9 +2,9 @@
 layout: default
 group: cloud
 subgroup: 08_setup
-title: Step 5, Set up authentication keys
-menu_title: Step 5, Set up authentication keys
-menu_node: 65
+title: Step 3, Set up authentication keys
+menu_title: Step 3, Set up authentication keys
+menu_order: 163
 level3_menu_node: level3child
 level3_subgroup: setupenv
 version: 2.0
