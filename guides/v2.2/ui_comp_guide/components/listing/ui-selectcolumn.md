@@ -24,11 +24,11 @@ SelectColumn specific configuration:
     <th>Default</th>
   </tr>
   <tr>
-    <td>options</td>
-    <td>An array of objects used to display field's content by matching the associated record's value
-with the value of one of the elements provided in options.</td>
+    <td><code>options</code></td>
+    <td>An array of objects used to display a field's content by matching the associated record's value
+with the value of one of the elements provided in <code>options</code>.</td>
     <td>Array<Option></td>
-    <td>ui/grid/cells/thumbnail</td>
+    <td><code>ui/grid/cells/thumbnail</code></td>
   </tr>
 </table>
 
@@ -55,5 +55,3 @@ with the value of one of the elements provided in options.</td>
     <td>Required</td>
   </tr>
 </table>
-
-

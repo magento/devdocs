@@ -24,21 +24,21 @@ Paging own configuration:
     <th>Default Value</th>
   </tr>
   <tr>
-    <td>totalTmpl</td>
-    <td>Path to the .htnk template for rendering the total amount of found records.</td>
+    <td><code>totalTmpl</code></td>
+    <td>Path to the <code>.html</code> template for rendering the total amount of found records.</td>
     <td>String</td>
-    <td>ui/grid/paging-total</td>
+    <td><code>ui/grid/paging-total</code></td>
   </tr>
   <tr>
-    <td>sizesConfig</td>
-    <td>Configuration that is passed to the Sizes component.</td>
+    <td><code>sizesConfig</code></td>
+    <td>Configuration that is passed to the <code>Sizes</code> component.</td>
     <td>Object</td>
     <td>-</td>
   </tr>
   <tr>
-    <td>template</td>
-    <td>The path to the component’s .html template.</td>
+    <td><code>template</code></td>
+    <td>The path to the component’s <code>.html</code> template.</td>
     <td>String</td>
-    <td>ui/grid/paging/paging</td>
+    <td><code>ui/grid/paging/paging</code></td>
   </tr>
 </table>

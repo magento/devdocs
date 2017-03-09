@@ -8,9 +8,9 @@ version: 2.2
 github_link: ui_comp_guide/components/listing/ui-exportbutton.md
 ---
 
-ExportButton Component is responsible for export grid data to specified data format (cvs, xml, and so on).
+The ExportButton component exports grid data to the specified data format (cvs, xml, and so on).
 
-To enable the ExportButton сomponent, add the `exportButton` element with specified `selectProvider` item to listing configuration file.
+To enable the ExportButton сomponent, add the `exportButton` element with a `selectProvider` item to the listing configuration file.
 
 {% highlight XML %}
 <exportButton name="export_button">
@@ -40,22 +40,22 @@ ExportButton own configuration:
     <th>Default</th>
   </tr>
   <tr>
-    <td>additionalParams</td>
+    <td><code>additionalParams</code></td>
     <td>List of additional parameters added to each performed request.</td>
-    <td>{<br>[name: string]: string<br>}</td>
+    <td>{<br><code>[name: string]: string<br>}</code></td>
     <td>-</td>
   </tr>
   <tr>
-    <td>options</td>
+    <td><code>options</code></td>
     <td>List of available formats in which the table's data can be exported.</td>
     <td>Array<a href="#exportoption">&lt;ExportOption&gt;</a> </td>
     <td>[{<br>value: "csv",<br>label: "CSV",<br>url: "mui/export/gridToCsv"<br>}, {<br>value: "xml",<br>label: "Excel XML",<br>url: "mui/export/gridToXml"<br>}]</td>
   </tr>
   <tr>
-    <td>template</td>
-    <td>Path to the component’s .html template.</td>
+    <td><code>template</code></td>
+    <td>Path to the component’s <code>.html</code> template.</td>
     <td>String</td>
-    <td>ui/grid/exportButton</td>
+    <td><code>ui/grid/exportButton</code></td>
   </tr>
 </table>
 

@@ -23,33 +23,33 @@ Filters own configuration:
     <th>Default Value</th>
   </tr>
   <tr>
-    <td>chipsConfig</td>
-    <td>Configuration passed to the FiltersChips component.</td>
+    <td><code>chipsConfig</code></td>
+    <td>Configuration passed to the <code>FiltersChips</code> component.</td>
     <td>Object</td>
     <td>Configuration that is passed to the <a href="{{page.baseurl}}ui_comp_guide/components/listing/ui-filtersсhips.html">FiltersChips component</a>.</td>
   </tr>
   <tr>
-    <td>statefull</td>
-    <td>Defines a list of component's properties whose values are automatically saved in the configured storage if they change. Where key is the property's name and the value defines whether its saved.</td>
+    <td><code>statefull</code></td>
+    <td>Defines a list of component properties whose values are automatically saved in the configured storage if they change. <i>key</i> is the property's name and the <i>value</i> defines whether its saved.</td>
     <td>{<br>[name: string]: boolean<br>}</td>
     <td></td>
   </tr>
   <tr>
-    <td>stickyTmpl</td>
-    <td>Additional .html template used to display filters when the Toolbar component gets a fixed position.</td>
+    <td><code>stickyTmpl</code></td>
+    <td>Additional <code>.html</code> template that displays filters when the Toolbar component gets a fixed position.</td>
     <td>String</td>
-    <td>ui/grid/sticky/filters</td>
+    <td><code>ui/grid/sticky/filters</code></td>
   </tr>
   <tr>
-    <td>template</td>
-    <td>Path to the component’s .html template.</td>
+    <td><code>template</code></td>
+    <td>Path to the component’s <code>.html</code> template.</td>
     <td>String</td>
-    <td>ui/grid/filters/filters</td>
+    <td><p>ui/grid/filters/filters</p></td>
   </tr>
   <tr>
-    <td>templates.filters</td>
-    <td>Describes basic filter types. This definitions are used to dynamically create filter elements based on the "filter" field specified in the corresponding column. For example, if a column's "filter" property contains the "text" value, then  a Filter component instance with a definition for the "text" type will be created.</td>
+    <td><code>templates.filters</code></td>
+    <td>Describes basic filter types. This definitions are used to dynamically create filter elements based on the <code>filter</code> field specified in the corresponding column. For example, if a column's <code>filter</code> property contains the <code>text</code> value, then a <code>Filter</code> component instance with a definition for the <code>text</code> type will be created.</td>
     <td>Object</td>
-    <td>Contains definitions of the "text", "select","dateRange" and "textRange" filter types.</td>
+    <td>Contains definitions of the <code>text</code>, <code>select</code>,<code>dateRange</code> and <code>textRange</code> filter types.</td>
   </tr>
 </table>

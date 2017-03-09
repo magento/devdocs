@@ -24,38 +24,38 @@ Sizes own configuration:
     <th>Default Value</th>
   </tr>
   <tr>
-    <td>maxSize</td>
+    <td><code>maxSize</code></td>
     <td>Maximum allowed number of rows.</td>
     <td>Number</td>
     <td>20</td>
   </tr>
   <tr>
-    <td>minSize</td>
-    <td>Minimun allowed number of rows.</td>
+    <td><code>minSize</code></td>
+    <td>Minimun number of rows.</td>
     <td>Number</td>
     <td>1</td>
   </tr>
   <tr>
     <td>options</td>
     <td>The initial list of available table sizes (number of rows).</td>
-    <td><br>{<br>[name: number]: SizeOption<br>}<br></td>
+    <td><br>{<br><code>[name: number]: SizeOption</code><br>}<br></td>
     <td>[20, 30, 50, 100, 200]</td>
   </tr>
   <tr>
-    <td>template</td>
-    <td>Path to the component’s .html template.</td>
+    <td><code>template</code></td>
+    <td>Path to the component’s <code>.html</code> template.</td>
     <td>String</td>
-    <td>ui/grid/paging/sizes</td>
+    <td><code>ui/grid/paging/sizes</code></td>
   </tr>
   <tr>
-    <td>value</td>
+    <td><code>value</code></td>
     <td>Initial number of rows per page.</td>
     <td>Number</td>
     <td>20</td>
   </tr>
 </table>
 
-### SizeOption interafce
+### SizeOption interface
 
 <table>
   <tr>
@@ -65,14 +65,14 @@ Sizes own configuration:
     <th>Required</th>
   </tr>
   <tr>
-    <td>label</td>
-    <td>Label displayed in the rendered options list. This label is usually equal to the corresponding "value" property.</td>
-    <td>String|Number</td>
+    <td><code>label</code></td>
+    <td>Label displayed in the rendered options list. This label is usually equal to the corresponding <code>value</code> property.</td>
+    <td>String | Number</td>
     <td>Required</td>
   </tr>
   <tr>
-    <td>value</td>
-    <td>Options identifier which reprsents the table size.</td>
+    <td><code>value</code></td>
+    <td>Options identifier which represents the table size.</td>
     <td>Number</td>
     <td>Required</td>
   </tr>

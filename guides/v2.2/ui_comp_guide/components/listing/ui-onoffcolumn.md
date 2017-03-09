@@ -24,21 +24,21 @@ OnOffColumn specific configuration:
     <th>Default Value</th>
   </tr>
   <tr>
-    <td>bodyTmpl</td>
-    <td>Path to the template that is used to render column's field in the table's body.</td>
+    <td><code>bodyTmpl</code></td>
+    <td>Path to the template that is used to render a column's field in the table's body.</td>
     <td>String</td>
-    <td>ui/grid/cells/onoff</td>
+    <td><code>ui/grid/cells/onoff</code></td>
   </tr>
   <tr>
-    <td>fieldClass</td>
+    <td><code>fieldClass</code></td>
     <td>Additonal CSS classes added to the column's field elements.</td>
-    <td>{<br>[name: string]: boolean<br>}</td>
-    <td>{<br>'admin__scope-old': true,<br>'data-grid-onoff-cell': true,<br>'data-grid-checkbox-cell': false<br>}</td>
+    <td>{<br><code>[name: string]: boolean</code><br>}</td>
+    <td>{<br>'<code>admin__scope-old': true,</code><br><code>'data-grid-onoff-cell': true,</code><br><code>'data-grid-checkbox-cell': false</code><br>}</td>
   </tr>
   <tr>
-    <td>headerTmpl</td>
-    <td>Path to the .html template for the column's header.</td>
+    <td><code>headerTmpl</code></td>
+    <td>Path to the <code>.html</code> template for the column's header.</td>
     <td>String</td>
-    <td>ui/grid/columns/onoff</td>
+    <td><code>ui/grid/columns/onoff</code></td>
   </tr>
 </table>

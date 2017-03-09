@@ -24,9 +24,9 @@ DateColumn specific configuration:
     <th>Default</th>
   </tr>
   <tr>
-    <td>dateFormat</td>
+    <td><code>dateFormat</code></td>
     <td>Date format for the displayed column's values.</td>
     <td>String</td>
-    <td>MMM d, YYYY h:mm:ss A</td>
+    <td><code>MMM d, YYYY h:mm:ss A</code></td>
   </tr>
 </table>

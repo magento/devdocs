@@ -24,8 +24,8 @@ LinkColumn specific configuration:
     <th>Default</th>
   </tr>
   <tr>
-    <td>link</td>
-    <td>The key in a field's record object that contains link value.</td>
+    <td><code>link</code></td>
+    <td>The key in a field's record object that contains the link value.</td>
     <td>String</td>
     <td>link</td>
   </tr>

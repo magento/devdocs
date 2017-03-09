@@ -8,11 +8,11 @@ version: 2.2
 github_link: ui_comp_guide/components/listing/ui-range.md
 ---
 
-Constructor: [<Magento_Ui_module_dir>/view/base/web/js/grid/filters/range.js]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/grid/filters/range.js)
+Constructor: [app/code/Magento/Ui/view/base/web/js/grid/filters/range.js]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/grid/filters/range.js)
 
 ## Range configuration
 
-Extends all [Multiline]({{page.baseurl}}ui_comp_guide/components/ui-multiline.md) configuration.
+Extends all [Multiline]({{page.baseurl}}ui_comp_guide/components/ui-multiline.html) configuration.
 
 Range own configuration:
 
@@ -24,15 +24,15 @@ Range own configuration:
     <th>Default Value</th>
   </tr>
   <tr>
-    <td>rangeType</td>
-    <td>Defines what kind of input elements the range contains. For example, if the value is 'date', then range includes two date fields.</td>
+    <td><code>rangeType</code></td>
+    <td>Defines what kind of input elements the range contains. For example, if the value is <code>date</code>, then range includes two date fields.</td>
     <td>String</td>
     <td>-</td>
   </tr>
   <tr>
-    <td>template</td>
-    <td>Path to the component’s .html template.</td>
+    <td><code>template</code></td>
+    <td>Path to the component’s <code>.html</code> template.</td>
     <td>String</td>
-    <td>ui/grid/filters/elements/group</td>
+    <td><code>ui/grid/filters/elements/group</code></td>
   </tr>
 </table>

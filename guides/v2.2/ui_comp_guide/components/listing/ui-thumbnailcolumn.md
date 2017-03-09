@@ -8,7 +8,7 @@ version: 2.2
 github_link: ui_comp_guide/components/listing/ui-thumbnailcolumn.md
 ---
 
-Constructor: [<Magento_Ui_module_dir>/view/base/web/js/grid/columns/thumbnail.js]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/grid/columns/thumbnail.js)
+Constructor: [app/code/Magento/Ui/view/base/web/js/grid/columns/thumbnail.js]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/grid/columns/thumbnail.js)
 
 ## ThumbnailColumn configuration
 
@@ -24,15 +24,15 @@ ThumbnailColumn specific configuration:
     <th>Default</th>
   </tr>
   <tr>
-    <td>bodyTmpl</td>
-    <td>Path to the template used for rendering column's fields in the table's body.</td>
+    <td><code>bodyTmpl</code></td>
+    <td>Path to the template used for rendering a column's fields in the table's body.</td>
     <td>String</td>
-    <td>ui/grid/cells/thumbnail</td>
+    <td><code>ui/grid/cells/thumbnail</code></td>
   </tr>
   <tr>
-    <td>fieldClass</td>
+    <td><code>fieldClass</code></td>
     <td>Additonal CSS classes added to the column's field elements.</td>
-    <td>{[name: string]: boolean}</td>
-    <td>{'data-grid-thumbnail-cell': true}</td>
+    <td><code>{[name: string]: boolean}</code></td>
+    <td><code>{'data-grid-thumbnail-cell': true}</code></td>
   </tr>
 </table>

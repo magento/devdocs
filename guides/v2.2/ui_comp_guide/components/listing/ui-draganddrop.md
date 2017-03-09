@@ -24,27 +24,27 @@ DragAndDrop own configuration:
     <th>Default</th>
   </tr>
   <tr>
-    <td>enabled</td>
-    <td>Whether it's allowed to change the position of columns.</td>
+    <td><code>enabled</code></td>
+    <td>Whether the component is allowed to change the position of columns.</td>
+    <td>Boolean</td>
+    <td><code>true</code></td>
+  </tr>
+  <tr>
+    <td><code>fixedX</code></td>
+    <td>Whether the column has a fixed positon on the X-axis. That is, whether it can be moved horizontally.</td>
+    <td>Boolean</td>
+    <td><code>false</code></td>
+  </tr>
+  <tr>
+    <td><code>fixedY</code></td>
+    <td>Whether the column has a fixed positon on the Y-axis.  That is, whether it can be moved vertically.</td>
     <td>Boolean</td>
     <td>true</td>
   </tr>
   <tr>
-    <td>fixedX</td>
-    <td>Whether the column has a fixed positon on the X-axis, that is, whether it can be moved horizontally.</td>
-    <td>Boolean</td>
-    <td>false</td>
-  </tr>
-  <tr>
-    <td>fixedY</td>
-    <td>Whether the column has a fixed positon on the Y-axis,  that is whether it can be moved vertically.</td>
-    <td>Boolean</td>
-    <td>true</td>
-  </tr>
-  <tr>
-    <td>noSelectClass</td>
+    <td><code>noSelectClass</code></td>
     <td>CSS class applied to the table when one of its columns is being dragged.</td>
     <td>String</td>
-    <td>_no-select</td>
+    <td><code>_no-select</code></td>
   </tr>
 </table>

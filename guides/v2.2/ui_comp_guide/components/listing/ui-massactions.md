@@ -10,9 +10,9 @@ github_link: ui_comp_guide/components/listing/ui-massactions.md
 
 ### MassAction JS component structure
 
-MassActions component adds ability to be selectable (by attaching it's template to each item in Listing) to items in Listing and creates actions to perform with selected items (for example: 'Delete', 'Update attributes' and so on).
+The <code>MassActions</code> component adds the ability to be selectable (by attaching its template to each item in <code>Listing</code>) to items in <only>Listing</only> and creates actions to perform with selected items (for example: 'Delete', 'Update attributes' and so on).
 
-"Select all" functionality is improved in Magento 2. Instead of creating a list of all selected items they are now flagged and list is created only for excluded elements.
+The "Select all" functionality is improved in Magento 2. Instead of creating a list of all selected items, they are now flagged. A list is created for excluded elements only.
 
 #### Component Elements (classes, files)
 
@@ -31,7 +31,7 @@ Dependency on the following components:
 
 #### MassActions configuration
 
-Extends Collapsible configuration with the following options:
+Extends <code>Collapsible</code> configuration with the following options:
 <table>
   <tr>
     <th>Option</th>
@@ -107,20 +107,20 @@ Extends Collapsible configuration with the following options:
 </table>
 
 
-<h5>Methods and Events</h5>
+##### Methods and Events
 
 The following API methods are available:
 
-* getAction - returns action instance found by the provided identifier
-* addAction - adds new action to the actions
-* applyAction - applies specified as identifier action
-* getSelections - returns object with current selections
+* <code>getAction</code> - returns the action instance found by the provided identifier
+* <code>addAction</code> - adds a new action to the actions
+* <code>applyAction</code> - applies the specified action as identifier action
+* <code>getSelections</code> - returns the object with current selections
 
-#### Example of configuration modifications:
+#### Example configuration modifications:
 
-* Redefining the link to the template
+##### Redefining the link to the template
 
-{% highlight javascript %}
+{% highlight xml %}
 <massaction name="listing_massaction">
     <argument name="data" xsi:type="array">
         ...
@@ -131,7 +131,7 @@ The following API methods are available:
 </massaction>
 {% endhighlight %}
 
-* Specifying action with confirmation
+##### Specifying action with confirmation
 
 {% highlight xml %}
 <massaction name="listing_massaction">
@@ -153,8 +153,7 @@ The following API methods are available:
 </massaction>
 {% endhighlight %}
 
-* Action with a custom callback
-
+##### Action with a custom callback
 
 Callback is provided by another component.
 
@@ -178,16 +177,16 @@ Callback is provided by another component.
 </massaction>
 {% endhighlight %}
 
-* Instance replacement: one instance of a component
+##### Instance replacement: one instance of a component
 
 Redefine link to constructor.
 
-<pre>
-&lt;massaction name="listing_massaction"&gt;
-    &lt;argument name="data" xsi:type="array"&gt;
-        &lt;item name="js_config" xsi:type="array"&gt;
-            &lt;item name="component" xsi:type="string"&gt;Magento_Products/js/grid/massactions&lt;/item&gt;
-        &lt;/item&gt;
-    &lt;/argument&gt;
-&lt;/massaction&gt;
-</pre>
+{% highlight xml %}
+<massaction name="listing_massaction">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="component" xsi:type="string">Magento_Products/js/grid/massactions</item>
+        </item>
+    </argument>
+</massaction>
+{% endhighlight %}

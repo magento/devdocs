@@ -24,21 +24,21 @@ ColumnsControls specific configuration:
     <th>Default Value</th>
   </tr>
   <tr>
-    <td>minVisible</td>
+    <td><code>minVisible</code></td>
     <td>Minimum number of columns that must be visible.</td>
     <td>Number</td>
     <td>1</td>
   </tr>
   <tr>
-    <td>maxVisible</td>
+    <td><code>maxVisible</code></td>
     <td>Maximum number of columns that can be visible.</td>
     <td>Number</td>
     <td>30</td>
   </tr>
   <tr>
-    <td>template</td>
+    <td><code>template</code></td>
     <td>The path to the component’s .html template.</td>
     <td>String</td>
-    <td>ui/grid/controls/columns</td>
+    <td><code>ui/grid/controls/columns</code></td>
   </tr>
 </table>

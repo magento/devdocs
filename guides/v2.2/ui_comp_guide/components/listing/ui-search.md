@@ -24,29 +24,27 @@ Search own configuration:
     <th>Default Value</th>
   </tr>
   <tr>
-    <td>label</td>
+    <td><code>label</code></td>
     <td>The search field label.</td>
     <td>String</td>
     <td>Keyword</td>
   </tr>
   <tr>
-    <td>placeholder</td>
+    <td><code>placeholder</code></td>
     <td>Value displayed when the search field is empty.</td>
     <td>String</td>
     <td>Search by keyword</td>
   </tr>
   <tr>
-    <td>statefull</td>
-    <td>Defines a list of component's properties whose values are automatically saved in the configured storage if they change. Where key is the property's name and the value defines whether its saved.</td>
+    <td><code>statefull</code></td>
+    <td>Defines a list of component properties whose values are automatically saved in the configured storage if they change. <code>key</code> is the property's name and the value defines whether its saved.</td>
     <td>{<br>[name: string]: boolean<br>}</td>
-    <td>{value: true}</td>
+    <td><p>{value: true}</p></td>
   </tr>
   <tr>
-    <td>template</td>
-    <td>Зath to the component’s .html template.</td>
+    <td><code>template</code></td>
+    <td>Зath to the component’s <code>.html</code> template.</td>
     <td>String</td>
-    <td>ui/grid/search/search</td>
+    <td><code>ui/grid/search/search</code></td>
   </tr>
 </table>
-
-

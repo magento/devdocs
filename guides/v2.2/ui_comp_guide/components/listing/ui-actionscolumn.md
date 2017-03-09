@@ -24,33 +24,33 @@ ActionsColumn specific configuration:
     <th>Default</th>
   </tr>
   <tr>
-    <td>bodyTmpl</td>
-    <td>Path to the <code>.html</code> template used to render column's field in the table's body.</td>
+    <td><code>bodyTmpl</code></td>
+    <td>Path to the <code>.html</code> template used to render a column's field in the table's body.</td>
     <td>String</td>
-    <td>ui/grid/cells/actions</td>
+    <td><code>ui/grid/cells/actions</code></td>
   </tr>
   <tr>
-    <td>draggable</td>
+    <td><code>draggable</code></td>
     <td>Defines whether a user can change column's position in the table by grabbing column's header and draging it across the table.</td>
     <td>Boolean</td>
     <td>false</td>
   </tr>
   <tr>
-    <td>fieldClass</td>
+    <td><code>fieldClass</code></td>
     <td>Additonal CSS classes added to the column's field elements.</td>
-    <td>{[name: string]: boolean}</td>
-    <td>{'data-grid-actions-cell': true}</td>
+    <td><code>{[name: string]: boolean}</code></td>
+    <td><code>{'data-grid-actions-cell': true}</code></td>
   </tr>
   <tr>
-    <td>sortable</td>
+    <td><code>sortable</code></td>
     <td>Whether column's fields can be used to sort records in the table.</td>
     <td>Boolean</td>
-    <td>false</td>
+    <td><code>false</code></td>
   </tr>
   <tr>
-    <td>templates.actions</td>
+    <td><code>templates.actions</code></td>
     <td>A list of actions that will be displayed in column's fields.</td>
-    <td>{[name: string]: ActionItem}</td>
+    <td><code>{[name: string]: ActionItem}</code></td>
     <td>-</td>
   </tr>
 </table>
@@ -65,31 +65,31 @@ ActionsColumn specific configuration:
     <th>Required</th>
   </tr>
   <tr>
-    <td>callback</td>
+    <td><code>callback</code></td>
     <td>Custom action's handler.</td>
     <td><a href="{{page.baseurl}}ui_comp_guide/components/listing/ui-column.md#column_action">ColumnAction</a> | Array &lt;ColumnAction&gt;  </td>
     <td>Optional</td>
   </tr>
   <tr>
-    <td>confirm</td>
+    <td><code>confirm</code></td>
     <td>Confirmation message shown before applying the action.</td>
-    <td><br>{<br>title: string;<br>message: string<br>}<br></td>
+    <td><br>{<br><code>title: string;</code><br><code>message: string</code><br>}<br></td>
     <td>Optional</td>
   </tr>
   <tr>
-    <td>href</td>
-    <td>The link to open on column's element click.</td>
+    <td><code>href</code></td>
+    <td>The link to open on when the column's element is clicked.</td>
     <td>String</td>
     <td>Optional</td>
   </tr>
   <tr>
-    <td>index</td>
+    <td><code>index</code></td>
     <td>Action's identifier.</td>
     <td>String</td>
     <td>Required</td>
   </tr>
   <tr>
-    <td>label</td>
+    <td><code>label</code></td>
     <td>Label to be displayed in the field.</td>
     <td>String</td>
     <td>Required</td>

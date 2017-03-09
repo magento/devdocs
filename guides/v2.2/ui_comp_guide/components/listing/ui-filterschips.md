@@ -23,12 +23,12 @@ FiltersChips own configuration:
     <th>Type</th>
     <th>Default Value</th>
   </tr>
- 
+
   <tr>
-    <td>template</td>
-    <td>Path to the component’s .html template.</td>
+    <td><code>template</code></td>
+    <td>Path to the component’s <code>.html</code> template.</td>
     <td>String</td>
-    <td>uui/grid/filters/chips</td>
+    <td><code>ui/grid/filters/chips</code></td>
   </tr>
 
 </table>
