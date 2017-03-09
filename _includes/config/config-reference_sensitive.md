@@ -15,7 +15,7 @@ These configuration values are availabe in the Magento Admin in **Stores** > Set
 
 Name  | Config path
 |--------------|--------------|
-Sender Name | `trans_email/ident_general/name`
+Sender Name | `trans_email/ident_general/name` 
 Sender Email | `trans_email/ident_general/email`
 Sender Name | `trans_email/ident_sales/name`
 Sender Email | `trans_email/ident_sales/email`
