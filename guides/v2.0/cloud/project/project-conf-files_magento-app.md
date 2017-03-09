@@ -299,7 +299,7 @@ To view the current list of PHP extensions, SSH into your environment and enter 
 Magento requires the following PHP extensions that are enabled by default: 
 
 *	<a href="http://php.net/manual/en/book.curl.php" target="_blank">curl</a>
-*	<a href="http://php.net/manual/en/book.image.php" target="_blank">gd</a>, <a href="http://php.net/manual/en/book.imagick.php" target="_blank">ImageMagick 6.3.7</a> (or later) or both
+*	<a href="http://php.net/manual/en/book.image.php" target="_blank">gd</a>
 *	<a href="http://php.net/manual/en/book.intl.php" target="_blank">intl</a>
 *	PHP 7 only: 
 
@@ -318,6 +318,9 @@ Magento requires the following PHP extensions that are enabled by default:
  
 You must install the following extensions:
 
+*   <a href="http://php.net/manual/en/book.imagick.php" target="_blank">ImageMagick 6.3.7</a> (or later)
+
+    imagick can optionally be used with the `gd` extension
 *	<a href="http://php.net/manual/en/book.xsl.php" target="_blank">xsl</a>
 *	[redis](https://pecl.php.net/package/redis){:target="_blank"}
 
