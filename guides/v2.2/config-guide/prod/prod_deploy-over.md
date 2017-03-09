@@ -14,7 +14,7 @@ Notes:
 
 *	Configuration management _and_ static asset deployment
 *	Shared configuration and environment-specific configuration (which includes sensitive values)
-*	Updated flow diagram
+	*	Updated flow diagram
 *	What a PHP developer needs to know
 *	Pointers to configuration references
 *	
