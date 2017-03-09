@@ -14,7 +14,7 @@ github_link: release-notes/ReleaseNotes2.1.0EE.md
 We are pleased to present Magento Enterprise Edition 2.1.0 General Availability. This release includes numerous functional fixes and enhancements.
 
 
-Backward-incompatible changes are documented in [Magento 2.1 backward incompatible changes]({{ page.baseurl }}release-notes/backward-incompatible-changes-2.1.html).
+Backward-incompatible changes are documented in [Magento 2.1 backward incompatible changes]({{ page.baseurl }}release-notes/backward-incompatible-changes.html).
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>This version of the Magento Enterprise Edition 2.1.0 Release Notes varies from the version of the Release Notes that we published with the June 23, 2016 GA release. We've identified these  changes in italics below.  The code base has not changed.</p>
