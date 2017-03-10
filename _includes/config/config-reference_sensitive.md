@@ -54,13 +54,13 @@ Name  | Config path | EE only? |
 Error Email Recipient | `catalog/productalert_cron/error_email` | ![Not EE-only]({{ site.baseurl }}common/images/red-x.png)
 YouTube API Key | `catalog/product_video/youtube_api_key` | ![Not EE-only]({{ site.baseurl }}common/images/red-x.png)
 Solr Server Hostname | `catalog/search/solr_server_hostname` | ![EE-only]({{ site.baseurl }}common/images/green-check.png)
-Solr Server Port | `catalog/search/solr_server_port` | ![Not EE-only]({{ site.baseurl }}common/images/red-x.png)
-Solr Server Username | `catalog/search/solr_server_username` | ![Not EE-only]({{ site.baseurl }}common/images/red-x.png)
-Solr Server Password | `catalog/search/solr_server_password` | ![Not EE-only]({{ site.baseurl }}common/images/red-x.png)
-Solr Server Path | `catalog/search/solr_server_path` | ![Not EE-only]({{ site.baseurl }}common/images/red-x.png)
-Elasticsearch Server Hostname | `catalog/search/elasticsearch_server_hostname` | ![Not EE-only]({{ site.baseurl }}common/images/red-x.png)
-Elasticsearch Server Port | `catalog/search/elasticsearch_server_port` | ![Not EE-only]({{ site.baseurl }}common/images/red-x.png)
-Elasticsearch Index Prefix | `catalog/search/elasticsearch_index_prefix` | ![Not EE-only]({{ site.baseurl }}common/images/red-x.png)
+Solr Server Port | `catalog/search/solr_server_port` | ![EE-only]({{ site.baseurl }}common/images/green-check.png)
+Solr Server Username | `catalog/search/solr_server_username` | ![EE-only]({{ site.baseurl }}common/images/green-check.png)
+Solr Server Password | `catalog/search/solr_server_password` | ![EE-only]({{ site.baseurl }}common/images/green-check.png)
+Solr Server Path | `catalog/search/solr_server_path` | ![EE-only]({{ site.baseurl }}common/images/green-check.png)
+Elasticsearch Server Hostname | `catalog/search/elasticsearch_server_hostname` | ![EE-only]({{ site.baseurl }}common/images/green-check.png)
+Elasticsearch Server Port | `catalog/search/elasticsearch_server_port` | ![EE-only]({{ site.baseurl }}common/images/green-check.png)
+Elasticsearch Index Prefix | `catalog/search/elasticsearch_index_prefix` | ![EE-only]({{ site.baseurl }}common/images/green-check.png)
 
 ### XML sitemap sensitive paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Catalog** > **XML Sitemap**.
