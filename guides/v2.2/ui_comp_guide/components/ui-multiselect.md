@@ -10,16 +10,16 @@ github_link: ui_comp_guide/components/ui-multiselect.md
 
 #### UI Multiselect Component
 
-The Multiselect component is used to provide check box interface for a specific listing or a specific data set. The component is an extension for Column component and allows selecting either a collection of items or all items from the given set.
+The Multiselect component provides a check box interface for a specific listing or data set. The component is an extension for the Column component, and it allows the user to select either a collection of items or all items from the given set.
 
-The Multiselect component which stores the information about the number of selected items in its template shares this data with the following components:
+The Multiselect component stores the information about the number of selected items in its template. It shares this data with the following components:
 
 * Pagination
 * MassAction
 
-When making any actions which affect the item selection, like filtering, the number of selected items in the Multiselect component is flushed as currently collection contains only one item and knows nothing about the general set of data.
+When making any actions that affect the item selection, like filtering, the number of selected items in the Multiselect component is flushed, as the current collection contains only one item and knows nothing about the general set of data.
 
-Multiselect is a child of the Grid component and is rendered in its view. Like any component, it can hold the sort order value which influences the order of all its child elements.
+Multiselect is a child of the Grid component and is rendered in its view. Like any component, it can hold the sort order value, which influences the order of all its child elements.
 
 When you specify the `after` or `before` property in the Multiselect component, it references any existing component in the parent container and renders it in that specified position.
 
@@ -29,36 +29,10 @@ The Multiselect component is implemented in the class `app\code\Magento\Ui\view\
 
 Templates used by this component are:
 
-* `app\code\Magento\Ui\view\base\web\templates\grid\cells\multiselect.html` - The template defines every specific field in the grid. It provides the Multiselect component with the check box interface for selecting item(s) in the grid and performing actions over them.
+* `app\code\Magento\Ui\view\base\web\templates\grid\cells\multiselect.html` - The template defines each field in the grid. It provides the Multiselect component with the check box interface for selecting item(s) in the grid and performing actions over them.
 * `app\code\Magento\Ui\view\base\web\templates\grid\columns\multiselect.html` - The template defines the grid header with drop-down lists and the Select All, Deselect All, and other options.
 
-The component provides the following options:
-
-* header template option
-* body template option
-
-Code samples available in the default configuration:
-
-`headerTmpl: 'ui/grid/columns/multiselect'`
-
-`bodyTmpl: 'ui/grid/cells/multiselect'`
-
-* imports option
-
-    The option defines from where the component receives its data.
-
-* actions option
-
-    You can modify the default actions by, for example, renaming their frontend labels.
-
-* indexField option
-
-    This option allows specifying which field represents record identifier.
-
-<p class="q">Need to review the old options above</p>
-
-	
-Extends all `abstract` and [Select]({{page.baseurl}}ui_comp_guide/components/ui-select.html) configurations.
+Extends all `abstract` and [Select]({{page.baseurl}}ui_comp_guide/components/ui-select.html)-specific configurations.
 
 <table>
   <tr>
@@ -69,27 +43,27 @@ Extends all `abstract` and [Select]({{page.baseurl}}ui_comp_guide/components/ui-
   </tr>
   <tr>
     <td>component</td>
-    <td>The path to the component’s .js file in terms of RequireJS.</td>
+    <td>The path to the component’s <code>.js</code> file in terms of RequireJS.</td>
     <td>String</td>
-    <td>Magento_Ui/js/form/element/multiselect</td>
+    <td><code>Magento_Ui/js/form/element/multiselect</code></td>
   </tr>
   <tr>
-    <td>elementTmpl</td>
-    <td>The path to the .html template of the particular field type (multiselect).</td>
+    <td><code>elementTmpl</code></td>
+    <td>The path to the <code>.html</code> template of the particular field type (multiselect).</td>
     <td>String</td>
-    <td>ui/form/element/multiselect</td>
+    <td><code>ui/form/element/multiselect</code></td>
   </tr>
   <tr>
-    <td>size</td>
-    <td>The number of options that are displayed in the multi-select UI.</td>
+    <td><code>size</code></td>
+    <td>The number of options that are displayed in the multiselect UI.</td>
     <td>Number</td>
     <td>6</td>
   </tr>
   <tr>
-    <td>template</td>
-    <td>The path to the general field .html template.</td>
+    <td><code>template</code></td>
+    <td>The path to the general field <code>.html</code> template.</td>
     <td>String</td>
-    <td>ui/form/field</td>
+    <td><code>ui/form/field</code></td>
   </tr>
 </table>
 
@@ -175,4 +149,3 @@ Instance Replacement: One Instance of a Component
     </argument>
 </column>
 {% endhighlight %}
-

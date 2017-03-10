@@ -15,9 +15,9 @@ This topic describes the modal UI component.
 
 The Modal UI component implements a secondary window that opens on top of the main window. It uses the [modal widget]({{page.baseurl}}javascript-dev-guide/widgets/widget_modal.html).
 
-Similar to the widget's configuration, the component's configuration allows you to set the window type and action buttons behavior (including linking action buttons to methods of the other UI components).
+Similar to the widget's configuration, the component's configuration allows you to set the window type and the behavior of action buttons (including linking action buttons to methods of the other UI components).
 
-The Modal component can be used for both Admin panel and storefront.
+The Modal component can be used for both Admin and storefronts.
 
 For recommendations about modal windows usage from the UX point of view, see the corresponding topic in the [Magento Admin pattern library](http://devdocs.magento.com/guides/v2.0/pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html).
 
@@ -45,9 +45,9 @@ Component's options are set in the configuration `.xml` file as follows:
 </modal>
 {%endhighlight%}
 
-Extends UiCollection configuration. 
+Extends UiCollection configuration.
 
-Modal own configuration:
+Modal-specific configuration:
 <table>
   <tr>
     <th>Option</th>
@@ -56,19 +56,19 @@ Modal own configuration:
     <th>Default</th>
   </tr>
   <tr>
-    <td>modalClass</td>
-    <td>CSS class applied to the root node of the component's .html template.</td>
+    <td><code>modalClass</code></td>
+    <td>CSS class applied to the root node of the component's <code>.html</code> template.</td>
     <td>String</td>
-    <td>modal-component</td>
+    <td><code>modal-component</code></td>
   </tr>
   <tr>
-    <td>onCancel</td>
+    <td><code>onCancel</code></td>
     <td>Name of the method invoked when a user attempts to close the modal window.</td>
     <td>String</td>
-    <td>closeModal</td>
+    <td><code>closeModal</code></td>
   </tr>
   <tr>
-    <td>options</td>
+    <td><code>options</code></td>
     <td>Configuration passed to the <a href="{{page.baseurl}}javascript-dev-guide/widgets/widget_modal.html">modal widget</a>.</td>
     <td>Object</td>
     <td></td>
