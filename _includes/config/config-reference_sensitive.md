@@ -141,13 +141,13 @@ These configuration values are availabe in the Magento Admin in **Stores** > Set
 
 Name  | Config path | EE only? |
 |--------------|--------------|--------------|
-Contact Name | `sales/magento_rma/store_name` | ![Not EE-only]({{ site.baseurl }}common/images/red-x.png)
-Street Address | `sales/magento_rma/address` | ![Not EE-only]({{ site.baseurl }}common/images/red-x.png)
+Contact Name | `sales/magento_rma/store_name` | ![EE-only]({{ site.baseurl }}common/images/green-check.png)
+Street Address | `sales/magento_rma/address` | ![EE-only]({{ site.baseurl }}common/images/green-check.png)
 Street Address | `sales/magento_rma/address1` | ![Not EE-only]({{ site.baseurl }}common/images/red-x.png)
-City | `sales/magento_rma/city` | ![Not EE-only]({{ site.baseurl }}common/images/red-x.png)
-State/Province | `sales/magento_rma/region_id` | ![Not EE-only]({{ site.baseurl }}common/images/red-x.png)
-ZIP/Postal Code | `sales/magento_rma/zip` | ![Not EE-only]({{ site.baseurl }}common/images/red-x.png)
-Country | `sales/magento_rma/country_id` | ![Not EE-only]({{ site.baseurl }}common/images/red-x.png)
+City | `sales/magento_rma/city` | ![EE-only]({{ site.baseurl }}common/images/green-check.png)
+State/Province | `sales/magento_rma/region_id` | ![EE-only]({{ site.baseurl }}common/images/green-check.png)
+ZIP/Postal Code | `sales/magento_rma/zip` | ![EE-only]({{ site.baseurl }}common/images/green-check.png)
+Country | `sales/magento_rma/country_id` | ![EE-only]({{ site.baseurl }}common/images/green-check.png)
 Send RMA Email Copy To | `sales_email/magento_rma/copy_to` | ![Not EE-only]({{ site.baseurl }}common/images/red-x.png)
 Send RMA Authorization Email Copy To | `sales_email/magento_rma_auth/copy_to` | ![Not EE-only]({{ site.baseurl }}common/images/red-x.png)
 Send RMA Comment Email Copy To | `sales_email/magento_rma_comment/copy_to` | ![Not EE-only]({{ site.baseurl }}common/images/red-x.png)
