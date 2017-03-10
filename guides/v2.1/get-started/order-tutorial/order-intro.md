@@ -18,7 +18,7 @@ This tutorial uses REST APIs to demonstrate the lifecycle of an order. You will 
 
 To complete this tutorial, you must install Magento CE 2.1.3 or later with sample data. The sample data defines a functional store, called Luma, that sells fitness clothing and accessories. The store does not provide any sandbox accounts for testing credit card payments, so transactions will be simulated using an offline payment method.
 
-The tutorial should take no more than 30 minutes to complete. It can be completed using the [Magento DevBox]({{page.baseurl}}install-gde/docker/docker-over.html). All steps in this tutorial have been tested and completed using the DevBox environment.
+The tutorial can be completed using the [Magento DevBox]({{page.baseurl}}install-gde/docker/docker-over.html). All steps in this tutorial have been tested and completed using the DevBox environment.
 
 ## Prerequisites
 {:.tutorial-before}
