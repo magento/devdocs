@@ -279,10 +279,19 @@ One of the options for making it atomic is to write to files stored in a tempora
 
 ## Deployment Strategies
 
+Content deployment has 3 strategies. Each strategy describe the way of deploying packages. Package is the set of files which belongs to specific <code>area/theme/locale</code>.
+The diversity of strategies is due to ways of deploying packages:
+
+#### Standard Strategy
+
+All package files for standard strategy should be deployed (this means that all files will be processed with <code>\Magento\Framework\App\View\Asset\Publisher</code>)
+
 #### Quick Strategy
 
-Quick strategy uses parallel processes for compiling and deploying files.
-Quick strategy copies all files to each area of each theme.
+Part of files can be deployed and part of them can be copied from parent package (package which aggregates common for few packages files).
+For Quick Strategy parent package is aggregated on locale level.
+This means that if we need to generate files for specific locale, we need to deploy only files override for this locale.
+All other files should be copied from aggregated parent package. 
 
 #### Compact Strategy
 In quick strategy there are a lot of duplications of same files for all combinations of deployed areas, themes, and locales.
@@ -290,8 +299,6 @@ In the real situation, most of the static files don't have specific versions for
 
 So the main purpose of compact strategy is to avoid duplicating of files between theme, areas, locales.
 In order to achieve this new basic theme (Magento/base) and basic area (base) are created.
-
-In those 2 base scopes all common files are kept.
 
 In order to distinguish which files are common, and which are specific lets see, what patterns are used for static content deploy.
 There are several types of static content, which could be described as the following patterns:
