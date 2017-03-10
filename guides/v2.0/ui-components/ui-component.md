@@ -66,7 +66,7 @@ XSD file contains rules and limitations shared between all components (both defi
 
 `<your module root dir>/Magento/Ui/etc/ui_definition.xsd`
 
-It is possible to create custom component by setting `class`, `component` and `template` parameters of the <a href="{{page.baseurl}}ui-library/ui-container.html">Container component</a>.
+It is possible to create custom component by setting `class`, `component` and `template` parameters of the Container component.
 
 You can configure existing component and all filter types in the following ways:
 
