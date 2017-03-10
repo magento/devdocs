@@ -38,10 +38,10 @@ Extends all [uiElement]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uielement
     <td>''</td>
   </tr>
   <tr>
-    <td>links<br>&lt;li&gt;value&lt;/li&gt;</td>
+    <td>links <li>value</li></td>
     <td><a href="{{page.baseurl}}ui_comp_guide/concepts/ui_comp_linking_concept.html">Links</a> the component's "value" property with provider using the declared in the "dataScope" property of the parent component.</td>
-    <td>Object<br>&lt;li&gt;Boolean&lt;/li&gt;</td>
-    <td>${ $.provider }:${ $.dataScope }' <p class="q">Strange value for a boolean</p></td>
+    <td>Object<li>String</li></td>
+    <td>${ $.provider }:${ $.dataScope }'</td>
   </tr>
 
   <tr>

@@ -8,27 +8,44 @@ version: 2.2
 github_link: ui_comp_guide/components/listing/ui-selectсolumn.md
 ---
 
-Constructor: [<Magento_Ui_module_dir>/view/base/web/js/grid/columns/select.js]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/grid/columns/select.js)
+Constructor: [app/code/Magento/Ui/view/base/web/js/grid/columns/select.js]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/grid/columns/select.js)
 
 ## SelectColumn configuration
 
 Extends all [Column]({{page.baseurl}}ui_comp_guide/components/listing/ui-column.md) configuration.
 
-SelectColumn specific configuration:
+SelectColumn-specific configuration:
 
 <table>
   <tr>
-    <th>Option</th>
-    <th>Description</th>
-    <th>Type</th>
-    <th>Default</th>
+    <th>
+      Option
+    </th>
+    <th>
+      Description
+    </th>
+    <th>
+      Type
+    </th>
+    <th>
+      Default
+    </th>
   </tr>
   <tr>
-    <td><code>options</code></td>
-    <td>An array of objects used to display a field's content by matching the associated record's value
-with the value of one of the elements provided in <code>options</code>.</td>
-    <td>Array<Option></td>
-    <td><code>ui/grid/cells/thumbnail</code></td>
+    <td>
+      <code>options</code>
+    </td>
+    <td>
+      An array of objects used to display a field's content by
+      matching the associated record's value with the value of one
+      of the elements provided in <code>options</code>.
+    </td>
+    <td>
+      Array
+    </td>
+    <td>
+      <code>ui/grid/cells/thumbnail</code>
+    </td>
   </tr>
 </table>
 
@@ -37,21 +54,45 @@ with the value of one of the elements provided in <code>options</code>.</td>
 
 <table>
   <tr>
-    <th>Option</th>
-    <th>Description</th>
-    <th>Type</th>
-    <th>Required</th>
+    <th>
+      Option
+    </th>
+    <th>
+      Description
+    </th>
+    <th>
+      Type
+    </th>
+    <th>
+      Required
+    </th>
   </tr>
   <tr>
-    <td>value</td>
-    <td>Option's identifier.</td>
-    <td>String | Number</td>
-    <td>Required</td>
+    <td>
+      value
+    </td>
+    <td>
+      Option's identifier.
+    </td>
+    <td>
+      String | Number
+    </td>
+    <td>
+      Required
+    </td>
   </tr>
   <tr>
-    <td>label</td>
-    <td>Label to be displayed in a column's field.</td>
-    <td>String</td>
-    <td>Required</td>
+    <td>
+      label
+    </td>
+    <td>
+      Label to be displayed in a column's field.
+    </td>
+    <td>
+      String
+    </td>
+    <td>
+      Required
+    </td>
   </tr>
 </table>

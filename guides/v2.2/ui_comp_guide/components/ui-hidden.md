@@ -8,9 +8,11 @@ version: 2.2
 github_link: ui_comp_guide/components/ui-hidden.md
 ---
 
-## hidden component
+## Configuration options
 
 Extends all `abstract` configuration.
+
+Hidden-specific configuration:
 
 <table>
   <tr>

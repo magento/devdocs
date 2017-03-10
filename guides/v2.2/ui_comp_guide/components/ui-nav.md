@@ -12,6 +12,8 @@ github_link: ui_comp_guide/components/ui-nav.md
 
 Extends all `uiComponent` and `collapsible` configuration.
 
+Nav-specific options:
+
 <table>
   <tr>
     <th>Option </th>

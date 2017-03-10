@@ -32,7 +32,9 @@ Templates used by this component are:
 * `app\code\Magento\Ui\view\base\web\templates\grid\cells\multiselect.html` - The template defines each field in the grid. It provides the Multiselect component with the check box interface for selecting item(s) in the grid and performing actions over them.
 * `app\code\Magento\Ui\view\base\web\templates\grid\columns\multiselect.html` - The template defines the grid header with drop-down lists and the Select All, Deselect All, and other options.
 
-Extends all `abstract` and [Select]({{page.baseurl}}ui_comp_guide/components/ui-select.html)-specific configurations.
+Extends all `abstract` and [Select]({{page.baseurl}}ui_comp_guide/components/ui-select.html) configurations.
+
+Multiselect-specific options:
 
 <table>
   <tr>

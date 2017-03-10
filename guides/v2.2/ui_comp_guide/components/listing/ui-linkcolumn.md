@@ -8,13 +8,13 @@ version: 2.2
 github_link: ui_comp_guide/components/listing/ui-linkсolumn.md
 ---
 
-Constructor: [<Magento_Ui_module_dir>/view/base/web/js/grid/columns/link.js]({{mage.2200url}}app/code/Magento/Ui/view/base/web/js/grid/columns/link.js)
+Constructor: [app/code/Magento/Ui/view/base/web/js/grid/columns/link.js]({{mage.2200url}}app/code/Magento/Ui/view/base/web/js/grid/columns/link.js)
 
 ## LinkColumn configuration
 
-Extends all [Column]({{page.baseurl}}ui_comp_guide/components/listing/ui-column.md) configuration.
+Extends all [Column]({{page.baseurl}}ui_comp_guide/components/listing/ui-column.html) configuration.
 
-LinkColumn specific configuration:
+LinkColumn-specific configuration:
 
 <table>
   <tr>

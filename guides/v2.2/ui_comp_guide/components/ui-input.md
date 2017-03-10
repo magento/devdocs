@@ -8,10 +8,11 @@ version: 2.2
 github_link: ui_comp_guide/components/ui-input.md
 ---
 
-## input options
-
+## Configuration options
 
 Extends all `abstract` configuration.
+
+Input-specific options:
 
 <table>
   <tr>
@@ -24,7 +25,7 @@ Extends all `abstract` configuration.
     <td>component</td>
     <td>The path to the component’s <code>.js</code> file in terms of RequireJS.</td>
     <td>String</td>
-    <td>??</td>
+    <td><code>Magento_Ui/js/form/element/abstract</code></td>
   </tr>
   <tr>
     <td>template</td>

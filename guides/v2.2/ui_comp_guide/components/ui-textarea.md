@@ -11,6 +11,8 @@ github_link: ui_comp_guide/components/ui-textarea.md
 ## Textarea configuration
 Extends all `abstract` configuration.
 
+Textarea-specific options:
+
 <table>
   <tr>
     <th>Option </th>

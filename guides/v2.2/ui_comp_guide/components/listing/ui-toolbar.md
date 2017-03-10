@@ -8,13 +8,13 @@ version: 2.2
 github_link: ui_comp_guide/components/listing/ui-toolbar.md
 ---
 
-Constructor: [<Magento_Ui_module_dir>/view/base/web/js/grid/toolbar.js]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/grid/toolbar.js)
+Constructor: [app/code/Magento/Ui/view/base/web/js/grid/toolbar.js]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/grid/toolbar.js)
 
 ## Toolbar configuration
 
 Extends all [UiCollection]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uicollection_concept.html) configuration.
 
-Toolbar own configuration:
+Toolbar-specific configuration:
 
 <table>
   <tr>

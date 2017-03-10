@@ -12,6 +12,8 @@ github_link: ui_comp_guide/components/ui-image.md
 
 Extends all `abstract` configuration.
 
+Image-specific options:
+
 <table>
   <tr>
     <th>Option </th>

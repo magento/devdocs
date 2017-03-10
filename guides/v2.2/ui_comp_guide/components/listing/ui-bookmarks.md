@@ -26,8 +26,8 @@ Bookmarks specific configuration:
   <tr>
     <td><code>newViewLabel</code></td>
     <td>Default label for a new bookmark.</td>
-    <td></td>
-    <td>New View</td>
+    <td>String</td>
+    <td><code>New View</code></td>
   </tr>
   <tr>
     <td><code>template</code></td>

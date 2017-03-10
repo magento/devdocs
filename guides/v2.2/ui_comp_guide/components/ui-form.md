@@ -10,7 +10,7 @@ github_link: ui_comp_guide/components/ui-form.md
 
 
 ## Overview
-The Form component allows performing [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) operations on an entity. 
+The Form component allows performing [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) operations on an entity.
 
 Form is a [basic component]({{page.baseurl}}ui_comp_guide/bk-ui_comps.html#general-structure).
 
@@ -38,20 +38,13 @@ The following components can be used in the scope of the Form component:
 * Text
 * Textarea
 * Wysiwyg
-* ...
 
 
 ## Component options
 
-* js_config -> deps - sets the dependency on component initialization
- 
-* js_config -> config -> provider - specifies the name of the component data
- 
-* layout - configuration class meets the visualization component
-    (See examples in 'Configuring' section)
-
-<p class="q">What about those options above?</p>
 Form configuration extends the [`uiCollection`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uicollection_concept.html) configuration.
+
+Form-specific configuration:
 
 <table>
   <tbody>
@@ -71,7 +64,7 @@ Form configuration extends the [`uiCollection`]({{page.baseurl}}ui_comp_guide/co
     </tr>
     <tr>
       <td>
-        ajaxSave
+        <code>ajaxSave</code>
       </td>
       <td>
         Save Form values by AJAX.
@@ -266,7 +259,7 @@ Example:
     </body>
 </page>
 {% endhighlight %}
- 
+
 ## Configure the Form component
 
 Component could be configured in two ways:
@@ -349,7 +342,7 @@ To group components you can use the component container as in example below:
 </container>
 {% endhighlight %}
 
-## Creating DataSource 
+## Creating DataSource
 You need to configure component's DataSource in order to provide data and meta information for your Form component.
 
 DataSource aggregates an object of class implements the interface `\Magento\Framework\View\Element\UiComponent\DataProvider\DataProviderInterface`

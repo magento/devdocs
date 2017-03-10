@@ -33,7 +33,7 @@ ActionsColumn specific configuration:
     <td><code>draggable</code></td>
     <td>Defines whether a user can change column's position in the table by grabbing column's header and draging it across the table.</td>
     <td>Boolean</td>
-    <td>false</td>
+    <td><code>false</code></td>
   </tr>
   <tr>
     <td><code>fieldClass</code></td>

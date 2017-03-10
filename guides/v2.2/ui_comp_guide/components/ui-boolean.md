@@ -8,9 +8,11 @@ version: 2.2
 github_link: ui_comp_guide/components/ui-boolean.md
 ---
 
-## Boolean configuration
+## Configuration options
 
 Extends all `abstract` configuration.
+
+Boolean-specific configuration:
 
 <table>
   <tr>
@@ -20,19 +22,19 @@ Extends all `abstract` configuration.
     <th>Default</th>
   </tr>
   <tr>
-    <td>component</td>
+    <td><code>component</code></td>
     <td>The path to the component’s <code>.js</code> file in terms of RequireJS.</td>
     <td>String</td>
     <td><code>Magento_Ui/js/form/element/abstract</code></td>
   </tr>
   <tr>
-    <td>elementTmpl</td>
+    <td><code>elementTmpl</code></td>
     <td>The path to the <code>.html</code> template of the particular field type.</td>
     <td>String</td>
     <td><code>ui/form/element/input</code></td>
   </tr>
   <tr>
-    <td>template</td>
+    <td><code>template</code></td>
     <td>The path to the general field <code>.html</code> template.</td>
     <td>String</td>
     <td><code>ui/form/field</code></td>

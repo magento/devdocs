@@ -25,7 +25,8 @@ The HtmlContent UI component comprises the following files:
 
 Extends all `uiComponent` configuration.
 
-HtmlContent own options:
+HtmlContent-specific options:
+
 <table>
   <tr>
     <th>Option </th>

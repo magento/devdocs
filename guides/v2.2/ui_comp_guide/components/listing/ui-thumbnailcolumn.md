@@ -14,7 +14,7 @@ Constructor: [app/code/Magento/Ui/view/base/web/js/grid/columns/thumbnail.js]({{
 
 Extends all [Column]({{page.baseurl}}ui_comp_guide/components/listing/ui-column.html) configuration.
 
-ThumbnailColumn specific configuration:
+ThumbnailColumn-specific configuration:
 
 <table>
   <tr>

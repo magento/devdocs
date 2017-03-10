@@ -10,9 +10,9 @@ github_link: ui_comp_guide/components/ui-tab.md
 
 ## Tab configuration
 
-Extends all [`uiCollection`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uicollection_concept.html) configuration.
+Extends all [`uiCollection`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uicollection_concept.html) and `tab` configuration.
 
-Extends all `tab` configuration.
+Tab-specific options:
 
 <table>
   <tr>

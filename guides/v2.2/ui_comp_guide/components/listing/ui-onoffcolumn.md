@@ -8,13 +8,13 @@ version: 2.2
 github_link: ui_comp_guide/components/listing/ui-onoffсolumn.md
 ---
 
-Constructor: [<Magento_Ui_module_dir>/view/base/web/js/grid/columns/onoff.js]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/grid/columns/onoff.js)
+Constructor: [app/code/Magento/Ui/view/base/web/js/grid/columns/onoff.js]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/grid/columns/onoff.js)
 
 ## MultiselectColumn configuration
 
 Extends all [Column]({{page.baseurl}}ui_comp_guide/components/listing/ui-multiselectcolumn.html) configuration.
 
-OnOffColumn specific configuration:
+OnOffColumn-specific configuration:
 
 <table>
   <tr>

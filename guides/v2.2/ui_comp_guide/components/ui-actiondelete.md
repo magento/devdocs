@@ -31,7 +31,7 @@ ActionDelete own configuration:
   </tr>
   <tr>
     <td>
-      component
+      <code>component</code>
     </td>
     <td>
       The path to the component’s <code>.js</code> file in terms of
@@ -46,11 +46,12 @@ ActionDelete own configuration:
   </tr>
   <tr>
     <td>
-      links
+      <code>links
       <ul>
         <li>value
         </li>
       </ul>
+      </code>
     </td>
     <td>
       Breaks the link established in the <code>link</code> property
@@ -64,12 +65,12 @@ ActionDelete own configuration:
       </ul>
     </td>
     <td>
-      false
+      <code>false</code>
     </td>
   </tr>
   <tr>
     <td>
-      template
+      <code>template</code>
     </td>
     <td>
       The path to the component’s <code>.html</code> template.
@@ -77,8 +78,8 @@ ActionDelete own configuration:
     <td>
       String
     </td>
-    <td code="">
-      &gt;ui/dynamic-rows/cells/action-delete
+    <td>
+      <code>ui/dynamic-rows/cells/action-delete</code>
     </td>
   </tr>
 </table>

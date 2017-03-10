@@ -8,13 +8,13 @@ version: 2.2
 github_link: ui_comp_guide/components/listing/ui-search.md
 ---
 
-Constructor: [<Magento_Ui_module_dir>/view/base/web/js/grid/search/search.js]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/grid/search/search.js)
+Constructor: [app/code/Magento/Ui/view/base/web/js/grid/search/search.js]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/grid/search/search.js)
 
 ## FiltersChips configuration
 
 Extends all [UiElement]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uielement_concept.html) configuration.
 
-Search own configuration:
+Search-specific configuration:
 
 <table>
   <tr>

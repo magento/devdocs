@@ -8,13 +8,13 @@ version: 2.2
 github_link: ui_comp_guide/components/listing/ui-filtersсhips.md
 ---
 
-Constructor: [<Magento_Ui_module_dir>/view/base/web/js/grid/filters/chips.js]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/grid/filters/chips.js)
+Constructor: [app/code/Magento/Ui/view/base/web/js/grid/filters/chips.js]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/grid/filters/chips.js)
 
 ## FiltersChips configuration
 
 Extends all [uiCollection]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uicollection_concept.html) configuration.
 
-FiltersChips own configuration:
+FiltersChips-specific configuration:
 
 <table>
   <tr>

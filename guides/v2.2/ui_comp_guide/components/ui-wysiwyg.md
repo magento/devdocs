@@ -8,9 +8,11 @@ version: 2.2
 github_link: ui_comp_guide/components/ui-wysiwyg.md
 ---
 
-## Wysiwyg options
+## Configuration options
 
 Extends all `abstract` configuration.
+
+Wysiwyg-specific options:
 
 <table>
   <tr>

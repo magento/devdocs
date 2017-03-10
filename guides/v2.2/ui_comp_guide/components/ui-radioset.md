@@ -8,9 +8,11 @@ version: 2.2
 github_link: ui_comp_guide/components/ui-radioset.md
 ---
 
-## Radioset options
+## Configuration options
 
 Extends all `abstract` configuration.
+
+Radioset-specific options:
 
 <table>
   <tr>

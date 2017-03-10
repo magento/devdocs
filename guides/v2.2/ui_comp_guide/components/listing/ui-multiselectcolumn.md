@@ -8,13 +8,13 @@ version: 2.2
 github_link: ui_comp_guide/components/listing/ui-multiselectcolumn.md
 ---
 
-Constructor: [<Magento_Ui_module_dir>/view/base/web/js/grid/columns/multiselect.js]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/grid/columns/multiselect.js)
+Constructor: [app/code/Magento/Ui/view/base/web/js/grid/columns/multiselect.js]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/grid/columns/multiselect.js)
 
 ## MultiselectColumn configuration
 
 Extends all [Column]({{page.baseurl}}ui_comp_guide/components/listing/ui-column.html) configuration.
 
-MultiselectColumn specific configuration:
+MultiselectColumn-specific configuration:
 
 <table>
   <tr>

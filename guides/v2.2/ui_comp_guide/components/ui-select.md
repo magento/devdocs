@@ -2,14 +2,17 @@
 layout: default
 group: UI_Components_guide
 subgroup: components
-title: select component
-menu_title: select component
+title: Select component
+menu_title: Select component
 version: 2.2
 github_link: ui_comp_guide/components/ui-select.md
 ---
 
-## Select configuration
+## Configuration options
+
 Extends all `abstract` configuration.
+
+Select-specific options:
 
 <table>
   <tr>

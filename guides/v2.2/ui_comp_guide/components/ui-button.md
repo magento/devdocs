@@ -8,10 +8,11 @@ version: 2.2
 github_link: ui_comp_guide/components/ui-button.md
 ---
 
-## Button configuration
-
+## Configuration options
 
 Extends all [`uiElement`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uielement_concept.html) configuration.
+
+Button-specific configuration:
 
 <table>
   <tr>
@@ -21,52 +22,52 @@ Extends all [`uiElement`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uieleme
     <th>Default</th>
   </tr>
   <tr>
-    <td>additionalClasses</td>
+    <td><code>additionalClasses</code></td>
     <td>Sets custom classes to the component's DOM block.</td>
     <td>Object</td>
-    <td>{}</td>
+    <td><code>{}</code></td>
   </tr>
   <tr>
-    <td>disabled</td>
+    <td><code>disabled</code></td>
     <td>
-Initial component's state. When set to "true", users can't take action on the element.</td>
+Initial component's state. When set to <code>true</code>, users can't take action on the element.</td>
     <td>Boolean</td>
-    <td>false</td>
+    <td><code>false</code></td>
   </tr>
   <tr>
-    <td>displayArea</td>
+    <td><code>displayArea</code></td>
     <td>Renders the component in the location that was declared in the layout.</td>
     <td>String</td>
-    <td>outsideGroup</td>
+    <td><code>outsideGroup</code></td>
   </tr>
   <tr>
-    <td>displayAsLink</td>
+    <td><code>displayAsLink</code></td>
     <td>Show the button as a link.</td>
     <td>Boolean</td>
-    <td>false</td>
+    <td><code>false</code></td>
   </tr>
   <tr>
-    <td>elementTmpl</td>
+    <td><code>elementTmpl</code></td>
     <td>The path to the child component’s <code>.html</code> template.</td>
     <td>String</td>
-    <td>''</td>
+    <td><code>''</code></td>
   </tr>
   <tr>
-    <td>template</td>
-    <td>Path to the general .html template for a button.</td>
+    <td><code>template</code></td>
+    <td>Path to the general <code>.html</code> template for a button.</td>
     <td>String</td>
-    <td>''</td>
+    <td><code>''</code></td>
   </tr>
   <tr>
-    <td>title</td>
+    <td><code>title</code></td>
     <td>Button title.</td>
     <td>String</td>
-    <td>''</td>
+    <td><code>''</code></td>
   </tr>
   <tr>
-    <td>visible</td>
-    <td>Initial component's visibility. When set to "false", the <code>"display: none</code> CSS style is added to the component's DOM block.</td>
+    <td><code>visible</code></td>
+    <td>Initial component's visibility. When set to <code>false</code>, the <code>"display: none</code> CSS style is added to the component's DOM block.</td>
     <td>Boolean</td>
-    <td>true</td>
+    <td><code>true</code></td>
   </tr>
 </table>
