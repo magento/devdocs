@@ -1,6 +1,6 @@
 ---
 layout: default
-group: 
+group: cloud
 subgroup: 40_live
 title: Sensitive configuration paths reference
 menu_title: Sensitive configuration paths reference
