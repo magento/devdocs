@@ -53,7 +53,7 @@ Name  | Config path | EE only? |
 |--------------|--------------|--------------|
 Error Email Recipient | `catalog/productalert_cron/error_email` | ![Not EE-only]({{ site.baseurl }}common/images/red-x.png)
 YouTube API Key | `catalog/product_video/youtube_api_key` | ![Not EE-only]({{ site.baseurl }}common/images/red-x.png)
-Solr Server Hostname | `catalog/search/solr_server_hostname` | ![Not EE-only]({{ site.baseurl }}common/images/red-x.png)
+Solr Server Hostname | `catalog/search/solr_server_hostname` | ![EE-only]({{ site.baseurl }}common/images/green-check.png)
 Solr Server Port | `catalog/search/solr_server_port` | ![Not EE-only]({{ site.baseurl }}common/images/red-x.png)
 Solr Server Username | `catalog/search/solr_server_username` | ![Not EE-only]({{ site.baseurl }}common/images/red-x.png)
 Solr Server Password | `catalog/search/solr_server_password` | ![Not EE-only]({{ site.baseurl }}common/images/red-x.png)
