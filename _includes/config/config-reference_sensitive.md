@@ -110,7 +110,7 @@ These configuration values are availabe in the Magento Admin in **Stores** > Set
 
 Name  | Config path | EE only? |
 |--------------|--------------|--------------|
-Container Id | `google/analytics/container_id` | ![Not EE-only]({{ site.baseurl }}common/images/red-x.png)
+Container Id | `google/analytics/container_id` | ![EE-only]({{ site.baseurl }}common/images/green-check.png)
 
 ### Shipping methods sensitive paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Shipping Methods**.
@@ -148,10 +148,10 @@ City | `sales/magento_rma/city` | ![EE-only]({{ site.baseurl }}common/images/gre
 State/Province | `sales/magento_rma/region_id` | ![EE-only]({{ site.baseurl }}common/images/green-check.png)
 ZIP/Postal Code | `sales/magento_rma/zip` | ![EE-only]({{ site.baseurl }}common/images/green-check.png)
 Country | `sales/magento_rma/country_id` | ![EE-only]({{ site.baseurl }}common/images/green-check.png)
-Send RMA Email Copy To | `sales_email/magento_rma/copy_to` | ![Not EE-only]({{ site.baseurl }}common/images/red-x.png)
-Send RMA Authorization Email Copy To | `sales_email/magento_rma_auth/copy_to` | ![Not EE-only]({{ site.baseurl }}common/images/red-x.png)
-Send RMA Comment Email Copy To | `sales_email/magento_rma_comment/copy_to` | ![Not EE-only]({{ site.baseurl }}common/images/red-x.png)
-Send RMA Comment Email Copy To | `sales_email/magento_rma_customer_comment/copy_to` | ![Not EE-only]({{ site.baseurl }}common/images/red-x.png)
+Send RMA Email Copy To | `sales_email/magento_rma/copy_to` | ![EE-only]({{ site.baseurl }}common/images/green-check.png)
+Send RMA Authorization Email Copy To | `sales_email/magento_rma_auth/copy_to` | ![EE-only]({{ site.baseurl }}common/images/green-check.png)
+Send RMA Comment Email Copy To | `sales_email/magento_rma_comment/copy_to` | ![EE-only]({{ site.baseurl }}common/images/green-check.png)
+Send RMA Comment Email Copy To | `sales_email/magento_rma_customer_comment/copy_to` | ![EE-only]({{ site.baseurl }}common/images/green-check.png)
 
 ## Advanced category
 This section lists variable names and config paths available for options in the Admin under **Stores** > Settings > **Configuration** > **Advanced**.
