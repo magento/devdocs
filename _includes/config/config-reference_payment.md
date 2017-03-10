@@ -7,7 +7,7 @@ The settings are further organized by payment method.
 
 ### General variable {#vars-merch-country}
 
-Name  | Config path
+Name  | Config path | EE only? |
 |--------------|--------------|--------------|
 Merchant Country | `paypal/general/merchant_country` | ![Not EE-only]({{ site.baseurl }}common/images/red-x.png)
 
@@ -17,7 +17,7 @@ Your choice for this variable determines which [International paths](#vars-intl-
 
 ### PayPal paths
 
-Name  | Config path
+Name  | Config path | EE only? |
 |--------------|--------------|--------------|
 Enable this Solution | `payment/payflowpro/active` | ![Not EE-only]({{ site.baseurl }}common/images/red-x.png)
 Enable In-Context Checkout Experience | `payment/paypal_express/in_context` | ![Not EE-only]({{ site.baseurl }}common/images/red-x.png)
@@ -89,7 +89,7 @@ PayPal Merchant Pages Style | `payment_all_paypal/express_checkout/settings_ec/s
 
 ### PayPal Payments Pro
 
-Name  | Config path
+Name  | Config path | EE only? |
 |--------------|--------------|--------------|
 API Authentication Methods | `paypal/wpp/api_authentication` | ![Not EE-only]({{ site.baseurl }}common/images/red-x.png)
 Sandbox Mode | `paypal/wpp/sandbox_flag` | ![Not EE-only]({{ site.baseurl }}common/images/red-x.png)
@@ -103,7 +103,7 @@ Scheduled Fetching | `payment_all_paypal/payments_pro_hosted_solution_without_bm
 ### Payments Pro Hosted Solution (United Kingdom)
 These options are available only if you chose the United Kingdom as the [merchant country](#vars-merch-country). 
 
-Name  | Config path
+Name  | Config path | EE only? |
 |--------------|--------------|--------------|
 Enable this Solution | `payment/hosted_pro/active` | ![Not EE-only]({{ site.baseurl }}common/images/red-x.png)
 Title | `payment/hosted_pro/title` | ![Not EE-only]({{ site.baseurl }}common/images/red-x.png)
@@ -119,7 +119,7 @@ Enable SSL verification | `payment/hosted_pro/verify_peer` | ![Not EE-only]({{ s
 
 ### PayPal Payflow Pro
 
-Name  | Config path
+Name  | Config path | EE only? |
 |--------------|--------------|--------------|
 Vault Enabled | `payment/payflowpro_cc_vault/active` | ![Not EE-only]({{ site.baseurl }}common/images/red-x.png)
 Title | `payment/payflowpro/title` | ![Not EE-only]({{ site.baseurl }}common/images/red-x.png)
@@ -170,7 +170,7 @@ SFTP Credentials | `payment_us/paypal_group_all_in_one/payflow_advanced/settings
 
 ### PayPal Payflow Link
 
-Name  | Config path
+Name  | Config path | EE only? |
 |--------------|--------------|--------------|
 Partner | `payment/payflow_link/partner` | ![Not EE-only]({{ site.baseurl }}common/images/red-x.png)
 Vendor | `payment/payflow_link/vendor` | ![Not EE-only]({{ site.baseurl }}common/images/red-x.png)
@@ -197,7 +197,7 @@ Payment Action | `payment/payflow_link/payment_action` | ![Not EE-only]({{ site.
 
 ### Braintree paths
 
-Name  | Config path
+Name  | Config path | EE only? |
 |--------------|--------------|--------------|
 Title | `payment/braintree/title` | ![Not EE-only]({{ site.baseurl }}common/images/red-x.png)
 Environment | `payment/braintree/environment` | ![Not EE-only]({{ site.baseurl }}common/images/red-x.png)
@@ -235,7 +235,7 @@ URL | `payment/braintree/descriptor_url` | ![Not EE-only]({{ site.baseurl }}comm
 
 ### Zero Subtotal Checkout paths
 
-Name  | Config path
+Name  | Config path | EE only? |
 |--------------|--------------|--------------|
 Enabled | `payment/free/active` | ![Not EE-only]({{ site.baseurl }}common/images/red-x.png)
 Title | `payment/free/title` | ![Not EE-only]({{ site.baseurl }}common/images/red-x.png)
@@ -247,7 +247,7 @@ Sort Order | `payment/free/sort_order` | ![Not EE-only]({{ site.baseurl }}common
 
 ### Cash on Delivery Payment paths
 
-Name  | Config path
+Name  | Config path | EE only? |
 |--------------|--------------|--------------|
 Enabled | `payment/cashondelivery/active` | ![Not EE-only]({{ site.baseurl }}common/images/red-x.png)
 Title | `payment/cashondelivery/title` | ![Not EE-only]({{ site.baseurl }}common/images/red-x.png)
@@ -261,7 +261,7 @@ Sort Order | `payment/cashondelivery/sort_order` | ![Not EE-only]({{ site.baseur
 
 ### Bank Transfer Payment paths
 
-Name  | Config path
+Name  | Config path | EE only? |
 |--------------|--------------|--------------|
 Enabled | `payment/banktransfer/active` | ![Not EE-only]({{ site.baseurl }}common/images/red-x.png)
 Title | `payment/banktransfer/title` | ![Not EE-only]({{ site.baseurl }}common/images/red-x.png)
@@ -275,7 +275,7 @@ Sort Order | `payment/banktransfer/sort_order` | ![Not EE-only]({{ site.baseurl 
 
 ### Check / Money Order paths
 
-Name  | Config path
+Name  | Config path | EE only? |
 |--------------|--------------|--------------|
 Enabled | `payment/checkmo/active` | ![Not EE-only]({{ site.baseurl }}common/images/red-x.png)
 Title | `payment/checkmo/title` | ![Not EE-only]({{ site.baseurl }}common/images/red-x.png)
@@ -290,7 +290,7 @@ Sort Order | `payment/checkmo/sort_order` | ![Not EE-only]({{ site.baseurl }}com
 
 ### Purchase Order paths
 
-Name  | Config path
+Name  | Config path | EE only? |
 |--------------|--------------|--------------|
 Enabled | `payment/purchaseorder/active` | ![Not EE-only]({{ site.baseurl }}common/images/red-x.png)
 Title | `payment/purchaseorder/title` | ![Not EE-only]({{ site.baseurl }}common/images/red-x.png)
@@ -303,7 +303,7 @@ Sort Order | `payment/purchaseorder/sort_order` | ![Not EE-only]({{ site.baseurl
 
 ### Authorize.net Direct Post paths
 
-Name  | Config path
+Name  | Config path | EE only? |
 |--------------|--------------|--------------|
 Enabled | `payment/authorizenet_directpost/active` | ![Not EE-only]({{ site.baseurl }}common/images/red-x.png)
 Payment Action | `payment/authorizenet_directpost/payment_action` | ![Not EE-only]({{ site.baseurl }}common/images/red-x.png)
@@ -325,7 +325,7 @@ Sort Order | `payment/authorizenet_directpost/sort_order` | ![Not EE-only]({{ si
 
 ### Cybersource paths
 
-Name  | Config path
+Name  | Config path | EE only? |
 |--------------|--------------|--------------|
 Enabled | `payment/cybersource/active` | ![Not EE-only]({{ site.baseurl }}common/images/red-x.png)
 Payment Action | `payment/cybersource/payment_action` | ![Not EE-only]({{ site.baseurl }}common/images/red-x.png)
@@ -342,7 +342,7 @@ Sort Order | `payment/cybersource/sort_order` | ![Not EE-only]({{ site.baseurl }
 
 ### Worldpay paths
 
-Name  | Config path
+Name  | Config path | EE only? |
 |--------------|--------------|--------------|
 Enabled | `payment/worldpay/active` | ![Not EE-only]({{ site.baseurl }}common/images/red-x.png)
 Title | `payment/worldpay/title` | ![Not EE-only]({{ site.baseurl }}common/images/red-x.png)
@@ -360,7 +360,7 @@ Sort Order | `payment/worldpay/sort_order` | ![Not EE-only]({{ site.baseurl }}co
 
 ### eWAY paths
 
-Name  | Config path
+Name  | Config path | EE only? |
 |--------------|--------------|--------------|
 Enabled | `payment/eway/active` | ![Not EE-only]({{ site.baseurl }}common/images/red-x.png)
 Connection Type | `payment/eway/connection_type` | ![Not EE-only]({{ site.baseurl }}common/images/red-x.png)
@@ -379,7 +379,7 @@ Sort Order | `payment/eway/sort_order` | ![Not EE-only]({{ site.baseurl }}common
 The variable values available are determined by your choice of [Merchant country](#vars-merch-country).
 </div>
 
-Name  | Config path
+Name  | Config path | EE only? |
 |--------------|--------------|--------------|
 SFTP Credentials | `payment_nz/express_checkout_other/settings_ec/settings_ec_advanced/express_checkout_settlement_report/heading_sftp` | ![Not EE-only]({{ site.baseurl }}common/images/red-x.png)
 Scheduled Fetching | `payment_nz/express_checkout_other/settings_ec/settings_ec_advanced/express_checkout_settlement_report/heading_schedule` | ![Not EE-only]({{ site.baseurl }}common/images/red-x.png)
