@@ -269,8 +269,8 @@ Sandbox Client-side Encryption Key | `payment/eway/sandbox_encryption_key` | <!-
 
 Name  | Config path | EE only? |
 |--------------|--------------|--------------|
-Merchant ID | `payment/cybersource/merchant_id` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Transaction Key | `payment/cybersource/transaction_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Profile ID | `payment/cybersource/profile_id` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Access Key | `payment/cybersource/access_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Secret Key | `payment/cybersource/secret_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
+Merchant ID | `payment/cybersource/merchant_id` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Transaction Key | `payment/cybersource/transaction_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Profile ID | `payment/cybersource/profile_id` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Access Key | `payment/cybersource/access_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Secret Key | `payment/cybersource/secret_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)

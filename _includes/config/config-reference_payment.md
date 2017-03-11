@@ -327,18 +327,18 @@ Sort Order | `payment/authorizenet_directpost/sort_order` | <!-- ![Not EE-only](
 
 Name  | Config path | EE only? |
 |--------------|--------------|--------------|
-Enabled | `payment/cybersource/active` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment Action | `payment/cybersource/payment_action` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Title | `payment/cybersource/title` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-New Order Status | `payment/cybersource/order_status` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Test Mode | `payment/cybersource/sandbox_flag` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Debug | `payment/cybersource/debug` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Credit Card Types | `payment/cybersource/cctypes` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment from Applicable Countries | `payment/cybersource/allowspecific` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment from Specific Countries | `payment/cybersource/specificcountry` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Minimum Order Total | `payment/cybersource/min_order_total` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Maximum Order Total | `payment/cybersource/max_order_total` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Sort Order | `payment/cybersource/sort_order` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
+Enabled | `payment/cybersource/active` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment Action | `payment/cybersource/payment_action` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Title | `payment/cybersource/title` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+New Order Status | `payment/cybersource/order_status` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Test Mode | `payment/cybersource/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Debug | `payment/cybersource/debug` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Credit Card Types | `payment/cybersource/cctypes` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment from Applicable Countries | `payment/cybersource/allowspecific` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment from Specific Countries | `payment/cybersource/specificcountry` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Minimum Order Total | `payment/cybersource/min_order_total` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Maximum Order Total | `payment/cybersource/max_order_total` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Sort Order | `payment/cybersource/sort_order` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
 
 ### Worldpay paths
 
