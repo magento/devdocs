@@ -344,34 +344,34 @@ Sort Order | `payment/cybersource/sort_order` | ![EE-only]({{ site.baseurl }}com
 
 Name  | Config path | EE only? |
 |--------------|--------------|--------------|
-Enabled | `payment/worldpay/active` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Title | `payment/worldpay/title` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Allow To Edit Contact Information | `payment/worldpay/fix_contact` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Hide Contact Information | `payment/worldpay/hide_contact` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Debug | `payment/worldpay/debug` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Test Mode | `payment/worldpay/sandbox_flag` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment Action for Test | `payment/worldpay/test_action` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment Action | `payment/worldpay/payment_action` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment From Applicable Countries | `payment/worldpay/allowspecific` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment From Specific Countries | `payment/worldpay/specificcountry` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Set Order Status to Suspected Fraud for CVV | `payment/worldpay/cvv_fraud_case` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Set Order Status to Suspected Fraud for Postcode AVS | `payment/worldpay/avs_fraud_case` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Sort Order | `payment/worldpay/sort_order` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
+Enabled | `payment/worldpay/active` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Title | `payment/worldpay/title` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Allow To Edit Contact Information | `payment/worldpay/fix_contact` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Hide Contact Information | `payment/worldpay/hide_contact` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Debug | `payment/worldpay/debug` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Test Mode | `payment/worldpay/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment Action for Test | `payment/worldpay/test_action` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment Action | `payment/worldpay/payment_action` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment From Applicable Countries | `payment/worldpay/allowspecific` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment From Specific Countries | `payment/worldpay/specificcountry` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Set Order Status to Suspected Fraud for CVV | `payment/worldpay/cvv_fraud_case` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Set Order Status to Suspected Fraud for Postcode AVS | `payment/worldpay/avs_fraud_case` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Sort Order | `payment/worldpay/sort_order` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
 
 ### eWAY paths
 
 Name  | Config path | EE only? |
 |--------------|--------------|--------------|
-Enabled | `payment/eway/active` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Connection Type | `payment/eway/connection_type` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Title | `payment/eway/title` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Sandbox Mode | `payment/eway/sandbox_flag` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment Action | `payment/eway/payment_action` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Debug | `payment/eway/debug` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Credit Card Types | `payment/eway/cctypes` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment from Applicable Countries | `payment/eway/allowspecific` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment from Specific Countries | `payment/eway/specificcountry` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Sort Order | `payment/eway/sort_order` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
+Enabled | `payment/eway/active` |![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Connection Type | `payment/eway/connection_type` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Title | `payment/eway/title` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Sandbox Mode | `payment/eway/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment Action | `payment/eway/payment_action` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Debug | `payment/eway/debug` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Credit Card Types | `payment/eway/cctypes` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment from Applicable Countries | `payment/eway/allowspecific` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment from Specific Countries | `payment/eway/specificcountry` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Sort Order | `payment/eway/sort_order` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
 
 ### International paths {#vars-intl-list}
 
@@ -456,58 +456,58 @@ Payment from Specific Countries | `payment_nz/authorizenet_directpost/specificco
 Minimum Order Total | `payment_nz/authorizenet_directpost/min_order_total` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
 Maximum Order Total | `payment_nz/authorizenet_directpost/max_order_total` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
 Sort Order | `payment_nz/authorizenet_directpost/sort_order` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Enabled | `payment_nz/cybersource/active` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment Action | `payment_nz/cybersource/payment_action` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Title | `payment_nz/cybersource/title` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Merchant ID | `payment_nz/cybersource/merchant_id` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Transaction Key | `payment_nz/cybersource/transaction_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Profile ID | `payment_nz/cybersource/profile_id` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Access Key | `payment_nz/cybersource/access_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Secret Key | `payment_nz/cybersource/secret_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-New Order Status | `payment_nz/cybersource/order_status` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Test Mode | `payment_nz/cybersource/sandbox_flag` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Debug | `payment_nz/cybersource/debug` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Credit Card Types | `payment_nz/cybersource/cctypes` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment from Applicable Countries | `payment_nz/cybersource/allowspecific` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment from Specific Countries | `payment_nz/cybersource/specificcountry` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Minimum Order Total | `payment_nz/cybersource/min_order_total` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Maximum Order Total | `payment_nz/cybersource/max_order_total` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Sort Order | `payment_nz/cybersource/sort_order` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Enabled | `payment_nz/worldpay/active` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Title | `payment_nz/worldpay/title` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Installation ID | `payment_nz/worldpay/installation_id` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment Response Password | `payment_nz/worldpay/response_password` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Remote Admin Installation ID | `payment_nz/worldpay/admin_installation_id` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Remote Admin Authorisation Password | `payment_nz/worldpay/auth_password` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-MD5 Secret for Transactions | `payment_nz/worldpay/md5_secret` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Allow To Edit Contact Information | `payment_nz/worldpay/fix_contact` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Hide Contact Information | `payment_nz/worldpay/hide_contact` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Signature Fields | `payment_nz/worldpay/signature_fields` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Debug | `payment_nz/worldpay/debug` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Test Mode | `payment_nz/worldpay/sandbox_flag` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment Action for Test | `payment_nz/worldpay/test_action` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment Action | `payment_nz/worldpay/payment_action` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment From Applicable Countries | `payment_nz/worldpay/allowspecific` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment From Specific Countries | `payment_nz/worldpay/specificcountry` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Set Order Status to Suspected Fraud for CVV | `payment_nz/worldpay/cvv_fraud_case` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Set Order Status to Suspected Fraud for Postcode AVS | `payment_nz/worldpay/avs_fraud_case` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Sort Order | `payment_nz/worldpay/sort_order` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Enabled | `payment_nz/eway/active` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Connection Type | `payment_nz/eway/connection_type` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Title | `payment_nz/eway/title` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Sandbox Mode | `payment_nz/eway/sandbox_flag` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Live API Key | `payment_nz/eway/live_api_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Live API Password | `payment_nz/eway/live_api_password` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Live Client-side Encryption Key | `payment_nz/eway/live_encryption_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Sandbox API Key | `payment_nz/eway/sandbox_api_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Sandbox API Password | `payment_nz/eway/sandbox_api_password` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Sandbox Client-side Encryption Key | `payment_nz/eway/sandbox_encryption_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment Action | `payment_nz/eway/payment_action` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Debug | `payment_nz/eway/debug` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Credit Card Types | `payment_nz/eway/cctypes` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment from Applicable Countries | `payment_nz/eway/allowspecific` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment from Specific Countries | `payment_nz/eway/specificcountry` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Sort Order | `payment_nz/eway/sort_order` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
+Enabled | `payment_nz/cybersource/active` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment Action | `payment_nz/cybersource/payment_action` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Title | `payment_nz/cybersource/title` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Merchant ID | `payment_nz/cybersource/merchant_id` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Transaction Key | `payment_nz/cybersource/transaction_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Profile ID | `payment_nz/cybersource/profile_id` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Access Key | `payment_nz/cybersource/access_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Secret Key | `payment_nz/cybersource/secret_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+New Order Status | `payment_nz/cybersource/order_status` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Test Mode | `payment_nz/cybersource/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Debug | `payment_nz/cybersource/debug` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Credit Card Types | `payment_nz/cybersource/cctypes` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment from Applicable Countries | `payment_nz/cybersource/allowspecific` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment from Specific Countries | `payment_nz/cybersource/specificcountry` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Minimum Order Total | `payment_nz/cybersource/min_order_total` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Maximum Order Total | `payment_nz/cybersource/max_order_total` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Sort Order | `payment_nz/cybersource/sort_order` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Enabled | `payment_nz/worldpay/active` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Title | `payment_nz/worldpay/title` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Installation ID | `payment_nz/worldpay/installation_id` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment Response Password | `payment_nz/worldpay/response_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Remote Admin Installation ID | `payment_nz/worldpay/admin_installation_id` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Remote Admin Authorisation Password | `payment_nz/worldpay/auth_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+MD5 Secret for Transactions | `payment_nz/worldpay/md5_secret` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Allow To Edit Contact Information | `payment_nz/worldpay/fix_contact` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Hide Contact Information | `payment_nz/worldpay/hide_contact` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Signature Fields | `payment_nz/worldpay/signature_fields` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Debug | `payment_nz/worldpay/debug` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Test Mode | `payment_nz/worldpay/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment Action for Test | `payment_nz/worldpay/test_action` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment Action | `payment_nz/worldpay/payment_action` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment From Applicable Countries | `payment_nz/worldpay/allowspecific` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment From Specific Countries | `payment_nz/worldpay/specificcountry` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Set Order Status to Suspected Fraud for CVV | `payment_nz/worldpay/cvv_fraud_case` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Set Order Status to Suspected Fraud for Postcode AVS | `payment_nz/worldpay/avs_fraud_case` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Sort Order | `payment_nz/worldpay/sort_order` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Enabled | `payment_nz/eway/active` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Connection Type | `payment_nz/eway/connection_type` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Title | `payment_nz/eway/title` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Sandbox Mode | `payment_nz/eway/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Live API Key | `payment_nz/eway/live_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Live API Password | `payment_nz/eway/live_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Live Client-side Encryption Key | `payment_nz/eway/live_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Sandbox API Key | `payment_nz/eway/sandbox_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Sandbox API Password | `payment_nz/eway/sandbox_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Sandbox Client-side Encryption Key | `payment_nz/eway/sandbox_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment Action | `payment_nz/eway/payment_action` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Debug | `payment_nz/eway/debug` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Credit Card Types | `payment_nz/eway/cctypes` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment from Applicable Countries | `payment_nz/eway/allowspecific` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment from Specific Countries | `payment_nz/eway/specificcountry` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Sort Order | `payment_nz/eway/sort_order` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
 SFTP Credentials | `payment_hk/express_checkout_other/settings_ec/settings_ec_advanced/express_checkout_settlement_report/heading_sftp` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
 Scheduled Fetching | `payment_hk/express_checkout_other/settings_ec/settings_ec_advanced/express_checkout_settlement_report/heading_schedule` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
 PayPal Merchant Pages Style | `payment_hk/express_checkout_other/settings_ec/settings_ec_advanced/express_checkout_frontend/paypal_pages` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
@@ -580,58 +580,58 @@ Payment from Specific Countries | `payment_hk/authorizenet_directpost/specificco
 Minimum Order Total | `payment_hk/authorizenet_directpost/min_order_total` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
 Maximum Order Total | `payment_hk/authorizenet_directpost/max_order_total` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
 Sort Order | `payment_hk/authorizenet_directpost/sort_order` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Enabled | `payment_hk/cybersource/active` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment Action | `payment_hk/cybersource/payment_action` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Title | `payment_hk/cybersource/title` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Merchant ID | `payment_hk/cybersource/merchant_id` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Transaction Key | `payment_hk/cybersource/transaction_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Profile ID | `payment_hk/cybersource/profile_id` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Access Key | `payment_hk/cybersource/access_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Secret Key | `payment_hk/cybersource/secret_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-New Order Status | `payment_hk/cybersource/order_status` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Test Mode | `payment_hk/cybersource/sandbox_flag` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Debug | `payment_hk/cybersource/debug` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Credit Card Types | `payment_hk/cybersource/cctypes` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment from Applicable Countries | `payment_hk/cybersource/allowspecific` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment from Specific Countries | `payment_hk/cybersource/specificcountry` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Minimum Order Total | `payment_hk/cybersource/min_order_total` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Maximum Order Total | `payment_hk/cybersource/max_order_total` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Sort Order | `payment_hk/cybersource/sort_order` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Enabled | `payment_hk/worldpay/active` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Title | `payment_hk/worldpay/title` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Installation ID | `payment_hk/worldpay/installation_id` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment Response Password | `payment_hk/worldpay/response_password` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Remote Admin Installation ID | `payment_hk/worldpay/admin_installation_id` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Remote Admin Authorisation Password | `payment_hk/worldpay/auth_password` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-MD5 Secret for Transactions | `payment_hk/worldpay/md5_secret` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Allow To Edit Contact Information | `payment_hk/worldpay/fix_contact` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Hide Contact Information | `payment_hk/worldpay/hide_contact` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Signature Fields | `payment_hk/worldpay/signature_fields` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Debug | `payment_hk/worldpay/debug` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Test Mode | `payment_hk/worldpay/sandbox_flag` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment Action for Test | `payment_hk/worldpay/test_action` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment Action | `payment_hk/worldpay/payment_action` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment From Applicable Countries | `payment_hk/worldpay/allowspecific` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment From Specific Countries | `payment_hk/worldpay/specificcountry` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Set Order Status to Suspected Fraud for CVV | `payment_hk/worldpay/cvv_fraud_case` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Set Order Status to Suspected Fraud for Postcode AVS | `payment_hk/worldpay/avs_fraud_case` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Sort Order | `payment_hk/worldpay/sort_order` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Enabled | `payment_hk/eway/active` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Connection Type | `payment_hk/eway/connection_type` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Title | `payment_hk/eway/title` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Sandbox Mode | `payment_hk/eway/sandbox_flag` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Live API Key | `payment_hk/eway/live_api_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Live API Password | `payment_hk/eway/live_api_password` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Live Client-side Encryption Key | `payment_hk/eway/live_encryption_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Sandbox API Key | `payment_hk/eway/sandbox_api_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Sandbox API Password | `payment_hk/eway/sandbox_api_password` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Sandbox Client-side Encryption Key | `payment_hk/eway/sandbox_encryption_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment Action | `payment_hk/eway/payment_action` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Debug | `payment_hk/eway/debug` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Credit Card Types | `payment_hk/eway/cctypes` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment from Applicable Countries | `payment_hk/eway/allowspecific` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment from Specific Countries | `payment_hk/eway/specificcountry` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Sort Order | `payment_hk/eway/sort_order` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
+Enabled | `payment_hk/cybersource/active` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment Action | `payment_hk/cybersource/payment_action` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Title | `payment_hk/cybersource/title` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Merchant ID | `payment_hk/cybersource/merchant_id` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Transaction Key | `payment_hk/cybersource/transaction_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Profile ID | `payment_hk/cybersource/profile_id` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Access Key | `payment_hk/cybersource/access_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Secret Key | `payment_hk/cybersource/secret_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+New Order Status | `payment_hk/cybersource/order_status` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Test Mode | `payment_hk/cybersource/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Debug | `payment_hk/cybersource/debug` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Credit Card Types | `payment_hk/cybersource/cctypes` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment from Applicable Countries | `payment_hk/cybersource/allowspecific` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment from Specific Countries | `payment_hk/cybersource/specificcountry` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Minimum Order Total | `payment_hk/cybersource/min_order_total` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Maximum Order Total | `payment_hk/cybersource/max_order_total` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Sort Order | `payment_hk/cybersource/sort_order` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Enabled | `payment_hk/worldpay/active` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Title | `payment_hk/worldpay/title` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Installation ID | `payment_hk/worldpay/installation_id` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment Response Password | `payment_hk/worldpay/response_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Remote Admin Installation ID | `payment_hk/worldpay/admin_installation_id` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Remote Admin Authorisation Password | `payment_hk/worldpay/auth_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+MD5 Secret for Transactions | `payment_hk/worldpay/md5_secret` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Allow To Edit Contact Information | `payment_hk/worldpay/fix_contact` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Hide Contact Information | `payment_hk/worldpay/hide_contact` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Signature Fields | `payment_hk/worldpay/signature_fields` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Debug | `payment_hk/worldpay/debug` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Test Mode | `payment_hk/worldpay/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment Action for Test | `payment_hk/worldpay/test_action` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment Action | `payment_hk/worldpay/payment_action` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment From Applicable Countries | `payment_hk/worldpay/allowspecific` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment From Specific Countries | `payment_hk/worldpay/specificcountry` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Set Order Status to Suspected Fraud for CVV | `payment_hk/worldpay/cvv_fraud_case` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Set Order Status to Suspected Fraud for Postcode AVS | `payment_hk/worldpay/avs_fraud_case` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Sort Order | `payment_hk/worldpay/sort_order` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Enabled | `payment_hk/eway/active` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Connection Type | `payment_hk/eway/connection_type` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Title | `payment_hk/eway/title` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Sandbox Mode | `payment_hk/eway/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Live API Key | `payment_hk/eway/live_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Live API Password | `payment_hk/eway/live_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Live Client-side Encryption Key | `payment_hk/eway/live_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Sandbox API Key | `payment_hk/eway/sandbox_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Sandbox API Password | `payment_hk/eway/sandbox_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Sandbox Client-side Encryption Key | `payment_hk/eway/sandbox_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment Action | `payment_hk/eway/payment_action` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Debug | `payment_hk/eway/debug` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Credit Card Types | `payment_hk/eway/cctypes` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment from Applicable Countries | `payment_hk/eway/allowspecific` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment from Specific Countries | `payment_hk/eway/specificcountry` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Sort Order | `payment_hk/eway/sort_order` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
 SFTP Credentials | `payment_es/express_checkout_other/settings_ec/settings_ec_advanced/express_checkout_settlement_report/heading_sftp` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
 Scheduled Fetching | `payment_es/express_checkout_other/settings_ec/settings_ec_advanced/express_checkout_settlement_report/heading_schedule` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
 PayPal Merchant Pages Style | `payment_es/express_checkout_other/settings_ec/settings_ec_advanced/express_checkout_frontend/paypal_pages` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
@@ -704,58 +704,58 @@ Payment from Specific Countries | `payment_es/authorizenet_directpost/specificco
 Minimum Order Total | `payment_es/authorizenet_directpost/min_order_total` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
 Maximum Order Total | `payment_es/authorizenet_directpost/max_order_total` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
 Sort Order | `payment_es/authorizenet_directpost/sort_order` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Enabled | `payment_es/cybersource/active` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment Action | `payment_es/cybersource/payment_action` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Title | `payment_es/cybersource/title` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Merchant ID | `payment_es/cybersource/merchant_id` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Transaction Key | `payment_es/cybersource/transaction_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Profile ID | `payment_es/cybersource/profile_id` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Access Key | `payment_es/cybersource/access_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Secret Key | `payment_es/cybersource/secret_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-New Order Status | `payment_es/cybersource/order_status` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Test Mode | `payment_es/cybersource/sandbox_flag` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Debug | `payment_es/cybersource/debug` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Credit Card Types | `payment_es/cybersource/cctypes` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment from Applicable Countries | `payment_es/cybersource/allowspecific` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment from Specific Countries | `payment_es/cybersource/specificcountry` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Minimum Order Total | `payment_es/cybersource/min_order_total` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Maximum Order Total | `payment_es/cybersource/max_order_total` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Sort Order | `payment_es/cybersource/sort_order` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Enabled | `payment_es/worldpay/active` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Title | `payment_es/worldpay/title` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Installation ID | `payment_es/worldpay/installation_id` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment Response Password | `payment_es/worldpay/response_password` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Remote Admin Installation ID | `payment_es/worldpay/admin_installation_id` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Remote Admin Authorisation Password | `payment_es/worldpay/auth_password` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-MD5 Secret for Transactions | `payment_es/worldpay/md5_secret` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Allow To Edit Contact Information | `payment_es/worldpay/fix_contact` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Hide Contact Information | `payment_es/worldpay/hide_contact` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Signature Fields | `payment_es/worldpay/signature_fields` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Debug | `payment_es/worldpay/debug` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Test Mode | `payment_es/worldpay/sandbox_flag` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment Action for Test | `payment_es/worldpay/test_action` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment Action | `payment_es/worldpay/payment_action` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment From Applicable Countries | `payment_es/worldpay/allowspecific` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment From Specific Countries | `payment_es/worldpay/specificcountry` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Set Order Status to Suspected Fraud for CVV | `payment_es/worldpay/cvv_fraud_case` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Set Order Status to Suspected Fraud for Postcode AVS | `payment_es/worldpay/avs_fraud_case` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Sort Order | `payment_es/worldpay/sort_order` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Enabled | `payment_es/eway/active` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Connection Type | `payment_es/eway/connection_type` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Title | `payment_es/eway/title` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Sandbox Mode | `payment_es/eway/sandbox_flag` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Live API Key | `payment_es/eway/live_api_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Live API Password | `payment_es/eway/live_api_password` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Live Client-side Encryption Key | `payment_es/eway/live_encryption_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Sandbox API Key | `payment_es/eway/sandbox_api_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Sandbox API Password | `payment_es/eway/sandbox_api_password` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Sandbox Client-side Encryption Key | `payment_es/eway/sandbox_encryption_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment Action | `payment_es/eway/payment_action` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Debug | `payment_es/eway/debug` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Credit Card Types | `payment_es/eway/cctypes` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment from Applicable Countries | `payment_es/eway/allowspecific` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment from Specific Countries | `payment_es/eway/specificcountry` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Sort Order | `payment_es/eway/sort_order` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
+Enabled | `payment_es/cybersource/active` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment Action | `payment_es/cybersource/payment_action` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Title | `payment_es/cybersource/title` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Merchant ID | `payment_es/cybersource/merchant_id` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Transaction Key | `payment_es/cybersource/transaction_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Profile ID | `payment_es/cybersource/profile_id` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Access Key | `payment_es/cybersource/access_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Secret Key | `payment_es/cybersource/secret_key` |![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+New Order Status | `payment_es/cybersource/order_status` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Test Mode | `payment_es/cybersource/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Debug | `payment_es/cybersource/debug` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Credit Card Types | `payment_es/cybersource/cctypes` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment from Applicable Countries | `payment_es/cybersource/allowspecific` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment from Specific Countries | `payment_es/cybersource/specificcountry` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Minimum Order Total | `payment_es/cybersource/min_order_total` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Maximum Order Total | `payment_es/cybersource/max_order_total` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Sort Order | `payment_es/cybersource/sort_order` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Enabled | `payment_es/worldpay/active` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Title | `payment_es/worldpay/title` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Installation ID | `payment_es/worldpay/installation_id` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment Response Password | `payment_es/worldpay/response_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Remote Admin Installation ID | `payment_es/worldpay/admin_installation_id` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Remote Admin Authorisation Password | `payment_es/worldpay/auth_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+MD5 Secret for Transactions | `payment_es/worldpay/md5_secret` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Allow To Edit Contact Information | `payment_es/worldpay/fix_contact` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Hide Contact Information | `payment_es/worldpay/hide_contact` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Signature Fields | `payment_es/worldpay/signature_fields` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Debug | `payment_es/worldpay/debug` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Test Mode | `payment_es/worldpay/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment Action for Test | `payment_es/worldpay/test_action` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment Action | `payment_es/worldpay/payment_action` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment From Applicable Countries | `payment_es/worldpay/allowspecific` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment From Specific Countries | `payment_es/worldpay/specificcountry` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Set Order Status to Suspected Fraud for CVV | `payment_es/worldpay/cvv_fraud_case` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Set Order Status to Suspected Fraud for Postcode AVS | `payment_es/worldpay/avs_fraud_case` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Sort Order | `payment_es/worldpay/sort_order` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Enabled | `payment_es/eway/active` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Connection Type | `payment_es/eway/connection_type` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Title | `payment_es/eway/title` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Sandbox Mode | `payment_es/eway/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Live API Key | `payment_es/eway/live_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Live API Password | `payment_es/eway/live_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Live Client-side Encryption Key | `payment_es/eway/live_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Sandbox API Key | `payment_es/eway/sandbox_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Sandbox API Password | `payment_es/eway/sandbox_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Sandbox Client-side Encryption Key | `payment_es/eway/sandbox_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment Action | `payment_es/eway/payment_action` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Debug | `payment_es/eway/debug` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Credit Card Types | `payment_es/eway/cctypes` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment from Applicable Countries | `payment_es/eway/allowspecific` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment from Specific Countries | `payment_es/eway/specificcountry` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Sort Order | `payment_es/eway/sort_order` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
 SFTP Credentials | `payment_it/express_checkout_other/settings_ec/settings_ec_advanced/express_checkout_settlement_report/heading_sftp` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
 Scheduled Fetching | `payment_it/express_checkout_other/settings_ec/settings_ec_advanced/express_checkout_settlement_report/heading_schedule` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
 PayPal Merchant Pages Style | `payment_it/express_checkout_other/settings_ec/settings_ec_advanced/express_checkout_frontend/paypal_pages` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
@@ -828,58 +828,58 @@ Payment from Specific Countries | `payment_it/authorizenet_directpost/specificco
 Minimum Order Total | `payment_it/authorizenet_directpost/min_order_total` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
 Maximum Order Total | `payment_it/authorizenet_directpost/max_order_total` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
 Sort Order | `payment_it/authorizenet_directpost/sort_order` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Enabled | `payment_it/cybersource/active` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment Action | `payment_it/cybersource/payment_action` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Title | `payment_it/cybersource/title` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Merchant ID | `payment_it/cybersource/merchant_id` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Transaction Key | `payment_it/cybersource/transaction_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Profile ID | `payment_it/cybersource/profile_id` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Access Key | `payment_it/cybersource/access_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Secret Key | `payment_it/cybersource/secret_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-New Order Status | `payment_it/cybersource/order_status` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Test Mode | `payment_it/cybersource/sandbox_flag` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Debug | `payment_it/cybersource/debug` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Credit Card Types | `payment_it/cybersource/cctypes` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment from Applicable Countries | `payment_it/cybersource/allowspecific` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment from Specific Countries | `payment_it/cybersource/specificcountry` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Minimum Order Total | `payment_it/cybersource/min_order_total` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Maximum Order Total | `payment_it/cybersource/max_order_total` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Sort Order | `payment_it/cybersource/sort_order` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Enabled | `payment_it/worldpay/active` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Title | `payment_it/worldpay/title` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Installation ID | `payment_it/worldpay/installation_id` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment Response Password | `payment_it/worldpay/response_password` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Remote Admin Installation ID | `payment_it/worldpay/admin_installation_id` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Remote Admin Authorisation Password | `payment_it/worldpay/auth_password` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-MD5 Secret for Transactions | `payment_it/worldpay/md5_secret` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Allow To Edit Contact Information | `payment_it/worldpay/fix_contact` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Hide Contact Information | `payment_it/worldpay/hide_contact` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Signature Fields | `payment_it/worldpay/signature_fields` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Debug | `payment_it/worldpay/debug` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Test Mode | `payment_it/worldpay/sandbox_flag` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment Action for Test | `payment_it/worldpay/test_action` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment Action | `payment_it/worldpay/payment_action` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment From Applicable Countries | `payment_it/worldpay/allowspecific` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment From Specific Countries | `payment_it/worldpay/specificcountry` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Set Order Status to Suspected Fraud for CVV | `payment_it/worldpay/cvv_fraud_case` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Set Order Status to Suspected Fraud for Postcode AVS | `payment_it/worldpay/avs_fraud_case` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Sort Order | `payment_it/worldpay/sort_order` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Enabled | `payment_it/eway/active` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Connection Type | `payment_it/eway/connection_type` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Title | `payment_it/eway/title` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Sandbox Mode | `payment_it/eway/sandbox_flag` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Live API Key | `payment_it/eway/live_api_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Live API Password | `payment_it/eway/live_api_password` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Live Client-side Encryption Key | `payment_it/eway/live_encryption_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Sandbox API Key | `payment_it/eway/sandbox_api_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Sandbox API Password | `payment_it/eway/sandbox_api_password` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Sandbox Client-side Encryption Key | `payment_it/eway/sandbox_encryption_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment Action | `payment_it/eway/payment_action` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Debug | `payment_it/eway/debug` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Credit Card Types | `payment_it/eway/cctypes` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment from Applicable Countries | `payment_it/eway/allowspecific` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment from Specific Countries | `payment_it/eway/specificcountry` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Sort Order | `payment_it/eway/sort_order` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
+Enabled | `payment_it/cybersource/active` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment Action | `payment_it/cybersource/payment_action` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Title | `payment_it/cybersource/title` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Merchant ID | `payment_it/cybersource/merchant_id` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Transaction Key | `payment_it/cybersource/transaction_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Profile ID | `payment_it/cybersource/profile_id` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Access Key | `payment_it/cybersource/access_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Secret Key | `payment_it/cybersource/secret_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+New Order Status | `payment_it/cybersource/order_status` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Test Mode | `payment_it/cybersource/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Debug | `payment_it/cybersource/debug` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Credit Card Types | `payment_it/cybersource/cctypes` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment from Applicable Countries | `payment_it/cybersource/allowspecific` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment from Specific Countries | `payment_it/cybersource/specificcountry` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Minimum Order Total | `payment_it/cybersource/min_order_total` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Maximum Order Total | `payment_it/cybersource/max_order_total` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Sort Order | `payment_it/cybersource/sort_order` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Enabled | `payment_it/worldpay/active` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Title | `payment_it/worldpay/title` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Installation ID | `payment_it/worldpay/installation_id` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment Response Password | `payment_it/worldpay/response_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Remote Admin Installation ID | `payment_it/worldpay/admin_installation_id` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Remote Admin Authorisation Password | `payment_it/worldpay/auth_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+MD5 Secret for Transactions | `payment_it/worldpay/md5_secret` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Allow To Edit Contact Information | `payment_it/worldpay/fix_contact` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Hide Contact Information | `payment_it/worldpay/hide_contact` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Signature Fields | `payment_it/worldpay/signature_fields` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Debug | `payment_it/worldpay/debug` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Test Mode | `payment_it/worldpay/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment Action for Test | `payment_it/worldpay/test_action` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment Action | `payment_it/worldpay/payment_action` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment From Applicable Countries | `payment_it/worldpay/allowspecific` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment From Specific Countries | `payment_it/worldpay/specificcountry` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Set Order Status to Suspected Fraud for CVV | `payment_it/worldpay/cvv_fraud_case` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Set Order Status to Suspected Fraud for Postcode AVS | `payment_it/worldpay/avs_fraud_case` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Sort Order | `payment_it/worldpay/sort_order` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Enabled | `payment_it/eway/active` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Connection Type | `payment_it/eway/connection_type` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Title | `payment_it/eway/title` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Sandbox Mode | `payment_it/eway/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Live API Key | `payment_it/eway/live_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Live API Password | `payment_it/eway/live_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Live Client-side Encryption Key | `payment_it/eway/live_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Sandbox API Key | `payment_it/eway/sandbox_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Sandbox API Password | `payment_it/eway/sandbox_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Sandbox Client-side Encryption Key | `payment_it/eway/sandbox_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment Action | `payment_it/eway/payment_action` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Debug | `payment_it/eway/debug` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Credit Card Types | `payment_it/eway/cctypes` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment from Applicable Countries | `payment_it/eway/allowspecific` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment from Specific Countries | `payment_it/eway/specificcountry` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Sort Order | `payment_it/eway/sort_order` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
 SFTP Credentials | `payment_fr/express_checkout_other/settings_ec/settings_ec_advanced/express_checkout_settlement_report/heading_sftp` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
 Scheduled Fetching | `payment_fr/express_checkout_other/settings_ec/settings_ec_advanced/express_checkout_settlement_report/heading_schedule` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
 PayPal Merchant Pages Style | `payment_fr/express_checkout_other/settings_ec/settings_ec_advanced/express_checkout_frontend/paypal_pages` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
@@ -952,58 +952,58 @@ Payment from Specific Countries | `payment_fr/authorizenet_directpost/specificco
 Minimum Order Total | `payment_fr/authorizenet_directpost/min_order_total` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
 Maximum Order Total | `payment_fr/authorizenet_directpost/max_order_total` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
 Sort Order | `payment_fr/authorizenet_directpost/sort_order` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Enabled | `payment_fr/cybersource/active` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment Action | `payment_fr/cybersource/payment_action` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Title | `payment_fr/cybersource/title` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Merchant ID | `payment_fr/cybersource/merchant_id` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Transaction Key | `payment_fr/cybersource/transaction_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Profile ID | `payment_fr/cybersource/profile_id` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Access Key | `payment_fr/cybersource/access_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Secret Key | `payment_fr/cybersource/secret_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-New Order Status | `payment_fr/cybersource/order_status` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Test Mode | `payment_fr/cybersource/sandbox_flag` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Debug | `payment_fr/cybersource/debug` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Credit Card Types | `payment_fr/cybersource/cctypes` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment from Applicable Countries | `payment_fr/cybersource/allowspecific` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment from Specific Countries | `payment_fr/cybersource/specificcountry` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Minimum Order Total | `payment_fr/cybersource/min_order_total` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Maximum Order Total | `payment_fr/cybersource/max_order_total` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Sort Order | `payment_fr/cybersource/sort_order` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Enabled | `payment_fr/worldpay/active` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Title | `payment_fr/worldpay/title` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Installation ID | `payment_fr/worldpay/installation_id` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment Response Password | `payment_fr/worldpay/response_password` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Remote Admin Installation ID | `payment_fr/worldpay/admin_installation_id` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Remote Admin Authorisation Password | `payment_fr/worldpay/auth_password` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-MD5 Secret for Transactions | `payment_fr/worldpay/md5_secret` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Allow To Edit Contact Information | `payment_fr/worldpay/fix_contact` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Hide Contact Information | `payment_fr/worldpay/hide_contact` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Signature Fields | `payment_fr/worldpay/signature_fields` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Debug | `payment_fr/worldpay/debug` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Test Mode | `payment_fr/worldpay/sandbox_flag` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment Action for Test | `payment_fr/worldpay/test_action` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment Action | `payment_fr/worldpay/payment_action` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment From Applicable Countries | `payment_fr/worldpay/allowspecific` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment From Specific Countries | `payment_fr/worldpay/specificcountry` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Set Order Status to Suspected Fraud for CVV | `payment_fr/worldpay/cvv_fraud_case` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Set Order Status to Suspected Fraud for Postcode AVS | `payment_fr/worldpay/avs_fraud_case` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Sort Order | `payment_fr/worldpay/sort_order` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Enabled | `payment_fr/eway/active` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Connection Type | `payment_fr/eway/connection_type` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Title | `payment_fr/eway/title` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Sandbox Mode | `payment_fr/eway/sandbox_flag` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Live API Key | `payment_fr/eway/live_api_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Live API Password | `payment_fr/eway/live_api_password` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Live Client-side Encryption Key | `payment_fr/eway/live_encryption_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Sandbox API Key | `payment_fr/eway/sandbox_api_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Sandbox API Password | `payment_fr/eway/sandbox_api_password` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Sandbox Client-side Encryption Key | `payment_fr/eway/sandbox_encryption_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment Action | `payment_fr/eway/payment_action` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Debug | `payment_fr/eway/debug` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Credit Card Types | `payment_fr/eway/cctypes` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment from Applicable Countries | `payment_fr/eway/allowspecific` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment from Specific Countries | `payment_fr/eway/specificcountry` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Sort Order | `payment_fr/eway/sort_order` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
+Enabled | `payment_fr/cybersource/active` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment Action | `payment_fr/cybersource/payment_action` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Title | `payment_fr/cybersource/title` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Merchant ID | `payment_fr/cybersource/merchant_id` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Transaction Key | `payment_fr/cybersource/transaction_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Profile ID | `payment_fr/cybersource/profile_id` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Access Key | `payment_fr/cybersource/access_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Secret Key | `payment_fr/cybersource/secret_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+New Order Status | `payment_fr/cybersource/order_status` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Test Mode | `payment_fr/cybersource/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Debug | `payment_fr/cybersource/debug` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Credit Card Types | `payment_fr/cybersource/cctypes` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment from Applicable Countries | `payment_fr/cybersource/allowspecific` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment from Specific Countries | `payment_fr/cybersource/specificcountry` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Minimum Order Total | `payment_fr/cybersource/min_order_total` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Maximum Order Total | `payment_fr/cybersource/max_order_total` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Sort Order | `payment_fr/cybersource/sort_order` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Enabled | `payment_fr/worldpay/active` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Title | `payment_fr/worldpay/title` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Installation ID | `payment_fr/worldpay/installation_id` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment Response Password | `payment_fr/worldpay/response_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Remote Admin Installation ID | `payment_fr/worldpay/admin_installation_id` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Remote Admin Authorisation Password | `payment_fr/worldpay/auth_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+MD5 Secret for Transactions | `payment_fr/worldpay/md5_secret` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Allow To Edit Contact Information | `payment_fr/worldpay/fix_contact` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Hide Contact Information | `payment_fr/worldpay/hide_contact` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Signature Fields | `payment_fr/worldpay/signature_fields` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Debug | `payment_fr/worldpay/debug` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Test Mode | `payment_fr/worldpay/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment Action for Test | `payment_fr/worldpay/test_action` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment Action | `payment_fr/worldpay/payment_action` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment From Applicable Countries | `payment_fr/worldpay/allowspecific` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment From Specific Countries | `payment_fr/worldpay/specificcountry` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Set Order Status to Suspected Fraud for CVV | `payment_fr/worldpay/cvv_fraud_case` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Set Order Status to Suspected Fraud for Postcode AVS | `payment_fr/worldpay/avs_fraud_case` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Sort Order | `payment_fr/worldpay/sort_order` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Enabled | `payment_fr/eway/active` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Connection Type | `payment_fr/eway/connection_type` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Title | `payment_fr/eway/title` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Sandbox Mode | `payment_fr/eway/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Live API Key | `payment_fr/eway/live_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Live API Password | `payment_fr/eway/live_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Live Client-side Encryption Key | `payment_fr/eway/live_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Sandbox API Key | `payment_fr/eway/sandbox_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Sandbox API Password | `payment_fr/eway/sandbox_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Sandbox Client-side Encryption Key | `payment_fr/eway/sandbox_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment Action | `payment_fr/eway/payment_action` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Debug | `payment_fr/eway/debug` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Credit Card Types | `payment_fr/eway/cctypes` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment from Applicable Countries | `payment_fr/eway/allowspecific` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment from Specific Countries | `payment_fr/eway/specificcountry` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Sort Order | `payment_fr/eway/sort_order` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
 SFTP Credentials | `payment_jp/express_checkout_other/settings_ec/settings_ec_advanced/express_checkout_settlement_report/heading_sftp` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
 Scheduled Fetching | `payment_jp/express_checkout_other/settings_ec/settings_ec_advanced/express_checkout_settlement_report/heading_schedule` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
 PayPal Merchant Pages Style | `payment_jp/express_checkout_other/settings_ec/settings_ec_advanced/express_checkout_frontend/paypal_pages` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
@@ -1076,58 +1076,58 @@ Payment from Specific Countries | `payment_jp/authorizenet_directpost/specificco
 Minimum Order Total | `payment_jp/authorizenet_directpost/min_order_total` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
 Maximum Order Total | `payment_jp/authorizenet_directpost/max_order_total` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
 Sort Order | `payment_jp/authorizenet_directpost/sort_order` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Enabled | `payment_jp/cybersource/active` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment Action | `payment_jp/cybersource/payment_action` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Title | `payment_jp/cybersource/title` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Merchant ID | `payment_jp/cybersource/merchant_id` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Transaction Key | `payment_jp/cybersource/transaction_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Profile ID | `payment_jp/cybersource/profile_id` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Access Key | `payment_jp/cybersource/access_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Secret Key | `payment_jp/cybersource/secret_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-New Order Status | `payment_jp/cybersource/order_status` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Test Mode | `payment_jp/cybersource/sandbox_flag` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Debug | `payment_jp/cybersource/debug` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Credit Card Types | `payment_jp/cybersource/cctypes` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment from Applicable Countries | `payment_jp/cybersource/allowspecific` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment from Specific Countries | `payment_jp/cybersource/specificcountry` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Minimum Order Total | `payment_jp/cybersource/min_order_total` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Maximum Order Total | `payment_jp/cybersource/max_order_total` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Sort Order | `payment_jp/cybersource/sort_order` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Enabled | `payment_jp/worldpay/active` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Title | `payment_jp/worldpay/title` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Installation ID | `payment_jp/worldpay/installation_id` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment Response Password | `payment_jp/worldpay/response_password` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Remote Admin Installation ID | `payment_jp/worldpay/admin_installation_id` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Remote Admin Authorisation Password | `payment_jp/worldpay/auth_password` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-MD5 Secret for Transactions | `payment_jp/worldpay/md5_secret` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Allow To Edit Contact Information | `payment_jp/worldpay/fix_contact` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Hide Contact Information | `payment_jp/worldpay/hide_contact` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Signature Fields | `payment_jp/worldpay/signature_fields` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Debug | `payment_jp/worldpay/debug` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Test Mode | `payment_jp/worldpay/sandbox_flag` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment Action for Test | `payment_jp/worldpay/test_action` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment Action | `payment_jp/worldpay/payment_action` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment From Applicable Countries | `payment_jp/worldpay/allowspecific` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment From Specific Countries | `payment_jp/worldpay/specificcountry` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Set Order Status to Suspected Fraud for CVV | `payment_jp/worldpay/cvv_fraud_case` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Set Order Status to Suspected Fraud for Postcode AVS | `payment_jp/worldpay/avs_fraud_case` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Sort Order | `payment_jp/worldpay/sort_order` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Enabled | `payment_jp/eway/active` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Connection Type | `payment_jp/eway/connection_type` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Title | `payment_jp/eway/title` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Sandbox Mode | `payment_jp/eway/sandbox_flag` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Live API Key | `payment_jp/eway/live_api_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Live API Password | `payment_jp/eway/live_api_password` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Live Client-side Encryption Key | `payment_jp/eway/live_encryption_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Sandbox API Key | `payment_jp/eway/sandbox_api_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Sandbox API Password | `payment_jp/eway/sandbox_api_password` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Sandbox Client-side Encryption Key | `payment_jp/eway/sandbox_encryption_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment Action | `payment_jp/eway/payment_action` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Debug | `payment_jp/eway/debug` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Credit Card Types | `payment_jp/eway/cctypes` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment from Applicable Countries | `payment_jp/eway/allowspecific` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment from Specific Countries | `payment_jp/eway/specificcountry` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Sort Order | `payment_jp/eway/sort_order` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
+Enabled | `payment_jp/cybersource/active` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment Action | `payment_jp/cybersource/payment_action` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Title | `payment_jp/cybersource/title` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Merchant ID | `payment_jp/cybersource/merchant_id` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Transaction Key | `payment_jp/cybersource/transaction_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Profile ID | `payment_jp/cybersource/profile_id` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Access Key | `payment_jp/cybersource/access_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Secret Key | `payment_jp/cybersource/secret_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+New Order Status | `payment_jp/cybersource/order_status` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Test Mode | `payment_jp/cybersource/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Debug | `payment_jp/cybersource/debug` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Credit Card Types | `payment_jp/cybersource/cctypes` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment from Applicable Countries | `payment_jp/cybersource/allowspecific` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment from Specific Countries | `payment_jp/cybersource/specificcountry` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Minimum Order Total | `payment_jp/cybersource/min_order_total` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Maximum Order Total | `payment_jp/cybersource/max_order_total` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Sort Order | `payment_jp/cybersource/sort_order` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Enabled | `payment_jp/worldpay/active` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Title | `payment_jp/worldpay/title` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Installation ID | `payment_jp/worldpay/installation_id` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment Response Password | `payment_jp/worldpay/response_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Remote Admin Installation ID | `payment_jp/worldpay/admin_installation_id` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Remote Admin Authorisation Password | `payment_jp/worldpay/auth_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+MD5 Secret for Transactions | `payment_jp/worldpay/md5_secret` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Allow To Edit Contact Information | `payment_jp/worldpay/fix_contact` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Hide Contact Information | `payment_jp/worldpay/hide_contact` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Signature Fields | `payment_jp/worldpay/signature_fields` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Debug | `payment_jp/worldpay/debug` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Test Mode | `payment_jp/worldpay/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment Action for Test | `payment_jp/worldpay/test_action` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment Action | `payment_jp/worldpay/payment_action` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment From Applicable Countries | `payment_jp/worldpay/allowspecific` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment From Specific Countries | `payment_jp/worldpay/specificcountry` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Set Order Status to Suspected Fraud for CVV | `payment_jp/worldpay/cvv_fraud_case` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Set Order Status to Suspected Fraud for Postcode AVS | `payment_jp/worldpay/avs_fraud_case` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Sort Order | `payment_jp/worldpay/sort_order` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Enabled | `payment_jp/eway/active` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Connection Type | `payment_jp/eway/connection_type` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Title | `payment_jp/eway/title` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Sandbox Mode | `payment_jp/eway/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Live API Key | `payment_jp/eway/live_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Live API Password | `payment_jp/eway/live_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Live Client-side Encryption Key | `payment_jp/eway/live_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Sandbox API Key | `payment_jp/eway/sandbox_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Sandbox API Password | `payment_jp/eway/sandbox_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Sandbox Client-side Encryption Key | `payment_jp/eway/sandbox_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment Action | `payment_jp/eway/payment_action` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Debug | `payment_jp/eway/debug` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Credit Card Types | `payment_jp/eway/cctypes` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment from Applicable Countries | `payment_jp/eway/allowspecific` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment from Specific Countries | `payment_jp/eway/specificcountry` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Sort Order | `payment_jp/eway/sort_order` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
 SFTP Credentials | `payment_au/express_checkout_other/settings_ec/settings_ec_advanced/express_checkout_settlement_report/heading_sftp` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
 Scheduled Fetching | `payment_au/express_checkout_other/settings_ec/settings_ec_advanced/express_checkout_settlement_report/heading_schedule` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
 PayPal Merchant Pages Style | `payment_au/express_checkout_other/settings_ec/settings_ec_advanced/express_checkout_frontend/paypal_pages` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->

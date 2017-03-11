@@ -239,12 +239,12 @@ Merchant's Email | `payment/authorizenet_directpost/merchant_email` | <!-- ![Not
 
 Name  | Config path | EE only? |
 |--------------|--------------|--------------|
-Installation ID | `payment/worldpay/installation_id` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Payment Response Password | `payment/worldpay/response_password` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Remote Admin Installation ID | `payment/worldpay/admin_installation_id` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Remote Admin Authorisation Password | `payment/worldpay/auth_password` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-MD5 Secret for Transactions | `payment/worldpay/md5_secret` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Signature Fields | `payment/worldpay/signature_fields` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
+Installation ID | `payment/worldpay/installation_id` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Payment Response Password | `payment/worldpay/response_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Remote Admin Installation ID | `payment/worldpay/admin_installation_id` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Remote Admin Authorisation Password | `payment/worldpay/auth_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+MD5 Secret for Transactions | `payment/worldpay/md5_secret` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Signature Fields | `payment/worldpay/signature_fields` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
 
 ### Authorize.net Direct Post sensitive paths
 
@@ -258,12 +258,12 @@ Merchant MD5 | `payment/authorizenet_directpost/trans_md5` | <!-- ![Not EE-only]
 
 Name  | Config path | EE only? |
 |--------------|--------------|--------------|
-Live API Key | `payment/eway/live_api_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Live API Password | `payment/eway/live_api_password` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Live Client-side Encryption Key | `payment/eway/live_encryption_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Sandbox API Key | `payment/eway/sandbox_api_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Sandbox API Password | `payment/eway/sandbox_api_password` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Sandbox Client-side Encryption Key | `payment/eway/sandbox_encryption_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
+Live API Key | `payment/eway/live_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Live API Password | `payment/eway/live_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Live Client-side Encryption Key | `payment/eway/live_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Sandbox API Key | `payment/eway/sandbox_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Sandbox API Password | `payment/eway/sandbox_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Sandbox Client-side Encryption Key | `payment/eway/sandbox_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
 
 ### Cybersource sensitive paths
 
