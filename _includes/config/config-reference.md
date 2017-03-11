@@ -20,7 +20,7 @@ Locale | `general/locale/code` | ![Not EE-only]({{ site.baseurl }}common/images/
 Weight Unit | `general/locale/weight_unit` | ![Not EE-only]({{ site.baseurl }}common/images/red-x.png)
 First Day of Week | `general/locale/firstday` | ![Not EE-only]({{ site.baseurl }}common/images/red-x.png)
 Weekend Days | `general/locale/weekend` | ![Not EE-only]({{ site.baseurl }}common/images/red-x.png)
-Access Restriction | `general/restriction/is_active` | ![EE-only]({{ site.baseurl }}common/images/green-check.png)
+Access Restriction | `general/restriction/is_active` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
 Restriction Mode | `general/restriction/mode` | ![EE-only]({{ site.baseurl }}common/images/green-check.png)
 Startup Page | `general/restriction/http_redirect` | ![EE-only]({{ site.baseurl }}common/images/green-check.png)
 Landing Page | `general/restriction/cms_page` | ![Not EE-only]({{ site.baseurl }}common/images/green-check.png)
