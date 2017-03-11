@@ -471,11 +471,11 @@ Name  | Config path | EE only?
 Enable Reminder Emails | `promo/magento_reminder/enabled` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
 Frequency | `promo/magento_reminder/frequency` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
 Interval | `promo/magento_reminder/interval` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Minute of the Hour | `promo/magento_reminder/minutes` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Start Time | `promo/magento_reminder/time` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Maximum Emails per One Run | `promo/magento_reminder/limit` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Email Send Failure Threshold | `promo/magento_reminder/threshold` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
-Reminder Email Sender | `promo/magento_reminder/identity` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
+Minute of the Hour | `promo/magento_reminder/minutes` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Start Time | `promo/magento_reminder/time` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Maximum Emails per One Run | `promo/magento_reminder/limit` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Email Send Failure Threshold | `promo/magento_reminder/threshold` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Reminder Email Sender | `promo/magento_reminder/identity` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
 Code Length | `promo/auto_generated_coupon_codes/length` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
 Code Format | `promo/auto_generated_coupon_codes/format` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
 Code Prefix | `promo/auto_generated_coupon_codes/prefix` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
