@@ -8,7 +8,7 @@ These configuration values are availabe in the Magento Admin in **Stores** > Set
 
 Name  | Config path | EE only?
 |--------------|--------------|--------------|
-Default Country | <pre>general/country/default</pre> | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
+| Default Country | <pre>general/country/default</pre> | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
 Allow Countries | `general/country/allow` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
 Zip/Postal Code is Optional for | `general/country/optional_zip_countries` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
 European Union Countries | `general/country/eu_countries` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
