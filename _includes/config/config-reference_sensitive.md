@@ -132,8 +132,8 @@ Account ID | `carriers/fedex/account` | <!-- ![Not EE-only]({{ site.baseurl }}co
 Key | `carriers/fedex/key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Meter Number | `carriers/fedex/meter_number` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Password | `carriers/fedex/password` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Access ID | `carriers/dhl/id` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Password | `carriers/dhl/password` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
+Access ID | `carriers/dhl/id` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Password | `carriers/dhl/password` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
 Account Number | `carriers/dhl/account` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 
 ### Sales sensitive paths
@@ -228,8 +228,8 @@ Proxy Port | `paypal/wpp/proxy_port` | <!-- ![Not EE-only]({{ site.baseurl }}com
 Name  | Config path | EE only? | Encrypted? |
 |--------------|--------------|--------------|
 Merchant ID | `payment/braintree/merchant_id` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Public Key | `payment/braintree/public_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Private Key | `payment/braintree/private_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
+Public Key | `payment/braintree/public_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Private Key | `payment/braintree/private_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
 Merchant Account ID | `payment/braintree/merchant_account_id` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Kount Merchant ID | `payment/braintree/kount_id` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Override Merchant Name | `payment/braintree_paypal/merchant_name_override` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
