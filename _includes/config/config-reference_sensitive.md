@@ -40,8 +40,8 @@ Name  | Config path | EE only? | Encrypted? |
 |--------------|--------------|--------------|
 New Relic Account ID | `newrelicreporting/general/account_id` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 New Relic Application ID | `newrelicreporting/general/app_id` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-New Relic API Key | `newrelicreporting/general/api` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Insights API Key | `newrelicreporting/general/insights_insert_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
+New Relic API Key | `newrelicreporting/general/api` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Insights API Key | `newrelicreporting/general/insights_insert_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
 
 ## Catalog category
 This section lists variable names and config paths available for options in the Admin under **Stores** > Settings > **Configuration** > **Catalog**.
@@ -120,18 +120,18 @@ Name  | Config path | EE only? | Encrypted? |
 Gateway URL | `carriers/usps/gateway_url` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Secure Gateway URL | `carriers/usps/gateway_secure_url` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Title | `carriers/usps/title` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-User ID | `carriers/usps/userid` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Password | `carriers/usps/password` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-User ID | `carriers/ups/username` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Password | `carriers/ups/password` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Access License Number | `carriers/ups/access_license_number` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
+User ID | `carriers/usps/userid` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Password | `carriers/usps/password` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+User ID | `carriers/ups/username` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Password | `carriers/ups/password` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Access License Number | `carriers/ups/access_license_number` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
 Tracking XML URL | `carriers/ups/tracking_xml_url` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Gateway XML URL | `carriers/ups/gateway_xml_url` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Shipper Number | `carriers/ups/shipper_number` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Account ID | `carriers/fedex/account` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Key | `carriers/fedex/key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Meter Number | `carriers/fedex/meter_number` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Password | `carriers/fedex/password` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
+Account ID | `carriers/fedex/account` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Key | `carriers/fedex/key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Meter Number | `carriers/fedex/meter_number` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Password | `carriers/fedex/password` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
 Access ID | `carriers/dhl/id` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
 Password | `carriers/dhl/password` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
 Account Number | `carriers/dhl/account` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
@@ -188,8 +188,8 @@ Name  | Config path | EE only? | Encrypted? |
 Email Associated with PayPal Merchant Account (Optional) | `paypal/general/business_account` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Merchant Account ID | `payment/paypal_express/merchant_id` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Publisher ID | `payment/paypal_express_bml/publisher_id` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Password | `paypal/fetch_reports/ftp_password` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Login | `paypal/fetch_reports/ftp_login` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
+Password | `paypal/fetch_reports/ftp_password` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Login | `paypal/fetch_reports/ftp_login` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
 Custom Endpoint Hostname or IP-Address | `paypal/fetch_reports/ftp_ip` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Custom Path | `paypal/fetch_reports/ftp_path` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 
@@ -197,10 +197,10 @@ Custom Path | `paypal/fetch_reports/ftp_path` | <!-- ![Not EE-only]({{ site.base
 
 Name  | Config path | EE only? | Encrypted? |
 |--------------|--------------|--------------|
-User | `payment/payflow_advanced/user` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Password | `payment/payflow_advanced/pwd` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-User | `payment/payflowpro/user` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Password | `payment/payflowpro/pwd` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
+User | `payment/payflow_advanced/user` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Password | `payment/payflow_advanced/pwd` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+User | `payment/payflowpro/user` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Password | `payment/payflowpro/pwd` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
 Partner | `payment/payflowpro/partner` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Proxy Host | `payment/payflowpro/proxy_host` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Proxy Port | `payment/payflowpro/proxy_port` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
@@ -209,16 +209,16 @@ Proxy Port | `payment/payflowpro/proxy_port` | <!-- ![Not EE-only]({{ site.baseu
 
 Name  | Config path | EE only? | Encrypted? |
 |--------------|--------------|--------------|
-User | `payment/payflow_link/user` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Password | `payment/payflow_link/pwd` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
+User | `payment/payflow_link/user` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Password | `payment/payflow_link/pwd` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
 
 ### PayPal Payments Pro sensitive paths
 
 Name  | Config path | EE only? | Encrypted? |
 |--------------|--------------|--------------|
-API Username | `paypal/wpp/api_username` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-API Password | `paypal/wpp/api_password` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-API Signature | `paypal/wpp/api_signature` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
+API Username | `paypal/wpp/api_username` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+API Password | `paypal/wpp/api_password` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+API Signature | `paypal/wpp/api_signature` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
 API Certificate | `paypal/wpp/api_cert` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Proxy Host | `paypal/wpp/proxy_host` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Proxy Port | `paypal/wpp/proxy_port` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
@@ -269,8 +269,8 @@ Sandbox Client-side Encryption Key | `payment/eway/sandbox_encryption_key` | ![E
 
 Name  | Config path | EE only? | Encrypted? |
 |--------------|--------------|--------------|
-Merchant ID | `payment/cybersource/merchant_id` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Transaction Key | `payment/cybersource/transaction_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Profile ID | `payment/cybersource/profile_id` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Access Key | `payment/cybersource/access_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Secret Key | `payment/cybersource/secret_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
+Merchant ID | `payment/cybersource/merchant_id` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Transaction Key | `payment/cybersource/transaction_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Profile ID | `payment/cybersource/profile_id` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Access Key | `payment/cybersource/access_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Secret Key | `payment/cybersource/secret_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
