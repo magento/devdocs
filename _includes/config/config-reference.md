@@ -8,7 +8,7 @@ These configuration values are availabe in the Magento Admin in **Stores** > Set
 
 Name  | Config path | EE only?
 |--------------|--------------|--------------|
-Default Country | `general/country/default` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
+Default Country | <pre>general/country/default</pre> | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
 Allow Countries | `general/country/allow` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
 Zip/Postal Code is Optional for | `general/country/optional_zip_countries` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
 European Union Countries | `general/country/eu_countries` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
@@ -892,6 +892,17 @@ Conversion Color | `google/adwords/conversion_color` | <!-- ![Not EE-only]({{ si
 Conversion Label | `google/adwords/conversion_label` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
 Conversion Value Type | `google/adwords/conversion_value_type` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
 Conversion Value | `google/adwords/conversion_value` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
+
+### Signifyd paths
+These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Fraud Protection**.
+
+Name  | Config path | EE only?
+|--------------|--------------|--------------|
+| Enable this Solution  | `fraud_protection/signifyd/active`   |   |
+| API Key | `fraud_protection/signifyd/api_key`   |   |
+| API URL  |  `fraud_protection/signifyd/api_url`  |   |
+| Debug  | `fraud_protection/signifyd/debug`   |   |
+
 
 ### Gift cards paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Gift Cards**.

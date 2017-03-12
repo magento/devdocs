@@ -115,7 +115,7 @@ Countries Payment Applicable From | `payment/hosted_pro/specificcountry` | <!-- 
 Debug Mode | `payment/hosted_pro/debug` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
 Enable SSL verification | `payment/hosted_pro/verify_peer` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) -->
 
-### PayPal Payments Standard
+<!-- ### PayPal Payments Standard -->
 
 ### PayPal Payflow Pro
 
