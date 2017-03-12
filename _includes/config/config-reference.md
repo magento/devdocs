@@ -899,7 +899,7 @@ These configuration values are availabe in the Magento Admin in **Stores** > Set
 Name  | Config path | EE only? | Encrypted?
 |--------------|--------------|--------------|--------------|
 | Enable this Solution  | `fraud_protection/signifyd/active`   | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) |   |
-| API Key | `fraud_protection/signifyd/api_key`   | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) |   |
+| API Key | `fraud_protection/signifyd/api_key`   | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) |   |
 | API URL  |  `fraud_protection/signifyd/api_url`  |  ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) |  |
 | Debug  | `fraud_protection/signifyd/debug`   | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) |   |
 

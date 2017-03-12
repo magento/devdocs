@@ -496,12 +496,12 @@ Enabled | `payment_nz/eway/active` | ![EE-only]({{ site.baseurl }}common/images/
 Connection Type | `payment_nz/eway/connection_type` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Title | `payment_nz/eway/title` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Sandbox Mode | `payment_nz/eway/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Live API Key | `payment_nz/eway/live_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Live API Password | `payment_nz/eway/live_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Live Client-side Encryption Key | `payment_nz/eway/live_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Sandbox API Key | `payment_nz/eway/sandbox_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Sandbox API Password | `payment_nz/eway/sandbox_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Sandbox Client-side Encryption Key | `payment_nz/eway/sandbox_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
+Live API Key | `payment_nz/eway/live_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Live API Password | `payment_nz/eway/live_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Live Client-side Encryption Key | `payment_nz/eway/live_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Sandbox API Key | `payment_nz/eway/sandbox_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Sandbox API Password | `payment_nz/eway/sandbox_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Sandbox Client-side Encryption Key | `payment_nz/eway/sandbox_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
 Payment Action | `payment_nz/eway/payment_action` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Debug | `payment_nz/eway/debug` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Credit Card Types | `payment_nz/eway/cctypes` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
@@ -620,12 +620,12 @@ Enabled | `payment_hk/eway/active` | ![EE-only]({{ site.baseurl }}common/images/
 Connection Type | `payment_hk/eway/connection_type` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Title | `payment_hk/eway/title` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Sandbox Mode | `payment_hk/eway/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Live API Key | `payment_hk/eway/live_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Live API Password | `payment_hk/eway/live_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Live Client-side Encryption Key | `payment_hk/eway/live_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Sandbox API Key | `payment_hk/eway/sandbox_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Sandbox API Password | `payment_hk/eway/sandbox_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Sandbox Client-side Encryption Key | `payment_hk/eway/sandbox_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
+Live API Key | `payment_hk/eway/live_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Live API Password | `payment_hk/eway/live_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Live Client-side Encryption Key | `payment_hk/eway/live_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Sandbox API Key | `payment_hk/eway/sandbox_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Sandbox API Password | `payment_hk/eway/sandbox_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Sandbox Client-side Encryption Key | `payment_hk/eway/sandbox_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
 Payment Action | `payment_hk/eway/payment_action` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Debug | `payment_hk/eway/debug` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Credit Card Types | `payment_hk/eway/cctypes` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
@@ -744,12 +744,12 @@ Enabled | `payment_es/eway/active` | ![EE-only]({{ site.baseurl }}common/images/
 Connection Type | `payment_es/eway/connection_type` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Title | `payment_es/eway/title` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Sandbox Mode | `payment_es/eway/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Live API Key | `payment_es/eway/live_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Live API Password | `payment_es/eway/live_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Live Client-side Encryption Key | `payment_es/eway/live_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Sandbox API Key | `payment_es/eway/sandbox_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Sandbox API Password | `payment_es/eway/sandbox_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Sandbox Client-side Encryption Key | `payment_es/eway/sandbox_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
+Live API Key | `payment_es/eway/live_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Live API Password | `payment_es/eway/live_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Live Client-side Encryption Key | `payment_es/eway/live_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Sandbox API Key | `payment_es/eway/sandbox_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Sandbox API Password | `payment_es/eway/sandbox_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Sandbox Client-side Encryption Key | `payment_es/eway/sandbox_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
 Payment Action | `payment_es/eway/payment_action` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Debug | `payment_es/eway/debug` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Credit Card Types | `payment_es/eway/cctypes` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
@@ -868,12 +868,12 @@ Enabled | `payment_it/eway/active` | ![EE-only]({{ site.baseurl }}common/images/
 Connection Type | `payment_it/eway/connection_type` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Title | `payment_it/eway/title` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Sandbox Mode | `payment_it/eway/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Live API Key | `payment_it/eway/live_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Live API Password | `payment_it/eway/live_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Live Client-side Encryption Key | `payment_it/eway/live_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Sandbox API Key | `payment_it/eway/sandbox_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Sandbox API Password | `payment_it/eway/sandbox_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Sandbox Client-side Encryption Key | `payment_it/eway/sandbox_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
+Live API Key | `payment_it/eway/live_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Live API Password | `payment_it/eway/live_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Live Client-side Encryption Key | `payment_it/eway/live_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Sandbox API Key | `payment_it/eway/sandbox_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Sandbox API Password | `payment_it/eway/sandbox_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Sandbox Client-side Encryption Key | `payment_it/eway/sandbox_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
 Payment Action | `payment_it/eway/payment_action` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Debug | `payment_it/eway/debug` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Credit Card Types | `payment_it/eway/cctypes` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
@@ -992,12 +992,12 @@ Enabled | `payment_fr/eway/active` | ![EE-only]({{ site.baseurl }}common/images/
 Connection Type | `payment_fr/eway/connection_type` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Title | `payment_fr/eway/title` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Sandbox Mode | `payment_fr/eway/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Live API Key | `payment_fr/eway/live_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Live API Password | `payment_fr/eway/live_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Live Client-side Encryption Key | `payment_fr/eway/live_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Sandbox API Key | `payment_fr/eway/sandbox_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Sandbox API Password | `payment_fr/eway/sandbox_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Sandbox Client-side Encryption Key | `payment_fr/eway/sandbox_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
+Live API Key | `payment_fr/eway/live_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Live API Password | `payment_fr/eway/live_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Live Client-side Encryption Key | `payment_fr/eway/live_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Sandbox API Key | `payment_fr/eway/sandbox_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Sandbox API Password | `payment_fr/eway/sandbox_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Sandbox Client-side Encryption Key | `payment_fr/eway/sandbox_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
 Payment Action | `payment_fr/eway/payment_action` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Debug | `payment_fr/eway/debug` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Credit Card Types | `payment_fr/eway/cctypes` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
@@ -1116,12 +1116,12 @@ Enabled | `payment_jp/eway/active` | ![EE-only]({{ site.baseurl }}common/images/
 Connection Type | `payment_jp/eway/connection_type` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Title | `payment_jp/eway/title` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Sandbox Mode | `payment_jp/eway/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Live API Key | `payment_jp/eway/live_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Live API Password | `payment_jp/eway/live_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Live Client-side Encryption Key | `payment_jp/eway/live_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Sandbox API Key | `payment_jp/eway/sandbox_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Sandbox API Password | `payment_jp/eway/sandbox_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Sandbox Client-side Encryption Key | `payment_jp/eway/sandbox_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
+Live API Key | `payment_jp/eway/live_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Live API Password | `payment_jp/eway/live_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Live Client-side Encryption Key | `payment_jp/eway/live_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Sandbox API Key | `payment_jp/eway/sandbox_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Sandbox API Password | `payment_jp/eway/sandbox_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Sandbox Client-side Encryption Key | `payment_jp/eway/sandbox_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
 Payment Action | `payment_jp/eway/payment_action` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Debug | `payment_jp/eway/debug` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Credit Card Types | `payment_jp/eway/cctypes` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
@@ -1244,12 +1244,12 @@ Enabled | `payment_au/eway/active` | ![EE-only]({{ site.baseurl }}common/images/
 Connection Type | `payment_au/eway/connection_type` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Title | `payment_au/eway/title` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Sandbox Mode | `payment_au/eway/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Live API Key | `payment_au/eway/live_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Live API Password | `payment_au/eway/live_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Live Client-side Encryption Key | `payment_au/eway/live_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Sandbox API Key | `payment_au/eway/sandbox_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Sandbox API Password | `payment_au/eway/sandbox_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Sandbox Client-side Encryption Key | `payment_au/eway/sandbox_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
+Live API Key | `payment_au/eway/live_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Live API Password | `payment_au/eway/live_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Live Client-side Encryption Key | `payment_au/eway/live_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Sandbox API Key | `payment_au/eway/sandbox_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Sandbox API Password | `payment_au/eway/sandbox_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Sandbox Client-side Encryption Key | `payment_au/eway/sandbox_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
 Payment Action | `payment_au/eway/payment_action` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Debug | `payment_au/eway/debug` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Credit Card Types | `payment_au/eway/cctypes` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
@@ -1378,12 +1378,12 @@ Enabled | `payment_ca/eway/active` | ![EE-only]({{ site.baseurl }}common/images/
 Connection Type | `payment_ca/eway/connection_type` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Title | `payment_ca/eway/title` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Sandbox Mode | `payment_ca/eway/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Live API Key | `payment_ca/eway/live_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Live API Password | `payment_ca/eway/live_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Live Client-side Encryption Key | `payment_ca/eway/live_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Sandbox API Key | `payment_ca/eway/sandbox_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Sandbox API Password | `payment_ca/eway/sandbox_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Sandbox Client-side Encryption Key | `payment_ca/eway/sandbox_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
+Live API Key | `payment_ca/eway/live_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Live API Password | `payment_ca/eway/live_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Live Client-side Encryption Key | `payment_ca/eway/live_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Sandbox API Key | `payment_ca/eway/sandbox_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Sandbox API Password | `payment_ca/eway/sandbox_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Sandbox Client-side Encryption Key | `payment_ca/eway/sandbox_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
 Payment Action | `payment_ca/eway/payment_action` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Debug | `payment_ca/eway/debug` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Credit Card Types | `payment_ca/eway/cctypes` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
@@ -1500,12 +1500,12 @@ Enabled | `payment_other/eway/active` | ![EE-only]({{ site.baseurl }}common/imag
 Connection Type | `payment_other/eway/connection_type` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Title | `payment_other/eway/title` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Sandbox Mode | `payment_other/eway/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Live API Key | `payment_other/eway/live_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Live API Password | `payment_other/eway/live_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Live Client-side Encryption Key | `payment_other/eway/live_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Sandbox API Key | `payment_other/eway/sandbox_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Sandbox API Password | `payment_other/eway/sandbox_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Sandbox Client-side Encryption Key | `payment_other/eway/sandbox_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
+Live API Key | `payment_other/eway/live_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Live API Password | `payment_other/eway/live_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Live Client-side Encryption Key | `payment_other/eway/live_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Sandbox API Key | `payment_other/eway/sandbox_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Sandbox API Password | `payment_other/eway/sandbox_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Sandbox Client-side Encryption Key | `payment_other/eway/sandbox_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
 Payment Action | `payment_other/eway/payment_action` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Debug | `payment_other/eway/debug` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Credit Card Types | `payment_other/eway/cctypes` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
@@ -1619,12 +1619,12 @@ Enabled | `payment_de/eway/active` | ![EE-only]({{ site.baseurl }}common/images/
 Connection Type | `payment_de/eway/connection_type` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Title | `payment_de/eway/title` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Sandbox Mode | `payment_de/eway/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Live API Key | `payment_de/eway/live_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Live API Password | `payment_de/eway/live_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Live Client-side Encryption Key | `payment_de/eway/live_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Sandbox API Key | `payment_de/eway/sandbox_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Sandbox API Password | `payment_de/eway/sandbox_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Sandbox Client-side Encryption Key | `payment_de/eway/sandbox_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
+Live API Key | `payment_de/eway/live_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Live API Password | `payment_de/eway/live_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Live Client-side Encryption Key | `payment_de/eway/live_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Sandbox API Key | `payment_de/eway/sandbox_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Sandbox API Password | `payment_de/eway/sandbox_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Sandbox Client-side Encryption Key | `payment_de/eway/sandbox_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
 Payment Action | `payment_de/eway/payment_action` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Debug | `payment_de/eway/debug` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Credit Card Types | `payment_de/eway/cctypes` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
@@ -1744,12 +1744,12 @@ Enabled | `payment_gb/eway/active` | ![EE-only]({{ site.baseurl }}common/images/
 Connection Type | `payment_gb/eway/connection_type` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Title | `payment_gb/eway/title` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Sandbox Mode | `payment_gb/eway/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Live API Key | `payment_gb/eway/live_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Live API Password | `payment_gb/eway/live_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Live Client-side Encryption Key | `payment_gb/eway/live_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Sandbox API Key | `payment_gb/eway/sandbox_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Sandbox API Password | `payment_gb/eway/sandbox_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Sandbox Client-side Encryption Key | `payment_gb/eway/sandbox_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
+Live API Key | `payment_gb/eway/live_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Live API Password | `payment_gb/eway/live_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Live Client-side Encryption Key | `payment_gb/eway/live_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Sandbox API Key | `payment_gb/eway/sandbox_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Sandbox API Password | `payment_gb/eway/sandbox_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Sandbox Client-side Encryption Key | `payment_gb/eway/sandbox_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
 Payment Action | `payment_gb/eway/payment_action` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Debug | `payment_gb/eway/debug` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Credit Card Types | `payment_gb/eway/cctypes` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
@@ -1882,12 +1882,12 @@ Enabled | `payment_us/eway/active` | ![EE-only]({{ site.baseurl }}common/images/
 Connection Type | `payment_us/eway/connection_type` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Title | `payment_us/eway/title` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Sandbox Mode | `payment_us/eway/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Live API Key | `payment_us/eway/live_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Live API Password | `payment_us/eway/live_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Live Client-side Encryption Key | `payment_us/eway/live_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Sandbox API Key | `payment_us/eway/sandbox_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Sandbox API Password | `payment_us/eway/sandbox_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Sandbox Client-side Encryption Key | `payment_us/eway/sandbox_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
+Live API Key | `payment_us/eway/live_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Live API Password | `payment_us/eway/live_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Live Client-side Encryption Key | `payment_us/eway/live_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Sandbox API Key | `payment_us/eway/sandbox_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Sandbox API Password | `payment_us/eway/sandbox_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Sandbox Client-side Encryption Key | `payment_us/eway/sandbox_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
 Payment Action | `payment_us/eway/payment_action` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Debug | `payment_us/eway/debug` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Credit Card Types | `payment_us/eway/cctypes` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
