@@ -160,6 +160,10 @@ where
 * `--scope-code` is the scope code of configuration (website code or store view code)
 * `path` is configuration path in format first_part/second_part/third_part/etc *(required)*
 
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+The `config:show` command displays the values of any [encrypted values](TBD) as a series of asterisks: `******`.
+</div>
+
 ##### Examples
 
 **Show all saved configurations**:
