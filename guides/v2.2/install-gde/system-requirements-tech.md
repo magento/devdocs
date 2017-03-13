@@ -87,7 +87,7 @@ Mail Transfer Agent (MTA) or an SMTP server
 
 ### Magento can utilize the following technologies:
 *	<a href="{{page.baseurl}}config-guide/redis/config-redis.html">Redis</a> version 3.0 for page caching and session storage (the latter supported by Magento version 2.0.6 and later only)
-*	<a href="{{page.baseurl}}config-guide/varnish/config-varnish.html">Varnish</a> version 3.5 or latest stable 4.x version for page caching
+*	<a href="{{page.baseurl}}config-guide/varnish/config-varnish.html">Varnish</a> version 4.x or 5.0
 *	<a href="{{page.baseurl}}config-guide/memcache/memcache.html">memcached</a> latest stable version for session storage with either `memcache` or `memcached` PHP extensions (latest stable version)
 
 *	Magento Enterprise Edition (EE) only <img src="{{ site.baseurl }}common/images/ee-only_small.png">
