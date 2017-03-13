@@ -1,7 +1,14 @@
 /**
+* If Google Analytics has loaded successfully
+* and has not been shimmed apply link click tracking.
+* https://davidwalsh.name/detecting-google-analytics
+*/
+
+/**
   Track onbound links click (for GitHub links)
 */
 $('.improve-page').on('click', function (e) {
+  if (! window.ga || ! window.ga.create) { return true; }
   e.preventDefault();
   var $this = $(this),
       url = $this.attr('href');
@@ -20,6 +27,7 @@ $('.improve-page').on('click', function (e) {
   Track "Give us Feedback" link click
 */
 $('.new-issue a').on('click', function (e) {
+  if (! window.ga || ! window.ga.create) { return true; }
   e.preventDefault();
   var $this = $(this),
       url = $this.attr('href');
@@ -34,13 +42,11 @@ $('.new-issue a').on('click', function (e) {
   });
 });
 
-
-
-
 /**
   Track "Become Contributor" home page button
 */
 $('.home-contributors .btn-primary').on('click', function (e) {
+  if (! window.ga || ! window.ga.create) { return true; }
   e.preventDefault();
   var $this = $(this),
       url = $this.attr('href');
