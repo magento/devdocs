@@ -46,9 +46,9 @@ ActionDelete-specific configuration:
   </tr>
   <tr>
     <td>
-      <code>links
+      <code>links</code>
       <ul>
-        <li>value
+        <li><code>value</code>
         </li>
       </ul>
       </code>

@@ -22,6 +22,8 @@ There is no need to duplicate information about the columns to be displayed in t
 
 Extends all [`UiElement`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uielement_concept.html) configuration.
 
+Column-specific configuration:
+
 <table>
   <tr>
     <th>Option</th>
@@ -42,7 +44,7 @@ Extends all [`UiElement`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uieleme
     <td><code>true</code></td>
   </tr>
   <tr>
-    <td><p>disableAction</p></td>
+    <td><code>disableAction</code></td>
     <td>Disables the action set in the <code>templates.fieldAction</code> property.</td>
     <td>Boolean</td>
     <td><code>false</code></td>

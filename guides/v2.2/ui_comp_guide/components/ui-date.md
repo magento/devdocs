@@ -20,51 +20,51 @@ Extends all `abstract` configuration.
     <th>Default</th>
   </tr>
   <tr>
-    <td>component</td>
+    <td><code>component</code></td>
     <td>The path to the component’s <code>.js</code> file in terms of RequireJS.</td>
     <td>String</td>
     <td><code>Magento_Ui/js/form/element/date</code></td>
   </tr>
   <tr>
-    <td>elementTmpl</td>
+    <td><code>elementTmpl</code></td>
     <td>The path to the <code>.html</code> template of the particular field type component (date).</td>
     <td>String</td>
     <td><code>ui/form/element/date</code></td>
   </tr>
   <tr>
-    <td>inputDateFormat</td>
+    <td><code>inputDateFormat</code></td>
     <td>Format of the date received from the server (ICU Date Format). Used only in date picker mode (<code>this.options.showsTime == false</code>).</td>
     <td>String</td>
-    <td>y-MM-dd</td>
+    <td><code>y-MM-dd</code></td>
   </tr>
   <tr>
-    <td>outputDateFormat</td>
+    <td><code>outputDateFormat</code></td>
     <td>Format of the date sent to the server (ICU Date Format). Used only in date picker mode (<code>this.options.showsTime == false</code>)</td>
     <td>String</td>
-    <td>MM/dd/y</td>
+    <td><code>MM/dd/y</code></td>
   </tr>
   <tr>
-    <td>pickerDateTimeFormat</td>
+    <td><code>pickerDateTimeFormat</code></td>
     <td>Date/time format that is used to display date in the input field.</td>
     <td>String</td>
-    <td>''</td>
+    <td><code>''</code></td>
   </tr>
   <tr>
-    <td>shiftedValue</td>
+    <td><code>shiftedValue</code></td>
     <td>Date/time value shifted to corresponding time zone, according to <code>this.storeTimeZone</code> property. This value is sent to the server.</td>
     <td>String</td>
-    <td>''</td>
+    <td><code>''</code></td>
   </tr>
   <tr>
-    <td>template</td>
+    <td><code>template</code></td>
     <td>The path to the general field <code>.html</code> template.</td>
     <td>String</td>
     <td><code>ui/form/field</code></td>
   </tr>
   <tr>
-    <td>timezoneFormat</td>
+    <td><code>timezoneFormat</code></td>
     <td>Timezone format, required for the <a href="https://momentjs.com/">moment.js library</a> for conversion.</td>
     <td>String</td>
-    <td>YYYY-MM-DD HH:mm</td>
+    <td><code>YYYY-MM-DD HH:mm</code></td>
   </tr>
 </table>

@@ -75,7 +75,7 @@ SelectColumn-specific configuration:
       Option's identifier.
     </td>
     <td>
-      String | Number
+      String | Number | Array&lt;Option&gt;
     </td>
     <td>
       Required
