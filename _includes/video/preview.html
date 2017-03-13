@@ -1,5 +1,9 @@
 <div class="video">
+  {% if site.baseurl == "/" %}
   <a href="{{ video.url }}">
+  {% else %}
+  <a href="{{site.baseurl}}{{ video.url }}">
+  {% endif %}
     <span class="thumbnail-wrap">
       {% if video.thumbnail %}
       <img class="thumbnail" src="{{ site.baseurl }}videos/{{ video.thumbnail }}" />

@@ -59,7 +59,7 @@ namem2install: "Magento 2 Installation Guide"
 collections:
   videos:
     output: true
-    permalink: /videos/:path/
+    permalink: videos/:path/
 
 
 defaults:

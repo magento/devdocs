@@ -24,6 +24,7 @@ module PageBaseUrlGenerator
         page.data['guide_version'] = version
       end
 
+      #videos metadata
       videos = site.collections["videos"]
 
       videos.docs.each do |video|

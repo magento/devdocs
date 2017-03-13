@@ -12,7 +12,16 @@
 				{% assign videos = (site.videos | where: 'group', page.group | where: 'layout', 'video' | sort: 'menu_order' ) %}
 
 				{% for video in videos %}
-					<li class="level-1 {% if video.url == page.url %}active{% assign current = forloop.index %}{% endif %}"><a href="{{ video.url }}">{{ video.title }} <span class="video-duration">{{ video.duration }} </span></a></li>
+                <li class="level-1 {% if video.url == page.url %}active{% assign current = forloop.index %}{% endif %}">
+                    {% if site.baseurl == "/" %}
+                    <a href="{{ video.url }}">
+                    {% else %}
+                    <a href="{{ site.baseurl }}{{ video.url }}">
+                    {% endif %}
+                        {{ video.title }} 
+                        <span class="video-duration">{{ video.duration }} </span>
+                    </a>
+                </li>
 				{% endfor %}
 			</ul>
 
@@ -42,8 +51,12 @@
 				<div class="playlist-name">{{page.group}}</div>
 			{% assign prev = current | minus: 2 %}
 			{% if prev >= 0 %}
-				<div class="previous-page">
-					<a href="{{ videos[prev].url }}">
+				<div class="previous-page"> 
+                    {% if site.baseurl == "/" %}
+                    <a href="{{ videos[prev].url }}">
+                    {% else %}
+                    <a href="{{ site.baseurl }}{{ videos[prev].url }}">
+                    {% endif %}
 						<span class="arrow">&larr; Previous</span>
 						<span class="title">{{ videos[prev].title }}</span>
 					</a>
@@ -52,8 +65,12 @@
 
 			{% assign next = current %}
 			{% if next < videos.size %}
-				<div class="next-page">
-					<a href="{{ videos[next].url }}">
+				<div class="next-page"> 
+                    {% if site.baseurl == "/" %}
+                    <a href="{{ videos[next].url }}">
+                    {% else %}
+                    <a href="{{ site.baseurl }}{{ videos[next].url }}">
+                    {% endif %}
 						<span class="arrow">Next &rarr;</span>
 						<span class="title">{{ videos[next].title }}</span>
 					</a>
