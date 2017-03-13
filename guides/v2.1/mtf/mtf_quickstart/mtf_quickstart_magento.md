@@ -40,6 +40,54 @@ Enable the **Admin Account Sharing** setting to avoid unpredictable logout durin
 * From the **Actions** list in the upper left, click **Refresh**.
 * Click **Submit**.
 
-<h2 id="mtf_install_pre">Next Steps</h2>
+## Enable CLI commands
+
+Functional tests require access to CLI commands during test run. Depending on a web sever, use the following extractions to enable access to the commands.
+
+### Apache
+
+Copy `/dev/tests/functional/.htaccess.sample` to `/dev/tests/functional/.htaccess`.
+
+### NGINX
+
+Create declaration blocks for each command listed in `/dev/tests/functional/.htaccess.sample` using the following example:
+
+{% highlight shell %}
+
+location ~* ^/dev/tests/functional/utils($|/) {
+
+    root $MAGE_ROOT;
+
+    location ~ ^/dev/tests/functional/utils/command.php {
+
+        fastcgi_pass   fastcgi_backend;
+
+        fastcgi_index  index.php;
+
+        fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+
+        include        fastcgi_params;
+
+    }
+
+location ~* ^/dev/tests/functional/utils($|/) {
+
+    root $MAGE_ROOT;
+
+    location ~ ^/dev/tests/functional/utils/website.php {
+
+        fastcgi_pass   fastcgi_backend;
+
+        fastcgi_index  index.php;
+
+        fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+
+        include        fastcgi_params;
+
+    }
+
+{% endhighlight %}
+
+#### Next Steps {#mtf_install_pre}
 
 [&lt;&lt; Adjust configuration]({{page.baseurl}}mtf/mtf_quickstart/mtf_quickstart_config.html) | [Prepare environment for test run &gt;&gt;]({{page.baseurl}}mtf/mtf_quickstart/mtf_quickstart_environment.html)
