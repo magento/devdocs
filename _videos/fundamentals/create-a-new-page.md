@@ -2,9 +2,8 @@
 youtube_id: l33T2-YC4tk
 duration: "4:02"
 group: "Fundamentals of Magento 2 Development"
-subgroup:
 title: "Create a New Page"
-author: "Magento U"
+thumbnail: "fundamentals/thumbs/create-new-page.png"
 menu_order: 1
 github_link:
 ---

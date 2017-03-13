@@ -16,6 +16,11 @@
     max-width: 310px;
     margin: 0 20px 40px 0;
 
+    .title {
+      display: block;
+      font-weight: 600;
+    }
+
     a {
       &:hover {
         .thumbnail-wrap:after {
@@ -23,14 +28,14 @@
         }
 
       }
-
+      color: $link-color;
     }
 
     .thumbnail-wrap {
       position: relative;
       display: block;
     }
-
+    /*
     .thumbnail-wrap:after {
       display: block;
       position: absolute;
@@ -43,7 +48,7 @@
       background: url('../i/icons/play.svg') center no-repeat;
       opacity: .6;
       transition: all .3s;
-    }
+    }*/
 
     .duration {
       position: absolute;
@@ -62,10 +67,6 @@
       margin: 0 0 10px 0;
     }
 
-    .title {
-      display: block;
-      font-weight: 600;
-    }
 
   }
 }
@@ -135,7 +136,7 @@
 .adjaced-pages {
   background: $light-gray-color;
   padding: 0;
-  margin: 40px 0 0 0;
+  margin: 3em 0 0 0;
 
   .playlist-name {
     color: $dark-gray-color;

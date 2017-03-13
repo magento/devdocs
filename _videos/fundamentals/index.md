@@ -1,7 +1,7 @@
 ---
 group: "Fundamentals of Magento 2 Development"
 layout: videos
-permalink: /videos/fundamentals/
+permalink: videos/fundamentals/
 subgroup:
 title: "Fundamentals of Magento 2 Development"
 menu_order: 0

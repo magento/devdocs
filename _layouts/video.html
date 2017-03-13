@@ -7,7 +7,7 @@
 		<div class="sidebar-wrapper">
 
 			<ul>
-				<li class="level-1"><a href="{{ site.baseurl }}/videos/">All Videos</a></li>
+				<li class="level-1"><a href="{{ site.baseurl }}videos/">All Videos</a></li>
 				<h4><span class="playlist-name">Playlist</span> {{ page.group }}</h4>
 				{% assign videos = (site.videos | where: 'group', page.group | where: 'layout', 'video' | sort: 'menu_order' ) %}
 
@@ -27,7 +27,7 @@
 			<div id="video-player" class="video-player-wrap">
 				<div class="video-player">
 					<div class="embed-responsive embed-responsive-16by9">
-		      	<iframe class="embed-responsive-item" src='http://www.youtube.com/embed/{{ page.youtube_id }}'
+		      	<iframe class="embed-responsive-item" src='http://www.youtube.com/embed/{{ page.youtube_id }}?autoplay=1'
 		      		        itemprop='embedUrl'
 		      		        frameborder='0'
 		      	          allowfullscreen>
@@ -35,9 +35,6 @@
 					</div>
 				</div>
 			</div>
-
-			{{page.baseurl}}
-
 
 			{{ content }}
 

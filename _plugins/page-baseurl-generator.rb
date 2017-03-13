@@ -20,7 +20,7 @@ module PageBaseUrlGenerator
           version = matcher[1]
         end
 
-        page.data['baseurl'] = "#{siteBaseUrl}/guides/v#{version}/"
+        page.data['baseurl'] = "#{siteBaseUrl}guides/v#{version}/"
         page.data['guide_version'] = version
       end
     end
