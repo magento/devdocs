@@ -63,7 +63,7 @@ Extends all [`UiElement`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uieleme
     <td><code>fieldClass</code></td>
     <td>Additonal CSS classes added to the column's field elements.</td>
     <td>{[name: String]: Boolean}</td>
-    <td>''</td>
+    <td><code>''</code></td>
   </tr>
   <tr>
     <td><code>filter</code></td>

@@ -52,7 +52,7 @@ Filters-specific configuration:
     <td><code>template</code></td>
     <td>Path to the component’s <code>.html</code> template.</td>
     <td>String</td>
-    <td><p>ui/grid/filters/filters</p></td>
+    <td><code>ui/grid/filters/filters</code></td>
   </tr>
   <tr>
     <td><code>templates.filters</code></td>

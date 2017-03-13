@@ -39,11 +39,11 @@ Search-specific configuration:
     <td><code>statefull</code></td>
     <td>Defines a list of component properties whose values are automatically saved in the configured storage if they change. <code>key</code> is the property's name and the value defines whether its saved.</td>
     <td>{<br>[name: string]: boolean<br>}</td>
-    <td><p>{value: true}</p></td>
+    <td><code>{value: true}</code></td>
   </tr>
   <tr>
     <td><code>template</code></td>
-    <td>Зath to the component’s <code>.html</code> template.</td>
+    <td>Path to the component’s <code>.html</code> template.</td>
     <td>String</td>
     <td><code>ui/grid/search/search</code></td>
   </tr>

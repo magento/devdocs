@@ -32,7 +32,7 @@ Toolbar-specific configuration:
   <tr>
     <td><code>stickyClass</code></td>
     <td>A list of aditional CSS classes added to the root node of the <code>.html</code> template specified in <code>StickyTmpl</code>.</td>
-    <td>{<br><code>[name:string]: boolean</code><br>}</td>
+    <td>{<br>[name:string]: boolean<br>}</td>
     <td>{<br><code>'sticky-header': true</code><br>}</td>
   </tr>
   <tr>

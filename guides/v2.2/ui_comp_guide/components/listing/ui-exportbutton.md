@@ -30,7 +30,7 @@ Constructor: [app/code/Magento/Ui/view/base/web/js/grid/export.js]({{site.mage22
 
 Extends all [UiElement]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uielement_concept.html) configuration.
 
-ExportButton own configuration:
+ExportButton-specific configuration:
 
 <table>
   <tr>
@@ -42,14 +42,14 @@ ExportButton own configuration:
   <tr>
     <td><code>additionalParams</code></td>
     <td>List of additional parameters added to each performed request.</td>
-    <td>{<br><code>[name: string]: string<br>}</code></td>
+    <td>{<br>[name: string]: string<br>}</td>
     <td>-</td>
   </tr>
   <tr>
     <td><code>options</code></td>
     <td>List of available formats in which the table's data can be exported.</td>
     <td>Array<a href="#exportoption">&lt;ExportOption&gt;</a> </td>
-    <td>[{<br>value: "csv",<br>label: "CSV",<br>url: "mui/export/gridToCsv"<br>}, {<br>value: "xml",<br>label: "Excel XML",<br>url: "mui/export/gridToXml"<br>}]</td>
+    <td><code>[{<br>value: "csv",<br>label: "CSV",<br>url: "mui/export/gridToCsv"<br>}, {<br>value: "xml",<br>label: "Excel XML",<br>url: "mui/export/gridToXml"<br>}]</code></td>
   </tr>
   <tr>
     <td><code>template</code></td>
@@ -69,19 +69,19 @@ ExportButton own configuration:
     <th>Required</th>
   </tr>
   <tr>
-    <td>label</td>
+    <td><code>label</code></td>
     <td>Option's label.</td>
     <td>String</td>
     <td>Required</td>
   </tr>
   <tr>
-    <td>url</td>
+    <td><code>url</code></td>
     <td>Path to controller that will process the request.</td>
     <td>String</td>
     <td>Required</td>
   </tr>
   <tr>
-    <td>value</td>
+    <td><code>value</code></td>
     <td>Identifier of the export option.</td>
     <td>String</td>
     <td>Required</td>

@@ -69,7 +69,7 @@ SelectColumn-specific configuration:
   </tr>
   <tr>
     <td>
-      value
+      <code>value</code>
     </td>
     <td>
       Option's identifier.
@@ -83,7 +83,7 @@ SelectColumn-specific configuration:
   </tr>
   <tr>
     <td>
-      label
+      <code>label</code>
     </td>
     <td>
       Label to be displayed in a column's field.

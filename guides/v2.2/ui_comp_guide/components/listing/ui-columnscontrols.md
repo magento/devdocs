@@ -14,7 +14,7 @@ Constructor: [app/code/Magento/Ui/view/base/web/js/grid/controls/columns.js]({{s
 
 Extends all [uiCollection]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uicollection_concept.html) configuration.
 
-ColumnsControls specific configuration:
+ColumnsControls-specific configuration:
 
 <table>
   <tr>
@@ -27,17 +27,17 @@ ColumnsControls specific configuration:
     <td><code>minVisible</code></td>
     <td>Minimum number of columns that must be visible.</td>
     <td>Number</td>
-    <td>1</td>
+    <td><code>1</code></td>
   </tr>
   <tr>
     <td><code>maxVisible</code></td>
     <td>Maximum number of columns that can be visible.</td>
     <td>Number</td>
-    <td>30</td>
+    <td><code>30</code></td>
   </tr>
   <tr>
     <td><code>template</code></td>
-    <td>The path to the component’s .html template.</td>
+    <td>The path to the component’s <code>.html</code> template.</td>
     <td>String</td>
     <td><code>ui/grid/controls/columns</code></td>
   </tr>

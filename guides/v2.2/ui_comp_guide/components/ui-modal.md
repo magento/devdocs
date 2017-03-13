@@ -74,19 +74,19 @@ Modal-specific configuration:
     <td></td>
   </tr>
   <tr>
-    <td>subTitle</td>
+    <td><code>subTitle</code></td>
     <td>Subtitle of the modal window.</td>
     <td>String</td>
     <td></td>
   </tr>
   <tr>
-    <td>template</td>
+    <td><code>template</code></td>
     <td>Path to the component's .html template.</td>
     <td>String</td>
-    <td>ui/modal/modal-component</td>
+    <td><code>ui/modal/modal-component</code></td>
   </tr>
   <tr>
-    <td>title</td>
+    <td><code>title</code></td>
     <td>Label displayed in the header of the modal window.</td>
     <td>String</td>
     <td></td>

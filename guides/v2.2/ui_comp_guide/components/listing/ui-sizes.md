@@ -27,19 +27,19 @@ Sizes own configuration:
     <td><code>maxSize</code></td>
     <td>Maximum allowed number of rows.</td>
     <td>Number</td>
-    <td>20</td>
+    <td><code>20</code></td>
   </tr>
   <tr>
     <td><code>minSize</code></td>
     <td>Minimun number of rows.</td>
     <td>Number</td>
-    <td>1</td>
+    <td><code>1</code></td>
   </tr>
   <tr>
-    <td>options</td>
+    <td><code>options</code></td>
     <td>The initial list of available table sizes (number of rows).</td>
     <td><br>{<br><code>[name: number]: SizeOption</code><br>}<br></td>
-    <td>[20, 30, 50, 100, 200]</td>
+    <td><code>[20, 30, 50, 100, 200]</code></td>
   </tr>
   <tr>
     <td><code>template</code></td>
@@ -51,7 +51,7 @@ Sizes own configuration:
     <td><code>value</code></td>
     <td>Initial number of rows per page.</td>
     <td>Number</td>
-    <td>20</td>
+    <td><code>20</code></td>
   </tr>
 </table>
 

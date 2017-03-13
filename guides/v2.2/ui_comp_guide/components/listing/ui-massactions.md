@@ -40,28 +40,28 @@ Extends <code>Collapsible</code> configuration with the following options:
     <th>Default Value</th>
   </tr>
   <tr>
-    <td>actions</td>
+    <td><code>actions</code></td>
     <td>A list of available actions.</td>
     <td>Array</td>
     <td>-</td>
   </tr>
   <tr>
-    <td>noItemsMsg</td>
+    <td><code>noItemsMsg</code></td>
     <td>Message displayed when a user attempts to perform an action without any selected items.</td>
     <td>String</td>
-    <td>You haven't selected any items!</td>
+    <td><code>'You haven't selected any items!'</code></td>
   </tr>
   <tr>
-    <td>stickyTmpl</td>
+    <td><code>stickyTmpl</code></td>
     <td>Additional component's template that is used when its parent [Toolbar]({{page.baseurl}}) component receives a fixed position.</td>
     <td>String</td>
-    <td>ui/grid/sticky/actions</td>
+    <td><code>ui/grid/sticky/actions</code></td>
   </tr>
   <tr>
-    <td>template</td>
-    <td>Path to the component’s .html template.</td>
+    <td><code>template</code></td>
+    <td>Path to the component’s <code>.html</code> template.</td>
     <td>String</td>
-    <td>ui/grid/paging/sizes</td>
+    <td><code>ui/grid/paging/sizes</code></td>
   </tr>
 </table>
 
@@ -75,31 +75,31 @@ Extends <code>Collapsible</code> configuration with the following options:
     <th>Required</th>
   </tr>
   <tr>
-    <td>callback</td>
+    <td><code>callback</code></td>
     <td></td>
     <td><a href="{{page.baseurl}}i_comp_guide/components/listing/ui-column.html#column_action">ColumnAction</a></td>
     <td>Optional</td>
   </tr>
   <tr>
-    <td>confirm</td>
+    <td><code>confirm</code></td>
     <td>Confirmation message displayed before applying the action.</td>
     <td>{<br>title: string;<br>message: string;<br>}</td>
     <td>Optional</td>
   </tr>
   <tr>
-    <td>label</td>
+    <td><code>label</code></td>
     <td>Action's label displayed in the list of actions.</td>
     <td>String</td>
     <td>Required</td>
   </tr>
   <tr>
-    <td>type</td>
+    <td><code>type</code></td>
     <td>Action's identifier.</td>
     <td>String</td>
     <td>Required</td>
   </tr>
   <tr>
-    <td>url</td>
+    <td><code>url</code></td>
     <td>Path to the contoller responsible for action handling.</td>
     <td>String</td>
     <td>Optional</td>

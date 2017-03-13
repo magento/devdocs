@@ -39,7 +39,7 @@ DragAndDrop own configuration:
     <td><code>fixedY</code></td>
     <td>Whether the column has a fixed positon on the Y-axis.  That is, whether it can be moved vertically.</td>
     <td>Boolean</td>
-    <td>true</td>
+    <td><code>true</code></td>
   </tr>
   <tr>
     <td><code>noSelectClass</code></td>
