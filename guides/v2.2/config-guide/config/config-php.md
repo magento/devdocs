@@ -17,7 +17,7 @@ github_link: config-guide/config/config-php.md
 
 On the top level of this array are *configuration segments*. A segment has arbitrary content (a scalar value or a nested array) distinguished by an arbitrary key&mdash;where both the key and its value are defined by the Magento framework.
 
-<a href="{{ site.mage2000url }}lib/internal/Magento/Framework/App/DeploymentConfig.php" target="_blank">Magento\Framework\App\DeploymentConfig</a> merely provides access to these sections but does not allow you to extend them.
+<a href="{{ site.mage2200url }}lib/internal/Magento/Framework/App/DeploymentConfig.php" target="_blank">Magento\Framework\App\DeploymentConfig</a> merely provides access to these sections but does not allow you to extend them.
 
 On the next hierarchy level, items in each segment are ordered according to the module sequence definition, which is obtained by merging all modules' configuration files, with the exception of disabled modules.
 
@@ -36,7 +36,7 @@ Examples:
 * [Component Manager]({{ page.baseurl }}comp-mgr/module-man/compman-main-pg.html)
 * [System Upgrade]({{ page.baseurl }}comp-mgr/upgrader/upgrade-start.html)
 
-`config.php` snippet:
+`config.php` snippet: ADD CONFIGURATION TBD
 
 {% highlight php startinline=true %}
 return array (
