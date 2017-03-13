@@ -42,7 +42,7 @@ Enable the **Admin Account Sharing** setting to avoid unpredictable logout durin
 
 ## Enable CLI commands
 
-Functional tests require access to CLI commands during test run. Depending on a web sever, use the following extractions to enable access to the commands.
+Functional tests require access to CLI commands during test run. Depending on a web sever, use the following instructions to enable access to the commands.
 
 ### Apache
 
