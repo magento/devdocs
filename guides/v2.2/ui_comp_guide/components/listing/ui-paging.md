@@ -14,7 +14,7 @@ Constructor: [app/code/Magento/Ui/view/base/web/js/grid/paging/paging.js]({{site
 
 Extends all [Multiline]({{page.baseurl}}ui_comp_guide/components/ui-multiline.html) configuration.
 
-Paging own configuration:
+Paging-specific configuration:
 
 <table>
   <tr>

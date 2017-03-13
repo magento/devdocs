@@ -10,9 +10,9 @@ github_link: ui_comp_guide/components/listing/ui-massactions.md
 
 ### MassAction JS component structure
 
-The <code>MassActions</code> component adds the ability to be selectable (by attaching its template to each item in <code>Listing</code>) to items in <only>Listing</only> and creates actions to perform with selected items (for example: 'Delete', 'Update attributes' and so on).
+The MassActions component allows selecting items in Listing and creates actions to perform with selected items. Must be a child of the [Listing component]({{page.baseurl}}ui_comp_guide/components/ui-listing-grid.html). 
 
-The "Select all" functionality is improved in Magento 2. Instead of creating a list of all selected items, they are now flagged. A list is created for excluded elements only.
+See the [Admin Design Pattern Library (MassActions)]({{page.baseurl}}pattern-library/displaying-data/datatable/datatable.html#massactions) topic for information about the UI design patterns that can be implemented using the Tab component.
 
 #### Component Elements (classes, files)
 

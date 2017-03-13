@@ -8,6 +8,10 @@ version: 2.2
 github_link: ui_comp_guide/components/ui-select.md
 ---
 
+## Overview
+
+The Select component is used to provide check box interface for a list or a data set. The component allows selecting a collection of items.
+
 ## Configuration options
 
 Extends all `abstract` configuration.
@@ -35,7 +39,7 @@ Select-specific options:
   </tr>
   <tr>
     <td><code>options</code></td>
-    <td>The array of the Select component's options.</td>
+    <td>The array of the options to be displayed in the list for selection.</td>
     <td>Array</td>
     <td><code>[]</code></td>
   </tr>

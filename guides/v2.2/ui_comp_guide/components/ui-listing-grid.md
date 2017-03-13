@@ -15,56 +15,136 @@ Listing is a basic component responsible for rendering grids, lists and tiles, p
 
 Constructor: [app/code/Magento/Ui/view/base/web/js/grid/listing.js]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/grid/listing.js)
 
-## Configuration
+## Configuration options
 
 <table>
   <tr>
-    <th>Option</th>
-    <th>Description</th>
-    <th>Type</th>
-    <th>Default</th>
+    <th>
+      Option
+    </th>
+    <th>
+      Description
+    </th>
+    <th>
+      Type
+    </th>
+    <th>
+      Default
+    </th>
   </tr>
   <tr>
-    <td><code>displayMode</code></td>
-    <td>Initial display mode.</td>
-    <td>String</td>
-    <td><code>'grid'</code></td>
+    <td>
+      <code>displayMode</code>
+    </td>
+    <td>
+      Initial display mode.
+    </td>
+    <td>
+      String
+    </td>
+    <td>
+      <code>'grid'</code>
+    </td>
   </tr>
   <tr>
-    <td><code>displayModes</code></td>
-    <td>List of available display modes.</td>
-    <td>{<br>[name: string]: <a href="#displaymode">DisplayMode</a><br>}</td>
-    <td><code>{<br>value: 'grid',<br>label: 'Grid',<br>template: 'ui/grid/listing'<br>}</code></td>
+    <td>
+      <code>displayModes</code>
+    </td>
+    <td>
+      List of available display modes.
+    </td>
+    <td>
+      {<br />
+      [name: string]: <a href="#displaymode">DisplayMode</a><br />
+      }
+    </td>
+    <td>
+      <code>{<br />
+      value: 'grid',<br />
+      label: 'Grid',<br />
+      template: 'ui/grid/listing'<br />
+      }</code>
+    </td>
   </tr>
   <tr>
-    <td><code>dndConfig</code></td>
-    <td>Configuration of the [DragAndDrop component]({{page.baseurl}}ui_comp_guide/components/listing/ui-draganddrop.html).</td>
-    <td>Object</td>
-    <td>Specified in the <a href="{{page.baseurl}}ui_comp_guide/components/listing/ui-draganddrop.html">DragAndDrop component configuration</a>.</td>
+    <td>
+      <code>dndConfig</code>
+    </td>
+    <td>
+      Configuration of the [DragAndDrop
+      component]({{page.baseurl}}ui_comp_guide/components/listing/ui-draganddrop.html).
+    </td>
+    <td>
+      Object
+    </td>
+    <td>
+      Specified in the <a href=
+      "{{page.baseurl}}ui_comp_guide/components/listing/ui-draganddrop.html">
+      DragAndDrop component configuration</a>.
+    </td>
   </tr>
   <tr>
-    <td><code>stickyTmpl</code></td>
-    <td>Path to the <code>.html</code> template used for the <a href="{{page.baseurl}}ui_comp_guide/components/listing/ui-toolbar.html">Toolbar component</a> when it receives a fixed position.</td>
-    <td>String</td>
-    <td><code>ui/grid/sticky/listing</code></td>
+    <td>
+      <code>stickyTmpl</code>
+    </td>
+    <td>
+      Path to the <code>.html</code> template used for the <a href=
+      "{{page.baseurl}}ui_comp_guide/components/listing/ui-toolbar.html">
+      Toolbar component</a> when it receives a fixed position.
+    </td>
+    <td>
+      String
+    </td>
+    <td>
+      <code>ui/grid/sticky/listing</code>
+    </td>
   </tr>
   <tr>
-    <td><code>template<code></td>
-    <td>Path to the component’s <code>.html</code> template.</td>
-    <td>String</td>
-    <td><code>ui/grid/listing</code></td>
+    <td>
+      <code>template</code>
+    </td>
+    <td>
+      Path to the component’s <code>.html</code> template.
+    </td>
+    <td>
+      String
+    </td>
+    <td>
+      <code>ui/grid/listing</code>
+    </td>
   </tr>
   <tr>
-    <td><code>editorConfig</code></td>
-    <td>Configuration of the [InlineEditing component]({{page.baseurl}}ui_comp_guide/components/listing/ui-inlineediting.html).</td>
-    <td>Object</td>
-    <td>Specified in the <a href="{{page.baseurl}}ui_comp_guide/components/listing/ui-inlineediting.html">InlineEditing component configuration</a>.</td>
+    <td>
+      <code>editorConfig</code>
+    </td>
+    <td>
+      Configuration of the [InlineEditing
+      component]({{page.baseurl}}ui_comp_guide/components/listing/ui-inlineediting.html).
+    </td>
+    <td>
+      Object
+    </td>
+    <td>
+      Specified in the <a href=
+      "{{page.baseurl}}ui_comp_guide/components/listing/ui-inlineediting.html">
+      InlineEditing component configuration</a>.
+    </td>
   </tr>
   <tr>
-    <td><code>viewSwitcherTmpl</code></td>
-    <td>Path to the .html template for rendering the list of available display modes. By default this list is not displayed.</td>
-    <td>String</td>
-    <td><code>ui/grid/view-switcher</code></td>
+    <td>
+      <code>viewSwitcherTmpl</code>
+    </td>
+    <td>
+      Path to the .html template for rendering the list of
+      available display modes. By default this list is not
+      displayed.
+    </td>
+    <td>
+      String
+    </td>
+    <td>
+      <code>ui/grid/view-switcher</code>
+    </td>
   </tr>
 </table>
 
@@ -72,28 +152,61 @@ Constructor: [app/code/Magento/Ui/view/base/web/js/grid/listing.js]({{site.mage2
 
 <table>
   <tr>
-    <th>Option</th>
-    <th>Description</th>
-    <th>Type</th>
-    <th>Required</th>
+    <th>
+      Option
+    </th>
+    <th>
+      Description
+    </th>
+    <th>
+      Type
+    </th>
+    <th>
+      Required
+    </th>
   </tr>
   <tr>
-    <td><code>label</code></td>
-    <td>Label for the list of available modes.</td>
-    <td>String</td>
-    <td>Optional</td>
+    <td>
+      <code>label</code>
+    </td>
+    <td>
+      Label for the list of available modes.
+    </td>
+    <td>
+      String
+    </td>
+    <td>
+      Optional
+    </td>
   </tr>
   <tr>
-    <td><code>template</code></td>
-    <td>Path to the <code>.html</code> template used to render listing in the selected mode.</td>
-    <td>String</td>
-    <td>Optional</td>
+    <td>
+      <code>template</code>
+    </td>
+    <td>
+      Path to the <code>.html</code> template used to render
+      listing in the selected mode.
+    </td>
+    <td>
+      String
+    </td>
+    <td>
+      Optional
+    </td>
   </tr>
   <tr>
-    <td><code>value</code></td>
-    <td>Mode's identifier.</td>
-    <td>String</td>
-    <td>Optional</td>
+    <td>
+      <code>value</code>
+    </td>
+    <td>
+      Mode's identifier.
+    </td>
+    <td>
+      String
+    </td>
+    <td>
+      Optional
+    </td>
   </tr>
 </table>
 

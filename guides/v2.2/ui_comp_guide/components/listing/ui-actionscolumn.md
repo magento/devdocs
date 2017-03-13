@@ -14,7 +14,7 @@ Constructor: [app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js]({{si
 
 Extends all [Column]({{page.baseurl}}ui_comp_guide/components/listing/ui-column.md) configuration.
 
-ActionsColumn specific configuration:
+ActionsColumn-specific configuration:
 
 <table>
   <tr>

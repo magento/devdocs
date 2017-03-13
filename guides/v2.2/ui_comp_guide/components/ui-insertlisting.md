@@ -7,6 +7,8 @@ menu_title: InsertListing component
 version: 2.2
 github_link: ui_comp_guide/components/ui-insertlisting.md
 ---
+## Overview
+The InsertListing component is used to insert Listing into other components.
 
 ## Configuration options
 
@@ -31,7 +33,7 @@ InsertListing-specific configuration:
   </tr>
   <tr>
     <td>
-      autoRender
+      <code>autoRender</code>
     </td>
     <td>
       When set to true, the Listing component is automatically
@@ -43,12 +45,12 @@ InsertListing-specific configuration:
       Boolean
     </td>
     <td>
-      false
+      <code>false</code>
     </td>
   </tr>
   <tr>
     <td>
-      behaviourType
+      <code>behaviourType</code>
     </td>
     <td>
       Can be <code>simple</code> or <code>edit</code>. Where
@@ -60,12 +62,12 @@ InsertListing-specific configuration:
       String (<code>simple</code> | <code>edit</code>)
     </td>
     <td>
-      simple
+      <code>simple</code>
     </td>
   </tr>
   <tr>
     <td>
-      component
+      <code>component</code>
     </td>
     <td>
       The path to the component’s JS constructor in terms of
@@ -80,9 +82,11 @@ InsertListing-specific configuration:
   </tr>
   <tr>
     <td>
-      dataLinks<br />
-      imports<br />
-      exports
+      <code>dataLinks
+      <ul>
+      <li>imports</li>
+      <li>exports</li>
+      </ul> </code> 
     </td>
     <td>
       Flags that enable linking between insertListing's
@@ -98,18 +102,21 @@ InsertListing-specific configuration:
       </ul>
     </td>
     <td>
-      Object<br />
-      Boolean<br />
-      Boolean
+      Object
+      <ul>
+      <li>Boolean</li>
+      <li>Boolean</li>
+       </ul>
     </td>
-    <td>
-      true<br />
-      false
+    <td><code>
+      <li>true</li>
+      <li>false</li>
+          </code))>
     </td>
   </tr>
   <tr>
     <td>
-      realTimeLink
+      <code>realTimeLink</code>
     </td>
     <td>
       Enable link between insertListing's externalValue and value.
@@ -121,13 +128,14 @@ InsertListing-specific configuration:
     <td>
       Boolean
     </td>
-    <td>
+    <td><code>
       true
+    </code>
     </td>
   </tr>
   <tr>
     <td>
-      render_url
+      <code>render_url</code>
     </td>
     <td>
       With default <code>render_url(mui/index/render)</code>
@@ -141,12 +149,12 @@ InsertListing-specific configuration:
       Url
     </td>
     <td>
-      mui/index/render
+      <code>mui/index/render</code>
     </td>
   </tr>
   <tr>
     <td>
-      update_url
+      <code>update_url</code>
     </td>
     <td>
       Where the AJAX request will go to retrieve, foster component
@@ -157,7 +165,7 @@ InsertListing-specific configuration:
       Url
     </td>
     <td>
-      mui/index/render
+      <code>mui/index/render</code>
     </td>
   </tr>
 </table>

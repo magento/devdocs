@@ -8,7 +8,11 @@ version: 2.2
 github_link: ui_comp_guide/components/ui-insertform.md
 ---
 
-## InsertForm configuration
+## Overview
+
+The InsertForm component is used to insert Form into other components.
+
+## Сonfiguration options
 
 Extends all [`uiElement`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uielement_concept.html) configuration.
 
@@ -31,7 +35,7 @@ InsertForm-specific options:
   </tr>
   <tr>
     <td>
-      autoRender
+      <code>autoRender</code>
     </td>
     <td>
       When set to true, the Form component is automatically
@@ -43,12 +47,12 @@ InsertForm-specific options:
       Boolean
     </td>
     <td>
-      false
+      <code>false</code>
     </td>
   </tr>
   <tr>
     <td>
-      component
+      <code>component</code>
     </td>
     <td>
       The path to the component’s JS constructor file in terms of
@@ -63,13 +67,14 @@ InsertForm-specific options:
   </tr>
   <tr>
     <td>
-      dataLinks
+      <code>dataLinks
       <ul>
         <li>imports
         </li>
         <li>exports
         </li>
       </ul>
+     </code>
     </td>
     <td>
       Flags that enable linking between insertForm's externalValue
@@ -92,14 +97,15 @@ InsertForm-specific options:
         </li>
       </ul>
     </td>
-    <td>
+    <td><code>
       false<br />
       false
+     <code>
     </td>
   </tr>
   <tr>
     <td>
-      externalProvider
+      <code>externalProvider</code>
     </td>
     <td>
       DataSource of the inserted Form.
@@ -108,12 +114,12 @@ InsertForm-specific options:
       String
     </td>
     <td>
-      ''
+      <code>''</code>
     </td>
   </tr>
   <tr>
     <td>
-      formSubmitType
+      <code>formSubmitType</code>
     </td>
     <td>
       Expect that Form will save data using AJAX. Links
@@ -124,12 +130,12 @@ InsertForm-specific options:
       Boolean
     </td>
     <td>
-      false
+      <code>false</code>
     </td>
   </tr>
   <tr>
     <td>
-      ns
+      <code>ns</code>
     </td>
     <td>
       Namespace of the inserted form.
@@ -138,12 +144,12 @@ InsertForm-specific options:
       String
     </td>
     <td>
-      ''
+      <code>''</code>
     </td>
   </tr>
   <tr>
     <td>
-      realTimeLink
+      <code>realTimeLink</code>
     </td>
     <td>
       Enables link between insertForms's externalValue and value.
@@ -156,12 +162,12 @@ InsertForm-specific options:
       Boolean
     </td>
     <td>
-      false
+      <code>false</code>
     </td>
   </tr>
   <tr>
     <td>
-      render_url
+      <code>render_url</code>
     </td>
     <td>
       With default <code>render_url(mui/index/render)</code> form
@@ -171,7 +177,7 @@ InsertForm-specific options:
       <ul>
         <li>buttons=1 (flag to get buttons)
         </li>
-        <li>handle= (buttons scope
+        <li>handle=%layout namespace%/ (buttons scope)
         </li>
       </ul>
     </td>
@@ -184,7 +190,7 @@ InsertForm-specific options:
   </tr>
   <tr>
     <td>
-      showSpinner
+      <code>showSpinner</code>
     </td>
     <td>
       Show spinner while the Form is rendered.
@@ -193,12 +199,12 @@ InsertForm-specific options:
       Boolean
     </td>
     <td>
-      true
+      <code>true</code>
     </td>
   </tr>
   <tr>
     <td>
-      toolbarContainer
+      <code>toolbarContainer</code>
     </td>
     <td>
       Path to component that has toolbarSection property with
@@ -209,7 +215,7 @@ InsertForm-specific options:
       String
     </td>
     <td>
-      ''
+      <code>''</code>
     </td>
   </tr>
 </table>

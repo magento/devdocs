@@ -12,7 +12,7 @@ github_link: ui_comp_guide/components/ui-actiondelete.md
 
 Extends all `abstract` configuration.
 
-ActionDelete own configuration:
+ActionDelete-specific configuration:
 
 <table>
   <tr>
