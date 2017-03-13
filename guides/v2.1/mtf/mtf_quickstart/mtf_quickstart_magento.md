@@ -42,7 +42,7 @@ Enable the **Admin Account Sharing** setting to avoid unpredictable logout durin
 
 ## Enable CLI commands
 
-Functional tests require access to CLI commands during test run. Depending on a web sever, use the following instructions to enable access to the commands.
+Functional tests require access to utilities working with Magento during test run. Depending on a web server, use the following instructions to enable access to the commands.
 
 ### Apache
 
@@ -50,40 +50,26 @@ Copy `/dev/tests/functional/.htaccess.sample` to `/dev/tests/functional/.htacces
 
 ### NGINX
 
-Create declaration blocks for each command listed in `/dev/tests/functional/.htaccess.sample` using the following example:
+In `nginx.conf`, add declaration blocks for each command listed in `/dev/tests/functional/.htaccess.sample` using the following example:
 
-{% highlight shell %}
+{% highlight nginx %}
 
 location ~* ^/dev/tests/functional/utils($|/) {
-
     root $MAGE_ROOT;
-
     location ~ ^/dev/tests/functional/utils/command.php {
-
         fastcgi_pass   fastcgi_backend;
-
         fastcgi_index  index.php;
-
         fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
-
         include        fastcgi_params;
-
     }
 
 location ~* ^/dev/tests/functional/utils($|/) {
-
     root $MAGE_ROOT;
-
     location ~ ^/dev/tests/functional/utils/website.php {
-
         fastcgi_pass   fastcgi_backend;
-
         fastcgi_index  index.php;
-
         fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
-
         include        fastcgi_params;
-
     }
 
 {% endhighlight %}
