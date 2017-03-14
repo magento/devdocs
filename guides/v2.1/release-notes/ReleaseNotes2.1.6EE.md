@@ -22,13 +22,15 @@ Looking for the <a href="http://devdocs.magento.com/guides/v2.0/cloud/release-no
 
 Magento 2.1.6 contains over 15 significant performance enhancements when compared to 2.1.5. Look for the following highlights in this release:
 
- * **Improved performance of the category page**
 
- 	* loading configurable products from the database is now up to 5x faster
+* **Improved performance of the Category page**
 
- 	* price calculations is now up to 3-5% faster
+	* loading configurable products from the database is now up to 5x faster
 
- 	* stock validation is now up to 20% faster
+	* price calculations is now up to 3-5% faster
+
+	* stock validation is now up to 20% faster
+
 
 
 * **Optimized image resizing** 
