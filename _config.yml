@@ -59,7 +59,7 @@ namem2install: "Magento 2 Installation Guide"
 collections:
   videos:
     output: true
-    permalink: /videos/:path/
+    permalink: "/videos/:path/"
 
 
 defaults:
@@ -69,7 +69,6 @@ defaults:
       type: videos
     values:
       layout: video
-      baseurl: /guides/v2.1/
       guide_version: "2.1"
 
 # toc_baseurl: "https://github.corp.ebay.com/pages/Magento/devdocs_internal"
