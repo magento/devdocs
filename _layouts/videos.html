@@ -38,9 +38,7 @@
 			{% if page.group != nil %}
 				{% assign sorted_videos = (sorted_videos | where: 'group', page.group | sort: 'menu_order') %}
 			{% endif %}
-			{% if page.author != nil %}
-				{% assign sorted_videos = (sorted_videos | where: 'author', page.author ) %}
-			{% endif %}
+
 			<div class="videos">
 			{% for video in sorted_videos %}
         {% include video/preview.html %}
