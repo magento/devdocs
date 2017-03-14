@@ -61,7 +61,7 @@ Magento 2.1.6 contains over 15 significant performance enhancements when compare
 
 <!--- 65324 -->* Magento no longer permits JOIN operations to lock rows in the SQL `cataloginventory_stock_item` table during checkout. Previously, Magento permitted this type of operation to maintain the consistency of inventory information during checkout. However, under these conditions, you received this error: 
 
-`General error: 1205 Lock wait timeout exceeded; try restarting transaction`
+	`General error: 1205 Lock wait timeout exceeded; try restarting transaction`
 
 
 <!--- 65251 -->* The Magento image resize mechanism no longer generates images of all sizes upon user request. Instead, Magento generates and saves all image sizes after you save a product.  Previously, some product images were re-sized on the fly during a request, which degraded performance.
