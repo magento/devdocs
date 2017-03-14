@@ -158,7 +158,8 @@ The following table discusses the meanings of this command's parameters and valu
     </tr>
     <tr>
         <td>-s</td>
-        <td><p>Which deployment strategy to use. See deployment strategies</p></td>
+        <td><p>Which deployment strategy to use. See <a href="#">Deployment strategies</p>
+<p class="q">Will display some information?</p></td>
         <td><p>No</p></td>
     </tr>
     <tr>
@@ -262,22 +263,7 @@ One of the options for making it atomic is to write to files stored in a tempora
 <!-- The default Magento implementation of [`Magento\Framework\Filesystem\Directory\WriteInterface::writeFile`]({{ site.mage2100url }}lib/internal/Magento/Framework/Filesystem/Directory/WriteInterface.php#L118){:target="_blank"} uses non-atomic file writing.
  -->
 
-## Related topics
-
-*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a>
-*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a>
-*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a>
-*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a>
-*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a>
-*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a>
-*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a>
-*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a>
-*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a>
-*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a>
-*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a>
-*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a>
-
-## Deployment Strategies
+## Deployment strategies {#deploy_strategy}
 
 Content deployment has 3 strategies. Each strategy describe the way of deploying packages. Package is the set of files which belongs to specific <code>area/theme/locale</code>.
 The diversity of strategies is due to ways of deploying packages:
@@ -418,7 +404,24 @@ Example of requirejs-map.js
 </code>
 
 
-#### Page Rendering
+#### Page Rendering (для екстеншн JS devs)
 During page rendering, all assets URL will be resolved in **\Magento\Framework\View\Asset\Repository::createAsset()** according to the corresponding map file.
 There should be no url-concatinations in JavaScripts.
 All urls should goes through requirejs in JavaScript or through AssetRepository in PHP.
+
+иначе файл может быть не найден при деплое в компакт стратегии.
+
+## Related topics
+
+*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a>
+*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a>
+*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a>
+*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a>
+*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a>
+*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a>
+*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a>
+*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a>
+*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a>
+*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a>
+*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a>
+*	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a>
