@@ -1660,7 +1660,13 @@
 <p>If necessary, set <code>auto_increment_increment</code> to 3:</p>
 
 <ol>
-  <li>As a user with <code>root</code> privileges, open <code>/etc/my.cnf</code> in a text editor.</li>
+  <li>
+    <p>As a user with <code>root</code> privileges, open <code>/etc/my.cnf</code> in a text editor.</p>
+
+    <div class="bs-callout bs-callout-info" id="info">
+  		On Ubuntu 16, the path is typically <code>/etc/mysql/mysql.conf.d/mysqld.cnf</code>.
+    </div>
+  </li>
   <li>
     <p>Add or edit the following line in the <code>[mysqld]</code> section:</p>
 

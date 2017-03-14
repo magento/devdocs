@@ -1867,6 +1867,31 @@ composer require fastly/magento2
   <li>In the Magento Admin, click <strong>Save Config</strong>.</li>
 </ol>
 
+<h3 id="cloud-live-migrate-fastly-snip">Upload any Fastly VCL snippets</h3>
+<p>A <a href="https://docs.fastly.com/guides/vcl-snippets/about-vcl-snippets" target="_blank">Fastly VCL snippet</a> is an advanced option that enables you to modify Fastly behavior with service-oriented or versionless objects.</p>
+
+<p>To use snippets, you must upload the Fastly VCL using the Magento Admin as follows:</p>
+
+<ol>
+  <li>Log in to the Magento Admin as an administrator.</li>
+  <li>
+    <p>Click <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; <strong>Advanced</strong> &gt; <strong>System</strong> as the following figure shows:</p>
+
+    <p><img src="/common/images/cloud_fastly_menu.png" alt="Choose Fastly" width="650px" /></p>
+  </li>
+  <li>In the right pane, expand <strong>Full Page Cache</strong>.</li>
+  <li>
+    <p>Click <strong>Upload VCL to Fastly</strong> as the following figure shows.</p>
+
+    <p><img src="/common/images/cloud_upload-vcl-to-fastly.png" alt="Upload a Magento VCL to Fastly" /></p>
+
+    <div class="bs-callout bs-callout-info" id="info">
+  		If the <strong>Upload VCL to Fastly</strong> button does not display, you should upgrade the Fastly extension to version 1.2.0 or later. For details, see <a href="/guides/v2.1/cloud/howtos/update-components.html">Update extensions</a>. Fastly’s Composer name is <code>fastly/magento2</code>.
+    </div>
+  </li>
+  <li>Follow the prompts on your screen to complete the task.</li>
+</ol>
+
 <h3 id="advanced-configuration-options">Advanced configuration options</h3>
 <p>For advanced configuration options, customize the <a href="https://github.com/fastly/fastly-magento2/blob/master/etc/fastly.vcl" target="_blank">Fastly configuration</a>.</p>
 
