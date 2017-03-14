@@ -35,22 +35,22 @@ HtmlContent-specific options:
     <th>Default</th>
   </tr>
   <tr>
-    <td>additionalClasses</td>
+    <td><code>additionalClasses</code></td>
     <td>Sets custom classes to the component's DOM block.</td>
     <td>Object</td>
-    <td>{}</td>
+    <td><code>{}</code></td>
   </tr>
   <tr>
-    <td>component</td>
+    <td><code>component</code></td>
     <td>The path to the component’s JS constructor in terms of RequireJS.</td>
     <td>String</td>
     <td><code>Magento_Ui/js/form/components/html</code></td>
   </tr>
   <tr>
-    <td>content</td>
+    <td><code>content</code></td>
     <td>HTML content to be displayed.</td>
     <td>String</td>
-    <td>''</td>
+    <td><code>''</code></td>
   </tr>
   <tr>
     <td>template</td>

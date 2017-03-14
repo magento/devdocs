@@ -51,7 +51,6 @@ ActionDelete-specific configuration:
         <li><code>value</code>
         </li>
       </ul>
-      </code>
     </td>
     <td>
       Breaks the link established in the <code>link</code> property

@@ -29,7 +29,7 @@ Extends all `abstract` configuration.
   </tr>
   <tr>
     <td>
-      component
+      <code>component</code>
     </td>
     <td>
       The path to the component’s JS constructor in terms of
@@ -44,7 +44,7 @@ Extends all `abstract` configuration.
   </tr>
   <tr>
     <td>
-      label
+      <code>label</code>
     </td>
     <td>
       Field label
@@ -53,14 +53,14 @@ Extends all `abstract` configuration.
       String
     </td>
     <td>
-      ''
+      <code>''</code>
     </td>
   </tr>
   <tr>
     <td>
-      links
+      <code>links</code>
       <ul>
-        <li>value
+        <li><code>value</code>
         </li>
       </ul>
     </td>
@@ -84,25 +84,25 @@ Extends all `abstract` configuration.
   </tr>
   <tr>
     <td>
-      disabled
+      <code>disabled</code>
     </td>
     <td>
-      Initial component's state. When set to "true", users can't
+      Initial component's state. When set to <code>true</code>, users can't
       take action on the element.
     </td>
     <td>
       Boolean
     </td>
     <td>
-      false
+      <code>false</code>
     </td>
   </tr>
   <tr>
     <td>
-      visible
+      <code>visible</code>
     </td>
     <td>
-      Initial component's visibility. When set to "false", the
+      Initial component's visibility. When set to <code>false</code>, the
       <code>display: none</code> CSS style is added to the
       component's DOM block.
     </td>
@@ -110,7 +110,7 @@ Extends all `abstract` configuration.
       Boolean
     </td>
     <td>
-      true
+      <code>true</code>
     </td>
   </tr>
 </table>

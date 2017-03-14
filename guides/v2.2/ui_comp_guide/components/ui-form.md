@@ -73,43 +73,43 @@ Form-specific configuration:
         Boolean
       </td>
       <td>
-       false
+       <code>false</code>
       </td>
     </tr>
     <tr>
       <td>
-        ajaxSaveType
+        <code>ajaxSaveType</code>
       </td>
       <td>There are two possible approaches to collect form data for ajaxSave:
 <ul>
-<li>default - collects data using native FormData JavaScript class</li>
-<li>simple - collects data to simple key value pairs object</li>
+<li><code>default</code> - collects data using native FormData JavaScript class</li>
+<li><code>simple</code> - collects data to simple key value pairs object</li>
 </ul>
 </td>
       <td>
-        default|simple
+        <code>default</code>|<code>simple</code>
       </td>
       <td>
-        default
+        <code>default</code>
       </td>
     </tr>
     <tr>
       <td>
-        component
+        <code>component</code>
       </td>
       <td>
-        The path to the component’s .js file in terms of RequireJS.
+        The path to the component’s JS constructor in terms of RequireJS.
       </td>
       <td>
         String
       </td>
       <td>
-        Magento_Ui/js/form/form
+        <code>Magento_Ui/js/form/form</code>
       </td>
     </tr>
     <tr>
       <td>
-        errorClass
+        <code>errorClass</code>
       </td>
       <td>
         The CSS class added to the component's DOM block
@@ -119,28 +119,28 @@ Form-specific configuration:
         String
       </td>
       <td>
-        '.admin__field._error'
+        <code>'.admin__field._error'</code>
       </td>
     </tr>
     <tr>
       <td>
-        exports
+        <code>exports</code>
         <ul>
-          <li>selectorPrefix
+          <li><code>selectorPrefix</code>
           </li>
-          <li>messagesClass
+          <li><code>messagesClass</code>
           </li>
         </ul>
       </td>
       <td>
         Used to notify some external entity about property
-        changing. `exports` value is an object, composed of the
+        changing. <code>exports</code> value is an object, composed of the
         following:
         <ul>
-          <li>key: name of the internal property or method which
+          <li><code>key</code>: name of the internal property or method which
           is tracked for changes.
           </li>
-          <li>value: name of the property or method which
+          <li><code>value</code>: name of the property or method which
           receives the notification. Can use string templates.
           </li>
         </ul>
@@ -160,20 +160,20 @@ For more details see the <a href="{{page.baseurl}}ui_comp_guide/concepts/ui_comp
     </tr>
     <tr>
       <td>
-        imports
+        <code>imports</code>
         <ul>
-          <li>reloadUrl
+          <li><code>reloadUrl</code>
           </li>
         </ul>
       </td>
       <td>
         Used for tracking changes of an external entity property.
-        `imports`’s value is an object, composed of the following:
+        <code>imports</code>’s value is an object, composed of the following:
         <ul>
-          <li>`key`: name of the internal property or method which
+          <li><code>key</code>: name of the internal property or method which
           receives the notifications.
           </li>
-          <li>`value`: name of the property or method which is
+          <li><code>value</code>: name of the property or method which is
           tracked for changes. Can use string templates.
           </li>
         </ul>
@@ -187,24 +187,24 @@ For more details see the <a href="{{page.baseurl}}ui_comp_guide/concepts/ui_comp
         </ul>
       </td>
       <td>
-        '${ $.provider}:reloadUrl'/td&gt;
+        <code>'${ $.provider}:reloadUrl'</code>
       </td>
     </tr>
     <tr>
       <td>
-        messagesClass
+        <code>messagesClass</code>
       </td>
-      <td>The CSS class assigned to the &lt;div&gt; element, where the form elements validation error is rendered.</td>
+      <td>The CSS class assigned to the <code>&lt;div&gt;</code> element, where the form elements validation error is rendered.</td>
       <td>
         String
       </td>
       <td>
-        'messages'
+        <code>'messages'</code>
       </td>
     </tr>
     <tr>
       <td>
-        `selectorPrefix`
+        <code>selectorPrefix</code>
       </td>
       <td>
         The name that can be used to address the block to which this
@@ -216,21 +216,21 @@ For more details see the <a href="{{page.baseurl}}ui_comp_guide/concepts/ui_comp
         String
       </td>
       <td>
-        `'.page-content'`
+        <code>'.page-content'</code>
       </td>
     </tr>
     <tr>
       <td>
-        template
+        <code>template</code>
       </td>
       <td>
-        The path to the component’s .html template.
+        The path to the component’s <code>.html</code> template.
       </td>
       <td>
         String
       </td>
       <td>
-        ` 'ui/form/field'`
+        <code>'ui/form/field'</code>
       </td>
     </tr>
   </tbody>

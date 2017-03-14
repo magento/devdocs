@@ -35,9 +35,6 @@ Fileuploader-specific configuration:
         Description
       </th>
       <th>
-        Required For Correct Work
-      </th>
-      <th>
         Type
       </th>
       <th>
@@ -46,7 +43,7 @@ Fileuploader-specific configuration:
     </tr>
     <tr>
       <td>
-        allowedExtensions
+        <code>allowedExtensions</code>
       </td>
       <td>
         List of allowed file extensions. For example, <code>'jpg
@@ -54,24 +51,20 @@ Fileuploader-specific configuration:
         extion is allowed, "true" - any extension is allowed.
       </td>
       <td>
-        No
-      </td>
-      <td>
         Boolean/String
       </td>
       <td>
-        false
+        <code>false</code>
       </td>
     </tr>
     <tr>
       <td>
-        component
+        <code>component</code>
       </td>
       <td>
         The path to the component’s JS constructor in terms of
         RequireJS.
       </td>
-      <td></td>
       <td>
         String
       </td>
@@ -81,81 +74,68 @@ Fileuploader-specific configuration:
     </tr>
     <tr>
       <td>
-        dropZone
+        <code>dropZone</code>
       </td>
       <td>
         CSS selector of a drop zone element.
       </td>
       <td>
-        No
-      </td>
-      <td>
         String
       </td>
       <td>
-        [data-role=drop-zone]
+        <code>[data-role=drop-zone]</code>
       </td>
     </tr>
     <tr>
       <td>
-        isMultipleFiles
+        <code>isMultipleFiles</code>
       </td>
       <td>
         Defines whether multiple files can be uploaded.
       </td>
       <td>
-        No
-      </td>
-      <td>
         Boolean
       </td>
       <td>
-        false
+        <code>false</code>
       </td>
     </tr>
     <tr>
       <td>
-        maxFileSize
+        <code>maxFileSize</code>
       </td>
       <td>
         Defines the maximum allowed file size in bytes.
       </td>
       <td>
-        No
-      </td>
-      <td>
         Boolean/Number
       </td>
       <td>
-        false
+        <code>false</code>
       </td>
     </tr>
     <tr>
       <td>
-        placeholderType
+        <code>placeholderType</code>
       </td>
       <td>
         Defines the preview type. (When set to
         <code>document</code>, the file information is displayed.)
       </td>
-      <td></td>
       <td>
         <code>document</code> | <code>image</code> |
         <code>video</code>
       </td>
       <td>
-        document
+        <code>document</code>
       </td>
     </tr>
     <tr>
       <td>
-        previewTmpl
+        <code>previewTmpl</code>
       </td>
       <td>
         Path to the file's preview <code>.html</code> template
-      </td>
-      <td>
-        No
       </td>
       <td>
         String
@@ -166,13 +146,12 @@ Fileuploader-specific configuration:
     </tr>
     <tr>
       <td>
-        template
+        <code>template</code>
       </td>
       <td>
         The path to the field’s general <code>.html</code>
         template.
       </td>
-      <td></td>
       <td>
         String
       </td>
@@ -182,13 +161,13 @@ Fileuploader-specific configuration:
     </tr>
     <tr>
       <td>
-        uploaderConfig
+        <code>uploaderConfig</code>
         <ul>
-          <li>dataType
+          <li><code>dataType</code>
           </li>
-          <li>sequentialUploads
+          <li><code>sequentialUploads</code>
           </li>
-          <li>formData
+          <li><code>formData</code>
           </li>
         </ul>
       </td>
@@ -202,9 +181,6 @@ Fileuploader-specific configuration:
           <li>additional form data
           </li>
         </ul>
-      </td>
-      <td>
-        Yes
       </td>
       <td>
         Object
@@ -222,7 +198,7 @@ Fileuploader-specific configuration:
           <li>
             <code>json</code>
           </li>
-          <li>true
+          <li><code>true</code>
           </li>
           <li>
             <code>{ 'form_key': window.FORM_KEY }</code>
