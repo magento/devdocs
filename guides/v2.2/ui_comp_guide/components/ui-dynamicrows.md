@@ -12,6 +12,8 @@ github_link: ui_comp_guide/components/ui-dynamicrows.md
 
 Extends all [`uiCollection`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uicollection_concept.html) configuration.
 
+DynamicRows-specific  configuration:
+
 <table>
   <tr>
     <th>
@@ -29,7 +31,7 @@ Extends all [`uiCollection`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uico
   </tr>
   <tr>
     <td>
-      addButton
+      <code>addButton</code>
     </td>
     <td>
       Renders button for adding a new row.
@@ -41,7 +43,7 @@ Extends all [`uiCollection`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uico
   </tr>
   <tr>
     <td>
-      addButtonLabel
+      <code>addButtonLabel</code>
     </td>
     <td>
       Label for the adding a new row button.
@@ -50,12 +52,12 @@ Extends all [`uiCollection`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uico
       String
     </td>
     <td>
-      Add
+      <code>'Add'</code>
     </td>
   </tr>
   <tr>
     <td>
-      additionalClasses
+      <code>additionalClasses</code>
     </td>
     <td>
       Sets custom classes to the component's DOM block.
@@ -64,12 +66,12 @@ Extends all [`uiCollection`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uico
       Object
     </td>
     <td>
-      {}
+      <code>{}</code>
     </td>
   </tr>
   <tr>
     <td>
-      defaultRecord
+      <code>defaultRecord</code>
     </td>
     <td>
       Renders the default (first) row when the component is
@@ -79,12 +81,12 @@ Extends all [`uiCollection`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uico
       Boolean
     </td>
     <td>
-      false
+      <code>false</code>
     </td>
   </tr>
   <tr>
     <td>
-      deleteProperty
+      <code>deleteProperty</code>
     </td>
     <td>
       The property added to a record data object when the record is
@@ -95,18 +97,18 @@ Extends all [`uiCollection`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uico
       String
     </td>
     <td>
-      delete
+      <code>'delete'</code>
     </td>
   </tr>
   <tr>
     <td>
-      dndConfig
+      <code>dndConfig</code>
       <ul>
-        <li>component
+        <li><code>component</code>
         </li>
-        <li>template
+        <li><code>template</code>
         </li>
-        <li>enabled
+        <li><code>enabled</code>
         </li>
       </ul>
     </td>
@@ -124,10 +126,12 @@ Extends all [`uiCollection`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uico
       </ul>
     </td>
     <td>
-      Object<br />
-      String<br />
-      String<br />
-      Boolean
+      Object
+		<ul>
+      <li>String</li>
+      <li>String</li>
+      <li>Boolean</li>
+		</ul>
     </td>
     <td>
       <ul>
@@ -137,14 +141,14 @@ Extends all [`uiCollection`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uico
         <li>
           <code>ui/dynamic-rows/cells/dnd</code>
         </li>
-        <li>true
+        <li><code>true</code>
         </li>
       </ul>
     </td>
   </tr>
   <tr>
     <td>
-      collapsibleHeader
+      <code>collapsibleHeader</code>
     </td>
     <td>
       Enables or disables the collapsible functionality for the
@@ -154,12 +158,12 @@ Extends all [`uiCollection`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uico
       Boolean
     </td>
     <td>
-      false
+      <code>false</code>
     </td>
   </tr>
   <tr>
     <td>
-      columnsHeader
+      <code>columnsHeader</code>
     </td>
     <td>
       Hides or shows columns header.
@@ -168,12 +172,12 @@ Extends all [`uiCollection`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uico
       Boolean
     </td>
     <td>
-      true
+      <code>true</code>
     </td>
   </tr>
   <tr>
     <td>
-      columnsHeaderClasses
+      <code>columnsHeaderClasses</code>
     </td>
     <td>
       Adds custom class to columns header (if the column header is
@@ -188,7 +192,7 @@ Extends all [`uiCollection`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uico
   </tr>
   <tr>
     <td>
-      component
+      <code>component</code>
     </td>
     <td>
       The path to the component’s JS constructor in terms of
@@ -203,7 +207,7 @@ Extends all [`uiCollection`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uico
   </tr>
   <tr>
     <td>
-      currentPage
+      <code>currentPage</code>
     </td>
     <td>
       Current page.
@@ -212,12 +216,12 @@ Extends all [`uiCollection`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uico
       Number
     </td>
     <td>
-      1
+      <code>1</code>
     </td>
   </tr>
   <tr>
     <td>
-      deleteValue
+     <code> deleteValue</code>
     </td>
     <td>
       Adds the <code>deleteProperty</code> property in the data
@@ -227,27 +231,27 @@ Extends all [`uiCollection`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uico
       Boolean
     </td>
     <td>
-      false
+      <code>false</code>
     </td>
   </tr>
   <tr>
     <td>
-      disabled
+      <code>disabled</code>
     </td>
     <td>
-      Initial component's state. When set to "true", users can't
+      Initial component's state. When set to <code>true</code>, users can't
       take action on the element.
     </td>
     <td>
       Boolean
     </td>
     <td>
-      false
+      <code>false</code>
     </td>
   </tr>
   <tr>
     <td>
-      fallbackResetTpl
+      <code>fallbackResetTpl</code>
     </td>
     <td>
       The path to the fallback reset (restore to default button)
@@ -262,7 +266,7 @@ Extends all [`uiCollection`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uico
   </tr>
   <tr>
     <td>
-      identificationProperty
+      <code>identificationProperty</code>
     </td>
     <td>
       The identification property added to the record data object.
@@ -271,12 +275,12 @@ Extends all [`uiCollection`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uico
       String
     </td>
     <td>
-      record_id
+      <code>record_id</code>
     </td>
   </tr>
   <tr>
     <td>
-      pageSize
+      <code>pageSize</code>
     </td>
     <td>
       The number of records on one page.
@@ -285,31 +289,27 @@ Extends all [`uiCollection`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uico
       Number
     </td>
     <td>
-      20
+      <code>20</code>
     </td>
   </tr>
   <tr>
     <td>
-      recordTemplate
+      <code>recordTemplate</code>
     </td>
     <td>
-      The path to the .html template of a records(row). Templates
-      list was declared in the <code>templates</code> component
+      The path to the <code>.html</code> template of a records(row). The list of templates is declared in the <code>templates</code>
       property.
-      <p class="q">
-        where is this property and what list
-      </p>
     </td>
     <td>
       String
     </td>
     <td>
-      record
+      <code>record</code>
     </td>
   </tr>
   <tr>
     <td>
-      template
+      <code>template</code>
     </td>
     <td>
       The path to the component’s <code>.html</code> template.
@@ -323,10 +323,10 @@ Extends all [`uiCollection`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uico
   </tr>
   <tr>
     <td>
-      visible
+      <code>visible</code>
     </td>
     <td>
-      Initial component's visibility. When set to "false", the
+      Initial component's visibility. When set to <code>false</code>, the
       <code>display: none</code> CSS style is added to the
       component's DOM block.
     </td>
@@ -334,7 +334,7 @@ Extends all [`uiCollection`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uico
       Boolean
     </td>
     <td>
-      true
+      <code>true</code>
     </td>
   </tr>
 </table>
