@@ -1,7 +1,7 @@
 ---
 layout: default
 group: get-started
-subgroup: C_REST
+subgroup: 20_REST
 title: Status codes and responses
 menu_title: Status codes and responses
 menu_order: 3
