@@ -6,16 +6,16 @@
         <th>What Changed</th>
     </tr>
     <tr>
+        <td>Magento\Sales\Model\Order\PaymentAdapter</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
         <td>Magento\Framework\View\Result\Layout::render</td>
         <td>[protected] Method parameter changed.</td>
     </tr>
     <tr>
         <td>Magento\Framework\View\Result\Page::render</td>
         <td>[protected] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Sales\Model\Order\PaymentAdapter::__construct</td>
-        <td>[public] Method parameter changed.</td>
     </tr>
     <tr>
         <td>Magento\Framework\ObjectManager\Relations\Compiled</td>
@@ -66,10 +66,6 @@
         <td>Class was removed.</td>
     </tr>
     <tr>
-        <td>Magento\Sales\Model\Order\RefundAdapter</td>
-        <td>Class was removed.</td>
-    </tr>
-    <tr>
         <td>Magento\Sales\Controller\Adminhtml\Order\Invoice\Void</td>
         <td>Class was removed.</td>
     </tr>
@@ -83,6 +79,10 @@
     </tr>
     <tr>
         <td>Magento\Fedex\Model\Plugin\Rma\Block\Adminhtml\Rma\Edit\Tab\General\Shippingmethod</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Eav\Model\Entity\AttributeCache</td>
         <td>Class was removed.</td>
     </tr>
     <tr>
@@ -306,14 +306,6 @@
         <td>[public] Method parameter changed.</td>
     </tr>
     <tr>
-        <td>Magento\Sales\Model\RefundInvoice::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Sales\Model\RefundOrder::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
         <td>Magento\Sales\Model\ShipOrder::__construct</td>
         <td>[public] Method parameter changed.</td>
     </tr>
@@ -324,10 +316,6 @@
     <tr>
         <td>Magento\Sales\Model\ResourceModel\Order\Plugin\Authorization::aroundLoad</td>
         <td>[public] Method has been removed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Sales\Model\Order\PaymentAdapter::__construct</td>
-        <td>[public] Method parameter changed.</td>
     </tr>
     <tr>
         <td>Magento\Sales\Model\CronJob\CleanExpiredOrders::__construct</td>
@@ -458,7 +446,27 @@
         <td>[protected] Property has been removed.</td>
     </tr>
     <tr>
+        <td>Magento\Eav\Model\ResourceModel\AttributeLoader::__construct</td>
+        <td>[public] Method parameter changed.</td>
+    </tr>
+    <tr>
         <td>Magento\Eav\Model\ResourceModel\ReadHandler::__construct</td>
+        <td>[public] Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Eav\Model\ResourceModel\ReadHandler::$attributeRepository</td>
+        <td>[protected] Property has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Eav\Model\ResourceModel\ReadHandler::$appResource</td>
+        <td>[protected] Property has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Eav\Model\ResourceModel\ReadHandler::$searchCriteriaBuilder</td>
+        <td>[protected] Property has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Eav\Model\Entity\AttributeLoader::__construct</td>
         <td>[public] Method parameter changed.</td>
     </tr>
     <tr>
@@ -658,10 +666,6 @@
         <td>[public] Method has been removed.</td>
     </tr>
     <tr>
-        <td>Magento\Catalog\Setup\UpgradeData::__construct</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
         <td>Magento\Catalog\Plugin\Model\ResourceModel\Attribute\Save::aroundSave</td>
         <td>[public] Method has been removed.</td>
     </tr>
@@ -858,10 +862,6 @@
         <td>[public] Method has been removed.</td>
     </tr>
     <tr>
-        <td>Magento\Sales\Model\Order\PaymentAdapter::refund</td>
-        <td>[public] Method has been added.</td>
-    </tr>
-    <tr>
         <td>Magento\Catalog\Model\Product\Type\AbstractType::isPossibleBuyFromList</td>
         <td>[public] Method has been added.</td>
     </tr>
@@ -910,19 +910,11 @@
         <th>What Changed</th>
     </tr>
     <tr>
-        <td>Magento\Sales\Model\Order\PaymentAdapterInterface::refund</td>
-        <td>[public] Method has been added.</td>
-    </tr>
-    <tr>
         <td>Magento\Framework\Interception\ChainInterface</td>
         <td>Interface was removed.</td>
     </tr>
     <tr>
         <td>Magento\Framework\App\Config\Scope\ReaderPoolInterface</td>
-        <td>Interface was removed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Sales\Model\Order\RefundAdapterInterface</td>
         <td>Interface was removed.</td>
     </tr>
     <tr>
@@ -974,10 +966,6 @@
         <td>[public] Method has been added.</td>
     </tr>
     <tr>
-        <td>Magento\Sales\Model\Order\PaymentAdapterInterface::refund</td>
-        <td>[public] Method has been added.</td>
-    </tr>
-    <tr>
         <td>Magento\Catalog\Api\Data\ProductAttributeInterface::CODE_TIER_PRICE_FIELD_PERCENTAGE_VALUE</td>
         <td>Constant has been added.</td>
     </tr>
@@ -1023,6 +1011,10 @@
     </tr>
     <tr>
         <td>Magento\Sales\Model\ValidatorResultInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Sales\Model\Order\RefundAdapterInterface</td>
         <td>Interface was added.</td>
     </tr>
     <tr>

@@ -6,8 +6,7 @@ title: Magento 2.2 backward incompatible changes
 menu_title: Magento 2.2 backward incompatible changes
 version: 2.2
 menu_node: parent
-menu_order: 1
-github_link: release-notes/backward-incompatible-changes-2.2.md
+github_link: release-notes/backward-incompatible-changes.md
 ---
 
 Magento 2.2 introduces several major changes that may affect the correct functionality of already released external modules. The purpose of this document is to highlight major changes between Magento 2.1 and 2.2.

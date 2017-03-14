@@ -15,7 +15,7 @@ We are pleased to present Magento Enterprise Edition 2.1.2. This release include
 
 
 
-Backward-incompatible changes are documented in [Magento 2.1 backward incompatible changes]({{ page.baseurl }}release-notes/backward-incompatible-changes-2.1.html).
+Backward-incompatible changes are documented in [Magento 2.1 backward incompatible changes]({{ page.baseurl }}release-notes/backward-incompatible-changes.html).
 
 
 ## Highlights
