@@ -9,7 +9,12 @@
 
   {% if playlist.url != page.url %}
   <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
-    <a href="{{ playlist.url }}"><span property="name">{{ playlist.title }}</span></a>
+    {% if site.baseurl == "/" %}
+    <a href="{{ playlist.url }}">
+    {% else %}
+    <a href="{{ site.baseurl }}{{ playlist.url }}">
+    {% endif %}
+    <span property="name">{{ playlist.title }}</span></a>
   </li>
   <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
     <span property="name">{{ page.title }}</span>
