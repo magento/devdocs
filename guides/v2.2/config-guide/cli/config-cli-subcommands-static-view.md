@@ -157,6 +157,11 @@ The following table discusses the meanings of this command's parameters and valu
         <td><p>No</p></td>
     </tr>
     <tr>
+        <td>-s</td>
+        <td><p>Which deployment strategy to use. See deployment strategies</p></td>
+        <td><p>No</p></td>
+    </tr>
+    <tr>
         <td>--force (-f)</td>
         <td><p> Deploy files in any mode. (by default, static content content deployment tool can be run only in production mode. Use this option to run it in default or developer mode).
   </p></td>
@@ -271,3 +276,149 @@ One of the options for making it atomic is to write to files stored in a tempora
 *	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a>
 *	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a>
 *	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a>
+
+## Deployment Strategies
+
+Content deployment has 3 strategies. Each strategy describe the way of deploying packages. Package is the set of files which belongs to specific <code>area/theme/locale</code>.
+The diversity of strategies is due to ways of deploying packages:
+
+#### Standard Strategy
+
+All package files for standard strategy should be deployed (this means that all files will be processed with <code>\Magento\Framework\App\View\Asset\Publisher</code>)
+
+#### Quick Strategy
+
+Part of files can be deployed and part of them can be copied from parent package (package which aggregates common for few packages files).
+For Quick Strategy parent package is aggregated on locale level.
+This means that if we need to generate files for specific locale, we need to deploy only files override for this locale.
+All other files should be copied from aggregated parent package. 
+
+#### Compact Strategy
+In quick strategy there are a lot of duplications of same files for all combinations of deployed areas, themes, and locales.
+In the real situation, most of the static files don't have specific versions for locales, also it is the common case that for different themes there are only a few files which are different from the main website theme.
+
+So the main purpose of compact strategy is to avoid duplicating of files between theme, areas, locales.
+In order to achieve this new basic theme (Magento/base) and basic area (base) are created.
+
+In order to distinguish which files are common, and which are specific lets see, what patterns are used for static content deploy.
+There are several types of static content, which could be described as the following patterns:
+
+<table>
+  	<col width="35%">
+  	<col width="15%">
+  	<col width="50%">
+	<tbody>
+		 <tr>
+			<th>Pattern</th>
+			<th>Type</th>
+			<th>Comment</th>
+		 </tr>
+         <tr>
+            <td>{{area}}/{{theme}}/{{locale}}</td>
+            <td><p>theme</p></td>
+            <td><p>Referenced from all client code since all clients operate within concrete scope (area, theme, and locale)</p></td>
+         </tr>
+         <tr>
+             <td>{{area}}/{{theme}}/default</td>
+             <td><p>base</p></td>
+             <td><p>Could not be referenced directly from client code</p></td>
+         </tr>
+          <tr>
+             <td>{{area}}/Magento/base/{{locale}}</td>
+             <td><p>base</p></td>
+             <td><p>Could not be referenced directly from client code</p></td>
+          </tr>
+          <tr>
+             <td>{{area}}/Magento/base/default</td>
+             <td><p>base</p></td>
+             <td><p>Could not be referenced directly from client code</p></td>
+          </tr>
+          <tr>
+             <td>{{area}}/Magento/base/default</td>
+             <td><p>base</p></td>
+             <td><p>Could not be referenced directly from client code</p></td>
+          </tr>
+          <tr>
+             <td>base/Magento/base/{{locale}}</td>
+             <td><p>base</p></td>
+             <td><p>Could not be referenced directly from client code</p></td>
+          </tr>
+          <tr>
+             <td>base/Magento/base/default</td>
+             <td><p>base</p></td>
+             <td><p>Could not be referenced directly from client code</p></td>
+         </tr>
+	</tbody>
+</table>
+
+All adjective content (specific to some area, theme, and locale) will be deployed to corresponding area/theme/locale subfolder.
+
+<code>
+pub/static
+        adminhtml
+            ...
+        frontend
+            Magento/luma
+                default
+                    path_to_file
+                en_US
+                    path_to_file
+                    {module_name}
+                    path_to_file
+                fr_FR
+                    path_to_file
+                    {module_name}
+                    path_to_file
+            Magento/blank
+                default
+                    path_to_file
+                en_US
+                    path_to_file
+                    {module_name}
+                    path_to_file
+                fr_FR
+                    path_to_file
+                    {module_name}
+                    path_to_file
+</code>
+
+Except base theme, each theme in each area has <code>default<code> locale, where all common for theme locales files are kept:
+<code>css, font, images</code>
+As Javascript files can have translations they are duplicated for each area.
+As new approach of deployment means that files will be inherited from parent themes and locales, we need
+to have map file, which will represents relations of this inheritance. For php and js there are two files: <code>map.php, requirejs-map.js</code>
+
+Example of map.php:
+
+<code>
+    return [
+            'Magento_Checkout::cvv.png' => [
+                'area' => 'frontend',
+                'theme' => 'Magento/luma',
+                'locale' => 'en_US',
+            ],
+            '...' => [
+                'area' => '...',
+                'theme' => '...',
+                'locale' => '...'
+            ]
+            ];
+</code>
+
+Example of requirejs-map.js
+
+<code>
+    require.config({
+        "config": {
+            "baseUrlInterceptor": {
+                "jquery.js": "../../../../base/Magento/base/en_US/"
+            }
+        }
+    }); 
+</code>
+
+
+#### Page Rendering
+During page rendering, all assets URL will be resolved in **\Magento\Framework\View\Asset\Repository::createAsset()** according to the corresponding map file.
+There should be no url-concatinations in JavaScripts.
+All urls should goes through requirejs in JavaScript or through AssetRepository in PHP.
