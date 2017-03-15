@@ -35,11 +35,11 @@ Magento 2.1.6 contains over 15 significant performance enhancements when compare
 
 * **Optimized image resizing** 
 
-	* image resize operations performed from the Command Line Interface (CLI) now generate full size images
+	* image resize operations performed from the Command Line Interface (CLI) now generate images of all sizes
 
 	* image resize operations from the Admin is fixed as well
 
-	* IO activity and number of images requested is now up to 30% faster
+	* significant decrease in the number of file system operations when processing images on frontend
 
 	* caching of image metadata is up to 50% faster, depending upon store size
 
@@ -61,12 +61,10 @@ Magento 2.1.6 contains over 15 significant performance enhancements when compare
 ### Catalog
 
 
-<!--- 65324 -->* Magento no longer permits JOIN operations to lock rows in the SQL `cataloginventory_stock_item` table during checkout. Previously, Magento permitted this type of operation to maintain the consistency of inventory information during checkout. However, under these conditions, you received this error: 
-
-	`General error: 1205 Lock wait timeout exceeded; try restarting transaction`
+<!--- 65324 -->*  Magento no longer locks the `cataloginventory_stock_item` table, which will reduce lock-related timeouts when indexing and checkout operations are running in parallel. Previously, Magento locked the `cataloginventory_stock_item` and `category_product_entity` tables. (The second table is not required for checking stock information.)
 
 
-<!--- 65251 -->* The Magento image resize mechanism no longer generates images of all sizes upon user request. Instead, Magento generates and saves all image sizes after you save a product.  Previously, some product images were re-sized on the fly during a request, which degraded performance.
+<!--- 65251 -->* The storefront now displays images that Magento resizes during product save operations, rather than resizing the product on the storefront. Previously, the image path contained `store_id`,  and during save operations, Magento resized images for images the default store only. 
 
 
 
@@ -75,17 +73,18 @@ Magento 2.1.6 contains over 15 significant performance enhancements when compare
 <!--- 65339 -->* The check that Magento runs to confirm a configurable product's readiness for sale is now faster.  (The `isSalable` method checks that a configurable product can be sold (that is, is in a saleable state). 
 
 
+<!--- 65247 -->* Query optimizations have improved the speed of configurable product price calculation.
 
-<!--- 65247 -->* Index optimizations have improved the speed of configurable product price calculation. 
 
 
-<!--- 65246 -->* The speed of configurable product special price calculation and rendering on the Category page has improved. Magento now renders the regular price for a configurable product on the Product page, but not for the list of products on the Category page. Previously, Magento rendered the regular price in both locations, which affected performance. 
+<!--- 65246 -->*  Magento no longer calculates configurable product special prices on the Category page. Previously, Magento calculated special prices on the Category page, but did not display them.  
 
 
 
 ### Indexers
 
-<!--- 65362 -->* Magento now runs a full reindex after import if you've set **Update on Schedule** to on. Previously, Magento ran a full reindex no matter which index mode was set. 
+<!--- 65362 -->* Magento now runs a selective partial re-indexing operation after import if you've set **Update on Schedule** to on. Previously, Magento ran a full reindex no matter which index mode was set. 
+
 
 
 
