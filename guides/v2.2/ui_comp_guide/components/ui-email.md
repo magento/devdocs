@@ -8,6 +8,8 @@ version: 2.2
 github_link: ui_comp_guide/components/ui-email.md
 ---
 
+The Email component is a form element that implements the HTML `<input>` field of type="email".
+
 ## Email configuration
 
 Extends all `abstract` configuration.
