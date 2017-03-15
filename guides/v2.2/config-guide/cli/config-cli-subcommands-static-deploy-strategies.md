@@ -68,6 +68,7 @@ In order to achieve this new basic theme (Magento/base) and basic area (base) ar
 In order to distinguish which files are common, and which are specific lets see, what patterns are used for static content deploy.
 There are several types of static content, which could be described as the following patterns:
 
+<p class="q">is this pattern related to strategies or is it smth related to deployment (materialization) in general?</p>
 <table>
   	<col width="35%">
   	<col width="15%">
