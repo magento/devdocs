@@ -7,6 +7,9 @@ menu_title: Toolbar component
 version: 2.2
 github_link: ui_comp_guide/components/listing/ui-toolbar.md
 ---
+## Overview
+
+Toolbar component serves as a container for the listing-related elements like paging, massactions, filters, bookmarks, i.e. it aggregates all elements that serve as "tools" and renders them above the main table. It also allows to fix the position of its content along with the table's header so that they would always stay in the viewport area.
 
 Constructor: [app/code/Magento/Ui/view/base/web/js/grid/toolbar.js]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/grid/toolbar.js)
 

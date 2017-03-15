@@ -8,6 +8,10 @@ version: 2.2
 github_link: ui_comp_guide/components/listing/ui-сolumnsсontrols.md
 ---
 
+## Overview
+
+The ColumnsControls component allows to modify visibility of the table's columns. It renders a list of checkboxes that indicate whether an associated column is displayed in the table or not.
+
 Constructor: [app/code/Magento/Ui/view/base/web/js/grid/controls/columns.js]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/grid/controls/columns.js)
 
 ## ColumnsControls configuration

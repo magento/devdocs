@@ -8,6 +8,10 @@ version: 2.2
 github_link: ui_comp_guide/components/listing/ui-thumbnailcolumn.md
 ---
 
+## Overview
+
+The ThumbnailColumn is a column elements of which represent images associated with records of the table. Each field of this column contains image's preview which opens a popup with the detailed view when user clicks on it.
+
 Constructor: [app/code/Magento/Ui/view/base/web/js/grid/columns/thumbnail.js]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/grid/columns/thumbnail.js)
 
 ## ThumbnailColumn configuration
