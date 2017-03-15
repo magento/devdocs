@@ -20,34 +20,34 @@ Extends all [uiElement]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uielement
     <th>Default</th>
   </tr>
   <tr>
-    <td>component</td>
+    <td><code>component</code></td>
     <td>The path to the component’s JS constructor in terms of RequireJS.</td>
     <td>String</td>
     <td><code>Magento_Ui/js/form/element/text</code></td>
   </tr>
   <tr>
-    <td>disabled</td>
-    <td>Initial component's state. When set to "true", users can't take action on the element.</td>
+    <td><code>disabled</code></td>
+    <td>Initial component's state. When set to <code>true</code>, users can't take action on the element.</td>
     <td>Boolean</td>
-    <td>false</td>
+    <td><code>false</code></td>
   </tr>
   <tr>
-    <td>label</td>
+    <td><code>label</code></td>
     <td>Field label</td>
     <td>String</td>
-    <td>''</td>
+    <td><code>''</code></td>
   </tr>
   <tr>
-    <td>links <li>value</li></td>
+    <td><code>links</code> <li><code>value</code></li></td>
     <td><a href="{{page.baseurl}}ui_comp_guide/concepts/ui_comp_linking_concept.html">Links</a> the component's "value" property with provider using the declared in the "dataScope" property of the parent component.</td>
     <td>Object<li>String</li></td>
-    <td>${ $.provider }:${ $.dataScope }'</td>
+    <td><code>${ $.provider }:${ $.dataScope }</code></td>
   </tr>
 
   <tr>
-    <td>visible</td>
-    <td>Initial component's visibility. When set to "false", the "display: none" CSS style is added to the component's DOM block.</td>
+    <td><code>visible</code></td>
+    <td>Initial component's visibility. When set to <code>false</code>, the "display: none" CSS style is added to the component's DOM block.</td>
     <td>Boolean</td>
-    <td>true</td>
+    <td><code>true</code></td>
   </tr>
 </table>

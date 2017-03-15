@@ -82,11 +82,15 @@ InsertListing-specific configuration:
   </tr>
   <tr>
     <td>
-      <code>dataLinks
+      <code>dataLinks</code>
       <ul>
-      <li>imports</li>
-      <li>exports</li>
-      </ul> </code> 
+        <li>
+          <code>imports</code>
+        </li>
+        <li>
+          <code>exports</code>
+        </li>
+      </ul>
     </td>
     <td>
       Flags that enable linking between insertListing's
@@ -104,14 +108,21 @@ InsertListing-specific configuration:
     <td>
       Object
       <ul>
-      <li>Boolean</li>
-      <li>Boolean</li>
-       </ul>
+        <li>Boolean
+        </li>
+        <li>Boolean
+        </li>
+      </ul>
     </td>
-    <td><code>
-      <li>true</li>
-      <li>false</li>
-          </code))>
+    <td>
+      <ul>
+        <li>
+          <code>true</code>
+        </li>
+        <li>
+          <code>false</code>
+        </li>
+      </ul>
     </td>
   </tr>
   <tr>
@@ -128,9 +139,8 @@ InsertListing-specific configuration:
     <td>
       Boolean
     </td>
-    <td><code>
-      true
-    </code>
+    <td>
+      <code>true</code>
     </td>
   </tr>
   <tr>

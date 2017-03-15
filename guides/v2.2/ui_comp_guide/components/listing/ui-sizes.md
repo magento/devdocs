@@ -14,7 +14,7 @@ Constructor: [app/code/Magento/Ui/view/base/web/js/grid/paging/paging.js]({{site
 
 Extends all [Multiline]({{page.baseurl}}ui_comp_guide/components/ui-multiline.md) configuration.
 
-Sizes own configuration:
+Sizes-specific configuration:
 
 <table>
   <tr>
@@ -38,7 +38,7 @@ Sizes own configuration:
   <tr>
     <td><code>options</code></td>
     <td>The initial list of available table sizes (number of rows).</td>
-    <td><br>{<br><code>[name: number]: SizeOption</code><br>}<br></td>
+    <td><br>{<br>[name: number]: SizeOption<br>}<br></td>
     <td><code>[20, 30, 50, 100, 200]</code></td>
   </tr>
   <tr>

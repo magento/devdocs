@@ -21,33 +21,33 @@ Textarea-specific options:
     <th>Default</th>
   </tr>
   <tr>
-    <td>cols</td>
-    <td>The number of columns that will be specified in the "cols" attribute of the textarea DOM element.</td>
+    <td><code>cols</code></td>
+    <td>The number of columns that will be specified in the <code>cols</code> attribute of the textarea DOM element.</td>
     <td>Number</td>
-    <td>15</td>
+    <td><code>15</code></td>
   </tr>
   <tr>
-    <td>component</td>
+    <td><code>component</code></td>
     <td>The path to the component’s .js file in terms of RequireJS.</td>
     <td>String</td>
-    <td>Magento_Ui/js/form/element/textarea</td>
+    <td><code>'Magento_Ui/js/form/element/textarea'<code></td>
   </tr>
   <tr>
-    <td>elementTmpl</td>
-    <td>The path to the .html template of the particular type of field (textarea).</td>
+    <td><code>elementTmpl</code></td>
+    <td>The path to the <code>.html</code> template of the particular type of field (textarea).</td>
     <td>String</td>
-    <td>ui/form/element/textarea</td>
+    <td><code>'ui/form/element/textarea'</code></td>
   </tr>
   <tr>
-    <td>rows</td>
-    <td>The number of columns that will be specified in the "rows" attribute of the textarea DOM element.</td>
+    <td><code>rows</code></td>
+    <td>The number of columns that will be specified in the <code>rows</code> attribute of the textarea DOM element.</td>
     <td>Number</td>
-    <td>2</td>
+    <td><code>2</code></td>
   </tr>
   <tr>
-    <td>template</td>
-    <td>The path to the general field .html template.</td>
+    <td><code>template</code></td>
+    <td>The path to the general field <code>.html</code> template.</td>
     <td>String</td>
-    <td>ui/form/field</td>
+    <td><code>'ui/form/field'</code></td>
   </tr>
 </table>

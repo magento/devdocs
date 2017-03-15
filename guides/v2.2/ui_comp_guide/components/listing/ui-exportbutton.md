@@ -48,7 +48,7 @@ ExportButton-specific configuration:
   <tr>
     <td><code>options</code></td>
     <td>List of available formats in which the table's data can be exported.</td>
-    <td>Array<a href="#exportoption">&lt;ExportOption&gt;</a> </td>
+    <td>Array<a href="#exportoption">&lt;<code>ExportOption</code>&gt;</a> </td>
     <td><code>[{<br>value: "csv",<br>label: "CSV",<br>url: "mui/export/gridToCsv"<br>}, {<br>value: "xml",<br>label: "Excel XML",<br>url: "mui/export/gridToXml"<br>}]</code></td>
   </tr>
   <tr>

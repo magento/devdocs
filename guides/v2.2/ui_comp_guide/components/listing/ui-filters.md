@@ -38,7 +38,7 @@ Filters-specific configuration:
   </tr>
   <tr>
     <td><code>statefull</code></td>
-    <td>Defines a list of component properties whose values are automatically saved in the configured storage if they change. <i>key</i> is the property's name and the <i>value</i> defines whether its saved.</td>
+    <td>Defines a list of component properties whose values are automatically saved in the configured storage if they change. <code>key</code> is the property's name and the <code>value</code> defines whether its saved.</td>
     <td>{<br>[name: string]: boolean<br>}</td>
     <td></td>
   </tr>

@@ -67,14 +67,15 @@ InsertForm-specific options:
   </tr>
   <tr>
     <td>
-      <code>dataLinks
+      <code>dataLinks</code>
       <ul>
-        <li>imports
+        <li>
+          <code>imports</code>
         </li>
-        <li>exports
+        <li>
+          <code>exports</code>
         </li>
       </ul>
-     </code>
     </td>
     <td>
       Flags that enable linking between insertForm's externalValue
@@ -97,10 +98,9 @@ InsertForm-specific options:
         </li>
       </ul>
     </td>
-    <td><code>
-      false<br />
-      false
-     <code>
+    <td>
+      <code>false<br />
+      false</code>
     </td>
   </tr>
   <tr>

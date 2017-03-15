@@ -28,25 +28,25 @@ Nav-specific options:
     <th>Default</th>
   </tr>
   <tr>
-    <td>collapsible</td>
+    <td><code>collapsible</code></td>
     <td>Enables/disables the collapsible functionality.</td>
     <td>Boolean</td>
-    <td>false</td>
+    <td><code>false</code></td>
   </tr>
   <tr>
-    <td>component</td>
+    <td><code>component</code></td>
     <td>The path to the component’s JS constructor, in terms of RequireJS.</td>
     <td>String</td>
     <td><code>Magento_Ui/js/form/components/tab_group</code></td>
   </tr>
   <tr>
-    <td>opened</td>
+    <td><code>opened</code></td>
     <td>Initial collapsible state, if the collapsible functionality is enabled.</td>
     <td>Boolean</td>
-    <td>true</td>
+    <td><code>true</code></td>
   </tr>
   <tr>
-    <td>template</td>
+    <td><code>template</code></td>
     <td>The path to the component’s <code>.html</code> template.</td>
     <td>String</td>
     <td><code>ui/tab</code></td>

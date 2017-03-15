@@ -51,7 +51,7 @@ The Expandable Column UI component includes the following files:
         <td><code>visibeItemsLimit</code></td>
         <td>A number of options to display in a cell.</td>
         <td>String</td>
-        <td>5</td>
+        <td><code>'5'</code></td>
     </tr>
     <tr>
         <td><code>tooltipTitle</code></td>

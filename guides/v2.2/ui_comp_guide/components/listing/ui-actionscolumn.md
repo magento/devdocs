@@ -38,7 +38,7 @@ ActionsColumn-specific configuration:
   <tr>
     <td><code>fieldClass</code></td>
     <td>Additonal CSS classes added to the column's field elements.</td>
-    <td><code>{[name: string]: boolean}</code></td>
+    <td>{[name: string]: Boolean}</td>
     <td><code>{'data-grid-actions-cell': true}</code></td>
   </tr>
   <tr>
@@ -50,7 +50,7 @@ ActionsColumn-specific configuration:
   <tr>
     <td><code>templates.actions</code></td>
     <td>A list of actions that will be displayed in column's fields.</td>
-    <td><code>{[name: string]: ActionItem}</code></td>
+    <td>{[name: String]: <code>ActionItem</code>}</code></td>
     <td>-</td>
   </tr>
 </table>
@@ -73,7 +73,7 @@ ActionsColumn-specific configuration:
   <tr>
     <td><code>confirm</code></td>
     <td>Confirmation message shown before applying the action.</td>
-    <td><br>{<br><code>title: string;</code><br><code>message: string</code><br>}<br></td>
+    <td><br>{<br>title: string;<br>message: string<br>}<br></td>
     <td>Optional</td>
   </tr>
   <tr>

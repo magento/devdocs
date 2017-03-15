@@ -31,7 +31,7 @@ Multiline-specific options:
   </tr>
   <tr>
     <td>
-      additionalClasses
+      <code>additionalClasses</code>
     </td>
     <td>
       Sets custom classes to the component's DOM block.
@@ -40,28 +40,28 @@ Multiline-specific options:
       Object
     </td>
     <td>
-      {}
+      <code>{}</code>
     </td>
   </tr>
   <tr>
     <td>
-      breakLine
+      <code>breakLine</code>
     </td>
     <td>
       Adds a CSS class to multiline's DOM element. When set to
-      "true", the <code>admin__control-fields</code> class is
-      added, when "false" - <code>admin__control-grouped</code>.
+      <code>true</code>, the <code>admin__control-fields</code> class is
+      added, when <code>false</code> - <code>admin__control-grouped</code>.
     </td>
     <td>
       Boolean
     </td>
     <td>
-      true
+      <code>true</code>
     </td>
   </tr>
   <tr>
     <td>
-      cols
+      <code>cols</code>
     </td>
     <td>
       The number of columns that will be specified in the
@@ -71,12 +71,12 @@ Multiline-specific options:
       Number
     </td>
     <td>
-      15
+      <code>15</code>
     </td>
   </tr>
   <tr>
     <td>
-      component
+      <code>component</code>
     </td>
     <td>
       The path to the component’s <code>.js</code> file in terms of
@@ -91,7 +91,7 @@ Multiline-specific options:
   </tr>
   <tr>
     <td>
-      fieldTemplate
+      <code>fieldTemplate</code>
     </td>
     <td>
       The path to <code>.html</code> template that will be used for
@@ -106,7 +106,7 @@ Multiline-specific options:
   </tr>
   <tr>
     <td>
-      label
+      <code>label</code>
     </td>
     <td>
       Component's UI label
@@ -120,7 +120,7 @@ Multiline-specific options:
   </tr>
   <tr>
     <td>
-      required
+      <code>required</code>
     </td>
     <td>
       Defines whether the rendered field is required.
@@ -129,12 +129,12 @@ Multiline-specific options:
       Boolean
     </td>
     <td>
-      false
+      <code>false</code>
     </td>
   </tr>
   <tr>
     <td>
-      showLabel
+      <code>showLabel</code>
     </td>
     <td>
       Defines if the label is rendered.
@@ -148,7 +148,7 @@ Multiline-specific options:
   </tr>
   <tr>
     <td>
-      template
+      <code>template</code>
     </td>
     <td>
       The path to the general field's <code>.html</code> template.
@@ -162,7 +162,7 @@ Multiline-specific options:
   </tr>
   <tr>
     <td>
-      validateWholeGroup
+      <code>validateWholeGroup</code>
     </td>
     <td>
       Adds a block with validation results for all fields in the
@@ -175,7 +175,7 @@ Multiline-specific options:
   </tr>
   <tr>
     <td>
-      visible
+      <code>visible</code>
     </td>
     <td>
       Initial component's visibility. When set to "false", the

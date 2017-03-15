@@ -59,7 +59,7 @@ Multiselect-specific options:
     <td><code>size</code></td>
     <td>The number of options that are displayed in the multiselect UI.</td>
     <td>Number</td>
-    <td>6</td>
+    <td><code>6</code></td>
   </tr>
   <tr>
     <td><code>template</code></td>

@@ -27,13 +27,13 @@ Search-specific configuration:
     <td><code>label</code></td>
     <td>The search field label.</td>
     <td>String</td>
-    <td>Keyword</td>
+    <td><code>'Keyword'</code></td>
   </tr>
   <tr>
     <td><code>placeholder</code></td>
     <td>Value displayed when the search field is empty.</td>
     <td>String</td>
-    <td>Search by keyword</td>
+    <td><code>'Search by keyword'<code></td>
   </tr>
   <tr>
     <td><code>statefull</code></td>

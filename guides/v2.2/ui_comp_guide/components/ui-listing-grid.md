@@ -17,6 +17,10 @@ Constructor: [app/code/Magento/Ui/view/base/web/js/grid/listing.js]({{site.mage2
 
 ## Configuration options
 
+Extends all UiCollection options.
+
+Listing-specific options:
+
 <table>
   <tr>
     <th>

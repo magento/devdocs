@@ -53,16 +53,16 @@ HtmlContent-specific options:
     <td><code>''</code></td>
   </tr>
   <tr>
-    <td>template</td>
+    <td><code>template</code></td>
     <td>The path to the component’s <code>.html</code> template.</td>
     <td>String</td>
     <td><code>ui/content/content</code></td>
   </tr>
   <tr>
-    <td>visible</td>
+    <td><code>visible</code></td>
     <td>Initial component's visibility. When set to "false", the <code>display: none</code> CSS style is added to the component's DOM block.</td>
     <td>Boolean</td>
-    <td>true</td>
+    <td><code>true</code></td>
   </tr>
 </table>
 

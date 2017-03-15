@@ -22,19 +22,19 @@ Radioset-specific options:
     <th>Default</th>
   </tr>
   <tr>
-    <td>component</td>
+    <td><code>component<.code></td>
     <td>The path to the component’s <code>.js</code> file in terms of RequireJS.</td>
     <td>String</td>
     <td><code>Magento_Ui/js/form/element/checkbox-set</code></td>
   </tr>
   <tr>
-    <td>multiple</td>
+    <td><code>multiple</code></td>
     <td>Set the input type in the UI: true for checkbox, false for radio button.</td>
     <td>Boolean</td>
-    <td>false</td>
+    <td><code>false</code></td>
   </tr>
   <tr>
-    <td>template</td>
+    <td><code>template</code></td>
     <td>The path to the component’s <code>.html</code> template.</td>
     <td>String</td>
     <td><code>ui/form/element/checkbox-set</code></td>
