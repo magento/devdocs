@@ -61,7 +61,7 @@ Magento 2.1.6 contains over 15 significant performance enhancements when compare
 ### Catalog
 
 
-<!--- 65324 -->*  Magento no longer locks the `cataloginventory_stock_item` table, which will reduce lock-related timeouts when indexing and checkout operations are running in parallel. Previously, Magento locked the `cataloginventory_stock_item` and `category_product_entity` tables. (The second table is not required for checking stock information.)
+<!--- 65324 -->*  Magento no longer locks the `category_product_entity` table, which will reduce lock-related timeouts when indexing and checkout operations are running in parallel. Previously, Magento locked the `category_product_entity` table. (The second table is not required for checking stock information.)
 
 
 <!--- 65251 -->* The storefront now displays images that Magento resizes during product save operations, rather than resizing the product on the storefront. Previously, the image path contained `store_id`,  and during save operations, Magento resized images for images the default store only. 
