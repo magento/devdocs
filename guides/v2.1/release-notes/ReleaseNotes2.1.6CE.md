@@ -14,61 +14,123 @@ github_link: release-notes/ReleaseNotes2.1.6CE.md
 {:toc}
 
 
-We are pleased to present Magento Community Edition 2.1.6. This release includes important enhancements to the security of your Magento software.
+We are pleased to present Magento Community Edition 2.1.6. This release includes important performance enhancements for your Magento software, especially to the performance of operations involving configurable products with swatches. 
 
-
-<div class="bs-callout bs-callout-warning" markdown="1">
-While there are no confirmed attacks related to these vulnerabilities to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento software to the latest version as soon as possible.
-</div>
-
-
-
-Looking for the <a href="http://devdocs.magento.com/guides/v2.0/cloud/release-notes/CloudReleaseNotes2.1.4.html" target="_blank">Magento Enterprise Cloud Edition 2.1.4 and 2.0.12 Release Notes</a>?
+Looking for the <a href="http://devdocs.magento.com/guides/v2.0/cloud/release-notes/CloudReleaseNotes2.1.4.html" target="_blank">Magento Enterprise Cloud Edition Release Notes</a>?
 
 
 ## Highlights
 
-Magento 2.1.6 contains 15 security enhancements. Look for the following highlights in this release:
-
-* **Removal of vulnerability with the Zend framework `Zend_Mail` library**. For more information, see <a href="https://magento.com/security/news/new-zend-framework-1-security-vulnerability" target="_blank">New Zend Framework 1 Security Vulnerability</a>.  
+Magento 2.1.6 contains over 15 significant performance enhancements when compared to 2.1.5. Look for the following highlights in this release:
 
 
+* **Improved performance of the Category page**
 
-## Security enhancements
+	* loading configurable products from the database is now up to 5x faster
 
-<!--- 64635 -->
+	* price calculations is now up to 3-5% faster
 
-<!--- 64049 -->* We’ve updated several vulnerable moment.js libraries (query-migrate, query, jquery-ui-1.9.2.js)
-
-<!--- 63879 -->* You can no longer instantiate an arbitrary object while adding conditions to an email reminder rule. 
-
-<!--- 63877 -->* The Admin URL in the response body of an HTTP request is no longer visible to unauthenticated users 
-
-<!--- 63869 -->
-
-<!--- 63866 -->* Admin users without proper permissions can no longer delete store backups or system support reports. 
-
-<!--- 63864 -->* Customer-authenticated APIs are no longer vulnerable to CSRF.
-
-<!--- 63862 -->
-
-<!--- 63680 -->
-
-<!--- 63632-->
-
-<!--- 63527 -->
-
-<!--- 63517 -->
-
-<!--- 62475 -->* Magento now displays a 404 page when you try to route a request to index.phpadmin. Previously, Magento displayed an Admin page.
-
-<!--- 62313 -->* We’ve removed  the PHP serialized object from  the JSON report_data component from the \Magento\Support\Ui\Component\Listing\Column\ReportActions response. 
-
-<!--- 61015 -->* Action logs no longer display plain-text passwords. 
-
-<!--- 59097 -->
+	* stock validation is now up to 20% faster
 
 
+
+* **Optimized image resizing** 
+
+	* image resize operations performed from the Command Line Interface (CLI) now generate images of all sizes
+
+	* image resize operations from the Admin is fixed as well
+
+	* significant decrease in the number of file system operations when processing images on frontend
+
+	* caching of image metadata is up to 50% faster, depending upon store size
+
+
+* **Improved performance of layered navigation**
+
+	* layered navigation is now up to 3% faster due to the caching of attribute options
+
+
+*	**Minimization of indexing operations after product import**
+
+
+
+
+
+
+## Functional enhancements
+
+### Catalog
+
+
+<!--- 65324 -->*  Magento no longer locks the `cataloginventory_stock_item` table, which will reduce lock-related timeouts when indexing and checkout operations are running in parallel. Previously, Magento locked the `cataloginventory_stock_item` and `category_product_entity` tables. (The second table is not required for checking stock information.)
+
+
+<!--- 65251 -->* The storefront now displays images that Magento resizes during product save operations, rather than resizing the product on the storefront. Previously, the image path contained `store_id`,  and during save operations, Magento resized images for images the default store only. 
+
+
+
+### Configurable products
+
+<!--- 65339 -->* The check that Magento runs to confirm a configurable product's readiness for sale is now faster.  (The `isSalable` method checks that a configurable product can be sold (that is, is in a saleable state). 
+
+
+
+<!--- 65246 -->*  Magento no longer calculates configurable product special prices on the Category page. Previously, Magento calculated special prices on the Category page, but did not display them.  
+
+
+
+### Indexers
+
+<!--- 65362 -->* Magento now runs a selective partial re-indexing operation after import if you've set **Update on Schedule** to on. Previously, Magento ran a full reindex no matter which index mode was set. 
+
+
+
+
+### Import
+
+<!--- 64856 -->* Magento now displays imported product images in this order: first, the base image, then the additional images in the order in which they were listed in the CSV file. Previously, Magento displayed images in this unexpected order: first, an additional image, then the base image, and finally, all remaining additional images.
+
+
+
+### Miscellaneous
+
+<!--- 65484 -->* Magento now caches attribute options for the layered navigation feature, which reduces the number of queries to the database, and consequently improves performance.
+
+
+<!--- 65483 -->* Magento no longer performs unnecessary file check operations (for example, `file_exists`, `is_file`). 
+
+
+<!--- 65480 -->* Magento now caches image metadata, which avoids the time-consuming need to read images for metadata loading.
+
+
+
+
+
+### Swatches
+
+<!--- 65404 -->* Magento no longer creates redundant objects when initializing a configurable product on the Category page.
+
+
+<!--- 65403 -->* You can now disable swatches for both the Catalog page and search results (quick or advanced). To disable swatches from these requests, disable **Stores > Configuration > Catalog > Storefront > Show Swatches in Product List**.
+
+<!--- 65402 -->* The logic that Magento uses to validate swatch attributes has been optimized. 
+
+<!--- 65248 -->* Magento now caches swatch data in block cache, which improves the responsiveness of the configurable product pages. 
+
+
+
+
+<!--- DUPLICATE -->
+<!--- 65252 -->
+
+<!--- INTERNAL ONLY -->
+<!--- 65203 -->
+
+<!--- CAN'T REPRODUCE -->
+<!--- 65609 -->
+
+<!--- WON'T FIX -->
+<!--- 65250 -->
 
 
 
