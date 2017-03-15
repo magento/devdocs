@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>How to Add a New Table to a Database</title>
+	<meta name="description" content="Magento 2 Developer Documentation.
+">
+	<meta http-equiv="last-modified" content="" />
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print" />
+	<link rel="canonical" href="//videos/fundamentals/add-a-new-table-to-database/">
+
+  <script>
+    var baseUrl = "/";
+  </script>
+
+	<!-- crazyegg -->
+	<script type="text/javascript">
+	setTimeout(function(){var a=document.createElement("script");
+	var b=document.getElementsByTagName("script")[0];
+	a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0038/0321.js?"+Math.floor(new Date().getTime()/3600000);
+	a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+	</script>
+
+</head>
+<body>
+
+<header class="site-header">
+
+	<nav id="global-nav">
+
+		<div class="menu-btn"><a class="menu-trigger menu-icon" href="#"></a></div>
+
+		<div class="container">
+
+			<a class="logo" href="/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+
+			
+<div class="version-switcher dropdown">
+	<button class="btn dropdown-toggle" data-toggle="dropdown">
+		Magento 2.1
+	</button>
+
+	<ul class="dropdown-menu dropdown-menu-left">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/">Magento 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.1/">Magento 2.1</a></li>
+	
+  </ul>
+
+</div>
+
+
+
+			<!-- Main Navigation -->
+<div class="nav-main">
+  <ul>
+    <li class="first">
+      <a href="#">Setup and Deployment</a>
+        <ul class="menu nav">
+          <li><a href="https://magento.com/tech-resources/download" target="_blank">Get Started with Magento DevBox Beta</a></li>
+            <li><a href="/guides/v2.1/install-gde/bk-install-guide.html">Installation Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.1/comp-mgr/bk-compman-upgrade-guide.html">Component Manager and System Upgrade Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.1/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/cloud/bk-cloud.html">Enterprise Cloud Edition Guide</a></li>
+          <li class="leaf"><a href="/magento-release-information.html">Release Information</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Development</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.1/architecture/bk-architecture.html">Architecture Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          <li><a href="/guides/v2.1/payments-integrations/bk-payments-integrations.html">Payments Integrations</a></li>
+          <li class="leaf"><a href="/guides/v2.1/mrg/intro.html">Module Reference Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.1/extension-dev-guide/staging.html">Staging</a></li>
+          
+          <li class="first leaf"><a href="/guides/v2.1/contributor-guide/contributing.html">Contributor Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Frontend</a>
+        <ul class="menu nav">
+          <li class="first leaf"><a href="/guides/v2.1/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.1/ui_comp_guide/bk-ui_comps.html">UI Components Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.1/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li class="leaf"><a href="/guides/v2.1/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">API</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.1/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li class="leaf"><a href="/guides/v2.1/rest/bk-rest.html">REST API Reference</a></li>
+          <li class="leaf"><a href="/guides/v2.1/soap/bk-soap.html">SOAP API Reference</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Testing</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.1/test/testing.html">Magento Testing Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.1/mtf/mtf_introduction.html">Functional Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.1/test/integration/integration_test_execution.html">Integration Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.1/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.1/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.1/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+        </ul>
+    </li>
+
+    <li>
+      <a href="/guides/v2.1/howdoi/bk-how-do-i.html">How Tos</a>
+    </li>
+
+    <li>
+      <a href="/videos/">Videos</a>
+    </li>
+  </ul>
+</div><!-- /.nav-main -->
+
+
+			<div class="search-btn">
+				<a class="search-trigger search-icon" href="//search.html"></a>
+			</div>
+
+			<form class="quick-search" action="/search.html" method="get">
+				<input type="search" name="q" placeholder="Search" />
+				<a href="#" class="quick-search-close">&times;</a>
+			</form>
+
+		</div>
+
+	</nav><!-- #global-nav -->
+
+</header>
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- .main-container -->
+	<div class="main-container">
+		<a id="main-content"></a>
+
+
+<div class="container video-page">
+
+	<aside class="sidebar">
+		<a href="#" class="toc-toggler">Table of Contents</a>
+		<div class="sidebar-wrapper">
+
+			<ul>
+				<li class="level-1"><a href="/videos/">All Videos</a></li>
+				<h4><span class="playlist-name">Playlist</span> Fundamentals of Magento 2 Development</h4>
+				
+
+				
+                <li class="level-1 active">
+                    
+                    <a href="/videos/fundamentals/add-a-new-table-to-database/">
+                    
+                        How to Add a New Table to a Database 
+                        <span class="video-duration">6:11 </span>
+                    </a>
+                </li>
+				
+                <li class="level-1 ">
+                    
+                    <a href="/videos/fundamentals/add-a-javascript-module/">
+                    
+                        How to Add a JavaScript Module 
+                        <span class="video-duration">4:20 </span>
+                    </a>
+                </li>
+				
+                <li class="level-1 ">
+                    
+                    <a href="/videos/fundamentals/add-new-product-attribute/">
+                    
+                        How to Add a New Product Attribute 
+                        <span class="video-duration">7:36 </span>
+                    </a>
+                </li>
+				
+                <li class="level-1 ">
+                    
+                    <a href="/videos/fundamentals/create-a-new-module/">
+                    
+                        Create a New Module 
+                        <span class="video-duration">5:18 </span>
+                    </a>
+                </li>
+				
+                <li class="level-1 ">
+                    
+                    <a href="/videos/fundamentals/create-a-new-page/">
+                    
+                        Create a New Page 
+                        <span class="video-duration">4:02 </span>
+                    </a>
+                </li>
+				
+			</ul>
+
+		</div>
+	</aside>
+
+	<section class="content">
+		<div class="content-wrap">
+
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+  <nav class="breadcrumbs">
+
+    <a class="breadcrumb-item" href="/"><span>Home</span></a>
+
+    <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+    <!-- Iteration breadcrumb item -->
+    
+    
+
+    
+
+    
+
+
+  
+  <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+    <a href="/videos/"><span property="name">Videos</span></a>
+  </li>
+  
+
+  
+  <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+    
+    <a href="/videos/fundamentals/">
+    
+    <span property="name">Fundamentals of Magento 2 Development</span></a>
+  </li>
+  <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
+    <span property="name">How to Add a New Table to a Database</span>
+  </li>
+  
+
+
+
+
+    </ol>
+
+
+
+
+  </nav>
+
+
+
+	<h1 class="page-heading">How to Add a New Table to a Database</h1>
+
+  
+
+
+</section>
+
+
+			<div id="video-player" class="video-player-wrap">
+				<div class="video-player">
+					<div class="embed-responsive embed-responsive-16by9">
+		      	<iframe class="embed-responsive-item" src='http://www.youtube.com/embed/GMOtt5mai5A?autoplay=1'
+		      		        itemprop='embedUrl'
+		      		        frameborder='0'
+		      	          allowfullscreen>
+		      	</iframe>
+					</div>
+				</div>
+			</div>
+
+			<p>Magento 2 has a special mechanism which allows you to create database tables, modify existing ones,and even add some data into them(like setup data, which has to be added when a module is installed).
+This mechanism allows those changes to be transferable between different installations.</p>
+
+<p>The key concept is that,instead of doing manual SQL operations that you have to do again and again when reinstalling the system, developers create an install (or upgrade) script that contains the data.
+The script will be executed every time a module is installed.</p>
+
+<p>Magento 2 has four types of such scripts: InstallSchema, InstallData, UpgradeSchema and UpgradeData.
+The install scripts are executed only once, while the upgrade scripts are executed every time the module’s version get changed.</p>
+
+<p>To look at all four script types, we’ll complete the following greeting page tasks:</p>
+
+<ul>
+  <li>Create a <code>greeting_message</code> table with the columns greeting_id and message.</li>
+  <li>Add two records: “Happy New Year”, “Happy Holidays”.</li>
+  <li>Next, modify the table by adding another field, “season”, to which we add the records “Happy Thanksgiving” and “Fall’”.</li>
+  <li>Update the types for the first and second records.</li>
+</ul>
+
+<p>The steps we need to take to accomplish these tasks are:</p>
+
+<ol>
+  <li>Create a new module.</li>
+  <li>Create an InstallSchema script.</li>
+  <li>Create an InstallData script.</li>
+  <li>Add a new module and verify that a table with the data was created.</li>
+  <li>Create an UpgradeSchema script.</li>
+  <li>Create an UpgradeData script.</li>
+  <li>Run the upgrade scripts and verify that the table has changed.</li>
+</ol>
+
+<p>Let’s go through each step.</p>
+
+<h2 id="step-1-create-a-new-module">Step 1: Create a new module</h2>
+
+<p>We will create a new module called <code>Learning_GreetingMessage</code>.</p>
+
+<p>Go into the <code>app/code</code> folder and create the folders <code>Learning</code> and <code>Learning/GreetingMessage</code>:</p>
+
+<pre><code>$ cd &lt;magento2_root&gt;/app/code
+$ mkdir Learning
+$ mkdir Learning/GreetingMessage
+</code></pre>
+
+<p>Now create two files:</p>
+
+<p><code>Learning/GreetingMessage/registration.php</code></p>
+
+<div class="collapsible"><b class="collapsible-title">Show code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
+<span class="sd">* Copyright © 2016 Magento. All rights reserved.</span>
+<span class="sd">* See COPYING.txt for license details.</span>
+<span class="sd">*/</span>
+
+<span class="nx">\Magento\Framework\Component\ComponentRegistrar</span><span class="o">::</span><span class="na">register</span><span class="p">(</span>
+  <span class="nx">\Magento\Framework\Component\ComponentRegistrar</span><span class="o">::</span><span class="na">MODULE</span><span class="p">,</span>
+  <span class="s1">&#39;Learning_GreetingMessage&#39;</span><span class="p">,</span>
+  <span class="nx">__DIR__</span>
+<span class="p">);</span></code></pre></figure>
+</div></div>
+
+<p><br /></p>
+
+<p><code>Learning/GreetingMessage/etc/module.xml</code></p>
+
+<div class="collapsible"><b class="collapsible-title">Show code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+<span class="c">&lt;!--</span>
+<span class="c">/**</span>
+<span class="c">* Copyright © 2016 Magento. All rights reserved.</span>
+<span class="c">* * See COPYING.txt for license details.</span>
+<span class="c">--&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
+<span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:Module/etc/module.xsd&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;module</span> <span class="na">name=</span><span class="s">&quot;Learning_GreetingMessage&quot;</span> <span class="na">setup_version=</span><span class="s">&quot;0.0.1&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;/module&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
+</div></div>
+
+<h2 id="step-2-create-an-installschema-script">Step 2: Create an InstallSchema script</h2>
+
+<p>To create an InstallSchema script, go into the <code>app/code/Learning/GreetingMessage</code> folder and create a <code>Setup</code> folder.</p>
+
+<pre><code>$ cd &lt;magento2_root&gt;/app/code/Learning/GreetingMessage
+$ mkdir Setup
+</code></pre>
+
+<p>Now create the file <code>Setup/InstallSchema.php</code></p>
+
+<div class="collapsible"><b class="collapsible-title">Show code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
+<span class="sd">* Copyright © 2016 Magento. All rights reserved.</span>
+<span class="sd">* See COPYING.txt for license details.</span>
+<span class="sd">*/</span>
+
+<span class="k">namespace</span> <span class="nx">Learning\GreetingMessage\Setup</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Magento\Framework\Setup\InstallSchemaInterface</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Magento\Framework\Setup\ModuleContextInterface</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Magento\Framework\Setup\SchemaSetupInterface</span><span class="p">;</span>
+
+<span class="sd">/**</span>
+<span class="sd"> * @codeCoverageIgnore</span>
+<span class="sd"> */</span>
+<span class="k">class</span> <span class="nc">InstallSchema</span> <span class="k">implements</span> <span class="nx">InstallSchemaInterface</span>
+<span class="p">{</span>
+    <span class="sd">/**</span>
+<span class="sd">    * {@inheritdoc}</span>
+<span class="sd">    * @SuppressWarnings(PHPMD.ExcessiveMethodLength)</span>
+<span class="sd">    */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">install</span><span class="p">(</span><span class="nx">SchemaSetupInterface</span> <span class="nv">$setup</span><span class="p">,</span> <span class="nx">ModuleContextInterface</span> <span class="nv">$context</span><span class="p">)</span>
+    <span class="p">{</span>
+          <span class="sd">/**</span>
+<span class="sd">          * Create table &#39;greeting_message&#39;</span>
+<span class="sd">          */</span>
+          <span class="nv">$table</span> <span class="o">=</span> <span class="nv">$setup</span><span class="o">-&gt;</span><span class="na">getConnection</span><span class="p">()</span>
+              <span class="o">-&gt;</span><span class="na">newTable</span><span class="p">(</span><span class="nv">$setup</span><span class="o">-&gt;</span><span class="na">getTable</span><span class="p">(</span><span class="s1">&#39;greeting_message&#39;</span><span class="p">))</span>
+              <span class="o">-&gt;</span><span class="na">addColumn</span><span class="p">(</span>
+                  <span class="s1">&#39;greeting_id&#39;</span><span class="p">,</span>
+                  <span class="nx">\Magento\Framework\DB\Ddl\Table</span><span class="o">::</span><span class="na">TYPE_INTEGER</span><span class="p">,</span>
+                  <span class="k">null</span><span class="p">,</span>
+                  <span class="p">[</span><span class="s1">&#39;identity&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span> <span class="s1">&#39;unsigned&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span> <span class="s1">&#39;nullable&#39;</span> <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span> <span class="s1">&#39;primary&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">],</span>
+                  <span class="s1">&#39;Greeting ID&#39;</span>
+              <span class="p">)</span>
+              <span class="o">-&gt;</span><span class="na">addColumn</span><span class="p">(</span>
+                  <span class="s1">&#39;message&#39;</span><span class="p">,</span>
+                  <span class="nx">\Magento\Framework\DB\Ddl\Table</span><span class="o">::</span><span class="na">TYPE_TEXT</span><span class="p">,</span>
+                  <span class="mi">255</span><span class="p">,</span>
+                  <span class="p">[</span><span class="s1">&#39;nullable&#39;</span> <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span> <span class="s1">&#39;default&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">],</span>
+                    <span class="s1">&#39;Message&#39;</span>
+              <span class="p">)</span><span class="o">-&gt;</span><span class="na">setComment</span><span class="p">(</span><span class="s2">&quot;Greeting Message table&quot;</span><span class="p">);</span>
+          <span class="nv">$setup</span><span class="o">-&gt;</span><span class="na">getConnection</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">createTable</span><span class="p">(</span><span class="nv">$table</span><span class="p">);</span>
+      <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+</div></div>
+
+<p>Let’s take a minute to look at the code.</p>
+
+<p>The InstallSchema files are all very typical.
+The main code is located in the <code>install()</code> method, which has a <code>$setup</code> parameter.
+This is a key parameter, because it gives access to the <code>Connection()</code> object that allows database manipulations.</p>
+
+<p>The connection is an instance of <code>Magento\Framework\DB\Adapter\Pdo\Mysql</code> class.</p>
+
+<p>Magento uses DDL (Data Definition Language) to manipulate the database.
+You can find various examples of DDL in the Magento 2 core code.</p>
+
+<h2 id="step-3-create-an-installdata-script">Step 3: Create an InstallData script</h2>
+
+<p>Now let’s create the <code>Setup/InstallData.php</code> file:</p>
+
+<div class="collapsible"><b class="collapsible-title">Show code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
+<span class="sd"> * Copyright © 2016 Magento. All rights reserved.</span>
+<span class="sd"> * See COPYING.txt for license details.</span>
+<span class="sd"> */</span>
+
+<span class="k">namespace</span> <span class="nx">Learning\GreetingMessage\Setup</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">Magento\Framework\Setup\InstallDataInterface</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Magento\Framework\Setup\ModuleContextInterface</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Magento\Framework\Setup\ModuleDataSetupInterface</span><span class="p">;</span>
+
+<span class="sd">/**</span>
+<span class="sd"> * @codeCoverageIgnore</span>
+<span class="sd"> */</span>
+<span class="k">class</span> <span class="nc">InstallData</span> <span class="k">implements</span> <span class="nx">InstallDataInterface</span>
+<span class="p">{</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * {@inheritdoc}</span>
+<span class="sd">     * @SuppressWarnings(PHPMD.CyclomaticComplexity)</span>
+<span class="sd">     * @SuppressWarnings(PHPMD.ExcessiveMethodLength)</span>
+<span class="sd">     * @SuppressWarnings(PHPMD.NPathComplexity)</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">install</span><span class="p">(</span><span class="nx">ModuleDataSetupInterface</span> <span class="nv">$setup</span><span class="p">,</span> <span class="nx">ModuleContextInterface</span> <span class="nv">$context</span><span class="p">)</span>
+    <span class="p">{</span>
+          <span class="sd">/**</span>
+<span class="sd">           * Install messages</span>
+<span class="sd">           */</span>
+          <span class="nv">$data</span> <span class="o">=</span> <span class="p">[</span>
+              <span class="p">[</span><span class="s1">&#39;message&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Happy New Year&#39;</span><span class="p">],</span>
+              <span class="p">[</span><span class="s1">&#39;message&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Marry Christams&#39;</span><span class="p">]</span>
+          <span class="p">];</span>
+          <span class="k">foreach</span> <span class="p">(</span><span class="nv">$data</span> <span class="k">as</span> <span class="nv">$bind</span><span class="p">)</span> <span class="p">{</span>
+              <span class="nv">$setup</span><span class="o">-&gt;</span><span class="na">getConnection</span><span class="p">()</span>
+                <span class="o">-&gt;</span><span class="na">insertForce</span><span class="p">(</span><span class="nv">$setup</span><span class="o">-&gt;</span><span class="na">getTable</span><span class="p">(</span><span class="s1">&#39;greeting_message&#39;</span><span class="p">),</span> <span class="nv">$bind</span><span class="p">);</span>
+          <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+</div></div>
+
+<h2 id="step-4-add-a-new-module-and-verify-that-a-table-with-data-was-created">Step 4: Add a new module and verify that a table with data was created</h2>
+
+<p>Now it is time to run the Install scripts and verify that a table with the initial data is there, so we’ll run the <code>setup:upgrade</code> script.</p>
+
+<pre><code>$ cd &lt;magento2_root&gt;
+$ php bin/magento setup:upgrade
+</code></pre>
+
+<p>You should see a long list of modules that contain <code>Learning_GreetingMessage</code>.</p>
+
+<p>Now let’s connect to the database: <code>mysql -u&lt;user&gt; -p&lt;password&gt; &lt;database&gt;</code></p>
+
+<pre><code>SHOW TABLES LIKE “%greeting%”
+
++------------------------------------+
+| Tables_in_magento_210 (%greeting%) |
++------------------------------------+
+| greeting_message                   |
++------------------------------------+
+
+SELECT * FROM greeting_message;
+
++-------------+-----------------+
+| greeting_id | message         |
++-------------+-----------------+
+| 1           | Happy New Year  |
+| 2           | Happy Holidays  |
++-------------+-----------------+
+</code></pre>
+
+<h3 id="check-that-the-table-and-data-are-there">Check that the table and data are there</h3>
+
+<p>How does this work?
+When you create a new module and run the <code>bin/magento setup:upgrade</code> script, Magento checks the codebase to see if there are modules that were not installed.
+If it finds any, it checks whether there are any install scripts and if so, runs them.
+After that, Magento updates the table setup_module and puts information about the module and its version there:</p>
+
+<pre><code>SELECT * FROM setup_module WHERE module='Learning_GreetingMessage';
+
++--------------------------+----------------+--------------+
+| module                   | schema_version | data_version |
++--------------------------+----------------+--------------+
+| Learning_GreetingMessage | 0.0.1          | 0.0.1        |
++--------------------------+----------------+--------------+
+</code></pre>
+
+<p>The next time you run the <code>bin/magento setup:upgrade</code> script, it will find a record in the database and will compare the current version against the one in database.
+If the versions match, it will do nothing.
+If the current version is higher, it will run the upgrade scripts (discussed next).</p>
+
+<h2 id="step-5--create-an-upgradeschema-script">Step 5:  Create an UpgradeSchema script</h2>
+
+<p>To see how the upgrade scripts work, we’ll add some data to the database.</p>
+
+<p>First, change the version in the <code>etc/module.xml</code> file to 0.0.2:</p>
+
+<pre><code>&lt;module name="Learning_GreetingMessage" setup_version="0.0.2"&gt;
+</code></pre>
+
+<p><br /></p>
+
+<p>Then create the file <code>Setup/UpgradeSchema.php</code>:</p>
+
+<div class="collapsible"><b class="collapsible-title">Show code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
+<span class="sd"> * Copyright © 2016 Magento. All rights reserved.</span>
+<span class="sd"> * See COPYING.txt for license details.</span>
+<span class="sd"> */</span>
+
+<span class="k">namespace</span> <span class="nx">Learning\GreetingMessage\Setup</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">Magento\Framework\Setup\UpgradeSchemaInterface</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Magento\Framework\Setup\ModuleContextInterface</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Magento\Framework\Setup\SchemaSetupInterface</span><span class="p">;</span>
+
+<span class="sd">/**</span>
+<span class="sd"> * Upgrade the Catalog module DB scheme</span>
+<span class="sd"> */</span>
+<span class="k">class</span> <span class="nc">UpgradeSchema</span> <span class="k">implements</span> <span class="nx">UpgradeSchemaInterface</span>
+<span class="p">{</span>
+    <span class="sd">/**</span>
+<span class="sd">     * {@inheritdoc}</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">upgrade</span><span class="p">(</span><span class="nx">SchemaSetupInterface</span> <span class="nv">$setup</span><span class="p">,</span> <span class="nx">ModuleContextInterface</span> <span class="nv">$context</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$setup</span><span class="o">-&gt;</span><span class="na">startSetup</span><span class="p">();</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nb">version_compare</span><span class="p">(</span><span class="nv">$context</span><span class="o">-&gt;</span><span class="na">getVersion</span><span class="p">(),</span> <span class="s1">&#39;0.0.2&#39;</span><span class="p">,</span> <span class="s1">&#39;&lt;&#39;</span><span class="p">))</span> <span class="p">{</span>
+            <span class="nv">$setup</span><span class="o">-&gt;</span><span class="na">getConnection</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">addColumn</span><span class="p">(</span>
+                <span class="nv">$setup</span><span class="o">-&gt;</span><span class="na">getTable</span><span class="p">(</span><span class="s1">&#39;greeting_message&#39;</span><span class="p">),</span>
+                <span class="s1">&#39;season&#39;</span><span class="p">,</span>
+                <span class="p">[</span>
+                    <span class="s1">&#39;type&#39;</span> <span class="o">=&gt;</span> <span class="nx">\Magento\Framework\DB\Ddl\Table</span><span class="o">::</span><span class="na">TYPE_TEXT</span><span class="p">,</span>
+                    <span class="s1">&#39;length&#39;</span> <span class="o">=&gt;</span> <span class="mi">16</span><span class="p">,</span>
+                    <span class="s1">&#39;nullable&#39;</span> <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
+                    <span class="s1">&#39;default&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;comment&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Season&#39;</span>
+                <span class="p">]</span>
+            <span class="p">);</span>
+        <span class="p">}</span>
+        <span class="nv">$setup</span><span class="o">-&gt;</span><span class="na">endSetup</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+</div></div>
+
+<p>Note the “version_compare” line.
+As described earlier, the UpgradeScript will be executed every time the version in <code>module.xml</code> has changed.
+So we only want the current version upgrade script to execute, and not previous upgrades.
+That’s why we put upgrades into “if” clauses.</p>
+
+<h2 id="step-6-create-the-upgradedata-script">Step 6: Create the UpgradeData script</h2>
+
+<p>Now we’ll create the file <code>Setup/UpgradeData.php</code>:</p>
+
+<div class="collapsible"><b class="collapsible-title">Show code </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
+<span class="sd"> * Copyright © 2016 Magento. All rights reserved.</span>
+<span class="sd"> * See COPYING.txt for license details.</span>
+<span class="sd"> */</span>
+
+<span class="k">namespace</span> <span class="nx">Learning\GreetingMessage\Setup</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">Magento\Framework\Setup\UpgradeDataInterface</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Magento\Framework\Setup\ModuleContextInterface</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Magento\Framework\Setup\ModuleDataSetupInterface</span><span class="p">;</span>
+
+<span class="sd">/**</span>
+<span class="sd"> * Upgrade Data script</span>
+<span class="sd"> */</span>
+
+<span class="k">class</span> <span class="nc">UpgradeData</span> <span class="k">implements</span> <span class="nx">UpgradeDataInterface</span>
+<span class="p">{</span>
+    <span class="sd">/**</span>
+<span class="sd">     * {@inheritdoc}</span>
+<span class="sd">     * @SuppressWarnings(PHPMD.ExcessiveMethodLength)</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">upgrade</span><span class="p">(</span><span class="nx">ModuleDataSetupInterface</span> <span class="nv">$setup</span><span class="p">,</span> <span class="nx">ModuleContextInterface</span> <span class="nv">$context</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$setup</span><span class="o">-&gt;</span><span class="na">startSetup</span><span class="p">();</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$context</span><span class="o">-&gt;</span><span class="na">getVersion</span><span class="p">()</span>
+            <span class="o">&amp;&amp;</span> <span class="nb">version_compare</span><span class="p">(</span><span class="nv">$context</span><span class="o">-&gt;</span><span class="na">getVersion</span><span class="p">(),</span> <span class="s1">&#39;0.0.2&#39;</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span>
+        <span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$table</span> <span class="o">=</span> <span class="nv">$setup</span><span class="o">-&gt;</span><span class="na">getTable</span><span class="p">(</span><span class="s1">&#39;greeting_message&#39;</span><span class="p">);</span>
+            <span class="nv">$setup</span><span class="o">-&gt;</span><span class="na">getConnection</span><span class="p">()</span>
+                <span class="o">-&gt;</span><span class="na">insertForce</span><span class="p">(</span><span class="nv">$table</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;message&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Happy Thanksgiving, &#39;</span><span class="nx">season</span><span class="s1">&#39; =&gt; &#39;</span><span class="nx">fall</span><span class="s1">&#39;]);</span>
+
+<span class="s1">            $setup-&gt;getConnection()</span>
+<span class="s1">                -&gt;update($table, [&#39;</span><span class="nx">season</span><span class="s1">&#39; =&gt; &#39;</span><span class="nx">winter</span><span class="s1">&#39;], &#39;</span><span class="nx">greeting_id</span> <span class="nx">IN</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="err">&#39;</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="nv">$setup</span><span class="o">-&gt;</span><span class="na">endSetup</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+</div></div>
+
+<h2 id="step-7-run-the-upgrade-scripts-and-verify-that-the-table-has-changed">Step 7: Run the upgrade scripts and verify that the table has changed</h2>
+
+<p>We’ll run the SetupUpgrade script again:</p>
+
+<pre><code>$ cd &lt;magento2_root&gt;
+$ php bin/magento setup:upgrade
+</code></pre>
+
+<p>We can now connect to the database and verify that our changes are there:</p>
+
+<pre><code>select * from greeting_message;
+
++-------------+--------------------+--------+
+| greeting_id | message            | season |
++-------------+--------------------+--------+
+| 1           | Happy New Year     | winter |
+| 2           | Happy Holidays     | winter |
+| 3           | Happy Thanksgiving | fall   |
++-------------+--------------------+--------+
+</code></pre>
+
+<p>We see the change in the schema and data version, and we see the changes in the greeting message table.</p>
+
+<p>In this how-to video we practiced how to create a new table, add setup data, and modify the table and corresponding data during the module lifecycle.</p>
+
+<p>It is very important to understand that the data is added only once, and should be installed when the module is created.</p>
+
+<p>Magento 2 uses multiple tools to manipulate the database from the code – Model/Resource models and collections, which are beyond the scope of this video.
+So if you need an interface which saves or fetches data from the database, you will use a <code>Model/Resource/Collection</code> for that, not an UpgradeData script.</p>
+
+
+			<div class="adjaced-pages">
+				<div class="playlist-name">Fundamentals of Magento 2 Development</div>
+			
+			
+
+			
+			
+				<div class="next-page"> 
+                    
+                    <a href="/videos/fundamentals/add-a-javascript-module/">
+                    
+						<span class="arrow">Next &rarr;</span>
+						<span class="title">How to Add a JavaScript Module</span>
+					</a>
+				</div>
+			
+			</div>
+
+
+
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+			
+
+			
+
+			<div class="new-issue">
+				<a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /videos/fundamentals/add-a-new-table-to-database/" target="_blank">Give us feedback</a>
+			</div>
+
+		</div>
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.container -->
+
+
+	</div>
+	<!-- /.main-container -->
+
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div id="footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav">
+        <li><a href="/guides/v2.1/contributor-guide/contributing_docs.html">Become a Contributor</a>
+        <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
+        <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+        <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+        <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+        <li><a href="/guides/v2.1/release-notes/bk-release-notes.html">Release Notes</a></li>
+        <li><a href="/magento-third-party.html">Third-Party Licenses</a></li> 
+      </ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2017 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="/common/js/app.min.js"></script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+

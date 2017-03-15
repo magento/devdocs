@@ -130,22 +130,22 @@
     <li>
       <a href="/guides/v2.1/howdoi/bk-how-do-i.html">How Tos</a>
     </li>
+
+    <li>
+      <a href="/videos/">Videos</a>
+    </li>
   </ul>
 </div><!-- /.nav-main -->
 
 
 			<div class="search-btn">
-				<a class="search-trigger search-icon" href="/search.html"></a>
+				<a class="search-trigger search-icon" href="//search.html"></a>
 			</div>
 
 			<form class="quick-search" action="/search.html" method="get">
 				<input type="search" name="q" placeholder="Search" />
 				<a href="#" class="quick-search-close">&times;</a>
 			</form>
-
-
-
-
 
 		</div>
 
@@ -1014,6 +1014,7 @@
     <!-- Iteration breadcrumb item -->
     
     
+
     
 
       <!-- Skip if root -->
@@ -1050,12 +1051,19 @@
 
     
 
+    
+
+
+
     </ol>
+
+
+
 
   </nav>
 
 
-	
+
 	<h1 class="page-heading">Adding extension attributes to entity</h1>
 
   
@@ -1149,6 +1157,56 @@ Also we need to check whether we already has our extension attribute.</p>
             <span class="p">}</span>
 
         <span class="cp">?&gt;</span><span class="x"></span></code></pre></figure>
+
+<p>But if some entity doesn’t have implementation to fetch extension attributes, we will always retrieve <code>null</code> and each time when we fetch extension atrributes we need to check if they are <code>null</code> - need to create them. To avoid such code duplication, we need to create <code>afterGet</code> plugin for our entity with extension attributes.</p>
+
+<p>Let’s assume the product entity doesn’t have any implementation of extension attributes, so our plugin might looks like this:</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">use</span> <span class="nx">Magento\Catalog\Api\Data\ProductExtensionInterface</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Magento\Catalog\Api\Data\ProductInterface</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Magento\Catalog\Api\Data\ProductExtensionFactory</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">ProductAttributesLoad</span>
+<span class="p">{</span>
+    <span class="sd">/**</span>
+<span class="sd">     * @var ProductExtensionFactory</span>
+<span class="sd">     */</span>
+    <span class="k">private</span> <span class="nv">$extensionFactory</span><span class="p">;</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * @param ProductExtensionFactory $extensionFactory</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nx">ProductExtensionFactory</span> <span class="nv">$extensionFactory</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">extensionFactory</span> <span class="o">=</span> <span class="nv">$extensionFactory</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * Loads product entity extension attributes</span>
+<span class="sd">     *</span>
+<span class="sd">     * @param ProductInterface $entity</span>
+<span class="sd">     * @param ProductExtensionInterface|null $extension</span>
+<span class="sd">     * @return ProductExtensionInterface</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">afterGetExtensionAttributes</span><span class="p">(</span>
+        <span class="nx">ProductInterface</span> <span class="nv">$entity</span><span class="p">,</span>
+        <span class="nx">ProductExtensionInterface</span> <span class="nv">$extension</span> <span class="o">=</span> <span class="k">null</span>
+    <span class="p">)</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nv">$extension</span> <span class="o">===</span> <span class="k">null</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$extension</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">extensionFactory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">();</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="nv">$extension</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>And now need to bind our plugin to <code>ProductInterface</code>:</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:ObjectManager/etc/config.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;Magento\Catalog\Api\Data\ProductInterface&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;plugin</span> <span class="na">name=</span><span class="s">&quot;ProductExtensionAttributeOperations&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\Catalog\Plugin\ProductAttributesLoad&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/type&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <h2 id="extension-attributes-configuration">Extension Attributes Configuration:</h2>
 
