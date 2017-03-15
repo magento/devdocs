@@ -39,19 +39,19 @@ Magento 2.1.7 contains over 15 security enhancements. Look for the following hig
 
 <!--- 63877 -->* The Admin URL in the response body of an HTTP request is no longer visible to unauthenticated users. 
 
-<!--- 63869 --> Magento now displays a 404 page when an Admin with insufficient privilege tries to request a specific resource. 
+<!--- 63869 -->* Magento now displays a 404 page when an Admin with insufficient privilege tries to request a specific resource. 
 
 <!--- 63866 -->* Admin users without proper permissions can no longer delete store backups or system support reports. 
 
 <!--- 63864 -->* Customer-authenticated APIs are no longer vulnerable to CSRF.
 
-<!--- 63862 --> Magento no longer permits Admin users that have access to CMS and widgets to execute code through unserialization. 
+<!--- 63862 -->* Magento no longer permits Admin users that have access to CMS and widgets to execute code through unserialization. 
 
-<!--- 63632-->  We've removed a vulnerability with Zend Mail.
+<!--- 63632 -->*  We've removed a vulnerability with Zend Mail.
 
-<!--- 63527 --> Magento now blocks all requests from an Admin's account as soon as the Admin user is disabled. 
+<!--- 63527 -->* Magento now blocks all requests from an Admin's account as soon as the Admin user is disabled. 
 
-<!--- 63517 --> Magento no longer permits stored XSS code on the customer address page of the Magento Admin.
+<!--- 63517 -->* Magento no longer permits stored XSS code on the customer address page of the Magento Admin.
 
 <!--- 62475 -->* Magento now displays a 404 page when you try to route a request to `index.phpadmin`. Previously, Magento displayed an Admin page.
 
@@ -59,7 +59,7 @@ Magento 2.1.7 contains over 15 security enhancements. Look for the following hig
 
 <!--- 61015 -->* Action logs no longer display plain-text passwords. 
 
-<!--- 59097 -->  The Magento Admin no longer leaks user password hashes. 
+<!--- 59097 -->* The Magento Admin no longer leaks user password hashes. 
 
 
 
