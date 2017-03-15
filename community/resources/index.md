@@ -48,5 +48,4 @@ They are listed here because the content has been well received within the Magen
 
 ## Performance
 
-*  *Presentation:* [Premium performance with PHP 7 and Varnish](http://www.slideshare.net/StaceyWhitney1/mage-titans-usa-2016-miguel-balparda-magento-2-premium-performance-with-php-7-and-varnish){:target="_blank"} by Miguel Balparda
-
+*  *Presentation:* [Premium performance with PHP 7 and Varnish](http://www.slideshare.net/StaceyWhitney1/mage-titans-usa-2016-miguel-balparda-magento-2-premium-performance-with-php-7-and-varnish){:target="_blank"} by Miguel Balparda 

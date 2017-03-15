@@ -51,6 +51,11 @@ First, view the current value:
 If necessary, set `auto_increment_increment` to 3:
 
 1.	As a user with `root` privileges, open `/etc/my.cnf` in a text editor.
+
+	<div class="bs-callout bs-callout-info" id="info" markdown="1">
+  		On Ubuntu 16, the path is typically `/etc/mysql/mysql.conf.d/mysqld.cnf`.
+	</div>
+	
 2.	Add or edit the following line in the `[mysqld]` section:
 
 		auto_increment_increment=3

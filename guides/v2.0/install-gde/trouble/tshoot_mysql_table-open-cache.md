@@ -22,7 +22,9 @@ Set the value of <a href="https://dev.mysql.com/doc/refman/5.6/en/table-cache.ht
 
 1.	As a user with `root` privileges, open the MySQL configuration file in a text editor.
 
-	Ubuntu: `/etc/mysql/my.cnf`
+	Ubuntu 16: `/etc/mysql/mysql.conf.d/mysqld.cnf`
+
+	Ubuntu earlier than 16: `/etc/mysql/my.cnf`
 
 	CentOS: `/etc/my.cnf`
 
