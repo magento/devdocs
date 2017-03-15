@@ -37,6 +37,7 @@ var gulp = require('gulp'),
       	'guides/**/*.{html,md}',
         '_includes/**/*.html',
 			  '_layouts/**/*.html',
+        '_videos/**/*',
         'css/**/*.css',
         '*.html'
 		],
@@ -100,7 +101,7 @@ gulp.task('scripts', function () {
    	.pipe(include())
 		.pipe(uglify())
 		//.pipe(concat('app.min.js'))
-		.pipe(sourcemaps.write())
+	//	.pipe(sourcemaps.write())
 		.pipe(rename({suffix: '.min'}))
     .pipe(gulp.dest(destJS))
     .pipe(gulp.dest( destHtml + 'common/js/' ))
@@ -133,7 +134,7 @@ gulp.task('styles', function () {
          cascade: false
       }))
       .on('error', gutil.log)
-      .pipe(sourcemaps.write())
+      //.pipe(sourcemaps.write())
       .pipe(gulp.dest(destCSS))
       .pipe(reload({stream: true}));
 
