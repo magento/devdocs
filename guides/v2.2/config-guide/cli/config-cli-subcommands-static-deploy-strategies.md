@@ -37,14 +37,6 @@ The following sections describe the implementation details and features of the s
     <td><i>Deployment package</i></td>
     <td>A set of files in a particular <code>area/theme/locale</code> directory.</td>
   </tr>
-  <tr>
-    <td><i>Parent deployment package</i></td>
-    <td></td>
-  </tr>
-  <tr>
-    <td><i>Virtual deployment package</i></td>
-    <td>A package aggregating files that are locale-independent, that is common for several packages. These files might include CSS, images, fonts. <p class="q">Does the table with "patterns" give more info about distinguishing common files? Should I reference it here?</p></td>
-  </tr>
 </table>
 
 ## Standard strategy
@@ -67,9 +59,9 @@ This approach minimizes the deployment time required for multiple locales. Thoug
 The compact strategy avoids duplicating of files for themes, areas and locales. Instead, the similar files are stored in "base" sub-directories.
 For the best possible result, three levels of similarity are allocated: area, theme, and  locale. "Basic" sub-directories are created for all combinations. 
 
-The following table describes the patterns used for creating these sub-directories:
+The following table describes the patterns used for creating these sub-directories and distributing files between them:
 
-
+<p class="q">Is it correct to say that we deploy files to these directories?</p>
 <table>
   	<col width="35%">
   	<col width="15%">
@@ -81,27 +73,27 @@ The following table describes the patterns used for creating these sub-directori
 		 </tr>
          <tr>
             <td>%area%/%theme%/%locale%</td>
-            <td><p>area-, theme-, and locale- specific</p></td>
+            <td><p>Files specific for a particular area, theme, and locale</p></td>
          </tr>
          <tr>
              <td>%area%/%theme%/default</td>
-             <td><p>для всех локалей конкретной эрии и темы</p></td>
+             <td>Files similar for all locales of a particular the of a particular area.</td>
          </tr>
           <tr>
              <td>%area%/Magento/base/%locale%</td>
-             <td>специфичны для эрии и локали, но для всех тем</td>
+             <td>Files specific for a particular area and locale, but similar for all themes./td>
           </tr>
           <tr>
              <td>%area%/Magento/base/default</td>
-             <td><p>для всех тем и локалей конкретной эрии</p></td>
+             <td><p>Files specific for a particular area, but similar for all themes and locales.</p></td>
           </tr>
           <tr>
              <td>base/Magento/base/%locale%</td>
-             <td><p>для конкретной локали всех эрий и тем</p></td>
+             <td><p>Files similar for all areas and themes, but specific for a particular locale.</p></td>
           </tr>
           <tr>
              <td>base/Magento/base/default</td>
-             <td><p>универсальны для всех эрий, тем и локалей</p></td>
+             <td>Similar for all areas, themes and locales.</td>
          </tr>
 	</tbody>
 </table>
