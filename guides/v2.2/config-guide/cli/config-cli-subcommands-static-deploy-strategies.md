@@ -26,19 +26,6 @@ The strategies are aimed to provide the optimized deployment result for differen
 
 The following sections describe the implementation details and features of the strategies.
 
-## Terms used
-
-<table>
-  <tr>
-    <th>Term</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td><i>Deployment package</i></td>
-    <td>A set of files in a particular <code>area/theme/locale</code> directory.</td>
-  </tr>
-</table>
-
 ## Standard strategy
 
 When the standard strategy is used, all static view files for all packages are deployed, that is, processed by `\Magento\Framework\App\View\Asset\Publisher`.
@@ -51,7 +38,13 @@ Deployment process with the quick strategy is following:
 2. For all other locales of the theme:
 	1. Files that override the deployed locale are defined. Those files are also deployed. 
 	2.  All other files are considered similar for all locales, and are copied from the deployed locale. 
- 
+
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+By similar files we mean...
+</div>
+
+<p class="q">What would be the best definition for similar files?</p>
+
 This approach minimizes the deployment time required for multiple locales. Though a lot of files are duplicated.
 
 ## Compact strategy
