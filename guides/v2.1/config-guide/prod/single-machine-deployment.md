@@ -44,7 +44,7 @@ Log into your production server and perform the following steps in the Magento r
 
 2. Apply updates to Magento or its components using the following command pattern:
 
-     composer require <package> <version> --no-update
+        composer require <package> <version> --no-update
 
    **package**: The name of the package you want to update.
    
