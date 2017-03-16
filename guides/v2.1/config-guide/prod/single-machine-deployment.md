@@ -10,21 +10,29 @@ version: 2.1
 github_link: config-guide/prod/single-machine-deployment.md
 ---
 
-This topic provides instructions for deploying updates on a Magento production server using the command line.
+This topic provides instructions for deploying updates to Magento on a production server using the command line.
 
-If you are looking for guidelines on how to use the Web Setup Wizard to update your Magento installation, see the [user guide][3]{:target="_blank"}.
+This process applies to small merchants running their stores on a single machine with a few themes and locales installed.
+
+If you are looking for guidelines on how to use the System Upgrade feature in the Admin, see the [user guide][3]{:target="_blank"}.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
 
-The process described below can result in several minutes of downtime and may not be acceptable for large stores.
-
-We are currently working on documenting a split deployment process that moves the build process onto a separate machine.
+The following process can result in several minutes of downtime and may not be acceptable for large stores.
 
 </div>
 
-## Environment assumptions
+## Assumptions
 
-This guide assumes you have Magento installed and running on a production server and you are directly applying updates to that server.
+* Magento was installed using [Composer][8] or a [compressed archive][7].
+* Magento is running in [production mode][5] on a single production server.
+* You are directly applying updates to the server.
+* Your store can afford several minutes of downtime.
+
+<div class="bs-callout bs-callout-warning" markdown="1">
+This guide does not apply if you used `git clone` to install Magento.
+Contributing developers should use [this guide][6] to update their Magento installation.
+</div>
 
 ## Deployment steps
 
@@ -34,32 +42,18 @@ Log into your production server and perform the following steps in the Magento r
 
    `php bin/magento maintenance:enable`
 
-2. Apply updates to Magento or its components using the appropriate method.
+2. Apply updates to Magento or its components using the following command pattern:
 
-   * For Composer and compressed archive installations, run the command:
-     
-     `composer require <package> <version> --no-update`
+   `composer require <package> <version> --no-update`
 
-     **package**: The name of the package you want to update.
-     
-     For example:
+   **package**: The name of the package you want to update.
+   
+   For example:
 
-     * `magento/product-community-edition`
-     * `magento/product-enterprise-edition`
+   * `magento/product-community-edition`
+   * `magento/product-enterprise-edition`
 
-     **version**: The target version of the package you want to update.
-
-   * For GitHub installations:
-      
-     1. Make a copy of `composer.json`:
-
-        `cp composer.json composer.json.old`
-     
-     2. Get the latest Magento code:
-        
-        `git pull origin develop`
-     
-     3. Diff and merge your changes in `composer.json.old` with `composer.json`
+   **version**: The target version of the package you want to update.
 
 3. Update Magento's components with Composer:
    
@@ -92,3 +86,7 @@ Log into your production server and perform the following steps in the Magento r
 [2]: {{page.baseurl}}install-gde/install/cli/dev_update-magento.html
 [3]: http://docs.magento.com/m2/ce/user_guide/system/web-setup-wizard.html
 [4]: {{page.baseurl}}install-gde/install/cli/install-cli-subcommands-maint.html
+[5]: {{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-production
+[6]: {{page.baseurl}}install-gde/install/cli/dev_options.html
+[7]: {{page.baseurl}}install-gde/prereq/zip_install.html
+[8]: {{page.baseurl}}install-gde/prereq/integrator_install.html
