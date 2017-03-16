@@ -1,6 +1,6 @@
 # Deploy devdocs locally
 
-You can deploy devdocs site locally using this Vagrant project. Vagrant enables you to run the software needed to build the devdocs project in a self-contained virtual machine (VM). Our Vagrant project clones the devdocs repository in VM and shares the `devdocs` directory with your system in root of this project. You can then run Jekyll from the VM in `/vagrant/devdocs` project root.
+You can deploy devdocs site locally using this Vagrant project. Vagrant enables you to run the software needed to build the devdocs project in a self-contained virtual machine (VM). Our Vagrant project clones the devdocs repository in the VM and shares the `devdocs` directory with your system in the root of this project. You can then run Jekyll from the VM in `/vagrant/devdocs` project root.
 
 ## What is in the project
 
@@ -57,7 +57,7 @@ For additional command options, see [Basic Usage](https://jekyllrb.com/docs/usag
 
 ## Regenerate the site
 
-If you made any changes in devdocs project, you can stop Jekyll and run it again to regenerate the `_site` and preview them in HTML. Automatic regeneration doesn't work on VM. 
+If you made any changes in devdocs project, you can stop Jekyll and run it again to regenerate the `_site` and preview them in HTML. Automatic regeneration doesn't work in the VM. 
 
 ## Useful CLI scripts and commands
 

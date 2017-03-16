@@ -5,13 +5,13 @@ RUBY_VERSION=2.2
 RVM_PATH=/usr/local/rvm
 GEMS=bundler
 
-# Get information on the newest versions of Ubuntu packages.
+# Get information on the newest versions of Ubuntu packages
 sudo apt-get update
 
-# Install Ubuntu packages.
+# Install Ubuntu packages
 sudo apt-get install nodejs git -y
 
-# Install Ruby.
+# Install Ruby
 if [ ! -e $RVM_PATH ]; then
 	gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
 	curl -sSL https://get.rvm.io | bash -s
@@ -21,18 +21,17 @@ source $RVM_PATH/scripts/rvm
 
 rvm use --install $RUBY_VERSION --default
 
-# Install gems.
+# Install gems
 gem install $GEMS
 
-# Clean up.
+# Clean up
 sudo apt-get autoremove -y
 
-# Clone the 'devdocs' repo from GitHub in a shared directory.
+# Clone the 'devdocs' repo from GitHub in a shared directory
 cd /vagrant/
 git clone -c core.symlinks=true https://github.com/magento/devdocs.git
 
-# Note: To avoid entering your user name and password every time you push, you can either
-# use the SSH protocol
+# Note: To avoid entering your user name and password every time you push, you can either use the SSH protocol
 
 # Install gems and dependencies from Gemfile.
 cd /vagrant/devdocs

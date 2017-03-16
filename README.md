@@ -18,7 +18,7 @@ You can build this site locally using Jekyll
 
 ## Build using Vagrant
 
-To build the site locally using Vagrant you need only files placed in `vagrant/`.
+To build the site locally using Vagrant you need only the files in the `vagrant/` directory.
 For more information, see the [Vagrant README](vagrant/README.md).
 
 ## Requirements
