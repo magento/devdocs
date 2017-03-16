@@ -6,8 +6,7 @@ title: Magento 2.2 backward incompatible changes
 menu_title: Magento 2.2 backward incompatible changes
 version: 2.2
 menu_node: parent
-menu_order: 1
-github_link: release-notes/backward-incompatible-changes-2.2.md
+github_link: release-notes/backward-incompatible-changes.md
 ---
 
 Magento 2.2 introduces several major changes that may affect the correct functionality of already released external modules. The purpose of this document is to highlight major changes between Magento 2.1 and 2.2.
@@ -56,6 +55,9 @@ Deprecated method | Use instead | Subsequent calls
 `getTopic($name);` | `\Magento\Framework\Communication\ConfigInterface::getTopic($name)` `\Magento\Framework\MessageQueue\Publisher\ConfigInterface::getPublisher($topic)`| Use `getTopic($name)` for topic information. Use `getPublisher($name)` for publisher-related clients.
 `getPublisher($name);` | `\Magento\Framework\MessageQueue\Publisher\ConfigInterface::getPublisher($name)` | Use getter methods to return requested information.
 `getResponseQueueName($topicName);` | Magento\Framework\MessageQueue\Rpc\ResponseQueueNameBuilder::getQueueName($topicName) | -
+
+#### Error Processor Module ####
+Exception report files in `var/report` are now JSON encoded, and existing serialized files will not be readable by the upgraded Magento 2.2 instance.
 
 ## Changes in repositories
 

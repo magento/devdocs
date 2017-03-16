@@ -5,7 +5,8 @@ Welcome! This site contains the latest Magento developer documentation for ongoi
 To contribute, please fork the `develop` branch. 
 
 # Building this site
-To check your work before submitting a pull request, you can build this site locally using Jekyll.
+
+You can build this site locally using Jekyll
 
 *	Windows users _must_ build the site in a Vagrant container running on Virtual Box as discussed in more detail in the [Vagrant README](vagrant/README.md).
 
@@ -16,17 +17,20 @@ To check your work before submitting a pull request, you can build this site loc
 	Vagrant might be easier because the software runs in a container that isn't dependent on, and cannot conflict with, any other software installed on your computer.
 
 ## Build using Vagrant
+
+To build the site locally using Vagrant you need only the files in the `vagrant/` directory.
 For more information, see the [Vagrant README](vagrant/README.md).
 
 ## Requirements
+
 Currently, building this site requires:
 
-*	Ruby 2.2
-*	Jekyll 3.1
+*	Ruby Version: >= 2.0.0
 
-Use the Ruby bundler to get compatible versions of other dependencies.
+Use [bundler](http://bundler.io/) to get compatible versions of other dependencies.
 
 ## Build locally in Mac or Linux
+
 To build this site locally:
 
 ```bash
@@ -34,7 +38,7 @@ To build this site locally:
 $ bundle install
 
 # Visit http://localhost:4000 in your favorite browser!
-$ bin/jekyll serve
+$ bin/jekyll serve --incremental
 ```
 
 If you have questions, open an issue and ask us. We're looking forward to hearing from you!

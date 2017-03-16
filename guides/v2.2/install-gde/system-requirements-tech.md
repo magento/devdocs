@@ -21,6 +21,10 @@ Upgrading the Magento applications and extensions you obtain from Magento Market
 Composer is required for developers who wish to contribute to the Magento 2 codebase or anyone who wishes to develop Magento extensions
 
 ### Web servers
+
+Compatible: Apache 2.2, 2.4, Nginx 1.8.*, 1.10.*, 1.11.*
+<hr />
+
 *	<a href="http://httpd.apache.org/download.cgi" target="_blank">Apache 2.2 or 2.4</a>
 	
 	In addition, the apache `mod_rewrite` module must be enabled. `mod_rewrite` enables the server to perform URL rewriting. For more information, see <a href="{{page.baseurl}}install-gde/prereq/apache.html">our Apache documentation</a>.
@@ -28,13 +32,19 @@ Composer is required for developers who wish to contribute to the Magento 2 code
 
 ### Database
 
-MySQL 5.6
+Compatible: MySQL 5.6, 5.7, MySQL NDB Cluster 7.4.*, MariaDB 10.0, 10.1, 10.2
+
+<hr />
+
+MySQL 5.6 
 
 Magento application version 2.1.2 and later are compatible with MySQL 5.7.
 
 MariaDB and Percona are compatible with Magento because we support MySQL 5.6 APIs.
 	
 ### PHP 
+
+Compatible: PHP 7.0.4+, 7.1.*
 
 {% include install/php_2.2.md %}
 
@@ -86,22 +96,18 @@ For more information, see [Required PHP settings]({{ page.baseurl }}install-gde/
 Mail Transfer Agent (MTA) or an SMTP server
 
 ### Magento can utilize the following technologies:
-*	<a href="{{page.baseurl}}config-guide/redis/config-redis.html">Redis</a> version 3.0 for page caching and session storage (the latter supported by Magento version 2.0.6 and later only)
-*	<a href="{{page.baseurl}}config-guide/varnish/config-varnish.html">Varnish</a> version 3.5 or latest stable 4.x version for page caching
+*	<a href="{{page.baseurl}}config-guide/redis/config-redis.html">Redis</a> version 3.0 (compatible with 2.4+ ) for page caching and session storage (the latter supported by Magento version 2.0.6 and later only) 
+*	<a href="{{page.baseurl}}config-guide/varnish/config-varnish.html">Varnish</a> version 4.x or 5.0
 *	<a href="{{page.baseurl}}config-guide/memcache/memcache.html">memcached</a> latest stable version for session storage with either `memcache` or `memcached` PHP extensions (latest stable version)
 
 *	Magento Enterprise Edition (EE) only <img src="{{ site.baseurl }}common/images/ee-only_small.png">
-
-	*   Apache Solr 4.x
- 
-    	<a href="{{page.baseurl}}config-guide/solr/solr-overview.html">Solr search</a> can be used as a search provider. Available for Magento Enterprise Edition (EE) only.
 
     *	Elasticsearch versions 1.7 and 2.x (recommended)
 
 		*	If you get the Elasticsearch software from the Elasticsearch Linux repository, we support versions 2.x.
 		*	If you get the Elasticsearch software from their [Elasticsearch-PHP repository](https://github.com/elastic/elasticsearch-php){:target="_blank"}, we support the `2.0` branch.
 
-	*	RabbitMQ 3.5
+	*	RabbitMQ 3.5 (compatible 2.0+)
 
 		<a href="{{page.baseurl}}config-guide/mq/rabbitmq-overview.html">RabbitMQ</a> can be used to publish messages to queue and to define the consumers that receive the messages asynchronously. Available for Magento EE only.
 
