@@ -10,65 +10,19 @@ level3_menu_node: level3child
 level3_subgroup: ce20-relnotes 
 github_link: release-notes/ReleaseNotes2.0.14CE.md
 ---
-<<<<<<< HEAD
-We are pleased to present Magento Community Edition 2.0.14. This release includes important enhancements to the security of your Magento software.
-
-<div class="bs-callout bs-callout-warning" markdown="1">
-While there are no confirmed attacks related to these vulnerabilities to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento software to the latest version as soon as possible.
-</div> 
-
-Looking for the <a href="http://devdocs.magento.com/guides/v2.1/cloud/release-notes/CloudReleaseNotes.html" target="_blank">Magento Enterprise Cloud Edition Release Notes</a>?
-
-
-## Security enhancements
-
-
-<!--- 64051 --> 
-
-<!--- 63880 -->* You can no longer instantiate an arbitrary object while adding conditions to an email reminder rule. 
-
-<!--- 63878 -->* The Admin URL in the response body of an HTTP request is no longer visible to unauthenticated users 
-
-<!--- 63876 -->* Magento now displays a 404 page when you try to route a request to index.phpadmin. Previously, Magento displayed an Admin page.
-
-<!--- 63871 -->
-
-<!--- 63868 -->
-
-<!--- 63865 -->* Customer-authenticated APIs are no longer vulnerable to CSRF.
-
-<!--- 63863 -->
-
-<!--- 63681 -->* We’ve updated several vulnerable moment.js libraries (query-migrate, query, jquery-ui-1.9.2.js)
-
-<!--- 63633 -->* Zend mail
-
-<!--- 63518 -->
-
-<!--- 62314 -->* We’ve removed  the PHP serialized object from  the JSON report_data component from the `\Magento\Support\Ui\Component\Listing\Column\ReportActions` response. 
-
-<!--- 61016 -->* Action logs no longer display plain-text passwords.
-
-<!--- 59096 -->
-
-
-<!--- internal only -->
-
-<!--- 64584 -->
-=======
 We are pleased to present Magento Community Edition 2.0.14. 
 
 
 
 ## Highlights
 
-Magento 2.0.14 contains more than security enhancements. Look for the following highlights in this release:
+Magento 2.0.14 contains more than 15 security enhancements. Look for the following highlights in this release:
 
 
 
 ## Security enhancements
 
-This release includes an important enhancement to the security of your Magento software. While there are no confirmed attacks related to the Zend framework `Zend_Mail` library vulnerability to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento software to the latest version as soon as possible.
+This release includes important enhancements to the security of your Magento software. While there are no confirmed attacks related to the Zend framework `Zend_Mail` library vulnerability to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento software to the latest version as soon as possible.
 
 <!---  -->* 
 <!---  -->* 
@@ -76,7 +30,7 @@ This release includes an important enhancement to the security of your Magento s
 <!---  -->* 
 <!---  -->* 
 <!---  -->* 
-<!---  -->* 
+<!--- 65493 -->* 
 <!--- 64051 -->* 
 <!--- 63880 -->* 
 <!--- 63878 -->* 
@@ -94,6 +48,19 @@ This release includes an important enhancement to the security of your Magento s
 <!--- 59096 -->* 
 
 
+<!--- INTERNAL ONLY -->
+<!--- 65054, 65064, 65062, 65063, 64877, 65061, 65060, 65076, 65059, 65055, 64584, 65058 -->
+
+<!--- DUPLICATE -->
+<!--- 65056, 65065 -->
+
+
+<!--- WON'T FIX -->
+<!---  65057 -->
+
+
+
+
 
 <a href="https://github.com/magento/magento2/issues/5558" target="_blank">(GITHUB-5558)</a>
 
@@ -104,7 +71,6 @@ This release includes an important enhancement to the security of your Magento s
 
 
 ## Known issues
->>>>>>> ba4b3e193c76c8521fc557c1d21183d032df7ebe
 
 
 

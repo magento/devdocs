@@ -42,6 +42,7 @@ Setting up multiple stores consists of the following tasks:
         *   Use `store` to load any store view in your storefront.
 
     *   `$MAGE_RUN_CODE` is the unique website or store view code that corresponds to `$MAGE_RUN_TYPE`
+    
 ## Step 2: Create nginx virtual hosts {#ms-nginx-vhosts}
 This section discusses how to load websites on the storefront. You can use either websites or store views; if you use store views, you must adjust parameter values accordingly. You must complete the tasks in this section as a user with `root` privileges.
 

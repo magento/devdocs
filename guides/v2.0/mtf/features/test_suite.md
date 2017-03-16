@@ -89,7 +89,7 @@ In `phpunit.xml`:
 To run a test suite enter the following commands from your terminal:
 
 {% highlight bash %}
-cd phpunit <magento2_root_dir>/dev/tests/functional
+cd <magento2_root_dir>/dev/tests/functional
 vendor/bin/phpunit testsuites/Magento/Mtf/TestSuite/InjectableTests.php
 {% endhighlight %}
 

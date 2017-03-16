@@ -19,7 +19,8 @@ This page lists system requirements for the Magento application.
 ## Magento 2.1.x
 [Magento 2.1.x technology stack requirements]({{ site.gdeurl21 }}install-gde/system-requirements-tech.html)
 
-Major differences from 2.0.x:
+### Major differences from 2.0.x 
+See the system requirements for the complete list of supported and compatible software.
 
 *	PHP
 	

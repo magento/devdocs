@@ -48,8 +48,6 @@ For example, if the value of `name` is `app`, you must use `app:php` in the upst
 ## `type` and `build` {#cloud-yaml-platform-type}
 The `type`  and `build` properties are used to build and run the project. The only supported `type` currently is PHP.
 
-{% collapsible type and build properties %}
-
 Supported versions:
 
     type: php:5.5
@@ -63,8 +61,6 @@ Example:
     type: php:5.6
     build:
         flavor: composer
-
-{% endcollapsible %}
 
 ## `access` {#cloud-yaml-platform-access}
 `access` defines the user roles who can log in using SSH to the
@@ -84,7 +80,7 @@ Possible values are:
 `relationships` defines how services are mapped in your
 application.
 
-{% collapsible relationships: %}
+{% collapsible relationships %}
 
 The left-hand side is the name of the relationship as it will be exposed
 to the application in the `MAGENTO_CLOUD_RELATIONSHIPS` environment
@@ -107,7 +103,7 @@ See also [`services.yaml` documentation]({{page.baseurl}}cloud/project/project-c
 ## `web` {#cloud-yaml-platform-web}
 `web` defines how your application is exposed to the web (in HTTP). Here we tell the web application how to serve content, from the front-controller script to a non-static request to an `index.php` file on the root. We support any directory structure so the static file can be in a sub directory, and the `index.php` file can be further down.
 
-{% collapsible web: %}
+{% collapsible web %}
 
 `web` supports the following:
 
@@ -153,7 +149,7 @@ application in MB.
 `mounts` is an object whose keys are paths relative to the root of
 the application. It's in the form `volume_id[/subpath]`.
 
-{% collapsible mounts: %}
+{% collapsible mounts property %}
 
 The format is:
 
@@ -169,7 +165,7 @@ The format is:
 `dependencies` enables you to specify dependencies that your
 application might need during the build process.
 
-{% collapsible dependencies: %}
+{% collapsible dependencies property %}
 
 Magento Enterprise Cloud Edition supports dependencies on the following
 languages:
@@ -198,7 +194,7 @@ commands to run during the deployment process.
 They can be executed at various points in the lifecycle of the
 application.
 
-{% collapsible hooks: %}
+{% collapsible hooks property %}
 
 Possible hooks are:
 
@@ -300,12 +296,10 @@ To view the current list of PHP extensions, SSH into your environment and enter 
 
 	php -m
 
-{% collapsible View PHP extensions: %}
-
 Magento requires the following PHP extensions that are enabled by default: 
 
 *	<a href="http://php.net/manual/en/book.curl.php" target="_blank">curl</a>
-*	<a href="http://php.net/manual/en/book.image.php" target="_blank">gd</a>, <a href="http://php.net/manual/en/book.imagick.php" target="_blank">ImageMagick 6.3.7</a> (or later) or both
+*	<a href="http://php.net/manual/en/book.image.php" target="_blank">gd</a>
 *	<a href="http://php.net/manual/en/book.intl.php" target="_blank">intl</a>
 *	PHP 7 only: 
 
@@ -324,6 +318,9 @@ Magento requires the following PHP extensions that are enabled by default:
  
 You must install the following extensions:
 
+*   <a href="http://php.net/manual/en/book.imagick.php" target="_blank">ImageMagick 6.3.7</a> (or later)
+
+    imagick can optionally be used with the `gd` extension
 *	<a href="http://php.net/manual/en/book.xsl.php" target="_blank">xsl</a>
 *	[redis](https://pecl.php.net/package/redis){:target="_blank"}
 
@@ -353,8 +350,6 @@ Other PHP extensions you can optionally install:
 *	[xhprof](http://php.net/manual/en/book.xhprof.php){:target="_blank"}
 *	[xmlrpc](http://php.net/manual/en/book.xmlrpc.php){:target="_blank"}
 
-{% endcollapsible %}
-
 ### Customize `php.ini` settings {#cloud-yaml-platform-php-set}
 You can also create and push a `php.ini` file that is appended to
 the configuration maintained by Magento Enterprise Cloud Edition.
@@ -373,10 +368,9 @@ For example, if you need to increase the PHP memory limit:
 For a list of recommended PHP configuration settings, see [Required PHP settings]({{ page.baseurl }}install-gde/prereq/php-settings.html).
 
 After pushing your file, you can check that the custom PHP configuration
-has been added to your environment by SSHing into your environment and entering:
+has been added to your environment by [creating an SSH tunnel]({{page.baseurl}}cloud/env/environments-start.html#env-start-tunn) to your environment and entering:
 
 	cat /etc/php5/fpm/php.ini
-
 
 #### Related topics
 *	[Get started with a project]({{page.baseurl}}cloud/project/project-start.html)
