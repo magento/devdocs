@@ -40,11 +40,11 @@ Log into your production server and perform the following steps in the Magento r
 
 1. Enable maintenance mode using the command:
 
-   `php bin/magento maintenance:enable`
+        php bin/magento maintenance:enable
 
 2. Apply updates to Magento or its components using the following command pattern:
 
-   `composer require <package> <version> --no-update`
+     composer require <package> <version> --no-update
 
    **package**: The name of the package you want to update.
    
@@ -57,23 +57,23 @@ Log into your production server and perform the following steps in the Magento r
 
 3. Update Magento's components with Composer:
    
-   `composer update`
+        composer update
 
 4. Update the database schema and data:
 
-   `php bin/magento setup:upgrade`
+        php bin/magento setup:upgrade
 
 5. Compile the code:
 
-   `php bin/magento setup:di:compile`
+        php bin/magento setup:di:compile
 
 6. Deploy static content:
 
-   `php bin/magento setup:static-content:deploy`
+        php bin/magento setup:static-content:deploy
 
 7. Exit maintenance mode:
 
-   `php bin/magento maintenance:disable`
+        php bin/magento maintenance:disable
 
 ## Related Topics
 
