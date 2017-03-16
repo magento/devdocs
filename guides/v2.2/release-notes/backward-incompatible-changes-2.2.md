@@ -52,7 +52,7 @@ Deprecated method | Use instead | Subsequent calls
 `getResponseQueueName($topicName);` | Magento\Framework\MessageQueue\Rpc\ResponseQueueNameBuilder::getQueueName($topicName) | -
 
 #### Error Processor Module ####
-Exception report files in `var/report` are now JSON encoded, and existing serialized files will not be readable by the instance.
+Exception report files in `var/report` are now JSON encoded, and existing serialized files will not be readable by the upgraded Magento 2.2 instance.
 
 ### Changes in repositories
 
