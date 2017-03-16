@@ -2,13 +2,14 @@
 {% if url.size > 0 %}
   <nav class="breadcrumbs">
 
-    <a class="breadcrumb-item" href="{% if page.guide_version == site.version %}{{site.baseurl}}{% else %}{{page.baseurl}}{% endif %}"><span>Home</span></a>
+    <a class="breadcrumb-item" href="{% if page.guide_version == site.version or page.guide_version == nil %}{{ site.baseurl }}{% else %}{{ page.baseurl }}{% endif %}"><span>Home</span></a>
 
     <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
 
     <!-- Iteration breadcrumb item -->
     {% assign position = 0 %}
     {% assign breadcrumbs = page.breadcrumbs %}
+
     {% for crumb in breadcrumbs %}
 
       <!-- Skip if root -->
@@ -30,7 +31,12 @@
 
     {% endfor %}
 
+    {% include video/breadcrumbs.html %}
+
     </ol>
+
+
+
 
   </nav>
 {% endif %}
