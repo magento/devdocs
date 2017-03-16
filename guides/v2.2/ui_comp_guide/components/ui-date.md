@@ -8,6 +8,10 @@ version: 2.2
 github_link: ui_comp_guide/components/ui-date.md
 ---
 
+## Overview
+
+The Date component is a form element that implements a date input field. It should not be confused with the native `<input type="date"/>` as it uses a custom date picker implementation provided by the mage/calendar widget.
+
 ## Date configuration
 
 Extends all `abstract` configuration.
@@ -30,6 +34,12 @@ Extends all `abstract` configuration.
     <td>The path to the <code>.html</code> template of the particular field type component (date).</td>
     <td>String</td>
     <td><code>ui/form/element/date</code></td>
+  </tr>
+  <tr>
+    <td><code>options</code></td>
+    <td>The configuration object that is passed to the calendar widget.</td>
+    <td>Object</td>
+    <td><code>{}</code></td>
   </tr>
   <tr>
     <td><code>inputDateFormat</code></td>
