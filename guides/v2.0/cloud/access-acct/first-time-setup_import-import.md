@@ -203,7 +203,7 @@ On the Cloud environment, enter the following commands in the order shown:
 
     bin/magento setup:upgrade
     bin/magento magento setup:static-content:deploy
-    bin/magento cache:flush
+    bin/magento cache:clean
 
 After the cache flushes, enter `exit` to close the SSH tunnel.
 
