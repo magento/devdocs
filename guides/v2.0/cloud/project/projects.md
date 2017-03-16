@@ -2,8 +2,8 @@
 layout: default
 group: cloud
 subgroup: 10_project
-title: Manage your projects
-menu_title: Manage your projects
+title: Manage your project
+menu_title: Manage your project
 menu_order: 1
 menu_node: parent
 version: 2.0

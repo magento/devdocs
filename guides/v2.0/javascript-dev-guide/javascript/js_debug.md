@@ -4,7 +4,7 @@ group: jsdg
 subgroup: 1_Javascript
 title: Locate JavaScript components
 menu_title: Locate JavaScript components
-menu_order: 4
+menu_order: 20
 version: 2.0
 github_link: javascript-dev-guide/javascript/js_debug.md
 redirect_from:

@@ -70,14 +70,14 @@ To prevent access to your store while it's being upgraded, put your store in mai
 		composer require <product> <version> --no-update
 		composer update
 
-	For example, to upgrade to Magento CE version 2.0.11, enter:
+	For example, to upgrade to Magento CE version 2.0.13, enter:
 
-		composer require magento/product-community-edition 2.0.11 --no-update
+		composer require magento/product-community-edition 2.0.13 --no-update
 		composer update
 
-	To upgrade to Magento EE version 2.0.11, enter:
+	To upgrade to Magento EE version 2.0.13, enter:
 
-		composer require magento/product-enterprise-edition 2.0.11 --no-update
+		composer require magento/product-enterprise-edition 2.0.13 --no-update
 		composer update
 	
 	<div class="bs-callout bs-callout-info" id="info">
@@ -90,9 +90,17 @@ To prevent access to your store while it's being upgraded, put your store in mai
 		rm -rf <Magento install dir>/var/cache/*
 		rm -rf <Magento install dir>/var/page_cache/*
 		rm -rf <Magento install dir>/var/generation/* 
+
+    <div class="bs-callout bs-callout-info" markdown="1">
+    If you use a cache storage other than filesystem (e.g., Redis, Memcached, etc.) you need to manually clear the cache there too.
+    </div>
+
 4. Update the database schema and data:
 
 		php bin/magento setup:upgrade
+5.	Put your storefront online (that is, cancel maintenance mode):
+
+		php bin/magento maintenance:disable
 5.	Restart Varnish if you use it for page caching.
 
 		service varnish restart

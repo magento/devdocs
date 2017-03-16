@@ -105,6 +105,62 @@ Likewise afterSave plugin should take data from entity and do some manipulations
         ?>
 {% endhighlight %}
 
+But if some entity doesn't have implementation to fetch extension attributes, we will always retrieve `null` and each time when we fetch extension atrributes we need to check if they are `null` - need to create them. To avoid such code duplication, we need to create `afterGet` plugin for our entity with extension attributes.
+
+Let's assume the product entity doesn't have any implementation of extension attributes, so our plugin might looks like this:
+
+{% highlight php startinline=1 %}
+
+use Magento\Catalog\Api\Data\ProductExtensionInterface;
+use Magento\Catalog\Api\Data\ProductInterface;
+use Magento\Catalog\Api\Data\ProductExtensionFactory;
+
+class ProductAttributesLoad
+{
+    /**
+     * @var ProductExtensionFactory
+     */
+    private $extensionFactory;
+
+    /**
+     * @param ProductExtensionFactory $extensionFactory
+     */
+    public function __construct(ProductExtensionFactory $extensionFactory)
+    {
+        $this->extensionFactory = $extensionFactory;
+    }
+
+    /**
+     * Loads product entity extension attributes
+     *
+     * @param ProductInterface $entity
+     * @param ProductExtensionInterface|null $extension
+     * @return ProductExtensionInterface
+     */
+    public function afterGetExtensionAttributes(
+        ProductInterface $entity,
+        ProductExtensionInterface $extension = null
+    ) {
+        if ($extension === null) {
+            $extension = $this->extensionFactory->create();
+        }
+
+        return $extension;
+    }
+}
+
+{% endhighlight %}
+
+And now need to bind our plugin to `ProductInterface`:
+
+{% highlight xml %}
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <type name="Magento\Catalog\Api\Data\ProductInterface">
+        <plugin name="ProductExtensionAttributeOperations" type="Magento\Catalog\Plugin\ProductAttributesLoad"/>
+    </type>
+</config>
+{% endhighlight %}
+
 ## Extension Attributes Configuration:
 
 For scalar attributes we can use next configuration:

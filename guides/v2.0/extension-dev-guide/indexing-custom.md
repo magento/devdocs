@@ -26,7 +26,7 @@ Your custom indexer class should implement <a href="{{ site.mage2000url }}lib/in
 
 *	Row reindex: processing a single entry from a dictionary; responsibility of `executeRow($id)`
 *	List reindex: processing a set of dictionary entries; responsibility of `executeList($ids)`, where `$ids` is an array of entity IDs
-*	Rull reindex: processing all entities from a specific dictionary; responsibility of `executeFull()`
+*	Full reindex: processing all entities from a specific dictionary; responsibility of `executeFull()`
 
 <h3 id="m2devgde-indexing-customconfiguration">Indexer configuration</h3>
 In the `etc` directory of your module, add `indexer.xml` with the following:
@@ -38,7 +38,7 @@ In the `etc` directory of your module, add `indexer.xml` with the following:
 *	indexer view ID
 *	shared indexes, if any
 
-Use the optional `shared_index=` parameter to improve performance if your indexer is related to another indexer. In this <a href="{{ site.mage2000url }}app/code/Magento/CatalogRule/etc/indexer.xml" target="_blank">example</a>, if catalog rule product needs to be reindexed, but othe catalog product rule index is up-to-date, then only catalog rule product is reindexed.
+Use the optional `shared_index=` parameter to improve performance if your indexer is related to another indexer. In this <a href="{{ site.mage2000url }}app/code/Magento/CatalogRule/etc/indexer.xml" target="_blank">example</a>, if catalog rule product needs to be reindexed, but other catalog product rule index is up-to-date, then only catalog rule product is reindexed.
 
 All indexers related to a module should be declared in one file.
 

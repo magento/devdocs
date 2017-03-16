@@ -36,6 +36,9 @@ The following is a list of the different ways you can install Magento 2 locally:
   If you are developing on a local machine that meets the system requirements, you can follow the same steps as [installing Magento]({{page.baseurl}}install-gde/bk-install-guide.html) on a production server.
 * **Virtual Machine (VM) installation**\\
   Installing Magento 2 in a virtual environment allows you to run Magento 2 without the need to install a local [LAMP](https://en.wikipedia.org/wiki/LAMP_(software_bundle)){:target="_blank"} stack.
+* **Magento Devbox (Beta)**\\
+  The Magento DevBox is the simplest way yet to install a Magento development system. DevBox puts the Magento application in a Docker container but all you have to do to set it up is run a script. No more installing an operating system, web server, PHP, and so on.[DevBox (Beta) quick installation overview]({{page.baseurl}}install-gde/docker/docker-over.html)
+
 
   You can use a VM tool, such as [VirtualBox](https://www.virtualbox.org/wiki/VirtualBox){:target="_blank"}, together with a virtual environment tool, such as [Vagrant](https://www.vagrantup.com/){:target="_blank"} or [Docker](https://www.docker.com/){:target="_blank"}, to create reusable and shareable instances of Magento for development.
 

@@ -19,7 +19,7 @@ We can help you with the following:
 	1.	Associate a <a href="{{page.baseurl}}config-guide/config/caching_frontend-cache-types.html">cache frontend</a> with cache types
 	2.	Optionally set <a href="{{page.baseurl}}config-guide/config/caching_low-level.html">low-level cache options</a>
 
-*	Use <a href="{{page.baseurl}}config-guide/database/database.html">database caching</a>
+*	Use <a href="{{page.baseurl}}config-guide/cache/caching-database.html">database caching</a>
 *	Use <a href="{{page.baseurl}}config-guide/redis/config-redis.html">Redis</a> caching
 *	Use <a href="{{page.baseurl}}config-guide/varnish/config-varnish.html">Varnish</a> web acceleration
 

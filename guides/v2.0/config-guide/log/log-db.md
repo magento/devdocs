@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide 
-subgroup: 05_log
+subgroup: 500_log
 title: Example&mdash;logging database activity
 menu_title: Example&mdash;logging database activity
 menu_node: 

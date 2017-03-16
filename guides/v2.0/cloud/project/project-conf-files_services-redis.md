@@ -4,7 +4,7 @@ group: cloud
 subgroup: 10_project
 title: Set up the redis service
 menu_title: Set up the redis service
-menu_order: 32
+menu_order: 83
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: services

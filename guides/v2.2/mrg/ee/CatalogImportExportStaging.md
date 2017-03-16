@@ -13,11 +13,6 @@ github_link: mrg/ee/CatalogImportExportStaging.md
 
 ![Magento EE logo]({{site.baseurl}}common/images/ee-only_large.png)
 
-<h2>Contents</h2>
-
-
-## Magento_CatalogImportExportStaging module
-
 ## Overview
 
 The Magento_CatalogImportExportStaging module is a part of the staging functionality in Magento EE. It extends the Magento_CatalogImportExport module functionality to be used in staging mode.

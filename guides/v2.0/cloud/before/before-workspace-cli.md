@@ -2,9 +2,9 @@
 layout: default
 group: cloud
 subgroup: 08_setup
-title: Step 3, Install the CLI
-menu_title: Step 3, Install the CLI
-menu_order: 12
+title: Step 2, Install the CLI
+menu_title: Step 2, Install the CLI
+menu_order: 54
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: workspace
@@ -26,14 +26,19 @@ To install the Magento Enterprise Cloud Edition CLI:
 
 	For example, on Ubuntu and CentOS, the command is similar to:
 
-		 source /home/magento_user/.bashrc
+	<pre class="no-copy">source /home/magento_user/.bashrc</pre>
 
 	For more information about the user shell profile, see [.bash_profile vs .bashrc](http://www.joshstaiger.org/archives/2005/07/bash_profile_vs.html){:target="_blank"}
 
-3.	Enter the operating system-specific command to add the CLI to your system `$PATH`.
+	You can also add the `<magento user home dir>/.magento-cloud/bin` to the Magento user's `PATH`. 	If the user name is `magento_user`, the command is similar to the following:
+	
+		export PATH=$PATH:/home/magento_user/.magento-cloud/bin
+
+	Consult operating system documentation for details.
+		
 4.	Verify the `magento-cloud` command is in your path by entering the following command:
 
 		magento-cloud list
 
 #### Next step
-[Enable Secure Shell (SSH)]({{ page.baseurl }}cloud/before/before-workspace-ssh.html)
+[Step 3, Enable Secure Shell (SSH)]({{ page.baseurl }}cloud/before/before-workspace-ssh.html)

@@ -38,10 +38,7 @@ The following is an illustration of how the process of making simple changes loo
 
 <img src="{{ site.baseurl }}common/images/extend_less_code_1.png" alt="Less code redefining the color of the primary buttons">
 </li>
-<li>Delete all files in the following directories:
-<ul>
-<li><code>pub/static/frontend/&lt;Your_Vendor&gt;/&lt;your_theme&gt;</code></li>
-<li><code>var/view_preprocessed/less</code></li>
+<li markdown="1">[Clean static files cache]({{page.baseurl}}howdoi/clean_static_cache.html) </li>
 </ul>
 </li>
 <li>Refresh the page, and view the changes applied. For example:
@@ -63,7 +60,7 @@ The following is an illustration of how the process of making simple changes loo
 <img src="{{ site.baseurl }}common/images/extend_less_screenshot2.png" alt="Admin login page where the font of the buttons was changed">
 </li>
 </ol>
-If your Magento instance uses the server-side compilation mode, you need to manually clean sub-directories in <code>pub/static</code> and <code>var/view_preprocessed/less</code> to make your changes apply. You can automate this process by additionally installing Grunt, and using the built-in Grunt commands to watch the changes and clean the directories. The flow of making changes using Grunt is described in the following section.
+If your Magento instance uses the server-side compilation mode, to make your changes apply, you need to clean the previously generated static view files. Several ways to do this are described in the [Clean static files cache]({{page.baseurl}}howdoi/clean_static_cache.html) topic. You can automate this process by additionally installing Grunt, and using the built-in Grunt commands to watch the changes and clean the directories. The flow of making changes using Grunt is described in the following section.
 
 <h2 id="server-side-grunt">Making simple style changes in server-side compilation mode using Grunt</h2>
 
@@ -99,11 +96,7 @@ Where <code>&lt;your_theme&gt;</code> is the code of your theme. Conventionally 
 <li>Create and apply a theme.</li>
 <li>In your theme directory, add <code>web/css/source/_extend.less</code>.</li>
 <li>In the Magento Admin, change the LESS compilation mode to client-side under <b>STORES</b> > <b>Configuration</b> > <b>ADVANCED</b> > <b>Developer</b> > <b>Front-end development workflow</b> > <b>Workflow type</b>. For detailed description see the <a href="{{page.baseurl}}frontend-dev-guide/css-topics/css-preprocess.html#less_modes">CSS preprocessing</a> topic.</li>
-<li>Delete all files in the following directories:
-<ul>
-<li><code>pub/static/frontend/&lt;Your_Vendor&gt;/&lt;your_theme&gt;</code></li>
-<li><code>var/view_preprocessed/less</code></li>
-</ul>
+<li markdown="1">[Clean static files cache]({{page.baseurl}}howdoi/clean_static_cache.html)
 </li>
 <li>Change the color of the buttons by adding the following code in <code>_extend.less</code>:
 

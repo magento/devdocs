@@ -36,7 +36,7 @@ We recommend against providing the keys over e-mail because it isn't secure; ins
 
 {% collapsible To create authentication keys: %}
 
-{% include install/auth-tokens-get.md %}
+{% include cloud/auth-json.md %}
 
 {% endcollapsible %}
 

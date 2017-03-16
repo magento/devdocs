@@ -1,9 +1,9 @@
 ---
 layout: default
 group: config-guide
-subgroup: 500_sites
-title: Set up multiple websites or stores with nginx (tutorial)
-menu_title: Set up multiple websites or stores with nginx (tutorial)
+subgroup: 11_sites
+title: Tutorial&mdash;Set up multiple websites or stores with nginx
+menu_title: Tutorial&mdash;Set up multiple websites or stores with nginx
 menu_order: 3
 menu_node: 
 version: 2.0
@@ -42,6 +42,7 @@ Setting up multiple stores consists of the following tasks:
         *   Use `store` to load any store view in your storefront.
 
     *   `$MAGE_RUN_CODE` is the unique website or store view code that corresponds to `$MAGE_RUN_TYPE`
+    
 ## Step 2: Create nginx virtual hosts {#ms-nginx-vhosts}
 This section discusses how to load websites on the storefront. You can use either websites or store views; if you use store views, you must adjust parameter values accordingly. You must complete the tasks in this section as a user with `root` privileges.
 

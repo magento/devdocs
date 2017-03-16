@@ -10,7 +10,9 @@ level3_menu_node: level3child
 level3_subgroup: cache-types
 version: 2.0
 github_link: config-guide/cache/caching-database.md
-redirect_from: /guides/v2.0/config-guide/database/database.html
+redirect_from: 
+  -  /guides/v2.0/config-guide/database/database.html
+  -  /guides/v2.1/config-guide/database/database.html
 ---
 
 <h2 id="mage-cache-db-over">Overview of database caching</h2>

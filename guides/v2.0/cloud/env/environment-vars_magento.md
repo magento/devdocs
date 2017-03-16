@@ -77,7 +77,7 @@ The following table lists variables that you can override using environment vari
     </tr> -->
 
 
-For an example, see [Step 2: Change the Admin URI, user name, and password in the master branch]({{page.baseurl}}cloud/access-acct/set-up-env.html#setup-env-adminurl).
+For an example, see [Step 1, Get started setting up an environment]({{page.baseurl}}cloud/access-acct/set-up-env.html#setup-env-adminurl).
 
 ## Troubleshooting {#cloud-env-vars-tshoot}
 In the event something goes wrong and you can't access your environment after it deploys, try the following:

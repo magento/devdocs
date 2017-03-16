@@ -107,13 +107,13 @@ To install or upgrade MySQL, see <a href="{{page.baseurl}}install-gde/prereq/mys
 
 #### Related topics
 
-*	<a href="{{page.baseurl}}install-gde/system-requirements.html">Magento system requirements</a>
+*	<a href="{{page.baseurl}}magento-system-requirements.html">Magento system requirements</a>
 *	<a href="{{page.baseurl}}install-gde/prereq/apache.html">Apache</a>
 *	<a href="{{page.baseurl}}install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6&mdash;Ubuntu</a>
 *	<a href="{{page.baseurl}}install-gde/prereq/php-centos.html">PHP 5.5 or 5.6&mdash;CentOS</a>
 *	<a href="{{page.baseurl}}install-gde/prereq/mysql.html">MySQL</a>
 *	<a href="{{page.baseurl}}install-gde/prereq/optional.html">Installing optional software</a>
-*	<a href="{{page.baseurl}}install-gde/install/pre-install.html">Ways to install the Magento software</a>
+*	[How to get the Magento software]({{ page.baseurl }}install-gde/bk-install-guide.html)
 
 
 

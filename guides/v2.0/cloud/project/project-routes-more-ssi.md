@@ -4,7 +4,7 @@ group: cloud
 subgroup: 10_project
 title: Server side includes
 menu_title: Server side includes
-menu_order: 20
+menu_order: 79
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: routes

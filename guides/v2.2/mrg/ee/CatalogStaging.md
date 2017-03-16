@@ -6,17 +6,10 @@ title: Module Reference Guide
 menu_title: CatalogStaging
 menu_order: 2
 version: 2.2
-
-
 github_link: mrg/ee/CatalogStaging.md
 ---
 
 ![Magento EE logo]({{site.baseurl}}common/images/ee-only_large.png)
-
-<h2>Contents</h2>
-
-
-## Magento_CatalogStaging module
 
 ## Overview
 

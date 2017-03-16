@@ -24,6 +24,13 @@ To customize storefront styles, you need to <a href="{{page.baseurl}}frontend-de
 *	Create your own LESS files using the built-in LESS preprocessor. 
 *	Create your own CSS files, optionally having compiled them using third-party CSS preprocessor.
 
+
+## Things to remember when working with styles
+
+Make sure that you [set]({{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer or default [mode]({{page.baseurl}}config-guide/bootstrap/magento-modes.html).
+
+If your style changes do not apply after refreshing the page, cleaning the static files cache might help. See the [Clean static files cache topic]({{page.baseurl}}howdoi/clean_static_cache.html) for instructions how to do this.
+
 <h2 id="css_walk">Change styles: walkthrough</h2>
 
 Here is a simple illustration of changing styles using the first approach: changing the color of the buttons of a certain class.

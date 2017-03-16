@@ -37,7 +37,7 @@ The documentation should follow two simple principles:
 
 ### Short documentation
 
-The documentation should be as short as possible, but it should not skip necessary details.  
+The documentation should be as short as possible, but it should not skip necessary details.
 
 Below are ways of improving code to help simplify documentation:
 
@@ -45,7 +45,7 @@ Below are ways of improving code to help simplify documentation:
 * Put all possible information in the names of classes, methods, and variables. (e.g. use `$timeInSec` instead of `$time`)
 * Break down a method into smaller methods with descriptive names.
   See example below:
-  
+
   {% highlight php startinline=true %}
   public function getPrice()
   {
@@ -59,21 +59,21 @@ Below are ways of improving code to help simplify documentation:
   {
       // calculate base price
   }
-    
+
   private function getDiscount()
   {
     if (it's discount time) {
       return 10;
     }
     return 0;
-  } 
+  }
   {% endhighlight %}
 
 ### Include all the necessary details
 
 1. Identify the details a developer needs to work with your code.
 2. Ignore the implementation details (i.e. private methods/properties and method bodies) and focus on what the public interface signature provides.
-   
+
    If possible, improve the interface to provide more information.
 3. Add any remaining information that a developer may need to the DocBlock.
 
@@ -117,6 +117,64 @@ If description or short description happens to be the first one after DocBlock o
 -->
 {% endhighlight %}
 
+### License Notice and Copyright
+
+<div class="bs-callout bs-callout-info" id="info">
+This section is applicable to Magento core files only. Please follow it if you are a contributing developer.
+</div>
+
+Any file in Magento source should have a header with license and copyright notice.
+Exceptions are files with format that doesn't support comments, and so no meta information can be added.
+
+License notice and copyright MUST be declared in the very beginning of the file.
+If the file contains a structural element (for example, a class), description for the element should be declared as a separate DocBlock.
+
+Use the following templates for the license notice and copyright blocks:
+
+**Template for PHP Files**
+
+{% highlight php %}
+<?php
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+namespace Magento\Framework\Api;
+
+/**
+ * Provides metadata about an attribute.
+ *
+ * @api
+ */
+interface MetadataObjectInterface
+{
+   ...
+}
+{% endhighlight %}
+
+**Template for XML Files**
+
+{% highlight xml %}
+
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+{% endhighlight %}
+
+**Template for JS Files**
+
+{% highlight js %}
+
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+{% endhighlight %}
 
 ## Code structural elements
 {:#code-elements}
@@ -206,10 +264,12 @@ Classes and interfaces must have a short description that is a human-understanda
 **Good:**
 
 > Handler for PHP errors/warnings/notices that converts them to exceptions.
+> class ErrorHandler { ... }
 
 **Bad:**
 
-> ErrorHandler -> ErrorHandler
+> Error Handler
+> class ErrorHandler { ... }
 
 If possible, add use cases where developers can or cannot use the class.
 
@@ -273,6 +333,13 @@ class Profiler
 Functions and methods must have:
 
 * Short description
+* Long description that explains the motivation behind the implementation.
+  For example:
+
+   * If a workaround or hack is implemented, explain why it is necessary and include any other details necessary to understand the algorithm.
+   * For non-obvious implementations where the implementation logic is complicated or does not correspond to the Technical Vision or other known best practices, include an explanation in the doc block's description.
+     An implementation is non-obvious if another developer has questions about it.
+
 * Declaration of all arguments (if any) using `@param` tag.
   Appropriate argument type must be specified.
 * Declaration of return type using `@return` tag.
@@ -280,18 +347,28 @@ Functions and methods must have:
 * Declaration of possibly thrown exception using `@throws` tag, if the actual body of function triggers throwing an exception.
   All occurrences of `@throws` in a DocBlock must be after `@param` and `@return` (if any).
 
+**Exceptions to these rules:**
+
+* Constructors may not have short and/or long description
+
+* Testing methods in Unit tests may not have doc blocks if the test's method name follows the convention (test<MethodName>)
+
+   * If the test does not follow the convention, it should have a doc block describing the covered methods
+
+   * Non-testing methods should have a doc block with description. It includes data providers and any helper methods
+
 #### Things to include
 
 * An explanation of input arguments and return values if it is not obvious from their name and type.
-  
+
   This is applicable in the following cases:
 
   * There is more than one possible input/output type.
 
-    For example: `@return Config|null`.  
+    For example: `@return Config|null`.
     The DockBlock needs to explain what situations return `null`.
 
-    Another example: `@param FileInterface | null`.  
+    Another example: `@param FileInterface | null`.
     The DocBlock needs to explain what happens when the value of the parameter is `null`.
 
     Ideally, implementations such as these should be avoided.
@@ -304,7 +381,7 @@ Functions and methods must have:
 
 #### Things to avoid
 
-* Copying the algorithm. 
+* Copying the algorithm.
   The algorithm must be self-explanatory and understood by reviewing the code and unit tests.
 * Information that is out of date or has the potential to become out of date.
 
@@ -346,7 +423,7 @@ protected function merge($configFiles)
 
 In general, use the `@throws` tag when the code uses *throw*:
 
-**Example of Throwing Exception Explicitly**  
+**Example of Throwing Exception Explicitly**
 {% highlight php startinline=true %}
 /**
  * Set an arbitrary value to specified element
@@ -417,7 +494,8 @@ public function deleteDirectory($path)
 {% endhighlight %}
 
 
-<h4 id="return">@return tag</h4>
+#### @return tag
+{:#return}
 
 If there is no explicit return statement in a method or function, a `@return void` should be used in the documentation.
 
@@ -450,45 +528,10 @@ class Profiler
 ### DocBlock templates
 {:#DocBlock-templates}
 
-If there is declaration of multiple consecutive elements of same type, the same contents of DocBlock may be relevant to all of them.
-In this case individual DocBlocks for those elements they may be replaced by a DocBlock template.
+DocBlock template is a DocBlock that starts from `/**#@+*/` and ends with `/**#@-*/`.
+Templates are not supported by PHPDocumentor anymore. Therefore, they MUST NOT be used.
 
-DocBlock template consists of two DocBlock comments:
-
-* Starting comment is before first element of the group, distinguished using `#@+` and formatted as follows:
-
-<pre>
-/**#@+
- *
- */
-</pre>
-
-* Ending comment is after the last element of the group, distinguished using `#@-` and formatted as follows:`/**#@-*/`
-
-For example, declaration of multiple class constants or attributes:
-
-
-{% highlight php startinline=true %}
-class Mage_Core_Model_Layout extends Varien_Simplexml_Config
-{
-    /**#@+
-     * Supported layout directives
-     * @var string
-     */
-    const TYPE_BLOCK = 'block';
-    const TYPE_CONTAINER = 'container';
-    /**#@-*/
-
-    /**#@+
-     * Scheduled structure elements operations
-     *
-     * @var array
-     */
-    protected $scheduledMoves   = array();
-    protected $scheduledRemoves = array();
-    /**#@-*/
-{% endhighlight %}
-
+It's encouraged to replace existing DocBlock templates with regular DocBlock comments when the file is being modified.
 
 ## Structure of documentation space
 {:#documentation-space}
@@ -498,8 +541,74 @@ Documentation is organized with the use of namespaces.
 
 ## Other DocBlock tags
 {:#other-DocBlock-tags}
+
+### @inheritdoc tag
+{:#inheritdoc}
+
+Whenever possible the `@inheritdoc` tag MUST be used for children to avoid duplication of doc blocks.
+
+Even Though PHPDocumentor understands inheritance and uses the parent doc block by default (without `@inheritdoc` tag specified), including the tag helps ensure that the doc block is not missed at all.
+
+Rules for usage of the tag:
+
+* Use `@inheritdoc` (notice no braces around) to indicate that the entire doc block should be inherited from the parent method.
+* Use the inline `{@inheritdoc}` tag (with braces around) in long descriptions to reuse the parent's long description. The tagged method MUST have its own short description.
+
+**DocBlock for the Intreface**
+{% highlight php startinline=true %}
+/**
+ * Interface for mutable value object for integer values
+ */
+interface MutableInterface
+{
+    /**
+     * Get value
+     *
+     * Returns 0, if no value is available
+     *
+     * @return int
+     */
+    public function getVal();
+
+    /**
+     * Set value
+     *
+     * Sets 0 in case a non-integer value is passed
+     *
+     * @param int $value
+     */
+    public function setVal($value);
+}
+{% endhighlight %}
+
+**DocBlock for the implementation**
+{% highlight php startinline=true %}
+/**
+ * Limited mutable value object for integer values
+ */
+class LimitedMutableClass implements MutableInterface
+{
+    /**
+     * @inheritdoc
+     */
+    public function getVal()
+    {
+    }
+
+    /**
+     * Set value
+     *
+     * Sets 0 in case the value is bigger than max allowed value. {@inheritdoc}
+     */
+    public function setVal($value)
+    {
+    }
+}
+{% endhighlight %}
+
 ### @api tag
 {:#api}
+
 The `@api` tag indicates the code is part of the public API and is subject to the [Magento Backward Compatibility Policy](../extension-dev-guide/backward-compatibility.html).
 
 The `@api` tag can be applied to a constant, a method, or to the entire class/interface.
@@ -515,12 +624,48 @@ A deprecated class or method is one that has been superseded and may cease to ex
  It will be retained to provide backward compatibility until next major component release.
 
 Use the `@deprecated` tag to indicate an element is to be deprecated.
-The text of the `@deprecated` tag should indicate the version the element was deprecated as well as the version it will be removed.
-If applicable, also specify what has replaced the deprecated element.
 
-To maintain backward compatibility, an element should be removed only on major revisions.
+Motivation behind the added `@deprecated` tag MUST be explained.
+`@see` tag MUST be used with reference to new implementation when code is deprecated and there is a new alternative.
 
-Use the `@see` tag to refer to the new implementation when code is deprecated.
+For example:
+
+{% highlight php startinline=true %}
+/**
+ * Get some object
+ *
+ * @deprecated Added to not break backward compatibility of the constructor signature
+ *             by injecting the new dependency directly.
+ *             The method can be removed in a future major release, when constructor signature can be changed
+ * @return SomeObjectInterface
+ */
+protected function getSomeObject()
+{
+    ...
+}
+
+/**
+ * Set price
+ *
+ * @deprecated Non-scoped price is not supported anymore
+ * @see setScopedPrice()
+ * @return void
+ */
+public function setPrice($price)
+{
+    ...
+}
+
+/**
+ * Set price for specified scope
+ *
+ * @return void
+ */
+public function setScopedPrice($price, $scopeType, $scopeId)
+{
+    ...
+}
+{% endhighlight %}
 
 ### @var inline tag
 {:#var}
@@ -643,5 +788,3 @@ public function reorderChild($parentId, $childId, $position)
  * @see _insertChild() for position explanation
  */
 {% endhighlight %}
-
-

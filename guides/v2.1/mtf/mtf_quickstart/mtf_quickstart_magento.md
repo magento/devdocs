@@ -2,7 +2,7 @@
 layout: default
 group: mtf-guide
 subgroup: 30_Quickstart
-title: Quick start with the Functional Testing Framework
+title: Quick start. Prepare Magento application
 menu_title: Prepare Magento application
 menu_order: 1
 version: 2.1
@@ -40,6 +40,5 @@ Enable the **Admin Account Sharing** setting to avoid unpredictable logout durin
 * From the **Actions** list in the upper left, click **Refresh**.
 * Click **Submit**.
 
-<h2 id="mtf_install_pre">Next Steps</h2>
 
 [&lt;&lt; Adjust configuration]({{page.baseurl}}mtf/mtf_quickstart/mtf_quickstart_config.html) | [Prepare environment for test run &gt;&gt;]({{page.baseurl}}mtf/mtf_quickstart/mtf_quickstart_environment.html)
