@@ -56,6 +56,9 @@ Deprecated method | Use instead | Subsequent calls
 `getPublisher($name);` | `\Magento\Framework\MessageQueue\Publisher\ConfigInterface::getPublisher($name)` | Use getter methods to return requested information.
 `getResponseQueueName($topicName);` | Magento\Framework\MessageQueue\Rpc\ResponseQueueNameBuilder::getQueueName($topicName) | -
 
+#### Error Processor Module ####
+Exception report files in `var/report` are now JSON encoded, and existing serialized files will not be readable by the upgraded Magento 2.2 instance.
+
 ## Changes in repositories
 
 In Magento 2.2 the behavior of repositories regarding the Filters added to Search Criteria  was unified:
