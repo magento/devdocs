@@ -4,7 +4,7 @@ group: config-guide
 subgroup: 999_prod
 title: All configuration paths except payments reference
 menu_title: All configuration paths except payments reference
-menu_order: 81
+menu_order: 301
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: config-ref

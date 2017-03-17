@@ -4,7 +4,7 @@ group: config-guide
 subgroup: 40_live
 title: Sensitive configuration paths reference
 menu_title: Sensitive configuration paths reference
-menu_order: 85
+menu_order: 303
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: config-ref
