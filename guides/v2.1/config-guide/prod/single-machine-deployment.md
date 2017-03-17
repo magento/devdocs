@@ -96,4 +96,4 @@ In Magento 2.2, a near-zero downtime deployment model will be available for a va
 [8]: {{page.baseurl}}install-gde/prereq/integrator_install.html
 [9]: {{page.baseurl}}comp-mgr/upgrader/upgrade-start.html
 [10]: {{page.baseurl}}install-gde/prereq/file-sys-perms-over.html#magento-file-system-owner
-[11]: {{site.basurl}}/community/resources/#installdeploy
+[11]: {{site.basurl}}community/resources/#installdeploy
