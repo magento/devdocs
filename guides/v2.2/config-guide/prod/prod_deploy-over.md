@@ -10,62 +10,26 @@ version: 2.2
 github_link: config-guide/prod/prod_deploy-over.md
 ---
 
-Notes:
+In Magento version 2.2, we introduce a new way to deploy to production with minimal downtime. In addition, deployment includes the ability to maintain consistent configurations for all deployment systems.
 
-*	Configuration management _and_ static asset deployment
-*	Shared configuration and environment-specific configuration (which includes sensitive values)
+We refer to this as _split deployment_ because the deployment process occurs on different systems.
 
-	*	Updated flow diagram
-*	What a PHP developer needs to know
-*	Pointers to configuration references
-*	Deployment rules and guidelines
+Development system {#deploy-split-dev}
+:	Machine on which developers work to customize code; and install extensions, themes, and language packages from Magento Marketplace. In addition, you make all configuration changes on your development system. You can have many developer systems.
 
-	*	Code in source control, assume Git
-	*	TBD
-	*	TBD
-	*	Can't set Stores > Configuration > Advanced > Developer options in production mode (verify path)
+Build system {#deploy-split-build}
+:	One system on which you deploy static assets and compile code for your production system. Because you build these assets on a system not in production, your production system's downtime is minimized.
+
+	Your build system does not have to have Magento installed on it. It needs only the Magento code but no database connection is required.
+
+Staging system {#deploy-split-stage}
+:	_Optional_. You can optionally set up a staging system to use for final testing of all integrated code, including User Acceptance Testing (UAT). Set up a staging system the same way you set up a production system. Except for the fact that staging is not your live store and doen't process orders from customers, it's identical to production.
+
+Production system {#deploy-split-prod}
+:	Your live store. You should make minimal configuration changes here and no changes to websites, stores, store views, products, or the catalog. You should make all those types of changes in your development system.
+
+## Use source control
+To use split deployment, we assume your Magento code is in a source control repository. In this guide, we assume you're using Git but the choice of repositories is up to you.
 
 
-Procedure notes:
 
-*	`.gitignore` includes both `config.php` and `env.php`
-*	
-
-On production machine:
-
-*	`git clone -b` into docroot
-*	Edit env.php to point to correct DB (make sure it's empty)
-*	composer install
-*	Set perms
-*	Add SSH key from Magento machine to ~/authorized_keys so you can rsync DB dump
-*	zcat ~/db/EE2.2.sql.gz | mysql -u magento -pmaG3nTo! magento
-*	Change base URL: cloud/access-acct/first-time-setup_import-import.md
-
-	UPDATE core_config_data SET value='http://10.235.32.11/magento2/' WHERE path='web/unsecure/base_url';
-*	Test
-*	Set production mode
-
-On Magento machine:
-*	Comment `generated/*` from .gitignore
-*	mysqldump -h <database host> --user=<database user name> --password=<password> --single-transaction <database name> | gzip - > ~/database.sql.gz
-*	Create dir for rsync
-*	rsync -azvP ~/EE2.2.sql.gz magento_user@10.235.32.11:~/db
-
-Build machine:
-
-*	Prereq: Git, PHP, Composer
-
-*	Check out from Git
-*	Modify .gitignore
-*	composer install
-*	prod mode?
-*	php bin/magento setup:di:compile
-*	php bin/magento setup:static-content:deploy -f (if in developer or default mode)
-
-Scenarios:
-
-1) Change setting neither sensitive nor specific (e.g., locale). app:config:dump, transfer config.php, generate static and compile on build, Git pull on prod
-
-2) Add website, store, store view: app:config:dump on dev, pull to build, then to production, run app:config:import (nothing imported).
-
-3) Set sensitive value in dev, run app:config:sensitive:set on production to enable same setting
