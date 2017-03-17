@@ -1,15 +1,15 @@
 ---
 layout: default
-group: 
-subgroup: 40_live
+group: config-guide
+subgroup: 999_prod
 title: How to name configuration variables
 menu_title: How to name configuration variables
-menu_order: 86
+menu_order: 400
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: config-ref
 version: 2.1
-github_link: cloud/live/config-reference-var-name.md
+github_link: config/prod/config-reference-var-name.md
 ---
 
 {% include config/config-reference_conf-var-name1.md %}
@@ -17,7 +17,7 @@ github_link: cloud/live/config-reference-var-name.md
 ### Find a website or store view scope in the database {#cloud-vars-db}
 To get these values from the database:
 
-{% include cloud/log-in-db.md %}
+TBD
 
 After you connect to the database, use the following SQL queries to find the relevant values:
 

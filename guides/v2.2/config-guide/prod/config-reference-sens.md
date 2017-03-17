@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: 40_live
+subgroup: 999_prod
 title: Sensitive configuration paths reference
 menu_title: Sensitive configuration paths reference
 menu_order: 303
