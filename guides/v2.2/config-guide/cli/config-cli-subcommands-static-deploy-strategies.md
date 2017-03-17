@@ -43,8 +43,6 @@ Deployment process with the Quick strategy is following:
 By similar files we mean files, that are locale-(or theme-, or area-)independent. These files might include CSS, images, fonts.
 </div>
 
-<p class="q">IS it a good definition for similar files?</p>
-
 This approach minimizes the deployment time required for multiple locales. Though a lot of files are duplicated.
 
 ## Compact strategy
@@ -56,39 +54,74 @@ The following table describes the patterns used for creating these sub-directori
 
 <p class="q">Is it correct to say that we deploy files to these directories?</p>
 <table>
-  	<col width="35%">
-  	<col width="15%">
-  	<col width="50%">
-	<tbody>
-		 <tr>
-			<th>Pattern</th>
-			<th>Description</th>
-		 </tr>
-         <tr>
-            <td>%area%/%theme%/%locale%</td>
-            <td><p>Files specific for a particular area, theme, and locale</p></td>
-         </tr>
-         <tr>
-             <td>%area%/%theme%/default</td>
-             <td>Files similar for all locales of a particular the of a particular area.</td>
-         </tr>
-          <tr>
-             <td>%area%/Magento/base/%locale%</td>
-             <td>Files specific for a particular area and locale, but similar for all themes./td>
-          </tr>
-          <tr>
-             <td>%area%/Magento/base/default</td>
-             <td><p>Files specific for a particular area, but similar for all themes and locales.</p></td>
-          </tr>
-          <tr>
-             <td>base/Magento/base/%locale%</td>
-             <td><p>Files similar for all areas and themes, but specific for a particular locale.</p></td>
-          </tr>
-          <tr>
-             <td>base/Magento/base/default</td>
-             <td>Similar for all areas, themes and locales.</td>
-         </tr>
-	</tbody>
+  <tbody>
+    <tr>
+      <th>
+        Pattern
+      </th>
+      <th>
+        Description
+      </th>
+    </tr>
+    <tr>
+      <td>
+        %area%/%theme%/%locale%
+      </td>
+      <td>
+        <p>
+          Files specific for a particular area, theme, and locale
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        %area%/%theme%/default
+      </td>
+      <td>
+        Files similar for all locales of a particular the of a
+        particular area.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        %area%/Magento/base/%locale%
+      </td>
+      <td>
+        Files specific for a particular area and locale, but
+        similar for all themes./td&gt;
+      </td>
+    </tr>
+    <tr>
+      <td>
+        %area%/Magento/base/default
+      </td>
+      <td>
+        <p>
+          Files specific for a particular area, but similar for all
+          themes and locales.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        base/Magento/base/%locale%
+      </td>
+      <td>
+        <p>
+          Files similar for all areas and themes, but specific for
+          a particular locale.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        base/Magento/base/default
+      </td>
+      <td>
+        Similar for all areas, themes and locales.
+      </td>
+    </tr>
+  </tbody>
 </table>
 
 
@@ -100,35 +133,35 @@ This approach to deployment means that files are inherited from basic themes and
 
 `map.php` is used by `Magento\Framework\View\Asset\Repository` to build correct URLs.
 
-`requirejs-map.js` is used by baseUrlResolver plugin for RequireJS.
+`requirejs-map.js` is used by `baseUrlResolver` plugin for RequireJS.
 
 Example of `map.php`:
 
 {%highlight php%}
-    return [
-            'Magento_Checkout::cvv.png' => [
-                'area' => 'frontend',
-                'theme' => 'Magento/luma',
-                'locale' => 'en_US',
-            ],
-            '...' => [
-                'area' => '...',
-                'theme' => '...',
-                'locale' => '...'
-            ]
-            ];
+return [
+        'Magento_Checkout::cvv.png' => [
+            'area' => 'frontend',
+            'theme' => 'Magento/luma',
+            'locale' => 'en_US',
+        ],
+        '...' => [
+            'area' => '...',
+            'theme' => '...',
+            'locale' => '...'
+        ]
+        ];
 {%endhighlight%}
 
 Example of `requirejs-map.js`:
 
 {%highlight js%}
-    require.config({
-        "config": {
-            "baseUrlInterceptor": {
-                "jquery.js": "../../../../base/Magento/base/en_US/"
-            }
+require.config({
+    "config": {
+       "baseUrlInterceptor": {
+            "jquery.js": "../../../../base/Magento/base/en_US/"
         }
-    });
+    }
+});
 {%endhighlight%}
 
 
