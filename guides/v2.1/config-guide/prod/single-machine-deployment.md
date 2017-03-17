@@ -12,22 +12,14 @@ github_link: config-guide/prod/single-machine-deployment.md
 
 This topic provides instructions for deploying updates to Magento on a production server using the command line.
 
-This process applies to small merchants running their stores on a single machine with a few themes and locales installed.
+This process applies to technical users responsible for stores running on a single machine with a few themes and locales installed.
 
-If you are looking for guidelines on how to use the System Upgrade feature in the Admin, see the [user guide][3]{:target="_blank"}.
-
-<div class="bs-callout bs-callout-warning" markdown="1">
-
-The following process can result in several minutes of downtime and may not be acceptable for large stores.
-
-</div>
+For less technical users, i.e. business users, we recommend using the [System Upgrade][9] feature in the Admin.
 
 ## Assumptions
 
 * Magento was installed using [Composer][8] or a [compressed archive][7].
-* Magento is running in [production mode][5] on a single production server.
 * You are directly applying updates to the server.
-* Your store can afford several minutes of downtime.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
 This guide does not apply if you used `git clone` to install Magento.
@@ -36,13 +28,17 @@ Contributing developers should use [this guide][6] to update their Magento insta
 
 ## Deployment steps
 
-Log into your production server and perform the following steps in the Magento root directory.
+1. Log in to your production server as, or switch to, the [Magento file system owner][10].
 
-1. Enable maintenance mode using the command:
+2. Change directory to where Magento is installed:
+        
+        cd <Magento base directory>
+
+3. Enable maintenance mode using the command:
 
         php bin/magento maintenance:enable
 
-2. Apply updates to Magento or its components using the following command pattern:
+4. Apply updates to Magento or its components using the following command pattern:
 
         composer require <package> <version> --no-update
 
@@ -55,23 +51,23 @@ Log into your production server and perform the following steps in the Magento r
 
    **version**: The target version of the package you want to update.
 
-3. Update Magento's components with Composer:
+5. Update Magento's components with Composer:
    
         composer update
 
-4. Update the database schema and data:
+6. Update the database schema and data:
 
         php bin/magento setup:upgrade
 
-5. Compile the code:
+7. Compile the code:
 
         php bin/magento setup:di:compile
 
-6. Deploy static content:
+8. Deploy static content:
 
         php bin/magento setup:static-content:deploy
 
-7. Exit maintenance mode:
+9. Exit maintenance mode:
 
         php bin/magento maintenance:disable
 
@@ -80,6 +76,8 @@ Log into your production server and perform the following steps in the Magento r
 * [Enable or disable maintenance mode][4]
 * [Command line upgrade][1]
 * [Update the Magento application][2]
+* [User Guide: Web Setup Wizard][3]
+* [Running the System Upgrade][9]
 
 [0]: {{page.baseurl}}
 [1]: {{page.baseurl}}comp-mgr/cli/cli-upgrade.html
@@ -90,3 +88,5 @@ Log into your production server and perform the following steps in the Magento r
 [6]: {{page.baseurl}}install-gde/install/cli/dev_options.html
 [7]: {{page.baseurl}}install-gde/prereq/zip_install.html
 [8]: {{page.baseurl}}install-gde/prereq/integrator_install.html
+[9]: {{page.baseurl}}comp-mgr/upgrader/upgrade-checklist.html
+[10]: {{page.baseurl}}install-gde/prereq/file-sys-perms-over.html#magento-file-system-owner
