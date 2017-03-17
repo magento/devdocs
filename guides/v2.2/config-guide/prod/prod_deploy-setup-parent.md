@@ -2,8 +2,8 @@
 layout: default
 group: install_pre
 subgroup: Prerequisites
-title: Magento file system ownership and permissions
-menu_title: Magento file system ownership and permissions
+title: Set up development, build, and production systems
+menu_title: Set up development, build, and production systems
 level3_menu_node: level3parent
 level3_subgroup: setup
 menu_node:
