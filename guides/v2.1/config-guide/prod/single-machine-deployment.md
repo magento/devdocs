@@ -71,7 +71,13 @@ Contributing developers should use [this guide][6] to update their Magento insta
 
         php bin/magento maintenance:disable
 
-## Related Topics
+## Alternative deployment strategies
+
+For deployment strategies developed by the Magento community, see the blog posts listed under the [Install/deploy][11] section in our Community Resources page.
+
+In Magento 2.2, a near-zero downtime deployment model will be available for a variety of complex environments, including Cloud.
+
+## Related topics
 
 * [Enable or disable maintenance mode][4]
 * [Command line upgrade][1]
@@ -88,5 +94,6 @@ Contributing developers should use [this guide][6] to update their Magento insta
 [6]: {{page.baseurl}}install-gde/install/cli/dev_options.html
 [7]: {{page.baseurl}}install-gde/prereq/zip_install.html
 [8]: {{page.baseurl}}install-gde/prereq/integrator_install.html
-[9]: {{page.baseurl}}comp-mgr/upgrader/upgrade-checklist.html
+[9]: {{page.baseurl}}comp-mgr/upgrader/upgrade-start.html
 [10]: {{page.baseurl}}install-gde/prereq/file-sys-perms-over.html#magento-file-system-owner
+[11]: {{site.basurl}}/community/resources/#installdeploy
