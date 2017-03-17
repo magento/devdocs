@@ -1,7 +1,7 @@
 ---
 layout: default
-group: install_pre
-subgroup: Prerequisites
+group: config-guide
+subgroup: 999_prod
 title: Set up development, build, and production systems
 menu_title: Set up development, build, and production systems
 level3_menu_node: level3parent
