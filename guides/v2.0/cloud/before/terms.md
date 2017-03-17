@@ -15,7 +15,7 @@ This topic provides definitions for common terms.
 Project
 :	A container for your Magento cloud deployment, representing your Magento store. A project contains a live deployment and one or more *environments* that enable developers to work on features, fix bugs, or test your site.
 
-The project always has a `master` branch, which corresponds to your live site. In addition, you can create up to eight other active branches for development and testing. (Additional branches are available for additional cost.) Branches are also referred to as *environments*.
+The project always has a `master` branch, which corresponds to your live site. 
 
 You configure the details of your project using configuration files.
 
@@ -27,7 +27,13 @@ Magento Enterprise Cloud Edition project configuration files
 	*	[`<project root dir>/.magento/services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html), which defines available services and their disk space allocations.
 
 Environment
-:	A project's Git branch. You can use environments for development and testing, and use a standard Git workflow to synchronize (pull) and merge (push) to its parent. Merging an environment with the `master` enables you to deploy the changes to your live site.
+:	A project's Git branch. You can use environments for development and testing, and use a standard Git workflow to synchronize (pull) and merge (push) to its parent. Merging an environment with the `master` enables you to deploy the changes to your staging and production systems.
+
+In addition, you can create up to seven other active branches for development and testing. An active environment is a branch in the Cloud Git repo you're using for development and integration. (Additional environments are available for additional cost.) 
+
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+You can have an unlimited number of *inactive* environments. An inactive environment is a Git branch you either deleted from the Cloud Git repository or one that is not associated with the Cloud Git repository at all. For example, you might already have several Git branches with Magento code that you don't need to use for Magento Enterprise Cloud Edition. As long as you don't add those environments to the Cloud Git repo, they don't count against your total of eight active environments.
+</div>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p><a href="{{ page.baseurl }}cloud/live/stage-prod-over.html">Manual tasks</a> are required for live deployment.</p>

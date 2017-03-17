@@ -6,20 +6,11 @@ title: Deploy static view files
 menu_title: Deploy static view files
 menu_node: 
 menu_order: 300
-version: 2.0
+version: 2.2
 github_link: config-guide/cli/config-cli-subcommands-static-view.md
-redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-static-view.html
 ---
 
 
-#### Contents
-
-*	<a href="#config-cli-static-overview">Overview of static view files deployment</a>
-*	<a href="#config-cli-before">First steps</a>
-*	<a href="#config-cli-subcommands-xlate-dict">Deploy static view files</a>
-*	<a href="#view-file-trouble">Troubleshooting the static view files deployment tool</a>
-
-<h2 id="config-cli-static-overview">Overview of static view files deployment</h2>
 The static view files deployment command enables you to write static files to the Magento file system when the Magento software is set for <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>.
 
 The term *static view file* refers to the following:
@@ -46,7 +37,7 @@ You can clean generated static view files in several ways, see the <a href="{{pa
 {% include install/first-steps-cli.html %}
 In addition to the command arguments discussed here, see <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands.html#config-cli-subcommands-common">Common arguments</a>.
 
-<h2 id="config-cli-subcommands-xlate-dict">Deploy static view files</h2>
+## Deploy static view files {#config-cli-subcommands-staticview}
 To deploy static view files:
 
 1.	Log in to the Magento server as, or <a href="{{page.baseurl}}install-gde/prereq/file-sys-perms-over.html">switch to</a>, the Magento file system owner.
@@ -223,7 +214,14 @@ Sample output:
 
     New version of deployed files: 1466711110
 
+### Deploy static view files without installing Magento {#deploy_without_db}
+You might want to run the deployment process in a separate, non-production, environment, to avoid any build processes on sensitive production machines. 
 
+To do this, take the following steps:
+
+1. Run [`magento app:config:dump`]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-export.html) to export the configuration from your production system.
+2. Copy the exported files to the non-production code base.
+3. Run [`magento setup:static-content:deploy`](#config-cli-subcommands-staticview).
 
 <h2 id="view-file-trouble">Troubleshooting the static view files deployment tool</h2>
 <a href="{{page.baseurl}}install-gde/bk-install-guide.html">Install the Magento software first</a>; otherwise, you cannot run the static view files deployment tool.
@@ -243,7 +241,7 @@ Use the following steps:
 
 1.	Log in to the Magento server as, or <a href="{{page.baseurl}}install-gde/prereq/file-sys-perms-over.html">switch to</a>, the Magento file system owner.
 2.	Delete the contents of `<your Magento install dir>/pub/static` directory.
-3.	<a href="#config-cli-subcommands-xlate-dict">Run the static view files deployment tool</a>.
+3.	<a href="#config-cli-subcommands-staticview">Run the static view files deployment tool</a>.
 <!-- 4.	Set read-only file permissions for the `pub/static` directory, its subdirectories, and files. -->
 	
 	<!-- <div class="bs-callout bs-callout-info" id="info">
@@ -251,12 +249,13 @@ Use the following steps:
   		<p>If you enable static view file merging in the Magento Admin, the <code>pub/static</code> directory system must be writable.</p></span>
 	</div> -->
 
-## Tips for developers customizing the static content deployment tool
-When creating a custom implementation of the static content deployment tool, do not use non atomic writing to files that should be available on the client side. Otherwise, those files might be loaded on the client side with partial content. 
+## Tip for developers customizing the static content deployment tool
+When creating a custom implementation of the static content deployment tool, use only [atomic](https://en.wikipedia.org/wiki/Linearizability){:target="_blank"} file writing for files that should be available on the client. If you use non-atomic file writing, those files might be loaded on the client with partial content. 
 
-One of the options for making it atomic, is writing to files stored in a temporary directory and coping or moving them to the destination directory (from where they are actually loaded to client side) once writing is over. For details about writing to files see [http://php.net/manual/en/function.fwrite.php](http://php.net/manual/en/function.fwrite.php).
+One of the options for making it atomic is to write to files stored in a temporary directory and copying or moving them to the destination directory (from where they are loaded to client) after writing is over. For details about writing to files, see [http://php.net/manual/en/function.fwrite.php](http://php.net/manual/en/function.fwrite.php){:target="_blank"}.
 
-Please note, that the default Magento implementation of `\Magento\Framework\Filesystem\Directory\WriteInterface::writeFile` uses non-atomic write to file.
+<!-- The default Magento implementation of [`Magento\Framework\Filesystem\Directory\WriteInterface::writeFile`]({{ site.mage2100url }}lib/internal/Magento/Framework/Filesystem/Directory/WriteInterface.php#L118){:target="_blank"} uses non-atomic file writing.
+ -->
 
 ## Related topics
 

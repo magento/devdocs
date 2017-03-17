@@ -25,9 +25,10 @@ It's fully automated and happens almost instantly. Magento Enterprise Cloud Edit
 middleman between your code and deployment.
 
 ### Details
-* Every Magento Enterprise Cloud Edition plan includes eight active environments for development and staging. (Additional active environments are available at additional cost.)
+* Every Magento Enterprise Cloud Edition plan includes eight _active_ environments for development and integration. An active environment is a branch in the Cloud Git repo you're using for development and integration. (Additional active environments are available at additional cost.)
 
-	You can have as many *inactive* environments as you wish.  
+	You can have an unlimited number of *inactive* environments. An inactive environment is a Git branch you either deleted from the Cloud Git repository or one that is not associated with the Cloud Git repository at all. For example, you might already have several Git branches with Magento code that you don't need to use for Magento Enterprise Cloud Edition. As long as you don't add those environments to the Cloud Git repo, they don't count against your total of eight active environments.
+
 * You can add fully managed services like MySQL, Elasticsearch, Redis, RabbitMQ, and so on, without requiring external add-ons.
 * We use a robust Composer build process.
 * You can increase the amount of memory and CPU as needed.

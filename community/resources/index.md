@@ -16,6 +16,8 @@ Below are links to blog posts, podcasts, presentations, and books created by mem
 
 New items will be added incrementally, and older links rotated out. Keep an eye on this space for the latest community resources!
 
+Another community based resource, focused on describing the Magento 2 Environment is the [Magento 2 Awesome List](https://github.com/DavidLambauer/awesome-magento2){:target="_blank"}
+
 Do you know of a popular resource about Magento 2 that has been released/published within the past year?
 Does it fill gaps in our current docs and provide important information?
 [Let us know]({{page.baseurl}}contributor-guide/contributing_docs.html)!
@@ -46,4 +48,4 @@ They are listed here because the content has been well received within the Magen
 
 ## Performance
 
-*  *Presentation:* [Premium performance with PHP 7 and Varnish](http://www.slideshare.net/StaceyWhitney1/mage-titans-usa-2016-miguel-balparda-magento-2-premium-performance-with-php-7-and-varnish){:target="_blank"} by Miguel Balparda
+*  *Presentation:* [Premium performance with PHP 7 and Varnish](http://www.slideshare.net/StaceyWhitney1/mage-titans-usa-2016-miguel-balparda-magento-2-premium-performance-with-php-7-and-varnish){:target="_blank"} by Miguel Balparda 

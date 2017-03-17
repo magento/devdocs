@@ -2,9 +2,9 @@
 layout: default
 group: cloud
 subgroup: 08_setup
-title: Step 4, Enable Secure Shell (SSH)
-menu_title: Step 4, Enable Secure Shell (SSH)
-menu_order: 15
+title: Step 3, Enable Secure Shell (SSH)
+menu_title: Step 3, Enable Secure Shell (SSH)
+menu_order: 55
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: workspace
@@ -18,5 +18,5 @@ The [SSH protocol ](https://en.wikipedia.org/wiki/Secure_Shell){:target="_blank"
 
 
 #### Next step
-[Set up PHP]({{ page.baseurl }}cloud/before/before-workspace-php.html)
+[Step 4, Install Magento prerequisites]({{ page.baseurl }}cloud/before/before-workspace-magento-prereqs.html)
 

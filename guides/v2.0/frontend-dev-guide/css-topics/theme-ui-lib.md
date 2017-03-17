@@ -109,7 +109,7 @@ When naming custom variables, please follow the [Magento naming convention for t
 
 ## Using mixins {#fedg_using-ui-lib_customize}
 
-You can use a mixin with default variables values, or you can redefine them when calling a mixin. The following paragraphs describe the both ways to call a mixin.
+You can use a mixin with default variables values, or you can redefine them when calling a mixin. The following paragraphs describe both ways to call a mixin.
 
 To use a mixin with default values, call the mixin without specifying any parameters. For example:
 
