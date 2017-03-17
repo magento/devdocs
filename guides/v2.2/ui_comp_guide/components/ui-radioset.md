@@ -8,6 +8,10 @@ version: 2.2
 github_link: ui_comp_guide/components/ui-radioset.md
 ---
 
+## Overview
+
+The Radioset component is essentially a wrapper for the Chekboxset with the input type set to the radio button.
+
 ## Configuration options
 
 Extends all `abstract` configuration.
@@ -32,6 +36,12 @@ Radioset-specific options:
     <td>Set the input type in the UI: true for checkbox, false for radio button.</td>
     <td>Boolean</td>
     <td><code>false</code></td>
+  </tr>
+  <tr>
+    <td><code>options</code></td>
+    <td>The array of the options to be displayed in the list for selection.</td>
+    <td>Array</td>
+    <td><code>[]</code></td>
   </tr>
   <tr>
     <td><code>template</code></td>

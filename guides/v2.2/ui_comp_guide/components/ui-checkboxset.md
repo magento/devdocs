@@ -8,6 +8,10 @@ version: 2.2
 github_link: ui_comp_guide/components/ui-сheckboxset.md
 ---
 
+## Overview
+
+The Checkboxset component implements a group of selection elements type of which can be either `checkbox` (default) or `radio`.
+
 ## Configuration options
 
 Extends all `abstract` configuration.
@@ -32,6 +36,12 @@ Checkboxset-specific configuration:
     <td>Set the input type in the UI: <code>true</code> for checkbox, <code>false</code> for radio button.</td>
     <td>Boolean</td>
     <td><code>true</code></td>
+  </tr>
+  <tr>
+    <td><code>options</code></td>
+    <td>The array of the options to be displayed in the list for selection.</td>
+    <td>Array</td>
+    <td><code>[]</code></td>
   </tr>
   <tr>
     <td><code>template</code></td>

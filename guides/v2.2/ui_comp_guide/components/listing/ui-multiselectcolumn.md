@@ -8,6 +8,10 @@ version: 2.2
 github_link: ui_comp_guide/components/listing/ui-multiselectcolumn.md
 ---
 
+## Overview
+
+The MultiselectColumn component is a column that allows to select table's records. It displays check boxes in its fields and provides additional handlers to toggle selections on the current page or across the whole data set.
+
 Constructor: [app/code/Magento/Ui/view/base/web/js/grid/columns/multiselect.js]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/grid/columns/multiselect.js)
 
 ## MultiselectColumn configuration

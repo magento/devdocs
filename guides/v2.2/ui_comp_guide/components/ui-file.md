@@ -8,6 +8,10 @@ version: 2.2
 github_link: ui_comp_guide/components/ui-file.md
 ---
 
+## Overview
+
+The File component is a form element that implements the HTML `<input>` field of type="file".
+
 ## File configuration
 
 Extends all `abstract` configuration.

@@ -8,6 +8,10 @@ version: 2.2
 github_link: ui_comp_guide/components/ui-hidden.md
 ---
 
+## Overview
+
+The Hidden component is a form element that implements the HTML `<input>` field of type="hidden".
+
 ## Configuration options
 
 Extends all `abstract` configuration.
