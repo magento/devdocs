@@ -20,7 +20,7 @@ Development system {#deploy-split-dev}
 Build system {#deploy-split-build}
 :	One system on which you deploy static assets and compile code for your production system. Because you build these assets on a system not in production, your production system's downtime is minimized.
 
-	Your build system does not have to have Magento installed on it. It needs only the Magento code but no database connection is required.
+Your build system does not have to have Magento installed on it. It needs only the Magento code but no database connection is required. Also, your build system doesn't need to be a physically separate server. 
 
 Staging system {#deploy-split-stage}
 :	_Optional_. You can optionally set up a staging system to use for final testing of all integrated code, including User Acceptance Testing (UAT). Set up a staging system the same way you set up a production system. Except for the fact that staging is not your live store and doen't process orders from customers, it's identical to production.
