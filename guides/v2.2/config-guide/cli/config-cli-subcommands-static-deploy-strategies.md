@@ -21,7 +21,7 @@ When [deploying static view files]({{page.baseurl}}config-guide/cli/config-cli-s
 The strategies are aimed to provide the optimized deployment result for different use cases:
 
 * Standard is the regular deployment process.
-* Quick minimizes the time required for deployment when files for more  than one locale are deployed.
+* Quick minimizes the time required for deployment when files for more than one locale are deployed.
 * Compact minimizes the space taken by the published view files.  
 
 The following sections describe the implementation details and features of the strategies.
@@ -32,27 +32,24 @@ When the Standard strategy is used, all static view files for all packages are d
 
 ## Quick strategy
 
-Deployment process with the Quick strategy is following:
+Deployment process with the Quick strategy is the following:
 
-1. For each theme, one arbitrary locale is chosen and all files for this locale are deployed like in the standard strategy.
+1. For each theme, one arbitrary locale is chosen and all files for this locale are deployed, like in the Standard strategy.
 2. For all other locales of the theme:
 	1. Files that override the deployed locale are defined. Those files are also deployed. 
 	2.  All other files are considered similar for all locales, and are copied from the deployed locale. 
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-By similar files we mean files, that are locale-(or theme-, or area-)independent. These files might include CSS, images, fonts.
+By similar we mean files, that are locale-(or theme-, or area-)independent. These files might include CSS, images, fonts.
 </div>
 
 This approach minimizes the deployment time required for multiple locales. Though a lot of files are duplicated.
 
 ## Compact strategy
 
-The compact strategy avoids duplicating of files for themes, areas and locales. Instead, the similar files are stored in the "base" sub-directories.
-For the best possible result, three scopes of possible similarity are allocated: area, theme, and  locale. "Basic" sub-directories are created for all combinations of these scopes. 
+The Compact strategy avoids files duplicating. Instead, the similar files are stored in the "basic" sub-directories.
+For the most optimized result, three scopes for possible similarity are allocated: area, theme, and locale. "Basic" sub-directories are created for all combinations of these scopes. The files are deployed to these sub-directories according to the following patterns. 
 
-The following table describes the patterns used for creating these sub-directories and distributing files between them:
-
-<p class="q">Is it correct to say that we deploy files to these directories?</p>
 <table>
   <tbody>
     <tr>
@@ -78,7 +75,7 @@ The following table describes the patterns used for creating these sub-directori
         %area%/%theme%/default
       </td>
       <td>
-        Files similar for all locales of a particular the of a
+        Files similar for all locales of a particular theme of a
         particular area.
       </td>
     </tr>
@@ -88,7 +85,7 @@ The following table describes the patterns used for creating these sub-directori
       </td>
       <td>
         Files specific for a particular area and locale, but
-        similar for all themes./td&gt;
+        similar for all themes.
       </td>
     </tr>
     <tr>
@@ -126,14 +123,14 @@ The following table describes the patterns used for creating these sub-directori
 
 
 ### Mapping deployed files
-This approach to deployment means that files are inherited from basic themes and locales. This inheritance relations are stored in the map files for each combination of area, theme and locale. There are separate map files for PHP and JS:
+This approach to deployment means that files are inherited from "basic" themes and locales. This inheritance relations are stored in the map files for each combination of area, theme and locale. There are separate map files for PHP and JS:
 
 * `map.php`
 * `requirejs-map.js`
 
 `map.php` is used by `Magento\Framework\View\Asset\Repository` to build correct URLs.
 
-`requirejs-map.js` is used by `baseUrlResolver` plugin for RequireJS.
+`requirejs-map.js` is used by the `baseUrlResolver` plugin for RequireJS.
 
 Example of `map.php`:
 
@@ -167,6 +164,6 @@ require.config({
 
 ## Tip for extension developers
 
-To avoid problems with static files not being found not displayed during page rendering, do not use URL concatenations: use `\Magento\Framework\View\Asset\Repository::createAsset()` for building URLs to the static view files.
+To avoid problems with static files being not found and not displayed during page rendering, do not use URL concatenations: use `\Magento\Framework\View\Asset\Repository::createAsset()` for building URLs to the static view files.
 
 
