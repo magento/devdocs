@@ -32,7 +32,7 @@ Compatible: Apache 2.2, 2.4, Nginx 1.8.*, 1.10.*, 1.11.*
 
 ### Database
 
-Compatible: MySQL 5.6, 5.7, MySQL NDB Cluster 7.4.*, MariaDB 10.0, 10.1, 10.2
+MySQL 5.6, 5.7, MySQL NDB Cluster 7.4.*, MariaDB 10.0, 10.1, 10.2
 
 <hr />
 
@@ -43,8 +43,6 @@ Magento application version 2.1.2 and later are compatible with MySQL 5.7.
 MariaDB and Percona are compatible with Magento because we support MySQL 5.6 APIs.
 	
 ### PHP 
-
-Compatible: PHP 7.0.4+, 7.1.*
 
 {% include install/php_2.2.md %}
 
@@ -96,13 +94,13 @@ For more information, see [Required PHP settings]({{ page.baseurl }}install-gde/
 Mail Transfer Agent (MTA) or an SMTP server
 
 ### Magento can utilize the following technologies:
-*	<a href="{{page.baseurl}}config-guide/redis/config-redis.html">Redis</a> version 3.0 (compatible with 2.4+ ) for page caching and session storage (the latter supported by Magento version 2.0.6 and later only) 
+*	<a href="{{page.baseurl}}config-guide/redis/config-redis.html">Redis</a> version 3.2 (compatible with 2.4+ ) for page caching and session storage (the latter supported by Magento version 2.0.6 and later only) 
 *	<a href="{{page.baseurl}}config-guide/varnish/config-varnish.html">Varnish</a> version 4.x or 5.0
 *	<a href="{{page.baseurl}}config-guide/memcache/memcache.html">memcached</a> latest stable version for session storage with either `memcache` or `memcached` PHP extensions (latest stable version)
 
 *	Magento Enterprise Edition (EE) only <img src="{{ site.baseurl }}common/images/ee-only_small.png">
 
-    *	Elasticsearch versions 1.7 and 2.x (recommended)
+    *	Elasticsearch versions 2.x 
 
 		*	If you get the Elasticsearch software from the Elasticsearch Linux repository, we support versions 2.x.
 		*	If you get the Elasticsearch software from their [Elasticsearch-PHP repository](https://github.com/elastic/elasticsearch-php){:target="_blank"}, we support the `2.0` branch.
