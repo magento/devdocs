@@ -5,7 +5,9 @@ subgroup: 999_prod
 title: Set up your build system
 menu_title: Set up your build system
 menu_node: 
-menu_order: 21
+menu_order: 22
+level3_menu_node: level3child
+level3_subgroup: setup
 version: 2.2
 github_link: config-guide/prod/prod_deploy-setup-build.md
 ---
@@ -24,8 +26,6 @@ You can have one build system that meets the following requirements:
 	*	[Ubuntu]({{ page.baseurl }}install-gde/prereq/php-ubuntu.html)
 *	Must have Composer installed
 
-{% include install/composer-clone.md %}
-
 The build system does _not_ need any of the following:
 
 *	Magento database connection
@@ -35,7 +35,11 @@ The build system does _not_ need any of the following:
 The build machine can be on its own host or on the same host as an installed Magento system.
 </div>
 
-To set up a build machine:
+{% include install/composer-clone.md %}
+
+## Configure the build machine
+
+To configure a build machine:
 
 1.	Retrieve the Magento code from source control.
 

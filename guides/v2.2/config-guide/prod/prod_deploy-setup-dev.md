@@ -5,7 +5,9 @@ subgroup: 999_prod
 title: Set up your development systems
 menu_title: Set up your development systems
 menu_node: 
-menu_order: 20
+menu_order: 21
+level3_menu_node: level3child
+level3_subgroup: setup
 version: 2.2
 github_link: config-guide/prod/prod_deploy-setup-dev.md
 ---
