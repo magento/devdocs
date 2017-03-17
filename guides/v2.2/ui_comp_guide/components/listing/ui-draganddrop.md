@@ -8,6 +8,10 @@ version: 2.2
 github_link: ui_comp_guide/components/listing/ui-draganddrop.md
 ---
 
+## Overview
+
+The DragAndDrop is an extension for the Columns component that allows user to move columns changing their position in the table.
+
 Constructor: [app/code/Magento/Ui/view/base/web/js/grid/dnd.js]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/grid/dnd.js)
 
 ## DragAndDrop configuration
@@ -37,7 +41,7 @@ DragAndDrop own configuration:
   </tr>
   <tr>
     <td><code>fixedY</code></td>
-    <td>Whether the column has a fixed positon on the Y-axis.  That is, whether it can be moved vertically.</td>
+    <td>Whether the column has a fixed positon on the Y-axis. That is, whether it can be moved vertically.</td>
     <td>Boolean</td>
     <td><code>true</code></td>
   </tr>
