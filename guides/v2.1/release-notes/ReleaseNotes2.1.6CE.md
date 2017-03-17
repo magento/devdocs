@@ -28,7 +28,7 @@ Magento 2.1.6 contains over 15 significant performance enhancements when compare
 
 	* loading configurable products from the database is now up to 5x faster
 
-	* price calculations is now up to 3-5% faster
+	* price calculations are now up to 3-5% faster
 
 	* stock validation is now up to 20% faster
 
@@ -36,9 +36,9 @@ Magento 2.1.6 contains over 15 significant performance enhancements when compare
 
 * **Optimized image resizing** 
 
-	* image resize operations performed from the Command Line Interface (CLI) now generate images of all sizes
+	* image resize operations performed from the command line interface now generate images of all sizes. See [`magento catalog:images:resize]({{ page.baseurl }}frontend-dev-guide/themes/theme-images.html) for more information.
 
-	* image resize operations from the Admin is fixed as well
+	* image resize operations from the Admin have been fixed 
 
 	* significant decrease in the number of file system operations when processing images on frontend
 
@@ -50,7 +50,7 @@ Magento 2.1.6 contains over 15 significant performance enhancements when compare
 	* layered navigation is now up to 3% faster due to the caching of attribute options
 
 
-*	**Minimization of indexing operations after product import**
+*	**Minimized indexing operations after product import**
 
 
 
@@ -62,7 +62,7 @@ Magento 2.1.6 contains over 15 significant performance enhancements when compare
 ### Catalog
 
 
-<!--- 65324 -->*  Magento no longer locks the `category_product_entity` table, which will reduce lock-related timeouts when indexing and checkout operations are running in parallel. Previously, Magento locked the `category_product_entity` table. (The second table is not required for checking stock information.)
+<!--- 65324 -->*  Magento no longer locks the `category_product_entity` table. Unlocking this table will reduce lock-related timeouts when indexing and checkout operations run in parallel. Previously, Magento locked the `category_product_entity` table. 
 
 
 <!--- 65251 -->* The storefront now displays images that Magento resizes during product save operations, rather than resizing the product on the storefront. Previously, the image path contained `store_id`,  and during save operations, Magento resized images for images the default store only. 
@@ -71,17 +71,17 @@ Magento 2.1.6 contains over 15 significant performance enhancements when compare
 
 ### Configurable products
 
-<!--- 65339 -->* The check that Magento runs to confirm a configurable product's readiness for sale is now faster.  (The `isSalable` method checks that a configurable product can be sold (that is, is in a saleable state). 
+<!--- 65339 -->* The check that Magento runs to confirm a configurable product's readiness for sale is now faster.  (The `isSalable` method checks that a configurable product can be sold (that is, is in a saleable state)). 
 
 
 
-<!--- 65246 -->*  Magento no longer calculates configurable product special prices on the Category page. Previously, Magento calculated special prices on the Category page, but did not display them.  
+<!--- 65246 -->*  Magento no longer calculates configurable product special prices on the category page. Previously, Magento calculated special prices on the category page, but did not display them.  
 
 
 
 ### Indexers
 
-<!--- 65362 -->* Magento now runs a selective partial re-indexing operation after import if you've set **Update on Schedule** to on. Previously, Magento ran a full reindex no matter which index mode was set. 
+<!--- 65362 -->* Magento now runs a selective partial re-indexing operation after import if you enabled **Update on Schedule**. Previously, Magento ran a full reindex no matter which index mode was set. 
 
 
 
@@ -115,7 +115,7 @@ Magento 2.1.6 contains over 15 significant performance enhancements when compare
 
 <!--- 65402 -->* The logic that Magento uses to validate swatch attributes has been optimized. 
 
-<!--- 65248 -->* Magento now caches swatch data in block cache, which improves the responsiveness of the configurable product pages. 
+<!--- 65248 -->* Magento now caches swatch data in the block cache, which improves the responsiveness of the configurable product pages. 
 
 
 
