@@ -57,9 +57,9 @@ Command options:
 The following table discusses the meanings of this command's parameters and values. 
 
 <table>
-  <col width="15%" />
-  <col width="65%" />
   <col width="25%" />
+  <col width="65%" />
+  <col width="15%" />
   <tbody>
     <tr>
       <th>
@@ -384,18 +384,18 @@ The following table discusses the meanings of this command's parameters and valu
       <td>
         Define the deployment strategy.
         <p>
-          Use "quick" strategy, if you have more than one locale.
+          Use the Quick strategy, if you have more than one locale.
           If additionally the amount of server space taken by the
           published view files is one of your concerns, use the
-          "compact" strategy.
+          Compact strategy.
         </p>
         <p>
-          By default, the "quick" strategy is used.
+          By default, the Quick strategy is used.
         </p>
         <p>
           For details about the implementation of each strategy,
           see the <a href=
-          "{{page.baseurl}}config-guide/cli/config-cli-subcommands-static-deploy-strategies.md">
+          "{{page.baseurl}}config-guide/cli/config-cli-subcommands-static-deploy-strategies.html">
           Deployment strategies</a> topic.
         </p>
       </td>

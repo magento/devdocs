@@ -14,25 +14,25 @@ github_link: config-guide/cli/config-cli-subcommands-static-deploy-strategies.md
 
 When [deploying static view files]({{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html), you can choose one of the three available strategies:
 
-* standard
-* quick
-* compact
+* Standard
+* Quick
+* Compact
 
 The strategies are aimed to provide the optimized deployment result for different use cases:
 
-* "standard" is the regular deployment process.
-* "quick" minimizes the time required for deployment when files for more  than one locale are deployed.
-* "compact" minimizes the space taken by the published view files.  
+* Standard is the regular deployment process.
+* Quick minimizes the time required for deployment when files for more  than one locale are deployed.
+* Compact minimizes the space taken by the published view files.  
 
 The following sections describe the implementation details and features of the strategies.
 
 ## Standard strategy
 
-When the standard strategy is used, all static view files for all packages are deployed, that is, processed by `\Magento\Framework\App\View\Asset\Publisher`.
+When the Standard strategy is used, all static view files for all packages are deployed, that is, processed by `\Magento\Framework\App\View\Asset\Publisher`.
 
 ## Quick strategy
 
-Deployment process with the quick strategy is following:
+Deployment process with the Quick strategy is following:
 
 1. For each theme, one arbitrary locale is chosen and all files for this locale are deployed like in the standard strategy.
 2. For all other locales of the theme:
@@ -40,17 +40,17 @@ Deployment process with the quick strategy is following:
 	2.  All other files are considered similar for all locales, and are copied from the deployed locale. 
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-By similar files we mean...
+By similar files we mean files, that are locale-(or theme-, or area-)independent. These files might include CSS, images, fonts.
 </div>
 
-<p class="q">What would be the best definition for similar files?</p>
+<p class="q">IS it a good definition for similar files?</p>
 
 This approach minimizes the deployment time required for multiple locales. Though a lot of files are duplicated.
 
 ## Compact strategy
 
-The compact strategy avoids duplicating of files for themes, areas and locales. Instead, the similar files are stored in "base" sub-directories.
-For the best possible result, three levels of similarity are allocated: area, theme, and  locale. "Basic" sub-directories are created for all combinations. 
+The compact strategy avoids duplicating of files for themes, areas and locales. Instead, the similar files are stored in the "base" sub-directories.
+For the best possible result, three scopes of possible similarity are allocated: area, theme, and  locale. "Basic" sub-directories are created for all combinations of these scopes. 
 
 The following table describes the patterns used for creating these sub-directories and distributing files between them:
 
@@ -102,7 +102,7 @@ This approach to deployment means that files are inherited from basic themes and
 
 `requirejs-map.js` is used by baseUrlResolver plugin for RequireJS.
 
-Example of map.php:
+Example of `map.php`:
 
 {%highlight php%}
     return [
@@ -119,7 +119,7 @@ Example of map.php:
             ];
 {%endhighlight%}
 
-Example of requirejs-map.js
+Example of `requirejs-map.js`:
 
 {%highlight js%}
     require.config({
@@ -132,7 +132,7 @@ Example of requirejs-map.js
 {%endhighlight%}
 
 
-## Things to keep in mind for extension developers
+## Tip for extension developers
 
 To avoid problems with static files not being found not displayed during page rendering, do not use URL concatenations: use `\Magento\Framework\View\Asset\Repository::createAsset()` for building URLs to the static view files.
 
