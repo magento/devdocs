@@ -35,7 +35,7 @@ Magento 2.1.6 contains over 15 significant performance enhancements when compare
 
 * **Optimized image resizing** 
 
-	* image resize operations performed from the command line interface now generate images of all sizes. See [`magento catalog:images:resize]({{ page.baseurl }}frontend-dev-guide/themes/theme-images.html) for more information.
+	* image resize operations performed from the command line interface now generate images of all sizes. See [magento catalog:images:resize]({{ page.baseurl }}frontend-dev-guide/themes/theme-images.html) for more information.
 
 	* image resize operations from the Admin have been fixed
 
