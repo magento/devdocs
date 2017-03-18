@@ -17,31 +17,36 @@ github_link: config-guide/prod/config-reference-var-name.md
 ### Find a website or store view scope in the database {#cloud-vars-db}
 To get these values from the database:
 
-TBD
+1.	If you haven't done so already, log in to your development system as the [Magento file system owner]({{ page.baseurl }}install-gde/prereq/file-sys-perms-over.html).
+2.	Enter the following command:
 
-After you connect to the database, use the following SQL queries to find the relevant values:
+		mysql -u <magento database user name> -p
+3.	At the `mysql>` prompt, enter the following commands in the order shown:
 
-	SELECT * FROM STORES;
-	SELECT * FROM STORE_WEBSITE;
+		use <magento database name>;
+4.	Use the following SQL queries to find the relevant values:
 
-A sample follows:
+		SELECT * FROM STORES;
+		SELECT * FROM STORE_WEBSITE;
 
-	MariaDB [main]> SELECT * FROM STORE_WEBSITE;
-	+------------+-------+--------------+------------+------------------+------------+
-	| website_id | code  | name         | sort_order | default_group_id | is_default |
-	+------------+-------+--------------+------------+------------------+------------+
-	|          0 | admin | Admin        |          0 |                0 |          0 |
-	|          1 | base  | Main Website |          0 |                1 |          1 |
-	|          2 | test1 | Test Website |          0 |                3 |          0 |
-	+------------+-------+--------------+------------+------------------+------------+
+	A sample follows:
 
-Use the value from the `code` column as the scope name, not the `name` value.
+		mysql> SELECT * FROM STORE_WEBSITE;
+		+------------+-------+--------------+------------+------------------+------------+
+		| website_id | code  | name         | sort_order | default_group_id | is_default |
+		+------------+-------+--------------+------------+------------------+------------+
+		|          0 | admin | Admin        |          0 |                0 |          0 |
+		|          1 | base  | Main Website |          0 |                1 |          1 |
+		|          2 | test1 | Test Website |          0 |                3 |          0 |
+		+------------+-------+--------------+------------+------------------+------------+
 
-For example, to set a configuration variable for Test Website, use the following format:
+5.	Use the value from the `code` column as the scope name, not the `name` value.
 
-	CONFIG__WEBSITES__TEST1__<SYSTEM__VARIABLE__NAME>
+	For example, to set a configuration variable for Test Website, use the following format:
 
-where `<SYSTEM__VARIABLE__NAME>` comes from the next section.
+		CONFIG__WEBSITES__TEST1__<SYSTEM__VARIABLE__NAME>
+
+	where `<SYSTEM__VARIABLE__NAME>` comes from the next section.
 
 {% include config/config-reference_conf-var-name2.md %}
 

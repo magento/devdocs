@@ -1,6 +1,6 @@
 <div markdown="1">
 
-<p id="cloud-system-vars-sys"></p>{% collapsibleh2 Step 2: Set global, website, or store view variables %}
+## Step 2: Set global, website, or store view variables {#cloud-system-vars-sys}
 
 This section discusses how to set system variables. 
 
@@ -25,8 +25,6 @@ The following table shows a few sample variables.
 | Custom Admin Path  | Advanced > **Admin** | `<SCOPE>__ADMIN__URL__CUSTOM_PATH` |  
 
 A complete list of values can be found in [Sensitive configuration paths]({{ page.baseurl }}config-guide/prod/config-reference-sens.html).
-
-{% endcollapsibleh2 %}
 
 ## Examples {#cloud-system-vars-ex}
 This section shows how to find values of some sample variables.
