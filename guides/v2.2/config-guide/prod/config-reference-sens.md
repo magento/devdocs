@@ -14,8 +14,8 @@ github_link: config-guide/prod/config-reference-sens.md
 
 This topic lists only configuration paths for sensitive settings. For a list of other configuration paths, see:
 
-*	[All configuration paths except payments]({{ page.baseurl }}cloud/live/config-reference-most.html)
-*	[Payment configuration paths]({{ page.baseurl }}cloud/live/config-reference-payment.html).
+*	[All configuration paths except payments]({{ page.baseurl }}config-guide/prod/config-reference-most.html)
+*	[Payment configuration paths]({{ page.baseurl }}config-guide/prod/config-reference-payment.html).
 
 {% include cloud/config-vars.md %}
 

@@ -16,12 +16,14 @@ This topic lists all configuration paths _except_ payment variables and sensitiv
 
 For those configuration paths, see:
 
-*	[Payment configuration paths]({{ page.baseurl }}cloud/live/config-reference-payment.html)
-*	[Sensitive configuration paths]({{ page.baseurl }}cloud/live/config-reference-sens.html)
+*	[Payment configuration paths]({{ page.baseurl }}config-guide/prod/config-reference-payment.html)
+*	[Sensitive configuration paths]({{ page.baseurl }}config-guide/prod/config-reference-sens.html)
 
 To optionally override system-specific settings, you can use configuration variables.
 
 {% include cloud/config-vars.md %}
+
+For more information, see [How to name configuration variables]({{ page.baseurl }}config-guide/prod/config-reference-var-name.html).
 
 {% include config/config-reference.md %}
 

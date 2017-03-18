@@ -4,13 +4,13 @@ A configuration variable name consists of its scope followed by its configuratio
 
 You can use variables for any of the following:
 
-*	You _must_ set [sensitive values]({{ page.baseurl }}cloud/live/config-reference-sens.html) using configuration variables.
+*	You _must_ set [sensitive values]({{ page.baseurl }}config-guide/prod/config-reference-sens.html) using configuration variables.
 *	You can optionally use configuration variables to override system-specific settings.
 
 	Configuration paths for system-specific settings can be found in:
 
-	*	[All configuration paths except payments reference]({{ page.baseurl }}cloud/live/config-reference-most.html)
-	*	[Payment configuration paths reference]({{ page.baseurl }}cloud/live/config-reference-payment.html)
+	*	[All configuration paths except payments reference]({{ page.baseurl }}config-guide/prod/config-reference-most.html)
+	*	[Payment configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-payment.html)
 
 ### Variable names
 The general format of system settings variable names follows:
@@ -46,8 +46,8 @@ The general format of system settings variable names follows:
 
 A complete list of configuration paths can be found in:
 
-*	[All configuration variables except paths]({{ page.baseurl }}cloud/live/config-reference-most.html)
-*	[Payment configuration paths]({{ page.baseurl }}cloud/live/config-reference-payment.html)
+*	[All configuration variables except paths]({{ page.baseurl }}config-guide/prod/config-reference-most.html)
+*	[Payment configuration paths]({{ page.baseurl }}config-guide/prod/config-reference-payment.html)
 
 ## Step 1: Find the website or store view scope value {#deploy-system-vars-scopes}
 

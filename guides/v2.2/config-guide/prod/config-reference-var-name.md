@@ -9,7 +9,7 @@ menu_node:
 level3_menu_node: level3child
 level3_subgroup: config-ref
 version: 2.1
-github_link: config/prod/config-reference-var-name.md
+github_link: config-guide/prod/config-reference-var-name.md
 ---
 
 {% include config/config-reference_conf-var-name1.md %}
