@@ -26,8 +26,9 @@ You can set values at the following times:
 
 There are two commands:
 
-* `config:set` sets any configuration value by its configuration path
-* `config:show` shows saved configuration values
+*   `config:set` sets any non-sensitive configuration value by its configuration path
+*   `config:set:sensitive` sets any sensitive configuration value by its configuration path
+*   `config:show` shows saved configuration values
   
 ## First steps {#first}
 {% include install/first-steps-cli.html %}

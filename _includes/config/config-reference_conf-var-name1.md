@@ -4,8 +4,8 @@ A configuration variable name consists of its scope followed by its configuratio
 
 You can use variables for any of the following:
 
-*	[Sensitive values]({{ page.baseurl }}config-guide/prod/config-reference-sens.html) must be set using either configuration variables or the [`magento config:sensitive:set`]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-export.html) command.
-*	[System-specific values]({{ page.baseurl }}) must be set using either configuration variables or the [`magento app:config:dump --lock]({{ page.baseurl }}) command.
+*	[Sensitive values]({{ page.baseurl }}config-guide/prod/config-reference-sens.html) must be set using either configuration variables or the [`magento config:sensitive:set`]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config.html) command.
+*	System-specific values must be set using either configuration variables or the [`magento config:set --lock`]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config.html) command.
 
 *	You can optionally use configuration variables to override system-specific settings.
 
