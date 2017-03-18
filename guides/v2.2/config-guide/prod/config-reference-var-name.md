@@ -46,7 +46,7 @@ where `<SYSTEM__VARIABLE__NAME>` comes from the next section.
 {% include config/config-reference_conf-var-name2.md %}
 
 #### Next step
-[Example of managing system-specific settings]({{ page.baseurl }}cloud/live/sens-data-initial.html)
+TBD
 
 #### Related information
 *	[Magento User Guide discussion of scope](http://docs.magento.com/m2/ce/user_guide/configuration/scope.html){:target="_blank"}

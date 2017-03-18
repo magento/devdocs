@@ -19,5 +19,7 @@ This topic lists only configuration paths for sensitive settings. For a list of 
 
 {% include cloud/config-vars.md %}
 
+For more information, see [How to name configuration variables]({{ page.baseurl }}config-guide/prod/config-reference-var-name.html).
+
 {% include config/config-reference_sensitive.md %}
  
