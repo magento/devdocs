@@ -35,7 +35,7 @@ The general format of system settings variable names follows:
 
 	For more information about scopes, see:
 
-	*	[Step 1: Find the scope value](#cloud-system-vars-scopes)
+	*	[Step 1: Find the website or store view scope value](#cloud-system-vars-scopes)
 	*	[Magento User Guide](http://docs.magento.com/m2/ce/user_guide/configuration/scope.html){:target="_blank"}
 	*	[Scope quick reference](http://docs.magento.com/m2/ce/user_guide/stores/store-scope-reference.html){:target="_blank"}
 
@@ -90,8 +90,8 @@ For example, to find a website or store view scope value in the Admin:
 2.	Click **Stores** > **All Stores**.
 3.	Click the name of a website or store view.
 
-	The right figure is displayed similar to the following.
+	The right pane is displayed similar to the following.
 
-	![Find a website code]({{ site.baseurl }}common/images/cloud_vars_website-code.png){:width="600px"}
+	![Find a website code]({{ site.baseurl }}common/images/cloud_vars_website-code.png){:width="300px"}
 3.	The scope name is displayed in the **Code** field.
 4.	Continue with [Step 2:  Set global, website, or store view variables](#cloud-system-vars-sys).

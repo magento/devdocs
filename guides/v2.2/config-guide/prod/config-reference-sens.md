@@ -2,8 +2,8 @@
 layout: default
 group: config-guide
 subgroup: 999_prod
-title: Sensitive configuration paths reference
-menu_title: Sensitive configuration paths reference
+title: Sensitive and system-specific configuration paths reference
+menu_title: Sensitive and system-specific configuration paths reference
 menu_order: 303
 menu_node: 
 level3_menu_node: level3child
