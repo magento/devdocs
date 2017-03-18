@@ -896,7 +896,7 @@ Conversion Value | `google/adwords/conversion_value` | <!-- ![Not EE-only]({{ si
 ### Signifyd paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Fraud Protection**.
 
-Name  | Config path | EE only? | Encrypted?
+| Name  | Config path | EE only? | Encrypted? |
 |--------------|--------------|--------------|--------------|
 | Enable this Solution  | `fraud_protection/signifyd/active`   | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) |   |
 | API Key | `fraud_protection/signifyd/api_key`   | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) |   |
