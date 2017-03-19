@@ -205,12 +205,12 @@ User | `payment/payflow_advanced/user` | <!-- ![Not EE-only]({{ site.baseurl }}c
 Password | `payment/payflow_advanced/pwd` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
 User | `payment/payflowpro/user` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
 Password | `payment/payflowpro/pwd` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
-Test Mode | `payment/payflowpro/sandbox_flag` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Test Mode | `payment/payflowpro/sandbox_flag` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 Partner | `payment/payflowpro/partner` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Proxy Host | `payment/payflowpro/proxy_host` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
-Proxy Port | `payment/payflowpro/proxy_port` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Proxy Host | `payment/payflowpro/proxy_host` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Proxy Port | `payment/payflowpro/proxy_port` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 Debug Mode | `payment/payflowpro/debug` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
-SFTP Credentials | `payment_all_paypal/paypal_payflowpro/settings_paypal_payflow/settings_paypal_payflow_advanced/paypal_payflow_settlement_report/heading_sftp` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> |  ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+SFTP Credentials | `payment_all_paypal/paypal_payflowpro/settings_paypal_payflow/settings_paypal_payflow_advanced/paypal_payflow_settlement_report/heading_sftp` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 
 ### PayPal Payflow Link sensitive and system-specific paths
 
