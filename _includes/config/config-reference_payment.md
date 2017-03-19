@@ -39,7 +39,6 @@ Display on Product Details Page | `payment/payflow_express/visible_on_product` |
 Display on Shopping Cart | `payment/payflow_express/visible_on_cart` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Payment Applicable From | `payment/payflow_express/allowspecific` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Countries Payment Applicable From | `payment/payflow_express/specificcountry` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Debug Mode | `payment/payflow_express/debug` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Enable SSL verification | `payment/payflow_express/verify_peer` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Transfer Cart Line Items | `payment/payflow_express/line_items_enabled` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Skip Order Review Step | `payment/paypal_express/skip_order_review_step` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
@@ -59,8 +58,7 @@ Debug Mode | `payment/paypal_billing_agreement/debug` | <!-- ![Not EE-only]({{ s
 Enable SSL verification | `payment/paypal_billing_agreement/verify_peer` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Transfer Cart Line Items | `payment/paypal_billing_agreement/line_items_enabled` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Allow in Billing Agreement Wizard | `payment/paypal_billing_agreement/allow_billing_agreement_wizard` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Sandbox Mode | `paypal/fetch_reports/ftp_sandbox` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Enable Automatic Fetching | `paypal/fetch_reports/active` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
+nable Automatic Fetching | `paypal/fetch_reports/active` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Schedule | `paypal/fetch_reports/schedule` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Time of Day | `paypal/fetch_reports/time` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 PayPal Product Logo | `paypal/style/logo` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
@@ -92,7 +90,6 @@ PayPal Merchant Pages Style | `payment_all_paypal/express_checkout/settings_ec/s
 Name  | Config path | EE only? | Encrypted? |
 |--------------|--------------|--------------|--------------|
 API Authentication Methods | `paypal/wpp/api_authentication` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Sandbox Mode | `paypal/wpp/sandbox_flag` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 API Uses Proxy | `paypal/wpp/use_proxy` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 SFTP Credentials | `payment_all_paypal/payments_pro_hosted_solution/pphs_settings/pphs_settings_advanced/pphs_settlement_report/heading_sftp` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Scheduled Fetching | `payment_all_paypal/payments_pro_hosted_solution/pphs_settings/pphs_settings_advanced/pphs_settlement_report/heading_schedule` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
@@ -171,21 +168,15 @@ Name  | Config path | EE only? | Encrypted? |
 |--------------|--------------|--------------|--------------|
 Partner | `payment/payflow_link/partner` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Vendor | `payment/payflow_link/vendor` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Test Mode | `payment/payflow_link/sandbox_flag` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Use Proxy | `payment/payflow_link/use_proxy` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Proxy Host | `payment/payflow_link/proxy_host` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Proxy Port | `payment/payflow_link/proxy_port` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Enable Payflow Link | `payment/payflow_link/active` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Enable Express Checkout | `payment/payflow_express/active` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Sort Order PayPal Credit | `payment/payflow_express_bml/sort_order` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Payment Applicable From | `payment/payflow_link/allowspecific` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Countries Payment Applicable From | `payment/payflow_link/specificcountry` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Debug Mode | `payment/payflow_link/debug` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Enable SSL verification | `payment/payflow_link/verify_peer` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 CVV Entry is Editable | `payment/payflow_link/csc_editable` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Require CVV Entry | `payment/payflow_link/csc_required` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Send Email Confirmation | `payment/payflow_link/email_confirmation` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-URL method for Cancel URL and Return URL | `payment/payflow_link/url_method` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 SFTP Credentials | `payment_all_paypal/payflow_link/settings_payflow_link/settings_payflow_link_advanced/payflow_link_settlement_report/heading_sftp` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Scheduled Fetching | `payment_all_paypal/payflow_link/settings_payflow_link/settings_payflow_link_advanced/payflow_link_settlement_report/heading_schedule` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Title | `payment/payflow_link/title` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
