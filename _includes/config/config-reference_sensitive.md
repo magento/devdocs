@@ -241,8 +241,6 @@ Sandbox Mode | `paypal/fetch_reports/ftp_sandbox` | <!-- ![Not EE-only]({{ site.
 Debug Mode | `payment/paypal_express/debug` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 Debug Mode | `payment/paypal_billing_agreement/debug` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 
-
-
 ### PayPal Payflow Pro sensitive and system-specific paths
 
 Name  | Config path | EE only? | Encrypted? | System-specific? |
@@ -303,7 +301,7 @@ Merchant Account ID | `payment/braintree/merchant_account_id` | <!-- ![Not EE-on
 Kount Merchant ID | `payment/braintree/kount_id` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Override Merchant Name | `payment/braintree_paypal/merchant_name_override` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Merchant's Email | `payment/authorizenet_directpost/merchant_email` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-URL | `payment/braintree/descriptor_url` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+URL | `payment/braintree/descriptor_url` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 
 
 ### Worldpay sensitive and system-specific paths
@@ -316,6 +314,8 @@ Remote Admin Installation ID | `payment/worldpay/admin_installation_id` | ![EE-o
 Remote Admin Authorisation Password | `payment/worldpay/auth_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 MD5 Secret for Transactions | `payment/worldpay/md5_secret` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
 Signature Fields | `payment/worldpay/signature_fields` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
+Test Mode | `payment/worldpay/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+
 
 ### Authorize.net Direct Post sensitive and system-specific paths
 
@@ -324,6 +324,10 @@ Name  | Config path | EE only? | Encrypted? | System-specific? |
 API Login ID | `payment/authorizenet_directpost/login` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
 Transaction Key | `payment/authorizenet_directpost/trans_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![EE-only]({{ site.baseurl }}common/images/cloud_enc.png) | 
 Merchant MD5 | `payment/authorizenet_directpost/trans_md5` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![EE-only]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Test Mode | `payment/authorizenet_directpost/test` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Gateway URL | `payment/authorizenet_directpost/cgi_url` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Transaction Details URL | `payment/authorizenet_directpost/cgi_url_td` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Debug | `payment/authorizenet_directpost/debug` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 
 ### eWAY sensitive and system-specific paths
 
@@ -335,6 +339,7 @@ Live Client-side Encryption Key | `payment/eway/live_encryption_key` | ![EE-only
 Sandbox API Key | `payment/eway/sandbox_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
 Sandbox API Password | `payment/eway/sandbox_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
 Sandbox Client-side Encryption Key | `payment/eway/sandbox_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Sandbox Mode | `payment/eway/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 
 ### Cybersource sensitive and system-specific paths
 
@@ -345,6 +350,8 @@ Transaction Key | `payment/cybersource/transaction_key` | ![EE-only]({{ site.bas
 Profile ID | `payment/cybersource/profile_id` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
 Access Key | `payment/cybersource/access_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
 Secret Key | `payment/cybersource/secret_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Test Mode | `payment/cybersource/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+
 
 ### International paths
 
@@ -374,13 +381,13 @@ Transaction Details URL | `payment_es/authorizenet_directpost/cgi_url_td` | <!--
 Transaction Key | `payment_es/cybersource/transaction_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 Access Key | `payment_es/cybersource/access_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 Secret Key | `payment_es/cybersource/secret_key` |![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
-Test Mode | `payment_es/cybersource/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Test Mode | `payment_es/cybersource/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 Payment Response Password | `payment_es/worldpay/response_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 Remote Admin Authorisation Password | `payment_es/worldpay/auth_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 MD5 Secret for Transactions | `payment_es/worldpay/md5_secret` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 Debug | `payment_es/worldpay/debug` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 Sandbox Mode | `payment_es/eway/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
-Live API Key | `payment_es/eway/live_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Live API Key | `payment_es/eway/live_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 Live API Password | `payment_es/eway/live_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 Live Client-side Encryption Key | `payment_es/eway/live_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 Sandbox API Key | `payment_es/eway/sandbox_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |

@@ -293,11 +293,7 @@ Enabled | `payment/authorizenet_directpost/active` | <!-- ![Not EE-only]({{ site
 Payment Action | `payment/authorizenet_directpost/payment_action` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Title | `payment/authorizenet_directpost/title` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 New Order Status | `payment/authorizenet_directpost/order_status` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Test Mode | `payment/authorizenet_directpost/test` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Gateway URL | `payment/authorizenet_directpost/cgi_url` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Transaction Details URL | `payment/authorizenet_directpost/cgi_url_td` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Accepted Currency | `payment/authorizenet_directpost/currency` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Debug | `payment/authorizenet_directpost/debug` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Email Customer | `payment/authorizenet_directpost/email_customer` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Credit Card Types | `payment/authorizenet_directpost/cctypes` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Credit Card Verification | `payment/authorizenet_directpost/useccv` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
@@ -315,7 +311,6 @@ Enabled | `payment/cybersource/active` | ![EE-only]({{ site.baseurl }}common/ima
 Payment Action | `payment/cybersource/payment_action` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Title | `payment/cybersource/title` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 New Order Status | `payment/cybersource/order_status` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Test Mode | `payment/cybersource/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Debug | `payment/cybersource/debug` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Credit Card Types | `payment/cybersource/cctypes` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Payment from Applicable Countries | `payment/cybersource/allowspecific` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
@@ -333,7 +328,6 @@ Title | `payment/worldpay/title` | ![EE-only]({{ site.baseurl }}common/images/cl
 Allow To Edit Contact Information | `payment/worldpay/fix_contact` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Hide Contact Information | `payment/worldpay/hide_contact` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Debug | `payment/worldpay/debug` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Test Mode | `payment/worldpay/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Payment Action for Test | `payment/worldpay/test_action` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Payment Action | `payment/worldpay/payment_action` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Payment From Applicable Countries | `payment/worldpay/allowspecific` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
@@ -349,7 +343,6 @@ Name  | Config path | EE only? | Encrypted? |
 Enabled | `payment/eway/active` |![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Connection Type | `payment/eway/connection_type` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Title | `payment/eway/title` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Sandbox Mode | `payment/eway/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Payment Action | `payment/eway/payment_action` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Debug | `payment/eway/debug` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Credit Card Types | `payment/eway/cctypes` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
