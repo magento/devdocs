@@ -345,3 +345,26 @@ Transaction Key | `payment/cybersource/transaction_key` | ![EE-only]({{ site.bas
 Profile ID | `payment/cybersource/profile_id` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
 Access Key | `payment/cybersource/access_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
 Secret Key | `payment/cybersource/secret_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+
+### International paths
+
+Name  | Config path | EE only? | Encrypted? | System-specific? |
+|--------------|--------------|--------------|--------------|--------------|
+Transaction Key | `payment_au/authorizenet_directpost/trans_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Test Mode | `payment_au/authorizenet_directpost/test` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Gateway URL | `payment_au/authorizenet_directpost/cgi_url` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Transaction Details URL | `payment_au/authorizenet_directpost/cgi_url_td` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Transaction Key | `payment_au/cybersource/transaction_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Access Key | `payment_au/cybersource/access_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Secret Key | `payment_au/cybersource/secret_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Test Mode | `payment_au/cybersource/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Payment Response Password | `payment_au/worldpay/response_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Remote Admin Authorisation Password | `payment_au/worldpay/auth_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Sandbox Mode | `payment_au/eway/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Live API Key | `payment_au/eway/live_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Live API Password | `payment_au/eway/live_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Live Client-side Encryption Key | `payment_au/eway/live_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Sandbox API Key | `payment_au/eway/sandbox_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Sandbox API Password | `payment_au/eway/sandbox_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Sandbox Client-side Encryption Key | `payment_au/eway/sandbox_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+

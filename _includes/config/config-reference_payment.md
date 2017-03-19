@@ -360,7 +360,7 @@ Sort Order | `payment/eway/sort_order` | ![EE-only]({{ site.baseurl }}common/ima
 ### International paths {#vars-intl-list}
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-The variable values available are determined by your choice of [Merchant country](#vars-merch-country).
+The available paths are determined by your choice of [Merchant country](#vars-merch-country).
 </div>
 
 Name  | Config path | EE only? | Encrypted? |
@@ -1171,12 +1171,8 @@ Enabled | `payment_au/authorizenet_directpost/active` | <!-- ![Not EE-only]({{ s
 Payment Action | `payment_au/authorizenet_directpost/payment_action` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Title | `payment_au/authorizenet_directpost/title` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 API Login ID | `payment_au/authorizenet_directpost/login` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
-Transaction Key | `payment_au/authorizenet_directpost/trans_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
 Merchant MD5 | `payment_au/authorizenet_directpost/trans_md5` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
 New Order Status | `payment_au/authorizenet_directpost/order_status` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Test Mode | `payment_au/authorizenet_directpost/test` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Gateway URL | `payment_au/authorizenet_directpost/cgi_url` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Transaction Details URL | `payment_au/authorizenet_directpost/cgi_url_td` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Accepted Currency | `payment_au/authorizenet_directpost/currency` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Debug | `payment_au/authorizenet_directpost/debug` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Email Customer | `payment_au/authorizenet_directpost/email_customer` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
@@ -1192,12 +1188,8 @@ Enabled | `payment_au/cybersource/active` | ![EE-only]({{ site.baseurl }}common/
 Payment Action | `payment_au/cybersource/payment_action` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Title | `payment_au/cybersource/title` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Merchant ID | `payment_au/cybersource/merchant_id` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
-Transaction Key | `payment_au/cybersource/transaction_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
 Profile ID | `payment_au/cybersource/profile_id` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
-Access Key | `payment_au/cybersource/access_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
-Secret Key | `payment_au/cybersource/secret_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
 New Order Status | `payment_au/cybersource/order_status` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Test Mode | `payment_au/cybersource/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Debug | `payment_au/cybersource/debug` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Credit Card Types | `payment_au/cybersource/cctypes` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Payment from Applicable Countries | `payment_au/cybersource/allowspecific` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
@@ -1208,9 +1200,7 @@ Sort Order | `payment_au/cybersource/sort_order` | ![EE-only]({{ site.baseurl }}
 Enabled | `payment_au/worldpay/active` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Title | `payment_au/worldpay/title` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Installation ID | `payment_au/worldpay/installation_id` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Payment Response Password | `payment_au/worldpay/response_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Remote Admin Installation ID | `payment_au/worldpay/admin_installation_id` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Remote Admin Authorisation Password | `payment_au/worldpay/auth_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 MD5 Secret for Transactions | `payment_au/worldpay/md5_secret` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Allow To Edit Contact Information | `payment_au/worldpay/fix_contact` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Hide Contact Information | `payment_au/worldpay/hide_contact` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
@@ -1227,13 +1217,6 @@ Sort Order | `payment_au/worldpay/sort_order` | ![EE-only]({{ site.baseurl }}com
 Enabled | `payment_au/eway/active` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Connection Type | `payment_au/eway/connection_type` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Title | `payment_au/eway/title` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Sandbox Mode | `payment_au/eway/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Live API Key | `payment_au/eway/live_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
-Live API Password | `payment_au/eway/live_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
-Live Client-side Encryption Key | `payment_au/eway/live_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
-Sandbox API Key | `payment_au/eway/sandbox_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
-Sandbox API Password | `payment_au/eway/sandbox_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
-Sandbox Client-side Encryption Key | `payment_au/eway/sandbox_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
 Payment Action | `payment_au/eway/payment_action` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Debug | `payment_au/eway/debug` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Credit Card Types | `payment_au/eway/cctypes` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
