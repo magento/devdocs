@@ -54,7 +54,6 @@ Sort Order | `payment/paypal_billing_agreement/sort_order` | <!-- ![Not EE-only]
 Payment Action | `payment/paypal_billing_agreement/payment_action` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Payment Applicable From | `payment/paypal_billing_agreement/allowspecific` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Countries Payment Applicable From | `payment/paypal_billing_agreement/specificcountry` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Debug Mode | `payment/paypal_billing_agreement/debug` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Enable SSL verification | `payment/paypal_billing_agreement/verify_peer` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Transfer Cart Line Items | `payment/paypal_billing_agreement/line_items_enabled` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Allow in Billing Agreement Wizard | `payment/paypal_billing_agreement/allow_billing_agreement_wizard` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
@@ -79,7 +78,6 @@ Number of Child Authorizations | `payment/paypal_express/child_authorization_num
 Display on Shopping Cart | `payment/paypal_express/visible_on_cart` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Payment Applicable From | `payment/paypal_express/allowspecific` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Countries Payment Applicable From | `payment/paypal_express/specificcountry` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Debug Mode | `payment/paypal_express/debug` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Enable SSL verification | `payment/paypal_express/verify_peer` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 SFTP Credentials | `payment_all_paypal/express_checkout/settings_ec/settings_ec_advanced/express_checkout_settlement_report/heading_sftp` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Scheduled Fetching | `payment_all_paypal/express_checkout/settings_ec/settings_ec_advanced/express_checkout_settlement_report/heading_schedule` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
@@ -109,7 +107,6 @@ Payment Action | `payment/hosted_pro/payment_action` | <!-- ![Not EE-only]({{ si
 Display Express Checkout in the Payment Information step | `payment/hosted_pro/display_ec` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Payment Applicable From | `payment/hosted_pro/allowspecific` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Countries Payment Applicable From | `payment/hosted_pro/specificcountry` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Debug Mode | `payment/hosted_pro/debug` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Enable SSL verification | `payment/hosted_pro/verify_peer` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 
 <!-- ### PayPal Payments Standard -->

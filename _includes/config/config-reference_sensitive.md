@@ -7,6 +7,24 @@ All configuration paths listed in this topic are sensitive. The `System-specific
 ## General category sensitive and system-specific paths
 This section lists variable names and configuration paths available for options in the Admin under **Stores** > Settings > **Configuration** > **General**.
 
+### Web paths sensitive and system-specific paths
+These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **General** > **Web**.
+
+Name  | Config path | EE only? | Encrypted? | System-specific? |
+|--------------|--------------|--------------|--------------|
+Base URL | `web/unsecure/base_url` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Base Link URL | `web/unsecure/base_link_url` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Base URL for Static View Files | `web/unsecure/base_static_url` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Base URL for User Media Files | `web/unsecure/base_media_url` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Secure Base URL | `web/secure/base_url` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Secure Base Link URL | `web/secure/base_link_url` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Secure Base URL for Static View Files | `web/secure/base_static_url` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Secure Base URL for User Media Files | `web/secure/base_media_url` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Default Web URL | `web/default/front` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Default No-route URL | `web/default/no_route` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Cookie Path | `web/cookie/cookie_path` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Cookie Domain | `web/cookie/cookie_domain` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+
 ### Currency setup sensitive and system-specific paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **General** > **Currency setup**.
 
@@ -47,6 +65,18 @@ New Relic Application ID | `newrelicreporting/general/app_id` | <!-- ![Not EE-on
 New Relic API Key | `newrelicreporting/general/api` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
 Insights API Key | `newrelicreporting/general/insights_insert_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
 
+## Customers category sensitive and system-specific paths
+This section lists variable names and config paths available for options in the Admin under **Stores** > Settings > **Configuration** > **Customers**.
+
+### Customer configuration sensitive and system-specific paths
+These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Customers** > **Customer Configuration**.
+
+Name  | Config path | EE only? | Encrypted? | System-specific? |
+|--------------|--------------|--------------|--------------|--------------|
+Default Email Domain | `customer/create_account/email_domain` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+
+
+
 ## Catalog category
 This section lists variable names and config paths available for options in the Admin under **Stores** > Settings > **Configuration** > **Catalog**.
 
@@ -57,14 +87,18 @@ Name  | Config path | EE only? | Encrypted? | System-specific? |
 |--------------|--------------|--------------|--------------|
 Error Email Recipient | `catalog/productalert_cron/error_email` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 YouTube API Key | `catalog/product_video/youtube_api_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Solr Server Hostname | `catalog/search/solr_server_hostname` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Solr Server Port | `catalog/search/solr_server_port` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Solr Server Username | `catalog/search/solr_server_username` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Solr Server Password | `catalog/search/solr_server_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Solr Server Path | `catalog/search/solr_server_path` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Elasticsearch Server Hostname | `catalog/search/elasticsearch_server_hostname` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Elasticsearch Server Port | `catalog/search/elasticsearch_server_port` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Elasticsearch Index Prefix | `catalog/search/elasticsearch_index_prefix` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
+Solr Server Hostname | `catalog/search/solr_server_hostname` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Solr Server Port | `catalog/search/solr_server_port` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Solr Server Username | `catalog/search/solr_server_username` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Solr Server Password | `catalog/search/solr_server_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Solr Server Path | `catalog/search/solr_server_path` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Elasticsearch Server Hostname | `catalog/search/elasticsearch_server_hostname` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Elasticsearch Server Port | `catalog/search/elasticsearch_server_port` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Elasticsearch Index Prefix | `catalog/search/elasticsearch_index_prefix` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Enable Elasticsearch HTTP Auth | `catalog/search/elasticsearch_enable_auth` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Elasticsearch HTTP Username | `catalog/search/elasticsearch_username` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Elasticsearch HTTP Password | `catalog/search/elasticsearch_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Elasticsearch Server Timeout | `catalog/search/elasticsearch_server_timeout` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 
 ### XML sitemap sensitive and system-specific paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Catalog** > **XML Sitemap**.
@@ -87,6 +121,8 @@ ZIP/Postal Code | `shipping/origin/postcode` | <!-- ![Not EE-only]({{ site.baseu
 City | `shipping/origin/city` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Street Address | `shipping/origin/street_line1` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Street Address Line 2 | `shipping/origin/street_line2` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
+Live Account | `carriers/ups/is_account_live` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+
 
 ### Sales emails sensitive and system-specific paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Sales Emails**.
@@ -126,12 +162,13 @@ Secure Gateway URL | `carriers/usps/gateway_secure_url` | <!-- ![Not EE-only]({{
 Title | `carriers/usps/title` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 User ID | `carriers/usps/userid` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
 Password | `carriers/usps/password` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
-User ID | `carriers/ups/username` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
-Password | `carriers/ups/password` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
-Access License Number | `carriers/ups/access_license_number` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+User ID | `carriers/ups/username` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Password | `carriers/ups/password` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Access License Number | `carriers/ups/access_license_number` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 Tracking XML URL | `carriers/ups/tracking_xml_url` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Gateway XML URL | `carriers/ups/gateway_xml_url` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
+Gateway XML URL | `carriers/ups/gateway_xml_url` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 Shipper Number | `carriers/ups/shipper_number` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
+Debug | `carriers/ups/debug` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 Account ID | `carriers/fedex/account` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
 Key | `carriers/fedex/key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
 Meter Number | `carriers/fedex/meter_number` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
@@ -197,6 +234,9 @@ Login | `paypal/fetch_reports/ftp_login` | <!-- ![Not EE-only]({{ site.baseurl }
 Custom Endpoint Hostname or IP-Address | `paypal/fetch_reports/ftp_ip` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 Custom Path | `paypal/fetch_reports/ftp_path` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 Sandbox Mode | `paypal/fetch_reports/ftp_sandbox` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Debug Mode | `payment/paypal_express/debug` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Debug Mode | `payment/paypal_billing_agreement/debug` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+
 
 
 ### PayPal Payflow Pro sensitive and system-specific paths
@@ -228,7 +268,6 @@ Debug Mode | `payment/payflow_link/debug` | <!-- ![Not EE-only]({{ site.baseurl 
 URL method for Cancel URL and Return URL | `payment/payflow_link/url_method` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 Debug Mode | `payment/payflow_express/debug` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 
-
 ### PayPal Payments Pro sensitive and system-specific paths
 
 Name  | Config path | EE only? | Encrypted? | System-specific? |
@@ -240,6 +279,14 @@ API Certificate | `paypal/wpp/api_cert` | <!-- ![Not EE-only]({{ site.baseurl }}
 Proxy Host | `paypal/wpp/proxy_host` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 Proxy Port | `paypal/wpp/proxy_port` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 Sandbox Mode | `paypal/wpp/sandbox_flag` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+
+
+### PayPal Payments Pro Hosted sensitive and system-specific paths
+
+Name  | Config path | EE only? | Encrypted? | System-specific? |
+|--------------|--------------|--------------|--------------|
+Debug Mode | `payment/hosted_pro/debug` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+
 
 ### Braintree sensitive and system-specific paths
 

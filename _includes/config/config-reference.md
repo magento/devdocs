@@ -45,28 +45,17 @@ Name  | Config path | EE only? | Encrypted?
 Add Store Code to Urls | `web/url/use_store` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Auto-redirect to Base URL | `web/url/redirect_to_base` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Use Web Server Rewrites | `web/seo/use_rewrites` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Base URL | `web/unsecure/base_url` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Base Link URL | `web/unsecure/base_link_url` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Base URL for Static View Files | `web/unsecure/base_static_url` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Base URL for User Media Files | `web/unsecure/base_media_url` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Secure Base URL | `web/secure/base_url` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Secure Base Link URL | `web/secure/base_link_url` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Secure Base URL for Static View Files | `web/secure/base_static_url` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Secure Base URL for User Media Files | `web/secure/base_media_url` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Use Secure URLs on Storefront | `web/secure/use_in_frontend` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Use Secure URLs in Admin | `web/secure/use_in_adminhtml` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Enable HTTP Strict Transport Security (HSTS) | `web/secure/enable_hsts` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Upgrade Insecure Requests | `web/secure/enable_upgrade_insecure` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Offloader header | `web/secure/offloader_header` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Default Web URL | `web/default/front` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 CMS Home Page | `web/default/cms_home_page` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Default No-route URL | `web/default/no_route` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 CMS No Route Page | `web/default/cms_no_route` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 CMS No Cookies Page | `web/default/cms_no_cookies` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Show Breadcrumbs for CMS Pages | `web/default/show_cms_breadcrumbs` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Cookie Lifetime | `web/cookie/cookie_lifetime` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Cookie Path | `web/cookie/cookie_path` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Cookie Domain | `web/cookie/cookie_domain` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
+
 Use HTTP Only | `web/cookie/cookie_httponly` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Cookie Restriction Mode | `web/cookie/cookie_restriction` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Validate REMOTE_ADDR | `web/session/use_remote_addr` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
@@ -187,12 +176,8 @@ Maximal Depth | `catalog/navigation/max_depth` | <!-- ![Not EE-only]({{ site.bas
 Minimal Query Length | `catalog/search/min_query_length` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Maximum Query Length | `catalog/search/max_query_length` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Search Engine | `catalog/search/engine` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Solr Server Timeout | `catalog/search/solr_server_timeout` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
+Solr Server Timeout | `catalog/search/solr_server_timeout` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Indexation Mode | `catalog/search/engine_commit_mode` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Enable Elasticsearch HTTP Auth | `catalog/search/elasticsearch_enable_auth` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Elasticsearch HTTP Username | `catalog/search/elasticsearch_username` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Elasticsearch HTTP Password | `catalog/search/elasticsearch_password` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Elasticsearch Server Timeout | `catalog/search/elasticsearch_server_timeout` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Enable Search Suggestions | `catalog/search/search_suggestion_enabled` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Search Suggestions Count | `catalog/search/search_suggestion_count` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Show Results Count for Each Suggestion | `catalog/search/search_suggestion_count_results_enabled` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
@@ -353,7 +338,6 @@ Validation Error Group | `customer/create_account/viv_error_group` | <!-- ![Not 
 Validate on Each Transaction | `customer/create_account/viv_on_each_transaction` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Default Value for Disable Automatic Group Changes Based on VAT ID | `customer/create_account/viv_disable_auto_group_assign_default` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Show VAT Number on Storefront | `customer/create_account/vat_frontend_visibility` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Default Email Domain | `customer/create_account/email_domain` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Default Welcome Email | `customer/create_account/email_template` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Default Welcome Email Without Password | `customer/create_account/email_no_password_template` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Email Sender | `customer/create_account/email_identity` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
@@ -764,7 +748,6 @@ Sort Order | `carriers/tablerate/sort_order` | <!-- ![Not EE-only]({{ site.baseu
 Enabled for Checkout | `carriers/ups/active` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Enabled for RMA | `carriers/ups/active_rma` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 UPS Type | `carriers/ups/type` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Live Account | `carriers/ups/is_account_live` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Mode | `carriers/ups/mode_xml` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Origin of the Shipment | `carriers/ups/origin_shipment` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Gateway URL | `carriers/ups/gateway_url` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
@@ -788,7 +771,6 @@ Displayed Error Message | `carriers/ups/specificerrmsg` | <!-- ![Not EE-only]({{
 Ship to Applicable Countries | `carriers/ups/sallowspecific` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Ship to Specific Countries | `carriers/ups/specificcountry` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Show Method if Not Applicable | `carriers/ups/showmethod` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Debug | `carriers/ups/debug` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Sort Order | `carriers/ups/sort_order` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Enabled for Checkout | `carriers/usps/active` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Enabled for RMA | `carriers/usps/active_rma` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
