@@ -800,7 +800,6 @@ Sort Order | `carriers/usps/sort_order` | <!-- ![Not EE-only]({{ site.baseurl }}
 Enabled for Checkout | `carriers/fedex/active` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Enabled for RMA | `carriers/fedex/active_rma` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Title | `carriers/fedex/title` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Sandbox Mode | `carriers/fedex/sandbox_mode` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Web-Services URL (Production) | `carriers/fedex/production_webservices_url` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Web-Services URL (Sandbox) | `carriers/fedex/sandbox_webservices_url` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Packages Request Type | `carriers/fedex/shipment_requesttype` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
@@ -826,7 +825,6 @@ Sort Order | `carriers/fedex/sort_order` | <!-- ![Not EE-only]({{ site.baseurl }
 Enabled for Checkout | `carriers/dhl/active` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Enabled for RMA | `carriers/dhl/active_rma` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Title | `carriers/dhl/title` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Gateway URL | `carriers/dhl/gateway_url` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Content Type | `carriers/dhl/content_type` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Calculate Handling Fee | `carriers/dhl/handling_type` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Handling Applied | `carriers/dhl/handling_action` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
@@ -848,7 +846,6 @@ Free Shipping Amount Threshold | `carriers/dhl/free_shipping_subtotal` | <!-- ![
 Ship to Applicable Countries | `carriers/dhl/sallowspecific` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Ship to Specific Countries | `carriers/dhl/specificcountry` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Show Method if Not Applicable | `carriers/dhl/showmethod` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Debug | `carriers/dhl/debug` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Sort Order | `carriers/dhl/sort_order` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 
 ### Google API paths 

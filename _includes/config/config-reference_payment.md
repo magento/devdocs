@@ -216,7 +216,6 @@ Verify for Applicable Countries | `payment/braintree/verify_all_countries` | <!-
 Verify for Specific Countries | `payment/braintree/verify_specific_countries` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Name | `payment/braintree/descriptor_name` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Phone | `payment/braintree/descriptor_phone` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-URL | `payment/braintree/descriptor_url` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 
 ### Zero Subtotal Checkout paths
 

@@ -166,7 +166,7 @@ User ID | `carriers/ups/username` | <!-- ![Not EE-only]({{ site.baseurl }}common
 Password | `carriers/ups/password` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 Access License Number | `carriers/ups/access_license_number` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 Tracking XML URL | `carriers/ups/tracking_xml_url` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Gateway XML URL | `carriers/ups/gateway_xml_url` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Gateway XML URL | `carriers/ups/gateway_xml_url` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 Shipper Number | `carriers/ups/shipper_number` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Debug | `carriers/ups/debug` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 Account ID | `carriers/fedex/account` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
@@ -175,7 +175,11 @@ Meter Number | `carriers/fedex/meter_number` | <!-- ![Not EE-only]({{ site.baseu
 Password | `carriers/fedex/password` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
 Access ID | `carriers/dhl/id` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
 Password | `carriers/dhl/password` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+Debug | `carriers/dhl/debug` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 Account Number | `carriers/dhl/account` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
+Gateway URL | `carriers/dhl/gateway_url` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Sandbox Mode | `carriers/fedex/sandbox_mode` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+
 
 ### Sales sensitive and system-specific paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Sales**.
@@ -299,6 +303,8 @@ Merchant Account ID | `payment/braintree/merchant_account_id` | <!-- ![Not EE-on
 Kount Merchant ID | `payment/braintree/kount_id` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Override Merchant Name | `payment/braintree_paypal/merchant_name_override` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Merchant's Email | `payment/authorizenet_directpost/merchant_email` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
+URL | `payment/braintree/descriptor_url` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+
 
 ### Worldpay sensitive and system-specific paths
 
