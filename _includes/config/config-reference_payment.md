@@ -130,7 +130,6 @@ Credit Card Settings | `payment_all_paypal/paypal_payflowpro/settings_paypal_pay
 Allowed Credit Card Types | `payment/payflowpro/cctypes` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Payment Applicable From | `payment/payflowpro/allowspecific` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Countries Payment Applicable From | `payment/payflowpro/specificcountry` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Debug Mode | `payment/payflowpro/debug` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Enable SSL verification | `payment/payflowpro/verify_peer` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Require CVV Entry | `payment/payflowpro/useccv` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Reject Transaction if: | `payment_all_paypal/paypal_payflowpro/settings_paypal_payflow/settings_paypal_payflow_advanced/paypal_payflow_avs_check/heading_avs_settings` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
@@ -139,12 +138,10 @@ AVS Zip Does Not Match | `payment/payflowpro/avs_zip` | <!-- ![Not EE-only]({{ s
 International AVS Indicator Does Not Match | `payment/payflowpro/avs_international` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Card Security Code Does Not Match | `payment/payflowpro/avs_security_code` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Vendor | `payment/payflowpro/vendor` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Test Mode | `payment/payflowpro/sandbox_flag` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Use Proxy | `payment/payflowpro/use_proxy` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Title | `payment/payflow_express/title` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Sort Order | `payment/payflow_express/sort_order` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Payment Action | `payment/payflow_express/payment_action` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-SFTP Credentials | `payment_all_paypal/paypal_payflowpro/settings_paypal_payflow/settings_paypal_payflow_advanced/paypal_payflow_settlement_report/heading_sftp` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Scheduled Fetching | `payment_all_paypal/paypal_payflowpro/settings_paypal_payflow/settings_paypal_payflow_advanced/paypal_payflow_settlement_report/heading_schedule` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 PayPal Merchant Pages Style | `payment_all_paypal/payflow_link/settings_payflow_link/settings_payflow_link_advanced/payflow_link_frontend/paypal_pages` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Partner | `payment/payflow_advanced/partner` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
