@@ -37,7 +37,7 @@ These configuration values are availabe in the Magento Admin in **Stores** > Set
 
 Name  | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
 |--------------|--------------|--------------|--------------|
-Sender Name | `trans_email/ident_general/name` | | | | ![Sensitive?]({{ site.baseurl }}common/images/cloud_sens.png) 
+Sender Name | `trans_email/ident_general/name` | | | ![Sensitive?]({{ site.baseurl }}common/images/cloud_sens.png) 
 Sender Email | `trans_email/ident_general/email` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> |  | | ![Sensitive?]({{ site.baseurl }}common/images/cloud_sens.png) 
 Sender Name | `trans_email/ident_sales/name` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> |  | | ![Sensitive?]({{ site.baseurl }}common/images/cloud_sens.png) | Sender Email | `trans_email/ident_sales/email` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> |  | | ![Sensitive?]({{ site.baseurl }}common/images/cloud_sens.png) | Sender Name | `trans_email/ident_support/name` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> |  | | ![Sensitive?]({{ site.baseurl }}common/images/cloud_sens.png) | 
 Sender Email | `trans_email/ident_support/email` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> |  | | ![Sensitive?]({{ site.baseurl }}common/images/cloud_sens.png) | 
@@ -51,7 +51,7 @@ These configuration values are availabe in the Magento Admin in **Stores** > Set
 
 Name  | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
 |--------------|--------------|--------------|--------------|
-Send Emails To | `contact/email/recipient_email` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
+Send Emails To | `contact/email/recipient_email` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive?]({{ site.baseurl }}common/images/cloud_sens.png) |
 
 ### New Relic reporting sensitive and system-specific paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **General** > **New Relic Reporting**.
