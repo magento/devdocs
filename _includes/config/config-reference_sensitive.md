@@ -37,7 +37,7 @@ These configuration values are availabe in the Magento Admin in **Stores** > Set
 
 Name  | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
 |--------------|--------------|--------------|--------------|
-Sender Name | `trans_email/ident_general/name` | | | ![Sensitive?]({{ site.baseurl }}common/images/cloud_sens.png) |
+Sender Name | `trans_email/ident_general/name` | | | | ![Sensitive?]({{ site.baseurl }}common/images/cloud_sens.png) |
 Sender Email | `trans_email/ident_general/email` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> |  | | ![Sensitive?]({{ site.baseurl }}common/images/cloud_sens.png) |
 Sender Name | `trans_email/ident_sales/name` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> |  | | ![Sensitive?]({{ site.baseurl }}common/images/cloud_sens.png) | 
 Sender Email | `trans_email/ident_sales/email` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> |  | | ![Sensitive?]({{ site.baseurl }}common/images/cloud_sens.png) | 
@@ -206,15 +206,15 @@ These configuration values are availabe in the Magento Admin in **Stores** > Set
 
 Name  | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
 |--------------|--------------|--------------|--------------|
-Custom Admin URL | `admin/url/custom` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Custom Admin Path | `admin/url/custom_path` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
+Custom Admin URL | `admin/url/custom` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive?]({{ site.baseurl }}common/images/cloud_sens.png) |
+Custom Admin Path | `admin/url/custom_path` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive?]({{ site.baseurl }}common/images/cloud_sens.png) |
 
 ### System sensitive and system-specific paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Advanced** > **System**.
 
 Name  | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
 |--------------|--------------|--------------|--------------|
-Error Email Recipient | `system/magento_scheduled_import_export_log/error_email` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
+Error Email Recipient | `system/magento_scheduled_import_export_log/error_email` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive?]({{ site.baseurl }}common/images/cloud_sens.png) |
 
 ### Developer sensitive and system-specific paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Advanced** > **Developer**.
@@ -252,9 +252,9 @@ This section lists variable names and config paths available for options in the 
 
 Name  | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
 |--------------|--------------|--------------|--------------|
-Email Associated with PayPal Merchant Account (Optional) | `paypal/general/business_account` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Merchant Account ID | `payment/paypal_express/merchant_id` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Publisher ID | `payment/paypal_express_bml/publisher_id` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
+Email Associated with PayPal Merchant Account (Optional) | `paypal/general/business_account` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive?]({{ site.baseurl }}common/images/cloud_sens.png) |
+Merchant Account ID | `payment/paypal_express/merchant_id` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive?]({{ site.baseurl }}common/images/cloud_sens.png) |
+Publisher ID | `payment/paypal_express_bml/publisher_id` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive?]({{ site.baseurl }}common/images/cloud_sens.png) |
 Password | `paypal/fetch_reports/ftp_password` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
 Login | `paypal/fetch_reports/ftp_login` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
 Custom Endpoint Hostname or IP-Address | `paypal/fetch_reports/ftp_ip` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
