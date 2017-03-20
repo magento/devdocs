@@ -23,9 +23,9 @@ _Sensitive_ configuration values are any that identify personally identifiable i
 The following values should be designated as sensitive:
 
 *	Keys (such as API keys)
-*	Passwords
+*	User names and passwords
 *	E-mail Addresses
-*	Physical Addresses
+*	Any Personally identifiable information (PII) (address, phone number, date of birth, government identification number, and so on)
 
 ### System-specific values
 _System-specific_ values vary the system to which Magento is deployed, such as URLs, debug mode indicators, host names, IP addresses, and ports.
