@@ -68,6 +68,11 @@ Magento 2.1.6 contains over 15 significant performance enhancements when compare
 <!--- 65251 -->* The storefront now displays images that Magento resizes during product save operations, rather than resizing the product on the storefront. Previously, the image path contained `store_id`,  and during save operations, Magento resized images for images the default store only. 
 
 
+<!--- 66346 -->* The `\Magento\CatalogInventory\Model\Stock\Status::getStockId()` method now returns the website ID instead of the stock ID, as expected. 
+
+<!--- 63343 -->* The `\Magento\CatalogWidget\Model\Rule` calss now implements unserialized methods. Specifically, Magento has replaced `\Magento\FrameworkSerialize\Serializer\Json::serialize()` with `\Magento\FrameworkSerialize\Serializer\Json::unserialize()`. 
+
+
 
 ### Configurable products
 
@@ -122,6 +127,8 @@ Magento 2.1.6 contains over 15 significant performance enhancements when compare
 
 <!--- DUPLICATE -->
 <!--- 65252 -->
+<!--- 66125 -->
+
 
 <!--- INTERNAL ONLY -->
 <!--- 65203 -->
