@@ -120,8 +120,6 @@ These configuration values are availabe in the Magento Admin in **Stores** > Set
 Name  | Config path | EE only? | Encrypted?
 |--------------|--------------|--------------|--------------|
 Enable New Relic Integration | `newrelicreporting/general/enable` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-New Relic API URL | `newrelicreporting/general/api_url` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Insights API URL | `newrelicreporting/general/insights_api_url` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 New Relic Application Name | `newrelicreporting/general/app_name` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Enable Cron | `newrelicreporting/cron/enable_cron` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 
@@ -878,8 +876,6 @@ These configuration values are availabe in the Magento Admin in **Stores** > Set
 | Name  | Config path | EE only? | Encrypted? |
 |--------------|--------------|--------------|--------------|
 | Enable this Solution  | `fraud_protection/signifyd/active`   | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) |   |
-| API Key | `fraud_protection/signifyd/api_key`   | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) |   |
-| API URL  |  `fraud_protection/signifyd/api_url`  |  ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) |  |
 | Debug  | `fraud_protection/signifyd/debug`   | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) |   |
 
 ### Gift cards paths
@@ -988,8 +984,6 @@ Success History Lifetime | `system/cron/default/history_success_lifetime` | <!--
 Failure History Lifetime | `system/cron/default/history_failure_lifetime` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Use Separate Process | `system/cron/default/use_separate_process` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Disable Email Communications | `system/smtp/disable` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Host | `system/smtp/host` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Port (25) | `system/smtp/port` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Set Return-Path | `system/smtp/set_return_path` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Return-Path Email | `system/smtp/return_path_email` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Installed Currencies | `system/currency/installed` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
@@ -1006,8 +1000,6 @@ Log Archiving Frequency | `system/rotation/frequency` | <!-- ![Not EE-only]({{ s
 Caching Application | `system/full_page_cache/caching_application` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 TTL for public content | `system/full_page_cache/ttl` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Access list | `system/full_page_cache/varnish/access_list` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Backend host | `system/full_page_cache/varnish/backend_host` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Backend port | `system/full_page_cache/varnish/backend_port` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Grace period | `system/full_page_cache/varnish/grace_period` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Export Configuration | `system/full_page_cache/varnish/export_button_version4` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Days Saved in Log | `system/bulk/lifetime` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
@@ -1040,7 +1032,6 @@ Enable JavaScript Bundling | `dev/js/enable_js_bundling` | <!-- ![Not EE-only]({
 Minify JavaScript Files | `dev/js/minify_files` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Translation Strategy | `dev/js/translate_strategy` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Log JS Errors to Session Storage | `dev/js/session_storage_logging` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Log JS Errors to Session Storage Key | `dev/js/session_storage_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Merge CSS Files | `dev/css/merge_css_files` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Minify CSS Files | `dev/css/minify_files` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Image Adapter | `dev/image/default_adapter` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 

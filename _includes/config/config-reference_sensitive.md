@@ -64,6 +64,8 @@ New Relic Account ID | `newrelicreporting/general/account_id` | <!-- ![Not EE-on
 New Relic Application ID | `newrelicreporting/general/app_id` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 New Relic API Key | `newrelicreporting/general/api` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
 Insights API Key | `newrelicreporting/general/insights_insert_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
+New Relic API URL | `newrelicreporting/general/api_url` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Insights API URL | `newrelicreporting/general/insights_api_url` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 
 ## Customers category sensitive and system-specific paths
 This section lists variable names and config paths available for options in the Admin under **Stores** > Settings > **Configuration** > **Customers**.
@@ -74,8 +76,6 @@ These configuration values are availabe in the Magento Admin in **Stores** > Set
 Name  | Config path | EE only? | Encrypted? | System-specific? |
 |--------------|--------------|--------------|--------------|--------------|
 Default Email Domain | `customer/create_account/email_domain` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
-
-
 
 ## Catalog category
 This section lists variable names and config paths available for options in the Admin under **Stores** > Settings > **Configuration** > **Catalog**.
@@ -219,9 +219,31 @@ Error Email Recipient | `system/magento_scheduled_import_export_log/error_email`
 ### Developer sensitive and system-specific paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Advanced** > **Developer**.
 
+Name  | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
+|--------------|--------------|--------------|--------------|--------------|
+Allowed IPs (comma separated) | `dev/restrict/allow_ips` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png)
+
+## Advanced category
+This section lists variable names and config paths available for options in the Admin under **Stores** > Settings > **Configuration** > **Advanced**.
+
+### System paths
+These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Advanced** > **System**.
+
 Name  | Config path | EE only? | Encrypted? | System-specific? |
 |--------------|--------------|--------------|--------------|
-Allowed IPs (comma separated) | `dev/restrict/allow_ips` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
+Host | `system/smtp/host` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Port (25) | `system/smtp/port` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Backend host | `system/full_page_cache/varnish/backend_host` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Backend port | `system/full_page_cache/varnish/backend_port` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+
+
+### Developer paths
+These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Advanced** > **Developer**.
+
+Name  | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
+|--------------|--------------|--------------|--------------|--------------|
+Log JS Errors to Session Storage Key | `dev/js/session_storage_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+
 
 ## Payment sensitive and system-specific paths
 This section lists variable names and config paths available for options in the Admin under **Stores** > Settings > **Configuration** > **Sales** > **Payment**.
@@ -351,7 +373,6 @@ Profile ID | `payment/cybersource/profile_id` | ![EE-only]({{ site.baseurl }}com
 Access Key | `payment/cybersource/access_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
 Secret Key | `payment/cybersource/secret_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
 Test Mode | `payment/cybersource/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
-
 
 ### International paths
 
@@ -539,7 +560,7 @@ Secret Key | `payment_fr/cybersource/secret_key` | ![EE-only]({{ site.baseurl }}
 Test Mode | `payment_fr/cybersource/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 Payment Response Password | `payment_fr/worldpay/response_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 Remote Admin Authorisation Password | `payment_fr/worldpay/auth_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
-Test Mode | `payment_fr/worldpay/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Test Mode | `payment_fr/worldpay/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) |  | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 Sandbox Mode | `payment_fr/eway/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 Live API Key | `payment_fr/eway/live_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 Live API Password | `payment_fr/eway/live_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
@@ -547,3 +568,24 @@ Live Client-side Encryption Key | `payment_fr/eway/live_encryption_key` | ![EE-o
 Sandbox API Key | `payment_fr/eway/sandbox_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 Sandbox API Password | `payment_fr/eway/sandbox_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 Sandbox Client-side Encryption Key | `payment_fr/eway/sandbox_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Transaction Key | `payment_it/authorizenet_directpost/trans_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Test Mode | `payment_it/authorizenet_directpost/test` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Gateway URL | `payment_it/authorizenet_directpost/cgi_url` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Transaction Details URL | `payment_it/authorizenet_directpost/cgi_url_td` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Transaction Key | `payment_it/cybersource/transaction_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Access Key | `payment_it/cybersource/access_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Secret Key | `payment_it/cybersource/secret_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Test Mode | `payment_it/cybersource/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Payment Response Password | `payment_it/worldpay/response_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Remote Admin Authorisation Password | `payment_it/worldpay/auth_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Test Mode | `payment_it/worldpay/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Sandbox Mode | `payment_it/eway/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Live API Key | `payment_it/eway/live_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Live API Password | `payment_it/eway/live_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Live Client-side Encryption Key | `payment_it/eway/live_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Sandbox API Key | `payment_it/eway/sandbox_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Sandbox API Password | `payment_it/eway/sandbox_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Sandbox Client-side Encryption Key | `payment_it/eway/sandbox_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+| API Key | `fraud_protection/signifyd/api_key`   | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) |  ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+| API URL  |  `fraud_protection/signifyd/api_url`  |  ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) |  | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+
