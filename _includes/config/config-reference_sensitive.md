@@ -39,9 +39,7 @@ Name  | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
 |--------------|--------------|--------------|--------------|
 Sender Name | `trans_email/ident_general/name` 
 Sender Email | `trans_email/ident_general/email` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Sender Name | `trans_email/ident_sales/name` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Sender Email | `trans_email/ident_sales/email` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Sender Name | `trans_email/ident_support/name` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
+Sender Name | `trans_email/ident_sales/name` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive?]({{ site.baseurl }}common/images/cloud_sens.png) |Sender Email | `trans_email/ident_sales/email` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive?]({{ site.baseurl }}common/images/cloud_sens.png) |Sender Name | `trans_email/ident_support/name` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Sender Email | `trans_email/ident_support/email` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Sender Name | `trans_email/ident_custom1/name` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Sender Email | `trans_email/ident_custom1/email` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
@@ -586,6 +584,6 @@ Live Client-side Encryption Key | `payment_it/eway/live_encryption_key` | ![EE-o
 Sandbox API Key | `payment_it/eway/sandbox_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 Sandbox API Password | `payment_it/eway/sandbox_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 Sandbox Client-side Encryption Key | `payment_it/eway/sandbox_encryption_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
-| API Key | `fraud_protection/signifyd/api_key`   | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) |  ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
-| API URL  |  `fraud_protection/signifyd/api_url`  |  ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) |  | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+API Key | `fraud_protection/signifyd/api_key`   | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) |  ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+API URL  |  `fraud_protection/signifyd/api_url`  |  ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) |  | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 
