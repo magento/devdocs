@@ -12,14 +12,14 @@ version: 2.0
 github_link: config-guide/prod/config-reference-sens.md
 ---
 
-This topic lists only configuration paths for sensitive settings. For a list of other configuration paths, see:
+This topic lists only configuration paths for sensitive settings. The [`magento app:config:dump --lock` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-export.html) writes these values to the system-specific configuration file, `app/etc/env.php`, which should _not_ be in source control. 
+
+For a list of other configuration paths, see:
 
 *	[All configuration paths except payments]({{ page.baseurl }}config-guide/prod/config-reference-most.html)
 *	[Payment configuration paths]({{ page.baseurl }}config-guide/prod/config-reference-payment.html).
 
-{% include cloud/config-vars.md %}
-
-For more information, see [How to name configuration variables]({{ page.baseurl }}config-guide/prod/config-reference-var-name.html).
+To optionally override these values, see TBD.
 
 {% include config/config-reference_sensitive.md %}
  
