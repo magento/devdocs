@@ -37,14 +37,14 @@ These configuration values are availabe in the Magento Admin in **Stores** > Set
 
 Name  | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
 |--------------|--------------|--------------|--------------|
-Sender Name | `trans_email/ident_general/name` 
-Sender Email | `trans_email/ident_general/email` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Sender Name | `trans_email/ident_sales/name` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive?]({{ site.baseurl }}common/images/cloud_sens.png) |Sender Email | `trans_email/ident_sales/email` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive?]({{ site.baseurl }}common/images/cloud_sens.png) |Sender Name | `trans_email/ident_support/name` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Sender Email | `trans_email/ident_support/email` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Sender Name | `trans_email/ident_custom1/name` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Sender Email | `trans_email/ident_custom1/email` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Sender Name | `trans_email/ident_custom2/name` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Sender Email | `trans_email/ident_custom2/email` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
+Sender Name | `trans_email/ident_general/name` | | | ![Sensitive?]({{ site.baseurl }}common/images/cloud_sens.png) |
+Sender Email | `trans_email/ident_general/email` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive?]({{ site.baseurl }}common/images/cloud_sens.png) |
+Sender Name | `trans_email/ident_sales/name` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive?]({{ site.baseurl }}common/images/cloud_sens.png) | Sender Email | `trans_email/ident_sales/email` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive?]({{ site.baseurl }}common/images/cloud_sens.png) | Sender Name | `trans_email/ident_support/name` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive?]({{ site.baseurl }}common/images/cloud_sens.png) | 
+Sender Email | `trans_email/ident_support/email` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive?]({{ site.baseurl }}common/images/cloud_sens.png) | 
+Sender Name | `trans_email/ident_custom1/name` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive?]({{ site.baseurl }}common/images/cloud_sens.png) | 
+Sender Email | `trans_email/ident_custom1/email` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive?]({{ site.baseurl }}common/images/cloud_sens.png) | 
+Sender Name | `trans_email/ident_custom2/name` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive?]({{ site.baseurl }}common/images/cloud_sens.png) | 
+Sender Email | `trans_email/ident_custom2/email` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive?]({{ site.baseurl }}common/images/cloud_sens.png) | 
 
 ### Contacts sensitive and system-specific paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **General** > **Contacts**.
@@ -497,7 +497,7 @@ Transaction Key | `payment_ca/authorizenet_directpost/trans_key` | <!-- ![Not EE
 Test Mode | `payment_ca/authorizenet_directpost/test` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 Gateway URL | `payment_ca/authorizenet_directpost/cgi_url` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 Transaction Details URL | `payment_ca/authorizenet_directpost/cgi_url_td` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
-Transaction Key | `payment_ca/cybersource/transaction_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) |  | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Transaction Key | `payment_ca/cybersource/transaction_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) |  ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 Access Key | `payment_ca/cybersource/access_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 Secret Key | `payment_ca/cybersource/secret_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 New Order Status | `payment_ca/cybersource/order_status` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
@@ -576,7 +576,7 @@ Secret Key | `payment_it/cybersource/secret_key` | ![EE-only]({{ site.baseurl }}
 Test Mode | `payment_it/cybersource/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 Payment Response Password | `payment_it/worldpay/response_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 Remote Admin Authorisation Password | `payment_it/worldpay/auth_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
-Test Mode | `payment_it/worldpay/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Test Mode | `payment_it/worldpay/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 Sandbox Mode | `payment_it/eway/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 Live API Key | `payment_it/eway/live_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 Live API Password | `payment_it/eway/live_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
