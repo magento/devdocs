@@ -17,6 +17,9 @@ This page contains recent changes that we think you'd like to know about. We exc
 
 | Description  | Versions applied to  | New or Updated | Date |
 |--------------|--------------|----------------------|--------|
+| [Magento U video tutorials](http://devdocs.magento.com/videos){:target="_blank"}  | 2.x  | New  |  Mar 15 |
+| [Top quarterly devdocs contributors]({{ page.baseurl }}contributor-guide/quarterly-contributors.html){:target="_blank"}  |  2.x | Updated  | Mar 15  |
+|  [Community contribution to adding attributes to an entity]({{ page.baseurl }}extension-dev-guide/extension_attributes/adding-attributes.html){:target="_blank"} | 2.x  |  Updated | March 15  |
 | [Tutorial on copying fieldsets](ext-best-practices/tutorials/copy-fieldsets.html){:target="_blank"} | 2.x | New | Mar 9 |
 |  [Backward incompatible changes now includes Magento 2.0.x, added tables]({{ page.baseurl }}release-notes/backward-incompatible-changes.html){:target="_blank"} |  2.x |  Updated |  Mar 9 |
 | [Import a Magento EE project into Magento Enterprise Cloud Edition (MECE)]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-first-steps.html){:target="_blank"}  | 2.x  |  New | Mar 1  |
