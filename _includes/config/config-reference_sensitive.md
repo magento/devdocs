@@ -176,7 +176,7 @@ Password | `carriers/fedex/password` | <!-- ![Not EE-only]({{ site.baseurl }}com
 Access ID | `carriers/dhl/id` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
 Password | `carriers/dhl/password` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
 Debug | `carriers/dhl/debug` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
-Account Number | `carriers/dhl/account` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
+Account Number | `carriers/dhl/account` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
 Gateway URL | `carriers/dhl/gateway_url` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
 Sandbox Mode | `carriers/fedex/sandbox_mode` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
 
@@ -299,7 +299,7 @@ Name  | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
 API Username | `paypal/wpp/api_username` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
 API Password | `paypal/wpp/api_password` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
 API Signature | `paypal/wpp/api_signature` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
-API Certificate | `paypal/wpp/api_cert` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
+API Certificate | `paypal/wpp/api_cert` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
 Proxy Host | `paypal/wpp/proxy_host` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
 Proxy Port | `paypal/wpp/proxy_port` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
 Sandbox Mode | `paypal/wpp/sandbox_flag` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
