@@ -10,7 +10,7 @@ This section lists variable names and configuration paths available for options 
 ### Web paths sensitive and system-specific paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **General** > **Web**.
 
-Name  | Config path | EE only? | Encrypted? | System-specific? |
+Name  | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
 |--------------|--------------|--------------|--------------|
 Base URL | `web/unsecure/base_url` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 Base Link URL | `web/unsecure/base_link_url` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
@@ -28,14 +28,14 @@ Cookie Domain | `web/cookie/cookie_domain` | <!-- ![Not EE-only]({{ site.baseurl
 ### Currency setup sensitive and system-specific paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **General** > **Currency setup**.
 
-Name  | Config path | EE only? | Encrypted? | System-specific? |
+Name  | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
 |--------------|--------------|--------------|--------------|
-Error Email Recipient | `currency/import/error_email` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
+Error Email Recipient | `currency/import/error_email` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive?]({{ site.baseurl }}common/images/cloud_sens.png) |
 
 ### Store email address sensitive and system-specific paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Email Configuration** > **General** > **Store Email Addresses**. 
 
-Name  | Config path | EE only? | Encrypted? | System-specific? |
+Name  | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
 |--------------|--------------|--------------|--------------|
 Sender Name | `trans_email/ident_general/name` 
 Sender Email | `trans_email/ident_general/email` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
@@ -51,14 +51,14 @@ Sender Email | `trans_email/ident_custom2/email` | <!-- ![Not EE-only]({{ site.b
 ### Contacts sensitive and system-specific paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **General** > **Contacts**.
 
-Name  | Config path | EE only? | Encrypted? | System-specific? |
+Name  | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
 |--------------|--------------|--------------|--------------|
 Send Emails To | `contact/email/recipient_email` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 
 ### New Relic reporting sensitive and system-specific paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **General** > **New Relic Reporting**.
 
-Name  | Config path | EE only? | Encrypted? | System-specific? |
+Name  | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
 |--------------|--------------|--------------|--------------|
 New Relic Account ID | `newrelicreporting/general/account_id` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 New Relic Application ID | `newrelicreporting/general/app_id` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
@@ -73,8 +73,8 @@ This section lists variable names and config paths available for options in the 
 ### Customer configuration sensitive and system-specific paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Customers** > **Customer Configuration**.
 
-Name  | Config path | EE only? | Encrypted? | System-specific? |
-|--------------|--------------|--------------|--------------|--------------|
+Name  | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
+|--------------|--------------|--------------|--------------|--------------|--------------|
 Default Email Domain | `customer/create_account/email_domain` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 
 ## Catalog category
@@ -83,7 +83,7 @@ This section lists variable names and config paths available for options in the 
 ### Catalog sensitive and system-specific paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Catalog** > **Catalog**.
 
-Name  | Config path | EE only? | Encrypted? | System-specific? |
+Name  | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
 |--------------|--------------|--------------|--------------|
 Error Email Recipient | `catalog/productalert_cron/error_email` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 YouTube API Key | `catalog/product_video/youtube_api_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
@@ -103,7 +103,7 @@ Elasticsearch Server Timeout | `catalog/search/elasticsearch_server_timeout` | !
 ### XML sitemap sensitive and system-specific paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Catalog** > **XML Sitemap**.
 
-Name  | Config path | EE only? | Encrypted? | System-specific? |
+Name  | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
 |--------------|--------------|--------------|--------------|
 Error Email Recipient | `sitemap/generate/error_email` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 
@@ -113,7 +113,7 @@ This section lists variable names and config paths available for options in the 
 ### Shipping settings sensitive and system-specific paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Shipping Settings**.
 
-Name  | Config path | EE only? | Encrypted? | System-specific? |
+Name  | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
 |--------------|--------------|--------------|--------------|
 Country | `shipping/origin/country_id` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Region/State | `shipping/origin/region_id` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
@@ -127,7 +127,7 @@ Live Account | `carriers/ups/is_account_live` | <!-- ![Not EE-only]({{ site.base
 ### Sales emails sensitive and system-specific paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Sales Emails**.
 
-Name  | Config path | EE only? | Encrypted? | System-specific? |
+Name  | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
 |--------------|--------------|--------------|--------------|
 Send Order Email Copy To | `sales_email/order/copy_to` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Send Order Comment Email Copy To | `sales_email/order_comment/copy_to` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
@@ -141,21 +141,21 @@ Send Credit Memo Comment Email Copy To | `sales_email/creditmemo_comment/copy_to
 ### Checkout sensitive and system-specific paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Checkout**.
 
-Name  | Config path | EE only? | Encrypted? | System-specific? |
+Name  | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
 |--------------|--------------|--------------|--------------|
 Send Payment Failed Email Copy To | `checkout/payment_failed/copy_to` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 
 ### Google API sensitive and system-specific paths 
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Google API**.
 
-Name  | Config path | EE only? | Encrypted? | System-specific? |
+Name  | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
 |--------------|--------------|--------------|--------------|
 Container Id | `google/analytics/container_id` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 
 ### Shipping methods sensitive and system-specific paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Shipping Methods**.
 
-Name  | Config path | EE only? | Encrypted? | System-specific? |
+Name  | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
 |--------------|--------------|--------------|--------------|
 Gateway URL | `carriers/usps/gateway_url` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Secure Gateway URL | `carriers/usps/gateway_secure_url` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
@@ -184,7 +184,7 @@ Sandbox Mode | `carriers/fedex/sandbox_mode` | <!-- ![Not EE-only]({{ site.baseu
 ### Sales sensitive and system-specific paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Sales**.
 
-Name  | Config path | EE only? | Encrypted? | System-specific? |
+Name  | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
 |--------------|--------------|--------------|--------------|
 Contact Name | `sales/magento_rma/store_name` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Street Address | `sales/magento_rma/address` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
@@ -204,7 +204,7 @@ This section lists variable names and config paths available for options in the 
 ### Admin sensitive and system-specific paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Advanced** > **Admin**.
 
-Name  | Config path | EE only? | Encrypted? | System-specific? |
+Name  | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
 |--------------|--------------|--------------|--------------|
 Custom Admin URL | `admin/url/custom` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Custom Admin Path | `admin/url/custom_path` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
@@ -212,15 +212,15 @@ Custom Admin Path | `admin/url/custom_path` | <!-- ![Not EE-only]({{ site.baseur
 ### System sensitive and system-specific paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Advanced** > **System**.
 
-Name  | Config path | EE only? | Encrypted? | System-specific? |
+Name  | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
 |--------------|--------------|--------------|--------------|
 Error Email Recipient | `system/magento_scheduled_import_export_log/error_email` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 
 ### Developer sensitive and system-specific paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Advanced** > **Developer**.
 
-Name  | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
-|--------------|--------------|--------------|--------------|--------------|
+Name  | Config path | EE only? | Encrypted? | System-specific? | Sensitive? | 
+|--------------|--------------|--------------|--------------|--------------|--------------|
 Allowed IPs (comma separated) | `dev/restrict/allow_ips` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png)
 
 ## Advanced category
@@ -229,7 +229,7 @@ This section lists variable names and config paths available for options in the 
 ### System paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Advanced** > **System**.
 
-Name  | Config path | EE only? | Encrypted? | System-specific? |
+Name  | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
 |--------------|--------------|--------------|--------------|
 Host | `system/smtp/host` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 Port (25) | `system/smtp/port` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
@@ -240,8 +240,8 @@ Backend port | `system/full_page_cache/varnish/backend_port` | <!-- ![Not EE-onl
 ### Developer paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Advanced** > **Developer**.
 
-Name  | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
-|--------------|--------------|--------------|--------------|--------------|
+Name  | Config path | EE only? | Encrypted? | System-specific? | Sensitive? | 
+|--------------|--------------|--------------|--------------|--------------|--------------|
 Log JS Errors to Session Storage Key | `dev/js/session_storage_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 
 
@@ -250,7 +250,7 @@ This section lists variable names and config paths available for options in the 
 
 ### PayPal sensitive and system-specific paths
 
-Name  | Config path | EE only? | Encrypted? | System-specific? |
+Name  | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
 |--------------|--------------|--------------|--------------|
 Email Associated with PayPal Merchant Account (Optional) | `paypal/general/business_account` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Merchant Account ID | `payment/paypal_express/merchant_id` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
@@ -265,7 +265,7 @@ Debug Mode | `payment/paypal_billing_agreement/debug` | <!-- ![Not EE-only]({{ s
 
 ### PayPal Payflow Pro sensitive and system-specific paths
 
-Name  | Config path | EE only? | Encrypted? | System-specific? |
+Name  | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
 |--------------|--------------|--------------|--------------|
 User | `payment/payflow_advanced/user` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
 Password | `payment/payflow_advanced/pwd` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
@@ -280,7 +280,7 @@ SFTP Credentials | `payment_all_paypal/paypal_payflowpro/settings_paypal_payflow
 
 ### PayPal Payflow Link sensitive and system-specific paths
 
-Name  | Config path | EE only? | Encrypted? | System-specific? |
+Name  | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
 |--------------|--------------|--------------|--------------|
 User | `payment/payflow_link/user` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
 Password | `payment/payflow_link/pwd` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
@@ -294,7 +294,7 @@ Debug Mode | `payment/payflow_express/debug` | <!-- ![Not EE-only]({{ site.baseu
 
 ### PayPal Payments Pro sensitive and system-specific paths
 
-Name  | Config path | EE only? | Encrypted? | System-specific? |
+Name  | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
 |--------------|--------------|--------------|--------------|
 API Username | `paypal/wpp/api_username` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
 API Password | `paypal/wpp/api_password` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
@@ -307,14 +307,14 @@ Sandbox Mode | `paypal/wpp/sandbox_flag` | <!-- ![Not EE-only]({{ site.baseurl }
 
 ### PayPal Payments Pro Hosted sensitive and system-specific paths
 
-Name  | Config path | EE only? | Encrypted? | System-specific? |
+Name  | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
 |--------------|--------------|--------------|--------------|
 Debug Mode | `payment/hosted_pro/debug` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 
 
 ### Braintree sensitive and system-specific paths
 
-Name  | Config path | EE only? | Encrypted? | System-specific? |
+Name  | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
 |--------------|--------------|--------------|--------------|
 Merchant ID | `payment/braintree/merchant_id` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Public Key | `payment/braintree/public_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
@@ -328,7 +328,7 @@ URL | `payment/braintree/descriptor_url` | <!-- ![Not EE-only]({{ site.baseurl }
 
 ### Worldpay sensitive and system-specific paths
 
-Name  | Config path | EE only? | Encrypted? | System-specific? |
+Name  | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
 |--------------|--------------|--------------|--------------|
 Installation ID | `payment/worldpay/installation_id` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Payment Response Password | `payment/worldpay/response_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
@@ -341,7 +341,7 @@ Test Mode | `payment/worldpay/sandbox_flag` | ![EE-only]({{ site.baseurl }}commo
 
 ### Authorize.net Direct Post sensitive and system-specific paths
 
-Name  | Config path | EE only? | Encrypted? | System-specific? |
+Name  | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
 |--------------|--------------|--------------|--------------|
 API Login ID | `payment/authorizenet_directpost/login` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
 Transaction Key | `payment/authorizenet_directpost/trans_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![EE-only]({{ site.baseurl }}common/images/cloud_enc.png) | 
@@ -353,7 +353,7 @@ Debug | `payment/authorizenet_directpost/debug` | <!-- ![Not EE-only]({{ site.ba
 
 ### eWAY sensitive and system-specific paths
 
-Name  | Config path | EE only? | Encrypted? | System-specific? |
+Name  | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
 |--------------|--------------|--------------|--------------|
 Live API Key | `payment/eway/live_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
 Live API Password | `payment/eway/live_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
@@ -365,7 +365,7 @@ Sandbox Mode | `payment/eway/sandbox_flag` | ![EE-only]({{ site.baseurl }}common
 
 ### Cybersource sensitive and system-specific paths
 
-Name  | Config path | EE only? | Encrypted? | System-specific? |
+Name  | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
 |--------------|--------------|--------------|--------------|
 Merchant ID | `payment/cybersource/merchant_id` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
 Transaction Key | `payment/cybersource/transaction_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
@@ -376,8 +376,8 @@ Test Mode | `payment/cybersource/sandbox_flag` | ![EE-only]({{ site.baseurl }}co
 
 ### International paths
 
-Name  | Config path | EE only? | Encrypted? | System-specific? |
-|--------------|--------------|--------------|--------------|--------------|
+Name  | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
+|--------------|--------------|--------------|--------------|--------------|--------------|
 Transaction Key | `payment_au/authorizenet_directpost/trans_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 Test Mode | `payment_au/authorizenet_directpost/test` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 Gateway URL | `payment_au/authorizenet_directpost/cgi_url` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
