@@ -416,7 +416,7 @@ Gateway URL | `payment_us/authorizenet_directpost/cgi_url` | <!-- ![Not EE-only]
 Transaction Details URL | `payment_us/authorizenet_directpost/cgi_url_td` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 Access Key | `payment_us/cybersource/access_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 Secret Key | `payment_us/cybersource/secret_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
-Test Mode | `payment_us/cybersource/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Test Mode | `payment_us/cybersource/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 Test Mode | `payment_us/worldpay/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 Sandbox Mode | `payment_us/eway/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 Live API Key | `payment_us/eway/live_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
@@ -465,8 +465,8 @@ Secret Key | `payment_other/cybersource/secret_key` | ![EE-only]({{ site.baseurl
 New Order Status | `payment_other/cybersource/order_status` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 Test Mode | `payment_other/cybersource/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 Payment Response Password | `payment_other/worldpay/response_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
-Remote Admin Authorisation Password | `payment_other/worldpay/auth_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
-Test Mode | `payment_other/worldpay/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Remote Admin Authorisation Password | `payment_other/worldpay/auth_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Test Mode | `payment_other/worldpay/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 Sandbox Mode | `payment_other/eway/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 Live API Key | `payment_other/eway/live_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 Live API Password | `payment_other/eway/live_api_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
@@ -483,7 +483,7 @@ Access Key | `payment_ca/cybersource/access_key` | ![EE-only]({{ site.baseurl }}
 Secret Key | `payment_ca/cybersource/secret_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 New Order Status | `payment_ca/cybersource/order_status` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Test Mode | `payment_ca/cybersource/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
-Payment Response Password | `payment_ca/worldpay/response_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Payment Response Password | `payment_ca/worldpay/response_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 Remote Admin Authorisation Password | `payment_ca/worldpay/auth_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 Test Mode | `payment_ca/worldpay/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 Sandbox Mode | `payment_ca/eway/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
