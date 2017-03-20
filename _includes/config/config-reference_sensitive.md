@@ -118,7 +118,7 @@ Name  | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
 Country | `shipping/origin/country_id` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
 Region/State | `shipping/origin/region_id` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
 ZIP/Postal Code | `shipping/origin/postcode` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
-City | `shipping/origin/city` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
+City | `shipping/origin/city` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) | 
 Street Address | `shipping/origin/street_line1` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
 Street Address Line 2 | `shipping/origin/street_line2` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
 Live Account | `carriers/ups/is_account_live` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
@@ -175,7 +175,7 @@ Meter Number | `carriers/fedex/meter_number` | <!-- ![Not EE-only]({{ site.baseu
 Password | `carriers/fedex/password` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
 Access ID | `carriers/dhl/id` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
 Password | `carriers/dhl/password` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
-Debug | `carriers/dhl/debug` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
+Debug | `carriers/dhl/debug` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | 
 Account Number | `carriers/dhl/account` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
 Gateway URL | `carriers/dhl/gateway_url` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
 Sandbox Mode | `carriers/fedex/sandbox_mode` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
@@ -189,7 +189,7 @@ Name  | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
 Contact Name | `sales/magento_rma/store_name` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
 Street Address | `sales/magento_rma/address` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
 Street Address | `sales/magento_rma/address1` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
-City | `sales/magento_rma/city` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
+City | `sales/magento_rma/city` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
 State/Province | `sales/magento_rma/region_id` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
 ZIP/Postal Code | `sales/magento_rma/zip` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
 Country | `sales/magento_rma/country_id` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
@@ -322,7 +322,6 @@ Private Key | `payment/braintree/private_key` | <!-- ![Not EE-only]({{ site.base
 Merchant Account ID | `payment/braintree/merchant_account_id` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
 Kount Merchant ID | `payment/braintree/kount_id` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
 Override Merchant Name | `payment/braintree_paypal/merchant_name_override` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
-Merchant's Email | `payment/authorizenet_directpost/merchant_email` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
 URL | `payment/braintree/descriptor_url` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 
 
@@ -344,6 +343,7 @@ Test Mode | `payment/worldpay/sandbox_flag` | ![EE-only]({{ site.baseurl }}commo
 Name  | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
 |--------------|--------------|--------------|--------------|
 API Login ID | `payment/authorizenet_directpost/login` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
+Merchant's Email | `payment/authorizenet_directpost/merchant_email` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
 Transaction Key | `payment/authorizenet_directpost/trans_key` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![EE-only]({{ site.baseurl }}common/images/cloud_enc.png) | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
 Merchant MD5 | `payment/authorizenet_directpost/trans_md5` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![EE-only]({{ site.baseurl }}common/images/cloud_enc.png) | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
 Test Mode | `payment/authorizenet_directpost/test` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
