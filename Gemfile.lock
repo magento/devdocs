@@ -67,8 +67,6 @@ GEM
     jekyll-github-metadata (2.0.0)
       jekyll (~> 3.1)
       octokit (~> 4.0)
-    jekyll-last-modified-at (0.3.4)
-      jekyll
     jekyll-mentions (1.1.2)
       html-pipeline (~> 2.3)
       jekyll (~> 3.0)
@@ -130,7 +128,6 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages (= 83)
-  jekyll-last-modified-at
   pygments.rb
 
 BUNDLED WITH
