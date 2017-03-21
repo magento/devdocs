@@ -333,6 +333,8 @@ Name  | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
 |--------------|--------------|--------------|--------------|
 Debug Mode | `payment/hosted_pro/debug` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 SFTP Credentials | `payment_all_paypal/payments_pro_hosted_solution/pphs_settings/pphs_settings_advanced/pphs_settlement_report/heading_sftp` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
+SFTP Credentials | `payment_au/paypal_group_all_in_one/payments_pro_hosted_solution_au/pphs_settings/pphs_settings_advanced/pphs_settlement_report/heading_sftp` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
+
 
 ### Braintree sensitive and system-specific paths
 
@@ -611,3 +613,5 @@ Sandbox Client-side Encryption Key | `payment_it/eway/sandbox_encryption_key` | 
 API Key | `fraud_protection/signifyd/api_key`   | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) |  ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
 API URL  |  `fraud_protection/signifyd/api_url`  |  ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) |  | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
 SFTP Credentials | `payment_au/express_checkout_other/settings_ec/settings_ec_advanced/express_checkout_settlement_report/heading_sftp` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
+SFTP Credentials | `payment_au/paypal_group_all_in_one/wps_other/settings_ec/settings_ec_advanced/express_checkout_settlement_report/heading_sftp` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
+SFTP Credentials | `payment_au/paypal_payment_gateways/paypal_payflowpro_au/settings_paypal_payflow/settings_paypal_payflow_advanced/paypal_payflow_settlement_report/heading_sftp` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
