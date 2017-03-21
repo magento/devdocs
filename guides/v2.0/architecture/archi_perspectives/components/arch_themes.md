@@ -44,9 +44,9 @@ While developing a theme, place it under `app/design`.  If you've defined the th
 
 The standard Magento installation provides two default themes:
 
-* **Luma** is for demonstration. You may explore it to better understand how Magento themes work.
+* **Luma** is for demonstration. It is applied when Magento is installed with sample data. You may explore Luma to better understand how Magento themes work.
 
-* **Blank** theme is a boilerplate for theme customization. The Blank theme is built on principles of responsive web design, so it's a great tool to create your own responsive Magento themes.
+* **Blank** theme (applied if Magento is installed with no sample data) is a boilerplate for theme customization. The Blank theme is built on principles of responsive web design, so it's a great tool to create your own responsive Magento themes.
 
 Although your custom theme can be inherited from Luma (there is no problem in that), we recommend using Blank for new theme development. For more details, read about [creating custom themes] and [theme inheritance].
 

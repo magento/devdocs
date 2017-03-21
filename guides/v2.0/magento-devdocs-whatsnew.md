@@ -17,6 +17,11 @@ This page contains recent changes that we think you'd like to know about. We exc
 
 | Description  | Versions applied to  | New or Updated | Date |
 |--------------|--------------|----------------------|--------|
+| [Magento U video tutorials](http://devdocs.magento.com/videos){:target="_blank"}  | 2.x  | New  |  Mar 15 |
+| [Top quarterly devdocs contributors]({{ page.baseurl }}contributor-guide/quarterly-contributors.html){:target="_blank"}  |  2.x | Updated  | Mar 15  |
+|  [Community contribution to adding attributes to an entity]({{ page.baseurl }}extension-dev-guide/extension_attributes/adding-attributes.html){:target="_blank"} | 2.x  |  Updated | March 15  |
+| [Tutorial on copying fieldsets](ext-best-practices/tutorials/copy-fieldsets.html){:target="_blank"} | 2.x | New | Mar 9 |
+|  [Backward incompatible changes now includes Magento 2.0.x, added tables]({{ page.baseurl }}release-notes/backward-incompatible-changes.html){:target="_blank"} |  2.x |  Updated |  Mar 9 |
 | [Import a Magento EE project into Magento Enterprise Cloud Edition (MECE)]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-first-steps.html){:target="_blank"}  | 2.x  |  New | Mar 1  |
 | [MECE configuration management]({{ site.gdeurl21 }}cloud/live/sens-data-over.html){:target="_blank"}  | 2.1.x  |  New |  Mar 3 |
 | [Reorganize and update how to get started with an MECE environment]({{ page.baseurl }}cloud/before/before-setup-env-1_get-start.html){:target="_blank"}  | 2.x  |  Updated |  Mar 3 |
@@ -63,7 +68,7 @@ This page contains recent changes that we think you'd like to know about. We exc
 | [How to test a patch on Magento Enterprise Cloud Edition]({{ page.baseurl }}cloud/howtos/patch-magento.html)  | 2.x  |  Updated  |  Jan 10 |
 |  [Add `type` prefixes and product, project in description of `composer.json`]({{ page.baseurl }}extension-dev-guide/build/composer-integration.html){:target="_blank"} |  2.x |  Updated  | Jan 9  |
 | [Docblock coding standard]({{ page.baseurl }}coding-standards/docblock-standard-general.html){:target="_blank"} | 2.x | Updated | Jan 6 |
-| [Use payment vault in the Admin]({{ page.baseurl }}payments-integrations/vault/admin-integration.html){:target="_blank"} | 2.1 | Updated | Jan 6 |
+| [Use payment vault in the Admin]({{ site.gdeurl21 }}payments-integrations/vault/admin-integration.html){:target="_blank"} | 2.1.x | Updated | Jan 6 |
 
 {% endcollapsibleh2 %}
 
@@ -130,7 +135,7 @@ This page contains recent changes that we think you'd like to know about. We exc
 |[Magento EE 2.0.10 release notes]({{ site.gdeurl }}release-notes/ReleaseNotes2.0.10EE.html){:target="_blank"} | 2.0.x  | New| Oct 14 |
 |[Magento CE 2.1.2 release notes]({{ site.gdeurl21 }}release-notes/ReleaseNotes2.1.2CE.html){:target="_blank"} | 2.1.x  | New| Oct 14 |
 |[Magento EE 2.1.2 release notes]({{ site.gdeurl21 }}release-notes/ReleaseNotes2.1.2EE.html){:target="_blank"}  | 2.1.x  | New| Oct 14 |
-| [Proposed outline for evolving UI Components guide]({{ page.baseurl }}ui_comp_guide/ui_comp_outline_proposed.html){:target="_blank"} |2.1.x| New  |  Oct 14 |
+| [Proposed outline for evolving UI Components guide]({{ site.gdeurl21 }}ui_comp_guide/ui_comp_outline_proposed.html){:target="_blank"} |2.1.x| New  |  Oct 14 |
 |[Preventing cache poisoning]({{ page.baseurl }}config-guide/secy/secy-headers.html){:target="_blank"}  | See topic  |New|  Oct 14 |
 |[Updated system requirements]({{ page.baseurl }}install-gde/system-requirements-tech.html){:target="_blank"} | 2.x  |Updated| Oct 14 |
 |[JSON responses added by Tim Reynolds]({{ site.m1xgdeurl }}api/rest/Resources/resource_customer_addresses.html){:target="_blank"}  |  1.x |Updated| Oct 14 |
@@ -142,7 +147,7 @@ This page contains recent changes that we think you'd like to know about. We exc
 |[Magento 2 documentation resources for Magento Enterprise Cloud Edition (MECE)]({{ page.baseurl }}cloud/access-acct/resources.html){:target="_blank"} |  2.x |New| Oct 7 |
 |[MECE environment variables]({{ page.baseurl }}cloud/env/environment-vars_magento.html){:target="_blank"}  | 2.x  |  Updated | Oct 7 |
 |[MECE add more information about project directory structure]({{ page.baseurl }}cloud/access-acct/first-time-setup_dir-structure.html){:target="_blank"}  | 2.x  | Updated  |  Oct 7 |
-| [MECE completely revise new environment setup]({{ page.baseurl }}cloud/access-acct/set-up-env.html){:target="_blank"} | 2.x  |  Updated | Oct 7 |
+| [MECE completely revise new environment setup]({{ page.baseurl }}cloud/before/before-setup-env-1_get-started.html){:target="_blank"} | 2.x  |  Updated | Oct 7 |
 |[MECE responsibilities of the account owner]({{ page.baseurl }}cloud/before/before-project-owner.html){:target="_blank"}  | 2.x  |  New |  Oct 7 |
 |[MECE Magento file system owner for local development]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html){:target="_blank"}| 2.x  | New  | Oct 7 |
 |[MECE setting MySQL `auto_increment_increment=3`]({{ page.baseurl }}cloud/before/before-workspace-php.html){:target="_blank"}  |  2.x | New  | Oct 7 |

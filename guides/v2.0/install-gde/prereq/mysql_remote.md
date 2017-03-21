@@ -48,6 +48,10 @@ To create a remote connection:
 		Default options are read from the following files in the given order:
 		/etc/my.cnf /etc/mysql/my.cnf /usr/etc/my.cnf ~/.my.cnf
 
+	<div class="bs-callout bs-callout-info" id="info" markdown="1">
+  		On Ubuntu 16, the path is typically `/etc/mysql/mysql.conf.d/mysqld.cnf`.
+	</div>
+
 3.	Search the configuration file for `bind-address`.
 
 	If it exists, change the value as follows. 

@@ -15,7 +15,7 @@ $(function() {
 	//= include _includes/anchors.js
 	//= include _includes/menu.js
   //= include _includes/search.js
-  //= include _includes/tutorial.js
+  //= include _includes/videos.js
 
 });
 // END document ready

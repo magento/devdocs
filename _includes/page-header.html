@@ -2,15 +2,7 @@
 <section class="page-intro">
 	{% include breadcrumbs.html %}
 
-	{% if page.ee_only == true %}
-		<span class="ee-only">Enterprise Edition only</span>
-	{% endif %}
-
-	{% if page.subtitle%}
-		<h1 class="page-subtitle">{{ page.subtitle }}</h1>
-	{% endif %}
-
-	<h1 class="page-title">{{ page.title }}</h1>
+	<h1 class="page-heading">{{ page.title }}</h1>
 
   {% include tabs.md %}
 
