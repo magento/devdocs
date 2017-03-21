@@ -261,6 +261,7 @@ Custom Endpoint Hostname or IP-Address | `paypal/fetch_reports/ftp_ip` | <!-- ![
 Sandbox Mode | `paypal/fetch_reports/ftp_sandbox` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 Debug Mode | `payment/paypal_express/debug` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 Debug Mode | `payment/paypal_billing_agreement/debug` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+SFTP Credentials | `payment_all_paypal/express_checkout/settings_ec/settings_ec_advanced/express_checkout_settlement_report/heading_sftp` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
 
 ### PayPal Payflow Pro sensitive and system-specific paths
 
@@ -292,6 +293,8 @@ Proxy Port | `payment/payflow_link/proxy_port` | <!-- ![Not EE-only]({{ site.bas
 Debug Mode | `payment/payflow_link/debug` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 URL method for Cancel URL and Return URL | `payment/payflow_link/url_method` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 Debug Mode | `payment/payflow_express/debug` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+SFTP Credentials | `payment_all_paypal/payflow_link/settings_payflow_link/settings_payflow_link_advanced/payflow_link_settlement_report/heading_sftp` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
+
 
 ### PayPal Payments Pro sensitive and system-specific paths
 
@@ -304,14 +307,14 @@ API Certificate | `paypal/wpp/api_cert` | <!-- ![Not EE-only]({{ site.baseurl }}
 Proxy Host | `paypal/wpp/proxy_host` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
 Proxy Port | `paypal/wpp/proxy_port` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
 Sandbox Mode | `paypal/wpp/sandbox_flag` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
-
+SFTP Credentials | `payment_all_paypal/payments_pro_hosted_solution_without_bml/pphs_settings/pphs_settings_advanced/pphs_settlement_report/heading_sftp` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
 
 ### PayPal Payments Pro Hosted sensitive and system-specific paths
 
 Name  | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
 |--------------|--------------|--------------|--------------|
 Debug Mode | `payment/hosted_pro/debug` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
-
+SFTP Credentials | `payment_all_paypal/payments_pro_hosted_solution/pphs_settings/pphs_settings_advanced/pphs_settlement_report/heading_sftp` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
 
 ### Braintree sensitive and system-specific paths
 
@@ -558,9 +561,9 @@ Transaction Details URL | `payment_fr/authorizenet_directpost/cgi_url_td` | <!--
 Transaction Key | `payment_fr/cybersource/transaction_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
 Access Key | `payment_fr/cybersource/access_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
 Secret Key | `payment_fr/cybersource/secret_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
-Test Mode | `payment_fr/cybersource/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
-Payment Response Password | `payment_fr/worldpay/response_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
-Remote Admin Authorisation Password | `payment_fr/worldpay/auth_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
+Test Mode | `payment_fr/cybersource/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
+Payment Response Password | `payment_fr/worldpay/response_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png)  | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
+Remote Admin Authorisation Password | `payment_fr/worldpay/auth_password` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
 Test Mode | `payment_fr/worldpay/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) |  | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 Sandbox Mode | `payment_fr/eway/sandbox_flag` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) |
 Live API Key | `payment_fr/eway/live_api_key` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | ![Sys-specific]({{ site.baseurl }}common/images/cloud_env.png) | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
