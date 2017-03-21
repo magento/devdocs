@@ -36,6 +36,23 @@ Change was done in order to add default values to customer attributes.
 **Action:** Added the getter `getDefaultValue()` and setter `setDefaultValue($defaultValue)` to [`Magento\Customer\Model\Data\AttributeMetadata`]<br/>
 **Description:** Retrieve and set default values to customer attributes<br/>
 
+#### Wishlist Module
+
+The format of serialized string for buyRequest parameter in \Magento\Wishlist\Model\Wishlist::addNewItem changed from serialized to JSON.
+
+{% highlight php %}
+/**
+ * Adds new product to wishlist
+ *
+ * @param \Magento\Catalog\Model\Product|int $product
+ * @param \Magento\Framework\DataObject|array|string|null $buyRequest
+ * @param bool $forciblySetQty
+ * @throws \Magento\Framework\Exception\LocalizedException
+ * @return \Magento\Wishlist\Model\Item|string
+ */
+addNewItem($product, $buyRequest = null, $forciblySetQty = false)
+{% endhighlight %}
+
 ### MessageQueue Module API
 
 The `Magento\Framework\MessageQueue\ConfigInterface` has been deprecated. The following table lists the deprecated methods and their replacements.
@@ -56,7 +73,8 @@ Deprecated method | Use instead | Subsequent calls
 `getPublisher($name);` | `\Magento\Framework\MessageQueue\Publisher\ConfigInterface::getPublisher($name)` | Use getter methods to return requested information.
 `getResponseQueueName($topicName);` | Magento\Framework\MessageQueue\Rpc\ResponseQueueNameBuilder::getQueueName($topicName) | -
 
-#### Error Processor Module ####
+#### Error Processor Module
+
 Exception report files in `var/report` are now JSON encoded, and existing serialized files will not be readable by the upgraded Magento 2.2 instance.
 
 ## Changes in repositories
