@@ -12,13 +12,13 @@ github_link: config-guide/prod/single-machine-deployment.md
 
 This topic provides instructions for deploying updates to Magento on a production server using the command line.
 
-This process applies to technical users responsible for stores running on a single machine with a few themes and locales installed.
+This process applies to technical users responsible for stores running on a single machine with some themes and locales installed.
 
 For less technical users, i.e. business users, we recommend using the [System Upgrade][9] feature in the Admin.
 
 ## Assumptions
 
-* Magento was installed using [Composer][8] or a [compressed archive][7].
+* You installed Magento using [Composer][8] or a [compressed archive][7].
 * You are directly applying updates to the server.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
@@ -30,7 +30,7 @@ Contributing developers should use [this guide][6] to update their Magento insta
 
 1. Log in to your production server as, or switch to, the [Magento file system owner][10].
 
-2. Change directory to where Magento is installed:
+2. Change directory to the Magento base directory:
         
         cd <Magento base directory>
 
