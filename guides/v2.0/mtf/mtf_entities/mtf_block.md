@@ -13,7 +13,7 @@ In functional tests we use Page Object Design Pattern. Under this pattern, a blo
 
 The Page Object Design Pattern is used to avoid unnecessary duplication of code and to make tests easier to support.
 
-Block as a class represents a set of methods to manipulate with Magento UI blocks.
+Block as a class represents a set of methods to manipulate with Magento UI blocks. It contains all logic you want to apply to the Magento block under test.
 
 A block can have the following features:
 
@@ -22,97 +22,28 @@ A block can have the following features:
 
 This topic shows how to create a new block and explore its structure. It discusses how to use mapping for forms in blocks and forms in tabs.
 
-## Create block {#mtf_block_types} 
+## Example {#mtf_block_class}
 
-A basic flow is the following:
-
-1. Get name and path of the block you want to test
-2. Create block class with logic you need for the tests
-3. Add block to the page
-4. Run the page generator
-
-### How to determine a block name and a path {#mtf_block_path}
-
-The block name and path in the Magento functional tests (`<magento2_root_dir>/dev/tests/functional/tests/app`) should reflect a corresponding block in the Magento code base for your convenience.
-For example, you develop a functional test for the bundle product creation, that uses the Bundle Items section. In the Magento code base, the block, which is responsible for the bundle option, is the `.../Magento/Bundle/Block/Adminhtml/Catalog/Product/Edit/Tab/Bundle/Option.php`, so in the Magento functional tests you can create a new file `.../Magento/Bundle/Block/Test/Adminhtml/Catalog/Product/Edit/Tab/Bundle/Option.php`.
-
-Magento can show you a full class name of the block and path to the PHTML template on the Magento page (changes web page design) or implicitly in the HTML code of the page.
-
-#### Get the name and the path of blocks in UI {#mtf_block_path_ui}
-
-To enable this feature follow:
-
-1. Log in to Magento Admin as administrator
-1. Follow **STORES > Configuration**
-1. Change **Store View** to **Main Website** (the template path and block name will only appear for current website)
-1. Follow **ADVANCED > Developer**
-1. Expand the **Debug** tab
-1. Set **Template Path Hints** to **Yes**
-1. Set **Add Block Name to Hints** to **Yes**
-1. **Save Config**
-
-![]({{site.baseurl}}common/images/ftf/mtf_bloch_namepath_ui_onoff.png)
-
-Now each UI block has hint about its name and path. Also, you can see the path to a PHTML template, where you can find a path to the Magento block, if you cannot find it in the hint.
-
-<a href="{{ site.baseurl }}common/images/ftf/mtf_block_name_path_in_ui.png"><img src="{{ site.baseurl }}common/images/ftf/mtf_block_name_path_in_ui.png" /></a>
-
-<div class="bs-callout bs-callout-tip">
-  <p>If the name and path cover partially each other, hover the mouse pointer over the name or the path (whatever you need) with mouse pointer to see the full phrase.</p>
-</div>
-
-#### Get the name and the path of blocks in the code {#mtf_block_path_code}
-
-If you want to change the representation of block details, you can change a <a href="{{site.mage2000url}}lib/internal/Magento/Framework/View/Element/Template.php"><code>Template.php</code></a>:
-
-* Open `<magento2_root_dir>/lib/internal/Magento/Framework/View/Element/Template.php`
-
-* Find the method
-
-{% highlight php5 %}
-<?php
-protected function _toHtml()
-{
-    if (!$this->getTemplate()) {
-        return '';
-    }
-    return $this->fetchView($this->getTemplateFile());
-}
-?>
-{% endhighlight php %}
-
-* Change the code to the following
+A block [`Magento\Widget\Test\Block\Adminhtml\Widget\WidgetGrid`]{:target=_blank} simply reuses methods of a basic block [`Magento\Backend\Test\Block\Widget\Grid`]{:target=_blank}.
 
 {% highlight php %}
-<?php
-protected function _toHtml()
-{
-    if (!$this->getTemplate()) {
-        return '';
-    }
-    $name = $this->getNameInLayout();
-    $template = $this->getTemplateFile();
-    $class = get_class($this);
-    return "<!-- BEGIN $name using $template \n" . $class . "-->"
-        . $this->fetchView($template)
-        . "<!-- END $name using $template -->";
-}
-?>
-{% endhighlight php %}
+{% remote_markdown https://raw.githubusercontent.com/magento/magento2/9d4c58e77126ae448eda81aa5e3206a16568fc5c/dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/WidgetGrid.php %}
+{% endhighlight %}
 
-* Save the file
+## Basic blocks {#mtf_block_basic}
 
-Now you can inspect any element in a browser, and find which block contains it.
+Magento contains basic blocks for the functional testing with a logic that you can reuse. The most popular are the following:
 
-<a href="{{ site.baseurl }}common/images/ftf/mtf_block_name_path_in_code.png"><img src="{{ site.baseurl }}common/images/ftf/mtf_block_name_path_in_code.png" /></a>
+* [Magento\Mtf\Block\Block]{:target=_blank}
+* [Magento\Mtf\Block\Form]{:target=_blank}
+* [Magento\Backend\Test\Block\Widget\Tab]{:target=_blank}
+* [Magento\Backend\Test\Block\Widget\FormTabs]{:target=_blank}
+* [Magento\Backend\Test\Block\Widget\Grid]{:target=_blank}
+* [Magento\Ui\Test\Block\Adminhtml\DataGrid]{:target=_blank}
 
-### Block class {#mtf_block_class}
+## Block identifier {#mtf_block_identifier}
 
-The block class contains all logic you want to apply to the Magento block under test.
-
-#### Block identifier {#mtf_block_identifier}
-
-Each block has an identifier that includes selector and search strategy. This identifier is determined by [Magento\Mtf\Client\Element\Locator](https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Locator.php) class and is stored in the `_rootElement` property of the [Magento\Mtf\Block\Block](https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/Block.php) class.
+Each block has an identifier that includes selector and searching strategy. This identifier is determined by the [Magento\Mtf\Client\Element\Locator]{:target=_blank} class and is stored in the `_rootElement` property of the [Magento\Mtf\Block\Block]{:target=_blank} class.
 
 You can use the `_rootElement` to find an element in the current block.
 
@@ -128,64 +59,6 @@ protected function addLayoutUpdates()
 {%endhighlight%}
 
 This code uses `_rootElement` to search the button element by the `$this->addLayoutUpdates` selector. The advantage of the `_rootElement` is that it enables search in the context of the block to which the element belongs.
-
-#### Use blocks inside blocks {#mtf_block_in_block}
-
-You can get other blocks in the block using the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/BlockFactory.php"><code>BlockFactory</code></a> class and a selector.
-
-See the following example:
-
-{%highlight php%}
-<?php
-protected function getTemplateBlock()
-{
-    return $this->blockFactory->create(
-        'Magento\Backend\Test\Block\Template',
-        ['element' => $this->_rootElement->find($this->templateBlock, Locator::SELECTOR_XPATH)]
-    );
-}
-?>
-{%endhighlight%}
-
-In this code we are creating the `Magento\Backend\Test\Block\Template` block with the selector `$this->templateBlock`.
-
-#### Basic blocks {#mtf_block_basic}
-
-Magento contains basic blocks for the functional testing with a logic that you can reuse. The most popular are the following:
-
-* [Magento\Mtf\Block\Block](https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/Block.php)
-* [Magento\Mtf\Block\Form](https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/Form.php)
-* [Magento\Backend\Test\Block\Widget\Tab]({{site.mage2000url}}dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/Tab.php)
-* [Magento\Backend\Test\Block\Widget\FormTabs]({{site.mage2000url}}dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/FormTabs.php)
-* [Magento\Backend\Test\Block\Widget\Grid]({{site.mage2000url}}dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/Grid.php)
-
-* [Magento\Ui\Test\Block\Adminhtml\DataGrid]({{site.mage2000url}}dev/tests/functional/tests/app/Magento/Ui/Test/Block/Adminhtml/DataGrid.php)
-
-For example, <a href="https://github.com/magento/magento2/blob/9d4c58e77126ae448eda81aa5e3206a16568fc5c/dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/WidgetGrid.php"><code>WidgetGrid.php</code></a>. This block simply reuses methods of <a href="{{site.mage2000url}}dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/Grid.php"><code>Magento\Backend\Test\Block\Widget\Grid</code></a> class.
-
-### Add a block to the page {#mtf_block_to-page}
-
-Blocks are tested as part of the [page][] object. To add the block to the page you must add a corresponding node to the XML file of the page object.
-
-For example, the <a href="{{site.mage2000url}}dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/WidgetGrid.php">WidgetGrid.php</a> is a part of the page that is defined in <a href="{{site.mage2000url}}dev/tests/functional/tests/app/Magento/Widget/Test/Page/Adminhtml/WidgetInstanceIndex.xml"><code>WidgetInstanceIndex.xml</code></a>.
-
-`block` is the node that adds the block to the page:
-
-{%highlight xml%}
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../vendor/magento/mtf/etc/pages.xsd">
-    <page name="WidgetInstanceIndex" area="Adminhtml" mca="admin/widget_instance/index" module="Magento_Widget">
-        ...
-        <block name="widgetGrid" class="Magento\Widget\Test\Block\Adminhtml\Widget\WidgetGrid" locator="#widgetInstanceGrid" strategy="css selector" />
-        ...
-    </page>
-</config>
-{%endhighlight%}
-
-{% include mtf/block_attributes.md %}
-
-#### Run the page generator {#mtf_run_page_gen}
-
-{% include mtf/page-generator.html %}
 
 ## Form mapping {#mtf_block_mapping}
 
@@ -242,7 +115,7 @@ The general structure of the form mapping file:
 
 <img src="{{site.baseurl}}common/images/ftf/mtf_block_map_form_xml.png" />
 
-### Form tab mapping {#mtf_block_map_form_tab}
+## Form tab mapping {#mtf_block_map_form_tab}
 
 You can use mapping for the forms on tabs (a form tab) that enables you to automate switching between tabs and entering the data.
 To get the block class with form tab mapping, extend your class from <a href="{{site.mage2000url}}dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/FormTabs.php" ><code>Magento\Backend\Test\Block\Widget\FormTabs</code> </a>. If you want to use custom tab logic you can extend your class from <a href="{{site.mage2000url}}dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/Tab.php"><code>Magento\Backend\Test\Block\Widget\Tab</code></a> class.
@@ -343,7 +216,7 @@ The general structure of the form tab mapping file:
 
 <img src="{{site.baseurl}}common/images/ftf/mtf_block_map_form_tab_xml.png" />
 
-### Merging form tab mapping files {#mtf_block_map_form_tab_merge}
+## Merging form tab mapping files {#mtf_block_map_form_tab_merge}
 
 When you test a module that extends the functionality of the other module by adding a tab to the testing module entity, you can merge their form tab mapping files.
 
@@ -357,7 +230,137 @@ Form tab mapping files in the following example will be merged automatically:
 
 Renders help to unify a polymorphic behavior of the block. If you want to test the functionality of the object, which behavior differs depending on the type of the object, you can create a separate class for each type and call the corresponding class using render.
 
-### How to use renders {#mtf_block_render_handl}
+## HowTos
+
+### Create a block {#mtf_block_types} 
+
+A basic flow is the following:
+
+1. Get name and path of the block you want to test
+2. Create block class with logic you need for the tests
+3. Add block to the page
+4. Run the page generator
+
+#### How to determine a block name and a path {#mtf_block_path}
+
+The block name and path in the Magento functional tests (`<magento2_root_dir>/dev/tests/functional/tests/app`) should reflect a corresponding block in the Magento code base for your convenience.
+For example, you develop a functional test for the bundle product creation, that uses the Bundle Items section. In the Magento code base, the block, which is responsible for the bundle option, is the `.../Magento/Bundle/Block/Adminhtml/Catalog/Product/Edit/Tab/Bundle/Option.php`, so in the Magento functional tests you can create a new file `.../Magento/Bundle/Block/Test/Adminhtml/Catalog/Product/Edit/Tab/Bundle/Option.php`.
+
+Magento can show you a full class name of the block and path to the PHTML template on the Magento page (changes web page design) or implicitly in the HTML code of the page.
+
+##### Get the name and the path of blocks in UI {#mtf_block_path_ui}
+
+To enable this feature follow:
+
+1. Log in to Magento Admin as administrator
+1. Follow **STORES > Configuration**
+1. Change **Store View** to **Main Website** (the template path and block name will only appear for current website)
+1. Follow **ADVANCED > Developer**
+1. Expand the **Debug** tab
+1. Set **Template Path Hints** to **Yes**
+1. Set **Add Block Name to Hints** to **Yes**
+1. **Save Config**
+
+![]({{site.baseurl}}common/images/ftf/mtf_bloch_namepath_ui_onoff.png)
+
+Now each UI block has hint about its name and path. Also, you can see the path to a PHTML template, where you can find a path to the Magento block, if you cannot find it in the hint.
+
+<a href="{{ site.baseurl }}common/images/ftf/mtf_block_name_path_in_ui.png"><img src="{{ site.baseurl }}common/images/ftf/mtf_block_name_path_in_ui.png" /></a>
+
+<div class="bs-callout bs-callout-tip">
+  <p>If the name and path cover partially each other, hover the mouse pointer over the name or the path (whatever you need) with mouse pointer to see the full phrase.</p>
+</div>
+
+##### Get the name and the path of blocks in the code {#mtf_block_path_code}
+
+If you want to change the representation of block details, you can change a <a href="{{site.mage2000url}}lib/internal/Magento/Framework/View/Element/Template.php"><code>Template.php</code></a>:
+
+* Open `<magento2_root_dir>/lib/internal/Magento/Framework/View/Element/Template.php`
+
+* Find the method
+
+{% highlight php5 %}
+<?php
+protected function _toHtml()
+{
+    if (!$this->getTemplate()) {
+        return '';
+    }
+    return $this->fetchView($this->getTemplateFile());
+}
+?>
+{% endhighlight php %}
+
+* Change the code to the following
+
+{% highlight php %}
+<?php
+protected function _toHtml()
+{
+    if (!$this->getTemplate()) {
+        return '';
+    }
+    $name = $this->getNameInLayout();
+    $template = $this->getTemplateFile();
+    $class = get_class($this);
+    return "<!-- BEGIN $name using $template \n" . $class . "-->"
+        . $this->fetchView($template)
+        . "<!-- END $name using $template -->";
+}
+?>
+{% endhighlight php %}
+
+* Save the file
+
+Now you can inspect any element in a browser, and find which block contains it.
+
+<a href="{{ site.baseurl }}common/images/ftf/mtf_block_name_path_in_code.png"><img src="{{ site.baseurl }}common/images/ftf/mtf_block_name_path_in_code.png" /></a>
+
+#### Add a block to the page {#mtf_block_to-page}
+
+Blocks are tested as part of the [page][] object. To add the block to the page you must add a corresponding node to the XML file of the page object.
+
+For example, the <a href="{{site.mage2000url}}dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/WidgetGrid.php">WidgetGrid.php</a> is a part of the page that is defined in <a href="{{site.mage2000url}}dev/tests/functional/tests/app/Magento/Widget/Test/Page/Adminhtml/WidgetInstanceIndex.xml"><code>WidgetInstanceIndex.xml</code></a>.
+
+`block` is the node that adds the block to the page:
+
+{%highlight xml%}
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../vendor/magento/mtf/etc/pages.xsd">
+    <page name="WidgetInstanceIndex" area="Adminhtml" mca="admin/widget_instance/index" module="Magento_Widget">
+        ...
+        <block name="widgetGrid" class="Magento\Widget\Test\Block\Adminhtml\Widget\WidgetGrid" locator="#widgetInstanceGrid" strategy="css selector" />
+        ...
+    </page>
+</config>
+{%endhighlight%}
+
+{% include mtf/block_attributes.md %}
+
+#### Run the page generator {#mtf_run_page_gen}
+
+{% include mtf/page-generator.html %}
+
+### Use blocks inside blocks {#mtf_block_in_block}
+
+You can get other blocks in the block using the <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/BlockFactory.php"><code>BlockFactory</code></a> class and a selector.
+
+See the following example:
+
+{%highlight php%}
+<?php
+protected function getTemplateBlock()
+{
+    return $this->blockFactory->create(
+        'Magento\Backend\Test\Block\Template',
+        ['element' => $this->_rootElement->find($this->templateBlock, Locator::SELECTOR_XPATH)]
+    );
+}
+?>
+{%endhighlight%}
+
+In this code we are creating the `Magento\Backend\Test\Block\Template` block with the selector `$this->templateBlock`.
+
+### Create and use renders {#mtf_block_render_handl}
 
 **Use case**: We want to test the "Add to cart" functionality. To add different types of products, we need to configure each type in a different way. For the configuration, we need options of the type we want to configure. We can use render to get product options. Render specifies which class to use for the specific type of product.
 
@@ -381,6 +384,7 @@ Let's see the `Catalog/Test/Page/Product/CatalogProductView.xml` page. For the b
 This page relates to the Magento_Catalog module and contains `ViewBlock`. This block has reference to the `Magento\Catalog\Test\Block\Product\View.php` class, that is responsible to enter data in Product form fields. But different types of products, such as bundle, each have their own `ViewBlock` in a corresponding module. And that is where you can use render!
 
 #### Create a render {#mtf_block_render_create}
+
 Let's create render for the bundle product.
 
 **Step 1**. Create `Bundle/Test/Page/Product/CatalogProductView.xml` page to merge with the basic page `Catalog/Test/Page/Product/CatalogProductView.xml`. [Learn more about page merging]({{page.baseurl}}mtf/mtf_entities/mtf_page.html#mtf_page_merge).
@@ -432,9 +436,9 @@ Details:
 
 #### Use a render {#mtf_block_render_use}
 
-In the following example we have used the render to call the `getOptions()` method from `Magento\Bundle\Test\Block\Catalog\Product\View.php`.
+In the following example we have used the render to call the `getOptions()` method from `Magento\Bundle\Test\Block\Catalog\Product\View`.
 
-Let's take a look at the basic class `Magento\Catalog\Test\Block\Product\View.php`.
+Let's take a look at the basic class `Magento\Catalog\Test\Block\Product\View`.
 
 {%highlight php5%}
 <?php
@@ -453,7 +457,7 @@ public function getOptions(FixtureInterface $product)
 
  It contains the `getOptions()` method that:
  
- * Gets from the `Bundle/Test/Fixture/BundleProduct.php` fixture the `type_id` field value - `$dataConfig['type_id']`. In our case, `type_id='bundle'`.
+ * Gets from the `Bundle/Test/Fixture/BundleProduct.php` fixture the `type_id` field value `$dataConfig['type_id']`. In our case, `type_id='bundle'`.
  
  * Calls the `hasRender()` method to check if there is a render with the name `bundle`
  
@@ -465,9 +469,21 @@ public function getOptions(FixtureInterface $product)
  
  * Calls a default method if the render is absent
  
- {%highlight php5 startinline=1%}
+ {%highlight php startinline=1%}
  $this->getCustomOptionsBlock()->getOptions($product);
  {%endhighlight%}
+ 
+### Define a selector
+
+There are some rules that should be followed to define a selector:
+
+1. Use CSS and XPath strategies.
+2. For forms use the `name` attribute as a selector.
+3. If the attribute is static (not auto-generate), use the `id` attribute.
+4. If you cannot use `id`, use `data-*` attributes
+5. Do not use the `class` attribute, because they are changed very often
+6. Do not use complex hard-coded structures like `//div/div[2]//tbody//tr[1]/td[0]`, because it can be unpredictably changed.
+ 
  
 <!-- LINK DEFINITIONS -->
  
@@ -475,6 +491,17 @@ public function getOptions(FixtureInterface $product)
 [CatalogProductView.xml]: {{site.mage2000url}}dev/tests/functional/tests/app/Magento/Bundle/Test/Page/Product/CatalogProductView.xml
 [Magento\Mtf\Block\Form]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/Form.php
 [Magento\Catalog\Test\Block\Product\View]: {{site.mage2000url}}dev/tests/functional/tests/app/Magento/Catalog/Test/Block/Product/View.php
+
+[`Magento\Widget\Test\Block\Adminhtml\Widget\WidgetGrid`]: https://github.com/magento/magento2/blob/9d4c58e77126ae448eda81aa5e3206a16568fc5c/dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/WidgetGrid.php
+[`Magento\Backend\Test\Block\Widget\Grid`]: {{site.mage2000url}}dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/Grid.php
+
+[Magento\Mtf\Block\Block]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/Block.php
+[Magento\Mtf\Block\Form]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/Form.php
+[Magento\Backend\Test\Block\Widget\Tab]: {{site.mage2000url}}dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/Tab.php
+[Magento\Backend\Test\Block\Widget\FormTabs]: {{site.mage2000url}}dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/FormTabs.php
+[Magento\Backend\Test\Block\Widget\Grid]: {{site.mage2000url}}dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/Grid.php
+[Magento\Ui\Test\Block\Adminhtml\DataGrid]: {{site.mage2000url}}dev/tests/functional/tests/app/Magento/Ui/Test/Block/Adminhtml/DataGrid.php
+[Magento\Mtf\Client\Element\Locator]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Locator.php
 
 <!-- ABBREVIATIONS -->
 
