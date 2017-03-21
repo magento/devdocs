@@ -8,6 +8,10 @@ version: 2.2
 github_link: ui_comp_guide/components/ui-input.md
 ---
 
+## Overview
+
+The Input component is a form element that implements the HTML `<input>` field of type="text".
+
 ## Configuration options
 
 Extends all `abstract` configuration.

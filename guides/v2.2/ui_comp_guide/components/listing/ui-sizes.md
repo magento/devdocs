@@ -8,11 +8,15 @@ version: 2.2
 github_link: ui_comp_guide/components/listing/ui-sizes.md
 ---
 
-Constructor: [app/code/Magento/Ui/view/base/web/js/grid/paging/paging.js]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/grid/paging/paging.js)
+## Overview
+
+The Sizes is a helper component for the Paging. It implements an editable list of options that define the maximum number of displayed records in the table.
+
+Constructor: [app/code/Magento/Ui/view/base/web/js/grid/paging/sizes.js]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/grid/paging/sizes.js)
 
 ## Sizes configuration
 
-Extends all [Multiline]({{page.baseurl}}ui_comp_guide/components/ui-multiline.md) configuration.
+Extends all [`UiElement`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uielement_concept.html) configuration.
 
 Sizes-specific configuration:
 
