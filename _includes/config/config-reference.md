@@ -8,12 +8,16 @@ These configuration values are availabe in the Magento Admin in **Stores** > Set
 
 Name  | Config path | EE only? | Encrypted?
 |--------------|--------------|--------------|--------------|
-| Default Country | `general/country/default` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive?]({{ site.baseurl }}common/images/cloud_sens.png) | Allow Countries | `general/country/allow` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive?]({{ site.baseurl }}common/images/cloud_sens.png) |Zip/Postal Code is | Optional for | `general/country/optional_zip_countries` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive?]({{ site.baseurl }}common/images/cloud_sens.png) |European Union Countries | `general/country/eu_countries` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive?]({{ site.baseurl }}common/images/cloud_sens.png) |Top destinations | `general/country/destinations` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-| State is Required for | `general/region/state_required` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-| Allow to Choose State if It is Optional for Country | `general/region/display_all` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-| Timezone | `general/locale/timezone` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-| Locale | `general/locale/code` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-| Weight Unit | `general/locale/weight_unit` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
+| Default Country | `general/country/default` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) | 
+| Allow Countries | `general/country/allow` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) | 
+Zip/Postal Code is | Optional for | `general/country/optional_zip_countries` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) 
+|European Union Countries | `general/country/eu_countries` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) | 
+Top destinations | `general/country/destinations` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
+State is Required for | `general/region/state_required` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
+Allow to Choose State if It is Optional for Country | `general/region/display_all` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
+Timezone | `general/locale/timezone` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
+Locale | `general/locale/code` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
+Weight Unit | `general/locale/weight_unit` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 First Day of Week | `general/locale/firstday` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Weekend Days | `general/locale/weekend` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Access Restriction | `general/restriction/is_active` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
