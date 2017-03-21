@@ -37,6 +37,8 @@ They are listed here because the content has been well received within the Magen
 * *Presentation:* [Magento 2 Deployment: What you should know][4]{:target="_blank"} by Olga KopyLova
 * *Blog post* [Magento 2 deployment without the downtime][5]{:target="_blank"} by Robert Egginton
 * *Blog post* [Deploying Magento 2 - History & Overview][6]{:target="_blank"} by Matthias Walter
+* *Blog post* [Deploying Magento 2 using Capistrano][17]{:taget="_blank"} by David Alger
+* *Blog post* [Deploying Magento 2 with Composer and Envoyer][16]{:target="_blank"} by Nick Rigby
 
 ## Mastering Magento 2
 
@@ -68,3 +70,5 @@ They are listed here because the content has been well received within the Magen
 [13]: http://alanstorm.com/magento_2_introducing_ui_components/
 [14]: https://www.dropbox.com/s/j9a65kmqo5s4zys/MageTitansUSA%202016%20-%20Creating%20Micro-Services%20for%20Magento%202.pdf?dl=0
 [15]: http://www.slideshare.net/StaceyWhitney1/mage-titans-usa-2016-miguel-balparda-magento-2-premium-performance-with-php-7-and-varnish
+[16]: https://nickrigby.uk/magento/deploying-magento-2-with-composer-and-envoyer.html
+[17]: http://davidalger.com/development/magento/deploying-magento-2-using-capistrano/
