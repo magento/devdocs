@@ -223,6 +223,9 @@ These configuration values are availabe in the Magento Admin in **Stores** > Set
 Name  | Config path | EE only? | Encrypted? | System-specific? | Sensitive? |
 |--------------|--------------|--------------|--------------|
 Error Email Recipient | `system/magento_scheduled_import_export_log/error_email` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
+Access list | `system/full_page_cache/varnish/access_list` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> |  | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
+Error Email Sender | `system/magento_scheduled_import_export_log/error_email_identity` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> |  | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
+
 
 ### Developer sensitive and system-specific paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Advanced** > **Developer**.
@@ -744,8 +747,7 @@ SFTP Credentials | `payment_hk/paypal_group_all_in_one/wps_other/settings_ec/set
 Make Check Payable to | `payment_hk/checkmo/payable_to` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
 Send Check to | `payment_hk/checkmo/mailing_address` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
 API Login ID | `payment_hk/authorizenet_directpost/login` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
-Merchant MD5 | `payment_hk/authorizenet_directpost/trans_md5` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
-| ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
+Merchant MD5 | `payment_hk/authorizenet_directpost/trans_md5` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
 Email Customer | `payment_hk/authorizenet_directpost/email_customer` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
 Merchant's Email | `payment_hk/authorizenet_directpost/merchant_email` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
 Merchant ID | `payment_hk/cybersource/merchant_id` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
@@ -765,3 +767,36 @@ Email Customer | `payment_jp/authorizenet_directpost/email_customer` | <!-- ![No
 Merchant's Email | `payment_jp/authorizenet_directpost/merchant_email` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
 Merchant ID | `payment_jp/cybersource/merchant_id` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
 Profile ID | `payment_jp/cybersource/profile_id` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
+Installation ID | `payment_jp/worldpay/installation_id` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
+Remote Admin Installation ID | `payment_jp/worldpay/admin_installation_id` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
+MD5 Secret for Transactions | `payment_jp/worldpay/md5_secret` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
+Signature Fields | `payment_jp/worldpay/signature_fields` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
+SFTP Credentials | `payment_fr/express_checkout_other/settings_ec/settings_ec_advanced/express_checkout_settlement_report/heading_sftp` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
+SFTP Credentials | `payment_fr/paypal_group_all_in_one/payments_pro_hosted_solution_fr/pphs_settings/pphs_settings_advanced/pphs_settlement_report/heading_sftp` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
+SFTP Credentials | `payment_fr/paypal_group_all_in_one/wps_other/settings_ec/settings_ec_advanced/express_checkout_settlement_report/heading_sftp` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
+Make Check Payable to | `payment_fr/checkmo/payable_to` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
+Send Check to | `payment_fr/checkmo/mailing_address` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
+API Login ID | `payment_fr/authorizenet_directpost/login` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
+Merchant MD5 | `payment_fr/authorizenet_directpost/trans_md5` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
+Email Customer | `payment_fr/authorizenet_directpost/email_customer` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
+Merchant's Email | `payment_fr/authorizenet_directpost/merchant_email` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
+Merchant ID | `payment_fr/cybersource/merchant_id` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
+Profile ID | `payment_fr/cybersource/profile_id` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
+Installation ID | `payment_fr/worldpay/installation_id` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
+Remote Admin Installation ID | `payment_fr/worldpay/admin_installation_id` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
+MD5 Secret for Transactions | `payment_fr/worldpay/md5_secret` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
+Signature Fields | `payment_fr/worldpay/signature_fields` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
+SFTP Credentials | `payment_it/express_checkout_other/settings_ec/settings_ec_advanced/express_checkout_settlement_report/heading_sftp` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
+SFTP Credentials | `payment_it/paypal_group_all_in_one/payments_pro_hosted_solution_it/pphs_settings/pphs_settings_advanced/pphs_settlement_report/heading_sftp` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
+SFTP Credentials | `payment_it/paypal_group_all_in_one/wps_other/settings_ec/settings_ec_advanced/express_checkout_settlement_report/heading_sftp` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
+Make Check Payable to | `payment_it/checkmo/payable_to` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
+Send Check to | `payment_it/checkmo/mailing_address` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
+API Login ID | `payment_it/authorizenet_directpost/login` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
+Merchant MD5 | `payment_it/authorizenet_directpost/trans_md5` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
+Email Customer | `payment_it/authorizenet_directpost/email_customer` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
+Merchant's Email | `payment_it/authorizenet_directpost/merchant_email` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
+Merchant ID | `payment_it/cybersource/merchant_id` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
+Profile ID | `payment_it/cybersource/profile_id` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
+Installation ID | `payment_it/worldpay/installation_id` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
+Remote Admin Installation ID | `payment_it/worldpay/admin_installation_id` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |
+MD5 Secret for Transactions | `payment_it/worldpay/md5_secret` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) |

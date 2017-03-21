@@ -994,7 +994,6 @@ Log Entry Lifetime, Days | `system/rotation/lifetime` | <!-- ![Not EE-only]({{ s
 Log Archiving Frequency | `system/rotation/frequency` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Caching Application | `system/full_page_cache/caching_application` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 TTL for public content | `system/full_page_cache/ttl` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Access list | `system/full_page_cache/varnish/access_list` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Grace period | `system/full_page_cache/varnish/grace_period` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Export Configuration | `system/full_page_cache/varnish/export_button_version4` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Days Saved in Log | `system/bulk/lifetime` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
@@ -1005,7 +1004,6 @@ Save Files, Days | `system/magento_scheduled_import_export_log/save_days` | <!--
 Enable Scheduled File History Cleaning | `system/magento_scheduled_import_export_log/enabled` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Start Time | `system/magento_scheduled_import_export_log/time` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Frequency | `system/magento_scheduled_import_export_log/frequency` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Error Email Sender | `system/magento_scheduled_import_export_log/error_email_identity` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Error Email Template | `system/magento_scheduled_import_export_log/error_email_template` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 
 ### Developer paths
