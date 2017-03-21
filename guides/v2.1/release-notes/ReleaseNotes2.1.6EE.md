@@ -4,7 +4,7 @@ group: release-notes
 subgroup: 02_rel-notes
 title: Magento EE 2.1.6 Release Notes
 menu_title: Magento EE 2.1.6 Release Notes
-menu_order: 265
+menu_order: 267
 level3_menu_node: level3child
 level3_subgroup: ee21-relnotes 
 github_link: release-notes/ReleaseNotes2.1.6EE.md
