@@ -1057,22 +1057,17 @@ Credit Card Types | `payment_au/eway/cctypes` | ![EE-only]({{ site.baseurl }}com
 Payment from Applicable Countries | `payment_au/eway/allowspecific` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Payment from Specific Countries | `payment_au/eway/specificcountry` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Sort Order | `payment_au/eway/sort_order` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-SFTP Credentials | `payment_ca/express_checkout_other/settings_ec/settings_ec_advanced/express_checkout_settlement_report/heading_sftp` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Scheduled Fetching | `payment_ca/express_checkout_other/settings_ec/settings_ec_advanced/express_checkout_settlement_report/heading_schedule` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 PayPal Merchant Pages Style | `payment_ca/express_checkout_other/settings_ec/settings_ec_advanced/express_checkout_frontend/paypal_pages` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-SFTP Credentials | `payment_ca/paypal_group_all_in_one/wps_other/settings_ec/settings_ec_advanced/express_checkout_settlement_report/heading_sftp` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Scheduled Fetching | `payment_ca/paypal_group_all_in_one/wps_other/settings_ec/settings_ec_advanced/express_checkout_settlement_report/heading_schedule` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 PayPal Merchant Pages Style | `payment_ca/paypal_group_all_in_one/wps_other/settings_ec/settings_ec_advanced/express_checkout_frontend/paypal_pages` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Enable this Solution | `payment/paypal_payment_pro/active` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Credit Card Settings | `payment_ca/paypal_payment_gateways/wpp_ca/settings_paypal_payflow/heading_cc` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Reject Transaction if: | `payment_ca/paypal_payment_gateways/wpp_ca/settings_paypal_payflow/settings_paypal_payflow_advanced/paypal_payflow_avs_check/heading_avs_settings` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-SFTP Credentials | `payment_ca/paypal_payment_gateways/wpp_ca/settings_paypal_payflow/settings_paypal_payflow_advanced/paypal_payflow_settlement_report/heading_sftp` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Scheduled Fetching | `payment_ca/paypal_payment_gateways/wpp_ca/settings_paypal_payflow/settings_paypal_payflow_advanced/paypal_payflow_settlement_report/heading_schedule` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Credit Card Settings | `payment_ca/paypal_payment_gateways/paypal_payflowpro_ca/settings_paypal_payflow/heading_cc` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Reject Transaction if: | `payment_ca/paypal_payment_gateways/paypal_payflowpro_ca/settings_paypal_payflow/settings_paypal_payflow_advanced/paypal_payflow_avs_check/heading_avs_settings` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-SFTP Credentials | `payment_ca/paypal_payment_gateways/paypal_payflowpro_ca/settings_paypal_payflow/settings_paypal_payflow_advanced/paypal_payflow_settlement_report/heading_sftp` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Scheduled Fetching | `payment_ca/paypal_payment_gateways/paypal_payflowpro_ca/settings_paypal_payflow/settings_paypal_payflow_advanced/paypal_payflow_settlement_report/heading_schedule` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-SFTP Credentials | `payment_ca/paypal_payment_gateways/payflow_link_ca/settings_payflow_link/settings_payflow_link_advanced/payflow_link_settlement_report/heading_sftp` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Scheduled Fetching | `payment_ca/paypal_payment_gateways/payflow_link_ca/settings_payflow_link/settings_payflow_link_advanced/payflow_link_settlement_report/heading_schedule` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 PayPal Merchant Pages Style | `payment_ca/paypal_payment_gateways/payflow_link_ca/settings_payflow_link/settings_payflow_link_advanced/payflow_link_frontend/paypal_pages` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Enabled | `payment_ca/free/active` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
@@ -1105,8 +1100,6 @@ Title | `payment_ca/checkmo/title` | <!-- ![Not EE-only]({{ site.baseurl }}commo
 New Order Status | `payment_ca/checkmo/order_status` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Payment from Applicable Countries | `payment_ca/checkmo/allowspecific` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Payment from Specific Countries | `payment_ca/checkmo/specificcountry` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Make Check Payable to | `payment_ca/checkmo/payable_to` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Send Check to | `payment_ca/checkmo/mailing_address` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Minimum Order Total | `payment_ca/checkmo/min_order_total` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Maximum Order Total | `payment_ca/checkmo/max_order_total` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Sort Order | `payment_ca/checkmo/sort_order` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
@@ -1121,13 +1114,8 @@ Sort Order | `payment_ca/purchaseorder/sort_order` | <!-- ![Not EE-only]({{ site
 Enabled | `payment_ca/authorizenet_directpost/active` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Payment Action | `payment_ca/authorizenet_directpost/payment_action` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Title | `payment_ca/authorizenet_directpost/title` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-API Login ID | `payment_ca/authorizenet_directpost/login` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
-Merchant MD5 | `payment_ca/authorizenet_directpost/trans_md5` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
-New Order Status | `payment_ca/authorizenet_directpost/order_status` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Accepted Currency | `payment_ca/authorizenet_directpost/currency` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Debug | `payment_ca/authorizenet_directpost/debug` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Email Customer | `payment_ca/authorizenet_directpost/email_customer` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Merchant's Email | `payment_ca/authorizenet_directpost/merchant_email` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Credit Card Types | `payment_ca/authorizenet_directpost/cctypes` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Credit Card Verification | `payment_ca/authorizenet_directpost/useccv` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Payment from Applicable Countries | `payment_ca/authorizenet_directpost/allowspecific` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
@@ -1138,8 +1126,6 @@ Sort Order | `payment_ca/authorizenet_directpost/sort_order` | <!-- ![Not EE-onl
 Enabled | `payment_ca/cybersource/active` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Payment Action | `payment_ca/cybersource/payment_action` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Title | `payment_ca/cybersource/title` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Merchant ID | `payment_ca/cybersource/merchant_id` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
-Profile ID | `payment_ca/cybersource/profile_id` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
 Debug | `payment_ca/cybersource/debug` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Credit Card Types | `payment_ca/cybersource/cctypes` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Payment from Applicable Countries | `payment_ca/cybersource/allowspecific` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
@@ -1149,8 +1135,6 @@ Maximum Order Total | `payment_ca/cybersource/max_order_total` | ![EE-only]({{ s
 Sort Order | `payment_ca/cybersource/sort_order` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Enabled | `payment_ca/worldpay/active` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Title | `payment_ca/worldpay/title` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Installation ID | `payment_ca/worldpay/installation_id` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Remote Admin Installation ID | `payment_ca/worldpay/admin_installation_id` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 MD5 Secret for Transactions | `payment_ca/worldpay/md5_secret` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Allow To Edit Contact Information | `payment_ca/worldpay/fix_contact` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Hide Contact Information | `payment_ca/worldpay/hide_contact` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
@@ -1172,10 +1156,8 @@ Credit Card Types | `payment_ca/eway/cctypes` | ![EE-only]({{ site.baseurl }}com
 Payment from Applicable Countries | `payment_ca/eway/allowspecific` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Payment from Specific Countries | `payment_ca/eway/specificcountry` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Sort Order | `payment_ca/eway/sort_order` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-SFTP Credentials | `payment_other/express_checkout_other/settings_ec/settings_ec_advanced/express_checkout_settlement_report/heading_sftp` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Scheduled Fetching | `payment_other/express_checkout_other/settings_ec/settings_ec_advanced/express_checkout_settlement_report/heading_schedule` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 PayPal Merchant Pages Style | `payment_other/express_checkout_other/settings_ec/settings_ec_advanced/express_checkout_frontend/paypal_pages` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-SFTP Credentials | `payment_other/paypal_group_all_in_one/wps_other/settings_ec/settings_ec_advanced/express_checkout_settlement_report/heading_sftp` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Scheduled Fetching | `payment_other/paypal_group_all_in_one/wps_other/settings_ec/settings_ec_advanced/express_checkout_settlement_report/heading_schedule` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 PayPal Merchant Pages Style | `payment_other/paypal_group_all_in_one/wps_other/settings_ec/settings_ec_advanced/express_checkout_frontend/paypal_pages` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Enabled | `payment_other/free/active` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
@@ -1208,8 +1190,6 @@ Title | `payment_other/checkmo/title` | <!-- ![Not EE-only]({{ site.baseurl }}co
 New Order Status | `payment_other/checkmo/order_status` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Payment from Applicable Countries | `payment_other/checkmo/allowspecific` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Payment from Specific Countries | `payment_other/checkmo/specificcountry` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Make Check Payable to | `payment_other/checkmo/payable_to` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Send Check to | `payment_other/checkmo/mailing_address` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Minimum Order Total | `payment_other/checkmo/min_order_total` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Maximum Order Total | `payment_other/checkmo/max_order_total` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Sort Order | `payment_other/checkmo/sort_order` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
@@ -1224,13 +1204,9 @@ Sort Order | `payment_other/purchaseorder/sort_order` | <!-- ![Not EE-only]({{ s
 Enabled | `payment_other/authorizenet_directpost/active` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Payment Action | `payment_other/authorizenet_directpost/payment_action` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Title | `payment_other/authorizenet_directpost/title` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-API Login ID | `payment_other/authorizenet_directpost/login` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
-Merchant MD5 | `payment_other/authorizenet_directpost/trans_md5` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
-New Order Status | `payment_other/authorizenet_directpost/order_status` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Accepted Currency | `payment_other/authorizenet_directpost/currency` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Debug | `payment_other/authorizenet_directpost/debug` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Email Customer | `payment_other/authorizenet_directpost/email_customer` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Merchant's Email | `payment_other/authorizenet_directpost/merchant_email` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Credit Card Types | `payment_other/authorizenet_directpost/cctypes` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Credit Card Verification | `payment_other/authorizenet_directpost/useccv` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Payment from Applicable Countries | `payment_other/authorizenet_directpost/allowspecific` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
@@ -1241,8 +1217,6 @@ Sort Order | `payment_other/authorizenet_directpost/sort_order` | <!-- ![Not EE-
 Enabled | `payment_other/cybersource/active` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Payment Action | `payment_other/cybersource/payment_action` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Title | `payment_other/cybersource/title` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Merchant ID | `payment_other/cybersource/merchant_id` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
-Profile ID | `payment_other/cybersource/profile_id` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | ![Encrypted]({{ site.baseurl }}common/images/cloud_enc.png) | 
 Debug | `payment_other/cybersource/debug` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Credit Card Types | `payment_other/cybersource/cctypes` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Payment from Applicable Countries | `payment_other/cybersource/allowspecific` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
@@ -1252,9 +1226,6 @@ Maximum Order Total | `payment_other/cybersource/max_order_total` | ![EE-only]({
 Sort Order | `payment_other/cybersource/sort_order` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Enabled | `payment_other/worldpay/active` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Title | `payment_other/worldpay/title` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Installation ID | `payment_other/worldpay/installation_id` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Remote Admin Installation ID | `payment_other/worldpay/admin_installation_id` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-MD5 Secret for Transactions | `payment_other/worldpay/md5_secret` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Allow To Edit Contact Information | `payment_other/worldpay/fix_contact` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Hide Contact Information | `payment_other/worldpay/hide_contact` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Signature Fields | `payment_other/worldpay/signature_fields` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
@@ -1344,9 +1315,6 @@ Maximum Order Total | `payment_de/authorizenet_directpost/max_order_total` | <!-
 Sort Order | `payment_de/authorizenet_directpost/sort_order` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Enabled | `payment_de/worldpay/active` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Title | `payment_de/worldpay/title` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Installation ID | `payment_de/worldpay/installation_id` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Remote Admin Installation ID | `payment_de/worldpay/admin_installation_id` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-MD5 Secret for Transactions | `payment_de/worldpay/md5_secret` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Allow To Edit Contact Information | `payment_de/worldpay/fix_contact` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Hide Contact Information | `payment_de/worldpay/hide_contact` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Signature Fields | `payment_de/worldpay/signature_fields` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
