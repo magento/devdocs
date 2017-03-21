@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>How Magento cache clearing works with Varnish</title>
+	<title>Single machine deployment</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.0/config-guide/varnish/use-varnish-cache.html">
+	<link rel="canonical" href="//guides/v2.0/config-guide/prod/single-machine-deployment.html">
 
   <script>
     var baseUrl = "/";
@@ -49,9 +49,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/config-guide/varnish/use-varnish-cache.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/config-guide/prod/single-machine-deployment.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/config-guide/varnish/use-varnish-cache.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/config-guide/prod/single-machine-deployment.html">Magento 2.1</a></li>
 	
   </ul>
 
@@ -817,7 +817,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.0/config-guide/varnish/use-varnish-cache.html">How Magento cache clearing works with Varnish</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/varnish/use-varnish-cache.html">How Magento cache clearing works with Varnish</a></li>
 
 									
 
@@ -1271,7 +1271,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/prod/single-machine-deployment.html">Single machine deployment</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/config-guide/prod/single-machine-deployment.html">Single machine deployment</a></li>
 
 									
 
@@ -1442,7 +1442,7 @@
       
 
       <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
-        <span property="name">How Magento cache clearing works with Varnish</span>
+        <span property="name">Single machine deployment</span>
         <meta property="position" content="2" />
       </li>
 
@@ -1461,65 +1461,113 @@
 
 
 
-	<h1 class="page-heading">How Magento cache clearing works with Varnish</h1>
+	<h1 class="page-heading">Single machine deployment</h1>
 
   
 
 
 </section>
 
-			<p>This topic discusses the basics of using Varnish as a web caching accelerator for Magento.</p>
+			<p>This topic provides instructions for deploying updates to Magento on a production server using the command line.</p>
 
-<h2 id="use-varnish-magento-purge">Varnish purging</h2>
-<p>According to <a href="https://www.varnish-cache.org/docs/trunk/users-guide/purging.html" target="_blank">Varnish documentation</a>, “A <em>purge</em> is what happens when you pick out an object from the cache and discard it along with its variants.” A Varnish purge is very similar to a Magento cache clean command (or clicking <strong>Flush Magento Cache</strong> in the Magento Admin).</p>
+<p>This process applies to technical users responsible for stores running on a single machine with some themes and locales installed.</p>
 
-<p>In fact, as discussed in this section, when you clean, flush, or refresh the Magento cache, Varnish purges as well.</p>
+<p>For less technical users, i.e. business users, we recommend using the <a href="/guides/v2.0/comp-mgr/upgrader/upgrade-start.html">System Upgrade</a> feature in the Admin.</p>
 
-<p>After you’ve installed and configured Varnish to work with Magento, the following actions can result in a Varnish purge:</p>
+<h2 id="assumptions">Assumptions</h2>
 
 <ul>
-  <li>
-    <p>Maintaining a website.</p>
-
-    <p>For example, anything you do in the Admin in:</p>
-
-    <ul>
-      <li><strong>STORES</strong> &gt; <strong>Configuration</strong> &gt; GENERAL &gt; <strong>General</strong></li>
-      <li><strong>STORES</strong> &gt; <strong>Configuration</strong> &gt; GENERAL &gt; <strong>Currency Setup</strong></li>
-      <li><strong>STORES</strong> &gt; <strong>Configuration</strong> &gt; GENERAL &gt; <strong>Store Email Addresses</strong></li>
-    </ul>
-
-    <p>When Magento detects such a change, a message displays informing you to refresh the cache. To do this, see <a href="#use-varnish-cache">Refresh the Magento cache</a>.</p>
-  </li>
-  <li>
-    <p>Maintaining a store (for example, adding or editing categories, prices, products, and promotional pricing rules).</p>
-
-    <p>Varnish is purged automatically when you perform any of these tasks.</p>
-  </li>
-  <li>
-    <p>Maintaining source code.</p>
-
-    <p>You should refresh the cache and also periodically delete everything in the <code>var/generation</code> and <code>var/di</code> directories. For information on refreshing the cache, see the next section.</p>
-  </li>
+  <li>You installed Magento using <a href="/guides/v2.0/install-gde/prereq/integrator_install.html">Composer</a> or a <a href="/guides/v2.0/install-gde/prereq/zip_install.html">compressed archive</a>.</li>
+  <li>You are directly applying updates to the server.</li>
 </ul>
 
-<h2 id="use-varnish-magento-purge">Configure Magento to purge Varnish</h2>
-<p>Magento purges Varnish hosts after you configure Varnish hosts using the <a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-deployment.html"><code>magento setup:config:set</code></a> command.</p>
+<div class="bs-callout bs-callout-warning">
+  <p>This guide does not apply if you used <code>git clone</code> to install Magento.
+Contributing developers should use <a href="/guides/v2.0/install-gde/install/cli/dev_options.html">this guide</a> to update their Magento installation.</p>
+</div>
 
-<p>You can use the optional parameter <code>--http-cache-hosts</code> parameter to specify a comma-separated list of Varnish hosts and listen ports. Configure all Varnish hosts, whether you have one or many. (Do not separate hosts with a space character.)</p>
+<h2 id="deployment-steps">Deployment steps</h2>
 
-<p>The parameter format must be <code>&lt;hostname or ip&gt;:&lt;listen port&gt;</code>, where you can omit <code>&lt;listen port&gt;</code> if it’s port 80.</p>
+<ol>
+  <li>
+    <p>Log in to your production server as, or switch to, the <a href="/guides/v2.0/install-gde/prereq/file-sys-perms-over.html#magento-file-system-owner">Magento file system owner</a>.</p>
+  </li>
+  <li>
+    <p>Change directory to the Magento base directory:</p>
 
-<p>For example,</p>
+    <pre><code> cd &lt;Magento base directory&gt;
+</code></pre>
+  </li>
+  <li>
+    <p>Enable maintenance mode using the command:</p>
 
-<pre><code>magento setup:config:set --http-cache-hosts=192.0.2.100,192.0.2.155:6081
+    <pre><code> php bin/magento maintenance:enable
+</code></pre>
+  </li>
+  <li>
+    <p>Apply updates to Magento or its components using the following command pattern:</p>
+
+    <pre><code> composer require &lt;package&gt; &lt;version&gt; --no-update
 </code></pre>
 
-<p>You can then purge Varnish hosts when you refresh the Magento cache (also referred to as <em>cleaning</em> the cache) in the Magento Admin or using the command line.</p>
+    <p><strong>package</strong>: The name of the package you want to update.</p>
 
-<p>To refresh the cache using the Admin, click <strong>SYSTEM</strong> &gt; Tools &gt; <strong>Cache Management</strong>, then click <strong>Flush Magento Cache</strong> at the top of the page. (You can also refresh individual cache types.)</p>
+    <p>For example:</p>
 
-<p>To refresh the cache using the command line, you typically use the <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean"><code>magento cache:clean [type]</code></a> command as the <a href="/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.</p>
+    <ul>
+      <li><code>magento/product-community-edition</code></li>
+      <li><code>magento/product-enterprise-edition</code></li>
+    </ul>
+
+    <p><strong>version</strong>: The target version of the package you want to update.</p>
+  </li>
+  <li>
+    <p>Update Magento’s components with Composer:</p>
+
+    <pre><code> composer update
+</code></pre>
+  </li>
+  <li>
+    <p>Update the database schema and data:</p>
+
+    <pre><code> php bin/magento setup:upgrade
+</code></pre>
+  </li>
+  <li>
+    <p>Compile the code:</p>
+
+    <pre><code> php bin/magento setup:di:compile
+</code></pre>
+  </li>
+  <li>
+    <p>Deploy static content:</p>
+
+    <pre><code> php bin/magento setup:static-content:deploy
+</code></pre>
+  </li>
+  <li>
+    <p>Exit maintenance mode:</p>
+
+    <pre><code> php bin/magento maintenance:disable
+</code></pre>
+  </li>
+</ol>
+
+<h2 id="alternative-deployment-strategies">Alternative deployment strategies</h2>
+
+<p>For deployment strategies developed by the Magento community, see the blog posts listed under the <a href="/community/resources/#installdeploy">Install/deploy</a> section in our Community Resources page.</p>
+
+<p>In Magento 2.2, a near-zero downtime deployment model will be available for a variety of complex environments, including Cloud.</p>
+
+<h2 id="related-topics">Related topics</h2>
+
+<ul>
+  <li><a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-maint.html">Enable or disable maintenance mode</a></li>
+  <li><a href="/guides/v2.0/comp-mgr/cli/cli-upgrade.html">Command line upgrade</a></li>
+  <li><a href="/guides/v2.0/install-gde/install/cli/dev_update-magento.html">Update the Magento application</a></li>
+  <li><a href="http://docs.magento.com/m2/ce/user_guide/system/web-setup-wizard.html">User Guide: Web Setup Wizard</a></li>
+  <li><a href="/guides/v2.0/comp-mgr/upgrader/upgrade-start.html">Running the System Upgrade</a></li>
+</ul>
 
 
 		</div>
@@ -1531,14 +1579,14 @@
 
 			
 			 <div class="github-link">
-				 <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/config-guide/varnish/use-varnish-cache.md" target="_blank">
+				 <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/config-guide/prod/single-machine-deployment.md" target="_blank">
 					 Edit this page on GitHub
 				 </a>
 			 </div>
 			
 
 			<div class="new-issue">
-				<a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.0/config-guide/varnish/use-varnish-cache.html" target="_blank">Give us feedback</a>
+				<a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.0/config-guide/prod/single-machine-deployment.html" target="_blank">Give us feedback</a>
 			</div>
 
 		</div>
