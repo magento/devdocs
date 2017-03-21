@@ -15,7 +15,7 @@ github_link: release-notes/ReleaseNotes2.1.6EE.md
 
 We are pleased to present Magento Enterprise Edition 2.1.6. This release includes important performance enhancements for your Magento software, especially to the performance of operations involving configurable products with swatches. 
 
-Looking for the <a href="http://devdocs.magento.com/guides/v2.0/cloud/release-notes/CloudReleaseNotes2.1.4.html" target="_blank">Magento Enterprise Cloud Edition Release Notes</a>?
+Looking for the <a href="http://devdocs.magento.com/guides/v2.0/cloud/release-notes/CloudReleaseNotes.html" target="_blank">Magento Enterprise Cloud Edition Release Notes</a>?
 
 
 ## Highlights
@@ -56,7 +56,10 @@ Magento 2.1.6 contains over 15 significant performance enhancements when compare
 
 
 
-## Functional enhancements
+## Functional fixes and enhancements
+
+We address the following functional fixes and enhancements in this release.
+
 
 ### Catalog
 

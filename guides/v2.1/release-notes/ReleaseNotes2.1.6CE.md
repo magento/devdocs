@@ -16,7 +16,7 @@ github_link: release-notes/ReleaseNotes2.1.6CE.md
 
 We are pleased to present Magento Community Edition 2.1.6. This release includes important performance enhancements for your Magento software, especially to the performance of operations involving configurable products with swatches. 
 
-Looking for the <a href="http://devdocs.magento.com/guides/v2.0/cloud/release-notes/CloudReleaseNotes2.1.4.html" target="_blank">Magento Enterprise Cloud Edition Release Notes</a>?
+Looking for the <a href="http://devdocs.magento.com/guides/v2.0/cloud/release-notes/CloudReleaseNotes.html" target="_blank">Magento Enterprise Cloud Edition Release Notes</a>?
 
 
 ## Highlights
@@ -57,7 +57,10 @@ Magento 2.1.6 contains over 15 significant performance enhancements when compare
 
 
 
-## Functional enhancements
+## Functional fixes and enhancements
+
+We address the following functional fixes and enhancements in this release.
+
 
 ### Catalog
 
@@ -70,7 +73,7 @@ Magento 2.1.6 contains over 15 significant performance enhancements when compare
 
 <!--- 66346 -->* The `\Magento\CatalogInventory\Model\Stock\Status::getStockId()` method now returns the website ID instead of the stock ID, as expected. 
 
-<!--- 63343 -->* The `\Magento\CatalogWidget\Model\Rule` calss now implements unserialized methods. Specifically, Magento has replaced `\Magento\FrameworkSerialize\Serializer\Json::serialize()` with `\Magento\FrameworkSerialize\Serializer\Json::unserialize()`. 
+<!--- 63343 -->* The `\Magento\CatalogWidget\Model\Rule` class now implements unserialized methods. Specifically, Magento has replaced `\Magento\FrameworkSerialize\Serializer\Json::serialize()` with `\Magento\FrameworkSerialize\Serializer\Json::unserialize()`. 
 
 
 
