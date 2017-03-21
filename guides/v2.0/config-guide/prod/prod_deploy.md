@@ -11,8 +11,8 @@ github_link: config-guide/prod/prod_deploy.md
 redirect_from: /guides/v2.0/howdoi/deploy/deploy-to-prod.html
 ---
 
-There are different viable strategies available for deploying changes to Magento depending on your production server.
-How you deploy changes to Magento depends on the your production setup.
+There are different viable strategies available for deploying changes to Magento.
+How you deploy changes to Magento depends on the setup of your production server.
 
 The following is a list of recommended strategies for production deployment:
 
