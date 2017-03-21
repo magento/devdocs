@@ -849,7 +849,6 @@ Name  | Config path | EE only? | Encrypted?
 |--------------|--------------|--------------|--------------|
 Enable | `google/analytics/active` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Account type | `google/analytics/type` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
-Account Number | `google/analytics/account` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Enable Content Experiments | `google/analytics/experiments` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 List property for the catalog page | `google/analytics/catalog_page_list_value` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 List property for the cross-sell block | `google/analytics/crosssell_block_list_value` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
