@@ -2,8 +2,8 @@
 layout: default
 group: config-guide
 subgroup: 999_prod
-title: Deployment overview
-menu_title: Deployment overview
+title: Deployment general overview
+menu_title: Deployment general overview
 menu_node: 
 menu_order: 11
 version: 2.2
