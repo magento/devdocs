@@ -19,6 +19,10 @@ Magento 2 EE offers number of scalability advantages, including the ability to u
 
 Checkout, orders, and product data can all each use a separate master databases that you can optionally replicate. This separation independently scales load from website checkouts, order management activities, website browsing, and merchandising activities, depending on your needs.  These changes provide considerable flexibility in how the database tier can be scaled.
 
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+Magento Enterprise Cloud Edition does _not_ support this feature at this time.
+</div>
+
 The `ResourceConnections` class provides the unified MySQL database connection to the Magento application. For queries to the master databases, we implement the <a href="https://en.wikipedia.org/wiki/Command%E2%80%93query_separation" target="_blank">Command Query Responsibility Segregation (CQRS)</a> database pattern. This pattern handles the logic for routing the read and write queries to the appropriate databases. Developers do not need to know which configuration is being used and there are no separate read and write database connections.
 
 If you set up optional database replication, you get the following advantages:

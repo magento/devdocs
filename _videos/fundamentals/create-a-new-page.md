@@ -67,7 +67,7 @@ __DIR__
 */
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
-<module name="Learning_HelloPage" setup_version="0.0.1">
+    <module name="Learning_HelloPage" setup_version="0.0.1">
     </module>
 </config>
 {% endhighlight %}
@@ -87,8 +87,8 @@ Now, since we’re working in the frontend area, we’ll add the `etc/frontend/r
 */
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:App/etc/routes.xsd">
-<router id="standard">
-<route id="learning" frontName="test">
+    <router id="standard">
+        <route id="learning" frontName="test">
             <module name="Learning_HelloPage" />
         </route>
     </router>
