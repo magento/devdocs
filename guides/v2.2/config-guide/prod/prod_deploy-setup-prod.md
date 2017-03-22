@@ -7,7 +7,7 @@ menu_title: Set up your production system
 menu_node: 
 menu_order: 23
 level3_menu_node: level3child
-level3_subgroup: setup
+level3_subgroup: deploy-setup
 version: 2.2
 github_link: config-guide/prod/prod_deploy-setup-prod.md
 ---

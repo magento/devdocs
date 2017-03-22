@@ -2,10 +2,10 @@
 layout: default
 group: config-guide
 subgroup: 999_prod
-title: Set up development, build, and production systems
-menu_title: Set up development, build, and production systems
+title: Set up deployment systems
+menu_title: Set up deployment systems
 level3_menu_node: level3parent
-level3_subgroup: setup
+level3_subgroup: deploy-setup
 menu_node:
 menu_order: 20
 version: 2.2
