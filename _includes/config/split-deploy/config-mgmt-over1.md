@@ -12,6 +12,6 @@
 These new methods to manage your configuration are optional. You don't have to use them, although we strongly recommend you do.
 </div>
 
+None of the configuration options you set in the shared, system-specific, or sensitive configuration can be edited in the Magento Admin. This helps keep your settings consistent across all systems.
+
 Each Magento configuration option has a unique _configuration path_. To set a value for a configuration option, you can use either a CLI command or an environment variable on a specific system.
-
-

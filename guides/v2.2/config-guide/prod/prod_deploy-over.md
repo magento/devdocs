@@ -33,14 +33,14 @@ Production system
 ## Reduced downtime deployment
 Because you deploy static assets and compile code on a machine separate from your production system, you minimize downtime. Downtime on your production system is limited to the amount of time required to transfer static files and compiled code to the server.
 
-### Use source control
+## Use source control
 To use split deployment, we assume your Magento code is in a source control repository. In this guide, we assume you're using Git but the choice of repositories is up to you. 
 
-### Other deployment methods
+## Other deployment methods
 You can optionally use other deployment methods, including secure copying with SCP or rsync; or you can use a tool like [Capistrano](http://capistranorb.com/documentation/overview/what-is-capistrano){:target="_blank"}. 
 
 ## Manage the configuration
-Modeling after [factor 3 in the 12-factor app design](https://12factor.net/config){:target="_blank"}, we now store the configuration for each system in the system itself. We also provide a way to synchronize the configuration of your systems:
+Modeling after [factor 3 in the 12-factor app design](https://12factor.net/config){:target="_blank"}, Magento now stores the configuration for each system in the system itself. We also provide a way to synchronize the configuration of your systems:
 
 {% include config/split-deploy/config-mgmt-over1.md %}
 
@@ -49,3 +49,6 @@ For a complete list of configuration paths, see the following references:
 *	[Other configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-most.html)
 *	[Payment configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-payment.html)
 *	[Sensitive and system-specific configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-sens.html)
+
+#### Next step
+[Deployment technical overview]({{ page.baseurl }}config-guide/prod/prod_deploy-over-tech.html)
