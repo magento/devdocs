@@ -41,3 +41,4 @@ You can optionally use other deployment methods, including secure copying with S
 In Magento 2.2 for the first time, we provide the following improvements:
 
 {% include config/split-deploy/config-mgmt-over1.md %}
+
