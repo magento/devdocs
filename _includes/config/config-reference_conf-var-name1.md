@@ -1,18 +1,21 @@
 <div markdown="1">
 
-A configuration variable name consists of its scope followed by its configuration path. The following sections discuss how to determine a variable name in more detail.
+This topic discusses how to derive an environment variable name knowing a configuration path. You can override Magento configuration settings using environment variables. For example, you can override the value of a payment processor's live URL on your production system.
+
+You can override the value of _any_ configuration setting using environment variables; however, we recommend you maintain consistent settings using the shared configuration file, `config.php`, and the system-specific configuration file, `env.php`, as discussed in TBD.
+
+A environment variable name consists of its scope followed by its configuration path. The following sections discuss how to determine a variable name in more detail.
 
 You can use variables for any of the following:
 
-*	[Sensitive values]({{ page.baseurl }}config-guide/prod/config-reference-sens.html) must be set using either configuration variables or the [`magento config:sensitive:set`]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config.html) command.
-*	System-specific values must be set using either configuration variables or the [`magento config:set --lock`]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config.html) command.
+*	[Sensitive values]({{ page.baseurl }}config-guide/prod/config-reference-sens.html) must be set using either environment variables or the [`magento config:sensitive:set`]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config.html) command.
+*	System-specific values must be set using either environment variables, the [`magento config:senstive:set`]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config.html) command, or the [`magento app:config:dump` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-export.html).
 
-*	You can optionally use configuration variables to override system-specific settings.
+Configuration paths can be found in:
 
-	Configuration paths for system-specific settings can be found in:
-
-	*	[All configuration paths except payments reference]({{ page.baseurl }}config-guide/prod/config-reference-most.html)
-	*	[Payment configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-payment.html)
+*	[All configuration paths except payments reference]({{ page.baseurl }}config-guide/prod/config-reference-most.html)
+*	[Payment configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-payment.html)
+*	[Sensitive and system-specific configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-sens.html)
 
 ### Variable names
 The general format of system settings variable names follows:
@@ -48,7 +51,7 @@ The general format of system settings variable names follows:
 
 A complete list of configuration paths can be found in:
 
-*	[All configuration variables except paths]({{ page.baseurl }}config-guide/prod/config-reference-most.html)
+*	[All environment variables except paths]({{ page.baseurl }}config-guide/prod/config-reference-most.html)
 *	[Payment configuration paths]({{ page.baseurl }}config-guide/prod/config-reference-payment.html)
 
 ## Step 1: Find the website or store view scope value {#deploy-system-vars-scopes}

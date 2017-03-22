@@ -29,10 +29,15 @@ Production system
 :	Your live store. You should make minimal configuration changes here and no changes to websites, stores, store views, products, or the catalog. You should make all those types of changes in your development system.
 
 ## Reduced downtime deployment
-TBD
+Because you deploy static assets and compile code on a machine separate from your production system, you minimize downtime. Downtime on your production system is limited to the amount of time required to transfer static files and compiled code to the server.
 
 ### Use source control
-To use split deployment, we assume your Magento code is in a source control repository. In this guide, we assume you're using Git but the choice of repositories is up to you.
+To use split deployment, we assume your Magento code is in a source control repository. In this guide, we assume you're using Git but the choice of repositories is up to you. 
+
+### Other deployment methods
+You can optionally use other deployment methods, including secure copying with SCP or rsync; or you can use a tool like [Capistrano](http://capistranorb.com/documentation/overview/what-is-capistrano){:target="_blank"}. 
 
 ## Manage the configuration
-TBD
+In Magento 2.2 for the first time, we provide the following improvements:
+
+{% include config/split-deploy/config-mgmt-over1.md %}
