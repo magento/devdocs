@@ -12,9 +12,15 @@ version: 2.2
 github_link: config-guide/prod/prod_deploy-over.md
 ---
 
-In Magento version 2.2, we introduce a new way to deploy to production with minimal downtime. In addition, we provide the ability to maintain consistent configurations for all deployment systems.
+In Magento version 2.2, we introduce a new way to deploy to production with minimal downtime. We refer to this as _split deployment_ because the deployment process occurs on different systems.
 
-We refer to this as _split deployment_ because the deployment process occurs on different systems.
+In addition, we provide the ability to maintain consistent configurations for all deployment systems.
+
+## Reduced downtime deployment
+Because you deploy static assets and compile code on a machine separate from your production system, you minimize downtime. Downtime on your production system is limited to the amount of time required to transfer static files and compiled code to the server.
+
+## Deployment systems
+We use the following terms to describe the systems involved with deployment.
 
 Development system
 :	Machine on which developers work to customize code; and install extensions, themes, and language packages from Magento Marketplace. In addition, you make all configuration changes on your development system. You can have many developer systems.
@@ -30,12 +36,6 @@ Staging system
 Production system
 :	Your live store. You should make minimal configuration changes here and no changes to websites, stores, store views, products, or the catalog. You should make all those types of changes in your development system.
 
-## Reduced downtime deployment
-Because you deploy static assets and compile code on a machine separate from your production system, you minimize downtime. Downtime on your production system is limited to the amount of time required to transfer static files and compiled code to the server.
-
-## Use source control
-To use split deployment, we assume your Magento code is in a source control repository. In this guide, we assume you're using Git but the choice of repositories is up to you. 
-
 ## Other deployment methods
 You can optionally use other deployment methods, including secure copying with SCP or rsync; or you can use a tool like [Capistrano](http://capistranorb.com/documentation/overview/what-is-capistrano){:target="_blank"}. 
 
@@ -49,6 +49,16 @@ For a complete list of configuration paths, see the following references:
 *	[Other configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-most.html)
 *	[Payment configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-payment.html)
 *	[Sensitive and system-specific configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-sens.html)
+
+## Assumptions
+To use split deployment, we assume you are:
+
+*	An experienced system integrator with excellent knowledge of Magento configuration options.
+*	Managing a large Magento site (thosands of stock-keeping units (SKUs)) and want to keep production site downtime to a miniumum.
+*	Somewhat knowledgeable about PHP programming.
+*	Experienced with source control methods.
+
+	To use split deployment, we assume your Magento code is in a source control repository. In this guide, we assume you're using Git but the choice of repositories is up to you. 
 
 #### Next step
 [Deployment technical overview]({{ page.baseurl }}config-guide/prod/prod_deploy-over-tech.html)

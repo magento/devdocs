@@ -20,10 +20,7 @@ You can have one build system that meets the following requirements:
 	*	`app/etc/config.php` 
 	*	`generated` directory (and subdirectories)
 	*	`pub/static` directory (and subdirectories)
-*	Must have a compatible PHP version installed:
-
-	*	[CentOS]({{ page.baseurl }}install-gde/prereq/php-centos.html)
-	*	[Ubuntu]({{ page.baseurl }}install-gde/prereq/php-ubuntu.html)
+*	Must have a compatible PHP version installed
 *	Must have Composer installed
 
 The build system does _not_ need any of the following:
@@ -35,11 +32,21 @@ The build system does _not_ need any of the following:
 The build machine can be on its own host or on the same host as an installed Magento system.
 </div>
 
+## Configure the build machine
+The following sections discuss how to configure the build machine.
+
+### Install Composer
+
 {% include install/composer-clone.md %}
 
-## Configure the build machine
+### Install PHP
+To install PHP, see one of the following topics:
 
-To configure a build machine:
+	*	[CentOS]({{ page.baseurl }}install-gde/prereq/php-centos.html)
+	*	[Ubuntu]({{ page.baseurl }}install-gde/prereq/php-ubuntu.html)
+
+### Set up the build system
+To set up the build system:
 
 1.	Retrieve the Magento code from source control.
 
@@ -58,7 +65,7 @@ To configure a build machine:
 6.	Save your changes to `.gitignore` and exit the text editor.
 
 #### Related topics
-*	[]()
-*	[]()
+*	[Set up your development systems]({{ page.baseurl }}config-guide/prod/prod_deploy-setup-dev.html)
+*	[Set up your production system]({{ page.baseurl }}config-guide/prod/prod_deploy-setup-prod.html)
 *	[]()
 

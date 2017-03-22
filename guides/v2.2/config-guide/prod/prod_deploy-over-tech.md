@@ -15,7 +15,24 @@ github_link: config-guide/prod/prod_deploy-over-tech.md
 This topic discusses technical details about implementing split deployment in Magento 2.2.
 
 ## Configuration management
-TBD
+To enable you to maintain the configuration of your development and production systems, we use the following override scheme.
+
+NOTE: THIS DIAGRAM WILL CHANGE
+
+![How configuration variable values are determined]({{ site.baseurl }}common/images/cloud_vars_flow-diagram.png){:width="550px"}
+
+As the diagram shows, we get configuration values in the following order:
+
+1.	From an environment variable.
+
+	Environment variables, if they exist, override all other values.
+2.	From `config.php`.
+3.	From `env.php`.
+
+	Values in `config.php` and `env.php` override settings in the database.
+3.	From the database.
+
+If no value exists in any of those sources, we use either the default value or NULL.
 
 ### Manage the shared configuration
 The shared configuration is stored in `app/etc/config.php`, which should be in source control.
