@@ -2,8 +2,8 @@
 layout: default
 group: config-guide
 subgroup: 999_prod
-title: How to name configuration variables
-menu_title: How to name configuration variables
+title: How to name environment variables
+menu_title: How to name environment variables
 menu_order: 400
 menu_node: 
 level3_menu_node: level3child

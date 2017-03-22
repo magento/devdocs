@@ -40,7 +40,12 @@ To use split deployment, we assume your Magento code is in a source control repo
 You can optionally use other deployment methods, including secure copying with SCP or rsync; or you can use a tool like [Capistrano](http://capistranorb.com/documentation/overview/what-is-capistrano){:target="_blank"}. 
 
 ## Manage the configuration
-In Magento 2.2 for the first time, we provide the following improvements:
+Modeling after [factor 3 in the 12-factor app design](https://12factor.net/config){:target="_blank"}, we now store the configuration for each system in the system itself. We also provide a way to synchronize the configuration of your systems:
 
 {% include config/split-deploy/config-mgmt-over1.md %}
 
+For a complete list of configuration paths, see the following references:
+
+*	[Other configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-most.html)
+*	[Payment configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-payment.html)
+*	[Sensitive and system-specific configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-sens.html)
