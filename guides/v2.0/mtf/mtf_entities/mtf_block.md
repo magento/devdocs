@@ -24,26 +24,190 @@ This topic shows how to create a new block and explore its structure. It discuss
 
 ## Example {#mtf_block_class}
 
-A block [`Magento\Widget\Test\Block\Adminhtml\Widget\WidgetGrid`]{:target=_blank} simply reuses methods of a basic block [`Magento\Backend\Test\Block\Widget\Grid`]{:target=_blank}.
+A block [`Magento\Ui\Test\Block\Messages`]{:target=_blank} extends a basic block [`Magento\Mtf\Block\Block`]{:target=_blank} and implements methods to interact with messages.
 
+{% collapsible Show/hide the code %}
 {% highlight php %}
-{% remote_markdown https://raw.githubusercontent.com/magento/magento2/9d4c58e77126ae448eda81aa5e3206a16568fc5c/dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/WidgetGrid.php %}
+
+<?php
+/**
+ * Copyright © 2013-2017 Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+namespace Magento\Ui\Test\Block;
+
+use Magento\Mtf\Block\Block;
+use Magento\Mtf\Client\Locator;
+
+/**
+ * Global messages block.
+ */
+class Messages extends Block
+{
+    /**
+     * Success message selector.
+     *
+     * @var string
+     */
+    protected $successMessage = '[data-ui-id$=message-success]';
+
+    /**
+     * Last success message selector.
+     *
+     * @var string
+     */
+    protected $lastSuccessMessage = '[data-ui-id$=message-success]:last-child';
+
+    /**
+     * Error message selector.
+     *
+     * @var string
+     */
+    protected $errorMessage = '[data-ui-id$=message-error]';
+
+    /**
+     * Notice message selector.
+     *
+     * @var string
+     */
+    protected $noticeMessage = '[data-ui-id$=message-notice]';
+
+    /**
+     * Warning message selector.
+     *
+     * @var string
+     */
+    protected $warningMessage = '[data-ui-id$=message-warning]';
+
+    /**
+     * Wait for success message.
+     *
+     * @return bool
+     */
+    public function waitSuccessMessage()
+    {
+        return $this->waitForElementVisible($this->successMessage, Locator::SELECTOR_CSS);
+    }
+
+    /**
+     * Get all success messages which are present on the page.
+     *
+     * @return array
+     */
+    public function getSuccessMessages()
+    {
+        $this->waitForElementVisible($this->successMessage);
+        $elements = $this->_rootElement->getElements($this->successMessage);
+
+        $messages = [];
+        foreach ($elements as $element) {
+            $messages[] = $element->getText();
+        }
+
+        return $messages;
+    }
+
+    /**
+     * Get all notice messages which are present on the page.
+     *
+     * @return array
+     */
+    public function getNoticeMessages()
+    {
+        $this->waitForElementVisible($this->noticeMessage);
+        $elements = $this->_rootElement->getElements($this->noticeMessage);
+
+        $messages = [];
+        foreach ($elements as $element) {
+            $messages[] = $element->getText();
+        }
+
+        return $messages;
+    }
+
+    /**
+     * Get last success message which is present on the page.
+     *
+     * @return string
+     */
+    public function getSuccessMessage()
+    {
+        $this->waitForElementVisible($this->successMessage);
+
+        return $this->_rootElement->find($this->lastSuccessMessage)->getText();
+    }
+
+    /**
+     * Wait for element is visible in the page.
+     *
+     * @param string $selector
+     * @param string $strategy
+     * @return bool|null
+     */
+    public function waitForElementVisible($selector, $strategy = Locator::SELECTOR_CSS)
+    {
+        $browser = $this->browser;
+        return $browser->waitUntil(
+            function () use ($browser, $selector, $strategy) {
+                $message = $browser->find($selector, $strategy);
+                return $message->isVisible() ? true : null;
+            }
+        );
+    }
+
+    /**
+     * Get all error message which is present on the page.
+     *
+     * @return string
+     */
+    public function getErrorMessage()
+    {
+        return $this->_rootElement
+            ->find($this->errorMessage, Locator::SELECTOR_CSS)
+            ->getText();
+    }
+
+    /**
+     * Get notice message which is present on the page.
+     *
+     * @return string
+     */
+    public function getNoticeMessage()
+    {
+        $this->waitForElementVisible($this->noticeMessage);
+        return $this->_rootElement->find($this->noticeMessage)->getText();
+    }
+
+    /**
+     * Get warning message which is present on the page.
+     *
+     * @return string
+     */
+    public function getWarningMessage()
+    {
+        $this->waitForElementVisible($this->warningMessage);
+        return $this->_rootElement->find($this->warningMessage)->getText();
+    }
+}
+
 {% endhighlight %}
+{% endcollapsible %}
 
 ## Basic blocks {#mtf_block_basic}
 
 Magento contains basic blocks for the functional testing with a logic that you can reuse. The most popular are the following:
 
-* [Magento\Mtf\Block\Block]{:target=_blank}
-* [Magento\Mtf\Block\Form]{:target=_blank}
-* [Magento\Backend\Test\Block\Widget\Tab]{:target=_blank}
-* [Magento\Backend\Test\Block\Widget\FormTabs]{:target=_blank}
-* [Magento\Backend\Test\Block\Widget\Grid]{:target=_blank}
-* [Magento\Ui\Test\Block\Adminhtml\DataGrid]{:target=_blank}
+* [`Magento\Mtf\Block\Block`]{:target=_blank}
+* [`Magento\Mtf\Block\Form`]{:target=_blank}
+* [`Magento\Backend\Test\Block\Widget\Tab`]{:target=_blank}
+* [`Magento\Backend\Test\Block\Widget\FormTabs`]{:target=_blank}
+* [`Magento\Backend\Test\Block\Widget\Grid`]{:target=_blank}
+* [`Magento\Ui\Test\Block\Adminhtml\DataGrid`]{:target=_blank}
 
 ## Block identifier {#mtf_block_identifier}
 
-Each block has an identifier that includes selector and searching strategy. This identifier is determined by the [Magento\Mtf\Client\Element\Locator]{:target=_blank} class and is stored in the `_rootElement` property of the [Magento\Mtf\Block\Block]{:target=_blank} class.
+Each block has an identifier that includes selector and searching strategy. This identifier is determined by the [`Magento\Mtf\Client\Element\Locator`]{:target=_blank} class and is stored in the `_rootElement` property of the [Magento\Mtf\Block\Block]{:target=_blank} class.
 
 You can use the `_rootElement` to find an element in the current block.
 
@@ -62,7 +226,7 @@ This code uses `_rootElement` to search the button element by the `$this->addLay
 
 ## Form mapping {#mtf_block_mapping}
 
-Often, you need to test a Magento block that contains a form. And of course, tests require entering data in the forms. The Functional Testing Framework (FTF) has a [Magento\Mtf\Block\Form][] class that enables you to fill the forms automatically. One of the advantages of using this class is that you can list elements that must be automatically filled. These elements can be grouped in separate XML files. In the FTF we call this process "a mapping". You can use mapping to transfer data to the block from the <a href="{{page.baseurl}}mtf/mtf_entities/mtf_fixture.html">fixture</a>.
+Often, you need to test a Magento block that contains a form. And of course, tests require entering data in the forms. The Functional Testing Framework (FTF) has a [`Magento\Mtf\Block\Form`][] class that enables you to fill the forms automatically. One of the advantages of using this class is that you can list elements that must be automatically filled. These elements can be grouped in separate XML files. In the FTF we call this process "a mapping". You can use mapping to transfer data to the block from the <a href="{{page.baseurl}}mtf/mtf_entities/mtf_fixture.html">fixture</a>.
 
 A mapping file is an XML file which has the same name and path as the block does, and contains fields that represent form fields. Field name in the mapping file shall match the one in the fixture.
 
@@ -261,7 +425,7 @@ To enable this feature follow:
 1. Set **Add Block Name to Hints** to **Yes**
 1. **Save Config**
 
-![]({{site.baseurl}}common/images/ftf/mtf_bloch_namepath_ui_onoff.png)
+![]({{site.baseurl}}common/images/ftf/mtf_block_namepath_ui_onoff.png)
 
 Now each UI block has hint about its name and path. Also, you can see the path to a PHTML template, where you can find a path to the Magento block, if you cannot find it in the hint.
 
@@ -364,7 +528,7 @@ In this code we are creating the `Magento\Backend\Test\Block\Template` block wit
 
 **Use case**: We want to test the "Add to cart" functionality. To add different types of products, we need to configure each type in a different way. For the configuration, we need options of the type we want to configure. We can use render to get product options. Render specifies which class to use for the specific type of product.
 
-Let's see the `Catalog/Test/Page/Product/CatalogProductView.xml` page. For the better readability we reduced a list of blocks to one block.
+Let's see the [`Catalog/Test/Page/Product/CatalogProductView.xml`] page. For the better readability we reduced a list of blocks to one block.
 
 {%highlight xml%}
 <?xml version="1.0" encoding="utf-8"?>
@@ -381,13 +545,13 @@ Let's see the `Catalog/Test/Page/Product/CatalogProductView.xml` page. For the b
 </config>
 {%endhighlight%}
 
-This page relates to the Magento_Catalog module and contains `ViewBlock`. This block has reference to the `Magento\Catalog\Test\Block\Product\View.php` class, that is responsible to enter data in Product form fields. But different types of products, such as bundle, each have their own `ViewBlock` in a corresponding module. And that is where you can use render!
+This page relates to the Magento_Catalog module and contains `ViewBlock`. This block has reference to the [`Magento\Catalog\Test\Block\Product\View`] class, that is responsible to enter data in Product form fields. But different types of products, such as bundle, each have their own `ViewBlock` in a corresponding module. And that is where you can use render!
 
 #### Create a render {#mtf_block_render_create}
 
 Let's create render for the bundle product.
 
-**Step 1**. Create `Bundle/Test/Page/Product/CatalogProductView.xml` page to merge with the basic page `Catalog/Test/Page/Product/CatalogProductView.xml`. [Learn more about page merging]({{page.baseurl}}mtf/mtf_entities/mtf_page.html#mtf_page_merge).
+**Step 1**. Create `Bundle/Test/Page/Product/CatalogProductView.xml` page to merge with the basic page [`Catalog/Test/Page/Product/CatalogProductView.xml`]. [Learn more about page merging]({{page.baseurl}}mtf/mtf_entities/mtf_page.html#mtf_page_merge).
 
 **Step 2**. In the `Bundle/Test/Page/Product/CatalogProductView.xml`, copy `page` node from the `Catalog/Test/Page/Product/CatalogProductView.xml` without `module` attribute
 
@@ -436,9 +600,7 @@ Details:
 
 #### Use a render {#mtf_block_render_use}
 
-In the following example we have used the render to call the `getOptions()` method from `Magento\Bundle\Test\Block\Catalog\Product\View`.
-
-Let's take a look at the basic class `Magento\Catalog\Test\Block\Product\View`.
+Let's take a look at the basic class `Magento\Catalog\Test\Block\Product\View`, where a render calls the `getOptions()` method from `Magento\Bundle\Test\Block\Catalog\Product\View`.
 
 {%highlight php5%}
 <?php
@@ -455,53 +617,53 @@ public function getOptions(FixtureInterface $product)
 ?>
 {%endhighlight%}
 
- It contains the `getOptions()` method that:
- 
- * Gets from the `Bundle/Test/Fixture/BundleProduct.php` fixture the `type_id` field value `$dataConfig['type_id']`. In our case, `type_id='bundle'`.
- 
- * Calls the `hasRender()` method to check if there is a render with the name `bundle`
- 
- * Calls the render if there is a render with the name `bundle`
- 
- {%highlight php5 startinline=1%}
- $this->callRender($typeId, 'getOptions', ['product' => $product])
- {%endhighlight%}
- 
- * Calls a default method if the render is absent
- 
- {%highlight php startinline=1%}
- $this->getCustomOptionsBlock()->getOptions($product);
- {%endhighlight%}
+It contains the `getOptions()` method that:
+
+* Gets from the `Bundle/Test/Fixture/BundleProduct.php` fixture the `type_id` field value `$dataConfig['type_id']`. In our case, `type_id='bundle'`.
+
+* Calls the `hasRender()` method to check if there is a render with the name `bundle`
+
+* Calls the render if there is a render with the name `bundle`
+
+{%highlight php5 startinline=1%}
+$this->callRender($typeId, 'getOptions', ['product' => $product])
+{%endhighlight%}
+
+* Calls a default method if the render is absent
+
+{%highlight php startinline=1%}
+$this->getCustomOptionsBlock()->getOptions($product);
+{%endhighlight%}
  
 ### Define a selector
 
 There are some rules that should be followed to define a selector:
 
 1. Use CSS and XPath strategies.
-2. For forms use the `name` attribute as a selector.
-3. If the attribute is static (not auto-generate), use the `id` attribute.
-4. If you cannot use `id`, use `data-*` attributes
-5. Do not use the `class` attribute, because they are changed very often
-6. Do not use complex hard-coded structures like `//div/div[2]//tbody//tr[1]/td[0]`, because it can be unpredictably changed.
- 
+2. To work with forms, use the `name` attribute as a selector.
+3. If an attribute is static (not auto-generated), use the `id` attribute.
+4. If you cannot use `id`, use `data-*` attributes.
+5. We recommend not to use the `class` attribute, because they are changed very often.
+6. Do not use complex hard-coded structures like `//div/div[2]//tbody//tr[1]/td[0]`, they can be unpredictably changed.
+7. Do not use enclosed text such as button or label names.
+
  
 <!-- LINK DEFINITIONS -->
  
 [page]: {{page.baseurl}}mtf/mtf_entities/mtf_page.html
-[CatalogProductView.xml]: {{site.mage2000url}}dev/tests/functional/tests/app/Magento/Bundle/Test/Page/Product/CatalogProductView.xml
-[Magento\Mtf\Block\Form]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/Form.php
-[Magento\Catalog\Test\Block\Product\View]: {{site.mage2000url}}dev/tests/functional/tests/app/Magento/Catalog/Test/Block/Product/View.php
+[`Catalog/Test/Page/Product/CatalogProductView.xml`]: {{site.mage2000url}}dev/tests/functional/tests/app/Magento/Catalog/Test/Page/Product/CatalogProductView.xml
+[`Magento\Mtf\Block\Form`]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/Form.php
+[`Magento\Catalog\Test\Block\Product\View`]: {{site.mage2000url}}dev/tests/functional/tests/app/Magento/Catalog/Test/Block/Product/View.php
 
-[`Magento\Widget\Test\Block\Adminhtml\Widget\WidgetGrid`]: https://github.com/magento/magento2/blob/9d4c58e77126ae448eda81aa5e3206a16568fc5c/dev/tests/functional/tests/app/Magento/Widget/Test/Block/Adminhtml/Widget/WidgetGrid.php
+[`Magento\Ui\Test\Block\Messages`]: https://github.com/magento/magento2/blob/9d4c58e77126ae448eda81aa5e3206a16568fc5c/dev/tests/functional/tests/app/Magento/Magento/Ui/Test/Block/Messages.php
 [`Magento\Backend\Test\Block\Widget\Grid`]: {{site.mage2000url}}dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/Grid.php
 
-[Magento\Mtf\Block\Block]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/Block.php
-[Magento\Mtf\Block\Form]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/Form.php
-[Magento\Backend\Test\Block\Widget\Tab]: {{site.mage2000url}}dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/Tab.php
-[Magento\Backend\Test\Block\Widget\FormTabs]: {{site.mage2000url}}dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/FormTabs.php
-[Magento\Backend\Test\Block\Widget\Grid]: {{site.mage2000url}}dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/Grid.php
-[Magento\Ui\Test\Block\Adminhtml\DataGrid]: {{site.mage2000url}}dev/tests/functional/tests/app/Magento/Ui/Test/Block/Adminhtml/DataGrid.php
-[Magento\Mtf\Client\Element\Locator]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Locator.php
+[`Magento\Mtf\Block\Block`]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/Block.php
+[`Magento\Backend\Test\Block\Widget\Tab`]: {{site.mage2000url}}dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/Tab.php
+[`Magento\Backend\Test\Block\Widget\FormTabs`]: {{site.mage2000url}}dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/FormTabs.php
+[`Magento\Backend\Test\Block\Widget\Grid`]: {{site.mage2000url}}dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/Grid.php
+[`Magento\Ui\Test\Block\Adminhtml\DataGrid`]: {{site.mage2000url}}dev/tests/functional/tests/app/Magento/Ui/Test/Block/Adminhtml/DataGrid.php
+[`Magento\Mtf\Client\Element\Locator`]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Locator.php
 
 <!-- ABBREVIATIONS -->
 
