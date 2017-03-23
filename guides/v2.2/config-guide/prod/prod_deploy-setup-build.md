@@ -42,8 +42,8 @@ The following sections discuss how to configure the build machine.
 ### Install PHP
 To install PHP, see one of the following topics:
 
-	*	[CentOS]({{ page.baseurl }}install-gde/prereq/php-centos.html)
-	*	[Ubuntu]({{ page.baseurl }}install-gde/prereq/php-ubuntu.html)
+*	[CentOS]({{ page.baseurl }}install-gde/prereq/php-centos.html)
+*	[Ubuntu]({{ page.baseurl }}install-gde/prereq/php-ubuntu.html)
 
 ### Set up the build system
 To set up the build system:
@@ -60,6 +60,8 @@ To set up the build system:
 4.	If you use Git, open `.gitignore` in a text editor.
 5.	Start each of the following lines with a `#` character to comment them out:
 
+		# app/etc/config.php
+		# pub/media/*
 		# generated/*
 		# pub/static/*
 6.	Save your changes to `.gitignore` and exit the text editor.
@@ -67,5 +69,4 @@ To set up the build system:
 #### Related topics
 *	[Set up your development systems]({{ page.baseurl }}config-guide/prod/prod_deploy-setup-dev.html)
 *	[Set up your production system]({{ page.baseurl }}config-guide/prod/prod_deploy-setup-prod.html)
-*	[]()
 
