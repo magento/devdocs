@@ -12,6 +12,8 @@ version: 2.2
 github_link: config-guide/prod/prod_deploy-over-tech.md
 ---
 
+
+
 This topic discusses technical details about implementing split deployment in Magento 2.2.
 
 ## Configuration management
@@ -59,7 +61,20 @@ Any configuration settings in `config.php` or `env.php` are locked in the Magent
 This section shows examples of managing the configuration so you can see how changes are made to `config.php` and `env.php`.
 
 #### Change the default locale
-TBD
+This section shows the change made to `config.php` when you change the default weight unit using the Magento Admin (**Stores** > Settings > **Configuration** > General > **General**> **Locale Options**).
+
+After you make the change in the Admin, run `php bin/magento app:config:dump` to write the value to `config.php`. The value is written to the `general` array under `locale` as the following snippet from `config.php` shows:
+
+``` php
+      'general' =>
+      array (
+        'locale' =>
+        array (
+          'code' => 'en_US',
+          'timezone' => 'America/Chicago',
+          'weight_unit' => 'kgs',
+        ),
+```
 
 #### Several changes
 This section discusses making the following configuration changes:

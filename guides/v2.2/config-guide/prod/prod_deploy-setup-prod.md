@@ -36,16 +36,17 @@ To set up a production machine:
 
 	A sample follows:
 
-	{% highlight json %}
-	{
-	   "http-basic": {
-	      "repo.magento.com": {
-	         "username": "<your public key>",
-	         "password": "<your private key>"
-	      }
-	   }
-	}
-	{% endhighlight %}
+	``` json
+{
+   "http-basic": {
+      "repo.magento.com": {
+         "username": "<your public key>",
+         "password": "<your private key>"
+           }
+    }
+ }
+ 	```
+
 3.	Save your changes to `auth.json`.
 4.	Copy `<Magento root dir>/app/etc/env.php` from your development system to your production system.
 5.	Open `env.php` in a text editor and change any values necessary (for example, database connection information).
@@ -54,8 +55,7 @@ To set up a production machine:
 	The following section shows some examples.
 
 ## Set configuration values on your production system
-
-
+TBD
 
 #### Related topics
 *	[]()
