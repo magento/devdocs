@@ -39,10 +39,10 @@ To set up a production machine:
 	``` json
 {
    "http-basic": {
-      "repo.magento.com": {
+         "repo.magento.com": {
          "username": "<your public key>",
          "password": "<your private key>"
-           }
+      }
     }
  }
  	```

@@ -79,11 +79,64 @@ After you make the change in the Admin, run `php bin/magento app:config:dump` to
 #### Several changes
 This section discusses making the following configuration changes:
 
-*	Adding a website, store, and store view
-*	Changing the Elasticsearch host and port
-*	Setting the PayPal TBD
+*	Adding a website, store, and store view (**Stores** > **All Stores**)
+*	Changing the Elasticsearch host and port (**Stores** > Settings > **Configuration** > Catalog > **Catalog** > **Catalog Search**)
+*	Setting the PayPal API Username and API password (**Stores** > Settings > **Configuration** > Sales > **Payment Methods** > **PayPal** > **Required PayPal Settings**)
+
+After you make the change in the Admin, run `php bin/magento app:config:dump`. This time, not all of your changes are written to `config.php`; in fact, only the website, store, and store view are written to that file as the following snippets show:
+
+{% collapsible Show config.php snippets: %}
+
+`websites` array:
+
+``` php
+      'new' =>
+      array (
+        'website_id' => '2',
+        'code' => 'new',
+        'name' => 'New website',
+        'sort_order' => '0',
+        'default_group_id' => '2',
+        'is_default' => '0',
+      ),
+```
+
+`groups` array:
+``` php
+      2 =>
+      array (
+        'group_id' => '2',
+        'website_id' => '2',
+        'code' => 'newstore',
+        'name' => 'New store',
+        'root_category_id' => '2',
+        'default_store_id' => '2',
+      ),
+```
+
+`stores` array:
+
+``` php
+     'newview' =>
+      array (
+        'store_id' => '2',
+        'code' => 'newview',
+        'website_id' => '2',
+        'group_id' => '2',
+        'name' => 'New store view',
+        'sort_order' => '0',
+        'is_active' => '1',
+      ),
+```
+{% endcollapsible %}
+
+The Elasticsearch changes are written to `app/etc/env.php` as follows:
 
 TBD
+
+The PayPal settings are written to neither file (TBD).
+
+
 
 ## Other changes in the Magento Admin
 We also changed the following in the Magento Admin in production mode:
