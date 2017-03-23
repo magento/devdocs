@@ -30,8 +30,7 @@
   }
 
   &:focus {
-    outline: $outline-color solid 3px;
-    outline-offset: 0  px;
+
   }
 
   &.disabled, &[disabled] {
@@ -94,8 +93,8 @@
   }
 
   &:hover, &:active  {
-    color: $btn-secondary-color;
-    background-color: #ebebea;
+    color: $btn-primary-color;
+    background-color: darken($btn-primary-bg-color, 10%);
   }
 
 }
