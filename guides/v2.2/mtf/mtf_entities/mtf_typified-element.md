@@ -11,7 +11,7 @@ github_link: mtf/mtf_entities/mtf_typified-element.md
 
 A typified element is an element of the GUI (Select, Multiselect etc). Magento has custom typified elements with a special logic, for example: Customized Select, Suggest Dropdown, Store View Selector. Typified elements are often used as elements of a form or a grid. Functional Testing Framework (FTF) enables you to test any typified element.
 
-## Example {:example}
+## Example {#example}
 
 ![A typified element example in the browser]
 
@@ -21,8 +21,8 @@ This example shows the `optgroup` typified element. You can use the [`\Magento\M
 
 A typified element class in the FTF contains methods to be used in the test to manipulate typified elements in the Magento application. You can extend a [basic class](#basic_class) or a [Magento class](#magento_class) to cover your typified element.
 
-<div class="bs-callout bs-callout-tip">
-  <p>The most important methods are <code>setValue()</code> and <code>getValue()</code>. These methods are required when you work with a form.</p>
+<div class="bs-callout bs-callout-tip" markdown="1">
+The most important methods are `setValue()` and `getValue()`. These methods are required when you work with a form.
 </div>
 
 There are two types of typified elements: default typified elements and Magento custom typified elements.
@@ -70,7 +70,7 @@ Magento custom typified elements are stored in the `<magento2_root_dir>/dev/test
 | `<div class="tree x-tree" />` | [`\Magento\Mtf\Client\Element\TreeElement`]   | Extends [Tree]   |
 
 ## HowTos
- 
+
 ### Create {#create}
 
 __Step 1.__ Create a PHP class in the `<magento2_root_dir>/dev/tests/functional/lib/Magento/Mtf/Client/Element` directory
