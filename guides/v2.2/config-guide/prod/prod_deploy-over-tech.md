@@ -52,14 +52,35 @@ You can manage the sensitive configuration in any of the following ways:
 *	Environment variables
 *	Save the sensitive configuration in `env.php` on your production system using the [`magento config:set:sensitive` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config.html)
 
-### Settings not editable in the Magento Admin
-TBD
+### Configuration settings locked in the Magento Admin
+Any configuration settings in `config.php` or `env.php` are locked in the Magento Admin; that is, those settings cannot be changed in the Admin. The only way to change the settings is to change `config.php` or `env.php`.
 
 ### Configuration management examples
+This section shows examples of managing the configuration so you can see how changes are made to `config.php` and `env.php`.
+
+#### Change the default locale
 TBD
 
-## Other changes to the Magento Admin
+#### Several changes
+This section discusses making the following configuration changes:
+
+*	Adding a website, store, and store view
+*	Changing the Elasticsearch host and port
+*	Setting the PayPal TBD
+
 TBD
+
+## Other changes in the Magento Admin
+We also changed the following in the Magento Admin in production mode:
+
+*	You cannot enable or disable cache types in the Admin
+*	You can change the Admin locale only to languages used by deployed themes
+*	Developer settings are unavailable (**Stores** > Settings > **Configuration** > **Advanced** > **Developer**), including:
+
+	*	Minify CSS, JavaScript, and HTML 
+	*	Merge CSS and JavaScript
+	*	Server-side or client-side LESS compilation
+	*	Inline translations
 
 #### Next steps
 *	[Set up your development systems]({{ page.baseurl }}config-guide/prod/prod_deploy-setup-dev.html)

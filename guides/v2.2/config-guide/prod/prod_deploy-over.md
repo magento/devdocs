@@ -14,7 +14,7 @@ github_link: config-guide/prod/prod_deploy-over.md
 
 In Magento version 2.2, we introduce a new way to deploy to production with minimal downtime. We refer to this as _split deployment_ because the deployment process occurs on different systems.
 
-In addition, we provide the ability to maintain consistent configurations for all deployment systems.
+We also provide the ability to maintain consistent configurations for all deployment systems. It's a simple but powerful model that enables you to separate ordinary configuration settings from either system-specific settings (like host and port) or sensitive settings (such as names and passwords).
 
 ## Reduced downtime deployment
 Because you deploy static assets and compile code on a machine separate from your production system, you minimize downtime. Downtime on your production system is limited to the amount of time required to transfer static files and compiled code to the server.
