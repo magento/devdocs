@@ -36,7 +36,7 @@ To set up a production machine:
 
 	A sample follows:
 
-	``` json
+``` json
 {
    "http-basic": {
          "repo.magento.com": {
@@ -45,7 +45,7 @@ To set up a production machine:
       }
     }
  }
- 	```
+```
 
 3.	Save your changes to `auth.json`.
 4.	Copy `<Magento root dir>/app/etc/env.php` from your development system to your production system.
