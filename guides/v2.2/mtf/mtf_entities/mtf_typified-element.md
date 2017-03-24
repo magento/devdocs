@@ -213,6 +213,7 @@ The following code is a corresponding mapping with the typified element `optgrou
 [SelectElement]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/SelectElement.php
 [`\Magento\Mtf\Client\Element\StrictmultiselectElement`]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/StrictmultiselectElement.php
 [`\Magento\Mtf\Client\Element\StrictselectElement`]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/StrictselectElement.php
+[`\Magento\Mtf\Client\Element\UploadElement`]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Client/Element/UploadElement.php
 
 <!-- Magento classes -->
 [`\Magento\Mtf\Client\Element\ConditionsElement`]: {{site.mage2000url}}dev/tests/functional/lib/Magento/Mtf/Client/Element/ConditionsElement.php
