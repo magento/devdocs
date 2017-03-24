@@ -16,6 +16,9 @@
 	<link rel="stylesheet" href="/css/print.css" media="print" />
 	<link rel="canonical" href="//guides/v2.1/mtf/mtf_entities/mtf_typified-element.html">
 
+    <!-- WebUI popover css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
+
   <script>
     var baseUrl = "/";
   </script>
@@ -1312,6 +1315,15 @@ Use a <code>find()</code> method to find an element. This method is declared in 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <script src="/common/js/app.min.js"></script>
+
+<!-- Glossary integration -->
+<script src="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.js"></script>
+<script src="/common/js/glossary.tooltip.min.js"></script>
+<script>
+    $(document).ready(function(){
+      magento.glossary.init("https://magento.github.io/glossary/data/content-glossary.xml",function(term){return term.types.includes("glossary");},magento.glossary.tooltip.init);
+      });
+</script>
 
 <script type="text/javascript">
     (function() {

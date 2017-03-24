@@ -16,6 +16,9 @@
 	<link rel="stylesheet" href="/css/print.css" media="print" />
 	<link rel="canonical" href="//guides/v2.0/template.html">
 
+    <!-- WebUI popover css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
+
   <script>
     var baseUrl = "/";
   </script>
@@ -571,6 +574,17 @@
   </div>
 </div>
 
+<h3 id="tooltips">Tooltips</h3>
+
+<p>You can use a glossary term’s UUID from the <a href="https://magento.github.io/glossary/" target="_blank">Magento Glossary</a> to add a tooltip for that term on the page.</p>
+
+<h4 id="examples-1">Examples</h4>
+
+<ul>
+  <li><span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span></li>
+  <li>Inline <span term-uuid="8f407f13-4350-449b-9dc5-217dcf01bc42" class="glossary-term" data-toggle="popover">Markup</span> text</li>
+</ul>
+
 		</div>
 		<!-- /.content-wrap -->
 
@@ -624,6 +638,15 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <script src="/common/js/app.min.js"></script>
+
+<!-- Glossary integration -->
+<script src="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.js"></script>
+<script src="/common/js/glossary.tooltip.min.js"></script>
+<script>
+    $(document).ready(function(){
+      magento.glossary.init("https://magento.github.io/glossary/data/content-glossary.xml",function(term){return term.types.includes("glossary");},magento.glossary.tooltip.init);
+      });
+</script>
 
 <script type="text/javascript">
     (function() {

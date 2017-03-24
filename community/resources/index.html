@@ -16,6 +16,9 @@
 	<link rel="stylesheet" href="/css/print.css" media="print" />
 	<link rel="canonical" href="//community/resources/">
 
+    <!-- WebUI popover css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
+
   <script>
     var baseUrl = "/";
   </script>
@@ -226,7 +229,7 @@
 
 </section>
 
-			<p>Below are links to blog posts, podcasts, presentations, and books created by members of the Magento community and core developers separated into popular topics.</p>
+			<p>Below are links to blog posts, podcasts, presentations, and books created by members of the <span term-uuid="cadefd6b-0e85-4a8c-909a-5f967c56d35f" class="glossary-term" data-toggle="popover">Magento</span> community and core developers separated into popular topics.</p>
 
 <p>New items will be added incrementally, and older links rotated out. Keep an eye on this space for the latest community resources!</p>
 
@@ -317,6 +320,15 @@ They are listed here because the content has been well received within the Magen
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 <script src="/common/js/app.min.js"></script>
+
+<!-- Glossary integration -->
+<script src="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.js"></script>
+<script src="/common/js/glossary.tooltip.min.js"></script>
+<script>
+    $(document).ready(function(){
+      magento.glossary.init("https://magento.github.io/glossary/data/content-glossary.xml",function(term){return term.types.includes("glossary");},magento.glossary.tooltip.init);
+      });
+</script>
 
 <script type="text/javascript">
     (function() {
