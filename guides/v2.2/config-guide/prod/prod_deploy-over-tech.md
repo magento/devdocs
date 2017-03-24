@@ -132,11 +132,18 @@ After you make the change in the Admin, run `php bin/magento app:config:dump`. T
 
 The Elasticsearch changes are written to `app/etc/env.php` as follows:
 
+{% collapsible Show env.php snippets: %}
+
 TBD
 
-The PayPal settings are written to neither file (TBD).
+{% endcollapsible %}
 
+The PayPal settings are written to neither file because the `magento app:config:dump` command does not write sensitive settings. You must set the PayPal settings on the production system using the following commands:
 
+    php bin/magento config:sensitive:set paypal/wpp/api_username user
+    php bin/magento config:sensitive:set paypal/wpp/api_password password
+
+For a complete list of sensitive settings and corresponding configuration paths, see [Sensitive and system-specific configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-sens.html).
 
 ## Other changes in the Magento Admin
 We also changed the following in the Magento Admin in production mode:
@@ -149,6 +156,19 @@ We also changed the following in the Magento Admin in production mode:
 	*	Merge CSS and JavaScript
 	*	Server-side or client-side LESS compilation
 	*	Inline translations
+
+## Prerequisite for your development, build, and production systems
+For file permissions and ownership to work properly across your systems, you must either:
+
+*   Set up the same [Magento file system owner]({{ page.baseurl }}install-gde/prereq/file-sys-perms-over.html) user name on all systems _and_ make sure the web server runs as the same user on all systems
+*   Change permissions on each system as necessary using the following guidelines:
+
+    *   Development and build: [Set pre-installation ownership and permissions (two users)]({{ page.baseurl }}install-gde/prereq/file-system-perms.html#perms-private)
+    *   Production: [Magento ownership and permissions in development and production]({{ page.baseurl }}config-guide/prod/prod_file-sys-perms.html)
+
+    <div class="bs-callout bs-callout-info" id="info" markdown="1">
+    If you choose this approach, you must set file system permissions and ownership every time you pull code from your build system (if the Magento file system owner or web server user are different on your build system).
+    </div>
 
 #### Next steps
 *	[Set up your development systems]({{ page.baseurl }}config-guide/prod/prod_deploy-setup-dev.html)

@@ -65,6 +65,9 @@ To set up the build system:
 		# generated/*
 		# pub/static/*
 6.	Save your changes to `.gitignore` and exit the text editor.
+7.	If you use Git, use the following commands to commit the change:
+
+		git add .gitignore && git commit -m "Modify .gitignore for build and production"
 
 #### Related topics
 *	[Set up your development systems]({{ page.baseurl }}config-guide/prod/prod_deploy-setup-dev.html)
