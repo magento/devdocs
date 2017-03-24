@@ -12,7 +12,7 @@ redirect_from:
   - /guides/v2.0/community/resources/index.html
 ---
 
-Below are links to blog posts, podcasts, presentations, and books created by members of the Magento community and core developers separated into popular topics.
+Below are links to blog posts, podcasts, presentations, and books created by members of the {% glossarytooltip cadefd6b-0e85-4a8c-909a-5f967c56d35f %}Magento{% endglossarytooltip %} community and core developers separated into popular topics.
 
 New items will be added incrementally, and older links rotated out. Keep an eye on this space for the latest community resources!
 
