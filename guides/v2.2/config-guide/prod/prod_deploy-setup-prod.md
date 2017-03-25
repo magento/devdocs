@@ -43,8 +43,8 @@ To set up a production machine:
          "username": "<your public key>",
          "password": "<your private key>"
       }
-    }
- }
+   }
+}
 ```
 3.	Save your changes to `auth.json`.
 4.	Copy `<Magento root dir>/app/etc/env.php` from your development system to your production system.

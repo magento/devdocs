@@ -57,7 +57,12 @@ You can manage the sensitive configuration in any of the following ways:
 ### Configuration settings locked in the Magento Admin
 Any configuration settings in `config.php` or `env.php` are locked in the Magento Admin; that is, those settings cannot be changed in the Admin. The only way to change the settings is to change `config.php` or `env.php`.
 
-### Configuration management examples
+## Recommended workflow
+TBD
+
+![Recommended split deployment workflow]({{ site.baseurl }}common/images/config_split-deploy_workflow.png)
+
+## Configuration management examples
 This section shows examples of managing the configuration so you can see how changes are made to `config.php` and `env.php`.
 
 #### Change the default locale
