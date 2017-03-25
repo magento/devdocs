@@ -21,7 +21,7 @@ We recommend you use the `.gitignore` provided with Magento in a development sys
 
 {% collapsible Show default `.gitignore` %}
 
-/.buildpath
+<pre>/.buildpath
 /.cache
 /.metadata
 /.project
@@ -82,7 +82,7 @@ atlassian*
 /vendor/*
 !/vendor/.htaccess
 /generated/*
-!/generated/.htaccess
+!/generated/.htaccess</pre>
 
 {% endcollapsible %}
 
@@ -101,7 +101,7 @@ Changes compared to the default `.gitignore`:
 
 {% collapsible Show .gitignore for build and production %}
 
-/.buildpath
+<pre>/.buildpath
 /.cache
 /.metadata
 /.project
@@ -162,6 +162,6 @@ atlassian*
 /vendor/*
 !/vendor/.htaccess
 # /generated/*
-!/generated/.htaccess
+!/generated/.htaccess</pre>
 
 {% endcollapsible %}

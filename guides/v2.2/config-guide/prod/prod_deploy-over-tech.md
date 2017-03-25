@@ -60,7 +60,7 @@ Any configuration settings in `config.php` or `env.php` are locked in the Magent
 ## Recommended workflow
 The following diagram shows how we recommend you use split deployment to manage the configuration.
 
-![Recommended split deployment workflow]({{ site.baseurl }}common/images/config_split-deploy_workflow.png){:width="650px"}
+![Recommended split deployment workflow]({{ site.baseurl }}common/images/config_split-deploy_workflow.png){:width="700px"}
 
 ### Development system
 On your development system, you make configuration changes in the Magento Admin and generate the shared configuration, `app/etc/config.php` and the system-specific configuration, `app/etc/env.php`. Check Magento code and the shared configuration into source control and push it to the build server.
@@ -102,7 +102,7 @@ In more detail:
 ## Configuration management examples
 This section shows examples of managing the configuration so you can see how changes are made to `config.php` and `env.php`.
 
-#### Change the default locale
+### Change the default locale
 This section shows the change made to `config.php` when you change the default weight unit using the Magento Admin (**Stores** > Settings > **Configuration** > General > **General**> **Locale Options**).
 
 After you make the change in the Admin, run `php bin/magento app:config:dump` to write the value to `config.php`. The value is written to the `general` array under `locale` as the following snippet from `config.php` shows:
@@ -118,14 +118,16 @@ After you make the change in the Admin, run `php bin/magento app:config:dump` to
         ),
 ```
 
-#### Several changes
+### Make several changes
 This section discusses making the following configuration changes:
 
 *	Adding a website, store, and store view (**Stores** > **All Stores**)
 *	Changing the Elasticsearch host and port (**Stores** > Settings > **Configuration** > Catalog > **Catalog** > **Catalog Search**)
 *	Setting the PayPal API Username and API password (**Stores** > Settings > **Configuration** > Sales > **Payment Methods** > **PayPal** > **Required PayPal Settings**)
 
-After you make the change in the Admin, run `php bin/magento app:config:dump`. This time, not all of your changes are written to `config.php`; in fact, only the website, store, and store view are written to that file as the following snippets show:
+After you make the change in the Admin, run `php bin/magento app:config:dump`. This time, not all of your changes are written to `config.php`; in fact, only the website, store, and store view are written to that file as the following snippets show.
+
+#### config.php
 
 {% collapsible Show config.php snippets: %}
 
@@ -172,6 +174,8 @@ After you make the change in the Admin, run `php bin/magento app:config:dump`. T
 ```
 {% endcollapsible %}
 
+#### env.php
+
 The Elasticsearch changes are written to `app/etc/env.php` as follows:
 
 {% collapsible Show env.php snippets: %}
@@ -180,10 +184,11 @@ TBD
 
 {% endcollapsible %}
 
+#### PayPal settings
 The PayPal settings are written to neither file because the `magento app:config:dump` command does not write sensitive settings. You must set the PayPal settings on the production system using the following commands:
 
-    php bin/magento config:sensitive:set paypal/wpp/api_username user
-    php bin/magento config:sensitive:set paypal/wpp/api_password password
+    php bin/magento config:sensitive:set paypal/wpp/api_username <username>
+    php bin/magento config:sensitive:set paypal/wpp/api_password <password>
 
 For a complete list of sensitive settings and corresponding configuration paths, see [Sensitive and system-specific configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-sens.html).
 
