@@ -42,8 +42,8 @@ To set up a production machine:
          "repo.magento.com": {
          "username": "<your public key>",
          "password": "<your private key>"
-      }
-   }
+        }
+  }
 }
 ```
 3.	Save your changes to `auth.json`.

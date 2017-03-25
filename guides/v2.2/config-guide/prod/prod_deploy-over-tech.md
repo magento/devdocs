@@ -58,9 +58,46 @@ You can manage the sensitive configuration in any of the following ways:
 Any configuration settings in `config.php` or `env.php` are locked in the Magento Admin; that is, those settings cannot be changed in the Admin. The only way to change the settings is to change `config.php` or `env.php`.
 
 ## Recommended workflow
-TBD
+The following diagram shows how we recommend you use split deployment to manage the configuration.
 
-![Recommended split deployment workflow]({{ site.baseurl }}common/images/config_split-deploy_workflow.png)
+![Recommended split deployment workflow]({{ site.baseurl }}common/images/config_split-deploy_workflow.png){:width="650px"}
+
+### Development system
+On your development system, you make configuration changes in the Magento Admin and generate the shared configuration, `app/etc/config.php` and the system-specific configuration, `app/etc/env.php`. Check Magento code and the shared configuration into source control and push it to the build server.
+
+In more detail:
+
+1.  Set the configuration in the Magento Admin.
+
+    You should also install extensions and customize Magento code on the development system.
+2.  Use the `magento app:config:dump` command to write the configuration to the file system.
+
+    *   `app/etc/config.php` is the shared configuration, which contains all settings _except_ sensitive and system-specific settings. This file should be in source control.
+
+    *   `app/etc/env.php` is the system-specific configuration, which contains settings that are unique to a particular system (for example, host names and port numbers). This file should _not_ be in source control.
+3.  Add your modified code and the shared configuration to source control.
+
+### Build system
+The build system compiles code and generates static view files for themes registered in Magento. It doesn't need a connection to the Magento database; it needs only the Magento codebase.
+
+In more detail:
+
+1.  Pull the shared configuration file from source control.
+2.  Use the `magento setup:di:compile` command to compile code.
+3.  Use the `magento setup:static-content:deploy -f` command to create static file view files.
+4.  Check the updates into source control.
+
+### Production system
+On your production system (that is, your live store) you pull generated assets and code updates from source control and set system-specific and sensitive configuration settings using the command line or environment varibles.
+
+In more detail:
+
+1.  Start maintenance mode.
+2.  Pull code and configuration updates from source control.
+3.  If you use Magento EE, stop queue workers.
+4.  If you installed, updated, or removed themes, use the `magento app:config:import` command to make those changes in the production system.
+5.  To set system-specific settings, use either the `magento config:set` command or environment variables.
+6.  To set sensitive settings, use either the `magento config:sensitive:set` command or environment variables.
 
 ## Configuration management examples
 This section shows examples of managing the configuration so you can see how changes are made to `config.php` and `env.php`.
