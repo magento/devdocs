@@ -25,7 +25,7 @@ You can have any number of development systems, provided the following is true o
 	*	`app/etc/env.php` file
 *	Make sure `app/etc/config.php` is _included_ in source control
 
-If you use Git, Magento's `.gitignore` provides all of the preceding.
+If you use Git, Magento's `.gitignore` provides all of the preceding. See the [`.gitignore` reference]({{ page.baseurl }}config-guide/prod/config-reference-gitignore.html) for more information.
 
 #### Next step
 [Set up a build system]({{ page.baseurl }}config-guide/prod/prod_deploy-setup-build.html)
