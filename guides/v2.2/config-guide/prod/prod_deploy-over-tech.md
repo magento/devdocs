@@ -207,7 +207,7 @@ We also changed the following in the Magento Admin in production mode:
 ## Prerequisite for your development, build, and production systems
 For file permissions and ownership to work properly across your systems, you must either:
 
-*   Set up the same [Magento file system owner]({{ page.baseurl }}install-gde/prereq/file-sys-perms-over.html) user name on all systems _and_ make sure the web server runs as the same user on all systems
+*   Set up the same {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3  %}Magento file system owner{% endglossarytooltip %} user name on all systems _and_ make sure the web server runs as the same user on all systems
 *   Change permissions on each system as necessary using the following guidelines:
 
     *   Development and build: [Set pre-installation ownership and permissions (two users)]({{ page.baseurl }}install-gde/prereq/file-system-perms.html#perms-private)

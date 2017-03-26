@@ -48,7 +48,8 @@ To install PHP, see one of the following topics:
 ### Set up the build system
 To set up the build system:
 
-1.	Retrieve the Magento code from source control.
+1.	Log in to the build system as, or switch to, the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3  %}Magento file system owner{% endglossarytooltip %}. 
+2.	Retrieve the Magento code from source control.
 
 	If you use Git, use the following command:
 
