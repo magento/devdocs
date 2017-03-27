@@ -57,7 +57,7 @@ To set up a production machine:
 5.	Open `env.php` in a text editor and change any values necessary (for example, database connection information).
 6.	Run the [`magento config:set`]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config.html) or [`magento config:set-sensitive`]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config.html) command to set the values of any system-specific or sensitive configuration values, respectively.
 
-	The following section shows some examples.
+	The following section shows an example.
 
 ## Set configuration values on your production system
 This section discusses how to set sensitive values on your production system using the `magento config:sensitive:set` command.
@@ -84,7 +84,7 @@ To set sensitive values:
 6.	To verify the value was set, log in to the Magento Admin.
 7.	Locate the setting in the Admin.
 
-	For example, the Secure Base URL setting is located in **Stores** > Settings > **Configuration** > **Catalog** > **Catalog** > **Product Video**.
+	For example, the YouTube API key setting is located in **Stores** > Settings > **Configuration** > **Catalog** > **Catalog** > **Product Video**.
 
 	The setting is displayed in the Admin and cannot be edited. The following figure shows an example.
 
