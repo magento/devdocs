@@ -77,6 +77,23 @@ Generate the shared configuration file, `app/etc/config.php`, in your developmen
 		git add app/etc/config.php && git commit -m "Updated shared configuration" && git push <remote name> <branch name>
 
 ## Step 3: Update your build system and generate files
+Now that you've committed your changes to the shared configuration to source control, you can pull those changes in your build system, compile code, and generate static files. The last step is to pull those changes to your production system. As a result, your production system's configuration will match your development system.
 
+To update your build system:
+
+1.	Log in to your build system as, or switch to, the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %}.
+2.	Change to the build system's Magento root directory.
+3.	Pull the changes to `app/etc/config.php` from source control.
+
+	The Git command follows:
+
+		git pull <remote name> <branch name>
+4.	Compile code:
+
+		php bin/magento setup:di:compile
+5.	After code has been compiled, generate static view files:
+
+		php bin/magento setup:static-content:deploy -f
+6.	Check the changes into source control.
 
 
