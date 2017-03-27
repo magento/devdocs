@@ -25,6 +25,15 @@ You can use the same procedure to configure any of the settings in the following
 *	[Other configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-most.html)
 *	[Payment configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-payment.html)
 
+## Assumptions
+This topic provides an example of modifying the production system configuration. You can choose different configuration options if you wish.
+
+For the purposes of this example, we assume the following:
+
+*	You use Git source control
+*	The development system is available in a Git remote named `mconfig`
+*	The Git branch is named `m2.2_split-deploy`
+
 ## Step 1: Set the configuration in the development system
 To set the default locale and weight units in your development system:
 
@@ -61,7 +70,7 @@ Generate the shared configuration file, `app/etc/config.php`, in your developmen
 
 	You should see output similar to the following:
 
-	<pre class="no-copy"># On branch mybranch
+	<pre class="no-copy"># On branch m2.2_split-deploy
 # Changed but not updated:
 #   (use "git add <file>..." to update what will be committed)
 #   (use "git checkout -- <file>..." to discard changes in working directory)
@@ -74,7 +83,7 @@ Generate the shared configuration file, `app/etc/config.php`, in your developmen
 
 	The Git command follows:
 
-		git add app/etc/config.php && git commit -m "Updated shared configuration" && git push <remote name> <branch name>
+		git add app/etc/config.php && git commit -m "Updated shared configuration" && git push mconfig m2.2_split-deploy
 
 ## Step 3: Update your build system and generate files
 Now that you've committed your changes to the shared configuration to source control, you can pull those changes in your build system, compile code, and generate static files. The last step is to pull those changes to your production system. As a result, your production system's configuration will match your development system.
@@ -87,7 +96,7 @@ To update your build system:
 
 	The Git command follows:
 
-		git pull <remote name> <branch name>
+		git pull mconfig m2.2_split-deploy
 4.	Compile code:
 
 		php bin/magento setup:di:compile
@@ -95,5 +104,36 @@ To update your build system:
 
 		php bin/magento setup:static-content:deploy -f
 6.	Check the changes into source control.
+
+	The Git command follows:
+
+		git add -A && git commit -m "Updated files on build system" && git push mconfig m2.2_split-deploy
+
+## Step 4: Update the production system
+The last step in the process is to update your production system from source control. This pulls all the changes you made on your development and build systems, which means your production system is completely up-to-date.
+
+To update the production system:
+
+1.	Log in to your production system as, or switch to, the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %}.
+2.	Start maintenance mode:
+
+		cd <Magento root dir>
+		php bin/magento maintenance:enable
+
+	For additional options, see TBD.
+3.	Pull code from source control.
+
+	The Git command follows:
+
+		git pull mconfig m2.2_split-deploy
+4.	Update the configuration:
+
+		php bin/magento app:config:import
+4.	End maintenance mode:
+
+		php bin/magento maintenance:disable
+
+### Verify the changes in the Magento Admin
+TBD, `app:config:import` doesn't work.
 
 
