@@ -75,6 +75,8 @@ We address the following functional fixes and enhancements in this release.
 
 <!--- 63343 -->* The `\Magento\CatalogWidget\Model\Rule` class now implements unserialized methods. Specifically, Magento has replaced `\Magento\FrameworkSerialize\Serializer\Json::serialize()` with `\Magento\FrameworkSerialize\Serializer\Json::unserialize()`. 
 
+<!--- 66366 -->* The `\Magento\CatalogInventory\Model\Stock\Status\getStockId()` method now returns the correct values.
+
 
 
 ### Configurable products
@@ -110,6 +112,10 @@ We address the following functional fixes and enhancements in this release.
 
 <!--- 65480 -->* Magento now caches image metadata, which avoids the time-consuming need to read images for metadata loading.
 
+
+<!--- 66401 -->*  Magento now shows a significant decrease in SQL queries on category and product pages while reading stock status on 2.1.4 after upgrading from 2.1.2. 
+
+<!--- 66400 -->*  Magento now shows a significant decrease in Redis traffic after upgrading 2.1.2 to 2.1.4. 
 
 
 
