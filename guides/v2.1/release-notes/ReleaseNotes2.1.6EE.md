@@ -4,7 +4,7 @@ group: release-notes
 subgroup: 02_rel-notes
 title: Magento EE 2.1.6 Release Notes
 menu_title: Magento EE 2.1.6 Release Notes
-menu_order: 267
+menu_order: 262
 level3_menu_node: level3child
 level3_subgroup: ee21-relnotes 
 github_link: release-notes/ReleaseNotes2.1.6EE.md
@@ -115,7 +115,6 @@ We address the following functional fixes and enhancements in this release.
 
 <!--- 65481 -->* Magento no longer performs unnecessary staging-related flag operations on the Category page. Previously, Magento performed staging-related flag operations even when the Staging module was not used.  
 
-<!--- 66401 -->*  Magento now shows a significant decrease in SQL queries on category and product pages while reading stock status on 2.1.4 after upgrading from 2.1.2. 
 
 <!--- 66400 -->*  Magento now shows a significant decrease in Redis traffic after upgrading 2.1.2 to 2.1.4. 
 
