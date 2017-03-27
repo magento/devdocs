@@ -66,7 +66,7 @@ To set sensitive values:
 
 1.	Find a value to set using the [sensitive value reference]({{ page.baseurl }}config-guide/prod/config-reference-sens.html).
 2.	Note the configuration path for the setting.
-3.	Log in to the production system as, or switch to, the [Magento file system owner]({{ page.baseurl }}install-gde/prereq/file-sys-perms-over.html).
+3.	Log in to the production system as, or switch to, the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %}.
 4.	Change to the Magento installation directory.
 5.	Enter the following command:
 
@@ -91,6 +91,8 @@ To set sensitive values:
 	![Sensitive setting in Admin]({{ site.baseurl }}common/images/config_sensitive-set.png)
 
 #### Related topics
-*	[]()
-*	[]()
-*	[]()
+*	[`magento deploy:mode:set` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config.html)
+*	[`magento config:sensitive:set` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config.html)
+*	[`magento app:config:import` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-app-config-import.html)
+*	[Sensitive and system-specific configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-sens.html)
+*	[How to name environment variables]({{ page.baseurl config-guide/prod/config-reference-var-name.html}})
