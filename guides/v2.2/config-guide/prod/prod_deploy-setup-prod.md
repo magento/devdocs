@@ -32,6 +32,12 @@ To set up a production machine:
 1.	After installing Magento or pulling it from source control, log in to the production server as, or switch to, the [Magento file system owner]({{ page.baseurl }}install-gde/prereq/file-sys-perms-over.html).
 2.	Create `~/.ssh/.composer/auth.json` if you haven't already done so.
 
+	Create the directory:
+
+		mkdir -p ~/.ssh/.composer
+
+	Create `auth.json` in that directory.
+
 	`auth.json` must contain your Magento [authentication keys]({{ page.baseurl }}install-gde/prereq/connect-auth.html).
 
 	A sample follows:

@@ -58,6 +58,13 @@ To set up the build system:
 
 		composer install
 3.	Wait for Magento dependencies to update.
+4.	Set ownership:
+
+		chown -R <magento file system owner name>:<web server user name> .
+
+	For example,
+
+		chown -R magento_user:apache .
 4.	If you use Git, open `.gitignore` in a text editor.
 5.	Start each of the following lines with a `#` character to comment them out:
 
