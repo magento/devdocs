@@ -20,10 +20,11 @@ This example shows how to change the following settings in your development syst
 
 These settings are available in the Magento Admin in **Stores** > Settings > **Configuration** > General > **General**.
 
-You can use the same procedure to configure any of the settings in the following references:
+You can use the same procedure to configure any non-sensitive, non-system-specific settings in the following references:
 
 *	[Other configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-most.html)
 *	[Payment configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-payment.html)
+*	[Magento Enteprise B2B Extension configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-b2b.html)
 
 ## Assumptions
 This topic provides an example of modifying the production system configuration. You can choose different configuration options if you wish.
@@ -32,7 +33,7 @@ For the purposes of this example, we assume the following:
 
 *	You use Git source control
 *	The development system is available in a Git remote named `mconfig`
-*	The Git branch is named `m2.2_split-deploy`
+*	Your Git working branch is named `m2.2_split-deploy`
 
 ## Step 1: Set the configuration in the development system
 To set the default locale and weight units in your development system:

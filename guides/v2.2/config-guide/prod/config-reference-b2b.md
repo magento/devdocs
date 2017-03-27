@@ -21,5 +21,5 @@ For those configuration paths, see:
 
 To optionally override these settings in a particular system, see TBD.
 
-{% include config/config-reference.md %}
+{% include config/config-reference-b2b.md %}
 

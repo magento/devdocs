@@ -19,8 +19,6 @@ This topic discusses technical details about implementing split deployment in Ma
 ## Configuration management
 To enable you to maintain the configuration of your development and production systems, we use the following override scheme.
 
-NOTE: THIS DIAGRAM WILL CHANGE
-
 ![How configuration variable values are determined]({{ site.baseurl }}common/images/cloud_vars_flow-diagram.png){:width="550px"}
 
 As the diagram shows, we get configuration values in the following order:
@@ -205,7 +203,7 @@ We also changed the following in the Magento Admin in production mode:
 	*	Inline translations
 
 ## Prerequisite for your development, build, and production systems
-For file permissions and ownership to work properly across your systems, you must either:
+File permissions and ownership must be consistent across development, build, and production systems. To make this work, you must either:
 
 *   Set up the same Magento file system owner user name on all systems _and_ make sure the web server runs as the same user on all systems
 *   Change permissions on each system as necessary using the following guidelines:
