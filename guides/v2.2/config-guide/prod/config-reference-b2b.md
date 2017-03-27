@@ -2,17 +2,17 @@
 layout: default
 group: config-guide
 subgroup: 999_prod
-title: Other configuration paths reference
-menu_title: Other configuration paths reference
-menu_order: 303
+title: Magento Enteprise B2B Extension configuration paths reference
+menu_title: Magento Enteprise B2B Extension configuration paths reference
+menu_order: 305
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: config-ref
 version: 2.0
-github_link: config-guide/prod/config-reference-most.md
+github_link: config-guide/prod/config-reference-b2b.md
 ---
  
-This topic lists all configuration paths _except_ payment variables, sensitive values, and system-specific values. The [`magento app:config:dump` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-export.html) writes these values to the shared configuration file, `app/etc/config.php`, which should be in source control.
+This topic lists all configuration paths for Magento Enterprise B2B Extension. The [`magento app:config:dump` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-export.html) writes these values to the shared configuration file, `app/etc/config.php`, which should be in source control.
 
 For those configuration paths, see:
 

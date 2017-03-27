@@ -4,7 +4,7 @@ group: config-guide
 subgroup: 999_prod
 title: Sensitive and system-specific configuration paths reference
 menu_title: Sensitive and system-specific configuration paths reference
-menu_order: 303
+menu_order: 301
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: config-ref

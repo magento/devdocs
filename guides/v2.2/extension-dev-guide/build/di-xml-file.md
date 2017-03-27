@@ -321,7 +321,7 @@ In this example `Magento\Filesystem` is not shared, so all clients will retrieve
 Also, every instance of `Magento\Filesystem` will get separate instance of `$adapter`, because it too is non-shared.
 
 ## Sensitive and system-specific configuration settings {#ext-di-sens}
-In the Magento [split deployment model]({{ page.baseurl }}), there are the following types of configuration settings:
+In the Magento 2.2 [split deployment model]({{ page.baseurl }}), there are the following types of configuration settings:
 
 * Shared, which can be shared between systems using `app/etc/config.php`
 * System-specific, which are unique to a particular system.
@@ -394,9 +394,9 @@ A configuration example follows:
 
 A complete list of Magento configuration paths can be found in:
 
-*   [TBD]()
-*   [TBD]()
-*   [TBD]()
+*   [Other configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-most.html)
+*   [Payment configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-payment.html)
+*   [Sensitive and system-specific configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-sens.html)
 *   [TBD]()
 
 #### Related topics
