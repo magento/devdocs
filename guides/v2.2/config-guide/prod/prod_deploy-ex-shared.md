@@ -78,8 +78,10 @@ Generate the shared configuration file, `app/etc/config.php`, in your developmen
 #       modified:   app/etc/config.php
 #
 
-	@@@ IMPORTANT NOTE ABOUT OTHER CHANGES
-4.	If you modified `config.php` only, check it in to source control.
+	<div class="bs-callout bs-callout-warning" id="warning" markdown="1">
+	_Do not_ submit changes to the `generated`, `pub/media`, or `pub/static` directories to source control. You'll generate those files on your build system. The production system likely has code, themes, and so on that aren't ready to use on production.
+	</div>
+4.	Check in your changes to `app/etc/config.php` only to source control.
 
 	The Git command follows:
 
