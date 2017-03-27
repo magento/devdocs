@@ -320,31 +320,46 @@ The `shared` property determines the lifestyle of both `argument` and `type` con
 In this example `Magento\Filesystem` is not shared, so all clients will retrieve separate instances of `Magento\Filesystem`.
 Also, every instance of `Magento\Filesystem` will get separate instance of `$adapter`, because it too is non-shared.
 
-## Sensitive configuration settings {#ext-di-sens}
-A _sensitive configuration setting_ is one you can manage using either a configuration variable or using the Magento Admin. A sensitive setting is _not_ stored in `config.php` and cannot be shared between environments.
+## Sensitive and system-specific configuration settings {#ext-di-sens}
+In the Magento [split deployment model]({{ page.baseurl }}), there are the following types of configuration settings:
 
-Typical examples are payment gateway API keys, user names, or passwords.
+* Shared, which can be shared between systems using `app/etc/config.php`
+* System-specific, which are unique to a particular system.
 
-To specify a sensitive configuration value, add a reference to [`Magento\Config\Model\Config\Export\ExcludeList`]({{ site.mage2200url }}app/code/Magento/Config/Model/Config/Export/ExcludeList.php){:target="_blank"} to `di.xml` as follows:
+  Typical examples include host names and ports.
+* Sensitive, managed using either an environment variable, using the [`magento config:sensitive:set` command]({{ page.baseurl }}) or using the Magento Admin.
+
+  Typical examples are payment gateway API keys, user names, or passwords.
+
+  You cannot share either system-specific or sensitive settings between development and production systems.
+
+To specify either a system-specific or sensitive configuration value, add a reference to [`Magento\Config\Model\Config\TypePool`]({{ site.mage2200url }}app/code/Magento/Config/Model/Config/TypePool.php){:target="_blank"} to `di.xml` as follows:
 
 {% highlight php startinline=true %}
-<type name="Magento\Config\Model\Config\Export\ExcludeList">
+<type name="Magento\Config\Model\Config\TypePool">
    <arguments>
-      <argument name="configs" xsi:type="array">
+      <argument name="{sensitive|environment}" xsi:type="array">
          <item name="<config path>" xsi:type="string">1</item>
       </argument>
    </arguments>
 </type>
 {% endhighlight %}
 
-where `<config path>` is a `/`-delimited string that uniquely identifies this configuration setting.
+where `<argument name="{sensitive|environment}` specifies the type of value: either sensitive or system-specific.
 
-For example,
+and `<config path>` is a `/`-delimited string that uniquely identifies this configuration setting.
+
+<div class="bs-callout bs-callout-info" id="merging-info" markdown="1">
+The same configuration setting can be both sensitive and system-specific.
+</div>
+
+### Sensitive setting
+An example of a sensitive setting follows:
 
 {% highlight php startinline=true %}
-<type name="Magento\Config\Model\Config\Export\ExcludeList">
+<type name="Magento\Config\Model\Config\TypePool">
    <arguments>
-      <argument name="configs" xsi:type="array">
+      <argument name="sensitive" xsi:type="array">
          <item name="payment/test/password" xsi:type="string">1</item>
       </argument>
    </arguments>
@@ -356,11 +371,26 @@ After specifying the sensitive setting, use the following commands to verify it:
     php bin/magento cache:clean
     php bin/magento app:config:dump
 
-A message similar to the following displays:
+A message similar to the following is displayed:
 
     The configuration file doesn't contain sensitive data for security reasons. Sensitive data can be stored in the following environment variables:
     CONFIG__DEFAULT__PAYMENT__TEST__PASWORD for payment/test/password
     Done.
+
+### System-specific settings
+Like sensitive settings, system-specific settings are written to `app/etc/env.php` only.
+
+A configuration example follows:
+
+{% highlight php startinline=true %}
+<type name="Magento\Config\Model\Config\TypePool">
+   <arguments>
+      <argument name="environemnt" xsi:type="array">
+         <item name="<config path>" xsi:type="string">1</item>
+      </argument>
+   </arguments>
+</type>
+{% endhighlight %}
 
 A complete list of Magento configuration paths can be found in:
 
