@@ -1525,7 +1525,7 @@ In this example it is named <code>CreateSynonymEntityTest.php</code> and stored 
     <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_rootElement</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">addNewButton</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">click</span><span class="p">();</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>In HTML page, to locate the UI block that contains a button, we will use a <code>.page-main-actions</code> locator.</p>
+<p>In HTML page, to locate the UI block that contains a button, we will use a <code>.page-main-actions</code> locator. [Learn more about locator definitions.]</p>
 
 <p>The SynonymsIndex.xml page must contain the following block to be able to run the method in a test case.</p>
 
@@ -1556,7 +1556,7 @@ In this example it is named <code>CreateSynonymEntityTest.php</code> and stored 
 
 <p><strong>Form mapping</strong></p>
 
-<p><a href="/guides/v2.0/mtf/mtf_entities/mtf_block.html#mtf_block_mapping">Learn about form mapping</a>.</p>
+<p><a href="/guides/v2.0/mtf/mtf_entities/mtf_block.html#mtf_block_mapping">Learn about form mapping.</a>.</p>
 
 <p>We don’t need to define mapping parameters for the <code>synonyms</code> field, because they are the same as the default values. (See the <a href="/guides/v2.0/mtf/mtf_entities/mtf_block.html#mtf_block_form_xml_nodes">nodes description table</a>.) The same is applicable to the <code>scope_id</code> field except a type of input element, which is a <a href="/guides/v2.0/mtf/mtf_entities/mtf_typified-element.html#magento_class">custom typified element</a> <a href="https://github.com/magento/magento2/blob/2.0/dev/tests/functional/lib/Magento/Mtf/Client/Element/SelectstoreElement.php"><code>\Magento\Mtf\Client\Element\SelectstoreElement</code></a> in our case. Let’s create the mapping file <code>SynonymsForm.xml</code>, which has the following code:</p>
 
