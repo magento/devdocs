@@ -76,7 +76,7 @@ Generate the shared configuration file, `app/etc/config.php`, in your developmen
 #   (use "git checkout -- <file>..." to discard changes in working directory)
 #
 #       modified:   app/etc/config.php
-#
+#</pre>
 
 	<div class="bs-callout bs-callout-warning" id="warning" markdown="1">
 	_Do not_ submit changes to the `generated`, `pub/media`, or `pub/static` directories to source control. You'll generate those files on your build system. The production system likely has code, themes, and so on that aren't ready to use on production.
