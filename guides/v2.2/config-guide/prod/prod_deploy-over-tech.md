@@ -12,9 +12,7 @@ version: 2.2
 github_link: config-guide/prod/prod_deploy-over-tech.md
 ---
 
-
-
-This topic discusses technical details about implementing split deployment in Magento 2.2.
+This topic discusses technical details about implementing split deployment in Magento 2.2 and later.
 
 ## Configuration management
 To enable you to maintain the configuration of your development and production systems, we use the following override scheme.
@@ -26,8 +24,8 @@ As the diagram shows, we get configuration values in the following order:
 1.	From an environment variable.
 
 	Environment variables, if they exist, override all other values.
-2.	From `config.php`.
-3.	From `env.php`.
+2.	From the shared configuration, `config.php`.
+3.	From the system-specific configuration, `env.php`.
 
 	Values in `config.php` and `env.php` override settings in the database.
 3.	From the database.
@@ -93,7 +91,7 @@ In more detail:
 1.  Start maintenance mode.
 2.  Pull code and configuration updates from source control.
 3.  If you use Magento EE, stop queue workers.
-4.  If you installed, updated, or removed themes, use the `magento app:config:import` command to make those changes in the production system.
+4.  IUse the `magento app:config:import` command to import configuration changes in the production system.
 5.  To set system-specific settings, use either the `magento config:set` command or environment variables.
 6.  To set sensitive settings, use either the `magento config:sensitive:set` command or environment variables.
 
@@ -144,6 +142,7 @@ After you make the change in the Admin, run `php bin/magento app:config:dump`. T
 ```
 
 `groups` array:
+
 ``` php
       2 =>
       array (
@@ -188,7 +187,10 @@ The PayPal settings are written to neither file because the `magento app:config:
     php bin/magento config:sensitive:set paypal/wpp/api_username <username>
     php bin/magento config:sensitive:set paypal/wpp/api_password <password>
 
-For a complete list of sensitive settings and corresponding configuration paths, see [Sensitive and system-specific configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-sens.html).
+#### For more information
+*   For a complete list of system-specific and sensitive settings and corresponding configuration paths, see [Sensitive and system-specific configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-sens.html).
+*   [config.php reference]({{ page.baseurl }}config-guide/prod/config-reference-configphp.html) for detailed information about the shared configuration file
+*   [env.php reference]({{ page.baseurl }}config-guide/prod/config-reference-envphp.html) for detailed information about the system-specific configuration file
 
 ## Other changes in the Magento Admin
 We also changed the following in the Magento Admin in production mode:

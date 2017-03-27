@@ -14,7 +14,7 @@ github_link: config-guide/prod/prod_deploy-over.md
 
 In Magento version 2.2, we introduce a new way to deploy to production with minimal downtime. We refer to this as _split deployment_ because the deployment process occurs on different systems.
 
-We also provide the ability to maintain consistent configurations for all deployment systems. It's a simple but powerful model that enables you to separate ordinary configuration settings from either system-specific settings (like host and port) or sensitive settings (such as names and passwords).
+We also provide the ability to maintain consistent configurations for all split deployment systems. It's a simple but powerful model that enables you to separate ordinary configuration settings from either system-specific settings (like host and port) or sensitive settings (such as names and passwords).
 
 ## Reduced downtime deployment
 Because you deploy static assets and compile code on a machine separate from your production system, you minimize downtime. Downtime on your production system is limited to the amount of time required to transfer static files and compiled code to the server.
@@ -46,9 +46,10 @@ Modeling after [factor 3 in the 12-factor app design](https://12factor.net/confi
 
 For a complete list of configuration paths, see the following references:
 
-*	[Other configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-most.html)
-*	[Payment configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-payment.html)
 *	[Sensitive and system-specific configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-sens.html)
+*	[Payment configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-payment.html)
+*	[Other configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-most.html)
+*	[Magento Enterprise B2B Extension configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-b2b.html)
 
 ## Assumptions
 To use split deployment, we assume you are:
