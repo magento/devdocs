@@ -24,7 +24,7 @@ This topic shows how to create a new block and explore its structure. It discuss
 
 ## Example {#mtf_block_class}
 
-A block [`Magento\Ui\Test\Block\Messages`]{:target=_blank} extends a basic block [`Magento\Mtf\Block\Block`]{:target=_blank} and implements methods to interact with messages.
+A block `Magento\Ui\Test\Block\Messages` extends a basic block [`Magento\Mtf\Block\Block`]{:target=_blank} and implements methods to interact with messages.
 
 {% collapsible Show/hide the code %}
 {% highlight php %}
@@ -655,7 +655,6 @@ There are some rules that should be followed to define a selector:
 [`Magento\Mtf\Block\Form`]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/Form.php
 [`Magento\Catalog\Test\Block\Product\View`]: {{site.mage2000url}}dev/tests/functional/tests/app/Magento/Catalog/Test/Block/Product/View.php
 
-[`Magento\Ui\Test\Block\Messages`]: https://github.com/magento/magento2/blob/9d4c58e77126ae448eda81aa5e3206a16568fc5c/dev/tests/functional/tests/app/Magento/Magento/Ui/Test/Block/Messages.php
 [`Magento\Backend\Test\Block\Widget\Grid`]: {{site.mage2000url}}dev/tests/functional/tests/app/Magento/Backend/Test/Block/Widget/Grid.php
 
 [`Magento\Mtf\Block\Block`]: https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/Block.php
