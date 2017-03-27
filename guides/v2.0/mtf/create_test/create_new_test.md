@@ -563,7 +563,7 @@ public function addNew()
 
 {% endhighlight %}
 
-In HTML page, to locate the UI block that contains a button, we will use a `.page-main-actions` locator. [Learn more about locator definitions.]
+In HTML page, to locate the UI block that contains a button, we will use a `.page-main-actions` locator. Learn how to [define a locator].
 
 The SynonymsIndex.xml page must contain the following block to be able to run the method in a test case.
 
@@ -1081,7 +1081,7 @@ That's it!
 [blocks]: {{page.baseurl}}mtf/mtf_entities/mtf_block.html
 [block mapping]: {{page.baseurl}}mtf/mtf_entities/mtf_block.html#mtf_block_mapping
 [Learn about form mapping.]: {{page.baseurl}}mtf/mtf_entities/mtf_block.html#mtf_block_mapping
-[Learn how to define a locator.]: {{page.baseurl}}mtf/mtf_entities/mtf_block.html#define-a-selector
+[define a locator]: {{page.baseurl}}mtf/mtf_entities/mtf_block.html#define-a-selector
 [nodes description table]: {{page.baseurl}}mtf/mtf_entities/mtf_block.html#mtf_block_form_xml_nodes
 [page]: {{page.baseurl}}mtf/mtf_entities/mtf_page.html
 [pages]: {{page.baseurl}}mtf/mtf_entities/mtf_page.html
