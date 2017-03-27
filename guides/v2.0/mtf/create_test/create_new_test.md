@@ -563,7 +563,7 @@ public function addNew()
 
 {% endhighlight %}
 
-In HTML page, to locate the UI block that contains a button, we will use a `.page-main-actions` locator.
+In HTML page, to locate the UI block that contains a button, we will use a `.page-main-actions` locator. [Learn more about locator definitions.]
 
 The SynonymsIndex.xml page must contain the following block to be able to run the method in a test case.
 
@@ -598,7 +598,7 @@ We need a `fill()` method from the [`\Magento\Mtf\Block\Form`][] class and a map
 
 **Form mapping**
 
-[Learn about form mapping][].
+[Learn about form mapping.][].
 
 We don't need to define mapping parameters for the `synonyms` field, because they are the same as the default values. (See the [nodes description table][].) The same is applicable to the `scope_id` field except a type of input element, which is a [custom typified element][] [`\Magento\Mtf\Client\Element\SelectstoreElement`][] in our case. Let's create the mapping file `SynonymsForm.xml`, which has the following code:
                                                                       
@@ -1080,7 +1080,8 @@ That's it!
 [block]: {{page.baseurl}}mtf/mtf_entities/mtf_block.html
 [blocks]: {{page.baseurl}}mtf/mtf_entities/mtf_block.html
 [block mapping]: {{page.baseurl}}mtf/mtf_entities/mtf_block.html#mtf_block_mapping
-[Learn about form mapping]: {{page.baseurl}}mtf/mtf_entities/mtf_block.html#mtf_block_mapping
+[Learn about form mapping.]: {{page.baseurl}}mtf/mtf_entities/mtf_block.html#mtf_block_mapping
+[Learn how to define a locator.]: {{page.baseurl}}mtf/mtf_entities/mtf_block.html#define-a-selector
 [nodes description table]: {{page.baseurl}}mtf/mtf_entities/mtf_block.html#mtf_block_form_xml_nodes
 [page]: {{page.baseurl}}mtf/mtf_entities/mtf_page.html
 [pages]: {{page.baseurl}}mtf/mtf_entities/mtf_page.html

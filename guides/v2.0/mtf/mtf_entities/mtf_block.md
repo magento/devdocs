@@ -207,7 +207,7 @@ Magento contains basic blocks for the functional testing with a logic that you c
 
 ## Block identifier {#mtf_block_identifier}
 
-Each block has an identifier that includes selector and searching strategy. This identifier is determined by the [`Magento\Mtf\Client\Element\Locator`]{:target=_blank} class and is stored in the `_rootElement` property of the [Magento\Mtf\Block\Block]{:target=_blank} class.
+Each block has an identifier that includes selector and searching strategy. This identifier is determined by the [`Magento\Mtf\Client\Element\Locator`]{:target=_blank} class and is stored in the `_rootElement` property of the [`Magento\Mtf\Block\Block`]{:target=_blank} class.
 
 You can use the `_rootElement` to find an element in the current block.
 
@@ -635,7 +635,7 @@ $this->callRender($typeId, 'getOptions', ['product' => $product])
 $this->getCustomOptionsBlock()->getOptions($product);
 {%endhighlight%}
  
-### Define a selector
+### Define a selector/locator {#define-selector}
 
 There are some rules that should be followed to define a selector:
 
@@ -643,9 +643,9 @@ There are some rules that should be followed to define a selector:
 2. To work with forms, use the `name` attribute as a selector.
 3. If an attribute is static (not auto-generated), use the `id` attribute.
 4. If you cannot use `id`, use `data-*` attributes.
-5. We recommend not to use the `class` attribute, because they are changed very often.
+5. We recommend not to use the `class` attribute, because it can be changed and not unique very often.
 6. Do not use complex hard-coded structures like `//div/div[2]//tbody//tr[1]/td[0]`, they can be unpredictably changed.
-7. Do not use enclosed text such as button or label names.
+7. Do not use enclosed text such as button or label names like `//button[contains(., "Sign in")]`
 
  
 <!-- LINK DEFINITIONS -->
