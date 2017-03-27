@@ -72,8 +72,8 @@ Generate the shared configuration file, `app/etc/config.php`, in your developmen
 
 	<pre class="no-copy"># On branch m2.2_split-deploy
 # Changed but not updated:
-#   (use "git add <file>..." to update what will be committed)
-#   (use "git checkout -- <file>..." to discard changes in working directory)
+#   (use "git add &lt;file>..." to update what will be committed)
+#   (use "git checkout -- &lt;file>..." to discard changes in working directory)
 #
 #       modified:   app/etc/config.php
 #</pre>
@@ -81,6 +81,7 @@ Generate the shared configuration file, `app/etc/config.php`, in your developmen
 	<div class="bs-callout bs-callout-warning" id="warning" markdown="1">
 	_Do not_ submit changes to the `generated`, `pub/media`, or `pub/static` directories to source control. You'll generate those files on your build system. The production system likely has code, themes, and so on that aren't ready to use on production.
 	</div>
+
 4.	Check in your changes to `app/etc/config.php` only to source control.
 
 	The Git command follows:
@@ -122,7 +123,7 @@ To update the production system:
 		cd <Magento root dir>
 		php bin/magento maintenance:enable
 
-	For additional options, see TBD.
+	For additional options, such as the ability to set an IP address whitelist, see [`magento maintenance:enable`]({{ page.baseurl }}install-gde/install/cli/install-cli-subcommands-maint.html).
 3.	Pull code from source control.
 
 	The Git command follows:
@@ -136,6 +137,6 @@ To update the production system:
 		php bin/magento maintenance:disable
 
 ### Verify the changes in the Magento Admin
-TBD, `app:config:import` doesn't work.
+TBD, `app:config:import` doesn't work and storefront is hosed.
 
 
