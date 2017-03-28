@@ -321,83 +321,28 @@ In this example `Magento\Filesystem` is not shared, so all clients will retrieve
 Also, every instance of `Magento\Filesystem` will get separate instance of `$adapter`, because it too is non-shared.
 
 ## Sensitive and system-specific configuration settings {#ext-di-sens}
-In the Magento 2.2 [split deployment model]({{ page.baseurl }}), there are the following types of configuration settings:
+In the Magento 2.2 [split deployment model]({{ page.baseurl }}config-guide/prod/prod_deploy-over.html), there are the following types of configuration settings:
 
 * Shared, which can be shared between systems using `app/etc/config.php`
-* System-specific, which are unique to a particular system.
+* System-specific, which are unique to a particular system. 
 
   Typical examples include host names and ports.
 * Sensitive, managed using either an environment variable, using the [`magento config:sensitive:set` command]({{ page.baseurl }}) or using the Magento Admin.
 
   Typical examples are payment gateway API keys, user names, or passwords.
 
-  You cannot share either system-specific or sensitive settings between development and production systems.
+  You cannot share either system-specific or sensitive settings between development and production systems. These values are stored in `app/etc/env.php` on each system.
 
-To specify either a system-specific or sensitive configuration value, add a reference to [`Magento\Config\Model\Config\TypePool`]({{ site.mage2200url }}app/code/Magento/Config/Model/Config/TypePool.php){:target="_blank"} to `di.xml` as follows:
+  For more information, see [PHP developer tasks for split deployment]({{ page.baseurl }}config-guide/prod/prod_deploy-prog.html).
 
-{% highlight php startinline=true %}
-<type name="Magento\Config\Model\Config\TypePool">
-   <arguments>
-      <argument name="{sensitive|environment}" xsi:type="array">
-         <item name="<config path>" xsi:type="string">1</item>
-      </argument>
-   </arguments>
-</type>
-{% endhighlight %}
-
-where `<argument name="{sensitive|environment}` specifies the type of value: either sensitive or system-specific.
-
-and `<config path>` is a `/`-delimited string that uniquely identifies this configuration setting.
-
-<div class="bs-callout bs-callout-info" id="merging-info" markdown="1">
-The same configuration setting can be both sensitive and system-specific.
-</div>
-
-### Sensitive setting
-An example of a sensitive setting follows:
-
-{% highlight php startinline=true %}
-<type name="Magento\Config\Model\Config\TypePool">
-   <arguments>
-      <argument name="sensitive" xsi:type="array">
-         <item name="payment/test/password" xsi:type="string">1</item>
-      </argument>
-   </arguments>
-</type>
-{% endhighlight %}
-
-After specifying the sensitive setting, use the following commands to verify it:
-
-    php bin/magento cache:clean
-    php bin/magento app:config:dump
-
-A message similar to the following is displayed:
-
-    The configuration file doesn't contain sensitive data for security reasons. Sensitive data can be stored in the following environment variables:
-    CONFIG__DEFAULT__PAYMENT__TEST__PASWORD for payment/test/password
-    Done.
-
-### System-specific settings
-Like sensitive settings, system-specific settings are written to `app/etc/env.php` only.
-
-A configuration example follows:
-
-{% highlight php startinline=true %}
-<type name="Magento\Config\Model\Config\TypePool">
-   <arguments>
-      <argument name="environemnt" xsi:type="array">
-         <item name="<config path>" xsi:type="string">1</item>
-      </argument>
-   </arguments>
-</type>
-{% endhighlight %}
+{% include php-dev/typepool_sensitive-values.md %}
 
 A complete list of Magento configuration paths can be found in:
 
 *   [Other configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-most.html)
 *   [Payment configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-payment.html)
 *   [Sensitive and system-specific configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-sens.html)
-*   [TBD]()
+*   [Magento Enterprise B2B Extension configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-b2b.html)
 
 #### Related topics
 

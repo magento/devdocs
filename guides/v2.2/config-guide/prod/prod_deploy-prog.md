@@ -2,8 +2,8 @@
 layout: default
 group: config-guide
 subgroup: 999_prod
-title: PHP developer tasks
-menu_title: PHP developer tasks
+title: PHP developer tasks for split deployment
+menu_title: PHP developer tasks for split deployment
 menu_node: 
 menu_order: 90
 version: 2.2
@@ -24,7 +24,7 @@ The following values should be designated as sensitive:
 
 *	Keys (such as API keys)
 *	User names and passwords
-*	E-mail Addresses
+*	E-mail addresses
 *	Any Personally identifiable information (PII) (address, phone number, date of birth, government identification number, and so on)
 
 ### System-specific values
@@ -41,9 +41,20 @@ The following values should be designated as system-specific:
 *	"modes" (for example, sandbox mode, debug mode, test mode)			
 *	SSL (only for non-payment)				
 *	E-mail recepients
-*	Admininistrative settings between environments (for example, password expiration limits)
+*	Admininistrative settings between systems (for example, password expiration limits)
 
 ## Implementation details
+You can implement the following in your custom components:
+
+*	Specify sensitive or system-specific configuration values
+*	Add PHP arrays to the shared configuration, `config.php`, and the system-specific configuration, `env.php`
+
+### Specify sensitive or system-specific configuration values
+This section discusses how to specify particular configuration values as either sensitive or system-specific.
+
+{% include php-dev/typepool_sensitive-values.md %}
+
+### Add PHP arrays to the configuration
 TBD
 
 
