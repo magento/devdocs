@@ -43,19 +43,15 @@ The following values should be designated as system-specific:
 *	E-mail recepients
 *	Admininistrative settings between systems (for example, password expiration limits)
 
-## Implementation details
-You can implement the following in your custom components:
-
-*	Specify sensitive or system-specific configuration values
-*	Add PHP arrays to the shared configuration, `config.php`, and the system-specific configuration, `env.php`
-
-### Specify sensitive or system-specific configuration values
-This section discusses how to specify particular configuration values as either sensitive or system-specific.
+## Specify sensitive or system-specific configuration values
+When you create custom components that require configuration settings, you can designate settings as sensitive, system-specific, or both. The following sections provide a detailed explanation.
 
 {% include php-dev/typepool_sensitive-values.md %}
 
-### Add PHP arrays to the configuration
-TBD
+## Add PHP arrays to the configuration
+Your custom components can optionally add additional PHP arrays to the shared configuration, `config.php`, or the system-specific configuration, `env.php`. The following sections provide more detail.
+
+{% include php-dev/config-importer.md %}
 
 
 
