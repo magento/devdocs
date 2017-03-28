@@ -40,8 +40,8 @@ The following values should be designated as system-specific:
 *	Paths (for example, custom paths, proxy host, proxy port)			
 *	"modes" (for example, sandbox mode, debug mode, test mode)			
 *	SSL (only for non-payment)				
-*	E-mail recepients
-*	Admininistrative settings between systems (for example, password expiration limits)
+*	E-mail recipients
+*	Administrative settings between systems (for example, password expiration limits)
 
 ## Specify sensitive or system-specific configuration values
 When you create custom components that require configuration settings, you can designate settings as sensitive, system-specific, or both. The following sections provide a detailed explanation.

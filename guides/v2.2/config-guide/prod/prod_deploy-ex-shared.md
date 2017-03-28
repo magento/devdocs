@@ -24,7 +24,7 @@ You can use the same procedure to configure any non-sensitive, non-system-specif
 
 *	[Other configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-most.html)
 *	[Payment configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-payment.html)
-*	[Magento Enteprise B2B Extension configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-b2b.html)
+*	[Magento Enterprise B2B Extension configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-b2b.html)
 
 ## Assumptions
 This topic provides an example of modifying the production system configuration. You can choose different configuration options if you wish.
