@@ -15,7 +15,7 @@ github_link: config-guide/prod/prod_deploy-over-tech.md
 This topic discusses technical details about implementing split deployment in Magento 2.2 and later.
 
 ## Configuration management
-To enable you to syncrhonize and maintain the configuration of your development and production systems, we use the following override scheme.
+To enable you to synchronize and maintain the configuration of your development and production systems, we use the following override scheme.
 
 ![How configuration variable values are determined]({{ site.baseurl }}common/images/cloud_vars_flow-diagram.png){:width="550px"}
 
@@ -84,14 +84,14 @@ On your build system:
 4.  Check the updates into source control.
 
 ### Production system
-On your production system (that is, your live store) you pull generated assets and code updates from source control and set system-specific and sensitive configuration settings using the command line or environment varibles.
+On your production system (that is, your live store) you pull generated assets and code updates from source control and set system-specific and sensitive configuration settings using the command line or environment variables.
 
 On your production system:
 
 1.  Start maintenance mode.
 2.  Pull code and configuration updates from source control.
 3.  If you use Magento EE, stop queue workers.
-4.  IUse the `magento app:config:import` command to import configuration changes in the production system.
+4.  Use the `magento app:config:import` command to import configuration changes in the production system.
 5.  To set system-specific settings, use either the `magento config:set` command or environment variables.
 6.  To set sensitive settings, use either the `magento config:sensitive:set` command or environment variables.
 
