@@ -12,7 +12,7 @@ github_link: config-guide/prod/prod.md
 
 These topics discuss the process of deploying Magento to a production site for Magento version 2.2 and later. We recommend this deployment method for anyone with a large site who does not want downtime during deployment.
 
-If you have a smaller site and can tolerate some downtime during deployment, see TBD instead.
+If you deploy Magento on a single machine and can tolerate some downtime during deployment, see [Single-machine deployment]({{ page.baseurl }}config-guide/prod/single-machine-deployment.html) instead.
 
 The following topics are organized to help you get started quickly. If you're new to Magento or not familiar with the technical details, start by reading the overviews.
 

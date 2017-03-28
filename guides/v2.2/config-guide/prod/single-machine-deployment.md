@@ -4,9 +4,10 @@ group: config-guide
 subgroup: 999_prod
 title: Single machine deployment
 menu_title: Single machine deployment
-menu_node: 
-menu_order: 500
-version: 2.0
+menu_node: parent
+menu_order: 1
+menu_order: 900
+version: 2.2
 github_link: config-guide/prod/single-machine-deployment.md
 ---
 
