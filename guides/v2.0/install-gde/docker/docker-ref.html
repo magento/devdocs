@@ -975,7 +975,12 @@ cp -r /Users/me/Downloads/Magento-CE-2_1_3_zip-2016-12-16-06-04-03 /Users/me/App
   <li>
     <p><code>m2devbox-reset.[bat|sh]</code> which restarts the DevBox installation.</p>
 
-    <p>You can run this script, for example, after you stop and start your computer or Docker. DevBox assigns new ports to services; to find the new ports, see <a href="/guides/v2.0/install-gde/docker/docker-commands.html#cloud-docker-cmds-stopstart">Stop, start, restart, and view port mappings</a>.</p>
+    <p>You can run this script, for example, after you stop and start your computer or Docker. DevBox assigns new ports to services. You can do the following:</p>
+
+    <ul>
+      <li>To set static listen ports that don’t change every time you restart a container, see <a href="#devbox-static-port">Set static listen ports</a> <em>before</em> you run <code>m2devbox-init.[bat|sh]</code></li>
+      <li>To find the listen ports currently being used, see <a href="/guides/v2.0/install-gde/docker/docker-commands.html#cloud-docker-cmds-stopstart">Stop, start, restart, and view port mappings</a>.</li>
+    </ul>
   </li>
   <li>
     <p><code>docker-compose.yml</code> DevBox configuration file.</p>
@@ -991,6 +996,37 @@ cp -r /Users/me/Downloads/Magento-CE-2_1_3_zip-2016-12-16-06-04-03 /Users/me/App
 
   <p>Do not close the Unison sync window; otherwise, files you change won’t be added to the Magento docroot.</p>
 </div>
+
+<h3 id="devbox-static-port">Set static listen ports</h3>
+<p>By default, every time you start a Docker container, all listen ports are reassigned randomly. To cause DevBox to use the same listen ports every time you restart, you must modify <code>docker-compose.yml</code> <em>before you initialize</em> DevBox for the first time.</p>
+
+<p>To set static listen ports:</p>
+
+<ol>
+  <li>
+    <p>Open <code>docker-compose.yml</code> in a text editor.</p>
+
+    <p>It’s located in the root directory to which you downloaded DevBox.</p>
+  </li>
+  <li>Locate the <code>ports:</code> section.</li>
+  <li>
+    <p>Precede the default listen port with a free port number followed by <code>:</code></p>
+
+    <p>An example follows.</p>
+
+    <pre><code>ports:
+   - "12345:80" 
+   - "54321:22"
+</code></pre>
+
+    <p>The preceding example causes the web container to listen on port 12345 and SSH to listen on port 54321.</p>
+
+    <div class="bs-callout bs-callout-warning" id="warning">
+      <p>Make sure the ports you assign to DevBox are not used by another process.</p>
+    </div>
+  </li>
+  <li>Save your changes to <code>docker-compose.yml</code> and exit the text editor.</li>
+</ol>
 
 <h4 id="next-step">Next step</h4>
 <p><a href="/guides/v2.0/install-gde/docker/docker-phpstorm-prereq.html">PhpStorm prerequisites</a></p>
