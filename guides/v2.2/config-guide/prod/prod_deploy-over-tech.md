@@ -15,7 +15,7 @@ github_link: config-guide/prod/prod_deploy-over-tech.md
 This topic discusses technical details about implementing split deployment in Magento 2.2 and later.
 
 ## Configuration management
-To enable you to maintain the configuration of your development and production systems, we use the following override scheme.
+To enable you to syncrhonize and maintain the configuration of your development and production systems, we use the following override scheme.
 
 ![How configuration variable values are determined]({{ site.baseurl }}common/images/cloud_vars_flow-diagram.png){:width="550px"}
 
@@ -24,8 +24,8 @@ As the diagram shows, we get configuration values in the following order:
 1.	From an environment variable.
 
 	Environment variables, if they exist, override all other values.
-2.	From the shared configuration, `config.php`.
-3.	From the system-specific configuration, `env.php`.
+2.	From the shared configuration file, `config.php`.
+3.	From the system-specific configuration file, `env.php`.
 
 	Values in `config.php` and `env.php` override settings in the database.
 3.	From the database.
@@ -61,7 +61,7 @@ The following diagram shows how we recommend you use split deployment to manage 
 ### Development system
 On your development system, you make configuration changes in the Magento Admin and generate the shared configuration, `app/etc/config.php` and the system-specific configuration, `app/etc/env.php`. Check Magento code and the shared configuration into source control and push it to the build server.
 
-In more detail:
+On your development system:
 
 1.  Set the configuration in the Magento Admin.
 
@@ -76,7 +76,7 @@ In more detail:
 ### Build system
 The build system compiles code and generates static view files for themes registered in Magento. It doesn't need a connection to the Magento database; it needs only the Magento codebase.
 
-In more detail:
+On your build system:
 
 1.  Pull the shared configuration file from source control.
 2.  Use the `magento setup:di:compile` command to compile code.
@@ -86,7 +86,7 @@ In more detail:
 ### Production system
 On your production system (that is, your live store) you pull generated assets and code updates from source control and set system-specific and sensitive configuration settings using the command line or environment varibles.
 
-In more detail:
+On your production system:
 
 1.  Start maintenance mode.
 2.  Pull code and configuration updates from source control.

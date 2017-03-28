@@ -50,8 +50,12 @@ To get these values from the database:
 
 {% include config/config-reference_conf-var-name2.md %}
 
-#### Next step
+## How to use environment variables
 TBD
+
+*	In the UNIX environment
+*	In a virtual host
+*	In .htaccess?
 
 #### Related information
 *	[Magento User Guide discussion of scope](http://docs.magento.com/m2/ce/user_guide/configuration/scope.html){:target="_blank"}

@@ -2,8 +2,8 @@
 layout: default
 group: config-guide
 subgroup: 999_prod
-title: Example of managing the shared configuration
-menu_title: Example of managing the shared configuration
+title: Simple example: manage the shared configuration
+menu_title: Simple example: manage the shared configuration
 menu_node: 
 menu_order: 52
 level3_menu_node: level3child
@@ -138,6 +138,12 @@ To update the production system:
 		php bin/magento maintenance:disable
 
 ### Verify the changes in the Magento Admin
-TBD, `app:config:import` doesn't work and storefront is hosed.
+To verify these settings are not editable in the Magento Admin:
 
+1.	Log in to the Magento Admin.
+2.	Click **Stores** > Settings > **Configuration** > General > **General**.
+3.	In the right pane, expand **Locale Options**.
 
+	The options you just set are displayed as follows:
+
+	![Configuration options not editable in the Admin]({{ site.baseurl }}common/images/config_split-deploy_not-editable.png){:width="650px"}

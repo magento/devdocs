@@ -17,7 +17,7 @@ This reference shows suggested `.gitignore` files to use in a development system
 
 
 ## .gitignore for development
-We recommend you use the `.gitignore` provided with Magento in a development system with only one change: comment out `app/etc/config.php` so that file is included in source control.
+We recommend you use the `.gitignore` provided with Magento in a development system with only one change: comment out `app/etc/config.php` so it's included in source control.
 
 {% collapsible Show default `.gitignore` %}
 

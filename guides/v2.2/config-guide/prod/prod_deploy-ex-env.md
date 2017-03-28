@@ -1,6 +1,6 @@
 ---
 layout: default
-group: config-guide
+group: 
 subgroup: 999_prod
 title: Example of managing the system-specific configuration
 menu_title: Example of managing the system-specific configuration
