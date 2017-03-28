@@ -2,97 +2,122 @@
 layout: default
 group: UI_Components_guide
 subgroup: best practices
-title: semantic arguments for UI components
-menu_title:
-menu_node:
+title: Using semantic syntax for UI components XML configuration
+menu_title: Using semantic syntax for UI components XML configuration
 menu_order: 1
 version: 2.2
 github_link: ui_comp_guide/best-practices/semantic_config.md
 ---
 
-## Introduction 
+## Overview
+Magento 2.2 introduces the semantic syntax for [UI components XML configuration]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html). It also supports the "arbitrary" syntax used in UI components XML configuration in previous Magento 2 versions and during XML files merging, the configuration files with "arbitrary" syntax have higher priority.
+But we recommend using the semantic syntax, because the old "arbitrary" syntax will become deprecated at some point.
 
-Magento supports two different ways to declare UI components configuration.
+The main advantages of the semantic syntax are described in the following sections.
 
-The first way is arbitrary structure that looks like: 
+## Readability 
+All components options are separate nodes, and a node's purpose is defined by its name. The number of abstract-named nodes like `<item>` or `<argument>` is minimized. 
+{% collapsible Illustration %}
+{% highlight xml%}
+<field name="default_billing" formElement="checkbox">
+    <argument name="data" xsi:type="array">
+        <item name="config" xsi:type="array">
+            <item name="source" xsi:type="string">customer</item>
+        </item>
+    </argument>
+    <settings>
+        <dataType>boolean</dataType>
+        <visible>false</visible>
+    </settings>
+</field>
+<field name="default_shipping" formElement="checkbox">
+    <argument name="data" xsi:type="array">
+        <item name="config" xsi:type="array">
+            <item name="source" xsi:type="string">customer</item>
+        </item>
+    </argument>
+    <settings>
+        <dataType>boolean</dataType>
+        <visible>false</visible>
+    </settings>
+</field>
+<field name="website_id" component="Magento_Ui/js/form/element/website" formElement="select">
+    <argument name="data" xsi:type="array">
+        <item name="config" xsi:type="array">
+            <item name="source" xsi:type="string">customer</item>
+        </item>
+    </argument>
+    <settings>
+        <validation>
+            <rule name="required-entry" xsi:type="boolean">true</rule>
+        </validation>
+        <dataType>number</dataType>
+        <tooltip>
+            <link>http://docs.magento.com/m2/ce/user_guide/configuration/scope.html</link>
+            <description translate="true">If your Magento installation has multiple websites, you can edit the scope to associate the customer with a specific site.</description>
+        </tooltip>
+        <imports>
+            <link name="customerId">${ $.provider }:data.customer.entity_id</link>
+        </imports>
+    </settings>
+</field>
+{%endhighlight%}
+{% endcollapsible %}
 
-![first_way_ui_components_declaration]({{site.baseurl}} common/images/ui_comps_config_arb.png)
+## Autocomplete
+When editing XML configuration files in an IDE, the autocomplete feature prompts the correct spelling and the possible options. 
+{% collapsible Illustration %}
 
-The second way is *semantic* declaration. The configuration from the previous example declared using semantic declaration looks like following: 
+* Node declaration autocomplete:
 
-![first_way_ui_components_declaration]({{site.baseurl}} common/images/ui_comps_config_semantic.png)
+![first_way_ui_components_declaration]({{site.baseurl}}common/images/ui_comps/autocomplete1.png)
 
+* Attribute declaration autocomplete:
 
-<p class="q">Which declaration Magento itself uses?</p>
+![first_way_ui_components_declaration]({{site.baseurl}}common/images/ui_comps/autocomplete1.png)
+{% endcollapsible %}
 
-### Advantages of "semantic" declaration
-* [Readability](#readability) 
-* [Autocomplete](#autocomplete) 
-* [Validation](#validation) 
+Magento supports autocomplete for all nesting levels of options which have static interface. If the options don't have defined interface, additional property is used to declare option name and type. 
 
-#### Readability
-The node's purpose is defined by it's name, no more abstract-named nodes like `<item>` or `<argument>`. 
+Example:
 
-#### Autocomplete
-The autocomplete helps to declare components configuration and suggests
-a possible component's options.
+{%highlight xml%}
+<valueMap>
+    <map name="false" xsi:type="number">0</map>
+    <map name="true" xsi:type="number">1</map>
+</valueMap>
+{%endhighlight%}
 
-<p class="q">If using semantic declaration, you can enjoy the benefit of the autocomplete functionality available in your? all? IDE.</p>.
+<p class="q">Does it really refer to autocomplete? or to general configuration best practice?</p>
 
-Start write opening XML tag or attribute to some XML node and IDE give you list of all possible component's options.
+## Validation
 
-Example: preview "Autocomplete node declaration"
-![second_way_ui_components_declaration](./img/3.png?raw=true "second_way_ui_components_declaration")
-##### Preview "Autocomplete attribute declaration"
-![second_way_ui_components_declaration](./img/4.png?raw=true "second_way_ui_components_declaration")
+When editing XML configuration files in an IDE, you get visual notifications if the name of a node or attribute is misspelled or a required attribute is missing. You can also validate the complete file, by clicking **Validate** in the context menu.
 
-##### Magento specific:
-**Magento** supports autocomplete for all nesting levels of options which have static interface.
-In cases when options don't have defined interface  additional property is used. That oblige us to declare
-option name and type.
+{% collapsible Illustration %}
+* If the node name is misspelled:
 
-![second_way_ui_components_declaration](./img/5.png?raw=true "second_way_ui_components_declaration")
+![first_way_ui_components_declaration]({{site.baseurl}}common/images/ui_comps/validation1.png)
 
-#### Validation
-Semantic approach gives ability to validate XML declaration.
-If some option or attribute which isn't supported is declared in XML - IDE will show it.
-1) In case when wrong option node is declared - IDE will change node color to red.
-![second_way_ui_components_declaration](./img/6.png?raw=true "second_way_ui_components_declaration")
-2) In case when required attribute is absent - IDE underlines node by red line. 
-![second_way_ui_components_declaration](./img/7.png?raw=true "second_way_ui_components_declaration")
-You can see tooltip with a clue by hovering the node with error.
-![second_way_ui_components_declaration](./img/12.png?raw=true "second_way_ui_components_declaration")
-<p class="q">Do we really need these illustrations? isn't it standard behavior?</p>
+* If the required attribute is missing:
 
-Also, we have ability to validate full file.
-For this open context menu and select "Validate" item.
+![first_way_ui_components_declaration]({{site.baseurl}}common/images/ui_comps/validation2.png)
 
-![second_way_ui_components_declaration](./img/8.png?raw=true "second_way_ui_components_declaration")
+* The tooltip displayed if you move the pointer over the underlined element:
 
-After that, if errors is existing IDE showed their in "Messages" tab.
-![second_way_ui_components_declaration](./img/9.png?raw=true "second_way_ui_components_declaration")
+![first_way_ui_components_declaration]({{site.baseurl}}common/images/ui_comps/validation3.png)
 
-#### Best practices to declare custom property
+* Validating the complete file:
 
-*All custom or extended components should be declared in "component" or "container" node*.
+![first_way_ui_components_declaration]({{site.baseurl}}common/images/ui_comps/validation_file.png)
+![first_way_ui_components_declaration]({{site.baseurl}}common/images/ui_comps/validation_messages.png)
 
-As example we need to extend base functionality of "select" component and add additional
-configuration option to enable your custom functionality.
+{% endcollapsible %}
 
-The configuration of "select" component looks like:
-![second_way_ui_components_declaration](./img/10.png?raw=true "second_way_ui_components_declaration")
-
-The configuration of your custom "select" component should look like:
-![second_way_ui_components_declaration](./img/11.png?raw=true "second_way_ui_components_declaration")
-
-<p class="q">code samples should not be images</p>
-
-As we can see, node "select" is removed and instead of it "container" node is added. In "container" node "component" attribute
-is used. In "component" attribute the link to custom JS constructor file is declared. 
-Inside "container" node arbitrary structure is used to declare options.
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+To use the autocomplete and validation features in your IDE, generate the URN as described in the [URN highlighter]({{page.baseurl}}config-guide/cli/config-cli-subcommands-urn.html) topic.
+</div>
 
 
-###Important note:
-1) Now **Magento** supports two approaches of declaring UI components configuration, but in future releases arbitrary 
-approach will deprecated and will be not supported.
-2) In current version, during XML files merging, "old" arbitrary approach has higher priority compared to semantic approach.
+
+
