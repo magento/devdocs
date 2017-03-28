@@ -301,7 +301,7 @@ To set static listen ports:
 
     It's located in the root directory to which you downloaded DevBox.
 2.  Locate the `ports:` section.
-3.  Precede the default listen port with a free port number followed by `:`.
+3.  Precede the default listen port with a free port number followed by `:`
 
     An example follows.
 
