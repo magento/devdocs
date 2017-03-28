@@ -19,7 +19,10 @@ For those configuration paths, see:
 *	[Payment configuration paths]({{ page.baseurl }}config-guide/prod/config-reference-payment.html)
 *	[Sensitive and system-specific configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-sens.html)
 
-To optionally override these settings in a particular system, see TBD.
+To optionally override these settings in a particular system, see:
+
+*	[]()
+*	[]()
 
 {% include config/config-reference-b2b.md %}
 

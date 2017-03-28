@@ -42,7 +42,7 @@ The following topics are organized to help you get started quickly. If you're ne
 	*	[Payment configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-payment.html)
 	*	[Other configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-most.html)
 	*	[Magento Enteprise B2B Extension configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-b2b.html)
-	*	[How to name environment variables]({{ page.baseurl }}config-guide/prod/config-reference-var-name.html)
+	*	[Use environment variables to override configuration settings]({{ page.baseurl }}config-guide/prod/config-reference-var-name.html)
 	*	[.gitignore reference]({{ page.baseurl }}config-guide/prod/config-reference-gitignore.html)
 	*	[config.php reference]({{ page.baseurl }}config-guide/prod/config-reference-configphp.html)
 	*	[env.php reference]({{ page.baseurl }}config-guide/prod/config-reference-envphp.html)

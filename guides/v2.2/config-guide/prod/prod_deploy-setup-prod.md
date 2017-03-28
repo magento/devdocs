@@ -29,7 +29,7 @@ You can have one production system. All of the following must be true:
 ## Set up a production machine
 To set up a production machine:
 
-1.	After installing Magento or pulling it from source control, log in to the production server as, or switch to, the [Magento file system owner]({{ page.baseurl }}install-gde/prereq/file-sys-perms-over.html).
+1.	After installing Magento or pulling it from source control, log in to the production server as, or switch to, the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %}.
 2.	Create `~/.ssh/.composer/auth.json` if you haven't already done so.
 
 	Create the directory:
@@ -95,4 +95,4 @@ To set sensitive values:
 *	[`magento config:sensitive:set` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config.html)
 *	[`magento app:config:import` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-app-config-import.html)
 *	[Sensitive and system-specific configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-sens.html)
-*	[How to name environment variables]({{ page.baseurl config-guide/prod/config-reference-var-name.html}})
+*	[Use environment variables to override configuration settings]({{ page.baseurl config-guide/prod/config-reference-var-name.html}})

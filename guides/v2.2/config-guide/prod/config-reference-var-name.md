@@ -2,8 +2,8 @@
 layout: default
 group: config-guide
 subgroup: 999_prod
-title: How to name environment variables
-menu_title: How to name environment variables
+title: Use environment variables to override configuration settings
+menu_title: Use environment variables to override configuration settings
 menu_order: 400
 menu_node: 
 level3_menu_node: level3child
@@ -17,7 +17,7 @@ github_link: config-guide/prod/config-reference-var-name.md
 ### Find a website or store view scope in the database {#cloud-vars-db}
 To get these values from the database:
 
-1.	If you haven't done so already, log in to your development system as the [Magento file system owner]({{ page.baseurl }}install-gde/prereq/file-sys-perms-over.html).
+1.	If you haven't done so already, log in to your development system as the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %}.
 2.	Enter the following command:
 
 		mysql -u <magento database user name> -p
