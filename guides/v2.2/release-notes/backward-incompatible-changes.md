@@ -36,7 +36,7 @@ Change was done in order to add default values to customer attributes.
 **Action:** Added the getter `getDefaultValue()` and setter `setDefaultValue($defaultValue)` to [`Magento\Customer\Model\Data\AttributeMetadata`]<br/>
 **Description:** Retrieve and set default values to customer attributes<br/>
 
-#### Wishlist Module
+### Wishlist Module
 
 The format of serialized string for buyRequest parameter in \Magento\Wishlist\Model\Wishlist::addNewItem changed from serialized to JSON.
 
@@ -52,6 +52,10 @@ The format of serialized string for buyRequest parameter in \Magento\Wishlist\Mo
  */
 addNewItem($product, $buyRequest = null, $forciblySetQty = false)
 {% endhighlight %}
+
+### Eav Module Changes
+
+The class `\Magento\Eav\Model\Entity\Attribute\Backend\Serialized` has been marked as deprecated, `Magento\Eav\Model\Entity\Attribute\Backend\JsonEncoded` can be used instead. 
 
 ### MessageQueue Module API
 
