@@ -79,13 +79,13 @@ Exception report files in `var/report` are now JSON encoded, and existing serial
 
 ### Braintree Module Changes
 
-- The deprecated constant `\Magento\Braintree\Model\Ui\ConfigProvider::PAYPAL_CODE` has be removed and the `\Magento\Braintree\Model\Ui\PayPal\ConfigProvider::PAYPAL_CODE` can be used instead. 
+- The deprecated constant `\Magento\Braintree\Model\Ui\ConfigProvider::PAYPAL_CODE` has been removed and the `\Magento\Braintree\Model\Ui\PayPal\ConfigProvider::PAYPAL_CODE` can be used instead. 
 
 ### PayPal Module Changes
 
-- `\Magento\Paypal\Cron\FetchReports::execute` has been reworked and the `__construct` does not have `\Psr\Log\LoggerInterface` dependency anymore.
-The `execute` method throws `\Exception` instead logging it.
-- The `report_date` column from `paypal_settlement_report` table has been changed from `timestamp` format to `date`.
+- `\Magento\Paypal\Cron\FetchReports::execute` has been reworked and the `__construct` does not have the `\Psr\Log\LoggerInterface` dependency anymore.
+The `execute` method now throws `\Exception` instead of logging it.
+- The `report_date` column from the `paypal_settlement_report` table has been changed from `timestamp` format to `date`.
 
 
 ## Changes in repositories
