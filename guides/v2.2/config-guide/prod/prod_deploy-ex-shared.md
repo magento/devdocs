@@ -2,8 +2,8 @@
 layout: default
 group: config-guide
 subgroup: 999_prod
-title: Simple example: manage the shared configuration
-menu_title: Simple example: manage the shared configuration
+title: Simple example&mdash;manage the shared configuration
+menu_title: Simple example&mdash;manage the shared configuration
 menu_node: 
 menu_order: 52
 level3_menu_node: level3child
