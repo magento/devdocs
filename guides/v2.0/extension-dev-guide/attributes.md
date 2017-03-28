@@ -217,4 +217,7 @@ However, if an extension similar to the following has been defined, the interfac
 
 
 <h2 id="related">Related topics</h2>
-<a href="{{page.baseurl}}get-started/authentication/gs-authentication.html">Web API authentication overview</a>
+<ul>
+    <li><a href="{{page.baseurl}}get-started/authentication/gs-authentication.html">Web API authentication overview</a></li>
+    <li><a href="{{page.baseurl}}extension-dev-guide/extension_attributes/adding-attributes.html">Adding extension attributes to an entity</a></li>
+</ul>
