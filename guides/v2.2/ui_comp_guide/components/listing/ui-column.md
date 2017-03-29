@@ -9,14 +9,7 @@ github_link: ui_comp_guide/components/listing/ui-column.md
 ---
 
 ## Column overview
-The Column component is a collection of columns and it provides an interface for such actions as showing and hiding columns. The interface contains the following information:
-
-* The total number of all available columns in a grid
-* The number of columns currently active/displayed
-
-The Column component also provides information about the column's state to the admin.
-
-There is no need to duplicate information about the columns to be displayed in the Column component. You must define the append to element on every column child element and reference the parent using the appends. Another way to give access to the child element is to give a link to it when defining the column container.
+Column is a basic component for a column.
 
 ## Column configuration
 

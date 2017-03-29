@@ -10,7 +10,14 @@ github_link: ui_comp_guide/components/listing/ui-сolumnsсontrols.md
 
 ## Overview
 
-The ColumnsControls component allows to modify visibility of the table's columns. It renders a list of checkboxes that indicate whether an associated column is displayed in the table or not.
+The ColumnsControls component is a collection of columns and it provides an interface for such actions as showing and hiding columns. The interface contains the following information:
+
+* The total number of all available columns in a grid
+* The number of columns currently active/displayed
+
+The ColumnsControls component also provides information about the column's state to the admin.
+
+There is no need to duplicate information about the columns to be displayed in the ColumnsControls component. You must define the append to element on every column child element and reference the parent using the appends. Another way to give access to the child element is to give a link to it when defining the column container.
 
 Constructor: [app/code/Magento/Ui/view/base/web/js/grid/controls/columns.js]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/grid/controls/columns.js)
 
