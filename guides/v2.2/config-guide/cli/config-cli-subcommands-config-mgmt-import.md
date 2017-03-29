@@ -2,8 +2,8 @@
 layout: default
 group: config-guide
 subgroup: 04_CLI
-title: Import data from configuration files to the database
-menu_title: Import data from configuration files to the database
+title: Import data from configuration files
+menu_title: Import data from configuration files
 menu_node:
 level3_menu_node: level3child
 level3_subgroup: cli-config-mgmt

@@ -35,7 +35,7 @@ You can set values at the following times:
 Use the following commands:
 
 *   `config:set` sets any non-sensitive configuration value by its configuration path
-*   `config:set:sensitive` sets any sensitive configuration value by its configuration path
+*   `config:sensitive:set` sets any sensitive configuration value by its configuration path
 *   `config:show` shows saved configuration values; values of sensitive variables are displayed as asterisks
   
 ## First steps {#first}
@@ -46,7 +46,7 @@ In addition to the command arguments discussed here, see <a href="{{page.baseurl
 ## Prerequisites
 To set a configuration value, you must know at least one of the following:
 
-*   The [configuration path]({{ page.baseurl }}config-guide/config-reference.html)
+*   The configuration path
 *   To set a configuration value for a particular scope, you must know the scope code.
 
     To set a configuration value for the default scope, you don't need to do anything.
@@ -118,7 +118,7 @@ Command options:
 
 where
 
-*   `--scope` is the scope of configuration (`default`, `website`, or `store`) *(default value is `default`)*
+*   `--scope` is the scope of configuration (`default`, `website`, or `store`). The default value is `default`.
 *   `--scope-code` is the scope code of configuration (website code or store view code)
 *   `-l|--lock` enables you to:
 

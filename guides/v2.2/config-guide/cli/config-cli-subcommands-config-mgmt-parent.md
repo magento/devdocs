@@ -2,8 +2,8 @@
 layout: default
 group: config-guide 
 subgroup: 04_CLI
-title: Configuration reference
-menu_title: Configuration reference
+title: Configuration management
+menu_title: Configuration management
 menu_order: 250
 menu_node: 
 level3_menu_node: level3parent
