@@ -118,7 +118,10 @@ where
 
 *   `--scope` is the scope of configuration (`default`, `website`, or `store`) *(default value is `default`)*
 *   `--scope-code` is the scope code of configuration (website code or store view code)
-*   `-l|--lock` enables you to change a setting that is already locked in the Magento Admin
+*   `-l|--lock` enables you to:
+
+    *   Lock the value so it cannot be edited in the Magento Admin
+    *   Change a setting that is already locked in the Magento Admin
 *   `path` is configuration path *(required)*
 *   `value` is value of configuration *(required)*
 
@@ -134,15 +137,15 @@ Some examples for setting a store base URL follow:
 
 Example to set the base URL for the default scope:
 
-    bin/magento config:set web/unsecure/base_url http://example.com
+    bin/magento config:set web/unsecure/base_url http://example.com/
 
 Example to set the base URL for the `base` website:
 
-    bin/magento config:set --scope=websites --scope-code=base web/unsecure/base_url http://example2.com 
+    bin/magento config:set --scope=websites --scope-code=base web/unsecure/base_url http://example2.com/
     
 Example to set the base URL for the `test` store view:
 
-    bin/magento config:set --scope=stores --scope-code=test web/unsecure/base_url http://example3.com 
+    bin/magento config:set --scope=stores --scope-code=test web/unsecure/base_url http://example3.com/
 
 ### Set configuration values that cannot be edited in the Magento Admin {#config-cli-config-file}
 If you use the `-l|--lock` option as follows, the configuration value is saved in `config.php` and the field for editing this value in Admin page is disabled.
@@ -157,9 +160,13 @@ If you use the `-l|--lock` option:
 *   Configuration values _cannot_ be edited in the Admin.
 *   You can use `-l|-lock` to set configuration values if Magento is not installed. However, you can set values only for the default scope.
 
-In case of wrong configuration path, this command returns an error
+If you enter an incorrect configuration path, this command returns an error
 
     The "wrong/config/path" does not exist
+
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+If you use the `--lock` option to set or change a value, you must use the [`magento app:config:import` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-app-config-import.html) to import the setting before you access the Admin or storefront.
+</div>
 
 ## Command config:show {#config-cli-config-show}
 Command options:
