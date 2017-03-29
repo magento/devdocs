@@ -23,7 +23,7 @@ You can use these commands to set the Magento configuration manually or using sc
 *   [Sensitive and system-specific configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-sens.html)
 *   [Payment configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-payment.html)
 *   [Other configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-most.html)
-*   [Magento Enteprise B2B Extension configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-b2b.html)
+*   [Magento Enterprise B2B Extension configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-b2b.html)
 
 You can set values at the following times:
 
@@ -57,7 +57,7 @@ See the following references:
 *   [Sensitive and system-specific configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-sens.html)
 *   [Payment configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-payment.html)
 *   [Other configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-most.html)
-*   [Magento Enteprise B2B Extension configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-b2b.html)
+*   [Magento Enterprise B2B Extension configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-b2b.html)
 
 ### Find the scope code
 You can find the scope code either in the Magento database or in the Magento Admin. See one of the following sections for more information.
