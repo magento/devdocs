@@ -14,7 +14,7 @@ github_link: release-notes/ReleaseNotes2.1.6CE.md
 {:toc}
 
 
-We are pleased to present Magento Community Edition 2.1.6. This release includes important performance enhancements for your Magento software, especially to the performance of operations involving configurable products with swatches. 
+We are pleased to present Magento Community Edition 2.1.6. This release includes important performance enhancements for your Magento installation, especially for operations that involve the category page as well as image resizing. 
 
 Looking for the <a href="http://devdocs.magento.com/guides/v2.0/cloud/release-notes/CloudReleaseNotes.html" target="_blank">Magento Enterprise Cloud Edition Release Notes</a>?
 
