@@ -14,8 +14,14 @@ This topic discusses advanced configuration commands you can use to:
 
 *   Set any configuration option from the command line
 *   Optionally lock any option so its value cannot be changed in the Magento Admin
+*   Change a configuration setting that is locked in the Admin
 
-You can use these commands to set the Magento configuration manually or using scripts. You set configuration options using a _configuration path_, which is a `/`-delimited string that uniquely identifies that configuration option. You can find a configuration path reference in [Configuration reference]({{ page.baseurl }}config-guide/config-reference.html).
+You can use these commands to set the Magento configuration manually or using scripts. You set configuration options using a _configuration path_, which is a `/`-delimited string that uniquely identifies that configuration option. You can find configuration paths in the following references:
+
+*   [Sensitive and system-specific configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-sens.html)
+*   [Payment configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-payment.html)
+*   [Other configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-most.html)
+*   [Magento Enteprise B2B Extension configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-b2b.html)
 
 You can set values at the following times:
 
@@ -24,11 +30,11 @@ You can set values at the following times:
     That's because before you install Magento, the default scope is the only valid scope.
 *   After you install Magento, you can set configuration values for any website or store view scope.
 
-There are two commands:
+Use the following commands:
 
 *   `config:set` sets any non-sensitive configuration value by its configuration path
 *   `config:set:sensitive` sets any sensitive configuration value by its configuration path
-*   `config:show` shows saved configuration values
+*   `config:show` shows saved configuration values; values of sensitive variables are displayed as asterisks
   
 ## First steps {#first}
 {% include install/first-steps-cli.html %}
@@ -44,7 +50,12 @@ To set a configuration value, you must know at least one of the following:
     To set a configuration value for the default scope, you don't need to do anything.
 
 ### Find the configuration path
-See [Configuration reference]({{ page.baseurl }}config-guide/config-reference.html). TBD
+See the following references:
+
+*   [Sensitive and system-specific configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-sens.html)
+*   [Payment configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-payment.html)
+*   [Other configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-most.html)
+*   [Magento Enteprise B2B Extension configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-b2b.html)
 
 ### Find the scope code
 You can find the scope code either in the Magento database or in the Magento Admin. See one of the following sections for more information.
@@ -107,7 +118,7 @@ where
 
 *   `--scope` is the scope of configuration (`default`, `website`, or `store`) *(default value is `default`)*
 *   `--scope-code` is the scope code of configuration (website code or store view code)
-*   `-l|--lock` prevents a configuration value from being changed in the Magento Admin 
+*   `-l|--lock` enables you to change a setting that is already locked in the Magento Admin
 *   `path` is configuration path *(required)*
 *   `value` is value of configuration *(required)*
 
