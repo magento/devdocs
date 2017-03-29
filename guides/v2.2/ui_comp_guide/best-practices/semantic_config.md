@@ -91,7 +91,6 @@ Example:
 </valueMap>
 {%endhighlight%}
 
-<p class="q">Does it really refer to autocomplete? or to general configuration best practice?</p>
 
 ## Validation
 
