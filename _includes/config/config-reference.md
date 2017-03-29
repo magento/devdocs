@@ -6,8 +6,8 @@ This section lists variable names and configuration paths available for options 
 ### General paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **General** > **General**.
 
-Name  | Config path | EE only? | Encrypted?
-|--------------|--------------|--------------|--------------|
+Name  | Config path | EE only? | 
+|--------------|--------------|--------------|
 Default Country | `general/country/default` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) | 
 Allow Countries | `general/country/allow` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) | 
 Zip/Postal Code is optional for | `general/country/optional_zip_countries` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png) 
@@ -40,8 +40,8 @@ Enable Single-Store Mode | `general/single_store_mode/enabled` | <!-- ![Not EE-o
 ### Web paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **General** > **Web**.
 
-Name  | Config path | EE only? | Encrypted?
-|--------------|--------------|--------------|--------------|
+Name  | Config path | EE only? | 
+|--------------|--------------|--------------|
 Add Store Code to Urls | `web/url/use_store` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Auto-redirect to Base URL | `web/url/redirect_to_base` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Use Web Server Rewrites | `web/seo/use_rewrites` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
@@ -71,8 +71,8 @@ Add Store Code to Urls | `web/url
 ### Currency setup paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **General** > **Currency setup**.
 
-Name  | Config path | EE only? | Encrypted?
-|--------------|--------------|--------------|--------------|
+Name  | Config path | EE only? | 
+|--------------|--------------|--------------|
 Base Currency | `currency/options/base` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Default Display Currency | `currency/options/default` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Allowed Currencies | `currency/options/allow` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
@@ -89,8 +89,8 @@ Error Email Template | `currency/import/error_email_template` | <!-- ![Not EE-on
 ### Contacts paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **General** > **Contacts**.
 
-Name  | Config path | EE only? | Encrypted?
-|--------------|--------------|--------------|--------------|
+Name  | Config path | EE only? | 
+|--------------|--------------|--------------|
 Enable Contact Us | `contact/contact/enabled` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Email Sender | `contact/email/sender_email_identity` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Email Template | `contact/email/email_template` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
@@ -98,16 +98,16 @@ Email Template | `contact/email/email_template` | <!-- ![Not EE-only]({{ site.ba
 ### Reports paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **General** > **Reports**.
 
-Name  | Config path | EE only? | Encrypted?
-|--------------|--------------|--------------|--------------|
+Name  | Config path | EE only? | 
+|--------------|--------------|--------------|
 Year-To-Date Starts | `reports/dashboard/ytd_start` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Current Month Starts | `reports/dashboard/mtd_start` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 
 ### Content management paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **General** > **Content Management**.
 
-Name  | Config path | EE only? | Encrypted?
-|--------------|--------------|--------------|--------------|
+Name  | Config path | EE only? | 
+|--------------|--------------|--------------|
 Enable WYSIWYG Editor | `cms/wysiwyg/enabled` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Use Static URLs for Media Content in WYSIWYG for Catalog | `cms/wysiwyg/use_static_urls_in_catalog` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Enable Hierarchy Functionality | `cms/hierarchy/enabled` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
@@ -117,8 +117,8 @@ Default Layout for Hierarchy Menu | `cms/hierarchy/menu_layout` | <!-- ![Not EE-
 ### New Relic reporting paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **General** > **New Relic Reporting**.
 
-Name  | Config path | EE only? | Encrypted?
-|--------------|--------------|--------------|--------------|
+Name  | Config path | EE only? | 
+|--------------|--------------|--------------|
 Enable New Relic Integration | `newrelicreporting/general/enable` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 New Relic Application Name | `newrelicreporting/general/app_name` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Enable Cron | `newrelicreporting/cron/enable_cron` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
@@ -129,8 +129,8 @@ This section lists variable names and config paths available for options in the 
 ### Catalog paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Catalog** > **Catalog**.
 
-Name  | Config path | EE only? | Encrypted?
-|--------------|--------------|--------------|--------------|
+Name  | Config path | EE only? | 
+|--------------|--------------|--------------|
 Mask for SKU | `catalog/fields_masks/sku` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Mask for Meta Title | `catalog/fields_masks/meta_title` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Mask for Meta Keywords | `catalog/fields_masks/meta_keyword` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
@@ -228,8 +228,8 @@ Rotation Mode for Products in Upsell Product List | `catalog/magento_targetrule/
 ### Inventory paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Catalog** > **Inventory**.
 
-Name  | Config path | EE only? | Encrypted?
-|--------------|--------------|--------------|--------------|
+Name  | Config path | EE only? | 
+|--------------|--------------|--------------|
 Decrease Stock When Order is Placed | `cataloginventory/options/can_subtract` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Set Items' Status to be In Stock When Order is Cancelled | `cataloginventory/options/can_back_in_stock` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Display Out of Stock Products | `cataloginventory/options/show_out_of_stock` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
@@ -249,8 +249,8 @@ Automatically Return Credit Memo Item to Stock | `cataloginventory/item_options/
 ### Visual Merchadiser paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Catalog** > **Visual Merchandiser**.
 
-Name  | Config path | EE only? | Encrypted?
-|--------------|--------------|--------------|--------------|
+Name  | Config path | EE only? | 
+|--------------|--------------|--------------|
 Visible Attributes for Category Rules | `visualmerchandiser/options/smart_attributes` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Minimum Stock Threshold | `visualmerchandiser/options/minimum_stock_threshold` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Color Attribute Code | `visualmerchandiser/options/color_attribute_code` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
@@ -259,8 +259,8 @@ Color Order | `visualmerchandiser/options/color_order` | ![EE-only]({{ site.base
 ### XML sitemap paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Catalog** > **XML Sitemap**.
 
-Name  | Config path | EE only? | Encrypted?
-|--------------|--------------|--------------|--------------|
+Name  | Config path | EE only? | 
+|--------------|--------------|--------------|
 Frequency | `sitemap/category/changefreq` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Priority | `sitemap/category/priority` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Frequency | `sitemap/product/changefreq` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
@@ -280,8 +280,8 @@ Enable Submission to Robots.txt | `sitemap/search_engines/submission_robots` | <
 ### RSS Feeds paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Catalog** > **RSS Feeds**.
 
-Name  | Config path | EE only? | Encrypted?
-|--------------|--------------|--------------|--------------|
+Name  | Config path | EE only? | 
+|--------------|--------------|--------------|
 Enable RSS | `rss/config/active` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Enable RSS | `rss/wishlist/active` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 New Products | `rss/catalog/new` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
@@ -293,8 +293,8 @@ Customer Order Status Notification | `rss/order/status` | <!-- ![Not EE-only]({{
 ### Email to a friend paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Catalog** > **Email to a Friend**.
 
-Name  | Config path | EE only? | Encrypted?
-|--------------|--------------|--------------|--------------|
+Name  | Config path | EE only? | 
+|--------------|--------------|--------------|
 Enabled | `sendfriend/email/enabled` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Select Email Template | `sendfriend/email/template` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Allow for Guests | `sendfriend/email/allow_guest` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
@@ -308,8 +308,8 @@ This section lists variable names and config paths available for options in the 
 ### Newsletter paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Customers** > **Newsletter**.
 
-Name  | Config path | EE only? | Encrypted?
-|--------------|--------------|--------------|--------------|
+Name  | Config path | EE only? | 
+|--------------|--------------|--------------|
 Allow Guest Subscription | `newsletter/subscription/allow_guest_subscribe` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Need to Confirm | `newsletter/subscription/confirm` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Confirmation Email Sender | `newsletter/subscription/confirm_email_identity` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
@@ -322,8 +322,8 @@ Unsubscription Email Template | `newsletter/subscription/un_email_template` | <!
 ### Customer configuration paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Customers** > **Customer Configuration**.
 
-Name  | Config path | EE only? | Encrypted?
-|--------------|--------------|--------------|--------------|
+Name  | Config path | EE only? | 
+|--------------|--------------|--------------|
 Online Minutes Interval | `customer/online_customers/online_minutes_interval` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Share Customer Accounts | `customer/account_share/scope` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Enable Automatic Assignment to Customer Group | `customer/create_account/auto_group_assign` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
@@ -389,8 +389,8 @@ Case Sensitive | `customer/captcha/case_sensitive` | <!-- ![Not EE-only]({{ site
 ### Wish list paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Customers** > **Wish List**.
 
-Name  | Config path | EE only? | Encrypted?
-|--------------|--------------|--------------|--------------|
+Name  | Config path | EE only? | 
+|--------------|--------------|--------------|
 Enabled | `wishlist/general/active` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Enable Multiple Wish Lists | `wishlist/general/multiple_enabled` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Number of Multiple Wish Lists | `wishlist/general/multiple_wishlist_number` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
@@ -403,8 +403,8 @@ Display Wish Lists Summary | `wishlist/wishlist_link/use_qty` | <!-- ![Not EE-on
 ### Invitations paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Customers** > **Invitations**.
 
-Name  | Config path | EE only? | Encrypted?
-|--------------|--------------|--------------|--------------|
+Name  | Config path | EE only? | 
+|--------------|--------------|--------------|
 Enable Invitations Functionality | `magento_invitation/general/enabled` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Enable Invitations on Storefront | `magento_invitation/general/enabled_on_front` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Referred Customer Group | `magento_invitation/general/registration_use_inviter_group` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
@@ -417,8 +417,8 @@ Customer Invitation Email Template | `magento_invitation/email/template` | ![EE-
 ### Reward points paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Customers** > **Reward Points**.
 
-Name  | Config path | EE only? | Encrypted?
-|--------------|--------------|--------------|--------------|
+Name  | Config path | EE only? | 
+|--------------|--------------|--------------|
 Enable Reward Points Functionality | `magento_reward/general/is_enabled` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Enable Reward Points Functionality on Storefront | `magento_reward/general/is_enabled_on_front` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Customers May See Reward Points History | `magento_reward/general/publish_history` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
@@ -448,8 +448,8 @@ Expiry Warning Before (days) | `magento_reward/notification/expiry_day_before` |
 ### Promotions paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Customers** > **Promotions**.
 
-Name  | Config path | EE only? | Encrypted?
-|--------------|--------------|--------------|--------------|
+Name  | Config path | EE only? | 
+|--------------|--------------|--------------|
 Enable Reminder Emails | `promo/magento_reminder/enabled` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Frequency | `promo/magento_reminder/frequency` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Interval | `promo/magento_reminder/interval` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
@@ -467,8 +467,8 @@ Dash Every X Characters | `promo/auto_generated_coupon_codes/dash` | <!-- ![Not 
 ### Gift registry paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Customers** > **Gift Registry**.
 
-Name  | Config path | EE only? | Encrypted?
-|--------------|--------------|--------------|--------------|
+Name  | Config path | EE only? | 
+|--------------|--------------|--------------|
 Enable Gift Registry | `magento_giftregistry/general/enabled` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Maximum Registrants | `magento_giftregistry/general/max_registrant` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Email Template | `magento_giftregistry/owner_email/template` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
@@ -482,8 +482,8 @@ Email Sender | `magento_giftregistry/update_email/identity` | <!-- ![Not EE-only
 ### Persistent shopping cart paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Customers** > **Persistent Shopping Cart**.
 
-Name  | Config path | EE only? | Encrypted?
-|--------------|--------------|--------------|--------------|
+Name  | Config path | EE only? | 
+|--------------|--------------|--------------|
 Enable Persistence | `persistent/options/enabled` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Persistence Lifetime (seconds) | `persistent/options/lifetime` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Enable "Remember Me" | `persistent/options/remember_enabled` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
@@ -503,8 +503,8 @@ This section lists variable names and config paths available for options in the 
 ### Sales paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Sales**.
 
-Name  | Config path | EE only? | Encrypted?
-|--------------|--------------|--------------|--------------|
+Name  | Config path | EE only? | 
+|--------------|--------------|--------------|
 Hide Customer IP | `sales/general/hide_customer_ip` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Subtotal | `sales/totals_sort/subtotal` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Discount | `sales/totals_sort/discount` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
@@ -552,8 +552,8 @@ Use Store Address | `sales/magento_rma/use_store_address` | ![EE-only]({{ site.b
 ### Sales emails paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Sales Emails**.
 
-Name  | Config path | EE only? | Encrypted?
-|--------------|--------------|--------------|--------------|
+Name  | Config path | EE only? | 
+|--------------|--------------|--------------|
 Asynchronous sending | `sales_email/general/async_sending` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Enabled | `sales_email/order/enabled` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 New Order Confirmation Email Sender | `sales_email/order/identity` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
@@ -622,8 +622,8 @@ Display Order ID in Header | `sales_pdf/creditmemo/put_order_id` | <!-- ![Not EE
 ### Tax paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Tax**.
 
-Name  | Config path | EE only? | Encrypted?
-|--------------|--------------|--------------|--------------|
+Name  | Config path | EE only? | 
+|--------------|--------------|--------------|
 Tax Class for Shipping | `tax/classes/shipping_tax_class` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Tax Class for Gift Options | `tax/classes/wrapping_tax_class` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Default Tax Class for Product | `tax/classes/default_product_tax_class` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
@@ -668,8 +668,8 @@ Include FPT In Subtotal | `tax/weee/include_in_subtotal` | <!-- ![Not EE-only]({
 ### Checkout paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Checkout**.
 
-Name  | Config path | EE only? | Encrypted?
-|--------------|--------------|--------------|--------------|
+Name  | Config path | EE only? | 
+|--------------|--------------|--------------|
 Enable Onepage Checkout | `checkout/options/onepage_checkout_enabled` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Allow Guest Checkout | `checkout/options/guest_checkout` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Display Billing Address On | `checkout/options/display_billing_address_on` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
@@ -690,24 +690,24 @@ Send Payment Failed Email Copy Method | `checkout/payment_failed/copy_method` | 
 ### Shipping settings paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Shipping Settings**.
 
-Name  | Config path | EE only? | Encrypted?
-|--------------|--------------|--------------|--------------|
+Name  | Config path | EE only? | 
+|--------------|--------------|--------------|
 Apply custom Shipping Policy | `shipping/shipping_policy/enable_shipping_policy` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Shipping Policy | `shipping/shipping_policy/shipping_policy_content` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 
 ### Multishipping settings paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Multishipping Settings**.
 
-Name  | Config path | EE only? | Encrypted?
-|--------------|--------------|--------------|--------------|
+Name  | Config path | EE only? | 
+|--------------|--------------|--------------|
 Allow Shipping to Multiple Addresses | `multishipping/options/checkout_multiple` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Maximum Qty Allowed for Shipping to Multiple Addresses | `multishipping/options/checkout_multiple_maximum_qty` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 
 ### Shipping methods paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Shipping Methods**.
 
-Name  | Config path | EE only? | Encrypted?
-|--------------|--------------|--------------|--------------|
+Name  | Config path | EE only? | 
+|--------------|--------------|--------------|
 Enabled | `carriers/flatrate/active` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Title | `carriers/flatrate/title` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Method Name | `carriers/flatrate/name` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
@@ -849,8 +849,8 @@ Sort Order | `carriers/dhl/sort_order` | <!-- ![Not EE-only]({{ site.baseurl }}c
 ### Google API paths 
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Google API**.
 
-Name  | Config path | EE only? | Encrypted?
-|--------------|--------------|--------------|--------------|
+Name  | Config path | EE only? | 
+|--------------|--------------|--------------|
 Enable | `google/analytics/active` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Account type | `google/analytics/type` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) | 
 Enable Content Experiments | `google/analytics/experiments` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
@@ -872,16 +872,16 @@ Conversion Value | `google/adwords/conversion_value` | <!-- ![Not EE-only]({{ si
 ### Signifyd paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Fraud Protection**.
 
-| Name  | Config path | EE only? | Encrypted? |
-|--------------|--------------|--------------|--------------|
+| Name  | Config path | EE only? |  |
+|--------------|--------------|--------------|
 | Enable this Solution  | `fraud_protection/signifyd/active`   | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) |   |
 | Debug  | `fraud_protection/signifyd/debug`   | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png) |   |
 
 ### Gift cards paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Gift Cards**.
 
-Name  | Config path | EE only? | Encrypted?
-|--------------|--------------|--------------|--------------|
+Name  | Config path | EE only? | 
+|--------------|--------------|--------------|
 Gift Card Notification Email Sender | `giftcard/email/identity` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Gift Card Notification Email Template | `giftcard/email/template` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Redeemable | `giftcard/general/is_redeemable` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
@@ -905,16 +905,16 @@ This section lists variable names and config paths available for options in the 
 ### Magento Web API paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Services** > **Web API**.
 
-Name  | Config path | EE only? | Encrypted?
-|--------------|--------------|--------------|--------------|
+Name  | Config path | EE only? | 
+|--------------|--------------|--------------|
 Default Response Charset | `webapi/soap/charset` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Allow Anonymous Guest Access | `webapi/webapisecurity/allow_insecure` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 
 ### OAuth paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Services** > **OAuth**.
 
-Name  | Config path | EE only? | Encrypted?
-|--------------|--------------|--------------|--------------|
+Name  | Config path | EE only? | 
+|--------------|--------------|--------------|
 Cleanup Probability | `oauth/cleanup/cleanup_probability` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Expiration Period | `oauth/cleanup/expiration_period` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Expiration Period | `oauth/consumer/expiration_period` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
@@ -927,8 +927,8 @@ This section lists variable names and config paths available for options in the 
 ### Admin paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Advanced** > **Admin**.
 
-Name  | Config path | EE only? | Encrypted?
-|--------------|--------------|--------------|--------------|
+Name  | Config path | EE only? | 
+|--------------|--------------|--------------|
 Forgot Password Email Template | `admin/emails/forgot_email_template` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Forgot and Reset Email Sender | `admin/emails/forgot_email_identity` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 User Notification Template | `admin/emails/user_notification_template` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
@@ -962,8 +962,8 @@ Enabled Actions | `admin/magento_logging/actions` | <!-- ![Not EE-only]({{ site.
 ### System paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Advanced** > **System**.
 
-Name  | Config path | EE only? | Encrypted?
-|--------------|--------------|--------------|--------------|
+Name  | Config path | EE only? | 
+|--------------|--------------|--------------|
 Successful Messages Lifetime | `system/mysqlmq/successful_messages_lifetime` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Retry Messages In Progress After | `system/mysqlmq/retry_inprogress_after` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Failed Messages Lifetime | `system/mysqlmq/failed_messages_lifetime` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
@@ -1013,8 +1013,8 @@ Error Email Template | `system/magento_scheduled_import_export_log/error_email_t
 ### Developer paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Advanced** > **Developer**.
 
-Name  | Config path | EE only? | Encrypted?
-|--------------|--------------|--------------|--------------|
+Name  | Config path | EE only? | 
+|--------------|--------------|--------------|
 Workflow type | `dev/front_end_development_workflow/type` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Allow Symlinks | `dev/template/allow_symlink` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Minify Html | `dev/template/minify_html` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 

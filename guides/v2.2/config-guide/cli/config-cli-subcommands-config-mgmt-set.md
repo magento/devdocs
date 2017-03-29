@@ -36,7 +36,7 @@ Use the following commands:
 
 *   `config:set` sets any non-sensitive configuration value by its configuration path
 *   `config:sensitive:set` sets any sensitive configuration value by its configuration path
-*   `config:show` shows saved configuration values; values of sensitive variables are displayed as asterisks
+*   `config:show` shows saved configuration values; values of encrypted variables are displayed as asterisks
   
 ## First steps {#first}
 {% include install/first-steps-cli.html %}
@@ -112,7 +112,7 @@ To find the values in the database:
 {% endcollapsible %}
 
 ## Set configuration values {#config-cli-config-set}
-Command options:
+To set system-specific configuration values, use:
 
     magento config:set [--scope="..."] [--scope-code="..."] [-l|--lock] path value
 
@@ -174,19 +174,19 @@ If you enter an incorrect configuration path, this command returns an error
 If you use the `--lock` option to set or change a value, you must use the [`magento app:config:import` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-app-config-import.html) to import the setting before you access the Admin or storefront.
 </div>
 
-## Command config:show {#config-cli-config-show}
+## Display the value of configuration settings {#config-cli-config-show}
 Command options:
 
-    config:show [--scope[="..."]] [--scope-code[="..."]] [path]
+    magento config:show [--scope[="..."]] [--scope-code[="..."]] path
     
 where
 
-* `--scope` is the scope of configuration (default, website, store) *(default: "default")*
+* `--scope` is the scope of configuration (default, website, store). The default value is `default`
 * `--scope-code` is the scope code of configuration (website code or store view code)
-* `path` is configuration path in format first_part/second_part/third_part/etc *(required)*
+* `path` is the configuration path in format first_part/second_part/third_part/etc *(required)*
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-The `config:show` command displays the values of any [encrypted values](TBD) as a series of asterisks: `******`.
+The `config:show` command displays the values of any [encrypted values]({{ page.baseurl }}config-guide/prod/config-reference-sens.html) as a series of asterisks: `******`.
 </div>
 
 ##### Examples
