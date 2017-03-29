@@ -12,7 +12,7 @@ version: 2.2
 github_link: config-guide/prod/prod_deploy-over-tech.md
 ---
 
-This topic discusses technical implementaiton details about split deployment in Magento 2.2 and later. Improvements can be dividied into the following areas:
+This topic discusses technical implementation details about split deployment in Magento 2.2 and later. Improvements can be divided into the following areas:
 
 *   [Configuration management](#config-deploy-configman)
 *   [Other changes in the Magento Admin](#config-deploy-admin)
