@@ -5,9 +5,11 @@ subgroup: 04_CLI
 title: Import data from configuration files to the database
 menu_title: Import data from configuration files to the database
 menu_node:
-menu_order: 252
+level3_menu_node: level3child
+level3_subgroup: cli-config-mgmt
+menu_order: 253
 version: 2.2
-github_link: config-guide/cli/config-cli-subcommands-config-import.md
+github_link: config-guide/cli/config-cli-subcommands-config-mgmt-import.md
 ---
 
 {::options syntax_highlighter="rouge" /}

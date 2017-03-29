@@ -5,9 +5,11 @@ subgroup: 04_CLI
 title: Export the configuration
 menu_title: Export the configuration
 menu_node: 
+level3_menu_node: level3child
+level3_subgroup: cli-config-mgmt
 menu_order: 251
 version: 2.2
-github_link: config-guide/cli/config-cli-subcommands-config-export.md
+github_link: config-guide/cli/config-cli-subcommands-config-mgmt-export.md
 ---
 
 The configuration required to deploy static view files can be exported from the database of the production Magento instance. To do it, run the following command for the production instance:

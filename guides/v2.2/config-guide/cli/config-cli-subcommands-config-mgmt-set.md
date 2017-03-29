@@ -5,7 +5,9 @@ subgroup: 04_CLI
 title: Set configuration values
 menu_title: Set configuration values
 menu_node: 
-menu_order: 250
+level3_menu_node: level3child
+level3_subgroup: cli-config-mgmt
+menu_order: 252
 version: 2.2
 github_link: config-guide/cli/config-cli-subcommands-config.md
 ---

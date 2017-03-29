@@ -217,6 +217,11 @@ File permissions and ownership must be consistent across development, build, and
     If you choose this approach, you must set file system permissions and ownership every time you pull code from your build system (if the Magento file system owner or web server user are different on your build system).
     </div>
 
+## cron installation and removal
+In version 2.2 for the first time, we help you set up your Magento cron job by providing the [`magento cron:install` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-cron.html). This command sets up a Magento crontab as the user who runs the command.
+
+We also enable you to remove the Magento crontab using the `magento cron:remove` command.
+
 #### Next steps
 *	[Set up your development systems]({{ page.baseurl }}config-guide/prod/prod_deploy-setup-dev.html)
 *	[Set up your build system]({{ page.baseurl }}config-guide/prod/prod_deploy-setup-build.html)
