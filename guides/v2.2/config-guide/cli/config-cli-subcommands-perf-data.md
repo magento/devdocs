@@ -361,6 +361,41 @@ We support the following XML node formats:
         &lt;!-- ... more entries ... -->
     &lt;/configurable_products></pre>
 
+*   Generate products based on dynamically created attribute set with specified configuration per each attribute:
+
+    <pre class="no-copy">&lt;configurable_products>
+        <!-- Configurable product configuration -->
+        &lt;config>
+            &lt;attributes>
+                &lt;!-- Configuration for a first attribute -->
+                &lt;attribute>
+                    &lt;!-- Amount of options per attribute -->
+                    &lt;options>{int}&lt;/options>
+                      
+                    &lt;!-- Type of Swatch attribute -->
+                    &lt;swatches>{string}&lt;/swatches>
+                &lt;/attribute>
+                 
+                &lt;!-- Configuration for a second attribute -->
+                &lt;attribute>
+                    &lt;!-- Amount of options per attribute -->
+                    &lt;options>{int}&lt;/options>
+                &lt;/attribute>
+            &lt;/attributes>
+            
+            &lt;!-- Configurable sku pattern with %s -->
+            &lt;sku>{string}&lt;/sku>
+            
+            &lt;!-- Number of configurable products -->
+            &lt;products>{int}&lt;/products>
+            
+            &lt;!-- Category Name. Optional. By default category name from Categories fixture will be used -->
+            &lt;category>[{string}]&lt;/category>
+        &lt;/config>
+     
+        &lt;!-- ... more entries ... -->
+    &lt;/configurable_products></pre>
+
 ### Customers {#config-cli-gen-cust}
 Generates customers. Customers have a normal distribution on all available websites. Each customer has the same data except customer email, customer group, and customer addresses. 
 
