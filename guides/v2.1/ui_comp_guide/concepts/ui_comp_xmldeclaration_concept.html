@@ -717,15 +717,15 @@
 <h2 id="about-the-layout-configuration-file-and-ui-component-declaration">About the layout configuration file and UI component declaration</h2>
 <p>Every module that has view representation contains the directory named <code>layout</code>. In this directory, the <code>.xml</code> declarations of the pages are stored. These <code>.xml</code> declarations are, in fact, the pages’ markup.</p>
 
-<p>In a typical Magento <code>.xml</code> layout file we see a <code>&lt;head/&gt;</code> node, <code>&lt;title/&gt;</code> node with the name of the page, and sometimes <a href="/guides/v2.1/frontend-dev-guide/layouts/xml-manage.html#layout_markup_css">links to CSS and JS files</a>. There are other nodes as well, the most important for us now is the <a href="/guides/v2.1/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref"><code>&lt;referenceContainer/&gt;</code> node</a>. (The <code>name</code> attribute in this node is responsible for the position of the container on the page.). Top-level UI components are declared in this node. All nested components are declared in the top-level components’ instances configuration files (not in the page layouts).</p>
+<p>In a typical Magento <code>.xml</code> layout file we see a <code>&lt;head/&gt;</code> node, <code>&lt;title/&gt;</code> node with the name of the page, and sometimes <a href="/guides/v2.1/frontend-dev-guide/layouts/xml-manage.html#layout_markup_css">links to CSS and JS files</a>. There are other nodes as well, the most important for us now is the <a href="/guides/v2.1/frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref"><code>&lt;referenceContainer/&gt;</code> node</a>. (The <code>name</code> attribute in this node is responsible for the position of the container on the page.). <a href="/guides/v2.1//ui_comp_guide/bk-ui_comps.html#general-structure">Basic</a> UI components are declared in this node. All nested components are declared in the basic components’ instances configuration files (not in the page layouts).</p>
 
-<p>Example of a top-level UI component declaration:</p>
+<p>Example of a basic UI component declaration:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;referenceContainer</span> <span class="na">name=</span><span class="s">&quot;page-container&quot;</span><span class="nt">&gt;</span>
 	<span class="nt">&lt;uiComponent</span> <span class="na">name=</span><span class="s">&quot;%instance_name%&quot;</span><span class="nt">/&gt;</span>
 <span class="nt">&lt;/referenceContainer&gt;</span></code></pre></figure>
 
-<p>A UI component is declared using the <code>&lt;uiComponent/&gt;</code> node. The <code>name</code> attribute in the <code>&lt;uiComponent/&gt;</code> node references the XML configuration of the top-level UI component’s instance. This configuration is a separate <code>.xml</code> file. It is stored in the <code>&lt;module_dir&gt;/view/&lt;area&gt;/ui_component/</code> directory. For example <code>&lt;module_dir&gt;/view/&lt;area&gt;/ui_component/%instance_name%.xml</code>.</p>
+<p>A UI component is declared using the <code>&lt;uiComponent/&gt;</code> node. The <code>name</code> attribute in the <code>&lt;uiComponent/&gt;</code> node references the XML configuration of the basic UI component’s instance. This configuration is a separate <code>.xml</code> file. It is stored in the <code>&lt;module_dir&gt;/view/&lt;area&gt;/ui_component/</code> directory. For example <code>&lt;module_dir&gt;/view/&lt;area&gt;/ui_component/%instance_name%.xml</code>.</p>
 
 <h2 id="about-the-top-level-component-configuration-file">About the top-level component configuration file</h2>
 
@@ -734,15 +734,15 @@
 <p>Following are the rules for the instance configuration files:</p>
 
 <ul>
-  <li>The top node must have the name of one of the top-level UI components. <!-- need to mention or link what components --></li>
+  <li>The top node must have the name of one of the basic UI components. <!-- need to mention or link what components --></li>
   <li>The top node must contain a link to the XSD schema.</li>
 </ul>
 
-<p>In the top node, there can be an <code>&lt;argument/&gt;</code> node. The <code>&lt;argument/&gt;</code> node contains the configuration for that top-level UI component. The <code>&lt;argument/&gt;</code> node’s <code>name</code> attribute value must be <code>data</code>. The child nodes of the <code>&lt;argument&gt;</code> node will be the argument properties that will be passed in to the component.</p>
+<p>In the top node, there can be an <code>&lt;argument/&gt;</code> node. The <code>&lt;argument/&gt;</code> node contains the configuration for that basic UI component. The <code>&lt;argument/&gt;</code> node’s <code>name</code> attribute value must be <code>data</code>. The child nodes of the <code>&lt;argument&gt;</code> node will be the argument properties that will be passed in to the component.</p>
 
 <p>The top node can have nested nodes. Every nested node is regarded as a separate UI component (i.e. the toolbar). For example, if you want your listing to have a toolbar, then the top node is for the listing and a nested node represents a toolbar. Nested nodes can also contain the <code>&lt;argument&gt;</code> node.</p>
 
-<h2 id="example-of-a-top-level-configuration-file">Example of a top-level configuration file</h2>
+<h2 id="example-of-a-basic-components-configuration-file">Example of a basic component’s configuration file</h2>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
 <span class="c">&lt;!--</span>
