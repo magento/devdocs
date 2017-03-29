@@ -134,6 +134,9 @@ To update the production system:
 4.	Update the configuration:
 
 		php bin/magento app:config:import
+5.	Clean the cache:
+
+		php bin/magento cache:clean
 4.	End maintenance mode:
 
 		php bin/magento maintenance:disable
