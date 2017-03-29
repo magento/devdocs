@@ -29,7 +29,7 @@ Example of a basic UI component declaration:
 A UI component is declared using the `<uiComponent/>` node. The `name` attribute in the `<uiComponent/>` node references the XML configuration of the basic UI component's instance. This configuration is a separate `.xml` file. It is stored in the `<module_dir>/view/<area>/ui_component/` directory. For example `<module_dir>/view/<area>/ui_component/%instance_name%.xml`.
 
 
-## About the top-level component configuration file
+## About the basic component configuration file
 
 The instance configuration file name is the name of instance (`%instance_name%`). The namespace of the names is global; meaning that if the file names in different modules are the same, they are merged into a single configuration for the particular instance.
 
