@@ -91,12 +91,12 @@ To find the values in the database:
 2.  Enter the following commands:
 
         use <magento database name>;
-        SELECT * FROM STORES;
-        SELECT * FROM STORE_WEBSITE;
+        SELECT * FROM store;
+        SELECT * FROM store_website;
 
     A sample result follows:
 
-        [mysql]> SELECT * FROM STORE_WEBSITE;
+        [mysql]> SELECT * FROM store_website;
         +------------+-------+--------------+------------+------------------+------------+
         | website_id | code  | name         | sort_order | default_group_id | is_default |
         +------------+-------+--------------+------------+------------------+------------+
@@ -114,7 +114,7 @@ To find the values in the database:
 ## Set configuration values {#config-cli-config-set}
 Command options:
 
-    config:set [--scope="..."] [--scope-code="..."] [-l|--lock] path value
+    magento config:set [--scope="..."] [--scope-code="..."] [-l|--lock] path value
 
 where
 
@@ -126,6 +126,10 @@ where
     *   Change a setting that is already locked in the Magento Admin
 *   `path` is configuration path *(required)*
 *   `value` is value of configuration *(required)*
+
+To set sensitive configuration values, use:
+
+    magento config:sensitive:set [--scope="..."] [--scope-code="..."] path value
 
 See one of the following sections for more information:
 
