@@ -51,7 +51,7 @@ You can manage the sensitive configuration in any of the following ways:
 *	Save the sensitive configuration in `env.php` on your production system using the [`magento config:set:sensitive` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config.html)
 
 ### Configuration settings locked in the Magento Admin
-Any configuration settings in `config.php` or `env.php` are locked in the Magento Admin; that is, those settings cannot be changed in the Admin. The only way to change the settings is to change `config.php` or `env.php`.
+Any configuration settings in `config.php` or `env.php` are locked in the Magento Admin; that is, those settings cannot be changed in the Admin. The only way to change the settings is to change `config.php` or `env.php` using the commands discussed previously.
 
 ## Recommended workflow
 The following diagram shows how we recommend you use split deployment to manage the configuration.
@@ -114,7 +114,7 @@ After you make the change in the Admin, run `php bin/magento app:config:dump` to
         ),
 ```
 
-### Make several changes
+### Several configuration changes
 This section discusses making the following configuration changes:
 
 *	Adding a website, store, and store view (**Stores** > **All Stores**)
