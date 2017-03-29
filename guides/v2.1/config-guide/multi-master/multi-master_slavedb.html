@@ -1609,7 +1609,6 @@
 
 			<p><img src="/common/images/ee-only_large.png" /></p>
 
-<h2 id="config-ee-multidb-slave-over">Overview of database replication</h2>
 <p>Setting up database replication provides the following benefits:</p>
 
 <ul>
@@ -1714,6 +1713,16 @@
     <span class="s1">&#39;table_prefix&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span>
   <span class="p">),</span>
 <span class="c1">//.......</span></code></pre></figure>
+
+<h2 id="performance-improvement">Performance improvement</h2>
+<p>To improve the performance of master-slave replication, you can filter some tables on slave instances. We recommend filtering all temporary tables with name pattern <code>search\_tmp\_%</code> that are used for catalog search.</p>
+
+<p>To do this, add the following line to your <code>my.cnf</code> file on your slave instances:</p>
+
+<pre><code>replicate-wild-ignore-table=%.search\_tmp\_%
+</code></pre>
+
+<p>For more information about this setting, see <a href="https://dev.mysql.com/doc/refman/5.7/en/replication-options-slave.html#option_mysqld_replicate-wild-ignore-table" target="_blank">MySQL documentation</a>.</p>
 
 
 		</div>
