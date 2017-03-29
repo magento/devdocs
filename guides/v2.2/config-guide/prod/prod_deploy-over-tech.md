@@ -12,9 +12,15 @@ version: 2.2
 github_link: config-guide/prod/prod_deploy-over-tech.md
 ---
 
-This topic discusses technical implementaiton details about split deployment in Magento 2.2 and later.
+This topic discusses technical implementaiton details about split deployment in Magento 2.2 and later. Improvements can be dividied into the following areas:
 
-## Configuration management
+*   [Configuration management](#config-deploy-configman)
+*   [Other changes in the Magento Admin](#config-deploy-admin)
+*   [cron installation and removal](#config-deploy-admin)
+
+This topic also discusses the [recommended workflow](#config-deploy-workflow) for split deployment and provides some examples to help you understand how it works.
+
+## Configuration management {#config-deploy-configman}
 To enable you to synchronize and maintain the configuration of your development and production systems, we use the following override scheme.
 
 ![How configuration variable values are determined]({{ site.baseurl }}common/images/cloud_vars_flow-diagram.png){:width="550px"}
@@ -53,7 +59,24 @@ You can manage the sensitive configuration in any of the following ways:
 ### Configuration settings locked in the Magento Admin
 Any configuration settings in `config.php` or `env.php` are locked in the Magento Admin; that is, those settings cannot be changed in the Admin. The only way to change the settings is to change `config.php` or `env.php` using the commands discussed previously.
 
-## Recommended workflow
+## Other changes in the Magento Admin {#config-deploy-admin}
+We also changed the following in the Magento Admin in production mode:
+
+*	You cannot enable or disable cache types in the Admin
+*	You can change the Admin locale only to languages used by deployed themes
+*	Developer settings are unavailable (**Stores** > Settings > **Configuration** > **Advanced** > **Developer**), including:
+
+	*	Minify CSS, JavaScript, and HTML 
+	*	Merge CSS and JavaScript
+	*	Server-side or client-side LESS compilation
+	*	Inline translations
+
+## cron installation and removal {#config-deploy-admin}
+In version 2.2 for the first time, we help you set up your Magento cron job by providing the [`magento cron:install` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-cron.html). This command sets up a Magento crontab as the user who runs the command.
+
+We also enable you to remove the Magento crontab using the `magento cron:remove` command.
+
+## Recommended split deployment workflow {#config-deploy-workflow}
 The following diagram shows how we recommend you use split deployment to manage the configuration.
 
 ![Recommended split deployment workflow]({{ site.baseurl }}common/images/config_split-deploy_workflow.png){:width="700px"}
@@ -117,9 +140,9 @@ After you make the change in the Admin, run `php bin/magento app:config:dump` to
 ### Several configuration changes
 This section discusses making the following configuration changes:
 
-*	Adding a website, store, and store view (**Stores** > **All Stores**)
-*	Changing the Elasticsearch host and port (**Stores** > Settings > **Configuration** > Catalog > **Catalog** > **Catalog Search**)
-*	Setting the PayPal API Username and API password (**Stores** > Settings > **Configuration** > Sales > **Payment Methods** > **PayPal** > **Required PayPal Settings**)
+*   Adding a website, store, and store view (**Stores** > **All Stores**)
+*   Changing the Elasticsearch host and port (**Stores** > Settings > **Configuration** > Catalog > **Catalog** > **Catalog Search**)
+*   Setting the PayPal API Username and API password (**Stores** > Settings > **Configuration** > Sales > **Payment Methods** > **PayPal** > **Required PayPal Settings**)
 
 After you make the change in the Admin, run `php bin/magento app:config:dump`. This time, not all of your changes are written to `config.php`; in fact, only the website, store, and store view are written to that file as the following snippets show.
 
@@ -187,23 +210,6 @@ The PayPal settings are written to neither file because the `magento app:config:
     php bin/magento config:sensitive:set paypal/wpp/api_username <username>
     php bin/magento config:sensitive:set paypal/wpp/api_password <password>
 
-#### For more information
-*   For a complete list of system-specific and sensitive settings and corresponding configuration paths, see [Sensitive and system-specific configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-sens.html).
-*   [config.php reference]({{ page.baseurl }}config-guide/prod/config-reference-configphp.html) for detailed information about the shared configuration file
-*   [env.php reference]({{ page.baseurl }}config-guide/prod/config-reference-envphp.html) for detailed information about the system-specific configuration file
-
-## Other changes in the Magento Admin
-We also changed the following in the Magento Admin in production mode:
-
-*	You cannot enable or disable cache types in the Admin
-*	You can change the Admin locale only to languages used by deployed themes
-*	Developer settings are unavailable (**Stores** > Settings > **Configuration** > **Advanced** > **Developer**), including:
-
-	*	Minify CSS, JavaScript, and HTML 
-	*	Merge CSS and JavaScript
-	*	Server-side or client-side LESS compilation
-	*	Inline translations
-
 ## Prerequisite for your development, build, and production systems
 File permissions and ownership must be consistent across development, build, and production systems. To make this work, you must either:
 
@@ -217,10 +223,10 @@ File permissions and ownership must be consistent across development, build, and
     If you choose this approach, you must set file system permissions and ownership every time you pull code from your build system (if the Magento file system owner or web server user are different on your build system).
     </div>
 
-## cron installation and removal
-In version 2.2 for the first time, we help you set up your Magento cron job by providing the [`magento cron:install` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-cron.html). This command sets up a Magento crontab as the user who runs the command.
-
-We also enable you to remove the Magento crontab using the `magento cron:remove` command.
+#### For more information
+*   For a complete list of system-specific and sensitive settings and corresponding configuration paths, see [Sensitive and system-specific configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-sens.html).
+*   [config.php reference]({{ page.baseurl }}config-guide/prod/config-reference-configphp.html) for detailed information about the shared configuration file
+*   [env.php reference]({{ page.baseurl }}config-guide/prod/config-reference-envphp.html) for detailed information about the system-specific configuration file
 
 #### Next steps
 *	[Set up your development systems]({{ page.baseurl }}config-guide/prod/prod_deploy-setup-dev.html)
