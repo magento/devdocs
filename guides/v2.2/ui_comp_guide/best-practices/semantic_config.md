@@ -2,18 +2,21 @@
 layout: default
 group: UI_Components_guide
 subgroup: best practices
-title: Using semantic syntax for UI components XML configuration
-menu_title: Using semantic syntax for UI components XML configuration
+title: Using the new structure in UI components XML configuration
+menu_title: Using the new structure in UI components XML configuration
 menu_order: 1
 version: 2.2
 github_link: ui_comp_guide/best-practices/semantic_config.md
 ---
 
 ## Overview
-Magento 2.2 introduces the semantic syntax for [UI components XML configuration]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html). It also supports the "arbitrary" syntax used in UI components XML configuration in previous Magento 2 versions and during XML files merging, the configuration files with "arbitrary" syntax have higher priority.
-But we recommend using the semantic syntax, because the old "arbitrary" syntax will become deprecated at some point.
+Magento 2.2 introduces the new structure for [UI components XML configuration]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html), aimed at improving configuration semantics. 
 
-The main advantages of the semantic syntax are described in the following sections.
+The "arbitrary" structure, used in UI components XML configuration in previous Magento 2 versions is also supported, and during XML files merging, the configuration files with "arbitrary" structure have higher priority.
+
+Using the new structure is the best practice, because the old "arbitrary" structure will become deprecated at some point.
+
+The main advantages of the new structure are described in the following sections.
 
 ## Readability 
 All components options are separate nodes, and a node's purpose is defined by its name. The number of abstract-named nodes like `<item>` or `<argument>` is minimized. 
@@ -77,7 +80,7 @@ When editing XML configuration files in an IDE, the autocomplete feature prompts
 ![first_way_ui_components_declaration]({{site.baseurl}}common/images/ui_comps/autocomplete1.png)
 {% endcollapsible %}
 
-Magento supports autocomplete for all nesting levels of options which have static interface. If the options don't have defined interface, additional property is used to declare option name and type. 
+Magento supports autocomplete for all nesting levels of options which have static interface. If an option doesn't have defined interface, the additional property is used to declare option name and type. 
 
 Example:
 
