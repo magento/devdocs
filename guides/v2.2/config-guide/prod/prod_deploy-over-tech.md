@@ -59,7 +59,7 @@ You can manage the sensitive configuration in any of the following ways:
 *	Save the sensitive configuration in `env.php` on your production system using the [`magento config:set:sensitive` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-set.html)
 
 ### Configuration settings locked in the Magento Admin
-Any configuration settings in `config.php` or `env.php` are locked in the Magento Admin; that is, those settings cannot be changed in the Admin. The only way to change the settings is to change `config.php` or `env.php` using the commands discussed previously.
+Any configuration settings in `config.php` or `env.php` are locked in the Magento Admin; that is, those settings cannot be changed in the Admin. The only way to change the settings is to change `config.php` or `env.php` using the [`magento config:set --force` command]({{ page.baseurl config-guide/cli/config-cli-subcommands-config-mgmt-set.html}}).
 
 ## Other changes in the Magento Admin {#config-deploy-admin}
 We also changed the following in the Magento Admin in production mode:
@@ -86,11 +86,12 @@ The following diagram shows how we recommend you use split deployment to manage 
 ### Development system
 On your development system, you make configuration changes in the Magento Admin and generate the shared configuration, `app/etc/config.php` and the system-specific configuration, `app/etc/env.php`. Check Magento code and the shared configuration into source control and push it to the build server.
 
+You should also install extensions and customize Magento code on the development system.
+
 On your development system:
 
 1.  Set the configuration in the Magento Admin.
 
-    You should also install extensions and customize Magento code on the development system.
 2.  Use the `magento app:config:dump` command to write the configuration to the file system.
 
     *   `app/etc/config.php` is the shared configuration, which contains all settings _except_ sensitive and system-specific settings. This file should be in source control.
@@ -105,7 +106,7 @@ On your build system:
 
 1.  Pull the shared configuration file from source control.
 2.  Use the `magento setup:di:compile` command to compile code.
-3.  Use the `magento setup:static-content:deploy -f` command to create static file view files.
+3.  Use the `magento setup:static-content:deploy -f` command to update static file view files.
 4.  Check the updates into source control.
 
 ### Production system
@@ -135,7 +136,7 @@ We provide the following commands to help you manage the configuration:
 This section shows examples of managing the configuration so you can see how changes are made to `config.php` and `env.php`.
 
 #### Change the default locale
-This section shows the change made to `config.php` when you change the default weight unit using the Magento Admin (**Stores** > Settings > **Configuration** > General > **General**> **Locale Options**).
+This section shows the change made to `config.php` when you change the default weight unit using the Magento Admin (**Stores** > Settings > **Configuration** > General > **General** > **Locale Options**).
 
 After you make the change in the Admin, run `php bin/magento app:config:dump` to write the value to `config.php`. The value is written to the `general` array under `locale` as the following snippet from `config.php` shows:
 
@@ -150,7 +151,7 @@ After you make the change in the Admin, run `php bin/magento app:config:dump` to
         ),
 ```
 
-#### Several configuration changes
+#### Change several configuration settings
 This section discusses making the following configuration changes:
 
 *   Adding a website, store, and store view (**Stores** > **All Stores**)
@@ -217,7 +218,6 @@ TBD
 
 {% endcollapsible %}
 
-**PayPal settings**
 The PayPal settings are written to neither file because the `magento app:config:dump` command does not write sensitive settings. You must set the PayPal settings on the production system using the following commands:
 
     php bin/magento config:sensitive:set paypal/wpp/api_username <username>
@@ -226,8 +226,12 @@ The PayPal settings are written to neither file because the `magento app:config:
 ## Prerequisite for your development, build, and production systems {#config-deploy-prereq}
 File permissions and ownership must be consistent across development, build, and production systems. To make this work, you must either:
 
-*   Set up the same Magento file system owner user name on all systems _and_ make sure the web server runs as the same user on all systems
-*   Change permissions on each system as necessary using the following guidelines:
+*   All of the following:
+
+    *   Set up the same {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %} user name on all systems
+    *   Make sure the web server runs as the same user on all systems
+    *   Make sure the Magento file system owner is in the web server group on all systems
+*   Change Magento file system permissions and ownership on each system as necessary using the following guidelines:
 
     *   Development and build: [Set pre-installation ownership and permissions (two users)]({{ page.baseurl }}install-gde/prereq/file-system-perms.html#perms-private)
     *   Production: [Magento ownership and permissions in development and production]({{ page.baseurl }}config-guide/prod/prod_file-sys-perms.html)
