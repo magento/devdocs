@@ -219,7 +219,7 @@ You might want to run the deployment process in a separate, non-production, envi
 
 To do this, take the following steps:
 
-1. Run [`magento app:config:dump`]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-export.html) to export the configuration from your production system.
+1. Run [`magento app:config:dump`]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-export.html) to export the configuration from your production system.
 2. Copy the exported files to the non-production code base.
 3. Run [`magento setup:static-content:deploy`](#config-cli-subcommands-staticview).
 

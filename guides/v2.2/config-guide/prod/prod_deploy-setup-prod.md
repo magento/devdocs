@@ -55,7 +55,7 @@ To set up a production machine:
 3.	Save your changes to `auth.json`.
 4.	Copy `<Magento root dir>/app/etc/env.php` from your development system to your production system.
 5.	Open `env.php` in a text editor and change any values necessary (for example, database connection information).
-6.	Run the [`magento config:set`]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config.html) or [`magento config:set-sensitive`]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config.html) command to set the values of any system-specific or sensitive configuration values, respectively.
+6.	Run the [`magento config:set`]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-set.html) or [`magento config:set-sensitive`]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-set.html) command to set the values of any system-specific or sensitive configuration values, respectively.
 
 	The following section shows an example.
 
@@ -91,8 +91,8 @@ To set sensitive values:
 	![Sensitive setting in Admin]({{ site.baseurl }}common/images/config_sensitive-set.png)
 
 #### Related topics
-*	[`magento deploy:mode:set` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config.html)
-*	[`magento config:sensitive:set` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config.html)
-*	[`magento app:config:import` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-app-config-import.html)
+*	[`magento deploy:mode:set` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-set.html)
+*	[`magento config:sensitive:set` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-set.html)
+*	[`magento app:config:import` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-import.html)
 *	[Sensitive and system-specific configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-sens.html)
 *	[Use environment variables to override configuration settings]({{ page.baseurl config-guide/prod/config-reference-var-name.html}})

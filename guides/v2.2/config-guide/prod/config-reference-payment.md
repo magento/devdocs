@@ -12,7 +12,7 @@ version: 2.0
 github_link: config-guide/prod/config-reference-payment.md
 ---
 
-This topic lists payment-related configuration paths that are neither sensitive nor system-specific. The [`magento app:config:dump` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-export.html) writes these values to the shared configuration file, `app/etc/config.php`, which should be in source control. 
+This topic lists payment-related configuration paths that are neither sensitive nor system-specific. The [`magento app:config:dump` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-export.html) writes these values to the shared configuration file, `app/etc/config.php`, which should be in source control. 
 
 For a list of other configuration paths, see:
 

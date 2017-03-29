@@ -21,10 +21,10 @@ As a result of the command execution, the following configuration files are upda
 *	`app/etc/config.php`, the shared configuration file. This file should be included in source control and shared between development, build, and production systems.
 *	`app/etc/env.php`, the system-specific configuration file. This file should _not_ be included in source control. 
 
-	Instead, set system-specific settings on production using the [`magento config:set` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config.html).
+	Instead, set system-specific settings on production using the [`magento config:set` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-set.html).
 
 <div class="bs-callout bs-callout-warning" id="warning" markdown="1">
-The `magento app:config:dump` command does not output the values of sensitive configuration settings. To set sensitive settings in the production system, use the [`magento config:sensitive:set` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config.html)
+The `magento app:config:dump` command does not output the values of sensitive configuration settings. To set sensitive settings in the production system, use the [`magento config:sensitive:set` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-set.html)
 </div>
 
 #### Related topic

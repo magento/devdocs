@@ -16,9 +16,11 @@ This topic discusses technical implementaiton details about split deployment in 
 
 *   [Configuration management](#config-deploy-configman)
 *   [Other changes in the Magento Admin](#config-deploy-admin)
-*   [cron installation and removal](#config-deploy-admin)
+*   [cron installation and removal](#config-deploy-cron)
 
 This topic also discusses the [recommended workflow](#config-deploy-workflow) for split deployment and provides some examples to help you understand how it works.
+
+Before you get started, review the [prerequisite for your development, build, and production systems](#config-deploy-prereq).
 
 ## Configuration management {#config-deploy-configman}
 To enable you to synchronize and maintain the configuration of your development and production systems, we use the following override scheme.
@@ -41,12 +43,12 @@ If no value exists in any of those sources, we use either the default value or N
 ### Manage the shared configuration
 The shared configuration is stored in `app/etc/config.php`, which should be in source control.
 
-Set the shared configuration in the Magento Admin in your development (or Magento Enterprise Cloud Edition _integration_) system and write the configuration to `config.php` using the [`magento app:config:dump` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-export.html).
+Set the shared configuration in the Magento Admin in your development (or Magento Enterprise Cloud Edition _integration_) system and write the configuration to `config.php` using the [`magento app:config:dump` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-export.html).
 
 ### Manage the system-specific configuration
 The system-specific configuration is stored in `app/config/env.php`, which should _not_ be in source control.
 
-Set the system-specific configuration in the Magento Admin in your development (or Cloud integration) system and write the configuration to `env.php` using the [`magento app:config:dump` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-export.html).
+Set the system-specific configuration in the Magento Admin in your development (or Cloud integration) system and write the configuration to `env.php` using the [`magento app:config:dump` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-export.html).
 
 ### Manage the sensitive configuration
 The sensitive configuration is also stored in `app/etc/env.php`.
@@ -54,7 +56,7 @@ The sensitive configuration is also stored in `app/etc/env.php`.
 You can manage the sensitive configuration in any of the following ways:
 
 *	Environment variables
-*	Save the sensitive configuration in `env.php` on your production system using the [`magento config:set:sensitive` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config.html)
+*	Save the sensitive configuration in `env.php` on your production system using the [`magento config:set:sensitive` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-set.html)
 
 ### Configuration settings locked in the Magento Admin
 Any configuration settings in `config.php` or `env.php` are locked in the Magento Admin; that is, those settings cannot be changed in the Admin. The only way to change the settings is to change `config.php` or `env.php` using the commands discussed previously.
@@ -71,7 +73,7 @@ We also changed the following in the Magento Admin in production mode:
 	*	Server-side or client-side LESS compilation
 	*	Inline translations
 
-## cron installation and removal {#config-deploy-admin}
+## cron installation and removal {#config-deploy-cron}
 In version 2.2 for the first time, we help you set up your Magento cron job by providing the [`magento cron:install` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-cron.html). This command sets up a Magento crontab as the user who runs the command.
 
 We also enable you to remove the Magento crontab using the `magento cron:remove` command.
@@ -118,10 +120,21 @@ On your production system:
 5.  To set system-specific settings, use either the `magento config:set` command or environment variables.
 6.  To set sensitive settings, use either the `magento config:sensitive:set` command or environment variables.
 
-## Configuration management examples
+## Configuration management commands and examples
+This section provides a summary of the commands used to manage the configuration and provides examples to help you understand how configuration management works.
+
+### Configuration management commands
+We provide the following commands to help you manage the configuration:
+
+*   [`magento app:config:dump`]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-export.html) to write Magento Admin configuration settings to `config.php` and `env.php` (except for sensitive settings)
+*   [`magento config:set`]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-set.html) to set the values of system-specific settings on the production system.
+*   [`magento config:sensitive:set`]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-set.html) to set the values of sensitive settings on the production system.
+*   [`magento app:config:import`]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-import.html) to import the changes to `config.php` and `env.php` to the production system.
+
+### Configuration management examples
 This section shows examples of managing the configuration so you can see how changes are made to `config.php` and `env.php`.
 
-### Change the default locale
+#### Change the default locale
 This section shows the change made to `config.php` when you change the default weight unit using the Magento Admin (**Stores** > Settings > **Configuration** > General > **General**> **Locale Options**).
 
 After you make the change in the Admin, run `php bin/magento app:config:dump` to write the value to `config.php`. The value is written to the `general` array under `locale` as the following snippet from `config.php` shows:
@@ -137,7 +150,7 @@ After you make the change in the Admin, run `php bin/magento app:config:dump` to
         ),
 ```
 
-### Several configuration changes
+#### Several configuration changes
 This section discusses making the following configuration changes:
 
 *   Adding a website, store, and store view (**Stores** > **All Stores**)
@@ -146,7 +159,7 @@ This section discusses making the following configuration changes:
 
 After you make the change in the Admin, run `php bin/magento app:config:dump`. This time, not all of your changes are written to `config.php`; in fact, only the website, store, and store view are written to that file as the following snippets show.
 
-#### config.php
+**config.php**
 
 {% collapsible Show config.php snippets: %}
 
@@ -194,7 +207,7 @@ After you make the change in the Admin, run `php bin/magento app:config:dump`. T
 ```
 {% endcollapsible %}
 
-#### env.php
+**env.php**
 
 The Elasticsearch changes are written to `app/etc/env.php` as follows:
 
@@ -204,13 +217,13 @@ TBD
 
 {% endcollapsible %}
 
-#### PayPal settings
+**PayPal settings**
 The PayPal settings are written to neither file because the `magento app:config:dump` command does not write sensitive settings. You must set the PayPal settings on the production system using the following commands:
 
     php bin/magento config:sensitive:set paypal/wpp/api_username <username>
     php bin/magento config:sensitive:set paypal/wpp/api_password <password>
 
-## Prerequisite for your development, build, and production systems
+## Prerequisite for your development, build, and production systems {#config-deploy-prereq}
 File permissions and ownership must be consistent across development, build, and production systems. To make this work, you must either:
 
 *   Set up the same Magento file system owner user name on all systems _and_ make sure the web server runs as the same user on all systems

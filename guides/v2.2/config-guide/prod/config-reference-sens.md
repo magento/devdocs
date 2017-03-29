@@ -14,8 +14,8 @@ github_link: config-guide/prod/config-reference-sens.md
 
 This topic lists configuration paths for system-specific and sensitive settings:
 
-*	The [`magento app:config:dump` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-export.html) writes system-specific settings to the system-specific configuration file, `app/etc/env.php`, which should _not_ be in source control.
-*	The [`magento config:sensitive:set` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config.html) writes sensitive settings to `app/etc/env.php`.
+*	The [`magento app:config:dump` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-export.html) writes system-specific settings to the system-specific configuration file, `app/etc/env.php`, which should _not_ be in source control.
+*	The [`magento config:sensitive:set` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-set.html) writes sensitive settings to `app/etc/env.php`.
 
 	You can also set sensitive values using configuration variables as discussed in TBD.
 

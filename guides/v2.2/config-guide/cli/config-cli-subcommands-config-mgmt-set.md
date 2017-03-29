@@ -9,7 +9,7 @@ level3_menu_node: level3child
 level3_subgroup: cli-config-mgmt
 menu_order: 252
 version: 2.2
-github_link: config-guide/cli/config-cli-subcommands-config.md
+github_link: config-guide/cli/config-cli-subcommands-config-mgmt-set.md
 ---
 
 This topic discusses advanced configuration commands you can use to:
@@ -171,7 +171,7 @@ If you enter an incorrect configuration path, this command returns an error
     The "wrong/config/path" does not exist
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-If you use the `--lock` option to set or change a value, you must use the [`magento app:config:import` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-app-config-import.html) to import the setting before you access the Admin or storefront.
+If you use the `--lock` option to set or change a value, you must use the [`magento app:config:import` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-import.html) to import the setting before you access the Admin or storefront.
 </div>
 
 ## Display the value of configuration settings {#config-cli-config-show}
