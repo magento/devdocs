@@ -8,7 +8,7 @@ menu_order: 302
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: config-ref
-version: 2.0
+version: 2.2
 github_link: config-guide/prod/config-reference-payment.md
 ---
 
@@ -19,7 +19,7 @@ For a list of other configuration paths, see:
 *	[All configuration paths except payments]({{ page.baseurl }}config-guide/prod/config-reference-most.html)
 *	[Sensitive and system-specific configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-sens.html)
 
-To optionally override system-specific settings, see TBD.
+To optionally override any configuration settings or to set sensitive settings, see [Use environment variables to override configuration settings]({{ page.baseurl }}config-guide/prod/config-reference-var-name.html).
 
 
 
