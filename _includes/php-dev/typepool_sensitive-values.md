@@ -14,7 +14,9 @@ To specify either a system-specific or sensitive configuration value, add a refe
 
 where `<argument name="{sensitive|environment}` specifies the type of value: either sensitive or system-specific.
 
-and `<config path>` is a `/`-delimited string that uniquely identifies this configuration setting.
+The value of `1` for the argument indicates the `<config path>` value is sensitive or system-specific; a value of `0` indicates the value is not sensitive or system-specific. (The default is `0`.)
+
+`<config path>` is a `/`-delimited string that uniquely identifies this configuration setting.
 
 <div class="bs-callout bs-callout-info" id="merging-info" markdown="1">
 The same configuration setting can be both sensitive and system-specific. To specify a setting as both types, it must be listed twice, once with `argument name="sensitive"` and once with `argument name="environment"`.
