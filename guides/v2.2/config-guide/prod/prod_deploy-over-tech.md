@@ -15,7 +15,7 @@ github_link: config-guide/prod/prod_deploy-over-tech.md
 This topic discusses technical implementation details about split deployment in Magento 2.2 and later. Improvements can be divided into the following areas:
 
 *   [Configuration management](#config-deploy-configman)
-*   [Other changes in the Magento Admin](#config-deploy-admin)
+*   [Changes in the Magento Admin](#config-deploy-admin)
 *   [cron installation and removal](#config-deploy-cron)
 
 This topic also discusses the [recommended workflow](#config-deploy-workflow) for split deployment and provides some examples to help you understand how it works.
@@ -61,8 +61,8 @@ You can manage the sensitive configuration in any of the following ways:
 ### Configuration settings locked in the Magento Admin
 Any configuration settings in `config.php` or `env.php` are locked in the Magento Admin; that is, those settings cannot be changed in the Admin. The only way to change the settings is to change `config.php` or `env.php` using the [`magento config:set --force` command]({{ page.baseurl config-guide/cli/config-cli-subcommands-config-mgmt-set.html}}).
 
-## Other changes in the Magento Admin {#config-deploy-admin}
-We also changed the following in the Magento Admin in production mode:
+## Changes in the Magento Admin {#config-deploy-admin}
+We changed the following behavior in the Magento Admin in production mode:
 
 *	You cannot enable or disable cache types in the Admin
 *	You can change the Admin locale only to languages used by deployed themes
@@ -72,6 +72,7 @@ We also changed the following in the Magento Admin in production mode:
 	*	Merge CSS and JavaScript
 	*	Server-side or client-side LESS compilation
 	*	Inline translations
+*   As discussed previously, any configuration setting in `config.php` or `env.php` is locked and cannot be edited in the Admin.
 
 ## cron installation and removal {#config-deploy-cron}
 In version 2.2 for the first time, we help you set up your Magento cron job by providing the [`magento cron:install` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-cron.html). This command sets up a Magento crontab as the user who runs the command.
@@ -120,6 +121,8 @@ On your production system:
 4.  Use the `magento app:config:import` command to import configuration changes in the production system.
 5.  To set system-specific settings, use either the `magento config:set` command or environment variables.
 6.  To set sensitive settings, use either the `magento config:sensitive:set` command or environment variables.
+7.  Flush the Magento cache.
+8.  End maintenance mode.
 
 ## Configuration management commands and examples
 This section provides a summary of the commands used to manage the configuration and provides examples to help you understand how configuration management works.
@@ -130,7 +133,7 @@ We provide the following commands to help you manage the configuration:
 *   [`magento app:config:dump`]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-export.html) to write Magento Admin configuration settings to `config.php` and `env.php` (except for sensitive settings)
 *   [`magento config:set`]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-set.html) to set the values of system-specific settings on the production system.
 *   [`magento config:sensitive:set`]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-set.html) to set the values of sensitive settings on the production system.
-*   [`magento app:config:import`]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-import.html) to import the changes to `config.php` and `env.php` to the production system.
+*   [`magento app:config:import`]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-import.html) to import configuration changes to the production system.
 
 ### Configuration management examples
 This section shows examples of managing the configuration so you can see how changes are made to `config.php` and `env.php`.
@@ -161,6 +164,7 @@ This section discusses making the following configuration changes:
 After you make the change in the Admin, run `php bin/magento app:config:dump`. This time, not all of your changes are written to `config.php`; in fact, only the website, store, and store view are written to that file as the following snippets show.
 
 **config.php**
+`config.php` contains changes to the website, store, and store view.
 
 {% collapsible Show config.php snippets: %}
 
