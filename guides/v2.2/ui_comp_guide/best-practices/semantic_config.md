@@ -12,9 +12,13 @@ github_link: ui_comp_guide/best-practices/semantic_config.md
 ## Overview
 Magento 2.2 introduces the new structure for [UI components XML configuration]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html), aimed at improving configuration semantics. 
 
-The "arbitrary" structure, used in UI components XML configuration in previous Magento 2 versions is also supported, and during XML files merging, the configuration files with "arbitrary" structure have higher priority.
+The "arbitrary" structure, used in UI components XML configuration in previous Magento 2 versions, is also supported, and during XML files merging, the configuration files with "arbitrary" structure have higher priority.
 
-Using the new structure is the best practice, because the old "arbitrary" structure will become deprecated at some point.
+Still, using the new structure for your customizations in Magento 2.2.0 and later, is the best practice, because the old "arbitrary" structure will become deprecated at some point.
+
+<div class="bs-callout bs-callout-info" id="info_structure_except" markdown="1">
+Declaring the custom UI component is an exception, use the "arbitrary" structure for this customization.
+</div>
 
 The main advantages of the new structure are described in the following sections.
 
@@ -73,28 +77,21 @@ When editing XML configuration files in an IDE, the autocomplete feature prompts
 
 * Node declaration autocomplete:
 
-![first_way_ui_components_declaration]({{site.baseurl}}common/images/ui_comps/autocomplete1.png)
+![node declaration autocomplete]({{site.baseurl}}common/images/ui_comps/autocomplete1.png)
 
 * Attribute declaration autocomplete:
 
-![first_way_ui_components_declaration]({{site.baseurl}}common/images/ui_comps/autocomplete1.png)
+![Attribute declaration autocomplete]({{site.baseurl}}common/images/ui_comps/autocomplete1.png)
+
+* Magento supports autocomplete for all nesting levels of options which have static interface. If an option doesn't have defined interface, the additional property is used to declare option name and type:
+
+![no defined interface]({{site.baseurl}}common/images/ui_comps/no_type.png)
+
 {% endcollapsible %}
-
-Magento supports autocomplete for all nesting levels of options which have static interface. If an option doesn't have defined interface, the additional property is used to declare option name and type. 
-
-Example:
-
-{%highlight xml%}
-<valueMap>
-    <map name="false" xsi:type="number">0</map>
-    <map name="true" xsi:type="number">1</map>
-</valueMap>
-{%endhighlight%}
-
 
 ## Validation
 
-When editing XML configuration files in an IDE, you get visual notifications if the name of a node or attribute is misspelled or a required attribute is missing. You can also validate the complete file, by clicking **Validate** in the context menu.
+When editing XML configuration files in an IDE, you get visual notifications, if the name of a node or attribute is misspelled, or a required attribute is missing. You can also validate the complete file, by clicking **Validate** in the context menu.
 
 {% collapsible Illustration %}
 * If the node name is misspelled:
@@ -119,7 +116,4 @@ When editing XML configuration files in an IDE, you get visual notifications if 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 To use the autocomplete and validation features in your IDE, generate the URN as described in the [URN highlighter]({{page.baseurl}}config-guide/cli/config-cli-subcommands-urn.html) topic.
 </div>
-
-
-
 
