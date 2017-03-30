@@ -13,7 +13,7 @@ github_link: release-notes/ReleaseNotes2.1.6EE.md
 *	TOC
 {:toc}
 
-We are pleased to present Magento Enterprise Edition 2.1.6. This release includes important performance enhancements for your Magento software, especially to the performance of operations involving configurable products with swatches. 
+We are pleased to present Magento Enterprise Edition 2.1.6. This release includes important performance enhancements for your Magento installation, especially for operations that involve the category page as well as image resizing. 
 
 Looking for the <a href="http://devdocs.magento.com/guides/v2.0/cloud/release-notes/CloudReleaseNotes.html" target="_blank">Magento Enterprise Cloud Edition Release Notes</a>?
 
@@ -64,12 +64,10 @@ We address the following functional fixes and enhancements in this release.
 ### Catalog
 
 
-<!--- 65324 -->*  Magento no longer locks the `category_product_entity` table. Unlocking this table will reduce lock-related timeouts when indexing and checkout operations run in parallel. Previously, Magento locked the `category_product_entity` table. 
+<!--- 65324 -->*  Magento no longer locks the `category_product_entity` table. Unlocking this table reduces the potential of lock-related timeouts that can occur when indexing and checkout operations run in parallel. Previously, Magento locked the `category_product_entity` table. 
 
 
 <!--- 65251 -->* The storefront now displays images that Magento resizes during product save operations, rather than resizing the product on the storefront. Previously, the image path contained `store_id`,  and during save operations, Magento resized images for images the default store only. 
-
-<!--- 66346 -->* The `\Magento\CatalogInventory\Model\Stock\Status::getStockId()` method now returns the website ID instead of the stock ID, as expected. 
 
 <!--- 63343 -->* The `\Magento\CatalogWidget\Model\Rule` class now implements unserialized methods. Specifically, Magento has replaced `\Magento\FrameworkSerialize\Serializer\Json::serialize()` with `\Magento\FrameworkSerialize\Serializer\Json::unserialize()`. 
 
@@ -104,10 +102,10 @@ We address the following functional fixes and enhancements in this release.
 
 ### Miscellaneous
 
-<!--- 65484 -->* Magento now caches attribute options for the layered navigation feature, which reduces the number of queries to the database, and consequently improves performance.
+<!--- 65484 -->* Magento now caches attribute options for the layered navigation feature. This reduces the number of queries to the database, and consequently improves performance.
 
 
-<!--- 65483 -->* Magento no longer performs unnecessary file check operations (for example, `file_exists`, `is_file`). 
+<!--- 65483 -->* Magento no longer performs unnecessary file check operations (for example, `file_exists`, `is_file`), which improves the performance of the category and product pages. 
 
 
 <!--- 65480 -->* Magento now caches image metadata, which avoids the time-consuming need to read images for metadata loading.
@@ -137,6 +135,7 @@ We address the following functional fixes and enhancements in this release.
 <!--- DUPLICATE -->
 <!--- 65252 -->
 <!--- 66125 -->
+<!--- 66346 -->
 
 
 <!--- INTERNAL ONLY -->
