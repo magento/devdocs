@@ -49,13 +49,11 @@ When you create custom components that require configuration settings, you can d
 {% include php-dev/typepool_sensitive-values.md %}
 
 ## Add PHP arrays to the configuration
-Your custom components can optionally add additional PHP arrays to the shared configuration, `config.php`, or the system-specific configuration, `env.php`. The following sections provide more detail.
+The following sections discuss how you can optionally add custom components to the shared configuration, `config.php`, or the system-specific configuration, `env.php`. 
 
 {% include php-dev/config-importer.md %}
 
-
-
 #### Related topics
-*	[Other configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-most.html)
-*	[Payment configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-payment.html)
-*	[Sensitive and system-specific configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-sens.html)
+*	[The di.xml file]({{ page.baseurl }}extension-dev-guide/build/di-xml-file.html)
+*	[Developer roadmap]({{ page.baseurl }}extension-dev-guide/intro/developers_roadmap.html)
+*	[Dependency injection]({{ page.baseurl }}extension-dev-guide/depend-inj.html)

@@ -19,7 +19,7 @@ All Magento importers implement implement the interface [`Magento\Framework\App\
 
 This interface has the following methods:
 
-*   `ImporterInterface::import(array $data):array`&emdash;Contains the implementation to import data from `config.php`.
+*   `ImporterInterface::import(array $data):array`&mdash;Contains the implementation to import data from `config.php`.
 
     Its argument `$data` is the array of configurations from `config.php`. This method should return the array of messages that are generated during the import process.
 

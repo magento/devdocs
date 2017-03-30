@@ -15,8 +15,8 @@ github_link: config-guide/cli/config-cli-subcommands-config-mgmt-set.md
 This topic discusses advanced configuration commands you can use to:
 
 *   Set any configuration option from the command line
-*   Optionally lock any option so its value cannot be changed in the Magento Admin
-*   Change a configuration setting that is locked in the Admin
+*   Optionally lock any configuration option so its value cannot be changed in the Magento Admin
+*   Change a configuration option that is locked in the Magento Admin
 
 You can use these commands to set the Magento configuration manually or using scripts. You set configuration options using a _configuration path_, which is a `/`-delimited string that uniquely identifies that configuration option. You can find configuration paths in the following references:
 
@@ -81,7 +81,7 @@ You can find the scope code either in the Magento database or in the Magento Adm
 
 {% collapsible To find the scope code in the database: %}
 
-Scope codes for websites and store views are stored in the Magento database in the `STORE_WEBSITE` and `STORES` tables, respectively.
+Scope codes for websites and store views are stored in the Magento database in the `store_website` and `store` tables, respectively.
 
 To find the values in the database:
 

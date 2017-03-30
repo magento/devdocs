@@ -29,7 +29,7 @@ The following topics are organized to help you get started quickly. If you're ne
 
 *	Step-by-step examples of using split deployment
 
-	*	[Example of managing the shared configuration]({{ page.baseurl }}config-guide/prod/prod_deploy-shared.html)
+	*	[Simple example&mdash;manage the shared configuration]({{ page.baseurl }}config-guide/prod/prod_deploy-shared.html)
 	*	[TBD]()
 	*	[TBD]()
 	*	[TBD]()

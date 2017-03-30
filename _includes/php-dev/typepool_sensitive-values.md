@@ -17,7 +17,7 @@ where `<argument name="{sensitive|environment}` specifies the type of value: eit
 and `<config path>` is a `/`-delimited string that uniquely identifies this configuration setting.
 
 <div class="bs-callout bs-callout-info" id="merging-info" markdown="1">
-The same configuration setting can be both sensitive and system-specific.
+The same configuration setting can be both sensitive and system-specific. To specify a setting as both types, it must be listed twice, once with `argument name="sensitive"` and once with `argument name="environment"`.
 </div>
 
 ### Sensitive setting
@@ -53,7 +53,7 @@ A configuration example follows:
 <type name="Magento\Config\Model\Config\TypePool">
    <arguments>
       <argument name="environemnt" xsi:type="array">
-         <item name="<config path>" xsi:type="string">1</item>
+         <item name="catalog/search/searchengine/port" xsi:type="string">1</item>
       </argument>
    </arguments>
 </type>
