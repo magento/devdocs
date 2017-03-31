@@ -30,7 +30,8 @@ Changes in public code always trigger MINOR or MAJOR version bumps.
 In most cases, modifications to private code will trigger PATCH version bumps.
 On rare occasions, if the Magento development team made significant modifications to private code, they will bump the MINOR or MAJOR version.
 
-Third-party modules should not make modifications to private code.
+Third-party modules should not use or modify private code.
+If this is unavoidable, you must depend on the patch version of the core modules used.
 
 ## API and customization points
 
@@ -214,11 +215,9 @@ To achieve this, all third-party modules must obey the following rules:
 
 ## Deprecation
 
-Marking public code with `@deprecated` on a MINOR release indicates that Magento plans to remove that code in the future.
+Marking public code with `@deprecated` on a MINOR release indicates that Magento plans to remove that code in a future MINOR release.
 
 When Magento deprecates the API or customization point in favor of a new implementation, the `@see` annotation points to the new implementation.
-
-When Magento release the next MINOR *product* version, it removes all deprecated `@api` code.
 
 **Deprecated Code Example**
 
