@@ -259,13 +259,13 @@ class Config
 
 5.1. All exceptions that are surfaced to end user MUST produce error messages in the following format:
 
-    * Symptom
+- Symptom
 
-    * Details
+- Details
 
-    * Solution or work-around
+- Solution or workaround
 
-    All error messages SHOULD be reviewed by a member of Documentation or UX Team.
+All error messages SHOULD be reviewed by a member of Documentation or UX Team.
 
 {:start="5.2"}
 5.2. Exceptions MUST NOT be handled in the same function where they are thrown.
@@ -312,9 +312,9 @@ class Config
 
 6.2.1. According to CQRS, the Presentation layer hosts the Command and the Query Infrastructures:
 
-    * **Command** for Actions
+* **Command** for Actions
 
-    * **Query** for Layout and its elements (Blocks and UI Components)
+* **Query** for Layout and its elements (Blocks and UI Components)
 
 6.2.2. Request, Response, Session, Store Manager and Cookie objects MUST only be used in the Presentation layer.
 
@@ -340,11 +340,11 @@ We are reviewing this section and will publish it soon.
 
 7.1. An Application Instance consists of:
 
-    * Code
+* Code
 
-    * Environment Configuration
+* Environment Configuration
 
-    * Data
+* Data
 
 7.2. Code includes:
 
