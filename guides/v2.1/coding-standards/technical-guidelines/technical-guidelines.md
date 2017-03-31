@@ -348,19 +348,19 @@ We are reviewing this section and will publish it soon.
 
 7.2. Code includes:
 
-    * application codebase
+* application codebase
 
-    * XML configuration
+* XML configuration
 
-    * generated code and static files
+* generated code and static files
 
-    * database structure
+* database structure
 
-    * system configuration values
+* system configuration values
 
-    * configuration scopes (stores/store groups/websites)
+* configuration scopes (stores/store groups/websites)
 
-    * CMS entities
+* CMS entities
 
 7.3. Environment Configuration includes information about application services connection.
 
