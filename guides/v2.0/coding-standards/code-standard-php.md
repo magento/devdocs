@@ -1,8 +1,9 @@
 ---
 layout: default
 group: coding-standards
-subgroup: Coding standards
+subgroup: 01_Coding standards
 title: PHP coding standard
+landing-page: Coding standards
 menu_title: PHP coding standard
 menu_order: 2
 version: 2.0

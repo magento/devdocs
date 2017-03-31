@@ -1,8 +1,9 @@
 ---
 layout: default
 group: coding-standards
-subgroup: Coding standards
+subgroup: 01_Coding standards
 title: JavaScript DocBlock standard
+landing-page: Coding standards
 menu_title: JavaScript DocBlock standard
 menu_order: 6
 version: 2.0
@@ -579,58 +580,3 @@ new&nbsp;project.MyClass()</pre></td>
 	</tr>
   </tbody>
 </table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
