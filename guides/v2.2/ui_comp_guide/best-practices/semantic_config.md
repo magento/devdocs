@@ -1,7 +1,7 @@
 ---
 layout: default
 group: UI_Components_guide
-subgroup: d_best practices
+subgroup: best practices
 title: Using the new structure in UI components XML configuration
 menu_title: Using the new structure in UI components XML configuration
 menu_order: 1

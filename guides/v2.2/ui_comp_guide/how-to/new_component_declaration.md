@@ -1,7 +1,7 @@
 ---
 layout: default
 group: UI_Components_guide
-subgroup: f_common how tos
+subgroup: common how tos
 title: Declare a custom UI component
 menu_title: Declare a custom UI component
 menu_order: 1
