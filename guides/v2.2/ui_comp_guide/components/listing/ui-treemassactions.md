@@ -8,6 +8,10 @@ version: 2.2
 github_link: ui_comp_guide/components/listing/ui-treemassactions.md
 ---
 
+## Overview
+
+The TreeMassActions component is a decorator for the MassActions that on top of the basic functionality adds the support of nested actions.
+
 Constructor: [app/code/Magento/Ui/view/base/web/js/grid/tree-massactions.js]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/grid/tree-massactions.js)
 
 ## TreeMassActions configuration
@@ -35,4 +39,40 @@ TreeMassActions-specific configuration:
     <td>String</td>
     <td><code>ui/grid/tree-massactions</code></td>
   </tr>
+  <tr>
+    <td><code>actions</code></td>
+    <td>A list of available actions.</td>
+    <td><code>(MassActionContainer | MassAction)[]</code></td>
+    <td>-</td>
+  </tr>
 </table>
+
+## MassActionContainer interface
+<table>
+  <tr>
+    <th>Option</th>
+    <th>Description</th>
+    <th>Type</th>
+    <th>Required</th>
+  </tr>
+  <tr>
+    <td><code>label</code></td>
+    <td>Action's label displayed in the list of actions.</td>
+    <td>String</td>
+    <td>Required</td>
+  </tr>
+  <tr>
+    <td><code>type</code></td>
+    <td>Action's identifier.</td>
+    <td>String</td>
+    <td>Required</td>
+  </tr>
+  <tr>
+    <td><code>actions</code></td>
+    <td>A list of child elements that may contain both MassActionContainer and MassAction instances.</td>
+    <td>(MassActionContainer | MassAction)[]</td>
+    <td>Required</td>
+  </tr>
+</table>
+
+

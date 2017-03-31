@@ -8,6 +8,10 @@ version: 2.2
 github_link: ui_comp_guide/components/listing/ui-columns.md
 ---
 
+## Overview
+
+The Columns component is a collection of columns which is responsible for rendering the `<table>` element and displaying records of the Listing component in it.
+
 ## Configuration options
 
 Extends all UiCollection options.

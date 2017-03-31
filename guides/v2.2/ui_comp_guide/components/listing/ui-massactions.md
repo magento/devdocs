@@ -42,7 +42,7 @@ Extends <code>Collapsible</code> configuration with the following options:
   <tr>
     <td><code>actions</code></td>
     <td>A list of available actions.</td>
-    <td>Array</td>
+    <td><code>MassAction[]</code></td>
     <td>-</td>
   </tr>
   <tr>
@@ -100,7 +100,7 @@ Extends <code>Collapsible</code> configuration with the following options:
   </tr>
   <tr>
     <td><code>url</code></td>
-    <td>Path to the contoller responsible for action handling.</td>
+    <td>Path to the controller responsible for action handling.</td>
     <td>String</td>
     <td>Optional</td>
   </tr>

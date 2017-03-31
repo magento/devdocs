@@ -8,6 +8,10 @@ version: 2.2
 github_link: ui_comp_guide/components/ui-checkbox.md
 ---
 
+## Overview
+
+The Checkbox component is a field of the UI Form the initial display state of which is an `<inupt>` element of the "checkbox" type. It also can be displayed as the "toggle" handler or the radio button element.
+
 ## Сheckbox configuration
 
 Extends all `abstract` configuration.

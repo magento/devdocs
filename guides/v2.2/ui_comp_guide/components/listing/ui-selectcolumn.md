@@ -8,6 +8,10 @@ version: 2.2
 github_link: ui_comp_guide/components/listing/ui-selectсolumn.md
 ---
 
+## Overview
+
+The SelectColumn is a column that displays values of provided records as labels of the corresponding options.
+
 Constructor: [app/code/Magento/Ui/view/base/web/js/grid/columns/select.js]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/grid/columns/select.js)
 
 ## SelectColumn configuration

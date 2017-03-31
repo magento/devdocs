@@ -8,6 +8,10 @@ version: 2.2
 github_link: ui_comp_guide/components/ui-text.md
 ---
 
+## Overview
+
+The Text component is used to display text data in elements like Form and DynamicRows.
+
 ## Text configuration
 
 Extends all [uiElement]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uielement_concept.html) configuration.
