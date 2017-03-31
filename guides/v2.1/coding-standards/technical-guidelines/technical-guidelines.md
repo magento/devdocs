@@ -37,13 +37,24 @@ Use [RFC2119] to interpret keywords like:
 
 * OPTIONAL
 
+### Magento 2.2 only guidelines
+
+Statements applicable to Magento v.2.2 only, are marked with
+<span style="color: orange">[2.2]</span>.,
+like this:
+
+> Explicit return types MUST BE used on functions
+><span style="color: orange">[2.2]</span>.
+
 ## 1. Basic programming principles
 
 1.1. Function arguments SHOULD NOT be modified.
 
-1.2. Explicit return types MUST BE used on functions.
+1.2. Explicit return types MUST BE declared on functions
+<span style="color: orange">[2.2]</span>.
 
-1.3. Type hints for scalar arguments SHOULD be used.
+1.3. Type hints for scalar arguments SHOULD be used
+<span style="color: orange">[2.2]</span>.
 
 ## 2. Class design
 
@@ -99,7 +110,7 @@ class Config
 {:start="2.3"}
 2.3. Class constructor can have only dependency assignment operations and/or argument validation operations. No other operations are allowed.
 
-2.3.1. Constructor MUST throw an exception when validation of an argument has failed.
+2.3.1. Constructor SHOULD throw an exception when validation of an argument has failed.
 
 {% collapsible Example: %}
 {%highlight php startinline=1%}
@@ -207,9 +218,9 @@ class Config
 
 2.8. Abstract classes MUST NOT be marked as public `@api`.
 
-2.9. Service classes (ones that provide behavior but not data, like `EventManager`) SHOULD be stateless (all object fields SHOULD be immutable).
+2.9. Service classes (ones that provide behavior but not data, like `EventManager`) SHOULD NOT have a mutable state.
 
-2.10. Only data objects or entities (Product, Category, etc.) MAY have any observable state.
+2.9. Only data objects or entities (Product, Category, etc.) MAY have any observable state.
 
 2.11. "Setters" SHOULD NOT be used. They are only allowed in Data Transfer Objects.
 
@@ -265,8 +276,6 @@ class Config
 
 - Solution or workaround
 
-All error messages SHOULD be reviewed by a member of Documentation or UX Team.
-
 {:start="5.2"}
 5.2. Exceptions MUST NOT be handled in the same function where they are thrown.
 
@@ -284,7 +293,7 @@ All error messages SHOULD be reviewed by a member of Documentation or UX Team.
 
 5.9. `\Exception` SHOULD only be caught in the code that calls third-party libraries, in addition to catching specific exceptions thrown by the library.
 
-5.10. Exception SHOULD NOT be thrown in Front Controller, Web API Controllers, and Controller Actions.
+5.10. `\Exception` SHOULD NOT be thrown in Front Controller and Action Controllers.
 
 5.11. A separate exceptions hierarchy SHOULD be defined on each application layer. It is allowed to throw exceptions which are only defined on the same layer.
 
@@ -390,91 +399,87 @@ We are reviewing this section and will publish it soon.
 
 8.7. A component MUST NOT rely neither on dependencies of dependencies nor on dependencies of the project it is included in (e.g., Magento application). All component dependencies MUST be stated explicitly.
 
-## 9. Caching
+## 9. Browser-Server interaction in web application
 
-9.1. Caching MUST be transparent for store admin. There SHOULD NOT be a "Clean cache" button for any cache type. Cache cleaning and invalidation MUST take place automatically.
+9.1. All Client-Server calls must follow the [HTTP Protocol].
 
-## 10. Browser-Server interaction in web application
+9.2. All customer-agnostic data (Products, Categories, CMS Pages) MUST be rendered on server and cached in a public cache server (Varnish).
 
-10.1. All Client-Server calls must follow the [HTTP Protocol].
+9.3. All customer-specific data MUST be rendered on the browser side using a JavaScript (JS) application.
 
-10.2. All customer-agnostic data (Products, Categories, CMS Pages) MUST be rendered on server and cached in a public cache server (Varnish).
+9.4. HTML markup generated on server MUST NOT contain user-specific data.
 
-10.3. All customer-specific data MUST be rendered on the browser side using a JavaScript (JS) application.
+9.5. HTML markup generated on server MUST NOT contain session-specific data (e.g. form element with CSRF token).
 
-10.4. HTML markup generated on server MUST NOT contain user-specific data.
+9.6. A JS application MAY receive customer-specific data using the CustomerData JS API.
 
-10.5. HTML markup generated on server MUST NOT contain session-specific data (e.g. form element with CSRF token).
+9.7. All state-modifying requests from a browser SHOULD be performed with AJAX requests.
 
-10.6. A JS application MAY receive customer-specific data using the CustomerData JS API.
+9.8. If an error occurs during request handling, the server MUST return an appropriate [HTTP Status Code] and an explanation of error in the response body.
 
-10.7. All state-modifying requests from a browser SHOULD be performed with AJAX requests.
+9.9. All headers MUST be respected.
 
-10.8. If an error occurs during request handling, the server MUST return an appropriate [HTTP Status Code] and an explanation of error in the response body.
+9.10. The Request, Session, and Cookie objects MUST NOT be injected in an object constructor. They MUST only be passed as method arguments.
 
-10.9. All headers MUST be respected.
+9.11. Operation scopes MUST always be explicitly requested by operations (`StoreManager` SHOULD NOT be used to retrieve the store ID).
 
-10.10. The Request, Session, and Cookie objects MUST NOT be injected in an object constructor. They MUST only be passed as method arguments.
+## 10. JavaScript (JS) application
 
-10.11. Operation scopes MUST always be explicitly requested by operations (`StoreManager` SHOULD NOT be used to retrieve the store ID).
+10.1. The Magento 2 UI Component framework MUST be used to build front-end applications.
 
-## 11. JavaScript (JS) application
+10.2. Only private content SHOULD be rendered in browser.
 
-11.1. The Magento 2 UI Component framework MUST be used to build front-end applications.
+10.3. All module dependencies of a RequireJS module MUST be declared in the module's definition header. No direct calls to `require` SHOULD be made unless the list of modules to be loaded is dynamic.
 
-11.2. Only private content SHOULD be rendered in browser.
+10.4. The [W3C Content Security Policy] MUST be followed.
 
-11.3. All module dependencies of a RequireJS module MUST be declared in the module's definition header. No direct calls to `require` SHOULD be made unless the list of modules to be loaded is dynamic.
+10.5. The [Airbnb JS Style Guide] SHOULD BE followed.
 
-11.4. The [W3C Content Security Policy] MUST be followed.
+10.5.1. ES2015 SHOULD be used as a JS standard.
 
-11.5. The [Airbnb JS Style Guide] SHOULD BE followed.
+10.5.2. Language features (closures) MUST be used for scope management. There SHOULD be no `_` (underscore) naming convention for private properties.
 
-11.5.1. ES2015 SHOULD be used as a JS standard.
+10.5.3. All asynchronous operations MUST be represented with ES2015 Promises.
 
-11.5.2. Language features (closures) MUST be used for scope management. There SHOULD be no `_` (underscore) naming convention for private properties.
+10.5.4. Global properties (window.*) MUST NOT be used. A module system SHOULD be used for shared objects.
 
-11.5.3. All asynchronous operations MUST be represented with ES2015 Promises.
+10.5.5. Modules MUST NOT have external side effects.
 
-11.5.4. Global properties (window.*) MUST NOT be used. A module system SHOULD be used for shared objects.
+10.5.6. Every ES2015 module MUST declare a default value.
 
-11.5.5. Modules MUST NOT have external side effects.
+10.5.7. Function declarations MUST be used for private functions instead of function expressions.
 
-11.5.6. Every ES2015 module MUST declare a default value.
+10.5.8. Re-declaration of function names MUST NOT be used.
 
-11.5.7. Function declarations MUST be used for private functions instead of function expressions.
+## 11. Testing
 
-11.5.8. Re-declaration of function names MUST NOT be used.
+### 11.1. White-box testing (unit, integration, functional)
 
-## 12. Testing
+11.1.1. Only public methods SHOULD be tested. Private and protected behavior SHOULD be tested through public methods.
 
-### 12.1. White-box testing (unit, integration, functional)
+### 11.2. Unit testing
 
-12.1.1. Only public methods SHOULD be tested. Private and protected behavior SHOULD be tested through public methods.
+11.2.1. All objects SHOULD be tested in isolation.
 
-### 12.2. Unit testing
+11.2.2. `ObjectManager` MUST NOT be used in unit tests.
 
-12.2.1. All objects SHOULD be tested in isolation.
+11.2.3. `ObjectManagerHelper` MAY BE used to automatically mock all dependencies of the object under test.
 
-12.2.2. `ObjectManager` MUST NOT be used in unit tests.
+## 12. Web API
 
-12.2.3. `ObjectManagerHelper` MAY BE used to automatically mock all dependencies of the object under test.
+12.1. Both REST and SOAP API's MUST be exposed.
 
-## 13. Web API
+12.2. All Web API GET endpoints MUST return lists of entities.
 
-13.1. Both REST and SOAP API's MUST be exposed.
+## 13. Command line interface (CLI)
 
-13.2. All Web API GET endpoints MUST return lists of entities.
+13.1. Magento 2 [CLI Command Naming Guidelines] MUST be followed.
 
-## 14. Command line interface (CLI)
+13.2. A CLI command MUST be created for any functionality intended to be used by a system integrator/system administrator/developer, for example: change indexer mode, generate a configuration file, etc.
 
-14.1. Magento 2 [CLI Command Naming Guidelines] MUST be followed.
+13.3. A CLI command MUST always run in a global area. If a command needs a specific area to perform its functions, such area should be set up before execution.
 
-14.2. A CLI command MUST be created for any functionality intended to be used by a system integrator/system administrator/developer, for example: change indexer mode, generate a configuration file, etc.
-
-14.3. A CLI command MUST always run in a global area. If a command needs a specific area to perform its functions, such area should be set up before execution.
-
-14.4. Exception in a single CLI command SHOULD NOT break the CLI framework; running other commands SHOULD still be possible.
+13.4. Exception in a single CLI command SHOULD NOT break the CLI framework; running other commands SHOULD still be possible.
 
 
 <!-- LINKS: DEFINITIONS AND ADDRESSES -->
@@ -485,7 +490,7 @@ We are reviewing this section and will publish it soon.
 [Law of Demeter]: https://en.wikipedia.org/wiki/Law_of_Demeter
 [CQRS principle]: https://martinfowler.com/bliki/CQRS.html
 [HTTP Protocol]: https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol
-[HTTP Status Code]: https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
+[HTTP Status Code]: https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html
 [W3C Content Security Policy]: https://w3c.github.io/webappsec-csp/
 [Airbnb JS Style Guide]: https://github.com/airbnb/javascript
 [CLI Command Naming Guidelines]: {{page.baseurl}}extension-dev-guide/cli-cmds/cli-naming-guidelines.html
