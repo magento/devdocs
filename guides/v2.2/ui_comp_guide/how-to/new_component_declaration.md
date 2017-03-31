@@ -9,18 +9,17 @@ version: 2.2
 github_link: ui_comp_guide/how-to/new_component_declaration.md
 ---
 
-## Overview
 Declaring a custom UI component refers to creating the XML configuration of your custom component, and is a part of a bigger task of creating a custom UI component.
 
-This topic describes the XML elements that must be used for declaring the custom component and where this declaration should be placed.  
+This topic describes the XML elements that must be used for declaring a custom component and where this declaration should be placed.  
 
 ## XML elements used for declaring the custom component
 
 A custom UI component can be declared using one of the following elements: `<component>` or `<container>`.
 
-The `<component>` node is typically used for declaring simple custom components, that do not have other nested components. `<component>` uses the [uiElement]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uielement_concept.html) constructor by default.
+The `<component>` element is typically used for declaring simple custom components, that do not have other nested components. `<component>` uses the [uiElement]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uielement_concept.html) constructor by default.
 
-The `<container>` node is typically used for declaring custom components that are collections, or in other words, can have nested components. `<container>` uses the [uiCollection]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uicollection_concept.html) constructor by default.
+The `<container>` element is typically used for declaring custom components that are collections, or in other words, can have nested components. `<container>` uses the [uiCollection]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uicollection_concept.html) constructor by default.
 
 ### Attributes you can use
 The `<container>` and `<component>` elements have no mandatory attributes. The following optional attributes are available for both these elements:
@@ -40,7 +39,7 @@ If the following elements are used inside `<container>` or `<component>`, they s
 2.  `<settings>`
 3.  `<childComponent>`
 
-For the component configuration inside <container>` and `<component>`, [use the "arbitrary" structure]({{page.baseurl}}ui_comp_guide/best-practices/semantic_config.html#info_structure_except).
+For the component configuration inside `<container>` and `<component>`, [use the "arbitrary" structure]({{page.baseurl}}ui_comp_guide/best-practices/semantic_config.html#info_structure_except).
 </div>
 
 ## Declare a custom basic component 

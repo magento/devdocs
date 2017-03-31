@@ -9,15 +9,14 @@ version: 2.2
 github_link: ui_comp_guide/best-practices/semantic_config.md
 ---
 
-## Overview
-Magento 2.2 introduces the new structure for [UI components XML configuration]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html), aimed at improving configuration semantics. 
+Magento 2.2.0 introduces a new structure for [UI components XML configuration]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html), aimed at improving configuration semantics. 
 
-The "arbitrary" structure, used in UI components XML configuration in previous Magento 2 versions, is also supported, and during XML files merging, the configuration files with "arbitrary" structure have higher priority.
+The arbitrary structure, used in UI components XML configuration in previous Magento 2 versions, is also supported, and during XML files merging, the configuration files that use the arbitrary structure have higher priority.
 
 Still, using the new structure for your customizations in Magento 2.2.0 and later, is the best practice, because the old "arbitrary" structure will become deprecated at some point.
 
 <div class="bs-callout bs-callout-info" id="info_structure_except" markdown="1">
-Declaring the custom UI component is an exception, use the "arbitrary" structure for this customization.
+Declaring the custom UI component is an exception, use the arbitrary structure when <a  href="{{page.baseurl}}ui_comp_guide/how-to/new_component_declaration.html">declaring a custom UI component</a>.
 </div>
 
 The main advantages of the new structure are described in the following sections.
@@ -91,7 +90,7 @@ When editing XML configuration files in an IDE, the autocomplete feature prompts
 
 ## Validation
 
-When editing XML configuration files in an IDE, you get visual notifications, if the name of a node or attribute is misspelled, or a required attribute is missing. You can also validate the complete file, by clicking **Validate** in the context menu.
+When editing XML configuration files in an IDE, you get visual notifications if the name of a node or attribute is misspelled, or a required attribute is missing. You can also validate the complete file, by clicking **Validate** in the context menu.
 
 {% collapsible Illustration %}
 * If the node name is misspelled:
