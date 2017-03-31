@@ -10,7 +10,7 @@ github_link: ui_comp_guide/components/ui-button.md
 
 ## Overview
 
-The Button component is a UI element which allows to perform a list of predefined actions when user clicks on it. It's default display mode is the HTML `<button>` element which be configured to display a link.
+The Button component allows performing a list of predefined actions when user clicks on the corresponding button. It's default display mode is the HTML `<button>` element which be configured to display a link.
 
 ## Configuration options
 
