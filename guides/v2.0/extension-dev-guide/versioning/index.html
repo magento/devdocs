@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Factories | Magento 2 Developer Documentation</title>
+	<title>Versioning and compatibility | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.0/extension-dev-guide/factories.html">
+	<link rel="canonical" href="//guides/v2.0/extension-dev-guide/versioning/">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -52,9 +52,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/extension-dev-guide/factories.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/extension-dev-guide/versioning/index.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/extension-dev-guide/factories.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/extension-dev-guide/versioning/index.html">Magento 2.1</a></li>
 	
   </ul>
 
@@ -627,7 +627,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.0/extension-dev-guide/factories.html">Factories</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/factories.html">Factories</a></li>
 
 									
 
@@ -752,7 +752,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/extension-dev-guide/versioning/">Versioning and compatibility</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/extension-dev-guide/versioning/">Versioning and compatibility</a></li>
 
 									
 
@@ -1020,7 +1020,7 @@
 
           
 
-          <span property="name">Factories</span>
+          <span property="name">Versioning and compatibility</span>
 
         
 
@@ -1043,96 +1043,733 @@
 
 	
 
-	<h1 class="page-heading">Factories</h1>
+	<h1 class="page-heading">Versioning and compatibility</h1>
 
   
 
 
 </section>
 
-			<h2 id="overview">Overview</h2>
+			<p>The Magento Platform and Magento Module releases have their own unique version number.</p>
 
-<p>Factories are service classes that instantiate non-injectable classes, that is, models that represent a database entity.
-They create a layer of abstraction between the <code>ObjectManager</code> and business code.</p>
+<p>A change in the version for the Magento Platform indicates a patch or feature release.
+This version change does not reflect the nature of the changes in the code base.</p>
 
-<h2 id="relationship-to-objectmanager">Relationship to <code>ObjectManager</code></h2>
+<p>Magento Modules follow Magento’s Module Versioning Policy.
+The policy itself follows <a href="http://semver.org/" target="_blank">Semantic Versioning</a> standards.</p>
 
-<p>The <code>Magento\Framework\ObjectManager</code> is the class responsible for instantiating objects in the Magento application.
-Magento prohibits depending on and directly using the <code>ObjectManager</code> in your code.</p>
+<p>The <code>version</code> field in the module’s <a href="/guides/v2.0/extension-dev-guide/build/composer-integration.html">composer.json</a> file specifies the module version and consists of three numbers in the following format:</p>
 
-<p>Factories are an exception to this rule because they require the <code>ObjectManager</code> to instantiate specific models.</p>
+<pre><code>MAJOR.MINOR.PATCH
+</code></pre>
 
-<p>The following example illustrates the relationship between a simple factory and the <code>ObjectManager</code>:</p>
+<h2 id="public-vs-private-code-changes">Public vs private code changes</h2>
 
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">Magento\Framework\App\Config</span><span class="p">;</span>
+<p>A Magento Module’s codebase consists of public and private code.</p>
 
-<span class="k">class</span> <span class="nc">BaseFactory</span>
+<p>Changes in public code always trigger MINOR or MAJOR version bumps.</p>
+
+<p>In most cases, modifications to private code will trigger PATCH version bumps.
+On rare occasions, if the Magento development team made significant modifications to private code, they will bump the MINOR or MAJOR version.</p>
+
+<p>Third-party modules should not use or modify private code.
+If this is unavoidable, you must depend on the patch version of the core modules used.</p>
+
+<h2 id="api-and-customization-points">API and customization points</h2>
+
+<p>Public code includes Public API (Application Programming Interface) and Public Customization Points.</p>
+
+<p>Modules call APIs to create new application scenarios.
+Modifications that break the API will trigger a bump in a module’s MAJOR version.</p>
+
+<p>Modules customize or replace Customization Points to customize existing application scenarios.
+Modifications that break Customization Points will trigger a bump in a module’s MINOR version.</p>
+
+<p>An interface or a virtual type can represent both API and Customization Point.</p>
+
+<p>This policy allows third-party module developers to declare more granular dependencies depending on their module’s interaction with Magento modules.</p>
+
+<h3 id="version-dependencies">Version dependencies</h3>
+
+<p>The following table lists common use cases for API/customization points and the version dependency for each use case.
+Use this table to set the appropriate version dependency on a module based on how you use its API/customization points.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>API/Customization Point</th>
+      <th>Third-party Use Case</th>
+      <th>Version Dependency</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>PHP Interface</strong> (marked with <code>@api</code>)</td>
+      <td>Inject in a constructor and/or call methods</td>
+      <td>MAJOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Implement the interface</td>
+      <td>MINOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Re-define the interface preference in <code>di.xml</code></td>
+      <td>MINOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Add a plugin to the interface</td>
+      <td>MAJOR</td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <td><strong>PHP Class</strong> (marked with <code>@api</code>)</td>
+      <td>Inject in a constructor</td>
+      <td>MAJOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Extend from an abstract class</td>
+      <td>MAJOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Add a plugin to the class</td>
+      <td>MAJOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Configure class preference in <code>di.xml</code></td>
+      <td>MAJOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Configure constructor argument in <code>di.xml</code></td>
+      <td>MAJOR</td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <td><strong>JavaScript Interface</strong> (marked with <code>@api</code>)</td>
+      <td>Inject in a constructor and/or call methods</td>
+      <td>MAJOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Implement the interface</td>
+      <td>MINOR</td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <td><strong>Javascript class</strong> (marked with <code>@api</code>)</td>
+      <td>Inject in a constructor</td>
+      <td>MAJOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Extend from a class</td>
+      <td>MINOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Override a method</td>
+      <td>MINOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Subscribe to an event</td>
+      <td>MINOR</td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <td><strong>Virtual Type</strong></td>
+      <td>Configure a virtual type in the <code>di.xml</code> file as a class dependency</td>
+      <td>MAJOR</td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <td><strong>URL Paths</strong></td>
+      <td>Link to from custom pages</td>
+      <td>MAJOR</td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <td><strong>Console commands and their arguments</strong></td>
+      <td>Called in custom shell scripts</td>
+      <td>MAJOR</td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <td><strong>Less variables and mixins</strong></td>
+      <td>Use in LESS declarations</td>
+      <td>MAJOR</td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <td><strong>Message queue topics and data types</strong></td>
+      <td>Consume a topic/message</td>
+      <td>MINOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Publish an existing topic</td>
+      <td>MAJOR</td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <td><strong>Layout handles declared by modules</strong></td>
+      <td>Instance blocks added</td>
+      <td>MAJOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Blocks and containers moved/removed</td>
+      <td>MAJOR</td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <td><strong>Static and dynamic events triggered by a component</strong></td>
+      <td>Subscribing to event</td>
+      <td>MAJOR</td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <td><strong>XML configuration type</strong></td>
+      <td>Provide additional configuration to the configuration type</td>
+      <td>MAJOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Extend existing XSD</td>
+      <td>MINOR</td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <td><strong>Structure of System Configuration fields used by module</strong></td>
+      <td>Configure module through System Configuration values</td>
+      <td>MAJOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Read system configuration using config path</td>
+      <td>MAJOR</td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <td><strong>Database structure</strong></td>
+      <td>Read/write to a table</td>
+      <td>MAJOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Add a column to a table</td>
+      <td>MINOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Declare a foreign key on a module table</td>
+      <td>MAJOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Declare a trigger on a module table</td>
+      <td>MAJOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Read from table or write to table from a temporary table</td>
+      <td>PATCH</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="version-bump-scenarios">Version bump scenarios</h3>
+
+<p>This table lists code change scenarios and which version number it affects.
+Use this table to understand what changes Magento can make and what version number gets bumped for that change.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>API/Customization Point</th>
+      <th>Code Change</th>
+      <th>Version Change</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>PHP Interface</strong> (marked with <code>@api</code>)</td>
+      <td>New interface</td>
+      <td>MINOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>New method added</td>
+      <td>MINOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Interface removed</td>
+      <td>MAJOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Method removed</td>
+      <td>MAJOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>New required method argument</td>
+      <td>MAJOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Removed the last argument for a method</td>
+      <td>MINOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Changed a method signature (excluding last argument removal)</td>
+      <td>MAJOR</td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <td><strong>PHP Class</strong> (marked with <code>@api</code>)</td>
+      <td>New Class</td>
+      <td>MINOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>New method added</td>
+      <td>MINOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Class removed</td>
+      <td>MAJOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Method removed</td>
+      <td>MAJOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>New required method argument</td>
+      <td>MAJOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Removed a non-last argument</td>
+      <td>MAJOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>New required constructor object argument</td>
+      <td>MINOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>New required constructor scalar argument (without pre-configured value)</td>
+      <td>MAJOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Removed a non-last constructor argument</td>
+      <td>MAJOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Removed a last constructor argument</td>
+      <td>PATCH</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Changed format of the returned method result</td>
+      <td>MAJOR</td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <td><strong>JavaScript Interface</strong> (marked with <code>@api</code>)</td>
+      <td>New interface</td>
+      <td>MINOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>New method added</td>
+      <td>MINOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Interface removed</td>
+      <td>MAJOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Method removed</td>
+      <td>MAJOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>New required method argument</td>
+      <td>MAJOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Changed method signature</td>
+      <td>MAJOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Last argument added</td>
+      <td>MINOR</td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <td><strong>Javascript class</strong> (marked with <code>@api</code></td>
+      <td>New class</td>
+      <td>MINOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>New method added</td>
+      <td>MINOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Class removed</td>
+      <td>MAJOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Method removed</td>
+      <td>MAJOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>New required method argument</td>
+      <td>MAJOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>New last method argument</td>
+      <td>MINOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>New event</td>
+      <td>MINOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Renamed event</td>
+      <td>MAJOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Removed event</td>
+      <td>MAJOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>New event property</td>
+      <td>MINOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Changed event property</td>
+      <td>MAJOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Removed event property</td>
+      <td>MAJOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Changed event ordering</td>
+      <td>MAJOR</td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <td><strong>Virtual Type</strong></td>
+      <td>Virtual type removed</td>
+      <td>MAJOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Virtual type added</td>
+      <td>MINOR</td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <td><strong>URL Paths</strong></td>
+      <td>Path removed</td>
+      <td>MAJOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Removed/renamed a request parameter</td>
+      <td>MAJOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>New required request parameter</td>
+      <td>MAJOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>New optional request parameter</td>
+      <td>MINOR</td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <td><strong>Console commands and their arguments</strong></td>
+      <td>Command removed</td>
+      <td>MAJOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>New required argument</td>
+      <td>MAJOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Removed/renamed argument</td>
+      <td>MAJOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>New command exit code</td>
+      <td>MINOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>New command</td>
+      <td>MINOR</td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <td><strong>Less variables and mixins</strong></td>
+      <td>Removed variable</td>
+      <td>MAJOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Removed mixin</td>
+      <td>MAJOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>New required mixin argument</td>
+      <td>MAJOR</td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <td><strong>Message queue topics and data types</strong></td>
+      <td>Topic removed</td>
+      <td>MAJOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Topic arguments modified</td>
+      <td>MAJOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Consumer removed</td>
+      <td>MINOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>New topic published</td>
+      <td>MINOR</td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <td><strong>Layout handles declared by modules</strong></td>
+      <td>New layout page handle</td>
+      <td>MINOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>New container/block added to handle</td>
+      <td>MINOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Removed/renamed container/block</td>
+      <td>MAJOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Removed layout handle</td>
+      <td>MAJOR</td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <td><strong>Static and dynamic events triggered by a component</strong></td>
+      <td>Event argument removed</td>
+      <td>MAJOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Event removed</td>
+      <td>MAJOR</td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <td><strong>Schema of configuration types introduced by module</strong></td>
+      <td>Schema file or configuration type renamed/removed</td>
+      <td>MAJOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Obligatory node/attribute added</td>
+      <td>MAJOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Node/attribute removed</td>
+      <td>MAJOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>New optional node/attribute added</td>
+      <td>MINOR</td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <td><strong>Structure of System Configuration fields used by module</strong></td>
+      <td>Config path removed/renamed</td>
+      <td>MAJOR</td>
+    </tr>
+  </tbody>
+  <tbody>
+    <tr>
+      <td><strong>Database structure</strong></td>
+      <td>Table removed</td>
+      <td>MAJOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Table added</td>
+      <td>MINOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Column removed</td>
+      <td>MAJOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Column added</td>
+      <td>MINOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Compatible changes in column configuration (soften column constraints: increase size, make optional)</td>
+      <td>PATCH</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Incompatible changes in column configuration</td>
+      <td>MAJOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Primary key column added/removed</td>
+      <td>MAJOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Added column to unique key</td>
+      <td>MAJOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Removed column from unique key</td>
+      <td>MAJOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Unique key added/removed</td>
+      <td>MAJOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Index added/changed</td>
+      <td>PATCH</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Foreign key added</td>
+      <td>MAJOR</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td>Temporary tables added/removed/changed</td>
+      <td>PATCH</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="core-module-dependency-rules">Core module dependency rules</h2>
+
+<p>Magento platform clients need notifications about breaking changes for their installed extensions and customizations when they upgrade their Magento installation.</p>
+
+<p>To achieve this, all third-party modules must obey the following rules:</p>
+
+<ol>
+  <li>You must specify the dependency on all modules listed in the ‘require’ section of your module’s <code>composer.json</code> file.</li>
+  <li>Do not specify a dependency on meta packages (e.g. ‘product-community-edition’).</li>
+  <li>Specify a module’s MAJOR and/or MINOR version number if you use any of that module’s customization points.</li>
+  <li>Specify a module’s MAJOR, MINOR, and PATCH versions if you call or customize a module’s private code.</li>
+</ol>
+
+<h2 id="deprecation">Deprecation</h2>
+
+<p>Marking public code with <code>@deprecated</code> on a MINOR release indicates that Magento plans to remove that code in a future MINOR release.</p>
+
+<p>When Magento deprecates the API or customization point in favor of a new implementation, the <code>@see</code> annotation points to the new implementation.</p>
+
+<p><strong>Deprecated Code Example</strong></p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
+<span class="sd"> * @deprecated since 2.1.0</span>
+<span class="sd"> * @see \Magento\Framework\Model\ResourceModel\Db\AbstractDb::save()</span>
+<span class="sd"> */</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">save</span><span class="p">()</span>
 <span class="p">{</span>
-  <span class="sd">/**</span>
-<span class="sd">   * @var \Magento\Framework\ObjectManagerInterface</span>
-<span class="sd">   */</span>
-  <span class="k">private</span> <span class="nv">$_objectManager</span><span class="p">;</span>
-
-  <span class="sd">/**</span>
-<span class="sd">   * @param \Magento\Framework\ObjectManagerInterface $objectManager</span>
-<span class="sd">   */</span>
-  <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nx">\Magento\Framework\ObjectManagerInterface</span> <span class="nv">$objectManager</span><span class="p">)</span>
-  <span class="p">{</span>
-    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_objectManager</span> <span class="o">=</span> <span class="nv">$objectManager</span><span class="p">;</span>
-  <span class="p">}</span>
-  <span class="sd">/**</span>
-<span class="sd">   * Create config model</span>
-<span class="sd">   * @param string|\Magento\Framework\Simplexml\Element $sourceData</span>
-<span class="sd">   * @return \Magento\Framework\App\Config\Base</span>
-<span class="sd">   */</span>
-  <span class="k">public</span> <span class="k">function</span> <span class="nf">create</span><span class="p">(</span><span class="nv">$sourceData</span> <span class="o">=</span> <span class="k">null</span><span class="p">)</span>
-  <span class="p">{</span>
-    <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_objectManager</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">(</span><span class="nx">\Magento\Framework\App\Config\Base</span><span class="o">::</span><span class="na">class</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;sourceData&#39;</span> <span class="o">=&gt;</span> <span class="nv">$sourceData</span><span class="p">]);</span>
-  <span class="p">}</span>
+    <span class="c1">// ...</span>
 <span class="p">}</span></code></pre></figure>
 
-<h2 id="writing-factories">Writing factories</h2>
-
-<p>Unless you require specific behavior for your factory classes, you do not need to explicitly define them because they are an <a href="/guides/v2.0/extension-dev-guide/code-generation.html">automatically generated</a> class type.
-When you reference a factory in a class constructor, Magento’s <a href="/guides/v2.0/extension-dev-guide/object-manager.html">object manager</a> generates the factory class if it does not exist.</p>
-
-<p>Factories follow the naming convention <code>&lt;class-type&gt;Factory</code> where <code>&lt;class-type&gt;</code> is the name of the class the factory instantiates.</p>
-
-<p>For example the automatically generated <code>Magento\Cms\Model\BlockFactory</code> class is a factory that instantiates the class <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Cms/Model/Block.php"><code>Magento\Cms\Model\Block</code></a>.</p>
-
-<h2 id="using-factories">Using factories</h2>
-
-<p>You can get the singleton instance of a factory for a specific model using <a href="/guides/v2.0/extension-dev-guide/depend-inj.html##dep-inj-preview-cons" target="_blank">dependency injection</a>.</p>
-
-<p>The following example shows a class getting the <code>BlockFactory</code> instance through the constructor:</p>
-
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">function</span> <span class="nf">__construct</span> <span class="p">(</span> <span class="nx">\Magento\Cms\Model\BlockFactory</span> <span class="nv">$blockFactory</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">blockFactory</span> <span class="o">=</span> <span class="nv">$blockFactory</span><span class="p">;</span>
-<span class="p">}</span></code></pre></figure>
-
-<p>Calling the <code>create()</code> method on a factory gives you an instance of its specific class:</p>
-
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$block</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">blockFactory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">();</span></code></pre></figure>
-
-<p>For classes that require parameters, the automatically generated <code>create()</code> function accepts an array of parameters that it passes on to the <code>ObjectManager</code> to create the target class.</p>
-
-<p>The example below shows the construction of a <code>Magento\Search\Model\Autocomplete\Item</code> object by passing in an array of parameters to a factory:</p>
-
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nv">$resultItem</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">itemFactory</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">([</span>
-  <span class="s1">&#39;title&#39;</span> <span class="o">=&gt;</span> <span class="nv">$item</span><span class="o">-&gt;</span><span class="na">getQueryText</span><span class="p">(),</span>
-  <span class="s1">&#39;num_results&#39;</span> <span class="o">=&gt;</span> <span class="nv">$item</span><span class="o">-&gt;</span><span class="na">getNumResults</span><span class="p">(),</span>
-<span class="p">]);</span></code></pre></figure>
-
-<h3 id="interfaces">Interfaces</h3>
-
-<p>Factories are smart enough to resolve dependencies and allow you to get the correct instance of an interface as defined in your module’s <code>di.xml</code>.</p>
-
-<p>For example, in the <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/CatalogInventory" target="_blank"><code>CatalogInventory</code></a> module, the <code>di.xml</code> file contains the following entry:</p>
-
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;preference</span> <span class="na">for=</span><span class="s">&quot;Magento\CatalogInventory\Api\Data\StockItemInterface&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\CatalogInventory\Model\Stock\Item&quot;</span> <span class="nt">/&gt;</span></code></pre></figure>
-
-<p>It instructs Magento to use the specific <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/CatalogInventory/Model/Stock/Item.php" target="_blank"><code>Item</code></a> class wherever the <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/CatalogInventory/Api/Data/StockItemInterface.php" target="_blank"><code>StockItemInterface</code></a> is used.
-When a class in that module includes the factory <code>StockItemInterfaceFactory</code> as a dependency, Magento generates a factory that is capable of creating the specific <code>Item</code> objects.</p>
 
 		</div>
 		<!-- /.content-wrap -->
@@ -1140,23 +1777,17 @@ When a class in that module includes the factory <code>StockItemInterfaceFactory
 		<div class="page-info">
 
   
-    <div class="page-contributor">
-      <a href="http://www.classyllama.com/" target="_blank">
-        Thanks to Classy Llama for contributing this topic
-      </a>
-    </div>
-  
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/extension-dev-guide/factories.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/extension-dev-guide/versioning/index.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
   
 
   <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.0/extension-dev-guide/factories.html" target="_blank">Give us feedback</a>
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.0/extension-dev-guide/versioning/" target="_blank">Give us feedback</a>
   </div>
 
 </div>
