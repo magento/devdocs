@@ -2,8 +2,8 @@
 layout: default
 group: config-guide
 subgroup: 999_prod
-title: Set up deployment systems
-menu_title: Set up deployment systems
+title: Set up split deployment systems
+menu_title: Set up split deployment systems
 level3_menu_node: level3parent
 level3_subgroup: deploy-setup
 menu_node:

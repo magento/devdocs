@@ -2,8 +2,8 @@
 layout: default
 group: config-guide
 subgroup: 999_prod
-title: Set up your build system
-menu_title: Set up your build system
+title: Set up your build split deployment system
+menu_title: Set up your build split deployment system
 menu_node: 
 menu_order: 22
 level3_menu_node: level3child

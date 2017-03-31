@@ -2,8 +2,8 @@
 layout: default
 group: config-guide
 subgroup: 999_prod
-title: Set up your development systems
-menu_title: Set up your development systems
+title: Set up your development split deployment systems
+menu_title: Set up your development split deployment systems
 menu_node: 
 menu_order: 21
 level3_menu_node: level3child
