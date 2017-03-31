@@ -2,8 +2,8 @@
 layout: default
 group:  config-guide
 subgroup: 04_CLI
-title: Deployment strategies
-menu_title: Deployment strategies
+title: Static files deployment strategies
+menu_title: Static files deployment strategies
 menu_node:
 menu_order: 300
 version: 2.2
@@ -12,27 +12,21 @@ github_link: config-guide/cli/config-cli-subcommands-static-deploy-strategies.md
 
 ## Overview
 
-When [deploying static view files]({{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html), you can choose one of the three available strategies:
+When [deploying static view files]({{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html), you can choose one of the three available strategies. Each of them provides optimal deployment results for different use cases:
 
-* Standard
-* Quick
-* Compact
+* *Standard*: the regular deployment process.
+* *Quick*: minimizes the time required for deployment when files for more than one locale are deployed.
+* *Compact*: minimizes the space taken by the published view files. 
 
-The strategies are aimed to provide the optimized deployment result for different use cases:
+The following sections describe the implementation details and features of each strategy.
 
-* Standard is the regular deployment process.
-* Quick minimizes the time required for deployment when files for more than one locale are deployed.
-* Compact minimizes the space taken by the published view files.  
-
-The following sections describe the implementation details and features of the strategies.
-
-## Standard strategy
+## Standard strategy 
 
 When the Standard strategy is used, all static view files for all packages are deployed, that is, processed by `\Magento\Framework\App\View\Asset\Publisher`.
 
 ## Quick strategy
 
-Deployment process with the Quick strategy is the following:
+The Quick strategy performs the following actions:
 
 1. For each theme, one arbitrary locale is chosen and all files for this locale are deployed, like in the Standard strategy.
 2. For all other locales of the theme:
@@ -47,7 +41,7 @@ This approach minimizes the deployment time required for multiple locales. Thoug
 
 ## Compact strategy
 
-The Compact strategy avoids files duplicating. Instead, the similar files are stored in the "basic" sub-directories.
+The Compact strategy avoids file duplication by storing similar files in the "basic" sub-directories.
 For the most optimized result, three scopes for possible similarity are allocated: area, theme, and locale. "Basic" sub-directories are created for all combinations of these scopes. The files are deployed to these sub-directories according to the following patterns. 
 
 <table>
@@ -123,7 +117,7 @@ For the most optimized result, three scopes for possible similarity are allocate
 
 
 ### Mapping deployed files
-This approach to deployment means that files are inherited from "basic" themes and locales. This inheritance relations are stored in the map files for each combination of area, theme and locale. There are separate map files for PHP and JS:
+The approach to deployment used in the Compact strategy means that files are inherited from "basic" themes and locales. This inheritance relations are stored in the map files for each combination of area, theme and locale. There are separate map files for PHP and JS:
 
 * `map.php`
 * `requirejs-map.js`
@@ -164,6 +158,8 @@ require.config({
 
 ## Tip for extension developers
 
-To avoid problems with static files being not found and not displayed during page rendering, do not use URL concatenations: use `\Magento\Framework\View\Asset\Repository::createAsset()` for building URLs to the static view files.
+For building URLs to the static view files, use `\Magento\Framework\View\Asset\Repository::createAsset()`. 
+
+Do not use URL concatenations, to avoid problems with static files being not found and not displayed during page rendering.
 
 
