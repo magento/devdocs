@@ -17,7 +17,7 @@ This document lists the fundamental coding and application design principles tha
 
 Magento core developers use this document as a reference during code reviews; some rules have corresponding code checks in the Magento static tests.
 
-These guidelines came from many years of hard work, experience, and discussions. We strongly believe that the new technical initiatives should follow these recommendations, and the existing code should be improved to meet them.
+These guidelines came from many years of hard work, experience, and discussions. We strongly believe that new technical initiatives should follow these recommendations, and the existing code should be improved to meet them.
 
 ### Text conventions
 
@@ -39,7 +39,7 @@ Use [RFC2119] to interpret keywords like:
 
 ### Guidelines for Magento 2.2 only
 
-Statements applicable to Magento v.2.2 only, are marked with
+Statements applicable to Magento v.2.2 only are marked with
 <span style="color: orange">[2.2]</span>,
 like this:
 
@@ -153,25 +153,15 @@ class Composite
     <tr>
         <td>
 {%highlight php startinline=1%}
+
 class Config
 {
-    private $fileReader;
-
-    private $eventManager;
+    private $data;
 
     public function __construct($fileReader, $eventManager)
     {
-        $this->eventManager = $eventManager;
-        $this->fileReader = $fileReader;
-    }
-
-    public function getData($key)
-    {
-        if ($this->data === null) {
-            $this->data = $this->fileReader->read('cache.xml');
-            $this->eventManager->dispatch('config_read_after');
-        }
-        return $this->data[$key];
+        $this->data = $fileReader->read('cache.xml');
+        $eventManager->dispatch('config_read_after');
     }
 }
 {%endhighlight%}
@@ -208,7 +198,7 @@ class Config
 ---
 
 {:start="2.4"}
-2.4. All dependencies MUST be requested by the most generic type, required by the client object.
+2.4. All dependencies MUST be requested by the most generic type that is required by the client object.
 
 2.5. Proxies and interceptors MUST NEVER be explicitly requested in constructors.
 
@@ -220,7 +210,7 @@ class Config
 
 2.9. Service classes (ones that provide behavior but not data, like `EventManager`) SHOULD NOT have a mutable state.
 
-2.9. Only data objects or entities (Product, Category, etc.) MAY have any observable state.
+2.10. Only data objects or entities (Product, Category, etc.) MAY have any observable state.
 
 2.11. "Setters" SHOULD NOT be used. They are only allowed in Data Transfer Objects.
 
@@ -250,7 +240,7 @@ class Config
 
 3.1. There SHOULD be no circular dependencies between objects.
 
-3.2. The `app/etc/di.xml` file MUST contain only framework-level Depenedency Injection (DI) settings.
+3.2. The `app/etc/di.xml` file MUST contain only framework-level Dependency Injection (DI) settings.
 
 3.3. All modular DI settings (except for Presentation layer configuration) SHOULD be stored in `<module_dir>/etc/di.xml`.
 
@@ -268,7 +258,7 @@ class Config
 
 ## 5. Exceptions
 
-5.1. All exceptions that are surfaced to end user MUST produce error messages in the following format:
+5.1. All exceptions that are surfaced to the end user MUST produce error messages in the following format:
 
 - Symptom
 
@@ -291,19 +281,19 @@ class Config
 
 5.8. All direct communications with third-party libraries MUST be wrapped with a try/catch statement.
 
-5.9. `\Exception` SHOULD only be caught in the code that calls third-party libraries, in addition to catching specific exceptions thrown by the library.
+5.9. `\Exception` SHOULD be caught only in the code that calls third-party libraries, in addition to catching specific exceptions thrown by the library.
 
 5.10. `\Exception` SHOULD NOT be thrown in Front Controller and Action Controllers.
 
-5.11. A separate exceptions hierarchy SHOULD be defined on each application layer. It is allowed to throw exceptions which are only defined on the same layer.
+5.11. A separate exceptions hierarchy SHOULD be defined on each application layer. It is allowed to throw exceptions that are only defined on the same layer.
 
-5.12. If an exception is caught on the application layer which is different from the one where it has been thrown, and it SHOULD be re-thrown; then a new exception instance, appropriate for the current layer, SHOULD be created. In this case, the original exception must be passed to a new instance with the "previous" argument.
+5.12. If an exception is caught on the application layer that differs from the one where it has been thrown, and it SHOULD be re-thrown, you SHOULD create a new exception instance that is appropriate for the current layer. In this case, the original exception must be passed to a new instance with the "previous" argument.
 
 5.13. It is not allowed to absorb exceptions with no logging or/and any workaround operation executed.
 
 5.14. Any exception SHOULD be logged only in the `catch` block where it is processed, and SHOULD NOT be re-thrown.
 
-5.15. Exceptions SHOULD NOT be caught in a loop. The loop should be wrapped with a `try/catch` construct instead.
+5.15. Exceptions SHOULD NOT be caught in a loop. The loop SHOULD be wrapped with a `try/catch` construct instead.
 
 5.16. If a method uses system resources (such as files, sockets, streams, etc.), the code MUST be wrapped with a `try` block and the corresponding `finally` block. In the `finally` sections, all resources SHOULD be properly released.
 
@@ -325,7 +315,7 @@ class Config
 
 * **Query** for Layout and its elements (Blocks and UI Components)
 
-6.2.2. Request, Response, Session, Store Manager and Cookie objects MUST only be used in the Presentation layer.
+6.2.2. Request, Response, Session, Store Manager and Cookie objects MUST be used only in the Presentation layer.
 
 6.2.3. All actions MUST return the `ResultInterface` implementation.
 
@@ -403,23 +393,23 @@ We are reviewing this section and will publish it soon.
 
 9.1. All Client-Server calls must follow the [HTTP Protocol].
 
-9.2. All customer-agnostic data (Products, Categories, CMS Pages) MUST be rendered on server and cached in a public cache server (Varnish).
+9.2. All customer-agnostic data (Products, Categories, CMS Pages) MUST be rendered on a server and cached in a public cache server (Varnish).
 
 9.3. All customer-specific data MUST be rendered on the browser side using a JavaScript (JS) application.
 
 9.4. HTML markup generated on server MUST NOT contain user-specific data.
 
-9.5. HTML markup generated on server MUST NOT contain session-specific data (e.g. form element with CSRF token).
+9.5. HTML markup generated on server MUST NOT contain session-specific data (e.g. a form element with a CSRF token).
 
 9.6. A JS application MAY receive customer-specific data using the CustomerData JS API.
 
 9.7. All state-modifying requests from a browser SHOULD be performed with AJAX requests.
 
-9.8. If an error occurs during request handling, the server MUST return an appropriate [HTTP Status Code] and an explanation of error in the response body.
+9.8. If an error occurs during request handling, the server MUST return an appropriate [HTTP Status Code] and an explanation of an error in the response body.
 
 9.9. All headers MUST be respected.
 
-9.10. The Request, Session, and Cookie objects MUST NOT be injected in an object constructor. They MUST only be passed as method arguments.
+9.10. The Request, Session, and Cookie objects MUST NOT be injected in an object constructor. They MUST be passed only as method arguments.
 
 9.11. Operation scopes MUST always be explicitly requested by operations (`StoreManager` SHOULD NOT be used to retrieve the store ID).
 
@@ -475,9 +465,9 @@ We are reviewing this section and will publish it soon.
 
 13.1. Magento 2 [CLI Command Naming Guidelines] MUST be followed.
 
-13.2. A CLI command MUST be created for any functionality intended to be used by a system integrator/system administrator/developer, for example: change indexer mode, generate a configuration file, etc.
+13.2. A CLI command MUST be created for any functionality intended to be used by a system integrator/system administrator/developer (for example: change indexer mode, generate a configuration file, etc.).
 
-13.3. A CLI command MUST always run in a global area. If a command needs a specific area to perform its functions, such area should be set up before execution.
+13.3. A CLI command MUST always run in a global area. If a command needs a specific area to perform its functions, such area SHOULD be set up before execution.
 
 13.4. Exception in a single CLI command SHOULD NOT break the CLI framework; running other commands SHOULD still be possible.
 
