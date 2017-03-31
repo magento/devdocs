@@ -10,7 +10,7 @@ github_link: ui_comp_guide/components/ui-сheckboxset.md
 
 ## Overview
 
-The Checkboxset component implements a group of selection elements type of which can be either `checkbox` (default) or `radio`.
+The Checkboxset component implements a group of `checkbox` (default) or `radio` selection elements.
 
 ## Configuration options
 
