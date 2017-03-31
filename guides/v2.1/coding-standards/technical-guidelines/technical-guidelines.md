@@ -37,10 +37,10 @@ Use [RFC2119] to interpret keywords like:
 
 * OPTIONAL
 
-### Magento 2.2 only guidelines
+### Guidelines for Magento 2.2 only
 
 Statements applicable to Magento v.2.2 only, are marked with
-<span style="color: orange">[2.2]</span>.,
+<span style="color: orange">[2.2]</span>,
 like this:
 
 > Explicit return types MUST BE used on functions
