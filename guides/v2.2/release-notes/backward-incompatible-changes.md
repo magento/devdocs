@@ -36,6 +36,23 @@ Change was done in order to add default values to customer attributes.
 **Action:** Added the getter `getDefaultValue()` and setter `setDefaultValue($defaultValue)` to [`Magento\Customer\Model\Data\AttributeMetadata`]<br/>
 **Description:** Retrieve and set default values to customer attributes<br/>
 
+#### Wishlist Module
+
+The format of serialized string for buyRequest parameter in \Magento\Wishlist\Model\Wishlist::addNewItem changed from serialized to JSON.
+
+{% highlight php %}
+/**
+ * Adds new product to wishlist
+ *
+ * @param \Magento\Catalog\Model\Product|int $product
+ * @param \Magento\Framework\DataObject|array|string|null $buyRequest
+ * @param bool $forciblySetQty
+ * @throws \Magento\Framework\Exception\LocalizedException
+ * @return \Magento\Wishlist\Model\Item|string
+ */
+addNewItem($product, $buyRequest = null, $forciblySetQty = false)
+{% endhighlight %}
+
 ### MessageQueue Module API
 
 The `Magento\Framework\MessageQueue\ConfigInterface` has been deprecated. The following table lists the deprecated methods and their replacements.
@@ -56,7 +73,8 @@ Deprecated method | Use instead | Subsequent calls
 `getPublisher($name);` | `\Magento\Framework\MessageQueue\Publisher\ConfigInterface::getPublisher($name)` | Use getter methods to return requested information.
 `getResponseQueueName($topicName);` | Magento\Framework\MessageQueue\Rpc\ResponseQueueNameBuilder::getQueueName($topicName) | -
 
-#### Error Processor Module ####
+#### Error Processor Module
+
 Exception report files in `var/report` are now JSON encoded, and existing serialized files will not be readable by the upgraded Magento 2.2 instance.
 
 ## Changes in repositories
@@ -173,6 +191,7 @@ Update your extension to use `\Magento\Framework\Serialize\Serializer\Json` for 
 
 **Case 6:**  
 Your extension uses a backend model that extends `\Magento\Config\Model\Config\Backend\Serialized` to save/load data to/from the database.
+
 **Solution:**  
 Write an [upgrade script]({{page.baseurl}}ext-best-practices/tutorials/serialized-to-json-data-upgrade.html) to update data stored by the extension in the `core_config_data` table from serialized to JSON format.
 
@@ -181,8 +200,163 @@ Write an [upgrade script]({{page.baseurl}}ext-best-practices/tutorials/serialize
 * [Serialize to JSON data upgrade]({{page.baseurl}}ext-best-practices/tutorials/serialized-to-json-data-upgrade.html)
 * [Serialize Library]({{page.baseurl}}extension-dev-guide/framework/serializer.html)
 
-### Staging (EE Only)
+## Database field changes
 
-## Persistence management
+This is a list of tables and fields where the data format changed from serialized to JSON format.
 
-### Data interfaces persistence
+{% collapsible Show table %}
+
+| Resource Model                                                                       | Table                            | Field                                                         |
+| --- | --- | --- |
+| \Magento\Quote\Model\ResourceModel\Quote\Payment                                     | quote_payment                    | additional_information                                        |
+| \Magento\Reward\Model\ResourceModel\Reward\History                                   | magento_reward_history           | additional_data                                               |
+| \Magento\Sales\Model\ResourceModel\Order\Item                                        | sales_order_item                 | product_options                                               |
+| \Magento\Sales\Model\ResourceModel\Order\Payment                                     | sales_order_payment              | additional_information                                        |
+| \Magento\Sales\Model\ResourceModel\Order\Shipment                                    | sales_shipment                   | packages                                                      |
+| \Magento\Sales\Model\ResourceModel\Order\Payment\Transaction                         | sales_payment_transaction        | additional_information                                        |
+| \Magento\Quote\Model\Quote\Item\Option                                               | quote_item_option                | value                                                         |
+| \Magento\GiftRegistry\Model\Item\Option                                              | magento_giftregistry_item_option | value                                                         |
+| \Magento\Wishlist\Model\Item                                                         | wishlist_item_option             | value                                                         |
+| \Magento\Sales\Model\ResourceModel\Order                                             | sales_order                      | gift_cards                                                    |
+| \Magento\Quote\Model\ResourceModel\Quote                                             | quote                            | gift_cards                                                    |
+| \Magento\Quote\Model\ResourceModel\Quote\Address                                     | quote_address                    | applied_taxes, gift_cards                                     |
+| \Magento\Quote\Model\Quote\Payment                                                   | quote_payment                    | additional_data                                               |
+| \Magento\Customer\Model\Attribute                                                    | customer_eav_attribute           | validate_rules                                                |
+| \Magento\Rma\Model\Item\Attribute                                                    | magento_rma_item_eav_attribute   | validate_rules                                                |
+| \Magento\UrlRewrite\Model\UrlRewrite                                                 | url_rewrite                      | metadata                                                      |
+| \Magento\Framework\Flag\FlagResource                                                 | flag                             | flag_data                                                     |
+| \Magento\Config\Model\ResourceModel\Config                                           | core_config_data                 | value                                                         |
+| \Magento\Widget\Model\ResourceModel\Widget\Instance                                  | widget_instance                  | widget_parameters                                             |
+| \Magento\Reminder\Model\Rule                                                         | magento_reminder_rule            | conditions_serialized                                         |
+| \Magento\TargetRule\Model\Rule                                                       | magento_targetrule               | actions_serialized, conditions_serialized, action_select_bind |
+| \Magento\SalesRule\Model\Rule                                                        | salesrule                        | conditions_serialized, actions_serialized                     |
+| \Magento\CatalogRule\Model\Rule                                                      | catalogrule                      | conditions_serialized, actions_serialized                     |
+| \Magento\CustomerSegment\Model\Segment                                               | magento_customersegment_segment  | conditions_serialized                                         |
+| \Magento\Sales\Model\Order\Creditmemo\Item                                           | sales_creditmemo_item            | tax_ratio                                                     |
+| \Magento\Sales\Model\Order\Invoice\Item                                              | sales_invoice_item               | tax_ratio                                                     |
+| \Magento\User\Model\User                                                             | admin_user                       | extra                                                         |
+| \Magento\Catalog\Model\ResourceModel\Eav\Attribute                                   | catalog_eav_attribute            | additional_data                                               |
+| \Magento\Support\Model\ResourceModel\Report                                          | support_report                   | report_data                                                   |
+| \Magento\Logging\Block\Adminhtml\Details                                             | magento_logging_event            | info                                                          |
+| \Magento\Logging\Block\Adminhtml\Details\Renderer\Diff                               | magento_logging_event_changes    | original_data, result_data                                    |
+| \Magento\Rma\Model\Item, \Magento\Rma\Model\Rma                                      | magento_rma_item_entity          | product_options                                               |
+| \Magento\Rma\Model\Shipping, \Magento\Rma\Model\Shipping\LabelService                | magento_rma_shipping_label       | packages                                                      |
+| \Magento\GiftRegistry\Model\Person, \Magento\GiftRegistry\Model\ResourceModel\Person | magento_giftregistry_person      | custom_values                                                 |
+| \Magento\GiftRegistry\Model\Entity, \Magento\GiftRegistry\Model\ResourceModel\Entity | magento_giftregistry_entity      | custom_values, shipping_address                               |
+| \Magento\ScheduledImportExport\Model\Scheduled\Operation                             | magento_scheduled_operations     | file_info, entity_attributes                                  |
+
+{% endcollapsible %}
+
+### Table deprecations 
+
+The table for `\Magento\Widget\Model\ResourceModel\Widget` has been deprecated.
+
+### New Class: `FieldDataConverter`
+
+This class supports data conversion from one format to another.
+It can be used to upgrade data in upgrade scripts.
+
+#### Features
+
+* Ability to process records in batches
+* Can use the `where` condition
+* Update multiple fields in a table at once
+* Update records in multiple threads
+* Convert nested serialized data
+* Update duplicate records at once
+
+## Input/Output Format of Methods
+
+The following methods now return JSON instead of a serialized string.
+
+{% collapsible Show methods %}
+
+* `\Magento\Catalog\Model\Product\Option\Type\File::prepareForCart()`
+* `\Magento\CatalogInventory\Helper\Minsaleqty::serializeValue($value)`
+  * Only if `$value` is array type
+* `\Magento\Widget\Helper\Conditions::encode($value)`
+* `\Magento\Wishlist\Model\Item\Option::getValue`
+* `\Magento\Wishlist\Model\Item\Option::getData('value',...)`
+* `\Magento\Widget\Model\Widget\Instance::getData('widget_parameters')`
+* `\Magento\Sales\Model\Order\Creditmemo\Item::getTaxRatio`
+* `\Magento\Sales\Model\Order\Invoice\Item::getTaxRatio`
+* `\Magento\Quote\Model\Quote\Address\Total::getAppliedTaxes()`
+* `\Magento\Catalog\Model\ResourceModel\Eav\Attribute::getData('additional_data')`
+* `\Magento\Catalog\Model\ResourceModel\Eav\Attribute::getAdditionalData()`
+* `\Magento\Sales\Model\Order\Item::getProductOptions()`
+  * Return value is an array, applicable only for "bundle_selection_attributes" key
+* `\Magento\Quote\Model\Quote\Item::getOptionByCode`
+  * `info_buyRequest` option
+* `\Magento\Rule\Model\AbstractModel::getConditionsSerialized()`
+* `\Magento\Catalog\Model\Product->getCustomOption('attributes')->getValue()`
+* `\Magento\CatalogInventory\Helper\Minsaleqty::makeStorableArrayFieldValue()`
+* `\Magento\Catalog\Model\Product\Option\Type\File::prepareForCart()`
+* `\Magento\Catalog\Model\Product\Configuration\Item\Option\OptionInterface::getValue()`
+* `\Magento\Quote\Model\Quote\Item\Option::getValue()`
+* `\Magento\Catalog\Model\Product\Configuration\Item\ItemInterface::getOptionByCode('bundle_selection_ids')->getValue()`
+* `\Magento\Sales\Model\Order\Item::getProductOptions()['bundle_selection_ids']`
+* `\Magento\Catalog\Model\Product::getCustomOption('bundle_selection_ids')`
+* `\Magento\Rma\Model\Shipping::getPackages()`
+* `\Magento\Rma\Model\Item::getProductOptions()`
+* `\Magento\Logging\Model\Event\Changes::getResultData()`
+* `\Magento\Logging\Model\Event::getInfo()`
+* `\Magento\GiftCardAccount\Helper\Data::getCards()`
+* `\Magento\Sales\Api\Data\OrderInterface`
+  * ['extension_attributes' => 'gift_cards' => JSON]
+
+{% endcollapsible %}
+
+The following methods now require JSON as a parameter instead of a serialized string.
+
+{% collapsible Show methods %}
+
+* `\Magento\Catalog\Model\Product\Option\Type\File::getFormattedOptionValue($optionValue)`
+* `\Magento\Catalog\Model\Product\Option\Type\File::_unserializeValue($value)`
+* `\Magento\Catalog\Model\Product\Option\Type\File::getEditableOptionValue($optionValue)`
+* `\Magento\Catalog\Model\Product\Option\Type\File::prepareOptionValueForRequest($optionValue)`
+* `\Magento\CatalogInventory\Helper\Minsaleqty::unserializeValue($value)`
+* `\Magento\Widget\Helper\Conditions::decode($value)`
+* `\Magento\Wishlist\Model\Item\Option::setValue($value)`
+* `\Magento\Wishlist\Model\Item\Option::setData('value', $value)`
+* `\Magento\Widget\Model\Widget\Instance::setData('widget_parameters', $value)`
+* `\Magento\Sales\Model\Order\Creditmemo\Item::setTaxRatio($value)`
+* `\Magento\Sales\Model\Order\Invoice\Item::setTaxRatio($value)`
+* `\Magento\Quote\Model\Quote\Address\Total::setAppliedTaxes($value)`
+* `\Magento\Quote\Model\Quote\Address\Total::setFullInfo($value)`
+  * Only for string values
+* `\Magento\Catalog\Model\ResourceModel\Eav\Attribute::setData('additional_data', $value)`
+* `\Magento\Catalog\Model\ResourceModel\Eav\Attribute::setAdditionalData($value)`
+* `\Magento\Sales\Model\Order\Item::setProductOptions($value)`
+  * `$value` is an array, applicable only for `bundle_selection_attributes` key
+* `\Magento\Quote\Model\Quote\Item::setOptionByCode`
+  * `info_buyRequest` option
+* `\Magento\Rule\Model\AbstractModel::setConditionsSerialized($value)`
+* `\Magento\Catalog\Model\Product::addCustomOption('attributes', $value)`
+  * For attributes `bundle_selection_ids` key
+* `\Magento\UrlRewrite\Model\UrlRewrite::setMetadata($value)`
+  * For non array values
+* `\Magento\UrlRewrite\Service\V1\Data::setMetadata($value)`
+  * For non array values
+* `\Magento\UrlRewrite\Model\UrlPersistInterface::deleteByData()`
+  * For metadata key
+* `\Magento\Catalog\Model\Product\Configuration\Item\Option\OptionInterface::setValue($value)`
+* `\Magento\Quote\Model\Quote\Item\Option::setValue($value)`
+* `\Magento\Rma\Model\Shipping::setPackages($value)` 
+* `\Magento\Rma\Model\Item::setProductOptions($value)`
+* `\Magento\Logging\Model\Event\Changes::setResultData($value)`
+* `\Magento\Sales\Api\Data\OrderInterface`
+  * ['extension_attributes' => 'gift_cards' => JSON]
+
+{% endcollapsible %}
+
+### Other class changes
+
+| Class                                                          | Change                            |
+| -------------------------------------------------------------- | --------------------------------- |
+| `Magento\Framework\Acl\Cache`                                  | Class removed                     |
+| `Magento\Framework\Acl\Builder::__construct`                   | [public] Method parameter changed |
+| `Magento\Framework\Acl\Builder::$_cache`                       | [protected] Property removed      |
+| `Magento\User\Model\ResourceModel\User::__construct`           | [public] Method parameter changed |
+| `Magento\User\Model\ResourceModel\User::$_aclCache`            | [protected] Property removed      |
+| `Magento\Authorization\Model\ResourceModel\Rules::__construct` | [public] Method parameter changed |
+| `Magento\Authorization\Model\ResourceModel\Rules::$_aclCache`  | [protected] Property removed      |

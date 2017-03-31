@@ -43,6 +43,26 @@
     margin-top: 1em;
   }
 
+
+  .level-2.tutorial {
+    a {
+      position: relative;
+      padding-left: 40px;
+    }
+    a:before {
+      position: absolute;
+      top: 10px;
+      left: 15px;
+      display: inline-block;
+      content: '';
+      width: 16px;
+      height: 14px;
+      vertical-align: middle;
+      background: url(../i/icons/tutorial.svg) no-repeat center;
+      margin: -1px 5px 0 0;
+    }
+  }
+
 }
 
 .toc-toggler {
