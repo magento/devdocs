@@ -14,7 +14,7 @@ github_link: release-notes/ReleaseNotes2.1.2CE.md
 We are pleased to present Magento Community Edition 2.1.2. This release includes security enhancements and several functional fixes.
 
 
-Backward-incompatible changes are documented in [Magento 2.1 backward incompatible changes]({{ page.baseurl }}release-notes/backward-incompatible-changes-2.1.html).
+Backward-incompatible changes are documented in [Magento 2.1 backward incompatible changes]({{ page.baseurl }}release-notes/backward-incompatible-changes.html).
 
 ## Highlights
 

@@ -22,7 +22,7 @@ following command:
 
     mysql -h database.internal -u user
 
-## Set up multiple database users
+## Set up multiple database users {#cloud-appyaml-mysqlusers}
 You can optionally set up multiple databases as well as multiple users with different permissions. By default, there is one endpoint named `mysql` that has administrator access to all defined databases.
 
 To set up multiple databases and users, you must specify multiple endpoints. An _endpoint_ is a user who has privileges you specify.

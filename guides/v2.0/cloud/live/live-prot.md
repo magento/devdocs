@@ -4,7 +4,7 @@ group: cloud
 subgroup: 40_live
 title: Protective block
 menu_title: Protective block
-menu_order: 100
+menu_order: 900
 menu_node: 
 version: 2.0
 github_link: cloud/live/live-prot.md

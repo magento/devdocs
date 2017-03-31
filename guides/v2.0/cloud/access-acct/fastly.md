@@ -4,7 +4,7 @@ group: cloud
 subgroup: 08_setup
 title: Set up Fastly
 menu_title: Set up Fastly
-menu_order: 70
+menu_order: 500
 menu_node: 
 version: 2.0
 github_link: cloud/access-acct/fastly.md
@@ -113,6 +113,26 @@ To create a custom error/maintenance page:
 4.	When you're done, click **Upload**.
 5.	In the Magento Admin, click **Save Config**.
 
+### Upload any Fastly VCL snippets {#cloud-live-migrate-fastly-snip}
+A [Fastly VCL snippet](https://docs.fastly.com/guides/vcl-snippets/about-vcl-snippets){:target="_blank"} is an advanced option that enables you to modify Fastly behavior with service-oriented or versionless objects.
+
+To use snippets, you must upload the Fastly VCL using the Magento Admin as follows:
+
+1.	Log in to the Magento Admin as an administrator. 
+2.	Click **Stores** > Settings > **Configuration** > **Advanced** > **System** as the following figure shows:
+
+	![Choose Fastly]({{ site.baseurl }}common/images/cloud_fastly_menu.png){:width="650px"}
+3.	In the right pane, expand **Full Page Cache**. 
+4.	Click **Upload VCL to Fastly** as the following figure shows.
+
+	![Upload a Magento VCL to Fastly]({{ site.baseurl }}common/images/cloud_upload-vcl-to-fastly.png)
+
+	<div class="bs-callout bs-callout-info" id="info" markdown="1">
+  		If the **Upload VCL to Fastly** button does not display, you should upgrade the Fastly extension to version 1.2.0 or later. For details, see [Update extensions]({{ page.baseurl}}cloud/howtos/update-components.html). Fastly's Composer name is `fastly/magento2`.
+	</div>
+
+5.	Follow the prompts on your screen to complete the task.
+
 ### Advanced configuration options
 For advanced configuration options, customize the [Fastly configuration](https://github.com/fastly/fastly-magento2/blob/master/etc/fastly.vcl){:target="_blank"}.
 
@@ -123,22 +143,20 @@ When you're done with development, [merge your environment]({{ page.baseurl }}cl
 
 For Fastly to be used in production, you must merge with the `master` environment.
 
-<h2 id="custom-vcl">Custom VCLs</h2>
-<p>You're free to customize your Fastly VCL however you want, provided you follow Fastly's guidelines for <a href="https://docs.fastly.com/guides/vcl/mixing-and-matching-fastly-vcl-with-custom-vcl" target="_blank">Mixing and matching Fastly VCL with custom VCL</a>.
+## Custom VCLs {#custom-vcl}
+You're free to customize your Fastly VCL however you want, provided you follow Fastly's guidelines for <a href="https://docs.fastly.com/guides/vcl/mixing-and-matching-fastly-vcl-with-custom-vcl" target="_blank">Mixing and matching Fastly VCL with custom VCL</a>.
 
-<p>Failure to follow these guidelines means your customizations won't work as expected.</p>
+Failure to follow these guidelines means your customizations won't work as expected.
 
-<h4>Next steps</h4>
-<ul><li>If you have issues with the Fastly extension, see <a href="{{ page.baseurl cloud/trouble/trouble_fastly.html}}">Troubleshoot Fastly</a>.</li>
-	<li><a href="{{ page.baseurl }}cloud/env/environments.html">Manage your environments</a></li>
-	<li><a href="{{ page.baseurl }}cloud/project/project-webint-basic.html">Use the Project Web Interface</a></li>
-	<li>Configure your project:
-		<ul><li><a href="{{ page.baseurl }}cloud/project/project-conf-files_magento-app.html"><code>.magento.app.yaml</code></a></li>
-			<li><a href="{{ page.baseurl}}cloud/project/project-conf-files_routes.html"><code>routes.yaml</code></a></li>
-			<li><a href="{{ page.baseurl }}cloud/project/project-conf-files_services.html"><code>services.yaml</code></a></li>
-		</ul>
-	</li>
-</ul>
+Next steps
 
+*	If you have issues with the Fastly extension, see [Troubleshoot Fastly]({{ page.baseurl}}cloud/trouble/trouble_fastly.html)
 
+*	[Manage your environments]({{ page.baseurl }}cloud/env/environments.html)
 
+	*	[Use the Project Web Interface]({{ page.baseurl }}cloud/project/project-webint-basic.html)
+	*	Configure your project:
+
+		*	[`.magento.app.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_magento-app.html)
+		*	[`routes.yaml`]({{ page.baseurl}}cloud/project/project-conf-files_routes.html)
+		*	[`services.yaml`]({{ page.baseurl }}cloud/project/project-conf-files_services.html)

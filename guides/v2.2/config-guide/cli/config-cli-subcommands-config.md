@@ -43,7 +43,7 @@ To set a configuration value, you must know at least one of the following:
     To set a configuration value for the default scope, you don't need to do anything.
 
 ### Find the configuration path
-See [Configuration reference]({{ page.baseurl }}config-guide/config-reference.html).
+See [Configuration reference]({{ page.baseurl }}config-guide/config-reference.html). TBD
 
 ### Find the scope code
 You can find the scope code either in the Magento database or in the Magento Admin. See one of the following sections for more information.

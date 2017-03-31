@@ -6,7 +6,7 @@ title: Deploy static view files
 menu_title: Deploy static view files
 menu_node: 
 menu_order: 300
-version: 2.0
+version: 2.1
 github_link: config-guide/cli/config-cli-subcommands-static-view.md
 redirect_from: /guides/v1.0/config-guide/cli/config-cli-subcommands-static-view.html
 ---
@@ -177,7 +177,7 @@ To do this, take the following steps:
 2. Copy the exported files to the non-production code base.
 3. Run the deployment tool.
 
-#### Exporting the configuration
+#### Export the configuration
 
 The configuration required to deploy static view files can be exported from the database of the production Magento instance. To do it, run the following command for the production instance:
 
@@ -191,10 +191,9 @@ The `config.local.php` file contains the following sections:
 - `scopes`: the list of stores, store groups and websites with related information
 - `i18n`:  all inline translations. This section is used for generating `js-translation.json`
 
-	
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-<p>While the exported configuration files reside in the <code>app/etc</code> directory, you cannot change the value of the corresponding configuration fields under <b>Store</b> -> <b>Configuration</b> in the Admin Panel. The fields are displayed, but disabled. You need to remove the configuration files from <code>app/etc</code> to make the settings available.</p></span>
+<p>While the exported configuration files reside in the <code>app/etc</code> directory, you cannot change the value of the corresponding configuration fields under <b>Store</b> -> <b>Configuration</b> in the Magento Admin. The fields are displayed, but disabled. You need to remove the configuration files from <code>app/etc</code> to make the settings available.</p></span>
 </div> 
 
 ### Environment variables filling
@@ -281,13 +280,13 @@ Use the following steps:
   		<p>If you enable static view file merging in the Magento Admin, the <code>pub/static</code> directory system must be writable.</p></span>
 	</div> -->
 
-## Tips for developers customizing the static content deployment tool
-When creating a custom implementation of the static content deployment tool, do not use non atomic writing to files that should be available on the client side. Otherwise, those files might be loaded on the client side with partial content. 
+## Tip for developers customizing the static content deployment tool
+When creating a custom implementation of the static content deployment tool, use only [atomic](https://en.wikipedia.org/wiki/Linearizability){:target="_blank"} file writing for files that should be available on the client. If you use non-atomic file writing, those files might be loaded on the client with partial content. 
 
-One of the options for making it atomic, is writing to files stored in a temporary directory and coping or moving them to the destination directory (from where they are actually loaded to client side) once writing is over. For details about writing to files see [http://php.net/manual/en/function.fwrite.php](http://php.net/manual/en/function.fwrite.php).
+One of the options for making it atomic is to write to files stored in a temporary directory and copying or moving them to the destination directory (from where they are loaded to client) after writing is over. For details about writing to files, see [http://php.net/manual/en/function.fwrite.php](http://php.net/manual/en/function.fwrite.php){:target="_blank"}.
 
-Please note, that the default Magento implementation of `\Magento\Framework\Filesystem\Directory\WriteInterface::writeFile` uses non-atomic write to file.
-
+<!-- The default Magento implementation of [`Magento\Framework\Filesystem\Directory\WriteInterface::writeFile`]({{ site.mage2100url }}lib/internal/Magento/Framework/Filesystem/Directory/WriteInterface.php#L118){:target="_blank"} uses non-atomic file writing.
+ -->
 ## Related topics
 
 *	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a>

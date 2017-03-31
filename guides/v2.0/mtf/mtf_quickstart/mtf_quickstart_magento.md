@@ -39,6 +39,5 @@ Disable the Secret Key in URL setting to open pages using direct URLs.
 * From the **Actions** list in the upper left, click **Refresh**.
 * Click **Submit**.
 
-<h2 id="mtf_install_pre">Next Steps</h2>
 
 [&lt;&lt; Adjust configuration]({{page.baseurl}}mtf/mtf_quickstart/mtf_quickstart_config.html) | [Prepare environment for test run &gt;&gt;]({{page.baseurl}}mtf/mtf_quickstart/mtf_quickstart_environment.html)

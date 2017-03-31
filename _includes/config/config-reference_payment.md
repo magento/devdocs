@@ -1,40 +1,28 @@
 <div markdown="1">
 
-## Payment methods variables
+## Payment methods paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Payment Methods**.
 
 The settings are further organized by payment method.
 
-### General variable
+### General variable {#vars-merch-country}
 
 Name  | Config path
 |--------------|--------------|
 Merchant Country | `paypal/general/merchant_country`
 
-### Unknown, TBD
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+Your choice for this variable determines which [International paths](#vars-intl-list) you can use.
+</div>
+
+### PayPal paths
 
 Name  | Config path
 |--------------|--------------|
-Enable this Solution | `payment/hosted_pro/active`
-Title | `payment/hosted_pro/title`
-Sort Order | `payment/hosted_pro/sort_order`
-Payment Action | `payment/hosted_pro/payment_action`
-Display Express Checkout in the Payment Information step | `payment/hosted_pro/display_ec`
-Payment Applicable From | `payment/hosted_pro/allowspecific`
-Countries Payment Applicable From | `payment/hosted_pro/specificcountry`
-Debug Mode | `payment/hosted_pro/debug`
-Enable SSL verification | `payment/hosted_pro/verify_peer`
-
-### PayPal variables
-
-Name  | Config path
-|--------------|--------------|
-Email Associated with PayPal Merchant Account (Optional) | `paypal/general/business_account`
 Enable this Solution | `payment/payflowpro/active`
 Enable In-Context Checkout Experience | `payment/paypal_express/in_context`
 Enable PayPal Credit | `payment/payflow_express_bml/active`
 Enable PayPal Credit | `payment/paypal_express_bml/active`
-Publisher ID | `payment/paypal_express_bml/publisher_id`
 Display | `payment/paypal_express_bml/homepage_display`
 Position | `payment/paypal_express_bml/homepage_position`
 Size | `payment/paypal_express_bml/homepage_size`
@@ -71,11 +59,7 @@ Debug Mode | `payment/paypal_billing_agreement/debug`
 Enable SSL verification | `payment/paypal_billing_agreement/verify_peer`
 Transfer Cart Line Items | `payment/paypal_billing_agreement/line_items_enabled`
 Allow in Billing Agreement Wizard | `payment/paypal_billing_agreement/allow_billing_agreement_wizard`
-Login | `paypal/fetch_reports/ftp_login`
-Password | `paypal/fetch_reports/ftp_password`
 Sandbox Mode | `paypal/fetch_reports/ftp_sandbox`
-Custom Endpoint Hostname or IP-Address | `paypal/fetch_reports/ftp_ip`
-Custom Path | `paypal/fetch_reports/ftp_path`
 Enable Automatic Fetching | `paypal/fetch_reports/active`
 Schedule | `paypal/fetch_reports/schedule`
 Time of Day | `paypal/fetch_reports/time`
@@ -86,7 +70,6 @@ Header Background Color | `paypal/style/paypal_hdrbackcolor`
 Header Border Color | `paypal/style/paypal_hdrbordercolor`
 Page Background Color | `paypal/style/paypal_payflowcolor`
 Enable this Solution | `payment/paypal_express/active`
-Merchant Account ID | `payment/paypal_express/merchant_id`
 Sort Order PayPal Credit | `payment/paypal_express_bml/sort_order`
 Title | `payment/paypal_express/title`
 Sort Order | `payment/paypal_express/sort_order`
@@ -109,19 +92,28 @@ PayPal Merchant Pages Style | `payment_all_paypal/express_checkout/settings_ec/s
 Name  | Config path
 |--------------|--------------|
 API Authentication Methods | `paypal/wpp/api_authentication`
-API Username | `paypal/wpp/api_username`
-API Password | `paypal/wpp/api_password`
-API Signature | `paypal/wpp/api_signature`
-API Certificate | `paypal/wpp/api_cert`
 Sandbox Mode | `paypal/wpp/sandbox_flag`
 API Uses Proxy | `paypal/wpp/use_proxy`
-Proxy Host | `paypal/wpp/proxy_host`
-Proxy Port | `paypal/wpp/proxy_port`
 SFTP Credentials | `payment_all_paypal/payments_pro_hosted_solution/pphs_settings/pphs_settings_advanced/pphs_settlement_report/heading_sftp`
 Scheduled Fetching | `payment_all_paypal/payments_pro_hosted_solution/pphs_settings/pphs_settings_advanced/pphs_settlement_report/heading_schedule`
 SFTP Credentials | `payment_all_paypal/payments_pro_hosted_solution_without_bml/pphs_settings/pphs_settings_advanced/pphs_settlement_report/heading_sftp`
 Scheduled Fetching | `payment_all_paypal/payments_pro_hosted_solution_without_bml/pphs_settings/pphs_settings_advanced/pphs_settlement_report/heading_schedule`
 
+
+### Payments Pro Hosted Solution (United Kingdom)
+These options are available only if you chose the United Kingdom as the [merchant country](#vars-merch-country). 
+
+Name  | Config path
+|--------------|--------------|
+Enable this Solution | `payment/hosted_pro/active`
+Title | `payment/hosted_pro/title`
+Sort Order | `payment/hosted_pro/sort_order`
+Payment Action | `payment/hosted_pro/payment_action`
+Display Express Checkout in the Payment Information step | `payment/hosted_pro/display_ec`
+Payment Applicable From | `payment/hosted_pro/allowspecific`
+Countries Payment Applicable From | `payment/hosted_pro/specificcountry`
+Debug Mode | `payment/hosted_pro/debug`
+Enable SSL verification | `payment/hosted_pro/verify_peer`
 
 ### PayPal Payments Standard
 
@@ -146,14 +138,9 @@ AVS Street Does Not Match | `payment/payflowpro/avs_street`
 AVS Zip Does Not Match | `payment/payflowpro/avs_zip`
 International AVS Indicator Does Not Match | `payment/payflowpro/avs_international`
 Card Security Code Does Not Match | `payment/payflowpro/avs_security_code`
-Partner | `payment/payflowpro/partner`
-User | `payment/payflowpro/user`
 Vendor | `payment/payflowpro/vendor`
-Password | `payment/payflowpro/pwd`
 Test Mode | `payment/payflowpro/sandbox_flag`
 Use Proxy | `payment/payflowpro/use_proxy`
-Proxy Host | `payment/payflowpro/proxy_host`
-Proxy Port | `payment/payflowpro/proxy_port`
 Title | `payment/payflow_express/title`
 Sort Order | `payment/payflow_express/sort_order`
 Payment Action | `payment/payflow_express/payment_action`
@@ -162,8 +149,6 @@ Scheduled Fetching | `payment_all_paypal/paypal_payflowpro/settings_paypal_payfl
 PayPal Merchant Pages Style | `payment_all_paypal/payflow_link/settings_payflow_link/settings_payflow_link_advanced/payflow_link_frontend/paypal_pages`
 Partner | `payment/payflow_advanced/partner`
 Vendor | `payment/payflow_advanced/vendor`
-User | `payment/payflow_advanced/user`
-Password | `payment/payflow_advanced/pwd`
 Test Mode | `payment/payflow_advanced/sandbox_flag`
 Use Proxy | `payment/payflow_advanced/use_proxy`
 Proxy Host | `payment/payflow_advanced/proxy_host`
@@ -189,8 +174,6 @@ Name  | Config path
 |--------------|--------------|
 Partner | `payment/payflow_link/partner`
 Vendor | `payment/payflow_link/vendor`
-User | `payment/payflow_link/user`
-Password | `payment/payflow_link/pwd`
 Test Mode | `payment/payflow_link/sandbox_flag`
 Use Proxy | `payment/payflow_link/use_proxy`
 Proxy Host | `payment/payflow_link/proxy_host`
@@ -212,23 +195,18 @@ Title | `payment/payflow_link/title`
 Sort Order | `payment/payflow_link/sort_order`
 Payment Action | `payment/payflow_link/payment_action`
 
-### Braintree variables
+### Braintree paths
 
 Name  | Config path
 |--------------|--------------|
 Title | `payment/braintree/title`
 Environment | `payment/braintree/environment`
 Payment Action | `payment/braintree/payment_action`
-Merchant ID | `payment/braintree/merchant_id`
-Public Key | `payment/braintree/public_key`
-Private Key | `payment/braintree/private_key`
 Enable this Solution | `payment/braintree/active`
 Enable PayPal through Braintree | `payment/braintree_paypal/active`
 Vault Enabled | `payment/braintree_cc_vault/active`
 Vault Title | `payment/braintree_cc_vault/title`
-Merchant Account ID | `payment/braintree/merchant_account_id`
 Advanced Fraud Protection | `payment/braintree/fraudprotection`
-Kount Merchant ID | `payment/braintree/kount_id`
 Debug | `payment/braintree/debug`
 CVV Verification | `payment/braintree/useccv`
 Credit Card Types | `payment/braintree/cctypes`
@@ -239,7 +217,6 @@ Country Specific Credit Card Types | `payment/braintree/countrycreditcard`
 Title | `payment/braintree_paypal/title`
 Vault Enabled | `payment/braintree_paypal_vault/active`
 Sort Order | `payment/braintree_paypal/sort_order`
-Override Merchant Name | `payment/braintree_paypal/merchant_name_override`
 Payment Action | `payment/braintree_paypal/payment_action`
 Payment from Applicable Countries | `payment/braintree_paypal/allowspecific`
 Payment from Specific Countries | `payment/braintree_paypal/specificcountry`
@@ -256,7 +233,7 @@ Name | `payment/braintree/descriptor_name`
 Phone | `payment/braintree/descriptor_phone`
 URL | `payment/braintree/descriptor_url`
 
-### Zero Subtotal Checkout variables
+### Zero Subtotal Checkout paths
 
 Name  | Config path
 |--------------|--------------|
@@ -268,7 +245,7 @@ Payment from Applicable Countries | `payment/free/allowspecific`
 Payment from Specific Countries | `payment/free/specificcountry`
 Sort Order | `payment/free/sort_order`
 
-### Cash on Delivery Payment variables
+### Cash on Delivery Payment paths
 
 Name  | Config path
 |--------------|--------------|
@@ -282,7 +259,7 @@ Minimum Order Total | `payment/cashondelivery/min_order_total`
 Maximum Order Total | `payment/cashondelivery/max_order_total`
 Sort Order | `payment/cashondelivery/sort_order`
 
-### Bank Transfer Payment variables
+### Bank Transfer Payment paths
 
 Name  | Config path
 |--------------|--------------|
@@ -296,7 +273,7 @@ Minimum Order Total | `payment/banktransfer/min_order_total`
 Maximum Order Total | `payment/banktransfer/max_order_total`
 Sort Order | `payment/banktransfer/sort_order`
 
-### Check / Money Order variables
+### Check / Money Order paths
 
 Name  | Config path
 |--------------|--------------|
@@ -311,7 +288,7 @@ Minimum Order Total | `payment/checkmo/min_order_total`
 Maximum Order Total | `payment/checkmo/max_order_total`
 Sort Order | `payment/checkmo/sort_order`
 
-### Purchase Order variables
+### Purchase Order paths
 
 Name  | Config path
 |--------------|--------------|
@@ -324,16 +301,13 @@ Minimum Order Total | `payment/purchaseorder/min_order_total`
 Maximum Order Total | `payment/purchaseorder/max_order_total`
 Sort Order | `payment/purchaseorder/sort_order`
 
-### Authorize.net Direct Post variables
+### Authorize.net Direct Post paths
 
 Name  | Config path
 |--------------|--------------|
 Enabled | `payment/authorizenet_directpost/active`
 Payment Action | `payment/authorizenet_directpost/payment_action`
 Title | `payment/authorizenet_directpost/title`
-API Login ID | `payment/authorizenet_directpost/login`
-Transaction Key | `payment/authorizenet_directpost/trans_key`
-Merchant MD5 | `payment/authorizenet_directpost/trans_md5`
 New Order Status | `payment/authorizenet_directpost/order_status`
 Test Mode | `payment/authorizenet_directpost/test`
 Gateway URL | `payment/authorizenet_directpost/cgi_url`
@@ -341,7 +315,6 @@ Transaction Details URL | `payment/authorizenet_directpost/cgi_url_td`
 Accepted Currency | `payment/authorizenet_directpost/currency`
 Debug | `payment/authorizenet_directpost/debug`
 Email Customer | `payment/authorizenet_directpost/email_customer`
-Merchant's Email | `payment/authorizenet_directpost/merchant_email`
 Credit Card Types | `payment/authorizenet_directpost/cctypes`
 Credit Card Verification | `payment/authorizenet_directpost/useccv`
 Payment from Applicable Countries | `payment/authorizenet_directpost/allowspecific`
@@ -350,18 +323,13 @@ Minimum Order Total | `payment/authorizenet_directpost/min_order_total`
 Maximum Order Total | `payment/authorizenet_directpost/max_order_total`
 Sort Order | `payment/authorizenet_directpost/sort_order`
 
-### Cybersource variables
+### Cybersource paths
 
 Name  | Config path
 |--------------|--------------|
 Enabled | `payment/cybersource/active`
 Payment Action | `payment/cybersource/payment_action`
 Title | `payment/cybersource/title`
-Merchant ID | `payment/cybersource/merchant_id`
-Transaction Key | `payment/cybersource/transaction_key`
-Profile ID | `payment/cybersource/profile_id`
-Access Key | `payment/cybersource/access_key`
-Secret Key | `payment/cybersource/secret_key`
 New Order Status | `payment/cybersource/order_status`
 Test Mode | `payment/cybersource/sandbox_flag`
 Debug | `payment/cybersource/debug`
@@ -372,20 +340,14 @@ Minimum Order Total | `payment/cybersource/min_order_total`
 Maximum Order Total | `payment/cybersource/max_order_total`
 Sort Order | `payment/cybersource/sort_order`
 
-### Worldpay variables
+### Worldpay paths
 
 Name  | Config path
 |--------------|--------------|
 Enabled | `payment/worldpay/active`
 Title | `payment/worldpay/title`
-Installation ID | `payment/worldpay/installation_id`
-Payment Response Password | `payment/worldpay/response_password`
-Remote Admin Installation ID | `payment/worldpay/admin_installation_id`
-Remote Admin Authorisation Password | `payment/worldpay/auth_password`
-MD5 Secret for Transactions | `payment/worldpay/md5_secret`
 Allow To Edit Contact Information | `payment/worldpay/fix_contact`
 Hide Contact Information | `payment/worldpay/hide_contact`
-Signature Fields | `payment/worldpay/signature_fields`
 Debug | `payment/worldpay/debug`
 Test Mode | `payment/worldpay/sandbox_flag`
 Payment Action for Test | `payment/worldpay/test_action`
@@ -396,7 +358,7 @@ Set Order Status to Suspected Fraud for CVV | `payment/worldpay/cvv_fraud_case`
 Set Order Status to Suspected Fraud for Postcode AVS | `payment/worldpay/avs_fraud_case`
 Sort Order | `payment/worldpay/sort_order`
 
-### eWAY variables
+### eWAY paths
 
 Name  | Config path
 |--------------|--------------|
@@ -404,12 +366,6 @@ Enabled | `payment/eway/active`
 Connection Type | `payment/eway/connection_type`
 Title | `payment/eway/title`
 Sandbox Mode | `payment/eway/sandbox_flag`
-Live API Key | `payment/eway/live_api_key`
-Live API Password | `payment/eway/live_api_password`
-Live Client-side Encryption Key | `payment/eway/live_encryption_key`
-Sandbox API Key | `payment/eway/sandbox_api_key`
-Sandbox API Password | `payment/eway/sandbox_api_password`
-Sandbox Client-side Encryption Key | `payment/eway/sandbox_encryption_key`
 Payment Action | `payment/eway/payment_action`
 Debug | `payment/eway/debug`
 Credit Card Types | `payment/eway/cctypes`
@@ -417,7 +373,11 @@ Payment from Applicable Countries | `payment/eway/allowspecific`
 Payment from Specific Countries | `payment/eway/specificcountry`
 Sort Order | `payment/eway/sort_order`
 
-### International variables
+### International paths {#vars-intl-list}
+
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+The variable values available are determined by your choice of [Merchant country](#vars-merch-country).
+</div>
 
 Name  | Config path
 |--------------|--------------|
@@ -1799,7 +1759,6 @@ Sort Order | `payment_gb/eway/sort_order`
 SFTP Credentials | `payment_us/paypal_alternative_payment_methods/express_checkout_us/settings_ec/settings_ec_advanced/express_checkout_settlement_report/heading_sftp`
 Scheduled Fetching | `payment_us/paypal_alternative_payment_methods/express_checkout_us/settings_ec/settings_ec_advanced/express_checkout_settlement_report/heading_schedule`
 PayPal Merchant Pages Style | `payment_us/paypal_alternative_payment_methods/express_checkout_us/settings_ec/settings_ec_advanced/express_checkout_frontend/paypal_pages`
-
 Scheduled Fetching | `payment_us/paypal_group_all_in_one/payflow_advanced/settings_payments_advanced/settings_payments_advanced_advanced/settlement_report/heading_schedule`
 PayPal Merchant Pages Style | `payment_us/paypal_group_all_in_one/payflow_advanced/settings_payments_advanced/settings_payments_advanced_advanced/frontend/paypal_pages`
 Credit Card Settings | `payment_us/paypal_group_all_in_one/wpp_usuk/settings_paypal_payflow/heading_cc`

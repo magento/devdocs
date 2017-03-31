@@ -55,6 +55,22 @@ namem2devgde: "Magento 2 Developer's Guide"
 namem2apiref: "Magento 2 API Reference"
 namem2install: "Magento 2 Installation Guide"
 
+
+collections:
+  videos:
+    output: true
+    permalink: "/videos/:path/"
+
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: videos
+    values:
+      layout: video
+      guide_version: "2.1"
+
 # toc_baseurl: "https://github.corp.ebay.com/pages/Magento/devdocs_internal"
 
 # Build settings
@@ -63,9 +79,11 @@ highlighter: pygments
 kramdown:
   toc_levels: 2..3
 
-incremental: true
+incremental: false
 
 gems:
   - jekyll-redirect-from
 
-exclude: ['scss', 'bin', 'node_modules', 'vendor', '.git', '.idea' ]
+
+exclude: ['scss', 'bin', 'node_modules', 'vendor', '.git', '.idea', 'guides/v2.2' ]
+

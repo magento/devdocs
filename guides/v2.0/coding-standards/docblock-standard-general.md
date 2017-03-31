@@ -37,7 +37,7 @@ The documentation should follow two simple principles:
 
 ### Short documentation
 
-The documentation should be as short as possible, but it should not skip necessary details.  
+The documentation should be as short as possible, but it should not skip necessary details.
 
 Below are ways of improving code to help simplify documentation:
 
@@ -45,7 +45,7 @@ Below are ways of improving code to help simplify documentation:
 * Put all possible information in the names of classes, methods, and variables. (e.g. use `$timeInSec` instead of `$time`)
 * Break down a method into smaller methods with descriptive names.
   See example below:
-  
+
   {% highlight php startinline=true %}
   public function getPrice()
   {
@@ -59,21 +59,21 @@ Below are ways of improving code to help simplify documentation:
   {
       // calculate base price
   }
-    
+
   private function getDiscount()
   {
     if (it's discount time) {
       return 10;
     }
     return 0;
-  } 
+  }
   {% endhighlight %}
 
 ### Include all the necessary details
 
 1. Identify the details a developer needs to work with your code.
 2. Ignore the implementation details (i.e. private methods/properties and method bodies) and focus on what the public interface signature provides.
-   
+
    If possible, improve the interface to provide more information.
 3. Add any remaining information that a developer may need to the DocBlock.
 
@@ -125,14 +125,14 @@ This section is applicable to Magento core files only. Please follow it if you a
 
 Any file in Magento source should have a header with license and copyright notice.
 Exceptions are files with format that doesn't support comments, and so no meta information can be added.
- 
+
 License notice and copyright MUST be declared in the very beginning of the file.
 If the file contains a structural element (for example, a class), description for the element should be declared as a separate DocBlock.
 
 Use the following templates for the license notice and copyright blocks:
 
 **Template for PHP Files**
- 
+
 {% highlight php %}
 <?php
 /**
@@ -333,7 +333,7 @@ class Profiler
 Functions and methods must have:
 
 * Short description
-* Long description that explains the motivation behind the implementation. 
+* Long description that explains the motivation behind the implementation.
   For example:
 
    * If a workaround or hack is implemented, explain why it is necessary and include any other details necessary to understand the algorithm.
@@ -347,24 +347,28 @@ Functions and methods must have:
 * Declaration of possibly thrown exception using `@throws` tag, if the actual body of function triggers throwing an exception.
   All occurrences of `@throws` in a DocBlock must be after `@param` and `@return` (if any).
 
-Exceptions:
+**Exceptions to these rules:**
+
 * Constructors may not have short and/or long description
+
 * Testing methods in Unit tests may not have doc blocks if the test's method name follows the convention (test<MethodName>)
+
    * If the test does not follow the convention, it should have a doc block describing the covered methods
+
    * Non-testing methods should have a doc block with description. It includes data providers and any helper methods
 
 #### Things to include
 
 * An explanation of input arguments and return values if it is not obvious from their name and type.
-  
+
   This is applicable in the following cases:
 
   * There is more than one possible input/output type.
 
-    For example: `@return Config|null`.  
+    For example: `@return Config|null`.
     The DockBlock needs to explain what situations return `null`.
 
-    Another example: `@param FileInterface | null`.  
+    Another example: `@param FileInterface | null`.
     The DocBlock needs to explain what happens when the value of the parameter is `null`.
 
     Ideally, implementations such as these should be avoided.
@@ -377,7 +381,7 @@ Exceptions:
 
 #### Things to avoid
 
-* Copying the algorithm. 
+* Copying the algorithm.
   The algorithm must be self-explanatory and understood by reviewing the code and unit tests.
 * Information that is out of date or has the potential to become out of date.
 
@@ -419,7 +423,7 @@ protected function merge($configFiles)
 
 In general, use the `@throws` tag when the code uses *throw*:
 
-**Example of Throwing Exception Explicitly**  
+**Example of Throwing Exception Explicitly**
 {% highlight php startinline=true %}
 /**
  * Set an arbitrary value to specified element
@@ -526,7 +530,7 @@ class Profiler
 
 DocBlock template is a DocBlock that starts from `/**#@+*/` and ends with `/**#@-*/`.
 Templates are not supported by PHPDocumentor anymore. Therefore, they MUST NOT be used.
-  
+
 It's encouraged to replace existing DocBlock templates with regular DocBlock comments when the file is being modified.
 
 ## Structure of documentation space
@@ -565,7 +569,7 @@ interface MutableInterface
      * @return int
      */
     public function getVal();
- 
+
     /**
      * Set value
      *
@@ -590,7 +594,7 @@ class LimitedMutableClass implements MutableInterface
     public function getVal()
     {
     }
- 
+
     /**
      * Set value
      *
@@ -630,8 +634,8 @@ For example:
 /**
  * Get some object
  *
- * @deprecated Added to not break backward compatibility of the constructor signature 
- *             by injecting the new dependency directly. 
+ * @deprecated Added to not break backward compatibility of the constructor signature
+ *             by injecting the new dependency directly.
  *             The method can be removed in a future major release, when constructor signature can be changed
  * @return SomeObjectInterface
  */
@@ -651,7 +655,7 @@ public function setPrice($price)
 {
     ...
 }
- 
+
 /**
  * Set price for specified scope
  *
@@ -784,5 +788,3 @@ public function reorderChild($parentId, $childId, $position)
  * @see _insertChild() for position explanation
  */
 {% endhighlight %}
-
-

@@ -3,11 +3,9 @@ layout: default
 group: mrg
 subgroup: Enterprise Edition
 title: Module Reference Guide
-menu_title: CatalogInventoryStaging
+menu_title: Magento_CatalogInventoryStaging module
 menu_order: 2
 version: 2.1
-
-
 github_link: mrg/ee/CatalogInventoryStaging.md
 ---
 
