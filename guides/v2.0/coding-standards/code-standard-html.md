@@ -1,8 +1,9 @@
 ---
 layout: default
 group: coding-standards
-subgroup: Coding standards
+subgroup: 01_Coding standards
 title: HTML style guide
+landing-page: Coding standards
 menu_title: HTML style guide
 menu_order: 9
 version: 2.0
@@ -125,4 +126,3 @@ All pages should comply with the [Web Content Accessibility Guidelines (WCAG) 2.
 
 ## Microdata
 All crucial pages (like product page) should contain [microdata](https://www.w3.org/TR/microdata/). Please pay attention to this recommendation when adding new functionality.
-
