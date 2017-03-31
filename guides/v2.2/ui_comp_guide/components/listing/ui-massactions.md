@@ -10,7 +10,7 @@ github_link: ui_comp_guide/components/listing/ui-massactions.md
 
 ### MassAction JS component structure
 
-The MassActions component allows selecting items in Listing and creates actions to perform with selected items. Must be a child of the [Listing component]({{page.baseurl}}ui_comp_guide/components/ui-listing-grid.html). 
+The MassActions component allows selecting items in Listing and creates actions to perform with selected items. Must be a child of the [Listing component]({{page.baseurl}}ui_comp_guide/components/ui-listing-grid.html).
 
 See the [Admin Design Pattern Library (MassActions)]({{page.baseurl}}pattern-library/displaying-data/datatable/datatable.html#massactions) topic for information about the UI design patterns that can be implemented using the Tab component.
 
@@ -42,7 +42,7 @@ Extends <code>Collapsible</code> configuration with the following options:
   <tr>
     <td><code>actions</code></td>
     <td>A list of available actions.</td>
-    <td>Array</td>
+    <td><code>MassAction[]</code></td>
     <td>-</td>
   </tr>
   <tr>
@@ -100,7 +100,7 @@ Extends <code>Collapsible</code> configuration with the following options:
   </tr>
   <tr>
     <td><code>url</code></td>
-    <td>Path to the contoller responsible for action handling.</td>
+    <td>Path to the controller responsible for action handling.</td>
     <td>String</td>
     <td>Optional</td>
   </tr>

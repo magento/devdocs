@@ -8,6 +8,10 @@ version: 2.2
 github_link: ui_comp_guide/components/listing/ui-linkсolumn.md
 ---
 
+## Overview
+
+The LinkColumn component is a table's column field's of which may display the anchor element instead of a plain text.
+
 Constructor: [app/code/Magento/Ui/view/base/web/js/grid/columns/link.js]({{mage.2200url}}app/code/Magento/Ui/view/base/web/js/grid/columns/link.js)
 
 ## LinkColumn configuration

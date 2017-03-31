@@ -16,7 +16,7 @@ Constructor: [app/code/Magento/Ui/view/base/web/js/grid/paging/paging.js]({{site
 
 ## Paging configuration
 
-Extends all [Multiline]({{page.baseurl}}ui_comp_guide/components/ui-multiline.html) configuration.
+Extends all [`UiElement`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uielement_concept.html) configuration.
 
 Paging-specific configuration:
 

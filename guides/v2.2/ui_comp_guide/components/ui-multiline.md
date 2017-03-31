@@ -8,6 +8,10 @@ version: 2.2
 github_link: ui_comp_guide/components/ui-multiline.md
 ---
 
+## Overview
+
+The Multiline component is a collection form elements that is used to display multiple fields of the same type, the "Street Address" fields, for instance.
+
 
 ## Multiline configuration
 Extends all [`uiCollection`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uicollection_concept.html) configuration.
@@ -57,21 +61,6 @@ Multiline-specific options:
     </td>
     <td>
       <code>true</code>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>cols</code>
-    </td>
-    <td>
-      The number of columns that will be specified in the
-      <code>cols</code> attribute of the textarea DOM element.
-    </td>
-    <td>
-      Number
-    </td>
-    <td>
-      <code>15</code>
     </td>
   </tr>
   <tr>
