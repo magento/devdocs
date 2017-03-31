@@ -21,7 +21,7 @@ These guidelines came from many years of hard work, experience, and discussions.
 
 ### Text conventions
 
-Use RFC2119 to interpret keywords like:
+Use [RFC2119] to interpret keywords like:
 
 * MUST and MUST NOT
 
@@ -300,9 +300,192 @@ class Config
 
 5.17. `LocalizedException` SHOULD only be thrown in the Presentation layer (Controllers, Blocks).
 
+## 6. Application layers
+
+### 6.1. All layers
+
+6.1.1. Application SHOULD be structured in compliance with the [CQRS principle].
+
+6.1.2. Every application layer (Presentation, Service Contracts, Data Access) MUST process (handle or re-throw) exceptions of the underlying layer.
+
+### 6.2. Presentation layer
+
+6.2.1. According to CQRS, the Presentation layer hosts the Command and the Query Infrastructures:
+
+    * **Command** for Actions
+
+    * **Query** for Layout and its elements (Blocks and UI Components)
+
+6.2.2. Request, Response, Session, Store Manager and Cookie objects MUST only be used in the Presentation layer.
+
+6.2.3. All actions MUST return the `ResultInterface` implementation.
+
+6.2.4. Actions MUST NOT reference blocks declared in layout.
+
+###  6.3. Data Access (Persistence) layer
+
+6.3.1. Entities MAY have fields scoped differently (in product, EAV --- per store, options --- per website).
+
+6.3.2. Every persistence operation MUST be performed with one scope set.
+
+6.3.3. Entities MUST NOT contain persistence-related logic.
+
+6.3.4. MySQL's `strict_mode` variable SHOULD be aligned with the default `strict_mode` of the latest MySQL release.
+
+### 6.4. Service Contracts (Application) layer
+
+We are reviewing this section and will publish it soon.
+
+## 7. Configuration
+
+7.1. An Application Instance consists of:
+
+    * Code
+
+    * Environment Configuration
+
+    * Data
+
+7.2. Code includes:
+
+    * application codebase
+
+    * XML configuration
+
+    * generated code and static files
+
+    * database structure
+
+    * system configuration values
+
+    * configuration scopes (stores/store groups/websites)
+
+    * CMS entities
+
+7.3. Environment Configuration includes information about application services connection.
+
+7.4. Data includes the business entity data.
+
+7.5. Code and Environment Configuration MUST not be stored in Data Storage.
+
+7.6. Installation process MUST NOT modify Code.
+
+7.7. All XML configuration formats MUST be declarative. Imperative nodes are not allowed.
+
+7.8. All Configuration objects MUST use `Magento\Framework\Config`.
+
+## 8. Modularity
+
+8.1. The Application Framework (`Magento\Framework\*`) MUST NOT depend on application modules.
+
+8.2. All dependencies MUST be declared in the component's `composer.json` file.
+
+8.3. If component A uses behavior of Component B, such Component B MUST be declared in the `require` section of Component A's `composer.json` file, except for cases where Component B is used in the code that customizes the behavior of Component B.
+
+8.4. If component A extends/customizes the behavior of component B through its customization points (layout handles, plugins, events, etc.), such Component B MUST be declared in the `suggest` section of Component A.
+
+8.5. Only the `@api` code of any module can be referenced by other modules.
+
+8.6. A module MUST NOT contain references to theme resources.
+
+8.7. A component MUST NOT rely neither on dependencies of dependencies nor on dependencies of the project it is included in (e.g., Magento application). All component dependencies MUST be stated explicitly.
+
+## 9. Caching
+
+9.1. Caching MUST be transparent for store admin. There SHOULD NOT be a "Clean cache" button for any cache type. Cache cleaning and invalidation MUST take place automatically.
+
+## 10. Browser-Server interaction in web application
+
+10.1. All Client-Server calls must follow the [HTTP Protocol].
+
+10.2. All customer-agnostic data (Products, Categories, CMS Pages) MUST be rendered on server and cached in a public cache server (Varnish).
+
+10.3. All customer-specific data MUST be rendered on the browser side using a JavaScript (JS) application.
+
+10.4. HTML markup generated on server MUST NOT contain user-specific data.
+
+10.5. HTML markup generated on server MUST NOT contain session-specific data (e.g. form element with CSRF token).
+
+10.6. A JS application MAY receive customer-specific data using the CustomerData JS API.
+
+10.7. All state-modifying requests from a browser SHOULD be performed with AJAX requests.
+
+10.8. If an error occurs during request handling, the server MUST return an appropriate [HTTP Status Code] and an explanation of error in the response body.
+
+10.9. All headers MUST be respected.
+
+10.10. The Request, Session, and Cookie objects MUST NOT be injected in an object constructor. They MUST only be passed as method arguments.
+
+10.11. Operation scopes MUST always be explicitly requested by operations (`StoreManager` SHOULD NOT be used to retrieve the store ID).
+
+## 11. JavaScript (JS) application
+
+11.1. The Magento 2 UI Component framework MUST be used to build front-end applications.
+
+11.2. Only private content SHOULD be rendered in browser.
+
+11.3. All module dependencies of a RequireJS module MUST be declared in the module's definition header. No direct calls to `require` SHOULD be made unless the list of modules to be loaded is dynamic.
+
+11.4. The [W3C Content Security Policy] MUST be followed.
+
+11.5. The [Airbnb JS Style Guide] SHOULD BE followed.
+
+11.5.1. ES2015 SHOULD be used as a JS standard.
+
+11.5.2. Language features (closures) MUST be used for scope management. There SHOULD be no `_` (underscore) naming convention for private properties.
+
+11.5.3. All asynchronous operations MUST be represented with ES2015 Promises.
+
+11.5.4. Global properties (window.*) MUST NOT be used. A module system SHOULD be used for shared objects.
+
+11.5.5. Modules MUST NOT have external side effects.
+
+11.5.6. Every ES2015 module MUST declare a default value.
+
+11.5.7. Function declarations MUST be used for private functions instead of function expressions.
+
+11.5.8. Re-declaration of function names MUST NOT be used.
+
+## 12. Testing
+
+### 12.1. White-box testing (unit, integration, functional)
+
+12.1.1. Only public methods SHOULD be tested. Private and protected behavior SHOULD be tested through public methods.
+
+### 12.2. Unit testing
+
+12.2.1. All objects SHOULD be tested in isolation.
+
+12.2.2. `ObjectManager` MUST NOT be used in unit tests.
+
+12.2.3. `ObjectManagerHelper` MAY BE used to automatically mock all dependencies of the object under test.
+
+## 13. Web API
+
+13.1. Both REST and SOAP API's MUST be exposed.
+
+13.2. All Web API GET endpoints MUST return lists of entities.
+
+## 14. Command line interface (CLI)
+
+14.1. Magento 2 [CLI Command Naming Guidelines] MUST be followed.
+
+14.2. A CLI command MUST be created for any functionality intended to be used by a system integrator/system administrator/developer, for example: change indexer mode, generate a configuration file, etc.
+
+14.3. A CLI command MUST always run in a global area. If a command needs a specific area to perform its functions, such area should be set up before execution.
+
+14.4. Exception in a single CLI command SHOULD NOT break the CLI framework; running other commands SHOULD still be possible.
+
 
 <!-- LINKS: DEFINITIONS AND ADDRESSES -->
 
+[RFC2119]: https://tools.ietf.org/html/rfc2119
 [SOLID principles]: https://en.wikipedia.org/wiki/SOLID_(object-oriented_design)
 [Temporal coupling]: http://blog.ploeh.dk/2011/05/24/DesignSmellTemporalCoupling/
 [Law of Demeter]: https://en.wikipedia.org/wiki/Law_of_Demeter
+[CQRS principle]: https://martinfowler.com/bliki/CQRS.html
+[HTTP Protocol]: https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol
+[HTTP Status Code]: https://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html
+[W3C Content Security Policy]: https://w3c.github.io/webappsec-csp/
+[Airbnb JS Style Guide]: https://github.com/airbnb/javascript
+[CLI Command Naming Guidelines]: {{page.baseurl}}extension-dev-guide/cli-cmds/cli-naming-guidelines.html
