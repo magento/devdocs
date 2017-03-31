@@ -8,6 +8,10 @@ version: 2.2
 github_link: ui_comp_guide/components/ui-actiondelete.md
 ---
 
+## Overview
+
+The ActionDelete component provides user interface for deleting records of the DynamicRows component.
+
 ## ActionDelete options
 
 Extends all `abstract` configuration.
