@@ -1,0 +1,47 @@
+---
+layout: tutorial
+group: contributor
+subgroup: templates
+level3_subgroup: sample-tutorial
+title: Sample tutorial
+subtitle: Initial tasks
+menu_order: 0
+version: 2.0
+github_link: contributor-guide/tutorial-template-first.md
+---
+
+A tutorial provides procedurial information spread across multiple pages. It contains several design elements that differ from standard topics:
+
+* When a user clicks on a tutorial title from the left navigation area, the Devdocs website replaces the navigation with a table of contents that is specific to the tutorial.
+* **Next** and **Previous** buttons are displayed at the bottom of each topic.
+
+## Metadata parameters
+
+The following table lists the metadata parameters that are used in a tutorial.
+
+Parameter | Description
+--- | ---
+`layout:` | Must be `tutorial`.
+`group:` | The group, or book, to which the topic belongs.
+`subgroup:`| First page only. Places a link with the specified text to the sidebar
+`level3_subgroup:` | A group name that binds the tutorial topics together. This value must be specified on each topic in the tutorial.
+`title:` | The title of the tutorial. On the first page of the tutorial, specify `Initial tasks`. For all other topics in the tutorial, this value should be in the form _Step X. Perform this task_. (For example, `Step 1. Configure the Store`)
+`subtitle` | Displays the tutorial name. The value must be specified on each topic in the tutorial.
+`menu_title:` | The title of topic.
+`menu_order:` | The sequence number of the topic. If the topic is an intro topic in a multi-step tutorial, set this 0. Otherwise set it to the step number.
+`version:` | The version of Magento that this topic applies to.
+`github_link:` | The path to the MD file, starting at the book directory. Ex: `get-started/order-tutorial/order-intro.md`
+`ee_only:` | If set to `true`, graphics/cues indicating that the article applies to EE are displayed on devdocs.
+
+## Before you begin...
+{:.tutorial-before}
+
+This tutorial will show a < audience/skill level> how to < perform the task addressed in this topic. > Summarize the goals of the tutorial and the benefit that the reader will receive upon completion. This summary should be very brief--about 3 lines.
+
+(Optional) The **X-step tutorial** generally takes **YY minutes**.
+
+## Complete these prerequisites
+
+* List any skills required (PHP, database, admin, etc.)
+* List any assumptions or requirements before starting.
+* List any steps, bulleted and in order, necessary before starting the tutorial.
