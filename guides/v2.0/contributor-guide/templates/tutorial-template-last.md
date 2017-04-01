@@ -2,14 +2,13 @@
 layout: tutorial
 group: contributor
 level3_subgroup: sample-tutorial
-title: Sample tutorial
-menu_title: Step X. Finish the tutorial
+title: Step X. Finish the tutorial
+subtitle: Sample template tutorial
 menu_order: 2
 level3_menu_node:
 level3_subgroup: sample-tutorial
 version: 2.0
 github_link: contributor-guide/tutorial-template-last.md
-
 ---
 
 The `title` and `subtitle` parmaters provide the top-level headings on this page. Add the content as you see fit.

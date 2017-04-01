@@ -2,12 +2,13 @@
 layout: tutorial
 group: contributor
 level3_subgroup: sample-tutorial
-title: Sample tutorial
-subtitle: Step 1. Start the procedure
+title: Step 1. Start the procedure
+subtitle: Sample template tutorial
 menu_order: 1
 level3_subgroup: sample-tutorial
 version: 2.0
 github_link: contributor-guide/tutorial-template-middle.md
+
 ---
 <!-- The title of the tutorial is defined in the title parameter -->
 
