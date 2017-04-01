@@ -5,8 +5,6 @@ These configuration values are availabe in the Magento Admin in **Stores** > Set
 
 The settings are further organized by payment method.
 
-
-
 ### PayPal paths
 
 Name  | Config path | EE only? | Encrypted? |
