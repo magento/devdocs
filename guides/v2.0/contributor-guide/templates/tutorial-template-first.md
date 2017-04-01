@@ -9,20 +9,6 @@ menu_order: 0
 version: 2.0
 github_link: contributor-guide/tutorial-template-first.md
 ---
-
-layout: tutorial
-group: get-started
-subgroup: 20_REST
-title: Order Processing with REST APIs Tutorial
-menu_title: Initial tasks
-menu_order: 0
-level3_menu_node:
-level3_subgroup: order-tutorial
-version: 2.1
-github_link: get-started/order-tutorial/order-intro.md
-ee_only: false
-
-
 A tutorial provides procedurial information spread across multiple pages. It contains several design elements that differ from standard topics:
 
 * When a user clicks on a tutorial title from the left navigation area, the Devdocs website replaces the navigation with a table of contents that is specific to the tutorial.
