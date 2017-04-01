@@ -981,6 +981,20 @@ Missed if Not Run Within | `system/cron/default/schedule_lifetime` | <!-- ![Not 
 History Cleanup Every | `system/cron/default/history_cleanup_every` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Success History Lifetime | `system/cron/default/history_success_lifetime` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Failure History Lifetime | `system/cron/default/history_failure_lifetime` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
+Generate Schedules Every | system/cron/staging/schedule/generate/every
+Schedule Ahead for | system/cron/staging/schedule/ahead/for
+Missed if Not Run Within | system/cron/staging/schedule/lifetime
+History Cleanup Every | system/cron/staging/history/cleanup/every
+Success History Lifetime | system/cron/staging/history/success/lifetime
+Failure History Lifetime | system/cron/staging/history/failure/lifetime
+Use Separate Process | system/cron/staging/use/separate/process
+Generate Schedules Every | system/cron/catalog/event/schedule/generate/every
+Schedule Ahead for | system/cron/catalog/event/schedule/ahead/for
+Missed if Not Run Within | system/cron/catalog/event/schedule/lifetime
+History Cleanup Every | system/cron/catalog/event/history/cleanup/every
+Success History Lifetime | system/cron/catalog/event/history/success/lifetime
+Failure History Lifetime | system/cron/catalog/event/history/failure/lifetime
+Use Separate Process | system/cron/catalog/event/use/separate/process
 Use Separate Process | `system/cron/default/use_separate_process` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Disable Email Communications | `system/smtp/disable` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Set Return-Path | `system/smtp/set_return_path` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 

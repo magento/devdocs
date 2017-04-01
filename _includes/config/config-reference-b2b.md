@@ -89,7 +89,21 @@ Default Expiration Period | quote/general/default/expiration/period
 File formats for upload | quote/attached/files/file/formats
 Maximum file size | quote/attached/files/maximum/file/size
 
+## Advanced category
+This section lists variable names and config paths available for options in the Admin under **Stores** > Settings > **Configuration** > **Advanced**.
+
+### System paths
+These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Advanced** > **System**.
+
+Name   |  Config path  |  Encrypted?  |  System-specific?  |  Sensitive?  | 
+ | -------------- | -------------- | -------------- |
+
+
 ## Not done yet
+
+
+
+
 
 Applicable Payment Methods | btob/default/b2b/payment/methods/applicable/payment/methods
 Payment Methods | btob/default/b2b/payment/methods/available/payment/methods
@@ -205,17 +219,3 @@ Payment from Specific Countries | payment/it/companycredit/specificcountry
 Minimum Order Total | payment/it/companycredit/min/order/total
 Maximum Order Total | payment/it/companycredit/max/order/total
 Sort Order | payment/it/companycredit/sort/order
-Generate Schedules Every | system/cron/staging/schedule/generate/every
-Schedule Ahead for | system/cron/staging/schedule/ahead/for
-Missed if Not Run Within | system/cron/staging/schedule/lifetime
-History Cleanup Every | system/cron/staging/history/cleanup/every
-Success History Lifetime | system/cron/staging/history/success/lifetime
-Failure History Lifetime | system/cron/staging/history/failure/lifetime
-Use Separate Process | system/cron/staging/use/separate/process
-Generate Schedules Every | system/cron/catalog/event/schedule/generate/every
-Schedule Ahead for | system/cron/catalog/event/schedule/ahead/for
-Missed if Not Run Within | system/cron/catalog/event/schedule/lifetime
-History Cleanup Every | system/cron/catalog/event/history/cleanup/every
-Success History Lifetime | system/cron/catalog/event/history/success/lifetime
-Failure History Lifetime | system/cron/catalog/event/history/failure/lifetime
-Use Separate Process | system/cron/catalog/event/use/separate/process
