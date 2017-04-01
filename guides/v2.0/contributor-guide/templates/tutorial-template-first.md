@@ -29,7 +29,7 @@ Parameter | Description
 `level3_subgroup:` | A group name that binds the tutorial topics together. This value must be specified on each topic in the tutorial.
 `title:` | The title of the tutorial. On the first page of the tutorial, specify `Initial tasks`. For all other topics in the tutorial, this value should be in the form _Step X. Perform this task_. (For example, `Step 1. Configure the Store`)
 `subtitle` | Displays the tutorial name. The value must be specified on each topic in the tutorial.
-`menu_title:` | The title of topic.
+`menu_title:` | Leave this line blank.
 `menu_order:` | The sequence number of the topic. If the topic is an intro topic in a multi-step tutorial, set this 0. Otherwise set it to the step number.
 `version:` | The version of Magento that this topic applies to.
 `github_link:` | The path to the MD file, starting at the book directory. Ex: `get-started/order-tutorial/order-intro.md`
