@@ -621,12 +621,12 @@ This contribution model means that contributors maintain their own copy of the f
   <li>For large contributions or changes that include multiple files, please <a href="https://github.com/magento/devdocs/issues" target="_blank">open an issue</a> and discuss first. This may prevent duplicate or unnecessary effort, and the DevDocs team can help find the best home for your new topics.</li>
 </ol>
 
-<h2 id="fork">Fork a repository</h2>
+<h2 id="fork">Fork &amp; clone a repository</h2>
 <p>To fork a repository on Github, do the following:</p>
 
 <ol>
   <li>
-    <p>Create or log in to your developemnt environment account on GitHub.</p>
+    <p>Create or log in to your development environment account on GitHub.</p>
   </li>
   <li>
     <p>Navigate to the <a href="https://github.com/magento/devdocs" target="_blank">DevDocs repository</a>.</p>
@@ -635,7 +635,7 @@ This contribution model means that contributors maintain their own copy of the f
     <p>Click <strong>Fork</strong> at the top right.</p>
   </li>
   <li>
-    <p>Clone the repo into your development environment and then start writing and committing your changes. Optionally create a branch first if you plan to work on mulitple changes.</p>
+    <p>Clone the repo into your development environment and then start writing and committing your changes. Optionally create a branch first if you plan to work on multiple changes.</p>
   </li>
   <li>
     <p>You can build this site using Jekyll by following the <a href="https://github.com/magento/devdocs/blob/develop/README.md" target="_blank">instructions in our README</a>.</p>
@@ -643,7 +643,7 @@ This contribution model means that contributors maintain their own copy of the f
 </ol>
 
 <h3 id="sync">Update the fork with the latest changes</h3>
-<p>As community and Magento writers’ changes are merged to the repository, your fork becames outdated and pull requests might result in conflicts. To see if your fork is outdated, open the fork page in GitHub and if at the top the message <code>This branch is &lt;number&gt; commits behind magento:2.0.</code> displays, it means your fork must be updated.</p>
+<p>As community and Magento writers’ changes are merged to the repository, your fork becomes outdated and pull requests might result in conflicts. To see if your fork is outdated, open the fork page in GitHub and if at the top the message <code>This branch is &lt;number&gt; commits behind magento:2.0.</code> displays, it means your fork must be updated.</p>
 
 <p>There are two ways to update your fork. The typical way is discussed in <a href="https://help.github.com/articles/syncing-a-fork" target="_blank">GitHub documentation</a>. Make sure to update from the correct branch!</p>
 
@@ -708,7 +708,7 @@ menu_node: parent
 menu_order: 1
 version: 2.0
 github_link: install-gde/continue.md
----	
+---
 </code></pre>
 
 <h3 id="definitions">Definitions</h3>
@@ -751,10 +751,10 @@ github_link: install-gde/continue.md
       </tr>
        <tr>
          <td>menu_order: 1</td>
-         <td>Sets the order files display. But not the order that subgroups appear in. 
-         
+         <td>Sets the order files display. But not the order that subgroups appear in.
+
 <!--
-You can order where each file appears in the list by changing its menu_order number. Subgroups, by default, will show up in alphabetical order. To get your own order instead of alphabetical, create a file for each subgroup header: introduction.md, prepare.md, build,md, etc. In the metadata section for each of the files set menu_node: parent.
+You can order where each file appears in the list by changing its menu_order number. Subgroups, by default, will show up in alphabetical order. To get your own order instead of alphabetical, create a file for each subgroup header: introduction.md, prepare.md, build.md, etc. In the metadata section for each of the files set menu_node: parent.
 
 They still show up in alphabetical order, based on subgroup's name. Now change the name of subgroup to get the order you need using the alphabet. When you set menu_node to parent, the displayed name will be taken from menu_title instead of from subgroup. So, if you want Introduction to show up first and Prepare to show up second, set subgroup in introduction.md to for example 1_introduction and then set subgroup in prepare.md to 2_prepare. That is, just follow an alphanumeric order to get the order you want. Then set menu_title to the name you want displayed. Then, for each file you want to attach to that subgroup, you just give it that subgroup name. In those files, leave menu_node empty or omit it.
 -->
@@ -771,7 +771,7 @@ github_link: install-gde/continue.md</td>
 <h3 id="how-to-add-a-contributors-name-to-a-topic">How to add a Contributor’s name to a topic</h3>
 <p>When a community member contributes an entire topic, or makes substantial improvements to an existing topic, we like to thank them by adding their name (or company name) right beneath the title of the topic, and link that name to their blog or web site.</p>
 
-<p>In the metadata secion at the top of the file, just add these two entries:</p>
+<p>In the metadata section at the top of the file, just add these two entries:</p>
 
 <ul>
   <li>contributor_name: &lt;name_of_contributor&gt;</li>
