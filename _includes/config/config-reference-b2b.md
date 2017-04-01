@@ -13,6 +13,10 @@ Name   |  Config path  |  Encrypted?  |  System-specific?  |  Sensitive?  |
 Enable Company | btob/website/configuration/company/active
 Enable Quick Order | btob/website/configuration/quickorder/active
 Enable Requisition List | btob/website/configuration/requisition/list/active
+Enable Shared Catalog | btob/website/configuration/sharedcatalog/active
+Enable B2B Quote | btob/website/configuration/negotiablequote/active
+Applicable Payment Methods | btob/default/b2b/payment/methods/applicable/payment/methods
+Payment Methods | btob/default/b2b/payment/methods/available/payment/methods
 
 ## Customers category
 This section lists variable names and config paths available for options in the Admin under **Stores** > Settings > **Configuration** > **Customers**.
@@ -105,11 +109,9 @@ Name   |  Config path  |  Encrypted?  |  System-specific?  |  Sensitive?  |
 
 
 
-Applicable Payment Methods | btob/default/b2b/payment/methods/applicable/payment/methods
-Payment Methods | btob/default/b2b/payment/methods/available/payment/methods
 
-Enable Shared Catalog | btob/website/configuration/sharedcatalog/active
-Enable B2B Quote | btob/website/configuration/negotiablequote/active
+
+
 
 
 
