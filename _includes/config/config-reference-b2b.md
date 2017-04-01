@@ -46,12 +46,12 @@ Send Email Copy Method | `company/email/company_status_copy_method`
 Default Company Status Change To Active 1 Email | `company/email/company_status_pending_approval_to_active_template`
 Default Company Status Change To Active 2 Email | `company/email/company_status_rejected_blocked_to_active_template`
 Default Company Status Change To Rejected Email | `company/email/company_status_rejected_template`
-Default Company Status Change To Blocked Email | `company/email/company_status_blocked_template
+Default Company Status Change To Blocked Email | `company/email/company_status_blocked_template`
 Default Company Status Change To Pending Approval Email | `company/email/company_status_pending_approval_template`
 Company Credit | `company/email/heading_company_credit`
 Company Credit Change Email Sender | `company/email/company_credit_change` | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png)
 Send Company Credit Change Email Copy To | `company/email/company_credit_change_copy`
-Send Email Copy Method | `company/email/company_credit_copy_method
+Send Email Copy Method | `company/email/company_credit_copy_method`
 Allocated Email Template | `company/email/credit_allocated_email_template`
 Updated Email Template | `company/email/credit_updated_email_template`
 Reimbursed Email Template | `company/email/credit_reimbursed_email_template`
