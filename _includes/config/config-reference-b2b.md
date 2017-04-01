@@ -1,4 +1,4 @@
-<div markdown=1>
+<div markdown="1">
 
 This reference contains unique configuration paths for the Magento Enterprise B2B Extension. The Magento Enterprise B2B Extension supports all configuration paths for Magento Community Edition (CE) and Magento Enterprise Edition (EE) as well.
 
@@ -54,15 +54,14 @@ Reimbursed Email Template  |  company/email/credit/reimbursed/email/template
 Refunded Email Template  |  company/email/credit/refunded/email/template
 Reverted Email Template  |  company/email/credit/reverted/email/template
 
+## Sales category
+This section lists variable names and config paths available for options in the Admin under **Stores** > Settings > **Configuration** > **Sales**.
 
-Applicable Payment Methods | btob/default/b2b/payment/methods/applicable/payment/methods
-Payment Methods | btob/default/b2b/payment/methods/available/payment/methods
+### Sales Emails paths
+These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Sales Emails**.
 
-Enable Shared Catalog | btob/website/configuration/sharedcatalog/active
-Enable B2B Quote | btob/website/configuration/negotiablequote/active
-
-
-
+Name   |  Config path  |  Encrypted?  |  System-specific?  |  Sensitive?  | 
+ | -------------- | -------------- | -------------- |
 Enabled  |  sales/email/quote/enabled
 Updated Quote Template (to Buyer)  |  sales/email/quote/updated/buyer/template
 Declined Quote Template (to Buyer)  |  sales/email/quote/declined/buyer/template
@@ -73,6 +72,12 @@ Quote Expiration (in 24 hrs)  |  sales/email/quote/expire/one/day/template
 Expiration Date Reset  |  sales/email/quote/expire/reset/template
 Send Quote Email Copy To  |  sales/email/quote/copy/to
 Send Quote Email Copy Method  |  sales/email/quote/copy/method
+
+### Quotes paths
+These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Quotes**.
+
+Name   |  Config path  |  Encrypted?  |  System-specific?  |  Sensitive?  | 
+ | -------------- | -------------- | -------------- |
 Minimum Amount  |  quote/general/minimum/amount
 Minimum Amount Message  |  quote/general/minimum/amount/message
 Default Expiration Period  |  quote/general/default/expiration/period
@@ -83,6 +88,19 @@ Minimum Amount Message | quote/general/minimum/amount/message
 Default Expiration Period | quote/general/default/expiration/period
 File formats for upload | quote/attached/files/file/formats
 Maximum file size | quote/attached/files/maximum/file/size
+
+## Not done yet
+
+Applicable Payment Methods | btob/default/b2b/payment/methods/applicable/payment/methods
+Payment Methods | btob/default/b2b/payment/methods/available/payment/methods
+
+Enable Shared Catalog | btob/website/configuration/sharedcatalog/active
+Enable B2B Quote | btob/website/configuration/negotiablequote/active
+
+
+
+
+
 Enabled | payment/au/companycredit/active
 Title | payment/au/companycredit/title
 New Order Status | payment/au/companycredit/order/status
