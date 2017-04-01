@@ -27,8 +27,8 @@ These configuration values are availabe in the Magento Admin in **Stores** > Set
 Name   |  Config path  |  Encrypted?  |  System-specific?  |  Sensitive?  | 
  |--------------|--------------|--------------|--------------|--------------| 
 Allow Company Registration from the Storefront | `company/general/allow_company_registration`
-Company Registration Email Recipient | `company/email/company_registration` | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png)
-Send Company Registration Email Copy To | `company/email/company_registration_copy` | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png)
+Company Registration Email Recipient | `company/email/company_registration` | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png)
+Send Company Registration Email Copy To | `company/email/company_registration_copy` | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png)
 Send Email Copy Method | `company/email/company_copy_method`
 Default Company Registration Email | `company/email/company_notify_admin_template`
 Customer-Related Emails | `company/email/heading_customer`
@@ -41,7 +41,7 @@ Default Customer Status Active Email | `company/email/customer_account_activated
 Default Customer Status Inactive Email | `company/email/customer_account_locked_template`
 Company Status Change | `company/email/heading_company_status`
 Company Status Change Email Recipient | `company/email/company_status_change`
-Send Company Status Change Email Copy To | `company/email/company_status_change_copy` | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png)
+Send Company Status Change Email Copy To | `company/email/company_status_change_copy` | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png)
 Send Email Copy Method | `company/email/company_status_copy_method`
 Default Company Status Change To Active 1 Email | `company/email/company_status_pending_approval_to_active_template`
 Default Company Status Change To Active 2 Email | `company/email/company_status_rejected_blocked_to_active_template`
