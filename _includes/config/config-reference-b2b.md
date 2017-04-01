@@ -103,7 +103,7 @@ Maximum file size | `quote/attached_files/maximum_file_size`
 ## Payment method paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Payment Methods**.
 
-<div class=bs-callout bs-callout-info id="info" markdown="1">
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
 The available paths are determined by your choice of Merchant country.
 </div>
 
