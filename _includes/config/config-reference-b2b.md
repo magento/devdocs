@@ -25,8 +25,8 @@ This section lists variable names and config paths available for options in the 
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Customers** > **Company Configuration**.
 
 Name   |  Config path  |  Encrypted?  |  System-specific?  |  Sensitive?  | 
- |--------------|--------------|--------------|--------------|--------------| 
- Allow Company Registration from the Storefront | `company/general/allow_company_registration`
+|--------------|--------------|--------------|--------------|--------------| 
+Allow Company Registration from the Storefront | `company/general/allow_company_registration`
 Company Registration Email Recipient | `company/email/company_registration` | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png)
 Send Company Registration Email Copy To | `company/email/company_registration_copy` | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png)
 Send Email Copy Method | `company/email/company_copy_method`
@@ -81,7 +81,7 @@ Updated Quote Template (to Seller) | `sales_email/quote/updated_seller_template`
 Quote Expiration (in 48 hrs) | `sales_email/quote/expire_two_days_template`
 Quote Expiration (in 24 hrs) | `sales_email/quote/expire_one_day_template`
 Expiration Date Reset | `sales_email/quote/expire_reset_template`
-Send Quote Email Copy To | `sales_email/quote/copy_to` | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png)
+Send Quote Email Copy To | `sales_email/quote/copy_to` | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png)
 Send Quote Email Copy Method | `sales_email/quote/copy_method`
 
 ### Quotes paths
@@ -103,14 +103,14 @@ Maximum file size | `quote/attached_files/maximum_file_size`
 ## Payment method paths
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Sales** > **Payment Methods**.
 
-<div class=bs-callout bs-callout-info id=info markdown=1>
+<div class=bs-callout bs-callout-info id="info" markdown="1">
 The available paths are determined by your choice of Merchant country.
 </div>
 
 Name   |  Config path  |  Encrypted?  |  System-specific?  |  Sensitive?  | 
- | -------------- | -------------- | -------------- |
-Enabled | `payment/au/companycredit/active``
-Title | `payment/au/companycredit/title``
+| -------------- | -------------- | -------------- |
+Enabled | `payment/au/companycredit/active`
+Title | `payment/au/companycredit/title`
 New Order Status | `payment/au/companycredit/order_status`
 Payment from Applicable Countries | `payment/au/companycredit/allowspecific`
 Payment from Specific Countries | `payment/au/companycredit/specificcountry`
