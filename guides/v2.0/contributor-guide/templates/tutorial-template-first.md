@@ -2,8 +2,9 @@
 layout: tutorial
 group: contributor
 subgroup: templates
-title: Sample template tutorial
-menu_title: Initial tasks
+title: Initial tasks
+subtitle: Sample template tutorial
+menu_title:
 menu_order: 0
 level3_menu_node:
 level3_subgroup: sample-tutorial
