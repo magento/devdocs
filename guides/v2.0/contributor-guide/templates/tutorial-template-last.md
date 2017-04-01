@@ -1,9 +1,10 @@
 ---
 layout: tutorial
 group: contributor
-level3_subgroup: sample-tutorial
+subgroup:
 title: Step X. Finish the tutorial
 subtitle: Sample template tutorial
+menu_title:
 menu_order: 2
 level3_menu_node:
 level3_subgroup: sample-tutorial

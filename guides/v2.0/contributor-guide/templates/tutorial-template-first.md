@@ -2,13 +2,15 @@
 layout: tutorial
 group: contributor
 subgroup: templates
-level3_subgroup: sample-tutorial
 title: Sample template tutorial
 menu_title: Initial tasks
 menu_order: 0
+level3_menu_node:
+level3_subgroup: sample-tutorial
 version: 2.0
 github_link: contributor-guide/tutorial-template-first.md
 ---
+
 A tutorial provides procedurial information spread across multiple pages. It contains several design elements that differ from standard topics:
 
 * When a user clicks on a tutorial title from the left navigation area, the Devdocs website replaces the navigation with a table of contents that is specific to the tutorial.
