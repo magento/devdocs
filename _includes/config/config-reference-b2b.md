@@ -26,7 +26,7 @@ These configuration values are availabe in the Magento Admin in **Stores** > Set
 
 Name   |  Config path  |  Encrypted?  |  System-specific?  |  Sensitive?  | 
  |--------------|--------------|--------------|--------------|--------------| 
-Allow Company Registration from the Storefront | `company/general/allow_company_registration`
+ Allow Company Registration from the Storefront | `company/general/allow_company_registration`
 Company Registration Email Recipient | `company/email/company_registration` | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png)
 Send Company Registration Email Copy To | `company/email/company_registration_copy` | | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png)
 Send Email Copy Method | `company/email/company_copy_method`
