@@ -41,7 +41,7 @@ Default Customer Status Active Email | `company/email/customer_account_activated
 Default Customer Status Inactive Email | `company/email/customer_account_locked_template`
 Company Status Change | `company/email/heading_company_status`
 Company Status Change Email Recipient | `company/email/company_status_change`
-Send Company Status Change Email Copy To | `company/email/company_status_change_copy`
+Send Company Status Change Email Copy To | `company/email/company_status_change_copy` | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png)
 Send Email Copy Method | `company/email/company_status_copy_method`
 Default Company Status Change To Active 1 Email | `company/email/company_status_pending_approval_to_active_template`
 Default Company Status Change To Active 2 Email | `company/email/company_status_rejected_blocked_to_active_template`
@@ -49,7 +49,7 @@ Default Company Status Change To Rejected Email | `company/email/company_status_
 Default Company Status Change To Blocked Email | `company/email/company_status_blocked_template
 Default Company Status Change To Pending Approval Email | `company/email/company_status_pending_approval_template`
 Company Credit | `company/email/heading_company_credit`
-Company Credit Change Email Sender | `company/email/company_credit_change`
+Company Credit Change Email Sender | `company/email/company_credit_change` | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png)
 Send Company Credit Change Email Copy To | `company/email/company_credit_change_copy`
 Send Email Copy Method | `company/email/company_credit_copy_method
 Allocated Email Template | `company/email/credit_allocated_email_template`
@@ -81,7 +81,7 @@ Updated Quote Template (to Seller) | `sales_email/quote/updated_seller_template`
 Quote Expiration (in 48 hrs) | `sales_email/quote/expire_two_days_template`
 Quote Expiration (in 24 hrs) | `sales_email/quote/expire_one_day_template`
 Expiration Date Reset | `sales_email/quote/expire_reset_template`
-Send Quote Email Copy To | `sales_email/quote/copy_to`
+Send Quote Email Copy To | `sales_email/quote/copy_to` | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png)
 Send Quote Email Copy Method | `sales_email/quote/copy_method`
 
 ### Quotes paths
