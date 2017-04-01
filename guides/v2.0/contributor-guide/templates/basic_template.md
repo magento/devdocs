@@ -7,7 +7,8 @@ menu_title: Basic template
 menu_order: 1
 version: 2.0
 github_link: contributor-guide/templates/basic_template.md
-redirect_from: contributor-guide/basic_template.html
+redirect_from:
+  - /guides/v2.0/contributor-guide/basic_template.html
 ---
 
 ### Overview
