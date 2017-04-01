@@ -1,4 +1,4 @@
-<div markdown=1>
+<div markdown="1">
 
 This reference contains unique configuration paths for the Magento Enterprise B2B Extension. The Magento Enterprise B2B Extension supports all configuration paths for Magento Community Edition (CE) and Magento Enterprise Edition (EE) as well.
 
@@ -16,7 +16,7 @@ Enable B2B Quote | `btob/website_configuration/negotiablequote_active`
 Enable Quick Order | `btob/website_configuration/quickorder_active`
 Enable Requisition List | `btob/website_configuration/requisition_list_active`
 Applicable Payment Methods | `btob/default_b2b_payment_methods/applicable_payment_methods`
-Payment Methods|btob/default_b2b_payment_methods/available_payment_methods`
+Payment Methods | `btob/default_b2b_payment_methods/available_payment_methods`
 
 ## Customers category
 This section lists variable names and config paths available for options in the Admin under **Stores** > Settings > **Configuration** > **Customers**.
@@ -25,7 +25,7 @@ This section lists variable names and config paths available for options in the 
 These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **Customers** > **Company Configuration**.
 
 Name   |  Config path  |  Encrypted?  |  System-specific?  |  Sensitive?  | 
- | -------------- | -------------- | -------------- | 
+ |--------------|--------------|--------------|--------------|--------------| 
 Allow Company Registration from the Storefront | `company/general/allow_company_registration`
 Company Registration Email Recipient | `company/email/company_registration` | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png)
 Send Company Registration Email Copy To | `company/email/company_registration_copy` | | ![Sensitive]({{ site.baseurl }}common/images/cloud_sens.png)
