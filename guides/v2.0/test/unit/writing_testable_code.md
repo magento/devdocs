@@ -195,7 +195,7 @@ function extractMatchingDocuments(Document $searchDoc, array $documents)
 
 ### The Law of Demeter
 
-The [Law of Demeter](https://en.wikipedia.org/wiki/Law_of_Demeter){:target="_blank"} principle is sometimes stated "Only talk to friends" or "Don't talk to strangers." It states that code may call methods only on objects that it received in one of the following ways:
+The [Law of Demeter](https://en.wikipedia.org/wiki/Law_of_Demeter){:target="_blank"} principle is sometimes stated as "Talk to friends only" or "Don't talk to strangers." It states that code can call methods only on objects that it received in one of the following ways:
 
 * Objects received as constructor arguments
 * Objects received as arguments to the current method

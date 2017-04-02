@@ -2,8 +2,8 @@
 layout: default
 group: install_cli 
 subgroup: 05_Command-line installation
-title: Create, edit or unlock a Magento administrator account
-menu_title: Create, edit or unlock a Magento administrator account
+title: Create, edit, or unlock a Magento administrator account
+menu_title: Create, edit, or unlock a Magento administrator account
 menu_node: 
 menu_order: 50
 version: 2.0
@@ -28,7 +28,9 @@ Before you can use this command, you must do all of the following:
   		<p>The simplest way to create the database is to use the command <code>magento setup:upgrade</code>.</span>
 	</div>
 
-<h2 id="instgde-cli-admin">Create an administrator</h2>
+## Create or edit an administrator {#instgde-cli-admin}
+Use this command to create a new administrator or to edit an existing administrator. If you're editing an administrator, only the first name, last name, and password can be edited.
+
 Command usage:
 
 	magento admin:user:create [--<parameter_name>=<value>, ...]
@@ -75,56 +77,6 @@ where the following table defines parameters and values.
 
 	</tbody>
 </table>
-
-<h2 id="instgde-cli-admin">Edit an existing administrator</h2>
-Use this command to edit the account of an administrator. Only first name, last name and password can be edited.
-
-	magento admin:user:create [--<parameter_name>=<value>, ...]
-
-where the following table defines parameters and values. 
-
-
-<table>
-	<col width="25%">
-	<col width="65%">
-	<col width="10%">
-	<tbody>
-		<tr>
-			<th>Name</th>
-			<th>Value</th>
-			<th>Required?</th>
-		</tr>
-		<tr>
-		<td><p>--admin-firstname</p></td>
-		<td><p>Magento administrator user's first name.</p></td>
-		<td><p>Yes</p></td>
-	</tr>
-	<tr>
-		<td><p>--admin-lastname</p></td>
-		<td><p>Magento administrator user's last name.</p></td>
-		<td><p>Yes</p></td>
-	</tr>
-	<tr>
-		<td><p>--admin-email</p></td>
-		<td><p>Magento administrator user's e-mail address.</p></td>
-		<td><p>Yes</p></td>
-	</tr>
-	<tr>
-		<td><p>--admin-user</p></td>
-		<td><p>Magento administrator user name.</p></td>
-		<td><p>Yes</p></td>
-	</tr>
-	<tr>
-		<td><p>--admin-password</p></td>
-		<td><p>Magento administrator user password.</p>
-		<p>The password must be at least 7 characters in length and must include at least one alphabetic and at least one numeric character.</p>
-		<p>We recommend a longer, more complex password. Enclose the entire password string in single quotes. For example, <code>--admin-password=''A0b9%t_3`g'</code></p></td>
-		<td><p>Yes</p></td>
-	</tr>
-
-	</tbody>
-</table>
-
 
 <h2 id="instgde-cli-admin-unlock">Unlock an administrator account</h2>
 Use this command to unlock the account of an administrator that was locked, typically because of multiple incorrect login attempts.
