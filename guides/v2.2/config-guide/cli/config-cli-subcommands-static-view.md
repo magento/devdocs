@@ -383,22 +383,17 @@ The following table discusses the meanings of this command's parameters and valu
         </ul>
       </td>
       <td>
-        Define the deployment strategy.
+        Define the deployment strategy. Use these options only if you have more than one locale.
         <p>
-          Use the Quick strategy, if you have more than one locale.
+          Use the [quick strategy]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-static-deploy-strategies.html#static-file-quick).
           If additionally the amount of server space taken by the
           published view files is one of your concerns, use the
-          Compact strategy.
+          [compact strategy]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-static-deploy-strategies.html#static-file-compact).
         </p>
         <p>
-          By default, the Quick strategy is used.
+          By default, the quick strategy is used.
         </p>
-        <p>
-          For details about the implementation of each strategy,
-          see the <a href=
-          "{{page.baseurl}}config-guide/cli/config-cli-subcommands-static-deploy-strategies.html">
-          Deployment strategies</a> topic.
-        </p>
+        
       </td>
       <td>
         <p>
@@ -412,7 +407,7 @@ The following table discusses the meanings of this command's parameters and valu
       </td>
       <td>
         <p>
-          Deploy files in any mode. (by default, static content
+          Deploy files in any mode. (by default, the static content
           content deployment tool can be run only in production
           mode. Use this option to run it in default or developer
           mode).
