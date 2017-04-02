@@ -82,10 +82,7 @@ Review the official RabbitMQ documentation to configure and manage RabbitMQ. Pay
 * Starting and stopping the broker
 * System limits
 
-
-
-<h2>Install RabbitMQ on Magento EE</h2>
-
+## Install RabbitMQ on Magento EE
 Add the following command line parameters when you install Magento EE:
 
 `--amqp-host="<hostname>" --amqp-port="5672" --amqp-user="<user_name>" --amqp-password="<password>" --amqp-virtualhost="/"`
@@ -114,7 +111,10 @@ where:
 </tr>
 <tr>
 <td>amqp-virtualhost</td>
-<td>The virtual host for connecting to RabbitMQ. The default is `/`. The idea is similar with virtual hosts in Apache or server blocks in Nginx.</td>
+<td><p>The virtual host for connecting to RabbitMQ. The default is <code>/</code>. </p>
+<p>For additional information, see RabbitMQ documentation:</p>
+<ul><li><a href="https://www.rabbitmq.com/vhosts.html" target="_blank">Virtual hosts</a></li>
+<li><a href="https://www.rabbitmq.com/access-control.html" target="_blank">Access control</a></li></ul></td>
 </tr>
 </table>
 
