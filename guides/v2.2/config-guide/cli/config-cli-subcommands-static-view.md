@@ -385,11 +385,7 @@ The following table discusses the meanings of this command's parameters and valu
       <td>
         Define the deployment strategy. Use these options only if you have more than one locale.
         <p>
-          Use the [quick strategy]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-static-deploy-strategies.html#static-file-quick).
-          If additionally the amount of server space taken by the
-          published view files is one of your concerns, use the
-          [compact strategy]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-static-deploy-strategies.html#static-file-compact).
-        </p>
+          Use the <a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-static-deploy-strategies.html#static-file-quick">quick strategy</a>. To conserve disk space on the server, use the <a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-static-deploy-strategies.html#static-file-compact">compact strategy</a>.</p>
         <p>
           By default, the quick strategy is used.
         </p>
