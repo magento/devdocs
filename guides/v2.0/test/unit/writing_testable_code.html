@@ -734,9 +734,9 @@
     <span class="p">});</span>
 <span class="p">}</span></code></pre></figure>
 
-<h3 id="the-law-of-demeter">The law of Demeter</h3>
+<h3 id="the-law-of-demeter">The Law of Demeter</h3>
 
-<p>The <a href="https://en.wikipedia.org/wiki/Law_of_Demeter" target="_blank">Law of Demeter</a> principle is sometimes stated “Only talk to friends” or “Don’t talk to strangers”. It states that code cannot call methods on any object, but only on objects that it received in one of the following ways:</p>
+<p>The <a href="https://en.wikipedia.org/wiki/Law_of_Demeter" target="_blank">Law of Demeter</a> principle is sometimes stated “Only talk to friends” or “Don’t talk to strangers.” It states that code may call methods only on objects that it received in one of the following ways:</p>
 
 <ul>
   <li>Objects received as constructor arguments</li>
@@ -746,7 +746,7 @@
 
 <p>The principle explicitly states that no method can be called on objects that are the return value of another method call. Calling method calls on returned objects introduces a hidden dependency on the returned object type.</p>
 
-<p>The following example violates the law of Demeter by calling the method <code>getByName()</code> on the return value of <code>getHeaders()</code>.</p>
+<p>The following example violates the Law of Demeter by calling the method <code>getByName()</code> on the return value of <code>getHeaders()</code>.</p>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">function</span> <span class="nf">isJsonResponse</span><span class="p">(</span><span class="nx">Response</span> <span class="nv">$response</span><span class="p">)</span>
 <span class="p">{</span>
