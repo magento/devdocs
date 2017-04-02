@@ -1018,7 +1018,7 @@
 
 <p>Add the following command line parameters when you install Magento EE:</p>
 
-<p><code>--amqp-host="&lt;hostname&gt;" --amqp-port="5672" --amqp-user="&lt;user_name&gt;" --amqp-password="&lt;password&gt;"</code></p>
+<p><code>--amqp-host="&lt;hostname&gt;" --amqp-port="5672" --amqp-user="&lt;user_name&gt;" --amqp-password="&lt;password&gt;" --amqp-virtualhost="/"</code></p>
 
 <p>where:</p>
 
@@ -1041,6 +1041,10 @@
 <tr>
 <td>amqp-password</td>
 <td>The password for connecting to RabbitMQ. Do not use the default password `guest`. </td>
+</tr>
+<tr>
+<td>amqp-virtualhost</td>
+<td>The virtual host for connecting to RabbitMQ. The default is `/`. The idea is similar with virtual hosts in Apache or server blocks in Nginx.</td>
 </tr>
 </table>
 
