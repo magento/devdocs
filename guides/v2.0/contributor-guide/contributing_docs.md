@@ -40,7 +40,7 @@ We also have a [list of suggested topics]({{page.baseurl}}contributor-guide/cont
 
 If you write and contribute a full topic, we'll put your name (or company's name) at the top of the page, right under the title, and link it to your blog or website! And you'll get your face and bio in the <a href="{{page.baseurl}}howdoi/howdoi_bios.html">ring of honor</a> as one of our featured contributors.
 
-Use the <a href="#fork">fork</a> & <a href="#pull_request">pull</a> model to contribute to the Magento 2 DevDocs.
+Use the <a href="#fork">fork</a> and <a href="#pull_request">pull</a> model to contribute to the Magento 2 DevDocs.
 This contribution model means that contributors maintain their own copy of the forked codebase (which can be easily synced with the main copy). The forked repository is then used to submit a request to the base repository to *pull* a set of changes (hence the phrase *pull request*).
 
 The Magento DevDocs team reviews all issues and contributions submitted by the community. During the review we might require clarifications from the contributor. If you know what you want to write about, but you aren't sure where within our multiple documents the topic should go, we can help you with the "info architecture" part.
@@ -50,8 +50,6 @@ The Magento DevDocs team reviews all issues and contributions submitted by the c
 </div>
 
 <h2 id="requirements">Contribution guidelines</h2>
-
-
 1. Some common writing guidelines include:
     * Define what the goal of your topic is: what exactly do you want to teach the reader?
     * Make the title of your topic reflect the content.
@@ -65,7 +63,7 @@ The Magento DevDocs team reviews all issues and contributions submitted by the c
 4. First, check the <a href="https://github.com/magento/devdocs/pulls" target="_blank">existing PRs</a> and make sure you are not duplicating others’ work!
 5. For large contributions or changes that include multiple files, please <a href="https://github.com/magento/devdocs/issues" target="_blank">open an issue</a> and discuss first. This may prevent duplicate or unnecessary effort, and the DevDocs team can help find the best home for your new topics.
 
-<h2 id="fork">Fork & clone a repository</h2>
+<h2 id="fork">Fork and clone a repository</h2>
 To fork a repository on Github, do the following:
 
 1. Create or log in to your development environment account on GitHub.
