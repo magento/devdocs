@@ -5,7 +5,7 @@ subgroup: 04_CLI
 title: Static files deployment strategies
 menu_title: Static files deployment strategies
 menu_node:
-menu_order: 320
+menu_order: 301
 level3_menu_node: level3child
 level3_subgroup: static_deploy
 version: 2.2
@@ -25,14 +25,14 @@ The following sections describe the implementation details and features of each 
 ## Standard strategy {#static-file-standard}
 When the Standard strategy is used, all static view files for all packages are deployed, that is, processed by [`\Magento\Framework\App\View\Asset\Publisher`]({{ site.mage2200url }}lib/internal/Magento/Framework/App/View/Asset/Publisher.php){:target="_blank"}.
 
-For more information, see [Deploy static view files]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-static-view.).
+For more information, see [Deploy static view files]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-static-view.html).
 
 ## Quick strategy {#static-file-quick}
 The quick strategy performs the following actions:
 
 1. For each theme, one arbitrary locale is chosen and all files for this locale are deployed, like in the standard strategy.
 2. For all other locales of the theme:
-	1. Files that override the deployed locale are defined. Those files are also deployed. 
+	1. Files that override the deployed locale are defined and deployed. 
 	2.  All other files are considered similar for all locales, and are copied from the deployed locale. 
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
@@ -60,7 +60,7 @@ The files are deployed to these subdirectories according to the following patter
     </tr>
     <tr>
       <td>
-        &lt;area>/&lt;theme>/&lt;locale>
+        <code>&lt;area>/&lt;theme>/&lt;locale></code>
       </td>
       <td>
         <p>
@@ -70,7 +70,7 @@ The files are deployed to these subdirectories according to the following patter
     </tr>
     <tr>
       <td>
-        &lt;area>/&lt;theme>/default
+        <code>&lt;area>/&lt;theme>/default</code>
       </td>
       <td>
         Files similar for all locales of a particular theme of a
@@ -79,7 +79,7 @@ The files are deployed to these subdirectories according to the following patter
     </tr>
     <tr>
       <td>
-        &lt;area>/Magento/base/&lt;locale>
+        <code>&lt;area>/Magento/base/&lt;locale></code>
       </td>
       <td>
         Files specific for a particular area and locale, but
@@ -88,7 +88,7 @@ The files are deployed to these subdirectories according to the following patter
     </tr>
     <tr>
       <td>
-        &lt;area>/Magento/base/default
+        <code>&lt;area>/Magento/base/default</code>
       </td>
       <td>
         <p>
@@ -99,7 +99,7 @@ The files are deployed to these subdirectories according to the following patter
     </tr>
     <tr>
       <td>
-        base/Magento/base/&lt;locale>
+        <code>base/Magento/base/&lt;locale></code>
       </td>
       <td>
         <p>
@@ -110,7 +110,7 @@ The files are deployed to these subdirectories according to the following patter
     </tr>
     <tr>
       <td>
-        base/Magento/base/default
+        <code>base/Magento/base/default</code>
       </td>
       <td>
         Similar for all areas, themes and locales.
