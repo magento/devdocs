@@ -17,7 +17,7 @@ github_link: config-guide/cli/config-cli-subcommands-static-deploy-strategies.md
 When [deploying static view files]({{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html), you can choose one of the three available strategies. Each of them provides optimal deployment results for different use cases:
 
 *   [Standard](#static-file-standard): the regular deployment process.
-*   [Quick](#static-file-quick): minimizes the time required for deployment when files for more than one locale are deployed.
+*   [Quick](#static-file-quick) (_default_): minimizes the time required for deployment when files for more than one locale are deployed.
 *   [Compact](#static-file-compact): minimizes the space taken by the published view files. 
 
 The following sections describe the implementation details and features of each strategy.
