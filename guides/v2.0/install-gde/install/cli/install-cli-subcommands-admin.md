@@ -2,8 +2,8 @@
 layout: default
 group: install_cli 
 subgroup: 05_Command-line installation
-title: Create or unlock a Magento administrator account
-menu_title: Create or unlock a Magento administrator account
+title: Create, edit or unlock a Magento administrator account
+menu_title: Create, edit or unlock a Magento administrator account
 menu_node: 
 menu_order: 50
 version: 2.0
