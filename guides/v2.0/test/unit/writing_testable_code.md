@@ -193,9 +193,9 @@ function extractMatchingDocuments(Document $searchDoc, array $documents)
 }
 {%endhighlight%}
 
-### The law of Demeter
+### The Law of Demeter
 
-The [Law of Demeter](https://en.wikipedia.org/wiki/Law_of_Demeter){:target="_blank"} principle is sometimes stated "Only talk to friends" or "Don't talk to strangers". It states that code cannot call methods on any object, but only on objects that it received in one of the following ways:
+The [Law of Demeter](https://en.wikipedia.org/wiki/Law_of_Demeter){:target="_blank"} principle is sometimes stated as "Talk to friends only" or "Don't talk to strangers." It states that code can call methods only on objects that it received in one of the following ways:
 
 * Objects received as constructor arguments
 * Objects received as arguments to the current method
@@ -203,7 +203,7 @@ The [Law of Demeter](https://en.wikipedia.org/wiki/Law_of_Demeter){:target="_bla
 
 The principle explicitly states that no method can be called on objects that are the return value of another method call. Calling method calls on returned objects introduces a hidden dependency on the returned object type.
 
-The following example violates the law of Demeter by calling the method `getByName()` on the return value of `getHeaders()`.
+The following example violates the Law of Demeter by calling the method `getByName()` on the return value of `getHeaders()`.
 
 {%highlight php startinline=true %}
 function isJsonResponse(Response $response)

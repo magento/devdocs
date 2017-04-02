@@ -1,10 +1,10 @@
 ---
 layout: default
 group: coding-standards
-subgroup: A_intro
+subgroup: 01_Coding standards
 title: Coding Standards
 landing-page: Coding Standards
-menu_title: Introduction
+menu_title: Coding Standards
 menu_order: 1
 menu_node: parent
 version: 2.0
@@ -29,5 +29,3 @@ To code extensions, follow the Magento standards for code:
 - [JavaScript DocBlock standard]({{page.baseurl}}coding-standards/docblock-standard-javascript.html)
 - [LESS coding standard]({{page.baseurl}}coding-standards/code-standard-less.html)
 - [HTML style guide]({{page.baseurl}}coding-standards/code-standard-html.html)
-
-
