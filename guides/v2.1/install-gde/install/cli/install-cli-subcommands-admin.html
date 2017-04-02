@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Create or unlock a Magento administrator account | Magento 2 Developer Documentation</title>
+	<title>Create, edit or unlock a Magento administrator account | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -513,7 +513,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.1/install-gde/install/cli/install-cli-subcommands-admin.html">Create or unlock a Magento administrator account</a></li>
+									<li class="level-2  active "><a href="/guides/v2.1/install-gde/install/cli/install-cli-subcommands-admin.html">Create, edit or unlock a Magento administrator account</a></li>
 
 									
 
@@ -755,7 +755,7 @@
 
           
 
-          <span property="name">Create or unlock a Magento administrator account</span>
+          <span property="name">Create, edit or unlock a Magento administrator account</span>
 
         
 
@@ -778,7 +778,7 @@
 
 	
 
-	<h1 class="page-heading">Create or unlock a Magento administrator account</h1>
+	<h1 class="page-heading">Create, edit or unlock a Magento administrator account</h1>
 
   
 
@@ -840,6 +840,55 @@ sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
   </ul>
   <h2 id="instgde-cli-admin">Create an administrator</h2>
   <p>Command usage:</p>
+
+  <pre><code>magento admin:user:create [--&lt;parameter_name&gt;=&lt;value&gt;, ...]
+</code></pre>
+
+  <p>where the following table defines parameters and values.</p>
+
+  <table>
+	<col width="25%" />
+	<col width="65%" />
+	<col width="10%" />
+	<tbody>
+		<tr>
+			<th>Name</th>
+			<th>Value</th>
+			<th>Required?</th>
+		</tr>
+		<tr>
+		<td><p>--admin-firstname</p></td>
+		<td><p>Magento administrator user's first name.</p></td>
+		<td><p>Yes</p></td>
+	</tr>
+	<tr>
+		<td><p>--admin-lastname</p></td>
+		<td><p>Magento administrator user's last name.</p></td>
+		<td><p>Yes</p></td>
+	</tr>
+	<tr>
+		<td><p>--admin-email</p></td>
+		<td><p>Magento administrator user's e-mail address.</p></td>
+		<td><p>Yes</p></td>
+	</tr>
+	<tr>
+		<td><p>--admin-user</p></td>
+		<td><p>Magento administrator user name.</p></td>
+		<td><p>Yes</p></td>
+	</tr>
+	<tr>
+		<td><p>--admin-password</p></td>
+		<td><p>Magento administrator user password.</p>
+		<p>The password must be at least 7 characters in length and must include at least one alphabetic and at least one numeric character.</p>
+		<p>We recommend a longer, more complex password. Enclose the entire password string in single quotes. For example, <code>--admin-password=''A0b9%t_3`g'</code></p></td>
+		<td><p>Yes</p></td>
+	</tr>
+
+	</tbody>
+</table>
+
+  <h2 id="instgde-cli-admin">Edit an existing administrator</h2>
+  <p>Use this command to edit the account of an administrator. Only first name, last name and password can be edited.</p>
 
   <pre><code>magento admin:user:create [--&lt;parameter_name&gt;=&lt;value&gt;, ...]
 </code></pre>
