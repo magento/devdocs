@@ -17,7 +17,11 @@ This reference shows suggested `.gitignore` files to use in a development system
 
 
 ## .gitignore for development
-We recommend you use the `.gitignore` provided with Magento in a development system with only one change: comment out `app/etc/config.php` so it's included in source control.
+We recommend you use the `.gitignore` provided with Magento in a development system with the following changes&mdash;comment out the following so they are included in source control:
+
+*	`app/etc/config.php` 
+*	`pub/media/*`
+*	`pub/media/wysiwyg/*.*`
 
 {% collapsible Show default `.gitignore` %}
 
@@ -53,7 +57,7 @@ atlassian*
 /grunt-config.json
 /dev/tools/grunt/configs/local-themes.js
 
-/pub/media/*.*
+# /pub/media/*.*
 !/pub/media/.htaccess
 /pub/media/attribute/*
 !/pub/media/attribute/.htaccess
@@ -69,7 +73,7 @@ atlassian*
 /pub/media/theme/*
 /pub/media/theme_customization/*
 !/pub/media/theme_customization/.htaccess
-/pub/media/wysiwyg/*
+# /pub/media/wysiwyg/*
 !/pub/media/wysiwyg/.htaccess
 /pub/media/tmp/*
 !/pub/media/tmp/.htaccess
@@ -82,7 +86,8 @@ atlassian*
 /vendor/*
 !/vendor/.htaccess
 /generated/*
-!/generated/.htaccess</pre>
+!/generated/.htaccess
+</pre>
 
 {% endcollapsible %}
 
