@@ -5,7 +5,7 @@ subgroup: 04_CLI
 title: Static files deployment strategies
 menu_title: Static files deployment strategies
 menu_node:
-menu_order: 320
+menu_order: 301
 level3_menu_node: level3child
 level3_subgroup: static_deploy
 version: 2.2
@@ -16,35 +16,37 @@ github_link: config-guide/cli/config-cli-subcommands-static-deploy-strategies.md
 
 When [deploying static view files]({{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html), you can choose one of the three available strategies. Each of them provides optimal deployment results for different use cases:
 
-* *Standard*: the regular deployment process.
-* *Quick*: minimizes the time required for deployment when files for more than one locale are deployed.
-* *Compact*: minimizes the space taken by the published view files. 
+*   [Standard](#static-file-standard): the regular deployment process.
+*   [Quick](#static-file-quick) (_default_): minimizes the time required for deployment when files for more than one locale are deployed.
+*   [Compact](#static-file-compact): minimizes the space taken by the published view files. 
 
 The following sections describe the implementation details and features of each strategy.
 
-## Standard strategy 
+## Standard strategy {#static-file-standard}
+When the Standard strategy is used, all static view files for all packages are deployed, that is, processed by [`\Magento\Framework\App\View\Asset\Publisher`]({{ site.mage2200url }}lib/internal/Magento/Framework/App/View/Asset/Publisher.php){:target="_blank"}.
 
-When the Standard strategy is used, all static view files for all packages are deployed, that is, processed by `\Magento\Framework\App\View\Asset\Publisher`.
+For more information, see [Deploy static view files]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-static-view.html).
 
-## Quick strategy
+## Quick strategy {#static-file-quick}
+The quick strategy performs the following actions:
 
-The Quick strategy performs the following actions:
-
-1. For each theme, one arbitrary locale is chosen and all files for this locale are deployed, like in the Standard strategy.
+1. For each theme, one arbitrary locale is chosen and all files for this locale are deployed, like in the standard strategy.
 2. For all other locales of the theme:
-	1. Files that override the deployed locale are defined. Those files are also deployed. 
+	1. Files that override the deployed locale are defined and deployed. 
 	2.  All other files are considered similar for all locales, and are copied from the deployed locale. 
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-By similar we mean files, that are locale-(or theme-, or area-)independent. These files might include CSS, images, fonts.
+By _similar_, we mean files that are independent of the locale, theme, or area. These files might include CSS, images, and fonts.
 </div>
 
-This approach minimizes the deployment time required for multiple locales. Though a lot of files are duplicated.
+This approach minimizes the deployment time required for multiple locales although a lot of files are duplicated.
 
-## Compact strategy
+## Compact strategy {#static-file-compact}
+The compact strategy avoids file duplication by storing similar files in `base` subdirectories.
 
-The Compact strategy avoids file duplication by storing similar files in the "basic" sub-directories.
-For the most optimized result, three scopes for possible similarity are allocated: area, theme, and locale. "Basic" sub-directories are created for all combinations of these scopes. The files are deployed to these sub-directories according to the following patterns. 
+For the most optimized result, three scopes for possible similarity are allocated: area, theme, and locale. `base` subdirectories are created for all combinations of these scopes. 
+
+The files are deployed to these subdirectories according to the following patterns. 
 
 <table>
   <tbody>
@@ -58,7 +60,7 @@ For the most optimized result, three scopes for possible similarity are allocate
     </tr>
     <tr>
       <td>
-        %area%/%theme%/%locale%
+        <code>&lt;area>/&lt;theme>/&lt;locale></code>
       </td>
       <td>
         <p>
@@ -68,7 +70,7 @@ For the most optimized result, three scopes for possible similarity are allocate
     </tr>
     <tr>
       <td>
-        %area%/%theme%/default
+        <code>&lt;area>/&lt;theme>/default</code>
       </td>
       <td>
         Files similar for all locales of a particular theme of a
@@ -77,7 +79,7 @@ For the most optimized result, three scopes for possible similarity are allocate
     </tr>
     <tr>
       <td>
-        %area%/Magento/base/%locale%
+        <code>&lt;area>/Magento/base/&lt;locale></code>
       </td>
       <td>
         Files specific for a particular area and locale, but
@@ -86,7 +88,7 @@ For the most optimized result, three scopes for possible similarity are allocate
     </tr>
     <tr>
       <td>
-        %area%/Magento/base/default
+        <code>&lt;area>/Magento/base/default</code>
       </td>
       <td>
         <p>
@@ -97,18 +99,18 @@ For the most optimized result, three scopes for possible similarity are allocate
     </tr>
     <tr>
       <td>
-        base/Magento/base/%locale%
+        <code>base/Magento/base/&lt;locale></code>
       </td>
       <td>
         <p>
-          Files similar for all areas and themes, but specific for
+          Files similar for all areas and themes, but specific to
           a particular locale.
         </p>
       </td>
     </tr>
     <tr>
       <td>
-        base/Magento/base/default
+        <code>base/Magento/base/default</code>
       </td>
       <td>
         Similar for all areas, themes and locales.
@@ -119,18 +121,18 @@ For the most optimized result, three scopes for possible similarity are allocate
 
 
 ### Mapping deployed files
-The approach to deployment used in the Compact strategy means that files are inherited from "basic" themes and locales. This inheritance relations are stored in the map files for each combination of area, theme and locale. There are separate map files for PHP and JS:
+The approach to deployment used in the compact strategy means that files are inherited from base themes and locales. This inheritance relations are stored in the map files for each combination of area, theme and locale. There are separate map files for PHP and JS:
 
 * `map.php`
 * `requirejs-map.js`
 
-`map.php` is used by `Magento\Framework\View\Asset\Repository` to build correct URLs.
+`map.php` is used by [`Magento\Framework\View\Asset\Repository`]({{ site.mage2200url }}lib/internal/Magento/Framework/View/Asset/Repository.php){:target="_blank"} to build correct URLs.
 
 `requirejs-map.js` is used by the `baseUrlResolver` plugin for RequireJS.
 
 Example of `map.php`:
 
-{%highlight php%}
+{%highlight php startinline=true%}
 return [
         'Magento_Checkout::cvv.png' => [
             'area' => 'frontend',
@@ -158,10 +160,9 @@ require.config({
 {%endhighlight%}
 
 
-## Tip for extension developers
+## Tips for extension developers
+To build URLs to static view files, use [`\Magento\Framework\View\Asset\Repository::createAsset()`]({{ site.mage2200url }}lib/internal/Magento/Framework/View/Asset/Repository.php#L200-L213){:target="_blank"}. 
 
-For building URLs to the static view files, use `\Magento\Framework\View\Asset\Repository::createAsset()`. 
-
-Do not use URL concatenations, to avoid problems with static files being not found and not displayed during page rendering.
+Do not use URL concatenations to avoid problems with static files being not found and not displayed during page rendering.
 
 

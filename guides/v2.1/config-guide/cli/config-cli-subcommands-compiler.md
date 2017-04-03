@@ -142,10 +142,6 @@ The following message displays to confirm success:
 
 	Generated code and dependency injection configuration successfully.
 
-***Code compiling without a database***
- 
-In order to run compilation without a database, see the following topic: <a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-static-view.html#deploy_without_db"></a>
-
 #### Related topics
 
 *	<a href="{{ site.gdeurl21 }}config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a>

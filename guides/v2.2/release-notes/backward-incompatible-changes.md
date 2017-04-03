@@ -207,7 +207,7 @@ This is a list of tables and fields where the data format changed from serialize
 {% collapsible Show table %}
 
 | Resource Model                                                                       | Table                            | Field                                                         |
-| --- | --- | --- |
+| ------------------------------------------------------------------------------------ | -------------------------------- | ------------------------------------------------------------- |
 | \Magento\Quote\Model\ResourceModel\Quote\Payment                                     | quote_payment                    | additional_information                                        |
 | \Magento\Reward\Model\ResourceModel\Reward\History                                   | magento_reward_history           | additional_data                                               |
 | \Magento\Sales\Model\ResourceModel\Order\Item                                        | sales_order_item                 | product_options                                               |
@@ -244,6 +244,10 @@ This is a list of tables and fields where the data format changed from serialize
 | \Magento\GiftRegistry\Model\Person, \Magento\GiftRegistry\Model\ResourceModel\Person | magento_giftregistry_person      | custom_values                                                 |
 | \Magento\GiftRegistry\Model\Entity, \Magento\GiftRegistry\Model\ResourceModel\Entity | magento_giftregistry_entity      | custom_values, shipping_address                               |
 | \Magento\ScheduledImportExport\Model\Scheduled\Operation                             | magento_scheduled_operations     | file_info, entity_attributes                                  |
+| \Magento\Cms\Model\ResourceModel\Block                                               | cms_block                        | content                                                       |
+| \Magento\Cms\Model\ResourceModel\Page                                                | cms_page                         | content                                                       |
+| \Magento\Widget\Model\ResourceModel\Widget\Instance                                  | layout_update                    | xml                                                           |
+| \Magento\Banner\Model\ResourceModel\Banner                                           | magento_banner_content           | banner_content                                                |
 
 {% endcollapsible %}
 
@@ -351,12 +355,13 @@ The following methods now require JSON as a parameter instead of a serialized st
 
 ### Other class changes
 
-| Class                                                          | Change                            |
-| -------------------------------------------------------------- | --------------------------------- |
-| `Magento\Framework\Acl\Cache`                                  | Class removed                     |
-| `Magento\Framework\Acl\Builder::__construct`                   | [public] Method parameter changed |
-| `Magento\Framework\Acl\Builder::$_cache`                       | [protected] Property removed      |
-| `Magento\User\Model\ResourceModel\User::__construct`           | [public] Method parameter changed |
-| `Magento\User\Model\ResourceModel\User::$_aclCache`            | [protected] Property removed      |
-| `Magento\Authorization\Model\ResourceModel\Rules::__construct` | [public] Method parameter changed |
-| `Magento\Authorization\Model\ResourceModel\Rules::$_aclCache`  | [protected] Property removed      |
+| Class                                                          | Change                                                                                                      |
+| -------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
+| `Magento\Framework\Acl\Cache`                                  | Class removed                                                                                               |
+| `Magento\Framework\Acl\Builder::__construct`                   | [public] Method parameter changed                                                                           |
+| `Magento\Framework\Acl\Builder::$_cache`                       | [protected] Property removed                                                                                |
+| `Magento\User\Model\ResourceModel\User::__construct`           | [public] Method parameter changed                                                                           |
+| `Magento\User\Model\ResourceModel\User::$_aclCache`            | [protected] Property removed                                                                                |
+| `Magento\Authorization\Model\ResourceModel\Rules::__construct` | [public] Method parameter changed                                                                           |
+| `Magento\Authorization\Model\ResourceModel\Rules::$_aclCache`  | [protected] Property removed                                                                                |
+| `Magento\Setup\Module\Di\Compiler\Config\Writer\Filesystem`    | Format and type of `generated\metadata` files changed from `.ser` to `.php` and serialized data to php data |

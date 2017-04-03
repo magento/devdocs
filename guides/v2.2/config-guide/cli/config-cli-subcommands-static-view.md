@@ -5,13 +5,12 @@ subgroup: 04_CLI
 title: Deploy static view files
 menu_title: Deploy static view files
 menu_node: 
-menu_order: 310
+menu_order: 302
 level3_menu_node: level3child
 level3_subgroup: static_deploy
 version: 2.2
 github_link: config-guide/cli/config-cli-subcommands-static-view.md
 ---
-
 
 The static view files deployment command enables you to write static files to the Magento file system when the Magento software is set for <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>.
 
@@ -384,22 +383,13 @@ The following table discusses the meanings of this command's parameters and valu
         </ul>
       </td>
       <td>
-        Define the deployment strategy.
+        Define the deployment strategy. Use these options only if you have more than one locale.
         <p>
-          Use the Quick strategy, if you have more than one locale.
-          If additionally the amount of server space taken by the
-          published view files is one of your concerns, use the
-          Compact strategy.
-        </p>
+          Use the <a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-static-deploy-strategies.html#static-file-quick">quick strategy</a>. To conserve disk space on the server, use the <a href="{{ page.baseurl }}config-guide/cli/config-cli-subcommands-static-deploy-strategies.html#static-file-compact">compact strategy</a>.</p>
         <p>
-          By default, the Quick strategy is used.
+          By default, the quick strategy is used.
         </p>
-        <p>
-          For details about the implementation of each strategy,
-          see the <a href=
-          "{{page.baseurl}}config-guide/cli/config-cli-subcommands-static-deploy-strategies.html">
-          Deployment strategies</a> topic.
-        </p>
+        
       </td>
       <td>
         <p>
@@ -413,7 +403,7 @@ The following table discusses the meanings of this command's parameters and valu
       </td>
       <td>
         <p>
-          Deploy files in any mode. (by default, static content
+          Deploy files in any mode. (by default, the static content
           content deployment tool can be run only in production
           mode. Use this option to run it in default or developer
           mode).
