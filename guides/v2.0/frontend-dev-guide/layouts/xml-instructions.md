@@ -39,6 +39,7 @@ Use the following layout instructions to customize your layout:
 * <a href="#fedg_layout_xml-instruc_ex_rmv"><code>&lt;remove&gt;</code></a>
 *  <a href="#fedg_layout_xml-instruc_ex_upd"><code>&lt;update&gt;</code></a>
 *  <a href="#argument"><code>&lt;argument&gt;</code></a>
+*  <a href="#arguments"><code>&lt;arguments&gt;</code></a>
 
 <h3 id="fedg_layout_xml-instruc_ex_block">&lt;block></h3>
 
@@ -436,7 +437,7 @@ Used as follows:
 The specified <a href="{{page.baseurl}}frontend-dev-guide/layouts/layout-overview.html#handle" target="_blank">handle</a> is "included" and executed recursively.
 
 <h3 id="argument">&lt;argument&gt;</h3>
-Used to pass an argument. Must be always enclosed in [`<arguments></arguments>`](#arguments).
+Used to pass an argument. Must be always enclosed in<a href="#arguments"><code>&lt;arguments></code></a>.
  
 <table>
    <tbody>
@@ -510,9 +511,9 @@ $cssClass = $this->getCssClass() ? ' ' . $this->getCssClass() : '';
 ...
 {%endhighlight %}
 
-### <arguments> {#arguments}
+<h3 id="arguments">&lt;arguments&gt;</h3>
 
-`<arguments></arguments>` is a required container for `<argument></argument>`. Does not have own attributes.
+<code>&lt;arguments></code> is a required container for <code>&lt;argument></code>. It does not have its own attributes.
 
 Example:
 
