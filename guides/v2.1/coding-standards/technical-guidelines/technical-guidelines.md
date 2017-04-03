@@ -6,7 +6,7 @@ title: Technical guidelines
 menu_title: Technical guidelines
 menu_node: parent
 version: 2.1
-github_link: coding-standards/technical-guidelines/tg-intro.md
+github_link: coding-standards/technical-guidelines/technical-guidelines.md
 ---
 
 ## About this document
