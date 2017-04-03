@@ -76,6 +76,9 @@ Name  | Config path | EE only? |
 Base Currency | `currency/options/base` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Default Display Currency | `currency/options/default` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Allowed Currencies | `currency/options/allow` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
+Yahoo Finance Exchange | `TBD`
+Fixer.io | `TBD`
+Webservicex | `TBD`
 Connection Timeout in Seconds | `currency/yahoofinance/timeout` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Connection Timeout in Seconds | `currency/fixerio/timeout` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Connection Timeout in Seconds | `currency/webservicex/timeout` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
@@ -981,20 +984,20 @@ Missed if Not Run Within | `system/cron/default/schedule_lifetime` | <!-- ![Not 
 History Cleanup Every | `system/cron/default/history_cleanup_every` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Success History Lifetime | `system/cron/default/history_success_lifetime` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Failure History Lifetime | `system/cron/default/history_failure_lifetime` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
-Generate Schedules Every | `system/cron/staging/schedule/generate/every`
-Schedule Ahead for | `system/cron/staging/schedule/ahead/for`
-Missed if Not Run Within | `system/cron/staging/schedule/lifetime`
-History Cleanup Every | `system/cron/staging/history/cleanup/every`
-Success History Lifetime | `system/cron/staging/history/success/lifetime`
-Failure History Lifetime | `system/cron/staging/history/failure/lifetime`
-Use Separate Process | `system/cron/staging/use/separate/process`
-Generate Schedules Every | `system/cron/catalog/event/schedule/generate/every`
-Schedule Ahead for | `system/cron/catalog/event/schedule/ahead/for`
-Missed if Not Run Within | `system/cron/catalog/event/schedule/lifetime`
-History Cleanup Every | `system/cron/catalog/event/history/cleanup/every`
-Success History Lifetime | `system/cron/catalog/event/history/success/lifetime`
-Failure History Lifetime | `system/cron/catalog/event/history/failure/lifetime`
-Use Separate Process | `system/cron/catalog/event/use/separate/process`
+Generate Schedules Every | `system/cron/staging/schedule_generate_every` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Schedule Ahead for | `system/cron/staging/schedule_ahead_for` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Missed if Not Run Within | `system/cron/staging/schedule_lifetime` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+History Cleanup Every | `system/cron/staging/history_cleanup_every` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Success History Lifetime | `system/cron/staging/history_success_lifetime` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Failure History Lifetime | `system/cron/staging/history_failure_lifetime` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Use Separate Process | `system/cron/staging/use_separate_process` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Generate Schedules Every | `system/cron/catalog/event/schedule_generate_every` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Schedule Ahead for | `system/cron/catalog/event/schedule_ahead_for` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Missed if Not Run Within | `system/cron/catalog/event/schedule_lifetime` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+History Cleanup Every | `system/cron/catalog/event/history_cleanup_every` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Success History Lifetime | `system/cron/catalog/event/history_success_lifetime` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Failure History Lifetime | `system/cron/catalog/event/history_failure_lifetime` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
+Use Separate Process | `system/cron/catalog/event/use_separate_process` | ![EE-only]({{ site.baseurl }}common/images/cloud_ee.png)
 Use Separate Process | `system/cron/default/use_separate_process` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Disable Email Communications | `system/smtp/disable` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
 Set Return-Path | `system/smtp/set_return_path` | <!-- ![Not EE-only]({{ site.baseurl }}common/images/red-x.png) --> | 
