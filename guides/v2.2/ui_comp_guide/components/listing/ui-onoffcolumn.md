@@ -10,11 +10,11 @@ github_link: ui_comp_guide/components/listing/ui-onoffсolumn.md
 
 ## Overview
 
-The OnOffColumn component is essentially a decorator for the MultiselectColumn that displays toggle switch elements instead of check boxes.
+The OnOffColumn component is a decorator for [MultiselectColumn]({{page.baseurl}}ui_comp_guide/components/listing/ui-multiselectcolumn.html) that displays toggle switch elements instead of check boxes.
 
 Constructor: [app/code/Magento/Ui/view/base/web/js/grid/columns/onoff.js]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/grid/columns/onoff.js)
 
-## OnOffColumn configuration
+## Configuration options
 
 Extends all [MultiselectColumn]({{page.baseurl}}ui_comp_guide/components/listing/ui-multiselectcolumn.html) configuration.
 

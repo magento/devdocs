@@ -10,11 +10,11 @@ github_link: ui_comp_guide/components/listing/ui-search.md
 
 ## Overview
 
-Search component allows to find records in the table that satisfy provided criteria. It displays a single input field that accepts a search query and it may be considered as a generic tool for filtering content that aggregates all other filter elements.
+The Search component allows to searching through the grid records. It is a generic tool for filtering content that aggregates all other filter elements.
 
 Constructor: [app/code/Magento/Ui/view/base/web/js/grid/search/search.js]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/grid/search/search.js)
 
-## FiltersChips configuration
+## Configuration options
 
 Extends all [UiElement]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uielement_concept.html) configuration.
 

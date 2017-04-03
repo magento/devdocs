@@ -9,9 +9,7 @@ github_link: ui_comp_guide/components/ui-modal.md
 redirect_from: guides/v2.0/ui-components/ui-modal.html
 ---
 
-This topic describes the modal UI component.
-
-## Modal component: overview
+## Overview
 
 The Modal UI component implements a secondary window that opens on top of the main window. It uses the [modal widget]({{page.baseurl}}javascript-dev-guide/widgets/widget_modal.html).
 

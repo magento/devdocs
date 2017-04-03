@@ -10,7 +10,7 @@ github_link: ui_comp_guide/components/ui-file.md
 
 ## Overview
 
-The File component is a form element that implements the HTML `<input>` field of type="file".
+The File component implements the HTML `<input type="file">` form field.
 
 ## File configuration
 

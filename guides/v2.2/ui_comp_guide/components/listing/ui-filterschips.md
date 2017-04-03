@@ -10,7 +10,7 @@ github_link: ui_comp_guide/components/listing/ui-filtersсhips.md
 
 ## Overview
 
-The FiltersChips component is a helper tool that works in conjunction with Filters and Search elements and provides UI controls that allow to remove applied values of the former components.
+The FiltersChips component provides UI controls that allows users to remove the previously applied values of the [Filters]({{page.baseurl}}ui_comp_guide/components/listing/ui-filters.html) and [Search]({{page.baseurl}}ui_comp_guide/components/listing/ui-search.html) components.
 
 Constructor: [app/code/Magento/Ui/view/base/web/js/grid/filters/chips.js]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/grid/filters/chips.js)
 

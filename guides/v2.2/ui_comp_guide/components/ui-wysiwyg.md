@@ -10,7 +10,7 @@ github_link: ui_comp_guide/components/ui-wysiwyg.md
 
 ## Overview
 
-The Wysiwyg component is an adapter for the TinyMCE editor which is used to integrate editor's instance into the UI Form. It expects to receive complete widget declaration in the `content` option which should contain both markup and the script responsible for creating editor's instance.
+The Wysiwyg component is an adapter for the [TinyMCE editor](https://www.tinymce.com/). Wysiwyg is used to integrate editor's instance into the [Form component]({{page.baseurl}}ui_comp_guide/components/ui-form.html). It expects to receive complete widget declaration in the `content` option which should contain both markup and the script responsible for creating editor's instance.
 
 ## Configuration options
 

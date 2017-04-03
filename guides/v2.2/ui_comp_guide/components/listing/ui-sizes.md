@@ -10,11 +10,11 @@ github_link: ui_comp_guide/components/listing/ui-sizes.md
 
 ## Overview
 
-The Sizes is a helper component for the Paging. It implements an editable list of options that define the maximum number of displayed records in the table.
+The Sizes component defines the maximum number of displayed records in a table (grid).
 
 Constructor: [app/code/Magento/Ui/view/base/web/js/grid/paging/sizes.js]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/grid/paging/sizes.js)
 
-## Sizes configuration
+## Сonfiguration options
 
 Extends all [`UiElement`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uielement_concept.html) configuration.
 

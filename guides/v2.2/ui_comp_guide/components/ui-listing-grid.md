@@ -9,74 +9,12 @@ github_link: ui_comp_guide/components/ui-listing-grid.md
 ---
 
 ## Overview
-Listing is a basic component responsible for rendering grids, lists and tiles, providing filtering, pagination, sorting and other features.
+Listing is a [basic component]({{page.baseurl}}ui_comp_guide/bk-ui_comps.html#general-structure) that implements grids, lists and tiles with filtering, pagination, sorting and other features.
 
 ## Structure
 
-Constructor: [app/code/Magento/Ui/view/base/web/js/grid/listing.js]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/grid/listing.js)
+Constructor: [app/code/Magento/Ui/view/base/web/js/lib/core/collection.js]({{site.mage2100url}}app/code/Magento/Ui/view/base/web/js/lib/core/collection.js)
 
-
-### DisplayMode interface {#displaymode}
-
-<table>
-  <tr>
-    <th>
-      Option
-    </th>
-    <th>
-      Description
-    </th>
-    <th>
-      Type
-    </th>
-    <th>
-      Required
-    </th>
-  </tr>
-  <tr>
-    <td>
-      <code>label</code>
-    </td>
-    <td>
-      Label for the list of available modes.
-    </td>
-    <td>
-      String
-    </td>
-    <td>
-      Optional
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>template</code>
-    </td>
-    <td>
-      Path to the <code>.html</code> template used to render
-      listing in the selected mode.
-    </td>
-    <td>
-      String
-    </td>
-    <td>
-      Optional
-    </td>
-  </tr>
-  <tr>
-    <td>
-      <code>value</code>
-    </td>
-    <td>
-      Mode's identifier.
-    </td>
-    <td>
-      String
-    </td>
-    <td>
-      Optional
-    </td>
-  </tr>
-</table>
 
 ## Integration
 

@@ -10,7 +10,7 @@ github_link: ui_comp_guide/components/ui-textarea.md
 
 ## Overview
 
-The Textarea component is a form element which implements the `<textarea>` field.
+The Textarea component implements the `<textarea>` form field.
 
 ## Textarea configuration
 Extends all `abstract` configuration.

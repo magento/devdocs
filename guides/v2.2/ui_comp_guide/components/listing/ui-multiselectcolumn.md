@@ -10,18 +10,9 @@ github_link: ui_comp_guide/components/listing/ui-multiselectcolumn.md
 
 ## Overview
 
-The MultiselectColumn component provides a check box interface for a specific listing or data set. The component is an extension for the Column component, and it allows the user to select either a collection of items or all items from the given set.
+The MultiselectColumn component implements a column with check boxes for selecting records. It also provides controls for selecting multiple records. 
 
-The MultiselectColumn component stores the information about the number of selected items in its template. It shares this data with the following components:
-
-* Pagination
-* MassAction
-
-When making any actions that affect the item selection, like filtering, the number of selected items in the MultiselectColumn component is flushed, as the current collection contains only one item and knows nothing about the general set of data.
-
-MultiselectColumn is a child of the Listing component and is rendered in its view. Like any component, it can hold the sort order value, which influences the order of all its child elements.
-
-When you specify the `after` or `before` property in the MultiselectColumn component, it references any existing component in the parent container and renders it in that specified position.
+MultiselectColumn is a child of the [Listing component]({{page.baseurl}}ui_comp_guide/components/ui-listing-grid.html) and is rendered in its view. Like any component, it can hold the sort order value, which influences the order of all its child elements.
 
 #### MultiselectColumn JS Component Structure
 

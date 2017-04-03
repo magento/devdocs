@@ -8,10 +8,10 @@ version: 2.2
 github_link: ui_comp_guide/components/listing/ui-column.md
 ---
 
-## Column overview
-Column is a basic component for a column.
+## Overview
+The Column component implements a basic column in [Listing]({{page.baseurl}}ui_comp_guide/components/ui-listing-grid.html).
 
-## Column configuration
+## Configuration 
 
 Extends all [`UiElement`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uielement_concept.html) configuration.
 

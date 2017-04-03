@@ -10,7 +10,7 @@ github_link: ui_comp_guide/components/ui-checkbox.md
 
 ## Overview
 
-The Checkbox component implements a form field that is a checkbox `<inupt>` element. It can also be displayed as a "toggle" handler or a radio button element.
+The Checkbox component implements a form field that is an HTML `<input type="checkbox">` element. It can also be displayed as a "toggle" handler or a radio button element.
 
 ## Сheckbox configuration
 

@@ -10,11 +10,11 @@ github_link: ui_comp_guide/components/listing/ui-datecolumn.md
 
 ## Overview
 
-The DateColumn component is a table's column that displays dates in a format defined by the `dateFormat` option.
+The DateColumn component implements a table column that displays dates.
 
 DateColumn сonstructor: [app/code/Magento/Ui/view/base/web/js/grid/columns/date.js]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/grid/columns/date.js)
 
-## DateColumn configuration
+## Сonfiguration options
 
 Extends all [Column]({{page.baseurl}}ui_comp_guide/components/listing/ui-column.html) configuration.
 

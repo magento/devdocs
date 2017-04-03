@@ -10,7 +10,7 @@ github_link: ui_comp_guide/components/ui-form.md
 
 
 ## Overview
-The Form component allows performing [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) operations on an entity.
+The Form component is a collection of fields that can be grouped in tabs and fieldsets; allows performing [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) operations.
 
 Form is a [basic component]({{page.baseurl}}ui_comp_guide/bk-ui_comps.html#general-structure).
 

@@ -8,19 +8,9 @@ version: 2.2
 github_link: ui_comp_guide/components/listing/ui-exportbutton.md
 ---
 
-The ExportButton component exports grid data to the specified data format (cvs, xml, and so on).
+## Overview
 
-To enable the ExportButton сomponent, add the `exportButton` element with a `selectProvider` item to the listing configuration file.
-
-{% highlight XML %}
-<exportButton name="export_button">
-    <argument name="data" xsi:type="array">
-        <item name="config" xsi:type="array">
-            <item name="selectProvider" xsi:type="string">{select_provider_path}</item>
-        </item>
-    </argument>
-</exportButton>
-{% endhighlight %}
+The ExportButton component implements the ability to export grid data to the specified data format (cvs, xml, and so on).
 
 ## Structure
 
@@ -88,7 +78,21 @@ ExportButton-specific configuration:
   </tr>
 </table>
 
-## Example of usage
+## How to use
+
+To enable the ExportButton сomponent, add the `exportButton` element with a `selectProvider` item to the listing configuration file.
+
+{% highlight XML %}
+<exportButton name="export_button">
+    <argument name="data" xsi:type="array">
+        <item name="config" xsi:type="array">
+            <item name="selectProvider" xsi:type="string">{select_provider_path}</item>
+        </item>
+    </argument>
+</exportButton>
+{% endhighlight %}
+
+## Example
 
 Example: `<Magento_Sales_module_dir>/view/adminhtml/ui_component/sales_order_grid.xml`
 

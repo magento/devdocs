@@ -9,12 +9,7 @@ github_link: ui_comp_guide/components/listing/ui-expandable-column.md
 ---
 
 ## Overview
-
-The Expandable Column UI component is an extention of the Column UI component. It looks into the options associated with a record/row, sorts them alphabetically, and renders the first 'x' options into a cell, while the full list of options is displayed in the tooltip. This makes a grid more readable. 
-
-The component's configuration allows a user to define the number of options that will be displayed in a cell. The full list of options is shown in a tooltip upon click on the "Show More" link.
-
-It uses the Tooltip UI component `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/tooltip.js`.
+Expandable Column UI component is an extension for [Column]({{page.baseurl}}ui_comp_guide/components/listing/ui-column.html). It sorts alphabetically the options associated with a record/row, and renders several options (the number is defined in configuration) into a cell. The full list of options is displayed in a tooltip implemented by the Tooltip UI component `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/tooltip.js`.
 
 The Expandable Column component can be used in Admin and the storefront.
 

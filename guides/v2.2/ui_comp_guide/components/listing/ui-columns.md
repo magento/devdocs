@@ -10,7 +10,7 @@ github_link: ui_comp_guide/components/listing/ui-columns.md
 
 ## Overview
 
-The Columns component is a collection of columns which is responsible for rendering the `<table>` element and displaying records of the Listing component in it.
+The Columns component is a collection of columns. It renders the `<table>` element and displays the records of the [Listing component]({{page.baseurl}}ui_comp_guide/components/ui-listing-grid.html) in this table.
 
 ## Configuration options
 
@@ -145,6 +145,68 @@ Columns-specific options:
     </td>
     <td>
       <code>ui/grid/view-switcher</code>
+    </td>
+  </tr>
+</table>
+
+### DisplayMode interface {#displaymode}
+
+<table>
+  <tr>
+    <th>
+      Option
+    </th>
+    <th>
+      Description
+    </th>
+    <th>
+      Type
+    </th>
+    <th>
+      Required
+    </th>
+  </tr>
+  <tr>
+    <td>
+      <code>label</code>
+    </td>
+    <td>
+      Label for the list of available modes.
+    </td>
+    <td>
+      String
+    </td>
+    <td>
+      Optional
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>template</code>
+    </td>
+    <td>
+      Path to the <code>.html</code> template used to render
+      listing in the selected mode.
+    </td>
+    <td>
+      String
+    </td>
+    <td>
+      Optional
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>value</code>
+    </td>
+    <td>
+      Mode's identifier.
+    </td>
+    <td>
+      String
+    </td>
+    <td>
+      Optional
     </td>
   </tr>
 </table>
