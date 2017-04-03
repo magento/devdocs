@@ -1,14 +1,16 @@
 ---
 layout: default
 group: coding-standards
-subgroup: Coding standards
+subgroup: 01_Coding standards
 title: DocBlock standard
+landing-page: Coding standards
 menu_title: DocBlock standard
 menu_order: 4
 version: 2.0
 github_link: coding-standards/docblock-standard-general.md
 redirect_from: /guides/v1.0/coding-standards/docblock-standard-general.html
 ---
+
 
 This standard defines Magento requirements and conventions for adding code inline documentation, known as *DocBlock*s.
 

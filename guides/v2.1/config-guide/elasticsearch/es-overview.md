@@ -129,16 +129,10 @@ To install Elasticsearch:
 
 4.	Open the [Elasticsearch configuration file](https://www.elastic.co/guide/en/elasticsearch/reference/2.0/setup-configuration.html#settings){:target="_blank"}, `elasticsearch.yml`, in a text editor.
 
-	For example, it might be located in `/etc/elasticsearch`.
+	For example, it might be located in `/etc/elasticsearch` or `<elasticsearch install dir>/config`.
 5.	Add the following parameter to the `Memory` section:
 
-	*	Very large catalogs (40,000 SKUs or more)
-
-			index.query.bool.max_clause_count: 10024 
-
-	*	Catalogs with less than 40,000 SKUs:
-
-			index.query.bool.max_clause_count: 4096
+		index.query.bool.max_clause_count: 10024 
 
 	For more information, see [Setting the BooleanQuery maxClauseCount in Elasticsearch](http://george-stathis.com/2013/10/18/setting-the-booleanquery-maxclausecount-in-elasticsearch){:target="_blank"}.
 6.	Save your changes to `elasticsearch.yml` and exit the text editor.

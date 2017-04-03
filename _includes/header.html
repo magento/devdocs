@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+	<title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
 	<meta name="description" content="{{ site.description }}">
 	<meta http-equiv="last-modified" content="{{ page.last_modified_at | date: "%Y-%m-%d (%Z)"}}" />
 
@@ -14,6 +14,9 @@
 	<link rel="stylesheet" href="{{ site.baseurl }}css/app.css" />
 	<link rel="stylesheet" href="{{ site.baseurl }}css/print.css" media="print" />
 	<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+
+    <!-- WebUI popover css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
 
   <script>
     var baseUrl = "{{ site.baseurl }}";

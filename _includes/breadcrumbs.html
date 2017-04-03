@@ -17,15 +17,28 @@
         {% continue %}
       {% endif %}
 
-
-      <!-- Get breadcrumb title. Insert snippet from configuration description to translates breadcrumb if language plugin is installed and YAML subset is set -->
+      <!-- Get breadcrumb title -->
       {% assign caption = crumb.title %}
 
       <!-- SEO data -->
       {% assign position = position  | plus: 1 %}
 
       <li class="breadcrumb-item{% if crumb.url == page.url %} active{% endif %}" property="itemListElement" typeof="ListItem">
-        {% if crumb.url != page.url %}<a property="item" typeof="WebPage" href="{{ crumb.url | prepend: page.baseurl }}">{% endif %}<span property="name">{{ caption }}</span>{% if crumb.url != page.url %}</a>{% endif %}
+
+        {% if crumb.url != page.url %}
+          <a property="item" typeof="WebPage" href="{{ crumb.url | prepend: page.baseurl }}">
+            <span property="name">{{ caption }}</span>
+          </a>
+        {% else %}
+
+          {% if page.layout == 'tutorial' and first_step.url != page.url %}
+            <a href="{{ first_step.url }}">{{ first_step.title }}</a>
+          {% endif %}
+
+          <span property="name">{{ caption }}</span>
+
+        {% endif %}
+
         <meta property="position" content="{{ position }}" />
       </li>
 
@@ -34,9 +47,6 @@
     {% include video/breadcrumbs.html %}
 
     </ol>
-
-
-
 
   </nav>
 {% endif %}
