@@ -1,7 +1,8 @@
 ---
 layout: default
 group: coding-standards
-subgroup: Coding standards
+subgroup: 01_Coding standards
+landing-page: Coding standards
 title: Code demarcation standard
 menu_title: Code demarcation standard
 menu_order: 1
@@ -137,7 +138,7 @@ The following list will help you make a distinction between the actual meaning o
 <p><b>Warning:</b> Following the procedure described below may irreparably damage your equipment.</p>
 {%endhighlight%}
 
-## Code demarcation 
+## Code demarcation
 
 ### Visual representation must rely only on HTML `class` attributes, CSS pseudo-classes and pseudo-elements, HTML tags, and form element's type attribute and form elements state attributes (example: `disabled`, `checked`).
 
@@ -252,7 +253,7 @@ this.element.on('click', function() {
 {% highlight javascript %}
 options {
  deleteAction:  '[data-action="delete"]',
- tooltip: '[data-role="tooltip]'  
+ tooltip: '[data-role="tooltip]'
 }
 ...
 this.element.find(this.options.deleteAction).on( ... );
@@ -350,7 +351,7 @@ public function getSelectorOptions()
 ...
 {% endhighlight %}
 
-or 
+or
 
 **Acceptable PHTML template**
 
@@ -486,7 +487,7 @@ public function getAttributeId($element)
 {% highlight php startinline=true %}
 <span class="attribute-change-checkbox">
 <label>
-   <input type="checkbox" 
+   <input type="checkbox"
       <?php echo ($this->getAttributeName($element)) ? ' name="' . $this->getAttributeName($element) . '"' : NULL; ?>
       data-mage-init="{customToggleWidget: [elementSelector: "input[name='someCustomName']"]}" />
    <?php echo Mage::helper('Mage_Catalog_Helper_Data')->__('Change'); ?>
@@ -520,5 +521,3 @@ public function getAttributeId($element)
 <!-- jQuery.hide() code can be either located in the widget itself OR can ask PHP Block class whether or not 'weight_and_type_switcher' should be visible. Based on this condition CSS can be applied to hide/show those elements. -->
 
 {%endhighlight%}
-
-

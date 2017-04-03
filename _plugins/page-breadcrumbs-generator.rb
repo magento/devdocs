@@ -24,7 +24,7 @@ module PageBreadcrumbsGenerator
       # Add landing page link. All books should have a landing page
       landingPage = getGuideLandingPage(site, page)
       if(landingPage)
-          breadcrumbs.push({"url"=>convertToHtmlLink(landingPage.data['github_link']),"title"=>landingPage.data['landing-page']})
+          breadcrumbs.push({"url"=>convertToHtmlLink(landingPage.data['github_link']),"title"=>landingPage.data['title'],"menu_title"=>landingPage.data['landing-page']})
       end
 
       # Add subgroup parent. Some may not have a designated page.
@@ -44,37 +44,37 @@ module PageBreadcrumbsGenerator
 #              breadcrumbs.push({"url"=>convertToHtmlLink(page.data['github_link']),"title"=>parent.data['title']})
 #          else
 #              breadcrumbs.push({"url"=>convertToHtmlLink(page.data['github_link']),"title"=>page.data['level3_subgroup']})
-#          end 
+#          end
 #      end
 
       # Add self entry
-      breadcrumbs.push({"url"=>page.url,"title"=>page.data['title']})
+      breadcrumbs.push({"url"=>page.url,"title"=>page.data['title'],"menu_title"=>page.data['menu_title']})
 
-      return breadcrumbs 
+      return breadcrumbs
     end
 
     def getThirdLevelParent(site,page)
         parent = site.pages.select do |p|
             p.data['level3_menu_node'] == 'level3parent' && p.data['level3_subgroup'] == page.data['level3_subgroup'] && p.data['group'] == page.data['group']
         end
-    
+
         if(parent.length && parent[0])
             return parent[0]
         end
 
-        return nil 
+        return nil
     end
 
     def getSecondLevelParent(site, page)
         parent = site.pages.select do |p|
             p.data['menu_node'] == 'parent' && p.data['subgroup'] == page.data['subgroup'] && p.data['group'] == page.data['group']
         end
-    
+
         if(parent.length && parent[0])
             return parent[0]
         end
 
-        return nil 
+        return nil
     end
 
     def getGuideLandingPage(site, page)

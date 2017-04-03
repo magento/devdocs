@@ -1,8 +1,9 @@
 ---
 layout: default
 group: coding-standards
-subgroup: Coding standards
+subgroup: 01_Coding standards
 title: jQuery widget coding standard
+landing-page: Coding standards
 menu_title: jQuery widget coding standard
 menu_order: 7
 version: 2.0
@@ -552,7 +553,7 @@ submit: function(data) {
 <h2 id="fedg_jquery-widget-coding_arch">Architecture</h2>
 
 <h3>Use the underscore prefix only to declare private widget methods</h3>
-  
+
 <p>Widget properties names should not start with underscore because those properties would not be accessible using the jQuery Widget Factory public API.</p>
   <table>
      <tbody>

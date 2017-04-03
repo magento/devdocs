@@ -1,15 +1,14 @@
 ---
 layout: default
-group: howdoi
-subgroup:
-title:
-menu_title:
-menu_node:
+group: contributor
+subgroup: templates
+title: Basic template
+menu_title: Basic template
 menu_order: 1
 version: 2.0
-github_link: contributor-guide/basic_template.md
+github_link: contributor-guide/templates/basic_template.md
+redirect_from: contributor-guide/basic_template.html
 ---
-<!-- Start with H2, not H1 -->
 
 ### Overview
 Introductory text that gives an overview of the topic you will be writing about.

@@ -16,9 +16,9 @@ This topic discusses the XML declaration of UI components.
 ## About the layout configuration file and UI component declaration
 Every module that has view representation contains the directory named `layout`. In this directory, the `.xml` declarations of the pages are stored. These `.xml` declarations are, in fact, the pages' markup.
 
-In a typical Magento `.xml` layout file we see a `<head/>` node, `<title/>` node with the name of the page, and sometimes [links to CSS and JS files]({{page.baseurl}}frontend-dev-guide/layouts/xml-manage.html#layout_markup_css). There are other nodes as well, the most important for us now is the [`<referenceContainer/>` node]({{page.baseurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref). (The `name` attribute in this node is responsible for the position of the container on the page.). Top-level UI components are declared in this node. All nested components are declared in the top-level components' instances configuration files (not in the page layouts).
+In a typical Magento `.xml` layout file we see a `<head/>` node, `<title/>` node with the name of the page, and sometimes [links to CSS and JS files]({{page.baseurl}}frontend-dev-guide/layouts/xml-manage.html#layout_markup_css). There are other nodes as well, the most important for us now is the [`<referenceContainer/>` node]({{page.baseurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref). (The `name` attribute in this node is responsible for the position of the container on the page.). [Basic]({{page.baseurl}}/ui_comp_guide/bk-ui_comps.html#general-structure) UI components are declared in this node. All nested components are declared in the basic components' instances configuration files (not in the page layouts).
 
-Example of a top-level UI component declaration:
+Example of a basic UI component declaration:
 
 {%highlight xml%}
 <referenceContainer name="page-container">
@@ -26,24 +26,24 @@ Example of a top-level UI component declaration:
 </referenceContainer>
 {%endhighlight%}
 
-A UI component is declared using the `<uiComponent/>` node. The `name` attribute in the `<uiComponent/>` node references the XML configuration of the top-level UI component's instance. This configuration is a separate `.xml` file. It is stored in the `<module_dir>/view/<area>/ui_component/` directory. For example `<module_dir>/view/<area>/ui_component/%instance_name%.xml`.
+A UI component is declared using the `<uiComponent/>` node. The `name` attribute in the `<uiComponent/>` node references the XML configuration of the basic UI component's instance. This configuration is a separate `.xml` file. It is stored in the `<module_dir>/view/<area>/ui_component/` directory. For example `<module_dir>/view/<area>/ui_component/%instance_name%.xml`.
 
 
-## About the top-level component configuration file
+## About the basic component configuration file
 
 The instance configuration file name is the name of instance (`%instance_name%`). The namespace of the names is global; meaning that if the file names in different modules are the same, they are merged into a single configuration for the particular instance.
 
 Following are the rules for the instance configuration files:
 
-* The top node must have the name of one of the top-level UI components. <!-- need to mention or link what components -->
+* The top node must have the name of one of the basic UI components. <!-- need to mention or link what components -->
 * The top node must contain a link to the XSD schema.
 
-In the top node, there can be an `<argument/>` node. The `<argument/>` node contains the configuration for that top-level UI component. The `<argument/>` node's `name` attribute value must be `data`. The child nodes of the `<argument>` node will be the argument properties that will be passed in to the component.
+In the top node, there can be an `<argument/>` node. The `<argument/>` node contains the configuration for that basic UI component. The `<argument/>` node's `name` attribute value must be `data`. The child nodes of the `<argument>` node will be the argument properties that will be passed in to the component.
 
 The top node can have nested nodes. Every nested node is regarded as a separate UI component (i.e. the toolbar). For example, if you want your listing to have a toolbar, then the top node is for the listing and a nested node represents a toolbar. Nested nodes can also contain the `<argument>` node.
 
 
-## Example of a top-level configuration file
+## Example of a basic component's configuration file
 
 {%highlight xml%}
 <?xml version="1.0" encoding="UTF-8"?>

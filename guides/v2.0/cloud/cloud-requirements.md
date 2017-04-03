@@ -26,6 +26,8 @@ Following are requirements you should already have:
     The integration environment (sometimes referred to as _Platform as a Service (PaaS))_ can help with integration testing but is not for developing for a production server. Among the differences are that, in integration, Magento is set for developer mode and not all directories are read-only.
 *	Must have working [`repo.magento.com` credentials]({{ page.baseurl }}install-gde/prereq/connect-auth.html) in your account
 
+{% include cloud/split-db-nosupport.md %}
+
 ### Required testing configurations {#cloud-req-test}
 Before you test any custom code in your local Magento Enterprise Cloud Edition environment, you must do all of the following:
 
