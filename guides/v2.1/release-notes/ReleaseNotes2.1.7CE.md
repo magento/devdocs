@@ -32,6 +32,7 @@ Magento 2.1.7 contains over 15 security enhancements. Look for the following hig
 
 * **Removal of vulnerability with the Zend framework `Zend_Mail` library**. For more information, see <a href="https://magento.com/security/news/new-zend-framework-1-security-vulnerability" target="_blank">New Zend Framework 1 Security Vulnerability</a>.  
 
+* **Updates to vulnerable JavaScript libraries**
 
 
 ## Security enhancements
@@ -68,7 +69,7 @@ Magento 2.1.7 contains over 15 security enhancements. Look for the following hig
 
 
 <!--- INTERNAL ONLY -->
-<!--- 64635, 65012, 65244, 64877, 64453, 65226, 64771, 64717, 65075 --> 
+<!--- 64635, 65012, 65244, 64877, 64453, 65226, 64771, 64717, 65075, 66931, 66689 --> 
 
 
 <!--- CANNOT REPRODUCE -->

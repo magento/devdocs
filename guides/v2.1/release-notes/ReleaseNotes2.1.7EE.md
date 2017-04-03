@@ -29,6 +29,7 @@ Magento 2.1.7 contains over 15 security enhancements. Look for the following hig
 
 * **Removal of vulnerability with the Zend framework `Zend_Mail` library**. For more information, see <a href="https://magento.com/security/news/new-zend-framework-1-security-vulnerability" target="_blank">New Zend Framework 1 Security Vulnerability</a>.  
 
+* **Updates to vulnerable JavaScript libraries**
 
 
 ## Security enhancements
@@ -61,11 +62,9 @@ Magento 2.1.7 contains over 15 security enhancements. Look for the following hig
 
 <!--- 59097 -->* The Magento Admin no longer leaks user password hashes. 
 
+<!--- 67019 -->*
 
-
-
-
-
+<!--- 63498 -->* 
 
 ## System requirements
 Our technology stack is built on PHP and MySQL. For more information, see
