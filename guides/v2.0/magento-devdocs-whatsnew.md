@@ -17,6 +17,10 @@ This page contains recent changes that we think you'd like to know about. We exc
 
 | Description  | Versions applied to  | New or Updated | Date |
 |--------------|--------------|----------------------|--------|
+| [Coding standards technical guidelines]({{ site.gdeurl21 }}coding-standards/technical-guidelines/technical-guidelines.html){:target="_blank"} | 2.1.x  |  New | Apr 1  |
+| [Update sample contribution template]({{ page.baseurl }}contributor-guide/templates/basic_template.html){:target="_blank"} | 2.x  |  Updated |  Apr 1 |
+| [Update performance test data]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-perf-data.html){:target="_blank"} | 2.x  | Updated  | Mar 21  |
+| [Versioning and compatibility]({{ page.baseurl }}extension-dev-guide/versioning/index.html){:target="_blank"} | 2.x  |  New |  Mar 31 |
 | [How to test a block]({{ page.baseurl }}mtf/mtf_entities/mtf_block.html){:target="_blank"}  | 2.x  |  Updated | Mar 24  | 
 | [Tutorial: Order processing with REST APIs]({{ site.gdeurl21 }}get-started/order-tutorial/order-intro.html){:target="_blank"}  |  2.1.x | New  | Mar 23  | 
 | [Magento U video tutorials](http://devdocs.magento.com/videos){:target="_blank"}  | 2.x  | New  |  Mar 15 |
