@@ -28,15 +28,19 @@ Magento 2.0.14 contains more than 15 security enhancements. Look for the followi
 This release includes important enhancements to the security of your Magento software. While there are no confirmed attacks related to the Zend framework `Zend_Mail` library vulnerability to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento software to the latest version as soon as possible.
 
 
+<!---  -->* 
+<!---  -->* 
+<!---  -->* 
+<!---  -->* 
+<!--- 66570 -->* 
 
-
-<!---  -->* 
-<!---  -->* 
-<!---  -->* 
-<!---  -->* 
-<!---  -->* 
-<!---  -->* 
-<!--- 65493 -->* 
+<!--- 66542 -->* 
+<!--- 66524 -->* 
+<!--- 66507 -->* 
+<!--- 66478 -->* 
+<!--- 66369 -->* 
+<!--- 66116 -->* 
+<!--- 66972 -->* 
 <!--- 64051 -->* 
 <!--- 63880 -->* 
 <!--- 63878 -->* 
@@ -55,7 +59,7 @@ This release includes important enhancements to the security of your Magento sof
 
 
 <!--- INTERNAL ONLY -->
-<!--- 65054, 65064, 65062, 65063, 64877, 65061, 65060, 65076, 65059, 65055, 64584, 65058 -->
+<!--- 67114, 66916, 66634, 66633, 66631, 66605, 66604, 66598, 66597, 66597, 66594, 66593, 66591, 66590, 66451, 66405, 66326, 65493, 65054, 64877, 64584, 66491, 66496, 66498-->
 
 <!--- DUPLICATE -->
 <!--- 65056, 65065 -->
@@ -64,6 +68,9 @@ This release includes important enhancements to the security of your Magento sof
 <!--- WON'T FIX -->
 <!---  65057 -->
 
+
+<!--- CANNOT REPRODUCE -->
+<!---  66592, 66466 -->
 
 <a href="https://github.com/magento/magento2/issues/5558" target="_blank">(GITHUB-5558)</a>
 
