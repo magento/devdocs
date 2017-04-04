@@ -503,7 +503,7 @@ class SampleEventObserverThatModifiesInputs
 {%endhighlight%}
 {% endcollapsible %}
 
-14.2. Use as specific events as possible. Don't use a `global` event when the area impacted is just `frontend`.
+14.2. Use as specific events as possible. Don't use a `global` subscription to an event when the area impacted is just `frontend`.
 
 <!-- LINKS: DEFINITIONS AND ADDRESSES -->
 
