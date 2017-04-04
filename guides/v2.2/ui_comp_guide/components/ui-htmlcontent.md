@@ -8,20 +8,20 @@ version: 2.2
 github_link: ui_comp_guide/components/ui-htmlcontent.md
 ---
 
-## HtmlContent overview
+## Overview
 
 The HtmlContent UI component provides the ability to process and render a layout structure or a Magento block directly inside a UI component configuration. Processing and rendering is executed on the server side.
 
 The layout structure inside HtmlContent must contain only one top-level block. The top-level block may contain as many child blocks or containers as required.
-All blocks inside HtmlContent are integrated into layout, so external blocks can refer to them and vice verse.
+All blocks inside HtmlContent are integrated into the layout, so external blocks can refer to them and vice verse.
 
-## HtmlContent structure
+## Structure
 The HtmlContent UI component comprises the following files:
 
 - JS component: [app/code/Magento/Ui/view/base/web/js/form/components/html.js]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/form/components/html.js)
 - template: [app/code/Magento/Ui/view/base/web/templates/content/content.html]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/templates/content/content.html)
 
-## HtmlContent configuration
+## Configuration options
 
 Extends all `uiComponent` configuration.
 

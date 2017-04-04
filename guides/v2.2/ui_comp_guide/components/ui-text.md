@@ -10,7 +10,7 @@ github_link: ui_comp_guide/components/ui-text.md
 
 ## Overview
 
-The Text component is used to display text data in the components like [Form]({{page.baseurl}}ui_comp_guide/components/ui-form.html) and [DynamicRows]({{page.baseurl}}ui_comp_guide/components/ui-dynamicrows.html).
+The Text component displays text data in the components like [Form]({{page.baseurl}}ui_comp_guide/components/ui-form.html) and [DynamicRows]({{page.baseurl}}ui_comp_guide/components/ui-dynamicrows.html).
 
 ## Text configuration
 

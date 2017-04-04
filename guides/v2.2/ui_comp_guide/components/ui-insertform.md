@@ -10,7 +10,7 @@ github_link: ui_comp_guide/components/ui-form.md
 
 ## Overview
 
-The InsertForm component is used to insert the [Form component]({{page.baseurl}}ui_comp_guide/components/ui-insertform.md) into other components.
+The InsertForm component inserts the [Form component]({{page.baseurl}}ui_comp_guide/components/ui-insertform.md) into other components.
 
 ## Сonfiguration options
 

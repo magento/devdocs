@@ -12,7 +12,7 @@ github_link: ui_comp_guide/components/listing/ui-massactions.md
 
 The MassActions component allows performing actions with multiple selected items. Must be a child of the [Listing component]({{page.baseurl}}ui_comp_guide/components/ui-listing-grid.html). 
 
-See the [Admin Design Pattern Library (MassActions)]({{page.baseurl}}pattern-library/displaying-data/datatable/datatable.html#massactions) topic for information about the UI design patterns that can be implemented using the Tab component.
+See the [Admin Design Pattern Library (MassActions)]({{page.baseurl}}pattern-library/displaying-data/datatable/datatable.html#massactions) topic for information about the UI design patterns that can be implemented using the MassActions component.
 
 #### Component Elements (classes, files)
 

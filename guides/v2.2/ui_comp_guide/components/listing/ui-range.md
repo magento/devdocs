@@ -10,7 +10,7 @@ github_link: ui_comp_guide/components/listing/ui-range.md
 
 ## Overview
 
-The Range component implements the range for filtering rows in a grid. Visually this component represents two input fields of `date` or `text` type, for entering the "from" and "to" range limits.
+The Range component implements the range for filtering rows in a grid. Visually, this component represents two input fields of `date` or `text` type, for entering the "from" and "to" range limits.
 
 Constructor: [app/code/Magento/Ui/view/base/web/js/grid/filters/range.js]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/grid/filters/range.js)
 

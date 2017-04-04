@@ -10,7 +10,7 @@ github_link: ui_comp_guide/components/listing/ui-linkсolumn.md
 
 ## Overview
 
-The LinkColumn component implements a column that can display the anchor elements instead of the plain text.
+The LinkColumn component implements a column that can display the anchor elements instead of plain text.
 
 Constructor: [app/code/Magento/Ui/view/base/web/js/grid/columns/link.js]({{mage.2200url}}app/code/Magento/Ui/view/base/web/js/grid/columns/link.js)
 
