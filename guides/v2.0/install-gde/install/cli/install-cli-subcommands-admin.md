@@ -2,8 +2,8 @@
 layout: default
 group: install_cli 
 subgroup: 05_Command-line installation
-title: Create or unlock a Magento administrator account
-menu_title: Create or unlock a Magento administrator account
+title: Create, edit, or unlock a Magento administrator account
+menu_title: Create, edit, or unlock a Magento administrator account
 menu_node: 
 menu_order: 50
 version: 2.0
@@ -28,7 +28,9 @@ Before you can use this command, you must do all of the following:
   		<p>The simplest way to create the database is to use the command <code>magento setup:upgrade</code>.</span>
 	</div>
 
-<h2 id="instgde-cli-admin">Create an administrator</h2>
+## Create or edit an administrator {#instgde-cli-admin}
+Use this command to create a new administrator or to edit an existing administrator. If you're editing an administrator, only the first name, last name, and password can be edited.
+
 Command usage:
 
 	magento admin:user:create [--<parameter_name>=<value>, ...]

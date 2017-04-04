@@ -108,7 +108,7 @@ This file overrides the <code>_buttons.less</code> of the parent theme.
 
 <h2>Recommended reading</h2>
 <ul>
-<li><a href="{{page.baseurl}}frontend-dev-guide/css-topics/css_debug.html" target="_blank">Styles debugging</a></li>
+<li><a href="{{page.baseurl}}frontend-dev-guide/css-topics/css_debug.html" target="_blank">Compile LESS with Grunt</a></li>
 <li><a href="{{page.baseurl}}frontend-dev-guide/css-topics/css-preprocess.html" target="_blank">CSS preprocessing</a></li>
 <li><a href="{{page.baseurl}}frontend-dev-guide/css-topics/theme-ui-lib.html" target="_blank">Magento UI library</a></li>
 </ul>

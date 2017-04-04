@@ -12,7 +12,6 @@ github_link: config-guide/multi-master/multi-master_slavedb.md
 
 <img src="{{ site.baseurl }}common/images/ee-only_large.png">
 
-<h2 id="config-ee-multidb-slave-over">Overview of database replication</h2>
 Setting up database replication provides the following benefits:
 
 *	Provides data backup
@@ -115,4 +114,13 @@ The following is more advanced and is provided for your information only:
   ),
 //.......
 {% endhighlight %}
+
+## Performance improvement
+To improve the performance of master-slave replication, you can filter some tables on slave instances. We recommend filtering all temporary tables with name pattern `search\_tmp\_%` that are used for catalog search.
+
+To do this, add the following line to your `my.cnf` file on your slave instances:
+
+    replicate-wild-ignore-table=%.search\_tmp\_%
+
+For more information about this setting, see [MySQL documentation](https://dev.mysql.com/doc/refman/5.7/en/replication-options-slave.html#option_mysqld_replicate-wild-ignore-table){:target="_blank"}.
 
