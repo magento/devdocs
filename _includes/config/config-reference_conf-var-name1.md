@@ -2,20 +2,25 @@
 
 This topic discusses how to derive an environment variable name knowing a configuration path. You can override Magento configuration settings using environment variables. For example, you can override the value of a payment processor's live URL on your production system.
 
-You can override the value of _any_ configuration setting using environment variables; however, we recommend you maintain consistent settings using the shared configuration file, `config.php`, and the system-specific configuration file, `env.php`, as discussed in TBD.
+You can override the value of _any_ configuration setting using environment variables; however, we recommend you maintain consistent settings using the shared configuration file, `config.php`, and the system-specific configuration file, `env.php`, as discussed in [Deployment general overview]({{ page.baseurl }}config-guide/prod/prod_deploy-over.html).
 
-A environment variable name consists of its scope followed by its configuration path. The following sections discuss how to determine a variable name in more detail.
+A environment variable name consists of its scope followed by its configuration path in a particular format. The following sections discuss how to determine a variable name in more detail.
 
 You can use variables for any of the following:
 
 *	[Sensitive values]({{ page.baseurl }}config-guide/prod/config-reference-sens.html) must be set using either environment variables or the [`magento config:sensitive:set`]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config.html) command.
-*	System-specific values must be set using either environment variables, the [`magento config:senstive:set`]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config.html) command, or the [`magento app:config:dump` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-export.html).
+*	System-specific values must be set using:
+
+	*	Environment variables
+	*	The [`magento config:set`]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config.html) command
+	*	The Magento Admin followed by the [`magento app:config:dump` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-export.html)
 
 Configuration paths can be found in:
 
-*	[All configuration paths except payments reference]({{ page.baseurl }}config-guide/prod/config-reference-most.html)
-*	[Payment configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-payment.html)
 *	[Sensitive and system-specific configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-sens.html)
+*	[Payment configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-payment.html)
+*	[Magento Enterprise B2B Extension configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-b2b.html)
+*	[Other configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-most.html)
 
 ### Variable names
 The general format of system settings variable names follows:
@@ -42,20 +47,23 @@ The general format of system settings variable names follows:
 	*	[Magento User Guide](http://docs.magento.com/m2/ce/user_guide/configuration/scope.html){:target="_blank"}
 	*	[Scope quick reference](http://docs.magento.com/m2/ce/user_guide/stores/store-scope-reference.html){:target="_blank"}
 
-`<SYSTEM__VARIABLE__NAME>` is the variable you wish to specify. For more information, see [Step 2: Set system variables](#cloud-system-vars-sys).
+`<SYSTEM__VARIABLE__NAME>` is the configuration path with double underscore characters substituted for `/`. For more information, see [Step 2: Set system variables](#cloud-system-vars-sys).
 
 ### Variable format
 `<SCOPE>` is separated from `<SYSTEM__VARIABLE__NAME>` by two underscore characters. 
 
 `<SYSTEM__VARIABLE__NAME>` is derived from a configuration setting's _configuration path_, which is a `/` delimited string that uniquely identifies a particular setting. Replace each `/` character in the configuration path with two underscore characters to create the system variable.
 
+If a configuration path contains an underscore character, the underscore character remains in the variable.
+
 A complete list of configuration paths can be found in:
 
-*	[All environment variables except paths]({{ page.baseurl }}config-guide/prod/config-reference-most.html)
-*	[Payment configuration paths]({{ page.baseurl }}config-guide/prod/config-reference-payment.html)
+*	[Sensitive and system-specific configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-sens.html)
+*	[Payment configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-payment.html)
+*	[Magento Enterprise B2B Extension configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-b2b.html)
+*	[Other configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-most.html)
 
 ## Step 1: Find the website or store view scope value {#deploy-system-vars-scopes}
-
 This section discusses how you can find and set system configuration values per _scope_ (store view or website). To set global scope variables, see [Step 2:  Set global, website, or store view variables](#cloud-system-vars-sys).
 
 Scope values come from the `store`, `store_group`, and `store_website` tables.

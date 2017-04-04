@@ -124,10 +124,7 @@ On your production system:
 7.  Flush the Magento cache.
 8.  End maintenance mode.
 
-## Configuration management commands and examples
-This section provides a summary of the commands used to manage the configuration and provides examples to help you understand how configuration management works.
-
-### Configuration management commands
+## Configuration management commands
 We provide the following commands to help you manage the configuration:
 
 *   [`magento app:config:dump`]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-export.html) to write Magento Admin configuration settings to `config.php` and `env.php` (except for sensitive settings)
@@ -135,10 +132,10 @@ We provide the following commands to help you manage the configuration:
 *   [`magento config:sensitive:set`]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-set.html) to set the values of sensitive settings on the production system.
 *   [`magento app:config:import`]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-import.html) to import configuration changes to the production system.
 
-### Configuration management examples
+## Configuration management examples
 This section shows examples of managing the configuration so you can see how changes are made to `config.php` and `env.php`.
 
-#### Change the default locale
+### Change the default locale
 This section shows the change made to `config.php` when you change the default weight unit using the Magento Admin (**Stores** > Settings > **Configuration** > General > **General** > **Locale Options**).
 
 After you make the change in the Admin, run `php bin/magento app:config:dump` to write the value to `config.php`. The value is written to the `general` array under `locale` as the following snippet from `config.php` shows:
@@ -154,7 +151,7 @@ After you make the change in the Admin, run `php bin/magento app:config:dump` to
         ),
 ```
 
-#### Change several configuration settings
+### Change several configuration settings
 This section discusses making the following configuration changes:
 
 *   Adding a website, store, and store view (**Stores** > **All Stores**)
@@ -163,8 +160,13 @@ This section discusses making the following configuration changes:
 
 After you make the change in the Admin, run `php bin/magento app:config:dump`. This time, not all of your changes are written to `config.php`; in fact, only the website, store, and store view are written to that file as the following snippets show.
 
-**config.php**
-`config.php` contains changes to the website, store, and store view.
+#### config.php
+`config.php` contains:
+
+*   Changes to the website, store, and store view.
+*   Non-system-specific Elasticsearch settings
+*   Non-sensitive PayPal settings
+*   Comments that inform you of sensitive settings that were omitted from `config.php`
 
 {% collapsible Show config.php snippets: %}
 
@@ -210,11 +212,51 @@ After you make the change in the Admin, run `php bin/magento app:config:dump`. T
         'is_active' => '1',
       ),
 ```
+
+`payments` array:
+
+``` php
+      'payment' =>
+      array (
+        'paypal_express' =>
+        array (
+          'active' => '0',
+          'in_context' => '0',
+          'title' => 'PayPal Express Checkout',
+          'sort_order' => NULL,
+          'payment_action' => 'Authorization',
+          'visible_on_product' => '1',
+          'visible_on_cart' => '1',
+          'allowspecific' => '0',
+          'verify_peer' => '1',
+          'line_items_enabled' => '1',
+          'transfer_shipping_options' => '0',
+          'solution_type' => 'Mark',
+          'require_billing_address' => '0',
+          'allow_ba_signup' => 'never',
+          'skip_order_review_step' => '1',
+        ),
+```
+
+`search` array:
+
+``` php
+ 'search' =>
+        array (
+          'engine' => 'elasticsearch',
+          'search_suggestion_enabled' => '1',
+          'search_suggestion_count' => '2',
+          'search_suggestion_count_results_enabled' => '0',
+          'search_recommendations_enabled' => '1',
+          'search_recommendations_count' => '5',
+          'search_recommendations_count_results_enabled' => '0',
+        ),
+```
 {% endcollapsible %}
 
 **env.php**
 
-The Elasticsearch changes are written to `app/etc/env.php` as follows:
+The Elasticsearch system-specific configuration settings are written to `app/etc/env.php` as follows:
 
 {% collapsible Show env.php snippets: %}
 
