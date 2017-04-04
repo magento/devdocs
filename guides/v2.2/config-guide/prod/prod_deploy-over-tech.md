@@ -213,7 +213,7 @@ After you make the change in the Admin, run `php bin/magento app:config:dump`. T
       ),
 ```
 
-`payments` array:
+`payment` array:
 
 ``` php
       'payment' =>
