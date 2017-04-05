@@ -67,3 +67,15 @@ To set the default locale and weight units in your development system:
 Now that you've changed the configuration in the Magento Admin, write the shared configuration to a file as discussed in this section.
 
 {% include config/split-deploy/example_save-shared-config.md %}
+
+Note that even though `app/etc/env.php` (the system-specific configuration) was updated, don't check it in to source control. You'll create the same configuration settings on your production system later in this procedure.
+
+## Step 3: Update your build system and generate files
+Now that you've committed your changes to the shared configuration to source control, you can pull those changes in your build system, compile code, and generate static files. The last step is to pull those changes to your production system.
+
+{% include config/split-deploy/example_build-sync.md %}
+
+## Step 4: Update the production system
+The last step in the process is to update your production system from source control. This pulls all the changes you made on your development and build systems, which means your production system is completely up-to-date.
+
+{% include config/split-deploy/example_update-prod.md %}

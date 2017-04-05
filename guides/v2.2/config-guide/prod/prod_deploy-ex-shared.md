@@ -61,54 +61,12 @@ Generate the shared configuration file, `app/etc/config.php`, in your developmen
 ## Step 3: Update your build system and generate files
 Now that you've committed your changes to the shared configuration to source control, you can pull those changes in your build system, compile code, and generate static files. The last step is to pull those changes to your production system. As a result, your production system's configuration will match your development system.
 
-To update your build system:
-
-1.	Log in to your build system as, or switch to, the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %}.
-2.	Change to the build system's Magento root directory.
-3.	Pull the changes to `app/etc/config.php` from source control.
-
-	The Git command follows:
-
-		git pull mconfig m2.2_deploy
-4.	Compile code:
-
-		php bin/magento setup:di:compile
-5.	After code has been compiled, generate static view files:
-
-		php bin/magento setup:static-content:deploy -f
-6.	Check the changes into source control.
-
-	The Git command follows:
-
-		git add -A && git commit -m "Updated files on build system" && git push mconfig m2.2_deploy
+{% include config/split-deploy/example_build-sync.md %}
 
 ## Step 4: Update the production system
 The last step in the process is to update your production system from source control. This pulls all the changes you made on your development and build systems, which means your production system is completely up-to-date.
 
-To update the production system:
-
-1.	Log in to your production system as, or switch to, the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %}.
-2.	Start maintenance mode:
-
-		cd <Magento root dir>
-		php bin/magento maintenance:enable
-
-	For additional options, such as the ability to set an IP address whitelist, see [`magento maintenance:enable`]({{ page.baseurl }}install-gde/install/cli/install-cli-subcommands-maint.html).
-3.	If you use Magento EE, stop queue workers. TBD
-3.	Pull code from source control.
-
-	The Git command follows:
-
-		git pull mconfig m2.2_deploy
-4.	Update the configuration:
-
-		php bin/magento app:config:import
-5.	Clean the cache:
-
-		php bin/magento cache:clean
-4.	End maintenance mode:
-
-		php bin/magento maintenance:disable
+{% include config/split-deploy/example_update-prod.md %}
 
 ### Verify the changes in the Magento Admin
 To verify these settings are not editable in the Magento Admin:
