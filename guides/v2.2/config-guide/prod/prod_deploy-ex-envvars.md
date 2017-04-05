@@ -16,8 +16,7 @@ This example shows how to set shared, system-specific, and sensitive values in y
 
 These configuration settings can be shared between the development and production systems:
 
-*	VAT Number from **Stores** > Settings > **Configuration** > General > **General**
-*	Email Sender from **Stores** > Settings > **Configuration** > General > **Contacts**
+VAT Number and Store Name from **Stores** > Settings > **Configuration** > General > **General**
 
 These configuration settings are either system-specific or sensitive, as indicated:
 
@@ -50,14 +49,14 @@ To set the default locale and weight units in your development system:
 2.	Click **Stores** > Settings > **Configuration** > General > **General**.
 3.	If you have more than one website available, use the **Store View** list in the upper left corner to switch to a different website as the following figure shows.
 
-	![Switch websites]({{ site.baseurl }}common/images/config_split-deploy_switch-websites.png)
+	![Switch websites]({{ site.baseurl }}common/images/config_split-deploy_switch-website.png){:width="250px"}
 3.	In the right pane, expand **Store Information**.
 4.	If necessary, clear the **Use Default** check box next to the **VAT Number** field.
 5.	Enter a number in the field (for example, `12345`).
-6.	In the left pane, under General, click **Contacts**.
+6.	In the **Store Name** field, enter a value (like `My Store`).
 7.	Use the **Store View** list to select the **Default Config** as the following figure shows.
 
-	![Switch to the default config]({{ site.baseurl }}common/images/config_split-deploy_default-config.png)
+	![Switch to the default config]({{ site.baseurl }}common/images/config_split-deploy_default-config.png){:width="250px"}
 8.	Clear the **Use Default** check box next to the **Send Emails** field.
 9.	Enter an e-mail address in the field.
 10.	Click **Save Config**.
@@ -76,6 +75,20 @@ Now that you've committed your changes to the shared configuration to source con
 {% include config/split-deploy/example_build-sync.md %}
 
 ## Step 4: Update the production system
-The last step in the process is to update your production system from source control. This pulls all the changes you made on your development and build systems, which means your production system is completely up-to-date.
+The last step in the process is to update your production system. You must do it in two parts:
+
+*	[Update the sensitive and system-specific settings](#config-split-verify-sens)
+*	[Update the shared settings](#config-split-verify-shared)
+
+### Update the sensitive and system-specific settings {#config-split-verify-sens}
+TBD
+
+### Update the shared settings {#config-split-verify-shared}
+This section discusses how to pull all the changes you made on your development and build systems, which updates the shared configuration settings (Store Name and VAT Number).
 
 {% include config/split-deploy/example_update-prod.md %}
+
+### Verify shared settings in the Magento Admin
+This section discusses how you can verify the shared configuration settings in the Admin.
+
+To verify shared settings

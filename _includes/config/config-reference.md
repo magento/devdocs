@@ -4,7 +4,7 @@
 This section lists variable names and configuration paths available for options in the Admin under **Stores** > Settings > **Configuration** > **General**.
 
 ### General paths
-These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > **General** > **General**.
+These configuration values are availabe in the Magento Admin in **Stores** > Settings > **Configuration** > General > **General**.
 
 Name  | Config path | EE only? | 
 |--------------|--------------|--------------|
