@@ -51,11 +51,18 @@ To get these values from the database:
 {% include config/config-reference_conf-var-name2.md %}
 
 ## How to use environment variables
-TBD
+Set configuration values as variables using PHP's [`$_ENV`](http://php.net/manual/en/reserved.variables.environment.php){:target="_blank"} associate array. You can set the values in any PHP script that runs when Magento runs, such as `index.php`.
 
-*	In the UNIX environment
-*	In a virtual host
-*	In .htaccess?
+An example of setting two values follows:
+
+	$_ENV['CONFIG__DEFAULT__CATALOG__SEARCH__ELASTICSEARCH_SERVER_HOSTNAME'] = 'http://search.example.com';
+	$_ENV['CONFIG__DEFAULT__GENERAL__STORE_INFORMATION__MERCHANT_VAT_NUMBER'] = '1234';
+
+A step-by-step example is shown in [Set configuration values using environment variables]({{ page.baseurl }}config-guide/prod/prod_deploy-envvars.html).
+
+<div class="bs-callout bs-callout-warning" markdown="1">
+To use values you set in the `$_ENV` array, you must set `variables_order = "EGPCS"` in your `php.ini` file. For details, see [PHP documentation](http://us.php.net/manual/en/ini.core.php#ini.variables-order){:target="_blank"}.
+</div>
 
 #### Related information
 *	[Magento User Guide discussion of scope](http://docs.magento.com/m2/ce/user_guide/configuration/scope.html){:target="_blank"}
