@@ -110,10 +110,10 @@ To find the value of `<SYSTEM__VARIABLE__NAME>`, replace each `/` character in t
 
 The variable names follow:
 
-	| Name  | Config path | Variable name |
-	|--------------|--------------|--------------|
-	| Send Emails To | `contact/email/recipient_email` | `CONFIG__DEFAULT__CONTACT__EMAIL__RECIPIENT_EMAIL` |
-	| Default Email Domain | `customer/create_account/email_domain` | `CONFIG__WEBSITES__BASE__CUSTOMER__CREATE_ACCOUNT__EMAIL_DOMAIN` |
+| Name  | Config path | Variable name |
+|--------------|--------------|--------------|
+| Send Emails To | `contact/email/recipient_email` | `CONFIG__DEFAULT__CONTACT__EMAIL__RECIPIENT_EMAIL` |
+| Default Email Domain | `customer/create_account/email_domain` | `CONFIG__WEBSITES__BASE__CUSTOMER__CREATE_ACCOUNT__EMAIL_DOMAIN` |
 
 
 
