@@ -2,8 +2,8 @@
 layout: default
 group: config-guide
 subgroup: 999_prod
-title: Set configuration values using environment variables
-menu_title: Set configuration values using environment variables
+title: Example of setting configuration values using environment variables
+menu_title: Example of setting configuration values using environment variables
 menu_node: 
 menu_order: 53
 level3_menu_node: level3child
