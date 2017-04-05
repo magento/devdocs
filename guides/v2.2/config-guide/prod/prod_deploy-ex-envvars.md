@@ -56,7 +56,7 @@ To set the default locale and weight units in your development system:
 6.	In the **Store Name** field, enter a value (like `My Store`).
 7.	Use the **Store View** list to select the **Default Config** as the following figure shows.
 
-	![Switch to the default config]({{ site.baseurl }}common/images/config_split-deploy_default-config.png){:width="250px"}
+	![Switch to the default config]({{ site.baseurl }}common/images/config_split-deploy_default-config.png){:width="200px"}
 8.	Clear the **Use Default** check box next to the **Send Emails** field.
 9.	Enter an e-mail address in the field.
 10.	Click **Save Config**.
@@ -81,7 +81,41 @@ The last step in the process is to update your production system. You must do it
 *	[Update the shared settings](#config-split-verify-shared)
 
 ### Update the sensitive and system-specific settings {#config-split-verify-sens}
-TBD
+To set the sensitive and system-specific settings using environment variables, you must know the following:
+
+*	Each setting's scope 
+
+	If you followed the instructions in TBD, the scope for Send Emails To is global (that is, the Default Config scope) and the scope for Default Email Domain is website. 
+
+	You must know the website's code to set the Default Email Domain configuration value. See TBD for more information on finding it.
+*	Each setting's configuration path
+
+	The configuration paths in this example follow:
+
+	| Name  | Config path | 
+	|--------------|--------------|
+	| Send Emails To | `contact/email/recipient_email` |
+	| Default Email Domain | `customer/create_account/email_domain` |
+
+	You can find all sensitive and system-specific configuration paths in [Sensitive and system-specific configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-sens.html).
+
+#### Convert configuration paths to variable names
+As discussed in TBD, the format of variables is:
+
+<pre class="no-copy">&lt;SCOPE>__&lt;SYSTEM__VARIABLE__NAME></pre>
+
+The value of `<SCOPE>` is `CONFIG__DEFAULT__` for global scope or `CONFIG__WEBSITES__<WEBSITE CODE>` for website scope.
+
+To find the value of `<SYSTEM__VARIABLE__NAME>`, replace each `/` character in the configuration path with two underscores.
+
+The variable names follow:
+
+	| Name  | Config path | Variable name |
+	|--------------|--------------|--------------|
+	| Send Emails To | `contact/email/recipient_email` | `CONFIG__DEFAULT__CONTACT__EMAIL__RECIPIENT_EMAIL` |
+	| Default Email Domain | `customer/create_account/email_domain` | `CONFIG__WEBSITES__BASE__CUSTOMER__CREATE_ACCOUNT__EMAIL_DOMAIN` |
+
+
 
 ### Update the shared settings {#config-split-verify-shared}
 This section discusses how to pull all the changes you made on your development and build systems, which updates the shared configuration settings (Store Name and VAT Number).
