@@ -22,7 +22,7 @@ When you create a category from Admin, you have the option to configure display 
     "name": "My New Category",
     "is_active": true,
     "level": 2,
-    "include_in_menu": true
+    "include_in_menu": true,
     "custom_attributes":[
          {
             "attribute_code":"description",
