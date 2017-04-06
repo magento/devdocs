@@ -28,6 +28,11 @@ The Store module management has been updated to allow retrieve store by website 
 **Action:** Added the method `getStoreByWebsiteId($websiteId)` to [`\Magento\Store\Model\StoreManager`]<br/>
 **Description:** Retrieve store by website id<br/>
 
+New unique and required field `code` was added to the Store Group.
+**Class:** [`Magento\Store\Api\Data\GroupInterface`]({{site.mage2200url}}app/code/Magento/Store/Api/Data/GroupInterface.php)<br/>
+**Action:** Added two methods `getCode()` and `setCode($code)` to [`Magento\Store\Api\Data\GroupInterface`]<br/>
+
+
 ### Customer Module
 
 Change was done in order to add default values to customer attributes.
@@ -146,6 +151,10 @@ The `bin/magento setup:config:set` command no longer has the `--definition-forma
 ## Changes in UI
 
 ## Database Schema changes
+
+###store_group
+**Action:** new column `code` was added to `store_group` table. This column has unique key.<br/>
+**Description:** data to this column for existed store Groups will be automatically filled based on the Groups names.
 
 ## Database data format changes
 
