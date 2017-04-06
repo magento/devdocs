@@ -155,10 +155,10 @@ After you make the change in the Admin, run `php bin/magento app:config:dump` to
 This section discusses making the following configuration changes:
 
 *   Adding a website, store, and store view (**Stores** > **All Stores**)
-*   Changing the Elasticsearch host and port (**Stores** > Settings > **Configuration** > Catalog > **Catalog** > **Catalog Search**)
+*   Changing the default email domain (**Stores** > Settings > **Configuration** > Customers > **Customer Configuration**)
 *   Setting the PayPal API Username and API password (**Stores** > Settings > **Configuration** > Sales > **Payment Methods** > **PayPal** > **Required PayPal Settings**)
 
-After you make the change in the Admin, run `php bin/magento app:config:dump`. This time, not all of your changes are written to `config.php`; in fact, only the website, store, and store view are written to that file as the following snippets show.
+After you make the change in the Admin, run `php bin/magento app:config:dump` on your development system. This time, not all of your changes are written to `config.php`; in fact, only the website, store, and store view are written to that file as the following snippets show.
 
 #### config.php
 `config.php` contains:
@@ -238,25 +238,11 @@ After you make the change in the Admin, run `php bin/magento app:config:dump`. T
         ),
 ```
 
-`search` array:
-
-``` php
- 'search' =>
-        array (
-          'engine' => 'elasticsearch',
-          'search_suggestion_enabled' => '1',
-          'search_suggestion_count' => '2',
-          'search_suggestion_count_results_enabled' => '0',
-          'search_recommendations_enabled' => '1',
-          'search_recommendations_count' => '5',
-          'search_recommendations_count_results_enabled' => '0',
-        ),
-```
 {% endcollapsible %}
 
 **env.php**
 
-The Elasticsearch system-specific configuration settings are written to `app/etc/env.php` as follows:
+The default email domain system-specific configuration setting is written to `app/etc/env.php` as follows:
 
 {% collapsible Show env.php snippets: %}
 

@@ -20,8 +20,8 @@ VAT Number and Store Name from **Stores** > Settings > **Configuration** > Gener
 
 These configuration settings are either system-specific or sensitive, as indicated:
 
-*	Send Emails To (sensitive) from **Stores** > Settings > **Configuration** > **General** > **Contacts**
-*	Default Email Domain (system-specific) from **Stores** > Settings > **Configuration** > **Customers** > **Customer Configuration**
+*	Send Emails To (sensitive) from **Stores** > Settings > **Configuration** > General > **Contacts**
+*	Default Email Domain (system-specific) from **Stores** > Settings > **Configuration** > Customers > **Customer Configuration**
 
 You can use the same procedure to configure any settings in the following references:
 
