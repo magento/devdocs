@@ -74,13 +74,13 @@ We changed the following behavior in the Magento Admin in production mode:
 *   As discussed previously, any configuration setting in `config.php` or `env.php` is locked and cannot be edited in the Admin.
 *   You can change the Admin locale only to languages used by deployed themes
 
-    The following figure shows an example of the **Interface Locale** list in the Admin showing only two deployed locales:
+    The following figure shows an example of the **Account Setting**> **Interface Locale** list in the Admin showing only two deployed locales:
 
-    ![You can change the Admin locale only to deployed locales]({{ site.baseurl }}common/images/config_split-deploy_admin-locale.png)
+    ![You can change the Admin locale only to deployed locales]({{ site.baseurl }}common/images/config_split-deploy_admin-locale.png){:width="250px"}
 
-    The following figure shows an example of the **Applied Themes** list in production mode.
+    The following figure shows an example of the **Content** > Design > **Configuration** > **Applied Theme** list in production mode.
 
-    ![You cannot change the theme in production mode]({{ site.baseurl }}common/images/config_split-deploy_admin-theme.png)
+    ![You cannot change the theme in production mode]({{ site.baseurl }}common/images/config_split-deploy_admin-theme.png){:width="250px"}
 
 ## cron installation and removal {#config-deploy-cron}
 In version 2.2 for the first time, we help you set up your Magento cron job by providing the [`magento cron:install` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-cron.html). This command sets up a Magento crontab as the user who runs the command.
