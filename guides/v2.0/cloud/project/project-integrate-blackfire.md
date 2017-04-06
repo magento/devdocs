@@ -115,7 +115,10 @@ To verify Blackfire works, you can SSH to the environment and run a command as f
 ## Profile your site {#cloud-int-black-profile}
 To start profiling your site using Blackfire:
 
-1.	Use the Web UI to find the **Web access** URL for your environment as the following figure shows:
+1.	Install the Blackfire.io Companion browser plug-in for your browser.
+
+	For example, to install the Chrome Companion, see [Blackfire.io documentation](https://blackfire.io/docs/integrations/chrome){:target="_blank"}.
+2.	Use the Web UI to find the **Web access** URL for your environment as the following figure shows:
 
 	![Find your environment's URL]({{ site.baseurl }}common/images/cloud_web-access.png){:width="500px"}
 2.	Go to your site using Chrome.
