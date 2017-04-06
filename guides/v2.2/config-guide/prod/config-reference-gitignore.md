@@ -23,7 +23,7 @@ We recommend you use the `.gitignore` provided with Magento in a development sys
 *	`pub/media/*`
 *	`pub/media/wysiwyg/*.*`
 
-{% collapsible Show default `.gitignore` %}
+{% collapsible Show `.gitignore` for development %}
 
 <pre>/.buildpath
 /.cache
