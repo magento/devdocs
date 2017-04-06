@@ -2,10 +2,10 @@
 layout: default  
 group: fedg
 subgroup: A_Themes
-title: Install a ready to go storefront theme
-menu_title: Install a ready to go storefront theme
+title: Install a third-party storefront theme
+menu_title: Install a a third-party storefront theme
 menu_order: 2
-version: 2.0
+version: 2.1
 github_link: frontend-dev-guide/themes/theme-install.md
 ---
 
@@ -21,16 +21,17 @@ To install a theme, you need to add its code to your Magento 2 instance code bas
 
 Both ways are described in the following sections.
 
+## Prerequisites 
+
+[Set]({{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer or default [mode]({{page.baseurl}}config-guide/bootstrap/magento-modes.html). 
+
+<p class="q">Developers need to confirm this</p>.
+
 ## Install a theme manually 
 
 To install a theme manually:
 
-1. Make sure that structure is following: <VendorName>/<theme_code>/.
-
-<pre>
-&lt;VendorName&gt;/
-├──&lt;theme_dir&gt;/
-</pre>
+1. Make sure that the structure of the directory you are copying is following: `<VendorName>/<theme>`. And all the [theme files]({{page.baseurl}}frontend-dev-guide/themes/theme-structure.html) are in the `<theme>` directory.
 
 2. Copy this directory to the `<Magento root dir>/app/design/frontend` directory.
 
@@ -43,6 +44,8 @@ To install the theme as composer package, follow the instructions in the [Instal
 Once you open the Magento Admin (or reload any Magento Admin page) having added the theme files to the files system, your theme gets registered and added to the database.
 
 To make sure the theme is registered, in the Magento Admin navigate to **Content** > **Design** > **Themes**. If the theme is registered, it is displayed in the list of available themes.
+
+
 
 
 
