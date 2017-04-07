@@ -18,7 +18,7 @@ You can adjust the amount of data you create using *profiles* (small, medium, la
 
 The following figure shows how a product displays on the storefront using the small profile:
 
-<p><img src="{{ site.baseurl }}common/images/config_generate-data.png" alt="Sample storefront with generated data"></p>
+![Sample storefront with generated data]({{ site.baseurl }}common/images/config_generate-data.png){:width="550px"}
 
 This gives you an idea about what the data looks like.
 
