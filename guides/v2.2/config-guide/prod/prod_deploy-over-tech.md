@@ -35,7 +35,9 @@ As the diagram shows, we get configuration values in the following order:
 2.	From the shared configuration file, `config.php`.
 3.	From the system-specific configuration file, `env.php`.
 
-	Values in `config.php` and `env.php` override settings in the database.
+	Values in `env.php` override values in `config.php`. 
+
+    Values in `config.php` and `env.php` override settings in the database.
 3.	From the database.
 
 If no value exists in any of those sources, we use either the default value or NULL.
@@ -49,6 +51,8 @@ Set the shared configuration in the Magento Admin in your development (or Magent
 The system-specific configuration is stored in `app/config/env.php`, which should _not_ be in source control.
 
 Set the system-specific configuration in the Magento Admin in your development (or Cloud integration) system and write the configuration to `env.php` using the [`magento app:config:dump` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-export.html).
+
+TBD, does `app:config:dump` write sensitive settings to env.php?
 
 ### Manage the sensitive configuration
 The sensitive configuration is also stored in `app/etc/env.php`.
@@ -127,9 +131,12 @@ On your production system:
 2.  Pull code and configuration updates from source control.
 3.  If you use Magento EE, stop queue workers.
 4.  Use the `magento app:config:import` command to import configuration changes in the production system.
+5.  If you installed components that changed the database schema, run `magento setup:upgrade --keep-generated` to update the database schema and data, preserving generated static files.
 5.  To set system-specific settings, use either the `magento config:set` command or environment variables.
+
+    TBD, update after `app:config:dump` writes to `env.php`
 6.  To set sensitive settings, use either the `magento config:sensitive:set` command or environment variables.
-7.  Flush the Magento cache.
+7.  Clean (also referred to as _flush_) the Magento cache.
 8.  End maintenance mode.
 
 ## Configuration management commands
@@ -137,8 +144,10 @@ We provide the following commands to help you manage the configuration:
 
 *   [`magento app:config:dump`]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-export.html) to write Magento Admin configuration settings to `config.php` and `env.php` (except for sensitive settings)
 *   [`magento config:set`]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-set.html) to set the values of system-specific settings on the production system.
+
+    Use the optional `--lock` option to lock the option in the Magento Admin (that is, make the setting uneditable).
 *   [`magento config:sensitive:set`]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-set.html) to set the values of sensitive settings on the production system.
-*   [`magento app:config:import`]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-import.html) to import configuration changes to the production system.
+*   [`magento app:config:import`]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-import.html) to import configuration changes from `config.php` and `env.php` to the production system.
 
 ## Configuration management examples
 This section shows examples of managing the configuration so you can see how changes are made to `config.php` and `env.php`.
