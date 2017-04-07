@@ -38,7 +38,7 @@ To uninstall a manually added theme:
 2. Remove the theme directory.
 3. Remove the theme record from database. If you are using MySQL, run the following command to do this:
 ```
-mysql -u User -p -e "delete from <Dbname>.theme where theme_path ='<Vendor>/<ThemeName>' AND area ='frontend' limit 1"
+mysql -u <User> -p -e "delete from <Dbname>.theme where theme_path ='<Vendor>/<ThemeName>' AND area ='frontend' limit 1"
 ```
 <p class="q">What is User, <Dbname></p>
 
@@ -67,7 +67,7 @@ Take the following steps:
 ....
 ``` 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-You can use the Composer remove command to remove the dependency, but in that case you will also to delete theme record from database manually.
+You can use the Composer command to remove the dependency, but in that case you will also to delete theme record from database manually.
 </div>
 <p class="q">what Composer command?</p>
 3. To update the project dependencies, run

@@ -25,8 +25,6 @@ Both ways are described in the following sections.
 
 [Set]({{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer or default [mode]({{page.baseurl}}config-guide/bootstrap/magento-modes.html). 
 
-<p class="q">Developers need to confirm this</p>.
-
 ## Install a theme manually 
 
 To install a theme manually:
