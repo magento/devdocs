@@ -9,27 +9,33 @@ version: 2.2
 github_link: payments-integrations/payments-integrations/signifyd/signifyd.md
 ---
 
-## Overview
+## About this document
 
-This topic is about the integration of Magento with the Signifyd Fraud Detection serice.
-Integration is done with S API and M_S module.
+This document is about integrating Magento with the Signifyd Fraud Detection serice using the Magento_Signifyd module that is based on the Signifyd API.
 
-The module does this...
+## Magento_Signifyd module overview
 
-Sections below are about...
+The Magento-Signifyd module allows to:
 
-## Provide custom AVS/CVV mapping
+ - create a [Signifyd case](https://www.signifyd.com/docs/api/#/reference/cases) for a placed order
+ - automatically receive a [Signifyd guarantee](https://www.signifyd.com/docs/api/#/reference/guarantees) for a created case
+ - automatically cancel a guarantee when the order is canceled
 
-The Signifyd service collects a lot of information about an order (all fields described in [API](https://www.signifyd.com/docs/api/#/reference/cases/create-a-case)),
-most of these fields are optional but some of them are required (like `avsResponseCode`, `cvvResponseCode`).
-So, for more accurate calculations, external integrations, like payment methods, might provide some additional details, like CVV/AVS response codes.
+## Processing supplementary payment information
 
-The custom payment methods can implement `\Magento\Payment\Api\PaymentVerificationInterface` to provide AVS/CVV mapping
-from specific codes to [EMS standard](http://www.emsecommerce.net/avs_cvv2_response_codes.htm) and register these mappers in the `condig.xml` file
-of a custom payment module.
+You may improve the accuracy of Signifyd's transaction estimation by performing operations that are documented below. These operations involve supplementaty payment information from a transaction that needs to be investigated.
+
+### Provide custom AVS/CVV mapping
+
+The Signifyd service collects lots of information about an order (all fields described in [API](https://www.signifyd.com/docs/api/#/reference/cases/create-a-case)). Most of these fields are optional, but some are required (for example, `avsResponseCode` and `cvvResponseCode`).
+
+So, for more accurate calculations, external integrations (like payment methods) might provide additional details, like CVV/AVS response codes.
+
+The custom payment methods can implement `\Magento\Payment\Api\PaymentVerificationInterface` to provide AVS/CVV mapping from specific codes to [EMS standard](http://www.emsecommerce.net/avs_cvv2_response_codes.htm) and register these mappers in the `condig.xml` file of a custom payment module.
+
 For example, the mappers registration might look like this:
 
-```xml
+{%highlight xml startinline=1%}
 <default>
     <payment>
         <custom_payment>
@@ -41,20 +47,20 @@ For example, the mappers registration might look like this:
         </custom_payment>
     </payment>
 </default>
-```
+{%endhighlight%}
 
-These steps are enough to provide custom AVS/CVV mapping for payment integrations, everything else, like mapper initialization,
-will be provided by the Magento Signifyd infrastructure.
+These steps are enough to provide custom AVS/CVV mapping for payment integrations. Everything else, like mapper initialization, will be provided by the Magento_Signifyd infrastructure.
 
-## Retrieve payment method for a placed order
+### Retrieve payment method for a placed order
 
 Also, Signifyd can retrieve payment method for a placed order (the Magento Signifyd module can map Magento and Signifyd
 payment codes using the predefined XML list, located in `Magento\Signifyd\etc\signifyd_payment_mapping.xml` file).
-The 3rd-party payment integrations can apply own mappings for the [Signifyd payment codes](https://www.signifyd.com/docs/api/#/reference/cases/create-a-case),
-it's enough to add `signifyd_payment_mapping.xml` to custom payment method implementation and specify needed mapping.
+
+The 3rd-party payment integrations can apply own mappings for the [Signifyd payment codes](https://www.signifyd.com/docs/api/#/reference/cases/create-a-case); it's enough to add `signifyd_payment_mapping.xml` to the custom payment method implementation and specify the needed mapping.
+
 For example:
 
-```xml
+{%highlight xml startinline=1%}
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Signifyd:etc/signifyd_payment_mapping.xsd">
     <payment_method_list>
@@ -64,7 +70,9 @@ For example:
         </payment_method>
     </payment_method_list>
 </config>
-```
+{%endhighlight%}
 
- - `magento_code` attribute value should be the code for a custom payment method (the same as in the payment's `config.xml`).
- - `signifyd_code` attribute value should be one of available the Signifyd payment method codes.
+where:
+* `magento_code` attribute value should be the code for a custom payment method (the same as in the payment's `config.xml`).
+
+* `signifyd_code` attribute value should be one of available the Signifyd payment method codes.
