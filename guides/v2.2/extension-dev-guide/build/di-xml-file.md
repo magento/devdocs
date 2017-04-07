@@ -321,27 +321,25 @@ In this example `Magento\Filesystem` is not shared, so all clients will retrieve
 Also, every instance of `Magento\Filesystem` will get separate instance of `$adapter`, because it too is non-shared.
 
 ## Sensitive and system-specific configuration settings {#ext-di-sens}
-In the Magento 2.2 [split deployment model]({{ page.baseurl }}config-guide/prod/prod_deploy-over.html), there are the following types of configuration settings:
+In the Magento 2.2 [split deployment model]({{ page.baseurl }}config-guide/prod/prod_deploy-over.html), you can specify the following types of configuration settings:
 
-* Shared, which can be shared between systems using `app/etc/config.php`
-* System-specific, which are unique to a particular system. 
+*   Shared, which can be shared between systems using `app/etc/config.php`
+
+    Use shared settings to enforce configuration consistency between your development and production systems. Usually, shared settings can't be changed in the Magento Admin. 
+*   System-specific, which are unique to a particular system. 
 
   Typical examples include host names and ports.
 * Sensitive, managed using either an environment variable, using the [`magento config:sensitive:set` command]({{ page.baseurl }}) or using the Magento Admin.
 
   Typical examples are payment gateway API keys, user names, or passwords.
 
-  You cannot share either system-specific or sensitive settings between development and production systems. These values are stored in `app/etc/env.php` on each system.
-
-  For more information, see [PHP developer tasks for split deployment]({{ page.baseurl }}config-guide/prod/prod_deploy-prog.html).
+  You cannot share either system-specific or sensitive settings between development and production systems. These values are stored in `app/etc/env.php` on each system and `env.php` should not be in source control.
 
 {% include php-dev/typepool_sensitive-values.md %}
 
-A complete list of Magento configuration paths can be found in:
-
-*   [Other configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-most.html)
-*   [Payment configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-payment.html)
-*   [Sensitive and system-specific configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-sens.html)
+### Information related to split deployment
+*   [Guidelines for specifying system-specific and sensitive configuration values]({{ page.baseurl }}config-guide/prod/prod_deploy-prog.html#split-deploy-sens-guidelines)
+*   [Sensitive and system-specific configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-sens.)
 *   [Magento Enterprise B2B Extension configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-b2b.html)
 
 #### Related topics

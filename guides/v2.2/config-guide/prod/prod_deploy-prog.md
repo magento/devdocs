@@ -12,7 +12,7 @@ github_link: config-guide/prod/prod_deploy-prog.md
 
 This topic discusses how third-party developers can create Magento components that designate configuration settings as being sensitive, system-specific, or both.
 
-## Guidelines for declaring sensitive or system-specific settings
+## Guidelines for declaring sensitive or system-specific settings {#split-deploy-sens-guidelines}
 We suggest you use the following guidelines to determine which settings to designate as sensitive or system-specific. You can optionally designate a setting as both.
 
 Sensitive and system-specific values are stored in `<Magento root dir>/app/etc/env.php`, which should not be in source control.

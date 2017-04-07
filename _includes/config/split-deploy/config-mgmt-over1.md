@@ -4,9 +4,13 @@
 
 	Shared settings are settings you want to be consistent on development and production systems. Set the shared configuration in the Magento Admin in your development (or Magento Enterprise Cloud Edition _integration_) system.
 
+	The shared configuration file, `app/etc/config.php`, should be included in source control so it can be shared between development, build, and production systems.
+
 *	_System-specific_ configuration, which is all settings that vary by system; for example, search engine host names and ports.
 
 *	_Sensitive_ configuration, which is all settings that should not be in source control because they expose personally-identifiable information (PII) or settings such as API keys or passwords.
+
+	The system-specific configuration file, `app/etc/env.php`, should _not_ be included in source control or otherwise shared between systems. Instead, use the [`magento config:set` and `magento:sensitive:set` commands]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-set.html) to provide values for those settings in your production system.
 
 <div class="bs-callout bs-callout-info" markdown="1">
 These new methods to manage your configuration are optional. You don't have to use them, although we strongly recommend you do.

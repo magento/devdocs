@@ -24,8 +24,12 @@ As a result of the command execution, the following configuration files are upda
 	Instead, set system-specific settings on production using the [`magento config:set` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-set.html).
 
 <div class="bs-callout bs-callout-warning" id="warning" markdown="1">
-The `magento app:config:dump` command does not output the values of sensitive configuration settings. To set sensitive settings in the production system, use the [`magento config:sensitive:set` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-set.html)
+*	The `magento app:config:dump` command does not output the values of sensitive configuration settings. To set sensitive settings in the production system, use the [`magento config:sensitive:set` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-set.html)
+*	Configuration values are specified as either sensitive or system-specific by referencing [`Magento\Config\Model\Config\TypePool`]({{ site.mage2200url }}app/code/Magento/Config/Model/Config/TypePool.php){:target="_blank"} in the module's `di.xml` file.
+
+	For information about using `Config\TypePool` in custom code, see [PHP developer tasks for split deployment]({{ page.baseurl }}config-guide/prod/prod_deploy-prog.html).
 </div>
 
-#### Related topic
-[config.php reference]({{ page.baseurl }}config-guide/prod/config-reference-configphp.html)
+#### Related topics
+*	[config.php reference]({{ page.baseurl }}config-guide/prod/config-reference-configphp.html)
+*	[env.php reference]({{ page.baseurl }}config-guide/prod/config-reference-envphp.html)

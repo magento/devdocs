@@ -36,7 +36,7 @@ Use the following commands:
 
 *   `config:set` sets any non-sensitive configuration value by its configuration path
 *   `config:sensitive:set` sets any sensitive configuration value by its configuration path
-*   `config:show` shows saved configuration values; values of encrypted variables are displayed as asterisks
+*   `config:show` shows saved configuration values; values of encrypted settings are displayed as asterisks
   
 ## First steps {#first}
 {% include install/first-steps-cli.html %}
@@ -189,7 +189,7 @@ where
 The `config:show` command displays the values of any [encrypted values]({{ page.baseurl }}config-guide/prod/config-reference-sens.html) as a series of asterisks: `******`.
 </div>
 
-##### Examples
+### Examples
 
 **Show all saved configurations**:
 
@@ -203,7 +203,7 @@ general/region/state_required - AT,BR,CA,CH,EE,ES,FI,LT,LV,RO,US
 catalog/category/root_id - 2
 analytics/subscription/enabled - 1</pre>
 
-**Show all saved configurations for a specific scope**:
+**Show all saved configurations for the `base` website**:
 
     bin/magento config:show --scope=websites --scope-code=base
     
@@ -220,7 +220,6 @@ Result:
 
 <pre class="no-copy">web/unsecure/base_url - http://example.com/</pre>
     
-
 **Show the base URL for the `base` website**:
 
     bin/magento config:show --scope=websites --scope-code=base web/unsecure/base_url
@@ -238,5 +237,7 @@ Result:
 
 <pre class="no-copy">web/unsecure/base_url - http://example-for-store.com/</pre>
     
-    
+#### Related topic
+[Deployment general overview]({{ page.baseurl }}config-guide/prod/prod_deploy-over.html)
+
 
