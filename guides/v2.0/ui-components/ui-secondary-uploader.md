@@ -38,8 +38,7 @@ UI File Uploader component is an adapter for <a href="https://github.com/blueimp
     <td>Path to the files' preview template</td>
     <td>No</td>
     <td>String</td>
-    <td><Magento_Ui_module_dir>/view/base/web/templates/form/element/uploader/preview.html
-</td>
+    <td>Magento_Ui_module_dir/view/base/web/templates/form/element/uploader/preview.html</td>
 </tr>
 <tr>
     <td>maxFileSize</td>
