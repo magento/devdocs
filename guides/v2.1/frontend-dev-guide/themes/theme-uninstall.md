@@ -37,10 +37,15 @@ To uninstall a manually added theme:
 1. Navigate to the vendor directory where the theme has been installed. The path would look like following:  `<Magento root dir>/app/design/frontend/<VendorName>`.
 2. Remove the theme directory.
 3. Remove the theme record from database. If you are using MySQL, run the following command to do this:
+
 ```
-mysql -u User -p -e "delete from <Dbname>.theme where theme_path ='<Vendor>/<ThemeName>' AND area ='frontend' limit 1"
+mysql -u <user> -p -e "delete from <dbname>.theme where theme_path ='<Vendor>/<theme>' AND area ='frontend' limit 1"
 ```
-<p class="q">What is User, <Dbname></p>
+Where:
+
+- `<user>`: your Magento database user name
+- `<dbname>`: your Magento database name
+- `<Vendor>/<theme>`: relative path to the theme directory
 
 ## Uninstall a theme package
 
