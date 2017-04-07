@@ -63,7 +63,7 @@ You can manage the sensitive configuration in any of the following ways:
 *	Save the sensitive configuration in `env.php` on your production system using the [`magento config:set:sensitive` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-set.html)
 
 ### Configuration settings locked in the Magento Admin
-Any configuration settings in `config.php` or `env.php` are locked in the Magento Admin; that is, those settings cannot be changed in the Admin. The only way to change the settings is to change `config.php` or `env.php` using the [`magento config:set --force` command]({{ page.baseurl config-guide/cli/config-cli-subcommands-config-mgmt-set.html}}).
+Any configuration settings in `config.php` or `env.php` are locked in the Magento Admin; that is, those settings cannot be changed in the Admin. The only way to change the settings is to change `config.php` or `env.php` using the [`magento config:set --lock` command]({{ page.baseurl config-guide/cli/config-cli-subcommands-config-mgmt-set.html}}).
 
 ## Changes in the Magento Admin {#config-deploy-admin}
 We changed the following behavior in the Magento Admin in production mode:
@@ -145,7 +145,7 @@ We provide the following commands to help you manage the configuration:
 *   [`magento app:config:dump`]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-export.html) to write Magento Admin configuration settings to `config.php` and `env.php` (except for sensitive settings)
 *   [`magento config:set`]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-set.html) to set the values of system-specific settings on the production system.
 
-    Use the optional `--lock` option to lock the option in the Magento Admin (that is, make the setting uneditable).
+    Use the optional `--lock` option to lock the option in the Magento Admin (that is, make the setting uneditable). If a setting is already locked, use the `--lock` option to change the setting.
 *   [`magento config:sensitive:set`]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-set.html) to set the values of sensitive settings on the production system.
 *   [`magento app:config:import`]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-import.html) to import configuration changes from `config.php` and `env.php` to the production system.
 
