@@ -473,7 +473,7 @@ We are reviewing this section and will publish it soon.
 
 ## 14. Events
 
-14.1. All values (including objects) passed to event MUST NOT be modified in the event observer. Use plugins instead for this application.
+14.1. All values (including objects) passed to an event MUST NOT be modified in the event observer. Instead, plugins SHOULD BE used for modifying the input or output of a function.
 
 {% collapsible Examples: %}
 {%highlight php startinline=1%}
@@ -503,7 +503,7 @@ class SampleEventObserverThatModifiesInputs
 {%endhighlight%}
 {% endcollapsible %}
 
-14.2. Use as specific events as possible. Don't use a `global` subscription to an event when the area impacted is just `frontend`.
+14.2. Events used SHOULD be observed as specifically as possible. A `global` subscription to an event SHOULD NOT be used when the area impacted is just `frontend`.
 
 <!-- LINKS: DEFINITIONS AND ADDRESSES -->
 
