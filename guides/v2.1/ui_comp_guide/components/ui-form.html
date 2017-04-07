@@ -711,7 +711,9 @@
 </section>
 
 			<h2 id="overview">Overview</h2>
-<p>Form component allows performing <a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD</a> operations on an entity.</p>
+<p>The Form component allows performing <a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD</a> operations on an entity.</p>
+
+<p>Form extends uiCollection.</p>
 
 <p>The following is the Form component constructor: <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/form/form.js">form.js</a></p>
 
@@ -742,21 +744,112 @@
   </li>
 </ul>
 
-<h2 id="create-an-instance-of-the-form-component">Create an instance of the Form component</h2>
+<p class="q">What about those options above?</p>
+<p>Form configuration extends the uiCollection configuration.</p>
 
-<p>To create an instance of the Form component, you need to do the following:</p>
+<table>
+   <tbody>
+      <tr>
+         <th>Option</th>
+         <th>Description</th>
+         <th>Type</th>
+         <th>Default</th>
+      </tr>
+      <tr class="even">
+         <td>`additionalFields`</td>
+         <td></td>
+         <td></td>
+         <td></td>
+      </tr>
+      <tr class="odd">
+         <td>`selectorPrefix`</td>
+         <td>Name that can be used to address the block to which this attribute is assigned. The name must be unique per generated page. If not specified, an automatic name will be assigned in the format <code>ANONYMOUS_<em>n</em></code></td>
+         <td>String</td>
+         <td>	
+`'.page-content'`</td>
+      </tr>
+      <tr class="even">
+         <td>`messagesClass`</td>
+         <td></td>
+         <td>String</td>
+         <td>`'messages'`</td>
+      </tr>
+      <tr class="odd">
+         <td>`errorClass`</td>
+         <td>The class that will be added to the component DOM block 
+when error is appeared.</td>
+         <td>String</td>
+         <td>`'.admin__field._error'`</td>
+      </tr>
+      <tr class="even">
+         <td>`ajaxSave`</td>
+         <td>Save form values by ajax.</td>
+         <td>Boolean</td>
+         <td>`false`</td>
+      </tr>
+      <tr class="odd">
+         <td>ajaxSaveType</td>
+         <td></td>
+         <td>String</td>
+         <td>`default`</td>
+      </tr>
+      <tr class="odd">
+         <td>	
+imports
+<ul>
+<li>reloadUrl</li></ul></td>
+         <td>Used for tracking changes of an external entity property. `imports`’s value is an object, composed of the following:
+<ul>
+ <li> `key`: name of the internal property or method which receives the notifications.</li>
+<li>`value`: name of the property or method which is tracked for changes. Can use string templates.   </li></ul> </td>
+         <td>Object
+<ul>
+<li>String</li></ul></td>
+         <td>'${ $.provider}:reloadUrl'/td&gt;
+      &lt;/tr&gt;
 
-<ol>
-  <li>In you custom module, add a configuration file for the instance, for example: <code>customer_form.xml</code>.</li>
-  <li>Add a set of fields (the Fieldset component with the component of the Field) for entity or     to implement the upload of meta info in the DataProvider.</li>
-  <li>Create the DataProvider class for the entity that implements DataProviderInterface
-    <ul>
-      <li>Add a component in Magento layout as a node: <code>&lt;uiComponent name="customer_form"/&gt;</code></li>
-    </ul>
-  </li>
-</ol>
+      <tr class="odd">
+<ul>         <td>exports
+<li>selectorPrefix</li>
+<li>messagesClass</li>&lt;/ul&gt;</td>
+         <td>Used to notify some external entity about property changing. `exports` value is an object, composed of the following:
+<ul><li> `key`: name of the internal property or method which is tracked for changes.</li>
+<li> `value`: name of the property or method which receives the notification. Can use string templates.</li></ul></td>
+         <td>Object
+<ul><li>
+String</li>
+<li>String</li></ul></td>
+         <td><p class="q"></p></td>
+      &lt;/tr&gt;
+      <tr class="even">
+         <td>`component`</td>
+         <td>The path to the component’s .js file in terms of RequireJS. </td>
+         <td>String</td>
+         <td>`Magento_Ui/js/form/form`</td>
+      </tr>
+      <tr class="odd">
+         <td>template</td>
+         <td>The path to the component’s .html template.</td>
+         <td>String</td>
+         <td>`	
+'ui/form/field'`</td>
+      </tr>    
+   &lt;/tbody&gt;
+&lt;/table&gt;
 
-<p>Example:</p>
+
+
+## Create an instance of the Form component
+
+To create an instance of the Form component, you need to do the following:
+
+1. In you custom module, add a configuration file for the instance, for example: `customer_form.xml`.
+2. Add a set of fields (the Fieldset component with the component of the Field) for entity or     to implement the upload of meta info in the DataProvider.
+3. Create the DataProvider class for the entity that implements DataProviderInterface
+* Add a component in Magento layout as a node: `<uiComponent name="customer_form" />`
+
+Example:
+
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;page</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:View/Layout/etc/page_configuration.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;body&gt;</span>
@@ -767,16 +860,16 @@
     <span class="nt">&lt;/body&gt;</span>
 <span class="nt">&lt;/page&gt;</span></code></pre></figure>
 
-<h2 id="configure-the-form-component">Configure the Form component</h2>
+ 
+## Configure the Form component
 
-<p>Component could be configured in two ways:</p>
+Component could be configured in two ways:
 
-<ul>
-  <li>globally: using any module’s <code>view/ui_component/etc/definition.xml</code> file. All settings declared in     this file will be applied to all component’s instances</li>
-  <li>locally: using concrete component instance configuration, such as <code>&lt;your module root dir&gt;/Magento/Customer/view/base/ui_component/customer_form</code></li>
-</ul>
+* globally: using any module's `view/ui_component/etc/definition.xml` file. All settings declared in     this file will be applied to all component's instances
+* locally: using concrete component instance configuration, such as `<your module="" root="" dir="">/Magento/Customer/view/base/ui_component/customer_form`
 
-<p>Create configuration file: <code>&lt;your module root dir&gt;/Magento/Customer/view/base/ui_component/customer_form.xml</code></p>
+Create configuration file: `<your module="" root="" dir="">/Magento/Customer/view/base/ui_component/customer_form.xml`
+
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;form</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:module:Magento_Ui:etc/ui_configuration.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
@@ -793,21 +886,17 @@
         <span class="nt">&lt;/item&gt;</span>
 ...</code></pre></figure>
 
-<p>Nodes are optional and contain parameters required for component:</p>
 
-<ul>
-  <li>
-    <p>js_config -&gt; deps - sets the dependency on component initialization</p>
-  </li>
-  <li>
-    <p>js_config -&gt; config -&gt; provider - specifies the name of the component data</p>
-  </li>
-  <li>
-    <p>layout - configuration class meets the visualization component. Names for deps and provider are specified with a complete path from the root component with the separator “.”</p>
-  </li>
-</ul>
+Nodes are optional and contain parameters required for component:
 
-<p>Add a description of the fields in the form using components and Field Fieldset:</p>
+* js_config -&gt; deps - sets the dependency on component initialization
+
+* js_config -&gt; config -&gt; provider - specifies the name of the component data
+
+* layout - configuration class meets the visualization component. Names for deps and provider are specified with a complete path from the root component with the separator "."
+
+Add a description of the fields in the form using components and Field Fieldset:
+
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml">...
 <span class="nt">&lt;fieldset</span> <span class="na">name=</span><span class="s">&quot;customer&quot;</span><span class="nt">&gt;</span>
@@ -828,7 +917,9 @@
     <span class="nt">&lt;/field&gt;</span>
 …</code></pre></figure>
 
-<p>To group components you can use the component container as in example below:</p>
+
+To group components you can use the component container as in example below:
+
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;container</span> <span class="na">name=</span><span class="s">&quot;container_group&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
@@ -851,12 +942,14 @@
     <span class="nt">&lt;/field&gt;</span>
 <span class="nt">&lt;/container&gt;</span></code></pre></figure>
 
-<h2 id="creating-datasource">Creating DataSource</h2>
-<p>You need to configure component’s DataSource in order to provide data and meta information for your Form component.</p>
 
-<p>DataSource aggregates an object of class implements the interface <code>\Magento\Framework\View\Element\UiComponent\DataProvider\DataProviderInterface</code></p>
+## Creating DataSource 
+You need to configure component's DataSource in order to provide data and meta information for your Form component.
 
-<p>An example of the configuration of the DataSource object:</p>
+DataSource aggregates an object of class implements the interface `\Magento\Framework\View\Element\UiComponent\DataProvider\DataProviderInterface`
+
+An example of the configuration of the DataSource object:
+
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;form</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:module:Magento_Ui:etc/ui_configuration.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
@@ -898,32 +991,29 @@
     <span class="nt">&lt;/dataSource&gt;</span>
 <span class="nt">&lt;/form&gt;</span></code></pre></figure>
 
-<p>Component configuration:</p>
 
-<ul>
-  <li>
-    <p>argument “dataProvider” - contains configuration, class name and arguments</p>
-  </li>
-  <li>
-    <p>js_config -&gt; component - &gt; JS indication of a responsible component</p>
-  </li>
-</ul>
+Component configuration:
 
-<p>Data provided by data source is shared and available for all components in the Assembly (in this case for all child components of UI Form).</p>
+* argument "dataProvider" - contains configuration, class name and arguments
 
-<p>Data Source is another UI Component that provides data in specific format which is shared among all UI Components.</p>
+* js_config -&gt; component - &gt; JS indication of a responsible component
 
-<h2 id="replacing">Replacing</h2>
+Data provided by data source is shared and available for all components in the Assembly (in this case for all child components of UI Form).
+
+Data Source is another UI Component that provides data in specific format which is shared among all UI Components.
+
+## Replacing
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>Replacing principles are the same for all UI Components.</p>
 </div>
 
-<h4 id="global-replacement">Global replacement</h4>
+#### Global replacement
 
-<p>To replace all instances of a UI Form with a custom implementation redefine link to a constructor in <code>definition.xml</code>.</p>
+To replace all instances of a UI Form with a custom implementation redefine link to a constructor in `definition.xml`.
 
-<p><code>app/code/Magento/Ui/view/base/ui_component/etc/definition.xml</code></p>
+`app/code/Magento/Ui/view/base/ui_component/etc/definition.xml`
+
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;form</span> <span class="na">class=</span><span class="s">&quot;Magento\Ui\Component\Form&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
@@ -933,11 +1023,13 @@
     <span class="nt">&lt;/argument&gt;</span>
 <span class="nt">&lt;/form&gt;</span></code></pre></figure>
 
-<h2 id="instance-replacement">Instance Replacement</h2>
 
-<p>To replace one instance of a UI Form Component redefine link to a constructor in your module’s form configuration file:</p>
+## Instance Replacement
 
-<p><code>app/code/Magento/Customer/view/base/ui_component/customer_form.xml</code></p>
+To replace one instance of a UI Form Component redefine link to a constructor in your module's form configuration file:
+
+`app/code/Magento/Customer/view/base/ui_component/customer_form.xml`
+
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;form</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:Ui/etc/ui_configuration.xsd&quot;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
@@ -947,6 +1039,7 @@
         <span class="nt">&lt;/argument&gt;</span>
 <span class="nt">&lt;/form&gt;</span></code></pre></figure>
 
+</your></your></ul></tr></td></tr></tbody></table>
 
 		</div>
 		<!-- /.content-wrap -->
