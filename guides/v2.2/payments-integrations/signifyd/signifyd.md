@@ -2,7 +2,7 @@
 layout: default
 group: payments-integrations
 subgroup: D_Signifyd
-title: Signifyd Fraud Detection
+title: Signifyd fraud detection
 menu_title: Signifyd Fraud Detection
 menu_node: parent
 version: 2.2
