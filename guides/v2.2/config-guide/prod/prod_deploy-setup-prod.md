@@ -96,5 +96,7 @@ To set sensitive values:
 *	[`magento deploy:mode:set` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-set.html)
 *	[`magento config:sensitive:set` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-set.html)
 *	[`magento app:config:import` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-import.html)
+*	[Example of setting configuration values using environment variables]({{ page.baseurl }}config-guide/prod/prod_deploy-envvars.html)
+*	[Example of setting configuration values using CLI commands]({{ page.baseurl }}config-guide/prod/prod_deploy-cli.html)
 *	[Sensitive and system-specific configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-sens.html)
 *	[Use environment variables to override configuration settings]({{ page.baseurl }}config-guide/prod/config-reference-var-name.html)

@@ -2,17 +2,17 @@
 layout: default
 group: config-guide
 subgroup: 999_prod
-title: Example of setting configuration values using environment variables
-menu_title: Example of setting configuration values using environment variables
+title: Example of setting configuration values using CLI commands
+menu_title: Example of setting configuration values using CLI commands
 menu_node: 
-menu_order: 53
+menu_order: 54
 level3_menu_node: level3child
 level3_subgroup: deploy-ex
 version: 2.2
-github_link: config-guide/prod/prod_deploy-envvars.md
+github_link: config-guide/prod/prod_deploy-cli.md
 ---
 
-This example shows how to set shared, system-specific, and sensitive values in your development system, then set all the values in your production system using a combination of the shared configuration, `config.php`, and PHP environment variables.
+This example shows how to set shared, system-specific, and sensitive values in your development system, then set all the values in your production system using a combination of the shared configuration, `config.php`, and Magento CLI commands.
 
 These configuration settings can be shared between the development and production systems:
 
