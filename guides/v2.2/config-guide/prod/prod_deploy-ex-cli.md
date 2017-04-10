@@ -39,7 +39,7 @@ This topic provides an example of modifying the production system configuration.
 For the purposes of this example, we assume the following:
 
 *	You use Git source control
-*	The development system is available in a Git remote named `mconfig`
+*	The development system is available in a Git remote repository named `mconfig`
 *	Your Git working branch is named `m2.2_deploy`
 
 ## Step 1: Set the configuration in the development system {#deploy-sens-setconfig}
@@ -51,7 +51,7 @@ To set the default locale and weight units in your development system:
 
 	![Switch websites]({{ site.baseurl }}common/images/config_split-deploy_switch-website.png){:width="250px"}
 3.	In the right pane, expand **Store Information**.
-4.	If necessary, clear the **Use Default** check box next to the **VAT Number** field.
+4.	If necessary, clear the **Use Default** check box next to the **VAT Number** and **Store Name** fields.
 5.	Enter a number in the field (for example, `12345`).
 6.	In the **Store Name** field, enter a value (like `My Store`).
 7.	Click **Save Config**.
@@ -59,12 +59,13 @@ To set the default locale and weight units in your development system:
 
 	![Switch to the default config]({{ site.baseurl }}common/images/config_split-deploy_default-config.png){:width="200px"}
 9.	In the left navigation, under General, click **Contacts**.
-8.	Clear the **Use Default** check box next to the **Send Emails To** field.
+10.	In the right pane, expand **Email Options**.
+8.	If necessary, clear the **Use Default** check box next to the **Send Emails To** field.
 9.	Enter an e-mail address in the field.
 10.	Click **Save Config**.
 11.	In the left pane, click Customers > **Customer Configuration**.
 12.	In the right pane, expand **Create New Account Options**.
-13.	Clear the **Use system value** check box next to the **Default Email Domain** field.
+13.	If necessary, clear the **Use system value** check box next to the **Default Email Domain** field.
 14.	Enter a domain name in the field.
 15.	Click **Save Config**.
 11.	If prompted, flush the cache.

@@ -3,8 +3,8 @@
 1.	Log in to your development system as, or switch to, the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %}.
 2.	Enter the following commands in the order shown:
 
-	<pre class="no-copy">cd &lt;Magento root dir>
-	php bin/magento app:config:dump</pre>
+		cd <Magento root dir>
+		php bin/magento app:config:dump
 
 	For example, if Magento is installed in `/var/www/html/magento2`, enter:
 

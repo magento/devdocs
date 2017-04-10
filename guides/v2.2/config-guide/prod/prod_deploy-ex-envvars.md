@@ -39,7 +39,7 @@ This topic provides an example of modifying the production system configuration.
 For the purposes of this example, we assume the following:
 
 *	You use Git source control
-*	The development system is available in a Git remote named `mconfig`
+*	The development system is available in a Git remote repository named `mconfig`
 *	Your Git working branch is named `m2.2_deploy`
 
 ## Step 1: Set the configuration in the development system {#deploy-sens-setconfig}

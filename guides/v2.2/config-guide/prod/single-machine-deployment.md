@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: 1000_prod
+subgroup: 999_prod
 title: Single machine deployment
 menu_title: Single machine deployment
 menu_node: parent
