@@ -14,7 +14,7 @@ github_link: config-guide/cli/config-cli-subcommands-config-mgmt-import.md
 
 {::options syntax_highlighter="rouge" /}
 
-When you set up a production system in the Magento 2.2 [split deployment model]({{ page.baseurl }}config-guide/prod/prod_deploy-over.html), you must _import_ configuration settings into the database. These settings include configuration paths and valuees, websites, stores, store views, and themes.
+When you set up a production system in the Magento 2.2 [split deployment model]({{ page.baseurl }}config-guide/prod/prod_deploy-over.html), you must _import_ configuration settings from `config.php` and `env.php` into the database. These settings include configuration paths and valuees, websites, stores, store views, and themes.
 
 After importing websites, stores, store views, and themes, you can create product attributes and apply them to websites, stores, and store views, on the production system.
 
@@ -23,7 +23,7 @@ After importing websites, stores, store views, and themes, you can create produc
 {% include install/first-steps-cli.html %}
 
 ## Import configuration data
-On your production system, run the following command to import data from deployment configuration files to the database:
+On your production system, run the following command to import data from the configuration files (`config.php` and `env.php`) to the database:
 
     bin/magento app:config:import [-n, --no-interaction]
 
