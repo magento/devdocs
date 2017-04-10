@@ -55,14 +55,14 @@ To set the default locale and weight units in your development system:
 5.	Enter a number in the field (for example, `12345`).
 6.	In the **Store Name** field, enter a value (like `My Store`).
 7.	Click **Save Config**.
-8.	Use the **Store View** list to select the **Default Config** as the following figure shows.
-
-	![Switch to the default config]({{ site.baseurl }}common/images/config_split-deploy_default-config.png){:width="200px"}
 9.	In the left navigation, under General, click **Contacts**.
 10.	In the right pane, expand **Email Options**.
 8.	If necessary, clear the **Use Default** check box next to the **Send Emails To** field.
 9.	Enter an e-mail address in the field.
 10.	Click **Save Config**.
+8.	Use the **Store View** list to select the **Default Config** as the following figure shows.
+
+	![Switch to the default config]({{ site.baseurl }}common/images/config_split-deploy_default-config.png){:width="200px"}
 11.	In the left pane, click Customers > **Customer Configuration**.
 12.	In the right pane, expand **Create New Account Options**.
 13.	If necessary, clear the **Use system value** check box next to the **Default Email Domain** field.
@@ -93,9 +93,9 @@ To set the sensitive and system-specific settings using environment variables, y
 
 *	Each setting's scope 
 
-	If you followed the instructions in [Step 1](#deploy-sens-setconfig), the scope for Send Emails To is global (that is, the Default Config scope) and the scope for Default Email Domain is website. 
+	If you followed the instructions in [Step 1](#deploy-sens-setconfig), the scope for Send Emails To is website and the scope for Default Email Domain is global (that is, the Default Config scope). 
 
-	You must know the website's code to set the Default Email Domain configuration value. See [Use environment variables to override configuration settings]({{ page.baseurl }}config-guide/prod/config-reference-var-name.html) for more information on finding it.
+	You must know the website's code to set the Send Emails To configuration value. See [Use environment variables to override configuration settings]({{ page.baseurl }}config-guide/prod/config-reference-var-name.html) for more information on finding it.
 *	Each setting's configuration path
 
 	The configuration paths used in this example follow:
@@ -107,33 +107,23 @@ To set the sensitive and system-specific settings using environment variables, y
 
 	You can find all sensitive and system-specific configuration paths in [Sensitive and system-specific configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-sens.html).
 
-#### Convert configuration paths to variable names
-As discussed in [Use environment variables to override configuration settings]({{ page.baseurl }}config-guide/prod/config-reference-var-name.html), the format of variables is:
-
-<pre class="no-copy">&lt;SCOPE>__&lt;SYSTEM__VARIABLE__NAME></pre>
-
-The value of `<SCOPE>` is `CONFIG__DEFAULT__` for global scope or `CONFIG__WEBSITES__<WEBSITE CODE>` for website scope.
-
-To find the value of `<SYSTEM__VARIABLE__NAME>`, replace each `/` character in the configuration path with two underscores.
-
-The variable names follow:
-
-| Name  | Config path | Variable name |
-|--------------|--------------|--------------|
-| Send Emails To | `contact/email/recipient_email` | `CONFIG__DEFAULT__CONTACT__EMAIL__RECIPIENT_EMAIL` |
-| Default Email Domain | `customer/create_account/email_domain` | `CONFIG__WEBSITES__BASE__CUSTOMER__CREATE_ACCOUNT__EMAIL_DOMAIN` |
-
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
-The preceding table has a sample website code, `BASE`, for the Default Email Domain configuration setting. Replace `BASE` with the appropriate website code for your store.
-</div>
-
-#### Set the variables using CLI commands
+### Set the variables using CLI commands
 This section discusses how to the following commands to set system-specific and sensitive configuration settings:
 
 *	`magento config:set` for system-specific settings
 *	`magento config:sensitive:set` for sensitive settings
 
-TBD
+To set the system-specific setting Default Email Domain, which is in the default scope, the command to use is:
+
+	php bin/magento config:set customer/create_account/email_domain <email domain>
+
+You don't need to use the scope in the command because it's the default scope.
+
+To set values for Send Emails To, however, you must know the scope type (`website`) and the scope code (which is likely different on every site).
+
+An example follows:
+
+	php bin/magento config:sensitive:set contact/email/recipient_email --scope=website --scope-code=<website code> <email address>
 
 ### Update the shared settings {#config-split-verify-shared}
 This section discusses how to pull all the changes you made on your development and build systems, which updates the shared configuration settings (Store Name and VAT Number).
