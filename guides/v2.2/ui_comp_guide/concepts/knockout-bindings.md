@@ -2,30 +2,43 @@
 layout: default
 group: jsdg
 subgroup: 1_Javascript
-title: Magento custom Knockout.js bindings 
+title: Magento custom Knockout.js bindings
 menu_title: Magento custom Knockout.js bindings
 menu_order: 60
 version: 2.2
 github_link: ui_comp_guide/concepts/knockout-bindings.md
 ---
 
-## Overview 
+## Overview
 
-This topic lists the custom [Knockout.js](http://knockoutjs.com/) bindings used in the core Magento files, and can be used by the third-party developers. 
- 
-## Terms used
-*Implemented By*: defines path to a module which implements binding.
-*Value*: type of the value accepted by binding. Note that apart from a specified type every value may be wrapped in Knockout's observable.  
-*Aliases*: a list of aliases that can be used to declare the binding as in addition to the standard form used in Knockout ([data-bind="binding: value"]) some bindings may be defined as standalone attributes ([binding="value"]) or nodes (<binding args="value">).
+This topic lists the custom [Knockout.js](http://knockoutjs.com/) bindings used in the core Magento files, and can be used by the third-party developers.
+
+## General concepts
+### Aliases
+The standard way to declare a knockout.js binding is using the `data-bind` attribute: `[data-bind="binding: value"]`. In Magento implementation, you can also use aliases to declare bindings. Some bindings may be defined as standalone attributes ([binding="value"]) or nodes (<binding args="value">).
+
+<p class="q">
+The part about standalone attributes needs clarification.
+a list of aliases that can be used to declare the binding as in addition to the standard form used in Knockout ([data-bind="binding: value"]) some bindings may be defined as standalone attributes ([binding="value"]) or nodes (<binding args="value">).
+</p>
+
+### Binding values
+
+Apart from the value type specified for the binding, every value may be wrapped in Knockout's observable.  
+<p class="q">need clarification</p>
+
 
 ## Custom Magento bindings
 ### `afterRender`
 
-The `afterRender` binding allows to notify its subscriber when an associated element is inserted into the DOM.
-**Implemented By**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/after-render.js`
-**Value**: `(element: Element, viewModel: Object) => void`.
-Function that will be invoked after the element is rendered.
-**Aliases**: [afterRender]
+The `afterRender` binding notifies its subscriber when an associated element is inserted into the DOM.
+
+**Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/after-render.js`
+
+**Value type**: `(element: Element, viewModel: Object) => void`.
+Function that is invoked after the element is rendered.
+
+**Aliases**: `[afterRender]`
 
 **Usage example**:
 
@@ -38,12 +51,12 @@ Function that will be invoked after the element is rendered.
 {%endhighlight%}
 
 ### `autoselect`
-The `autoselect` binding is meant to automatically highlight text of an input element when it receives focus.
+The `autoselect` binding automatically highlights the text in an input element, when it gets focus.
 
-**Implemented By**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/autoselect.js`
+**Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/autoselect.js`
 
-**Value**: `boolean`
-Defines whether binding is enabled (`true`) or disabled (`false`).
+**Value type**: `boolean`
+Defines whether the binding is enabled (`true`) or disabled (`false`).
 
 **Aliases**: [autoselect]
 
@@ -51,20 +64,22 @@ Defines whether binding is enabled (`true`) or disabled (`false`).
 {%highlight html%}
 <!-- as an attribute -->
 <input type="text" autoselect/>
- 
+
 <!-- in a standard KO form -->
 <input type="text" data-bind="autoselect: true"/>
 {%endhighlight%}
 
 ### `bindHtml`
-The `bindHtml` binding renders provided string, which represents a collection of HTML elements, inside of the associated node.
-On top of that it instantiates all bindings defined for the rendered elements in the scope of a current view model.
+The `bindHtml` binding renders the provided string, as a collection of HTML elements, inside of the associated node.
+<p class="q">tag?</p>
+It also instantiates all bindings defined for the rendered elements in the scope of the current view model.
+<p class="q">current view model - what exactly does it mean?</p>
 
-**Implemented By**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/bind-html.js`
+**Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/bind-html.js`
 
-**Value**: `string`
+**Value type**: `string`
 
-**Aliases**: [bindHtml]
+**Aliases**: `[bindHtml]`
 
 **Usage example**:
 {%highlight html%}
@@ -74,31 +89,55 @@ On top of that it instantiates all bindings defined for the rendered elements in
 {%endhighlight%}
 
 ### `collapsible`
-The `collapsible` binding provides methods and properties necessary for implementing collapsible panels. It can automatically collapse panel when clicking outside of the associated node, toggle optional CSS class when node changes its visibility and it also comes with additional helper bindings ("toggleCollapsible", "openCollapsible" and "closeCollapsible").
+The `collapsible` binding provides methods and properties required for implementing collapsible panels. It can automatically collapse panel when clicking outside of the associated node, toggle optional CSS class when node changes its visibility. It has additional helper bindings: `toggleCollapsible`, `openCollapsible` and `closeCollapsible`.
 
-**Implemented By**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/collapsible.js`
+**Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/collapsible.js`
 
-**Value**: `Object`
+**Value type**: `Object`
 
-Binding's configuration that may include following properties:
-Property Name
-Type
-Default Value
-Description
-as	string	$collapsible	Key by which instance of the binding will be accessible in current scope.
-closeOnOuter	boolean	true	Whether panel needs to be closed when click happens of its boundaries.
-onTarget	boolean	false	Allows to toggle panel's visibility when click happens directly on the target node.
-openClass	string	_active	CSS class that will be added to or removed from the target node when panel changes its visibility.
-If value is an empty string, then binding won't modify element's classes.
+Binding's configuration that may include the following properties:
 
-**Aliases**: [collapsible]
+<table>
+  <tr>
+    <th>Preoperty</th>
+    <th>Description</th>
+    <th>Type</th>
+    <th>Default value</th>
+  </tr>
+  <tr>
+    <td><code>as</code></td>
+    <td>A key for accessing the binding in the current scope.</td>
+    <td>String</td>
+    <td><code>$collapsible</code></td>
+  </tr>
+  <tr>
+    <td><code>closeOnOuter</code></td>
+    <td>Whether the panel needs to be closed on outside boundaries click.</td>
+    <td>Boolean</td>
+    <td><code>true</code></td>
+  </tr>
+  <tr>
+    <td><code>onTarget</code></td>
+    <td>Toggles panel's visibility on the target node click. <p class="q">why node? how you can click outside a node</p></td>
+    <td>Boolean</td>
+    <td><code>false</code></td>
+  </tr>
+  <tr>
+    <td><code>openClass</code></td>
+    <td>CSS class that is added to or removed from the target node, when the panel changes visibility. If the option values is left empty, then the binding does not modify the element's classes.</td>
+    <td>String</td>
+    <td><code>_active</code></td>
+  </tr>
+</table>
+
+**Aliases**: `[collapsible]`
 
 ### `datepicker`
 <p class="q">Description?</p>
 
-**Implemented By**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/datepicker.js`
+**Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/datepicker.js`
 
-**Value**: `string` | `Object`
+**Value type**: `string` | `Object`
 
 **Aliases**: -
 
@@ -108,11 +147,14 @@ If value is an empty string, then binding won't modify element's classes.
 {%endhighlight%}
 
 ### `fadeVisible`
-The "fadeVisible" binding is used to progressively (with an animation effect) change visibility of an element.
+The `fadeVisible` binding performs the gradual change of the element's visibility  (with an animation effect).
+<p class="q">what is meant by animation effect</p>.
 
-**Implemented By**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/fadeVisible.js`
+**Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/fadeVisible.js`
 
-**Value**: `boolean` - Defines whether the element is visible (`true`) or hidden (`false`).
+**Value type**: `boolean`.
+
+Defines whether the element is visible (`true`) or hidden (`false`).
 
 **Aliases**: -
 
@@ -124,30 +166,32 @@ The "fadeVisible" binding is used to progressively (with an animation effect) ch
 
 ### `i18n`
 
-**Implemented By**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/i18n.js`
+**Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/i18n.js`
 
-**Value**: `string`
+**Value type**: `string`
 
-**Aliases**: [translate], <translate>
+**Aliases**: `[translate]`, `<translate>`
 
 **Usage example**:
 {%highlight html%}
 <div data-bind="i18n: 'Translate as a standard knockout binding'"></div>
- 
+
 <div translate="'Translate using the attribute'"></div>
- 
-<translate args="'In a node form'"></translate>
+
+<translate args="'Translate using the tag'"></translate>
 {%endhighlight%}
 
 ### keyboard
 
-The "keyboard" binding allows to set up listeners for the "keypress" event of a specific button.
+The keyboard binding allows setting up listeners for the `keypress` event of a specific key.
 
-**Implemented By**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/keyboard.js`
+**Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/keyboard.js`
 
-**Value**: [name: number]: (e: KeyboardEvent) => void - A collection in which keys represent a key code and values are callback functions invoked when the associated button is pressed.
+**Value type**:` [name: number]: (e: KeyboardEvent) => void` 
 
-**Aliases**: [keyboard]
+A collection in which keys represent keyboard keys' codes and values are callback functions invoked when the associated key is pressed.
+
+**Aliases**: `[keyboard]`
 
 **Usage example**:
 {%highlight html%}
@@ -159,11 +203,11 @@ The "keyboard" binding allows to set up listeners for the "keypress" event of a 
 {%endhighlight%}
 
 ### mageInit
-The `mageInit` binding is an adapter for the [data-mage-init] attribute which is primarily used to initialize jQuery widgets on an associated element. 
- 
-Implemented By: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/mage-init.js`
+The `mageInit` binding is an adapter for the `[data-mage-init]` attribute that is used to initialize jQuery widgets on the associated element.
 
-**Value**: `[path: string]: Object`
+Source: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/mage-init.js`
+
+**Value type**: `[path: string]: Object`
 
 **Aliases**: -
 
@@ -182,9 +226,9 @@ Example: creating modal window
 ### optgroup
 The `optgroup` binding is a decorator for the standard Knockout's options binding which adds the support of nested options rendering them as the <optgroup> element.
 
-**Implemented By**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/optgroup.js`
+**Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/optgroup.js`
 
-**Value**: `Array<string>` | `Array<Object>`
+**Value type**: `Array<string>` | `Array<Object>`
 
 **Aliases**: -
 
@@ -214,9 +258,9 @@ The `optgroup` binding is a decorator for the standard Knockout's options bindin
 ### outerClick
 The `outerClick` binding allows to subscribe for the "click" event that happens outside of the boundaries of the associated element.
 
-**Implemented By**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/outer_click.js`
+**Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/outer_click.js`
 
-**Value**: Function - Callback that is invoked when user clicks outside of the element.
+**Value type**: Function - Callback that is invoked when user clicks outside of the element.
 
 **Aliases**: [outerClick]
 
@@ -230,9 +274,9 @@ The `outerClick` binding allows to subscribe for the "click" event that happens 
 ### range
 The `range` binding is an adapter for the jQuery UI Slider Widget. Additionally it implements necessary handlers to work with mobile devices.
 
-**Implemented By**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/range.js`
+**Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/range.js`
 
-**Value**: `Object` - configuration that is passed to the Slider Widget.
+**Value type**: `Object` - configuration that is passed to the Slider Widget.
 **Aliases**: [range]
 
 **Usage example**:
@@ -250,9 +294,9 @@ The `range` binding is an adapter for the jQuery UI Slider Widget. Additionally 
 ### `scope`
 Binding which allows to evaluate descendant nodes in the scope of an object found in the UiRegistry by provided string.
 
-**Implemented By**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/scope.js`
+**Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/scope.js`
 
-**Value**: `string` - Component's name by which to perform a lookup in the registry.
+**Value type**: `string` - Component's name by which to perform a lookup in the registry.
 
 **Aliases**: [ko-scope], <scope>
 
@@ -260,10 +304,10 @@ Binding which allows to evaluate descendant nodes in the scope of an object foun
 {%highlight html%}
 <!-- as an attribute -->
 <div ko-scope="'name.of.component'"></div>
- 
+
 <!-- in a standard KO form -->
 <div data-bind="scope: 'name.of.component'"></div>
- 
+
 <!-- without an extra container node -->
 <scope args="'name.of.component'"></scope>
 {%endhighlight%}
