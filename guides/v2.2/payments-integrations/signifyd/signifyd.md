@@ -15,7 +15,7 @@ This document provides additional technical details for integrating Magento with
 
 ## Magento_Signifyd module overview
 
-The Magento-Signifyd module allows to:
+The Magento-Signifyd module allows you to:
 
  - create a [Signifyd case](https://www.signifyd.com/docs/api/#/reference/cases) for a placed order
  - automatically receive a [Signifyd guarantee](https://www.signifyd.com/docs/api/#/reference/guarantees) for a created case
@@ -23,13 +23,13 @@ The Magento-Signifyd module allows to:
 
 ## Processing supplementary payment information
 
-To improve the accuracy of Signifyd's transaction estimation, external integrations (like payment methods) may provide the supplementaty payment info. Sections below show how to do that.
+To improve the accuracy of Signifyd's transaction estimation, external integrations (like payment methods) may provide the supplementary payment info.
 
 ### Provide AVS/CVV response codes
 
-A custom payment method can implement the `\Magento\Payment\Api\PaymentVerificationInterface` to provide AVS/CVV mapping from specific codes to [EMS standard], then register these mappers in the `config.xml` file of a custom payment module.
+A custom payment method can implement the `\Magento\Payment\Api\PaymentVerificationInterface` to provide AVS/CVV mapping from specific codes to [EMS standard], then register these mappings in the `config.xml` file of a custom payment module.
 
-Below is an example of mappers registration:
+Below is an example of mapping registration:
 
 {%highlight xml startinline=1%}
 <default>
@@ -53,7 +53,7 @@ The Signifyd service can retrieve the payment method of a placed order. The *Mag
 
     Magento\Signifyd\etc\signifyd_payment_mapping.xml
 
-To apply own mappings for the [Signifyd payment codes], follow these steps:
+To apply your mappings for the [Signifyd payment codes], follow these steps:
 
 1. Add `signifyd_payment_mapping.xml` to the custom payment method implementation
 
@@ -77,7 +77,7 @@ where:
 
 * `magento_code` attribute value should be the code for a custom payment method (the same as in the payment's `config.xml`).
 
-* `signifyd_code` attribute value should be one of available the Signifyd payment method codes.
+* `signifyd_code` attribute value should be one of the available Signifyd payment method codes.
 
 
 <!-- LINKS ADDRESSES -->
