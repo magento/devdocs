@@ -127,21 +127,13 @@ The variable names follow:
 The preceding table has a sample website code, `BASE`, for the Default Email Domain configuration setting. Replace `BASE` with the appropriate website code for your store.
 </div>
 
-#### Set the variables
-You can set the variable values in the Magento `index.php` using the following format:
+#### Set the variables using CLI commands
+This section discusses how to the following commands to set system-specific and sensitive configuration settings:
 
-	$_ENV['VARIABLE'] = 'value';
+*	`magento config:set` for system-specific settings
+*	`magento config:sensitive:set` for sensitive settings
 
-To set variable values:
-
-1.	Log in to your production system as, or switch to, the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %}.
-2.	Open `<Magento root dir>/index.php` in a text editor.
-3.	Anywhere in `index.php`, set values for the variables similar to the following:
-
-		$_ENV['CONFIG__DEFAULT__CONTACT__EMAIL__RECIPIENT_EMAIL'] = 'myname@example.com';
-		$_ENV['CONFIG__WEBSITES__BASE__CUSTOMER__CREATE_ACCOUNT__EMAIL_DOMAIN'] = 'magento.com';
-4.	Save your changes to `index.php` and exit the text editor.
-5.	Continue with the next section.
+TBD
 
 ### Update the shared settings {#config-split-verify-shared}
 This section discusses how to pull all the changes you made on your development and build systems, which updates the shared configuration settings (Store Name and VAT Number).

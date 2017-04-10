@@ -126,7 +126,7 @@ The variable names follow:
 The preceding table has a sample website code, `BASE`, for the Default Email Domain configuration setting. Replace `BASE` with the appropriate website code for your store.
 </div>
 
-#### Set the variables
+#### Set the variables using environment variables
 You can set the variable values in the Magento `index.php` using the following format:
 
 	$_ENV['VARIABLE'] = 'value';
