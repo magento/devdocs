@@ -4,128 +4,236 @@ group: UI_Components_guide
 subgroup: components
 title: Form component
 menu_title: Form component
-version: 2.1
+version: 2.2
 github_link: ui_comp_guide/components/ui-form.md
 ---
 
 
 ## Overview
-The Form component allows performing [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) operations on an entity. 
+The Form component is a collection of fields that can be grouped in tabs and fieldsets. It enables [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) operations.
 
-Form extends uiCollection.
+Form is a [basic component]({{page.baseurl}}ui_comp_guide/bk-ui_comps.html#general-structure).
 
-The following is the Form component constructor: [form.js]({{site.mage2100url}}app/code/Magento/Ui/view/base/web/js/form/form.js)
+
+## Structure
+
+Javascript constructor: [form.js]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/form/form.js)
 
 ### Related UI components
 
-The following components are used to extend the Form component:
+The following components can be used in the scope of the Form component:
 
+* ActionDelete
+* Checkbox
+* Checkboxset
 * DataSource
 * FieldSet
-* Field
-* Layout
-* Container
+* FileUploader
+* Hidden
+* Input
+* Multiline
+* Multiselect
+* Radioset
+* Select
+* Text
+* Textarea
+* Wysiwyg
+
 
 ## Component options
 
-* js_config -> deps - sets the dependency on component initialization
- 
-* js_config -> config -> provider - specifies the name of the component data
- 
-* layout - configuration class meets the visualization component
-    (See examples in 'Configuring' section)
+Form configuration extends the [`uiCollection`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uicollection_concept.html) configuration.
 
-<p class="q">What about those options above?</p>
-Form configuration extends the uiCollection configuration.
+Form-specific configuration:
 
 <table>
-   <tbody>
-      <tr>
-         <th>Option</th>
-         <th>Description</th>
-         <th>Type</th>
-         <th>Default</th>
-      </tr>
-      <tr class="even">
-         <td>`additionalFields`</td>
-         <td></td>
-         <td></td>
-         <td></td>
-      </tr>
-      <tr class="odd">
-         <td>`selectorPrefix`</td>
-         <td>Name that can be used to address the block to which this attribute is assigned. The name must be unique per generated page. If not specified, an automatic name will be assigned in the format <code>ANONYMOUS_<em>n</em></code></td>
-         <td>String</td>
-         <td>	
-`'.page-content'`</td>
-      </tr>
-      <tr class="even">
-         <td>`messagesClass`</td>
-         <td></td>
-         <td>String</td>
-         <td>`'messages'`</td>
-      </tr>
-      <tr class="odd">
-         <td>`errorClass`</td>
-         <td>The class that will be added to the component DOM block 
-when error is appeared.</td>
-         <td>String</td>
-         <td>`'.admin__field._error'`</td>
-      </tr>
-      <tr class="even">
-         <td>`ajaxSave`</td>
-         <td>Save form values by ajax.</td>
-         <td>Boolean</td>
-         <td>`false`</td>
-      </tr>
-      <tr class="odd">
-         <td>ajaxSaveType</td>
-         <td></td>
-         <td>String</td>
-         <td>`default`</td>
-      </tr>
-      <tr class="odd">
-         <td>	
-imports
+  <tbody>
+    <tr>
+      <th>
+        Option
+      </th>
+      <th>
+        Description
+      </th>
+      <th>
+        Type
+      </th>
+      <th>
+        Default
+      </th>
+    </tr>
+    <tr>
+      <td>
+        <code>ajaxSave</code>
+      </td>
+      <td>
+        Save Form values by AJAX.
+      </td>
+      <td>
+        Boolean
+      </td>
+      <td>
+       <code>false</code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>ajaxSaveType</code>
+      </td>
+      <td>There are two possible approaches to collect form data for ajaxSave:
 <ul>
-<li>reloadUrl</li></ul></td>
-         <td>Used for tracking changes of an external entity property. `imports`’s value is an object, composed of the following:
-<ul>
- <li> `key`: name of the internal property or method which receives the notifications.</li>
-<li>`value`: name of the property or method which is tracked for changes. Can use string templates.   </li></ul> </td>
-         <td>Object
-<ul>
-<li>String</li></ul></td>
-         <td>'${ $.provider}:reloadUrl'/td>
-      </tr>
-
-      <tr class="odd">
-<ul>         <td>exports
-<li>selectorPrefix</li>
-<li>messagesClass</li></ul></td>
-         <td>Used to notify some external entity about property changing. `exports` value is an object, composed of the following:
-<ul><li> `key`: name of the internal property or method which is tracked for changes.</li>
-<li> `value`: name of the property or method which receives the notification. Can use string templates.</li></ul></td>
-         <td>Object
-<ul><li>
-String</li>
-<li>String</li></ul></td>
-         <td><p class="q"></p></td>
-      </tr>
-      <tr class="even">
-         <td>`component`</td>
-         <td>The path to the component’s .js file in terms of RequireJS. </td>
-         <td>String</td>
-         <td>`Magento_Ui/js/form/form`</td>
-      </tr>
-      <tr class="odd">
-         <td>template</td>
-         <td>The path to the component’s .html template.</td>
-         <td>String</td>
-         <td>`	
-'ui/form/field'`</td>
-      </tr>    
-   </tbody>
+<li><code>default</code> - collects data using native FormData JavaScript class</li>
+<li><code>simple</code> - collects data to simple key value pairs object</li>
+</ul>
+</td>
+      <td>
+        <code>default</code>|<code>simple</code>
+      </td>
+      <td>
+        <code>default</code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>component</code>
+      </td>
+      <td>
+        The path to the component’s JS constructor in terms of RequireJS.
+      </td>
+      <td>
+        String
+      </td>
+      <td>
+        <code>Magento_Ui/js/form/form</code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>errorClass</code>
+      </td>
+      <td>
+        The CSS class added to the component's DOM block
+        if an error appears.
+      </td>
+      <td>
+        String
+      </td>
+      <td>
+        <code>'.admin__field._error'</code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>exports</code>
+        <ul>
+          <li><code>selectorPrefix</code>
+          </li>
+          <li><code>messagesClass</code>
+          </li>
+        </ul>
+      </td>
+      <td>
+        Used to notify some external entity about property
+        changing. <code>exports</code> value is an object, composed of the
+        following:
+        <ul>
+          <li><code>key</code>: name of the internal property or method which
+          is tracked for changes.
+          </li>
+          <li><code>value</code>: name of the property or method which
+          receives the notification. Can use string templates.
+          </li>
+        </ul>
+For more details see the <a href="{{page.baseurl}}ui_comp_guide/concepts/ui_comp_linking_concept.html">Linking properties of UI components</a> topic.
+      </td>
+      <td>
+        Object
+        <ul>
+          <li>String
+          </li>
+          <li>String
+          </li>
+        </ul>
+      </td>
+      <td>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>imports</code>
+        <ul>
+          <li><code>reloadUrl</code>
+          </li>
+        </ul>
+      </td>
+      <td>
+        Used for tracking changes of an external entity property.
+        <code>imports</code>’s value is an object, composed of the following:
+        <ul>
+          <li><code>key</code>: name of the internal property or method which
+          receives the notifications.
+          </li>
+          <li><code>value</code>: name of the property or method which is
+          tracked for changes. Can use string templates.
+          </li>
+        </ul>
+For more details see the <a href="{{page.baseurl}}ui_comp_guide/concepts/ui_comp_linking_concept.html">Linking properties of UI components</a> topic.
+      </td>
+      <td>
+        Object
+        <ul>
+          <li>String
+          </li>
+        </ul>
+      </td>
+      <td>
+        <code>'${ $.provider}:reloadUrl'</code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>messagesClass</code>
+      </td>
+      <td>The CSS class assigned to the <code>&lt;div&gt;</code> element, where the form elements validation error is rendered.</td>
+      <td>
+        String
+      </td>
+      <td>
+        <code>'messages'</code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>selectorPrefix</code>
+      </td>
+      <td>
+        The name that can be used to address the block to which this
+        attribute is assigned. The name must be unique per
+        generated page. If not specified, the name is
+        assigned automatically in the following format: <code>ANONYMOUS_<em>n</em></code>
+      </td>
+      <td>
+        String
+      </td>
+      <td>
+        <code>'.page-content'</code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>template</code>
+      </td>
+      <td>
+        The path to the component’s <code>.html</code> template.
+      </td>
+      <td>
+        String
+      </td>
+      <td>
+        <code>'ui/form/field'</code>
+      </td>
+    </tr>
+  </tbody>
 </table>
 
 
@@ -151,7 +259,7 @@ Example:
     </body>
 </page>
 {% endhighlight %}
- 
+
 ## Configure the Form component
 
 Component could be configured in two ways:
@@ -234,7 +342,7 @@ To group components you can use the component container as in example below:
 </container>
 {% endhighlight %}
 
-## Creating DataSource 
+## Creating DataSource
 You need to configure component's DataSource in order to provide data and meta information for your Form component.
 
 DataSource aggregates an object of class implements the interface `\Magento\Framework\View\Element\UiComponent\DataProvider\DataProviderInterface`
