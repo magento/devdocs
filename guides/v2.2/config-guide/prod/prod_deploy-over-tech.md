@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: 999_prod
+subgroup: 998_prod
 title: Deployment technical overview
 menu_title: Deployment technical overview
 menu_node: 

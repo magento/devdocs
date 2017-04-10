@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: 999_prod
+subgroup: 998_prod
 title: Other configuration paths reference
 menu_title: Other configuration paths reference
 menu_order: 303

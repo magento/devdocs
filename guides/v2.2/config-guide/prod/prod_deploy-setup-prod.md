@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: 999_prod
+subgroup: 998_prod
 title: Set up your production split deployment system
 menu_title: Set up your production split deployment system
 menu_node: 

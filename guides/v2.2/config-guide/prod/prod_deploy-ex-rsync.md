@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: 999_prod
+subgroup: 998_prod
 title: Example of setting configuration values without using source control
 menu_title: Example of setting configuration values without using source control
 menu_node: 

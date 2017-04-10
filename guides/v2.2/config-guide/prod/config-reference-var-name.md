@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: 999_prod
+subgroup: 998_prod
 title: Use environment variables to override configuration settings
 menu_title: Use environment variables to override configuration settings
 menu_order: 400

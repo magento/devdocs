@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: 999_prod
+subgroup: 998_prod
 title: Configuration reference
 menu_title: Configuration reference
 menu_order: 300

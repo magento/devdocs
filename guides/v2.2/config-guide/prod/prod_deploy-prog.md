@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: 999_prod
+subgroup: 998_prod
 title: PHP developer tasks for split deployment
 menu_title: PHP developer tasks for split deployment
 menu_node: 

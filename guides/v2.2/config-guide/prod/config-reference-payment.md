@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: 999_prod
+subgroup: 998_prod
 title: Payment configuration paths reference
 menu_title: Payment configuration paths reference
 menu_order: 302

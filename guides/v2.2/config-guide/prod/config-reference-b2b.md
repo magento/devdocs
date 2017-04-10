@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: 999_prod
+subgroup: 998_prod
 title: Magento Enterprise B2B Extension configuration paths reference
 menu_title: Magento Enterprise B2B Extension configuration paths reference
 menu_order: 305

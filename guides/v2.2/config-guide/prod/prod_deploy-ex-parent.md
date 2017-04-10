@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: 999_prod
+subgroup: 998_prod
 title: Deployment step-by-step examples
 menu_title: Deployment step-by-step examples
 level3_menu_node: level3parent

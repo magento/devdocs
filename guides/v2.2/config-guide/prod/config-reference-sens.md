@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: 999_prod
+subgroup: 998_prod
 title: Sensitive and system-specific configuration paths reference
 menu_title: Sensitive and system-specific configuration paths reference
 menu_order: 301

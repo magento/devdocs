@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: 999_prod
+subgroup: 998_prod
 title: Deployment overview
 menu_title: Deployment overview
 level3_menu_node: level3parent
