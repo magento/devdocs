@@ -19,9 +19,12 @@ You can have one build system that meets the following requirements:
 
 	*	`app/etc/config.php` 
 	*	`generated` directory (and subdirectories)
+	*	`pub/media` directory
+	*	`pub/media/wysiwyg` directory (and subdirectories)
 	*	`pub/static` directory (and subdirectories)
 *	Must have a compatible PHP version installed
 *	Must have Composer installed
+*	It has Magento file system ownership and permissions set as discussed in [Prerequisite for your development, build, and production systems]({{ page.baseurl }}config-guide/prod/prod_deploy-over-tech.html#config-deploy-prereq).
 
 The build system does _not_ need any of the following:
 
@@ -71,6 +74,8 @@ To set up the build system:
 		# app/etc/config.php
 		# pub/media/*
 		# generated/*
+		# pub/media/*.*
+		# pub/media/wysiwyg/*
 		# pub/static/*
 6.	Save your changes to `.gitignore` and exit the text editor.
 7.	If you use Git, use the following commands to commit the change:

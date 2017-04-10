@@ -21,10 +21,12 @@ You can have one production system. All of the following must be true:
 
 	*	`app/etc/config.php` 
 	*	`generated` directory (and subdirectories)
+	*	`pub/media` directory
+	*	`pub/media/wysiwyg` directory (and subdirectories)
 	*	`pub/static` directory (and subdirectories)
-	*	`pub/media` directory (and subdirectories)
 
 *	Magento 2.2 or later must be installed and set for [production mode]({{ page.baseurl }}config-guide/bootstrap/magento-modes.html#mode-production)
+*	It has Magento file system ownership and permissions set as discussed in [Prerequisite for your development, build, and production systems]({{ page.baseurl }}config-guide/prod/prod_deploy-over-tech.html#config-deploy-prereq).
 
 ## Set up a production machine
 To set up a production machine:
@@ -95,4 +97,4 @@ To set sensitive values:
 *	[`magento config:sensitive:set` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-set.html)
 *	[`magento app:config:import` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-import.html)
 *	[Sensitive and system-specific configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-sens.html)
-*	[Use environment variables to override configuration settings]({{ page.baseurl config-guide/prod/config-reference-var-name.html}})
+*	[Use environment variables to override configuration settings]({{ page.baseurl }}config-guide/prod/config-reference-var-name.html)
