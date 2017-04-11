@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 12_env
+subgroup: 120_env
 title: SSH into your environment
 menu_title: SSH into your environment
 menu_order: 3

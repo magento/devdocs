@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 02_requirements
+subgroup: 20_requirements
 title: Magento Enterprise Cloud Edition requirements
 menu_title: Magento Enterprise Cloud Edition requirements
 menu_order: 1

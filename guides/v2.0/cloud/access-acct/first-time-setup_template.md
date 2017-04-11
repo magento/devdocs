@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 08_setup
+subgroup: 80_setup
 title: Create a new Magento project
 menu_title: Create a new Magento project
 menu_order: 100

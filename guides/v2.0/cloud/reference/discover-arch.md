@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 01_welcome
+subgroup: 15_reference
 title: Architecture
 menu_title: Architecture
 menu_order: 2

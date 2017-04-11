@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 08_setup
+subgroup: 80_setup
 title: Prepare your existing Magento EE system
 menu_title: Prepare your existing Magento EE system
 menu_order: 153

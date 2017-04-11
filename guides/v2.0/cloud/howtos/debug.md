@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 15_howto
+subgroup: 150_howto
 title: Run a PHP debugger
 menu_title: Run a PHP debugger
 menu_order: 100

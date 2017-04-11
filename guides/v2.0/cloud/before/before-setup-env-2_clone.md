@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 08_setup
+subgroup: 80_setup
 title: Step 2, Clone the project
 menu_title: Step 2, Clone the project
 menu_order: 162

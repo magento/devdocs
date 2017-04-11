@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 08_setup
+subgroup: 80_setup
 title: Magento 2 resources
 menu_title: Magento 2 resources
 menu_order: 550

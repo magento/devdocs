@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 08_setup
+subgroup: 80_setup
 title: Step 5, Clone or branch an environment
 menu_title: Step 5, Clone or branch an environment
 menu_order: 165

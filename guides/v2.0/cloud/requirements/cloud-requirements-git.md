@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 02_requirements
+subgroup: 20_requirements
 title: Git requirements
 menu_title: Git requirements
 menu_order: 3

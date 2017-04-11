@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 50_trouble
+subgroup: 170_trouble
 title: Troubleshoot Fastly
 menu_title: Troubleshoot Fastly
 menu_order: 20

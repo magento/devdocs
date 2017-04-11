@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 10_project
+subgroup: 100_project
 title: routes.yaml
 menu_title: routes.yaml
 menu_order: 76

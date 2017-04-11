@@ -1,4 +1,14 @@
-# Magento Enterprise Cloud Edition: The 10,000 Foot Overview
+---
+layout: default
+group: cloud
+subgroup: 10_welcome
+title: The 10,000 ft overview
+menu_title: 10,000 ft overview
+menu_order: 20
+menu_node: 
+version: 2.0
+github_link: cloud/welcome/10000-ft-overview.md
+---
 
 # What's this?
 

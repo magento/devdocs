@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 10_project
+subgroup: 100_project
 title: Pull code from a private Git repository
 menu_title: Pull code from a private Git repository
 menu_order: 600

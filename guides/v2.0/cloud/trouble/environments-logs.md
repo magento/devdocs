@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 50_trouble
+subgroup: 170_trouble
 title: Use logs for troubleshooting
 menu_title: Use logs for troubleshooting
 menu_order: 2
