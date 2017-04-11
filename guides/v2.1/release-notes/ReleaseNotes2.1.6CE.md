@@ -42,7 +42,7 @@ Magento 2.1.6 contains over 15 significant performance enhancements when compare
 
 	* significant decrease in the number of file system operations when processing images on frontend
 
-	* caching of image metadata is up to 50% faster, depending upon store size
+	* caching of image metadata is up to 50% faster, depending on store size
 
 
 * **Improved performance of layered navigation**
