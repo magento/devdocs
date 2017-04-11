@@ -37,6 +37,7 @@ You can use a REST client to generate the JSON schema for one or more services. 
 `http://<magento_host>/rest/<store_code>/schema&services=<serviceName1,serviceName2,..>`
 
 The value of `store_code` must be one of the following:
+
 * `default`
 * The assigned store code
 * `all`. This value only applies to the CMS and Product modules. If this value is specified, the API call affects all the merchant's stores.

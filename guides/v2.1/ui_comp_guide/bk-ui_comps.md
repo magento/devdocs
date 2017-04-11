@@ -50,7 +50,7 @@ Basic components are:
 
 All other UI components are secondary. 
 
-Basic components are declared in the page layout files; secondary components are declared in the top-level components’ instances configuration files.
+Basic components are declared in the [page layout files]({{page.baseurl}}frontend-dev-guide/layouts/layout-types.html#layout-types-page); secondary components are declared in the top-level components’ instances configuration files.
 
 All components can be configured both for Admin and storefront.
 

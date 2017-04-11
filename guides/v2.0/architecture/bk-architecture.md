@@ -12,7 +12,7 @@ github_link: architecture/bk-architecture.md
 redirect_from: /guides/v1.0/architecture/bk-architecture.html
 ---
 
-The Architecture Guide provides a relatively high-level introduction and view of the Magento product. 
+The Architecture Guide provides a high-level introduction and view of the Magento product. 
 
 The Magento platform and components are explained from the perspective of several audiences: merchants, web store developers (frontend developers), extension developers, system admins, installers, and integrators.
 

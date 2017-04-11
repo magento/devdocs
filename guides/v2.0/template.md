@@ -47,7 +47,7 @@ ADD DIAGRAM OR ILLUSTRATION <p><img src="{{ site.baseurl }}common/images/NAME_OF
 
 ### Examples
 {% collapsible Click to show/hide content %}
-To use the collapsible content functionality, you can use the `collapsible` block tag. Any content inside this block will be hidden until the header text is clicked.
+To use the collapsible content functionality, use the `collapsible` block tag. Any content inside this block will be hidden until the header text is clicked.
 
 See the markdown version of this file for examples.
 {% endcollapsible %}
@@ -143,3 +143,12 @@ See the markdown version of this file for examples.
     <p>Clicking on each title will open its corresponding content and close any open contents.</p>
   </div>
 </div>
+
+### Tooltips
+
+You can use a glossary term's UUID from the [Magento Glossary](https://magento.github.io/glossary/){:target="_blank"} to add a tooltip for that term on the page.
+
+#### Examples
+
+* {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %}
+* Inline {% glossarytooltip 8f407f13-4350-449b-9dc5-217dcf01bc42 %}Markup{% endglossarytooltip %} text

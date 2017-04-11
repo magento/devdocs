@@ -12,7 +12,7 @@ redirect_from:
   - /guides/v2.0/community/resources/index.html
 ---
 
-Below are links to blog posts, podcasts, presentations, and books created by members of the Magento community and core developers separated into popular topics.
+Below are links to blog posts, podcasts, presentations, and books created by members of the {% glossarytooltip cadefd6b-0e85-4a8c-909a-5f967c56d35f %}Magento{% endglossarytooltip %} community and core developers separated into popular topics.
 
 New items will be added incrementally, and older links rotated out. Keep an eye on this space for the latest community resources!
 
@@ -39,16 +39,20 @@ They are listed here because the content has been well received within the Magen
 * *Blog post* [Deploying Magento 2 - History & Overview][6]{:target="_blank"} by Matthias Walter
 * *Blog post* [Deploying Magento 2 using Capistrano][17]{:taget="_blank"} by David Alger
 * *Blog post* [Deploying Magento 2 with Composer and Envoyer][16]{:target="_blank"} by Nick Rigby
+* *GitHub* [Magento 2 Docker][18]{:target="_blank"}
+
+## Automated Testing
+* *Presentation:* [Writing testable code][10]{:target="_blank"} by Vinai Kopp (**Bonus:** [Video Presentation][11]{:target="_blank"})
+* *Book:* [Test Driven Magento Extension Development][12]{:target="_blank"} by Allan MacGregor
+* *Blog post:* [Integration Tests with Magento 2][19]{:target="_blank"} by Andreas von Studnitz
 
 ## Mastering Magento 2
 
-*  *Book:* [Magento 2 DIY][7]{:target="_blank"} by Viktor Khliupko
-*  *Book:* [Magento 2 Cookbook][8]{:target="_blank"} by Ray Bogman and Vladimir Kerkhoff
-*  *Presentation:* [Staging and Preview][9]{:target="_blank"} by Igor Melnykov
-*  *Presentation:* [Writing testable code][10]{:target="_blank"} by Vinai Kopp (**Bonus:** [Video Presentation][11]{:target="_blank"})
-*  *Book:* [Test Driven Magento Extension Development][12]{:target="_blank"} by Allan MacGregor
-*  *Blog post:* [Introducing UI Components][13]{:target="_blank"} by Alan Storm
-*  *Presentation:* [Micro Services][14]{:target="_blank"} by Ivan Chepurnyi
+* *Book:* [Magento 2 DIY][7]{:target="_blank"} by Viktor Khliupko
+* *Book:* [Magento 2 Cookbook][8]{:target="_blank"} by Ray Bogman and Vladimir Kerkhoff
+* *Presentation:* [Staging and Preview][9]{:target="_blank"} by Igor Melnykov
+* *Blog post:* [Introducing UI Components][13]{:target="_blank"} by Alan Storm
+* *Presentation:* [Micro Services][14]{:target="_blank"} by Ivan Chepurnyi
 
 ## Performance
 
@@ -72,3 +76,5 @@ They are listed here because the content has been well received within the Magen
 [15]: http://www.slideshare.net/StaceyWhitney1/mage-titans-usa-2016-miguel-balparda-magento-2-premium-performance-with-php-7-and-varnish
 [16]: https://nickrigby.uk/magento/deploying-magento-2-with-composer-and-envoyer.html
 [17]: http://davidalger.com/development/magento/deploying-magento-2-using-capistrano/
+[18]: https://github.com/meanbee/docker-magento2
+[19]: https://www.integer-net.com/integration-tests-with-magento-2/

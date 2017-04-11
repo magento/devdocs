@@ -38,9 +38,7 @@ The following is an illustration of how the process of making simple changes loo
 
 <img src="{{ site.baseurl }}common/images/extend_less_code_1.png" alt="Less code redefining the color of the primary buttons">
 </li>
-<li markdown="1">[Clean static files cache]({{page.baseurl}}howdoi/clean_static_cache.html) </li>
-</ul>
-</li>
+<li markdown="1">[Clean static files cache]({{page.baseurl}}howdoi/clean_static_cache.html)</li>
 <li>Refresh the page, and view the changes applied. For example:
 
 <img src="{{ site.baseurl }}common/images/extend_less_screenshot1.png" alt="Less code redefining the color of the primary buttons">
