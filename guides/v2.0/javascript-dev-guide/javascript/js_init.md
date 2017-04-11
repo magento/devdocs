@@ -103,7 +103,7 @@ To call a JS component on a HTML element without direct access to the element or
 
 Where:
 <ul>
-<li><code>&lt;element_selector&gt;</code> is a <a https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector">selector</a> (in terms of querySelectorAll) for the element on which the following JS components are called.</li>
+<li><code>&lt;element_selector&gt;</code> is a <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector">selector</a> (in terms of querySelectorAll) for the element on which the following JS components are called.</li>
 <li><code>&lt;js_component1&gt;</code> and <code>&lt;js_component2&gt;</code> are the JS components being initialized on the element with the selector specified as <code>&lt;element_selector&gt;</code>.</li>
 <li><code>&lt;js_component3&gt;</code> is the JS component called with no binding to an element.</li> 
 </ul>
