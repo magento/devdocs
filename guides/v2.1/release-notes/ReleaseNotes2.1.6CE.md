@@ -71,8 +71,6 @@ We address the following functional fixes and enhancements in this release.
 <!--- 65251 -->* The storefront now displays images that Magento resizes during product save operations, rather than resizing the product on the storefront. Previously, the image path contained `store_id`,  and during save operations, Magento resized images for images the default store only. 
 
 
-<!--- 63343 -->* The `\Magento\CatalogWidget\Model\Rule` class now implements unserialized methods. Specifically, Magento has replaced `\Magento\FrameworkSerialize\Serializer\Json::serialize()` with `\Magento\FrameworkSerialize\Serializer\Json::unserialize()`. 
-
 <!--- 66366 -->* The `\Magento\CatalogInventory\Model\Stock\Status\getStockId()` method now returns the correct values.
 
 
