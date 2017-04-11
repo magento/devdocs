@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Magento CE 2.1.x Release Notes | Magento 2 Developer Documentation</title>
+	<title>Magento EE 2.1.6 Release Notes | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.1/release-notes/2.1-ce-release-notes-parent.html">
+	<link rel="canonical" href="//guides/v2.1/release-notes/ReleaseNotes2.1.6EE.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -52,9 +52,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/release-notes/2.1-ce-release-notes.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/release-notes/ReleaseNotes2.1.6EE.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/release-notes/2.1-ce-release-notes.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/release-notes/ReleaseNotes2.1.6EE.html">Magento 2.1</a></li>
 	
   </ul>
 
@@ -244,7 +244,7 @@
 
 									
 
-										<li class="level3Parent  active " id="ce21-relnotes"><a href="#">Magento CE 2.1.x Release Notes</a>
+										<li class="level3Parent " id="ce21-relnotes"><a href="#">Magento CE 2.1.x Release Notes</a>
 
 
 									
@@ -333,7 +333,7 @@
 									
 
 
-											<li class="level3Child ee21-relnotes " data-menunode="ee21-relnotes"><a href="/guides/v2.1/release-notes/ReleaseNotes2.1.6EE.html">Magento EE 2.1.6 Release Notes</a>
+											<li class="level3Child ee21-relnotes  active " data-menunode="ee21-relnotes"><a href="/guides/v2.1/release-notes/ReleaseNotes2.1.6EE.html">Magento EE 2.1.6 Release Notes</a>
 
 
 									
@@ -785,7 +785,7 @@
 
           
 
-          <span property="name">Magento CE 2.1.x Release Notes</span>
+          <span property="name">Magento EE 2.1.6 Release Notes</span>
 
         
 
@@ -808,14 +808,291 @@
 
 	
 
-	<h1 class="page-heading">Magento CE 2.1.x Release Notes</h1>
+	<h1 class="page-heading">Magento EE 2.1.6 Release Notes</h1>
 
   
 
 
 </section>
 
-			
+			<ul id="markdown-toc">
+  <li><a href="#highlights" id="markdown-toc-highlights">Highlights</a></li>
+  <li><a href="#functional-fixes-and-enhancements" id="markdown-toc-functional-fixes-and-enhancements">Functional fixes and enhancements</a>    <ul>
+      <li><a href="#catalog" id="markdown-toc-catalog">Catalog</a></li>
+      <li><a href="#configurable-products" id="markdown-toc-configurable-products">Configurable products</a></li>
+      <li><a href="#indexers" id="markdown-toc-indexers">Indexers</a></li>
+      <li><a href="#import" id="markdown-toc-import">Import</a></li>
+      <li><a href="#miscellaneous" id="markdown-toc-miscellaneous">Miscellaneous</a></li>
+      <li><a href="#swatches" id="markdown-toc-swatches">Swatches</a></li>
+    </ul>
+  </li>
+  <li><a href="#system-requirements" id="markdown-toc-system-requirements">System requirements</a></li>
+  <li><a href="#install-the-magento-software" id="markdown-toc-install-the-magento-software">Install the Magento software</a></li>
+  <li><a href="#upgrade-from-an-earlier-version" id="markdown-toc-upgrade-from-an-earlier-version">Upgrade from an earlier version</a></li>
+  <li><a href="#migration-toolkits" id="markdown-toc-migration-toolkits">Migration toolkits</a></li>
+  <li><a href="#credits" id="markdown-toc-credits">Credits</a></li>
+</ul>
+
+<p>We are pleased to present Magento Enterprise Edition 2.1.6. This release includes important performance enhancements for your Magento installation, especially for operations that involve the category page as well as image resizing.</p>
+
+<p>Looking for the <a href="http://devdocs.magento.com/guides/v2.0/cloud/release-notes/CloudReleaseNotes.html" target="_blank">Magento Enterprise Cloud Edition Release Notes</a>?</p>
+
+<h2 id="highlights">Highlights</h2>
+
+<p>Magento 2.1.6 contains over 15 significant performance enhancements when compared to 2.1.5. Look for the following highlights in this release:</p>
+
+<ul>
+  <li>
+    <p><strong>Improved performance of the Category page</strong></p>
+
+    <ul>
+      <li>
+        <p>loading configurable products from the database is now up to 5x faster</p>
+      </li>
+      <li>
+        <p>price calculations are now up to 3-5% faster</p>
+      </li>
+      <li>
+        <p>stock validation is now up to 20% faster</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Optimized image resizing</strong></p>
+
+    <ul>
+      <li>
+        <p>image resize operations performed from the command line interface now generate images of all sizes. See <a href="/guides/v2.1/frontend-dev-guide/themes/theme-images.html">magento catalog:images:resize</a> for more information.</p>
+      </li>
+      <li>
+        <p>image resize operations from the Admin have been fixed</p>
+      </li>
+      <li>
+        <p>significant decrease in the number of file system operations when processing images on frontend</p>
+      </li>
+      <li>
+        <p>caching of image metadata is up to 50% faster, depending upon store size</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Improved performance of layered navigation</strong></p>
+
+    <ul>
+      <li>layered navigation is now up to 3% faster due to the caching of attribute options</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Minimized indexing operations after product import</strong></p>
+  </li>
+</ul>
+
+<h2 id="functional-fixes-and-enhancements">Functional fixes and enhancements</h2>
+
+<p>We address the following functional fixes and enhancements in this release.</p>
+
+<h3 id="catalog">Catalog</h3>
+
+<!--- 65324 -->
+<ul>
+  <li>Magento no longer locks the <code>category_product_entity</code> table. Unlocking this table reduces the potential of lock-related timeouts that can occur when indexing and checkout operations run in parallel. Previously, Magento locked the <code>category_product_entity</code> table.</li>
+</ul>
+
+<!--- 65251 -->
+<ul>
+  <li>The storefront now displays images that Magento resizes during product save operations, rather than resizing the product on the storefront. Previously, the image path contained <code>store_id</code>,  and during save operations, Magento resized images for images the default store only.</li>
+</ul>
+
+<!--- 66366 -->
+<ul>
+  <li>The <code>\Magento\CatalogInventory\Model\Stock\Status\getStockId()</code> method now returns the correct values.</li>
+</ul>
+
+<h3 id="configurable-products">Configurable products</h3>
+
+<!--- 65339 -->
+<ul>
+  <li>The check that Magento runs to confirm a configurable product’s readiness for sale is now faster.  (The <code>isSalable</code> method checks that a configurable product can be sold (that is, is in a saleable state)).</li>
+</ul>
+
+<!--- 65247 -->
+<ul>
+  <li>Query optimizations have improved the speed of configurable product price calculation.</li>
+</ul>
+
+<!--- 65246 -->
+<ul>
+  <li>Magento no longer calculates configurable product special prices on the category page. Previously, Magento calculated special prices on the category page, but did not display them.</li>
+</ul>
+
+<h3 id="indexers">Indexers</h3>
+
+<!--- 65362 -->
+<ul>
+  <li>Magento now runs a selective partial re-indexing operation after import if you enable <strong>Update on Schedule</strong>. Previously, Magento ran a full reindex no matter which index mode was set.</li>
+</ul>
+
+<h3 id="import">Import</h3>
+
+<!--- 64856 -->
+<ul>
+  <li>Magento now displays imported product images in this order: first, the base image, then the additional images in the order in which they were listed in the CSV file. Previously, Magento displayed images in this unexpected order: first, an additional image, then the base image, and finally, all remaining additional images.</li>
+</ul>
+
+<h3 id="miscellaneous">Miscellaneous</h3>
+
+<!--- 65484 -->
+<ul>
+  <li>Magento now caches attribute options for the layered navigation feature. This reduces the number of queries to the database, and consequently improves performance.</li>
+</ul>
+
+<!--- 65483 -->
+<ul>
+  <li>Magento no longer performs unnecessary file check operations (for example, <code>file_exists</code>, <code>is_file</code>), which improves the performance of the category and product pages.</li>
+</ul>
+
+<!--- 65480 -->
+<ul>
+  <li>Magento now caches image metadata, which avoids the time-consuming need to read images for metadata loading.</li>
+</ul>
+
+<!--- 65481 -->
+<ul>
+  <li>Magento no longer performs unnecessary staging-related flag operations on the Category page. Previously, Magento performed staging-related flag operations even when the Staging module was not used.</li>
+</ul>
+
+<!--- 66400 -->
+<ul>
+  <li>Magento now shows a significant decrease in Redis traffic after upgrading 2.1.2 to 2.1.4.</li>
+</ul>
+
+<h3 id="swatches">Swatches</h3>
+
+<!--- 65404 -->
+<ul>
+  <li>Magento no longer creates redundant objects when initializing a configurable product on the Category page.</li>
+</ul>
+
+<!--- 65403 -->
+<ul>
+  <li>You can now disable swatches for both the Catalog page and search results (quick or advanced). To disable swatches from these requests, disable <strong>Stores &gt; Configuration &gt; Catalog &gt; Storefront &gt; Show Swatches in Product List</strong>.</li>
+</ul>
+
+<!--- 65402 -->
+<ul>
+  <li>The logic that Magento uses to validate swatch attributes has been optimized.</li>
+</ul>
+
+<!--- 65248 -->
+<ul>
+  <li>Magento now caches swatch data in the block cache, which improves the responsiveness of the configurable product pages.</li>
+</ul>
+
+<!--- DUPLICATE -->
+<!--- 65252 -->
+<!--- 66125 -->
+<!--- 66346 -->
+
+<!--- INTERNAL ONLY -->
+<!--- 65203 -->
+
+<!--- CAN'T REPRODUCE -->
+<!--- 65609 -->
+
+<!--- WON'T FIX -->
+<!--- 65250 -->
+
+<h2 id="system-requirements">System requirements</h2>
+<p>Our technology stack is built on PHP and MySQL. For more information, see
+<a href="/guides/v2.1/install-gde/system-requirements.html" target="_blank">System Requirements</a>.</p>
+
+<div>
+
+  <h2 id="install-the-magento-software">Install the Magento software</h2>
+  <p>See one of the following sections:</p>
+
+  <ul>
+    <li><a href="#install-rc-composer">Get Magento EE using Composer</a></li>
+    <li><a href="#get-zip">Get Magento EE using a compressed archive</a></li>
+    <li><a href="#install-complete">Complete the installation</a></li>
+  </ul>
+
+  <h3 id="install-rc-composer" class="no_toc">Get Magento EE using Composer</h3>
+
+  <p>Magento EE is available from <code>repo.magento.com</code>. Before installing the Magento EE software using Composer,  familiarize yourself with these  <a href="/guides/v2.1/install-gde/prereq/integrator_install.html" target="_blank">prerequisites</a>, then run:</p>
+
+  <pre><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=&lt;version&gt; &lt;installation directory name&gt;
+</code></pre>
+
+  <p>where <code>&lt;version&gt;</code> is <code>2.1.0</code>, <code>2.1.1</code>, and so on</p>
+
+  <p>For example, to install 2.1.1 in the <code>magento2</code> directory:</p>
+
+  <pre><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition=2.1.1 magento2
+</code></pre>
+
+  <h3 id="get-zip" class="no_toc">Get Magento EE using a compressed archive</h3>
+
+  <div>
+
+    <p>The following table discusses where to get the Magento software. We provide the following downloads:</p>
+
+    <ul>
+      <li>Magento EE software only</li>
+      <li>Magento EE software with sample data (designed to help you learn Magento faster)</li>
+    </ul>
+
+    <p>These packages are easy to get and install. You don’t need to use Composer, all you need to do is to upload a package to your Magento server or hosted platform, unpack it, and run the web-based Setup Wizard.</p>
+
+    <p>Archives are available in the following formats: <code>.zip</code>, <code>.tar.bz2</code>, <code>.tar.gz</code></p>
+
+    <p>To get the Magento EE archive:</p>
+
+    <ol>
+      <li>Go to <a href="https://www.magentocommerce.com/products/customer/account/login/" target="_blank">your account on magento.com</a>.</li>
+      <li>Log in with your Magento user name and password.</li>
+      <li>In the left navigation bar, click <strong>Downloads</strong>.</li>
+      <li>In the right pane, click <strong>Magento Enterprise Edition 2.X</strong> &gt; <strong>Full Release</strong> or <strong>Magento Enterprise Edition 2.X</strong> &gt; <strong>Full Release + Sample Data</strong> for the software.</li>
+      <li>
+        <p>Follow the instructions on your screen to complete the Magento EE download:</p>
+
+        <ul>
+          <li><code>Magento-EE-&lt;version&gt;.*</code> (without sample data)</li>
+          <li><code>Magento-EE-&lt;version&gt;+Samples.*</code> (with sample data)</li>
+        </ul>
+      </li>
+      <li>Transfer the installation package to your development system.</li>
+    </ol>
+
+    <h3 id="install-complete" class="no_toc">Complete the installation</h3>
+
+    <p>After you get the EE software:</p>
+
+    <ol>
+      <li><a href="/guides/v2.1/install-gde/prereq/file-system-perms.html">Set file system ownership and permissions</a>.</li>
+      <li>
+        <p>Install the software:</p>
+
+        <ul>
+          <li><a href="/guides/v2.1/install-gde/install/web/install-web.html">Web Setup Wizard</a></li>
+          <li><a href="/guides/v2.1/install-gde/install/cli/install-cli.html">Command line</a></li>
+        </ul>
+      </li>
+    </ol>
+
+    <h2 id="upgrade-from-an-earlier-version">Upgrade from an earlier version</h2>
+    <p>To upgrade to Magento EE 2.1 from an earlier version, see <a href="/guides/v2.1/release-notes/tech_bull_21-upgrade.html">Upgrade to Magento version 2.1 (June 22, 2016)</a>.</p>
+
+    <h2 id="migration-toolkits">Migration toolkits</h2>
+    <p>The <a href="/guides/v2.1/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="/guides/v2.1/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.</p>
+
+    <p>The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.</p>
+
+    <h2 id="credits">Credits</h2>
+    <p>Dear community members, thank you for your suggestions and bug reports.</p>
+
+  </div>
+</div>
 
 		</div>
 		<!-- /.content-wrap -->
@@ -826,14 +1103,14 @@
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/release-notes/2.1-ce-release-notes.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v/release-notes/ReleaseNotes2.1.6EE.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
   
 
   <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/release-notes/2.1-ce-release-notes-parent.html" target="_blank">Give us feedback</a>
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/release-notes/ReleaseNotes2.1.6EE.html" target="_blank">Give us feedback</a>
   </div>
 
 </div>
