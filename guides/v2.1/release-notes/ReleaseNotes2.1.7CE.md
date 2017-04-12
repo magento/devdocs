@@ -37,7 +37,6 @@ Magento 2.1.7 contains over 15 security enhancements. Look for the following hig
 
 ## Security enhancements
 
-
 <!--- 64049, 63680 -->* We’ve updated several vulnerable moment.js libraries (query-migrate, query, jquery-ui-1.9.2.js)
 
 <!--- 63879 -->* You can no longer instantiate an arbitrary object while adding conditions to an email reminder rule. 
@@ -68,12 +67,33 @@ Magento 2.1.7 contains over 15 security enhancements. Look for the following hig
 
 
 
+
 <!--- INTERNAL ONLY -->
-<!--- 64635, 65012, 65244, 64877, 64453, 65226, 64771, 64717, 65075, 66931, 66689 --> 
+
+<!--- 67335, 67117, 67102, 66931, 66689, 65226, 65012, 64877, 64771, 64717, 64635, 64453-->
+
+
+<!--- NOT A BUG -->
+
+<!--- 67111 -->
+
 
 
 <!--- CANNOT REPRODUCE -->
+
 <!--- 65500 -->
+
+
+
+<!--- WON'T FIX -->
+
+<!--- 67100 -->
+
+
+<!--- DUPLICATE -->
+
+<!--- 67149 -->
+
 
 
 ## System requirements

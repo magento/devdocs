@@ -62,15 +62,43 @@ Magento 2.1.7 contains over 15 security enhancements. Look for the following hig
 
 <!--- 59097 -->* The Magento Admin no longer leaks user password hashes. 
 
-<!--- 67019 -->*
 
-<!--- 63498 -->* 
+
+
+<!--- INTERNAL ONLY -->
+
+<!--- 67335, 67117, 67102, 66931, 66689, 65226, 65012, 64877, 64771, 64717, 64635, 64453-->
+
+
+<!--- NOT A BUG -->
+
+<!--- 67111 -->
+
+
+
+<!--- CANNOT REPRODUCE -->
+
+<!--- 65500 -->
+
+
+
+<!--- WON'T FIX -->
+
+<!--- 67100 -->
+
+
+<!--- DUPLICATE -->
+
+<!--- 67149 -->
+
+
+
+
+
 
 ## System requirements
 Our technology stack is built on PHP and MySQL. For more information, see
 <a href="{{ page.baseurl }}install-gde/system-requirements.html" target="_blank">System Requirements</a>.
-
-
 
 
 {% include install/releasenotes/ee_install_21.md %}
