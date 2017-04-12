@@ -88,7 +88,6 @@ The preceding software is *not* upgradable but versions of [PHP]({{page.baseurl}
 #### Related topics
 *	[Workflow]({{page.baseurl}}cloud/discover-workflow.html)
 *	[Deployment process]({{page.baseurl}}cloud/discover-deploy.html)
-*	[Tooling]({{page.baseurl}}cloud/discover-tools.html)
 *	[Magento Enterprise Cloud Edition requirements]({{page.baseurl}}cloud/cloud-requirements.html)
 
 

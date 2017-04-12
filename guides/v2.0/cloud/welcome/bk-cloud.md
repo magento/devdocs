@@ -35,7 +35,6 @@ middleman between your code and deployment.
 
 #### Related topics
 *	[Magento Enterprise Cloud Edition requirements]({{page.baseurl}}cloud/cloud-requirements.html)
-*	[Common terms]({{page.baseurl}}cloud/before/terms.html)
 *	[Architecture]({{page.baseurl}}cloud/discover-arch.html)
 *	[Workflow]({{page.baseurl}}cloud/discover-workflow.html)
 
