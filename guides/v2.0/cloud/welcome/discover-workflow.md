@@ -1,10 +1,10 @@
 ---
 layout: default
 group: cloud
-subgroup: 01_welcome
+subgroup: 10_welcome
 title: Workflow
 menu_title: Workflow
-menu_order: 3
+menu_order: 30
 menu_node: 
 version: 2.0
 github_link: cloud/discover-workflow.md

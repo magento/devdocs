@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 08_setup
+subgroup: 80_setup
 title: Step 6, Install Magento
 menu_title: Step 6, Install Magento
 menu_order: 166

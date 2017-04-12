@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 01_welcome
+subgroup: 15_reference
 title: How Cloud Uses Composer
 menu_title: How Cloud Uses Composer
 menu_node: 

@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 40_live
+subgroup: 160_live
 title: Build and deploy before pushing to staging or production
 menu_title: Build and deploy before pushing to staging or production
 menu_order: 90

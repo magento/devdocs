@@ -1,10 +1,10 @@
 ---
 layout: default
 group: cloud
-subgroup: 01_welcome
+subgroup: 10_welcome
 title: Get help with your deployment
 menu_title: Get help with your deployment
-menu_order: 50
+menu_order: 40
 menu_node: 
 version: 2.0
 github_link: cloud/get-help.md

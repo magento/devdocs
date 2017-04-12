@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 08_setup
+subgroup: 80_setup
 title: Public IP addresses for integration environments
 menu_title: Public IP addresses for integration environments
 menu_order: 900

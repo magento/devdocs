@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 15_howto
+subgroup: 150_howto
 title: Test a Magento patch or upgrade
 menu_title: Test a Magento patch or upgrade
 menu_order: 25

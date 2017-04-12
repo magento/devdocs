@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 08_setup
+subgroup: 80_setup
 title: Step 6, Set up the Magento file system owner
 menu_title: Step 6, Set up the Magento file system owner
 menu_order: 58

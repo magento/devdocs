@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 01_welcome
+subgroup: 15_reference
 title: Deployment process
 menu_title: Deployment process
 menu_order: 4
