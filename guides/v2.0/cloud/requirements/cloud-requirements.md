@@ -20,7 +20,7 @@ Following are requirements you should already have:
 *	Must know how to use [Composer](https://getcomposer.org/doc){:target="_blank"}
 *	Must be familiar with Magento 2
 *	Must have familiarity with [Continuous Integration Best Practices](https://www.google.com/search?q=Continuous+Integration+Best+Practices){:target="_blank"}
-*	Understand the three types of systems and how they’re used: [integration]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-int), [staging]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-stage), [production]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-prod)
+*	Understand the three types of systems and how they’re used: [integration]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int), [staging]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-stage), [production]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-prod)
 *	Must set up a [local development environment]({{ page.baseurl }}cloud/before/before-setup-env-1_get-started.html)
 
     The integration environment (sometimes referred to as _Platform as a Service (PaaS))_ can help with integration testing but is not for developing for a production server. Among the differences are that, in integration, Magento is set for developer mode and not all directories are read-only.
@@ -73,7 +73,7 @@ Before you go live, you must:
 *	Make sure that the Fastly SSL certificate is setup for your domain(s)
 
 #### Related topics
-*	[Git requirements]({{ page.baseurl }}cloud/cloud-requirements-git.html)
-*	[License and authentication requirements]({{ page.baseurl }}cloud/cloud-requirements-license.html)
+*	[Git requirements]({{ page.baseurl }}cloud/requirements/cloud-requirements-git.html)
+*	[License and authentication requirements]({{ page.baseurl }}cloud/requirements/cloud-requirements-license.html)
 
 

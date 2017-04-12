@@ -28,4 +28,4 @@ We have the following resources available:
 	*	[Configuration]({{ page.baseurl}}config-guide/bk-config-guide.html)
 
 ### Technical support
-See [Get help with your deployment]({{ page.baseurl }}cloud/get-help.html)
+See [Get help with your deployment]({{ page.baseurl }}cloud/welcome/get-help.html)

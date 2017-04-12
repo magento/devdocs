@@ -17,8 +17,8 @@ To set up multiple stores, you must:
 
 1.	[Configure your local installation]({{ page.baseurl }}config-guide/multi-site/ms_over.html) and test it locally.
 2.	Configure Magento Enterprise Cloud edition routes and variables.
-3.	Push the changes to an [integration environment]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-int) and test it.
-4.	To deploy multiple stores to a [staging]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-stage) or [production]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-prod) environment, create a support ticket.
+3.	Push the changes to an [integration environment]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int) and test it.
+4.	To deploy multiple stores to a [staging]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-stage) or [production]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-prod) environment, create a support ticket.
 
 ## Configure your local installation
 To configure your local installation to use multiple stores, see [Multiple websites or stores]({{ page.baseurl }}config-guide/multi-site/ms_over.html).
@@ -35,7 +35,7 @@ After successfully creating and testing multiple stores locally, you must:
 Magento Enterprise Edition *routes* define how incoming URLs are processed. The way you configure routes depends on how you want your site to operate. We suggest configuring routes for integration as follows. You can edit the values later if your needs change.
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>This section discusses how to configure your <a href="{{ page.baseurl }}cloud/discover-arch.html#cloud-arch-int">integration environment</a> only. To set up routes in a staging or production environment, you must create a <a href="{{ page.baseurl }}cloud/get-help.html">Support ticket</a>.</p>
+  <p>This section discusses how to configure your <a href="{{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int">integration environment</a> only. To set up routes in a staging or production environment, you must create a <a href="{{ page.baseurl }}cloud/welcome/get-help.html">Support ticket</a>.</p>
 </div>
 
 To configure routes in an integration environment:

@@ -13,7 +13,7 @@ github_link: cloud/access-acct/fastly.md
 [Fastly](https://www.fastly.com/why-fastly){:target="_blank"} is required for Magento Enterprise Cloud Edition. It works with Varnish to provide fast caching capabilities and a Content Delivery Network (CDN) for static assets.
 
 ## Get your Fastly credentials {#cloud-fastly-creds}
-To get Fastly credentials, open a [support ticket]({{ page.baseurl }}cloud/get-help.html). You must provide your fully-qualified domain name.
+To get Fastly credentials, open a [support ticket]({{ page.baseurl }}cloud/welcome/get-help.html). You must provide your fully-qualified domain name.
 
 We'll provide you with the following information so you can enable Fastly:
 

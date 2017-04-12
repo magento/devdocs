@@ -14,7 +14,7 @@ These Release Notes provide up-to-date information about changes, additions, and
 
 
 ## Required update to `.magento.app.yaml`
-Before you [upgrade]({{ page.baseurl }}cloud/howtos/upgrade-magento.html) to version 2.1.3 or 2.0.11, you must add a rule to the `web` section of your `.magento.app.yaml` file. You must make the change in your local system, push it to your [integration server]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-int), then, after upgrading, push the changes to [staging]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-stage) and [production]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-prod).
+Before you [upgrade]({{ page.baseurl }}cloud/howtos/upgrade-magento.html) to version 2.1.3 or 2.0.11, you must add a rule to the `web` section of your `.magento.app.yaml` file. You must make the change in your local system, push it to your [integration server]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int), then, after upgrading, push the changes to [staging]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-stage) and [production]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-prod).
 
 ### Get started
 
@@ -54,13 +54,13 @@ Before you [upgrade]({{ page.baseurl }}cloud/howtos/upgrade-magento.html) to ver
 {% endcollapsible %}
 
 ## Update your Elasticsearch configuration {#cloud-rn-213-es}
-This section discusses how to update your [integration]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-int) system to replace Solr with Elasticsearch. Currently, all Magento Enterprise Cloud Edition upgrades to 2.1.3 must perform these tasks. 
+This section discusses how to update your [integration]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int) system to replace Solr with Elasticsearch. Currently, all Magento Enterprise Cloud Edition upgrades to 2.1.3 must perform these tasks. 
 
 Elasticsearch is supported by Magento Cloud Enterprise Edition 2.1.x only.
 
 If you installed Magento Enterprise Cloud Edition 2.1.3 for the first time, you don't need to do this because Elasticsearch is already the default search engine.
 
-To use Elasticsearch on a [staging]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-stage) or [production]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-prod) system, open a [Support ticket]({{ page.baseurl }}cloud/get-help.html) and request Elasticsearch.
+To use Elasticsearch on a [staging]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-stage) or [production]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-prod) system, open a [Support ticket]({{ page.baseurl }}cloud/welcome/get-help.html) and request Elasticsearch.
 
 To use Elasticsearch, you must perform all the tasks discussed in this section.
 

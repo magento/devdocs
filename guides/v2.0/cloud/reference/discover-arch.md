@@ -86,8 +86,8 @@ Magento Enterprise Cloud Edition uses:
 The preceding software is *not* upgradable but versions of [PHP]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html), [MySQL]({{page.baseurl}}cloud/project/project-conf-files_services-mysql.html), [Solr]({{page.baseurl}}cloud/project/project-conf-files_services-solr.html), [Redis]({{page.baseurl}}cloud/project/project-conf-files_services-redis.html), [RabbitMQ]({{page.baseurl}}cloud/project/project-conf-files_services-rabbit.html), and [Elasticsearch]({{page.baseurl}}cloud/project/project-conf-files_services-elastic.html) are configurable.
 
 #### Related topics
-*	[Workflow]({{page.baseurl}}cloud/discover-workflow.html)
-*	[Deployment process]({{page.baseurl}}cloud/discover-deploy.html)
-*	[Magento Enterprise Cloud Edition requirements]({{page.baseurl}}cloud/cloud-requirements.html)
+*	[Workflow]({{page.baseurl}}cloud/welcome/discover-workflow.html)
+*	[Deployment process]({{page.baseurl}}cloud/reference/discover-deploy.html)
+*	[Magento Enterprise Cloud Edition requirements]({{page.baseurl}}cloud/requirements/cloud-requirements.html)
 
 

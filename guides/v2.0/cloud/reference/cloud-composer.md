@@ -36,7 +36,7 @@ The workflow is as follows:
 3.	Add `composer.lock` to or update it in your Cloud Git repository.
 4.	Push the changes to the Cloud environment, which causes Cloud to build and deploy the environment.
 
-During the [build phase]({{ page.baseurl }}cloud/discover-deploy.html), the Cloud environment runs `composer install` on a fresh clone of your Git branch to retrieve the latest dependencies.
+During the [build phase]({{ page.baseurl }}cloud/reference/discover-deploy.html), the Cloud environment runs `composer install` on a fresh clone of your Git branch to retrieve the latest dependencies.
 
 ## Magento Enterprise Cloud Edition packages
 The following sections discuss the Composer packages used by Magento Enterprise Cloud Edition:

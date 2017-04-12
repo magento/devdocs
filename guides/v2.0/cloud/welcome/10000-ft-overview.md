@@ -56,7 +56,7 @@ You can add dependencies on Magento extensions and other PHP libraries using com
 
 ## How do things get deployed?
 
-When you push to the git repository for your project, the environment will get deployed or re-deployed to accomodate the new changes. For instance, say you added a new module: in order for the site to work, `bin/magento setup:upgrade` will need to be run. Or, if this is the first deployment, then `bin/magento setup:install` will need to be run. There are several other commands that go into the deployment flow, but _you don't need to run them manually_, because the build and deploy hooks will take care of that automatically. For more information about the composer packages that contain those hooks, see [this article on Composer Integration](/guides/v2.0/cloud/cloud-composer.html).
+When you push to the git repository for your project, the environment will get deployed or re-deployed to accomodate the new changes. For instance, say you added a new module: in order for the site to work, `bin/magento setup:upgrade` will need to be run. Or, if this is the first deployment, then `bin/magento setup:install` will need to be run. There are several other commands that go into the deployment flow, but _you don't need to run them manually_, because the build and deploy hooks will take care of that automatically. For more information about the composer packages that contain those hooks, see [this article on Composer Integration](/guides/v2.0/cloud/reference/cloud-composer.html).
 
 ### Default hooks
 

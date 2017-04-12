@@ -1,4 +1,4 @@
----
+/---
 layout: default
 group: cloud
 subgroup: 30_ReleaseNotes
@@ -43,7 +43,7 @@ This is a known issue with Magento core software; we're actively working to addr
 3.  Follow the prompts to open an issue with Support.
 
 <div class="bs-callout bs-callout-warning">
-    <p>This issue affects staging and production environments only. There are no issues in an integration environment. For a discussion of these terms, see <a href="{{ page.baseurl }}cloud/discover-arch.html#cloud-arch.html">Architecture</a>.</p>
+    <p>This issue affects staging and production environments only. There are no issues in an integration environment. For a discussion of these terms, see <a href="{{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch.html">Architecture</a>.</p>
 </div>
 
 ### Magento EE Release Notes

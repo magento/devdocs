@@ -16,7 +16,7 @@ background: none!important;
 }
 </style>
 
-As discussed in more detail in [Architecture]({{ page.baseurl }}cloud/discover-arch.html), Magento Enterprise Cloud Edition has three types of systems:
+As discussed in more detail in [Architecture]({{ page.baseurl }}cloud/reference/discover-arch.html), Magento Enterprise Cloud Edition has three types of systems:
 
 *	*Integration*, used by a developer to write custom code and test it.
 
@@ -78,7 +78,7 @@ After you fix bugs, you merge Feature1 with master, making that code potentially
 *Assisted deployment* means that your staging and production systems require you to perform the tasks discussed in the following paragraphs.
 
 ### Support ticket
-Create a [support ticket]({{ page.baseurl }}cloud/get-help.html) to notify us you're ready to move to either staging or production.
+Create a [support ticket]({{ page.baseurl }}cloud/welcome/get-help.html) to notify us you're ready to move to either staging or production.
 
 {% include cloud/hooks.md %}
 

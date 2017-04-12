@@ -34,7 +34,7 @@ middleman between your code and deployment.
 * You can increase the amount of memory and CPU as needed.
 
 #### Related topics
-*	[Magento Enterprise Cloud Edition requirements]({{page.baseurl}}cloud/cloud-requirements.html)
-*	[Architecture]({{page.baseurl}}cloud/discover-arch.html)
-*	[Workflow]({{page.baseurl}}cloud/discover-workflow.html)
+*	[Magento Enterprise Cloud Edition requirements]({{page.baseurl}}cloud/requirements/cloud-requirements.html)
+*	[Architecture]({{page.baseurl}}cloud/reference/discover-arch.html)
+*	[Workflow]({{page.baseurl}}cloud/welcome/discover-workflow.html)
 
