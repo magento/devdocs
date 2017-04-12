@@ -1741,12 +1741,14 @@
       <li>
         <p>Change to your Magento base directory and enter the following command:</p>
 
-        <pre><code>composer require magento/magento-cloud-metapackage &lt;requiredversion&gt;
+        <pre><code>composer require magento/magento-cloud-metapackage &lt;requiredversion&gt; --no-update
+composer update
 </code></pre>
 
         <p>For example, to upgrade to version 2.1.4:</p>
 
-        <pre><code>composer require magento/magento-cloud-metapackage 2.1.4
+        <pre><code>composer require magento/magento-cloud-metapackage 2.1.4 --no-update
+composer update
 </code></pre>
       </li>
       <li>
