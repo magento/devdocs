@@ -4,7 +4,7 @@ group: release-notes
 subgroup: 02_rel-notes
 title: Magento CE 2.1.7 Release Notes
 menu_title: Magento CE 2.1.7 Release Notes
-menu_order: 164
+menu_order: 163
 level3_menu_node: level3child
 level3_subgroup: ce21-relnotes 
 github_link: release-notes/ReleaseNotes2.1.7CE.md
@@ -22,8 +22,7 @@ While there are no confirmed attacks related to these vulnerabilities to date, c
 </div>
 
 
-
-Looking for the <a href="http://devdocs.magento.com/guides/v2.0/cloud/release-notes/CloudReleaseNotes2.1.4.html" target="_blank">Magento Enterprise Cloud Edition Release Notes</a>?
+Looking for the <a href= "http://devdocs.magento.com/guides/v2.0/cloud/release-notes/CloudReleaseNotes.html" target="_blank">Magento Enterprise Cloud Edition Release Notes</a>?
 
 
 ## Highlights
@@ -37,7 +36,7 @@ Magento 2.1.7 contains over 15 security enhancements. Look for the following hig
 
 ## Security enhancements
 
-<!--- 64049, 63680 -->* We’ve updated several vulnerable moment.js libraries (query-migrate, query, jquery-ui-1.9.2.js)
+<!--- 64049, 63680 -->* We’ve updated several vulnerable moment.js libraries (`query-migrate`, `query`, `jquery-ui-1.9.2.js`)
 
 <!--- 63879 -->* You can no longer instantiate an arbitrary object while adding conditions to an email reminder rule. 
 
