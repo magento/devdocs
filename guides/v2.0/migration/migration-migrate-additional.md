@@ -29,7 +29,7 @@ Some existing behaviour and logic from Magento 1 was implemented in a different 
             <transform>
                 <field>customer_entity.created_at</field>
                 <handler class="\Migration\Handler\Timezone">
-                    <param name="offset" value="-7" />
+                    <param name="offset" value="+7" />
                 </handler>
             </transform>
         </field_rules>
