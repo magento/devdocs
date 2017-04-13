@@ -11,31 +11,45 @@ github_link: migration/migration-migrate-additional.md
 
 ---
 
-Some existing behaviour and logic from Magento 1 was implemented in a different way in Magento 2. The Data Migration Tool takes care of it.
+## Overview
 
-1. All Group Prices were converted to Tier Prices.
+Some behaviour and logic of Magento 1 has been implemented differently in Magento 2. The Data Migration Tool takes care of it. Although, there are some migration aspects you should know about, and sometimes you must take minor steps for some functionalities to work smoothly after migration.
 
-2. The numbers of Orders, Invoices, Shipments, Credit Memos and RMA migrate as is. But after migration and switching to Magento 2 the numeration for newly created sales entities will be different.
+## Group Prices are converted to Tier Prices
 
-3. If the Magento 1 server has the time zone set to anything other than UTC, you must configure the offset to migrate timestamp fields. The Data Migration Tool has special handler `\Migration\Handler\Timezone` for transforming time to a different time zone. In the following example, the Magento 1 server timezone is UTC-7. To convert the customer account creation date properly, add the following rule to `map-customer.xml`:
+All Group Prices are automatically converted to Tier Prices during migration.
 
-  {% highlight xml %}
-  <?xml version="1.0" encoding="UTF-8"?>
-  <map xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="../map.xsd">
-    <!--...-->
-    <destination>
-        <field_rules>
-            <!--...-->
-            <transform>
-                <field>customer_entity.created_at</field>
-                <handler class="\Migration\Handler\Timezone">
-                    <param name="offset" value="-7" />
-                </handler>
-            </transform>
-        </field_rules>
-    </destination>
-  </map>
-  {% endhighlight %}
+## New numbering for sales entities
+
+Reference numbers for Orders, Invoices, Shipments, Credit Memos, and RMA migrate as is. But after migration, the new Magento 2 number assignment rules will apply. Thus, the numeration for the new sales entities will be different.
+
+## Resave Customer Segments [Magento 2 EE only]
+
+After migration, Customer Segments must be resaved from the Admin Panel to get them up and running.
+
+## Configure time zone offset
+
+If your Magento 1 server has the time zone set to anything other than UTC, you must configure the offset to migrate timestamp fields. To transform time to a different time zone, use the Data Migration Tool's `\Migration\Handler\Timezone` handler.
+
+In the following example, the Magento 1 server timezone is UTC-7. To convert the customer account creation date properly, add the following rule to `map-customer.xml`:
+
+{% highlight xml %}
+<?xml version="1.0" encoding="UTF-8"?>
+<map xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="../map.xsd">
+  <!--...-->
+  <destination>
+      <field_rules>
+          <!--...-->
+          <transform>
+              <field>customer_entity.created_at</field>
+              <handler class="\Migration\Handler\Timezone">
+                  <param name="offset" value="-7" />
+              </handler>
+          </transform>
+      </field_rules>
+  </destination>
+</map>
+{% endhighlight %}
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>The Data Migration Tool doesn't support split database.</p>
