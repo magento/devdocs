@@ -44,12 +44,6 @@ Button-specific configuration:
     <td><code>false</code></td>
   </tr>
   <tr>
-    <td><code>displayArea</code></td>
-    <td>Renders the component in the location that was declared in the layout.</td>
-    <td>String</td>
-    <td><code>outsideGroup</code></td>
-  </tr>
-  <tr>
     <td><code>displayAsLink</code></td>
     <td>Show the button as a link.</td>
     <td>Boolean</td>
