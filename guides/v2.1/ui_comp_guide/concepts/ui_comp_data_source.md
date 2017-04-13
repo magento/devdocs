@@ -4,7 +4,7 @@ group: UI_Components_guide
 subgroup: concepts
 title: The DataSource Component
 menu_title: Providing Data to UI Components
-menu_order: 5
+menu_order: 20
 contributor_name: SwiftOtter Studios
 contributor_link: https://swiftotter.com/
 version: 2.1

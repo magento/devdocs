@@ -4,7 +4,7 @@ group: UI_Components_guide
 subgroup: concepts
 title: About the uiLayout service module
 menu_title: About the uiLayout service module
-menu_order: 13
+menu_order: 90
 version: 2.1
 github_link: ui_comp_guide/concepts/ui_comp_uilayout_concept.md
 ---

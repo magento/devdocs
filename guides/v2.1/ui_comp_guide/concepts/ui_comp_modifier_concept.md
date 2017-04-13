@@ -4,7 +4,7 @@ group: UI_Components_guide
 subgroup: concepts
 title: About PHP modifiers in UI components
 menu_title: About PHP modifiers in UI components
-menu_order: 7
+menu_order: 40
 version: 2.1
 github_link: ui_comp_guide/concepts/ui_comp_modifier_concept.md
 ---
