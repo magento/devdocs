@@ -21,7 +21,7 @@ Some behaviour and logic of Magento 1 has been implemented differently in Magent
 
 The Data Migration Tool doesn't support split databases.
 
-### Group Prices are converted to Tier Prices
+### Group Prices converted to Tier Prices
 
 All Group Prices are automatically converted to Tier Prices during migration.
 
