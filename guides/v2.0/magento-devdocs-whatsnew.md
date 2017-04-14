@@ -13,7 +13,12 @@ github_link: magento-devdocs-whatsnew.md
 
 This page contains recent changes that we think you'd like to know about. We exclude from this list proofreading, spelling checks, and all minor updates.
 
-## March 2017
+## April 2017
+
+No changes to date
+
+
+{% collapsibleh2 March 2017 %}
 
 | Description  | Versions applied to  | New or Updated | Date |
 |--------------|--------------|----------------------|--------|
@@ -33,6 +38,8 @@ This page contains recent changes that we think you'd like to know about. We exc
 | [Reorganize and update how to get started with an MECE environment]({{ page.baseurl }}cloud/before/before-setup-env-1_get-start.html){:target="_blank"}  | 2.x  |  Updated |  Mar 3 |
 | [Reorganize and correct issues with MECE workspace]({{ page.baseurl }}cloud/before/before-workspace.html){:target="_blank"} | 2.x  | Updated  |  Mar 2 |
 |  [Magento Functional Test Framework scenario test]({{ page.baseurl }}mtf/mtf_entities/mtf_scenariotest.html) | 2.x  | New  |  Mar 3 |
+
+{% endcollapsibleh2 %}
 
 
 {% collapsibleh2 Feb 2017 %}

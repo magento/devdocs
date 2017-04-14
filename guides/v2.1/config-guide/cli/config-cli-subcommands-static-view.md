@@ -168,90 +168,9 @@ The following table discusses the meanings of this command's parameters and valu
 </div>
 
 ### Deploy static view files without installing Magento {#deploy_without_db}
+We regret that this information was added in error. You _cannot_ yet deploy static view files without a connection to the Magento database. We expect this ability will be added in a future release. We apologize for any inconvenience this might have caused.
 
-You might want to run the deployment process in a separate, non-production, environment, in order to avoid any build processes on sensitive production machines. 
-
-To do this, take the following steps:
-
-1. Export the minimum required application configuration from the Magento instance that is in production. (described further in details)
-2. Copy the exported files to the non-production code base.
-3. Run the deployment tool.
-
-#### Export the configuration
-
-The configuration required to deploy static view files can be exported from the database of the production Magento instance. To do it, run the following command for the production instance:
-
-	magento app:config:dump
-	
-As a result of the command execution, the `config.local.php` file appears in the `app/etc/` directory. In order to generate the static content using the other Magento codebase, you must copy this file and paste it to the `app/etc` directory of the Magento codebase you will use.
-
-The `config.local.php` file contains the following sections:
-
-- `system`: all system configurations required for successful static content deployment		 
-- `scopes`: the list of stores, store groups and websites with related information
-- `i18n`:  all inline translations. This section is used for generating `js-translation.json`
-
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-<p>While the exported configuration files reside in the <code>app/etc</code> directory, you cannot change the value of the corresponding configuration fields under <b>Store</b> -> <b>Configuration</b> in the Magento Admin. The fields are displayed, but disabled. You need to remove the configuration files from <code>app/etc</code> to make the settings available.</p></span>
-</div> 
-
-### Environment variables filling
-
-To fill environment variables, having `config.local.php` file enter next command:
-
-    magento config:sensitive:set -i
-
-It will iteratively ask to fill each sensitive variable.
-
-To fill specific sensitive variable enter command:
-
-    magento config:sensitive:set {path to config value i.e. default/carriers/fedex/account} {value}
-
-### Examples
-Following are some example commands.
-
-#### Excluding a theme and HTML minification
-The following command deploys static content for the US English (`en_US`) language, excludes the Luma theme provided with Magento, and does not minify HTML files.
-
-    magento setup:static-content:deploy en_US --exclude-theme Magento/luma --no-html-minify
-
-Sample output:
-
-    Requested languages: en_US
-    Requested areas: frontend, adminhtml
-    Requested themes: Magento/blank, Magento/backend
-    === frontend -> Magento/blank -> en_US ===
-    === adminhtml -> Magento/backend -> en_US ===
-    ...........................................................
-    ... more ...
-    Successful: 2055 files; errors: 0
-    ---
-
-    New version of deployed files: 1466710645
-    ............
-    Successful: 1993 files; errors: 0
-    ---
-
-#### Generating static view files for one theme and one area
-The following command generates static view files for all languages, the frontend area only, the Magento Luma theme only, without generating fonts:
-
-    magento setup:static-content:deploy --area frontend --no-fonts --theme Magento/luma
-
-Sample output:
-
-    Requested languages: en_US
-    Requested areas: frontend
-    Requested themes: Magento/luma
-    === frontend -> Magento/luma -> en_US ===
-    ...........................................................
-    ... more ...
-    ........................................................................
-    Successful: 2092 files; errors: 0
-    ---
-
-    New version of deployed files: 1466711110
-
+You should be able to [compile code]({{ page.baseurl}}config-guide/cli/config-cli-subcommands-compiler.html) without a connection to the Magento database.
 
 
 <h2 id="view-file-trouble">Troubleshooting the static view files deployment tool</h2>
@@ -285,10 +204,7 @@ When creating a custom implementation of the static content deployment tool, use
 
 One of the options for making it atomic is to write to files stored in a temporary directory and copying or moving them to the destination directory (from where they are loaded to client) after writing is over. For details about writing to files, see [http://php.net/manual/en/function.fwrite.php](http://php.net/manual/en/function.fwrite.php){:target="_blank"}.
 
-<!-- The default Magento implementation of [`Magento\Framework\Filesystem\Directory\WriteInterface::writeFile`]({{ site.mage2100url }}lib/internal/Magento/Framework/Filesystem/Directory/WriteInterface.php#L118){:target="_blank"} uses non-atomic file writing.
- -->
-## Related topics
-
+#### Related topics
 *	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a>
 *	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a>
 *	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a>

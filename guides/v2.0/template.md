@@ -47,7 +47,7 @@ ADD DIAGRAM OR ILLUSTRATION <p><img src="{{ site.baseurl }}common/images/NAME_OF
 
 ### Examples
 {% collapsible Click to show/hide content %}
-To use the collapsible content functionality, you can use the `collapsible` block tag. Any content inside this block will be hidden until the header text is clicked.
+To use the collapsible content functionality, use the `collapsible` block tag. Any content inside this block will be hidden until the header text is clicked.
 
 See the markdown version of this file for examples.
 {% endcollapsible %}
