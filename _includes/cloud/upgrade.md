@@ -52,11 +52,13 @@ Verify other changes you're going to submit to source control before you start t
 
 1.  Change to your Magento base directory and enter the following command:
 
-        composer require magento/magento-cloud-metapackage <requiredversion>
+        composer require magento/magento-cloud-metapackage <requiredversion> --no-update
+        composer update
 
     For example, to upgrade to version 2.1.4:
 
-        composer require magento/magento-cloud-metapackage 2.1.4
+        composer require magento/magento-cloud-metapackage 2.1.4 --no-update
+        composer update
         
 4.  Add, commit, and push your changes to initiate a deployment:
 
