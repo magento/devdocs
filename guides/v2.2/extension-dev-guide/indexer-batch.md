@@ -21,7 +21,7 @@ When the allocated memory size for a temporary table will be greater than 20% of
 
 `Memory size allocated for the temporary table is more than 20% of innodb_buffer_pool_size.`
 
-To prevent this error message, update `innodb_buffer_pool_size` or decrease the batch size value (which decreases memory usages for the temporary table).
+To prevent this error message, update `innodb_buffer_pool_size` or decrease the batch size value (which decreases memory usage for the temporary table).
 </div>
 
 The interface `BatchSizeManagementInterface` provides the ability to set the MEMORY table size for indexer processes according to batch size and index row size.
@@ -125,3 +125,9 @@ Make sure that these indexers are in "Update By Schedule" mode. If "Update On Sa
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 Indexer table switching mechanism requires additional database storage.
 </div>
+
+### Related topics
+{:.no_toc}
+
+* [Indexing overview]({{page.baseurl}}extension-dev-guide/indexing.html)
+* [Adding a custom indexer]({{page.baseurl}}extension-dev-guide/indexing-custom.html)
