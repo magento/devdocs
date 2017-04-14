@@ -80,6 +80,16 @@ catalog_product_price (Product Price)	| `Magento/Catalog/etc/di.xml` | `Magento\
 cataloginventory_stock (Stock)	| `Magento/CatalogInventory/etc/di.xml`	| `Magento\CatalogInventory\Model\Indexer\Stock\Action\Full` | batchRowsCount['default']	| 200
 catalog_category_product (Category Products)| `Magento/Catalog/etc/di.xml`	| `Magento\Catalog\Model\Indexer\Category\Product\Action\Full` |	batchRowsCount	| 100000
 
+Changing the batch size can help you optimize indexer running time. For example, for a store with the following characteristcs:
+
+* 10 websites
+* 10 store groups
+* 20 store views
+* 300 tier prices
+* About 40,000 products (of which 254 are configurable)
+
+reducing the batch size for `catalog_product_price` indexer from 5000 to 1000 decreases the execution time from about 4 hours to less than 2 hours. You can experiement to determine the ideal batch size. In general, halving the batch size can decrease the indexer execution time.
+
 The following examples illustrate how to define a custom batch size for configurable products. Add these samples to your  `{Your_Module_Name}/etc/di.xml`.
 
 {% highlight xml %}
