@@ -5,7 +5,6 @@ See one of the following sections:
 
 *	[Get Magento CE using Composer](#install-ce-composer)
 *	[Get Magento CE using a compressed archive](#get-zip)
-*	[Get the Magento CE software from GitHub](#install-rc-gh)
 *	[Complete the installation](#install-complete)
 
 ### Get the Magento CE software using Composer {#install-ce-composer}
@@ -25,25 +24,6 @@ For example, to install Magento CE 2.0.10 in the `magento2` directory:
 {:.no_toc}
 
 {% include install/releasenotes/get-ce-software_zip.md %}
-
-### Get the Magento CE software from GitHub {#install-rc-gh}
-{:.no_toc}
-
-<div class="bs-callout bs-callout-warning">
-    <p>If you clone the Magento 2 GitHub repository, you <em>cannot</em> use the Magento software in a production environment. You cannot have a live store that accepts orders and so on.</p>
-</div>
-
-Before proceeding, please familiarize yourself with [these prerequisites]({{ page.baseurl }}install-gde/prereq/dev_install.html), then run
-
-	git clone git@github.com:magento/magento2.git
-	cd magento2
-	git checkout tags/<version> [-b <version>]
-
-where 
-
-`<version>` matches the version you want (for example, `2.0.10`)
-
-`[-b <version>]` optionally checks out a new branch.
 
 ### Complete the installation {#install-complete}
 {:.no_toc}

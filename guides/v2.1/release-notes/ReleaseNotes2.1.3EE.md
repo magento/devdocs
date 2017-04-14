@@ -208,7 +208,7 @@ We've enhanced the performance of configurable products in several ways:
 <!---56944-->*  Magento now successfully saves images that you edit in a WYSIWYG editor. Previously, when you tried to change an image by right-clicking it in a WYSIWYG editor and choosing Insert/Edit Image, Magento did not save your changes. 
 
 <!---58335-->* You can now preview uploaded images.
-
+ 
 
 <!---56972-->* You can now set an image size for product watermarks. <a href="https://github.com/magento/magento2/issues/5270" target="_blank">(GITHUB-5270)</a> 
 
