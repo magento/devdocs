@@ -116,9 +116,9 @@ Indexer name | Tables used
 `cataloginventory_stock` | `cataloginventory_stock_status`, `cataloginventory_stock_status_replica`
 `catalog_category_product` | `catalog_category_product_index`, `catalog_category_product_index_replica`
 `catalog_product_attribute` (select, multiselect attributes) | `catalog_product_index_eav`, `catalog_product_index_eav_replica`
-`catalog_product_attribute` (decimal values) |`catalog_product_index_eav_decimal`, `catalog_product_index_eav_decimal_replica` 
+`catalog_product_attribute` (decimal values) |`catalog_product_index_eav_decimal`, `catalog_product_index_eav_decimal_replica`
 
-The value of `table_suffix` column of the `indexer_state` table determines which table is used for read operations (which include partial reindexes, frontend calls, searching by attributes, etc.), and which table is used for full reindexes. Initially, the value of`table_suffix` is an empty string. For indexer `catalog_product_prices`, this means Magento uses `catalog_product_index_price` for _read operations_ and `catalog_product_index_price_replica` for _full reindexes_. Once the reindex is complete, the value of `table_suffix` is changed to `_replica` and Magento uses `catalog_product_index_price_replica` for _read operations_ and `catalog_product_index_price` for _full reindexes_. The value of  `table_suffix` is changed to an empty string, and the cycle repeats.
+The value of `table_suffix` column of the `indexer_state` table determines which table is used for read operations (which include partial reindexes, frontend calls, and searching by attributes), and which table is used for full reindexes. Initially, the value of`table_suffix` is an empty string. As an example, for indexer `catalog_product_prices`, this means Magento uses `catalog_product_index_price` for _read operations_ and `catalog_product_index_price_replica` for _full reindexes_. Once the reindex is complete, the value of `table_suffix` is changed to `_replica` and Magento uses `catalog_product_index_price_replica` for _read operations_ and `catalog_product_index_price` for _full reindexes_. The value of  `table_suffix` is changed to an empty string, and the cycle repeats.
 
 Make sure that these indexers are in "Update By Schedule" mode. If "Update On Save" mode is selected, some data can be lost if you make changes during full reindex.
 
