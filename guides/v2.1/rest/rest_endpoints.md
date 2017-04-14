@@ -10,6 +10,9 @@ github_link: rest/rest_endpoints.md
 
 ---
 
+{% include webapi/services21.md%}
+
+
 ## Magento Enterprise Edition (EE) REST API Services per module {#eelist}
 
 The REST APIs for Magento EE are available on EE installations only. EE installations automatically have access to all Community Edition (CE) REST APIs.
