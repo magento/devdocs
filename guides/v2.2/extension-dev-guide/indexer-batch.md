@@ -76,9 +76,9 @@ Batching is available for the following indexers:
 
 Index name | Configuration file | Configured object | Parameter name | Default value
 --- | --- | --- | --- | ---
-catalog_product_price (Product Price )	| Magento/Catalog/etc/di.xml | Magento\Catalog\Model\ResourceModel\Product\Indexer\Price\BatchSizeCalculator | batchRowsCount['default']	| 5000
-cataloginventory_stock (Stock)	| Magento/CatalogInventory/etc/di.xml	| Magento\CatalogInventory\Model\Indexer\Stock\Action\Full | batchRowsCount['default']	| 200
-catalog_category_product (Category Products)| Magento/Catalog/etc/di.xml	| Magento\Catalog\Model\Indexer\Category\Product\Action\Full |	batchRowsCount	| 100000
+catalog_product_price (Product Price)	| `Magento/Catalog/etc/di.xml` | `Magento\Catalog\Model\ResourceModel\Product\Indexer\Price\BatchSizeCalculator` | batchRowsCount['default']	| 5000
+cataloginventory_stock (Stock)	| `Magento/CatalogInventory/etc/di.xml`	| `Magento\CatalogInventory\Model\Indexer\Stock\Action\Full` | batchRowsCount['default']	| 200
+catalog_category_product (Category Products)| `Magento/Catalog/etc/di.xml`	| `Magento\Catalog\Model\Indexer\Category\Product\Action\Full` |	batchRowsCount	| 100000
 
 The following examples illustrate how to define a custom batch size for configurable products. Add these samples to your  `{Your_Module_Name}/etc/di.xml`.
 
@@ -115,7 +115,8 @@ Indexer name | Tables used
 `catalog_product_price`	|  `catalog_product_index_price`, `catalog_product_index_price_replica`
 `cataloginventory_stock` | `cataloginventory_stock_status`, `cataloginventory_stock_status_replica`
 `catalog_category_product` | `catalog_category_product_index`, `catalog_category_product_index_replica`
-`catalog_product_attribute` | `catalog_product_index_eav`, `catalog_product_index_eav_replica` (select, multiselect attributes) </br>`catalog_product_index_eav_decimal`, `catalog_product_index_eav_decimal_replica` (decimal values)
+`catalog_product_attribute` (select, multiselect attributes) | `catalog_product_index_eav`, `catalog_product_index_eav_replica`
+`catalog_product_attribute` (decimal values) |`catalog_product_index_eav_decimal`, `catalog_product_index_eav_decimal_replica` 
 
 The value of `table_suffix` column of the `indexer_state` table determines which table is used for read operations (which include partial reindexes, frontend calls, searching by attributes, etc.), and which table is used for full reindexes. Initially, the value of`table_suffix` is an empty string. For indexer `catalog_product_prices`, this means Magento uses `catalog_product_index_price` for _read operations_ and `catalog_product_index_price_replica` for _full reindexes_. Once the reindex is complete, the value of `table_suffix` is changed to `_replica` and Magento uses `catalog_product_index_price_replica` for _read operations_ and `catalog_product_index_price` for _full reindexes_. The value of  `table_suffix` is changed to an empty string, and the cycle repeats.
 
