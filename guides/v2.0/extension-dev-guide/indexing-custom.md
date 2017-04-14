@@ -1,10 +1,10 @@
 ---
 layout: default
 group: extension-dev-guide
-subgroup: 99_Module Development 
+subgroup: 99_Module Development
 title: Adding a custom indexer
 menu_title: Adding a custom indexer
-menu_order: 14
+menu_order: 15
 version: 2.0
 level3_menu_node: level3child
 level3_subgroup: index
