@@ -77,8 +77,7 @@ Batching is available for the following indexers:
 Index name | Configuration file | Configured object | Parameter name | Default value
 --- | --- | --- | --- | ---
 catalog_product_price (Product Price )	| Magento/Catalog/etc/di.xml | Magento\Catalog\Model\ResourceModel\Product\Indexer\Price\BatchSizeCalculator | batchRowsCount['default']	| 5000
-cataloginventory_stock (Stock)	| Magento/CatalogInventory/etc/di.xml	| Magento\CatalogInventory\Model\Indexer\Stock\Action\Full |
-batchRowsCount['default']	| 200
+cataloginventory_stock (Stock)	| Magento/CatalogInventory/etc/di.xml	| Magento\CatalogInventory\Model\Indexer\Stock\Action\Full | batchRowsCount['default']	| 200
 catalog_category_product (Category Products)| Magento/Catalog/etc/di.xml	| Magento\Catalog\Model\Indexer\Category\Product\Action\Full |	batchRowsCount	| 100000
 
 The following examples illustrate how to define a custom batch size for configurable products. Add these samples to your  `{Your_Module_Name}/etc/di.xml`.
