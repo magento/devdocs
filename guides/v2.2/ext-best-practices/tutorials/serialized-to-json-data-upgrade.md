@@ -35,14 +35,14 @@ This tutorial uses the following framework API in the following ways:
 
 * `\Magento\Framework\DB\FieldDataConverter` - This class converts values for a field in a table from one format to another. 
    * `\Magento\Framework\DB\FieldDataConverterFactory` - This class creates instances of the `FieldDataConverter` with the appropriate data converter implementation.
-   * `\Magento\Framework\DB\AggregatedFieldDataConverter` - This is a service class that allows specifying multiple fields from different tables at once. It takes care about creation of `FieldDataConverter` instances and accepts a list of `\Magento\Framework\DB\FieldToConvert` value objects with information about the fields. One call of the `convert()` method is limited to one DB connection.
+   * `\Magento\Framework\DB\AggregatedFieldDataConverter` - This is a service class that allows specifying multiple fields from different tables at once. This class creates instances of the `FieldDataConverter` class and accepts a list of `\Magento\Framework\DB\FieldToConvert` value objects with field information. A single `convert()` method call is limited to one DB connection.
 * `\Magento\Framework\DB\DataConverter\DataConverterInterface` - This interface is for classes that convert data between different formats or types of data.
-* `\Magento\Framework\DB\FieldDataConverter` accepts query modifiers in case more specific set of rows needs to be updated. Here is API for the query modifiers part:
+* `\Magento\Framework\DB\FieldDataConverter` This class accepts query modifiers for updating specific rows. Here is API for the query modifiers part:
    * `\Magento\Framework\DB\Select\QueryModifierInterface` - Interface for classes that add a condition to the database query to target specific entries.
    * `\Magento\Framework\DB\Select\QueryModifierFactory` - This class creates instances of specific implementations of `QueryModifierInterface`.
    * `\Magento\Framework\DB\Select\InQueryModifier` - An implementation of the `QueryModifierInterface` that adds an IN condition to a query.
-   * `\Magento\Framework\DB\Select\LikeQueryModifier` - An implementation of the `QueryModifierInterface` that adds an LIKE condition to a query.
-   * `\Magento\Framework\DB\Select\CompositeQueryModifier` - An implementation of the `QueryModifierInterface` that allows applying multiple query modifiers.
+   * `\Magento\Framework\DB\Select\LikeQueryModifier` - An implementation of the `QueryModifierInterface` that adds a LIKE condition to a query.
+   * `\Magento\Framework\DB\Select\CompositeQueryModifier` - An implementation of the `QueryModifierInterface` that allows the application of multiple query modifiers.
 
   You can create your own query modifier or use any of the ones listed in the `app/etc/di.xml` file.
 
@@ -411,9 +411,9 @@ $fieldDataConverter->convert(
 
 ### Step 3e: Convert data from multiple fields
 
-If there are multiple fileds that need to be updated, `\Magento\Framework\DB\AggregatedFieldDataConverter` field converter can be used instead of direct usage of `\Magento\Framework\DB\FieldDataConverter`.
-The following code sample updates a two fields in different tables taking into account setup version of the module.
-It is possible to aggregate fields for the same connection only. If it is necessary to use multiple different connections in one setup script, multiple calls to `\Magento\Framework\DB\AggregatedFieldDataConverter::convert()` must be made.
+Use the `\Magento\Framework\DB\AggregatedFieldDataConverter` class to update multiple files instead of `\Magento\Framework\DB\FieldDataConverter`.
+The following code sample updates two fields in different tables taking into account setup version of the module.
+It is possible to aggregate fields for the same connection only. If it is necessary to use multiple connections in one setup script, multiple calls to `\Magento\Framework\DB\AggregatedFieldDataConverter::convert()` must be made.
 {% collapsible Show code %}
 {% highlight php startinline=true %}
 /** \Magento\Sales\Setup\SalesSetupFactory $salesSetup */
