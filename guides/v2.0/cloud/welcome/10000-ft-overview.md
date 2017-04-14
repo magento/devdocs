@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 10_welcome
+subgroup: 010_welcome
 title: The 10,000 ft overview
 menu_title: 10,000 ft overview
 menu_order: 20

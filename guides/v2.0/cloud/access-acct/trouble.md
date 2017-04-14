@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 80_setup
+subgroup: 080_setup
 title: Troubleshoot deployment
 menu_title: Troubleshoot deployment
 menu_order: 700

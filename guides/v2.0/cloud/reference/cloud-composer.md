@@ -7,7 +7,7 @@ menu_title: How Cloud Uses Composer
 menu_node: 
 menu_order: 49
 version: 2.0
-github_link: cloud/cloud-composer.md
+github_link: cloud/reference/cloud-composer.md
 ---
 
 This topic discusses how we use [Composer](https://getcomposer.org/doc){:target="_blank"} to manage dependencies and upgrades in Magento Enterprise Cloud Edition, and provides context about the packages that comprise Cloud, what the packages do, and how they fit together.

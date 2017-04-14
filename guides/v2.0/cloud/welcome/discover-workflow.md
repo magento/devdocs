@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 10_welcome
+subgroup: 010_welcome
 title: Workflow
 menu_title: Workflow
 menu_order: 30

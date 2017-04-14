@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 30_ReleaseNotes
+subgroup: 030_ReleaseNotes
 title: Magento Enterprise Cloud Edition Release Notes
 menu_title: Magento Enterprise Cloud Edition Release Notes
 menu_order: 1

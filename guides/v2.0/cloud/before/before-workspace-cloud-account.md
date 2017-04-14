@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 80_setup
+subgroup: 080_setup
 title: Step 1, Set up an account
 menu_title: Step 1, Set up an account
 menu_order: 52

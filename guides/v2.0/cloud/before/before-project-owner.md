@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 60_setup
+subgroup: 060_setup
 title: Account owner tasks
 menu_title: Account owner tasks
 menu_order: 1
