@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Install Data Migration Tool | Magento 2 Developer Documentation</title>
+	<title>Follow-up (info and steps) | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.1/migration/migration-tool-install.html">
+	<link rel="canonical" href="//guides/v2.1/migration/migration-migrate-follow-up.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -52,9 +52,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/migration/migration-tool-install.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/migration/migration-migrate-follow-up.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/migration/migration-tool-install.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/migration/migration-migrate-follow-up.html">Magento 2.1</a></li>
 	
   </ul>
 
@@ -401,7 +401,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.1/migration/migration-tool-install.html">Install Data Migration Tool</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/migration/migration-tool-install.html">Install Data Migration Tool</a></li>
 
 									
 
@@ -478,7 +478,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/migration/migration-migrate-follow-up.html">Follow-up (info and steps)</a></li>
+									<li class="level-2  active "><a href="/guides/v2.1/migration/migration-migrate-follow-up.html">Follow-up (info and steps)</a></li>
 
 									
 
@@ -754,7 +754,7 @@
 
           
 
-          <span property="name">Install Data Migration Tool</span>
+          <span property="name">Follow-up (info and steps)</span>
 
         
 
@@ -777,143 +777,59 @@
 
 	
 
-	<h1 class="page-heading">Install Data Migration Tool</h1>
+	<h1 class="page-heading">Follow-up (info and steps)</h1>
 
   
 
 
 </section>
 
-			<h2 id="data-migrate-prereq">Prerequisite: Versions of Magento and Data Migration Tool must match</h2>
+			<h2 id="overview">Overview</h2>
 
-<p>Make sure you are using <em>the same released version</em> of both Magento 2 and the Data Migration Tool. For example, for Magento version 2.1.2, you must also use the Data Migration Tool version 2.1.2.</p>
+<p>Some behaviour and logic of Magento 1 has been implemented differently in Magento 2. The Data Migration Tool takes care of it. Although, there are some migration aspects you should know about, and sometimes you must take minor steps for some functionalities to work smoothly after migration.</p>
 
-<h3 id="magento-version">Check your Magento 2 version</h3>
+<h2 id="information">Information</h2>
 
-<h4 id="composer-metapackage">Composer metapackage</h4>
+<h3 id="split-database-not-supported">Split database not supported</h3>
 
-<p>If you downloaded the Magento software using a Composer metapackage, enter the following command:</p>
+<p>The Data Migration Tool doesn’t support split databases.</p>
 
-<pre><code>php &lt;your Magento install dir&gt;/bin/magento --version
-</code></pre>
+<h3 id="group-prices-converted-to-tier-prices">Group Prices converted to Tier Prices</h3>
 
-<h4 id="github-repository">Github repository</h4>
+<p>All Group Prices are automatically converted to Tier Prices during migration.</p>
 
-<p>If you cloned the Magento 2 GitHub repository, enter the following commands:</p>
+<h3 id="new-numbering-for-sales-entities">New numbering for sales entities</h3>
 
-<pre><code>cd &lt;your Magento 2 clone directory&gt;
-git branch
-</code></pre>
+<p>Reference numbers for Orders, Invoices, Shipments, Credit Memos, and RMA migrate as is. But after migration, the new Magento 2 number assignment rules will apply. Thus, the numeration for the new sales entities will be different.</p>
 
-<p>If you’re currently in the <code>develop</code> branch, you must change to a <a href="/guides/v2.1/install-gde/install/cli/dev_downgrade.html">released branch</a> before you continue.</p>
+<h2 id="steps">Steps</h2>
 
-<div class="bs-callout bs-callout-tip">
-	<p>If you haven't installed the Magento software yet, <a href="/guides/v2.1/install-gde/continue.html">install it now</a>.</p>
+<h3 id="resave-customer-segments-magento-2-ee-only">Resave Customer Segments [Magento 2 EE only]</h3>
 
-	<p>If you're cloning the GitHub repository, make sure you check out a release tag as discussed in <a href="/guides/v2.1/install-gde/prereq/dev_install.html">(Contributor) Clone the Magento repository</a>.</p>
-</div>
+<p>After migration, Customer Segments must be resaved from the Admin Panel to get them up and running.</p>
 
-<h3 id="migration-tool-release-version">Find released versions of Data Migration Tool</h3>
+<h3 id="configure-time-zone-offset">Configure time zone offset</h3>
 
-<p>Go to the <a href="https://github.com/magento/data-migration-tool/releases" target="_blank">Releases</a> page of the Data Migration Tool Github repository to find available released versions.</p>
+<p>If your Magento 1 server has the time zone set to anything other than UTC, you must configure the offset to migrate timestamp fields. To transform time to a different time zone, use the Data Migration Tool’s <code>\Migration\Handler\Timezone</code> handler.</p>
 
-<h2 id="data-migrate-install">Install Data Migration Tool</h2>
+<p>In the following example, the Magento 1 server timezone is UTC-7. To convert the customer account creation date properly, add the following rule to <code>map-customer.xml</code>:</p>
 
-<p>You may install the Data Migration Tool from:</p>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;map</span> <span class="na">xmlns:xs=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xs:noNamespaceSchemaLocation=</span><span class="s">&quot;../map.xsd&quot;</span><span class="nt">&gt;</span>
+  <span class="c">&lt;!--...--&gt;</span>
+  <span class="nt">&lt;destination&gt;</span>
+      <span class="nt">&lt;field_rules&gt;</span>
+          <span class="c">&lt;!--...--&gt;</span>
+          <span class="nt">&lt;transform&gt;</span>
+              <span class="nt">&lt;field&gt;</span>customer_entity.created_at<span class="nt">&lt;/field&gt;</span>
+              <span class="nt">&lt;handler</span> <span class="na">class=</span><span class="s">&quot;\Migration\Handler\Timezone&quot;</span><span class="nt">&gt;</span>
+                  <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">&quot;offset&quot;</span> <span class="na">value=</span><span class="s">&quot;-7&quot;</span> <span class="nt">/&gt;</span>
+              <span class="nt">&lt;/handler&gt;</span>
+          <span class="nt">&lt;/transform&gt;</span>
+      <span class="nt">&lt;/field_rules&gt;</span>
+  <span class="nt">&lt;/destination&gt;</span>
+<span class="nt">&lt;/map&gt;</span></code></pre></figure>
 
-<ul>
-  <li>
-    <p><a href="#install-repo"><code>repo.magento.com</code></a></p>
-  </li>
-  <li>
-    <p><a href="#install-github">GitHub</a></p>
-  </li>
-</ul>
-
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Before installing, make sure you have:</p>
-	<ul>
-		<li>
-			Completed all tasks mentioned in the <a href="/guides/v2.1/migration/migration-tool-preconditions.html">Preconditions</a> section
-		</li>
-
-		<li>
-			<a href="/guides/v2.1/migration/migration-tool-install.html#data-migrate-prereq">Verified the version</a> of the Magento 2 software
-		</li>
-	</ul>
-</div>
-
-<h3 id="install-repo">Install from <code>repo.magento.com</code></h3>
-
-<p>To install the Data Migration Tool, you must update <code>composer.json</code> in the Magento root installation directory to provide the location of the Data Migration Tool package.</p>
-
-<ol>
-  <li>Log in to your Magento server as, or switch to, <a href="/guides/v2.1/install-gde/prereq/apache-user.html">the Magento file system owner</a>.</li>
-  <li>Change to Magento 2 root directory.</li>
-  <li>
-    <p>Enter the following commands:</p>
-
-    <pre><code>composer config repositories.magento composer https://repo.magento.com
-composer require magento/data-migration-tool:&lt;version&gt;
-</code></pre>
-
-    <p>where <code>&lt;version&gt;</code> must match the version of the Magento 2 codebase.</p>
-
-    <p>For example, for version 2.1.2, enter:</p>
-
-    <pre><code>composer config repositories.magento composer https://repo.magento.com
-composer require magento/data-migration-tool:2.1.2
-</code></pre>
-  </li>
-  <li>When prompted, enter your <a href="http://devdocs.magento.com/guides/v2.0/install-gde/prereq/connect-auth.html">authentication keys</a>. Your public key is your username; your private key is your password.</li>
-</ol>
-
-<h3 id="install-github">Install from GitHub</h3>
-
-<p>If you’ve cloned Magento 2 from the GitHub repository, follow the steps below to install the Data Migration Tool.</p>
-
-<ol>
-  <li>Log in to your Magento server as, or switch to, <a href="/guides/v2.1/install-gde/prereq/apache-user.html">the Magento file system owner</a>.</li>
-  <li>Change to Magento 2 root directory.</li>
-  <li>
-    <p>Enter the following commands:</p>
-
-    <pre><code>composer config repositories.data-migration-tool git https://github.com/magento/data-migration-tool
-composer require magento/data-migration-tool:&lt;version&gt;
-</code></pre>
-
-    <p>where <code>&lt;version&gt;</code> must match the version of the Magento 2 codebase.</p>
-
-    <p>For example, for version 2.1.2, enter:</p>
-
-    <pre><code>composer config repositories.data-migration-tool git https://github.com/magento/data-migration-tool
-composer require magento/data-migration-tool:2.1.2
-</code></pre>
-  </li>
-</ol>
-
-<h3 id="migration-tool-install-version">Check version of installed Data Migration Tool</h3>
-
-<ol>
-  <li>
-    <p>Change to your Data Migration Tool directory: <code>&lt;vendor&gt;/magento/data-migration-tool</code>.</p>
-  </li>
-  <li>
-    <p>Open <code>composer.json</code> in a text editor.</p>
-  </li>
-  <li>
-    <p>Find the value of the <code>version</code> tag.</p>
-  </li>
-</ol>
-
-<p>This is the version of your Data Migration Tool.</p>
-
-<h2 id="related-topics">Related topics</h2>
-
-<ul>
-  <li><a href="/guides/v2.1/migration/migration-tool-configure.html">Configure migration</a></li>
-  <li><a href="/guides/v2.1/migration/migration-tool-preconditions.html">Preconditions</a></li>
-</ul>
 
 		</div>
 		<!-- /.content-wrap -->
@@ -924,14 +840,14 @@ composer require magento/data-migration-tool:2.1.2
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/migration/migration-tool-install.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/migration/migration-migrate-follow-up.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
   
 
   <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/migration/migration-tool-install.html" target="_blank">Give us feedback</a>
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/migration/migration-migrate-follow-up.html" target="_blank">Give us feedback</a>
   </div>
 
 </div>

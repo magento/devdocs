@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Versions supported | Magento 2 Developer Documentation</title>
+	<title>Follow-up (info and steps) | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.0/migration/migration-overview-supported.html">
+	<link rel="canonical" href="//guides/v2.0/migration/migration-migrate-follow-up.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -52,9 +52,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/migration/migration-overview-supported.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/migration/migration-migrate-follow-up.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/migration/migration-overview-supported.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/migration/migration-migrate-follow-up.html">Magento 2.1</a></li>
 	
   </ul>
 
@@ -313,7 +313,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.0/migration/migration-overview-supported.html">Versions supported</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/migration/migration-overview-supported.html">Versions supported</a></li>
 
 									
 
@@ -472,7 +472,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/migration/migration-migrate-follow-up.html">Follow-up (info and steps)</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/migration/migration-migrate-follow-up.html">Follow-up (info and steps)</a></li>
 
 									
 
@@ -728,7 +728,7 @@
 
           
 
-          <span property="name">Versions supported</span>
+          <span property="name">Follow-up (info and steps)</span>
 
         
 
@@ -751,76 +751,59 @@
 
 	
 
-	<h1 class="page-heading">Versions supported</h1>
+	<h1 class="page-heading">Follow-up (info and steps)</h1>
 
   
 
 
 </section>
 
-			<h2 id="migration-from-versions">Migration from versions</h2>
+			<h2 id="overview">Overview</h2>
 
-<p>The Data Migration Tool supports migration from the following versions:</p>
+<p>Some behaviour and logic of Magento 1 has been implemented differently in Magento 2. The Data Migration Tool takes care of it. Although, there are some migration aspects you should know about, and sometimes you must take minor steps for some functionalities to work smoothly after migration.</p>
 
-<ul>
-  <li>
-    <p>Enterprise Edition (EE):</p>
+<h2 id="information">Information</h2>
 
-    <ul>
-      <li>
-        <p>1.11.x</p>
-      </li>
-      <li>
-        <p>1.12.x</p>
-      </li>
-      <li>
-        <p>1.13.x</p>
-      </li>
-      <li>
-        <p>1.14.x</p>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <p>Community Edition (CE):</p>
+<h3 id="split-database-not-supported">Split database not supported</h3>
 
-    <ul>
-      <li>
-        <p>1.6.x</p>
-      </li>
-      <li>
-        <p>1.7.x</p>
-      </li>
-      <li>
-        <p>1.8.x</p>
-      </li>
-      <li>
-        <p>1.9.x</p>
-      </li>
-    </ul>
-  </li>
-</ul>
+<p>The Data Migration Tool doesn’t support split databases.</p>
 
-<p>If you migrate from CE to EE, the following versions are supported:</p>
+<h3 id="group-prices-converted-to-tier-prices">Group Prices converted to Tier Prices</h3>
 
-<ul>
-  <li>
-    <p>1.6.x</p>
-  </li>
-  <li>
-    <p>1.7.x</p>
-  </li>
-  <li>
-    <p>1.8.x</p>
-  </li>
-  <li>
-    <p>1.9.x</p>
-  </li>
-</ul>
+<p>All Group Prices are automatically converted to Tier Prices during migration.</p>
 
-<h2 id="migration-to-version">Migration to version</h2>
+<h3 id="new-numbering-for-sales-entities">New numbering for sales entities</h3>
 
-<p>To know the supported Magento 2 version (the one you’re migrating to), see the Data Migration Tool’s <a href="https://github.com/magento/data-migration-tool/releases">Release page</a>.</p>
+<p>Reference numbers for Orders, Invoices, Shipments, Credit Memos, and RMA migrate as is. But after migration, the new Magento 2 number assignment rules will apply. Thus, the numeration for the new sales entities will be different.</p>
+
+<h2 id="steps">Steps</h2>
+
+<h3 id="resave-customer-segments-magento-2-ee-only">Resave Customer Segments [Magento 2 EE only]</h3>
+
+<p>After migration, Customer Segments must be resaved from the Admin Panel to get them up and running.</p>
+
+<h3 id="configure-time-zone-offset">Configure time zone offset</h3>
+
+<p>If your Magento 1 server has the time zone set to anything other than UTC, you must configure the offset to migrate timestamp fields. To transform time to a different time zone, use the Data Migration Tool’s <code>\Migration\Handler\Timezone</code> handler.</p>
+
+<p>In the following example, the Magento 1 server timezone is UTC-7. To convert the customer account creation date properly, add the following rule to <code>map-customer.xml</code>:</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span>
+<span class="nt">&lt;map</span> <span class="na">xmlns:xs=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xs:noNamespaceSchemaLocation=</span><span class="s">&quot;../map.xsd&quot;</span><span class="nt">&gt;</span>
+  <span class="c">&lt;!--...--&gt;</span>
+  <span class="nt">&lt;destination&gt;</span>
+      <span class="nt">&lt;field_rules&gt;</span>
+          <span class="c">&lt;!--...--&gt;</span>
+          <span class="nt">&lt;transform&gt;</span>
+              <span class="nt">&lt;field&gt;</span>customer_entity.created_at<span class="nt">&lt;/field&gt;</span>
+              <span class="nt">&lt;handler</span> <span class="na">class=</span><span class="s">&quot;\Migration\Handler\Timezone&quot;</span><span class="nt">&gt;</span>
+                  <span class="nt">&lt;param</span> <span class="na">name=</span><span class="s">&quot;offset&quot;</span> <span class="na">value=</span><span class="s">&quot;-7&quot;</span> <span class="nt">/&gt;</span>
+              <span class="nt">&lt;/handler&gt;</span>
+          <span class="nt">&lt;/transform&gt;</span>
+      <span class="nt">&lt;/field_rules&gt;</span>
+  <span class="nt">&lt;/destination&gt;</span>
+<span class="nt">&lt;/map&gt;</span></code></pre></figure>
+
 
 		</div>
 		<!-- /.content-wrap -->
@@ -831,14 +814,14 @@
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/migration/migration-overview-supported.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/migration/migration-migrate-follow-up.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
   
 
   <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.0/migration/migration-overview-supported.html" target="_blank">Give us feedback</a>
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.0/migration/migration-migrate-follow-up.html" target="_blank">Give us feedback</a>
   </div>
 
 </div>
