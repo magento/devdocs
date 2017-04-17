@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 20_requirements
+subgroup: 020_requirements
 title: License and authentication requirements
 menu_title: License and authentication requirements
 menu_order: 2

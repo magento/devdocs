@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 80_setup
+subgroup: 080_setup
 title: Step 4, Install Magento prerequisites
 menu_title: Step 4, Install Magento prerequisites
 menu_order: 56

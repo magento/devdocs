@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 80_setup
+subgroup: 080_setup
 title: Step 1, Get started setting up an environment
 menu_title: Step 1, Get started setting up an environment
 menu_order: 161

@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 80_setup
+subgroup: 080_setup
 title: Import Magento EE into Magento Enterprise Cloud Edition
 menu_title: Import Magento EE into Magento Enterprise Cloud Edition
 menu_order: 154

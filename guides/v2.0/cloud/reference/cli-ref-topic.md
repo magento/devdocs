@@ -1,13 +1,13 @@
 ---
 layout: default
 group: cli
-subgroup: 15_cli
+subgroup: 15_reference
 title: CLI command reference
 menu_title: CLI command reference
-menu_order: 1
-menu_node: parent
+menu_order: 2
+menu_node:
 version: 2.0
-github_link: cloud/cli-ref/cli-ref-topic.md
+github_link: cloud/reference/cli-ref-topic.md
 ---
 
 ## CLI command reference {#cloud-cli-ref}

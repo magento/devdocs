@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 80_setup
+subgroup: 080_setup
 title: Set up Fastly
 menu_title: Set up Fastly
 menu_order: 500

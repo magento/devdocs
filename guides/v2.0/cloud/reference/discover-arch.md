@@ -4,10 +4,10 @@ group: cloud
 subgroup: 15_reference
 title: Architecture
 menu_title: Architecture
-menu_order: 2
-menu_node: 
+menu_order: 1
+menu_node: parent
 version: 2.0
-github_link: cloud/discover-arch.md
+github_link: cloud/reference/discover-arch.md
 ---
 
 Magento Enterprise Cloud Edition enables you to use the following three types of systems.

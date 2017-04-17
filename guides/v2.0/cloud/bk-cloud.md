@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 10_welcome
+subgroup: 010_welcome
 title: Welcome to Magento Enterprise Cloud Edition
 landing-page: Cloud
 menu_title: Welcome to Magento Enterprise Cloud Edition

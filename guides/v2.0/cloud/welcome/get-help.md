@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 10_welcome
+subgroup: 010_welcome
 title: Get help with your deployment
 menu_title: Get help with your deployment
 menu_order: 40
