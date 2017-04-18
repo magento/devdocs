@@ -98,6 +98,10 @@
         <td>Class was removed.</td>
     </tr>
     <tr>
+        <td>Magento\Indexer\Model\Processor\Handler</td>
+        <td>Class was removed.</td>
+    </tr>
+    <tr>
         <td>Magento\Fedex\Model\Plugin\Rma\Block\Adminhtml\Rma\Edit\Tab\General\Shippingmethod</td>
         <td>Class was removed.</td>
     </tr>
@@ -163,10 +167,6 @@
     </tr>
     <tr>
         <td>Magento\Deploy\Console\Command\DeployStaticContentCommand</td>
-        <td>Class was removed.</td>
-    </tr>
-    <tr>
-        <td>Magento\ConfigurableProduct\Model\Product\Type\Collection\SalableProcessor</td>
         <td>Class was removed.</td>
     </tr>
     <tr>
@@ -492,6 +492,10 @@
     <tr>
         <td>Magento\Framework\Controller\Result\Redirect::render</td>
         <td>[protected] Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Config\View::getDomConfigCopy</td>
+        <td>[public] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\Framework\App\Config::__construct</td>
@@ -880,10 +884,6 @@
     <tr>
         <td>Magento\ConfigurableProduct\Model\Product\Type\Configurable::hasCacheData</td>
         <td>[protected] Method has been removed.</td>
-    </tr>
-    <tr>
-        <td>Magento\ConfigurableProduct\Model\Product\Type\Configurable::getSalableUsedProducts</td>
-        <td>[public] Method has been removed.</td>
     </tr>
     <tr>
         <td>Magento\ConfigurableProduct\Model\Product\Type\Configurable::__construct</td>
@@ -1398,11 +1398,75 @@
         <td>Class was added.</td>
     </tr>
     <tr>
+        <td>Magento\Framework\Indexer\FieldsetPool</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Indexer\HandlerPool</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Indexer\IndexerRegistry</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Indexer\SaveHandlerFactory</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Framework\DB\TemporaryTableService</td>
         <td>Class was added.</td>
     </tr>
     <tr>
         <td>Magento\Framework\DB\Sql\ColumnValueExpression</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Wishlist\Model\Item</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Wishlist\Model\LocaleQuantityProcessor</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Wishlist\Model\Wishlist</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Wishlist\Model\ResourceModel\Item</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Wishlist\Model\ResourceModel\Wishlist</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Wishlist\Model\ResourceModel\Wishlist\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Wishlist\Model\ResourceModel\Item\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Wishlist\Model\ResourceModel\Item\Option</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Wishlist\Model\ResourceModel\Item\Option\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Wishlist\Model\Item\Option</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Wishlist\Helper\Data</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Wishlist\Helper\Rss</td>
         <td>Class was added.</td>
     </tr>
     <tr>
@@ -1463,6 +1527,14 @@
     </tr>
     <tr>
         <td>Magento\Variable\Block\System\Variable\Edit</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\UrlRewrite\Service\V1\Data\UrlRewrite</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\UrlRewrite\Model\MergeDataProvider</td>
         <td>Class was added.</td>
     </tr>
     <tr>
@@ -1530,6 +1602,22 @@
         <td>Class was added.</td>
     </tr>
     <tr>
+        <td>Magento\SendFriend\Model\SendFriend</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\SendFriend\Model\ResourceModel\SendFriend</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\SendFriend\Model\ResourceModel\SendFriend\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\SendFriend\Helper\Data</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Sales\Model\Order\CreditmemoDocumentFactory</td>
         <td>Class was added.</td>
     </tr>
@@ -1542,7 +1630,51 @@
         <td>Class was added.</td>
     </tr>
     <tr>
+        <td>Magento\Quote\Model\QuoteValidator</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Quote\Model\Quote\Address\RateRequest</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\ProductAlert\Model\Email</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\ProductAlert\Model\Price</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\ProductAlert\Model\Stock</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\ProductAlert\Model\ResourceModel\Price</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\ProductAlert\Model\ResourceModel\Stock</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\ProductAlert\Model\ResourceModel\Stock\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\ProductAlert\Model\ResourceModel\Price\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\ProductAlert\Helper\Data</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Persistent\Helper\Data</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Persistent\Helper\Session</td>
         <td>Class was added.</td>
     </tr>
     <tr>
@@ -1765,6 +1897,98 @@
         <td>Magento\OfflinePayments\Model\Purchaseorder</td>
         <td>Class was added.</td>
     </tr>
+    <tr>
+        <td>Magento\Newsletter\Model\Problem</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Newsletter\Model\Queue</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Newsletter\Model\Subscriber</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Newsletter\Model\Template</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Newsletter\Model\ResourceModel\Problem</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Newsletter\Model\ResourceModel\Queue</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Newsletter\Model\ResourceModel\Subscriber</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Newsletter\Model\ResourceModel\Template</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Newsletter\Model\ResourceModel\Template\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Newsletter\Model\ResourceModel\Subscriber\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Newsletter\Model\ResourceModel\Queue\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Newsletter\Model\ResourceModel\Problem\Collection</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Ui\Component\Listing\Column\Actions</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Model\Customer\DataProvider</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Model\Address\AbstractAddress</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\CustomerData\JsLayoutDataProviderPool</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\CustomerData\SectionPool</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Checkout\Model\CompositeConfigProvider</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Checkout\Model\Session\SuccessValidator</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Checkout\Model\Layout\AbstractTotalsProcessor</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Checkout\Model\Cart\ImageProvider</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Checkout\Model\Cart\RequestInfoFilterComposite</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Checkout\CustomerData\AbstractItem</td>
+        <td>Class was added.</td>
+    </tr>
 </tbody></table>
 
 <h2 id="interface">Interface</h2>
@@ -1778,6 +2002,10 @@
         <td>Interface was removed.</td>
     </tr>
     <tr>
+        <td>Magento\UrlRewrite\Model\UrlPersistInterface::replace</td>
+        <td>[public] Method has been added.</td>
+    </tr>
+    <tr>
         <td>Magento\Store\Api\Data\GroupInterface::getCode</td>
         <td>[public] Method has been added.</td>
     </tr>
@@ -1787,6 +2015,10 @@
     </tr>
     <tr>
         <td>Magento\Framework\Interception\ChainInterface</td>
+        <td>Interface was removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Indexer\FilterInterface</td>
         <td>Interface was removed.</td>
     </tr>
     <tr>
@@ -1886,11 +2118,27 @@
         <td>Interface was added.</td>
     </tr>
     <tr>
+        <td>Magento\Framework\Indexer\BatchProviderInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Framework\Indexer\BatchSizeManagementInterface</td>
         <td>Interface was added.</td>
     </tr>
     <tr>
+        <td>Magento\Framework\Indexer\FieldsetInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Indexer\HandlerInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Framework\Indexer\IndexTableRowSizeEstimatorInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Indexer\StateInterface</td>
         <td>Interface was added.</td>
     </tr>
     <tr>
@@ -1923,6 +2171,14 @@
     </tr>
     <tr>
         <td>Magento\Vault\Api\Data\PaymentTokenInterfaceFactory</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\UrlRewrite\Model\StorageInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\UrlRewrite\Model\UrlFinderInterface</td>
         <td>Interface was added.</td>
     </tr>
     <tr>
@@ -1982,6 +2238,14 @@
         <td>Interface was added.</td>
     </tr>
     <tr>
+        <td>Magento\Quote\Model\Quote\Address\FreeShippingInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Quote\Model\Quote\Address\RateCollectorInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Payment\Model\Method\SpecificationInterface</td>
         <td>Interface was added.</td>
     </tr>
@@ -2006,7 +2270,35 @@
         <td>Interface was added.</td>
     </tr>
     <tr>
+        <td>Magento\GiftMessage\Block\Cart\Item\Renderer\Actions\LayoutProcessorInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
         <td>Magento\Eav\Api\Data\AttributeDefaultValueInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Model\EmailNotificationInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Model\Customer\Source\GroupSourceInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Model\Address\AddressModelInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\Model\Address\CustomAttributeListInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\CustomerData\JsLayoutDataProviderInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Customer\CustomerData\SectionSourceInterface</td>
         <td>Interface was added.</td>
     </tr>
     <tr>
@@ -2027,6 +2319,18 @@
     </tr>
     <tr>
         <td>Magento\ConfigurableProduct\Pricing\Price\LowestPriceOptionsProviderInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Checkout\Model\Cart\RequestInfoFilterInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Checkout\CustomerData\ItemInterface</td>
+        <td>Interface was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Checkout\Block\Checkout\LayoutProcessorInterface</td>
         <td>Interface was added.</td>
     </tr>
     <tr>
