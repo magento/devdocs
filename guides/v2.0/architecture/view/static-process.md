@@ -37,7 +37,7 @@ Whenever a static view file is requested in the Magento application, it uses the
    </dd>
    <dt>CSS and JavaScript file merging</dt>
    <dd>
-      <p>Magento merges all CSS or JavaScript assets linked in the <code>&lt;head></code> element of the page into a single files and replaces referenced files with a single reference.</p>
+      <p>Magento merges all CSS or JavaScript assets linked in the <code>&lt;head></code> element of the page into a single file and replaces referenced files with a single reference.</p>
    </dd>
    <dt>JavaScript files minifying</dt>
    <dd>
