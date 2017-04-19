@@ -28,38 +28,44 @@ Magento 2.0.14 contains more than 15 security enhancements. Look for the followi
 This release includes important enhancements to the security of your Magento software. While there are no confirmed attacks related to the Zend framework `Zend_Mail` library vulnerability to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento software to the latest version as soon as possible.
 
 
-<!---  -->* 
-<!---  -->* 
-<!---  -->* 
-<!---  -->* 
-<!--- 66570 -->* 
 
-<!--- 66542 -->* 
-<!--- 66524 -->* 
-<!--- 66507 -->* 
-<!--- 66478 -->* 
-<!--- 66369 -->* 
-<!--- 66116 -->* 
-<!--- 66972 -->* 
-<!--- 64051 -->* 
-<!--- 63880 -->* 
-<!--- 63878 -->* 
-<!--- 63876 -->* 
-<!--- 63871 -->* 
-<!--- 63868 -->* 
-<!--- 63865 -->* 
-<!--- 63863 -->* 
-<!--- 63681 -->* 
-<!--- 63633 -->* 
-<!--- 63528 -->* 
-<!--- 63518 -->* 
-<!--- 62314 -->* 
-<!--- 61016 -->* 
-<!--- 59096 -->* 
+
+<!--- 63876 -->* Magento now displays a 404 page when an Admin with insufficient privilege tries to request a specific resource.
+
+<!--- 63871 -->* Magento UI controllers now check proper ACL node. Previously, Magento returned leading to any admin getting data from ui data providers. 
+
+
+You can now generate coupon codes as expected when you add a new cart Price rule. Previously, when you tried to generate a coupon code after clicking **Add New Rule**, Magento disabled all fields in the **Manage Coupon Codes** section.
+
+<!--- 66972 -->* Magento now displays a relevant message when you create an inactive user.  Previously, Magento did not confirm a successful creation, but instead displayed an error message, even though the inactive user was successfully created. 
+
+<!--- 63880 -->* You can no longer instantiate an arbitrary object while adding conditions to an email reminder rule. 
+
+<!--- 63878 -->* The Admin URL in the response body of an HTTP request is no longer visible to unauthenticated users. 
+
+<!--- 63868 -->* Admin users without proper permissions can no longer delete store backups or system support reports.
+
+<!--- 63865 -->* Customer-authenticated APIs are no longer vulnerable to cross-site request forgery.
+
+<!--- 63863 -->* Magento no longer permits Admin users that have access to CMS and widgets to execute code through unserialization.
+
+<!--- 63681, 64051 -->* We’ve updated several vulnerable `moment.js` libraries (`query-migrate`, `query`, `jquery-ui-1.9.2.js`)
+
+<!--- 63633 -->* We’ve removed a vulnerability with Zend Mail.
+
+<!--- 63528 -->* Magento now blocks all requests from an Admin’s account as soon as the Admin user is disabled.
+
+<!--- 63518 -->* Magento no longer permits stored cross-site scripting code on the customer address page of the Magento Admin.
+
+<!--- 62314 -->* Magento no longer uses a PHP serialized object in the JSON `report_data` component from the `\Magento\Support\Ui\Component\Listing\Column\ReportActions` response.
+
+<!--- 61016 -->* Action logs no longer display plain-text passwords.
+
+<!--- 59096 -->* The Magento Admin no longer leaks user password hashes.
 
 
 <!--- INTERNAL ONLY -->
-<!--- 67114, 66916, 66634, 66633, 66631, 66605, 66604, 66598, 66597, 66597, 66594, 66593, 66591, 66590, 66451, 66405, 66326, 65493, 65054, 64877, 64584, 66491, 66496, 66498-->
+<!--- 66916, 66634, 66633, 66631, 66605, 66604, 66598, 66597, 66594, 66593, 66591, 66590, 66451, 66405, 66326, 65493, 65054, 64877, 64584, 66491, 66496, 66498, 66542-->
 
 <!--- DUPLICATE -->
 <!--- 65056, 65065 -->
@@ -70,9 +76,7 @@ This release includes important enhancements to the security of your Magento sof
 
 
 <!--- CANNOT REPRODUCE -->
-<!---  66592, 66466 -->
-
-<a href="https://github.com/magento/magento2/issues/5558" target="_blank">(GITHUB-5558)</a>
+<!---  66592, 66466, 66507 -->
 
 
 
