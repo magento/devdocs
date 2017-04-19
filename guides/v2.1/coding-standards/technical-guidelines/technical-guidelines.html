@@ -1106,6 +1106,36 @@ like this:</p>
 
 <p>13.4. Exception in a single CLI command SHOULD NOT break the CLI framework; running other commands SHOULD still be possible.</p>
 
+<h2 id="events">14. Events</h2>
+
+<p>14.1. All values (including objects) passed to an event MUST NOT be modified in the event observer. Instead, plugins SHOULD BE used for modifying the input or output of a function.</p>
+
+<div class="collapsible"><b class="collapsible-title">Examples: </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sb">```</span>
+<span class="sb">class SampleEventObserverThatModifiesInputs</span>
+<span class="sb">{</span>
+<span class="sb">    /**</span>
+<span class="sb">     * @param \Magento\Framework\Event\Observer $observer</span>
+<span class="sb">     */</span>
+<span class="sb">    public function execute(\Magento\Framework\Event\Observer $observer)</span>
+<span class="sb">    {</span>
+<span class="sb">        /** @var \Magento\Framework\App\DataObject $transport */</span>
+<span class="sb">        $transport = $observer-&gt;getData(&#39;transport&#39;);</span>
+<span class="sb">        </span>
+<span class="sb">        if ($transport-&gt;getData(&#39;some_value&#39;) === true) {</span>
+<span class="sb">            /**</span>
+<span class="sb">             * Expecting this value to go back to the original event dispatcher violates</span>
+<span class="sb">             * this rule. Other observers could change the data, or Magento could make</span>
+<span class="sb">             * architectural changes always sending immutable objects.</span>
+<span class="sb">             */</span>
+<span class="sb">            $transport-&gt;setData(&#39;output_return_value&#39;, true);</span>
+<span class="sb">        }</span>
+<span class="sb">    }</span>
+<span class="sb">}</span>
+<span class="sb">```</span></code></pre></figure>
+</div></div>
+
+<p>14.2. Events used SHOULD be observed as specifically as possible. A <code>global</code> subscription to an event SHOULD NOT be used when the area impacted is just <code>frontend</code>.</p>
+
 <!-- LINKS: DEFINITIONS AND ADDRESSES -->
 
 
