@@ -14,13 +14,11 @@ github_link: magento-devdocs-whatsnew.md
 This page contains recent changes that we think you'd like to know about. We exclude from this list proofreading, spelling checks, and all minor updates.
 
 
-{% collapsibleh2 April 2017 %}
+## April 2017
 
 | Description  | Versions applied to  | New or Updated | Date |
 |--------------|--------------|----------------------|--------|
-| [Migration: Follow-up after running the Data Migration Tool]({{ page.baseurl }}migration/migration-migrate-follow-up.html){:target="_blank"} | 2.1.x  |  Updated | Apr 14  |
-
-{% endcollapsibleh2 %}
+| [Migration: Follow-up after running the Data Migration Tool]({{ page.baseurl }}migration/migration-migrate-follow-up.html){:target="_blank"} | 2.x  |  Updated | Apr 14  |
 
 
 {% collapsibleh2 March 2017 %}
