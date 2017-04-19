@@ -11,6 +11,8 @@ level3_subgroup: ee20-relnotes
 github_link: release-notes/ReleaseNotes2.0.14EE.md
 ---
 
+*Patch code and release notes were published on xxx.* 
+
 We are pleased to present Magento Enterprise Edition 2.0.14. This release includes many functional fixes and enhancements. 
 
 Looking for the <a href="http://devdocs.magento.com/guides/v2.0/cloud/release-notes/CloudReleaseNotes2.1.4.html" target="_blank">Magento Enterprise Cloud Edition 2.1.4 and 2.0.12 Release Notes</a>?
@@ -20,6 +22,8 @@ Looking for the <a href="http://devdocs.magento.com/guides/v2.0/cloud/release-no
 ## Highlights
 
 Magento 2.0.14 contains more than 15 security enhancements. Look for the following highlights in this release:
+
+
 
 
 

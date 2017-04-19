@@ -10,6 +10,10 @@ level3_menu_node: level3child
 level3_subgroup: ce20-relnotes 
 github_link: release-notes/ReleaseNotes2.0.14CE.md
 ---
+
+*Patch code and release notes were published on xxx.* 
+
+
 We are pleased to present Magento Community Edition 2.0.14. 
 
 
