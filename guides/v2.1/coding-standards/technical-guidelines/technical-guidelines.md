@@ -475,10 +475,8 @@ We are reviewing this section and will publish it soon.
 
 14.1. All values (including objects) passed to an event MUST NOT be modified in the event observer. Instead, plugins SHOULD BE used for modifying the input or output of a function.
 
-{% collapsible Examples: %}
+{% collapsible Example: %}
 {%highlight php startinline=1%}
-
-```
 class SampleEventObserverThatModifiesInputs
 {
     /**
@@ -488,7 +486,7 @@ class SampleEventObserverThatModifiesInputs
     {
         /** @var \Magento\Framework\App\DataObject $transport */
         $transport = $observer->getData('transport');
-        
+
         if ($transport->getData('some_value') === true) {
             /**
              * Expecting this value to go back to the original event dispatcher violates
@@ -499,10 +497,11 @@ class SampleEventObserverThatModifiesInputs
         }
     }
 }
-```
 {%endhighlight%}
 {% endcollapsible %}
+---
 
+{:start="14.2"}
 14.2. Events used SHOULD be observed as specifically as possible. A `global` subscription to an event SHOULD NOT be used when the area impacted is just `frontend`.
 
 <!-- LINKS: DEFINITIONS AND ADDRESSES -->
