@@ -18,8 +18,8 @@ This page contains recent changes that we think you'd like to know about. We exc
 
 | Description  | Versions applied to  | New or Updated | Date |
 |--------------|--------------|----------------------|--------|
+| [Technical guidelines for Events]({{ page.baseurl }}coding-standards/technical-guidelines/technical-guidelines.html#events){:target="_blank"} | 2.1.x |  New | Apr 19  |
 | [Migration: Follow-up after running the Data Migration Tool]({{ page.baseurl }}migration/migration-migrate-follow-up.html){:target="_blank"} | 2.x  |  Updated | Apr 14  |
-
 
 {% collapsibleh2 March 2017 %}
 
