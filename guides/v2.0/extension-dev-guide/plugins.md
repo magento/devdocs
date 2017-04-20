@@ -34,9 +34,7 @@ Plugins cannot be used with any of the following:
 
 ### Declaring a plugin
 
-A plugin for a class object can be declared in the <code>di.xml</code> file in your module:
-
-<script src="https://gist.github.com/xcomSteveJohnson/c9a36d9ec887c4bbc34d.js"></script>
+A plugin for a class object is declared in the <code>di.xml</code> file in your module.
 
 You must specify these elements:
 
