@@ -833,6 +833,8 @@
   <li><a href="#credits" id="markdown-toc-credits">Credits</a></li>
 </ul>
 
+<p><em>Release notes updated on April 24, 2017.</em></p>
+
 <p>We are pleased to present Magento Community Edition 2.1.6. This release includes important performance enhancements for your Magento installation, especially for operations that involve the category page as well as image resizing.</p>
 
 <p>Looking for the <a href="http://devdocs.magento.com/guides/v2.0/cloud/release-notes/CloudReleaseNotes.html" target="_blank">Magento Enterprise Cloud Edition Release Notes</a>?</p>
@@ -901,6 +903,27 @@
 <!--- 65251 -->
 <ul>
   <li>The storefront now displays images that Magento resizes during product save operations, rather than resizing the product on the storefront. Previously, the image path contained <code>store_id</code>,  and during save operations, Magento resized images for images the default store only.</li>
+</ul>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>Users have encountered problems displaying images after upgrading their software to Magento 2.1.6. These problems range from incomplete loading to the total inability to load images.  Consequently, if you saved a product and didn’t open it on the storefront before upgrading to 2.1.6, you’ll need to apply a workaround.</p>
+
+  <p><strong>Workaround</strong>: To correct problems with image loading, choose one of these two workarounds:</p>
+
+  <ul>
+    <li>Run <code>php bin/magento catalog:images:resize</code></li>
+  </ul>
+
+  <p>or</p>
+
+  <ul>
+    <li>Save (or resave) the product with the associated image in the Admin panel.</li>
+  </ul>
+</div>
+
+<!--- 66366 -->
+<ul>
+  <li>The <code>\Magento\CatalogInventory\Model\Stock\Status\getStockId()</code> method now returns the correct values.</li>
 </ul>
 
 <!--- 66366 -->
