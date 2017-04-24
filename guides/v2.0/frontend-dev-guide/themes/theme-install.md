@@ -11,15 +11,15 @@ github_link: frontend-dev-guide/themes/theme-install.md
 
 ## Overview
 
-This topic describes to install a third-party theme for Magento 2 store.
+This topic describes how to install a third-party theme for Magento 2 store.
 
-To install a theme, you need to add its code to your Magento 2 instance code base and register it in the database. There are several ways to do this, depending on the way a theme is distributed:
+To install a theme, you need to add its code to your Magento 2 instance code base, and register it in the database. There are several ways to do this, depending on the way a theme is distributed:
 
 - if a theme is just a set of files, for example an archive, you need to add it manually.   
 - if a theme is a composer package, you need to install using composer.
 - if a theme is distributed as an extension, it can be installed using the **Web Setup Wizard** in Magento Admin.
 
-The following sections contain details about each installation flow.
+The following sections contain more installation about each installation flow.
 
 ## Prerequisites 
 
