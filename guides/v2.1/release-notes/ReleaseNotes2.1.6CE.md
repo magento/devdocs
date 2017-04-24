@@ -13,6 +13,8 @@ github_link: release-notes/ReleaseNotes2.1.6CE.md
 *	TOC
 {:toc}
 
+*Release notes updated on April 24, 2017.*
+
 
 We are pleased to present Magento Community Edition 2.1.6. This release includes important performance enhancements for your Magento installation, especially for operations that involve the category page as well as image resizing. 
 
@@ -69,6 +71,9 @@ We address the following functional fixes and enhancements in this release.
 
 
 <!--- 65251 -->* The storefront now displays images that Magento resizes during product save operations, rather than resizing the product on the storefront. Previously, the image path contained `store_id`,  and during save operations, Magento resized images for images the default store only. 
+
+Note: You may encounter some issues with image resizing after upgrade. See Known issue for more information.
+
 
 
 <!--- 66366 -->* The `\Magento\CatalogInventory\Model\Stock\Status\getStockId()` method now returns the correct values.
@@ -145,7 +150,16 @@ We address the following functional fixes and enhancements in this release.
 <!--- 65250 -->
 
 
+## Known issue
+**Issue**: Users have encountered problems displaying images after upgrading their software to Magento 2.1.6. These problems range from incomplete loading to the total inability to load images.  Image switching works correctly for image or text swatches, and combinations of images and text. 
 
+**Workaround**: To correct problems with image loading, choose one of these two workarounds:
+
+* Run `php bin/magento catalog:images:resize`
+
+or 
+
+* Save (or resave) the product with the associated  image in the Admin panel.
 
 ## System requirements
 Our technology stack is built on PHP and MySQL. For more information, see
