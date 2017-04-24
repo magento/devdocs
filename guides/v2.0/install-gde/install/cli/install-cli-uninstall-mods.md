@@ -74,12 +74,10 @@ The module uninstall command performs the following tasks:
 		<td><p>var/backups/&lt;timestamp>_filesystem_media.tgz</p></td>
 	</tr>
 	<tr>
-	<tr>
 		<td><p>--backup-db</p></td>
 		<td><p>Backs up the Magento 2 database.</p></td>
 		<td><p>var/backups/&lt;timestamp>_db.gz</p></td>
 	</tr>
-	<tr>
 	</tbody>
 	</table>
 
