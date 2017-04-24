@@ -1532,29 +1532,29 @@
 <p>Following is a sample configuration to add to <code>&lt;your Magento install dir&gt;app/etc/env.php</code>:</p>
 
 <pre><code>'session' =&gt; 
-   array (
-   'save' =&gt; 'redis',
-   'redis' =&gt; 
-      array (
-	'host' =&gt; '127.0.0.1',
-	'port' =&gt; '6379',
-	'password' =&gt; '',
-	'timeout' =&gt; '2.5',
-	'persistent_identifier' =&gt; '',
-	'database' =&gt; '2',
-	'compression_threshold' =&gt; '2048',
-	'compression_library' =&gt; 'gzip',
-	'log_level' =&gt; '1',
-	'max_concurrency' =&gt; '6',
-	'break_after_frontend' =&gt; '5',
-	'break_after_adminhtml' =&gt; '30',
-	'first_lifetime' =&gt; '600',
-	'bot_first_lifetime' =&gt; '60',
-	'bot_lifetime' =&gt; '7200',
-	'disable_locking' =&gt; '0',
-	'min_lifetime' =&gt; '60',
-	'max_lifetime' =&gt; '2592000'
-    )
+array (
+  'save' =&gt; 'redis',
+  'redis' =&gt; 
+  array (
+    'host' =&gt; '127.0.0.1',
+    'port' =&gt; '6379',
+    'password' =&gt; '',
+    'timeout' =&gt; '2.5',
+    'persistent_identifier' =&gt; '',
+    'database' =&gt; '2',
+    'compression_threshold' =&gt; '2048',
+    'compression_library' =&gt; 'gzip',
+    'log_level' =&gt; '1',
+    'max_concurrency' =&gt; '6',
+    'break_after_frontend' =&gt; '5',
+    'break_after_adminhtml' =&gt; '30',
+    'first_lifetime' =&gt; '600',
+    'bot_first_lifetime' =&gt; '60',
+    'bot_lifetime' =&gt; '7200',
+    'disable_locking' =&gt; '0',
+    'min_lifetime' =&gt; '60',
+    'max_lifetime' =&gt; '2592000'
+  )
 ),
 </code></pre>
 
