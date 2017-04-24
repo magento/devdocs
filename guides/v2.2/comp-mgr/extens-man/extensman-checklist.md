@@ -25,7 +25,7 @@ The Extension Manager enables you to install, uninstall, and update extensions, 
 Before continuing, complete all tasks discussed in [Prerequisites]({{page.baseurl}}comp-mgr/prereq/prereq_compman.html).
 
 ## Extension Manager checklist
-{% include comp-man/checklist.md %}
+{% include comp-man/checklist_2.2.md %}
 
 #### Next step
 [Start the Extension Manager]({{ page.baseurl }}comp-mgr/extens-man/extensman-main-pg.html)

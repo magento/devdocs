@@ -13,7 +13,15 @@ github_link: magento-devdocs-whatsnew.md
 
 This page contains recent changes that we think you'd like to know about. We exclude from this list proofreading, spelling checks, and all minor updates.
 
-## March 2017
+
+## April 2017
+
+| Description  | Versions applied to  | New or Updated | Date |
+|--------------|--------------|----------------------|--------|
+| [Technical guidelines for working with Events]({{ page.baseurl }}coding-standards/technical-guidelines/technical-guidelines.html#events){:target="_blank"} | 2.1.x |  New | Apr 19  |
+| [Migration: Follow-up after running the Data Migration Tool]({{ page.baseurl }}migration/migration-migrate-follow-up.html){:target="_blank"} | 2.x  |  Updated | Apr 14  |
+
+{% collapsibleh2 March 2017 %}
 
 | Description  | Versions applied to  | New or Updated | Date |
 |--------------|--------------|----------------------|--------|
@@ -21,8 +29,8 @@ This page contains recent changes that we think you'd like to know about. We exc
 | [Update sample contribution template]({{ page.baseurl }}contributor-guide/templates/basic_template.html){:target="_blank"} | 2.x  |  Updated |  Apr 1 |
 | [Update performance test data]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-perf-data.html){:target="_blank"} | 2.x  | Updated  | Mar 21  |
 | [Versioning and compatibility]({{ page.baseurl }}extension-dev-guide/versioning/index.html){:target="_blank"} | 2.x  |  New |  Mar 31 |
-| [How to test a block]({{ page.baseurl }}mtf/mtf_entities/mtf_block.html){:target="_blank"}  | 2.x  |  Updated | Mar 24  | 
-| [Tutorial: Order processing with REST APIs]({{ site.gdeurl21 }}get-started/order-tutorial/order-intro.html){:target="_blank"}  |  2.1.x | New  | Mar 23  | 
+| [How to test a block]({{ page.baseurl }}mtf/mtf_entities/mtf_block.html){:target="_blank"}  | 2.x  |  Updated | Mar 24  |
+| [Tutorial: Order processing with REST APIs]({{ site.gdeurl21 }}get-started/order-tutorial/order-intro.html){:target="_blank"}  |  2.1.x | New  | Mar 23  |
 | [Magento U video tutorials](http://devdocs.magento.com/videos){:target="_blank"}  | 2.x  | New  |  Mar 15 |
 | [Top quarterly devdocs contributors]({{ page.baseurl }}contributor-guide/quarterly-contributors.html){:target="_blank"}  |  2.x | Updated  | Mar 15  |
 |  [Community contribution to adding attributes to an entity]({{ page.baseurl }}extension-dev-guide/extension_attributes/adding-attributes.html){:target="_blank"} | 2.x  |  Updated | March 15  |
@@ -33,6 +41,8 @@ This page contains recent changes that we think you'd like to know about. We exc
 | [Reorganize and update how to get started with an MECE environment]({{ page.baseurl }}cloud/before/before-setup-env-1_get-start.html){:target="_blank"}  | 2.x  |  Updated |  Mar 3 |
 | [Reorganize and correct issues with MECE workspace]({{ page.baseurl }}cloud/before/before-workspace.html){:target="_blank"} | 2.x  | Updated  |  Mar 2 |
 |  [Magento Functional Test Framework scenario test]({{ page.baseurl }}mtf/mtf_entities/mtf_scenariotest.html) | 2.x  | New  |  Mar 3 |
+
+{% endcollapsibleh2 %}
 
 
 {% collapsibleh2 Feb 2017 %}

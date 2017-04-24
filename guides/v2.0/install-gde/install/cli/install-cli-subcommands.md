@@ -64,8 +64,8 @@ The following table summarizes the available commands. Commands are shown in sum
 		<td><p>Magento software installed</p></td>
 	</tr>
 	<tr>
-		<td><a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands-deployment.html">php magento config:set</a></td>
-		<td><p>Creates the deployment configuration.</p></td>
+		<td><a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands-deployment.html">magento setup:config:set</a></td>
+		<td><p>Creates or updates the deployment configuration.</p></td>
 		<td><p>None</p></td>
 	</tr>
 	<tr>

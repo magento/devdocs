@@ -27,6 +27,9 @@ You can upgrade Magento from the command line if you installed the software usin
     	<li>If you're upgrading from Magento CE or EE 2.0.0 or 2.0.1, you must first perform the tasks discussed in the <a href="{{page.baseurl}}release-notes/tech_bull_201-upgrade.html">Technical Bulletin (1/28/16)</a>.</li></ul>
 </div>
 
+## Pre-upgrade checklist
+{% include comp-man/checklist_2.2.md %}
+
 ## Prerequisite: `pub` directory root {#upgrade-cli-pub}
 This section applies to you *only* if you set the Magento root directory to `<your Magento install dir>/pub`. If you did not do this, skip this section and continue with the next section.
 
