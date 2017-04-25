@@ -40,6 +40,28 @@ Magento 2.1.7 contains over 15 security enhancements. Look for the following hig
 
 ## Security enhancements
 
+### Remote code execution
+<!--- 63862 -->* Magento no longer permits Admin users that have access to CMS and widgets to execute code through unserialization. 
+
+
+### Access control bypass
+<!--- 63866 -->* Admin users without proper permissions can no longer delete store backups or system support reports. 
+
+
+### Cross site request forgery
+<!--- 63864 -->* Customer-authenticated APIs are no longer vulnerable to cross-site request forgeries.
+
+### Cross-site scripting
+<!--- 63517 -->* Magento no longer permits stored cross-site scripting code on the customer address page of the Magento Admin.
+
+### Zend mail
+<!--- 63632 -->*  We've removed a vulnerability with Zend Mail.
+
+
+
+
+### General
+
 <!--- 64049, 63680 -->* We’ve updated several vulnerable moment.js libraries (`query-migrate`, `query`, `jquery-ui-1.9.2.js`)
 
 <!--- 63879 -->* You can no longer instantiate an arbitrary object while adding conditions to an email reminder rule. 
@@ -48,17 +70,9 @@ Magento 2.1.7 contains over 15 security enhancements. Look for the following hig
 
 <!--- 63869 -->* Magento now displays a 404 page when an Admin with insufficient privilege tries to request a specific resource. 
 
-<!--- 63866 -->* Admin users without proper permissions can no longer delete store backups or system support reports. 
-
-<!--- 63864 -->* Customer-authenticated APIs are no longer vulnerable to CSRF.
-
-<!--- 63862 -->* Magento no longer permits Admin users that have access to CMS and widgets to execute code through unserialization. 
-
-<!--- 63632 -->*  We've removed a vulnerability with Zend Mail.
 
 <!--- 63527 -->* Magento now blocks all requests from an Admin's account as soon as the Admin user is disabled. 
 
-<!--- 63517 -->* Magento no longer permits stored XSS code on the customer address page of the Magento Admin.
 
 <!--- 62475 -->* Magento now displays a 404 page when you try to route a request to `index.phpadmin`. Previously, Magento displayed an Admin page.
 
@@ -67,7 +81,6 @@ Magento 2.1.7 contains over 15 security enhancements. Look for the following hig
 <!--- 61015 -->* Action logs no longer display plain-text passwords. 
 
 <!--- 59097 -->* The Magento Admin no longer leaks user password hashes. 
-
 
 
 

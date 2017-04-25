@@ -50,10 +50,10 @@ Magento 2.1.7 contains over 15 security enhancements. Look for the following hig
 
 
 ### Cross site request forgery
-<!--- 63864 -->* Customer-authenticated APIs are no longer vulnerable to CSRF.
+<!--- 63864 -->* Customer-authenticated APIs are no longer vulnerable to cross-site request forgeries.
 
 ### Cross-site scripting
-<!--- 63517 -->* Magento no longer permits stored XSS code on the customer address page of the Magento Admin.
+<!--- 63517 -->* Magento no longer permits stored cross-site scripting code on the customer address page of the Magento Admin.
 
 ### Zend mail
 <!--- 63632 -->*  We've removed a vulnerability with Zend Mail.
