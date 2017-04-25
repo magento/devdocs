@@ -361,7 +361,7 @@ We support the following XML node formats:
         &lt;!-- ... more entries ... -->
     &lt;/configurable_products></pre>
 
-*   Generate products based on dynamically created attribute set with specified configuration per each attribute:
+*   Generate products based on a dynamically created attribute set with a specified configuration per each attribute:
 
     <pre class="no-copy">&lt;configurable_products>
         <!-- Configurable product configuration -->
@@ -389,7 +389,7 @@ We support the following XML node formats:
             &lt;!-- Number of configurable products -->
             &lt;products>{int}&lt;/products>
             
-            &lt;!-- Category Name. Optional. By default category name from Categories fixture will be used -->
+            &lt;!-- Category Name. Optional. By default, the category name from Categories fixture will be used -->
             &lt;category>[{string}]&lt;/category>
         &lt;/config>
      
