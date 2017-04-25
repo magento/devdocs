@@ -133,7 +133,7 @@ The value of `table_suffix` column of the `indexer_state` table determines which
 Make sure that these indexers are in "Update By Schedule" mode. If "Update On Save" mode is selected, some data can be lost if you make changes during full reindex.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-Indexer table switching mechanism requires additional database storage.
+The indexer table switching mechanism requires additional database storage.
 </div>
 
 ### Related topics
