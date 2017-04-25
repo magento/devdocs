@@ -23,18 +23,21 @@ Magento 2.2 introduces changes in several API classes. These changes are designe
 ### Framework
 
 Magento does not support custom config file pools
+
 **Class:** [`Magento\Framework\App\DeploymentConfig\Reader`]({{site.mage2200url}}lib/internal/Magento/Framework/App/DeploymentConfig/Reader.php){:target="_blank"}<br/>
 **Action:** Deprecated the method `loadConfigFile($fileKey, $pathConfig, $ignoreInitialConfigFiles = false)` in [`Magento\Framework\App\DeploymentConfig\Reader`]<br/>
 
 ### Store Module
 
 The Store module management has been updated to allow retrieve store by website id.
+
 **Class:** [`Magento\Store\Api\StoreWebsiteRelationInterface`]({{site.mage2200url}}app/code/Magento/Store/Api/StoreWebsiteRelationInterface.php){:target="_blank"}<br/>
 **Action:** Added the interface [`Magento\Store\Api\StoreWebsiteRelationInterface`]<br/>
 **Action:** Added the method `getStoreByWebsiteId($websiteId)` to [`\Magento\Store\Model\StoreManager`]<br/>
 **Description:** Retrieve store by website id<br/>
 
 New unique and required field `code` was added to the Store Group.
+
 **Class:** [`Magento\Store\Api\Data\GroupInterface`]({{site.mage2200url}}app/code/Magento/Store/Api/Data/GroupInterface.php)<br/>
 **Action:** Added two methods `getCode()` and `setCode($code)` to [`Magento\Store\Api\Data\GroupInterface`]<br/>
 
@@ -42,6 +45,7 @@ New unique and required field `code` was added to the Store Group.
 ### Customer Module
 
 Change was done in order to add default values to customer attributes.
+
 **Class:** [`Magento\Eav\Api\Data\AttributeDefaultValueInterface`]({{site.mage2200url}}app/code/Magento/Eav/Api/Data/AttributeDefaultValueInterface.php){:target="_blank"}<br/>
 **Action:** Added the interface [`Magento\Eav\Api\Data\AttributeDefaultValueInterface`]<br/>
 **Action:** Added the getter `getDefaultValue()` and setter `setDefaultValue($defaultValue)` to [`Magento\Customer\Model\Data\AttributeMetadata`]<br/>
@@ -232,9 +236,9 @@ The `bin/magento setup:config:set` command no longer has the `--definition-forma
 
 ## Database Schema changes
 
-###store_group
-**Action:** new column `code` was added to `store_group` table. This column has unique key.<br/>
-**Description:** data to this column for existed store Groups will be automatically filled based on the Groups names.
+### store_group
+**Action:** new column `code` was added to `store_group` table. This column has a unique key.<br/>
+**Description:** data to this column for existing store Groups will be automatically filled based on Group names.
 
 ## Database data format changes
 
@@ -337,6 +341,9 @@ This is a list of tables and fields where the data format changed from serialize
 | \Magento\Cms\Model\ResourceModel\Page                                                | cms_page                         | content                                                       |
 | \Magento\Widget\Model\ResourceModel\Widget\Instance                                  | layout_update                    | xml                                                           |
 | \Magento\Banner\Model\ResourceModel\Banner                                           | magento_banner_content           | banner_content                                                |
+| \Magento\Cms\Model\ResourceModel\Page                                                | cms_page                         | layout_update_xml                                             |
+| \Magento\Catalog\Model\ResourceModel\Product                                         | catalog_product_entity_text      | value                                                         |
+| \Magento\Catalog\Model\ResourceModel\Category                                        | catalog_category_entity_text     | value                                                         |
 
 {% endcollapsible %}
 
