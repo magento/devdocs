@@ -71,7 +71,7 @@ Boolean
   </tbody>
 </table>
 
-The options are set in the `config.xml` of you custom module. 
+The options are set in the `config.xml` of your custom module. 
 
 Example:
 

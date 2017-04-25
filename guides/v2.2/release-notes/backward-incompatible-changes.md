@@ -140,6 +140,65 @@ In Magento 2.2 the behavior of repositories regarding the Filters added to Searc
 
 For details about repositories see the [Searching with repositories]({{page.baseurl}}extension-dev-guide/searching-with-repositories.html) topic.
 
+## Changes in repositories in method getList
+
+In Magento 2.2 the signature of the method getList was unified across the code base.
+
+`public function getList(\Magento\Framework\Api\SearchCriteria $searchCriteria);` 
+was changed to 
+`public function getList(\Magento\Framework\Api\SearchCriteriaInterface $searchCriteria);`
+
+These changes won't affect the clients that use these interfaces, but this will affect the extensions that implemented these interfaces.
+In oder to adopt custom implementations of these interfaces, please, change method signature from `\Magento\Framework\Api\SearchCriteria` to `\Magento\Framework\Api\SearchCriteriaInterface` in your implementations.
+
+### Affected CE repositories
+
+- `\Magento\Vault\Api\PaymentTokenRepositoryInterface::getList`
+- `\Magento\Tax\Api\TaxRuleRepositoryInterface::getList`
+- `\Magento\Sales\Api\CreditmemoCommentRepositoryInterface::getList`
+- `\Magento\Sales\Api\CreditmemoItemRepositoryInterface::getList`
+- `\Magento\Sales\Api\CreditmemoRepositoryInterface::getList` 
+- `\Magento\Sales\Api\InvoiceCommentRepositoryInterface::getList`
+- `\Magento\Sales\Api\InvoiceItemRepositoryInterface::getList`
+- `\Magento\Sales\Api\InvoiceRepositoryInterface::getList`
+- `\Magento\Sales\Api\OrderAddressRepositoryInterface::getList`
+- `\Magento\Sales\Api\OrderItemRepositoryInterface::getList`
+- `\Magento\Sales\Api\OrderPaymentRepositoryInterface::getList`
+- `\Magento\Sales\Api\OrderRepositoryInterface::getList`
+- `\Magento\Sales\Api\OrderStatusHistoryRepositoryInterface::getList`
+- `\Magento\Sales\Api\ShipmentCommentRepositoryInterface::getList`
+- `\Magento\Sales\Api\ShipmentItemRepositoryInterface::getList`
+- `\Magento\Sales\Api\ShipmentRepositoryInterface::getList`
+- `\Magento\Sales\Api\ShipmentTrackRepositoryInterface::getList`
+- `\Magento\Sales\Api\TransactionRepositoryInterface::getList`
+- `\Magento\Quote\Api\CartRepositoryInterface::getList`
+- `\Magento\Vault\Model\PaymentTokenRepository::getList`
+- `\Magento\Tax\Model\TaxRuleRepository::getList`
+- `\Magento\Sales\Model\OrderRepository::getList`
+- `\Magento\Sales\Model\Order\AddressRepository::getList`
+- `\Magento\Sales\Model\Order\CreditmemoRepository::getList`
+- `\Magento\Sales\Model\Order\InvoiceRepository::getList`
+- `\Magento\Sales\Model\Order\ItemRepository::getList`
+- `\Magento\Sales\Model\Order\ShipmentRepository::getList`
+- `\Magento\Sales\Model\Order\Payment\Repository::getList`
+- `\Magento\Sales\Model\Order\Payment\Transaction\Repository::getList`
+- `\Magento\Quote\Model\QuoteRepository::getList`
+
+
+### Affected EE repositories
+
+- `\Magento\Signifyd\Api\CaseRepositoryInterface::getList`
+- `\Magento\Rma\Api\CommentRepositoryInterface::getList`
+- `\Magento\Rma\Api\RmaManagementInterface::search`
+- `\Magento\Rma\Api\RmaRepositoryInterface::getList`
+- `\Magento\Rma\Api\TrackRepositoryInterface::getList`
+- `\Magento\GiftWrapping\Api\WrappingRepositoryInterface::getList`
+- `\Magento\GiftCardAccount\Api\GiftCardAccountRepositoryInterface::getList`
+- `\Magento\Signifyd\Model\CaseRepository::getList`
+- `\Magento\Rma\Model\Service\RmaManagement::search`
+- `\Magento\GiftWrapping\Model\WrappingRepository::getList`
+
+
 ## Compiler changes
 
 This release removes the multi-tenant compiler option and support of the definitions option for the single tenant compiler in the `env.php` file.

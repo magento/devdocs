@@ -471,6 +471,38 @@ We are reviewing this section and will publish it soon.
 
 13.4. Exception in a single CLI command SHOULD NOT break the CLI framework; running other commands SHOULD still be possible.
 
+## 14. Events
+
+14.1. All values (including objects) passed to an event MUST NOT be modified in the event observer. Instead, plugins SHOULD BE used for modifying the input or output of a function.
+
+{% collapsible Example: %}
+{%highlight php startinline=1%}
+class SampleEventObserverThatModifiesInputs
+{
+    /**
+     * @param \Magento\Framework\Event\Observer $observer
+     */
+    public function execute(\Magento\Framework\Event\Observer $observer)
+    {
+        /** @var \Magento\Framework\App\DataObject $transport */
+        $transport = $observer->getData('transport');
+
+        if ($transport->getData('some_value') === true) {
+            /**
+             * Expecting this value to go back to the original event dispatcher violates
+             * this rule. Other observers could change the data, or Magento could make
+             * architectural changes always sending immutable objects.
+             */
+            $transport->setData('output_return_value', true);
+        }
+    }
+}
+{%endhighlight%}
+{% endcollapsible %}
+---
+
+{:start="14.2"}
+14.2. Events used SHOULD be observed as specifically as possible. A `global` subscription to an event SHOULD NOT be used when the area impacted is just `frontend`.
 
 <!-- LINKS: DEFINITIONS AND ADDRESSES -->
 
