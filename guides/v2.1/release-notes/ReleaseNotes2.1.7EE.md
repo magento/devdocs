@@ -29,10 +29,39 @@ Magento 2.1.7 contains over 15 security enhancements. Look for the following hig
 
 * **Removal of vulnerability with the Zend framework `Zend_Mail` library**. For more information, see <a href="https://magento.com/security/news/new-zend-framework-1-security-vulnerability" target="_blank">New Zend Framework 1 Security Vulnerability</a>.  
 
+* **Elimination of remote code execution vulnerability** when uploading videos. Also, Admins no longer have unserialized access to CMS or widgets, which reduces the opportunity to remotely execute code. 
+
+* **Enhanced enforcement of more granular permissions**, which reduces the potential for ACL bypass during mass delete actions in tables or the Magento UI controllers. 
+
 * **Updates to vulnerable JavaScript libraries**
 
 
+
+
+
 ## Security enhancements
+
+### Remote code execution
+<!--- 63862 -->* Magento no longer permits Admin users that have access to CMS and widgets to execute code through unserialization. 
+
+
+### Access control bypass
+<!--- 63866 -->* Admin users without proper permissions can no longer delete store backups or system support reports. 
+
+
+### Cross site request forgery
+<!--- 63864 -->* Customer-authenticated APIs are no longer vulnerable to CSRF.
+
+### Cross-site scripting
+<!--- 63517 -->* Magento no longer permits stored XSS code on the customer address page of the Magento Admin.
+
+### Zend mail
+<!--- 63632 -->*  We've removed a vulnerability with Zend Mail.
+
+
+
+
+### General
 
 <!--- 64049, 63680 -->* We’ve updated several vulnerable moment.js libraries (`query-migrate`, `query`, `jquery-ui-1.9.2.js`)
 
@@ -42,17 +71,9 @@ Magento 2.1.7 contains over 15 security enhancements. Look for the following hig
 
 <!--- 63869 -->* Magento now displays a 404 page when an Admin with insufficient privilege tries to request a specific resource. 
 
-<!--- 63866 -->* Admin users without proper permissions can no longer delete store backups or system support reports. 
-
-<!--- 63864 -->* Customer-authenticated APIs are no longer vulnerable to CSRF.
-
-<!--- 63862 -->* Magento no longer permits Admin users that have access to CMS and widgets to execute code through unserialization. 
-
-<!--- 63632 -->*  We've removed a vulnerability with Zend Mail.
 
 <!--- 63527 -->* Magento now blocks all requests from an Admin's account as soon as the Admin user is disabled. 
 
-<!--- 63517 -->* Magento no longer permits stored XSS code on the customer address page of the Magento Admin.
 
 <!--- 62475 -->* Magento now displays a 404 page when you try to route a request to `index.phpadmin`. Previously, Magento displayed an Admin page.
 

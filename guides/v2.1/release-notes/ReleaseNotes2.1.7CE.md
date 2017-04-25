@@ -31,6 +31,10 @@ Magento 2.1.7 contains over 15 security enhancements. Look for the following hig
 
 * **Removal of vulnerability with the Zend framework `Zend_Mail` library**. For more information, see <a href="https://magento.com/security/news/new-zend-framework-1-security-vulnerability" target="_blank">New Zend Framework 1 Security Vulnerability</a>.  
 
+* **Elimination of remote code execution vulnerability** when uploading videos. Also, Admins no longer have unserialized access to CMS or widgets, which reduces the opportunity to remotely execute code. 
+
+* **Enhanced enforcement of more granular permissions**, which reduces the potential for ACL bypass during mass delete actions in tables or the Magento UI controllers. 
+
 * **Updates to vulnerable JavaScript libraries**
 
 
