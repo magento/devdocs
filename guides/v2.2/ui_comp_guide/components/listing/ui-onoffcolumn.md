@@ -5,7 +5,7 @@ subgroup: components
 title: OnOffColumn component
 menu_title: OnOffColumn component
 version: 2.2
-github_link: ui_comp_guide/components/listing/ui-onoffсolumn.md
+github_link: ui_comp_guide/components/ui-onoffсolumn.md
 ---
 
 ## Overview
