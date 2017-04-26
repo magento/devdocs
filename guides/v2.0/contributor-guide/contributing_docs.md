@@ -1,7 +1,7 @@
 ---
 layout: default
 group: contributor
-subgroup: contributor
+subgroup: contributor_docs
 title: DevDocs Contributions
 menu_title: DevDocs Contributions
 menu_order: 1

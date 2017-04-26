@@ -1,7 +1,7 @@
 ---
 layout: default
 group: contributor
-subgroup: contributor
+subgroup: contributor_docs
 title: Magento Definition of Done
 menu_title: Magento Definition of Done
 menu_order: 2

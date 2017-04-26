@@ -1,14 +1,14 @@
 ---
 layout: default
-group: ext-best-practices
-subgroup: 02_Extension-Coding
-title: Backwards compatible development
-menu_title: Backwards compatible development
-menu_order: 1000
+group: contributor
+subgroup: contributor
+title: Backward compatible development
+menu_title: Backward compatible development
+menu_order: 1
 version: 2.0
-github_link: ext-best-practices/extension-coding/backwards-compatible-development/index.md
+github_link: contributor-guide/backward-compatible-development/index.md
 ---
-This page describes rules and best practices for backwards compatible development.
+This page describes rules and best practices for backward compatible development.
 
 ## Backward Сompatibility Policy
 
@@ -263,7 +263,7 @@ The following is a list of prohibited changes to Magento functional and integrat
 
 #### Changing the value of a constant 
 
-Changing the value of a constant is itself a backwards compatible change.
+Changing the value of a constant is itself a backward compatible change.
 
 Even if client code saves the value in permanent storage or use it as input or output of a method, it is the responsibility of that code to ensure that it is a reliable implementation.
 
@@ -272,7 +272,7 @@ Do not rely on a value of a constant from another module or another vendor.
 
 #### Stop setting a value to the Registry
 
-Setting a value to the Registry is backwards compatible.
+Setting a value to the Registry is backward compatible.
 However, Magento discourages usage of the Registry, so third-party extensions should not depend on values in the Registry.
 
 #### Adding an argument to an event
@@ -299,19 +299,20 @@ Adding an argument to an event is allowed.
 
 ## Backport fixes with breaking changes to patch branches
 
-Backwards compatibility is more important than niceness and implementation effort, but a Magento architect must be involved in making a decision.
+Backward compatibility is more important than niceness and implementation effort, but a Magento architect must be involved in making a decision.
 
 Potential drawbacks:
+
 * It is double the work when it is necessary to implement different solutions for the `develop` branch (upcoming minor release) and patch release branches.
 * Inability to refactor code in patch releases
 * Effort for implementing fixes in patch releases may be higher due to necessary implementation workarounds.
 
-## Refactoring objects that reach their dependency limit
+## Refactoring classes that reach limit of coupling between objects
 
-Poorly designed classes with too many responsibilities and dependencies should be refactored to prevent them from reaching the dependency limit, but removing excessing dependencies and/or breaking the class down into smaller classes is a backward incompatible implementation.
+Poorly designed classes with too many responsibilities and dependencies should be refactored to prevent them from reaching the limit of coupling between objects, but removing excessing dependencies and/or breaking the class down into smaller classes is a backward incompatible implementation.
 
-Preserve public and protected class interfaces to maintain backwards compatibility.
-Review and refactor the class such that parts of the logic go into smaller specialized classes.
+Preserve public and protected class interfaces to maintain backward compatibility.
+Review and refactor the class such that parts of the logic go into smaller specialized classes without breaking backward compatibility.
 
 * Turn the existing class into a facade to prevent existing usages of the refactored methods from breaking.
 * The old public/protected methods should be marked as deprecated with the `@see` tag to suggest the new implementation for new usages.
@@ -357,14 +358,14 @@ When replacing a WebAPI method with a new implementation that has a different si
 
 ### Removal of deprecated code
 
-Keep deprecated code for the following time frames:
+Deprecated code is preserved for the following time frames:
 
 * `@api` code: Until the next major version of the component
 * non-`@api` code: The next 2 minor releases or until a major release
 
-## Documentation of Backwards Incompatible Changes
+## Documentation of Backward Incompatible Changes
 
-Backwards incompatible changes must be approved by an architect and documented in the scope of the task that introduces those changes.
+Backward incompatible changes must be approved by an architect and documented in the scope of the task that introduces those changes.
 
 Examples of these tasks include:
 
@@ -389,7 +390,7 @@ Auto-generated [EE changes](https://htmlpreview.github.io/?https://github.com/ma
 
 In the [DevDocs repository][devdocs-repo], manually add backward incompatible changes to the following file:
 
-`https://github.com/magento/devdocs/blob/develop/guides/v\<version\>/release-notes/backward-incompatible-changes.md` 
+`https://github.com/magento/devdocs/blob/develop/guides/v<version>/release-notes/backward-incompatible-changes.md` 
 
 Where: `<version>` is the MINOR version of the product (2.1, 2.2, 2.3, etc).
 
