@@ -87,7 +87,7 @@ You can configure the pool of validators, which allows processing various paymen
  - `availability` — checks if the payment method is available
  - `global` — the validation that is called before placing an order
  
-Custom validator should implement the `\Magento\Payment\Gateway\Validator\ValidatorInterface` or in the most cases, it is enough
+A custom validator should implement the `\Magento\Payment\Gateway\Validator\ValidatorInterface`. In the most cases, it is enough
 to extend the `\Magento\Payment\Gateway\Validator\AbstractValidator` and create an implementation of the `validate` method:
 
 {% highlight php startinline=1 %}
