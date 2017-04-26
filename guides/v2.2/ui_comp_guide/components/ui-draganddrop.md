@@ -5,7 +5,7 @@ subgroup: components
 title: DragAndDrop component
 menu_title: DragAndDrop component
 version: 2.2
-github_link: ui_comp_guide/components/listing/ui-draganddrop.md
+github_link: ui_comp_guide/components/ui-draganddrop.md
 ---
 
 ## Overview

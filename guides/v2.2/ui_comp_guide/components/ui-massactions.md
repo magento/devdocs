@@ -5,7 +5,7 @@ subgroup: components
 title: MassActions component
 menu_title: MassActions component
 version: 2.2
-github_link: ui_comp_guide/components/listing/ui-massactions.md
+github_link: ui_comp_guide/components/ui-massactions.md
 ---
 
 ## Overview

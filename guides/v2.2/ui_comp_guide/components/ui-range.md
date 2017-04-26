@@ -5,7 +5,7 @@ subgroup: components
 title: Range component
 menu_title: Range component
 version: 2.2
-github_link: ui_comp_guide/components/listing/ui-range.md
+github_link: ui_comp_guide/components/ui-range.md
 ---
 
 ## Overview

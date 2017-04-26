@@ -5,7 +5,7 @@ subgroup: components
 title: Paging component
 menu_title: Paging component
 version: 2.2
-github_link: ui_comp_guide/components/listing/ui-paging.md
+github_link: ui_comp_guide/components/ui-paging.md
 ---
 
 ## Overview
