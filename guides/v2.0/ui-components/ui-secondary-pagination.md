@@ -45,7 +45,7 @@ Example:
 
 The configuration of the component can include:
 
-* storageConfig - storageConfig is a base component property. Here it is configured to take stored page sizes list from bookmarks
+* `storageConfig` - storageConfig is a base component property. Here it is configured to take stored page sizes list from bookmarks
 
 * `sizesConfig`: configuration of the component that defines available page sizes. By default it is `Magento_Ui/js/grid/paging/sizes`.
     * `minSize`: minimum number of elements on a page, default: 1
