@@ -79,7 +79,7 @@ class AcceptValidator extends AbstractValidator
 }
 {% endhighlight %}
 
-Now, the newly added validator should be specified for a specific command. Below is an example of an authorization command:
+Now, the newly added validator should be specified for a specific command. Below is an example of specifying a validator for an authorization command:
  
 {% highlight xml %}
 ...
