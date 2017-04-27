@@ -39,7 +39,7 @@ Wysiwyg-specific options:
   </tr>
   <tr>
     <td><code>elementSelector</code></td>
-    <td>The path Type of the HTML element that is wrapped by the WYSIWYG editor.</td>
+    <td>Selector of the HTML element that is wrapped by the WYSIWYG editor.</td>
     <td>String</td>
     <td><code>textarea</code></td>
   </tr>
