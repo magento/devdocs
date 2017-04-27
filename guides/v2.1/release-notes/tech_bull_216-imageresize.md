@@ -10,14 +10,16 @@ version: 2.1
 github_link: release-notes/tech_bull_216-imageresize.md
 ---
 
+*Technical bulletin first published on April 27, 2017.*
+
 These instructions apply to anyone upgrading to Magento Community Edition (CE) or Magento Enterprise Edition (EE) version 2.1.6.
 
 ### Who needs this information?
 You need to read this bulletin if you've upgraded to Magento 2.1.6 (CE or EE) and are experiencing any of the following issues: 
 
-* all images on the product front end appear reduced in size, including the base image. 
+* all images on the product front end appear reduced in size, including the base image
 
-* images are different sizes (occurs after you've run the CLI image resize command)
+* images are different sizes (occurs after you've run the CLI image resize command).
 
 You cannot change the size of the base image size within the gallery using etc>view.xml. Instead, using this method increases image size as well as gallery size, which renders the image out of alignment.
 
@@ -49,13 +51,11 @@ To prevent Magento from resizing images, you must include <frame>0</frame> withi
 
 ### More information
 
-https://github.com/magento/magento2/issues/9385
-
-https://github.com/magento/magento2/issues/9395
+For further discussion of this issue, see <a href="https://github.com/magento/magento2/issues/9385" target="_blank">(GITHUB-9385)</a> and <a href="https://github.com/magento/magento2/issues/9395" target="_blank">(GITHUB-9395)</a>. 
 
 
-
-
+## Credits
+Dear community members, thank you for your prompt identification of this issue.  
 
 
 
