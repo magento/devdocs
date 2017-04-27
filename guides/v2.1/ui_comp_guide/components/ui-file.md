@@ -12,8 +12,6 @@ github_link: ui_comp_guide/components/ui-file.md
 
 The File component implements the HTML `<input type="file">` form field.
 
-<p class="q">Denis's comment:  no changes (probably deprecated as it was superseded by the "fileUploader")</p>
-
 ## File configuration
 
 Extends all `abstract` configuration.

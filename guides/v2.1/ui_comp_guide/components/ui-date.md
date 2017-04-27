@@ -61,10 +61,10 @@ Extends all `abstract` configuration.
     <td><code>''</code></td>
   </tr>
   <tr>
-    <td><code>shiftedValue</code></td>
-    <td>Date/time value shifted to corresponding time zone, according to <code>this.storeTimeZone</code> property. This value is sent to the server.</td>
-    <td>String</td>
-    <td><code>''</code></td>
+    <td><code>timeOffset</code></td>
+    <td>The number of seconds added to the value specified by user.</td>
+    <td>Number</td>
+    <td><code>0</code></td>
   </tr>
   <tr>
     <td><code>template</code></td>
@@ -73,5 +73,3 @@ Extends all `abstract` configuration.
     <td><code>ui/form/field</code></td>
   </tr>
 </table>
-
-<p class="q">comment date: added "timezoneFormat" and "storeTimeZone" (supersedes "timeOffset") options. should I add "timeOffset" in 2.1?</p>

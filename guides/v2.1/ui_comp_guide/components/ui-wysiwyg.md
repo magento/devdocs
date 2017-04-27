@@ -67,4 +67,3 @@ Wysiwyg-specific options:
   </tr>
 </table>
 
-<p class="q">no desc of wysiwygEditorButton in 2.2</p>
