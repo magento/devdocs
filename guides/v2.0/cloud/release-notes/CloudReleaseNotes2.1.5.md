@@ -1,7 +1,7 @@
 ---
 layout: default
 group: 
-subgroup: 03_ReleaseNotes
+subgroup: 030_ReleaseNotes
 title: Magento Enterprise Cloud Edition 2.1.5 and 2.0.13 Release Notes
 menu_title: Magento Enterprise Cloud Edition 2.1.5 and 2.0.13 Release Notes
 menu_order: 48

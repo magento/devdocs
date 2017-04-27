@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 40_live
+subgroup: 160_live
 title: Migrate data
 menu_title: Migrate data
 menu_order: 200

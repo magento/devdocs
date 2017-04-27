@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 08_setup
+subgroup: 080_setup
 title: First steps for importing Magento EE
 menu_title: First steps for importing Magento EE
 menu_order: 151

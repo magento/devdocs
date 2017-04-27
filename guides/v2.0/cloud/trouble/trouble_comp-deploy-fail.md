@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 50_trouble
+subgroup: 170_trouble
 title: Component deployment failure
 menu_title: Component deployment failure
 menu_order: 50

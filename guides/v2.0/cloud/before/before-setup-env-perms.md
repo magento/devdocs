@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 08_setup
+subgroup: 080_setup
 title: Step 7, Set file system permissions and ownership
 menu_title: Step 7, Set file system permissions and ownership
 menu_order: 167

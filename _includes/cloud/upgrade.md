@@ -3,7 +3,7 @@
 This topic discusses how to upgrade Magento Enterprise Cloud Edition from any version after 2.0.4. If you're currently using version 2.0.4, see [Upgrade from version 2.0.4](#cloud-upgrade-204).
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-Always upgrade your local system first, then your [integration system]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-int) (that is, the remote Cloud server). Resolve any issues before upgrading either [staging]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-stage) or [production]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-prod).
+Always upgrade your local system first, then your [integration system]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int) (that is, the remote Cloud server). Resolve any issues before upgrading either [staging]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-stage) or [production]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-prod).
 </div>
 
 ### Prerequisite: create `auth.json` (if necessary)
