@@ -4,7 +4,7 @@ group: UI_Components_guide
 subgroup: components
 title: Date component
 menu_title: Date component
-version: 2.2
+version: 2.1
 github_link: ui_comp_guide/components/ui-date.md
 ---
 
@@ -61,27 +61,15 @@ Extends all `abstract` configuration.
     <td><code>''</code></td>
   </tr>
   <tr>
-    <td><code>shiftedValue</code></td>
-    <td>Date/time value shifted to corresponding time zone, according to <code>this.storeTimeZone</code> property. This value is sent to the server.</td>
-    <td>String</td>
-    <td><code>''</code></td>
-  </tr>
-  <tr>
-    <td><code>storeTimeZone</code></td>
-    <td>The timezone used.</td>
-    <td>String</td>
-    <td><code>'UTC'</code></td>
+    <td><code>timeOffset</code></td>
+    <td>The number of seconds added to the value specified by user.</td>
+    <td>Number</td>
+    <td><code>0</code></td>
   </tr>
   <tr>
     <td><code>template</code></td>
     <td>The path to the general field <code>.html</code> template.</td>
     <td>String</td>
     <td><code>ui/form/field</code></td>
-  </tr>
-  <tr>
-    <td><code>timezoneFormat</code></td>
-    <td>Timezone format, required for the <a href="https://momentjs.com/">moment.js library</a> for conversion.</td>
-    <td>String</td>
-    <td><code>YYYY-MM-DD HH:mm</code></td>
   </tr>
 </table>

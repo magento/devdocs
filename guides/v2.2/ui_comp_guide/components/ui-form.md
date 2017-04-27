@@ -4,7 +4,7 @@ group: UI_Components_guide
 subgroup: components
 title: Form component
 menu_title: Form component
-version: 2.2
+version: 2.1
 github_link: ui_comp_guide/components/ui-form.md
 ---
 
@@ -105,21 +105,6 @@ Form-specific configuration:
       </td>
       <td>
         <code>Magento_Ui/js/form/form</code>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <code>errorClass</code>
-      </td>
-      <td>
-        The CSS class added to the component's DOM block
-        if an error appears.
-      </td>
-      <td>
-        String
-      </td>
-      <td>
-        <code>'.admin__field._error'</code>
       </td>
     </tr>
     <tr>
