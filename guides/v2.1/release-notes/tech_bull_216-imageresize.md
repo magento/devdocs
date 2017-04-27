@@ -26,7 +26,7 @@ You cannot change the size of the base image size within the gallery using etc>v
 
 ### Background
 
-Magento 2.1.6 introduced a change in how images are handled: By default, the value of  <frame></frame> is set to true. Previously, this value was not set to true by default. 
+Magento 2.1.6 introduced a change in how images are handled: By default, the value of <frame></frame> is set to true. Previously, this value was not set to true by default. 
 
 #### What does the <frame>/<frame> option do?
 
@@ -41,11 +41,11 @@ If the image doesn't have a <frame> option,  Magento uses the `product_image_whi
 To prevent Magento from resizing images, you must include <frame>0</frame> within that image definition in `view.xml`. 
 
 
-1. update the view.xml by adding <frame>0</frame> within each image definition
+1. Update your `view.xml` file by adding `<frame>0</frame>` to each image definition.
 
-2. clean cache 
+2. Clean your full-page cache. 
 
-3. manually resize all your images with bin/magento catalog:images:resize 
+3. manually resize all your images using the `bin/magento catalog:images:resize` command. 
 
 
 
