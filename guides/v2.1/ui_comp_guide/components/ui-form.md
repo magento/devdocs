@@ -19,27 +19,6 @@ Form is a [basic component]({{page.baseurl}}ui_comp_guide/bk-ui_comps.html#gener
 
 Javascript constructor: [form.js]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/form/form.js)
 
-### Related UI components
-
-The following components can be used in the scope of the Form component:
-
-* ActionDelete
-* Checkbox
-* Checkboxset
-* DataSource
-* FieldSet
-* FileUploader
-* Hidden
-* Input
-* Multiline
-* Multiselect
-* Radioset
-* Select
-* Text
-* Textarea
-* Wysiwyg
-
-
 ## Component options
 
 Form configuration extends the [`uiCollection`]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uicollection_concept.html) configuration.

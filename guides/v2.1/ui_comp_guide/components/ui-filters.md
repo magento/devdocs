@@ -39,7 +39,7 @@ Filters-specific configuration:
   <tr>
     <td><code>statefull</code></td>
     <td>Defines a list of component properties whose values are automatically saved in the configured storage if they change. <code>key</code> is the property's name and the <code>value</code> defines whether its saved.</td>
-    <td>{<br>[name: string]: boolean<br>}</td>
+    <td>{<br>[name: string]: Boolean<br>}</td>
     <td></td>
   </tr>
   <tr>
@@ -62,15 +62,3 @@ Filters-specific configuration:
   </tr>
 </table>
 
-## Examples
-### Example 1: Add a new customer attribute and make it filterable
-
-To add a new customer attribute to the customer grid and make it filterable, you need to follow these steps:
-
-1. Сreate view/adminhtml/ui_component/customer_listing.xml to add a column component
-2. Сreate the column component PHP class which extends Magento\Ui\Component\Listing\Columns\Column
-3. Сreate etc/indexer.xml to add the attribute to the customer_grid index and define it as filterable
-4. Set is_used_in_grid to true for the attribute
-
-### Example 2: Add a custom calculated filter
-...

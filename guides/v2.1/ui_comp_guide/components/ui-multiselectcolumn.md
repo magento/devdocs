@@ -57,7 +57,7 @@ MultiselectColumn-specific configuration:
   <tr>
     <td><code>fieldClass</code></td>
     <td>Additonal CSS classes added to the column's field elements.</td>
-    <td>{<br>[name: string]: boolean<br>}</td>
+    <td>{<br>[name: string]: Boolean<br>}</td>
     <td>{<br><code>'data-grid-checkbox-cell': true</code><br>}</td>
   </tr>
   <tr>
