@@ -61,12 +61,6 @@ Extends all `abstract` configuration.
     <td><code>''</code></td>
   </tr>
   <tr>
-    <td><code>shiftedValue</code></td>
-    <td>Date/time value shifted to corresponding time zone, according to <code>this.storeTimeZone</code> property. This value is sent to the server.</td>
-    <td>String</td>
-    <td><code>''</code></td>
-  </tr>
-  <tr>
     <td><code>template</code></td>
     <td>The path to the general field <code>.html</code> template.</td>
     <td>String</td>

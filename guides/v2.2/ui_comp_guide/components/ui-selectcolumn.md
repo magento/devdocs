@@ -76,7 +76,7 @@ SelectColumn-specific configuration:
       <code>value</code>
     </td>
     <td>
-      Option's identifier.
+      Option's identifier or an array of options.
     </td>
     <td>
       String | Number | Array&lt;Option&gt;
