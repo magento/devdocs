@@ -39,6 +39,13 @@ If the image doesn't have a <frame> option,  Magento uses the `product_image_whi
 To prevent Magento from resizing images, you must include <frame>0</frame> within that image definition in `view.xml`. 
 
 
+1. update the view.xml by adding <frame>0</frame> within each image definition
+
+2. clean cache 
+
+3. manually resize all your images with bin/magento catalog:images:resize 
+
+
 
 ### More information
 
