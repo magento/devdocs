@@ -780,7 +780,7 @@ process payment actions between Magento Sales Management and payment processor.<
     </tr>
     <tr>
       <td><code>validatorPool</code></td>
-      <td><a href="/guides/v2.1/payments-integrations/payment-gateway/response-validator.html#validators_pool">Pool of response validators</a>.</td>
+      <td><a href="#validators_pool">Pool of validators</a>.</td>
     </tr>
     <tr>
       <td><code>commandPool</code></td>
@@ -822,6 +822,55 @@ configuration from database or payment config file.</p>
 <p>Other handlers contain some logic, for example, <code>can_cancel</code> option is the same as <code>can_void</code> and depends on whether the order has paid amount (invoiced).</p>
 
 <p>Your custom handlers must implement the <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Payment/Gateway/Config/ValueHandlerInterface.php">Value Handler interface</a>.</p>
+
+<h4 id="validators_pool">Validators pool</h4>
+
+<p>You can configure the pool of validators, which allows processing various payment method validations. Below are the examples of such validators:</p>
+
+<ul>
+  <li><code>country</code> — checks if billing country is allowed for the payment method</li>
+  <li><code>currency</code> — checks if the selected currency is allowed for the payment method</li>
+  <li><code>availability</code> — checks if the payment method is available</li>
+  <li><code>global</code> — the validation that is called before placing an order</li>
+</ul>
+
+<p>A custom validator should implement the <code>\Magento\Payment\Gateway\Validator\ValidatorInterface</code>. In the most cases, it is enough
+to extend the <code>\Magento\Payment\Gateway\Validator\AbstractValidator</code> and create an implementation of the <code>validate</code> method:</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">CountryValidator</span> <span class="k">extends</span> <span class="nx">AbstractValidator</span>
+<span class="p">{</span>
+    <span class="sd">/**</span>
+<span class="sd">     * @inheritdoc</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">validate</span><span class="p">(</span><span class="k">array</span> <span class="nv">$validationSubject</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$isValid</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span>
+        <span class="nv">$storeId</span> <span class="o">=</span> <span class="nv">$validationSubject</span><span class="p">[</span><span class="s1">&#39;storeId&#39;</span><span class="p">];</span>
+
+        <span class="k">if</span> <span class="p">((</span><span class="nx">int</span><span class="p">)</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">config</span><span class="o">-&gt;</span><span class="na">getValue</span><span class="p">(</span><span class="s1">&#39;allowspecific&#39;</span><span class="p">,</span> <span class="nv">$storeId</span><span class="p">)</span> <span class="o">===</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$availableCountries</span> <span class="o">=</span> <span class="nb">explode</span><span class="p">(</span>
+                <span class="s1">&#39;,&#39;</span><span class="p">,</span>
+                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">config</span><span class="o">-&gt;</span><span class="na">getValue</span><span class="p">(</span><span class="s1">&#39;specificcountry&#39;</span><span class="p">,</span> <span class="nv">$storeId</span><span class="p">)</span>
+            <span class="p">);</span>
+
+            <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">in_array</span><span class="p">(</span><span class="nv">$validationSubject</span><span class="p">[</span><span class="s1">&#39;country&#39;</span><span class="p">],</span> <span class="nv">$availableCountries</span><span class="p">))</span> <span class="p">{</span>
+                <span class="nv">$isValid</span> <span class="o">=</span>  <span class="k">false</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">createResult</span><span class="p">(</span><span class="nv">$isValid</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Then, the newly created validator needs to be added to the global pool of validators:</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">&quot;BraintreeValidatorPool&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\Payment\Gateway\Validator\ValidatorPool&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;arguments&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;validators&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;country&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento\Braintree\Gateway\Validator\CountryValidator<span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/arguments&gt;</span>
+<span class="nt">&lt;/virtualType&gt;</span></code></pre></figure>
 
 <h2 id="whats-next">What’s next</h2>
 
