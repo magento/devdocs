@@ -41,7 +41,7 @@ We recommend against providing the keys over e-mail because it isn't secure; ins
 {% endcollapsible %}
 
 ## Create project administrators {#cloud-owner-admins}
-As discussed in more detail in [Manage users]({{ page.baseurl }}cloud/admin/admin-user-admin.html), Magento Enterprise Cloud Edition has a number of user roles.
+As discussed in more detail in [Manage users]({{ page.baseurl }}cloud/project/user-admin.html), Magento Enterprise Cloud Edition has a number of user roles.
 
 Typically, the only user the account owner must create is the *project administrator* (also referred to as the super user). This user can create other users and delegate roles as desired.
 

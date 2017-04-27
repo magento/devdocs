@@ -32,7 +32,7 @@ This example shows how you can set and lock configuration values for everything 
 </div> -->
 
 ## Required role
-To complete the tasks discussed in this topic, you must have at minimum a project reader role with [environment administrator]({{ page.baseurl }}cloud/admin/admin-user-admin.html#loud-role-env) privileges.
+To complete the tasks discussed in this topic, you must have at minimum a project reader role with [environment administrator]({{ page.baseurl }}cloud/project/user-admin.html#loud-role-env) privileges.
 
 ## Configuration settings you can change {#cloud-clp-settings}
 The following table shows the configuration settings affected by the `magento app:config:scd-dump` command. These are the configuration settings you can manage in Git.

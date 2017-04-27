@@ -89,7 +89,7 @@ Configuring a project means:
 2.	Click ![configure your project]({{ site.baseurl }}common/images/cloud_edit-project.png) (Configure project) next to the project name.
 3.	See one of the following for more information:
 
-	*	[Manage users]({{page.baseurl}}cloud/admin/admin-user-admin.html)
+	*	[Manage users]({{page.baseurl}}cloud/project/user-admin.html)
 	*	[Pull code from a private Git repository]({{page.baseurl}}cloud/project/project-priv-repos.html)
 
 {% endcollapsible %}
@@ -113,7 +113,7 @@ Configuring an environment means:
 	*	[Environment settings](#project-conf-env-set)
 	*	[Set environment variables](#project-conf-env-var)
 	*	[Configure routes](#project-conf-env-route)
-	*	[Manage users]({{page.baseurl}}cloud/admin/admin-user-admin.html)
+	*	[Manage users]({{page.baseurl}}cloud/project/user-admin.html)
 
 ### Environment settings {#project-conf-env-set}
 The following table shows available environment settings.
@@ -141,7 +141,7 @@ The following table shows available environment settings.
 ### Set environment variables {#project-conf-env-var}
 As discussed in [Overview of environment variables]({{page.baseurl}}cloud/env/environment-vars_over.html), environment variables are settings specific to an environment. Variables can be either text or JSON format.
 
-To view or edit environment variables, you must have at minimum the project reader role with [environment admin]({{ page.baseurl }}cloud/admin/admin-user-admin.html#cloud-role-env) privileges.
+To view or edit environment variables, you must have at minimum the project reader role with [environment admin]({{ page.baseurl }}cloud/project/user-admin.html#cloud-role-env) privileges.
 
 For example, you can change the Magento Admin administrative password using environment variables as follows:
 
