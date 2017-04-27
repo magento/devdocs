@@ -5,7 +5,7 @@ subgroup: components
 title: Paging component
 menu_title: Paging component
 version: 2.2
-github_link: ui_comp_guide/components/listing/ui-paging.md
+github_link: ui_comp_guide/components/ui-paging.md
 ---
 
 ## Overview
@@ -34,10 +34,19 @@ Paging-specific configuration:
     <td><code>ui/grid/paging-total</code></td>
   </tr>
   <tr>
-    <td><code>sizesConfig</code></td>
-    <td>Configuration that is passed to the <code>Sizes</code> component.</td>
+    <td><code>sizesConfig</code>
+<ul>
+<li><code>minSize</code></li>
+<li><code>maxSize</code></li>
+</ul>
+
+</td>
+    <td>Configuration that is passed to the <code>Sizes</code> component: minimum and maximum number of elements on a page.</td>
     <td>Object</td>
-    <td>-</td>
+    <td><ul>
+<li>1</li>
+<li>999</li>
+</ul></td>
   </tr>
   <tr>
     <td><code>template</code></td>

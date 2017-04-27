@@ -79,6 +79,7 @@ Index name | Configuration file | Configured object | Parameter name | Default v
 catalog_product_price (Product Price)	| `Magento/Catalog/etc/di.xml` | `Magento\Catalog\Model\ResourceModel\Product\Indexer\Price\BatchSizeCalculator` | batchRowsCount['default']	| 5000
 cataloginventory_stock (Stock)	| `Magento/CatalogInventory/etc/di.xml`	| `Magento\CatalogInventory\Model\Indexer\Stock\Action\Full` | batchRowsCount['default']	| 200
 catalog_category_product (Category Products)| `Magento/Catalog/etc/di.xml`	| `Magento\Catalog\Model\Indexer\Category\Product\Action\Full` |	batchRowsCount	| 100000
+catalog_product_attribute (Product Attribute)| `Magento/Catalog/etc/di.xml` | `Magento\Catalog\Model\ResourceModel\Product\Indexer\Eav\BatchSizeCalculator` | batchSizes['decimal'], batchSizes['source'] | 1000, 1000
 
 Changing the batch size can help you optimize indexer running time. For example, for a store with the following characteristcs:
 
@@ -133,7 +134,7 @@ The value of `table_suffix` column of the `indexer_state` table determines which
 Make sure that these indexers are in "Update By Schedule" mode. If "Update On Save" mode is selected, some data can be lost if you make changes during full reindex.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-Indexer table switching mechanism requires additional database storage.
+The indexer table switching mechanism requires additional database storage.
 </div>
 
 ### Related topics

@@ -79,17 +79,14 @@ class AcceptValidator extends AbstractValidator
 }
 {% endhighlight %}
 
-## Pool of validators {#validators_pool} 
-The following sample demonstrates defining a validator's pool and adding validators to this pool for the Braintree payment provider in `di.xml`:
+Now, the newly added validator should be specified for a specific command. Below is an example of specifying a validator for an authorization command:
  
 {% highlight xml %}
 ...
-<virtualType name="BraintreeValidatorPool" type="Magento\Payment\Gateway\Validator\ValidatorPool">
+<virtualType name="BraintreeAuthorizeCommand" type="Magento\Payment\Gateway\Command\GatewayCommand">
     <arguments>
-        <argument name="validators" xsi:type="array">
-            <item name="country" xsi:type="object">Magento\Payment\Gateway\Validator\CountryValidator</item>
-            <item name="accept" xsi:type="string">AcceptValidator</item>
-        </argument>
+        ...
+        <argument name="validator" xsi:type="object">Magento\Braintree\Gateway\Validator\AcceptValidator</argument>
     </arguments>
 </virtualType>
 ...

@@ -5,7 +5,7 @@ subgroup: components
 title: FiltersChips component
 menu_title: FiltersChips component
 version: 2.2
-github_link: ui_comp_guide/components/listing/ui-filtersсhips.md
+github_link: ui_comp_guide/components/ui-filtersсhips.md
 ---
 
 ## Overview

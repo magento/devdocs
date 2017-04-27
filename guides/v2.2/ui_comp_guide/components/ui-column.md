@@ -5,7 +5,7 @@ subgroup: components
 title: Column component
 menu_title: Column component
 version: 2.2
-github_link: ui_comp_guide/components/listing/ui-column.md
+github_link: ui_comp_guide/components/ui-column.md
 ---
 
 ## Overview
