@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 40_live
+subgroup: Live
 title: Example of managing system-specific settings 
 menu_title: Example of managing system-specific settings
 menu_order: 15

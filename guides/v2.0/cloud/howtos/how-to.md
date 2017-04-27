@@ -2,7 +2,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 150_howto
+subgroup: How To
 title: Tutorials
 menu_title: Tutorials
 menu_order: 1
