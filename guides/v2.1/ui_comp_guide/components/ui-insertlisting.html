@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Linking properties of UI components | Magento 2 Developer Documentation</title>
+	<title>InsertListing component | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.1/ui_comp_guide/concepts/ui_comp_linking_concept.html">
+	<link rel="canonical" href="//guides/v2.1/ui_comp_guide/components/ui-insertlisting.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -52,9 +52,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/ui_comp_guide/concepts/ui_comp_linking_concept.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/ui_comp_guide/components/ui-insertlisting.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_linking_concept.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/ui_comp_guide/components/ui-insertlisting.html">Magento 2.1</a></li>
 	
   </ul>
 
@@ -538,7 +538,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/ui_comp_guide/components/ui-insertlisting.html">InsertListing component</a></li>
+									<li class="level-2  active "><a href="/guides/v2.1/ui_comp_guide/components/ui-insertlisting.html">InsertListing component</a></li>
 
 									
 
@@ -824,7 +824,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_linking_concept.html">Linking properties of UI components</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_linking_concept.html">Linking properties of UI components</a></li>
 
 									
 
@@ -1032,7 +1032,7 @@
 
           
 
-          <span property="name">Linking properties of UI components</span>
+          <span property="name">InsertListing component</span>
 
         
 
@@ -1055,190 +1055,184 @@
 
 	
 
-	<h1 class="page-heading">Linking properties of UI components</h1>
+	<h1 class="page-heading">InsertListing component</h1>
 
   
 
 
 </section>
 
-			<h2 id="linking-properties-implementation">Linking properties implementation</h2>
+			<h2 id="overview">Overview</h2>
+<p>The InsertListing component inserts <a href="/guides/v2.1/ui_comp_guide/components/ui-listing-grid.html">Listing</a> into other components.</p>
 
-<p>The following properties are used for linking observable properties and methods of UI components:</p>
+<h2 id="configuration-options">Configuration options</h2>
 
-<ul>
-  <li><code>exports</code></li>
-  <li><code>imports</code></li>
-  <li><code>links</code></li>
-  <li><code>listens</code></li>
-</ul>
+<p>Extends all <a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_uielement_concept.html"><code>uiElement</code></a> configuration.</p>
 
-<p>These properties are processed by the <code>initLinks()</code> method of the <a href="/guides/v2.1//ui_comp_guide/concepts/ui_comp_uielement_concept.html"><code>uiElement</code> class</a> which is called at the moment of a component’s instantiation.</p>
+<p>InsertListing-specific configuration:</p>
 
-<p>Linking properties are set in <a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_config_flow_concept.html">UI components configuration files</a>: XML, JS or PHP.</p>
-
-<h2 id="list-of-linking-properties">List of linking properties</h2>
-
-<h3 id="exports"><code>exports</code></h3>
-
-<p>The <code>exports</code> property is used to notify some external entity that a property has changed. <code>exports</code>’s value is an object, composed of the following:</p>
-
-<ul>
-  <li><code>key</code>: name of the internal property or method that is tracked for changes.</li>
-  <li><code>value</code>: name of the property or method that receives the notification. Can use <a href="#string_templ">string templates</a>.</li>
-</ul>
-
-<p>Example of setting <code>exports</code> in a component’s <code>.js</code> file:</p>
-
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span>
-  <span class="s1">&#39;exports&#39;</span><span class="o">:</span> <span class="p">{</span>
-   <span class="s1">&#39;visible&#39;</span><span class="o">:</span> <span class="s1">&#39;${ $.provider }:visibility&#39;</span>
-  <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
-
-<p>Here <code>visible</code> is the <code>key</code>, <code>${ $.provider }:visibility</code> is the <code>value</code>. The value of the local <code>visible</code> property is assigned to the <code>visibility</code> property of the <code>provider</code> component. The latter is changed automatically if the value of <code>visible</code> changes.</p>
-
-<p>Example of setting <code>exports</code> in a component’s configuration <code>.xml</code> file:</p>
-
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;exports&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;visible&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>sample_config.sample_provider:visibility<span class="nt">&lt;/item&gt;</span>
-        <span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;/item&gt;</span>
-<span class="nt">&lt;/argument&gt;</span></code></pre></figure>
-
-<p>For an example of <code>exports</code> usage in Magento code see <a href="https://github.com/magento/magento2/blob/2.1//app/code/Magento/CatalogInventory/view/adminhtml/ui_component/product_form.xml#L81"><code>product_form.xml</code>, line 81</a></p>
-
-<h3 id="imports"><code>imports</code></h3>
-<p>The <code>imports</code> property is used for tracking changes of an external entity property. <code>imports</code>’s value is an object, composed of the following:</p>
-
-<ul>
-  <li><code>key</code>: name of the internal property or method that receives the notifications.</li>
-  <li><code>value</code>: name of the property or method that is tracked for changes. Can use <a href="#string_templ">string templates</a>.</li>
-</ul>
-
-<p>Example of using <code>imports</code> in a component’s <code>.js</code> file:</p>
-
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span>
-  <span class="s1">&#39;imports&#39;</span><span class="o">:</span> <span class="p">{</span>
-   <span class="s1">&#39;visible&#39;</span><span class="o">:</span> <span class="s1">&#39;${ $.provider }:visibility&#39;</span>
-  <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
-
-<p>Here the value of the <code>visibility</code> property of the <code>provider</code> component is assigned to the local <code>visible</code> property. The latter is automatically updated if <code>visibility</code> changes.</p>
-
-<p>Example of using <code>imports</code> in a component’s configuration <code>.xml</code> file:</p>
-
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;imports&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;visible&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>sample_config.sample_provider:visibility<span class="nt">&lt;/item&gt;</span>
-        <span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;/item&gt;</span>
-<span class="nt">&lt;/argument&gt;</span></code></pre></figure>
-
-<p>For an example of <code>imports</code> usage in Magento code see <a href="https://github.com/magento/magento2/blob/2.1//app/code/Magento/CatalogInventory/view/adminhtml/ui_component/product_form.xml#L103"><code>product_form.xml</code>, line 103</a></p>
-
-<h3 id="links"><code>links</code></h3>
-
-<p>The <code>links</code> property is used for cross tracking properties changes: both linked properties are tracked and changing of one results in changing the other. <code>links</code>’s value is an object, composed of the following:</p>
-
-<ul>
-  <li><code>key</code>: name of the internal property or method that sends and receives the notifications.</li>
-  <li><code>value</code>: name of the property or method that sends and receives the notifications. Can use <a href="#string_templ">string templates</a>.</li>
-</ul>
-
-<p>Example of using <code>links</code> in a component’s <code>.js</code> file:</p>
-
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span>
-  <span class="s1">&#39;links&#39;</span><span class="o">:</span> <span class="p">{</span>
-   <span class="s1">&#39;visible&#39;</span><span class="o">:</span> <span class="s1">&#39;${ $.provider }:visibility&#39;</span>
-  <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
-
-<p>Here the local <code>visible</code> property is linked with the <code>visibility</code>  property of the provider component. Once any of them changes, the other is changed automatically.</p>
-
-<p>Example of using <code>links</code> in a component’s configuration <code>.xml</code> file:</p>
-
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;links&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;visible&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>sample_config.sample_provider:visibility<span class="nt">&lt;/item&gt;</span>
-        <span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;/item&gt;</span>
-<span class="nt">&lt;/argument&gt;</span></code></pre></figure>
-
-<p>For an example of <code>links</code> usage in Magento code see <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/form/element/text.js#L19"><code>text.js</code>, line 19</a></p>
-
-<h3 id="listens"><code>listens</code></h3>
-<p>The <code>listens</code> property is used to track the changes of a component’s property. <code>listens</code>’s value is an object, composed of the following:</p>
-
-<ul>
-  <li><code>key</code>: name of the internal property which listens to the changes.</li>
-  <li><code>value</code>: name of the property or method which is tracked for changes. Can use <a href="#string_templ">string templates</a>.</li>
-</ul>
-
-<p>Example of using <code>listens</code> in a component’s <code>.js</code> file :</p>
-
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span>
-  <span class="s1">&#39;listens&#39;</span><span class="o">:</span> <span class="p">{</span>
-   <span class="s1">&#39;visible&#39;</span><span class="o">:</span> <span class="s1">&#39;${ $.provider }:visibility&#39;</span>
-  <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
-
-<p>Here the value of the local <code>visible</code> property is assigned to the <code>visibility</code> property of the <code>provider</code> component. The latter is changed automatically if the value of <code>visible</code> changes.</p>
-
-<p>Example of using <code>listens</code> in a component’s configuration <code>.xml</code> file:</p>
-
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;listens&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;visible&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>sample_config.sample_provider:visibility<span class="nt">&lt;/item&gt;</span>
-        <span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;/item&gt;</span>
-<span class="nt">&lt;/argument&gt;</span></code></pre></figure>
-
-<p>For example of <code>listens</code> usage in Magento code see <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Catalog/view/adminhtml/ui_component/new_category_form.xml#L92"><code>new_category_form.xml</code>, line 92</a></p>
-
-<h2 id="string_templ">Template strings usage</h2>
-
-<p>The <code>value</code> options of linking properties can contain template strings in the <code>'${...}'</code> format. During component’s initialization, values in this format are processed as template strings using <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Template_literals">ES6 templates</a>. In browsers that do not support ES6 templates, these values are processed as underscore templates.</p>
-
-<p>So if we put a variable name in <code>'${...}'</code>, it is processed into a string representation of the variable’s value.</p>
-
-<p>When working with UI components, we often need to use the string representation of a certain property of the UI component. To address a property of the UI component in the scope of this component, the <code>$.someProperty</code> syntax is used.</p>
-
-<p>As a result, if the component’s property is the variable for the template string, we get notation similar to the following:</p>
-
-<pre><code>'${ $.provider }' 
-</code></pre>
-
-<p>We can also build complex templates strings using this syntax, as follows:</p>
-
-<ul>
-  <li>
-    <p>Using variables from the other component:</p>
-
-    <p><code>
-  '${ $.provider }:${ $.dataScope }' // 'provider' is the full name of the other component
- </code></p>
-  </li>
-  <li>
-    <p>Calling several functions in one string:</p>
-
-    <p><code>
-  '${ $.provider }:data.overload': 'overload reset validate'// we call 'overload', 'reset', 'validate'
- </code></p>
-  </li>
-  <li>
-    <p>Using inline conditions:</p>
-
-    <p><code>
-  '${ $.provider }:${ $.customScope ? $.customScope + "." : ""}data.validate': 'validate'
- </code></p>
-  </li>
-</ul>
+<table>
+  <tr>
+    <th>
+      Option
+    </th>
+    <th>
+      Description
+    </th>
+    <th>
+      Type
+    </th>
+    <th>
+      Default
+    </th>
+  </tr>
+  <tr>
+    <td>
+      <code>autoRender</code>
+    </td>
+    <td>
+      When set to true, the Listing component is automatically
+      rendered during insertListing initialization. Otherwise,
+      insertListing's <code>render</code> method should be called
+      to render the Listing.
+    </td>
+    <td>
+      Boolean
+    </td>
+    <td>
+      <code>false</code>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>behaviourType</code>
+    </td>
+    <td>
+      Can be <code>simple</code> or <code>edit</code>. Where
+      <code>edit</code> means that insertListing also includes
+      changes from Listing's inlineEdit into value. In this case,
+      Listing must be configured with enabled inline editing.
+    </td>
+    <td>
+      String (<code>simple</code> | <code>edit</code>)
+    </td>
+    <td>
+      <code>simple</code>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>component</code>
+    </td>
+    <td>
+      The path to the component’s JS constructor in terms of
+      RequireJS.
+    </td>
+    <td>
+      String
+    </td>
+    <td>
+      <code>Magento_Ui/js/form/components/insert-listing</code>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>dataLinks</code>
+      <ul>
+        <li>
+          <code>imports</code>
+        </li>
+        <li>
+          <code>exports</code>
+        </li>
+      </ul>
+    </td>
+    <td>
+      Flags that enable linking between insertListing's
+      externalValue (the object that stores Listing information)
+      and Listing value.
+      <ul>
+        <li>Enable import from the inserted Listing value to the
+        insertListing's externalValue.
+        </li>
+        <li>Enable export from the insertListing's externalValue to
+        the inserted Listing aggregated value.
+        </li>
+      </ul>
+    </td>
+    <td>
+      Object
+      <ul>
+        <li>Boolean
+        </li>
+        <li>Boolean
+        </li>
+      </ul>
+    </td>
+    <td>
+      <ul>
+        <li>
+          <code>true</code>
+        </li>
+        <li>
+          <code>false</code>
+        </li>
+      </ul>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>realTimeLink</code>
+    </td>
+    <td>
+      Enable link between insertListing's externalValue and value.
+      Here <code>link</code> means the two-way <a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_linking_concept.html#links">
+      links property</a> of UI components, which allows immediate
+      update.
+    </td>
+    <td>
+      Boolean
+    </td>
+    <td>
+      <code>true</code>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>render_url</code>
+    </td>
+    <td>
+      With default <code>render_url(mui/index/render)</code>
+      listing will be without buttons. For get a list with buttons
+      url must be changed to <code>mui/index/render_handle</code>
+      and next GET parameters:<br />
+      buttons=1 (flag to get buttons)<br />
+      handle= (buttons scope)
+    </td>
+    <td>
+      Url
+    </td>
+    <td>
+      <code>mui/index/render</code>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <code>update_url</code>
+    </td>
+    <td>
+      Where the AJAX request will go to retrieve, foster component
+      update data. It will be in json format by default and will be
+      automatically set into <code>externalProvider.data</code>
+    </td>
+    <td>
+      Url
+    </td>
+    <td>
+      <code>mui/index/render</code>
+    </td>
+  </tr>
+</table>
 
 		</div>
 		<!-- /.content-wrap -->
@@ -1249,14 +1243,14 @@
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/ui_comp_guide/concepts/ui_comp_linking_concept.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/ui_comp_guide/components/ui-insertlisting.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
   
 
   <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/ui_comp_guide/concepts/ui_comp_linking_concept.html" target="_blank">Give us feedback</a>
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/ui_comp_guide/components/ui-insertlisting.html" target="_blank">Give us feedback</a>
   </div>
 
 </div>

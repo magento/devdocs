@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Linking properties of UI components | Magento 2 Developer Documentation</title>
+	<title>MultiselectColumn component | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.1/ui_comp_guide/concepts/ui_comp_linking_concept.html">
+	<link rel="canonical" href="//guides/v2.1/ui_comp_guide/components/ui-multiselectcolumn.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -52,9 +52,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/ui_comp_guide/concepts/ui_comp_linking_concept.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/ui_comp_guide/components/ui-multiselectcolumn.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_linking_concept.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/ui_comp_guide/components/ui-multiselectcolumn.html">Magento 2.1</a></li>
 	
   </ul>
 
@@ -586,7 +586,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/ui_comp_guide/components/ui-multiselectcolumn.html">MultiselectColumn component</a></li>
+									<li class="level-2  active "><a href="/guides/v2.1/ui_comp_guide/components/ui-multiselectcolumn.html">MultiselectColumn component</a></li>
 
 									
 
@@ -824,7 +824,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_linking_concept.html">Linking properties of UI components</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_linking_concept.html">Linking properties of UI components</a></li>
 
 									
 
@@ -1032,7 +1032,7 @@
 
           
 
-          <span property="name">Linking properties of UI components</span>
+          <span property="name">MultiselectColumn component</span>
 
         
 
@@ -1055,190 +1055,168 @@
 
 	
 
-	<h1 class="page-heading">Linking properties of UI components</h1>
+	<h1 class="page-heading">MultiselectColumn component</h1>
 
   
 
 
 </section>
 
-			<h2 id="linking-properties-implementation">Linking properties implementation</h2>
+			<h2 id="overview">Overview</h2>
 
-<p>The following properties are used for linking observable properties and methods of UI components:</p>
+<p>The MultiselectColumn component implements a column with check boxes for selecting records. It also provides controls for selecting multiple records.</p>
 
-<ul>
-  <li><code>exports</code></li>
-  <li><code>imports</code></li>
-  <li><code>links</code></li>
-  <li><code>listens</code></li>
-</ul>
+<p>MultiselectColumn is a child of the <a href="/guides/v2.1/ui_comp_guide/components/ui-listing-grid.html">Listing component</a> and is rendered in its view. Like any component, it can hold the sort order value, which influences the order of all its child elements.</p>
 
-<p>These properties are processed by the <code>initLinks()</code> method of the <a href="/guides/v2.1//ui_comp_guide/concepts/ui_comp_uielement_concept.html"><code>uiElement</code> class</a> which is called at the moment of a component’s instantiation.</p>
+<h4 id="multiselectcolumn-js-component-structure">MultiselectColumn JS Component Structure</h4>
 
-<p>Linking properties are set in <a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_config_flow_concept.html">UI components configuration files</a>: XML, JS or PHP.</p>
+<p>The MultiselectColumn component is implemented in the class <code>app\code\Magento\Ui\view\base\web\js\grid\columns\multiselect.js.</code></p>
 
-<h2 id="list-of-linking-properties">List of linking properties</h2>
-
-<h3 id="exports"><code>exports</code></h3>
-
-<p>The <code>exports</code> property is used to notify some external entity that a property has changed. <code>exports</code>’s value is an object, composed of the following:</p>
+<p>Templates used by this component are:</p>
 
 <ul>
-  <li><code>key</code>: name of the internal property or method that is tracked for changes.</li>
-  <li><code>value</code>: name of the property or method that receives the notification. Can use <a href="#string_templ">string templates</a>.</li>
+  <li><code>app\code\Magento\Ui\view\base\web\templates\grid\cells\multiselect.html</code> - The template defines each field in the grid. It provides the Multiselect component with the check box interface for selecting item(s) in the grid and performing actions over them.</li>
+  <li><code>app\code\Magento\Ui\view\base\web\templates\grid\columns\multiselect.html</code> - The template defines the grid header with drop-down lists and the Select All, Deselect All, and other options.</li>
 </ul>
 
-<p>Example of setting <code>exports</code> in a component’s <code>.js</code> file:</p>
+<h2 id="multiselectcolumn-configuration">MultiselectColumn configuration</h2>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span>
-  <span class="s1">&#39;exports&#39;</span><span class="o">:</span> <span class="p">{</span>
-   <span class="s1">&#39;visible&#39;</span><span class="o">:</span> <span class="s1">&#39;${ $.provider }:visibility&#39;</span>
-  <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+<p>Extends all <a href="/guides/v2.1/ui_comp_guide/components/listing/ui-column.html">Column</a> configuration.</p>
 
-<p>Here <code>visible</code> is the <code>key</code>, <code>${ $.provider }:visibility</code> is the <code>value</code>. The value of the local <code>visible</code> property is assigned to the <code>visibility</code> property of the <code>provider</code> component. The latter is changed automatically if the value of <code>visible</code> changes.</p>
+<p>MultiselectColumn-specific configuration:</p>
 
-<p>Example of setting <code>exports</code> in a component’s configuration <code>.xml</code> file:</p>
+<table>
+  <tr>
+    <th>Option</th>
+    <th>Description</th>
+    <th>Type</th>
+    <th>Default Value</th>
+  </tr>
+  <tr>
+    <td><code>bodyTmpl</code></td>
+    <td>Path to the template that is used to render a column's field in the table's body.</td>
+    <td>String</td>
+    <td><code>ui/grid/cells/multiselect</code></td>
+  </tr>
+  <tr>
+    <td><code>controlVisibility</code></td>
+    <td>Whether a user can control column's visibility handled by the <a href="/guides/v2.1/ui_comp_guide/components/listing/ui-сolumnsсontrols.html">ColumnsControls component</a>.</td>
+    <td>String</td>
+    <td><code>false</code></td>
+  </tr>
+  <tr>
+    <td><code>draggable</code></td>
+    <td>Defines if a user can change column's position in the table by grabbing column's header and dragging it across the table.</td>
+    <td>Boolean</td>
+    <td><code>false</code></td>
+  </tr>
+  <tr>
+    <td><code>fieldClass</code></td>
+    <td>Additonal CSS classes added to the column's field elements.</td>
+    <td>{<br />[name: string]: Boolean<br />}</td>
+    <td>{<br /><code>'data-grid-checkbox-cell': true</code><br />}</td>
+  </tr>
+  <tr>
+    <td><code>headerTmpl</code></td>
+    <td>Path to the <code>.html</code> template for the column's header.</td>
+    <td>String</td>
+    <td><code>ui/grid/columns/multiselect</code></td>
+  </tr>
+  <tr>
+    <td><code>preserveSelectionsOnFilter</code></td>
+    <td>Whether to preserve selected items when a new filter value is applied.</td>
+    <td>Boolean</td>
+    <td><code>false</code></td>
+  </tr>
+  <tr>
+    <td><code>sortable</code></td>
+    <td>Whether a column's fields can be used to sort records in the table.</td>
+    <td>Boolean</td>
+    <td><code>false</code></td>
+  </tr>
+</table>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;exports&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;visible&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>sample_config.sample_provider:visibility<span class="nt">&lt;/item&gt;</span>
-        <span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;/item&gt;</span>
-<span class="nt">&lt;/argument&gt;</span></code></pre></figure>
+<h4 id="methods-and-events">Methods and Events</h4>
 
-<p>For an example of <code>exports</code> usage in Magento code see <a href="https://github.com/magento/magento2/blob/2.1//app/code/Magento/CatalogInventory/view/adminhtml/ui_component/product_form.xml#L81"><code>product_form.xml</code>, line 81</a></p>
+<p>No events are generated. Any other component that can retrieve access to this component and its properties can get data and track its changes using subscription.</p>
 
-<h3 id="imports"><code>imports</code></h3>
-<p>The <code>imports</code> property is used for tracking changes of an external entity property. <code>imports</code>’s value is an object, composed of the following:</p>
+<h4 id="how-to-configure-a-multiselectcolumn-omponent-already-used-in-code">How to configure a MultiselectColumn сomponent already used in code</h4>
+
+<p>Sample of code where component configurations are performed:</p>
+
+<p>Current implementation:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">column</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;ids&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;Magento\Ui\Component\MassAction\Columns\Column&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">argument</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;data&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;array&quot;</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;js_config&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;array&quot;</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;component&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="o">&gt;</span><span class="nx">Magento_Ui</span><span class="o">/</span><span class="nx">js</span><span class="o">/</span><span class="nx">grid</span><span class="o">/</span><span class="nx">columns</span><span class="o">/</span><span class="nx">multiselect</span><span class="o">&lt;</span><span class="err">/item&gt;</span>
+         <span class="o">&lt;</span><span class="err">/item&gt;</span>
+         <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;config&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;array&quot;</span><span class="o">&gt;</span>
+             <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;indexField&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="o">&gt;</span><span class="nx">page_id</span><span class="o">&lt;</span><span class="err">/item&gt;</span>
+             <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;appendTo&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="o">&gt;&lt;</span><span class="err">/item&gt;</span>
+         <span class="o">&lt;</span><span class="err">/item&gt;</span>
+    <span class="o">&lt;</span><span class="err">/argument&gt;</span>
+<span class="o">&lt;</span><span class="err">/column&gt;</span></code></pre></figure>
+
+<p>Example of configuration modifications:</p>
 
 <ul>
-  <li><code>key</code>: name of the internal property or method that receives the notifications.</li>
-  <li><code>value</code>: name of the property or method that is tracked for changes. Can use <a href="#string_templ">string templates</a>.</li>
+  <li>Redefining the link to the template</li>
 </ul>
 
-<p>Example of using <code>imports</code> in a component’s <code>.js</code> file:</p>
-
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span>
-  <span class="s1">&#39;imports&#39;</span><span class="o">:</span> <span class="p">{</span>
-   <span class="s1">&#39;visible&#39;</span><span class="o">:</span> <span class="s1">&#39;${ $.provider }:visibility&#39;</span>
-  <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
-
-<p>Here the value of the <code>visibility</code> property of the <code>provider</code> component is assigned to the local <code>visible</code> property. The latter is automatically updated if <code>visibility</code> changes.</p>
-
-<p>Example of using <code>imports</code> in a component’s configuration <code>.xml</code> file:</p>
-
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;imports&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;visible&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>sample_config.sample_provider:visibility<span class="nt">&lt;/item&gt;</span>
-        <span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;/item&gt;</span>
-<span class="nt">&lt;/argument&gt;</span></code></pre></figure>
-
-<p>For an example of <code>imports</code> usage in Magento code see <a href="https://github.com/magento/magento2/blob/2.1//app/code/Magento/CatalogInventory/view/adminhtml/ui_component/product_form.xml#L103"><code>product_form.xml</code>, line 103</a></p>
-
-<h3 id="links"><code>links</code></h3>
-
-<p>The <code>links</code> property is used for cross tracking properties changes: both linked properties are tracked and changing of one results in changing the other. <code>links</code>’s value is an object, composed of the following:</p>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">column</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;ids&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;Magento\Ui\Component\MassAction\Columns\Column&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">argument</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;data&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;array&quot;</span><span class="o">&gt;</span>
+        <span class="p">...</span>
+        <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;config&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;array&quot;</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;headerTmpl&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="o">&gt;</span><span class="nx">product</span><span class="o">/</span><span class="nx">grid</span><span class="o">/</span><span class="nx">columns</span><span class="o">/</span><span class="nx">multiselect</span><span class="o">&lt;</span><span class="err">/item&gt;</span>
+        <span class="o">&lt;</span><span class="err">/item&gt;</span>
+    <span class="o">&lt;</span><span class="err">/argument&gt;</span>
+<span class="o">&lt;</span><span class="err">/column&gt;</span></code></pre></figure>
 
 <ul>
-  <li><code>key</code>: name of the internal property or method that sends and receives the notifications.</li>
-  <li><code>value</code>: name of the property or method that sends and receives the notifications. Can use <a href="#string_templ">string templates</a>.</li>
+  <li>Redefining the name of the property which represents record identifier</li>
 </ul>
 
-<p>Example of using <code>links</code> in a component’s <code>.js</code> file:</p>
-
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span>
-  <span class="s1">&#39;links&#39;</span><span class="o">:</span> <span class="p">{</span>
-   <span class="s1">&#39;visible&#39;</span><span class="o">:</span> <span class="s1">&#39;${ $.provider }:visibility&#39;</span>
-  <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
-
-<p>Here the local <code>visible</code> property is linked with the <code>visibility</code>  property of the provider component. Once any of them changes, the other is changed automatically.</p>
-
-<p>Example of using <code>links</code> in a component’s configuration <code>.xml</code> file:</p>
-
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;links&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;visible&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>sample_config.sample_provider:visibility<span class="nt">&lt;/item&gt;</span>
-        <span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;/item&gt;</span>
-<span class="nt">&lt;/argument&gt;</span></code></pre></figure>
-
-<p>For an example of <code>links</code> usage in Magento code see <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/form/element/text.js#L19"><code>text.js</code>, line 19</a></p>
-
-<h3 id="listens"><code>listens</code></h3>
-<p>The <code>listens</code> property is used to track the changes of a component’s property. <code>listens</code>’s value is an object, composed of the following:</p>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">column</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;ids&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;Magento\Ui\Component\MassAction\Columns\Column&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">argument</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;data&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;array&quot;</span><span class="o">&gt;</span>
+        <span class="p">...</span>
+        <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;config&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;array&quot;</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;indexField&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="o">&gt;</span><span class="nx">product_id</span><span class="o">&lt;</span><span class="err">/item&gt;</span>
+        <span class="o">&lt;</span><span class="err">/item&gt;</span>
+    <span class="o">&lt;</span><span class="err">/argument&gt;</span>
+<span class="o">&lt;</span><span class="err">/column&gt;</span></code></pre></figure>
 
 <ul>
-  <li><code>key</code>: name of the internal property which listens to the changes.</li>
-  <li><code>value</code>: name of the property or method which is tracked for changes. Can use <a href="#string_templ">string templates</a>.</li>
+  <li>Redefining a property data source</li>
 </ul>
 
-<p>Example of using <code>listens</code> in a component’s <code>.js</code> file :</p>
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">column</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;ids&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;Magento\Ui\Component\MassAction\Columns\Column&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">argument</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;data&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;array&quot;</span><span class="o">&gt;</span>
+        <span class="p">...</span>
+        <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;config&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;array&quot;</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;imports&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;array&quot;</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;rows&quot;</span><span class="o">&gt;</span><span class="nx">products_prodvider</span><span class="o">:</span><span class="nx">data</span><span class="p">.</span><span class="nx">products</span><span class="o">&lt;</span><span class="err">/item&gt;</span>
+            <span class="o">&lt;</span><span class="err">/item&gt;</span>
+        <span class="o">&lt;</span><span class="err">/item&gt;</span>
+    <span class="o">&lt;</span><span class="err">/argument&gt;</span>
+<span class="o">&lt;</span><span class="err">/column&gt;</span></code></pre></figure>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span>
-  <span class="s1">&#39;listens&#39;</span><span class="o">:</span> <span class="p">{</span>
-   <span class="s1">&#39;visible&#39;</span><span class="o">:</span> <span class="s1">&#39;${ $.provider }:visibility&#39;</span>
-  <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
+<h4 id="how-to-add-a-new-component">How to add a new component</h4>
 
-<p>Here the value of the local <code>visible</code> property is assigned to the <code>visibility</code> property of the <code>provider</code> component. The latter is changed automatically if the value of <code>visible</code> changes.</p>
-
-<p>Example of using <code>listens</code> in a component’s configuration <code>.xml</code> file:</p>
-
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;listens&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
-            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;visible&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>sample_config.sample_provider:visibility<span class="nt">&lt;/item&gt;</span>
-        <span class="nt">&lt;/item&gt;</span>
-    <span class="nt">&lt;/item&gt;</span>
-<span class="nt">&lt;/argument&gt;</span></code></pre></figure>
-
-<p>For example of <code>listens</code> usage in Magento code see <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Catalog/view/adminhtml/ui_component/new_category_form.xml#L92"><code>new_category_form.xml</code>, line 92</a></p>
-
-<h2 id="string_templ">Template strings usage</h2>
-
-<p>The <code>value</code> options of linking properties can contain template strings in the <code>'${...}'</code> format. During component’s initialization, values in this format are processed as template strings using <a href="https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Template_literals">ES6 templates</a>. In browsers that do not support ES6 templates, these values are processed as underscore templates.</p>
-
-<p>So if we put a variable name in <code>'${...}'</code>, it is processed into a string representation of the variable’s value.</p>
-
-<p>When working with UI components, we often need to use the string representation of a certain property of the UI component. To address a property of the UI component in the scope of this component, the <code>$.someProperty</code> syntax is used.</p>
-
-<p>As a result, if the component’s property is the variable for the template string, we get notation similar to the following:</p>
-
-<pre><code>'${ $.provider }' 
-</code></pre>
-
-<p>We can also build complex templates strings using this syntax, as follows:</p>
+<p>Instance Replacement: One Instance of a Component</p>
 
 <ul>
-  <li>
-    <p>Using variables from the other component:</p>
-
-    <p><code>
-  '${ $.provider }:${ $.dataScope }' // 'provider' is the full name of the other component
- </code></p>
-  </li>
-  <li>
-    <p>Calling several functions in one string:</p>
-
-    <p><code>
-  '${ $.provider }:data.overload': 'overload reset validate'// we call 'overload', 'reset', 'validate'
- </code></p>
-  </li>
-  <li>
-    <p>Using inline conditions:</p>
-
-    <p><code>
-  '${ $.provider }:${ $.customScope ? $.customScope + "." : ""}data.validate': 'validate'
- </code></p>
-  </li>
+  <li>Redefine the link to constructor:</li>
 </ul>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">column</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;ids&quot;</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&quot;Magento\Ui\Component\MassAction\Columns\Column&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">argument</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;data&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;array&quot;</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;js_config&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;array&quot;</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">item</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;component&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="o">&gt;</span><span class="nx">Magento_Products</span><span class="o">/</span><span class="nx">js</span><span class="o">/</span><span class="nx">grid</span><span class="o">/</span><span class="nx">columns</span><span class="o">/</span><span class="nx">multiselect</span><span class="o">&lt;</span><span class="err">/item&gt;</span>
+        <span class="o">&lt;</span><span class="err">/item&gt;</span>
+    <span class="o">&lt;</span><span class="err">/argument&gt;</span>
+<span class="o">&lt;</span><span class="err">/column&gt;</span></code></pre></figure>
+
 
 		</div>
 		<!-- /.content-wrap -->
@@ -1249,14 +1227,14 @@
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/ui_comp_guide/concepts/ui_comp_linking_concept.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/ui_comp_guide/components/ui-multiselectcolumn.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
   
 
   <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/ui_comp_guide/concepts/ui_comp_linking_concept.html" target="_blank">Give us feedback</a>
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/ui_comp_guide/components/ui-multiselectcolumn.html" target="_blank">Give us feedback</a>
   </div>
 
 </div>
