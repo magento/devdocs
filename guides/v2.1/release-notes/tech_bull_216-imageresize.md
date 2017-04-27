@@ -35,14 +35,17 @@ The `<frame></frame>` option adds white space around your image. Using this opti
 If an image doesn't contain a `<frame>` option, Magento uses the `product_image_white_borders` option in the Catalog module. This setting typically has a value of **1**,  but is overridden to **0** in the default Luma and Blank themes. If your custom theme doesn't include this option, then Magento will rely upon the setting in the Catalog module for the value of  the `frame` option.
 
 
-### Suggested workaround 
-Note: The third step of the following procedure can be highly time-consuming, and Magento performance will be degraded while the workaround is in progress.
+### Suggested workaround
+
+<div class="bs-callout bs-callout-warning" markdown="1">
+The third step of the following procedure can be highly time-consuming, and Magento performance will be degraded while the workaround is in progress.
+</div> 
 
 To prevent Magento from resizing images after updgrade, you must include `<frame>0</frame>` within that image definition in `view.xml`.  
 
 1. Update your `view.xml` file by adding `<frame>0</frame>` to each image definition.
 
-2. Clean your full-page cache. See for more information on Magento cache types and procedures for managing caches. 
+2. Clean your full-page cache. See [Manage the Cache](http://devdocs.magento.com/guides/v2.0/config-guide/cli/config-cli-subcommands-cache.html){:target="_blank"}for more information on Magento cache types and procedures for managing caches. 
 
 3. Manually resize all your images using the `bin/magento catalog:images:resize` command. 
 
