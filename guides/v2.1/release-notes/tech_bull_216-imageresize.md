@@ -19,7 +19,7 @@ You need to read this bulletin if you've upgraded to Magento 2.1.6 (CE or EE) an
 
 * all images on the product front end appear reduced in size, including the base image
 
-* images are different sizes (This particular anomaly occurs after you've run the `bin/magento catalog:images:resize` command.)
+* images do not have uniform sizes -- some are greatly reduced, while others appear as expected. (This particular anomaly occurs after you've run the `bin/magento catalog:images:resize` command.)
 
 You cannot change the size of the base image within the gallery by editing `etc > view.xml`. Instead, using this method increases image size as well as gallery size, which renders the image out of alignment.
 
@@ -28,11 +28,11 @@ You cannot change the size of the base image within the gallery by editing `etc 
 
 Magento 2.1.6 introduced a change in how the platform handles images. Previous versions of Magento did **not** set this value  to **true** by default in the blank theme. However, Magento 2.1.6 now sets the value of the `<frame></frame>` option to **true** by default. 
 
-#### What does the `<frame></frame>` option do?
+#### What does the `<frame></frame>` element do?
 
-The `<frame></frame>` option adds white space around your image. Using this option will impose a specific width and height in `view.xml` while preserving the desired aspect ratio. 
+The `<frame></frame>` element adds white space around your image. Using this option will impose a specific width and height in `view.xml` while preserving the desired aspect ratio. 
 
-If an image doesn't contain a `<frame>` option, Magento uses the `product_image_white_borders` option in the Catalog module. This setting typically has a value of **1**,  but is overridden to **0** in the default Luma and Blank themes. If your custom theme doesn't include this option, then Magento will rely upon the setting in the Catalog module for the value of  the `frame` option.
+If an image doesn't contain a `<frame>` element, Magento uses the `product_image_white_borders` option in the Catalog module. This setting typically has a value of **1**,  but is overridden to **0** in the default Luma and Blank themes. If your custom theme doesn't include this option, then Magento will rely upon the setting in the Catalog module for the value of  the `frame` option.
 
 
 ### Suggested workaround
