@@ -21,12 +21,12 @@ You need to read this bulletin if you've upgraded to Magento 2.1.6 (CE or EE) an
 
 * images are different sizes (This particular anomaly occurs after you've run the `bin/magento catalog:images:resize` command.).
 
-You cannot change the size of the base image within the gallery using `etc >view.xml`. Instead, using this method increases image size as well as gallery size, which renders the image out of alignment.
+You cannot change the size of the base image within the gallery by editing `etc/view.xml`. Instead, using this method increases image size as well as gallery size, which renders the image out of alignment.
 
 
 ### Background
 
-Magento 2.1.6 introduced a change in how the platform handles images. Previous versions of Magento did **not** set this value  to **true** by default. However, Magento 2.1.6 now sets the value of the `<frame></frame>` option to **true** by default. 
+Magento 2.1.6 introduced a change in how the platform handles images. Previous versions of Magento did **not** set this value  to **true** by default in the blank theme. However, Magento 2.1.6 now sets the value of the `<frame></frame>` option to **true** by default. 
 
 #### What does the `<frame></frame>` option do?
 
@@ -42,7 +42,7 @@ To prevent Magento from resizing images after updgrade, you must include `<frame
 
 1. Update your `view.xml` file by adding `<frame>0</frame>` to each image definition.
 
-2. Clean your full-page cache. 
+2. Clean your full-page cache. See for more information on Magento cache types and procedures for managing caches. 
 
 3. Manually resize all your images using the `bin/magento catalog:images:resize` command. 
 
