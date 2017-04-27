@@ -80,7 +80,7 @@ The super users you add receive an e-mail inviting them to join the Magento Ente
 Initially, a super user must create the project in any of the following ways:
 
 *	[Create a sample Magento project from a template]({{ page.baseurl }}cloud/access-acct/first-time-setup_template.html)
-*	[Import an existing Magento project]({{ page.baseurl }}cloud/access-acct/first-time-setup_import.html)
+*	[Import an existing Magento project]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-first-steps.html)
 
 {% endcollapsible %}
 

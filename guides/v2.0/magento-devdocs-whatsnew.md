@@ -160,7 +160,7 @@ No changes to date
 |[Magento 2 documentation resources for Magento Enterprise Cloud Edition (MECE)]({{ page.baseurl }}cloud/access-acct/resources.html){:target="_blank"} |  2.x |New| Oct 7 |
 |[MECE environment variables]({{ page.baseurl }}cloud/env/environment-vars_magento.html){:target="_blank"}  | 2.x  |  Updated | Oct 7 |
 |[MECE add more information about project directory structure]({{ page.baseurl }}cloud/access-acct/first-time-setup_dir-structure.html){:target="_blank"}  | 2.x  | Updated  |  Oct 7 |
-| [MECE completely revise new environment setup]({{ page.baseurl }}cloud/before/before-setup-env-1_get-started.html){:target="_blank"} | 2.x  |  Updated | Oct 7 |
+| [MECE completely revise new environment setup]({{ page.baseurl }}cloud/before/before-setup-env-1_get-start.html){:target="_blank"} | 2.x  |  Updated | Oct 7 |
 |[MECE responsibilities of the account owner]({{ page.baseurl }}cloud/before/before-project-owner.html){:target="_blank"}  | 2.x  |  New |  Oct 7 |
 |[MECE Magento file system owner for local development]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html){:target="_blank"}| 2.x  | New  | Oct 7 |
 |[MECE setting MySQL `auto_increment_increment=3`]({{ page.baseurl }}cloud/before/before-workspace-php.html){:target="_blank"}  |  2.x | New  | Oct 7 |

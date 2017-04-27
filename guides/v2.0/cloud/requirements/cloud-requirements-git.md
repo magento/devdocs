@@ -5,9 +5,9 @@ subgroup: 020_requirements
 title: Git requirements
 menu_title: Git requirements
 menu_order: 3
-menu_node: 
+menu_node:
 version: 2.0
-github_link: cloud/cloud-requirements-git.md
+github_link: cloud/requirements/cloud-requirements-git.md
 ---
 
 This page lists detailed requirements for using Git with Magento Enterprise Cloud Edition.

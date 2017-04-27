@@ -21,7 +21,7 @@ Following are requirements you should already have:
 *	Must be familiar with Magento 2
 *	Must have familiarity with [Continuous Integration Best Practices](https://www.google.com/search?q=Continuous+Integration+Best+Practices){:target="_blank"}
 *	Understand the three types of systems and how they’re used: [integration]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int), [staging]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-stage), [production]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-prod)
-*	Must set up a [local development environment]({{ page.baseurl }}cloud/before/before-setup-env-1_get-started.html)
+*	Must set up a [local development environment]({{ page.baseurl }}cloud/before/before-setup-env-1_get-start.html)
 
     The integration environment (sometimes referred to as _Platform as a Service (PaaS))_ can help with integration testing but is not for developing for a production server. Among the differences are that, in integration, Magento is set for developer mode and not all directories are read-only.
 *	Must have working [`repo.magento.com` credentials]({{ page.baseurl }}install-gde/prereq/connect-auth.html) in your account
