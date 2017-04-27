@@ -39,7 +39,7 @@ Wysiwyg-specific options:
   </tr>
   <tr>
     <td><code>elementSelector</code></td>
-    <td>The path Type of the HTML element that is wrapped by the WYSIWYG editor.</td>
+    <td>The selector of the HTML element that is wrapped by the WYSIWYG editor.</td>
     <td>String</td>
     <td><code>textarea</code></td>
   </tr>
@@ -64,11 +64,5 @@ Wysiwyg-specific options:
     <td>The path to the general Field template.</td>
     <td>String</td>
     <td><code>ui/form/field</code></td>
-  </tr>
-  <tr>
-    <td><code>$wysiwygEditorButton</code></td>
-    <td></td>
-    <td>String</td>
-    <td><code>''</code></td>
   </tr>
 </table>
