@@ -85,5 +85,5 @@ gems:
   - jekyll-redirect-from
 
 
-exclude: ['scss', 'bin', 'node_modules', 'vendor', '.git', '.idea']
+exclude: ['scss', 'bin', 'node_modules', 'vendor', '.git', '.idea', 'guides/v2.1', 'guides/v2.0', 'guides/m1x', 'guides/v2.2/cloud', 'guides/v2.2/architecture', 'guides/v2.2/javascript-dev-guide']
 

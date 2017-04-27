@@ -1,7 +1,7 @@
 ---
 layout: default
-group: jsdg
-subgroup: 1_Javascript
+group: UI_Components_guide
+subgroup: concepts
 title: Magento custom Knockout.js bindings
 menu_title: Magento custom Knockout.js bindings
 menu_order: 60
@@ -14,12 +14,14 @@ github_link: ui_comp_guide/concepts/knockout-bindings.md
 This topic lists the custom [Knockout.js](http://knockoutjs.com/) bindings used in the core Magento files, and can be used by the third-party developers.
 
 ## General concepts
+
 ### Aliases
-The standard way to declare a knockout.js binding is using the `data-bind` attribute: `[data-bind="binding: value"]`. In Magento implementation, you can also use aliases to declare bindings. Some bindings may be defined as standalone attributes ([binding="value"]) or nodes (<binding args="value">).
+
+The standard way to declare a knockout.js binding is using the `data-bind` attribute: `[data-bind="binding: value"]`. In Magento implementation, you can also use aliases to declare bindings. Some bindings may be defined as standalone attributes (`[binding="value"]`) or nodes (`<binding args="value">`).
 
 <p class="q">
 The part about standalone attributes needs clarification.
-a list of aliases that can be used to declare the binding as in addition to the standard form used in Knockout ([data-bind="binding: value"]) some bindings may be defined as standalone attributes ([binding="value"]) or nodes (<binding args="value">).
+a list of aliases that can be used to declare the binding as in addition to the standard form used in Knockout some bindings may be defined as standalone attributes or nodes.
 </p>
 
 ### Binding values
@@ -29,6 +31,7 @@ Apart from the value type specified for the binding, every value may be wrapped 
 
 
 ## Custom Magento bindings
+
 ### `afterRender`
 
 The `afterRender` binding notifies its subscriber when an associated element is inserted into the DOM.
@@ -72,7 +75,7 @@ Defines whether the binding is enabled (`true`) or disabled (`false`).
 ### `bindHtml`
 The `bindHtml` binding renders the provided string, as a collection of HTML elements, inside of the associated node.
 <p class="q">tag?</p>
-It also instantiates all bindings defined for the rendered elements in the scope of the current view model.
+It also instantiates all bindings defined for the rendered elements in the scope of the current [view model](http://knockoutjs.com/documentation/observables.html).
 <p class="q">current view model - what exactly does it mean?</p>
 
 **Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/bind-html.js`
@@ -99,34 +102,81 @@ Binding's configuration that may include the following properties:
 
 <table>
   <tr>
-    <th>Preoperty</th>
-    <th>Description</th>
-    <th>Type</th>
-    <th>Default value</th>
+    <th>
+      Preoperty
+    </th>
+    <th>
+      Description
+    </th>
+    <th>
+      Type
+    </th>
+    <th>
+      Default value
+    </th>
   </tr>
   <tr>
-    <td><code>as</code></td>
-    <td>A key for accessing the binding in the current scope.</td>
-    <td>String</td>
-    <td><code>$collapsible</code></td>
+    <td>
+      <code>as</code>
+    </td>
+    <td>
+      A key for accessing the binding in the current scope.
+    </td>
+    <td>
+      String
+    </td>
+    <td>
+      <code>$collapsible</code>
+    </td>
   </tr>
   <tr>
-    <td><code>closeOnOuter</code></td>
-    <td>Whether the panel needs to be closed on outside boundaries click.</td>
-    <td>Boolean</td>
-    <td><code>true</code></td>
+    <td>
+      <code>closeOnOuter</code>
+    </td>
+    <td>
+      Whether the panel needs to be closed on outside boundaries
+      click.
+    </td>
+    <td>
+      Boolean
+    </td>
+    <td>
+      <code>true</code>
+    </td>
   </tr>
   <tr>
-    <td><code>onTarget</code></td>
-    <td>Toggles panel's visibility on the target node click. <p class="q">why node? how you can click outside a node</p></td>
-    <td>Boolean</td>
-    <td><code>false</code></td>
+    <td>
+      <code>onTarget</code>
+    </td>
+    <td>
+      Toggles panel's visibility on the target node click.
+      <p class="q">
+        why node? how you can click outside a node
+      </p>
+    </td>
+    <td>
+      Boolean
+    </td>
+    <td>
+      <code>false</code>
+    </td>
   </tr>
   <tr>
-    <td><code>openClass</code></td>
-    <td>CSS class that is added to or removed from the target node, when the panel changes visibility. If the option values is left empty, then the binding does not modify the element's classes.</td>
-    <td>String</td>
-    <td><code>_active</code></td>
+    <td>
+      <code>openClass</code>
+    </td>
+    <td>
+      CSS class that is added to or removed from the target node,
+      when the panel changes visibility. If the option values is
+      left empty, then the binding does not modify the element's
+      classes.
+    </td>
+    <td>
+      String
+    </td>
+    <td>
+      <code>_active</code>
+    </td>
   </tr>
 </table>
 
