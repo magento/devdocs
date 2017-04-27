@@ -19,9 +19,9 @@ You need to read this bulletin if you've upgraded to Magento 2.1.6 (CE or EE) an
 
 * all images on the product front end appear reduced in size, including the base image
 
-* images are different sizes (This particular anomaly occurs after you've run the `bin/magento catalog:images:resize` command.).
+* images are different sizes (This particular anomaly occurs after you've run the `bin/magento catalog:images:resize` command.)
 
-You cannot change the size of the base image within the gallery by editing `etc/view.xml`. Instead, using this method increases image size as well as gallery size, which renders the image out of alignment.
+You cannot change the size of the base image within the gallery by editing `etc > view.xml`. Instead, using this method increases image size as well as gallery size, which renders the image out of alignment.
 
 
 ### Background
@@ -32,7 +32,7 @@ Magento 2.1.6 introduced a change in how the platform handles images. Previous v
 
 The `<frame></frame>` option adds white space around your image. Using this option will impose a specific width and height in `view.xml` while preserving the desired aspect ratio. 
 
-If an image doesn't contain a `<frame>` option, Magento uses the `product_image_white_borders` option in the Catalog module. This setting typically has a value of **1**,  and but is overriden to **0** in the default Luma and Blank themes. If your custom theme doesn't include this option, then Magento will rely upon the setting in the Catalog module for the value of  the `frame` option.
+If an image doesn't contain a `<frame>` option, Magento uses the `product_image_white_borders` option in the Catalog module. This setting typically has a value of **1**,  but is overridden to **0** in the default Luma and Blank themes. If your custom theme doesn't include this option, then Magento will rely upon the setting in the Catalog module for the value of  the `frame` option.
 
 
 ### Suggested workaround 
@@ -50,8 +50,7 @@ To prevent Magento from resizing images after updgrade, you must include `<frame
 
 ### More information
 
-For further discussion of this issue, see <a href="https://github.com/magento/magento2/issues/9385" target="_blank">(GITHUB-9385)</a> and <a href="https://github.com/magento/magento2/issues/9395" target="_blank">(GITHUB-9395)</a>. 
-
+For further discussion of this issue, see [GITHUB-9385](https://github.com/magento/magento2/issues/9385){:target="_blank"} and [GITHUB-9395](https://github.com/magento/magento2/issues/9395){:target="_blank"}
 
 ## Credits
 Dear community members, thank you for your prompt identification of this issue.  
