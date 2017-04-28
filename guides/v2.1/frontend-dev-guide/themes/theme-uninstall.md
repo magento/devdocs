@@ -15,7 +15,7 @@ This topic describes to uninstall a storefront theme in Magento 2.
 
 The way a theme should be uninstalled is defined by two factors:
 
-* the way the theme was added: manually added (installed or created) or installed as composer package.
+* the way the theme was added: manually added (installed or created), installed as composer package or as an extension.
 * the way Magento was installed: [using the source files from Github]({{page.baseurl}}install-gde/install/cli/install-cli-sample-data-clone.html) or [using Composer]({{page.baseurl}}install-gde/install/cli/install-cli-sample-data-composer.html). 
 
 The following sections describe the flow for uninstalling themes in each case.
@@ -46,7 +46,7 @@ Where:
 - `<dbname>`: your Magento database name
 - `<Vendor>/<theme>`: relative path to the theme directory
 
-## Uninstall a theme package
+## Uninstall a theme package {#uninstall_theme_pack}
 
 The flow for uninstalling a theme that is Composer package is different depending on the way your Magento instance was installed.  
 
@@ -81,3 +81,18 @@ Take the following steps:
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 You can use the Composer remove command to remove the dependency, but in that case you will also to delete theme record from database manually.
 </div>
+
+## Uninstall a theme extension
+
+If the theme was installed as an extension, you can uninstall it using one of the following flows:
+
+* the same way as theme Composer packages are uninstalled, see the [Uninstall a theme package](#uninstall_theme_pack) section for details.
+* * using the Component Manager.     
+
+To uninstall a theme extension using the Component Manager:
+
+1. In the Magento Admin Panel, navigate to **System** > **Web Setup Wizard** > **Component Manager**.
+2. In the **Actions** column, click **Select** > **Uninstall** in the theme record. See the following image for illustration.
+
+![extension_manager_uninstall_theme]({{site.baseurl}}common/images/fdg/uninstall_extension.png){:width="630px"}
+
