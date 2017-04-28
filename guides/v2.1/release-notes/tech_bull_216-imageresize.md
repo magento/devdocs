@@ -10,7 +10,7 @@ version: 2.1
 github_link: release-notes/tech_bull_216-imageresize.md
 ---
 
-*Technical bulletin first published on April 27, 2017.*
+*Technical bulletin first published on April 28, 2017.*
 
 These instructions apply to anyone upgrading to Magento Community Edition (CE) or Magento Enterprise Edition (EE) version 2.1.6 whose installation runs custom themes. 
 
@@ -38,7 +38,7 @@ If an image doesn't contain a `<frame>` element, Magento uses the `product_image
 ### Suggested workaround
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-The third step of the following procedure can be highly time-consuming, and Magento performance will be degraded while the workaround is in progress.
+The third step of the following procedure can be highly time-consuming, and Magento performance will be degraded while the workaround is in progress. However, you can run `catalog:image:resize` on your staging server to avoid the downtime in your production environment. After you've done that, copy the resized images to `pub/media/catalog/product/cache/*` on your production server.
 </div> 
 
 To prevent Magento from resizing images after updgrade, you must include `<frame>0</frame>` within that image definition in `view.xml`.  
@@ -47,13 +47,13 @@ To prevent Magento from resizing images after updgrade, you must include `<frame
 
 	* `<frame>0</frame>` 
 
-	*  <vars module="Magento_Catalog">
+	*  `<vars module="Magento_Catalog">
         <var name="product_image_white_borders">0</var>
-    	</vars>
+    	</vars>`
 
 2. Clean your full-page cache. See [Manage the Cache](http://devdocs.magento.com/guides/v2.0/config-guide/cli/config-cli-subcommands-cache.html){:target="_blank"}for more information on Magento cache types and procedures for managing caches. 
 
-3. Manually resize all your images using the `bin/magento catalog:images:resize` command.  Note: you can run `catalog:image:resize` on your staging server to avoid the downtime in your production environment. After you've done that, copy the resized images to `pub/media/catalog/product/cache/*` on your production server.
+3. Manually resize all your images using the `bin/magento catalog:images:resize` command.  
 
 
 ### More information
