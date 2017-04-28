@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 50_trouble
+subgroup: 170_trouble
 title: Troubleshooting
 menu_title: Troubleshooting
 menu_order: 1

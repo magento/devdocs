@@ -1,11 +1,11 @@
 ---
 layout: default
 group: cloud
-subgroup: 01_welcome
+subgroup: 010_welcome
 title: Welcome to Magento Enterprise Cloud Edition
 landing-page: Cloud
 menu_title: Welcome to Magento Enterprise Cloud Edition
-menu_order: 1
+menu_order: 10
 menu_node: parent
 version: 2.0
 github_link: cloud/bk-cloud.md
@@ -34,8 +34,7 @@ middleman between your code and deployment.
 * You can increase the amount of memory and CPU as needed.
 
 #### Related topics
-*	[Magento Enterprise Cloud Edition requirements]({{page.baseurl}}cloud/cloud-requirements.html)
-*	[Common terms]({{page.baseurl}}cloud/before/terms.html)
-*	[Architecture]({{page.baseurl}}cloud/discover-arch.html)
-*	[Workflow]({{page.baseurl}}cloud/discover-workflow.html)
+*	[Magento Enterprise Cloud Edition requirements]({{page.baseurl}}cloud/requirements/cloud-requirements.html)
+*	[Architecture]({{page.baseurl}}cloud/reference/discover-arch.html)
+*	[Workflow]({{page.baseurl}}cloud/welcome/discover-workflow.html)
 

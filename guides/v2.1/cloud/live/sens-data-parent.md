@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 40_live
+subgroup: Live
 title: Manage the configuration
 menu_title: Manage the configuration
 menu_order: 10

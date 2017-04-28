@@ -1,7 +1,7 @@
 ---
 layout: default
 group: 
-subgroup: 40_live
+subgroup: Live
 title: All configuration paths except payments reference
 menu_title: All configuration paths except payments reference
 menu_order: 81

@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 10_project
+subgroup: 100_project
 title: Redirects
 menu_title: Redirects
 menu_order: 78
