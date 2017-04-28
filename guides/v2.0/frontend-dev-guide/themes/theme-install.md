@@ -9,15 +9,15 @@ version: 2.0
 github_link: frontend-dev-guide/themes/theme-install.md
 ---
 
-## Overview
+## What's in this topic
 
-This topic describes how to install a third-party theme for Magento 2 store.
+This topic describes how to install a third-party theme for a Magento 2 store.
 
-To install a theme, you need to add its code to your Magento 2 instance code base, and register it in the database. There are several ways to do this, depending on the way a theme is distributed:
+To install a theme, you need to add its code to your Magento 2 instance code base, and then register it in the database. The way a theme is distributed determines how to do this:
 
-- if a theme is just a set of files, for example an archive, you need to add it manually.   
-- if a theme is a composer package, you need to install using composer.
-- if a theme is distributed as an extension, it can be installed using the **Web Setup Wizard** in Magento Admin.
+- if a theme is just a set of files, for example an archive, add the theme manually.   
+- if a theme is a composer package, install it using composer.
+- if a theme is distributed as an extension, use the **Web Setup Wizard** in Magento Admin.
 
 The following sections contain more installation about each installation flow.
 
@@ -29,7 +29,7 @@ The following sections contain more installation about each installation flow.
 
 To install a theme manually:
 
-1. Make sure that the structure of the directory you are copying is following: `<VendorName>/<theme>`. And all the [theme files]({{page.baseurl}}frontend-dev-guide/themes/theme-structure.html) are in the `<theme>` directory.
+1. Make sure that the directory structure you are copying is `<VendorName>/<theme>`. And all the [theme files]({{page.baseurl}}frontend-dev-guide/themes/theme-structure.html) are in the `<theme>` directory.
 
 2. Copy this directory to the `<Magento root dir>/app/design/frontend` directory.
 
@@ -37,13 +37,13 @@ To install a theme manually:
 
 To install the theme as composer package, follow the instructions in the [Install extensions]({{page.baseurl}}cloud/howtos/install-components.html) topic.
 
-## Install a theme an extension
+## Install a theme as an extension
 
-If a theme is distributed on [Magento Marketplace](https://marketplace.magento.com/), it can be installed the same way as extensions are installed using the **Web Setup Wizard**. For details, see the [Installing a New Theme topic in Magento User Guide](http://docs.magento.com/m2/2.0/ce/user_guide/design/theme-install.html).
+If a theme is distributed on [Magento Marketplace](https://marketplace.magento.com/), install it with **Web Setup Wizard**. For details, see the [Installing a New Theme topic in Magento User Guide](http://docs.magento.com/m2/2.0/ce/user_guide/design/theme-install.html).
 
 ## Register a theme 
 
-Once you open the Magento Admin (or reload any Magento Admin page) having added the theme files to the files system, your theme gets registered and added to the database.
+After you create or install a theme, open the Magento Admin or reload any Magento Admin page. This way the theme gets registered and added to the database.
 
 To make sure the theme is registered, in the Magento Admin navigate to **Content** > **Design** > **Themes**. If a theme is registered, it is displayed in the list of available themes.
 
