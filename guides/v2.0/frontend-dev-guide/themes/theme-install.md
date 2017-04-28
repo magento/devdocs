@@ -39,7 +39,7 @@ To install the theme as composer package, follow the instructions in the [Instal
 
 ## Install a theme as an extension
 
-If a theme is distributed on [Magento Marketplace](https://marketplace.magento.com/), install it with **Web Setup Wizard**. For details, see the [Installing a New Theme topic in Magento User Guide](http://docs.magento.com/m2/2.0/ce/user_guide/design/theme-install.html).
+If a theme is distributed on [Magento Marketplace](https://marketplace.magento.com/), install it with **Web Setup Wizard**. For details, see [Install the Extension](http://docs.magento.com/marketplace/user_guide/quick-tour/install-extension.html).
 
 ## Register a theme 
 
