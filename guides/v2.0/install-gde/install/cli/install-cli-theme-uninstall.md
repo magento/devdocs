@@ -2,8 +2,8 @@
 layout: default
 group: install_cli 
 subgroup: 05_Command-line installation
-title: Uninstall themes
-menu_title: Uninstall themes
+title: Uninstall themes Composer packages
+menu_title: Uninstall themes Composer packages
 menu_node: 
 menu_order: 200
 version: 2.0
