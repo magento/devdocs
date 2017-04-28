@@ -89,7 +89,7 @@ You can use the Composer command to remove the dependency, but in that case you 
 If the theme was installed as an extension, you can uninstall it using one of the following flows:
 
 * the same way as theme Composer packages are uninstalled, see the [Uninstall a theme package](#uninstall_theme_pack) section for details.
-* * using the Component Manager.     
+* using the Component Manager.     
 
 To uninstall a theme extension using the Component Manager:
 
