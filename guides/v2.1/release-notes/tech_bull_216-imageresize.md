@@ -43,7 +43,7 @@ The third step of the following procedure can be highly time-consuming, and Mage
 
 To prevent Magento from resizing images after upgrade, you must include `<frame>0</frame>` within that image definition in `view.xml`.  
 
-1. Update your `view.xml` file by confirming that the parameters related to the image frame contains these two settings: 
+1. Update your `view.xml` file by confirming that the parameters related to the image frame contain these two settings: 
 
 	* `<frame>0</frame>` 
 
