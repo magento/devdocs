@@ -58,6 +58,7 @@ The following is an illustration of how the process of making simple changes loo
 <img src="{{ site.baseurl }}common/images/extend_less_screenshot2.png" alt="Admin login page where the font of the buttons was changed">
 </li>
 </ol>
+
 If your Magento instance uses the server-side compilation mode, to make your changes apply, you need to clean the previously generated static view files. Several ways to do this are described in the [Clean static files cache]({{page.baseurl}}howdoi/clean_static_cache.html) topic. You can automate this process by additionally installing Grunt, and using the built-in Grunt commands to watch the changes and clean the directories. The flow of making changes using Grunt is described in the following section.
 
 <h2 id="server-side-grunt">Making simple style changes in server-side compilation mode using Grunt</h2>
