@@ -1,7 +1,7 @@
 ---
 layout: default
 group: 
-subgroup: 40_live
+subgroup: Live
 title: Sensitive configuration paths reference
 menu_title: Sensitive configuration paths reference
 menu_order: 85

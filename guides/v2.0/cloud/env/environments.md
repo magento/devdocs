@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 12_env
+subgroup: 120_env
 title: Manage your environments
 menu_title: Manage your environments
 menu_order: 1

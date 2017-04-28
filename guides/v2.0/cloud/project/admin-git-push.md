@@ -1,7 +1,7 @@
 ---
 layout: default
 group: 
-subgroup: 10_project
+subgroup: 100_project
 title: git push details
 menu_title: git push details (remove or rewrite)
 menu_order: 100

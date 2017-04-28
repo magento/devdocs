@@ -13,9 +13,16 @@ github_link: release-notes/ReleaseNotes2.1.6EE.md
 *	TOC
 {:toc}
 
+*Release notes updated on April 27, 2017.*
+
+<div class="bs-callout bs-callout-warning" markdown="1">
+Upgrading to this release can cause problems with image resizing. We are aware of the issue and will soon publish a Technical Bulletin that describes the problem and provides a workaround.  
+</div>
+
 We are pleased to present Magento Enterprise Edition 2.1.6. This release includes important performance enhancements for your Magento installation, especially for operations that involve the category page as well as image resizing. 
 
 Looking for the <a href="http://devdocs.magento.com/guides/v2.0/cloud/release-notes/CloudReleaseNotes.html" target="_blank">Magento Enterprise Cloud Edition Release Notes</a>?
+
 
 
 ## Highlights
@@ -68,6 +75,19 @@ We address the following functional fixes and enhancements in this release.
 
 
 <!--- 65251 -->* The storefront now displays images that Magento resizes during product save operations, rather than resizing the product on the storefront. Previously, the image path contained `store_id`,  and during save operations, Magento resized images for images the default store only. 
+
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+Users have encountered problems displaying images after upgrading their software to Magento 2.1.6. These problems range from incomplete loading to the total inability to load images.  Consequently, if you saved a product and didn't open it on the storefront before upgrading to 2.1.6, you'll need to apply a workaround. 
+
+**Workaround**: To correct problems with image loading, choose one of these two workarounds:
+
+* Run `php bin/magento catalog:images:resize`
+
+or 
+
+* Save (or resave) the product with the associated image in the Admin panel.
+</div>
+
 
 <!--- 66366 -->* The `\Magento\CatalogInventory\Model\Stock\Status\getStockId()` method now returns the correct values.
 

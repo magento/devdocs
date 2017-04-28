@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 08_setup
+subgroup: 080_setup
 title: Public IP addresses for integration environments
 menu_title: Public IP addresses for integration environments
 menu_order: 900
@@ -10,7 +10,7 @@ version: 2.0
 github_link: cloud/before/integration-ip-addr.md
 ---
 
-This topic lists incoming and outgoing IP addresses used by Magento Enterprise Cloud Edition [integration environments]({{page.baseurl }}cloud/discover-arch.html#cloud-arch-int).These IP addresses are stable, but might change in the future. Prior to any future change, all affected customers will receive ample warning.
+This topic lists incoming and outgoing IP addresses used by Magento Enterprise Cloud Edition [integration environments]({{page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int).These IP addresses are stable, but might change in the future. Prior to any future change, all affected customers will receive ample warning.
 
 ## Outbound IP addresses
 This section lists public outbound IP addresses for integration environments.
