@@ -18,6 +18,7 @@ This page contains recent changes that we think you'd like to know about. We exc
 
 | Description  | Versions applied to  | New or Updated | Date |
 |--------------|--------------|----------------------|--------|
+| Payments integrations: [response validators]({{ page.gdeurl }}payments-integrations/payment-gateway/response-validator.html){:target="_blank"} and [payment method facade]({{ page.baseurl }}payments-integrations/base-integration/facade-configuration.html)| 2.0, 2.1.x | Updated | Apr 27  |
 | [Technical guidelines for working with Events]({{ page.baseurl }}coding-standards/technical-guidelines/technical-guidelines.html#events){:target="_blank"} | 2.1.x |  New | Apr 19  |
 | [Migration: Follow-up after running the Data Migration Tool]({{ page.baseurl }}migration/migration-migrate-follow-up.html){:target="_blank"} | 2.x  |  Updated | Apr 14  |
 
