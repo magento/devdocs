@@ -41,7 +41,7 @@ If an image doesn't contain a `<frame>` element, Magento uses the `product_image
 The third step of the following procedure can be highly time-consuming, and Magento performance will be degraded while the workaround is in progress. However, you can run `catalog:image:resize` on your staging server to avoid the downtime in your production environment. After you've done that, copy the resized images to `pub/media/catalog/product/cache/*` on your production server.
 </div> 
 
-To prevent Magento from resizing images after updgrade, you must include `<frame>0</frame>` within that image definition in `view.xml`.  
+To prevent Magento from resizing images after upgrade, you must include `<frame>0</frame>` within that image definition in `view.xml`.  
 
 1. Update your `view.xml` file by confirming that the parameters related to the image frame contains these two settings: 
 
@@ -51,7 +51,7 @@ To prevent Magento from resizing images after updgrade, you must include `<frame
         <var name="product_image_white_borders">0</var>
     	</vars>`
 
-2. Clean your full-page cache. See [Manage the Cache](http://devdocs.magento.com/guides/v2.0/config-guide/cli/config-cli-subcommands-cache.html){:target="_blank"}for more information on Magento cache types and procedures for managing caches. 
+2. Clean your full-page cache. See [Manage the Cache](http://devdocs.magento.com/guides/v2.0/config-guide/cli/config-cli-subcommands-cache.html){:target="_blank"} for more information on Magento cache types and procedures for managing caches. 
 
 3. Manually resize all your images using the `bin/magento catalog:images:resize` command.  
 
