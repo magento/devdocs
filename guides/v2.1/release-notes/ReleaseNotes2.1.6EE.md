@@ -13,7 +13,7 @@ github_link: release-notes/ReleaseNotes2.1.6EE.md
 *	TOC
 {:toc}
 
-*Release notes updated on April 27, 2017.*
+*Release notes updated on April 28, 2017.*
 
 <div class="bs-callout bs-callout-warning" markdown="1">
 Upgrading to this release can cause problems with image resizing. Please see [Image Resize Issue with Magento 2.1.6](http://devdocs.magento.com/guides/v2.1/release-notes/tech_bull_216-imageresize.html){:target="_blank"} for an overview of these post-upgrade issues and our suggested workaround.
