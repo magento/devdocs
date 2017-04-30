@@ -158,7 +158,7 @@ class ExistingClassTest extends \PHPUnit_Framework_TestCase
     protected function setUp()
     {
         ...
-        // Create dependency mcoks with $this->getMock() or $this->getMockBuilder()
+        // Create dependency mocks with $this->getMock() or $this->getMockBuilder()
         $newDependencyMock = $this->getMock(\New\Dependency\Interface::class);
 
         $objectManager = new \Magento\Framework\TestFramework\Unit\Helper\ObjectManager($this);
