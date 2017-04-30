@@ -863,7 +863,7 @@ Explain the reasons for replacing the old method with the new one (e.g., there i
     <span class="k">protected</span> <span class="k">function</span> <span class="nf">setUp</span><span class="p">()</span>
     <span class="p">{</span>
         <span class="o">...</span>
-        <span class="c1">// Create dependency mcoks with $this-&gt;getMock() or $this-&gt;getMockBuilder()</span>
+        <span class="c1">// Create dependency mocks with $this-&gt;getMock() or $this-&gt;getMockBuilder()</span>
         <span class="nv">$newDependencyMock</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getMock</span><span class="p">(</span><span class="nx">\New\Dependency\Interface</span><span class="o">::</span><span class="na">class</span><span class="p">);</span>
 
         <span class="nv">$objectManager</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\Magento\Framework\TestFramework\Unit\Helper\ObjectManager</span><span class="p">(</span><span class="nv">$this</span><span class="p">);</span>

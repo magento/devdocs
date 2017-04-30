@@ -1100,11 +1100,13 @@ The following file is a sample of a file you must add:</p>
     	<span class="c">&lt;!-- Add external resources --&gt;</span>
 	<span class="nt">&lt;css</span> <span class="na">src=</span><span class="s">&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css&quot;</span> <span class="na">src_type=</span><span class="s">&quot;url&quot;</span> <span class="nt">/&gt;</span>
         <span class="nt">&lt;script</span> <span class="na">src=</span><span class="s">&quot;https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js&quot;</span> <span class="na">src_type=</span><span class="s">&quot;url&quot;</span> <span class="nt">/&gt;</span>
-        <span class="nt">&lt;link</span> <span class="na">src=</span><span class="s">&quot;http://fonts.googleapis.com/css?family=Montserrat&quot;</span> <span class="na">src_type=</span><span class="s">&quot;url&quot;</span> <span class="nt">/&gt;</span> 
+        <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">type=</span><span class="s">&quot;text/css&quot;</span> <span class="na">src=</span><span class="s">&quot;http://fonts.googleapis.com/css?family=Montserrat&quot;</span> <span class="na">src_type=</span><span class="s">&quot;url&quot;</span> <span class="nt">/&gt;</span> 
     <span class="nt">&lt;/head&gt;</span>
 <span class="nt">&lt;/page&gt;</span></code></pre></figure>
 
 <p>When adding external resources, specifying the <code>src_type="url"</code> argument value is a must.</p>
+
+<p>If you’d like to include a google webfont, you have to add the <code>rel="stylesheet" type="text/css"</code> to the <link /> tag, otherwise it won’t work.</p>
 
 <p>You can use either <code>&lt;link src="js/sample.js"/&gt;</code> or <code>&lt;script src="js/sample.js"/&gt;</code> instruction to add a locally stored JavaScript file to your theme.</p>
 
