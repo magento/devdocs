@@ -1531,7 +1531,7 @@
 <p>The following shows a <code>crontab</code> group entry:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;group</span> <span class="na">id=</span><span class="s">&quot;default&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;job</span> <span class="na">name=</span><span class="s">&quot;consumerCustomerCreatedListener&quot;</span> <span class="na">instance=</span><span class="s">&quot;Magento\Amqp\Model\ConsumerRunner&quot;</span> <span class="na">method=</span><span class="s">&quot;customerCreatedListener&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;job</span> <span class="na">name=</span><span class="s">&quot;consumerCustomerCreatedListener&quot;</span> <span class="na">instance=</span><span class="s">&quot;Magento\MessageQueue\Model\ConsumerRunner&quot;</span> <span class="na">method=</span><span class="s">&quot;customerCreatedListener&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;schedule&gt;</span>0 0 * * *<span class="nt">&lt;/schedule&gt;</span>
     <span class="nt">&lt;/job&gt;</span>
 <span class="nt">&lt;/group&gt;</span></code></pre></figure>
