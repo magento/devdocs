@@ -22,7 +22,7 @@ The following shows a `crontab` group entry:
 
 {% highlight xml %}
 <group id="default">
-    <job name="consumerCustomerCreatedListener" instance="Magento\MessageQueue\Model\ConsumerRunner" method="customerCreatedListener">
+    <job name="consumerCustomerCreatedListener" instance="Magento\Amqp\Model\ConsumerRunner" method="customerCreatedListener">
         <schedule>0 0 * * *</schedule>
     </job>
 </group>
