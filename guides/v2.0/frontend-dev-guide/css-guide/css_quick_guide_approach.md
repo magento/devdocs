@@ -87,7 +87,7 @@ In <code>_extend.less</code> register the <code>_buttons_extend.less</code> by a
 </ol>
 
 <h3 id="structured_override">Override component's styles</h3>
-To extend the parent theme's styles for buttons in your theme:
+To override the parent theme's styles for buttons in your theme:
 <ol>
 <li>In your theme directory, create a <code>web/css/source</code> sub-directory. </li>
 <li>Create a <code>_buttons.less</code> file here. The path to it looks like following: 
