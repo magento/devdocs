@@ -88,7 +88,7 @@ Mark-up examples:
 <script>
     require([
         'jquery',
-        'tabs'], function ($) {
+        'accordion'], function ($) {
         $("#element").accordion();
     });
 </script>
