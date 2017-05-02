@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>About the uiElement class | Magento 2 Developer Documentation</title>
+	<title>How to add a Category Attribute | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.1/ui_comp_guide/concepts/ui_comp_uielement_concept.html">
+	<link rel="canonical" href="//guides/v2.1/ui_comp_guide/howto/add_category_attribute.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -52,9 +52,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/ui_comp_guide/concepts/ui_comp_uielement_concept.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/ui_comp_guide/howto/add_category_attribute.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_uielement_concept.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/ui_comp_guide/howto/add_category_attribute.html">Magento 2.1</a></li>
 	
   </ul>
 
@@ -723,7 +723,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_uielement_concept.html">About the uiElement class</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_uielement_concept.html">About the uiElement class</a></li>
 
 									
 
@@ -785,7 +785,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/ui_comp_guide/howto/add_category_attribute.html">Creating and displaying a category attribute with UI Components</a></li>
+									<li class="level-2  active "><a href="/guides/v2.1/ui_comp_guide/howto/add_category_attribute.html">Creating and displaying a category attribute with UI Components</a></li>
 
 									
 
@@ -1069,7 +1069,7 @@
 
           
 
-          <span property="name">About the uiElement class</span>
+          <span property="name">How to add a Category Attribute</span>
 
         
 
@@ -1092,100 +1092,101 @@
 
 	
 
-	<h1 class="page-heading">About the uiElement class</h1>
+	<h1 class="page-heading">How to add a Category Attribute</h1>
 
   
 
 
 </section>
 
-			<h2 id="what-is-the-uielement-class">What is the <code>uiElement</code> class</h2>
+			<h1 id="how-to-add-a-category-attribute">How to add a Category Attribute</h1>
 
-<p>The <code>uiElement</code> class is a direct successor of the <a href="ui_comp_guide/concepts/ui_comp_uiclass_concept.html">uiClass library</a>.
-When creating a new component, use the <code>uiElement</code> class as a direct parent, if your component will be the last in the components hierarchy chain.</p>
+<p>Category attributes were automatically displayed in the admin panel of Magento 1. In Magento 2, it is necessary to explicitly render it with a UI Component. This is quite easy to do and provides a great degree of control over the form input. In the code examples below, replace <code>attribute_id</code> and <code>Your Category Attribute Name</code> with your own values.</p>
 
-<p><code>uiElement</code> source code is <code>&lt;UI_Module_dir&gt;/view/base/web/js/lib/core/element/element.js</code>, in the Magento CE github repository: <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/lib/core/element/element.js">app/code/Magento/Ui/view/base/web/js/lib/core/element/element.js</a>.</p>
+<h3 id="step-1-create-the-attribute">Step #1: Create the Attribute</h3>
 
-<h2 id="commonly-used-uielement-methods">Commonly used <code>uiElement</code> methods</h2>
+<p>The following is a full example of an install script that creates a category attribute. If you already have a category attribute, it is not necessary.</p>
 
-<ul>
-  <li>
-    <p>The <code>initLinks()</code> method implements component communication by using <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/lib/core/element/links.js"><code>links.js</code></a>.  <code>initLinks()</code> introduces processing of the <a href="http://devdocs.magento.com/guides/v2.0/ui-components/ui_components_js.html#comp_link"><code>exports</code>, <code>imports</code>, <code>links</code> and <code>listens</code> properties</a>.</p>
-  </li>
-  <li>
-    <p>The <code>initObservable()</code> method allows you to declare observable variables within the same instance.</p>
+<pre><code class="language-php">// File: Namespace/Module/Setup/InstallData.php
 
-    <p>Example:</p>
+use Magento\Framework\Setup\{
+    ModuleContextInterface,
+    ModuleDataSetupInterface,
+    InstallDataInterface
+};
 
-    <pre><code>initObservable: function () {
-    this._super();
+use Magento\Eav\Setup\EavSetup;
+use Magento\Eav\Setup\EavSetupFactory;
 
-    this.track('childTemplate')
-    this.observe([
-        '%myVariable1%',
-        '%myVariable2%'
-    ]);
+class InstallData implements InstallDataInterface
+{
+    private $eavSetupFactory;
 
-    return this;
-}
-</code></pre>
-
-    <p>, where:</p>
-
-    <ul>
-      <li>
-        <p>the <code>observe()</code> method is a wrapper for the <code>ko.observable()</code> and <code>ko.observableArray()</code> methods. It converts the properties of the current method into the observable properties.
-<code>observe([{Boolean} isTracked,] {String|Array|Object} listOfProperties)</code>:</p>
-
-        <ul>
-          <li><code>isTracked</code> - <code>{Boolean}</code>, optional, - defines access usage: whether to use observable properties (<code>isTracked = false</code>) or property accessors (<code>isTracked = true</code>).</li>
-          <li><code>listOfProperties</code> - <code>{String}</code> is treated as space-separated list of properties’ names. Initial values will be used from current instance (when corresponding property exist).</li>
-          <li><code>listOfProperties</code> - <code>{Array}</code> a list of properties’ names. Initial values will be used from current instance (when corresponding property exist).</li>
-          <li><code>listOfProperties</code> - <code>{Object}</code> a list of properties’ names. Initial values will be used from this object.</li>
-        </ul>
-      </li>
-      <li>
-        <p>the <code>track(listOfProperties)</code> method is equal to <code>observe(true, listOfProperties)</code>.
-The main difference between <code>observe()</code> and <code>track()</code> is that <code>observe()</code> is mainly used without first boolean argument. So it really converts properties to observable functions. It changes how property can be accessed. Otherwise <code>track()</code> uses property accessors. So property access remains the same.</p>
-
-        <p>Example:</p>
-
-        <pre><code>this.observable = 1;
-this.observe('observable');
-
-this.observable(2); // setter
-this.observable();  // getter
-
-
-this.trackable = 1;
-this.track('trackable');
-
-this.trackable = 2; // setter
-this.trackable;     // getter
-</code></pre>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <p>The <code>initModules()</code> method initializes external UI components’ instances and links them to local variables. This method works with the <code>modules</code> section of the configuration, where we define the name of the external instance and the local variable. The <code>modules</code> section is an object where each key is the variable’s name and each value is the instance’s name. A developer does not need to be concerned with the instantiation of the module (external instance), because the <code>initModules()</code> method will resolve the variable when the instance is instantiated.</p>
-
-    <p>Example:</p>
-
-    <pre><code>// Config, where the `modules` property is declared
-defaults: {
-    modules: {
-        '%myProperty%': '%linkToTheComponent%'
+    public function __construct(EavSetupFactory $eavSetupFactory) {
+        $this-&gt;eavSetupFactory = $eavSetupFactory;
     }
-}
+
+    public function install(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
+    {
+        $eavSetup = $this-&gt;eavSetupFactory-&gt;create(['setup' =&gt; $setup]);
+        $eavSetup-&gt;addAttribute(\Magento\Catalog\Model\Category::ENTITY, 'attribute_id', [
+            'type'     =&gt; 'int',
+            'label'    =&gt; 'Your Category Attribute Name',
+            'input'    =&gt; 'boolean',
+            'source'   =&gt; 'Magento\Eav\Model\Entity\Attribute\Source\Boolean',
+            'visible'  =&gt; true,
+            'default'  =&gt; '0',
+            'required' =&gt; false,
+            'global'   =&gt; \Magento\Eav\Model\Entity\Attribute\ScopedAttributeInterface::SCOPE_STORE,
+            'group'    =&gt; 'Display Settings',
+        ]);
+    }
+}        
+ ```
+
+ ### Step #2: Display the Attribute
+
+The category UI Component is rendered with configuration from the `category_form.xml` file. All files with that name are merged together. As a result, you can add a field by creating a `category_form.xml` file in the `view/adminhtml/ui_component` directory in your module.
+
+Here is a full example of adding a field under the "Display Settings" group. It is important to note that `attribute_id` should match the ID of the attribute that you created in the install script.
+
+ ```xml
+&lt;!-- Namespace/Module/view/adminhtml/ui_component/category_form.xml --&gt;
+&lt;?xml version="1.0"?&gt;
+&lt;form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd"&gt;
+    &lt;fieldset name="display_settings"&gt;
+        &lt;field name="attribute_id"&gt;
+            &lt;argument name="data" xsi:type="array"&gt;
+                &lt;item name="config" xsi:type="array"&gt;
+                    &lt;item name="dataType" xsi:type="string"&gt;boolean&lt;/item&gt;
+                    &lt;item name="formElement" xsi:type="string"&gt;checkbox&lt;/item&gt;
+                    &lt;item name="label" xsi:type="string" translate="true"&gt;Your Category Attribute Name&lt;/item&gt;
+                    &lt;item name="prefer" xsi:type="string"&gt;toggle&lt;/item&gt;
+                    &lt;item name="valueMap" xsi:type="array"&gt;
+                        &lt;item name="true" xsi:type="string"&gt;1&lt;/item&gt;
+                        &lt;item name="false" xsi:type="string"&gt;0&lt;/item&gt;
+                    &lt;/item&gt;
+                    &lt;item name="default" xsi:type="number"&gt;0&lt;/item&gt;
+                &lt;/item&gt;
+            &lt;/argument&gt;
+        &lt;/field&gt;
+    &lt;/fieldset&gt;
+&lt;/form&gt;
 </code></pre>
-  </li>
-  <li>
-    <p>The <code>getTemplate()</code> method returns a file path to UI component’s template.</p>
-  </li>
-  <li>
-    <p>The <code>hasTemplate()</code> method verifies that the <code>template</code> property was specified in the instance configuration.</p>
-  </li>
-</ul>
+
+<h3 id="step-3-upgrade-and-run">Step #3: Upgrade and Run</h3>
+
+<p><a href="http://devdocs.magento.com/guides/v2.0/install-gde/install/cli/install-cli-subcommands-db-upgr.html">Upgrade the database schema</a> to install the attribute <a href="http://devdocs.magento.com/guides/v2.0/howdoi/php/php_clear-dirs.html#howdoi-clear-how">and clear your cache</a>.</p>
+
+<h4 id="how-it-works">How it works</h4>
+
+<p>UI Component configuration is merged. When you add a new file, Magento will merge that with the base UI Component configuration file. In the example above, that is <code>category_form.xml</code>. The nodes inside of that reflect the structure of the base file. There are only two nodes necessary in this case before the custom field is added: <code>&lt;form&gt;</code> and <code>&lt;fieldset&gt;</code>. Inside of that, the <code>&lt;field&gt;</code> node is used to add a field with a name that matches the id of the attribute you want to render.</p>
+
+<p>The <code>&lt;field&gt;</code> node is declared originally in <code>vendor/magento/module-ui/view/base/ui_component/etc/definition.xml</code>. If you open that file and look for <code>&lt;field&gt;</code>, you will notice that there is only a PHP class referenced—nothing particularly helpful. This is where the <code>config</code> elements in the example above come in important. Notice the value of <code>&lt;item name="formElement"&gt;</code> (<code>checkbox</code>)? Now, if you look in <code>definition.xml</code>, you will find a <code>&lt;checkbox&gt;</code> node that has some configuration values. In the PHP class that the <code>&lt;field&gt;</code> element references, it looks up the <code>formElement</code> to use and loads that. As a result, <code>&lt;checkbox&gt;</code> is the node. In this case, that has the information that we are looking for.</p>
+
+<p>One of those elements is particularly useful when determining what XML you need to provide for your field: <code>&lt;item name="component"&gt;</code>. That is a Javascript file that handles the functionality of the field. In our case, it is located in <code>vendor/magento/module-ui/view/base/web/js/form/element/single-checkbox.js</code>. If you open that file, there is a <code>defaults</code> object which contains values that can be modified through the XML above. For example, notice: <code>defaults.prefer: 'checkbox'</code>. In the XML above, we declared <code>&lt;item name="prefer"&gt;toggle&lt;/item&gt;</code>. As a result, the XML value overrides the default value, and the Javascript renders a toggle instead of a plain checkbox.</p>
+
+<p>This opens up the opportunity for you to customize nearly anything about the UI Component. It also should provide you with a basis of how to determine what configuration is available for you to set through XML.</p>
 
 		</div>
 		<!-- /.content-wrap -->
@@ -1193,17 +1194,23 @@ defaults: {
 		<div class="page-info">
 
   
+    <div class="page-contributor">
+      <a href="https://swiftotter.com/" target="_blank">
+        Thanks to SwiftOtter Studios for contributing this topic
+      </a>
+    </div>
+  
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/ui_comp_guide/concepts/ui_comp_uielement_concept.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/ui_comp_guide/howto/add_category_attribute.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
   
 
   <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/ui_comp_guide/concepts/ui_comp_uielement_concept.html" target="_blank">Give us feedback</a>
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/ui_comp_guide/howto/add_category_attribute.html" target="_blank">Give us feedback</a>
   </div>
 
 </div>
