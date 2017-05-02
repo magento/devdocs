@@ -435,22 +435,22 @@
 
 <ul>
   <li>
-    <p><code>/block</code></p>
+    <p><code>/Block</code></p>
   </li>
   <li>
-    <p><code>/controllers</code></p>
+    <p><code>/Controller</code></p>
   </li>
   <li>
     <p><code>/etc</code></p>
   </li>
   <li>
-    <p><code>/helper</code></p>
+    <p><code>/Helper</code></p>
   </li>
   <li>
-    <p><code>/model</code></p>
+    <p><code>/Model</code></p>
   </li>
   <li>
-    <p><code>/sql</code></p>
+    <p><code>/Setup</code></p>
   </li>
 </ul>
 
@@ -458,7 +458,7 @@
 
 <p><i>Blocks</i> help provide the data used in the View component of the module structure. Blocks coordinate models with the template files. The files in this folder load the data from database and transfer it to the templates in your theme (<code>PHTML</code> files).</p>
 
-<h3 id="controllers">Controllers</h3>
+<h3 id="controller">Controller</h3>
 
 <p><i>Controllers</i> represent all business logic actions for the given request. These actions include <code>dispatch()</code>, <code>preDispatch()</code>, <code>postDispatch()</code> methods and delegate commands to other parts of the system. Controllers correspond to the Controller portion of the Model-View-Controller model.</p>
 
@@ -486,9 +486,33 @@
   <li>
     <p>webapi.xml</p>
   </li>
+  <li>
+    <p>system.xml</p>
+  </li>
+  <li>
+    <p>adminhtml.xml</p>
+  </li>
+  <li>
+    <p>events.xml</p>
+  </li>
+  <li>
+    <p>page_types.xml</p>
+  </li>
+  <li>
+    <p>routes.xml</p>
+  </li>
+  <li>
+    <p>sections.xml</p>
+  </li>
+  <li>
+    <p>email_templates.xml</p>
+  </li>
+  <li>
+    <p>fieldset.xml</p>
+  </li>
 </ul>
 
-<p>Configuration files that are in the top level of that module’s <code>/etc</code> directory are global to that component. Configuration files placed in subdirectories (<code>adminhtml</code>, <code>frontend</code>, <code>webapi_rest</code>, <code>webapi_soap</code>) apply only to those respective functional areas.</p>
+<p>Configuration files that are in the top level of that module’s <code>/etc</code> directory are global to that component. Configuration files placed in subdirectories (<code>adminhtml</code>, <code>frontend</code>, <code>webapi_rest</code>, <code>webapi_soap</code>, <code>crontab</code>) apply only to those respective functional areas.</p>
 
 <p>The specific set of configuration files that your module requires depends on the module’s purpose and the Magento area in which it functions.</p>
 
@@ -507,7 +531,7 @@
 
 <p>A Magento model object contains a reference to a resource model, which it uses to load its data. There’s an individual resource model object for each model object. For example, a Product Model has a Product resource model.</p>
 
-<h3 id="sql">sql</h3>
+<h3 id="setup">Setup</h3>
 <p>Structures in this directory handle any custom database tables that are used by the module and process all upgrades to the extension.</p>
 
 <h2 id="arch-modules-related">Related topics</h2>
