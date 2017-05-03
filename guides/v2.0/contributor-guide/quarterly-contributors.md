@@ -1,7 +1,7 @@
 ---
 layout: default
 group: contributor
-subgroup: contributor
+subgroup: contributor_docs
 title: Quarterly Contributors
 menu_title: Quarterly Contributors
 menu_order: 1000

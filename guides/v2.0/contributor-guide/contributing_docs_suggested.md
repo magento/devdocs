@@ -1,7 +1,7 @@
 ---
 layout: default
 group: contributor
-subgroup: contributor
+subgroup: contributor_docs
 title: Suggested topics for contribution
 menu_title: Suggested topics for contribution
 menu_order: 10
