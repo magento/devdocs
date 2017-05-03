@@ -22,33 +22,78 @@ Search-specific configuration:
 
 <table>
   <tr>
-    <th>Option</th>
-    <th>Description</th>
-    <th>Type</th>
-    <th>Default Value</th>
+    <th>
+      Option
+    </th>
+    <th>
+      Description
+    </th>
+    <th>
+      Type
+    </th>
+    <th>
+      Default Value
+    </th>
   </tr>
   <tr>
-    <td><code>label</code></td>
-    <td>The search field label.</td>
-    <td>String</td>
-    <td><code>'Keyword'</code></td>
+    <td>
+      <code>label</code>
+    </td>
+    <td>
+      The search field label.
+    </td>
+    <td>
+      String
+    </td>
+    <td>
+      <code>'Keyword'</code>
+    </td>
   </tr>
   <tr>
-    <td><code>placeholder</code></td>
-    <td>Value displayed when the search field is empty.</td>
-    <td>String</td>
-    <td><code>'Search by keyword'<code></td>
+    <td>
+      <code>placeholder</code>
+    </td>
+    <td>
+      Value displayed when the search field is empty.
+    </td>
+    <td>
+      String
+    </td>
+    <td>
+      <code>'Search by keyword'</code>
+    </td>
   </tr>
   <tr>
-    <td><code>statefull</code></td>
-    <td>Defines a list of component properties whose values are automatically saved in the configured storage if they change. <code>key</code> is the property's name and the value defines whether its saved.</td>
-    <td>{<br>[name: string]: boolean<br>}</td>
-    <td><code>{value: true}</code></td>
+    <td>
+      <code>statefull</code>
+    </td>
+    <td>
+      Defines a list of component properties whose values are
+      automatically saved in the configured storage if they change.
+      <code>key</code> is the property's name and the value defines
+      whether its saved.
+    </td>
+    <td>
+      {<br />
+      [name: string]: boolean<br />
+      }
+    </td>
+    <td>
+      <code>{value: true}</code>
+    </td>
   </tr>
   <tr>
-    <td><code>template</code></td>
-    <td>Path to the component’s <code>.html</code> template.</td>
-    <td>String</td>
-    <td><code>ui/grid/search/search</code></td>
+    <td>
+      <code>template</code>
+    </td>
+    <td>
+      Path to the component’s <code>.html</code> template.
+    </td>
+    <td>
+      String
+    </td>
+    <td>
+      <code>ui/grid/search/search</code>
+    </td>
   </tr>
 </table>

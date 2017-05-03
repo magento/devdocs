@@ -11,7 +11,7 @@ github_link: howdoi/webapi/integration.md
 ---
 
 
-An **integration** enables third-party services to call the Magento web APIs. The Magento APIs currently supports Accounting, Enterprise Resource Planning (ERP), Customer Relationship Management (CRM), Product Information Management (PIM), and marketing automation systems out of the box.  
+An **integration** enables third-party services to call the Magento web APIs. The Magento APIs currently supports Accounting, Enterprise Resource Planning (ERP), Customer Relationship Management (CRM), Product Information Management (PIM), and marketing automation systems out of the box.
 
 Implementing a simple integration requires little knowledge of PHP or Magento internal processes. However, you will need a working knowledge of
 
@@ -257,7 +257,7 @@ The  file defines which API resources the integration has access to.
 <tr>
 <td>endpoint_url</td>
 <td><p>Optional. The URL where OAuth credentials can be sent when using OAuth for token exchange. We strongly recommend using <code>https://</code>.</p>
-<p>See [OAuth-based authentication]({{page.baseurl}}get-started/authentication/gs-authentication-oauth.html) for details.</p></td>
+<p>See <a href="{{page.baseurl}}get-started/authentication/gs-authentication-oauth.html">OAuth-based authentication</a> for details.</p></td>
 </tr>
 <tr>
 <td>identity_link_url</td>
@@ -284,7 +284,7 @@ Before you can activate your integration in Magento, you must create two pages o
 
 * The location specified in the `identity_link_url` parameter must point to a page that can handle login requests.
 
-* The location specified in the `endpoint_url` parameter (**Callback URL** in Admin) must be able to process OAuth token exchanges. 
+* The location specified in the `endpoint_url` parameter (**Callback URL** in Admin) must be able to process OAuth token exchanges.
 
 ### Login page {#login}
 
