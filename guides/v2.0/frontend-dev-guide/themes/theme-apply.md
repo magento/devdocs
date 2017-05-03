@@ -25,10 +25,10 @@ After you <a href="{{page.baseurl}}frontend-dev-guide/themes/theme-create.html">
 
 To apply a theme:
 
-2. In Admin, go to **Stores** > **Configuration** > **Design**.
-3. In the **Store View** drop-down field, select the store view where you want to apply the theme.
-4. On the **Design Theme** tab, select your newly created theme in the **Design Theme** drop-down.
-5. Click **Save Config**.
+2. In Admin, go to **Content** > **Configuration**.
+3. Click the **Edit** link in the row for the store view where you want to apply the theme.
+4. Choose your theme from the **Applied Theme** drop-down list.
+5. Click **Save Configuration**
 6. If caching is enabled, <a href="#theme-apply-clear">clear the cache</a>. 
 6. To see your changes applied, reload the store front pages.
 
@@ -37,11 +37,11 @@ To apply a theme:
 Design exceptions enable you to specify an alternative theme for particular user-agents, instead of creating a separate store views for them.
 To add a design exception:
 
-2. In Admin, go to **Stores** > **Configuration** > **Design**.
-3. In the **Scope** drop-down field, select your website.
-4. On the **Design Theme** tab next to **User-Agent Exceptions** click **Add**.
-5. In the **Search String** box specify the user-agent using either normal strings or regular exceptions (PCRE). In the **Design Theme** drop-down list select the theme to be used for matching agent.
-6. Click **Save Config**.
+2. In Admin, go to **Content** > **Configuration**.
+3. Click the **Edit** link in the row for the store view where you want to apply the theme.
+4. Under the **Design Rule** section next to **User-Agent Rules** click **Add New User Agent Rule**.
+5. In the **Search String** box specify the user-agent using either normal strings or regular exceptions (PCRE). In the **Theme Name** drop-down list select the theme to be used for matching agent.
+6. Click **Save Configuration**.
 7. If caching is enabled, <a href="#theme-apply-clear">clear the cache</a>. 
 6. To see your changes applied, reload the store front pages.
 
@@ -50,12 +50,12 @@ To add a design exception:
 You might want to set a permanent store logo, that displays on the store front no matter what theme is applied.
 To add a permanent theme-independent logo:
 
-1. In the Admin panel, go to **Stores** > **Configuration** > **Design**.
-2. In the **Scope** drop-down, select the store view.
-3. In the **Design** section of the General configuration, expand the **Header** tab.
+1. In the Admin panel, go to **Content** > **Configuration**.
+2. Click the **Edit** link in the row for the store view where you want to apply the theme.
+3. In the **Other Settings** section, expand the **Header** tab.
 4. In the **Logo Image** field browse to the logo file saved in your file system.
 6. Upload the file.
-7. Click **Save Config**.
+7. Click **Save Configuration**.
 7. If caching is enabled, <a href="#theme-apply-clear">clear the cache</a>. 
 8. To see your changes applied, reload the store front pages.
 
