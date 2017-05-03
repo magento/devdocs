@@ -164,7 +164,6 @@ You must perform this step last because after it's done, you'll lose access to t
 1.	In the Admin, click **Stores** > Settings > **Configuration** > General > **Web**.
 2.	From the **Store View** list at the top of the page, click **Default Config** as the following figure shows.
 
-
 	![Select the default config scope]({{ site.baseurl }}common/images/config_multi-site-default.png){:width="250px"} 
 
 3.	In the right pane, expand **Base URLs**.
