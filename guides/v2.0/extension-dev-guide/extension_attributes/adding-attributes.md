@@ -9,11 +9,11 @@ version: 2.0
 github_link: extension-dev-guide/extension_attributes/adding-attributes.md
 ---
 
-Third party developers cannot change API Data interface in the Magento Core, so the one way to affect interfaces
-using configuration is to add extension attributes.
+Third party developers cannot change {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} Data interface in the Magento Core, so the one way to affect interfaces
+using configuration is to add {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} attributes.
 
 <div class="bs-callout bs-callout-info" id="other-component-types">
-  <p>We will demonstrate this on Product entity, Product Repository and Web Api example. </p>
+  <p>We will demonstrate this on Product entity, Product Repository and {% glossarytooltip 377dc0a3-b8a7-4dfa-808e-2de37e4c0029 %}Web Api{% endglossarytooltip %} example. </p>
 </div>
 
 
@@ -81,8 +81,8 @@ We can add scalar and non-scalar extension attributes.
     ?>
 {% endhighlight %}
 
-It is the easiest way to add custom attributes. Because we need to know if entity already has extension attributes.
-Also we need to check whether we already has our extension attribute.
+It is the easiest way to add custom attributes. Because we need to know if {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %} already has extension attributes.
+Also we need to check whether we already has our {% glossarytooltip 45013f4a-21a9-4010-8166-e3bd52d56df3 %}extension attribute{% endglossarytooltip %}.
 
 AfterGetList is similar to afterGet.
 

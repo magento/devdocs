@@ -84,7 +84,7 @@ In some cases, you might already have `auth.json` so check to see if it exists a
 
 [Get a sample `auth.json`](https://raw.githubusercontent.com/magento/magento-cloud/master/auth.json.sample){:target="_blank"}
 
-To create a new `auth.json` in the event you don't have one:
+To create a new `auth.json` in the {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} you don't have one:
 
 1.  Use a text editor to create a file named `auth.json` in your Magento root directory.
 3.  Replace `<public-key>` and `<private-key>` with your Magento EE authentication credentials.
@@ -164,7 +164,7 @@ This section discusses how to use the [`magento setup:backup --media`]({{ page.b
         rsync /var/www/html/magento2/var/backups/1487962699_filesystem_media.tgz 43bkopvkhelhy-master-l8uv4kp@ssh.us.magentosite.cloud:var/media.tgz
 
 ### Copy the encryption key {#cloud-import-copykey}
-To be able to decrypt encrypted data from your imported database, copy your encryption from your existing `env.php` file. `env.php` contains a nested PHP array storing configuration data. 
+To be able to decrypt encrypted data from your imported database, copy your encryption from your existing `env.php` file. `env.php` contains a nested {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} array storing configuration data. 
 
 1.  Open `<Magento install dir>/app/etc/env.php` in a text editor.
 2.  Search for the value of `key` (it's in the `crypt` array).

@@ -25,7 +25,7 @@ Backward-incompatible changes are documented in <a href="{{page.baseurl}}release
 <h3>Fixed issues</h3>
 
 
-<!--- 51847 --> * Varnish no longer returns a 400 bad request error message when clearing its cache. Previously, this issue occurred with Magento instances running on GoDaddy. 
+<!--- 51847 --> * Varnish no longer returns a 400 bad request error message when clearing its {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %}. Previously, this issue occurred with Magento instances running on GoDaddy. 
 
 
 
@@ -35,7 +35,7 @@ Backward-incompatible changes are documented in <a href="{{page.baseurl}}release
 
 
 
-<!-- 51809 -->* You can now use the Redis adapter to provide session storage in Magento 2.0.6. For more information, see <a href="{{page.baseurl}}config-guide/redis/config-redis.html">Redis for session storage</a>. 
+<!-- 51809 -->* You can now use the Redis {% glossarytooltip edb42858-1ff8-41f9-80a6-edf0d86d7e10 %}adapter{% endglossarytooltip %} to provide session storage in Magento 2.0.6. For more information, see <a href="{{page.baseurl}}config-guide/redis/config-redis.html">Redis for session storage</a>. 
 
 
 <h4>Security enhancements</h4>
@@ -48,9 +48,9 @@ The following list provides an overview of the security issues fixed in this rel
 
 <!-- 51808 -->*  Magento no longer allows authenticated customers to change other customers' account information using either SOAP or REST calls.  Magento  now confirms that the ID of the customer whose account is being edited matches the authentication token in use. 
 
-<!-- 51390 -->* Anonymous users can no longer retrieve the private data of registered customers. To prevent malicious attacks of this type, the <code>quote_id_mask</code> table of the Quote API no longer includes a <code>cart id mask</code> value. 
+<!-- 51390 -->* Anonymous users can no longer retrieve the private data of registered customers. To prevent malicious attacks of this type, the <code>quote_id_mask</code> table of the {% glossarytooltip 77e19d0d-e7b1-4d3d-9bad-e92fbb9fb59a %}Quote{% endglossarytooltip %} {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} no longer includes a <code>cart id mask</code> value. 
 
-<!-- 51461 -->* Several parameters in the Authorize.net payment module are vulnerable to reflected Cross-Site Scripting (XSS) attacks. Existing protection against such malicious parameters is not enough to stop all types of attacks. 
+<!-- 51461 -->* Several parameters in the Authorize.net payment {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} are vulnerable to reflected Cross-Site Scripting (XSS) attacks. Existing protection against such malicious parameters is not enough to stop all types of attacks. 
 
 
 
@@ -68,14 +68,14 @@ The following list provides an overview of the security issues fixed in this rel
 <!-- 51370 -->* Magento no longer discloses information about its internal path during installation. 
 
 
-<!-- 51376 -->* Magento no longer discloses the administrator URL to an unauthenticated user during setup. 
+<!-- 51376 -->* Magento no longer discloses the administrator {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} to an unauthenticated user during setup. 
 
 
 <!-- 50955 -->* Application error messages no longer include the path to the file where the error occurred.  
 
 
 <h3>System requirements</h3>
-Our technology stack is built on PHP and MySQL. Magento 2.0.1 and later supports PHP 5.5, 5.6, 7.0.2, and MySQL 5.6. For more information, see 
+Our technology stack is built on {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} and MySQL. Magento 2.0.1 and later supports PHP 5.5, 5.6, 7.0.2, and MySQL 5.6. For more information, see 
 <a href="{{ site.baseurl }}magento-system-requirements.html" target="_blank">System Requirements</a>.
 
 
@@ -103,7 +103,7 @@ If you installed Magento Enterprise Edition 2.0.0 from an archive, you must perf
 
 ##### <b>Upgrade an existing installation from the Setup Wizard</b>#####
 
-1. Log in to the Admin panel with Administrator privileges.
+1. Log in to the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} panel with Administrator privileges.
 
 2.	On the Admin sidebar, click **System**. Under **Tools**,  choose **Web Setup Wizard**.
 

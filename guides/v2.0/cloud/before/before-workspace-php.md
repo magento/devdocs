@@ -13,7 +13,7 @@ github_link: cloud/before/before-workspace-php.md
 ---
 
 ## Set up PHP {#cloud-first-php}
-When you're working with the Magento Cloud CLI, local environment settings come from the machine on which you're working, not from Magento Enterprise Cloud Edition. For example, certain things (like debugging) require a larger PHP `memory_limit` than most PHP distributions provide by default.
+When you're working with the Magento Cloud CLI, local environment settings come from the machine on which you're working, not from Magento Enterprise Cloud Edition. For example, certain things (like debugging) require a larger {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} `memory_limit` than most PHP distributions provide by default.
 
 {% collapsible To set `memory_limit`: %}
 

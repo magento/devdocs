@@ -9,7 +9,7 @@ version: 2.1
 github_link: payments-integrations/base-integration/module-configuration.md
 ---
 
-For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code; add your customizations in a separate module.
+For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code; add your customizations in a separate {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
 
 ## Specify your module dependencies 
 
@@ -17,7 +17,7 @@ Your custom payment integration module must have at least the following dependen
 
 - Magento_Sales module: to be able to get order details
 - Magento_Payment module: to use the Magento payment provider gateway infrastructure
-- Magento_Checkout module: to be able to add the new payment method to checkout. If you do not plan to use it on the storefront checkout, this dependency is not required. 
+- Magento_Checkout module: to be able to add the new {% glossarytooltip 422b0fa8-b181-4c7c-93a2-c553abb34efd %}payment method{% endglossarytooltip %} to {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %}. If you do not plan to use it on the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} checkout, this dependency is not required. 
 
 
 Specify these dependencies in your `composer.json` and `module.xml` files. 

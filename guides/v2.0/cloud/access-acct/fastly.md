@@ -10,14 +10,14 @@ version: 2.0
 github_link: cloud/access-acct/fastly.md
 ---
 
-[Fastly](https://www.fastly.com/why-fastly){:target="_blank"} is required for Magento Enterprise Cloud Edition. It works with Varnish to provide fast caching capabilities and a Content Delivery Network (CDN) for static assets.
+[Fastly](https://www.fastly.com/why-fastly){:target="_blank"} is required for Magento Enterprise Cloud Edition. It works with Varnish to provide fast caching capabilities and a {% glossarytooltip f83f1fa7-7a64-467b-b629-c2d0c25d2e7f %}Content Delivery Network{% endglossarytooltip %} (CDN) for static assets.
 
 ## Get your Fastly credentials {#cloud-fastly-creds}
-To get Fastly credentials, open a [support ticket]({{ page.baseurl }}cloud/welcome/get-help.html). You must provide your fully-qualified domain name.
+To get Fastly credentials, open a [support ticket]({{ page.baseurl }}cloud/welcome/get-help.html). You must provide your fully-qualified {% glossarytooltip 41aee03b-a5d5-49c2-8839-894090ef4e86 %}domain{% endglossarytooltip %} name.
 
 We'll provide you with the following information so you can enable Fastly:
 
-*	Fastly API key
+*	Fastly {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} key
 *	Fastly service ID
 
 ## Get started {#cloud-fastly-start}
@@ -46,7 +46,7 @@ In the procedure that follows, make sure you *branch* a new environment; don't u
 		git add -A; git commit -m "Install Fastly"; git push origin <branch name>
 
 ## Enable Fastly using the Magento Admin {#cloud-fastly-admin}
-1.	Log in to your local Magento Admin as an administrator. 
+1.	Log in to your local {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} as an administrator. 
 
 	If you don't remember your login information, enter the following command:
 
@@ -79,7 +79,7 @@ In the procedure that follows, make sure you *branch* a new environment; don't u
 Configure Fastly using the following:
 
 *	We provide your Fastly service ID and API key.
-*	Set most other Fastly configuration options in the Magento Admin.
+*	Set most other Fastly configuration options in the Magento {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}.
 *	You can fine-tune the Fastly configuration as discussed in [Custom VCLs](#custom-vcl).
 
 To configure Fastly in the Admin:
@@ -95,7 +95,7 @@ To configure Fastly in the Admin:
 For details about Fastly configuration, see the [Fastly documentation](https://docs.fastly.com/guides){:target="_blank"}.
 
 ### Create a custom error/maintenance page {#fastly-errpg}
-You can optionally create a custom HTML page for errors or when your site is down for maintenance. This page can give confidence to your customers; instead of seeing HTTP error codes, they'll see a page that explains that your site is down temporarily.
+You can optionally create a custom {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} page for errors or when your site is down for maintenance. This page can give confidence to your customers; instead of seeing HTTP error codes, they'll see a page that explains that your site is down temporarily.
 
 To create a custom error/maintenance page:
 

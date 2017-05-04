@@ -24,7 +24,7 @@ of the operations does not display in the GitHub session. You can still follow w
 
 ## Project configuration {#cloud-deploy-conf}
 What makes it all work is a set of YAML configuration files located in the project root directory. These files define your Magento installation and describe its dependencies. Configuration files specify, for
-example, that Magento uses MySQL, some PHP extensions, and Elasticsearch. (These are referred to as *services*.)
+example, that Magento uses MySQL, some {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} extensions, and Elasticsearch. (These are referred to as *services*.)
 
 ## Five phases of deployment {#cloud-deploy-over-phases}
 Deployment consists of the following phases:
@@ -55,7 +55,7 @@ The default Magento build hook is a CLI command called `magento-cloud:build`. It
 
 *   Applies patches located in `vendor/magento/magento-cloud-configuration/patches`, as well as optional project-specific patches in `m2-hotfixes`
 *	Enables all extensions
-*	Regenerates code and the dependency injection configuration (that is, the Magento `var/generation` and `var/di` directories) using `bin/magento setup:di:compile`.
+*	Regenerates code and the {% glossarytooltip 2be50595-c5c7-4b9d-911c-3bf2cd3f7beb %}dependency injection{% endglossarytooltip %} configuration (that is, the Magento `var/generation` and `var/di` directories) using `bin/magento setup:di:compile`.
 
 It is important to note that at this point the cluster has not been
 created yet. So you should not try to connect to a database or imagine
@@ -75,7 +75,7 @@ It also means that reverting a deployment is basically
 instantaneous. 
 
 ### Phase 4: Deploy slugs and cluster {#cloud-deploy-over-phases-slugclus}
-Now we provision your applications and all the backend services you
+Now we provision your applications and all the {% glossarytooltip 74d6d228-34bd-4475-a6f8-0c0f4d6d0d61 %}backend{% endglossarytooltip %} services you
 need:
 
 *	Mounts each service in its own container
@@ -95,7 +95,7 @@ When this script runs, you have access to all the services in your environment (
 There are two default deploy hooks. One is `pre-deploy.php`, which does some necessary cleanup and retrieval of 
 resources that were generated in the build hook. The second is `bin/magento magento-cloud:deploy`, which does the following
 
-*	If Magento is not installed, it installs Magento with `bin/magento setup:install`, updates the deployment configuration, `app/etc/env.php`, and the database for your specified environment (for example, Redis and website URLs).
+*	If Magento is not installed, it installs Magento with `bin/magento setup:install`, updates the deployment configuration, `app/etc/env.php`, and the database for your specified environment (for example, Redis and {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %} URLs).
 
 *	If Magento is installed, performs any necessary upgrades.
 

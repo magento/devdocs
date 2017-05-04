@@ -17,7 +17,7 @@ github_link: config-guide/cli/config-cli-subcommands-static-deploy-strategies.md
 When [deploying static view files]({{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html), you can choose one of the three available strategies. Each of them provides optimal deployment results for different use cases:
 
 *   [Standard](#static-file-standard): the regular deployment process.
-*   [Quick](#static-file-quick) (_default_): minimizes the time required for deployment when files for more than one locale are deployed.
+*   [Quick](#static-file-quick) (_default_): minimizes the time required for deployment when files for more than one {% glossarytooltip 05099dbb-d491-4e33-a065-16035cb2d4d9 %}locale{% endglossarytooltip %} are deployed.
 *   [Compact](#static-file-compact): minimizes the space taken by the published view files. 
 
 The following sections describe the implementation details and features of each strategy.
@@ -121,7 +121,7 @@ The files are deployed to these subdirectories according to the following patter
 
 
 ### Mapping deployed files
-The approach to deployment used in the compact strategy means that files are inherited from base themes and locales. This inheritance relations are stored in the map files for each combination of area, theme and locale. There are separate map files for PHP and JS:
+The approach to deployment used in the compact strategy means that files are inherited from base themes and locales. This inheritance relations are stored in the map files for each combination of area, {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} and locale. There are separate map files for {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} and JS:
 
 * `map.php`
 * `requirejs-map.js`
@@ -163,6 +163,6 @@ require.config({
 ## Tips for extension developers
 To build URLs to static view files, use [`\Magento\Framework\View\Asset\Repository::createAsset()`]({{ site.mage2200url }}lib/internal/Magento/Framework/View/Asset/Repository.php#L200-L213){:target="_blank"}. 
 
-Do not use URL concatenations to avoid problems with static files being not found and not displayed during page rendering.
+Do not use {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} concatenations to avoid problems with {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} being not found and not displayed during page rendering.
 
 

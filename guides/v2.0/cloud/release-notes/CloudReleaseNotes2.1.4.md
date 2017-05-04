@@ -17,7 +17,7 @@ These Release Notes provide up-to-date information about changes, additions, and
 Removed the MDVA-913 patch because the issue is now fixed in Magento Enterprise Edition 2.1.4.
 
 ## Fixes in this release
-*	When you disable a module and deploy it to the remote Cloud server, the module stays disabled.
+*	When you disable a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} and deploy it to the remote Cloud server, the module stays disabled.
 *	You can now successfully upgrade from Magento Enterprise Cloud Edition 2.0.x to 2.1.x.
 
 ### Magento EE Release Notes

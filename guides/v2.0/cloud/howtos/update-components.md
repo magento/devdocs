@@ -17,7 +17,7 @@ This topic discusses how to update extensions you previously installed from Mage
 Before you continue, you must:
 
 *	Know the extension's [Composer name](#update-composer-name) and version
-*	Know the extension is compatible with your project (in particular, check the required PHP version)
+*	Know the {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} is compatible with your project (in particular, check the required {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} version)
 
 <div class="bs-callout bs-callout-warning">
     <p>You must check in <code>composer.lock</code> to your environment; otherwise, the extension won't load in Magento Enterprise Cloud Edition. That's because we run <code>composer install</code> (which uses <code>composer.lock</code>) and not <code>composer update</code> when we build and deploy the environment.</p>

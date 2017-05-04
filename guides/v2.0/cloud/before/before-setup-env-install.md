@@ -16,7 +16,7 @@ github_link: cloud/before/before-setup-env-install.md
 To be able to customize the Magento software on your local machine, you should install it using the following information:
 
 *	Host name or IP address of your machine
-*	Admin user name, password, and URI you created earlier
+*	{% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} user name, password, and URI you created earlier
 
 Before you begin, list the environment variables.
 

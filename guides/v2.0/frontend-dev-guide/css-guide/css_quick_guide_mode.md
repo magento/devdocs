@@ -10,7 +10,7 @@ github_link: frontend-dev-guide/css-guide/css_quick_guide_mode.md
 ---
 <h2> What's in this topic </h2>
 
-After you <a href="{{page.baseurl}}frontend-dev-guide/themes/theme-create.html" target="_blank">create a theme</a>, before starting to change the styles, is deciding, which LESS compilation mode you will use. There are <a href="{{page.baseurl}}frontend-dev-guide/css-topics/css-preprocess.html#LESS compilation modes" target="_blank">two modes available in Magento</a>: server-side compilation mode and client-side (recommended for theme development).
+After you <a href="{{page.baseurl}}frontend-dev-guide/themes/theme-create.html" target="_blank">create a theme</a>, before starting to change the styles, is deciding, which LESS compilation mode you will use. There are <a href="{{page.baseurl}}frontend-dev-guide/css-topics/css-preprocess.html#LESS compilation modes" target="_blank">two modes available in Magento</a>: server-side compilation mode and client-side (recommended for {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} development).
 This topic demonstrates on a practical example how the choice of the mode influences the styles development.
 
 The first step, creating and applying a theme is done before the compilation mode is chosen, so it is described only once, but is required whatever compilation mode you will further use.
@@ -24,7 +24,7 @@ In our examples we will change the color and font of the primary buttons. The de
 <h2 id="first_step">First step: Create and apply a theme</h2>
 
 1. Create a new theme as described in the <a href="{{page.baseurl}}frontend-dev-guide/themes/theme-create.html" target="_blank">Create a theme</a> topic. In your `theme.xml` specify Magento Luma or Magento Blank as a parent theme.
-2. <a href="{{page.baseurl}}frontend-dev-guide/themes/theme-apply.html#theme-apply-apply">Apply your theme</a> in the Magento Admin.
+2. <a href="{{page.baseurl}}frontend-dev-guide/themes/theme-apply.html#theme-apply-apply">Apply your theme</a> in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}.
 
 Server-side is the default mode for LESS compilation, so if you do not change this, your Magento instance is using server-side compilation mode.
 

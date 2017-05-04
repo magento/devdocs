@@ -15,11 +15,11 @@ github_link: cloud/howtos/install-components.md
 This topic discusses how to install *extensions*, which can be any of the following:
 
 *	Modules (extend Magento capabilities)
-*	Themes (change the look and feel of your storefront and Admin)
+*	Themes (change the look and feel of your {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} and Admin)
 *	Language packages (localize the storefront and Admin)
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>This topic discusses how to install extensions you purchased from Magento Marketplace. You can use the same procedure to install <em>any</em> extension; all you need is the extension's Composer name. To find it, open the extension's <code>composer.json</code> file and note the values for <code>"name"</code> and <code>"version"</code>.</p>
+  <p>This topic discusses how to install extensions you purchased from Magento Marketplace. You can use the same procedure to install <em>any</em> extension; all you need is the extension's {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} name. To find it, open the extension's <code>composer.json</code> file and note the values for <code>"name"</code> and <code>"version"</code>.</p>
 </div>
 
 <div class="bs-callout bs-callout-warning">
@@ -28,7 +28,7 @@ This topic discusses how to install *extensions*, which can be any of the follow
 
 To install a extension, you must:
 
-1.	Obtain the extension from [Magento Marketplace](https://marketplace.magento.com){:target="_blank"} or elsewhere.
+1.	Obtain the {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} from [Magento Marketplace](https://marketplace.magento.com){:target="_blank"} or elsewhere.
 1.	[Get the extension's Composer name](#cloud-howto-comp-composer) and version from your purchase history.
 2.	In your local Magento Enterprise Cloud Edition project, [update the Magento `composer.json`](#cloud-howto-comp-json) file with the name and version of the extension.
 3.	[Push](#cloud-howto-comp-push) the changes to your environment.

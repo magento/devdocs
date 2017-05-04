@@ -16,7 +16,7 @@ redirect_from:
 
 The Magento tabs widget implements single content area with multiple panels, each associated with a header in a list. It uses the <a href="{{page.baseurl}}javascript-dev-guide/widgets/widget_collapsible.html" target="_blank">Magento collapsible widget</a>.
 
-The tabs widget source is <a href="{{site.mage2000url}}lib/web/mage/tabs.js" target="_blank">lib/web/mage/tabs.js</a>. 
+The tabs {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} source is <a href="{{site.mage2000url}}lib/web/mage/tabs.js" target="_blank">lib/web/mage/tabs.js</a>. 
 
 
 <h2 id="fedg_tabs_init">Initialize the tabs widget</h2>
@@ -54,7 +54,7 @@ Index of the tab, which is active at the moment of initialization. Starts from "
 **Default value**: `0`
 
 <h3 id="fedg_tabs_options-ajaxUrlElement"><code>ajaxUrlElement</code></h3> 
-Selector for the tab element, which contains the URL for the Ajax request.
+Selector for the tab element, which contains the {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} for the Ajax request.
 The option of the <a href="{{page.baseurl}}javascript-dev-guide/widgets/widget_collapsible.html" target="_blank">collapsible</a> widget used by tabs. 
 
 **Type**: String
@@ -194,7 +194,7 @@ The option of the <a href="{{page.baseurl}}javascript-dev-guide/widgets/widget_c
 **Type**: 
 
 - String
-- jQuery object
+- {% glossarytooltip 5bfa8a8e-6f3e-4fed-a43e-62339916f02e %}jQuery{% endglossarytooltip %} object
 
 **Default value**: `[data-role=trigger]`
 

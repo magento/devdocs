@@ -20,7 +20,7 @@ Starting in Magento 2.1, we no longer recommend using the deprecated save, load,
 In Magento, data interfaces, data models, and models all represent entities.
 
 #### Data Interfaces
-A data interface is the interface for an entity that reveals the data it contains to clients. For example, the [`\Magento\Customer\Api\Data\CustomerInterface`]({{ site.mage2100url }}app/code/Magento/Customer/Api/Data/CustomerInterface.php){:target="_blank"} class contains get and set functions for customer entity-related data such as names and email.
+A data interface is the interface for an {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %} that reveals the data it contains to clients. For example, the [`\Magento\Customer\Api\Data\CustomerInterface`]({{ site.mage2100url }}app/code/Magento/Customer/Api/Data/CustomerInterface.php){:target="_blank"} class contains get and set functions for customer entity-related data such as names and email.
 
 To allow the addition of [custom EAV attributes]({{page.baseurl}}extension-dev-guide/attributes.html) on your entity, your data interface must extend the [`\Magento\Framework\Api\CustomAttributesDataInterface`]({{ site.mage2100url }}lib/internal/Magento/Framework/Api/CustomAttributesDataInterface.php){:target="_blank"} class.
 
@@ -47,7 +47,7 @@ An example of a model is the [`\Magento\Customer\Model\Customer`]({{ site.mage21
 
 ### Repositories
 
-Modules interact with other modules through their public API. For working with persistent entities, Magento recommends and uses repositories. These classes adopt the [repository pattern](http://martinfowler.com/eaaCatalog/repository.html){:target="_blank"} and act as a layer between your module's business logic layer and the data mapping layer. We recommend placing the class files for repositories under the `Model` or `Model/ResourceModel` directory inside your module's root directory.
+Modules interact with other modules through their public {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %}. For working with persistent entities, Magento recommends and uses repositories. These classes adopt the [repository pattern](http://martinfowler.com/eaaCatalog/repository.html){:target="_blank"} and act as a layer between your module's business logic layer and the data mapping layer. We recommend placing the class files for repositories under the `Model` or `Model/ResourceModel` directory inside your module's root directory.
 
 An example of a repository is the [`Magento\CatalogRule\Model\CatalogRuleRepository`]({{ site.mage2100url }}app/code/Magento/CatalogRule/Model/CatalogRuleRepository.php){:target="_blank"} class.
 

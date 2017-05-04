@@ -78,7 +78,7 @@ To verify Blackfire works, you can SSH to the environment and run a command as f
 1.	Log in to the Web UI.
 2.	In the right pane, click the name of your environment.
 3. 	Hover the mouse pointer over **Access site**.
-4.	Copy the **SSH access** URL to the clipboard as the following figure shows.
+4.	Copy the **SSH access** {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} to the clipboard as the following figure shows.
 
 	![Find the SSH URL for the environment]({{ site.baseurl }}common/images/cloud_ssh-access2.png){:width="500px"}
 5.	Enter that command in your terminal window to log in using SSH.
@@ -115,7 +115,7 @@ To verify Blackfire works, you can SSH to the environment and run a command as f
 ## Profile your site {#cloud-int-black-profile}
 To start profiling your site using Blackfire:
 
-1.	Install the Blackfire.io Companion browser plug-in for your browser.
+1.	Install the Blackfire.io Companion browser {% glossarytooltip 9fceecbe-31be-4e49-aac7-11d155a85382 %}plug-in{% endglossarytooltip %} for your browser.
 
 	For example, to install the Chrome Companion, see [Blackfire.io documentation](https://blackfire.io/docs/integrations/chrome){:target="_blank"}.
 2.	Use the Web UI to find the **Web access** URL for your environment as the following figure shows:

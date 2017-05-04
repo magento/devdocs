@@ -14,7 +14,7 @@ github_link: cloud/project/project-conf-files_services-elastic.md
 
 [Elasticsearch](https://www.elastic.co){:target="_blank"} is an open source product that enables you to take data from any source, any format, and search, and visualize it in real time.
 
-*   Elasticsearch performs quick and advanced searches on products in the catalog
+*   Elasticsearch performs quick and advanced searches on products in the {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}catalog{% endglossarytooltip %}
 *   Elasticsearch analyzers support multiple languages
 *   Supports stop words and synonyms
 *   Indexing does not impact customers until reindex is completed

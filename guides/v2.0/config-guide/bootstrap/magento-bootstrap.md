@@ -57,7 +57,7 @@ $bootstrap->run($app);
 <h2 id="config-boot-exception">Default exception handling</h2>
 The bootstrap object specifies how the Magento application handles uncaught exceptions as follows:
 
-*	In <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-developer">developer mode</a>, displays the exception as-is.
+*	In <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-developer">developer mode</a>, displays the {% glossarytooltip 53da11f1-d0b8-4a7e-b078-1e099462b409 %}exception{% endglossarytooltip %} as-is.
 *	In any other mode, attempts to log exception and display a generic error message.
 *	Terminates Magento with error code `1`
 
@@ -93,7 +93,7 @@ We have the following entry point applications (that is, applications defined by
 </div>
 
 In default or developer mode, a request for a non-existent static resource is redirected to the static entry point according to the rewrite rules specified by the appropriate `.htaccess`.
-When the request is redirected to the entry point, the Magento application parses the requested URL based on retrieved parameters and finds the requested resource.
+When the request is redirected to the entry point, the Magento application parses the requested {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} based on retrieved parameters and finds the requested resource.
 
 *	In developer mode, the content of the file is returned so that every time the resource is requested, the returned content is up to date.
 *	In <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-default">default</a> mode, the retrieved resource is published so it is accessible by the previously requested URL.
@@ -101,7 +101,7 @@ When the request is redirected to the entry point, the Magento application parse
 	All future requests for the static resource are processed by the server the same as static files; that is, without involving the entry point. If it's necessary to synchronize published files with original ones, the `pub/static` directory should be removed; as a result, files are automatically republished with the next request.
 
 <h3 id="config-boot-entry-media">Media resource entry point</h3>
-<a href="{{ site.mage2000url }}app/code/Magento/MediaStorage/App/Media.php" target="_blank">Magento\MediaStorage\App\Media</a> retrieves media resources (that is, any files uploaded to media storage) from the database. It is used whenever the database is configured as a media storage.
+<a href="{{ site.mage2000url }}app/code/Magento/MediaStorage/App/Media.php" target="_blank">Magento\MediaStorage\App\Media</a> retrieves media resources (that is, any files uploaded to media storage) from the database. It is used whenever the database is configured as a {% glossarytooltip d95142d7-023f-451c-a2e9-dd88763dcd70 %}media storage{% endglossarytooltip %}.
 
 `\Magento\Core\App\Media` attempts to find the media file in the configured database storage and write it into the `pub/static` directory, then return its contents. On error, it returns an HTTP 404 (Not Found) status code in the header with no contents.
 

@@ -21,7 +21,7 @@ Your staging environment is better for testing because it has Fastly, New Relic,
 </div>
 
 ## Step 1: Push code to the Cloud server
-Before you continue, make sure you push all current code to the remote Cloud server so that, in event of issues, you can recover the state of the Magento application.
+Before you continue, make sure you push all current code to the remote Cloud server so that, in {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} of issues, you can recover the state of the Magento application.
 
 ### Get started
 
@@ -50,7 +50,7 @@ During the [build phase]({{ page.baseurl }}cloud/reference/discover-deploy.html#
 *	Apply patches distributed to all Magento Enterprise Cloud Edition customers
 *	Apply patches we provided specifically to you
 *	Enable all modules
-*	Compile code and the dependency injection configuration
+*	Compile code and the {% glossarytooltip 2be50595-c5c7-4b9d-911c-3bf2cd3f7beb %}dependency injection{% endglossarytooltip %} configuration
 
 Before you continue, you must know the file system path to any patch we provided specifically to you. Typically, hot fixes are in the `<Magento root dir>/m2-hotfixes` directory.
 
@@ -122,7 +122,7 @@ During the [deployment phase]({{ page.baseurl }}cloud/reference/discover-deploy.
 
 *	Installs the Magento application if it isn't already
 *	If the Magento application is installed, upgrades components
-*	Clears the cache
+*	Clears the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %}
 *	Sets the Magento application for [`production`]({{ page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-production) mode
 
 {% collapsible To deploy your site: %}
