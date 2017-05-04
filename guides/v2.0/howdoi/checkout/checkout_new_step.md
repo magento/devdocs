@@ -174,6 +174,7 @@ A sample `checkout_index_index.xml` follows:
                                             <!-- The new step you add -->
                                             <item name="my-new-step" xsi:type="array">
                                                 <item name="component" xsi:type="string">%Vendor%_%Module%/js/view/my-step-view</item>
+						<item name="provider" xsi:type="string">checkoutProvider</item>
                                                     <!--To display step content before shipping step "sortOrder" value should be < 1-->
                                                     <!--To display step content between shipping step and payment step  1 < "sortOrder" < 2 -->
                                                     <!--To display step content after payment step "sortOrder" > 2 -->
