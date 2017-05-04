@@ -87,4 +87,4 @@ UNIX systems require `root` privileges to install and configure software like a 
 
 You should *not* install the Magento software in the web server docroot as the `root` user because the web server might not be able to interact with those files. 
 
-You'll also need `root` privileges to create the <a href="{{page.baseurl}}install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a> and add that owner to the web server's group. You'll use the Magento file system owner to run any commands from the command line and to set up the Magento cron job, which schedules tasks for you.
+You'll also need `root` privileges to create the <a href="{{page.baseurl}}install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a> and add that owner to the web server's group. You'll use the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %} to run any commands from the command line and to set up the Magento cron job, which schedules tasks for you.

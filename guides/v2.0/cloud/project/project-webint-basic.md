@@ -13,7 +13,7 @@ github_link: cloud/project/project-webint-basic.md
 ---
 
 ## Log in to your project {#project-login}
-The Web Interface URL for your project is available in the following ways:
+The Web Interface {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} for your project is available in the following ways:
 
 *	Your welcome e-mail
 *	The Magento Enterprise Cloud Edition command-line interface (CLI)
@@ -53,7 +53,7 @@ In a web browser, enter the project URL from your welcome e-mail or that you fou
 ## Access your project and environments {#project-access}
 The Web Interface provides several ways to access your project and environments:
 
-*	Your storefront URL (every environment, or branch, has a different URL)
+*	Your {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} URL (every environment, or branch, has a different URL)
 *	Secure Shell (SSH), a way to interact with services using a command terminal
 *	Clone the project using the Magento Enterprise Cloud Edition CLI
 *	Clone the project using Git

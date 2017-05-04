@@ -27,7 +27,7 @@ To configure your local installation to use multiple stores, see [Multiple websi
 After successfully creating and testing multiple stores locally, you must:
 
 1.	[Configure routes](#cloud-multi-stores-routes), which specify how incoming URLs are handled by Magento Enterprise Cloud Edition.
-2.	[Set up websites, stores, and store views](#cloud-multi-stores-admin) in your Magento Enterprise Cloud Edition server's Admin.
+2.	[Set up websites, stores, and store views](#cloud-multi-stores-admin) in your Magento Enterprise Cloud Edition server's {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}.
 3.	[Modify `magento-vars.php`](#cloud-multi-stores-magento-vars) to specify the values of the `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` variables.
 4.	[Deploy](#cloud-multi-stores-deploy) to your integration branch and test.
 
@@ -102,7 +102,7 @@ Make sure you name your websites, stores, and store views in your Cloud Admin th
 See [Set up multiple websites, stores, and store views in the Admin]({{ page.baseurl }}config-guide/multi-site/ms_websites.html).
 
 ### Modify `magento-vars.php` {#cloud-multi-stores-magento-vars}
-Instead of configuring an nginx virtual host, pass the `MAGE_RUN_CODE` and `MAGE_RUN_TYPE` variables using `magento-vars.php` which is located in your Magento root directory.
+Instead of configuring an {% glossarytooltip b14ef3d8-51fd-48fe-94df-ed069afb2cdc %}nginx{% endglossarytooltip %} virtual host, pass the `MAGE_RUN_CODE` and `MAGE_RUN_TYPE` variables using `magento-vars.php` which is located in your Magento root directory.
 
 1.	Open `magento-vars.php` in a text editor.
 2.	Uncomment everything after the first two lines.
@@ -166,7 +166,7 @@ To deploy and test:
 		git add -A && git commit -m "Implement multiple sites"
 		git push origin <branch name>
 2.	Wait for deployment to complete.
-3.	When deployment is done, in a web browser, go to your site's base URL.
+3.	When deployment is done, in a web browser, go to your site's base {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %}.
 
 	The URL must be in the format: `http://<magento run_code>---<rest of URL>`
 

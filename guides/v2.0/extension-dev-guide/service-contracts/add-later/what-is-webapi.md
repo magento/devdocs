@@ -3,9 +3,9 @@ layout: default
 title: What is the web API framework?
 ---
 
-The web API framework gives third-party developers access to the service framework using REST or SOAP calls. Currently, Web API access is limited to Customer objects but we plan to expand access in time to include any Magento object.
+The web {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} framework gives third-party developers access to the service framework using REST or SOAP calls. Currently, {% glossarytooltip 377dc0a3-b8a7-4dfa-808e-2de37e4c0029 %}Web API{% endglossarytooltip %} access is limited to Customer objects but we plan to expand access in time to include any Magento object.
 
-Although REST and SOAP use different payloads and routing, they use the same authorization mechanisms to provide access to Magento services.
+Although REST and SOAP use different payloads and routing, they use the same {% glossarytooltip 34ecb0ab-b8a3-42d9-a728-0b893e8c0417 %}authorization{% endglossarytooltip %} mechanisms to provide access to Magento services.
 
 ## Exposing a Service Using REST or SOAP
 
@@ -15,7 +15,7 @@ A Magento service can be exposed using REST only or using both SOAP and REST. In
 
 To start, you must configure your service using `app/code/[Vendor]/<ModuleName>/etc/webapi.xml`. Each REST API call must have a corresponding `<rest route>` in `webapi.xml`. In other words, to access a method using REST, the method must have a `<rest route>` in `webapi.xml`; otherwise, the method cannot be accessed.
 
-If a REST route is sensitive and is expected to be executed over HTTPS only, the method must use the `secure = true` attribute. Attempting to access a `secure` route using non-secure means results in an exception.
+If a REST route is sensitive and is expected to be executed over HTTPS only, the method must use the `secure = true` attribute. Attempting to access a `secure` route using non-secure means results in an {% glossarytooltip 53da11f1-d0b8-4a7e-b078-1e099462b409 %}exception{% endglossarytooltip %}.
 
 ### Sample webapi.xml
 
@@ -45,7 +45,7 @@ For comparison, refer to Customer's <a href="{{ site.mage2000url }}app/code/Mage
 
 Your `webapi.xml` must be validated by an `app/code/_Vendor_/Webapi/etc/webapi.xsd`. For comparision see Customer's, <a href="{{ site.mage2000url }}app/code/Magento/Webapi/etc/webapi.xsd" target="_blank">webapi.xsd</a>.
 
-Your module can use `webapi.xsd` or you can create a customized validation.
+Your {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} can use `webapi.xsd` or you can create a customized validation.
 
 #### Related Topics:
 

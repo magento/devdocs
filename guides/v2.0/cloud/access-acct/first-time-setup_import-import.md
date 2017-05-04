@@ -27,7 +27,7 @@ Before you continue, make sure you have the [encryption key]({{ page.baseurl }}c
 ## Create a remote Git reference {#cloud-import-ref}
 This section discusses how to create a remote Git reference from your Cloud Git repository to the repository in which your Magento EE installation is located.
 
-Before you continue, make sure you know the SSH or HTTPS URL for your Magento EE installation Git repository.
+Before you continue, make sure you know the SSH or HTTPS {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} for your Magento EE installation Git repository.
 
 To create a remote Git reference:
 
@@ -205,16 +205,16 @@ On the Cloud environment, enter the following commands in the order shown:
     bin/magento magento setup:static-content:deploy
     bin/magento cache:flush
 
-After the cache flushes, enter `exit` to close the SSH tunnel.
+After the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} flushes, enter `exit` to close the SSH tunnel.
 
 ## Verify the import
 To verify everything imported properly, perform the following tasks in your local Cloud development environment:
 
-1.  On your Cloud environment, enter the following commands to find the information to log in to the Magento Admin and to view the storefront:
+1.  On your Cloud environment, enter the following commands to find the information to log in to the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} and to view the storefront:
 
         magento-cloud environment:url
-2.  Log in to the Magento Admin using the user name and password of your Magento EE system.
+2.  Log in to the Magento {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} using the user name and password of your Magento EE system.
 3.  Make sure settings in the Admin are the same as your Magento EE system.
-3.  Access the storefront.
+3.  Access the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}.
 4.  Make sure categories, products, and so on display as you expect.
 5.  Test everything thoroughly.

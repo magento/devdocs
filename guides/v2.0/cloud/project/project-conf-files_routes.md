@@ -13,7 +13,7 @@ github_link: cloud/project/project-conf-files_routes.md
 ---
 
 ## `routes.yaml` overview {#cloud-yaml-routes-over}
-A *route* describes how an incoming URL is processed by
+A *route* describes how an incoming {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} is processed by
 Magento Enterprise Cloud Edition. 
 
 `routes.yaml` defines routes for development, integration, staging, and production
@@ -42,7 +42,7 @@ If you do not have a `routes.yaml` file, the following default is used:
 ## Route templates {#cloud-yaml-routes-temp}
 `routes.yaml` is a list of templated routes and their 
 configurations. A route  template can look like this: `http://www.{default}/` or 
-`https://{default}/blog`, where `{default}` is the fully qualified domain 
+`https://{default}/blog`, where `{default}` is the fully qualified {% glossarytooltip 41aee03b-a5d5-49c2-8839-894090ef4e86 %}domain{% endglossarytooltip %} 
 name configured for the project. 
 
 {% collapsible Click to show/hide content %}
@@ -117,7 +117,7 @@ but it will issue a 301 redirect for `http://www.example.com/mypath` (to
 
 ## Wildcard routes {#cloud-yaml-routes-sample-wild}
 Magento Enterprise Cloud Edition supports wildcard routes, so you can map multiple subdomains to the
-same application. This works both for redirect and upstream routes. You can
+same application. This works both for {% glossarytooltip 510de766-1ebd-4546-bf38-c618c9c945d2 %}redirect{% endglossarytooltip %} and upstream routes. You can
 simply prefix the route with a star (`*`), for example `*.example.com`, and
 `www.example.com`, `blog.example.com`, and `us.example.com` all get routed to the
 same application.

@@ -34,7 +34,7 @@ When you run `git push`, messages similar to the following display:
 	  Updated submodule git://github.com/orocrm/OroEntitySerializedFieldsBundle: 11 references updated.
 
 ## Error validating submodules
-The following error displays if you access a Git URL like `git@github.com:...` because no SSH key is present in the repository referenced by the submodule:
+The following error displays if you access a Git {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} like `git@github.com:...` because no SSH key is present in the repository referenced by the submodule:
 
 	Validating submodules.
 	  Found unresolvable links, updating submodules.

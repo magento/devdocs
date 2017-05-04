@@ -13,7 +13,7 @@ github_link: cloud/env/environment-vars_over.md
 ---
 
 ## Environment variables {#cloud-env-set-vars}
-Magento Enterprise Cloud Edition enables you to create variables in your environment that override configuration options. For example, we strongly recommend you *immediately* change your Magento Admin URI and administrative user's password to prevent someone guessing your login and changing settings without your knowledge.
+Magento Enterprise Cloud Edition enables you to create variables in your environment that override configuration options. For example, we strongly recommend you *immediately* change your {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} URI and administrative user's password to prevent someone guessing your login and changing settings without your knowledge.
 
 We support the following types of variables:
 
@@ -26,7 +26,7 @@ Environment variable names must use the characters `a-z`, `A-Z`, `0-9`, and `.`,
 
 Platform variables that are expressed as base64-encoded JSON object can be up to 4KB in size.
 
-Environment variables have an `env` namespace.
+Environment variables have an `env` {% glossarytooltip 621ef86b-7314-4fbc-a80d-ab7fa45a27cb %}namespace{% endglossarytooltip %}.
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>Variables are <em>hierarchical</em>, which means that if a variable is not overridden, it is inherited from the parent environment and is indicated as <code>inherited</code>.</p>

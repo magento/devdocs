@@ -46,7 +46,7 @@ For example, if the value of `name` is `app`, you must use `app:php` in the upst
 {% endcollapsible %}
 
 ## `type` and `build` {#cloud-yaml-platform-type}
-The `type`  and `build` properties are used to build and run the project. The only supported `type` currently is PHP.
+The `type`  and `build` properties are used to build and run the project. The only supported `type` currently is {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %}.
 
 Supported versions:
 

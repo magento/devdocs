@@ -20,7 +20,7 @@ Your upgrade from Magento Community Edition (CE) to Enterprise Edition (EE) migh
 
 If this error displays, resolve it as follows:
 
-1.	Log in to your Magento server as the Magento file system owner.
+1.	Log in to your Magento server as the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %}.
 2.	Enter the following commands in the order shown:
 
 		php <your Magento install dir>/bin/magento setup:upgrade

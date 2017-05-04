@@ -12,7 +12,7 @@ redirect: /guides/v2.0/architecture/modules/mod_anatomy.html
 
 ## Overview {#arch-modules-anatomy}
 
-A Magento <i>module</i> is a logical group of components that encapsulates a particular business function, typically a business task. All components of a module relate to the module's specific function. For example, each element of the Shipping module contains all the code and interfaces needed to implement core shipping-related tasks. A module directory typically contains blocks, controllers, helpers, models, configuration files, and other components that contribute to the module's core purpose.
+A Magento <i>module</i> is a logical group of components that encapsulates a particular business function, typically a business task. All components of a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} relate to the module's specific function. For example, each element of the Shipping module contains all the code and interfaces needed to implement core shipping-related tasks. A module directory typically contains blocks, controllers, helpers, models, configuration files, and other components that contribute to the module's core purpose.
 
 Module structure is defined by both module code components and logical structure.
 
@@ -34,7 +34,7 @@ All types of modules contain the following core elements, categorized by directo
 
 ### Block
 
-<i>Blocks</i> help provide the data used in the View component of the module structure. Blocks coordinate models with the template files. The files in this folder load the data from database and transfer it to the templates in your theme (`PHTML` files).
+<i>Blocks</i> help provide the data used in the View component of the module structure. Blocks coordinate models with the template files. The files in this folder load the data from database and transfer it to the templates in your {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} (`PHTML` files).
 
 ### Controller
 
@@ -60,7 +60,7 @@ Magento 2.x looks for configuration information for each module in that module's
 
 * system.xml
 
-* adminhtml.xml
+* {% glossarytooltip 749044c4-a002-4006-a3b8-eace2df90303 %}adminhtml{% endglossarytooltip %}.xml
 
 * events.xml
 
@@ -94,7 +94,7 @@ In a typical Model-View-Controller-based application, models are used to connect
 A Magento model object contains a reference to a resource model, which it uses to load its data. There's an individual resource model object for each model object. For example, a Product Model has a Product resource model.
 
 ### Setup
-Structures in this directory handle any custom database tables that are used by the module and process all upgrades to the extension.
+Structures in this directory handle any custom database tables that are used by the module and process all upgrades to the {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %}.
 
 ## Related topics {#arch-modules-related}
 

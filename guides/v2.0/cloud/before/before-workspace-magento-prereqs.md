@@ -18,7 +18,7 @@ For you to install Magento locally, you must install the prequisite software:
 *	[Apache]({{ page.baseurl }}install-gde/prereq/apache.html)
 
 	You can also use nginx but those instructions aren't documented at this time.
-*	PHP
+*	{% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %}
 
 	*	[CentOS]({{ page.baseurl }}install-gde/prereq/php-centos.html)
 	*	[Ubuntu]({{ page.baseurl }}install-gde/prereq/php-ubuntu.html)

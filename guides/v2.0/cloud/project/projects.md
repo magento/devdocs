@@ -27,7 +27,7 @@ Log in to your project using Bitbucket, GitHub, Google, or a e-mail address and 
 ![Log in to a project]({{ site.baseurl }}common/images/cloud_project-login.png){:width="450px"}
 
 ### Access the project
-Hovering the mouse pointer over **Access Site** shows how to access your site using a URL or SSH.
+Hovering the mouse pointer over **Access Site** shows how to access your site using a {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} or SSH.
 
 ![Access your project]({{ site.baseurl }}common/images/cloud_project-access.png){:width="450px"}
 

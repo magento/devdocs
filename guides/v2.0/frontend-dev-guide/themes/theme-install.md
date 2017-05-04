@@ -11,13 +11,13 @@ github_link: frontend-dev-guide/themes/theme-install.md
 
 ## What's in this topic
 
-This topic describes how to install a third-party theme for a Magento 2 store.
+This topic describes how to install a third-party {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} for a Magento 2 store.
 
 To install a theme, you need to add its code to your Magento 2 instance code base, and then register it in the database. The way a theme is distributed determines how to do this:
 
 - if a theme is just a set of files, for example an archive, add the theme manually.   
-- if a theme is a composer package, install it using composer.
-- if a theme is distributed as an extension, use the **Web Setup Wizard** in Magento Admin.
+- if a theme is a {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}composer{% endglossarytooltip %} package, install it using composer.
+- if a theme is distributed as an extension, use the **Web Setup Wizard** in {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}.
 
 The following sections contain more installation about each installation flow.
 
@@ -43,7 +43,7 @@ If a theme is distributed on [Magento Marketplace](https://marketplace.magento.c
 
 ## Register a theme 
 
-After you create or install a theme, open the Magento Admin or reload any Magento Admin page. This way the theme gets registered and added to the database.
+After you create or install a theme, open the Magento {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} or reload any Magento Admin page. This way the theme gets registered and added to the database.
 
 To make sure the theme is registered, in the Magento Admin navigate to **Content** > **Design** > **Themes**. If a theme is registered, it is displayed in the list of available themes.
 

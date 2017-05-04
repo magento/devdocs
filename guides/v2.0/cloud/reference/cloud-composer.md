@@ -39,7 +39,7 @@ The workflow is as follows:
 During the [build phase]({{ page.baseurl }}cloud/reference/discover-deploy.html), the Cloud environment runs `composer install` on a fresh clone of your Git branch to retrieve the latest dependencies.
 
 ## Magento Enterprise Cloud Edition packages
-The following sections discuss the Composer packages used by Magento Enterprise Cloud Edition:
+The following sections discuss the {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} packages used by Magento Enterprise Cloud Edition:
 
 *	[`magento/magento-cloud-metapackage`](#cloud-composer-cloudmeta)
 *	[`magento/magento-cloud-configuration`](#cloud-composer-cloudconfig)
@@ -70,10 +70,10 @@ MCC versions are specified as: `<100 + x>.<y>.*`. For example, Magento EE 2.1.4 
 We release updated MCC code to add a new patch or to improve the build and deploy hooks.
 
 ### `magento/product-enterprise-edition` {#cloud-composer-prodee}
-This metapackage requires Magento application components, including modules, frameworks, themes, and so on. 
+This {% glossarytooltip 7490850a-0654-4ce1-83ff-d88c1d7d07fa %}metapackage{% endglossarytooltip %} requires Magento application components, including modules, frameworks, themes, and so on. 
 
 ## Base packages and file marshaling
-Magento contains two base packages, `magento/magento2-base` and `magento/magento2-ee-base`. These packages contain interstitial files that cannot be classified as extensions, themes, frameworks, or language packages; for example, sample server configuration files, PHP entry points, and so on.
+Magento contains two base packages, `magento/magento2-base` and `magento/magento2-ee-base`. These packages contain interstitial files that cannot be classified as extensions, themes, frameworks, or language packages; for example, sample server configuration files, {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} entry points, and so on.
 
 These files are location-dependent, and cannot reside in the `vendor` directory. They are distributed as part of the base packages, and they rely on hooks located in the `magento/magento-composer-installer` package, which marshals them to the appropriate locations.
 

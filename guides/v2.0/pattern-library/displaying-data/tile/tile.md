@@ -11,7 +11,7 @@ github_link: pattern-library/displaying-data/tile/tile.md
 ---
 
 ## Tile pattern
-This topic contains examples of the Tile pattern used in the Admin with functions for single selection, multi selection, drag and drop, and editing inline position. For solutions not described in this article, please refer to other related patterns or contact the Magento UX Design team.
+This topic contains examples of the Tile pattern used in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} with functions for single selection, multi selection, drag and drop, and editing inline position. For solutions not described in this article, please refer to other related patterns or contact the Magento UX Design team.
 
 <h4>Functional Behavior</h4>
 <ul>
@@ -40,7 +40,7 @@ Tiles will be needed anytime there is a grid view option available. Tiles are a 
 The gripper handle in the top left corner of the tile is used when the capability of dragging and dropping is needed. When an item is dragged out and moved to a desired location, the drop area is highlighted to show the acceptable region. Once dropped, the pick-up area disappears. If an item cannot be dropped into a specific location-the drop area will not be shown. Drag and drop functionality can only be used on a single page, the user cannot drag and drop across multiple pages. 
 
 <h3 id="remove">Removing Tiles</h3>
-The X in the top right corner of the tile will remove the tile from the category but not delete it from the actual product catalog. When a tile is selected to be removed, the user is prompted with a 1-2 second alert stating, "This product is now being removed from the category."
+The X in the top right corner of the tile will remove the tile from the {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} but not delete it from the actual product {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}catalog{% endglossarytooltip %}. When a tile is selected to be removed, the user is prompted with a 1-2 second alert stating, "This product is now being removed from the category."
 <br />
 <br />
 

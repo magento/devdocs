@@ -38,7 +38,7 @@ The general format of system settings variable names follows:
 
 	<pre class="no-copy">CONFIG__DEFAULT__&lt;SYSTEM__VARIABLE__NAME></pre>
 
-*	A specific scope (that is, the setting affects only a specified store view or website)
+*	A specific scope (that is, the setting affects only a specified {% glossarytooltip ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f %}store view{% endglossarytooltip %} or website)
 
 	Store view scope variables, for example, have the following format:
 
@@ -170,7 +170,7 @@ A complete list of values can be found in [Sensitive configuration paths]({{ pag
 This section shows how to find values of some sample variables.
 
 ### Elasticsearch server hostname
-To find the variable name for global HTML minification:
+To find the variable name for global {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} minification:
 
 1.	Determine the scope.
 

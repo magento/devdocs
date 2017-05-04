@@ -48,7 +48,7 @@ To clone the project's `master` environment:
 		git pull origin <environment ID>
 
 ## Change the Magento Admin URL, user name, and password
-This section discusses how to change Magento Admin parameters for security reasons. If you change the variables in the `master` branch, you have to do it only once because other environments inherit the variables from `master`.
+This section discusses how to change {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} parameters for security reasons. If you change the variables in the `master` branch, you have to do it only once because other environments inherit the variables from `master`.
 
 If your master branch is already configured, skip this section and continue with [Step 3: Clone or branch an environment](#setenv-new-env).
 
@@ -67,7 +67,7 @@ If you're not sure whether or not the master branch has been configured, enter t
 
 		magento-cloud variable:set ADMIN_PASSWORD admin_A456 -e master
 6.  Wait while the project redeploys.
-7.  To set the Admin URI to `magento_A8v10`, enter:
+7.  To set the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} URI to `magento_A8v10`, enter:
 
 		magento-cloud variable:set ADMIN_URL magento_A8v10 -e master
 6.  Wait while the project redeploys.

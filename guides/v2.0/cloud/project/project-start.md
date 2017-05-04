@@ -33,7 +33,7 @@ All commands are shown with required options only. Get help for any `magento-clo
 :	Clone a project to a directory. To clone the `master` environment, omit `-e <environment ID>`.
 
 `magento-cloud project:info -p <project ID>`
-:	List information about the project, including ID, name, region, URL, and Git URL.
+:	List information about the project, including ID, name, region, URL, and Git {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %}.
 
 #### Related topics
 *	[Get started with an environment]({{page.baseurl}}cloud/env/environments-start.html)
