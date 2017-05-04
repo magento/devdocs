@@ -1050,7 +1050,7 @@
 
 <p>We strongly recommend you not change the default Magento files. If you want to customize the default templates, you should create your custom templates and configure Magento to use them instead of the default templates.</p>
 
-<p>You can add custom templates as physical files in your custom theme or create them using the Magento Admin. Both approaches are described in the following sections.</p>
+<p>You can add custom templates as physical files in your custom <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span> or create them using the <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span>. Both approaches are described in the following sections.</p>
 
 <h3 id="customize-email-theme">Customize email templates using a theme</h3>
 <p>Override email templates by creating templates in a new directory in your custom theme, using this pattern: <code>&lt;theme_dir&gt;/&lt;ModuleVendorName&gt;_&lt;ModuleName&gt;/email</code>. For example, to override the New Order email template, create a template named <code>order_new.html</code> in the <code>&lt;theme_dir&gt;/Magento_Sales/email</code> directory.</p>
@@ -1059,7 +1059,7 @@
 
 <h3 id="customize-email-admin">Customize email templates using the Magento Admin</h3>
 
-<p>Any templates configured in the Magento Admin take precedence over default or theme-based templates.</p>
+<p>Any templates configured in the Magento <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span> take precedence over default or theme-based templates.</p>
 
 <ol>
   <li>In the Magento Admin, navigate to <strong>MARKETING</strong> &gt; Communications &gt; <strong>Email Templates</strong></li>
@@ -1072,7 +1072,7 @@ Make note of this path because you will need it later when you configure this ne
   <li>In <strong>Template Name</strong>, enter a name to identify the template in the Magento Admin.</li>
   <li>In <strong>Template Subject</strong>, add plain text to use as the Subject of the emails sent using the template you create. This field can contain system variables.</li>
   <li>Customize template content. For details, see <a href="#customize-content">the section on customizing content</a>.</li>
-  <li>In <strong>Template Styles</strong>, optionally add CSS styles for the template. These styles are added inside of a <code>&lt;style&gt;</code> tag in the <code>&lt;head&gt;</code> of the email. Typically, you’ll use the <a href="#email-styles">LESS files</a> to make style changes to emails because some email clients don’t support styles in <code>&lt;style&gt;</code> tags.</li>
+  <li>In <strong>Template Styles</strong>, optionally add <span term-uuid="6c5cb4e9-9197-46f2-ba79-6147d9bfe66d" class="glossary-term" data-toggle="popover">CSS</span> styles for the template. These styles are added inside of a <code>&lt;style&gt;</code> tag in the <code>&lt;head&gt;</code> of the email. Typically, you’ll use the <a href="#email-styles">LESS files</a> to make style changes to emails because some email clients don’t support styles in <code>&lt;style&gt;</code> tags.</li>
   <li>Click <strong>Save Template</strong>.</li>
   <li>
     <p>Now that you have created a template, you must configure that template to be used:</p>
@@ -1128,7 +1128,7 @@ Make note of this path because you will need it later when you configure this ne
 
 <h2 id="email-styles">Styles for email templates</h2>
 
-<p>Some email clients (for example, Gmail) support only CSS styles that have been applied as “inline” styles on the <code>style</code> attribute of HTML tags. Because of this, the majority of email styles are applied as inline styles. Inline styling is provided by the <a href="https://github.com/jjriv/emogrifier" target="_blank">Emogrifier</a> library, which takes the HTML and CSS and adds all of the CSS styles to <code>style</code> attributes of the HTML tags.</p>
+<p>Some email clients (for example, Gmail) support only CSS styles that have been applied as “inline” styles on the <code>style</code> attribute of HTML tags. Because of this, the majority of email styles are applied as inline styles. Inline styling is provided by the <a href="https://github.com/jjriv/emogrifier" target="_blank">Emogrifier</a> library, which takes the HTML and CSS and adds all of the CSS styles to <code>style</code> attributes of the <span term-uuid="a2aff425-07dd-4bd6-9671-29b7edefa871" class="glossary-term" data-toggle="popover">HTML</span> tags.</p>
 
 <h3 id="inline-styles">Inline styles</h3>
 
@@ -1271,7 +1271,7 @@ Make note of this path because you will need it later when you configure this ne
 <p>When implementing a custom theme, you should be able to fully customize email templates by copying the <code>&lt;Magento_Blank_theme_dir&gt;/web/css/source/_email-extend.less</code> and <code>&lt;Magento_Blank_theme_dir&gt;/web/css/source/_email-variables.less</code> files to your custom theme and editing those files.</p>
 
 <h3 id="custom-fonts">Custom fonts</h3>
-<p>Emails inherit the custom fonts that are defined by the frontend theme. The Magento Blank theme uses the <strong>Open Sans</strong> font. Because <strong>Open Sans</strong> is not a standard system font, <code>@font-face</code> rules are used to include web fonts.</p>
+<p>Emails inherit the custom fonts that are defined by the <span term-uuid="b00459e5-a793-44dd-98d5-852ab33fc344" class="glossary-term" data-toggle="popover">frontend</span> theme. The Magento Blank theme uses the <strong>Open Sans</strong> font. Because <strong>Open Sans</strong> is not a standard system font, <code>@font-face</code> rules are used to include web fonts.</p>
 
 <p>Here is an overview of how the font structure for emails works:</p>
 

@@ -453,10 +453,10 @@
 
 <h3 id="overview">Overview</h3>
 
-<p>The Magento Framework controls how application components interact, including request flow, routing, indexing, caching, and exception handling. It provides services that reduce the effort of creating modules that contain business logic, contributing to the goal of both making Magento code more modular as well as decreasing dependencies.</p>
+<p>The Magento Framework controls how application components interact, including request flow, routing, indexing, caching, and <span term-uuid="53da11f1-d0b8-4a7e-b078-1e099462b409" class="glossary-term" data-toggle="popover">exception</span> handling. It provides services that reduce the effort of creating modules that contain business logic, contributing to the goal of both making Magento code more modular as well as decreasing dependencies.</p>
 
-<p>This primarily PHP software component is organized into logical groups called <i>libraries</i>, which all modules can call.  Most of the framework code sits under the domain layer or encloses the presentation, service, and domain layers. The framework contains no business logic.
-(Although the Magento Framework does not contain resource models, it does contain a library of code to help implement a resource model.)</p>
+<p>This primarily <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> software component is organized into logical groups called <i>libraries</i>, which all modules can call.  Most of the framework code sits under the <span term-uuid="41aee03b-a5d5-49c2-8839-894090ef4e86" class="glossary-term" data-toggle="popover">domain</span> layer or encloses the presentation, service, and domain layers. The framework contains no business logic.
+(Although the Magento Framework does not contain resource models, it does contain a <span term-uuid="08968dbb-2eeb-45c7-ae95-ffca228a7575" class="glossary-term" data-toggle="popover">library</span> of code to help implement a resource model.)</p>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>Don't confuse the Magento framework with the Zend web application framework that ships with Magento.</p>
@@ -495,10 +495,10 @@ Lib/
 
 <ul>
   <li>
-    <p><code>/lib/internal</code> contains some non-PHP as well as PHP components. Non-PHP framework libraries includes JavaScript and LESS/CSS.</p>
+    <p><code>/lib/internal</code> contains some non-PHP as well as PHP components. Non-PHP framework libraries includes <span term-uuid="312b4baf-15f7-4968-944e-c814d53de218" class="glossary-term" data-toggle="popover">JavaScript</span> and LESS/CSS.</p>
   </li>
   <li>
-    <p><code>/lib/internal/Magento/Framework</code>  contains only PHP code. These are libraries of code plus the application entry point that routes requests to modules (that in turn call the framework libraries). For example, libraries in the framework help implement a resource model (base classes and interfaces to inherit from) but not the resource models themselves. Certain libraries also support CSS rendering.</p>
+    <p><code>/lib/internal/Magento/Framework</code>  contains only PHP code. These are libraries of code plus the application entry point that routes requests to modules (that in turn call the framework libraries). For example, libraries in the framework help implement a resource model (base classes and interfaces to inherit from) but not the resource models themselves. Certain libraries also support <span term-uuid="6c5cb4e9-9197-46f2-ba79-6147d9bfe66d" class="glossary-term" data-toggle="popover">CSS</span> rendering.</p>
   </li>
   <li>
     <p><code>/lib/web</code> contains JavaScript and CSS/LESS files. These files reside  under <code>web</code> and not <code>internal</code> because they are accessible from a web browser, while the PHP code under <code>internal</code> is not. (Any code that a web browser must access should be under <code>web</code>, while everything else under <code>internal</code>.)</p>
@@ -506,12 +506,12 @@ Lib/
 </ul>
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>The <code>lib/internal/Magento/Framework</code> directory maps to the <code>Magento\Framework</code> namespace.</p>
+  <p>The <code>lib/internal/Magento/Framework</code> directory maps to the <code>Magento\Framework</code> <span term-uuid="621ef86b-7314-4fbc-a80d-ab7fa45a27cb" class="glossary-term" data-toggle="popover">namespace</span>.</p>
 </div>
 
 <h3 id="highlights-of-the-magento-framework">Highlights of the Magento Framework</h3>
 
-<p>The Magento Framework (<code>lib/internal/Magento/Framework/</code>) provides a robust range of functionality. If you are an extension developer, you may be interested in this subset of Framework namespaces.</p>
+<p>The Magento Framework (<code>lib/internal/Magento/Framework/</code>) provides a robust range of functionality. If you are an <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span> developer, you may be interested in this subset of Framework namespaces.</p>
 
 <table>
    <tbody>
@@ -636,7 +636,7 @@ Lib/
 
 <h3 id="how-presentation-code-calls-other-layers">How Presentation code calls other layers</h3>
 
-<p>Presentation code typically calls service contracts, particularly for a store front. However, presentation code is occasionally dependent on a specific implementation that requires the presentation code to directly call the business logic layer. For example, the Admin UI screens are often tightly linked a specific implementation and are not generic across implementations.</p>
+<p>Presentation code typically calls service contracts, particularly for a store front. However, presentation code is occasionally dependent on a specific implementation that requires the presentation code to directly call the business logic layer. For example, the <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span> UI screens are often tightly linked a specific implementation and are not generic across implementations.</p>
 
 <h2 id="service-layer">Service layer</h2>
 
@@ -652,7 +652,7 @@ Lib/
     <p>Contains service contracts, which define how the implementation will behave.</p>
   </li>
   <li>
-    <p>Provides an easy way to access the REST/SOAP API framework code (which also resides above the service contracts). You can bind service contracts to web service APIs in configuration files – no coding required.</p>
+    <p>Provides an easy way to access the REST/SOAP <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span> framework code (which also resides above the service contracts). You can bind service contracts to web service APIs in configuration files – no coding required.</p>
   </li>
   <li>
     <p>Provides a stable API for other modules to call into.</p>
@@ -661,11 +661,11 @@ Lib/
 
 <h3 id="who-accesses-the-service-layer">Who accesses the service layer?</h3>
 
-<p>All calls from web service interfaces, or users working with your storefront (that is, controller-initiated requests), are typically routed through the service layer. We strongly encourage the use of service contracts to call business logic.</p>
+<p>All calls from web service interfaces, or users working with your <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span> (that is, controller-initiated requests), are typically routed through the service layer. We strongly encourage the use of service contracts to call business logic.</p>
 
-<p>External applications can make requests for business logic with simple SOAP and REST calls. With some simple XML or JSON, you can expose the service layer’s PHP API and make it accessible to REST or SOAP web services. Once implemented, a web service can make a single API call and return an information-rich data structure.</p>
+<p>External applications can make requests for business logic with simple SOAP and REST calls. With some simple <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span> or JSON, you can expose the service layer’s PHP API and make it accessible to REST or SOAP web services. Once implemented, a web service can make a single API call and return an information-rich data structure.</p>
 
-<p>Service contract clients include:</p>
+<p><span term-uuid="cdf644c4-bc99-4550-a954-dd5ae165785a" class="glossary-term" data-toggle="popover">Service contract</span> clients include:</p>
 
 <ul>
   <li>Controllers (initiated by actions of users of the storefront)</li>
@@ -675,7 +675,7 @@ Lib/
 
 <h3 id="service-contract-anatomy">Service contract anatomy</h3>
 
-<p>The service contract of a module is defined by the set of interfaces in the module’s <code>/Api</code>. It typically consists of:</p>
+<p>The service contract of a <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> is defined by the set of interfaces in the module’s <code>/Api</code>. It typically consists of:</p>
 
 <ul>
   <li>
@@ -696,7 +696,7 @@ Lib/
     <p>Management interfaces</p>
   </li>
   <li>
-    <p>Metadata interfaces</p>
+    <p><span term-uuid="3f0f2ef1-ad38-41c6-bd1e-390daaa71d76" class="glossary-term" data-toggle="popover">Metadata</span> interfaces</p>
   </li>
 </ul>
 
@@ -704,7 +704,7 @@ Lib/
 
 <h3 id="advantages-of-service-contracts">Advantages of service contracts</h3>
 
-<p>Service contracts permit you to add a new customer extension that adds or changes business logic-level resource models and models without breaking the system. How? Through the use of the &lt;preference&gt; element of a dependency injection config file (<code>di.xml</code>) file. The <code>di.xml</code> file specifies which PHP class to use for the interface <code>Magento\Customer\Api\CustomerRepositoryInterface</code>.</p>
+<p>Service contracts permit you to add a new customer extension that adds or changes business logic-level resource models and models without breaking the system. How? Through the use of the &lt;preference&gt; element of a <span term-uuid="2be50595-c5c7-4b9d-911c-3bf2cd3f7beb" class="glossary-term" data-toggle="popover">dependency injection</span> config file (<code>di.xml</code>) file. The <code>di.xml</code> file specifies which PHP class to use for the interface <code>Magento\Customer\Api\CustomerRepositoryInterface</code>.</p>
 
 <p>Another module can change this interface file by specifying a different class name. However, if the client code uses the interface definition only, no class change is necessary.</p>
 

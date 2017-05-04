@@ -576,9 +576,9 @@
 
 </section>
 
-			<p>Magento 2 allows some web APIs to be accessed by unauthenticated (anonymous) users. Many of these APIs allow a customer to have a robust shopping experience on the website without having to log in.</p>
+			<p>Magento 2 allows some web APIs to be accessed by unauthenticated (anonymous) users. Many of these APIs allow a customer to have a robust shopping experience on the <span term-uuid="a3c8f20f-b067-414e-9781-06378c193155" class="glossary-term" data-toggle="popover">website</span> without having to log in.</p>
 
-<p>A subset of these APIs can return information about products, promotions, and storefronts that a merchant might consider proprietary. For example, Catalog module APIs can provide information about an item’s pricing and quantity, as well as items that are currently not for sale. The CMS module could reveal information about upcoming promotional landing pages and coupons. The Store module can reveal too much information about individual websites.</p>
+<p>A subset of these APIs can return information about products, promotions, and storefronts that a merchant might consider proprietary. For example, <span term-uuid="8d40d668-4996-4856-9f81-b1386cf4b14f" class="glossary-term" data-toggle="popover">Catalog</span> <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> APIs can provide information about an item’s pricing and quantity, as well as items that are currently not for sale. The <span term-uuid="f3944faf-127e-4097-9918-a2e9c647d44f" class="glossary-term" data-toggle="popover">CMS</span> module could reveal information about upcoming promotional landing pages and coupons. The Store module can reveal too much information about individual websites.</p>
 
 <p>For this reason, by default, Magento 2 now prevents anonymous users from accessing the APIs that could reveal sensitive information.  When the feature is enabled, the user must have administrator privileges to execute the affected APIs.</p>
 
@@ -589,7 +589,7 @@
     <tr>
       <th>Product</th>
       <th>Module</th>
-      <th>API</th>
+      <th><span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span></th>
       <th>Action</th>
     </tr>
   </thead>
@@ -790,7 +790,7 @@
 
 <p>If the list of APIs that are inaccessible to anonymous users must be updated for a third-party extension, an integrator can add to their extension’s <code>di.xml</code> file to update or replace the functionality defined in the WebapiSecurity module.</p>
 
-<p>The following APIs remain accessible to anonymous users. Most of these must remain accessible to support the checkout and add-to-cart Ajax functionalities.</p>
+<p>The following APIs remain accessible to anonymous users. Most of these must remain accessible to support the <span term-uuid="278c3ce0-cd4c-4ffc-a098-695d94d73bde" class="glossary-term" data-toggle="popover">checkout</span> and add-to-cart Ajax functionalities.</p>
 
 <table>
   <thead>
@@ -912,7 +912,7 @@
     </tr>
     <tr>
       <td>CE</td>
-      <td>Quote</td>
+      <td><span term-uuid="77e19d0d-e7b1-4d3d-9bad-e92fbb9fb59a" class="glossary-term" data-toggle="popover">Quote</span></td>
       <td>/V1/guest-carts/:cartId</td>
       <td>GET</td>
     </tr>

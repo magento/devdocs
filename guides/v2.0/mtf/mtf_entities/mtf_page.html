@@ -945,7 +945,7 @@
 			<p>A page object is a class that serves to interact with the Magento page under test.
 A page serves as container for <a href="/guides/v2.0/mtf/mtf_entities/mtf_page.html">blocks</a>.</p>
 
-<p>In the functional tests, Page Object Design Pattern is used. Test uses block methods of page object class to interact with application under test.</p>
+<p>In the functional tests, Page Object <span term-uuid="53755359-9916-4677-bff2-f7d26025095a" class="glossary-term" data-toggle="popover">Design Pattern</span> is used. Test uses block methods of page object class to interact with application under test.</p>
 
 <p>Benefit of this approach is that tests don’t need to be changed after changes in the UI. Only code in corresponding block must be changed. This approach provides the following advantages:</p>
 
@@ -955,7 +955,7 @@ A page serves as container for <a href="/guides/v2.0/mtf/mtf_entities/mtf_page.h
   <li>Decreased duplication of the code.</li>
 </ul>
 
-<p>You can learn from this topic how to create new page, add blocks to the page. Furthermore, it discusses mechanism of extending the page in another module.</p>
+<p>You can learn from this topic how to create new page, add blocks to the page. Furthermore, it discusses mechanism of extending the page in another <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>.</p>
 
 <h2 id="mtf_page_create">Create page</h2>
 
@@ -963,7 +963,7 @@ A page serves as container for <a href="/guides/v2.0/mtf/mtf_entities/mtf_page.h
 
 <ol>
   <li>
-    <p>Create an XML file in the Page directory of the module to which it belongs</p>
+    <p>Create an <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span> file in the Page directory of the module to which it belongs</p>
   </li>
   <li>
     <p>Add the previously created blocks presented on this page to the <code>&lt;page&gt;</code> node</p>
@@ -973,7 +973,7 @@ A page serves as container for <a href="/guides/v2.0/mtf/mtf_entities/mtf_page.h
   </li>
 </ol>
 
-<p>Let’s see an example of the Magento Widget page:</p>
+<p>Let’s see an example of the Magento <span term-uuid="f0dcf847-ce21-4b88-8b45-83e1cbf08100" class="glossary-term" data-toggle="popover">Widget</span> page:</p>
 
 <p><code>&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Widget/Test/Page/Adminhtml/WidgetInstanceIndex.xml</code></p>
 
@@ -1088,8 +1088,8 @@ A page serves as container for <a href="/guides/v2.0/mtf/mtf_entities/mtf_page.h
 <p>Depending on <code>area</code> and <code>mca</code> attributes, page can be of one of the following types:</p>
 
 <ul>
-  <li>Admin page is extended from <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Page/BackendPage.php">Magento\Mtf\Page\BackendPage</a> class</li>
-  <li>Storefront page is extended from <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Page/FrontendPage.php">Magento\Mtf\Page\FrontendPage</a> class</li>
+  <li><span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span> page is extended from <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Page/BackendPage.php">Magento\Mtf\Page\BackendPage</a> class</li>
+  <li><span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">Storefront</span> page is extended from <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Page/FrontendPage.php">Magento\Mtf\Page\FrontendPage</a> class</li>
   <li>External page is extended from <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Page/ExternalPage.php">Magento\Mtf\Page\ExternalPage</a> class</li>
 </ul>
 
@@ -1323,7 +1323,7 @@ A page serves as container for <a href="/guides/v2.0/mtf/mtf_entities/mtf_page.h
 <p>Let’s see an example with the following use case:</p>
 
 <ul>
-  <li>A Magento_NewModule changes the category creation behaviour of a Magento_Catalog module.</li>
+  <li>A Magento_NewModule changes the <span term-uuid="50e49338-1e6c-4473-8527-9e401d67ea2b" class="glossary-term" data-toggle="popover">category</span> creation behaviour of a Magento_Catalog module.</li>
   <li><code>editForm</code> block from page <code>\Magento\Catalog\Test\Page\Adminhtml\CatalogCategoryEdit</code> must be changed according to new functionality.</li>
 </ul>
 
@@ -1371,7 +1371,7 @@ A page serves as container for <a href="/guides/v2.0/mtf/mtf_entities/mtf_page.h
     <span class="nt">&lt;/page&gt;</span>
 <span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
-<p><strong>Step 3.</strong> Add blocks that you want to redirect.</p>
+<p><strong>Step 3.</strong> Add blocks that you want to <span term-uuid="510de766-1ebd-4546-bf38-c618c9c945d2" class="glossary-term" data-toggle="popover">redirect</span>.</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span>
 <span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../../../vendor/magento/mtf/etc/pages.xsd&quot;</span><span class="nt">&gt;</span>

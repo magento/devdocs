@@ -703,7 +703,7 @@
 
 			<h3 id="overview">Overview</h3>
 
-<p>This tutorial gives instructions for the creation of a module that displays a simple page in the Magento admin.</p>
+<p>This tutorial gives instructions for the creation of a <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> that displays a simple page in the <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento admin</span>.</p>
 
 <p>For the purposes of this tutorial MyCompany is the name of the company associated with a module named ExampleAdminNewPage.</p>
 
@@ -723,7 +723,7 @@
 <p>These initial boilerplate files are the bare essential files needed for any Magento module.</p>
 
 <h4 class="no_toc" id="composerjson"><code>composer.json</code></h4>
-<p>In the module’s root directory, create the file <code>composer.json</code>. This file gives composer the ability to install this module and its dependencies.
+<p>In the module’s root directory, create the file <code>composer.json</code>. This file gives <span term-uuid="d85e2d0a-221f-4d03-aa43-0cda9f50809e" class="glossary-term" data-toggle="popover">composer</span> the ability to install this module and its dependencies.
 For more information see: <a href="/guides/v2.0/extension-dev-guide/build/composer-integration.html"><code>composer.json</code></a>.</p>
 
 <div class="collapsible"><b class="collapsible-title">File content for composer.json </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json">    <span class="p">{</span>
@@ -782,7 +782,7 @@ For more information see: <a href="/guides/v2.0/extension-dev-guide/build/compos
 <p>For more information on this topic, see: <a href="/guides/v2.0/extension-dev-guide/routing.html">routing</a>.</p>
 
 <h4 class="no_toc" id="etcadminhtmlmenuxml"><code>etc/adminhtml/menu.xml</code></h4>
-<p>Under the created <code>etc</code> directory, create a new directory called <code>adminhtml</code>. Under that directory, create the file <code>menu.xml</code>. This XML file adds new menu items to the Magento admin.</p>
+<p>Under the created <code>etc</code> directory, create a new directory called <code>adminhtml</code>. Under that directory, create the file <code>menu.xml</code>. This <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span> file adds new menu items to the Magento <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">admin</span>.</p>
 
 <p>The <code>menu.xml</code> file provided below adds two items in the Content section of the left navigation:</p>
 
@@ -888,7 +888,7 @@ mkdir -pm view/adminhtml/templates
 
 <h4 class="no_toc" id="viewadminhtmllayoutexampleadminnewpagehelloworldindexxml"><code>view/adminhtml/layout/exampleadminnewpage_helloworld_index.xml</code></h4>
 
-<p>This file defines the layout and structure of the index page for the HelloWorld controller. It sets the title to “Greetings” and instructs Magento to use the <code>helloworld.phtml</code> template as the content in a <code>Magento\Backend\Block\Template</code> block class.</p>
+<p>This file defines the <span term-uuid="73ab5daa-5857-4039-97df-11269b626134" class="glossary-term" data-toggle="popover">layout</span> and structure of the index page for the HelloWorld controller. It sets the title to “Greetings” and instructs Magento to use the <code>helloworld.phtml</code> template as the content in a <code>Magento\Backend\Block\Template</code> block class.</p>
 
 <p>The name of this file uses the following pattern: <em>frontName</em>_<em>controller</em>_<em>action</em>.xml</p>
 

@@ -1021,15 +1021,15 @@
 
 <p>Magento application implements the <a href="http://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller" target="_blank">Model-view-controller</a> architecture pattern; meaning, the Magento software is architected into <em>layers</em>, including the <em>view layer</em>.</p>
 
-<p>The major part of the view layer of Magento application is layout. Functionally, layout is a page structure, represented by hierarchy of elements (element tree), which can be of two types: blocks and containers. Technically, layout is defined in the .xml files, which contain element declarations and element manipulation instructions.</p>
+<p>The major part of the view layer of Magento application is <span term-uuid="73ab5daa-5857-4039-97df-11269b626134" class="glossary-term" data-toggle="popover">layout</span>. Functionally, layout is a page structure, represented by hierarchy of elements (element tree), which can be of two types: blocks and containers. Technically, layout is defined in the .xml files, which contain element declarations and element manipulation instructions.</p>
 
-<p>This article describes the basic concepts you need to know to create layouts for your custom theme.</p>
+<p>This article describes the basic concepts you need to know to create layouts for your custom <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span>.</p>
 
 <h2 id="layout-over-terms">Terms used</h2>
 
 <p><span id="handle"><em>Layout handle</em></span></p>
 
-<p>A <em>layout handle</em> is a uniquely identified set of layout instructions that serves as a name of a layout file.</p>
+<p>A <em>layout handle</em> is a uniquely identified set of <span term-uuid="bcbc9bf8-3251-4b3c-a802-07417770af3b" class="glossary-term" data-toggle="popover">layout instructions</span> that serves as a name of a layout file.</p>
 
 <p>There are three kinds of layout handles:</p>
 
@@ -1049,7 +1049,7 @@
 
 <p><img src="/common/images/layouts_containers_defn.jpg" /></p>
 
-<p>A <em>block</em> represents each feature on a page and employs templates to generate the HTML to insert into its parent structural block. Examples of blocks include a category list, a mini cart, product tags, and product listing.</p>
+<p>A <em>block</em> represents each feature on a page and employs templates to generate the <span term-uuid="a2aff425-07dd-4bd6-9671-29b7edefa871" class="glossary-term" data-toggle="popover">HTML</span> to insert into its parent structural block. Examples of blocks include a <span term-uuid="50e49338-1e6c-4473-8527-9e401d67ea2b" class="glossary-term" data-toggle="popover">category</span> list, a mini cart, product tags, and product listing.</p>
 
 <p>The following figure shows an example:</p>
 
@@ -1057,7 +1057,7 @@
 
 <h2 id="basic-layouts">Basic layouts</h2>
 
-<p>The basic view of all Magento storefront pages is defined in two page configuration layout files located in the Magento_Theme module:</p>
+<p>The basic view of all Magento <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span> pages is defined in two page configuration layout files located in the Magento_Theme module:</p>
 
 <ul>
   <li><code>&lt;Magento_Theme_module_dir&gt;/view/frontend/layout/default.xml</code>: defines the page layout.</li>
@@ -1077,9 +1077,9 @@
 <p>Following are the definitions of each layout file type:</p>
 
 <ul>
-  <li><em>Page layout</em>: an XML file declaring a page wireframe inside the <code>&lt;body&gt;</code> section of the HTML page markup, for example, two-column page layout.</li>
+  <li><em>Page layout</em>: an <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span> file declaring a page wireframe inside the <code>&lt;body&gt;</code> section of the HTML page markup, for example, two-column page layout.</li>
   <li><em>Page configuration</em>: an XML file declaring detailed structure, contents and meta-information of a page (includes the <code>&lt;html&gt;</code>, <code>&lt;head&gt;</code>, and <code>&lt;body&gt;</code> sections of the HTML page markup).</li>
-  <li><em>Generic layout</em>: an XML file declaring page detailed structure and contents inside the <code>body</code> section of the HTML page markup. Used for pages returned by AJAX requests, emails, HTML snippets, and so on.</li>
+  <li><em>Generic layout</em>: an XML file declaring page detailed structure and contents inside the <code>body</code> section of the HTML page <span term-uuid="8f407f13-4350-449b-9dc5-217dcf01bc42" class="glossary-term" data-toggle="popover">markup</span>. Used for pages returned by AJAX requests, emails, HTML snippets, and so on.</li>
 </ul>
 
 <p>For details, refer to <a href="/guides/v2.0/frontend-dev-guide/layouts/layout-types.html" target="_blank">Layout file types</a>.</p>
@@ -1107,7 +1107,7 @@
 
 <h2 id="layout-custom">Customize layout</h2>
 
-<p>To ensure stability and secure your customizations from being deleted during upgrade, do not change out-of-the-box Magento module and theme layouts.</p>
+<p>To ensure stability and secure your customizations from being deleted during upgrade, do not change out-of-the-box Magento <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> and theme layouts.</p>
 
 <p>To make the necessary changes, create <a href="/guides/v2.0/frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending</a> and <a href="/guides/v2.0/frontend-dev-guide/layouts/layout-override.html" target="_blank">overriding</a> layout files in your custom theme.</p>
 

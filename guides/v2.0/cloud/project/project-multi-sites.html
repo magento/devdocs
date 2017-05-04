@@ -1653,7 +1653,7 @@
 
 <ol>
   <li><a href="#cloud-multi-stores-routes">Configure routes</a>, which specify how incoming URLs are handled by Magento Enterprise Cloud Edition.</li>
-  <li><a href="#cloud-multi-stores-admin">Set up websites, stores, and store views</a> in your Magento Enterprise Cloud Edition server’s Admin.</li>
+  <li><a href="#cloud-multi-stores-admin">Set up websites, stores, and store views</a> in your Magento Enterprise Cloud Edition server’s <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span>.</li>
   <li><a href="#cloud-multi-stores-magento-vars">Modify <code>magento-vars.php</code></a> to specify the values of the <code>MAGE_RUN_TYPE</code> and <code>MAGE_RUN_CODE</code> variables.</li>
   <li><a href="#cloud-multi-stores-deploy">Deploy</a> to your integration branch and test.</li>
 </ol>
@@ -1752,7 +1752,7 @@
 <p>See <a href="/guides/v2.0/config-guide/multi-site/ms_websites.html">Set up multiple websites, stores, and store views in the Admin</a>.</p>
 
 <h3 id="cloud-multi-stores-magento-vars">Modify <code>magento-vars.php</code></h3>
-<p>Instead of configuring an nginx virtual host, pass the <code>MAGE_RUN_CODE</code> and <code>MAGE_RUN_TYPE</code> variables using <code>magento-vars.php</code> which is located in your Magento root directory.</p>
+<p>Instead of configuring an <span term-uuid="b14ef3d8-51fd-48fe-94df-ed069afb2cdc" class="glossary-term" data-toggle="popover">nginx</span> virtual host, pass the <code>MAGE_RUN_CODE</code> and <code>MAGE_RUN_TYPE</code> variables using <code>magento-vars.php</code> which is located in your Magento root directory.</p>
 
 <ol>
   <li>Open <code>magento-vars.php</code> in a text editor.</li>
@@ -1834,7 +1834,7 @@ git push origin &lt;branch name&gt;
   </li>
   <li>Wait for deployment to complete.</li>
   <li>
-    <p>When deployment is done, in a web browser, go to your site’s base URL.</p>
+    <p>When deployment is done, in a web browser, go to your site’s base <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span>.</p>
 
     <p>The URL must be in the format: <code>http://&lt;magento run_code&gt;---&lt;rest of URL&gt;</code></p>
 

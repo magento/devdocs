@@ -1521,12 +1521,12 @@
 </section>
 
 			<h2 id="config-cli-static-overview">Overview of static view files deployment</h2>
-<p>The static view files deployment command enables you to write static files to the Magento file system when the Magento software is set for <a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>.</p>
+<p>The static view files deployment command enables you to write <span term-uuid="363662cb-73f1-4347-a15e-2d2adabeb0c2" class="glossary-term" data-toggle="popover">static files</span> to the Magento file system when the Magento software is set for <a href="/guides/v2.0/config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>.</p>
 
 <p>The term <em>static view file</em> refers to the following:</p>
 
 <ul>
-  <li>“Static” means it can be cached for a site (that is, the file is not dynamically generated). Examples include images and CSS generated from LESS.</li>
+  <li>“Static” means it can be cached for a site (that is, the file is not dynamically generated). Examples include images and <span term-uuid="6c5cb4e9-9197-46f2-ba79-6147d9bfe66d" class="glossary-term" data-toggle="popover">CSS</span> generated from LESS.</li>
   <li>“View” refers to presentation layer (from MVC).</li>
 </ul>
 
@@ -1544,7 +1544,7 @@
 </ul>
 
 <div class="bs-callout bs-callout-warning">
-  <p><em>Developer mode only</em>: When you install or enable a new module, it might load new JavaScript, CSS, layouts, and so on. To avoid issues with static files, you must clean the old files to make sure you get all the changes for the new module.</p>
+  <p><em>Developer mode only</em>: When you install or enable a new module, it might load new JavaScript, CSS, layouts, and so on. To avoid issues with static files, you must clean the old files to make sure you get all the changes for the new <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>.</p>
 
   <p>You can clean generated static view files in several ways, see the <a href="/guides/v2.0/howdoi/clean_static_cache.html">Clean static files cache topic for details</a>.</p>
 </div>
@@ -1589,7 +1589,7 @@ sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
   <p>To deploy static view files:</p>
 
   <ol>
-    <li>Log in to the Magento server as, or <a href="/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">switch to</a>, the Magento file system owner.</li>
+    <li>Log in to the Magento server as, or <a href="/guides/v2.0/install-gde/prereq/file-sys-perms-over.html">switch to</a>, the <span term-uuid="5e7de323-626b-4d1b-a7e5-c8d13a92c5d3" class="glossary-term" data-toggle="popover">Magento file system owner</span>.</li>
     <li>Delete the contents of <code>&lt;your Magento install dir&gt;/pub/static</code>.</li>
     <li>
       <p>Run the static view files deployment tool <code>&lt;your Magento install dir&gt;/bin/magento setup:static-content:deploy</code>.
@@ -1692,7 +1692,7 @@ New version of deployed files: 1430773903
   </ol>
 
   <h2 id="tips-for-developers-customizing-the-static-content-deployment-tool">Tips for developers customizing the static content deployment tool</h2>
-  <p>When creating a custom implementation of the static content deployment tool, do not use non atomic writing to files that should be available on the client side. Otherwise, those files might be loaded on the client side with partial content.</p>
+  <p>When creating a custom implementation of the <span term-uuid="a3e37235-4e8b-464f-a19d-4a120560206a" class="glossary-term" data-toggle="popover">static content</span> deployment tool, do not use non atomic writing to files that should be available on the client side. Otherwise, those files might be loaded on the client side with partial content.</p>
 
   <p>One of the options for making it atomic, is writing to files stored in a temporary directory and copying or moving them to the destination directory (from where they are actually loaded to client side) once writing is over. For details about writing to files see <a href="http://php.net/manual/en/function.fwrite.php">http://php.net/manual/en/function.fwrite.php</a>.</p>
 

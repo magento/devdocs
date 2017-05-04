@@ -1045,7 +1045,7 @@
 
 			<h2>What's in this topic</h2>
 
-<p>This topic describes the JavaScript used in Magento out-of-the-box Blank and Luma themes to relocate certain elements and change their behavior depending on the <a href="/guides/v2.1/frontend-dev-guide/responsive-web-design/rwd_overview.html#fedg_rwd_terms" target="_blank">breakpoint</a>.</p>
+<p>This topic describes the <span term-uuid="312b4baf-15f7-4968-944e-c814d53de218" class="glossary-term" data-toggle="popover">JavaScript</span> used in Magento out-of-the-box Blank and Luma themes to relocate certain elements and change their behavior depending on the <a href="/guides/v2.1/frontend-dev-guide/responsive-web-design/rwd_overview.html#fedg_rwd_terms" target="_blank">breakpoint</a>.</p>
 
 <h2>Scripts general overview</h2>
 
@@ -1094,10 +1094,10 @@
         <span class="p">}</span>
     <span class="p">});</span> <span class="cm">/*...*/</span></code></pre></figure>
 
-<p>For example, <code>responsive.js</code> changes the view of the checkout progress block on the checkout page:</p>
+<p>For example, <code>responsive.js</code> changes the view of the <span term-uuid="278c3ce0-cd4c-4ffc-a098-695d94d73bde" class="glossary-term" data-toggle="popover">checkout</span> progress block on the checkout page:</p>
 <ul>
  <li>For the desktop view, the checkout progress block is permanently displayed on the left-hand side.</li>
-<li>For the mobile view, it is moved by CSS to be displayed under the checkout steps. <code>responsive.js</code> makes it a toggled block: by default, the checkout progress information is hidden in the <b>Your Checkout Progress</b> section and it is visible after you click it.</li>
+<li>For the mobile view, it is moved by <span term-uuid="6c5cb4e9-9197-46f2-ba79-6147d9bfe66d" class="glossary-term" data-toggle="popover">CSS</span> to be displayed under the checkout steps. <code>responsive.js</code> makes it a toggled block: by default, the checkout progress information is hidden in the <b>Your Checkout Progress</b> section and it is visible after you click it.</li>
 </ul>
 
 <h2 id="fedg_rwd_js_nav">menu.js</h2>
@@ -1105,9 +1105,9 @@
 <p>In a mobile view, on the 768px breakpoint, <code>menu.js</code> changes the navigation menu look and behavior the following way:</p>
 <ul>
 <li>Category menu items are not displayed, but are accessible after clicking the menu icon.</li>
-<li>The behavior of a category link depends on whether the category has sub-categories:
+<li>The behavior of a <span term-uuid="50e49338-1e6c-4473-8527-9e401d67ea2b" class="glossary-term" data-toggle="popover">category</span> link depends on whether the category has sub-categories:
 <ul>
-<li>If sub-categories exist, the category link behaves as collapsible block. Clicking a category link does not redirect to the category page immediately. Instead it opens a list of sub-categories, including the <b>All category products</b> option. </li>
+<li>If sub-categories exist, the category link behaves as collapsible block. Clicking a category link does not <span term-uuid="510de766-1ebd-4546-bf38-c618c9c945d2" class="glossary-term" data-toggle="popover">redirect</span> to the category page immediately. Instead it opens a list of sub-categories, including the <b>All category products</b> option. </li>
 <li>If there are no sub-categories, the category link behaves as usual.</li>
 </ul>
 </li>
@@ -1119,7 +1119,7 @@
 
 <h2 id="rwd_js_reuse">Re-using Magento scripts in your theme</h2>
 
-<p>You can use the <code>menu.js</code>, <code>responsive.js</code> and <code>matchMedia.js</code> to add responsive behavior in your custom theme. 
+<p>You can use the <code>menu.js</code>, <code>responsive.js</code> and <code>matchMedia.js</code> to add responsive behavior in your custom <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span>. 
 If your theme inherits from Blank or Luma, you do not even need to additionally include the script files in your theme.</p>
 
 <p>If your theme does not inherit from Blank or Luma, to be able to use the scripts, you must configure RequireJS for your theme.</p>

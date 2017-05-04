@@ -1113,7 +1113,7 @@
 
 </section>
 
-			<p>Each Magento 2 module has its own set of configuration files, gathered into the module’s <code>etc</code> directory.</p>
+			<p>Each Magento 2 <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> has its own set of configuration files, gathered into the module’s <code>etc</code> directory.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
 	<span class="glyphicon-class">
@@ -1170,7 +1170,7 @@
   </span>
  </div>
 
-  <p>In addition to those files, a Magento 2 module also has nested configuration directories in the <code>etc</code> directory for any required administration html, frontend, API REST, or API SOAP specific configuration. Additions you make to files in these directories override the settings in the global configuration files for the respective functionality only. That is, if you add a <code>config.xml</code> file to <code>etc/frontend</code>, the settings you make in that file overrides the settings in <code>etc/config.xml</code> for storefront functionality <em>only</em>.</p>
+  <p>In addition to those files, a Magento 2 module also has nested configuration directories in the <code>etc</code> directory for any required administration html, frontend, API REST, or API SOAP specific configuration. Additions you make to files in these directories override the settings in the global configuration files for the respective functionality only. That is, if you add a <code>config.xml</code> file to <code>etc/frontend</code>, the settings you make in that file overrides the settings in <code>etc/config.xml</code> for <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span> functionality <em>only</em>.</p>
 
   <ul>
     <li><code>&lt;your module root dir&gt;/etc/adminhtml/</code></li>
@@ -1187,7 +1187,7 @@
 
   <h3 id="tailor-your-configuration-files-for-what-your-module-does">Tailor your configuration files for what your module does</h3>
 
-  <p>The exact set of configuration files required for your module depends on what your new module does. The required configuration files depend on how you plan to use the module: will the module be manifested on the storefront UI, or in the Magento Admin panel, or as a backend extension that makes a service call? Or all of the above. For example, if your module performs a function in the Admin, you should add any necessary configuration files for those functions to <code>etc/adminhtml/</code>, like:</p>
+  <p>The exact set of configuration files required for your module depends on what your new module does. The required configuration files depend on how you plan to use the module: will the module be manifested on the storefront UI, or in the <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span> panel, or as a <span term-uuid="74d6d228-34bd-4475-a6f8-0c0f4d6d0d61" class="glossary-term" data-toggle="popover">backend</span> <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span> that makes a service call? Or all of the above. For example, if your module performs a function in the Admin, you should add any necessary configuration files for those functions to <code>etc/adminhtml/</code>, like:</p>
 
   <ul>
     <li><code>&lt;your module root dir&gt;/etc/adminhtml/di.xml</code></li>

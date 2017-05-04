@@ -661,17 +661,17 @@
 
 </section>
 
-			<p>As a customer, you log in to the Magento storefront with your customer credentials. As an admin, you log in to the Magento Admin with your admin credentials.</p>
+			<p>As a customer, you log in to the Magento <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span> with your customer credentials. As an admin, you log in to the <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span> with your <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">admin</span> credentials.</p>
 
-<p>The Magento web API framework uses your logged-in session information to verify your identity and authorize access to the requested resource.</p>
+<p>The Magento web <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span> framework uses your logged-in session information to verify your identity and authorize access to the requested resource.</p>
 
 <p>Customers can access resources that are configured with <code>anonymous</code> or <code>self</code> permission in the <code>webapi.xml</code> configuration file.</p>
 <p>Admins can access resources that are assigned to their Magento Admin profile.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
-<p>The Magento web API framework enables guest users to access resources that are configured with <code>anonymous</code> permission. Any user that the framework cannot authenticate through existing authentication mechanisms is considered a guest user.</p></div>
+<p>The Magento <span term-uuid="377dc0a3-b8a7-4dfa-808e-2de37e4c0029" class="glossary-term" data-toggle="popover">web API</span> framework enables guest users to access resources that are configured with <code>anonymous</code> permission. Any user that the framework cannot authenticate through existing authentication mechanisms is considered a guest user.</p></div>
 
-<p>For example, if a customer is logged in to the Magento storefront and the JavaScript widget invokes the <code>self</code> API, details for the logged-in customer are fetched:</p>
+<p>For example, if a customer is logged in to the Magento storefront and the <span term-uuid="312b4baf-15f7-4968-944e-c814d53de218" class="glossary-term" data-toggle="popover">JavaScript</span> <span term-uuid="f0dcf847-ce21-4b88-8b45-83e1cbf08100" class="glossary-term" data-toggle="popover">widget</span> invokes the <code>self</code> API, details for the logged-in customer are fetched:</p>
 
 <pre>GET /rest/V1/customers/me</pre>
 

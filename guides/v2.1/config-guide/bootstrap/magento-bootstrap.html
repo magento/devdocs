@@ -1660,7 +1660,7 @@
 <p>The bootstrap object specifies how the Magento application handles uncaught exceptions as follows:</p>
 
 <ul>
-  <li>In <a href="/guides/v2.1/config-guide/bootstrap/magento-modes.html#mode-developer">developer mode</a>, displays the exception as-is.</li>
+  <li>In <a href="/guides/v2.1/config-guide/bootstrap/magento-modes.html#mode-developer">developer mode</a>, displays the <span term-uuid="53da11f1-d0b8-4a7e-b078-1e099462b409" class="glossary-term" data-toggle="popover">exception</span> as-is.</li>
   <li>In any other mode, attempts to log exception and display a generic error message.</li>
   <li>Terminates Magento with error code <code>1</code></li>
 </ul>
@@ -1707,7 +1707,7 @@
 </div>
 
 <p>In default or developer mode, a request for a non-existent static resource is redirected to the static entry point according to the rewrite rules specified by the appropriate <code>.htaccess</code>.
-When the request is redirected to the entry point, the Magento application parses the requested URL based on retrieved parameters and finds the requested resource.</p>
+When the request is redirected to the entry point, the Magento application parses the requested <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span> based on retrieved parameters and finds the requested resource.</p>
 
 <ul>
   <li>In developer mode, the content of the file is returned so that every time the resource is requested, the returned content is up to date.</li>
@@ -1719,7 +1719,7 @@ When the request is redirected to the entry point, the Magento application parse
 </ul>
 
 <h3 id="config-boot-entry-media">Media resource entry point</h3>
-<p><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/MediaStorage/App/Media.php" target="_blank">Magento\MediaStorage\App\Media</a> retrieves media resources (that is, any files uploaded to media storage) from the database. It is used whenever the database is configured as a media storage.</p>
+<p><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/MediaStorage/App/Media.php" target="_blank">Magento\MediaStorage\App\Media</a> retrieves media resources (that is, any files uploaded to media storage) from the database. It is used whenever the database is configured as a <span term-uuid="d95142d7-023f-451c-a2e9-dd88763dcd70" class="glossary-term" data-toggle="popover">media storage</span>.</p>
 
 <p><code>\Magento\Core\App\Media</code> attempts to find the media file in the configured database storage and write it into the <code>pub/static</code> directory, then return its contents. On error, it returns an HTTP 404 (Not Found) status code in the header with no contents.</p>
 

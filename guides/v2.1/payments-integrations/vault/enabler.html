@@ -735,7 +735,7 @@
 </section>
 
 			<p>Store customers must have the ability to enable and disable credit cards details storing.
-Magento out-of-the-box provides mechanisms for adding this ability, but your still need to add modifications in your payment method implementation.</p>
+Magento out-of-the-box provides mechanisms for adding this ability, but your still need to add modifications in your <span term-uuid="422b0fa8-b181-4c7c-93a2-c553abb34efd" class="glossary-term" data-toggle="popover">payment method</span> implementation.</p>
 
 <p>These modifications are the following:</p>
 
@@ -777,9 +777,9 @@ Magento out-of-the-box provides mechanisms for adding this ability, but your sti
 
 <h2 id="modifying-the-payment-component">Modifying the payment component</h2>
 
-<p>The payment component must process the state of the vault-enabling control and update payment <code>additional_data</code> before it is sent to the backend.</p>
+<p>The payment component must process the state of the vault-enabling control and update payment <code>additional_data</code> before it is sent to the <span term-uuid="74d6d228-34bd-4475-a6f8-0c0f4d6d0d61" class="glossary-term" data-toggle="popover">backend</span>.</p>
 
-<p>Magento has a default vault enabler UI component (<code>Magento_Vault/js/view/payment/vault-enabler</code>). In the payment component, you just need to call its <code>visitAdditionalData</code> to update the <code>additional_data</code> property. The rest is done by the <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Vault/Observer/VaultEnableAssigner.php"><code>\Magento\Vault\Observer\VaultEnableAssigner</code></a> observer.</p>
+<p>Magento has a default vault enabler <span term-uuid="9bcc648c-bd08-4feb-906d-1e24c4f2f422" class="glossary-term" data-toggle="popover">UI component</span> (<code>Magento_Vault/js/view/payment/vault-enabler</code>). In the payment component, you just need to call its <code>visitAdditionalData</code> to update the <code>additional_data</code> property. The rest is done by the <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Vault/Observer/VaultEnableAssigner.php"><code>\Magento\Vault\Observer\VaultEnableAssigner</code></a> observer.</p>
 
 <p>Example: <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Braintree/view/frontend/web/js/view/payment/method-renderer/hosted-fields.js">the Braintree payment UI component</a></p>
 

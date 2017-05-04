@@ -1622,12 +1622,12 @@
 
 <p>On the first browser request, cacheable assets are delivered to the client browser from Varnish and cached on the browser.</p>
 
-<p>In addition, Varnish uses an Entity Tag (<a href="https://en.wikipedia.org/wiki/HTTP_ETag" target="_blank">ETag</a>) for static assets. The ETag provides a way to determine when static files change on the server. As a result, static assets are sent to the client when they change on the server—either on a new request from a browser or when the client refreshes the browser cache, typically by pressing F5 or Control+F5.</p>
+<p>In addition, Varnish uses an <span term-uuid="a9027f5d-efab-4662-96aa-c2999b5ab259" class="glossary-term" data-toggle="popover">Entity</span> Tag (<a href="https://en.wikipedia.org/wiki/HTTP_ETag" target="_blank">ETag</a>) for static assets. The ETag provides a way to determine when <span term-uuid="363662cb-73f1-4347-a15e-2d2adabeb0c2" class="glossary-term" data-toggle="popover">static files</span> change on the server. As a result, static assets are sent to the client when they change on the server—either on a new request from a browser or when the client refreshes the browser cache, typically by pressing F5 or Control+F5.</p>
 
 <p>More detail is provided in the sections that follow.</p>
 
 <h2 id="config-varnish-cache-browser">Caching by browser request</h2>
-<p>This section uses a browser inspector to show how assets are delivered to the browser in the first request and afterward loaded from the browser’s local cache.</p>
+<p>This section uses a browser inspector to show how assets are delivered to the browser in the first request and afterward loaded from the browser’s local <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span>.</p>
 
 <h3 id="config-varnish-cache-browser-first">First browser request</h3>
 <p><code>nginx.conf.sample</code> and <code>.htaccess</code> provide options for client caching. When the first request is made from a browser for a cacheable object, Varnish delivers it to the client.</p>
@@ -1636,7 +1636,7 @@
 
 <p><img src="/common/images/varnish_apache_first_visit.png" alt="The first time a request is made for a cacheable object, Varnish delivers it to the browser" /></p>
 
-<p>The preceding example shows a request for the storefront main page (<code>m2_ce_my</code>). CSS and JavaScript assets are cached on the client browser.</p>
+<p>The preceding example shows a request for the <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span> main page (<code>m2_ce_my</code>). <span term-uuid="6c5cb4e9-9197-46f2-ba79-6147d9bfe66d" class="glossary-term" data-toggle="popover">CSS</span> and <span term-uuid="312b4baf-15f7-4968-944e-c814d53de218" class="glossary-term" data-toggle="popover">JavaScript</span> assets are cached on the client browser.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
 	<p>Most static assets have an HTTP 200 (OK) status code, indicating the asset was retrieved from the server.</p>

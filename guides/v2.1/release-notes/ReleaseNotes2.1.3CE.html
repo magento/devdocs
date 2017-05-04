@@ -868,16 +868,16 @@
     </ul>
   </li>
   <li>
-    <p><strong>Increased storefront performance</strong> by removing excessive and slow SQL media queries.</p>
+    <p><strong>Increased <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span> performance</strong> by removing excessive and slow SQL media queries.</p>
   </li>
   <li>
-    <p><strong>Management of configurable products with many variations</strong> in the Admin interface without degrading performance.</p>
+    <p><strong>Management of configurable products with many variations</strong> in the <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span> interface without degrading performance.</p>
   </li>
   <li>
-    <p><strong>Successful import or export CSV files with data that contains special symbols</strong> (that is, symbols that are not escaped during file processing).</p>
+    <p><strong>Successful import or export <span term-uuid="6341499b-ead9-4836-9794-53d95eb48ea5" class="glossary-term" data-toggle="popover">CSV</span> files with data that contains special symbols</strong> (that is, symbols that are not escaped during file processing).</p>
   </li>
   <li>
-    <p>The Sales module provides <strong>two new web API endpoints that allow you to process refunds from an order or invoice</strong>. Previously, these actions could only be performed from the Admin interface. After you install this patch, you can:</p>
+    <p>The Sales <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> provides <strong>two new web <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span> endpoints that allow you to process refunds from an order or invoice</strong>. Previously, these actions could only be performed from the Admin interface. After you install this patch, you can:</p>
 
     <ul>
       <li>
@@ -909,7 +909,7 @@
 
 <!---58036-->
 <ul>
-  <li>You can now reload a page during checkout without unintentionally changing shipping information.</li>
+  <li>You can now reload a page during <span term-uuid="278c3ce0-cd4c-4ffc-a098-695d94d73bde" class="glossary-term" data-toggle="popover">checkout</span> without unintentionally changing shipping information.</li>
 </ul>
 
 <!---58902-->
@@ -919,7 +919,7 @@
 
 <!---57497-->
 <ul>
-  <li>Lengthy Order Status tables are now paginated as expected.</li>
+  <li>Lengthy <span term-uuid="ab517fb3-c9ff-4da8-b7f9-00337c57b3a5" class="glossary-term" data-toggle="popover">Order Status</span> tables are now paginated as expected.</li>
 </ul>
 
 <!---56956-->
@@ -929,7 +929,7 @@
 
 <!---58057-->
 <ul>
-  <li>We’ve resolved an issue that prevented you from adding more than one product to a shopping cart from a wishlist. <a href="https://github.com/magento/magento2/issues/5282" target="_blank">(GITHUB-5282)</a></li>
+  <li>We’ve resolved an issue that prevented you from adding more than one product to a <span term-uuid="c7ecb18d-cefe-452d-83e2-3c4d5e355db9" class="glossary-term" data-toggle="popover">shopping cart</span> from a wishlist. <a href="https://github.com/magento/magento2/issues/5282" target="_blank">(GITHUB-5282)</a></li>
 </ul>
 
 <!---59209-->
@@ -939,12 +939,12 @@
 
 <!---57062-->
 <ul>
-  <li>The minicart now performs as expected in deployments that span multiple websites. Previously, in a Magento installation that had multiple websites, products you added to one website appeared in the other websites’ minicarts.</li>
+  <li>The minicart now performs as expected in deployments that span multiple websites. Previously, in a Magento installation that had multiple websites, products you added to one <span term-uuid="a3c8f20f-b067-414e-9781-06378c193155" class="glossary-term" data-toggle="popover">website</span> appeared in the other websites’ minicarts.</li>
 </ul>
 
 <!---57843-->
 <ul>
-  <li>A cart rule with a coupon code no longer overrides a cart rule without a coupon code when multiple cart rules are applied. Previously, when you created two cart rules and applied them to a cart,  the rule with a coupon was applied, but the second rule was not.<a href="https://github.com/magento/magento2/issues/7171" target="_blank"> (GITHUB-6294)</a></li>
+  <li>A cart rule with a coupon code no longer overrides a cart rule without a coupon code when multiple <span term-uuid="b3292cb5-4262-4914-a258-efac79ac8b99" class="glossary-term" data-toggle="popover">cart rules</span> are applied. Previously, when you created two cart rules and applied them to a cart,  the rule with a coupon was applied, but the second rule was not.<a href="https://github.com/magento/magento2/issues/7171" target="_blank"> (GITHUB-6294)</a></li>
 </ul>
 
 <!---59024-->
@@ -964,7 +964,7 @@
 
 <!---57168-->
 <ul>
-  <li>We fixed a JavaScript error that occurred on the Checkout page after you changed the country in the <strong>Estimate Shipping and Tax</strong> field.</li>
+  <li>We fixed a <span term-uuid="312b4baf-15f7-4968-944e-c814d53de218" class="glossary-term" data-toggle="popover">JavaScript</span> error that occurred on the Checkout page after you changed the country in the <strong>Estimate Shipping and Tax</strong> field.</li>
 </ul>
 
 <h3 class="no_toc" id="configurable-products">Configurable products</h3>
@@ -973,12 +973,12 @@
 
 <!---57055-->
 <ul>
-  <li>You can now successfully disable the lowest price of a configurable product and its associated simple products. Previously, Magento displayed a configurable product’s lowest price even after you disabled that price.</li>
+  <li>You can now successfully disable the lowest price of a <span term-uuid="2fd4d100-28d2-45ca-bec1-128444ea98e6" class="glossary-term" data-toggle="popover">configurable product</span> and its associated simple products. Previously, Magento displayed a configurable product’s lowest price even after you disabled that price.</li>
 </ul>
 
 <!---56998 -->
 <ul>
-  <li>Magento no longer applies one simple product’s special price to another simple product of the same configurable product. Previously, when you set a regular and special price for a child product, all products associated with the same configurable product displayed a regular and special price, even when these amounts were the same. <a href="https://github.com/magento/magento2/issues/4442" target="_blank">(GITHUB-4442)</a>, <a href="https://github.com/magento/magento2/issues/5097" target="_blank">(GITHUB-5097)</a>, <a href="https://github.com/magento/magento2/issues/6645" target="_blank">(GITHUB-6645)</a></li>
+  <li>Magento no longer applies one simple product’s special price to another <span term-uuid="f85f36ad-2942-446e-b711-39f2a16f6364" class="glossary-term" data-toggle="popover">simple product</span> of the same configurable product. Previously, when you set a regular and special price for a child product, all products associated with the same configurable product displayed a regular and special price, even when these amounts were the same. <a href="https://github.com/magento/magento2/issues/4442" target="_blank">(GITHUB-4442)</a>, <a href="https://github.com/magento/magento2/issues/5097" target="_blank">(GITHUB-5097)</a>, <a href="https://github.com/magento/magento2/issues/6645" target="_blank">(GITHUB-6645)</a></li>
 </ul>
 
 <!---54808 -->
@@ -988,12 +988,12 @@
 
 <!---60605-->
 <ul>
-  <li>Magento no longer displays an error when you add a configurable product by SKU if an associated simple product is out-of-stock.</li>
+  <li>Magento no longer displays an error when you add a configurable product by <span term-uuid="fd4bed67-7130-4415-8a6f-ad8d8ef8f25e" class="glossary-term" data-toggle="popover">SKU</span> if an associated simple product is out-of-stock.</li>
 </ul>
 
 <!---61055-->
 <ul>
-  <li>Magento now correctly displays a product as out-of-stock if its child products are disabled. Previously, the category page failed to list the product at all, rather than listing it as out of stock.</li>
+  <li>Magento now correctly displays a product as out-of-stock if its child products are disabled. Previously, the <span term-uuid="50e49338-1e6c-4473-8527-9e401d67ea2b" class="glossary-term" data-toggle="popover">category</span> page failed to list the product at all, rather than listing it as out of stock.</li>
 </ul>
 
 <!---57044-->
@@ -1022,12 +1022,12 @@
 
 <!---55662-->
 <ul>
-  <li>We’ve removed the duplicated PHP settings from the sample web server configuration files.</li>
+  <li>We’ve removed the duplicated <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> settings from the sample web server configuration files.</li>
 </ul>
 
 <!--- 59581-->
 <ul>
-  <li>We’ve improved and streamlined the Magento Admin PayPal configuration interface.</li>
+  <li>We’ve improved and streamlined the <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span> PayPal configuration interface.</li>
 </ul>
 
 <!---56962 -->
@@ -1037,7 +1037,7 @@
 
 <!---57187-->
 <ul>
-  <li>When creating a new page with the Add New Page feature, Magento no longer throws a JavaScript error when Layout is set to empty.</li>
+  <li>When creating a new page with the Add New Page feature, Magento no longer throws a JavaScript error when <span term-uuid="73ab5daa-5857-4039-97df-11269b626134" class="glossary-term" data-toggle="popover">Layout</span> is set to empty.</li>
 </ul>
 
 <!---57035-->
@@ -1077,19 +1077,19 @@
 
 <!---59397-->
 <ul>
-  <li>Custom themes now inherit parent XML configuration information as expected.</li>
+  <li>Custom themes now inherit parent <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span> configuration information as expected.</li>
 </ul>
 
 <h3 class="no_toc" id="images">Images</h3>
 
 <!---55447-->
 <ul>
-  <li>Magento no longer displays an exception when it cannot find a product image file. <a href="https://github.com/magento/magento2/issues/5184" target="_blank">(GITHUB-5184)</a>, <a href="https://github.com/magento/magento2/issues/5497" target="_blank">(GITHUB-5497)</a>,  <a href="https://github.com/magento/magento2/issues/3545" target="_blank">(GITHUB-3545)</a>, <a href="https://github.com/magento/magento2/issues/5871" target="_blank">(GITHUB-5871)</a></li>
+  <li>Magento no longer displays an <span term-uuid="53da11f1-d0b8-4a7e-b078-1e099462b409" class="glossary-term" data-toggle="popover">exception</span> when it cannot find a product image file. <a href="https://github.com/magento/magento2/issues/5184" target="_blank">(GITHUB-5184)</a>, <a href="https://github.com/magento/magento2/issues/5497" target="_blank">(GITHUB-5497)</a>,  <a href="https://github.com/magento/magento2/issues/3545" target="_blank">(GITHUB-3545)</a>, <a href="https://github.com/magento/magento2/issues/5871" target="_blank">(GITHUB-5871)</a></li>
 </ul>
 
 <!---56944-->
 <ul>
-  <li>Magento now successfully saves images that you edit in a WYSIWYG editor. Previously, when you tried to change an image by right-clicking it in a WYSIWYG editor and choosing Insert/Edit Image, Magento did not save your changes.</li>
+  <li>Magento now successfully saves images that you edit in a <span term-uuid="98cf4fd5-59b6-4610-9c1f-b84c8c0abd97" class="glossary-term" data-toggle="popover">WYSIWYG</span> editor. Previously, when you tried to change an image by right-clicking it in a WYSIWYG editor and choosing Insert/Edit Image, Magento did not save your changes.</li>
 </ul>
 
 <!---58335-->
@@ -1116,7 +1116,7 @@
 
 <!---56804-->
 <ul>
-  <li>We’ve fixed an issue with the correct representation of date and time zones of items in a product catalog during import or export. Previously, Magento exported all dates in the default format (UTC-8), including values that you set to be displayed using another standard.</li>
+  <li>We’ve fixed an issue with the correct representation of date and time zones of items in a product <span term-uuid="8d40d668-4996-4856-9f81-b1386cf4b14f" class="glossary-term" data-toggle="popover">catalog</span> during import or export. Previously, Magento exported all dates in the default format (UTC-8), including values that you set to be displayed using another standard.</li>
 </ul>
 
 <!---57052-->
@@ -1141,7 +1141,7 @@
 
 <!---57981-->
 <ul>
-  <li>You can now export a bundle product that contains a custom text area attribute.  Previously, if you tried to export this type of bundle product, the export would fail, and Magento displayed the message, “There is no data for the export”.</li>
+  <li>You can now export a <span term-uuid="fbcfce51-68e2-482f-84d5-f28d84404cff" class="glossary-term" data-toggle="popover">bundle product</span> that contains a custom text area attribute.  Previously, if you tried to export this type of bundle product, the export would fail, and Magento displayed the message, “There is no data for the export”.</li>
 </ul>
 
 <h3 class="no_toc" id="indexing">Indexing</h3>
@@ -1183,7 +1183,7 @@
 <!--- 61268, 59424, 56433, -->
 <ul>
   <li>
-    <p>We’ve added PHP interfaces that add the ability to change the status of a shipment. The new Creditmemo interface supports tasks you can already do through the Magento Admin, including the ability to:</p>
+    <p>We’ve added PHP interfaces that add the ability to change the status of a <span term-uuid="c8f00e9d-7f70-4561-9773-60da604ba5c9" class="glossary-term" data-toggle="popover">shipment</span>. The new Creditmemo interface supports tasks you can already do through the Magento Admin, including the ability to:</p>
 
     <ul>
       <li>
@@ -1229,7 +1229,7 @@
 
 <!---56910-->
 <ul>
-  <li>The Braintree payment method now works as expected with Vault table prefixing.</li>
+  <li>The Braintree <span term-uuid="422b0fa8-b181-4c7c-93a2-c553abb34efd" class="glossary-term" data-toggle="popover">payment method</span> now works as expected with Vault table prefixing.</li>
 </ul>
 
 <!---57426-->
@@ -1244,12 +1244,12 @@
 
 <!--- 59124-->
 <ul>
-  <li>Fixed issue with credit card capture information failing to remain associated with its first authorization. <a href="https://github.com/magento/magento2/issues/6716" target="_blank">(GITHUB-6716)</a></li>
+  <li>Fixed issue with credit card capture information failing to remain associated with its first <span term-uuid="34ecb0ab-b8a3-42d9-a728-0b893e8c0417" class="glossary-term" data-toggle="popover">authorization</span>. <a href="https://github.com/magento/magento2/issues/6716" target="_blank">(GITHUB-6716)</a></li>
 </ul>
 
 <!---57086-->
 <ul>
-  <li>You can now successfully place orders with Braintree when using an alternative merchant account ID. (The merchant account does not need to match the 3D Secure authorization merchant account.) <a href="https://github.com/magento/magento2/issues/5910" target="_blank">(GITHUB-5910)</a></li>
+  <li>You can now successfully place orders with Braintree when using an alternative <span term-uuid="5ac2d367-070a-474c-badf-df2b84fe3b09" class="glossary-term" data-toggle="popover">merchant account</span> ID. (The merchant account does not need to match the 3D Secure authorization merchant account.) <a href="https://github.com/magento/magento2/issues/5910" target="_blank">(GITHUB-5910)</a></li>
 </ul>
 
 <!---59637-->
@@ -1263,7 +1263,7 @@
 
 <!---59708-->
 <ul>
-  <li>Creating many (2500 - 5000) product variants, both simple and complex product types</li>
+  <li>Creating many (2500 - 5000) product variants, both simple and complex <span term-uuid="6e836354-0067-48ac-84ce-a4ab7c0c492e" class="glossary-term" data-toggle="popover">product types</span></li>
 </ul>
 
 <!---59806-->
@@ -1273,7 +1273,7 @@
 
 <!---60041-->
 <ul>
-  <li>Resizing images on the frontend</li>
+  <li>Resizing images on the <span term-uuid="b00459e5-a793-44dd-98d5-852ab33fc344" class="glossary-term" data-toggle="popover">frontend</span></li>
 </ul>
 
 <!---57905-->
@@ -1283,7 +1283,7 @@
 
 <!---56936 -->
 <ul>
-  <li>The list of allowed countries is now configured as part of website scope, not store view scope.  <a href="https://github.com/magento/magento2/issues/2946" target="_blank">(GITHUB-2946)</a></li>
+  <li>The list of allowed countries is now configured as part of website scope, not <span term-uuid="ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f" class="glossary-term" data-toggle="popover">store view</span> scope.  <a href="https://github.com/magento/magento2/issues/2946" target="_blank">(GITHUB-2946)</a></li>
 </ul>
 
 <!---57001-->
@@ -1304,12 +1304,12 @@
 <h3 class="no_toc" id="static-file-processing">Static file processing</h3>
 <!---60603-->
 <ul>
-  <li>We’ve corrected a problem with <code>_requirejs</code> asset retrieval via <code>static.php</code> in static content versioning.</li>
+  <li>We’ve corrected a problem with <code>_requirejs</code> asset retrieval via <code>static.php</code> in <span term-uuid="a3e37235-4e8b-464f-a19d-4a120560206a" class="glossary-term" data-toggle="popover">static content</span> versioning.</li>
 </ul>
 
 <!---56914-->
 <ul>
-  <li>Versioning of static files (including CSS, JS, font, and image files) is now enabled by default.</li>
+  <li>Versioning of <span term-uuid="363662cb-73f1-4347-a15e-2d2adabeb0c2" class="glossary-term" data-toggle="popover">static files</span> (including CSS, JS, font, and image files) is now enabled by default.</li>
 </ul>
 
 <!---57904-->
@@ -1321,7 +1321,7 @@
 
 <!---57625-->
 <ul>
-  <li>Magento no longer resets the tier price during quote recalculation. Previously, when you triggered an automatic quote recalculation (by changing the shipping address, for example), the tier price was lost. (This issue occurred only if the product record in the database had values for <code>row_id</code> and <code>entity_id</code> that didn’t match.)</li>
+  <li>Magento no longer resets the tier price during <span term-uuid="77e19d0d-e7b1-4d3d-9bad-e92fbb9fb59a" class="glossary-term" data-toggle="popover">quote</span> recalculation. Previously, when you triggered an automatic quote recalculation (by changing the shipping address, for example), the tier price was lost. (This issue occurred only if the product record in the database had values for <code>row_id</code> and <code>entity_id</code> that didn’t match.)</li>
 </ul>
 
 <!---56922-->
@@ -1362,7 +1362,7 @@
 
 <h2 id="breaking-changes">Breaking changes</h2>
 
-<p>We’ve introduced a backward-incompatible change to the <code>Magento_Vault</code> module. We’ve bumped the version of this module from 100.1.1 to 100.2.0 to identify this change and resolve it with Composer configuration.</p>
+<p>We’ve introduced a backward-incompatible change to the <code>Magento_Vault</code> module. We’ve bumped the version of this module from 100.1.1 to 100.2.0 to identify this change and resolve it with <span term-uuid="d85e2d0a-221f-4d03-aa43-0cda9f50809e" class="glossary-term" data-toggle="popover">Composer</span> configuration.</p>
 
 <h3 class="no_toc" id="new-method">New method</h3>
 
@@ -1439,7 +1439,7 @@ bin/magento setup:static-content:deploy --theme=Magento/luma de_D
 
 <!---60781-->
 <ul>
-  <li><strong>Issue</strong>: When you add a new product and re-index using Varnish, Magento does not display the product on the frontend, even after you purge the cache and re-index.</li>
+  <li><strong>Issue</strong>: When you add a new product and re-index using Varnish, Magento does not display the product on the frontend, even after you purge the <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span> and re-index.</li>
 </ul>
 
 <!---60616-->

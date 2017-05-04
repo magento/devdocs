@@ -1634,7 +1634,7 @@
 </section>
 
 			<h2 id="cloud-yaml-routes-over"><code>routes.yaml</code> overview</h2>
-<p>A <em>route</em> describes how an incoming URL is processed by
+<p>A <em>route</em> describes how an incoming <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span> is processed by
 Magento Enterprise Cloud Edition.</p>
 
 <p><code>routes.yaml</code> defines routes for development, integration, staging, and production
@@ -1663,7 +1663,7 @@ systems. This one configuration file handles routes for all systems.</p>
 <h2 id="cloud-yaml-routes-temp">Route templates</h2>
 <p><code>routes.yaml</code> is a list of templated routes and their 
 configurations. A route  template can look like this: <code>http://www.{default}/</code> or 
-<code>https://{default}/blog</code>, where <code>{default}</code> is the fully qualified domain 
+<code>https://{default}/blog</code>, where <code>{default}</code> is the fully qualified <span term-uuid="41aee03b-a5d5-49c2-8839-894090ef4e86" class="glossary-term" data-toggle="popover">domain</span> 
 name configured for the project.</p>
 
 <div class="collapsible"><b class="collapsible-title">Click to show/hide content </b><div class="collapsible-content"><p>If the domain is <code>example.com</code>, these 
@@ -1745,7 +1745,7 @@ but it will issue a 301 redirect for <code>http://www.example.com/mypath</code> 
 
 <h2 id="cloud-yaml-routes-sample-wild">Wildcard routes</h2>
 <p>Magento Enterprise Cloud Edition supports wildcard routes, so you can map multiple subdomains to the
-same application. This works both for redirect and upstream routes. You can
+same application. This works both for <span term-uuid="510de766-1ebd-4546-bf38-c618c9c945d2" class="glossary-term" data-toggle="popover">redirect</span> and upstream routes. You can
 simply prefix the route with a star (<code>*</code>), for example <code>*.example.com</code>, and
 <code>www.example.com</code>, <code>blog.example.com</code>, and <code>us.example.com</code> all get routed to the
 same application.</p>

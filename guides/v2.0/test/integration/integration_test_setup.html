@@ -628,7 +628,7 @@ Please refer to the <a href="https://phpunit.de/manual/4.1/en/appendixes.configu
 
 <p>If this constant is set to <code>enabled</code>, the integration test framework will clean the test database and re-install Magento on every test run.<br />
 That way any new modules will be automatically picked up, and any cruft that might have been left over from previous test runs will be removed.<br />
-It also causes the test framework to flush the test Magento configuration, the cache and the code generation before executing any tests.</p>
+It also causes the test framework to flush the test Magento configuration, the <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span> and the code generation before executing any tests.</p>
 
 <p>The downside of setting <code>TEST_CLEANUP</code> to <code>enabled</code> is that the re-installation of Magento takes time (the exact time depends on the host you are using to run the integration tests and the Magento version.)</p>
 
@@ -647,7 +647,7 @@ The test execution will start much quicker, but as a consequence the developer h
 <h4 id="the-php-memorylimit">The PHP memory_limit</h4>
 
 <p>The default <code>phpunit.xml.dist</code> file does not contain any PHP <code>memory_limit</code> settings.<br />
-However, sometimes the PHP configuration restricts the amount of memory PHP may consume.<br />
+However, sometimes the <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> configuration restricts the amount of memory PHP may consume.<br />
 This can make it impossible to run the integration tests.</p>
 
 <p>The PHP memory limit can be turned off by adding the following configuration to the <code>&lt;php&gt;</code> section of the integration test <code>phpunit.xml</code> file:</p>
@@ -662,7 +662,7 @@ For core tests it makes sense that the integration tests do not reside within in
 <p>Shop implementation specific integration tests could also be placed within a different subdirectory of <code>dev/tests/integration/testsuite</code> and then would be executed together with the core tests.</p>
 
 <p>However, third party Magento extensions are contained within a single directory, and might supply custom integration tests, too.<br />
-These tests usually are placed in the subdirectory <code>Test/Integration/</code> within the module folder.</p>
+These tests usually are placed in the subdirectory <code>Test/Integration/</code> within the <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> folder.</p>
 
 <p>These third party integration tests are not picked up by the default integration test configuration.<br />
 A testsuite configuration like the following can be added to the <code>&lt;testsuites&gt;</code> section of the <code>phpunit.xml</code> file so they are included during test execution.</p>

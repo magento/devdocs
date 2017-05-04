@@ -721,7 +721,7 @@
 </section>
 
 			<h2 id="custom_js_overview">Overview</h2>
-<p>This topic discusses how to use custom JavaScript components with the components provided by Magento or having replaced them with custom implementations.</p>
+<p>This topic discusses how to use custom <span term-uuid="312b4baf-15f7-4968-944e-c814d53de218" class="glossary-term" data-toggle="popover">JavaScript</span> components with the components provided by Magento or having replaced them with custom implementations.</p>
 
 <p>We strongly recommend not changing the source code of default Magento components and widgets. All customizations must be implemented in custom modules or themes.</p>
 
@@ -736,7 +736,7 @@
       <li>Your module view JS files: <code>&lt;module_dir&gt;/view/frontend/web/js</code>. In this case the component is available in all modules and themes (if your module is enabled).</li>
     </ul>
   </li>
-  <li>Optionally, in the corresponding module or theme, create a <code>require-config.js</code> configuration file, if it does not yet exist there and set path for your resource.</li>
+  <li>Optionally, in the corresponding <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> or theme, create a <code>require-config.js</code> configuration file, if it does not yet exist there and set path for your resource.</li>
 </ol>
 
 <h2 id="js_replace">Replace a default JS component</h2>
@@ -785,20 +785,20 @@ For example, if you want to use custom <code>navigation-menu.js</code> script in
 
 <li>Place your <code>requirejs-config.js</code> file in one of the following directories (according to the location of your custom script, see step 1 of this procedure):
 <ul>
-<li>Your theme files: <code>&lt;theme_dir&gt;</code></li>
+<li>Your <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span> files: <code>&lt;theme_dir&gt;</code></li>
 <li>Your module view files: <code>&lt;module_dir&gt;/view/frontend</code></li>
 </ul>
 </li>
 &lt;/ol&gt;
 
-This way your custom JS component is used instead of the Magento component in all entries all over the frontend area.
+This way your custom JS component is used instead of the <span term-uuid="3425e9ae-5edf-4fc6-b645-06023e9e5e5b" class="glossary-term" data-toggle="popover">Magento component</span> in all entries all over the <span term-uuid="b00459e5-a793-44dd-98d5-852ab33fc344" class="glossary-term" data-toggle="popover">frontend</span> area.
 
 <h2 id="extend_js">Extend a default JS component</h2>
 You can add a custom JS component/widget, which will extend a default Magento component/widget.
 
 <h3 id="extend_js_widget">Extend Magento widget</h3>
 
-To extend a default Magento jQuery widget, create `<your_widget_name>.js` with the following contents:
+To extend a default Magento <span term-uuid="5bfa8a8e-6f3e-4fed-a43e-62339916f02e" class="glossary-term" data-toggle="popover">jQuery</span> widget, create `<your_widget_name>.js` with the following contents:
 
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">define</span><span class="p">([</span>
@@ -815,7 +815,7 @@ To extend a default Magento jQuery widget, create `<your_widget_name>.js` with t
 
 Where the following notation is used:
 <ul>
-<li><code>&lt;your_namespace&gt;.&lt;your_widget_name&gt;</code> - the name of your custom widget. According to the jQuery widgets naming convention, must contain a namespace and name.</li>
+<li><code>&lt;your_namespace&gt;.&lt;your_widget_name&gt;</code> - the name of your custom <span term-uuid="f0dcf847-ce21-4b88-8b45-83e1cbf08100" class="glossary-term" data-toggle="popover">widget</span>. According to the jQuery widgets naming convention, must contain a <span term-uuid="621ef86b-7314-4fbc-a80d-ab7fa45a27cb" class="glossary-term" data-toggle="popover">namespace</span> and name.</li>
 
 <li><code>mage.&lt;widget.name&gt;</code> - the name of the Magento widget that you extend.</li>
 </ul>

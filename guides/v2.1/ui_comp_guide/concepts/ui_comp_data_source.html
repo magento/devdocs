@@ -1100,7 +1100,7 @@
 </section>
 
 			<h2 id="overview">Overview</h2>
-<p>Magento provides the DataSource object, which is designed to interact with data in your UI component. Many of the core UI components use this DataSource component. Many UI components require that this object is included. However, there are specific requirements it has in order for it to work correctly.</p>
+<p>Magento provides the DataSource object, which is designed to interact with data in your <span term-uuid="9bcc648c-bd08-4feb-906d-1e24c4f2f422" class="glossary-term" data-toggle="popover">UI component</span>. Many of the core UI components use this DataSource component. Many UI components require that this object is included. However, there are specific requirements it has in order for it to work correctly.</p>
 
 <p>In this topic, we will explain how to take advantage of the powerful functionality of the data provider in a UI Component.</p>
 
@@ -1119,11 +1119,11 @@
 
 <p>In the block of code above, [YourNameSpace][YourModule] would the directory that contains all of the module’s files and directories. [YourComponentName] is the name of this instance of a component, which should be the file name as well.</p>
 
-<p>The main node of interest is <code>&lt;argument name="class" /&gt;.</code> This references a PHP class that must implement <code>\Magento\Framework\View\Element\UiComponent\DataProvider\DataProviderInterface</code>. To meet that requirement, it can extend <code>\Magento\Ui\DataProvider\AbstractDataProvider</code>. The <code>AbstractDataProvider</code> class implements all of the required methods in the <code>DataProviderInterface</code>. The DataProvider class is the primary source of any data or metadata that the component needs or will use.</p>
+<p>The main node of interest is <code>&lt;argument name="class" /&gt;.</code> This references a PHP class that must implement <code>\Magento\Framework\View\Element\UiComponent\DataProvider\DataProviderInterface</code>. To meet that requirement, it can extend <code>\Magento\Ui\DataProvider\AbstractDataProvider</code>. The <code>AbstractDataProvider</code> class implements all of the required methods in the <code>DataProviderInterface</code>. The DataProvider class is the primary source of any data or <span term-uuid="3f0f2ef1-ad38-41c6-bd1e-390daaa71d76" class="glossary-term" data-toggle="popover">metadata</span> that the component needs or will use.</p>
 
-<p>While the XML tells Magento about the component’s data provider, Magento doesn’t do anything in particular with that unless you hook it up to the component’s main PHP class. To make the data available in javascript, add a <code>getDataSourceData()</code> method to the UI component’s PHP class and return <code>$this-&gt;getContext()-&gt;getDataProvider()-&gt;getData()</code>. This will output the result of the data provider’s <code>getData()</code> method into the JSON that is sent to the browser along with the rest of the UI component’s configuration.</p>
+<p>While the <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span> tells Magento about the component’s data provider, Magento doesn’t do anything in particular with that unless you hook it up to the component’s main PHP class. To make the data available in javascript, add a <code>getDataSourceData()</code> method to the UI component’s PHP class and return <code>$this-&gt;getContext()-&gt;getDataProvider()-&gt;getData()</code>. This will output the result of the data provider’s <code>getData()</code> method into the JSON that is sent to the browser along with the rest of the UI component’s configuration.</p>
 
-<p>Declare a <code>getData()</code> method in the data provider class that was referenced in the XML and return a value. Since that output will be part of the JSON rendered on the page, it is accessible via the javascript class that is associated with the UI component and handles its behavior. Magento’s Form Provider javascript class is often a good place to start.</p>
+<p>Declare a <code>getData()</code> method in the data provider class that was referenced in the XML and return a value. Since that output will be part of the JSON rendered on the page, it is accessible via the <span term-uuid="312b4baf-15f7-4968-944e-c814d53de218" class="glossary-term" data-toggle="popover">javascript</span> class that is associated with the UI component and handles its behavior. Magento’s Form Provider javascript class is often a good place to start.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
     <p>A Javascript "component" is actually a Javascript file loaded through RequireJS. It should return a Javascript object that defines a module or function. Do not confuse Javascript components with UI components.</p>

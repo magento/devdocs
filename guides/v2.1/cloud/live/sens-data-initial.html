@@ -1718,14 +1718,14 @@
 
 </section>
 
-			<p>This topic discusses how to manage default locale and static file optimization settings in your integration system. <em>Static file optimization</em> means merging and minifying JavaScript and Cascading Style Sheets, and minifying HTML templates. Static file optimization should be disabled in integration (where you’re testing) and enabled in staging and production.</p>
+			<p>This topic discusses how to manage default <span term-uuid="05099dbb-d491-4e33-a065-16035cb2d4d9" class="glossary-term" data-toggle="popover">locale</span> and static file optimization settings in your integration system. <em>Static file optimization</em> means merging and minifying <span term-uuid="312b4baf-15f7-4968-944e-c814d53de218" class="glossary-term" data-toggle="popover">JavaScript</span> and Cascading Style Sheets, and minifying <span term-uuid="a2aff425-07dd-4bd6-9671-29b7edefa871" class="glossary-term" data-toggle="popover">HTML</span> templates. Static file optimization should be disabled in integration (where you’re testing) and enabled in staging and production.</p>
 
 <p>These particular settings are discussed only to explain how the procedure works; you can use the same procedure to manage any available settings.</p>
 
 <p>This example shows how to:</p>
 
 <ol>
-  <li>Change the configuration in the integration server’s Admin.</li>
+  <li>Change the configuration in the integration server’s <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span>.</li>
   <li>Create <code>config.local.php</code> and transfer it to your local system.</li>
   <li>Push <code>config.local.php</code> to the integration server</li>
   <li>Verify your settings are not editable in the Admin.</li>
@@ -1739,7 +1739,7 @@
 </ol>
 
 <!-- <div class="bs-callout bs-callout-info" id="info" markdown="1">
-This example shows how you can set and lock configuration values for everything _except_ sensitive settings. You must set sensitive settings either as configuration variables or in the Magento Admin. For more information, see [Sensitive configuration paths](/guides/v2.1/cloud/live/config-reference-sens.html).
+This example shows how you can set and lock configuration values for everything _except_ sensitive settings. You must set sensitive settings either as configuration variables or in the <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span>. For more information, see [Sensitive configuration paths](/guides/v2.1/cloud/live/config-reference-sens.html).
 </div> -->
 
 <h2 id="required-role">Required role</h2>
@@ -1777,7 +1777,7 @@ This example shows how you can set and lock configuration values for everything 
       <td>Advanced &gt; <strong>Developer</strong>, <strong>JavaScript Settings</strong> &gt; (several options)</td>
     </tr>
     <tr>
-      <td>CSS minification</td>
+      <td><span term-uuid="6c5cb4e9-9197-46f2-ba79-6147d9bfe66d" class="glossary-term" data-toggle="popover">CSS</span> minification</td>
       <td>Advanced &gt; <strong>Developer</strong>, <strong>CSS Settings</strong> &gt; <strong>Merge CSS Files</strong> and <strong>Minify CSS Files</strong></td>
     </tr>
     <tr>

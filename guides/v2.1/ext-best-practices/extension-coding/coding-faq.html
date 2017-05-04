@@ -736,7 +736,7 @@
   <li><a href="http://php.net/" target="_blank">PHP</a> - This is the programming language used for developing Magento 2 code.</li>
   <li><a href="https://en.wikipedia.org/wiki/HTML" target="_blank">HTML</a>, <a href="https://en.wikipedia.org/wiki/Cascading_Style_Sheets" target="_blank">CSS</a>, and <a href="https://www.javascript.com/" target="_blank">JavaScript</a> - Languages used for <a href="/guides/v2.1/frontend-dev-guide/bk-frontend-dev-guide.html">frontend development</a>.</li>
   <li><a href="/guides/v2.1/architecture/arch_whatis.html">Magento architecture</a> - Developers should be familiar with the architectural concepts used in Magento such as the <a href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller" target="_blank">Model-View-Controller</a> pattern and the <a href="http://martinfowler.com/bliki/CQRS.html" target="_blank">Command Query Responsibility Segregation</a> principle.</li>
-  <li><a href="/guides/v2.1/extension-dev-guide/depend-inj.html">Dependency Injection</a> - An important design pattern used in Magento to handle dependencies across classes and modules.</li>
+  <li><a href="/guides/v2.1/extension-dev-guide/depend-inj.html">Dependency Injection</a> - An important <span term-uuid="53755359-9916-4677-bff2-f7d26025095a" class="glossary-term" data-toggle="popover">design pattern</span> used in Magento to handle dependencies across classes and modules.</li>
 </ul>
 
 <h3 id="in-magento-2-how-can-my-extension-distinguish-between-the-community-edition-and-the-enterprise-edition">In Magento 2, how can my extension distinguish between the Community Edition and the Enterprise Edition?</h3>
@@ -744,13 +744,13 @@
 <p>The correct edition can be obtained through <code>\Magento\Framework\App\ProductMetadataInterface::getEdition</code>.</p>
 
 <p>In Magento CE that interface maps to the concrete implementation <code>Magento\Framework\AppInterface\ProductMetadata</code>.
-However, in Magento EE, the Enterprise module will override that mapping and the interface will be implemented by <code>\Magento\Enterprise\Model\ProductMetadata</code>.</p>
+However, in Magento EE, the Enterprise <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> will override that mapping and the interface will be implemented by <code>\Magento\Enterprise\Model\ProductMetadata</code>.</p>
 
-<p>Just relying on the interface through dependency injection will get you the right class, and calling “getEdition” will return the right answer.</p>
+<p>Just relying on the interface through <span term-uuid="2be50595-c5c7-4b9d-911c-3bf2cd3f7beb" class="glossary-term" data-toggle="popover">dependency injection</span> will get you the right class, and calling “getEdition” will return the right answer.</p>
 
 <h3 id="how-do-i-configure-my-module-so-that-it-appears-in-a-specific-place-on-the-admin">How do I configure my module so that it appears in a specific place on the Admin?</h3>
 
-<p>Use the <code>&lt;Module Directory&gt;/etc/adminhtml/menu.xml</code> file to configure from where on the Admin your extension is accessible.</p>
+<p>Use the <code>&lt;Module Directory&gt;/etc/adminhtml/menu.xml</code> file to configure from where on the <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span> your <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span> is accessible.</p>
 
 		</div>
 		<!-- /.content-wrap -->

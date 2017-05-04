@@ -760,16 +760,16 @@
 </section>
 
 			<h2 id="instgde-install-uninst-theme-prereq">Prerequisite</h2>
-<p>Before you use this command, you must know the relative path to your theme. Themes are located in a subdirectory of <code>&lt;your Magento install dir&gt;/app/design/&lt;area name&gt;</code>. You must specify the path to the theme starting with the area, which is either <code>frontend</code> (for storefront themes) or <code>adminhtml</code> (for Magento Admin themes).</p>
+<p>Before you use this command, you must know the relative path to your theme. Themes are located in a subdirectory of <code>&lt;your Magento install dir&gt;/app/design/&lt;area name&gt;</code>. You must specify the path to the theme starting with the area, which is either <code>frontend</code> (for storefront themes) or <code>adminhtml</code> (for <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span> themes).</p>
 
-<p>For example, the path to the Luma theme provided with Magento 2 is <code>frontend/Magento/luma</code>.</p>
+<p>For example, the path to the Luma <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span> provided with Magento 2 is <code>frontend/Magento/luma</code>.</p>
 
 <p>For more information about themes, see <a href="/guides/v2.0/frontend-dev-guide/themes/theme-structure.html">Magento theme structure</a>.</p>
 
 <h2 id="instgde-install-uninst-theme-over">Overview of uninstalling themes</h2>
 <p>This section discusses how to uninstall one or more themes, optionally including the themes’ code from the file system. You can create backups first so you can restore the data at a later time.</p>
 
-<p>This command uninstalls <em>only</em> themes that are specified in <code>composer.json</code>; in other words, themes that are provided as Composer packages. If your theme is not a Composer package, you must uninstall it manually by:</p>
+<p>This command uninstalls <em>only</em> themes that are specified in <code>composer.json</code>; in other words, themes that are provided as <span term-uuid="d85e2d0a-221f-4d03-aa43-0cda9f50809e" class="glossary-term" data-toggle="popover">Composer</span> packages. If your theme is not a Composer package, you must uninstall it manually by:</p>
 
 <ul>
   <li>Updating the <code>parent</code> node information in <code>theme.xml</code> to remove references to the theme.</li>
@@ -852,7 +852,7 @@ sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
     </li>
     <li>Removes themes from the <code>theme</code> database table.</li>
     <li>Remove themes from code base using <code>composer remove</code>.</li>
-    <li>Cleans the cache.</li>
+    <li>Cleans the <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span>.</li>
     <li>Cleans generated classes</li>
     <li>If <code>--clear-static-content</code> is specified, cleans <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview">generated static view files</a>.</li>
   </ol>
@@ -890,7 +890,7 @@ Disabling maintenance mode
 </code></pre>
 
   <div class="bs-callout bs-callout-info" id="info">
-  <p>To uninstall a Magento Admin theme, you must also remove it from your component's dependency injection configuration, <code>&lt;component root directory&gt;/etc/di.xml</code>.</p>
+  <p>To uninstall a Magento <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span> theme, you must also remove it from your component's <span term-uuid="2be50595-c5c7-4b9d-911c-3bf2cd3f7beb" class="glossary-term" data-toggle="popover">dependency injection</span> configuration, <code>&lt;component root directory&gt;/etc/di.xml</code>.</p>
 </div>
 
   <h4 id="related-topics">Related topics</h4>

@@ -451,10 +451,10 @@
 
 			<h2 id="m2devgde-page-assets-intro">Overview</h2>
 
-<p>An <em>asset</em> is a reference to a certain resource linked to an HTML page; that is, references to scripts, stylesheets, RSS feeds, and so on using <code>&lt;head/&gt;</code>, <code>&lt;img/&gt;</code>, <code>&lt;object/&gt;</code> elements.</p>
+<p>An <em>asset</em> is a reference to a certain resource linked to an <span term-uuid="a2aff425-07dd-4bd6-9671-29b7edefa871" class="glossary-term" data-toggle="popover">HTML</span> page; that is, references to scripts, stylesheets, RSS feeds, and so on using <code>&lt;head/&gt;</code>, <code>&lt;img/&gt;</code>, <code>&lt;object/&gt;</code> elements.</p>
 
 <p>This topic discusses how to work with Magento page assets (particularly interfaces and classes). The article is mostly aimed at developers
-who have solid experience with PHP and are familiar with <a href="/guides/v2.1/architecture/view/xml-schema-layout.html">Magento XML layouts</a>.</p>
+who have solid experience with <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> and are familiar with <a href="/guides/v2.1/architecture/view/xml-schema-layout.html">Magento XML layouts</a>.</p>
 
 <h2 id="m2devgde-page-assets-interf">Asset interfaces</h2>
 
@@ -491,7 +491,7 @@ who have solid experience with PHP and are familiar with <a href="/guides/v2.1/a
 
 <ul>
   <li>
-    <p>Remote: Implements an asset for which there is only URL and content type information. Used for rendering included RSS feeds, for example.</p>
+    <p>Remote: Implements an asset for which there is only <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span> and content type information. Used for rendering included RSS feeds, for example.</p>
   </li>
   <li>
     <p>File: Implements  a local asset that is referred using a relative path in Magento file system. The same relative path invariant is appended to the base URL when the full URL is requested. Because these assets are available locally, the Magento system can work with them in many ways; for example, transform the content, merge assets, or substitute with other assets.</p>
@@ -520,7 +520,7 @@ who have solid experience with PHP and are familiar with <a href="/guides/v2.1/a
 
 <p><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/View/Asset/File.php" target="_blank">\Magento\Framework\View\Asset\File</a> represents resources that reside in the local file system and for which you know the absolute file system path and an invariant “file path”.</p>
 
-<p>This kind of asset accommodates arbitrary static view files that might be embedded in, or referred from, a web page. That might include anything from user-uploaded images to CSS files provided in Magento themes. Because these assets are available locally, the Magento software can manipulate them in many ways; for example, transform the content, merge assets, or substitute with other assets.</p>
+<p>This kind of asset accommodates arbitrary static view files that might be embedded in, or referred from, a web page. That might include anything from user-uploaded images to <span term-uuid="6c5cb4e9-9197-46f2-ba79-6147d9bfe66d" class="glossary-term" data-toggle="popover">CSS</span> files provided in Magento themes. Because these assets are available locally, the Magento software can manipulate them in many ways; for example, transform the content, merge assets, or substitute with other assets.</p>
 
 <p>Its asset class diagram follows:</p>
 
@@ -563,11 +563,11 @@ http://example.com/pub/static/frontend/magento_theme/en_US/css-topics/styles.css
 
 <h2 id="m2devgde-page-assets-static-view">Page assets and static view files</h2>
 
-<p>According to the Magento classification of view files, CSS, JavaScript, images, and other assets that are included in a web page and presented on the storefront without modification are <em>static view files</em>.</p>
+<p>According to the Magento classification of view files, CSS, JavaScript, images, and other assets that are included in a web page and presented on the <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span> without modification are <em>static view files</em>.</p>
 
 <p>Like all Magento view files, static view files are located using the fallback mechanism. This mechanism implements inheritance of files from one directory to others. In this way, we enable you to extend or override view files of existing components with new components.</p>
 
-<p>For example, a particular theme might extend or override files of its parent theme, all themes generally override module view files, and so on.</p>
+<p>For example, a particular <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span> might extend or override files of its parent theme, all themes generally override <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> view files, and so on.</p>
 
 <h2 id="m2devgde-page-assets-static-manip">Manipulate page assets</h2>
 
@@ -584,7 +584,7 @@ http://example.com/pub/static/frontend/magento_theme/en_US/css-topics/styles.css
 
 <h3 id="m2devgde-page-assets-static-manip-xml">Use layout XML to manipulate assets</h3>
 
-<p>Although you can use the API to manipulate assets, frontend developers should use <a href="/guides/v2.1/frontend-dev-guide/layouts/xml-instructions.html">layout XML instructions</a> to register assets.</p>
+<p>Although you can use the <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span> to manipulate assets, <span term-uuid="b00459e5-a793-44dd-98d5-852ab33fc344" class="glossary-term" data-toggle="popover">frontend</span> developers should use <a href="/guides/v2.1/frontend-dev-guide/layouts/xml-instructions.html">layout XML instructions</a> to register assets.</p>
 
 <p>This method is preferred because it enables you to implement particular discriminators for assets, like browser matching and conditional loading.</p>
 
@@ -622,7 +622,7 @@ http://example.com/pub/static/frontend/magento_theme/en_US/css-topics/styles.css
 
 <h4 id="m2devgde-page-assets-static-manip-xml-brows">Use layout XML to manipulate browser matching</h4>
 
-<p>Use <em>browser matching</em> to change the behavior of JavaScript and CSS for certain browsers only (usually because of technology-specific workarounds). The following example illustrates using layout instructions to set using a CSS file only when a page is loaded in Internet Explorer:</p>
+<p>Use <em>browser matching</em> to change the behavior of <span term-uuid="312b4baf-15f7-4968-944e-c814d53de218" class="glossary-term" data-toggle="popover">JavaScript</span> and CSS for certain browsers only (usually because of technology-specific workarounds). The following example illustrates using <span term-uuid="73ab5daa-5857-4039-97df-11269b626134" class="glossary-term" data-toggle="popover">layout</span> instructions to set using a CSS file only when a page is loaded in Internet Explorer:</p>
 
 <p>Layout instructions:</p>
 

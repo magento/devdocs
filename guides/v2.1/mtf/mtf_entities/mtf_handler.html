@@ -968,7 +968,7 @@
 
 </section>
 
-			<p>You can use a handler to set up preconditions and prepare an initial testing environment for particular tests. For example, your scenario requires a particular widget that must be implicitly created before the test is started. You need <a href="/guides/v2.1/mtf/mtf_entities/mtf_fixture.html">a fixture</a>, a data set, and a handler. The handler transfers data to the application being tested. The data is a list of fields from a fixture and values from data sets.</p>
+			<p>You can use a handler to set up preconditions and prepare an initial testing environment for particular tests. For example, your scenario requires a particular <span term-uuid="f0dcf847-ce21-4b88-8b45-83e1cbf08100" class="glossary-term" data-toggle="popover">widget</span> that must be implicitly created before the test is started. You need <a href="/guides/v2.1/mtf/mtf_entities/mtf_fixture.html">a fixture</a>, a data set, and a handler. The handler transfers data to the application being tested. The data is a list of fields from a fixture and values from data sets.</p>
 
 <p>This topic focuses on handlers, and we’ll discuss types of handlers as well as how to create and use one.</p>
 
@@ -1003,7 +1003,7 @@
     <tr>
       <td>WebAPI</td>
       <td>Sends a POST request using the REST API. <a href="/guides/v2.1/rest/bk-rest.html">See REST API reference documentation.</a></td>
-      <td>Similar to cURL but uses the REST API entry point.</td>
+      <td>Similar to cURL but uses the REST <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span> entry point.</td>
       <td>Has the advantage of testing the API, faster than cURL.</td>
     </tr>
   </tbody>
@@ -1013,7 +1013,7 @@
 
 <h2 id="mtf_handler_config">Configuration</h2>
 
-<p>One fixture can have various handlers. When we create an entity in the test we do not indicate which handler to use. This work is delegated to a fallback, which is a queue of handlers in the priority order specified in <a href="#mtf_handler_configxml"><code>config.xml</code></a>.</p>
+<p>One fixture can have various handlers. When we create an <span term-uuid="a9027f5d-efab-4662-96aa-c2999b5ab259" class="glossary-term" data-toggle="popover">entity</span> in the test we do not indicate which handler to use. This work is delegated to a fallback, which is a queue of handlers in the priority order specified in <a href="#mtf_handler_configxml"><code>config.xml</code></a>.</p>
 
 <h3 id="mtf_handler_configxml"><code>config.xml</code></h3>
 
@@ -1026,7 +1026,7 @@
 
 <table>
 <tr><th>Node</th><th>Semantics</th><th>Example</th></tr>
-<tr><td><code>&lt;backendLoginUrl&gt;</code></td><td>Reference to the login form of the Admin.</td><td><code>&lt;backendLoginUrl&gt;admin/auth/login&lt;/backendLoginUrl&gt;</code></td></tr>
+<tr><td><code>&lt;backendLoginUrl&gt;</code></td><td>Reference to the login form of the <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span>.</td><td><code>&lt;backendLoginUrl&gt;admin/auth/login&lt;/backendLoginUrl&gt;</code></td></tr>
 <tr><td><code>&lt;backendLogin&gt;</code></td><td>A username to access the Admin as a Magento administrator.</td><td><code>&lt;backendLogin&gt;admin&lt;/backendLogin&gt;</code></td></tr>
 <tr><td><code>&lt;backendPassword&gt;</code></td><td>A password to access the Admin as a Magento administrator.</td><td><code>&lt;backendPassword&gt;pas$worD&lt;/backendPassword&gt;</code></td></tr>
 <tr><td><code>&lt;handler&gt;</code></td><td>Specifies priorities for different types of handler. The less the value, the higher the priority. The highest priority has value <code>0</code>. <code>token</code> contains <a href="/guides/v2.1/get-started/authentication/gs-authentication.html">access token</a> (used by WebAPI handlers only).</td>
@@ -1258,7 +1258,7 @@
 
 <p>In the previously mentioned example of the <a href="#mtf_curl_script">Curl.php</a> code, authentication in the Admin is realized using the <code>BackendDecorator</code> class.</p>
 
-<p>The <a href="#mtf_handler_curl_frontdecor">FrontendDecorator class</a> manages authentication in the storefront.</p>
+<p>The <a href="#mtf_handler_curl_frontdecor">FrontendDecorator class</a> manages authentication in the <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span>.</p>
 
 <h4 id="mtf_handler_curl_backdecor">BackendDecorator class</h4>
 
@@ -1401,7 +1401,7 @@
 <span class="p">}</span></code></pre></figure>
 
 <ul>
-  <li>Create <a href="#mtf_handler_di"><code>di.xml</code></a> in the <code>etc/ui</code> directory of the Magento_Widget module.</li>
+  <li>Create <a href="#mtf_handler_di"><code>di.xml</code></a> in the <code>etc/ui</code> directory of the Magento_Widget <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>.</li>
 </ul>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot; ?&gt;</span>
@@ -1419,7 +1419,7 @@
 
 <h2 id="mtf_handler_howto-create-webapi">How to create a WebAPI handler</h2>
 
-<p>Let’s create a WebAPI handler that creates a new tax rule.</p>
+<p>Let’s create a WebAPI handler that creates a new <span term-uuid="f35f5e81-db5d-4754-937e-b5607ac255fa" class="glossary-term" data-toggle="popover">tax rule</span>.</p>
 
 <ul>
   <li>Create a directory with the name <code>TaxRule</code> in the <code>Handler</code> directory of the Magento_Tax module - <code>&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app/Magento/Tax/Test/Handler/TaxRule</code>.</li>

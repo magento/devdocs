@@ -618,7 +618,7 @@
 
 			<h2 id="frontend-dev-guide-javascript-js-coding-docblock-overview">Introduction</h2>
 
-<p>To add JavaScript code inline documentation, follow these guidelines. Some parts of Magento code may not comply with this standard, but we are working to gradually improve this. Following these standard is optional for 3rd-party Magento developers, but will help to create consistent, clean, and easy to read inline documentation.
+<p>To add <span term-uuid="312b4baf-15f7-4968-944e-c814d53de218" class="glossary-term" data-toggle="popover">JavaScript</span> code inline documentation, follow these guidelines. Some parts of Magento code may not comply with this standard, but we are working to gradually improve this. Following these standard is optional for 3rd-party Magento developers, but will help to create consistent, clean, and easy to read inline documentation.
 This standard are a subset of <a href="https://google.github.io/styleguide/javascriptguide.xml" target="_blank">Google JavaScript Style Guide</a> regulations.</p>
 
 <p>Use <a href="http://www.ietf.org/rfc/rfc2119.txt" target="_blank">RFC 2119</a> to interpret the "must," "must not," "required," "shall," "shall not," "should," "should not," "recommended," "may," and "optional" keywords.</p>
@@ -650,7 +650,7 @@ This standard are a subset of <a href="https://google.github.io/styleguide/javas
 */
 </pre>
 
-<p>Many tools extract metadata from JSDoc comments to validate and optimize the code.</p>
+<p>Many tools extract <span term-uuid="3f0f2ef1-ad38-41c6-bd1e-390daaa71d76" class="glossary-term" data-toggle="popover">metadata</span> from JSDoc comments to validate and optimize the code.</p>
 
 <h3 id="frontend-dev-guide-javascript-js-coding-docblock-indentation">JSDoc indentation</h3>
 
@@ -830,7 +830,7 @@ project.SubClass.prototype.toString()&nbsp;{
 &nbsp;*&nbsp;@param&nbsp;{string|number|null}&nbsp;term&nbsp;An&nbsp;itemName,
 &nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;itemId,&nbsp;or&nbsp;null&nbsp;to&nbsp;search&nbsp;everything.
 &nbsp;*/
-namespace.Storage.prototype.query&nbsp;=&nbsp;function(groupNum,&nbsp;term)&nbsp;{
+<span term-uuid="621ef86b-7314-4fbc-a80d-ab7fa45a27cb" class="glossary-term" data-toggle="popover">namespace</span>.Storage.prototype.query&nbsp;=&nbsp;function(groupNum,&nbsp;term)&nbsp;{
 &nbsp;&nbsp;&nbsp;//&nbsp;...
 };
 </pre>
@@ -852,7 +852,7 @@ namespace.Storage.prototype.getLastId&nbsp;=&nbsp;function()&nbsp;{
 
 <h4 id="frontend-dev-guide-javascript-js-coding-docblock-this">@this</h4>
 
-<p>The type of the object in whose context a particular method is called. Required when the this keyword is referenced from a function that is not a prototype method.</p>
+<p>The type of the object in whose context a particular method is called. Required when the this <span term-uuid="caa46cea-25d7-4e4f-bce1-11430ada59dc" class="glossary-term" data-toggle="popover">keyword</span> is referenced from a function that is not a prototype method.</p>
 
 <pre>pinto.chat.RosterWidget.extern('getRosterElement',
 &nbsp;&nbsp;&nbsp;&nbsp;/**

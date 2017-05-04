@@ -661,9 +661,9 @@
 
 </section>
 
-			<p>Magento OAuth authentication is based on <a href="https://tools.ietf.org/html/rfc5849">OAuth 1.0a</a>, an open standard for secure API authentication. OAuth is a token-passing mechanism that allows a system to control which external applications have access to internal data without revealing or storing any user IDs or passwords.</p>
+			<p>Magento OAuth authentication is based on <a href="https://tools.ietf.org/html/rfc5849">OAuth 1.0a</a>, an open standard for secure <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span> authentication. OAuth is a token-passing mechanism that allows a system to control which external applications have access to internal data without revealing or storing any user IDs or passwords.</p>
 
-<p>In Magento, a third-party extension that uses OAuth for authentication is called an <a href="/guides/v2.0//howdoi/webapi/integration.html"><em>integration</em></a>. An integration defines which resources the extension can access. The extension can be granted access to all resources or a customized subset of resources.</p>
+<p>In Magento, a third-party <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span> that uses OAuth for authentication is called an <a href="/guides/v2.0//howdoi/webapi/integration.html"><em>integration</em></a>. An integration defines which resources the extension can access. The extension can be granted access to all resources or a customized subset of resources.</p>
 
 <p>As the process of registering the integration proceeds, Magento creates the tokens that the extension needs for authentication. It first creates a request token. This token is short-lived and must be exchanged for access token. Access tokens are long-lived and will not expire unless the merchant revokes access to the extension.</p>
 
@@ -673,10 +673,10 @@
 
 <ol>
   <li>
-    <p><strong>Create an integration</strong>.  The merchant creates an integration from Admin. Magento generates a consumer key and a consumer secret.</p>
+    <p><strong>Create an integration</strong>.  The merchant creates an integration from <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span>. Magento generates a consumer key and a consumer secret.</p>
   </li>
   <li>
-    <p><strong>Activate the integration</strong>. The OAuth process begins when the merchant activates the integration. Magento sends the OAuth consumer key and secret, an OAuth verifier, and the store URL to the external application via HTTPS post to the page defined in the <strong>Callback Link</strong> field in Admin. See <a href="#activate">Activate an integration</a> for more information.</p>
+    <p><strong>Activate the integration</strong>. The OAuth process begins when the merchant activates the integration. Magento sends the OAuth consumer key and secret, an OAuth verifier, and the store <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span> to the external application via HTTPS post to the page defined in the <strong>Callback Link</strong> field in Admin. See <a href="#activate">Activate an integration</a> for more information.</p>
   </li>
   <li>
     <p><strong>Process activation information</strong>. The integrator must store the activation information received in step 2. These parameters will be used to ask for  tokens.</p>
@@ -706,7 +706,7 @@
 
 <h2 id="activate">Activate an integration</h2>
 
-<p>The integration must be configured from the Magento Admin (<strong>System &gt; Extensions &gt; Integrations</strong>).  The configuration includes a callback URL and an identity link URL.  The callback URL specifies where OAuth credentials can be sent when using OAuth for token exchange. The identity link points to the login page of the third-party application that is integrating with Magento.</p>
+<p>The integration must be configured from the <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span> (<strong>System &gt; Extensions &gt; Integrations</strong>).  The configuration includes a callback URL and an identity link URL.  The callback URL specifies where OAuth credentials can be sent when using OAuth for token exchange. The identity link points to the login page of the third-party application that is integrating with Magento.</p>
 
 <p>A merchant can choose to select <strong>Save and Activate</strong> when the integration is created. Alternatively, the merchant can click on <strong>Activate</strong> against a previously saved integration from the Integration grid.</p>
 
@@ -841,7 +841,7 @@
 
 <p>After the Integration is authorized to make API calls, 3rd party extensions (registered as Integrations in Magento) can invoke Magento web APIs by using the access token.</p>
 
-<p>To use the access token to make web API calls:</p>
+<p>To use the access token to make <span term-uuid="377dc0a3-b8a7-4dfa-808e-2de37e4c0029" class="glossary-term" data-toggle="popover">web API</span> calls:</p>
 
 <p><code>GET /rest/V1/products/1234</code></p>
 
@@ -858,7 +858,7 @@
 
 <h2 id="oauth-signature">The OAuth signature</h2>
 
-<p>All OAuth handshake requests and Web Api requests include the signature as part of Authorization header. Its generated as follows:</p>
+<p>All OAuth handshake requests and Web Api requests include the signature as part of <span term-uuid="34ecb0ab-b8a3-42d9-a728-0b893e8c0417" class="glossary-term" data-toggle="popover">Authorization</span> header. Its generated as follows:</p>
 
 <p>You concatenate a set of URL-encoded attributes and parameters to construct the signature base string.</p>
 

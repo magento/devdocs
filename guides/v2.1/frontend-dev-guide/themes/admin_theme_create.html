@@ -1049,11 +1049,11 @@
 
 <h2 id="prerequisites">Prerequisites</h2>
 
-<p><a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-mode.html">Set</a> your Magento application to the developer <a href="/guides/v2.1/config-guide/bootstrap/magento-modes.html">mode</a>. The application mode influences the way static files are cached by Magento.</p>
+<p><a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-mode.html">Set</a> your Magento application to the developer <a href="/guides/v2.1/config-guide/bootstrap/magento-modes.html">mode</a>. The application mode influences the way <span term-uuid="363662cb-73f1-4347-a15e-2d2adabeb0c2" class="glossary-term" data-toggle="popover">static files</span> are cached by Magento.</p>
 
 <h2 id="overview">Overview</h2>
 
-<p>To create a custom Admin theme, take the following steps:</p>
+<p>To create a custom <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span> theme, take the following steps:</p>
 
 <ol>
   <li><a href="#create_dir">Create a theme directory.</a></li>
@@ -1074,14 +1074,14 @@
 
 <p>Add or copy from an existing <code>theme.xml</code> to your theme directory <code>app/design/adminhtml/&lt;Vendor&gt;/&lt;admin_theme&gt;</code>.</p>
 
-<p>Configure it using the following example (replace placeholders with your theme information):</p>
+<p>Configure it using the following example (replace placeholders with your <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span> information):</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;theme</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:Config/etc/theme.xsd&quot;</span><span class="nt">&gt;</span>
      <span class="nt">&lt;title&gt;</span>%Theme title%<span class="nt">&lt;/title&gt;</span> <span class="c">&lt;!-- your theme&#39;s name --&gt;</span>
      <span class="nt">&lt;parent&gt;</span>%vendor_dir%/%parent_theme_dir%<span class="nt">&lt;/parent&gt;</span> <span class="c">&lt;!-- the parent theme. Example: Magento/backend --&gt;</span>
  <span class="nt">&lt;/theme&gt;</span></code></pre></figure>
 
-<p>If you change the theme title or parent theme information in <code>theme.xml</code> after a theme was already <a href="#register_theme">registered</a>, you need to open or reload any Magento Admin page for your changes to be saved in the database.</p>
+<p>If you change the theme title or parent theme information in <code>theme.xml</code> after a theme was already <a href="#register_theme">registered</a>, you need to open or reload any <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span> page for your changes to be saved in the database.</p>
 
 <h2 id="add_registry">Add <code>registration.php</code></h2>
 <p>In your theme directory, create a <code>registration.php</code> file.

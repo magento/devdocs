@@ -1045,11 +1045,11 @@
 
 			<h2 id="debug-theme-intro">What's in this topic</h2>
 
-<p>When you create a Magento theme, you might need to create override files for default theme and module view files. To do so, you must determine which template, layout, and style files Magento uses. This topic describes how to do this.</p>
+<p>When you create a Magento theme, you might need to create override files for default <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span> and <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> view files. To do so, you must determine which template, layout, and style files Magento uses. This topic describes how to do this.</p>
 
 <h2 id="debug-theme-templ">Locate templates</h2>
 
-<p>To locate the template that is responsible for a specific part of the storefront or Admin, you can use Magento built-in template hints.</p>
+<p>To locate the template that is responsible for a specific part of the <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span> or Admin, you can use Magento built-in template hints.</p>
 
 <p>To enable template hints:</p>
 
@@ -1060,17 +1060,17 @@
   <li>
     <p>In the <strong>Scope</strong> dropdown in the upper-left corner select the view for which you want the template hints.</p>
   </li>
-  <li>In the <strong>Debug</strong> tab, set <strong>Template Path Hints for storefront</strong> to <strong>Yes</strong>. To enable path hints for Admin set <strong>Template Path Hints for Admin</strong> to <strong>Yes</strong>.</li>
+  <li>In the <strong>Debug</strong> tab, set <strong>Template Path Hints for storefront</strong> to <strong>Yes</strong>. To enable path hints for <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span> set <strong>Template Path Hints for Admin</strong> to <strong>Yes</strong>.</li>
   <li>To save the changes, click <strong>Save Config</strong> in the upper-right corner.</li>
 </ol>
 <p><img src="/common/images/fdg_debug_theme.png" alt="Enabling template hints" /></p>
 
 <p>Now that you have enabled template hints, reload the page that you want to modify, and review the path for the template file or files that template hints show.</p>
 
-<p>For example, here is how a storefront category page looks with enabled template hints:</p>
+<p>For example, here is how a storefront <span term-uuid="50e49338-1e6c-4473-8527-9e401d67ea2b" class="glossary-term" data-toggle="popover">category</span> page looks with enabled template hints:</p>
 <p><img src="/common/images/theme_debug2.png" alt="A storefront page with enabled template hints" /></p>
 
-<p>In this example mini shopping cart page element is defined by the <code>&lt;Magento_Checkout_module_dir&gt;/view/frontend/templates/cart/minicart.phtml</code> template:</p>
+<p>In this example mini <span term-uuid="c7ecb18d-cefe-452d-83e2-3c4d5e355db9" class="glossary-term" data-toggle="popover">shopping cart</span> page element is defined by the <code>&lt;Magento_Checkout_module_dir&gt;/view/frontend/templates/cart/minicart.phtml</code> template:</p>
 
 <p><img src="/common/images/theme_debug3.png" alt="A hint with template name for minishopping cart" /></p>
 <p>(the template name is above the element)</p>
@@ -1078,7 +1078,7 @@
 <p>Here is how Customers page looks with enabled template hints in Admin:</p>
 <p><img src="/common/images/theme_debug5.png" alt="Admin page with enabled template hints" /></p>
 
-<p>Alternatively, you can perform a text search in the file system by using system generated titles, CSS class names, block titles, labels, or links text as search terms.
+<p>Alternatively, you can perform a text search in the file system by using system generated titles, <span term-uuid="6c5cb4e9-9197-46f2-ba79-6147d9bfe66d" class="glossary-term" data-toggle="popover">CSS</span> class names, block titles, labels, or links text as search terms.
 For example, using a browser debug tool, you can define that the minicart block css class is <code>minicart-wrapper</code>.</p>
 <p><img src="/common/images/theme_debug4.png" alt="Firebug displaying html" /></p>
 
@@ -1087,7 +1087,7 @@ For example, using a browser debug tool, you can define that the minicart block 
 <p>Since it is not recommended to edit the default files, you need to add overriding files if you want to customize the template. For details about overriding templates please refer to <a href="/guides/v2.1/frontend-dev-guide/templates/template-walkthrough.html">Customizing Theme Template</a>.</p>
 
 <h2 id="debug-theme-layout">Locate layouts</h2>
-<p>Just like templates, layouts are saved on a per-module basis. You can easily locate the layout file by determining in which module the templates for the element you are interested in reside in. To locate the template, you can use Template Hints or text search in the app directory, as described previously .</p>
+<p>Just like templates, layouts are saved on a per-module basis. You can easily locate the <span term-uuid="73ab5daa-5857-4039-97df-11269b626134" class="glossary-term" data-toggle="popover">layout</span> file by determining in which module the templates for the element you are interested in reside in. To locate the template, you can use Template Hints or text search in the app directory, as described previously .</p>
 
 <p>After you have determined the module, you can search for the layout in the following locations:</p>
 
@@ -1102,7 +1102,7 @@ For example, using a browser debug tool, you can define that the minicart block 
 
 <p>Example:</p>
 
-<p>Let’s say you need to locate the layout that is responsible for displaying mini shopping cart on the storefront, when the Blank theme by Magento is applied for the store view.</p>
+<p>Let’s say you need to locate the layout that is responsible for displaying mini shopping cart on the storefront, when the Blank theme by Magento is applied for the <span term-uuid="ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f" class="glossary-term" data-toggle="popover">store view</span>.</p>
 
 <p>Using the Template Hints we determine that the template is <code>app/code/Magento/Checkout/view/frontend/templates/cart/minicart.phtml</code>, and in the path, we see that it belongs to the <code>Magento_Checkout</code> module.</p>
 

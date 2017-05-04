@@ -1113,7 +1113,7 @@
 <h4>Start your migration</h4>
 <ol>
   <li>Make sure that the <a href="/guides/v2.1/migration/migration-tool.html">Data Migration Tool</a> has a network access to connect to Magento 1 and Magento 2 databases. Open ports in your firewall.</li>
-  <li>Stop all activity in the Magento 1.x Admin Panel (except for order management, such as shipping, creating invoice, credit memos etc.)</li>
+  <li>Stop all activity in the Magento 1.x <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span> Panel (except for order management, such as shipping, creating invoice, credit memos etc.)</li>
 <pre>NOTE: Activity cannot resume until your Magento 2 store goes live.</pre>
   <li>Stop all Magento 1.x cron jobs.</li> 
   <li>Use the migration tool to <a href="/guides/v2.1/migration/migration-migrate-settings.html">migrate settings</a> and websites.</li>
@@ -1143,7 +1143,7 @@ In case you find any issues, press Control+C to stop incremental migration and s
   <li>Press Control+C in the migration tool command window to stop incremental updates.</li>
   <li>Start your Magento 2 cron jobs.</li>
   <li>In your Magento 2 system, reindex the stock indexer using the command <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-index.html#config-cli-subcommands-index-reindex"><code>magento indexer:reindex cataloginventory_stock</code></a>.</li>
-  <li>Using a tool of your choice, hit pages in your Magento 2 system to cache pages in advance of customers using your storefront.</li>
+  <li>Using a tool of your choice, hit pages in your Magento 2 system to <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span> pages in advance of customers using your <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span>.</li>
   <li>Perform any final verification of your Magento 2 site.</li>
   <li>Change DNS, load balancers, and so on to point to new production hardware (DOWNTIME ENDS)</li>
   <li>Magento 2 store is ready to use. You and Your customers can resume all activities.</li>

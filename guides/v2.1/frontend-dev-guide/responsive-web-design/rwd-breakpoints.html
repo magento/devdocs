@@ -1045,14 +1045,14 @@
 
 			<h2>What's in this topic</h2>
 
-<p>Breakpoints are used in stylesheets to set up the screen width at which the design changes, for example from the mobile to the desktop version. Themes provided with Magento implement a list of <a href="/guides/v2.1/frontend-dev-guide/responsive-web-design/rwd_css.html#fedg_rwd_css_break">default breakpoints</a>. This topic describes how to add a custom breakpoint in your theme.</p>
+<p>Breakpoints are used in stylesheets to set up the screen width at which the design changes, for example from the mobile to the desktop version. Themes provided with Magento implement a list of <a href="/guides/v2.1/frontend-dev-guide/responsive-web-design/rwd_css.html#fedg_rwd_css_break">default breakpoints</a>. This topic describes how to add a custom breakpoint in your <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span>.</p>
 
 <h2 id="overview">Overview</h2>
 <p>To add a custom breakpoint in your theme, you need to do the following:</p>
 
 <ol>
   <li>Define a variable for the new breakpoint.</li>
-  <li>Override the library <code>_responsive.less</code> file, and add the new rule for the new breakpoint.</li>
+  <li>Override the <span term-uuid="08968dbb-2eeb-45c7-ae95-ffca228a7575" class="glossary-term" data-toggle="popover">library</span> <code>_responsive.less</code> file, and add the new rule for the new breakpoint.</li>
   <li>Implement the screen changes for the new breakpoint.</li>
 </ol>
 
@@ -1089,7 +1089,7 @@
       <li><code>&lt;your_theme_dir&gt;/web/css/source/lib/_responsive.less</code>: the library file.</li>
     </ul>
   </li>
-  <li>In your <code>_responsive.less</code>, add the <code>.media-width</code> mixin rule for your breakpoint in the corresponding section (desktop or mobile, depending on the type of breakpoint you add).</li>
+  <li>In your <code>_responsive.less</code>, add the <code>.media-width</code> <span term-uuid="1a305bdb-9be8-44aa-adad-98758821d6a7" class="glossary-term" data-toggle="popover">mixin</span> rule for your breakpoint in the corresponding section (desktop or mobile, depending on the type of breakpoint you add).</li>
 </ol>
 
 <p>Example:</p>

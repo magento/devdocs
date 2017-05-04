@@ -992,7 +992,7 @@
 <p><strong>Variation 1:</strong></p>
 
 <ol>
-  <li>Log in to Admin.</li>
+  <li>Log in to <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span>.</li>
   <li>Browse to “Marketing” &gt; “SEO &amp; Search” &gt; “Search Synonyms”.</li>
   <li>Click the “New Synonyms Group” button.</li>
   <li>Enter data in the “Synonyms” field.</li>
@@ -1053,7 +1053,7 @@
 
 <h4 id="create-test-object">Step 2. Create the testing object - a fixture</h4>
 
-<p>This step is applicable if a fixture doesn’t exist in a module.</p>
+<p>This step is applicable if a fixture doesn’t exist in a <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>.</p>
 
 <p>Use a <a href="/guides/v2.1/mtf/mtf_entities/mtf_fixture.html#mtf_fixture_create"><code>generateFixtureXml.php</code></a> to create a new <a href="/guides/v2.1/mtf/mtf_entities/mtf_fixture.html">fixture</a>.</p>
 
@@ -1518,7 +1518,7 @@ In this example it is named <code>CreateSynonymEntityTest.php</code> and stored 
 
 <p><img src="/common/images/ftf/mtf_tutorial_pages.png" alt="Created pages" /></p>
 
-<p>To generate PHP classes for these <a href="/guides/v2.1/mtf/mtf_entities/mtf_page.html">pages</a> enter and run in your terminal</p>
+<p>To generate <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> classes for these <a href="/guides/v2.1/mtf/mtf_entities/mtf_page.html">pages</a> enter and run in your terminal</p>
 
 <pre><code>php &lt;magento2_root_dir&gt;/dev/tests/functional/utils/generate.php
 </code></pre>
@@ -1551,7 +1551,7 @@ In this example it is named <code>CreateSynonymEntityTest.php</code> and stored 
     <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">_rootElement</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">addNewButton</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">click</span><span class="p">();</span>
 <span class="p">}</span></code></pre></figure>
 
-<p>In HTML page, to locate the UI block that contains a button, we will use a <code>.page-main-actions</code> locator. Learn how to <a href="/guides/v2.1/mtf/mtf_entities/mtf_block.html#define-a-selector">define a locator</a>.</p>
+<p>In <span term-uuid="a2aff425-07dd-4bd6-9671-29b7edefa871" class="glossary-term" data-toggle="popover">HTML</span> page, to locate the UI block that contains a button, we will use a <code>.page-main-actions</code> locator. Learn how to <a href="/guides/v2.1/mtf/mtf_entities/mtf_block.html#define-a-selector">define a locator</a>.</p>
 
 <p>The SynonymsIndex.xml page must contain the following block to be able to run the method in a test case.</p>
 
@@ -1615,7 +1615,7 @@ In this example it is named <code>CreateSynonymEntityTest.php</code> and stored 
 
 <p><img src="/common/images/ftf/mtf_tutorial_block_mapping.png" alt="Form mapping block" /></p>
 
-<p>Then we should add the block class to the <code>SynonymsNew.xml</code> page object. To identify a form block on the HTML page, use an <code>id='page:main-container'</code> css selector.</p>
+<p>Then we should add the block class to the <code>SynonymsNew.xml</code> page object. To identify a form block on the HTML page, use an <code>id='page:main-container'</code> <span term-uuid="6c5cb4e9-9197-46f2-ba79-6147d9bfe66d" class="glossary-term" data-toggle="popover">css</span> selector.</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;block</span> <span class="na">name=</span><span class="s">&quot;synonymForm&quot;</span> <span class="na">class=</span><span class="s">&quot;Magento\Search\Test\Block\Adminhtml\Synonyms\Edit\SynonymsForm&quot;</span> <span class="na">locator=</span><span class="s">&quot;[id=&#39;page:main-container&#39;]&quot;</span> <span class="na">strategy=</span><span class="s">&quot;css selector&quot;</span> <span class="nt">/&gt;</span></code></pre></figure>
 

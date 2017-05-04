@@ -1119,7 +1119,7 @@
 
 <p><strong>Local dev machine</strong> &gt; <strong>QA/integration server</strong> &gt; <strong>Preview server</strong>(optional) &gt; <strong>Production server</strong></p>
 
-<p>Whether you are writing a new Magento 2 extension or contributing to the <a href="https://github.com/magento/magento2" target="_blank">code base</a>, the first step for any developer is setting up a development environment.
+<p>Whether you are writing a new Magento 2 <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span> or contributing to the <a href="https://github.com/magento/magento2" target="_blank">code base</a>, the first step for any developer is setting up a development environment.
 This article will guide you in setting up and optimizing your local development machine.</p>
 
 <h2 id="local-development-machine">Local development machine</h2>
@@ -1141,7 +1141,7 @@ If you are developing on a local machine that meets the system requirements, you
 Installing Magento 2 in a virtual environment allows you to run Magento 2 without the need to install a local <a href="https://en.wikipedia.org/wiki/LAMP_(software_bundle)" target="_blank">LAMP</a> stack.</li>
   <li>
     <p><strong>Magento Devbox (Beta)</strong><br />
-The Magento DevBox is the simplest way yet to install a Magento development system. DevBox puts the Magento application in a Docker container but all you have to do to set it up is run a script. No more installing an operating system, web server, PHP, and so on.<a href="/guides/v2.1/install-gde/docker/docker-over.html">DevBox (Beta) quick installation overview</a></p>
+The Magento DevBox is the simplest way yet to install a Magento development system. DevBox puts the Magento application in a <span term-uuid="57f1b0dc-1341-466d-a685-e0dbf5a3b713" class="glossary-term" data-toggle="popover">Docker</span> container but all you have to do to set it up is run a script. No more installing an operating system, web server, PHP, and so on.<a href="/guides/v2.1/install-gde/docker/docker-over.html">DevBox (Beta) quick installation overview</a></p>
 
     <p>You can use a VM tool, such as <a href="https://www.virtualbox.org/wiki/VirtualBox" target="_blank">VirtualBox</a>, together with a virtual environment tool, such as <a href="https://www.vagrantup.com/" target="_blank">Vagrant</a> or <a href="https://www.docker.com/" target="_blank">Docker</a>, to create reusable and shareable instances of Magento for development.</p>
 
@@ -1154,7 +1154,7 @@ The Magento DevBox is the simplest way yet to install a Magento development syst
 <p>The following is a list of optimizations you can make on your local development machine</p>
 
 <ul>
-  <li>Magento recommends installing and using the latest supported version of PHP 7 to increase performance.</li>
+  <li>Magento recommends installing and using the latest supported version of <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> 7 to increase performance.</li>
   <li>Replace your MySQL database with <a href="https://www.percona.com/software/mysql-database/percona-server" target="_blank">Percona</a>.</li>
   <li>Make sure you install and enable <a href="http://php.net/manual/en/intro.opcache.php" target="_blank">PHP OPcache</a>.</li>
   <li>Xdebug is off by default. Enable this feature only when you need it because it requires a lot of memory and degrades performance.
@@ -1163,7 +1163,7 @@ You can increase the memory available to PHP to get an increase in performance w
   <li>If you need sample data, you can install it using <a href="/guides/v2.1/install-gde/install/web/install-web-sample-data-composer.html">composer</a> or by <a href="/guides/v2.1/install-gde/install/web/install-web-sample-data-clone.html">cloning repositories</a>.</li>
   <li>To speed up front end development, <a href="http://docs.magento.com/m2/ee/user_guide/system/file-optimization.html" target="_blank">turn off merging of CSS and JavaScript</a>.</li>
   <li>Make sure <a href="/guides/v2.1/config-guide/cache/caching.html">caching</a> is turned on (this is the default behavior).
-Generally, only page cache and block cache should be turned off for development and turned back on when testing.</li>
+Generally, only page <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span> and block cache should be turned off for development and turned back on when testing.</li>
   <li><a href="http://php.net/manual/en/opcache.configuration.php#ini.opcache.validate-timestamps" target="_blank">Opcache timestamp validation</a> should always be on for development.
 Development is impossible with opcache on and revalidation off because any PHP modification would require a cache reset.</li>
 </ul>

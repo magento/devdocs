@@ -1527,7 +1527,7 @@
 
 <p>Magento 2 EE offers number of scalability advantages, including the ability to use three separate master databases for different functional areas of the Magento application.</p>
 
-<p>Checkout, orders, and product data can all each use a separate master databases that you can optionally replicate. This separation independently scales load from website checkouts, order management activities, website browsing, and merchandising activities, depending on your needs.  These changes provide considerable flexibility in how the database tier can be scaled.</p>
+<p>Checkout, orders, and product data can all each use a separate master databases that you can optionally replicate. This separation independently scales load from <span term-uuid="a3c8f20f-b067-414e-9781-06378c193155" class="glossary-term" data-toggle="popover">website</span> checkouts, order management activities, website browsing, and merchandising activities, depending on your needs.  These changes provide considerable flexibility in how the database tier can be scaled.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>Magento Enterprise Cloud Edition does <em>not</em> support this feature at this time.</p>
@@ -1558,7 +1558,7 @@
 
 <ul>
   <li>Write directly to the database (instead, you must use the Magento EE database interface)</li>
-  <li>Use JOINs that affect the sales or quote databases</li>
+  <li>Use JOINs that affect the sales or <span term-uuid="77e19d0d-e7b1-4d3d-9bad-e92fbb9fb59a" class="glossary-term" data-toggle="popover">quote</span> databases</li>
   <li>Use foreign keys to tables in the checkout, sales, or main databases</li>
 </ul>
 
@@ -1592,7 +1592,7 @@
 <p>The split database requires you to set up three MySQL master databases on any host (all three on the Magento server, each database on a separate server, and so on). These are the <em>master</em> databases and they’re used as follows:</p>
 
 <ul>
-  <li>One master database for checkout tables</li>
+  <li>One master database for <span term-uuid="278c3ce0-cd4c-4ffc-a098-695d94d73bde" class="glossary-term" data-toggle="popover">checkout</span> tables</li>
   <li>One master database for sales tables (also referred to as <em>Order Management System</em>, or <em>OMS</em>, tales)</li>
   <li>One master database for the remainder of the Magento 2 application tables</li>
 </ul>

@@ -1055,7 +1055,7 @@
 <p>This article describes your module’s lifecycle and how you can create executable classes that will run when it is initialized or uninstalled. During initialization or uninstallation, these classes can perform database setup tasks, upgrade tasks, clean up tasks, and so on.</p>
 
 <div class="bs-callout bs-callout-info" id="other-component-types">
-  <p>Since theme components and language packages generally do not need to install a database schema or update data in the database, they do not need to worry about initialization or uninstallation tasks.</p>
+  <p>Since <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span> components and language packages generally do not need to install a <span term-uuid="66b924b4-8097-4aea-93d9-05a81e6cc00c" class="glossary-term" data-toggle="popover">database schema</span> or update data in the database, they do not need to worry about initialization or uninstallation tasks.</p>
 </div>
 
 <h3 id="lifecycle-class-rules">Lifecycle class rules</h3>
@@ -1066,7 +1066,7 @@
   <li>The class should be in the <code>Setup</code> directory in your module’s root directory with the appropriate file name. For the correct file name, please see the specific examples below.</li>
   <li>The class must use the specific name for the phase in which it will be executed in. To determine the correct class name to use, please see the specific examples below.</li>
   <li>The class must implement the specific class interface for the phase in which it will be executed in. To determine the correct interface to use, please see the specific examples below.</li>
-  <li>The version you use in your module should follow our <a href="/guides/v2.0/architecture/versioning.html">versioning policy</a>.</li>
+  <li>The version you use in your <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> should follow our <a href="/guides/v2.0/architecture/versioning.html">versioning policy</a>.</li>
 </ul>
 
 <h3 id="schema-initialization">Schema initialization</h3>
@@ -1256,7 +1256,7 @@ class \&lt;Vendor&gt;\&lt;Module&gt;\Setup\RecurringData implements \Magento\Fra
 
 <h3 id="uninstall-event">Uninstall event</h3>
 
-<p>The uninstall event begins when you uninstall your module using the <a href="/guides/v2.0/comp-mgr/module-man/compman-uninst-final.html">Component Manager</a> or by running the command <code>bin/magento module:uninstall --remove-data &lt;module_name&gt;</code>.</p>
+<p>The uninstall <span term-uuid="c57aef7c-97b4-4b2b-a999-8001accef1fe" class="glossary-term" data-toggle="popover">event</span> begins when you uninstall your module using the <a href="/guides/v2.0/comp-mgr/module-man/compman-uninst-final.html">Component Manager</a> or by running the command <code>bin/magento module:uninstall --remove-data &lt;module_name&gt;</code>.</p>
 
 <p>In this stage, your module should remove all traces of its existence in the database; e.g. dropping tables, deleting data, or restoring data.</p>
 
@@ -1277,7 +1277,7 @@ class \&lt;Vendor&gt;\&lt;Module&gt;\Setup\Uninstall implements \Magento\Framewo
 </code></pre>
 
 <div class="bs-callout bs-callout-warning" id="uninstall-disabled">
-  <p>A disabled module's uninstall routine can still be invoked when it is uninstalled. This means that module specific configurations such as dependency injection configurations and event/observer configurations will not be available and can cause problems. To avoid this, uninstall classes should not have dependencies on them.</p>
+  <p>A disabled module's uninstall routine can still be invoked when it is uninstalled. This means that module specific configurations such as <span term-uuid="2be50595-c5c7-4b9d-911c-3bf2cd3f7beb" class="glossary-term" data-toggle="popover">dependency injection</span> configurations and event/observer configurations will not be available and can cause problems. To avoid this, uninstall classes should not have dependencies on them.</p>
 </div>
 
 <p><strong>Related Topics</strong></p>

@@ -966,7 +966,7 @@
 
 <ul>
   <li>If you got the Magento software <a href="/guides/v2.0/install-gde/prereq/zip_install.html">compressed archive</a> (<code>.tar.gz</code>, <code>.zip</code>, or <code>.bz2</code>).</li>
-  <li>If your server runs PHP 7 and you installed the Magento software using <em>either</em> a <a href="/guides/v2.0/install-gde/prereq/zip_install.html">compressed archive</a> or the <a href="/guides/v2.0/install-gde/prereq/integrator_install.html">Composer metapackage</a>.</li>
+  <li>If your server runs <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> 7 and you installed the Magento software using <em>either</em> a <a href="/guides/v2.0/install-gde/prereq/zip_install.html">compressed archive</a> or the <a href="/guides/v2.0/install-gde/prereq/integrator_install.html">Composer metapackage</a>.</li>
 </ul>
 
 <p>We addressed the following issues:</p>
@@ -1015,7 +1015,7 @@
 </table>
 
 <h4 id="detail">Detail</h4>
-<p>Our compressed archives for CE and EE were missing <code>.gitignore</code> files and, as a result, exceptions prevented the upgrade from completing successfully. We updated the <code>magento/magento-composer-installer</code> component so it reports missing files instead of throwing an exception with no details about what was wrong.</p>
+<p>Our compressed archives for CE and EE were missing <code>.gitignore</code> files and, as a result, exceptions prevented the upgrade from completing successfully. We updated the <code>magento/magento-composer-installer</code> component so it reports missing files instead of throwing an <span term-uuid="53da11f1-d0b8-4a7e-b078-1e099462b409" class="glossary-term" data-toggle="popover">exception</span> with no details about what was wrong.</p>
 
 <p>At the same time, we fixed a separate issue that prevented upgrading if you use PHP 7. (The fix for this issue is a patch that you must apply separately from the <code>.gitignore</code> issue fix.)</p>
 
@@ -1147,7 +1147,7 @@ composer update
 </div>
   </li>
   <li>
-    <p>After the commands complete, enter the following command to update the database schema and data:</p>
+    <p>After the commands complete, enter the following command to update the <span term-uuid="66b924b4-8097-4aea-93d9-05a81e6cc00c" class="glossary-term" data-toggle="popover">database schema</span> and data:</p>
 
     <pre><code>php bin/magento setup:upgrade
 </code></pre>

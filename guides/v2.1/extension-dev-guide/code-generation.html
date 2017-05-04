@@ -1143,7 +1143,7 @@
   </li>
 </ul>
 
-<p>You can also use the <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-compiler.html">code compiler</a> to generate code at any time.  In Magento 2, “compiling” your application means performing code generation for any eligible class encountered by the configuration/code scanner, as well as performing a number of different dependency injection optimizations.</p>
+<p>You can also use the <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-compiler.html">code compiler</a> to generate code at any time.  In Magento 2, “compiling” your application means performing code generation for any eligible class encountered by the configuration/code scanner, as well as performing a number of different <span term-uuid="2be50595-c5c7-4b9d-911c-3bf2cd3f7beb" class="glossary-term" data-toggle="popover">dependency injection</span> optimizations.</p>
 
 <h3 id="codegen-over-why">Why should you regenerate code?</h3>
 <p>Suppose a Customer or Proxy class for a Customer class is generated and the Customer class has new methods added to it. Because a Customer or Proxy exists on the file system, it is not regenerated. However, the Customer or Proxy implementation is incomplete now because it does not have the new methods. In this case, you must regenerate the Customer or Proxy class.</p>
@@ -1166,7 +1166,7 @@
 <h2 id="codegen-om">Object Manager responsibility for code compilation</h2>
 <p>When code changes as discussed in the preceding section, the Object Manager compiles it.</p>
 
-<p>The code compiler compiler creates <code>var/di/global.ser</code>, which is a PHP serialized map of all constructor definitions mixed with object linking configuration defined in di.xml. <code>di.xml</code> is the dependency injection configuration. There is a global <code>app/etc/di.xml</code> and there can one defined for every module.</p>
+<p>The code compiler compiler creates <code>var/di/global.ser</code>, which is a PHP serialized map of all constructor definitions mixed with object linking configuration defined in di.xml. <code>di.xml</code> is the dependency injection configuration. There is a global <code>app/etc/di.xml</code> and there can one defined for every <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>.</p>
 
 
 		</div>

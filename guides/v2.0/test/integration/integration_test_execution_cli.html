@@ -570,7 +570,7 @@ Configuration <span class="nb">read </span>from /var/www/magento2/dev/tests/inte
 
 ..........................</code></pre></figure>
 
-<p>Note the path to the <code>phpunit</code> executable installed by composer into the vendor directory is used.</p>
+<p>Note the path to the <code>phpunit</code> executable installed by <span term-uuid="d85e2d0a-221f-4d03-aa43-0cda9f50809e" class="glossary-term" data-toggle="popover">composer</span> into the vendor directory is used.</p>
 
 <h3 id="running-only-a-custom-testsuite">Running only a custom testsuite</h3>
 
@@ -615,7 +615,7 @@ To fix the issue, change into the directory <code>dev/tests/integration</code> a
 
 <h4 id="unable-to-connect-to-mysql">Unable to connect to MySQL</h4>
 
-<p>The PHP interpreter has to be able to connect to the test database. By default this means the tests have to run on the same host as the MySQL server.<br />
+<p>The <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> interpreter has to be able to connect to the test database. By default this means the tests have to run on the same host as the MySQL server.<br />
 This problem most commonly crops up during development with vagrant or docker, where the Magento DB is running on a virtual machine.<br />
 If the tests then are executed using a PHP interpreter on the host system, the database might not be accessible.</p>
 

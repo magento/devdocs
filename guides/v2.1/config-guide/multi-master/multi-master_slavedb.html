@@ -1715,7 +1715,7 @@
 <span class="c1">//.......</span></code></pre></figure>
 
 <h2 id="performance-improvement">Performance improvement</h2>
-<p>To improve the performance of master-slave replication, you can filter some tables on slave instances. We recommend filtering all temporary tables with name pattern <code>search\_tmp\_%</code> that are used for catalog search.</p>
+<p>To improve the performance of master-slave replication, you can filter some tables on slave instances. We recommend filtering all temporary tables with name pattern <code>search\_tmp\_%</code> that are used for <span term-uuid="8d40d668-4996-4856-9f81-b1386cf4b14f" class="glossary-term" data-toggle="popover">catalog</span> search.</p>
 
 <p>To do this, add the following line to your <code>my.cnf</code> file on your slave instances:</p>
 

@@ -1052,7 +1052,7 @@
 
 			<h2 id="overview">Overview</h2>
 
-<p>Factories are service classes that instantiate non-injectable classes, that is, models that represent a database entity.
+<p>Factories are service classes that instantiate non-injectable classes, that is, models that represent a database <span term-uuid="a9027f5d-efab-4662-96aa-c2999b5ab259" class="glossary-term" data-toggle="popover">entity</span>.
 They create a layer of abstraction between the <code>ObjectManager</code> and business code.</p>
 
 <h2 id="relationship-to-objectmanager">Relationship to <code>ObjectManager</code></h2>
@@ -1060,7 +1060,7 @@ They create a layer of abstraction between the <code>ObjectManager</code> and bu
 <p>The <code>Magento\Framework\ObjectManager</code> is the class responsible for instantiating objects in the Magento application.
 Magento prohibits depending on and directly using the <code>ObjectManager</code> in your code.</p>
 
-<p>Factories are an exception to this rule because they require the <code>ObjectManager</code> to instantiate specific models.</p>
+<p>Factories are an <span term-uuid="53da11f1-d0b8-4a7e-b078-1e099462b409" class="glossary-term" data-toggle="popover">exception</span> to this rule because they require the <code>ObjectManager</code> to instantiate specific models.</p>
 
 <p>The following example illustrates the relationship between a simple factory and the <code>ObjectManager</code>:</p>
 
@@ -1132,7 +1132,7 @@ When you reference a factory in a class constructor, Magento’s <a href="/guide
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;preference</span> <span class="na">for=</span><span class="s">&quot;Magento\CatalogInventory\Api\Data\StockItemInterface&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\CatalogInventory\Model\Stock\Item&quot;</span> <span class="nt">/&gt;</span></code></pre></figure>
 
 <p>It instructs Magento to use the specific <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/CatalogInventory/Model/Stock/Item.php" target="_blank"><code>Item</code></a> class wherever the <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/CatalogInventory/Api/Data/StockItemInterface.php" target="_blank"><code>StockItemInterface</code></a> is used.
-When a class in that module includes the factory <code>StockItemInterfaceFactory</code> as a dependency, Magento generates a factory that is capable of creating the specific <code>Item</code> objects.</p>
+When a class in that <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> includes the factory <code>StockItemInterfaceFactory</code> as a dependency, Magento generates a factory that is capable of creating the specific <code>Item</code> objects.</p>
 
 		</div>
 		<!-- /.content-wrap -->

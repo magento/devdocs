@@ -450,7 +450,7 @@
    <dd>
       <p>Magento generates CSS files from LESS files.</p>
    </dd>
-   <dt>CSS and JavaScript file merging</dt>
+   <dt>CSS and <span term-uuid="312b4baf-15f7-4968-944e-c814d53de218" class="glossary-term" data-toggle="popover">JavaScript</span> file merging</dt>
    <dd>
       <p>Magento merges all CSS or JavaScript assets linked in the <code>&lt;head&gt;</code> element of the page into a single file and replaces referenced files with a single reference.</p>
    </dd>
@@ -462,14 +462,14 @@
 
 <h2 id="example-fallback">Fallback mechanism example</h2>
 
-<p>As an example of static file fallback, suppose there is a request for the <code>logo.svg</code> image in the Blank theme.</p>
+<p>As an example of static file fallback, suppose there is a request for the <code>logo.svg</code> image in the Blank <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span>.</p>
 
-<p>The request URL is similar to:</p>
+<p>The request <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span> is similar to:</p>
 
 <pre><code>  http://www.example.com/pub/static/frontend/Magento/blank/en_US/images/logo.svg
 </code></pre>
 
-<p>The Magento API request is similar to:</p>
+<p>The Magento <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span> request is similar to:</p>
 
 <pre><code>  $this-&gt;getViewFileUrl('logo.svg');
 </code></pre>
@@ -515,7 +515,7 @@
 
 <h2 id="css-files">CSS file publication</h2>
 
-<p>The publication flow for CSS files depends on whether CSS merging is enabled. The following sections describe the flow for both cases.</p>
+<p>The publication flow for <span term-uuid="6c5cb4e9-9197-46f2-ba79-6147d9bfe66d" class="glossary-term" data-toggle="popover">CSS</span> files depends on whether CSS merging is enabled. The following sections describe the flow for both cases.</p>
 
 <h3 id="merging-enabled">Merging enabled</h3>
 
@@ -585,7 +585,7 @@ the identified references are published from following locations:</p>
 
 <h3 id="context-notation">Context notation in CSS file references</h3>
 
-<p>You can reference resources in CSS files relative to a theme or a certain module using scope notation.</p>
+<p>You can reference resources in CSS files relative to a theme or a certain <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> using scope notation.</p>
 
 <p>The resulting link to a resource in the published file is relative to the original CSS file.</p>
 
@@ -641,7 +641,7 @@ the identified references are published from following locations:</p>
 
 <p>The following description of the URL resolution process illustrates the static view files processing from the prospective of the logic involved.</p>
 
-<p>A fully qualified context for generating a URL path to a static view file includes: area code, theme path, and locale code. The URL path is generated from a file ID an invariant relative path to the file, which does not change regardless of whether it is used as part of the absolute file name or URL. The file ID may optionally qualify module name.</p>
+<p>A fully qualified context for generating a URL path to a static view file includes: area code, theme path, and <span term-uuid="05099dbb-d491-4e33-a065-16035cb2d4d9" class="glossary-term" data-toggle="popover">locale</span> code. The URL path is generated from a file ID an invariant relative path to the file, which does not change regardless of whether it is used as part of the absolute file name or URL. The file ID may optionally qualify module name.</p>
 
 <p>The following diagram illustrates how a URL to a static view file is generated:</p>
 
@@ -651,7 +651,7 @@ the identified references are published from following locations:</p>
 
 <ul>
    <li><b>Client code</b>. Any client code that needs a URL to a static file.
-   Typically, a page template, but can be a layout XML or helper file.</li>
+   Typically, a page template, but can be a <span term-uuid="73ab5daa-5857-4039-97df-11269b626134" class="glossary-term" data-toggle="popover">layout</span> <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span> or helper file.</li>
    <li><b>AbstractBlock</b>. <code>\Magento\Framework\View\Element\AbstractBlock</code></li>
    <li><b>AssetRepository</b>. <code>\Magento\Framework\View\Asset\Repository</code></li>
    <li><b>AssetContext</b>. <code>\Magento\Framework\View\Asset\ContextInterface</code></li>

@@ -1732,7 +1732,7 @@ of the operations does not display in the GitHub session. You can still follow w
 
 <h2 id="cloud-deploy-conf">Project configuration</h2>
 <p>What makes it all work is a set of YAML configuration files located in the project root directory. These files define your Magento installation and describe its dependencies. Configuration files specify, for
-example, that Magento uses MySQL, some PHP extensions, and Elasticsearch. (These are referred to as <em>services</em>.)</p>
+example, that Magento uses MySQL, some <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> extensions, and Elasticsearch. (These are referred to as <em>services</em>.)</p>
 
 <h2 id="cloud-deploy-over-phases">Five phases of deployment</h2>
 <p>Deployment consists of the following phases:</p>
@@ -1766,7 +1766,7 @@ make Magento Enterprise Cloud Edition so fast in deployment.</p>
 <ul>
   <li>Applies patches located in <code>vendor/magento/magento-cloud-configuration/patches</code>, as well as optional project-specific patches in <code>m2-hotfixes</code></li>
   <li>Enables all extensions</li>
-  <li>Regenerates code and the dependency injection configuration (that is, the Magento <code>var/generation</code> and <code>var/di</code> directories) using <code>bin/magento setup:di:compile</code>.</li>
+  <li>Regenerates code and the <span term-uuid="2be50595-c5c7-4b9d-911c-3bf2cd3f7beb" class="glossary-term" data-toggle="popover">dependency injection</span> configuration (that is, the Magento <code>var/generation</code> and <code>var/di</code> directories) using <code>bin/magento setup:di:compile</code>.</li>
 </ul>
 
 <p>It is important to note that at this point the cluster has not been
@@ -1787,7 +1787,7 @@ you push code, if a service did not change, you can use a slug from the archive.
 instantaneous.</p>
 
 <h3 id="cloud-deploy-over-phases-slugclus">Phase 4: Deploy slugs and cluster</h3>
-<p>Now we provision your applications and all the backend services you
+<p>Now we provision your applications and all the <span term-uuid="74d6d228-34bd-4475-a6f8-0c0f4d6d0d61" class="glossary-term" data-toggle="popover">backend</span> services you
 need:</p>
 
 <ul>
@@ -1811,7 +1811,7 @@ resources that were generated in the build hook. The second is <code>bin/magento
 
 <ul>
   <li>
-    <p>If Magento is not installed, it installs Magento with <code>bin/magento setup:install</code>, updates the deployment configuration, <code>app/etc/env.php</code>, and the database for your specified environment (for example, Redis and website URLs).</p>
+    <p>If Magento is not installed, it installs Magento with <code>bin/magento setup:install</code>, updates the deployment configuration, <code>app/etc/env.php</code>, and the database for your specified environment (for example, Redis and <span term-uuid="a3c8f20f-b067-414e-9781-06378c193155" class="glossary-term" data-toggle="popover">website</span> URLs).</p>
   </li>
   <li>
     <p>If Magento is installed, performs any necessary upgrades.</p>

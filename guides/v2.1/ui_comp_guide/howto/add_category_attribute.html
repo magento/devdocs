@@ -1099,11 +1099,11 @@
 
 </section>
 
-			<p>Category attributes were automatically displayed in the admin panel of Magento 1. In Magento 2, it is necessary to explicitly render it with a UI Component. This is quite easy to do and provides a great degree of control over the form input. In the code examples below, replace <code>attribute_id</code> and <code>Your Category Attribute Name</code> with your own values.</p>
+			<p>Category attributes were automatically displayed in the <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">admin</span> panel of Magento 1. In Magento 2, it is necessary to explicitly render it with a <span term-uuid="9bcc648c-bd08-4feb-906d-1e24c4f2f422" class="glossary-term" data-toggle="popover">UI Component</span>. This is quite easy to do and provides a great degree of control over the form input. In the code examples below, replace <code>attribute_id</code> and <code>Your Category Attribute Name</code> with your own values.</p>
 
 <h2 id="step-1-create-the-attribute">Step #1: Create the Attribute</h2>
 
-<p>The following is a full example of an install script that creates a category attribute. If you already have a category attribute, it is not necessary.</p>
+<p>The following is a full example of an install script that creates a <span term-uuid="50e49338-1e6c-4473-8527-9e401d67ea2b" class="glossary-term" data-toggle="popover">category</span> attribute. If you already have a category attribute, it is not necessary.</p>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="c1">// File: Namespace/Module/Setup/InstallData.php</span>
 
@@ -1143,7 +1143,7 @@
 
 <h2 id="step-2-display-the-attribute">Step #2: Display the Attribute</h2>
 
-<p>The category UI Component is rendered with configuration from the <code>category_form.xml</code> file. All files with that name are merged together. As a result, you can add a field by creating a <code>category_form.xml</code> file in the <code>view/adminhtml/ui_component</code> directory in your module.</p>
+<p>The category UI Component is rendered with configuration from the <code>category_form.xml</code> file. All files with that name are merged together. As a result, you can add a field by creating a <code>category_form.xml</code> file in the <code>view/adminhtml/ui_component</code> directory in your <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>.</p>
 
 <p>Here is a full example of adding a field under the “Display Settings” group. It is important to note that <code>attribute_id</code> should match the ID of the attribute that you created in the install script.</p>
 
@@ -1179,7 +1179,7 @@
 
 <p>The <code>&lt;field&gt;</code> node is declared originally in <code>vendor/magento/module-ui/view/base/ui_component/etc/definition.xml</code>. If you open that file and look for <code>&lt;field&gt;</code>, you will notice that there is only a PHP class referenced—nothing particularly helpful. This is where the <code>config</code> elements in the example above come in important. Notice the value of <code>&lt;item name="formElement"&gt;</code> (<code>checkbox</code>)? Now, if you look in <code>definition.xml</code>, you will find a <code>&lt;checkbox&gt;</code> node that has some configuration values. In the PHP class that the <code>&lt;field&gt;</code> element references, it looks up the <code>formElement</code> to use and loads that. As a result, <code>&lt;checkbox&gt;</code> is the node. In this case, that has the information that we are looking for.</p>
 
-<p>One of those elements is particularly useful when determining what XML you need to provide for your field: <code>&lt;item name="component"&gt;</code>. That is a Javascript file that handles the functionality of the field. In our case, it is located in <code>vendor/magento/module-ui/view/base/web/js/form/element/single-checkbox.js</code>. If you open that file, there is a <code>defaults</code> object which contains values that can be modified through the XML above. For example, notice: <code>defaults.prefer: 'checkbox'</code>. In the XML above, we declared <code>&lt;item name="prefer"&gt;toggle&lt;/item&gt;</code>. As a result, the XML value overrides the default value, and the Javascript renders a toggle instead of a plain checkbox.</p>
+<p>One of those elements is particularly useful when determining what XML you need to provide for your field: <code>&lt;item name="component"&gt;</code>. That is a Javascript file that handles the functionality of the field. In our case, it is located in <code>vendor/magento/module-ui/view/base/web/js/form/element/single-checkbox.js</code>. If you open that file, there is a <code>defaults</code> object which contains values that can be modified through the XML above. For example, notice: <code>defaults.prefer: 'checkbox'</code>. In the XML above, we declared <code>&lt;item name="prefer"&gt;toggle&lt;/item&gt;</code>. As a result, the <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span> value overrides the default value, and the <span term-uuid="312b4baf-15f7-4968-944e-c814d53de218" class="glossary-term" data-toggle="popover">Javascript</span> renders a toggle instead of a plain checkbox.</p>
 
 <p>This opens up the opportunity for you to customize nearly anything about the UI Component. It also should provide you with a basis of how to determine what configuration is available for you to set through XML.</p>
 

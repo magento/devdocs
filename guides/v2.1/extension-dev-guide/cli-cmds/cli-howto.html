@@ -1137,7 +1137,7 @@ This has the additional benefit of eliminating users' learning curve</li>
 
 <ul>
   <li>All Magento command-line interface (CLI) commands rely on the Magento application and must have access to its context, dependency injections, plug-ins, and so on.</li>
-  <li>All CLI commands should be implemented in the scope of your module and should depend on the module’s status.</li>
+  <li>All CLI commands should be implemented in the scope of your <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> and should depend on the module’s status.</li>
   <li>Your command can use the Object Manager and Magento dependency injection features; for example, it can use <a href="/guides/v2.1/extension-dev-guide/depend-inj.html#dep-inj-preview-cons">constructor dependency injection</a>.</li>
   <li>
     <p>You must register your commands as discussed in any of the following sections:</p>
@@ -1150,7 +1150,7 @@ This has the additional benefit of eliminating users' learning curve</li>
 </ul>
 
 <h2 id="cli-sample">Add CLI commands using dependency injection</h2>
-<p>The Magento 2 sample modules provide a demonstration of many programming techniques, including adding a CLI command using dependency injection. Look at the <a href="https://github.com/magento/magento2-samples/tree/master/sample-module-command" target="_blank"><code>sample-module-command</code></a> for an example. The module’s <a href="https://github.com/magento/magento2-samples/blob/master/sample-module-command/README.md" target="_blank">README.md</a> discusses how to install it.</p>
+<p>The Magento 2 sample modules provide a demonstration of many programming techniques, including adding a CLI command using <span term-uuid="2be50595-c5c7-4b9d-911c-3bf2cd3f7beb" class="glossary-term" data-toggle="popover">dependency injection</span>. Look at the <a href="https://github.com/magento/magento2-samples/tree/master/sample-module-command" target="_blank"><code>sample-module-command</code></a> for an example. The module’s <a href="https://github.com/magento/magento2-samples/blob/master/sample-module-command/README.md" target="_blank">README.md</a> discusses how to install it.</p>
 
 <p>Following is a summary of the process:</p>
 
@@ -1162,7 +1162,7 @@ This has the additional benefit of eliminating users' learning curve</li>
   </li>
   <li>Declare your Command class in <code>Magento\Framework\Console\CommandListInterface</code> using dependency injection (<code>&lt;your component root dir&gt;/etc/di.xml</code>).</li>
   <li>
-    <p>Clean the cache and compiled code directories:</p>
+    <p>Clean the <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span> and compiled code directories:</p>
 
     <pre><code>cd &lt;your Magento install dir&gt;/var
 rm -rf cache/* page_cache/* di/* generation/* 

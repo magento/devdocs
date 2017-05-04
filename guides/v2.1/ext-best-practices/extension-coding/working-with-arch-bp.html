@@ -730,7 +730,7 @@
 			<p>In addition to understanding fundamental programming designs/concepts, you are encouraged to learn how the MVC architecture works in our code and how to work with Magento’s generated code and factories.</p>
 
 <h3 id="avoid-modification-of-the-magento-core">Avoid modification of the Magento Core</h3>
-<p>The core code is the default Magento code that comes with the application. You should never edit the core code because code changes occur between version upgrades and any changes you make will get overwritten. Try achieving your desired behavior with plugins, overriding interface preferences, and event observers.</p>
+<p>The core code is the default Magento code that comes with the application. You should never edit the core code because code changes occur between version upgrades and any changes you make will get overwritten. Try achieving your desired behavior with plugins, overriding interface preferences, and <span term-uuid="c57aef7c-97b4-4b2b-a999-8001accef1fe" class="glossary-term" data-toggle="popover">event</span> observers.</p>
 
 <p>If you feel that Magento can be improved with your core code changes, please consider <a href="/guides/v2.1/contributor-guide/contributing.html">contributing via Git</a>.</p>
 
@@ -738,7 +738,7 @@
 <p>To create the optimum module, you should get to know the Magento 2 architecture. Start off by familiarizing yourself with the <a href="/guides/v2.1/pattern-library/bk-pattern.html">Admin Pattern Library</a>, the core <a href="/guides/v2.1/extension-dev-guide/bk-extension-dev-guide.html">Magento Components</a>, and our <a href="/guides/v2.1/extension-dev-guide/service-contracts/service-contracts.html">service contracts</a> and <a href="/guides/v2.1/get-started/bk-get-started-api.html">APIs</a>.</p>
 
 <h3 id="check-your-extension-configurations">Check your extension configurations</h3>
-<p>Make sure your extension is configured correctly in each of your extension’s configuration files. Invalid or unexpected values will cause your extension to behave incorrectly within Magento.</p>
+<p>Make sure your <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span> is configured correctly in each of your extension’s configuration files. Invalid or unexpected values will cause your extension to behave incorrectly within Magento.</p>
 
 <h3 id="know-and-leverage-the-magento-2-framework">Know and leverage the Magento 2 framework</h3>
 <p>There have been some significant changes from Magento 1. Be sure to study the capabilities and standards of the Magento 2 Framework.</p>
@@ -748,7 +748,7 @@
 <ul>
   <li>Instead of creating custom validators from scratch, implement the <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Validator/ValidatorInterface.php" target="_blank"><code>\Magento\Framework\Validator\ValidatorInterface</code></a>.</li>
   <li>Instantiating a database connection can be expensive and unneccessary. Magento provides resource models for performing SQL commands. (See <a href="/guides/v2.1/architecture/archi_perspectives/persist_layer.html">Persistence Layer</a>)</li>
-  <li>Consider using Magento framework conventions instead of low-level or PHP functionality.</li>
+  <li>Consider using Magento framework conventions instead of low-level or <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> functionality.</li>
   <li>Use the  <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Data/Collection.php" target="_blank"><code>Magento\Framework\Data\Collection</code></a> class to retrieve a collection of filtered objects instead of directly querying the database.</li>
 </ul>
 
@@ -762,9 +762,9 @@
 
 <ul>
   <li>Make sure your Business Logic, Configuration, and SQL are implemented in the correct places.</li>
-  <li>Make sure that CSS, JavaScript, HTML, and XML code are all in the appropriate files (i.e. they should not be inline).</li>
+  <li>Make sure that CSS, JavaScript, HTML, and <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span> code are all in the appropriate files (i.e. they should not be inline).</li>
   <li>Use appropriate logic in a Block, Helper, Template, Controller, or Model.</li>
-  <li>Ensure correct module design.</li>
+  <li>Ensure correct <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> design.</li>
 </ul>
 
 <h3 id="use-the-phpcodesniffer-tool">Use the PHP_CodeSniffer tool</h3>

@@ -618,12 +618,12 @@
 
 			<p>In the Magento system, all jQuery UI widgets and interactions are built on a simple, reusable base—the <a href="http://jqueryui.com/widget/" target="_blank">jQuery UI Widget Factory</a>.</p>
 
-<p>The factory provides a flexible base for building complex, stateful plug-ins with a consistent API.
-It is designed not only for plug-ins that are part of jQuery UI, but for general usage by developers who want to create object-oriented components without reinventing common infrastructure.</p>
+<p>The factory provides a flexible base for building complex, stateful plug-ins with a consistent <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span>.
+It is designed not only for plug-ins that are part of <span term-uuid="5bfa8a8e-6f3e-4fed-a43e-62339916f02e" class="glossary-term" data-toggle="popover">jQuery</span> UI, but for general usage by developers who want to create object-oriented components without reinventing common infrastructure.</p>
 
 <p>For more information, see the <a href="http://api.jqueryui.com/jQuery.widget/" target="_blank">jQuery Widget API documentation</a>.</p>
 
-<p>This standard is mandatory for Magento core developers and recommended for third-party extension developers.
+<p>This standard is mandatory for Magento core developers and recommended for third-party <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span> developers.
 Some parts of Magento code might not comply with the standard, but we are working to gradually improve this.</p>
 
 <p>Use <a href="http://www.ietf.org/rfc/rfc2119.txt" target="_blank">RFC 2119</a> to interpret the “must,” “must not,” “required,” “shall,” “shall not,” “should,” “should not,” “recommended,” “may,” and “optional” keywords.</p>
@@ -631,7 +631,7 @@ Some parts of Magento code might not comply with the standard, but we are workin
 <h2 id="naming-conventions">Naming conventions</h2>
 
 <ul>
-  <li>Widget names must consist of one or more non-abbreviated English word and in camelcase format.</li>
+  <li><span term-uuid="f0dcf847-ce21-4b88-8b45-83e1cbf08100" class="glossary-term" data-toggle="popover">Widget</span> names must consist of one or more non-abbreviated English word and in camelcase format.</li>
 </ul>
 
 <figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
@@ -657,12 +657,12 @@ Some parts of Magento code might not comply with the standard, but we are workin
 <h2 id="instantiation-and-resources">Instantiation and resources</h2>
 
 <ul>
-  <li>Additional JavaScript files used as a resources must be dynamically loaded using the <code>$.mage.components()</code> method and must not be included in the <code>&lt;head&gt;</code> block.</li>
+  <li>Additional <span term-uuid="312b4baf-15f7-4968-944e-c814d53de218" class="glossary-term" data-toggle="popover">JavaScript</span> files used as a resources must be dynamically loaded using the <code>$.mage.components()</code> method and must not be included in the <code>&lt;head&gt;</code> block.</li>
   <li>Use the <code>$.mage.components()</code> method to load additional JavaScript resource files not included in the <code>&lt;head&gt;</code> block.</li>
   <li>You must use <code>$.mage.extend()</code> to extend an existing set of widget resources.</li>
   <li>
     <p>You must instantiate widgets using the <code>data-mage-init</code> attribute.
-You can use the <code>.mage()</code> plug-in to instantiate widgets that use callback methods.</p>
+You can use the <code>.mage()</code> <span term-uuid="9fceecbe-31be-4e49-aac7-11d155a85382" class="glossary-term" data-toggle="popover">plug-in</span> to instantiate widgets that use callback methods.</p>
 
     <p>Benefits:</p>
 
@@ -724,7 +724,7 @@ You can use the <code>.mage()</code> plug-in to instantiate widgets that use cal
   <li>
     <p>Widgets should comply with the <a href="https://en.wikipedia.org/wiki/Single_responsibility_principle" target="_blank">single responsibility principle</a>.</p>
 
-    <p>Widgets should not have responsibilities not related to the entity described by the widget.</p>
+    <p>Widgets should not have responsibilities not related to the <span term-uuid="a9027f5d-efab-4662-96aa-c2999b5ab259" class="glossary-term" data-toggle="popover">entity</span> described by the widget.</p>
   </li>
 </ul>
 
@@ -900,12 +900,12 @@ Use a <code>null</code> value if there is no default value for an option.</li>
     <p>Common tasks for this include:</p>
 
     <ul>
-      <li>Removing or adding any CSS classes the widget added/removed to the element.</li>
+      <li>Removing or adding any <span term-uuid="6c5cb4e9-9197-46f2-ba79-6147d9bfe66d" class="glossary-term" data-toggle="popover">CSS</span> classes the widget added/removed to the element.</li>
       <li>Detaching any elements the widget added to the DOM.</li>
       <li>Destroying any widgets that the widget applied to other elements.</li>
     </ul>
   </li>
-  <li>Bind event handlers using the <code>_bind()</code> method to make it easy to find what events the widget reacts on.</li>
+  <li>Bind <span term-uuid="c57aef7c-97b4-4b2b-a999-8001accef1fe" class="glossary-term" data-toggle="popover">event</span> handlers using the <code>_bind()</code> method to make it easy to find what events the widget reacts on.</li>
   <li>
     <p>Bind events using the <code>on()</code> method.</p>
 

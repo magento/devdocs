@@ -1529,14 +1529,14 @@
   <li>
     <p>The <code>core_cache_tag</code> table constantly grows. If a Magento instance has multiple web sites and web stores with large catalogs, the table can grow to 15 million records in less than a day. Insertion into <code>core_cache_tag</code> leads to issues with MySQL server, including performance degradation.</p>
 
-    <p>(A <em>tag</em> is an identifier that classifies different types of Magento cache objects.)</p>
+    <p>(A <em>tag</em> is an identifier that classifies different types of Magento <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span> objects.)</p>
   </li>
   <li>
-    <p>The TwoLevels backend is more difficult to maintain because two services are required to make it work which makes it difficult to analyze cache content when necessary.<br />
+    <p>The TwoLevels <span term-uuid="74d6d228-34bd-4475-a6f8-0c0f4d6d0d61" class="glossary-term" data-toggle="popover">backend</span> is more difficult to maintain because two services are required to make it work which makes it difficult to analyze cache content when necessary.<br />
 Further, memcached itself has limitations such as a maximum object size and fixed bucket sizes which also contribute to difficult maintenance.</p>
   </li>
   <li>
-    <p>The <a href="http://framework.zend.com/manual/1.12/en/zend.cache.backends.html#zend.cache.backends.twolevels" target="_blank">Zend TwoLevels backend</a> does not scale well because using the database as part of the cache backend adds additional load to the master database server. Additionally, there is no reliable method for <code>memcached</code> replication.</p>
+    <p>The <a href="http://framework.zend.com/manual/1.12/en/zend.cache.backends.html#zend.cache.backends.twolevels" target="_blank">Zend TwoLevels backend</a> does not scale well because using the database as part of the <span term-uuid="8f2067d1-4a39-4ed2-916d-7c9c58ccf30c" class="glossary-term" data-toggle="popover">cache backend</span> adds additional load to the master database server. Additionally, there is no reliable method for <code>memcached</code> replication.</p>
   </li>
 </ul>
 
@@ -1545,13 +1545,13 @@ Further, memcached itself has limitations such as a maximum object size and fixe
 
 <ul>
   <li>
-    <p>Redis can also be used for PHP session storage, making it possible to completely replace <code>memcached</code> with Redis.</p>
+    <p>Redis can also be used for <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> session storage, making it possible to completely replace <code>memcached</code> with Redis.</p>
   </li>
   <li>
     <p>The Redis backend works by indexing tags in files so that tag operations do not require a full scan of every cache file.</p>
   </li>
   <li>
-    <p>The metadata and the cache record are stored in the same file rather than separate files resulting in fewer inodes and fewer file stat, read, write, lock, and unlink operations. Also, the original hashed directory structure had very poor distribution due to the <code>adler32</code> hashing algorithm and prefixes. The multi-level nested directories have been dropped in favor of single-level nesting made from multiple characters.</p>
+    <p>The <span term-uuid="3f0f2ef1-ad38-41c6-bd1e-390daaa71d76" class="glossary-term" data-toggle="popover">metadata</span> and the cache record are stored in the same file rather than separate files resulting in fewer inodes and fewer file stat, read, write, lock, and unlink operations. Also, the original hashed directory structure had very poor distribution due to the <code>adler32</code> hashing algorithm and prefixes. The multi-level nested directories have been dropped in favor of single-level nesting made from multiple characters.</p>
   </li>
   <li>
     <p>The backend supports tag-based cache cleanup without <code>foreach</code> loops.</p>

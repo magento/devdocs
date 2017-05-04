@@ -965,25 +965,25 @@
     <p><i>merchants</i>, who are focused on <strong>product version numbers</strong>. This product version number loosely corresponds to a platform version.</p>
   </li>
   <li>
-    <p><i>extension developers</i>, who focus on <strong>module version numbers</strong>. Each  module is released in its own Composer package, which is identified with a module version number.</p>
+    <p><i>extension developers</i>, who focus on <strong>module version numbers</strong>. Each  <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> is released in its own <span term-uuid="d85e2d0a-221f-4d03-aa43-0cda9f50809e" class="glossary-term" data-toggle="popover">Composer</span> package, which is identified with a module version number.</p>
   </li>
 </ul>
 
 <h2 id="product-version-numbers-merchant-focus">Product version numbers (merchant focus)</h2>
 
-<p>All merchant projects depend on the CE metapackage. (A <i>metapackage</i> consists of a <code>.zip</code> file that contains more than one Composer package.) Projects can specify a dependency on a specific version number (such as 2.0.1) or use a pattern to pick up patches automatically (such as 2.0.*)</p>
+<p>All merchant projects depend on the CE <span term-uuid="7490850a-0654-4ce1-83ff-d88c1d7d07fa" class="glossary-term" data-toggle="popover">metapackage</span>. (A <i>metapackage</i> consists of a <code>.zip</code> file that contains more than one <span term-uuid="b57038ca-7906-4fce-a00f-d614b81d5301" class="glossary-term" data-toggle="popover">Composer package</span>.) Projects can specify a dependency on a specific version number (such as 2.0.1) or use a pattern to pick up patches automatically (such as 2.0.*)</p>
 
 <p>Products are currently restricted to Magento Community Edition (CE) and Magento Enterprise Edition (EE). The version numbers of editions are designed for use in discussions with merchants. That is, major and minor increments to the version number will reflect the significance of changes to merchants. This may or may not reflect equally significant changes to developers.</p>
 
-<p>You can easily view the product version number of your Magento installation in the right footer of the Magento Admin (for example, <strong>Magento</strong> ver. 2.0.0-rc).</p>
+<p>You can easily view the product version number of your Magento installation in the right footer of the <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span> (for example, <strong>Magento</strong> ver. 2.0.0-rc).</p>
 
 <h2 id="software-version-numbers-extension-developer-focus">Software version numbers (extension developer focus)</h2>
 
-<p>Software version (module)  numbers are relevant only to developer-level discussions. Extension developers typically depend on module major version numbers using version patterns such as 100.*.</p>
+<p>Software version (module)  numbers are relevant only to developer-level discussions. <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">Extension</span> developers typically depend on module major version numbers using version patterns such as 100.*.</p>
 
 <p>If an extension developer depends on a private API, he specifies the major and minor version number such as 100.0.* to prevent the extension from working with the next CE release. This versioning practice forces merchants to upgrade to a newer version of the extension when they upgrade the CE release level.</p>
 
-<p>The Magento team changes the major version number when we make a change that will affect extension developers. Examples of such changes include public API changes and significant layout file changes.</p>
+<p>The Magento team changes the major version number when we make a change that will affect extension developers. Examples of such changes include public <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span> changes and significant <span term-uuid="73ab5daa-5857-4039-97df-11269b626134" class="glossary-term" data-toggle="popover">layout</span> file changes.</p>
 
 <h2 id="schema-and-data-version-numbers-extension-developer-focus">Schema and data version numbers (extension developer focus)</h2>
 

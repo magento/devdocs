@@ -1106,7 +1106,7 @@
 
 </section>
 
-			<p>This topic describes how to add new fields to default checkout forms: shipping address or billing address form. For illustration we use a case of adding a field to the shipping address form.</p>
+			<p>This topic describes how to add new fields to default <span term-uuid="278c3ce0-cd4c-4ffc-a098-695d94d73bde" class="glossary-term" data-toggle="popover">checkout</span> forms: shipping address or billing address form. For illustration we use a case of adding a field to the shipping address form.</p>
 
 <h2 id="add-the-field-to-layout-and-handle-its-value-on-the-client-side">Add the field to layout and handle its value on the client side</h2>
 
@@ -1148,7 +1148,7 @@ take the steps described further.</p>
 
 <span class="nv">$jsLayout</span><span class="p">[</span><span class="s1">&#39;components&#39;</span><span class="p">][</span><span class="s1">&#39;checkout&#39;</span><span class="p">][</span><span class="s1">&#39;children&#39;</span><span class="p">][</span><span class="s1">&#39;steps&#39;</span><span class="p">][</span><span class="s1">&#39;children&#39;</span><span class="p">][</span><span class="s1">&#39;shipping-step&#39;</span><span class="p">][</span><span class="s1">&#39;children&#39;</span><span class="p">][</span><span class="s1">&#39;shippingAddress&#39;</span><span class="p">][</span><span class="s1">&#39;children&#39;</span><span class="p">][</span><span class="s1">&#39;shipping-address-fieldset&#39;</span><span class="p">][</span><span class="s1">&#39;children&#39;</span><span class="p">][</span><span class="nv">$customAttributeCode</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$customField</span><span class="p">;</span></code></pre></figure>
 
-<p>This way, your field is added to the <code>customAttributes</code> property of <code>'Magento_Checkout/js/model/new-customer-address.js</code>, a JS object that lists all predefined address attributes and matches the corresponding server-side interface <code>\Magento\Quote\Api\Data\AddressInterface</code>. The <code>customAttributes</code> property was designed to contain custom EAV address attributes and is related to <code>\Magento\Quote\Model\Quote\Address\CustomAttributeListInterface::getAttributes</code> method. The code above will automatically handle local storage persistence on frontend.</p>
+<p>This way, your field is added to the <code>customAttributes</code> property of <code>'Magento_Checkout/js/model/new-customer-address.js</code>, a JS object that lists all predefined address attributes and matches the corresponding server-side interface <code>\Magento\Quote\Api\Data\AddressInterface</code>. The <code>customAttributes</code> property was designed to contain custom EAV address attributes and is related to <code>\Magento\Quote\Model\Quote\Address\CustomAttributeListInterface::getAttributes</code> method. The code above will automatically handle local storage persistence on <span term-uuid="b00459e5-a793-44dd-98d5-852ab33fc344" class="glossary-term" data-toggle="popover">frontend</span>.</p>
 
 <p>Optionally, instead of adding a plugin, you can use <a href="/guides/v2.1/extension-dev-guide/depend-inj.html">dependency injection (DI)</a>. For this, in <code>&lt;your_module_dir&gt;/Block/Checkout/</code> directory, add the <code>LayoutProcessor</code> class adding the custom field to the address form. The class must implement the <code>\Magento\Checkout\Block\Checkout\LayoutProcessorInterface</code> interface. You can use the code sample above as an example of the <code>\Magento\Checkout\Block\Checkout\LayoutProcessorInterface::process()</code> method implementation. To add your <code>LayoutProcessor</code> class the corresponding pool of processors, in the <code>&lt;your_module_dir&gt;/etc/frontend/di.xml</code> file specify the following:</p>
 
@@ -1164,7 +1164,7 @@ take the steps described further.</p>
 
 <p><strong>Step 2</strong></p>
 
-<p>Add a JS mixin to change the behavior of the component responsible for the data submission to the server side. For this, in your custom module, define a mixin as a separate AMD module that returns a callback function. Add the mixin file anywhere in the <code>&lt;your_module_dir&gt;/view/frontend/web</code> directory. There are no strict requirements for the mixin file naming.</p>
+<p>Add a JS <span term-uuid="1a305bdb-9be8-44aa-adad-98758821d6a7" class="glossary-term" data-toggle="popover">mixin</span> to change the behavior of the component responsible for the data submission to the <span term-uuid="ebe2cd14-d6d4-4d75-b3d7-a4f2384e5af9" class="glossary-term" data-toggle="popover">server side</span>. For this, in your custom module, define a mixin as a separate AMD module that returns a callback function. Add the mixin file anywhere in the <code>&lt;your_module_dir&gt;/view/frontend/web</code> directory. There are no strict requirements for the mixin file naming.</p>
 
 <p>Following is a sample mixin modifying the behavior of <code>Magento_Checkout/js/action/set-shipping-information</code> (this component is responsible for data submission between shipping and billing checkout steps):</p>
 
@@ -1192,7 +1192,7 @@ take the steps described further.</p>
     <span class="p">};</span>
 <span class="p">});</span></code></pre></figure>
 
-<p>When adding a field to the billing address form, you need to modify the behavior of one of the following components: <code>Magento_Checkout/js/action/place-order</code> or <code>Magento_Checkout/js/action/set-payment-information</code>, depending on when do you need the custom field valued to be passed to the server side. For example of a mixin, modifying one of these components, see the <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/CheckoutAgreements/view/frontend/web/js/model/place-order-mixin.js">place-order-mixin.js</a> in the Magento_CheckoutAgreements module.</p>
+<p>When adding a field to the billing address form, you need to modify the behavior of one of the following components: <code>Magento_Checkout/js/action/place-order</code> or <code>Magento_Checkout/js/action/set-payment-information</code>, depending on when do you need the custom field valued to be passed to the server side. For example of a mixin, modifying one of these components, see the <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/CheckoutAgreements/view/frontend/web/js/model/place-order-mixin.js">place-order-mixin.js</a> in the Magento_CheckoutAgreements <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>.</p>
 
 <p><strong>Step 3</strong></p>
 

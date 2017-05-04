@@ -663,15 +663,15 @@
 
 			<h2 id="overview-authenticate">Web API authentication overview</h2>
 <p>
-Magento allows developers to define web API resources and their permissions in a configuration file <code>webapi.xml</code>.
+Magento allows developers to define web <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span> resources and their permissions in a configuration file <code>webapi.xml</code>.
 Here are more details on exposing <a href="http://devdocs.magento.com/guides/v1.0/extension-dev-guide/service-contracts/service-to-web-service.html">services as Web APIs.</a>
 
-Before you can make web API calls, you must authenticate your identity and have necessary permissions (authorization) to access the API resource. Authentication allows Magento to identify the caller's user type. Based on the user's (administrator, integration, customer or guest) access rights, API calls' resource accessibility is determined.
+Before you can make <span term-uuid="377dc0a3-b8a7-4dfa-808e-2de37e4c0029" class="glossary-term" data-toggle="popover">web API</span> calls, you must authenticate your identity and have necessary permissions (authorization) to access the API resource. Authentication allows Magento to identify the caller's user type. Based on the user's (administrator, integration, customer or guest) access rights, API calls' resource accessibility is determined.
 </p>
 
 <h3 id="accessible-resources">Accessible resources</h3>
 <p>The list of resources that you can access depends on your user type. All customers have the same permissions, and as a result the same resources accessible. The preceding statement is true for guest users as well.
-Each administrator or integration user can have a unique set of permissions which is configured in the Magento Admin.
+Each administrator or integration user can have a unique set of permissions which is configured in the <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span>.
 Permissions required to access particular resource are configured in the <code>webapi.xml</code> file. This table lists the resources that each user type can access:</p>
 <table style="width:100%">
    <tr bgcolor="lightgray">
@@ -705,8 +705,8 @@ Permissions required to access particular resource are configured in the <code>w
 </table>
 
 <h3 id="acl-webapi-relation">Relation between acl.xml and webapi.xml</h3>
-<p>The <code>acl.xml</code> file defines the access control list (ACL) for a given module. It defines available set of permissions to access the resources.
-<code>acl.xml</code> files across all Magento modules are consolidated to build an ACL tree which is used to select allowed Admin role resources or third party Integration's access (System &gt; Extension &gt; Integration &gt; Add New Integration &gt; Available APIs).
+<p>The <code>acl.xml</code> file defines the access control list (ACL) for a given <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>. It defines available set of permissions to access the resources.
+<code>acl.xml</code> files across all Magento modules are consolidated to build an ACL tree which is used to select allowed <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span> role resources or third party Integration's access (System &gt; <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">Extension</span> &gt; Integration &gt; Add New Integration &gt; Available APIs).
 </p>
 
 <h4 id="acl-webapi-relation">Sample customer acl.xml</h4>
@@ -762,7 +762,7 @@ Permissions required to access particular resource are configured in the <code>w
 
 <p>For example, in the preceding <code>webapi.xml</code> for the customerGroups resource, only a user with <code>Magento_Customer::group</code> authorization can <code>GET /V1/customerGroups/:id</code>. On the other hand, you can create a customer using <code>POST /V1/customers</code> anonymously (or by a guest).</p>
 
-<p>Authorization is granted to either an administrator (or an integration) defined in the Magento Admin with the customer group selected as one of the resources in the ACL tree.</p>
+<p><span term-uuid="34ecb0ab-b8a3-42d9-a728-0b893e8c0417" class="glossary-term" data-toggle="popover">Authorization</span> is granted to either an administrator (or an integration) defined in the Magento Admin with the customer group selected as one of the resources in the ACL tree.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
    <p>A guest or anonymous is a special permission that doesn't need to be defined in <code>acl.xml</code> (and will not show up in the permissions tree in the Magento Admin). It just indicates that the current resource in <code>webapi.xml</code> can be accessed without the need for authentication.</p>
@@ -839,7 +839,7 @@ Permissions required to access particular resource are configured in the <code>w
 <ul>
    <li>Mobile application. <a href="/guides/v2.0/get-started/authentication/gs-authentication-token.html">Token-based authentication</a>.</li>
    <li>Third-party application. <a href="/guides/v2.0/get-started/authentication/gs-authentication-oauth.html">OAuth-based authentication</a>.</li>
-   <li>JavaScript widget on the Magento Admin or storefront. <a href="/guides/v2.0/get-started/authentication/gs-authentication-session.html">Session-based authentication</a>.</li>
+   <li>JavaScript <span term-uuid="f0dcf847-ce21-4b88-8b45-83e1cbf08100" class="glossary-term" data-toggle="popover">widget</span> on the Magento Admin or <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span>. <a href="/guides/v2.0/get-started/authentication/gs-authentication-session.html">Session-based authentication</a>.</li>
 </ul>
 
 <h2 id="related">Related topics</h2>

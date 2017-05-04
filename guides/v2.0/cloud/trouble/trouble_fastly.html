@@ -1634,7 +1634,7 @@
 </section>
 
 			<h2 id="overview-of-troubleshooting-fastly">Overview of troubleshooting Fastly</h2>
-<p>To verify the Fastly extension is working or to debug the Fastly extension, you can use the <code>curl</code> command to display certain response headers. The values of these response headers indicate whether or not Fastly is enabled and functioning properly.</p>
+<p>To verify the Fastly <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span> is working or to debug the Fastly extension, you can use the <code>curl</code> command to display certain response headers. The values of these response headers indicate whether or not Fastly is enabled and functioning properly.</p>
 
 <p>Response headers and values:</p>
 
@@ -1651,7 +1651,7 @@
 
 <ul>
   <li>
-    <p>Staging or production URL (also referred to as the <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec1.html#sec1.3" target="_blank"><em>origin server</em></a>)</p>
+    <p>Staging or production <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span> (also referred to as the <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec1.html#sec1.3" target="_blank"><em>origin server</em></a>)</p>
 
     <p>This command goes directly to the origin server, bypassing the Fastly extension; it returns the headers <code>Fastly-Module-Enabled</code>, <code>Cache-Control: max-age</code>, and <code>Pragma</code></p>
   </li>
@@ -1789,7 +1789,7 @@
 <p><a href="/guides/v2.0/cloud/live/stage-prod-migrate-prereq.html#cloud-live-migrate-fastly">Upload the Fastly VCL</a></p>
 
 <h3 id="x-cache-includes-miss"><code>X-Cache</code> includes <code>MISS</code></h3>
-<p>If <code>X-Cache</code> is either <code>HIT, MISS</code> or <code>MISS, MISS</code>, enter the same <code>curl</code> command again to make sure the page wasn’t recently evicted from the cache.</p>
+<p>If <code>X-Cache</code> is either <code>HIT, MISS</code> or <code>MISS, MISS</code>, enter the same <code>curl</code> command again to make sure the page wasn’t recently evicted from the <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span>.</p>
 
 <p>If you get the same result, use the <a href="#cloud-test-stage">first <code>curl</code> command</a> discussed in this topic to verify that:</p>
 
@@ -1802,7 +1802,7 @@
 <p>If the issue persists, another extension is likely resetting these headers. Repeat the following procedure as many times as necessary to identify which extension is resetting the headers:</p>
 
 <ol>
-  <li>Log in to the Magento Admin as an administrator.</li>
+  <li>Log in to the <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span> as an administrator.</li>
   <li>Click <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; <strong>Advanced</strong> &gt; <strong>Advanced</strong>.</li>
   <li>In the Disable Modules Output section in the right pane, locate an extension.</li>
   <li>From the list next to the extension name, click <strong>Disable</strong>.</li>

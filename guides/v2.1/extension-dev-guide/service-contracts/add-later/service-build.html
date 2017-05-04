@@ -449,7 +449,7 @@
 
 </section>
 
-			<p>A <em>service interface</em> is basically a contract between code that uses the service and an integration that implements the service. The service is PHP code—typically one or more interfaces, classes, and methods.</p>
+			<p>A <em>service interface</em> is basically a contract between code that uses the service and an integration that implements the service. The service is <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> code—typically one or more interfaces, classes, and methods.</p>
 
 <p>The code that uses a service should depend on the interface rather than on the service implementation. Doing so enables you to use a different implementation if needed.</p>
 
@@ -459,11 +459,11 @@
 
 <ul>
   <li>Module: The PHP code that defines your application’s business logic. The module code must be in subdirectories of <code>&lt;your Magento install dir&gt;/app/code/&lt;ModuleName&gt;</code>.</li>
-  <li>Integration: Code that enables a third-party application to get authorized access to Magento resources using either SOAP or REST calls. The merchant who activates the integration (which might be a module or extension) must agree to allow the integration to access those resources.</li>
+  <li>Integration: Code that enables a third-party application to get authorized access to Magento resources using either SOAP or REST calls. The merchant who activates the integration (which might be a <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> or extension) must agree to allow the integration to access those resources.</li>
   <li>Extension: A tested module that is marketed to other merchants on Magento Marketplace.</li>
 </ul>
 
-<p>One extension can contain multiple modules.</p>
+<p>One <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span> can contain multiple modules.</p>
 
 <p>One module can expose zero or more services. (In other words, <em>module</em> is a more generic term than <em>service</em>. A module doesn’t have to expose a service at all.)</p>
 
@@ -473,12 +473,12 @@
 
 <ul>
   <li>
-    <p>The methods must be annotated to describe the types of input that are used to generate contracts for the Web API framework.</p>
+    <p>The methods must be annotated to describe the types of input that are used to generate contracts for the Web <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span> framework.</p>
 
     <p>Input arguments can be scalar types, arrays or objects. If objects are used, they should be implemented as <a href="#about-service-data-objects">service data objects</a>.</p>
   </li>
   <li>
-    <p>The methods must be annotated to describe the types of the output that are used to generate contracts for Web API framework.</p>
+    <p>The methods must be annotated to describe the types of the output that are used to generate contracts for <span term-uuid="377dc0a3-b8a7-4dfa-808e-2de37e4c0029" class="glossary-term" data-toggle="popover">Web API</span> framework.</p>
 
     <p>Output arguments must be scalar types, arrays or service data objects. Objects should be implemented as <a href="#about-service-data-objects">service data objects</a>.</p>
   </li>
@@ -486,7 +486,7 @@
     <p>Every interface should be versioned and numbered like V1, V2, and so on.</p>
   </li>
   <li>
-    <p>The namespace should use the version number as a suffix. (For example, <code>Magento\Customer\Service\V1</code>).</p>
+    <p>The <span term-uuid="621ef86b-7314-4fbc-a80d-ab7fa45a27cb" class="glossary-term" data-toggle="popover">namespace</span> should use the version number as a suffix. (For example, <code>Magento\Customer\Service\V1</code>).</p>
   </li>
   <li>
     <p>You <em>cannot</em> use aliases in services interfaces or in service data objects because doing so causes WSDL generation to fail.</p>

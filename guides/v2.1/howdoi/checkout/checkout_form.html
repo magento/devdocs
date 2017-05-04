@@ -1108,7 +1108,7 @@
 
 			<h2 id="whats-in-this-topic">What’s in this topic</h2>
 
-<p>This topic describes how to add a custom input form (implemented as a UI component) to the Checkout page.</p>
+<p>This topic describes how to add a custom input form (implemented as a UI component) to the <span term-uuid="278c3ce0-cd4c-4ffc-a098-695d94d73bde" class="glossary-term" data-toggle="popover">Checkout</span> page.</p>
 
 <p>Most of the elements, including the default forms on the Checkout page are implemented as UI components. And we recommend your custom form to be a UI component, extending the default <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Ui/view/base/web/js/form/form.js">Magento_Ui/js/form/form</a> component.</p>
 
@@ -1202,7 +1202,7 @@
 
 <p>Certain default checkout templates declare regions where additional content can be inserted. You can add your custom form in any of these regions. These regions are provided with corresponding comments in the default Checkout page layout file <code>&lt;Checkout_module_dir&gt;/view/frontend/layout/checkout_index_index.xml</code>.</p>
 
-<p>Also you locate the regions in the <code>.html</code> templates of the blocks used in this layout file. 
+<p>Also you locate the regions in the <code>.html</code> templates of the blocks used in this <span term-uuid="73ab5daa-5857-4039-97df-11269b626134" class="glossary-term" data-toggle="popover">layout</span> file. 
 For example, the shipping JS component (see <code>&lt;Magento_Checkout_module_dir&gt;/view/frontend/web/template/shipping.html</code>) provides the <code>before-form</code> region and corresponding UI container.</p>
 
 <p>Any content added here is rendered before the Shipping Address form on the Shipping Information step. To add content to this region, create a <code>checkout_index_index.xml</code> layout update in the <code>&lt;your_module_dir&gt;/view/frontend/layout/</code>. It should be similar to the following:</p>
@@ -1244,7 +1244,7 @@ For example, the shipping JS component (see <code>&lt;Magento_Checkout_module_di
 
 <h3 id="static-forms">Static forms</h3>
 
-<p>The term static refers to the forms where all the fields are already known/predefined and do not depend on any settings in the Admin. (compare to <a href="#dynamic_form">dynamic forms</a>)</p>
+<p>The term static refers to the forms where all the fields are already known/predefined and do not depend on any settings in the <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span>. (compare to <a href="#dynamic_form">dynamic forms</a>)</p>
 
 <p>The fields of static forms are not generated dynamically, so they can be defined in a layout.</p>
 

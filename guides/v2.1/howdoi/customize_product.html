@@ -1108,7 +1108,7 @@
 
 			<h2>What's in this topic</h2>
 
-<p>This topic describes how developers can customize the product creation form used on the product creation and product edit pages in Admin.</p>
+<p>This topic describes how developers can customize the product creation form used on the product creation and product edit pages in <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span>.</p>
 
 <p>The following image is an illustration of the default view of the form on the <strong>New Product</strong> page:</p>
 
@@ -1118,7 +1118,7 @@
 
 <p>In Magento version 2.1, the product creation form was completely refactored, and implemented using the <a href="/guides/v2.1/ui-components/ui-form.html">form UI component</a>.</p>
 
-<p>Product attributes and attribute sets available in the form, can be customized and added under <strong>STORES</strong> &gt; <strong>Attributes</strong> in the Admin. But you can also customize the form view and behavior in code. The following sections describe what files define the form and how they can be customized in your module.</p>
+<p>Product attributes and attribute sets available in the form, can be customized and added under <strong>STORES</strong> &gt; <strong>Attributes</strong> in the Admin. But you can also customize the form view and behavior in code. The following sections describe what files define the form and how they can be customized in your <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>.</p>
 
 <h2 id="prerequisites">Prerequisites</h2>
 
@@ -1177,7 +1177,7 @@
 
 <h3 id="adding-new-elements">Adding new elements</h3>
 
-<p>By default, the new elements (fields, field sets, modals, grids) which you add in the form configuration file, are displayed on the form whatever product is created; that is, for all product types.</p>
+<p>By default, the new elements (fields, field sets, modals, grids) which you add in the form configuration file, are displayed on the form whatever product is created; that is, for all <span term-uuid="6e836354-0067-48ac-84ce-a4ab7c0c492e" class="glossary-term" data-toggle="popover">product types</span>.</p>
 
 <p>In the <a href="#modifier">modifier class described further</a>, you can set the conditions for displaying certain elements for certain product types.</p>
 
@@ -1225,7 +1225,7 @@
 
 <p>In your custom module directory, add the modifier class that implements the <code>Magento\UI\DataProvider\ModifierInterface</code> interface or extends the <code>Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\AbstractModifier</code>class. In your modifier, the <code>modifyData()</code> and the <code>modifyMeta()</code> methods must be implemented.</p>
 
-<p>In the modifier class, you can add UI elements using the same structure as in the XML configuration.</p>
+<p>In the modifier class, you can add UI elements using the same structure as in the <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span> configuration.</p>
 
 <p>For example:</p>
 

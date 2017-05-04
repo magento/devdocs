@@ -752,14 +752,14 @@
 
 <p>It covers declarative notation, used when initialization is required, and imperative notation, used in other cases.</p>
 
-<p>We strongly recommend that you use the described approaches and do not add inline JavaScript.</p>
+<p>We strongly recommend that you use the described approaches and do not add inline <span term-uuid="312b4baf-15f7-4968-944e-c814d53de218" class="glossary-term" data-toggle="popover">JavaScript</span>.</p>
 
 <h2 id="init_phtml">Insert a JS component in a PHTML template</h2>
 <p>Depending on your task, you might want to use declarative or imperative notation. Both ways are described in the following sections.</p>
 
 <h3 id="declarative-notation">Declarative notation</h3>
 
-<p>Using the declarative notation to insert a JS component allows preparing all the configuration on the backend side and outputting it to the page source using standard tools. You should use declarative notation if your JavaScript component requires initialization.</p>
+<p>Using the declarative notation to insert a JS component allows preparing all the configuration on the <span term-uuid="74d6d228-34bd-4475-a6f8-0c0f4d6d0d61" class="glossary-term" data-toggle="popover">backend</span> side and outputting it to the page source using standard tools. You should use declarative notation if your JavaScript component requires initialization.</p>
 
 <p>In Magento 2 there are two ways of declarative notation:</p>
 
@@ -772,7 +772,7 @@
 
 <h4 id="data_mage_init">Declarative notation using the <code>data-mage-init</code> attribute</h4>
 
-<p>Use the <code>data-mage-init</code> attribute to insert a JS component in a certain HTML element. The following code sample is an illustration. Here a JS component is inserted in the <code>&lt;nav/&gt;</code> element:</p>
+<p>Use the <code>data-mage-init</code> attribute to insert a JS component in a certain <span term-uuid="a2aff425-07dd-4bd6-9671-29b7edefa871" class="glossary-term" data-toggle="popover">HTML</span> element. The following code sample is an illustration. Here a JS component is inserted in the <code>&lt;nav/&gt;</code> element:</p>
 <pre>
 &lt;nav data-mage-init='{ &quot;&lt;component_name&gt;&quot;: {...} }'&gt;&lt;/nav&gt;
 </pre>
@@ -803,7 +803,7 @@ return function(config, element) { ... };
 </pre>
 
 </li>
-<li>If neither a function nor an object with the <code>"&lt;component_name&gt;"</code> key are returned, then the initializer tries to search for <code>"&lt;component_name&gt;"</code> in the jQuery prototype. If found, the initializer applies it as <code>$(element).&lt;component_name&gt;(config)</code>. 
+<li>If neither a function nor an object with the <code>"&lt;component_name&gt;"</code> key are returned, then the initializer tries to search for <code>"&lt;component_name&gt;"</code> in the <span term-uuid="5bfa8a8e-6f3e-4fed-a43e-62339916f02e" class="glossary-term" data-toggle="popover">jQuery</span> prototype. If found, the initializer applies it as <code>$(element).&lt;component_name&gt;(config)</code>. 
 
 For example:
 <pre>
@@ -882,7 +882,7 @@ Such a component does not require either <code>config</code> or <code>element</c
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;[data-role=example]&#39;</span><span class="p">).</span><span class="nx">accordion</span><span class="p">();</span></code></pre></figure>
 
-<p>To initialize a widget with options, use notation similar to the following:</p>
+<p>To initialize a <span term-uuid="f0dcf847-ce21-4b88-8b45-83e1cbf08100" class="glossary-term" data-toggle="popover">widget</span> with options, use notation similar to the following:</p>
 
 <figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span> <span class="c1">// to ensure that code evaluates on page load</span>
     <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;[data-role=example]&#39;</span><span class="p">)</span>  <span class="c1">// we expect that page contains markup &lt;tag data-role=&quot;example&quot;&gt;..&lt;/tag&gt;</span>

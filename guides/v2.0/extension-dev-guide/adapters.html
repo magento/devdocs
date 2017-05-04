@@ -1057,8 +1057,8 @@ These classes allow you to use functionality from third-party libraries in your 
 
 <h2 id="when-to-use">When to use</h2>
 
-<p>You should always use adapter classes instead of directly using classes from third-party libraries.
-This reduces the change impact on your code when the API changes in a third-party library.</p>
+<p>You should always use <span term-uuid="edb42858-1ff8-41f9-80a6-edf0d86d7e10" class="glossary-term" data-toggle="popover">adapter</span> classes instead of directly using classes from third-party libraries.
+This reduces the change impact on your code when the <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span> changes in a third-party <span term-uuid="08968dbb-2eeb-45c7-ae95-ffca228a7575" class="glossary-term" data-toggle="popover">library</span>.</p>
 
 <p>We recommend using adapter classes for <a href="/guides/v2.0/extension-dev-guide/depend-inj.html">dependency injection</a> to get access to the functionality provided by third-party classes.</p>
 
@@ -1088,7 +1088,7 @@ Classes implementing this adapter interface use the third-party class directly t
 
 <h2 id="example-code">Example Code</h2>
 
-<p>The code below describes an interface for an adapter that parses markdown.</p>
+<p>The code below describes an interface for an adapter that parses <span term-uuid="a5ef9041-976f-4eb3-826e-bf836027d8c3" class="glossary-term" data-toggle="popover">markdown</span>.</p>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="sd">/**</span>
 <span class="sd"> * Interface for markdown library adapters</span>
@@ -1108,7 +1108,7 @@ Classes implementing this adapter interface use the third-party class directly t
 
 <p><br /></p>
 
-<p>The code below is an implementation class of the <code>AdapterInterface</code> that uses the <a href="https://github.com/michelf/php-markdown" target="_blank">php-markdown</a> library to convert markdown into HTML.</p>
+<p>The code below is an implementation class of the <code>AdapterInterface</code> that uses the <a href="https://github.com/michelf/php-markdown" target="_blank">php-markdown</a> library to convert markdown into <span term-uuid="a2aff425-07dd-4bd6-9671-29b7edefa871" class="glossary-term" data-toggle="popover">HTML</span>.</p>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">namespace</span> <span class="nx">MyCompany\MyModule\Markdown\Parser\Adapter\PhpMarkdown</span><span class="p">;</span>
 
@@ -1179,7 +1179,7 @@ This code differs from the previous implementations in that an instance of the <
 
 <p><br /></p>
 
-<p>The following dependency injection entries belong in the <code>di.xml</code> file.
+<p>The following <span term-uuid="2be50595-c5c7-4b9d-911c-3bf2cd3f7beb" class="glossary-term" data-toggle="popover">dependency injection</span> entries belong in the <code>di.xml</code> file.
 They describe to the ObjectManager how to create the third-party and adapter classes.</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">&quot;defaultCiconia&quot;</span> <span class="na">type=</span><span class="s">&quot;Ciconia\Ciconia&quot;</span> <span class="na">shared=</span><span class="s">&quot;false&quot;</span><span class="nt">&gt;</span>

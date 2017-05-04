@@ -815,15 +815,15 @@
 
 <h2 id="overview">Overview</h2>
 
-<p>The Magento_CatalogImportExportStaging module is a part of the staging functionality in Magento EE. It extends the Magento_CatalogImportExport module functionality to be used in staging mode.</p>
+<p>The Magento_CatalogImportExportStaging <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> is a part of the staging functionality in Magento EE. It extends the Magento_CatalogImportExport module functionality to be used in staging mode.</p>
 
 <h2 id="implementation-details">Implementation details</h2>
 
 <p>The Magento_CatalogImportExportStaging module:</p>
 
 <ul>
-  <li>adds a plugin on <code>Magento\CatalogImportExport\Model\Import\Product::saveProductEntity</code> to add version and sequence information to the product entity</li>
-  <li>listens to the <code>catalog_product_import_bunch_delete_commit_before</code> event to delete values from the sequence table when products are being deleted</li>
+  <li>adds a plugin on <code>Magento\CatalogImportExport\Model\Import\Product::saveProductEntity</code> to add version and sequence information to the product <span term-uuid="a9027f5d-efab-4662-96aa-c2999b5ab259" class="glossary-term" data-toggle="popover">entity</span></li>
+  <li>listens to the <code>catalog_product_import_bunch_delete_commit_before</code> <span term-uuid="c57aef7c-97b4-4b2b-a999-8001accef1fe" class="glossary-term" data-toggle="popover">event</span> to delete values from the sequence table when products are being deleted</li>
 </ul>
 
 <h2 id="dependencies">Dependencies</h2>
@@ -832,7 +832,7 @@
 
 <h2 id="extension-points">Extension points</h2>
 
-<p>The Magento_CatalogImportExportStaging module does not provide any specific extension points. You can extend it using the Magento extension mechanism.</p>
+<p>The Magento_CatalogImportExportStaging module does not provide any specific <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span> points. You can extend it using the Magento extension mechanism.</p>
 
 <p>For more information about the Magento extension mechanism, see <a href="http://devdocs.magento.com/guides/v2.1/extension-dev-guide/plugins.html">Magento plug-ins</a> and <a href="http://devdocs.magento.com/guides/v2.1/extension-dev-guide/depend-inj.html">Magento dependency injection</a>.</p>
 

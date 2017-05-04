@@ -1612,7 +1612,7 @@
 
 <ul>
   <li>
-    <p>Set up the following cache mechanisms in the Magento configuration:</p>
+    <p>Set up the following <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span> mechanisms in the Magento configuration:</p>
 
     <ul>
       <li><a href="/guides/v2.1/config-guide/cache/caching-database.html">Database</a></li>
@@ -1645,7 +1645,7 @@
 <p>This topic discusses the following options for configuring caching:</p>
 
 <ul>
-  <li>Modifying the provided <code>default</code> cache frontend, which means you modify only <code>&lt;your Magento install dir&gt;/app/etc/di.xml</code> (the Magento application’s global dependency injection configuration)</li>
+  <li>Modifying the provided <code>default</code> cache frontend, which means you modify only <code>&lt;your Magento install dir&gt;/app/etc/di.xml</code> (the Magento application’s global <span term-uuid="2be50595-c5c7-4b9d-911c-3bf2cd3f7beb" class="glossary-term" data-toggle="popover">dependency injection</span> configuration)</li>
   <li>Configuring your own custom cache frontend, which means you modify only <code>&lt;your Magento install dir&gt;/app/etc/env.php</code> because it overrides the equivalent configuration in <code>di.xml</code></li>
 </ul>
 
@@ -1654,7 +1654,7 @@
 </div>
 
 <h2 id="cache-mage-frontend">Step 1: Define a cache frontend</h2>
-<p>The Magento application has a <code>default</code> cache frontend you can use for any <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean-over">cache type</a>. This section discusses how to optionally define a cache frontend with a different name, which is preferable if you expect to customize your frontend.</p>
+<p>The Magento application has a <code>default</code> cache <span term-uuid="b00459e5-a793-44dd-98d5-852ab33fc344" class="glossary-term" data-toggle="popover">frontend</span> you can use for any <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean-over">cache type</a>. This section discusses how to optionally define a <span term-uuid="ca5ad9ac-9d39-45b5-80b1-e90d192f20d0" class="glossary-term" data-toggle="popover">cache frontend</span> with a different name, which is preferable if you expect to customize your frontend.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>To use the <code>default</code> cache type, you don't need to modify <code>env.php</code> at all; you modify Magento's global <code>di.xml</code>. See the topics referenced in <a href="/guides/v2.1/config-guide/cache/caching_low-level.html">Low-level cache options</a>. </p>
@@ -1685,7 +1685,7 @@
 <p>where <code>&lt;unique frontend id&gt;</code> is a unique name to identify your frontend and <code>&lt;cache options&gt;</code> are options discussed in the topics specific to each type of caching (database, Redis, and so on).</p>
 
 <h2 id="cache-mage-adv">Step 2: Configure the cache</h2>
-<p>You can specify frontend and backend cache configuration options in <code>env.php</code> or <code>di.xml</code>. This task is optional.</p>
+<p>You can specify frontend and <span term-uuid="74d6d228-34bd-4475-a6f8-0c0f4d6d0d61" class="glossary-term" data-toggle="popover">backend</span> cache configuration options in <code>env.php</code> or <code>di.xml</code>. This task is optional.</p>
 
 <p><code>env.php</code> example:</p>
 
@@ -1704,7 +1704,7 @@
 
 <ul>
   <li>
-    <p><code>&lt;frontend_type&gt;</code> is the low-level frontend cache type. Specify the name of a class that is compatible with <a href="http://framework.zend.com/apidoc/1.7/Zend_Cache/Zend_Cache_Core.html" target="_blank">Zend_Cache_Core</a>.</p>
+    <p><code>&lt;frontend_type&gt;</code> is the low-level frontend <span term-uuid="65f9a5a1-79ee-4f27-aac7-29abe24db40d" class="glossary-term" data-toggle="popover">cache type</span>. Specify the name of a class that is compatible with <a href="http://framework.zend.com/apidoc/1.7/Zend_Cache/Zend_Cache_Core.html" target="_blank">Zend_Cache_Core</a>.</p>
 
     <p>If you omit <code>&lt;frontend_type&gt;</code>, <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Cache/Core.php" target="_blank">Magento\Framework\Cache\Core</a> is used.</p>
   </li>

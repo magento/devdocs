@@ -1090,7 +1090,7 @@
 <p>Changes made:</p>
 
 <ul>
-  <li>The language package (<code>i18n</code> directory) can now be moved and saved to any directory of your extension.</li>
+  <li>The <span term-uuid="9c4c7b9b-43f0-4454-8e8c-fb62ad40c35f" class="glossary-term" data-toggle="popover">language package</span> (<code>i18n</code> directory) can now be moved and saved to any directory of your <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span>.</li>
   <li>The phrases for translations are enabled in the <a href="https://github.com/magento/magento2/blob/2.1/lib/internal/Magento/Framework/Phrase.php" target="_blank">Phrase</a> class.</li>
 </ul>
 
@@ -1115,7 +1115,7 @@
 
 <ul>
   <li>if you want to replace certain strings from the <a href="/guides/v2.1/frontend-dev-guide/themes/theme-inherit.html">parent theme</a>. For example, use “Compare” instead of “Add to Compare”.</li>
-  <li>if you want your theme to be ready for localization.</li>
+  <li>if you want your <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span> to be ready for localization.</li>
 </ul>
 
 <p>For practical illustration of creating a dictionary for a theme for both cases, see the <a href="/guides/v2.1/frontend-dev-guide/translations/translate_practice.html">Create a translation dictionary for a theme</a> topic.</p>
@@ -1133,7 +1133,7 @@
   <p>Only one variant of translation can be used for a word or phrase in a package. Otherwise, Magento returns an error.</p>
 </div>
 
-<p>Anyone can submit translations on the storefront using the Text Editor. Changes made in the Text Editor are not recorded in an instance’s dictionary; instead, they are stored in the database. In the storefront, an inline translation of a phrase overwrites the translation stated in a dictionary. However, inline translations are theme-specific and do not apply if another theme is assigned.</p>
+<p>Anyone can submit translations on the <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span> using the Text Editor. Changes made in the Text Editor are not recorded in an instance’s dictionary; instead, they are stored in the database. In the storefront, an inline translation of a phrase overwrites the translation stated in a dictionary. However, inline translations are theme-specific and do not apply if another theme is assigned.</p>
 
 <h2 id="m2devgde-xlate-dictionaries">Translation dictionaries</h2>
 <p>Magento translates words and phrases when all of the following conditions are met:</p>
@@ -1143,7 +1143,7 @@
   <li>This language is configured by the store administrator to be used in specified scope (that is, storefront)</li>
 </ul>
 
-<p>The Magento application automatically assembles translation dictionaries located in modules’ <code>i18n</code> directory into a dictionary per language. For example, Brazilian Portuguese (<code>pt_BR</code>) translation dictionaries might be located in module and theme directories similar to the following:</p>
+<p>The Magento application automatically assembles translation dictionaries located in modules’ <code>i18n</code> directory into a dictionary per language. For example, Brazilian Portuguese (<code>pt_BR</code>) translation dictionaries might be located in <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> and theme directories similar to the following:</p>
 
 <pre><code>app/code/Magento/Checkout/i18n/pt_BR.csv
 app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/i18n/pt_BR.csv
@@ -1192,7 +1192,7 @@ app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/i18n/pt_BR.csv
 
 <ul>
   <li>
-    <p><code>composer.json</code> that contains any dependencies for the language package and a mapping to its defined locale</p>
+    <p><code>composer.json</code> that contains any dependencies for the language package and a mapping to its defined <span term-uuid="05099dbb-d491-4e33-a065-16035cb2d4d9" class="glossary-term" data-toggle="popover">locale</span></p>
 
     <p><a href="https://github.com/magento/magento2/blob/2.1/app/i18n/Magento/de_DE/composer.json" target="_blank">Sample composer.json</a></p>
   </li>

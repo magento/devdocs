@@ -849,7 +849,7 @@ like this:</p>
 
 <p>3.1. There SHOULD be no circular dependencies between objects.</p>
 
-<p>3.2. The <code>app/etc/di.xml</code> file MUST contain only framework-level Dependency Injection (DI) settings.</p>
+<p>3.2. The <code>app/etc/di.xml</code> file MUST contain only framework-level <span term-uuid="2be50595-c5c7-4b9d-911c-3bf2cd3f7beb" class="glossary-term" data-toggle="popover">Dependency Injection</span> (DI) settings.</p>
 
 <p>3.3. All modular DI settings (except for Presentation layer configuration) SHOULD be stored in <code>&lt;module_dir&gt;/etc/di.xml</code>.</p>
 
@@ -859,7 +859,7 @@ like this:</p>
 
 <p>4.1. Around-plugins SHOULD only be used when behavior of an original method is supposed to be substituted in certain scenarios.</p>
 
-<p>4.2. Plugins SHOULD NOT be used within own module.</p>
+<p>4.2. Plugins SHOULD NOT be used within own <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>.</p>
 
 <p>4.3. Plugins SHOULD NOT be added to data objects.</p>
 
@@ -883,7 +883,7 @@ like this:</p>
 
 <p start="5.2">5.2. Exceptions MUST NOT be handled in the same function where they are thrown.</p>
 
-<p>5.3. If a function A calls function B, and function B might throw an exception, this exception MUST be either processed by function A or declared by the @throws annotation in the documentation block of function A.</p>
+<p>5.3. If a function A calls function B, and function B might throw an exception, this <span term-uuid="53da11f1-d0b8-4a7e-b078-1e099462b409" class="glossary-term" data-toggle="popover">exception</span> MUST be either processed by function A or declared by the @throws annotation in the documentation block of function A.</p>
 
 <p>5.4. Exceptions MUST NOT handle message output. It is the processing code that decides how to process an exception.</p>
 
@@ -895,7 +895,7 @@ like this:</p>
 
 <p>5.8. All direct communications with third-party libraries MUST be wrapped with a try/catch statement.</p>
 
-<p>5.9. <code>\Exception</code> SHOULD be caught only in the code that calls third-party libraries, in addition to catching specific exceptions thrown by the library.</p>
+<p>5.9. <code>\Exception</code> SHOULD be caught only in the code that calls third-party libraries, in addition to catching specific exceptions thrown by the <span term-uuid="08968dbb-2eeb-45c7-ae95-ffca228a7575" class="glossary-term" data-toggle="popover">library</span>.</p>
 
 <p>5.10. <code>\Exception</code> SHOULD NOT be thrown in Front Controller and Action Controllers.</p>
 
@@ -930,7 +930,7 @@ like this:</p>
     <p><strong>Command</strong> for Actions</p>
   </li>
   <li>
-    <p><strong>Query</strong> for Layout and its elements (Blocks and UI Components)</p>
+    <p><strong>Query</strong> for <span term-uuid="73ab5daa-5857-4039-97df-11269b626134" class="glossary-term" data-toggle="popover">Layout</span> and its elements (Blocks and UI Components)</p>
   </li>
 </ul>
 
@@ -977,10 +977,10 @@ like this:</p>
     <p>application codebase</p>
   </li>
   <li>
-    <p>XML configuration</p>
+    <p><span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span> configuration</p>
   </li>
   <li>
-    <p>generated code and static files</p>
+    <p>generated code and <span term-uuid="363662cb-73f1-4347-a15e-2d2adabeb0c2" class="glossary-term" data-toggle="popover">static files</span></p>
   </li>
   <li>
     <p>database structure</p>
@@ -992,13 +992,13 @@ like this:</p>
     <p>configuration scopes (stores/store groups/websites)</p>
   </li>
   <li>
-    <p>CMS entities</p>
+    <p><span term-uuid="f3944faf-127e-4097-9918-a2e9c647d44f" class="glossary-term" data-toggle="popover">CMS</span> entities</p>
   </li>
 </ul>
 
 <p>7.3. Environment Configuration includes information about application services connection.</p>
 
-<p>7.4. Data includes the business entity data.</p>
+<p>7.4. Data includes the business <span term-uuid="a9027f5d-efab-4662-96aa-c2999b5ab259" class="glossary-term" data-toggle="popover">entity</span> data.</p>
 
 <p>7.5. Code and Environment Configuration MUST not be stored in Data Storage.</p>
 
@@ -1020,7 +1020,7 @@ like this:</p>
 
 <p>8.5. Only the <code>@api</code> code of any module can be referenced by other modules.</p>
 
-<p>8.6. A module MUST NOT contain references to theme resources.</p>
+<p>8.6. A module MUST NOT contain references to <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span> resources.</p>
 
 <p>8.7. A component MUST NOT rely neither on dependencies of dependencies nor on dependencies of the project it is included in (e.g., Magento application). All component dependencies MUST be stated explicitly.</p>
 
@@ -1028,15 +1028,15 @@ like this:</p>
 
 <p>9.1. All Client-Server calls must follow the <a href="https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol">HTTP Protocol</a>.</p>
 
-<p>9.2. All customer-agnostic data (Products, Categories, CMS Pages) MUST be rendered on a server and cached in a public cache server (Varnish).</p>
+<p>9.2. All customer-agnostic data (Products, Categories, CMS Pages) MUST be rendered on a server and cached in a public <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span> server (Varnish).</p>
 
-<p>9.3. All customer-specific data MUST be rendered on the browser side using a JavaScript (JS) application.</p>
+<p>9.3. All customer-specific data MUST be rendered on the browser side using a <span term-uuid="312b4baf-15f7-4968-944e-c814d53de218" class="glossary-term" data-toggle="popover">JavaScript</span> (JS) application.</p>
 
-<p>9.4. HTML markup generated on server MUST NOT contain user-specific data.</p>
+<p>9.4. <span term-uuid="a2aff425-07dd-4bd6-9671-29b7edefa871" class="glossary-term" data-toggle="popover">HTML</span> <span term-uuid="8f407f13-4350-449b-9dc5-217dcf01bc42" class="glossary-term" data-toggle="popover">markup</span> generated on server MUST NOT contain user-specific data.</p>
 
 <p>9.5. HTML markup generated on server MUST NOT contain session-specific data (e.g. a form element with a CSRF token).</p>
 
-<p>9.6. A JS application MAY receive customer-specific data using the CustomerData JS API.</p>
+<p>9.6. A JS application MAY receive customer-specific data using the CustomerData JS <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span>.</p>
 
 <p>9.7. All state-modifying requests from a browser SHOULD be performed with AJAX requests.</p>
 
@@ -1050,7 +1050,7 @@ like this:</p>
 
 <h2 id="javascript-js-application">10. JavaScript (JS) application</h2>
 
-<p>10.1. The Magento 2 UI Component framework MUST be used to build front-end applications.</p>
+<p>10.1. The Magento 2 <span term-uuid="9bcc648c-bd08-4feb-906d-1e24c4f2f422" class="glossary-term" data-toggle="popover">UI Component</span> framework MUST be used to build front-end applications.</p>
 
 <p>10.2. Only private content SHOULD be rendered in browser.</p>
 
@@ -1094,7 +1094,7 @@ like this:</p>
 
 <p>12.1. Both REST and SOAP API’s MUST be exposed.</p>
 
-<p>12.2. All Web API GET endpoints MUST return lists of entities.</p>
+<p>12.2. All <span term-uuid="377dc0a3-b8a7-4dfa-808e-2de37e4c0029" class="glossary-term" data-toggle="popover">Web API</span> GET endpoints MUST return lists of entities.</p>
 
 <h2 id="command-line-interface-cli">13. Command line interface (CLI)</h2>
 
@@ -1108,7 +1108,7 @@ like this:</p>
 
 <h2 id="events">14. Events</h2>
 
-<p>14.1. All values (including objects) passed to an event MUST NOT be modified in the event observer. Instead, plugins SHOULD BE used for modifying the input or output of a function.</p>
+<p>14.1. All values (including objects) passed to an <span term-uuid="c57aef7c-97b4-4b2b-a999-8001accef1fe" class="glossary-term" data-toggle="popover">event</span> MUST NOT be modified in the event observer. Instead, plugins SHOULD BE used for modifying the input or output of a function.</p>
 
 <div class="collapsible"><b class="collapsible-title">Example: </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">SampleEventObserverThatModifiesInputs</span>
 <span class="p">{</span>

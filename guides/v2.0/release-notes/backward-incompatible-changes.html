@@ -986,7 +986,7 @@
 <h3 id="ui-changes">UI changes</h3>
 
 <ul>
-  <li>The <strong>Subproduct discounts</strong> dropdown on a catalog price rule was deleted, including <strong>Apply</strong> and <strong>Discount Amount</strong> subfields.</li>
+  <li>The <strong>Subproduct discounts</strong> dropdown on a <span term-uuid="8d40d668-4996-4856-9f81-b1386cf4b14f" class="glossary-term" data-toggle="popover">catalog</span> price rule was deleted, including <strong>Apply</strong> and <strong>Discount Amount</strong> subfields.</li>
 </ul>
 
 <table>
@@ -1022,7 +1022,7 @@
   </li>
   <li>POST data structure changed
     <ul>
-      <li>The parent category ID <code>parent_id</code> is now posted in the <code>general</code> field.</li>
+      <li>The parent <span term-uuid="50e49338-1e6c-4473-8527-9e401d67ea2b" class="glossary-term" data-toggle="popover">category</span> ID <code>parent_id</code> is now posted in the <code>general</code> field.</li>
       <li>The category data from the <code>general</code> array is split to the specific arrays by a field set name.</li>
     </ul>
   </li>
@@ -1100,11 +1100,11 @@
   <li>Check boxes and radio buttons work as <code>on/off</code> fields.</li>
   <li>Category products grid
     <ul>
-      <li>Rendered by a UI component as a standalone block</li>
-      <li>Initialized using the <code>magento-init</code> event</li>
+      <li>Rendered by a <span term-uuid="9bcc648c-bd08-4feb-906d-1e24c4f2f422" class="glossary-term" data-toggle="popover">UI component</span> as a standalone block</li>
+      <li>Initialized using the <code>magento-init</code> <span term-uuid="c57aef7c-97b4-4b2b-a999-8001accef1fe" class="glossary-term" data-toggle="popover">event</span></li>
     </ul>
   </li>
-  <li>To join <abbr title="Entity Attribute Value">EAV</abbr> attributes use <code>linkField</code>.</li>
+  <li>To join <abbr title="&lt;span term-uuid=&quot;a9027f5d-efab-4662-96aa-c2999b5ab259&quot; class=&quot;glossary-term&quot; data-toggle=&quot;popover&quot;&gt;Entity&lt;/span&gt; Attribute Value">EAV</abbr> attributes use <code>linkField</code>.</li>
 </ul>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="nx">Magento\Framework\Model\Entity\MetadataPool</span><span class="o">::</span><span class="na">getMetadata</span><span class="p">(</span><span class="nx">Magento\Catalog\Api\Data\CategoryInterface</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="na">getLinkField</span><span class="p">()</span></code></pre></figure>
@@ -1120,13 +1120,13 @@
 <ul>
   <li>A form is built with UI components (<a href="/guides/v2.0/ui-components/ui-form.html">more info about a form component</a>).</li>
   <li>The form is extended using a form configuration file <a href="https://github.com/magento/magento2/blob/bbc0e893539cad4ee415dd458dece7cd36d44cdc/app/code/Magento/Catalog/view/adminhtml/ui_component/category_form.xml"><code>&lt;magento2&gt;/app/code/Magento/Catalog/view/adminhtml/ui_component/category_form.xml</code></a> (see <a href="/guides/v2.0/ui-components/ui-definition.html">Overview of UI components</a>).</li>
-  <li>A data provider <code>\Magento\Catalog\Model\Category\DataProvider</code> is used to set data and fields metadata for the form.</li>
+  <li>A data provider <code>\Magento\Catalog\Model\Category\DataProvider</code> is used to set data and fields <span term-uuid="3f0f2ef1-ad38-41c6-bd1e-390daaa71d76" class="glossary-term" data-toggle="popover">metadata</span> for the form.</li>
   <li>Default form data is now a part of metadata that is fetched from the <code>\Magento\Catalog\Model\Category\DataProvider</code>.</li>
 </ul>
 
 <h3 id="flow-changes-1">Flow changes</h3>
 
-<p>When <strong>Products -&gt; Categories</strong> menu item in the Magento Admin is chosen, the first root category is selected for editing by default now. You can create a new category or a root category manually only. Use the corresponding button <strong>Add Root Category</strong> or <strong>Add Subcategory</strong>.</p>
+<p>When <strong>Products -&gt; Categories</strong> menu item in the <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span> is chosen, the first root category is selected for editing by default now. You can create a new category or a root category manually only. Use the corresponding button <strong>Add Root Category</strong> or <strong>Add Subcategory</strong>.</p>
 
 <!-- LINK DEFINITIONS -->
 

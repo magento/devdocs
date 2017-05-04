@@ -734,12 +734,12 @@
 
 </section>
 
-			<p>To be able to use vault in Admin order creation, you need to take at least the following steps:</p>
+			<p>To be able to use vault in <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span> order creation, you need to take at least the following steps:</p>
 
 <ol>
   <li>Create a token component provider and specify it in the <code>&lt;your_module_dir&gt;/etc/di.xml</code>.</li>
   <li>Create a custom vault JS component and specify it in the component provider.</li>
-  <li>Create a <code>.phtml</code> template, specify it in the component provider and the corresponding layout file.</li>
+  <li>Create a <code>.phtml</code> template, specify it in the component provider and the corresponding <span term-uuid="73ab5daa-5857-4039-97df-11269b626134" class="glossary-term" data-toggle="popover">layout</span> file.</li>
 </ol>
 
 <p>There are more details about these steps in the following sections.</p>
@@ -828,7 +828,7 @@
 <p>For reference, view the Magento default Vault template for Admin: <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Vault/view/adminhtml/templates/form/vault.phtml">app/code/Magento/Vault/view/adminhtml/templates/form/vault.phtml</a>.</p>
 
 <p>In the billing form block for Admin layout (<code>%module_dir%/view/adminhtml/layout/sales_order_create_index.xml</code>) 
-specify the payment method code and path to the template.</p>
+specify the <span term-uuid="422b0fa8-b181-4c7c-93a2-c553abb34efd" class="glossary-term" data-toggle="popover">payment method</span> code and path to the template.</p>
 
 <p>Following is an example of such layout:</p>
 
@@ -843,7 +843,7 @@ specify the payment method code and path to the template.</p>
     <span class="nt">&lt;/body&gt;</span>
 <span class="nt">&lt;/page&gt;</span></code></pre></figure>
 
-<p>According to this configuration the Magento_Vault module will render vault payments and all depending JS components will be created.</p>
+<p>According to this configuration the Magento_Vault <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> will render vault payments and all depending JS components will be created.</p>
 
 <h2 id="specific-vault-configuration-for-admin">Specific vault configuration for Admin</h2>
 <p>You might have specific request builders, response handlers or other entities for the Admin panel. For example, in your implementation 3D Secure might not be available in Admin. In this case, you need to create corresponding virtual types for the <code>adminhtml</code> <a href="/guides/v2.1/architecture/archi_perspectives/components/modules/mod_and_areas.html">area</a> in <code>%module_dir%/etc/adminhtml/di.xml</code>.</p>

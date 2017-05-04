@@ -1054,8 +1054,8 @@
 <h2 id="prerequisites">Prerequisites</h2>
 
 <ol>
-  <li>For the sake of compatibility, upgradability, and easy maintenance, do not modify the out of the box Magento themes. To customize the design of your Magento store, create a new custom theme.</li>
-  <li><a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-mode.html">Set</a> your Magento application to the developer <a href="/guides/v2.1/config-guide/bootstrap/magento-modes.html">mode</a>. The application mode influences the way static files are cached by Magento. The recommendations about theme development we provide in this chapter are developer/default-mode specific.</li>
+  <li>For the sake of compatibility, upgradability, and easy maintenance, do not modify the out of the box Magento themes. To customize the design of your Magento store, create a new custom <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span>.</li>
+  <li><a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-mode.html">Set</a> your Magento application to the developer <a href="/guides/v2.1/config-guide/bootstrap/magento-modes.html">mode</a>. The application mode influences the way <span term-uuid="363662cb-73f1-4347-a15e-2d2adabeb0c2" class="glossary-term" data-toggle="popover">static files</span> are cached by Magento. The recommendations about theme development we provide in this chapter are developer/default-mode specific.</li>
 </ol>
 
 <h2 id="theme-gen-walkthrough">Create a storefront theme: walkthrough</h2>
@@ -1067,7 +1067,7 @@
   <li>Add a <code>composer.json</code> file.</li>
   <li>Add <code>registration.php</code>.</li>
   <li>Create directories for CSS, JavaScript, images, and fonts.</li>
-  <li>Configure your theme in the Admin panel.</li>
+  <li>Configure your theme in the <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span> panel.</li>
 </ol>
 
 <h2 id="theme-gen-read">Recommended reading</h2>
@@ -1124,7 +1124,7 @@ app/design/frontend/
      <span class="nt">&lt;/media&gt;</span>
  <span class="nt">&lt;/theme&gt;</span></code></pre></figure>
 
-<p>If you change the theme title or parent theme information in <code>theme.xml</code> after a theme was already <a href="#register_theme">registered</a>, you need to open or reload any Magento Admin page for your changes to be saved in the database.</p>
+<p>If you change the theme title or parent theme information in <code>theme.xml</code> after a theme was already <a href="#register_theme">registered</a>, you need to open or reload any <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span> page for your changes to be saved in the database.</p>
 
 <h2 id="fedg_create_theme_composer">Make your theme a Composer package (optional)</h2>
 
@@ -1180,7 +1180,7 @@ app/design/frontend/
 
 <h2 id="fedg_create_theme_how-to-images">Configure images</h2>
 
-<p>Product image sizes and other properties used on the storefront are configured in a <code>view.xml</code> configuration file. It is required for a theme, but is optional if exists in the parent theme.</p>
+<p>Product image sizes and other properties used on the <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span> are configured in a <code>view.xml</code> configuration file. It is required for a theme, but is optional if exists in the parent theme.</p>
 
 <p>If the product image sizes of your theme differ from those of the parent theme, or if your theme does not inherit from any theme, add <code>view.xml</code> using the following steps:</p>
 
@@ -1196,7 +1196,7 @@ app/design/frontend/
   </li>
   <li>
     <p>Configure all storefront product image sizes in <code>view.xml</code>.
-For example, you can make the category grid view product images square by specifying a size of 250 x 250 pixels, here is how the corresponding configuration would look like:</p>
+For example, you can make the <span term-uuid="50e49338-1e6c-4473-8527-9e401d67ea2b" class="glossary-term" data-toggle="popover">category</span> grid view product images square by specifying a size of 250 x 250 pixels, here is how the corresponding configuration would look like:</p>
   </li>
 </ol>
 
@@ -1211,7 +1211,7 @@ For example, you can make the category grid view product images square by specif
 
 <h2 id="fedg_theme_how-to_static">Create directories for static files</h2>
 
-<p>Your theme will likely contain several types of static files: styles, fonts, JavaScript and images.
+<p>Your theme will likely contain several types of static files: styles, fonts, <span term-uuid="312b4baf-15f7-4968-944e-c814d53de218" class="glossary-term" data-toggle="popover">JavaScript</span> and images.
 Each type should be stored in a separate sub-directory of <code>web</code> in your theme folder:</p>
 <pre>
 app/design/&lt;area&gt;/&lt;Vendor&gt;/&lt;theme&gt;/
@@ -1270,7 +1270,7 @@ Your theme does not have a parent theme:
 <li>Your theme has a parent theme:
 <ul>
 <li>if your theme logo image has the same name and format as the parent's theme logo, there is no need to declare it;</li>
-<li>if your logo image has different name or format, declare it in layout.</li>
+<li>if your logo image has different name or format, declare it in <span term-uuid="73ab5daa-5857-4039-97df-11269b626134" class="glossary-term" data-toggle="popover">layout</span>.</li>
 </ul>
 </li>
 </ul>

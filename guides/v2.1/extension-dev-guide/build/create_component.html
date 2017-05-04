@@ -1126,7 +1126,7 @@
 </ul>
 
 <h2 id="module-xml">Add the component’s <code>module.xml</code> file</h2>
-<p>Declare the component itself by adding a module.xml file in the <code>/etc</code> folder of your component.</p>
+<p>Declare the component itself by adding a <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>.xml file in the <code>/etc</code> folder of your component.</p>
 
 <p>A component declares itself (that is, defines its name and existence) in the <code>module.xml</code> file, located in the Magento install directory at <code>&lt;ComponentName&gt;/etc/</code>.</p>
 
@@ -1138,7 +1138,7 @@
 &lt;/config&gt;
 </code></pre>
 
-<p>…where <code>name</code>  is the name of your component, and <code>setup_version</code> is your module’s database schema version. Both of these attributes are required.</p>
+<p>…where <code>name</code>  is the name of your component, and <code>setup_version</code> is your module’s <span term-uuid="66b924b4-8097-4aea-93d9-05a81e6cc00c" class="glossary-term" data-toggle="popover">database schema</span> version. Both of these attributes are required.</p>
 
 <p>Do not use “Ui” for your custom module name because the <code>%Vendor%_Ui</code> notation, required when specifying paths, might cause issues.</p>
 
@@ -1150,7 +1150,7 @@
 <p>In particular:</p>
 
 <ul>
-  <li>If a component has <code>composer.json</code> <em>and</em> the component was installed using Composer (including from packagist, the Magento Marketplace, or other source), the Component Manager can update, uninstall, enable, or disable the component.</li>
+  <li>If a component has <code>composer.json</code> <em>and</em> the component was installed using <span term-uuid="d85e2d0a-221f-4d03-aa43-0cda9f50809e" class="glossary-term" data-toggle="popover">Composer</span> (including from packagist, the Magento Marketplace, or other source), the Component Manager can update, uninstall, enable, or disable the component.</li>
   <li>If the component has <code>composer.json</code> but was <em>not</em> installed using Composer (for example, custom code a developer wrote), Component Manager can still enable or disable the component.</li>
   <li>We strongly recommend you include <code>composer.json</code> in your component’s root directory whether or not you intend to distribute it to other Magento merchants.</li>
 </ul>
@@ -1192,7 +1192,7 @@
   <li><code>description</code>—is a concise explanation of your component’s purpose.</li>
   <li><code>require</code>—lists any components your component depends on.</li>
   <li><code>suggest</code>—lists soft dependencies. The component can operate without them, but if the components are active, this component might impact their functionality. <code>Suggest</code> does not affect component load order.</li>
-  <li><code>type</code>—determines what the Magento component type. Choose from <em>magento2-theme</em>, <em>magento2-language</em>, or <em>magento2-module</em>.</li>
+  <li><code>type</code>—determines what the <span term-uuid="3425e9ae-5edf-4fc6-b645-06023e9e5e5b" class="glossary-term" data-toggle="popover">Magento component</span> type. Choose from <em>magento2-theme</em>, <em>magento2-language</em>, or <em>magento2-module</em>.</li>
   <li><code>version</code>—lists the version of the component.</li>
   <li><code>license</code>—lists applicable licenses that apply to your component.</li>
   <li><code>autoload</code>—instructs composer to load the specified files.</li>

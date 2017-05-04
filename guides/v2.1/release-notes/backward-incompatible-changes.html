@@ -829,11 +829,11 @@
 
 <h2 id="api-changes">API Changes</h2>
 
-<p>Magento 2.1 introduces changes in several API classes. These changes are designed to extend overall API coverage and improve developer experience with new features.</p>
+<p>Magento 2.1 introduces changes in several <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span> classes. These changes are designed to extend overall API coverage and improve developer experience with new features.</p>
 
 <h3 id="catalog-module-api">Catalog Module API</h3>
 
-<p>The Catalog module introduces new service methods that enhance both options management and products to categories cross linking management.</p>
+<p>The <span term-uuid="8d40d668-4996-4856-9f81-b1386cf4b14f" class="glossary-term" data-toggle="popover">Catalog</span> <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> introduces new service methods that enhance both options management and products to categories cross linking management.</p>
 
 <p><strong>Class:</strong> <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Catalog/Api/CategoryLinkManagementInterface.php" target="_blank"><code>Magento\Catalog\Api\CategoryLinkManagementInterface</code></a><br />
 <strong>Action:</strong> Added the service method <code>assignProductToCategories</code><br />
@@ -852,7 +852,7 @@
 
 <h3 id="cms-module">CMS Module</h3>
 
-<p>The CMS Module has been updated to allow you to manage meta titles for your CMS pages.</p>
+<p>The <span term-uuid="f3944faf-127e-4097-9918-a2e9c647d44f" class="glossary-term" data-toggle="popover">CMS</span> Module has been updated to allow you to manage meta titles for your CMS pages.</p>
 
 <p><strong>Class:</strong> <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Cms/Api/Data/PageInterface.php" target="_blank"><code>Magento\Cms\Api\Data\PageInterface</code></a><br />
 <strong>Action:</strong> Added the getter method <code>getMetaTitle</code><br />
@@ -874,17 +874,17 @@
 
 <h2 id="changes-in-ui">Changes in UI</h2>
 
-<p>In release 2.1, Magento introduced a new way to build the Admin UI. Old forms have been rewritten using the new UI components. The new UI forms have better flexibility and can be customized using configuration files.</p>
+<p>In release 2.1, Magento introduced a new way to build the <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span> UI. Old forms have been rewritten using the new UI components. The new UI forms have better flexibility and can be customized using configuration files.</p>
 
 <p>The following entities have new forms and design:</p>
 
 <ul>
   <li>Product</li>
-  <li>Category</li>
+  <li><span term-uuid="50e49338-1e6c-4473-8527-9e401d67ea2b" class="glossary-term" data-toggle="popover">Category</span></li>
   <li>CMS Page</li>
-  <li>CMS Block</li>
+  <li><span term-uuid="edfe0b48-7c21-41e8-9c83-3a0afe8a8ce9" class="glossary-term" data-toggle="popover">CMS Block</span></li>
   <li>Sales Rule</li>
-  <li>Catalog Rules</li>
+  <li><span term-uuid="3b0e248f-5571-48c0-9dde-efe1662fac6d" class="glossary-term" data-toggle="popover">Catalog Rules</span></li>
 </ul>
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -894,7 +894,7 @@
 <h2 id="database-schema-changes">Database Schema changes</h2>
 
 <h4 id="staging-ee-only">Staging (EE Only)</h4>
-<p>The Staging modules introduce database schema changes for the following entities:</p>
+<p>The Staging modules introduce <span term-uuid="66b924b4-8097-4aea-93d9-05a81e6cc00c" class="glossary-term" data-toggle="popover">database schema</span> changes for the following entities:</p>
 
 <ul>
   <li>Products</li>
@@ -903,11 +903,11 @@
   <li>Cart and Catalog Price Rules</li>
 </ul>
 
-<p>These changes are applied only if Staging modules are installed. For extension modules (e.g. DownloadableProduct, ConfigurableProduct, Bundle etc.), relations between main entity tables were changed which may affect code that manages SQL queries directly.</p>
+<p>These changes are applied only if Staging modules are installed. For <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span> modules (e.g. DownloadableProduct, ConfigurableProduct, Bundle etc.), relations between main <span term-uuid="a9027f5d-efab-4662-96aa-c2999b5ab259" class="glossary-term" data-toggle="popover">entity</span> tables were changed which may affect code that manages SQL queries directly.</p>
 
 <h2 id="persistence-management">Persistence management</h2>
 
-<p>In Magento’s 2.1 release, a new level of persistence management has been added, the <a href="https://github.com/magento/magento2/blob/2.1/lib/internal/Magento/Framework/EntityManager/EntityManager.php" target="_blank"><code>EntityManager</code></a> library component. It allows decoupling from Magento’s persistence infrastructure and provide more flexibility for future development. At the same time, the entity manager supports all “Magento 1-style” model events in a backward compatible manner.</p>
+<p>In Magento’s 2.1 release, a new level of persistence management has been added, the <a href="https://github.com/magento/magento2/blob/2.1/lib/internal/Magento/Framework/EntityManager/EntityManager.php" target="_blank"><code>EntityManager</code></a> <span term-uuid="08968dbb-2eeb-45c7-ae95-ffca228a7575" class="glossary-term" data-toggle="popover">library</span> component. It allows decoupling from Magento’s persistence infrastructure and provide more flexibility for future development. At the same time, the entity manager supports all “Magento 1-style” model events in a backward compatible manner.</p>
 
 <h3 id="data-interfaces-persistence">Data interfaces persistence</h3>
 

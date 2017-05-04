@@ -1119,7 +1119,7 @@
 
 <h2 id="areas-and-application-entry-points">Areas and application entry points</h2>
 
-<p>Each module can have a global and area-specific <code>di.xml</code> file.
+<p>Each <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> can have a global and area-specific <code>di.xml</code> file.
 Magento reads all the <code>di.xml</code> configuration files declared in the system and merges them all together by appending all nodes.</p>
 
 <p>As a general rule, the area specific <code>di.xml</code> files should configure dependencies for the presentation layer, and your module’s global <code>di.xml</code> file should configure the remaining dependencies.</p>
@@ -1138,7 +1138,7 @@ Magento reads all the <code>di.xml</code> configuration files declared in the sy
 
 <ul>
   <li>
-    <p>In <code>index.php</code>, the <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/Http.php#L130-L132" target="_blank"><code>\Magento\Framework\App\Http</code></a> class loads the area based on the front-name provided in url.</p>
+    <p>In <code>index.php</code>, the <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/Http.php#L130-L132" target="_blank"><code>\Magento\Framework\App\Http</code></a> class loads the area based on the front-name provided in <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">url</span>.</p>
   </li>
   <li>
     <p>In <code>static.php</code>, the <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/StaticResource.php#L101-L104" target="_blank"><code>\Magento\Framework\App\StaticResource</code></a> class also loads the area based on the url in the request.</p>
@@ -1175,7 +1175,7 @@ Magento reads all the <code>di.xml</code> configuration files declared in the sy
 </ul>
 
 <h3 id="virtual-types">Virtual types</h3>
-<p>A virtual type allows you to change the arguments of a specific injectable dependency and change the behavior of a particular class.
+<p>A <span term-uuid="058b2be4-3247-4cb0-860d-6292ce75d1f0" class="glossary-term" data-toggle="popover">virtual type</span> allows you to change the arguments of a specific injectable dependency and change the behavior of a particular class.
 This allows you to use a customized class without affecting other classes that have a dependency on the original.</p>
 
 <p>The example creates a virtual type for <code>Magento\Core\Model\Config</code> and specifies <code>system</code> as the constructor argument for <code>type</code>.</p>
@@ -1184,7 +1184,7 @@ This allows you to use a customized class without affecting other classes that h
 
 <p>You can configure the class constructor arguments in your <code>di.xml</code> in the argument node.
 The object manager injects these arguments into the class during creation.
-The name of the argument configured in the XML file must correspond to the name of the parameter in the constructor in the configured class.</p>
+The name of the argument configured in the <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span> file must correspond to the name of the parameter in the constructor in the configured class.</p>
 
 <p>The following example creates instances of <code>Magento\Core\Model\Session</code> with the class constructor argument <code>$sessionName</code> set to a value of <code>adminhtml</code>:</p>
 
@@ -1434,7 +1434,7 @@ The object manager uses these mappings to determine what the default implementat
     <span class="nt">&lt;preference</span> <span class="na">for=</span><span class="s">&quot;Magento\Core\Model\UrlInterface&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\Backend\Model\Url&quot;</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
-<p>This mapping is in <code>app/code/core/Magento/Backend/etc/adminhtml/di.xml</code>, so the object manager injects the <code>Magento\Backend\Model\Url</code> implementation class wherever there is a request for the <code>Magento\Core\Model\UrlInterface</code> in the admin area.</p>
+<p>This mapping is in <code>app/code/core/Magento/Backend/etc/adminhtml/di.xml</code>, so the object manager injects the <code>Magento\Backend\Model\Url</code> implementation class wherever there is a request for the <code>Magento\Core\Model\UrlInterface</code> in the <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">admin</span> area.</p>
 
 <h3 id="parameter-configuration-inheritance">Parameter configuration inheritance</h3>
 

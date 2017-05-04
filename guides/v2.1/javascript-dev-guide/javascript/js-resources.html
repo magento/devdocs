@@ -748,7 +748,7 @@
 
 			<h2 id="m2devgde-js-resources-intro">Overview</h2>
 
-<p>This topic describes the general concepts of how work with JavaScript components is organized in Magento.</p>
+<p>This topic describes the general concepts of how work with <span term-uuid="312b4baf-15f7-4968-944e-c814d53de218" class="glossary-term" data-toggle="popover">JavaScript</span> components is organized in Magento.</p>
 
 <p>To address the problem of slow page load, we exclude JavaScript from the page headers and we added the ability to use the <a href="http://requirejs.org" target="_blank">RequireJS library</a>.</p>
 
@@ -761,8 +761,8 @@
 <p>In Magento, you can find the JS components on the following levels:</p>
 
 <ul>
-  <li>Library level (<code>lib/web</code>). Resources located here are available in any place in Magento.</li>
-  <li>Module level (<code>&lt;module_dir&gt;/view/&lt;areaname&gt;/web</code>). If the module is enabled, resources added here are available in other modules and themes.</li>
+  <li><span term-uuid="08968dbb-2eeb-45c7-ae95-ffca228a7575" class="glossary-term" data-toggle="popover">Library</span> level (<code>lib/web</code>). Resources located here are available in any place in Magento.</li>
+  <li>Module level (<code>&lt;module_dir&gt;/view/&lt;areaname&gt;/web</code>). If the <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> is enabled, resources added here are available in other modules and themes.</li>
   <li>Theme level, for a particular module (<code>&lt;theme_dir&gt;/&lt;VendorName&gt;_&lt;ModuleName&gt;/web</code>). Resources added here are available for <a href="/guides/v2.1/frontend-dev-guide/themes/theme-inherit.html">inheriting</a> themes.</li>
   <li>Theme level  (<code>&lt;theme_dir&gt;/web</code>). Resources added here are available for <a href="/guides/v2.1/frontend-dev-guide/themes/theme-inherit.html">inheriting</a> themes.</li>
 </ul>
@@ -772,7 +772,7 @@
 </div>
 
 <h3 id="specifying-js">Specifying JS</h3>
-<p>We recommend specifying JavaScript resources in the templates rather than in the layout updates, to ensure processing of the resources in body of a page.</p>
+<p>We recommend specifying JavaScript resources in the templates rather than in the <span term-uuid="73ab5daa-5857-4039-97df-11269b626134" class="glossary-term" data-toggle="popover">layout</span> updates, to ensure processing of the resources in body of a page.</p>
 
 <h2 id="accessing-js-resources">Accessing JS resources</h2>
 
@@ -784,7 +784,7 @@
 
 <ul>
   <li>File actual location: <code>app/code/Magento/ConfigurableProduct/view/frontend/web/js/configurable.js</code></li>
-  <li>File published to <code>pub/static</code>: <code>pub/static/frontend/Magento/&lt;theme&gt;/&lt;locale&gt;/Magento_Configurable/js/configurable.js</code>. Here <code>&lt;theme&gt;</code> and <code>&lt;locale&gt;</code> are the currently applied in your instance theme and locale.</li>
+  <li>File published to <code>pub/static</code>: <code>pub/static/frontend/Magento/&lt;theme&gt;/&lt;locale&gt;/Magento_Configurable/js/configurable.js</code>. Here <code>&lt;theme&gt;</code> and <code>&lt;locale&gt;</code> are the currently applied in your instance <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span> and <span term-uuid="05099dbb-d491-4e33-a065-16035cb2d4d9" class="glossary-term" data-toggle="popover">locale</span>.</li>
   <li>Called in script:</li>
 </ul>
 

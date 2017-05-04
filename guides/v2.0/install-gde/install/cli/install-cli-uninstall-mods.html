@@ -769,7 +769,7 @@
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>This command checks <em>only</em> dependencies declared in <code>composer.json</code>. If you uninstall a module that is <em>not</em> defined in <code>composer.json</code>, this command uninstalls the module without checking for dependencies. This command does <em>not</em>, however, remove the module's code from the Magento file system. You must use file system tools to remove the module's code (for example, <code>rm -rf &lt;path to module&gt;</code>.</p>
+  <p>This command checks <em>only</em> dependencies declared in <code>composer.json</code>. If you uninstall a <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> that is <em>not</em> defined in <code>composer.json</code>, this command uninstalls the module without checking for dependencies. This command does <em>not</em>, however, remove the module's code from the Magento file system. You must use file system tools to remove the module's code (for example, <code>rm -rf &lt;path to module&gt;</code>.</p>
   <p>As an alternative, you can <a href="/guides/v2.0/install-gde/install/cli/install-cli-subcommands-enable.html">disable</a> non-Composer modules.</p></span>
 </div>
 
@@ -822,7 +822,7 @@ sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
 
   <ol>
     <li>
-      <p>Verifies that the specified modules exist in the code base and are packages installed by Composer.</p>
+      <p>Verifies that the specified modules exist in the code base and are packages installed by <span term-uuid="d85e2d0a-221f-4d03-aa43-0cda9f50809e" class="glossary-term" data-toggle="popover">Composer</span>.</p>
 
       <p>This command works <em>only</em> with modules defined as Composer packages.</p>
     </li>
@@ -880,7 +880,7 @@ sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
   		<p>Uninstalling a module <em>always</em> runs <code>composer remove</code>. The <code>--remove-data</code> option removes database data and schema defined by the module's <code>Uninstall</code> class.</p></span>
 </div>
     </li>
-    <li>Cleans the cache.</li>
+    <li>Cleans the <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span>.</li>
     <li>Updates generated classes.</li>
     <li>If <code>--clear-static-content</code> is specified, cleans <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-static-overview">generated static view files</a>.</li>
     <li>Takes the store out of maintenance mode.</li>
@@ -893,7 +893,7 @@ sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
     Magento_SampleModifyContent
 </code></pre>
 
-  <p>One alternative is to uninstall both modules after backing up the Magento module file system, <code>pub/media</code> files, and database tables but <em>not</em> removing the module’s database schema or data:</p>
+  <p>One alternative is to uninstall both modules after backing up the Magento module file system, <code>pub/media</code> files, and database tables but <em>not</em> removing the module’s <span term-uuid="66b924b4-8097-4aea-93d9-05a81e6cc00c" class="glossary-term" data-toggle="popover">database schema</span> or data:</p>
 
   <pre><code>magento module:uninstall Magento_SampleMinimal Magento_SampleModifyContent --backup-code --backup-media --backup-db
 </code></pre>

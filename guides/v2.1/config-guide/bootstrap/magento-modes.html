@@ -1653,7 +1653,7 @@
 <ul>
   <li>Errors are logged to the file reports at server, and never shown to a user</li>
   <li>A symlink to a static view file is published to the <code>pub/static</code> directory for each requested file</li>
-  <li>Default mode is not optimized for a production environment, primarily because of the adverse performance impact of static files being dynamically generated rather than <a href="https://en.wikipedia.org/wiki/Materialized_view" target="_blank">materialized</a>. In other words, creating static files and caching them has a greater performance impact than generating them using the static files creation tool.</li>
+  <li>Default mode is not optimized for a production environment, primarily because of the adverse performance impact of <span term-uuid="363662cb-73f1-4347-a15e-2d2adabeb0c2" class="glossary-term" data-toggle="popover">static files</span> being dynamically generated rather than <a href="https://en.wikipedia.org/wiki/Materialized_view" target="_blank">materialized</a>. In other words, creating static files and caching them has a greater performance impact than generating them using the static files creation tool.</li>
 </ul>
 
 <p>For more information, see <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a>.</p>
@@ -1667,8 +1667,8 @@
   <li>A symlink to a static view file is published to the <code>pub/static</code> directory for each requested file</li>
   <li>Uncaught exceptions display in the browser</li>
   <li>System logging in <code>var/report</code> is verbose</li>
-  <li>An exception is thrown in the error handler, rather than being logged</li>
-  <li>An exception is thrown when an event subscriber cannot be invoked</li>
+  <li>An <span term-uuid="53da11f1-d0b8-4a7e-b078-1e099462b409" class="glossary-term" data-toggle="popover">exception</span> is thrown in the error handler, rather than being logged</li>
+  <li>An exception is thrown when an <span term-uuid="c57aef7c-97b4-4b2b-a999-8001accef1fe" class="glossary-term" data-toggle="popover">event</span> subscriber cannot be invoked</li>
 </ul>
 
 <p>For more information, see <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a>.</p>
@@ -1681,7 +1681,7 @@
 <p>In production mode:</p>
 
 <ul>
-  <li>Static view files are not materialized, and URLs for them are composed on the fly without going through the fallback mechanism. (Static view files are served from cache only.)</li>
+  <li>Static view files are not materialized, and URLs for them are composed on the fly without going through the fallback mechanism. (Static view files are served from <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span> only.)</li>
   <li>Errors are logged to the file system and are never displayed to the user</li>
 </ul>
 

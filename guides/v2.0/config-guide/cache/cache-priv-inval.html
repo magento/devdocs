@@ -1521,11 +1521,11 @@
 </section>
 
 			<h2 id="config-cache-inval">Cache invalidation</h2>
-<p>The Magento application enables you to clear cached content immediately after a entity changes. We use an <code>IdentityInterface</code> to link entities in the application with cached content and to know what cache to clear when an entity changes.</p>
+<p>The Magento application enables you to clear cached content immediately after a entity changes. We use an <code>IdentityInterface</code> to link entities in the application with cached content and to know what <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span> to clear when an <span term-uuid="a9027f5d-efab-4662-96aa-c2999b5ab259" class="glossary-term" data-toggle="popover">entity</span> changes.</p>
 
 <p>This section discusses how you inform the Magento application what cache to clear when you change an entity.</p>
 
-<p>First, your entity module must implement <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/DataObject/IdentityInterface.php" target="_blank"><code>Magento/Framework/DataObject/IdentityInterface</code></a> as follows:</p>
+<p>First, your entity <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> must implement <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/DataObject/IdentityInterface.php" target="_blank"><code>Magento/Framework/DataObject/IdentityInterface</code></a> as follows:</p>
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">use</span> <span class="nx">Magento\Framework\DataObject\IdentityInterface</span><span class="p">;</span>
  
@@ -1574,7 +1574,7 @@ When you save and entity, Magento gets its identities and use them to clear the 
 <ol>
   <li>The user performs some action, such as adding to a cart, that results in an POST or PUT request to the Magento application.</li>
   <li>The server generates the <code>private_content_version</code> cookie for this user and returns the response to the browser.</li>
-  <li>JavaScript interprets the presence of the <code>private_content_version</code> cookie to mean that private content is present on the page, so it sends an AJAX request to the Magento server to get the current private content.</li>
+  <li><span term-uuid="312b4baf-15f7-4968-944e-c814d53de218" class="glossary-term" data-toggle="popover">JavaScript</span> interprets the presence of the <code>private_content_version</code> cookie to mean that private content is present on the page, so it sends an AJAX request to the Magento server to get the current private content.</li>
   <li>
     <p>The server’s reply is cached in the browser’s local storage.</p>
 

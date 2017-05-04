@@ -846,31 +846,31 @@
 <h4 id="pricing">Pricing</h4>
 <!--- 54320 -->
 <ul>
-  <li>The Category page now displays current, rather than outdated,  product prices.</li>
+  <li>The <span term-uuid="50e49338-1e6c-4473-8527-9e401d67ea2b" class="glossary-term" data-toggle="popover">Category</span> page now displays current, rather than outdated,  product prices.</li>
 </ul>
 
 <!--- 55055 -->
 <ul>
-  <li>Tier pricing now works correctly with full page cache. <a href="https://github.com/magento/magento2/issues/5364" target="_blank">(GITHUB-5364)</a></li>
+  <li>Tier pricing now works correctly with full page <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span>. <a href="https://github.com/magento/magento2/issues/5364" target="_blank">(GITHUB-5364)</a></li>
 </ul>
 
 <!--- 45339 -->
 <ul>
-  <li>Cart Price rules are now applied as expected to payment method conditions. Previously, discounts set in Cart Price rules were not applied during checkout.</li>
+  <li>Cart Price rules are now applied as expected to <span term-uuid="422b0fa8-b181-4c7c-93a2-c553abb34efd" class="glossary-term" data-toggle="popover">payment method</span> conditions. Previously, discounts set in Cart Price rules were not applied during <span term-uuid="278c3ce0-cd4c-4ffc-a098-695d94d73bde" class="glossary-term" data-toggle="popover">checkout</span>.</li>
 </ul>
 
 <h4 id="shopping-cart">Shopping cart</h4>
 
 <!--- 53793 -->
 <ul>
-  <li>Magento now implements the minicart maximum display recently added item setting to your shopping cart.  Previously, Magento displayed all the items in the shopping cart, even when the number of items exceeded this limit. <a href="https://github.com/magento/magento2/issues/4750" target="_blank">(GITHUB-4750)</a></li>
+  <li>Magento now implements the minicart maximum display recently added item setting to your <span term-uuid="c7ecb18d-cefe-452d-83e2-3c4d5e355db9" class="glossary-term" data-toggle="popover">shopping cart</span>.  Previously, Magento displayed all the items in the shopping cart, even when the number of items exceeded this limit. <a href="https://github.com/magento/magento2/issues/4750" target="_blank">(GITHUB-4750)</a></li>
 </ul>
 
 <h4 id="performance">Performance</h4>
 
 <!--- 57410-->
 <ul>
-  <li>You can now quickly generate or preview multiple variations of a configurable product. (Saving these variations to the database can be time-consuming, if you have several thousand product options, and our efforts to improve performance continue.) Previously, Magento threw an Invalid Form key error is thrown while you tried to save a configurable product with variations.</li>
+  <li>You can now quickly generate or preview multiple variations of a <span term-uuid="2fd4d100-28d2-45ca-bec1-128444ea98e6" class="glossary-term" data-toggle="popover">configurable product</span>. (Saving these variations to the database can be time-consuming, if you have several thousand product options, and our efforts to improve performance continue.) Previously, Magento threw an Invalid Form key error is thrown while you tried to save a configurable product with variations.</li>
 </ul>
 
 <!--- 52660 -->
@@ -885,7 +885,7 @@
 
 <!--- 55300, 55620, 54682-->
 <ul>
-  <li>We’ve improved storefront performance when creating 2500 or more product variants.</li>
+  <li>We’ve improved <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span> performance when creating 2500 or more product variants.</li>
 </ul>
 
 <h4 id="miscellaneous">Miscellaneous</h4>
@@ -897,7 +897,7 @@
 
 <!--- 55524/48429-->
 <ul>
-  <li>You can now delete updates from a campaign’s page entity grid.</li>
+  <li>You can now delete updates from a campaign’s page <span term-uuid="a9027f5d-efab-4662-96aa-c2999b5ab259" class="glossary-term" data-toggle="popover">entity</span> grid.</li>
 </ul>
 
 <!--- 56951-->
@@ -917,7 +917,7 @@
 
 <!--- 55598/54787 -->
 <ul>
-  <li>You can now successfully place orders when the Enable and Configure Website Payments Standard Payment Action attribute is set to Sale. Previously, under these conditions, Magento would display an error message and not allow you to complete the purchase.  <a href="https://github.com/magento/magento2/issues/4785" target="_blank">(GITHUB-4785)</a></li>
+  <li>You can now successfully place orders when the Enable and Configure <span term-uuid="a3c8f20f-b067-414e-9781-06378c193155" class="glossary-term" data-toggle="popover">Website</span> Payments Standard Payment Action attribute is set to Sale. Previously, under these conditions, Magento would display an error message and not allow you to complete the purchase.  <a href="https://github.com/magento/magento2/issues/4785" target="_blank">(GITHUB-4785)</a></li>
 </ul>
 
 <!--- 50026 -->
@@ -944,7 +944,7 @@
 
 <h3 id="known-issue">Known issue</h3>
 
-<p>The Sales API does not currently support all the update operations on objects that you can execute from the Admin. (<i>Objects</i> in this context include orders, invoices, shipments, credit memos, and return merchandise authorizations.)
+<p>The Sales <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span> does not currently support all the update operations on objects that you can execute from the <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span>. (<i>Objects</i> in this context include orders, invoices, shipments, credit memos, and return merchandise authorizations.)
  
 The Sales API</p>
 
@@ -953,14 +953,14 @@ The Sales API</p>
     <p>supports create, read, delete, and search operations on objects</p>
   </li>
   <li>
-    <p>does not support updates to order status or payment status. (<i>Order status</i> includes changes to processing, shipped, processed, and hold, while <i>payment status</i> includes authorized, charged, reject, and refund.)</p>
+    <p>does not support updates to <span term-uuid="ab517fb3-c9ff-4da8-b7f9-00337c57b3a5" class="glossary-term" data-toggle="popover">order status</span> or payment status. (<i>Order status</i> includes changes to processing, shipped, processed, and hold, while <i>payment status</i> includes authorized, charged, reject, and refund.)</p>
   </li>
 </ul>
 
 <p>You can run these operations from the Admin.</p>
 
 <h3 id="system-requirements">System requirements</h3>
-<p>Our technology stack is built on PHP and MySQL. For more information, see
+<p>Our technology stack is built on <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> and MySQL. For more information, see
 <a href="/magento-system-requirements.html" target="_blank">System Requirements</a>.</p>
 
 <div>

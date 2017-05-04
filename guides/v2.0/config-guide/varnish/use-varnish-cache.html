@@ -1523,7 +1523,7 @@
 			<p>This topic discusses the basics of using Varnish as a web caching accelerator for Magento.</p>
 
 <h2 id="use-varnish-magento-purge">Varnish purging</h2>
-<p>According to <a href="https://www.varnish-cache.org/docs/trunk/users-guide/purging.html" target="_blank">Varnish documentation</a>, “A <em>purge</em> is what happens when you pick out an object from the cache and discard it along with its variants.” A Varnish purge is very similar to a Magento cache clean command (or clicking <strong>Flush Magento Cache</strong> in the Magento Admin).</p>
+<p>According to <a href="https://www.varnish-cache.org/docs/trunk/users-guide/purging.html" target="_blank">Varnish documentation</a>, “A <em>purge</em> is what happens when you pick out an object from the <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span> and discard it along with its variants.” A Varnish purge is very similar to a Magento cache clean command (or clicking <strong>Flush Magento Cache</strong> in the Magento Admin).</p>
 
 <p>In fact, as discussed in this section, when you clean, flush, or refresh the Magento cache, Varnish purges as well.</p>
 
@@ -1531,7 +1531,7 @@
 
 <ul>
   <li>
-    <p>Maintaining a website.</p>
+    <p>Maintaining a <span term-uuid="a3c8f20f-b067-414e-9781-06378c193155" class="glossary-term" data-toggle="popover">website</span>.</p>
 
     <p>For example, anything you do in the Admin in:</p>
 
@@ -1567,7 +1567,7 @@
 <pre><code>magento setup:config:set --http-cache-hosts=192.0.2.100,192.0.2.155:6081
 </code></pre>
 
-<p>You can then purge Varnish hosts when you refresh the Magento cache (also referred to as <em>cleaning</em> the cache) in the Magento Admin or using the command line.</p>
+<p>You can then purge Varnish hosts when you refresh the Magento cache (also referred to as <em>cleaning</em> the cache) in the <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span> or using the command line.</p>
 
 <p>To refresh the cache using the Admin, click <strong>SYSTEM</strong> &gt; Tools &gt; <strong>Cache Management</strong>, then click <strong>Flush Magento Cache</strong> at the top of the page. (You can also refresh individual cache types.)</p>
 

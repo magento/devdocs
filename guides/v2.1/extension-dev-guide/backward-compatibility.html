@@ -1114,10 +1114,10 @@
 </section>
 
 			<p>Merchants and developers want the process of upgrading between revisions of Magento 2 to be as easy as possible. For merchants, the process must be cost-effective, while developers want their extensions to be forward-compatible for as long as possible.
-To help mitigate these concerns, this release introduces a backward compatibility (BC) policy for PHP code. Magento 2.0 uses <a href="http://semver.org/">Semantic Versioning 2.0.0</a> to indicate whether a change breaks backward compatibility. Version numbers are in the format <code>MAJOR.MINOR.PATCH</code>, where:</p>
+To help mitigate these concerns, this release introduces a backward compatibility (BC) policy for <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> code. Magento 2.0 uses <a href="http://semver.org/">Semantic Versioning 2.0.0</a> to indicate whether a change breaks backward compatibility. Version numbers are in the format <code>MAJOR.MINOR.PATCH</code>, where:</p>
 
 <ul>
-  <li>MAJOR indicates incompatible API changes</li>
+  <li>MAJOR indicates incompatible <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span> changes</li>
   <li>MINOR indicates backward-compatible functionality has been added</li>
   <li>PATCH indicates backward-compatible bug fixes</li>
 </ul>
@@ -1131,8 +1131,8 @@ To help mitigate these concerns, this release introduces a backward compatibilit
 
 <ul>
   <li>Any interface used by third parties to enhance the system (payment providers, shipping providers, search providers).  We have sometimes called these SPIs.</li>
-  <li>Any service contract</li>
-  <li>Public classes that are stable and likely extension points within the framework.</li>
+  <li>Any <span term-uuid="cdf644c4-bc99-4550-a954-dd5ae165785a" class="glossary-term" data-toggle="popover">service contract</span></li>
+  <li>Public classes that are stable and likely <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span> points within the framework.</li>
   <li>Individual methods or constants</li>
   <li>Popular extension points, based on customer feedback</li>
 </ul>
@@ -1145,7 +1145,7 @@ To help mitigate these concerns, this release introduces a backward compatibilit
 <ul>
   <li><strong>As an API</strong>. An interface is called by PHP code.</li>
   <li><strong>As a Service Provider Interface (SPI)</strong>. An interface can be implemented, allowing code to provide functionality to the platform.</li>
-  <li><strong>As both</strong>. For example, in a service contract, we expect all calls to a module to be done through the Interface (API), but we also have support for third parties to provide alternate implementations (SPI).
+  <li><strong>As both</strong>. For example, in a service contract, we expect all calls to a <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> to be done through the Interface (API), but we also have support for third parties to provide alternate implementations (SPI).
 APIs and SPIs are not mutually exclusive. Therefore, we do not distinguish them separately. SPIs are annotated the same as APIs.</li>
 </ul>
 

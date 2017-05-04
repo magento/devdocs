@@ -742,7 +742,7 @@
 <p>The Magento payment provider gateway allows creating secure and PCI-compliant integrations with payment services. To keep PCI compliance, you must not store sensitive credit card information.</p>
 </div>
 
-<p>The topics of this chapter explain how to add an integration with a custom payment service provider (in other words, add a new payment method) and implement the authorize payment action for this payment method. For illustration we use code 
+<p>The topics of this chapter explain how to add an integration with a custom payment service provider (in other words, add a new payment method) and implement the authorize payment action for this <span term-uuid="422b0fa8-b181-4c7c-93a2-c553abb34efd" class="glossary-term" data-toggle="popover">payment method</span>. For illustration we use code 
 samples from the <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Braintree">Braintree</a> payment integration.</p>
 
 <p>To simplify the development of a new payment integration, Magento developed the <a href="https://github.com/magento/magento2-samples/tree/master/sample-module-payment-gateway">Payment sample module</a>.
@@ -753,11 +753,11 @@ It contains all required infrastructure and you can use it as starting point.</p
 <ol>
   <li>Configure general payment method module options. Described in the <a href="/guides/v2.1/payments-integrations/base-integration/module-configuration.html">Payment method module configuration</a> topic.</li>
   <li>Configure payment method options. Described in <a href="/guides/v2.1/payments-integrations/base-integration/payment-option-config.html">Payment method configuration</a>.</li>
-  <li>Implement and configure payment method facade - the entity allowing to process payment actions between Magento sales management and payment processor. Described in <a href="/guides/v2.1/payments-integrations/base-integration/facade-configuration.html">Payment  method facade</a> and <a href="/guides/v2.1/payments-integrations/base-integration/formblocktype.html">Payment info rendering in Admin checkout</a></li>
+  <li>Implement and configure payment method facade - the <span term-uuid="a9027f5d-efab-4662-96aa-c2999b5ab259" class="glossary-term" data-toggle="popover">entity</span> allowing to process payment actions between Magento sales management and payment processor. Described in <a href="/guides/v2.1/payments-integrations/base-integration/facade-configuration.html">Payment  method facade</a> and <a href="/guides/v2.1/payments-integrations/base-integration/formblocktype.html">Payment info rendering in Admin checkout</a></li>
   <li>Implement and configure payment actions (like authorize, void and so on). Described in <a href="/guides/v2.1/payments-integrations/base-integration/payment-action.html">Add a gateway command</a></li>
 </ol>
 
-<p>Your payment method might be available from either storefront and Admin, or both. And also can have different configuration for each area. The key notes on how to configure where the method can be used, and how to implement different behavior, are described in the <a href="/guides/v2.1/payments-integrations/base-integration/admin-integration.html">Configure payment method by area</a> topic.</p>
+<p>Your payment method might be available from either <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span> and Admin, or both. And also can have different configuration for each area. The key notes on how to configure where the method can be used, and how to implement different behavior, are described in the <a href="/guides/v2.1/payments-integrations/base-integration/admin-integration.html">Configure payment method by area</a> topic.</p>
 
 <h2 id="terms-used">Terms Used</h2>
 

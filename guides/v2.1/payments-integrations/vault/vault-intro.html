@@ -734,7 +734,7 @@
 
 </section>
 
-			<p>Vault as a payment method provides store customers with ability to use the previously saved credit card information for checkout. This information is stored safely on the side of trusted payments gateways (Braintree, PayPal). Not storing the sensitive credit card information is one of the <a href="https://www.pcisecuritystandards.org/">PCI compliance</a>  requirements.</p>
+			<p>Vault as a <span term-uuid="422b0fa8-b181-4c7c-93a2-c553abb34efd" class="glossary-term" data-toggle="popover">payment method</span> provides store customers with ability to use the previously saved credit card information for <span term-uuid="278c3ce0-cd4c-4ffc-a098-695d94d73bde" class="glossary-term" data-toggle="popover">checkout</span>. This information is stored safely on the side of trusted payments gateways (Braintree, PayPal). Not storing the sensitive credit card information is one of the <a href="https://www.pcisecuritystandards.org/">PCI compliance</a>  requirements.</p>
 
 <p>The <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Vault">Magento Vault</a> is implemented using the Magento <a href="/guides/v2.1/payments-integrations/payment-gateway/payment-gateway-intro.html">payment gateway</a>. It is used in the out-of-the-box vault implementation for the Braintree payment method. Third party developers can use it to add vault to their custom payment provider integration.</p>
 
@@ -749,7 +749,7 @@
 <h2 id="adding-vault-general-steps">Adding vault: general steps</h2>
 
 <p>Magento vault implementation provides that vault is available as a separate payment method during order creation (storefront or admin). But technically it is tightly related to the corresponding payment provider integration. <br />
-You do not need to create a new module for vault implementation. All required configuration and entities are added in the module of the payment provider integration.</p>
+You do not need to create a new <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> for vault implementation. All required configuration and entities are added in the module of the payment provider integration.</p>
 
 <p>The topics of this chapter describe how to add the vault functionality to a payment method (the payment method must be implemented using Magento payment gateway):</p>
 

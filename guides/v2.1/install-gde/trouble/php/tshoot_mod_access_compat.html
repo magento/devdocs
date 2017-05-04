@@ -956,7 +956,7 @@
 
 <h4 id="symptoms">Symptoms</h4>
 
-<p>When you try to access your Magento Admin or storefront in a web browser, you get HTTP 503 (Service Unavailable) errors.</p>
+<p>When you try to access your <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span> or <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span> in a web browser, you get HTTP 503 (Service Unavailable) errors.</p>
 
 <p>To confirm this issue is not related to <a href="/guides/v2.1/install-gde/install/cli/install-cli-subcommands.html#instgde-cli-maint-configphp">maintenance mode</a>, look in your Apache <code>error.log</code> for messages that include:</p>
 
@@ -967,7 +967,7 @@
 
 <p>Apache 2.4 changes the way certain directives related to <code>.htaccess</code> work. The Magento software uses <code>.htaccess</code> to rewrite URLs. If <code>.htaccess</code> doesn’t work properly, you cannot access the Magento software in a web browser.</p>
 
-<p>Not all Apache 2.4 distributions have this issue because in some cases, a compatibility module named <code>mod_access_compat</code> is enabled by default. If, however, your Apache 2.4 distribution has this module disabled, you must perform the tasks discussed in the next section. You can also consult the resources listed in the final section in this topic.</p>
+<p>Not all Apache 2.4 distributions have this issue because in some cases, a compatibility <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> named <code>mod_access_compat</code> is enabled by default. If, however, your Apache 2.4 distribution has this module disabled, you must perform the tasks discussed in the next section. You can also consult the resources listed in the final section in this topic.</p>
 
 <h4 id="suggested-solution">Suggested solution</h4>
 <p>As a user with ‘root’ privileges, enter the following commands:</p>

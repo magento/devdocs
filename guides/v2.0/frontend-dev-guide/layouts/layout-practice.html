@@ -1018,7 +1018,7 @@
 </section>
 
 			<h2>What's in this topic</h2>
-<p>This article features a step-by-step illustration of how a real-life layout customization task is performed. Namely, it illustrates how to change the layout of customer account links in a Magento store page header.</p>
+<p>This article features a step-by-step illustration of how a real-life <span term-uuid="73ab5daa-5857-4039-97df-11269b626134" class="glossary-term" data-toggle="popover">layout</span> customization task is performed. Namely, it illustrates how to change the layout of customer account links in a Magento store page header.</p>
 
 <h2>Moving customer account links</h2>
 <p>In their Orange theme, OrangeCo wants to transform the header links block to a drop-down, the way it is done in the Magento Luma theme:</p>
@@ -1029,7 +1029,7 @@
 
 <p>To do this, they need to wrap the list of header links with a container and add a greeting with a drop-down arrow before the list.</p>
 
-<p>The Orange theme <a href="/guides/v2.0/frontend-dev-guide/themes/theme-inherit.html">inherits</a> from Blank, so by default the rendered header links markup in Orange looks like following:</p>
+<p>The Orange <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span> <a href="/guides/v2.0/frontend-dev-guide/themes/theme-inherit.html">inherits</a> from Blank, so by default the rendered header links <span term-uuid="8f407f13-4350-449b-9dc5-217dcf01bc42" class="glossary-term" data-toggle="popover">markup</span> in Orange looks like following:</p>
 
 <div style="border: 1px solid #ABABAB">
 <img src="/common/images/layout_code_before1.png" />
@@ -1108,7 +1108,7 @@ defines the template which is used for rearranging the links:</p>
 
 <h4>Step 3: Extend the base layout to add a block</h4>
 
-<p>OrangeCo needs to create a new block, say, <code>header.links</code>, in the <code>header.panel</code> container, to move the links there. As the links can be added to this list by different modules, it is better to add this block to the <code>default.xml</code> page configuration of the <code>Magento_Theme</code> module.</p>
+<p>OrangeCo needs to create a new block, say, <code>header.links</code>, in the <code>header.panel</code> container, to move the links there. As the links can be added to this list by different modules, it is better to add this block to the <code>default.xml</code> page configuration of the <code>Magento_Theme</code> <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>.</p>
 
 <p>So the following <a href="/guides/v2.0/frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending</a> layout is added in the Orange theme:</p>
 

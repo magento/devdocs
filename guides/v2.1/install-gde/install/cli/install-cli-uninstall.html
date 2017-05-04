@@ -887,7 +887,7 @@ php bin/magento setup:uninstall
   <h2 id="instgde-install-keep">Optionally keeping generated files</h2>
   <p>By default, <code>magento setup:upgrade</code> clears compiled code and the cache. Typically, you use <code>magento setup:upgrade</code> to update components and each component can require different compiled classes.</p>
 
-  <p>However, in some situations (particularly, deploying Magento to production), you might wish to avoid clearing compiled code because it can take some time. (The cache is still cleared.) To update the Magento database schema and data <em>without</em> clearing compiled code, enter:</p>
+  <p>However, in some situations (particularly, deploying Magento to production), you might wish to avoid clearing compiled code because it can take some time. (The <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span> is still cleared.) To update the Magento <span term-uuid="66b924b4-8097-4aea-93d9-05a81e6cc00c" class="glossary-term" data-toggle="popover">database schema</span> and data <em>without</em> clearing compiled code, enter:</p>
 
   <pre><code>magento setup:upgrade --keep-generated
 </code></pre>

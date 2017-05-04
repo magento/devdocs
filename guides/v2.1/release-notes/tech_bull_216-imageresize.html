@@ -843,11 +843,11 @@
 
 <h3 id="background">Background</h3>
 
-<p>Magento 2.1.6 introduced a change in how the platform handles images. Previous versions of Magento did <strong>not</strong> set this value  to <strong>true</strong> by default in the blank theme. However, Magento 2.1.6 now sets the value of the <code>&lt;frame&gt;&lt;/frame&gt;</code> option to <strong>true</strong> by default.</p>
+<p>Magento 2.1.6 introduced a change in how the platform handles images. Previous versions of Magento did <strong>not</strong> set this value  to <strong>true</strong> by default in the blank <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span>. However, Magento 2.1.6 now sets the value of the <code>&lt;frame&gt;&lt;/frame&gt;</code> option to <strong>true</strong> by default.</p>
 
 <h4 id="what-does-the-frameframe-element-do">What does the <code>&lt;frame&gt;&lt;/frame&gt;</code> element do?</h4>
 
-<p>The <code>&lt;frame&gt;&lt;/frame&gt;</code> element adds white space around your image. Using this option will impose a specific width and height in <code>view.xml</code> while preserving the desired aspect ratio.</p>
+<p>The <code>&lt;frame&gt;&lt;/frame&gt;</code> element adds white space around your image. Using this option will impose a specific width and height in <code>view.xml</code> while preserving the desired <span term-uuid="0b54d17c-5c5d-4f6e-b8f7-f7efb860713a" class="glossary-term" data-toggle="popover">aspect ratio</span>.</p>
 
 <p>If an image doesn’t contain a <code>&lt;frame&gt;</code> element, Magento uses the <code>product_image_white_borders</code> option in the Catalog module. This setting typically has a value of <strong>1</strong>,  but is overridden to <strong>0</strong> in the default Luma and Blank themes. If your custom theme doesn’t include this option, then Magento will rely upon the setting in the Catalog module for the value of  the <code>frame</code> option.</p>
 
@@ -875,7 +875,7 @@
     </ul>
   </li>
   <li>
-    <p>Clean your full-page cache. See <a href="http://devdocs.magento.com/guides/v2.0/config-guide/cli/config-cli-subcommands-cache.html" target="_blank">Manage the Cache</a> for more information on Magento cache types and procedures for managing caches.</p>
+    <p>Clean your full-page cache. See <a href="http://devdocs.magento.com/guides/v2.0/config-guide/cli/config-cli-subcommands-cache.html" target="_blank">Manage the Cache</a> for more information on Magento <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span> types and procedures for managing caches.</p>
   </li>
   <li>
     <p>Manually resize all your images using the <code>bin/magento catalog:images:resize</code> command.</p>

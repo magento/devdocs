@@ -1114,14 +1114,14 @@
 </section>
 
 			<h2 id="overview">Overview</h2>
-<p>Magento 2 uses <a href="https://getcomposer.org/" target="_blank">Composer</a>, a PHP dependency manager, to package components and product editions.</p>
+<p>Magento 2 uses <a href="https://getcomposer.org/" target="_blank">Composer</a>, a <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> dependency manager, to package components and product editions.</p>
 
 <p>Composer reads a <code>composer.json</code> file in Magento’s root directory to download third-party dependencies listed in the file.</p>
 
 <p>The <a href="/guides/v2.1/comp-mgr/compman-start.html">Component Manager</a> uses the <code>composer.json</code> file in an extension’s root directory to perform the following actions:</p>
 
 <ul>
-  <li>The Component Manager can update, uninstall, enable, or disable an extension if installed using Composer (including from <a href="https://packagist.org/" target="_blank">Packagist</a>, <a href="https://marketplace.magento.com/" target="_blank">Magento Marketplace</a>, or other source) <em>and</em> it has a <code>composer.json</code> file.</li>
+  <li>The Component Manager can update, uninstall, enable, or disable an <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span> if installed using Composer (including from <a href="https://packagist.org/" target="_blank">Packagist</a>, <a href="https://marketplace.magento.com/" target="_blank">Magento Marketplace</a>, or other source) <em>and</em> it has a <code>composer.json</code> file.</li>
   <li>The Component Manager can still enable or disable an extension <em>not</em> installed using Composer (e.g. custom code) if it has a <code>composer.json</code> file.</li>
 </ul>
 
@@ -1132,7 +1132,7 @@
 </div>
 
 <h2 id="composer-binary">Composer binary location</h2>
-<p>Magento uses the composer binary in the <code>&lt;Magento root&gt;/vendor/composer</code> directory instead of a globally installed composer.</p>
+<p>Magento uses the composer binary in the <code>&lt;Magento root&gt;/vendor/composer</code> directory instead of a globally installed <span term-uuid="d85e2d0a-221f-4d03-aa43-0cda9f50809e" class="glossary-term" data-toggle="popover">composer</span>.</p>
 
 <p>Keep this in mind while customizing, updating, or troubleshooting composer while working with Magento 2.</p>
 
@@ -1204,7 +1204,7 @@ The <a href="/guides/v2.1/install-gde/prereq/integrator_install.html">installati
 
 <p><strong>Type:</strong> <code>magento2-module</code></p>
 
-<p>The <code>composer.json</code> file for a module extension declares external dependencies that it needs to function.</p>
+<p>The <code>composer.json</code> file for a <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> extension declares external dependencies that it needs to function.</p>
 
 <hr />
 
@@ -1220,7 +1220,7 @@ The <a href="/guides/v2.1/install-gde/prereq/integrator_install.html">installati
 
 <p><strong>Type:</strong> <code>magento2-theme</code></p>
 
-<p>The <code>composer.json</code> file for a theme component contains parent theme dependencies the extension needs to inherit.</p>
+<p>The <code>composer.json</code> file for a <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span> component contains parent theme dependencies the extension needs to inherit.</p>
 
 <hr />
 

@@ -815,7 +815,7 @@
 
 <h2 id="overview">Overview</h2>
 
-<p>The Magento_Staging module enables you to work with the future <a href="#campaign">campaigns</a> in Magento EE.</p>
+<p>The Magento_Staging <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> enables you to work with the future <a href="#campaign">campaigns</a> in Magento EE.</p>
 
 <p>With the Magento_Staging module you can:</p>
 
@@ -826,7 +826,7 @@
       <li>Using APIs</li>
     </ul>
   </li>
-  <li>Preview a future campaign in Admin</li>
+  <li>Preview a future campaign in <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span></li>
 </ul>
 
 <p>Moreover, the Magento_Staging module is a framework for other <a href="#staging">staging</a> modules. It declares basic scenarios over the content, while other staging modules perform them. (You can recognize a staging modules by name, each ends with “Staging” and starts with a name of a module, which it extends. For example, Magento_CatalogStaging module extends functionality of Magento_Catalog module.)</p>
@@ -835,14 +835,14 @@
 
 <ul>
   <li>Product</li>
-  <li>Category</li>
-  <li>Catalog Price Rule</li>
-  <li>Shopping Cart Price Rule</li>
-  <li>CMS Block</li>
+  <li><span term-uuid="50e49338-1e6c-4473-8527-9e401d67ea2b" class="glossary-term" data-toggle="popover">Category</span></li>
+  <li><span term-uuid="8d40d668-4996-4856-9f81-b1386cf4b14f" class="glossary-term" data-toggle="popover">Catalog</span> Price Rule</li>
+  <li><span term-uuid="c7ecb18d-cefe-452d-83e2-3c4d5e355db9" class="glossary-term" data-toggle="popover">Shopping Cart</span> Price Rule</li>
+  <li><span term-uuid="f3944faf-127e-4097-9918-a2e9c647d44f" class="glossary-term" data-toggle="popover">CMS</span> Block</li>
   <li>CMS Page</li>
 </ul>
 
-<p>And you can extend the list adding your own extension modules.</p>
+<p>And you can extend the list adding your own <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span> modules.</p>
 
 <h2 id="glossary">Glossary</h2>
 
@@ -856,7 +856,7 @@
   <dt><a name="staging"><b>staging</b></a></dt>
   <dd>a set of functionality that enables you to schedule the store changes in Magento database. You can configure the particular state of the database to be applied in the future</dd>
   <dt><a name="scheduled-update"><b>scheduled update</b></a>, <a name="update"><b>update</b></a></dt>
-  <dd>scheduled change of a Magento store entity</dd>
+  <dd>scheduled change of a Magento store <span term-uuid="a9027f5d-efab-4662-96aa-c2999b5ab259" class="glossary-term" data-toggle="popover">entity</span></dd>
   <dt><a name="permanent-update"><b>permanent update</b></a></dt>
   <dd>scheduled update that has start date and doesn’t have end date</dd>
   <dt><a name="temporary-update"><b>temporary update</b></a></dt>
@@ -946,15 +946,15 @@
 
 <h4 id="preview-a-campaign">Preview a campaign</h4>
 
-<p>You can preview scheduled elements on storefront (as if it were live website) in order to make sure that all planned updates are correct before publishing.</p>
+<p>You can preview scheduled elements on <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span> (as if it were live website) in order to make sure that all planned updates are correct before publishing.</p>
 
 <p>Staging preview enables you to use the following functionality:</p>
 
 <ul>
   <li>View a store on certain future date and time with all corresponding updates applied</li>
   <li>View and manage a timeline with all future campaigns</li>
-  <li>Change a website and a store view</li>
-  <li>Add product to cart and proceed with checkout till “Submit Order” step</li>
+  <li>Change a <span term-uuid="a3c8f20f-b067-414e-9781-06378c193155" class="glossary-term" data-toggle="popover">website</span> and a <span term-uuid="ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f" class="glossary-term" data-toggle="popover">store view</span></li>
+  <li>Add product to cart and proceed with <span term-uuid="278c3ce0-cd4c-4ffc-a098-695d94d73bde" class="glossary-term" data-toggle="popover">checkout</span> till “Submit Order” step</li>
 </ul>
 
 <p>Note that you cannot create an order in a preview mode, use layered navigation and search.</p>
@@ -1066,11 +1066,11 @@
 
 <h2 id="preview-mode">Preview mode</h2>
 
-<p>In this mode, the Magento_Staging module builds a view of a store for a specific future date. You can surf the storefront, add products to the cart, go to checkout, apply gift certificates and discounts, order shipment. Payment methods and placing an order are not available in a preview mode.</p>
+<p>In this mode, the Magento_Staging module builds a view of a store for a specific future date. You can surf the storefront, add products to the cart, go to checkout, apply gift certificates and discounts, order <span term-uuid="c8f00e9d-7f70-4561-9773-60da604ba5c9" class="glossary-term" data-toggle="popover">shipment</span>. Payment methods and placing an order are not available in a preview mode.</p>
 
 <h3 id="different-websites">Different websites</h3>
 
-<p>Preview mode is also available for a multi website store. Switching between different website views is available in scope of Admin domain. Server builds a view of an open page only using its scheduled parameters. (Without redirection to another domain.)</p>
+<p>Preview mode is also available for a multi website store. Switching between different website views is available in scope of Admin <span term-uuid="41aee03b-a5d5-49c2-8839-894090ef4e86" class="glossary-term" data-toggle="popover">domain</span>. Server builds a view of an open page only using its scheduled parameters. (Without redirection to another domain.)</p>
 
 <p>NOTE All websites must use the same type of the protocol: HTTP or HTTPS. You cannot mix HTTP and HTTPS websites.
 NOTE <strong>Product in Websites</strong> tab is inactive in the Schedule Update form and cannot be edit.</p>
@@ -1135,7 +1135,7 @@ NOTE <strong>Product in Websites</strong> tab is inactive in the Schedule Update
 
 <h3 id="data-migration">Data migration</h3>
 
-<p>The Magento_Staging module uses the <code>\Magento\Staging\Setup\BasicSetup</code> class during installation. This class changes database schema and migrates data.</p>
+<p>The Magento_Staging module uses the <code>\Magento\Staging\Setup\BasicSetup</code> class during installation. This class changes <span term-uuid="66b924b4-8097-4aea-93d9-05a81e6cc00c" class="glossary-term" data-toggle="popover">database schema</span> and migrates data.</p>
 
 <h4 id="migration-of-attributes-with-range">Migration of attributes with range</h4>
 

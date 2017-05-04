@@ -1607,7 +1607,7 @@
 
 </section>
 
-			<p>This topic discusses how to prevent cache poisoning if you use the Microsoft Internet Information Server (IIS) web server. <em>Cache poisoning</em> is a method of changing cache contents to include different pages from the same site. For example, it is possible to inject an HTTP 404 (Not Found) error page in place of some benign page (for example, the storefront home page), which can lead to a potential denial-of-service (DoS). The malicious page URLs are cached by Varnish or Redis, hence the name <em>page cache poisoning</em>.</p>
+			<p>This topic discusses how to prevent <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span> poisoning if you use the Microsoft Internet Information Server (IIS) web server. <em>Cache poisoning</em> is a method of changing cache contents to include different pages from the same site. For example, it is possible to inject an HTTP 404 (Not Found) error page in place of some benign page (for example, the <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span> home page), which can lead to a potential denial-of-service (DoS). The malicious page URLs are cached by Varnish or Redis, hence the name <em>page cache poisoning</em>.</p>
 
 <p>These types of attacks can be difficult to detect because they do not result in errors in web server logs.</p>
 
@@ -1623,7 +1623,7 @@
 </div>
 
 <h3 id="description">Description</h3>
-<p>The issue results if URL rewrites are enabled on the IIS server, and any of the following HTTP headers are altered before the request reaches the Varnish or Redis caching service:</p>
+<p>The issue results if <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span> rewrites are enabled on the IIS server, and any of the following HTTP headers are altered before the request reaches the Varnish or Redis caching service:</p>
 
 <ul>
   <li><code>X-Rewrite-Url</code></li>

@@ -1521,7 +1521,7 @@
 </section>
 
 			<h2 id="ms-nginx-over">Set up multiple websites with nginx</h2>
-<p>This tutorial shows you step-by-step how to set up multiple websites using nginx.</p>
+<p>This tutorial shows you step-by-step how to set up multiple websites using <span term-uuid="b14ef3d8-51fd-48fe-94df-ed069afb2cdc" class="glossary-term" data-toggle="popover">nginx</span>.</p>
 
 <h3 id="assumptions">Assumptions</h3>
 <p>We assume the following:</p>
@@ -1551,8 +1551,8 @@
 <p>Setting up multiple stores consists of the following tasks:</p>
 
 <ol>
-  <li><a href="/guides/v2.0/config-guide/multi-site/ms_websites.html">Set up websites, stores, and store views</a> in the Magento Admin.</li>
-  <li>Create one <a href="#ms-nginx-vhosts">nginx virtual host</a> per Magento website.</li>
+  <li><a href="/guides/v2.0/config-guide/multi-site/ms_websites.html">Set up websites, stores, and store views</a> in the <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span>.</li>
+  <li>Create one <a href="#ms-nginx-vhosts">nginx virtual host</a> per Magento <span term-uuid="a3c8f20f-b067-414e-9781-06378c193155" class="glossary-term" data-toggle="popover">website</span>.</li>
   <li>
     <p>Pass the values of the <a href="#ms-nginx-vars">Magento variables</a> <code>$MAGE_RUN_TYPE</code> and <code>$MAGE_RUN_CODE</code> to nginx using the Magento-provided <code>nginx.conf.sample</code>.</p>
 
@@ -1573,7 +1573,7 @@
 </ol>
 
 <h2 id="ms-nginx-vhosts">Step 2: Create nginx virtual hosts</h2>
-<p>This section discusses how to load websites on the storefront. You can use either websites or store views; if you use store views, you must adjust parameter values accordingly. You must complete the tasks in this section as a user with <code>root</code> privileges.</p>
+<p>This section discusses how to load websites on the <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span>. You can use either websites or store views; if you use store views, you must adjust parameter values accordingly. You must complete the tasks in this section as a user with <code>root</code> privileges.</p>
 
 <div class="collapsible"><b class="collapsible-title">To create virtual hosts: </b><div class="collapsible-content"><ol>
   <li>

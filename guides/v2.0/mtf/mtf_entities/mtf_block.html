@@ -942,7 +942,7 @@
 
 </section>
 
-			<p>In functional tests we use Page Object Design Pattern. Under this pattern, a block is an area of the UI that a test interacts with, and a <a href="/guides/v2.0/mtf/mtf_entities/mtf_page.html">page</a> is a container for blocks.</p>
+			<p>In functional tests we use Page Object <span term-uuid="53755359-9916-4677-bff2-f7d26025095a" class="glossary-term" data-toggle="popover">Design Pattern</span>. Under this pattern, a block is an area of the UI that a test interacts with, and a <a href="/guides/v2.0/mtf/mtf_entities/mtf_page.html">page</a> is a container for blocks.</p>
 
 <p>The Page Object Design Pattern is used to avoid unnecessary duplication of code and to make tests easier to support.</p>
 
@@ -1156,7 +1156,7 @@
 
 <h2 id="mtf_block_mapping">Form mapping</h2>
 
-<p>Often, you need to test a Magento block that contains a form. And of course, tests require entering data in the forms. The Functional Testing Framework (<abbr title="Functional Testing Framework">FTF</abbr>) has a <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/Form.php"><code>Magento\Mtf\Block\Form</code></a> class that enables you to fill the forms automatically. One of the advantages of using this class is that you can list elements that must be automatically filled. These elements can be grouped in separate XML files. In the <abbr title="Functional Testing Framework">FTF</abbr> we call this process “a mapping”. You can use mapping to transfer data to the block from the <a href="/guides/v2.0/mtf/mtf_entities/mtf_fixture.html">fixture</a>.</p>
+<p>Often, you need to test a Magento block that contains a form. And of course, tests require entering data in the forms. The Functional Testing Framework (<abbr title="Functional Testing Framework">FTF</abbr>) has a <a href="https://github.com/magento/mtf/blob/develop/Magento/Mtf/Block/Form.php"><code>Magento\Mtf\Block\Form</code></a> class that enables you to fill the forms automatically. One of the advantages of using this class is that you can list elements that must be automatically filled. These elements can be grouped in separate <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span> files. In the <abbr title="Functional Testing Framework">FTF</abbr> we call this process “a mapping”. You can use mapping to transfer data to the block from the <a href="/guides/v2.0/mtf/mtf_entities/mtf_fixture.html">fixture</a>.</p>
 
 <p>A mapping file is an XML file which has the same name and path as the block does, and contains fields that represent form fields. Field name in the mapping file shall match the one in the fixture.</p>
 
@@ -1275,7 +1275,7 @@ To get the block class with form tab mapping, extend your class from <a href="ht
 <tr><th><code>tabs</code> nodes </th><th>Description</th></tr>
 <tr><td><code>wrapper</code> </td><td>Automatically adds <code>group_name</code> to the <code>selector</code> of the field, when <code>selector</code> has not been specified.</td></tr>
 <tr><td><code>class</code> </td><td>Reference to the class that handles tab’s behavior.</td></tr>
-<tr><td><code>selector</code> </td><td>Identifier for the selector of the tab in the HTML code, used to open the tab.</td></tr>
+<tr><td><code>selector</code> </td><td>Identifier for the selector of the tab in the <span term-uuid="a2aff425-07dd-4bd6-9671-29b7edefa871" class="glossary-term" data-toggle="popover">HTML</span> code, used to open the tab.</td></tr>
 <tr><td><code>strategy</code> </td><td>Strategy of the selector. Can be <code>css selector</code> or <code>xpath</code>.</td></tr>
 <tr><td><code>fields</code> </td><td>List of fields with parameters, that are the same as in the <a href="#mtf_block_form_xml_nodes">form mapping</a>. Also field in tab can include more then one field, in this case add <code>field</code> attribute <code>composite="1"</code>.</td></tr>
 </tbody>
@@ -1305,7 +1305,7 @@ To get the block class with form tab mapping, extend your class from <a href="ht
 
 <h2 id="mtf_block_map_form_tab_merge">Merging form tab mapping files</h2>
 
-<p>When you test a module that extends the functionality of the other module by adding a tab to the testing module entity, you can merge their form tab mapping files.</p>
+<p>When you test a <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> that extends the functionality of the other module by adding a tab to the testing module entity, you can merge their form tab mapping files.</p>
 
 <p>The form tab mapping files that have the same name and path inside different modules are merged automatically.</p>
 
@@ -1333,16 +1333,16 @@ To get the block class with form tab mapping, extend your class from <a href="ht
 <h4 id="mtf_block_path">How to determine a block name and a path</h4>
 
 <p>The block name and path in the Magento functional tests (<code>&lt;magento2_root_dir&gt;/dev/tests/functional/tests/app</code>) should reflect a corresponding block in the Magento code base for your convenience.
-For example, you develop a functional test for the bundle product creation, that uses the Bundle Items section. In the Magento code base, the block, which is responsible for the bundle option, is the <code>.../Magento/Bundle/Block/Adminhtml/Catalog/Product/Edit/Tab/Bundle/Option.php</code>, so in the Magento functional tests you can create a new file <code>.../Magento/Bundle/Block/Test/Adminhtml/Catalog/Product/Edit/Tab/Bundle/Option.php</code>.</p>
+For example, you develop a functional test for the <span term-uuid="fbcfce51-68e2-482f-84d5-f28d84404cff" class="glossary-term" data-toggle="popover">bundle product</span> creation, that uses the Bundle Items section. In the Magento code base, the block, which is responsible for the bundle option, is the <code>.../Magento/Bundle/Block/Adminhtml/Catalog/Product/Edit/Tab/Bundle/Option.php</code>, so in the Magento functional tests you can create a new file <code>.../Magento/Bundle/Block/Test/Adminhtml/Catalog/Product/Edit/Tab/Bundle/Option.php</code>.</p>
 
-<p>Magento can show you a full class name of the block and path to the PHTML template on the Magento page (changes web page design) or implicitly in the HTML code of the page.</p>
+<p>Magento can show you a full class name of the block and path to the <span term-uuid="ae0f1f68-c466-4189-88fd-6cd8b23c804f" class="glossary-term" data-toggle="popover">PHTML</span> template on the Magento page (changes web page design) or implicitly in the HTML code of the page.</p>
 
 <h5 id="mtf_block_path_ui">Get the name and the path of blocks in UI</h5>
 
 <p>To enable this feature follow:</p>
 
 <ol>
-  <li>Log in to Magento Admin as administrator</li>
+  <li>Log in to <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span> as administrator</li>
   <li>Follow <strong>STORES &gt; Configuration</strong></li>
   <li>Change <strong>Store View</strong> to <strong>Main Website</strong> (the template path and block name will only appear for current website)</li>
   <li>Follow <strong>ADVANCED &gt; Developer</strong></li>
@@ -1562,7 +1562,7 @@ For example, you develop a functional test for the bundle product creation, that
 <p>Details:</p>
 
 <ul>
-  <li>The PHP class for the page will be generated in the Magento_Catalog module, because we did not mention module attribute in the <code>page</code> node</li>
+  <li>The <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> class for the page will be generated in the Magento_Catalog module, because we did not mention module attribute in the <code>page</code> node</li>
   <li>In the <code>block</code>, we indicate <code>name</code> attribute only</li>
 </ul>
 
@@ -1616,7 +1616,7 @@ For example, you develop a functional test for the bundle product creation, that
 <p>There are some rules that should be followed to define a selector:</p>
 
 <ol>
-  <li>Use CSS and XPath strategies.</li>
+  <li>Use <span term-uuid="6c5cb4e9-9197-46f2-ba79-6147d9bfe66d" class="glossary-term" data-toggle="popover">CSS</span> and XPath strategies.</li>
   <li>To work with forms, use the <code>name</code> attribute as a selector.</li>
   <li>If an attribute is static (not auto-generated), use the <code>id</code> attribute.</li>
   <li>If you cannot use <code>id</code>, use <code>data-*</code> attributes.</li>

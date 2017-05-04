@@ -449,9 +449,9 @@
 
 </section>
 
-			<p>The web API framework gives third-party developers access to the service framework using REST or SOAP calls. Currently, Web API access is limited to Customer objects but we plan to expand access in time to include any Magento object.</p>
+			<p>The web <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span> framework gives third-party developers access to the service framework using REST or SOAP calls. Currently, <span term-uuid="377dc0a3-b8a7-4dfa-808e-2de37e4c0029" class="glossary-term" data-toggle="popover">Web API</span> access is limited to Customer objects but we plan to expand access in time to include any Magento object.</p>
 
-<p>Although REST and SOAP use different payloads and routing, they use the same authorization mechanisms to provide access to Magento services.</p>
+<p>Although REST and SOAP use different payloads and routing, they use the same <span term-uuid="34ecb0ab-b8a3-42d9-a728-0b893e8c0417" class="glossary-term" data-toggle="popover">authorization</span> mechanisms to provide access to Magento services.</p>
 
 <h2 id="exposing-a-service-using-rest-or-soap">Exposing a Service Using REST or SOAP</h2>
 
@@ -461,7 +461,7 @@
 
 <p>To start, you must configure your service using <code>app/code/[Vendor]/&lt;ModuleName&gt;/etc/webapi.xml</code>. Each REST API call must have a corresponding <code>&lt;rest route&gt;</code> in <code>webapi.xml</code>. In other words, to access a method using REST, the method must have a <code>&lt;rest route&gt;</code> in <code>webapi.xml</code>; otherwise, the method cannot be accessed.</p>
 
-<p>If a REST route is sensitive and is expected to be executed over HTTPS only, the method must use the <code>secure = true</code> attribute. Attempting to access a <code>secure</code> route using non-secure means results in an exception.</p>
+<p>If a REST route is sensitive and is expected to be executed over HTTPS only, the method must use the <code>secure = true</code> attribute. Attempting to access a <code>secure</code> route using non-secure means results in an <span term-uuid="53da11f1-d0b8-4a7e-b078-1e099462b409" class="glossary-term" data-toggle="popover">exception</span>.</p>
 
 <h3 id="sample-webapixml">Sample webapi.xml</h3>
 
@@ -501,7 +501,7 @@
 
 <p>Your <code>webapi.xml</code> must be validated by an <code>app/code/_Vendor_/Webapi/etc/webapi.xsd</code>. For comparision see Customer’s, <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Webapi/etc/webapi.xsd" target="_blank">webapi.xsd</a>.</p>
 
-<p>Your module can use <code>webapi.xsd</code> or you can create a customized validation.</p>
+<p>Your <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> can use <code>webapi.xsd</code> or you can create a customized validation.</p>
 
 <h4 id="related-topics">Related Topics:</h4>
 

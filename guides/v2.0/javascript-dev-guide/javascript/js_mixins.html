@@ -725,13 +725,13 @@
 
 <h2 id="overview-of-js-mixins">Overview of JS mixins</h2>
 
-<p>One of the ways to implement JavaScript mixins is declaring them on the RequireJS loading level. This approach allows to modify (extend/overwrite) result that a JavaScript component returns before it is used anywhere.</p>
+<p>One of the ways to implement <span term-uuid="312b4baf-15f7-4968-944e-c814d53de218" class="glossary-term" data-toggle="popover">JavaScript</span> mixins is declaring them on the RequireJS loading level. This approach allows to modify (extend/overwrite) result that a JavaScript component returns before it is used anywhere.</p>
 
-<p>The scope of your mixin usage depends on the <a href="/guides/v2.0/architecture/archi_perspectives/components/modules/mod_and_areas.html">application area</a> it is defined for:</p>
+<p>The scope of your <span term-uuid="1a305bdb-9be8-44aa-adad-98758821d6a7" class="glossary-term" data-toggle="popover">mixin</span> usage depends on the <a href="/guides/v2.0/architecture/archi_perspectives/components/modules/mod_and_areas.html">application area</a> it is defined for:</p>
 
 <ul>
-  <li><code class="highlighter-rouge">frontend</code>: the mixin is applied for all usages of the modified JS component on the storefront</li>
-  <li><code class="highlighter-rouge">adminhtml</code>: the mixin is applied for all usages of the modified JS component in the Admin panel</li>
+  <li><code class="highlighter-rouge">frontend</code>: the mixin is applied for all usages of the modified JS component on the <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span></li>
+  <li><code class="highlighter-rouge">adminhtml</code>: the mixin is applied for all usages of the modified JS component in the <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span> panel</li>
   <li><code class="highlighter-rouge">base</code>: the mixin is applied for all all usages of the modified JS component, if nothing else is specified in <code class="highlighter-rouge">frontend</code> and <code class="highlighter-rouge">adminhtml</code></li>
 </ul>
 
@@ -739,7 +739,7 @@
 
 <ol>
   <li>Define a mixin as a separate <a href="https://en.wikipedia.org/wiki/Asynchronous_module_definition">AMD module</a>. It should return a callback function. This function must get the target JS component (module) as an argument.</li>
-  <li>Declare the AMD module you created as a mixin to the target module.</li>
+  <li>Declare the AMD <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> you created as a mixin to the target module.</li>
 </ol>
 
 <p>There are more details for each step in the following section.</p>

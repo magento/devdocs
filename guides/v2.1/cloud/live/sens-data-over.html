@@ -1738,10 +1738,10 @@
 <h3 id="cloud-confman-over">Managing the configuration</h3>
 <p>We <!-- help you protect sensitive settings and  -->make it easy to Example of managing system-specific settings as follows:</p>
 
-<!-- *	A new method to manage sensitive settings (such as payment gateway passwords).
+<!-- *	A new method to manage sensitive settings (such as <span term-uuid="5b963536-8f03-45c4-963b-688021f4eea7" class="glossary-term" data-toggle="popover">payment gateway</span> passwords).
  -->
 <ul>
-  <li>An improved method to manage system configuration settings (such as store locale settings and static file optimization settings) in a new configuration file, <code>app/etc/config.local.php</code>, which is in source control.</li>
+  <li>An improved method to manage system configuration settings (such as store <span term-uuid="05099dbb-d491-4e33-a065-16035cb2d4d9" class="glossary-term" data-toggle="popover">locale</span> settings and static file optimization settings) in a new configuration file, <code>app/etc/config.local.php</code>, which is in source control.</li>
 </ul>
 
 <!-- *	In your [staging](/guides/v2.1/cloud/reference/discover-arch.html#cloud-arch-stage) and [production](/guides/v2.1/cloud/reference/discover-arch.html#cloud-arch-prod) systems, you manage sensitive settings by defining environment variables. 
@@ -1749,7 +1749,7 @@
 	You can change sensitive variables using the Magento Enterprise Cloud Edition [Web Interface](/guides/v2.1/cloud/project/project-webint-basic.html).  -->
 <ul>
   <li>
-    <p>System values related to static content deployment (for example, static file optimization) are also stored in <code>app/etc/config.local.php</code>.</p>
+    <p>System values related to <span term-uuid="a3e37235-4e8b-464f-a19d-4a120560206a" class="glossary-term" data-toggle="popover">static content</span> deployment (for example, static file optimization) are also stored in <code>app/etc/config.local.php</code>.</p>
 
     <!-- Sensitive values are _not_ stored in `app/etc/config.local.php`. -->
 
@@ -1765,7 +1765,7 @@
 <p>In other words, Cloud’s build phase is less time-consuming than deployment. Therefore, any change you make to your Cloud project deploys faster overall if there is a <code>config.local.php</code> compared to having no <code>config.local.php</code>.</p>
 
 <h3 id="cloud-confman-locked-over">Configuration settings locked in the Magento Admin</h3>
-<p>Settings in <code>config.local.php</code> are not editable in the Magento Admin. This also helps keep your settings consistent across the integration, staging, and production systems.</p>
+<p>Settings in <code>config.local.php</code> are not editable in the <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span>. This also helps keep your settings consistent across the integration, staging, and production systems.</p>
 
 <h3 id="how-to-get-magento-cloud-configuration-release-10141">How to get <code>magento-cloud-configuration</code> release 101.4.1</h3>
 <p>Magento Enterprise Cloud Edition periodically provides patch releases in components like <code>magento-cloud-configuration</code>.</p>
@@ -1785,7 +1785,7 @@
 <p>The following sections provide more detail.</p>
 
 <h3 id="cloud-config-specific-over">Example of managing system-specific settings</h3>
-<p>System settings refer to the configuration in the Magento Admin in <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong>. A list of settings can be found in <a href="/guides/v2.1/cloud/live/cloud/live/sens-data-initial.html#cloud-clp-settings">Configuration settings you can change</a>.</p>
+<p>System settings refer to the configuration in the Magento <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span> in <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong>. A list of settings can be found in <a href="/guides/v2.1/cloud/live/cloud/live/sens-data-initial.html#cloud-clp-settings">Configuration settings you can change</a>.</p>
 
 <!-- #### How we set system values
 In each of your Magento Enterprise Cloud Edition systems (integration, staging, and production), you have the option of overriding certain configuration settings:
