@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Logical view overview | Magento 2 Developer Documentation</title>
+	<title>Magento Themes | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.1/architecture/archi_perspectives/LogicalView_intro.html">
+	<link rel="canonical" href="//guides/v2.1/architecture/archi_perspectives/themes_intro.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -52,9 +52,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/architecture/archi_perspectives/LogicalView_intro.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/architecture/archi_perspectives/themes_intro.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/architecture/archi_perspectives/LogicalView_intro.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/architecture/archi_perspectives/themes_intro.html">Magento 2.1</a></li>
 	
   </ul>
 
@@ -453,7 +453,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/architecture/archi_perspectives/themes_intro.html">Magento Themes</a></li>
+									<li class="level-2  active "><a href="/guides/v2.1/architecture/archi_perspectives/themes_intro.html">Magento Themes</a></li>
 
 									
 
@@ -617,7 +617,7 @@
 
 
 								
-									<li class="level1  active "><a class="nav-header" href="/guides/v2.1/architecture/archi_perspectives/LogicalView_intro.html">Logical View</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.1/architecture/archi_perspectives/LogicalView_intro.html">Logical View</a></li>
 									
 								
 
@@ -934,7 +934,7 @@
 
           
 
-          <span property="name">Logical view overview</span>
+          <span property="name">Magento Themes</span>
 
         
 
@@ -957,14 +957,123 @@
 
 	
 
-	<h1 class="page-heading">Logical view overview</h1>
+	<h1 class="page-heading">Magento Themes</h1>
 
   
 
 
 </section>
 
-			<p>This document is not ready yet, but we are working on it.</p>
+			<h2 id="introduction">Introduction</h2>
+
+<p>A <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span> is a component of Magento application that provides a consistent look and feel (visual design) for entire application area (for example, <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span> or Magento admin) using a combination of custom templates, layouts, styles or images.</p>
+
+<p>Out-of-the-box Magento application provides two design themes: Luma, as a demonstration theme, and Blank as a basis for custom theme creation.</p>
+
+<p>All theme files are stored under <code>app/design/&lt;area&gt;/&lt;Vendor&gt;/&lt;theme&gt;/</code>.</p>
+
+<p>Apart from the configuration file and theme <span term-uuid="3f0f2ef1-ad38-41c6-bd1e-390daaa71d76" class="glossary-term" data-toggle="popover">metadata</span> file, all theme files fall into the following two categories:</p>
+
+<ul>
+  <li>
+    <p>Static view files are a set of theme files that are returned by the server to a browser as is, without any processing, are called the <span term-uuid="363662cb-73f1-4347-a15e-2d2adabeb0c2" class="glossary-term" data-toggle="popover">static files</span> of a theme.</p>
+  </li>
+  <li>
+    <p>Dynamic view files are view files that are processed or executed by the server in order to provide result to the client.
+These are: .less files, templates, layouts .</p>
+  </li>
+</ul>
+
+<p>Design packets are collections of related themes plus nondefault variants.</p>
+
+<p>Magento supports multi theme model.
+Themes are highly extensible.</p>
+
+<h2 id="control">Control</h2>
+
+<p>1) the visual aspect of site design (skinning).
+Includes CSS, images, design/UI- specific <span term-uuid="312b4baf-15f7-4968-944e-c814d53de218" class="glossary-term" data-toggle="popover">Javascript</span>
+2) also control many functional aspects of site.
+Layouts control which default blocks/modules are available
+    Templates control which data is shown and how</p>
+
+<p>Themes do not include business logic.</p>
+
+<h2 id="theme-components">Theme components</h2>
+
+<p>Magento theme components include:</p>
+
+<ul>
+  <li>
+    <p>Layout:  <span term-uuid="73ab5daa-5857-4039-97df-11269b626134" class="glossary-term" data-toggle="popover">layout</span> <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span> files.
+This defines which template file to load.</p>
+  </li>
+  <li>
+    <p>Template: template files which are generally .phtml files.</p>
+  </li>
+  <li>
+    <p>Skin: static files like images, <span term-uuid="6c5cb4e9-9197-46f2-ba79-6147d9bfe66d" class="glossary-term" data-toggle="popover">css</span> and js.</p>
+  </li>
+  <li>
+    <p>Locale: language related file.
+This will be used when you want to make your theme compatible with different languages.</p>
+  </li>
+</ul>
+
+<h2 id="theme-process-flow">Theme process flow</h2>
+
+<h3 id="process-flow">Process flow</h3>
+
+<p>In general Magento’s fallback technique for theme is as below:</p>
+
+<p>Your Custom Package » Default Package » Base Package » Error Message</p>
+
+<p>From above hierarchy you can imagine that if any of the requested file is not available in your theme then it will look for default package first and after that look into Base package and at last it will show error message if requested file is not available in any of the package.</p>
+
+<p>Theme inheritance  based on the fallback mechanism, which guarantees that if a view file is not found in the current theme, the system searches in the ancestor themes, <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> view files or <span term-uuid="08968dbb-2eeb-45c7-ae95-ffca228a7575" class="glossary-term" data-toggle="popover">library</span></p>
+
+<ul>
+  <li>page templates</li>
+  <li>block templates</li>
+  <li>layouts</li>
+</ul>
+
+<p>Apart from the configuration file and theme metadata file, all theme files fall into the following two categories:</p>
+
+<ul>
+  <li>
+    <p>Static view files.
+  These theme files are returned by the server to a browser as is, without any processing, and are called the static files of a theme.</p>
+  </li>
+  <li>
+    <p>Dynamic view files.
+  View files that are processed or executed by the server in order to provide result to the client.
+  These are: .less files, templates, layouts</p>
+  </li>
+</ul>
+
+<h3 id="where-do-themes-live">Where do themes live?</h3>
+
+<p>Each theme resides in a unique directory</p>
+
+<p>Themes live in two different directories:</p>
+
+<ul>
+  <li>
+    <p>/skin/frontend: contains images and CSS for a theme.</p>
+  </li>
+  <li>
+    <p>/app/design/frontend: contains page templates and layouts</p>
+  </li>
+</ul>
+
+<p>Base package provides hooks to all of Magento’s core features.</p>
+
+<p>Add override features rather than edit default theme files.</p>
+
+<p>Themes and layouts are discussed extensively in the</p>
+<h2 id="related">Related topics</h2>
+<p><a href="/guides/v2.1/architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a></p>
 
 		</div>
 		<!-- /.content-wrap -->
@@ -975,14 +1084,14 @@
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/architecture/archi_perspectives/LogicalView_intro.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/architecture/archi_perspectives/themes_intro.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
   
 
   <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/architecture/archi_perspectives/LogicalView_intro.html" target="_blank">Give us feedback</a>
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/architecture/archi_perspectives/themes_intro.html" target="_blank">Give us feedback</a>
   </div>
 
 </div>
