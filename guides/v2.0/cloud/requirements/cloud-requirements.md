@@ -36,10 +36,10 @@ Before you test any custom code in your local Magento Enterprise Cloud Edition e
 *	Must test with the correct file permissions in production mode
 
 	Correct permissions include no write access outside of `var`, `pub/static, pub/media`, and `app/etc` 
-*	Test with minification for HTML, JavaScript, and CSS enabled
+*	Test with minification for HTML, JavaScript, and {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} enabled
 *	Test with [Redis enabled for page cache and session cache]({{ page.baseurl }}config-guide/redis/config-redis.html)
-*	Install the [Fastly]({{ page.baseurl }}cloud/access-acct/fastly.html) extension
-*	Test using [Varnish]({{ page.baseurl }}config-guide/varnish/config-varnish.html) for the page cache
+*	Install the [Fastly]({{ page.baseurl }}cloud/access-acct/fastly.html) {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %}
+*	Test using [Varnish]({{ page.baseurl }}config-guide/varnish/config-varnish.html) for the page {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %}
 
 ### Development and testing {#cloud-req-devtest}
 For development and testing, we require the following:
@@ -63,7 +63,7 @@ Before you go live, you must:
 *	Review [our documentation]({{ page.baseurl }}cloud/live/live.html) about going live
 *	Schedule the Go Live Preparation call with the support team
 *	Adjust DNS TTL in advance 
-*	Change the default Magento Admin password
+*	Change the default {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} password
 *	Optimize all images for the web
 *	Enable minification for JS, CSS, and HTTP 
 *	Make sure that pages are being correctly cached in the page cache and Fastly 

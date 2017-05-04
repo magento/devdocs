@@ -17,7 +17,7 @@ Form is a [basic component]({{page.baseurl}}ui_comp_guide/bk-ui_comps.html#gener
 
 ## Structure
 
-Javascript constructor: [form.js]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/form/form.js)
+{% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}Javascript{% endglossarytooltip %} constructor: [form.js]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/form/form.js)
 
 ## Component options
 
@@ -222,9 +222,9 @@ For more details see the <a href="{{page.baseurl}}ui_comp_guide/concepts/ui_comp
 To create an instance of the Form component, you need to do the following:
 
 1. In you custom module, add a configuration file for the instance, for example: `customer_form.xml`.
-2. Add a set of fields (the Fieldset component with the component of the Field) for entity or     to implement the upload of meta info in the DataProvider.
+2. Add a set of fields (the Fieldset component with the component of the Field) for {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %} or     to implement the upload of meta info in the DataProvider.
 3. Create the DataProvider class for the entity that implements DataProviderInterface
-* Add a component in Magento layout as a node: `<uiComponent name="customer_form"/>`
+* Add a component in Magento {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} as a node: `<uiComponent name="customer_form"/>`
 
 Example:
 
@@ -378,7 +378,7 @@ Component configuration:
 
 Data provided by data source is shared and available for all components in the Assembly (in this case for all child components of UI Form).
 
-Data Source is another UI Component that provides data in specific format which is shared among all UI Components.
+Data Source is another {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI Component{% endglossarytooltip %} that provides data in specific format which is shared among all UI Components.
 
 ## Replacing
 

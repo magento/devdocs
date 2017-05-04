@@ -15,7 +15,7 @@ Caching is a very important consideration when using the Magento application. We
 We can help you with the following:
 
 *	<a href="{{page.baseurl}}config-guide/config/caching-cache-type.html">Create your own cache type</a>
-*	To use set up a custom cache mechanism:
+*	To use set up a custom {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} mechanism:
 	1.	Associate a <a href="{{page.baseurl}}config-guide/config/caching_frontend-cache-types.html">cache frontend</a> with cache types
 	2.	Optionally set <a href="{{page.baseurl}}config-guide/config/caching_low-level.html">low-level cache options</a>
 

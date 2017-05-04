@@ -12,7 +12,7 @@ version: 2.0
 github_link: config-guide/cache/cache-priv-priv.md
 ---
 
-The Magento page cache stores *entire* cacheable pages; where pages are stored depends on whether the content is private or public. These terms are defined as follows:
+The Magento page {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} stores *entire* cacheable pages; where pages are stored depends on whether the content is private or public. These terms are defined as follows:
 
 *	*Public*, which can display to many customers. 
 
@@ -36,7 +36,7 @@ The public method `getSectionData` must return an array with data for private bl
 
 [Example]({{ site.mage2000url }}app/code/Magento/Catalog/CustomerData/CompareProducts.php#L36-L45){:target="_blank"}
 
-Add the following to your component's dependency injection configuration (`di.xml`):
+Add the following to your component's {% glossarytooltip 2be50595-c5c7-4b9d-911c-3bf2cd3f7beb %}dependency injection{% endglossarytooltip %} configuration (`di.xml`):
 
 {% highlight xml %}
 <type name="Magento\Customer\CustomerData\SectionPoolInterface">
@@ -49,13 +49,13 @@ Add the following to your component's dependency injection configuration (`di.xm
 {% endhighlight %}
 
 ### Step 2: Create a block and template {#config-cache-priv-how-block}
-To render private content, create a block and a template to display user-agnostic data; this data is replaced with user-specific data by the UI component.
+To render private content, create a block and a template to display user-agnostic data; this data is replaced with user-specific data by the {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %}.
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>Do <em>not</em> use the <code>$_isScopePrivate</code> property in your blocks. This property is obsolete and won't work properly.</p>
 </div>
 
-Replace private data in blocks with placeholders (using [Knockout](http://knockoutjs.com/documentation/introduction.html){:target="_blank"} syntax). The init scope on the root element is `data-bind="scope: 'compareProducts'"`, where you define the scope name (`compareProducts` in this example) in your layout.
+Replace private data in blocks with placeholders (using [Knockout](http://knockoutjs.com/documentation/introduction.html){:target="_blank"} syntax). The init scope on the root element is `data-bind="scope: 'compareProducts'"`, where you define the scope name (`compareProducts` in this example) in your {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %}.
 
 Initialize the component as follows:
 
@@ -68,7 +68,7 @@ Initialize the component as follows:
 [Example]({{ site.mage2000url }}app/code/Magento/Catalog/view/frontend/templates/product/compare/sidebar.phtml#L46-L48){:target="_blank"}
 
 ### Step 3: Configure a UI component {#config-cache-priv-how-ui}
-The UI component renders block data on the Magento storefront. To initialize the UI component, you must call the initialization method `_super()`. 
+The UI component renders block data on the Magento {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}. To initialize the UI component, you must call the initialization method `_super()`. 
 
 [Example]({{ site.mage2000url }}app/code/Magento/Catalog/view/frontend/web/js/view/compare-products.js){:target="_blank"}
 

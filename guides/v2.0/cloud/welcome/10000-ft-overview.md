@@ -17,7 +17,7 @@ The goal of this page is to give you a high-level map of the cloud offering: wha
 ## What should I know about before reading this article? Or using ECE?
 
 * Git
-* Composer
+* {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %}
 * SSH
 * MySQL (including command-line interation)
 * Basic linux shell usage
@@ -52,7 +52,7 @@ You can at any time import your existing codebase using git. [See the project im
 
 ### What about Composer?
 
-You can add dependencies on Magento extensions and other PHP libraries using composer. You must also depend on a package called `magento/magento-cloud-metapackage` in order to download both the Magento codebase and also other packages that are specific to ECE (like deployment scripts).
+You can add dependencies on Magento extensions and other {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} libraries using composer. You must also depend on a package called `magento/magento-cloud-metapackage` in order to download both the Magento codebase and also other packages that are specific to ECE (like deployment scripts).
 
 ### How do things get deployed?
 
@@ -62,9 +62,9 @@ When you push to the git repository for your project, the environment will get d
 
 There are two kinds of hooks that run at different points in time: `build` and `deploy` hooks.
 
-`build` hooks run while the raw codebase is being formed: there is no access to a database or a redis cache while these hooks run. These hooks run on a machine that is separate from your webserver: once the codebase is prepared by running all of the build hooks, the entire folder gets copied onto the machine that your site is served from, in read-only form.
+`build` hooks run while the raw codebase is being formed: there is no access to a database or a redis {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} while these hooks run. These hooks run on a machine that is separate from your webserver: once the codebase is prepared by running all of the build hooks, the entire folder gets copied onto the machine that your site is served from, in read-only form.
 
-`deploy` hooks run after the read-only code slug is prepared, and this hook runs on the actual machine where the nginx web server will serve your site. These hooks can access the database, redis, etc., and so are used for making non-code-related changes to the application.
+`deploy` hooks run after the read-only code slug is prepared, and this hook runs on the actual machine where the {% glossarytooltip b14ef3d8-51fd-48fe-94df-ed069afb2cdc %}nginx{% endglossarytooltip %} web server will serve your site. These hooks can access the database, redis, etc., and so are used for making non-code-related changes to the application.
 
 The default hooks are as follows:
 

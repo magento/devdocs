@@ -44,7 +44,7 @@ This section lists the information that Magento sends to the REST client. These 
 
 ### Get the admin authorization token
 
-Most REST calls to Magento require an authorization token. The token allows Magento to verify that the caller is authorized to access a system resource. To get a token, you must specify the user's username and password in the payload.
+Most REST calls to Magento require an {% glossarytooltip 34ecb0ab-b8a3-42d9-a728-0b893e8c0417 %}authorization{% endglossarytooltip %} token. The token allows Magento to verify that the caller is authorized to access a system resource. To get a token, you must specify the user's username and password in the payload.
 
 See [Token-based authentication]({{page.baseurl}}get-started/authentication/gs-authentication-token.md) for more information about authorization tokens.
 
@@ -71,7 +71,7 @@ Magento returns the admin's access token.
 
 `5r8cvmpr11j6gmau8990rcj2qk7unh8i`
 
-This token must be specified in the authorization header of every call that requires admin permissions.
+This token must be specified in the authorization header of every call that requires {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}admin{% endglossarytooltip %} permissions.
 
 ### Verify this step {#verify-step}
 

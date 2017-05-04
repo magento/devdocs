@@ -36,7 +36,7 @@ For the whole procedure, add info how to validate that procedure was successful,
 
 
 ### Basic Markdown Syntax
-Below are some basic examples of what you can do with markdown.
+Below are some basic examples of what you can do with {% glossarytooltip a5ef9041-976f-4eb3-826e-bf836027d8c3 %}markdown{% endglossarytooltip %}.
 
 For more examples of basic markdown please follow this [link](https://daringfireball.net/projects/markdown/syntax){:target="_self"}.
 

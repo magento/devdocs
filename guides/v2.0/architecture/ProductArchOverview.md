@@ -22,7 +22,7 @@ This page is a draft plan; please do not refere to it as a Magento Developer doc
 
 ## Storefront view
 
-Site developer online storefront
+Site developer online {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}
 
 ### Site-branding components
 
@@ -34,7 +34,7 @@ Modules that provide core commerce functionality, such as Shipping) 
 
 ### Non-commercial components
 
-Modules that do not provide direct e-commerce functionality but which are needed to support a site, such as theme management.
+Modules that do not provide direct e-commerce functionality but which are needed to support a site, such as {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} management.
 
 ## Architectural Layers view
 

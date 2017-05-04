@@ -126,7 +126,7 @@ Ensure all content and design fits under a logical heading structure.
 
 **3. Use true text whenever possible**
 
-True text enlarges better, loads faster, and is easier to translate. Use CSS to add visual style.
+True text enlarges better, loads faster, and is easier to translate. Use {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} to add visual style.
 
 **4. Support the link focus indicator**
 
@@ -140,7 +140,7 @@ A link for keyboard users to skip navigation should be at the top of the page. I
 
 Ensure form controls have descriptive labels and instructions. Pay close attention to form validation errors and recovery mechanisms.
 
-**7. Provide alt text if icons or glyphs are used without text**
+**7. Provide {% glossarytooltip 9122e7d4-7db9-48b2-ad27-1af26bad1215 %}alt text{% endglossarytooltip %} if icons or glyphs are used without text**
 
 Cascading style sheets (CSS) for purely decorative images. Hyperlinked images without supporting text must be inline, with alternative text.
 

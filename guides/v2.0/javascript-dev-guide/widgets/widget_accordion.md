@@ -14,11 +14,11 @@ redirect_from:
 
 <h2>Overview</h2>
 
-Magento accordion widget is an extension of the <a href="{{page.baseurl}}javascript-dev-guide/widgets/widget_tabs.html" target="_blank">Magento Tabs widget</a>.
+Magento accordion widget is an {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} of the <a href="{{page.baseurl}}javascript-dev-guide/widgets/widget_tabs.html" target="_blank">Magento Tabs widget</a>.
 
 Accordions are generally used to break content into multiple sections that can be swapped to save space.
 
-The accordion widget source is <a href="{{site.mage2000url}}lib/web/mage/accordion.js" target="_blank">lib/web/mage/accordion.js</a>.
+The accordion {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} source is <a href="{{site.mage2000url}}lib/web/mage/accordion.js" target="_blank">lib/web/mage/accordion.js</a>.
 
 <h2 id="accordion_init">Initialize the accordion widget</h2>
 
@@ -47,7 +47,7 @@ Optionally, you can specify the following:
 <ul>
 <li>If you want the trigger to be different from the title, add the <code>data-role="content"</code> attribute for the element</li>
 
-<li>To have the content updated using Ajax, add the <code>data-ajax="true"</code> attribute for the element containing the URL for request.
+<li>To have the content updated using Ajax, add the <code>data-ajax="true"</code> attribute for the element containing the {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} for request.
 </li>
 </ul>
 

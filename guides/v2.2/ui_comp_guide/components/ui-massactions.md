@@ -109,7 +109,7 @@ Extends <code>Collapsible</code> configuration with the following options:
 
 ##### Methods and Events
 
-The following API methods are available:
+The following {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} methods are available:
 
 * <code>getAction</code> - returns the action instance found by the provided identifier
 * <code>addAction</code> - adds a new action to the actions
