@@ -11,6 +11,8 @@ github_link: payments-integrations/base-integration/module-configuration.md
 
 For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code; add your customizations in a separate {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
 
+You can use the [sample Magento_SamplePaymentGateway module](https://github.com/magento/magento2-samples/tree/master/sample-module-payment-gateway) files as basis for your custom module structure and files.
+
 ## Specify your module dependencies 
 
 Your custom payment integration module must have at least the following dependencies:
