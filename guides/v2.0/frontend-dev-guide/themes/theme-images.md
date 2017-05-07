@@ -63,7 +63,7 @@ The following table describes the attributes in detail:
       </td>
       <td>
         <p>Image identifier. Unique in the scope of theme.</p> <p>
-Can have any value, but in out-of-the- box Magento themes <code>id</code>'s are meaningful and describe the location of an image.</p><p> For example, the <code>id</code> value for images of {% glossarytooltip 9eb0e3fa-cb69-4e21-9ad0-cabeb98afcda %}cross-sell{% endglossarytooltip %} products displayed in a shopping card is <code>cart_cross_sell_products</code>.</p> <p><code>id</code>'s are used in <code>.phtml</code> templates for defining the type and properties of images displayed in each particular location on a particular page.</p>
+Can have any value, but in out-of-the- box Magento themes <code>id</code>'s are meaningful and describe the location of an image.</p><p> For example, the <code>id</code> value for images of {% glossarytooltip 9eb0e3fa-cb69-4e21-9ad0-cabeb98afcda %}cross-sell{% endglossarytooltip %} products displayed in a shopping cart is <code>cart_cross_sell_products</code>.</p> <p><code>id</code>'s are used in <code>.phtml</code> templates for defining the type and properties of images displayed in each particular location on a particular page.</p>
       </td>
     </tr>
     <tr>
