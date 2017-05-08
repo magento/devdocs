@@ -1,12 +1,12 @@
 ---
 layout: default
-group: get-started
-subgroup:
-title: Workflow Example
-menu_title: Workflow Example
-menu_order: 1
-menu_node: parent
-version: 2.1
+group: contributor
+subgroup: templates
+title: Workflow template
+menu_title: Workflow template
+menu_order: 2
+version: 2.0
+github_link: contributor-guide/templates/workflow_template.md
 ---
 
 
@@ -19,18 +19,18 @@ Continue From:<br />
 </div>
 
 <div class="flow-arrow">
-< Needs nav label >
+Needs nav label
 </div>
 
 </div>
 </div>
-
 
 
 <div class="flow-row">
 <div class="flow-column">
 
 <div class="flow-block" markdown="1">
+
 #### [1A. Onboarding](http://devdocs.magento.com/1)
 1. Install CLI
 2. Enagle SSH
@@ -119,14 +119,13 @@ Your live store
 
 
 ## Cloud Workflow
-
 <div class="flow-row centered">
 <div class="flow-column">
 
 
 <div class="flow-block" markdown="1">
 ### 1. Setup
-
+{% collapsible Show More %}
 **Goal:  Prepare for development**
 
 In local environment:
@@ -136,7 +135,7 @@ In local environment:
 3.  Add auth keys.
 4.  Install Git, PHP, MySQL, Composer.
 5.  Create Magento Enterprise Cloud Edition  project from template.
-
+{% endcollapsible %}
 </div>
 
 <div class="flow-arrow">
@@ -146,7 +145,7 @@ In local environment:
 
 <div class="flow-block flow-block-layers" markdown="1">
 ### 2. Local developers’ environments
-
+{% collapsible Show More %}
 **Goal:  Develop code, extensions and test**
 
 1. Themes and extensions.
@@ -154,7 +153,7 @@ In local environment:
   - Develop custom code.
 2. Initial testing.<br />
   **Recommended:** Test in both production  and developer modes.
-
+{% endcollapsible %}
 </div>
 
 <div class="flow-arrow flow-arrow-back">
@@ -169,7 +168,7 @@ Deploy changes to integration <br />
 
 <div class="flow-block" markdown="1">
 ### 3. Integration   testing (cloud)
-
+{% collapsible Show More %}
 **Goal: Configure (M2); Functional Test**
 
 1. Test the following items:
@@ -177,7 +176,7 @@ Deploy changes to integration <br />
   - Payment gateways.
 2. Back up database and file system (optional).
 3. Test upgrades of Magento 2.
-
+{% endcollapsible %}
 </div>
 
 <div class="flow-arrow">
@@ -187,7 +186,7 @@ Deploy changes to integration <br />
 
 <div class="flow-block" markdown="1">
 ### 4. Staging testing (cloud)
-
+{% collapsible Show More %}
 **Goal: Final Test; Performance Test**
 
 1.  Test the following items, using real product  and catalog data:
@@ -196,7 +195,7 @@ Deploy changes to integration <br />
   - Payment gateways.
 2. Complete final testing, User Acceptance  Testing (UAT) before production.<br />
   **Recommended for performance testing:** Blackfire.io profiling; New Relic Application  Performance Monitoring
-
+{% endcollapsible %}
 </div>
 
 
@@ -206,7 +205,7 @@ Deploy changes to integration <br />
 
 <div class="flow-block" markdown="1">
 ### 5. Production (cloud) — your live store
-
+{% collapsible Show More %}
 **Goal: Regular maintenance:**
 
 - Use New Relic Application Performance  Monitoring.
@@ -214,6 +213,7 @@ Deploy changes to integration <br />
 - Review error logs.
 
 System backup:  Automatically, every 6 hours
+{% endcollapsible %}
 </div>
 
 

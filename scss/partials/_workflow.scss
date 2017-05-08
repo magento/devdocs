@@ -55,9 +55,19 @@ $flow-arrow-border: 2px dashed $flow-arrow-color;
   padding: $flow-block-padding;
   margin-right: $flow-column-gutter/2;
   margin-left: $flow-column-gutter/2;
-  margin-bottom:.5em;
+  min-height: 6em;
+  margin-bottom: .5em;
   z-index: 1;
 
+
+  .collapsible-title {
+    font-weight: normal;
+    color: $link-color;
+  }
+
+  .collapsible-content {
+    padding-top: 10px;
+  }
 
   h2:first-child, h3:first-child, h4:first-child {
     margin-top: 0;
