@@ -336,7 +336,7 @@ To pass parameters to a block use the <a href="#argument"><code>&lt;argument>&lt
     
     Example: 
     
-    <pre>&lt;referenceBlock name="block.name" remove="true" /&gt;</pre>
+    <pre>&lt;referenceBlock name="block.name" remove="false" /&gt;</pre>
 
 <li>The <code>display</code> attribute is optional and its default value is true.</li>
 
