@@ -19,7 +19,7 @@ To install a theme, you need to add its code to your Magento 2 instance code bas
 - if a theme is a {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}composer{% endglossarytooltip %} package, install it using composer.
 - if a theme is distributed as an extension, use the **Web Setup Wizard** in {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}.
 
-The following sections contain more installation about each installation flow.
+The following sections contain more information about each installation flow.
 
 ## Prerequisites 
 
