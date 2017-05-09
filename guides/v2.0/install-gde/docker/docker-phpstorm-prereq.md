@@ -4,7 +4,7 @@ group: install-dock
 subgroup: 05_PhpStorm
 title: PhpStorm prerequisites
 menu_title: PhpStorm prerequisites
-menu_node: 
+menu_node:
 menu_order: 5
 version: 2.0
 github_link: install-gde/docker/docker-phpstorm-prereq.md
@@ -13,7 +13,7 @@ github_link: install-gde/docker/docker-phpstorm-prereq.md
 This topic discusses tasks you must perform before you can use PhpStorm with DevBox.
 
 ## Find a service port
-DevBox randomly assigns ports to services every time a container starts. To use DevBox with PhpStorm, you must know some of these ports (especially the SSH and the web server listen ports). 
+DevBox randomly assigns ports to services every time a container starts. To use DevBox with PhpStorm, you must know some of these ports (especially the SSH and the web server listen ports).
 
 ### Determine a listen port {#devbox-PhpStorm-ssh-find}
 To determine a listen port:
@@ -46,23 +46,31 @@ To set up an SSH tunnel on Windows using Putty:
 	*	**Port** field: Enter the [SSH listen port]({{ page.baseurl }}install-gde/docker/docker-phpstorm-prereq.html)
 
 	![Set up Putty]({{ site.baseurl }}common/images/install_docker_putty-session.png){:width="350px"}
-3.	In the Category pane, click **Connection** > **SSH** > **Tunnels**.
-4.	Enter the following information:
+
+5. In the Category pane, click **Connection** > **Data**
+6. Enter the following information:
+
+	* **Auto-login username** field: Enter `magento2`
+
+	![Set up Putty]({{ site.baseurl }}common/images/install_docker_putty_autologin.png){:width="350px"}
+
+7.	In the Category pane, click **Connection** > **SSH** > **Tunnels**.
+8.	Enter the following information:
 
 	*	**Source port** field: Enter `9000`
 	*	**Destination** field: Enter `127.0.0.1:9000`
 	*	Click **Remote**
-5.	Click **Add**.
+9.	Click **Add**.
 
 	The following figure shows an example.
 
 	![Create an SSH tunnel in Putty]({{ site.baseurl }}common/images/install_docker_putty-tunnels.png){:width="400px"}{:width="350px"}
-6.	In the Category pane, click **Session**.
-7.	In the **Saved Sessions** field, enter a name for this SSH tunnel.
-8.	Click **Save** as the following figure shows.
+10.	In the Category pane, click **Session**.
+11.	In the **Saved Sessions** field, enter a name for this SSH tunnel.
+12.	Click **Save** as the following figure shows.
 
 	![Save your SSH tunnel]({{ site.baseurl }}common/images/install_docker_putty-session-save.png){:width="350px"}
-9.	To test the SSH tunnel, click **Load**, then click **Open**.
+13.	To test the SSH tunnel, click **Load**, then click **Open**.
 
 If an "unable to connect" error displays, verify all of the preceding information and try again.
 
