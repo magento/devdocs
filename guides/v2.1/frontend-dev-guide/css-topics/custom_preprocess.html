@@ -1047,6 +1047,12 @@
 
 <p>This topic describes how to add a custom <span term-uuid="6c5cb4e9-9197-46f2-ba79-6147d9bfe66d" class="glossary-term" data-toggle="popover">CSS</span> preprocessor. Adding <a href="http://sass-lang.com/">Sass</a> support is used as an example.</p>
 
+<h2 id="sample-sass-module">Sample Sass module</h2>
+
+<p>Magento has a sample <a href="https://github.com/magento/magento2-samples/tree/master/module-sample-scss">module-sample-scss</a> <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> implementing the <span term-uuid="45f1f76d-91cd-4789-a8b5-1e3f321a6280" class="glossary-term" data-toggle="popover">Sass</span> preprocessor.</p>
+
+<p>You can view it as example when adding your custom preprocessor. Or install the module as is if you need to add Sass preprocessing. Installing a module is described in the <a href="https://github.com/magento/magento2-samples/blob/master/README.md">repository’s Readme file</a>.</p>
+
 <h2 id="adding-a-custom-preprocessor">Adding a custom preprocessor</h2>
 
 <h3 id="prerequisites">Prerequisites</h3>
@@ -1061,7 +1067,8 @@
 
 <ol>
   <li>
-    <p>In your module directory, add the <span term-uuid="edb42858-1ff8-41f9-80a6-edf0d86d7e10" class="glossary-term" data-toggle="popover">adapter</span> <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> class. It must implement the <code>Magento\Framework\View\Asset\ContentProcessorInterface</code> interface.</p>
+    <p>In your module directory, add the <span term-uuid="edb42858-1ff8-41f9-80a6-edf0d86d7e10" class="glossary-term" data-toggle="popover">adapter</span> <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> class. It must implement the <code>Magento\Framework\View\Asset\ContentProcessorInterface</code> interface. 
+For illustration, see the adapter for Sass in the sample module: <a href="https://github.com/magento/magento2-samples/blob/master/module-sample-scss/Preprocessor/Adapter/Scss/Processor.php">module-sample-scss/Preprocessor/Adapter/Scss/Processor.php</a></p>
   </li>
   <li>
     <p>If the browser compilation is possible for your file types, that is, if the corresponding <span term-uuid="312b4baf-15f7-4968-944e-c814d53de218" class="glossary-term" data-toggle="popover">JavaScript</span> <span term-uuid="08968dbb-2eeb-45c7-ae95-ffca228a7575" class="glossary-term" data-toggle="popover">library</span> exists, create the custom renderer for the client-side compilation. This will allow the default <a href="/guides/v2.1/frontend-dev-guide/css-topics/css-preprocess.html#client-side">client-side compilation functionality</a> to be applied for your files type as well. 
