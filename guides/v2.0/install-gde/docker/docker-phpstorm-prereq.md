@@ -54,23 +54,23 @@ To set up an SSH tunnel on Windows using Putty:
 
 	![Set up Putty]({{ site.baseurl }}common/images/install_docker_putty_autologin.png){:width="350px"}
 
-3.	In the Category pane, click **Connection** > **SSH** > **Tunnels**.
-4.	Enter the following information:
+7.	In the Category pane, click **Connection** > **SSH** > **Tunnels**.
+8.	Enter the following information:
 
 	*	**Source port** field: Enter `9000`
 	*	**Destination** field: Enter `127.0.0.1:9000`
 	*	Click **Remote**
-5.	Click **Add**.
+9.	Click **Add**.
 
 	The following figure shows an example.
 
 	![Create an SSH tunnel in Putty]({{ site.baseurl }}common/images/install_docker_putty-tunnels.png){:width="400px"}{:width="350px"}
-6.	In the Category pane, click **Session**.
-7.	In the **Saved Sessions** field, enter a name for this SSH tunnel.
-8.	Click **Save** as the following figure shows.
+10.	In the Category pane, click **Session**.
+11.	In the **Saved Sessions** field, enter a name for this SSH tunnel.
+12.	Click **Save** as the following figure shows.
 
 	![Save your SSH tunnel]({{ site.baseurl }}common/images/install_docker_putty-session-save.png){:width="350px"}
-9.	To test the SSH tunnel, click **Load**, then click **Open**.
+13.	To test the SSH tunnel, click **Load**, then click **Open**.
 
 If an "unable to connect" error displays, verify all of the preceding information and try again.
 
