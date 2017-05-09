@@ -15,7 +15,7 @@ The `di.xml` file configures which [dependencies]({{page.baseurl}}extension-dev-
 
 ## Areas and application entry points
 
-Each module can have a global and area-specific `di.xml` file.
+Each {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} can have a global and area-specific `di.xml` file.
 Magento reads all the `di.xml` configuration files declared in the system and merges them all together by appending all nodes.
 
 As a general rule, the area specific `di.xml` files should configure dependencies for the presentation layer, and your module's global `di.xml` file should configure the remaining dependencies.
@@ -30,7 +30,7 @@ During [bootstrapping]({{page.baseurl}}config-guide/bootstrap/magento-bootstrap.
 
 **Examples:**
 
-* In `index.php`, the [`\Magento\Framework\App\Http`](https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/Http.php#L130-L132){:target="_blank"} class loads the area based on the front-name provided in url.
+* In `index.php`, the [`\Magento\Framework\App\Http`](https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/Http.php#L130-L132){:target="_blank"} class loads the area based on the front-name provided in {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}url{% endglossarytooltip %}.
 
 * In `static.php`, the [`\Magento\Framework\App\StaticResource`](https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/StaticResource.php#L101-L104){:target="_blank"} class also loads the area based on the url in the request.
 
@@ -63,7 +63,7 @@ The preceding example declares the following types:
 *	`Magento\Core\Model\App`: All instances of this type receive an instance of `moduleConfig` as a dependency.
 
 ### Virtual types
-A virtual type allows you to change the arguments of a specific injectable dependency and change the behavior of a particular class.
+A {% glossarytooltip 058b2be4-3247-4cb0-860d-6292ce75d1f0 %}virtual type{% endglossarytooltip %} allows you to change the arguments of a specific injectable dependency and change the behavior of a particular class.
 This allows you to use a customized class without affecting other classes that have a dependency on the original.
 
 The example creates a virtual type for `Magento\Core\Model\Config` and specifies `system` as the constructor argument for `type`.
@@ -72,7 +72,7 @@ The example creates a virtual type for `Magento\Core\Model\Config` and specifies
 
 You can configure the class constructor arguments in your `di.xml` in the argument node.
 The object manager injects these arguments into the class during creation.
-The name of the argument configured in the XML file must correspond to the name of the parameter in the constructor in the configured class.
+The name of the argument configured in the {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} file must correspond to the name of the parameter in the constructor in the configured class.
 
 The following example creates instances of `Magento\Core\Model\Session` with the class constructor argument `$sessionName` set to a value of `adminhtml`:
 
@@ -266,7 +266,7 @@ This mapping is in `app/etc/di.xml`, so the object manager injects the `Magento\
 </config>
 {% endhighlight %}
 
-This mapping is in `app/code/core/Magento/Backend/etc/adminhtml/di.xml`, so the object manager injects the `Magento\Backend\Model\Url` implementation class wherever there is a request for the `Magento\Core\Model\UrlInterface` in the admin area.
+This mapping is in `app/code/core/Magento/Backend/etc/adminhtml/di.xml`, so the object manager injects the `Magento\Backend\Model\Url` implementation class wherever there is a request for the `Magento\Core\Model\UrlInterface` in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}admin{% endglossarytooltip %} area.
 
 ### Parameter configuration inheritance
 
@@ -329,9 +329,9 @@ In the Magento 2.2 [split deployment model]({{ page.baseurl }}config-guide/prod/
 *   System-specific, which are unique to a particular system. 
 
   Typical examples include host names and ports.
-* Sensitive, managed using either an environment variable, using the [`magento config:sensitive:set` command]({{ page.baseurl }}) or using the Magento Admin.
+* Sensitive, managed using either an environment variable, using the [`magento config:sensitive:set` command]({{ page.baseurl }}) or using the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}.
 
-  Typical examples are payment gateway API keys, user names, or passwords.
+  Typical examples are {% glossarytooltip 5b963536-8f03-45c4-963b-688021f4eea7 %}payment gateway{% endglossarytooltip %} {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} keys, user names, or passwords.
 
   You cannot share either system-specific or sensitive settings between development and production systems. These values are stored in `app/etc/env.php` on each system and `env.php` should not be in source control.
 

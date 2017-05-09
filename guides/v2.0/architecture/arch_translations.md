@@ -10,7 +10,7 @@ github_link: architecture/arch_translations.md
 redirect_from: /guides/v1.0/architecture/arch_translations.html
 ---
 
-Any text that's presented to the user can have a variety of captions or labels on the control elements, notifications, and error messages. The Magento application renders all these phrases in English (`US`) language (`en_US`). But if you deploy a storefront in a different language (or use the Magento Admin in different language), you can use other dictionaries for translations.
+Any text that's presented to the user can have a variety of captions or labels on the control elements, notifications, and error messages. The Magento application renders all these phrases in English (`US`) language (`en_US`). But if you deploy a {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} in a different language (or use the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} in different language), you can use other dictionaries for translations.
 
 You can either use translation packages provided with the Magento application, create your own, or obtain packages from the community.
 

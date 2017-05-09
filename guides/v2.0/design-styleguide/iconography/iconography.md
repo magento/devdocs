@@ -23,7 +23,7 @@ github_link: design-styleguide/iconography/iconography.md
 
 <h3 id="overview">Overview</h3>
 
-Icons are used throughout the Magento Admin interface, often as a controls to initiate a function (such as "Filter"), or to direct the user to section (such as "Account").
+Icons are used throughout the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} interface, often as a controls to initiate a function (such as "Filter"), or to direct the user to section (such as "Account").
 
 Icons are meant to provide a visual representation of functionality or content and should therefore bear some conceptual resemblance to them. Icons should be able to communicate their "use" to the user without the assistance of a text label, though labels should be used in the UI whenever possible to minimize ambiguity.
 
@@ -39,7 +39,7 @@ Typically icons should represent a single, unique concept and be used consistent
 
 <h3 id="icon-library">Icon Library</h3>
 
-In the Magento Admin UI icons have a simple, flat, single-color, 2D, style. This style prevents the loss of detail at smaller sizes and makes the shapes easier to comprehend.
+In the Magento {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} UI icons have a simple, flat, single-color, 2D, style. This style prevents the loss of detail at smaller sizes and makes the shapes easier to comprehend.
 
 <a href="src/Magento-icon-library.ai"> Download Icon Library .ai file</a><br>
 <a href="src/magento_icon_library.sketch"> Download Icon Library Sketch file</a>
@@ -57,7 +57,7 @@ In the Magento Admin UI icons have a simple, flat, single-color, 2D, style. This
 
 *	Icons should look like they are part of the "family" of icons.
 
-*	Line weights should be consistent with other icons in the library.
+*	Line weights should be consistent with other icons in the {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %}.
 
 *	Elements within the icon should be consistent with these elements icons in the library (i.e. "Arrows").
 
@@ -95,7 +95,7 @@ If you want to add your own icons, each icon will need to be in its own SVG file
 
 3. Specify desired font names and specify the Unicode characters to map the icons. Setting the icons to Private User Area will disable screen-readers or other accessibility tools to read your icon's characters (read "Unicode" section here). 
 
-4. Then initialize a download in the app to generate the icon font and CSS style sheet. 
+4. Then initialize a download in the app to generate the icon font and {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} style sheet. 
 
 
 

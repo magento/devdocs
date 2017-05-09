@@ -3,7 +3,7 @@ layout: default
 title: Service building basics
 ---
 
-A _service interface_ is basically a contract between code that uses the service and an integration that implements the service. The service is PHP code&mdash;typically one or more interfaces, classes, and methods.
+A _service interface_ is basically a contract between code that uses the service and an integration that implements the service. The service is {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} code&mdash;typically one or more interfaces, classes, and methods.
 
 The code that uses a service should depend on the interface rather than on the service implementation. Doing so enables you to use a different implementation if needed.
 
@@ -12,10 +12,10 @@ The code that uses a service should depend on the interface rather than on the s
 Terminology frequently used in this guide:
 
 *	Module: The PHP code that defines your application's business logic. The module code must be in subdirectories of `<your Magento install dir>/app/code/<ModuleName>`.
-*	Integration: Code that enables a third-party application to get authorized access to Magento resources using either SOAP or REST calls. The merchant who activates the integration (which might be a module or extension) must agree to allow the integration to access those resources.
+*	Integration: Code that enables a third-party application to get authorized access to Magento resources using either SOAP or REST calls. The merchant who activates the integration (which might be a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} or extension) must agree to allow the integration to access those resources.
 *	Extension: A tested module that is marketed to other merchants on Magento Marketplace. 
 
-One extension can contain multiple modules.
+One {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} can contain multiple modules.
 
 One module can expose zero or more services. (In other words, *module* is a more generic term than *service*. A module doesn't have to expose a service at all.)
 
@@ -23,17 +23,17 @@ One module can expose zero or more services. (In other words, *module* is a more
 
 Some important characteristics of a service interface:
 
-*	The methods must be annotated to describe the types of input that are used to generate contracts for the Web API framework.
+*	The methods must be annotated to describe the types of input that are used to generate contracts for the Web {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} framework.
 
 	Input arguments can be scalar types, arrays or objects. If objects are used, they should be implemented as [service data objects](#about-service-data-objects).
 
-*	The methods must be annotated to describe the types of the output that are used to generate contracts for Web API framework.
+*	The methods must be annotated to describe the types of the output that are used to generate contracts for {% glossarytooltip 377dc0a3-b8a7-4dfa-808e-2de37e4c0029 %}Web API{% endglossarytooltip %} framework.
 
 	Output arguments must be scalar types, arrays or service data objects. Objects should be implemented as [service data objects](#about-service-data-objects).
 
 *	Every interface should be versioned and numbered like V1, V2, and so on.
 
-*	The namespace should use the version number as a suffix. (For example, `Magento\Customer\Service\V1`).
+*	The {% glossarytooltip 621ef86b-7314-4fbc-a80d-ab7fa45a27cb %}namespace{% endglossarytooltip %} should use the version number as a suffix. (For example, `Magento\Customer\Service\V1`).
 
 *	You *cannot* use aliases in services interfaces or in service data objects because doing so causes WSDL generation to fail.
 

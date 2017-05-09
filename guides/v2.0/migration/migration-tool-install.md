@@ -19,7 +19,7 @@ Make sure you are using *the same released version* of both Magento 2 and the Da
 
 #### Composer metapackage
 
-If you downloaded the Magento software using a Composer metapackage, enter the following command:
+If you downloaded the Magento software using a {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} metapackage, enter the following command:
 
 	php <your Magento install dir>/bin/magento --version
 

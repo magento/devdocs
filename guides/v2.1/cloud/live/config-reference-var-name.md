@@ -1,7 +1,7 @@
 ---
 layout: default
 group: 
-subgroup: 40_live
+subgroup: Live
 title: How to name configuration variables
 menu_title: How to name configuration variables
 menu_order: 86

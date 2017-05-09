@@ -53,6 +53,7 @@ They are listed here because the content has been well received within the Magen
 * *Presentation:* [Staging and Preview][9]{:target="_blank"} by Igor Melnykov
 * *Blog post:* [Introducing UI Components][13]{:target="_blank"} by Alan Storm
 * *Presentation:* [Micro Services][14]{:target="_blank"} by Ivan Chepurnyi
+* *Blog post:* [10 Practical Rules to Build High Quality Magento 2 Module][20]{:target="_blank"} by Max Pronko
 
 ## Performance
 
@@ -78,3 +79,4 @@ They are listed here because the content has been well received within the Magen
 [17]: http://davidalger.com/development/magento/deploying-magento-2-using-capistrano/
 [18]: https://github.com/meanbee/docker-magento2
 [19]: https://www.integer-net.com/integration-tests-with-magento-2/
+[20]: https://medium.com/@maxpronko/10-practical-rules-to-build-high-quality-magento-2-module-e6fe2c9461ac

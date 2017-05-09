@@ -57,7 +57,7 @@ In default mode:
 
 *	Errors are logged to the file reports at server, and never shown to a user
 *	Static view files are cached
-*	Default mode is not optimized for a production environment, primarily because of the adverse performance impact of static files being dynamically generated rather than [materialized](https://en.wikipedia.org/wiki/Materialized_view){:target="_blank"}. In other words, creating static files and caching them has a greater performance impact than generating them using the static files creation tool.
+*	Default mode is not optimized for a production environment, primarily because of the adverse performance impact of {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} being dynamically generated rather than [materialized](https://en.wikipedia.org/wiki/Materialized_view){:target="_blank"}. In other words, creating static files and caching them has a greater performance impact than generating them using the static files creation tool.
 
 For more information, see <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a>.
 
@@ -69,8 +69,8 @@ In developer mode:
 *	Static view files are not cached; they are written to the Magento `pub/static` directory every time they're called
 *	Uncaught exceptions display in the browser
 *	System logging in `var/report` is verbose
-*	An exception is thrown in the error handler, rather than being logged
-*	An exception is thrown when an event subscriber cannot be invoked
+*	An {% glossarytooltip 53da11f1-d0b8-4a7e-b078-1e099462b409 %}exception{% endglossarytooltip %} is thrown in the error handler, rather than being logged
+*	An exception is thrown when an {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} subscriber cannot be invoked
 
 For more information, see <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a>.
 
@@ -81,7 +81,7 @@ This improves performance because static files don't go through the fallback mec
 
 In production mode:
 
-*	Static view files are not materialized, and URLs for them are composed on the fly without going through the fallback mechanism. (Static view files are served from cache only.)
+*	Static view files are not materialized, and URLs for them are composed on the fly without going through the fallback mechanism. (Static view files are served from {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} only.)
 *	Errors are logged to the file system and are never displayed to the user
 *	You can enable and disable cache types only using the [command line]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-en)
 

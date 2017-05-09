@@ -17,7 +17,7 @@ This page is a compilation of frequently asked coding questions by the Magento C
 * [PHP](http://php.net/){:target="_blank"} - This is the programming language used for developing Magento 2 code.
 * [HTML](https://en.wikipedia.org/wiki/HTML){:target="_blank"}, [CSS](https://en.wikipedia.org/wiki/Cascading_Style_Sheets){:target="_blank"}, and [JavaScript](https://www.javascript.com/){:target="_blank"} - Languages used for [frontend development]({{page.baseurl}}frontend-dev-guide/bk-frontend-dev-guide.html).
 * [Magento architecture]({{page.baseurl}}architecture/arch_whatis.html) - Developers should be familiar with the architectural concepts used in Magento such as the [Model-View-Controller](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller){:target="_blank"} pattern and the [Command Query Responsibility Segregation](http://martinfowler.com/bliki/CQRS.html){:target="_blank"} principle.
-* [Dependency Injection]({{page.baseurl}}extension-dev-guide/depend-inj.html) - An important design pattern used in Magento to handle dependencies across classes and modules.
+* [Dependency Injection]({{page.baseurl}}extension-dev-guide/depend-inj.html) - An important {% glossarytooltip 53755359-9916-4677-bff2-f7d26025095a %}design pattern{% endglossarytooltip %} used in Magento to handle dependencies across classes and modules.
 
 
 ### In Magento 2, how can my extension distinguish between the Community Edition and the Enterprise Edition?
@@ -25,10 +25,10 @@ This page is a compilation of frequently asked coding questions by the Magento C
 The correct edition can be obtained through `\Magento\Framework\App\ProductMetadataInterface::getEdition`.
 
 In Magento CE that interface maps to the concrete implementation `Magento\Framework\AppInterface\ProductMetadata`.
-However, in Magento EE, the Enterprise module will override that mapping and the interface will be implemented by `\Magento\Enterprise\Model\ProductMetadata`.
+However, in Magento EE, the Enterprise {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} will override that mapping and the interface will be implemented by `\Magento\Enterprise\Model\ProductMetadata`.
 
-Just relying on the interface through dependency injection will get you the right class, and calling "getEdition" will return the right answer.
+Just relying on the interface through {% glossarytooltip 2be50595-c5c7-4b9d-911c-3bf2cd3f7beb %}dependency injection{% endglossarytooltip %} will get you the right class, and calling "getEdition" will return the right answer.
 
 ### How do I configure my module so that it appears in a specific place on the Admin?
 
-Use the `<Module Directory>/etc/adminhtml/menu.xml` file to configure from where on the Admin your extension is accessible.
+Use the `<Module Directory>/etc/adminhtml/menu.xml` file to configure from where on the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} your {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} is accessible.

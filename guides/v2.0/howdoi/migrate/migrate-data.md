@@ -16,7 +16,7 @@ Data Migration allows you to migrate several types of data from your Magento 1 s
 <h4>Start your migration</h4>
 <ol>
   <li>Make sure that the <a href="{{page.baseurl}}migration/migration-tool.html">Data Migration Tool</a> has a network access to connect to Magento 1 and Magento 2 databases. Open ports in your firewall.</li>
-  <li>Stop all activity in the Magento 1.x Admin Panel (except for order management, such as shipping, creating invoice, credit memos etc.)</li>
+  <li>Stop all activity in the Magento 1.x {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} Panel (except for order management, such as shipping, creating invoice, credit memos etc.)</li>
 <pre>NOTE: Activity cannot resume until your Magento 2 store goes live.</pre>
   <li>Stop all Magento 1.x cron jobs.</li> 
   <li>Use the migration tool to <a href="{{page.baseurl}}migration/migration-migrate-settings.html">migrate settings</a> and websites.</li>
@@ -43,7 +43,7 @@ Now that your Magento 2 site is up-to-date with Magento 1 and is functioning nor
 2. Press Control+C in the migration tool command window to stop incremental updates.
 3. Start your Magento 2 cron jobs.
 4. In your Magento 2 system, reindex the stock indexer using the command <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-index.html#config-cli-subcommands-index-reindex">`magento indexer:reindex cataloginventory_stock`</a>.
-5. Using a tool of your choice, hit pages in your Magento 2 system to cache pages in advance of customers using your storefront.
+5. Using a tool of your choice, hit pages in your Magento 2 system to {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} pages in advance of customers using your {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}.
 6. Perform any final verification of your Magento 2 site.
 7. Change DNS, load balancers, and so on to point to new production hardware (DOWNTIME ENDS) 
 8. Magento 2 store is ready to use. You and Your customers can resume all activities.

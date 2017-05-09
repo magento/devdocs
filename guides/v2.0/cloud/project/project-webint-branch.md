@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 10_project
+subgroup: 100_project
 title: Manage environments (branches)
 menu_title: Manage environments (branches)
 menu_order: 23

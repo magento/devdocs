@@ -13,7 +13,7 @@ github_link: test/unit/unit_test_execution_phpstorm.md
 
 Running tests in PHPStorm requires a couple steps to setup the system.
 
-1. Configuring the PHP interpreter
+1. Configuring the {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} interpreter
 2. Configuring PHPUnit
 3. Creating a run configuration
 
@@ -31,7 +31,7 @@ Then, click the **+** (add) button in the top right to select the desired PHP bi
 
 Please refer to the PHPStorm documentation for further information on [how to configure a local PHP interpreter](https://www.jetbrains.com/help/phpstorm/2016.1/configuring-local-php-interpreters.html?origin=old_help).
 
-It is also possible to [configure a remote PHP interpreter](https://www.jetbrains.com/help/phpstorm/2016.1/configuring-remote-php-interpreters.html?origin=old_help), which is a common setup when working with Vagrant or Docker based development environments.
+It is also possible to [configure a remote PHP interpreter](https://www.jetbrains.com/help/phpstorm/2016.1/configuring-remote-php-interpreters.html?origin=old_help), which is a common setup when working with Vagrant or {% glossarytooltip 57f1b0dc-1341-466d-a685-e0dbf5a3b713 %}Docker{% endglossarytooltip %} based development environments.
 
 Please be aware that the details on configuring the PHP interpreter might vary between PHPStorm versions.
 
@@ -97,6 +97,6 @@ Note that the test class has to inherit from `\PHPUnit_Framework_TestCase` for P
 
 First select the run configuration to execute in the run configuration drop-down menu above the main editor window, then click the **Play** icon beside it.  
 
-By clicking the **Debug** icon (of a bug) next to the **Play** icon, it is possible to step-debug code during test execution, if the xdebug PHP extension is installed.
+By clicking the **Debug** icon (of a bug) next to the **Play** icon, it is possible to step-debug code during test execution, if the xdebug PHP {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} is installed.
 
 

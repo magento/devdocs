@@ -194,7 +194,7 @@ The following illustrates an `arguments` block:
 
 The `queue_publisher.xml` file defines which connection and exchange to use to publish messages for a specific topic. It contains the following elements:
 
-* publisher
+* {% glossarytooltip d5777fe2-f786-45d9-b052-cca8a10120d9 %}publisher{% endglossarytooltip %}
 * publisher/connection
 
 #### Example `queue_publisher.xml` file

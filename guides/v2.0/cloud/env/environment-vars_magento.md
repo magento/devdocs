@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 12_env
+subgroup: 120_env
 title: Magento application environment variables
 menu_title: Magento application environment variables
 menu_order: 80 
@@ -80,7 +80,7 @@ The following table lists variables that you can override using environment vari
 For an example, see [Step 1, Get started setting up an environment]({{page.baseurl}}cloud/access-acct/set-up-env.html#setup-env-adminurl).
 
 ## Troubleshooting {#cloud-env-vars-tshoot}
-In the event something goes wrong and you can't access your environment after it deploys, try the following:
+In the {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} something goes wrong and you can't access your environment after it deploys, try the following:
 
 *   [SSH to the environment]({{page.baseurl}}cloud/env/environments-start.html#env-start-tunn) and make sure [services]({{page.baseurl}}cloud/env/environments-start.html#cloud-ssh-tunnel-service) are running.
 *   Restore your snapshot: 

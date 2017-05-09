@@ -10,7 +10,7 @@ version: 2.0
 github_link: payments-integrations/payment-gateway/gateway-command.md
 ---
 
-Gateway Command is a component of the Magento payment gateway that takes the [payload]({{page.baseurl}}payments-integrations/payment-gateway/payment-gateway-intro.html#terms) required for a particular payment provider and sends, receives, and processes the provider's response. 
+Gateway Command is a component of the Magento {% glossarytooltip 5b963536-8f03-45c4-963b-688021f4eea7 %}payment gateway{% endglossarytooltip %} that takes the [payload]({{page.baseurl}}payments-integrations/payment-gateway/payment-gateway-intro.html#terms) required for a particular payment provider and sends, receives, and processes the provider's response. 
 For each operation (authorization, capture and so on) of a certain payment provider - a separate gateway command is added.
 
 ## Interface

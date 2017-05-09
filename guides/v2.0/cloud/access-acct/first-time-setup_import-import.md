@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 08_setup
+subgroup: 080_setup
 title: Import Magento EE into Magento Enterprise Cloud Edition
 menu_title: Import Magento EE into Magento Enterprise Cloud Edition
 menu_order: 154
@@ -27,7 +27,7 @@ Before you continue, make sure you have the [encryption key]({{ page.baseurl }}c
 ## Create a remote Git reference {#cloud-import-ref}
 This section discusses how to create a remote Git reference from your Cloud Git repository to the repository in which your Magento EE installation is located.
 
-Before you continue, make sure you know the SSH or HTTPS URL for your Magento EE installation Git repository.
+Before you continue, make sure you know the SSH or HTTPS {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} for your Magento EE installation Git repository.
 
 To create a remote Git reference:
 
@@ -98,7 +98,7 @@ To import the Magento database in Magento Enterprise Cloud Edition, you must kno
 *   The database name, user name, and password of the [Cloud database]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-prepare.html#cloud-import-pre-cloudb)
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-This topic discusses how to import the [integration system]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-int) database. The database connection information is different for [staging]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-stage) and [production]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-prod) systems. You'll need the assistance of Magento Support before you can migrate your integration system database to staging or production.
+This topic discusses how to import the [integration system]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int) database. The database connection information is different for [staging]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-stage) and [production]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-prod) systems. You'll need the assistance of Magento Support before you can migrate your integration system database to staging or production.
 </div>
 
 ### Drop and re-create the Cloud database
@@ -205,16 +205,16 @@ On the Cloud environment, enter the following commands in the order shown:
     bin/magento magento setup:static-content:deploy
     bin/magento cache:clean
 
-After the cache flushes, enter `exit` to close the SSH tunnel.
+After the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} flushes, enter `exit` to close the SSH tunnel.
 
 ## Verify the import
 To verify everything imported properly, perform the following tasks in your local Cloud development environment:
 
-1.  On your Cloud environment, enter the following commands to find the information to log in to the Magento Admin and to view the storefront:
+1.  On your Cloud environment, enter the following commands to find the information to log in to the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} and to view the storefront:
 
         magento-cloud environment:url
-2.  Log in to the Magento Admin using the user name and password of your Magento EE system.
+2.  Log in to the Magento {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} using the user name and password of your Magento EE system.
 3.  Make sure settings in the Admin are the same as your Magento EE system.
-3.  Access the storefront.
+3.  Access the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}.
 4.  Make sure categories, products, and so on display as you expect.
 5.  Test everything thoroughly.

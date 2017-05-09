@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 08_setup
+subgroup: 080_setup
 title: Set up a Magento workspace
 menu_title: Set up a Magento workspace
 menu_order: 50

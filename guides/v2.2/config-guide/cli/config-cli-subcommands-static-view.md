@@ -12,11 +12,11 @@ version: 2.2
 github_link: config-guide/cli/config-cli-subcommands-static-view.md
 ---
 
-The static view files deployment command enables you to write static files to the Magento file system when the Magento software is set for <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>.
+The static view files deployment command enables you to write {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} to the Magento file system when the Magento software is set for <a href="{{page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-production">production mode</a>.
 
 The term *static view file* refers to the following:
 
-*	"Static" means it can be cached for a site (that is, the file is not dynamically generated). Examples include images and CSS generated from LESS.
+*	"Static" means it can be cached for a site (that is, the file is not dynamically generated). Examples include images and {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} generated from LESS.
 *	"View" refers to presentation layer (from MVC).
 
 Static view files are located in the `<your Magento install dir>/pub/static` directory, and some are cached in the `<your Magento install dir>/var/view_preprocessed` directory as well.
@@ -29,7 +29,7 @@ Static view files deployment is affected by Magento modes as follows:
 	You must write static view files to the Magento file system manually using the command discussed in this topic; after that, you can restrict permissions to limit your vulnerabilities and to prevent accidental or malicious overwriting of files.
 
 <div class="bs-callout bs-callout-warning">
-  <p><em>Developer mode only</em>: When you install or enable a new module, it might load new JavaScript, CSS, layouts, and so on. To avoid issues with static files, you must clean the old files to make sure you get all the changes for the new module.</p>
+  <p><em>Developer mode only</em>: When you install or enable a new module, it might load new JavaScript, CSS, layouts, and so on. To avoid issues with static files, you must clean the old files to make sure you get all the changes for the new {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.</p>
 
 You can clean generated static view files in several ways, see the <a href="{{page.baseurl}}howdoi/clean_static_cache.html">Clean static files cache topic for details</a>.
 </div>
@@ -41,7 +41,7 @@ In addition to the command arguments discussed here, see <a href="{{page.baseurl
 ## Deploy static view files {#config-cli-subcommands-staticview}
 To deploy static view files:
 
-1.	Log in to the Magento server as, or <a href="{{page.baseurl}}install-gde/prereq/file-sys-perms-over.html">switch to</a>, the Magento file system owner.
+1.	Log in to the Magento server as, or <a href="{{page.baseurl}}install-gde/prereq/file-sys-perms-over.html">switch to</a>, the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %}.
 2.	Delete the contents of `<your Magento install dir>/pub/static`.
 3.	Run the static view files deployment tool `<your Magento install dir>/bin/magento setup:static-content:deploy`.
 <!-- 4.	Set read-only file permissions for the `pub/static` directory, its subdirectories, and files. -->
@@ -426,7 +426,7 @@ The following table discusses the meanings of this command's parameters and valu
 Following are some example commands.
 
 #### Excluding a theme and HTML minification
-The following command deploys static content for the US English (`en_US`) language, excludes the Luma theme provided with Magento, and does not minify HTML files.
+The following command deploys {% glossarytooltip a3e37235-4e8b-464f-a19d-4a120560206a %}static content{% endglossarytooltip %} for the US English (`en_US`) language, excludes the Luma {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} provided with Magento, and does not minify {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} files.
 
     magento setup:static-content:deploy en_US --exclude-theme Magento/luma --no-html-minify
 
@@ -448,7 +448,7 @@ Sample output:
     ---
 
 #### Generating static view files for one theme and one area
-The following command generates static view files for all languages, the frontend area only, the Magento Luma theme only, without generating fonts:
+The following command generates static view files for all languages, the {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} area only, the Magento Luma theme only, without generating fonts:
 
     magento setup:static-content:deploy --area frontend --no-fonts --theme Magento/luma
 

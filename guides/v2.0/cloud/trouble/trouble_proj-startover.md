@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 50_trouble
+subgroup: 170_trouble
 title: Resolve issues with a new project
 menu_title: Resolve issues with a new project
 menu_order: 2

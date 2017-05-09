@@ -12,7 +12,7 @@ redirect_from: /guides/v2.0/ui-library/ui-form.html
 ---
 
 ## Overview
-Form component allows performing <a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD</a> operations on an entity. 
+Form component allows performing <a href="https://en.wikipedia.org/wiki/Create,_read,_update_and_delete">CRUD</a> operations on an {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}entity{% endglossarytooltip %}. 
 
 The following are the components element, the constructor: `<Magento_Ui_module_dir>/view/base/web/js/form/form.js`
 
@@ -23,7 +23,7 @@ The following components are used to extend the Form component:
 * DataSource
 * FieldSet
 * Field
-* Layout
+* {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}Layout{% endglossarytooltip %}
 * Container
 
 ## Component options

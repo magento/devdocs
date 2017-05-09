@@ -35,5 +35,4 @@ Key points:
 #### Related topics
 *	<a href="{{page.baseurl}}extension-dev-guide/intro/intro-composer.html">Introduction to Composer</a>
 *	<a href="{{page.baseurl}}extension-dev-guide/intro/intro-composer-gloss.html">Glossary of common terms</a>
-*	<a href="https://github.com/magento/magento2-samples" target="_blank">Sample extensions</a> created by the Magento 2 Core team
 *	<a href="http://magento.com/developers/magento2" target="_blank">Magento 2 Developers Hub</a>
