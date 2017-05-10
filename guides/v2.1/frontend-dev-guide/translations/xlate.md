@@ -128,7 +128,7 @@ Magento enables you to create the following types of language packages:
 
 *	Language packages that contain a entire dictionary in one directory.
 
-	You can distribute this language package as a standalone component (similar to modules and themes). Interestingly, it violates Magento's modularity principles on purpose; that is, so that a system integrator can translations variations provided by extensions.
+	You can distribute this language package as a standalone component (similar to modules and themes). Interestingly, it violates Magento's modularity principles on purpose; that is, so that a system integrator can translate variations provided by extensions.
 
 In addition to the `.csv` file that contains the language dictionary, the language package contains meta-information:
 
