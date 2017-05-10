@@ -13,9 +13,9 @@ github_link: install-gde/basics/basics_magento-installed.md
 redirect_from: /guides/v1.0/install-gde/basics/basics_magento-installed.html
 ---
 
-To determine if the Magento software is installed already, you can access the Magento Admin (administration console) or storefront using a web browser.
+To determine if the Magento software is installed already, you can access the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} (administration console) or {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} using a web browser.
 
-**Prerequisite**: You must know the Magento server's host name or IP address, and the URL to access the Magento installation. If you're not sure, find the information from your system administrator or hosting provider.
+**Prerequisite**: You must know the Magento server's host name or IP address, and the {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} to access the Magento installation. If you're not sure, find the information from your system administrator or hosting provider.
 
 Then open a web browser and go to the URL you were provided. Some examples follow:
 
@@ -29,7 +29,7 @@ If Magento is installed, you should see something like the following after you l
 
 Magento Admin:
 
-<p><img src="{{ site.baseurl }}common/images/install_success_admin.png" alt="Magento Admin which verifies a successful installation"></p>
+<p><img src="{{ site.baseurl }}common/images/install_success_admin.png" alt="Magento {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} which verifies a successful installation"></p>
 
 
 Magento storefront:

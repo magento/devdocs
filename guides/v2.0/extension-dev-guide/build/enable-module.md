@@ -13,7 +13,7 @@ redirect_from: /guides/v2.0/extension-dev-guide/enable-module.html
 After you have built the component and are ready to enable it in your Magento environment, do the following:
 
 <ol>
-<li>Disable the cache under <code>System->Cache Management</code>.</li>
+<li>Disable the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} under <code>System->Cache Management</code>.</li>
 <li>Enter the following at the command line:
 
 		<pre>bin/magento module:enable --clear-static-content Component_Name

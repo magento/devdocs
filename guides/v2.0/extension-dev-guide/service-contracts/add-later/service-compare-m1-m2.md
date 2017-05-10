@@ -6,7 +6,7 @@ title: Service implementation comparison
 As an example of the power and simplicity of the Magento 2 service framework, let's take a look at two side-by-side implementations:
 
 *	An address book in Magento 1 and in Magento 2.
-*	Customer registration during checkout in Magento 1 and Magento 2.
+*	Customer registration during {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} in Magento 1 and Magento 2.
 
 The implementations are presented at a high level without all the details; however, you'll see that the services framework provides significant improvements compared to Magento 1.
 
@@ -14,7 +14,7 @@ Both implementations are taken from Magento code; they are not hypothetical.
 
 ## Address Book Example
 
-This example gets an address from an address book module and sends it back as HTML.
+This example gets an address from an address book {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} and sends it back as {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %}.
 
 ### Address Book Implementations Side by Side
 
@@ -72,7 +72,7 @@ Magento 2 implementation:
 
 ### Discussion of Register During Checkout Example
 
-These two implementations both start with the controller calling the <tt>saveOrder</tt> method on the Onepage class, then Onepage calling <tt>submitOrder</tt> on the Quote class.
+These two implementations both start with the controller calling the <tt>saveOrder</tt> method on the Onepage class, then Onepage calling <tt>submitOrder</tt> on the {% glossarytooltip 77e19d0d-e7b1-4d3d-9bad-e92fbb9fb59a %}Quote{% endglossarytooltip %} class.
 
 From that point they are different, as the following table shows:
 

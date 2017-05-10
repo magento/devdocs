@@ -193,4 +193,4 @@ This page will contain a list of all Magento UI components. This topic is being 
 
 
 <!--
-Notes: the column called Top-level nested... the UI component must be nested in the specific top-level UI component. Or use magic workaround  -->
+Notes: the column called Top-level nested... the {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %} must be nested in the specific top-level UI component. Or use magic workaround  -->

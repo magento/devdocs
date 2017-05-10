@@ -29,7 +29,7 @@ Backward-incompatible changes are documented in <a href="http://devdocs.magento.
 
 
 <h4>APIs</h4>
-<!-- 46720 --> * The Orders API now exposes the shipping address. This corrects an issue with using this API to integrate with third-party systems. 
+<!-- 46720 --> * The Orders {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} now exposes the shipping address. This corrects an issue with using this API to integrate with third-party systems. 
 
 
 <!-- 49558 --> * The SOAP API now returns attributes of type "text swatch" and "visual swatch" when you use the API to add attribute options. Previously, this feature did not work for these attribute types.  
@@ -39,18 +39,18 @@ Backward-incompatible changes are documented in <a href="http://devdocs.magento.
 <!-- 50500 -->* Magento now allows you to use arguments of `url` type in nested arrays. Previously, you could pass route parameters only if the `url` argument was declared at the top level.  
 
 <h4>Miscellaneous</h4>
-<!-- 47704 -->* Magento no longer displays HTML tags in messages. 
+<!-- 47704 -->* Magento no longer displays {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} tags in messages. 
 
 
-<!-- 48781 --> * Product performance has been enhanced when loading catalog products with multiple color swatches. 
+<!-- 48781 --> * Product performance has been enhanced when loading {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}catalog{% endglossarytooltip %} products with multiple color swatches. 
 
 <!-- 47844 -->* Magento now successfully saves and displays new customer attributes. 
 
-<!-- 47685 --> * The Google Tag Manager module now sends impressions to the Magento Data layer.
+<!-- 47685 --> * The Google Tag Manager {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} now sends impressions to the Magento Data layer.
 
-<!-- 48124 --> * Admin users can now view orders only from stores for which they have view  permission.
+<!-- 48124 --> * {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} users can now view orders only from stores for which they have view  permission.
 
-<!-- 49449--> * Magento performance has been improved by the removal of redundant get requests that previously occurred during shopping cart refresh.
+<!-- 49449--> * Magento performance has been improved by the removal of redundant get requests that previously occurred during {% glossarytooltip c7ecb18d-cefe-452d-83e2-3c4d5e355db9 %}shopping cart{% endglossarytooltip %} refresh.
 
 
 
@@ -63,14 +63,14 @@ The following list provides an overview of the security issues fixed in this rel
 
 <!-- 50608 -->*  Magento now supports setting limits on password attempts. Previously, Admin and Customer Token API access did not limit the number of attempts to enter a password, inadvertently allowing brute force attempts to guess passwords. 
 
-<!-- 50611 -->* APIs that previously granted access to anonymous users are now configured to require a higher permission level.  Default product behavior does not permit anonymous access to Catalog, Store and CMS APIs. However, if you would like to allow anonymous access, you can change this setting. 
+<!-- 50611 -->* APIs that previously granted access to anonymous users are now configured to require a higher permission level.  Default product behavior does not permit anonymous access to Catalog, Store and {% glossarytooltip f3944faf-127e-4097-9918-a2e9c647d44f %}CMS{% endglossarytooltip %} APIs. However, if you would like to allow anonymous access, you can change this setting. 
 
 
-<!-- 48819 -->* Magento now prevents the arbitrary execution of PHP code through the language package CSV file. 
+<!-- 48819 -->* Magento now prevents the arbitrary execution of {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} code through the {% glossarytooltip 9c4c7b9b-43f0-4454-8e8c-fb62ad40c35f %}language package{% endglossarytooltip %} {% glossarytooltip 6341499b-ead9-4836-9794-53d95eb48ea5 %}CSV{% endglossarytooltip %} file. 
 
 <!-- 47050 -->* The encryption keys that are generated in **System > Manage Encryption Key** have been strengthened. 
 
-<!-- 50755 -->* Reflected cross-site scripting (XSS) can no longer occur through the Authorizenet module’s redirect data. 
+<!-- 50755 -->* Reflected cross-site scripting (XSS) can no longer occur through the Authorizenet module’s {% glossarytooltip 510de766-1ebd-4546-bf38-c618c9c945d2 %}redirect{% endglossarytooltip %} data. 
 
 
 We recommend that you review Magento's <a href="https://magento.com/security/best-practices/security-best-practices.html" target="_blank">Security Best Practices</a>, and confirm that all safeguards are in place to protect your system from compromise. Use this occasion to examine your system for indications of possible attack, such as strange administrator accounts, unfamiliar files on the server, etc. To receive direct notification from our security team regarding any emerging issues and solutions, sign up for the <a href="https://magento.com/security/sign-up" target="_blank">Security Alert Registry</a>.

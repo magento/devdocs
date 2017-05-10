@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 40_live
+subgroup: Live
 title: Example of managing system-specific settings 
 menu_title: Example of managing system-specific settings
 menu_order: 15
@@ -12,13 +12,13 @@ version: 2.1
 github_link: cloud/live/sens-data-initial.md
 ---
  
-This topic discusses how to manage default locale and static file optimization settings in your integration system. _Static file optimization_ means merging and minifying JavaScript and Cascading Style Sheets, and minifying HTML templates. Static file optimization should be disabled in integration (where you're testing) and enabled in staging and production.  
+This topic discusses how to manage default {% glossarytooltip 05099dbb-d491-4e33-a065-16035cb2d4d9 %}locale{% endglossarytooltip %} and static file optimization settings in your integration system. _Static file optimization_ means merging and minifying {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} and Cascading Style Sheets, and minifying {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} templates. Static file optimization should be disabled in integration (where you're testing) and enabled in staging and production.  
 
 These particular settings are discussed only to explain how the procedure works; you can use the same procedure to manage any available settings. 
 
 This example shows how to:
 
-1.	Change the configuration in the integration server's Admin.
+1.	Change the configuration in the integration server's {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}.
 2.	Create `config.local.php` and transfer it to your local system.
 3.	Push `config.local.php` to the integration server
 4.	Verify your settings are not editable in the Admin.
@@ -28,11 +28,11 @@ This example shows how to:
 	3.	Re-create and push the updated `config.local.php` to the integration server.
 
 <!-- <div class="bs-callout bs-callout-info" id="info" markdown="1">
-This example shows how you can set and lock configuration values for everything _except_ sensitive settings. You must set sensitive settings either as configuration variables or in the Magento Admin. For more information, see [Sensitive configuration paths]({{ page.baseurl }}cloud/live/config-reference-sens.html).
+This example shows how you can set and lock configuration values for everything _except_ sensitive settings. You must set sensitive settings either as configuration variables or in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}. For more information, see [Sensitive configuration paths]({{ page.baseurl }}cloud/live/config-reference-sens.html).
 </div> -->
 
 ## Required role
-To complete the tasks discussed in this topic, you must have at minimum a project reader role with [environment administrator]({{ page.baseurl }}cloud/admin/admin-user-admin.html#loud-role-env) privileges.
+To complete the tasks discussed in this topic, you must have at minimum a project reader role with [environment administrator]({{ page.baseurl }}cloud/project/user-admin.html#loud-role-env) privileges.
 
 ## Configuration settings you can change {#cloud-clp-settings}
 The following table shows the configuration settings affected by the `bin/magento magento-cloud:scd-dump` command. These are the configuration settings that you can manage in Git.
@@ -44,7 +44,7 @@ The following table shows the configuration settings affected by the `bin/magent
 | Server-side or client-side LESS compilation  | Advanced > **Developer**, **Frontend Developer Workflow** > **Workflow type** 
 |  HTML minification | Advanced > **Developer**, **Template Settings** > **Minify Html**  
 | JavaScript minification  | Advanced > **Developer**, **JavaScript Settings** > (several options)   
-| CSS minification  | Advanced > **Developer**, **CSS Settings** > **Merge CSS Files** and **Minify CSS Files**
+| {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} minification  | Advanced > **Developer**, **CSS Settings** > **Merge CSS Files** and **Minify CSS Files**
 | Disable modules output |  Advanced > **Advanced** > **Disable Modules Output** |
 
 ## Prerequisite

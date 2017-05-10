@@ -15,13 +15,13 @@ This topic is duplicated by:
 architecture/archi_perspectives/components/arch_libraries.md,
 which is currently published on DevDocs.
 
-Thus, the HTML elements in this topic haven't been fixed.
+Thus, the {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} elements in this topic haven't been fixed.
 -->
 
 <h2 id="m2arch-libraries-overview">Overview</h2>
 The Magento software can use the following types of libraries:
 
-*	Magento PHP libraries, which are discussed in the next section.
+*	Magento {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} libraries, which are discussed in the next section.
 *	Magento UI libraries, which are located in the <a href="{{ site.mage2000url }}lib/web" target="_blank">lib/web</a> directory.
 
 	For more information, see <a href="{{ site.mage2000url }}lib/web/css/docs/source/README.md" target="_blank">library documentation on GitHub</a> and <a href="{{page.baseurl}}architecture/view/view-lib.html">View Library</a>.
@@ -30,7 +30,7 @@ The Magento software can use the following types of libraries:
 	Third-party libraries are organized by vendor to be PSR-0 compliant.
 
 <h2 id="m2arch-libraries-mage">Magento PHP libraries</h2>
-<a href="{{ site.mage2000url }}lib/internal/Magento/Framework" target="_blank">Magento PHP libraries</a> include code that is designed to be independent libraries of code useful to a Magento application. Each library has minimal dependencies on any other library.
+<a href="{{ site.mage2000url }}lib/internal/Magento/Framework" target="_blank">Magento PHP libraries</a> include code that is designed to be independent libraries of code useful to a Magento application. Each {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %} has minimal dependencies on any other library.
 
 For example:
 

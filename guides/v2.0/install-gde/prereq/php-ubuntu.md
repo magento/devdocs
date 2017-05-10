@@ -24,7 +24,7 @@ Magento requires:
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>Magento no longer supports PHP 5.4.</p></span>
+  <p>Magento no longer supports {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} 5.4.</p></span>
 </div>
 
 <h2 id="php-ubuntu-help-beginner">Help if you're just starting out</h2>

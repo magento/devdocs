@@ -49,7 +49,7 @@ where
 *	`<magento install dir>` is the directory in which you installed the Magento software; for example, `/var/www`
 *	`| grep -v "Ran jobs by schedule"` filters this message from the log, making any errors easier to spot
 
-The first command (`magento cron:run`) reindexes indexers, send automated e-mails, generates the sitemap, and so on. Usually it's associated with the PHP command line `.ini` file. The other two commands are used by the Component Manager and System Upgrade.
+The first command (`magento cron:run`) reindexes indexers, sends automated e-mails, generates the sitemap, and so on. Usually it's associated with the PHP command line `.ini` file. The other two commands are used by the Component Manager and System Upgrade.
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>If you're a contributing developer (that is, you <a href="{{ page.baseurl }}install-gde/prereq/dev_install.html">cloned the Magento 2 GitHub repository</a>), only the first line applies to you. See the examples that follow for details.</p>

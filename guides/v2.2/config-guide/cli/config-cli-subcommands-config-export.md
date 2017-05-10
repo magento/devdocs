@@ -18,7 +18,7 @@ As a result of the command execution, the `config.php` file in the `app/etc/` di
 
 The `config.php` file contains the following sections:
 
-- `system`: all system configurations required for successful static content deployment
+- `system`: all system configurations required for successful {% glossarytooltip a3e37235-4e8b-464f-a19d-4a120560206a %}static content{% endglossarytooltip %} deployment
 - `scopes`: the list of stores, store groups and websites with related information
 - `i18n`:  all inline translations. This section is used for generating `js-translation.json`
 - `modules`: the list of enabled/disabled modules
@@ -26,7 +26,7 @@ The `config.php` file contains the following sections:
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-<p>While the exported configuration files reside in the <code>app/etc</code> directory, you cannot change the value of the corresponding configuration fields under <b>Store</b> -> <b>Configuration</b> in the Admin Panel. The fields are displayed, but disabled. You need to remove the `system` configuration section from <code>app/etc</code> files, to make the settings available.</p></span>
+<p>While the exported configuration files reside in the <code>app/etc</code> directory, you cannot change the value of the corresponding configuration fields under <b>Store</b> -> <b>Configuration</b> in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} Panel. The fields are displayed, but disabled. You need to remove the `system` configuration section from <code>app/etc</code> files, to make the settings available.</p></span>
 </div>
 
 ## Interactively set sensitive configuration values

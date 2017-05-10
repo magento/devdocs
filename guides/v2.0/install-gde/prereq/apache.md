@@ -53,7 +53,7 @@ The result displays similar to the following:
 *	If Apache is *not* installed, see:
 	*	<a href="#install-prereq-apache-ubuntu">Installing or upgrading Apache on Ubuntu</a>
 	*	<a href="#install-prereq-apache-centos">Installing Apache on CentOS</a>
-*	If Apache 2.2 is installed on Ubuntu 12 *and* you want to use PHP 5.6, see the next section
+*	If Apache 2.2 is installed on Ubuntu 12 *and* you want to use {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} 5.6, see the next section
 
 <h2 id="install-prereq-apache-ubuntu">Installing or upgrading Apache on Ubuntu</h2>
 The following sections discusses how to install or upgrade Apache:

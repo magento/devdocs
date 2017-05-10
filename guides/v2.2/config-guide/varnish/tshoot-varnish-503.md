@@ -12,7 +12,7 @@ github_link: config-guide/varnish/tshoot-varnish-503.md
 
 ## Backend Fetch Failed errors
 
-If the length of cache tags used by Magento exceed Varnish's default of 8192 characters, you can see HTTP 503 (Backend Fetch Failed) errors in the browser. The errors might display similar to the following:
+If the length of {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} tags used by Magento exceed Varnish's default of 8192 characters, you can see HTTP 503 (Backend Fetch Failed) errors in the browser. The errors might display similar to the following:
 
 	Error 503 Backend fetch failed
 	Backend fetch failed
@@ -27,7 +27,7 @@ To resolve this issue, increase the default value of `http_resp_hdr_len` in your
 
 2.	Search for the `http_resp_hdr_len` parameter.
 3.	If the parameter doesn't exist, add it after `thread_pool_max`.
-4.	Set `http_resp_hdr_len` to a value equal to the product count of your largest category multiplied by 30. (Each product tag is about 21 characters in length.)
+4.	Set `http_resp_hdr_len` to a value equal to the product count of your largest {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} multiplied by 30. (Each product tag is about 21 characters in length.)
 
 	For example, setting the value to 64000 should work if your largest category has 3,050 products.
 
@@ -49,7 +49,7 @@ To resolve this issue, increase the default value of `http_resp_hdr_len` in your
 
 ## Health check timeouts
 
-If you disable the cache while Varnish is configured as the caching application and while Magento is in developer mode, it might become impossible to log in to the Admin.
+If you disable the cache while Varnish is configured as the caching application and while Magento is in developer mode, it might become impossible to log in to the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}.
 
 This situation could happen because the default health check has a `timeout` value of 2 seconds. It could take more than 2 seconds for the health check to collect and merge information on every health check request. If this occurs in 6 out of 10 health checks, the Magento server is consindered unhealthy. Varnish serves stale content when the server is unhealthy.
 

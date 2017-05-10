@@ -9,7 +9,7 @@ version: 2.0
 github_link: extension-dev-guide/versioning/index.md
 ---
 
-The Magento Platform and Magento Module releases have their own unique version number.
+The Magento Platform and Magento {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}Module{% endglossarytooltip %} releases have their own unique version number.
 
 A change in the version for the Magento Platform indicates a patch or feature release.
 This version change does not reflect the nature of the changes in the code base.
@@ -35,7 +35,7 @@ If this is unavoidable, you must depend on the patch version of the core modules
 
 ## API and customization points
 
-Public code includes Public API (Application Programming Interface) and Public Customization Points.
+Public code includes Public {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} (Application Programming Interface) and Public Customization Points.
 
 Modules call APIs to create new application scenarios.
 Modifications that break the API will trigger a bump in a module's MAJOR version.
@@ -43,7 +43,7 @@ Modifications that break the API will trigger a bump in a module's MAJOR version
 Modules customize or replace Customization Points to customize existing application scenarios.
 Modifications that break Customization Points will trigger a bump in a module's MINOR version.
 
-An interface or a virtual type can represent both API and Customization Point.
+An interface or a {% glossarytooltip 058b2be4-3247-4cb0-860d-6292ce75d1f0 %}virtual type{% endglossarytooltip %} can represent both API and Customization Point.
 
 This policy allows third-party module developers to declare more granular dependencies depending on their module's interaction with Magento modules.
 
@@ -71,7 +71,7 @@ Use this table to set the appropriate version dependency on a module based on ho
 | **Javascript class** (marked with `@api`)                   | Inject in a constructor                                             | MAJOR              |
 |                                                             | Extend from a class                                                 | MINOR              |
 |                                                             | Override a method                                                   | MINOR              |
-|                                                             | Subscribe to an event                                               | MINOR              |
+|                                                             | Subscribe to an {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %}                                               | MINOR              |
 | ----------------------------------------------------------- | ------------------------------------------------------------------- | ------------------ |
 | **Virtual Type**                                            | Configure a virtual type in the `di.xml` file as a class dependency | MAJOR              |
 | ----------------------------------------------------------- | ------------------------------------------------------------------- | ------------------ |
@@ -165,7 +165,7 @@ Use this table to understand what changes Magento can make and what version numb
 |                                                             | New command                                                                                          | MINOR          |
 | ----------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | -------------- |
 | **Less variables and mixins**                               | Removed variable                                                                                     | MAJOR          |
-|                                                             | Removed mixin                                                                                        | MAJOR          |
+|                                                             | Removed {% glossarytooltip 1a305bdb-9be8-44aa-adad-98758821d6a7 %}mixin{% endglossarytooltip %}                                                                                        | MAJOR          |
 |                                                             | New required mixin argument                                                                          | MAJOR          |
 | ----------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | -------------- |
 | **Message queue topics and data types**                     | Topic removed                                                                                        | MAJOR          |
@@ -173,7 +173,7 @@ Use this table to understand what changes Magento can make and what version numb
 |                                                             | Consumer removed                                                                                     | MINOR          |
 |                                                             | New topic published                                                                                  | MINOR          |
 | ----------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | -------------- |
-| **Layout handles declared by modules**                      | New layout page handle                                                                               | MINOR          |
+| **Layout handles declared by modules**                      | New {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} page handle                                                                               | MINOR          |
 |                                                             | New container/block added to handle                                                                  | MINOR          |
 |                                                             | Removed/renamed container/block                                                                      | MAJOR          |
 |                                                             | Removed layout handle                                                                                | MAJOR          |

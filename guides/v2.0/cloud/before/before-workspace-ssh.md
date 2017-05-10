@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 08_setup
+subgroup: 080_setup
 title: Step 3, Enable Secure Shell (SSH)
 menu_title: Step 3, Enable Secure Shell (SSH)
 menu_order: 55

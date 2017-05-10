@@ -13,7 +13,7 @@ redirect_from:
 ---
 
 <h2 id="custom_js_overview">Overview</h2>
-This topic discusses how to use custom JavaScript components with the components provided by Magento or having replaced them with custom implementations.
+This topic discusses how to use custom {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} components with the components provided by Magento or having replaced them with custom implementations.
 
 We strongly recommend not changing the source code of default Magento components and widgets. All customizations must be implemented in custom modules or themes.
 
@@ -25,7 +25,7 @@ To add a custom JS component (module), take the following steps:
 	- Your theme JS files: `<theme_dir>/web/js` or `<theme_dir>/<VendorName>_<ModuleName>/web/js`. In this case the component is available in your theme and its [child themes]({{page.baseurl}}frontend-dev-guide/themes/theme-inherit.html). 
 	- Your module view JS files: `<module_dir>/view/frontend/web/js`. In this case the component is available in all modules and themes (if your module is enabled). 
 
-2. Optionally, in the corresponding module or theme, create a `require-config.js` configuration file, if it does not yet exist there and set path for your resource.
+2. Optionally, in the corresponding {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} or theme, create a `require-config.js` configuration file, if it does not yet exist there and set path for your resource.
 
 
 <h2 id="js_replace">Replace a default JS component</h2>
@@ -75,20 +75,20 @@ var config = {
 
 <li>Place your <code>requirejs-config.js</code> file in one of the following directories (according to the location of your custom script, see step 1 of this procedure):
 <ul>
-<li>Your theme files: <code>&lt;theme_dir&gt;</code></li>
+<li>Your {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} files: <code>&lt;theme_dir&gt;</code></li>
 <li>Your module view files: <code>&lt;module_dir&gt;/view/frontend</code></li>
 </ul>
 </li>
 </ol>
 
-This way your custom JS component is used instead of the Magento component in all entries all over the frontend area.
+This way your custom JS component is used instead of the {% glossarytooltip 3425e9ae-5edf-4fc6-b645-06023e9e5e5b %}Magento component{% endglossarytooltip %} in all entries all over the {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} area.
 
 <h2 id="extend_js">Extend a default JS component</h2>
 You can add a custom JS component/widget, which will extend a default Magento component/widget.
 
 <h3 id="extend_js_widget">Extend Magento widget</h3>
 
-To extend a default Magento jQuery widget, create `<your_widget_name>.js` with the following contents:
+To extend a default Magento {% glossarytooltip 5bfa8a8e-6f3e-4fed-a43e-62339916f02e %}jQuery{% endglossarytooltip %} widget, create `<your_widget_name>.js` with the following contents:
 
 {% highlight JavaScript %}
 define([
@@ -105,7 +105,7 @@ define([
 
 Where the following notation is used:
 <ul>
-<li><code>&lt;your_namespace&gt;.&lt;your_widget_name&gt;</code> - the name of your custom widget. According to the jQuery widgets naming convention, must contain a namespace and name.</li>
+<li><code>&lt;your_namespace&gt;.&lt;your_widget_name&gt;</code> - the name of your custom {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %}. According to the jQuery widgets naming convention, must contain a {% glossarytooltip 621ef86b-7314-4fbc-a80d-ab7fa45a27cb %}namespace{% endglossarytooltip %} and name.</li>
 
 <li><code>mage.&lt;widget.name&gt;</code> - the name of the Magento widget that you extend.</li>
 </ul>

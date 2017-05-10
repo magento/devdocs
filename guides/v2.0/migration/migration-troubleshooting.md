@@ -61,7 +61,7 @@ Class <extension/class_name> does not exist but mentioned in:
 
 #### Explanation
 
-A class from Magento 1 codebase could not be found in Magento 2 codebase during the [EAV migration step]({{page.baseurl}}migration/migration-tool-internal-spec.html#eav). In most cases, the missing class belongs to an extension.
+A class from Magento 1 codebase could not be found in Magento 2 codebase during the [EAV migration step]({{page.baseurl}}migration/migration-tool-internal-spec.html#eav). In most cases, the missing class belongs to an {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %}.
 
 #### Possible solutions
 
@@ -109,7 +109,7 @@ The `Target path` in a URL rewrite must be specified by a unique pair of `Reques
 
 Enable the `auto_resolve_urlrewrite_duplicates` option in your `config.xml` file.
 
-This configuration adds a hash-string to the conflicting records of URL rewrites, and shows the resolution result in your command line interface.
+This configuration adds a hash-string to the conflicting records of {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} rewrites, and shows the resolution result in your command line interface.
 
 ### Mismatch of entities
 

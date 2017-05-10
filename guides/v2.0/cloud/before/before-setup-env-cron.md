@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 08_setup
+subgroup: 080_setup
 title: Step 4, Set up cron
 menu_title: Step 4, Set up cron
 menu_order: 164

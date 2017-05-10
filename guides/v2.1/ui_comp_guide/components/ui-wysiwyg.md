@@ -10,7 +10,7 @@ github_link: ui_comp_guide/components/ui-wysiwyg.md
 
 ## Overview
 
-The Wysiwyg component is an adapter for the [TinyMCE editor](https://www.tinymce.com/). Wysiwyg integrates editor's instance into the [Form component]({{page.baseurl}}ui_comp_guide/components/ui-form.html). It expects to receive complete widget declaration in the `content` option, which should contain both markup and the script responsible for creating the editor's instance.
+The Wysiwyg component is an {% glossarytooltip edb42858-1ff8-41f9-80a6-edf0d86d7e10 %}adapter{% endglossarytooltip %} for the [TinyMCE editor](https://www.tinymce.com/). Wysiwyg integrates editor's instance into the [Form component]({{page.baseurl}}ui_comp_guide/components/ui-form.html). It expects to receive complete {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} declaration in the `content` option, which should contain both {% glossarytooltip 8f407f13-4350-449b-9dc5-217dcf01bc42 %}markup{% endglossarytooltip %} and the script responsible for creating the editor's instance.
 
 ## Configuration options
 
@@ -39,7 +39,7 @@ Wysiwyg-specific options:
   </tr>
   <tr>
     <td><code>elementSelector</code></td>
-    <td>The path Type of the HTML element that is wrapped by the WYSIWYG editor.</td>
+    <td>Selector of the HTML element that is wrapped by the WYSIWYG editor.</td>
     <td>String</td>
     <td><code>textarea</code></td>
   </tr>
