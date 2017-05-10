@@ -1061,7 +1061,7 @@
   <li><a href="#m2devgde-indexing-mview">MView configuration</a></li>
 </ul>
 
-<h3 id="m2devgde-indexing-customlogic">Custom indexer logic</h3>
+<h3 id="custom-indexer-logic">Custom indexer logic</h3>
 
 <p>Your custom indexer class should implement <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Indexer/ActionInterface.php" target="_blank">\Magento\Framework\Indexer\ActionInterface</a>, and the indexer should be able to perform three types of operations:</p>
 
@@ -1071,7 +1071,8 @@
   <li>Full reindex: processing all entities from a specific dictionary; responsibility of <code>executeFull()</code></li>
 </ul>
 
-<h3 id="m2devgde-indexing-customconfiguration">Indexer configuration</h3>
+<h3 id="indexer-configuration">Indexer configuration</h3>
+
 <p>In the <code>etc</code> directory of your module, add <code>indexer.xml</code> with the following:</p>
 
 <ul>
@@ -1087,7 +1088,8 @@
 
 <p>All indexers related to a <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> should be declared in one file.</p>
 
-<h3 id="m2devgde-indexing-mview">MView configuration</h3>
+<h3 id="mview-configuration">MView configuration</h3>
+
 <p>Add the <code>mview.xml</code> configuration file in the <code>etc</code> module directory, where you declare the following:</p>
 
 <ul>
@@ -1101,6 +1103,43 @@
 
 <p>All Mview declarations related to a module should be declared in one file.</p>
 
+<h3 id="example-of-a-custom-indexer-implementation">Example of a custom indexer implementation</h3>
+
+<p>To push best-selling products to the top of a category listing, process statistics about sales to change the product position dynamically.</p>
+
+<p>Assuming your module is named <code>&lt;VendorName&gt;_Merchandizing</code>, you must write the appropriate code in the indexer class:</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="o">&lt;</span><span class="nx">VendorName</span><span class="o">&gt;</span><span class="nx">\Merchandizing\Model\Indexer</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">Popular</span> <span class="k">implements</span> <span class="nx">\Magento\Indexer\Model\ActionInterface</span><span class="p">,</span> <span class="nx">\Magento\Framework\Mview\ActionInterface</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">executeFull</span><span class="p">();</span> <span class="c1">//Should take into account all placed orders in the system</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">executeList</span><span class="p">(</span><span class="nv">$ids</span><span class="p">);</span> <span class="c1">//Works with a set of placed orders (mass actions and so on)</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">executeRow</span><span class="p">(</span><span class="nv">$id</span><span class="p">);</span> <span class="c1">//Works in runtime for a single order using plugins</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">execute</span><span class="p">(</span><span class="nv">$ids</span><span class="p">);</span> <span class="c1">//Used by mview, allows you to process multiple placed orders in the &quot;Update on schedule&quot; mode</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Next, declare the indexer in <code>Merchandizing/etc/indexer.xml</code>:</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../Indexer/etc/indexer.xsd&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;indexer</span> <span class="na">id=</span><span class="s">&quot;merchandizing_popular&quot;</span> <span class="na">view_id=</span><span class="s">&quot;merchandizing_popular_order&quot;</span> <span class="na">class=</span><span class="s">&quot;Vendor\Merchandizing\Model\Indexer\Popular&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>Popular Products<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;description</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>Sort products in a category by popularity<span class="nt">&lt;/description&gt;</span>
+  <span class="nt">&lt;/indexer&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
+
+<p>Finally, declare the indexer view (<code>merchandizing_popular_order</code>) that tracks sales (<code>Merchandizing/etc/mview.xml</code>):</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../lib/internal/Magento/Framework/Mview/etc/mview.xsd&quot;</span><span class="nt">&gt;</span>
+<span class="nt">&lt;view</span> <span class="na">id=</span><span class="s">&quot; merchandizing_popular_order&quot;</span> <span class="na">class=</span><span class="s">&quot;Vendor\Merchandizing\Model\Indexer\Popular&quot;</span> <span class="na">group=</span><span class="s">&quot;indexer&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;subscriptions&gt;</span>
+    <span class="nt">&lt;table</span> <span class="na">name=</span><span class="s">&quot;sales_order_flat&quot;</span> <span class="na">entity_column=</span><span class="s">&quot;order_id&quot;</span> <span class="nt">/&gt;</span>
+  <span class="nt">&lt;/subscriptions&gt;</span>
+<span class="nt">&lt;/view&gt;</span></code></pre></figure>
+
+<p>These settings start <code>&lt;VendorName&gt;\Merchandizing\Model\Indexer\Popular::execute</code> method every time an order is changed.</p>
+
+<p>Now when an order is placed, the Popular Products indexer calculates the sorting order of the products by popularity and stores this data in the index table, so that it can be used in product displaying logic.</p>
 
 		</div>
 		<!-- /.content-wrap -->
