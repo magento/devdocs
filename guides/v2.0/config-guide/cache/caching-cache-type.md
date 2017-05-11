@@ -16,6 +16,18 @@ A *cache type* enables you to specify what is cached and enables merchants to cl
 
 The tag *scope* provides a mechanism for a cache type.
 
+To create a new cache type:
+
+{% highlight php startinline %}
+class %Namespace%_%Module%_Model_Cache_Type extends \Magento\Cache\Frontend\Decorator\TagScope
+{
+  public function __construct(\Magento\App\Cache\Type\FrontendPool $cacheFrontendPool)
+  { 
+    parent::__construct($cacheFrontendPool->get('%cache_type_id%'), '%cache_type_tag%');
+  }
+}
+{% endhighlight %}
+
 You must specify the following parameters:
 
 *	`Namespace_Module` defines the name of a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} that uses a cache type. A module can use several cache types and a cache type can be used in several modules.
