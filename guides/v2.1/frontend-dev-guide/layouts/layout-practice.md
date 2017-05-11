@@ -25,163 +25,27 @@ The Orange theme [inherits]({{page.baseurl}}frontend-dev-guide/themes/theme-inhe
 
 
 {%highlight html%}
-    
-    <div class="panel header">
-        ...
-        <ul class="header links">
-            <li class="item link compare" data-bind="scope: 'compareProducts'" data-role="compare-products-link">...</li>
-            <li class="greet welcome" data-bind="scope: 'customer'">...</li>
-            <li>...</li>
-            <li class="link wishlist" data-bind="scope: 'wishlist'">...</li>
-            <li class="authorization-link" data-label="or">...</li>
-        </ul>
-        ...
-    </div>
+<div class="panel header">
+    ...
+    <ul class="header links">
+        <li class="item link compare" data-bind="scope: 'compareProducts'" data-role="compare-products-link">...</li>
+        <li class="greet welcome" data-bind="scope: 'customer'">...</li>
+        <li>...</li>
+        <li class="link wishlist" data-bind="scope: 'wishlist'">...</li>
+        <li class="authorization-link" data-label="or">...</li>
+    </ul>
+    ...
+</div>
 
 {%endhighlight html%}
 
-
-<div style="border: 1px solid #ABABAB">
-<img src="{{ site.baseurl }}common/images/layout_code_before121.png">
-</div>
-
-The resulting markup, that is needed for a drop-down:
+The markup required for the drop-down is the following:
 
 {%highlight html%}
-
-    <div class="panel header">
-        ...
-        <ul class="header links">
-            <li class="greet welcome" data-bind="scope: 'customer'">...</li>
-            <li class="customer-welcome">
-                <span class="customer-name"
-                      role="link"
-                      tabindex="0"
-                      data-mage-init='{"dropdown":{}}'
-                      data-toggle="dropdown"
-                      data-trigger-keypress-button="true"
-                      data-bind="scope: 'customer'">
-                    <span data-bind="text: customer().fullname"></span>
-                    <button type="button"
-                            class="action switch"
-                            tabindex="-1"
-                            data-action="customer-menu-toggle">
-                        <span>Change</span>
-                    </button>
-                </span>
-                <div class="customer-menu" data-target="dropdown" aria-hidden="true">
-                    <ul class="header links">
-                        <li>...</li>
-                        <li class="link wishlist" data-bind="scope: 'wishlist'">...</li>
-                        <li class="authorization-link" data-label="or">...</li>
-                    </ul>        
-                </div>
-            </li>
-            <li class="authorization-link" data-label="or">...</li>
-        </ul>
-        ....
-    </div>
-    
-{%endhighlight html%}
-
-<div style="border: 1px solid #ABABAB">
-<img src="{{ site.baseurl }}common/images/layout_code_after21.png">
-</div>
-
-<br>
-
-<u>Step 1: Define the layout blocks</u>
-
-OrangeCo <a href="{{page.baseurl}}frontend-dev-guide/themes/theme-apply.html" target="_blank">applies the Luma theme</a>. Using the approach described in <a href="{{page.baseurl}}frontend-dev-guide/themes/debug-theme.html" target="_blank">Locate templates, layouts, and styles</a> they find out that the original block responsible for displaying the header links is defined in 
-
-[vendor/magento/module-theme/view/frontend/layout/default.xml](https://github.com/magento/magento2/blob/2.1/app/code/Magento/Theme/view/frontend/layout/default.xml#L43-L47):
-
-{%highlight xml%}
-
+<div class="panel header">
     ...
-    <container name="header.panel" label="Page Header Panel" htmlTag="div" htmlClass="panel header">
-        ...
-        <block class="Magento\Framework\View\Element\Html\Links" name="top.links">
-            <arguments>
-                <argument name="css_class" xsi:type="string">header links</argument>
-            </arguments>
-        </block>
-    </container>
-    ...
-
-{%endhighlight xml%}
-
-Other modules can use this block to add their specific links to the header via [referenceBlock]({{page.baseurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref) instruction, for example <b>Customer Module</b>:
-
-[vendor/magento/module-customer/view/frontend/layout/default.xml](https://github.com/magento/magento2/blob/2.1/app/code/Magento/Customer/view/frontend/layout/default.xml#L10-L23):
-
-{%highlight xml%}
-
-    ...
-    <referenceBlock name="top.links">
-        <block class="Magento\Customer\Block\Account\Link" name="my-account-link">
-            <arguments>
-                <argument name="label" xsi:type="string" translate="true">My Account</argument>
-            </arguments>
-        </block>
-        <block class="Magento\Customer\Block\Account\RegisterLink" name="register-link">
-            <arguments>
-                <argument name="label" xsi:type="string" translate="true">Register</argument>
-            </arguments>
-        </block>
-        <block class="Magento\Customer\Block\Account\AuthorizationLink" name="authorization-link" template="account/link/authorization.phtml"/>
-    </referenceBlock>
-    ...
-    
-{%endhighlight xml%}
-
-Luma theme changes position of the block "top.links", [extending]({{page.baseurl}}frontend-dev-guide/layouts/layout-extend.html) default layout and [moving]({{page.baseurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_mv) it to the newly created block "customer", so 
-all the links that was added to the "top.links" block from different modules before will not be lost.
-
-[vendor/magento/theme-frontend-luma/Magento_Customer/layout/default.xml](https://github.com/magento/magento2/blob/2.1/app/design/frontend/Magento/luma/Magento_Customer/layout/default.xml#L21)
-
-{%highlight xml%}
-
-    ...
-    <referenceBlock name="header.links">
-        <block class="Magento\Customer\Block\Account\Customer" name="customer" template="account/customer.phtml" before="-"/>
-        ...
-    </referenceBlock>
-    ...
-    <move element="top.links" destination="customer"/>
-    ...
-
-{%endhighlight xml%}
-
-Block "header.links" was created in Luma theme to substitute "top.links" in order to preserve the ability to add links in the header outside of the "dropdown" menu:
-
-[vendor/magento/theme-frontend-luma/Magento_Theme/layout/default.xml](https://github.com/magento/magento2/blob/2.1/app/design/frontend/Magento/luma/Magento_Theme/layout/default.xml#L10-L16)
-
-{%highlight xml%}
-    
-    ...
-    <referenceContainer name="header.panel">
-        <block class="Magento\Framework\View\Element\Html\Links" name="header.links">
-            <arguments>
-                <argument name="css_class" xsi:type="string">header links</argument>
-            </arguments>
-        </block>
-    </referenceContainer>
-    ...
-
-{%endhighlight xml%}
-
-
-<u>Step 2: Define the templates</u>
-
-Similar to the way they defined the layout on the previous step, OrangeCo 
-defines the template which is used as "dropdown" container (block with name "customer") for the rearranged links:
-
-[vendor/magento/module-customer/view/frontend/templates/account/customer.phtml](https://github.com/magento/magento2/blob/2.1/app/code/Magento/Customer/view/frontend/templates/account/customer.phtml)
-
-{%highlight php%}
-
-    <?php if($block->customerLoggedIn()): ?>
+    <ul class="header links">
+        <li class="greet welcome" data-bind="scope: 'customer'">...</li>
         <li class="customer-welcome">
             <span class="customer-name"
                   role="link"
@@ -195,21 +59,114 @@ defines the template which is used as "dropdown" container (block with name "cus
                         class="action switch"
                         tabindex="-1"
                         data-action="customer-menu-toggle">
-                    <span><?php /* @escapeNotVerified */ echo __('Change')?></span>
+                    <span>Change</span>
                 </button>
             </span>
-            <script type="text/x-magento-init">
-            {
-                "*": {
-                    "Magento_Ui/js/core/app": {
-                        "components": {
-                            "customer": {
-                                "component": "Magento_Customer/js/view/customer"
-                            }
+            <div class="customer-menu" data-target="dropdown" aria-hidden="true">
+                <ul class="header links">
+                    <li>...</li>
+                    <li class="link wishlist" data-bind="scope: 'wishlist'">...</li>
+                    <li class="authorization-link" data-label="or">...</li>
+                </ul>        
+            </div>
+        </li>
+        <li class="authorization-link" data-label="or">...</li>
+    </ul>
+    ....
+</div>
+    
+{%endhighlight html%}
+
+### Step 1: Define the layout blocks
+
+OrangeCo <a href="{{page.baseurl}}frontend-dev-guide/themes/theme-apply.html" target="_blank">applies the Luma theme</a>. Using the approach described in <a href="{{page.baseurl}}frontend-dev-guide/themes/debug-theme.html" target="_blank">Locate templates, layouts, and styles</a> they find out that the original block responsible for displaying the header links is defined in 
+
+`<Magento_Theme_module_dir>/view/frontend/layout/default.xml`:
+
+{%highlight xml%}
+...
+<container name="header.panel" label="Page Header Panel" htmlTag="div" htmlClass="panel header">
+    ...
+    <block class="Magento\Framework\View\Element\Html\Links" name="top.links">
+        <arguments>
+            <argument name="css_class" xsi:type="string">header links</argument>
+        </arguments>
+    </block>
+</container>
+...
+{%endhighlight xml%}
+
+(See [app/code/Magento/Theme/view/frontend/layout/default.xml](https://github.com/magento/magento2/blob/2.1/app/code/Magento/Theme/view/frontend/layout/default.xml#L43-L47) on github).
+
+Other modules use this block to add their specific links to the header using the [referenceBlock]({{page.baseurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_ref) instruction. For example, see how links are added in the Customer module: [app/code/Magento/Customer/view/frontend/layout/default.xml#L10-L23](https://github.com/magento/magento2/blob/2.1/app/code/Magento/Customer/view/frontend/layout/default.xml#L10-L23) 
+
+The Luma theme [moves]({{page.baseurl}}frontend-dev-guide/layouts/xml-instructions.html#fedg_layout_xml-instruc_ex_mv) the `top.links` block to the new `customer` block in the extending layout file.  
+
+    <Magento_luma_theme_dir>/Magento_Customer/layout/default.xml
+
+{%highlight xml%}
+...
+<referenceBlock name="header.links">
+    <block class="Magento\Customer\Block\Account\Customer" name="customer" template="account/customer.phtml" before="-"/>
+    ...
+</referenceBlock>
+...
+<move element="top.links" destination="customer"/>
+...
+{%endhighlight xml%}
+
+The links that should be in header, but outside the drop-down menu are added in the new `header.links` block (`<Magento_luma_theme_dir>/Magento_Theme/layout/default.xml`):
+
+{%highlight xml%}
+...
+<referenceContainer name="header.panel">
+    <block class="Magento\Framework\View\Element\Html\Links" name="header.links">
+        <arguments>
+            <argument name="css_class" xsi:type="string">header links</argument>
+        </arguments>
+    </block>
+</referenceContainer>
+...
+{%endhighlight xml%}
+
+
+### Step 2: Define the templates
+
+Similar to the way they defined the layout on the previous step, OrangeCo 
+defines the template which is used as "dropdown" container (block with name "customer") for the rearranged links:
+
+[vendor/magento/module-customer/view/frontend/templates/account/customer.phtml](https://github.com/magento/magento2/blob/2.1/app/code/Magento/Customer/view/frontend/templates/account/customer.phtml)
+
+{%highlight php%}
+<?php if($block->customerLoggedIn()): ?>
+    <li class="customer-welcome">
+        <span class="customer-name"
+              role="link"
+              tabindex="0"
+              data-mage-init='{"dropdown":{}}'
+              data-toggle="dropdown"
+              data-trigger-keypress-button="true"
+              data-bind="scope: 'customer'">
+            <span data-bind="text: customer().fullname"></span>
+            <button type="button"
+                    class="action switch"
+                    tabindex="-1"
+                    data-action="customer-menu-toggle">
+                <span><?php /* @escapeNotVerified */ echo __('Change')?></span>
+            </button>
+        </span>
+        <script type="text/x-magento-init">
+        {
+            "*": {
+                "Magento_Ui/js/core/app": {
+                    "components": {
+                        "customer": {
+                            "component": "Magento_Customer/js/view/customer"
                         }
                     }
                 }
             }
+        }
             </script>
             <?php if($block->getChildHtml()):?>
             <div class="customer-menu" data-target="dropdown">
@@ -221,9 +178,8 @@ defines the template which is used as "dropdown" container (block with name "cus
 
 {%endhighlight php%}
 
-<br>
 
-<u>Step 3: Extend the base layout to add a block</u>
+### Step 3: Extend the base layout to add a block
 
 OrangeCo needs to create a new block, say, `header.links`, in the `header.panel` container, to move the links there. As the links can be added to this list by different modules, it is better to add this block to the `default.xml` page configuration of the `Magento_Theme` module.
 
@@ -232,25 +188,23 @@ So the following <a href="{{page.baseurl}}frontend-dev-guide/layouts/layout-exte
     app/design/frontend/OrangeCo/orange/Magento_Theme/layout/default.xml
 
 {%highlight xml%}
-
-    <?xml version="1.0"?>
-    <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
-        <body>
-            <referenceContainer name="header.panel">
-                <block class="Magento\Framework\View\Element\Html\Links" name="header.links">
-                    <arguments>
-                        <argument name="css_class" xsi:type="string">header links</argument>
-                    </arguments>
-                </block>
-            </referenceContainer>
-        </body>
-    </page>
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="header.panel">
+            <block class="Magento\Framework\View\Element\Html\Links" name="header.links">
+                <arguments>
+                    <argument name="css_class" xsi:type="string">header links</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>
 
 {%endhighlight xml%}
 
-<br>
 
-<u>Step 4: Move links</u>
+### Step 4: Move links
 
 To move the links to the `header.links` block, OrangeCo adds an extending layout:
 
@@ -258,19 +212,18 @@ To move the links to the `header.links` block, OrangeCo adds an extending layout
 
 
 {%highlight xml%}
-
-    <?xml version="1.0"?>
-    <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
-        <body>
-            <referenceBlock name="header.links">
-                <block class="Magento\Customer\Block\Account\Customer" name="customer" template="account/customer.phtml" before="-"/>
-                <block class="Magento\Customer\Block\Account\AuthorizationLink" name="authorization-link-login" template="account/link/authorization.phtml"/>
-            </referenceBlock>
-            <move element="register-link" destination="header.links"/>
-            <move element="top.links" destination="customer"/>
-            <move element="authorization-link" destination="top.links" after="-"/>
-        </body>
-    </page>
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="header.links">
+            <block class="Magento\Customer\Block\Account\Customer" name="customer" template="account/customer.phtml" before="-"/>
+            <block class="Magento\Customer\Block\Account\AuthorizationLink" name="authorization-link-login" template="account/link/authorization.phtml"/>
+        </referenceBlock>
+        <move element="register-link" destination="header.links"/>
+        <move element="top.links" destination="customer"/>
+        <move element="authorization-link" destination="top.links" after="-"/>
+    </body>
+</page>
     
 {%endhighlight xml%}
 
@@ -280,10 +233,10 @@ Now the customer links look like following and clicking on the change button tog
 <img src="{{ site.baseurl }}common/images/layout_screen221.png">
 </div>
 
-To add quick basic styling and visual behavior to the "dropdown" menu OrangeCo added [_extend.less]({{page.baseurl}}frontend-dev-guide/css-guide/css_quick_guide_approach.html#simple_extend) to their theme
+To add quick basic styling and visual behavior to the "dropdown" menu, OrangeCo added  [_extend.less]({{page.baseurl}}frontend-dev-guide/css-guide/css_quick_guide_approach.html#simple_extend) to their theme with the following customizations:
 
-* For minimum code change redudant elements was hidden with CSS.
-* .lib-dropdown() mixin from [Magento UI library]({{page.baseurl}}frontend-dev-guide/css-topics/theme-ui-lib.html) was applyed to respective element
+* redundant elements were hidden with CSS
+* the `.lib-dropdown()` mixin from [Magento UI library]({{page.baseurl}}frontend-dev-guide/css-topics/theme-ui-lib.html) was applied to the corresponding element
 
 `app/design/frontend/OrangeCo/orange/web/css/source/_extend.less`
 
@@ -336,6 +289,8 @@ To add quick basic styling and visual behavior to the "dropdown" menu OrangeCo a
 
 {%endhighlight css%}
 
+As a result, the customer links look like following:
+
 <div style="border: 1px solid #ABABAB">
-<img src="{{ site.baseurl }}common/images/layout_screen321.png">
+<img src="{{ site.baseurl }}common/images/fdg/layout_screen321.png">
 </div>
