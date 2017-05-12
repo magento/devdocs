@@ -61,12 +61,12 @@ The following options are available for all basic components:
   </tr>
   <tr>
     <td><code>extends</code></td>
-    <td>Reference to a UI component configuration to inherit. Only a basic component can be specified. <p class="q">What exactly do we reference? name?</p></td>
+    <td>Reference to a UI component whose configuration to inherit. Only a basic component can be specified.</td>
     <td>String</td>
   </tr>
   <tr>
     <td><code>provider</code></td>
-    <td>The path in the registry to the linked data provider.<p class="q">What registry?</p></td>
+    <td>The path in the <a href="{{page.baseurl}}/ui_comp_guide/concepts/ui_comp_uiregistry.html">registry</a> to the linked data provider.</td>
     <td>String</td>
   </tr>
 </table>
