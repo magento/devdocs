@@ -31,14 +31,14 @@ To add a custom JS component (module), take the following steps:
 <h2 id="js_replace">Replace a default JS component</h2>
 
 To use a custom implementation of an existing Magento JS component:
-<ol markdown="1">
-<li>Place the custom component source file in one of the following locations:
+<ol>
+<li markdown="1">Place the custom component source file in one of the following locations:
 <ul>
-<li>Your theme JS files: `<theme_dir>/web/js` or `<theme_dir>/<VendorName>_<ModuleName>/web/js`</li>
+<li markdown="1">Your theme JS files: `<theme_dir>/web/js` or `<theme_dir>/<VendorName>_<ModuleName>/web/js`</li>
 <li>Your module view JS files: <code>&lt;module_dir&gt;/view/frontend/web/js</code></li>
 </ul>
 </li>
-<li>Create a RequireJS configuration file <code>requirejs-config.js</code>, having specified the following:
+<li markdown="1">Create a RequireJS configuration file <code>requirejs-config.js</code>, having specified the following:
 
 {% highlight JavaScript %}
 var config = {
