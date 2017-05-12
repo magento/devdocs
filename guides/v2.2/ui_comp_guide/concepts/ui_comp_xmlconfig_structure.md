@@ -9,10 +9,13 @@ version: 2.2
 github_link: ui_comp_guide/concepts/ui_comp_xmlconfig_structure.md
 ---
 
-Magento uses strict structure to declare UiComponents.
+## Overview
 
+This topic describes the basic structure used in XML configuration files for declaring any UI component. This structure is strict and third party developers must use this structure when customizing existing UI components' configuration or declaring new ones.  
 
-Writing UiComponent’s tag is the first step to declare component.
+## First level
+
+The parent node is a UI components declaration is the UI component's node itself, for example for the Form component it is <form>:
 As example: 
 <form>
 </form>
