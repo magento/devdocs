@@ -133,10 +133,9 @@ The links that should be in header, but outside the drop-down menu are added in 
 ### Step 2: Define the templates
 
 Similar to the way they defined the layout on the previous step, OrangeCo 
-defines the template which is used as "dropdown" container (block with name "customer") for the rearranged links:
+defines the template which is used as the drop-down container : `<Magento_Customer_module_dir>/view/frontend/templates/account/customer.phtml`.
 
-[vendor/magento/module-customer/view/frontend/templates/account/customer.phtml](https://github.com/magento/magento2/blob/2.1/app/code/Magento/Customer/view/frontend/templates/account/customer.phtml)
-
+{% collapsible Expand to see the code %}
 {%highlight php%}
 <?php if($block->customerLoggedIn()): ?>
     <li class="customer-welcome">
@@ -175,9 +174,11 @@ defines the template which is used as "dropdown" container (block with name "cus
             <?php endif; ?>
         </li>
     <?php endif; ?>
-
 {%endhighlight php%}
 
+{% endcollapsible %}
+
+(See [app/code/Magento/Customer/view/frontend/templates/account/customer.phtml](https://github.com/magento/magento2/blob/2.1/app/code/Magento/Customer/view/frontend/templates/account/customer.phtml))
 
 ### Step 3: Extend the base layout to add a block
 
@@ -210,7 +211,6 @@ To move the links to the `header.links` block, OrangeCo adds an extending layout
 
 `app/design/frontend/OrangeCo/orange/Magento_Customer/layout/default.xml`
 
-
 {%highlight xml%}
 <?xml version="1.0"?>
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
@@ -224,70 +224,74 @@ To move the links to the `header.links` block, OrangeCo adds an extending layout
         <move element="authorization-link" destination="top.links" after="-"/>
     </body>
 </page>
-    
 {%endhighlight xml%}
 
-Now the customer links look like following and clicking on the change button toggles `active` css class:
+Now the customer links look like following:
 
 <div style="border: 1px solid #ABABAB">
 <img src="{{ site.baseurl }}common/images/layout_screen221.png">
 </div>
 
+Clicking the **Change** button toggles the `active` CSS class:
+
 To add quick basic styling and visual behavior to the "dropdown" menu, OrangeCo added  [_extend.less]({{page.baseurl}}frontend-dev-guide/css-guide/css_quick_guide_approach.html#simple_extend) to their theme with the following customizations:
 
-* redundant elements were hidden with CSS
+* redundant elements are hidden with CSS
 * the `.lib-dropdown()` mixin from [Magento UI library]({{page.baseurl}}frontend-dev-guide/css-topics/theme-ui-lib.html) was applied to the corresponding element
 
-`app/design/frontend/OrangeCo/orange/web/css/source/_extend.less`
+
+{%collapsible Expand to see the code %}
+
+`app/design/frontend/OrangeCo/orange/web/css/source/_extend.less`:
 
 {%highlight css%}
-
-    //
-    //  Common
-    //  _____________________________________________
-    
-    & when (@media-common = true) {
-        .header.panel .header.links {
-            .customer-welcome + .authorization-link {
-                display: none;
-            }
-        }
-    }
-    
-    //
-    //  Mobile
-    //  _____________________________________________
-    
-    .media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
-        .customer-name,
+//
+//  Common
+//  _____________________________________________
+ 
+& when (@media-common = true) {
+    .header.panel .header.links {
         .customer-welcome + .authorization-link {
             display: none;
         }
     }
+}
+  
+//
+//  Mobile
+//  _____________________________________________
     
-    //
-    //  Desktop
-    //  _____________________________________________
-    
-    .media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
-        .customer-welcome {
-            .lib-dropdown(
-                @_toggle-selector: ~'.action.switch',
-                @_options-selector: ~'.customer-menu .header.links',
-                @_dropdown-actions-padding: 0,
-                @_icon-font-text-hide: true,
-                @_icon-font-size: 22px,
-                @_icon-font-line-height: 22px,
-                @_dropdown-list-min-width: 160px,
-                @_dropdown-list-item-hover: transparent,
-                @_dropdown-list-pointer-position: right,
-                @_dropdown-list-position-right: 0
-            );
-        }
+.media-width(@extremum, @break) when (@extremum = 'max') and (@break = @screen__m) {
+    .customer-name,
+    .customer-welcome + .authorization-link {
+        display: none;
     }
+}
 
-
+//
+//  Desktop
+//  _____________________________________________
+    
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) {
+    .customer-welcome {
+        .lib-dropdown(
+            @_toggle-selector: ~'.action.switch',
+            @_options-selector: ~'.customer-menu .header.links',
+            @_dropdown-actions-padding: 0,
+            @_icon-font-text-hide: true,
+            @_icon-font-size: 22px,
+            @_icon-font-line-height: 22px,
+            @_dropdown-list-min-width: 160px,
+            @_dropdown-list-item-hover: transparent,
+            @_dropdown-list-pointer-position: right,
+            @_dropdown-list-position-right: 0
+        );
+    }
+}
 {%endhighlight css%}
+
+{% endcollapsible %}
+
 
 As a result, the customer links look like following:
 
