@@ -25,11 +25,11 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 
 <!--- 45608 -->* You can now successfully uninstall Magento_CustomerBalanceSampleData.
 
-<!--- 51440 -->* Magento no longer throws a fatal error when you run the `setup upgrade` command in environments running PHP 7.0.5. 
+<!--- 51440 -->* Magento no longer throws a fatal error when you run the `setup upgrade` command in environments running {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} 7.0.5. 
 
 
 #### Product creation
-<!--- 53342 -->* Magento  no longer duplicates URL keys during the creation of a configurable product.
+<!--- 53342 -->* Magento  no longer duplicates {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} keys during the creation of a {% glossarytooltip 2fd4d100-28d2-45ca-bec1-128444ea98e6 %}configurable product{% endglossarytooltip %}.
 
 <!--- 50076 -->* Magento now supports GLOB_BRACE on non-GNU Linux systems. <a href="https://github.com/magento/magento2/issues/3490" target="_blank">(GITHUB-3490)</a> 
 
@@ -38,9 +38,9 @@ Backward-incompatible changes are documented in <a href="{{ page.baseurl }}relea
 
 #### Miscellaneous
 
-<!--- 52448 -->* Magento now correctly displays the customer address on the storefront. Previously,  when you selected a default billing address when creating a new customer account, Magento would not display the  address.
+<!--- 52448 -->* Magento now correctly displays the customer address on the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}. Previously,  when you selected a default billing address when creating a new customer account, Magento would not display the  address.
 
-<!--- 50507 -->* You can now successfully reset the Product Attributes mass update Admin form.
+<!--- 50507 -->* You can now successfully reset the Product Attributes mass update {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} form.
 
 
 <!--- 50716 -->* The Admin Action Log archive is now formatted as expected.

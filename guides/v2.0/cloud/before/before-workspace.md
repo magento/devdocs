@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 08_setup
+subgroup: 080_setup
 title: Overview of a Magento workspace
 menu_title: Overview of a Magento workspace
 menu_order: 51
@@ -14,7 +14,7 @@ github_link: cloud/before/before-workspace.md
 
 The following sections discuss your options for setting up a Magento Enterprise Cloud Edition project.
 
-We assume you'll install the Magento software so you can use the command line and the Magento Admin on your laptop. That means you must set up the Magento file system owner on your laptop so files and directories you created are owned by that user.
+We assume you'll install the Magento software so you can use the command line and the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} on your laptop. That means you must set up the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %} on your laptop so files and directories you created are owned by that user.
 
 To be able to manage your projects, environments, and services, you must set up the Magento Enterprise Cloud Edition command-line interface (CLI) and Secure Shell (SSH). These tools enable you to perform tasks like:
 

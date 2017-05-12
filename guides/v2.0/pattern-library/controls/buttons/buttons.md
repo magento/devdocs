@@ -87,7 +87,7 @@ Buttons will be take on one of the below variations.
 	</tbody>
 </table>
 
-CSS style classes will need to be established for any buttons that require a custom
+{% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} style classes will need to be established for any buttons that require a custom
 defined style.
 
 <h2 id="style_behavior">Styles and Behavior</h2>

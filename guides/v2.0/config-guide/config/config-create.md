@@ -11,7 +11,7 @@ redirect_from: /guides/v1.0/config-guide/config/config-create.html
 ---
 
 <h2 id="config-files-extend-create">Extend configuration types</h2>
-To extend an existing configuration type, you need only create a configuration file in your module.
+To extend an existing configuration type, you need only create a configuration file in your {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
 
 For example, to add an event observer, you create `app/etc/events.xml` and declare a new observer.
 
@@ -22,11 +22,11 @@ Your new `events.xml` is automatically collected from your module and merged wit
 <h2 id="config-files-extend-create-create">Create configuration types</h2>
 To create new configuration type, you must add at minimum:
 
-*  XML configuration files
+*  {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} configuration files
 *  XSD validation schema 
 *  A loader
 
-For example, to introduce an adapter for a new search server that enables extensions to configure how its entities are indexed in that server, create:
+For example, to introduce an {% glossarytooltip edb42858-1ff8-41f9-80a6-edf0d86d7e10 %}adapter{% endglossarytooltip %} for a new search server that enables extensions to configure how its entities are indexed in that server, create:
 
 *  A loader.
 *  An XSD schema.

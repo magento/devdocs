@@ -27,9 +27,9 @@ Before starting migration, you must do the following:
 
 	Open ports in your firewall so that the Migration Tool can communicate with the databases
 
-*	To provide redundancy in the event of unexpected issues, we advise you to replicate your Magento 1 database
+*	To provide redundancy in the {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} of unexpected issues, we advise you to replicate your Magento 1 database
 
-*	Migrate Magento 1 extension code to Magento 2
+*	Migrate Magento 1 {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} code to Magento 2
 
 	To find the latest extensions versions, visit [Magento Marketplace](https://marketplace.magento.com/){:target:"_blank"} or contact your extension provider.
 	You can also use the Magento [Code Migration Tool](https://github.com/magento/code-migration/blob/develop/README.md){:target="_blank"}

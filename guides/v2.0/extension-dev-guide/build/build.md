@@ -11,7 +11,7 @@ github_link: extension-dev-guide/build/build.md
 redirect_from: /guides/v2.0/extension-dev-guide/build.html
 ---
 
-Building your component involves laying out the file structure, creating the necessary configuration files, building out any needed API interfaces and services, and adding any frontend parts needed for your component.
+Building your component involves laying out the file structure, creating the necessary configuration files, building out any needed {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} interfaces and services, and adding any {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} parts needed for your component.
 
 <h2 id="create-component-basics">Prerequisites</h2>
 Before you begin creating your new component, make sure that you have a working installation of Magento 2.0, and the Magento [System Requirements]({{page.baseurl}}install-gde/system-requirements.html).

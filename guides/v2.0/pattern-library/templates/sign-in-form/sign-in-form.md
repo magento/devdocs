@@ -31,7 +31,7 @@ Fifth tab = return to top of the order.
 
 #### Initial state:
 
-In its initial state the sign-in module consists of 
+In its initial state the sign-in {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} consists of 
 
 * a Welcome message 
 * two text fields – **Username** and **Password**
@@ -42,7 +42,7 @@ In its initial state the sign-in module consists of
 
 #### Error state:
 
-In the event that invalid credentials are submitted the sign-in module consists of 
+In the {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} that invalid credentials are submitted the sign-in module consists of 
 
 * an alert message informing the user that either the Username or Password is invalid 
 * two text fields – **Username** and **Password**, where the Username field will retain the initial entry as 

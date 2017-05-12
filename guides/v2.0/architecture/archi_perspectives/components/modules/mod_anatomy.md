@@ -12,7 +12,7 @@ redirect: /guides/v2.0/architecture/modules/mod_anatomy.html
 
 ## Overview {#arch-modules-anatomy}
 
-A Magento <i>module</i> is a logical group of components that encapsulates a particular business function, typically a business task. All components of a module relate to the module's specific function. For example, each element of the Shipping module contains all the code and interfaces needed to implement core shipping-related tasks. A module directory typically contains blocks, controllers, helpers, models, configuration files, and other components that contribute to the module's core purpose.
+A Magento <i>module</i> is a logical group of components that encapsulates a particular business function, typically a business task. All components of a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} relate to the module's specific function. For example, each element of the Shipping module contains all the code and interfaces needed to implement core shipping-related tasks. A module directory typically contains blocks, controllers, helpers, models, configuration files, and other components that contribute to the module's core purpose.
 
 Module structure is defined by both module code components and logical structure.
 
@@ -20,23 +20,23 @@ Module structure is defined by both module code components and logical structure
 
 All types of modules contain the following core elements, categorized by directory:
 
-* `/block`
+* `/Block`
 
-* `/controllers`
+* `/Controller`
 
 * `/etc`
 
-* `/helper`
+* `/Helper`
 
-* `/model`
+* `/Model`
 
-* `/sql`
+* `/Setup`
 
 ### Block
 
-<i>Blocks</i> help provide the data used in the View component of the module structure. Blocks coordinate models with the template files. The files in this folder load the data from database and transfer it to the templates in your theme (`PHTML` files).
+<i>Blocks</i> help provide the data used in the View component of the module structure. Blocks coordinate models with the template files. The files in this folder load the data from database and transfer it to the templates in your {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} (`PHTML` files).
 
-### Controllers
+### Controller
 
 <i>Controllers</i> represent all business logic actions for the given request. These actions include `dispatch()`, `preDispatch()`, `postDispatch()` methods and delegate commands to other parts of the system. Controllers correspond to the Controller portion of the Model-View-Controller model.
 
@@ -58,7 +58,23 @@ Magento 2.x looks for configuration information for each module in that module's
 
 * webapi.xml
 
-Configuration files that are in the top level of that module's `/etc` directory are global to that component. Configuration files placed in subdirectories (`adminhtml`, `frontend`, `webapi_rest`, `webapi_soap`) apply only to those respective functional areas.
+* system.xml
+
+* {% glossarytooltip 749044c4-a002-4006-a3b8-eace2df90303 %}adminhtml{% endglossarytooltip %}.xml
+
+* events.xml
+
+* page_types.xml
+
+* routes.xml
+
+* sections.xml
+
+* email_templates.xml
+
+* fieldset.xml
+
+Configuration files that are in the top level of that module's `/etc` directory are global to that component. Configuration files placed in subdirectories (`adminhtml`, `frontend`, `webapi_rest`, `webapi_soap`, `crontab`) apply only to those respective functional areas.
 
 The specific set of configuration files that your module requires depends on the module's purpose and the Magento area in which it functions.
 
@@ -77,8 +93,8 @@ In a typical Model-View-Controller-based application, models are used to connect
 
 A Magento model object contains a reference to a resource model, which it uses to load its data. There's an individual resource model object for each model object. For example, a Product Model has a Product resource model.
 
-### sql
-Structures in this directory handle any custom database tables that are used by the module and process all upgrades to the extension.
+### Setup
+Structures in this directory handle any custom database tables that are used by the module and process all upgrades to the {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %}.
 
 ## Related topics {#arch-modules-related}
 

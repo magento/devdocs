@@ -38,7 +38,7 @@ where:
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>This command does not migrate all configuration settings. Verify all settings in the Magento 2 Admin before proceeding.</p></span>
+  <p>This command does not migrate all configuration settings. Verify all settings in the Magento 2 {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} before proceeding.</p></span>
 </div>
 
 The `Migration completed` message is displayed after the settings are transferred successfully.

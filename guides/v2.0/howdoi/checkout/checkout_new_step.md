@@ -10,14 +10,14 @@ github_link: howdoi/checkout/checkout_new_step.md
 ---
 
 ## What's in this topic
-The default Magento Checkout consists of two steps:
+The default Magento {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}Checkout{% endglossarytooltip %} consists of two steps:
 
  - Shipping Information
  - Review and Payments Information
 
-You can add a custom checkout step, it should be implemented as a UI component. For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code, add your customizations in a separate module. 
+You can add a custom checkout step, it should be implemented as a {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %}. For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code, add your customizations in a separate {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}. 
 
-This topic describes how to create the frontend part of the component, implementing a checkout step, and how to add it to the checkout flow.
+This topic describes how to create the {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} part of the component, implementing a checkout step, and how to add it to the checkout flow.
 
 
 ## Create the view part of the checkout step component
@@ -32,7 +32,7 @@ Each step is described in details in the following paragraphs.
 
 ### Add the JavaScript file implementing the new step {#component}
 
-A new checkout step must be implemented as UI component. That is, its JavaScript implementation must be a JavaScript module. 
+A new checkout step must be implemented as UI component. That is, its {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} implementation must be a JavaScript module. 
 
 The file must be stored under the `<your_module_dir>/view/frontend/web/js/view` directory.
 

@@ -14,7 +14,7 @@ This topic discusses a command you can use to import configuration information f
 
 After importing, you can create product attributes and apply them to websites, stores, and store views. 
 
-If the database and `config.php` are not in synchronization, errors display in the Magento Admin with suggested corrective actions.
+If the database and `config.php` are not in synchronization, errors display in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} with suggested corrective actions.
 
 For more information about this process, see TBD.
 

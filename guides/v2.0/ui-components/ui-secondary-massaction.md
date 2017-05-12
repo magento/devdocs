@@ -43,7 +43,7 @@ The following options are available:
 
 <h5>Methods and Events</h5>
 
-The following API methods are available:
+The following {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} methods are available:
 
 * getAction - returns action instance found by the provided identifier
 * addAction - adds new action to the actions

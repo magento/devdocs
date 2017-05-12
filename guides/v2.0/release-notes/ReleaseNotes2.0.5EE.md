@@ -23,7 +23,7 @@ Backward-incompatible changes are documented in <a href="http://devdocs.magento.
 
 <h4> Upgrade and Installation</h4>
 
-<!-- 50224 --> *  Magento no longer assumes hard-coded root category IDs or default category IDs. Previously, Magento used hard-coded IDs for these values, which could produce inconsistent data during store installation.
+<!-- 50224 --> *  Magento no longer assumes hard-coded root {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} IDs or default category IDs. Previously, Magento used hard-coded IDs for these values, which could produce inconsistent data during store installation.
 
 
 <h4>Import/Export</h4>
@@ -34,9 +34,9 @@ Backward-incompatible changes are documented in <a href="http://devdocs.magento.
 
 <h4>Database</h4>
 
-<!-- 49004 --> * Magento no longer duplicates queries to the database from the Catalog page. Instead, if Magento has already loaded specific data during request processing, it re-uses it instead of duplicating the query. 
+<!-- 49004 --> * Magento no longer duplicates queries to the database from the {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}Catalog{% endglossarytooltip %} page. Instead, if Magento has already loaded specific data during request processing, it re-uses it instead of duplicating the query. 
 
-<!-- 49003 --> * Magento no longer duplicates SQL queries on CMS and Category pages. Previously, significant duplications occurred. 
+<!-- 49003 --> * Magento no longer duplicates SQL queries on {% glossarytooltip f3944faf-127e-4097-9918-a2e9c647d44f %}CMS{% endglossarytooltip %} and Category pages. Previously, significant duplications occurred. 
 
 
 <h4>Miscellaneous</h4> 
@@ -44,29 +44,29 @@ Backward-incompatible changes are documented in <a href="http://devdocs.magento.
 <!-- 47255 --> * Selecting the Use Aggregated Data option now correctly displays Dashboard data. <a href="https://github.com/magento/magento2/issues/3459" target="_blank">(GITHUB-3459)</a>
 
 
-<!-- 51074 --> * Magento now displays the expected color swatch when you select a color swatch for a configurable product. Previously, Magento did not change the color when you selected a swatch.
+<!-- 51074 --> * Magento now displays the expected color swatch when you select a color swatch for a {% glossarytooltip 2fd4d100-28d2-45ca-bec1-128444ea98e6 %}configurable product{% endglossarytooltip %}. Previously, Magento did not change the color when you selected a swatch.
 
-<!-- 48659 -->* HTML template magnification now properly handles commented code.
+<!-- 48659 -->* {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} template magnification now properly handles commented code.
 
 
 <!-- 48760 --> * Deleting one of several custom options no longer deletes all options. Previously, deleting one option from the Product page also deleted all other custom options. <a href="https://github.com/magento/magento2/issues/2989" target="_blank">(GITHUB-2989)</a>  
 
 
-<!-- 50279 --> * When Full Page Cache (FPC) is enabled, the CAPTCHA image differs for every user. Previously, the CAPTCHA image on the registration page remained the same for every customer after FPC was enabled.
+<!-- 50279 --> * When Full Page {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}Cache{% endglossarytooltip %} (FPC) is enabled, the CAPTCHA image differs for every user. Previously, the CAPTCHA image on the registration page remained the same for every customer after FPC was enabled.
 
-<!-- 50195 --> * Google no longer indexes the Admin URL. Previously, Google indexed the Admin side meta tag. The frontend meta tag was not affected. 
+<!-- 50195 --> * Google no longer indexes the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %}. Previously, Google indexed the Admin side {% glossarytooltip 9ebd108f-d925-4c41-b6ba-affc1890d8b8 %}meta tag{% endglossarytooltip %}. The {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} meta tag was not affected. 
 
 
 <!-- 43959 --> * Magento no longer sends a subscription success email whenever a customer enters his email address to subscribe to a newsletter. Users receive a "thank you for your subscription" message and a subscription success email only when registering for the first time. 
 
 <!-- 47458 --> * Guests can now successfully click on the product page link for any item in an emailed shared wishlist. 
 
-<!-- 50912 --> * Custom customer attributes are now saved at checkout. 
+<!-- 50912 --> * Custom customer attributes are now saved at {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %}. 
 
 
 
 <h3>System requirements</h3>
-Our technology stack is built on PHP and MySQL. Magento 2.0.1 and later supports PHP 5.5, 5.6, 7.0.2, and MySQL 5.6. For more information, see 
+Our technology stack is built on {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} and MySQL. Magento 2.0.1 and later supports PHP 5.5, 5.6, 7.0.2, and MySQL 5.6. For more information, see 
 [System Requirements]({{ site.baseurl }}magento-system-requirements.html){:target="_blank"}.
 
 

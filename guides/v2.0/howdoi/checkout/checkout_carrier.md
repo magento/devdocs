@@ -9,7 +9,7 @@ version: 2.0
 github_link: howdoi/checkout/checkout_carrier.md
 ---
 <h2>What's in this topic</h2>
-This topic describes how to add shipping address validations for a custom shipping carrier to the Magento checkout. This is an essential part of the bigger task of adding a custom shipping method to your Magento store.
+This topic describes how to add shipping address validations for a custom {% glossarytooltip b51bd4e9-7174-4ca0-83a0-1a895c9fc9e8 %}shipping carrier{% endglossarytooltip %} to the Magento {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %}. This is an essential part of the bigger task of adding a custom shipping method to your Magento store.
 
 
 ## Overview
@@ -31,7 +31,7 @@ More details about each step follow.
 ## Create validation rules {#rules}
 Shipping carrier validation rules declare which fields of the shipping address are required for the corresponding shipping method to be available. The validation itself is performed by the [validator](#validator). 
  
-During checkout, if the shipping address fields declared in the rules are filled, the further validation of fields' values (for example, whether a carrier is available for the specified country) is carried on the server side.
+During checkout, if the shipping address fields declared in the rules are filled, the further validation of fields' values (for example, whether a carrier is available for the specified country) is carried on the {% glossarytooltip ebe2cd14-d6d4-4d75-b3d7-a4f2384e5af9 %}server side{% endglossarytooltip %}.
 
 For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code, add your customization in a separate module. For your checkout customization to be applied correctly, your custom module should [depend]({{page.baseurl}}extension-dev-guide/build/composer-integration.html) on the `Magento_Checkout` module. Do not use `Ui` for your custom module name, because `%Vendor%_Ui` notation, required when specifying paths, might cause issues. 
 
@@ -134,7 +134,7 @@ define(
 
 ## Add the validation to the checkout layout {#layout}
 
-The last step is specifying the script you created on the previous step in the checkout page layout. 
+The last step is specifying the script you created on the previous step in the checkout page {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %}. 
 
 In your custom module directory, create a new `<your_module_dir>/view/frontend/layout/checkout_index_index.xml` file. 
 In this file, add the following:
