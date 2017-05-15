@@ -50,9 +50,14 @@ To use a custom implementation of an existing Magento JS component:
   <li markdown="1">Create a RequireJS configuration file
   <code>requirejs-config.js</code>, having specified the following:
 
-  {% highlight JavaScript %} 
-var config = { "map": { "*": { "": ""
-  } } }; 
+{% highlight JavaScript %} 
+var config = {
+  "map": {
+    "*": {
+      "<default_component>": "<custom_component>"
+    }
+  }
+};
 
 {% endhighlight %} 
 
@@ -69,9 +74,15 @@ var config = { "map": { "*": { "": ""
 
 For example, if you want to use custom <code>navigation-menu.js</code> script instead of the default menu widgets, your <code>requirejs-config.js</code> should contain the following: 
 
-{% highlight JavaScript %} var config =
-    { "map": { "*": { "menu": "js/navigation-menu",
-    "mage/backend/menu": "js/navigation-menu", } } }; 
+{% highlight JavaScript %}
+var config = {
+  "map": {
+    "*": {
+      "menu": "js/navigation-menu",
+      "mage/backend/menu": "js/navigation-menu",
+    }
+  }
+};
 {%endhighlight %}
   
 </li>
