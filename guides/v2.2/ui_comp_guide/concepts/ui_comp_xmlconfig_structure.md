@@ -13,7 +13,42 @@ github_link: ui_comp_guide/concepts/ui_comp_xmlconfig_structure.md
 
 This topic describes the basic structure used in XML configuration files for declaring any UI component. This structure is strict and third party developers must use this structure when customizing existing UI components' configuration or declaring new ones.  
 
-## First level
+<table>
+  <tr>
+    <th>Element</th>
+    <th>Attributes</th>
+    <th>Child of</th>
+    <th>Parent of</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><code>&lt;%basic_component%&gt;&lt;/%basic_component%&gt;</code></td>
+    <td><ul><li><code>class</code></li>
+<li><code>component</code></li>
+<li><code>displayArea</code></li>
+<li><code>sortOrder</code></li>
+<li><code>template</code></li>
+     </ul></td>
+    <td>-</td>
+    <td><ol><li>&lt;arguments&gt;</li><li>&lt;settings&gt;</li><li>&lt;%component%&gt</li></ol><br>(order matters)</td>
+    <td>Mandatory root element, the name of the basic component: &lt;form&gt;, &lt;listing&gt; or custom basic component.</td>
+  </tr>
+  <tr>
+    <td>&lt;arguments&gt;&lt;/arguments&gt;</td>
+    <td><code>name='data'</code></td>
+    <td>&lt;%component_name%&gt;</td>
+    <td><item name=config> (mandatory)</td>
+    <td>Introduces the configuration block for UiComponent (old structure). For options that are not described in XSD.</td>
+  </tr>
+  <tr>
+    <td>&lt;settings&gt;&lt;/settings&gt;</td>
+    <td>-</td>
+    <td>&lt;%component_name%&gt;</td>
+    <td></td>
+    <td>Introduces the configuration block for UiComponent according to the  (new structure, preferable)</td>
+  </tr>
+</table>
+
 
 The parent node is a UI components declaration is the UI component's node itself, for example for the Form component it is <form>:
 As example: 
