@@ -29,19 +29,22 @@ Looking for the <a href= "http://devdocs.magento.com/guides/v2.0/cloud/release-n
 
 Magento 2.1.7 contains over 15 security enhancements. Look for the following highlights in this release:
 
-* **Removal of vulnerability with the Zend framework `Zend_Mail` library**. For more information, see <a href="https://magento.com/security/news/new-zend-framework-1-security-vulnerability" target="_blank">New Zend Framework 1 Security Vulnerability</a>.  
+* Support for MasterCard BIN number expansion. For more information, see 
 
-* **Elimination of remote code execution vulnerability** when uploading videos. Also, Admins no longer have unserialized access to CMS or widgets, which reduces the opportunity to remotely execute code. 
+* Fix for image resize bug that appeared in 2.1.6. 
 
-* **Enhanced enforcement of more granular permissions**, which reduces the potential for ACL bypass during mass delete actions in tables or the Magento UI controllers. 
+* Resolution of multiple high priority and critical security issues. Critical issues include remote code execution for authenticated admin users, access control bypass, and CSRF issues.
 
-* **Updates to vulnerable JavaScript libraries**
+
 
 
 ## Security enhancements
 
 ### Remote code execution
 <!--- 63862 -->* Magento no longer permits Admin users that have access to CMS and widgets to execute code through unserialization. 
+
+<!--- 67448 -->* Magento has strengthened its verification of image files during upload (**Product > Images and Videos > Video Upload**). 
+
 
 
 ### Access control bypass
@@ -61,6 +64,7 @@ Magento 2.1.7 contains over 15 security enhancements. Look for the following hig
 
 
 ### General
+
 
 <!--- 64049, 63680 -->* We’ve updated several vulnerable moment.js libraries (`query-migrate`, `query`, `jquery-ui-1.9.2.js`)
 
@@ -86,7 +90,7 @@ Magento 2.1.7 contains over 15 security enhancements. Look for the following hig
 
 <!--- INTERNAL ONLY -->
 
-<!--- 67335, 67117, 67102, 66931, 66689, 65226, 65012, 64877, 64771, 64717, 64635, 64453-->
+<!--- 67335, 67117, 67102, 66931, 66689, 65226, 65012, 64877, 64771, 64717, 64635, 64453, 66693, 66692, 65244,64115 -->
 
 
 <!--- NOT A BUG -->

@@ -13,6 +13,8 @@ redirect_from: /guides/v2.1/release-notes/tech_bull_21-parent.html
 
 The following technical bulletins are available for the Magento 2.1 release:
 
+* [MasterCard Bank Identification Numbers Range Update]
+
 *	[Upgrade to Magento version 2.1 (June 22, 2016)]({{ page.baseurl }}release-notes/tech_bull_21-upgrade.html)
 
 	*	[Upgrade to Magento CE or EE version 2.1 *without* sample data](#tb-upgr-nosamp)
