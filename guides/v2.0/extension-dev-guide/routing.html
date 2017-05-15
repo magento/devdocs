@@ -1103,24 +1103,14 @@ However, you must not customize the routers that are used in Magento core module
 
 <p><code>$this-&gt;_forward('other/controller/action')</code></p>
 
-<p>To remove the controller action, forward to <code>noroute</code>, for instance, in <code>app/code/Company/SomeExtension/Controller/Account.php</code>:</p>
+<p>To remove the controller action, forward to <code>noroute</code>, for instance, in <code>app/code/Company/SomeExtension/Controller/Account/Create.php</code>:</p>
 
 <pre>
-<span term-uuid="621ef86b-7314-4fbc-a80d-ab7fa45a27cb" class="glossary-term" data-toggle="popover">namespace</span> Company\SomeExtension\Controller;
+<span term-uuid="621ef86b-7314-4fbc-a80d-ab7fa45a27cb" class="glossary-term" data-toggle="popover">namespace</span> Company\SomeExtension\Controller\Account;
 
-class Account extends \Magento\Framework\App\Action\Action
+class Create extends \Magento\Framework\App\Action\Action
 {
-    public function loginAction()
-    {
-        ...
-    }
-
-    public function createAction()
-    {
-        $this-&gt;_forward('noroute');
-    }
-
-    public function forgotpasswordAction()
+    public function execute()
     {
         $this-&gt;_forward('noroute');
     }
