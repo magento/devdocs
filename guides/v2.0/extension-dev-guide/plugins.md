@@ -36,6 +36,14 @@ Plugins cannot be used with any of the following:
 
 A plugin for a class object is declared in the <code>di.xml</code> file in your {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
 
+{% highlight xml %} 
+<config>
+    <type name="{ObservedType}">
+      <plugin name="{pluginName}" type="{PluginClassName}" sortOrder="1" disabled="true"/>
+    </type>
+</config>
+{% endhighlight %}
+
 You must specify these elements:
 
 * `type name`. A class or interface which the plugin observes.
