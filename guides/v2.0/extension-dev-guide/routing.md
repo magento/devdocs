@@ -65,25 +65,15 @@ If you must reset a route and design, forward the request processing to another 
 
 `$this->_forward('other/controller/action')`
 
-To remove the controller action, forward to `noroute`, for instance, in `app/code/Company/SomeExtension/Controller/Account.php`:
+To remove the controller action, forward to `noroute`, for instance, in `app/code/Company/SomeExtension/Controller/Account/Create.php`:
 
 
 <pre>
-{% glossarytooltip 621ef86b-7314-4fbc-a80d-ab7fa45a27cb %}namespace{% endglossarytooltip %} Company\SomeExtension\Controller;
+{% glossarytooltip 621ef86b-7314-4fbc-a80d-ab7fa45a27cb %}namespace{% endglossarytooltip %} Company\SomeExtension\Controller\Account;
 
-class Account extends \Magento\Framework\App\Action\Action
+class Create extends \Magento\Framework\App\Action\Action
 {
-    public function loginAction()
-    {
-        ...
-    }
-
-    public function createAction()
-    {
-        $this->_forward('noroute');
-    }
-
-    public function forgotpasswordAction()
+    public function execute()
     {
         $this->_forward('noroute');
     }

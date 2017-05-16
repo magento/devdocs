@@ -74,7 +74,6 @@ The markup required for the drop-down is the following:
     </ul>
     ....
 </div>
-    
 {%endhighlight html%}
 
 ### Step 1: Define the layout blocks
