@@ -82,7 +82,7 @@ If you'd like to include a google webfont, you have to add the <code>rel="styles
 
 You can use either `<link src="js/sample.js"/>` or `<script src="js/sample.js"/>` instruction to add a locally stored JavaScript file to your theme.
 
-The path to assets is specified relatively to one the following locations:
+The path to assets is specified relatively to one of the following locations:
 <ul>
 <li><code>&lt;theme_dir&gt;/web</code></li>
 <li><code>&lt;theme_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/web</code></li>
