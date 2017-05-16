@@ -34,9 +34,21 @@ If your custom theme doesn't include the `frame` element, or a value has not bee
 ### Action
 You can fix this issue with image resizing in one of two ways:
 
+#### Magento 2.1.x CE
+
 * install `MAGETWO-67805.hotfix.git-composer-compatible.patch` from [Magento Tech Resources](https://magento.com/tech-resources/download){:target="_blank"}.
 
 * upgrade to 2.1.7, which will be released in the near future.
+
+
+#### Magento 2.1.x EE
+
+
+#### Magento Enterprise Cloud Edition
+
+
+
+
 
 
 

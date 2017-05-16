@@ -24,4 +24,5 @@ This page lists technical bulletins for the Magento application.
 
 ## Magento 2.1.x
 [Image resize Issue for Magento version 2.1.6 (May 17, 2017)]({{ site.gdeurl21 }}release-notes/tech_bull_216-imageresize.html)
+
 [Upgrade to Magento version 2.1 (June 22, 2016)]({{ site.gdeurl21 }}release-notes/tech_bull_21-upgrade.html)
