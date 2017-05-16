@@ -3,16 +3,16 @@ layout: default
 group: release-notes
 subgroup: 05_techbull
 title: Image Resize Issue with Magento version 2.1.6
-menu_title: Image resize issue Magento version 2.1.6 (April 27,2016)
+menu_title: Image resize issue Magento version 2.1.6 (May 17,2017)
 menu_node: 
 menu_order: 4
 version: 2.1
 github_link: release-notes/tech_bull_216-imageresize.md
 ---
 
-*Technical bulletin first published on April 28, 2017.*
+*Technical bulletin updated on May 17, 2017.*
 
-These instructions apply to anyone upgrading to Magento Community Edition (CE) or Magento Enterprise Edition (EE) version 2.1.6 whose installation runs custom themes. 
+These instructions apply to anyone upgrading to Magento Community Edition (CE) or Magento Enterprise Edition (EE) version 2.1.6 whose installation runs custom themes. This Technical Bulletin provides both a discussion of the issue and a link to our hot fix for 2.1.6. 
 
 ### Who needs this information?
 You need to read this bulletin if you've upgraded to Magento 2.1.6 (CE or EE) and are experiencing any of the following issues: 
@@ -26,34 +26,18 @@ You cannot change the size of the base image within the gallery by editing `etc 
 
 ### Background
 
-Magento 2.1.6 introduced a change in how the platform handles images. Previous versions of Magento did **not** set this value  to **true** by default in the blank {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}. However, Magento 2.1.6 now sets the value of the `<frame></frame>` option to **true** by default. 
+Magento 2.1.6 introduced a change in how the platform handles images associated with custom themes. The `frame` element adds white space around your image. In Magento 2.1.6, the default value of this optional setting is **true**. (Previous versions of Magento did **not** set this value to **true** by default in the blank {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}.) 
 
-#### What does the `<frame></frame>` element do?
-
-The `<frame></frame>` element adds white space around your image. Using this option will impose a specific width and height in `view.xml` while preserving the desired {% glossarytooltip 0b54d17c-5c5d-4f6e-b8f7-f7efb860713a %}aspect ratio{% endglossarytooltip %}. 
-
-If an image doesn't contain a `<frame>` element, Magento uses the `product_image_white_borders` option in the Catalog module. This setting typically has a value of **1**,  but is overridden to **0** in the default Luma and Blank themes. If your custom theme doesn't include this option, then Magento will rely upon the setting in the Catalog module for the value of  the `frame` option.
+If your custom theme doesn't include the `frame` element, or a value has not been assigned to it, then Magento will rely upon the `product_image_white_borders` option in the Catalog module for the value of the `frame` option. The `product_image_white_borders` setting typically has a value of **1**,  but is overridden to **0** in the default Luma and Blank themes. 
 
 
-### Suggested workaround
+### Action
+You can fix this issue with image resizing in one of two ways:
 
-<div class="bs-callout bs-callout-warning" markdown="1">
-The third step of the following procedure can be highly time-consuming, and Magento performance will be degraded while the workaround is in progress. However, you can run `catalog:image:resize` on your staging server to avoid the downtime in your production environment. After you've done that, copy the resized images to `pub/media/catalog/product/cache/*` on your production server.
-</div> 
+* install `MAGETWO-67805.hotfix.git-composer-compatible.patch` from [Magento Tech Resources](https://magento.com/tech-resources/download){:target="_blank"}.
 
-To prevent Magento from resizing images after upgrade, you must include `<frame>0</frame>` within that image definition in `view.xml`.  
+* upgrade to 2.1.7, which will be released in the near future.
 
-1. Update your `view.xml` file by confirming that the parameters related to the image frame contain these two settings: 
-
-	* `<frame>0</frame>` 
-
-	*  `<vars module="Magento_Catalog">
-        <var name="product_image_white_borders">0</var>
-    	</vars>`
-
-2. Clean your full-page cache. See [Manage the Cache](http://devdocs.magento.com/guides/v2.0/config-guide/cli/config-cli-subcommands-cache.html){:target="_blank"} for more information on Magento {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} types and procedures for managing caches. 
-
-3. Manually resize all your images using the `bin/magento catalog:images:resize` command.  
 
 
 ### More information
