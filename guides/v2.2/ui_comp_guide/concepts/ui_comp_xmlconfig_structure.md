@@ -17,35 +17,44 @@ This topic describes the basic structure used in XML configuration files for dec
   <tr>
     <th>Element</th>
     <th>Attributes</th>
-    <th>Child of</th>
     <th>Parent of</th>
     <th>Description</th>
   </tr>
   <tr>
     <td><code>&lt;%basic_component%&gt;&lt;/%basic_component%&gt;</code></td>
+    <td><ul>
+<li><code>extends</code></li>
+<li><code>provider</code></li>
+<li>component-specific attributes</li>
+<p class="q">Where a user can find this list of component-specific attributes</p>
+     </ul> See [Basic attributes]({{page.baseurl}})</td>
+    <td><ol><li><code>&lt;arguments&gt;</code></li><li><code>&lt;settings&gt;</code></li><li<code>&lt;%component%&gt</code></li></ol><br>(order matters)</td>
+    <td>Mandatory root element, the name of the <a href="{{page.baseulr}}ui_comp_guide/bk-ui_comps.html#general-structure">basic UI component</a>: <code>&lt;form&gt;</code>, <code>&lt;listing&gt;</code> or custom basic component.</td>
+  </tr>
+  <tr>
+    <td><code>&lt;arguments&gt;&lt;/arguments&gt;<code></td>
+    <td><code>name='data'</code></td>
+    <td><code>&lt;item name=config&gt;</code> (mandatory)</td>
+    <td>Introduces the configuration block for UiComponent according to the old structure used in Magento 2.1.x and earlier. In Magento 2.2.x and later only use for options that are not described in XSD. <p class="q">which XSD?</p></td>
+  </tr>
+  <tr>
+    <td><code>&lt;settings&gt;&lt;/settings&gt;</code></td>
+    <td>-</td>
+    <td></td>
+    <td>Introduces the configuration block for UiComponent according to the new structure. Use for configuring all options, except those that are not described in XSD.</td>
+  </tr>
+  <tr>
+    <td><code>&lt;component&gt;&lt;/component&gt;</code></td>
     <td><ul><li><code>class</code></li>
 <li><code>component</code></li>
 <li><code>displayArea</code></li>
 <li><code>sortOrder</code></li>
 <li><code>template</code></li>
+<li>component-specific attributes</li>
+<p class="q">Where a user can find this list of component-specific attributes</p>
      </ul></td>
-    <td>-</td>
-    <td><ol><li>&lt;arguments&gt;</li><li>&lt;settings&gt;</li><li>&lt;%component%&gt</li></ol><br>(order matters)</td>
-    <td>Mandatory root element, the name of the basic component: &lt;form&gt;, &lt;listing&gt; or custom basic component.</td>
-  </tr>
-  <tr>
-    <td>&lt;arguments&gt;&lt;/arguments&gt;</td>
-    <td><code>name='data'</code></td>
-    <td>&lt;%component_name%&gt;</td>
-    <td><item name=config> (mandatory)</td>
-    <td>Introduces the configuration block for UiComponent (old structure). For options that are not described in XSD.</td>
-  </tr>
-  <tr>
-    <td>&lt;settings&gt;&lt;/settings&gt;</td>
-    <td>-</td>
-    <td>&lt;%component_name%&gt;</td>
-    <td></td>
-    <td>Introduces the configuration block for UiComponent according to the  (new structure, preferable)</td>
+    <td><ol><li><code>&lt;arguments&gt;</code></li><li><code>&lt;settings&gt;</code></li><li<code>&lt;%component%&gt</code></li></ol><br>(order matters)</td>
+    <td>UI component name</td>
   </tr>
 </table>
 
