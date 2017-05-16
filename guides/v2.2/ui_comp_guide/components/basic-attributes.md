@@ -6,12 +6,12 @@ title: Basic attributes
 menu_title: Basic attributes
 menu_order: 1
 version: 2.2
-github_link: ui_comp_guide/components/basic-options.md
+github_link: ui_comp_guide/components/basic-attributes.md
 ---
 
 ## Overview
 
-This topic describes the general UI components configuration options. There's a set of options available for all UI components, and a set of options which are specific for all [basic components]({{page.baseurl}}ui_comp_guide/bk-ui_comps.html#general-structure). 
+This topic describes the general UI components configuration attributes. There's a set of attributes available for all UI components, and a set of attributes which are specific for all [basic components]({{page.baseurl}}ui_comp_guide/bk-ui_comps.html#general-structure). 
 
 ## General options 
 
