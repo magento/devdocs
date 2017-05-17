@@ -52,7 +52,7 @@ You can fix this issue with image resizing by downloading and installing the `EE
 
   1) Log in to your EE client account by selecting **My Account** on [magentocommerce.com](https://magentocommerce.com){:target="_blank"}. 
 
-  2) After logging in, navigate to EE-MAGETWO-67805 on the Support Patches page (**Downloads > Magento Enterprise Edition 2.X > Magento Enterprise Edition 2.x Release > Support Patches > MAGETWO-67805**). 
+  2) After logging in, navigate to MAGETWO-67805 on the Support Patches page (**Downloads > Magento Enterprise Edition 2.X > Magento Enterprise Edition 2.x Release > Support Patches > MAGETWO-67805**). 
 
   3) Select and install the `EE-MAGETWO-67805.patch` hot fix. 
 
