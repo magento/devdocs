@@ -41,16 +41,12 @@ You can fix this issue with image resizing by downloading  and installing the `M
 
 	1) On [Magento Tech Resources](https://magento.com/tech-resources/download){:target="_blank"}, choose **Downloads > Magento Community Edition Patches > 2.x**.
 
-
 	2) Select the `MAGETWO-67805.hotfix.git-composer-compatible.patch` hot fix.
 
 
 
 #### Magento 2.1.x EE
 You can fix this issue with image resizing by downloading and installing the `MAGETWO-67805.hotfix.git-composer-compatible.patch` hot fix, and then immediately upgrading to Magento 2.1.7, as soon as it is available.
-
-
-* Download and install the `MAGETWO-67805.hotfix.git-composer-compatible.patch` hot fix. 
 
   To download this patch,
 
