@@ -38,8 +38,9 @@ We strongly recommend that you upgrade to  2.1.7 as soon as that release is avai
 You can fix this issue with image resizing by downloading  and installing the `MAGETWO-67805.hotfix.git-composer-compatible.patch` hot fix, and then immediately upgrading to Magento 2.1.7, as soon as it is available. 
 
   To download this patch, 
+
   1) On [Magento Tech Resources](https://magento.com/tech-resources/download){:target="_blank"}, choose **Downloads > Magento Community Edition Patches > 2.x**.
-  
+
   2) Select the `MAGETWO-67805.hotfix.git-composer-compatible.patch` hot fix.
 
 
@@ -58,8 +59,9 @@ You can fix this issue with image resizing by downloading and installing the `MA
 
 
 #### Magento Enterprise Cloud Edition
+General ECE patches are provided for all Magento Enterprise Cloud Edition customers in a repository referenced in your `composer.json`. We apply patches automatically during the build phase when a patch is available. 
 
-Magento ECE version 101.6.2 contains the fix for this image resize issue. 
+`magento-cloud-configuration 101.6.2` contains the hot fix for this image resize issue. 
 
 
 
