@@ -2,11 +2,11 @@
 layout: default
 group: contributor
 subgroup: templates
-title: Procedular Guide template
-menu_title: Procedular Guide template
+title: Procedural Title
+menu_title: Procedural template
 menu_order: 1
 version: 2.0
-github_link: contributor-guide/templates/procedular_guide_template.md
+github_link: contributor-guide/templates/procedural_template.md
 ---
 
 Introductory text that gives an overview of the topic you will be writing about.
@@ -33,13 +33,14 @@ Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqu
 Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
 
+
 ## Another Section Header
 
 ### Step 1: Lorem ipsum dolor sit amet
 
-* Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-* Voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-* Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+1. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+2. Voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+3. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 
 ### Step 2: Lorem ipsum dolor sit amet

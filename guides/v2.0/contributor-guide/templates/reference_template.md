@@ -2,11 +2,11 @@
 layout: default
 group: contributor
 subgroup: templates
-title: Reference Guide template
-menu_title: Reference Guide template
+title: Reference Title
+menu_title: Reference template
 menu_order: 1
 version: 2.0
-github_link: contributor-guide/templates/reference_guide_template.md
+github_link: contributor-guide/templates/reference_template.md
 ---
 
 Introductory text that gives an overview of the topic you will be writing about.
