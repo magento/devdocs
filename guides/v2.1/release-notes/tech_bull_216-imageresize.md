@@ -32,16 +32,37 @@ If your custom theme doesn't include the `frame` element, or a value has not bee
 
 
 ### Action
-You can fix this issue with image resizing in one of two ways:
 
 #### Magento 2.1.x CE
+You can fix this issue with image resizing in one of two ways:
 
-* install `MAGETWO-67805.hotfix.git-composer-compatible.patch` from [Magento Tech Resources](https://magento.com/tech-resources/download){:target="_blank"}.
+* Download and install the `MAGETWO-67805.hotfix.git-composer-compatible.patch` hot fix. 
+
+  To download this patch, 
+
+	1) On [Magento Tech Resources](https://magento.com/tech-resources/download){:target="_blank"}, choose **Downloads > Magento Community Edition Patches > 2.x**.
+
+
+	2) Select the `MAGETWO-67805.hotfix.git-composer-compatible.patch` hot fix.
+
+or
 
 * upgrade to 2.1.7, which will be released in the near future.
 
 
 #### Magento 2.1.x EE
+You can fix this issue with image resizing in one of two ways:
+
+* Download and install the `MAGETWO-67805.hotfix.git-composer-compatible.patch` hot fix. 
+
+  To download this patch,
+
+  1) Log in to your EE client account by selecting **My Account** on [magentocommerce.com](https://magentocommerce.com){:target="_blank"}. 
+
+  2) After logging in, navigate to the MAGETWO-67805 on the Support Patches page (**Downloads > Magento Enterprise Edition 2.X > Magento Enterprise Edition 2.x Release > Support Patches > MAGETWO-67805). 
+
+  3) Select and install the `MAGETWO-67805.hotfix.git-composer-compatible.patch` hot fix. 
+
 
 
 #### Magento Enterprise Cloud Edition
