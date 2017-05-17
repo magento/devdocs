@@ -3,7 +3,7 @@ layout: default
 group: release-notes
 subgroup: 05_techbull
 title: MasterCard BIN Range Upgrade 
-menu_title: MasterCard BIN (May 17, 2017)
+menu_title: MasterCard BIN Range Update (May 17, 2017)
 menu_node: 
 menu_order: 6
 version: 2.1
