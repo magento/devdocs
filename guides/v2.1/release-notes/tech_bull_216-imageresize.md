@@ -3,7 +3,7 @@ layout: default
 group: release-notes
 subgroup: 05_techbull
 title: Image Resize Issue with Magento version 2.1.6
-menu_title: Image resize issue Magento version 2.1.6 (May 17,2017)
+menu_title: Image resize issue Magento version 2.1.6 (May 17, 2017)
 menu_node: 
 menu_order: 4
 version: 2.1
@@ -59,9 +59,9 @@ You can fix this issue with image resizing by downloading and installing the `MA
 
 
 #### Magento Enterprise Cloud Edition
-General ECE patches are provided for all Magento Enterprise Cloud Edition customers in a repository referenced in your `composer.json`. We apply patches automatically during the build phase when a patch is available. 
+General ECE patches are provided for all Magento Enterprise Cloud Edition customers in a repository referenced in your `composer.json`. We apply patches automatically during the build phase when a patch is available. `magento-cloud-configuration 101.6.2` contains the hot fix for this image resize issue. 
 
-`magento-cloud-configuration 101.6.2` contains the hot fix for this image resize issue. 
+See [Update extensions](http://devdocs.magento.com/guides/v2.1/cloud/howtos/update-components.html){:target="_blank"} for more information on upgrading your Cloud extension. 
 
 
 
