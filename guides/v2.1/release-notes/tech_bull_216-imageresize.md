@@ -26,17 +26,16 @@ You cannot change the size of the base image within the gallery by editing `etc 
 
 ### Background
 
-Magento 2.1.6 introduced a change in how the platform handles images associated with custom themes. The `frame` element adds white space around your image. In Magento 2.1.6, the default value of this optional setting is **true**. (Previous versions of Magento did **not** set this value to **true** by default in the blank {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}.) 
+Magento 2.1.6 introduced a change in how the platform handles images associated with custom themes. The `frame` element adds white space around your image. In Magento 2.1.6, the default value of this optional setting is **true**. (Previous versions of Magento did **not** set this value to **true** by default in the Blank {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}.) 
 
 If your custom theme doesn't include the `frame` element, or a value has not been assigned to it, then Magento will rely upon the `product_image_white_borders` option in the Catalog module for the value of the `frame` option. The `product_image_white_borders` setting typically has a value of **1**,  but is overridden to **0** in the default Luma and Blank themes. 
 
 
 ### Action
+We strongly recommend that you upgrade to  2.1.7 as soon as that release is available. Magento 2.1.7 will contain a fix for this issue as well as critically important security enhancements. We provide the hot fix described in this Technical Bulletin as a temporary fix only. 
 
 #### Magento 2.1.x CE
-You can fix this issue with image resizing in one of two ways:
-
-* Download and install the `MAGETWO-67805.hotfix.git-composer-compatible.patch` hot fix. 
+You can fix this issue with image resizing by downloading  and installing the `MAGETWO-67805.hotfix.git-composer-compatible.patch` hot fix, and then immediately upgrading to Magento 2.1.7, as soon as it is available. 
 
   To download this patch, 
 
@@ -45,13 +44,11 @@ You can fix this issue with image resizing in one of two ways:
 
 	2) Select the `MAGETWO-67805.hotfix.git-composer-compatible.patch` hot fix.
 
-or
-
-* upgrade to 2.1.7, which will be released in the near future.
 
 
 #### Magento 2.1.x EE
-You can fix this issue with image resizing in one of two ways:
+You can fix this issue with image resizing by downloading and installing the `MAGETWO-67805.hotfix.git-composer-compatible.patch` hot fix, and then immediately upgrading to Magento 2.1.7, as soon as it is available.
+
 
 * Download and install the `MAGETWO-67805.hotfix.git-composer-compatible.patch` hot fix. 
 
@@ -59,7 +56,7 @@ You can fix this issue with image resizing in one of two ways:
 
   1) Log in to your EE client account by selecting **My Account** on [magentocommerce.com](https://magentocommerce.com){:target="_blank"}. 
 
-  2) After logging in, navigate to the MAGETWO-67805 on the Support Patches page (**Downloads > Magento Enterprise Edition 2.X > Magento Enterprise Edition 2.x Release > Support Patches > MAGETWO-67805). 
+  2) After logging in, navigate to the MAGETWO-67805 on the Support Patches page (**Downloads > Magento Enterprise Edition 2.X > Magento Enterprise Edition 2.x Release > Support Patches > MAGETWO-67805**). 
 
   3) Select and install the `MAGETWO-67805.hotfix.git-composer-compatible.patch` hot fix. 
 
