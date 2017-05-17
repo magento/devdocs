@@ -116,7 +116,7 @@ var config = {
 
 ## RequireJS library
 
-### Including RequrieJS {#m2devgde-js-resources-configrequirejs}
+### Including RequireJS {#m2devgde-js-resources-configrequirejs}
 
 To be available for the entire Magento instance, RequireJS library is included in the following layout files:
 
