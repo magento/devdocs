@@ -496,7 +496,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.1/release-notes/tech_bull_216-imageresize.html">Image resize issue Magento version 2.1.6 (April 27,2016)</a></li>
+									<li class="level-2  active "><a href="/guides/v2.1/release-notes/tech_bull_216-imageresize.html">Image resize issue Magento version 2.1.6 (May 17, 2017)</a></li>
 
 									
 
@@ -823,9 +823,9 @@
 
 </section>
 
-			<p><em>Technical bulletin first published on April 28, 2017.</em></p>
+			<p><em>Technical bulletin updated on May 17, 2017.</em></p>
 
-<p>These instructions apply to anyone upgrading to Magento Community Edition (CE) or Magento Enterprise Edition (EE) version 2.1.6 whose installation runs custom themes.</p>
+<p>These instructions apply to anyone upgrading to Magento Community Edition (CE) or Magento Enterprise Edition (EE) version 2.1.6 whose installation runs custom themes. This Technical Bulletin provides both a discussion of the issue and a link to our hot fix for 2.1.6.</p>
 
 <h3 id="who-needs-this-information">Who needs this information?</h3>
 <p>You need to read this bulletin if you’ve upgraded to Magento 2.1.6 (CE or EE) and are experiencing any of the following issues:</p>
@@ -843,44 +843,37 @@
 
 <h3 id="background">Background</h3>
 
-<p>Magento 2.1.6 introduced a change in how the platform handles images. Previous versions of Magento did <strong>not</strong> set this value  to <strong>true</strong> by default in the blank <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span>. However, Magento 2.1.6 now sets the value of the <code>&lt;frame&gt;&lt;/frame&gt;</code> option to <strong>true</strong> by default.</p>
+<p>Magento 2.1.6 introduced a change in how the platform handles images associated with custom themes. The <code>frame</code> element adds white space around your image. In Magento 2.1.6, the default value of this optional setting is <strong>true</strong>.</p>
 
-<h4 id="what-does-the-frameframe-element-do">What does the <code>&lt;frame&gt;&lt;/frame&gt;</code> element do?</h4>
+<p>If your custom theme doesn’t include the <code>frame</code> element, or a value has not been assigned to it, then Magento will rely upon the <code>product_image_white_borders</code> option in the Catalog module for the value of the <code>frame</code> option. The <code>product_image_white_borders</code> setting typically has a value of <strong>1</strong>,  but is overridden to <strong>0</strong> in the default Luma and Blank themes.</p>
 
-<p>The <code>&lt;frame&gt;&lt;/frame&gt;</code> element adds white space around your image. Using this option will impose a specific width and height in <code>view.xml</code> while preserving the desired <span term-uuid="0b54d17c-5c5d-4f6e-b8f7-f7efb860713a" class="glossary-term" data-toggle="popover">aspect ratio</span>.</p>
+<h3 id="action">Action</h3>
+<p>We strongly recommend that you upgrade to  2.1.7 as soon as that release is available. Magento 2.1.7 will contain a fix for this issue as well as critically important security enhancements. We provide the hot fix described in this Technical Bulletin as a temporary fix only.</p>
 
-<p>If an image doesn’t contain a <code>&lt;frame&gt;</code> element, Magento uses the <code>product_image_white_borders</code> option in the Catalog module. This setting typically has a value of <strong>1</strong>,  but is overridden to <strong>0</strong> in the default Luma and Blank themes. If your custom theme doesn’t include this option, then Magento will rely upon the setting in the Catalog module for the value of  the <code>frame</code> option.</p>
+<h4 id="magento-21x-ce">Magento 2.1.x CE</h4>
+<p>You can fix this issue with image resizing by downloading  and installing the <code>CE-MAGETWO-67805.patch</code> hot fix, and then immediately upgrading to Magento 2.1.7, as soon as it is available.</p>
 
-<h3 id="suggested-workaround">Suggested workaround</h3>
+<p>To download this patch,</p>
 
-<div class="bs-callout bs-callout-warning">
-  <p>The third step of the following procedure can be highly time-consuming, and Magento performance will be degraded while the workaround is in progress. However, you can run <code>catalog:image:resize</code> on your staging server to avoid the downtime in your production environment. After you’ve done that, copy the resized images to <code>pub/media/catalog/product/cache/*</code> on your production server.</p>
-</div>
+<p>1) On <a href="https://magento.com/tech-resources/download" target="_blank">Magento Tech Resources</a>, choose <strong>Downloads &gt; Magento Community Edition Patches &gt; 2.x</strong>.</p>
 
-<p>To prevent Magento from resizing images after upgrade, you must include <code>&lt;frame&gt;0&lt;/frame&gt;</code> within that image definition in <code>view.xml</code>.</p>
+<p>2) Select the <code>CE-MAGETWO-67805.patch</code> hot fix.</p>
 
-<ol>
-  <li>
-    <p>Update your <code>view.xml</code> file by confirming that the parameters related to the image frame contain these two settings:</p>
+<h4 id="magento-21x-ee">Magento 2.1.x EE</h4>
+<p>You can fix this issue with image resizing by downloading and installing the <code>EE-MAGETWO-67805.patch</code> hot fix, and then immediately upgrading to Magento 2.1.7, as soon as it is available.</p>
 
-    <ul>
-      <li>
-        <p><code>&lt;frame&gt;0&lt;/frame&gt;</code></p>
-      </li>
-      <li>
-        <p><code>&lt;vars module="Magento_Catalog"&gt;
- &lt;var name="product_image_white_borders"&gt;0&lt;/var&gt;
- 	&lt;/vars&gt;</code></p>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <p>Clean your full-page cache. See <a href="http://devdocs.magento.com/guides/v2.0/config-guide/cli/config-cli-subcommands-cache.html" target="_blank">Manage the Cache</a> for more information on Magento <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span> types and procedures for managing caches.</p>
-  </li>
-  <li>
-    <p>Manually resize all your images using the <code>bin/magento catalog:images:resize</code> command.</p>
-  </li>
-</ol>
+<p>To download this patch,</p>
+
+<p>1) Log in to your EE client account by selecting <strong>My Account</strong> on <a href="https://magentocommerce.com" target="_blank">magentocommerce.com</a>.</p>
+
+<p>2) After logging in, navigate to MAGETWO-67805 on the Support Patches page (<strong>Downloads &gt; Magento Enterprise Edition 2.X &gt; Magento Enterprise Edition 2.x Release &gt; Support Patches &gt; MAGETWO-67805</strong>).</p>
+
+<p>3) Select and install the <code>EE-MAGETWO-67805.patch</code> hot fix.</p>
+
+<h4 id="magento-enterprise-cloud-edition">Magento Enterprise Cloud Edition</h4>
+<p>General ECE patches are provided for all Magento Enterprise Cloud Edition customers in a repository referenced in your <code>composer.json</code>. We apply patches automatically during the build phase when a patch is available. <code>magento-cloud-configuration 101.6.2</code> contains the hot fix for this image resize issue.</p>
+
+<p>See <a href="http://devdocs.magento.com/guides/v2.1/cloud/howtos/update-components.html" target="_blank">Update extensions</a> for more information on running <code>composer.update</code> to upgrade your Cloud extension.</p>
 
 <h3 id="more-information">More information</h3>
 
