@@ -1,7 +1,7 @@
 ---
 layout: default
 group: 
-subgroup: 40_live
+subgroup: Live
 title: Configuration reference
 menu_title: Configuration reference
 menu_order: 80

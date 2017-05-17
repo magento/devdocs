@@ -16,7 +16,7 @@ When you set up a production system in the Magento 2.2 [split deployment model](
 
 After importing, you can create product attributes and apply them to websites, stores, and store views, on the production system.
 
-If the database and `config.php` are not in synchronization, errors display in the Magento Admin with suggested corrective actions.
+If the database and `config.php` are not in synchronization, errors display in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} with suggested corrective actions.
 
 ## First steps {#first}
 
@@ -31,7 +31,7 @@ Use the optional `[-n, --no-interaction]` flag to import data without any intera
 
 If you enter `magento app:config:import` without the optional flag, you're required to confirm the changes.
 
-For example, if configuration file contains one new website and one new store, the following  message is displayed:
+For example, if configuration file contains one new {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %} and one new store, the following  message is displayed:
 
     These Websites will be created: New Website
     These Groups will be created: New Store
@@ -55,7 +55,7 @@ The following sections discuss in detail what data we import.
 ### System configuration
 _System_ configuration values cannot be imported directly into Magento because they require some pre- and post-processing actions. (These values are in the `system` array in `config.php` or `env.php`.)
 
-For example, the value of the configuration path `web/secure/base_url` must be validated with backend models.
+For example, the value of the configuration path `web/secure/base_url` must be validated with {% glossarytooltip 74d6d228-34bd-4475-a6f8-0c0f4d6d0d61 %}backend{% endglossarytooltip %} models.
 
 #### Backend models
 Backend models are the mechanism for processing changes in system configuration. You define backend modules in `<module_name>/adminhtml/system.xml`.
@@ -78,7 +78,7 @@ The preceding configurations can be imported in the following modes:
 *   `delete`: `config.php` does _not_ contain entities (`websites`, `groups`, `stores`) that are present on production environment
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-We don't import the root category associated with stores. You must associate a root category with a store using the Magento Admin.
+We don't import the root {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} associated with stores. You must associate a root category with a store using the Magento {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}.
 </div> 
 
 ### Theme configuration
@@ -87,7 +87,7 @@ Theme configuration includes all themes registered in your Magento system; the d
 #### Structure of theme data
 The key of array is full theme path: `area` + `theme path`
 
-For example, `frontend/Magento/luma`. `frontend` is area and `Magento/luma` is theme path.
+For example, `frontend/Magento/luma`. `frontend` is area and `Magento/luma` is {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} path.
 
 The value of array is data about theme: code, title, path, parent id and etc.
 

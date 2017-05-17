@@ -15,7 +15,7 @@ ee_only: false
 
 The default Luma store needs additional configuration to run the REST calls mentioned in this tutorial.
 
-If you are using the DevBox installation, the URL to Admin is `http://127.0.0.1:<port>/admin`. Use the `docker-compose ps` command to determine the web server listen port, as discussed in [Stop, start, restart, and view port mappings]({{page.baseurl}}install-gde/docker/docker-commands.html#Stop-start-restart-and-view-port-mappings-). 
+If you are using the DevBox installation, the {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} to Admin is `http://127.0.0.1:<port>/admin`. Use the `docker-compose ps` command to determine the web server listen port, as discussed in [Stop, start, restart, and view port mappings]({{page.baseurl}}install-gde/docker/docker-commands.html#Stop-start-restart-and-view-port-mappings-). 
 
 ### Set the payment method {#set-payment}
 
@@ -27,11 +27,11 @@ Check/Money Order | `checkmo` | Yes
 Bank Transfer Payment | `banktransfer` | No
 Cash on Delivery | `cashondelivery` | No
 Purchase Order | `purchaseorder` | No
-Zero Subtotal Checkout | `free` | Yes
+Zero Subtotal {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}Checkout{% endglossarytooltip %} | `free` | Yes
 
-In this tutorial, configure Magento to accept bank transfer payments. To allow bank transfer payments (or any other offline payment method) as a payment method, log in to Admin and select **Stores > Configuration > Sales > Payment Methods**. Then enable the payment method and click **Save**.
+In this tutorial, configure Magento to accept bank transfer payments. To allow bank transfer payments (or any other offline payment method) as a payment method, log in to {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} and select **Stores > Configuration > Sales > Payment Methods**. Then enable the {% glossarytooltip 422b0fa8-b181-4c7c-93a2-c553abb34efd %}payment method{% endglossarytooltip %} and click **Save**.
 
-Upon clicking **Save**, a notification message states that the cache needs to be refreshed. Click the **Cache Management** link to refresh the cache.
+Upon clicking **Save**, a notification message states that the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} needs to be refreshed. Click the **Cache Management** link to refresh the cache.
 
 ### Deactivate a cart price rule {#price-rule}
 

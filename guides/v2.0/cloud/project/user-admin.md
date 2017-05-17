@@ -1,14 +1,14 @@
 ---
 layout: default
 group: cloud
-subgroup: 10_project
+subgroup: 100_project
 title: Manage users
 menu_title: Manage users
 menu_order: 5
 menu_node: 
 version: 2.0
 github_link: cloud/project/user-admin.md
-redirect_from: guides/v2.0/cloud/admin/admin-user-admin.html
+redirect_from: guides/v2.0/cloud/project/user-admin.html
 ---
 
 Magento Enterprise Cloud Edition enables you to administer users by assigning them one or more roles. A *role* provides access and

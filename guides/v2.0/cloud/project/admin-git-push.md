@@ -1,7 +1,7 @@
 ---
 layout: default
 group: 
-subgroup: 10_project
+subgroup: 100_project
 title: git push details
 menu_title: git push details (remove or rewrite)
 menu_order: 100
@@ -17,7 +17,7 @@ of the `git push` command might look like with Magento Enterprise Cloud Edition.
 Magento Enterprise Cloud Edition is extremely versatile; for each project and  depending
 on the state of the project, the output can vary wildly. 
 
-This topic discusses a sample PHP project with a lot of data backends; and that uses MySQL, Redis, and Elasticsearch. It has its PHP dependencies in a `composer.json` file and it uses the Ruby library `sass` to compile the SCSS
+This topic discusses a sample {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} project with a lot of data backends; and that uses MySQL, Redis, and Elasticsearch. It has its PHP dependencies in a `composer.json` file and it uses the Ruby library `sass` to compile the SCSS
 during its build process.
 
 In this example, a developer wants to work on a new feature so they created a new environment by
@@ -73,7 +73,7 @@ application a container with the correct configuration.
     Installing build dependencies...
         Installing ruby build dependencies: sass
 
-In this case we have a dependency on the Ruby  `sass` library so it has installed 
+In this case we have a dependency on the Ruby  `sass` {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %} so it has installed 
 it. (Again, this comes from `.magento.app.yaml`.)
 
     Found a `composer.json`, installing dependencies.

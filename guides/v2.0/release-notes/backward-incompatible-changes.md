@@ -35,7 +35,7 @@ For more information about backward compatibility, see [Magento’s backward com
 
 ### UI changes
 
-* The **Subproduct discounts** dropdown on a catalog price rule was deleted, including **Apply** and **Discount Amount** subfields.
+* The **Subproduct discounts** dropdown on a {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}catalog{% endglossarytooltip %} price rule was deleted, including **Apply** and **Discount Amount** subfields.
 
 |---
 | Setup version 2.0.0  | Setup version 2.0.1
@@ -53,7 +53,7 @@ For more information about backward compatibility, see [Magento’s backward com
 * General changes
   * **Reset** button has been removed.
 * POST data structure changed
-  * The parent category ID `parent_id` is now posted in the `general` field.
+  * The parent {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} ID `parent_id` is now posted in the `general` field.
   * The category data from the `general` array is split to the specific arrays by a field set name.
 
 <table>
@@ -119,8 +119,8 @@ You can find a `setup_version` parameter in the `<your_Magento_module_dir>/etc/m
 
 * Check boxes and radio buttons work as `on/off` fields.
 * Category products grid
-  * Rendered by a UI component as a standalone block
-  * Initialized using the `magento-init` event
+  * Rendered by a {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %} as a standalone block
+  * Initialized using the `magento-init` {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %}
 * To join EAV attributes use `linkField`.
 
 {% highlight php startinline=1 %}
@@ -137,12 +137,12 @@ Magento\Framework\Model\Entity\MetadataPool::getMetadata(Magento\Catalog\Api\Dat
 
 * A form is built with UI components ([more info about a form component][]).
 * The form is extended using a form configuration file [`<magento2>/app/code/Magento/Catalog/view/adminhtml/ui_component/category_form.xml`][] (see [Overview of UI components][]).
-* A data provider `\Magento\Catalog\Model\Category\DataProvider` is used to set data and fields metadata for the form.
+* A data provider `\Magento\Catalog\Model\Category\DataProvider` is used to set data and fields {% glossarytooltip 3f0f2ef1-ad38-41c6-bd1e-390daaa71d76 %}metadata{% endglossarytooltip %} for the form.
 * Default form data is now a part of metadata that is fetched from the `\Magento\Catalog\Model\Category\DataProvider`.
 
 ### Flow changes
 
-When **Products -> Categories** menu item in the Magento Admin is chosen, the first root category is selected for editing by default now. You can create a new category or a root category manually only. Use the corresponding button **Add Root Category** or **Add Subcategory**.
+When **Products -> Categories** menu item in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} is chosen, the first root category is selected for editing by default now. You can create a new category or a root category manually only. Use the corresponding button **Add Root Category** or **Add Subcategory**.
 
 <!-- LINK DEFINITIONS -->
 
@@ -158,4 +158,4 @@ When **Products -> Categories** menu item in the Magento Admin is chosen, the fi
 
 <!-- ABBREVIATIONS -->
 
-*[EAV]: Entity Attribute Value
+*[EAV]: {% glossarytooltip a9027f5d-efab-4662-96aa-c2999b5ab259 %}Entity{% endglossarytooltip %} Attribute Value

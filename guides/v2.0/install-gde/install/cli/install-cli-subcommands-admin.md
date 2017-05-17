@@ -21,7 +21,7 @@ Before you can use this command, you must do all of the following:
 
 *	<a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands-deployment.html">Create the deployment configuration</a>
 *	<a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands-enable.html">Enable at minimum the Magento_Authorization and Magento_User modules</a>
-*	Create the Magento database schema
+*	Create the Magento {% glossarytooltip 66b924b4-8097-4aea-93d9-05a81e6cc00c %}database schema{% endglossarytooltip %}
 
 	<div class="bs-callout bs-callout-info" id="info">
 		<span class="glyphicon-class">

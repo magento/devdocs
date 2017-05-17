@@ -13,7 +13,7 @@ github_link: mrg/ee/CatalogRuleStaging.md
 
 ## Overview
 
-The Magento_CatalogRuleStaging module is a part of the staging functionality in Magento EE. It enables you to add the catalog rule updates to existing store campaigns. In other words, you can add and/or remove catalog rules for some period of time. These updates are shown on the campaign dashboard.
+The Magento_CatalogRuleStaging {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} is a part of the staging functionality in Magento EE. It enables you to add the {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}catalog{% endglossarytooltip %} rule updates to existing store campaigns. In other words, you can add and/or remove {% glossarytooltip 3b0e248f-5571-48c0-9dde-efe1662fac6d %}catalog rules{% endglossarytooltip %} for some period of time. These updates are shown on the campaign dashboard.
 
 ## Implementation details
 
@@ -45,7 +45,7 @@ You can find the list of modules that have dependencies on the Magento_CatalogRu
 
 ## Extension points
 
-Extension points enable extension developers to interact with the Magento_CatalogRuleStaging module. You can interact with the Magento_CatalogRuleStaging module using the Magento extension mechanism, see [Magento plug-ins](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/plugins.html).
+{% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}Extension{% endglossarytooltip %} points enable extension developers to interact with the Magento_CatalogRuleStaging module. You can interact with the Magento_CatalogRuleStaging module using the Magento extension mechanism, see [Magento plug-ins](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/plugins.html).
 
 [The Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_CatalogRuleStaging module.
 

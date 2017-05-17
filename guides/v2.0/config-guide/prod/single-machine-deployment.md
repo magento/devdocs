@@ -14,7 +14,7 @@ This topic provides instructions for deploying updates to Magento on a productio
 
 This process applies to technical users responsible for stores running on a single machine with some themes and locales installed.
 
-For less technical users, i.e. business users, we recommend using the [System Upgrade][9] feature in the Admin.
+For less technical users, i.e. business users, we recommend using the [System Upgrade][9] feature in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}.
 
 ## Assumptions
 
@@ -55,7 +55,7 @@ Contributing developers should use [this guide][6] to update their Magento insta
    
         composer update
 
-6. Update the database schema and data:
+6. Update the {% glossarytooltip 66b924b4-8097-4aea-93d9-05a81e6cc00c %}database schema{% endglossarytooltip %} and data:
 
         php bin/magento setup:upgrade
 

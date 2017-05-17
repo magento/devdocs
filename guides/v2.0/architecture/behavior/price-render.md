@@ -12,7 +12,7 @@ redirect_from: /guides/v1.0/architecture/behavior/price-render.html
 
 ## Overview
 
-The Magento software renders prices using the Pricing library as follows:
+The Magento software renders prices using the Pricing {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %} as follows:
 
 <p><img src="{{ site.baseurl }}common/images/price_rend1.png" alt="Magento\Framework\Pricing\Render\RenderPool searches for renders based on SaleableItem type and PriceCode (createPriceRender, createAmountRender, and createAdjustmentRender methods"></p>
 
@@ -278,7 +278,7 @@ This section discusses the following APIs:
 
 <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Pricing/Render/PriceBox.php" target="_blank">Magento\Framework\Pricing\Render\PriceBox</a> is a main block that wraps all price rendering related content of particular Price Type.
 
-This is a private class, it cannot be accessed from general layout blocks or templates.
+This is a private class, it cannot be accessed from general {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} blocks or templates.
 
 <table>
   <tbody>

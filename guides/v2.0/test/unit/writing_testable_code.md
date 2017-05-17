@@ -40,7 +40,7 @@ There always is a better alternative, usually a [generated]({{page.baseurl}}exte
 
 Whenever an external class property, class constant, or a class method is used in a file, this file depends on the class containing the method or constant. Even if the external class is not used as a instantiated object, the current class is still hard-wired to depend on it.  
 
-PHP cannot execute the code unless it can load the external class, too. That is why such external classes are referred to as *dependencies*. Try to keep the number dependencies of to a minimum.  
+{% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} cannot execute the code unless it can load the external class, too. That is why such external classes are referred to as *dependencies*. Try to keep the number dependencies of to a minimum.  
 
 Collaborator instances should be passed into the class using [constructor injection]({{page.baseurl}}extension-dev-guide/depend-inj.html#dep-inj-preview-cons).
 

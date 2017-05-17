@@ -15,11 +15,11 @@ This topic describes how to create your custom theme for Magento Admin, referenc
 
 ## Prerequisites 
 
-[Set]({{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer [mode]({{page.baseurl}}config-guide/bootstrap/magento-modes.html). The application mode influences the way static files are cached by Magento. 
+[Set]({{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html) your Magento application to the developer [mode]({{page.baseurl}}config-guide/bootstrap/magento-modes.html). The application mode influences the way {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} are cached by Magento. 
 
 ## Overview
 
-To create a custom Admin theme, take the following steps:
+To create a custom {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} theme, take the following steps:
 
 1. [Create a theme directory.](#create_dir)
 2. [Add a declaration `theme.xml`.](#declare_theme)
@@ -38,7 +38,7 @@ In the theme directory, add `theme.xml` containing at least the theme name and t
 
 Add or copy from an existing `theme.xml` to your theme directory `app/design/adminhtml/<Vendor>/<admin_theme>`.
 
-Configure it using the following example (replace placeholders with your theme information):
+Configure it using the following example (replace placeholders with your {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} information):
 
 {%highlight xml%}
 <theme xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Config/etc/theme.xsd">
@@ -47,7 +47,7 @@ Configure it using the following example (replace placeholders with your theme i
  </theme>
 {%endhighlight%}
 
-If you change the theme title or parent theme information in `theme.xml` after a theme was already [registered](#register_theme), you need to open or reload any Magento Admin page for your changes to be saved in the database.
+If you change the theme title or parent theme information in `theme.xml` after a theme was already [registered](#register_theme), you need to open or reload any {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} page for your changes to be saved in the database.
 
 
 

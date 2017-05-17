@@ -12,7 +12,7 @@ redirect_from: /guides/v2.0/ui-library/ui-secondary-treemass.html
 
 ---
 
-TreeMassAction Component is extension to MassAction component that provides nested sub-menu. 
+TreeMassAction Component is {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} to MassAction component that provides nested sub-menu. 
 
 The TreeMassAction JS component is used by the TwoStepMassAction component.
 
@@ -114,7 +114,7 @@ The following options are available:
 
 #### Methods and Events
 
-The following api methods are available:
+The following {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}api{% endglossarytooltip %} methods are available:
 
 * getAction - returns action instance found by the provided identifier
 * applyAction - applies specified as identifier action

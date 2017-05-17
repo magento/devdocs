@@ -22,7 +22,7 @@ Following execution, a detailed report displays showing the test run and results
 <h3 id="config-cli-subcommands-tests-prereq">Prerequisites</h3>
 Before you run this command, all of the following must be true:
 
-*	The `Magento_Developer` module must be enabled. You can enable it as follows:
+*	The `Magento_Developer` {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} must be enabled. You can enable it as follows:
 
 		magento module:enable [--force] Magento_Developer
 

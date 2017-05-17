@@ -14,8 +14,8 @@ During installation using the Setup Wizard, the process stops at about 70% (with
 
 Common causes for this issue include:
 
-*	The PHP setting for <a href="http://php.net/manual/en/info.configuration.php#ini.max-execution-time" target="_blank">`max_execution_time`</a>
-*	Timeout values for nginx and Varnish
+*	The {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} setting for <a href="http://php.net/manual/en/info.configuration.php#ini.max-execution-time" target="_blank">`max_execution_time`</a>
+*	Timeout values for {% glossarytooltip b14ef3d8-51fd-48fe-94df-ed069afb2cdc %}nginx{% endglossarytooltip %} and Varnish
 
 ### Solution:
 Set all of the following as appropriate.

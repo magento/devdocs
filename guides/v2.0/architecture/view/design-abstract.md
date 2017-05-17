@@ -12,9 +12,9 @@ redirect_from: /guides/v1.0/architecture/view/design-abstract.html
 
 ## Overview {#m2devgde-design-abstract-intro}
 
-A *design abstraction* is a layout file (a set of layout instructions) that does not have its own implementation as a page rendered by a certain controller action (page type), but could be used by one or more of such pages to define the look and feel of a page. Design abstractions are used to qualify pages by type, providing business users the ability to customize designs for certain types of pages. In particular design abstractions are used in widget creation to define the types of pages where a widget can be displayed.
+A *design abstraction* is a {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} file (a set of layout instructions) that does not have its own implementation as a page rendered by a certain controller action (page type), but could be used by one or more of such pages to define the look and feel of a page. Design abstractions are used to qualify pages by type, providing business users the ability to customize designs for certain types of pages. In particular design abstractions are used in {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} creation to define the types of pages where a widget can be displayed.
 
-For example, there is a design abstraction defining a two-column page layout. So when creating a widget, you can select it to be displayed on all pages with two-column page layout. This article describes how design abstractions are declared, called in layout files, and used in widget creation in the Admin panel. This information is a practical reference for frontend developers working with layouts, and is also useful for the wider audience of server-side and frontend developers who want to understand how the Magento system implements layouts.
+For example, there is a design abstraction defining a two-column page layout. So when creating a widget, you can select it to be displayed on all pages with two-column page layout. This article describes how design abstractions are declared, called in layout files, and used in widget creation in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} panel. This information is a practical reference for {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} developers working with layouts, and is also useful for the wider audience of server-side and frontend developers who want to understand how the Magento system implements layouts.
 
 ## About design abstractions {#m2devgde-design-abstract-what}
 
@@ -39,7 +39,7 @@ When a page is rendered, all `customer_account` layouts are merged, and the page
 ## Declare design abstractions {#m2devgde-design-abstract-declare}
 
 According to the layout naming convention, the name of a layout file corresponds to the layout handle it defines.
-To declare a layout file as a design abstraction, you need to set the layout handle (the root XML node of a file which represents a handle) attributes as follows:
+To declare a layout file as a design abstraction, you need to set the layout handle (the root {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} node of a file which represents a handle) attributes as follows:
 
 <code>&lt;layout&nbsp;label=&quot;{your_custom_value}&quot;&nbsp;design_abstraction=&quot;custom&quot;&nbsp;/&gt;</code>
 
@@ -65,7 +65,7 @@ To complete the `customer_account.xml` design abstraction example, look at <a hr
 
 ### Design abstractions in widget creation {#m2devgde-design-abstract-widget}
 
-Specifying the pages where a widget is displayed is one of the required steps during widget creation. Widgets are added in the Admin under <b>Content/ Frontend App</b>. After choosing to create a new widget instance, a user specifies the widget type and the design theme. Then a page for configuring other widget options is displayed. To select a page where the widget should be displayed, you need to click <b>Add Layout Update</b>. Now you can specify pages by selecting the corresponding layout handles. If you want a widget to be displayed on pages with a certain layout, choose <b>Page Layouts</b>.
+Specifying the pages where a widget is displayed is one of the required steps during widget creation. Widgets are added in the Admin under <b>Content/ Frontend App</b>. After choosing to create a new widget instance, a user specifies the widget type and the design {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}. Then a page for configuring other widget options is displayed. To select a page where the widget should be displayed, you need to click <b>Add Layout Update</b>. Now you can specify pages by selecting the corresponding layout handles. If you want a widget to be displayed on pages with a certain layout, choose <b>Page Layouts</b>.
 
 <img src="{{ site.baseurl }}common/images/view_da4.png" alt="Specifying page type">
 

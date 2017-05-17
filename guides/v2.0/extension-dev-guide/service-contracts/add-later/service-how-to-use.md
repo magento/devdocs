@@ -3,11 +3,11 @@ layout: default
 title: How a Client Uses a Service
 ---
 
-Before interacting with a service, you must be familiar with the service interface, including input/output data structures defined by the corresponding schema. Services are defined by PHP interfaces, so you can simply acquire an instance of the service and invoke a method directly. You can also access services using REST and SOAP calls.
+Before interacting with a service, you must be familiar with the service interface, including input/output data structures defined by the corresponding schema. Services are defined by {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} interfaces, so you can simply acquire an instance of the service and invoke a method directly. You can also access services using REST and SOAP calls.
 
 ## Method 1: Dependency Injection
 
-To directly invoke a service using its PHP interface, use dependency injection. To do this, simply define a constructor dependency on the service you need. From there, you can use the instance to directly invoke methods on the interface.
+To directly invoke a service using its PHP interface, use {% glossarytooltip 2be50595-c5c7-4b9d-911c-3bf2cd3f7beb %}dependency injection{% endglossarytooltip %}. To do this, simply define a constructor dependency on the service you need. From there, you can use the instance to directly invoke methods on the interface.
 
 Because a service call typically accepts one or more primitive types or service data objects, you might have to convert or extract them before calling the service. For an example, see `public function getInputData` in <a href="{{ site.mage2000url }}app/code/Magento/Webapi/Controller/ServiceArgsSerializer.php" target="_blank">this Web API class</a>.
 
@@ -28,7 +28,7 @@ Service methods complete in one of two ways:
 	*	Primitive type (such as an ID)
 	*	Service data object. A service data object holds only primitives or other service data objects and so on.
 
- *  Throw an exception
+ *  Throw an {% glossarytooltip 53da11f1-d0b8-4a7e-b078-1e099462b409 %}exception{% endglossarytooltip %}
 
     An exception should be handled according to logic associated with the method invocation and the error received. Most of the time, the client logs only the details of the root exception and reports the error to the user in an appropriate way.
 

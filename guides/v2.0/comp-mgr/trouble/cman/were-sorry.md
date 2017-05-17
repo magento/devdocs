@@ -21,10 +21,10 @@ See one of the following sections for possible solutions:
 *	[Problem: you cloned the Magento GitHub repository](#git-clone)
 
 ### Problem: you're not authenticated {#not-auth}
-You might not have entered your authentication keys in the Magento Admin.
+You might not have entered your authentication keys in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}.
 
 #### Solution
-Enter your <a href="{{page.baseurl}}comp-mgr/prereq/prereq_auth-token.html">authentication keys</a> in the Admin. Try your upgrade again.
+Enter your <a href="{{page.baseurl}}comp-mgr/prereq/prereq_auth-token.html">authentication keys</a> in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}. Try your upgrade again.
 
 If that doesn't work, try generating <a href="{{page.baseurl}}install-gde/prereq/connect-auth.html">new authentication keys</a> and enter those in the Admin. Then try your upgrade again.
 

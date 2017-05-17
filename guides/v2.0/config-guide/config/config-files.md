@@ -11,7 +11,7 @@ redirect_from: /guides/v1.0/config-guide/config/config-files.html
 ---
 
 <h2 id="config-files-overview">Overview of module configuration files</h2>
-The responsibilities of the `config.xml` configuration file used in earlier versions of Magento is now divided between several files, located in various module directories. Magento's multiple configuration files load on demand only when a module requests a specific configuration type.
+The responsibilities of the `config.xml` configuration file used in earlier versions of Magento is now divided between several files, located in various {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} directories. Magento's multiple configuration files load on demand only when a module requests a specific configuration type.
 
 You can use these files&mdash;also referred to as *configuration types*&mdash;to customize specific aspects of your module's behavior.
 
@@ -113,7 +113,7 @@ You can interact with configuration files using interfaces under <a href="{{ sit
 
 `Magento\Framework\Config` provides the following interfaces:
 
-* <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Config/ConverterInterface.php" target="_blank">Framework\Config\ConverterInterface</a>, which converts the XML into an in-memory array representation of the configurations.
+* <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Config/ConverterInterface.php" target="_blank">Framework\Config\ConverterInterface</a>, which converts the {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} into an in-memory array representation of the configurations.
 * <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Config/DataInterface.php" target="_blank">Framework\Config\DataInterface</a>, which retrieves the configuration data in a specified scope.
 * <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Config/FileResolverInterface.php" target="_blank">Framework\Config\FileResolverInterface</a>, which identifies the location of files to be read by `\Magento\Framework\Config\ReaderInterface`
 * <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Config/ReaderInterface.php" target="_blank">Framework\Config\ReaderInterface</a>, which reads the configuration data from storage and selects the storage from which it reads.

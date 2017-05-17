@@ -32,7 +32,7 @@ Magento requires:
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>Magento 2.1.x does not support PHP 5.5.</p></span>
+  <p>Magento 2.1.x does not support {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} 5.5.</p></span>
 </div>
 
 <h2 id="php-ubuntu-help-beginner">Help if you're just starting out</h2>

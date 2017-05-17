@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 10_project
+subgroup: 100_project
 title: GitHub integration
 menu_title: GitHub integration
 menu_order: 110
@@ -93,7 +93,7 @@ To enable the GitHub integration for your environment:
 		Fetch branches: yes
 		Payload URL: https://us.magento.cloud/api/projects/ov58dlacU2e/integrations/wO8a0eoamxwcg/hook
 
-5.	Copy the Payload URL displayed by the command and continue with the next section.
+5.	Copy the Payload {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} displayed by the command and continue with the next section.
 
 ## Add the webhook {#cloud-int-gh-hook}
 To add the webhook to your GitHub repository:

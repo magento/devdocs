@@ -16,18 +16,18 @@ This topic describes how to use JavaScript mixins to overwrite [JavaScript compo
 
 ## Overview of JS mixins
 
-One of the ways to implement JavaScript mixins is declaring them on the RequireJS loading level. This approach allows to modify (extend/overwrite) result that a JavaScript component returns before it is used anywhere.
+One of the ways to implement {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} mixins is declaring them on the RequireJS loading level. This approach allows to modify (extend/overwrite) result that a JavaScript component returns before it is used anywhere.
 
-The scope of your mixin usage depends on the [application area]({{page.baseurl}}architecture/archi_perspectives/components/modules/mod_and_areas.html) it is defined for:
+The scope of your {% glossarytooltip 1a305bdb-9be8-44aa-adad-98758821d6a7 %}mixin{% endglossarytooltip %} usage depends on the [application area]({{page.baseurl}}architecture/archi_perspectives/components/modules/mod_and_areas.html) it is defined for:
 
- - `frontend`: the mixin is applied for all usages of the modified JS component on the storefront
- - `adminhtml`: the mixin is applied for all usages of the modified JS component in the Admin panel
+ - `frontend`: the mixin is applied for all usages of the modified JS component on the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}
+ - `adminhtml`: the mixin is applied for all usages of the modified JS component in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} panel
  - `base`: the mixin is applied for all all usages of the modified JS component, if nothing else is specified in `frontend` and `adminhtml`
 
 Generally, to add a JS mixin you need to do the following:
 
 1. Define a mixin as a separate [AMD module](https://en.wikipedia.org/wiki/Asynchronous_module_definition). It should return a callback function. This function must get the target JS component (module) as an argument.
-2. Declare the AMD module you created as a mixin to the target module.
+2. Declare the AMD {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} you created as a mixin to the target module.
 
 There are more details for each step in the following section.
 

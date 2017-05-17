@@ -18,11 +18,11 @@ Linux distributions such as RedHat Enterprise Linux (RHEL), CentOS, Ubuntu, Debi
 Upgrading the Magento applications and extensions you obtain from Magento Marketplaces and other sources can require up to 2GB of RAM. If you are using a system with less than 2GB of RAM, we recommend you create a [swap file]({{ page.baseurl }}comp-mgr/trouble/cman/out-of-memory.html); otherwise, your upgrade might fail.
 
 ### Composer (latest stable version)
-Composer is required for developers who wish to contribute to the Magento 2 codebase or anyone who wishes to develop Magento extensions
+{% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} is required for developers who wish to contribute to the Magento 2 codebase or anyone who wishes to develop Magento extensions
 
 ### Web servers
 
-Compatible: Apache 2.2, 2.4, Nginx 1.8.*, 1.10.*, 1.11.*
+Compatible: Apache 2.2, 2.4, {% glossarytooltip b14ef3d8-51fd-48fe-94df-ed069afb2cdc %}Nginx{% endglossarytooltip %} 1.8.*, 1.10.*, 1.11.*
 <hr />
 
 *	<a href="http://httpd.apache.org/download.cgi" target="_blank">Apache 2.2 or 2.4</a>
@@ -44,7 +44,7 @@ MariaDB and Percona are compatible with Magento because we support MySQL 5.6 API
 	
 ### PHP 
 
-Compatible: PHP 7.0.4+, 7.1.*
+Compatible: {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} 7.0.4+, 7.1.*
 
 {% include install/php_2.2.md %}
 
@@ -82,7 +82,7 @@ We recommend particular PHP configuration settings, such as `memory_limit`, that
 For more information, see [Required PHP settings]({{ page.baseurl }}install-gde/prereq/php-settings.html). 
 
 ### SSL
-*	A valid security certificate is required for HTTPS.
+*	A valid {% glossarytooltip 363d6806-6a7d-4cb6-bc47-efc62bc26a1c %}security certificate{% endglossarytooltip %} is required for HTTPS.
 *	Self-signed SSL certificates are not supported.
 *	Transport Layer Security (TLS) requirement 
 

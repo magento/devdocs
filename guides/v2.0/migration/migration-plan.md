@@ -19,7 +19,7 @@ To migrate successfully and avoid issues, you need to thourougly plan and test y
 
 * Have you identified if you need all these extensions on your new site?  (There might be old ones you can safely remove.)
 
-* Have you determined if Magento 2 versions of your extensions exist?  (Visit [Magento Marketplace](https://marketplace.magento.com/){:target:"_blank"} to find the latest versions or contact your extension provider.)
+* Have you determined if Magento 2 versions of your extensions exist?  (Visit [Magento Marketplace](https://marketplace.magento.com/){:target:"_blank"} to find the latest versions or contact your {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} provider.)
 
 * What database assets from your extensions do you want to migrate?
 
@@ -33,7 +33,7 @@ To prepare for the migration, make sure you do all of the following:
 
 * Set up a Magento 2.x system using a topology and design that at least matches your existing Magento 1 system
 
-* To provide redundancy in the event of unexpected issues, we advise you to replicate your Magento 1.x database and use this Magento 1.x data for your migration
+* To provide redundancy in the {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} of unexpected issues, we advise you to replicate your Magento 1.x database and use this Magento 1.x data for your migration
 
 * Install Magento 2.x (with all modules of this release) on a system that meets our system requirements
 
@@ -41,7 +41,7 @@ To prepare for the migration, make sure you do all of the following:
 
 1. Make sure that the Data Migration Tool has a network access to connect to Magento 1 and Magento 2 databases. Open ports in your firewall.
 
-2. Stop all activity in the Magento 1.x Admin Panel (except for order management, such as shipping, creating invoice, credit memos etc.). **Note:** activity cannot resume until your Magento 2 store goes live.
+2. Stop all activity in the Magento 1.x {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} Panel (except for order management, such as shipping, creating invoice, credit memos etc.). **Note:** activity cannot resume until your Magento 2 store goes live.
 
 3. Stop all Magento 1.x cron jobs.
 
@@ -79,7 +79,7 @@ Now that your Magento 2 site is up-to-date with Magento 1 and is functioning nor
 2. Press Control+C in the migration tool command window to stop incremental updates.
 3. Start your Magento 2 cron jobs.
 4. In your Magento 2 system, reindex the stock indexer. For more information, see the <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-index.html">Configuration Guide</a>.
-5. Using a tool of your choice, hit pages in your Magento 2 system to cache pages in advance of customers using your storefront.
+5. Using a tool of your choice, hit pages in your Magento 2 system to {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} pages in advance of customers using your {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}.
 6. Perform any final verification of your Magento 2 site.
 7. Change DNS, load balancers, and so on to point to new production hardware (DOWNTIME ENDS)
 8. Magento 2 store is ready to use. You and your customers can resume all activities.

@@ -21,14 +21,14 @@ Find `phpunit.xml` in `<magento2_root_dir>/dev/tests/functional`, and open it in
 #### Set URL for Magento storefront under test {#mtf_quickstart_config_phpunitxml_frontend}
 
 Find `<php>` element.
-For `name="app_frontend_url"` set `value` that is your actual URL for Magento storefront under test.
+For `name="app_frontend_url"` set `value` that is your actual {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} for Magento {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} under test.
 
 Example:
 `<env name="app_frontend_url" value="http://example.com/magento2/"/>`
 
 #### Set URL for Magento Admin URL under test {#mtf_quickstart_config_phpunitxml_backend}
 
-For `name="app_backend_url"` set `value` that is your actual URL for Magento Admin URL under test.
+For `name="app_backend_url"` set `value` that is your actual URL for {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} URL under test.
 
 Example:
 `<env name="app_backend_url" value="http://example.com/magento2/admin/"/>`
@@ -42,7 +42,7 @@ Example:
 Find `config.xml` in `<magento2_root_dir>/dev/tests/functional/etc`, and open it in editor.
 
 #### Set credentials for Magento Admin under test {#mtf_quickstart_config_configxml_credent-backend}
-In `<application>` element find elements `<backendLogin>` and `<backendPassword>`. Change content of these elements to your actual credentials for Magento Admin URL.
+In `<application>` element find elements `<backendLogin>` and `<backendPassword>`. Change content of these elements to your actual credentials for Magento {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} URL.
 
 #### Set browser that the FTF will use for tests {#mtf_quickstart_config_configxml_browser}
 The default browser is **Mozilla Firefox**.
@@ -85,7 +85,7 @@ Find `credentials.xml` in `<magento2_root_dir>/dev/tests/functional`, and open i
 #### Set credentials for Magento modules under test {#mtf_quickstart_config_credentialsxml-set}
 Open `credentials.xml`.
 
-Find block of elements for the Magento module you want to test.
+Find block of elements for the Magento {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} you want to test.
 
 Enter actual data in `value` attribute of corresponding `field` element.
 
