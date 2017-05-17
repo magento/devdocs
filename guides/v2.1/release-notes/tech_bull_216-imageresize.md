@@ -35,18 +35,18 @@ If your custom theme doesn't include the `frame` element, or a value has not bee
 We strongly recommend that you upgrade to  2.1.7 as soon as that release is available. Magento 2.1.7 will contain a fix for this issue as well as critically important security enhancements. We provide the hot fix described in this Technical Bulletin as a temporary fix only. 
 
 #### Magento 2.1.x CE
-You can fix this issue with image resizing by downloading  and installing the `MAGETWO-67805.hotfix.git-composer-compatible.patch` hot fix, and then immediately upgrading to Magento 2.1.7, as soon as it is available. 
+You can fix this issue with image resizing by downloading  and installing the `MAGETWO-67805.patch` hot fix, and then immediately upgrading to Magento 2.1.7, as soon as it is available. 
 
   To download this patch, 
 
   1) On [Magento Tech Resources](https://magento.com/tech-resources/download){:target="_blank"}, choose **Downloads > Magento Community Edition Patches > 2.x**.
 
-  2) Select the `MAGETWO-67805.hotfix.git-composer-compatible.patch` hot fix.
+  2) Select the `MAGETWO-67805.patch` hot fix.
 
 
 
 #### Magento 2.1.x EE
-You can fix this issue with image resizing by downloading and installing the `MAGETWO-67805.hotfix.git-composer-compatible.patch` hot fix, and then immediately upgrading to Magento 2.1.7, as soon as it is available.
+You can fix this issue with image resizing by downloading and installing the `MAGETWO-67805.patch` hot fix, and then immediately upgrading to Magento 2.1.7, as soon as it is available.
 
   To download this patch,
 
@@ -54,7 +54,7 @@ You can fix this issue with image resizing by downloading and installing the `MA
 
   2) After logging in, navigate to the MAGETWO-67805 on the Support Patches page (**Downloads > Magento Enterprise Edition 2.X > Magento Enterprise Edition 2.x Release > Support Patches > MAGETWO-67805**). 
 
-  3) Select and install the `MAGETWO-67805.hotfix.git-composer-compatible.patch` hot fix. 
+  3) Select and install the `MAGETWO-67805.patch` hot fix. 
 
 
 
