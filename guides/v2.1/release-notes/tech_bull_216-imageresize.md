@@ -26,7 +26,7 @@ You cannot change the size of the base image within the gallery by editing `etc 
 
 ### Background
 
-Magento 2.1.6 introduced a change in how the platform handles images associated with custom themes. The `frame` element adds white space around your image. In Magento 2.1.6, the default value of this optional setting is **true**. (Previous versions of Magento did **not** set this value to **true** by default in the Blank {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}.) 
+Magento 2.1.6 introduced a change in how the platform handles images associated with custom themes. The `frame` element adds white space around your image. In Magento 2.1.6, the default value of this optional setting is **true**. 
 
 If your custom theme doesn't include the `frame` element, or a value has not been assigned to it, then Magento will rely upon the `product_image_white_borders` option in the Catalog module for the value of the `frame` option. The `product_image_white_borders` setting typically has a value of **1**,  but is overridden to **0** in the default Luma and Blank themes. 
 
@@ -35,33 +35,33 @@ If your custom theme doesn't include the `frame` element, or a value has not bee
 We strongly recommend that you upgrade to  2.1.7 as soon as that release is available. Magento 2.1.7 will contain a fix for this issue as well as critically important security enhancements. We provide the hot fix described in this Technical Bulletin as a temporary fix only. 
 
 #### Magento 2.1.x CE
-You can fix this issue with image resizing by downloading  and installing the `MAGETWO-67805.patch` hot fix, and then immediately upgrading to Magento 2.1.7, as soon as it is available. 
+You can fix this issue with image resizing by downloading  and installing the `CE-MAGETWO-67805.patch` hot fix, and then immediately upgrading to Magento 2.1.7, as soon as it is available. 
 
   To download this patch, 
 
   1) On [Magento Tech Resources](https://magento.com/tech-resources/download){:target="_blank"}, choose **Downloads > Magento Community Edition Patches > 2.x**.
 
-  2) Select the `MAGETWO-67805.patch` hot fix.
+  2) Select the `CE-MAGETWO-67805.patch` hot fix.
 
 
 
 #### Magento 2.1.x EE
-You can fix this issue with image resizing by downloading and installing the `MAGETWO-67805.patch` hot fix, and then immediately upgrading to Magento 2.1.7, as soon as it is available.
+You can fix this issue with image resizing by downloading and installing the `EE-MAGETWO-67805.patch` hot fix, and then immediately upgrading to Magento 2.1.7, as soon as it is available.
 
   To download this patch,
 
   1) Log in to your EE client account by selecting **My Account** on [magentocommerce.com](https://magentocommerce.com){:target="_blank"}. 
 
-  2) After logging in, navigate to the MAGETWO-67805 on the Support Patches page (**Downloads > Magento Enterprise Edition 2.X > Magento Enterprise Edition 2.x Release > Support Patches > MAGETWO-67805**). 
+  2) After logging in, navigate to MAGETWO-67805 on the Support Patches page (**Downloads > Magento Enterprise Edition 2.X > Magento Enterprise Edition 2.x Release > Support Patches > EE-MAGETWO-67805**). 
 
-  3) Select and install the `MAGETWO-67805.patch` hot fix. 
+  3) Select and install the `EE-MAGETWO-67805.patch` hot fix. 
 
 
 
 #### Magento Enterprise Cloud Edition
 General ECE patches are provided for all Magento Enterprise Cloud Edition customers in a repository referenced in your `composer.json`. We apply patches automatically during the build phase when a patch is available. `magento-cloud-configuration 101.6.2` contains the hot fix for this image resize issue. 
 
-See [Update extensions](http://devdocs.magento.com/guides/v2.1/cloud/howtos/update-components.html){:target="_blank"} for more information on upgrading your Cloud extension. 
+See [Update extensions](http://devdocs.magento.com/guides/v2.1/cloud/howtos/update-components.html){:target="_blank"} for more information on running `composer.update` to upgrade your Cloud extension. 
 
 
 
