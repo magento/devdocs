@@ -9,7 +9,6 @@ version: 2.0
 github_link: contributor-guide/templates/workflow_template.md
 ---
 
-
 <div class="flow-row">
 <div class="flow-column push">
 
@@ -137,7 +136,6 @@ In local environment:
 5.  Create Magento Enterprise Cloud Edition  project from template.
 {% endcollapsible %}
 </div>
-
 <div class="flow-arrow">
   Check out project, start development
 </div>

@@ -1,10 +1,11 @@
 // Variables
 
-$flow-column-gutter: 32px;
+$flow-column-gutter: 26px;
 
 $flow-block-bg-color: #F1F1F1;
 $flow-block-border-color: #D7D7D7;
 $flow-block-padding: 1em;
+$flow-block-max-width: 320px;
 
 $flow-arrow-size: 20px;
 $flow-arrow-color: #979797;
@@ -14,6 +15,7 @@ $flow-arrow-border: 2px dashed $flow-arrow-color;
 .flow-row {
   display: flex;
   flex-wrap: wrap;
+  position: relative;
 
   &.centered {
     justify-content: center;
@@ -27,6 +29,9 @@ $flow-arrow-border: 2px dashed $flow-arrow-color;
 
 .flow-column {
   flex: 1;
+  padding-left: $flow-column-gutter/2;
+  padding-right: $flow-column-gutter/2;
+  position: relative;
 
   &.push {
     margin-left: 50%;
@@ -39,11 +44,13 @@ $flow-arrow-border: 2px dashed $flow-arrow-color;
 // Blocks
 
 .flow-intro {
+  font-size: .875em;
+  max-width: $flow-block-max-width;
   padding: $flow-block-padding;
   border-top: 2px solid $flow-block-border-color;
   border-bottom: 2px solid $flow-block-border-color;
-  margin-right: $flow-column-gutter/2;
-  margin-left: $flow-column-gutter/2;
+  margin-left: auto;
+  margin-right: auto;
   margin-bottom:.5em;
 }
 
@@ -52,13 +59,13 @@ $flow-arrow-border: 2px dashed $flow-arrow-color;
   font-size: .875em;
   background: $flow-block-bg-color;
   border: 1px solid $flow-block-border-color;
+  max-width: $flow-block-max-width;
   padding: $flow-block-padding;
-  margin-right: $flow-column-gutter/2;
-  margin-left: $flow-column-gutter/2;
+  margin-left: auto;
+  margin-right: auto;
   min-height: 6em;
   margin-bottom: .5em;
   z-index: 1;
-
 
   .collapsible-title {
     font-weight: normal;
@@ -141,6 +148,27 @@ $flow-arrow-border: 2px dashed $flow-arrow-color;
     width: 50%;
     left: 0;
     height: 1px;
+    border: 2px dashed $flow-arrow-color;
+    bottom: 0;
+  }
+
+  &.turn-left-right:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    left: 0;
+    height: 1px;
+    border: 2px dashed $flow-arrow-color;
+    bottom: 0;
+  }
+
+  &.top-bottom {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    margin-left: -2px;
+    left: 50%;
     border: 2px dashed $flow-arrow-color;
     bottom: 0;
   }
