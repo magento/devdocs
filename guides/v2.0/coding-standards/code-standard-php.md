@@ -19,12 +19,12 @@ Otherwise, you must apply these standards and requirements through rigorous code
 
 ### Class name resolution standard
 
-For class name resolution, use the [`::class`](http://php.net/manual/en/language.oop5.basic.php#language.oop5.basic.class.class){:target="_blank"} keyword instead of a string literal for every class name reference outside of that class.
+For class name resolution, use the [`::class`](http://php.net/manual/en/language.oop5.basic.php#language.oop5.basic.class.class){:target="_blank"} {% glossarytooltip caa46cea-25d7-4e4f-bce1-11430ada59dc %}keyword{% endglossarytooltip %} instead of a string literal for every class name reference outside of that class.
 This includes references to:
 
 * Fully qualified class name
 * Imported/non-imported class name
-* Namespace relative class name
+* {% glossarytooltip 621ef86b-7314-4fbc-a80d-ab7fa45a27cb %}Namespace{% endglossarytooltip %} relative class name
 * Import relative class name
 
 Examples:

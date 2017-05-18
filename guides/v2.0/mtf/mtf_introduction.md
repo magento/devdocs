@@ -23,7 +23,7 @@ FTF does not contain tests. All functional tests are located in `<magento2 root 
 
 <h3 id="mtf_intro_extratools">What tools should I use to run tests with FTF?</h3>
 
--   [PHPUnit][] (downloaded via composer during installation)
+-   [PHPUnit][] (downloaded via {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}composer{% endglossarytooltip %} during installation)
 
 -   [Selenium Standalone Server][]
 
@@ -41,7 +41,7 @@ FTF does not contain tests. All functional tests are located in `<magento2 root 
 
 <h2 id="mtf_intro_audi">Audience</h2>
 
-This guide is intended to be used by any Magento developer. In addition, it can be used by software engineers such as QA specialists, PHP developers, and system integrators.
+This guide is intended to be used by any Magento developer. In addition, it can be used by software engineers such as QA specialists, {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} developers, and system integrators.
 
 <h2 id="mtf_intro_goal">Goal</h2>
 

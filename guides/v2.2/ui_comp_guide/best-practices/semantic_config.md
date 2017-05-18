@@ -11,7 +11,7 @@ github_link: ui_comp_guide/best-practices/semantic_config.md
 
 Magento 2.2.0 introduces a new structure for [UI components XML configuration]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html), aimed at improving configuration semantics. 
 
-The arbitrary structure, used in UI components XML configuration in previous Magento 2 versions, is also supported, and during XML files merging, the configuration files that use the arbitrary structure have higher priority.
+The arbitrary structure, used in UI components {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} configuration in previous Magento 2 versions, is also supported, and during XML files merging, the configuration files that use the arbitrary structure have higher priority.
 
 Still, using the new structure for your customizations in Magento 2.2.0 and later, is the best practice, because the old "arbitrary" structure will become deprecated at some point.
 

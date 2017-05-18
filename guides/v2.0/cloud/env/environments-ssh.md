@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 12_env
+subgroup: 120_env
 title: SSH into your environment
 menu_title: SSH into your environment
 menu_order: 3
@@ -10,9 +10,9 @@ version: 2.0
 github_link: cloud/env/environments-ssh.md
 ---
 
-Before you can use SSH to connect to an [integration]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-int) environment, you must add your [SSH public key]({{page.baseurl}}cloud/before/before-workspace-ssh.html) to your account. 
+Before you can use SSH to connect to an [integration]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int) environment, you must add your [SSH public key]({{page.baseurl}}cloud/before/before-workspace-ssh.html) to your account. 
 
-For security reasons, to add your public key to a [production]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-prod) or [staging]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-stage) system, you must create a [support ticket]({{ page.baseurl }}cloud/get-help.html).
+For security reasons, to add your public key to a [production]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-prod) or [staging]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-stage) system, you must create a [support ticket]({{ page.baseurl }}cloud/welcome/get-help.html).
 
 You can then connect using SSH in any of the following ways:
 
@@ -52,7 +52,7 @@ To SSH to an environment using the Web Interface:
 {% endcollapsibleh3 %}
 
 ## Staging and production systems {#cloud-ssh-stage}
-You can't use the `magento-cloud` command line to SSH into staging and production systems. To SSH into staging and production systems, first create a [support ticket]({{ page.baseurl }}cloud/get-help.html) requesting for your public key to be added to the system. The user and  URL will have been supplied when the system was provisioned.
+You can't use the `magento-cloud` command line to SSH into staging and production systems. To SSH into staging and production systems, first create a [support ticket]({{ page.baseurl }}cloud/welcome/get-help.html) requesting for your public key to be added to the system. The user and  {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} will have been supplied when the system was provisioned.
 
 #### Related topics
 *	[Manage your environments]({{page.baseurl}}cloud/env/environments.html)

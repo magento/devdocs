@@ -11,10 +11,10 @@ github_link: comp-mgr/extens-man/extensman-start.md
 ---
 
 ## Run the Extension Manager from the Magento Admin
-The Extension Manager enables you to install, uninstall, and update extensions, including those you purchase from Magento Marketplace. The term *extension* means:
+The {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}Extension{% endglossarytooltip %} Manager enables you to install, uninstall, and update extensions, including those you purchase from Magento Marketplace. The term *extension* means:
 
 *	Modules (extend Magento capabilities)
-*	Themes (change the look and feel of your storefront and Admin)
+*	Themes (change the look and feel of your {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} and Admin)
 *	Language packages (localize the storefront and Admin)
 
 <div class="bs-callout bs-callout-warning">

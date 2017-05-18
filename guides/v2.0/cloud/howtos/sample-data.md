@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 15_howto
+subgroup: How To
 title: Install optional sample data
 menu_title: Install optional sample data
 menu_order: 70
@@ -36,7 +36,7 @@ To install sample data:
 		git add -A && git commit -m "Install sample data"
 		git push origin <branch name>
 3.	Wait for the project to deploy.
-4.	Verify the installation was successful by going to your storefront main page.
+4.	Verify the installation was successful by going to your {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} main page.
 
 	The URL displays on the command line under the heading `Environment routes:` after the project deploys.
 5.	Take a snapshot of your environment:

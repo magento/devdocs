@@ -4,7 +4,7 @@ group: payments-integrations
 subgroup: A_gateway
 title: Response Validator
 menu_title: Response Validator
-menu_node: 
+menu_node:
 menu_order: 6
 version: 2.0
 github_link: payments-integrations/payment-gateway/response-validator.md
@@ -24,13 +24,13 @@ A payment provider integration can have multiple response validators, that shoul
 
 ## Useful implementations
 
-* [\Magento\Payment\Gateway\Validator\AbstractValidator]({{site.mage2000url}}app/code/Magento/Payment/Gateway/Validator/AbstractValidator.php): an abstract class with ability to create a Result object. Can be inherited from by particular response validator implementations. 
+* [\Magento\Payment\Gateway\Validator\AbstractValidator]({{site.mage2000url}}app/code/Magento/Payment/Gateway/Validator/AbstractValidator.php): an abstract class with ability to create a Result object. Can be inherited from by particular response validator implementations.
 * [\Magento\Payment\Gateway\Validator\ValidatorComposite]({{site.mage2000url}}app/code/Magento/Payment/Gateway/Validator/ValidatorComposite.php): a chain of Validator objects, which are executed one by one and the result gets aggregated into one Result object.
 * [\Magento\Payment\Gateway\Validator\Result]({{site.mage2000url}}app/code/Magento/Payment/Gateway/Validator/Result.php): base class for Result object. You still have an ability to create a Result of your own, but the default one covers the most amount of cases.
 
 ## Example
 
-In the following example the a response validator is implemented and added to the pool of the Braintree payment provider request validators.  
+In the following example a response validator is implemented and added to the pool of the Braintree payment provider request validators.  
 
 {% highlight php startinline=1 %}
 class AcceptValidator extends AbstractValidator
@@ -79,22 +79,17 @@ class AcceptValidator extends AbstractValidator
 }
 {% endhighlight %}
 
-## Pool of validators {#validators_pool} 
-The following sample demonstrates defining a validator's pool and adding validators to this pool for the Braintree payment provider in `di.xml`:
- 
+Now, the newly added validator should be specified for a specific command. Below is an example of specifying a validator for an {% glossarytooltip 34ecb0ab-b8a3-42d9-a728-0b893e8c0417 %}authorization{% endglossarytooltip %} command:
+
 {% highlight xml %}
 ...
-<virtualType name="BraintreeValidatorPool" type="Magento\Payment\Gateway\Validator\ValidatorPool">
+<virtualType name="BraintreeAuthorizeCommand" type="Magento\Payment\Gateway\Command\GatewayCommand">
     <arguments>
-        <argument name="validators" xsi:type="array">
-            <item name="country" xsi:type="object">Magento\Payment\Gateway\Validator\CountryValidator</item>
-            <item name="accept" xsi:type="string">AcceptValidator</item>
-        </argument>
+        ...
+        <argument name="validator" xsi:type="object">Magento\Braintree\Gateway\Validator\AcceptValidator</argument>
     </arguments>
 </virtualType>
 ...
 {% endhighlight %}
 
 (This code sample was created for demonstration only, the real Braintree configuration is different).
-
-

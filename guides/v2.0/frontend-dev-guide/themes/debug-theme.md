@@ -12,11 +12,11 @@ redirect_from: /guides/v1.0/frontend-dev-guide/themes/debug-theme.html
 
 <h2 id="debug-theme-intro">What's in this topic</h2>
 
-When you create a Magento theme, you might need to create override files for default theme and module view files. To do so, you must determine which template, layout, and style files Magento uses. This topic describes how to do this.
+When you create a Magento theme, you might need to create override files for default {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} and {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} view files. To do so, you must determine which template, layout, and style files Magento uses. This topic describes how to do this.
 
 ## Locate templates {#debug-theme-templ}
 
-To locate the template that is responsible for a specific part of the storefront or Admin, you can use Magento built-in template hints.
+To locate the template that is responsible for a specific part of the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} or Admin, you can use Magento built-in template hints.
 
 To enable template hints:
 
@@ -24,16 +24,16 @@ To enable template hints:
 
 2. In the **Scope** dropdown in the upper-left corner select the view for which you want the template hints.
 
-3. In the **Debug** tab, set **Template Path Hints for storefront** to **Yes**. To enable path hints for Admin set **Template Path Hints for Admin** to **Yes**.
+3. In the **Debug** tab, set **Template Path Hints for storefront** to **Yes**. To enable path hints for {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} set **Template Path Hints for Admin** to **Yes**.
 4. To save the changes, click **Save Config** in the upper-right corner.
 <p><img src="{{ site.baseurl }}common/images/fdg_debug_theme.png" alt="Enabling template hints"></p>
 
 Now that you have enabled template hints, reload the page that you want to modify, and review the path for the template file or files that template hints show.
 
-For example, here is how a storefront category page looks with enabled template hints:
+For example, here is how a storefront {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} page looks with enabled template hints:
 <p><img src="{{ site.baseurl }}common/images/theme_debug2.png" alt="A storefront page with enabled template hints"></p>
 
-In this example mini shopping cart page element is defined by the `<Magento_Checkout_module_dir>/view/frontend/templates/cart/minicart.phtml` template:
+In this example mini {% glossarytooltip c7ecb18d-cefe-452d-83e2-3c4d5e355db9 %}shopping cart{% endglossarytooltip %} page element is defined by the `<Magento_Checkout_module_dir>/view/frontend/templates/cart/minicart.phtml` template:
 
 <p><img src="{{ site.baseurl }}common/images/theme_debug3.png" alt="A hint with template name for minishopping cart"></p>
 (the template name is above the element)
@@ -41,7 +41,7 @@ In this example mini shopping cart page element is defined by the `<Magento_Chec
 Here is how Customers page looks with enabled template hints in Admin:
 <p><img src="{{ site.baseurl }}common/images/theme_debug5.png" alt="Admin page with enabled template hints"></p>
 
-Alternatively, you can perform a text search in the file system by using system generated titles, CSS class names, block titles, labels, or links text as search terms.
+Alternatively, you can perform a text search in the file system by using system generated titles, {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} class names, block titles, labels, or links text as search terms.
 For example, using a browser debug tool, you can define that the minicart block css class is `minicart-wrapper`.
 <p><img src="{{ site.baseurl }}common/images/theme_debug4.png" alt="Firebug displaying html"></p>
 
@@ -51,7 +51,7 @@ Since it is not recommended to edit the default files, you need to add overridin
 
 
 ## Locate layouts {#debug-theme-layout}
-Just like templates, layouts are saved on a per-module basis. You can easily locate the layout file by determining in which module the templates for the element you are interested in reside in. To locate the template, you can use Template Hints or text search in the app directory, as described previously .
+Just like templates, layouts are saved on a per-module basis. You can easily locate the {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} file by determining in which module the templates for the element you are interested in reside in. To locate the template, you can use Template Hints or text search in the app directory, as described previously .
 
 After you have determined the module, you can search for the layout in the following locations:
 
@@ -64,7 +64,7 @@ There is no straightforward algorithm how to define at once the exact layout fil
 
 Example:
 
-Let's say you need to locate the layout that is responsible for displaying mini shopping cart on the storefront, when the Blank theme by Magento is applied for the store view.
+Let's say you need to locate the layout that is responsible for displaying mini shopping cart on the storefront, when the Blank theme by Magento is applied for the {% glossarytooltip ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f %}store view{% endglossarytooltip %}.
 
 Using the Template Hints we determine that the template is `app/code/Magento/Checkout/view/frontend/templates/cart/minicart.phtml`, and in the path, we see that it belongs to the `Magento_Checkout` module.
 

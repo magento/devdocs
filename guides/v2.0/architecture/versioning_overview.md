@@ -16,7 +16,7 @@ github_link: architecture/versioning_overview.md
 
 <h2 id="verpol">Versioning policy overview</h2>
 
-Magento  uses <i>software versioning</i> to identify the compatibility of changes in the public code. By comparing two versions of the same component, you can tell whether it has any <a href="{{page.baseurl}}architecture/back-compatibility.html">backward-incompatible</a> changes in the public API or other significant code changes.
+Magento  uses <i>software versioning</i> to identify the compatibility of changes in the public code. By comparing two versions of the same component, you can tell whether it has any <a href="{{page.baseurl}}architecture/back-compatibility.html">backward-incompatible</a> changes in the public {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} or other significant code changes.
 
 Versioning also helps:
 
@@ -28,14 +28,14 @@ Versioning also helps:
 
 <h3>What is a public API?</h3>
 
-<i>Source code is considered part of the public API only if it is explicitly marked by the `@api` docblock tag.</i> This designation indicates that the code can be used or customized by other components, such as formal interfaces and dependency injection points.
+<i>Source code is considered part of the public API only if it is explicitly marked by the `@api` docblock tag.</i> This designation indicates that the code can be used or customized by other components, such as formal interfaces and {% glossarytooltip 2be50595-c5c7-4b9d-911c-3bf2cd3f7beb %}dependency injection{% endglossarytooltip %} points.
 
 
 <div class="bs-callout bs-callout-warning">
     <p>Do not mark private code with <code>@api</code> or changes to this private interface  will trigger a version change.</p>
 </div>
 
-For PHP code, compatibility of <code>@api</code> can be tracked on the level of structural elements (such as class signatures, interfaces, or methods). For other source code, compatibility is tracked only on the file level (for example, the file has been deleted or renamed).
+For {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} code, compatibility of <code>@api</code> can be tracked on the level of structural elements (such as class signatures, interfaces, or methods). For other source code, compatibility is tracked only on the file level (for example, the file has been deleted or renamed).
 
 
 

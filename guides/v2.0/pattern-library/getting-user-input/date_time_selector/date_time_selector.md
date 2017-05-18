@@ -54,7 +54,7 @@ Time:
 
 **Interaction Overview**
 
-*	Tabbing to or clicking into the field activates the widget
+*	Tabbing to or clicking into the field activates the {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %}
 
 	*	The Date/Time widget should animate down and be displayed underneath the field
 
@@ -198,7 +198,7 @@ http://www.w3.org/TR/2009/WD-wai-aria-practices-20091215/#datepicker </a>
 **General**
 <br>
 
-As a general rule the actual calendar portion of the date picker should follow a table structure where days of the week and calendar day numbers are layed out in table cells. This provides context so an assistive technology can render the day of the week; its corresponding numeric calendar day, and week number if necessary. Consequently, it is best to start with an HTML table and apply WAI-ARIA semantics for a grid. However, should the author wish to uses a div or span to represent the cells then the DOM structure for a table should be duplicated with rows marked with role="row."
+As a general rule the actual calendar portion of the date picker should follow a table structure where days of the week and calendar day numbers are layed out in table cells. This provides context so an assistive technology can render the day of the week; its corresponding numeric calendar day, and week number if necessary. Consequently, it is best to start with an {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} table and apply WAI-ARIA semantics for a grid. However, should the author wish to uses a div or span to represent the cells then the DOM structure for a table should be duplicated with rows marked with role="row."
 <br>
 
 **Keyboard Interactions**
@@ -238,7 +238,7 @@ Keyboard navigation on days that are not included the currently displayed month 
 
 *	Esc closes a DatePicker that is opened as a Popup.
 
-Do not implement keyboard navigation schemes that would place more than one calendar day in the tab order at any time as this impacts the usability of keyboard navigation. For example, using HTML anchors for the gridcells places them all in the tab order impacting the usability of keyboard navigation.
+Do not implement keyboard navigation schemes that would place more than one calendar day in the tab order at any time as this impacts the {% glossarytooltip f583cac1-8ed5-4305-8195-2d5630e72ba8 %}usability{% endglossarytooltip %} of keyboard navigation. For example, using HTML anchors for the gridcells places them all in the tab order impacting the usability of keyboard navigation.
 <br>
 
 **WAI-ARIA Roles, States, and Properties**

@@ -18,7 +18,7 @@ redirect_from:
 
 A *software dependency* identifies  one software component's reliance on another for proper functioning. A core principle of Magento architecture is the **minimization of software dependencies**. Instead of being closely interrelated with other modules, modules are optimally designed to be <i>loosely coupled</i>. Loosely coupled modules require little or no knowledge of other modules to perform their tasks.
 
-Each Magento module is responsible for a unique feature. In practice, this means that:
+Each Magento {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} is responsible for a unique feature. In practice, this means that:
 
 * Several modules cannot be responsible for one feature.
 
@@ -34,9 +34,9 @@ Although Magento architecture favors loosely coupled software components, module
 
 * other modules
 
-* PHP extensions
+* {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} extensions
 
-* libraries (either Magento Framework library or third party libraries)
+* libraries (either Magento Framework {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %} or third party libraries)
 
 <div class="bs-callout bs-callout-warning" id="warning">
 <p>Note: You can lose the historical information contained in a module if the module is removed or disabled. We recommend alternative storage of module information before you remove or disable a module.</p></div>

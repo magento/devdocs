@@ -14,7 +14,7 @@ This topic lists DevBox commands you might find useful for day-to-day use or whe
 
 ## Run cron, populate the cache and the storefront
 
-Populating the cache and storefront causes the storefront, products, and images to load faster. Use this option after you make changes to the product catalog to pre-deploy static assets and put objects in the cache so the storefront loads faster.
+Populating the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} and {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} causes the storefront, products, and images to load faster. Use this option after you make changes to the product {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}catalog{% endglossarytooltip %} to pre-deploy static assets and put objects in the cache so the storefront loads faster.
 
 You can also start the [Magento cron job]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-cron.html#config-cli-cron-overview).
 

@@ -3,7 +3,7 @@
 This topic discusses how to upgrade Magento Enterprise Cloud Edition from any version after 2.0.4. If you're currently using version 2.0.4, see [Upgrade from version 2.0.4](#cloud-upgrade-204).
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-Always upgrade your local system first, then your [integration system]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-int) (that is, the remote Cloud server). Resolve any issues before upgrading either [staging]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-stage) or [production]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-prod).
+Always upgrade your local system first, then your [integration system]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int) (that is, the remote Cloud server). Resolve any issues before upgrading either [staging]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-stage) or [production]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-prod).
 </div>
 
 ### Prerequisite: create `auth.json` (if necessary)
@@ -52,11 +52,13 @@ Verify other changes you're going to submit to source control before you start t
 
 1.  Change to your Magento base directory and enter the following command:
 
-        composer require magento/magento-cloud-metapackage <requiredversion>
+        composer require magento/magento-cloud-metapackage <requiredversion> --no-update
+        composer update
 
     For example, to upgrade to version 2.1.4:
 
-        composer require magento/magento-cloud-metapackage 2.1.4
+        composer require magento/magento-cloud-metapackage 2.1.4 --no-update
+        composer update
         
 4.  Add, commit, and push your changes to initiate a deployment:
 
