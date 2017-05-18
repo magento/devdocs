@@ -35,8 +35,8 @@ body {
 }
 
 .container {
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 
@@ -87,6 +87,11 @@ body {
     margin-right: 0;
   }
 
+  .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
   .main-container {
     padding-bottom: 20px;
   }
@@ -95,29 +100,28 @@ body {
     padding: 0;
   }
 
+  .pane-content .container {
+    padding: 0;
+  }
 
-     .pane-content .container {
-        padding: 0;
-     }
+  .container, .page-intro .container, .home-section .container {
+    padding: 0 20px;
+  }
 
-     .container, .page-intro .container, .home-section .container {
-        padding: 0 20px;
-     }
+  .main-container {
+    width: 100%;
+    overflow-x: auto;
+  }
 
-    .main-container {
-      width: 100%;
-      overflow-x: auto;
-    }
+  .content {
+    float: none;
+    width: auto;
+    padding: 10px 20px;
+  }
 
-    .content {
-      float: none;
-      width: auto;
-      padding: 10px 20px;
-    }
-
-    .content .content-wrap {
-      padding: 0;
-    }
+  .content .content-wrap {
+    padding: 0;
+  }
 
 
 
