@@ -1142,23 +1142,27 @@
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"> 
 <span class="nt">&lt;config&gt;</span>
     <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;{ObservedType}&quot;</span><span class="nt">&gt;</span>
-      <span class="nt">&lt;plugin</span> <span class="na">name=</span><span class="s">&quot;{pluginName}&quot;</span> <span class="na">type=</span><span class="s">&quot;{PluginClassName}&quot;</span> <span class="na">sortOrder=</span><span class="s">&quot;1&quot;</span> <span class="na">disabled=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
+      <span class="nt">&lt;plugin</span> <span class="na">name=</span><span class="s">&quot;{pluginName}&quot;</span> <span class="na">type=</span><span class="s">&quot;{PluginClassName}&quot;</span> <span class="na">sortOrder=</span><span class="s">&quot;1&quot;</span> <span class="nt">/&gt;</span>
     <span class="nt">&lt;/type&gt;</span>
 <span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <p>You must specify these elements:</p>
 
 <ul>
-  <li><code>type name</code>. A class or interface which the plugin observes.</li>
-  <li><code>plugin name</code>. An arbitrary plugin name that identifies a plugin. Also used to merge the configurations for the plugin.</li>
-  <li><code>plugin type</code>. The name of a plugin’s class or its virtual type. Use the following naming convention when you specify this element: <code>\Vendor\Module\Plugin\&lt;ModelName&gt;Plugin</code>.</li>
+  <li><code>type name</code>: A class or interface which the plugin observes.</li>
+  <li><code>plugin name</code>: An arbitrary plugin name that identifies a plugin. Also used to merge the configurations for the plugin.</li>
+  <li><code>plugin type</code>: The name of a plugin’s class or its virtual type. Use the following naming convention when you specify this element: <code>\Vendor\Module\Plugin\&lt;ModelName&gt;Plugin</code>.</li>
 </ul>
 
 <p>The following elements are optional:</p>
 
 <ul>
-  <li><code>plugin sortOrder</code>. The order in which plugins that call the same method are run.</li>
-  <li><code>plugin disabled</code>. To disable a plugin, set this element to <code>true</code>. The default value is <code>false</code>.</li>
+  <li><code>plugin sortOrder</code>: The order in which plugins that call the same method are run.</li>
+  <li><code>plugin disabled</code>: To disable a plugin, set this element to <code>true</code>. The default value is <code>false</code>.
+    <ul>
+      <li>Use this property to disable core or third-party plugins in your <code>di.xml</code> file.</li>
+    </ul>
+  </li>
 </ul>
 
 <h3 id="defining-a-plugin">Defining a plugin</h3>
