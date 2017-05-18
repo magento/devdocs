@@ -13,7 +13,7 @@ redirect_from: /guides/v2.1/release-notes/tech_bull_21-parent.html
 
 The following technical bulletins are available for the Magento 2.1 release:
 
-*	[MasterCard BIN Range Update (May 17, 2017)]({{ page.baseurl }}release-notes/tech_bull_2.1.x_MasterCard.html)
+*	[MasterCard BIN Range Update (May 17, 2017)]({{ page.baseurl }}release-notes/tech_bull_21x_MasterCard.html)
 
 *	[Image Resize Issue with Magento version 2.1.6 (May 17, 2017)]({{ page.baseurl }}release-notes/tech_bull_216-imageresize.html)
 
