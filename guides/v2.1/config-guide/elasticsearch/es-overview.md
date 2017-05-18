@@ -149,13 +149,6 @@ To install Elasticsearch:
 
 		{"cluster_name":"elasticsearch","status":"green","timed_out":false,"number_of_nodes":1,"number_of_data_nodes":1,"active_primary_shards":0,"active_shards":0,"relocating_shards":0,"initializing_shards":0,"unassigned_shards":0,"delayed_unassigned_shards":0,"number_of_pending_tasks":0,"number_of_in_flight_fetch":0,"task_max_waiting_in_queue_millis":0,"active_shards_percent_as_number":100.0}
 
-### Configure Magento to use Elasticsearch
-
-{% collapsible To configure the Magento application: %}
-
-{% include config/es-elasticsearch-magento.md %}
-
-{% endcollapsible %}
 
 ## Additional resources {#es-resources}
 For additional information, see [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/index.html){:target=_"blank"}
@@ -164,3 +157,4 @@ For additional information, see [Elasticsearch documentation](https://www.elasti
 
 *	[Configure nginx and Elasticsearch]({{page.baseurl}}config-guide/elasticsearch/es-config-nginx.html)
 *	[Configure Apache and Elasticsearch]({{page.baseurl}}config-guide/elasticsearch/es-config-apache.html)
+*	[Configure Magento to use Elasticsearch]({{page.baseurl}}config-guide/elasticsearch/configure-magento.html)

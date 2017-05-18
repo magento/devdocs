@@ -176,11 +176,7 @@ This section discusses how to get connection information for Elasticsearch so yo
 
 ### Step 5: Configure the Magento application to use Elasticsearch
 
-{% collapsible To configure the Magento application: %}
-
-{% include config/es-elasticsearch-magento.md %}
-
-{% endcollapsible %}
+Configure Magento using the instructions in the [Magento configuration for Elasticsearch]({{page.baseurl}}config-guide/elasticsearch/configure-magento.html) guide.
 
 ## Fixed issue
 
