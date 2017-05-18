@@ -15,9 +15,9 @@ github_link: config-guide/elasticsearch/es-overview.md
 
 #### Contents
 
-*	[Overview of Elasticsearch](#overview){target="_blank"}
-*	[Install prerequisites and Elasticsearch](#es-prereq){target="_blank"}
-*	[Additional resources](#es-resources){target="_blank"}
+*	[Overview of Elasticsearch](#overview){:target="_blank"}
+*	[Install prerequisites and Elasticsearch](#es-prereq){:target="_blank"}
+*	[Additional resources](#es-resources){:target="_blank"}
 *	[Configure nginx and Elasticsearch]({{page.baseurl}}config-guide/elasticsearch/es-config-nginx.html)
 *	[Configure Apache and Elasticsearch]({{page.baseurl}}config-guide/elasticsearch/es-config-apache.html)
 *	[Configure Elasticsearch stopwords]({{page.baseurl}}config-guide/elasticsearch/es-config-stopwords.html)
@@ -80,7 +80,7 @@ Search requests are processed as follows:
 The tasks discussed in this section require the following:
 
 *	[Firewall and SELinux](#firewall-selinux)
-*	[Install the Java Software Development Kit (JDK)](#prereq-java){target="_blank"}
+*	[Install the Java Software Development Kit (JDK)](#prereq-java){:target="_blank"}
 *	[Install Elasticsearch](#es-install-es)
 *	[Configure Magento to use Elasticsearch](#configure-magento-to-use-elasticsearch)
 
@@ -137,7 +137,7 @@ To install Elasticsearch:
 
 	For more information, see [Setting the BooleanQuery maxClauseCount in Elasticsearch](http://george-stathis.com/2013/10/18/setting-the-booleanquery-maxclausecount-in-elasticsearch){:target="_blank"}.
 6.	Save your changes to `elasticsearch.yml` and exit the text editor.
-3.	Optionally configure the [Elasticsearch service](https://www.elastic.co/guide/en/elasticsearch/reference/2.0/setup-service.html){target="_blank"}.
+3.	Optionally configure the [Elasticsearch service](https://www.elastic.co/guide/en/elasticsearch/reference/2.0/setup-service.html){:target="_blank"}.
 4.	Start Elasticsearch:
 
 		service elasticsearch start
