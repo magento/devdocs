@@ -79,7 +79,7 @@ To get patches for Magento 1.x EE or CE
 #### Magento 2.x fix
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-Magento 2.0.14 is scheduled for the end of May. This patch will include a support for this MasterCard BIN update plus other critical security fixes. 
+Magento 2.0.14 is scheduled for the end of May. This patch will include support for this MasterCard BIN update plus other critical security fixes. 
 </div>
 
 <table>
