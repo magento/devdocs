@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Magento CE 2.0.7 Release Notes | Magento 2 Developer Documentation</title>
+	<title>MasterCard BIN Range Upgrade Magento 2.0.x | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.0/release-notes/ReleaseNotes2.0.7CE.html">
+	<link rel="canonical" href="//guides/v2.0/release-notes/tech_bull_20x_MasterCard.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -52,9 +52,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/release-notes/ReleaseNotes2.0.7CE.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/release-notes/tech_bull_20x_MasterCard.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/release-notes/ReleaseNotes2.0.7CE.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/release-notes/tech_bull_20x_MasterCard.html">Magento 2.1</a></li>
 	
   </ul>
 
@@ -316,7 +316,7 @@
 									
 
 
-											<li class="level3Child ce20-relnotes  active " data-menunode="ce20-relnotes"><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.7CE.html">Magento CE 2.0.7 Release Notes</a>
+											<li class="level3Child ce20-relnotes " data-menunode="ce20-relnotes"><a href="/guides/v2.0/release-notes/ReleaseNotes2.0.7CE.html">Magento CE 2.0.7 Release Notes</a>
 
 
 									
@@ -659,7 +659,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/release-notes/tech_bull_20x_MasterCard.html">MasterCard BIN Upgrade for 2.0.x (May 19, 2017)</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/release-notes/tech_bull_20x_MasterCard.html">MasterCard BIN Upgrade for 2.0.x (May 19, 2017)</a></li>
 
 									
 
@@ -932,7 +932,7 @@
 
           
 
-          <span property="name">Magento CE 2.0.7 Release Notes</span>
+          <span property="name">MasterCard BIN Range Upgrade Magento 2.0.x</span>
 
         
 
@@ -955,127 +955,32 @@
 
 	
 
-	<h1 class="page-heading">Magento CE 2.0.7 Release Notes</h1>
+	<h1 class="page-heading">MasterCard BIN Range Upgrade Magento 2.0.x</h1>
 
   
 
 
 </section>
 
-			<p>We are pleased to present Magento Community Edition 2.0.7. This release includes one functional fix.</p>
+			<p><em>Technical bulletin published on May 19, 2017.</em></p>
 
-<p>Backward-incompatible changes are documented in <a href="http://devdocs.magento.com/guides/v2.0/release-notes/changes_2.0.html" target="_blank">Magento 2.0 Backward Incompatible Changes</a>.</p>
+<p>These instructions apply to anyone running Magento Community Edition (CE) or Magento Enterprise Edition (EE) version 2.0.x.</p>
 
-<h3>Fixed issue</h3>
+<h3 id="issue">Issue</h3>
 
-<p>The <span term-uuid="5b963536-8f03-45c4-963b-688021f4eea7" class="glossary-term" data-toggle="popover">payment gateway</span> now works as expected in a Magento installation running <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> 7.0.3. Previously, when you would place an order in an installation running PHP 7.0.3, the <span term-uuid="278c3ce0-cd4c-4ffc-a098-695d94d73bde" class="glossary-term" data-toggle="popover">checkout</span> page would become unresponsive, and the transaction would not appear in the payment gateway. <a href="https://github.com/magento/magento2/issues/2984" target="_blank">(GITHUB-2984</a>, <a href="https://github.com/magento/magento2/issues/2878" target="_blank">GITHUB-2878</a>, <a href="https://github.com/magento/magento2/issues/3305" target="_blank">GITHUB-3305</a>, <a href="https://github.com/magento/magento2/issues/4076" target="_blank">GITHUB-4076)</a>.</p>
+<p>MasterCard recently added a new series of Bank Identification Numbers (BIN). As of June 30, 2017, MasterCard may fine merchants who do not support cards that use this new range of BIN numbers, and transactions on your store for customers that use cards with these new BINs may fail.</p>
 
-<h3>System requirements</h3>
-<p>Our technology stack is built on PHP and MySQL. Magento 2.0.1 and later support PHP 5.5, 5.6, 7.0.2, and MySQL 5.6. For more information, see 
-<a href="/magento-system-requirements.html" target="_blank">System Requirements</a>.</p>
+<h3 id="how-does-this-issue-affect-users-of-magento-20x">How does this issue affect users of Magento 2.0.x?</h3>
+<p>You must upgrade to Magento 2.0.14 before June 30 to support transactions made with cards that implement these new BIN numbers.</p>
 
-<h3>Installation instructions</h3>
+<div class="bs-callout bs-callout-warning">
+  <p>Magento 2.0.14 is scheduled for the end of May. This patch will include support for this MasterCard BIN update plus other critical security fixes.</p>
+</div>
 
-<h4>New installations</h4>
-<p>New users can now complete a full installation of Magento Community Edition 2.0.7 from an archive file on the <a href="https://www.magentocommerce.com/download" target="_blank">Download</a> page.</p>
+<h3 id="more-information">More information</h3>
+<p><a href="https://devdocs.magento.com/guides/v2.1/release-notes/tech_bull_21x_MasterCard.html" target="_blank">MasterCard Bank Identification Numbers Range Update</a> provides an overview of platform-wide MasterCard-related issues for Magento.</p>
 
-<h5 id="bdownload-a-new-installationb"><b>Download a new installation</b></h5>
-
-<ol>
-  <li>
-    <p>Go to the <a href="https://www.magentocommerce.com/download" target="_blank">Magento Community Edition Download</a> page.</p>
-  </li>
-  <li>
-    <p>Under Full Release, select a format for the download archive file. Then, click <strong>Download</strong>.</p>
-  </li>
-  <li>
-    <p>Follow the Magento <a href="http://devdocs.magento.com/guides/v2.0/install-gde/prereq/integrator_install.html#integrator-first-composer-ce" target="_blank">installation instructions</a>.</p>
-  </li>
-</ol>
-
-<h5 id="binstall-a-new-installation-with-composerb"><b>Install a new installation with Composer</b></h5>
-
-<ol>
-  <li>
-    <p>Go to the <a href="https://www.magentocommerce.com/download" target="_blank">Magento Community Edition Download</a> page.</p>
-  </li>
-  <li>
-    <p>Under <strong>Download with Composer</strong>, click <strong>Download</strong>.</p>
-  </li>
-  <li>
-    <p>Follow the instructions to download Composer, and get the Magento CE <span term-uuid="7490850a-0654-4ce1-83ff-d88c1d7d07fa" class="glossary-term" data-toggle="popover">metapackage</span>.</p>
-  </li>
-</ol>
-
-<h4><b>Upgrade existing installations</b></h4>
-
-<p>This section discusses how to upgrade to 2.0.7.</p>
-
-<h5 id="bupgrade-using-the-setup-wizardb"><b>Upgrade using the Setup Wizard</b></h5>
-<p>Use the instructions in <a href="/guides/v2.0/comp-mgr/upgrader/upgrade-start.html">Start System Upgrade</a>. When prompted to choose a version, choose 2.0.7.</p>
-
-<h5 id="bupgrade-an-existing-installation-from-the-github-repositoryb"><b>Upgrade an existing installation from the GitHub repository</b></h5>
-<p>Developers who contribute to the CE codebase can <a href="/guides/v2.0/comp-mgr/bk-compman-upgrade-guide.html" target="_blank">upgrade manually</a> from the Magento CE GitHub repository.</p>
-
-<ol>
-  <li>
-    <p>Go to the <a href="/guides/v2.0/install-gde/install/cli/dev_update-magento.html" target="_blank">Contributing Developers</a> page.</p>
-  </li>
-  <li>
-    <p>Follow the instructions to pull the updates from the repository and update using <span term-uuid="d85e2d0a-221f-4d03-aa43-0cda9f50809e" class="glossary-term" data-toggle="popover">Composer</span>.</p>
-  </li>
-</ol>
-
-<h5 id="bupgrade-using-the-command-lineb"><b>Upgrade using the command line</b></h5>
-<p>To upgrade to 2.0.7 using the command line:</p>
-
-<ol>
-  <li>Log in to your Magento server as, or switch to, the <span term-uuid="5e7de323-626b-4d1b-a7e5-c8d13a92c5d3" class="glossary-term" data-toggle="popover">Magento file system owner</span>.</li>
-  <li>
-    <p>Change to the directory in which you installed the Magento software.</p>
-
-    <p>For example, <code>cd /var/www/html/magento2</code></p>
-  </li>
-  <li>
-    <p>Enter the following command to disable the cache:</p>
-
-    <pre><code>php bin/magento cache:disable
-</code></pre>
-  </li>
-  <li>
-    <p>Enter the following commands in the order shown:</p>
-
-    <pre><code>composer require &lt;product&gt; 2.0.7 --no-update
-composer update
-</code></pre>
-
-    <p>To upgrade to Magento CE 2.0.7, enter:</p>
-
-    <pre><code>composer require magento/product-community-edition 2.0.7 --no-update
-composer update
-</code></pre>
-  </li>
-  <li>
-    <p>If prompted, enter your <a href="/guides/v2.0/comp-mgr/prereq/prereq_auth-token.html">authentication keys</a>.</p>
-  </li>
-  <li>
-    <p>Update the <span term-uuid="66b924b4-8097-4aea-93d9-05a81e6cc00c" class="glossary-term" data-toggle="popover">database schema</span> and data:</p>
-
-    <pre><code> php bin/magento setup:upgrade
-</code></pre>
-  </li>
-  <li>
-    <p>Enter the following command to enable the cache:</p>
-
-    <pre><code>php bin/magento cache:enable
-</code></pre>
-  </li>
-</ol>
-
-<h3>Migration toolkits</h3>
-<p>The <a href="/guides/v2.0/migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="/guides/v2.0/migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.</p>
-
-<p>The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.</p>
+<p>MasterCard discusses the issue <a href="https://www.mastercard.us/en-us/issuers/get-support/2-series-bin-expansion.html" target="_blank">here</a>.</p>
 
 
 		</div>
@@ -1087,14 +992,14 @@ composer update
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/release-notes/ReleaseNotes2.0.7CE.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/release-notes/tech_bull_20x_MasterCard.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
   
 
   <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.0/release-notes/ReleaseNotes2.0.7CE.html" target="_blank">Give us feedback</a>
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.0/release-notes/tech_bull_20x_MasterCard.html" target="_blank">Give us feedback</a>
   </div>
 
 </div>
