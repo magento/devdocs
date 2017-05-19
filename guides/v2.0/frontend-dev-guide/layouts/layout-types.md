@@ -200,6 +200,52 @@ The following table describes the instructions specific for page configuration f
       <td colspan="1"></td>
     </tr>
     <tr>
+      <td colspan="1"><code>&lt;block&gt;&lt;/block&gt;</code></td>
+      <td colspan="1">
+        <ul>
+          <li><code>class = {class_name}</code>
+          </li>
+          <li><code>name = {arbitray_blockname}</code>
+          </li>
+          <li><code>template = {path_to_template}</code>
+          </li>
+          <li><code>remove = {true|false}</code>
+          </li>
+        </ul>      
+      </td>
+      <td colspan="1">
+        <ul>
+          <li><code>&lt;arguments&gt;</code></li>
+        </ul>
+      </td>
+      <td colspan="1"></td>
+    </tr>
+    <tr>
+      <td colspan="1"><code>&lt;arguments&gt;&lt;/arguments&gt;</code></td>
+      <td colspan="1">none</td>
+      <td colspan="1">
+        <ul>
+          <li><code>&lt;argument&gt;</code></li>
+        </ul>
+      </td>
+      <td colspan="1"></td>
+    </tr>
+    <tr>
+      <td colspan="1"><code>&lt;argument&gt;&lt;/argument&gt;</code></td>
+      <td colspan="1"><ul>
+              <li><code>name = {arbitrary_name}</code>
+          </li>
+          <li><code>translate = {true|false}</code>
+          </li>
+          <li><code>shared = {true|false}</code>
+          </li>
+          <li><code>xsi:type = {arbitrary_type}</code>
+	  </li></ul>
+	</td>
+      <td colspan="1">none</td>
+      <td colspan="1"></td>
+    </tr>
+    <tr>
       <td colspan="1"><code>&lt;attribute&gt;</code></td>
       <td colspan="1">
         <ul>
