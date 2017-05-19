@@ -194,3 +194,6 @@ A sample `checkout_index_index.xml` follows:
 </page>
 {%endhighlight xml%}
 
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+For your changes to be applied, you might need to [clean layout cache]({{page.baseurl}}config-guide/cli/config-cli-subcommands-cache.html ) and [static view file cache]({{page.baseurl}}howdoi/clean_static_cache.html).
+</div>

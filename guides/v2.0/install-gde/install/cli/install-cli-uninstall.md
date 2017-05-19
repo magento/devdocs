@@ -53,8 +53,8 @@ To reinstall the Magento software as a system integrator:
 
 3.	Install the Magento software:
 
-	*	<a href="{{page.baseurl}}install-gde/install/cli/install-cli-install.html#instgde-install-cli-magento">Install the Magento software using the command line</a>
-	*	<a href="{{page.baseurl}}install-gde/install/install-web.html">Install the Magento software using the Setup Wizard</a>
+	*	<a href="{{page.baseurl}}install-gde/install/cli/install-cli-install.html#instgde-install-cli-magento.html">Install the Magento software using the command line</a>
+	*	<a href="{{page.baseurl}}install-gde/install/web/install-web.html">Install the Magento software using the Setup Wizard</a>
 
 <h2 id="instgde-install-uninstall">Uninstall the Magento software</h2>
 Uninstalling the Magento software drops and restores the database, removes the deployment configuration, and clears directories under `var`.
@@ -82,8 +82,8 @@ However, in some situations (particularly, deploying Magento to production), you
 
 6.	Install the Magento software:
 
-	*	<a href="{{page.baseurl}}install-gde/install/cli/install-cli-install.html#instgde-install-cli-magento">Install the Magento software using the command line</a>
-	*	<a href="{{page.baseurl}}install-gde/install/install-web.html">Install the Magento software using the Setup Wizard</a>
+	*	<a href="{{page.baseurl}}install-gde/install/cli/install-cli-install.html#instgde-install-cli-magento.html">Install the Magento software using the command line</a>
+	*	<a href="{{page.baseurl}}install-gde/install/web/install-web.html">Install the Magento software using the Setup Wizard</a>
 
 *[contributing developer]: A developer who contributes code to the Magento 2 CE codebase
 *[contributing developers]: Developers who contribute code to the Magento 2 CE codebase
