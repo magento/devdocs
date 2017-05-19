@@ -127,10 +127,6 @@ MasterCard describes the issue [here](https://www.mastercard.us/en-us/issuers/ge
 
 
 
-## Credits
-Dear community members, thank you for your prompt identification of this issue.  
-
-
 
 
 

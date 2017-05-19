@@ -29,11 +29,9 @@ Magento 2.0.14 is scheduled for the end of May. This patch will include support 
 ### More information
 [MasterCard Bank Identification Numbers Range Update](https://devdocs.magento.com/guides/v2.1/release-notes/tech_bull_21x_MasterCard.html){:target="_blank"} provides an overview of platform-wide MasterCard-related issues for Magento. 
 
-MasterCard discusses the issue <a href="https://www.mastercard.us/en-us/issuers/get-support/2-series-bin-expansion.html" target="_blank">here</a>.  
+MasterCard discusses the issue [here](https://www.mastercard.us/en-us/issuers/get-support/2-series-bin-expansion.html){:target="_blank"}. 
 
 
-## Credits
-Dear community members, thank you for your prompt identification of this issue.  
 
 
 
