@@ -18,3 +18,4 @@ Current topics include:
 
 *	[Deployment steps]({{page.baseurl}}config-guide/prod/prod_deploy.html)
 *	[Magento ownership and permissions in development and production]({{page.baseurl}}config-guide/prod/prod_file-sys-perms.html)
+*   [Magento performance optimization for production deployments]({{page.baseurl}}config-guide/prod/prod_perf-optimize.html)
