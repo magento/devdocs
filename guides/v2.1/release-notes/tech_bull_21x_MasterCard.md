@@ -68,11 +68,16 @@ Consult the following tables to learn how to apply a fix to your specific Magent
 #### Access Magento 1.x patches
 
 To get patches for Magento 1.x EE or CE
-1.	Log in to www.magentocommerce.com.
+
+1.	Log in to [www.magento.com](http://magentocommerce.com){:target="_blank"}
+
 2.	In the left pane, click Downloads.
+
 3.	In the right pane, click either Magento Enterprise Edition or Magento Community Edition.
+
 4.	Follow the prompts on your screen to download the Mastercard 2 Series BIN: Bank Identification Numbers Range Update patch for your version of EE or CE.
-5.	Apply the patch as discussed in How to Apply and Revert Magento Patches.
+
+5.	Apply the patch as discussed in [How to Apply and Revert Magento Patches](http://devdocs.magento.com/guides/m1x/other/ht_install-patches.html){:target="_blank"}.
 
 
 
