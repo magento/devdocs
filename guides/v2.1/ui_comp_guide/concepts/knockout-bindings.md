@@ -38,7 +38,7 @@ Function that is invoked after the element is rendered.
 
 **Usage example**:
 
-{%highlight html%}
+
 <div afterRender="function (target, viewModel) {
     console.log('Rendered element:', target);
     console.log('Associated view model:' viewModel);
@@ -58,7 +58,7 @@ Defines whether the binding is enabled (`true`) or disabled (`false`).
 **Aliases**: `[autoselect]`
 
 **Usage example**:
-{%highlight html%}
+{%highlight javascript%}
 <!-- as an attribute -->
 <input type="text" autoselect/>
 
@@ -78,7 +78,7 @@ It also instantiates all bindings defined for the rendered elements in the scope
 **Aliases**: `[bindHtml]`
 
 **Usage example**:
-{%highlight html%}
+{%highlight javascript%}
 <div bindHtml="
     <div data-bind='text: \'String from the text binding\''></div>
 "></div>
@@ -173,7 +173,8 @@ Binding's configuration that may include the following properties:
 **Aliases**: `[collapsible]`
 
 ### `datepicker`
-<p class="q">Description?</p>
+
+The `datepicker` binding is an adapter for the [mage/calendar.js]({{page.baseurl}}javascript-dev-guide/widgets/widget_calendar.html) widget.
 
 **Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/datepicker.js`
 
@@ -182,7 +183,7 @@ Binding's configuration that may include the following properties:
 **Aliases**: -
 
 **Usage example**:
-{%highlight html%}
+{%highlight javascript%}
 <input type="text" data-bind="datepicker: value"/>
 {%endhighlight%}
 
@@ -198,13 +199,14 @@ Defines whether the element is visible (`true`) or hidden (`false`).
 **Aliases**: -
 
 **Usage example**:
-{%highlight html%}
+{%highlight javascript%}
 <div data-bind="fadeVisible: isVisible">Foo Bar</div>
 <button click="function () { isVisible(!isVisible()); }">Toggle</button>
 {%endhighlight%}
 
 ### `i18n`
-<p class="q">description</p>
+
+The `i18n` binding is used to translate a string according to the currently enabled locale. Additionally, it creates the necessary elements for the TranslateInline jQuery widget, if it's enabled on the page.
 
 **Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/i18n.js`
 
@@ -213,7 +215,7 @@ Defines whether the element is visible (`true`) or hidden (`false`).
 **Aliases**: `[translate]`, `<translate>`
 
 **Usage example**:
-{%highlight html%}
+{%highlight javascript%}
 <div data-bind="i18n: 'Translate as a standard knockout binding'"></div>
 
 <div translate="'Translate using the attribute'"></div>
@@ -227,14 +229,14 @@ The keyboard binding allows setting up listeners for the `keypress` event of a s
 
 **Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/keyboard.js`
 
-**Value type**:` [name: number]: (e: KeyboardEvent) => void` 
+**Value type**:` [name: number]: (e: KeyboardEvent) => void`
 
 A collection in which keys represent keyboard keys codes and values are callback functions invoked when the associated key is pressed.
 
 **Aliases**: `[keyboard]`
 
 **Usage example**:
-{%highlight html%}
+{%highlight javascript%}
 <input type="text" keyboard="{
     13: function (e) {
         console.log('Enter key has been pressed!');
@@ -252,7 +254,7 @@ Source: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/mage-ini
 **Aliases**: -
 
 **Usage example**: creating modal window
-{%highlight html%}
+{%highlight javascript%}
 <div mageInit="{
     'Magento_Ui/js/modal/modal': {
         autoOpen: true,
@@ -273,7 +275,7 @@ The `optgroup` binding is a decorator for the standard Knockout's options bindin
 **Aliases**: -
 
 **Usage example**:
-{%highlight html%}
+{%highlight javascript%}
 <select data-bind="
     optionsValue: 'value',
     optionsText: 'label',
@@ -307,7 +309,7 @@ Callback that is invoked when user clicks outside of the element.
 **Aliases**: `[outerClick]`
 
 **Usage example**:
-{%highlight html%}
+{%highlight javascript%}
 <div id="target" outerClick="function () {
     console.log('Clicked outside of the "target" node.');
 }"></div>
@@ -318,14 +320,14 @@ The `range` binding is an adapter for the [jQuery UI Slider widget](https://jque
 
 **Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/range.js`
 
-**Value type**: Object. 
+**Value type**: Object.
 
 Configuration that is passed to the Slider widget.
 
 **Aliases**: [range]
 
 **Usage example**:
-{%highlight html%}
+{%highlight javascript%}
 <div
     class="data-slider"
     range="{
@@ -334,6 +336,25 @@ Configuration that is passed to the Slider widget.
         max: 200,
         step: 1
 }"></div>
+{%endhighlight%}
+
+### resizable
+
+The `resizable` binding is an adapter for the [jQuery UI Resizable](http://api.jqueryui.com/resizable/) widget.
+
+**Source:** `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/resizable.js`
+
+**Value type:** Object.
+
+Configuration for the Resizable widget.
+
+**Aliases:** `[resizable]`
+
+**Usage example**:
+
+{%highlight javascript%}
+
+<div data-bind="resizable: {maxHeight: 200}"></div>
 {%endhighlight%}
 
 ### `scope`
@@ -348,7 +369,7 @@ Component's name by which to perform a lookup in the registry.
 **Aliases**: `[ko-scope]`, `<scope>`
 
 **Usage example**:
-{%highlight html%}
+{%highlight javascript%}
 <!-- as an attribute -->
 <div ko-scope="'name.of.component'"></div>
 
@@ -357,4 +378,34 @@ Component's name by which to perform a lookup in the registry.
 
 <!-- without an extra container node -->
 <scope args="'name.of.component'"></scope>
+{%endhighlight%}
+
+### staticChecked
+
+The `statickChecked` binding implements the behavior similar to the standard [`checked`](http://knockoutjs.com/documentation/checked-binding.html) binding. The difference is that `statickChecked` doesn't change the array of the already selected elements if the value of the associated DOM element changes.
+
+**Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/staticChecked.js`
+
+**Value type:** Boolean \| String \| Number \| Array<String\|Number\|Number>
+
+**Aliases:** `[staticChecked]`
+
+{%highlight javascript%}
+<input type="checkbox" data-bind="staticChecked: observable"/>
+{%endhighlight%}
+
+
+### template
+Magento `template` binding is a customization of the existing Knockout [`template` binding](http://knockoutjs.com/documentation/template-binding.html). It is used to render a template inside of the associated element. The original Knockout's  implementation was overridden to support asynchronous loading of templates by the provided path, instead of searching for them on the page.
+
+**Source:** `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/template/engine.js`
+
+**Value type:** String \| Object
+Сonfiguration for the `template` binding. If the provided value is a string, it is processed as a path to `.html` file.
+
+**Aliases:** `[render]`, `<render>`
+
+**Usage example**:
+{%highlight javascript%}
+<div data-bind="template: 'path/to/the/template'"></div>
 {%endhighlight%}
