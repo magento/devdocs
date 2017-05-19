@@ -23,6 +23,8 @@ This page lists technical bulletins for the Magento application.
 *	[Magento upgrade issues (Jan. 28, 2016)]({{ site.gdeurl }}release-notes/tech_bull_201-upgrade.html)
 
 ## Magento 2.1.x
+
+[MasterCard BIN Range Update (May 19, 2017)]({{ site.gdeurl21 }}release-notes/tech_bull_21x_MasterCard.html)
 [Image resize Issue for Magento version 2.1.6 (May 17, 2017)]({{ site.gdeurl21 }}release-notes/tech_bull_216-imageresize.html)
 
 [Upgrade to Magento version 2.1 (June 22, 2016)]({{ site.gdeurl21 }}release-notes/tech_bull_21-upgrade.html)
