@@ -3,14 +3,14 @@ layout: default
 group: release-notes
 subgroup: 05_techbull
 title: MasterCard BIN Range Update 
-menu_title: MasterCard BIN Range Update (May 17, 2017)
+menu_title: MasterCard BIN Range Update (May 22, 2017)
 menu_node: 
 menu_order: 6
 version: 2.1
 github_link: release-notes/tech_bull_21x_MasterCard.md
 ---
 
-*Technical Bulletin published on May 19, 2017.*
+*Technical Bulletin published on May 22, 2017.*
 
 MasterCard recently added a new series of Bank Identification Numbers (BIN). As of June 30, 2017, MasterCard may fine merchants who do not support cards that use this new range of BIN numbers, and transactions on your store for customers using cards with these new BINs may fail. 
 
@@ -78,7 +78,9 @@ To get patches for Magento 1.x EE or CE
 
 #### Magento 2.x fix
 
-Note: Magento 2.0.14 is scheduled for the end of May. This patch will include a fix for this issue. 
+<div class="bs-callout bs-callout-warning" markdown="1">
+Magento 2.0.14 is scheduled for the end of May. This patch will include a support for this MasterCard BIN update plus other critical security fixes. 
+</div>
 
 <table>
   <tr>
