@@ -5,7 +5,7 @@ subgroup: Style Guide
 title: Admin Style Guide
 menu_title: Page Grid
 menu_order: 3
-menu_node: 
+menu_node:
 version: 2.0
 github_link: design-styleguide/pagegrid/pagegrid.md
 ---
@@ -16,7 +16,7 @@ github_link: design-styleguide/pagegrid/pagegrid.md
 <h3 id="page">Page</h3>
 
 <ul>
-	<il>A 12-column fluid-width content grid is placed next t othe page’s 1-column fixed-width left navigation</il>
+	<il>A 12-column fluid-width content grid is placed next to the page’s 1-column fixed-width left navigation</il>
 	<il>The 12-column grid’s minimum width spans 984px. The grid expands its layout across larger screens.</il>
 	<il>For views smaller than 984px, a page’s layout doesn’t change as the page shrinks to fit smaller screen widths.</il>
 </ul>
@@ -27,9 +27,9 @@ github_link: design-styleguide/pagegrid/pagegrid.md
 
 <h3 id="slide-out">Slide-outs Grid</h3>
 
-A Slide-out panel, similar to a modal window, breaks apart and simplifies a complex subtask that is included within a primary task. 
+A Slide-out panel, similar to a modal window, breaks apart and simplifies a complex subtask that is included within a primary task.
 
-For example: 
+For example:
 <ul>
 	<il>On a product details form page, a user clicks "Add Attribute".</il>
 	<il>A panel slides over the parent page and shows "Add Attribute" functionality.</il>
@@ -42,7 +42,7 @@ Standard {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endg
 
 <img src="img/slideout-panel7.png">
 
-(Panel position in relation to browser edge) 
+(Panel position in relation to browser edge)
 
 <b>Spacing:</b> Slide-out content is contained in a 12-column page grid, with additional 15px padding on the left edge. The gutter spacing at left is fluid, based on browser width.
 
@@ -54,6 +54,3 @@ Standard {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endg
 <b>Nested Slide-outs:</b> For multiple panels displayed, additional gutter space is used at left to show a small sliver of a Slide-out below another Slide-out.
 
 <img src="img/slideout-panel9.png">
-
-
-
