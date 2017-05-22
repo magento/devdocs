@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Wysiwyg component | Magento 2 Developer Documentation</title>
+	<title>uiRegistry | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.1/ui_comp_guide/components/ui-wysiwyg.html">
+	<link rel="canonical" href="//guides/v2.1/ui_comp_guide/concepts/ui_comp_uiregistry.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -52,9 +52,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/ui_comp_guide/components/ui-wysiwyg.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/ui_comp_guide/concepts/ui_comp_uiregistry.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/ui_comp_guide/components/ui-wysiwyg.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_uiregistry.html">Magento 2.1</a></li>
 	
   </ul>
 
@@ -637,7 +637,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.1/ui_comp_guide/components/ui-wysiwyg.html">Wysiwyg component</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/ui_comp_guide/components/ui-wysiwyg.html">Wysiwyg component</a></li>
 
 									
 
@@ -755,7 +755,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_uiregistry.html">uiRegistry</a></li>
+									<li class="level-2  active "><a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_uiregistry.html">uiRegistry</a></li>
 
 									
 
@@ -1077,7 +1077,7 @@
 
           
 
-          <span property="name">Wysiwyg component</span>
+          <span property="name">uiRegistry</span>
 
         
 
@@ -1100,72 +1100,41 @@
 
 	
 
-	<h1 class="page-heading">Wysiwyg component</h1>
+	<h1 class="page-heading">uiRegistry</h1>
 
   
 
 
 </section>
 
-			<h2 id="overview">Overview</h2>
+			<p><code>uiRegistry</code> is a in-memory storage, plain storage of entities by keys. Implements the <code>get()</code>, <code>set()</code>, and <code>has()</code> methods.</p>
 
-<p>The Wysiwyg component is an <span term-uuid="edb42858-1ff8-41f9-80a6-edf0d86d7e10" class="glossary-term" data-toggle="popover">adapter</span> for the <a href="https://www.tinymce.com/">TinyMCE editor</a>. Wysiwyg integrates editor’s instance into the <a href="/guides/v2.1/ui_comp_guide/components/ui-form.html">Form component</a>. It expects to receive complete <span term-uuid="f0dcf847-ce21-4b88-8b45-83e1cbf08100" class="glossary-term" data-toggle="popover">widget</span> declaration in the <code>content</code> option, which should contain both <span term-uuid="8f407f13-4350-449b-9dc5-217dcf01bc42" class="glossary-term" data-toggle="popover">markup</span> and the script responsible for creating the editor’s instance.</p>
+<h2 id="debug_uiregistry">JS debugging using uiRegistry</h2>
 
-<h2 id="configuration-options">Configuration options</h2>
+<p>To debug the UI component JS, we first need to get a <code>uiRegistry</code> instance from the browser console. To do so, use the <a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_requirejs_concept.html">RequireJs ID</a> <code>uiRegistry</code>.</p>
 
-<p>Extends all <code>abstract</code> configuration.</p>
+<p>In the browser console enter the following:</p>
 
-<p>Wysiwyg-specific options:</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">registry</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;uiRegistry&#39;</span><span class="p">);</span></code></pre></figure>
 
-<table>
-  <tr>
-    <th>Option </th>
-    <th>Description</th>
-    <th>Type</th>
-    <th>Default</th>
-  </tr>
-  <tr>
-    <td><code>component</code></td>
-    <td>The path to the component’s <code>.js</code> file in terms of RequireJS.</td>
-    <td>String</td>
-    <td><code>Magento_Ui/js/form/element/wysiwyg</code></td>
-  </tr>
-  <tr>
-    <td><code>content</code></td>
-    <td>Initial WYSIWYG content.</td>
-    <td>String</td>
-    <td>''</td>
-  </tr>
-  <tr>
-    <td><code>elementSelector</code></td>
-    <td>Selector of the HTML element that is wrapped by the WYSIWYG editor.</td>
-    <td>String</td>
-    <td><code>textarea</code></td>
-  </tr>
-  <tr>
-    <td><code>elementTmpl</code></td>
-    <td>The path to the template particular field type template, specific for this component.</td>
-    <td>String</td>
-    <td><code>ui/form/element/wysiwyg</code></td>
-  </tr>
-  <tr>
-    <td><code>links</code>
-<li>
-<code>value</code>
-</li>
-</td>
-    <td><a href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_linking_concept.html">Links</a> the component's <code>value</code> property with the provider, using the path that is declared in the <code>dataScope</code> property.</td>
-    <td>Object<br />String</td>
-    <td><code>${ $.provider }:${ $.dataScope }</code></td>
-  </tr>
-  <tr>
-    <td><code>template</code></td>
-    <td>The path to the general Field template.</td>
-    <td>String</td>
-    <td><code>ui/form/field</code></td>
-  </tr>
-</table>
+<p>Now we have <code>uiRegistry</code> instance in the <code>registry</code> variable. We can use it to get an instance of any component.</p>
 
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">component</span> <span class="o">=</span> <span class="nx">registry</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;%componentName%&#39;</span><span class="p">);</span></code></pre></figure>
+
+<p>For example:</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">// Admin &gt; Products &gt; Catalog &gt; Add Product</span>
+<span class="kd">var</span> <span class="nx">fieldName</span> <span class="o">=</span> <span class="nx">registry</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;product_form.product_form.product-details.container_name.name&#39;</span><span class="p">);</span></code></pre></figure>
+
+<p>Lets look what we have in component variable. It keeps component context with all properties, we can see component file, component name and so on.</p>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">fieldName</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span> <span class="c1">// product_form.product_form.product-details.container_name.name</span>
+
+<span class="nx">fieldName</span><span class="p">.</span><span class="nx">trigger</span><span class="p">(</span><span class="s1">&#39;validate&#39;</span><span class="p">);</span> <span class="c1">// will invoke validation</span>
+<span class="nx">fieldName</span><span class="p">.</span><span class="nx">visible</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span> <span class="c1">// will hide field from page</span>
+<span class="nx">fieldName</span><span class="p">.</span><span class="nx">visible</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>  <span class="c1">// will show field again</span>
+<span class="nx">fieldName</span><span class="p">.</span><span class="nx">value</span><span class="p">();</span> <span class="c1">// will show current field value</span>
+<span class="nx">fieldName</span><span class="p">.</span><span class="nx">value</span><span class="p">(</span><span class="s1">&#39;New string value&#39;</span><span class="p">);</span> <span class="c1">// will change field value to string &#39;New string value&#39;</span></code></pre></figure>
 
 		</div>
 		<!-- /.content-wrap -->
@@ -1176,14 +1145,14 @@
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/ui_comp_guide/components/ui-wysiwyg.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/ui_comp_guide/concepts/ui_comp_uiregistry.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
   
 
   <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/ui_comp_guide/components/ui-wysiwyg.html" target="_blank">Give us feedback</a>
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/ui_comp_guide/concepts/ui_comp_uiregistry.html" target="_blank">Give us feedback</a>
   </div>
 
 </div>
