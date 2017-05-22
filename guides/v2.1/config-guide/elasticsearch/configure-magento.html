@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Automatically configure master databases | Magento 2 Developer Documentation</title>
+	<title>Configure Magento to use Elasticsearch | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.1/config-guide/multi-master/multi-master_masterdb.html">
+	<link rel="canonical" href="//guides/v2.1/config-guide/elasticsearch/configure-magento.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -52,9 +52,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/config-guide/multi-master/multi-master_masterdb.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/config-guide/elasticsearch/configure-magento.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/config-guide/multi-master/multi-master_masterdb.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/config-guide/elasticsearch/configure-magento.html">Magento 2.1</a></li>
 	
   </ul>
 
@@ -1101,7 +1101,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/config-guide/elasticsearch/configure-magento.html">Configure Magento to use Elasticsearch</a></li>
+									<li class="level-2  active "><a href="/guides/v2.1/config-guide/elasticsearch/configure-magento.html">Configure Magento to use Elasticsearch</a></li>
 
 									
 
@@ -1236,7 +1236,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.1/config-guide/multi-master/multi-master_masterdb.html">Automatically configure master databases</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/multi-master/multi-master_masterdb.html">Automatically configure master databases</a></li>
 
 									
 
@@ -1585,7 +1585,7 @@
 
           
 
-          <span property="name">Automatically configure master databases</span>
+          <span property="name">Configure Magento to use Elasticsearch</span>
 
         
 
@@ -1608,151 +1608,125 @@
 
 	
 
-	<h1 class="page-heading">Automatically configure master databases</h1>
+	<h1 class="page-heading">Configure Magento to use Elasticsearch</h1>
 
   
 
 
 </section>
 
-			<p><img src="/common/images/ee-only_large.png" /></p>
+			<div>
 
-<h2 id="config-ee-multidb-master-over">Overview of master databases</h2>
-<p>This topic discusses how to get started with the split database solution by:</p>
+  <p>This section discusses the minimum settings you must choose to test Elasticsearch with Magento 2. For additional details about configuring Elasticsearch, see the <a href="http://docs.magento.com/m2/ee/user_guide/catalog/search-elasticsearch.html" target="_blank">Magento EE User Guide</a>.</p>
 
-<ol>
-  <li>Installing Magento 2 EE with a single master database (named <code>magento</code>)</li>
-  <li>Creating two additional master databases for <span term-uuid="278c3ce0-cd4c-4ffc-a098-695d94d73bde" class="glossary-term" data-toggle="popover">checkout</span> and OMS (named <code>magento_quote</code> and <code>magento_sales</code>)</li>
-  <li>Configuring EE to use the checkout and sales databases</li>
-</ol>
-
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>This guide assumes all three databases are on the same host as the Magento application and that they're named <code>magento</code>, <code>magento_quote</code>, and <code>magento_sales</code>. However, the choice of where to locate the databases and what they're named is up to you. We hope our examples make the instructions easier to follow.</p></span>
-</div>
-
-<h2 id="config-ee-multidb-master-install">Install the Magento EE software</h2>
-<p>You can enable split databases at any time after you install the Magento EE software; in other words, you can add split databases to an EE system that already has checkout and order data. Use the instructions in the Magento 2 EE README or the <a href="/guides/v2.1/install-gde/bk-install-guide.html">installation guide</a> to install the Magento 2 EE software using a single master database.</p>
-
-<div>
-
-  <h2 id="config-ee-multidb-master-masters">Set up additional master databases</h2>
-  <p>Create checkout and OMS master databases as follows:</p>
+  <p>To configure Magento to use Elasticsearch:</p>
 
   <ol>
-    <li>Log in to your database server as any user.</li>
+    <li>Log in to the Magento Admin as an administrator.</li>
+    <li>Click <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong> &gt; <strong>Catalog</strong> &gt; <strong>Catalog</strong> &gt; <strong>Catalog Search</strong>.</li>
     <li>
-      <p>Enter the following command to get to a MySQL command prompt:</p>
+      <p>From the <strong>Search Engine</strong> list, click <strong>Elasticsearch</strong> as the following figure shows.</p>
 
-      <pre><code>mysql -u root -p
-</code></pre>
-    </li>
-    <li>Enter the MySQL <code>root</code> user’s password when prompted.</li>
-    <li>
-      <p>Enter the following commands in the order shown to create database instances named <code>magento_checkout</code> and <code>magento_oms</code> with the same user names and passwords:</p>
-
-      <pre><code>create database magento_checkout;
-GRANT ALL ON magento_checkout.* TO magento_checkout@localhost IDENTIFIED BY 'magento_checkout';
-
-create database magento_oms;
-GRANT ALL ON magento_oms.* TO magento_oms@localhost IDENTIFIED BY 'magento_oms';
-</code></pre>
+      <p><img src="/common/images/elastic_choose-in-admin.png" width="650px" /></p>
     </li>
     <li>
-      <p>Enter <code>exit</code> to quit the command prompt.</p>
+      <p>The following table discusses only the configuration options required to test the connection with Magento.</p>
+
+      <p>Unless you changed Elasticsearch server settings, the defaults should work. Skip to the next step.</p>
+
+      <table>
+    <tbody>
+    <tr><th>Option</th>
+    <th>Description</th>
+</tr>
+<tr>
+    <td>Elasticsearch Server Hostname</td>
+    <td><p>Enter the fully qualified host name or IP address of the machine running Elasticsearch.</p>
+    <p>Magento Enterprise Cloud Edition: <a href="/guides/v2.1/cloud/project/project-conf-files_services-elastic.html#cloud-es-config-mg">Get this value</a> from your integration system.</p> </td>
+</tr>
+<tr>
+    <td>Elasticsearch Server Port</td>
+    <td><p>Enter the Elasticsearch web server proxy port. In our example, the port is <code>8080</code> but if you're using a secure proxy, it's typically <code>443</code>.</p>
+    <p>Magento Enterprise Cloud Edition: <a href="/guides/v2.1/cloud/project/project-conf-files_services-elastic.html#cloud-es-config-mg">Get this value</a> from your integration system.</p></td>
+</tr>
+<tr>
+    <td>Enable Elasticsearch HTTP Auth</td>
+    <td>Click <strong>Yes</strong> only if you enabled authentication for your Elasticsearch server. If so, provide a user name and password in the provided fields.</td>
+</tr>
+</tbody>
+</table>
     </li>
-    <li>
-      <p>Verify the databases, one at a time:</p>
-
-      <p>Checkout database:</p>
-
-      <pre><code>mysql -u magento_checkout -p
-exit
-</code></pre>
-
-      <p>Order management database:</p>
-
-      <pre><code>mysql -u magento_oms -p
-exit
-</code></pre>
-
-      <p>If the MySQL monitor displays, you created the database properly. If an error displays, repeat the preceding commands.</p>
-    </li>
+    <li>Click <strong>Test Connection</strong>.</li>
   </ol>
 
-  <h2 id="config-ee-multidb-master-cli">Configure Magento EE to use the master databases</h2>
-  <p>After setting up a total of three master databases, use the Magento command line to configure Magento to use them. (The command sets up database connections and distributes tables among the master databases.)</p>
+  <p>One of the following displays:</p>
 
-  <h3 id="first-steps">First steps</h3>
+  <table>
+<tbody>
+	<tr><th>Result</th>
+	<th>Meaning</th>
+	</tr>
+	<tr>
+		<td><img src="/common/images/elastic_test-success.png" /></td>
+		<td>Magento successfully connected to the Elasticsearch server. Continue with <a href="/guides/v2.1/config-guide/elasticsearch/es-config-apache.html">Configure Apache and Elasticsearch</a> or <a href="/guides/v2.1/config-guide/elasticsearch/es-config-nginx.html">Configure nginx and Elasticsearch</a>.</td>
+	</tr>
+	<tr>
+		<td><img src="/common/images/elastic_test-fail.png" /></td>
+		<td><p>Try the following:</p>
+			<ul>
+				<li>Make sure the Elasticsearch server is running.</li>
+				<li>If the Elasticsearch server is on a different host from Magento, log in to the Magento server and ping the Elasticsearch host. Resolve network connectivity issues and test the connection again.</li>
+				<li>Examine the command window in which you started Elasticsearch for stack traces and exceptions. You must resolve those before you continue.<br />
+	In particular, make sure you started Elasticsearch as a user with <code>root</code> privileges.</li>
+<li>Make sure that <a href="/guides/v2.1/config-guide/elasticsearch/es-overview.html#firewall-selinux">UNIX firewall and SELinux</a> are both disabled, or set up rules to enable Elasticsearch and Magento to communicate with each other.</li>
+	<li>Verify the value of the <strong>Elasticsearch Server Hostname</strong> field. Make sure the server is available. You can try the server's IP address instead.</li>
+	<li>Use the command <code>netstat -an | grep <em>listen-port</em></code> command to verify that the port specified in the <strong>Elasticsearch Server Port</strong> field is not being used by another process.<br />
+	For example, to see if Elasticsearch is running on its default port, use the following command:
+	<pre>netstat -an | grep 9200</pre>
+	If Elasticsearch is running on port 9200, it displays similar to the following:
+	<pre>tcp        0      0 :::9200            :::*          LISTEN</pre></li></ul></td>
+	</tr>
+</tbody>
+</table>
 
-  <div>
+  <h3 id="es-reindex">Reindexing catalog search and refreshing the full page cache</h3>
+  <p>After you change Magento’s Elasticsearch configuration, you must reindex the catalog search index and refresh the full page using the Admin or command line.</p>
 
-    <ol>
-      <li>
-        <p>Log in to the Magento server as, or switch to, a user who has permissions to write to the Magento file system. One way to do this is to <a href="/guides/v2.1/install-gde/prereq/file-sys-perms-over.html">switch to the Magento file system owner</a>.</p>
+  <p>To refresh the cache using the Admin:</p>
 
-        <p>If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:</p>
+  <ol>
+    <li>In the Admin, click <strong>System</strong> &gt; <strong>Cache Management</strong>.</li>
+    <li>Select the check box next to <strong>Page Cache</strong>.</li>
+    <li>From the <strong>Actions</strong> list in the upper right, click <strong>Refresh</strong>.<br />
+    The following figure shows an example.<br />
+    <img src="/common/images/solr_refresh-cache.png" width="600px" /></li>
+  </ol>
 
-        <pre><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt; If the Magento file system owner does not allow logins you can do the following
+  <p>To clean the cache using the command line, use the <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean"><code>magento cache:clean</code></a> command.</p>
 
-sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
+  <p>To reindex using the command line:</p>
+
+  <ol>
+    <li>Log in to your Magento server as, or switch to, the <a href="/guides/v2.1/install-gde/prereq/apache-user.html">Magento file system owner</a>.</li>
+    <li>
+      <p>Enter any of the following commands:</p>
+
+      <p>Enter the following command to reindex the catalog search index only:</p>
+
+      <pre><code>php &lt;your Magento install dir&gt;/bin magento indexer:reindex catalogsearch_fulltext
 </code></pre>
-      </li>
-      <li>
-        <p>To run Magento commands from any directory, add <code>&lt;your Magento install dir&gt;/bin</code> to your system <code>PATH</code>.</p>
 
-        <p>Because shells have differing syntax, consult a reference like <a href="http://unix.stackexchange.com/questions/117467/how-to-permanently-set-environmental-variables" target="_blank">unix.stackexchange.com</a>.</p>
+      <p>Enter the following command to reindex all indexers:</p>
 
-        <p>bash shell example for CentOS:</p>
-
-        <pre><code>export PATH=$PATH:/var/www/html/magento2/bin
+      <pre><code>php &lt;your Magento install dir&gt;/bin magento indexer:reindex
 </code></pre>
-      </li>
-    </ol>
+    </li>
+    <li>Wait while the reindexing completes.</li>
+  </ol>
 
-    <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>You can also run the commands in the following ways:</p>
-<ul><li><code>cd &lt;your Magento install dir&gt;/bin</code> and run them as <code>./magento &lt;command name&gt;</code></li>
-<li><code>php &lt;your Magento install dir&gt;/bin/magento &lt;command name&gt;</code></li></ul>
-<p><code>&lt;your Magento install dir&gt;</code> is a subdirectory of your web server's docroot. Need help locating the docroot? Click <a href="/guides/v2.1/install-gde/basics/basics_docroot.html">here</a>.</p></span>
+  <div class="bs-callout bs-callout-info" id="info">
+	<p>Unlike the cache, indexers are updated by a cron job. Make sure <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-cron.html">cron is enabled</a> before you start using Elasticsearch.</p>
 </div>
-
-    <h3 id="config-ee-multidb-master-cli-check">Configure the checkout database</h3>
-    <p>Command syntax:</p>
-
-    <pre><code>magento setup:db-schema:split-quote --host="&lt;checkout db host or ip&gt;" --dbname="&lt;name&gt;" --username="&lt;checkout db username&gt;" --password="&lt;password&gt;"
-</code></pre>
-
-    <p>For example,</p>
-
-    <pre><code>magento setup:db-schema:split-quote --host="localhost" --dbname="magento_checkout" --username="magento_checkout" --password="magento_checkout"
-</code></pre>
-
-    <p>The following message displays to confirm a successful setup:</p>
-
-    <pre><code>Migration has been finished successfully!
-</code></pre>
-
-    <h3 id="config-ee-multidb-master-cli-oms">Configure the OMS database</h3>
-    <p>Command syntax:</p>
-
-    <pre><code>magento setup:db-schema:split-sales --host="&lt;checkout db host or ip&gt;" --dbname="&lt;name&gt;" --username="&lt;checkout db username&gt;" --password="&lt;password&gt;"
-</code></pre>
-
-    <p>For example,</p>
-
-    <pre><code>magento setup:db-schema:split-sales --host="localhost" --dbname="magento_oms" --username="magento_oms" --password="magento_oms"
-</code></pre>
-
-    <p>The following message displays to confirm a successful setup:</p>
-
-    <pre><code>Migration has been finished successfully!
-</code></pre>
-
-    <h4 id="next-step">Next step</h4>
-    <p><a href="/guides/v2.1/config-guide/multi-master/multi-master_verify.html">Verify split databases</a></p>
-  </div>
 </div>
 
 		</div>
@@ -1764,14 +1738,14 @@ sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/config-guide/multi-master/multi-master_masterdb.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/config-guide/elasticsearch/configure-magento.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
   
 
   <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/config-guide/multi-master/multi-master_masterdb.html" target="_blank">Give us feedback</a>
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/config-guide/elasticsearch/configure-magento.html" target="_blank">Give us feedback</a>
   </div>
 
 </div>
