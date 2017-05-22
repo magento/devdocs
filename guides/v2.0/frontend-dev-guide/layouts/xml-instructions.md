@@ -332,7 +332,7 @@ To pass parameters to a block use the <a href="#argument"><code>&lt;argument>&lt
 <ul>
 <li>The <code>remove</code> attribute is optional and its default value is false.</li>
 
-    This implementation allows you to cancel removal of a block or container in your layout by setting remove attribute value to false.
+    This implementation allows you to cancel removal of a block or container in your layout by setting remove attribute value to <code>true</code>
     
     Example: 
     
