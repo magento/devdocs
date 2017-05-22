@@ -62,6 +62,13 @@ If you installed Magento Enterprise Cloud Edition 2.1.3 for the first time, you 
 
 To use Elasticsearch on a [staging]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-stage) or [production]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-prod) system, open a [Support ticket]({{ page.baseurl }}cloud/welcome/get-help.html) and request Elasticsearch.
 
+<div class="bs-callout bs-callout-warning" markdown="1">
+After installing Elasticsearch, you must do a full index of your fulltext index.
+This process can take a while if the index is large.
+
+The search functionality will be unavailable until the process completes.
+</div>
+
 To use Elasticsearch, you must perform all the tasks discussed in this section.
 
 ### Get started
@@ -176,11 +183,7 @@ This section discusses how to get connection information for Elasticsearch so yo
 
 ### Step 5: Configure the Magento application to use Elasticsearch
 
-{% collapsible To configure the Magento application: %}
-
-{% include config/es-elasticsearch-magento.md %}
-
-{% endcollapsible %}
+Configure Magento using the instructions in the [Magento configuration for Elasticsearch]({{page.baseurl}}config-guide/elasticsearch/configure-magento.html) guide.
 
 ## Fixed issue
 
