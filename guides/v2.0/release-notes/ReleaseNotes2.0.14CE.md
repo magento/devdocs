@@ -14,46 +14,62 @@ github_link: release-notes/ReleaseNotes2.0.14CE.md
 *Patch code and release notes were published on xxx.* 
 
 
-We are pleased to present Magento Community Edition 2.0.14. 
+We are pleased to present Magento Community Edition 2.0.14. This release includes critical enhancements to the security of your Magento software.
 
+
+<div class="bs-callout bs-callout-warning" markdown="1">
+ While there are no confirmed attacks related to these vulnerabilities to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento software to the latest version as soon as possible.
+ </div>
 
 
 ## Highlights
 
-Magento 2.0.14 contains more than 15 security enhancements. Look for the following highlights in this release:
+Magento 2.0.14 contains over 15 security enhancements as well as one significant functional enhancement. Look for the following highlights in this release:
+
+<!--- 68868 -->* Support for MasterCard BIN number expansion. MasterCard recently added a new series of Bank Identification Numbers (BIN), and this release of Magento provides support for transactions made with cards using these new BINs. MasterCard describes the issue [here](https://www.mastercard.us/en-us/issuers/get-support/2-series-bin-expansion.html){:target="_blank"}.
+
+* Resolution of multiple high priority and critical security issues. These critical issues include remote code execution for authenticated admin users, access control bypass, and CSRF issues.
 
 
 
 ## Security enhancements
 
-This release includes important enhancements to the security of your Magento software. While there are no confirmed attacks related to the Zend framework `Zend_Mail` library vulnerability to date, certain vulnerabilities can potentially be exploited to access customer information or take over administrator sessions. We recommend that you upgrade your existing Magento software to the latest version as soon as possible.
-
-<!--- 63876 -->* Magento now displays a 404 page when an Admin with insufficient privilege tries to request a specific resource.
-
-<!--- 63871 -->* Magento UI controllers now check proper ACL node. Previously, Magento returned leading to any admin getting data from ui data providers. 
+This release includes important enhancements to the security of your Magento software. 
 
 
-You can now generate coupon codes as expected when you add a new cart Price rule. Previously, when you tried to generate a coupon code after clicking **Add New Rule**, Magento disabled all fields in the **Manage Coupon Codes** section.
+### Remote code execution
+<!--- 63863 -->* Magento no longer permits Admin users that have access to CMS and widgets to execute code through unserialization.
 
-<!--- 66972 -->* Magento now displays a relevant message when you create an inactive user.  Previously, Magento did not confirm a successful creation, but instead displayed an error message, even though the inactive user was successfully created. 
+
+### Access control bypass
+<!--- 63868 -->* Admin users without proper permissions can no longer delete store backups or system support reports. 
+
+
+### Cross-site request forgery
+<!--- 63865 -->* Customer-authenticated APIs are no longer vulnerable to cross-site request forgery.
+
+
+### Cross-site scripting
+
+<!--- 63518 -->* Magento no longer permits stored cross-site scripting code on the customer address page of the Magento Admin.
+
+
+### Zend mail
+
+<!--- 63633 -->* We’ve removed a vulnerability with Zend Mail.
+
+### General
+
+<!--- 63681, 64051 -->* We’ve updated several vulnerable `moment.js` libraries (`query-migrate`, `query`, `jquery-ui-1.9.2.js`)
+
 
 <!--- 63880 -->* You can no longer instantiate an arbitrary object while adding conditions to an email reminder rule. 
 
 <!--- 63878 -->* The Admin URL in the response body of an HTTP request is no longer visible to unauthenticated users. 
 
-<!--- 63868 -->* Admin users without proper permissions can no longer delete store backups or system support reports.
-
-<!--- 63865 -->* Customer-authenticated APIs are no longer vulnerable to cross-site request forgery.
-
-<!--- 63863 -->* Magento no longer permits Admin users that have access to CMS and widgets to execute code through unserialization.
-
-<!--- 63681, 64051 -->* We’ve updated several vulnerable `moment.js` libraries (`query-migrate`, `query`, `jquery-ui-1.9.2.js`)
-
-<!--- 63633 -->* We’ve removed a vulnerability with Zend Mail.
+<!--- 63876 -->* Magento now displays a 404 page when an Admin with insufficient privilege tries to request a specific resource.
 
 <!--- 63528 -->* Magento now blocks all requests from an Admin’s account as soon as the Admin user is disabled.
-
-<!--- 63518 -->* Magento no longer permits stored cross-site scripting code on the customer address page of the Magento Admin.
 
 <!--- 62314 -->* Magento no longer uses a PHP serialized object in the JSON `report_data` component from the `\Magento\Support\Ui\Component\Listing\Column\ReportActions` response.
 
@@ -61,9 +77,17 @@ You can now generate coupon codes as expected when you add a new cart Price rule
 
 <!--- 59096 -->* The Magento Admin no longer leaks user password hashes.
 
+<!--- 67449 -->* Magento has strengthened its verification of image files during upload (**Product > Images and Videos > Video Upload**).
+
+<!--- 66972 -->* Magento now displays a relevant message when you create an inactive user.  Previously, Magento did not confirm a successful creation, but instead displayed an error message, even though the inactive user was successfully created.
+
+
+<!--- 66116 -->*You can now generate coupon codes as expected when you add a new cart Price rule. Previously, when you tried to generate a coupon code after clicking **Add New Rule**, Magento disabled all fields in the **Manage Coupon Codes** section.
+
+
 
 <!--- INTERNAL ONLY -->
-<!--- 66916, 66634, 66633, 66631, 66605, 66604, 66598, 66597, 66594, 66593, 66591, 66590, 66451, 66405, 66326, 65493, 65054, 64877, 64584, 66491, 66496, 66498, 66542-->
+<!--- 66916, 66633, 66631, 66605, 66598, 66597, 66594, 66593, 66591, 66590, 66451, 66405, 66326, 65493, 65054, 64877, 64584, 66491, 66496, 66498, 66542-->
 
 <!--- DUPLICATE -->
 <!--- 65056, 65065 -->
@@ -75,20 +99,6 @@ You can now generate coupon codes as expected when you add a new cart Price rule
 
 <!--- CANNOT REPRODUCE -->
 <!---  66592, 66466, 66507 -->
-
-
-
-
-
-<a href="https://github.com/magento/magento2/issues/5558" target="_blank">(GITHUB-5558)</a>
-
-
-
-### Miscellaneous
-
-
-
-## Known issues
 
 
 
