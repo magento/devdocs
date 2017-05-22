@@ -13,7 +13,7 @@ github_link: design-styleguide/bk-styleguide.md
 
 <h3>What is a style guide?</h3>
 
-A style guide is a set of high-level standards governing Magento's Admin software. The color, typography, iconography and page grid standards are used across Magento to ensure a consistent, elegant user experience. 
+A style guide is a set of high-level standards governing Magento's {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} software. The color, typography, iconography and page grid standards are used across Magento to ensure a consistent, elegant user experience. 
 
 <h3>Why follow the style guide?</h3>
 

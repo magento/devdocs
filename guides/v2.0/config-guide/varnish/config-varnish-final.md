@@ -32,7 +32,7 @@ Important headers:
 </div>
 
 <h3 id="config-varnish-final-response">Check page load times</h3>
-If Varnish is working, any Magento page with cacheable blocks should load in less than 150ms. Examples of such pages are the front door and storefront category pages.
+If Varnish is working, any Magento page with cacheable blocks should load in less than 150ms. Examples of such pages are the front door and {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} pages.
 
 Use a browser inspector to measure page load times.
 
@@ -43,7 +43,7 @@ For example, to use the Chrome inspector:
 3.	From the pop-up menu, click **Inspect Element**
 4.	In the inspector pane, click the **Network** tab.
 5.	Refresh the page.
-6.	Scroll to the top of the inspector pane so you can see the URL of the page you are viewing.
+6.	Scroll to the top of the inspector pane so you can see the {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} of the page you are viewing.
 
 	The following figure shows an example of loading the `magento2` index page.<br><br>
 	<img src="{{ site.baseurl }}common/images/config_varnish_inspector.png" alt="Click the page you're viewing">
@@ -57,7 +57,7 @@ For example, to use the Chrome inspector:
 <h3 id="config-varnish-final-verify-cache">Verify the Magento cache</h3>
 Make sure the `<your Magento install dir>/var/page_cache` directory is empty:
 
-1.	Log in to your Magento server, or switch to, the Magento file system owner.
+1.	Log in to your Magento server, or switch to, the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %}.
 2.	Enter the following command:
 
 		rm -rf <your Magento install dir>/var/page_cache/*

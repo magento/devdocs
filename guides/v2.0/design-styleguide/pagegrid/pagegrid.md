@@ -38,7 +38,7 @@ For example:
 
 <b>Layout and behavior:</b> When a panel spawns, it slides from right to left atop and almost completely over the parent page. A narrow gutter of space remains at left, showing the left navigation and a small sliver of the parent page.
 
-Standard layout within the edges of a browser screen
+Standard {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} within the edges of a browser screen
 
 <img src="img/slideout-panel7.png">
 

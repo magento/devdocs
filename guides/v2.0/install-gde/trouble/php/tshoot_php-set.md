@@ -38,7 +38,7 @@ To resolve the error:
 8.	On the readiness check page, click **Try Again**.
 
 ### PHP memory limit error {#trouble-php-memory}
-The readiness checks makes sure you have at least 1GB of memory set aside for PHP processes. This setting should be sufficient for most installations, including installing optional sample data. However, we recommend at least 2GB for debugging.
+The readiness checks makes sure you have at least 1GB of memory set aside for {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} processes. This setting should be sufficient for most installations, including installing optional sample data. However, we recommend at least 2GB for debugging.
 
 To increase your PHP memory limit:
 

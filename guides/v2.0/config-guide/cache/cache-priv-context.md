@@ -12,7 +12,7 @@ version: 2.0
 github_link: config-guide/cache/cache-priv-context.md
 ---
 
-Caching servers and proxies usually use a URL as the caching identifier; however, Magento URLs are not unique *enough* to allow caching by URL only. (We can cache the customer group, selected language, whether the customer logged in or not, and so on).
+Caching servers and proxies usually use a {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} as the caching identifier; however, Magento URLs are not unique *enough* to allow caching by URL only. (We can {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} the customer group, selected language, whether the customer logged in or not, and so on).
 
 To make each cached URL totally unique, we use *HTTP context variables*. Context variables enable the Magento application to serve different content on the same URL based on customer group, selected language, whether customer logged in or not, and so on.
 

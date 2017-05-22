@@ -11,7 +11,7 @@ github_link: config-guide/multi-site/ms_nginx.md
 ---
 
 ## Set up multiple websites with nginx {#ms-nginx-over}
-This tutorial shows you step-by-step how to set up multiple websites using nginx. 
+This tutorial shows you step-by-step how to set up multiple websites using {% glossarytooltip b14ef3d8-51fd-48fe-94df-ed069afb2cdc %}nginx{% endglossarytooltip %}. 
 
 ### Assumptions
 We assume the following:
@@ -32,8 +32,8 @@ We assume the following:
 ### Roadmap for setting up multiple websites with nginx
 Setting up multiple stores consists of the following tasks:
 
-1.	[Set up websites, stores, and store views]({{ page.baseurl }}config-guide/multi-site/ms_websites.html) in the Magento Admin.
-2.	Create one [nginx virtual host](#ms-nginx-vhosts) per Magento website.
+1.	[Set up websites, stores, and store views]({{ page.baseurl }}config-guide/multi-site/ms_websites.html) in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}.
+2.	Create one [nginx virtual host](#ms-nginx-vhosts) per Magento {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %}.
 3.  Pass the values of the [Magento variables](#ms-nginx-vars) `$MAGE_RUN_TYPE` and `$MAGE_RUN_CODE` to nginx using the Magento-provided `nginx.conf.sample`.
 
     *   `$MAGE_RUN_TYPE` can be either `store` or `website`
@@ -44,7 +44,7 @@ Setting up multiple stores consists of the following tasks:
     *   `$MAGE_RUN_CODE` is the unique website or store view code that corresponds to `$MAGE_RUN_TYPE`
     
 ## Step 2: Create nginx virtual hosts {#ms-nginx-vhosts}
-This section discusses how to load websites on the storefront. You can use either websites or store views; if you use store views, you must adjust parameter values accordingly. You must complete the tasks in this section as a user with `root` privileges.
+This section discusses how to load websites on the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}. You can use either websites or store views; if you use store views, you must adjust parameter values accordingly. You must complete the tasks in this section as a user with `root` privileges.
 
 {% collapsible To create virtual hosts: %}
 

@@ -10,7 +10,9 @@ version: 2.0
 github_link: install-gde/docker/docker-phpstorm-test.md
 ---
 
-This topic discusses how to run PHPUnit tests from the command line or from PhpStorm. For demonstration purposes, this topic discusses how to test Magento modules. Typically, you'll test your own modules; replace the paths shown in the examples with the paths to your test files.
+This topic discusses how to run PHPUnit tests from the command line or from PhpStorm.
+For demonstration purposes, this topic discusses how to test Magento modules.
+Typically, you'll test your own modules; replace the paths shown in the examples with the paths to your test files.
 
 {% include install/docker/docker-phpstorm.md %}
 
@@ -21,7 +23,9 @@ Before you begin, make sure you have completed all of the following tasks:
 *	[Set up your PhpStorm project]({{ page.baseurl }}install-gde/docker/docker-phpstorm-project.html)
 
 <div class="bs-callout bs-callout-info" markdown="1">
-The instructions in this topic are based on PhpStorm version 2016.3.2. If you use a different version, some steps might be different. Consult your PhpStorm documentation for details.
+The instructions in this topic are based on PhpStorm version 2016.3.2.
+If you use a different version, some steps might be different.
+Consult your PhpStorm documentation for details.
 </div>
 
 ## Run unit tests from the command line
@@ -47,6 +51,7 @@ To run PHPUnit unit tests from the command line:
 
 	*	To run a single test, replace `.` with the name of the PHP file that defines the tests to run.
 	*	If there is no `phpunit.xml`, use `phpunit.xml.dist` instead.
+  *	Use `Ctrl`+`p`+`Ctrl`+`q` to exit or detach from a container and leave it running.
 
 ## Run integration tests from the command line
 To run PHPUnit integration tests from the command line:
@@ -62,7 +67,8 @@ To run PHPUnit integration tests from the command line:
 		/var/www/magento2/vendor/bin/phpunit /var/www/magento2/dev/tests/integration/testsuite/Magento/Integration/Model/Config/Integration
 
 ## Run PHPUnit tests from PhpStorm
-This section discusses one way to run PHPUnit tests in PhpStorm. For more information about defining tests, consult the PhpStorm documentation.
+This section discusses one way to run PHPUnit tests in PhpStorm.
+For more information about defining tests, consult the PhpStorm documentation.
 
 ### Set up and run a test
 To run PHPUnit tests from PhpStorm:
@@ -78,7 +84,8 @@ To run PHPUnit tests from PhpStorm:
 
 	![Run a sample unit test]({{ site.baseurl }}common/images/install_docker_php-storm_unit-searchdata.png)
 
-Test results are displayed in the right pane. If errors display, see the next section.
+Test results are displayed in the right pane.
+If errors display, see the next section.
 
 ### Troubleshoot unit tests
 If your remote CLI interpreter or Xdebug options aren't set up properly, the following messages are displayed:

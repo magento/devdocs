@@ -12,9 +12,9 @@ redirect_from:
   - guides/v1.0/frontend-dev-guide/javascript/widget_dialog.html
 ---
 <h2>Overview</h2>
-Magento dropdownDialog widget is a customization of the standard <a href="http://api.jqueryui.com/dialog/">jQuery UI Dialog</a>. As extra functionality it implements the following:
+Magento dropdownDialog {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} is a customization of the standard <a href="http://api.jqueryui.com/dialog/">jQuery UI Dialog</a>. As extra functionality it implements the following:
 <ul>
-<li>triggering event for opening</li>
+<li>triggering {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} for opening</li>
 <li>delaying to automatically close the drop-down on mouse out</li>
 <li>clicking outside the area closes the drop-down</li>
 </ul>
@@ -127,7 +127,7 @@ Element that triggers the drop-down.
 **Type**: 
 
 - String
-- jQuery object
+- {% glossarytooltip 5bfa8a8e-6f3e-4fed-a43e-62339916f02e %}jQuery{% endglossarytooltip %} object
 
 **Default value**: `null`
 

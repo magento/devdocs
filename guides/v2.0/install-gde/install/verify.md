@@ -12,7 +12,7 @@ redirect_from: /guides/v1.0/install-gde/install/verify.html
 ---
 
 <h2 id="instgde-verify-front-sample">Verify the storefront (with optional sample data)</h2>
-Go to the storefront in a web browser. For example, if your Magento installation base URL is `http://www.example.com`, enter it in your browser's address or location bar.
+Go to the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} in a web browser. For example, if your Magento installation base {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} is `http://www.example.com`, enter it in your browser's address or location bar.
 
 The following figure shows a sample storefront page. If it displays as follows, your installation was a success!
 
@@ -31,9 +31,9 @@ If the page displays a 404 (Not Found) or unconfigured (no styles, only text), s
 
 <h2 id="instgde-verify-admin">Verify the Magento Admin</h2>
 
-Go to the Magento Admin in a web browser. For example, if your Magento installation base URL is `http://www.example.com`, and the Admin URI is `admin_au1nT`, enter `http://www.example.com/admin_au1nT` in your browser's address or location bar.
+Go to the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} in a web browser. For example, if your Magento installation base URL is `http://www.example.com`, and the Admin URI is `admin_au1nT`, enter `http://www.example.com/admin_au1nT` in your browser's address or location bar.
 
-(The Admin URI is specified by the value of the `backend-frontname` installation parameter.)
+(The {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} URI is specified by the value of the `backend-frontname` installation parameter.)
 
 When prompted, log in as a Magento Administrator.
 

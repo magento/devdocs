@@ -23,7 +23,7 @@ Form elements will be needed anytime input is to be collected from the user. Con
 _* "best" is a relative term, but there are User Experience principles and best practices that should be followed when designing forms._
 
 <h3 id="labels">Form Labels</h3>
-In most cases every text field, text box, radio button group, checkbox or checkbox group, drop down selector and multi-select box will have a label. There are two variations of form layout – "label-left" and "label-top". Depending on the layout of the page and/or task-at-hand, either of these may be implemented, but whichever layout is deemed appropriate it should be used consistency throughout a given task.
+In most cases every text field, text box, radio button group, checkbox or checkbox group, drop down selector and multi-select box will have a label. There are two variations of form {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} – "label-left" and "label-top". Depending on the layout of the page and/or task-at-hand, either of these may be implemented, but whichever layout is deemed appropriate it should be used consistency throughout a given task.
 
 <br />
 _**Example of label-top**_
@@ -109,7 +109,7 @@ Checkboxes should be used in cases where one or many options may be selected. A 
 <img src="img/checkboxes.png">
 
 <br />
-If there is a _parent-child_ relationship of associated checkboxes there should be some visual distinction for the user between "some" checked and "all" checked, in the event that the child elements are hidden from view as in a expandable section.
+If there is a _parent-child_ relationship of associated checkboxes there should be some visual distinction for the user between "some" checked and "all" checked, in the {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} that the child elements are hidden from view as in a expandable section.
 
 <br />
 <img src="img/tri-check.png">

@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 40_live
+subgroup: 160_live
 title: From integration to live
 menu_title: From integration to live
 menu_order: 1

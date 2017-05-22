@@ -13,7 +13,7 @@ redirect_from: /guides/v1.0/migration/migration-migrate-after.html
 
 After you have completed your migration and thoroughly tested your new Magento 2 site, perform the following tasks:
 
-*	Put Magento 1 in maintenance mode and permanently stop all Admin activities
+*	Put Magento 1 in maintenance mode and permanently stop all {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} activities
 
 *	Start Magento 2 cron jobs
 

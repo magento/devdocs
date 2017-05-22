@@ -29,7 +29,7 @@ Magento software versioning policy complies with these widely used specification
 
 Stable release versions are in the format `MAJOR.MINOR.PATCH`, where:
 
-* MAJOR indicates incompatible API changes
+* MAJOR indicates incompatible {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} changes
 
 * MINOR indicates backward-compatible functionality has been added
 
@@ -39,7 +39,7 @@ Stable release versions are in the format `MAJOR.MINOR.PATCH`, where:
 The pre-release version format is: `MAJOR.MINOR.PATCH-<alpha | beta | rc>n`, where `alpha`, `beta` or `rc` are stability indications, as described in the `version_compare()` specification, and
 `n` is an increment number to distinguish releases of the non-stable versions.
 
-If you are an extension developer, familiarize yourself about the types of code changes that will initiate a MAJOR-, MINOR-, or PATCH- level change. See <a href="{{page.baseurl}}architecture/change_table.html">Changes to classes and method versions</a>.
+If you are an {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} developer, familiarize yourself about the types of code changes that will initiate a MAJOR-, MINOR-, or PATCH- level change. See <a href="{{page.baseurl}}architecture/change_table.html">Changes to classes and method versions</a>.
 
 <h3>Schema version formats</h3>
 

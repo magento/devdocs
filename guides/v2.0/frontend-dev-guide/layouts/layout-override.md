@@ -12,12 +12,12 @@ redirect_from: /guides/v1.0/frontend-dev-guide/layouts/layout-override.html
 
 <h2 id="fedg_layout_override_overview">What's in this topic</h2>
 
-Not all layout customizations can be performed by <a href="{{page.baseurl}}frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending</a> existing layouts. If the amount of customizations is large, you can use the overriding function for the needed layout file. This means that the new file that you place in the theme will be used instead of the parent <a href="{{page.baseurl}}frontend-dev-guide/layouts/layout-overview.html#layout-loc" target="_blank">theme</a> layout file of <a href="{{page.baseurl}}frontend-dev-guide/layouts/layout-overview.html#layout-loc" target="_blank">base</a> layout file.
+Not all layout customizations can be performed by <a href="{{page.baseurl}}frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending</a> existing layouts. If the amount of customizations is large, you can use the overriding function for the needed layout file. This means that the new file that you place in the theme will be used instead of the parent <a href="{{page.baseurl}}frontend-dev-guide/layouts/layout-overview.html#layout-loc" target="_blank">theme</a> layout file of <a href="{{page.baseurl}}frontend-dev-guide/layouts/layout-overview.html#layout-loc" target="_blank">base</a> {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} file.
 
 In this article, <a href="{{page.baseurl}}frontend-dev-guide/layouts/layout-types.html#layout-types-page" target="_blank">page layouts</a>, <a href="{{page.baseurl}}frontend-dev-guide/layouts/layout-types.html#layout-types-conf" target="_blank">page configurations</a>, and <a href="{{page.baseurl}}frontend-dev-guide/layouts/layout-types.html#layout-types-gen" target="_blank">generic layouts</a> are referred to as *layout files*, as the mechanism of overriding is similar for all of them.
 
 
-Layout files with instructions that override the default or parent theme files are referred to as *overriding layout files*.
+Layout files with instructions that override the default or parent {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} files are referred to as *overriding layout files*.
 
 
 <h2>Examples of customizations that involve overriding layouts</h2>
@@ -31,7 +31,7 @@ Examples of customizations that involve overriding layouts:
 
 *	Modifying method arguments.
 *	Canceling block/container removal using the `remove` attribute.
-*	Setting XML attributes of blocks and containers.
+*	Setting {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} attributes of blocks and containers.
 
 	<div class="bs-callout bs-callout-info" id="info">
 		<p>Certain attributes, like <code>htmlClass</code>, <code>htmlId</code>, <code>label</code> attributes can be changed in <a href="{{page.baseurl}}frontend-dev-guide/layouts/layout-extend.html" target="_blank">extending layouts</a>.</p>

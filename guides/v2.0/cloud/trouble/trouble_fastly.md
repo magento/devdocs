@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 50_trouble
+subgroup: 170_trouble
 title: Troubleshoot Fastly
 menu_title: Troubleshoot Fastly
 menu_order: 20
@@ -11,7 +11,7 @@ github_link: cloud/trouble/trouble_fastly.md
 ---
 
 ## Overview of troubleshooting Fastly
-To verify the Fastly extension is working or to debug the Fastly extension, you can use the `curl` command to display certain response headers. The values of these response headers indicate whether or not Fastly is enabled and functioning properly.
+To verify the Fastly {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} is working or to debug the Fastly extension, you can use the `curl` command to display certain response headers. The values of these response headers indicate whether or not Fastly is enabled and functioning properly.
 
 Response headers and values:
 
@@ -24,14 +24,14 @@ Response headers and values:
 
 To get values for these headers, you must run the following `curl` commands:
 
-*	Staging or production URL (also referred to as the [*origin server*](https://www.w3.org/Protocols/rfc2616/rfc2616-sec1.html#sec1.3){:target="_blank"})
+*	Staging or production {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} (also referred to as the [*origin server*](https://www.w3.org/Protocols/rfc2616/rfc2616-sec1.html#sec1.3){:target="_blank"})
 
 	This command goes directly to the origin server, bypassing the Fastly extension; it returns the headers `Fastly-Module-Enabled`, `Cache-Control: max-age`, and `Pragma`
 *	Live site URL
 
 	This command goes through the Fastly extension and returns the `Fastly-Magento-VCL-Uploaded` and `X-Cache` headers
 
-You should perform the test on your [staging]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-stage) or [production]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-prod) site. The Fastly extension isn't necessary on your [integration]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-int) site, so there's no point in testing it there.
+You should perform the test on your [staging]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-stage) or [production]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-prod) site. The Fastly extension isn't necessary on your [integration]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int) site, so there's no point in testing it there.
 
 ## Test your staging or production site {#cloud-test-stage}
 
@@ -147,7 +147,7 @@ Do the following:
 [Upload the Fastly VCL]({{ page.baseurl }}cloud/live/stage-prod-migrate-prereq.html#cloud-live-migrate-fastly)
 
 ### `X-Cache` includes `MISS`
-If `X-Cache` is either `HIT, MISS` or `MISS, MISS`, enter the same `curl` command again to make sure the page wasn't recently evicted from the cache.
+If `X-Cache` is either `HIT, MISS` or `MISS, MISS`, enter the same `curl` command again to make sure the page wasn't recently evicted from the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %}.
 
 If you get the same result, use the [first `curl` command](#cloud-test-stage) discussed in this topic to verify that:
 
@@ -157,7 +157,7 @@ If you get the same result, use the [first `curl` command](#cloud-test-stage) di
 
 If the issue persists, another extension is likely resetting these headers. Repeat the following procedure as many times as necessary to identify which extension is resetting the headers:
 
-1.	Log in to the Magento Admin as an administrator.
+1.	Log in to the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} as an administrator.
 2.	Click **Stores** > Settings > **Configuration** > **Advanced** > **Advanced**.
 3.	In the Disable Modules Output section in the right pane, locate an extension.
 4.	From the list next to the extension name, click **Disable**.

@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 40_live
+subgroup: Live
 title: Overview of configuration management 
 menu_title: Overview of configuration management  
 menu_order: 11
@@ -26,28 +26,28 @@ These new methods to manage your configuration are optional. You don't have to u
 ### Managing the configuration {#cloud-confman-over}
 We <!-- help you protect sensitive settings and  -->make it easy to Example of managing system-specific settings as follows:
 
-<!-- *	A new method to manage sensitive settings (such as payment gateway passwords).
+<!-- *	A new method to manage sensitive settings (such as {% glossarytooltip 5b963536-8f03-45c4-963b-688021f4eea7 %}payment gateway{% endglossarytooltip %} passwords).
  -->
- *	An improved method to manage system configuration settings (such as store locale settings and static file optimization settings) in a new configuration file, `app/etc/config.local.php`, which is in source control.
+ *	An improved method to manage system configuration settings (such as store {% glossarytooltip 05099dbb-d491-4e33-a065-16035cb2d4d9 %}locale{% endglossarytooltip %} settings and static file optimization settings) in a new configuration file, `app/etc/config.local.php`, which is in source control.
 
-<!-- *	In your [staging]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-stage) and [production]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-prod) systems, you manage sensitive settings by defining environment variables. 
+<!-- *	In your [staging]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-stage) and [production]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-prod) systems, you manage sensitive settings by defining environment variables. 
 
 	You can change sensitive variables using the Magento Enterprise Cloud Edition [Web Interface]({{ page.baseurl }}cloud/project/project-webint-basic.html).  -->
-*	System values related to static content deployment (for example, static file optimization) are also stored in `app/etc/config.local.php`.
+*	System values related to {% glossarytooltip a3e37235-4e8b-464f-a19d-4a120560206a %}static content{% endglossarytooltip %} deployment (for example, static file optimization) are also stored in `app/etc/config.local.php`.
 
 	<!-- Sensitive values are _not_ stored in `app/etc/config.local.php`. -->
 
-	`config.local.php` is a convenient way to move settings between systems. Managing `config.local.php` in source control means your settings for staging and production are always consistent. For example, you can disable static file optimization in your [integration]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-int) system but enable it in both staging and production. After initially setting up the configuration, you don't need to touch it again because it's in source control.
+	`config.local.php` is a convenient way to move settings between systems. Managing `config.local.php` in source control means your settings for staging and production are always consistent. For example, you can disable static file optimization in your [integration]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int) system but enable it in both staging and production. After initially setting up the configuration, you don't need to touch it again because it's in source control.
 
 	(_Static file optimization_ means merging and minifying JavaScript and Cascading Style Sheets, and minifying HTML templates.)
 
 ### Static content deployment performance {#cloud-confman-scd-over}
-If you have a `config.local.php`, static files are deployed in the Magento Enterprise Cloud Edition [build phase]({{ page.baseurl}}cloud/discover-deploy.html#cloud-deploy-over-phases-build) instead of in the [deployment phase]({{ page.baseurl}}cloud/discover-deploy.html#cloud-deploy-over-phases-hook), which decreases the amount of time required to deploy changes to Cloud. 
+If you have a `config.local.php`, static files are deployed in the Magento Enterprise Cloud Edition [build phase]({{ page.baseurl}}cloud/reference/discover-deploy.html#cloud-deploy-over-phases-build) instead of in the [deployment phase]({{ page.baseurl}}cloud/reference/discover-deploy.html#cloud-deploy-over-phases-hook), which decreases the amount of time required to deploy changes to Cloud. 
 
 In other words, Cloud's build phase is less time-consuming than deployment. Therefore, any change you make to your Cloud project deploys faster overall if there is a `config.local.php` compared to having no `config.local.php`.
 
 ### Configuration settings locked in the Magento Admin {#cloud-confman-locked-over}
-Settings in `config.local.php` are not editable in the Magento Admin. This also helps keep your settings consistent across the integration, staging, and production systems.
+Settings in `config.local.php` are not editable in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}. This also helps keep your settings consistent across the integration, staging, and production systems.
 
 ### How to get `magento-cloud-configuration` release 101.4.1
 Magento Enterprise Cloud Edition periodically provides patch releases in components like `magento-cloud-configuration`.
@@ -61,13 +61,13 @@ Starting with version `magento-cloud-configuration` release 101.4.1 on Magento E
 
 Using `config.local.php`, you can, for example, disable static file optimization in your integration system (where you are developing and testing) and enable static file optimization in staging and production. 
 
-<!-- *	Sensitive values, such as payment processor settings, are specified using environment variables. Viewing or changing environment variables is restricted to people who have at minimum a project reader role with [environment administrator]({{ page.baseurl }}cloud/admin/admin-user-admin.html#loud-role-env) privileges.
+<!-- *	Sensitive values, such as payment processor settings, are specified using environment variables. Viewing or changing environment variables is restricted to people who have at minimum a project reader role with [environment administrator]({{ page.baseurl }}cloud/project/user-admin.html#loud-role-env) privileges.
  -->
 
 The following sections provide more detail.
 
 ### Example of managing system-specific settings {#cloud-config-specific-over}
-System settings refer to the configuration in the Magento Admin in **Stores** > Settings > **Configuration**. A list of settings can be found in [Configuration settings you can change]({{ page.baseurl }}cloud/live/cloud/live/sens-data-initial.html#cloud-clp-settings).
+System settings refer to the configuration in the Magento {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} in **Stores** > Settings > **Configuration**. A list of settings can be found in [Configuration settings you can change]({{ page.baseurl }}cloud/live/cloud/live/sens-data-initial.html#cloud-clp-settings).
 
 <!-- #### How we set system values
 In each of your Magento Enterprise Cloud Edition systems (integration, staging, and production), you have the option of overriding certain configuration settings:

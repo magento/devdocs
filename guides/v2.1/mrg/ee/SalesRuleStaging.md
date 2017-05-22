@@ -13,7 +13,7 @@ github_link: mrg/ee/SalesRuleStaging.md
 
 ## Overview
 
-The Magento_SalesRuleStaging module is a part of the staging functionality in Magento EE. It enables you to add sales rule updates to existing store campaigns. In other words, you can add and/or remove sales rules for some period of time. These updates are shown on the campaign dashboard.
+The Magento_SalesRuleStaging {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} is a part of the staging functionality in Magento EE. It enables you to add sales rule updates to existing store campaigns. In other words, you can add and/or remove {% glossarytooltip 09569c6c-2e5c-4dd8-9c4b-ab299f324d42 %}sales rules{% endglossarytooltip %} for some period of time. These updates are shown on the campaign dashboard.
 
 ## Implementation details
 
@@ -40,7 +40,7 @@ You can find the list of modules that have dependencies on the Magento_SalesRule
 
 ## Extension points
 
-Extension points enable extension developers to interact with the Magento_SalesRuleStaging. However, the Magento_SalesRuleStaging module does not provide any specific extension points.
+{% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}Extension{% endglossarytooltip %} points enable extension developers to interact with the Magento_SalesRuleStaging. However, the Magento_SalesRuleStaging module does not provide any specific extension points.
 
 For more information about the Magento extension mechanism, see [Magento plug-ins](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/plugins.html).
 
