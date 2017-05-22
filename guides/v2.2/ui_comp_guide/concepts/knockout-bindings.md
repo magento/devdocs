@@ -38,7 +38,7 @@ Function that is invoked after the element is rendered.
 
 **Usage example**:
 
-
+{%highlight javascript%}
 <div afterRender="function (target, viewModel) {
     console.log('Rendered element:', target);
     console.log('Associated view model:' viewModel);
@@ -324,7 +324,7 @@ The `range` binding is an adapter for the [jQuery UI Slider widget](https://jque
 
 Configuration that is passed to the Slider widget.
 
-**Aliases**: [range]
+**Aliases**: `[range]`
 
 **Usage example**:
 {%highlight javascript%}
@@ -408,4 +408,100 @@ Magento `template` binding is a customization of the existing Knockout [`templat
 **Usage example**:
 {%highlight javascript%}
 <div data-bind="template: 'path/to/the/template'"></div>
+{%endhighlight%}
+
+
+### tooltip
+
+Magento custom knockout binding for displaying a tooltip.
+
+**Source:** `<Magento_Ui>view/base/web/js/lib/knockout/bindings/tooltip.js`
+
+**Value type:** Object
+
+Binding's configuration that may include the following options:
+
+<table>
+  <tr>
+    <th>Option</th>
+    <th>Description</th>
+    <th>Type</th>
+    <th>Default value</th>
+  </tr>
+  <tr>
+    <td><code>action</code></td>
+    <td>An action that triggers displaying a tooltip.</td>
+    <td>String ('click'|'hover')</td>
+    <td>'click'</td>
+  </tr>
+  <tr>
+    <td><code>center</code></td>
+    <td>Center the tooltip.</td>
+    <td>Boolean</td>
+    <td><code>false</code></td>
+  </tr>
+  <tr>
+    <td><code>closeButton</code></td>
+    <td>Whether the tooltip has a Close button.</td>
+    <td>Boolean</td>
+    <td><code>false</code></td>
+  </tr>
+  <tr>
+    <td><code>delay</code></td>
+    <td>A delay before displaying the tooltip, in seconds.</td>
+    <td>Number</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td><code>position</code></td>
+    <td>The priority position for the tooltip.</td>
+    <td>String (<code>'top'/'right'/'left'/'bottom'</code>)</td>
+    <td><code>'top'</code></td>
+  </tr>
+  <tr>
+    <td><code>track</code></td>
+    <td>Whether the tooltip moves together with the pointer</td>
+    <td>Boolean</td>
+    <td><code>false</code></td>
+  </tr>
+  <tr>
+    <td><code>trigger</code></td>
+    <td>The selector's action that triggers displaying a tooltip.</td>
+    <td>String</td>
+    <td>''</td>
+  </tr>
+</table>
+
+**Aliases:** `[tooltip]` 
+
+**Usage example**:
+
+Adding the tooltip binding as an attribute:
+
+{%highlight javascript%}
+<div tooltip="
+     trigger: '[data-tooltip-trigger=trigger]', 
+     action: 'click', 
+     delay: 300, 
+     track: true,
+     position: 'top' 
+ "> Tooltip data </div>
+ 
+<div data-tooltip-trigger="trigger"/>
+{%endhighlight%}
+
+Adding the tooltip binding as a node:
+
+{%highlight javascript%}
+<div data-bind="
+    tooltip: {
+        trigger: '[data-tooltip-trigger=trigger]',
+        action: 'click', 
+        delay: 300, 
+        track: true,
+        position: 'top' 
+    }  
+"> Tooltip data </div>
+ 
+<div data-tooltip-trigger="trigger"/>
 {%endhighlight%}
