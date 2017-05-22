@@ -82,7 +82,7 @@ This release includes important enhancements to the security of your Magento sof
 <!--- 66972 -->* Magento now displays a relevant message when you create an inactive user.  Previously, Magento did not confirm a successful creation, but instead displayed an error message, even though the inactive user was successfully created.
 
 
-<!--- 66116 -->*You can now generate coupon codes as expected when you add a new cart Price rule. Previously, when you tried to generate a coupon code after clicking **Add New Rule**, Magento disabled all fields in the **Manage Coupon Codes** section.
+<!--- 66116 -->* You can now generate coupon codes as expected when you add a new cart Price rule. Previously, when you tried to generate a coupon code after clicking **Add New Rule**, Magento disabled all fields in the **Manage Coupon Codes** section.
 
 
 
