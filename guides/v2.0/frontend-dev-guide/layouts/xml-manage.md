@@ -82,7 +82,7 @@ If you'd like to include a google webfont, you have to add the <code>rel="styles
 
 You can use either `<link src="js/sample.js"/>` or `<script src="js/sample.js"/>` instruction to add a locally stored JavaScript file to your theme.
 
-The path to assets is specified relatively to one the following locations:
+The path to assets is specified relatively to one of the following locations:
 <ul>
 <li><code>&lt;theme_dir&gt;/web</code></li>
 <li><code>&lt;theme_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/web</code></li>
@@ -281,7 +281,7 @@ Example 2: Set a page title using `<action>`.
 
 <div class="bs-callout bs-callout-warning" id="info">
 <span class="glyphicon-class">
- <p>Do not use <code>&lt;action&gt;</code>, if the method implementation allows calling it using <code>&lt;argument&gt;</code></a> for <code>&lt;block&gt;</code> or <code>&lt;referenceBlock&gt;</code>.</p></span>
+ <p>Do not use <code>&lt;action&gt;</code>, if the method implementation allows calling it using <code>&lt;argument&gt;</code> for <code>&lt;block&gt;</code> or <code>&lt;referenceBlock&gt;</code>.</p></span>
 </div>
 
 

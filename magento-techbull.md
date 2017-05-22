@@ -14,6 +14,7 @@ github_link: magento-techbull.md
 This page lists technical bulletins for the Magento application.
 
 ## Magento 2.0.x and 2.1.x
+
 [Transport Layer Security (TLS) 1.1+ requirement for repo.magento.com (June 30, 2016)]({{ page.baseurl }}release-notes/tech_bull_tls-repo.html)
 
 
@@ -22,5 +23,8 @@ This page lists technical bulletins for the Magento application.
 *	[Magento upgrade issues (Jan. 28, 2016)]({{ site.gdeurl }}release-notes/tech_bull_201-upgrade.html)
 
 ## Magento 2.1.x
-[Upgrade to Magento version 2.1 (June 22, 2016)]({{ site.gdeurl21 }}release-notes/tech_bull_21-upgrade.html)
 
+[MasterCard BIN Range Update (May 19, 2017)]({{ site.gdeurl21 }}release-notes/tech_bull_21x_MasterCard.html)
+[Image resize Issue for Magento version 2.1.6 (May 17, 2017)]({{ site.gdeurl21 }}release-notes/tech_bull_216-imageresize.html)
+
+[Upgrade to Magento version 2.1 (June 22, 2016)]({{ site.gdeurl21 }}release-notes/tech_bull_21-upgrade.html)

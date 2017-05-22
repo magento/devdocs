@@ -2,7 +2,7 @@
 layout: default
 group: extension-dev-guide
 subgroup: 01_Introduction
-title: Introduction
+title: PHP Developer Guide
 landing-page: PHP Developer Guide
 menu_title: Introduction
 menu_order: 1

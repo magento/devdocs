@@ -66,7 +66,7 @@
     font-size: 14px;
     background-clip: padding-box;
     font-weight: 600;
-    padding: 12px 14px;
+    padding: 12px 12px;
     outline: 0;
     display: block;
     border: $dropdown-border-width solid transparent;
@@ -94,6 +94,12 @@
   }
 
 
+  @media ($large-screen){
+    a {
+      padding-left: 18px;
+      padding-right: 18px;
+    }
+  }
 }
 
 
@@ -300,10 +306,6 @@ body.offcanvas-active {
   .offcanvas-active #footer  {
       //transform: translate(260px,0);
   }*/
-
-
-
-
 
 }
 
