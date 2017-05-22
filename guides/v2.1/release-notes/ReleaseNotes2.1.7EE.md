@@ -25,16 +25,12 @@ Looking for the <a href= "http://devdocs.magento.com/guides/v2.0/cloud/release-n
 
 ## Highlights
 
-Magento 2.1.7 contains over 15 security enhancements. Look for the following highlights in this release:
+Magento 2.1.7 contains over 15 security enhancements as well as one significant functional enhancement. Look for the following highlights in this release:
 
-* **Removal of vulnerability with the Zend framework `Zend_Mail` library**. For more information, see <a href="https://magento.com/security/news/new-zend-framework-1-security-vulnerability" target="_blank">New Zend Framework 1 Security Vulnerability</a>.  
+* Support for MasterCard BIN number expansion. MasterCard recently added a new series of Bank Identification Numbers (BIN), and this release of Magento provides support for transactions made with cards using these new BINs. MasterCard describes the issue [here](https://www.mastercard.us/en-us/issuers/get-support/2-series-bin-expansion.html){:target="_blank"}. 
 
-* **Elimination of remote code execution vulnerability** when uploading videos. Also, Admins no longer have unserialized access to CMS or widgets, which reduces the opportunity to remotely execute code. 
 
-* **Enhanced enforcement of more granular permissions**, which reduces the potential for ACL bypass during mass delete actions in tables or the Magento UI controllers. 
-
-* **Updates to vulnerable JavaScript libraries**
-
+* Resolution of multiple high priority and critical security issues. These critical issues include remote code execution for authenticated admin users, access control bypass, and CSRF issues.
 
 
 
@@ -114,6 +110,13 @@ Magento 2.1.7 contains over 15 security enhancements. Look for the following hig
 
 
 
+## Known issues
+
+We’ve identified the following issues with how Magento displays images in this release:
+
+<!--- 59354 -->*  59354 Magento does not correctly display visual swatches on Category and Product pages. 
+
+<!--- 69346 -->* Image resizing  does not work correctly on Checkout. Specifically some product pictures in the Order Summary overlap.
 
 
 
