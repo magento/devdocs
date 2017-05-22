@@ -1,37 +1,47 @@
 ---
 layout: default
 group: config-guide
-subgroup: 999_prod
-title: Deploy Magento to production
-menu_title: Deploy Magento to production
-menu_node: parent
-menu_order: 1
+subgroup: Optimization
+title: Magento Optimization Guide
+menu_title: Magento Optimization Guide
+menu_order: 100
 version: 2.0
-github_link: config-guide/prod/prod.md
+github_link: config-guide/prod/prod_perf-optimize.md
 ---
 
-This topic provides instructions for optimizing the performance of your production deployment.  This process should be followed by technical users responsible for stores running in production to optimize performance.  
+This topic provides instructions for optimizing the performance of your production deployment.
+This process should be followed by technical users responsible for stores running in production to optimize performance.
 
 ### Assumptions
-*	You installed Magento using Composer or a compressed archive
+
+*	You installed Magento using [Composer][composer-install] or a [compressed archive][zip-install]
 *	You will be using this environment to run your live production instance of Magento 2
 
-### Server - Software Choices
-We recommend the following for production instances in order of impact:
-*   We recommend usage of Varnish cache for production instances
-*   We recommend usage of PHP 7 for production instances
-*   (Enterprise) We recommend usage of Solr & Solr Search Adapter
-*	We recommend usage of Nginx and PHP-FPM for production instances
+### Server - Software Recommendations
+
+The following is a list of recommended software for production instances in order of impact:
+
+* [Varnish cache][config-varnish]
+* PHP 7
+* (Enterprise only) Use the [Solr & Solr Search Adapter][solr]
+*	Nginx and [PHP-FPM][php-fpm]
 
 For multi-server deployments or for merchants planning on scaling their business we recommend the following:
-*	Use Redis instance for sessions (from 2.0.6+)
-*	Use a seperate Redis instance as your default cache (do not use for page cache)
 
-### Servier - Composer Optimization
-	composer dumpautoload -o
+*	[Redis][redis-session] for sessions (from 2.0.6+)
+*	A separate Redis instance as your [default cache][redis-default-cache] 
+  *	Do not use this instance for page cache
+
+### Server - Composer Optimization
+
+Run the following [composer command][composer-dump-autoload] to get a faster autoloader.
+
+	composer dump-autoload -o
 
 ### Server - PHP Configuration
-We recommend enabling and tuning PHP opcache for maximum performance.  You'll need to edit your opcache.ini file to include the following:
+
+We recommend enabling and tuning PHP opcache for maximum performance.
+Edit your `opcache.ini` file to include the following:
 
 	opcache.enable_cli=1
 	opcache.memory_consumption=512
@@ -39,38 +49,75 @@ We recommend enabling and tuning PHP opcache for maximum performance.  You'll ne
 	opcache.validate_timestamps=0
 	opcache.consistency_checks=0
 
-Please note if you are on a low memory machine you can change these settings and get a similar result if you do not have many extensions or customizations installed:
+If you are on a low memory machine and you do not have many extensions or customizations installed, use the following settings to get a similar result:
 
 	opcache.memory_consumption=64
 	opcache.max_accelerated_files=60000
 
 ### Server - Redis Configuration & Tuning
-Sessions:  We recommend considering how sessions are flushed from the cache and your merchants abandoned cart strategy.
 
-Caches:    We recommend identifying the total number of effective skus, product pages and content pages expected to be used.  Then estimate a memory size to fit.  
+#### Sessions
+
+Consider how sessions are flushed from the cache and your merchants abandoned cart strategy.
+
+#### Caches
+
+Estimate a memory size to fit the total number of effective skus, product pages and content pages you expect will be used.
 
 ### Magento - Performance Optimizations
-Enabling these performance optimizations will configure your instance for store front responsiveness.
 
-Turn on store front asset optimizations (Go to Admin in default or developer mode):
-*	Store -> Configuration -> Advanced -> Developer
-**	Grid Settings:  Asynchronous indexing = Enable
-**	CSS Settings:  Minify CSS Files = yes
-**	Javascript Settings:  Minify Javascript Files = yes, Enable Javascript Bundling = yes
-**  Template Settings:  Minify HTML = yes
-*	Store -> Configuration -> Sales -> Sales Emails
-**	General Settings:  Asynchronous Sending = Enable
-* 	Store -> Index Management
-**	All indexers should be in "Update on Schedule" mode
-*	Store -> Configuration -> Catalog -> Catalog
-**  Storefront:  Use Flat Catealog Category = Yes, Use Flat Catalog Product = Yes
+Enable these performance optimizations to improve the store front responsiveness of your Magento instance.
+
+
+Go to the Admin in default of developer mode and change the following settings for store front asset optimization:
+
+#### Stores -> Configuration -> Advanced -> Developer
+
+| Settings Group      | Setting                    | Value  |
+| ------------------- | -------------------------- | ------ |
+| Grid Settings       | Asynchronous indexing      | Enable |
+| CSS Settings        | Minify CSS Files           | Yes    |
+| Javascript Settings | Minify JavaScript Files    | Yes    |
+| Javascript Settings | Enable JavaScript Bundling | Yes    |
+| Template Settings   | Minify HTML                | Yes    |
+
+#### Stores -> Configuration -> Sales -> Sales Emails
+
+| Settings Group   | Setting              | Value  |
+| ---------------- | -------------------- | ------ |
+| General Settings | Asynchronous Sending | Enable |
+
+#### Stores -> Configuration -> Catalog -> Catalog
+
+| Settings Group | Setting                   | Value |
+| -------------- | ------------------------- | ----- |
+| Storefront     | Use Flat Catalog Category | Yes   |
+| Storefront     | Use Flat Catalog Product  | Yes   |
+
+#### Stores -> Index Management
+
+Set all indexers to "Update on Schedule" mode.
+
 
 ### Production Mode
-Production mode improves store front responsiveness and ensures there are no long first page load times that can occur in default mode.
 
-Please run the following to cleanly switch to production mode:
-	bin/magento setup:static-content:deploy
-	bin/magento setup:di:compile
-	bin/magento deploy:mode:set -s production
-	bin/magento index:reindex
-	bin/magento cache:flush
+Switching to production mode improves store front responsiveness and prevents long initial page load times that can occur in default mode.
+
+Run the following commands to switch to production mode:
+
+~~~
+bin/magento setup:static-content:deploy
+bin/magento setup:di:compile
+bin/magento deploy:mode:set -s production
+bin/magento index:reindex
+bin/magento cache:flush
+~~~
+
+[composer-install]: {{page.baseurl}}install-gde/prereq/integrator_install.html
+[zip-install]: {{page.baseurl}}install-gde/prereq/zip_install.html
+[config-varnish]: {{page.baseurl}}config-guide/varnish/config-varnish.html
+[solr]: {{page.baseurl}}config-guide/solr/solr-overview.html
+[php-fpm]: https://php-fpm.org/
+[redis-session]: {{page.baseurl}}config-guide/redis/redis-session.html
+[redis-default-cache]: {{page.baseurl}}config-guide/redis/redis-pg-cache.html
+[composer-dump-autoload]: https://getcomposer.org/doc/03-cli.md#dump-autoload
