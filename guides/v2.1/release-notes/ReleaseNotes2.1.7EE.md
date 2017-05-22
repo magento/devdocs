@@ -114,9 +114,9 @@ Magento 2.1.7 contains over 15 security enhancements as well as one significant 
 
 We’ve identified the following issues with how Magento displays images in this release:
 
-<!--- 59354 -->*  59354 Magento does not correctly display visual swatches on Category and Product pages. 
+<!--- 59354 -->* Magento does not correctly display visual swatches on Category and Product pages. 
 
-<!--- 69346 -->* Image resizing  does not work correctly on Checkout. Specifically some product pictures in the Order Summary overlap.
+<!--- 69346 -->* Image resizing  does not work correctly on Checkout. Specifically, some product pictures in the Order Summary overlap.
 
 
 
