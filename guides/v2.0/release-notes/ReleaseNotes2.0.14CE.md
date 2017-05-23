@@ -37,16 +37,14 @@ Magento 2.0.14 contains over 15 security enhancements as well as one significant
 This release includes important enhancements to the security of your Magento software. 
 
 
-### Remote code execution
-<!--- 63863 -->* Magento no longer permits Admin users that have access to CMS and widgets to execute code through unserialization.
-
-
 ### Access control bypass
 <!--- 63868 -->* Admin users without proper permissions can no longer delete store backups or system support reports. 
 
 
+
 ### Cross-site request forgery
 <!--- 63865 -->* Customer-authenticated APIs are no longer vulnerable to cross-site request forgery.
+
 
 
 ### Cross-site scripting
@@ -54,20 +52,12 @@ This release includes important enhancements to the security of your Magento sof
 <!--- 63518 -->* Magento no longer permits stored cross-site scripting code on the customer address page of the Magento Admin.
 
 
-### Zend mail
-
-<!--- 63633 -->* We’ve removed a vulnerability with Zend Mail.
-
 ### General
-
-<!--- 63681, 64051 -->* We’ve updated several vulnerable `moment.js` libraries (`query-migrate`, `query`, `jquery-ui-1.9.2.js`)
-
 
 <!--- 63880 -->* You can no longer instantiate an arbitrary object while adding conditions to an email reminder rule. 
 
-<!--- 63878 -->* The Admin URL in the response body of an HTTP request is no longer visible to unauthenticated users. 
 
-<!--- 63876 -->* Magento now displays a 404 page when an Admin with insufficient privilege tries to request a specific resource.
+<!--- 63871 -->* Magento now displays a 404 page when an Admin with insufficient privilege tries to request a specific resource.
 
 <!--- 63528 -->* Magento now blocks all requests from an Admin’s account as soon as the Admin user is disabled.
 
@@ -82,7 +72,20 @@ This release includes important enhancements to the security of your Magento sof
 <!--- 66972 -->* Magento now displays a relevant message when you create an inactive user.  Previously, Magento did not confirm a successful creation, but instead displayed an error message, even though the inactive user was successfully created.
 
 
-<!--- 66116 -->* You can now generate coupon codes as expected when you add a new cart Price rule. Previously, when you tried to generate a coupon code after clicking **Add New Rule**, Magento disabled all fields in the **Manage Coupon Codes** section.
+ ### Infrastructure
+<!--- 63681, 64051 -->* We’ve updated several vulnerable `moment.js` libraries (`query-migrate`, `query`, `jquery-ui-1.9.2.js`)
+
+<!--- 63878 -->* The Admin URL in the response body of an HTTP request is no longer visible to unauthenticated users. 
+
+
+
+### Remote code execution
+<!--- 63863 -->* Magento no longer permits Admin users that have access to CMS and widgets to execute code through unserialization.
+
+
+### Zend mail
+
+<!--- 63633 -->* We’ve removed a vulnerability with Zend Mail.
 
 
 
