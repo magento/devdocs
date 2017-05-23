@@ -30,7 +30,7 @@ Magento 2.0.14 contains more than 15 security enhancements as well as one signif
 
 <!--- 68868 -->* Support for MasterCard BIN number expansion. MasterCard recently added a new series of Bank Identification Numbers (BIN), and this release of Magento provides support for transactions made with cards using these new BINs. MasterCard describes the issue [here](https://www.mastercard.us/en-us/issuers/get-support/2-series-bin-expansion.html){:target="_blank"}.
 
-* Resolution of multiple high priority and critical security issues. These critical issues include remote code execution for authenticated admin users, access control bypass, and CSRF issues.
+* Resolution of multiple high priority and critical security issues. These critical issues include remote code execution for authenticated Admin users, access control bypass, and cross-site request forgery issues.
 
 
 
@@ -52,7 +52,7 @@ This release includes important enhancements to the security of your Magento sof
 <!--- 63865 -->* Customer-authenticated APIs are no longer vulnerable to cross-site request forgery.
 
 
-### Cross-site scripting
+### Cross-site scripti
 
 <!--- 63518 -->* Magento no longer permits stored cross-site scripting code on the customer address page of the Magento Admin.
 
@@ -77,7 +77,7 @@ This release includes important enhancements to the security of your Magento sof
 
 <!--- 63878 -->* The Admin URL in the response body of an HTTP request is no longer visible to unauthenticated users. 
 
-<!--- 63876 -->* Magento now displays a 404 page when an Admin with insufficient privilege tries to request a specific resource.
+<!--- 63871 -->* Magento now displays a 404 page when an Admin with insufficient privilege tries to request a specific resource.
 
 <!--- 63528 -->* Magento now blocks all requests from an Admin’s account as soon as the Admin user is disabled.
 
@@ -91,14 +91,11 @@ This release includes important enhancements to the security of your Magento sof
 
 <!--- 66972 -->* Magento now displays a relevant message when you create an inactive user.  Previously, Magento did not confirm a successful creation, but instead displayed an error message, even though the inactive user was successfully created.
 
-
-<!--- 66116 -->* You can now generate coupon codes as expected when you add a new cart Price rule. Previously, when you tried to generate a coupon code after clicking **Add New Rule**, Magento disabled all fields in the **Manage Coupon Codes** section.
-
  
 
 
 <!--- INTERNAL ONLY -->
-<!--- 66916,  66633, 66631, 66605, 66598, 66597, 66594, 66593, 66591, 66590, 66451, 66405, 66326, 65493, 65054, 64877, 64584, 66491, 66496, 66498, 66542-->
+<!--- 66116, 66916,  66633, 66631, 66605, 66598, 66597, 66594, 66593, 66591, 66590, 66405, 66326, 65493, 65054, 64584, 66491, 66498, 66542, 66596, 63202, 65055, 64401, 65076, 66459, 66369, -->
 
 <!--- DUPLICATE -->
 <!--- 65056, 65065 -->
