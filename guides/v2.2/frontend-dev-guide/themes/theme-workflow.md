@@ -5,7 +5,7 @@ subgroup: A_Themes
 title: Theme development workflow
 menu_title: Theme workflow
 menu_order: 3
-version: 2.0
+version: 2.2
 github_link: frontend-dev-guide/themes/theme-workflow.md
 ---
 
