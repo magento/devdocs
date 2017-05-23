@@ -9,8 +9,6 @@ version: 2.1
 github_link: ui_comp_guide/concepts/knockout-bindings.md
 ---
 
-## Overview
-
 This topic lists the custom [Knockout.js](http://knockoutjs.com/) bindings used in the core Magento files, and can be used by the third-party developers.
 
 ## General concepts
@@ -29,7 +27,7 @@ Apart from the value type specified for each binding, every value may be wrapped
 
 The `afterRender` binding notifies its subscriber when an associated element is inserted into the DOM.
 
-**Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/after-render.js`
+**Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/after-render.js`. [See on Github]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/after-render.js).
 
 **Value type**: `(element: Element, viewModel: Object) => void`.
 Function that is invoked after the element is rendered.
@@ -38,7 +36,7 @@ Function that is invoked after the element is rendered.
 
 **Usage example**:
 
-
+{%highlight javascript%}
 <div afterRender="function (target, viewModel) {
     console.log('Rendered element:', target);
     console.log('Associated view model:' viewModel);
@@ -49,8 +47,7 @@ Function that is invoked after the element is rendered.
 ### `autoselect`
 The `autoselect` binding automatically highlights the text in an input element, when it gets focus.
 
-**Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/autoselect.js`
-
+**Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/autoselect.js`. [See on Github]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/autoselect.js).
 **Value type**: Boolean
 
 Defines whether the binding is enabled (`true`) or disabled (`false`).
@@ -71,7 +68,7 @@ The `bindHtml` binding renders the provided string, as a collection of HTML elem
 
 It also instantiates all bindings defined for the rendered elements in the scope of the current [view model](http://knockoutjs.com/documentation/observables.html).
 
-**Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/bind-html.js`
+**Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/bind-html.js`. [See on Github]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/bind-html.js).
 
 **Value type**: String
 
@@ -87,7 +84,7 @@ It also instantiates all bindings defined for the rendered elements in the scope
 ### `collapsible`
 The `collapsible` binding provides methods and properties required for implementing collapsible panels. It can automatically collapse panel when clicking outside of the associated node, toggle optional CSS class when node changes its visibility. It has additional helper bindings: `toggleCollapsible`, `openCollapsible` and `closeCollapsible`.
 
-**Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/collapsible.js`
+**Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/collapsible.js`. [See on Github]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/collapsible.js).
 
 **Value type**: Object
 
@@ -176,7 +173,7 @@ Binding's configuration that may include the following properties:
 
 The `datepicker` binding is an adapter for the [mage/calendar.js]({{page.baseurl}}javascript-dev-guide/widgets/widget_calendar.html) widget.
 
-**Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/datepicker.js`
+**Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/datepicker.js`. [See on Github]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/datepicker.js)
 
 **Value type**: String\|Object
 
@@ -190,7 +187,7 @@ The `datepicker` binding is an adapter for the [mage/calendar.js]({{page.baseurl
 ### `fadeVisible`
 The `fadeVisible` binding performs the gradual change of the element's visibility  (with an animation effect).
 
-**Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/fadeVisible.js`
+**Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/fadeVisible.js`. [See on Github]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/fadeVisible.js).
 
 **Value type**: Boolean
 
@@ -208,7 +205,7 @@ Defines whether the element is visible (`true`) or hidden (`false`).
 
 The `i18n` binding is used to translate a string according to the currently enabled locale. Additionally, it creates the necessary elements for the TranslateInline jQuery widget, if it's enabled on the page.
 
-**Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/i18n.js`
+**Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/i18n.js`. [See on Github]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/i18n.js).
 
 **Value type**: `string`
 
@@ -227,7 +224,7 @@ The `i18n` binding is used to translate a string according to the currently enab
 
 The keyboard binding allows setting up listeners for the `keypress` event of a specific key.
 
-**Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/keyboard.js`
+**Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/keyboard.js`. [See on Github]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/keyboard.js).
 
 **Value type**:` [name: number]: (e: KeyboardEvent) => void`
 
@@ -247,7 +244,7 @@ A collection in which keys represent keyboard keys codes and values are callback
 ### mageInit
 The `mageInit` binding is an adapter for the `[data-mage-init]` attribute that is used to initialize jQuery widgets on the associated element.
 
-Source: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/mage-init.js`
+**Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/mage-init.js`. [See on Github]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/mage-init.js).
 
 **Value type**: `[path: string]:` Object
 
@@ -268,7 +265,7 @@ Source: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/mage-ini
 ### optgroup
 The `optgroup` binding is a decorator for the standard Knockout's options binding which adds the support of nested options, and renders them as the `<optgroup>` element.
 
-**Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/optgroup.js`
+**Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/optgroup.js`. [See on Github]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/optgroup.js).
 
 **Value type**: `Array<string>` \| `Array<Object>`
 
@@ -300,7 +297,7 @@ The `optgroup` binding is a decorator for the standard Knockout's options bindin
 ### outerClick
 The `outerClick` binding allows to subscribe for the "click" event that happens outside of the boundaries of the associated element.
 
-**Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/outer_click.js`
+**Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/outer_click.js`. [See on Github]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/outer_click.js).
 
 **Value type**: Function.
 
@@ -318,13 +315,13 @@ Callback that is invoked when user clicks outside of the element.
 ### range
 The `range` binding is an adapter for the [jQuery UI Slider widget](https://jqueryui.com/slider/). Additionally it implements necessary handlers to work with mobile devices.
 
-**Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/range.js`
+**Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/range.js`. [See on Github]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/range.js).
 
 **Value type**: Object.
 
 Configuration that is passed to the Slider widget.
 
-**Aliases**: [range]
+**Aliases**: `[range]`
 
 **Usage example**:
 {%highlight javascript%}
@@ -342,7 +339,7 @@ Configuration that is passed to the Slider widget.
 
 The `resizable` binding is an adapter for the [jQuery UI Resizable](http://api.jqueryui.com/resizable/) widget.
 
-**Source:** `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/resizable.js`
+**Source:** `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/resizable.js`. [See on Github]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/resizable.js). 
 
 **Value type:** Object.
 
@@ -360,7 +357,7 @@ Configuration for the Resizable widget.
 ### `scope`
 A binding that allows evaluating descendant nodes in the scope of an object found in the UiRegistry by provided string.
 
-**Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/scope.js`
+**Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/scope.js`. [See on Github]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/scope.js).
 
 **Value type**: String.
 
@@ -384,7 +381,7 @@ Component's name by which to perform a lookup in the registry.
 
 The `statickChecked` binding implements the behavior similar to the standard [`checked`](http://knockoutjs.com/documentation/checked-binding.html) binding. The difference is that `statickChecked` doesn't change the array of the already selected elements if the value of the associated DOM element changes.
 
-**Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/staticChecked.js`
+**Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/staticChecked.js`. [See on Github]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/staticChecked.js).
 
 **Value type:** Boolean \| String \| Number \| Array<String\|Number\|Number>
 
@@ -398,9 +395,10 @@ The `statickChecked` binding implements the behavior similar to the standard [`c
 ### template
 Magento `template` binding is a customization of the existing Knockout [`template` binding](http://knockoutjs.com/documentation/template-binding.html). It is used to render a template inside of the associated element. The original Knockout's  implementation was overridden to support asynchronous loading of templates by the provided path, instead of searching for them on the page.
 
-**Source:** `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/template/engine.js`
+**Source:** `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/template/engine.js`. [See on Github]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/lib/knockout/template/engine.js). 
 
 **Value type:** String \| Object
+
 Сonfiguration for the `template` binding. If the provided value is a string, it is processed as a path to `.html` file.
 
 **Aliases:** `[render]`, `<render>`
@@ -408,4 +406,100 @@ Magento `template` binding is a customization of the existing Knockout [`templat
 **Usage example**:
 {%highlight javascript%}
 <div data-bind="template: 'path/to/the/template'"></div>
+{%endhighlight%}
+
+
+### tooltip
+
+Magento custom knockout binding for displaying a tooltip.
+
+**Source:** `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/tooltip.js`. [See on Github]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/tooltip.js). 
+
+**Value type:** Object
+
+Binding's configuration that may include the following options:
+
+<table>
+  <tr>
+    <th>Option</th>
+    <th>Description</th>
+    <th>Type</th>
+    <th>Default value</th>
+  </tr>
+  <tr>
+    <td><code>action</code></td>
+    <td>An action that triggers displaying a tooltip.</td>
+    <td>String ('click'|'hover')</td>
+    <td>'click'</td>
+  </tr>
+  <tr>
+    <td><code>center</code></td>
+    <td>Center the tooltip relatively to the element it is bound to.</td>
+    <td>Boolean</td>
+    <td><code>false</code></td>
+  </tr>
+  <tr>
+    <td><code>closeButton</code></td>
+    <td>Whether the tooltip has a Close button.</td>
+    <td>Boolean</td>
+    <td><code>false</code></td>
+  </tr>
+  <tr>
+    <td><code>delay</code></td>
+    <td>A delay before displaying the tooltip, in seconds.</td>
+    <td>Number</td>
+    <td>0</td>
+  </tr>
+  <tr>
+    <td><code>position</code></td>
+    <td>The priority position for the tooltip.</td>
+    <td>String (<code>'top'/'right'/'left'/'bottom'</code>)</td>
+    <td><code>'top'</code></td>
+  </tr>
+  <tr>
+    <td><code>track</code></td>
+    <td>Whether the tooltip moves together with the pointer</td>
+    <td>Boolean</td>
+    <td><code>false</code></td>
+  </tr>
+  <tr>
+    <td><code>trigger</code></td>
+    <td>The selector's action that triggers displaying a tooltip.</td>
+    <td>String</td>
+    <td>''</td>
+  </tr>
+</table>
+
+**Aliases:** `[tooltip]` 
+
+**Usage example**:
+
+Adding the tooltip binding as an attribute:
+
+{%highlight javascript%}
+<div tooltip="
+     trigger: '[data-tooltip-trigger=trigger]', 
+     action: 'click', 
+     delay: 300, 
+     track: true,
+     position: 'top' 
+ "> Tooltip data </div>
+ 
+<div data-tooltip-trigger="trigger"/>
+{%endhighlight%}
+
+Adding the tooltip binding as a node:
+
+{%highlight javascript%}
+<div data-bind="
+    tooltip: {
+        trigger: '[data-tooltip-trigger=trigger]',
+        action: 'click', 
+        delay: 300, 
+        track: true,
+        position: 'top' 
+    }  
+"> Tooltip data </div>
+ 
+<div data-tooltip-trigger="trigger"/>
 {%endhighlight%}
