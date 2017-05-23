@@ -72,7 +72,8 @@ This release includes important enhancements to the security of your Magento sof
 <!--- 66972 -->* Magento now displays a relevant message when you create an inactive user.  Previously, Magento did not confirm a successful creation, but instead displayed an error message, even though the inactive user was successfully created.
 
 
- ### Infrastructure
+### Infrastructure
+
 <!--- 63681, 64051 -->* We’ve updated several vulnerable `moment.js` libraries (`query-migrate`, `query`, `jquery-ui-1.9.2.js`)
 
 <!--- 63878 -->* The Admin URL in the response body of an HTTP request is no longer visible to unauthenticated users. 
