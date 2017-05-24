@@ -14,7 +14,8 @@ github_link: config-guide/cli/config-cli-subcommands-config-mgmt-import.md
 
 {::options syntax_highlighter="rouge" /}
 
-When you set up a production system in the Magento 2.2 [split deployment model]({{ page.baseurl }}config-guide/prod/prod_deploy-over.html), you must _import_ configuration settings from `config.php` and `env.php` into the database. These settings include configuration paths and valuees, websites, stores, store views, and themes.
+When you set up a production system in the Magento 2.2 [split deployment model]({{ page.baseurl }}config-guide/prod/prod_deploy-over.html), you must _import_ configuration settings from `config.php` and `env.php` into the database.
+These settings include configuration paths and values, websites, stores, store views, and themes.
 
 After importing websites, stores, store views, and themes, you can create product attributes and apply them to websites, stores, and store views, on the production system.
 
@@ -53,19 +54,22 @@ If deployment configuration files do not contain any data to import, a message s
 The following sections discuss in detail what data we import.
 
 ### System configuration
-_System_ configuration values cannot be imported directly into Magento because they require some pre- and post-processing actions. (These values are in the `system` array in `config.php` or `env.php`.)
+_System_ configuration values cannot be imported directly into Magento because they require some pre- and post-processing actions.
+(These values are in the `system` array in `config.php` or `env.php`.)
 
 For example, the value of the configuration path `web/secure/base_url` must be validated with {% glossarytooltip 74d6d228-34bd-4475-a6f8-0c0f4d6d0d61 %}backend{% endglossarytooltip %} models.
 
 #### Backend models
-Backend models are the mechanism for processing changes in system configuration. You define backend modules in `<module_name>/adminhtml/system.xml`.
+Backend models are the mechanism for processing changes in system configuration.
+You define backend modules in `<module_name>/adminhtml/system.xml`.
 
 All backend models must extend the [`Magento\Framework\App\Config\Value`]({{ site.mage2200url }}lib/internal/Magento/Framework/App/Config/Value.php){:target="_blank"} class.
 
 When we import backend models, we don't save the configuration values.
 
 ### Websites, stores, and store groups configuration
-We import the following types of configurations. (These configurations are under the `scopes` array in `config.php`.)
+We import the following types of configurations.
+(These configurations are under the `scopes` array in `config.php`.)
 
 *   `websites`: websites related configuration
 *   `groups`: stores related configuration
@@ -78,16 +82,19 @@ The preceding configurations can be imported in the following modes:
 *   `delete`: `config.php` does _not_ contain entities (`websites`, `groups`, `stores`) that are present on production environment
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-We don't import the root {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} associated with stores. You must associate a root category with a store using the Magento {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}.
+We don't import the root {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} associated with stores.
+You must associate a root category with a store using the Magento {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}.
 </div> 
 
 ### Theme configuration
-Theme configuration includes all themes registered in your Magento system; the data comes directly from the `theme` database table. (Theme configuration is in the `themes` array in `config.php`.)
+Theme configuration includes all themes registered in your Magento system; the data comes directly from the `theme` database table.
+(Theme configuration is in the `themes` array in `config.php`.)
 
 #### Structure of theme data
 The key of array is full theme path: `area` + `theme path`
 
-For example, `frontend/Magento/luma`. `frontend` is area and `Magento/luma` is {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} path.
+For example, `frontend/Magento/luma`.
+`frontend` is area and `Magento/luma` is {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} path.
 
 The value of array is data about theme: code, title, path, parent id and etc.
 
