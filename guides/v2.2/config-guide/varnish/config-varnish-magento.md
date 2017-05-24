@@ -9,6 +9,18 @@ menu_node:
 version: 2.2
 github_link: config-guide/varnish/config-varnish-magento.md
 ---
+**NOTE!** Static files should not be cached by default.
+If you want to change this you can edit related section "Static files caching" in VCL following by instructions wich you find there:
+
+	# Static files should not be cached by default
+        return (pass);
+
+	# But if you use a few locales and don't use CDN you can enable caching static files by commenting previous line (#return (pass);) and uncommenting next 3 lines
+	#unset req.http.Https;
+        #unset req.http./* {{ ssl_offloaded_header }} */;
+        #unset req.http.Cookie;
+	
+You need to make this changes before you start configure Magento to use Varnish.
 
 <h2 id="config-varnish-magento">Configure Magento to use Varnish</h2>
 To configure Magento to use Varnish:
