@@ -19,12 +19,27 @@ Continue From:<br />
 
 <div class="flow-block" markdown="1">
 ### Enable development mode
+
+In the Magento root directory, run:
+
+`php bin/magento deploy:mode:set developer`
+
+{%collapsible Links to details%} 
+* [About Magento modes]({{page.baseurl}}/config-guide/bootstrap/magento-modes.html)
+* [Get started with command-line configuration]({{page.baseurl}}config-guide/cli/config-cli-subcommands.html)
+{%endcollapsible%}
+
+<div class="bs-callout bs-callout-tip" markdown="1">
+To check the current mode of your Magento instance, in the root directory, run:
+
+`php bin/magento deploy:mode:show`
+</div>
 </div>
 
 <div class="flow-arrow"> </div>
 
 <div class="flow-block" markdown="1">
-### Add files
+### Create basic theme files
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 </div>
 
