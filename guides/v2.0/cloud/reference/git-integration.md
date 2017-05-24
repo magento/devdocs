@@ -2,12 +2,12 @@
 layout: default
 group: cloud
 subgroup: 15_reference
-title: How Cloud Uses Composer
-menu_title: How Cloud Uses Composer
-menu_node: 
+title: How Cloud Uses Git
+menu_title: How Cloud Uses Git
+menu_node:
 menu_order: 48
 version: 2.0
-github_link: cloud/reference/cloud-composer.md
+github_link: cloud/reference/git-integration.md
 ---
 ### Git knowledge
 We assume you have a good working knowledge of Git. If not, consult the following resources:
