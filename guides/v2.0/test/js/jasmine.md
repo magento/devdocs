@@ -13,8 +13,6 @@ redirect_from:
   - /guides/v2.1/extension-dev-guide/test/test_js-unit.html
 ---
 
-## Preface
-
 Magento uses a custom [Grunt] task named `spec` to run Jasmine tests. The task collects the tests from `<magento_root_dir>dev/tests/js/jasmine/tests` and can be run for a {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}.
 
 ## Prepare environment
@@ -207,6 +205,47 @@ define([
 This topic doesn't provide Jasmine test writing methodology.
 
 [Learn more about testing with Jasmine.]
+
+## Known issues and solutions
+
+### Error: Cannot find module '&lt;module&gt;' {#cannot-find-module-error}
+
+#### Issue:
+
+An error message appears:
+
+```
+Loading "Gruntfile.js" tasks...ERROR
+
+>> Error: Cannot find module '<module>'
+
+Warning: Task "spec" not found. Use --force to continue.
+```
+
+#### Solution:
+
+1. Make sure your Node.js version is up-to-date.
+2. Remove `package.json`, `Gruntfile.js`.
+3. Copy `package.json`, `Gruntfile.js` from `package.json.sample`, `Gruntfile.js.sample`
+4. Delete the `node_modules` directory.
+5. Run `npm install` in your terminal.
+
+### Warning: Cannot read property 'pid' of undefined {#cannot-read-property-pid-warning}
+
+#### Issue:
+ 
+An error message appears:
+
+```
+Warning: Cannot read property 'pid' of undefined
+
+Use --force to continue. Aborted due to warnings.
+```
+
+#### Solution:
+
+    cd <magento_root>/node_modules/grunt-contrib-jasmine
+    npm install
 
 <!-- LINK DEFINITIONS -->
 
