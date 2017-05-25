@@ -34,7 +34,9 @@ For multi-server deployments or for merchants planning on scaling their business
 
 ### Server - Composer Optimization
 
-Run the following [composer command][composer-dump-autoload] to get a faster autoloader.
+After running `setup:di:compile` to generate classes, use composer to update the autoloader.
+
+Run the following [composer command][composer-dump-autoload] to generate an optimized composer class map that supports faster auto-loading.
 
 	composer dump-autoload -o
 
@@ -48,6 +50,9 @@ Edit your `opcache.ini` file to include the following:
 	opcache.max_accelerated_files=100000
 	opcache.validate_timestamps=0
 	opcache.consistency_checks=0
+
+When you fine tune the memory allocation for opcache, take into account the size of Magento's code base and all your extensions.
+Magento's performance team uses the values in the preceding example for testing because it provides enough space in opcache for the average number of installed extensions.  
 
 If you are on a low memory machine and you do not have many extensions or customizations installed, use the following settings to get a similar result:
 
