@@ -18,6 +18,7 @@ Continue From:<br />
 <div class="flow-arrow"> </div>
 
 <div class="flow-block" markdown="1">
+
 ### Enable development mode
 
 In the Magento root directory, run:
@@ -40,21 +41,38 @@ To check the current mode of your Magento instance, in the root directory, run:
 
 <div class="flow-block" markdown="1">
 ### Create basic theme files
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+In the `<magento_root>/app/design/frontend/<Your_Vendor>/<your_theme>` directory, create the following files:
+
+- `theme.xml`
+- `registration.php`
+- (optionally) `composer.json`
+
+For details, see [Create a new storefront theme]({{page.baseurl}}/frontend-dev-guide/themes/theme-create.html)
 </div>
 
 <div class="flow-arrow"> </div>
 
 <div class="flow-block" markdown="1">
-### Apply theme
+### Apply the theme
+
+1. In the Admin Panel, go to **CONTENT** > **Design** > **Configuration**
+2. Find the record corresponding to your store view and click **Edit**.
+3. In the **Applied Theme** drop-down, select your newly created theme.
+4. Click **Save Configuration**.
+
+For details, see [Apply and configure a storefront theme]({{page.baseurl}}frontend-dev-guide/themes/theme-apply.html)
 </div>
 
 <div class="flow-arrow"></div>
 
 <div class="flow-block" markdown="1">
+
 ### Choose .less compilation mode
 </div>
-
+* Server-side (default)
+* Client-side
+* Grunt (recommended)
+* Own pre-processor
 <div class="flow-arrow"></div>
 
 <div class="flow-row">

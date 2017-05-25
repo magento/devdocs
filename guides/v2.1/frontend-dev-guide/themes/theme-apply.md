@@ -25,9 +25,10 @@ After you <a href="{{site.gdeurl21}}frontend-dev-guide/themes/theme-create.html"
 To apply a theme:
 
 1. In Admin, go to **CONTENT** > **Design** > **Configuration**. A Design Configuration page opens. It contains a grid with the available configuration scopes. For example: <br><img src="{{site.baseurl}}common/images/design_conf1.png" alt="Design Configuration page">
-2. In the configuration record corresponding to your store view, click **Edit**.
+2. In the configuration record corresponding to your store view, click **Edit**. The page with design configuration for the selected scope opens. For example:
+<br><img src="{{site.baseurl}}common/images/fdg/apply_theme.png" alt="Design Configuration page for a particular scope">
 4. On the **Default Theme** tab, in the **Applied Theme** drop-down, select your newly created theme.
-5. Click **Save**.
+5. Click **Save Configuration**.
 6. If caching is enabled, <a href="#theme-apply-clear">clear the cache</a>. 
 6. To see your changes applied, reload the store front pages.
 
