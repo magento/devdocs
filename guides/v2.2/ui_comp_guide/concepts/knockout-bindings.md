@@ -15,7 +15,7 @@ This topic lists the custom [Knockout.js](http://knockoutjs.com/) bindings used 
 
 ### Aliases
 
-The standard way to declare a knockout.js binding is using the `data-bind` attribute: `[data-bind="<binding>: %value%"]`. In Magento implementation, you can also use aliases to declare bindings. Some bindings may be defined as standalone attributes (`[binding="%value%"]`) or nodes (`<binding args="%value%">`).
+The standard way to reference a knockout.js binding is using the `data-bind` attribute: `[data-bind="%binding_name%: %value%"]`. In Magento implementation, you can also use aliases to declare bindings. Some bindings may be defined as attributes (`[%binding_alias%="%value%"]`) or nodes (`%binding_alias% args="%value%">`).
 
 ### Binding values
 
