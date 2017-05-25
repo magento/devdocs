@@ -15,17 +15,23 @@ redirect_from: /guides/v1.0/migration/migration-overview-practices.html
 
 This section provides our best information about how to speed up and simplify your migration, and provides guidance about how much time you can expect migration to require.
 
-## Test as much as possible
+## Test your migration activities
 
-We recommend to perform as much migration testing as possible.
+We recommend to test as much migration steps as possible; ideally -- make a test run of the entire migration process.
 
-Surely, you can perform migration at once, without any testing. We're sure the Data Migration Tool works perfectly fine out-of-the-box.
+Surely, you can perform migration without any testing. The Data Migration Tool works fine out-of-the-box, and if you follow instructions in this Guide, migration should go smoothly.
 
-Although, our experience shows: the more testing steps you do, the more issues you can later avoid. Testing helps to find out areas of your Magento application which may require manual interference when migrating.
+Although, testing helps to find out areas where manual interference is required, and saves you from the nervousness of experiencing issues on your production environment.
 
-For example: let's suppose you've migrated all your data from Magento 1 to Magento 2. Then, you applied the customizations you've had in your Magento 1 instance (examples?); now you're running the Data Migration Tool in the Delta mode again to transfer incremental changes. This is exactly where you may encounter problems: changing database entries may break the database mappings the Tool is using to migrate data.
+### Example: migrate incremental changes after applying customizations
 
-*To be continued...*
+Let's suppose you have migrated all your data from Magento 1 to Magento 2.
+
+Then, you have applied the customizations you've had in your Magento 1 instance (examples?). Now, you're running the Data Migration Tool in the Delta mode to transfer incremental changes.
+
+This is where you may encounter problems: your customizations may break the database mappings that the Data Migration Tool uses to transfer data.
+
+In this case, you must to provide mappings manually, and it will be safer if you test those mappings before making changes on production environment.
 
 ## Best practices and recommendations
 
