@@ -9,13 +9,13 @@ version: 2.1
 github_link: ui_comp_guide/concepts/knockout-bindings.md
 ---
 
-This topic lists the custom [Knockout.js](http://knockoutjs.com/) bindings used in the core Magento files, and can be used by the third-party developers.
+This topic lists the custom [Knockout.js](http://knockoutjs.com/) bindings used in the core Magento files. These bindings can also be used by third-party developers.
 
 ## General concepts
 
 ### Aliases
 
-The standard way to declare a knockout.js binding is using the `data-bind` attribute: `[data-bind="binding: value"]`. In Magento implementation, you can also use aliases to declare bindings. Some bindings may be defined as standalone attributes (`[binding="value"]`) or nodes (`<binding args="value">`).
+The standard way to declare a knockout.js binding is using the `data-bind` attribute: `[data-bind="<binding>: %value%"]`. In Magento implementation, you can also use aliases to declare bindings. Some bindings may be defined as standalone attributes (`[binding="%value%"]`) or nodes (`<binding args="%value%">`).
 
 ### Binding values
 
@@ -309,11 +309,12 @@ Callback that is invoked when user clicks outside of the element.
 {%highlight javascript%}
 <div id="target" outerClick="function () {
     console.log('Clicked outside of the "target" node.');
-}"></div>
+}">
+</div>
 {%endhighlight%}
 
 ### range
-The `range` binding is an adapter for the [jQuery UI Slider widget](https://jqueryui.com/slider/). Additionally it implements necessary handlers to work with mobile devices.
+The `range` binding is an adapter for the [jQuery UI Slider widget](https://jqueryui.com/slider/). It also implements necessary handlers to work with mobile devices.
 
 **Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/range.js`. [See on Github]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/range.js).
 
@@ -379,7 +380,7 @@ Component's name by which to perform a lookup in the registry.
 
 ### staticChecked
 
-The `statickChecked` binding implements the behavior similar to the standard [`checked`](http://knockoutjs.com/documentation/checked-binding.html) binding. The difference is that `statickChecked` doesn't change the array of the already selected elements if the value of the associated DOM element changes.
+The `staticChecked` binding implements the behavior similar to the standard [`checked`](http://knockoutjs.com/documentation/checked-binding.html) binding. The difference is that `staticChecked` doesn't change the array of the already selected elements if the value of the associated DOM element changes.
 
 **Source**: `<Magento_Ui_module_dir>/view/base/web/js/lib/knockout/bindings/staticChecked.js`. [See on Github]({{site.mage2200url}}app/code/Magento/Ui/view/base/web/js/lib/knockout/bindings/staticChecked.js).
 
@@ -503,3 +504,4 @@ Adding the tooltip binding as a node:
  
 <div data-tooltip-trigger="trigger"/>
 {%endhighlight%}
+
