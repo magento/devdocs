@@ -87,13 +87,6 @@ Go to the Admin in default of developer mode and change the following settings f
 | ---------------- | -------------------- | ------ |
 | General Settings | Asynchronous Sending | Enable |
 
-#### Stores -> Configuration -> Catalog -> Catalog
-
-| Settings Group | Setting                   | Value |
-| -------------- | ------------------------- | ----- |
-| Storefront     | Use Flat Catalog Category | Yes   |
-| Storefront     | Use Flat Catalog Product  | Yes   |
-
 #### Stores -> Index Management
 
 Set all indexers to "Update on Schedule" mode.

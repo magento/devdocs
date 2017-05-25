@@ -100,13 +100,6 @@ In this case editing your MySQL configuration file and allocating more memory to
 | ---------------- | -------------------- | ------ |
 | General Settings | Asynchronous Sending | Enable |
 
-#### Stores -> Configuration -> Catalog -> Catalog
-
-| Settings Group | Setting                   | Value |
-| -------------- | ------------------------- | ----- |
-| Storefront     | Use Flat Catalog Category | Yes   |
-| Storefront     | Use Flat Catalog Product  | Yes   |
-
 #### Stores -> Index Management
 
 Set all indexers to "Update on Schedule" mode.
