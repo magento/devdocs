@@ -266,7 +266,7 @@ You can track [backward incompatible changes made in a Magento EE mainline after
 
 ### cron options
 
-cron group configuration can be set in `etc/crontab.xml`.
+cron group configuration is set in `etc/crontab.xml`.
 
 -   `staging_apply_version` – each period of time checks in a table of updates if any [campaign](#campaign) has been started and if yes, it applies all [scheduled updates](#scheduled-update) for the campaign.
 
