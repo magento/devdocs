@@ -28,7 +28,7 @@ Note: The full list of cache types can be found [here]({{page.baseurl}}/config-g
 </span>
 </div>
 
-To view the status of the cache, enter 
+To view the status of the cache, run 
 
 `php bin/magento cache:status`
 

@@ -173,7 +173,7 @@ After you customize the content of any <code>.less</code> file, changes are appl
 
 </ul>
 
-## CSS source maps
+## CSS source maps {#source_maps}
 
 When using Grunt for styles preprocessing, you can enable the CSS source maps generating in your browser. It will make the theme styles debugging easier. 
 
