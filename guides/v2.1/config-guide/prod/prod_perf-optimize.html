@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Magento page caching | Magento 2 Developer Documentation</title>
+	<title>Magento Optimization Guide | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.1/config-guide/cache/cache-priv-parent.html">
+	<link rel="canonical" href="//guides/v2.1/config-guide/prod/prod_perf-optimize.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -52,9 +52,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/config-guide/cache/cache-priv-parent.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/config-guide/prod/prod_perf-optimize.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/config-guide/cache/cache-priv-parent.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/config-guide/prod/prod_perf-optimize.html">Magento 2.1</a></li>
 	
   </ul>
 
@@ -689,7 +689,7 @@
 
 									
 
-										<li class="level3Parent  active " id="cache-priv"><a href="#">Magento page caching</a>
+										<li class="level3Parent " id="cache-priv"><a href="#">Magento page caching</a>
 
 
 									
@@ -1425,7 +1425,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/config-guide/prod/prod_perf-optimize.html">Magento Optimization Guide</a></li>
+									<li class="level-2  active "><a href="/guides/v2.1/config-guide/prod/prod_perf-optimize.html">Magento Optimization Guide</a></li>
 
 									
 
@@ -1623,7 +1623,7 @@
 
           
 
-          <span property="name">Magento page caching</span>
+          <span property="name">Magento Optimization Guide</span>
 
         
 
@@ -1646,14 +1646,163 @@
 
 	
 
-	<h1 class="page-heading">Magento page caching</h1>
+	<h1 class="page-heading">Magento Optimization Guide</h1>
 
   
 
 
 </section>
 
-			
+			<p>This topic provides instructions for optimizing the performance of your production deployment.
+This process should be followed by technical users responsible for stores running in production to optimize performance.</p>
+
+<h3 id="assumptions">Assumptions</h3>
+
+<ul>
+  <li>You installed Magento using <a href="/guides/v2.1/install-gde/prereq/integrator_install.html">Composer</a> or a <a href="/guides/v2.1/install-gde/prereq/zip_install.html">compressed archive</a></li>
+  <li>You will be using this environment to run your live production instance of Magento 2</li>
+</ul>
+
+<h3 id="server---software-recommendations">Server - Software Recommendations</h3>
+
+<p>The following is a list of recommended software for production instances in order of impact:</p>
+
+<ul>
+  <li><a href="/guides/v2.1/config-guide/varnish/config-varnish.html">Varnish cache</a></li>
+  <li>PHP 7</li>
+  <li>(Enterprise only) Use the <a href="/guides/v2.1/config-guide/elasticsearch/es-overview.html">Elasticsearch &amp; Elasticsearch Search Adapter</a></li>
+  <li>Nginx and <a href="https://php-fpm.org/">PHP-FPM</a></li>
+</ul>
+
+<p>For multi-server deployments or for merchants planning on scaling their business we recommend the following:</p>
+
+<ul>
+  <li><a href="/guides/v2.1/config-guide/redis/redis-session.html">Redis</a> for sessions (from 2.0.6+)</li>
+  <li>A separate Redis instance as your <a href="/guides/v2.1/config-guide/redis/redis-pg-cache.html">default cache</a></li>
+  <li>Do not use this instance for page cache</li>
+</ul>
+
+<h3 id="server---composer-optimization">Server - Composer Optimization</h3>
+
+<p>After running <code>setup:di:compile</code> to generate classes, use composer to update the autoloader.</p>
+
+<p>Run the following <a href="https://getcomposer.org/doc/03-cli.md#dump-autoload">composer command</a> to generate an optimized composer class map that supports faster auto-loading.</p>
+
+<pre><code>composer dump-autoload -o
+</code></pre>
+
+<h3 id="server---php-configuration">Server - PHP Configuration</h3>
+
+<p>We recommend enabling and tuning PHP opcache for maximum performance.
+Edit your <code>opcache.ini</code> file to include the following:</p>
+
+<pre><code>opcache.enable_cli=1
+opcache.memory_consumption=512
+opcache.max_accelerated_files=100000
+opcache.validate_timestamps=0
+opcache.consistency_checks=0
+</code></pre>
+
+<p>When you fine tune the memory allocation for opcache, take into account the size of Magento’s code base and all your extensions.
+Magento’s performance team uses the values in the preceding example for testing because it provides enough space in opcache for the average number of installed extensions.</p>
+
+<p>If you are on a low memory machine and you do not have many extensions or customizations installed, use the following settings to get a similar result:</p>
+
+<pre><code>opcache.memory_consumption=64
+opcache.max_accelerated_files=60000
+</code></pre>
+
+<h3 id="server---redis-configuration--tuning">Server - Redis Configuration &amp; Tuning</h3>
+
+<h4 id="sessions">Sessions</h4>
+
+<p>Consider how sessions are flushed from the cache and your merchants abandoned cart strategy.</p>
+
+<h4 id="caches">Caches</h4>
+
+<p>Estimate a memory size to fit the total number of effective skus, product pages and content pages you expect will be used.</p>
+
+<h3 id="magento---performance-optimizations">Magento - Performance Optimizations</h3>
+
+<p>Enable these performance optimizations to improve the store front responsiveness of your Magento instance.</p>
+
+<p>Go to the Admin in default of developer mode and change the following settings for store front asset optimization:</p>
+
+<h4 id="stores---configuration---advanced---developer">Stores -&gt; Configuration -&gt; Advanced -&gt; Developer</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Settings Group</th>
+      <th>Setting</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Grid Settings</td>
+      <td>Asynchronous indexing</td>
+      <td>Enable</td>
+    </tr>
+    <tr>
+      <td>CSS Settings</td>
+      <td>Minify CSS Files</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>Javascript Settings</td>
+      <td>Minify JavaScript Files</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>Javascript Settings</td>
+      <td>Enable JavaScript Bundling</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>Template Settings</td>
+      <td>Minify HTML</td>
+      <td>Yes</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="stores---configuration---sales---sales-emails">Stores -&gt; Configuration -&gt; Sales -&gt; Sales Emails</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Settings Group</th>
+      <th>Setting</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>General Settings</td>
+      <td>Asynchronous Sending</td>
+      <td>Enable</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="stores---index-management">Stores -&gt; Index Management</h4>
+
+<p>Set all indexers to “Update on Schedule” mode.</p>
+
+<h3 id="production-mode">Production Mode</h3>
+
+<p>Switching to production mode improves store front responsiveness and prevents long initial page load times that can occur in default mode.</p>
+
+<p>Run the following commands to switch to production mode:</p>
+
+<pre><code>bin/magento setup:static-content:deploy
+bin/magento setup:di:compile
+bin/magento deploy:mode:set -s production
+bin/magento index:reindex
+bin/magento cache:flush
+</code></pre>
+
 
 		</div>
 		<!-- /.content-wrap -->
@@ -1664,14 +1813,14 @@
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/config-guide/cache/cache-priv-parent.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/config-guide/prod/prod_perf-optimize.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
   
 
   <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/config-guide/cache/cache-priv-parent.html" target="_blank">Give us feedback</a>
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/config-guide/prod/prod_perf-optimize.html" target="_blank">Give us feedback</a>
   </div>
 
 </div>

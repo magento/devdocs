@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Configure message queue topology | Magento 2 Developer Documentation</title>
+	<title>Magento Optimization Guide | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.0/config-guide/mq/config-mq.html">
+	<link rel="canonical" href="//guides/v2.0/config-guide/prod/prod_perf-optimize.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -52,9 +52,9 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/config-guide/mq/config-mq.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/config-guide/prod/prod_perf-optimize.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/config-guide/mq/config-mq.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/config-guide/prod/prod_perf-optimize.html">Magento 2.1</a></li>
 	
   </ul>
 
@@ -1067,7 +1067,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.0/config-guide/mq/config-mq.html">Configure message queue topology</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/mq/config-mq.html">Configure message queue topology</a></li>
 
 									
 
@@ -1346,7 +1346,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/prod/prod_perf-optimize.html">Magento Optimization Guide</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/config-guide/prod/prod_perf-optimize.html">Magento Optimization Guide</a></li>
 
 									
 
@@ -1528,7 +1528,7 @@
 
           
 
-          <span property="name">Configure message queue topology</span>
+          <span property="name">Magento Optimization Guide</span>
 
         
 
@@ -1551,158 +1551,163 @@
 
 	
 
-	<h1 class="page-heading">Configure message queue topology</h1>
+	<h1 class="page-heading">Magento Optimization Guide</h1>
 
   
 
 
 </section>
 
-			<div class="bs-callout bs-callout-warning">
-  <p>The message queue topology can only be configured after Magento Community Edition has been installed and before Magento Enterprise Editions has been installed. </p>
-</div>
+			<p>This topic provides instructions for optimizing the performance of your production deployment.
+This process should be followed by technical users responsible for stores running in production to optimize performance.</p>
 
-<p>Each module that is to be a <span term-uuid="d5777fe2-f786-45d9-b052-cca8a10120d9" class="glossary-term" data-toggle="popover">publisher</span> must be configured as such. If you want a module to use the MQF, create a <code>&lt;module&gt;/etc/queue.xml</code> file and define the publisher, consumers, exchanges and bindings.</p>
-
-<h2>Edit the <code>queue.xml</code> file</h2>
-<p>The <code>queue.xml</code> file can contain the following elements:</p>
+<h3 id="assumptions">Assumptions</h3>
 
 <ul>
-  <li>publisher</li>
-  <li>topic</li>
-  <li>consumer</li>
-  <li>bind</li>
+  <li>You installed Magento using <a href="/guides/v2.0/install-gde/prereq/integrator_install.html">Composer</a> or a <a href="/guides/v2.0/install-gde/prereq/zip_install.html">compressed archive</a></li>
+  <li>You will be using this environment to run your live production instance of Magento 2</li>
 </ul>
 
-<h3>Required elements</h3>
+<h3 id="server---software-recommendations">Server - Software Recommendations</h3>
 
-<p>Each <code>queue.xml</code> file must contain the following lines:</p>
+<p>The following is a list of recommended software for production instances in order of impact:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
-
-<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework-message-queue:etc/queue.xsd&quot;</span><span class="nt">&gt;</span>
-.
-.
-.
-<span class="nt">&lt;/config&gt;</span></code></pre></figure>
-
-<h3>publisher element</h3>
-<p>The <code>publisher</code> element configures the type of connection and the exchange to publish to. By default, Magento uses one exchange. The name of exchange is a part of the publisher configuration. However multiple exchanges are supported, based on the AMQP model.</p>
-<table>
-<tr>
-<th>Parameter</th><th>Description</th>
-</tr>
-<tr>
-<td>name</td>
-<td>A unique identifer for the publisher. The value is specified in a <code>topic</code> element. The default system publisher name is `default`.</td>
-</tr>
-<tr>
-<td>connection</td>
-<td>If RabbitMQ is to used to manage the queue, then the value must be <code>rabbitmq</code>. The value can also be <code>db</code> or the name of a custom <span term-uuid="edb42858-1ff8-41f9-80a6-edf0d86d7e10" class="glossary-term" data-toggle="popover">adapter</span>.</td>
-</tr>
-<tr>
-<td>exchange</td>
-<td>The name of the exchange to publish to. The value is referenced from the <code>bind</code> element. The default system exchange name is `magento`.</td>
-</tr>
-</table>
-
-<h3>topic element</h3>
-<p>Configuring the <code>topic</code> element defines the interface that processes the message and assigns a publisher.</p>
-<table>
-<tr>
-<th><p>Parameter</p></th><th><p>Description</p></th>
-</tr>
-<tr>
-<td>name</td>
-<td><p>The name assigned to the topic. The format should be <code><i>object</i><b>.</b><i>action</i></code> You can further distinguish topic names by appending <code><b>.</b><i>subaction</i></code> to the end of the name. Use the past tense for all verbs, to indicate the <span term-uuid="c57aef7c-97b4-4b2b-a999-8001accef1fe" class="glossary-term" data-toggle="popover">event</span> has already happened.</p>
-<p>Examples: <code>customer.created</code>, <code>customer.sent.email</code></p>
-<p>The value is specified in a <code>bind</code> element.</p></td>
-</tr>
-<tr>
-<td>schema</td>
-<td><p>The interface that describes the structure of the message. It should be in the format of a Data Interface from the Service Contracts. For example, <code>Magento\Customer\Api\Data\CustomerInterface</code>.
-</p>
-<p>You can also specify a service method signature, such as <code>Magento\Customer\Api\CustomerRepositoryInterface::save</code>. In this case, format the message as an array of all service method parameters, like for a <code>call_user_func_array</code> call. The consumer's callback should expect each message part to be passed as a separate parameter.
-</p></td>
-</tr>
-<tr>
-<td>publisher</td>
-<td>The <code>name</code> of a <code>publisher</code>.</td>
-</tr>
-</table>
-
-<h3>consumer element</h3>
-<p>Each <code>consumer</code> elements maps the receiver of a message to a specific queue. The <code>class</code> and <code>method</code> parameters indicate what receives and processes the message.</p>
-<table>
-<tr>
-<th>Parameter</th><th>Description</th>
-</tr>
-<tr>
-<td>name</td>
-<td>The name of the consumer. The value should be the same as the magic method that to be used as a callback. </td>
-</tr>
-<tr>
-<td>queue</td>
-<td>Defines the queue name to send the message to. This value is used in the definition of a <code>bind</code> element.</td>
-</tr>
-<tr>
-<td>connection</td>
-<td>Must be <code>rabbitmq</code> or other value specified in the `connection` parameter in of a publisher.</td>
-</tr>
-<tr>
-<td>class</td>
-<td>The path to a Magento class that consumes the message.</td>
-</tr>
-<tr>
-<td>method</td>
-<td>The method within the specified <code>class</code> that processes the message.</td>
-</tr>
-<tr>
-<td>max_messages</td>
-<td>Specifies the maximum number of messages to consume.</td>
-</tr>
-</table>
-
-<h3>bind element</h3>
-<p>The <code>bind</code> elements link topics to queues and exchanges, defining the message queue topology. A topic can be sent to any number of queues.</p>
-
-<table>
-<tr>
-<th>Parameter</th><th>Description</th>
-</tr>
-<tr>
-<td>queue</td>
-<td>The <code>name</code> of a queue defined in a <code>consumer</code> element.</td>
-</tr>
-<tr>
-<td>exchange</td>
-<td>The <code>name</code> of an exchange defined in a <code>publisher</code> element.</td>
-</tr>
-<tr>
-<td>topic</td>
-<td>The <code>name</code> of a topic defined in a <code>topic</code> element. You can specify an asterisk (\*) or pound sign (#) as wildcards. </td>
-</tr>
-</table>
-
-<h2>Sample `queue.xml` file</h2>
-
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework-message-queue:etc/queue.xsd&quot;</span><span class="nt">&gt;</span>
-    <span class="nt">&lt;publisher</span> <span class="na">name=</span><span class="s">&quot;test-publisher-1&quot;</span> <span class="na">connection=</span><span class="s">&quot;rabbitmq&quot;</span> <span class="na">exchange=</span><span class="s">&quot;magento&quot;</span><span class="nt">/&gt;</span>
-    <span class="nt">&lt;publisher</span> <span class="na">name=</span><span class="s">&quot;test-publisher-2&quot;</span> <span class="na">connection=</span><span class="s">&quot;db&quot;</span> <span class="na">exchange=</span><span class="s">&quot;magento&quot;</span><span class="nt">/&gt;</span>
-    <span class="nt">&lt;topic</span> <span class="na">name=</span><span class="s">&quot;customer.created&quot;</span> <span class="na">schema=</span><span class="s">&quot;Magento\Customer\Api\Data\CustomerInterface&quot;</span> <span class="na">publisher=</span><span class="s">&quot;test-publisher-1&quot;</span><span class="nt">/&gt;</span>
-    <span class="nt">&lt;topic</span> <span class="na">name=</span><span class="s">&quot;customer.deleted&quot;</span> <span class="na">schema=</span><span class="s">&quot;Magento\Customer\Api\Data\CustomerInterface&quot;</span> <span class="na">publisher=</span><span class="s">&quot;test-publisher-2&quot;</span><span class="nt">/&gt;</span>
-    <span class="nt">&lt;consumer</span> <span class="na">name=</span><span class="s">&quot;customerCreatedListener&quot;</span> <span class="na">queue=</span><span class="s">&quot;test-queue-1&quot;</span> <span class="na">connection=</span><span class="s">&quot;rabbitmq&quot;</span> <span class="na">class=</span><span class="s">&quot;Data\Type&quot;</span> <span class="na">method=</span><span class="s">&quot;processMessage&quot;</span><span class="nt">/&gt;</span>
-    <span class="nt">&lt;consumer</span> <span class="na">name=</span><span class="s">&quot;customerDeletedListener&quot;</span> <span class="na">queue=</span><span class="s">&quot;test-queue-2&quot;</span> <span class="na">connection=</span><span class="s">&quot;db&quot;</span> <span class="na">class=</span><span class="s">&quot;Other\Type&quot;</span> <span class="na">method=</span><span class="s">&quot;processMessage2&quot;</span> <span class="na">max_messages=</span><span class="s">&quot;98765&quot;</span><span class="nt">/&gt;</span>
-    <span class="nt">&lt;bind</span> <span class="na">queue=</span><span class="s">&quot;test-queue-1&quot;</span> <span class="na">exchange=</span><span class="s">&quot;magento&quot;</span> <span class="na">topic=</span><span class="s">&quot;customer.created&quot;</span> <span class="nt">/&gt;</span>
-    <span class="nt">&lt;bind</span> <span class="na">queue=</span><span class="s">&quot;test-queue-2&quot;</span> <span class="na">exchange=</span><span class="s">&quot;magento&quot;</span> <span class="na">topic=</span><span class="s">&quot;customer.deleted&quot;</span> <span class="nt">/&gt;</span>
-<span class="nt">&lt;/config&gt;</span></code></pre></figure>
-
-<h4 id="related-topics">Related Topics</h4>
 <ul>
-  <li><a href="/guides/v2.0/config-guide/mq/rabbitmq-overview.html">RabbitMQ Overview</a></li>
-  <li><a href="/guides/v2.0/config-guide/mq/manage-mysql.html">Manage message queues with MySQL</a></li>
-  <li><a href="/guides/v2.0/install-gde/prereq/install-rabbitmq.html">Install RabbitMQ</a></li>
+  <li><a href="/guides/v2.0/config-guide/varnish/config-varnish.html">Varnish cache</a></li>
+  <li>PHP 7</li>
+  <li>(Enterprise only) Use the <a href="/guides/v2.0/config-guide/solr/solr-overview.html">Solr &amp; Solr Search Adapter</a></li>
+  <li>Nginx and <a href="https://php-fpm.org/">PHP-FPM</a></li>
 </ul>
+
+<p>For multi-server deployments or for merchants planning on scaling their business we recommend the following:</p>
+
+<ul>
+  <li><a href="/guides/v2.0/config-guide/redis/redis-session.html">Redis</a> for sessions (from 2.0.6+)</li>
+  <li>A separate Redis instance as your <a href="/guides/v2.0/config-guide/redis/redis-pg-cache.html">default cache</a></li>
+  <li>Do not use this instance for page cache</li>
+</ul>
+
+<h3 id="server---composer-optimization">Server - Composer Optimization</h3>
+
+<p>After running <code>setup:di:compile</code> to generate classes, use composer to update the autoloader.</p>
+
+<p>Run the following <a href="https://getcomposer.org/doc/03-cli.md#dump-autoload">composer command</a> to generate an optimized composer class map that supports faster auto-loading.</p>
+
+<pre><code>composer dump-autoload -o
+</code></pre>
+
+<h3 id="server---php-configuration">Server - PHP Configuration</h3>
+
+<p>We recommend enabling and tuning PHP opcache for maximum performance.
+Edit your <code>opcache.ini</code> file to include the following:</p>
+
+<pre><code>opcache.enable_cli=1
+opcache.memory_consumption=512
+opcache.max_accelerated_files=100000
+opcache.validate_timestamps=0
+opcache.consistency_checks=0
+</code></pre>
+
+<p>When you fine tune the memory allocation for opcache, take into account the size of Magento’s code base and all your extensions.
+Magento’s performance team uses the values in the preceding example for testing because it provides enough space in opcache for the average number of installed extensions.</p>
+
+<p>If you are on a low memory machine and you do not have many extensions or customizations installed, use the following settings to get a similar result:</p>
+
+<pre><code>opcache.memory_consumption=64
+opcache.max_accelerated_files=60000
+</code></pre>
+
+<h3 id="server---redis-configuration--tuning">Server - Redis Configuration &amp; Tuning</h3>
+
+<h4 id="sessions">Sessions</h4>
+
+<p>Consider how sessions are flushed from the cache and your merchants abandoned cart strategy.</p>
+
+<h4 id="caches">Caches</h4>
+
+<p>Estimate a memory size to fit the total number of effective skus, product pages and content pages you expect will be used.</p>
+
+<h3 id="magento---performance-optimizations">Magento - Performance Optimizations</h3>
+
+<p>Enable these performance optimizations to improve the store front responsiveness of your Magento instance.</p>
+
+<p>Go to the Admin in default of developer mode and change the following settings for store front asset optimization:</p>
+
+<h4 id="stores---configuration---advanced---developer">Stores -&gt; Configuration -&gt; Advanced -&gt; Developer</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Settings Group</th>
+      <th>Setting</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Grid Settings</td>
+      <td>Asynchronous indexing</td>
+      <td>Enable</td>
+    </tr>
+    <tr>
+      <td>CSS Settings</td>
+      <td>Minify CSS Files</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>Javascript Settings</td>
+      <td>Minify JavaScript Files</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>Javascript Settings</td>
+      <td>Enable JavaScript Bundling</td>
+      <td>Yes</td>
+    </tr>
+    <tr>
+      <td>Template Settings</td>
+      <td>Minify HTML</td>
+      <td>Yes</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="stores---configuration---sales---sales-emails">Stores -&gt; Configuration -&gt; Sales -&gt; Sales Emails</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Settings Group</th>
+      <th>Setting</th>
+      <th>Value</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>General Settings</td>
+      <td>Asynchronous Sending</td>
+      <td>Enable</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="stores---index-management">Stores -&gt; Index Management</h4>
+
+<p>Set all indexers to “Update on Schedule” mode.</p>
+
+<h3 id="production-mode">Production Mode</h3>
+
+<p>Switching to production mode improves store front responsiveness and prevents long initial page load times that can occur in default mode.</p>
+
+<p>Run the following commands to switch to production mode:</p>
+
+<pre><code>bin/magento setup:static-content:deploy
+bin/magento setup:di:compile
+bin/magento deploy:mode:set -s production
+bin/magento index:reindex
+bin/magento cache:flush
+</code></pre>
+
 
 		</div>
 		<!-- /.content-wrap -->
@@ -1713,14 +1718,14 @@
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/config-guide/mq/config-mq.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/config-guide/prod/prod_perf-optimize.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
   
 
   <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.0/config-guide/mq/config-mq.html" target="_blank">Give us feedback</a>
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.0/config-guide/prod/prod_perf-optimize.html" target="_blank">Give us feedback</a>
   </div>
 
 </div>
