@@ -2,12 +2,12 @@
 layout: default
 group: cloud
 subgroup: 15_reference
-title: How Cloud Uses Composer
-menu_title: How Cloud Uses Composer
-menu_node: 
+title: How Cloud Uses Git
+menu_title: How Cloud Uses Git
+menu_node:
 menu_order: 48
 version: 2.0
-github_link: cloud/reference/cloud-composer.md
+github_link: cloud/reference/git-integration.md
 ---
 ### Git knowledge
 We assume you have a good working knowledge of Git. If not, consult the following resources:
@@ -16,8 +16,7 @@ We assume you have a good working knowledge of Git. If not, consult the followin
 *	[Git reference](https://git-scm.com/docs){:target="_blank"}
 *	[Git tutorial](http://git-scm.com/docs/gittutorial){:target="_blank"}
 
-Before getting started, make sure you have a <a href="https://git-scm.com/downloads" target="_blank">Git client</a> installed on your computer
-to be able to interact with Magento Enterprise Cloud Edition.
+Before getting started, make sure you have a <a href="https://git-scm.com/downloads" target="_blank">Git client</a> installed on your computer to be able to interact with Magento Enterprise Cloud Edition.
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>In addition to Git's requirements for <a href="https://www.kernel.org/pub/software/scm/git/docs/git-check-ref-format.html">valid branch names</a>, Magento Enterprise Cloud Edition adds two additional requirements:</p>

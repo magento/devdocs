@@ -507,7 +507,7 @@ Using the value of <code>css_class</code> in <code><a href="{{site.mage2000url}}
 
 {%highlight php%}
 ...
-$cssClass = $this->getCssClass() ? ' ' . $this->getCssClass() : '';
+$cssClass = $this->hasCssClass() ? ' ' . $this->getCssClass() : '';
 ...
 {%endhighlight %}
 
