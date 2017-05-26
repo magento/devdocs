@@ -108,30 +108,6 @@ relationships:
     database: "mydatabase:mysql"
 {% endhighlight %}
 
-You can use the preceding service in a configuration file of your application as follows:
-
-{% highlight php startinline=true %}
-$relationships = getenv("MAGENTO_CLOUD_RELATIONSHIPS");
-if (!$relationships) {
-  return;
-}
-
-$relationships = json_decode(base64_decode($relationships), TRUE);
-
-foreach ($relationships['database'] as $endpoint) {
-  if (empty($endpoint['query']['is_master'])) {
-    continue;
-  }
-  $container->setParameter('database_driver', 'pdo_' . $endpoint['scheme']);
-  $container->setParameter('database_host', $endpoint['host']);
-  $container->setParameter('database_port', $endpoint['port']);
-  $container->setParameter('database_name', $endpoint['path']);
-  $container->setParameter('database_user', $endpoint['username']);
-  $container->setParameter('database_password', $endpoint['password']);
-  $container->setParameter('database_path', '');
-}
-{% endhighlight %}
-
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 *   If you configure one MySQL user, you cannot use the [`DEFINER`](http://dev.mysql.com/doc/refman/5.6/en/show-grants.html){:target="_blank"} access control mechanism for stored procedures and views.
 *   MySQL errors such as `PDO Exception 'MySQL server has gone away` are usually the result of exhausting your existing disk space. Be sure you have sufficient space allocated to the service in [`.magento/services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html#cloud-yaml-platform-disk).
