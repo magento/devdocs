@@ -29,61 +29,20 @@ Looking for the <a href= "http://devdocs.magento.com/guides/v2.0/cloud/release-n
 
 Magento 2.1.7 contains over 15 security enhancements as well as one significant functional enhancement. Look for the following highlights in this release:
 
-* Support for MasterCard BIN number expansion. MasterCard recently added a new series of Bank Identification Numbers (BIN), and this release of Magento provides support for transactions made with cards using these new BINs. MasterCard describes the issue [here](https://www.mastercard.us/en-us/issuers/get-support/2-series-bin-expansion.html){:target="_blank"}. 
+* **Support for MasterCard BIN number expansion**. MasterCard recently added a new series of Bank Identification Numbers (BIN), and this release of Magento provides support for transactions made with cards using these new BINs. MasterCard describes the issue [here](https://www.mastercard.us/en-us/issuers/get-support/2-series-bin-expansion.html){:target="_blank"}. 
 
 
-* Resolution of multiple high priority and critical security issues. These critical issues include remote code execution for authenticated admin users, access control bypass, and CSRF issues.
-
-
-
-
-## Security enhancements
-
-### Remote code execution
-<!--- 63862 -->* Magento no longer permits Admin users that have access to CMS and widgets to execute code through unserialization. 
-
-<!--- 67448 -->* Magento has strengthened its verification of image files during upload (**Product > Images and Videos > Video Upload**). 
+* **Resolution of multiple high priority and critical security issues**. These critical issues include remote code execution for authenticated Admin users, access control bypass, and cross-site request forgery issues. See [Magento 2.0.14 and 2.1.7 Security Patches](https://magento.com/security/patches/magento-2014-and-217-security-update){:target="_blank"} for a comprehensive discussion of these issues. 
 
 
 
-### Access control bypass
-<!--- 63866 -->* Admin users without proper permissions can no longer delete store backups or system support reports. 
+## Known issues
 
+We’ve identified the following issues with how Magento displays images in this release:
 
-### Cross site request forgery
-<!--- 63864 -->* Customer-authenticated APIs are no longer vulnerable to cross-site request forgeries.
+<!--- 59354 -->* Magento does not correctly display visual swatches on Category and Product pages. 
 
-### Cross-site scripting
-<!--- 63517 -->* Magento no longer permits stored cross-site scripting code on the customer address page of the Magento Admin.
-
-### Zend mail
-<!--- 63632 -->*  We've removed a vulnerability with Zend Mail.
-
-
-
-
-### General
-
-
-<!--- 64049, 63680 -->* We’ve updated several vulnerable moment.js libraries (`query-migrate`, `query`, `jquery-ui-1.9.2.js`)
-
-<!--- 63879 -->* You can no longer instantiate an arbitrary object while adding conditions to an email reminder rule. 
-
-<!--- 63877 -->* The Admin URL in the response body of an HTTP request is no longer visible to unauthenticated users. 
-
-<!--- 63869 -->* Magento now displays a 404 page when an Admin with insufficient privilege tries to request a specific resource. 
-
-
-<!--- 63527 -->* Magento now blocks all requests from an Admin's account as soon as the Admin user is disabled. 
-
-
-<!--- 62475 -->* Magento now displays a 404 page when you try to route a request to `index.phpadmin`. Previously, Magento displayed an Admin page.
-
-<!--- 62313 -->* Magento no longer uses a PHP serialized object in the JSON `report_data` component from the `\Magento\Support\Ui\Component\Listing\Column\ReportActions` response. 
-
-<!--- 61015 -->* Action logs no longer display plain-text passwords. 
-
-<!--- 59097 -->* The Magento Admin no longer leaks user password hashes. 
+<!--- 69346 -->* Image resizing does not work correctly on Checkout. Specifically, some product pictures in the Order Summary overlap.
 
 
 
@@ -112,16 +71,6 @@ Magento 2.1.7 contains over 15 security enhancements as well as one significant 
 <!--- DUPLICATE -->
 
 <!--- 67149 -->
-
-## Known issues
-
-We’ve identified the following issues with how Magento displays images in this release:
-
-<!--- 59354 -->* Magento does not correctly display visual swatches on Category and Product pages. 
-
-<!--- 69346 -->* Image resizing does not work correctly on Checkout. Specifically, some product pictures in the Order Summary overlap.
-
-
 
 ## System requirements
 Our technology stack is built on PHP and MySQL. For more information, see
