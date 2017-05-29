@@ -89,7 +89,7 @@ For details, see [Apply and configure a storefront theme]({{page.baseurl}}fronte
 <div class="flow-column">
 <div class="flow-block" markdown="1">
 #### Client-side compilation
-[Read more about client-side compilation mode]({{page.baseurl}}http://devdocs.magento.com/guides/v2.1/frontend-dev-guide/css-topics/css-preprocess.html#client-side)
+See [CSS preprocessing#client-side compilation mode]({{page.baseurl}}http://devdocs.magento.com/guides/v2.1/frontend-dev-guide/css-topics/css-preprocess.html#client-side)
 </div>
 
 <div class="flow-nav top-bottom"></div>
@@ -97,7 +97,7 @@ For details, see [Apply and configure a storefront theme]({{page.baseurl}}fronte
 <div class="flow-column">
 <div class="flow-block" markdown="1">
 #### Server-side compilation (default)
-[Read more about server-side compilation mode]({{page.baseurl}}frontend-dev-guide/css-topics/css-preprocess.html#server-side) 
+See [CSS preprocessing#server-side compilation mode]({{page.baseurl}}frontend-dev-guide/css-topics/css-preprocess.html#server-side) 
 </div>
 <div class="flow-nav top-bottom"></div>
 </div>
@@ -105,7 +105,7 @@ For details, see [Apply and configure a storefront theme]({{page.baseurl}}fronte
 <div class="flow-column">
 <div class="flow-block" markdown="1">
 #### Custom preprocessor
-[Read more about using custom preprocessor]({{page.baseurl}}frontend-dev-guide/css-topics/custom-preprocess-parent.html)
+See [Using custom CSS preprocessor]({{page.baseurl}}frontend-dev-guide/css-topics/custom-preprocess-parent.html)
 </div>
 <div class="flow-nav top-bottom"></div>
 </div>
@@ -179,6 +179,7 @@ In the Magento root directory, run:
 `php bin/magento deploy:mode:set production`
 
 See [Magento modes]({{page.baseurl}}/config-guide/bootstrap/magento-modes.html#mode-production) for details.
+</dir>
 <div class="flow-arrow"></div>
 
 <div class="flow-block" markdown="1">
