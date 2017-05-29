@@ -137,6 +137,7 @@ See [Using custom CSS preprocessor]({{page.baseurl}}frontend-dev-guide/css-topic
 <div class="flow-block" markdown="1">
 ### Create your styles
 See 
+
 * [Quick start guide to working with styles]({{page.baseurl}}frontend-dev-guide/css-guide/css_quick_guide_overview.html)
 * [Stylesheets in Magento themes]({{page.baseurl}}frontend-dev-guide/css-topics/css-overview.html)
 * symlinks
