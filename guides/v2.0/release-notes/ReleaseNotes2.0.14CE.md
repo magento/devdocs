@@ -26,9 +26,9 @@ We are pleased to present Magento Community Edition 2.0.14. This release include
 
 Magento 2.0.14 contains over 15 security enhancements as well as one significant functional enhancement. Look for the following highlights in this release:
 
-<!--- 68868 -->* Support for MasterCard BIN number expansion. MasterCard recently added a new series of Bank Identification Numbers (BIN), and this release of Magento provides support for transactions made with cards using these new BINs. MasterCard describes the issue [here](https://www.mastercard.us/en-us/issuers/get-support/2-series-bin-expansion.html){:target="_blank"}.
+<!--- 68868 -->* **Support for MasterCard BIN number expansion**. MasterCard recently added a new series of Bank Identification Numbers (BIN), and this release of Magento provides support for transactions made with cards using these new BINs. MasterCard describes the issue [here](https://www.mastercard.us/en-us/issuers/get-support/2-series-bin-expansion.html){:target="_blank"}.
 
-* Resolution of multiple high priority and critical security issues. These critical issues include remote code execution for authenticated admin users, access control bypass, and CSRF issues. See [Magento 2.0.14 and 2.1.7 Security Patches](https://magento.com/security/patches/magento-2014-and-217-security-update){:target="_blank"} for a comprehensive discussion of these issues. 
+* **Resolution of multiple high priority and critical security issues**. These critical issues include remote code execution for authenticated admin users, access control bypass, and CSRF issues. See [Magento 2.0.14 and 2.1.7 Security Patches](https://magento.com/security/patches/magento-2014-and-217-security-update){:target="_blank"} for a comprehensive discussion of these issues. 
 
 
 
