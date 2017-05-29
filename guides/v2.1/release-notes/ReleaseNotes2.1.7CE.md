@@ -34,15 +34,7 @@ Magento 2.1.7 contains over 15 security enhancements as well as one significant 
 
 * **Resolution of multiple high priority and critical security issues**. These critical issues include remote code execution for authenticated Admin users, access control bypass, and cross-site request forgery issues. See [Magento 2.0.14 and 2.1.7 Security Patches](https://magento.com/security/patches/magento-2014-and-217-security-update){:target="_blank"} for a comprehensive discussion of these issues. 
 
-
-
-## Known issues
-
-We’ve identified the following issues with how Magento displays images in this release:
-
-<!--- 59354 -->* Magento does not correctly display visual swatches on Category and Product pages. 
-
-<!--- 69346 -->* Image resizing does not work correctly on Checkout. Specifically, some product pictures in the Order Summary overlap.
+* **Reversion of the changes to image resizing that we introduced in 2.1.6**. Unfortunately, certain image resizing changes introduced unanticipated problems. We have reverted these changes in this release, and will provide improvements to image resizing in a future product update. 
 
 
 
