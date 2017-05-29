@@ -76,7 +76,7 @@ For details, see [Apply and configure a storefront theme]({{page.baseurl}}fronte
 <div class="flow-column">
 <div class="flow-block" markdown="1">
 #### Grunt (recommended)
-[Read more about how to install and use Grunt for styles compilation and debugging]({{page.baseurl}}frontend-dev-guide/css-topics/css_debug.html)
+See [Compile LESS using Grunt]({{page.baseurl}}frontend-dev-guide/css-topics/css_debug.html) for details about how to install and use Grunt for styles compilation and debugging.
 <p class="q">do we need to add steps for Grunt as separate block? (like Add theme files to grunt)</p>
 </div>
 <div class="flow-arrow"></div>
@@ -89,7 +89,7 @@ For details, see [Apply and configure a storefront theme]({{page.baseurl}}fronte
 <div class="flow-column">
 <div class="flow-block" markdown="1">
 #### Client-side compilation
-See [CSS preprocessing#client-side compilation mode]({{page.baseurl}}http://devdocs.magento.com/guides/v2.1/frontend-dev-guide/css-topics/css-preprocess.html#client-side)
+See [CSS preprocessing#client-side compilation mode]({{page.baseurl}}frontend-dev-guide/css-topics/css-preprocess.html#client-side)
 </div>
 
 <div class="flow-nav top-bottom"></div>
