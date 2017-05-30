@@ -55,18 +55,14 @@ Magento 2.1.7 contains over 15 security enhancements as well as one significant 
     <td>2.1.6 without image resizing patch</td>
     <td>2.1.7</td>
     <td></td>
-    <td></td>
-
-    
   </tr>
+
   <tr>
     <td>2.1.6 with image resizing patch</td>
     <td>2.1.7</td>
     <td>Delete the image resizing patch before upgrading to 2.1.7.</td>
       </tr>
 
-
-      </tr>
 
 </table>
 
