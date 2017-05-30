@@ -3,8 +3,8 @@ layout: default
 group: fedg
 subgroup: A_Themes
 title: Theme development workflow
-menu_title: Theme workflow
-menu_order: 3
+menu_title: Theme development workflow
+menu_order: 10
 version: 2.2
 github_link: frontend-dev-guide/themes/theme-workflow.md
 ---
@@ -25,10 +25,10 @@ In the Magento root directory, run:
 
 `php bin/magento deploy:mode:set developer`
 
-{%collapsible Links to details%} 
+See
+ 
 * [About Magento modes]({{page.baseurl}}/config-guide/bootstrap/magento-modes.html)
 * [Get started with command-line configuration]({{page.baseurl}}config-guide/cli/config-cli-subcommands.html)
-{%endcollapsible%}
 
 <div class="bs-callout bs-callout-tip" markdown="1">
 To check the current mode of your Magento instance, in the root directory, run:
@@ -76,14 +76,13 @@ For details, see [Apply and configure a storefront theme]({{page.baseurl}}fronte
 <div class="flow-column">
 <div class="flow-block" markdown="1">
 #### Grunt (recommended)
-See [Compile LESS using Grunt]({{page.baseurl}}frontend-dev-guide/css-topics/css_debug.html) for details about how to install and use Grunt for styles compilation and debugging.
-<p class="q">do we need to add steps for Grunt as separate block? (like Add theme files to grunt)</p>
-</div>
-<div class="flow-arrow"></div>
-<div class="flow-block" markdown="1">
-#### Add theme files to grunt
-</div>
 
+* [Setup Grunt]({{page.baseurl}}frontend-dev-guide/tools/using_grunt.html)
+* [Add the theme to Grunt configuration]({{page.baseurl}}frontend-dev-guide/css-topics/css_debug.html#add_theme)
+* [Track changes]({{page.baseurl}}{{page.baseurl}}frontend-dev-guide/css-topics/css_debug.html#grunt_commands) 
+
+</div>
+<div class="flow-nav top-bottom"></div>
 </div>
 
 <div class="flow-column">
@@ -139,10 +138,7 @@ See [Using custom CSS preprocessor]({{page.baseurl}}frontend-dev-guide/css-topic
 See 
 
 * [Quick start guide to working with styles]({{page.baseurl}}frontend-dev-guide/css-guide/css_quick_guide_overview.html)
-* [Stylesheets in Magento themes]({{page.baseurl}}frontend-dev-guide/css-topics/css-overview.html)
-* symlinks
-
-<p class="q">do we need to make two options "create styles" and "override parent styles"?</p>
+* [All about styles in Magento themes]({{page.baseurl}}frontend-dev-guide/css-topics/css-overview.html)
 </div>
 <div class="flow-arrow"></div>
 
@@ -158,17 +154,19 @@ See:
 <div class="flow-arrow"></div>
 
 <div class="flow-block" markdown="1">
-### Cache
-Clean cache files
+### Clean cache and/or static files (if necessary)
 
-See [Cache overview for frontend developers]({{page.baseurl}}frontend-dev-guide/cache_for_frontdevs.html) for details.
+* Certain changes in styles require cleaning previously pre-processed and published static view files. Run `grunt clean <theme>` or manually clear the `pub/static` and `var/view_preprocessed` directories. Do this after any changes in server-side compilation mode. For the client-side or Grunt compilation, see [Сlean static files]({{page.baseurl}}frontend-dev-guide/css-topics/css-preprocess.html#css_exception) for details.   
+
+* Changes in layout and templates requires cleaning cache. See [Clean cache]({{page.baseurl}}frontend-dev-guide/cache_for_frontdevs.md#clean_cache) for details.
+	
 </div>
 <div class="flow-arrow"></div>
 
 <div class="flow-block" markdown="1">
-### Make sure that the same styles are delivered to production
+### Make sure that the same styles are delivered to production (optional)
 
-When you finish developing and your styles are ready to go to production, you can configure your grunt/gulp less compiler to minify compiled code, disable source maps generation and then copy the compiled files to `/app/design/frontend/Vendor/dark/web/css` folder next to “root” source files. So, they will be used in static content deploy instead of running backend compilation (and static content deployment process will run faster).
+When you finish developing and your styles are ready to go to production, you can configure your Grunt/Gulp less compiler to minify compiled code, disable source maps generation and then copy the compiled files to `/app/design/frontend/<Vendor>/<theme>/web/css` directory next to source files. They will be used in static content deploy instead of running backend compilation (and static content deployment process will run faster).
 </div>
 <div class="flow-arrow"></div>
 
@@ -180,14 +178,15 @@ In the Magento root directory, run:
 `php bin/magento deploy:mode:set production`
 
 See [Magento modes]({{page.baseurl}}/config-guide/bootstrap/magento-modes.html#mode-production) for details.
-</dir>
+</div>
 <div class="flow-arrow"></div>
 
 <div class="flow-block" markdown="1">
 ### Deploy static content
-The static view files deployment command enables you to write static files to the Magento file system when the Magento software is set for production mode.
-<p class="q">Does it mean ready for production mode or set to production mode?</p>
-</div>
+
+To publish your static files to the `pub/static` directory when your Magento instance is set to production mode, [run the static content deployment tool]({{page.baseurl}}config-guide/cli/config-cli-subcommands-static-view.html).
+
+
 
 
 

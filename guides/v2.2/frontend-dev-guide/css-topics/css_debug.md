@@ -18,7 +18,7 @@ The topic describes how to install, configure and use [Grunt JavaScript task run
 - Install and configure Grunt as described in [Using Grunt for Magento tasks]({{page.baseurl}}frontend-dev-guide/tools/using_grunt.html)
 
 
-## Adding themes to Grunt configuration
+## Adding themes to Grunt configuration {#add_theme}
 
 To be able to perform `.less` files compilation, you need to add your them to Grunt configuration. To do this, in the default `dev/tools/grunt/configs/themes.js` or in the [custom configuration file]({{page.baseurl}}frontend-dev-guide/tools/using_grunt.html#grunt_config), add your theme to `module.exports` like following:
 
