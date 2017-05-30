@@ -20,6 +20,7 @@ github_link: config-guide/varnish/config-varnish.md
 	*	<a href="{{page.baseurl}}config-guide/varnish/config-varnish-install.html">Install Varnish</a>
 	*	<a href="{{page.baseurl}}config-guide/varnish/config-varnish-configure.html">Configure Varnish and your web server</a>
 	*	<a href="{{page.baseurl}}config-guide/varnish/config-varnish-magento.html">Configure Magento to use Varnish</a>
+	*	<a href="{{page.baseurl}}config-guide/varnish/use-varnish-cache.html">Configure Magento to use multiple Varnish instances</a>
 	*	<a href="{{page.baseurl}}config-guide/varnish/config-varnish-final.html">Final verification</a>
 *	Use Varnish:
 	*	<a href="{{page.baseurl}}config-guide/varnish/use-varnish-cache.html">How Magento cache clearing works with Varnish</a>
