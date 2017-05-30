@@ -17,7 +17,7 @@ This section provides our best information about how to speed up and simplify yo
 
 ## Test your migration activities
 
-We recommend to test as much migration steps as possible; ideally -- make a test run of the entire migration process.
+We recommend to test as much migration steps as possible; ideally --- make a test run of the entire migration process.
 
 Surely, you can perform migration without any testing. The Data Migration Tool works fine out-of-the-box, and if you follow instructions in this Guide, migration should go smoothly.
 
@@ -25,13 +25,13 @@ Although, testing helps to find out areas where manual interference is required,
 
 ### Example: migrate incremental changes after applying customizations
 
-Let's suppose you have migrated all your data from Magento 1 to Magento 2.
+Let's suppose you have migrated all of your data from Magento 1 to Magento 2.
 
-Then, you have applied the customizations you've had in your Magento 1 instance (examples?). Now, you're running the Data Migration Tool in the Delta mode to transfer incremental changes.
+Then, you have applied the customizations you've had in your Magento 1 instance. Now, you have to run the Data Migration Tool in the Delta mode to transfer incremental changes.
 
-This is where you may encounter problems: your customizations may break the database mappings that the Data Migration Tool uses to transfer data.
+This is where problems may occur: your customizations may break the database mappings used by the Data Migration Tool.
 
-In this case, you must to provide mappings manually, and it will be safer if you test those mappings before making changes on production environment.
+In this case, you must provide mappings manually, and it will be safer if you test those mappings before making changes on production environment.
 
 ## Best practices and recommendations
 
