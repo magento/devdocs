@@ -34,7 +34,41 @@ Magento 2.1.7 contains over 15 security enhancements as well as one significant 
 
 * **Resolution of multiple high priority and critical security issues**. These critical issues include remote code execution for authenticated Admin users, access control bypass, and cross-site request forgery issues. See [Magento 2.0.14 and 2.1.7 Security Patches](https://magento.com/security/patches/magento-2014-and-217-security-update){:target="_blank"} for a comprehensive discussion of these issues. 
 
-* **Reversion of the changes to image resizing that we introduced in 2.1.6**. Unfortunately, certain image resizing changes introduced unanticipated problems. We have reverted these changes in this release, and will provide improvements to image resizing in a future product update. 
+* **Reversion of the changes to image resizing that we introduced in 2.1.6**. Certain image resizing changes introduced unanticipated problems. We have reverted these changes in this release, and will provide improvements to image resizing in a future product update. 
+
+### Guidelines for upgrading from 2.1.6 to 2.1.7
+<table>
+  <tr>
+    <th>Currently installed Magento version</th>
+    <th>Upgrade to ...</th>
+        <th>Action</th>
+
+  </tr>
+
+  <tr>
+    <td>2.1.5</td>
+    <td>2.1.7</td>
+     <td>none needed</td>
+    
+  </tr>
+  <tr>
+    <td>2.1.6 without image resizing patch</td>
+    <td>2.1.7</td>
+    <td></td>
+    <td></td>
+
+    
+  </tr>
+  <tr>
+    <td>2.1.6 with image resizing patch</td>
+    <td>2.1.7</td>
+    <td>Delete the image resizing patch before upgrading to 2.1.7.</td>
+      </tr>
+
+
+      </tr>
+
+</table>
 
 
 
