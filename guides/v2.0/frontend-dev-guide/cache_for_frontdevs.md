@@ -28,19 +28,17 @@ The full list of cache types can be found in the [Overview of cache types]({{pag
 
 ## Clean cache {#clean_cache}
 
-To view the status of the cache, run:
-
-	`php bin/magento cache:status`
-
 To clean cache, run
 
 	magento cache:clean <type> ... <type>
 
+To view the status of the cache, run:
+
+	`php bin/magento cache:status`
+
 For more details about working with cache, see [Manage the cache]({{page.baseurl}}config-guide/cli/config-cli-subcommands-cache.html)
 
 ## Clean static files {#clean_static}
-In theme development process, developers rarely deal with the cache types. Mostly we need to clear static files, that are generated to `pub/static` and `var` directories. To clean them, run
 
-`grunt clean`
+Besides the cached files, inn theme development process developers also deal with other saved files - static view files that are preprocessed and published to the `var/view_preprocessed` and `pub/static` directories correspondingly. In most cases when working on a custom theme, for example, if you are only working on styles, you do not need to clean cache, but need to clean the previously preprocessed and published static view files. To clean them, run  `grunt clean <theme>` or manually clear the `pub/static` and `var/view_preprocessed` directories.
 
-<p class="q">what if I do not use grunt?</p>
