@@ -29,8 +29,9 @@ You can configure the Magento application in any of the following ways:
 
 *	Magento in production
 
-	*	[Deployment steps]({{page.baseurl}}config-guide/prod/prod_deploy.html)
+	*	[Split deployment]({{page.baseurl}}config-guide/prod/prod_deploy-over.html)
 	*	[Magento ownership and permissions in development and production]({{page.baseurl}}config-guide/prod/prod_file-sys-perms.html)
+	*	[Single machine deployment]({{ page.baseurl }}config-guide/prod/single-machine-deployment.html)
 
 *	Session storage
 	*	[memcache]({{page.baseurl}}config-guide/memcache/memcache.html)

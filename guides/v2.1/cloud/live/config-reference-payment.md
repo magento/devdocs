@@ -1,7 +1,7 @@
 ---
 layout: default
-group: 
-subgroup: Live
+group: cloud
+subgroup: 40_live
 title: Payment configuration paths reference
 menu_title: Payment configuration paths reference
 menu_order: 82

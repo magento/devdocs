@@ -1,21 +1,28 @@
 <div markdown="1">
 
-Magento's deployment configuration consists of the module and environmental configuration for your installation. Magento's deployment configuration is divided between:
+Magento's deployment configuration consists of the shared and system-specific configuration for your installation. Magento's deployment configuration is divided between:
 
-*	`<Magento base dir>/app/etc/config.php`, which contains the list of installed modules, themes, and language packages
-*	`<Magento base dir>/app/etc/env.php`, which contains environment settings, such as:
+*	`<Magento base dir>/app/etc/config.php`, referred to as the _shared_ configuration file, because you can check it in to source control and use it in your development, staging, and production systems
+
+	`config.php` contains the list of installed modules, themes, and language packages; and shared configuration settings
+*	`<Magento base dir>/app/etc/env.php`, which contains system-specific settings, such as:
 
 	*	Database credentials and connection settings
+	*	i18n TBD
 	*	Cache storage settings
+	*	Session storage settings
+	*	[x-frame-options]({{ page.baseurl }}config-guide/secy/secy-xframe.html) setting
 	*	Enabled cache types
 	*	Your encryption key
 	*	Web routing parameters (base URLs, Magento Admin URI)
-	*	File system paths
+	*	[Magento mode]({{ page.baseurl }}config-guide/bootstrap/magento-modes.html)
+	*	Magento installation date
+	*	System-specific and sensitive configuration settings TBD
 
 Together, `config.php` and `env.php` are referred to as Magento's _deployment configuration_ because they are created during installation and are required to start Magento.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>The Magento 2 deployment configuration replaces <code>local.xml</code> in Magento 1.x.</p>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+The Magento 2 deployment configuration replaces `local.xml` in Magento 1.x.</p>
 </div>
 
-Unlike other <a href="{{page.baseurl}}config-guide/config/config-files.html">module configuration files</a>, Magento's deployment configuration is loaded into memory when Magento initializes, is not merged with any other files, and cannot be extended. (`config.php` and `env.php` are merged with each other, however.)
+Unlike other [module configuration files]({{page.baseurl}}config-guide/config/config-files.html), Magento's deployment configuration is loaded into memory when Magento initializes, is not merged with any other files, and cannot be extended. (`config.php` and `env.php` are merged with each other, however.)

@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: 999_prod
+subgroup: 998_prod
 title: Deploy Magento to production
 menu_title: Deploy Magento to production
 menu_node: parent
@@ -20,3 +20,36 @@ Current topics include:
 *	[Magento ownership and permissions in development and production]({{page.baseurl}}config-guide/prod/prod_file-sys-perms.html)
 * [Magento performance optimization for production deployments]({{page.baseurl}}config-guide/prod/prod_perf-optimize.html)
 
+These topics discuss the process of deploying Magento to a production site for Magento version 2.2 and later. We recommend this deployment method for anyone with a large site who does not want downtime during deployment.
+
+If you deploy Magento on a single machine and can tolerate some downtime during deployment, see [Single-machine deployment]({{ page.baseurl }}config-guide/prod/single-machine-deployment.html) instead.
+
+The following topics are organized to help you get started quickly. If you're new to Magento or not familiar with the technical details, start by reading the overviews.
+
+*	Overview of deployment
+
+	*	[Deployment general overview]({{ page.baseurl }}config-guide/prod/prod_deploy-over.html)
+	*	[Deployment technical overview (implementation details)]({{ page.baseurl }}config-guide/prod/prod_deploy-over-tech.html)
+
+*	Set up your split deployment systems: development, build, and production 
+
+	*	[Set up your development systems]({{ page.baseurl }}config-guide/prod/prod_deploy-setup-dev.html)
+	*	[Set up your build system]({{ page.baseurl }}config-guide/prod/prod_deploy-setup-build.html)
+	*	[Set up your production system]({{ page.baseurl }}config-guide/prod/prod_deploy-setup-prod.html)
+
+*	Step-by-step examples of using split deployment
+
+	*	[Simple example&mdash;manage the shared configuration]({{ page.baseurl }}config-guide/prod/prod_deploy-shared.html)
+
+*	[PHP developer tasks for split deployment]({{ page.baseurl }}config-guide/prod/prod_deploy-prog.html)
+
+*	Reference information
+
+	*	[Sensitive and system-specific configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-sens.html)
+	*	[Payment configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-payment.html)
+	*	[Other configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-most.html)
+	*	[Magento Enteprise B2B Extension configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-b2b.html)
+	*	[Use environment variables to override configuration settings]({{ page.baseurl }}config-guide/prod/config-reference-var-name.html)
+	*	[.gitignore reference]({{ page.baseurl }}config-guide/prod/config-reference-gitignore.html)
+	*	[config.php reference]({{ page.baseurl }}config-guide/prod/config-reference-configphp.html)
+	*	[env.php reference]({{ page.baseurl }}config-guide/prod/config-reference-envphp.html)

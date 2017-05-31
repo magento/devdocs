@@ -1,11 +1,11 @@
 ---
 layout: default
 group: config-guide
-subgroup: 999_prod
+subgroup: 998_prod
 title: Magento ownership and permissions in development and production
 menu_title: Magento ownership and permissions in development and production
 menu_node:
-menu_order: 2
+menu_order: 500
 version: 2.2
 github_link: config-guide/prod/prod_file-sys-perms.md
 ---
