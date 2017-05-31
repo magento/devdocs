@@ -9,20 +9,8 @@ menu_node:
 version: 2.2
 github_link: config-guide/varnish/config-varnish-magento.md
 ---
-**NOTE!** Static files should not be cached by default.
-If you want to change this you can edit related section "Static files caching" in VCL following by instructions wich you find there:
+## Configure Magento to use Varnish {#config-varnish-magento}
 
-	# Static files should not be cached by default
-        return (pass);
-
-	# But if you use a few locales and don't use CDN you can enable caching static files by commenting previous line (#return (pass);) and uncommenting next 3 lines
-	#unset req.http.Https;
-        #unset req.http./* {{ ssl_offloaded_header }} */;
-        #unset req.http.Cookie;
-	
-You need to make this changes before you start configure Magento to use Varnish.
-
-<h2 id="config-varnish-magento">Configure Magento to use Varnish</h2>
 To configure Magento to use Varnish:
 
 1.	Log in to the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} as an administrator.
@@ -88,6 +76,22 @@ To configure Magento to use Varnish:
 		service varnish restart
 		service httpd restart
 
-#### Next steps
+## Cache Static Files
+
+Static files should not be cached by default, but if you want to cache them, you can edit the section `Static files caching` in the VCL to have the following content:
+
+```
+# Static files should not be cached by default
+  return (pass);
+
+# But if you use a few locales and don't use CDN you can enable caching static files by commenting previous line (#return (pass);) and uncommenting next 3 lines
+  #unset req.http.Https;
+  #unset req.http./* {{ ssl_offloaded_header }} */;
+  #unset req.http.Cookie;
+```
+
+You need to make these changes before you configure Magento to use Varnish.
+
+## Next steps
 <p><a href="{{page.baseurl}}config-guide/varnish/config-varnish-advance.html">Advanced Varnish configuration</a> (Optional)</p>
 <p><a href="{{page.baseurl}}config-guide/varnish/config-varnish-final.html">Final verification</a></p>

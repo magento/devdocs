@@ -12,12 +12,12 @@ redirect_from:
   - guides/v2.0/config-guide/varnish/config-use-multiple-varnish.html
   - guides/v2.1/config-guide/varnish/config-use-multiple-varnish.html
 ---
-Magento supports multiple Varnish instances from box.
-
+Magento supports multiple Varnish instances out of the box.
 
 This topic shows the basics of configuring multiple Varnish instances with Magento.
 
-<h2 id="configure-multiple-varnish-magento-purge">Configure Magento to purge multiple Varnish instances</h2>
+## Configuration to purge multiple Varnish instances {#configure-multiple-varnish-magento-purge}
+
 Magento purges Varnish hosts after you configure Varnish hosts using the <a href="{{page.baseurl}}install-gde/install/cli/install-cli-subcommands-deployment.html">`magento setup:config:set`</a> command. 
 
 You should use the `--http-cache-hosts` parameter to specify a comma-separated list of Varnish hosts and listen ports. (Do not separate hosts with a space character.)
