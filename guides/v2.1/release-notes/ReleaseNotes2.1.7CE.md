@@ -64,14 +64,15 @@ Magento 2.1.7 contains over 15 security enhancements as well as one significant 
     <td>2.1.6 with image resizing hot fix
     (CE-MAGETWO-67805.patch and EE-MAGETWO-67805.patch)</td>
     <td>2.1.7</td>
-    <td><ol>
-    <li>Delete the image resizing patch before upgrading to 2.1.7.
-    <li>After upgrading, run the <code>bin/magento catalog:images:resize</code> command. 
+    <td>
+    <ol>
+    <li>Delete the image resizing patch before upgrading to 2.1.7. </li>
+    <li>After upgrading, run the <code>bin/magento catalog:images:resize</code> command. </li>
      </ol>
 
     </td>
-      </tr>
 
+    </tr>
 
 </table>
 
