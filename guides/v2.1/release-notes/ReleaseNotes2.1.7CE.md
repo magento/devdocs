@@ -37,6 +37,8 @@ Magento 2.1.7 contains over 15 security enhancements as well as one significant 
 * **Reversion of the changes to image resizing that we introduced in 2.1.6**. Certain image resizing changes introduced unanticipated problems. We have reverted these changes in this release, and will provide improvements to image resizing in a future product update. 
 
 ### Guidelines for upgrading from 2.1.6 to 2.1.7
+
+
 <table>
   <tr>
     <th>Currently installed Magento version</th>
@@ -52,20 +54,24 @@ Magento 2.1.7 contains over 15 security enhancements as well as one significant 
     
   </tr>
   <tr>
-    <td>2.1.6 without image resizing patch</td>
+    <td>2.1.6 without image resizing hot fix 
+    (CE-MAGETWO-67805.patch  and EE-MAGETWO-67805.patch)</td>
     <td>2.1.7</td>
     <td></td>
   </tr>
 
   <tr>
-    <td>2.1.6 with image resizing patch</td>
+    <td>2.1.6 with image resizing hot fix
+    (CE-MAGETWO-67805.patch and EE-MAGETWO-67805.patch)</td>
     <td>2.1.7</td>
-    <td>Delete the image resizing patch before upgrading to 2.1.7.</td>
+    <td>1) Delete the image resizing patch before upgrading to 2.1.7.
+    2)After upgrading, run the `bin/magento catalog:images:resize` command. </td>
       </tr>
 
 
 </table>
 
+See 
 
 
 <!--- INTERNAL ONLY -->
