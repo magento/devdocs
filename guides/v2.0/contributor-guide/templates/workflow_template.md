@@ -31,6 +31,7 @@ Needs nav label
 <div class="flow-block" markdown="1">
 
 #### [1A. Onboarding](http://devdocs.magento.com/1)
+
 1. Install CLI
 2. Enagle SSH
 3. Auth Keys??
@@ -118,21 +119,22 @@ Your live store
 <div class="flow-row centered">
 <div class="flow-column">
 
-
 <div class="flow-block" markdown="1">
+
 ### 1. Setup
-{% collapsible Show More %}
+
 **Goal:  Prepare for development**
 
 In local environment:
 
-1.  Install CLI.
-2.  Enable SSH.
-3.  Add auth keys.
-4.  Install Git, PHP, MySQL, Composer.
-5.  Create Magento Enterprise Cloud Edition  project from template.
-{% endcollapsible %}
+1. Install CLI.
+2. Enable SSH.
+3. Add auth keys.
+4. Install Git, PHP, MySQL, Composer.
+5. Create Magento Enterprise Cloud Edition project from template.
+
 </div>
+
 <div class="flow-arrow">
   Check out project, start development
 </div>
@@ -140,7 +142,7 @@ In local environment:
 
 <div class="flow-block flow-block-layers" markdown="1">
 ### 2. Local developers’ environments
-{% collapsible Show More %}
+
 **Goal:  Develop code, extensions and test**
 
 1. Themes and extensions.
@@ -148,22 +150,21 @@ In local environment:
   - Develop custom code.
 2. Initial testing.<br />
   **Recommended:** Test in both production  and developer modes.
-{% endcollapsible %}
+
 </div>
 
-<div class="flow-arrow flow-arrow-back">
-</div>
+<div class="flow-arrow flow-arrow-back"></div>
 
 <div class="flow-arrow">
-Deploy changes to integration <br />
+Deploy<sup><a href="#deploy">1</a></sup> changes to integration <br />
 - OR -<br />
  Pull code to local environment
 </div>
 
 
 <div class="flow-block" markdown="1">
-### 3. Integration   testing (cloud)
-{% collapsible Show More %}
+### 3. Integration<sup><a href="#integration">2</a></sup> testing (cloud)
+
 **Goal: Configure (M2); Functional Test**
 
 1. Test the following items:
@@ -171,17 +172,17 @@ Deploy changes to integration <br />
   - Payment gateways.
 2. Back up database and file system (optional).
 3. Test upgrades of Magento 2.
-{% endcollapsible %}
+
 </div>
 
 <div class="flow-arrow">
-  Deploy all changes to staging
+Deploy<sup><a href="#deploy">1</a></sup> all changes to staging
 </div>
 
 
 <div class="flow-block" markdown="1">
 ### 4. Staging testing (cloud)
-{% collapsible Show More %}
+
 **Goal: Final Test; Performance Test**
 
 1.  Test the following items, using real product  and catalog data:
@@ -190,17 +191,17 @@ Deploy changes to integration <br />
   - Payment gateways.
 2. Complete final testing, User Acceptance  Testing (UAT) before production.<br />
   **Recommended for performance testing:** Blackfire.io profiling; New Relic Application  Performance Monitoring
-{% endcollapsible %}
+
 </div>
 
 
 <div class="flow-arrow">
-  Deploy all changes to production
+Deploy<sup><a href="#deploy">1</a></sup> all changes to production
 </div>
 
 <div class="flow-block" markdown="1">
 ### 5. Production (cloud) — your live store
-{% collapsible Show More %}
+
 **Goal: Regular maintenance:**
 
 - Use New Relic Application Performance  Monitoring.
@@ -208,9 +209,33 @@ Deploy changes to integration <br />
 - Review error logs.
 
 System backup:  Automatically, every 6 hours
-{% endcollapsible %}
+
 </div>
 
 
 </div>
 </div>
+
+<hr />
+
+### Developer footnotes
+
+1. Install / Update themes and extensions
+... need content
+2. Deploy checklist
+— Move code (?)
+— Verify DB changes
+— Verify Config changes
+— Feature branch info ???
+... include any contextual notes for deployment in each environment.
+3. Integration testing
+Explain benefit of integration testing, including:
+— It’s a best practice when multiple developers are on a project.
+— It can be a sandbox to test extensions, apart from a full build in staging.
+4. Test custom themes / extensions
+For developers making their own extensions or using 3rd-party extensions, sometimes extensions will cause errors in production.
+To prevent errors, in your local environment test your site in Production Mode.
+5. Test upgrades to M2
+... need content.
+6 .Performance testing
+... need content.

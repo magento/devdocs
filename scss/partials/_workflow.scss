@@ -14,7 +14,7 @@ $flow-arrow-border: 2px dashed $flow-arrow-color;
 
 .flow-row {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   position: relative;
 
   &.centered {
