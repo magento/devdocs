@@ -72,8 +72,7 @@ Needs nav label
 </div>
 
 
-<div class="flow-row centered">
-<div class="flow-column">
+
 
 <div class="flow-arrow">
 </div>
@@ -113,8 +112,6 @@ Your live store
 </div>
 
 
-</div>
-</div>
 
 
 ## Cloud Workflow

@@ -12,13 +12,15 @@ github_link: frontend-dev-guide/themes/theme-workflow.md
 
 <div class="flow-intro" markdown="1">
 Continue From:<br />
-**Install Magento**
+<a href="">**Install Magento**</a>
+
 </div>
 
 <div class="flow-arrow"> </div>
 
 <div class="flow-block" markdown="1">
 ### Enable development mode
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 </div>
 
 <div class="flow-arrow"> </div>
@@ -58,6 +60,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 <div class="flow-column">
 <div class="flow-block" markdown="1">
 #### Client-side compilation
+Excepteur sint occaecat cupidatat non proident.
 </div>
 <div class="flow-nav top-bottom"></div>
 </div>
@@ -65,6 +68,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 <div class="flow-column">
 <div class="flow-block" markdown="1">
 #### Server-side compilation
+Lorem ipsum dolor sit amet
 </div>
 <div class="flow-nav top-bottom"></div>
 </div>
@@ -72,6 +76,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 <div class="flow-column">
 <div class="flow-block" markdown="1">
 #### Other methods
+Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
 </div>
 <div class="flow-nav top-bottom"></div>
 </div>
@@ -102,12 +107,14 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 
 <div class="flow-block" markdown="1">
 ### Create your styles
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
 </div>
 <div class="flow-arrow"></div>
 
 
 <div class="flow-block" markdown="1">
 ### Debug
+Ullamco laboris nisi ut aliquip ex ea commodo consequat.
 </div>
 <div class="flow-arrow"></div>
 
@@ -118,4 +125,5 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 
 <div class="flow-block" markdown="1">
 ### Deploy static content
+Ut enim ad minim veniam, quis nostrud exercitation
 </div>

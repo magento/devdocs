@@ -29,9 +29,16 @@ $flow-arrow-border: 2px dashed $flow-arrow-color;
 
 .flow-column {
   flex: 1;
-  padding-left: $flow-column-gutter/2;
-  padding-right: $flow-column-gutter/2;
   position: relative;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  .flow-block {
+    margin-left: $flow-column-gutter/2;
+    margin-right: $flow-column-gutter/2;
+    display: inline-block;
+  }
 
   &.push {
     margin-left: 50%;
@@ -52,6 +59,7 @@ $flow-arrow-border: 2px dashed $flow-arrow-color;
   margin-left: auto;
   margin-right: auto;
   margin-bottom:.5em;
+  text-align: left;
 }
 
 .flow-block {
@@ -66,6 +74,7 @@ $flow-arrow-border: 2px dashed $flow-arrow-color;
   min-height: 6em;
   margin-bottom: .5em;
   z-index: 1;
+  text-align: left;
 
   .collapsible-title {
     font-weight: normal;
