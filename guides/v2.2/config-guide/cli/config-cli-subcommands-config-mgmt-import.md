@@ -14,16 +14,21 @@ github_link: config-guide/cli/config-cli-subcommands-config-mgmt-import.md
 
 {::options syntax_highlighter="rouge" /}
 
-When you set up a production system in the Magento 2.2 [split deployment model]({{ page.baseurl }}config-guide/prod/prod_deploy-over.html), you must _import_ configuration settings from `config.php` and `env.php` into the database.
+When you set up a production system using the Magento 2.2 [split deployment model]({{ page.baseurl }}config-guide/prod/prod_deploy-over.html), you must _import_ configuration settings from `config.php` and `env.php` into the database.
 These settings include configuration paths and values, websites, stores, store views, and themes.
 
 After importing websites, stores, store views, and themes, you can create product attributes and apply them to websites, stores, and store views, on the production system.
+
+<div class="bs-callout bs-callout-info" markdown="1">
+The import command does not process configuration stored in environment variables.
+</div>
 
 ## First steps {#first}
 
 {% include install/first-steps-cli.html %}
 
 ## Import configuration data
+
 On your production system, run the following command to import data from the configuration files (`config.php` and `env.php`) to the database:
 
     bin/magento app:config:import [-n, --no-interaction]
@@ -51,15 +56,17 @@ If deployment configuration files do not contain any data to import, a message s
     Nothing to import
 
 ## What we import
+
 The following sections discuss in detail what data we import.
 
 ### System configuration
-_System_ configuration values cannot be imported directly into Magento because they require some pre- and post-processing actions.
-(These values are in the `system` array in `config.php` or `env.php`.)
+
+Magento directly uses values in the `system` array in the `config.php` or `env.php` files instead of importing them into the database because they require some pre- and post-processing actions.
 
 For example, the value of the configuration path `web/secure/base_url` must be validated with {% glossarytooltip 74d6d228-34bd-4475-a6f8-0c0f4d6d0d61 %}backend{% endglossarytooltip %} models.
 
 #### Backend models
+
 Backend models are the mechanism for processing changes in system configuration.
 You define backend modules in `<module_name>/adminhtml/system.xml`.
 
