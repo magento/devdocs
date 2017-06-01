@@ -23,7 +23,6 @@
 <div class="toc"> <h4 class="toc">Contents</h4>
 <p>These Release Notes contain the following information:</p>
 <ul><li><a href="#upgrade">Important Upgrade Information</a></li>
-	<li><a href="#8788">SUPEE-8788 Security Patch Advisory</a></li>
 	<li><a href="#ee114-11433">Magento EE 1.14.3.3 Release Notes</a></li>
 	<li><a href="#ee114-11432">Magento EE 1.14.3.2 Release Notes</a></li>
 	<li><a href="#ee114-11431">Magento EE 1.14.3.1 Release Notes</a></li>
@@ -38,8 +37,7 @@
 
 </div> 
 
-<h2 id="8788">SUPEE-8788 Security Patch Advisory</h2>
-<p>The <a href="https://magento.com/security/patches/supee-8788" target="_blank">SUPEE-8788 security patch</a> released in October 2016 has potential issues for certain Magento EE versions. See <a href="http://devdocs.magento.com/guides/m1x/other/ht_install-patches.html#apply-8788" target="_blank">How to Apply the SUPEE-8788 Patch</a></p>.
+
 
 <h2 id="upgrade">Important Upgrade Information</h2>
 <div class="msg-box important"><img src="/common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: Use EE 1.14.3.0 or later for <em>all new EE installations and upgrades</em> to get the latest fixes, features, and security updates.</span></div>
@@ -47,7 +45,13 @@
 <h2 id="ee114-11433">Magento EE 1.14.3.3 Release Notes</h2>
  <p>This patch provides resolution of multiple critical security issues. These critical issues include remote code execution for authenticated Admin users, access control bypass, and cross-site request forgery issues. See  <a href="https://magento.com/security/patches/supee-9767" target="_blank">Magento Security Center</a> for a comprehensive discussion of these issues.</p>
  
- 
+ <p>This release also provides support for the following issue: </p>
+
+ <p><!-- <a href="https://jira.corp.magento.com/browse/MPERF-9553" target="_blank">MPERF-9553</a>  -->Support for PayPal's update to its Instant Payment Notification (IPN) server URL. PayPal provides more information about this feature in <a href="https://www.paypal-knowledge.com/infocenter/index?page=content&widgetview=true&id=FAQ1916&viewlocale=en_US" target="_blank">IPN Verification Postback to HTTPS Microsite</a>. This update is essential for retaining uninterrupted service after June 30.</p>
+
+ <p><code>SUPEE-8167</code>, an older patch that also contains this fix, was added on May 8, 2017, and is available from <a href="https://magento.com/tech-resources/download" target="_blank">Magento Tech Resources</a>.</p>
+
+<p><b>Note:</b> Before applying this patch or updating to this release, disable the <b>Symlinks</b> setting in <b>System > Configuration > Advanced > Developer > Enable Symlinks</b>. If the <b>Symlinks</b> setting is enabled, it will override your configuration file settings. If that override occurs, you will need to directly modify the database to change those settings.</p>
 
 <h2 id="ee114-11432">Magento EE 1.14.3.2 Release Notes</h2>
 <p>This patch addresses the following issues:</p>
