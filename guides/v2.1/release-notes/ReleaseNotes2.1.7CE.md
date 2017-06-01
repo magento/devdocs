@@ -13,7 +13,7 @@ github_link: release-notes/ReleaseNotes2.1.7CE.md
 *	TOC
 {:toc}
 
-*Patch code and release notes were published on May 31, 2017.*
+*Release notes revised on June 1, 2017.*
 
 We are pleased to present Magento Community Edition 2.1.7. This release includes critical enhancements to the security of your Magento software.
 
