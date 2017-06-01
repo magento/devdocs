@@ -75,7 +75,7 @@ Magento 2.1.7 contains over 15 security enhancements as well as one significant 
 
 </table>
 
-**Note**: As of June 30, 2017, MasterCard may fine merchants who do not support cards that use their recently expanded range of BIN numbers. Transactions for customers that use cards with these new BINs will fail if your software does not support these new BIN numbers. **If you are running Magento 2.1.3 onwards, your Magento software already provides support for these new BINs.** MasterCard describes the issue [here](https://www.mastercard.us/en-us/issuers/get-support/2-series-bin-expansion.html){:target="_blank"}. 
+**Note**: As of June 30, 2017, MasterCard may fine merchants who do not support cards that use their recently expanded range of BIN numbers. Transactions for customers that use cards with these new BINs will fail if your software does not support these new BIN numbers. MasterCard describes the issue [here](https://www.mastercard.us/en-us/issuers/get-support/2-series-bin-expansion.html){:target="_blank"}.  **If you are running Magento 2.1.3 or later, your Magento software already provides support for these new BINs.** 
 
 ## System requirements
 Our technology stack is built on PHP and MySQL. For more information, see
