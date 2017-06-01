@@ -13,6 +13,7 @@ github_link: release-notes/ReleaseNotes2.1.7CE.md
 *	TOC
 {:toc}
 
+*Patch code and release notes were published on May 31, 2017.*
 
 We are pleased to present Magento Community Edition 2.1.7. This release includes critical enhancements to the security of your Magento software.
 
@@ -43,12 +44,12 @@ Magento 2.1.7 contains over 15 security enhancements as well as one significant 
   <tr>
     <th>Currently installed Magento version</th>
     <th>Upgrade to ...</th>
-        <th>Action</th>
+        <th>Additinal actions</th>
 
   </tr>
 
   <tr>
-    <td>2.1.5</td>
+    <td>2.1.0 - 2.1.5</td>
     <td>2.1.7</td>
      <td>none needed</td>
     
@@ -77,33 +78,8 @@ Magento 2.1.7 contains over 15 security enhancements as well as one significant 
 </table>
 
 
+**For your information only**: As of June 30, 2017, MasterCard may fine merchants who do not support cards that use their recently expanded range of BIN numbers. Transactions for customers that use cards with these new BINs will fail if your software does not support these new BIN numbers. **If you are running Magento 2.1.3 onwards, your Magento software already provides support for these new BINs.** 
 
-
-<!--- INTERNAL ONLY -->
-
-<!--- 67335, 67117, 67102, 66931, 66689, 65226, 65012, 64877, 64771, 64717, 64635, 64453, 66693, 66692, 65244,64115 -->
-
-
-<!--- NOT A BUG -->
-
-<!--- 67111 -->
-
-
-
-<!--- CANNOT REPRODUCE -->
-
-<!--- 65500 -->
-
-
-
-<!--- WON'T FIX -->
-
-<!--- 67100 -->
-
-
-<!--- DUPLICATE -->
-
-<!--- 67149 -->
 
 ## System requirements
 Our technology stack is built on PHP and MySQL. For more information, see
