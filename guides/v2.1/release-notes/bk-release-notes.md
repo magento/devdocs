@@ -16,6 +16,7 @@ github_link: release-notes/bk-release-notes.md
 
 Looking for [2.0.x Release Notes]({{ site.gdeurl }}release-notes/bk-release-notes.html)?
 
+Looking for [Magento Enterprise Cloud Edition Release Notes]({{ site.gdeurl }}cloud/release-notes/CloudReleaseNotes.html)?
 
 
 ## Backward-incompatible changes
