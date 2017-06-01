@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 10_project
+subgroup: 100_project
 title: Test a Magento patch or upgrade
 menu_title: Test a Magento patch or upgrade
 menu_order: 15

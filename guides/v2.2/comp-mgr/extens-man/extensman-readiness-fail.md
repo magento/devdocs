@@ -21,7 +21,7 @@ Messages similar to the following display if any readiness check fails.
 	<p>If you're updating multiple extensions, see <a href="{{ page.baseurl }}comp-mgr/extens-man/extensman-readiness-multi.html#extensman-readiness-multi-fail">Readiness check with multiple extension updates</a> instead.</p>
 </div>
 
-In the event of failure, see one of the following sections:
+In the {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} of failure, see one of the following sections:
 
 *	<a href="{{page.baseurl}}comp-mgr/trouble/cman/updater.html">Updater check failure</a>
 *	<a href="{{page.baseurl}}comp-mgr/trouble/cman/cron.html">Cron script check failure</a>

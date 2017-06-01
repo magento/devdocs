@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 08_setup
+subgroup: 080_setup
 title: Find the information you need for your import
 menu_title: Find the information you need for your import
 menu_order: 152
@@ -19,7 +19,7 @@ You must enter all Magento Enterprise Cloud Edition commands on the machine on w
 </div>
 
 ## Cloud SSH URL {#cloud-import-pre-sshurl}
-To transfer the database dump and files to Magento Enterprise Cloud Edition, you must know its SSH URL.
+To transfer the database dump and files to Magento Enterprise Cloud Edition, you must know its SSH {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %}.
 
 You can find it using:
 
@@ -66,7 +66,7 @@ The database connection information is displayed:
 In the preceding example, the database name is `main`, its listen port is `3306`, its host name is `database.internal`, its root user name is `user` and the user has no password.
 
 ## Cloud integration system's unsecure base URL {#cloud-import-pre-baseurl}
-After you import the Magento EE database into Magento Enterprise Cloud Edition, you must change the base URL so you can access the Magento Admin and storefront.
+After you import the Magento EE database into Magento Enterprise Cloud Edition, you must change the base URL so you can access the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} and {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}.
 
 You can find it using:
 

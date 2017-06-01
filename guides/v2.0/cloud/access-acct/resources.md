@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 08_setup
+subgroup: 080_setup
 title: Magento 2 resources
 menu_title: Magento 2 resources
 menu_order: 550
@@ -10,7 +10,7 @@ version: 2.0
 github_link: cloud/access-acct/resources.md
 ---
 
-For more information, or in the event of issues, you can find help and information as follows:
+For more information, or in the {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} of issues, you can find help and information as follows:
 
 ### Documentation
 We have the following resources available:
@@ -28,4 +28,4 @@ We have the following resources available:
 	*	[Configuration]({{ page.baseurl}}config-guide/bk-config-guide.html)
 
 ### Technical support
-See [Get help with your deployment]({{ page.baseurl }}cloud/get-help.html)
+See [Get help with your deployment]({{ page.baseurl }}cloud/welcome/get-help.html)

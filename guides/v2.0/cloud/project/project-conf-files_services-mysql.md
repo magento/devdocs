@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 10_project
+subgroup: 100_project
 title: Set up the mysql service
 menu_title: Set up the mysql service
 menu_order: 82
@@ -106,30 +106,6 @@ In your `.magento.app.yaml`:
 {% highlight yaml %}
 relationships:
     database: "mydatabase:mysql"
-{% endhighlight %}
-
-You can use the preceding service in a configuration file of your application as follows:
-
-{% highlight php startinline=true %}
-$relationships = getenv("MAGENTO_CLOUD_RELATIONSHIPS");
-if (!$relationships) {
-  return;
-}
-
-$relationships = json_decode(base64_decode($relationships), TRUE);
-
-foreach ($relationships['database'] as $endpoint) {
-  if (empty($endpoint['query']['is_master'])) {
-    continue;
-  }
-  $container->setParameter('database_driver', 'pdo_' . $endpoint['scheme']);
-  $container->setParameter('database_host', $endpoint['host']);
-  $container->setParameter('database_port', $endpoint['port']);
-  $container->setParameter('database_name', $endpoint['path']);
-  $container->setParameter('database_user', $endpoint['username']);
-  $container->setParameter('database_password', $endpoint['password']);
-  $container->setParameter('database_path', '');
-}
 {% endhighlight %}
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">

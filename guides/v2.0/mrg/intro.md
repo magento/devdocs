@@ -10,7 +10,7 @@ version: 2.0
 github_link: mrg/intro.md
 ---
 
-The Module Reference Guide contains information about Magento modules of Community Edition and Enterprise Edition.
+The {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}Module{% endglossarytooltip %} Reference Guide contains information about Magento modules of Community Edition and Enterprise Edition.
 
 The information includes:
 

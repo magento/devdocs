@@ -12,7 +12,7 @@ github_link: comp-mgr/trouble/cman/cron.md
 
 Following are symptoms of cron issues:
 
-*	An error message about the PHP setting `$HTTP_RAW_POST_DATA` displays even though it's set properly
+*	An error message about the {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} setting `$HTTP_RAW_POST_DATA` displays even though it's set properly
 *	The PHP readiness check doesn't display the PHP version as the following figure shows.
 
 	<img src="{{ site.baseurl }}common/images/upgr-tshoot-no-cron.png">

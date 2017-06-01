@@ -18,14 +18,14 @@ github_link: mrg/ce/Sales/services.md
 
 ### Description
 
-The InvoiceOrder service introduces a capability to execute Magento native business flow of the Sales module using API.
+The InvoiceOrder service introduces a capability to execute Magento native business flow of the Sales {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} using {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %}.
 
 With this service you can:
 
-- create an invoice document (full or partial)
+- create an {% glossarytooltip 631b9627-a367-4a56-b3b1-0f6ca8fe6e02 %}invoice{% endglossarytooltip %} document (full or partial)
 - capture money placed with order payment
 - notify a customer about document creation
-- change order status and state
+- change {% glossarytooltip ab517fb3-c9ff-4da8-b7f9-00337c57b3a5 %}order status{% endglossarytooltip %} and state
 
 ### Parameters
 
@@ -185,7 +185,7 @@ In case of failure, it returns an error object. Example in REST:
 
 #### Extension points
 
-The service implementation contains extension points marked with `@api` annotation. Extension developers can use APIs to extend service logic.
+The service implementation contains {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} points marked with `@api` annotation. Extension developers can use APIs to extend service logic.
 
 |Extension point | Description
 |---|---
@@ -210,7 +210,7 @@ Please note, that current service is available only for invoices created using o
 
 With this service you can:
 
-   * create a Credit Memo (complete or partial) for particular Invoice
+   * create a {% glossarytooltip 6a9783a3-cdec-4fed-843d-8eda12819804 %}Credit Memo{% endglossarytooltip %} (complete or partial) for particular Invoice
    * add details about refunded items to an Order
    * change status and state of an Order according to performed actions
    * notify a customer about performed refund operation
@@ -796,10 +796,10 @@ The service contains extension points marked with `@api` annotation. Extension d
 
 With the ShipOrder service you can:
 
-- create a shipment document (full or partial)
+- create a {% glossarytooltip c8f00e9d-7f70-4561-9773-60da604ba5c9 %}shipment{% endglossarytooltip %} document (full or partial)
 - add details about shipped items into an order
 - change status and state of an order according to performed actions
-- notify the customer of a new shipment document
+- notify the customer of a new {% glossarytooltip eb790722-f597-4b2f-82b4-e11735c6558b %}shipment document{% endglossarytooltip %}
 
 ### Service parameters
 

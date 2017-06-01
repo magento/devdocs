@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 10_project
+subgroup: 100_project
 title: .magento.app.yaml
 menu_title: .magento.app.yaml
 menu_order: 50
@@ -18,7 +18,7 @@ This file controls the application and the way it is built and deployed on Magen
 [Sample `.magento.app.yaml`](https://github.com/magento/magento-cloud/blob/master/.magento.app.yaml){:target="_blank"}
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>Changes you make using <code>.yaml</code> files affect your <a href="{{ page.baseurl }}cloud/discover-arch.html#cloud-arch-int">integration environment</a> only. For technical reasons, neither <a href="{{ page.baseurl }}cloud/discover-arch.html#cloud-arch-stage">staging</a> nor <a href="{{ page.baseurl }}cloud/discover-arch.html#cloud-arch-prod">production</a> environments use <code>.yaml</code> files. To make these changes in a staging or production environment, you must create a <a href="{{ page.baseurl }}cloud/get-help.html">Support ticket</a>.</p>
+  <p>Changes you make using <code>.yaml</code> files affect your <a href="{{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int">integration environment</a> only. For technical reasons, neither <a href="{{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-stage">staging</a> nor <a href="{{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-prod">production</a> environments use <code>.yaml</code> files. To make these changes in a staging or production environment, you must create a <a href="{{ page.baseurl }}cloud/welcome/get-help.html">Support ticket</a>.</p>
 </div>
 
 The following sections discuss properties in `.magento.app.yaml`.
@@ -46,7 +46,7 @@ For example, if the value of `name` is `app`, you must use `app:php` in the upst
 {% endcollapsible %}
 
 ## `type` and `build` {#cloud-yaml-platform-type}
-The `type`  and `build` properties are used to build and run the project. The only supported `type` currently is PHP.
+The `type`  and `build` properties are used to build and run the project. The only supported `type` currently is {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %}.
 
 Supported versions:
 

@@ -22,7 +22,7 @@ This bulletin informs you of the following issues:
 Magento Community Edition (CE) and Enterprise Edition (EE) upgrades failed in any of the following circumstances:
 
 *	If you got the Magento software <a href="{{page.baseurl}}install-gde/prereq/zip_install.html">compressed archive</a> (`.tar.gz`, `.zip`, or `.bz2`).
-*	If your server runs PHP 7 and you installed the Magento software using *either* a <a href="{{page.baseurl}}install-gde/prereq/zip_install.html">compressed archive</a> or the <a href="{{page.baseurl}}install-gde/prereq/integrator_install.html">Composer metapackage</a>.
+*	If your server runs {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} 7 and you installed the Magento software using *either* a <a href="{{page.baseurl}}install-gde/prereq/zip_install.html">compressed archive</a> or the <a href="{{page.baseurl}}install-gde/prereq/integrator_install.html">Composer metapackage</a>.
 
 We addressed the following issues:
 
@@ -65,7 +65,7 @@ The following table summarizes what you need to do.
 </table>
 
 #### Detail
-Our compressed archives for CE and EE were missing `.gitignore` files and, as a result, exceptions prevented the upgrade from completing successfully. We updated the `magento/magento-composer-installer` component so it reports missing files instead of throwing an exception with no details about what was wrong.
+Our compressed archives for CE and EE were missing `.gitignore` files and, as a result, exceptions prevented the upgrade from completing successfully. We updated the `magento/magento-composer-installer` component so it reports missing files instead of throwing an {% glossarytooltip 53da11f1-d0b8-4a7e-b078-1e099462b409 %}exception{% endglossarytooltip %} with no details about what was wrong.
 
 At the same time, we fixed a separate issue that prevented upgrading if you use PHP 7. (The fix for this issue is a patch that you must apply separately from the `.gitignore` issue fix.)
 
@@ -177,7 +177,7 @@ To resolve the issue:
 	<div class="bs-callout bs-callout-info" id="info">
   		<p>You can upgrade to either <code>magento/product-community-edition 2.0.2</code> or <code>magento/product-community-edition 2.0.1</code>; we recommend 2.0.2.</p>
 	</div>
-6.	After the commands complete, enter the following command to update the database schema and data:
+6.	After the commands complete, enter the following command to update the {% glossarytooltip 66b924b4-8097-4aea-93d9-05a81e6cc00c %}database schema{% endglossarytooltip %} and data:
 
 		php bin/magento setup:upgrade
 6.	Verify your server is running version 2.0.1 or 2.0.2 in any of the ways discussed earlier in this resolution.

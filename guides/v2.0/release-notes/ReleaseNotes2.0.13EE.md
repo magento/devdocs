@@ -22,7 +22,7 @@ Looking for the <a href="http://devdocs.magento.com/guides/v2.1/cloud/release-no
 
 
 ## System requirements
-Our technology stack is built on PHP and MySQL. See
+Our technology stack is built on {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} and MySQL. See
 <a href="{{ page.baseurl }}install-gde/system-requirements.html" target="_blank">System Requirements</a>.
 
 

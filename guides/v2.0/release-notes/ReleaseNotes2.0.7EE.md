@@ -31,7 +31,7 @@ Backward-incompatible changes are documented in <a href="{{page.baseurl}}release
 
 
 
-* The payment gateway now works as expected in a Magento installation running PHP 7.0.3. Previously, when you would place an order in an installation running PHP 7.0.3, the checkout page would become unresponsive, and the transaction would not appear in the payment gateway.  <a href="https://github.com/magento/magento2/issues/2984" target="_blank">(GITHUB-2984</a>, <a href="https://github.com/magento/magento2/issues/2878" target="_blank">GITHUB-2878</a>, <a href="https://github.com/magento/magento2/issues/3305" target="_blank">GITHUB-3305</a>, <a href="https://github.com/magento/magento2/issues/4076" target="_blank">GITHUB-4076)</a>.
+* The {% glossarytooltip 5b963536-8f03-45c4-963b-688021f4eea7 %}payment gateway{% endglossarytooltip %} now works as expected in a Magento installation running {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} 7.0.3. Previously, when you would place an order in an installation running PHP 7.0.3, the {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} page would become unresponsive, and the transaction would not appear in the payment gateway.  <a href="https://github.com/magento/magento2/issues/2984" target="_blank">(GITHUB-2984</a>, <a href="https://github.com/magento/magento2/issues/2878" target="_blank">GITHUB-2878</a>, <a href="https://github.com/magento/magento2/issues/3305" target="_blank">GITHUB-3305</a>, <a href="https://github.com/magento/magento2/issues/4076" target="_blank">GITHUB-4076)</a>.
 
 
 
@@ -72,12 +72,12 @@ Developers who contribute to the CE codebase can <a href="{{page.baseurl}}comp-m
 
 1.	Go to the <a href="{{page.baseurl}}install-gde/install/cli/dev_update-magento.html" target="_blank">Contributing Developers</a> page.
 
-2.	Follow the instructions to pull the updates from the repository and update using Composer.
+2.	Follow the instructions to pull the updates from the repository and update using {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %}.
 
 ##### <b>Upgrade using the command line</b>#####
 To upgrade to Magento EE 2.0.7 using the command line:
 
-1.	Log in to your Magento server as, or switch to, the Magento file system owner.
+1.	Log in to your Magento server as, or switch to, the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %}.
 2.	Change to the directory in which you installed the Magento software.
 
 	For example, `cd /var/www/html/magento2`
@@ -97,7 +97,7 @@ To upgrade to Magento EE 2.0.7 using the command line:
 		composer update
 	
 3.	If prompted, enter your [authentication keys]({{page.baseurl}}comp-mgr/prereq/prereq_auth-token.html).
-4. Update the database schema and data:
+4. Update the {% glossarytooltip 66b924b4-8097-4aea-93d9-05a81e6cc00c %}database schema{% endglossarytooltip %} and data:
 
 		php bin/magento setup:upgrade
 5.	Enter the following command to enable the cache:

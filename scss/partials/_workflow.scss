@@ -63,6 +63,7 @@ $flow-arrow-border: 2px dashed $flow-arrow-color;
 }
 
 .flow-block {
+
   position: relative;
   font-size: .875em;
   background: $flow-block-bg-color;
@@ -76,6 +77,10 @@ $flow-arrow-border: 2px dashed $flow-arrow-color;
   z-index: 1;
   text-align: left;
 
+
+
+
+  // Collapsibles
   .collapsible-title {
     font-weight: normal;
     color: $link-color;
@@ -85,13 +90,42 @@ $flow-arrow-border: 2px dashed $flow-arrow-color;
     padding-top: 10px;
   }
 
-  h2:first-child, h3:first-child, h4:first-child {
+  // Drop the first and last item margins
+  *:first-child {
     margin-top: 0;
+  }
+  *:last-child {
+    margin-bottom: 0;
+  }
+
+  // Callouts
+  .bs-callout {
+    padding: 10px 10px;
+
+    &:before {
+      top: 8px;
+      left: 5px;
+      width: 20px;
+      height: 20px;
+    }
+
+    &.bs-callout-tip {
+      padding-left: 30px;
+    }
+
   }
 
   @media ( $medium-screen ) {
     font-size: 0.8em;
     padding: $flow-block-padding/1.5;
+  }
+
+
+  // Modifiers of blocks
+  &.flow-block-optional {
+    border-width: 2px;
+    border-style: dashed;
+    background: #fff;
   }
 
   &.flow-block-layers {
@@ -117,6 +151,8 @@ $flow-arrow-border: 2px dashed $flow-arrow-color;
       z-index: -1;
     }
   }
+
+
 }
 
 

@@ -51,7 +51,7 @@ Depending on your needs, you can use the existing <a href="#m2devgde-xlate-langu
 ### Changes in Magento 2
 Changes made:
 
-*	The language package (`i18n` directory) can now be moved and saved to any directory of your extension.
+*	The {% glossarytooltip 9c4c7b9b-43f0-4454-8e8c-fb62ad40c35f %}language package{% endglossarytooltip %} (`i18n` directory) can now be moved and saved to any directory of your {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %}.
 *	The phrases for translations are enabled in the <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Phrase.php" target="_blank">Phrase</a> class.
 
 ### More information
@@ -67,7 +67,7 @@ See one of the following sections for more information:
 You might need to add a dictionary for the default language (en_US) in the following cases:
 
 - if you want to replace certain strings from the <a href="{{page.baseurl}}frontend-dev-guide/themes/theme-inherit.html">parent theme</a>. For example, use "Compare" instead of "Add to Compare".
-- if you want your theme to be ready for localization. 
+- if you want your {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} to be ready for localization. 
 
 For practical illustration of creating a dictionary for a theme for both cases, see the <a href="{{page.baseurl}}frontend-dev-guide/translations/translate_practice.html">Create a translation dictionary for a theme</a> topic.
 
@@ -82,7 +82,7 @@ Translating the names, titles and phrases used in Magento involves the following
   <p>Only one variant of translation can be used for a word or phrase in a package. Otherwise, Magento returns an error.</p>
 </div>
 
-Anyone can submit translations on the storefront using the Text Editor. Changes made in the Text Editor are not recorded in an instance's dictionary; instead, they are stored in the database. In the storefront, an inline translation of a phrase overwrites the translation stated in a dictionary. However, inline translations are theme-specific and do not apply if another theme is assigned.
+Anyone can submit translations on the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} using the Text Editor. Changes made in the Text Editor are not recorded in an instance's dictionary; instead, they are stored in the database. In the storefront, an inline translation of a phrase overwrites the translation stated in a dictionary. However, inline translations are theme-specific and do not apply if another theme is assigned.
 
 <h2 id="m2devgde-xlate-dictionaries">Translation dictionaries</h2>
 Magento translates words and phrases when all of the following conditions are met:
@@ -90,7 +90,7 @@ Magento translates words and phrases when all of the following conditions are me
 *	The Magento code base has the necessary translation dictionaries for a language
 *	This language is configured by the store administrator to be used in specified scope (that is, storefront)
 
-The Magento application automatically assembles translation dictionaries located in modules' `i18n` directory into a dictionary per language. For example, Brazilian Portuguese (`pt_BR`) translation dictionaries might be located in module and theme directories similar to the following:
+The Magento application automatically assembles translation dictionaries located in modules' `i18n` directory into a dictionary per language. For example, Brazilian Portuguese (`pt_BR`) translation dictionaries might be located in {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} and theme directories similar to the following:
 
 	app/code/Magento/Checkout/i18n/pt_BR.csv
 	app/design/frontend/Magento/demo/i18n/pt_BR.csv
@@ -131,7 +131,7 @@ Magento enables you to create the following types of language packages:
 
 In addition to the `.csv` file that contains the language dictionary, the language package contains meta-information:
 
-*	`composer.json` that contains any dependencies for the language package and a mapping to its defined locale 
+*	`composer.json` that contains any dependencies for the language package and a mapping to its defined {% glossarytooltip 05099dbb-d491-4e33-a065-16035cb2d4d9 %}locale{% endglossarytooltip %} 
 
 	<a href="{{ site.mage2000url }}app/i18n/magento/de_de/composer.json" target="_blank">Sample composer.json</a>
 

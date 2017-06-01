@@ -35,9 +35,9 @@ Whenever a static view file is requested in the Magento application, it uses the
    <dd>
       <p>Magento generates CSS files from LESS files.</p>
    </dd>
-   <dt>CSS and JavaScript file merging</dt>
+   <dt>CSS and {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} file merging</dt>
    <dd>
-      <p>Magento merges all CSS or JavaScript assets linked in the <code>&lt;head></code> element of the page into a single files and replaces referenced files with a single reference.</p>
+      <p>Magento merges all CSS or JavaScript assets linked in the <code>&lt;head></code> element of the page into a single file and replaces referenced files with a single reference.</p>
    </dd>
    <dt>JavaScript files minifying</dt>
    <dd>
@@ -47,13 +47,13 @@ Whenever a static view file is requested in the Magento application, it uses the
 
 ## Fallback mechanism example {#example-fallback}
 
-As an example of static file fallback, suppose there is a request for the `logo.svg` image in the Blank theme.
+As an example of static file fallback, suppose there is a request for the `logo.svg` image in the Blank {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}.
 
-The request URL is similar to:
+The request {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} is similar to:
 
       http://www.example.com/pub/static/frontend/Magento/blank/en_US/images/logo.svg
 
-The Magento API request is similar to:
+The Magento {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} request is similar to:
 
       $this->getViewFileUrl('logo.svg');
 
@@ -97,7 +97,7 @@ To use the static view file publication tool, see <a href="{{page.baseurl}}confi
 
 ## CSS file publication {#css-files}
 
-The publication flow for CSS files depends on whether CSS merging is enabled. The following sections describe the flow for both cases.
+The publication flow for {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} files depends on whether CSS merging is enabled. The following sections describe the flow for both cases.
 
 <h3 id="merging-enabled">Merging enabled</h3>
 
@@ -167,7 +167,7 @@ the identified references are published from following locations:</p>
 
 ### Context notation in CSS file references {#context-notation}
 
-<p>You can reference resources in CSS files relative to a theme or a certain module using scope notation.</p>
+<p>You can reference resources in CSS files relative to a theme or a certain {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} using scope notation.</p>
 
 <p>The resulting link to a resource in the published file is relative to the original CSS file.</p>
 
@@ -223,7 +223,7 @@ The mechanism also performs file publishing, if the initial location is not web 
 
 The following description of the URL resolution process illustrates the static view files processing from the prospective of the logic involved.
 
-A fully qualified context for generating a URL path to a static view file includes: area code, theme path, and locale code. The URL path is generated from a file ID an invariant relative path to the file, which does not change regardless of whether it is used as part of the absolute file name or URL. The file ID may optionally qualify module name.
+A fully qualified context for generating a URL path to a static view file includes: area code, theme path, and {% glossarytooltip 05099dbb-d491-4e33-a065-16035cb2d4d9 %}locale{% endglossarytooltip %} code. The URL path is generated from a file ID an invariant relative path to the file, which does not change regardless of whether it is used as part of the absolute file name or URL. The file ID may optionally qualify module name.
 
 The following diagram illustrates how a URL to a static view file is generated:
 
@@ -233,7 +233,7 @@ The diagram uses these notations:
 
 <ul>
    <li><b>Client code</b>. Any client code that needs a URL to a static file.
-   Typically, a page template, but can be a layout XML or helper file.</li>
+   Typically, a page template, but can be a {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} or helper file.</li>
    <li><b>AbstractBlock</b>. <code>\Magento\Framework\View\Element\AbstractBlock</code></li>
    <li><b>AssetRepository</b>. <code>\Magento\Framework\View\Asset\Repository</code></li>
    <li><b>AssetContext</b>. <code>\Magento\Framework\View\Asset\ContextInterface</code></li>

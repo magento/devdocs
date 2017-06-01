@@ -13,7 +13,7 @@
     vertical-align: top;
     position: relative;
     text-align: left;
-    max-width: 310px;
+    max-width: 300px;
     margin: 0 20px 40px 0;
 
     .title {
@@ -67,8 +67,15 @@
       margin: 0 0 10px 0;
     }
 
-
   }
+
+
+  @media ( $large-screen ) {
+    .video {
+      max-width: 320px;
+    }
+  }
+
 }
 
 

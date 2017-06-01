@@ -18,7 +18,7 @@ The topic describes how to install, configure and use [Grunt JavaScript task run
 - Install and configure Grunt as described in [Using Grunt for Magento tasks]({{page.baseurl}}frontend-dev-guide/tools/using_grunt.html)
 
 
-## Adding themes to Grunt configuration
+## Adding themes to Grunt configuration {#add_theme}
 
 To be able to perform `.less` files compilation, you need to add your them to Grunt configuration. To do this, in the default `dev/tools/grunt/configs/themes.js` or in the [custom configuration file]({{page.baseurl}}frontend-dev-guide/tools/using_grunt.html#grunt_config), add your theme to `module.exports` like following:
 
@@ -41,7 +41,7 @@ module.exports = {
 
 where the following notation is used:
 
-* `%theme%`: your theme code, conventionally should correspond to the theme directory name.
+* `%theme%`: your {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} code, conventionally should correspond to the theme directory name.
 * `%language%`: specified in the 'code_subtag' format, for example `en_US`. Only one locale can be specified here. To debug the theme with another locale, create one more theme declaration, having specified another value for `%language%`.
 * `%path_to_file%`: path to the root source file, relative to the `app/design/frontend/%Vendor%/%theme%/web` directory. You need to specify all [root source files of the theme]({{page.baseurl}}frontend-dev-guide/css-topics/css-preprocess.html#css_preprocess_terms). If your theme [inherits]({{page.baseurl}}frontend-dev-guide/themes/theme-inherit.html) from a certain theme, and does not contain its own root source files, specify the root source files of the parent theme.
 
@@ -69,7 +69,7 @@ grunt clean:blank
 </pre>
 </td>
 <td>
-Removes the theme related static files in the <code>pub/static</code> and <code>var</code> directories.
+Removes the theme related {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} in the <code>pub/static</code> and <code>var</code> directories.
 </td>
 </tr>
 <tr>
@@ -124,3 +124,18 @@ After you customize the content of any <code>.less</code> file, changes are appl
 <li>After you <a href="#css_exception">customize the root source files or move the files included to the root files</a>, run the <code>clean</code> and <code>exec</code> commands, and the browser page reloads automatically.</li>
 
 </ul>
+## CSS source maps {#source_maps}
+
+When using Grunt for styles preprocessing, you can enable the CSS source maps generation in your browser. It will make the theme styles debugging easier. 
+
+For each theme, Magento compliles all theme `.less` files into two CSS files: `styles-m.css` and `styles-l.css`. So when you debug a theme, you browser only sees `styles-m.css` and it might be difficult to define which exactly `.css` or `.less` file requires corrections. For example:
+
+![node declaration autocomplete]({{site.baseurl}}common/images/fdg/no-map.png){:width="610px"}
+
+CSS source maps solve this issue. They help to find the `.less` file, where the style is specified. For example:
+
+![node declaration autocomplete]({{site.baseurl}}common/images/fdg/with-map.png){:width="610px"}
+
+The path to the CSS source maps configuration differs, depending on the browser.
+
+In Google Chrome, to enable source maps generation, go to **Inspect** > **Settings** > **Preferences** > **Enable CSS source maps**.   

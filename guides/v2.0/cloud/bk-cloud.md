@@ -1,11 +1,11 @@
 ---
 layout: default
 group: cloud
-subgroup: 01_welcome
+subgroup: 010_welcome
 title: Welcome to Magento Enterprise Cloud Edition
 landing-page: Cloud
 menu_title: Welcome to Magento Enterprise Cloud Edition
-menu_order: 1
+menu_order: 10
 menu_node: parent
 version: 2.0
 github_link: cloud/bk-cloud.md
@@ -30,12 +30,11 @@ middleman between your code and deployment.
 	You can have an unlimited number of *inactive* environments. An inactive environment is a Git branch you either deleted from the Cloud Git repository or one that is not associated with the Cloud Git repository at all. For example, you might already have several Git branches with Magento code that you don't need to use for Magento Enterprise Cloud Edition. As long as you don't add those environments to the Cloud Git repo, they don't count against your total of eight active environments.
 
 * You can add fully managed services like MySQL, Elasticsearch, Redis, RabbitMQ, and so on, without requiring external add-ons.
-* We use a robust Composer build process.
+* We use a robust {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} build process.
 * You can increase the amount of memory and CPU as needed.
 
 #### Related topics
-*	[Magento Enterprise Cloud Edition requirements]({{page.baseurl}}cloud/cloud-requirements.html)
-*	[Common terms]({{page.baseurl}}cloud/before/terms.html)
-*	[Architecture]({{page.baseurl}}cloud/discover-arch.html)
-*	[Workflow]({{page.baseurl}}cloud/discover-workflow.html)
+*	[Magento Enterprise Cloud Edition requirements]({{page.baseurl}}cloud/requirements/cloud-requirements.html)
+*	[Architecture]({{page.baseurl}}cloud/reference/discover-arch.html)
+*	[Workflow]({{page.baseurl}}cloud/welcome/discover-workflow.html)
 

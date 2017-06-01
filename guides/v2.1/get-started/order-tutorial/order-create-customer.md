@@ -23,7 +23,7 @@ This tutorial creates an order by a logged-in user. Magento provides additional 
 
 ### Create a customer account
 
-Creating a customer account requires admin permissions.
+Creating a customer account requires {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}admin{% endglossarytooltip %} permissions.
 
 **Endpoint**
 
@@ -119,7 +119,7 @@ You can log in to the Luma store using the user name `jdoe@example.com` and pass
 
 ### Get the customer's access token {#get-token}
 
-To get a customer's access token, you must specify the customer's username and password in the payload. You do not need to specify an authorization token.
+To get a customer's access token, you must specify the customer's username and password in the payload. You do not need to specify an {% glossarytooltip 34ecb0ab-b8a3-42d9-a728-0b893e8c0417 %}authorization{% endglossarytooltip %} token.
 
 **Endpoint**
 
@@ -146,6 +146,6 @@ Magento returns the customer's access token. This token must be specified in the
 
 ### Verify this step {#verify-step}
 
-1. Log in to the Luma website using the email `jdoe@example.com` and password `Password1`.
+1. Log in to the Luma {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %} using the email `jdoe@example.com` and password `Password1`.
 2. Click the account name (Jane) in the upper right corner and select **My Account**.
 3. Click **Address Book** to view the default billing and shipping addresses.

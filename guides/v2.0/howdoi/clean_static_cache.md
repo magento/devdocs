@@ -12,7 +12,7 @@ github_link: howdoi/clean_static_cache.md
 
 You can clean generated static view files in any of the following ways:
 
-*   In the Magento Admin. Go to **System** > Tools > **Cache Management** and click **Flush Static Files Cache**.
+*   In the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}. Go to **System** > Tools > **Cache Management** and click **Flush {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}Static Files{% endglossarytooltip %} Cache**.
 
 *   Manually by clearing the `pub/static` and `var/view_preprocessed` directories and subdirectories _except_ for `pub/static/.htaccess`.
 
