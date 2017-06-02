@@ -27,9 +27,11 @@ Before starting migration, you must do the following:
 
 	Open ports in your firewall so that the Migration Tool can communicate with the databases
 
-*	To provide redundancy in the {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} of unexpected issues, we advise you to replicate your Magento 1 database
+*	To provide redundancy in the event of unexpected issues, we advise you to replicate your Magento 1 database
 
-*	Migrate Magento 1 {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} code to Magento 2
+* We do not recommend to create new entities (products, categories, attributes, etc.) in your Magento 2 store before migration. The Data Migration Tool will overwrite these new entities with the ones from your Magento 1 store
+
+*	Migrate Magento 1 extension code to Magento 2
 
 	To find the latest extensions versions, visit [Magento Marketplace](https://marketplace.magento.com/){:target:"_blank"} or contact your extension provider.
 	You can also use the Magento [Code Migration Tool](https://github.com/magento/code-migration/blob/develop/README.md){:target="_blank"}
