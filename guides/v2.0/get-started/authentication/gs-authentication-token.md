@@ -75,7 +75,7 @@ The following example uses the `curl` command to request a token for a customer 
 ```
 curl -X POST "https://magento.host/index.php/rest/V1/integration/customer/token" \
      -H "Content-Type:application/json" \
-     -d '{"username":"customer1@example.com", "password":"customer1pw"}'
+     -d "{"username":"customer1@example.com", "password":"customer1pw"}"
 ```
 
 The following example makes the same request with {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} for a customer account token:
@@ -83,7 +83,7 @@ The following example makes the same request with {% glossarytooltip 8c0645c5-aa
 ```
 curl -X POST "http://magento.vg/index.php/rest/V1/integration/customer/token" \
      -H "Content-Type:application/xml"  \
-     -d '<login><username>customer1@example.com</username><password>customer1pw</password></login>'
+     -d "<login><username>customer1@example.com</username><password>customer1pw</password></login>"
 ```
 
 For more information about the `curl` command, see [Use cURL to run the request]({{page.baseurl}}get-started/gs-curl.html)
