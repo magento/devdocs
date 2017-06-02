@@ -13,9 +13,11 @@ github_link: release-notes/ReleaseNotes2.1.7CE.md
 *	TOC
 {:toc}
 
+
 *Release date: May 31, 2017*
 
 *Page updated: June 1, 2017*
+
 
 We are pleased to present Magento Community Edition 2.1.7. This release includes critical enhancements to the security of your Magento software.
 
@@ -44,7 +46,9 @@ Magento 2.1.7 contains over 15 security enhancements as well as one significant 
   <tr>
     <th>Currently installed Magento version</th>
     <th>Upgrade to ...</th>
+
         <th>Additional actions</th>
+
 
   </tr>
 

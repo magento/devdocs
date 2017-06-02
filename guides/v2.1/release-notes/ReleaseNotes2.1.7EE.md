@@ -13,6 +13,7 @@ github_link: release-notes/ReleaseNotes2.1.7EE.md
 *	TOC
 {:toc}
 
+
 *Release date: May 31, 2017*
 
 *Page updated: June 1, 2017*
@@ -42,7 +43,9 @@ Magento 2.1.7 contains over 15 security enhancements as well as one significant 
   <tr>
     <th>Currently installed Magento version</th>
     <th>Upgrade to ...</th>
+
         <th>Additional actions</th>
+
 
   </tr>
   <tr>
