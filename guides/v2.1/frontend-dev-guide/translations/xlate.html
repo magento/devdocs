@@ -1145,9 +1145,13 @@
 
 <p>The Magento application automatically assembles translation dictionaries located in modules’ <code>i18n</code> directory into a dictionary per language. For example, Brazilian Portuguese (<code>pt_BR</code>) translation dictionaries might be located in <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> and theme directories similar to the following:</p>
 
-<pre><code>app/code/Magento/Checkout/i18n/pt_BR.csv
-app/design/frontend/&lt;Vendor&gt;/&lt;theme&gt;/i18n/pt_BR.csv
+<pre><code>&lt;Magento_Checkout_module_dir&gt;/i18n/pt_BR.csv
+&lt;Magento_Checkout_module_dir&gt;/&lt;theme&gt;/i18n/pt_BR.csv
 </code></pre>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p><code>&lt;Magento_Checkout_module_dir&gt;</code> stands for the Magento_Checkout module directory. Its actual location in your code base depends on the way Magento was installed. See <a href="/guides/v2.1/frontend-dev-guide/conventions.html">Conventional notations for paths to modules and themes</a> for details.</p>
+</div>
 
 <p>Assembling the preceding <code>pt_BR.csv</code> files across all modules and the current theme results in a Portuguese translation of the entire application area (storefront or the Admin).</p>
 
