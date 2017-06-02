@@ -27,7 +27,7 @@ Get a customer token | `POST /V1/integration/customer/token` | `integrationCusto
 
 For most {% glossarytooltip 377dc0a3-b8a7-4dfa-808e-2de37e4c0029 %}web API{% endglossarytooltip %} calls, you supply this token in the `Authorization` request header with the `Bearer` HTTP {% glossarytooltip 34ecb0ab-b8a3-42d9-a728-0b893e8c0417 %}authorization{% endglossarytooltip %} scheme to prove your identity. By default, an admin token is valid for 4 hours, while a customer token is valid for 1 hour. You can change these values from Admin by selecting **Configuration > Services > OAuth > Access Token Expiration**.
 
-A cron job that runs hourly removes all expired tokens. 
+A cron job that runs hourly removes all expired tokens.
 
 ## Request a token {#request-token}
 
@@ -72,9 +72,11 @@ The following image shows a token request for the {% glossarytooltip 29ddb393-ca
 
 The following example uses the `curl` command to request a token for a customer account:
 
-<code>curl -X POST "https://magento.host/index.php/rest/V1/integration/customer/token" \
+```
+curl -X POST "https://magento.host/index.php/rest/V1/integration/customer/token" \
      -H "Content-Type:application/json" \
-     -d '{"username":"customer1@example.com", "password":"customer1pw"}'</code>
+     -d '{"username":"customer1@example.com", "password":"customer1pw"}
+```
 
 The following example makes the same request with {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} for a customer account token:
 
