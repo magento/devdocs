@@ -144,7 +144,7 @@ A testsuite configuration like the following can be added to the `<testsuites>` 
 </testsuite>
 {%endhighlight%}
 
-Such a test suite configuration can then be executed using the `--testsuite <name>` command option, for example:
+Such a test suite configuration can then be executed using the `--testsuite <name>` command option, for example if you are in the `dev/tests/integration` directory:
 
 {% highlight bash %}
 $ php ../../../vendor/bin/phpunit --testsuite "Third Party Integration Tests"
