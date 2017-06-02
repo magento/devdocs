@@ -693,7 +693,9 @@
   </tbody>
 </table>
 
-<p>For most <span term-uuid="377dc0a3-b8a7-4dfa-808e-2de37e4c0029" class="glossary-term" data-toggle="popover">web API</span> calls, you supply this token in the <code>Authorization</code> request header with the <code>Bearer</code> HTTP <span term-uuid="34ecb0ab-b8a3-42d9-a728-0b893e8c0417" class="glossary-term" data-toggle="popover">authorization</span> scheme to prove your identity. The token never expires, but it can be revoked.</p>
+<p>For most <span term-uuid="377dc0a3-b8a7-4dfa-808e-2de37e4c0029" class="glossary-term" data-toggle="popover">web API</span> calls, you supply this token in the <code>Authorization</code> request header with the <code>Bearer</code> HTTP <span term-uuid="34ecb0ab-b8a3-42d9-a728-0b893e8c0417" class="glossary-term" data-toggle="popover">authorization</span> scheme to prove your identity. By default, an admin token is valid for 4 hours, while a customer token is valid for 1 hour. You can change these values from Admin by selecting <strong>Configuration &gt; Services &gt; OAuth &gt; Access Token Expiration</strong>.</p>
+
+<p>A cron job that runs hourly removes all expired tokens.</p>
 
 <h2 id="request-token">Request a token</h2>
 
@@ -738,13 +740,17 @@
 
 <p>The following example uses the <code>curl</code> command to request a token for a customer account:</p>
 
-<p><code>curl -X POST "https://magento.host/index.php/rest/V1/integration/customer/token" \
+<pre><code>curl -X POST "https://magento.host/index.php/rest/V1/integration/customer/token" \
      -H "Content-Type:application/json" \
-     -d '{"username":"customer1@example.com", "password":"customer1pw"}'</code></p>
+     -d "{"username":"customer1@example.com", "password":"customer1pw"}"
+</code></pre>
 
 <p>The following example makes the same request with <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span> for a customer account token:</p>
 
-<p><code>curl -X POST "http://magento.vg/index.php/rest/V1/integration/customer/token" -H "Content-Type:application/xml"  -d '&lt;login&gt;&lt;username&gt;customer1@example.com&lt;/username&gt;&lt;password&gt;customer1pw&lt;/password&gt;&lt;/login&gt;'</code></p>
+<pre><code>curl -X POST "http://magento.vg/index.php/rest/V1/integration/customer/token" \
+     -H "Content-Type:application/xml"  \
+     -d "&lt;login&gt;&lt;username&gt;customer1@example.com&lt;/username&gt;&lt;password&gt;customer1pw&lt;/password&gt;&lt;/login&gt;"
+</code></pre>
 
 <p>For more information about the <code>curl</code> command, see <a href="/guides/v2.0/get-started/gs-curl.html">Use cURL to run the request</a></p>
 
