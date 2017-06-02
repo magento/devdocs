@@ -2,7 +2,7 @@
 layout: default
 group: fedg
 subgroup: D_CSS
-title: Add custom CSS preprocessor (like Sass)
+title: Add custom CSS preprocessor
 menu_order: 8
 menu_node: 
 level3_menu_node: level3child
