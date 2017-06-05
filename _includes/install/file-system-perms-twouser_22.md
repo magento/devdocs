@@ -56,7 +56,7 @@ To put the Magento file system owner in the web server's primary group (assuming
 
 For example, to add the user `magento_user` to the `apache` primary group on CentOS:
 
-	usermod -g apache magento_user
+	sudo usermod -g apache magento_user
 
 To confirm your Magento user is a member of the web server group, enter the following command:
 
@@ -87,7 +87,7 @@ To set ownership and permissions before you install the Magento software:
 		cd <your Magento install dir>
 		find var generated vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \;
 		find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
-		chown -R :<web server group> .
+		sudo chown -R :<web server group> .
 		chmod u+x bin/magento
 
 {% include install/file-system-perms-twouser_cmds-only_22.md %}
