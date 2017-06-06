@@ -1,4 +1,13 @@
-<h2> What's in this topic</h2>
+---
+layout: default
+group: howdoi
+subgroup: checkout
+title: Customize the list of shipping methods
+menu_title: Customize the list of shipping methods
+menu_order: 100
+version: 2.2
+github_link: howdoi/checkout/checkout_shipping_methods.md
+---
 
 This topic contains the basic information about how to customize the shipping method list on checkout page. Lets imagine that you want to add some description for each shipping method. What we need to do:
 

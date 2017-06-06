@@ -1,6 +1,15 @@
-<h2> What's in this topic</h2>
+---
+layout: default
+group: howdoi
+subgroup: checkout
+title: Add custom fields that influence other Checkout fields
+menu_title: Add custom fields that influence other Checkout fields
+menu_order: 90
+version: 2.0
+github_link: howdoi/checkout/checkout_custom_checkbox.md
+---
 
-This topic contains the basic information about how to add custom field on checkout page that will control other fields. Lets imagine that you want to add some checkbox that depending on self condition (checked/unchecked) will change conditions of others fields. What we need to do:
+This topic contains the basic information about how to add custom field on checkout page that will control other fields. Lets imagine that you want to add a checkbox whose state  (checked/unchecked) changes the state of other fields. What we need to do:
 
 1. Create after plugin on LayoutProcessor process method
 2. Create checkbox with custom logic
