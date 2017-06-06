@@ -124,6 +124,7 @@ After you customize the content of any <code>.less</code> file, changes are appl
 <li>After you <a href="#css_exception">customize the root source files or move the files included to the root files</a>, run the <code>clean</code> and <code>exec</code> commands, and the browser page reloads automatically.</li>
 
 </ul>
+
 ## CSS source maps {#source_maps}
 
 When using Grunt for styles preprocessing, you can enable the CSS source maps generation in your browser. It will make the theme styles debugging easier. 
@@ -135,6 +136,8 @@ For each theme, Magento compliles all theme `.less` files into two CSS files: `s
 CSS source maps solve this issue. They help to find the `.less` file, where the style is specified. For example:
 
 ![node declaration autocomplete]({{site.baseurl}}common/images/fdg/with-map.png){:width="610px"}
+
+CSS source maps are generated automatically when you compile CSS for your theme using the `grunt less: <theme>` command. To use them, you need to enable source maps displaying in your browser.
 
 The path to the CSS source maps configuration differs, depending on the browser.
 

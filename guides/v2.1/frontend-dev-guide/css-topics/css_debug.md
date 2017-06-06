@@ -192,6 +192,8 @@ CSS source maps solve this issue. They help to find the `.less` file, where the 
 
 ![node declaration autocomplete]({{site.baseurl}}common/images/fdg/with-map.png){:width="610px"}
 
+CSS source maps are generated automatically when you compile CSS for your theme using the `grunt less: <theme>` command. To use them, you need to enable source maps displaying in your browser.
+
 The path to the CSS source maps configuration differs, depending on the browser.
 
 In Google Chrome, to enable source maps generation, go to **Inspect** > **Settings** > **Preferences** > **Enable CSS source maps**.   
