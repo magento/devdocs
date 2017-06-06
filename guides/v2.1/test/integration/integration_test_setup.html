@@ -700,7 +700,9 @@ A testsuite configuration like the following can be added to the <code>&lt;tests
     <span class="nt">&lt;exclude&gt;</span>../../../vendor/magento<span class="nt">&lt;/exclude&gt;</span>
 <span class="nt">&lt;/testsuite&gt;</span></code></pre></figure>
 
-<p>Such a test suite configuration can then be executed using the <code>--testsuite</code> command option, for example <code>--testsuite "Third Party Integration Tests"</code>.</p>
+<p>Such a test suite configuration can then be executed using the <code>--testsuite &lt;name&gt;</code> command option, for example if you are in the <code>dev/tests/integration</code> directory:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>php ../../../vendor/bin/phpunit --testsuite <span class="s2">&quot;Third Party Integration Tests&quot;</span></code></pre></figure>
 
 
 		</div>
