@@ -1,10 +1,10 @@
 ---
 layout: default
 group: cloud
-subgroup: 10_project
+subgroup: 100_project
 title: Manage environments (branches)
 menu_title: Manage environments (branches)
-menu_order: 5
+menu_order: 23
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: project
@@ -55,7 +55,7 @@ To add an environment:
 7.	Continue with one of the following:
 
 	*	[Get started with an environment]({{page.baseurl}}cloud/env/environments-start.html)
-	*	[How tos and tutorials]({{ page.baseurl }}cloud/howto/how-to.html)
+	*	[How tos and tutorials]({{ page.baseurl }}cloud/howtos/how-to.html)
 
 {% endcollapsible %}
 

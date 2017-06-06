@@ -16,7 +16,7 @@ A plugin, or interceptor, is a class that modifies the behavior of public class 
 
 Extensions that wish to intercept and change the behavior of a *public method* can create a `Plugin` class.
 
-This interception approach reduces conflicts among extensions that change the behavior of the same class or method. Your `Plugin` class implementation changes the behavior of a class function, but it does not change the class itself. Magento calls these interceptors sequentially according to a configured sort order, so they do not conflict with one another.
+This {% glossarytooltip deea5a5a-e9e5-4591-b141-b849458feb1a %}interception{% endglossarytooltip %} approach reduces conflicts among extensions that change the behavior of the same class or method. Your `Plugin` class implementation changes the behavior of a class function, but it does not change the class itself. Magento calls these interceptors sequentially according to a configured sort order, so they do not conflict with one another.
 
 #### Limitations
 
@@ -33,7 +33,7 @@ Plugins can not be used on following:
 
 ### Declaring a plugin
 
-The <code>di.xml</code> file in your module declares a plugin for a class object:
+The <code>di.xml</code> file in your {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} declares a plugin for a class object:
 
 <script src="https://gist.github.com/xcomSteveJohnson/c9a36d9ec887c4bbc34d.js"></script>
 
@@ -224,7 +224,7 @@ class MyUtilityPlugin
 }
 {% endhighlight %}
 
-Note the missing <code>= null</code>. Now, if Magento calls the original method with <code>null</code>, PHP would throw a fatal error as your plugin does not accept <code>null</code>.
+Note the missing <code>= null</code>. Now, if Magento calls the original method with <code>null</code>, {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} would throw a fatal error as your plugin does not accept <code>null</code>.
 
 You are responsible for forwarding the arguments from the plugin to the <code>proceed</code> callable. If you are not using/modifying the arguments, you could use variadics and argument unpacking to achieve this:
 
@@ -295,7 +295,7 @@ Classes and interfaces that are implementations of or inherit from classes that 
 
 Magento uses plugins defined in the global scope when the system is in a specific area (i.e. frontend, backend, etc). You can also extend or override these global plugin configuration via an area's `di.xml`.
 
-For example, the developer can disable a global plugin in the backend area by disabling it in the specific `di.xml` file for the backend area.
+For example, the developer can disable a global plugin in the {% glossarytooltip 74d6d228-34bd-4475-a6f8-0c0f4d6d0d61 %}backend{% endglossarytooltip %} area by disabling it in the specific `di.xml` file for the backend area.
 
 ### Related topics
 

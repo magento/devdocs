@@ -5,13 +5,12 @@ subgroup: 09_Varnish
 title: Configure Varnish and your web server
 menu_title: Configure Varnish and your web server
 menu_order: 10
-menu_node: 
+menu_node:
 version: 2.0
 github_link: config-guide/varnish/config-varnish-configure.md
 ---
-
 <h2 id="config-varnish-config-web">Configure your web server</h2>
-Configure your web server to listen on a port other than the default port 80 because Varnish responds directly to incoming HTTP requests, not the web server. 
+Configure your web server to listen on a port other than the default port 80 because Varnish responds directly to incoming HTTP requests, not the web server.
 
 In the sections that follow, we use port 8080 as an example.
 
@@ -66,9 +65,9 @@ To minimally configure Varnish:
 	      .port = "80";
 		}
 
-4.	Replace the value of `.host` with the fully qualified host name or IP address and listen port of the Varnish *backend* or *origin server*; that is, the server providing the content Varnish will accelerate. 
+4.	Replace the value of `.host` with the fully qualified host name or IP address and listen port of the Varnish *backend* or *origin server*; that is, the server providing the content Varnish will accelerate.
 
-	Typically, this is your web server. 
+	Typically, this is your web server.
 
 	<a href="https://www.varnish-cache.org/docs/trunk/users-guide/vcl-backends.html" target="_blank">More information</a>
 5.	Replace the value of `.port` with the web server's listen port (8080 in this example).
@@ -76,14 +75,14 @@ To minimally configure Varnish:
 	Example: Apache is installed on host 192.0.2.55 and Apache is listening on port 8080:
 
 		backend default {
-	      .host = "192.0.2.55"; 
+	      .host = "192.0.2.55";
 	      .port = "8080";
-		}		
+		}
 
 	<div class="bs-callout bs-callout-info" id="info">
 		<p>If Varnish and Apache are running on the same host, we recommend you use an IP address or host name and not <code>localhost</code>.</p>
 	</div>
-		
+
 7.	Save your changes to `default.vcl` and exit the text editor.
 
 8.	Restart Varnish:
@@ -169,7 +168,7 @@ If you experience this error, edit `default.vcl` and add a timeout to the `backe
 	}
 
 <h2 id="config-varnish-verify-headers">Verify HTTP response headers</h2>
-Now you can verify that Varnish is serving pages by looking at HTML response headers returned from any Magento page.
+Now you can verify that Varnish is serving pages by looking at {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} response headers returned from any Magento page.
 
 Before you can look at headers, you must set Magento for developer mode. There are several ways to do it, the simplest of which is to modify `.htaccess` in the Magento 2 root. You can also use the <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html">`magento deploy:mode:set`</a> command.
 
@@ -201,7 +200,7 @@ A long list of response headers display in your command prompt window. Look for 
 If headers like these do *not* display, stop Varnish, check your `default.vcl`, and try again.
 
 #### Look at HTML response headers
-There are several ways to look at response headers, including using a browser plug-in like Live HTTP Headers (<a href="https://addons.mozilla.org/en-GB/firefox/addon/live-http-headers/" target="_blank">Firefox</a>) or a browser inspector.
+There are several ways to look at response headers, including using a browser {% glossarytooltip 9fceecbe-31be-4e49-aac7-11d155a85382 %}plug-in{% endglossarytooltip %} like Live HTTP Headers (<a href="https://addons.mozilla.org/en-GB/firefox/addon/live-http-headers/" target="_blank">Firefox</a>) or a browser inspector.
 
 The following example uses `curl`. You can enter this command from any machine that can access the Magento server using HTTP.
 

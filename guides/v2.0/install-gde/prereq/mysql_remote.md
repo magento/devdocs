@@ -48,6 +48,10 @@ To create a remote connection:
 		Default options are read from the following files in the given order:
 		/etc/my.cnf /etc/mysql/my.cnf /usr/etc/my.cnf ~/.my.cnf
 
+	<div class="bs-callout bs-callout-info" id="info" markdown="1">
+  		On Ubuntu 16, the path is typically `/etc/mysql/mysql.conf.d/mysqld.cnf`.
+	</div>
+
 3.	Search the configuration file for `bind-address`.
 
 	If it exists, change the value as follows. 
@@ -115,7 +119,7 @@ If your web server is clustered, enter the command on each web server host.
 <h2 id="instgde-prereq-mysql-remote-install">Install the Magento software</h2>
 When you install the Magento software using either the command line or Setup Wizard, you must specify the following:
 
-*	The Base URL (also referred to as the *store address*) specifies the host name or IP address of the *web node*
+*	The Base {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} (also referred to as the *store address*) specifies the host name or IP address of the *web node*
 *	Database host is the *remote database server* IP address (or load balancer if the database server is clustered)
 *	Database user name is the *local web node* database user to which you gave access
 *	Database password is the local web node user's password

@@ -13,7 +13,7 @@ redirect_from:
 ---
 
 <h2>Overview</h2>
-The Loader widget blocks page content (all content or a part of it). Its intended use is blocking content when an Ajax request is being sent. But it can be initialized for non-Ajax tasks as well. 
+The Loader {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} blocks page content (all content or a part of it). Its intended use is blocking content when an Ajax request is being sent. But it can be initialized for non-Ajax tasks as well. 
 
 The Loader widget source is <a href="{{site.mage2000url}}lib/web/mage/loader.js" target="_blank">lib/web/mage/loader.js</a>.
 
@@ -29,7 +29,7 @@ The loader widget has the following options:
 </ul>
 
 <h3 id="l_icon"><code>icon</code></h3>
-The URL to the loader image. This image is displayed when the widget is active; that is, between the `ajaxSend` and `ajaxComplete` events. 
+The {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} to the loader image. This image is displayed when the widget is active; that is, between the `ajaxSend` and `ajaxComplete` events. 
 
 **Type**: String 
 
@@ -37,7 +37,7 @@ The URL to the loader image. This image is displayed when the widget is active; 
 
 
 <h3 id="l_template"><code>template</code></h3>
-HTML wrapper for the output, or a DOM element selector. 
+{% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} wrapper for the output, or a DOM element selector. 
 
 **Default value**:
 <pre>

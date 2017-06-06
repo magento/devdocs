@@ -5,12 +5,12 @@ subgroup: 09_Varnish
 title: Troubleshooting 503 (Backend Fetch Failed) errors
 menu_title: Troubleshooting 503 (Backend Fetch Failed) errors
 menu_order: 500
-menu_node: 
+menu_node:
 version: 2.0
 github_link: config-guide/varnish/tshoot-varnish-503.md
 ---
 
-If the length of cache tags used by Magento exceed Varnish's default of 8192 characters, you can see HTTP 503 (Backend Fetch Failed) errors in the browser. The errors might display similar to the following:
+If the length of {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} tags used by Magento exceed Varnish's default of 8192 characters, you can see HTTP 503 (Backend Fetch Failed) errors in the browser. The errors might display similar to the following:
 
 	Error 503 Backend fetch failed
 	Backend fetch failed
@@ -25,14 +25,14 @@ To resolve this issue, increase the default value of `http_resp_hdr_len` in your
 
 2.	Search for the `http_resp_hdr_len` parameter.
 3.	If the parameter doesn't exist, add it after `thread_pool_max`.
-4.	Set `http_resp_hdr_len` to a value equal to the product count of your largest category multiplied by 30. (Each product tag is about 21 characters in length.)
+4.	Set `http_resp_hdr_len` to a value equal to the product count of your largest {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} multiplied by 30. (Each product tag is about 21 characters in length.)
 
 	For example, setting the value to 64000 should work if your largest category has 3,050 products.
 
 	For example:
 
 		-p http_resp_hdr_len=64000 \
-		
+
 	A snippet follows:
 
 		# DAEMON_OPTS is used by the init script.

@@ -51,7 +51,7 @@ To set up a new PhpStorm project to work with Magento DevBox:
 7.	Wait while PhpStorm indexes the project.
 
 ### Add a remote PHP CLI interpreter
-This section discusses how to add a remote PHP 7 CLI interpreter.
+This section discusses how to add a remote {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} 7 CLI interpreter.
 
 1.	In your PhpStorm Settings window, do one of the following:
 
@@ -140,7 +140,7 @@ To add path mappings:
 To set up PHPUnit:
 
 1.	In your PhpStorm Settings window, expand **Languages & Frameworks** > **PHP** > **PHPUnit**.
-2.	In the right pane, click **Use Composer autoloader** as the following figure shows.
+2.	In the right pane, click **Use {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} autoloader** as the following figure shows.
 
 	![Set up PHPUnit]({{ site.baseurl }}common/images/install_docker_php-storm-phpunit.png){:width="650px"}
 

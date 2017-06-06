@@ -14,7 +14,7 @@ redirect_from:
 
 ## Overview {#m2devgde-js-resources-intro}
 
-This topic describes the general concepts of how work with JavaScript components is organized in Magento. 
+This topic describes the general concepts of how work with {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} components is organized in Magento. 
 
 To address the problem of slow page load, we exclude JavaScript from the page headers and we added the ability to use the <a href="http://requirejs.org" target="_blank">RequireJS library</a>.
 
@@ -26,8 +26,8 @@ RequireJS improves the perceived page load, time because it allows JavaScript to
 
 In Magento, you can find the JS components on the following levels:
 
-*   Library level (`lib/web`). Resources located here are available in any place in Magento.
-*	Module level (`<module_dir>/view/<areaname>/web`). If the module is enabled, resources added here are available in other modules and themes. 
+*   {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}Library{% endglossarytooltip %} level (`lib/web`). Resources located here are available in any place in Magento.
+*	Module level (`<module_dir>/view/<areaname>/web`). If the {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} is enabled, resources added here are available in other modules and themes. 
 *	Theme level, for a particular module (`<theme_dir>/<VendorName>_<ModuleName>/web`). Resources added here are available for [inheriting]({{page.baseurl}}frontend-dev-guide/themes/theme-inherit.html) themes.
 *	Theme level  (`<theme_dir>/web`). Resources added here are available for [inheriting]({{page.baseurl}}frontend-dev-guide/themes/theme-inherit.html) themes.
 
@@ -37,7 +37,7 @@ Library level can only contain core Magento resources. Do not put custom JS file
 
 
 ### Specifying JS 
-We recommend specifying JavaScript resources in the templates rather than in the layout updates, to ensure processing of the resources in body of a page.
+We recommend specifying JavaScript resources in the templates rather than in the {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} updates, to ensure processing of the resources in body of a page.
 
 ## Accessing JS resources
 
@@ -48,7 +48,7 @@ Examples:
 **Example 1**
 
 - File actual location: `app/code/Magento/ConfigurableProduct/view/frontend/web/js/configurable.js`
-- File published to `pub/static`: `pub/static/frontend/Magento/<theme>/<locale>/Magento_Configurable/js/configurable.js`. Here `<theme>` and `<locale>` are the currently applied in your instance theme and locale.
+- File published to `pub/static`: `pub/static/frontend/Magento/<theme>/<locale>/Magento_Configurable/js/configurable.js`. Here `<theme>` and `<locale>` are the currently applied in your instance {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} and {% glossarytooltip 05099dbb-d491-4e33-a065-16035cb2d4d9 %}locale{% endglossarytooltip %}.
 - Called in script:
 
 {%highlight js%}
@@ -116,7 +116,7 @@ var config = {
 
 ## RequireJS library
 
-### Including RequrieJS {#m2devgde-js-resources-configrequirejs}
+### Including RequireJS {#m2devgde-js-resources-configrequirejs}
 
 To be available for the entire Magento instance, RequireJS library is included in the following layout files:
 

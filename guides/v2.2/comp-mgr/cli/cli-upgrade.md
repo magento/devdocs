@@ -13,7 +13,7 @@ github_link: comp-mgr/cli/cli-upgrade.md
 ## Command-line upgrade
 You can upgrade Magento from the command line if you installed the software using any of the following:
 
-*	Downloaded the metapackage using `composer create-project`
+*	Downloaded the {% glossarytooltip 7490850a-0654-4ce1-83ff-d88c1d7d07fa %}metapackage{% endglossarytooltip %} using `composer create-project`
 *	Installed the compressed archive
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -26,6 +26,9 @@ You can upgrade Magento from the command line if you installed the software usin
     <ul><li>If you're upgrading to version 2.1, see <a href="{{ page.baseurl }}release-notes/tech_bull_21-upgrade.html">Upgrade to Magento version 2.1 (June 22, 2016)</a>.</li>
     	<li>If you're upgrading from Magento CE or EE 2.0.0 or 2.0.1, you must first perform the tasks discussed in the <a href="{{page.baseurl}}release-notes/tech_bull_201-upgrade.html">Technical Bulletin (1/28/16)</a>.</li></ul>
 </div>
+
+## Pre-upgrade checklist
+{% include comp-man/checklist_2.2.md %}
 
 ## Prerequisite: `pub` directory root {#upgrade-cli-pub}
 This section applies to you *only* if you set the Magento root directory to `<your Magento install dir>/pub`. If you did not do this, skip this section and continue with the next section.
@@ -93,6 +96,9 @@ To prevent access to your store while it's being upgraded, put your store in mai
 4. Update the database schema and data:
 
 		php bin/magento setup:upgrade
+5.	Put your storefront online (that is, cancel maintenance mode):
+
+		php bin/magento maintenance:disable
 5.	Restart Varnish if you use it for page caching.
 
 		service varnish restart

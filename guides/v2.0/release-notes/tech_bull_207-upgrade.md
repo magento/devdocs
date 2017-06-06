@@ -12,7 +12,7 @@ github_link: release-notes/tech_bull_207-upgrade.md
 
 This bulletin informs you of a known issue updating from Magento EE and CE environments that run the following:   
 
-* PHP 5.5.x
+* {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} 5.5.x
 
 	**and**
 
@@ -67,7 +67,7 @@ The following table summarizes what you need to do.
 </table>
 
 <h4>How to determine which version of Updater application you are running</h4> 
-1. Log in to your Magento server as, or switch to, the Magento file system owner.
+1. Log in to your Magento server as, or switch to, the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %}.
 
 2. Open the following file in a text editor:
 

@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 50_trouble
+subgroup: 170_trouble
 title: Incorrect credentials
 menu_title: Incorrect credentials
 menu_order: 5

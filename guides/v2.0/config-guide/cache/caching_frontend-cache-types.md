@@ -18,9 +18,9 @@ redirect_from:
 <h2 id="cache-mage-over">Overview of Magento caching</h2>
 Magento enables you to configure alternatives to the default file system caching. This guide discusses some of those alternatives; namely,
 
-*   Set up the following cache mechanisms in the Magento configuration:
+*   Set up the following {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} mechanisms in the Magento configuration:
 
-    *   <a href="{{page.baseurl}}config-guide/database/database.html">Database</a>
+    *   <a href="{{page.baseurl}}config-guide/cache/caching-database.html">Database</a>
     *   <a href="{{page.baseurl}}config-guide/redis/config-redis.html">Redis</a>
     *   File system (default): No configuration is necessary to use file system caching.
 
@@ -33,7 +33,7 @@ Magento enables you to configure alternatives to the default file system caching
 Magento uses the following caching terminology:
 
 * *Frontend*: Similar to an interface or gateway to cache storage, implemented by <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Cache/Frontend" target="_blank">Magento\Framework\Cache\Frontend</a>.
-* *Cache types*: Can be one of the types provided with Magento or you can <a href="{{page.baseurl}}config-guide/config/caching-cache-type.html">create your own</a>.
+* *Cache types*: Can be one of the types provided with Magento or you can <a href="{{page.baseurl}}config-guide/cache/caching-cache-type.html">create your own</a>.
 * *Backend*: Specifies details about <a href="http://framework.zend.com/manual/1.12/en/zend.cache.backends.html" target="_blank">cache storage</a>, implemented by <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Cache/Backend" target="_blank">Magento\Framework\Cache\Backend</a>
 * *Two-level backend*: Stores cache records in two backends&mdash;a faster one and a slower one.
 
@@ -41,7 +41,7 @@ Magento uses the following caching terminology:
 
 This topic discusses the following options for configuring caching:
 
-*   Modifying the provided `default` cache frontend, which means you modify only `<your Magento install dir>/app/etc/di.xml` (the Magento application's global dependency injection configuration)
+*   Modifying the provided `default` cache frontend, which means you modify only `<your Magento install dir>/app/etc/di.xml` (the Magento application's global {% glossarytooltip 2be50595-c5c7-4b9d-911c-3bf2cd3f7beb %}dependency injection{% endglossarytooltip %} configuration)
 *   Configuring your own custom cache frontend, which means you modify only `<your Magento install dir>/app/etc/env.php` because it overrides the equivalent configuration in `di.xml`
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -49,7 +49,7 @@ This topic discusses the following options for configuring caching:
 </div> 
 
 <h2 id="cache-mage-frontend">Step 1: Define a cache frontend</h2>
-The Magento application has a `default` cache frontend you can use for any <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean-over">cache type</a>. This section discusses how to optionally define a cache frontend with a different name, which is preferable if you expect to customize your frontend.
+The Magento application has a `default` cache {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} you can use for any <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-cache.html#config-cli-subcommands-cache-clean-over">cache type</a>. This section discusses how to optionally define a {% glossarytooltip ca5ad9ac-9d39-45b5-80b1-e90d192f20d0 %}cache frontend{% endglossarytooltip %} with a different name, which is preferable if you expect to customize your frontend.
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>To use the <code>default</code> cache type, you don't need to modify <code>env.php</code> at all; you modify Magento's global <code>di.xml</code>. See the topics referenced in <a href="{{page.baseurl}}config-guide/cache/caching_low-level.html">Low-level cache options</a>. </p>
@@ -82,7 +82,7 @@ The following example shows how to define it in `env.php` (which overrides `di.x
 where `<unique frontend id>` is a unique name to identify your frontend and `<cache options>` are options discussed in the topics specific to each type of caching (database, Redis, and so on).
 
 <h2 id="cache-mage-adv">Step 2: Configure the cache</h2>
-You can specify frontend and backend cache configuration options in `env.php` or `di.xml`. This task is optional.
+You can specify frontend and {% glossarytooltip 74d6d228-34bd-4475-a6f8-0c0f4d6d0d61 %}backend{% endglossarytooltip %} cache configuration options in `env.php` or `di.xml`. This task is optional.
 
 `env.php` example:
 
@@ -101,7 +101,7 @@ You can specify frontend and backend cache configuration options in `env.php` or
 
 where
 
-*   `<frontend_type>` is the low-level frontend cache type. Specify the name of a class that is compatible with <a href="http://framework.zend.com/apidoc/1.7/Zend_Cache/Zend_Cache_Core.html" target="_blank">Zend_Cache_Core</a>. 
+*   `<frontend_type>` is the low-level frontend {% glossarytooltip 65f9a5a1-79ee-4f27-aac7-29abe24db40d %}cache type{% endglossarytooltip %}. Specify the name of a class that is compatible with <a href="http://framework.zend.com/apidoc/1.7/Zend_Cache/Zend_Cache_Core.html" target="_blank">Zend_Cache_Core</a>. 
 
     If you omit `<frontend_type>`, <a href="{{ site.mage2000url }}lib/internal/Magento/Framework/Cache/Core.php" target="_blank">Magento\Framework\Cache\Core</a> is used.
 *   `<frontend_option>`, `<frontend_option_value>` are the name and value of options the Magento framework passes as an associative array to the frontend cache upon its creation. 
@@ -109,4 +109,4 @@ where
 *   `<backend_option>`, `<backend_option_value>` are the name and value of options the Magento framework passes as an associative array to backend cache upon its creation.
 
 #### Next step
-<a href="{{page.baseurl}}config-guide/config/caching_low-level.html">Low-level cache options</a>
+<a href="{{page.baseurl}}config-guide/cache/caching_low-level.html">Low-level cache options</a>

@@ -26,7 +26,7 @@ To give the user a password, enter the following command as a user with `root` p
 Follow the prompts on your screen to create a password for the user.
 
 <div class="bs-callout bs-callout-warning">
-    <p>If you don't have <code>root</code> privileges on your Magento server, you can use another local user account. Make sure the user has a strong password and continue with <a href="#install-update-depend-user-group">Put the Magento file system owner in the web server group</a>.</p>
+    <p>If you don't have <code>root</code> privileges on your Magento server, you can use another local user account. Make sure the user has a strong password and continue with <a href="#install-update-depend-user-add2group">Put the Magento file system owner in the web server group</a>.</p>
 </div>
 
 For example, to create a user named `magento_user` and give the user a password, enter:
@@ -85,7 +85,7 @@ To set ownership and permissions before you install the Magento software:
 2.	Enter the following commands in the order shown:
 
 		cd <your Magento install dir>
-		find var vendor pub/static pub/media app/etc -type f -exec chmod g+w \;
+		find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \;
 		find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
 		chown -R :<web server group> .
 		chmod u+x bin/magento

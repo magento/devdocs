@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: 90_prod
+subgroup: 999_prod
 title: Deploy Magento to production
 menu_title: Deploy Magento to production
 menu_node: parent
@@ -18,3 +18,4 @@ Current topics include:
 
 *	[Deployment steps]({{page.baseurl}}config-guide/prod/prod_deploy.html)
 *	[Magento ownership and permissions in development and production]({{page.baseurl}}config-guide/prod/prod_file-sys-perms.html)
+* [Magento performance optimization for production deployments]({{page.baseurl}}config-guide/prod/prod_perf-optimize.html)

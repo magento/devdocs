@@ -1,9 +1,9 @@
 ---
 layout: default
 group: config-guide
-subgroup: 90_prod
-title: Deployment steps
-menu_title: Deployment steps
+subgroup: 999_prod
+title: Deploy to Production
+menu_title: Deploy to Production
 menu_node: 
 menu_order: 10
 version: 2.0
@@ -11,8 +11,15 @@ github_link: config-guide/prod/prod_deploy.md
 redirect_from: /guides/v2.0/howdoi/deploy/deploy-to-prod.html
 ---
 
-We're currently working with internal teams to research and publish best practice recommendations for deploying the Magento application to production.
+There are different viable strategies available for deploying changes to Magento.
+How you deploy changes to Magento depends on the setup of your production server.
 
-If you have input, we'd like to hear from you in [GitHub issue 419](https://github.com/magento/devdocs/issues/419).
+The following is a list of recommended strategies for production deployment:
 
-Thanks for your patience.
+* [Single machine deployment][0]
+* [Cloud deployment][1]
+* [Deployment strategies from the community][2]
+
+[0]: {{page.baseurl}}config-guide/prod/single-machine-deployment.html
+[1]: {{page.baseurl}}cloud/reference/discover-deploy.html
+[2]: {{site.baseurl}}community/resources/#installdeploy

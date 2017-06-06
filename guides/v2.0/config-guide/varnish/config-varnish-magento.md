@@ -5,14 +5,14 @@ subgroup: 09_Varnish
 title: Configure Magento to use Varnish
 menu_title: Configure Magento to use Varnish
 menu_order: 15
-menu_node: 
+menu_node:
 version: 2.0
 github_link: config-guide/varnish/config-varnish-magento.md
 ---
 
 To configure Magento to use Varnish:
 
-1.	Log in to the Magento Admin as an administrator.
+1.	Log in to the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} as an administrator.
 2.	Click **STORES** > **Configuration** > ADVANCED > **System** > **Full Page Cache**
 3.	From the **Caching Application** list, click **Varnish Caching**
 4.	Enter a value in the **TTL for public content** field.
@@ -30,7 +30,7 @@ To configure Magento to use Varnish:
 		<td>Access list</td>
 		<td><p>Enter the fully qualified host name, IP address, or <a href="https://www.digitalocean.com/community/tutorials/understanding-ip-addresses-subnets-and-cidr-notation-for-networking" target="_blank">Classless Inter-Domain Routing (CIDR)</a> notation IP address range for which to invalidate content.</p>
 			<p><a href="https://www.varnish-cache.org/docs/3.0/tutorial/purging.html" target="_blank">More information</a></p></td>
-	</tr>	
+	</tr>
 	<tr>
 		<td>Backend host</td>
 		<td><p>Enter the fully qualified host name or IP address and listen port of the Varnish <em>backend</em> or <em>origin server</em>; that is, the server providing the content Varnish will accelerate. Typically, this is your web server. </p>
@@ -40,7 +40,7 @@ To configure Magento to use Varnish:
 		<td>Backend port</td>
 		<td>Origin server's listen port.</td>
 	</tr>
-	
+
 	</tbody>
 	</table>
 
@@ -60,7 +60,7 @@ To configure Magento to use Varnish:
 		acl purge {
 		   "localhost";
 		}
-		
+
 9.	Restart Varnish and your web server:
 
 		service varnish restart

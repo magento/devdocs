@@ -21,7 +21,7 @@ Magento DevBox is packaged with the following:
 
 *	Debian GNU/Linux 8 (jessie)
 *	Apache 2.4.10
-*	PHP 7.0.12
+*	{% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} 7.0.12
 *	MySQL 5.6.34
 
 {% collapsibleh2 Prerequisites %}
@@ -218,7 +218,7 @@ To provide you more control over your Magento installation, we enable you to cho
 
     <tr>
         <td>Environment configuration</td>
-        <td><p>Choose which of the following software to install:</p> <ul><li><a href="{{ page.baseurl }}config-guide/mq/rabbitmq-overview.html">RabbitMQ</a> (required for Magento EE, can be installed optionally for Magento CE)</li><li><a href="{{ page.baseurl }}http://devdocs.magento.com/guides/v2.1/config-guide/redis/config-redis.html#config-redis-overhtml">Redis</a> for full-page cache</li><li>Redis for the default Magento cache</li><li>Redis for session cache</li><li><a href="{{ page.baseurl }}config-guide/varnish/config-varnish.html#config-varnish-over.html">Varnish</a> for HTTP acceleration</li><li><a href="{{ site.gdeurl21 }}config-guide/elasticsearch/es-overview.html#overview">Elasticsearch</a> (used by Magento EE 2.1 and later only, can be installed optionally for Magento CE)</li></ul></td>
+        <td><p>Choose which of the following software to install:</p> <ul><li><a href="{{ page.baseurl }}config-guide/mq/rabbitmq-overview.html">RabbitMQ</a> (required for Magento EE, can be installed optionally for Magento CE)</li><li><a href="{{ page.baseurl }}/config-guide/redis/config-redis.html#config-redis-overhtml">Redis</a> for full-page cache</li><li>Redis for the default Magento cache</li><li>Redis for session cache</li><li><a href="{{ page.baseurl }}config-guide/varnish/config-varnish.html#config-varnish-over.html">Varnish</a> for HTTP acceleration</li><li><a href="{{ site.gdeurl21 }}config-guide/elasticsearch/es-overview.html#overview">Elasticsearch</a> (used by Magento EE 2.1 and later only, can be installed optionally for Magento CE)</li></ul></td>
     </tr>
 </tbody>
 </table>
@@ -275,19 +275,46 @@ The following DevBox scripts and configuration files are located in the root fol
 *   `m2devbox-init.[bat|sh]` which starts the DevBox installation.
 *   `m2devbox-reset.[bat|sh]` which restarts the DevBox installation.
 
-    You can run this script, for example, after you stop and start your computer or Docker. DevBox assigns new ports to services; to find the new ports, see [Stop, start, restart, and view port mappings]({{ page.baseurl }}install-gde/docker/docker-commands.html#cloud-docker-cmds-stopstart).
+    You can run this script, for example, after you stop and start your computer or Docker. DevBox assigns new ports to services. You can do the following:
+
+    *   To set static listen ports that don't change every time you restart a container, see [Set static listen ports](#devbox-static-port) _before_ you run `m2devbox-init.[bat|sh]`
+    *   To find the listen ports currently being used, see [Stop, start, restart, and view port mappings]({{ page.baseurl }}install-gde/docker/docker-commands.html#cloud-docker-cmds-stopstart).
 
 *   `docker-compose.yml` DevBox configuration file.
 
     To set static listen ports so you don't have to reconfigure PhpStorm every time you start DevBox, see [Set static ports](#devbox-static-port).
 *   _Windows only_: `m2devbox-unison-sync.bat`, which runs Unison file synchronization. You should not run this script by itself; one of the other scripts starts it automatically.
-*   _Mac OS only_: `m2devbox-debug.sh`, which opens an SSH tunnel to the Docker container so PhpStorm can connect to it.
+*   _Mac OS only_: `m2devbox-debug.sh`, which opens an SSH tunnel to the {% glossarytooltip 57f1b0dc-1341-466d-a685-e0dbf5a3b713 %}Docker{% endglossarytooltip %} container so PhpStorm can connect to it.
 
 <div class="bs-callout bs-callout-info" markdown="1">
 When you run the installation script on Windows, an additional command window opens for Unison sync. You don't normally need to interact with this command window.
 
 Do not close the Unison sync window; otherwise, files you change won't be added to the Magento docroot.
 </div>
+
+### Set static listen ports {#devbox-static-port}
+By default, every time you start a Docker container, all listen ports are reassigned randomly. To cause DevBox to use the same listen ports every time you restart, you must modify `docker-compose.yml` _before you initialize_ DevBox for the first time.
+
+To set static listen ports:
+
+1.  Open `docker-compose.yml` in a text editor.
+
+    It's located in the root directory to which you downloaded DevBox.
+2.  Locate the `ports:` section.
+3.  Precede the default listen port with a free port number followed by `:`
+
+    An example follows.
+
+        ports:
+           - "12345:80" 
+           - "54321:22"
+
+    The preceding example causes the web container to listen on port 12345 and SSH to listen on port 54321.
+
+    <div class="bs-callout bs-callout-warning" id="warning" markdown="1">
+    Make sure the ports you assign to DevBox are not used by another process.
+    </div>
+4.  Save your changes to `docker-compose.yml` and exit the text editor.
 
 #### Next step
 [PhpStorm prerequisites]({{ page.baseurl }}install-gde/docker/docker-phpstorm-prereq.html)

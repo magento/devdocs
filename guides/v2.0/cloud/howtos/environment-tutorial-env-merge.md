@@ -1,18 +1,18 @@
 ---
 layout: default
 group: cloud
-subgroup: 15_howto
-title: Merge and delete an environment
-menu_title: Merge and delete an environment
+subgroup: How To
+title: Merge and delete an environment (tutorial)
+menu_title: Merge and delete an environment (tutorial)
 menu_order: 51
 menu_node: 
-level3_menu_node: level3child
-level3_subgroup: env-tut
 version: 2.0
 github_link: cloud/howtos/environment-tutorial-env-merge.md
 redirect_from: 
   - guides/v2.0/cloud/env/environment-tutorial-env-merge.html
   - guides/v2.1/cloud/env/environment-tutorial-env-merge.html
+  - guides/v2.0/cloud/env/environment-tutorial-parent.html
+  - guides/v2.1/cloud/env/environment-tutorial-parent.html
 ---
 
 ## Merge an environment {#tut-env-merge}
@@ -61,7 +61,7 @@ Before you delete an environment, make sure you don't need it anymore. You canno
   <p>You cannot delete the <code>master</code> environment of any project.</p>
 </div>
 
-You must be a [project administrator]({{page.baseurl}}cloud/admin/admin-user-admin.html#cloud-role-project), [environment administrator]({{page.baseurl}}cloud/admin/admin-user-admin.html#cloud-role-env), or [account owner]({{page.baseurl}}cloud/admin/admin-user-admin.html#cloud-role-acct-owner) to perform this task.
+You must be a [project administrator]({{page.baseurl}}cloud/project/user-admin.html#cloud-role-project), [environment administrator]({{page.baseurl}}cloud/project/user-admin.html#cloud-role-env), or [account owner]({{page.baseurl}}cloud/project/user-admin.html#cloud-role-acct-owner) to perform this task.
 
 This section discusses how to optionally delete an environment in the following ways:
 

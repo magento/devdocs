@@ -17,21 +17,21 @@ github_link: config-guide/redis/config-redis.md
 
 * The `core_cache_tag` table constantly grows. If a Magento instance has multiple web sites and web stores with large catalogs, the table can grow to 15 million records in less than a day. Insertion into `core_cache_tag` leads to issues with MySQL server, including performance degradation. 
 
-  (A *tag* is an identifier that classifies different types of Magento cache objects.)
+  (A *tag* is an identifier that classifies different types of Magento {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} objects.)
 
-* The TwoLevels backend is more difficult to maintain because two services are required to make it work which makes it difficult to analyze cache content when necessary.  
+* The TwoLevels {% glossarytooltip 74d6d228-34bd-4475-a6f8-0c0f4d6d0d61 %}backend{% endglossarytooltip %} is more difficult to maintain because two services are required to make it work which makes it difficult to analyze cache content when necessary.  
 Further, memcached itself has limitations such as a maximum object size and fixed bucket sizes which also contribute to difficult maintenance.
 
-* The <a href="http://framework.zend.com/manual/1.12/en/zend.cache.backends.html#zend.cache.backends.twolevels" target="_blank">Zend TwoLevels backend</a> does not scale well because using the database as part of the cache backend adds additional load to the master database server. Additionally, there is no reliable method for `memcached` replication.
+* The <a href="http://framework.zend.com/manual/1.12/en/zend.cache.backends.html#zend.cache.backends.twolevels" target="_blank">Zend TwoLevels backend</a> does not scale well because using the database as part of the {% glossarytooltip 8f2067d1-4a39-4ed2-916d-7c9c58ccf30c %}cache backend{% endglossarytooltip %} adds additional load to the master database server. Additionally, there is no reliable method for `memcached` replication.
 
 ### Why Redis is better
 Advantages of Redis include:
 
-* Redis can also be used for PHP session storage, making it possible to completely replace `memcached` with Redis.
+* Redis can also be used for {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} session storage, making it possible to completely replace `memcached` with Redis.
 
 * The Redis backend works by indexing tags in files so that tag operations do not require a full scan of every cache file. 
 
-* The metadata and the cache record are stored in the same file rather than separate files resulting in fewer inodes and fewer file stat, read, write, lock, and unlink operations. Also, the original hashed directory structure had very poor distribution due to the `adler32` hashing algorithm and prefixes. The multi-level nested directories have been dropped in favor of single-level nesting made from multiple characters.
+* The {% glossarytooltip 3f0f2ef1-ad38-41c6-bd1e-390daaa71d76 %}metadata{% endglossarytooltip %} and the cache record are stored in the same file rather than separate files resulting in fewer inodes and fewer file stat, read, write, lock, and unlink operations. Also, the original hashed directory structure had very poor distribution due to the `adler32` hashing algorithm and prefixes. The multi-level nested directories have been dropped in favor of single-level nesting made from multiple characters.
 
 * The backend supports tag-based cache cleanup without `foreach` loops. 
 
@@ -61,5 +61,5 @@ You can find more information about configuring Redis from the following:
 
 #### Next
 
-*	<a href="{{page.baseurl}}config-guide/redis/redis-session.html">Redis for session storage</a>
-*	<a href="{{page.baseurl}}config-guide/redis/redis-pg-cache.html">Redis for page caching</a>
+*	<a href="{{page.baseurl}}config-guide/redis/redis-pg-cache.html">Use Redis for the Magento page and default cache</a>
+*	<a href="{{page.baseurl}}config-guide/redis/redis-session.html">Use Redis for session storage</a>

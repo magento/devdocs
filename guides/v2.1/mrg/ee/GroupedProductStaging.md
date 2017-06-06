@@ -2,12 +2,10 @@
 layout: default
 group: mrg
 subgroup: Enterprise Edition
-title: Module Reference Guide
+title: Magento_GroupedProductStaging module
 menu_title: GroupedProductStaging
 menu_order: 2
 version: 2.1
-
-
 github_link: mrg/ee/GroupedProductStaging.md
 ---
 
@@ -15,7 +13,7 @@ github_link: mrg/ee/GroupedProductStaging.md
 
 ## Overview
 
-The Magento_GroupedProductStaging module is a part of the staging functionality in Magento EE. It enables you to stage products assigned to grouped product.
+The Magento_GroupedProductStaging {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} is a part of the staging functionality in Magento EE. It enables you to stage products assigned to {% glossarytooltip 47841e42-b8b3-4030-9eb1-286137065be2 %}grouped product{% endglossarytooltip %}.
 
 ## Implementation details
 

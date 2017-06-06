@@ -13,8 +13,8 @@ redirect_from:
 ---
 
 <h2>Overview</h2>
-<!-- used in Checkout -->
-The Magento collapsible widget converts a header/content pair into an accordion, where the content is collapsed or expanded on the header click.
+<!-- used in {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}Checkout{% endglossarytooltip %} -->
+The Magento collapsible {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} converts a header/content pair into an accordion, where the content is collapsed or expanded on the header click.
 
 Unlike the accordion widget is that collapsible is initialized for one title/content pair, while accordion can be initialized for a set of title/contents pairs.
 
@@ -98,7 +98,7 @@ $("#element").collapsible("option","active",false);
 
 
 <h3 id="fedg_collaps_ajaxUrlElement"><code>ajaxUrlElement</code></h3>
-Selector applied on the header using `.find()`, for the element that contains the URL for Ajax request. 
+Selector applied on the header using `.find()`, for the element that contains the {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} for Ajax request. 
 
 **Type**: String
 
@@ -180,7 +180,7 @@ Specifies the element, and the class which is assigned to this element, when the
 
 An object that contains the following:
 
-- `element`: an element, can be a selector or jquery object. 
+- `element`: an element, can be a selector or {% glossarytooltip 5bfa8a8e-6f3e-4fed-a43e-62339916f02e %}jquery{% endglossarytooltip %} object. 
 - `openedState`: the class name which is assigned to the element when the current element is in opened; removed when the current element is closed.
 
 **Type**: String

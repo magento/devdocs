@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 50_trouble
+subgroup: 170_trouble
 title: Troubleshooting
 menu_title: Troubleshooting
 menu_order: 1
@@ -12,6 +12,7 @@ github_link: cloud/trouble/trouble.md
 
 The following topics discuss solutions to common issues with Magento Enterprise Cloud Edition:
 
+*	[Use logs for troubleshooting]({{ page.baseurl }}cloud/trouble/environments-logs.html)
 *	[Incorrect credentials]({{page.baseurl}}cloud/trouble/trouble_ce-creds.html)
 *	[Resolve issues with a new project]({{page.baseurl}}cloud/trouble/trouble_proj-startover.html)
 *	[Component deployment failure]({{ page.baseurl }}cloud/trouble/trouble_comp-deploy-fail.html)

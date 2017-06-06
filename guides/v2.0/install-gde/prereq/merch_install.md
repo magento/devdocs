@@ -19,7 +19,7 @@ If you don't use GoDaddy, you might need to contact your hosting provider's tech
 Magento requires the following software to run:
 
 *	Web server: Apache 2.2 or 2.4
-*	Programming language: PHP 5.6.x or 5.5.x 
+*	Programming language: {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} 5.6.x or 5.5.x 
 *	Database: MySQL 5.6.x
 
 <div class="bs-callout bs-callout-info" id="info">

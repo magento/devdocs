@@ -9,12 +9,12 @@ version: 2.1
 github_link: payments-integrations/base-integration/formblocktype.md
 ---
 
-The payment information form rendering in Admin order creation is defined by the block class, its template and layout. 
+The payment information form rendering in {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} order creation is defined by the block class, its template and {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %}. 
 
 `formBlockType` is one of the arguments you must [configure for the payment method facade]({{page.baseurl}}payments-integrations/base-integration/facade-configuration.html). 
 
 This block is used to display payment form on billing form in Admin panel. In
-most cases it is enough to use the `\Magento\Payment\Block\Form\Cc`. All payments details are displayed according to specified keys in `paymentInfoKeys` option in module configuration.
+most cases it is enough to use the `\Magento\Payment\Block\Form\Cc`. All payments details are displayed according to specified keys in `paymentInfoKeys` option in {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} configuration.
 
 ## Example of custom formBlockType: Braintree payment method implementation
 

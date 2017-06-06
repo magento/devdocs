@@ -2,12 +2,10 @@
 layout: default
 group: mrg
 subgroup: Enterprise Edition
-title: Module Reference Guide
+title: Magento_WeeeStaging module
 menu_title: WeeeStaging
 menu_order: 2
 version: 2.1
-
-
 github_link: mrg/ee/WeeeStaging.md
 ---
 
@@ -15,7 +13,7 @@ github_link: mrg/ee/WeeeStaging.md
 
 ## Overview
 
-The Magento_WeeeStaging module is a part of the staging functionality in Magento EE. It enables you to stage a value of Fixed Product Tax.
+The Magento_WeeeStaging {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} is a part of the staging functionality in Magento EE. It enables you to stage a value of Fixed Product Tax.
 
 ## Implementation details
 
@@ -27,7 +25,7 @@ You can find the list of modules that have dependencies on the Magento_WeeeStagi
 
 ## Extension points
 
-Extension points enable extension developers to interact with the Magento_WeeeStaging module. [The Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/depend-inj.html) enables you to override the functionality of the module.
+{% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}Extension{% endglossarytooltip %} points enable extension developers to interact with the Magento_WeeeStaging module. [The Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/depend-inj.html) enables you to override the functionality of the module.
 
 [The Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.1/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_WeeeStaging module
 

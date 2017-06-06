@@ -17,7 +17,7 @@ Before you install Magento, you must do all of the following:
 
 *	Set up one or more hosts that meet the <a href="{{page.baseurl}}install-gde/system-requirements.html">Magento system requirements</a>.
 *	If you are setting up more than one web node with load balancing, set up and test that part of your system _before_ you install Magento.
-*	Make sure you can back up your entire system at various points during the installation so you can roll back in the event of issues.
+*	Make sure you can back up your entire system at various points during the installation so you can roll back in the {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} of issues.
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -65,7 +65,7 @@ To install or upgrade Apache, see <a href="{{page.baseurl}}install-gde/prereq/ap
 
 	php -v
 
-You must run PHP version 5.5 or later as the following result indicates:
+You must run {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} version 5.5 or later as the following result indicates:
 
 	PHP 5.5.9-1ubuntu4.4 (cli) (built: Sep  4 2014 06:56:34)
 	Copyright (c) 1997-2014 The PHP Group
@@ -108,7 +108,7 @@ To install or upgrade MySQL, see <a href="{{page.baseurl}}install-gde/prereq/mys
 
 #### Related topics
 
-*	<a href="{{page.baseurl}}install-gde/system-requirements.html">Magento system requirements</a>
+*	<a href="{{page.baseurl}}magento-system-requirements.html">Magento system requirements</a>
 *	<a href="{{page.baseurl}}install-gde/prereq/apache.html">Apache</a>
 *	<a href="{{page.baseurl}}install-gde/prereq/php-ubuntu.html">PHP 5.5, 5.6, or 7.0&mdash;Ubuntu</a>
 *	<a href="{{page.baseurl}}install-gde/prereq/php-centos.html">PHP 5.5, 5.6, or 7.0&mdash;CentOS</a>

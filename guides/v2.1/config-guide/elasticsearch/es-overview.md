@@ -15,15 +15,15 @@ github_link: config-guide/elasticsearch/es-overview.md
 
 #### Contents
 
-*	<a href="#overview">Overview of Elasticsearch</a>
-*	<a href="#es-prereq">Install prerequisites and Elasticsearch</a>
-*	<a href="#es-resources">Additional resources</a>
+*	[Overview of Elasticsearch](#overview){:target="_blank"}
+*	[Install prerequisites and Elasticsearch](#es-prereq){:target="_blank"}
+*	[Additional resources](#es-resources){:target="_blank"}
 *	[Configure nginx and Elasticsearch]({{page.baseurl}}config-guide/elasticsearch/es-config-nginx.html)
 *	[Configure Apache and Elasticsearch]({{page.baseurl}}config-guide/elasticsearch/es-config-apache.html)
 *	[Configure Elasticsearch stopwords]({{page.baseurl}}config-guide/elasticsearch/es-config-stopwords.html)
 
 <h2 id="overview">Overview of Elasticsearch</h2>
-In Magento 2.1 for the first time, you can use [Elasticsearch](https://www.elastic.co){:target="_blank"} for searching your catalog.
+In Magento 2.1 for the first time, you can use [Elasticsearch](https://www.elastic.co){:target="_blank"} for searching your {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}catalog{% endglossarytooltip %}.
 
 *	Elasticsearch performs quick and advanced searches on products in the catalog
 *	Elasticsearch analyzers support multiple languages
@@ -80,8 +80,9 @@ Search requests are processed as follows:
 The tasks discussed in this section require the following:
 
 *	[Firewall and SELinux](#firewall-selinux)
-*	<a href="#prereq-java">Install the Java Software Development Kit (JDK)</a>
+*	[Install the Java Software Development Kit (JDK)](#prereq-java){:target="_blank"}
 *	[Install Elasticsearch](#es-install-es)
+*	[Configure Magento to use Elasticsearch](#configure-magento-to-use-elasticsearch)
 
 {% include config/solr-elastic-selinux.md %}
 
@@ -129,20 +130,14 @@ To install Elasticsearch:
 
 4.	Open the [Elasticsearch configuration file](https://www.elastic.co/guide/en/elasticsearch/reference/2.0/setup-configuration.html#settings){:target="_blank"}, `elasticsearch.yml`, in a text editor.
 
-	For example, it might be located in `/etc/elasticsearch`.
+	For example, it might be located in `/etc/elasticsearch` or `<elasticsearch install dir>/config`.
 5.	Add the following parameter to the `Memory` section:
 
-	*	Very large catalogs (40,000 SKUs or more)
-
-			index.query.bool.max_clause_count: 10024 
-
-	*	Catalogs with less than 40,000 SKUs:
-
-			index.query.bool.max_clause_count: 4096
+		index.query.bool.max_clause_count: 10024 
 
 	For more information, see [Setting the BooleanQuery maxClauseCount in Elasticsearch](http://george-stathis.com/2013/10/18/setting-the-booleanquery-maxclausecount-in-elasticsearch){:target="_blank"}.
 6.	Save your changes to `elasticsearch.yml` and exit the text editor.
-3.	Optionally configure the <a href="https://www.elastic.co/guide/en/elasticsearch/reference/2.0/setup-service.html" target="_blank">Elasticsearch service</a>.
+3.	Optionally configure the [Elasticsearch service](https://www.elastic.co/guide/en/elasticsearch/reference/2.0/setup-service.html){:target="_blank"}.
 4.	Start Elasticsearch:
 
 		service elasticsearch start
@@ -154,6 +149,7 @@ To install Elasticsearch:
 
 		{"cluster_name":"elasticsearch","status":"green","timed_out":false,"number_of_nodes":1,"number_of_data_nodes":1,"active_primary_shards":0,"active_shards":0,"relocating_shards":0,"initializing_shards":0,"unassigned_shards":0,"delayed_unassigned_shards":0,"number_of_pending_tasks":0,"number_of_in_flight_fetch":0,"task_max_waiting_in_queue_millis":0,"active_shards_percent_as_number":100.0}
 
+
 ## Additional resources {#es-resources}
 For additional information, see [Elasticsearch documentation](https://www.elastic.co/guide/en/elasticsearch/reference/2.4/index.html){:target=_"blank"}
 
@@ -161,3 +157,4 @@ For additional information, see [Elasticsearch documentation](https://www.elasti
 
 *	[Configure nginx and Elasticsearch]({{page.baseurl}}config-guide/elasticsearch/es-config-nginx.html)
 *	[Configure Apache and Elasticsearch]({{page.baseurl}}config-guide/elasticsearch/es-config-apache.html)
+*	[Configure Magento to use Elasticsearch]({{page.baseurl}}config-guide/elasticsearch/configure-magento.html)

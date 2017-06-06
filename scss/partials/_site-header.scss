@@ -44,7 +44,7 @@
     height: 40px;
     float: left;
     margin-top: 7px;
-    margin-right: 20px;
+    margin-right: 10px;
   }
 
   .devdocs-logo {
@@ -80,8 +80,9 @@
   .search-btn {
     width: $header-height;
     height: $header-height;
-    float: right;
-    position: relative;
+    position: absolute;
+    top:0;
+    right: 5px;
     z-index: 3;
 
     .search-icon {
@@ -122,5 +123,14 @@
     }
 
   } // medium-screen
+
+
+  @media ($large-screen){
+
+    .logo {
+      margin-right: 20px;
+    }
+
+  }
 
 }

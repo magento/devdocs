@@ -41,14 +41,14 @@ Before you publish your component, you should test installing it using the <a hr
 
 One way to do this follows:
 
-1.	<a href="{{page.baseurl}}extension-dev-guide/package/package_module.html">Package your component</a> in a GitHub repository that's accessible by the machine on which you run the Magento Admin.
+1.	<a href="{{page.baseurl}}extension-dev-guide/package/package_module.html">Package your component</a> in a GitHub repository that's accessible by the machine on which you run the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}.
 2.	On that machine, create a static route from `https://repo.magento.com` to your GitHub repository.
 
 	To create a static route, add a line similar to the following to your `hosts` file:
 
 		<IP or host name of your GitHub repository> https://repo.magento.com
 
-3.	<a href="{{page.baseurl}}comp-mgr/compman-main-pg.html#compman-access" target="_blank">Install your component</a> exactly like a merchant.
+3.	<a href="{{page.baseurl}}comp-mgr/module-man/compman-main-pg.html#compman-access" target="_blank">Install your component</a> exactly like a merchant.
 4.	Verify the component installed properly.
 
 
@@ -58,6 +58,6 @@ One way to do this follows:
 
 
 ## More information
-For more information on testing in PHP and validating Magento components, see the following:
+For more information on testing in {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} and validating Magento components, see the following:
 
 * [Validating Magento Extensions](http://www.gorillagroup.com/trending/insight/validating-magento-extensions-phpunit/){:target="_blank"}

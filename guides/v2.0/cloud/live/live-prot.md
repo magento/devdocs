@@ -1,10 +1,10 @@
 ---
 layout: default
 group: cloud
-subgroup: 40_live
+subgroup: 160_live
 title: Protective block
 menu_title: Protective block
-menu_order: 100
+menu_order: 900
 menu_node: 
 version: 2.0
 github_link: cloud/live/live-prot.md
@@ -47,7 +47,7 @@ to stay mostly online.
 parts of a request, such as a query string, cookies or any additional
 headers, might be removed from GET requests. All other requests may be
 blocked entirely&mdash;this could apply to logging in, form submission, or
-product checkout.
+product {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %}.
 
 Unblocking is automated upon resolution of the security risk. The block
 is removed soon after you apply a security upgrade and removes

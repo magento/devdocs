@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: 90_prod
+subgroup: 999_prod
 title: Magento ownership and permissions in development and production
 menu_title: Magento ownership and permissions in development and production
 menu_node:

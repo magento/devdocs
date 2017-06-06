@@ -1,10 +1,10 @@
 ---
 layout: default
 group: cloud
-subgroup: 08_setup
-title: Step 2, Set up the Magento file system owner
-menu_title: Step 2, Set up the Magento file system owner
-menu_order: 10
+subgroup: 080_setup
+title: Step 6, Set up the Magento file system owner
+menu_title: Step 6, Set up the Magento file system owner
+menu_order: 58
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: workspace
@@ -13,9 +13,9 @@ github_link: cloud/before/before-workspace-file-sys-owner.md
 ---
 
 ### About the shared group {#mage-owner-about-group}
-To enable the web server to write files and directories in the Magento file system but to also maintain *ownership* by the Magento file system owner, both users must be in the same group. This is necessary so both users can share access to Magento files (including files created using the Magento Admin or other web-based utilities).
+To enable the web server to write files and directories in the Magento file system but to also maintain *ownership* by the Magento file system owner, both users must be in the same group. This is necessary so both users can share access to Magento files (including files created using the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} or other web-based utilities).
 
-This section discusses how to create a new Magento file system owner and put that user in the web server's group. You can use an existing user account if you wish; we recommend the user have a strong password for security reasons.
+This section discusses how to create a new {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %} and put that user in the web server's group. You can use an existing user account if you wish; we recommend the user have a strong password for security reasons.
 
 ### Step 1: Create the Magento file system owner and give the user a strong password {#mage-owner-create-user}
 This section discusses how to create the Magento file system owner. (Magento file system owner is another term for the *command-line user*.)
@@ -90,6 +90,5 @@ To complete the task, restart the web server:
 {% endcollapsible %}
 
 #### Next step
-[Install the CLI]({{ page.baseurl }}cloud/before/before-workspace-cli.html)
-
-
+*	If you're setting up a new Magento Enterprise Cloud Edition project for the first time, see [Create a new Magento project]({{ page.baseurl }}cloud/access-acct/first-time-setup_template.html)
+*	If you're importing existing Magento Enterprise Edition code into Magento Enterprise Cloud Edition, see [First steps for importing Magento EE]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-first-steps.html)

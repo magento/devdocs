@@ -1,18 +1,18 @@
 ---
 layout: default
 group: get-started
-subgroup: B_Authentication
+subgroup: 40_Authentication
 title: Token-based authentication
 menu_title: Token-based authentication
 menu_order: 1
-version: 2.0
+version: 2.2
 github_link: get-started/authentication/gs-authentication-token.md
 redirect_from: /guides/v1.0/get-started/authentication/gs-authentication-token.html
 ---
 
 ## Authentication tokens
 
-To make a web API call from a client such as a mobile application, you must supply an *authentication token* on the call. The token acts like an electronic key that lets you access the API.
+To make a web {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} call from a client such as a mobile application, you must supply an *authentication token* on the call. The token acts like an electronic key that lets you access the API.
 
 Magento provides a separate token service for administrators and customers. When you request a token from one of these services, the service returns a unique authentication token in exchange for the user name and password for a Magento account.
 
@@ -25,7 +25,9 @@ Request|REST|SOAP
 Get an admin token | `POST /V1/integration/admin/token` | `integrationAdminTokenServiceV1`
 Get a customer token | `POST /V1/integration/customer/token` | `integrationCustomerTokenServiceV1`
 
-For most web API calls, you supply this token in the `Authorization` request header with the `Bearer` HTTP authorization scheme to prove your identity. The token never expires, but it can be revoked.
+For most {% glossarytooltip 377dc0a3-b8a7-4dfa-808e-2de37e4c0029 %}web API{% endglossarytooltip %} calls, you supply this token in the `Authorization` request header with the `Bearer` HTTP {% glossarytooltip 34ecb0ab-b8a3-42d9-a728-0b893e8c0417 %}authorization{% endglossarytooltip %} scheme to prove your identity. By default, an admin token is valid for 4 hours, while a customer token is valid for 1 hour. You can change these values from Admin by selecting **Configuration > Services > OAuth > Access Token Expiration**.
+
+A cron job that runs hourly removes all expired tokens.
 
 ## Request a token {#request-token}
 
@@ -64,19 +66,25 @@ A authentication token request contains three basic elements:
 
 #### Examples {#token-example}
 
-The following image shows a token request for the admin account using a REST client:
+The following image shows a token request for the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}admin{% endglossarytooltip %} account using a REST client:
 
 ![REST client]({{page.baseurl}}get-started/authentication/gs_auth_token1.png)
 
 The following example uses the `curl` command to request a token for a customer account:
 
-`curl -X POST "https://magento.host/index.php/rest/V1/integration/customer/token" \
+```
+curl -X POST "https://magento.host/index.php/rest/V1/integration/customer/token" \
      -H "Content-Type:application/json" \
-     -d '{"username":"customer1@example.com", "password":"customer1pw"}'`
+     -d "{"username":"customer1@example.com", "password":"customer1pw"}"
+```
 
-The following example makes the same request with XML for a customer account token:
+The following example makes the same request with {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} for a customer account token:
 
-`curl -X POST "http://magento.vg/index.php/rest/V1/integration/customer/token" -H "Content-Type:application/xml"  -d '<login><username>customer1@example.com</username><password>customer1pw</password></login>'`
+```
+curl -X POST "http://magento.vg/index.php/rest/V1/integration/customer/token" \
+     -H "Content-Type:application/xml"  \
+     -d "<login><username>customer1@example.com</username><password>customer1pw</password></login>"
+```
 
 For more information about the `curl` command, see [Use cURL to run the request]({{page.baseurl}}get-started/gs-curl.html)
 

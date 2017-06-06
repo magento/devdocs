@@ -11,7 +11,7 @@ github_link: frontend-dev-guide/tools/tools_overview.md
 ---
 
 
-This chapter describes how to install and use additional tools that can make your Magento frontend development tasks easier.
+This chapter describes how to install and use additional tools that can make your Magento {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} development tasks easier.
 
 **Chapter Contents**
 

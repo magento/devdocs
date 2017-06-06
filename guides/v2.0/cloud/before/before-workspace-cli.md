@@ -1,10 +1,10 @@
 ---
 layout: default
 group: cloud
-subgroup: 08_setup
-title: Step 3, Install the CLI
-menu_title: Step 3, Install the CLI
-menu_order: 12
+subgroup: 080_setup
+title: Step 2, Install the CLI
+menu_title: Step 2, Install the CLI
+menu_order: 54
 menu_node: 
 level3_menu_node: level3child
 level3_subgroup: workspace
@@ -18,7 +18,7 @@ The Magento Enterprise Cloud Edition command-line interface (CLI) helps you mana
 To install the Magento Enterprise Cloud Edition CLI:
 
 1.	Log in to your local development machine, or switch to, the [Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html).
-2.	Change to a directory to which the Magento file system owner has write access (for example, the web server docroot).
+2.	Change to a directory to which the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %} has write access (for example, the web server docroot).
 1.	Enter the following command:
 
 		curl -sS https://accounts.magento.cloud/cli/installer | php
@@ -26,9 +26,9 @@ To install the Magento Enterprise Cloud Edition CLI:
 
 	For example, on Ubuntu and CentOS, the command is similar to:
 
-		 source /home/magento_user/.bashrc
+	<pre class="no-copy">source /home/magento_user/.bashrc</pre>
 
-	For more information about the user shell profile, see [.bash_profile vs .bashrc](http://www.joshstaiger.org/archives/2005/07/bash_profile_vs.html){:target="_blank"}\
+	For more information about the user shell profile, see [.bash_profile vs .bashrc](http://www.joshstaiger.org/archives/2005/07/bash_profile_vs.html){:target="_blank"}
 
 	You can also add the `<magento user home dir>/.magento-cloud/bin` to the Magento user's `PATH`. 	If the user name is `magento_user`, the command is similar to the following:
 	
@@ -41,4 +41,4 @@ To install the Magento Enterprise Cloud Edition CLI:
 		magento-cloud list
 
 #### Next step
-[Enable Secure Shell (SSH)]({{ page.baseurl }}cloud/before/before-workspace-ssh.html)
+[Step 3, Enable Secure Shell (SSH)]({{ page.baseurl }}cloud/before/before-workspace-ssh.html)

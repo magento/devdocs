@@ -1,10 +1,10 @@
 ---
 layout: default
 group: cloud
-subgroup: 10_project
+subgroup: 100_project
 title: Set up multiple Cloud websites or stores
 menu_title: Set up multiple Cloud websites or stores
-menu_order: 10
+menu_order: 35
 menu_node: 
 version: 2.0
 github_link: cloud/project/project-multi-sites.md
@@ -17,8 +17,8 @@ To set up multiple stores, you must:
 
 1.	[Configure your local installation]({{ page.baseurl }}config-guide/multi-site/ms_over.html) and test it locally.
 2.	Configure Magento Enterprise Cloud edition routes and variables.
-3.	Push the changes to an [integration environment]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-int) and test it.
-4.	To deploy multiple stores to a [staging]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-stage) or [production]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-prod) environment, create a support ticket.
+3.	Push the changes to an [integration environment]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int) and test it.
+4.	To deploy multiple stores to a [staging]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-stage) or [production]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-prod) environment, create a support ticket.
 
 ## Configure your local installation
 To configure your local installation to use multiple stores, see [Multiple websites or stores]({{ page.baseurl }}config-guide/multi-site/ms_over.html).
@@ -27,7 +27,7 @@ To configure your local installation to use multiple stores, see [Multiple websi
 After successfully creating and testing multiple stores locally, you must:
 
 1.	[Configure routes](#cloud-multi-stores-routes), which specify how incoming URLs are handled by Magento Enterprise Cloud Edition.
-2.	[Set up websites, stores, and store views](#cloud-multi-stores-admin) in your Magento Enterprise Cloud Edition server's Admin.
+2.	[Set up websites, stores, and store views](#cloud-multi-stores-admin) in your Magento Enterprise Cloud Edition server's {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}.
 3.	[Modify `magento-vars.php`](#cloud-multi-stores-magento-vars) to specify the values of the `MAGE_RUN_TYPE` and `MAGE_RUN_CODE` variables.
 4.	[Deploy](#cloud-multi-stores-deploy) to your integration branch and test.
 
@@ -35,7 +35,7 @@ After successfully creating and testing multiple stores locally, you must:
 Magento Enterprise Edition *routes* define how incoming URLs are processed. The way you configure routes depends on how you want your site to operate. We suggest configuring routes for integration as follows. You can edit the values later if your needs change.
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>This section discusses how to configure your <a href="{{ page.baseurl }}cloud/discover-arch.html#cloud-arch-int">integration environment</a> only. To set up routes in a staging or production environment, you must create a <a href="{{ page.baseurl }}cloud/get-help.html">Support ticket</a>.</p>
+  <p>This section discusses how to configure your <a href="{{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int">integration environment</a> only. To set up routes in a staging or production environment, you must create a <a href="{{ page.baseurl }}cloud/welcome/get-help.html">Support ticket</a>.</p>
 </div>
 
 To configure routes in an integration environment:
@@ -102,7 +102,7 @@ Make sure you name your websites, stores, and store views in your Cloud Admin th
 See [Set up multiple websites, stores, and store views in the Admin]({{ page.baseurl }}config-guide/multi-site/ms_websites.html).
 
 ### Modify `magento-vars.php` {#cloud-multi-stores-magento-vars}
-Instead of configuring an nginx virtual host, pass the `MAGE_RUN_CODE` and `MAGE_RUN_TYPE` variables using `magento-vars.php` which is located in your Magento root directory.
+Instead of configuring an {% glossarytooltip b14ef3d8-51fd-48fe-94df-ed069afb2cdc %}nginx{% endglossarytooltip %} virtual host, pass the `MAGE_RUN_CODE` and `MAGE_RUN_TYPE` variables using `magento-vars.php` which is located in your Magento root directory.
 
 1.	Open `magento-vars.php` in a text editor.
 2.	Uncomment everything after the first two lines.
@@ -166,7 +166,7 @@ To deploy and test:
 		git add -A && git commit -m "Implement multiple sites"
 		git push origin <branch name>
 2.	Wait for deployment to complete.
-3.	When deployment is done, in a web browser, go to your site's base URL.
+3.	When deployment is done, in a web browser, go to your site's base {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %}.
 
 	The URL must be in the format: `http://<magento run_code>---<rest of URL>`
 
