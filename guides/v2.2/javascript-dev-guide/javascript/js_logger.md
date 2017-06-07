@@ -5,7 +5,7 @@ subgroup: 1_Javascript
 title: JavaScript Logger
 menu_title: JavaScript Logger
 menu_order: 20
-version: 2.0
+version: 2.2
 github_link: javascript-dev-guide/javascript/js_logger.md
 ---
 
@@ -249,6 +249,11 @@ An instance of the `Logger` class that is configured to display messages in the 
 
 ### Usages in Magento
 By default, Magento uses `consoleLogger` to display logs in browser console.
+
+Example:
+
+![node declaration autocomplete]({{site.baseurl}}common/images/js/logger_error.png)
+
 The default level of logs that Magento displays in the console starts from the `WARN` level.
 
 ### Types of logged information
