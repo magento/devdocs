@@ -13,7 +13,7 @@ This topic describes how to add a custom field that influences other fields on t
 
 Let's consider a case when you need to add a check box whose state (selected or cleared) changes the state of other fields. To achieve this, you need to take the following steps:
 
-1. Create a plugin for the process method of the [`LayoutProcessor`]({{site.mage2000url}}app/code/Magento/Checkout/Block/Checkout/LayoutProcessor.php) class.
+1. Create a plugin for the process method of the `<Magento_Checkout_module_dir>/Block/Checkout/LayoutProcessor.php` class.
 2. Declare the plugin in your module's `di.xml`.
 2. Create a JS component for the checkbox with custom logic.
 
