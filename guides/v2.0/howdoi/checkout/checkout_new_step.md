@@ -194,6 +194,54 @@ A sample `checkout_index_index.xml` follows:
 </page>
 {%endhighlight xml%}
 
+## Create mixins for payment and shipping steps (optional)
+
+If your new step is the first step, you have to create mixins for the payment and shipping steps. Otherwise two steps will be activated on loading of the checkout.
+
+Create a mixin as follows:
+
+1. Create a `Vendor/Module/view/base/requirejs-config.js` file with these contents;
+
+{%highlight js%}
+var config = {
+'config': {
+    'mixins': {
+        'Magento_Checkout/js/view/shipping': {
+            'Vendor_Module/js/view/shipping-payment-mixin': true
+        },
+        'Magento_Checkout/js/view/payment': {
+            'Vendor_Module/js/view/shipping-payment-mixin': true
+        }
+    }
+}
+{%endhighlight js%}
+
+2. Create the mixin. We'll use the same mixin for both payment and shipping:
+
+{%highlight js%}
+define(
+    [
+        'ko'
+    ], function (ko) {
+        'use strict';
+
+        var mixin = {
+
+            initialize: function () {
+                this.visible = ko.observable(false); // set visible to be initially false to have your step show first
+                this._super();
+
+                return this;
+            }
+        };
+
+        return function (target) {
+            return target.extend(mixin);
+        };
+    }
+);
+{%endhighlight js%}
+
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 For your changes to be applied, you might need to [clean layout cache]({{page.baseurl}}config-guide/cli/config-cli-subcommands-cache.html ) and [static view file cache]({{page.baseurl}}howdoi/clean_static_cache.html).
 </div>
