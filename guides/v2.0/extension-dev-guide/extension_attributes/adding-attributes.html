@@ -1107,7 +1107,7 @@ Plugin should listen next methods: save, get, getList.</p>
             <span class="nv">$ourCustomData</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">customDataRepository</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="nv">$entity</span><span class="o">-&gt;</span><span class="na">getId</span><span class="p">());</span>
 
             <span class="nv">$extensionAttributes</span> <span class="o">=</span> <span class="nv">$entity</span><span class="o">-&gt;</span><span class="na">getExtensionAttributes</span><span class="p">();</span> <span class="sd">/** get current extension attributes from entity **/</span>
-            <span class="nv">$extensionAttributes</span><span class="o">-&gt;</span><span class="na">setOurCustomData</span><span class="p">(</span><span class="nv">$ourCusomData</span><span class="p">);</span>
+            <span class="nv">$extensionAttributes</span><span class="o">-&gt;</span><span class="na">setOurCustomData</span><span class="p">(</span><span class="nv">$ourCustomData</span><span class="p">);</span>
             <span class="nv">$entity</span><span class="o">-&gt;</span><span class="na">setExtensionAttributes</span><span class="p">(</span><span class="nv">$extensionAttributes</span><span class="p">);</span>
 
             <span class="k">return</span> <span class="nv">$entity</span><span class="p">;</span>
