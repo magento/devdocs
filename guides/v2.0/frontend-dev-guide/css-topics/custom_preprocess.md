@@ -97,3 +97,4 @@ The content of your `di.xml` will be similar to the following:
 
 - [Magento PHP Developer Guide]({{page.baseurl}}extension-dev-guide/bk-extension-dev-guide.html)
 
+- [SnowdogApps/magento2-theme-blank-sass](https://github.com/SnowdogApps/magento2-theme-blank-sass)
