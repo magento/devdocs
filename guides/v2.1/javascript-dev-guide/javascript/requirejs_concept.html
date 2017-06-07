@@ -795,10 +795,10 @@
 
 <p>Example of how aliases can be used. Open a browser console on any Magento page and type:</p>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js">	<span class="nx">require</span><span class="p">([</span><span class="s1">&#39;productGallery&#39;</span><span class="p">]);</span> <span class="c1">// load the module on the page</span>
-	<span class="kd">var</span> <span class="nx">gallery1</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;productGallery&#39;</span><span class="p">);</span>
+<figure class="highlight"><pre><code class="language-js" data-lang="js">    <span class="nx">require</span><span class="p">([</span><span class="s1">&#39;productGallery&#39;</span><span class="p">]);</span> <span class="c1">// load the module on the page</span>
+    <span class="kd">var</span> <span class="nx">gallery1</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;productGallery&#39;</span><span class="p">);</span>
     <span class="kd">var</span> <span class="nx">gallery2</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;Magento_Catalog/js/product-gallery&#39;</span><span class="p">);</span>
-	<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">gallery1</span><span class="p">);</span> <span class="c1">// it does not return a simple type</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">gallery1</span><span class="p">);</span> <span class="c1">// it does not return a simple type</span>
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">gallery1</span> <span class="o">===</span> <span class="nx">gallery2</span><span class="p">);</span> <span class="c1">// they are the same</span></code></pre></figure>
 
 <p>Tip: One more way that you can use <code>require</code> object is to retrieve a current configuration during runtime. Just type in a browser console:</p>
