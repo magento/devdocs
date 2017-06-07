@@ -9,16 +9,19 @@ version: 2.0
 github_link: howdoi/checkout/checkout_custom_checkbox.md
 ---
 
-This topic contains the basic information about how to add custom field on checkout page that will control other fields. Lets imagine that you want to add a checkbox whose state  (checked/unchecked) changes the state of other fields. What we need to do:
+This topic describes how to add a custom field that influences other fields on the checkout page using a particular customization case for illustration. 
 
-1. Create after plugin on LayoutProcessor process method
-2. Create checkbox with custom logic
+Let's consider a case when you need to add a check box whose state (selected or cleared) changes the state of other fields. To achieve this, you need to take the following steps:
 
-## Create after plugin on LayoutProcessor process method
+1. Create a plugin for the process method of the [`LayoutProcessor`]({{site.mage2000url}}app/code/Magento/Checkout/Block/Checkout/LayoutProcessor.php) class.
+2. Declare the plugin in your module's `di.xml`.
+2. Create a JS component for the checkbox with custom logic.
+
+## Create a plugin for the `LayoutProcessor`'s process method
 
 In your custom module directory, create the following new file: `<your_module_dir>/Block/Checkout/SomeProcessor.php`. In this file, add the following:
 
-``` php
+{%highlight php%}
 <?php
 namespace Magento\Checkout\Block\Checkout;
 
@@ -122,26 +125,29 @@ class SomeProcessor
     }
 }
 ?>
-```
+{%endhighlight%}
 
-Above code it is plugin that add checkbox, makes street labels trackable and assign dependencies to checkbox.
+This code sample is a plugin that adds a check box, makes the street labels trackable, and assigns dependencies to the check box.
 
-Configure plugin in `<your_module_dir>/etc/frontend/di.xml`
+## Declare plugin in di.xml
 
-``` xml
+Declare the plugin you created in `<your_module_dir>/etc/frontend/di.xml`:
+
+{% highlight xml%}
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
     <type name="Magento\Checkout\Block\Checkout\LayoutProcessor">
         <plugin name="ProcessAddressConfiguration" type="Magento\Checkout\Block\Checkout\SomeProcessor"/>
     </type>
 </config>
-```
+{%endhighlight%}
 
-## Create checkbox with custom logic
+
+## Create a JS component for the check box
 
 In your custom module directory, create the following new file: `<your_module_dir>/view/frontend/web/js/single-checkbox.js`. In this file, add the following:
 
-``` javascript
+{% highlight javascript%}
 define([
     'Magento_Ui/js/form/element/single-checkbox',
     'mage/translate'
@@ -198,6 +204,6 @@ define([
         }
     });
 });
-```
+{%endhighlight%}
 
-Above code it is component that extends from `'Magento_Ui/js/form/element/single-checkbox.js'`. In method `onCheckedChanged` calls methods that updates street labels, change city and country values and disable these fields.
+This JS component extends `'Magento_Ui/js/form/element/single-checkbox.js'`. The `onCheckedChanged` method calls the methods that update street labels, change the city and country values, and disable these fields.
