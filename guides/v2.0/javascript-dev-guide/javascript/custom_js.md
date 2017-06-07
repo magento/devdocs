@@ -216,8 +216,8 @@ $(mage.apply);
 {% endhighlight %}
 
 
-#### Related topic
+<h2 id="related_topic">Related topic</h2>
 
-- [JavaScript resources in Magento]({{ page.baseurl }}javascript-dev-guide/javascript/js-resources.html)
-- [About AMD modules and RequireJS]({{page.baseurl}}javascript-dev-guide/javascript/requirejs_concept.html)
+- <a href="{{page.baseurl}}javascript-dev-guide/javascript/js-resources.html">JavaScript resources in Magento</a>
+- <a href="{{page.baseurl}}javascript-dev-guide/javascript/requirejs_concept.html">About AMD modules and RequireJS</a>
 
