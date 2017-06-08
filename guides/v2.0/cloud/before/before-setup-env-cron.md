@@ -17,4 +17,4 @@ github_link: cloud/before/before-setup-env-cron.md
 {% include config/setup-cron.md %}
 
 #### Next step
-[Step 4, clone or branch an environment]({{ page.baseurl }}cloud/before/before-setup-env-env.html)
+[Step 5, clone or branch an environment]({{ page.baseurl }}cloud/before/before-setup-env-env.html)
