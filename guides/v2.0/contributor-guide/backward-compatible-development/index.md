@@ -191,9 +191,11 @@ Continue storing the value in the property to preserve the old functionality.
 
 Do not remove or rename constants.
 
-#### Removing or renaming event arguments
+#### Removing, renaming, or changing the type of event arguments
 
 Do not remove or rename {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} arguments.
+Do not change argument types. 
+Instead of changing argument name or type, introduce new event argument with new name or type and deprecate the old argument by adding `@deprecated` annotation before dispatching the event.
 
 ### JS
 
@@ -355,6 +357,10 @@ Use the  `@see` tag to recommend the new API to use instead of the old one.
 ### WebAPI
 
 When replacing a WebAPI method with a new implementation that has a different signature, make sure it remains accessible on the same resource but with the next sequential version.
+
+### Deprecation testing
+
+Every piece of code that is deprecated MUST be covered by a static test that will fail if some code uses the deprecated piece of code.
 
 ### Removal of deprecated code
 
