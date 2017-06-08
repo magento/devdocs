@@ -176,7 +176,7 @@ define([
 
         updateCity: function () {
             if (this.value()) {
-                this.city().value('ARMEE');
+                this.city().value('Kyiv');
                 this.city().disabled(true);
             } else {
                 this.city().value('');
@@ -186,7 +186,7 @@ define([
 
         updateCountry: function () {
             if (this.value()) {
-                this.country().value('ES');
+                this.country().value('UA');
                 this.country().disabled(true);
             } else {
                 this.country().value('');
