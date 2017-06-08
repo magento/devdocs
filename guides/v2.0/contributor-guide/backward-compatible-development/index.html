@@ -764,9 +764,11 @@ Continue storing the value in the property to preserve the old functionality.</p
 
 <p>Do not remove or rename constants.</p>
 
-<h4 id="removing-or-renaming-event-arguments">Removing or renaming event arguments</h4>
+<h4 id="removing-renaming-or-changing-the-type-of-event-arguments">Removing, renaming, or changing the type of event arguments</h4>
 
-<p>Do not remove or rename <span term-uuid="c57aef7c-97b4-4b2b-a999-8001accef1fe" class="glossary-term" data-toggle="popover">event</span> arguments.</p>
+<p>Do not remove or rename <span term-uuid="c57aef7c-97b4-4b2b-a999-8001accef1fe" class="glossary-term" data-toggle="popover">event</span> arguments.
+Do not change argument types. 
+Instead of changing argument name or type, introduce new event argument with new name or type and deprecate the old argument by adding <code>@deprecated</code> annotation before dispatching the event.</p>
 
 <h3 id="js">JS</h3>
 
@@ -949,6 +951,10 @@ Whenever you introduce a new implementation of some behavior, mark the old imple
 <h3 id="webapi">WebAPI</h3>
 
 <p>When replacing a WebAPI method with a new implementation that has a different signature, make sure it remains accessible on the same resource but with the next sequential version.</p>
+
+<h3 id="deprecation-testing">Deprecation testing</h3>
+
+<p>Every piece of code that is deprecated MUST be covered by a static test that will fail if some code uses the deprecated piece of code.</p>
 
 <h3 id="removal-of-deprecated-code">Removal of deprecated code</h3>
 
