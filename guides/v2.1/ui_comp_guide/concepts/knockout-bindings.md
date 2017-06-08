@@ -169,6 +169,11 @@ Binding's configuration that may include the following properties:
 
 **Aliases**: `[collapsible]`
 
+**Usage example**:
+{%highlight javascript%}
+<div collapsible="openClass: false, closeOnOuter: false">
+{%endhighlight%}
+
 ### `datepicker`
 
 The `datepicker` binding is an adapter for the [mage/calendar.js]({{page.baseurl}}javascript-dev-guide/widgets/widget_calendar.html) widget.
