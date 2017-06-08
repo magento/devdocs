@@ -191,7 +191,7 @@ Continue storing the value in the property to preserve the old functionality.
 
 Do not remove or rename constants.
 
-#### Removing, renaming event arguments or changing event arguments type
+#### Removing, renaming, or changing the type of event arguments
 
 Do not remove or rename {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} arguments.
 Do not change argument types. 
