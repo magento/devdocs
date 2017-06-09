@@ -2,10 +2,10 @@
 layout: default
 group: config-guide
 subgroup: 998_prod
-title: Sensitive and system-specific configuration paths reference
-menu_title: Sensitive and system-specific configuration paths reference
-menu_order: 301
-menu_node: 
+title: Sensitive and system-specific
+menu_title: Sensitive and system-specific
+menu_order: 5100
+menu_node:
 level3_menu_node: level3child
 level3_subgroup: config-ref
 version: 2.2
@@ -25,4 +25,3 @@ For a list of other configuration paths, see:
 *	[Payment configuration paths]({{ page.baseurl }}config-guide/prod/config-reference-payment.html).
 
 {% include config/config-reference_sensitive.md %}
- 

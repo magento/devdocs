@@ -4,8 +4,8 @@ group: config-guide
 subgroup: 998_prod
 title: .gitignore reference
 menu_title: .gitignore reference
-menu_order: 450
-menu_node: 
+menu_order: 5600
+menu_node:
 level3_menu_node: level3child
 level3_subgroup: config-ref
 version: 2.2
@@ -19,7 +19,7 @@ This reference shows suggested `.gitignore` files to use in a development system
 ## .gitignore for development
 We recommend you use the `.gitignore` provided with Magento in a development system with the following changes&mdash;comment out the following so they are included in source control:
 
-*	`app/etc/config.php` 
+*	`app/etc/config.php`
 *	`pub/media/*`
 *	`pub/media/wysiwyg/*.*`
 

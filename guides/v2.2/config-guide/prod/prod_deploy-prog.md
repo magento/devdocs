@@ -4,8 +4,8 @@ group: config-guide
 subgroup: 998_prod
 title: PHP developer tasks for split deployment
 menu_title: PHP developer tasks for split deployment
-menu_node: 
-menu_order: 90
+menu_node:
+menu_order: 4000
 version: 2.2
 github_link: config-guide/prod/prod_deploy-prog.md
 ---
@@ -18,7 +18,7 @@ We suggest you use the following guidelines to determine which settings to desig
 Sensitive and system-specific values are stored in `<Magento root dir>/app/etc/env.php`, which should not be in source control.
 
 ### Sensitive values
-_Sensitive_ configuration values are any that identify personally identifiable information or information you don't want to include in your source control repository. 
+_Sensitive_ configuration values are any that identify personally identifiable information or information you don't want to include in your source control repository.
 
 The following values should be designated as sensitive:
 
@@ -30,16 +30,16 @@ The following values should be designated as sensitive:
 ### System-specific values
 _System-specific_ values vary the system to which Magento is deployed, such as URLs, debug mode indicators, host names, IP addresses, and ports.
 
-The following values should be designated as system-specific:				
-				
-*	URLs				
-*	IP addresses 				
-*	Ports				
+The following values should be designated as system-specific:
+
+*	URLs
+*	IP addresses
+*	Ports
 *	Host names
 *	Domain names
-*	Paths (for example, custom paths, proxy host, proxy port)			
-*	"modes" (for example, sandbox mode, debug mode, test mode)			
-*	SSL (only for non-payment)				
+*	Paths (for example, custom paths, proxy host, proxy port)
+*	"modes" (for example, sandbox mode, debug mode, test mode)
+*	SSL (only for non-payment)
 *	E-mail recipients
 *	Administrative settings between systems (for example, password expiration limits)
 
@@ -49,7 +49,7 @@ When you create custom components that require configuration settings, you can d
 {% include php-dev/typepool_sensitive-values.md %}
 
 ## Add PHP arrays to the configuration
-The following sections discuss how you can optionally add custom components to the shared configuration, `config.php`, or the system-specific configuration, `env.php`. 
+The following sections discuss how you can optionally add custom components to the shared configuration, `config.php`, or the system-specific configuration, `env.php`.
 
 {% include php-dev/config-importer.md %}
 
