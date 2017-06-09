@@ -238,6 +238,6 @@ Result:
 <pre class="no-copy">web/unsecure/base_url - http://example-for-store.com/</pre>
     
 #### Related topic
-[Deployment general overview]({{ page.baseurl }}config-guide/prod/prod_deploy-over.html)
+[Deployment general overview]({{ page.baseurl }}config-guide/deployment/pipeline/)
 
 

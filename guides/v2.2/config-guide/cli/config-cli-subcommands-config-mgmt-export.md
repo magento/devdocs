@@ -12,7 +12,7 @@ version: 2.2
 github_link: config-guide/cli/config-cli-subcommands-config-mgmt-export.md
 ---
 
-In the Magento 2.2 and later [split deployment model]({{ page.baseurl }}config-guide/prod/prod_deploy-over.html), you can maintain a consistent configuration across systems. After you configure settings in the Magento Admin on your development system, export those settings to configuration files using the following command:
+In the Magento 2.2 and later [split deployment model]({{ page.baseurl }}config-guide/deployment/pipeline/), you can maintain a consistent configuration across systems. After you configure settings in the Magento Admin on your development system, export those settings to configuration files using the following command:
 
     magento app:config:dump
 

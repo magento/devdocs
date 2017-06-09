@@ -2,7 +2,7 @@
 
 {::options syntax_highlighter="rouge" /}
 
-This topic discusses configuration importers, which you can use with the Magento 2.2 [split deployment model]({{ page.baseurl }}config-guide/prod/prod_deploy-over.html). The purpose of an importer is to enable you to provide consistent configuration across multiple systems (such as development, staging, and production).
+This topic discusses configuration importers, which you can use with the Magento 2.2 [split deployment model]({{ page.baseurl }}config-guide/deployment/pipeline/). The purpose of an importer is to enable you to provide consistent configuration across multiple systems (such as development, staging, and production).
 
 Configuration importers are used for importing configuration data from the shared configuration file `config.php` to the appropriate storage, for example, into the database.
 

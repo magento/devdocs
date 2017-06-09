@@ -28,8 +28,8 @@ The following topics are organized to help you get started quickly. If you're ne
 
 *	Overview of deployment
 
-	*	[Deployment general overview]({{ page.baseurl }}config-guide/prod/prod_deploy-over.html)
-	*	[Deployment technical overview (implementation details)]({{ page.baseurl }}config-guide/prod/prod_deploy-over-tech.html)
+	*	[Deployment general overview]({{ page.baseurl }}config-guide/deployment/pipeline/)
+	*	[Deployment technical overview (implementation details)]({{ page.baseurl }}config-guide/deployment/pipeline/technical-details.md)
 
 *	Set up your split deployment systems: development, build, and production 
 

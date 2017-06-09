@@ -2,7 +2,7 @@
 
 This topic discusses how to derive an environment variable name knowing a configuration path. You can override Magento configuration settings using environment variables. For example, you can override the value of a payment processor's live URL on your production system.
 
-You can override the value of _any_ configuration setting using environment variables; however, we recommend you maintain consistent settings using the shared configuration file, `config.php`, and the system-specific configuration file, `env.php`, as discussed in [Deployment general overview]({{ page.baseurl }}config-guide/prod/prod_deploy-over.html).
+You can override the value of _any_ configuration setting using environment variables; however, we recommend you maintain consistent settings using the shared configuration file, `config.php`, and the system-specific configuration file, `env.php`, as discussed in [Deployment general overview]({{ page.baseurl }}config-guide/deployment/pipeline/).
 
 A environment variable name consists of its scope followed by its configuration path in a particular format. The following sections discuss how to determine a variable name in more detail.
 
