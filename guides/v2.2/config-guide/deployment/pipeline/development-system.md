@@ -29,4 +29,4 @@ You can have any number of development systems, provided the following is true o
 If you use Git, Magento's `.gitignore` provides most of the preceding. See the [`.gitignore` reference]({{ page.baseurl }}config-guide/prod/config-reference-gitignore.html) for more information.
 
 #### Next step
-[Set up a build system]({{ page.baseurl }}config-guide/prod/prod_deploy-setup-build.html)
+[Set up a build system]({{ page.baseurl }}config-guide/deployment/pipeline/build-system.html)

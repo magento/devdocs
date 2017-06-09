@@ -296,6 +296,6 @@ File permissions and ownership must be consistent across development, build, and
 
 #### Next steps
 *	[Set up your development systems]({{ page.baseurl }}config-guide/deployment/pipeline/development-system.html)
-*	[Set up your build system]({{ page.baseurl }}config-guide/prod/prod_deploy-setup-build.html)
+*	[Set up your build system]({{ page.baseurl }}config-guide/deployment/pipeline/build-system.html)
 *	[Set up your production system]({{ page.baseurl }}config-guide/prod/prod_deploy-setup-prod.html)
 
