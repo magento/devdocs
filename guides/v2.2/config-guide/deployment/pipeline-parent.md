@@ -2,8 +2,8 @@
 layout: default
 group: config-guide
 subgroup: 998_prod
-title: Pipeline Deployment
-menu_title: Pipeline Deployment
+title: Pipeline deployment
+menu_title: Pipeline deployment
 level3_menu_node: level3parent
 level3_subgroup: pipeline-deployment
 menu_node:

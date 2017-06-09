@@ -2,12 +2,12 @@
 layout: default
 group: config-guide
 subgroup: 998_prod
-title: Deploy Magento to production
-menu_title: Deploy Magento to production
+title: Deploy to production
+menu_title: Deploy to production
 menu_node: parent
 menu_order: 1
 version: 2.2
-github_link: config-guide/prod/prod.md
+github_link: config-guide/deployment/index.md
 ---
 
 We're constantly learning from our community about how to deploy Magento into production. Our current topics on the subject are basic but we'd love to hear from you to make them better.
@@ -31,7 +31,7 @@ The following topics are organized to help you get started quickly. If you're ne
 	*	[Deployment general overview]({{ page.baseurl }}config-guide/deployment/pipeline/)
 	*	[Deployment technical overview (implementation details)]({{ page.baseurl }}config-guide/deployment/pipeline/technical-details.md)
 
-*	Set up your split deployment systems: development, build, and production 
+*	Set up your split deployment systems: development, build, and production
 
 	*	[Set up your development systems]({{ page.baseurl }}config-guide/deployment/pipeline/development-system.html)
 	*	[Set up your build system]({{ page.baseurl }}config-guide/deployment/pipeline/build-system.html)
