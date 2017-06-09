@@ -295,7 +295,7 @@ File permissions and ownership must be consistent across development, build, and
 *   [env.php reference]({{ page.baseurl }}config-guide/prod/config-reference-envphp.html) for detailed information about the system-specific configuration file
 
 #### Next steps
-*	[Set up your development systems]({{ page.baseurl }}config-guide/prod/prod_deploy-setup-dev.html)
+*	[Set up your development systems]({{ page.baseurl }}config-guide/deployment/pipeline/development-system.html)
 *	[Set up your build system]({{ page.baseurl }}config-guide/prod/prod_deploy-setup-build.html)
 *	[Set up your production system]({{ page.baseurl }}config-guide/prod/prod_deploy-setup-prod.html)
 
