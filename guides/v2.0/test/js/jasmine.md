@@ -27,12 +27,16 @@ Magento uses a custom [Grunt] task named `spec` to run Jasmine tests. The task c
 
 **Step 5.** In `<magento_root_dir>`, install all dependencies:
 
-    $ npm install
+{%highlight bash%}
+$   npm install
+{%endhighlight%}
 
 **Step 6.** In `<magento_root_dir>`, generate static view files in Magento
 {:#prepare-step6}
 
-    $ php bin/magento setup:static-content:deploy -f
+{%highlight bash%}
+$   php bin/magento setup:static-content:deploy -f
+{%endhighlight%}
 
 Note that normally you don't have permissions to `<magento_root_dir>/app/code/`, in fact the generated static view file is being tested.
 
@@ -41,7 +45,7 @@ Note that normally you don't have permissions to `<magento_root_dir>/app/code/`,
   <p>If the command fails with error message:</p>
   <p><code>/var/www/html/magento2ce/node_modules/phantomjs-prebuilt/lib/phantom/bin/phantomjs: error while loading shared libraries: libfontconfig.so.1: cannot open shared object file: No such file or directory</code></p>
   <p>install <a href="https://www.freedesktop.org/wiki/Software/fontconfig/" target="_blank">fonctconfig library</a>.</p>
-  <p><code>yum install fontconfig</code></p>
+  <p><code>$ yum install fontconfig</code></p>
 </div>
 
 Learn more in [Deploy static view files].
@@ -50,11 +54,15 @@ Learn more in [Deploy static view files].
 
 `Gruntfile.js` contains the test run task, so you can run tests for a theme using the following command in the Magento root directory:
 
-    $ grunt spec:<THEME>
+{%highlight bash%}
+$   grunt spec:<THEME>
+{%endhighlight%}
 
   Example:
 
-    $ grunt spec:backend
+{%highlight bash%}
+$   grunt spec:backend
+{%endhighlight%}
 
 ## Write a test {#write-test}
 
@@ -214,7 +222,7 @@ This topic doesn't provide Jasmine test writing methodology.
 
 An error message appears:
 
-```
+```error
 Loading "Gruntfile.js" tasks...ERROR
 
 >> Error: Cannot find module '<module>'
@@ -226,7 +234,7 @@ Warning: Task "spec" not found. Use --force to continue.
 
 1. Make sure your Node.js version is up-to-date.
 2. Remove `package.json`, `Gruntfile.js`.
-3. Copy `package.json`, `Gruntfile.js` from `package.json.sample`, `Gruntfile.js.sample`
+3. Copy `package.json`, `Gruntfile.js` from `package.json.sample`, `Gruntfile.js.sample`.
 4. Delete the `node_modules` directory.
 5. Run `npm install` in your terminal.
 
@@ -236,7 +244,7 @@ Warning: Task "spec" not found. Use --force to continue.
  
 An error message appears:
 
-```
+```error
 Warning: Cannot read property 'pid' of undefined
 
 Use --force to continue. Aborted due to warnings.
@@ -244,8 +252,12 @@ Use --force to continue. Aborted due to warnings.
 
 #### Solution:
 
-    cd <magento_root>/node_modules/grunt-contrib-jasmine
-    npm install
+Run in your terminal:
+
+{%highlight bash%}
+$   cd <magento_root>/node_modules/grunt-contrib-jasmine
+$   npm install
+{%endhighlight%}
 
 <!-- LINK DEFINITIONS -->
 
