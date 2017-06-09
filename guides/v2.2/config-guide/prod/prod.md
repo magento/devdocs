@@ -35,7 +35,7 @@ The following topics are organized to help you get started quickly. If you're ne
 
 	*	[Set up your development systems]({{ page.baseurl }}config-guide/deployment/pipeline/development-system.html)
 	*	[Set up your build system]({{ page.baseurl }}config-guide/deployment/pipeline/build-system.html)
-	*	[Set up your production system]({{ page.baseurl }}config-guide/prod/prod_deploy-setup-prod.html)
+	*	[Set up your production system]({{ page.baseurl }}config-guide/deployment/pipeline/production-system.html)
 
 *	Step-by-step examples of using split deployment
 
