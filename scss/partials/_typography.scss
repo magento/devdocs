@@ -122,10 +122,16 @@ a:active {
     filter: hue-rotate(160deg);
   }
 
+  //Don't put icon after contributor avatars
+  &.avatar {
+    &:after {  
+        display: none;
+    }
+  }
+
 
 
 }
-
 
 .main-container h2:first-child {
   margin-top: 0;
