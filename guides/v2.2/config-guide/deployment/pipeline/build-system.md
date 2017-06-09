@@ -2,14 +2,14 @@
 layout: default
 group: config-guide
 subgroup: 998_prod
-title: Set up your build split deployment system
-menu_title: Set up your build split deployment system
-menu_node: 
-menu_order: 22
+title: Build System Setup
+menu_title: Build System Setup
+menu_node:
+menu_order: 1400
 level3_menu_node: level3child
-level3_subgroup: deploy-setup
+level3_subgroup: pipeline-deployment
 version: 2.2
-github_link: config-guide/prod/prod_deploy-setup-build.md
+github_link: config-guide/deployment/pipeline/build-system.md
 ---
 
 You can have one build system that meets the following requirements:
@@ -17,7 +17,7 @@ You can have one build system that meets the following requirements:
 *	All Magento code is under source control in the same repository as the development and production systems
 *	Make sure all of the following are _included_ in source control:
 
-	*	`app/etc/config.php` 
+	*	`app/etc/config.php`
 	*	`generated` directory (and subdirectories)
 	*	`pub/media` directory
 	*	`pub/media/wysiwyg` directory (and subdirectories)
@@ -51,7 +51,7 @@ To install PHP, see one of the following topics:
 ### Set up the build system
 To set up the build system:
 
-1.	Log in to the build system as, or switch to, the Magento file system owner. 
+1.	Log in to the build system as, or switch to, the Magento file system owner.
 2.	Retrieve the Magento code from source control.
 
 	If you use Git, use the following command:
@@ -87,4 +87,3 @@ To set up the build system:
 #### Related topics
 *	[Set up your development systems]({{ page.baseurl }}config-guide/deployment/pipeline/development-system.html)
 *	[Set up your production system]({{ page.baseurl }}config-guide/deployment/pipeline/production-system.html)
-

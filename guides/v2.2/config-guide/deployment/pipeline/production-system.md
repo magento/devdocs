@@ -2,14 +2,14 @@
 layout: default
 group: config-guide
 subgroup: 998_prod
-title: Set up your production split deployment system
-menu_title: Set up your production split deployment system
-menu_node: 
-menu_order: 23
+title: Production System Setup
+menu_title: Production System Setup
+menu_node:
+menu_order: 1500
 level3_menu_node: level3child
-level3_subgroup: deploy-setup
+level3_subgroup: pipeline-deployment
 version: 2.2
-github_link: config-guide/prod/prod_deploy-setup-prod.md
+github_link: config-guide/deployment/pipeline/production-system.md
 ---
 
 {::options syntax_highlighter="rouge" /}
@@ -19,7 +19,7 @@ You can have one production system. All of the following must be true:
 *	All Magento code is in source control in the same repository as the development and build systems
 *	Make sure all of the following are _included_ in source control:
 
-	*	`app/etc/config.php` 
+	*	`app/etc/config.php`
 	*	`generated` directory (and subdirectories)
 	*	`pub/media` directory
 	*	`pub/media/wysiwyg` directory (and subdirectories)

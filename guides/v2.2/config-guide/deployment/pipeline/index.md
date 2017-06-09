@@ -2,14 +2,14 @@
 layout: default
 group: config-guide
 subgroup: 998_prod
-title: Deployment general overview
-menu_title: Deployment general overview
-menu_node: 
+title: Overview
+menu_title: Overview
+menu_node:
 level3_menu_node: level3child
-level3_subgroup: deploy-over
-menu_order: 11
+level3_subgroup: pipeline-deployment
+menu_order: 1100
 version: 2.2
-github_link: config-guide/prod/prod_deploy-over.md
+github_link: config-guide/deployment/pipeline/index.md
 ---
 
 {% include config/split-deploy/split-deploy-overview.md %}
@@ -23,7 +23,7 @@ You can optionally use other deployment methods, including:
 *	Other methods discussed on the [Community resources page](http://devdocs.magento.com/community/resources/#installdeploy)
 
 ## Manage the configuration
-Modeling after [factor 3 in the 12-factor app design](https://12factor.net/config){:target="_blank"}, Magento now stores the configuration for each system in the system itself. (Development configuration settings are stored on the development system, production settings are stored on the production system.) 
+Modeling after [factor 3 in the 12-factor app design](https://12factor.net/config){:target="_blank"}, Magento now stores the configuration for each system in the system itself. (Development configuration settings are stored on the development system, production settings are stored on the production system.)
 
 We also provide a way to synchronize the configuration of your systems:
 

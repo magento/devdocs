@@ -2,14 +2,14 @@
 layout: default
 group: config-guide
 subgroup: 998_prod
-title: Set up your development split deployment systems
-menu_title: Set up your development split deployment systems
-menu_node: 
-menu_order: 21
+title: Development System Setup
+menu_title: Development System Setup
+menu_node:
+menu_order: 1300
 level3_menu_node: level3child
-level3_subgroup: deploy-setup
+level3_subgroup: pipeline-deployment
 version: 2.2
-github_link: config-guide/prod/prod_deploy-setup-dev.md
+github_link: config-guide/deployment/pipeline/development-system.md
 ---
 
 You can have any number of development systems, provided the following is true of all of them:

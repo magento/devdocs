@@ -2,14 +2,14 @@
 layout: default
 group: config-guide
 subgroup: 998_prod
-title: Deployment technical overview
-menu_title: Deployment technical overview
-menu_node: 
+title: Technical Details
+menu_title: Technical Details
+menu_node:
 level3_menu_node: level3child
-level3_subgroup: deploy-over
-menu_order: 12
+level3_subgroup: pipeline-deployment
+menu_order: 1200
 version: 2.2
-github_link: config-guide/prod/prod_deploy-over-tech.md
+github_link: config-guide/deployment/pipeline/technical-details.md
 ---
 
 This topic discusses technical implementation details about split deployment in Magento 2.2 and later. Improvements can be divided into the following areas:
@@ -35,7 +35,7 @@ As the diagram shows, we get configuration values in the following order:
 2.	From the shared configuration file, `config.php`.
 3.	From the system-specific configuration file, `env.php`.
 
-	Values in `env.php` override values in `config.php`. 
+	Values in `env.php` override values in `config.php`.
 
     Values in `config.php` and `env.php` override settings in the database.
 3.	From the database.
@@ -71,7 +71,7 @@ We changed the following behavior in the Magento Admin in production mode:
 *	You cannot enable or disable cache types in the Admin
 *	Developer settings are unavailable (**Stores** > Settings > **Configuration** > Advanced > **Developer**), including:
 
-	*	Minify CSS, JavaScript, and HTML 
+	*	Minify CSS, JavaScript, and HTML
 	*	Merge CSS and JavaScript
 	*	Server-side or client-side LESS compilation
 	*	Inline translations
@@ -298,4 +298,3 @@ File permissions and ownership must be consistent across development, build, and
 *	[Set up your development systems]({{ page.baseurl }}config-guide/deployment/pipeline/development-system.html)
 *	[Set up your build system]({{ page.baseurl }}config-guide/deployment/pipeline/build-system.html)
 *	[Set up your production system]({{ page.baseurl }}config-guide/deployment/pipeline/production-system.html)
-

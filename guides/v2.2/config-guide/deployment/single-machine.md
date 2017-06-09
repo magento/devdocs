@@ -5,9 +5,11 @@ subgroup: 999_prod
 title: Single machine deployment
 menu_title: Single machine deployment
 menu_node: parent
-menu_order: 1
+menu_order: 2000
 version: 2.2
-github_link: config-guide/prod/single-machine-deployment.md
+github_link: config-guide/deployment/single-machine.md
+redirect_from:
+  - /guides/v2.2/config-guide/prod/single-machine-deployment.html
 ---
 
 This topic provides instructions for deploying updates to Magento on a production server using the command line.
@@ -31,7 +33,7 @@ Contributing developers should use [this guide][6] to update their Magento insta
 1. Log in to your production server as, or switch to, the [Magento file system owner][10].
 
 2. Change directory to the Magento base directory:
-        
+
         cd <Magento base directory>
 
 3. Enable maintenance mode using the command:
@@ -43,7 +45,7 @@ Contributing developers should use [this guide][6] to update their Magento insta
         composer require <package> <version> --no-update
 
    **package**: The name of the package you want to update.
-   
+
    For example:
 
    * `magento/product-community-edition`
@@ -52,7 +54,7 @@ Contributing developers should use [this guide][6] to update their Magento insta
    **version**: The target version of the package you want to update.
 
 5. Update Magento's components with Composer:
-   
+
         composer update
 
 6. Update the database schema and data:
