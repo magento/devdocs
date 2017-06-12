@@ -1,13 +1,12 @@
 ---
 layout: default
-group: config-guide
-subgroup: 998_prod
-title: PHP developer tasks for pipeline deployment
-menu_title: PHP developer tasks for pipeline deployment
-menu_node:
-menu_order: 4000
+group: extension-dev-guide
+subgroup: Configuration
+title: Sensitive and environment settings
+menu_title: Sensitive and environment settings
+menu_order: 1000
 version: 2.2
-github_link: config-guide/prod/prod_deploy-prog.md
+github_link: extension-dev-guide/configuration/sensitive-and-environment-settings.md
 ---
 
 This topic discusses how third-party developers can create Magento components that designate configuration settings as being sensitive, system-specific, or both.
