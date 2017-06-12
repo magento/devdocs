@@ -41,7 +41,7 @@ To add a design exception:
 2. In the configuration record corresponding to your store view, click **Edit**. 
 4. On the **Design Rule** tab, click **Add New User Agent Rule**.
 5. In the **Search String** box specify the user-agent using either normal strings or regular exceptions (PCRE). In the **Theme Name** drop-down list select the theme to be used for matching agent.
-6. Click **Save**.
+6. Click **Save Configuration** or **Save and Continue**.
 7. If caching is enabled, <a href="#theme-apply-clear">clear the cache</a>. 
 6. To see your changes applied, reload the store front pages.
 
@@ -56,7 +56,7 @@ To add a permanent theme-independent logo:
 4. In the **Logo Image** field browse to the logo file saved in your file system.
 6. Upload the file.
 5. Optionally, specify the desired width, height, and the alternative text for the logo in the corresponding fields.
-7. Click **Save**.
+7. Click **Save Configuration** or **Save and Continue**.
 7. If caching is enabled, <a href="#theme-apply-clear">clear the cache</a>. 
 8. To see your changes applied, reload the store front pages.
 
