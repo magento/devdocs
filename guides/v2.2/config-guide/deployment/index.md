@@ -31,17 +31,17 @@ The following topics are organized to help you get started quickly. If you're ne
 	*	[Deployment general overview]({{ page.baseurl }}config-guide/deployment/pipeline/)
 	*	[Deployment technical overview (implementation details)]({{ page.baseurl }}config-guide/deployment/pipeline/technical-details.md)
 
-*	Set up your split deployment systems: development, build, and production
+*	Set up your pipeline deployment systems: development, build, and production
 
 	*	[Set up your development systems]({{ page.baseurl }}config-guide/deployment/pipeline/development-system.html)
 	*	[Set up your build system]({{ page.baseurl }}config-guide/deployment/pipeline/build-system.html)
 	*	[Set up your production system]({{ page.baseurl }}config-guide/deployment/pipeline/production-system.html)
 
-*	Step-by-step examples of using split deployment
+*	Step-by-step examples of using pipeline deployment
 
 	*	[Simple example&mdash;manage the shared configuration]({{ page.baseurl }}config-guide/prod/prod_deploy-shared.html)
 
-*	[PHP developer tasks for split deployment]({{ page.baseurl }}config-guide/prod/prod_deploy-prog.html)
+*	[PHP developer tasks for pipeline deployment]({{ page.baseurl }}config-guide/prod/prod_deploy-prog.html)
 
 *	Reference information
 

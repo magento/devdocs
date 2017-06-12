@@ -12,13 +12,13 @@ version: 2.2
 github_link: config-guide/deployment/pipeline/technical-details.md
 ---
 
-This topic discusses technical implementation details about split deployment in Magento 2.2 and later. Improvements can be divided into the following areas:
+This topic discusses technical implementation details about pipeline deployment in Magento 2.2 and later. Improvements can be divided into the following areas:
 
 *   [Configuration management](#config-deploy-configman)
 *   [Changes in the Magento Admin](#config-deploy-admin)
 *   [cron installation and removal](#config-deploy-cron)
 
-This topic also discusses the [recommended workflow](#config-deploy-workflow) for split deployment and provides some examples to help you understand how it works.
+This topic also discusses the [recommended workflow](#config-deploy-workflow) for pipeline deployment and provides some examples to help you understand how it works.
 
 Before you get started, review the [prerequisite for your development, build, and production systems](#config-deploy-prereq).
 
@@ -91,10 +91,10 @@ In version 2.2 for the first time, we help you set up your Magento cron job by p
 
 We also enable you to remove the Magento crontab using the `magento cron:remove` command.
 
-## Recommended split deployment workflow {#config-deploy-workflow}
-The following diagram shows how we recommend you use split deployment to manage the configuration.
+## Recommended pipeline deployment workflow {#config-deploy-workflow}
+The following diagram shows how we recommend you use pipeline deployment to manage the configuration.
 
-![Recommended split deployment workflow]({{ site.baseurl }}common/images/config_split-deploy_workflow.png){:width="700px"}
+![Recommended pipeline deployment workflow]({{ site.baseurl }}common/images/config_split-deploy_workflow.png){:width="700px"}
 
 ### Development system
 On your development system, you make configuration changes in the Magento Admin and generate the shared configuration, `app/etc/config.php` and the system-specific configuration, `app/etc/env.php`. Check Magento code and the shared configuration into source control and push it to the build server.

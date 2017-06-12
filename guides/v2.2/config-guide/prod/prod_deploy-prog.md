@@ -2,8 +2,8 @@
 layout: default
 group: config-guide
 subgroup: 998_prod
-title: PHP developer tasks for split deployment
-menu_title: PHP developer tasks for split deployment
+title: PHP developer tasks for pipeline deployment
+menu_title: PHP developer tasks for pipeline deployment
 menu_node:
 menu_order: 4000
 version: 2.2

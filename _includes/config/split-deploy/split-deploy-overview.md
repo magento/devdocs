@@ -1,8 +1,8 @@
 <div markdown="1">
 
-In Magento version 2.2, we introduce a new way to deploy to production with minimal downtime. We refer to this as _split deployment_ because the deployment process occurs on different systems.
+In Magento version 2.2, we introduce a new way to deploy to production with minimal downtime. We refer to this as _pipeline deployment_ because the deployment process occurs on different systems.
 
-We also provide the ability to maintain consistent configurations for all split deployment systems. It's a simple but powerful model that enables you to separate ordinary configuration settings from either system-specific settings (like host and port) or sensitive settings (such as names and passwords).
+We also provide the ability to maintain consistent configurations for all pipeline deployment systems. It's a simple but powerful model that enables you to separate ordinary configuration settings from either system-specific settings (like host and port) or sensitive settings (such as names and passwords).
 
 ## Reduced downtime deployment
 Because you deploy static assets and compile code on a machine separate from your production system, you minimize downtime. Downtime on your production system is limited to the amount of time required to transfer static files and compiled code to the server.
