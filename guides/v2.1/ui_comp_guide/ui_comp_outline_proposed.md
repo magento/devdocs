@@ -44,13 +44,13 @@ If you would like to help us by writing any of the topics that we have not yet g
 		- Custom bindings
 			- `afterRender` – allows you to call a method (piece of code that exist in context) after the  rendering of the current DOM node finished
 			- `autoselect` – when applied to `<input>` does text selection when `<input>` gets focus. (E.g.: via click)
-			- `bindHtml` – same as _html_ binding. But does useful fro Magento app additional staff: applies bindings and process data-mage-init declarations.
+			- `bindHtml` – same as _html_ binding. But does useful fro Magento app additional staff: applies bindings and process [data-mage-init]({{page.baseurl}}/javascript-dev-guide/javascript/js_init.html#data_mage_init) declarations.
 			- `collapsible` – allows you to build collapsible panels
 			- `datepicker` – only for inputs. Adds datepicker control via calendar.js widget.
 			- `fadeVisible` – show/hide an element via jQuery fadeIn/fadeout functions
 			- `i18n` – analogue to _text_ binding. Has two features: replace text with translation lib, correctly handle behavior of InlineTranslate module.
 			- `keyboard` - attaches keypress handlers to element
-			- `mageInit` – has same format as data-mage-init attribute. In opposite to attribute binding handles situation with appear/removal of an element
+			- `mageInit` – has same format as [data-mage-init]({{page.baseurl}}/javascript-dev-guide/javascript/js_init.html#data_mage_init) attribute. In opposite to attribute binding handles situation with appear/removal of an element
 			- `optgroup` – same as building "option" binding. But allows you to render hierarchy options with the <optgroup> tag.
 			- `outerClick` – similar to "click" binding. Handles situation when a click is done outside of an element.
 			- `range` – allows you to use the jQuery UI Slider widget.
