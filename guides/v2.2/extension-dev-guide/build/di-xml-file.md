@@ -124,7 +124,7 @@ Magento converts any value for this argument node into a boolean value.
 See table below:
 
 | Input Type | Data     | Boolean Value |
-| ---------- | -------- | ------------- |
+| --- | --- | --- |
 | Boolean    | true     | true          |
 | Boolean    | false    | false         |
 | String     | "true"*  | true          |
@@ -321,21 +321,32 @@ In this example `Magento\Filesystem` is not shared, so all clients will retrieve
 Also, every instance of `Magento\Filesystem` will get separate instance of `$adapter`, because it too is non-shared.
 
 ## Sensitive and system-specific configuration settings {#ext-di-sens}
-In the Magento 2.2 [pipeline deployment model]({{ page.baseurl }}config-guide/deployment/pipeline/), you can specify the following types of configuration settings:
 
-*   Shared, which can be shared between systems using `app/etc/config.php`
+For multi-system deployments, such as the [pipeline deployment model]({{ page.baseurl }}config-guide/deployment/pipeline/), you can specify the following types of configuration settings:
 
-    Use shared settings to enforce configuration consistency between your development and production systems. Usually, shared settings can't be changed in the Magento Admin. 
-*   System-specific, which are unique to a particular system. 
+| shared          | Settings that are shared between systems using `app/etc/config.php` |
+| sensitive       | Settings that are restricted or confidential                        |
+| system-specific | Settings that are unique to a particular system or environment      |
 
-  Typical examples include host names and ports.
-* Sensitive, managed using either an environment variable, using the [`magento config:sensitive:set` command]({{ page.baseurl }}) or using the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}.
+The following code sample is a template for specifying values as sensitive or system-specific:
 
-  Typical examples are {% glossarytooltip 5b963536-8f03-45c4-963b-688021f4eea7 %}payment gateway{% endglossarytooltip %} {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} keys, user names, or passwords.
+{% highlight php startinline=true %}
+<type name="Magento\Config\Model\Config\TypePool">
+   <arguments>
+      <argument name="VALUE_TYPE" xsi:type="array">
+         <item name="CONFIG_PATH" xsi:type="string">ARGUMENT_VALUE</item>
+      </argument>
+   </arguments>
+</type>
+{% endhighlight %}
 
-  You cannot share either system-specific or sensitive settings between development and production systems. These values are stored in `app/etc/env.php` on each system and `env.php` should not be in source control.
+| `VALUE_TYPE`     | Specifies the type of value: either `sensitive` or `environment`.                                                                                              |
+| `CONFIG_PATH`    | A unique, `/`-delimited string that identifies this configuration setting.                                                                                     |
+| `ARGUMENT_VALUE` | A value of `1` indicates the `CONFIG_PATH` value is sensitive or system-specific. The default `0` value indicates it is neither sensitive nor system specific. |
 
-{% include php-dev/typepool_sensitive-values.md %}
+Do not share sensitive or system-specific settings stored in `app/etc/env.php` between development and production systems.
+
+See [sensitive and environment settings]({{page.baseurl}}extension-dev-guide/configuration/sensitive-and-environment-settings.html) for more information and examples. 
 
 ### Information related to pipeline deployment
 *   [Guidelines for specifying system-specific and sensitive configuration values]({{ page.baseurl }}config-guide/prod/prod_deploy-prog.html#split-deploy-sens-guidelines)
@@ -346,3 +357,4 @@ In the Magento 2.2 [pipeline deployment model]({{ page.baseurl }}config-guide/de
 
 * [ObjectManager]({{page.baseurl}}extension-dev-guide/object-manager.html)
 * [Dependency injection]({{page.baseurl}}extension-dev-guide/depend-inj.html)
+* [Sensitive and environment settings]({{page.baseurl}}extension-dev-guide/configuration/sensitive-and-environment-settings.html)

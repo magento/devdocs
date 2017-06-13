@@ -11,41 +11,84 @@ github_link: extension-dev-guide/configuration/sensitive-and-environment-setting
 
 This topic discusses how third-party developers can create Magento components that designate configuration settings as being sensitive, system-specific, or both.
 
-## Guidelines for declaring sensitive or system-specific settings {#split-deploy-sens-guidelines}
-We suggest you use the following guidelines to determine which settings to designate as sensitive or system-specific. You can optionally designate a setting as both.
+## Guidelines
 
-Sensitive and system-specific values are stored in `<Magento root dir>/app/etc/env.php`, which should not be in source control.
+Use the following guidelines to determine which settings to designate as sensitive, system-specific, or both.
+
+Magento stores these settings in `<Magento root dir>/app/etc/env.php`.
+Do not include this file in source control.
 
 ### Sensitive values
-_Sensitive_ configuration values are any that identify personally identifiable information or information you don't want to include in your source control repository.
 
-The following values should be designated as sensitive:
+_Sensitive_ configuration values hold restricted or confidential information.
+
+Examples of sensitive information include:
 
 *	Keys (such as API keys)
 *	User names and passwords
 *	E-mail addresses
-*	Any Personally identifiable information (PII) (address, phone number, date of birth, government identification number, and so on)
+*	Any personally identifiable information (e.g., address, phone number, date of birth, government identification number, etc.)
 
-### System-specific values
-_System-specific_ values vary the system to which Magento is deployed, such as URLs, debug mode indicators, host names, IP addresses, and ports.
+### Environment or system-specific values
 
-The following values should be designated as system-specific:
+_Environment_ or _system-specific_ values are unique to the system where Magento is deployed.
+
+Examples of environment or system-specific values include:
 
 *	URLs
 *	IP addresses
 *	Ports
 *	Host names
 *	Domain names
-*	Paths (for example, custom paths, proxy host, proxy port)
-*	"modes" (for example, sandbox mode, debug mode, test mode)
+*	Paths (e.g., custom paths, proxy host, proxy port)
+*	"modes" (e.g, sandbox mode, debug mode, test mode)
 *	SSL (only for non-payment)
 *	E-mail recipients
-*	Administrative settings between systems (for example, password expiration limits)
+*	Administrative settings between systems (e.g., password expiration limits)
 
-## Specify sensitive or system-specific configuration values
-When you create custom components that require configuration settings, you can designate settings as sensitive, system-specific, or both. The following sections provide a detailed explanation.
+## How to specify values as sensitive or system-specific
 
-{% include php-dev/typepool_sensitive-values.md %}
+Add a reference to [`Magento\Config\Model\Config\TypePool`][typepool]{:target="_blank"} to the [`di.xml`][di-xml] file to specify either a system-specific or sensitive configuration value.
+
+
+### Example: Sensitive settings
+
+{% highlight php startinline=true %}
+<type name="Magento\Config\Model\Config\TypePool">
+   <arguments>
+      <argument name="sensitive" xsi:type="array">
+         <item name="payment/test/password" xsi:type="string">1</item>
+      </argument>
+   </arguments>
+</type>
+{% endhighlight %}
+
+After specifying the sensitive setting, use the following commands to verify it:
+
+    php bin/magento cache:clean
+    php bin/magento app:config:dump
+
+A message similar to the following is displayed:
+
+    The configuration file doesn't contain sensitive data for security reasons. Sensitive data can be stored in the following environment variables:
+    CONFIG__DEFAULT__PAYMENT__TEST__PASWORD for payment/test/password
+    Done.
+
+### Example: System-specific settings
+
+{% highlight php startinline=true %}
+<type name="Magento\Config\Model\Config\TypePool">
+   <arguments>
+      <argument name="environment" xsi:type="array">
+         <item name="catalog/search/searchengine/port" xsi:type="string">1</item>
+      </argument>
+   </arguments>
+</type>
+{% endhighlight %}
+
+### Sensitive, system-specific setting
+
+To set a configuration setting as both sensitive and system-specific, create two entries with the `name` property for `argument` set to `sensitive` for one entry and `environment` for the other.
 
 ## Add PHP arrays to the configuration
 The following sections discuss how you can optionally add custom components to the shared configuration, `config.php`, or the system-specific configuration, `env.php`.
@@ -53,6 +96,9 @@ The following sections discuss how you can optionally add custom components to t
 {% include php-dev/config-importer.md %}
 
 #### Related topics
-*	[The di.xml file]({{ page.baseurl }}extension-dev-guide/build/di-xml-file.html)
+*	[The di.xml file][di-xml]
 *	[Developer roadmap]({{ page.baseurl }}extension-dev-guide/intro/developers_roadmap.html)
 *	[Dependency injection]({{ page.baseurl }}extension-dev-guide/depend-inj.html)
+
+[typepool]: {{ site.mage2200url }}app/code/Magento/Config/Model/Config/TypePool.php
+[di-xml]: {{page.baseurl}}extension-dev-guide/build/di-xml-file.html
