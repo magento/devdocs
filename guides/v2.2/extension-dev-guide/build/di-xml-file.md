@@ -346,14 +346,15 @@ The following code sample is a template for specifying values as sensitive or sy
 
 Do not share sensitive or system-specific settings stored in `app/etc/env.php` between development and production systems.
 
-See [sensitive and environment settings]({{page.baseurl}}extension-dev-guide/configuration/sensitive-and-environment-settings.html) for more information and examples. 
+See [sensitive and environment settings]({{page.baseurl}}extension-dev-guide/configuration/sensitive-and-environment-settings.html) for more information and examples.
 
 ### Information related to pipeline deployment
-*   [Guidelines for specifying system-specific and sensitive configuration values]({{ page.baseurl }}config-guide/prod/prod_deploy-prog.html#split-deploy-sens-guidelines)
+
+*   [Guidelines for specifying system-specific and sensitive configuration values]({{ page.baseurl }}extension-dev-guide/configuration/sensitive-and-environment-settings.html)
 *   [Sensitive and system-specific configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-sens.)
 *   [Magento Enterprise B2B Extension configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-b2b.html)
 
-#### Related topics
+## Related topics
 
 * [ObjectManager]({{page.baseurl}}extension-dev-guide/object-manager.html)
 * [Dependency injection]({{page.baseurl}}extension-dev-guide/depend-inj.html)

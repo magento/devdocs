@@ -41,8 +41,6 @@ The following topics are organized to help you get started quickly. If you're ne
 
 	*	[Simple example&mdash;manage the shared configuration]({{ page.baseurl }}config-guide/prod/prod_deploy-shared.html)
 
-*	[PHP developer tasks for pipeline deployment]({{ page.baseurl }}config-guide/prod/prod_deploy-prog.html)
-
 *	Reference information
 
 	*	[Sensitive and system-specific configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-sens.html)

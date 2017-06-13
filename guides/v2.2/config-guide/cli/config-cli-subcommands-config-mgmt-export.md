@@ -1,10 +1,10 @@
 ---
 layout: default
-group: config-guide 
+group: config-guide
 subgroup: 04_CLI
 title: Export the configuration
 menu_title: Export the configuration
-menu_node: 
+menu_node:
 level3_menu_node: level3child
 level3_subgroup: cli-config-mgmt
 menu_order: 251
@@ -19,15 +19,13 @@ In the Magento 2.2 and later [pipeline deployment model]({{ page.baseurl }}confi
 As a result of the command execution, the following configuration files are updated:
 
 *	`app/etc/config.php`, the shared configuration file. This file should be included in source control so it can be shared between development, build, and production systems.
-*	`app/etc/env.php`, the system-specific configuration file. This file should _not_ be included in source control. 
+*	`app/etc/env.php`, the system-specific configuration file. This file should _not_ be included in source control.
 
 	Instead, set system-specific settings on production using the [`magento config:set` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-set.html).
 
 <div class="bs-callout bs-callout-warning" id="warning" markdown="1">
 *	The `magento app:config:dump` command does not output the values of sensitive configuration settings. To set sensitive settings in the production system, use the [`magento config:sensitive:set` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-set.html)
-*	Configuration values are specified as either sensitive or system-specific by referencing [`Magento\Config\Model\Config\TypePool`]({{ site.mage2200url }}app/code/Magento/Config/Model/Config/TypePool.php){:target="_blank"} in the module's `di.xml` file.
-
-	For information about using `Config\TypePool` in custom code, see [PHP developer tasks for pipeline deployment]({{ page.baseurl }}config-guide/prod/prod_deploy-prog.html).
+*	Configuration values are specified as either sensitive or system-specific by referencing [`Magento\Config\Model\Config\TypePool`]({{ site.mage2200url }}app/code/Magento/Config/Model/Config/TypePool.php){:target="_blank"} in the module's [`di.xml`]({{page.baseurl}}extension-dev-guide/build/di-xml-file.html#ext-di-sens) file.
 </div>
 
 #### Related topics
