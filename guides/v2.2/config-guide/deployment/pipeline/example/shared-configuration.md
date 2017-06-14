@@ -2,14 +2,14 @@
 layout: default
 group: config-guide
 subgroup: 045_pipeline
-title: Simple example&mdash;manage the shared configuration
-menu_title: Simple example&mdash;manage the shared configuration
+title: Shared configuration
+menu_title: Shared configuration
 menu_node: 
-menu_order: 52
+menu_order: 6100
 level3_menu_node: level3child
-level3_subgroup: deploy-ex
+level3_subgroup: deployment-examples
 version: 2.2
-github_link: config-guide/prod/prod_deploy-shared.md
+github_link: config-guide/deployment/pipeline/shared-configuration.md
 ---
 
 This example shows how to change the following settings in your development system, update the shared configuration file, `config.php`, in your build system, and implement the same settings in your production system:

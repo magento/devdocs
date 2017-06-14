@@ -39,7 +39,7 @@ The following topics are organized to help you get started quickly. If you're ne
 
 *	Step-by-step examples of using pipeline deployment
 
-	*	[Simple example&mdash;manage the shared configuration]({{ page.baseurl }}config-guide/prod/prod_deploy-shared.html)
+	*	[Simple example&mdash;manage the shared configuration]({{ page.baseurl }}config-guide/deployment/pipeline/example/shared-configuration.html)
 
 *	Reference information
 
