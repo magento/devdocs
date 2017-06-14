@@ -1193,7 +1193,7 @@ Also we need to check whether we already has our <span term-uuid="45013f4a-21a9-
             <span class="p">)</span> <span class="p">{</span>
                 <span class="nv">$extensionAttributes</span> <span class="o">=</span> <span class="nv">$entity</span><span class="o">-&gt;</span><span class="na">getExtensionAttributes</span><span class="p">();</span> <span class="sd">/** get current extension attributes from entity **/</span>
                 <span class="nv">$ourCustomData</span> <span class="o">=</span> <span class="nv">$extensionAttributes</span><span class="o">-&gt;</span><span class="na">getOurCustomData</span><span class="p">();</span>
-                <span class="nv">$this</span><span class="o">-</span><span class="nx">customDataRepository</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">(</span><span class="nv">$ourCustomData</span><span class="p">);</span>
+                <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">customDataRepository</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">(</span><span class="nv">$ourCustomData</span><span class="p">);</span>
 
                 <span class="k">return</span> <span class="nv">$entity</span><span class="p">;</span>
             <span class="p">}</span>
