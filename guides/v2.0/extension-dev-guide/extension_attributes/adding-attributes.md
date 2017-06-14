@@ -72,7 +72,7 @@ We can add scalar and non-scalar extension attributes.
             $ourCustomData = $this->customDataRepository->get($entity->getId());
 
             $extensionAttributes = $entity->getExtensionAttributes(); /** get current extension attributes from entity **/
-            $extensionAttributes->setOurCustomData($ourCusomData);
+            $extensionAttributes->setOurCustomData($ourCustomData);
             $entity->setExtensionAttributes($extensionAttributes);
 
             return $entity;

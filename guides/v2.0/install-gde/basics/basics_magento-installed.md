@@ -4,7 +4,7 @@ group: install2
 subgroup: Getting Started
 title: Is the Magento software installed already?
 menu_title: Is the Magento software installed already?
-menu_node: 
+menu_node:
 menu_order: 101
 level3_menu_node: level3child
 level3_subgroup: basics
@@ -22,14 +22,14 @@ Then open a web browser and go to the URL you were provided. Some examples follo
 	http://www.example.com/magento2/admin
 	https://www.example.com/admin
 	http://www.example.com
-	
+
 If a 404 (Not Found) error displays, Magento probably isn't installed. You should confirm that with your system administrator or hosting provider.
 
 If Magento is installed, you should see something like the following after you log in:
 
 Magento Admin:
 
-<p><img src="{{ site.baseurl }}common/images/install_success_admin.png" alt="Magento {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} which verifies a successful installation"></p>
+<p><img src="{{ site.baseurl }}common/images/install_success_admin.png" alt="Magento Admin which verifies a successful installation"></p>
 
 
 Magento storefront:
