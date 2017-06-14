@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: 998_prod
+subgroup: 045_pipeline
 title: Simple example&mdash;manage the shared configuration
 menu_title: Simple example&mdash;manage the shared configuration
 menu_node: 

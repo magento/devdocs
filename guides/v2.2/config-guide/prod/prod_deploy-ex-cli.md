@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: 998_prod
+subgroup: 045_pipeline
 title: Example of setting configuration values using CLI commands
 menu_title: Example of setting configuration values using CLI commands
 menu_node: 

@@ -1,13 +1,11 @@
 ---
 layout: default
 group: config-guide
-subgroup: 998_prod
+subgroup: 045_pipeline
 title: Build System Setup
 menu_title: Build System Setup
 menu_node:
 menu_order: 1400
-level3_menu_node: level3child
-level3_subgroup: pipeline-deployment
 version: 2.2
 github_link: config-guide/deployment/pipeline/build-system.md
 ---

@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: 998_prod
+subgroup: 045_pipeline
 title: File systems access permissions
 menu_title: File systems access permissions
 menu_node:

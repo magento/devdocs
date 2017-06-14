@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: 998_prod
+subgroup: 045_pipeline
 title: Configuration reference
 menu_title: Configuration reference
 menu_order: 5000

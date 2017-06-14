@@ -1,9 +1,9 @@
 ---
 layout: default
 group: config-guide
-subgroup: 998_prod
-title: Deploy to production
-menu_title: Deploy to production
+subgroup: 045_pipeline
+title: Pipeline Deployment
+menu_title: Pipeline Deployment
 menu_node: parent
 menu_order: 1
 version: 2.2

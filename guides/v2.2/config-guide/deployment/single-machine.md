@@ -1,10 +1,10 @@
 ---
 layout: default
 group: config-guide
-subgroup: 998_prod
+subgroup: 047_single-machine
 title: Single machine deployment
 menu_title: Single machine deployment
-menu_node:
+menu_node: parent
 menu_order: 2000
 version: 2.2
 github_link: config-guide/deployment/single-machine.md

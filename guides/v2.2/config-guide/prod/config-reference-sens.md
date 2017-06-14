@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: 998_prod
+subgroup: 045_pipeline
 title: Sensitive and system-specific
 menu_title: Sensitive and system-specific
 menu_order: 5100
