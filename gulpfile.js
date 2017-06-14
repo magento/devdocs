@@ -143,7 +143,7 @@ gulp.task('styles', function () {
 // Compile html files. Use _config.yml
 gulp.task('jekyll', function (gulpCallBack) {
 
-   var jekyll = spawn('bundle', ['exec','jekyll','build'], {stdio: 'inherit'});
+   var jekyll = spawn('bundle', ['exec','jekyll','build', '--config', '_config.yml,_config.local.yml'], {stdio: 'inherit'});
 
    jekyll.on('error', function (error) {
       console.log(error.toString());
