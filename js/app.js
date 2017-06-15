@@ -6,6 +6,8 @@
 // This is what happens on document.ready
 $(function() {
 
+  $('html').removeClass('no-js');
+
   //= include _includes/analytics.js
   //= include _includes/toc.js
   //= include _includes/copy.js
@@ -28,11 +30,6 @@ $(window).on('load', function(){
   }
 });
 
-// Fix anchor jumps hiding headers
-/*
-$(window).on('hashchange',function(){
-	$(document).scrollTop($(document).scrollTop() - 60);
-});*/
 
 //Allows for sticky menu
 $(document).on('scroll', function(){
