@@ -2,80 +2,94 @@
 
 $.fn.mainNavigation = function(settings) {
 
-	settings = jQuery.extend({
-		menuActiveClass: 'active',
-		menuDelay: 50,
-		topLevelItemsSelector: '.nav-main-item',
-		popupSelector: '.nav-popup',
-	}, settings);
+	return this.each( function( settings ) {
 
-	var nav = $(this);
-	var topLevelItems = $(this).find( settings.topLevelItemsSelector );
+		settings = jQuery.extend({
+			menuActiveClass: 'active',
+			menuDelay: 50,
+			topLevelItemsSelector: '.nav-main-item',
+			popupSelector: '.nav-popup',
+		}, settings);
 
 
-	var setupNavigation = function () {
+		var nav = $(this);
+		var topLevelItems = $(this).find( settings.topLevelItemsSelector );
 
-		topLevelItems.on('mouseenter focusin', handleMenuMouseEnter)
-			.on('mouseleave', handleMenuMouseLeave );
 
-		topLevelItems.children('a').on('click' ,function (e) {
-			e.preventDefault();
-		});
+		var setupNavigation = function () {
 
-		// focusing out on last link in popup should close it:
-		//topLevelItems.find( settings.popupSelector + ' a').filter(':last').on('focusout', handleLastLinkFocusOut );
+			topLevelItems.on('mouseenter focusin', handleMenuMouseEnter)
+				.on('mouseleave', handleMenuMouseLeave );
 
-	};
+			topLevelItems.children('a').on('click' ,function (e) {
+				e.preventDefault();
+			});
 
-	// mouseover, focusin:
-	var handleMenuMouseEnter = function (e) {
-		var currentItem = $(this);
+			// Focusing out of the nav should close the last opened popup
+			nav.on('focusout', function (){
+				setTimeout( function () {
+					if (	nav.find(':focus').length == 0 ) {
+						hidePopup( topLevelItems.filter( '.' + settings.menuActiveClass ) );
+					}
+				}, 40);
+			});
 
-		// Center the flyout menu
-		var popup = currentItem.find( settings.popupSelector );
-		if ( popup.find('.nav-section').length ) {
-			var windowWidth = $(window).width(),
-					subItemWidth = popup.width();
-			popup.offset({ left: ( windowWidth - subItemWidth )/2 });
+
+		};
+
+		// mouseover, focusin:
+		var handleMenuMouseEnter = function (e) {
+			e.stopPropagation();
+			var currentItem = $(this);
+
+			// Center the flyout menu
+			var popup = currentItem.find( settings.popupSelector );
+			if ( popup.find('.nav-section').length ) {
+				var windowWidth = $(window).width(),
+						subItemWidth = popup.width();
+				popup.offset({ left: ( windowWidth - subItemWidth )/2 });
+			}
+
+			// Delay the appearance of the popup menu
+			window.navTimer = window.setTimeout( function () {
+				showPopup( currentItem );
+			}, settings.menuDelay );
+
 		}
 
-		// Delay the appearance of the popup menu
-		window.navTimer = window.setTimeout( function () {
-			showPopup( currentItem );
-		}, settings.menuDelay );
 
-	}
+		// mouseover, focusout
+		var handleMenuMouseLeave = function (e) {
+			e.stopPropagation();
+			var currentItem = $(this);
+			hidePopup(currentItem);
 
+			clearTimeout( window.navTimer );
+		}
 
-	// mouseover, focusout
-	var handleMenuMouseLeave = function (e) {
-		var currentItem = $(this);
-		hidePopup(currentItem);
+		var handleLastLinkFocusOut = function (e) {
+			console.log( $(this) );
+			hidePopup ( $(this).closest( settings.popupSelector ) );
+		}
 
-		clearTimeout( window.navTimer );
-	}
+		// These functions handle the popup appearance
+		var showPopup = function ( menuItem ) {
+			hidePopup(topLevelItems);
+			menuItem.addClass( settings.menuActiveClass );
+			menuItem.find( settings.popupSelector ).attr('aria-hidden', 'false');
+			menuItem.find( settings.popupSelector + ' a').attr('tabindex', 0);
+		}
+		var hidePopup = function ( menuItem ) {
+			menuItem.removeClass( settings.menuActiveClass );
+			menuItem.find( settings.popupSelector ).attr('aria-hidden', 'true');
+			menuItem.find( settings.popupSelector + ' a').attr('tabindex', -1);
+		}
 
-	var handleLastLinkFocusOut = function (e) {
-		console.log( $(this) );
-		hidePopup ( $(this).closest( settings.popupSelector ) );
-	}
+		setupNavigation();
+		return this;
 
-	// These functions handle the popup appearance
-	var showPopup = function ( menuItem ) {
-		hidePopup(topLevelItems);
-		menuItem.addClass( settings.menuActiveClass );
-		menuItem.find( settings.popupSelector ).attr('aria-hidden', 'false');
-		menuItem.find( settings.popupSelector + ' a').attr('tabindex', 0);
-	}
-	var hidePopup = function ( menuItem ) {
-		menuItem.removeClass( settings.menuActiveClass ).trigger('blur');
-		menuItem.find( settings.popupSelector ).attr('aria-hidden', 'true');
-		menuItem.find( settings.popupSelector + ' a').attr('tabindex', -1);
-	}
+	});
 
-	setupNavigation();
-
-	return this;
 };
 
 

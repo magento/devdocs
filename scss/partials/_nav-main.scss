@@ -3,7 +3,7 @@
 
   display: flex;
   float: left;
-  padding: 8px 0 0 10px;
+  padding: 0 0 0 10px;
   position: relative;
   z-index: 9;
 
@@ -45,7 +45,8 @@
   position: relative;
   line-height: 1;
   margin: 0;
-  padding: 0;
+  padding: 8px 0;
+  outline: 0;
 
   & > a {
     position: relative;
@@ -101,13 +102,13 @@
   visibility: hidden;
   opacity: 0;
   left: -9999px;
-  top: 38px;
+  top: 46px;
   min-width: 260px;
   transition: all .1s;
   transition-delay: 0;
 
   border: $dropdown-border-width solid $dropdown-border-color;
-  box-shadow: 0 3px 6px rgba(0,0,0,.1);
+  box-shadow: 0 10px 25px rgba(0,0,0,.2);
   z-index: 1;
 
 
