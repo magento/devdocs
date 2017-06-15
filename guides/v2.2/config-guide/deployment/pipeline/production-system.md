@@ -24,7 +24,7 @@ You can have one production system. All of the following must be true:
 	*	`pub/static` directory (and subdirectories)
 
 *	Magento 2.2 or later must be installed and set for [production mode]({{ page.baseurl }}config-guide/bootstrap/magento-modes.html#mode-production)
-*	It has Magento file system ownership and permissions set as discussed in [Prerequisite for your development, build, and production systems]({{ page.baseurl }}config-guide/deployment/pipeline/technical-details.md#config-deploy-prereq).
+*	It has Magento file system ownership and permissions set as discussed in [Prerequisite for your development, build, and production systems]({{ page.baseurl }}config-guide/deployment/pipeline/technical-details.html#config-deploy-prereq).
 
 ## Set up a production machine
 To set up a production machine:

@@ -31,7 +31,7 @@ You can use the same procedure to configure any settings in the following refere
 *	[Magento Enterprise B2B Extension configuration paths reference]({{ page.baseurl }}config-guide/prod/config-reference-b2b.html)
 
 ## Before you begin
-Before you begin, set up file system permissions and ownership as discussed in [Prerequisite for your development, build, and production systems]({{ page.baseurl }}config-guide/deployment/pipeline/technical-details.md#config-deploy-prereq).
+Before you begin, set up file system permissions and ownership as discussed in [Prerequisite for your development, build, and production systems]({{ page.baseurl }}config-guide/deployment/pipeline/technical-details.html#config-deploy-prereq).
 
 ## Assumptions
 This topic provides an example of modifying the production system configuration. You can choose different configuration options if you wish.

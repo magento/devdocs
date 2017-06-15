@@ -29,7 +29,7 @@ The following topics are organized to help you get started quickly. If you're ne
 *	Overview of deployment
 
 	*	[Deployment general overview]({{ page.baseurl }}config-guide/deployment/pipeline/)
-	*	[Deployment technical overview (implementation details)]({{ page.baseurl }}config-guide/deployment/pipeline/technical-details.md)
+	*	[Deployment technical overview (implementation details)]({{ page.baseurl }}config-guide/deployment/pipeline/technical-details.html)
 
 *	Set up your pipeline deployment systems: development, build, and production
 
