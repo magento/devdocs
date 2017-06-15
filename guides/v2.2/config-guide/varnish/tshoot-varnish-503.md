@@ -55,7 +55,7 @@ If the length of {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache
              -p thread_pool_min=${VARNISH_MIN_THREADS} \
              -p thread_pool_max=${VARNISH_MAX_THREADS} \
              -p http_resp_hdr_len=64000 \
-						 -p http_resp_size=128000 \
+             -p http_resp_size=128000 \
              -S ${VARNISH_SECRET_FILE} \
              -s ${VARNISH_STORAGE}"
 
