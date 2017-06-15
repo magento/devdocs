@@ -10,16 +10,6 @@ version: 2.2
 github_link: config-guide/deployment/index.md
 ---
 
-We're constantly learning from our community about how to deploy Magento into production. Our current topics on the subject are basic but we'd love to hear from you to make them better.
-
-If you have advice or experience to share, open an [issue](https://github.com/magento/devdocs/issues){:target=_"blank"} or [pull request](https://github.com/magento/devdocs/pulls){:target=_"blank"}  in our GitHub repository. Also see our [contribution guidelines]({{page.baseurl}}contributor-guide/contributing.html).
-
-Current topics include:
-
-*	[Deployment steps]({{page.baseurl}}config-guide/prod/prod_deploy.html)
-*	[Magento ownership and permissions in development and production]({{page.baseurl}}config-guide/prod/prod_file-sys-perms.html)
-* [Magento performance optimization for production deployments]({{page.baseurl}}config-guide/prod/prod_perf-optimize.html)
-
 These topics discuss the process of deploying Magento to a production site for Magento version 2.2 and later. We recommend this deployment method for anyone with a large site who does not want downtime during deployment.
 
 If you deploy Magento on a single machine and can tolerate some downtime during deployment, see [Single-machine deployment]({{ page.baseurl }}config-guide/deployment/single-machine.html) instead.
