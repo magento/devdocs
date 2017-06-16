@@ -10,7 +10,7 @@ version: 2.0
 github_link: config-guide/varnish/tshoot-varnish-503.md
 ---
 
-If the length of {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} tags used by Magento exceed Varnish's default of 8192 characters, you can see HTTP 503 (Backend Fetch Failed) errors in the browser. The errors might display similar to the following:
+If the length of {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} tags used by Magento exceed Varnish's default (8K), you can see HTTP 503 (Backend Fetch Failed) errors in the browser. The errors might display similar to the following:
 
 	Error 503 Backend fetch failed
 	Backend fetch failed
