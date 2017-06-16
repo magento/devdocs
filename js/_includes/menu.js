@@ -54,7 +54,7 @@ $.fn.mainNavigation = function(settings) {
 			window.navTimer = window.setTimeout( function () {
 				showPopup( currentItem );
 			}, settings.menuDelay );
-
+			clearTimeout( window.navcloseTimer );
 		}
 
 
@@ -62,7 +62,10 @@ $.fn.mainNavigation = function(settings) {
 		var handleMenuMouseLeave = function (e) {
 			e.stopPropagation();
 			var currentItem = $(this);
-			hidePopup(currentItem);
+			window.navcloseTimer = window.setTimeout( function () {
+				hidePopup( currentItem );
+			}, settings.menuDelay );
+			//hidePopup(currentItem);
 
 			clearTimeout( window.navTimer );
 		}
