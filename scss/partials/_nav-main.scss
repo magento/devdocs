@@ -126,6 +126,13 @@
     }
   }
 
+  .columns {
+    min-width: 400px;
+    margin-right: 30px;
+    columns: 2;
+    column-gap: 0;
+  }
+
 }
 
 
@@ -186,20 +193,10 @@
 
 
 
-
-
-
-
 .nav-main ul ul.wide li {
-    width: 33%;
-    height: 50px;
+  width: 33%;
+  height: 50px;
 }
-
-
-
-
-
-
 
 .nav-main ul ul.wide {
   width: 600px;
@@ -209,20 +206,11 @@
   display: none;
 }
 
-
-
-
-
-
 .sticky-nav-main {
   position: fixed;
   top: 0;
   width: 100%;
 }
-
-
-
-
 
 /* TDD - Alternate menu appearance
 
