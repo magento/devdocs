@@ -34,6 +34,7 @@ They are listed here because the content has been well received within the Magen
 
 ## Install/deploy
 
+* *Blog post* [Magento 2 - Launch Checklist][21]{:target="_blank"} by Syed Muneeb Ul Hasan 
 * *Presentation:* [Magento 2 Deployment: What you should know][4]{:target="_blank"} by Olga KopyLova
 * *Blog post* [Magento 2 deployment without the downtime][5]{:target="_blank"} by Robert Egginton
 * *Blog post* [Deploying Magento 2 - History & Overview][6]{:target="_blank"} by Matthias Walter
@@ -80,3 +81,4 @@ They are listed here because the content has been well received within the Magen
 [18]: https://github.com/meanbee/docker-magento2
 [19]: https://www.integer-net.com/integration-tests-with-magento-2/
 [20]: https://medium.com/@maxpronko/10-practical-rules-to-build-high-quality-magento-2-module-e6fe2c9461ac
+[21]: https://magenticians.com/magento-2-launch-checklist/
