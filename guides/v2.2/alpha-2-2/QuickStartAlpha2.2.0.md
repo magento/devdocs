@@ -220,7 +220,7 @@ Example:
 
 #### Actual and expected results
 
-precisely describe your expected results and the results you actually observed after performing the steps.
+Describe your expected results and the results you actually observed after performing the steps.
 
 Example:
 
@@ -243,7 +243,7 @@ We welcome feedback on the Merchant and Developer documentation. In particular, 
 
 ## Magento test environments specification
 
-Although we don't make specific recommendations for Alpha evaluation, for informative purposes, we are sharing some of the specifications for environments that we use for 2.2.0 testing. See Magento 2.2 Alpha Testing Environments for more information. 
+We encourage you to download and use Magento 2.2.0 Alpha in whichever environment you typically run your Magento installations. However, for informational purposes, we are sharing some of the specifications for environments that we use for 2.2.0 testing. See [Magento 2.2 Alpha Testing Environments]({{page.baseurl}}alpha-2-2/Magento 2.2.0 Alpha Testing Environments.html) for a selection of these environments. 
 
 
 ## Readiness status of code components
