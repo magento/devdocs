@@ -2,8 +2,8 @@
 layout: default
 group: config-guide
 subgroup: 999_prod
-title: Deploy to Production
-menu_title: Deploy to Production
+title: Deploy to production
+menu_title: Deploy to production
 menu_node: 
 menu_order: 10
 version: 2.0
