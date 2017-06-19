@@ -1,6 +1,6 @@
 ---
 layout: default
-group: 
+group: release-notes
 subgroup: Magento 2.2.0 Alpha Release
 menu_title: Magento 2.2.0 Alpha Release QuickStart Guide
 menu_order: 
