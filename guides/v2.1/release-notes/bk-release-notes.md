@@ -11,10 +11,6 @@ github_link: release-notes/bk-release-notes.md
 ---
 
 
-{% include install/releasenotes/21_release-notes-links.md %}
-
-
-Looking for [2.0.x Release Notes]({{ site.gdeurl }}release-notes/bk-release-notes.html)?
 
 Looking for [Magento Enterprise Cloud Edition Release Notes]({{ site.gdeurl }}cloud/release-notes/CloudReleaseNotes.html)?
 
@@ -25,8 +21,7 @@ Looking for [Magento Enterprise Cloud Edition Release Notes]({{ site.gdeurl }}cl
 
 ## Backward-incompatible changes
 
-*	Overview of backward-incompatible changes between the 2.0 and 2.1 releases: [Magento 2.1 Backward Incompatible Changes]({{ page.baseurl }}release-notes/backward-incompatible-changes.html)
-
+*	Overview of backward-incompatible changes between the 2.1 and 2.2 releases
 
 ## Third-party license agreements
 
