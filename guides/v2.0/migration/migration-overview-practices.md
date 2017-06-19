@@ -15,17 +15,13 @@ redirect_from: /guides/v1.0/migration/migration-overview-practices.html
 
 This section provides our best information about how to speed up and simplify your migration, and provides guidance about how much time you can expect migration to require.
 
-## Test your migration activities
-
-We recommend to test as much migration steps as possible; ideally --- make a test run of the entire migration process.
-
-Surely, you can perform migration without any testing. The Data Migration Tool works fine out-of-the-box, and if you follow instructions in this Guide, migration should go smoothly.
-
-Although, testing helps to find out areas where manual interference is required, and saves you from the nervousness of experiencing issues on your production environment.
-
 ### Example: migrate incremental changes after applying customizations
 
 Let's suppose you have migrated all of your data from Magento 1 to Magento 2.
+
+<!--
+Кастомизации в коде приложения, а не в базе!
+-->
 
 Then, you have applied the customizations you've had in your Magento 1 instance. Now, you have to run the Data Migration Tool in the Delta mode to transfer incremental changes.
 
@@ -35,7 +31,11 @@ In this case, you must provide mappings manually, and it will be safer if you te
 
 ## Best practices and recommendations
 
-* When you perform migration testing, **use a copy of Magento 1 database instance**; do not involve the main instance of your Magento 1 store database. By migration testing we mean any migration activities or steps that you may run for testing purposes; the activities that do not affect your production environment.
+<!--
+* Провести тестирование всего процесса миграции от начала до конца (включая delta до выхода в live), чтобы выявить проблемы, которые могут возникнуть при реальной миграции на prod.env.
+-->
+
+* When you perform migration testing, **use a copy of database from Magento 1 instance**; do not involve the main instance of your Magento 1 store database (so that your production environment is not affected)
 
 * **Remove outdated and redundant data** from your Magento 1 database (for example, logs, order quotes, recently viewed or compared products, visitors, event-specific categories, promotional rules, and so on)
 
