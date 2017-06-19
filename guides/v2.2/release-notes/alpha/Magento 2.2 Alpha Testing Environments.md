@@ -1,14 +1,14 @@
 ---
 layout: default
-group: 
-subgroup: 
+group: release-notes
+subgroup: Magento 2.2.0 Alpha Release
 title: Magento 2.2.0 Alpha Testing Environments
-menu_title: Magento Magento 2.2.0 Alpha Testing Environments
-menu_order: 299
+menu_title: Magento 2.2.0 Alpha Testing Environments
+menu_order: 
 level3_menu_node: 
 level3_subgroup: 
 version: 2.2
-github_link: alpha-2-2/Magento 2.2.0 Alpha Testing Environments.md
+github_link: alpha/Magento 2.2.0 Alpha Testing Environments.md
 ---
 
 The following testing are provided for your information only. While we are not 
