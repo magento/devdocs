@@ -40,7 +40,7 @@ To resolve this issue, increase the default value of the `http_resp_hdr_len` par
 
 	For example:
 
-		-p http_resp_size=128000 \
+		-p http_resp_size=65536 \
 
 	A snippet follows:
 
