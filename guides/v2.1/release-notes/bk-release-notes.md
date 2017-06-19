@@ -3,7 +3,7 @@ layout: default
 group: release-notes
 subgroup: 2.2.x_Release_Information
 title: 2.2.x Release Information
-menu_title: 2.1.x Release Information
+menu_title: 2.2.x Release Information
 menu_order: 1
 menu_node: parent
 version: 2.2
@@ -16,7 +16,7 @@ Looking for [Magento Enterprise Cloud Edition Release Notes]({{ site.gdeurl }}cl
 
 ## Magento 2.2.0 Alpha Release
 
-* [Magento 2.2.0 Alpha QuickStart Guide]({{ page.baseurl }}QuickStartAlpha2.2.0.html)
+* [Magento 2.2.0 Alpha QuickStart Guide]({{page.baseurl}}QuickStartAlpha2.2.0.html)
 
 
 ## Backward-incompatible changes
