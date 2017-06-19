@@ -15,21 +15,20 @@ We are pleased to present the Magento 2.2.0 CE, EE, and B2B Alpha Releases. This
 
 This guide covers: 
 
-* Welcome to the Magento 2.2.0 Alpha program and its requirements
+* **Welcome to the Magento 2.2.0 Alpha program and its requirements**
 
-* Install the Alpha code
+* **Install the Alpha code**
 
-* Submit comments on Magento 2.2.0 Alpha
+* **Submit comments on Magento 2.2.0 Alpha**
 
-* Readiness status of individual code components. Magento 2.2.0 Alpha code is a work in progress. Parts of the code base are more mature than others. You can see an overview of component status here. Note that we will update this information each Friday of the Alpha evaluation period. 
+* **Readiness status of individual code components**. Magento 2.2.0 Alpha code is a work in progress. Parts of the code base are more mature than others. You can see an overview of component status here. Note that we will update this information each Friday of the Alpha evaluation period. 
 
-* Magento test environments specification, See [Magento 2.2 Alpha Testing Environments]({{page.baseurl}}alpha/Magento 2.2.0 Alpha Testing Environments.html) for a selection of these environments.
+* **Magento test environments specification**.  See [Magento 2.2 Alpha Testing Environments]({{page.baseurl}}alpha/Magento 2.2.0 Alpha Testing Environments.html) for a selection of these environments.
 
 
 ## Welcome to Magento Alpha 2.2.0 
 
 Magento 2.2.0 Alpha release code is not production quality and will include bugs and incomplete features. It does provide a snapshot of the current 2.2.0 codebase and consequently an early peak into the new features that 2.2.0 will provide in more robust form. 
-
 
 
 ### Goals of this release
