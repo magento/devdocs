@@ -18,6 +18,10 @@ Looking for [2.0.x Release Notes]({{ site.gdeurl }}release-notes/bk-release-note
 
 Looking for [Magento Enterprise Cloud Edition Release Notes]({{ site.gdeurl }}cloud/release-notes/CloudReleaseNotes.html)?
 
+## Magento 2.2.0 Alpha Release
+
+* [Magento 2.2.0 Alpha QuickStart Guide]({{ page.baseurl }}QuickStartAlpha2.2.0.html)
+
 
 ## Backward-incompatible changes
 
