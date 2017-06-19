@@ -12,16 +12,15 @@ github_link: config-guide/varnish/tshoot-varnish-503.md
 
 ## Backend Fetch Failed errors
 
-If the length of {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} tags used by Magento exceed Varnish's default (8K), you can see HTTP 503 (Backend Fetch Failed) errors in the browser. The errors might display similar to the following:
+If the length of {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} tags used by Magento exceed Varnish's default of 8192 bytes, you can see HTTP 503 (Backend Fetch Failed) errors in the browser. The errors might display similar to the following:
 
 	Error 503 Backend fetch failed
 	Backend fetch failed
 
-To resolve this issue, increase the default value of the `http_resp_hdr_len` parameter in your Varnish configuration file. The `http_resp_hdr_len` parameter specifies the max header length _within_ the total default response size (32K).
+To resolve this issue, increase the default value of the `http_resp_hdr_len` parameter in your Varnish configuration file. The `http_resp_hdr_len` parameter specifies the max header length _within_ the total default response size of 323768 bytes.
 
 <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-	<p>If the `http_resp_hdr_len` value exceeds 32K, you must also increase the default response size using the `http_resp_size` parameter.</p></span>
+	If the `http_resp_hdr_len` value exceeds 32K, you must also increase the default response size using the `http_resp_size` parameter.
 </div>
 
 1.	As a user with `root` privileges, open your Vanish configuration file in a text editor:
@@ -34,17 +33,17 @@ To resolve this issue, increase the default value of the `http_resp_hdr_len` par
 3.	If the parameter doesn't exist, add it after `thread_pool_max`.
 4.	Set `http_resp_hdr_len` to a value equal to the product count of your largest {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} multiplied by 21. (Each product tag is about 21 characters in length.)
 
-	For example, setting the value to 64000 should work if your largest category has 3,000 products.
+	For example, setting the value to 65536 bytes should work if your largest category has 3,000 products.
 
 	For example:
 
-		-p http_resp_hdr_len=64000 \
+		-p http_resp_hdr_len=65536 \
 
 5.  Set the `http_resp_size` to a value that accommodates the increased response header length.
 
-	For example:
+	For example, using the sum of the increased header length and default response size is a good starting point (e.g., 65536 + 32768 = 98304):
 
-		-p http_resp_size=65536 \
+		-p http_resp_size=98304 \
 
 	A snippet follows:
 
@@ -54,8 +53,8 @@ To resolve this issue, increase the default value of the `http_resp_hdr_len` par
              -T ${VARNISH_ADMIN_LISTEN_ADDRESS}:${VARNISH_ADMIN_LISTEN_PORT} \
              -p thread_pool_min=${VARNISH_MIN_THREADS} \
              -p thread_pool_max=${VARNISH_MAX_THREADS} \
-             -p http_resp_hdr_len=64000 \
-             -p http_resp_size=65536 \
+             -p http_resp_hdr_len=65536 \
+             -p http_resp_size=98304 \
              -S ${VARNISH_SECRET_FILE} \
              -s ${VARNISH_STORAGE}"
 
