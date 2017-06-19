@@ -16,15 +16,19 @@ github_link: alpha/Alphainstall.md
 
 ## Installation 
 
-Magento 2.2.0 Alpha release code is available only as a download from GitHub. 
+Magento 2.2.0 Alpha release code is available only as a download from GitHub. We do not provide a Composer-based Alpha installation. 
 
-You can find B2B installation and configuring instructions here. 
+
+To install either Magento 2.2.0 Alpha CE and EE, you'll need to: 
+
 
 Step 1: Download Alpha code repositories 
+
 
 Step 2: Install Alpha Code
 
 
+You can find B2B installation and configuring instructions here. 
 
 
 
@@ -34,15 +38,33 @@ Step 2: Install Alpha Code
 There are three separate Alpha code repositories on GitHub. 
 
 
-Magento CE
+<table>
+  <tr>
+    <th><b>Magento edition</b></th>
+    <th><b>Location</b></th>
+    <th><b>Availability</b></th>
+  </tr>
 
-Magento EE
+<tr>
+    <td><b>Magento CE</b></td>
+    <td>https://github.com/magento/magento2</td>
+    <td>Publicly available already</td>
+</tr>
 
-Magento B2B 
+<tr>
+    <td><b>Magento EE</b></td>
+    <td>https://github.com/magento/magento2ee</td>
+    <td>After contract has been signed</td>
+</tr> 
 
-https://github.com/magento/magento2 (CE) - Publicly available already
-https://github.com/magento/magento2ee (EE) - when signed contract
-https://github.com/magento/magento2b2b - (B2B)  - when signed contract
+<tr>
+    <td><b>Magento B2B</b></td>
+    <td>https://github.com/magento/magento2b2b</td>
+    <td>After contract has been signed</td>
+</tr>
+
+</table>
+
 
 
 Once you've successfully downloaded the repositories you want to evaluate, you're ready to install.
@@ -50,25 +72,15 @@ Once you've successfully downloaded the repositories you want to evaluate, you'r
 
 ### Step 2: Install
 
-Evaluating B2B? See B2B Installation.
 
-Install the code
+Create empty directory and run:
 
-The only way to run Magento 2.2.0 Alpha release is to download the code from GitHub. Our existing Installation and Deployment guide discusses 
-
-CE
-
-
-EE 
-
-B2B See B2B Installation Guide. 
 
 
 
 ### Step 3: Configure your environment
 
 
-## Upgrade Alpha build
 
 
 
