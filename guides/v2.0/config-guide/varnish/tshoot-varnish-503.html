@@ -1569,17 +1569,16 @@
 
 </section>
 
-			<p>If the length of <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span> tags used by Magento exceed Varnish’s default (8K), you can see HTTP 503 (Backend Fetch Failed) errors in the browser. The errors might display similar to the following:</p>
+			<p>If the length of <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span> tags used by Magento exceed Varnish’s default of 8192 bytes, you can see HTTP 503 (Backend Fetch Failed) errors in the browser. The errors might display similar to the following:</p>
 
 <pre><code>Error 503 Backend fetch failed
 Backend fetch failed
 </code></pre>
 
-<p>To resolve this issue, increase the default value of the <code>http_resp_hdr_len</code> parameter in your Varnish configuration file. The <code>http_resp_hdr_len</code> parameter specifies the max header length <em>within</em> the total default response size (32K).</p>
+<p>To resolve this issue, increase the default value of the <code>http_resp_hdr_len</code> parameter in your Varnish configuration file. The <code>http_resp_hdr_len</code> parameter specifies the max header length <em>within</em> the total default response size of 32768 bytes.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-	<p>If the <code>http_resp_hdr_len</code> value exceeds 32K, you must also increase the default response size using the <code>http_resp_size</code> parameter.</p></span>
+	If the <code>http_resp_hdr_len</code> value exceeds 32768 bytes, you must also increase the default response size using the <code>http_resp_size</code> parameter.
 </div>
 
 <ol>
@@ -1597,17 +1596,17 @@ Backend fetch failed
   <li>
     <p>Set <code>http_resp_hdr_len</code> to a value equal to the product count of your largest <span term-uuid="50e49338-1e6c-4473-8527-9e401d67ea2b" class="glossary-term" data-toggle="popover">category</span> multiplied by 21. (Each product tag is about 21 characters in length.)</p>
 
-    <p>For example, setting the value to 64000 should work if your largest category has 3,000 products:</p>
+    <p>For example, setting the value to 65536 bytes should work if your largest category has 3,000 products:</p>
 
-    <pre><code>-p http_resp_hdr_len=64000 \
+    <pre><code>-p http_resp_hdr_len=65536 \
 </code></pre>
   </li>
   <li>
     <p>Set the <code>http_resp_size</code> to a value that accommodates the increased response header length.</p>
 
-    <p>For example:</p>
+    <p>For example, using the sum of the increased header length and default response size is a good starting point (e.g., 65536 + 32768 = 98304):</p>
 
-    <pre><code>-p http_resp_size=65536 \
+    <pre><code>-p http_resp_size=98304 \
 </code></pre>
 
     <p>A snippet follows:</p>
@@ -1618,8 +1617,8 @@ DAEMON_OPTS="-a ${VARNISH_LISTEN_ADDRESS}:${VARNISH_LISTEN_PORT} \
      -T ${VARNISH_ADMIN_LISTEN_ADDRESS}:${VARNISH_ADMIN_LISTEN_PORT} \
      -p thread_pool_min=${VARNISH_MIN_THREADS} \
      -p thread_pool_max=${VARNISH_MAX_THREADS} \
-     -p http_resp_hdr_len=64000 \
-     -p http_resp_size=65536 \
+     -p http_resp_hdr_len=65536 \
+     -p http_resp_size=98304 \
      -S ${VARNISH_SECRET_FILE} \
      -s ${VARNISH_STORAGE}"
 </code></pre>
