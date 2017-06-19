@@ -13,13 +13,15 @@ github_link: alpha/Magento 2.2.0 Alpha Testing Environments.md
 
 We encourage you to download and use Magento 2.2.0 Alpha in whichever environment you typically run your Magento installations. However, for informational purposes, we are sharing some of the specifications for environments that we use for 2.2.0 testing.
 
-Enterprise
+Here's an overview of how we define types of agento installation 
 
-Medium
+* Enterprise 
 
-Hobbyist
+* Medium
 
-Developer
+* Hobbyist
+
+* Developer
 
 
 

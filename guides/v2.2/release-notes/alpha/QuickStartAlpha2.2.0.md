@@ -99,9 +99,10 @@ The Magento 2.2.0 EE Alpha evaluation is open to all Solution Partners. To parti
 
 ## More information?
 
-Alpha verions of the following documentation sets are ready for you! Visit the 2.2.0 Alpha DevDocs repository for a peek at our 2.2.0 developer documentation.
+An Alpha verion of the Developer documentation is ready for you! Visit the 2.2.0 Alpha DevDocs repository for a peek at our 2.2.0 developer documentation.
 
 
+Ready to install Magento 2.2.0 Alpha? 
 
 
 
