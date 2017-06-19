@@ -8,7 +8,7 @@ menu_order: 299
 level3_menu_node: 
 level3_subgroup: 
 version: 2.2
-github_link: release-notes/QuickStartAlpha2.2.0.md
+github_link: alpha-2-2/QuickStartAlpha2.2.0.md
 ---
 
 We are pleased to present the Magento 2.2.0 CE, EE, and B2B Alpha Releases. This QuickStart guide provides the basic information you need to start participating in our Magento 2.2.0 Alpha evaluation program. 
@@ -36,20 +36,27 @@ Magento 2.2.0 Alpha release code is not production quality and will include bugs
 
 ### Goals of this release
 
+Participation in this Aplpha evaluation has benefits for both community members and Magento. 
+
+
+#### Magento goals
+
 Our primary goal for this release is to invite and receive community and partner feedback that will help us refine our 2.2.0 product code before GA. Specifically, we hope that participants in this Alpha release evaluation can report on:
 
-* **Functionality**. Although this Alpha release contains only a subset of the functionality that the 2.2.0 GA release will include, we welcome 
+* **Functionality**. Keep in mind that this Alpha release does not contains all the functionality that the 2.2.0 GA release will include.   
 
 * **Usability**. How do the features we've implemented for Alpha work in context of your typical workflows?
 
-* **Code quality issues**. Are there particularly challenging processes or 
+* **Code quality issues**. Are there particularly challenging processes or tasks that need improvement?
 
-* **Feature gaps and enhancements**. Can you identify any 
+* **Feature gaps and enhancements**. Can you identify any steps within existing features that are missing, or enhancements that would improve features?
 
 
-Community members and Partners have a lot to gain from participating in this release, too. Enable Partners to gain familiarity with the code and start training technical team members
 
-Enable Partners to start planning for extension and custom code updates
+#### Participant goals
+
+As community members and Partners, you have much to gain from participating in this release, too. Early access to this code provides you with the opportunity to familiarize yourself with the code and start training technical team members. Likewise, you can start planning  extension and custom code updates. 
+
 
 
 ### Usage guidelines
@@ -58,21 +65,24 @@ Keep in mind the following features of this Alpha code release during your evalu
 
 * Alpha code is not production quality and will contain bugs. Report these bugs as GitHub issues, please!
 
-* Alpha code is for testing and training only. Do not use Alpha Software for production deployments. Any sites developed with Alpha software will require significant reworking to 
+* Alpha code is for testing and training only. Do not use Alpha Software for production deployments. Any sites developed with Alpha software will require significant reworking to accomodate future code updates. 
 
-Future platform updates will require sites developed using Alpha Software to be reworked
-
-* No technical support available for problems you encounter during Alpha evaluation.
+* No technical support is available for problems you encounter during Alpha evaluation.
 
 * You cannot share Alpha code with anyone external to your organization.
 
 
+
 ### Participants
-How you participate in this evaluation depends upon which code base you'll be downloading and evaluating: CE, EE, and/or B2B. 
+
+How you participate in this evaluation depends upon which code base you'll be downloading and evaluating: CE, EE, and/or B2B.
+
+
 
 #### CE Evaluation participants
 
 We invite any Magento community member to participate in the Magento 2.2.0 CE Alpha evaluation. 
+
 
 
 #### EE and B2B Evaluation participants
@@ -131,6 +141,8 @@ Once you've successfully downloaded the repositories you want to evaluate, you'r
 
 ### Step 2: Install
 
+Evaluating B2B? See B2B Installation.
+
 Install the code
 
 The only way to run Magento 2.2.0 Alpha release is to download the code from GitHub. Our existing Installation and Deployment guide discusses 
@@ -142,21 +154,25 @@ EE
 
 B2B See B2B Installation Guide. 
 
+
+
 ### Step 3: Configure your environment
 
 
 ## Upgrade Alpha build
 
 
+
+
+
 ## Provide feedback please!
 
-Your input is critical to the success of Magento 2.2.0 editions! All feedback should be submitted here https://github.com/magento/magento2/issues
-
-Here are some simple guidelines to follow when logging issues against the Magento 2.2.0 Alpha Release.
+Your input is critical to the success of Magento 2.2.0 editions! All feedback should be submitted [here](https://github.com/magento/magento2/issues). 
 
 
 
 ### Before you log an issue
+
 Before creating an issue, do the following:
 
 * Check the documentation to confirm the behavior you are reporting is really a bug, not a feature.
@@ -227,7 +243,7 @@ We welcome feedback on the Merchant and Developer documentation. In particular, 
 
 ## Magento test environments specification
 
-Although we don't make specific recommendations for Alpha evaluation, for informative purposes, we are sharing some of the specifications for environments that we use for 2.2.0 testing. See Magento Alpha 2.2 Testing Environments for more information. 
+Although we don't make specific recommendations for Alpha evaluation, for informative purposes, we are sharing some of the specifications for environments that we use for 2.2.0 testing. See Magento 2.2 Alpha Testing Environments for more information. 
 
 
 ## Readiness status of code components
@@ -238,11 +254,11 @@ Magento 2.2.0 Alpha code is a work in progress. Parts of the code base are more 
 
 ## More information?
 
-Alpha verions of the following documentation sets are ready for you! Ple
-
-Vist the 2.2.0 Alpha DevDocs repository for a peek at our 2.2.0 developer documentation.
+Alpha verions of the following documentation sets are ready for you! Visit the 2.2.0 Alpha DevDocs repository for a peek at our 2.2.0 developer documentation.
 
 Merchants, check out the Magento 2.2.0 User Guide.
+
+
 
 
 
