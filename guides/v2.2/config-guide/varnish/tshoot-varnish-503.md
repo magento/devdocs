@@ -55,7 +55,7 @@ To resolve this issue, increase the default value of the `http_resp_hdr_len` par
              -p thread_pool_min=${VARNISH_MIN_THREADS} \
              -p thread_pool_max=${VARNISH_MAX_THREADS} \
              -p http_resp_hdr_len=64000 \
-             -p http_resp_size=128000 \
+             -p http_resp_size=65536 \
              -S ${VARNISH_SECRET_FILE} \
              -s ${VARNISH_STORAGE}"
 
