@@ -2,13 +2,12 @@
 layout: default
 group: 
 subgroup: Magento 2.2.0 Alpha Release
-title: Magento 2.2.0 Alpha Release QuickStart Guide
 menu_title: Magento 2.2.0 Alpha Release QuickStart Guide
-menu_order: 299
+menu_order: 
 level3_menu_node: 
 level3_subgroup: 
 version: 2.2
-github_link: alpha-2-2/QuickStartAlpha2.2.0.md
+github_link: alpha/QuickStartAlpha2.2.0.md
 ---
 
 We are pleased to present the Magento 2.2.0 CE, EE, and B2B Alpha Releases. This QuickStart guide provides the basic information you need to start participating in our Magento 2.2.0 Alpha evaluation program. 
