@@ -1,12 +1,12 @@
 ---
 layout: default
 group: release-notes
-subgroup: 01_2.1.x_Release_Information
-title: 2.1.x Release Information
+subgroup: 2.2.x_Release_Information
+title: 2.2.x Release Information
 menu_title: 2.1.x Release Information
 menu_order: 1
 menu_node: parent
-version: 2.1
+version: 2.2
 github_link: release-notes/bk-release-notes.md
 ---
 
