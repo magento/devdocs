@@ -16,7 +16,7 @@ Looking for [Magento Enterprise Cloud Edition Release Notes]({{ site.gdeurl }}cl
 
 ## Magento 2.2.0 Alpha Release
 
-* [Magento 2.2.0 Alpha QuickStart Guide]({{page.baseurl}}QuickStartAlpha2.2.0.html)
+* [Magento 2.2.0 Alpha QuickStart Guide]({{site.baseurl}}QuickStartAlpha2.2.0.html)
 
 
 ## Backward-incompatible changes
