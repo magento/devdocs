@@ -47,7 +47,7 @@ One possible reason for this to happen might be if you are trying to execute PHP
 Whatever the reason, if you encounter the `permission denied: vendor/bin/phpunit` error, you can prefix the command with the {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} interpreter, so your system knows what binary to use to run the tests.  
 
 {%highlight bash%}
-$ php -f vendor/bin/phpunit -- -c dev/tests/unit/phpunit.xml.dist
+$ php -f vendor/bin/phpunit -c dev/tests/unit/phpunit.xml.dist
 {%endhighlight%}
 
 #### Use the correct PHP interpreter
@@ -66,7 +66,7 @@ Some examples follow:
 You can either fix your `$PATH` (please refer to your system documentation on how to do that), or specify the full path to the PHP interpreter. For example:
 
 {%highlight bash%}
-$ /usr/local/Cellar/php56/5.6.19/bin/php -f vendor/bin/phpunit -- -c dev/tests/unit/phpunit.xml.dist
+$ /usr/local/Cellar/php56/5.6.19/bin/php -f vendor/bin/phpunit -c dev/tests/unit/phpunit.xml.dist
 {%endhighlight%}
 
 #### Memory Limit
