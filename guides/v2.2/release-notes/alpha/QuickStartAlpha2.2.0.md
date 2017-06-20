@@ -40,7 +40,7 @@ Participation in this Alpha evaluation has benefits for both community members a
 
 Our primary goal for this release is to invite and receive community and partner feedback that will help us refine our 2.2.0 product code before GA. Specifically, we hope that participants in this Alpha release evaluation can report on:
 
-* **Functionality**. Keep in mind that this Alpha release does not contains all the functionality that the 2.2.0 GA release will include.   
+* **Functionality**. Keep in mind that this Alpha release does not contain all the functionality that the 2.2.0 GA release will include.   
 
 * **Usability**. How do the features we've implemented for Alpha work in context of your typical workflows?
 
@@ -88,13 +88,12 @@ The Magento 2.2.0 EE Alpha evaluation is open to all Solution Partners. To parti
 
 * Sign the Alpha Software agreement 
 
-* Provide GitHub account information. You can either provide either: 
+* Provide GitHub account information. You can  provide one of the following: 
 
 	* your Solution Partner GitHub account, clearly labeled with the name of the Partner, the Partner’s logo, and a link to the Partner’s website.
 
-	or
 
-	* an Individual Account for a Solution Partner Employee. Company name field must contain the Partner’s name or @partnername. Alternatively, the user’s profile must show that the developer is a member of the Solution Partner’s GitHub Organization.
+	* an Individual Account for a Solution Partner Employee. The company name field must contain the Partner’s name or @partnername. Alternatively, the user’s profile must show that the developer is a member of the Solution Partner’s GitHub Organization.
 
 
 ## More information?

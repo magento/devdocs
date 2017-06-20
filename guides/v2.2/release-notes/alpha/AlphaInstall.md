@@ -16,24 +16,17 @@ github_link: alpha/Alphainstall.md
 
 ## Installation 
 
-Magento 2.2.0 Alpha release code is available only as a download from GitHub. We do not provide a Composer-based Alpha installation. 
-
 
 To install either Magento 2.2.0 Alpha CE and EE, you'll need to: 
 
+Install Magento 2.2.0 CE Alpha Release Candidate
 
-Step 1: Download Alpha code repositories 
+Install Magento 2.2.0 CE Alpha Release Candidate
 
-
-Step 2: Install Alpha Code
-
-
-You can find B2B installation and configuring instructions here. 
+Install Magento 2.2.0 B2B Alpha Release Candidate
 
 
-
-
-### Step 1: Download Alpha code repositories
+### Alpha code repositories
 
 There are three separate Alpha code repositories on GitHub. 
 
@@ -54,13 +47,13 @@ There are three separate Alpha code repositories on GitHub.
 <tr>
     <td><b>Magento EE</b></td>
     <td>https://github.com/magento/magento2ee</td>
-    <td>After contract has been signed</td>
+    <td>Available after contract has been signed</td>
 </tr> 
 
 <tr>
     <td><b>Magento B2B</b></td>
     <td>https://github.com/magento/magento2b2b</td>
-    <td>After contract has been signed</td>
+    <td>Available after contract has been signed</td>
 </tr>
 
 </table>
@@ -72,17 +65,50 @@ Once you've successfully downloaded the repositories you want to evaluate, you'r
 
 ### Step 2: Install
 
-
-Create empty directory and run:
-
-
+## Install the Magento Community Edition Alpha Release Candidate 2.2.0 software
+You can get Magento Community Edition Alpha Release Candidate 2.2.0 from Github. 
 
 
-### Step 3: Configure your environment
+*	[Get a compressed archive](#install-archive)
+*	[Complete the installation](#install-finish)
+
+
+### Complete the installation {#install-finish}
+{:.no_toc}
+
+After you get the CE software:
+
+1.	[Set file system ownership and permissions]({{ page.baseurl }}install-gde/prereq/file-system-perms.html).
+2.	Install the software:
+
+	*	[Web Setup Wizard]({{ page.baseurl }}install-gde/install/web/install-web.html)
+	*	[Command line]({{ page.baseurl }}install-gde/install/cli/install-cli.html)
 
 
 
 
+## Install the Magento Enterprise Edition Alpha Release Candidate 2.2.0 software
+See one of the following sections:
+
+*	[Get Magento EE using a compressed archive](#get-zip)
+*	[Complete the installation](#install-complete)
+
+
+### Get Magento EE using a compressed archive {#get-zip}
+{:.no_toc}
+
+{% include install/releasenotes/get-ee-software_zip.md %}
+
+### Complete the installation {#install-complete}
+{:.no_toc}
+
+After you get the EE software:
+
+1.	[Set file system ownership and permissions]({{ page.baseurl }}install-gde/prereq/file-system-perms.html).
+2.	Install the software:
+
+	*	[Web Setup Wizard]({{ page.baseurl }}install-gde/install/web/install-web.html)
+	*	[Command line]({{ page.baseurl }}install-gde/install/cli/install-cli.html)
 
 
 
