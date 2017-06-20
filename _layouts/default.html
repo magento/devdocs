@@ -2,6 +2,12 @@
 
 <div class="container">
 
+    {% if page.guide_version == "2.2" %}
+    <div class="message-banner">
+        <strong>New Features!</strong>&nbsp;&nbsp;In Release Candidate Alpha, we offer B2B and more Enterprise functionality. <a href="">See the Quickstart Guide</a>
+    </div> 
+    {% endif %}
+
 	{% include sidebar.html %}
 
 	<section class="content">

@@ -132,3 +132,14 @@ body {
 .affix {
   position: fixed;
 }
+
+.message-banner {
+    width: 100%;
+    text-align: center;
+    background-color: #E4F0F8;
+    color: #346E92;
+    border: solid 1px #346E92;
+    padding: 10px 0px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
