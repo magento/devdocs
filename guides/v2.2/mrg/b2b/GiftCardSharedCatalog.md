@@ -4,7 +4,7 @@ group: mrg
 subgroup: B2B
 title: Magento_GiftCardSharedCatalog module
 menu_title: GiftCardSharedCatalog
-menu_order: 13
+menu_order: 130
 version: 2.2
 github_link: mrg/b2b/GiftCardSharedCatalog.md
 ---

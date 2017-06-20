@@ -4,7 +4,7 @@ group: mrg
 subgroup: B2B
 title: Magento_NegotiableQuote module
 menu_title: NegotiableQuote
-menu_order: 16
+menu_order: 160
 version: 2.2
 github_link: mrg/b2b/NegotiableQuote.md
 ---

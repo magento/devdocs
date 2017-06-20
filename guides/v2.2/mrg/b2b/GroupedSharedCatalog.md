@@ -4,7 +4,7 @@ group: mrg
 subgroup: B2B
 title: Magento_GroupedSharedCatalog module
 menu_title: GroupedSharedCatalog
-menu_order: 15
+menu_order: 150
 version: 2.2
 github_link: mrg/b2b/GroupedSharedCatalog.md
 ---

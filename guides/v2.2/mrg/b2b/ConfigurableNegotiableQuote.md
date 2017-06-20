@@ -4,7 +4,7 @@ group: mrg
 subgroup: B2B
 title: Magento_ConfigurableNegotiableQuote module
 menu_title: ConfigurableNegotiableQuote
-menu_order: 8
+menu_order: 80
 version: 2.2
 github_link: mrg/b2b/ConfigurableNegotiableQuote.md
 ---

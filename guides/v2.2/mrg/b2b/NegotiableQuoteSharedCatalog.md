@@ -4,7 +4,7 @@ group: mrg
 subgroup: B2B
 title: Magento_NegotiableQuoteSharedCatalog module
 menu_title: NegotiableQuoteSharedCatalog
-menu_order: 17
+menu_order: 170
 version: 2.2
 github_link: mrg/b2b/NegotiableQuoteSharedCatalog.md
 ---

@@ -4,7 +4,7 @@ group: mrg
 subgroup: B2B
 title: Magento_GroupedRequisitionList module
 menu_title: GroupedRequisitionList
-menu_order: 14
+menu_order: 140
 version: 2.2
 github_link: mrg/b2b/GroupedRequisitionList.md
 ---
