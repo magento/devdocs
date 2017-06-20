@@ -1,17 +1,17 @@
 ---
 layout: default
 group: mrg
-subgroup: Xb2b
+subgroup: B2B
 title: Magento_b2b module
 menu_title: B2b
 menu_order: 1
 version: 2.2
-github_link: mrg/ee/B2b.md
+github_link: mrg/b2b/B2b.md
 ---
 
 ## Overview
 
-The Magento_b2b module is the base module for B2B. It must be present on all B2B installations.
+The `Magento_b2b` module is the base module for B2B. It must be present on all B2B installations.
 
 This module also provides several B2B branding elements. For example, it adds a link to B2B customer support in Admin, and it displays "B2B Edition" at the bottom of the site. Also, the module adds the configuration page for B2B settings where an admin user can enable or disable a B2B feature. Disabling a B2B feature in store configurations disables this feature for the storefront only, and it is still available in the admin panel.
 

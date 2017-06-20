@@ -1,17 +1,17 @@
 ---
 layout: default
 group: mrg
-subgroup: Xb2b
+subgroup: B2B
 title: Magento_NegotiableQuote module
 menu_title: NegotiableQuote
-menu_order: 2
+menu_order: 16
 version: 2.2
-github_link: mrg/ee/Magento_NegotiableQuote.md
+github_link: mrg/b2b/NegotiableQuote.md
 ---
 
 ## Overview
 
-The Magento_NegotiableQuote module allows a customer and a merchant (admin user) to negotiate product and/or shipping prices before the customer places an order. Its functionality is available for the company members only.
+The `Magento_NegotiableQuote` module allows a customer and a merchant (admin user) to negotiate product and/or shipping prices before the customer places an order. Its functionality is available for the company members only.
 
 Currently, B2B quoting is global--the price is given for the quote as a whole. Quoting per item is not supported. The quote lifecycle is managed via quote statuses. The quoting interface allows both a merchant and a customer to manage items in the quote (add, delete, change quantity) as well as make an offer (or request a quote) for items and/or for shipping. The negotiated price set in the negotiable quote is exactly the price that will be applied on a quote during checkout, order generation, and invoice generation.
 
@@ -19,11 +19,11 @@ The module provides a set of configurations for the quoting feature, such as the
 
 ## Installation details
 
-The module heavily depends on the Quote and Magento_Company modules, which must be previously installed and enabled.
+The module heavily depends on the `Quote` and `Magento_Company` modules, which must be previously installed and enabled.
 
-Also, the module has dependency on the following Magento’s B2C modules: Tax module, Checkout module and Cart Pricing Rules module.
+Also, the module has dependency on the following Magento’s B2C modules: `Tax`, `Checkout`, and `CartPricingRules` modules.
 
-When working with the SharedCatalog module, Negotiable Quote will be restricted to the products added to the shared catalog and custom prices set in the shared catalog.
+When working with the `SharedCatalog` module, `NegotiableQuote` will be restricted to the products added to the shared catalog and custom prices set in the shared catalog.
 
 The module does not create any backward incompatible changes. Can be deactivated and uninstalled at any time.
 
