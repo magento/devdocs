@@ -42,7 +42,7 @@ The cron job performs a corresponding request to notify the Advanced Reporting s
  </group>
  ```
 ### The Update Request
-  ![Update Request](./docs/images/update_request.png)
+  ![Update Request](./images/update_request.png)
 
 The `Update` request is a **PUT HTTP request** that contains data in the JSON format. The endpoint for the request is configured in the the `app/code/Magento/Analytics/etc/config.xml` file.
 

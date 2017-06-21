@@ -40,7 +40,7 @@ Magento 2 provides API for the pull link and the initialization vector.
 
 ## File lifecycle
 
- ![File lifecycle](./docs/images/mbi_file_exchange.png)
+ ![File lifecycle](./images/mbi_file_exchange.png)
 
 ## File decoding
 
