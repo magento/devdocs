@@ -8,7 +8,7 @@ menu_order:
 level3_menu_node: 
 level3_subgroup: 
 version: 2.2
-github_link: alpha/Magento2.2.0AlphaTestingEnvironments.md
+github_link: alpha/alpha-testing-environments.md
 ---
 
 We encourage you to download and use Magento 2.2.0 Alpha Release Candidate in whichever environment you typically run your Magento installations. For informational purposes, though, we are sharing specifications for some of our 2.2.0 testing environments.
