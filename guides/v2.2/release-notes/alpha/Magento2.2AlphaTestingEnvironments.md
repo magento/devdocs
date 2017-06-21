@@ -25,7 +25,7 @@ Here's an overview of how we use these terms in the following tables:
 
 
 
- ### Environment and server settings 
+### Environment and server settings 
 
 <table>
   <tr>
@@ -88,10 +88,10 @@ Here's an overview of how we use these terms in the following tables:
 
   <tr>
     <td><b>Database</b></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td>Percona 5.6 </td>
+    <td>MySQL 5.6</td>
+    <td>MariaDB 10.2</td>
+    <td>MySQL 5.7</td>
   </tr>
 
   <tr>
@@ -243,11 +243,11 @@ Here's an overview of how we use these terms in the following tables:
 
 
   <tr>
-    <td><b>Static content deploy</b></td>
-    <td></td>
-    <td></td>
-    <td></td>
-    <td></td>
+    <td><b>Static content deployment</b></td>
+    <td>"quick" is used during mode set</td>
+    <td>Yes (-s compact)</td>
+    <td>Yes (-s quick -f)</td>
+    <td>No (generating on fly)</td>
   </tr>
 
 
