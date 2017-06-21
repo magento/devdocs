@@ -12,6 +12,10 @@ To enable the web server to write files and directories in the Magento file syst
 
 This section discusses how to create a new Magento file system owner and put that user in the web server's group. You can use an existing user account if you wish; we recommend the user have a strong password for security reasons.
 
+<div class="bs-callout bs-callout-info">
+	Skip to <a href="#install-update-depend-user-findgroup">step 2</a> is you plan on using an existing user account.
+</div>
+
 ### Step 1: Create the Magento file system owner and give the user a strong password {#mage-owner-create-user}
 This section discusses how to create the Magento file system owner. (Magento file system owner is another term for the *command-line user*.)
 
@@ -29,13 +33,13 @@ Follow the prompts on your screen to create a password for the user.
     <p>If you don't have <code>root</code> privileges on your Magento server, you can use another local user account. Make sure the user has a strong password and continue with <a href="#install-update-depend-user-add2group">Put the Magento file system owner in the web server group</a>.</p>
 </div>
 
-For example, to create a user named `magento_user` and give the user a password, enter:
+For example, to create a user named `magento` and give the user a password, enter:
 
-	sudo adduser magento_user
-	sudo passwd magento_user
+	sudo adduser magento
+	sudo passwd magento
 
 <div class="bs-callout bs-callout-warning">
-    <p>Because the point of creating this user is to provide added security, make sure you create a <a href="https://en.wikipedia.org/wiki/Password_strength" target="_blank">strong password</a>.</p>
+    <p>Because the point of creating this user is to provide added security, make sure you create a <a href="https://en.wikipedia.org/wiki/Password_strength" target="&#95;blank">strong password</a>.</p>
 </div>
 
 ### Step 2: Find the web server user's group {#install-update-depend-user-findgroup}
@@ -49,22 +53,30 @@ To find the web server user's group:
 	Typically, the user name and the group name are both `www-data`
 
 ### Step 3: Put the Magento file system owner in the web server's group {#install-update-depend-user-add2group}
-To put the Magento file system owner in the web server's primary group (assuming the typical Apache group name for CentOS and Ubuntu), enter the following command as a user with `root` privileges:
+To put the Magento file system owner in the web server's group (assuming the typical Apache group name for CentOS and Ubuntu), enter the following command as a user with `root` privileges:
 
-*	CentOS: `usermod -g apache <username>`
-*	Ubuntu: `usermod -g www-data <username>`
+*	CentOS: `usermod -a -G apache <username>`
+*	Ubuntu: `usermod -a -G www-data <username>`
 
-For example, to add the user `magento_user` to the `apache` primary group on CentOS:
+<div class="bs-callout bs-callout-warning">
+	The <code>-a -G</code> options are important because they add <code>apache</code> or <code>www-data</code> as a <em>secondary</em> group to the user account, which preserves the user's <em>primary</em> group. Adding a secondary group to a user account helps <a href="#perms-set-two-users">restrict file ownership and permissions</a> to ensure members of a shared group only have access to certain files.
+</div>
 
-	usermod -g apache magento_user
+For example, to add `apache` as a secondary group to user `magento` on CentOS:
+
+	usermod -a -G apache magento
 
 To confirm your Magento user is a member of the web server group, enter the following command:
 
-	groups <user name>
+	groups magento
 
-A sample result follows:
+The following sample result shows the user's primary (`magento`) and secondary (`apache`) groups.
 
-	magento_user : apache
+	magento : magento apache
+
+<div class="bs-callout bs-callout-info">
+	Typically, the user name and primary group name are the same.
+</div>
 
 To complete the task, restart the web server:
 
