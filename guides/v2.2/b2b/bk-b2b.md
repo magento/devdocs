@@ -2,16 +2,15 @@
 layout: default
 group: b2b
 subgroup: 01_Introduction
-title: B2B Development
+title: B2B Developer Guide
 landing-page: B2B
-menu_title: B2B Development
+menu_title: B2B Developer Guide
 menu_order: 1
 menu_node: parent
 version: 2.2
 ee_only: true
 github_link: b2b/bk-b2b.md
 ---
-
 
 The B2B functionality suggests that services and goods are sold to companies and not to individuals.
 
@@ -35,11 +34,17 @@ Magento B2B ais a set of modules that is installed on top of the Magento 2.x Ent
 Name | Description | WebAPI enabled?
 --- | --- | ---
 B2b | The base module for B2B. It also provides branding elements. | No
+BundleNegotiableQuote | Enables bundle products to be displayed in a negotiable quote in an B2B environment | No
+BundleRequisitionList | Enables bundle products to be displayed in a requisition list | No
 BundleSharedCatalog | Enables bundle products to be added to a shared catalog in an B2B environment. | No
 Company | Allows a merchant to create a company account and assign multiple members of the company to the account. | Yes
 CompanyCredit | Adds the Payment on Account payment method for B2B companies. | Yes
 CompanyPayment | Allows a merchant to configure which payment methods are available for B2B companies. | No
+ConfigurableNegotiableQuote | Enables configurable products to be displayed in a negotiable quote in an B2B environment | No
+ConfigurableRequisitionList | Enables configurable products to be displayed in a requisition list | No
 ConfigurableSharedCatalog |Enables configurable products to be added to a shared catalog in an B2B environment. | No
+GiftCardNegotiableQuote | Enables gift cards to be displayed in a negotiable quote in an B2B environment | No
+GiftCardRequisitionList | Enables gift cards to be displayed in a requisition list | No
 GiftCardSharedCatalog | Enables gift cards to be added to a shared catalog in an B2B environment. | No
 GroupedSharedCatalog | Enables grouped products to be added to a shared catalog in an B2B environment. | No
 NegotiableQuote | Allows a customer and a merchant (admin user) to negotiate product and/or shipping prices before the customer places an order. | Yes
