@@ -269,4 +269,4 @@ The `GET  /V1/companyCredits/history` call returns a list of history IDs for com
 
 ## Related information
 
-[Integrate with the CompanyCredit module]({{page.baseurl}}/b2bcompany-credit.html)
+[Integrate with the CompanyCredit module]({{page.baseurl}}/b2b/company-credit.html)
