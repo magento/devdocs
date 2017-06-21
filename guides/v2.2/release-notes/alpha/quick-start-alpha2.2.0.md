@@ -98,7 +98,7 @@ The Magento 2.2.0 EE Alpha Release Candidate evaluation is open to all Solution 
 
 ## More information?
 
-An Alpha verion of the Developer documentation is ready for you! Visit the 2.2.0  Release Candidate Alpha DevDocs repository for a peek at our 2.2.0 developer documentation.
+The Magento Developer documentation has been updated with the latest 2.2 information.  Visit the 2.2.0  Developer Documentation site  a peek at our updated 2.2.0 developer documentation.
 
 
 Ready to install Magento 2.2.0  Release Candidate Alpha? 

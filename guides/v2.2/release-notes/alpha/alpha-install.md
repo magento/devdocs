@@ -23,7 +23,8 @@ Install Magento 2.2.0 CE Release Candidate Alpha
 
 Install Magento 2.2.0 CE Release Candidate Alpha
 
-Install Magento 2.2.0 B2B Release Candidate Alpha
+
+Want to evaluate Magento 2.2.0 B2B Release Candidate Alpha?  See [Install Magento 2.2.0 B2B Release Candidate Alpha]({{page.baseurl}alpha/alpha-install-b2b.html) for information on downloading and installing. 
 
 ### Alpha code repositories
 

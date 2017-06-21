@@ -11,17 +11,9 @@ version: 2.2
 github_link: alpha/alpha-testing-environments.md
 ---
 
-We encourage you to download and use Magento 2.2.0 Release Candidate Alpha in whichever environment you typically run your Magento installations. For informational purposes, though, we are sharing specifications for some of our 2.2.0 testing environments.
+We encourage you to download and use Magento 2.2.0 Release Candidate Alpha in whichever environment you typically run your Magento installations. For informational purposes, though, we are sharing specifications for some of our 2.2.0 testing environments. 
 
-Here's an overview of how we use these terms in the following tables:
-
-* Enterprise 
-
-* Medium
-
-* Hobbyist
-
-* Developer
+Testing environments are roughly categorized by the amount of traffic they must support as well as other factors such as the number of visits, storefronts, and transactions. Enterprise environments must support stores with the greatest traffic and complexity, while Developer testing environments. These test environments are as follows, in order of decreasing capacity: Enterprise, Medium, Hobbyist, and Developer.
 
 
 
@@ -331,7 +323,7 @@ Here's an overview of how we use these terms in the following tables:
     <td><b>JS bundling</b></td>
     <td>Yes</td>
     <td>Yes</td>
-    <td></td>
+    <td>No</td>
     <td>No</td>
   </tr>
 
@@ -347,7 +339,7 @@ Here's an overview of how we use these terms in the following tables:
     <td><b>CSS minification</b></td>
     <td>Yes</td>
     <td>No</td>
-    <td></td>
+    <td>No</td>
     <td>No</td>
   </tr>
 

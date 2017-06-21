@@ -1,7 +1,7 @@
 ---
 layout: default
 group: release-notes
-subgroup: Magento 2.2.0 Alpha Release Candidate
+subgroup: Magento 2.2.0 Release Candidate Alpha
 title: Install B2B
 menu_title: Install B2B
 menu_order:
