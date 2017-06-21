@@ -75,7 +75,7 @@ The Web APIs for Magento EE are available on EE installations only. EE installat
     catalogProductTypeListV1
     catalogProductWebsiteLinkRepositoryV1
     catalogSpecialPriceStorageV1 *
-    catalogTierPriceStorageV1 * 
+    catalogTierPriceStorageV1 *
 
 ### Catalog inventory
     catalogInventoryStockRegistryV1
@@ -192,3 +192,7 @@ The Web APIs for Magento EE are available on EE installations only. EE installat
     taxTaxClassRepositoryV1
     taxTaxRateRepositoryV1
     taxTaxRuleRepositoryV1
+
+## Magento B2B
+
+See [Integrate with B2B using REST]({{page.baseurl}}b2b/integrations.html) for a list of services provided with B2B.
