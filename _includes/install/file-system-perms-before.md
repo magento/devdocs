@@ -31,4 +31,4 @@ After you've performed the other tasks in this topic, enter one of the following
 
 For example,
 
-	su magento
+	su magento_user
