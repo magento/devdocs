@@ -4,7 +4,7 @@ group: mrg
 subgroup: Community Edition
 title: Magento_ReviewAnalytics module
 menu_title: ReviewAnalytics
-menu_order: 1
+menu_order: 6
 version: 2.2
 github_link: mrg/ce/ReviewAnalytics/description.md
 ---

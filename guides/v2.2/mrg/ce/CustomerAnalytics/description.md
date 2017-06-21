@@ -4,7 +4,7 @@ group: mrg
 subgroup: Community Edition
 title: Magento_CustomerAnalytics module
 menu_title: CustomerAnalytics
-menu_order: 1
+menu_order: 3
 version: 2.2
 github_link: mrg/ce/CustomerAnalytics/description.md
 ---

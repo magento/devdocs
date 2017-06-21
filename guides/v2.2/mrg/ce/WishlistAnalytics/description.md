@@ -4,7 +4,7 @@ group: mrg
 subgroup: Community Edition
 title: Magento_WishlistAnalytics module
 menu_title: WishlistAnalytics
-menu_order: 1
+menu_order: 11
 version: 2.2
 github_link: mrg/ce/WishlistAnalytics/description.md
 ---

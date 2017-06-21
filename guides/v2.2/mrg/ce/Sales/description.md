@@ -4,7 +4,7 @@ group: mrg
 subgroup: Community Edition
 title: Magento_Sales module
 menu_title: Description
-menu_order: 2
+menu_order: 8
 version: 2.2
 level3_menu_node: level3child
 level3_subgroup: Sales

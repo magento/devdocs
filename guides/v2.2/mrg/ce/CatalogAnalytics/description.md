@@ -4,7 +4,7 @@ group: mrg
 subgroup: Community Edition
 title: Magento_CatalogAnalytics module
 menu_title: CatalogAnalytics
-menu_order: 1
+menu_order: 2
 version: 2.2
 github_link: mrg/ce/CatalogAnalytics/description.md
 ---

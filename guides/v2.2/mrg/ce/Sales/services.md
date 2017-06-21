@@ -4,7 +4,7 @@ group: mrg
 subgroup: Community Edition
 title: Magento_Sales module API
 menu_title: Services/API
-menu_order: 3
+menu_order: 9
 version: 2.2
 level3_menu_node: level3child
 level3_subgroup: Sales
