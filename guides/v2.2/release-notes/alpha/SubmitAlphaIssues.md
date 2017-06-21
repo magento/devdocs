@@ -84,7 +84,7 @@ You can assist Magento developers by providing any artifacts that you feel are p
 
 ### Suggestions for our documentation?
 
-We welcome feedback on the Merchant and Developer documentation. In particular, you can help us improve our Alpha documentation by identifying topics that are incomplete or missing.  
+We welcome feedback on the Merchant and Developer documentation. In particular, you can help us improve our documentation by identifying topics that are incomplete or missing.  
 
 
 

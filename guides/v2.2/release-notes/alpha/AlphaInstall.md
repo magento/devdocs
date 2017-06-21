@@ -17,7 +17,7 @@ github_link: alpha/Alphainstall.md
 ## Installation 
 
 
-To install either Magento 2.2.0 Alpha CE and EE, you'll need to: 
+To install either Magento 2.2.0 Alpha Release Candidate CE and EE, you'll need to: 
 
 Install Magento 2.2.0 CE Alpha Release Candidate
 
