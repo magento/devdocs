@@ -25,6 +25,7 @@ Here's an overview of how we use these terms in the following tables:
 
 
 
+ ### Environment and server settings 
 
 <table>
   <tr>
@@ -33,11 +34,6 @@ Here's an overview of how we use these terms in the following tables:
     <th><b>Medium</b></th>
     <th><b>Hobbyist</b></th>
     <th><b>Developer</b></th>
-  </tr>
-
-
-  <tr>
-    <td><b>Environment settings</b></td>a
   </tr>
 
   <tr>
@@ -47,27 +43,6 @@ Here's an overview of how we use these terms in the following tables:
     <td>Docker (AWS as needed)</td>
 
    </tr>
-
-  <tr>
-    <td><b>Server settings</b></td>
-  </tr>
-
-</table>
-
-
-
-
-
-
-
-<table>
-  <tr>
-    <th><b>Regression environment</b></th>
-    <th><b>Enterprise</b></th>
-    <th><b>Medium</b></th>
-    <th><b>Hobbyist</b></th>
-    <th><b>Developer</b></th>
-  </tr>
 
 
   <tr>
@@ -92,20 +67,6 @@ Here's an overview of how we use these terms in the following tables:
     <td>80</td>
     <td>80</td>
     <td>8080</td>
-  </tr>
-
-</table>
-
-
-
-
-<table>
-  <tr>
-    <th><b>Regression environment</b></th>
-    <th><b>Enterprise</b></th>
-    <th><b>Medium</b></th>
-    <th><b>Hobbyist</b></th>
-    <th><b>Developer</b></th>
   </tr>
 
 
@@ -142,7 +103,7 @@ Here's an overview of how we use these terms in the following tables:
   </tr>
 </table>
 
-
+### Services
 
 <table>
   <tr>
@@ -152,11 +113,6 @@ Here's an overview of how we use these terms in the following tables:
     <th><b>Hobbyist</b></th>
     <th><b>Developer</b></th>
   </tr>
-
- <tr>
-    <td><b>Services</b></td>
-      </tr>
-
 
   <tr>
     <td><b>Page cache</b></td>
@@ -201,7 +157,7 @@ Here's an overview of how we use these terms in the following tables:
   </tr>
 </table>
 
-
+### Magento settings
 
 
 <table>
@@ -212,10 +168,6 @@ Here's an overview of how we use these terms in the following tables:
     <th><b>Hobbyist</b></th>
     <th><b>Developer</b></th>
   </tr>
-
-<tr>
-    <td><b>Magento settings</b></td>
-      </tr>
 
 
   <tr>
@@ -317,6 +269,8 @@ Here's an overview of how we use these terms in the following tables:
 </table>
 
 
+### Magento installation settings
+
 
 <table>
   <tr>
@@ -327,9 +281,6 @@ Here's an overview of how we use these terms in the following tables:
     <th><b>Developer</b></th>
   </tr>
 
-<tr>
-    <td><b>Magento install settings</b></td>
-</tr>
 
 <tr>
     <td><b>Table prefix</b></td>
@@ -357,6 +308,7 @@ Here's an overview of how we use these terms in the following tables:
 </table>
 
 
+### Magento configuration settings
 
 <table>
   <tr>
@@ -366,11 +318,6 @@ Here's an overview of how we use these terms in the following tables:
     <th><b>Hobbyist</b></th>
     <th><b>Developer</b></th>
   </tr>
-
-<tr>
-    <td><b>Magento config settings</b></td>
-</tr>
-
 
 <tr>
     <td><b>JS minification</b></td>
@@ -452,6 +399,5 @@ Here's an overview of how we use these terms in the following tables:
     <td>No</td>
   </tr>
 
-  </tr>
 
 </table>
