@@ -37,10 +37,8 @@ Here's an overview of how we use these terms in the following tables:
 
 
   <tr>
-    <td><b>Environment settings</b></td>
-    
+    <td><b>Environment settings</b></td>a
   </tr>
-
 
   <tr>
     <td>Docker (AWS as needed)</td>
@@ -52,7 +50,24 @@ Here's an overview of how we use these terms in the following tables:
 
   <tr>
     <td><b>Server settings</b></td>
-      </tr>
+  </tr>
+
+</table>
+
+
+
+
+
+
+
+<table>
+  <tr>
+    <th><b>Regression environment</b></th>
+    <th><b>Enterprise</b></th>
+    <th><b>Medium</b></th>
+    <th><b>Hobbyist</b></th>
+    <th><b>Developer</b></th>
+  </tr>
 
 
   <tr>
@@ -79,6 +94,20 @@ Here's an overview of how we use these terms in the following tables:
     <td>8080</td>
   </tr>
 
+</table>
+
+
+
+
+<table>
+  <tr>
+    <th><b>Regression environment</b></th>
+    <th><b>Enterprise</b></th>
+    <th><b>Medium</b></th>
+    <th><b>Hobbyist</b></th>
+    <th><b>Developer</b></th>
+  </tr>
+
 
 <tr>
     <td><b>PHP version</b></td>
@@ -87,7 +116,6 @@ Here's an overview of how we use these terms in the following tables:
     <td>7.0.16 (mod_fpm)</td>
     <td>7.1 (mod_fpm)</td>
   </tr>
-
 
 <tr>
     <td><b>XDebug</b></td>
@@ -111,6 +139,18 @@ Here's an overview of how we use these terms in the following tables:
     <td>Single DB</td>
     <td>Single DB</td>
     <td>Single DB</td>
+  </tr>
+</table>
+
+
+
+<table>
+  <tr>
+    <th><b>Regression environment</b></th>
+    <th><b>Enterprise</b></th>
+    <th><b>Medium</b></th>
+    <th><b>Hobbyist</b></th>
+    <th><b>Developer</b></th>
   </tr>
 
  <tr>
@@ -159,7 +199,19 @@ Here's an overview of how we use these terms in the following tables:
     <td>DB</td>
     <td>Filesystem</td>
   </tr>
+</table>
 
+
+
+
+<table>
+  <tr>
+    <th><b>Regression environment</b></th>
+    <th><b>Enterprise</b></th>
+    <th><b>Medium</b></th>
+    <th><b>Hobbyist</b></th>
+    <th><b>Developer</b></th>
+  </tr>
 
 <tr>
     <td><b>Magento settings</b></td>
@@ -262,8 +314,18 @@ Here's an overview of how we use these terms in the following tables:
     <td>Yes</td>
     <td>No</td>
   </tr>
+</table>
 
 
+
+<table>
+  <tr>
+    <th><b>Regression environment</b></th>
+    <th><b>Enterprise</b></th>
+    <th><b>Medium</b></th>
+    <th><b>Hobbyist</b></th>
+    <th><b>Developer</b></th>
+  </tr>
 
 <tr>
     <td><b>Magento install settings</b></td>
@@ -292,7 +354,18 @@ Here's an overview of how we use these terms in the following tables:
     <td>FALSE</td>
     <td>FALSE</td>
   </tr>
+</table>
 
+
+
+<table>
+  <tr>
+    <th><b>Regression environment</b></th>
+    <th><b>Enterprise</b></th>
+    <th><b>Medium</b></th>
+    <th><b>Hobbyist</b></th>
+    <th><b>Developer</b></th>
+  </tr>
 
 <tr>
     <td><b>Magento config settings</b></td>
@@ -380,6 +453,5 @@ Here's an overview of how we use these terms in the following tables:
   </tr>
 
   </tr>
-
 
 </table>

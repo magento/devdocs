@@ -60,21 +60,32 @@ There are three separate Alpha code repositories on GitHub.
 
 
 
-Once you've successfully downloaded the repositories you want to evaluate, you're ready to install.
+
+How to clone the Magento 2 GitHub repository
+
+You can clone the Magento 2 GitHub repository using either SSH or HTTPS protocols:
+
+Use SSH for better security (no user name and password are exchanged). This requires you to share a public key with GitHub.
+Use HTTPS if you don’t share an SSH key with GitHub (your user name and password are encrypted before being sent to GitHub).
+See one of the following section:
+
+Clone with SSH
+Clone with HTTPS
 
 
-### Step 2: Install
+
+
+
+
+
 
 ## Install the Magento Community Edition Alpha Release Candidate 2.2.0 software
 You can get Magento Community Edition Alpha Release Candidate 2.2.0 from Github. 
 
 
-*	[Get a compressed archive](#install-archive)
-*	[Complete the installation](#install-finish)
 
+### Complete the installation 
 
-### Complete the installation {#install-finish}
-{:.no_toc}
 
 After you get the CE software:
 
@@ -87,20 +98,7 @@ After you get the CE software:
 
 
 
-## Install the Magento Enterprise Edition Alpha Release Candidate 2.2.0 software
-See one of the following sections:
-
-*	[Get Magento EE using a compressed archive](#get-zip)
-*	[Complete the installation](#install-complete)
-
-
-### Get Magento EE using a compressed archive {#get-zip}
-{:.no_toc}
-
-{% include install/releasenotes/get-ee-software_zip.md %}
-
-### Complete the installation {#install-complete}
-{:.no_toc}
+### Complete the installation 
 
 After you get the EE software:
 
