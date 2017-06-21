@@ -13,7 +13,7 @@ github_link: release-notes/ReleaseNotes2.0.15EE.md
 
 *Patch code and release notes were published on June 21, 2017.* 
 
-We are pleased to present Magento Community Edition 2.0.15. This release includes only one enhancement: Support for changes in PayPal's Instant Payment Notification (IPN) service.
+We are pleased to present Magento Enterprise Edition 2.0.15. This release includes only one enhancement: Support for changes in PayPal's Instant Payment Notification (IPN) service.
 
 For increased security, merchants using PayPal’s Instant Payment Notification (IPN) service will be able to use only HTTPS when posting messages back to PayPal for verification. In the past, PayPal has allowed the use of HTTP for these postbacks. PayPal provides more information at [IPN Verification Postback to HTTPS Microsite](https://www.paypal-knowledge.com/infocenter/index?page=content&widgetview=true&id=FAQ1916&viewlocale=en_US){:target="_blank"}.
 
