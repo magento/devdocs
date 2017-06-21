@@ -1,7 +1,7 @@
 ---
 layout: default
 group: release-notes
-subgroup: Magento 2.2.0 Alpha Release Candidate
+subgroup: Magento 2.2.0 Release Candidate Alpha
 title: Magento 2.2.0 Alpha Testing Environments
 menu_title: Magento 2.2.0 Alpha Testing Environments
 menu_order: 
@@ -11,7 +11,7 @@ version: 2.2
 github_link: alpha/alpha-testing-environments.md
 ---
 
-We encourage you to download and use Magento 2.2.0 Alpha Release Candidate in whichever environment you typically run your Magento installations. For informational purposes, though, we are sharing specifications for some of our 2.2.0 testing environments.
+We encourage you to download and use Magento 2.2.0 Release Candidate Alpha in whichever environment you typically run your Magento installations. For informational purposes, though, we are sharing specifications for some of our 2.2.0 testing environments.
 
 Here's an overview of how we use these terms in the following tables:
 

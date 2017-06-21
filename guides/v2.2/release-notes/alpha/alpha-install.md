@@ -1,9 +1,9 @@
 ---
 layout: default
 group: release-notes
-subgroup: Magento 2.2.0 Alpha Release Candidate
-title: Install Magento 2.2.0 Alpha Release Candidate
-menu_title: Install Magento 2.2.0 Alpha Release Candidate
+subgroup: Magento 2.2.0 Release Candidate Alpha
+title: Install Magento 2.2.0 Release Candidate Alpha
+menu_title: Install Magento 2.2.0 Release Candidate Alpha
 menu_order: 
 level3_menu_node: 
 level3_subgroup: 
@@ -17,14 +17,13 @@ github_link: alpha/alpha-install.md
 ## Installation 
 
 
-To install either Magento 2.2.0 Alpha Release Candidate CE and EE, you'll need to: 
+To install either Magento 2.2.0 Release Candidate Alpha CE and EE, you'll need to: 
 
-Install Magento 2.2.0 CE Alpha Release Candidate
+Install Magento 2.2.0 CE Release Candidate Alpha
 
-Install Magento 2.2.0 CE Alpha Release Candidate
+Install Magento 2.2.0 CE Release Candidate Alpha
 
-Install Magento 2.2.0 B2B Alpha Release Candidate
-
+Install Magento 2.2.0 B2B Release Candidate Alpha
 
 ### Alpha code repositories
 
@@ -79,7 +78,7 @@ Clone with HTTPS
 
 
 
-## Install the Magento Community Edition Alpha Release Candidate 2.2.0 software
+## Install the Magento Community Edition Release Candidate Alpha 2.2.0 software
 You can get Magento Community Edition Alpha Release Candidate 2.2.0 from Github. 
 
 
