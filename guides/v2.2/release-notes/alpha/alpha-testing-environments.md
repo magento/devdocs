@@ -4,7 +4,7 @@ group: release-notes
 subgroup: Magento 2.2.0 Release Candidate Alpha
 title: Magento 2.2.0 Alpha Testing Environments
 menu_title: Magento 2.2.0 Alpha Testing Environments
-menu_order: 
+menu_order: 4
 level3_menu_node: 
 level3_subgroup: 
 version: 2.2
