@@ -1,7 +1,7 @@
 ---
 layout: default
 group: mrg
-subgroup: B2B
+subgroup: 30_B2B
 title: Magento_CompanyCredit module
 menu_title: CompanyCredit
 menu_order: 60

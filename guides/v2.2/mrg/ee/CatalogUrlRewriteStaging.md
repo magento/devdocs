@@ -1,15 +1,14 @@
 ---
 layout: default
 group: mrg
-subgroup: Enterprise Edition
+subgroup: 20_Enterprise Edition
+ee_only: true
 title: Module Reference Guide
 menu_title: CatalogUrlRewriteStaging
 menu_order: 2
 version: 2.2
 github_link: mrg/ee/CatalogUrlRewriteStaging.md
 ---
-
-![Magento EE logo]({{site.baseurl}}common/images/ee-only_large.png)
 
 ## Overview
 

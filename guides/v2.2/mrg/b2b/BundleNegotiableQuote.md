@@ -1,7 +1,7 @@
 ---
 layout: default
 group: mrg
-subgroup: B2B
+subgroup: 30_B2B
 title: Magento_BundleNegotiableQuote module
 menu_title: BundleNegotiableQuote
 menu_order: 20

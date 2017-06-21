@@ -1,7 +1,7 @@
 ---
 layout: default
 group: mrg
-subgroup: Community Edition
+subgroup: 10_Community Edition
 title: Magento_Sales module dependencies
 menu_title: Dependencies
 menu_order: 2

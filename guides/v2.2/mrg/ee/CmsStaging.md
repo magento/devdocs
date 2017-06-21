@@ -1,15 +1,14 @@
 ---
 layout: default
 group: mrg
-subgroup: Enterprise Edition
+subgroup: 20_Enterprise Edition
+ee_only: true
 title: Module Reference Guide
 menu_title: CmsStaging
 menu_order: 2
 version: 2.2
 github_link: mrg/ee/CmsStaging.md
 ---
-
-![Magento EE logo]({{site.baseurl}}common/images/ee-only_large.png)
 
 ## Overview
 
@@ -25,14 +24,14 @@ You can stage the following parameters:
 
 - Enable/Disable CMS Page
 - Page Title
-- Content 
+- Content
     - Content Heading
     - Content (WYSIWYG)
-- {% glossarytooltip ae8f7f2b-ddfb-41ed-bec3-bed191406fdd %}Search Engine Optimization{% endglossarytooltip %} 
+- {% glossarytooltip ae8f7f2b-ddfb-41ed-bec3-bed191406fdd %}Search Engine Optimization{% endglossarytooltip %}
     - URL Key
     - Meta Keywords
     - Meta Description
-- Design 
+- Design
     - Layout
     - Layout Update XML
     - Theme
@@ -43,7 +42,7 @@ The following parameters can be staged:
 
 - Enable/Disable CMS Block
 - Block Title
-- Identifier 
+- Identifier
 - {% glossarytooltip ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f %}Store View{% endglossarytooltip %}
 - Content (WYSIWYG)
 
