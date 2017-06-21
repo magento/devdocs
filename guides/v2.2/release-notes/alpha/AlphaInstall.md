@@ -1,9 +1,9 @@
 ---
 layout: default
 group: release-notes
-subgroup: Magento 2.2.0 Alpha Release
-title: Install Magento 2.2.0 Alpha 
-menu_title: Install Magento 2.2.0 Alpha
+subgroup: Magento 2.2.0 Alpha Release Candidate
+title: Install Magento 2.2.0 Alpha Release Candidate
+menu_title: Install Magento 2.2.0 Alpha Release Candidate
 menu_order: 
 level3_menu_node: 
 level3_subgroup: 

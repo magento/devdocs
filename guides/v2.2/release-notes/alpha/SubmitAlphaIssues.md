@@ -1,9 +1,9 @@
 ---
 layout: default
 group: release-notes
-subgroup: Magento 2.2.0 Alpha Release
-title: Submit Comments on Magento 2.2.0 Alpha
-menu_title: Submit Comments on Magento 2.2.0 Alpha
+subgroup: Magento 2.2.0 Alpha Release Candidate
+title: Submit Comments on Magento 2.2.0 Alpha Release Candidate
+menu_title: Submit Comments on Magento 2.2.0 Alpha Release Candidate
 menu_order: 
 level3_menu_node: 
 level3_subgroup: 

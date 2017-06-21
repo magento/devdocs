@@ -1,7 +1,7 @@
 ---
 layout: default
 group: release-notes
-subgroup: Magento 2.2.0 Alpha Release
+subgroup: Magento 2.2.0 Alpha Release Candidate
 title: Magento 2.2.0 Alpha Testing Environments
 menu_title: Magento 2.2.0 Alpha Testing Environments
 menu_order: 
