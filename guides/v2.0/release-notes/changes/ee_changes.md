@@ -22,11 +22,11 @@ where each change is displayed in a separate row in the table, with the followin
 
 ## 2.0.15 - 2.0.14
 
-{% include changes/ce/2014-2015.html %}
+{% include changes/ee/2014-2015.html %}
 
 ## 2.0.14 - 2.0.13
 
-{% include changes/ce/2013-2014.html %}
+{% include changes/ee/2013-2014.html %}
 
 ## 2.0.13 - 2.0.12
 
