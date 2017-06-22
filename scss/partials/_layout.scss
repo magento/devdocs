@@ -141,5 +141,9 @@ body {
     border: solid 1px #346E92;
     padding: 10px 0px;
     margin-bottom: 20px;
-    font-size: 14px;
+    font-size: 13px;
+
+    &.index {
+        font-size: 100%;
+    }
 }
