@@ -38,15 +38,13 @@ You can also use a process manager such as <a href="http://supervisord.org/index
 
 Use the `magento` command to start the message queue consumer.
 
-`./bin/magento queue:consumers:start <consumer_name> [--max-messages=<value>] [--batch-size=<value>]`
+`./bin/magento queue:consumers:start <consumer_name> [--max-messages=<value>]`
 
 where:
 
 `<consumer_name>` is the consumer to start.
 
-`--max-messages=<value>` defines the maximum number of messages to consume per invocation. If the number of queued messages is less than the specified maximum number of messages, if there are fewer than the specified number of messages in the queue, the consumer will poll for new messages until it has processed that number of messages. The command can be launched again with cron within a configured period of time, or manually. 
-
-`--batch-size=<value>` specifies the number of messages per batch. This option is applicable for the batch consumer only.
+`--max-messages=<value>` defines the maximum number of messages to consume per invocation. If the number of queued messages is less than the specified maximum number of messages, if there are fewer than the specified number of messages in the queue, the consumer will poll for new messages until it has processed that number of messages. The command can be launched again with cron within a configured period of time, or manually.
 
 Unless the `max-messages` option is specified, the process runs continuously.
 
