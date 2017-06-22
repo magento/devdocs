@@ -23,27 +23,45 @@ Magento Community Edition 2.2.0 Pre-Release Candidate includes substantial new f
 
 ## Highlights
 
-Magento 2.1.7 contains over 15 security enhancements as well as one significant functional enhancement. Look for the following highlights in this release:
+Magento 2.2.0 contains over 15 security enhancements as well as one significant functional enhancement. Look for the following highlights in this release:
+
+## Fixed issues
+
+<!--- 69308-->* We've resolved two vulnerabilties that involved arbitrary file deletion and a lack of input sanitization that lead to Remote Code Execution. 
+
+<!--- 64842-->* We've eliminated unnecessary file check operations, which improved the performance of the Catalog and Product pages. 
+
+<!--- 63159-->*  Content staging value for fields are not saved in database. 
+
+<!--- 57846-->* 
+
+<!--- 67623-->* 
+
+<!--- 59135-->* 
 
 
 ## Breaking issues
 
+We are working on these currently unresolved, significant issues for this release:
+
+
+<!--- 66784-->* You cannot run B2B with Sample Data installed when Shared Catalogs are enabled.
+
+<!--- 65555-->* Some `js.translation.js` files do not correctly regenerate during deployment. As a result, Magento does not display your translated theme strings.
+
+<!--- 57995-->* Magento does not properly display videos for simple products. It displays thumbnail images instead of the actual video.  [GITHUB-6360](https://github.com/magento/magento2/issues/6360)
+
+<!--- 69636-->* Magento does not apply the Cart Price rules when sorting products by price. [GITHUB-7465](https://github.com/magento/magento2/issues/7465)
 
 
 ## System requirements
-Our technology stack is built on PHP and MySQL. For more information, see
-<a href="{{ page.baseurl }}install-gde/system-requirements.html" target="_blank">System Requirements</a>.
 
+Our technology stack is built on PHP and MySQL. For more information, see [System Requirements]({{ page.baseurl }}install-gde/system-requirements.html).
 
-{% include install/releasenotes/ce_install_21.md %}
+## Installation
 
+Installation instructions for all versions of this Release Candidate are documented [here]({{ page.baseurl }})release-candidate/install.html).
 
-
-## Migration toolkits
-The <a href="{{ page.baseurl }}migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{ page.baseurl }}migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.
-
-The <a href="https://github.com/magento/code-migration" target="_blank">Code Migration Toolkit</a> helps transfer existing Magento 1.x store extensions and customizations to Magento 2.0.x. The command-line interface includes scripts for converting Magento 1.x modules and layouts.
 
 ## Credits
 Dear community members, thank you for your suggestions and bug reports. 
-

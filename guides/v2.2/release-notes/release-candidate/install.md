@@ -29,7 +29,7 @@ Whether you are installing CE, EE, or B2B, the overall installation process is e
 * Complete the installation.
 
            
-Want to evaluate Magento 2.2.0 B2B Pre-Release Candidate?  See [Install Magento 2.2.0 B2B Release Candidate]({{page.baseurl}pre-release/install-b2b.html) for information on downloading and installing. 
+Want to evaluate Magento 2.2.0 B2B Pre-Release Candidate?  See [Install Magento 2.2.0 B2B Release Candidate]({{page.baseurl}}pre-release/install-b2b.html) for information on downloading and installing. 
 
 
 
