@@ -1,7 +1,7 @@
 ---
 layout: default
 group: mrg
-subgroup: B2B
+subgroup: 30_B2B
 title: Magento_BundleRequisitionList module
 menu_title: BundleRequisitionList
 menu_order: 30

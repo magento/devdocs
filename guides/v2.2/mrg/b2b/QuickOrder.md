@@ -1,7 +1,7 @@
 ---
 layout: default
 group: mrg
-subgroup: B2B
+subgroup: 30_B2B
 title: Magento_QuickOrder module
 menu_title: QuickOrder
 menu_order: 180

@@ -1,7 +1,7 @@
 ---
 layout: default
 group: mrg
-subgroup: B2B
+subgroup: 30_B2B
 title: Magento_ConfigurableRequisitionList module
 menu_title: ConfigurableRequisitionList
 menu_order: 90

@@ -1,7 +1,7 @@
 ---
 layout: default
 group: mrg
-subgroup: Community Edition
+subgroup: 10_Community Edition
 title: Sales
 menu_title: Sales
 menu_order: 7

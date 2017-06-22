@@ -1,7 +1,7 @@
 ---
 layout: default
 group: mrg
-subgroup: Community Edition
+subgroup: 10_Community Edition
 title: Magento_Sales module
 menu_title: Description
 menu_order: 8
