@@ -5,7 +5,7 @@ subgroup: A_rest
 title: List of REST endpoints by module
 menu_title: List of REST endpoints by module
 menu_order: 3
-version: 2.1
+version: 2.2
 github_link: rest/list.md
 ---
 
@@ -26,8 +26,8 @@ See [Integrate with B2B using REST]({{page.baseurl}}b2b/integrations.html) for a
     GET    /V1/carts/:quoteId/giftCards
     PUT    /V1/carts/:cartId/giftCards
     DELETE /V1/carts/:cartId/giftCards/:giftCardCode
-    * DELETE /V1/carts/guest-carts/:cartId/giftCards/:giftCardCode
-    * DELETE /V1/carts/mine/giftCards/:giftCardCode
+    DELETE /V1/carts/guest-carts/:cartId/giftCards/:giftCardCode
+    DELETE /V1/carts/mine/giftCards/:giftCardCode
     POST   /V1/carts/mine/giftCards
     POST   /V1/carts/guest-carts/:cartId/giftCards
     GET    /V1/carts/guest-carts/:cartId/checkGiftCard/:giftCardCode
@@ -70,13 +70,17 @@ See [Integrate with B2B using REST]({{page.baseurl}}b2b/integrations.html) for a
 
 ### Worldpay
 
-    * POST   /V1/worldpay-guest-carts/:cartId/payment-information
+    POST   /V1/worldpay-guest-carts/:cartId/payment-information
 
 ## List of REST APIs for Magento Community Edition {#list}
 
 The Magento Community Edition (CE) REST APIs are available on all EE and CE installations.
 
-Additions since 2.0 are marked with asterisks (*).
+Additions since 2.1 are marked with asterisks (*).
+
+### Analytics
+
+    *GET    /V1/analytics/link
 
 ### Backend
 
@@ -136,12 +140,25 @@ Additions since 2.0 are marked with asterisks (*).
     GET    /V1/products/:sku/group-prices/:customerGroupId/tiers
     POST   /V1/products/:sku/group-prices/:customerGroupId/tiers/:qty/price/:price
     DELETE /V1/products/:sku/group-prices/:customerGroupId/tiers/:qty
+    *POST   /V1/products/tier-prices-information
+    *POST   /V1/products/tier-prices
+    *PUT    /V1/products/tier-prices
+    *POST   /V1/products/tier-prices-delete
+    *POST   /V1/products/base-prices-information
+    *POST   /V1/products/base-prices
+    *POST   /V1/products/cost-information
+    *POST   /V1/products/cost
+    *POST   /V1/products/cost-delete
+    POST   /V1/products/special-price-information
+    POST   /V1/products/special-price
+    POST   /V1/products/special-price-delete
     DELETE /V1/categories/:categoryId
     GET    /V1/categories/:categoryId
     POST   /V1/categories
     GET    /V1/categories
     PUT    /V1/categories/:id
     PUT    /V1/categories/:categoryId/move
+    GET    /V1/categories/list
     GET    /V1/products/options/types
     GET    /V1/products/:sku/options
     GET    /V1/products/:sku/options/:optionId
@@ -158,9 +175,9 @@ Additions since 2.0 are marked with asterisks (*).
     POST   /V1/categories/:categoryId/products
     PUT    /V1/categories/:categoryId/products
     DELETE /V1/categories/:categoryId/products/:sku
-    * POST   /V1/products/:sku/websites
-    * PUT    /V1/products/:sku/websites
-    * DELETE /V1/products/:sku/websites/:websiteId
+    POST   /V1/products/:sku/websites
+    PUT    /V1/products/:sku/websites
+    DELETE /V1/products/:sku/websites/:websiteId
 
 ### CatalogInventory
 
@@ -171,7 +188,7 @@ Additions since 2.0 are marked with asterisks (*).
 
 ### Checkout
 
-    * POST   /V1/guest-carts/:cartId/shipping-information
+    POST   /V1/guest-carts/:cartId/shipping-information
     POST   /V1/carts/mine/shipping-information
     POST   /V1/carts/:cartId/shipping-information
     POST   /V1/carts/:cartId/totals-information
@@ -218,6 +235,7 @@ Additions since 2.0 are marked with asterisks (*).
     GET    /V1/customerGroups/:id
     GET    /V1/customerGroups/default/:storeId
     GET    /V1/customerGroups/default
+    *PUT    /V1/customerGroups/default/:id
     GET    /V1/customerGroups/:id/permissions
     GET    /V1/customerGroups/search
     POST   /V1/customerGroups
@@ -303,33 +321,33 @@ Additions since 2.0 are marked with asterisks (*).
 ### Quote
 
     GET    /V1/carts/:cartId
-    * GET    /V1/carts/search
+    GET    /V1/carts/search
     POST   /V1/carts/
     POST   /V1/customers/:customerId/carts
     PUT    /V1/carts/:cartId
     POST   /V1/carts/mine
     GET    /V1/carts/mine
-    * PUT    /V1/carts/mine
+    PUT    /V1/carts/mine
     PUT    /V1/carts/mine/order
     GET    /V1/guest-carts/:cartId
     POST   /V1/guest-carts
     PUT    /V1/guest-carts/:cartId
     PUT    /V1/guest-carts/:cartId/order
     GET    /V1/carts/:cartId/shipping-methods
-    * POST   /V1/carts/:cartId/estimate-shipping-methods
-    * POST   /V1/carts/:cartId/estimate-shipping-methods-by-address-id
+    POST   /V1/carts/:cartId/estimate-shipping-methods
+    POST   /V1/carts/:cartId/estimate-shipping-methods-by-address-id
     GET    /V1/carts/mine/shipping-methods
     POST   /V1/carts/mine/estimate-shipping-methods
     POST   /V1/carts/mine/estimate-shipping-methods-by-address-id
     GET    /V1/guest-carts/:cartId/shipping-methods
     POST   /V1/guest-carts/:cartId/estimate-shipping-methods
     GET    /V1/carts/:cartId/items
-    * POST   /V1/carts/:quoteId/items
-    * PUT    /V1/carts/:cartId/items/:itemId
+    POST   /V1/carts/:quoteId/items
+    PUT    /V1/carts/:cartId/items/:itemId
     DELETE /V1/carts/:cartId/items/:itemId
     GET    /V1/guest-carts/:cartId/items
-    * POST   /V1/guest-carts/:cartId/items
-    * PUT    /V1/guest-carts/:cartId/items/:itemId
+    POST   /V1/guest-carts/:cartId/items
+    PUT    /V1/guest-carts/:cartId/items/:itemId
     DELETE /V1/guest-carts/:cartId/items/:itemId
     GET    /V1/carts/mine/items
     POST   /V1/carts/mine/items
@@ -377,10 +395,10 @@ Additions since 2.0 are marked with asterisks (*).
     POST   /V1/orders/:id/unhold
     POST   /V1/orders/:id/comments
     GET    /V1/orders/:id/comments
-    PUT    /V1/orders/create
+    *PUT    /V1/orders/create
     PUT    /V1/orders/:parent_id
-    GET    * /V1/orders/items/:id
-    GET    * /V1/orders/items
+    GET    /V1/orders/items/:id
+    GET    /V1/orders/items
     GET    /V1/invoices/:id
     GET    /V1/invoices
     GET    /V1/invoices/:id/comments
@@ -389,14 +407,16 @@ Additions since 2.0 are marked with asterisks (*).
     POST   /V1/invoices/:id/capture
     POST   /V1/invoices/comments
     POST   /V1/invoices/
+    *POST   /V1/invoice/:invoiceId/refund
     GET    /V1/creditmemo/:id/comments
     GET    /V1/creditmemos
     GET    /V1/creditmemo/:id
     PUT    /V1/creditmemo/:id
     POST   /V1/creditmemo/:id/emails
-    * POST   /V1/creditmemo/refund
+    *POST   /V1/creditmemo/refund
     POST   /V1/creditmemo/:id/comments
     POST   /V1/creditmemo
+    *POST   /V1/order/:orderId/refund
     GET    /V1/shipment/:id
     GET    /V1/shipments
     GET    /V1/shipment/:id/comments
@@ -406,14 +426,11 @@ Additions since 2.0 are marked with asterisks (*).
     DELETE /V1/shipment/track/:id
     POST   /V1/shipment/
     GET    /V1/shipment/:id/label
-    POST   /V1/orders/
+    *POST   /V1/order/:orderId/ship
+    *POST   /V1/orders/
     GET    /V1/transactions/:id
     GET    /V1/transactions
-    * POST /V1/order/:orderId/invoice
-    * POST /V1/order/:orderId/ship
-    * POST /V1/invoice/:invoiceId/refund
-    * POST /V1/order/:orderId/refund
-
+    *POST   /V1/order/:orderId/invoice
 
 ### SalesRule
 
