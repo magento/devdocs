@@ -7,7 +7,7 @@ menu_title: Magento CE 2.2 Pre-Release Candidate Release Notes
 menu_order: 162
 level3_menu_node: level3child
 level3_subgroup: ce21-relnotes 
-github_link: release-notes/release-notes-2-2-prelease-CE.md
+github_link: release-notes/release-notes-2-2-prelease1-CE.md
 ---
 
 *	TOC

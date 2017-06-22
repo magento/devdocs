@@ -11,20 +11,42 @@ version: 2.2
 github_link: pre-release/submit-PRs.md
 ---
 
-
+We welcome code contributions in the form of pull requests to the Magento GitHub code repositories.
 
 ### Get started creating a Pull Request (PR)
 
 Before you submit a pull request, make sure you first:
 
-1.	Request permission to the Magento 2.2.0 Pre-Release Candidate repositories for which you want to create a pull request. You must provide Magento with a list of the GitHub account names that will require access to these repositories. Please contact us via email: engcom@magento.com
+1.	Request permission to the Magento 2.2.0 Pre-Release Candidate repositories for which you want to create a pull request.  You must provide Magento with a list of the GitHub account names that will require access to these repositories. Please contact us via email: `engcom@magento.com`.
 
-2.	Prepare your code repositories by forking the repository for which you want to create a pull request. Here's a list of all available codebases and their associated repository:
+2.	Prepare your code repositories by forking the repository for which you want to create a pull request. Here's a list of the available repositores for 2.2.0 Pre-Release Candidate:
 
-•	Magento 2 CE  (https://github.com/magento-partners/magento2ce)
-•	Magento 2 EE (https://github.com/magento-partners/magento2ee)
-•	Magento 2 B2B  (https://github.com/magento-partners/magento2b2b)
+<table>
+  <tr>
+    <th><b>Magento edition</b></th>
+    <th><b>Location</b></th>
+    <th><b>Availability</b></th>
+  </tr>
 
+<tr>
+    <td><b>Magento CE</b></td>
+    <td>https://github.com/magento/magento2</td>
+    <td>Publicly available already</td>
+</tr>
+
+<tr>
+    <td><b>Magento EE</b></td>
+    <td>https://github.com/magento/magento2ee</td>
+    <td>Available after contract has been signed</td>
+</tr> 
+
+<tr>
+    <td><b>Magento B2B</b></td>
+    <td>https://github.com/magento/magento2b2b</td>
+    <td>Available after contract has been signed</td>
+</tr>
+
+</table>
 
 ### How to submit a PR
 
@@ -34,7 +56,10 @@ Here's an overview of how to create a Pull Request for the Magento 2.2.0 Pre-Rel
 
 2.	Work on your code, then submit a pull request. When your code is ready for delivery, create a pull request to the base repository or several pull requests to different repositories (for example, `yourfork/magento2ce : fix-for-url-rewrites --> magento-partners/magento2ce : develop`).  
 
-Note: A fix for the EE/B2B codebase might also require changes to the CE codebase. In this case, you must create two pull requests (one for the CE and another for the EE repositories) and link them in the PR description. 
+
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+A fix for the EE/B2B codebase might also require changes to the CE codebase. In this case, you must create two pull requests (one for the CE and another for the EE repositories) and link them in the PR description.
+</div>
 
 3.	Wait until the Community Engineering Team has reviewed and approved your proposed changes.
 
@@ -42,7 +67,8 @@ Note: A fix for the EE/B2B codebase might also require changes to the CE codebas
 
 
 ## Questions?
-For any questions related to the Partners Contributions to the Magento, please contact Magento Community Engineering team engcom@magento.com.
+
+For any questions related to  Partner Contributions to the Magento codebase, please contact the Magento Community Engineering team at `engcom@magento.com`.
 
 
 ## More information 

@@ -7,7 +7,7 @@ menu_title: Magento EE 2.2 Pre-Release Candidate Release Notes
 menu_order: 260
 level3_menu_node: 
 level3_subgroup:  
-github_link: release-notes/release-notes-2-2-prelease-EE.md
+github_link: release-notes/release-notes-2-2-prelease1-EE.md
 ---
 
 *	TOC
