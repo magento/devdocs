@@ -7,7 +7,7 @@ menu_title: REST APIs
 version: 2.1
 menu_order: 2
 
-externalURL: http://cicd1.corp.magento.com/~mmansoor/devdocs/gh-pages/branches/kh_2.2_swagger-alpha/_site/index_22.html
+externalURL: http://cicd1.corp.magento.com/~mmansoor/devdocs/gh-pages/branches/kh_2.2_swagger-alpha/_site/swagger/index_22.html
 
 ---
 
