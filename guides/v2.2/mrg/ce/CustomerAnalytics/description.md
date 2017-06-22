@@ -1,7 +1,7 @@
 ---
 layout: default
 group: mrg
-subgroup: Community Edition
+subgroup: 10_Community Edition
 title: Magento_CustomerAnalytics module
 menu_title: CustomerAnalytics
 menu_order: 3
