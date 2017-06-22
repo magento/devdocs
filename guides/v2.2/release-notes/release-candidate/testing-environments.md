@@ -1,17 +1,17 @@
 ---
 layout: default
 group: release-notes
-subgroup: Magento 2.2.0 Pre-Release Candidate
-title: Magento 2.2.0 Pre-Release Candidate Testing Environments
-menu_title: Magento 2.2.0 Pre-Release Candidate Testing Environments
+subgroup: Magento 2.2.0 Release Candidate
+title: Magento 2.2.0 Release Candidate Testing Environments
+menu_title: Magento 2.2.0 Release Candidate Testing Environments
 menu_order: 4
 level3_menu_node: 
 level3_subgroup: 
 version: 2.2
-github_link: pre-release/testing-environments.md
+github_link: release-candidate/testing-environments.md
 ---
 
-We encourage you to download and use Magento 2.2.0 Pre-Release Candidate in whichever environment you typically run your Magento installations. For informational purposes, though, we are sharing specifications for some of our 2.2.0 testing environments. 
+We encourage you to download and use this Magento 2.2.0 Release Candidate in whichever environment you typically run your Magento installations. For informational purposes, though, we are sharing specifications for some of our 2.2.0 testing environments. 
 
 Testing environments are roughly categorized by the amount of traffic they must support as well as other factors such as the number of visits, storefronts, and transactions. Enterprise environments must support stores with the greatest traffic and complexity, while Developer testing environments. These test environments are as follows, in order of decreasing capacity: Enterprise, Medium, Hobbyist, and Developer.
 

@@ -1,14 +1,14 @@
 ---
 layout: default
 group: release-notes
-subgroup: Magento 2.2.0 Pre-Release Candidate
-title: Submit PRs on Magento 2.2.0 Pre-Release Candidate 
-menu_title: Submit PRs on Magento 2.2.0 Pre-Release Candidate
+subgroup: Magento 2.2.0 Release Candidate
+title: Submit PRs on Magento 2.2.0 Release Candidate 
+menu_title: Submit PRs on Magento 2.2.0 Release Candidate
 menu_order: 5
 level3_menu_node: 
 level3_subgroup: 
 version: 2.2
-github_link: pre-release/submit-PRs.md
+github_link: release-candidate/submit-PRs.md
 ---
 
 We welcome code contributions in the form of pull requests to the Magento GitHub code repositories.
@@ -17,7 +17,7 @@ We welcome code contributions in the form of pull requests to the Magento GitHub
 
 Before you submit a pull request, make sure you first:
 
-1.	Request permission to the Magento 2.2.0 Pre-Release Candidate repositories for which you want to create a pull request.  You must provide Magento with a list of the GitHub account names that will require access to these repositories. Please contact us via email: `engcom@magento.com`.
+1.	Request permission to the Magento 2.2.0 Release Candidate repositories for which you want to create a pull request.  You must provide Magento with a list of the GitHub account names that will require access to these repositories. Please contact us via email: `engcom@magento.com`.
 
 2.	Prepare your code repositories by forking the repository for which you want to create a pull request. Here's a list of the available repositores for 2.2.0 Pre-Release Candidate:
 
@@ -50,7 +50,7 @@ Before you submit a pull request, make sure you first:
 
 ### How to submit a PR
 
-Here's an overview of how to create a Pull Request for the Magento 2.2.0 Pre-Release Candidate repositories. 
+Here's an overview of how to create a Pull Request for the Magento 2.2.0 Release Candidate repositories. 
 
 1.	Create a new feature branch or bug fix branch, and give it a helpful name that describes the fix or feature you're submitting (for example: **fix-for-url-rewrites**).
 

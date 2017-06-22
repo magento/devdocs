@@ -1,14 +1,14 @@
 ---
 layout: default
 group: release-notes
-subgroup: Magento 2.2.0 Pre-Release Candidate
-title: Submit Comments on Magento 2.2.0 Pre-Release Candidate
-menu_title: Submit Comments on Magento 2.2.0 Pre-Release Candidate
+subgroup: Magento 2.2.0 Release Candidate
+title: Submit Comments on Magento 2.2.0 Release Candidate
+menu_title: Submit Comments on Magento 2.2.0 Release Candidate
 menu_order: 
 level3_menu_node: 
 level3_subgroup: 
 version: 2.2
-github_link: pre-release/submit-issues.md
+github_link: release-candidate/submit-issues.md
 ---
 
 

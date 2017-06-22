@@ -1,25 +1,25 @@
 ---
 layout: default
 group: release-notes
-subgroup: Magento 2.2.0 Pre-Release Candidate 
-title: Magento 2.2.0 Pre-Release Candidate QuickStart Guide
-menu_title: Magento 2.2.0 Pre-Release Candidate QuickStart Guide
+subgroup: Magento 2.2.0 Release Candidate 
+title: Magento 2.2.0 Release Candidate QuickStart Guide
+menu_title: Magento 2.2.0 Release Candidate QuickStart Guide
 menu_order: 1
 level3_menu_node: 
 level3_subgroup: 
 version: 2.2
-github_link: pre-release/quick-start.md
+github_link: release-candidate/quick-start.md
 ---
 
-We are pleased to present the Magento 2.2.0 CE, EE, and B2B Pre-Release Candidates. This QuickStart guide provides the basic information you need to start participating in our Magento 2.2.0 Pre-Release Candidate evaluation program. 
+We are pleased to present the Magento 2.2.0 CE, EE, and B2B Release Candidate 1. This QuickStart guide provides the basic information you need to start participating in our Magento 2.2.0 Release Candidate evaluation program. 
 
 This guide covers: 
 
-* **Welcome to the Magento 2.2.0 Pre-Release Candidate program and its requirements**
+* **Welcome to the Magento 2.2.0 Release Candidate program and its requirements**
 
-* **Install the Pre-Release Candidate code**
+* **Install the Release Candidate code**
 
-* **Submit comments on Magento 2.2.0 Pre-Release Candidate**
+* **Submit comments on Magento 2.2.0 Release Candidate**
 
 * **Readiness status of individual code components**. Magento 2.2.0 Pre-Release Candidate code is a work in progress. Parts of the code base are more mature than others. You can see an overview of component status here. Note that we will update this information each Friday of the Pre-Release evaluation period. 
 
@@ -86,7 +86,7 @@ We invite any Magento community member to participate in the Magento 2.2.0 CE Pr
 
 The Magento 2.2.0 EE Pre-Release Candidate evaluation is open to all Solution Partners. To participate, you must:
 
-* Sign the [Pre-Release Candidate Software agreement](https://magento.com/partners/portal/customer/account/login) 
+* Sign the [Release Candidate Software agreement](https://magento.com/partners/portal/customer/account/login) 
 
 * Provide GitHub account information. You can  provide one of the following: 
 
@@ -98,10 +98,10 @@ The Magento 2.2.0 EE Pre-Release Candidate evaluation is open to all Solution Pa
 
 ## More information?
 
-The Magento Developer documentation has been updated with the latest 2.2 information.  Visit the 2.2.0 Developer Documentation site  a peek at our updated 2.2.0 developer documentation.
+The Magento Developer documentation has been updated with the latest 2.2 information.  Visit the 2.2.0 Developer Documentation site for a peek at our updated 2.2.0 developer documentation.
 
 
-Ready to [install]({{page.baseurl}}pre-release/install.html) Magento 2.2.0  Pre-Release Candidate? 
+Ready to [install]({{page.baseurl}}pre-release/install.html) Magento 2.2.0  Release Candidate? 
 
 
 

@@ -1,17 +1,17 @@
 ---
 layout: default
 group: release-notes
-subgroup: Magento 2.2.0 Pre-Release Candidate
+subgroup: Magento 2.2.0 Release Candidate
 title: Install B2B
 menu_title: Install B2B
 menu_order: 3
 menu_node:
 version: 2.2
 ee_only: true
-github_link: pre-release/b2b-install.md
+github_link: release-candidate/b2b-install.md
 ---
 
-This topic describes how to install and launch the B2B extension on Magento 2.2.0 EE Pre-Release Candidate.
+This topic describes how to install and launch the B2B extension on Magento 2.2.0 EE Release Candidate 1.
 
 ## Prerequisites
 
