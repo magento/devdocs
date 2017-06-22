@@ -5,8 +5,8 @@ subgroup: Magento 2.2.0 Pre-Release Candidate
 title: Install Magento 2.2.0 Pre-Release Candidate 
 menu_title: Install Magento 2.2.0 Pre-Release Candidate 
 menu_order: 2
-level3_menu_node: 
-level3_subgroup: 
+level3_menu_node:
+level3_subgroup:
 version: 2.2
 github_link: pre-release/install.md
 ---
@@ -14,9 +14,10 @@ github_link: pre-release/install.md
 
 
 
-## Installation 
+## Installation
 
 Whether you are installing CE, EE, or B2B, the overall installation process is essentially the same: 
+
 
 * Get GitHub authentication keys 
 
@@ -24,8 +25,8 @@ Whether you are installing CE, EE, or B2B, the overall installation process is e
 
 * Update installation dependencies.
 
-* Complete the installation.
 
+* Complete the installation.
 
            
 Want to evaluate Magento 2.2.0 B2B Pre-Release Candidate?  See [Install Magento 2.2.0 B2B Pre-Release Candidate]({{page.baseurl}pre-release/install-b2b.html) for information on downloading and installing. 
@@ -36,6 +37,7 @@ Want to evaluate Magento 2.2.0 B2B Pre-Release Candidate?  See [Install Magento 
 ### Release Candidate 1 code repositories
 
 There are three separate code repositories on GitHub. 
+
 
 
 <table>
@@ -55,7 +57,7 @@ There are three separate code repositories on GitHub.
     <td><b>Magento EE</b></td>
     <td>https://github.com/magento/magento2ee</td>
     <td>Available after contract has been signed</td>
-</tr> 
+</tr>
 
 <tr>
     <td><b>Magento B2B</b></td>
@@ -73,7 +75,8 @@ There are three separate code repositories on GitHub.
 
 ### Step 2: Clone the Magento GitHub repository
 
-This section discusses how to get current code by cloning the Magento GitHub’s Release Candidate 1 branch. 
+
+### Clone the Magento GitHub repository
 
 
 You can clone the Magento 2 GitHub repository using either SSH or HTTPS protocols:
@@ -103,7 +106,7 @@ To clone the Magento GitHub repository using the SSH protocol:
 
 
 
-	2.	Change to your web server’s docroot directory. Typically, for Ubuntu, it’s `/var/www` and for CentOS it’s `/var/www/html`.  
+	2.	Change to your web server’s docroot directory. Typically, for Ubuntu, it’s `/var/www` and for CentOS it’s `/var/www/html`. 
 
 		Need help locating the docroot? Click [here](http://devdocs.magento.com/guides/v2.1/install-gde/basics/basics_docroot.html).
 
@@ -111,7 +114,7 @@ To clone the Magento GitHub repository using the SSH protocol:
 
 	4. Wait for the repository to clone on your server.  If the following error displays, make sure you shared your SSH key with GitHub:
 
-	Cloning into 'magento2'... 
+	Cloning into 'magento2'...
 	Permission denied (publickey).
 	fatal: The remote end hung up unexpectedly   
 
@@ -119,7 +122,7 @@ To clone the Magento GitHub repository using the SSH protocol:
 For example, to check out the `2.2.0-rc1` release tag in a new branch named `2.2.0-alpha`, enter
 
 `git checkout tags/2.2.0-rc1 -b 2.2.0-alpha`
-	
+
 
 5) Optionally switch to a release tag as follows:  git checkout tags/<tag name> [-b <version>]
 
@@ -141,7 +144,9 @@ To clone the Magento GitHub repository using the HTTPS protocol:
 
 
 
+
 	2.	Change to your web server’s docroot directory. Typically, for Ubuntu, it’s `/var/www` and for CentOS it’s `/var/www/html`.  
+
 
 		Need help locating the docroot? Click [here](http://devdocs.magento.com/guides/v2.2/install-gde/basics/basics_docroot.html).
 
@@ -163,6 +168,7 @@ For example, to check out the `2.2.0-rc1` release tag in a new branch named `2.2
 
 For example, to check out the 2.1.0 release tag in a new branch named 2.1.0, enter  `git checkout tags/2.1.0 -b 2.1.0`. 
 
+
 6) Continue with [Update installation dependencies](http://devdocs.magento.com/guides/v2.1/install-gde/install/prepare-install.html). 
 
 ### Update installation dependencies
@@ -181,7 +187,7 @@ After you get the CE software:
 
 
 
-### Complete the installation 
+### Complete the installation
 
 After you get the EE software:
 
@@ -190,11 +196,3 @@ After you get the EE software:
 
 	*	[Web Setup Wizard]({{ page.baseurl }}install-gde/install/web/install-web.html)
 	*	[Command line]({{ page.baseurl }}install-gde/install/cli/install-cli.html)
-
-
-
-
-
-
-
-
