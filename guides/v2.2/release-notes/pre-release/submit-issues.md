@@ -1,14 +1,14 @@
 ---
 layout: default
 group: release-notes
-subgroup: Magento 2.2.0 Release Candidate Alpha
-title: Submit Comments on Magento 2.2.0 Release Candidate Alpha
-menu_title: Submit Comments on Magento 2.2.0 Release Candidate Alpha
+subgroup: Magento 2.2.0 Pre-Release Candidate
+title: Submit Comments on Magento 2.2.0 Pre-Release Candidate
+menu_title: Submit Comments on Magento 2.2.0 Pre-Release Candidate
 menu_order: 
 level3_menu_node: 
 level3_subgroup: 
 version: 2.2
-github_link: alpha/submit-alpha-issues.md
+github_link: pre-release/submit-issues.md
 ---
 
 
@@ -41,7 +41,7 @@ The *Description* section of your issue should contain provide information about
 
 Example:
 
-1. Magento CE Release Candidate Alpha 2.2.0 is installed.
+1. Magento CE Pre-Release Candidate 2.2.0 is installed.
 
 2. The PayPal payment method is set up.
 

@@ -1,27 +1,28 @@
 ---
 layout: default
 group: release-notes
-subgroup: Magento 2.2.0 Release Candidate Alpha
+subgroup: Magento 2.2.0 Pre-Release Candidate
 title: Install B2B
 menu_title: Install B2B
-menu_order:
+menu_order: 3
 menu_node:
 version: 2.2
 ee_only: true
-github_link: release-notes/b2b-install.md
+github_link: pre-release/b2b-install.md
 ---
 
-## About this document
 
-This document is an instruction on installing and launching the B2B extension for Magento 2 EE.
+This topic describes how to install and launch the B2B extension on Magento 2.2.0 EE Pre-Release Candidate.
+
 
 ## Prerequisites
 
 ### Magento EE 2.2.0
 
-The B2B extension can only be installed on Magento 2 EE version 2.2.0. Neither earlier versions, nor Magento 2 Community Edition (CE) are supported.
+The B2B extension can be installed only on Magento 2.2.0 EE Pre-Release Candidate. It is not supported on earlier versions or Magento 2 Community Edition (CE).
 
-To know more about installing Magento, see the [Installation Guide](http://devdocs.magento.com/guides/v2.0/install-gde/bk-install-guide.html).
+See the [Installation Guide](http://devdocs.magento.com/guides/v2.0/install-gde/bk-install-guide.html) for more information.
+
 
 ### Install before and after Magento software
 
