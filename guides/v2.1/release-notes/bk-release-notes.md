@@ -14,7 +14,7 @@ github_link: release-notes/bk-release-notes.md
 
 Looking for [Magento Enterprise Cloud Edition Release Notes]({{ site.gdeurl }}cloud/release-notes/CloudReleaseNotes.html)?
 
-## Magento 2.2.0 Release Candidate Alpha
+## Magento 2.2.0 Pre-Release Candidate 
 
 * [Magento 2.2.0 Pre-Release Candidate QuickStart Guide]({{page.baseurl}}quick-start.html)
 
