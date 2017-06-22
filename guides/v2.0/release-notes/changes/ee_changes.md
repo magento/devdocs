@@ -20,6 +20,14 @@ where each change is displayed in a separate row in the table, with the followin
 - **Class** or **Interface** with the name of an affected class or interface
 - **What changed** with the description of a backward incompatible change
 
+## 2.0.15 - 2.0.14
+
+{% include changes/ce/2014-2015.html %}
+
+## 2.0.14 - 2.0.13
+
+{% include changes/ce/2013-2014.html %}
+
 ## 2.0.13 - 2.0.12
 
 {% include changes/ee/2012-2013.html %}
