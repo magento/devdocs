@@ -48,7 +48,7 @@ where:
 
 `--batch-size=<value>` specifies the number of messages per batch. This option is applicable for the batch consumer only.
 
-Unless the `max-messages` option is specified, the process continuously.
+Unless the `max-messages` option is specified, the process runs continuously.
 
 ### List consumers
 
