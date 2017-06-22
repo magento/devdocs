@@ -12,7 +12,7 @@ redirect_from:
   - guides/v1.0/frontend-dev-guide/javascript/jquery-widgets-about.html
 ---
 
-The Magento system uses a jQuery JavaScript library to implement client functionality. This includes a wide usage of standard, customized, and custom jQuery widgets.
+The Magento system uses a {% glossarytooltip 5bfa8a8e-6f3e-4fed-a43e-62339916f02e %}jQuery{% endglossarytooltip %} {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}library{% endglossarytooltip %} to implement client functionality. This includes a wide usage of standard, customized, and custom jQuery widgets.
 
 This guide discusses the following widgets:
 <ul>
@@ -36,7 +36,7 @@ This guide discusses the following widgets:
 
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>Magento 2 supports <a href="http://blog.jqueryui.com/2012/11/jquery-ui-1-9-2/" target="_blank">jQuery UI 1.9.2</a>, widget options added in later versions might be unavailable.</p>
+  <p>Magento 2 supports <a href="http://blog.jqueryui.com/2012/11/jquery-ui-1-9-2/" target="_blank">jQuery UI 1.9.2</a>, {% glossarytooltip f0dcf847-ce21-4b88-8b45-83e1cbf08100 %}widget{% endglossarytooltip %} options added in later versions might be unavailable.</p>
 </div>
 
 <div class="bs-callout bs-callout-info" id="info">

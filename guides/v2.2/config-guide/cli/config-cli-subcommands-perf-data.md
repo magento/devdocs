@@ -15,7 +15,7 @@ To use the Magento performance toolkit or another tool for performance testing, 
 
 You can adjust the amount of data you create using *profiles* (small, medium, large, and extra large). The next section discusses profiles in more detail.
 
-The following figure shows how a product is displayed on the storefront using the small profile:
+The following figure shows how a product is displayed on the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} using the small profile:
 
 ![Sample storefront with generated data]){{ site.baseurl }}common/images/config_generate-data.png){:width="550px"}
 
@@ -228,7 +228,7 @@ Current supported fixtures:
 The following sections discuss additional details about the performance fixtures.
 
 ### Admin users {#config-cli-gen-admin}
-Generates admin users. XML profile node:
+Generates {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}admin{% endglossarytooltip %} users. {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} profile node:
     
 <pre class="no-copy">&lt;!-- Number of admin users -->
 &lt;admin_users>{int}</admin_users></pre>
@@ -246,7 +246,7 @@ Generates attribute sets with specified configuration. XML profile node:
 &lt;product_attribute_sets_attributes_values>{int}&lt;/product_attribute_sets_attributes_values></pre>
 
 ### Bundle products {#config-cli-gen-bundle}
-Generates bundle products. Generated bundle selections are not displayed individually in catalog. Products will be uniformly distributed per categories and websites. If  `assign_entities_to_all_websites` from the profile is set to `1`. products will be assigned to all websites. 
+Generates bundle products. Generated bundle selections are not displayed individually in {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}catalog{% endglossarytooltip %}. Products will be uniformly distributed per categories and websites. If  `assign_entities_to_all_websites` from the profile is set to `1`. products will be assigned to all websites. 
 
 XML profile node:
     
@@ -275,7 +275,7 @@ Generates catalog price rules. XML profile node:
 &lt;catalog_price_rules>{int}&lt;/catalog_price_rules></pre>
 
 ### Categories {#config-cli-gen-cat}
-Generates categories. If `assign_entities_to_all_websites` is set to `0`, all categories are uniformly distributed per root categories; otherwise, all categories are assigned to one root category.
+Generates categories. If `assign_entities_to_all_websites` is set to `0`, all categories are uniformly distributed per root categories; otherwise, all categories are assigned to one root {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %}.
 
 XML profile node:
     
@@ -334,7 +334,7 @@ We support the following XML node formats:
         &lt;!-- ... more entries ... -->
     &lt;/configurable_products></pre>
 
-*   Generate products based on a dynamically created attribute set with a specified amount of attributes and options:
+*   Generate products based on a dynamically created {% glossarytooltip 44d60586-b853-40dd-bf82-4a1580450416 %}attribute set{% endglossarytooltip %} with a specified amount of attributes and options:
 
     <pre class="no-copy">&lt;configurable_products>
         <!-- Configurable product configuration -->
@@ -358,6 +358,41 @@ We support the following XML node formats:
             &lt;swatches>{string}&lt;/swatches> 
         &lt;/config>
         
+        &lt;!-- ... more entries ... -->
+    &lt;/configurable_products></pre>
+
+*   Generate products based on a dynamically created attribute set with a specified configuration per each attribute:
+
+    <pre class="no-copy">&lt;configurable_products>
+        <!-- Configurable product configuration -->
+        &lt;config>
+            &lt;attributes>
+                &lt;!-- Configuration for a first attribute -->
+                &lt;attribute>
+                    &lt;!-- Amount of options per attribute -->
+                    &lt;options>{int}&lt;/options>
+                      
+                    &lt;!-- Type of Swatch attribute -->
+                    &lt;swatches>{string}&lt;/swatches>
+                &lt;/attribute>
+                 
+                &lt;!-- Configuration for a second attribute -->
+                &lt;attribute>
+                    &lt;!-- Amount of options per attribute -->
+                    &lt;options>{int}&lt;/options>
+                &lt;/attribute>
+            &lt;/attributes>
+            
+            &lt;!-- Configurable sku pattern with %s -->
+            &lt;sku>{string}&lt;/sku>
+            
+            &lt;!-- Number of configurable products -->
+            &lt;products>{int}&lt;/products>
+            
+            &lt;!-- Category Name. Optional. By default, the category name from Categories fixture will be used -->
+            &lt;category>[{string}]&lt;/category>
+        &lt;/config>
+     
         &lt;!-- ... more entries ... -->
     &lt;/configurable_products></pre>
 
@@ -444,7 +479,7 @@ Generates websites. XML profile node:
 &lt;websites>{int}&lt;/websites></pre>
 
 ### Store groups {#config-cli-gen-stores}
-Generates store groups (referred to in the Magento Admin as _stores_). Store groups are distributed normally among websites.
+Generates store groups (referred to in the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} as _stores_). Store groups are distributed normally among websites.
 
 XML profile node:
     
@@ -463,7 +498,7 @@ Generates store views. Store views are distributed normally among store groups. 
 ### Tax rates {#config-cli-gen-taxrate}
 Generates tax rates. XML profile node:
     
-<pre class="no-copy">&lt;!-- Accepts name of csv file with tax rates (&lt;path to magento folder>/setup/src/Magento/Setup/Fixtures/_files) -->
+<pre class="no-copy">&lt;!-- Accepts name of {% glossarytooltip 6341499b-ead9-4836-9794-53d95eb48ea5 %}csv{% endglossarytooltip %} file with tax rates (&lt;path to magento folder>/setup/src/Magento/Setup/Fixtures/_files) -->
 &lt;tax_rates_file>{csv file name}&lt;/tax_rates_file></pre>
 
 ## Additional information    

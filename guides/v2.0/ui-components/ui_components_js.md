@@ -33,7 +33,7 @@ All these properties, options, and methods are available in the component templa
 
 
 ## Most important UI components' properties {#main_properties}
-The most important client-side properties of a UI component are the following:
+The most important client-side properties of a {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %} are the following:
 
  - `component`: the path to the component's `.js` file in terms of RequireJS.
 
@@ -253,7 +253,7 @@ To define the UI components used on a page, you can use browser built-in develop
 3. Search for `data-bind="scope:`. The string after `scope` is the full name of the component.
 5. Open developers tools and in the console tab run `require('uiRegistry').get('<full_component_name>')`. Where `<full_component_name>` is the name you defined on the previous step. The name and the configuration of the UI component instance is displayed once the command is executed.
 
-For illustration, let's find out what UI components are used on the Catalog page in the Admin panel:
+For illustration, let's find out what UI components are used on the {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}Catalog{% endglossarytooltip %} page in the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} panel:
 
 <div style="border: 1px solid #ABABAB">
 <img src="{{site.baseurl}}common/images/ui_debug1.png" alt="The catalog page"> 

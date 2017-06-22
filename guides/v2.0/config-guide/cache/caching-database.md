@@ -21,7 +21,7 @@ This topic discusses how to use the Magento 2 database for caching. After you co
 This topic discusses how to set up database caching and how to verify database caching is working. We discuss the following options:
 
 *	Using the `default` cache frontend, in which case you modify `di.xml` only.
-*	Using a custom cache frontend, in which case you modify `env.php` only.
+*	Using a custom {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} frontend, in which case you modify `env.php` only.
 
 <div class="bs-callout bs-callout-warning">
     <p>Database caching&mdash;like file-based caching&mdash; works well in a development environment but we <em>strongly recommend</em> you use <a href="{{page.baseurl}}config-guide/varnish/config-varnish.html">Varnish</a> in production instead.</p>
@@ -29,7 +29,7 @@ This topic discusses how to set up database caching and how to verify database c
 </div>
 
 <h2 id="mage-cache-db-prereq">Prerequisites</h2>
-Before you continue, if you're using your own frontend cache, make sure you <a href="{{page.baseurl}}config-guide/config/caching_frontend-cache-types.html">associate cache frontends with cache types</a>. If you're using the `default` frontend cache, you don't have to do that.
+Before you continue, if you're using your own frontend cache, make sure you <a href="{{page.baseurl}}config-guide/config/caching_frontend-cache-types.html">associate cache frontends with cache types</a>. If you're using the `default` {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} cache, you don't have to do that.
 
 We provide <a href="#mage-cache-db-config">sample configurations</a> at the end of this topic.
 
@@ -98,7 +98,7 @@ To modify `di.xml`:
 7.	Continue with <a href="#mage-cache-db-verify">Verify database caching is working</a>.
 
 <h2 id="mage-cache-db-env">Database caching using a custom cache frontend</h2>
-This section discusses how to set up database caching with a custom cache frontend.
+This section discusses how to set up database caching with a custom {% glossarytooltip ca5ad9ac-9d39-45b5-80b1-e90d192f20d0 %}cache frontend{% endglossarytooltip %}.
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
@@ -148,7 +148,7 @@ Use the following steps:
 
 		rm -rf <your Magento install dir>/var/cache/* <your Magento install dir>/var/page_cache/* <your Magento install dir>/var/di/* <your Magento install dir>/var/generation/*
 
-3.	In a web browser, go to any cacheable page (such as the storefront front door page).
+3.	In a web browser, go to any cacheable page (such as the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} front door page).
 
 	If exceptions display, verify `di.xml` syntax and try again. (To see exceptions in the browser, you must <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html#config-mode">enable developer mode</a>.)
 4.	Enter the following commands:

@@ -11,10 +11,10 @@ redirect_from: /guides/v1.0/frontend-dev-guide/themes/theme-structure.html
 ---
 
 <h2 id="theme-structure-intro">What's in this topic</h2>
-A <a href="{{page.baseurl}}frontend-dev-guide/themes/theme-general.html#theme-gen-overview" target="_blank">design theme</a> is an important part of the Magento application. This topic describes the file structure of a Magento theme.
+A <a href="{{page.baseurl}}frontend-dev-guide/themes/theme-general.html#theme-gen-overview" target="_blank">design theme</a> is an important part of the Magento application. This topic describes the file structure of a Magento {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %}.
 
 <h2 id="theme-structure-loc">Magento theme location</h2>
-Storefront themes are conventionally located under `app/design/frontend/<Vendor>/`. Though technically they can reside in other directories. For example Magento built-in themes can be located under `vendor/magento/theme-frontend-<theme_code>` when a Magento instance is deployed from the Composer repository.
+{% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}Storefront{% endglossarytooltip %} themes are conventionally located under `app/design/frontend/<Vendor>/`. Though technically they can reside in other directories. For example Magento built-in themes can be located under `vendor/magento/theme-frontend-<theme_code>` when a Magento instance is deployed from the {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} repository.
 
 Each theme must be stored in a separate directory:
 <pre>
@@ -247,7 +247,7 @@ Let's have a closer look at each particular sub-directory.
       </td>
       <td colspan="1">required</td>
       <td colspan="1">
-        The file is mandatory as it declares a theme as a system component. It contains the basic meta-information, like the theme name and the parent theme name, is the theme is inherited from an existing theme. The file is used by the Magento system to recognize the theme.
+        The file is mandatory as it declares a theme as a system component. It contains the basic meta-information, like the theme name and the parent theme name, if the theme is inherited from an existing theme. The file is used by the Magento system to recognize the theme.
       </td>
     </tr>
   </tbody>
@@ -255,7 +255,7 @@ Let's have a closer look at each particular sub-directory.
 
 <h2 id="theme-structure-files">Theme files</h2>
 
-Apart from the configuration file and theme metadata file, all theme files fall into the following two categories:
+Apart from the configuration file and theme {% glossarytooltip 3f0f2ef1-ad38-41c6-bd1e-390daaa71d76 %}metadata{% endglossarytooltip %} file, all theme files fall into the following two categories:
 
 * Static view files
 * Dynamic view files
@@ -263,7 +263,7 @@ Apart from the configuration file and theme metadata file, all theme files fall 
 <h3 id="theme-structure-pub">Static view files</h3>
 A set of theme files that are returned by the server to a browser as is, without any processing, are called the *static files* of a theme.
 
-Static files can be located in a theme directory as follows:
+{% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}Static files{% endglossarytooltip %} can be located in a theme directory as follows:
 <pre>
 &lt;theme_dir&gt;/
 ├──&nbsp;media/

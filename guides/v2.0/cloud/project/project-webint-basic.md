@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 10_project
+subgroup: 100_project
 title: Basic project information
 menu_title: Basic project information
 menu_order: 21
@@ -13,7 +13,7 @@ github_link: cloud/project/project-webint-basic.md
 ---
 
 ## Log in to your project {#project-login}
-The Web Interface URL for your project is available in the following ways:
+The Web Interface {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} for your project is available in the following ways:
 
 *	Your welcome e-mail
 *	The Magento Enterprise Cloud Edition command-line interface (CLI)
@@ -53,7 +53,7 @@ In a web browser, enter the project URL from your welcome e-mail or that you fou
 ## Access your project and environments {#project-access}
 The Web Interface provides several ways to access your project and environments:
 
-*	Your storefront URL (every environment, or branch, has a different URL)
+*	Your {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} URL (every environment, or branch, has a different URL)
 *	Secure Shell (SSH), a way to interact with services using a command terminal
 *	Clone the project using the Magento Enterprise Cloud Edition CLI
 *	Clone the project using Git
@@ -89,7 +89,7 @@ Configuring a project means:
 2.	Click ![configure your project]({{ site.baseurl }}common/images/cloud_edit-project.png) (Configure project) next to the project name.
 3.	See one of the following for more information:
 
-	*	[Manage users]({{page.baseurl}}cloud/admin/admin-user-admin.html)
+	*	[Manage users]({{page.baseurl}}cloud/project/user-admin.html)
 	*	[Pull code from a private Git repository]({{page.baseurl}}cloud/project/project-priv-repos.html)
 
 {% endcollapsible %}
@@ -113,7 +113,7 @@ Configuring an environment means:
 	*	[Environment settings](#project-conf-env-set)
 	*	[Set environment variables](#project-conf-env-var)
 	*	[Configure routes](#project-conf-env-route)
-	*	[Manage users]({{page.baseurl}}cloud/admin/admin-user-admin.html)
+	*	[Manage users]({{page.baseurl}}cloud/project/user-admin.html)
 
 ### Environment settings {#project-conf-env-set}
 The following table shows available environment settings.
@@ -141,7 +141,7 @@ The following table shows available environment settings.
 ### Set environment variables {#project-conf-env-var}
 As discussed in [Overview of environment variables]({{page.baseurl}}cloud/env/environment-vars_over.html), environment variables are settings specific to an environment. Variables can be either text or JSON format.
 
-To view or edit environment variables, you must have at minimum the project reader role with [environment admin]({{ page.baseurl }}cloud/admin/admin-user-admin.html#cloud-role-env) privileges.
+To view or edit environment variables, you must have at minimum the project reader role with [environment admin]({{ page.baseurl }}cloud/project/user-admin.html#cloud-role-env) privileges.
 
 For example, you can change the Magento Admin administrative password using environment variables as follows:
 

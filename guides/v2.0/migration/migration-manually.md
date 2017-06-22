@@ -17,9 +17,9 @@ There are three four of data that need to be migrated manually:
 
 *	Media
 
-*	Storefront design
+*	{% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}Storefront{% endglossarytooltip %} design
 
-*	Admin user accounts
+*	{% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} user accounts
 
 *	Access Control Lists (ACLs)
 
@@ -37,7 +37,7 @@ This section applies to you *only* if you store media files in the Magento datab
 
 3.	In the right pane, scroll to **Storage Configuration for Media**.
 
-4.	From the **Select Media Database** list, click the name of your media storage database.
+4.	From the **Select Media Database** list, click the name of your {% glossarytooltip d95142d7-023f-451c-a2e9-dd88763dcd70 %}media storage{% endglossarytooltip %} database.
 
 5.	Click **Synchronize**.
 
@@ -45,15 +45,15 @@ Then, repeat the same steps in your Magento 2 Admin panel.
 
 ### Media files in the file system
 
-All media files (images for products, categories, the WYSIWYG editor, and so on) should be copied manually from `<your Magento 1 install dir>/media` to `<your Magento 2 install dir>/pub/media`.
+All media files (images for products, categories, the {% glossarytooltip 98cf4fd5-59b6-4610-9c1f-b84c8c0abd97 %}WYSIWYG{% endglossarytooltip %} editor, and so on) should be copied manually from `<your Magento 1 install dir>/media` to `<your Magento 2 install dir>/pub/media`.
 
 However, do *not* copy the `.htaccess` files located in the Magento 1 `media` folder. Magento 2 has its own `.htaccess` that should be preserved.
 
 ## Storefront design
 
-* Design in files (CSS, JS, templates, XML layouts) changed its location and format
+* Design in files (CSS, JS, templates, {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} layouts) changed its location and format
 
-* Layout Updates stored in database. Placed through Magento 1 Admin in CMS Pages, CMS Widgets, Category Pages and Product Pages
+* {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}Layout{% endglossarytooltip %} Updates stored in database. Placed through Magento 1 Admin in {% glossarytooltip f3944faf-127e-4097-9918-a2e9c647d44f %}CMS{% endglossarytooltip %} Pages, CMS Widgets, {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}Category{% endglossarytooltip %} Pages and Product Pages
 
 ## Access Control Lists (ACLs)
 

@@ -67,6 +67,12 @@ Extends all `abstract` configuration.
     <td><code>''</code></td>
   </tr>
   <tr>
+    <td><code>storeTimeZone</code></td>
+    <td>The timezone used.</td>
+    <td>String</td>
+    <td><code>'UTC'</code></td>
+  </tr>
+  <tr>
     <td><code>template</code></td>
     <td>The path to the general field <code>.html</code> template.</td>
     <td>String</td>

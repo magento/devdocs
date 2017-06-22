@@ -80,7 +80,7 @@ h4 small {
 
 p {
   line-height: 1.4;
-  margin: 0 0 10px;
+  margin: 0 0 15px;
 }
 
 
@@ -107,22 +107,28 @@ a:active {
 
   &:after {
     content: '';
-    margin: -2px 0 0 1px;
+    margin: -10px 0 0 -1px;
     display: inline-block;
     vertical-align: middle;
     width: 16px;
     height: 16px;
-    background: url(../i/icons/external.svg) no-repeat center;
+    background: url(../i/icons/external-link.png) no-repeat center;
   }
 
   &:hover:after {
     filter: hue-rotate(160deg);
   }
 
+  //Don't put icon after contributor avatars
+  &.avatar {
+    &:after {  
+        display: none;
+    }
+  }
+
 
 
 }
-
 
 .main-container h2:first-child {
   margin-top: 0;
@@ -189,7 +195,7 @@ ul ul, ul ol, ol ol, ol ul {
   margin-bottom: 0;
 }
 li {
-  margin-bottom: .5em;
+  margin-bottom: 10px;
 }
 ul.unstyled, ol.unstyled {
   margin-left: 0;

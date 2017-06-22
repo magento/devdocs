@@ -17,6 +17,7 @@ redirect_from:
 ---
 
 ## Magento software installation
+
 Hi, we're glad you're among the 240,000 merchants worldwide who put their trust in our eCommerce software. We've gathered some information to help you get started with Magento and with your Magento installation. 
 
 We have some resources here to help get you started using the eCommerce platform of the future&mdash;Magento 2.
@@ -24,6 +25,7 @@ We have some resources here to help get you started using the eCommerce platform
 It’s what we do.
 
 ## How to get the Magento software {#install-get-software}
+
 Consult the following table for how to get started installing Magento Community Edition (CE) or Magento Enterprise Edition (EE).
 
 <table>
@@ -64,7 +66,7 @@ Consult the following table for how to get started installing Magento Community 
 		<td><p>Contributes to the Magento codebase, files bugs, and customizes the Magento software. Highly technical, has their own Magento development server, understands Composer and GitHub.</p>
 			<p>Enables you to install the Magento software and extensions using either the <a href="{{ page.baseurl }}install-gde/install/web/install-web.html">Web Setup Wizard</a> or the <a href="{{ page.baseurl }}install-gde/install/cli/install-cli.html">command line</a>.</p>
 			<p>You <em>cannot</em> use Magento in a production environment.</p>
-			<p>You must upgrade the Magento application and extensions using <a href="{{ page.baseurl }}install-gde/install/cli/dev_options.html">Composer and GitHub commands</a> only. You <em>cannot</em> use the Web Setup Wizard for upgrades.</p></td>
+			<p>You must upgrade the Magento application and extensions using <a href="{{ page.baseurl }}install-gde/install/cli/dev_options.html">Composer and GitHub commands</a> only. You cannot use the Web Setup Wizard to upgrade neither the Magento software nor extensions.</p></td>
 		<td><ol><li>Clones the Magento 2 GitHub repository.</li>
 			<li>Uses Composer to update package dependencies.</li>
 			<li>Installs the Magento software using either a command line or the Setup Wizard.</li>
@@ -78,13 +80,21 @@ Consult the following table for how to get started installing Magento Community 
 </table>
 
 ## Useful information
-At any time during your installation, take advantage of our <a href="{{page.baseurl}}install-gde/install-quick-ref.html">installation quick reference (tutorial)</a> or <a href="{{page.baseurl}}install-gde/install-roadmap_part1.html">installation roadmap (reference)</a>. They're really easy to use; the tutorial walks you through a sample installation. The roadmap provides links to common tasks throughout the guide.
+
+At any time during your installation, take advantage of our [installation quick reference (tutorial)] or [installation roadmap (reference)]. They're really easy to use; the tutorial walks you through a sample installation. The roadmap provides links to common tasks throughout the guide.
 
 Use the links on the left side of the page to navigate topics in each part of the installation.
 
 ## Required server permissions
+
 UNIX systems require `root` privileges to install and configure software like a web server, PHP, and so on. If you need to install this software, make sure you have `root` access.
 
 You should *not* install the Magento software in the web server docroot as the `root` user because the web server might not be able to interact with those files. 
 
-You'll also need `root` privileges to create the <a href="{{page.baseurl}}install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a> and add that owner to the web server's group. You'll use the Magento file system owner to run any commands from the command line and to set up the Magento cron job, which schedules tasks for you.
+You'll also need `root` privileges to create the [Magento file system owner] and add that owner to the web server's group. You'll use the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %} to run any commands from the command line and to set up the Magento cron job, which schedules tasks for you.
+
+<!-- LINK DEFINITIONS -->
+
+[installation quick reference (tutorial)]: {{page.baseurl}}install-gde/install-quick-ref.html
+[installation roadmap (reference)]: {{page.baseurl}}install-gde/install-roadmap_part1.html
+[Magento file system owner]: {{page.baseurl}}install-gde/prereq/file-sys-perms-over.html

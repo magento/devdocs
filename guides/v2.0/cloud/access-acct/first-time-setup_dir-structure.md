@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 08_setup
+subgroup: 080_setup
 title: Project directory structure
 menu_title: Project directory structure
 menu_order: 600
@@ -36,11 +36,11 @@ Not including the Magento application itself, your local project has the followi
 The following sections discuss information you need to know about directories in the systems deployed to Magento Enterprise Cloud Edition.
 
 ### Magento application root directory
-In your [integration systems]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-int), the Magento application is located in the `/app` directory.
+In your [integration systems]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int), the Magento application is located in the `/app` directory.
 
-In [staging]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-stage), it's located in the `/<project code>_stg` directory.
+In [staging]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-stage), it's located in the `/<project code>_stg` directory.
 
-In [production]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-prod), it's located in the ` /<project code>` directory.
+In [production]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-prod), it's located in the ` /<project code>` directory.
 
 ### Writable directories
 In integration, staging, and production, for security reasons, *only* the following directories are writable:

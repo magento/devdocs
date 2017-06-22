@@ -180,3 +180,34 @@ gulp.task('default',
     'watch'
   ]
 );
+
+/*
+*********************
+* Local development *
+*********************
+*/
+
+// Compile HTML, watch files for changes, and only recompile files that change; not the entire site:
+gulp.task('build', shell.task(['jekyll build --watch --incremental --verbose']));
+
+// Start a local webserver and launch the site in a browser.
+gulp.task('serve', function () {
+    browsersync.init({
+        port: 4000,
+        open: true,
+        // Defines time window to minimize reloading of pages when multiple changes occur almost simultaneously.
+        reloadThrottle: 500,
+        reloadDebounce: 500,
+        server: {
+            baseDir: '_site/'
+        }
+    });
+
+    // Auto refresh the browser whenever a file in the _site directory changes, but give jekyll some time to generate the output before reloading:
+    setTimeout(function () {
+        gulp.watch('_site/**/*.*').on('change', browsersync.reload);
+    }, 5000);
+});
+
+// Local development task
+gulp.task('dev', ['build', 'serve'], function () {});

@@ -10,7 +10,7 @@ github_link: ui_comp_guide/components/ui-button.md
 
 ## Overview
 
-The Button component allows user to perform a list of predefined actions by clicking on the corresponding button. Its default display mode is the HTML `<button>` element, which be configured to display a link.
+The Button component allows user to perform a list of predefined actions by clicking on the corresponding button. Its default display mode is the {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} `<button>` element, which be configured to display a link.
 
 ## Configuration options
 
@@ -42,12 +42,6 @@ Button-specific configuration:
     <td>Initial component's state. When set to <code>true</code>, users can't take action on the element.</td>
     <td>Boolean</td>
     <td><code>false</code></td>
-  </tr>
-  <tr>
-    <td><code>displayArea</code></td>
-    <td>Renders the component in the location that was declared in the layout.</td>
-    <td>String</td>
-    <td><code>outsideGroup</code></td>
   </tr>
   <tr>
     <td><code>displayAsLink</code></td>

@@ -9,11 +9,11 @@ version: 2.1
 github_link: payments-integrations/vault/admin-integration.md
 ---
 
-To be able to use vault in Admin order creation, you need to take at least the following steps:
+To be able to use vault in {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} order creation, you need to take at least the following steps:
 
 1. Create a token component provider and specify it in the `<your_module_dir>/etc/di.xml`. 
 2. Create a custom vault JS component and specify it in the component provider. 
-3. Create a `.phtml` template, specify it in the component provider and the corresponding layout file.
+3. Create a `.phtml` template, specify it in the component provider and the corresponding {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} file.
 
 There are more details about these steps in the following sections. 
 
@@ -106,7 +106,7 @@ Create a `.phtml` template for displaying token details and specify it in the [c
 For reference, view the Magento default Vault template for Admin: [app/code/Magento/Vault/view/adminhtml/templates/form/vault.phtml]({{site.mage2100url}}app/code/Magento/Vault/view/adminhtml/templates/form/vault.phtml).
 
 In the billing form block for Admin layout (`%module_dir%/view/adminhtml/layout/sales_order_create_index.xml`) 
-specify the payment method code and path to the template. 
+specify the {% glossarytooltip 422b0fa8-b181-4c7c-93a2-c553abb34efd %}payment method{% endglossarytooltip %} code and path to the template. 
 
 Following is an example of such layout:
 
@@ -123,7 +123,7 @@ Following is an example of such layout:
 </page>
 {% endhighlight %}
 
-According to this configuration the Magento_Vault module will render vault payments and all depending JS components will be created.
+According to this configuration the Magento_Vault {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} will render vault payments and all depending JS components will be created.
 
 ## Specific vault configuration for Admin
 You might have specific request builders, response handlers or other entities for the Admin panel. For example, in your implementation 3D Secure might not be available in Admin. In this case, you need to create corresponding virtual types for the `adminhtml` [area]({{page.baseurl}}architecture/archi_perspectives/components/modules/mod_and_areas.html) in `%module_dir%/etc/adminhtml/di.xml`. 

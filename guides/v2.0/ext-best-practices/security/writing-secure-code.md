@@ -14,7 +14,7 @@ redirect_from:
 
 ## Overview
 
-Using PHP features that are known to be exploitable or non-secure can lead to remote code execution or weak cryptography.
+Using {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} features that are known to be exploitable or non-secure can lead to remote code execution or weak cryptography.
 As a developer, you should avoid using features that introduce vulnerabilities in your code.
 
 ## PHP functions to avoid

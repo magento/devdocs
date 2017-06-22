@@ -15,7 +15,7 @@ github_link: install-gde/prereq/integrator_install.md
 </div>
 
 ## (Integrator) Overview of integrator installation
-This topic provides an overview of how to get either the Magento Community Edition (CE) or Enterprise Edition (EE) metapackage.
+This topic provides an overview of how to get either the Magento Community Edition (CE) or Enterprise Edition (EE) {% glossarytooltip 7490850a-0654-4ce1-83ff-d88c1d7d07fa %}metapackage{% endglossarytooltip %}.
 
 ## Intended audience {#int-aud}
 The audience for this topic is anyone who downloads the Magento metapackage using `composer create-project`. If that isn't you, go back and <a href="{{page.baseurl}}install-gde/bk-install-guide.html">choose another starting point</a>.

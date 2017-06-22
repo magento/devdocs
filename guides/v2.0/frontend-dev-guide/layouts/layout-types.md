@@ -15,9 +15,9 @@ redirect_from: /guides/v1.0/frontend-dev-guide/layouts/layout-types.html
 	</style>
 </head>
 <h2>What's in this topic</h2>
-For a particular page, its layout is defined by two major layout components: *page layout* file and *page configuration* file. 
+For a particular page, its {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %} is defined by two major layout components: *page layout* file and *page configuration* file. 
 
-A page layout file defines the page wireframe, for example, one-column layout. Technically page layout is an .xml file defining the structure inside the `<body>` section of the HTML page markup. Page layouts feature only <a href="{{page.baseurl}}frontend-dev-guide/layouts/layout-overview.html#layout_overview_blocks" target="_blank">containers</a>. 
+A page layout file defines the page wireframe, for example, one-column layout. Technically page layout is an .xml file defining the structure inside the `<body>` section of the {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} page {% glossarytooltip 8f407f13-4350-449b-9dc5-217dcf01bc42 %}markup{% endglossarytooltip %}. Page layouts feature only <a href="{{page.baseurl}}frontend-dev-guide/layouts/layout-overview.html#layout_overview_blocks" target="_blank">containers</a>. 
 All page layouts used for page rendering should be declared in the page layout declaration file.
 
 Page configuration is also an .xml file. It defines the detailed structure (page header, footer, etc.), contents and page meta information, including the page layout used. Page configuration features both main elements, <a href="{{page.baseurl}}frontend-dev-guide/layouts/layout-overview.html#layout_overview_blocks" target="_blank">blocks of particular classes</a> and containers.
@@ -114,8 +114,8 @@ The page configuration adds content to the wireframe defined in a page layout fi
 Conventionally page configuration files must be located as follows:
 
 <ul>
-<li> Module page configurations: <code>&lt;module_dir&gt;/view/frontend/layout</code></li>
-<li> Theme page configurations: <code>&lt;theme_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/layout</code></li>
+<li> {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}Module{% endglossarytooltip %} page configurations: <code>&lt;module_dir&gt;/view/frontend/layout</code></li>
+<li> {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}Theme{% endglossarytooltip %} page configurations: <code>&lt;theme_dir&gt;/&lt;Namespace&gt;_&lt;Module&gt;/layout</code></li>
 </ul>
 
 

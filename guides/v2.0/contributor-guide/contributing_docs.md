@@ -1,7 +1,7 @@
 ---
 layout: default
 group: contributor
-subgroup: contributor
+subgroup: contributor_docs
 title: DevDocs Contributions
 menu_title: DevDocs Contributions
 menu_order: 1
@@ -119,7 +119,7 @@ To add an issue:
 3. Click **Submit new issue**.
 
 <h2 id="report">Edit metadata</h2>  
-The .md (Markdown) file's metadata is a set of key-value pairs (where the key is before the : and the value is after). The metadata section is located in the beginning of the file.
+The .md (Markdown) file's {% glossarytooltip 3f0f2ef1-ad38-41c6-bd1e-390daaa71d76 %}metadata{% endglossarytooltip %} is a set of key-value pairs (where the key is before the : and the value is after). The metadata section is located in the beginning of the file.
 
 ### Example:
     ---

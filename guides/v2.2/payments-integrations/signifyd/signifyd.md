@@ -15,7 +15,7 @@ This document provides additional technical details for integrating Magento with
 
 ## Magento_Signifyd module overview
 
-The Magento-Signifyd module allows you to:
+The Magento-Signifyd {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} allows you to:
 
  - create a [Signifyd case](https://www.signifyd.com/docs/api/#/reference/cases) for a placed order
  - automatically receive a [Signifyd guarantee](https://www.signifyd.com/docs/api/#/reference/guarantees) for a created case
@@ -27,7 +27,7 @@ To improve the accuracy of Signifyd's transaction estimation, external integrati
 
 ### Provide AVS/CVV response codes
 
-A custom payment method can implement the `\Magento\Payment\Api\PaymentVerificationInterface` to provide AVS/CVV mapping from specific codes to [EMS standard], then register these mappings in the `config.xml` file of a custom payment module.
+A custom {% glossarytooltip 422b0fa8-b181-4c7c-93a2-c553abb34efd %}payment method{% endglossarytooltip %} can implement the `\Magento\Payment\Api\PaymentVerificationInterface` to provide AVS/CVV mapping from specific codes to [EMS standard], then register these mappings in the `config.xml` file of a custom payment module.
 
 Below is an example of mapping registration:
 
@@ -49,7 +49,7 @@ These steps are enough to provide custom AVS/CVV mapping for payment integration
 
 ### Retrieve payment method for a placed order
 
-The Signifyd service can retrieve the payment method of a placed order. The *Magento_Signifyd* module allows to map Magento and Signifyd payment codes using the predefined XML list, located in:
+The Signifyd service can retrieve the payment method of a placed order. The *Magento_Signifyd* module allows to map Magento and Signifyd payment codes using the predefined {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} list, located in:
 
     Magento\Signifyd\etc\signifyd_payment_mapping.xml
 

@@ -12,7 +12,7 @@ redirect_from: /guides/v1.0/frontend-dev-guide/themes/theme-apply.html
 
 <h2 id="theme-apply-overview">What's in this topic</h2>
 
-The topic describes how to apply a theme for your store. This is a required step if you want a theme to be used on a storefront. 
+The topic describes how to apply a {% glossarytooltip d2093e4a-2b71-48a3-99b7-b32af7158019 %}theme{% endglossarytooltip %} for your store. This is a required step if you want a theme to be used on a {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}. 
 Also, it gives information how to add a theme independent logo for your store.
 
 ## Prerequisites 
@@ -21,12 +21,12 @@ Make sure that you [set](#{{page.baseurl}}config-guide/cli/config-cli-subcommand
 
 
 ## Apply a theme {#theme-apply-apply}
-After you <a href="{{page.baseurl}}frontend-dev-guide/themes/theme-create.html">add your theme to the file system</a>, you can apply it to your store. You apply a theme in Admin.
+After you <a href="{{page.baseurl}}frontend-dev-guide/themes/theme-create.html">add your theme to the file system</a>, you can apply it to your store. You apply a theme in {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}.
 
 To apply a theme:
 
 2. In Admin, go to **Stores** > **Configuration** > **Design**.
-3. In the **Store View** drop-down field, select the store view where you want to apply the theme.
+3. In the **Store View** drop-down field, select the {% glossarytooltip ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f %}store view{% endglossarytooltip %} where you want to apply the theme.
 4. On the **Design Theme** tab, select your newly created theme in the **Design Theme** drop-down.
 5. Click **Save Config**.
 6. If caching is enabled, <a href="#theme-apply-clear">clear the cache</a>. 
@@ -38,7 +38,7 @@ Design exceptions enable you to specify an alternative theme for particular user
 To add a design exception:
 
 2. In Admin, go to **Stores** > **Configuration** > **Design**.
-3. In the **Scope** drop-down field, select your website.
+3. In the **Scope** drop-down field, select your {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %}.
 4. On the **Design Theme** tab next to **User-Agent Exceptions** click **Add**.
 5. In the **Search String** box specify the user-agent using either normal strings or regular exceptions (PCRE). In the **Design Theme** drop-down list select the theme to be used for matching agent.
 6. Click **Save Config**.
@@ -66,7 +66,7 @@ The logo you add here is stored in the `/pub/media/logo/default/` directory.
 </div>
 
 ## Clear the cache {#theme-apply-clear}
-If caching is enabled in Magento Admin, you must clear the cache after you apply the theme, add a design exception, add a logo, and perform other tasks.
+If caching is enabled in Magento Admin, you must clear the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} after you apply the theme, add a design exception, add a logo, and perform other tasks.
 
 A system message notifies you that invalidated cache types must be refreshed.
 

@@ -82,7 +82,7 @@ To find the docroot for Apache 2.4:
 1.	<a href="{{page.baseurl}}install-gde/basics/basics_login.html">Log in to your Magento server</a>.
 2.	Open the following file in a text editor:
 
-		/etc/apache2/sites-available/default/000-default.conf
+		/etc/apache2/sites-available/000-default.conf
 
 3.	Search the file for `DocumentRoot`. A typical result follows:
 

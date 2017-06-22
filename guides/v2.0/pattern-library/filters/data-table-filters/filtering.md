@@ -27,7 +27,7 @@ A search box associated with a data-table allows users to filter table data by e
 <br />
 <br />
 
-In the event that the user enters a term that is not found in the data, the table will display a message to the user: "Your search term did not return any results". When this happens the user-entered term will remain in the search field for the user's reference.
+In the {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} that the user enters a term that is not found in the data, the table will display a message to the user: "Your search term did not return any results". When this happens the user-entered term will remain in the search field for the user's reference.
 <br />
 <br />
 <img src="img/search_not-found.png">

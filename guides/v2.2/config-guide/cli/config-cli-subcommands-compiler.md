@@ -14,12 +14,12 @@ github_link: config-guide/cli/config-cli-subcommands-compiler.md
 <p>This section discusses the basics of code compilation.</p>
 <p>Code compilation consists of all of the following in no particular order:</p>
 <ul><li>Application code generation (factories, proxies, and so on)</li>
-<li>Area configuration aggregation (that is, optimized dependency injection configurations per area)</li>
+<li>Area configuration aggregation (that is, optimized {% glossarytooltip 2be50595-c5c7-4b9d-911c-3bf2cd3f7beb %}dependency injection{% endglossarytooltip %} configurations per area)</li>
 <li>Interceptor generation (that is, optimized code generation of interceptors)</li>
-<li>Interception cache generation</li>
+<li>Interception {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} generation</li>
 <li>Repositories code generation (that is, generated code for APIs)</li>
-<li>Service data attributes generation (that is, generated extension classes for data objects)</li></ul>
-<p>You can find code compilation in classes in the <a href="{{ site.mage2100url }}setup/src/Magento/Setup/Module/Di/App/Task/Operation" target="_blank">\Magento\Setup\Module\Di\App\Task\Operation</a> namespace.</p> 
+<li>Service data attributes generation (that is, generated {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} classes for data objects)</li></ul>
+<p>You can find code compilation in classes in the <a href="{{ site.mage2100url }}setup/src/Magento/Setup/Module/Di/App/Task/Operation" target="_blank">\Magento\Setup\Module\Di\App\Task\Operation</a> {% glossarytooltip 621ef86b-7314-4fbc-a80d-ab7fa45a27cb %}namespace{% endglossarytooltip %}.</p> 
 
 <div class="bs-callout bs-callout-warning">
     <p>In this release, the Magento software doesn't support the multi-tenant compiler (that is, the <code>magento setup:di:compile-multi-tenant</code> command).</p>
@@ -120,7 +120,7 @@ The following command enables all modules:
 
 	php bin/magento module:enable --all [-c|--clear-static-content]
 
-Use the optional `[-c|--clear-static-content]` option to clear static content. This is necessary if you've previously enabled or disabled modules and you must clear static content previously generated for them.
+Use the optional `[-c|--clear-static-content]` option to clear {% glossarytooltip a3e37235-4e8b-464f-a19d-4a120560206a %}static content{% endglossarytooltip %}. This is necessary if you've previously enabled or disabled modules and you must clear static content previously generated for them.
 
 [More information about enabling modules]({{ page.baseurl }}install-gde/install/cli/install-cli-subcommands-enable.html).
 
