@@ -1,14 +1,14 @@
 ---
 layout: default
 group: release-notes
-subgroup: Magento 2.2.0 Release Candidate Alpha
-title: Install Magento 2.2.0 Release Candidate Alpha
-menu_title: Install Magento 2.2.0 Release Candidate Alpha
+subgroup: Magento 2.2.0 Pre-Release Candidate 
+title: Install Magento 2.2.0 Pre-Release Candidate 
+menu_title: Install Magento 2.2.0 Pre-Release Candidate 
 menu_order: 2
 level3_menu_node: 
 level3_subgroup: 
 version: 2.2
-github_link: alpha/alpha-install.md
+github_link: pre-release/install.md
 ---
 
 
@@ -16,18 +16,26 @@ github_link: alpha/alpha-install.md
 
 ## Installation 
 
-You need to install Magento CE as part of installing Magento EE or Magento B2B.  install either Magento 2.2.0 Release Candidate Alpha CE and EE, you'll need to: 
+Whether you are installing CE, EE, or B2B, the overall installation process is essentially the same: 
 
-Install Magento 2.2.0 CE Release Candidate Alpha
+* Get GitHub authentication keys 
 
-Install Magento 2.2.0 CE Release Candidate Alpha
+* Clone the repository you want to install. 
+
+* Update installation dependencies.
+
+* Complete the installation.
 
 
-Want to evaluate Magento 2.2.0 B2B Release Candidate Alpha?  See [Install Magento 2.2.0 B2B Release Candidate Alpha]({{page.baseurl}alpha/alpha-install-b2b.html) for information on downloading and installing. 
+           
+Want to evaluate Magento 2.2.0 B2B Pre-Release Candidate?  See [Install Magento 2.2.0 B2B Pre-Release Candidate]({{page.baseurl}pre-release/install-b2b.html) for information on downloading and installing. 
 
-### Alpha code repositories
 
-There are three separate Alpha code repositories on GitHub. 
+
+
+### Release Candidate 1 code repositories
+
+There are three separate code repositories on GitHub. 
 
 
 <table>
@@ -58,22 +66,14 @@ There are three separate Alpha code repositories on GitHub.
 </table>
 
 
-Install Magento 2.2.0 CE Release Candidate Alpha
 
-1) Get GitHub authentication keys. 
-
-2) Clone the repository you need. 
-
-3) 
-
-
-### Get GitHub authentication keys
+### Step 1:  Get GitHub authentication keys
 
 
 
-### Clone the Magento GitHub repository
+### Step 2: Clone the Magento GitHub repository
 
-This section discusses how to get current code by cloning the Magento GitHub’s Alpha branch. 
+This section discusses how to get current code by cloning the Magento GitHub’s Release Candidate 1 branch. 
 
 
 You can clone the Magento 2 GitHub repository using either SSH or HTTPS protocols:
@@ -95,7 +95,7 @@ To clone the Magento GitHub repository using the SSH protocol:
 
 	1.	Copy to the clipboard the Magento GitHub repository SSH clone URL. 
 
-		a. In a web browser, go to https://github.com/magento-partners/magento2ce.
+		a. In a web browser, go to `https://github.com/magento-partners/magento2ce`.
 
 	     b. On the right side of the page, under the *clone URL* field, click **SSH**. 
 
@@ -123,29 +123,52 @@ For example, to check out the `2.2.0-rc1` release tag in a new branch named `2.2
 
 5) Optionally switch to a release tag as follows:  git checkout tags/<tag name> [-b <version>]
 
-For example, to check out the 2.1.0 release tag in a new branch named 2.1.0, enter git checkout tags/2.1.0 -b 2.1.0
+For example, to check out the 2.1.0 release tag in a new branch named 2.1.0, enter  `git checkout tags/2.1.0 -b 2.1.0`. 
 
 6) Continue with [Update installation dependencies](http://devdocs.magento.com/guides/v2.1/install-gde/install/prepare-install.html). 
 
 
 #### Clone with HTTPS
+To clone the Magento GitHub repository using the HTTPS protocol:
+
+	1.	Copy to the clipboard the Magento GitHub repository HTTPS clone URL. 
+
+		a. In a web browser, go to `https://github.com/magento-partners/magento2ce`.
+
+	     b. On the right side of the page, under the *clone URL* field, click **HTTPS**. 
+
+	    c. Click the **Copy to clipboard** button. 
 
 
-### 
+
+	2.	Change to your web server’s docroot directory. Typically, for Ubuntu, it’s `/var/www` and for CentOS it’s `/var/www/html`.  
+
+		Need help locating the docroot? Click [here](http://devdocs.magento.com/guides/v2.2/install-gde/basics/basics_docroot.html).
+
+	3.	Enter `git clone` and paste the value you obtained from step 1.  For example, enter `git clone -b 2.2.0-alpha git@github.com:magento-partners/magento2ce.git`.
+
+	4. Wait for the repository to clone on your server.  If the following error displays, make sure you shared your SSH key with GitHub:
+
+	Cloning into 'magento2'... 
+	Permission denied (publickey).
+	fatal: The remote end hung up unexpectedly   
 
 
+For example, to check out the `2.2.0-rc1` release tag in a new branch named `2.2.0-alpha`, enter
 
+`git checkout tags/2.2.0-rc1 -b 2.2.0-alpha`
+	
 
+5) Optionally switch to a release tag as follows:  git checkout tags/<tag name> [-b <version>]
 
+For example, to check out the 2.1.0 release tag in a new branch named 2.1.0, enter  `git checkout tags/2.1.0 -b 2.1.0`. 
 
+6) Continue with [Update installation dependencies](http://devdocs.magento.com/guides/v2.1/install-gde/install/prepare-install.html). 
 
-## Install the Magento Community Edition Release Candidate Alpha 2.2.0 software
-You can get Magento Community Edition Alpha Release Candidate 2.2.0 from Github. 
-
+### Update installation dependencies
 
 
 ### Complete the installation 
-
 
 After you get the CE software:
 

@@ -80,8 +80,21 @@ Testing environments are roughly categorized by the amount of traffic they must 
 
   <tr>
     <td><b>Database</b></td>
-    <td>Percona 5.6 </td>
-    <td>MySQL 5.6</td>
+    <td>Percona 5.6 
+    <ul>
+<li>tmp_table_size=328M</li>
+<li>max_heap_table_size=328M</li>
+<li>table_open_cache=1500</li>
+<li>innodb_buffer_pool_size=1G</li>
+<li>innodb_log_file_size=256M</li>
+<li>max_allowed_packet=16M</li>
+
+</ul>
+    </td>
+    <td>MySQL 5.6
+    <ul>
+<li>innodb_buffer_pool_size=512M</li>
+    </ul></td>
     <td>MariaDB 10.2</td>
     <td>MySQL 5.7</td>
   </tr>
