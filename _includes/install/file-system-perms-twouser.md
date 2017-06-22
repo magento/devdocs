@@ -33,7 +33,7 @@ Follow the prompts on your screen to create a password for the user.
     <p>If you don't have <code>root</code> privileges on your Magento server, you can use another local user account. Make sure the user has a strong password and continue with <a href="#install-update-depend-user-add2group">Put the Magento file system owner in the web server group</a>.</p>
 </div>
 
-For example, to create a user named `magento` and give the user a password, enter:
+For example, to create a user named `magento_user` and give the user a password, enter:
 
 	sudo adduser magento_user
 	sudo passwd magento_user
