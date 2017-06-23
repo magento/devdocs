@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Manage message queues with MySQL | Magento 2 Developer Documentation</title>
+	<title>Manage message queues | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -1157,7 +1157,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.1/config-guide/mq/manage-mysql.html">MySQL message queues</a></li>
+									<li class="level-2  active "><a href="/guides/v2.1/config-guide/mq/manage-mysql.html">Manage message queues</a></li>
 
 									
 
@@ -1634,7 +1634,7 @@
 
           
 
-          <span property="name">Manage message queues with MySQL</span>
+          <span property="name">Manage message queues</span>
 
         
 
@@ -1657,16 +1657,16 @@
 
 	
 
-	<h1 class="page-heading">Manage message queues with MySQL</h1>
+	<h1 class="page-heading">Manage message queues</h1>
 
   
 
 
 </section>
 
-			<p>If you do not want to implement the RabbitMQ solution, you can manage message queues with cron jobs (or an external process manager)and the CLI to ensure that consumers are retrieving messages.</p>
+			<p>If you do not want to implement the RabbitMQ solution, you can manage message queues with cron jobs (or an external process manager) and the CLI to ensure that consumers are retrieving messages.</p>
 
-<h2>Process management</h2>
+<h2 id="process-management">Process management</h2>
 
 <p>Cron jobs are the default mechanism to restart consumers. Processes started by <code>cron</code> consume the specified number of messages, then die after that. Re-running <code>cron</code> restarts the consumer.</p>
 
@@ -1684,11 +1684,11 @@
 
 <p>You can also use a process manager such as <a href="http://supervisord.org/index.html">Supervisor</a> to monitor the status of processes. The manager can use the CLI to restart the processes as needed.</p>
 
-<h2>Command line interface</h2>
+<h2 id="command-line-interface">Command line interface</h2>
 
-<h3>Start consumers</h3>
+<h3 id="start-consumers">Start consumers</h3>
 
-<p>The CLI can be used to start consumers of the messages from the queue. Multiple consumers can be started at a same time.</p>
+<p>Use the <code>magento</code> command to start the message queue consumer.</p>
 
 <p><code>./bin/magento queue:consumers:start &lt;consumer_name&gt; [--max-messages=&lt;value&gt;]</code></p>
 
@@ -1696,18 +1696,18 @@
 
 <p><code>&lt;consumer_name&gt;</code> is the consumer to start.</p>
 
-<p><code>--max-messages=&lt;value&gt;</code> defines the maximum number of messages to consume per invocation. If number of messages are less then defined maximum number of messages, then the consumer will receive all the available messages in a queue.</p>
+<p><code>--max-messages=&lt;value&gt;</code> defines the maximum number of messages to consume per invocation. If the number of queued messages is less than the specified maximum number of messages, if there are fewer than the specified number of messages in the queue, the consumer will poll for new messages until it has processed that number of messages. The command can be launched again with cron within a configured period of time, or manually.</p>
 
-<p>If <code>--max-messages</code> is not defined, the consumer continues to receive endless number of new messages</p>
+<p>Unless the <code>max-messages</code> option is specified, the process runs continuously.</p>
 
-<p>After getting all available messages, the CLI command terminates. The command can be launched again with cron within a configured period of time, or manually.</p>
+<h3 id="list-consumers">List consumers</h3>
 
-<h3>List consumers</h3>
 <p>Use the following command to return a list of message queue consumers:</p>
 
 <p><code> ./bin/magento queue:consumers:list</code></p>
 
 <h4 id="related-topics">Related Topics</h4>
+
 <ul>
   <li><a href="/guides/v2.1/config-guide/mq/rabbitmq-overview.html">RabbitMQ Overview</a></li>
   <li><a href="/guides/v2.1/config-guide/mq/config-mq.html">Configure message queues</a></li>
@@ -1724,7 +1724,7 @@
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/config-guide/mq/manage-mysql.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/config-guide/mq/manage-mysql.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
