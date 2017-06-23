@@ -196,7 +196,7 @@ Depending on your system configuration, you may also need to specify the followi
 
 3.  Open your admin panel and click **Stores** > **Configuration** > **General** > **B2B Features**.
 
-4.  Select **Yes** from the drop-down boxes enable B2B features:
+4.  Select **Yes** from the drop-down boxes to enable B2B features:
 
     ![enable B2B features]({{ site.baseurl }}common/images/enable_b2b_features.png)
 
