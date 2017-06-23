@@ -63,15 +63,15 @@ These instructions assume you have experience working with Github repositories. 
 
     ```
     cd /var/www/html
-    git clone git@github.com:magento/magento2ce.git
+    git clone -b 2.2.0-RC1.1 git@github.com:magento/magento2ce.git
     ```
 
 2.  Clone the `magento2ee/` and `magento2b2b/` repositories inside the `magento2ce/` repository:
 
     ```
     cd /var/www/html/magento2ce
-    git clone git@github.com:magento/magento2ee.git
-    git clone git@github.com:magento/magento2b2b.git
+    git clone -b 2.2.0-RC1.1 git@github.com:magento/magento2ee.git
+    git clone -b 1.0.0-RC1.1 git@github.com:magento/magento2b2b.git
     ```
 
 ### Prepare files for installation
