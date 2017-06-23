@@ -14,7 +14,7 @@ github_link: mrg/ee/Signifyd.md
 
 The Magento_Signifyd module provides integration with the [Signifyd](https://www.signifyd.com/) fraud protection system. The integration is based on the Signifyd API; see the [Signifyd API docs](https://www.signifyd.com/docs/api/#/introduction/) for technical details.
 
-The module implementation allows to:
+The module implementation allows you to:
 
  - create a [Signifyd case](https://www.signifyd.com/docs/api/#/reference/cases) for a placed order
  - automatically receive a [Signifyd guarantee](https://www.signifyd.com/docs/api/#/reference/guarantees) for a created case
@@ -22,11 +22,11 @@ The module implementation allows to:
 
 ## Extensibility
 
-The Magento_Signifyd module does not add own Events, Layouts, and UI Components as extension points.
+The Magento_Signifyd module does not have own Events, Layouts, and UI Components as extension points.
 
 ### Public API
 
-The following interfaces (marked with the `@api` annotation) provide methods that allow to:
+The following interfaces (marked with the `@api` annotation) extend the Signifyd module:
 
 `Magento\Signifyd\Api\Data\CaseInterface` (common abstraction for the Signifyd case entity):
 
@@ -65,7 +65,7 @@ For information about a public API in Magento 2, see [Public interfaces & APIs](
 
 To update the entity data for a case or guarantee, the Magento_Signifyd module uses the [Signifyd Webhooks](https://www.signifyd.com/docs/api/#/reference/webhooks) mechanism.
 
-The newly created case entities have the `PENDING` status for a case and a guarantee. After receiving Webhook, both statuses are changed to appropriate Signifyd statuses.
+The newly created case entities have the `PENDING` status for a case and a guarantee. After receiving a Webhook, both statuses are changed to the appropriate Signifyd statuses.
 
 ### Debug mode
 
@@ -77,7 +77,7 @@ The Debug Mode may be enabled in the module configuration. This logs the communi
 
 The Magento_Signifyd module does not introduce backward incompatible changes.
 
-You can track [backward incompatible changes in patch releases](http://devdocs.magento.com/guides/v2.0/release-notes/changes/ee_changes.html).
+You can track [backward incompatible changes in patch releases](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ee_changes.html).
 
 ### Processing supplementary payment information
 
