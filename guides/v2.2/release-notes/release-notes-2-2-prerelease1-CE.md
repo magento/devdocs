@@ -31,9 +31,9 @@ Magento 2.2.0 contains over 15 security enhancements as well as one significant 
 
 <!--- 64842-->* We've eliminated unnecessary file check operations, which improved the performance of the Catalog and Product pages. 
 
-<!--- 63159-->*  Content staging value for fields are not saved in database. 
+<!--- 63159-->* You can now save as changes to Sales rules as expected when Staging is enabled. 
 
-<!--- 57846-->* 
+<!--- 57846-->* Magento now processes the New Order Status field (available in the Admin panel when configuring payment methods) as expected. [GITHUB-5860](https://github.com/magento/magento2/issues/5860)
 
 <!--- 67623-->* 
 
@@ -42,7 +42,7 @@ Magento 2.2.0 contains over 15 security enhancements as well as one significant 
 
 ## Breaking issues
 
-We are working on these currently unresolved, significant issues for this release:
+Here are some of the currently unresolved issues we are working on for this release:
 
 
 <!--- 66784-->* You cannot run B2B with Sample Data installed when Shared Catalogs are enabled.
