@@ -1,10 +1,10 @@
 ---
 layout: default
 group: release-notes
-subgroup: Magento 2.2.0 Release Candidate 
-title: Magento 2.2.0 Release Candidate QuickStart Guide
-menu_title: Magento 2.2.0 Release Candidate QuickStart Guide
-menu_order: 1
+subgroup: 2.2.0 Release Candidate 
+title: Release Candidate QuickStart Guide
+menu_title: Release Candidate QuickStart Guide
+menu_order: 1000
 level3_menu_node: 
 level3_subgroup: 
 version: 2.2
