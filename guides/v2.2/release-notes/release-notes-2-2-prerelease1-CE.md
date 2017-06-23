@@ -25,7 +25,7 @@ Looking for information about how Magento 2.2.0 Release Candidate evaluation pro
 Look for the following highlights in this release: 
 
 
-* **Advanced Reporting** provides merchants with an improved, reliable, and visuallying compelling way to report on their products, orders, and customers. 
+* **Advanced Reporting** provides merchants with an improved, reliable, and compelling way to report on their products, orders, and customers. 
 
 
 * **Significant enhancements in platform security and developer experience**. Security improvements include the removal of specific un-serialize calls and changed hashing algorithm to improve security for sensitive values. Developers will appreciate  improvements in debugging, customizations, and logging.
@@ -35,7 +35,7 @@ Look for the following highlights in this release:
 * **Upgraded technology stack.**  We've dropped support for PHP 5.6 and Varnish 5.  We now support PHP 7.1, along with Redis 3.2, MySQL 5.7, and Varnish 5 support. All third-party libraries have been upgraded to the latest stable version.
 
 
-* **Pipeline deployment**, a new deployment process, enables separate build and deployment stages that can run separately. Resource-intensive processes can run on the build server. Pipeline deployment supports easy management of configuration between environments, too.
+* **Pipeline deployment**, a new deployment process, enables separate build and deployment stages that can run separately. Resource-intensive processes can run on the build server. Pipeline deployment supports easy management of configuration between environments, too. Read more about pipleine deployment [here]({{page.baseurl}}config-guide/deployment/pipeline/). 
 
 
 * **Substantial performance gains from improvements in indexing, cart, and cache operations**. Customers can browse and shop on a storefront while indexers are running. (Long-running indexers operate in batches to better manage memory and run times.) Cart improvements enable a

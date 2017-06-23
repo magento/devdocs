@@ -27,14 +27,14 @@ Magento Enterprise Edition 2.2.0 Release Candidate 1 includes substantial new fe
 
 Look for the following highlights in this release: 
 
-* **Enhanced B2B feature set** removes points of friction from the B2B purchasing process. We reduce the cost and complexity of building a B2B site on Magento by providing company account management features out-of-the-box.  B2B companies can easily view and manage all of their quotes in the Magento Admin Panel. B2B APIs enable backend integrations, too.
+* **Enhanced B2B feature set** removes points of friction from the B2B purchasing process. We reduce the cost and complexity of building a B2B site on Magento by providing company account management features out-of-the-box.  B2B companies can easily view and manage all of their quotes in the Magento Admin Panel. B2B APIs enable backend integrations, too. Read more about Magento B2B in the [B2B Developer Guide]({{page.baseurl}}b2b/bk-b2b.html). 
 
 
-* **Advanced Reporting** provides merchants with an improved, reliable, and visuallying compelling way to report on their products, orders, and customers. 
+* **Advanced Reporting** provides merchants with an improved, reliable, and compelling way to report on their products, orders, and customers. 
 
 
 * **Signifyd fraud protection** is now integrated with Magento. Signifyd identifies and rejects potential fraudulent orders and provides 
-100% chargeback protection.
+100% chargeback protection. We provide an introduction to Signifyd integration with Magento [here]({{page.baseurl}}mrg/ee/Signifyd.html)
 
 
 
@@ -45,7 +45,7 @@ Look for the following highlights in this release:
 * **Upgraded technology stack.** Magento has dropped support for PHP 5.6 and Varnish 3.  We now support PHP 7.1, along with Redis 3.2, MySQL 5.7, Varnish 5 support. All third-party libraries have been upgraded to the latest stable version.
 
 
-* **Pipeline deployment**, a new deployment process, enables separate build and deployment stages that can run separately. Resource-intensive processes can run on the build server. Pipeline deployment supports easy management of configuration between environments, too.
+* **Pipeline deployment**, a new deployment process, enables separate build and deployment stages that can run separately. Resource-intensive processes can run on the build server. Pipeline deployment supports easy management of configuration between environments, too. Read more about pipleine deployment [here]({{page.baseurl}}config-guide/deployment/pipeline/). 
 
 
 * **Substantial performance gains from improvements in indexing, cart, and cache operations**. Customers can browse and shop on a storefront while indexers are running. (Long-running indexers operate in batches to better manage memory and run times.) Cart improvements enable a
