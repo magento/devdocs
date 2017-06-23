@@ -59,8 +59,6 @@ buyer to create a cart with more than 300 line items, and merchants can process 
 Here are some of the currently unresolved issues we are working on for this release:
 
 
-<!--- 66784-->* You cannot run B2B with Sample Data installed when Shared Catalogs are enabled.
-
 <!--- 70066-->* The catalog permissions indexer in a medium B2B installation can take a long time (for example, hours for B2B medium profile) and consumes excessive memory.
 
 <!--- 65555-->* Some `js.translation.js` files do not correctly regenerate during deployment. As a result, Magento does not display  translated theme strings.
