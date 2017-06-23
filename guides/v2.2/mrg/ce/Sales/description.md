@@ -11,4 +11,4 @@ level3_subgroup: Sales
 github_link: mrg/ce/Sales/description.md
 ---
 
-{% remote_markdown https://raw.githubusercontent.com/magento/magento2/develop/app/code/Magento/ReviewAnalytics/README.md %}
+{% remote_markdown https://raw.githubusercontent.com/magento/magento2/develop/app/code/Magento/Sales/README.md %}
