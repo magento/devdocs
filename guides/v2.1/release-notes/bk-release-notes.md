@@ -16,11 +16,11 @@ Looking for [Magento Enterprise Cloud Edition Release Notes]({{ site.gdeurl }}cl
 
 ## Magento 2.2.0 Release Candidate 
 
-* [Magento 2.2.0 Release Candidate QuickStart Guide]({{page.baseurl}}quick-start.html)
+* [Magento 2.2.0 Release Candidate QuickStart Guide]({{page.baseurl}}release-notes/quick-start.html)
 
-* [Magento 2.2.0 Release Candidate 2.2.0 CE Release Notes]({{page.baseurl}}release-notes-2-2-prelease1-CE.html)
+* [Magento 2.2.0 Release Candidate 2.2.0 CE Release Notes]({{page.baseurl}}release-notes/release-notes-2-2-prelease1-CE.html)
 
-* [Magento 2.2.0 Release Candidate 2.2.0 EE Release Notes]({{page.baseurl}}release-notes-2-2-prelease1-EE.html)
+* [Magento 2.2.0 Release Candidate 2.2.0 EE Release Notes]({{page.baseurl}}release-notes/release-notes-2-2-prelease1-EE.html)
 
 
 
