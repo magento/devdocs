@@ -1,9 +1,9 @@
 ---
 layout: default
 group: release-notes
-subgroup: Magento 2.2.0 Release Candidate 
-title: Install Magento 2.2.0 Release Candidate 
-menu_title: Install Magento 2.2.0 Release Candidate 
+subgroup: Magento 2.2.0 Release Candidate
+title: Install Magento 2.2.0 Release Candidate
+menu_title: Install Magento 2.2.0 Release Candidate
 menu_order: 2
 level3_menu_node:
 level3_subgroup:
@@ -11,34 +11,27 @@ version: 2.2
 github_link: release-candidate/install.md
 ---
 
-
-
-
 ## Installation
+The Magento Release Candidate 1 installation process is the same for CE and EE:
 
-Whether you are installing CE, EE, or B2B, the overall installation process is essentially the same: 
+-   Clone the repositories you want to install
 
+-   Prepare files for installation
 
-* Get GitHub authentication keys 
+-   Update installation dependencies
 
-* Clone the repository you want to install. 
+-   Complete the installation
 
-* Update installation dependencies.
+-   Install sample data (optional)
 
+-   Complete B2B post-installation configuration
 
-* Complete the installation.
-
-           
-Want to evaluate Magento 2.2.0 B2B Pre-Release Candidate?  See [Install Magento 2.2.0 B2B Release Candidate]({{page.baseurl}}pre-release/install-b2b.html) for information on downloading and installing. 
-
-
-
+<div class="bs-callout bs-callout-warning" markdown="1">
+If you want to evaluate the new B2B module, you must install it when you install EE. The B2B module is only available for Magento EE v2.2.0.
+</div>
 
 ### Release Candidate 1 code repositories
-
-There are three separate code repositories on GitHub. 
-
-
+There are three Magento code repositories on GitHub where you can find Release Candidate 1 code.
 
 <table>
   <tr>
@@ -46,153 +39,149 @@ There are three separate code repositories on GitHub.
     <th><b>Location</b></th>
     <th><b>Availability</b></th>
   </tr>
-
 <tr>
     <td><b>Magento CE</b></td>
-    <td>https://github.com/magento/magento2</td>
+    <td><a href="https://github.com/magento/magento2ce">https://github.com/magento/magento2ce</a></td>
     <td>Publicly available already</td>
 </tr>
-
 <tr>
     <td><b>Magento EE</b></td>
-    <td>https://github.com/magento/magento2ee</td>
+    <td><a href="https://github.com/magento/magento2ee">https://github.com/magento/magento2ee</a></td>
     <td>Available after contract has been signed</td>
 </tr>
-
 <tr>
     <td><b>Magento B2B</b></td>
-    <td>https://github.com/magento/magento2b2b</td>
+    <td><a href="https://github.com/magento/magento2b2b">https://github.com/magento/magento2b2b</a></td>
     <td>Available after contract has been signed</td>
 </tr>
-
 </table>
 
+### Clone the Magento Github repositories
+These instructions assume you have experience working with Github repositories. Refer to Github's documentation if you need help setting up [SSH keys](https://help.github.com/articles/connecting-to-github-with-ssh/){:target="	&#95;blank"} or [cloning repositories](https://help.github.com/articles/cloning-a-repository/){:target="	&#95;blank"}.
 
+1.  Clone the `magento2ce/` repository to your server's [docroot](http://devdocs.magento.com/guides/v2.1/install-gde/basics/basics_docroot.html):
 
-### Step 1:  Get GitHub authentication keys
+    ```
+    cd /var/www/html
+    git clone -b 2.2.0-RC1.1 git@github.com:magento/magento2ce.git
+    ```
 
+2.  Clone the `magento2ee/` and `magento2b2b/` repositories inside the `magento2ce/` repository:
 
+    ```
+    cd /var/www/html/magento2ce
+    git clone -b 2.2.0-RC1.1 git@github.com:magento/magento2ee.git
+    git clone -b 1.0.0-RC1.1 git@github.com:magento/magento2b2b.git
+    ```
 
-### Step 2: Clone the Magento GitHub repository
+### Prepare files for installation
+Create symlinks to the `magento2ee/` and `magento2b2b/` directories from the `magento2ce/` directory. Symlinks preserve the git history for each repository so that you can make code contributions.
 
+1.  Change to the `magento2ce/` directory:
 
-### Clone the Magento GitHub repository
+    ```
+    cd /var/www/html/magento2ce
+    ```
 
+1.  Create symlinks to the `magento2ee/` directory:
 
-You can clone the Magento 2 GitHub repository using either SSH or HTTPS protocols:
+    ```
+    php -f ./magento2ee/dev/tools/build-ee.php -- --command link --exclude true --ce-source . --ee-source ./magento2ee
+    ```
 
-	•	Use SSH for better security (no user name and password are exchanged). This requires you to share a public key with GitHub.
+2.  Create symlinks to the `magento2b2b/` directory:
 
-	•	Use HTTPS if you don’t share an SSH key with GitHub (your user name and password are encrypted before being sent to GitHub).
+    ```
+    php -f ./magento2ee/dev/tools/build-ee.php -- --command link --exclude true --ce-source . --ee-source ./magento2b2b
+    ```
 
-See one of the following sections:
+3.  Run the following command to verify the links:
 
-	•	Clone with SSH
+    ```
+    ls -alh app/code/Magento/
+    ```
 
-	•	Clone with HTTPS
+    You should see output similar to the following:
 
+    ```
+    lrwxrwxrwx   1 root    root      57 Jun 22 22:43 B2b -> /var/www/html/magento2ce/magento2b2b/app/code/Magento/B2b
+    drwxrwxr-x  15 magento magento 4.0K Jun 22 22:26 Backend
+    drwxrwxr-x  11 magento magento 4.0K Jun 22 22:26 Backup
+    lrwxrwxrwx   1 root    root      59 Jun 22 22:42 Banner -> /var/www/html/magento2ce/magento2ee/app/code/Magento/Banner
+    lrwxrwxrwx   1 root    root      74 Jun 22 22:42 BannerCustomerSegment -> /var/www/html/magento2ce/magento2ee/app/code/Magento/BannerCustomerSegment
+  ```
 
-#### Clone with SSH
+To remove all symlinks, run the following command:
 
-To clone the Magento GitHub repository using the SSH protocol:
-
-	1.	Copy to the clipboard the Magento GitHub repository SSH clone URL. 
-
-		a. In a web browser, go to `https://github.com/magento-partners/magento2ce`.
-
-	     b. On the right side of the page, under the *clone URL* field, click **SSH**. 
-
-	    c. Click the **Copy to clipboard** button. 
-
-
-
-	2.	Change to your web server’s docroot directory. Typically, for Ubuntu, it’s `/var/www` and for CentOS it’s `/var/www/html`. 
-
-		Need help locating the docroot? Click [here](http://devdocs.magento.com/guides/v2.1/install-gde/basics/basics_docroot.html).
-
-	3.	Enter `git clone` and paste the value you obtained from step 1.  For example, enter `git clone -b 2.2.0-alpha git@github.com:magento-partners/magento2ce.git`.
-
-	4. Wait for the repository to clone on your server.  If the following error displays, make sure you shared your SSH key with GitHub:
-
-	Cloning into 'magento2'...
-	Permission denied (publickey).
-	fatal: The remote end hung up unexpectedly   
-
-
-For example, to check out the `2.2.0-rc1` release tag in a new branch named `2.2.0-alpha`, enter
-
-`git checkout tags/2.2.0-rc1 -b 2.2.0-alpha`
-
-
-5) Optionally switch to a release tag as follows:  git checkout tags/<tag name> [-b <version>]
-
-For example, to check out the 2.1.0 release tag in a new branch named 2.1.0, enter  `git checkout tags/2.1.0 -b 2.1.0`. 
-
-6) Continue with [Update installation dependencies](http://devdocs.magento.com/guides/v2.1/install-gde/install/prepare-install.html). 
-
-
-#### Clone with HTTPS
-To clone the Magento GitHub repository using the HTTPS protocol:
-
-	1.	Copy to the clipboard the Magento GitHub repository HTTPS clone URL. 
-
-		a. In a web browser, go to `https://github.com/magento-partners/magento2ce`.
-
-	     b. On the right side of the page, under the *clone URL* field, click **HTTPS**. 
-
-	    c. Click the **Copy to clipboard** button. 
-
-
-
-
-	2.	Change to your web server’s docroot directory. Typically, for Ubuntu, it’s `/var/www` and for CentOS it’s `/var/www/html`.  
-
-
-		Need help locating the docroot? Click [here](http://devdocs.magento.com/guides/v2.2/install-gde/basics/basics_docroot.html).
-
-	3.	Enter `git clone` and paste the value you obtained from step 1.  For example, enter `git clone -b 2.2.0-alpha git@github.com:magento-partners/magento2ce.git`.
-
-	4. Wait for the repository to clone on your server.  If the following error displays, make sure you shared your SSH key with GitHub:
-
-	Cloning into 'magento2'... 
-	Permission denied (publickey).
-	fatal: The remote end hung up unexpectedly   
-
-
-For example, to check out the `2.2.0-rc1` release tag in a new branch named `2.2.0-alpha`, enter
-
-`git checkout tags/2.2.0-rc1 -b 2.2.0-alpha`
-	
-
-5) Optionally switch to a release tag as follows:  git checkout tags/<tag name> [-b <version>]
-
-For example, to check out the 2.1.0 release tag in a new branch named 2.1.0, enter  `git checkout tags/2.1.0 -b 2.1.0`. 
-
-
-6) Continue with [Update installation dependencies](http://devdocs.magento.com/guides/v2.1/install-gde/install/prepare-install.html). 
+```
+php -f ./magento2ee/dev/tools/build-ee.php -- --command unlink --ce-source .
+```
 
 ### Update installation dependencies
+From the `magento2ce/` directory, run Composer to update dependencies:
 
+```
+composer install
+```
 
-### Complete the installation 
-
-After you get the CE software:
-
-1.	[Set file system ownership and permissions]({{ page.baseurl }}install-gde/prereq/file-system-perms.html).
-2.	Install the software:
-
-	*	[Web Setup Wizard]({{ page.baseurl }}install-gde/install/web/install-web.html)
-	*	[Command line]({{ page.baseurl }}install-gde/install/cli/install-cli.html)
-
-
-
+Refer to [Update installation dependencies](http://devdocs.magento.com/guides/v2.1/install-gde/install/prepare-install.html) for more information.
 
 ### Complete the installation
+Now that you've cloned all the repositories you need and prepared the files, proceed with installation:
 
-After you get the EE software:
+1.  Set file permissions on the `magento2ce/` installation directory:
 
-1.	[Set file system ownership and permissions]({{ page.baseurl }}install-gde/prereq/file-system-perms.html).
-2.	Install the software:
+    ```
+    cd /var/www/html/magento2ce
+    find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \;
+    find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
+    chown -R :www-data .
+    chmod u+x bin/magento
+    ```
+  Refer to [Set file system ownership and permissions]({{ page.baseurl }}install-gde/prereq/file-system-perms.html) for more information.
 
-	*	[Web Setup Wizard]({{ page.baseurl }}install-gde/install/web/install-web.html)
-	*	[Command line]({{ page.baseurl }}install-gde/install/cli/install-cli.html)
+2.	Open a web browser and go to `http://<Magento host or IP>/<path to Magento root>/setup` to launch the [Web Setup Wizard]({{ page.baseurl }}install-gde/install/web/install-web.html).
+
+    For example:
+
+    `http://localhost/magento2ce/setup`
+
+<div class="bs-callout bs-callout-info" markdown="1">
+You can also install using the [command line]({{ page.baseurl }}install-gde/install/cli/install-cli.html).
+</div>
+
+### Install sample data (optional)
+The Release Candidate 1 repositories don't contain any sample data, but you can [install sample data]({{ page.baseurl }}install-gde/install/sample-data-after-clone.html) with another repository after you finish installing the Release Candidate.
+
+### B2B post-installation steps and configuration
+You only need to follow these instructions if you installed the B2B module.
+
+The B2B module uses MySQL for message queue management. To succesfully launch the B2B module, you must manually start the message consumer services after installation.
+
+1.  List the available message consumers:
+
+    ```
+    bin/magento queue:consumers:list
+    ```
+
+2.  Start each service separately:
+
+    ```
+    bin/magento queue:consumers:start <consumer_name>
+    ```
+
+Refer to [Manage message queues with MySQL]({{page.baseurl}}config-guide/mq/manage-mysql.html) for more information.
+
+Depending on your system configuration, you may also need to specify the following parameters when starting the services:
+
+-   `--max-messages`: manages the consumer's lifetime and allows to specify the maximum number of messages processed by the consumer. The best practice for a PHP application is to restart the long-running processes to prevent possible memory leaks
+
+-   `batch-size`: allows to limit the system resources consumed by the consumers (CPU, memory). Using smaller batches reduces resource usage and, thus, leads to slower processing.
+
+3.  Open your admin panel and click **Stores** > **Configuration** > **General** > **B2B Features**.
+
+4.  Select **Yes** from the drop-down boxes enable B2B features:
+
+    ![enable B2B features]({{ page.baseurl }}common/images/enable_b2b_features.png)
+
+5.  Click **Save Config**.
