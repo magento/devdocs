@@ -101,4 +101,4 @@ The Magento 2.2.0 EE Release Candidate evaluation is open to all Solution Partne
 The Magento Developer documentation has been updated with the latest 2.2 information.  Visit the 2.2.0 Developer Documentation site for a peek at our updated 2.2.0 developer documentation.
 
 
-Ready to [install]({{page.baseurl}}release-candidate/install.html) Magento 2.2.0  Release Candidate?
+Ready to [install]({{page.baseurl}}release-notes/release-candidate/install.html) Magento 2.2.0  Release Candidate?
