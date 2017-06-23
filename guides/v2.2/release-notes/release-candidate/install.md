@@ -12,6 +12,7 @@ github_link: release-candidate/install.md
 ---
 
 ## Installation
+
 The Magento Release Candidate 1 installation process is the same for CE and EE:
 
 -   Clone the repositories you want to install
@@ -31,6 +32,7 @@ If you want to evaluate the new B2B module, you must install it when you install
 </div>
 
 ### Release Candidate 1 code repositories
+
 There are three Magento code repositories on GitHub where you can find Release Candidate 1 code. When cloning repositories, be sure to checkout the specified branches.
 
 <table>
@@ -42,40 +44,41 @@ There are three Magento code repositories on GitHub where you can find Release C
   </tr>
 <tr>
     <td><b>Magento CE</b></td>
-    <td><a href="https://github.com/magento/magento2ce">https://github.com/magento/magento2ce</a></td>
-    <td>2.2.0-RC1.1</td>
-    <td>Publicly available</td>
+    <td><a href="https://github.com/magento-partners/magento2ce">https://github.com/magento-partners/magento2ce</a></td>
+    <td>2.2.0-release-candidate</td>
+    <td>Available after contract has been signed</td>
 </tr>
 <tr>
     <td><b>Magento EE</b></td>
-    <td><a href="https://github.com/magento/magento2ee">https://github.com/magento/magento2ee</a></td>
-    <td>2.2.0-RC1.1</td>
+    <td><a href="https://github.com/magento-partners/magento2ee">https://github.com/magento-partners/magento2ee</a></td>
+    <td>2.2.0-release-candidate</td>
     <td>Available after contract has been signed</td>
 </tr>
 <tr>
     <td><b>Magento B2B</b></td>
-    <td><a href="https://github.com/magento/magento2b2b">https://github.com/magento/magento2b2b</a></td>
-    <td>1.0.0-RC1.1</td>
+    <td><a href="https://github.com/magento-partners/magento2b2b">https://github.com/magento-partners/magento2b2b</a></td>
+    <td>1.1.0-release-candidate</td>
     <td>Available after contract has been signed</td>
 </tr>
 </table>
 
 ### Clone the Magento Github repositories
+
 These instructions assume you have experience working with Github repositories. Refer to Github's documentation if you need help setting up [SSH keys](https://help.github.com/articles/connecting-to-github-with-ssh/){:target="	&#95;blank"} or [cloning repositories](https://help.github.com/articles/cloning-a-repository/){:target="	&#95;blank"}.
 
 1.  Clone the `magento2ce/` repository to your server's [docroot](http://devdocs.magento.com/guides/v2.1/install-gde/basics/basics_docroot.html):
 
     ```
     cd /var/www/html
-    git clone -b 2.2.0-RC1.1 git@github.com:magento/magento2ce.git
+    git clone -b 2.2.0-release-candidate git@github.com:magento-partners/magento2ce.git
     ```
 
 2.  Clone the `magento2ee/` and `magento2b2b/` repositories inside the `magento2ce/` repository:
 
     ```
     cd /var/www/html/magento2ce
-    git clone -b 2.2.0-RC1.1 git@github.com:magento/magento2ee.git
-    git clone -b 1.0.0-RC1.1 git@github.com:magento/magento2b2b.git
+    git clone -b 2.2.0-release-candidate git@github.com:magento-partners/magento2ee.git
+    git clone -b 1.1.0-release-candidate git@github.com:magento-partners/magento2b2b.git
     ```
 
 ### Prepare files for installation
@@ -154,10 +157,15 @@ You can also install using the [command line]({{ page.baseurl }}install-gde/inst
 ### Install sample data (optional)
 The Release Candidate 1 repositories don't contain any sample data, but you can [install sample data]({{ page.baseurl }}install-gde/install/sample-data-after-clone.html) with another repository after you finish installing the Release Candidate.
 
-### B2B post-installation steps and configuration
-You only need to follow these instructions if you installed the B2B module.
+## B2B post-install steps and configuration
 
-The B2B module uses MySQL for message queue management. To succesfully launch the B2B module, you must manually start the message consumer services after installation.
+After installing the B2B module, follow these instructions to launch B2B.
+
+### Message queues
+
+#### Start message consumers
+
+The B2B module uses MySQL for message queue management. To succesfully launch the B2B module, start the message consumer services after installation.
 
 1.  List the available message consumers:
 
@@ -188,16 +196,29 @@ The B2B module uses MySQL for message queue management. To succesfully launch th
 
 Refer to [Manage message queues with MySQL]({{page.baseurl}}config-guide/mq/manage-mysql.html) for more information.
 
-Depending on your system configuration, you may also need to specify the following parameters when starting the services:
+#### Add message consumers to cron
+
+You may also add these two message consumers to the cron job. For this, add these lines in your `crontab.xml`:
+
+{%highlight xml%}
+* * * * * ps ax | grep [s]haredCatalogUpdateCategoryPermissions >>/dev/null 2>&1 || nohup php /var/www/html/magento2/bin/magento queue:consumers:start sharedCatalogUpdateCategoryPermissions &
+* * * * * ps ax | grep [s]haredCatalogUpdatePrice >>/dev/null 2>&1 || nohup php /var/www/html/magento2/bin/magento queue:consumers:start sharedCatalogUpdatePrice &
+{%endhighlight%}
+
+#### Specify parameters for message consumers
+
+Depending on your system configuration, to prevent possible issues, you may also need to specify the following parameters when starting the services:
 
 -   `--max-messages`: manages the consumer's lifetime and allows to specify the maximum number of messages processed by the consumer. The best practice for a PHP application is to restart the long-running processes to prevent possible memory leaks
 
--   `batch-size`: allows to limit the system resources consumed by the consumers (CPU, memory). Using smaller batches reduces resource usage and, thus, leads to slower processing.
+-   `--batch-size`: allows to limit the system resources consumed by the consumers (CPU, memory). Using smaller batches reduces resource usage and, thus, leads to slower processing
 
-3.  Open your admin panel and click **Stores** > **Configuration** > **General** > **B2B Features**.
+### Enable B2B Features in Magento Admin
 
-4.  Select **Yes** from the drop-down boxes to enable B2B features:
+1.  Access the Magento Admin and click **Stores** > **Configuration** > **General** > **B2B Features**.
 
-    ![enable B2B features]({{ site.baseurl }}common/images/enable_b2b_features.png)
+2.  Select **Yes** from the drop-down menus to enable B2B features:
 
-5.  Click **Save Config**.
+    ![Enable B2B features]({{site.baseurl}}common/images/enable_b2b_features.png)
+
+3.  Click **Save Config**.
