@@ -43,16 +43,10 @@ There are three Magento code repositories on GitHub where you can find Release C
     <th><b>Availability</b></th>
   </tr>
 <tr>
-    <td><b>Magento CE (Non-partners)</b></td>
+    <td><b>Magento CE</b></td>
     <td><a href="https://github.com/magento/magento2">https://github.com/magento/magento2</a></td>
     <td>develop</td>
     <td>Publicly available</td>
-</tr>
-<tr>
-    <td><b>Magento CE (Partners)</b></td>
-    <td><a href="https://github.com/magento/magento2ce">https://github.com/magento/magento2ce</a></td>
-    <td>2.2.0-release-candidate</td>
-    <td>Available after contract has been signed</td>
 </tr>
 <tr>
     <td><b>Magento EE</b></td>

@@ -70,7 +70,7 @@ Here are some of the currently unresolved issues we are working on for this rele
 
 
 ## System requirements
-Our technology stack is built on PHP and MySQL. For more information, see [System Requirements]({{ page.baseurl }}install-gde/system-requirements.html).
+Our technology stack is built on PHP and MySQL. For more information, see [System Requirements]({{ page.baseurl }}install-gde/system-requirements-tech.html).
 
 ## Installation
 
