@@ -9,6 +9,6 @@ version: 2.2
 github_link: mrg/ce/Analytics.md
 ---
 
-<div class="mrg-content">
+<div class="mrg-content" markdown="1">
 {% remote_markdown https://raw.githubusercontent.com/magento/magento2/develop/app/code/Magento/Analytics/README.md %}
 </div>
