@@ -56,14 +56,14 @@ Here's an overview of how to create a Pull Request for the Magento 2.2.0 Release
 
 2.	Work on your code, then submit a pull request. When your code is ready for delivery, create a pull request to the base repository or several pull requests to different repositories (for example, `yourfork/magento2ce : fix-for-url-rewrites --> magento-partners/magento2ce : develop`).  
 
+3.	Wait until the Community Engineering Team has reviewed and approved your proposed changes.
+
+4.	Address any issues raised by testing, if necessary. After all Travis builds have successfully passed, the Community Engineering Team will merge your pull request(s).
+
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 A fix for the EE/B2B codebase might also require changes to the CE codebase. In this case, you must create two pull requests (one for the CE and another for the EE repositories) and link them in the PR description.
 </div>
-
-3.	Wait until the Community Engineering Team has reviewed and approved your proposed changes.
-
-4.	Address any issues raised by testing, if necessary. After all Travis builds have successfully passed, the Community Engineering Team will merge your pull request(s).
 
 
 ## Questions?

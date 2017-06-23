@@ -23,7 +23,7 @@ This guide covers:
 
 * **Readiness status of individual code components**. Magento 2.2.0 Release Candidate code is a work in progress. Parts of the code base are more mature than others. You can see an overview of component status here [Component Status]({{page.baseurl}}release-notes/release-candidate/component-status.html). Note that we will update this information each Friday of the Release evaluation period. 
 
-* **Magento test environments specification**.  See [Magento Release Candidate Testing Environments]({{page.baseurl}}release-candidate/testing-environments.html) for a selection of these environments.
+* **Magento test environments specification**.  See [Magento Release Candidate Testing Environments]({{page.baseurl}}release-notes/release-candidate/testing-environments.html) for a selection of these environments.
 
 
 ## Welcome to Magento 2.2.0 Release Candidate Alpha 
