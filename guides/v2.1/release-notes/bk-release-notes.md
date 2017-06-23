@@ -1,28 +1,32 @@
 ---
 layout: default
 group: release-notes
-subgroup: 01_2.1.x_Release_Information
-title: 2.1.x Release Information
-menu_title: 2.1.x Release Information
+subgroup: 2.2.x_Release_Information
+title: 2.2.x Release Information
+menu_title: 2.2.x Release Information
 menu_order: 1
 menu_node: parent
-version: 2.1
+version: 2.2
 github_link: release-notes/bk-release-notes.md
 ---
 
 
-{% include install/releasenotes/21_release-notes-links.md %}
-
-
-Looking for [2.0.x Release Notes]({{ site.gdeurl }}release-notes/bk-release-notes.html)?
 
 Looking for [Magento Enterprise Cloud Edition Release Notes]({{ site.gdeurl }}cloud/release-notes/CloudReleaseNotes.html)?
+
+## Magento 2.2.0 Release Candidate 
+
+* [Magento 2.2.0 Release Candidate QuickStart Guide]({{page.baseurl}}release-notes/quick-start.html)
+
+* [Magento 2.2.0 Release Candidate CE Release Notes]({{page.baseurl}}release-notes/release-notes-2-2-prelease1-CE.html)
+
+* [Magento 2.2.0 Release Candidate EE Release Notes]({{page.baseurl}}release-notes/release-notes-2-2-prelease1-EE.html)
+
 
 
 ## Backward-incompatible changes
 
-*	Overview of backward-incompatible changes between the 2.0 and 2.1 releases: [Magento 2.1 Backward Incompatible Changes]({{ page.baseurl }}release-notes/backward-incompatible-changes.html)
-
+*	Overview of backward-incompatible changes between the 2.1 and 2.2 releases
 
 ## Third-party license agreements
 
