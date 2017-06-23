@@ -2,8 +2,8 @@
 layout: default
 group: release-notes
 subgroup:
-title: Magento 2.2 Pre-Release Candidate Release Notes
-menu_title: Magento CE 2.2 Pre-Release Candidate Release Notes
+title: Magento 2.2 Release Candidate Release Notes
+menu_title: Magento CE 2.2 Release Candidate Release Notes
 menu_order: 162
 level3_menu_node: level3child
 level3_subgroup: ce21-relnotes 
@@ -17,13 +17,25 @@ github_link: release-notes/release-notes-2-2-prelease1-CE.md
 *Release date: June 21, 2017*
 
 
-Magento Community Edition 2.2.0 Pre-Release Candidate includes substantial new features as well as many bug fixes. Look for the following highlights in this release: 
+Magento Community Edition 2.2.0 Release Candidate includes substantial new features as well as many bug fixes. Look for the following highlights in this release: 
 
 
 
 ## Highlights
 
 Magento 2.2.0 contains over 15 security enhancements as well as one significant functional enhancement. Look for the following highlights in this release:
+
+* Advanced reporting
+
+* Sygnifyd fraud protection
+
+* B2B
+
+* Platform
+
+* Performance
+
+
 
 ## Fixed issues
 
@@ -35,9 +47,9 @@ Magento 2.2.0 contains over 15 security enhancements as well as one significant 
 
 <!--- 57846-->* Magento now processes the New Order Status field (available in the Admin panel when configuring payment methods) as expected. [GITHUB-5860](https://github.com/magento/magento2/issues/5860)
 
-<!--- 67623-->*  When using Multiple Select Attribute as a Condition, the customers are now  matched as exoected when the condition uses the value "contains".
+<!--- 67623-->*  When using Multiple Select Attribute as a Condition, the customers are now matched as exoected when the condition uses the value "contains". When specifying membership as contains condition in segment creation, customer who owns the target membership (no matter how many other membership he/she owns ) should be a matched customer. Previously, when specifying membership as contains condition in segment creation, customers were not matched. 
 
-<!--- 59135-->* 
+<!--- 59135-->* Magento no longer shares customer session data between multiple customers on two websites. [GITHUB-4842](https://github.com/magento/magento2/issues/4842), [GITHUB-6468](https://github.com/magento/magento2/issues/6468)
 
 
 ## Breaking issues
@@ -47,9 +59,11 @@ Here are some of the currently unresolved issues we are working on for this rele
 
 <!--- 66784-->* You cannot run B2B with Sample Data installed when Shared Catalogs are enabled.
 
-<!--- 65555-->* Some `js.translation.js` files do not correctly regenerate during deployment. As a result, Magento does not display your translated theme strings.
+<!--- 70066-->* The catalog permissions indexer in a medium B2B installation can take a long time (for example, hours for B2B medium profile) and consumes excessive memory.
 
-<!--- 57995-->* Magento does not properly display videos for simple products. It displays thumbnail images instead of the actual video.  [GITHUB-6360](https://github.com/magento/magento2/issues/6360)
+<!--- 65555-->* Some `js.translation.js` files do not correctly regenerate during deployment. As a result, Magento does not display  translated theme strings.
+
+<!--- 57995-->* Magento does not properly display videos for simple products. It displays thumbnail images instead of the actual video. [GITHUB-6360](https://github.com/magento/magento2/issues/6360)
 
 <!--- 69636-->* Magento does not apply the Cart Price rules when sorting products by price. [GITHUB-7465](https://github.com/magento/magento2/issues/7465)
 
