@@ -14,7 +14,7 @@ github_link: release-notes/release-notes-2-2-prerelease1-EE.md
 {:toc}
 
 
-*Release date: June 21, 2017*
+*Release date: June 23, 2017*
 
 Magento Enterprise Edition 2.2.0 Release Candidate includes significant new features as well as many bug fixes. 
 
@@ -33,17 +33,16 @@ Look for the following highlights in this release:
 * **Advanced Reporting** provides merchants with an improved, reliable, and visuallying compelling way to report on their products, orders, and customers. 
 
 
-* **Sygnifyd fraud protection** is now integrated with Magento. Sygnifyd identifies and rejects potential fraudulent orders and provides 
+* **Signifyd fraud protection** is now integrated with Magento. Signifyd identifies and rejects potential fraudulent orders and provides 
 100% chargeback protection.
 
 
 
-* **Significant enhancements in platform security and developer experience**. Security improvements include the removal of specific un-serialize calls and changed hashing algorithm to improve security for sensitive values. Developers will appreciate  improvements in debugging, customizations, and logging. We've introduced **Mass Asynchronous Operations as a framework feature** that leverages our queuing system to provide increased scalability for long running business processes. 
+* **Significant enhancements in platform security and developer experience**. Security improvements include the removal of specific un-serialize calls and changed hashing algorithm to improve security for sensitive values. Developers will appreciate  improvements in debugging, customizations, and logging. We've introduced **Mass Asynchronous Operations as a framework feature** that leverages our queueing system to provide increased scalability for long running business processes. 
 
 
 
-* **Upgraded technology stack.** Magento has dropped support for PHP 5.6.  We now support PHP 7.1, along with Redis 3.2, MySQL 5.7, Varnish 5 support
-All third-party libraries have been upgraded to the latest stable version.
+* **Upgraded technology stack.** Magento has dropped support for PHP 5.6 and Varnish 3.  We now support PHP 7.1, along with Redis 3.2, MySQL 5.7, Varnish 5 support. All third-party libraries have been upgraded to the latest stable version.
 
 
 * **Pipeline deployment**, a new deployment process, enables separate build and deployment stages that can run separately. Resource-intensive processes can run on the build server. Pipeline deployment supports easy management of configuration between environments, too.
