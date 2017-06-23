@@ -31,27 +31,31 @@ If you want to evaluate the new B2B module, you must install it when you install
 </div>
 
 ### Release Candidate 1 code repositories
-There are three Magento code repositories on GitHub where you can find Release Candidate 1 code.
+There are three Magento code repositories on GitHub where you can find Release Candidate 1 code. When cloning repositories, be sure to checkout the specified branches.
 
 <table>
   <tr>
     <th><b>Magento edition</b></th>
     <th><b>Location</b></th>
+    <th><b>Branch</b></th>
     <th><b>Availability</b></th>
   </tr>
 <tr>
     <td><b>Magento CE</b></td>
     <td><a href="https://github.com/magento/magento2ce">https://github.com/magento/magento2ce</a></td>
-    <td>Publicly available already</td>
+    <td>2.2.0-RC1.1</td>
+    <td>Publicly available</td>
 </tr>
 <tr>
     <td><b>Magento EE</b></td>
     <td><a href="https://github.com/magento/magento2ee">https://github.com/magento/magento2ee</a></td>
+    <td>2.2.0-RC1.1</td>
     <td>Available after contract has been signed</td>
 </tr>
 <tr>
     <td><b>Magento B2B</b></td>
     <td><a href="https://github.com/magento/magento2b2b">https://github.com/magento/magento2b2b</a></td>
+    <td>1.0.0-RC1.1</td>
     <td>Available after contract has been signed</td>
 </tr>
 </table>
@@ -109,13 +113,10 @@ Create symlinks to the `magento2ee/` and `magento2b2b/` directories from the `ma
     drwxrwxr-x  11 magento magento 4.0K Jun 22 22:26 Backup
     lrwxrwxrwx   1 root    root      59 Jun 22 22:42 Banner -> /var/www/html/magento2ce/magento2ee/app/code/Magento/Banner
     lrwxrwxrwx   1 root    root      74 Jun 22 22:42 BannerCustomerSegment -> /var/www/html/magento2ce/magento2ee/app/code/Magento/BannerCustomerSegment
-  ```
-
-To remove all symlinks, run the following command:
-
-```
-php -f ./magento2ee/dev/tools/build-ee.php -- --command unlink --ce-source .
-```
+    ```
+<div class="bs-callout bs-callout-info" markdown="1">
+If you mistyped something when creating symlinks and need to remove them and try again, run the following command: `php -f ./magento2ee/dev/tools/build-ee.php -- --command unlink --ce-source .`
+</div>
 
 ### Update installation dependencies
 From the `magento2ce/` directory, run Composer to update dependencies:
@@ -127,7 +128,7 @@ composer install
 Refer to [Update installation dependencies](http://devdocs.magento.com/guides/v2.1/install-gde/install/prepare-install.html) for more information.
 
 ### Complete the installation
-Now that you've cloned all the repositories you need and prepared the files, proceed with installation:
+Now that you've cloned all the repositories you need and prepared the files, proceed with the installation:
 
 1.  Set file permissions on the `magento2ce/` installation directory:
 
@@ -135,7 +136,7 @@ Now that you've cloned all the repositories you need and prepared the files, pro
     cd /var/www/html/magento2ce
     find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \;
     find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
-    chown -R :www-data .
+    chown -R :<web-server-group> .
     chmod u+x bin/magento
     ```
   Refer to [Set file system ownership and permissions]({{ page.baseurl }}install-gde/prereq/file-system-perms.html) for more information.
@@ -164,10 +165,25 @@ The B2B module uses MySQL for message queue management. To succesfully launch th
     bin/magento queue:consumers:list
     ```
 
+    You should see the following consumers:
+
+    ```
+    sharedCatalogUpdatePrice
+    sharedCatalogUpdateCategoryPermissions
+    quoteItemCleaner
+    inventoryQtyCounter
+    ```
+
 2.  Start each service separately:
 
     ```
     bin/magento queue:consumers:start <consumer_name>
+    ```
+
+    For example:
+
+    ```
+    bin/magento queue:consumers:start sharedCatalogUpdatePrice
     ```
 
 Refer to [Manage message queues with MySQL]({{page.baseurl}}config-guide/mq/manage-mysql.html) for more information.
@@ -180,8 +196,8 @@ Depending on your system configuration, you may also need to specify the followi
 
 3.  Open your admin panel and click **Stores** > **Configuration** > **General** > **B2B Features**.
 
-4.  Select **Yes** from the drop-down boxes enable B2B features:
+4.  Select **Yes** from the drop-down boxes to enable B2B features:
 
-    ![enable B2B features]({{ page.baseurl }}common/images/enable_b2b_features.png)
+    ![enable B2B features]({{ site.baseurl }}common/images/enable_b2b_features.png)
 
 5.  Click **Save Config**.
