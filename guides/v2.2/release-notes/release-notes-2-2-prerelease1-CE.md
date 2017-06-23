@@ -49,22 +49,6 @@ buyer to create a cart with more than 300 line items, and merchants can process 
 
 
 
-
-## Fixed issues
-
-We've resolved many issues in this Release Candidate, including these issues:
-
-<!--- 69308-->* We've resolved two vulnerabilties that involved arbitrary file deletion and a lack of input sanitization that lead to Remote Code Execution. 
-
-<!--- 64842-->* We've eliminated unnecessary file check operations, which improved the performance of the Catalog and Product pages. 
-
-<!--- 57846-->* Magento now processes the New Order Status field (available in the Admin panel when configuring payment methods) as expected. [GITHUB-5860](https://github.com/magento/magento2/issues/5860)
-
-<!--- 67623-->*  When using Multiple Select Attribute as a Condition, the customers are now matched as exoected when the condition uses the value "contains". When specifying membership as contains condition in segment creation, customer who owns the target membership (no matter how many other membership he/she owns ) should be a matched customer. Previously, when specifying membership as contains condition in segment creation, customers were not matched. 
-
-<!--- 59135-->* Magento no longer shares customer session data between multiple customers on two websites. [GITHUB-4842](https://github.com/magento/magento2/issues/4842), [GITHUB-6468](https://github.com/magento/magento2/issues/6468)
-
-
 ## Breaking issues
 
 Here are some of the currently unresolved issues we are working on for this release:
