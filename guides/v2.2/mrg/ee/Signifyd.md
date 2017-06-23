@@ -1,4 +1,14 @@
-# Magento_Signifyd module
+---
+layout: default
+group: mrg
+subgroup: 20_Enterprise Edition
+ee_only: true
+title: Module Reference Guide
+menu_title: Signifyd
+menu_order: 2
+version: 2.2
+github_link: mrg/ee/Signifyd.md
+---
 
 ## Overview
 
