@@ -1,7 +1,7 @@
          ---
 layout: default
 group: release-notes
-subgroup: 02_rel-notes
+subgroup: 
 title: Magento EE 2.2 Pre-Release Candidate Release Notes
 menu_title: Magento EE 2.2 Pre-Release Candidate Release Notes
 menu_order: 260

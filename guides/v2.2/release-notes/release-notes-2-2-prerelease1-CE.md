@@ -1,7 +1,7 @@
 ---
 layout: default
 group: release-notes
-subgroup: 02_rel-notes
+subgroup:
 title: Magento 2.2 Pre-Release Candidate Release Notes
 menu_title: Magento CE 2.2 Pre-Release Candidate Release Notes
 menu_order: 162
@@ -35,7 +35,7 @@ Magento 2.2.0 contains over 15 security enhancements as well as one significant 
 
 <!--- 57846-->* Magento now processes the New Order Status field (available in the Admin panel when configuring payment methods) as expected. [GITHUB-5860](https://github.com/magento/magento2/issues/5860)
 
-<!--- 67623-->* 
+<!--- 67623-->*  When using Multiple Select Attribute as a Condition, the customers are now  matched as exoected when the condition uses the value "contains".
 
 <!--- 59135-->* 
 
