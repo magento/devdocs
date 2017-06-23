@@ -43,21 +43,27 @@ There are three Magento code repositories on GitHub where you can find Release C
     <th><b>Availability</b></th>
   </tr>
 <tr>
-    <td><b>Magento CE</b></td>
-    <td><a href="https://github.com/magento/magento2ce">https://github.com/magento/magento2ce</a></td>
-    <td>2.2.0-RC1.1</td>
+    <td><b>Magento CE (Non-partners)</b></td>
+    <td><a href="https://github.com/magento/magento2">https://github.com/magento/magento2</a></td>
+    <td>develop</td>
     <td>Publicly available</td>
 </tr>
 <tr>
+    <td><b>Magento CE (Partners)</b></td>
+    <td><a href="https://github.com/magento-partners/magento2ce">https://github.com/magento-partners/magento2ce</a></td>
+    <td>2.2.0-release-candidate</td>
+    <td>Available after contract has been signed</td>
+</tr>
+<tr>
     <td><b>Magento EE</b></td>
-    <td><a href="https://github.com/magento/magento2ee">https://github.com/magento/magento2ee</a></td>
-    <td>2.2.0-RC1.1</td>
+    <td><a href="https://github.com/magento-partners/magento2ee">https://github.com/magento-partners/magento2ee</a></td>
+    <td>2.2.0-release-candidate</td>
     <td>Available after contract has been signed</td>
 </tr>
 <tr>
     <td><b>Magento B2B</b></td>
-    <td><a href="https://github.com/magento/magento2b2b">https://github.com/magento/magento2b2b</a></td>
-    <td>1.0.0-RC1.1</td>
+    <td><a href="https://github.com/magento-partners/magento2b2b">https://github.com/magento-partners/magento2b2b</a></td>
+    <td>1.1.0-release-candidate</td>
     <td>Available after contract has been signed</td>
 </tr>
 </table>
@@ -70,15 +76,15 @@ These instructions assume you have experience working with Github repositories. 
 
     ```
     cd /var/www/html
-    git clone -b 2.2.0-RC1.1 git@github.com:magento/magento2ce.git
+    git clone -b 2.2.0-release-candidate git@github.com:magento-partners/magento2ce.git
     ```
 
 2.  Clone the `magento2ee/` and `magento2b2b/` repositories inside the `magento2ce/` repository:
 
     ```
     cd /var/www/html/magento2ce
-    git clone -b 2.2.0-RC1.1 git@github.com:magento/magento2ee.git
-    git clone -b 1.0.0-RC1.1 git@github.com:magento/magento2b2b.git
+    git clone -b 2.2.0-release-candidate git@github.com:magento-partners/magento2ee.git
+    git clone -b 1.1.0-release-candidate git@github.com:magento-partners/magento2b2b.git
     ```
 
 ### Prepare files for installation
