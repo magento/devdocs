@@ -1,13 +1,13 @@
-         ---
+---
 layout: default
 group: release-notes
-subgroup: 
+subgroup: 2.2.0 Release Candidate
 title: Magento EE 2.2 Release Candidate Release Notes
 menu_title: Magento EE 2.2 Release Candidate Release Notes
-menu_order: 163
-level3_menu_node: level3child
+menu_order: 700
+level3_menu_node: 
 level3_subgroup:  
-github_link: release-notes/release-notes-2-2-prelease1-EE.md
+github_link: release-notes/release-notes-2-2-prerelease1-EE.md
 ---
 
 *	TOC

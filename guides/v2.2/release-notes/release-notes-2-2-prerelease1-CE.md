@@ -1,13 +1,13 @@
 ---
 layout: default
 group: release-notes
-subgroup:
+subgroup: 2.2.0 Release Candidate
 title: Magento CE 2.2 Release Candidate Release Notes
 menu_title: Magento CE 2.2 Release Candidate Release Notes
-menu_order: 162
-level3_menu_node: level3child
-level3_subgroup: ce21-relnotes 
-github_link: release-notes/release-notes-2-2-prelease1-CE.md
+menu_order: 500
+level3_menu_node: 
+level3_subgroup: 
+github_link: release-notes/release-notes-2-2-prerelease1-CE.md
 ---
 
 *	TOC
