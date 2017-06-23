@@ -1,6 +1,5 @@
 <div markdown="1">
 
-<h2 id="instgde-prereq-compose-install">Install Composer</h2>
 First, check  if Composer is already installed: 
 
 In a command prompt, enter any of the following commands:

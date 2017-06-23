@@ -31,6 +31,8 @@ The audience for this topic is anyone who contributes to the Magento CE codebase
 
 {% include install/composer-overview.html %}
 
+## Install Composer {#instgde-prereq-compose-install}
+
 {% include install/composer-clone.md %}
 
 <h2 id="instgde-prereq-compose-clone">Clone the Magento repository</h2>
