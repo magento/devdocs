@@ -18,7 +18,7 @@ github_link: release-notes/release-notes-2-2-prerelease1-CE.md
 
 Magento Community Edition 2.2.0 Release Candidate includes significant new features as well as many bug fixes. 
 
-Looking for information about how Magento 2.2.0 Release Candidate evaluation program works? Check out the [Magento 2.2.0 Release Candidate QuickStart Guide]({{page.baseurl}}release-notes/quick-start.html) for more information.  This guide provides a handy overview of [Component Status](`{{page.baseurl}}release-notes/release-candidate/component-status.html`), too. 
+Looking for information about how Magento 2.2.0 Release Candidate evaluation program works? Check out the [Magento 2.2.0 Release Candidate QuickStart Guide]({{page.baseurl}}release-notes/release-candidate/quick-start.html) for more information.  This guide provides a handy overview of [Component Status](`{{page.baseurl}}release-notes/release-candidate/component-status.html`), too. 
 
 ## Highlights
 
