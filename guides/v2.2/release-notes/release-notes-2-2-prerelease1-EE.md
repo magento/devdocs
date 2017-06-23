@@ -5,8 +5,8 @@ subgroup:
 title: Magento EE 2.2 Release Candidate Release Notes
 menu_title: Magento EE 2.2 Release Candidate Release Notes
 menu_order: 260
-level3_menu_node: 
-level3_subgroup:  
+level3_menu_node: level3child
+level3_subgroup:  ee21-relnotes
 github_link: release-notes/release-notes-2-2-prelease1-EE.md
 ---
 
