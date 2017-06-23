@@ -2,7 +2,7 @@
 layout: default
 group: release-notes
 subgroup:
-title: Magento 2.2 Release Candidate Release Notes
+title: Magento CE 2.2 Release Candidate Release Notes
 menu_title: Magento CE 2.2 Release Candidate Release Notes
 menu_order: 162
 level3_menu_node: level3child
@@ -37,7 +37,7 @@ Look for the following highlights in this release:
 
 
 
-* ** Upgraded technology stack.**  We've dropped support for PHP 5.6.  We now support PHP 7.1, along with Redis 3.2, MySQL 5.7, Varnish 5 support
+* **Upgraded technology stack.**  We've dropped support for PHP 5.6.  We now support PHP 7.1, along with Redis 3.2, MySQL 5.7, Varnish 5 support
 All third-party libraries have been upgraded to the latest stable version.
 
 
