@@ -21,28 +21,28 @@ This guide covers:
 
 * **Submit comments on Magento 2.2.0 Release Candidate**
 
-* **Readiness status of individual code components**. Magento 2.2.0 Pre-Release Candidate code is a work in progress. Parts of the code base are more mature than others. You can see an overview of component status here. Note that we will update this information each Friday of the Pre-Release evaluation period. 
+* **Readiness status of individual code components**. Magento 2.2.0 Release Candidate code is a work in progress. Parts of the code base are more mature than others. You can see an overview of component status here [Component Status]({{page.baseurl}}release-notes/release-candidate/component-status.html). Note that we will update this information each Friday of the Release evaluation period. 
 
-* **Magento test environments specification**.  See [Magento Pre-Release Candidate Testing Environments]({{page.baseurl}}pre-release/testing-environments.html) for a selection of these environments.
+* **Magento test environments specification**.  See [Magento Release Candidate Testing Environments]({{page.baseurl}}release-candidate/testing-environments.html) for a selection of these environments.
 
 
 ## Welcome to Magento 2.2.0 Release Candidate Alpha 
 
-Magento 2.2.0 Pre-Release Candidate code is approaching production quality, but will include bugs and incomplete features. It does provide a snapshot of the current 2.2.0 codebase and consequently an early peak into the new features that 2.2.0 will provide in more robust form. 
+Magento 2.2.0 Release Candidate code is approaching production quality, but will include bugs and incomplete features. It does provide a snapshot of the current 2.2.0 codebase and consequently an early peek into the new features that 2.2.0 will provide in more robust form. 
 
 
 ### Goals of this release
 
-Participation in this Pre-Release Candidate evaluation has benefits for both community members and Magento. 
+Participation in this Release Candidate evaluation has benefits for both community members and Magento. 
 
 
 #### Magento goals
 
-Our primary goal for this release is to invite and receive community and partner feedback that will help us refine our 2.2.0 product code before GA. Specifically, we hope that participants in this Pre-Release Candidate evaluation can report on:
+Our primary goal for this release is to invite and receive community and partner feedback that will help us refine our 2.2.0 product code before GA. Specifically, we hope that participants in this Release Candidate evaluation can report on:
 
-* **Functionality**. Keep in mind that this Pre-Release Candidate does not contain all the functionality that the 2.2.0 GA release will include.   
+* **Functionality**. Keep in mind that this Release Candidate does not contain all the functionality that the 2.2.0 GA release will include.   
 
-* **Usability**. How do the features we've implemented for Pre-Release Candidate work in context of your typical workflows?
+* **Usability**. How do the features we've implemented for Release Candidate work in context of your typical workflows?
 
 * **Code quality issues**. Are there particularly challenging processes or tasks that need improvement?
 
@@ -58,15 +58,15 @@ As community members and Partners, you have much to gain from participating in t
 
 ### Usage guidelines
 
-Keep in mind the following features of this Release Candidate Alpha during your evaluation: 
+Keep in mind the following features of this Release Candidate  during your evaluation: 
 
-* Pre-Release code is not production quality and will contain bugs. Report these bugs as GitHub issues, please!
+* Release Candidate code is not production quality and will contain bugs. Report these bugs as GitHub issues, please!
 
-* Pre-Release code is for testing and training only. Do not use Pre-Release Software for production deployments. Any sites developed with Pre-Release Candidate software will require significant reworking to accomodate future code updates. 
+* Release Candidate code is for testing and training only. Do not use Release Candidate Software for production deployments. Any sites developed with Release Candidate software will require significant reworking to accomodate future code updates. 
 
-* No technical support is available for problems you encounter during Pre-Release evaluation.
+* No technical support is available for problems you encounter during Release Candidate evaluation.
 
-* You cannot share Pre-Release code with anyone external to your organization.
+* You cannot share Release Candidate code with anyone external to your organization.
 
 
 
@@ -78,13 +78,13 @@ How you participate in this evaluation depends upon which code base you'll be do
 
 #### CE Evaluation participants
 
-We invite any Magento community member to participate in the Magento 2.2.0 CE Pre-Release Candidate evaluation. 
+We invite any Magento community member to participate in the Magento 2.2.0 CE Release Candidate evaluation. 
 
 
 
 #### EE and B2B Evaluation participants
 
-The Magento 2.2.0 EE Pre-Release Candidate evaluation is open to all Solution Partners. To participate, you must:
+The Magento 2.2.0 EE Release Candidate evaluation is open to all Solution Partners. To participate, you must:
 
 * Sign the [Release Candidate Software agreement](https://magento.com/partners/portal/customer/account/login) 
 
@@ -101,7 +101,7 @@ The Magento 2.2.0 EE Pre-Release Candidate evaluation is open to all Solution Pa
 The Magento Developer documentation has been updated with the latest 2.2 information.  Visit the 2.2.0 Developer Documentation site for a peek at our updated 2.2.0 developer documentation.
 
 
-Ready to [install]({{page.baseurl}}pre-release/install.html) Magento 2.2.0  Release Candidate? 
+Ready to [install]({{page.baseurl}}release-candidate/install.html) Magento 2.2.0  Release Candidate? 
 
 
 

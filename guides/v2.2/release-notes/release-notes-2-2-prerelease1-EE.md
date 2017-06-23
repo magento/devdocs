@@ -1,13 +1,13 @@
-         ---
+---
 layout: default
 group: release-notes
-subgroup: 
+subgroup: 2.2.0 Release Candidate
 title: Magento EE 2.2 Release Candidate Release Notes
 menu_title: Magento EE 2.2 Release Candidate Release Notes
-menu_order: 163
-level3_menu_node: level3child
+menu_order: 700
+level3_menu_node: 
 level3_subgroup:  
-github_link: release-notes/release-notes-2-2-prelease1-EE.md
+github_link: release-notes/release-notes-2-2-prerelease1-EE.md
 ---
 
 *	TOC
@@ -51,26 +51,6 @@ All third-party libraries have been upgraded to the latest stable version.
 
 * **Substantial performance gains from improvements in indexing, cart, and cache operations**. Customers can browse and shop on a storefront while indexers are running. (Long-running indexers operate in batches to better manage memory and run times.) Cart improvements enable a
 buyer to create a cart with more than 300 line items, and merchants can process a cart with at least 300 line items. 
-
-
-
-
-
-## Fixed issues
-We've resolved many issues in this Release Candidate, including these issues:
-
-<!--- 69308-->* We've resolved two vulnerabilties that involved arbitrary file deletion and a lack of input sanitization that lead to Remote Code Execution. 
-
-<!--- 64842-->* We've eliminated unnecessary file check operations, which improved the performance of the Catalog and Product pages. 
-
-<!--- 63159-->* You can now save as changes to Sales rules as expected when Staging is enabled. 
-
-<!--- 57846-->* Magento now processes the New Order Status field (available in the Admin panel when configuring payment methods) as expected. [GITHUB-5860](https://github.com/magento/magento2/issues/5860)
-
-<!--- 67623-->*  When using Multiple Select Attribute as a Condition, the customers are now matched as exoected when the condition uses the value "contains". When specifying membership as contains condition in segment creation, customer who owns the target membership (no matter how many other membership he/she owns ) should be a matched customer. Previously, when specifying membership as contains condition in segment creation, customers were not matched. 
-
-<!--- 59135-->* Magento no longer shares customer session data between multiple customers on two websites. [GITHUB-4842](https://github.com/magento/magento2/issues/4842), [GITHUB-6468](https://github.com/magento/magento2/issues/6468)
-
 
 
 
