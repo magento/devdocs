@@ -10,5 +10,6 @@ level3_menu_node: level3child
 level3_subgroup: Sales
 github_link: mrg/ce/Sales/description.md
 ---
-
+<div class="mrg-content" markdown="1">
 {% remote_markdown https://raw.githubusercontent.com/magento/magento2/develop/app/code/Magento/Sales/README.md %}
+</div>
