@@ -1,0 +1,1455 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Customize product creation form | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.
+">
+	<meta http-equiv="last-modified" content="" />
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print" />
+	<link rel="canonical" href="//guides/v2.2/howdoi/customize_product.html">
+
+    <!-- WebUI popover css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
+
+  <script>
+    var baseUrl = "/";
+  </script>
+
+	<!-- crazyegg -->
+	<script type="text/javascript">
+	setTimeout(function(){var a=document.createElement("script");
+	var b=document.getElementsByTagName("script")[0];
+	a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0038/0321.js?"+Math.floor(new Date().getTime()/3600000);
+	a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+	</script>
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body>
+
+<header class="site-header">
+
+	<nav id="global-nav">
+
+		<div class="menu-btn"><a class="menu-trigger menu-icon" href="#"></a></div>
+
+		<div class="container">
+
+			<a class="logo" href="/guides/v2.2/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+
+			
+<div class="version-switcher dropdown">
+	<button id="version-switcher-button" class="btn btn-small dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		Magento 2.2
+	</button>
+
+	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/howdoi/customize_product.html">Magento 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.1/howdoi/customize_product.html">Magento 2.1</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.2/howdoi/customize_product.html">Magento 2.2 RC</a></li>
+	
+  </ul>
+
+</div>
+
+
+
+			<!-- Main Navigation -->
+<div class="nav-main">
+  <ul>
+    <li class="first">
+      <a href="#">Setup and Deployment</a>
+        <ul class="menu nav">
+          <li><a href="https://magento.com/tech-resources/download" target="_blank">Get Started with Magento DevBox Beta</a></li>
+            <li><a href="/guides/v2.2/install-gde/bk-install-guide.html">Installation Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/comp-mgr/bk-compman-upgrade-guide.html">Extension Update and System Upgrade Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/cloud/bk-cloud.html">Enterprise Cloud Edition Guide</a></li>
+          <li class="leaf"><a href="/magento-release-information.html">Release Information</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Development</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.2/architecture/bk-architecture.html">Architecture Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          <li><a href="/guides/v2.2/payments-integrations/bk-payments-integrations.html">Payments Integrations</a></li>
+          <li class="leaf"><a href="/guides/v2.2/mrg/intro.html">Module Reference Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          
+          <li class="first leaf"><a href="/guides/v2.2/contributor-guide/contributing.html">Contributor Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Frontend</a>
+        <ul class="menu nav">
+          <li class="first leaf"><a href="/guides/v2.2/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li class="leaf"><a href="/guides/v2.2/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">API</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.2/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li class="leaf"><a href="/guides/v2.2/rest/bk-rest.html">REST API Reference</a></li>
+          <li class="leaf"><a href="/guides/v2.2/soap/bk-soap.html">SOAP API Reference</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Testing</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.2/test/testing.html">Magento Testing Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/mtf/mtf_introduction.html">Functional Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/test/integration/integration_test_execution.html">Integration Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+        </ul>
+    </li>
+
+    <li>
+      <a href="/guides/v2.2/howdoi/bk-how-do-i.html">How Tos</a>
+    </li>
+
+    <li>
+      <a href="/videos/">Videos</a>
+    </li>
+  </ul>
+</div><!-- /.nav-main -->
+
+
+			<div class="search-btn">
+				<a class="search-trigger search-icon" href="//search.html"></a>
+			</div>
+
+			<form class="quick-search" action="/search.html" method="get">
+				<input type="search" name="q" placeholder="Search" />
+				<a href="#" class="quick-search-close">&times;</a>
+			</form>
+
+		</div>
+
+	</nav><!-- #global-nav -->
+
+</header>
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- .main-container -->
+	<div class="main-container">
+		<a id="main-content"></a>
+
+
+<div class="container">
+
+    
+    <div class="message-banner">
+        Review our 2.2 release candidate!  This beta version documentation includes B2B and more. <a href="/guides/v2.2/release-notes/release-candidate/quick-start.html">See the Quickstart Guide</a><br/>
+        Stay tuned — We'll roll out more 2.2 documentation updates in the coming weeks.
+    </div> 
+    
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+
+
+
+
+		<ul>
+
+		
+
+		
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+					
+					
+
+					
+
+						
+
+						
+
+							
+
+								<li class="q "><a href="/guides/v2.2/howdoi/howdoi_template.html"></a></li>
+
+							
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/howdoi/bk-how-do-i.html">How To</a></li>
+									
+								
+
+									
+
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/howdoi/howdoi_contribute.html">Contributor sign-up sheet</a></li>
+									
+								
+
+									
+
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/howdoi/config/configure.html">Configure Magento</a></li>
+									
+								
+
+									
+
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/howdoi/design_config.html">Customize Design Configuration</a></li>
+									
+								
+
+									
+
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/howdoi/deploy/deploy-to-prod.html">Deploy Magento to production</a></li>
+									
+								
+
+									
+
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/howdoi/install/install-topics.html">Installation and configuration</a></li>
+									
+								
+
+									
+
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/howdoi/frontend/front-js.html">JavaScript development</a></li>
+									
+								
+
+									
+
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/howdoi/frontend/front-layout.html">Layout development</a></li>
+									
+								
+
+									
+
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/howdoi/migrate/migrate.html">Migrate from Magento 1 to Magento 2</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/howdoi/migrate/migrate-themes.html">Migrate themes</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/howdoi/migrate/migrate-extensions.html">Migrate extensions</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/howdoi/migrate/migrate-code.html">Code Migration</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/howdoi/migrate/migrate-data.html">Data Migration</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/howdoi/php/php_devs.html">PHP Development</a></li>
+									
+								
+
+									
+
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/howdoi/frontend/front-theme.html">Theme development</a></li>
+									
+								
+
+									
+
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/howdoi/troubleshoot/troubleshoot.html">Troubleshooting Magento</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/howdoi/troubleshoot/reset_theme.html">Reset the theme to default</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+
+									
+
+										<li class="levela1"><span class="nav-header">Web APIs</span></li>
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/howdoi/webapi/integration.html">Create an integration</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/howdoi/webapi/search-criteria.html">Search using REST</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/howdoi/webapi/filter-response.html">Retrieve filtered responses</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/howdoi/checkout/checkout_overview.html">Customize checkout</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/howdoi/checkout/checkout_new_step.html">Add a new checkout step</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/howdoi/checkout/checkout_customize.html">Customize the view of a checkout step</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/howdoi/checkout/checkout_payment.html">Add a custom payment method to checkout</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/howdoi/checkout/checkout_order.html">Add custom validations before order placement</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/howdoi/checkout/checkout_carrier.html">Add custom shipping carrier validations</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/howdoi/checkout/checkout_zip.html">Add custom input mask for ZIP code</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/howdoi/checkout/checkout_edit_form.html">Add a custom template for a form field on Checkout page</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/howdoi/checkout/checkout_form.html">Add a new input form to checkout</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/howdoi/checkout/checkout_new_field.html">Add a new field in address form</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/howdoi/checkout/checkout_address.html">Add a custom shipping address renderer</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/howdoi/checkout/checkout_custom_checkbox.html">Add custom fields that influence other Checkout fields</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/howdoi/checkout/checkout_shipping_methods.html">Customize the list of shipping methods</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/howdoi/clean_static_cache.html">Clean static files cache</a></li>
+									
+								
+
+									
+
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1  active "><a class="nav-header" href="/guides/v2.2/howdoi/customize_product.html">Customize product creation form</a></li>
+									
+								
+
+									
+
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+  <nav class="breadcrumbs">
+
+    <a class="breadcrumb-item" href="/guides/v2.2/"><span>Home</span></a>
+
+    <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+    <!-- Iteration breadcrumb item -->
+    
+    
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+
+        
+          <a property="item" typeof="WebPage" href="/guides/v2.2/howdoi/bk-how-do-i.html">
+            <span property="name">How To</span>
+          </a>
+        
+
+        <meta property="position" content="1" />
+      </li>
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
+
+        
+
+          
+
+          <span property="name">Customize product creation form</span>
+
+        
+
+        <meta property="position" content="2" />
+      </li>
+
+    
+
+    
+
+
+
+    </ol>
+
+  </nav>
+
+
+
+	
+
+	
+
+	<h1 class="page-heading">Customize product creation form</h1>
+
+  
+
+
+</section>
+
+
+			<h2>What's in this topic</h2>
+
+<p>This topic describes how developers can customize the product creation form used on the product creation and product edit pages in <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span>.</p>
+
+<p>The following image is an illustration of the default view of the form on the <strong>New Product</strong> page:</p>
+
+<p><img src="/common/images/product_pmg.png" alt="The product creation page in Admin" /></p>
+
+<h2 id="overview">Overview</h2>
+
+<p>In Magento version 2.1, the product creation form was completely refactored, and implemented using the <a href="/guides/v2.2/ui-components/ui-form.html">form UI component</a>.</p>
+
+<p>Product attributes and attribute sets available in the form, can be customized and added under <strong>STORES</strong> &gt; <strong>Attributes</strong> in the Admin. But you can also customize the form view and behavior in code. The following sections describe what files define the form and how they can be customized in your <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span>.</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-mode.html">Set Magento to developer mode</a> while you perform all customizations and debugging.</p>
+
+<p>For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code. Instead, add your customizations in a separate module.</p>
+
+<h2 id="customize-the-form-configuration">Customize the form configuration</h2>
+
+<p>Customizing the form config file (that is, declarative customization) is preferable for changes like introducing new fields, field sets and modals.</p>
+
+<p>To customize the product creation form, take the following steps:</p>
+
+<ol>
+  <li>
+    <p>In your custom module, add an empty <code>product_form.xml</code> in the <code>&lt;your_module_dir&gt;/view/adminhtml/ui_component/</code> directory.</p>
+  </li>
+  <li>
+    <p>In this file, add content similar to the following:</p>
+  </li>
+</ol>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"> 
+<span class="nt">&lt;form</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:module:Magento_Ui:etc/ui_configuration.xsd&quot;</span><span class="nt">&gt;</span>
+
+...
+
+    <span class="nt">&lt;fieldset</span> <span class="na">name=</span><span class="s">&quot;%fieldset_name%&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;label&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>%field set label as displayed in UI%<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;sortOrder&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;number&quot;</span><span class="nt">&gt;</span>%order for displaying%<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/item&gt;</span>
+         <span class="nt">&lt;/argument&gt;</span>
+        <span class="c">&lt;!--field sets can be nested --&gt;</span> 
+        <span class="nt">&lt;fieldset</span> <span class="na">name=</span><span class="s">&quot;%nested_fieldset_name%&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;label&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span> <span class="na">translate=</span><span class="s">&quot;true&quot;</span><span class="nt">&gt;</span>%Nested fieldset Label as displayed in UI%<span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;collapsible&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;boolean&quot;</span><span class="nt">&gt;</span>true<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/argument&gt;</span>  
+            <span class="nt">&lt;field</span> <span class="na">name=</span><span class="s">&quot;%field_name%&quot;</span><span class="nt">&gt;</span>
+    			<span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;%field_option1%&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;%option_type%&quot;</span><span class="nt">&gt;</span>%value%<span class="nt">&lt;/item&gt;</span>
+                        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;%field_option2%&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;%option_type%&quot;</span><span class="nt">&gt;</span>%value%<span class="nt">&lt;/item&gt;</span>
+....
+                    <span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;/argument&gt;</span>
+            <span class="nt">&lt;/field&gt;</span>
+        <span class="nt">&lt;/fieldset&gt;</span>
+    <span class="nt">&lt;/fieldset&gt;</span>
+...
+<span class="nt">&lt;/form&gt;</span></code></pre></figure>
+
+<h3 id="adding-new-elements">Adding new elements</h3>
+
+<p>By default, the new elements (fields, field sets, modals, grids) which you add in the form configuration file, are displayed on the form whatever product is created; that is, for all <span term-uuid="6e836354-0067-48ac-84ce-a4ab7c0c492e" class="glossary-term" data-toggle="popover">product types</span>.</p>
+
+<p>In the <a href="#modifier">modifier class described further</a>, you can set the conditions for displaying certain elements for certain product types.</p>
+
+<h3 id="customizing-existing-fields-and-field-sets">Customizing existing fields and field sets</h3>
+<p>Your <code>product_form.xml</code> is merged with the same files from the other modules. So there is no need to copy their content, you only need to define changes. Even if you want to customize the existing entities, you only have to mention those options, the values of which are customized.</p>
+
+<p>To customize an existing entity, declare only those options, the values of which are customized, do not copy its entire configuration.</p>
+
+<p>To delete an existing field, or field set, in your <code>product_form.xml</code> use the following construction:</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml">...
+    <span class="nt">&lt;fieldset</span> <span class="na">name=</span><span class="s">&quot;%fieldset_name%&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;disabled&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;boolean&quot;</span><span class="nt">&gt;</span>true<span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/fieldset&gt;</span> 
+...</code></pre></figure>
+
+<p>For reference, view the product form configuration files of the Magento modules:</p>
+
+<ul>
+  <li><code>&lt;Magento_Catalog_module_dir&gt;/view/adminhtml/ui_component/product_form.xml</code></li>
+  <li><code>&lt;Magento_CatalogInventory_module_dir&gt;/view/adminhtml/ui_component/product_form.xml</code></li>
+  <li><code>&lt;Magento_ConfigurableProduct_module_dir&gt;view/adminhtml/ui_component/product_form.xml</code></li>
+</ul>
+
+<h2 id="modifier">Customize using a modifier class</h2>
+
+<p><a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_modifier_concept.html">Modifier classes</a> should be used when static declaration is not applicable. For example, in cases when additional data should be loaded from database. Also, modifier is a place where you add validations to display only certain fields for certain product types.</p>
+
+<p>In the run time, the form structure set in the modifier is merged with the configuration that comes from the <code>product_form.xml</code> configuration.</p>
+
+<h3 id="general-implementation-overview">General implementation overview</h3>
+
+<p>The <code>Magento\Catalog\Ui\DataProvider\Product\Form\ProductDataProvider</code> data provider class is responsible for data and metadata preparation for the product form. The pool of modifiers <code>Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\Pool</code> (virtual type) is injected to this data provider using the <code>__construct()</code> method. The pool’s preference is defined in <code>di.xml</code>.</p>
+
+<p>To add your custom modifier, you need to do the following:</p>
+
+<ol>
+  <li><a href="#modifier">Add the modifier code.</a></li>
+  <li><a href="#pool">Add it to the modifiers’ pool in <code>di.xml</code></a></li>
+</ol>
+
+<h3 id="modifier">Add your modifier</h3>
+
+<p>In your custom module directory, add the modifier class that implements the <code>Magento\UI\DataProvider\ModifierInterface</code> interface or extends the <code>Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\AbstractModifier</code>class. In your modifier, the <code>modifyData()</code> and the <code>modifyMeta()</code> methods must be implemented.</p>
+
+<p>In the modifier class, you can add UI elements using the same structure as in the <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span> configuration.</p>
+
+<p>For example:</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\AbstractModifier</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">Example</span> <span class="k">extends</span> <span class="nx">AbstractModifier</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">modifyMeta</span><span class="p">(</span><span class="k">array</span> <span class="nv">$meta</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$meta</span><span class="p">[</span><span class="s1">&#39;test_fieldset_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="s1">&#39;arguments&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+                <span class="s1">&#39;data&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+                    <span class="s1">&#39;config&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+                        <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="nx">__</span><span class="p">(</span><span class="s1">&#39;Label For Fieldset&#39;</span><span class="p">),</span>
+                        <span class="s1">&#39;sortOrder&#39;</span> <span class="o">=&gt;</span> <span class="mi">50</span><span class="p">,</span>
+                        <span class="s1">&#39;collapsible&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span>
+                    <span class="p">]</span>
+                <span class="p">]</span>
+            <span class="p">],</span>
+            <span class="s1">&#39;children&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+                <span class="s1">&#39;test_field_name&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+                    <span class="s1">&#39;arguments&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+                        <span class="s1">&#39;data&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+                            <span class="s1">&#39;config&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+                                <span class="s1">&#39;formElement&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;select&#39;</span><span class="p">,</span>
+                                <span class="s1">&#39;componentType&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;field&#39;</span><span class="p">,</span>
+                                <span class="s1">&#39;options&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+                                    <span class="p">[</span><span class="s1">&#39;value&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;test_value_1&#39;</span><span class="p">,</span> <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Test Value 1&#39;</span><span class="p">],</span>
+                                    <span class="p">[</span><span class="s1">&#39;value&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;test_value_2&#39;</span><span class="p">,</span> <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Test Value 2&#39;</span><span class="p">],</span>
+                                    <span class="p">[</span><span class="s1">&#39;value&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;test_value_3&#39;</span><span class="p">,</span> <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Test Value 3&#39;</span><span class="p">],</span>
+                                <span class="p">],</span>
+                                <span class="s1">&#39;visible&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+                                <span class="s1">&#39;required&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+                                <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="nx">__</span><span class="p">(</span><span class="s1">&#39;Label For Element&#39;</span><span class="p">)</span>
+                            <span class="p">]</span>
+                        <span class="p">]</span>
+                    <span class="p">]</span>
+                <span class="p">]</span>
+            <span class="p">]</span>
+        <span class="p">];</span>
+
+ <span class="k">return</span> <span class="nv">$meta</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * {@inheritdoc}</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">modifyData</span><span class="p">(</span><span class="k">array</span> <span class="nv">$data</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$data</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>You can create nested structures of elements by adding them to the <code>children</code> key of any element.</p>
+
+<h3 id="pool">Add modifier to the pool</h3>
+<p>In <code>&lt;your_module_dir&gt;/etc/adminhtml/di.xml</code> define your modifier as a dependency for <code>Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\Pool</code>.</p>
+
+<p>Following is an example of such definition:</p>
+
+<p><code>app/code/Magento/CatalogInventory/etc/adminhtml/di.xml</code>:</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml">     <span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">&quot;Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\Pool&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;arguments&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;modifiers&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;advancedInventory&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;class&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>Magento\CatalogInventory\Ui\DataProvider\Product\Form\Modifier\AdvancedInventory<span class="nt">&lt;/item&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;sortOrder&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;number&quot;</span><span class="nt">&gt;</span>20<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/argument&gt;</span>
+        <span class="nt">&lt;/arguments&gt;</span>
+    <span class="nt">&lt;/virtualType&gt;</span></code></pre></figure>
+
+<p>The <code>sortOrder</code> parameter defines the order of invocation for your <code>modifyData()</code> and <code>modifyMeta()</code> methods among other these methods of other modifiers in the pool. If a modifier is first in a pool, its <code>modifyData()</code> and <code>modifyMeta()</code> are invoked with empty arguments.</p>
+
+<p>To access product model within your modifier, it’s recommended to use an instance of <code>Magento\Catalog\Model\Locator\LocatorInterface</code>.</p>
+
+<p>For reference, view the modifier classes in the Magento modules, for example:</p>
+
+<ul>
+  <li><code>&lt;Magento_Catalog_module_dir&gt;/Ui/DataProvider/Product/Form/Modifier/AdvancedPricing.php</code></li>
+  <li><code>&lt;Magento_Catalog_module_dir&gt;/Ui/DataProvider/Product/Form/Modifier/AttributeSet.php</code></li>
+  <li><code>&lt;Magento_Catalog_module_dir&gt;/Ui/DataProvider/Product/Form/Modifier/Eav.php</code></li>
+  <li><code>&lt;Magento_ConfigurableProduct_module_dir&gt;/Ui/DataProvider/Product/Form/Modifier/Data/AssociatedProducts.php</code></li>
+</ul>
+
+<p>For reference about setting conditions for displaying certain elements for certain product types, view <code>&lt;Magento_Catalog_module_dir&gt;/Ui/DataProvider/Product/Form/Modifier/Eav.php#L476</code>.</p>
+
+<h2 id="recommended-reading">Recommended reading:</h2>
+
+<ul>
+  <li><a href="/guides/v2.2/ui_comp_guide/components/ui-form.html">Form UI component</a></li>
+  <li><a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_modifier_concept.html">About PHP modifiers in UI components</a></li>
+  <li><a href="/guides/v2.2/extension-dev-guide/depend-inj.html">Dependency injection</a></li>
+</ul>
+
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+  
+   <div class="github-link">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/howdoi/customize_product.md" target="_blank">
+       Edit this page on GitHub
+     </a>
+   </div>
+  
+
+  <div class="new-issue">
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/howdoi/customize_product.html" target="_blank">Give us feedback</a>
+  </div>
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.container -->
+
+
+	</div>
+	<!-- /.main-container -->
+
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div id="footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav">
+        <li><a href="/guides/v2.2/contributor-guide/contributing_docs.html">Become a Contributor</a>
+        <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
+        <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+        <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+        <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+        <li><a href="/guides/v2.2/release-notes/bk-release-notes.html">Release Notes</a></li>
+        <li><a href="/magento-third-party.html">Third-Party Licenses</a></li> 
+      </ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2017 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="/common/js/app.min.js"></script>
+
+<!-- Glossary integration -->
+<script src="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.js"></script>
+<script src="/common/js/glossary.tooltip.min.js"></script>
+<script>
+    $(document).ready(function(){
+      magento.glossary.init("https://magento.github.io/glossary/data/content-glossary.xml",function(term){return term.types.includes("glossary");},magento.glossary.tooltip.init);
+      });
+</script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+

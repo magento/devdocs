@@ -1,0 +1,1407 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Scenario test | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.
+">
+	<meta http-equiv="last-modified" content="" />
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print" />
+	<link rel="canonical" href="//guides/v2.2/mtf/mtf_entities/mtf_scenariotest.html">
+
+    <!-- WebUI popover css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
+
+  <script>
+    var baseUrl = "/";
+  </script>
+
+	<!-- crazyegg -->
+	<script type="text/javascript">
+	setTimeout(function(){var a=document.createElement("script");
+	var b=document.getElementsByTagName("script")[0];
+	a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0038/0321.js?"+Math.floor(new Date().getTime()/3600000);
+	a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+	</script>
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body>
+
+<header class="site-header">
+
+	<nav id="global-nav">
+
+		<div class="menu-btn"><a class="menu-trigger menu-icon" href="#"></a></div>
+
+		<div class="container">
+
+			<a class="logo" href="/guides/v2.2/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+
+			
+<div class="version-switcher dropdown">
+	<button id="version-switcher-button" class="btn btn-small dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		Magento 2.2
+	</button>
+
+	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/mtf/mtf_entities/mtf_scenariotest.html">Magento 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.1/mtf/mtf_entities/mtf_scenariotest.html">Magento 2.1</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.2/mtf/mtf_entities/mtf_scenariotest.html">Magento 2.2 RC</a></li>
+	
+  </ul>
+
+</div>
+
+
+
+			<!-- Main Navigation -->
+<div class="nav-main">
+  <ul>
+    <li class="first">
+      <a href="#">Setup and Deployment</a>
+        <ul class="menu nav">
+          <li><a href="https://magento.com/tech-resources/download" target="_blank">Get Started with Magento DevBox Beta</a></li>
+            <li><a href="/guides/v2.2/install-gde/bk-install-guide.html">Installation Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/comp-mgr/bk-compman-upgrade-guide.html">Extension Update and System Upgrade Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/cloud/bk-cloud.html">Enterprise Cloud Edition Guide</a></li>
+          <li class="leaf"><a href="/magento-release-information.html">Release Information</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Development</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.2/architecture/bk-architecture.html">Architecture Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          <li><a href="/guides/v2.2/payments-integrations/bk-payments-integrations.html">Payments Integrations</a></li>
+          <li class="leaf"><a href="/guides/v2.2/mrg/intro.html">Module Reference Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          
+          <li class="first leaf"><a href="/guides/v2.2/contributor-guide/contributing.html">Contributor Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Frontend</a>
+        <ul class="menu nav">
+          <li class="first leaf"><a href="/guides/v2.2/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li class="leaf"><a href="/guides/v2.2/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">API</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.2/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li class="leaf"><a href="/guides/v2.2/rest/bk-rest.html">REST API Reference</a></li>
+          <li class="leaf"><a href="/guides/v2.2/soap/bk-soap.html">SOAP API Reference</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Testing</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.2/test/testing.html">Magento Testing Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/mtf/mtf_introduction.html">Functional Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/test/integration/integration_test_execution.html">Integration Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+        </ul>
+    </li>
+
+    <li>
+      <a href="/guides/v2.2/howdoi/bk-how-do-i.html">How Tos</a>
+    </li>
+
+    <li>
+      <a href="/videos/">Videos</a>
+    </li>
+  </ul>
+</div><!-- /.nav-main -->
+
+
+			<div class="search-btn">
+				<a class="search-trigger search-icon" href="//search.html"></a>
+			</div>
+
+			<form class="quick-search" action="/search.html" method="get">
+				<input type="search" name="q" placeholder="Search" />
+				<a href="#" class="quick-search-close">&times;</a>
+			</form>
+
+		</div>
+
+	</nav><!-- #global-nav -->
+
+</header>
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- .main-container -->
+	<div class="main-container">
+		<a id="main-content"></a>
+
+
+<div class="container">
+
+    
+    <div class="message-banner">
+        Review our 2.2 release candidate!  This beta version documentation includes B2B and more. <a href="/guides/v2.2/release-notes/release-candidate/quick-start.html">See the Quickstart Guide</a><br/>
+        Stay tuned — We'll roll out more 2.2 documentation updates in the coming weeks.
+    </div> 
+    
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+<h4>Functional Testing Framework Guide</h4>
+
+
+
+
+
+
+		<ul>
+
+		
+
+		
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+					
+					
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/mtf/mtf_introduction.html">INTRODUCTION</a></li>
+									
+								
+
+									
+
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/mtf/mtf_installation.html">INSTALLATION</a></li>
+									
+								
+
+									
+
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/mtf/mtf_quickstart.html">QUICK START</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/mtf/mtf_quickstart/mtf_quickstart_config.html">Adjust configuration</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/mtf/mtf_quickstart/mtf_quickstart_magento.html">Prepare Magento application</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/mtf/mtf_quickstart/mtf_quickstart_environment.html">Prepare environment for test run</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/mtf/mtf_quickstart/mtf_quickstart_runtest.html">Test run</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/mtf/mtf_quickstart/mtf_quickstart_logs.html">See logs for failed tests</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/mtf/create_test.html">CREATE A TEST</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/mtf/create_test/out-of-the-box.html">Out-of-the-box test</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/mtf/create_test/new_test.html">New functional test. Theory</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/mtf/create_test/create_new_test.html">New functional test. Practice</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/mtf/features.html">FEATURES</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/mtf/features/isolation.html">Isolation management</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/mtf/features/modularity.html">Modularity</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/mtf/features/parallel_execution.html">Parallel execution flow</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/mtf/features/reporting.html">Reporting</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/mtf/features/test_suite.html">Test suite</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/mtf/features/webdriver.html">Web driver replacement</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/mtf/mtf_entities.html">ENTITIES</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/mtf/mtf_entities/mtf_fixture.html">Fixture</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/mtf/mtf_entities/mtf_fixture-repo.html">Fixture Repository</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/mtf/mtf_entities/mtf_handler.html">Handler</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/mtf/mtf_entities/mtf_block.html">Block</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/mtf/mtf_entities/mtf_typified-element.html">Typified element</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/mtf/mtf_entities/mtf_page.html">Page</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/mtf/mtf_entities/mtf_constraint.html">Constraint</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/mtf/mtf_entities/mtf_dataset.html">Data set</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/mtf/mtf_entities/mtf_testcase.html">Test case</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2  active "><a href="/guides/v2.2/mtf/mtf_entities/mtf_scenariotest.html">Scenario test</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/mtf/configuration.html">Configuration</a></li>
+									
+								
+
+									
+
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/mtf/mtf_update.html">UPDATE</a></li>
+									
+								
+
+									
+
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/mtf/troubleshooting.html">TROUBLESHOOTING</a></li>
+									
+								
+
+									
+
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/mtf/mtf_changelog.html">CHANGELOG</a></li>
+									
+								
+
+									
+
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+  <nav class="breadcrumbs">
+
+    <a class="breadcrumb-item" href="/guides/v2.2/"><span>Home</span></a>
+
+    <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+    <!-- Iteration breadcrumb item -->
+    
+    
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+
+        
+          <a property="item" typeof="WebPage" href="/guides/v2.2/mtf/mtf_introduction.html">
+            <span property="name">Introduction to the Functional Testing Framework</span>
+          </a>
+        
+
+        <meta property="position" content="1" />
+      </li>
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
+
+        
+
+          
+
+          <span property="name">Scenario test</span>
+
+        
+
+        <meta property="position" content="2" />
+      </li>
+
+    
+
+    
+
+
+
+    </ol>
+
+  </nav>
+
+
+
+	
+
+	
+
+	<h1 class="page-heading">Scenario test</h1>
+
+  
+
+
+</section>
+
+
+			<p>Scenario test is a case of separate test steps where each step is a distinct class. Test steps can be grouped in any order that makes functional testing more agile comparatively with <a href="/guides/v2.2/mtf/mtf_entities/mtf_testcase.html">injectable test</a>.</p>
+
+<p>Scenario test has the following advantages:</p>
+
+<ul>
+  <li>Each step in the scenario is a separate <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> class that is placed in the <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> it belongs to.</li>
+  <li>Scenario test reduces code duplication because each step can be used multiple times.</li>
+  <li>Scenario tests are flexible and support Magento modularity.</li>
+  <li>New test can be easily created using existing steps.</li>
+</ul>
+
+<p>Scenario test is split into four logical components:</p>
+
+<ul>
+  <li><a href="#test-case">test case</a>, which executes tests steps in the order defined in a tests scenario</li>
+  <li><a href="/guides/v2.2/mtf/mtf_entities/mtf_dataset.html">data set</a>, which contains variations of data and constraints for test steps</li>
+  <li><a href="#test-scenario">test scenario</a>, which defines order of test steps</li>
+  <li><a href="#test-step">test step</a>, which contains a test flow</li>
+</ul>
+
+<h2 id="test-case">Test case class</h2>
+
+<p>Test cases are located in <code>&lt;magento2 root dir&gt;/dev/tests/functional/tests/app/Magento/&lt;module&gt;/Test/TestCase</code> along with corresponding data sets. Each test case is a PHP class that only runs corresponding scenario, it doesn’t contain any other logic than that. In general, the difference between scenario test case and injectable test case is that all test logic is moved to distinct test steps, and their sequence is defined separately in <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span> file.</p>
+
+<p>Implementation of a scenario test is always the same. You have to change the name of your test case only.</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+
+<span class="k">namespace</span> <span class="nx">Magento\YourModule\Test\TestCase</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">Magento\Mtf\TestCase\Scenario</span><span class="p">;</span>
+
+<span class="sd">/**</span>
+<span class="sd"> * Preconditions:</span>
+<span class="sd"> * 1. ....</span>
+<span class="sd"> * 2. ....</span>
+<span class="sd">  *</span>
+<span class="sd"> * Steps:</span>
+<span class="sd"> * 1. ....</span>
+<span class="sd"> * 2. ....</span>
+<span class="sd"> * 3. ....</span>
+<span class="sd"> */</span>
+<span class="k">class</span> <span class="nc">FunctionalityYouWantToTest</span> <span class="k">extends</span> <span class="nx">Scenario</span>
+<span class="p">{</span>
+    <span class="sd">/**</span>
+<span class="sd">     * Runs the scenario test case for functionality you want to test.</span>
+<span class="sd">     *</span>
+<span class="sd">     * @return void</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">test</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">executeScenario</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>Scenario test case is a PHP class that extends the <code>\Magento\Mtf\TestCase\Scenario\</code> class and implements the <code>test()</code> method that calls <code>executeScenario()</code>. However, the <code>Scenario</code> class is not an interface, so the method can have any other name than <code>test()</code>.</p>
+
+<h2 id="test-scenario">Test scenario</h2>
+
+<p>Test scenario is a sequence of test steps. Each scenario test case has its own scenario. All scenarios for a module are collected in an XML file located in <code>&lt;magento2 root dir&gt;dev/tests/functional/tests/app/Magento/&lt;module&gt;/Test/etc/testcase.xml</code>.</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../../vendor/magento/mtf/Magento/Mtf/TestCase/etc/testcase.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;scenario</span> <span class="na">name=</span><span class="s">&quot;{name of test case}&quot;</span> <span class="na">firstStep=</span><span class="s">&quot;{name of step to be run first}&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;step</span> <span class="na">name=</span><span class="s">&quot;{name of test step}&quot;</span> <span class="na">module=</span><span class="s">&quot;{name of the module where the test step is located}&quot;</span> <span class="na">next=</span><span class="s">&quot;{name of test step to be run next}&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;step</span> <span class="na">name=</span><span class="s">&quot;{name of test step}&quot;</span> <span class="na">module=</span><span class="s">&quot;{name of the module where the test step is located}&quot;</span> <span class="na">next=</span><span class="s">&quot;{name of test step to be run next}&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;step</span> <span class="na">name=</span><span class="s">&quot;{name of test step}&quot;</span> <span class="na">module=</span><span class="s">&quot;{name of the module where the test step is located}&quot;</span> <span class="na">next=</span><span class="s">&quot;{name of test step to be run next}&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/scenario&gt;</span>
+    <span class="nt">&lt;scenario</span> <span class="na">name=</span><span class="s">&quot;{name of test case}&quot;</span> <span class="na">firstStep=</span><span class="s">&quot;{name of step to be run first}&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;step</span> <span class="na">name=</span><span class="s">&quot;{name of test step}&quot;</span> <span class="na">module=</span><span class="s">&quot;{name of the module where the test step is located}&quot;</span> <span class="na">next=</span><span class="s">&quot;{name of test step to be run next}&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;step</span> <span class="na">name=</span><span class="s">&quot;{name of test step}&quot;</span> <span class="na">module=</span><span class="s">&quot;{name of the module where the test step is located}&quot;</span> <span class="na">next=</span><span class="s">&quot;{name of test step to be run next}&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;step</span> <span class="na">name=</span><span class="s">&quot;{name of test step}&quot;</span> <span class="na">module=</span><span class="s">&quot;{name of the module where the test step is located}&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;/scenario&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
+
+<h3 id="scenario-element"><code>&lt;scenario&gt;</code> element</h3>
+
+<p>Each <code>&lt;scenario&gt;</code> node defines a name of related test case in <code>name</code> and optionally a name of test step to be run first as <code>firstStep</code>.</p>
+
+<p>Example:</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;scenario</span> <span class="na">name=</span><span class="s">&quot;OnePageCheckoutTest&quot;</span> <span class="na">firstStep=</span><span class="s">&quot;setupConfiguration&quot;</span><span class="nt">&gt;</span>
+...
+<span class="nt">&lt;/scenario&gt;</span></code></pre></figure>
+
+<p>The example declares a scenario for <code>TestCase/OnePageCheckoutTest.php</code> where <code>&lt;step&gt;</code> with <code>name="setupConfiguration"</code> is to be run first.</p>
+
+<h3 id="step-element"><code>&lt;step&gt;</code> element</h3>
+
+<p>Each scenario contains test steps as <code>&lt;step&gt;</code> child elements. Each <code>&lt;step&gt;</code> requires <code>name</code> and <code>module</code> to define the name of a test step and the module to which it belongs to. All test steps are located in <code>&lt;module&gt;/Test/TestStep</code>.</p>
+
+<p>Example:</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;step</span> <span class="na">name=</span><span class="s">&quot;setupConfiguration&quot;</span> <span class="na">module=</span><span class="s">&quot;Magento_Config&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;step</span> <span class="na">name=</span><span class="s">&quot;createProducts&quot;</span> <span class="na">module=</span><span class="s">&quot;Magento_Catalog&quot;</span><span class="nt">/&gt;</span></code></pre></figure>
+
+<p>The example defines the following test steps:</p>
+
+<ul>
+  <li><code>Config/Test/TestStep/SetupConfigurationStep.php</code></li>
+  <li><code>Catalog/Test/TestStep/CreateProductsStep.php</code></li>
+</ul>
+
+<h4 id="next-prev-attributes"><code>next</code> and <code>prev</code> attributes</h4>
+
+<p>Using <code>next</code> and <code>prev</code> attributes you can specify previous or next test step as part of the node.</p>
+
+<p>The following examples show tangled structure to demonstrate logic of the attributes.</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;scenario</span> <span class="na">name=</span><span class="s">&quot;OnePageCheckoutTest&quot;</span> <span class="na">firstStep=</span><span class="s">&quot;setupConfiguration&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;step</span> <span class="na">name=</span><span class="s">&quot;createProducts&quot;</span> <span class="na">module=</span><span class="s">&quot;Magento_Catalog&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;step</span> <span class="na">name=</span><span class="s">&quot;setupConfiguration&quot;</span> <span class="na">module=</span><span class="s">&quot;Magento_Config&quot;</span> <span class="na">next=</span><span class="s">&quot;createProducts&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/scenario&gt;</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;scenario</span> <span class="na">name=</span><span class="s">&quot;OnePageCheckoutTest&quot;</span> <span class="na">firstStep=</span><span class="s">&quot;setupConfiguration&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;step</span> <span class="na">name=</span><span class="s">&quot;createProducts&quot;</span> <span class="na">module=</span><span class="s">&quot;Magento_Catalog&quot;</span> <span class="na">prev=</span><span class="s">&quot;setupConfiguration&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;step</span> <span class="na">name=</span><span class="s">&quot;setupConfiguration&quot;</span> <span class="na">module=</span><span class="s">&quot;Magento_Config&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/scenario&gt;</span></code></pre></figure>
+
+<p>Both examples define the following test steps and their sequence:</p>
+
+<ul>
+  <li><code>Config/Test/TestStep/SetupConfigurationStep.php</code>.</li>
+  <li><code>Catalog/Test/TestStep/CreateProductsStep.php</code>.</li>
+</ul>
+
+<h4 id="alias-attribute"><code>alias</code> attribute</h4>
+
+<p>Sometimes you want to use the same test step more then once in your scenario. In this case, you can use the <code>alias</code> attribute to define another name for a step that has been already listed as <code>&lt;step&gt;</code>.</p>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>Note that you can use <code>&lt;step&gt;</code> with the same name in a scenario only once.</p>
+</div>
+
+<p>Example:</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;scenario</span> <span class="na">name=</span><span class="s">&quot;OnePageCheckoutTest&quot;</span> <span class="na">firstStep=</span><span class="s">&quot;setupConfiguration&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;step</span> <span class="na">name=</span><span class="s">&quot;setupConfiguration&quot;</span> <span class="na">module=</span><span class="s">&quot;Magento_Config&quot;</span> <span class="na">next=</span><span class="s">&quot;createProducts&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;step</span> <span class="na">name=</span><span class="s">&quot;createProducts&quot;</span> <span class="na">module=</span><span class="s">&quot;Magento_Catalog&quot;</span> <span class="na">next=</span><span class="s">&quot;setupConfigurationAfter&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;step</span> <span class="na">name=</span><span class="s">&quot;setupConfigurationAfter&quot;</span> <span class="na">alias=</span><span class="s">&quot;setupConfiguration&quot;</span> <span class="na">module=</span><span class="s">&quot;Magento_Config&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/scenario&gt;</span></code></pre></figure>
+
+<p>The example defines the following test steps and their sequence:</p>
+
+<ul>
+  <li><code>Config/Test/TestStep/SetupConfigurationStep.php</code></li>
+  <li><code>Catalog/Test/TestStep/CreateProductsStep.php</code></li>
+  <li><code>Config/Test/TestStep/SetupConfigurationStep.php</code></li>
+</ul>
+
+<h2 id="test-step">Test step class</h2>
+
+<p>All test steps are located in <code>&lt;module&gt;/Test/TestStep</code> as PHP classes in the following format:</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+
+<span class="k">namespace</span> <span class="nx">Magento\YourModule\Test\TestStep</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">Magento\Mtf\TestStep\TestStepInterface</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">YourTestStep</span> <span class="k">implements</span> <span class="nx">TestStepInterface</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span>
+    <span class="p">(</span>
+        <span class="c1">// data that are required for this step along with other dependencies.</span>
+    <span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// all required classes (fixtures, pages, etc.) have to be assigned here.</span>
+    <span class="p">};</span>
+    
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">run</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// logic of the functional test step.</span>
+    <span class="p">}</span>
+    
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">cleanup</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="c1">// additional logic to be executed after the test step.</span>
+    <span class="p">}</span>
+    
+<span class="p">}</span></code></pre></figure>
+
+<p>A tests step must implement <code>Magento\Mtf\TestStep\TestStepInterface</code> and define:</p>
+
+<ul>
+  <li>constructor (optional)</li>
+  <li>public method <code>run()</code> (required)</li>
+  <li>public method <code>cleanup()</code> (optional)</li>
+</ul>
+
+<p>Let’s see a test step on the example with <code>Magento\Customer\Test\TestStep\LoginCustomerOnFrontendStep</code>.</p>
+
+<div class="collapsible"><b class="collapsible-title">Show/hide example </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="x"> </span><span class="cp">&lt;?php</span>
+ <span class="sd">/**</span>
+<span class="sd">  * Copyright © 2016 Magento. All rights reserved.</span>
+<span class="sd">  * See COPYING.txt for license details.</span>
+<span class="sd">  */</span>
+ 
+ <span class="k">namespace</span> <span class="nx">Magento\Customer\Test\TestStep</span><span class="p">;</span>
+ 
+ <span class="k">use</span> <span class="nx">Magento\Cms\Test\Page\CmsIndex</span><span class="p">;</span>
+ <span class="k">use</span> <span class="nx">Magento\Customer\Test\Fixture\Customer</span><span class="p">;</span>
+ <span class="k">use</span> <span class="nx">Magento\Customer\Test\Page\CustomerAccountLogin</span><span class="p">;</span>
+ <span class="k">use</span> <span class="nx">Magento\Mtf\TestStep\TestStepInterface</span><span class="p">;</span>
+ 
+ <span class="sd">/**</span>
+<span class="sd">  * Login customer on frontend.</span>
+<span class="sd">  */</span>
+ <span class="k">class</span> <span class="nc">LoginCustomerOnFrontendStep</span> <span class="k">implements</span> <span class="nx">TestStepInterface</span>
+ <span class="p">{</span>
+     <span class="sd">/**</span>
+<span class="sd">      * Customer fixture.</span>
+<span class="sd">      *</span>
+<span class="sd">      * @var Customer</span>
+<span class="sd">      */</span>
+     <span class="k">protected</span> <span class="nv">$customer</span><span class="p">;</span>
+ 
+     <span class="sd">/**</span>
+<span class="sd">      * Cms index page.</span>
+<span class="sd">      *</span>
+<span class="sd">      * @var CmsIndex</span>
+<span class="sd">      */</span>
+     <span class="k">protected</span> <span class="nv">$cmsIndex</span><span class="p">;</span>
+ 
+     <span class="sd">/**</span>
+<span class="sd">      * Customer login page.</span>
+<span class="sd">      *</span>
+<span class="sd">      * @var CustomerAccountLogin</span>
+<span class="sd">      */</span>
+     <span class="k">protected</span> <span class="nv">$customerAccountLogin</span><span class="p">;</span>
+ 
+     <span class="sd">/**</span>
+<span class="sd">      * Logout customer on frontend step.</span>
+<span class="sd">      *</span>
+<span class="sd">      * @var LogoutCustomerOnFrontendStep</span>
+<span class="sd">      */</span>
+     <span class="k">protected</span> <span class="nv">$logoutCustomerOnFrontend</span><span class="p">;</span>
+ 
+     <span class="sd">/**</span>
+<span class="sd">      * @constructor</span>
+<span class="sd">      * @param CmsIndex $cmsIndex</span>
+<span class="sd">      * @param CustomerAccountLogin $customerAccountLogin</span>
+<span class="sd">      * @param LogoutCustomerOnFrontendStep $logoutCustomerOnFrontend</span>
+<span class="sd">      * @param Customer $customer</span>
+<span class="sd">      */</span>
+     <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span>
+         <span class="nx">CmsIndex</span> <span class="nv">$cmsIndex</span><span class="p">,</span>
+         <span class="nx">CustomerAccountLogin</span> <span class="nv">$customerAccountLogin</span><span class="p">,</span>
+         <span class="nx">LogoutCustomerOnFrontendStep</span> <span class="nv">$logoutCustomerOnFrontend</span><span class="p">,</span>
+         <span class="nx">Customer</span> <span class="nv">$customer</span>
+     <span class="p">)</span> <span class="p">{</span>
+         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">cmsIndex</span> <span class="o">=</span> <span class="nv">$cmsIndex</span><span class="p">;</span>
+         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">customerAccountLogin</span> <span class="o">=</span> <span class="nv">$customerAccountLogin</span><span class="p">;</span>
+         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">customer</span> <span class="o">=</span> <span class="nv">$customer</span><span class="p">;</span>
+         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">logoutCustomerOnFrontend</span> <span class="o">=</span> <span class="nv">$logoutCustomerOnFrontend</span><span class="p">;</span>
+     <span class="p">}</span>
+ 
+     <span class="sd">/**</span>
+<span class="sd">      * Login customer.</span>
+<span class="sd">      *</span>
+<span class="sd">      * @return void</span>
+<span class="sd">      */</span>
+     <span class="k">public</span> <span class="k">function</span> <span class="nf">run</span><span class="p">()</span>
+     <span class="p">{</span>
+         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">logoutCustomerOnFrontend</span><span class="o">-&gt;</span><span class="na">run</span><span class="p">();</span>
+         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">cmsIndex</span><span class="o">-&gt;</span><span class="na">getLinksBlock</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">openLink</span><span class="p">(</span><span class="s1">&#39;Sign In&#39;</span><span class="p">);</span>
+         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">cmsIndex</span><span class="o">-&gt;</span><span class="na">getCmsPageBlock</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">waitPageInit</span><span class="p">();</span>
+         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">customerAccountLogin</span><span class="o">-&gt;</span><span class="na">getLoginBlock</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">login</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">customer</span><span class="p">);</span>
+         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">cmsIndex</span><span class="o">-&gt;</span><span class="na">getCmsPageBlock</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">waitPageInit</span><span class="p">();</span>
+     <span class="p">}</span>
+ 
+     <span class="sd">/**</span>
+<span class="sd">      * Logout customer on fronted.</span>
+<span class="sd">      *</span>
+<span class="sd">      * @return void</span>
+<span class="sd">      */</span>
+     <span class="k">public</span> <span class="k">function</span> <span class="nf">cleanup</span><span class="p">()</span>
+     <span class="p">{</span>
+         <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">logoutCustomerOnFrontend</span><span class="o">-&gt;</span><span class="na">run</span><span class="p">();</span>
+     <span class="p">}</span>
+ <span class="p">}</span>
+ </code></pre></figure>
+</div></div>
+
+<h3 id="constructor-method"><code>constructor()</code> method</h3>
+
+<p>You can optionally use the <code>constructor()</code> method which injects data to be used by <code>run()</code>. The data may include classes like pages, variation data, data returned by previous executed steps, etc.</p>
+
+<p>On the previous example the <code>constructor()</code>:</p>
+
+<ul>
+  <li>injects the <code>CmsIndex</code> and <code>CustomerAccountLogin</code> pages</li>
+  <li>injects the <code>LogoutCustomerOnFrontendStep</code> step</li>
+  <li>injects the <code>Customer</code> fixture data</li>
+  <li>assigns arguments to corresponding class properties</li>
+</ul>
+
+<h3 id="run-method"><code>run()</code> method</h3>
+
+<p>The <code>run()</code> method is required to perform a test step and contains logic of the step.</p>
+
+<p>On the previous example the <code>run()</code> method:</p>
+
+<ul>
+  <li>logs out if the customer was logged in</li>
+  <li>clicks ‘Sign In’ on the <code>LinksBlock</code> of the <code>cmsIndex</code> page</li>
+  <li>waits for requested page loading</li>
+  <li>logs in the customer on the <code>customerAccountLogin</code> page</li>
+  <li>waits for logging in the customer</li>
+</ul>
+
+<h3 id="cleanup-method"><code>cleanup()</code> method</h3>
+
+<p>The <code>cleanup()</code> method is optional. It serves to reset Magento to initial state or execute any other logic after each variation of a test step.</p>
+
+<p>On the previous example the <code>clean()</code> method:</p>
+
+<ul>
+  <li>logs out the customer</li>
+</ul>
+
+<!-- LINKS DEFINITIONS -->
+
+
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+  
+   <div class="github-link">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/mtf/mtf_entities/mtf_scenariotest.md" target="_blank">
+       Edit this page on GitHub
+     </a>
+   </div>
+  
+
+  <div class="new-issue">
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/mtf/mtf_entities/mtf_scenariotest.html" target="_blank">Give us feedback</a>
+  </div>
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.container -->
+
+
+	</div>
+	<!-- /.main-container -->
+
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div id="footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav">
+        <li><a href="/guides/v2.2/contributor-guide/contributing_docs.html">Become a Contributor</a>
+        <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
+        <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+        <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+        <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+        <li><a href="/guides/v2.2/release-notes/bk-release-notes.html">Release Notes</a></li>
+        <li><a href="/magento-third-party.html">Third-Party Licenses</a></li> 
+      </ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2017 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="/common/js/app.min.js"></script>
+
+<!-- Glossary integration -->
+<script src="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.js"></script>
+<script src="/common/js/glossary.tooltip.min.js"></script>
+<script>
+    $(document).ready(function(){
+      magento.glossary.init("https://magento.github.io/glossary/data/content-glossary.xml",function(term){return term.types.includes("glossary");},magento.glossary.tooltip.init);
+      });
+</script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+

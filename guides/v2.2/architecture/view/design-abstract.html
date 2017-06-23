@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Design abstractions | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.
+">
+	<meta http-equiv="last-modified" content="" />
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print" />
+	<link rel="canonical" href="//guides/v2.2/architecture/view/design-abstract.html">
+
+    <!-- WebUI popover css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
+
+  <script>
+    var baseUrl = "/";
+  </script>
+
+	<!-- crazyegg -->
+	<script type="text/javascript">
+	setTimeout(function(){var a=document.createElement("script");
+	var b=document.getElementsByTagName("script")[0];
+	a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0038/0321.js?"+Math.floor(new Date().getTime()/3600000);
+	a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+	</script>
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body>
+
+<header class="site-header">
+
+	<nav id="global-nav">
+
+		<div class="menu-btn"><a class="menu-trigger menu-icon" href="#"></a></div>
+
+		<div class="container">
+
+			<a class="logo" href="/guides/v2.2/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+
+			
+<div class="version-switcher dropdown">
+	<button id="version-switcher-button" class="btn btn-small dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		Magento 2.2
+	</button>
+
+	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/architecture/view/design-abstract.html">Magento 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.1/architecture/view/design-abstract.html">Magento 2.1</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.2/architecture/view/design-abstract.html">Magento 2.2 RC</a></li>
+	
+  </ul>
+
+</div>
+
+
+
+			<!-- Main Navigation -->
+<div class="nav-main">
+  <ul>
+    <li class="first">
+      <a href="#">Setup and Deployment</a>
+        <ul class="menu nav">
+          <li><a href="https://magento.com/tech-resources/download" target="_blank">Get Started with Magento DevBox Beta</a></li>
+            <li><a href="/guides/v2.2/install-gde/bk-install-guide.html">Installation Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/comp-mgr/bk-compman-upgrade-guide.html">Extension Update and System Upgrade Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/cloud/bk-cloud.html">Enterprise Cloud Edition Guide</a></li>
+          <li class="leaf"><a href="/magento-release-information.html">Release Information</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Development</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.2/architecture/bk-architecture.html">Architecture Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          <li><a href="/guides/v2.2/payments-integrations/bk-payments-integrations.html">Payments Integrations</a></li>
+          <li class="leaf"><a href="/guides/v2.2/mrg/intro.html">Module Reference Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          
+          <li class="first leaf"><a href="/guides/v2.2/contributor-guide/contributing.html">Contributor Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Frontend</a>
+        <ul class="menu nav">
+          <li class="first leaf"><a href="/guides/v2.2/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li class="leaf"><a href="/guides/v2.2/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">API</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.2/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li class="leaf"><a href="/guides/v2.2/rest/bk-rest.html">REST API Reference</a></li>
+          <li class="leaf"><a href="/guides/v2.2/soap/bk-soap.html">SOAP API Reference</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Testing</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.2/test/testing.html">Magento Testing Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/mtf/mtf_introduction.html">Functional Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/test/integration/integration_test_execution.html">Integration Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+        </ul>
+    </li>
+
+    <li>
+      <a href="/guides/v2.2/howdoi/bk-how-do-i.html">How Tos</a>
+    </li>
+
+    <li>
+      <a href="/videos/">Videos</a>
+    </li>
+  </ul>
+</div><!-- /.nav-main -->
+
+
+			<div class="search-btn">
+				<a class="search-trigger search-icon" href="//search.html"></a>
+			</div>
+
+			<form class="quick-search" action="/search.html" method="get">
+				<input type="search" name="q" placeholder="Search" />
+				<a href="#" class="quick-search-close">&times;</a>
+			</form>
+
+		</div>
+
+	</nav><!-- #global-nav -->
+
+</header>
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- .main-container -->
+	<div class="main-container">
+		<a id="main-content"></a>
+
+
+<div class="container">
+
+    
+    <div class="message-banner">
+        Review our 2.2 release candidate!  This beta version documentation includes B2B and more. <a href="/guides/v2.2/release-notes/release-candidate/quick-start.html">See the Quickstart Guide</a><br/>
+        Stay tuned — We'll roll out more 2.2 documentation updates in the coming weeks.
+    </div> 
+    
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+
+
+
+
+		<ul>
+
+		
+
+		
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+  <nav class="breadcrumbs">
+
+    <a class="breadcrumb-item" href="/guides/v2.2/"><span>Home</span></a>
+
+    <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+    <!-- Iteration breadcrumb item -->
+    
+    
+
+    
+
+    
+
+
+  
+  <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+    <a href="/videos/"><span property="name">Videos</span></a>
+  </li>
+  
+
+  
+  <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+    
+    <a href="/videos/">
+    
+    <span property="name">Videos</span></a>
+  </li>
+  <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
+    <span property="name">Design abstractions</span>
+  </li>
+  
+
+
+
+
+    </ol>
+
+  </nav>
+
+
+
+	
+
+	
+
+	<h1 class="page-heading">Design abstractions</h1>
+
+  
+
+
+</section>
+
+
+			<h2 id="m2devgde-design-abstract-intro">Overview</h2>
+
+<p>A <em>design abstraction</em> is a <span term-uuid="73ab5daa-5857-4039-97df-11269b626134" class="glossary-term" data-toggle="popover">layout</span> file (a set of layout instructions) that does not have its own implementation as a page rendered by a certain controller action (page type), but could be used by one or more of such pages to define the look and feel of a page. Design abstractions are used to qualify pages by type, providing business users the ability to customize designs for certain types of pages. In particular design abstractions are used in <span term-uuid="f0dcf847-ce21-4b88-8b45-83e1cbf08100" class="glossary-term" data-toggle="popover">widget</span> creation to define the types of pages where a widget can be displayed.</p>
+
+<p>For example, there is a design abstraction defining a two-column page layout. So when creating a widget, you can select it to be displayed on all pages with two-column page layout. This article describes how design abstractions are declared, called in layout files, and used in widget creation in the <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span> panel. This information is a practical reference for <span term-uuid="b00459e5-a793-44dd-98d5-852ab33fc344" class="glossary-term" data-toggle="popover">frontend</span> developers working with layouts, and is also useful for the wider audience of server-side and frontend developers who want to understand how the Magento system implements layouts.</p>
+
+<h2 id="m2devgde-design-abstract-what">About design abstractions</h2>
+
+<p>Each design abstraction is a uniquely identified set of layout instructions, so design abstractions are one of the types of layout handles.</p>
+
+<p>The “look and feel” defined in design abstractions might be determined by the purpose of pages or merely by design requirements.</p>
+
+<p>For example, <code>page_three_column</code> is a design abstraction that defines a three-column layout for a page. Example:</p>
+
+<p><img src="/common/images/view_da.png" alt="Three column layout" /></p>
+
+<p>The other example is a <code>customer_account</code> design abstraction which adds menu items in the left side navigation column. The abstraction is used in layouts of the My Account section pages on the store front:</p>
+
+<p><img src="/common/images/view_da3.png" alt="My Account section on the storefront" /></p>
+
+<p><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer/view/frontend/layout/customer_account.xml" target="_blank">customer_account.xml</a> is a design abstraction. It defines only the links for the <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Customer" target="_blank">Magento_Customer</a> module:</p>
+
+<p>Other links in the navigation column are added by layout files of other relevant modules. For example, the Review link is added by <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Review/view/frontend/layout/customer_account.xml" target="_blank">the Magento_Review module’s customer_account.xml</a>.</p>
+
+<p>When a page is rendered, all <code>customer_account</code> layouts are merged, and the pages where the <code>customer_account</code> design abstraction is used contain the elements from all <code>customer_account.xml</code> files.</p>
+
+<h2 id="m2devgde-design-abstract-declare">Declare design abstractions</h2>
+
+<p>According to the layout naming convention, the name of a layout file corresponds to the layout handle it defines.
+To declare a layout file as a design abstraction, you need to set the layout handle (the root <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span> node of a file which represents a handle) attributes as follows:</p>
+
+<p><code>&lt;layout&nbsp;label=&quot;{your_custom_value}&quot;&nbsp;design_abstraction=&quot;custom&quot;&nbsp;/&gt;</code></p>
+
+<p>Note, that while you can put any string as label value, for the <code>design_abstraction</code> attribute <code>"custom"</code> is a mandatory value.
+The label specified here is used for <a href="#m2devgde-design-abstract-widget">identifying a design abstraction during widget creation</a>.
+If you look at the <code>&lt;layout&gt;</code> node of the <code>customer_account.xml</code> discussed in the previous section, you can see it is being declared a design abstraction:</p>
+
+<pre>
+&lt;layout&nbsp;xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&nbsp;label=&quot;Customer&nbsp;My&nbsp;Account&nbsp;(All&nbsp;Pages)&quot;&nbsp;design_abstraction=&quot;custom&quot;&gt;
+</pre>
+
+<h2 id="m2devgde-design-abstract-use">How to use design abstractions</h2>
+
+<p>To use a design abstraction in a layout file, insert the following code:</p>
+
+<pre>
+&lt;update&nbsp;handle=&quot;design_abstraction_name&quot;/&gt;
+</pre>
+
+<p>where <code>design_abstraction_name</code> is the name of the design abstraction layout file.</p>
+
+<p>To complete the <code>customer_account.xml</code> design abstraction example, look at <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Review/view/frontend/layout/review_customer_index.xml" target="_blank">customer_account_index.xml</a>, which uses the <code>customer_account</code> design abstraction. This layout is used for rendering the My Dashboard page of the My Account section of a store. The actual content of the page is defined directly, while the left-hand navigation menu is defined by <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Review/view/frontend/layout/customer_account.xml" target="_blank">customer_account.xml</a>.</p>
+
+<h3 id="m2devgde-design-abstract-widget">Design abstractions in widget creation</h3>
+
+<p>Specifying the pages where a widget is displayed is one of the required steps during widget creation. Widgets are added in the Admin under <b>Content/ Frontend App</b>. After choosing to create a new widget instance, a user specifies the widget type and the design <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span>. Then a page for configuring other widget options is displayed. To select a page where the widget should be displayed, you need to click <b>Add Layout Update</b>. Now you can specify pages by selecting the corresponding layout handles. If you want a widget to be displayed on pages with a certain layout, choose <b>Page Layouts</b>.</p>
+
+<p><img src="/common/images/view_da4.png" alt="Specifying page type" /></p>
+
+<p>Then in the <strong>Page</strong> list there are available layouts or, in other words, design abstractions. Among others, there is the <strong>Customer My Account (All Pages)</strong> option, which corresponds to the <code>customer_account</code> design abstraction.</p>
+
+<p><img src="/common/images/view_da5.png" alt="Specifying page" /></p>
+
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+  
+   <div class="github-link">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/architecture/view/design-abstract.md" target="_blank">
+       Edit this page on GitHub
+     </a>
+   </div>
+  
+
+  <div class="new-issue">
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/architecture/view/design-abstract.html" target="_blank">Give us feedback</a>
+  </div>
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.container -->
+
+
+	</div>
+	<!-- /.main-container -->
+
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div id="footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav">
+        <li><a href="/guides/v2.2/contributor-guide/contributing_docs.html">Become a Contributor</a>
+        <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
+        <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+        <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+        <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+        <li><a href="/guides/v2.2/release-notes/bk-release-notes.html">Release Notes</a></li>
+        <li><a href="/magento-third-party.html">Third-Party Licenses</a></li> 
+      </ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2017 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="/common/js/app.min.js"></script>
+
+<!-- Glossary integration -->
+<script src="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.js"></script>
+<script src="/common/js/glossary.tooltip.min.js"></script>
+<script>
+    $(document).ready(function(){
+      magento.glossary.init("https://magento.github.io/glossary/data/content-glossary.xml",function(term){return term.types.includes("glossary");},magento.glossary.tooltip.init);
+      });
+</script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+

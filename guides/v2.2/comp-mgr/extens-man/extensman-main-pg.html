@@ -1,0 +1,1449 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Start the Extension Manager | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.
+">
+	<meta http-equiv="last-modified" content="" />
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print" />
+	<link rel="canonical" href="//guides/v2.2/comp-mgr/extens-man/extensman-main-pg.html">
+
+    <!-- WebUI popover css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
+
+  <script>
+    var baseUrl = "/";
+  </script>
+
+	<!-- crazyegg -->
+	<script type="text/javascript">
+	setTimeout(function(){var a=document.createElement("script");
+	var b=document.getElementsByTagName("script")[0];
+	a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0038/0321.js?"+Math.floor(new Date().getTime()/3600000);
+	a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+	</script>
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body>
+
+<header class="site-header">
+
+	<nav id="global-nav">
+
+		<div class="menu-btn"><a class="menu-trigger menu-icon" href="#"></a></div>
+
+		<div class="container">
+
+			<a class="logo" href="/guides/v2.2/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+
+			
+<div class="version-switcher dropdown">
+	<button id="version-switcher-button" class="btn btn-small dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		Magento 2.2
+	</button>
+
+	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/comp-mgr/extens-man/extensman-main-pg.html">Magento 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.1/comp-mgr/extens-man/extensman-main-pg.html">Magento 2.1</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.2/comp-mgr/extens-man/extensman-main-pg.html">Magento 2.2 RC</a></li>
+	
+  </ul>
+
+</div>
+
+
+
+			<!-- Main Navigation -->
+<div class="nav-main">
+  <ul>
+    <li class="first">
+      <a href="#">Setup and Deployment</a>
+        <ul class="menu nav">
+          <li><a href="https://magento.com/tech-resources/download" target="_blank">Get Started with Magento DevBox Beta</a></li>
+            <li><a href="/guides/v2.2/install-gde/bk-install-guide.html">Installation Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/comp-mgr/bk-compman-upgrade-guide.html">Extension Update and System Upgrade Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/cloud/bk-cloud.html">Enterprise Cloud Edition Guide</a></li>
+          <li class="leaf"><a href="/magento-release-information.html">Release Information</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Development</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.2/architecture/bk-architecture.html">Architecture Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          <li><a href="/guides/v2.2/payments-integrations/bk-payments-integrations.html">Payments Integrations</a></li>
+          <li class="leaf"><a href="/guides/v2.2/mrg/intro.html">Module Reference Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          
+          <li class="first leaf"><a href="/guides/v2.2/contributor-guide/contributing.html">Contributor Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Frontend</a>
+        <ul class="menu nav">
+          <li class="first leaf"><a href="/guides/v2.2/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li class="leaf"><a href="/guides/v2.2/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">API</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.2/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li class="leaf"><a href="/guides/v2.2/rest/bk-rest.html">REST API Reference</a></li>
+          <li class="leaf"><a href="/guides/v2.2/soap/bk-soap.html">SOAP API Reference</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Testing</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.2/test/testing.html">Magento Testing Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/mtf/mtf_introduction.html">Functional Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/test/integration/integration_test_execution.html">Integration Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+        </ul>
+    </li>
+
+    <li>
+      <a href="/guides/v2.2/howdoi/bk-how-do-i.html">How Tos</a>
+    </li>
+
+    <li>
+      <a href="/videos/">Videos</a>
+    </li>
+  </ul>
+</div><!-- /.nav-main -->
+
+
+			<div class="search-btn">
+				<a class="search-trigger search-icon" href="//search.html"></a>
+			</div>
+
+			<form class="quick-search" action="/search.html" method="get">
+				<input type="search" name="q" placeholder="Search" />
+				<a href="#" class="quick-search-close">&times;</a>
+			</form>
+
+		</div>
+
+	</nav><!-- #global-nav -->
+
+</header>
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- .main-container -->
+	<div class="main-container">
+		<a id="main-content"></a>
+
+
+<div class="container">
+
+    
+    <div class="message-banner">
+        Review our 2.2 release candidate!  This beta version documentation includes B2B and more. <a href="/guides/v2.2/release-notes/release-candidate/quick-start.html">See the Quickstart Guide</a><br/>
+        Stay tuned — We'll roll out more 2.2 documentation updates in the coming weeks.
+    </div> 
+    
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+<h4>Component Manager and System Upgrade Guide</h4>
+
+
+
+
+
+
+		<ul>
+
+		
+
+		
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+					
+					
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/comp-mgr/bk-compman-upgrade-guide.html">Upgrade the Magento application and modules</a></li>
+									
+								
+
+									
+
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/comp-mgr/prereq/prereq_compman.html">Prerequisites</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/comp-mgr/prereq/prereq_compman-ulimit.html">Set ulimit for the web server user</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/comp-mgr/prereq/prereq_cron.html">Set up cron for update and upgrade</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/comp-mgr/prereq/prereq_compman-checklist.html">Update and upgrade checklist</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/comp-mgr/marketplace/marketplace.html">Magento Marketplace example</a></li>
+									
+								
+
+									
+
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/comp-mgr/module-man/compman-checklist.html">Run the Module Manager</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/comp-mgr/module-man/compman-start.html">Start the Module Manager</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/comp-mgr/module-man/compman-readiness.html">Step 1. Readiness check</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/comp-mgr/module-man/compman-backup.html">Step 2. Back up the file system and database</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/comp-mgr/module-man/modman-enable-disable.html">Enable/Disable</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/comp-mgr/extens-man/extensman-checklist.html">Run the Extension Manager</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2  active "><a href="/guides/v2.2/comp-mgr/extens-man/extensman-main-pg.html">Start the Extension Manager</a></li>
+
+									
+
+								
+
+									
+
+										<li class="level3Parent " id="readiness"><a href="#">Step 1. Readiness check</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child readiness " data-menunode="readiness"><a href="/guides/v2.2/comp-mgr/extens-man/extensman-readiness-success.html">Readiness check success</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child readiness " data-menunode="readiness"><a href="/guides/v2.2/comp-mgr/extens-man/extensman-readiness-fail.html">Readiness check failure</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child readiness " data-menunode="readiness"><a href="/guides/v2.2/comp-mgr/extens-man/extensman-readiness-multi.html">Readiness check with multiple extension updates</a>
+
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/comp-mgr/extens-man/extensman-backup.html">Step 2. Back up the file system and database</a></li>
+
+									
+
+								
+
+									
+
+										<li class="level3Parent " id="step3-ext"><a href="#">Step 3</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child step3-ext " data-menunode="step3-ext"><a href="/guides/v2.2/comp-mgr/extens-man/extensman-new-purchase.html">Install</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child step3-ext " data-menunode="step3-ext"><a href="/guides/v2.2/comp-mgr/extens-man/extensman-update.html">Extension Update</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child step3-ext " data-menunode="step3-ext"><a href="/guides/v2.2/comp-mgr/extens-man/extensman-uninst-data.html">Remove or Keep Data</a>
+
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/comp-mgr/extens-man/extensman-uninst-final.html">Step 4. Uninstall</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/comp-mgr/upgrader/ce-ee-upgrade-start.html">Upgrade from CE to EE</a></li>
+									
+								
+
+									
+
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/comp-mgr/cli/cli-upgrade.html">Command-line upgrade</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/comp-mgr/cli/cli-rc1-samp.html">Command-line upgrade to Magento 2.1 with sample data</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/comp-mgr/upgrader/upgrade-checklist.html">Run System Upgrade</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/comp-mgr/upgrader/upgrade-start.html">Start System Upgrade</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/comp-mgr/upgrader/upgrade-main-pg.html">Step 1. Select versions to upgrade</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/comp-mgr/upgrader/upgrade-readiness.html">Step 2. Readiness check</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/comp-mgr/upgrader/upgrade-backup.html">Step 3. Back up the file system and database</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/comp-mgr/upgrader/upgrade.html">Step 4. Upgrade</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/comp-mgr/updater/update-updater.html">Update the updater application</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/comp-mgr/updater/updater.html">Updater application</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/comp-mgr/trouble/tshoot.html">Troubleshooting suggestions</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/comp-mgr/trouble/cman/were-sorry.html">Sorry, we can't take that action right now</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/comp-mgr/trouble/cman/out-of-memory.html">Out of memory errors</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/comp-mgr/trouble/cman/gitignore.html">Missing .gitignore files</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/comp-mgr/trouble/cman/upgrade_51431.html">Troubleshoot upgrade issues</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/comp-mgr/trouble/cman/cron.html">Troubleshoot cron</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/comp-mgr/trouble/cman/updater.html">Troubleshoot the updater application</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/comp-mgr/trouble/cman/php-version.html">PHP version readiness check issues</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/comp-mgr/trouble/cman/update-fail.html">Roll back after update failure</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/comp-mgr/trouble/cman/component-depend.html">Resolve component dependency readiness check issues</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/comp-mgr/trouble/cman/maint-mode.html">Maintenance mode options for upgrade</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/comp-mgr/trouble/cman/tshoot_backup.html">Troubleshoot backups</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/comp-mgr/trouble/cman/ce-ee-upgrade.html">Error upgrading from CE to EE</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/comp-mgr/trouble/cman/doc.html">magento/theme-doc-blank failure</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+  <nav class="breadcrumbs">
+
+    <a class="breadcrumb-item" href="/guides/v2.2/"><span>Home</span></a>
+
+    <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+    <!-- Iteration breadcrumb item -->
+    
+    
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+
+        
+          <a property="item" typeof="WebPage" href="/guides/v2.2/comp-mgr/bk-compman-upgrade-guide.html">
+            <span property="name">Upgrade the Magento application and components</span>
+          </a>
+        
+
+        <meta property="position" content="1" />
+      </li>
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
+
+        
+
+          
+
+          <span property="name">Start the Extension Manager</span>
+
+        
+
+        <meta property="position" content="2" />
+      </li>
+
+    
+
+    
+
+
+
+    </ol>
+
+  </nav>
+
+
+
+	
+
+	
+
+	<h1 class="page-heading">Start the Extension Manager</h1>
+
+  
+
+
+</section>
+
+
+			<h2 id="start-the-extension-manager-from-the-magento-admin">Start the Extension Manager from the Magento Admin</h2>
+<p>To start the <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">Extension</span> Manager:</p>
+
+<ol>
+  <li>If you haven’t done so already, create or get your <a href="/guides/v2.2/install-gde/prereq/connect-auth.html">authentication keys</a>.</li>
+  <li>Log in to the <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span> as an administrator.</li>
+  <li>Click <strong>System</strong> &gt; <strong>Web Setup Wizard</strong>.</li>
+  <li>
+    <p>Click <strong>Extension Manager</strong> as the following figure shows.</p>
+
+    <p><img src="/common/images/extens_mgr_select.png" alt="Click the Extension Manager" width="550px" /></p>
+  </li>
+  <li>
+    <p>If prompted, log in to the Extension Manager.</p>
+
+    <p>The following page displays if a login is required.</p>
+
+    <p><img src="/common/images/extens_mgr_login.png" alt="Install or upgrade extensions" width="400px" /></p>
+  </li>
+  <li>Enter your authentication keys in the provided fields.</li>
+  <li>Click <strong>Submit</strong>.</li>
+</ol>
+
+<div class="bs-callout bs-callout-warning">
+   	<p>You must use the same authentication keys you used to install the Magento software. For example, you <em>cannot</em> use Magento CE authentication keys to update or upgrade Magento EE or vice versa. You also <em>cannot</em> use:</p>
+   	<ul><li>Another user's authentication keys</li>
+   	<li><a href="http://docs.magento.com/m2/ce/user_guide/magento/magento-account-share.html" target="_blank">Shared account</a> authentication keys</li></ul>   
+</div>
+
+<p>See one of the following sections:</p>
+
+<ul>
+  <li><a href="#extens-choose">Choose what to install, uninstall, or update</a></li>
+  <li><a href="#extensman-install">Install extensions</a></li>
+  <li><a href="#extensman-uninstall">Uninstall extensions</a></li>
+  <li><a href="#extensman-update">Update extensions</a></li>
+</ul>
+
+<h2 id="extens-choose">Choose what to install, uninstall, or update</h2>
+<p>After you log in to the Extension Manager, a list displays as follows:</p>
+
+<p><img src="/common/images/extens_mgr_updates.png" alt="Choose what to install, update, or uninstall" width="500px" /></p>
+
+<ul>
+  <li><strong>Updates Available</strong> displays the number of extensions you can update.</li>
+  <li><strong>Extensions Ready to Install</strong> displays the number of extensions you can install.</li>
+  <li>
+    <p><strong>Last Refresh</strong> displays the last time you refreshed the list of extensions on Magento Marketplace.</p>
+
+    <p>Click <strong>Refresh</strong> to update the information, such as after you purchase new extensions.</p>
+  </li>
+</ul>
+
+<h3 id="extens-choose-pertype">Supported actions for each type</h3>
+
+<div class="collapsible"><b class="collapsible-title">Supported actions for each type </b><div class="collapsible-content"><p>We support different actions for each <em>type</em> of component. (<em>Component</em> is a general term that includes any type of code you can install in the Magento application—module, language package, theme, or metapackage. <em>Extension</em> refers to anything you can install, uninstall, or update.)</p>
+
+<p>The following figure shows how types display in the Extension Manager.</p>
+
+<p><img src="/common/images/extensman_columns-only.png" alt="Extension Manager columns" /></p>
+
+<p>Following is a definition of types:</p>
+
+<ul>
+  <li><code>module</code> for a module (that is, PHP code that modifies Magento behavior)</li>
+  <li><code>language</code> for a language package used to translate the Magento storefront and Admin</li>
+  <li><code>theme</code> for a collection of styles that affect the look of the storefront or Admin</li>
+  <li><code>library</code> for a library—such as a shared third-party library</li>
+  <li><code>component</code> for any type of component that must be installed in the Magento root directory (this is a relatively uncommon type)</li>
+</ul>
+
+<p>Actions are further divided between those available for <em>metapackages</em> (that is, an installable package that contains a group of different types) or <em>non-metapackages</em> (that is, a single type).</p>
+
+<p>The following sections provide details:</p>
+
+<ul>
+  <li><a href="#extensman-access-types-non-meta">Actions available for non-metapackages</a></li>
+  <li><a href="#extensman-access-types-meta">Actions available for metapackages</a></li>
+</ul>
+
+<h4 id="extensman-access-types-non-meta">Actions available for non-metapackages</h4>
+<p>Most extensions you get from Magento Marketplace or another source have only one type; for example, a module.</p>
+
+<p>The following table shows which actions are supported for each non-metapackage.</p>
+
+<table>
+	<!-- <col width="40%">
+  	<col width="15%">
+  	<col width="15%">
+  	<col width="15%">
+  	<col width="15%"> -->
+		<tbody>
+		<tr>
+			<th>Type</th>
+			<th>Update</th>
+			<th>Uninstall</th>
+		</tr>
+		<tr>
+			<td>module</td>
+			<td>Yes</td>
+			<td>Yes</td>
+		</tr>
+		<tr>
+			<td>language package and theme</td>
+			<td>Yes</td>
+			<td>Yes</td>
+		</tr>
+		<tr>
+			<td>library</td>
+			<td>Yes</td>
+			<td>Yes</td>
+		</tr>
+		<tr>
+			<td>component</td>
+			<td>Yes</td>
+			<td>Yes</td>
+		</tr>
+		</tbody>
+	</table>
+
+<h4 id="extensman-access-types-meta">Actions available for metapackages</h4>
+<p>A metapackage is an installable package that includes more than one type. For example, we require a package that contains a module and a theme to be packaged as a metapackage.</p>
+
+<p>The following table shows which actions are available for a metapackage.</p>
+
+<table>
+	<!-- <col width="40%">
+  	<col width="15%">
+  	<col width="15%">
+  	<col width="15%">
+  	<col width="15%"> -->
+	<tbody>
+		<tr>
+			<th>Type</th>
+			<th>Update</th>
+			<th>Uninstall</th>
+		</tr>
+		<tr>
+			<td>module</td>
+			<td>No</td>
+			<td>No</td>
+		</tr>
+		<tr>
+			<td>language package and theme</td>
+			<td>Yes</td>
+			<td>Yes</td>
+		</tr>
+		<tr>
+			<td>library</td>
+			<td>Yes</td>
+			<td>Yes</td>
+		</tr>
+		<tr>
+			<td>component</td>
+			<td>Yes</td>
+			<td>Yes</td>
+		</tr>
+		</tbody>
+</table>
+</div></div>
+
+<h2 id="extensman-install">Install extensions</h2>
+
+<div class="collapsible"><b class="collapsible-title">To install extensions: </b><div class="collapsible-content"><p>Click <strong>Review and Install</strong> as the following figure shows.</p>
+
+<p><img src="/common/images/extensman_review-purchases.png" alt="Review and install extensions" width="450px" /></p>
+
+<p>The Ready to Install page displays as follows.</p>
+
+<p><img src="/common/images/extensman_ready-to-install-pg.png" alt="Display a list of extensions you can install" width="450px" /></p>
+
+<p>The following sections discuss your options.</p>
+
+<h3 id="get-more-information">Get more information</h3>
+<p>To get more information about an extension, click <img src="/common/images/extensman_icon_question.png" alt="Get information about an extension" />.</p>
+
+<h3 id="install-one-extension">Install one extension</h3>
+<p>To install one extension, click the <strong>Install</strong> link at the end of its row and continue with <a href="/guides/v2.2/comp-mgr/extens-man/extensman-readiness.html">Step 1. Readiness check</a>.</p>
+
+<h3 id="install-more-than-one-extension">Install more than one extension</h3>
+<p>To install more than one extension:</p>
+
+<ol>
+  <li>
+    <p>Select the check box next to each extension, or click <strong>Select All</strong> from the list as the following figure shows.</p>
+
+    <p><img src="/common/images/extensman_choose-to-install.png" alt="Choose extensions to install" width="550px" /></p>
+  </li>
+  <li>
+    <p>After you select what to install, click <strong>Install</strong> at the top of the page as the following figure shows.</p>
+
+    <p><img src="/common/images/extensman_ready-to-install.png" alt="Install your purchases" width="550px" /></p>
+  </li>
+  <li>
+    <p>Continue with <a href="/guides/v2.2/comp-mgr/extens-man/extensman-readiness.html">Step 1. Readiness check</a>.</p>
+  </li>
+</ol>
+</div></div>
+
+<h2 id="extensman-uninstall">Uninstall extensions</h2>
+
+<div class="collapsible"><b class="collapsible-title">To uninstall extensions: </b><div class="collapsible-content"><ol>
+  <li>
+    <p>In the Installed Extensions section, click <strong>Uninstall</strong> from the <strong>Actions</strong> list as the following figure shows.</p>
+
+    <p><img src="/common/images/extensman_uninstall.png" alt="Uninstall extensions" width="600px" /></p>
+
+    <p>If no <strong>Uninstall</strong> option is available, the vendor did not provide an uninstallation script. Contact the vendor for uninstallation instructions.</p>
+  </li>
+  <li>
+    <p>Continue with <a href="/guides/v2.2/comp-mgr/extens-man/extensman-readiness.html">Step 1. Readiness check</a>.</p>
+  </li>
+</ol>
+</div></div>
+
+<h2 id="extensman-update">Update extensions</h2>
+
+<div class="collapsible"><b class="collapsible-title">To update extensions: </b><div class="collapsible-content"><p>The New Updates page displays all extensions that can be updated.</p>
+
+<p><img src="/common/images/extensman_new-updates.png" alt="List of extensions that can be updated" width="600px" /></p>
+
+<p>You have the following options:</p>
+
+<ul>
+  <li>To update one extension, click <strong>Update</strong> at the end of its row.</li>
+  <li>
+    <p>To update more than one extension, select its check box and click <strong>Update</strong>, as the following figure shows.</p>
+
+    <p><img src="/common/images/extensman_update-selected.png" alt="Update selected extensions" width="500px" /></p>
+  </li>
+  <li>
+    <p>To update all extensions, click <strong>Select All</strong> from the list and click <strong>Update</strong>, as the following figure shows.</p>
+
+    <p><img src="/common/images/extensman_update-all.png" alt="Update all extensions" /></p>
+  </li>
+</ul>
+
+<p>Continue with <a href="/guides/v2.2/comp-mgr/extens-man/extensman-readiness.html">Step 1. Readiness check</a>.</p>
+</div></div>
+
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+  
+   <div class="github-link">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.2/comp-mgr/extens-man/extensman-main-pg.md" target="_blank">
+       Edit this page on GitHub
+     </a>
+   </div>
+  
+
+  <div class="new-issue">
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/comp-mgr/extens-man/extensman-main-pg.html" target="_blank">Give us feedback</a>
+  </div>
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.container -->
+
+
+	</div>
+	<!-- /.main-container -->
+
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div id="footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav">
+        <li><a href="/guides/v2.2/contributor-guide/contributing_docs.html">Become a Contributor</a>
+        <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
+        <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+        <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+        <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+        <li><a href="/guides/v2.2/release-notes/bk-release-notes.html">Release Notes</a></li>
+        <li><a href="/magento-third-party.html">Third-Party Licenses</a></li> 
+      </ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2017 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="/common/js/app.min.js"></script>
+
+<!-- Glossary integration -->
+<script src="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.js"></script>
+<script src="/common/js/glossary.tooltip.min.js"></script>
+<script>
+    $(document).ready(function(){
+      magento.glossary.init("https://magento.github.io/glossary/data/content-glossary.xml",function(term){return term.types.includes("glossary");},magento.glossary.tooltip.init);
+      });
+</script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+

@@ -67,6 +67,8 @@
 	
 		<li><a class="dropdown-item" href="/guides/v2.1/cloud/access-acct/first-time-setup_import-import.html">Magento 2.1</a></li>
 	
+		<li><a class="dropdown-item" href="/guides/v2.2/cloud/access-acct/first-time-setup_import-import.html">Magento 2.2 RC</a></li>
+	
   </ul>
 
 </div>
@@ -175,6 +177,8 @@
 
 
 <div class="container">
+
+    
 
 	<!-- sidebar -->
 <aside class="sidebar">
@@ -1644,6 +1648,7 @@
 
 </section>
 
+
 			<p>This topic discusses how to import code from your existing Magento EE project to your Magento Enterprise Cloud Edition’s Git repository <code>master</code> branch.</p>
 
 <div class="bs-callout bs-callout-warning" id="warning">
@@ -1915,7 +1920,7 @@ Environment routes:
 
 <pre><code>bin/magento setup:upgrade
 bin/magento magento setup:static-content:deploy
-bin/magento cache:flush
+bin/magento cache:clean
 </code></pre>
 
 <p>After the <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span> flushes, enter <code>exit</code> to close the SSH tunnel.</p>

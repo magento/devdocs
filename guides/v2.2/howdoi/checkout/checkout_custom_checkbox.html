@@ -1,0 +1,1428 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Add custom fields that influence other Checkout fields | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.
+">
+	<meta http-equiv="last-modified" content="" />
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print" />
+	<link rel="canonical" href="//guides/v2.2/howdoi/checkout/checkout_custom_checkbox.html">
+
+    <!-- WebUI popover css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
+
+  <script>
+    var baseUrl = "/";
+  </script>
+
+	<!-- crazyegg -->
+	<script type="text/javascript">
+	setTimeout(function(){var a=document.createElement("script");
+	var b=document.getElementsByTagName("script")[0];
+	a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0038/0321.js?"+Math.floor(new Date().getTime()/3600000);
+	a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+	</script>
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body>
+
+<header class="site-header">
+
+	<nav id="global-nav">
+
+		<div class="menu-btn"><a class="menu-trigger menu-icon" href="#"></a></div>
+
+		<div class="container">
+
+			<a class="logo" href="/guides/v2.2/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+
+			
+<div class="version-switcher dropdown">
+	<button id="version-switcher-button" class="btn btn-small dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		Magento 2.2
+	</button>
+
+	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/howdoi/checkout/checkout_custom_checkbox.html">Magento 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.1/howdoi/checkout/checkout_custom_checkbox.html">Magento 2.1</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.2/howdoi/checkout/checkout_custom_checkbox.html">Magento 2.2 RC</a></li>
+	
+  </ul>
+
+</div>
+
+
+
+			<!-- Main Navigation -->
+<div class="nav-main">
+  <ul>
+    <li class="first">
+      <a href="#">Setup and Deployment</a>
+        <ul class="menu nav">
+          <li><a href="https://magento.com/tech-resources/download" target="_blank">Get Started with Magento DevBox Beta</a></li>
+            <li><a href="/guides/v2.2/install-gde/bk-install-guide.html">Installation Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/comp-mgr/bk-compman-upgrade-guide.html">Extension Update and System Upgrade Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/cloud/bk-cloud.html">Enterprise Cloud Edition Guide</a></li>
+          <li class="leaf"><a href="/magento-release-information.html">Release Information</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Development</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.2/architecture/bk-architecture.html">Architecture Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          <li><a href="/guides/v2.2/payments-integrations/bk-payments-integrations.html">Payments Integrations</a></li>
+          <li class="leaf"><a href="/guides/v2.2/mrg/intro.html">Module Reference Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          
+          <li class="first leaf"><a href="/guides/v2.2/contributor-guide/contributing.html">Contributor Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Frontend</a>
+        <ul class="menu nav">
+          <li class="first leaf"><a href="/guides/v2.2/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li class="leaf"><a href="/guides/v2.2/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">API</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.2/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li class="leaf"><a href="/guides/v2.2/rest/bk-rest.html">REST API Reference</a></li>
+          <li class="leaf"><a href="/guides/v2.2/soap/bk-soap.html">SOAP API Reference</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Testing</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.2/test/testing.html">Magento Testing Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/mtf/mtf_introduction.html">Functional Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/test/integration/integration_test_execution.html">Integration Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+        </ul>
+    </li>
+
+    <li>
+      <a href="/guides/v2.2/howdoi/bk-how-do-i.html">How Tos</a>
+    </li>
+
+    <li>
+      <a href="/videos/">Videos</a>
+    </li>
+  </ul>
+</div><!-- /.nav-main -->
+
+
+			<div class="search-btn">
+				<a class="search-trigger search-icon" href="//search.html"></a>
+			</div>
+
+			<form class="quick-search" action="/search.html" method="get">
+				<input type="search" name="q" placeholder="Search" />
+				<a href="#" class="quick-search-close">&times;</a>
+			</form>
+
+		</div>
+
+	</nav><!-- #global-nav -->
+
+</header>
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- .main-container -->
+	<div class="main-container">
+		<a id="main-content"></a>
+
+
+<div class="container">
+
+    
+    <div class="message-banner">
+        Review our 2.2 release candidate!  This beta version documentation includes B2B and more. <a href="/guides/v2.2/release-notes/release-candidate/quick-start.html">See the Quickstart Guide</a><br/>
+        Stay tuned — We'll roll out more 2.2 documentation updates in the coming weeks.
+    </div> 
+    
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+
+
+
+
+		<ul>
+
+		
+
+		
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+					
+					
+
+					
+
+						
+
+						
+
+							
+
+								<li class="q "><a href="/guides/v2.2/howdoi/howdoi_template.html"></a></li>
+
+							
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/howdoi/bk-how-do-i.html">How To</a></li>
+									
+								
+
+									
+
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/howdoi/howdoi_contribute.html">Contributor sign-up sheet</a></li>
+									
+								
+
+									
+
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/howdoi/config/configure.html">Configure Magento</a></li>
+									
+								
+
+									
+
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/howdoi/design_config.html">Customize Design Configuration</a></li>
+									
+								
+
+									
+
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/howdoi/deploy/deploy-to-prod.html">Deploy Magento to production</a></li>
+									
+								
+
+									
+
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/howdoi/install/install-topics.html">Installation and configuration</a></li>
+									
+								
+
+									
+
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/howdoi/frontend/front-js.html">JavaScript development</a></li>
+									
+								
+
+									
+
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/howdoi/frontend/front-layout.html">Layout development</a></li>
+									
+								
+
+									
+
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/howdoi/migrate/migrate.html">Migrate from Magento 1 to Magento 2</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/howdoi/migrate/migrate-themes.html">Migrate themes</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/howdoi/migrate/migrate-extensions.html">Migrate extensions</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/howdoi/migrate/migrate-code.html">Code Migration</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/howdoi/migrate/migrate-data.html">Data Migration</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/howdoi/php/php_devs.html">PHP Development</a></li>
+									
+								
+
+									
+
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/howdoi/frontend/front-theme.html">Theme development</a></li>
+									
+								
+
+									
+
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/howdoi/troubleshoot/troubleshoot.html">Troubleshooting Magento</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/howdoi/troubleshoot/reset_theme.html">Reset the theme to default</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+
+									
+
+										<li class="levela1"><span class="nav-header">Web APIs</span></li>
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/howdoi/webapi/integration.html">Create an integration</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/howdoi/webapi/search-criteria.html">Search using REST</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/howdoi/webapi/filter-response.html">Retrieve filtered responses</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/howdoi/checkout/checkout_overview.html">Customize checkout</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/howdoi/checkout/checkout_new_step.html">Add a new checkout step</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/howdoi/checkout/checkout_customize.html">Customize the view of a checkout step</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/howdoi/checkout/checkout_payment.html">Add a custom payment method to checkout</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/howdoi/checkout/checkout_order.html">Add custom validations before order placement</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/howdoi/checkout/checkout_carrier.html">Add custom shipping carrier validations</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/howdoi/checkout/checkout_zip.html">Add custom input mask for ZIP code</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/howdoi/checkout/checkout_edit_form.html">Add a custom template for a form field on Checkout page</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/howdoi/checkout/checkout_form.html">Add a new input form to checkout</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/howdoi/checkout/checkout_new_field.html">Add a new field in address form</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/howdoi/checkout/checkout_address.html">Add a custom shipping address renderer</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2  active "><a href="/guides/v2.2/howdoi/checkout/checkout_custom_checkbox.html">Add custom fields that influence other Checkout fields</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/howdoi/checkout/checkout_shipping_methods.html">Customize the list of shipping methods</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/howdoi/clean_static_cache.html">Clean static files cache</a></li>
+									
+								
+
+									
+
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/howdoi/customize_product.html">Customize product creation form</a></li>
+									
+								
+
+									
+
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+  <nav class="breadcrumbs">
+
+    <a class="breadcrumb-item" href="/guides/v2.2/"><span>Home</span></a>
+
+    <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+    <!-- Iteration breadcrumb item -->
+    
+    
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+
+        
+          <a property="item" typeof="WebPage" href="/guides/v2.2/howdoi/bk-how-do-i.html">
+            <span property="name">How To</span>
+          </a>
+        
+
+        <meta property="position" content="1" />
+      </li>
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
+
+        
+
+          
+
+          <span property="name">Add custom fields that influence other Checkout fields</span>
+
+        
+
+        <meta property="position" content="2" />
+      </li>
+
+    
+
+    
+
+
+
+    </ol>
+
+  </nav>
+
+
+
+	
+
+	
+
+	<h1 class="page-heading">Add custom fields that influence other Checkout fields</h1>
+
+  
+
+
+</section>
+
+
+			<p>This topic describes how to add a custom field that influences other fields on the checkout page.</p>
+
+<p>Let’s consider a case where you need to add a check box whose state (selected or cleared) changes the state of other fields: when the check box is selected, the Shipping Address fields get prepopulated with a certain address. To implement such a check box, take the following steps:</p>
+
+<ol>
+  <li>Create a <a href="/guides/v2.2/extension-dev-guide/plugins.html">plugin</a> for the process method of the <code>&lt;Magento_Checkout_module_dir&gt;/Block/Checkout/LayoutProcessor.php</code> class.</li>
+  <li>Declare the plugin in your module’s <code>di.xml</code>.</li>
+  <li>Create a JS component for the check box with custom logic.</li>
+</ol>
+
+<h2 id="create-a-plugin-for-the-layoutprocessors-process-method">Create a plugin for the <code>LayoutProcessor</code>’s process method</h2>
+
+<p>In your custom module directory, create the following new file: <code>&lt;your_module_dir&gt;/Block/Checkout/SomeProcessor.php</code>. In this file, add the following code sample. This is a plugin that adds a check box, makes the street labels trackable, and assigns dependencies to the check box.</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="k">namespace</span> <span class="nx">Magento\Checkout\Block\Checkout</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">SomeProcessor</span>
+<span class="p">{</span>
+    <span class="sd">/**</span>
+<span class="sd">     * Checkout LayoutProcessor after process plugin.</span>
+<span class="sd">     *</span>
+<span class="sd">     * @param \Magento\Checkout\Block\Checkout\LayoutProcessor $processor</span>
+<span class="sd">     * @param array $jsLayout</span>
+<span class="sd">     * @return array</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">afterProcess</span><span class="p">(</span><span class="nx">\Magento\Checkout\Block\Checkout\LayoutProcessor</span> <span class="nv">$processor</span><span class="p">,</span> <span class="nv">$jsLayout</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$shippingConfiguration</span> <span class="o">=</span> <span class="o">&amp;</span><span class="nv">$jsLayout</span><span class="p">[</span><span class="s1">&#39;components&#39;</span><span class="p">][</span><span class="s1">&#39;checkout&#39;</span><span class="p">][</span><span class="s1">&#39;children&#39;</span><span class="p">][</span><span class="s1">&#39;steps&#39;</span><span class="p">][</span><span class="s1">&#39;children&#39;</span><span class="p">][</span><span class="s1">&#39;shipping-step&#39;</span><span class="p">]</span>
+            <span class="p">[</span><span class="s1">&#39;children&#39;</span><span class="p">][</span><span class="s1">&#39;shippingAddress&#39;</span><span class="p">][</span><span class="s1">&#39;children&#39;</span><span class="p">][</span><span class="s1">&#39;shipping-address-fieldset&#39;</span><span class="p">][</span><span class="s1">&#39;children&#39;</span><span class="p">];</span>
+        <span class="nv">$billingConfiguration</span> <span class="o">=</span> <span class="o">&amp;</span><span class="nv">$jsLayout</span><span class="p">[</span><span class="s1">&#39;components&#39;</span><span class="p">][</span><span class="s1">&#39;checkout&#39;</span><span class="p">][</span><span class="s1">&#39;children&#39;</span><span class="p">][</span><span class="s1">&#39;steps&#39;</span><span class="p">][</span><span class="s1">&#39;children&#39;</span><span class="p">][</span><span class="s1">&#39;billing-step&#39;</span><span class="p">]</span>
+        <span class="p">[</span><span class="s1">&#39;children&#39;</span><span class="p">][</span><span class="s1">&#39;payment&#39;</span><span class="p">][</span><span class="s1">&#39;children&#39;</span><span class="p">][</span><span class="s1">&#39;payments-list&#39;</span><span class="p">][</span><span class="s1">&#39;children&#39;</span><span class="p">];</span>
+
+        <span class="c1">//Checks if shipping step available.</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$shippingConfiguration</span><span class="p">))</span> <span class="p">{</span>
+            <span class="nv">$shippingConfiguration</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">processAddress</span><span class="p">(</span>
+                <span class="nv">$shippingConfiguration</span><span class="p">,</span>
+                <span class="s1">&#39;shippingAddress&#39;</span><span class="p">,</span>
+                <span class="p">[</span>
+                    <span class="s1">&#39;checkoutProvider&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;checkout.steps.shipping-step.shippingAddress.shipping-address-fieldset.street&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;checkout.steps.shipping-step.shippingAddress.shipping-address-fieldset.city&#39;</span><span class="p">,</span>
+                    <span class="s1">&#39;checkout.steps.shipping-step.shippingAddress.shipping-address-fieldset.country_id&#39;</span>
+                <span class="p">]</span>
+            <span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="c1">//Checks if billing step available.</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$billingConfiguration</span><span class="p">))</span> <span class="p">{</span>
+            <span class="c1">//Iterate over billing forms.</span>
+            <span class="k">foreach</span><span class="p">(</span><span class="nv">$billingConfiguration</span> <span class="k">as</span> <span class="nv">$key</span> <span class="o">=&gt;</span> <span class="o">&amp;</span><span class="nv">$billingForm</span><span class="p">)</span> <span class="p">{</span>
+                <span class="c1">//Exclude not billing forms</span>
+                <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">strpos</span><span class="p">(</span><span class="nv">$key</span><span class="p">,</span> <span class="s1">&#39;-form&#39;</span><span class="p">))</span> <span class="p">{</span>
+                    <span class="k">continue</span><span class="p">;</span>
+                <span class="p">}</span>
+
+                <span class="nv">$billingForm</span><span class="p">[</span><span class="s1">&#39;children&#39;</span><span class="p">][</span><span class="s1">&#39;form-fields&#39;</span><span class="p">][</span><span class="s1">&#39;children&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">processAddress</span><span class="p">(</span>
+                    <span class="nv">$billingForm</span><span class="p">[</span><span class="s1">&#39;children&#39;</span><span class="p">][</span><span class="s1">&#39;form-fields&#39;</span><span class="p">][</span><span class="s1">&#39;children&#39;</span><span class="p">],</span>
+                    <span class="nv">$billingForm</span><span class="p">[</span><span class="s1">&#39;dataScopePrefix&#39;</span><span class="p">],</span>
+                    <span class="p">[</span>
+                        <span class="s1">&#39;checkoutProvider&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;checkout.steps.billing-step.payment.payments-list.&#39;</span> <span class="o">.</span> <span class="nv">$key</span> <span class="o">.</span> <span class="s1">&#39;.form-fields.street&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;checkout.steps.billing-step.payment.payments-list.&#39;</span> <span class="o">.</span> <span class="nv">$key</span> <span class="o">.</span> <span class="s1">&#39;.form-fields.city&#39;</span><span class="p">,</span>
+                        <span class="s1">&#39;checkout.steps.billing-step.payment.payments-list.&#39;</span> <span class="o">.</span> <span class="nv">$key</span> <span class="o">.</span> <span class="s1">&#39;.form-fields.country_id&#39;</span>
+                    <span class="p">]</span>
+                <span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="nv">$jsLayout</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * Process provided address to contains checkbox and have trackable address fields.</span>
+<span class="sd">     *</span>
+<span class="sd">     * @param $addressFieldset - Address fieldset config.</span>
+<span class="sd">     * @param $dataScope - data scope</span>
+<span class="sd">     * @param $deps - list of dependencies</span>
+<span class="sd">     * @return array</span>
+<span class="sd">     */</span>
+    <span class="k">private</span> <span class="k">function</span> <span class="nf">processAddress</span><span class="p">(</span><span class="nv">$addressFieldset</span><span class="p">,</span> <span class="nv">$dataScope</span><span class="p">,</span> <span class="nv">$deps</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="c1">//Creates checkbox.</span>
+        <span class="nv">$addressFieldset</span><span class="p">[</span><span class="s1">&#39;custom_checkbox&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="s1">&#39;component&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Magento_Checkout/js/single-checkbox&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;config&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+                <span class="s1">&#39;customScope&#39;</span> <span class="o">=&gt;</span> <span class="nv">$dataScope</span><span class="p">,</span>
+                <span class="s1">&#39;template&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;ui/form/field&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;prefer&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;checkbox&#39;</span>
+            <span class="p">],</span>
+            <span class="s1">&#39;dataScope&#39;</span> <span class="o">=&gt;</span> <span class="nv">$dataScope</span> <span class="o">.</span> <span class="s1">&#39;.custom_checkbox&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;deps&#39;</span> <span class="o">=&gt;</span> <span class="nv">$deps</span><span class="p">,</span>
+            <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="nx">__</span><span class="p">(</span><span class="s1">&#39;Army Address&#39;</span><span class="p">),</span>
+            <span class="s1">&#39;provider&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;checkoutProvider&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;visible&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
+            <span class="s1">&#39;initialValue&#39;</span> <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
+            <span class="s1">&#39;sortOrder&#39;</span> <span class="o">=&gt;</span> <span class="mi">10</span><span class="p">,</span>
+            <span class="s1">&#39;valueMap&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+                <span class="s1">&#39;true&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span>
+                <span class="s1">&#39;false&#39;</span> <span class="o">=&gt;</span> <span class="k">false</span>
+            <span class="p">]</span>
+        <span class="p">];</span>
+
+        <span class="c1">//Makes each address field label trackable.</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$addressFieldset</span><span class="p">[</span><span class="s1">&#39;street&#39;</span><span class="p">][</span><span class="s1">&#39;children&#39;</span><span class="p">]))</span> <span class="p">{</span>
+            <span class="k">foreach</span><span class="p">(</span><span class="nv">$addressFieldset</span><span class="p">[</span><span class="s1">&#39;street&#39;</span><span class="p">][</span><span class="s1">&#39;children&#39;</span><span class="p">]</span> <span class="k">as</span> <span class="nv">$key</span> <span class="o">=&gt;</span> <span class="nv">$street</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nv">$street</span><span class="p">[</span><span class="s1">&#39;tracks&#39;</span><span class="p">][</span><span class="s1">&#39;label&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span>
+                <span class="c1">//Remove .additional class. Can be removed, but style fix provided instead.</span>
+                <span class="nv">$street</span><span class="p">[</span><span class="s1">&#39;additionalClasses&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="p">;</span>
+                <span class="nv">$addressFieldset</span><span class="p">[</span><span class="s1">&#39;street&#39;</span><span class="p">][</span><span class="s1">&#39;children&#39;</span><span class="p">][</span><span class="nv">$key</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$street</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="nv">$addressFieldset</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span><span class="x"></span></code></pre></figure>
+
+<h2 id="declare-plugin-in-dixml">Declare plugin in di.xml</h2>
+
+<p>In <code>&lt;your_module_dir&gt;/etc/frontend/di.xml</code>, declare the plugin you created on the previous step. The plugin name is arbitrary, in our example it’s <code>ProcessAddressConfiguration</code>:</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span>
+        <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:ObjectManager/etc/config.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;type</span> <span class="na">name=</span><span class="s">&quot;Magento\Checkout\Block\Checkout\LayoutProcessor&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;plugin</span> <span class="na">name=</span><span class="s">&quot;ProcessAddressConfiguration&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\Checkout\Block\Checkout\SomeProcessor&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/type&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
+
+<h2 id="create-a-js-component-for-the-check-box">Create a JS component for the check box</h2>
+
+<p>In your custom module directory, create the following new file: <code>&lt;your_module_dir&gt;/view/frontend/web/js/single-checkbox.js</code>. In this file, add the following code. This is  a JS component that extends <code>Magento_Ui/js/form/element/single-checkbox.js</code>. The <code>onCheckedChanged</code> method calls the methods that update street labels, change the city and country values, and disable these fields:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">define</span><span class="p">([</span>
+    <span class="s1">&#39;Magento_Ui/js/form/element/single-checkbox&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;mage/translate&#39;</span>
+<span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">AbstractField</span><span class="p">,</span> <span class="nx">$t</span><span class="p">)</span> <span class="p">{</span>
+    <span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+
+    <span class="k">return</span> <span class="nx">AbstractField</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+        <span class="nx">defaults</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">streetLabels</span><span class="o">:</span> <span class="p">[</span><span class="nx">$t</span><span class="p">(</span><span class="s1">&#39;Company / Section / Unit&#39;</span><span class="p">),</span> <span class="nx">$t</span><span class="p">(</span><span class="s1">&#39;Post Sector Type&#39;</span><span class="p">),</span> <span class="nx">$t</span><span class="p">(</span><span class="s1">&#39;Post Sector&#39;</span><span class="p">)],</span>
+            <span class="nx">modules</span><span class="o">:</span> <span class="p">{</span>
+                <span class="nx">street</span><span class="o">:</span> <span class="s1">&#39;${ $.parentName }.street&#39;</span><span class="p">,</span>
+                <span class="nx">city</span><span class="o">:</span> <span class="s1">&#39;${ $.parentName }.city&#39;</span><span class="p">,</span>
+                <span class="nx">country</span><span class="o">:</span> <span class="s1">&#39;${ $.parentName }.country_id&#39;</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+
+        <span class="nx">updateStreetLabels</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">())</span> <span class="p">{</span>
+                <span class="k">this</span><span class="p">.</span><span class="nx">street</span><span class="p">().</span><span class="nx">elems</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">street</span><span class="p">,</span> <span class="nx">key</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="k">this</span><span class="p">.</span><span class="nx">street</span><span class="p">().</span><span class="nx">elems</span><span class="p">()[</span><span class="nx">key</span><span class="p">].</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;label&#39;</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">streetLabels</span><span class="p">[</span><span class="nx">key</span><span class="p">]);</span>
+                <span class="p">}.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">));</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="k">this</span><span class="p">.</span><span class="nx">street</span><span class="p">().</span><span class="nx">elems</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">street</span><span class="p">,</span> <span class="nx">key</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="k">this</span><span class="p">.</span><span class="nx">street</span><span class="p">().</span><span class="nx">elems</span><span class="p">()[</span><span class="nx">key</span><span class="p">].</span><span class="nx">set</span><span class="p">(</span><span class="s1">&#39;label&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">);</span>
+                <span class="p">}.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">));</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+
+        <span class="nx">updateCity</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">())</span> <span class="p">{</span>
+                <span class="k">this</span><span class="p">.</span><span class="nx">city</span><span class="p">().</span><span class="nx">value</span><span class="p">(</span><span class="s1">&#39;Kyiv&#39;</span><span class="p">);</span>
+                <span class="k">this</span><span class="p">.</span><span class="nx">city</span><span class="p">().</span><span class="nx">disabled</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="k">this</span><span class="p">.</span><span class="nx">city</span><span class="p">().</span><span class="nx">value</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+                <span class="k">this</span><span class="p">.</span><span class="nx">city</span><span class="p">().</span><span class="nx">disabled</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+
+        <span class="nx">updateCountry</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">value</span><span class="p">())</span> <span class="p">{</span>
+                <span class="k">this</span><span class="p">.</span><span class="nx">country</span><span class="p">().</span><span class="nx">value</span><span class="p">(</span><span class="s1">&#39;UA&#39;</span><span class="p">);</span>
+                <span class="k">this</span><span class="p">.</span><span class="nx">country</span><span class="p">().</span><span class="nx">disabled</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="k">this</span><span class="p">.</span><span class="nx">country</span><span class="p">().</span><span class="nx">value</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">);</span>
+                <span class="k">this</span><span class="p">.</span><span class="nx">country</span><span class="p">().</span><span class="nx">disabled</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+
+        <span class="nx">onCheckedChanged</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">_super</span><span class="p">();</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">updateStreetLabels</span><span class="p">();</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">updateCity</span><span class="p">();</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">updateCountry</span><span class="p">();</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+<span class="p">});</span></code></pre></figure>
+
+
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+  
+   <div class="github-link">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/howdoi/checkout/checkout_custom_checkbox.md" target="_blank">
+       Edit this page on GitHub
+     </a>
+   </div>
+  
+
+  <div class="new-issue">
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/howdoi/checkout/checkout_custom_checkbox.html" target="_blank">Give us feedback</a>
+  </div>
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.container -->
+
+
+	</div>
+	<!-- /.main-container -->
+
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div id="footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav">
+        <li><a href="/guides/v2.2/contributor-guide/contributing_docs.html">Become a Contributor</a>
+        <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
+        <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+        <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+        <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+        <li><a href="/guides/v2.2/release-notes/bk-release-notes.html">Release Notes</a></li>
+        <li><a href="/magento-third-party.html">Third-Party Licenses</a></li> 
+      </ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2017 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="/common/js/app.min.js"></script>
+
+<!-- Glossary integration -->
+<script src="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.js"></script>
+<script src="/common/js/glossary.tooltip.min.js"></script>
+<script>
+    $(document).ready(function(){
+      magento.glossary.init("https://magento.github.io/glossary/data/content-glossary.xml",function(term){return term.types.includes("glossary");},magento.glossary.tooltip.init);
+      });
+</script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+

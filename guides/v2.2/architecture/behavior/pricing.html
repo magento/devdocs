@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Using Magento Pricing library | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.
+">
+	<meta http-equiv="last-modified" content="" />
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print" />
+	<link rel="canonical" href="//guides/v2.2/architecture/behavior/pricing.html">
+
+    <!-- WebUI popover css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
+
+  <script>
+    var baseUrl = "/";
+  </script>
+
+	<!-- crazyegg -->
+	<script type="text/javascript">
+	setTimeout(function(){var a=document.createElement("script");
+	var b=document.getElementsByTagName("script")[0];
+	a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0038/0321.js?"+Math.floor(new Date().getTime()/3600000);
+	a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+	</script>
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body>
+
+<header class="site-header">
+
+	<nav id="global-nav">
+
+		<div class="menu-btn"><a class="menu-trigger menu-icon" href="#"></a></div>
+
+		<div class="container">
+
+			<a class="logo" href="/guides/v2.2/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+
+			
+<div class="version-switcher dropdown">
+	<button id="version-switcher-button" class="btn btn-small dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		Magento 2.2
+	</button>
+
+	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/architecture/behavior/pricing.html">Magento 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.1/architecture/behavior/pricing.html">Magento 2.1</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.2/architecture/behavior/pricing.html">Magento 2.2 RC</a></li>
+	
+  </ul>
+
+</div>
+
+
+
+			<!-- Main Navigation -->
+<div class="nav-main">
+  <ul>
+    <li class="first">
+      <a href="#">Setup and Deployment</a>
+        <ul class="menu nav">
+          <li><a href="https://magento.com/tech-resources/download" target="_blank">Get Started with Magento DevBox Beta</a></li>
+            <li><a href="/guides/v2.2/install-gde/bk-install-guide.html">Installation Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/comp-mgr/bk-compman-upgrade-guide.html">Extension Update and System Upgrade Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/cloud/bk-cloud.html">Enterprise Cloud Edition Guide</a></li>
+          <li class="leaf"><a href="/magento-release-information.html">Release Information</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Development</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.2/architecture/bk-architecture.html">Architecture Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          <li><a href="/guides/v2.2/payments-integrations/bk-payments-integrations.html">Payments Integrations</a></li>
+          <li class="leaf"><a href="/guides/v2.2/mrg/intro.html">Module Reference Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          
+          <li class="first leaf"><a href="/guides/v2.2/contributor-guide/contributing.html">Contributor Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Frontend</a>
+        <ul class="menu nav">
+          <li class="first leaf"><a href="/guides/v2.2/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li class="leaf"><a href="/guides/v2.2/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">API</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.2/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li class="leaf"><a href="/guides/v2.2/rest/bk-rest.html">REST API Reference</a></li>
+          <li class="leaf"><a href="/guides/v2.2/soap/bk-soap.html">SOAP API Reference</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Testing</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.2/test/testing.html">Magento Testing Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/mtf/mtf_introduction.html">Functional Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/test/integration/integration_test_execution.html">Integration Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+        </ul>
+    </li>
+
+    <li>
+      <a href="/guides/v2.2/howdoi/bk-how-do-i.html">How Tos</a>
+    </li>
+
+    <li>
+      <a href="/videos/">Videos</a>
+    </li>
+  </ul>
+</div><!-- /.nav-main -->
+
+
+			<div class="search-btn">
+				<a class="search-trigger search-icon" href="//search.html"></a>
+			</div>
+
+			<form class="quick-search" action="/search.html" method="get">
+				<input type="search" name="q" placeholder="Search" />
+				<a href="#" class="quick-search-close">&times;</a>
+			</form>
+
+		</div>
+
+	</nav><!-- #global-nav -->
+
+</header>
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- .main-container -->
+	<div class="main-container">
+		<a id="main-content"></a>
+
+
+<div class="container">
+
+    
+    <div class="message-banner">
+        Review our 2.2 release candidate!  This beta version documentation includes B2B and more. <a href="/guides/v2.2/release-notes/release-candidate/quick-start.html">See the Quickstart Guide</a><br/>
+        Stay tuned — We'll roll out more 2.2 documentation updates in the coming weeks.
+    </div> 
+    
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+
+
+
+
+		<ul>
+
+		
+
+		
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+  <nav class="breadcrumbs">
+
+    <a class="breadcrumb-item" href="/guides/v2.2/"><span>Home</span></a>
+
+    <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+    <!-- Iteration breadcrumb item -->
+    
+    
+
+    
+
+    
+
+
+  
+  <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+    <a href="/videos/"><span property="name">Videos</span></a>
+  </li>
+  
+
+  
+  <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+    
+    <a href="/videos/">
+    
+    <span property="name">Videos</span></a>
+  </li>
+  <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
+    <span property="name">Using Magento Pricing library</span>
+  </li>
+  
+
+
+
+
+    </ol>
+
+  </nav>
+
+
+
+	
+
+	
+
+	<h1 class="page-heading">Using Magento Pricing library</h1>
+
+  
+
+
+</section>
+
+
+			<h2 id="m2devgde-pricelib-intro">Magento Pricing library: implementation and usage</h2>
+
+<p>This topic discusses how to use the <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Pricing" target="_blank">Magento\Framework\Pricing</a> <span term-uuid="08968dbb-2eeb-45c7-ae95-ffca228a7575" class="glossary-term" data-toggle="popover">library</span> in your <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> and how to add price rendering to page templates and layouts.</p>
+
+<h2 id="m2devgde-pricelib-integrate">Use the pricing library in your module</h2>
+
+<p>To use the pricing library in a module:</p>
+
+<ol>
+  <li>
+    <p>Create price calculating and rendering logic extending and implementing library interfaces.</p>
+  </li>
+  <li>
+    <p>Add prices and adjustments in the <code>di.xml</code> of a module.</p>
+  </li>
+  <li>
+    <p>Prepare a layout: create a pricing <span term-uuid="73ab5daa-5857-4039-97df-11269b626134" class="glossary-term" data-toggle="popover">layout</span> handle (or use the default Magento one) and add a price rendering block to page layouts.</p>
+  </li>
+  <li>
+    <p>Add price rendering to page templates.</p>
+  </li>
+</ol>
+
+<p>Each step is described in the following paragraphs.</p>
+
+<p>If all you need is to customize the way prices are displayed on your pages, skip steps 1 and 2 and proceed directly to layout and template tasks.</p>
+
+<h2 id="m2devgde-pricelib-custom">Implement price calculation and rendering</h2>
+
+<p>To implement the price calculation and rendering, add the following to your module code base:</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>
+        <p>
+          <strong>Entity</strong>
+        </p>
+      </td>
+      <td>
+        <p>
+          <strong>Requirement</strong>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>Saleable entity</p>
+      </td>
+      <td>
+        <p>Implements <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Pricing/Object/SaleableInterface.php" target="_blank">Magento\Framework\Pricing\Object\SaleableInterface</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>PriceType model</p>
+      </td>
+      <td>
+        <p>Extends <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Pricing/Price/AbstractPrice.php" target="_blank">Magento\Framework\Pricing\Price\AbstractPrice</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>Amount model</p>
+      </td>
+      <td>
+        <p>Implements <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Pricing/Amount/AmountInterface.php" target="_blank">Magento\Framework\Pricing\Amount\AmountInterface</a>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>Adjustment model</p>
+      </td>
+      <td>
+        <p>Implements <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Pricing/Adjustment/AdjustmentInterface.php" target="_blank">Magento\Framework\Pricing\Adjustment\AdjustmentInterface</a>
+        </p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="m2devgde-pricelib-custom-price">Add a custom price type</h3>
+
+<p>To add a custom price type, create a corresponding class extending <code>AbstractPrice</code>.</p>
+
+<h2 id="m2devgde-pricelib-di">Configure prices and adjustments</h2>
+
+<p>To specify the price types which you plan to use for the corresponding product, add the price type codes to <code>Price\Pool</code> in the module’s <code>di.xml</code> file.</p>
+
+<p>An example of <span term-uuid="8d40d668-4996-4856-9f81-b1386cf4b14f" class="glossary-term" data-toggle="popover">Catalog</span> module price configuration in its <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Catalog/etc/di.xml" target="_blank">di.xml</a>.</p>
+
+<p>Price type codes are discussed in <a href="#m2devgde-pricelib-def">Default price types</a>.</p>
+
+<h3 id="m2devgde-pricelib-adj">Specify adjustments for a product</h3>
+
+<p>To specify what adjustments will be available for a product, add the corresponding adjustments to <code>AdjustmentPool</code> in the module’s <code>di.xml</code>. An example of Catalog module price adjustments is shown in <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Catalog/etc/di.xml" target="_blank">di.xml</a>.</p>
+
+<h2 id="m2devgde-pricelib-custom-price-render">Add price rendering to a layout</h2>
+
+<p><code>Magento\Framework\Pricing\Render</code> is the entry point of Pricing. That is, to add Pricing blocks to your pages, you need to add a <code>Magento\Framework\Pricing\Render</code> block in the layout files of your pages.</p>
+
+<p>For example:</p>
+
+<script src="https://gist.github.com/xcomSteveJohnson/08821ad203003c6eda7a.js"></script>
+
+<p>The value of the <code>price_render_handle</code> argument is the name of the pricing layout handle, where price displaying configuration is set. For more details about pricing layout handle see the following paragraph.</p>
+
+<h2 id="m2devgde-pricelib-custom-price-config">Configure price display options</h2>
+
+<p>To configure price blocks displaying in layouts, you need to create a separate layout handle for price rendering.</p>
+
+<p>The name of the layout handle is arbitrary. But if you want to use also default Magento layouts for pricing, name the handle (and so the layout file defining it) <code>catalog_product_prices.xml</code>.</p>
+
+<p>To learn about locations of layouts in Magento application, see <a href="/guides/v2.2/frontend-dev-guide/layouts/xml-instructions.html">XML instructions</a>.</p>
+
+<p>For example, the Catalog module’s <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Catalog/view/base/layout/catalog_product_prices.xml" target="_blank">catalog_product_prices.xml</a> defines the basis for a product entity, so its pricing layout handle defines default values: render classes, templates, price types and adjustments. These values can be overridden by settings for particular <span term-uuid="6e836354-0067-48ac-84ce-a4ab7c0c492e" class="glossary-term" data-toggle="popover">product types</span> in the <code>catalog_product_prices.xml</code> layout handle of the corresponding module.</p>
+
+<p>Class and template declarations in the pricing layout handles are based on the following fallback structures.</p>
+
+<p>Price classes fallback:</p>
+
+<ol>
+  <li><code>$type&nbsp;.&nbsp;'/prices/'&nbsp;.&nbsp;$priceCode&nbsp;.&nbsp;'/render_class',</code></li>
+  <li><code>$type&nbsp;.&nbsp;'/default_render_class',</code></li>
+  <li><code>'default/prices/'&nbsp;.&nbsp;$priceCode&nbsp;.&nbsp;'/render_class',</code></li>
+  <li><code>'default/default_render_class'</code></li>
+</ol>
+
+<p>Price templates fallback:</p>
+
+<ol>
+  <li><code>$type&nbsp;.&nbsp;'/prices/'&nbsp;.&nbsp;$priceCode&nbsp;.&nbsp;'/render_template',</code></li>
+  <li><code>$type&nbsp;.&nbsp;'/default_render_template',</code></li>
+  <li><code>'default/prices/'&nbsp;.&nbsp;$priceCode&nbsp;.&nbsp;'/render_template',</code></li>
+  <li><code>'default/default_render_template'</code></li>
+</ol>
+
+<p>Amount templates fallback:</p>
+
+<ol>
+  <li><code>$type . '/prices/' . $priceCode . '/amount_render_template'</code>,</li>
+  <li><code>$type . '/default_amount_render_template'</code>,</li>
+  <li><code>'default/prices/' . $priceCode . '/amount_render_template'</code>,</li>
+  <li><code>'default/default_amount_render_template'</code>.</li>
+</ol>
+
+<p>Adjustment classes templates:</p>
+
+<ol>
+  <li><code>"{$itemType}/adjustments/{$priceType}"</code>,</li>
+  <li><code>"{$itemType}/adjustments/default"</code>,</li>
+  <li><code>"default/adjustments/{$priceType}"</code>,</li>
+  <li><code>"default/adjustments/default"</code>.</li>
+</ol>
+
+<p>Where:</p>
+
+<ul>
+  <li><code>$type/$itemType</code> – is for type of a product.</li>
+  <li><code>$priceCode/$priceType</code> – is for a price type.</li>
+</ul>
+
+<h2 id="m2devgde-pricelib-ins">Insert price rendering into PHTML templates</h2>
+
+<p>To invoke the price rendering block, you need to add the following code to a page template:</p>
+<pre>
+$this-&gt;getLayout()-&gt;getBlock('product.price.render.default')-&gt;render(
+    '&lt;price type&gt;',
+    $product
+    $arguments
+);
+</pre>
+
+<p>where:</p>
+
+<ul>
+  <li>
+    <p><code>&lt;price type&gt;</code>: the code of the price type</p>
+  </li>
+  <li>
+    <p><code>$product</code>: an instance of Saleable Item, for example <code>Magento\Catalog\Model\Product</code></p>
+  </li>
+  <li>
+    <p><code>$arguments</code>: is the array of rendering arguments.</p>
+  </li>
+</ul>
+
+<h2 id="m2devgde-pricelib-def">Default price types</h2>
+
+<p>In the following table you can find the complete list of the price types implemented in the Magento application.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>
+        <p>
+          <strong>Code</strong>
+        </p>
+      </td>
+      <td>
+        <p>
+          <strong>Description</strong>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>
+          <code>base_price</code>
+        </p>
+      </td>
+      <td>
+        <p>The minimal price without adding any adjustments</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>
+          <code>regular_price</code>
+        </p>
+      </td>
+      <td>
+        <p>The product price specified in the Price field in the Admin panel</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>
+          <code>special_price</code>
+        </p>
+      </td>
+      <td>
+        <p>Special price of the product (set for a certain period of time)</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>
+          <code>final_price</code>
+        </p>
+      </td>
+      <td>
+        <p>The general price display type for displaying final price after applying all required adjustments. Final price is the minimum of all available prices</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>
+          <code>tier_prices</code>
+        </p>
+      </td>
+      <td>
+        <p>Tier prices (different pricing for higher quantities). When rendered, the tier prices block is displayed.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>
+          <code>msrp_price</code>
+        </p>
+      </td>
+      <td>
+        <p>
+          <a href="http://en.wikipedia.org/wiki/Suggested_retail_price" target="_blank">MSRP price</a>. When rendered, the "Click for price" link and <a href="http://en.wikipedia.org/wiki/Minimum_advertised_price" target="_blank">MAP</a> pop-up</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>
+          <code>link_price</code>
+        </p>
+      </td>
+      <td>
+        <p>Prices of links in a downloadable product</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>
+          <code>catalog_rule_price</code>
+        </p>
+      </td>
+      <td>
+        <p>Price after applying a catalog rule</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>
+          <code>attribute_price</code>
+        </p>
+      </td>
+      <td>
+        <p>Configurable product attribute price</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>
+          <code>bundle_selection</code>
+        </p>
+      </td>
+      <td>
+        <p>Bundle selection price</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>
+          <code>group_price</code>
+        </p>
+      </td>
+      <td>
+        <p>Special price for a specific customer group</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>
+          <code>custom_option_price</code>
+        </p>
+      </td>
+      <td>
+        <p>Custom option price</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>
+          <code>bundle_option</code>
+        </p>
+      </td>
+      <td>
+        <p>Bundle option price</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>
+          <code>configured_price</code>
+        </p>
+      </td>
+      <td>
+        <p>Product price with configured options</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>
+          <code>link_price</code>
+        </p>
+      </td>
+      <td>
+        <p>Downloadable product link price</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="m2devgde-pricelib-def_rend">Default rendering arguments</h2>
+
+<p>In the following table you can find the complete list of the rendering arguments implemented in the Magento application.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>
+        <p>
+          <strong>Code</strong>
+        </p>
+      </td>
+      <td>
+        <p>
+          <strong>Value</strong>
+        </p>
+      </td>
+      <td>
+        <p>
+          <strong>Description</strong>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>
+          <code>zone </code>
+        </p>
+      </td>
+      <td>
+        <p>
+          <code>string</code>
+        </p>
+      </td>
+      <td>
+        <p>Display Zone code</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>
+          <code>skip_adjustments</code>
+        </p>
+      </td>
+      <td>
+        <p>
+          <code>boolean</code>
+        </p>
+      </td>
+      <td>
+        <p>Whether to display price adjustments</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>
+          <code>display_label</code>
+        </p>
+      </td>
+      <td>
+        <p>
+          <code>string</code>
+        </p>
+      </td>
+      <td>
+        <p>Price label, for example <em>Regular Price</em>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>
+          <code>price_id</code>
+        </p>
+      </td>
+      <td>
+        <p>
+          <code>string</code>
+        </p>
+      </td>
+      <td>
+        <p>Price HTML ID</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>
+          <code>include_container</code>
+        </p>
+      </td>
+      <td>
+        <p>
+          <code>
+            boolean
+          </code>
+        </p>
+      </td>
+      <td>
+        <p>Whether to use the <code>&lt;span/&gt;</code> container for currency symbol rendering</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>
+          <code>id_suffix</code>
+        </p>
+      </td>
+      <td>
+        <p>
+          <code>string</code>
+        </p>
+      </td>
+      <td>
+        <p>
+          Price
+          HTML
+          ID suffix
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>
+          <code>css_classes</code>
+        </p>
+      </td>
+      <td>
+        <p>
+          <code>string</code>
+        </p>
+      </td>
+      <td>
+        <p>User defined CSS style classes to be added to Price Box root element.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>
+          <code>display_minimal_price </code>
+        </p>
+      </td>
+      <td>
+        <p>
+          <code>boolean</code>
+        </p>
+      </td>
+      <td>
+        <p>Whether a product minimal price should be displayed when available</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+  
+   <div class="github-link">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/architecture/behavior/pricing.md" target="_blank">
+       Edit this page on GitHub
+     </a>
+   </div>
+  
+
+  <div class="new-issue">
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/architecture/behavior/pricing.html" target="_blank">Give us feedback</a>
+  </div>
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.container -->
+
+
+	</div>
+	<!-- /.main-container -->
+
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div id="footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav">
+        <li><a href="/guides/v2.2/contributor-guide/contributing_docs.html">Become a Contributor</a>
+        <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
+        <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+        <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+        <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+        <li><a href="/guides/v2.2/release-notes/bk-release-notes.html">Release Notes</a></li>
+        <li><a href="/magento-third-party.html">Third-Party Licenses</a></li> 
+      </ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2017 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="/common/js/app.min.js"></script>
+
+<!-- Glossary integration -->
+<script src="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.js"></script>
+<script src="/common/js/glossary.tooltip.min.js"></script>
+<script>
+    $(document).ready(function(){
+      magento.glossary.init("https://magento.github.io/glossary/data/content-glossary.xml",function(term){return term.types.includes("glossary");},magento.glossary.tooltip.init);
+      });
+</script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+

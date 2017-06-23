@@ -1,0 +1,1309 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Magento UI library | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.
+">
+	<meta http-equiv="last-modified" content="" />
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print" />
+	<link rel="canonical" href="//guides/v2.2/frontend-dev-guide/css-topics/theme-ui-lib.html">
+
+    <!-- WebUI popover css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
+
+  <script>
+    var baseUrl = "/";
+  </script>
+
+	<!-- crazyegg -->
+	<script type="text/javascript">
+	setTimeout(function(){var a=document.createElement("script");
+	var b=document.getElementsByTagName("script")[0];
+	a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0038/0321.js?"+Math.floor(new Date().getTime()/3600000);
+	a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+	</script>
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body>
+
+<header class="site-header">
+
+	<nav id="global-nav">
+
+		<div class="menu-btn"><a class="menu-trigger menu-icon" href="#"></a></div>
+
+		<div class="container">
+
+			<a class="logo" href="/guides/v2.2/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+
+			
+<div class="version-switcher dropdown">
+	<button id="version-switcher-button" class="btn btn-small dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		Magento 2.2
+	</button>
+
+	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/frontend-dev-guide/css-topics/theme-ui-lib.html">Magento 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.1/frontend-dev-guide/css-topics/theme-ui-lib.html">Magento 2.1</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.2/frontend-dev-guide/css-topics/theme-ui-lib.html">Magento 2.2 RC</a></li>
+	
+  </ul>
+
+</div>
+
+
+
+			<!-- Main Navigation -->
+<div class="nav-main">
+  <ul>
+    <li class="first">
+      <a href="#">Setup and Deployment</a>
+        <ul class="menu nav">
+          <li><a href="https://magento.com/tech-resources/download" target="_blank">Get Started with Magento DevBox Beta</a></li>
+            <li><a href="/guides/v2.2/install-gde/bk-install-guide.html">Installation Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/comp-mgr/bk-compman-upgrade-guide.html">Extension Update and System Upgrade Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/cloud/bk-cloud.html">Enterprise Cloud Edition Guide</a></li>
+          <li class="leaf"><a href="/magento-release-information.html">Release Information</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Development</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.2/architecture/bk-architecture.html">Architecture Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          <li><a href="/guides/v2.2/payments-integrations/bk-payments-integrations.html">Payments Integrations</a></li>
+          <li class="leaf"><a href="/guides/v2.2/mrg/intro.html">Module Reference Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          
+          <li class="first leaf"><a href="/guides/v2.2/contributor-guide/contributing.html">Contributor Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Frontend</a>
+        <ul class="menu nav">
+          <li class="first leaf"><a href="/guides/v2.2/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li class="leaf"><a href="/guides/v2.2/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">API</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.2/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li class="leaf"><a href="/guides/v2.2/rest/bk-rest.html">REST API Reference</a></li>
+          <li class="leaf"><a href="/guides/v2.2/soap/bk-soap.html">SOAP API Reference</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Testing</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.2/test/testing.html">Magento Testing Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/mtf/mtf_introduction.html">Functional Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/test/integration/integration_test_execution.html">Integration Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+        </ul>
+    </li>
+
+    <li>
+      <a href="/guides/v2.2/howdoi/bk-how-do-i.html">How Tos</a>
+    </li>
+
+    <li>
+      <a href="/videos/">Videos</a>
+    </li>
+  </ul>
+</div><!-- /.nav-main -->
+
+
+			<div class="search-btn">
+				<a class="search-trigger search-icon" href="//search.html"></a>
+			</div>
+
+			<form class="quick-search" action="/search.html" method="get">
+				<input type="search" name="q" placeholder="Search" />
+				<a href="#" class="quick-search-close">&times;</a>
+			</form>
+
+		</div>
+
+	</nav><!-- #global-nav -->
+
+</header>
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- .main-container -->
+	<div class="main-container">
+		<a id="main-content"></a>
+
+
+<div class="container">
+
+    
+    <div class="message-banner">
+        Review our 2.2 release candidate!  This beta version documentation includes B2B and more. <a href="/guides/v2.2/release-notes/release-candidate/quick-start.html">See the Quickstart Guide</a><br/>
+        Stay tuned — We'll roll out more 2.2 documentation updates in the coming weeks.
+    </div> 
+    
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+<h4>Frontend Developer Guide</h4>
+
+
+
+
+
+
+		<ul>
+
+		
+
+		
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+					
+					
+
+					
+
+						
+
+						
+
+							
+
+								<li class="q "><a href="/guides/v2.2/frontend-dev-guide/bk-frontend-dev-guide.html">Introduction</a></li>
+
+							
+
+								<li class="q "><a href="/guides/v2.2/frontend-dev-guide/conventions.html">Conventional notations used in this Guide</a></li>
+
+							
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/frontend-dev-guide/themes/theme-general.html">Themes</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/frontend-dev-guide/themes/theme-overview.html">Themes overview</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/frontend-dev-guide/themes/theme-create.html">Create a new storefront theme</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/frontend-dev-guide/themes/theme-install.html">Install a a third-party storefront theme</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/frontend-dev-guide/themes/theme-uninstall.html">Uninstall a storefront theme</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/frontend-dev-guide/themes/theme-structure.html">Magento theme structure</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/frontend-dev-guide/themes/theme-apply.html">Apply and configure a storefront theme</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/frontend-dev-guide/themes/theme-images.html">Configure images properties for a theme</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/frontend-dev-guide/themes/theme-inherit.html">Theme inheritance</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/frontend-dev-guide/themes/debug-theme.html">Locate templates, layouts, and styles</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/frontend-dev-guide/themes/favicon.html">Adding custom favicons</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/frontend-dev-guide/themes/product-video.html">Configure product video</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/frontend-dev-guide/layouts/layout-overview.html">Layout</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/frontend-dev-guide/layouts/xml-instructions.html">Layout instructions</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/frontend-dev-guide/layouts/layout-types.html">Layout file types</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/frontend-dev-guide/layouts/layout-extend.html">Extend a layout</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/frontend-dev-guide/layouts/layout-override.html">Override a layout</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/frontend-dev-guide/layouts/xml-manage.html">Common layout customization tasks</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/frontend-dev-guide/layouts/layout-practice.html">Customizing layout illustration</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/frontend-dev-guide/templates/template-overview.html">Templates</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/frontend-dev-guide/templates/template-walkthrough.html">Templates customization walkthrough</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/frontend-dev-guide/templates/template-override.html">Templates basic concepts</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/frontend-dev-guide/templates/template-sample.html">Illustration of customizing templates</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/frontend-dev-guide/templates/template-email.html">Customize email templates</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/frontend-dev-guide/templates/template-security.html">Templates XSS security</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/frontend-dev-guide/css-topics/css-overview.html">Cascading style sheets (CSS)</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/frontend-dev-guide/css-topics/css-themes.html">Include CSS</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/frontend-dev-guide/css-topics/css-preprocess.html">How CSS and LESS files are preprocessed and how to debug them</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/frontend-dev-guide/css-topics/css_debug.html">Compile LESS using Grunt</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2  active "><a href="/guides/v2.2/frontend-dev-guide/css-topics/theme-ui-lib.html">Magento UI library</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/frontend-dev-guide/css-topics/css-jquery.html">Using jQuery UI styles</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/frontend-dev-guide/css-topics/css-practice.html">Customizing styles illustration</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/frontend-dev-guide/css-topics/using-fonts.html">Using custom fonts</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/frontend-dev-guide/css-topics/custom_preprocess.html">Add custom CSS preprocessor (like Sass)</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/frontend-dev-guide/css-guide/css_quick_guide_overview.html">Quick start guide to styles</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/frontend-dev-guide/css-guide/css_quick_guide_approach.html">Simple ways to customize a theme's styles</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/frontend-dev-guide/css-guide/css_quick_guide_mode.html">Simple style changes with client-side LESS compilation vs. server-side</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/frontend-dev-guide/responsive-web-design/rwd_overview.html">How to Make Your Theme Responsive and Mobile</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/frontend-dev-guide/responsive-web-design/rwd_css.html">CSS in responsive design</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/frontend-dev-guide/responsive-web-design/rwd_js.html">JavaScript in Magento responsive design</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/frontend-dev-guide/responsive-web-design/rwd_mobile.html">Create a responsive mobile theme based on a default theme</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/frontend-dev-guide/responsive-web-design/rwd_practice.html">Customizing RWD illustration</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/frontend-dev-guide/responsive-web-design/rwd-breakpoints.html">Add a custom breakpoint</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/frontend-dev-guide/translations/xlate.html">Translations</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/frontend-dev-guide/translations/theme_dictionary.html">Use translation dictionary to customize strings</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/frontend-dev-guide/translations/translate_theory.html">Translate theme strings</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/frontend-dev-guide/translations/translate_practice.html">Create a translation dictionary for a theme, illustration</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/frontend-dev-guide/tools/tools_overview.html">Tools</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/frontend-dev-guide/tools/using_grunt.html">Using Grunt for Magento tasks</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+  <nav class="breadcrumbs">
+
+    <a class="breadcrumb-item" href="/guides/v2.2/"><span>Home</span></a>
+
+    <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+    <!-- Iteration breadcrumb item -->
+    
+    
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+
+        
+          <a property="item" typeof="WebPage" href="/guides/v2.2/frontend-dev-guide/bk-frontend-dev-guide.html">
+            <span property="name">Frontend Developer Guide</span>
+          </a>
+        
+
+        <meta property="position" content="1" />
+      </li>
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
+
+        
+
+          
+
+          <span property="name">Magento UI library</span>
+
+        
+
+        <meta property="position" content="2" />
+      </li>
+
+    
+
+    
+
+
+
+    </ol>
+
+  </nav>
+
+
+
+	
+
+	
+
+	<h1 class="page-heading">Magento UI library</h1>
+
+  
+
+
+</section>
+
+
+			<h2 id="fedg_using-ui-lib_overview">What's in this topic</h2>
+
+<p>The Magento UI <span term-uuid="08968dbb-2eeb-45c7-ae95-ffca228a7575" class="glossary-term" data-toggle="popover">library</span> is a flexible <a href="http://lesscss.org/" target="_blank">LESS</a>-based <span term-uuid="b00459e5-a793-44dd-98d5-852ab33fc344" class="glossary-term" data-toggle="popover">frontend</span> library designed to assist Magento <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span> developers. It employs a set of mixins for base elements to ease frontend theme development and customization.</p>
+
+<p>This topic describes how the library is organized, and how to use it.</p>
+
+<h2 id="library_elements">Components provided by the UI library</h2>
+<p>The Magento UI library provides the ability to customize and reuse the following user interface elements and properties:</p>
+
+<ul>
+  <li>actions-toolbar</li>
+  <li>breadcrumbs</li>
+  <li>buttons</li>
+  <li>drop-downs</li>
+  <li>forms</li>
+  <li>icons</li>
+  <li><span term-uuid="73ab5daa-5857-4039-97df-11269b626134" class="glossary-term" data-toggle="popover">layout</span></li>
+  <li>loaders</li>
+  <li>messages</li>
+  <li>pagination</li>
+  <li>popups</li>
+  <li>ratings</li>
+  <li>sections</li>
+  <li>tabs and accordions</li>
+  <li>tables</li>
+  <li>tooltips</li>
+  <li>typography</li>
+  <li>list of theme variables</li>
+</ul>
+
+<p>The following illustration shows a <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span> product page containing some of the preceding elements:</p>
+
+<div style="border: 1px solid #ABABAB">
+<img src="/common/images/ui_lib1.png" alt="A product page with user interface elements specified" />
+</div>
+
+<h2 id="fedg_using-ui-lib_mixins">Mixin location</h2>
+
+<p>You can find the Magento UI library under <a href="https://github.com/magento/magento2/blob/2.0/lib/web/css" target="_blank"><code>lib/web/css</code></a>. Library source <code>.less</code> files are stored under the <code>source</code> directory, each file contains mixins for configuring a certain element, and in most cases the element coincides with the file name:</p>
+
+<pre>lib/web
+    ├── css/
+    │    ├── docs/ (Library documentation)
+    │    ├── source/
+    │    │    ├── lib/ (Library source files)
+    |    |    |    ├── variables/ (Predefined variables for each mixin)
+    │    │    │    ├── _actions-toolbar.less
+    │    │    │    ├── _breadcrumbs.less
+    │    │    │    ├── _buttons.less
+    │    │    │    ├── _dropdowns.less
+    │    │    │    ├── _forms.less
+    |    |    |    ├── _grids.less
+    │    │    │    ├── _icons.less
+    │    │    │    ├── _layout.less
+    │    │    │    ├── _lib.less
+    │    │    │    ├── _loaders.less
+    │    │    │    ├── _messages.less
+    │    │    │    ├── _navigation.less
+    │    │    │    ├── _pages.less
+    │    │    │    ├── _popups.less
+    │    │    │    ├── _rating.less
+    │    │    │    ├── _resets.less
+    │    │    │    ├── _responsive.less
+    │    │    │    ├── _sections.less
+    │    │    │    ├── _tables.less
+    │    │    │    ├── _tooltips.less
+    │    │    │    ├── _typography.less
+    │    │    │    ├── _utilities.less
+    │    │    │    └── _variables.less
+    │    │    └── _extend.less
+    │    │    └── _theme.less
+    │    │    └── _variables.less
+    │    └── styles.less
+    ├── fonts/
+    │    └── Blank-Theme-Icons/ (Library custom icons font)
+    ├── images/
+    │    └── blank-theme-icons.png (Library icons sprite)
+    └── jquery/ (Library javascript files)</pre>
+
+<h2 id="fedg_using-ui-lib_predef-vars">Predefined variables</h2>
+
+<p>If your theme <a href="/guides/v2.2/frontend-dev-guide/themes/theme-inherit.html" target="_blank">inherits</a> from any Magento out-of-the-box theme, for example Blank, you can easily customize any element of a store page without changing any <span term-uuid="6c5cb4e9-9197-46f2-ba79-6147d9bfe66d" class="glossary-term" data-toggle="popover">CSS</span> code or templates. Customization can be performed by simply changing in your theme the values of the predefined variables used in the UI library or parent theme mixins.</p>
+
+<p>The complete list of these variables and their default values are stored in <a href="https://github.com/magento/magento2/blob/2.0/lib/web/css/source/lib/variables" target="_blank"><code>lib/web/css/source/lib/variables</code></a>. This directory contains a set of files, corresponding to the set of UI library elements, and each of the files lists element-specific variables. For example, <a href="https://github.com/magento/magento2/blob/2.0/lib/web/css/source/lib/variables/_breadcrumbs.less" target="_blank"><code>lib/web/css/source/lib/variables/_breadcrumbs.less</code></a> contains variables used in the <code>breadcrumbs()</code> <span term-uuid="1a305bdb-9be8-44aa-adad-98758821d6a7" class="glossary-term" data-toggle="popover">mixin</span>.</p>
+
+<p>To change the default library variables values, specify the new values for the required variables in the <code>&lt;theme_dir&gt;/web/css/source/_theme.less</code> file.</p>
+
+<div class="bs-callout bs-callout-info" id="info">
+<p>Please mind, that your <code>&lt;theme_dir&gt;/web/css/source/_theme.less</code> file overrides <code>_theme.less</code> of the parent theme (if your theme has a parent). So if you want to inherit the parent theme's variable values additionally to your changes, add the content of parent’s <code>_theme.less</code> to your file as well.</p>
+</div>
+
+<p>The following figure shows the product page shown earlier in this topic, after a custom theme was applied. The theme customized Blank by redefining variables only.</p>
+
+<p><img src="/common/images/ui_lib2.png" alt="Changing design by redefining variables" /></p>
+
+<h2 id="fedg_using-ui-lib_vars">Your custom variables</h2>
+
+<p>When naming custom variables, please follow the <a href="/guides/v2.2/coding-standards/code-standard-less.html#naming">Magento naming convention for the LESS variables</a>.</p>
+
+<h2 id="fedg_using-ui-lib_customize">Using mixins</h2>
+
+<p>You can use a mixin with default variables values, or you can redefine them when calling a mixin. The following paragraphs describe both ways to call a mixin.</p>
+
+<p>To use a mixin with default values, call the mixin without specifying any parameters. For example:</p>
+
+<pre>.breadcrumbs {
+    .breadcrumbs();
+}</pre>
+
+<p>To call a mixin with parameter values different from default, set these values when calling the mixin, like in the following example:</p>
+
+<pre>.example-button {
+    .button(
+        @_button-padding: @button-padding,
+        @_button-color: #fff,
+        @_button-color-hover: #ccc
+    );
+}</pre>
+
+<p>Variables starting with <code>@_</code> are private mixin variables used only in this mixin. Variables starting with <code>@</code> (without the underscore) are global, and are listed in <a href="https://github.com/magento/magento2/blob/2.0/lib/web/css/source/lib/variables" target="_blank"><code>lib/web/css/source/lib/variables/</code></a>.</p>
+
+<h2 id="docs">UI library documentation</h2>
+
+<p>You can find detailed information about the Magento UI library in the documentation provided together with the code:</p>
+
+<ul>
+  <li><a href="https://github.com/magento/magento2/blob/2.0/lib/web/css/docs/source/README.md" target="_blank"><code>lib/web/css/docs/source/README.md</code></a>: describes the Magento UI library structure, naming conventions, and code style.</li>
+  <li><a href="https://github.com/magento/magento2/blob/2.0/lib/web/css/docs" target="_blank"><code>lib/web/css/docs</code></a>: contains a set of <code>.html</code> files with detailed information about the library mixins. Each file is named after the mixin it describes, and contains detailed mixin description and navigation controls to access documentation for other mixins. The documentation is available in a convenient <span term-uuid="a2aff425-07dd-4bd6-9671-29b7edefa871" class="glossary-term" data-toggle="popover">HTML</span> view in the following location in your Magento installation: <code>pub/static/frontend/Magento/blank/en_US/css/docs/index.html</code></li>
+</ul>
+
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+  
+   <div class="github-link">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/frontend-dev-guide/css-topics/theme-ui-lib.md" target="_blank">
+       Edit this page on GitHub
+     </a>
+   </div>
+  
+
+  <div class="new-issue">
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/frontend-dev-guide/css-topics/theme-ui-lib.html" target="_blank">Give us feedback</a>
+  </div>
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.container -->
+
+
+	</div>
+	<!-- /.main-container -->
+
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div id="footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav">
+        <li><a href="/guides/v2.2/contributor-guide/contributing_docs.html">Become a Contributor</a>
+        <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
+        <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+        <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+        <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+        <li><a href="/guides/v2.2/release-notes/bk-release-notes.html">Release Notes</a></li>
+        <li><a href="/magento-third-party.html">Third-Party Licenses</a></li> 
+      </ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2017 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="/common/js/app.min.js"></script>
+
+<!-- Glossary integration -->
+<script src="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.js"></script>
+<script src="/common/js/glossary.tooltip.min.js"></script>
+<script>
+    $(document).ready(function(){
+      magento.glossary.init("https://magento.github.io/glossary/data/content-glossary.xml",function(term){return term.types.includes("glossary");},magento.glossary.tooltip.init);
+      });
+</script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+

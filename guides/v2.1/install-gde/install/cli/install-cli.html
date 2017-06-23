@@ -67,6 +67,8 @@
 	
 		<li><a class="dropdown-item" href="/guides/v2.1/install-gde/install/cli/install-cli.html">Magento 2.1</a></li>
 	
+		<li><a class="dropdown-item" href="/guides/v2.2/install-gde/install/cli/install-cli.html">Magento 2.2 RC</a></li>
+	
   </ul>
 
 </div>
@@ -177,6 +179,8 @@
 
 
 <div class="container">
+
+    
 
 	<!-- sidebar -->
 <aside class="sidebar">
@@ -796,6 +800,7 @@
 
 </section>
 
+
 			<div class="bs-callout bs-callout-tip">
   <p>Totally lost? Need a helping hand? Try our <a href="/guides/v2.1/install-gde/install-quick-ref.html">installation quick reference (tutorial)</a> or <a href="/guides/v2.1/install-gde/install-roadmap_part1.html">installation roadmap (reference)</a>.</p>
 </div>
@@ -847,9 +852,12 @@ This has the additional benefit of eliminating users' learning curve</li>
 
       <p>If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:</p>
 
-      <pre><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt; If the Magento file system owner does not allow logins you can do the following
+      <pre><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
+</code></pre>
 
-sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
+      <p>If the Magento file system owner does not allow logins you can do the following:</p>
+
+      <pre><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
 </code></pre>
     </li>
     <li>

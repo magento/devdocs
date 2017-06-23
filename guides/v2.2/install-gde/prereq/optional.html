@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Optional software | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.
+">
+	<meta http-equiv="last-modified" content="" />
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print" />
+	<link rel="canonical" href="//guides/v2.2/install-gde/prereq/optional.html">
+
+    <!-- WebUI popover css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
+
+  <script>
+    var baseUrl = "/";
+  </script>
+
+	<!-- crazyegg -->
+	<script type="text/javascript">
+	setTimeout(function(){var a=document.createElement("script");
+	var b=document.getElementsByTagName("script")[0];
+	a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0038/0321.js?"+Math.floor(new Date().getTime()/3600000);
+	a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+	</script>
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body>
+
+<header class="site-header">
+
+	<nav id="global-nav">
+
+		<div class="menu-btn"><a class="menu-trigger menu-icon" href="#"></a></div>
+
+		<div class="container">
+
+			<a class="logo" href="/guides/v2.2/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+
+			
+<div class="version-switcher dropdown">
+	<button id="version-switcher-button" class="btn btn-small dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		Magento 2.2
+	</button>
+
+	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/install-gde/prereq/optional.html">Magento 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.1/install-gde/prereq/optional.html">Magento 2.1</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.2/install-gde/prereq/optional.html">Magento 2.2 RC</a></li>
+	
+  </ul>
+
+</div>
+
+
+
+			<!-- Main Navigation -->
+<div class="nav-main">
+  <ul>
+    <li class="first">
+      <a href="#">Setup and Deployment</a>
+        <ul class="menu nav">
+          <li><a href="https://magento.com/tech-resources/download" target="_blank">Get Started with Magento DevBox Beta</a></li>
+            <li><a href="/guides/v2.2/install-gde/bk-install-guide.html">Installation Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/comp-mgr/bk-compman-upgrade-guide.html">Extension Update and System Upgrade Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/cloud/bk-cloud.html">Enterprise Cloud Edition Guide</a></li>
+          <li class="leaf"><a href="/magento-release-information.html">Release Information</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Development</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.2/architecture/bk-architecture.html">Architecture Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          <li><a href="/guides/v2.2/payments-integrations/bk-payments-integrations.html">Payments Integrations</a></li>
+          <li class="leaf"><a href="/guides/v2.2/mrg/intro.html">Module Reference Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          
+          <li class="first leaf"><a href="/guides/v2.2/contributor-guide/contributing.html">Contributor Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Frontend</a>
+        <ul class="menu nav">
+          <li class="first leaf"><a href="/guides/v2.2/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li class="leaf"><a href="/guides/v2.2/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">API</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.2/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li class="leaf"><a href="/guides/v2.2/rest/bk-rest.html">REST API Reference</a></li>
+          <li class="leaf"><a href="/guides/v2.2/soap/bk-soap.html">SOAP API Reference</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Testing</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.2/test/testing.html">Magento Testing Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/mtf/mtf_introduction.html">Functional Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/test/integration/integration_test_execution.html">Integration Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+        </ul>
+    </li>
+
+    <li>
+      <a href="/guides/v2.2/howdoi/bk-how-do-i.html">How Tos</a>
+    </li>
+
+    <li>
+      <a href="/videos/">Videos</a>
+    </li>
+  </ul>
+</div><!-- /.nav-main -->
+
+
+			<div class="search-btn">
+				<a class="search-trigger search-icon" href="//search.html"></a>
+			</div>
+
+			<form class="quick-search" action="/search.html" method="get">
+				<input type="search" name="q" placeholder="Search" />
+				<a href="#" class="quick-search-close">&times;</a>
+			</form>
+
+		</div>
+
+	</nav><!-- #global-nav -->
+
+</header>
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- .main-container -->
+	<div class="main-container">
+		<a id="main-content"></a>
+
+
+<div class="container">
+
+    
+    <div class="message-banner">
+        Review our 2.2 release candidate!  This beta version documentation includes B2B and more. <a href="/guides/v2.2/release-notes/release-candidate/quick-start.html">See the Quickstart Guide</a><br/>
+        Stay tuned — We'll roll out more 2.2 documentation updates in the coming weeks.
+    </div> 
+    
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+<h4>Installation Guide<br>Part 1: Getting started</h4>
+
+
+
+
+
+
+		<ul>
+
+		
+
+		
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+					
+					
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/install-gde/install-resources-parent.html">Helpful resources</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/install-gde/install-quick-ref.html">Installation quick reference (tutorial)</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/install-gde/install-resource-diagram.html">Installation flow diagram</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/install-gde/install-roadmap_part1.html">Installation roadmap (reference)</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/install-gde/system-requirements2.html">Magento 2.1.x system requirements</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/install-gde/system-requirements-tech.html">Magento 2.2.x technology stack requirements</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/install-gde/system-requirements_browsers.html">Supported browsers</a></li>
+
+									
+
+								
+
+									
+
+										<li class="level3Parent " id="tls"><a href="#">Transport Layer Security (TLS) requirements</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child tls " data-menunode="tls"><a href="/guides/v2.2/install-gde/system-requirements_tls1-2.html">TLS 1.2 requirement for PayPal</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child tls " data-menunode="tls"><a href="/guides/v2.2/install-gde/system-requirements_repo-tls1-2.html">TLS requirement for repo.magento.com</a>
+
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/install-gde/prereq/prereq-overview.html">Prerequisites</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/install-gde/prereq/apache.html">Apache</a></li>
+
+									
+
+								
+
+									
+
+										<li class="level3Parent " id="php"><a href="#">PHP</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child php " data-menunode="php"><a href="/guides/v2.2/install-gde/prereq/php-centos.html">PHP 5.6 or 7.0&mdash;CentOS</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child php " data-menunode="php"><a href="/guides/v2.2/install-gde/prereq/php-ubuntu.html">PHP 5.5, 5.6, or 7.0&mdash;Ubuntu</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child php " data-menunode="php"><a href="/guides/v2.2/install-gde/prereq/php-settings.html">Required PHP settings</a>
+
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/install-gde/prereq/mysql.html">MySQL</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/install-gde/prereq/connect-auth.html">Get your authentication keys</a></li>
+
+									
+
+								
+
+									
+
+										<li class="level3Parent " id="umask"><a href="#">Magento file system ownership and permissions</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child umask " data-menunode="umask"><a href="/guides/v2.2/install-gde/install/file-sys-perms-over.html">Overview of ownership and permissions</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child umask " data-menunode="umask"><a href="/guides/v2.2/install-gde/prereq/file-sys-perms-over.html">Overview of ownership and permissions</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child umask " data-menunode="umask"><a href="/guides/v2.2/install-gde/prereq/file-system-perms.html">Set pre-installation ownership and permissions</a>
+
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/install-gde/prereq/install-rabbitmq.html">RabbitMQ (Enterprise Edition)</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/install-gde/prereq/mysql_remote.html">Set up a remote MySQL database connection</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/install-gde/prereq/security.html">SELinux and iptables</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2  active "><a href="/guides/v2.2/install-gde/prereq/optional.html">Optional software</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/install-gde/prereq/prereq_updater.html">Set up the updater (obsolete)</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/install-gde/install/get-software.html">Get the Magento software</a></li>
+									
+								
+
+									
+
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/install-gde/prereq/zip_install.html">(Easy) Install the Magento archive on your server</a></li>
+									
+								
+
+									
+
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/install-gde/prereq/integrator_install.html">(Integrator) Integrator installation</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/install-gde/prereq/integrator_install_composer.html">Install Composer</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/install-gde/prereq/integrator_install_ce.html">Get the Magento CE metapackage</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/install-gde/prereq/integrator_install_ee.html">Get the Magento EE metapackage</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/install-gde/prereq/dev_install.html">(Contributor) Clone the Magento repository</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/install-gde/install/prepare-install.html">Update installation dependencies</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/install-gde/install/get-help.html">Get help with your installation</a></li>
+									
+								
+
+									
+
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/install-gde/continue-to-install.html">Next&mdash;Installation part 2, installing</a></li>
+									
+								
+
+									
+
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+  <nav class="breadcrumbs">
+
+    <a class="breadcrumb-item" href="/guides/v2.2/"><span>Home</span></a>
+
+    <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+    <!-- Iteration breadcrumb item -->
+    
+    
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
+
+        
+
+          
+
+          <span property="name">Optional software</span>
+
+        
+
+        <meta property="position" content="1" />
+      </li>
+
+    
+
+    
+
+
+
+    </ol>
+
+  </nav>
+
+
+
+	
+
+	
+
+	<h1 class="page-heading">Optional software</h1>
+
+  
+
+
+</section>
+
+
+			<h2 id="install-optional-intro">Magento optional software</h2>
+<p>We strongly recommend you install NTP because otherwise, cron-related tasks might not perform properly. (Server dates could be in the past or future, for example.)</p>
+
+<p>The other optional utilities discussed in this topic might assist you with your installation; however, they are not required to install or use Magento.</p>
+
+<h2 id="install-optional-ntp">Installing and Configuring Network Time Protocol (NTP)</h2>
+<p><a href="http://www.ntp.org" target="_blank">NTP</a> enables servers to synchronize their system clocks using <a href="http://www.pool.ntp.org/en" target="_blank">globally available pool servers</a>. Magento recommends you use NTP servers you trust, whether they are dedicated hardware solutions your internal network or external, public servers.</p>
+
+<p>If you are deploying Magento on multiple hosts, NTP is a simple way to guarantee their clocks are all synchronized, no matter what time zone the servers are in. Also, cron-related tasks (such as indexing and transactional e-mails) depend on the server clock being accurate.</p>
+
+<p>See one of the following sections:</p>
+
+<ul>
+  <li><a href="#install-optional-ntp-ubuntu">Install and configure NTP on Ubuntu</a></li>
+  <li><a href="#install-optional-ntp-centos">Install and configure NTP on CentOS</a></li>
+  <li><a href="#install-optional-ntp-servers">Use NTP pool servers</a></li>
+</ul>
+
+<h3 id="install-optional-ntp-ubuntu">Install and configure NTP on Ubuntu</h3>
+
+<p>Enter the following command to install NTP:</p>
+
+<pre><code>apt-get install ntp
+</code></pre>
+
+<p>Continue with <a href="#install-optional-ntp-servers">Use NTP pool servers</a>.</p>
+
+<h3 id="install-optional-ntp-centos">Install and configure NTP on CentOS</h3>
+
+<p>To install and configure NTP:</p>
+
+<ol>
+  <li>
+    <p>Enter the following command to find the appropriate NTP software:</p>
+
+    <pre>yum search ntp</pre>
+  </li>
+  <li>
+    <p>Select a package to install. For example, <code>ntp.x86_64</code>.</p>
+  </li>
+  <li>
+    <p>Install the package.</p>
+
+    <pre>yum -y install ntp.x86_64</pre>
+  </li>
+  <li>
+    <p>Enter the following command so that NTP starts when the server starts.</p>
+
+    <pre>chkconfig ntpd on</pre>
+  </li>
+  <li>
+    <p>Continue with the next section.</p>
+  </li>
+</ol>
+
+<h3 id="install-optional-ntp-servers">Use NTP pool servers</h3>
+<p>Selecting pool servers is up to you. If you use NTP pool servers, ntp.org recommends you use <a href="http://www.pool.ntp.org/en" target="_blank">pool servers</a> that are close to your servers’ time zone as discussed on the <a href="http://www.pool.ntp.org/en/use.html" target="_blank">NTP pool project help page</a>. If you have a private NTP server that is available to all hosts in your Magento deployment, you can use that server instead.</p>
+
+<ol>
+  <li>
+    <p>Open <code>/etc/ntp.conf</code> in a text editor.</p>
+  </li>
+  <li>
+    <p>Look for lines similar to the following:</p>
+
+    <pre>server 0.centos.pool.ntp.org
+server 1.centos.pool.ntp.org
+server 2.centos.pool.ntp.org</pre>
+  </li>
+  <li>
+    <p>Replace those lines or add additional lines that specify your NTP pool server or other NTP servers. It’s a good idea to specify more than one.</p>
+  </li>
+  <li>
+    <p>An example of using three United States-based NTP servers follows:</p>
+
+    <pre>server 0.us.pool.ntp.org
+server 1.us.pool.ntp.org
+server 2.us.pool.ntp.org</pre>
+  </li>
+  <li>
+    <p>Save your changes to <code>/etc/ntp.conf</code> and exit the text editor.</p>
+  </li>
+  <li>
+    <p>Restart the service.</p>
+
+    <p>Ubuntu: <code>service ntp restart</code></p>
+
+    <p>CentOS: <code>service ntpd restart</code></p>
+  </li>
+  <li>
+    <p>Enter <code>date</code> to check the server’s date.</p>
+
+    <p>If the date is incorrect, make sure the NTP client port (typically, UDP 123) is open in your firewall.</p>
+
+    <p>Try the <code>ntpdate <em>[pool server host name]</em></code> command. If it fails, search for the error it returns.</p>
+
+    <p>If all else fails, try rebooting the server.</p>
+  </li>
+</ol>
+
+<h2 id="install-optional-phpinfo">Create phpinfo.php</h2>
+<p><a href="http://php.net/manual/en/function.phpinfo.php" target="_blank"><code>phpinfo.php</code></a> displays a large amount of information about <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> and its extensions.</p>
+
+<div class="bs-callout bs-callout-warning">
+    <p>Use <code>phpinfo.php</code> in a development system <em>only</em>. It can be a security issue in production.</p>
+</div>
+
+<p>Add the following code anywhere in your web server’s docroot:</p>
+<pre>&lt;?php
+
+// Show all information, defaults to INFO_ALL
+phpinfo();</pre>
+
+<p>For more information, see the <a href="http://php.net/manual/en/function.phpinfo.php" target="_blank">phpinfo manual page</a>.</p>
+
+<p>To view the results, enter the following <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span> in your browser’s location or address field:</p>
+
+<pre><code>http://&lt;web server host or IP&gt;/phpinfo.php
+</code></pre>
+
+<p>If a 404 (Not Found) error displays, check the following:</p>
+
+<ul>
+  <li>Start the web server if necessary.</li>
+  <li>
+    <p>Make sure your firewall allows traffic on port 80.</p>
+
+    <p><a href="https://help.ubuntu.com/community/UFW" target="_blank">Help for Ubuntu</a></p>
+
+    <p><a href="http://wiki.centos.org/HowTos/Network/IPTables" target="_blank">Help for CentOS</a></p>
+  </li>
+</ul>
+
+<h2 id="install-optional-phpmyadmin">Install phpmyadmin</h2>
+<p><code>phpmyadmin</code> is an easy-to-use, free database administration utility. You can use it to check and manipulate the contents of your database. You must log in to <code>phpmyadmin</code> as the MySQL database administrative user.</p>
+
+<p>For more information about <code>phpmyadmin</code>, see the <a href="http://www.phpmyadmin.net/home_page/index.php" target="_blank">phpmyadmin home page</a>.</p>
+
+<p>For more detailed information about installation, see the <a href="http://docs.phpmyadmin.net/en/latest/setup.html#quick-install" target="_blank">phpmyadmin installation documentation</a>.</p>
+
+<div class="bs-callout bs-callout-warning">
+    <p>Use phpmyadmin in a development system <em>only</em>. It can be a security issue in production.</p>
+</div>
+
+<h2 id="install-optional-phpmyadmin-ubuntu">Install phpmyadmin on Ubuntu</h2>
+<p>To install phpmyadmin on Ubuntu:</p>
+
+<ol>
+  <li>
+    <p>Use the following command:</p>
+
+    <pre><code>apt-get install phpmyadmin
+</code></pre>
+  </li>
+  <li>
+    <p>Follow the prompts on your screen to complete the installation.</p>
+  </li>
+  <li>
+    <p>To use phpmyadmin, enter the following URL in your browser’s address or location field:</p>
+
+    <pre><code>http://&lt;web server host or IP&gt;/phpmyadmin
+</code></pre>
+  </li>
+  <li>
+    <p>When prompted, log in using your MySQL database <code>root</code> or administrative user’s user name and password.</p>
+  </li>
+</ol>
+
+<h2 id="install-optional-phpmyadmin-centos">Install phpmyadmin on CentOS</h2>
+<p>To install phpmyadmin on CentOS:</p>
+
+<ol>
+  <li>
+    <p>Download the epel RPM for the version of CentOS you’re using. A sample follows.</p>
+
+    <pre><code>cd /tmp
+wget http://download.fedoraproject.org/pub/epel/6/i386/epel-release-6-8.noarch.rpm
+rpm -ivh epel-release-6-8.noarch.rpm
+</code></pre>
+  </li>
+  <li>
+    <p>Install <code>phpmyadmin</code> as follows:</p>
+
+    <pre><code>yum -y install phpmyadmin
+</code></pre>
+  </li>
+  <li>
+    <p>Authorize access to phpmyadmin from your machine’s IP address.</p>
+
+    <p>Open the following file for editing:</p>
+
+    <pre><code>vim /etc/httpd/conf.d/phpMyAdmin.conf
+</code></pre>
+  </li>
+  <li>
+    <p>Replace the following IP address with your IP address</p>
+
+    <pre><code>Require ip localhost
+</code></pre>
+
+    <p>For example,</p>
+
+    <pre><code>Require ip 192.51.100.101
+</code></pre>
+  </li>
+  <li>
+    <p>Replace the following IP with your IP address:</p>
+
+    <pre><code>Allow from localhost
+</code></pre>
+
+    <p>For example,</p>
+
+    <pre><code>Allow from 192.51.100.101
+</code></pre>
+  </li>
+  <li>
+    <p>Save your changes to <code>/etc/httpd/conf.d/phpMyAdmin.conf</code> and exit the text editor.</p>
+  </li>
+  <li>
+    <p>Restart Apache.</p>
+
+    <pre><code>service httpd Restart
+</code></pre>
+  </li>
+  <li>
+    <p>To use phpmyadmin, enter the following command in your browser’s address or location field:</p>
+
+    <pre><code>http://&lt;web server host or IP&gt;/phpmyadmin
+</code></pre>
+  </li>
+  <li>
+    <p>When prompted, log in using your MySQL database <code>root</code> or administrative user’s user name and password.</p>
+  </li>
+</ol>
+
+<h4 id="related-topics">Related topics:</h4>
+
+<ul>
+  <li><a href="/guides/v2.2/install-gde/prereq/apache.html">Apache</a></li>
+  <li><a href="/guides/v2.2/install-gde/prereq/php-ubuntu.html">PHP 5.5, 5.6, or 7.0—Ubuntu</a></li>
+  <li><a href="/guides/v2.2/install-gde/prereq/php-centos.html">PHP 5.5, 5.6, or 7.0—CentOS</a></li>
+  <li><a href="/guides/v2.2/install-gde/prereq/mysql.html">MySQL</a></li>
+  <li><a href="/guides/v2.2/install-gde/prereq/security.html">Configuring security options</a></li>
+  <li><a href="/guides/v2.2/install-gde/bk-install-guide.html">How to get the Magento software</a></li>
+</ul>
+
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+  
+   <div class="github-link">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/install-gde/prereq/optional.md" target="_blank">
+       Edit this page on GitHub
+     </a>
+   </div>
+  
+
+  <div class="new-issue">
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/install-gde/prereq/optional.html" target="_blank">Give us feedback</a>
+  </div>
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.container -->
+
+
+	</div>
+	<!-- /.main-container -->
+
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div id="footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav">
+        <li><a href="/guides/v2.2/contributor-guide/contributing_docs.html">Become a Contributor</a>
+        <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
+        <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+        <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+        <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+        <li><a href="/guides/v2.2/release-notes/bk-release-notes.html">Release Notes</a></li>
+        <li><a href="/magento-third-party.html">Third-Party Licenses</a></li> 
+      </ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2017 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="/common/js/app.min.js"></script>
+
+<!-- Glossary integration -->
+<script src="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.js"></script>
+<script src="/common/js/glossary.tooltip.min.js"></script>
+<script>
+    $(document).ready(function(){
+      magento.glossary.init("https://magento.github.io/glossary/data/content-glossary.xml",function(term){return term.types.includes("glossary");},magento.glossary.tooltip.init);
+      });
+</script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+

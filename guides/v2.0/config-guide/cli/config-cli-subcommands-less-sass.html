@@ -67,6 +67,8 @@
 	
 		<li><a class="dropdown-item" href="/guides/v2.1/config-guide/cli/config-cli-subcommands-less-sass.html">Magento 2.1</a></li>
 	
+		<li><a class="dropdown-item" href="/guides/v2.2/config-guide/cli/config-cli-subcommands-less-sass.html">Magento 2.2 RC</a></li>
+	
   </ul>
 
 </div>
@@ -175,6 +177,8 @@
 
 
 <div class="container">
+
+    
 
 	<!-- sidebar -->
 <aside class="sidebar">
@@ -1311,7 +1315,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/prod/prod_deploy.html">Deploy to Production</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/prod/prod_deploy.html">Deploy to production</a></li>
 
 									
 
@@ -1569,6 +1573,7 @@
 
 </section>
 
+
 			<h2 id="config-cli-before">First steps</h2>
 <div>
 
@@ -1578,9 +1583,12 @@
 
       <p>If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:</p>
 
-      <pre><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt; If the Magento file system owner does not allow logins you can do the following
+      <pre><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
+</code></pre>
 
-sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
+      <p>If the Magento file system owner does not allow logins you can do the following:</p>
+
+      <pre><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
 </code></pre>
     </li>
     <li>

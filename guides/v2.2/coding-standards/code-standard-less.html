@@ -1,0 +1,1422 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>LESS coding standard | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.
+">
+	<meta http-equiv="last-modified" content="" />
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print" />
+	<link rel="canonical" href="//guides/v2.2/coding-standards/code-standard-less.html">
+
+    <!-- WebUI popover css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
+
+  <script>
+    var baseUrl = "/";
+  </script>
+
+	<!-- crazyegg -->
+	<script type="text/javascript">
+	setTimeout(function(){var a=document.createElement("script");
+	var b=document.getElementsByTagName("script")[0];
+	a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0038/0321.js?"+Math.floor(new Date().getTime()/3600000);
+	a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+	</script>
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body>
+
+<header class="site-header">
+
+	<nav id="global-nav">
+
+		<div class="menu-btn"><a class="menu-trigger menu-icon" href="#"></a></div>
+
+		<div class="container">
+
+			<a class="logo" href="/guides/v2.2/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+
+			
+<div class="version-switcher dropdown">
+	<button id="version-switcher-button" class="btn btn-small dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		Magento 2.2
+	</button>
+
+	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/coding-standards/code-standard-less.html">Magento 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.1/coding-standards/code-standard-less.html">Magento 2.1</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.2/coding-standards/code-standard-less.html">Magento 2.2 RC</a></li>
+	
+  </ul>
+
+</div>
+
+
+
+			<!-- Main Navigation -->
+<div class="nav-main">
+  <ul>
+    <li class="first">
+      <a href="#">Setup and Deployment</a>
+        <ul class="menu nav">
+          <li><a href="https://magento.com/tech-resources/download" target="_blank">Get Started with Magento DevBox Beta</a></li>
+            <li><a href="/guides/v2.2/install-gde/bk-install-guide.html">Installation Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/comp-mgr/bk-compman-upgrade-guide.html">Extension Update and System Upgrade Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/cloud/bk-cloud.html">Enterprise Cloud Edition Guide</a></li>
+          <li class="leaf"><a href="/magento-release-information.html">Release Information</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Development</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.2/architecture/bk-architecture.html">Architecture Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          <li><a href="/guides/v2.2/payments-integrations/bk-payments-integrations.html">Payments Integrations</a></li>
+          <li class="leaf"><a href="/guides/v2.2/mrg/intro.html">Module Reference Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          
+          <li class="first leaf"><a href="/guides/v2.2/contributor-guide/contributing.html">Contributor Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Frontend</a>
+        <ul class="menu nav">
+          <li class="first leaf"><a href="/guides/v2.2/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li class="leaf"><a href="/guides/v2.2/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">API</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.2/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li class="leaf"><a href="/guides/v2.2/rest/bk-rest.html">REST API Reference</a></li>
+          <li class="leaf"><a href="/guides/v2.2/soap/bk-soap.html">SOAP API Reference</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Testing</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.2/test/testing.html">Magento Testing Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/mtf/mtf_introduction.html">Functional Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/test/integration/integration_test_execution.html">Integration Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+        </ul>
+    </li>
+
+    <li>
+      <a href="/guides/v2.2/howdoi/bk-how-do-i.html">How Tos</a>
+    </li>
+
+    <li>
+      <a href="/videos/">Videos</a>
+    </li>
+  </ul>
+</div><!-- /.nav-main -->
+
+
+			<div class="search-btn">
+				<a class="search-trigger search-icon" href="//search.html"></a>
+			</div>
+
+			<form class="quick-search" action="/search.html" method="get">
+				<input type="search" name="q" placeholder="Search" />
+				<a href="#" class="quick-search-close">&times;</a>
+			</form>
+
+		</div>
+
+	</nav><!-- #global-nav -->
+
+</header>
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- .main-container -->
+	<div class="main-container">
+		<a id="main-content"></a>
+
+
+<div class="container">
+
+    
+    <div class="message-banner">
+        Review our 2.2 release candidate!  This beta version documentation includes B2B and more. <a href="/guides/v2.2/release-notes/release-candidate/quick-start.html">See the Quickstart Guide</a><br/>
+        Stay tuned — We'll roll out more 2.2 documentation updates in the coming weeks.
+    </div> 
+    
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+<h4>Coding Standards</h4>
+
+
+
+
+
+
+		<ul>
+
+		
+
+		
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+					
+					
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/coding-standards/code-standard-demarcation.html">Code demarcation standard</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/coding-standards/code-standard-php.html">PHP coding standard</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/coding-standards/code-standard-sniffers.html">PHP code sniffers</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/coding-standards/docblock-standard-general.html">DocBlock standard</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/coding-standards/code-standard-javascript.html">JavaScript coding standard</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/coding-standards/docblock-standard-javascript.html">JavaScript DocBlock standard</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/coding-standards/code-standard-jquery-widgets.html">jQuery widget coding standard</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2  active "><a href="/guides/v2.2/coding-standards/code-standard-less.html">LESS coding standard</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/coding-standards/code-standard-html.html">HTML style guide</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+  <nav class="breadcrumbs">
+
+    <a class="breadcrumb-item" href="/guides/v2.2/"><span>Home</span></a>
+
+    <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+    <!-- Iteration breadcrumb item -->
+    
+    
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+
+        
+          <a property="item" typeof="WebPage" href="/guides/v2.2/coding-standards/bk-coding-standards.html">
+            <span property="name">Coding Standards</span>
+          </a>
+        
+
+        <meta property="position" content="1" />
+      </li>
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
+
+        
+
+          
+
+          <span property="name">LESS coding standard</span>
+
+        
+
+        <meta property="position" content="2" />
+      </li>
+
+    
+
+    
+
+
+
+    </ol>
+
+  </nav>
+
+
+
+	
+
+	
+
+	<h1 class="page-heading">LESS coding standard</h1>
+
+  
+
+
+</section>
+
+
+			<p>This standard defines Magento internal requirements for code formatting and style for teams that develop LESS and <span term-uuid="6c5cb4e9-9197-46f2-ba79-6147d9bfe66d" class="glossary-term" data-toggle="popover">CSS</span> code.</p>
+
+<p>Some parts of Magento code might not comply with this coding standard yet, but we are working to gradually improve this.</p>
+
+<p>This coding standard is optional for third-party Magento developers.</p>
+
+<h2 id="general-rules">General rules</h2>
+
+<h3 id="indentation">Indentation</h3>
+
+<p>Use only spaces for indentation:</p>
+
+<ul>
+  <li>Tab size: 4 spaces</li>
+  <li>Indent size: 4 spaces</li>
+  <li>Continuation indent: 4 spaces</li>
+</ul>
+
+<p><strong>Correct</strong>:</p>
+
+<pre><code>.nav {
+    .nav-item {
+        ...
+    }
+}
+</code></pre>
+
+<h3 id="formatting">Formatting</h3>
+
+<h4 id="braces">Braces</h4>
+
+<p>Add one space before opening braces and a line break after. Add a line break before closing braces.</p>
+
+<p><strong>Correct</strong>:</p>
+
+<pre><code>.nav {
+    color: @nav__color;
+}
+</code></pre>
+
+<p><strong>Incorrect</strong>:</p>
+
+<pre><code>.nav{color: @nav__color;}
+</code></pre>
+
+<h4 id="selector-delimiters">Selector delimiters</h4>
+
+<p>Add a line break after each selector delimiter. Do not add spaces before or after delimiters.</p>
+
+<p><strong>Correct</strong>:</p>
+
+<pre><code>.nav,
+.bar {
+    color: @color__base;
+}
+</code></pre>
+
+<p><strong>Incorrect</strong>:</p>
+
+<pre><code>.nav, .bar {
+    color: @color__base;
+}
+</code></pre>
+
+<h4 id="quotes">Quotes</h4>
+
+<p>Use single quotes.</p>
+
+<p><strong>Correct</strong>:</p>
+
+<pre><code>.nav {
+    content: 'lorem ipsum';
+}
+</code></pre>
+
+<p><strong>Incorrect</strong>:</p>
+
+<pre><code>.nav {
+    content: "lorem ipsum";
+}
+</code></pre>
+
+<h4 id="combinator-indents">Combinator indents</h4>
+
+<p>Add spaces before and after combinators.</p>
+
+<p><strong>Correct</strong>:</p>
+
+<pre><code>.nav + .bar {
+    color: @bar__color;
+}
+</code></pre>
+
+<p><strong>Incorrect</strong>:</p>
+
+<pre><code>.nav+.bar {
+    color: @bar__color;
+}
+
+.nav +.bar {
+    color: @bar__color;
+}
+
+.nav+ .bar {
+    color: @bar__color;
+}
+</code></pre>
+
+<h4 id="properties-line-break">Properties line break</h4>
+
+<p>Start each property declaration in a new line.</p>
+
+<p><strong>Correct</strong>:</p>
+
+<pre><code>.nav {
+    background-color: @nav__background-color;
+    color: @nav__color;
+}
+</code></pre>
+
+<p><strong>Incorrect</strong>:</p>
+
+<pre><code>.nav {
+    color: @nav__color; background-color: @nav__background-color;
+}
+</code></pre>
+
+<h4 id="properties-colon-indents">Properties colon indents</h4>
+
+<p>Add space after but not before the colon that separates property names from values.</p>
+
+<p><strong>Correct</strong>:</p>
+
+<pre><code>.nav {
+    color: @nav__color;
+}
+</code></pre>
+
+<p><strong>Incorrect</strong>:</p>
+
+<pre><code>.nav {
+    color : @nav__color;
+}
+
+.bar {
+    color:@bar__color;
+}
+
+.item {
+    color :@item__color;
+}
+</code></pre>
+
+<h4 id="end-of-file">End of file</h4>
+
+<p>Add a blank line at the end of file.</p>
+
+<h4 id="end-of-selector">End of selector</h4>
+
+<p>Add a blank line after a selector.</p>
+
+<p><strong>Correct</strong>:</p>
+
+<pre><code>css
+    .nav {
+        background-color: @nav__background-color;
+    }
+
+    .bar {
+        background-color: @bar__background-color;
+    }
+</code></pre>
+
+<p><strong>Incorrect</strong>:</p>
+
+<pre><code>css
+    .nav {
+        background-color: @nav__background-color;
+    }
+    .bar {
+        background-color: @bar__background-color;
+    }
+</code></pre>
+
+<h4 id="end-of-the-property-line">End of the property line</h4>
+
+<p>Add a semicolon after property.</p>
+
+<p><strong>Correct</strong>:</p>
+
+<pre><code>.nav {
+    background-color: @nav__background-color;
+}
+</code></pre>
+
+<p><strong>Incorrect</strong>:</p>
+
+<pre><code>.nav {
+    background-color: @nav__background-color
+}
+</code></pre>
+
+<h4 id="important-property">!important property</h4>
+
+<p>Avoid using the <code>!important</code> property if possible. If it is required, add a space before the property.</p>
+
+<p><strong>Correct</strong></p>
+
+<pre><code>.jquery-ui-calendar-item {
+    background-color: @nav__background-color !important;
+}
+</code></pre>
+
+<p><strong>Incorrect</strong>:</p>
+
+<pre><code>    .jquery-ui-calendar-item {
+        background-color: @nav__background-color!important;
+    }
+</code></pre>
+
+<h3 id="comments">Comments</h3>
+
+<p>First and second level comments must be surrounded by empty lines.
+First, second and third level comments should have two spaces after “//”. Inline comments should have one space after “//”.</p>
+
+<p><strong>Correct</strong></p>
+
+<pre><code>//
+//  First level comment
+//  _____________________________________________
+
+.nav {
+    background-color: @nav__background-color;
+}
+
+//
+//  Second level comment
+//  ---------------------------------------------
+
+.nav {
+    background-color: @nav__background-color;
+}
+
+//  Comment
+.nav {
+    //  New line comment
+    background-color: @nav__background-color; // ToDo UI: todo inline comment
+    color: @nav__color; // inline comment
+}
+</code></pre>
+
+<h3 id="selectors">Selectors</h3>
+
+<h4 id="types">Types</h4>
+
+<p>Magento supports the two most recent versions of all major browsers. Internet Explorer is supported from version 9 and later.</p>
+
+<p>You can use almost all CSS3 selectors: descendants, attributes, pseudo classes, structural, pseudo elements, and so on.</p>
+
+<p>Exception: Avoid the <code>id</code> selector.</p>
+
+<p><strong>Correct</strong>:</p>
+
+<pre><code>.nav {
+    ...
+}
+
+.nav + bar {
+    ...
+}
+
+.nav:not(.bar) {
+    ...
+}
+</code></pre>
+
+<p><strong>Incorrect</strong>:</p>
+
+<pre><code>#foo {
+    ...
+}
+</code></pre>
+
+<h3 id="classes-naming">Classes Naming</h3>
+
+<h4 id="standard-classes">Standard classes</h4>
+
+<p>Class names should be lowercase, start with a letter (except helper classes), words should be separated with dash ‘-‘.</p>
+
+<p><strong>Correct</strong>:</p>
+
+<pre><code>.nav-bar {
+    ...
+}
+</code></pre>
+
+<p><strong>Incorrect</strong>:</p>
+
+<pre><code>.navBar {
+   ...
+}
+</code></pre>
+
+<p><strong>Incorrect</strong>: underscore separation</p>
+
+<pre><code>.nav_bar {
+   ...
+}
+</code></pre>
+
+<h4 id="helper-classes">Helper classes</h4>
+
+<p>Helper class names should be lowercase and start with underscore (“_”).</p>
+
+<p>Some parts of Magento code might not comply with this standard yet. You might still find helper names with no underscores. We are working to gradually remove the inconsistency.</p>
+
+<p><strong>Example</strong>:</p>
+
+<pre><code>._active {
+    ...
+}
+</code></pre>
+
+<h4 id="size">Size</h4>
+
+<p>Use class names that are as short as possible, but as long as necessary.
+Try to convey what class is about while being as brief as possible.</p>
+
+<p><strong>Correct</strong>:</p>
+
+<pre><code>.nav-bar {
+    ...
+}
+</code></pre>
+
+<p><strong>Incorrect</strong>: too long</p>
+
+<pre><code>.navigation-panel-in-footer {
+   ...
+}
+</code></pre>
+
+<p><strong>Incorrect</strong>: too short</p>
+
+<pre><code>.nvpf {
+   ...
+}
+</code></pre>
+
+<h4 id="meaning">Meaning</h4>
+
+<p>Use meaningful, specific class names that reflect the purpose of the element. Class names should not be presentational or cryptic.</p>
+
+<p><strong>Correct</strong>: specific</p>
+
+<pre><code>.category {
+    ...
+}
+.category-title {
+    ...
+}
+</code></pre>
+
+<p><strong>Incorrect</strong>: cryptic</p>
+
+<pre><code>.foo-1901 {
+    ...
+}
+</code></pre>
+
+<p><strong>Incorrect</strong>: presentational</p>
+
+<pre><code>.button-green {
+   ...
+}
+
+.clear {
+   ...
+}
+</code></pre>
+
+<h3 id="selectors-naming">Selectors naming</h3>
+
+<h4 id="type-selectors">Type selectors</h4>
+
+<p>Avoid qualifying class names with type selectors.</p>
+
+<p>Unless necessary (for example with helper classes), do not use element names in conjunction with IDs or classes.</p>
+
+<p><strong>Correct</strong>:</p>
+
+<pre><code>.error {
+    ...
+}
+</code></pre>
+
+<p><strong>Incorrect</strong>:</p>
+
+<pre><code>div.error {
+   ...
+}
+</code></pre>
+
+<p>Type selectors must be lowercase.</p>
+
+<p><strong>Correct</strong>:</p>
+
+<pre><code>.nav &gt; li {
+    ...
+}
+</code></pre>
+
+<p><strong>Incorrect</strong>:</p>
+
+<pre><code>.nav &gt; LI {
+   ...
+}
+</code></pre>
+
+<h4 id="formatting-1">Formatting</h4>
+
+<p>Write selector in one line, do not use concatenation.</p>
+
+<p><strong>Correct</strong>:</p>
+
+<pre><code>.product-list-item {
+    ...
+}
+</code></pre>
+
+<p><strong>Incorrect</strong>:</p>
+
+<pre><code>.product {
+    ...
+    &amp;-list {
+        ...
+        &amp;-item {
+            ...
+        }
+    }
+}
+</code></pre>
+
+<h4 id="nesting">Nesting</h4>
+
+<p>Avoid using more than three levels of nesting.</p>
+
+<p>Exceptions are pseudo elements and states.</p>
+
+<p><strong>Correct</strong>:</p>
+
+<pre><code>.footer {
+    ...
+    .nav {
+        ...
+    }
+    .nav-list {
+        ...
+        .nav-list-item {
+            ...
+        }
+    }
+}
+</code></pre>
+
+<p><strong>Incorrect</strong>:</p>
+
+<pre><code>.footer {
+    ...
+    .nav {
+        ...
+        .nav-list {
+            ...
+            .nav-list-item {
+                ...
+            }
+        }
+    }
+}
+</code></pre>
+
+<h2 id="properties">Properties</h2>
+
+<h3 id="sorting">Sorting</h3>
+
+<p>Sort all properties in the alphabetical order. Mixins, variables, and so on should go first.</p>
+
+<p><strong>Correct</strong>:</p>
+
+<pre><code>.nav {
+    background-color: @nav__background-color;
+    color: @nav__color;
+    text-align: center;
+}
+</code></pre>
+
+<p><strong>Incorrect</strong>:</p>
+
+<pre><code>.nav {
+    color: @nav__color;
+    text-align: center;
+    background-color: @nav__background-color;
+}
+</code></pre>
+
+<h3 id="shorthand">Shorthand</h3>
+
+<p>Use shorthand properties where possible.</p>
+
+<p>CSS offers a variety of shorthand properties that should be used whenever possible, even in cases where only one value is explicitly set.</p>
+
+<p><strong>Correct</strong>:</p>
+
+<pre><code>border-top: 0;
+padding: 0 1em 2em;
+</code></pre>
+
+<p><strong>Incorrect</strong>:</p>
+
+<pre><code>border-top-style: none;
+padding-bottom: 2rem;
+padding-left: 1rem;
+padding-right: 1rem;
+padding-top: 0;
+</code></pre>
+
+<h3 id="and-units">0 and units</h3>
+
+<p>Do not specify units “0” value.</p>
+
+<p><strong>Correct</strong>:</p>
+
+<pre><code>border-width: 0;
+margin: 0;
+</code></pre>
+
+<p><strong>Incorrect</strong>:</p>
+
+<pre><code>border-width: 0px;
+margin: 0rem;
+</code></pre>
+
+<h3 id="floating-values">Floating values</h3>
+
+<p>Omit leading “0”s in values, use dot instead.</p>
+
+<p><strong>Correct</strong>:</p>
+
+<pre><code> margin-left: .5rem;
+</code></pre>
+
+<p><strong>Incorrect</strong>:</p>
+
+<pre><code>margin-left: 0.5rem;
+</code></pre>
+
+<h3 id="hexadecimal-notation">Hexadecimal notation</h3>
+
+<ul>
+  <li>Use lowercase only.</li>
+  <li>Use three-character hexadecimal notation where possible.</li>
+  <li>Avoid using hexadecimal values for color in properties, use only variables instead.</li>
+</ul>
+
+<p><strong>Correct</strong>:</p>
+
+<pre><code>@nav__color: #fafafa;
+@nav-item__color: #f00;
+...
+color: @nav-item__color;
+</code></pre>
+
+<p><strong>Incorrect</strong>:</p>
+
+<pre><code>color: #ff0000;
+@nav__color: #FAFAFA;
+@nav-item__color: red;
+</code></pre>
+
+<h2 id="variables">Variables</h2>
+
+<h3 id="location">Location</h3>
+
+<h4 id="local-variables">Local variables</h4>
+
+<p>If variables are local and used only in a <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> scope, they should be located in the module file, in the beginning of the general comment.</p>
+
+<p><strong>Example</strong> <code>_module.less</code>:</p>
+
+<pre><code>...
+
+//
+//  Variables
+//  _____________________________________________
+
+    //  Colors
+@btn__color: @color-brownie;
+@btn-primary__color: @color-white;
+@btn-secondary__color: @color-white;
+...
+</code></pre>
+
+<h4 id="theme-variables">Theme variables</h4>
+
+<p>If variables are common for several modules they should be specified in the <code>_theme.less</code> file</p>
+
+<h3 id="naming">Naming</h3>
+
+<p>All variable names must be lowercase.</p>
+
+<h4 id="value-variables">Value variables</h4>
+
+<p>General model is the following:</p>
+
+<pre><code>@property-name
+</code></pre>
+
+<p><strong>Examples</strong>:</p>
+
+<pre><code>@primary__color: @color-phoenix;
+@indent__base: 2rem;
+@border-radius-round: 100%;
+</code></pre>
+
+<h4 id="parameter-variables">Parameter variables</h4>
+
+<p>General model is the following:</p>
+
+<pre><code>@component-element__state__property__modifier
+</code></pre>
+
+<p>Component name must meaningful. It can contain the <code>primary</code>, <code>secondary</code>, <code>tertiary</code> names.</p>
+
+<p><code>base</code> is a modifier.</p>
+
+<p><strong>Examples</strong>:</p>
+
+<pre><code>@color-orange: '';
+
+@link__hover__color: '';
+
+@nav-element__background-color: '';
+
+@secondary__color: '';
+
+@side-nav__indent__s: '';
+
+@side-nav-el__background-color: '';
+
+@side-nav-el__active__background-color: '';
+
+@side-nav-el__active-focus__background-color: '';
+
+@side-nav-el__active-focus__font-size__xl: '';
+
+@text__color__base: '';
+</code></pre>
+
+<h2 id="mixins">Mixins</h2>
+
+<h3 id="location-1">Location</h3>
+
+<p><span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">Theme</span> mixins (except extends) should be located in the <code>source/utilities</code> directory.</p>
+
+<h3 id="naming-1">Naming</h3>
+
+<p>For <span term-uuid="1a305bdb-9be8-44aa-adad-98758821d6a7" class="glossary-term" data-toggle="popover">mixin</span> naming apply the class naming rules.</p>
+
+<p>For mixins grouping use the double underscore “__” prefix.</p>
+
+<p><strong>Example</strong>:</p>
+
+<pre><code>.extend__clearfix (...) {
+    ...
+}
+
+.vendor-prefix__flex-direction (...) {
+    ...
+}
+</code></pre>
+
+<h2 id="extends">Extends</h2>
+
+<h3 id="location-2">Location</h3>
+
+<p>Local extends used only in one file, should be specified in this file.
+Extends that are used in several files should be specified in the theme’s <code>source/_extend.less</code> file.</p>
+
+<h3 id="naming-2">Naming</h3>
+
+<p>Extend names should start with the <code>.abs-</code> prefix.</p>
+
+<h2 id="import-directive"><code>@import</code> directive</h2>
+
+<p>Always add the file <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span> of the imported resource.</p>
+
+<p><strong>Correct</strong>:</p>
+
+<pre><code>@import 'source/lib/_lib.less';
+@import (css) 'styles.css';
+</code></pre>
+
+<p><strong>Incorrect</strong>:</p>
+
+<pre><code>@import 'source/lib/_lib';
+@import (css) 'styles';
+</code></pre>
+
+<p>Use single quotes.</p>
+
+<p><strong>Correct</strong>:</p>
+
+<pre><code>@import 'source/lib/_lib.less';
+</code></pre>
+
+<p><strong>Incorrect</strong>:</p>
+
+<pre><code>@import "source/lib/_lib.less";
+</code></pre>
+
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+  
+   <div class="github-link">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/coding-standards/code-standard-less.md" target="_blank">
+       Edit this page on GitHub
+     </a>
+   </div>
+  
+
+  <div class="new-issue">
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/coding-standards/code-standard-less.html" target="_blank">Give us feedback</a>
+  </div>
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.container -->
+
+
+	</div>
+	<!-- /.main-container -->
+
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div id="footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav">
+        <li><a href="/guides/v2.2/contributor-guide/contributing_docs.html">Become a Contributor</a>
+        <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
+        <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+        <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+        <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+        <li><a href="/guides/v2.2/release-notes/bk-release-notes.html">Release Notes</a></li>
+        <li><a href="/magento-third-party.html">Third-Party Licenses</a></li> 
+      </ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2017 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="/common/js/app.min.js"></script>
+
+<!-- Glossary integration -->
+<script src="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.js"></script>
+<script src="/common/js/glossary.tooltip.min.js"></script>
+<script>
+    $(document).ready(function(){
+      magento.glossary.init("https://magento.github.io/glossary/data/content-glossary.xml",function(term){return term.types.includes("glossary");},magento.glossary.tooltip.init);
+      });
+</script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+

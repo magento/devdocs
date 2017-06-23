@@ -1,0 +1,1559 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Magento 2.2 backward incompatible changes | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.
+">
+	<meta http-equiv="last-modified" content="" />
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print" />
+	<link rel="canonical" href="//guides/v2.2/release-notes/backward-incompatible-changes.html">
+
+    <!-- WebUI popover css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
+
+  <script>
+    var baseUrl = "/";
+  </script>
+
+	<!-- crazyegg -->
+	<script type="text/javascript">
+	setTimeout(function(){var a=document.createElement("script");
+	var b=document.getElementsByTagName("script")[0];
+	a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0038/0321.js?"+Math.floor(new Date().getTime()/3600000);
+	a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+	</script>
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body>
+
+<header class="site-header">
+
+	<nav id="global-nav">
+
+		<div class="menu-btn"><a class="menu-trigger menu-icon" href="#"></a></div>
+
+		<div class="container">
+
+			<a class="logo" href="/guides/v2.2/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+
+			
+<div class="version-switcher dropdown">
+	<button id="version-switcher-button" class="btn btn-small dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		Magento 2.2
+	</button>
+
+	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/release-notes/backward-incompatible-changes.html">Magento 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.1/release-notes/backward-incompatible-changes.html">Magento 2.1</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.2/release-notes/backward-incompatible-changes.html">Magento 2.2 RC</a></li>
+	
+  </ul>
+
+</div>
+
+
+
+			<!-- Main Navigation -->
+<div class="nav-main">
+  <ul>
+    <li class="first">
+      <a href="#">Setup and Deployment</a>
+        <ul class="menu nav">
+          <li><a href="https://magento.com/tech-resources/download" target="_blank">Get Started with Magento DevBox Beta</a></li>
+            <li><a href="/guides/v2.2/install-gde/bk-install-guide.html">Installation Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/comp-mgr/bk-compman-upgrade-guide.html">Extension Update and System Upgrade Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/cloud/bk-cloud.html">Enterprise Cloud Edition Guide</a></li>
+          <li class="leaf"><a href="/magento-release-information.html">Release Information</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Development</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.2/architecture/bk-architecture.html">Architecture Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          <li><a href="/guides/v2.2/payments-integrations/bk-payments-integrations.html">Payments Integrations</a></li>
+          <li class="leaf"><a href="/guides/v2.2/mrg/intro.html">Module Reference Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          
+          <li class="first leaf"><a href="/guides/v2.2/contributor-guide/contributing.html">Contributor Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Frontend</a>
+        <ul class="menu nav">
+          <li class="first leaf"><a href="/guides/v2.2/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li class="leaf"><a href="/guides/v2.2/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">API</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.2/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li class="leaf"><a href="/guides/v2.2/rest/bk-rest.html">REST API Reference</a></li>
+          <li class="leaf"><a href="/guides/v2.2/soap/bk-soap.html">SOAP API Reference</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Testing</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.2/test/testing.html">Magento Testing Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/mtf/mtf_introduction.html">Functional Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/test/integration/integration_test_execution.html">Integration Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+        </ul>
+    </li>
+
+    <li>
+      <a href="/guides/v2.2/howdoi/bk-how-do-i.html">How Tos</a>
+    </li>
+
+    <li>
+      <a href="/videos/">Videos</a>
+    </li>
+  </ul>
+</div><!-- /.nav-main -->
+
+
+			<div class="search-btn">
+				<a class="search-trigger search-icon" href="//search.html"></a>
+			</div>
+
+			<form class="quick-search" action="/search.html" method="get">
+				<input type="search" name="q" placeholder="Search" />
+				<a href="#" class="quick-search-close">&times;</a>
+			</form>
+
+		</div>
+
+	</nav><!-- #global-nav -->
+
+</header>
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- .main-container -->
+	<div class="main-container">
+		<a id="main-content"></a>
+
+
+<div class="container">
+
+    
+    <div class="message-banner">
+        Review our 2.2 release candidate!  This beta version documentation includes B2B and more. <a href="/guides/v2.2/release-notes/release-candidate/quick-start.html">See the Quickstart Guide</a><br/>
+        Stay tuned — We'll roll out more 2.2 documentation updates in the coming weeks.
+    </div> 
+    
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+<h4>Release Information</h4>
+
+
+
+
+
+
+		<ul>
+
+		
+
+		
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+					
+					
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+
+									
+
+										<li class="levela1"><span class="nav-header">2.2.0 Release Candidate</span></li>
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/release-notes/release-notes-2-2-prerelease1-CE.html">Magento CE 2.2 Release Candidate Release Notes</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/release-notes/release-notes-2-2-prerelease1-EE.html">Magento EE 2.2 Release Candidate Release Notes</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/release-notes/release-candidate/quick-start.html">Release Candidate QuickStart Guide</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/release-notes/release-candidate/install.html">Install the Release Candidate</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/release-notes/release-candidate/submit-issues.html">Submit Comments on the Release Candidate</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/release-notes/release-candidate/submit-PRs.html">Submit PRs for the Release Candidate</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/release-notes/release-candidate/testing-environments.html">Release Candidate Testing Environments</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/release-notes/release-candidate/component-status.html">Component Status</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/release-notes/bk-release-notes.html">2.2.x Release Information</a></li>
+									
+								
+
+									
+
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1  active "><a class="nav-header" href="/guides/v2.2/release-notes/backward-incompatible-changes.html">Magento 2.2 backward incompatible changes</a></li>
+									
+								
+
+									
+
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+
+									
+
+										<li class="levela1"><span class="nav-header">Third-party licenses</span></li>
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/release-notes/thirdparty_ce.html">Magento CE third-party licenses</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/release-notes/thirdparty_ee.html">Magento EE third-party licenses</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+  <nav class="breadcrumbs">
+
+    <a class="breadcrumb-item" href="/guides/v2.2/"><span>Home</span></a>
+
+    <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+    <!-- Iteration breadcrumb item -->
+    
+    
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
+
+        
+
+          
+
+          <span property="name">Magento 2.2 backward incompatible changes</span>
+
+        
+
+        <meta property="position" content="1" />
+      </li>
+
+    
+
+    
+
+
+
+    </ol>
+
+  </nav>
+
+
+
+	
+
+	
+
+	<h1 class="page-heading">Magento 2.2 backward incompatible changes</h1>
+
+  
+
+
+</section>
+
+
+			<p>Magento 2.2 introduces several major changes that may affect the correct functionality of already released external modules. The purpose of this document is to highlight major changes between Magento 2.1 and 2.2.</p>
+
+<p>You can view the detailed lists of changes generated by the Semantic Version Checker using the following links:</p>
+
+<ul>
+  <li><a href="https://htmlpreview.github.io/?https://github.com/magento/devdocs/blob/develop/_includes/changes/ce/217-develop.html">Magento CE changes made after 2.1.7 release</a></li>
+  <li><a href="https://htmlpreview.github.io/?https://github.com/magento/devdocs/blob/develop/_includes/changes/ee/217-develop.html">Magento EE changes made after 2.1.7 release</a></li>
+</ul>
+
+<h2 id="api-changes">API Changes</h2>
+
+<p>Magento 2.2 introduces changes in several <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span> classes. These changes are designed to extend overall API coverage and improve developer experience with new features.</p>
+
+<h3 id="framework">Framework</h3>
+
+<p>Magento no longer supports custom config file pools</p>
+
+<p><strong>Class:</strong> <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/DeploymentConfig/Reader.php" target="_blank"><code>Magento\Framework\App\DeploymentConfig\Reader</code></a><br />
+<strong>Action:</strong> Deprecated the method <code>loadConfigFile</code><br /></p>
+
+<h3 id="store-module">Store Module</h3>
+
+<p>The Store <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> management has been updated to allow the retrieval of a store by its <span term-uuid="a3c8f20f-b067-414e-9781-06378c193155" class="glossary-term" data-toggle="popover">website</span> id.</p>
+
+<p><strong>Class:</strong> <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Store/Api/StoreWebsiteRelationInterface.php" target="_blank"><code>Magento\Store\Api\StoreWebsiteRelationInterface</code></a><br />
+<strong>Action:</strong> New interface added with method <code>getStoreByWebsiteId($websiteId)</code></p>
+
+<p><strong>Class:</strong> <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Store/Model/StoreManager.php" target="_blank"><code>Magento\Store\Model\StoreManager</code></a><br />
+<strong>Action:</strong> Implemented <code>StoreWebsiteRelationInterface</code> and added the inherited method <code>getStoreByWebsiteId($websiteId)</code><br /></p>
+
+<p><strong>Description:</strong> Retrieves a store by website id<br /></p>
+
+<p>New unique and required field <code>code</code> was added to the Store Group.</p>
+
+<p><strong>Class:</strong> <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Store/Api/Data/GroupInterface.php"><code>Magento\Store\Api\Data\GroupInterface</code></a><br />
+<strong>Action:</strong> Added two methods <code>getCode()</code> and <code>setCode($code)</code><br /></p>
+
+<h3 id="customer-module">Customer Module</h3>
+
+<p>Change was done in order to add default values to customer attributes.</p>
+
+<p><strong>Class:</strong> <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Eav/Api/Data/AttributeDefaultValueInterface.php" target="_blank"><code>Magento\Eav\Api\Data\AttributeDefaultValueInterface</code></a><br />
+<strong>Action:</strong> New interface added with methods <code>getDefaultValue()</code> and <code>setDefaultValue($defaultValue)</code><br /></p>
+
+<p><strong>Class:</strong> <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Customer/Model/Data/AttributeMetadata.php" target="_blank"><code>Magento\Customer\Model\Data\AttributeMetadata</code></a><br />
+<strong>Action:</strong> Implemented <code>AttributeDefaultValueInterface</code> and added the getter <code>getDefaultValue()</code> and setter <code>setDefaultValue($defaultValue)</code> methods<br /></p>
+
+<p><strong>Description:</strong> Retrieve and set default values to customer attributes<br /></p>
+
+<h3 id="wishlist-module">Wishlist Module</h3>
+
+<p><strong>Class:</strong> <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Wishlist/Model/Wishlist.php" target="_blank"><code>Magento\Wishlist\Model\Wishlist</code></a><br />
+<strong>Action:</strong> The format of the string for the <code>buyRequest</code> parameter in the <code>addNewItem</code> method changed from serialized to JSON.<br /></p>
+
+<h3 id="messagequeue-module-api">MessageQueue Module API</h3>
+
+<p>The <code>Magento\Framework\MessageQueue\ConfigInterface</code> has been deprecated. 
+The following table lists the deprecated methods and their replacements.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Deprecated method</th>
+      <th>Use instead</th>
+      <th>Subsequent calls</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>getExchangeByTopic($topicName);</code></td>
+      <td><code>\Magento\Framework\MessageQueue\Publisher\ConfigInterface::getPublisher($topic)</code></td>
+      <td>Call <code>getConnection()</code>  then <code>getExchange()</code></td>
+    </tr>
+    <tr>
+      <td><code>getQueuesByTopic($topic);</code></td>
+      <td><code>\Magento\Framework\MessageQueue\Topology\ConfigInterface::getQueues()</code></td>
+      <td>Iterate and call <code>getName()</code></td>
+    </tr>
+    <tr>
+      <td><code>getConnectionByTopic($topic);</code></td>
+      <td><code>\Magento\Framework\MessageQueue\Publisher\ConfigInterface::getPublisher($topic)</code></td>
+      <td><code>getConnection()</code> <code>getName()</code></td>
+    </tr>
+    <tr>
+      <td><code>getConnectionByConsumer($consumer);</code></td>
+      <td><code>\Magento\Framework\MessageQueue\Consumer\ConfigInterface::getConsumer($name)</code></td>
+      <td><code>getConnection()</code></td>
+    </tr>
+    <tr>
+      <td><code>getMessageSchemaType($topic);</code></td>
+      <td><code>\Magento\Framework\Communication\ConfigInterface::getTopic($name)</code></td>
+      <td>Use getter methods to return information from topic data.</td>
+    </tr>
+    <tr>
+      <td><code>getConsumer($name);</code></td>
+      <td><code>\Magento\Framework\MessageQueue\Consumer\ConfigInterface::getConsumer($name)</code></td>
+      <td>Extract necessary information using accessor methods.</td>
+    </tr>
+    <tr>
+      <td><code>getConsumerNames();</code></td>
+      <td><code>\Magento\Framework\MessageQueue\Consumer\ConfigInterface::getConsumers()</code></td>
+      <td>Iterate and use <code>getName()</code> on every item.</td>
+    </tr>
+    <tr>
+      <td><code>getBinds();</code></td>
+      <td><code>\Magento\Framework\MessageQueue\Topology\ConfigInterface::getExchanges()</code></td>
+      <td>Extract necessary information using accessor methods.</td>
+    </tr>
+    <tr>
+      <td><code>getPublishers();</code></td>
+      <td><code>\Magento\Framework\MessageQueue\Publisher\ConfigInterface::getPublishers()</code></td>
+      <td>Iterate and use getter methods.</td>
+    </tr>
+    <tr>
+      <td><code>getConsumers();</code></td>
+      <td><code>\Magento\Framework\MessageQueue\Consumer\ConfigInterface::getConsumers()</code></td>
+      <td>Iterate and use getter methods.</td>
+    </tr>
+    <tr>
+      <td><code>getTopic($name);</code></td>
+      <td><code>\Magento\Framework\Communication\ConfigInterface::getTopic($name)</code> <code>\Magento\Framework\MessageQueue\Publisher\ConfigInterface::getPublisher($topic)</code></td>
+      <td>Use <code>getTopic($name)</code> for topic information. Use <code>getPublisher($name)</code> for publisher-related clients.</td>
+    </tr>
+    <tr>
+      <td><code>getPublisher($name);</code></td>
+      <td><code>\Magento\Framework\MessageQueue\Publisher\ConfigInterface::getPublisher($name)</code></td>
+      <td>Use getter methods to return requested information.</td>
+    </tr>
+    <tr>
+      <td><code>getResponseQueueName($topicName);</code></td>
+      <td>Magento\Framework\MessageQueue\Rpc\ResponseQueueNameBuilder::getQueueName($topicName)</td>
+      <td>-</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="error-processor-module">Error Processor Module</h3>
+
+<p><span term-uuid="53da11f1-d0b8-4a7e-b078-1e099462b409" class="glossary-term" data-toggle="popover">Exception</span> report files in <code>var/report</code> are now JSON encoded, and existing serialized files will not be readable by the upgraded Magento 2.2 instance.</p>
+
+<h3 id="braintree-module">Braintree Module</h3>
+
+<p><strong>Class:</strong> <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Braintree/Model/Ui/ConfigProvider.php" target="_blank"><code>Magento\Braintree\Model\Ui\ConfigProvider</code></a><br />
+<strong>Action:</strong> The deprecated constant <code>PAYPAL_CODE</code> has been removed<br />
+<strong>Description</strong> Use <code>\Magento\Braintree\Model\Ui\PayPal\ConfigProvider::PAYPAL_CODE</code> instead.<br /></p>
+
+<h3 id="paypal-module">PayPal Module</h3>
+
+<p><strong>Class:</strong> <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Paypal/Cron/FetchReports.php" target="_blank"><code>Magento\Paypal\Cron\FetchReports</code></a><br />
+<strong>Action:</strong></p>
+
+<ul>
+  <li>Method <code>execute</code> has been reworked and now throws an <code>\Exception</code> instead of logging it</li>
+  <li>Method <code>__construction</code> no longer has the <code>\Psr\Log\LoggerInterface</code> dependency</li>
+  <li>The <code>report_date</code> column from the <code>paypal_settlement_report</code> table has been changed from <code>timestamp</code> format to <code>date</code>.</li>
+</ul>
+
+<h2 id="changes-in-repositories">Changes in repositories</h2>
+
+<p>In Magento 2.2 the behavior of repositories regarding the Filters added to Search Criteria  was unified:</p>
+
+<ul>
+  <li>The boolean OR statement joins Filters inside a single Filter Group.</li>
+  <li>The boolean AND statement joins Filter Groups inside a Search Criteria.</li>
+</ul>
+
+<p>In the scope of this work, the following repositories were affected.</p>
+
+<h3 id="affected-ce-repositories">Affected CE repositories</h3>
+
+<ul>
+  <li><code>\Magento\Catalog\Api\AttributeSetRepositoryInterface </code></li>
+  <li><code>\Magento\Catalog\Api\CategoryAttributeRepositoryInterface</code></li>
+  <li><code>\Magento\Catalog\Api\ProductAttributeGroupRepositoryInterface</code></li>
+  <li><code>\Magento\Catalog\Api\ProductAttributeRepositoryInterface</code></li>
+  <li><code>\Magento\Cms\Api\BlockRepositoryInterface</code></li>
+  <li><code>\Magento\Cms\Api\PageRepositoryInterface</code></li>
+  <li><code>\Magento\Eav\Api\AttributeGroupRepositoryInterface</code></li>
+  <li><code>\Magento\Eav\Api\AttributeRepositoryInterface</code></li>
+  <li><code>\Magento\Eav\Api\AttributeSetRepositoryInterface</code></li>
+  <li><code>\Magento\Sales\Api\CreditmemoCommentRepositoryInterface</code></li>
+  <li><code>\Magento\Sales\Api\CreditmemoItemRepositoryInterface</code></li>
+  <li><code>\Magento\Sales\Api\CreditmemoRepositoryInterface</code></li>
+  <li><code>\Magento\Sales\Api\InvoiceCommentRepositoryInterface</code></li>
+  <li><code>\Magento\Sales\Api\InvoiceItemRepositoryInterface</code></li>
+  <li><code>\Magento\Sales\Api\InvoiceRepositoryInterface</code></li>
+  <li><code>\Magento\Sales\Api\OrderAddressRepositoryInterface</code></li>
+  <li><code>\Magento\Sales\Api\OrderItemRepositoryInterface</code></li>
+  <li><code>\Magento\Sales\Api\OrderPaymentRepositoryInterface</code></li>
+  <li><code>\Magento\Sales\Api\OrderStatusHistoryRepositoryInterface</code></li>
+  <li><code>\Magento\Sales\Api\ShipmentCommentRepositoryInterface</code></li>
+  <li><code>\Magento\Sales\Api\ShipmentItemRepositoryInterface</code></li>
+  <li><code>\Magento\Sales\Api\ShipmentRepositoryInterface</code></li>
+  <li><code>\Magento\Sales\Api\ShipmentTrackRepositoryInterface</code></li>
+  <li><code>\Magento\Sales\Api\TransactionRepositoryInterface</code></li>
+  <li><code>\Magento\Ui\Api\BookmarkRepositoryInterface</code></li>
+  <li><code>\Magento\Vault\Api\PaymentTokenRepositoryInterface</code></li>
+</ul>
+
+<h3 id="affected-ee-repositories">Affected EE repositories</h3>
+
+<ul>
+  <li><code>\Magento\GiftCardAccount\Api\GiftCardAccountRepositoryInterface </code></li>
+  <li><code>\Magento\GiftWrapping\Api\WrappingRepositoryInterface</code></li>
+  <li><code>\Magento\Rma\Api\CommentRepositoryInterface </code></li>
+  <li><code>\Magento\Rma\Model\RmaRepository</code></li>
+  <li><code>\Magento\Rma\Model\Service\RmaManagement </code></li>
+  <li><code>\Magento\Rma\Model\Rma\Status\HistoryRepository</code></li>
+  <li><code>\Magento\Rma\Api\RmaRepositoryInterface </code></li>
+  <li><code>\Magento\Staging\Api\UpdateRepositoryInterface </code></li>
+  <li><code>\Magento\VersionsCms\Api\HierarchyNodeRepositoryInterface</code></li>
+</ul>
+
+<p>For details about repositories see the <a href="/guides/v2.2/extension-dev-guide/searching-with-repositories.html">Searching with repositories</a> topic.</p>
+
+<h2 id="changes-in-repositories-in-method-getlist">Changes in repositories in method getList</h2>
+
+<p>In Magento 2.2 the signature of the method getList was unified across the code base.</p>
+
+<p><code>public function getList(\Magento\Framework\Api\SearchCriteria $searchCriteria);</code> 
+was changed to 
+<code>public function getList(\Magento\Framework\Api\SearchCriteriaInterface $searchCriteria);</code></p>
+
+<p>These changes won’t affect the clients that use these interfaces, but this will affect the extensions that implemented these interfaces.
+In oder to adopt custom implementations of these interfaces, please, change method signature from <code>\Magento\Framework\Api\SearchCriteria</code> to <code>\Magento\Framework\Api\SearchCriteriaInterface</code> in your implementations.</p>
+
+<h3 id="affected-ce-repositories-1">Affected CE repositories</h3>
+
+<ul>
+  <li><code>\Magento\Vault\Api\PaymentTokenRepositoryInterface::getList</code></li>
+  <li><code>\Magento\Tax\Api\TaxRuleRepositoryInterface::getList</code></li>
+  <li><code>\Magento\Sales\Api\CreditmemoCommentRepositoryInterface::getList</code></li>
+  <li><code>\Magento\Sales\Api\CreditmemoItemRepositoryInterface::getList</code></li>
+  <li><code>\Magento\Sales\Api\CreditmemoRepositoryInterface::getList</code></li>
+  <li><code>\Magento\Sales\Api\InvoiceCommentRepositoryInterface::getList</code></li>
+  <li><code>\Magento\Sales\Api\InvoiceItemRepositoryInterface::getList</code></li>
+  <li><code>\Magento\Sales\Api\InvoiceRepositoryInterface::getList</code></li>
+  <li><code>\Magento\Sales\Api\OrderAddressRepositoryInterface::getList</code></li>
+  <li><code>\Magento\Sales\Api\OrderItemRepositoryInterface::getList</code></li>
+  <li><code>\Magento\Sales\Api\OrderPaymentRepositoryInterface::getList</code></li>
+  <li><code>\Magento\Sales\Api\OrderRepositoryInterface::getList</code></li>
+  <li><code>\Magento\Sales\Api\OrderStatusHistoryRepositoryInterface::getList</code></li>
+  <li><code>\Magento\Sales\Api\ShipmentCommentRepositoryInterface::getList</code></li>
+  <li><code>\Magento\Sales\Api\ShipmentItemRepositoryInterface::getList</code></li>
+  <li><code>\Magento\Sales\Api\ShipmentRepositoryInterface::getList</code></li>
+  <li><code>\Magento\Sales\Api\ShipmentTrackRepositoryInterface::getList</code></li>
+  <li><code>\Magento\Sales\Api\TransactionRepositoryInterface::getList</code></li>
+  <li><code>\Magento\Quote\Api\CartRepositoryInterface::getList</code></li>
+  <li><code>\Magento\Vault\Model\PaymentTokenRepository::getList</code></li>
+  <li><code>\Magento\Tax\Model\TaxRuleRepository::getList</code></li>
+  <li><code>\Magento\Sales\Model\OrderRepository::getList</code></li>
+  <li><code>\Magento\Sales\Model\Order\AddressRepository::getList</code></li>
+  <li><code>\Magento\Sales\Model\Order\CreditmemoRepository::getList</code></li>
+  <li><code>\Magento\Sales\Model\Order\InvoiceRepository::getList</code></li>
+  <li><code>\Magento\Sales\Model\Order\ItemRepository::getList</code></li>
+  <li><code>\Magento\Sales\Model\Order\ShipmentRepository::getList</code></li>
+  <li><code>\Magento\Sales\Model\Order\Payment\Repository::getList</code></li>
+  <li><code>\Magento\Sales\Model\Order\Payment\Transaction\Repository::getList</code></li>
+  <li><code>\Magento\Quote\Model\QuoteRepository::getList</code></li>
+</ul>
+
+<h3 id="affected-ee-repositories-1">Affected EE repositories</h3>
+
+<ul>
+  <li><code>\Magento\Signifyd\Api\CaseRepositoryInterface::getList</code></li>
+  <li><code>\Magento\Rma\Api\CommentRepositoryInterface::getList</code></li>
+  <li><code>\Magento\Rma\Api\RmaManagementInterface::search</code></li>
+  <li><code>\Magento\Rma\Api\RmaRepositoryInterface::getList</code></li>
+  <li><code>\Magento\Rma\Api\TrackRepositoryInterface::getList</code></li>
+  <li><code>\Magento\GiftWrapping\Api\WrappingRepositoryInterface::getList</code></li>
+  <li><code>\Magento\GiftCardAccount\Api\GiftCardAccountRepositoryInterface::getList</code></li>
+  <li><code>\Magento\Signifyd\Model\CaseRepository::getList</code></li>
+  <li><code>\Magento\Rma\Model\Service\RmaManagement::search</code></li>
+  <li><code>\Magento\GiftWrapping\Model\WrappingRepository::getList</code></li>
+</ul>
+
+<h2 id="compiler-changes">Compiler changes</h2>
+
+<p>This release removes the multi-tenant compiler option and support of the definitions option for the single tenant compiler in the <code>env.php</code> file.</p>
+
+<p>The following classes are no longer available:</p>
+
+<ul>
+  <li><code>Magento\Setup\Console\Command\DiCompileMultiTenantCommand</code></li>
+  <li><code>Magento\Framework\ObjectManager\Relations\Compiled</code></li>
+  <li><code>Magento\Framework\ObjectManager\Definition\Compiled\Serialized</code></li>
+  <li><code>Magento\Framework\ObjectManager\Definition\Compiled\Binary</code></li>
+  <li><code>Magento\Framework\Interception\Definition\Compiled</code></li>
+</ul>
+
+<p>The <code>bin/magento setup:config:set</code> command no longer has the <code>--definition-format</code> option.</p>
+
+<h2 id="changes-in-ui">Changes in UI</h2>
+
+<h3 id="advanced-section-in-system-configurations">Advanced section in System Configurations</h3>
+<p><strong>Action:</strong> Section <code>Advanced</code> was disabled from <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span> Interface<br />
+<strong>Description:</strong> Magento does not support custom disabling/enabling modules output since 2.2.0 version. Section ‘Advanced’ was disabled. All custom settings from this section will be ignored.</p>
+
+<h2 id="database-schema-changes">Database Schema changes</h2>
+
+<h3 id="storegroup">store_group</h3>
+<p><strong>Action:</strong> New column <code>code</code> was added to <code>store_group</code> table. This column has a unique key.<br />
+<strong>Description:</strong> Data to this column for existing store Groups will be automatically filled based on Group names.</p>
+
+<h2 id="database-data-format-changes">Database data format changes</h2>
+
+<p>This release replaces usages of <code>unserialize</code> with <a href="/guides/v2.2/extension-dev-guide/framework/serializer.html"><code>json_decode</code></a>.</p>
+
+<p>The release also provides upgrade scripts that convert Magento data stored in serialized format.</p>
+
+<p><span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">Extension</span> developers should review the following cases to see what actions they should take for their extensions:</p>
+
+<p><strong>Case 1:</strong><br />
+Your extension declared fields for automatic serialization/unserialization using the <code>_serializableFields</code> parameter of <code>\Magento\Framework\Model\ResourceModel\Db\AbstractDb</code>.<br />
+<strong>Solution:</strong><br />
+Write an <a href="/guides/v2.2/ext-best-practices/tutorials/serialized-to-json-data-upgrade.html">upgrade script</a> to convert your extension data to JSON format.</p>
+
+<p><strong>Case 2:</strong><br />
+Your extension stores or adds serialized data to Magento entities (e.g. new/custom attributes for Product).<br />
+<strong>Solution:</strong><br />
+Your extension will continue working normally, but we recommend switching to JSON for security reasons.
+You also need to write an upgrade script for the data in the database.</p>
+
+<p><strong>Case 3:</strong><br />
+Your extension relies on serialized data from Magento entities.<br />
+<strong>Solution:</strong><br />
+Update all usages to expect the data in JSON format.</p>
+
+<p><strong>Case 4:</strong><br />
+The serialize/unserialize logic belongs to your extension and stores data in a new table or field.<br />
+<strong>Solution:</strong><br />
+Your extension will continue working normally, but we recommend switching to JSON for security reasons.
+You also need to write an upgrade script for the data in the database.</p>
+
+<p><strong>Case 5:</strong><br />
+Your extension accesses values in the <code>core_config_data</code> table using the following paths:</p>
+
+<ul>
+  <li><code>payment/braintree/countrycreditcard</code></li>
+  <li><code>design/theme/ua_regexp</code></li>
+  <li><code>cataloginventory/item_options/min_sale_qty</code></li>
+  <li><code>currency/options/customsymbol</code></li>
+  <li><code>admin/magento_logging/actions</code></li>
+</ul>
+
+<p><strong>Solution:</strong><br />
+Update your extension to use <code>\Magento\Framework\Serialize\Serializer\Json</code> for serializing/unserializing data instead of the native <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> serialize/unserialize functions.</p>
+
+<p><strong>Case 6:</strong><br />
+Your extension uses a backend model that extends <code>\Magento\Config\Model\Config\Backend\Serialized</code> to save/load data to/from the database.</p>
+
+<p><strong>Solution:</strong><br />
+Write an <a href="/guides/v2.2/ext-best-practices/tutorials/serialized-to-json-data-upgrade.html">upgrade script</a> to update data stored by the extension in the <code>core_config_data</code> table from serialized to JSON format.</p>
+
+<p><strong>See:</strong></p>
+
+<ul>
+  <li><a href="/guides/v2.2/ext-best-practices/tutorials/serialized-to-json-data-upgrade.html">Serialize to JSON data upgrade</a></li>
+  <li><a href="/guides/v2.2/extension-dev-guide/framework/serializer.html">Serialize Library</a></li>
+</ul>
+
+<h2 id="database-field-changes">Database field changes</h2>
+
+<p>This is a list of tables and fields where the data format changed from serialized to JSON format.</p>
+
+<div class="collapsible"><b class="collapsible-title">Show table </b><div class="collapsible-content"><table>
+  <thead>
+    <tr>
+      <th>Resource Model</th>
+      <th>Table</th>
+      <th>Field</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>\Magento\Quote\Model\ResourceModel\Quote\Payment</td>
+      <td>quote_payment</td>
+      <td>additional_information</td>
+    </tr>
+    <tr>
+      <td>\Magento\Reward\Model\ResourceModel\Reward\History</td>
+      <td>magento_reward_history</td>
+      <td>additional_data</td>
+    </tr>
+    <tr>
+      <td>\Magento\Sales\Model\ResourceModel\Order\Item</td>
+      <td>sales_order_item</td>
+      <td>product_options</td>
+    </tr>
+    <tr>
+      <td>\Magento\Sales\Model\ResourceModel\Order\Payment</td>
+      <td>sales_order_payment</td>
+      <td>additional_information</td>
+    </tr>
+    <tr>
+      <td>\Magento\Sales\Model\ResourceModel\Order\Shipment</td>
+      <td>sales_shipment</td>
+      <td>packages</td>
+    </tr>
+    <tr>
+      <td>\Magento\Sales\Model\ResourceModel\Order\Payment\Transaction</td>
+      <td>sales_payment_transaction</td>
+      <td>additional_information</td>
+    </tr>
+    <tr>
+      <td>\Magento\Quote\Model\Quote\Item\Option</td>
+      <td>quote_item_option</td>
+      <td>value</td>
+    </tr>
+    <tr>
+      <td>\Magento\GiftRegistry\Model\Item\Option</td>
+      <td>magento_giftregistry_item_option</td>
+      <td>value</td>
+    </tr>
+    <tr>
+      <td>\Magento\Wishlist\Model\Item</td>
+      <td>wishlist_item_option</td>
+      <td>value</td>
+    </tr>
+    <tr>
+      <td>\Magento\Sales\Model\ResourceModel\Order</td>
+      <td>sales_order</td>
+      <td>gift_cards</td>
+    </tr>
+    <tr>
+      <td>\Magento\Quote\Model\ResourceModel\Quote</td>
+      <td>quote</td>
+      <td>gift_cards</td>
+    </tr>
+    <tr>
+      <td>\Magento\Quote\Model\ResourceModel\Quote\Address</td>
+      <td>quote_address</td>
+      <td>applied_taxes, gift_cards</td>
+    </tr>
+    <tr>
+      <td>\Magento\Quote\Model\Quote\Payment</td>
+      <td>quote_payment</td>
+      <td>additional_data</td>
+    </tr>
+    <tr>
+      <td>\Magento\Customer\Model\Attribute</td>
+      <td>customer_eav_attribute</td>
+      <td>validate_rules</td>
+    </tr>
+    <tr>
+      <td>\Magento\Rma\Model\Item\Attribute</td>
+      <td>magento_rma_item_eav_attribute</td>
+      <td>validate_rules</td>
+    </tr>
+    <tr>
+      <td>\Magento\UrlRewrite\Model\UrlRewrite</td>
+      <td>url_rewrite</td>
+      <td>metadata</td>
+    </tr>
+    <tr>
+      <td>\Magento\Framework\Flag\FlagResource</td>
+      <td>flag</td>
+      <td>flag_data</td>
+    </tr>
+    <tr>
+      <td>\Magento\Config\Model\ResourceModel\Config</td>
+      <td>core_config_data</td>
+      <td>value</td>
+    </tr>
+    <tr>
+      <td>\Magento\Widget\Model\ResourceModel\Widget\Instance</td>
+      <td>widget_instance</td>
+      <td>widget_parameters</td>
+    </tr>
+    <tr>
+      <td>\Magento\Reminder\Model\Rule</td>
+      <td>magento_reminder_rule</td>
+      <td>conditions_serialized</td>
+    </tr>
+    <tr>
+      <td>\Magento\TargetRule\Model\Rule</td>
+      <td>magento_targetrule</td>
+      <td>actions_serialized, conditions_serialized, action_select_bind</td>
+    </tr>
+    <tr>
+      <td>\Magento\SalesRule\Model\Rule</td>
+      <td>salesrule</td>
+      <td>conditions_serialized, actions_serialized</td>
+    </tr>
+    <tr>
+      <td>\Magento\CatalogRule\Model\Rule</td>
+      <td>catalogrule</td>
+      <td>conditions_serialized, actions_serialized</td>
+    </tr>
+    <tr>
+      <td>\Magento\CustomerSegment\Model\Segment</td>
+      <td>magento_customersegment_segment</td>
+      <td>conditions_serialized</td>
+    </tr>
+    <tr>
+      <td>\Magento\Sales\Model\Order\Creditmemo\Item</td>
+      <td>sales_creditmemo_item</td>
+      <td>tax_ratio</td>
+    </tr>
+    <tr>
+      <td>\Magento\Sales\Model\Order\Invoice\Item</td>
+      <td>sales_invoice_item</td>
+      <td>tax_ratio</td>
+    </tr>
+    <tr>
+      <td>\Magento\User\Model\User</td>
+      <td>admin_user</td>
+      <td>extra</td>
+    </tr>
+    <tr>
+      <td>\Magento\Catalog\Model\ResourceModel\Eav\Attribute</td>
+      <td>catalog_eav_attribute</td>
+      <td>additional_data</td>
+    </tr>
+    <tr>
+      <td>\Magento\Support\Model\ResourceModel\Report</td>
+      <td>support_report</td>
+      <td>report_data</td>
+    </tr>
+    <tr>
+      <td>\Magento\Logging\Block\Adminhtml\Details</td>
+      <td>magento_logging_event</td>
+      <td>info</td>
+    </tr>
+    <tr>
+      <td>\Magento\Logging\Block\Adminhtml\Details\Renderer\Diff</td>
+      <td>magento_logging_event_changes</td>
+      <td>original_data, result_data</td>
+    </tr>
+    <tr>
+      <td>\Magento\Rma\Model\Item, \Magento\Rma\Model\Rma</td>
+      <td>magento_rma_item_entity</td>
+      <td>product_options</td>
+    </tr>
+    <tr>
+      <td>\Magento\Rma\Model\Shipping, \Magento\Rma\Model\Shipping\LabelService</td>
+      <td>magento_rma_shipping_label</td>
+      <td>packages</td>
+    </tr>
+    <tr>
+      <td>\Magento\GiftRegistry\Model\Person, \Magento\GiftRegistry\Model\ResourceModel\Person</td>
+      <td>magento_giftregistry_person</td>
+      <td>custom_values</td>
+    </tr>
+    <tr>
+      <td>\Magento\GiftRegistry\Model\Entity, \Magento\GiftRegistry\Model\ResourceModel\Entity</td>
+      <td>magento_giftregistry_entity</td>
+      <td>custom_values, shipping_address</td>
+    </tr>
+    <tr>
+      <td>\Magento\ScheduledImportExport\Model\Scheduled\Operation</td>
+      <td>magento_scheduled_operations</td>
+      <td>file_info, entity_attributes</td>
+    </tr>
+    <tr>
+      <td>\Magento\Cms\Model\ResourceModel\Block</td>
+      <td>cms_block</td>
+      <td>content</td>
+    </tr>
+    <tr>
+      <td>\Magento\Cms\Model\ResourceModel\Page</td>
+      <td>cms_page</td>
+      <td>content</td>
+    </tr>
+    <tr>
+      <td>\Magento\Widget\Model\ResourceModel\Widget\Instance</td>
+      <td>layout_update</td>
+      <td>xml</td>
+    </tr>
+    <tr>
+      <td>\Magento\Banner\Model\ResourceModel\Banner</td>
+      <td>magento_banner_content</td>
+      <td>banner_content</td>
+    </tr>
+    <tr>
+      <td>\Magento\Cms\Model\ResourceModel\Page</td>
+      <td>cms_page</td>
+      <td>layout_update_xml</td>
+    </tr>
+    <tr>
+      <td>\Magento\Catalog\Model\ResourceModel\Product</td>
+      <td>catalog_product_entity_text</td>
+      <td>value</td>
+    </tr>
+    <tr>
+      <td>\Magento\Catalog\Model\ResourceModel\Category</td>
+      <td>catalog_category_entity_text</td>
+      <td>value</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+
+<h3 id="table-deprecations">Table deprecations</h3>
+
+<p>The table for <code>\Magento\Widget\Model\ResourceModel\Widget</code> has been deprecated.</p>
+
+<h3 id="new-class-fielddataconverter">New Class: <code>FieldDataConverter</code></h3>
+
+<p>This class supports data <span term-uuid="38c73ce4-8f01-4f74-ab30-1134cec5664f" class="glossary-term" data-toggle="popover">conversion</span> from one format to another.
+It can be used to upgrade data in upgrade scripts.</p>
+
+<h4 id="features">Features</h4>
+
+<ul>
+  <li>Ability to process records in batches</li>
+  <li>Can use the <code>where</code> condition</li>
+  <li>Update multiple fields in a table at once</li>
+  <li>Update records in multiple threads</li>
+  <li>Convert nested serialized data</li>
+  <li>Update duplicate records at once</li>
+</ul>
+
+<h2 id="inputoutput-format-of-methods">Input/Output Format of Methods</h2>
+
+<p>The following methods now return JSON instead of a serialized string.</p>
+
+<div class="collapsible"><b class="collapsible-title">Show methods </b><div class="collapsible-content"><ul>
+  <li><code>\Magento\Catalog\Model\Product\Option\Type\File::prepareForCart()</code></li>
+  <li><code>\Magento\CatalogInventory\Helper\Minsaleqty::serializeValue($value)</code>
+    <ul>
+      <li>Only if <code>$value</code> is array type</li>
+    </ul>
+  </li>
+  <li><code>\Magento\Widget\Helper\Conditions::encode($value)</code></li>
+  <li><code>\Magento\Wishlist\Model\Item\Option::getValue</code></li>
+  <li><code>\Magento\Wishlist\Model\Item\Option::getData('value',...)</code></li>
+  <li><code>\Magento\Widget\Model\Widget\Instance::getData('widget_parameters')</code></li>
+  <li><code>\Magento\Sales\Model\Order\Creditmemo\Item::getTaxRatio</code></li>
+  <li><code>\Magento\Sales\Model\Order\Invoice\Item::getTaxRatio</code></li>
+  <li><code>\Magento\Quote\Model\Quote\Address\Total::getAppliedTaxes()</code></li>
+  <li><code>\Magento\Catalog\Model\ResourceModel\Eav\Attribute::getData('additional_data')</code></li>
+  <li><code>\Magento\Catalog\Model\ResourceModel\Eav\Attribute::getAdditionalData()</code></li>
+  <li><code>\Magento\Sales\Model\Order\Item::getProductOptions()</code>
+    <ul>
+      <li>Return value is an array, applicable only for “bundle_selection_attributes” key</li>
+    </ul>
+  </li>
+  <li><code>\Magento\Quote\Model\Quote\Item::getOptionByCode</code>
+    <ul>
+      <li><code>info_buyRequest</code> option</li>
+    </ul>
+  </li>
+  <li><code>\Magento\Rule\Model\AbstractModel::getConditionsSerialized()</code></li>
+  <li><code>\Magento\Catalog\Model\Product-&gt;getCustomOption('attributes')-&gt;getValue()</code></li>
+  <li><code>\Magento\CatalogInventory\Helper\Minsaleqty::makeStorableArrayFieldValue()</code></li>
+  <li><code>\Magento\Catalog\Model\Product\Option\Type\File::prepareForCart()</code></li>
+  <li><code>\Magento\Catalog\Model\Product\Configuration\Item\Option\OptionInterface::getValue()</code></li>
+  <li><code>\Magento\Quote\Model\Quote\Item\Option::getValue()</code></li>
+  <li><code>\Magento\Catalog\Model\Product\Configuration\Item\ItemInterface::getOptionByCode('bundle_selection_ids')-&gt;getValue()</code></li>
+  <li><code>\Magento\Sales\Model\Order\Item::getProductOptions()['bundle_selection_ids']</code></li>
+  <li><code>\Magento\Catalog\Model\Product::getCustomOption('bundle_selection_ids')</code></li>
+  <li><code>\Magento\Rma\Model\Shipping::getPackages()</code></li>
+  <li><code>\Magento\Rma\Model\Item::getProductOptions()</code></li>
+  <li><code>\Magento\Logging\Model\Event\Changes::getResultData()</code></li>
+  <li><code>\Magento\Logging\Model\Event::getInfo()</code></li>
+  <li><code>\Magento\GiftCardAccount\Helper\Data::getCards()</code></li>
+  <li><code>\Magento\Sales\Api\Data\OrderInterface</code>
+    <ul>
+      <li>[‘extension_attributes’ =&gt; ‘gift_cards’ =&gt; JSON]</li>
+    </ul>
+  </li>
+</ul>
+</div></div>
+
+<p>The following methods now require JSON as a parameter instead of a serialized string.</p>
+
+<div class="collapsible"><b class="collapsible-title">Show methods </b><div class="collapsible-content"><ul>
+  <li><code>\Magento\Catalog\Model\Product\Option\Type\File::getFormattedOptionValue($optionValue)</code></li>
+  <li><code>\Magento\Catalog\Model\Product\Option\Type\File::_unserializeValue($value)</code></li>
+  <li><code>\Magento\Catalog\Model\Product\Option\Type\File::getEditableOptionValue($optionValue)</code></li>
+  <li><code>\Magento\Catalog\Model\Product\Option\Type\File::prepareOptionValueForRequest($optionValue)</code></li>
+  <li><code>\Magento\CatalogInventory\Helper\Minsaleqty::unserializeValue($value)</code></li>
+  <li><code>\Magento\Widget\Helper\Conditions::decode($value)</code></li>
+  <li><code>\Magento\Wishlist\Model\Item\Option::setValue($value)</code></li>
+  <li><code>\Magento\Wishlist\Model\Item\Option::setData('value', $value)</code></li>
+  <li><code>\Magento\Widget\Model\Widget\Instance::setData('widget_parameters', $value)</code></li>
+  <li><code>\Magento\Sales\Model\Order\Creditmemo\Item::setTaxRatio($value)</code></li>
+  <li><code>\Magento\Sales\Model\Order\Invoice\Item::setTaxRatio($value)</code></li>
+  <li><code>\Magento\Quote\Model\Quote\Address\Total::setAppliedTaxes($value)</code></li>
+  <li><code>\Magento\Quote\Model\Quote\Address\Total::setFullInfo($value)</code>
+    <ul>
+      <li>Only for string values</li>
+    </ul>
+  </li>
+  <li><code>\Magento\Catalog\Model\ResourceModel\Eav\Attribute::setData('additional_data', $value)</code></li>
+  <li><code>\Magento\Catalog\Model\ResourceModel\Eav\Attribute::setAdditionalData($value)</code></li>
+  <li><code>\Magento\Sales\Model\Order\Item::setProductOptions($value)</code>
+    <ul>
+      <li><code>$value</code> is an array, applicable only for <code>bundle_selection_attributes</code> key</li>
+    </ul>
+  </li>
+  <li><code>\Magento\Quote\Model\Quote\Item::setOptionByCode</code>
+    <ul>
+      <li><code>info_buyRequest</code> option</li>
+    </ul>
+  </li>
+  <li><code>\Magento\Rule\Model\AbstractModel::setConditionsSerialized($value)</code></li>
+  <li><code>\Magento\Catalog\Model\Product::addCustomOption('attributes', $value)</code>
+    <ul>
+      <li>For attributes <code>bundle_selection_ids</code> key</li>
+    </ul>
+  </li>
+  <li><code>\Magento\UrlRewrite\Model\UrlRewrite::setMetadata($value)</code>
+    <ul>
+      <li>For non array values</li>
+    </ul>
+  </li>
+  <li><code>\Magento\UrlRewrite\Service\V1\Data::setMetadata($value)</code>
+    <ul>
+      <li>For non array values</li>
+    </ul>
+  </li>
+  <li><code>\Magento\UrlRewrite\Model\UrlPersistInterface::deleteByData()</code>
+    <ul>
+      <li>For metadata key</li>
+    </ul>
+  </li>
+  <li><code>\Magento\Catalog\Model\Product\Configuration\Item\Option\OptionInterface::setValue($value)</code></li>
+  <li><code>\Magento\Quote\Model\Quote\Item\Option::setValue($value)</code></li>
+  <li><code>\Magento\Rma\Model\Shipping::setPackages($value)</code></li>
+  <li><code>\Magento\Rma\Model\Item::setProductOptions($value)</code></li>
+  <li><code>\Magento\Logging\Model\Event\Changes::setResultData($value)</code></li>
+  <li><code>\Magento\Sales\Api\Data\OrderInterface</code>
+    <ul>
+      <li>[‘extension_attributes’ =&gt; ‘gift_cards’ =&gt; JSON]</li>
+    </ul>
+  </li>
+</ul>
+</div></div>
+
+<h3 id="other-class-changes">Other class changes</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Class</th>
+      <th>Change</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>Magento\Framework\Acl\Cache</code></td>
+      <td>Class removed</td>
+    </tr>
+    <tr>
+      <td><code>Magento\Framework\Acl\Builder::__construct</code></td>
+      <td>[public] Method parameter changed</td>
+    </tr>
+    <tr>
+      <td><code>Magento\Framework\Acl\Builder::$_cache</code></td>
+      <td>[protected] Property removed</td>
+    </tr>
+    <tr>
+      <td><code>Magento\User\Model\ResourceModel\User::__construct</code></td>
+      <td>[public] Method parameter changed</td>
+    </tr>
+    <tr>
+      <td><code>Magento\User\Model\ResourceModel\User::$_aclCache</code></td>
+      <td>[protected] Property removed</td>
+    </tr>
+    <tr>
+      <td><code>Magento\Authorization\Model\ResourceModel\Rules::__construct</code></td>
+      <td>[public] Method parameter changed</td>
+    </tr>
+    <tr>
+      <td><code>Magento\Authorization\Model\ResourceModel\Rules::$_aclCache</code></td>
+      <td>[protected] Property removed</td>
+    </tr>
+    <tr>
+      <td><code>Magento\Setup\Module\Di\Compiler\Config\Writer\Filesystem</code></td>
+      <td>Format and type of <code>generated\metadata</code> files changed from <code>.ser</code> to <code>.php</code> and serialized data to php data</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="changes-in-file-system">Changes in file system</h2>
+
+<h3 id="file-appetcconfiglocalphp-is-not-supported">File app/etc/config.local.php is not supported</h3>
+<p><strong>Description:</strong> file app/etc/config.local.php is not read anymore. CLI command <code>app:config:dump</code> writes data to app/etc/config.php instead. File app/etc/config.local.php may be removed manually.</p>
+
+
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+  
+   <div class="github-link">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.2/release-notes/backward-incompatible-changes.md" target="_blank">
+       Edit this page on GitHub
+     </a>
+   </div>
+  
+
+  <div class="new-issue">
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/release-notes/backward-incompatible-changes.html" target="_blank">Give us feedback</a>
+  </div>
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.container -->
+
+
+	</div>
+	<!-- /.main-container -->
+
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div id="footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav">
+        <li><a href="/guides/v2.2/contributor-guide/contributing_docs.html">Become a Contributor</a>
+        <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
+        <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+        <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+        <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+        <li><a href="/guides/v2.2/release-notes/bk-release-notes.html">Release Notes</a></li>
+        <li><a href="/magento-third-party.html">Third-Party Licenses</a></li> 
+      </ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2017 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="/common/js/app.min.js"></script>
+
+<!-- Glossary integration -->
+<script src="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.js"></script>
+<script src="/common/js/glossary.tooltip.min.js"></script>
+<script>
+    $(document).ready(function(){
+      magento.glossary.init("https://magento.github.io/glossary/data/content-glossary.xml",function(term){return term.types.includes("glossary");},magento.glossary.tooltip.init);
+      });
+</script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+

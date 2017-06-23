@@ -67,6 +67,8 @@
 	
 		<li><a class="dropdown-item" href="/guides/v2.1/config-guide/cli/config-cli-subcommands-layout-xml.html">Magento 2.1</a></li>
 	
+		<li><a class="dropdown-item" href="/guides/v2.2/config-guide/cli/config-cli-subcommands-layout-xml.html">Magento 2.2 RC</a></li>
+	
   </ul>
 
 </div>
@@ -177,6 +179,8 @@
 
 
 <div class="container">
+
+    
 
 	<!-- sidebar -->
 <aside class="sidebar">
@@ -1390,7 +1394,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/config-guide/prod/prod_deploy.html">Deploy to Production</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/config-guide/prod/prod_deploy.html">Deploy to production</a></li>
 
 									
 
@@ -1664,6 +1668,7 @@
 
 </section>
 
+
 			<h2 id="config-cli-xml-overview">Overview of layout XML conversion</h2>
 <p>This command enables you to update your <span term-uuid="73ab5daa-5857-4039-97df-11269b626134" class="glossary-term" data-toggle="popover">layout</span> <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span> files if you update the corresponding Extensible Stylesheet Language Transformations (XSLT) stylesheet.</p>
 
@@ -1683,9 +1688,12 @@
 
       <p>If you use the bash shell, you can also use the following syntax to switch to the Magento file system owner and enter the command at the same time:</p>
 
-      <pre><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt; If the Magento file system owner does not allow logins you can do the following
+      <pre><code>su &lt;Magento file system owner&gt; -s /bin/bash -c &lt;command&gt;
+</code></pre>
 
-sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
+      <p>If the Magento file system owner does not allow logins you can do the following:</p>
+
+      <pre><code>sudo -u &lt;Magento file system owner&gt;  &lt;command&gt;
 </code></pre>
     </li>
     <li>

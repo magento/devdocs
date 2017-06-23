@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Install the Release Candidate | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.
+">
+	<meta http-equiv="last-modified" content="" />
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print" />
+	<link rel="canonical" href="//guides/v2.2/release-notes/release-candidate/install.html">
+
+    <!-- WebUI popover css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
+
+  <script>
+    var baseUrl = "/";
+  </script>
+
+	<!-- crazyegg -->
+	<script type="text/javascript">
+	setTimeout(function(){var a=document.createElement("script");
+	var b=document.getElementsByTagName("script")[0];
+	a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0038/0321.js?"+Math.floor(new Date().getTime()/3600000);
+	a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+	</script>
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body>
+
+<header class="site-header">
+
+	<nav id="global-nav">
+
+		<div class="menu-btn"><a class="menu-trigger menu-icon" href="#"></a></div>
+
+		<div class="container">
+
+			<a class="logo" href="/guides/v2.2/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+
+			
+<div class="version-switcher dropdown">
+	<button id="version-switcher-button" class="btn btn-small dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		Magento 2.2
+	</button>
+
+	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/release-candidate/install.html">Magento 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.1/release-candidate/install.html">Magento 2.1</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.2/release-candidate/install.html">Magento 2.2 RC</a></li>
+	
+  </ul>
+
+</div>
+
+
+
+			<!-- Main Navigation -->
+<div class="nav-main">
+  <ul>
+    <li class="first">
+      <a href="#">Setup and Deployment</a>
+        <ul class="menu nav">
+          <li><a href="https://magento.com/tech-resources/download" target="_blank">Get Started with Magento DevBox Beta</a></li>
+            <li><a href="/guides/v2.2/install-gde/bk-install-guide.html">Installation Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/comp-mgr/bk-compman-upgrade-guide.html">Extension Update and System Upgrade Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/cloud/bk-cloud.html">Enterprise Cloud Edition Guide</a></li>
+          <li class="leaf"><a href="/magento-release-information.html">Release Information</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Development</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.2/architecture/bk-architecture.html">Architecture Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          <li><a href="/guides/v2.2/payments-integrations/bk-payments-integrations.html">Payments Integrations</a></li>
+          <li class="leaf"><a href="/guides/v2.2/mrg/intro.html">Module Reference Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          
+          <li class="first leaf"><a href="/guides/v2.2/contributor-guide/contributing.html">Contributor Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Frontend</a>
+        <ul class="menu nav">
+          <li class="first leaf"><a href="/guides/v2.2/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li class="leaf"><a href="/guides/v2.2/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">API</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.2/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li class="leaf"><a href="/guides/v2.2/rest/bk-rest.html">REST API Reference</a></li>
+          <li class="leaf"><a href="/guides/v2.2/soap/bk-soap.html">SOAP API Reference</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Testing</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.2/test/testing.html">Magento Testing Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/mtf/mtf_introduction.html">Functional Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/test/integration/integration_test_execution.html">Integration Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+        </ul>
+    </li>
+
+    <li>
+      <a href="/guides/v2.2/howdoi/bk-how-do-i.html">How Tos</a>
+    </li>
+
+    <li>
+      <a href="/videos/">Videos</a>
+    </li>
+  </ul>
+</div><!-- /.nav-main -->
+
+
+			<div class="search-btn">
+				<a class="search-trigger search-icon" href="//search.html"></a>
+			</div>
+
+			<form class="quick-search" action="/search.html" method="get">
+				<input type="search" name="q" placeholder="Search" />
+				<a href="#" class="quick-search-close">&times;</a>
+			</form>
+
+		</div>
+
+	</nav><!-- #global-nav -->
+
+</header>
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- .main-container -->
+	<div class="main-container">
+		<a id="main-content"></a>
+
+
+<div class="container">
+
+    
+    <div class="message-banner">
+        Review our 2.2 release candidate!  This beta version documentation includes B2B and more. <a href="/guides/v2.2/release-notes/release-candidate/quick-start.html">See the Quickstart Guide</a><br/>
+        Stay tuned — We'll roll out more 2.2 documentation updates in the coming weeks.
+    </div> 
+    
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+<h4>Release Information</h4>
+
+
+
+
+
+
+		<ul>
+
+		
+
+		
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+					
+					
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+
+									
+
+										<li class="levela1"><span class="nav-header">2.2.0 Release Candidate</span></li>
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/release-notes/release-notes-2-2-prerelease1-CE.html">Magento CE 2.2 Release Candidate Release Notes</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/release-notes/release-notes-2-2-prerelease1-EE.html">Magento EE 2.2 Release Candidate Release Notes</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/release-notes/release-candidate/quick-start.html">Release Candidate QuickStart Guide</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2  active "><a href="/guides/v2.2/release-notes/release-candidate/install.html">Install the Release Candidate</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/release-notes/release-candidate/submit-issues.html">Submit Comments on the Release Candidate</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/release-notes/release-candidate/submit-PRs.html">Submit PRs for the Release Candidate</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/release-notes/release-candidate/testing-environments.html">Release Candidate Testing Environments</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/release-notes/release-candidate/component-status.html">Component Status</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/release-notes/bk-release-notes.html">2.2.x Release Information</a></li>
+									
+								
+
+									
+
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/release-notes/backward-incompatible-changes.html">Magento 2.2 backward incompatible changes</a></li>
+									
+								
+
+									
+
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+
+									
+
+										<li class="levela1"><span class="nav-header">Third-party licenses</span></li>
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/release-notes/thirdparty_ce.html">Magento CE third-party licenses</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/release-notes/thirdparty_ee.html">Magento EE third-party licenses</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+  <nav class="breadcrumbs">
+
+    <a class="breadcrumb-item" href="/guides/v2.2/"><span>Home</span></a>
+
+    <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+    <!-- Iteration breadcrumb item -->
+    
+    
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
+
+        
+
+          
+
+          <span property="name">Install the Release Candidate</span>
+
+        
+
+        <meta property="position" content="1" />
+      </li>
+
+    
+
+    
+
+
+
+    </ol>
+
+  </nav>
+
+
+
+	
+
+	
+
+	<h1 class="page-heading">Install the Release Candidate</h1>
+
+  
+
+
+</section>
+
+
+			<h2 id="installation">Installation</h2>
+
+<p>The Magento Release Candidate 1 installation process is the same for CE and EE:</p>
+
+<ul>
+  <li>
+    <p>Clone the repositories you want to install</p>
+  </li>
+  <li>
+    <p>Prepare files for installation</p>
+  </li>
+  <li>
+    <p>Update installation dependencies</p>
+  </li>
+  <li>
+    <p>Complete the installation</p>
+  </li>
+  <li>
+    <p>Install sample data (optional)</p>
+  </li>
+  <li>
+    <p>Complete B2B post-installation configuration</p>
+  </li>
+</ul>
+
+<div class="bs-callout bs-callout-warning">
+  <p>If you want to evaluate the new B2B module, you must install it when you install EE. The B2B module is only available for Magento EE v2.2.0.</p>
+</div>
+
+<h3 id="release-candidate-1-code-repositories">Release Candidate 1 code repositories</h3>
+
+<p>There are three Magento code repositories on GitHub where you can find Release Candidate 1 code. When cloning repositories, be sure to checkout the specified branches.</p>
+
+<table>
+  <tr>
+    <th><b>Magento edition</b></th>
+    <th><b>Location</b></th>
+    <th><b>Branch</b></th>
+    <th><b>Availability</b></th>
+  </tr>
+<tr>
+    <td><b>Magento CE (Non-partners)</b></td>
+    <td><a href="https://github.com/magento/magento2">https://github.com/magento/magento2</a></td>
+    <td>develop</td>
+    <td>Publicly available</td>
+</tr>
+<tr>
+    <td><b>Magento CE (Partners)</b></td>
+    <td><a href="https://github.com/magento-partners/magento2ce">https://github.com/magento-partners/magento2ce</a></td>
+    <td>2.2.0-release-candidate</td>
+    <td>Available after contract has been signed</td>
+</tr>
+<tr>
+    <td><b>Magento EE</b></td>
+    <td><a href="https://github.com/magento-partners/magento2ee">https://github.com/magento-partners/magento2ee</a></td>
+    <td>2.2.0-release-candidate</td>
+    <td>Available after contract has been signed</td>
+</tr>
+<tr>
+    <td><b>Magento B2B</b></td>
+    <td><a href="https://github.com/magento-partners/magento2b2b">https://github.com/magento-partners/magento2b2b</a></td>
+    <td>1.1.0-release-candidate</td>
+    <td>Available after contract has been signed</td>
+</tr>
+</table>
+
+<h3 id="clone-the-magento-github-repositories">Clone the Magento Github repositories</h3>
+
+<p>These instructions assume you have experience working with Github repositories. Refer to Github’s documentation if you need help setting up <a href="https://help.github.com/articles/connecting-to-github-with-ssh/" target="	&#95;blank">SSH keys</a> or <a href="https://help.github.com/articles/cloning-a-repository/" target="	&#95;blank">cloning repositories</a>.</p>
+
+<ol>
+  <li>
+    <p>Clone the <code>magento2ce/</code> repository to your server’s <a href="http://devdocs.magento.com/guides/v2.1/install-gde/basics/basics_docroot.html">docroot</a>:</p>
+
+    <pre><code>cd /var/www/html
+git clone -b 2.2.0-release-candidate git@github.com:magento-partners/magento2ce.git
+</code></pre>
+  </li>
+  <li>
+    <p>Clone the <code>magento2ee/</code> and <code>magento2b2b/</code> repositories inside the <code>magento2ce/</code> repository:</p>
+
+    <pre><code>cd /var/www/html/magento2ce
+git clone -b 2.2.0-release-candidate git@github.com:magento-partners/magento2ee.git
+git clone -b 1.1.0-release-candidate git@github.com:magento-partners/magento2b2b.git
+</code></pre>
+  </li>
+</ol>
+
+<h3 id="prepare-files-for-installation">Prepare files for installation</h3>
+<p>Create symlinks to the <code>magento2ee/</code> and <code>magento2b2b/</code> directories from the <code>magento2ce/</code> directory. Symlinks preserve the git history for each repository so that you can make code contributions.</p>
+
+<ol>
+  <li>
+    <p>Change to the <code>magento2ce/</code> directory:</p>
+
+    <pre><code>cd /var/www/html/magento2ce
+</code></pre>
+  </li>
+  <li>
+    <p>Create symlinks to the <code>magento2ee/</code> directory:</p>
+
+    <pre><code>php -f ./magento2ee/dev/tools/build-ee.php -- --command link --exclude true --ce-source . --ee-source ./magento2ee
+</code></pre>
+  </li>
+  <li>
+    <p>Create symlinks to the <code>magento2b2b/</code> directory:</p>
+
+    <pre><code>php -f ./magento2ee/dev/tools/build-ee.php -- --command link --exclude true --ce-source . --ee-source ./magento2b2b
+</code></pre>
+  </li>
+  <li>
+    <p>Run the following command to verify the links:</p>
+
+    <pre><code>ls -alh app/code/Magento/
+</code></pre>
+
+    <p>You should see output similar to the following:</p>
+
+    <pre><code>lrwxrwxrwx   1 root    root      57 Jun 22 22:43 B2b -&gt; /var/www/html/magento2ce/magento2b2b/app/code/Magento/B2b
+drwxrwxr-x  15 magento magento 4.0K Jun 22 22:26 Backend
+drwxrwxr-x  11 magento magento 4.0K Jun 22 22:26 Backup
+lrwxrwxrwx   1 root    root      59 Jun 22 22:42 Banner -&gt; /var/www/html/magento2ce/magento2ee/app/code/Magento/Banner
+lrwxrwxrwx   1 root    root      74 Jun 22 22:42 BannerCustomerSegment -&gt; /var/www/html/magento2ce/magento2ee/app/code/Magento/BannerCustomerSegment
+</code></pre>
+  </li>
+</ol>
+<div class="bs-callout bs-callout-info">
+  <p>If you mistyped something when creating symlinks and need to remove them and try again, run the following command: <code>php -f ./magento2ee/dev/tools/build-ee.php -- --command unlink --ce-source .</code></p>
+</div>
+
+<h3 id="update-installation-dependencies">Update installation dependencies</h3>
+<p>From the <code>magento2ce/</code> directory, run Composer to update dependencies:</p>
+
+<pre><code>composer install
+</code></pre>
+
+<p>Refer to <a href="http://devdocs.magento.com/guides/v2.1/install-gde/install/prepare-install.html">Update installation dependencies</a> for more information.</p>
+
+<h3 id="complete-the-installation">Complete the installation</h3>
+<p>Now that you’ve cloned all the repositories you need and prepared the files, proceed with the installation:</p>
+
+<ol>
+  <li>
+    <p>Set file permissions on the <code>magento2ce/</code> installation directory:</p>
+
+    <pre><code>cd /var/www/html/magento2ce
+find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \;
+find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
+chown -R :&lt;web-server-group&gt; .
+chmod u+x bin/magento
+</code></pre>
+    <p>Refer to <a href="/guides/v2.2/install-gde/prereq/file-system-perms.html">Set file system ownership and permissions</a> for more information.</p>
+  </li>
+  <li>
+    <p>Open a web browser and go to <code>http://&lt;Magento host or IP&gt;/&lt;path to Magento root&gt;/setup</code> to launch the <a href="/guides/v2.2/install-gde/install/web/install-web.html">Web Setup Wizard</a>.</p>
+
+    <p>For example:</p>
+
+    <p><code>http://localhost/magento2ce/setup</code></p>
+  </li>
+</ol>
+
+<div class="bs-callout bs-callout-info">
+  <p>You can also install using the <a href="/guides/v2.2/install-gde/install/cli/install-cli.html">command line</a>.</p>
+</div>
+
+<h3 id="install-sample-data-optional">Install sample data (optional)</h3>
+<p>The Release Candidate 1 repositories don’t contain any sample data, but you can <a href="/guides/v2.2/install-gde/install/sample-data-after-clone.html">install sample data</a> with another repository after you finish installing the Release Candidate.</p>
+
+<h2 id="b2b-post-install-steps-and-configuration">B2B post-install steps and configuration</h2>
+
+<p>After installing the B2B module, follow these instructions to launch B2B.</p>
+
+<h3 id="message-queues">Message queues</h3>
+
+<h4 id="start-message-consumers">Start message consumers</h4>
+
+<p>The B2B module uses MySQL for message queue management. To succesfully launch the B2B module, start the message consumer services after installation.</p>
+
+<ol>
+  <li>
+    <p>List the available message consumers:</p>
+
+    <pre><code>bin/magento queue:consumers:list
+</code></pre>
+
+    <p>You should see the following consumers:</p>
+
+    <pre><code>sharedCatalogUpdatePrice
+sharedCatalogUpdateCategoryPermissions
+quoteItemCleaner
+inventoryQtyCounter
+</code></pre>
+  </li>
+  <li>
+    <p>Start each service separately:</p>
+
+    <pre><code>bin/magento queue:consumers:start &lt;consumer_name&gt;
+</code></pre>
+
+    <p>For example:</p>
+
+    <pre><code>bin/magento queue:consumers:start sharedCatalogUpdatePrice
+</code></pre>
+  </li>
+</ol>
+
+<p>Refer to <a href="/guides/v2.2/config-guide/mq/manage-mysql.html">Manage message queues with MySQL</a> for more information.</p>
+
+<h4 id="add-message-consumers-to-cron">Add message consumers to cron</h4>
+
+<p>You may also add these two message consumers to the cron job. For this, add these lines in your <code>crontab.xml</code>:</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml">* * * * * ps ax | grep [s]haredCatalogUpdateCategoryPermissions &gt;&gt;/dev/null 2&gt;<span class="err">&amp;</span>1 || nohup php /var/www/html/magento2/bin/magento queue:consumers:start sharedCatalogUpdateCategoryPermissions <span class="err">&amp;</span>
+* * * * * ps ax | grep [s]haredCatalogUpdatePrice &gt;&gt;/dev/null 2&gt;<span class="err">&amp;</span>1 || nohup php /var/www/html/magento2/bin/magento queue:consumers:start sharedCatalogUpdatePrice <span class="err">&amp;</span></code></pre></figure>
+
+<h4 id="specify-parameters-for-message-consumers">Specify parameters for message consumers</h4>
+
+<p>Depending on your system configuration, to prevent possible issues, you may also need to specify the following parameters when starting the services:</p>
+
+<ul>
+  <li>
+    <p><code>--max-messages</code>: manages the consumer’s lifetime and allows to specify the maximum number of messages processed by the consumer. The best practice for a PHP application is to restart the long-running processes to prevent possible memory leaks</p>
+  </li>
+  <li>
+    <p><code>--batch-size</code>: allows to limit the system resources consumed by the consumers (CPU, memory). Using smaller batches reduces resource usage and, thus, leads to slower processing</p>
+  </li>
+</ul>
+
+<h3 id="enable-b2b-features-in-magento-admin">Enable B2B Features in Magento Admin</h3>
+
+<ol>
+  <li>
+    <p>Access the Magento Admin and click <strong>Stores</strong> &gt; <strong>Configuration</strong> &gt; <strong>General</strong> &gt; <strong>B2B Features</strong>.</p>
+  </li>
+  <li>
+    <p>Select <strong>Yes</strong> from the drop-down menus to enable B2B features:</p>
+
+    <p><img src="/common/images/enable_b2b_features.png" alt="Enable B2B features" /></p>
+  </li>
+  <li>
+    <p>Click <strong>Save Config</strong>.</p>
+  </li>
+</ol>
+
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+  
+   <div class="github-link">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.2/release-candidate/install.md" target="_blank">
+       Edit this page on GitHub
+     </a>
+   </div>
+  
+
+  <div class="new-issue">
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/release-notes/release-candidate/install.html" target="_blank">Give us feedback</a>
+  </div>
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.container -->
+
+
+	</div>
+	<!-- /.main-container -->
+
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div id="footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav">
+        <li><a href="/guides/v2.2/contributor-guide/contributing_docs.html">Become a Contributor</a>
+        <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
+        <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+        <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+        <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+        <li><a href="/guides/v2.2/release-notes/bk-release-notes.html">Release Notes</a></li>
+        <li><a href="/magento-third-party.html">Third-Party Licenses</a></li> 
+      </ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2017 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="/common/js/app.min.js"></script>
+
+<!-- Glossary integration -->
+<script src="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.js"></script>
+<script src="/common/js/glossary.tooltip.min.js"></script>
+<script>
+    $(document).ready(function(){
+      magento.glossary.init("https://magento.github.io/glossary/data/content-glossary.xml",function(term){return term.types.includes("glossary");},magento.glossary.tooltip.init);
+      });
+</script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+

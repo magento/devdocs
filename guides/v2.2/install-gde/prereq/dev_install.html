@@ -1,0 +1,1413 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>(Contributor) Clone the Magento repository | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.
+">
+	<meta http-equiv="last-modified" content="" />
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print" />
+	<link rel="canonical" href="//guides/v2.2/install-gde/prereq/dev_install.html">
+
+    <!-- WebUI popover css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
+
+  <script>
+    var baseUrl = "/";
+  </script>
+
+	<!-- crazyegg -->
+	<script type="text/javascript">
+	setTimeout(function(){var a=document.createElement("script");
+	var b=document.getElementsByTagName("script")[0];
+	a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0038/0321.js?"+Math.floor(new Date().getTime()/3600000);
+	a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+	</script>
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body>
+
+<header class="site-header">
+
+	<nav id="global-nav">
+
+		<div class="menu-btn"><a class="menu-trigger menu-icon" href="#"></a></div>
+
+		<div class="container">
+
+			<a class="logo" href="/guides/v2.2/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+
+			
+<div class="version-switcher dropdown">
+	<button id="version-switcher-button" class="btn btn-small dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		Magento 2.2
+	</button>
+
+	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/install-gde/prereq/dev_install.html">Magento 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.1/install-gde/prereq/dev_install.html">Magento 2.1</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.2/install-gde/prereq/dev_install.html">Magento 2.2 RC</a></li>
+	
+  </ul>
+
+</div>
+
+
+
+			<!-- Main Navigation -->
+<div class="nav-main">
+  <ul>
+    <li class="first">
+      <a href="#">Setup and Deployment</a>
+        <ul class="menu nav">
+          <li><a href="https://magento.com/tech-resources/download" target="_blank">Get Started with Magento DevBox Beta</a></li>
+            <li><a href="/guides/v2.2/install-gde/bk-install-guide.html">Installation Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/comp-mgr/bk-compman-upgrade-guide.html">Extension Update and System Upgrade Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/cloud/bk-cloud.html">Enterprise Cloud Edition Guide</a></li>
+          <li class="leaf"><a href="/magento-release-information.html">Release Information</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Development</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.2/architecture/bk-architecture.html">Architecture Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          <li><a href="/guides/v2.2/payments-integrations/bk-payments-integrations.html">Payments Integrations</a></li>
+          <li class="leaf"><a href="/guides/v2.2/mrg/intro.html">Module Reference Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          
+          <li class="first leaf"><a href="/guides/v2.2/contributor-guide/contributing.html">Contributor Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Frontend</a>
+        <ul class="menu nav">
+          <li class="first leaf"><a href="/guides/v2.2/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li class="leaf"><a href="/guides/v2.2/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">API</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.2/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li class="leaf"><a href="/guides/v2.2/rest/bk-rest.html">REST API Reference</a></li>
+          <li class="leaf"><a href="/guides/v2.2/soap/bk-soap.html">SOAP API Reference</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Testing</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.2/test/testing.html">Magento Testing Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/mtf/mtf_introduction.html">Functional Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/test/integration/integration_test_execution.html">Integration Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+        </ul>
+    </li>
+
+    <li>
+      <a href="/guides/v2.2/howdoi/bk-how-do-i.html">How Tos</a>
+    </li>
+
+    <li>
+      <a href="/videos/">Videos</a>
+    </li>
+  </ul>
+</div><!-- /.nav-main -->
+
+
+			<div class="search-btn">
+				<a class="search-trigger search-icon" href="//search.html"></a>
+			</div>
+
+			<form class="quick-search" action="/search.html" method="get">
+				<input type="search" name="q" placeholder="Search" />
+				<a href="#" class="quick-search-close">&times;</a>
+			</form>
+
+		</div>
+
+	</nav><!-- #global-nav -->
+
+</header>
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- .main-container -->
+	<div class="main-container">
+		<a id="main-content"></a>
+
+
+<div class="container">
+
+    
+    <div class="message-banner">
+        Review our 2.2 release candidate!  This beta version documentation includes B2B and more. <a href="/guides/v2.2/release-notes/release-candidate/quick-start.html">See the Quickstart Guide</a><br/>
+        Stay tuned — We'll roll out more 2.2 documentation updates in the coming weeks.
+    </div> 
+    
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+<h4>Installation Guide<br>Part 1: Getting started</h4>
+
+
+
+
+
+
+		<ul>
+
+		
+
+		
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+					
+					
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/install-gde/install-resources-parent.html">Helpful resources</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/install-gde/install-quick-ref.html">Installation quick reference (tutorial)</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/install-gde/install-resource-diagram.html">Installation flow diagram</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/install-gde/install-roadmap_part1.html">Installation roadmap (reference)</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/install-gde/system-requirements2.html">Magento 2.1.x system requirements</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/install-gde/system-requirements-tech.html">Magento 2.2.x technology stack requirements</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/install-gde/system-requirements_browsers.html">Supported browsers</a></li>
+
+									
+
+								
+
+									
+
+										<li class="level3Parent " id="tls"><a href="#">Transport Layer Security (TLS) requirements</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child tls " data-menunode="tls"><a href="/guides/v2.2/install-gde/system-requirements_tls1-2.html">TLS 1.2 requirement for PayPal</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child tls " data-menunode="tls"><a href="/guides/v2.2/install-gde/system-requirements_repo-tls1-2.html">TLS requirement for repo.magento.com</a>
+
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/install-gde/prereq/prereq-overview.html">Prerequisites</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/install-gde/prereq/apache.html">Apache</a></li>
+
+									
+
+								
+
+									
+
+										<li class="level3Parent " id="php"><a href="#">PHP</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child php " data-menunode="php"><a href="/guides/v2.2/install-gde/prereq/php-centos.html">PHP 5.6 or 7.0&mdash;CentOS</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child php " data-menunode="php"><a href="/guides/v2.2/install-gde/prereq/php-ubuntu.html">PHP 5.5, 5.6, or 7.0&mdash;Ubuntu</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child php " data-menunode="php"><a href="/guides/v2.2/install-gde/prereq/php-settings.html">Required PHP settings</a>
+
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/install-gde/prereq/mysql.html">MySQL</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/install-gde/prereq/connect-auth.html">Get your authentication keys</a></li>
+
+									
+
+								
+
+									
+
+										<li class="level3Parent " id="umask"><a href="#">Magento file system ownership and permissions</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child umask " data-menunode="umask"><a href="/guides/v2.2/install-gde/install/file-sys-perms-over.html">Overview of ownership and permissions</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child umask " data-menunode="umask"><a href="/guides/v2.2/install-gde/prereq/file-sys-perms-over.html">Overview of ownership and permissions</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child umask " data-menunode="umask"><a href="/guides/v2.2/install-gde/prereq/file-system-perms.html">Set pre-installation ownership and permissions</a>
+
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/install-gde/prereq/install-rabbitmq.html">RabbitMQ (Enterprise Edition)</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/install-gde/prereq/mysql_remote.html">Set up a remote MySQL database connection</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/install-gde/prereq/security.html">SELinux and iptables</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/install-gde/prereq/optional.html">Optional software</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/install-gde/prereq/prereq_updater.html">Set up the updater (obsolete)</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/install-gde/install/get-software.html">Get the Magento software</a></li>
+									
+								
+
+									
+
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/install-gde/prereq/zip_install.html">(Easy) Install the Magento archive on your server</a></li>
+									
+								
+
+									
+
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/install-gde/prereq/integrator_install.html">(Integrator) Integrator installation</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/install-gde/prereq/integrator_install_composer.html">Install Composer</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/install-gde/prereq/integrator_install_ce.html">Get the Magento CE metapackage</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/install-gde/prereq/integrator_install_ee.html">Get the Magento EE metapackage</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1  active "><a class="nav-header" href="/guides/v2.2/install-gde/prereq/dev_install.html">(Contributor) Clone the Magento repository</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/install-gde/install/prepare-install.html">Update installation dependencies</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/install-gde/install/get-help.html">Get help with your installation</a></li>
+									
+								
+
+									
+
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/install-gde/continue-to-install.html">Next&mdash;Installation part 2, installing</a></li>
+									
+								
+
+									
+
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+  <nav class="breadcrumbs">
+
+    <a class="breadcrumb-item" href="/guides/v2.2/"><span>Home</span></a>
+
+    <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+    <!-- Iteration breadcrumb item -->
+    
+    
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
+
+        
+
+          
+
+          <span property="name">(Contributor) Clone the Magento repository</span>
+
+        
+
+        <meta property="position" content="1" />
+      </li>
+
+    
+
+    
+
+
+
+    </ol>
+
+  </nav>
+
+
+
+	
+
+	
+
+	<h1 class="page-heading">(Contributor) Clone the Magento repository</h1>
+
+  
+
+
+</section>
+
+
+			<div class="bs-callout bs-callout-tip">
+  <p>Totally lost? Need a helping hand? Try our <a href="/guides/v2.2/install-gde/install-quick-ref.html">installation quick reference (tutorial)</a> or <a href="/guides/v2.2/install-gde/install-roadmap_part1.html">installation roadmap (reference)</a>.</p>
+</div>
+
+<h2 id="integrator-aud">Intended audience</h2>
+<p>The audience for this topic is anyone who contributes to the Magento CE codebase. You should be highly technical, understand <span term-uuid="d85e2d0a-221f-4d03-aa43-0cda9f50809e" class="glossary-term" data-toggle="popover">Composer</span> and Git commands, and be able to upgrade the Magento system software and extensions using those commands. If that isn’t you, go back and <a href="/guides/v2.2/install-gde/bk-install-guide.html">choose another starting point</a>.</p>
+
+<div class="bs-callout bs-callout-warning">
+    <p>If you clone the Magento 2 GitHub repository, you <em>cannot</em> use the Magento software in a production environment. You cannot have a live store that accepts orders and so on.</p>
+</div>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<div>
+
+  <p>Before you continue, make sure you’ve done all of the following:</p>
+
+  <ul>
+    <li>
+      <p>Set up a server that meets our <a href="/magento-system-requirements.html">system requirements</a></p>
+
+      <p>For details, see <a href="/guides/v2.2/install-gde/prereq/prereq-overview.html">Prerequisites</a></p>
+    </li>
+    <li>
+      <p>Created the <a href="/guides/v2.2/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a></p>
+    </li>
+  </ul>
+
+  <div>
+
+    <h2 id="instgde-overview-composer">Composer and Magento</h2>
+
+    <p>We use <a href="https://getcomposer.org/" target="_blank">Composer</a> for dependency management. Composer enables us to manage the Magento components and their dependencies.</p>
+
+    <p>As an integrator, you want to manage each of your Magento core components and third-party components using the Component Manager and System Upgrade.</p>
+
+    <p>To do so, you start by creating a Composer project from our metapackage. The metapackage installs each component so it can be centrally managed after installation.</p>
+
+    <p>Composer provides you with the following advantages:</p>
+
+    <ul>
+      <li>Enables you to reuse third-party libraries without bundling them with source code</li>
+      <li>Component-based architecture with robust dependency management</li>
+      <li>Manages dependencies to reduce extension conflicts and compatibility issues</li>
+      <li>Versioned dependencies</li>
+      <li><a href="https://getcomposer.org/doc/01-basic-usage.md#package-versions" target="_blank">Semantic versioning</a></li>
+      <li>Supports the PHP Framework Interoperability standard</li>
+    </ul>
+
+    <h2 id="instgde-prereq-compose-install">Install Composer</h2>
+
+    <div>
+
+      <p>First, check  if Composer is already installed:</p>
+
+      <p>In a command prompt, enter any of the following commands:</p>
+
+      <ul>
+        <li><code>composer --help</code></li>
+        <li><code>composer list --help</code></li>
+      </ul>
+
+      <p>If command help displays, Composer is already installed.</p>
+
+      <p>If an error displays, use the following steps to install Composer.</p>
+
+      <p>To install Composer:</p>
+
+      <ol>
+        <li>
+          <p>Change to or create an empty directory on your Magento server.</p>
+        </li>
+        <li>
+          <p>Enter the following commands:</p>
+
+          <pre><code>curl -sS https://getcomposer.org/installer | php
+mv composer.phar /usr/local/bin/composer
+</code></pre>
+
+          <p>For additional installation options, see the <a href="https://getcomposer.org/download/" target="_blank">Composer installation documentation</a>.</p>
+        </li>
+      </ol>
+
+      <h2 id="instgde-prereq-compose-clone">Clone the Magento repository</h2>
+      <p>This section discusses how to get current code by cloning the Magento GitHub’s develop branch. You can clone either a release branch or the <code>develop</code> branch:</p>
+
+      <ul>
+        <li>
+          <p>Release branches like <code>2.1.0</code> are more stable</p>
+
+          <p>You <em>must</em> use a released branch with the <a href="/guides/v2.2/migration/bk-migration-guide.html">Data Migration Tool</a>.</p>
+        </li>
+        <li>
+          <p><code>develop</code> is more recent</p>
+        </li>
+      </ul>
+
+      <p>Currently, the <code>develop</code> branch is the default but you can checkout a release branch like <code>2.1.0</code> after cloning.</p>
+
+      <h3 id="instgde-prereq-compose-clone-auth">Creating an authorization file</h3>
+      <p>The Magento 2 GitHub repository requires you to authenticate. The <code>composer install</code> commands fails if you do not. To authenticate, <a href="/guides/v2.2/install-gde/prereq/connect-auth.html">generate authentication keys</a>, after which you create an <code>auth.json</code> file in the home directory of the <span term-uuid="5e7de323-626b-4d1b-a7e5-c8d13a92c5d3" class="glossary-term" data-toggle="popover">Magento file system owner</span>.</p>
+
+      <h4 id="generate-authentication-tokens">Generate authentication tokens</h4>
+
+      <div>
+
+        <h2 id="auth-overview">Overview of Magento authentication</h2>
+        <p>The <code>repo.magento.com</code> repository, where Magento 2 and third-party component Composer packages are stored, requires authentication. To provide secure authentication, we enable you to generate a pair 32-character <em>authentication tokens</em> you can use to access the repository. You generate, access, and can also delete or regenerate your keys using Magento Marketplace.</p>
+
+        <p>To get your authentication keys:</p>
+
+        <ol>
+          <li>Go to <a href="https://marketplace.magento.com" target="_blank">Magento Marketplace</a>.</li>
+          <li>
+            <p>Click <strong>Sign In</strong> and enter your login credentials.</p>
+
+            <p>If you don’t have a free account, click <strong>Create an Account</strong>.</p>
+          </li>
+          <li>
+            <p>After you log in, click <strong>My Access Keys</strong> as the following figure shows.</p>
+
+            <p><img src="/common/images/install_mkpl_access-keys.png" alt="Get your secure access keys on Magento Marketplace" width="500px" /></p>
+          </li>
+          <li>If you already have keys, use the <strong>Public Key</strong> as your user name and the <strong>Private Key</strong> as your password.</li>
+          <li>
+            <p>To create a new key pair, click <strong>Create a New Access Key</strong>.</p>
+
+            <p>The following figure shows an example.</p>
+
+            <p><img src="/common/images/install_mkpl_access-keys-detail.png" alt="" width="500px" /></p>
+          </li>
+          <li>When prompted, enter a descriptive name to identify the key pair.</li>
+          <li>
+            <p>Click <strong>Generate New</strong>.</p>
+
+            <p>Use the <strong>Public key</strong> as your user name and the <strong>Private key</strong> as your password.</p>
+          </li>
+        </ol>
+
+        <h4 id="manage-your-authentiation-keys">Manage your authentiation keys</h4>
+        <p>You can optionally disable or delete authentication keys you created. For example, you can disable or delete keys for security reasons after someone left your organization.</p>
+
+        <ul>
+          <li>To disable keys: Click <strong>Disable</strong>. You can do this if you want to suspend use of your keys.</li>
+          <li>To enable a previously disabled key: Click <strong>Enable</strong>.</li>
+          <li>To delete keys: Click <strong>Delete</strong>.</li>
+        </ul>
+
+        <p>You cannot delete or disable keys you created by signing in to <code>magento.com</code>. To manage those keys:</p>
+
+        <ol>
+          <li><a href="https://www.magentocommerce.com/products/customer/account/login" target="_blank">Log in</a> to your <code>magento.com</code> account.</li>
+          <li>In the top navigation bar, click <strong>Connect</strong>.</li>
+          <li>
+            <p>In the left pane, click <strong>Secure keys</strong>.</p>
+
+            <p><img src="/common/images/connect_keys1.png" alt="Access your keys" width="200px" /></p>
+          </li>
+          <li>Enable or disable the desired keys.</li>
+        </ol>
+
+        <h4 id="create-authjson">Create <code>auth.json</code></h4>
+
+        <div>
+
+          <p>To create <code>auth.json</code>:</p>
+
+          <ol>
+            <li>Log in to your Magento server as, or switch to, the <a href="/guides/v2.2/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.</li>
+            <li>
+              <p>Edit or create <code>auth.json</code> in the user’s home directory.</p>
+
+              <p>The following example shows how to add <code>repo.magento.com</code> authentication to an existing file:</p>
+
+              <pre><code>{
+   "github-oauth": {
+     "github.com": "&lt;your github oauth id&gt;"
+   },
+   "http-basic": {
+      "repo.magento.com": {
+         "username": "&lt;public key&gt;",
+         "password": "&lt;private key&gt;"
+      }
+   }
+}
+</code></pre>
+
+   	For example, if your user name is <code>magento_user</code>, create or edit <code>/home/magento_user/.composer/auth.json</code>
+            </li>
+          </ol>
+
+          <h3 id="instgde-prereq-compose-clone-ways">How to clone the Magento 2 GitHub repository</h3>
+          <p>You can clone the Magento 2 GitHub repository using either SSH or HTTPS protocols:</p>
+
+          <ul>
+            <li>Use SSH for better security (no user name and password are exchanged). This requires you to <a href="https://help.github.com/articles/generating-ssh-keys/" target="_blank">share a public key</a> with GitHub.</li>
+            <li>Use HTTPS if you don’t share an SSH key with GitHub (your user name and password are encrypted before being sent to GitHub).</li>
+          </ul>
+
+          <p>See one of the following section:</p>
+
+          <ul>
+            <li><a href="#instgde-prereq-compose-clone-ssh">Clone with SSH</a></li>
+            <li><a href="#instgde-prereq-compose-clone-https">Clone with HTTPS</a></li>
+          </ul>
+
+          <h4 id="instgde-prereq-compose-clone-ssh">Clone with SSH</h4>
+
+          <p>To clone the Magento GitHub repository using the SSH protocol:</p>
+
+          <ol>
+            <li>
+              <p>Copy to the clipboard the Magento GitHub repository SSH clone <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span>.</p>
+
+              <p>a.	In a web browser, go to <a href="https://github.com/magento/magento2" target="_blank">the Magento GitHub repository</a>.</p>
+
+              <p>b.	On the right side of the page, under the <em>clone URL</em> field, click <strong>SSH</strong>.</p>
+
+              <p>c.	Click the <strong>Copy to clipboard</strong> button.</p>
+
+              <p>The following figure shows an example.</p>
+
+              <p><img src="/common/images/install_mage2_clone-ssh.png" width="650px" alt="Clone the Magento GitHub repository using SSH" /></p>
+            </li>
+            <li>
+              <p>Change to your web server’s docroot directory.
+Typically, for Ubuntu, it’s <code>/var/www</code> and for CentOS it’s <code>/var/www/html</code>.</p>
+
+              <p>Need help locating the docroot? Click <a href="/guides/v2.2/install-gde/basics/basics_docroot.html">here.</a></p>
+            </li>
+            <li>
+              <p>Enter <code>git clone</code> and paste the value you obtained from step 1.</p>
+
+              <p>An example follows:</p>
+
+              <pre><code>git clone git@github.com:magento/magento2.git
+</code></pre>
+            </li>
+            <li>
+              <p>Wait for the repository to clone on your server.</p>
+
+              <div class="bs-callout bs-callout-info" id="info">
+    <p>If the following error displays, make sure you <a href="https://help.github.com/articles/generating-ssh-keys/" target="_blank">shared your SSH key</a> with GitHub: </p>
+        <pre>Cloning into 'magento2'...
+Permission denied (publickey).
+fatal: The remote end hung up unexpectedly</pre>
+</div>
+            </li>
+            <li>
+              <p>Optionally switch to a <a href="https://github.com/magento/magento2/tags" target="_blank">release tag</a> as follows:</p>
+
+              <pre><code>git checkout tags/&lt;tag name&gt; [-b &lt;version&gt;]
+</code></pre>
+
+              <p>For example, to check out the 2.1.0 release tag in a new branch named <code>2.1.0</code>, enter</p>
+
+              <pre><code>git checkout tags/2.1.0 -b 2.1.0
+</code></pre>
+            </li>
+            <li>
+              <p>Continue with <a href="/guides/v2.2/install-gde/install/prepare-install.html">Update installation dependencies</a>.</p>
+            </li>
+          </ol>
+
+          <h4 id="instgde-prereq-compose-clone-https">Clone with HTTPS</h4>
+
+          <p>To clone the Magento GitHub repository using the HTTPS protocol:</p>
+
+          <ol>
+            <li>
+              <p>Copy to the clipboard the Magento GitHub repository HTTPS clone URL.</p>
+
+              <p>a.	In a web browser, go to <a href="https://github.com/magento/magento2" target="_blank">the Magento GitHub repository</a>.</p>
+
+              <p>b.	On the right side of the page, under the <em>clone URL</em> field, click <strong>HTTPS</strong>.</p>
+
+              <p>c.	Click the <strong>Copy to clipboard</strong> button.</p>
+
+              <p>The following figure shows an example.</p>
+
+              <p><img src="/common/images/install_mage2_clone-https.png" alt="Clone the Magento GitHub repository using HTTPS" /></p>
+            </li>
+            <li>
+              <p>Change to your web server’s docroot directory.</p>
+
+              <p>Typically, for Ubuntu, it’s <code>/var/www</code> and for CentOS it’s <code>/var/www/html</code>.</p>
+            </li>
+            <li>
+              <p>Enter <code>git clone</code> and paste the value you obtained from step 1.</p>
+
+              <p>An example follows</p>
+
+              <pre><code>git clone https://github.com/magento/magento2.git
+</code></pre>
+            </li>
+            <li>
+              <p>Wait for the repository to clone on your server.</p>
+
+              <div class="bs-callout bs-callout-info" id="info">
+    <p>If the following error displays, make sure you <a href="https://help.github.com/articles/generating-ssh-keys/" target="_blank">shared your SSH key</a> with GitHub: </p>
+        <pre>Cloning into 'magento2'...
+Permission denied (publickey).
+fatal: The remote end hung up unexpectedly</pre>
+</div>
+            </li>
+            <li>
+              <p>Optionally switch to a <a href="https://github.com/magento/magento2/tags" target="_blank">release tag</a> as follows:</p>
+
+              <pre><code>git checkout tags/&lt;tag name&gt; [-b &lt;version&gt;]
+</code></pre>
+
+              <p>For example, to check out the 2.1.0 release tag in a branch named <code>2.1.0</code>, enter</p>
+
+              <pre><code>git checkout tags/2.1.0 -b 2.1.0
+</code></pre>
+            </li>
+          </ol>
+
+          <h4 id="next-step">Next step</h4>
+
+          <p>After completing the tasks discussed on this page, see <a href="/guides/v2.2/install-gde/install/prepare-install.html">Update installation dependencies</a>.</p>
+
+          <!-- ABBREVIATIONS -->
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+  
+   <div class="github-link">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/install-gde/prereq/dev_install.md" target="_blank">
+       Edit this page on GitHub
+     </a>
+   </div>
+  
+
+  <div class="new-issue">
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/install-gde/prereq/dev_install.html" target="_blank">Give us feedback</a>
+  </div>
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.container -->
+
+
+	</div>
+	<!-- /.main-container -->
+
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div id="footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav">
+        <li><a href="/guides/v2.2/contributor-guide/contributing_docs.html">Become a Contributor</a>
+        <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
+        <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+        <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+        <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+        <li><a href="/guides/v2.2/release-notes/bk-release-notes.html">Release Notes</a></li>
+        <li><a href="/magento-third-party.html">Third-Party Licenses</a></li> 
+      </ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2017 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="/common/js/app.min.js"></script>
+
+<!-- Glossary integration -->
+<script src="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.js"></script>
+<script src="/common/js/glossary.tooltip.min.js"></script>
+<script>
+    $(document).ready(function(){
+      magento.glossary.init("https://magento.github.io/glossary/data/content-glossary.xml",function(term){return term.types.includes("glossary");},magento.glossary.tooltip.init);
+      });
+</script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+

@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Get payment information from frontend to backend | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.
+">
+	<meta http-equiv="last-modified" content="" />
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print" />
+	<link rel="canonical" href="//guides/v2.2/payments-integrations/base-integration/get-payment-info.html">
+
+    <!-- WebUI popover css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
+
+  <script>
+    var baseUrl = "/";
+  </script>
+
+	<!-- crazyegg -->
+	<script type="text/javascript">
+	setTimeout(function(){var a=document.createElement("script");
+	var b=document.getElementsByTagName("script")[0];
+	a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0038/0321.js?"+Math.floor(new Date().getTime()/3600000);
+	a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+	</script>
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body>
+
+<header class="site-header">
+
+	<nav id="global-nav">
+
+		<div class="menu-btn"><a class="menu-trigger menu-icon" href="#"></a></div>
+
+		<div class="container">
+
+			<a class="logo" href="/guides/v2.2/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+
+			
+<div class="version-switcher dropdown">
+	<button id="version-switcher-button" class="btn btn-small dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		Magento 2.2
+	</button>
+
+	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/payments-integrations/base-integration/get-payment-info.html">Magento 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.1/payments-integrations/base-integration/get-payment-info.html">Magento 2.1</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.2/payments-integrations/base-integration/get-payment-info.html">Magento 2.2 RC</a></li>
+	
+  </ul>
+
+</div>
+
+
+
+			<!-- Main Navigation -->
+<div class="nav-main">
+  <ul>
+    <li class="first">
+      <a href="#">Setup and Deployment</a>
+        <ul class="menu nav">
+          <li><a href="https://magento.com/tech-resources/download" target="_blank">Get Started with Magento DevBox Beta</a></li>
+            <li><a href="/guides/v2.2/install-gde/bk-install-guide.html">Installation Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/comp-mgr/bk-compman-upgrade-guide.html">Extension Update and System Upgrade Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/cloud/bk-cloud.html">Enterprise Cloud Edition Guide</a></li>
+          <li class="leaf"><a href="/magento-release-information.html">Release Information</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Development</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.2/architecture/bk-architecture.html">Architecture Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          <li><a href="/guides/v2.2/payments-integrations/bk-payments-integrations.html">Payments Integrations</a></li>
+          <li class="leaf"><a href="/guides/v2.2/mrg/intro.html">Module Reference Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          
+          <li class="first leaf"><a href="/guides/v2.2/contributor-guide/contributing.html">Contributor Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Frontend</a>
+        <ul class="menu nav">
+          <li class="first leaf"><a href="/guides/v2.2/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li class="leaf"><a href="/guides/v2.2/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">API</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.2/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li class="leaf"><a href="/guides/v2.2/rest/bk-rest.html">REST API Reference</a></li>
+          <li class="leaf"><a href="/guides/v2.2/soap/bk-soap.html">SOAP API Reference</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Testing</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.2/test/testing.html">Magento Testing Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/mtf/mtf_introduction.html">Functional Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/test/integration/integration_test_execution.html">Integration Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+        </ul>
+    </li>
+
+    <li>
+      <a href="/guides/v2.2/howdoi/bk-how-do-i.html">How Tos</a>
+    </li>
+
+    <li>
+      <a href="/videos/">Videos</a>
+    </li>
+  </ul>
+</div><!-- /.nav-main -->
+
+
+			<div class="search-btn">
+				<a class="search-trigger search-icon" href="//search.html"></a>
+			</div>
+
+			<form class="quick-search" action="/search.html" method="get">
+				<input type="search" name="q" placeholder="Search" />
+				<a href="#" class="quick-search-close">&times;</a>
+			</form>
+
+		</div>
+
+	</nav><!-- #global-nav -->
+
+</header>
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- .main-container -->
+	<div class="main-container">
+		<a id="main-content"></a>
+
+
+<div class="container">
+
+    
+    <div class="message-banner">
+        Review our 2.2 release candidate!  This beta version documentation includes B2B and more. <a href="/guides/v2.2/release-notes/release-candidate/quick-start.html">See the Quickstart Guide</a><br/>
+        Stay tuned — We'll roll out more 2.2 documentation updates in the coming weeks.
+    </div> 
+    
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+
+
+
+
+		<ul>
+
+		
+
+		
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+					
+					
+
+					
+
+						
+
+						
+
+							
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/payments-integrations/payment-gateway/payment-gateway-intro.html">Magento payment provider gateway</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/payments-integrations/payment-gateway/payment-gateway-structure.html">Payment provider gateway structure</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/payments-integrations/payment-gateway/gateway-command.html">Gateway Command</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/payments-integrations/payment-gateway/command-pool.html">Gateway Command Pool</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/payments-integrations/payment-gateway/request-builder.html">Request Builder</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/payments-integrations/payment-gateway/gateway-client.html">Gateway Client</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/payments-integrations/payment-gateway/response-validator.html">Response Validator</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/payments-integrations/payment-gateway/response-handler.html">Response Handler</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/payments-integrations/base-integration/integration-intro.html">Adding a new payment integration (payment method)</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/payments-integrations/base-integration/module-configuration.html">Payment method module configuration</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/payments-integrations/base-integration/payment-option-config.html">Payment method configuration</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/payments-integrations/base-integration/facade-configuration.html">Payment method facade</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/payments-integrations/base-integration/formblocktype.html">Payment info rendering in Admin checkout</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/payments-integrations/base-integration/payment-action.html">Add a payment action</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2  active "><a href="/guides/v2.2/payments-integrations/base-integration/get-payment-info.html">Get payment information from frontend to backend</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/payments-integrations/base-integration/admin-integration.html">Configure payment method by area</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/payments-integrations/signifyd/signifyd.html">Signifyd fraud protection</a></li>
+									
+								
+
+									
+
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+  <nav class="breadcrumbs">
+
+    <a class="breadcrumb-item" href="/guides/v2.2/"><span>Home</span></a>
+
+    <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+    <!-- Iteration breadcrumb item -->
+    
+    
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
+
+        
+
+          
+
+          <span property="name">Get payment information from frontend to backend</span>
+
+        
+
+        <meta property="position" content="1" />
+      </li>
+
+    
+
+    
+
+
+
+    </ol>
+
+  </nav>
+
+
+
+	
+
+	
+
+	<h1 class="page-heading">Get payment information from frontend to backend</h1>
+
+  
+
+
+</section>
+
+
+			<p>To implement transaction <span term-uuid="34ecb0ab-b8a3-42d9-a728-0b893e8c0417" class="glossary-term" data-toggle="popover">authorization</span> our payment should receive some payment details from payment form, like credit card details,
+and send received details to payment processor.</p>
+
+<p>Depends on your payment integration payment details might be different, but, usually, it’s credit card details, tokenized cards, payment nonce, etc.</p>
+
+<p>However, in any case you should write some code to retrieve payment details from payment form.</p>
+
+<h2 id="example-braintree-request-builder-for-the-payment-part-of-the-request">Example: Braintree request builder for the <code>payment</code> part of the request</h2>
+
+<p>We have specified <code>BraintreeAuthorizeRequest</code> builder composite to process authorization and it includes the <code>Magento\Braintree\Gateway\Request\PaymentDataBuilder</code> builder. This is builder responsible for the payment information part of the request, in other words, the credit card information. Let’s look closer at it’s implementation.</p>
+
+<p>The Braintree payment provider requires the <a href="https://developers.braintreepayments.com/start/overview#payment-method-nonce">payment method nonce</a>
+to process transactions, and our builder should send it for each authorization transaction. 
+Here is how the Braintree payment builder looks:</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">PaymentDataBuilder</span> <span class="k">implements</span> <span class="nx">BuilderInterface</span>
+<span class="p">{</span>
+    <span class="sd">/**</span>
+<span class="sd">     * @inheritdoc</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">build</span><span class="p">(</span><span class="k">array</span> <span class="nv">$buildSubject</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$paymentDO</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">subjectReader</span><span class="o">-&gt;</span><span class="na">readPayment</span><span class="p">(</span><span class="nv">$buildSubject</span><span class="p">);</span>
+
+        <span class="nv">$payment</span> <span class="o">=</span> <span class="nv">$paymentDO</span><span class="o">-&gt;</span><span class="na">getPayment</span><span class="p">();</span>
+        <span class="nv">$order</span> <span class="o">=</span> <span class="nv">$paymentDO</span><span class="o">-&gt;</span><span class="na">getOrder</span><span class="p">();</span>
+
+        <span class="nv">$result</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="nx">self</span><span class="o">::</span><span class="na">AMOUNT</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">formatPrice</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">subjectReader</span><span class="o">-&gt;</span><span class="na">readAmount</span><span class="p">(</span><span class="nv">$buildSubject</span><span class="p">)),</span>
+            <span class="nx">self</span><span class="o">::</span><span class="na">PAYMENT_METHOD_NONCE</span> <span class="o">=&gt;</span> <span class="nv">$payment</span><span class="o">-&gt;</span><span class="na">getAdditionalInformation</span><span class="p">(</span>
+                <span class="nx">DataAssignObserver</span><span class="o">::</span><span class="na">PAYMENT_METHOD_NONCE</span>
+            <span class="p">),</span>
+            <span class="nx">self</span><span class="o">::</span><span class="na">ORDER_ID</span> <span class="o">=&gt;</span> <span class="nv">$order</span><span class="o">-&gt;</span><span class="na">getOrderIncrementId</span><span class="p">()</span>
+        <span class="p">];</span>
+
+        <span class="o">...</span>
+
+        <span class="k">return</span> <span class="nv">$result</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>As you can see, we get the payment nonce from payment additional information. And so any specific data (like credit card information) can be retrieved.</p>
+
+<div class="bs-callout bs-callout-info" id="info">
+<p>You should remove any sensitive data (like credit card details) from payment additional information  when you do not use it in your code. You can remove it
+ in request builder, after reading, or in response handler, after processing response. In other case it will be stored in database.</p>
+</div>
+
+<h2 id="getting-payment-information-from-frontend-to-backend">Getting payment information from frontend to backend</h2>
+
+<p>In most cases, customers fill all required information (credit card, expiration date, billing address, etc) on <span term-uuid="278c3ce0-cd4c-4ffc-a098-695d94d73bde" class="glossary-term" data-toggle="popover">checkout</span> payment form.
+So our <span term-uuid="422b0fa8-b181-4c7c-93a2-c553abb34efd" class="glossary-term" data-toggle="popover">payment method</span> implementation should provide the ability to display and process payment form on checkout step.</p>
+
+<p>We can send to <span term-uuid="74d6d228-34bd-4475-a6f8-0c0f4d6d0d61" class="glossary-term" data-toggle="popover">backend</span> any specific data, just need to override <code>getData()</code> method in
+<a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Braintree/view/frontend/web/js/view/payment/method-renderer/cc-form.js">payment UI component</a>:</p>
+
+<figure class="highlight"><pre><code class="language-javascript" data-lang="javascript"><span class="nx">define</span><span class="p">(</span>
+    <span class="p">[...,</span> <span class="s1">&#39;Magento_Payment/js/view/payment/cc-form&#39;</span><span class="p">,</span> <span class="p">...],</span>
+    <span class="kd">function</span> <span class="p">(...,</span> <span class="nx">Component</span><span class="p">,</span> <span class="p">...)</span> <span class="p">{</span>
+        <span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+
+        <span class="k">return</span> <span class="nx">Component</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+            <span class="nx">defaults</span><span class="o">:</span> <span class="p">{</span>
+                <span class="p">...</span>
+                <span class="nx">paymentMethodNonce</span><span class="o">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="p">},</span>
+            <span class="p">...</span>
+
+            <span class="nx">getData</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+                <span class="kd">var</span> <span class="nx">data</span> <span class="o">=</span> <span class="p">{</span>
+                    <span class="s1">&#39;method&#39;</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">getCode</span><span class="p">(),</span>
+                    <span class="s1">&#39;additional_data&#39;</span><span class="o">:</span> <span class="p">{</span>
+                        <span class="s1">&#39;payment_method_nonce&#39;</span><span class="o">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">paymentMethodNonce</span>
+                    <span class="p">}</span>
+                <span class="p">};</span>
+
+                <span class="k">return</span> <span class="nx">data</span><span class="p">;</span>
+            <span class="p">},</span>
+
+            <span class="nx">setPaymentMethodNonce</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">paymentMethodNonce</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">this</span><span class="p">.</span><span class="nx">paymentMethodNonce</span> <span class="o">=</span> <span class="nx">paymentMethodNonce</span><span class="p">;</span>
+            <span class="p">},</span>
+
+
+            <span class="nx">beforePlaceOrder</span><span class="o">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">data</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">this</span><span class="p">.</span><span class="nx">setPaymentMethodNonce</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">nonce</span><span class="p">);</span>
+                <span class="k">this</span><span class="p">.</span><span class="nx">placeOrder</span><span class="p">();</span>
+            <span class="p">},</span>
+
+            <span class="p">...</span>
+        <span class="p">});</span>
+    <span class="p">}</span>
+<span class="p">);</span></code></pre></figure>
+
+<p>The <code>getData()</code> method returns data what we need and depending on payment integration the returned data can be more
+complicated. we need last step to retrieve data from <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span> in the backend. Magento provides some
+mechanisms called <a href="/guides/v2.1/extension-dev-guide/events-and-observers.html">Observers</a>.</p>
+
+<h4 id="read-additional-data">Read additional data</h4>
+
+<p>You need to add an observer to retrieve additional data from payment form and store it
+in the payment additional information. In most cases it will be enough to extend
+<a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Payment/Observer/AbstractDataAssignObserver.php">AbstractDataAssignObserver</a> and add custom behavior.</p>
+
+<p>That’s how observer might looks:</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="nc">DataAssignObserver</span> <span class="k">extends</span> <span class="nx">AbstractDataAssignObserver</span>
+<span class="p">{</span>
+    <span class="k">const</span> <span class="no">PAYMENT_METHOD_NONCE</span> <span class="o">=</span> <span class="s1">&#39;payment_method_nonce&#39;</span><span class="p">;</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * @var array</span>
+<span class="sd">     */</span>
+    <span class="k">protected</span> <span class="nv">$additionalInformationList</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="nx">self</span><span class="o">::</span><span class="na">PAYMENT_METHOD_NONCE</span><span class="p">,</span>
+    <span class="p">];</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * @param Observer $observer</span>
+<span class="sd">     * @return void</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">execute</span><span class="p">(</span><span class="nx">Observer</span> <span class="nv">$observer</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$data</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">readDataArgument</span><span class="p">(</span><span class="nv">$observer</span><span class="p">);</span>
+
+        <span class="nv">$additionalData</span> <span class="o">=</span> <span class="nv">$data</span><span class="o">-&gt;</span><span class="na">getData</span><span class="p">(</span><span class="nx">PaymentInterface</span><span class="o">::</span><span class="na">KEY_ADDITIONAL_DATA</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">is_array</span><span class="p">(</span><span class="nv">$additionalData</span><span class="p">))</span> <span class="p">{</span>
+            <span class="k">return</span><span class="p">;</span>
+        <span class="p">}</span>
+
+        <span class="nv">$paymentInfo</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">readPaymentModelArgument</span><span class="p">(</span><span class="nv">$observer</span><span class="p">);</span>
+
+        <span class="k">foreach</span> <span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">additionalInformationList</span> <span class="k">as</span> <span class="nv">$additionalInformationKey</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$additionalData</span><span class="p">[</span><span class="nv">$additionalInformationKey</span><span class="p">]))</span> <span class="p">{</span>
+                <span class="nv">$paymentInfo</span><span class="o">-&gt;</span><span class="na">setAdditionalInformation</span><span class="p">(</span>
+                    <span class="nv">$additionalInformationKey</span><span class="p">,</span>
+                    <span class="nv">$additionalData</span><span class="p">[</span><span class="nv">$additionalInformationKey</span><span class="p">]</span>
+                <span class="p">);</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>And this observer should be added to list of events (<code>Module_Name/etc/events.xml</code>):</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:Event/etc/events.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;event</span> <span class="na">name=</span><span class="s">&quot;payment_method_assign_data_braintree&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;observer</span> <span class="na">name=</span><span class="s">&quot;braintree_gateway_data_assign&quot;</span> <span class="na">instance=</span><span class="s">&quot;Magento\Braintree\Observer\DataAssignObserver&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/event&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
+
+<p>This <span term-uuid="c57aef7c-97b4-4b2b-a999-8001accef1fe" class="glossary-term" data-toggle="popover">event</span> will be triggered in <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Payment/Model/Method/Adapter.php#L600">Adapter::assignData()</a> method call:</p>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">public</span> <span class="k">function</span> <span class="nf">assignData</span><span class="p">(</span><span class="nx">\Magento\Framework\DataObject</span> <span class="nv">$data</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">eventManager</span><span class="o">-&gt;</span><span class="na">dispatch</span><span class="p">(</span>
+        <span class="s1">&#39;payment_method_assign_data_&#39;</span> <span class="o">.</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getCode</span><span class="p">(),</span>
+        <span class="p">[</span>
+            <span class="nx">AbstractDataAssignObserver</span><span class="o">::</span><span class="na">METHOD_CODE</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="p">,</span>
+            <span class="nx">AbstractDataAssignObserver</span><span class="o">::</span><span class="na">MODEL_CODE</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getInfoInstance</span><span class="p">(),</span>
+            <span class="nx">AbstractDataAssignObserver</span><span class="o">::</span><span class="na">DATA_CODE</span> <span class="o">=&gt;</span> <span class="nv">$data</span>
+        <span class="p">]</span>
+    <span class="p">);</span>
+
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">eventManager</span><span class="o">-&gt;</span><span class="na">dispatch</span><span class="p">(</span>
+        <span class="s1">&#39;payment_method_assign_data&#39;</span><span class="p">,</span>
+        <span class="p">[</span>
+            <span class="nx">AbstractDataAssignObserver</span><span class="o">::</span><span class="na">METHOD_CODE</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="p">,</span>
+            <span class="nx">AbstractDataAssignObserver</span><span class="o">::</span><span class="na">MODEL_CODE</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">getInfoInstance</span><span class="p">(),</span>
+            <span class="nx">AbstractDataAssignObserver</span><span class="o">::</span><span class="na">DATA_CODE</span> <span class="o">=&gt;</span> <span class="nv">$data</span>
+        <span class="p">]</span>
+    <span class="p">);</span>
+
+    <span class="k">return</span> <span class="nv">$this</span><span class="p">;</span>
+<span class="p">}</span></code></pre></figure>
+
+<p>There are two events:</p>
+
+<ul>
+  <li><code>payment_method_assign_data_payment_code</code>: specific for current method (placing order using this payment method)</li>
+  <li><code>payment_method_assign_data</code>: global for all payments (place order)</li>
+</ul>
+
+<p>What type of event to use depends on your implementation, but in most cases it will be enough to use the event for current payment method.</p>
+
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+  
+   <div class="github-link">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/payments-integrations/base-integration/get-payment-info.md" target="_blank">
+       Edit this page on GitHub
+     </a>
+   </div>
+  
+
+  <div class="new-issue">
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/payments-integrations/base-integration/get-payment-info.html" target="_blank">Give us feedback</a>
+  </div>
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.container -->
+
+
+	</div>
+	<!-- /.main-container -->
+
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div id="footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav">
+        <li><a href="/guides/v2.2/contributor-guide/contributing_docs.html">Become a Contributor</a>
+        <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
+        <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+        <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+        <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+        <li><a href="/guides/v2.2/release-notes/bk-release-notes.html">Release Notes</a></li>
+        <li><a href="/magento-third-party.html">Third-Party Licenses</a></li> 
+      </ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2017 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="/common/js/app.min.js"></script>
+
+<!-- Glossary integration -->
+<script src="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.js"></script>
+<script src="/common/js/glossary.tooltip.min.js"></script>
+<script>
+    $(document).ready(function(){
+      magento.glossary.init("https://magento.github.io/glossary/data/content-glossary.xml",function(term){return term.types.includes("glossary");},magento.glossary.tooltip.init);
+      });
+</script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+

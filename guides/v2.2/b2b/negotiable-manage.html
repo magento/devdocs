@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Manage negotiable quotes | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.
+">
+	<meta http-equiv="last-modified" content="" />
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print" />
+	<link rel="canonical" href="//guides/v2.2/b2b/negotiable-manage.html">
+
+    <!-- WebUI popover css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
+
+  <script>
+    var baseUrl = "/";
+  </script>
+
+	<!-- crazyegg -->
+	<script type="text/javascript">
+	setTimeout(function(){var a=document.createElement("script");
+	var b=document.getElementsByTagName("script")[0];
+	a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0038/0321.js?"+Math.floor(new Date().getTime()/3600000);
+	a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+	</script>
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body>
+
+<header class="site-header">
+
+	<nav id="global-nav">
+
+		<div class="menu-btn"><a class="menu-trigger menu-icon" href="#"></a></div>
+
+		<div class="container">
+
+			<a class="logo" href="/guides/v2.2/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+
+			
+<div class="version-switcher dropdown">
+	<button id="version-switcher-button" class="btn btn-small dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		Magento 2.2
+	</button>
+
+	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/b2b/negotiable-manage.html">Magento 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.1/b2b/negotiable-manage.html">Magento 2.1</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.2/b2b/negotiable-manage.html">Magento 2.2 RC</a></li>
+	
+  </ul>
+
+</div>
+
+
+
+			<!-- Main Navigation -->
+<div class="nav-main">
+  <ul>
+    <li class="first">
+      <a href="#">Setup and Deployment</a>
+        <ul class="menu nav">
+          <li><a href="https://magento.com/tech-resources/download" target="_blank">Get Started with Magento DevBox Beta</a></li>
+            <li><a href="/guides/v2.2/install-gde/bk-install-guide.html">Installation Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/comp-mgr/bk-compman-upgrade-guide.html">Extension Update and System Upgrade Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/cloud/bk-cloud.html">Enterprise Cloud Edition Guide</a></li>
+          <li class="leaf"><a href="/magento-release-information.html">Release Information</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Development</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.2/architecture/bk-architecture.html">Architecture Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          <li><a href="/guides/v2.2/payments-integrations/bk-payments-integrations.html">Payments Integrations</a></li>
+          <li class="leaf"><a href="/guides/v2.2/mrg/intro.html">Module Reference Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          
+          <li class="first leaf"><a href="/guides/v2.2/contributor-guide/contributing.html">Contributor Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Frontend</a>
+        <ul class="menu nav">
+          <li class="first leaf"><a href="/guides/v2.2/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li class="leaf"><a href="/guides/v2.2/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">API</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.2/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li class="leaf"><a href="/guides/v2.2/rest/bk-rest.html">REST API Reference</a></li>
+          <li class="leaf"><a href="/guides/v2.2/soap/bk-soap.html">SOAP API Reference</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Testing</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.2/test/testing.html">Magento Testing Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/mtf/mtf_introduction.html">Functional Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/test/integration/integration_test_execution.html">Integration Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+        </ul>
+    </li>
+
+    <li>
+      <a href="/guides/v2.2/howdoi/bk-how-do-i.html">How Tos</a>
+    </li>
+
+    <li>
+      <a href="/videos/">Videos</a>
+    </li>
+  </ul>
+</div><!-- /.nav-main -->
+
+
+			<div class="search-btn">
+				<a class="search-trigger search-icon" href="//search.html"></a>
+			</div>
+
+			<form class="quick-search" action="/search.html" method="get">
+				<input type="search" name="q" placeholder="Search" />
+				<a href="#" class="quick-search-close">&times;</a>
+			</form>
+
+		</div>
+
+	</nav><!-- #global-nav -->
+
+</header>
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- .main-container -->
+	<div class="main-container">
+		<a id="main-content"></a>
+
+
+<div class="container">
+
+    
+    <div class="message-banner">
+        Review our 2.2 release candidate!  This beta version documentation includes B2B and more. <a href="/guides/v2.2/release-notes/release-candidate/quick-start.html">See the Quickstart Guide</a><br/>
+        Stay tuned — We'll roll out more 2.2 documentation updates in the coming weeks.
+    </div> 
+    
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+
+
+
+
+		<ul>
+
+		
+
+		
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+					
+					
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/b2b/bk-b2b.html">B2B Developer Guide</a></li>
+									
+								
+
+									
+
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/b2b/integrations.html">Integrate with B2B using REST</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+										<li class="level3Parent " id="company"><a href="#">Company</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child company " data-menunode="company"><a href="/guides/v2.2/b2b/company.html">Integrate with the Company module</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child company " data-menunode="company"><a href="/guides/v2.2/b2b/company-object.html">Manage company objects</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child company " data-menunode="company"><a href="/guides/v2.2/b2b/company-users.html">Manage company users</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child company " data-menunode="company"><a href="/guides/v2.2/b2b/roles.html">Manage company roles</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child company " data-menunode="company"><a href="/guides/v2.2/b2b/company-structures.html">Manage company structures</a>
+
+
+									
+
+								
+
+									
+
+										<li class="level3Parent " id="credit"><a href="#">Company credit</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child credit " data-menunode="credit"><a href="/guides/v2.2/b2b/company-credit.html">Integrate with the CompanyCredit module</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child credit " data-menunode="credit"><a href="/guides/v2.2/b2b/credit-manage.html">Manage company credit</a>
+
+
+									
+
+								
+
+									
+
+										<li class="level3Parent " id="shared"><a href="#">Shared Catalog</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child shared " data-menunode="shared"><a href="/guides/v2.2/b2b/shared-catalog.html">Integrate with the SharedCatalog module</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child shared " data-menunode="shared"><a href="/guides/v2.2/b2b/shared-cat-manage.html">Manage shared catalogs</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child shared " data-menunode="shared"><a href="/guides/v2.2/b2b/shared-cat-product-assign.html">Assign categories and products</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child shared " data-menunode="shared"><a href="/guides/v2.2/b2b/shared-cat-company.html">Assign companies</a>
+
+
+									
+
+								
+
+									
+
+										<li class="level3Parent " id="nq"><a href="#">Negotiable Quotes</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child nq " data-menunode="nq"><a href="/guides/v2.2/b2b/negotiable-quote.html">Integrate with the NegotiableQuote module</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child nq  active " data-menunode="nq"><a href="/guides/v2.2/b2b/negotiable-manage.html">Manage negotiable quotes</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child nq " data-menunode="nq"><a href="/guides/v2.2/b2b/negotiable-update.html">Update a negotiable quote</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child nq " data-menunode="nq"><a href="/guides/v2.2/b2b/negotiable-checkout.html">Negotiable quote checkout</a>
+
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/b2b/extensions.html">Develop B2B extensions</a></li>
+									
+								
+
+									
+
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+  <nav class="breadcrumbs">
+
+    <a class="breadcrumb-item" href="/guides/v2.2/"><span>Home</span></a>
+
+    <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+    <!-- Iteration breadcrumb item -->
+    
+    
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+
+        
+          <a property="item" typeof="WebPage" href="/guides/v2.2/b2b/bk-b2b.html">
+            <span property="name">B2B Developer Guide</span>
+          </a>
+        
+
+        <meta property="position" content="1" />
+      </li>
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
+
+        
+
+          
+
+          <span property="name">Manage negotiable quotes</span>
+
+        
+
+        <meta property="position" content="2" />
+      </li>
+
+    
+
+    
+
+
+
+    </ol>
+
+  </nav>
+
+
+
+	
+		<span class="ee-only">Enterprise Edition only</span>
+	
+
+	
+
+	<h1 class="page-heading">Manage negotiable quotes</h1>
+
+  
+
+
+</section>
+
+
+			<p>This topic describes the calls required to initiate a negotiable quote and get it ready to be converted to an order.</p>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>All negotiable quote calls require an admin authorization token.</p>
+</div>
+
+<p><strong>REST Endpoints</strong></p>
+
+<figure class="highlight"><pre><code class="language-http" data-lang="http"><span class="err">POST /V1/negotiableQuote/request</span>
+<span class="err">POST /V1/negotiableQuote/submitToCustomer</span>
+<span class="err">POST /V1/negotiableQuote/decline</span>
+<span class="err">POST /V1/negotiableQuote/pricesUpdated</span>
+<span class="err">GET /V1/negotiableQuote/:quoteId/comments</span>
+<span class="err">GET /V1/negotiableQuote/attachmentContent</span>
+<span class="err">PUT /V1/negotiableQuote/:quoteId/shippingMethod</span></code></pre></figure>
+
+<p><strong>NegotiableQuoteManagementInterface Parameters</strong></p>
+
+<p>The following table lists the parameters defined in <code>CompanyInterface</code>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Format</th>
+      <th>Requirements</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>quoteId</code></td>
+      <td>Identifies the target quote for the operation.</td>
+      <td>integer</td>
+      <td>Required</td>
+    </tr>
+    <tr>
+      <td><code>quoteName</code></td>
+      <td>The name of the quote to be created.</td>
+      <td>string</td>
+      <td>Required</td>
+    </tr>
+    <tr>
+      <td><code>comment</code></td>
+      <td>The comment to add to the quote.</td>
+      <td>string</td>
+      <td>Optional</td>
+    </tr>
+    <tr>
+      <td><code>files</code></td>
+      <td>An array of files to add to the quote</td>
+      <td>array</td>
+      <td>Optional</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The customer or the merchant can optinally attach up to 10 files to provide details about the quote. Each file must be converted into base64.</p>
+
+<p>The <code>files</code> array contains the following parameters</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Format</th>
+      <th>Requirements</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>base64_encoded_data</code></td>
+      <td>A string in base 64 that defines the contents of the added file</td>
+      <td>string</td>
+      <td>Required</td>
+    </tr>
+    <tr>
+      <td><code>type</code></td>
+      <td>Defines the type of file, such as <code>text/plain</code> or <code>application/pdf</code></td>
+      <td>string</td>
+      <td>Optional</td>
+    </tr>
+    <tr>
+      <td><code>name</code></td>
+      <td>The name of the file to be uploaded, such as <code>quote.txt</code> or <code>quote.pdf</code>.</td>
+      <td>string</td>
+      <td>Required</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="request-a-negotiable-quote">Request a negotiable quote</h3>
+
+<p>Before negotiable quote can begin, the following conditions must be met:</p>
+
+<ul>
+  <li>A regular Magento quote has been created (<code>POST /V1/customers/:customerId/carts</code> or <code>POST /V1/customers/carts/mine</code>)</li>
+  <li>The quote contains items (<code>POST /V1/carts/:quoteId/items</code>)</li>
+</ul>
+
+<p>If the negotiable quote requires a shipping address (for negotiation or tax calculations), you can add it to the standard quote before initiating the negotiable quote (<code>POST /V1/carts/:cartId/shipping-information</code>)</p>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>Requesting a negotiable quote requires an admin authorization token.</p>
+</div>
+
+<p><strong>Service Name</strong></p>
+
+<p><code>negotiableQuoteNegotiableQuoteManagementV1</code></p>
+
+<p><strong>Sample Usage</strong></p>
+
+<p><code>POST V1/negotiableQuote/request</code></p>
+
+<p><strong>Payload</strong></p>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;quoteId&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+  <span class="nt">&quot;quoteName&quot;</span><span class="p">:</span> <span class="s2">&quot;First quote&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;comment&quot;</span><span class="p">:</span> <span class="s2">&quot;Requesting a 5% discount&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;files&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;base64_encoded_data&quot;</span><span class="p">:</span> <span class="s2">&quot;VGhhbmsgeW91IGZvciByZWFkaW5nIHRoZSBNYWdlbnRvIEIyQiBkb2N1bWVudGF0aW9uLg==&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;quote.txt&quot;</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre></figure>
+
+<p><strong>Response</strong></p>
+
+<p><code>true</code>, indicating the request was successful</p>
+
+<p>Magento creates a negotiable quote in the <code>Created</code> state.</p>
+
+<h3 id="submit-a-negotiable-quote-to-a-customer">Submit a negotiable quote to a customer</h3>
+
+<p>When you submit a negotiable quote to the customer, the status for the customer changes to “Updated”. The customer can subsequently edit or update the quote.</p>
+
+<p>The merchant can send a request to submit the quote to the customer. The request can be submitted only for quotes in the following system states:</p>
+
+<ul>
+  <li>Created</li>
+  <li>Processing by admin</li>
+  <li>Submitted by customer</li>
+</ul>
+
+<p>When the quote is submitted to the customer:</p>
+
+<ul>
+  <li>Magento checks catalog prices (price per item), cart rules, and discounts then recalculates the prices and taxes. The shipping price and the negotiated price are not affected (if they are entered into the quote).</li>
+  <li>Items that are no longer active or available for this customer are removed from quote and prices are recalculated.</li>
+  <li>The quote state is changed to Submitted by admin.</li>
+</ul>
+
+<p><strong>Service Name</strong></p>
+
+<p><code>negotiableQuoteNegotiableQuoteManagementV1</code></p>
+
+<p><strong>Sample Usage</strong></p>
+
+<p><code>POST /V1/negotiableQuote/submitToCustomer</code></p>
+
+<p><strong>Payload</strong></p>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;quoteId&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+  <span class="nt">&quot;comment&quot;</span><span class="p">:</span> <span class="s2">&quot;It&#39;d be our pleasure. Please proceed with your order.&quot;</span>
+<span class="p">}</span></code></pre></figure>
+
+<p><strong>Response</strong></p>
+
+<p><code>true</code>, indicating the request was successful</p>
+
+<h3 id="update-a-quote">Update a quote</h3>
+
+<p>Use the <code>PUT /V1/negotiableQuote/:quoteId</code> call to update a quote. See <a href="/guides/v2.2/b2b/negotiable-update.html">Update a negotiable quote</a> for use cases.</p>
+
+<h3 id="recalculate-prices">Recalculate prices</h3>
+
+<p>The process of completing a negotiable quote can take days, or even longer. During that time, the prices for the items in the quote may have changed directly or indirectly.  For example, someone could have changed prices in the shared catalogs or adjusted price rules, and the prices in the negotiable quote are stale. This call refreshes item prices, taxes, discounts, cart rules in the negotiable quote. Quotes that are locked for the merchant will not be updated.</p>
+
+<p>The request can be applied to one or more quotes at the same time.</p>
+
+<p><strong>Sample Usage</strong></p>
+
+<p><code>POST /V1/negotiableQuote/pricesUpdated</code></p>
+
+<p><strong>Payload</strong></p>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;quoteIds&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+<span class="p">}</span></code></pre></figure>
+
+<p><strong>Response</strong></p>
+
+<p><code>true</code>, indicating the request was successful</p>
+
+<h3 id="set-the-shipping-method">Set the shipping method</h3>
+
+<p>To set the shipping method, the quote must be in the <code>created</code>, <code>processing_by_admin</code> or <code>submitted_by_customer</code>. In addition, the quote must have a shipping address but no shipping method or shipping price.</p>
+
+<p><strong>Sample Usage</strong></p>
+
+<p><code>PUT /V1/negotiableQuote/3/shippingMethod</code></p>
+
+<p><strong>Payload</strong></p>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;shippingMethod&quot;</span><span class="p">:</span> <span class="s2">&quot;fixedrate&quot;</span>
+<span class="p">}</span></code></pre></figure>
+
+<p><strong>Response</strong></p>
+
+<h3 id="decline-a-quote">Decline a quote</h3>
+
+<p>The merchant can send a request to decline the quote. The request can be submitted only for quotes in the following system states:</p>
+
+<ul>
+  <li>Created</li>
+  <li>Processing by admin</li>
+  <li>Submitted by customer</li>
+</ul>
+
+<p>When you decline a quote, all custom pricing will be removed from the quote. The buyer will be able to place an order using their standard catalog prices and discounts.</p>
+
+<p><strong>Service Name</strong></p>
+
+<p><code>negotiableQuoteNegotiableQuoteManagementV1</code></p>
+
+<p><strong>Sample Usage</strong></p>
+
+<p><code>POST /V1/negotiableQuote/decline</code></p>
+
+<p><strong>Payload</strong></p>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;quoteId&quot;</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span>
+  <span class="nt">&quot;reason&quot;</span><span class="p">:</span> <span class="s2">&quot;Your order is too large. &quot;</span>
+<span class="p">}</span></code></pre></figure>
+
+<p><strong>Response</strong></p>
+
+<p><code>true</code>, indicating the request was successful</p>
+
+<h2 id="miscellaneous-operations">Miscellaneous operations</h2>
+
+<p>These tasks are not essential for completing a negotiable quote, but might be useful</p>
+
+<h3 id="list-all-comments-for-a-quote">List all comments for a quote</h3>
+
+<p>Magento returns all the comments associated with the specified quote ID. The comments are listed in chronological order, with the oldest comment listed first. A <code>creator_type</code> value of <code>3</code> indicates the customer made the comment. If the value is <code>2</code>, the merchant commented.</p>
+
+<p><strong>Sample Usage</strong></p>
+
+<p><code>GET /V1/negotiableQuote/87/comments</code></p>
+
+<p><strong>Payload</strong></p>
+
+<p>Not applicable</p>
+
+<p><strong>Response</strong></p>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">[</span>
+  <span class="p">{</span>
+    <span class="nt">&quot;entity_id&quot;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+    <span class="nt">&quot;parent_id&quot;</span><span class="p">:</span> <span class="mi">87</span><span class="p">,</span>
+    <span class="nt">&quot;creator_type&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="nt">&quot;is_decline&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nt">&quot;is_draft&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nt">&quot;creator_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nt">&quot;comment&quot;</span><span class="p">:</span> <span class="s2">&quot;Requesting a 5% discount&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-06-01 21:14:51&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;attachments&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;attachment_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+      <span class="nt">&quot;comment_id&quot;</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
+      <span class="nt">&quot;file_name&quot;</span><span class="p">:</span> <span class="s2">&quot;hello.txt&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;file_path&quot;</span><span class="p">:</span> <span class="s2">&quot;/h/e/hello.txt&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;file_type&quot;</span><span class="p">:</span> <span class="kc">null</span>
+    <span class="p">}</span>
+    <span class="p">]</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="nt">&quot;entity_id&quot;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
+    <span class="nt">&quot;parent_id&quot;</span><span class="p">:</span> <span class="mi">87</span><span class="p">,</span>
+    <span class="nt">&quot;creator_type&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="nt">&quot;is_decline&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nt">&quot;is_draft&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nt">&quot;creator_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nt">&quot;comment&quot;</span><span class="p">:</span> <span class="s2">&quot;We cannot discount Configurable Product 1, because the price is already discounted. We can adjust the overall price so the remaining items are discounted 5%. Please let us know whether this is acceptable. &quot;</span><span class="p">,</span>
+    <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-06-01 21:29:15&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;attachments&quot;</span><span class="p">:</span> <span class="p">[]</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="nt">&quot;entity_id&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+    <span class="nt">&quot;parent_id&quot;</span><span class="p">:</span> <span class="mi">87</span><span class="p">,</span>
+    <span class="nt">&quot;creator_type&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="nt">&quot;is_decline&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nt">&quot;is_draft&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nt">&quot;creator_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nt">&quot;comment&quot;</span><span class="p">:</span> <span class="s2">&quot;That is fine. Please apply the discounts to our order.&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-06-01 21:30:30&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;attachments&quot;</span><span class="p">:</span> <span class="p">[]</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="nt">&quot;entity_id&quot;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span>
+    <span class="nt">&quot;parent_id&quot;</span><span class="p">:</span> <span class="mi">87</span><span class="p">,</span>
+    <span class="nt">&quot;creator_type&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="nt">&quot;is_decline&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nt">&quot;is_draft&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nt">&quot;creator_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nt">&quot;comment&quot;</span><span class="p">:</span> <span class="s2">&quot;We&amp;#039;re taking $27.50 off your quote total. That&amp;#039;s 5% of the cost of the other items in your cart.&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-06-01 21:40:19&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;attachments&quot;</span><span class="p">:</span> <span class="p">[]</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="nt">&quot;entity_id&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+    <span class="nt">&quot;parent_id&quot;</span><span class="p">:</span> <span class="mi">87</span><span class="p">,</span>
+    <span class="nt">&quot;creator_type&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+    <span class="nt">&quot;is_decline&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nt">&quot;is_draft&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nt">&quot;creator_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nt">&quot;comment&quot;</span><span class="p">:</span> <span class="s2">&quot;Added a shipping address&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-06-01 21:43:03&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;attachments&quot;</span><span class="p">:</span> <span class="p">[]</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="nt">&quot;entity_id&quot;</span><span class="p">:</span> <span class="mi">11</span><span class="p">,</span>
+    <span class="nt">&quot;parent_id&quot;</span><span class="p">:</span> <span class="mi">87</span><span class="p">,</span>
+    <span class="nt">&quot;creator_type&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="nt">&quot;is_decline&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nt">&quot;is_draft&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nt">&quot;creator_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nt">&quot;comment&quot;</span><span class="p">:</span> <span class="s2">&quot;OK&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;created_at&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-06-01 21:44:16&quot;</span><span class="p">,</span>
+    <span class="nt">&quot;attachments&quot;</span><span class="p">:</span> <span class="p">[]</span>
+  <span class="p">}</span>
+<span class="p">]</span></code></pre></figure>
+
+<h3 id="retrieve-a-negotiable-quote-attachment">Retrieve a negotiable quote attachment</h3>
+
+<p>Use the <code>attachmentContent</code> call to retrieve the files (in base64 format) attached to a negotiable quote.</p>
+
+<p><code>negotiableQuoteAttachmentContentManagementV1</code></p>
+
+<p><strong>Sample Usage</strong></p>
+
+<p><code>GET /V1/negotiableQuote/attachmentContent</code></p>
+
+<p><strong>Payload</strong></p>
+
+<p>Not applicable</p>
+
+<p><strong>Response</strong></p>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;quoteId&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+  <span class="nt">&quot;quoteName&quot;</span><span class="p">:</span> <span class="s2">&quot;First quote&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;files&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;base64_encoded_data&quot;</span><span class="p">:</span> <span class="s2">&quot;VGhhbmsgeW91IGZvciByZWFkaW5nIHRoZSBNYWdlbnRvIEIyQiBkb2N1bWVudGF0aW9uLg==&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;quote.txt&quot;</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre></figure>
+
+<h2 id="related-information">Related information</h2>
+
+<ul>
+  <li><a href="/guides/v2.2/b2b/negotiable-quote.html">Integrate with the NegotiableQuote module</a></li>
+  <li><a href="/guides/v2.2/b2b/negotiable-update.html">Update a negotiable quote</a></li>
+  <li><a href="/guides/v2.2/b2b/negotiable-checkout.html">Negotiable quote checkout</a></li>
+</ul>
+
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+  
+   <div class="github-link">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.2/b2b/negotiable-manage.md" target="_blank">
+       Edit this page on GitHub
+     </a>
+   </div>
+  
+
+  <div class="new-issue">
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/b2b/negotiable-manage.html" target="_blank">Give us feedback</a>
+  </div>
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.container -->
+
+
+	</div>
+	<!-- /.main-container -->
+
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div id="footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav">
+        <li><a href="/guides/v2.2/contributor-guide/contributing_docs.html">Become a Contributor</a>
+        <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
+        <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+        <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+        <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+        <li><a href="/guides/v2.2/release-notes/bk-release-notes.html">Release Notes</a></li>
+        <li><a href="/magento-third-party.html">Third-Party Licenses</a></li> 
+      </ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2017 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="/common/js/app.min.js"></script>
+
+<!-- Glossary integration -->
+<script src="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.js"></script>
+<script src="/common/js/glossary.tooltip.min.js"></script>
+<script>
+    $(document).ready(function(){
+      magento.glossary.init("https://magento.github.io/glossary/data/content-glossary.xml",function(term){return term.types.includes("glossary");},magento.glossary.tooltip.init);
+      });
+</script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+

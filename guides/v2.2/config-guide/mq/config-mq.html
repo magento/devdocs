@@ -1,0 +1,2362 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Configure 2.2 message queues | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.
+">
+	<meta http-equiv="last-modified" content="" />
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print" />
+	<link rel="canonical" href="//guides/v2.2/config-guide/mq/config-mq.html">
+
+    <!-- WebUI popover css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
+
+  <script>
+    var baseUrl = "/";
+  </script>
+
+	<!-- crazyegg -->
+	<script type="text/javascript">
+	setTimeout(function(){var a=document.createElement("script");
+	var b=document.getElementsByTagName("script")[0];
+	a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0038/0321.js?"+Math.floor(new Date().getTime()/3600000);
+	a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+	</script>
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body>
+
+<header class="site-header">
+
+	<nav id="global-nav">
+
+		<div class="menu-btn"><a class="menu-trigger menu-icon" href="#"></a></div>
+
+		<div class="container">
+
+			<a class="logo" href="/guides/v2.2/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+
+			
+<div class="version-switcher dropdown">
+	<button id="version-switcher-button" class="btn btn-small dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		Magento 2.2
+	</button>
+
+	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/config-guide/mq/config-mq22.html">Magento 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.1/config-guide/mq/config-mq22.html">Magento 2.1</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.2/config-guide/mq/config-mq22.html">Magento 2.2 RC</a></li>
+	
+  </ul>
+
+</div>
+
+
+
+			<!-- Main Navigation -->
+<div class="nav-main">
+  <ul>
+    <li class="first">
+      <a href="#">Setup and Deployment</a>
+        <ul class="menu nav">
+          <li><a href="https://magento.com/tech-resources/download" target="_blank">Get Started with Magento DevBox Beta</a></li>
+            <li><a href="/guides/v2.2/install-gde/bk-install-guide.html">Installation Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/comp-mgr/bk-compman-upgrade-guide.html">Extension Update and System Upgrade Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/cloud/bk-cloud.html">Enterprise Cloud Edition Guide</a></li>
+          <li class="leaf"><a href="/magento-release-information.html">Release Information</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Development</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.2/architecture/bk-architecture.html">Architecture Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          <li><a href="/guides/v2.2/payments-integrations/bk-payments-integrations.html">Payments Integrations</a></li>
+          <li class="leaf"><a href="/guides/v2.2/mrg/intro.html">Module Reference Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          
+          <li class="first leaf"><a href="/guides/v2.2/contributor-guide/contributing.html">Contributor Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Frontend</a>
+        <ul class="menu nav">
+          <li class="first leaf"><a href="/guides/v2.2/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li class="leaf"><a href="/guides/v2.2/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">API</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.2/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li class="leaf"><a href="/guides/v2.2/rest/bk-rest.html">REST API Reference</a></li>
+          <li class="leaf"><a href="/guides/v2.2/soap/bk-soap.html">SOAP API Reference</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Testing</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.2/test/testing.html">Magento Testing Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/mtf/mtf_introduction.html">Functional Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/test/integration/integration_test_execution.html">Integration Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+        </ul>
+    </li>
+
+    <li>
+      <a href="/guides/v2.2/howdoi/bk-how-do-i.html">How Tos</a>
+    </li>
+
+    <li>
+      <a href="/videos/">Videos</a>
+    </li>
+  </ul>
+</div><!-- /.nav-main -->
+
+
+			<div class="search-btn">
+				<a class="search-trigger search-icon" href="//search.html"></a>
+			</div>
+
+			<form class="quick-search" action="/search.html" method="get">
+				<input type="search" name="q" placeholder="Search" />
+				<a href="#" class="quick-search-close">&times;</a>
+			</form>
+
+		</div>
+
+	</nav><!-- #global-nav -->
+
+</header>
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- .main-container -->
+	<div class="main-container">
+		<a id="main-content"></a>
+
+
+<div class="container">
+
+    
+    <div class="message-banner">
+        Review our 2.2 release candidate!  This beta version documentation includes B2B and more. <a href="/guides/v2.2/release-notes/release-candidate/quick-start.html">See the Quickstart Guide</a><br/>
+        Stay tuned — We'll roll out more 2.2 documentation updates in the coming weeks.
+    </div> 
+    
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+<h4>Configuration Guide</h4>
+
+
+
+
+
+
+		<ul>
+
+		
+
+		
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+					
+					
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/config-guide/bk-config-guide.html">Introduction</a></li>
+									
+								
+
+									
+
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/config-guide/secy/secy.html">Security settings</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/secy/secy-cron.html">Secure cron.php to run in a browser</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/secy/secy-xframe.html">X-Frame-Options header</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/secy/secy-headers.html">Prevent cache poisoning</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/config-guide/bootstrap/magento-bootstrap.html">Magento application initialization and bootstrap</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/bootstrap/magento-how-to-set.html">Set the value of bootstrap parameters</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/bootstrap/magento-modes.html">About Magento modes</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/bootstrap/mage-dirs.html">Customize base directory paths (MAGE_DIRS)</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/bootstrap/mage-profiler.html">Enable profiling (MAGE_PROFILER)</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/config-guide/deployment/">Pipeline Deployment</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/deployment/pipeline/">Overview</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/deployment/pipeline/technical-details.html">Technical Details</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/deployment/pipeline/development-system.html">Development System Setup</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/deployment/pipeline/build-system.html">Build System Setup</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/deployment/pipeline/production-system.html">Production System Setup</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/prod/prod_file-sys-perms.html">File systems access permissions</a></li>
+
+									
+
+								
+
+									
+
+										<li class="level3Parent " id="config-ref"><a href="#">Configuration reference</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child config-ref " data-menunode="config-ref"><a href="/guides/v2.2/config-guide/prod/config-reference-sens.html">Sensitive and system-specific</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child config-ref " data-menunode="config-ref"><a href="/guides/v2.2/config-guide/prod/config-reference-payment.html">Payment configuration paths reference</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child config-ref " data-menunode="config-ref"><a href="/guides/v2.2/config-guide/prod/config-reference-most.html">Other configuration paths reference</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child config-ref " data-menunode="config-ref"><a href="/guides/v2.2/config-guide/prod/config-reference-b2b.html">Magento Enterprise B2B Extension configuration paths reference</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child config-ref " data-menunode="config-ref"><a href="/guides/v2.2/config-guide/prod/config-reference-gitignore.html">.gitignore reference</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child config-ref " data-menunode="config-ref"><a href="/guides/v2.2/config-guide/prod/config-reference-var-name.html">Use environment variables to override configuration settings</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child config-ref " data-menunode="config-ref"><a href="/guides/v2.2/config-guide/prod/config-reference-configphp.html">config.php reference</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child config-ref " data-menunode="config-ref"><a href="/guides/v2.2/config-guide/prod/config-reference-envphp.html">env.php reference</a>
+
+
+									
+
+								
+
+									
+
+										<li class="level3Parent " id="deployment-examples"><a href="#">Examples</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child deployment-examples " data-menunode="deployment-examples"><a href="/guides/v2.2/config-guide/deployment/pipeline/example/shared-configuration.html">Shared configuration</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child deployment-examples " data-menunode="deployment-examples"><a href="/guides/v2.2/config-guide/deployment/pipeline/example/cli.html">Using CLI commands</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child deployment-examples " data-menunode="deployment-examples"><a href="/guides/v2.2/config-guide/deployment/pipeline/example/environment-variables.html">Using environment variables</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child deployment-examples " data-menunode="deployment-examples"><a href="/guides/v2.2/config-guide/deployment/pipeline/example/rsync.html">Using rsync</a>
+
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/config-guide/deployment/single-machine.html">Single machine deployment</a></li>
+									
+								
+
+									
+
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/config-guide/cli/config-cli.html">Command line configuration</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands.html">Get started with command-line configuration</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a></li>
+
+									
+
+								
+
+									
+
+										<li class="level3Parent " id="cli-config-mgmt"><a href="#">Configuration management</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child cli-config-mgmt " data-menunode="cli-config-mgmt"><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-export.html">Export the configuration</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child cli-config-mgmt " data-menunode="cli-config-mgmt"><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-set.html">Set configuration values</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child cli-config-mgmt " data-menunode="cli-config-mgmt"><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-import.html">Import data from configuration files</a>
+
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a></li>
+
+									
+
+								
+
+									
+
+										<li class="level3Parent " id="static_deploy"><a href="#">Static view files deployment</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child static_deploy " data-menunode="static_deploy"><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html">Static files deployment strategies</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child static_deploy " data-menunode="static_deploy"><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a>
+
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-spt-util.html">Run the support utilities (Enterprise Edition only)</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/config-guide/config/config-magento.html">Magento configuration files</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/config/config-php.html">Magento's deployment configuration</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/config/config-files.html">Module configuration files</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/config/config-create.html">Create or extend configuration types</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/config-guide/cache/caching.html">Caching</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+										<li class="level3Parent " id="cache-types"><a href="#">Cache types</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child cache-types " data-menunode="cache-types"><a href="/guides/v2.2/config-guide/cache/caching_frontend-cache-types.html">Associate cache frontends with cache types</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child cache-types " data-menunode="cache-types"><a href="/guides/v2.2/config-guide/cache/caching_low-level.html">Low-level cache options</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child cache-types " data-menunode="cache-types"><a href="/guides/v2.2/config-guide/cache/caching-database.html">Database caching</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child cache-types " data-menunode="cache-types"><a href="/guides/v2.2/config-guide/cache/caching-cache-type.html">Create a cache type</a>
+
+
+									
+
+								
+
+									
+
+										<li class="level3Parent " id="cache-priv"><a href="#">Magento page caching</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child cache-priv " data-menunode="cache-priv"><a href="/guides/v2.2/config-guide/cache/cache-priv-over.html">Page caching overview</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child cache-priv " data-menunode="cache-priv"><a href="/guides/v2.2/config-guide/cache/cache-priv-priv.html">Public and private content</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child cache-priv " data-menunode="cache-priv"><a href="/guides/v2.2/config-guide/cache/cache-priv-context.html">HTTP context</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child cache-priv " data-menunode="cache-priv"><a href="/guides/v2.2/config-guide/cache/cache-priv-inval.html">Cache invalidation and private content versioning</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child cache-priv " data-menunode="cache-priv"><a href="/guides/v2.2/config-guide/cache/static-content-signing.html">Static Content Signing</a>
+
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/config-guide/redis/config-redis.html">Configure Redis</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/redis/redis-pg-cache.html">Use Redis for the Magento page and default cache</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/redis/redis-session.html">Use Redis for session storage</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/config-guide/varnish/config-varnish.html">Configure and use Varnish</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/varnish/config-varnish-install.html">Install Varnish</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/varnish/config-varnish-configure.html">Configure Varnish and your web server</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/varnish/config-varnish-magento.html">Configure Magento to use Varnish</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/varnish/config-varnish-advanced.html">Advanced Varnish configuration</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/varnish/use-multiple-varnish-cache.html">How Magento cache clearing works with multiple Varnish instances</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/varnish/config-varnish-final.html">Final verification</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/varnish/use-varnish-cache.html">How Magento cache clearing works with Varnish</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/varnish/use-varnish-cache-how.html">How Varnish caching works</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/varnish/tshoot-varnish-503.html">Troubleshooting 503 errors</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/config-guide/memcache/memcache.html">Use memcached for session storage</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/memcache/memcache_ubuntu.html">Install, configure, verify memcached on Ubuntu</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/memcache/memcache_centos.html">Install, configure, verify memcached on CentOS</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/memcache/memcache_magento.html">Configure Magento to use memcached</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/config-guide/multi-site/ms_over.html">Multiple websites or stores</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/multi-site/ms_websites.html">Set up multiple websites, stores, and store views in the Admin</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/multi-site/ms_nginx.html">Tutorial&mdash;Set up multiple websites or stores with nginx</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/multi-site/ms_apache.html">Tutorial&mdash;Set up multiple websites with Apache</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/config-guide/cron/custom-cron.html">Set up a custom cron job and cron group</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/cron/custom-cron-ref.html">Custom cron job and cron group reference</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/cron/custom-cron-tut.html">Configure a custom cron job and cron group (tutorial)</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/config-guide/db-profiler/db-profiler.html">Configure the database profiler</a></li>
+									
+								
+
+									
+
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/config-guide/elasticsearch/es-overview.html">Install and configure Elasticsearch (Enterprise Edition only)</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/elasticsearch/es-config-nginx.html">Configure nginx and Elasticsearch</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/elasticsearch/es-config-apache.html">Configure Apache and Elasticsearch</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/elasticsearch/es-config-stopwords.html">Configure Elasticsearch stopwords</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/elasticsearch/configure-magento.html">Configure Magento to use Elasticsearch</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/config-guide/mq/rabbitmq-overview.html">Message Queues (Enterprise Edition only)</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2  active "><a href="/guides/v2.2/config-guide/mq/config-mq.html">Configure 2.2 message queues</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/mq/manage-mysql.html">Manage message queues</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/mq/queue-migration.html">Migrate message queue configuration</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/config-guide/multi-master/multi-master.html">Split database performance solution (Enterprise Edition only)</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/multi-master/multi-master_masterdb.html">Automatically configure master databases</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/multi-master/multi-master_manual.html">Manually configure master databases</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/multi-master/multi-master_verify.html">Verify split databases</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/multi-master/multi-master_slavedb.html">Set up optional database replication</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/config-guide/sessions.html">How to locate your session files</a></li>
+									
+								
+
+									
+
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+
+									
+
+										<li class="levela1"><span class="nav-header">Optimization</span></li>
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/prod/prod_perf-optimize.html">Magento Optimization Guide</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+  <nav class="breadcrumbs">
+
+    <a class="breadcrumb-item" href="/guides/v2.2/"><span>Home</span></a>
+
+    <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+    <!-- Iteration breadcrumb item -->
+    
+    
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+
+        
+          <a property="item" typeof="WebPage" href="/guides/v2.2/config-guide/bk-config-guide.html">
+            <span property="name">Configuration Guide</span>
+          </a>
+        
+
+        <meta property="position" content="1" />
+      </li>
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
+
+        
+
+          
+
+          <span property="name">Configure 2.2 message queues</span>
+
+        
+
+        <meta property="position" content="2" />
+      </li>
+
+    
+
+    
+
+
+
+    </ol>
+
+  </nav>
+
+
+
+	
+
+	
+
+	<h1 class="page-heading">Configure 2.2 message queues</h1>
+
+  
+
+
+</section>
+
+
+			<p>The message queue topology is an Enterprise Edition feature. It can be included as part of EE installation, or you can add it existing modules.</p>
+
+<h3 id="overview">Overview</h3>
+<p>Configuring the message queue topology involves creating and modifying the following configuration files in the <code>&lt;module&gt;/etc</code> directory:</p>
+
+<ul>
+  <li><a href="#communicationxml"><code>communication.xml</code></a> - Defines aspects of the message queue system that all communication types have in common.</li>
+  <li><a href="#queueconsumerxml"><code>queue_consumer.xml</code></a> - Defines the relationship between an existing queue and its consumer.</li>
+  <li><a href="#queuetopologyxml"><code>queue_topology.xml</code></a> - Defines the message routing rules and declares queues and exchanges.</li>
+  <li><a href="#queuepublisherxml"><code>queue_publisher.xml</code></a> - Defines the exchange where a topic is published.</li>
+</ul>
+
+<h3 id="use-cases">Use Cases</h3>
+<p>Depending on your needs, you may only need to create and configure <code>communication.xml</code> and one or two of these files.</p>
+
+<ul>
+  <li>If you only want to publish to an existing queue created by a 3rd party system, you will only need the <code>queue_publisher.xml</code> file.</li>
+  <li>If you only want to consume from an existing queue,  you will only need the <code>queue_consumer.xml</code> config file.</li>
+  <li>In cases where you want to configure the local queue and publish to it for 3rd party systems to consume, you will need the <code>queue_publisher.xml</code> and <code>queue_topology.xml</code> files.</li>
+  <li>When you want to configure the local queue and consume messages published by 3rd party system, you will need the <code>queue_topology.xml</code> and <code>queue_consumer.xml</code> files.</li>
+</ul>
+
+<h3 id="communicationxml"><code>communication.xml</code></h3>
+
+<p>The <code>&lt;module&gt;/etc/communication.xml</code> file defines aspects of the message queue system that all communication types have in common. This release supports AMQP and database connections.</p>
+
+<h3 class="no_toc" id="sample-communicationxml-file">Sample <code>communication.xml</code> file</h3>
+
+<p>The following sample defines two synchronous topics. The first topic is for RPC calls. The second uses a custom service interface.</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework-message-queue:etc/queue.xsd&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;topic</span> <span class="na">name=</span><span class="s">&quot;synchronous.rpc.test&quot;</span> <span class="na">request=</span><span class="s">&quot;string&quot;</span> <span class="na">response=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;handler</span> <span class="na">name=</span><span class="s">&quot;processRpcRequest&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\TestModuleSynchronousAmqp\Model\RpcRequestHandler&quot;</span> <span class="na">method=</span><span class="s">&quot;process&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/topic&gt;</span>
+  <span class="nt">&lt;topic</span> <span class="na">name=</span><span class="s">&quot;magento.testModuleSynchronousAmqp.api.serviceInterface.execute&quot;</span> <span class="na">schema=</span><span class="s">&quot;Magento\TestModuleSynchronousAmqp\Api\ServiceInterface::execute&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;handler</span> <span class="na">name=</span><span class="s">&quot;processRemoteRequest&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\TestModuleSynchronousAmqp\Model\RpcRequestHandler&quot;</span> <span class="na">method=</span><span class="s">&quot;process&quot;</span><span class="nt">/&gt;</span>
+  <span class="nt">&lt;/topic&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
+
+<h3 class="no_toc" id="topic-element">topic element</h3>
+<p>Topic configuration is flexible in that you can switch the transport layer for topics at deployment time. These values can be overwritten in the <code>env.php</code> file.</p>
+
+<p>The <code>name</code> parameter is required. The topic definition must include either a <code>request</code> or a <code>schema</code>. Use <code>schema</code> if you want to implement a custom service interface.  Otherwise, specify <code>request</code>. If <code>request</code> is specified, then also specify <code>response</code> if the topic is synchronous.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>name</td>
+      <td>A string that uniquely identifies the topic. A topic name should be a series of strings that are separated by periods. The leftmost string should be the most general, and each string afterward should narrow the scope. For example, to describe actions for tending to pets, you might create names such as <code>cat.white.feed</code> and <code>dog.retriever.walk</code>. Wildcards are not supported in the <code>communication.xml</code> file.</td>
+    </tr>
+    <tr>
+      <td>request</td>
+      <td>Specifies the data type of the topic.</td>
+    </tr>
+    <tr>
+      <td>response</td>
+      <td>Specifies the format of the response. This parameter is required if you are defining a synchronous topic. Omit this parameter if you are defining an asynchronous topic.</td>
+    </tr>
+    <tr>
+      <td>schema</td>
+      <td>The interface that describes the structure of the message. The format must be  <code>&lt;module&gt;\Api\&lt;ServiceName&gt;::&lt;methodName&gt;</code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 class="no_toc" id="handler-element">handler element</h3>
+<p>The <code>handler</code> element specifies the class where the logic for handling messages exists and the method it executes.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>name</td>
+      <td>A string that uniquely defines the handler. The name can be derived from the topic name if the handler is specific to the topic. If the handler provides more generic capabilities, name the handler so that it describes those capabilities.</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>The class or interface that defines the handler.</td>
+    </tr>
+    <tr>
+      <td>method</td>
+      <td>The method this handler executes.</td>
+    </tr>
+    <tr>
+      <td>disabled</td>
+      <td>Determines whether this handler is disabled. The default value is <code>false</code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="queueconsumerxml"><code>queue_consumer.xml</code></h3>
+<p>The <code>queue_consumer.xml</code> file contains one or more <code>consumer</code> elements:</p>
+
+<h4 class="no_toc" id="example-queueconsumer-file">Example <code>queue_consumer</code> file</h4>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework-message-queue:etc/queue_consumer.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;consumer</span> <span class="na">name=</span><span class="s">&quot;basic.consumer&quot;</span> <span class="na">queue=</span><span class="s">&quot;basic.consumer.queue&quot;</span> <span class="na">handler=</span><span class="s">&quot;LoggerClass::log&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;consumer</span> <span class="na">name=</span><span class="s">&quot;synchronous.rpc.test&quot;</span> <span class="na">queue=</span><span class="s">&quot;synchronous.rpc.test.queue&quot;</span> <span class="na">handler=</span><span class="s">&quot;LoggerClass::log&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;consumer</span> <span class="na">name=</span><span class="s">&quot;rpc.test&quot;</span> <span class="na">queue=</span><span class="s">&quot;queue.for.rpc.test.unused.queue&quot;</span> <span class="na">consumerInstance=</span><span class="s">&quot;Magento\Framework\MessageQueue\BatchConsumer&quot;</span> <span class="na">connection=</span><span class="s">&quot;amqp&quot;</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
+
+<h4 class="no_toc" id="consumer-element"><code>consumer</code> element</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>name (required)</td>
+      <td>The name of the consumer.</td>
+    </tr>
+    <tr>
+      <td>queue (required)</td>
+      <td>Defines the queue name to send the message to.</td>
+    </tr>
+    <tr>
+      <td>handler</td>
+      <td>Specifies the class and method that processes the message. The value must be specified in the format <code>&lt;Vendor&gt;\Module\&lt;ServiceName&gt;::&lt;methodName&gt;</code>.</td>
+    </tr>
+    <tr>
+      <td>consumerInstance</td>
+      <td>The Magento class name that consumes the message</td>
+    </tr>
+    <tr>
+      <td>connection</td>
+      <td>For AMQP connections, the connection name must match the <code>connection</code> attribute in the <code>queue_topology.xml</code> file. Otherwise, the connection name must be <code>db</code>.</td>
+    </tr>
+    <tr>
+      <td>maxMessages</td>
+      <td>Specifies the maximum number of messages to consume.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="queuetopologyxml"><code>queue_topology.xml</code></h3>
+
+<p>The <code>queue_topology.xml</code> file defines the message routing rules and declares queues and exchanges. It contains the following elements:</p>
+
+<ul>
+  <li><code>exchange</code></li>
+  <li><code>exchange/binding</code>(optional)</li>
+  <li><code>exchange/arguments</code> (optional)</li>
+  <li><code>exchange/binding/arguments</code> (optional)</li>
+</ul>
+
+<h4 class="no_toc" id="example-queuetopologyxml-file">Example <code>queue_topology.xml</code> file</h4>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework-message-queue:etc/queue_topology.xsd&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;exchange</span> <span class="na">name=</span><span class="s">&quot;magento-topic-based-exchange1&quot;</span> <span class="na">type=</span><span class="s">&quot;topic&quot;</span> <span class="na">connection=</span><span class="s">&quot;db&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;binding</span> <span class="na">id=</span><span class="s">&quot;topicBasedRouting2&quot;</span> <span class="na">topic=</span><span class="s">&quot;anotherTopic&quot;</span> <span class="na">destinationType=</span><span class="s">&quot;queue&quot;</span> <span class="na">destination=</span><span class="s">&quot;topic-queue1&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;arguments&gt;</span>
+            <span class="c">&lt;!--Not part of our use case, but will be processed if someone specifies them--&gt;</span>
+            <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;argument1&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>value<span class="nt">&lt;/argument&gt;</span>
+        <span class="nt">&lt;/arguments&gt;</span>
+    <span class="nt">&lt;/binding&gt;</span>
+    <span class="nt">&lt;arguments&gt;</span>
+        <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;alternate-exchange&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>magento-log-exchange<span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/arguments&gt;</span>
+  <span class="nt">&lt;/exchange&gt;</span>
+  <span class="nt">&lt;exchange</span> <span class="na">name=</span><span class="s">&quot;magento-topic-based-exchange2&quot;</span> <span class="na">type=</span><span class="s">&quot;topic&quot;</span> <span class="na">connection=</span><span class="s">&quot;db&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;binding</span> <span class="na">id=</span><span class="s">&quot;topicBasedRouting1&quot;</span> <span class="na">topic=</span><span class="s">&quot;#&quot;</span> <span class="na">destinationType=</span><span class="s">&quot;queue&quot;</span> <span class="na">destination=</span><span class="s">&quot;topic-queue2&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;arguments&gt;</span>
+      <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;alternate-exchange&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>magento-log-exchange<span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;/arguments&gt;</span>
+  <span class="nt">&lt;/exchange&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
+
+<h4 class="no_toc" id="exchange-element"><code>exchange</code> element</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>name (required)</td>
+      <td>A unique ID for the exchange.</td>
+    </tr>
+    <tr>
+      <td>type (required)</td>
+      <td>Specifies the type of exchange. Must be <code>topic</code>.</td>
+    </tr>
+    <tr>
+      <td>connection  (required)</td>
+      <td>For AMQP connections, a string that identifies the connection.  For MySQL connections, the connection name must be <code>db</code>.</td>
+    </tr>
+    <tr>
+      <td>durable</td>
+      <td>Boolean value indicating whether the exchange is persistent. Non-durable exchanges are purged when the server restarts. The default is <code>true</code>.</td>
+    </tr>
+    <tr>
+      <td>autoDelete</td>
+      <td>Boolean value indicating whether the exchange is deleted when all queues have finished using it. The default is <code>false</code>.</td>
+    </tr>
+    <tr>
+      <td>internal</td>
+      <td>Boolean value. If set to true, the exchange may not be used directly by publishers, but only when bound to other exchanges. The default is <code>false</code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 class="no_toc" id="binding-element"><code>binding</code> element</h4>
+
+<p>The <code>binding</code> element is a subnode of the <code>exchange</code> element.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>id (required)</td>
+      <td>A unique ID for this binding.</td>
+    </tr>
+    <tr>
+      <td>topic (required)</td>
+      <td>The name of a topic. You can specify an asterisk (*) or pound sign (#) as wildcards. These are described below the table.</td>
+    </tr>
+    <tr>
+      <td>destinationType (required)</td>
+      <td>Must be <code>queue</code>.</td>
+    </tr>
+    <tr>
+      <td>destination (required)</td>
+      <td>Identifies the name of a queue.</td>
+    </tr>
+    <tr>
+      <td>disabled</td>
+      <td>Determines whether this binding is disabled. The default value is <code>false</code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Example topic names that include wildcards:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Pattern</th>
+      <th>Description</th>
+      <th>Example matching topics</th>
+      <th>Example non-matching topics</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>*.*.*</code></td>
+      <td>Matches any topic that contains exactly two periods.</td>
+      <td><code>mytopic.createOrder.success</code>, <code>mytopic.updatePrice.item1</code></td>
+      <td><code>mytopic.createOrder</code>, <code>mytopic.createOrder.success.true</code></td>
+    </tr>
+    <tr>
+      <td><code>#</code></td>
+      <td>Matches any topic name.</td>
+      <td><code>mytopic</code>, <code>mytopic.createOrder.success</code>, <code>this.is.a.long.topic.name</code></td>
+      <td>Not applicable</td>
+    </tr>
+    <tr>
+      <td><code>mytopic.#</code></td>
+      <td>Matches any topic name that begins with <code>mytopic</code> and has a period afterward.</td>
+      <td><code>mytopic.success</code>, <code>mytopic.createOrder.error</code></td>
+      <td><code>new.mytopic.success</code>,</td>
+    </tr>
+    <tr>
+      <td><code>*.Order.#</code></td>
+      <td>There must be one string before <strong>.Order</strong>. There can be any number of strings (including 0) after that.</td>
+      <td><code>mytopic.Order</code>, <code>mytopic.Order.Create</code>, <code>newtopic.Order.delete.success</code></td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 class="no_toc" id="arguments-element"><code>arguments</code> element</h4>
+
+<p>The <code>arguments</code> element is an optional element that contains one or more <code>argument</code> elements. These arguments define key/value pairs that are passed to the broker for processing.</p>
+
+<p>Each <code>argument</code> definition must have the following parameters:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>name</td>
+      <td>The parameter name</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>The data type of the value</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The following illustrates an <code>arguments</code> block:</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;arguments&gt;</span>
+    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;warehouseId&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;int&quot;</span><span class="nt">&gt;</span>1<span class="nt">&lt;/argument&gt;</span>
+    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;carrierName&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>USPS<span class="nt">&lt;/argument&gt;</span>
+<span class="nt">&lt;/arguments&gt;</span></code></pre></figure>
+
+<h3 id="queuepublisherxml"><code>queue_publisher.xml</code></h3>
+
+<p>The <code>queue_publisher.xml</code> file defines which connection and exchange to use to publish messages for a specific topic. It contains the following elements:</p>
+
+<ul>
+  <li><span term-uuid="d5777fe2-f786-45d9-b052-cca8a10120d9" class="glossary-term" data-toggle="popover">publisher</span></li>
+  <li>publisher/connection</li>
+</ul>
+
+<h4 class="no_toc" id="example-queuepublisherxml-file">Example <code>queue_publisher.xml</code> file</h4>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+<span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework-message-queue:etc/queue_publisher.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;publisher</span> <span class="na">topic=</span><span class="s">&quot;magento.testModuleSynchronousAmqp.api.serviceInterface.execute&quot;</span> <span class="na">disabled=</span><span class="s">&quot;true&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;publisher</span> <span class="na">topic=</span><span class="s">&quot;asynchronous.test&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;connection</span> <span class="na">name=</span><span class="s">&quot;amqp&quot;</span> <span class="na">exchange=</span><span class="s">&quot;magento&quot;</span> <span class="na">disabled=</span><span class="s">&quot;false&quot;</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;connection</span> <span class="na">name=</span><span class="s">&quot;db&quot;</span> <span class="na">exchange=</span><span class="s">&quot;exch1&quot;</span> <span class="na">disabled=</span><span class="s">&quot;true&quot;</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/publisher&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
+
+<h4 class="no_toc" id="publisher-element"><code>publisher</code> element</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>topic (required)</td>
+      <td>The name of the topic.</td>
+    </tr>
+    <tr>
+      <td>disabled</td>
+      <td>Determines whether this queue is disabled. The default value is <code>false</code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 class="no_toc" id="connection-element"><code>connection</code> element</h4>
+
+<p>The <code>connection</code> element is a subnode of the <code>publisher</code> element. There must not be more than one enabled active connection to a pushlisher defined at a time. If you omit the <code>connection</code> element, the default connection of <code>amqp</code> and exchange <code>magento</code> will be used.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Attribute</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>name (required)</td>
+      <td>For AMQP connections, the connection name must match the <code>connection</code> attribute in the <code>queue_topology.xml</code> file. Otherwise, the connection name must be <code>db</code>.</td>
+    </tr>
+    <tr>
+      <td>exchange</td>
+      <td>The name of the exchange to publish to. The default system exchange name is <code>magento</code>.</td>
+    </tr>
+    <tr>
+      <td>disabled</td>
+      <td>Determines whether this queue is disabled. The default value is <code>false</code>.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="updatequeuexml">Updating <code>queue.xml</code></h3>
+
+<p>See <a href="/guides/v2.2/config-guide/mq/queue-migration.html">Migrate message queue configuration</a> for information about upgrading from Magento 2.0 or 2.1.</p>
+
+<h3 id="related-topics">Related Topics</h3>
+<ul>
+  <li><a href="/guides/v2.2/config-guide/mq/rabbitmq-overview.html">RabbitMQ Overview</a></li>
+  <li><a href="/guides/v2.2/config-guide/mq/manage-mysql.html">Manage message queues with MySQL</a></li>
+  <li><a href="/guides/v2.2/install-gde/prereq/install-rabbitmq.html">Install RabbitMQ</a></li>
+</ul>
+
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+  
+   <div class="github-link">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.2/config-guide/mq/config-mq22.md" target="_blank">
+       Edit this page on GitHub
+     </a>
+   </div>
+  
+
+  <div class="new-issue">
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/config-guide/mq/config-mq.html" target="_blank">Give us feedback</a>
+  </div>
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.container -->
+
+
+	</div>
+	<!-- /.main-container -->
+
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div id="footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav">
+        <li><a href="/guides/v2.2/contributor-guide/contributing_docs.html">Become a Contributor</a>
+        <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
+        <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+        <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+        <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+        <li><a href="/guides/v2.2/release-notes/bk-release-notes.html">Release Notes</a></li>
+        <li><a href="/magento-third-party.html">Third-Party Licenses</a></li> 
+      </ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2017 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="/common/js/app.min.js"></script>
+
+<!-- Glossary integration -->
+<script src="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.js"></script>
+<script src="/common/js/glossary.tooltip.min.js"></script>
+<script>
+    $(document).ready(function(){
+      magento.glossary.init("https://magento.github.io/glossary/data/content-glossary.xml",function(term){return term.types.includes("glossary");},magento.glossary.tooltip.init);
+      });
+</script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+

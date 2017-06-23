@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Global features that support extensibility | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.
+">
+	<meta http-equiv="last-modified" content="" />
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print" />
+	<link rel="canonical" href="//guides/v2.2/architecture/global_extensibility_features.html">
+
+    <!-- WebUI popover css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
+
+  <script>
+    var baseUrl = "/";
+  </script>
+
+	<!-- crazyegg -->
+	<script type="text/javascript">
+	setTimeout(function(){var a=document.createElement("script");
+	var b=document.getElementsByTagName("script")[0];
+	a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0038/0321.js?"+Math.floor(new Date().getTime()/3600000);
+	a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+	</script>
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body>
+
+<header class="site-header">
+
+	<nav id="global-nav">
+
+		<div class="menu-btn"><a class="menu-trigger menu-icon" href="#"></a></div>
+
+		<div class="container">
+
+			<a class="logo" href="/guides/v2.2/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+
+			
+<div class="version-switcher dropdown">
+	<button id="version-switcher-button" class="btn btn-small dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		Magento 2.2
+	</button>
+
+	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/architecture/global_extensibility_features.html">Magento 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.1/architecture/global_extensibility_features.html">Magento 2.1</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.2/architecture/global_extensibility_features.html">Magento 2.2 RC</a></li>
+	
+  </ul>
+
+</div>
+
+
+
+			<!-- Main Navigation -->
+<div class="nav-main">
+  <ul>
+    <li class="first">
+      <a href="#">Setup and Deployment</a>
+        <ul class="menu nav">
+          <li><a href="https://magento.com/tech-resources/download" target="_blank">Get Started with Magento DevBox Beta</a></li>
+            <li><a href="/guides/v2.2/install-gde/bk-install-guide.html">Installation Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/comp-mgr/bk-compman-upgrade-guide.html">Extension Update and System Upgrade Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/cloud/bk-cloud.html">Enterprise Cloud Edition Guide</a></li>
+          <li class="leaf"><a href="/magento-release-information.html">Release Information</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Development</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.2/architecture/bk-architecture.html">Architecture Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          <li><a href="/guides/v2.2/payments-integrations/bk-payments-integrations.html">Payments Integrations</a></li>
+          <li class="leaf"><a href="/guides/v2.2/mrg/intro.html">Module Reference Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          
+          <li class="first leaf"><a href="/guides/v2.2/contributor-guide/contributing.html">Contributor Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Frontend</a>
+        <ul class="menu nav">
+          <li class="first leaf"><a href="/guides/v2.2/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li class="leaf"><a href="/guides/v2.2/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">API</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.2/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li class="leaf"><a href="/guides/v2.2/rest/bk-rest.html">REST API Reference</a></li>
+          <li class="leaf"><a href="/guides/v2.2/soap/bk-soap.html">SOAP API Reference</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Testing</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.2/test/testing.html">Magento Testing Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/mtf/mtf_introduction.html">Functional Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/test/integration/integration_test_execution.html">Integration Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+        </ul>
+    </li>
+
+    <li>
+      <a href="/guides/v2.2/howdoi/bk-how-do-i.html">How Tos</a>
+    </li>
+
+    <li>
+      <a href="/videos/">Videos</a>
+    </li>
+  </ul>
+</div><!-- /.nav-main -->
+
+
+			<div class="search-btn">
+				<a class="search-trigger search-icon" href="//search.html"></a>
+			</div>
+
+			<form class="quick-search" action="/search.html" method="get">
+				<input type="search" name="q" placeholder="Search" />
+				<a href="#" class="quick-search-close">&times;</a>
+			</form>
+
+		</div>
+
+	</nav><!-- #global-nav -->
+
+</header>
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- .main-container -->
+	<div class="main-container">
+		<a id="main-content"></a>
+
+
+<div class="container">
+
+    
+    <div class="message-banner">
+        Review our 2.2 release candidate!  This beta version documentation includes B2B and more. <a href="/guides/v2.2/release-notes/release-candidate/quick-start.html">See the Quickstart Guide</a><br/>
+        Stay tuned — We'll roll out more 2.2 documentation updates in the coming weeks.
+    </div> 
+    
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+<h4>Architecture Guide</h4>
+
+
+
+
+
+
+		<ul>
+
+		
+
+		
+
+				
+
+			
+
+				
+
+					
+					
+
+					
+
+						
+
+						
+
+							
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/architecture/arch_whatis.html">Introduction</a></li>
+									
+								
+
+									
+
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/architecture/archi_perspectives/ABasics_intro.html">Architectural basics</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/architecture/extensibility.html">Extensibility and modularity</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/architecture/frontend_custom_strategies.html">Ease of frontend customization</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2  active "><a href="/guides/v2.2/architecture/global_extensibility_features.html">Global features that support extensibility</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/architecture/security_intro.html">Security</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/architecture/storefront_customization.html">Storefront customization strategies</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/architecture/archi_perspectives/arch_diagrams.html">Architectural diagrams</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/architecture/stack-basics.html">Stack basics</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/architecture/tech-stack.html">Technology stack</a></li>
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child versioning " data-menunode="versioning"><a href="/guides/v2.2/architecture/versioning%20overview.html">Versioning policy overview</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child versioning " data-menunode="versioning"><a href="/guides/v2.2/architecture/versioning_overview.html">Versioning policy overview</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child versioning " data-menunode="versioning"><a href="/guides/v2.2/architecture/versioning_spec_format.html">Supported versioning specificiations and format</a>
+
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/architecture/back-compatibility.html">Backward compatibility</a></li>
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child versioning " data-menunode="versioning"><a href="/guides/v2.2/architecture/software_versions.html">Magento 2.0 software versions</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child versioning " data-menunode="versioning"><a href="/guides/v2.2/architecture/version_store.html">Where is version information stored?</a>
+
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/architecture/versioning.html">Versioning policy</a></li>
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child versioning " data-menunode="versioning"><a href="/guides/v2.2/architecture/change_table.html">Changes to classes and method versions</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child versioning " data-menunode="versioning"><a href="/guides/v2.2/architecture/release_types.html">Release types and version numbers</a>
+
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/architecture/archi_perspectives/ALayers_intro.html">Architectural layers</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/architecture/archi_perspectives/present_layer.html">Presentation layer</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/architecture/archi_perspectives/themes_intro.html">Magento Themes</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/architecture/archi_perspectives/service_layer.html">Service layer</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/architecture/archi_perspectives/domain_layer.html">Domain layer</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/architecture/archi_perspectives/persist_layer.html">Persistence layer</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/architecture/archi_perspectives/components/AComponents.html">Components</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+										<li class="level3Parent " id="modules"><a href="#">Modules</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child modules " data-menunode="modules"><a href="/guides/v2.2/architecture/archi_perspectives/components/modules/mod_intro.html">Module overview</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child modules " data-menunode="modules"><a href="/guides/v2.2/architecture/archi_perspectives/components/modules/mod_and_areas.html">Modules and areas</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child modules " data-menunode="modules"><a href="/guides/v2.2/architecture/archi_perspectives/components/modules/mod_conventions.html">Module conventions</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child modules " data-menunode="modules"><a href="/guides/v2.2/architecture/archi_perspectives/components/modules/mod_relationships.html">Module relationships</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child modules " data-menunode="modules"><a href="/guides/v2.2/architecture/archi_perspectives/components/modules/mod_depend.html">Module dependencies</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child modules " data-menunode="modules"><a href="/guides/v2.2/architecture/archi_perspectives/components/modules/mod_depend_types.html">Module dependency types</a>
+
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/architecture/archi_perspectives/components/arch_themes.html">Themes</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/architecture/archi_perspectives/components/arch_translations.html">Language packages</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/architecture/archi_perspectives/LogicalView_intro.html">Logical View</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/architecture/archi_perspectives/components.html">Components</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/architecture/archi_perspectives/composer.html">Composer</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/architecture/archi_perspectives/components/arch_libraries.html">Magento libraries</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/architecture/archi_perspectives/filesystem.html">Magento filesystem</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/architecture/archi_perspectives/framework.html">Magento Framework</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/architecture/archi_perspectives/third-party-libs.html">Third-party libraries</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+  <nav class="breadcrumbs">
+
+    <a class="breadcrumb-item" href="/guides/v2.2/"><span>Home</span></a>
+
+    <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+    <!-- Iteration breadcrumb item -->
+    
+    
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+
+        
+          <a property="item" typeof="WebPage" href="/guides/v2.2/architecture/bk-architecture.html">
+            <span property="name">Architecture Guide</span>
+          </a>
+        
+
+        <meta property="position" content="1" />
+      </li>
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
+
+        
+
+          
+
+          <span property="name">Global features that support extensibility</span>
+
+        
+
+        <meta property="position" content="2" />
+      </li>
+
+    
+
+    
+
+
+
+    </ol>
+
+  </nav>
+
+
+
+	
+
+	
+
+	<h1 class="page-heading">Global features that support extensibility</h1>
+
+  
+
+
+</section>
+
+
+			<h2 id="overview">Overview</h2>
+
+<p>Essential qualities foster extensibility throughout the entire set of Magento components. This discussion focuses on:</p>
+
+<ul>
+  <li>Modularity</li>
+  <li>Reliance on popular design patterns</li>
+  <li>Coding standards</li>
+  <li>Flexible attribute types</li>
+  <li>Web APIs</li>
+  <li>Service contracts and <span term-uuid="2be50595-c5c7-4b9d-911c-3bf2cd3f7beb" class="glossary-term" data-toggle="popover">dependency injection</span></li>
+  <li>Plug-ins</li>
+</ul>
+
+<h3 id="modularity">Modularity</h3>
+
+<p>The concept of the <i>module</i> is the heart of Magento <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span> development, and modular design of software components (in particular, modules, themes, and language packages) is a core architectural principle of the product. Self-contained modules of discrete code are organized by feature, thereby reducing each module’s external dependencies.</p>
+
+<p>If a <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> is self-contained, then you can modify or replace it without affecting other areas of the code. This <i>loose coupling</i> of software components reduces the ripple effects throughout your code base of changing code.</p>
+
+<p>See the <a href="/guides/v2.2/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a> for detailed instructions on how to create modules.</p>
+
+<h3 id="reliance-on-popular-design-patterns">Reliance on popular design patterns</h3>
+
+<p>Reliance on known architectural and programming structures helps <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> developers orient themselves to the specific development issues that affect coding in a particular product ecosystem. This can reduce the learning curve for new Magento developers.</p>
+
+<p>Design patterns are time-tested, widely recognized software architecture constructs. Magento product architecture incorporates many well known patterns, but Model-View-Controller (MVC) holds particular interest for extension developers.</p>
+
+<h3 id="coding-standards">Coding standards</h3>
+
+<p>Magento developers should familiarize themselves with our coding standards, best practices, and conventions, especially standards for PHP file formatting, coding style, and file naming conventions. Magento standards are based on Zend Framework Coding Standards.</p>
+
+<p>See <a href="/guides/v2.2/coding-standards/bk-coding-standards.html">Coding Standards</a> for guidelines and requirements.</p>
+
+<h3 id="rich-product-ecosystem">Rich product ecosystem</h3>
+
+<p>The wider Magento ecosystem provides an extensive community and rich third-party marketplace for extensions. Visit <a href="https://marketplace.magento.com/">Magento Marketplace</a> for an overview of the many modules and themes available for download and to buy modules and <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span> packages, which offer more possibilities for extending your <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span>.</p>
+
+<h3 id="flexible-attribute-types">Flexible attribute types</h3>
+
+<p>You can enhance your storefront by adding unique attributes to the default product attributes. For example, you might need to add a new attribute to describe a product, such as texture or an industry-specific rating. You can add these attributes from the Magento Admin, and the storefront  displays them.</p>
+
+<table>
+   <tbody>
+      <tr style="background-color: lightgray">
+         <th>Attribute type</th>
+         <th>Displayed by storefront?</th>
+
+      </tr>
+<tr>
+         <td>EAV
+         </td>
+         <td>no</td>
+         </tr>
+
+         <tr>
+         <td>Custom
+         </td>
+         <td>yes</td>
+         </tr>
+         <tr>
+         <td>Extension
+         </td>
+         <td>no</td>
+         </tr>
+
+
+</tbody>
+</table>
+
+<p>Attribute types fall into three general categories:</p>
+
+<ul>
+  <li>
+    <p><b>EAV (Entity-Attribute-Value) attributes</b> are site-specific attributes that you can define for a local site using the <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span>.</p>
+  </li>
+  <li>
+    <p><b>Custom attributes</b> are a subset of EAV attributes. Objects that use EAV attributes typically store values in several MySQL tables. The Customer and <span term-uuid="8d40d668-4996-4856-9f81-b1386cf4b14f" class="glossary-term" data-toggle="popover">Catalog</span> modules use EAV attributes.</p>
+  </li>
+  <li>
+    <p><b>Extension attributes</b> often use more <span term-uuid="fd9ae55f-ccf5-480b-a7f3-bd2c80f0b2a4" class="glossary-term" data-toggle="popover">complex data</span> types than custom attributes. These attributes do not appear in the storefront. Extension attributes are introduced by modules.</p>
+  </li>
+</ul>
+
+<p>See <a href="/guides/v2.2/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a> for information about using attributes.</p>
+
+<h3 id="web-apis">Web APIs</h3>
+
+<p>Magento or third-party services can be configured as a web <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span> (REST or SOAP) with some simple <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span>. You can use these services to integrate your Magento installation into third-party applications, such as CRM (Customer Relationship Management), ERP (Enterprise Resource Planning) back office systems, and <span term-uuid="f3944faf-127e-4097-9918-a2e9c647d44f" class="glossary-term" data-toggle="popover">CMS</span> (Content Management Systems).</p>
+
+<p>See <a href="/guides/v2.2/get-started/bk-get-started-api.html">Getting Started with Magento Web APIs</a> for more information.</p>
+
+<h3 id="service-contracts-dependency-injection-and-dependency-inversion">Service contracts, dependency injection, and dependency inversion</h3>
+
+<p><i>Service contracts</i> provide a new way to access public API endpoints. These PHP interfaces offer robust, stable extension points to which clients can connect.  Service contracts define the endpoints that function as a module’s public API. Defining these endpoints is an essential part of adding a module.</p>
+
+<p>Service contracts are discussed throughout the Magento documentation set. See <a href="/guides/v2.2/architecture/archi_perspectives/service_layer.html">Service layer</a> for a high-level introduction. See <a href="/guides/v2.2/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a> for a more detailed discussion of service contracts and dependency injection.</p>
+
+<p>Magento implements <i>dependency injection</i> along with service contracts. Dependency injection provides a mechanism for changing a module’s behavior without altering the client or understanding nitty-gritty details of implementation. Both dependency injection and its related concept <em>dependency inversion</em> support Magento’s fundamental architectural principles of modularity and ease-of-extensibility. They strongly encourage basic coding practices that support the loose coupling of software modules.</p>
+
+<p>See <a href="/guides/v2.2/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a> for information on both dependency injection and service contracts.</p>
+
+<h3 id="plug-ins">Plug-ins</h3>
+
+<p>Plug-ins, like modules, are a mechanism for adding features to the core Magento product. Plug-ins enable you to make changes to the behavior of any public method in a Magento class. You can consider it a form of extension that uses the <code>Plugin</code> class.</p>
+
+<p>Plug-ins are also called <i>interceptors</i>. Applications use the <span term-uuid="9fceecbe-31be-4e49-aac7-11d155a85382" class="glossary-term" data-toggle="popover">plug-in</span> pattern to change method behavior without modifying the actual class. Plug-ins can typically intercept method processing before or after the method runs, or only when the method throws an <span term-uuid="53da11f1-d0b8-4a7e-b078-1e099462b409" class="glossary-term" data-toggle="popover">exception</span>.</p>
+
+<p>See <a href="/guides/v2.2/extension-dev-guide/plugins.html">Plug-ins</a> in <a href="/guides/v2.2/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a> for information on declaring and prioritizing plug-ins.</p>
+
+<h3 id="m2arch-related">Related topic</h3>
+
+<p><a href="/guides/v2.2/architecture/extensibility.html">Extensibility and modularity</a></p>
+
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+  
+   <div class="github-link">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/architecture/global_extensibility_features.md" target="_blank">
+       Edit this page on GitHub
+     </a>
+   </div>
+  
+
+  <div class="new-issue">
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/architecture/global_extensibility_features.html" target="_blank">Give us feedback</a>
+  </div>
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.container -->
+
+
+	</div>
+	<!-- /.main-container -->
+
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div id="footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav">
+        <li><a href="/guides/v2.2/contributor-guide/contributing_docs.html">Become a Contributor</a>
+        <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
+        <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+        <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+        <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+        <li><a href="/guides/v2.2/release-notes/bk-release-notes.html">Release Notes</a></li>
+        <li><a href="/magento-third-party.html">Third-Party Licenses</a></li> 
+      </ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2017 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="/common/js/app.min.js"></script>
+
+<!-- Glossary integration -->
+<script src="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.js"></script>
+<script src="/common/js/glossary.tooltip.min.js"></script>
+<script>
+    $(document).ready(function(){
+      magento.glossary.init("https://magento.github.io/glossary/data/content-glossary.xml",function(term){return term.types.includes("glossary");},magento.glossary.tooltip.init);
+      });
+</script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+

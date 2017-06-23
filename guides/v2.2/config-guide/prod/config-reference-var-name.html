@@ -1,0 +1,2284 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Use environment variables to override configuration settings | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.
+">
+	<meta http-equiv="last-modified" content="" />
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print" />
+	<link rel="canonical" href="//guides/v2.2/config-guide/prod/config-reference-var-name.html">
+
+    <!-- WebUI popover css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
+
+  <script>
+    var baseUrl = "/";
+  </script>
+
+	<!-- crazyegg -->
+	<script type="text/javascript">
+	setTimeout(function(){var a=document.createElement("script");
+	var b=document.getElementsByTagName("script")[0];
+	a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0038/0321.js?"+Math.floor(new Date().getTime()/3600000);
+	a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+	</script>
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body>
+
+<header class="site-header">
+
+	<nav id="global-nav">
+
+		<div class="menu-btn"><a class="menu-trigger menu-icon" href="#"></a></div>
+
+		<div class="container">
+
+			<a class="logo" href="/guides/v2.2/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+
+			
+<div class="version-switcher dropdown">
+	<button id="version-switcher-button" class="btn btn-small dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		Magento 2.2
+	</button>
+
+	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/config-guide/prod/config-reference-var-name.html">Magento 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.1/config-guide/prod/config-reference-var-name.html">Magento 2.1</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.2/config-guide/prod/config-reference-var-name.html">Magento 2.2 RC</a></li>
+	
+  </ul>
+
+</div>
+
+
+
+			<!-- Main Navigation -->
+<div class="nav-main">
+  <ul>
+    <li class="first">
+      <a href="#">Setup and Deployment</a>
+        <ul class="menu nav">
+          <li><a href="https://magento.com/tech-resources/download" target="_blank">Get Started with Magento DevBox Beta</a></li>
+            <li><a href="/guides/v2.2/install-gde/bk-install-guide.html">Installation Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/comp-mgr/bk-compman-upgrade-guide.html">Extension Update and System Upgrade Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/cloud/bk-cloud.html">Enterprise Cloud Edition Guide</a></li>
+          <li class="leaf"><a href="/magento-release-information.html">Release Information</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Development</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.2/architecture/bk-architecture.html">Architecture Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          <li><a href="/guides/v2.2/payments-integrations/bk-payments-integrations.html">Payments Integrations</a></li>
+          <li class="leaf"><a href="/guides/v2.2/mrg/intro.html">Module Reference Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          
+          <li class="first leaf"><a href="/guides/v2.2/contributor-guide/contributing.html">Contributor Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Frontend</a>
+        <ul class="menu nav">
+          <li class="first leaf"><a href="/guides/v2.2/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li class="leaf"><a href="/guides/v2.2/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">API</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.2/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li class="leaf"><a href="/guides/v2.2/rest/bk-rest.html">REST API Reference</a></li>
+          <li class="leaf"><a href="/guides/v2.2/soap/bk-soap.html">SOAP API Reference</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Testing</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.2/test/testing.html">Magento Testing Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/mtf/mtf_introduction.html">Functional Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/test/integration/integration_test_execution.html">Integration Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+        </ul>
+    </li>
+
+    <li>
+      <a href="/guides/v2.2/howdoi/bk-how-do-i.html">How Tos</a>
+    </li>
+
+    <li>
+      <a href="/videos/">Videos</a>
+    </li>
+  </ul>
+</div><!-- /.nav-main -->
+
+
+			<div class="search-btn">
+				<a class="search-trigger search-icon" href="//search.html"></a>
+			</div>
+
+			<form class="quick-search" action="/search.html" method="get">
+				<input type="search" name="q" placeholder="Search" />
+				<a href="#" class="quick-search-close">&times;</a>
+			</form>
+
+		</div>
+
+	</nav><!-- #global-nav -->
+
+</header>
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- .main-container -->
+	<div class="main-container">
+		<a id="main-content"></a>
+
+
+<div class="container">
+
+    
+    <div class="message-banner">
+        Review our 2.2 release candidate!  This beta version documentation includes B2B and more. <a href="/guides/v2.2/release-notes/release-candidate/quick-start.html">See the Quickstart Guide</a><br/>
+        Stay tuned — We'll roll out more 2.2 documentation updates in the coming weeks.
+    </div> 
+    
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+<h4>Configuration Guide</h4>
+
+
+
+
+
+
+		<ul>
+
+		
+
+		
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+					
+					
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/config-guide/bk-config-guide.html">Introduction</a></li>
+									
+								
+
+									
+
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/config-guide/secy/secy.html">Security settings</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/secy/secy-cron.html">Secure cron.php to run in a browser</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/secy/secy-xframe.html">X-Frame-Options header</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/secy/secy-headers.html">Prevent cache poisoning</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/config-guide/bootstrap/magento-bootstrap.html">Magento application initialization and bootstrap</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/bootstrap/magento-how-to-set.html">Set the value of bootstrap parameters</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/bootstrap/magento-modes.html">About Magento modes</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/bootstrap/mage-dirs.html">Customize base directory paths (MAGE_DIRS)</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/bootstrap/mage-profiler.html">Enable profiling (MAGE_PROFILER)</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/config-guide/deployment/">Pipeline Deployment</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/deployment/pipeline/">Overview</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/deployment/pipeline/technical-details.html">Technical Details</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/deployment/pipeline/development-system.html">Development System Setup</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/deployment/pipeline/build-system.html">Build System Setup</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/deployment/pipeline/production-system.html">Production System Setup</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/prod/prod_file-sys-perms.html">File systems access permissions</a></li>
+
+									
+
+								
+
+									
+
+										<li class="level3Parent " id="config-ref"><a href="#">Configuration reference</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child config-ref " data-menunode="config-ref"><a href="/guides/v2.2/config-guide/prod/config-reference-sens.html">Sensitive and system-specific</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child config-ref " data-menunode="config-ref"><a href="/guides/v2.2/config-guide/prod/config-reference-payment.html">Payment configuration paths reference</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child config-ref " data-menunode="config-ref"><a href="/guides/v2.2/config-guide/prod/config-reference-most.html">Other configuration paths reference</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child config-ref " data-menunode="config-ref"><a href="/guides/v2.2/config-guide/prod/config-reference-b2b.html">Magento Enterprise B2B Extension configuration paths reference</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child config-ref " data-menunode="config-ref"><a href="/guides/v2.2/config-guide/prod/config-reference-gitignore.html">.gitignore reference</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child config-ref  active " data-menunode="config-ref"><a href="/guides/v2.2/config-guide/prod/config-reference-var-name.html">Use environment variables to override configuration settings</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child config-ref " data-menunode="config-ref"><a href="/guides/v2.2/config-guide/prod/config-reference-configphp.html">config.php reference</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child config-ref " data-menunode="config-ref"><a href="/guides/v2.2/config-guide/prod/config-reference-envphp.html">env.php reference</a>
+
+
+									
+
+								
+
+									
+
+										<li class="level3Parent " id="deployment-examples"><a href="#">Examples</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child deployment-examples " data-menunode="deployment-examples"><a href="/guides/v2.2/config-guide/deployment/pipeline/example/shared-configuration.html">Shared configuration</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child deployment-examples " data-menunode="deployment-examples"><a href="/guides/v2.2/config-guide/deployment/pipeline/example/cli.html">Using CLI commands</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child deployment-examples " data-menunode="deployment-examples"><a href="/guides/v2.2/config-guide/deployment/pipeline/example/environment-variables.html">Using environment variables</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child deployment-examples " data-menunode="deployment-examples"><a href="/guides/v2.2/config-guide/deployment/pipeline/example/rsync.html">Using rsync</a>
+
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/config-guide/deployment/single-machine.html">Single machine deployment</a></li>
+									
+								
+
+									
+
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/config-guide/cli/config-cli.html">Command line configuration</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands.html">Get started with command-line configuration</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-cache.html">Manage the cache</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-index.html">Manage the indexers</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-compiler.html">Code compiler</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-mode.html">Set the Magento mode</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-urn.html">URN highlighter</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-depen.html">Dependency reports</a></li>
+
+									
+
+								
+
+									
+
+										<li class="level3Parent " id="cli-config-mgmt"><a href="#">Configuration management</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child cli-config-mgmt " data-menunode="cli-config-mgmt"><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-export.html">Export the configuration</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child cli-config-mgmt " data-menunode="cli-config-mgmt"><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-set.html">Set configuration values</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child cli-config-mgmt " data-menunode="cli-config-mgmt"><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-import.html">Import data from configuration files</a>
+
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-i18n.html">Translation dictionaries and language packages</a></li>
+
+									
+
+								
+
+									
+
+										<li class="level3Parent " id="static_deploy"><a href="#">Static view files deployment</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child static_deploy " data-menunode="static_deploy"><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html">Static files deployment strategies</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child static_deploy " data-menunode="static_deploy"><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html">Deploy static view files</a>
+
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-less-sass.html">Create symlinks to LESS files</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-test.html">Run unit tests</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-layout-xml.html">Convert layout XML files</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-perf-data.html">Generate data for performance testing</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-spt-util.html">Run the support utilities (Enterprise Edition only)</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/config-guide/config/config-magento.html">Magento configuration files</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/config/config-php.html">Magento's deployment configuration</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/config/config-files.html">Module configuration files</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/config/config-create.html">Create or extend configuration types</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/config-guide/cache/caching.html">Caching</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+										<li class="level3Parent " id="cache-types"><a href="#">Cache types</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child cache-types " data-menunode="cache-types"><a href="/guides/v2.2/config-guide/cache/caching_frontend-cache-types.html">Associate cache frontends with cache types</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child cache-types " data-menunode="cache-types"><a href="/guides/v2.2/config-guide/cache/caching_low-level.html">Low-level cache options</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child cache-types " data-menunode="cache-types"><a href="/guides/v2.2/config-guide/cache/caching-database.html">Database caching</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child cache-types " data-menunode="cache-types"><a href="/guides/v2.2/config-guide/cache/caching-cache-type.html">Create a cache type</a>
+
+
+									
+
+								
+
+									
+
+										<li class="level3Parent " id="cache-priv"><a href="#">Magento page caching</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child cache-priv " data-menunode="cache-priv"><a href="/guides/v2.2/config-guide/cache/cache-priv-over.html">Page caching overview</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child cache-priv " data-menunode="cache-priv"><a href="/guides/v2.2/config-guide/cache/cache-priv-priv.html">Public and private content</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child cache-priv " data-menunode="cache-priv"><a href="/guides/v2.2/config-guide/cache/cache-priv-context.html">HTTP context</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child cache-priv " data-menunode="cache-priv"><a href="/guides/v2.2/config-guide/cache/cache-priv-inval.html">Cache invalidation and private content versioning</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child cache-priv " data-menunode="cache-priv"><a href="/guides/v2.2/config-guide/cache/static-content-signing.html">Static Content Signing</a>
+
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/config-guide/redis/config-redis.html">Configure Redis</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/redis/redis-pg-cache.html">Use Redis for the Magento page and default cache</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/redis/redis-session.html">Use Redis for session storage</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/config-guide/varnish/config-varnish.html">Configure and use Varnish</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/varnish/config-varnish-install.html">Install Varnish</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/varnish/config-varnish-configure.html">Configure Varnish and your web server</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/varnish/config-varnish-magento.html">Configure Magento to use Varnish</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/varnish/config-varnish-advanced.html">Advanced Varnish configuration</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/varnish/use-multiple-varnish-cache.html">How Magento cache clearing works with multiple Varnish instances</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/varnish/config-varnish-final.html">Final verification</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/varnish/use-varnish-cache.html">How Magento cache clearing works with Varnish</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/varnish/use-varnish-cache-how.html">How Varnish caching works</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/varnish/tshoot-varnish-503.html">Troubleshooting 503 errors</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/config-guide/memcache/memcache.html">Use memcached for session storage</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/memcache/memcache_ubuntu.html">Install, configure, verify memcached on Ubuntu</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/memcache/memcache_centos.html">Install, configure, verify memcached on CentOS</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/memcache/memcache_magento.html">Configure Magento to use memcached</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/config-guide/multi-site/ms_over.html">Multiple websites or stores</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/multi-site/ms_websites.html">Set up multiple websites, stores, and store views in the Admin</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/multi-site/ms_nginx.html">Tutorial&mdash;Set up multiple websites or stores with nginx</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/multi-site/ms_apache.html">Tutorial&mdash;Set up multiple websites with Apache</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/config-guide/cron/custom-cron.html">Set up a custom cron job and cron group</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/cron/custom-cron-ref.html">Custom cron job and cron group reference</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/cron/custom-cron-tut.html">Configure a custom cron job and cron group (tutorial)</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/config-guide/db-profiler/db-profiler.html">Configure the database profiler</a></li>
+									
+								
+
+									
+
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/config-guide/elasticsearch/es-overview.html">Install and configure Elasticsearch (Enterprise Edition only)</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/elasticsearch/es-config-nginx.html">Configure nginx and Elasticsearch</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/elasticsearch/es-config-apache.html">Configure Apache and Elasticsearch</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/elasticsearch/es-config-stopwords.html">Configure Elasticsearch stopwords</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/elasticsearch/configure-magento.html">Configure Magento to use Elasticsearch</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/config-guide/mq/rabbitmq-overview.html">Message Queues (Enterprise Edition only)</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/mq/config-mq.html">Configure 2.2 message queues</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/mq/manage-mysql.html">Manage message queues</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/mq/queue-migration.html">Migrate message queue configuration</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/config-guide/multi-master/multi-master.html">Split database performance solution (Enterprise Edition only)</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/multi-master/multi-master_masterdb.html">Automatically configure master databases</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/multi-master/multi-master_manual.html">Manually configure master databases</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/multi-master/multi-master_verify.html">Verify split databases</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/multi-master/multi-master_slavedb.html">Set up optional database replication</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/config-guide/sessions.html">How to locate your session files</a></li>
+									
+								
+
+									
+
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+
+									
+
+										<li class="levela1"><span class="nav-header">Optimization</span></li>
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/prod/prod_perf-optimize.html">Magento Optimization Guide</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+  <nav class="breadcrumbs">
+
+    <a class="breadcrumb-item" href="/guides/v2.2/"><span>Home</span></a>
+
+    <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+    <!-- Iteration breadcrumb item -->
+    
+    
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+
+        
+          <a property="item" typeof="WebPage" href="/guides/v2.2/config-guide/bk-config-guide.html">
+            <span property="name">Configuration Guide</span>
+          </a>
+        
+
+        <meta property="position" content="1" />
+      </li>
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
+
+        
+
+          
+
+          <span property="name">Use environment variables to override configuration settings</span>
+
+        
+
+        <meta property="position" content="2" />
+      </li>
+
+    
+
+    
+
+
+
+    </ol>
+
+  </nav>
+
+
+
+	
+
+	
+
+	<h1 class="page-heading">Use environment variables to override configuration settings</h1>
+
+  
+
+
+</section>
+
+
+			<div>
+
+  <p>This topic discusses how to derive an environment variable name knowing a configuration path. You can override Magento configuration settings using environment variables. For example, you can override the value of a payment processor’s live URL on your production system.</p>
+
+  <p>You can override the value of <em>any</em> configuration setting using environment variables; however, we recommend you maintain consistent settings using the shared configuration file, <code>config.php</code>, and the system-specific configuration file, <code>env.php</code>, as discussed in <a href="/guides/v2.2/config-guide/deployment/pipeline/">Deployment general overview</a>.</p>
+
+  <p>A environment variable name consists of its scope followed by its configuration path in a particular format. The following sections discuss how to determine a variable name in more detail.</p>
+
+  <p>You can use variables for any of the following:</p>
+
+  <ul>
+    <li><a href="/guides/v2.2/config-guide/prod/config-reference-sens.html">Sensitive values</a> must be set using either environment variables or the <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-config.html"><code>magento config:sensitive:set</code></a> command.</li>
+    <li>
+      <p>System-specific values must be set using:</p>
+
+      <ul>
+        <li>Environment variables</li>
+        <li>The <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-config.html"><code>magento config:set</code></a> command</li>
+        <li>The Magento Admin followed by the <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-config-export.html"><code>magento app:config:dump</code> command</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <p>Configuration paths can be found in:</p>
+
+  <ul>
+    <li><a href="/guides/v2.2/config-guide/prod/config-reference-sens.html">Sensitive and system-specific configuration paths reference</a></li>
+    <li><a href="/guides/v2.2/config-guide/prod/config-reference-payment.html">Payment configuration paths reference</a></li>
+    <li><a href="/guides/v2.2/config-guide/prod/config-reference-b2b.html">Magento Enterprise B2B Extension configuration paths reference</a></li>
+    <li><a href="/guides/v2.2/config-guide/prod/config-reference-most.html">Other configuration paths reference</a></li>
+  </ul>
+
+  <h3 id="variable-names">Variable names</h3>
+  <p>The general format of system settings variable names follows:</p>
+
+  <pre class="no-copy">&lt;SCOPE&gt;__&lt;SYSTEM__VARIABLE__NAME&gt;</pre>
+
+  <p><code>&lt;SCOPE&gt;</code> can be either:</p>
+
+  <ul>
+    <li>
+      <p>Global scope (that is, the global setting for <em>all</em> scopes)</p>
+
+      <p>Global scope variables have the following format:</p>
+
+      <pre class="no-copy">CONFIG__DEFAULT__&lt;SYSTEM__VARIABLE__NAME&gt;</pre>
+    </li>
+    <li>
+      <p>A specific scope (that is, the setting affects only a specified store view or website)</p>
+
+      <p>Store view scope variables, for example, have the following format:</p>
+
+      <pre class="no-copy">CONFIG__STORES__ &lt;STORE_VIEW_CODE&gt;__&lt;SYSTEM__VARIABLE__NAME&gt;</pre>
+
+      <p>For more information about scopes, see:</p>
+
+      <ul>
+        <li><a href="#cloud-system-vars-scopes">Step 1: Find the website or store view scope value</a></li>
+        <li><a href="http://docs.magento.com/m2/ce/user_guide/configuration/scope.html" target="_blank">Magento User Guide</a></li>
+        <li><a href="http://docs.magento.com/m2/ce/user_guide/stores/store-scope-reference.html" target="_blank">Scope quick reference</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <p><code>&lt;SYSTEM__VARIABLE__NAME&gt;</code> is the configuration path with double underscore characters substituted for <code>/</code>. For more information, see <a href="#cloud-system-vars-sys">Step 2: Set system variables</a>.</p>
+
+  <h3 id="variable-format">Variable format</h3>
+  <p><code>&lt;SCOPE&gt;</code> is separated from <code>&lt;SYSTEM__VARIABLE__NAME&gt;</code> by two underscore characters.</p>
+
+  <p><code>&lt;SYSTEM__VARIABLE__NAME&gt;</code> is derived from a configuration setting’s <em>configuration path</em>, which is a <code>/</code> delimited string that uniquely identifies a particular setting. Replace each <code>/</code> character in the configuration path with two underscore characters to create the system variable.</p>
+
+  <p>If a configuration path contains an underscore character, the underscore character remains in the variable.</p>
+
+  <p>A complete list of configuration paths can be found in:</p>
+
+  <ul>
+    <li><a href="/guides/v2.2/config-guide/prod/config-reference-sens.html">Sensitive and system-specific configuration paths reference</a></li>
+    <li><a href="/guides/v2.2/config-guide/prod/config-reference-payment.html">Payment configuration paths reference</a></li>
+    <li><a href="/guides/v2.2/config-guide/prod/config-reference-b2b.html">Magento Enterprise B2B Extension configuration paths reference</a></li>
+    <li><a href="/guides/v2.2/config-guide/prod/config-reference-most.html">Other configuration paths reference</a></li>
+  </ul>
+
+  <h2 id="deploy-system-vars-scopes">Step 1: Find the website or store view scope value</h2>
+  <p>This section discusses how you can find and set system configuration values per <em>scope</em> (store view or website). To set global scope variables, see <a href="#cloud-system-vars-sys">Step 2:  Set global, website, or store view variables</a>.</p>
+
+  <p>Scope values come from the <code>store</code>, <code>store_group</code>, and <code>store_website</code> tables.</p>
+
+  <ul>
+    <li>The <code>store</code> table specifies store view names and codes</li>
+    <li>The <code>store_website</code> table specifies website names and codes</li>
+  </ul>
+
+  <p>You can also find the code values using the Magento Admin.</p>
+
+  <p>How to read the table:</p>
+
+  <ul>
+    <li>
+      <p><code>Path in Magento Admin</code> column</p>
+
+      <p>Values before the comma are paths in the Admin navigation. Values after the comma are options in the right pane.</p>
+    </li>
+    <li>
+      <p><code>Variable name</code> column is the name of the corresponding environment variable.</p>
+
+      <p>You have the option of specifying system values for these configuration parameters as environment variables if you wish.</p>
+
+      <ul>
+        <li>The entire variable name is always ALL CAPS</li>
+        <li>Start a variable name with <code>CONFIG__</code> (note two underscore characters)</li>
+        <li>You can find the <code>&lt;STORE_VIEW_CODE&gt;</code> or <code>&lt;WEBSITE_CODE&gt;</code> portion of a variable name in either the Magento Admin or the Magento database, as indicated in the following sections.</li>
+        <li>You can find <code>&lt;SYSTEM__VARIABLE__NAME&gt;</code> as discussed in <a href="#cloud-system-vars-sys">Step 2:  Set global, website, or store view variables</a>.</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3 id="find-a-website-or-store-view-scope-in-the-magento-admin">Find a website or store view scope in the Magento Admin</h3>
+  <p>The following table summarizes how to find website or store view value in the Admin.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Description</th>
+        <th>Path in Magento Admin</th>
+        <th>Variable name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Create, edit, delete store views</td>
+        <td><strong>Stores</strong> &gt; <strong>All Stores</strong></td>
+        <td><code>CONFIG__STORES__&lt;STORE_VIEW_CODE&gt;__&lt;SYSTEM__VARIABLE__NAME&gt;</code></td>
+      </tr>
+      <tr>
+        <td>Create, edit, delete websites</td>
+        <td><strong>Stores</strong> &gt; <strong>All Stores</strong></td>
+        <td><code>CONFIG__WEBSITE__&lt;WEBSITE_CODE&gt;__&lt;SYSTEM__VARIABLE__NAME&gt;</code></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>For example, to find a website or store view scope value in the Admin:</p>
+
+  <ol>
+    <li>Log in to the Magento Admin as a user authorized to view websites.</li>
+    <li>Click <strong>Stores</strong> &gt; <strong>All Stores</strong>.</li>
+    <li>
+      <p>Click the name of a website or store view.</p>
+
+      <p>The right pane is displayed similar to the following.</p>
+
+      <p><img src="/common/images/cloud_vars_website-code.png" alt="Find a website code" width="300px" /></p>
+    </li>
+    <li>The scope name is displayed in the <strong>Code</strong> field.</li>
+    <li>Continue with <a href="#cloud-system-vars-sys">Step 2:  Set global, website, or store view variables</a>.</li>
+  </ol>
+
+  <h3 id="cloud-vars-db">Find a website or store view scope in the database</h3>
+  <p>To get these values from the database:</p>
+
+  <ol>
+    <li>If you haven’t done so already, log in to your development system as the <span term-uuid="5e7de323-626b-4d1b-a7e5-c8d13a92c5d3" class="glossary-term" data-toggle="popover">Magento file system owner</span>.</li>
+    <li>
+      <p>Enter the following command:</p>
+
+      <pre><code>mysql -u &lt;magento database user name&gt; -p
+</code></pre>
+    </li>
+    <li>
+      <p>At the <code>mysql&gt;</code> prompt, enter the following commands in the order shown:</p>
+
+      <pre><code>use &lt;magento database name&gt;;
+</code></pre>
+    </li>
+    <li>
+      <p>Use the following SQL queries to find the relevant values:</p>
+
+      <pre><code>SELECT * FROM STORES;
+SELECT * FROM STORE_WEBSITE;
+</code></pre>
+
+      <p>A sample follows:</p>
+
+      <pre><code>mysql&gt; SELECT * FROM STORE_WEBSITE;
++------------+-------+--------------+------------+------------------+------------+
+| website_id | code  | name         | sort_order | default_group_id | is_default |
++------------+-------+--------------+------------+------------------+------------+
+|          0 | admin | Admin        |          0 |                0 |          0 |
+|          1 | base  | Main Website |          0 |                1 |          1 |
+|          2 | test1 | Test Website |          0 |                3 |          0 |
++------------+-------+--------------+------------+------------------+------------+
+</code></pre>
+    </li>
+    <li>
+      <p>Use the value from the <code>code</code> column as the scope name, not the <code>name</code> value.</p>
+
+      <p>For example, to set a configuration variable for Test Website, use the following format:</p>
+
+      <pre><code>CONFIG__WEBSITES__TEST1__&lt;SYSTEM__VARIABLE__NAME&gt;
+</code></pre>
+
+      <p>where <code>&lt;SYSTEM__VARIABLE__NAME&gt;</code> comes from the next section.</p>
+    </li>
+  </ol>
+
+  <div>
+
+    <h2 id="cloud-system-vars-sys">Step 2: Set global, website, or store view variables</h2>
+
+    <p>This section discusses how to set system variables.</p>
+
+    <ul>
+      <li>
+        <p>To set values for the global scope (that is, all websites, stores, and store views), start the variable name with <code>CONFIG__DEFAULT__</code>.</p>
+      </li>
+      <li>
+        <p>To set a value for a particular store view or website, start the variable name as discussed in <a href="#cloud-system-vars-scopes">Step 1: Find the scope value</a>:</p>
+
+        <ul>
+          <li><code>CONFIG__WEBSITES</code></li>
+          <li><code>CONFIG__STORES</code></li>
+        </ul>
+      </li>
+      <li>
+        <p>The last part of the variable name is the configuration path, which is unique for each configuration setting.</p>
+      </li>
+    </ul>
+
+    <p><a href="#cloud-system-vars-ex">See some examples</a></p>
+
+    <p>The following table shows a few sample variables.</p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Description</th>
+          <th>Path in Magento Admin (omitting <strong>Stores</strong> &gt; <strong>Configuration</strong>)</th>
+          <th>Variable name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Elasticsearch server hostname</td>
+          <td>Catalog &gt; <strong>Catalog</strong>, <strong>Elasticsearch Server Hostname</strong></td>
+          <td><code>&lt;SCOPE&gt;__CATALOG__SEARCH__ELASTICSEARCH_SERVER_HOSTNAME</code></td>
+        </tr>
+        <tr>
+          <td>Elasticsearch server port</td>
+          <td>Catalog &gt; <strong>Catalog</strong>, <strong>Elasticsearch Server Port</strong></td>
+          <td><code>&lt;SCOPE&gt;__CATALOG__SEARCH__ELASTICSEARCH_SERVER_PORT</code></td>
+        </tr>
+        <tr>
+          <td>Shipping country origin</td>
+          <td>Sales &gt; <strong>Shipping Settings</strong></td>
+          <td><code>&lt;SCOPE&gt;SHIPPING__ORIGIN__COUNTRY_ID</code></td>
+        </tr>
+        <tr>
+          <td>Custom Admin URL</td>
+          <td>Advanced &gt; <strong>Admin</strong></td>
+          <td><code>&lt;SCOPE&gt;__ADMIN__URL__CUSTOM</code></td>
+        </tr>
+        <tr>
+          <td>Custom Admin Path</td>
+          <td>Advanced &gt; <strong>Admin</strong></td>
+          <td><code>&lt;SCOPE&gt;__ADMIN__URL__CUSTOM_PATH</code></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 id="cloud-system-vars-ex">Examples</h2>
+    <p>This section shows how to find values of some sample variables.</p>
+
+    <h3 id="elasticsearch-server-hostname">Elasticsearch server hostname</h3>
+    <p>To find the variable name for global HTML minification:</p>
+
+    <ol>
+      <li>
+        <p>Determine the scope.</p>
+
+        <p>It’s the global scope so the variable name starts with <code>CONFIG__DEFAULT__</code></p>
+      </li>
+      <li>
+        <p>The rest of the variable name is <code>CATALOG__SEARCH__ELASTICSEARCH_SERVER_HOSTNAME</code>.</p>
+      </li>
+    </ol>
+
+    <p><strong>Result</strong>: The variable name is <code>CONFIG__DEFAULT__CATALOG__SEARCH__ELASTICSEARCH_SERVER_HOSTNAME</code></p>
+
+    <h3 id="shipping-country-origin">Shipping country origin</h3>
+    <p>To find the variable name for the shipping country origin:</p>
+
+    <ol>
+      <li>
+        <p>Determine the scope.</p>
+
+        <p>Find the scope in the <a href="#cloud-system-vars-scopes">database</a> as discussed in Step 1: Find the website or store view scope value. (You can also find the value in the Admin as shown in the the <a href="#cloud-system-vars-sys">table in Step 2: Set global, website, or store view variables</a>.</p>
+
+        <p>For example, the scope might be <code>CONFIG__WEBSITE__DEFAULT</code>.</p>
+      </li>
+      <li>
+        <p>The rest of the variable name is <code>SHIPPING__ORIGIN__COUNTRY_ID</code>.</p>
+      </li>
+    </ol>
+
+    <p><strong>Result</strong>: The variable name is <code>CONFIG__WEBSITE__DEFAULT__SHIPPING__ORIGIN__COUNTRY_ID</code></p>
+
+    <h2 id="how-to-use-environment-variables">How to use environment variables</h2>
+    <p>Set configuration values as variables using PHP’s <a href="http://php.net/manual/en/reserved.variables.environment.php" target="_blank"><code>$_ENV</code></a> associate array. You can set the values in any PHP script that runs when Magento runs, such as <code>index.php</code>.</p>
+
+    <p>An example of setting two values follows:</p>
+
+    <pre><code>$_ENV['CONFIG__DEFAULT__CATALOG__SEARCH__ELASTICSEARCH_SERVER_HOSTNAME'] = 'http://search.example.com';
+$_ENV['CONFIG__DEFAULT__GENERAL__STORE_INFORMATION__MERCHANT_VAT_NUMBER'] = '1234';
+</code></pre>
+
+    <p>A step-by-step example is shown in <a href="/guides/v2.2/config-guide/deployment/pipeline/example/environment-variables.html">Set configuration values using environment variables</a>.</p>
+
+    <div class="bs-callout bs-callout-warning">
+      <p>To use values you set in the <code>$_ENV</code> array, you must set <code>variables_order = "EGPCS"</code> in your <code>php.ini</code> file. For details, see <a href="http://us.php.net/manual/en/ini.core.php#ini.variables-order" target="_blank">PHP documentation</a>.</p>
+    </div>
+
+    <h4 id="related-information">Related information</h4>
+    <ul>
+      <li><a href="http://docs.magento.com/m2/ce/user_guide/configuration/scope.html" target="_blank">Magento User Guide discussion of scope</a></li>
+      <li><a href="http://docs.magento.com/m2/ce/user_guide/stores/store-scope-reference.html" target="_blank">Magento User Guide scope quick reference</a></li>
+    </ul>
+  </div>
+</div>
+
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+  
+   <div class="github-link">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.2/config-guide/prod/config-reference-var-name.md" target="_blank">
+       Edit this page on GitHub
+     </a>
+   </div>
+  
+
+  <div class="new-issue">
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/config-guide/prod/config-reference-var-name.html" target="_blank">Give us feedback</a>
+  </div>
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.container -->
+
+
+	</div>
+	<!-- /.main-container -->
+
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div id="footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav">
+        <li><a href="/guides/v2.2/contributor-guide/contributing_docs.html">Become a Contributor</a>
+        <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
+        <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+        <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+        <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+        <li><a href="/guides/v2.2/release-notes/bk-release-notes.html">Release Notes</a></li>
+        <li><a href="/magento-third-party.html">Third-Party Licenses</a></li> 
+      </ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2017 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="/common/js/app.min.js"></script>
+
+<!-- Glossary integration -->
+<script src="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.js"></script>
+<script src="/common/js/glossary.tooltip.min.js"></script>
+<script>
+    $(document).ready(function(){
+      magento.glossary.init("https://magento.github.io/glossary/data/content-glossary.xml",function(term){return term.types.includes("glossary");},magento.glossary.tooltip.init);
+      });
+</script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+

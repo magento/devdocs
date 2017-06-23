@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Page assets | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.
+">
+	<meta http-equiv="last-modified" content="" />
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print" />
+	<link rel="canonical" href="//guides/v2.2/architecture/view/page-assets.html">
+
+    <!-- WebUI popover css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
+
+  <script>
+    var baseUrl = "/";
+  </script>
+
+	<!-- crazyegg -->
+	<script type="text/javascript">
+	setTimeout(function(){var a=document.createElement("script");
+	var b=document.getElementsByTagName("script")[0];
+	a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0038/0321.js?"+Math.floor(new Date().getTime()/3600000);
+	a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+	</script>
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body>
+
+<header class="site-header">
+
+	<nav id="global-nav">
+
+		<div class="menu-btn"><a class="menu-trigger menu-icon" href="#"></a></div>
+
+		<div class="container">
+
+			<a class="logo" href="/guides/v2.2/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+
+			
+<div class="version-switcher dropdown">
+	<button id="version-switcher-button" class="btn btn-small dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		Magento 2.2
+	</button>
+
+	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/architecture/view/page-assets.html">Magento 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.1/architecture/view/page-assets.html">Magento 2.1</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.2/architecture/view/page-assets.html">Magento 2.2 RC</a></li>
+	
+  </ul>
+
+</div>
+
+
+
+			<!-- Main Navigation -->
+<div class="nav-main">
+  <ul>
+    <li class="first">
+      <a href="#">Setup and Deployment</a>
+        <ul class="menu nav">
+          <li><a href="https://magento.com/tech-resources/download" target="_blank">Get Started with Magento DevBox Beta</a></li>
+            <li><a href="/guides/v2.2/install-gde/bk-install-guide.html">Installation Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/comp-mgr/bk-compman-upgrade-guide.html">Extension Update and System Upgrade Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/cloud/bk-cloud.html">Enterprise Cloud Edition Guide</a></li>
+          <li class="leaf"><a href="/magento-release-information.html">Release Information</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Development</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.2/architecture/bk-architecture.html">Architecture Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          <li><a href="/guides/v2.2/payments-integrations/bk-payments-integrations.html">Payments Integrations</a></li>
+          <li class="leaf"><a href="/guides/v2.2/mrg/intro.html">Module Reference Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          
+          <li class="first leaf"><a href="/guides/v2.2/contributor-guide/contributing.html">Contributor Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Frontend</a>
+        <ul class="menu nav">
+          <li class="first leaf"><a href="/guides/v2.2/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li class="leaf"><a href="/guides/v2.2/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">API</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.2/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li class="leaf"><a href="/guides/v2.2/rest/bk-rest.html">REST API Reference</a></li>
+          <li class="leaf"><a href="/guides/v2.2/soap/bk-soap.html">SOAP API Reference</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Testing</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.2/test/testing.html">Magento Testing Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/mtf/mtf_introduction.html">Functional Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/test/integration/integration_test_execution.html">Integration Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+        </ul>
+    </li>
+
+    <li>
+      <a href="/guides/v2.2/howdoi/bk-how-do-i.html">How Tos</a>
+    </li>
+
+    <li>
+      <a href="/videos/">Videos</a>
+    </li>
+  </ul>
+</div><!-- /.nav-main -->
+
+
+			<div class="search-btn">
+				<a class="search-trigger search-icon" href="//search.html"></a>
+			</div>
+
+			<form class="quick-search" action="/search.html" method="get">
+				<input type="search" name="q" placeholder="Search" />
+				<a href="#" class="quick-search-close">&times;</a>
+			</form>
+
+		</div>
+
+	</nav><!-- #global-nav -->
+
+</header>
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- .main-container -->
+	<div class="main-container">
+		<a id="main-content"></a>
+
+
+<div class="container">
+
+    
+    <div class="message-banner">
+        Review our 2.2 release candidate!  This beta version documentation includes B2B and more. <a href="/guides/v2.2/release-notes/release-candidate/quick-start.html">See the Quickstart Guide</a><br/>
+        Stay tuned — We'll roll out more 2.2 documentation updates in the coming weeks.
+    </div> 
+    
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+
+
+
+
+		<ul>
+
+		
+
+		
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+  <nav class="breadcrumbs">
+
+    <a class="breadcrumb-item" href="/guides/v2.2/"><span>Home</span></a>
+
+    <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+    <!-- Iteration breadcrumb item -->
+    
+    
+
+    
+
+    
+
+
+  
+  <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+    <a href="/videos/"><span property="name">Videos</span></a>
+  </li>
+  
+
+  
+  <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+    
+    <a href="/videos/">
+    
+    <span property="name">Videos</span></a>
+  </li>
+  <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
+    <span property="name">Page assets</span>
+  </li>
+  
+
+
+
+
+    </ol>
+
+  </nav>
+
+
+
+	
+
+	
+
+	<h1 class="page-heading">Page assets</h1>
+
+  
+
+
+</section>
+
+
+			<h2 id="m2devgde-page-assets-intro">Overview</h2>
+
+<p>An <em>asset</em> is a reference to a certain resource linked to an <span term-uuid="a2aff425-07dd-4bd6-9671-29b7edefa871" class="glossary-term" data-toggle="popover">HTML</span> page; that is, references to scripts, stylesheets, RSS feeds, and so on using <code>&lt;head/&gt;</code>, <code>&lt;img/&gt;</code>, <code>&lt;object/&gt;</code> elements.</p>
+
+<p>This topic discusses how to work with Magento page assets (particularly interfaces and classes). The article is mostly aimed at developers
+who have solid experience with <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> and are familiar with <a href="/guides/v2.2/architecture/view/xml-schema-layout.html">Magento XML layouts</a>.</p>
+
+<h2 id="m2devgde-page-assets-interf">Asset interfaces</h2>
+
+<p>An asset is a reference to a certain resource linked to an HTML page. An asset is not a file itself; it’s a set of information about the file. Magento has the following types of assets:</p>
+
+<ul>
+  <li>
+    <p>Asset — a basic definition of an asset that consists of:</p>
+
+    <ul>
+      <li>URL to the asset</li>
+      <li>Content type of the asset</li>
+    </ul>
+  </li>
+  <li>
+    <p>Local asset — an extended definition that, in addition to the preceding also provides information about:</p>
+
+    <ul>
+      <li>Source file — an absolute path to the asset file in the local file system.</li>
+      <li>Relative path — a relative path to the asset file.</li>
+    </ul>
+  </li>
+  <li>
+    <p>Mergeable asset — a “marker” abstraction for local assets, indicating that their contents may be merged</p>
+  </li>
+</ul>
+
+<p>These types are represented as interfaces in the
+<a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/View" target="_blank">Magento/Framework/View</a> library:</p>
+
+<p><img src="/common/images/view_asset-interfaces.png" alt="Asset interfaces" /></p>
+
+<p>The classes Implement the interfaces are responsible for:</p>
+
+<ul>
+  <li>
+    <p>Remote: Implements an asset for which there is only <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span> and content type information. Used for rendering included RSS feeds, for example.</p>
+  </li>
+  <li>
+    <p>File: Implements  a local asset that is referred using a relative path in Magento file system. The same relative path invariant is appended to the base URL when the full URL is requested. Because these assets are available locally, the Magento system can work with them in many ways; for example, transform the content, merge assets, or substitute with other assets.</p>
+  </li>
+</ul>
+
+<h2 id="m2devgde-page-assets-imp">Implement assets</h2>
+
+<p>This section discusses the following topics:</p>
+
+<ul>
+  <li><a href="#m2devgde-page-assets-imp-no-info">Assets with No Remote or Local Information</a></li>
+  <li><a href="#m2devgde-page-assets-imp-local">Local Assets</a></li>
+  <li><a href="#m2devgde-page-assets-imp-context">Context Implementations</a></li>
+</ul>
+
+<h3 id="m2devgde-page-assets-imp-no-info">Assets without remote or local information</h3>
+
+<p><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/View/Asset/Remote.php" target="_blank">\Magento\Framework\View\Asset\Remote</a> represents resources for which only the URL and content type are known, and which might reside in the local file system, or on a remote server. The class diagram for this asset implementation follows:</p>
+
+<p><img src="/common/images/view_asset-interface_no-local.png" alt="Assets with no remote or local information" /></p>
+
+<p>It accepts URL and <code>content-type</code> in the constructor and serves only as a value object.</p>
+
+<h3 id="m2devgde-page-assets-imp-local">Local assets</h3>
+
+<p><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/View/Asset/File.php" target="_blank">\Magento\Framework\View\Asset\File</a> represents resources that reside in the local file system and for which you know the absolute file system path and an invariant “file path”.</p>
+
+<p>This kind of asset accommodates arbitrary static view files that might be embedded in, or referred from, a web page. That might include anything from user-uploaded images to <span term-uuid="6c5cb4e9-9197-46f2-ba79-6147d9bfe66d" class="glossary-term" data-toggle="popover">CSS</span> files provided in Magento themes. Because these assets are available locally, the Magento software can manipulate them in many ways; for example, transform the content, merge assets, or substitute with other assets.</p>
+
+<p>Its asset class diagram follows:</p>
+
+<p><img src="/common/images/view_asset-interface_local.png" alt="Local asset interface" /></p>
+
+<p><code>File</code> specifics:</p>
+
+<ul>
+  <li>
+    <p><code>File</code> accepts scalar data in the constructor and is immutable, but requires an instance of “source” for lazy loading of content or a source file.</p>
+  </li>
+  <li>
+    <p>The <code>$context</code> argument in the constructor is a value object necessary for generating URLs. It contains the base URL and the context path that needs to be put in the beginning of the file path. See the next section for more information about context.</p>
+  </li>
+</ul>
+
+<h3 id="m2devgde-page-assets-imp-context">Context implementations</h3>
+
+<p>Magento supports the following implementations of context for the Asset\File object:</p>
+
+<ul>
+  <li>
+    <p><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/View/Asset/File/Context.php" target="_blank">\Magento\Framework\View\Asset\File\Context</a>: Basic implementation that has a bare minimum of base URL and arbitrary path.</p>
+
+    <p>Using this context and, for example, a “media” base URL, this asset generates the following URL:</p>
+
+    <pre>http://example.com/pub/media/arbitrary_path/product/placeholder.jpg</pre>
+  </li>
+  <li>
+    <p><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/View/Asset/File/FallbackContext.php" target="_blank">\Magento\Framework\View\Asset\File\FallbackContext</a>: Extended implementation used for static view files that are subject to view files fallback.</p>
+
+    <p>The URLs generated with this kind of context include fully qualified information necessary for files fallback:</p>
+
+    <pre>http://example.com/pub/static/frontend/magento_theme/en_US/Magento_Catalog/product/placeholder.jpg
+http://example.com/pub/static/frontend/magento_theme/en_US/css-topics/styles.css</pre>
+
+    <p>The difference between the preceding URLs is that the first asset has a module context and in the second does not.</p>
+  </li>
+</ul>
+
+<h2 id="m2devgde-page-assets-static-view">Page assets and static view files</h2>
+
+<p>According to the Magento classification of view files, CSS, JavaScript, images, and other assets that are included in a web page and presented on the <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span> without modification are <em>static view files</em>.</p>
+
+<p>Like all Magento view files, static view files are located using the fallback mechanism. This mechanism implements inheritance of files from one directory to others. In this way, we enable you to extend or override view files of existing components with new components.</p>
+
+<p>For example, a particular <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span> might extend or override files of its parent theme, all themes generally override <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> view files, and so on.</p>
+
+<h2 id="m2devgde-page-assets-static-manip">Manipulate page assets</h2>
+
+<p>This section discusses the following ways to work with view assets:</p>
+
+<ul>
+  <li>
+    <p><a href="#m2devgde-page-assets-static-manip-xml">Manipulating Assets Using Layout XML</a></p>
+  </li>
+  <li>
+    <p><a href="#m2devgde-page-assets-api">Manipulating Assets Using the APIs</a></p>
+  </li>
+</ul>
+
+<h3 id="m2devgde-page-assets-static-manip-xml">Use layout XML to manipulate assets</h3>
+
+<p>Although you can use the <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span> to manipulate assets, <span term-uuid="b00459e5-a793-44dd-98d5-852ab33fc344" class="glossary-term" data-toggle="popover">frontend</span> developers should use <a href="/guides/v2.2/frontend-dev-guide/layouts/xml-instructions.html">layout XML instructions</a> to register assets.</p>
+
+<p>This method is preferred because it enables you to implement particular discriminators for assets, like browser matching and conditional loading.</p>
+
+<p>Expand one of the following sections for more information:</p>
+
+<h3 id="javascript-assets">JavaScript assets</h3>
+
+<p><strong>Layout instructions</strong></p>
+
+<script src="https://gist.github.com/xcomSteveJohnson/82a10d4d61de9d832fcb.js"></script>
+
+<p><strong>Rendered HTML Output</strong></p>
+
+<script src="https://gist.github.com/xcomSteveJohnson/d87ce5934b80a56c7292.js"></script>
+
+<h3 id="css-assets">CSS assets</h3>
+
+<p><strong>Layout instructions</strong></p>
+
+<script src="https://gist.github.com/xcomSteveJohnson/5c8dc5e2eb1229c63406.js"></script>
+
+<p><strong>Rendered HTML Output</strong></p>
+
+<script src="https://gist.github.com/xcomSteveJohnson/118d51c5af7d371f809a.js"></script>
+
+<h3 id="rss-feed-assets">RSS feed assets</h3>
+
+<p><strong>Layout instructions</strong></p>
+
+<script src="https://gist.github.com/xcomSteveJohnson/6617872c0698ea1f5d07.js"></script>
+
+<p><strong>Rendered HTML Output</strong></p>
+
+<script src="https://gist.github.com/xcomSteveJohnson/7957c6bd6b8d893da2a1.js"></script>
+
+<h4 id="m2devgde-page-assets-static-manip-xml-brows">Use layout XML to manipulate browser matching</h4>
+
+<p>Use <em>browser matching</em> to change the behavior of <span term-uuid="312b4baf-15f7-4968-944e-c814d53de218" class="glossary-term" data-toggle="popover">JavaScript</span> and CSS for certain browsers only (usually because of technology-specific workarounds). The following example illustrates using <span term-uuid="73ab5daa-5857-4039-97df-11269b626134" class="glossary-term" data-toggle="popover">layout</span> instructions to set using a CSS file only when a page is loaded in Internet Explorer:</p>
+
+<p>Layout instructions:</p>
+
+<script src="https://gist.github.com/xcomSteveJohnson/b55a26d292d849551090.js"></script>
+
+<p>Rendered HTML:</p>
+
+<script src="https://gist.github.com/xcomSteveJohnson/f69e6fedd2a205f01186.js"></script>
+
+<h4 id="m2devgde-page-assets-static-manip-xml-cond">Conditional rendering</h4>
+
+<p>Sometimes the decision of whether or not to link a resource depends on other actions that might happen (or not happen). To do that, associated a flag name with the resource. The flag name defines whether to perform rendering or not.</p>
+
+<p>Magento sets the flag value when it executes.</p>
+
+<p>Define the flag value dependency:</p>
+
+<script src="https://gist.github.com/xcomSteveJohnson/f7c0e61f62062867d43e.js"></script>
+
+<p>Give the flag a value:</p>
+
+<script src="https://gist.github.com/xcomSteveJohnson/3ad3919afba7f689faff.js"></script>
+
+<h3 id="m2devgde-page-assets-api">Use APIs to manipulate assets</h3>
+
+<p>The Magento system uses <em>asset collections</em> to process view assets. An asset collection is an object responsible for aggregating multiple assets and passing them to the page rendering subsystem.</p>
+
+<p>That is why when you use PHP to work with assets, we recommended you add assets to an asset collection and then manipulate them as collection members.</p>
+
+<p>The following classes implement Magento asset collections:</p>
+
+<ul>
+  <li>
+    <p><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/View/Asset/Collection.php" target="_blank">\Magento\Framework\View\Asset\Collection</a>—a basic collection that only stores references to the asset objects; is integrated to Magento application as a shared object.</p>
+  </li>
+  <li>
+    <p><a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/View/Asset/GroupedCollection.php" target="_blank">\Magento\Framework\View\Asset\GroupedCollection</a>—an extended collection that also implements asset grouping by properties (for example by content type)</p>
+  </li>
+</ul>
+
+<p>Asset collections enable you to:</p>
+
+<ul>
+  <li>Add and remove assets</li>
+  <li>Determine whether an asset is registered in a collection</li>
+  <li>Get all assets</li>
+  <li>Get assets for a specified group (for collections implemented by <code>GroupedCollection</code>)</li>
+  <li>Get groups (for collections implemented by <code>GroupedCollection</code>)</li>
+</ul>
+
+<p>To add an asset to a collection, use the following code:</p>
+
+<script src="https://gist.github.com/xcomSteveJohnson/f12c706d876f1a64a363.js"></script>
+
+<p>For example, to add a local JavaScript or CSS file to the page output:</p>
+
+<script src="https://gist.github.com/xcomSteveJohnson/e292aca8a49fdab644fc.js"></script>
+
+<h2 id="related-topics">Related topics</h2>
+
+<ul>
+  <li><a href="/guides/v2.2/frontend-dev-guide/layouts/xml-instructions.html">XML instructions</a></li>
+</ul>
+
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+  
+   <div class="github-link">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/architecture/view/page-assets.md" target="_blank">
+       Edit this page on GitHub
+     </a>
+   </div>
+  
+
+  <div class="new-issue">
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/architecture/view/page-assets.html" target="_blank">Give us feedback</a>
+  </div>
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.container -->
+
+
+	</div>
+	<!-- /.main-container -->
+
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div id="footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav">
+        <li><a href="/guides/v2.2/contributor-guide/contributing_docs.html">Become a Contributor</a>
+        <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
+        <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+        <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+        <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+        <li><a href="/guides/v2.2/release-notes/bk-release-notes.html">Release Notes</a></li>
+        <li><a href="/magento-third-party.html">Third-Party Licenses</a></li> 
+      </ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2017 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="/common/js/app.min.js"></script>
+
+<!-- Glossary integration -->
+<script src="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.js"></script>
+<script src="/common/js/glossary.tooltip.min.js"></script>
+<script>
+    $(document).ready(function(){
+      magento.glossary.init("https://magento.github.io/glossary/data/content-glossary.xml",function(term){return term.types.includes("glossary");},magento.glossary.tooltip.init);
+      });
+</script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+

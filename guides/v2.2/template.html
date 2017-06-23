@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>template (generic) | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.
+">
+	<meta http-equiv="last-modified" content="" />
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print" />
+	<link rel="canonical" href="//guides/v2.2/template.html">
+
+    <!-- WebUI popover css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
+
+  <script>
+    var baseUrl = "/";
+  </script>
+
+	<!-- crazyegg -->
+	<script type="text/javascript">
+	setTimeout(function(){var a=document.createElement("script");
+	var b=document.getElementsByTagName("script")[0];
+	a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0038/0321.js?"+Math.floor(new Date().getTime()/3600000);
+	a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+	</script>
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body>
+
+<header class="site-header">
+
+	<nav id="global-nav">
+
+		<div class="menu-btn"><a class="menu-trigger menu-icon" href="#"></a></div>
+
+		<div class="container">
+
+			<a class="logo" href="/guides/v2.2/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+
+			
+<div class="version-switcher dropdown">
+	<button id="version-switcher-button" class="btn btn-small dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		Magento 2.2
+	</button>
+
+	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/">Magento 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.1/">Magento 2.1</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.2/">Magento 2.2 RC</a></li>
+	
+  </ul>
+
+</div>
+
+
+
+			<!-- Main Navigation -->
+<div class="nav-main">
+  <ul>
+    <li class="first">
+      <a href="#">Setup and Deployment</a>
+        <ul class="menu nav">
+          <li><a href="https://magento.com/tech-resources/download" target="_blank">Get Started with Magento DevBox Beta</a></li>
+            <li><a href="/guides/v2.2/install-gde/bk-install-guide.html">Installation Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/comp-mgr/bk-compman-upgrade-guide.html">Extension Update and System Upgrade Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/cloud/bk-cloud.html">Enterprise Cloud Edition Guide</a></li>
+          <li class="leaf"><a href="/magento-release-information.html">Release Information</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Development</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.2/architecture/bk-architecture.html">Architecture Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          <li><a href="/guides/v2.2/payments-integrations/bk-payments-integrations.html">Payments Integrations</a></li>
+          <li class="leaf"><a href="/guides/v2.2/mrg/intro.html">Module Reference Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          
+          <li class="first leaf"><a href="/guides/v2.2/contributor-guide/contributing.html">Contributor Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Frontend</a>
+        <ul class="menu nav">
+          <li class="first leaf"><a href="/guides/v2.2/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li class="leaf"><a href="/guides/v2.2/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">API</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.2/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li class="leaf"><a href="/guides/v2.2/rest/bk-rest.html">REST API Reference</a></li>
+          <li class="leaf"><a href="/guides/v2.2/soap/bk-soap.html">SOAP API Reference</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Testing</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.2/test/testing.html">Magento Testing Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/mtf/mtf_introduction.html">Functional Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/test/integration/integration_test_execution.html">Integration Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+        </ul>
+    </li>
+
+    <li>
+      <a href="/guides/v2.2/howdoi/bk-how-do-i.html">How Tos</a>
+    </li>
+
+    <li>
+      <a href="/videos/">Videos</a>
+    </li>
+  </ul>
+</div><!-- /.nav-main -->
+
+
+			<div class="search-btn">
+				<a class="search-trigger search-icon" href="//search.html"></a>
+			</div>
+
+			<form class="quick-search" action="/search.html" method="get">
+				<input type="search" name="q" placeholder="Search" />
+				<a href="#" class="quick-search-close">&times;</a>
+			</form>
+
+		</div>
+
+	</nav><!-- #global-nav -->
+
+</header>
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- .main-container -->
+	<div class="main-container">
+		<a id="main-content"></a>
+
+
+<div class="container">
+
+    
+    <div class="message-banner">
+        Review our 2.2 release candidate!  This beta version documentation includes B2B and more. <a href="/guides/v2.2/release-notes/release-candidate/quick-start.html">See the Quickstart Guide</a><br/>
+        Stay tuned — We'll roll out more 2.2 documentation updates in the coming weeks.
+    </div> 
+    
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+
+
+
+
+		<ul>
+
+		
+
+		
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+  <nav class="breadcrumbs">
+
+    <a class="breadcrumb-item" href="/guides/v2.2/"><span>Home</span></a>
+
+    <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+    <!-- Iteration breadcrumb item -->
+    
+    
+
+    
+
+    
+
+
+  
+  <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+    <a href="/videos/"><span property="name">Videos</span></a>
+  </li>
+  
+
+  
+  <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+    
+    <a href="/videos/">
+    
+    <span property="name">Videos</span></a>
+  </li>
+  <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
+    <span property="name">template (generic)</span>
+  </li>
+  
+
+
+
+
+    </ol>
+
+  </nav>
+
+
+
+	
+
+	
+
+	<h1 class="page-heading">template (generic)</h1>
+
+  
+
+
+</section>
+
+
+			<p><em>This is a template for a topic that has not yet been written by the Magento Developer Docs team.</em></p>
+
+<p>We encourage our community members to add content; either by writing a full topic, adding new sections to existing topic, or even just a few sentences about something you know of this topic. Don’t worry about perfect grammar or form; just get your brilliance down!!</p>
+
+<p>To get started, edit your local version of this file, using the <span term-uuid="a5ef9041-976f-4eb3-826e-bf836027d8c3" class="glossary-term" data-toggle="popover">markdown</span> language (and <span term-uuid="a2aff425-07dd-4bd6-9671-29b7edefa871" class="glossary-term" data-toggle="popover">HTML</span> where needed). Then, create a Pull Request to have your contribution reviewed by the DevDocs team.</p>
+
+<p>Your contributions to our Docs and your experience with using Magento, are very valued and appreciated. Let us know if you have any questions!</p>
+
+<h2 id="overview">Overview</h2>
+<p>PROVIDE OVERVIEW OF TOPIC HERE</p>
+
+<h2 id="H2">HEADING 2</h2>
+<p>PROVIDE TEXT HERE FOR FIRST SECTION.</p>
+
+<div class="bs-callout bs-callout-info" id="info">
+
+  <p>INSERT NOTE TEXT HERE&lt;/a&gt;.</p>
+
+</div>
+
+<h3 id="H3">HEADING 3</h3>
+<p>PROVIDE TEXT HERE FOR NEXT SECTION.</p>
+
+<p>TO HYPERLINK TO ANOTHER TOPIC… refer to the <a href="/guides/v2.2/extension-dev-guide/bk-extension-dev-guide.html">NAME OF TOPIC OR BOOK</a>.</p>
+
+<h2 id="H2">HEADING 2</h2>
+<p>PROVIDE TEXT HERE FOR NEXT SECTION.</p>
+
+<p>ADD DIAGRAM OR ILLUSTRATION &lt;p&gt;<img src="/common/images/NAME_OF_IMAGEjpg" alt="HOVER TEXT HERE" />&lt;/p&gt;</p>
+
+<h2 id="book-related">Related topics</h2>
+
+<ul>
+  <li><a href="/guides/v2.2/_____/_____.html">Title of related topic</a></li>
+  <li><a href="/guides/v2.2/_____/_____.html">Title of related topic</a></li>
+</ul>
+
+<h2 id="collapsible-content">Collapsible Content</h2>
+
+<h3 id="examples">Examples</h3>
+<div class="collapsible"><b class="collapsible-title">Click to show/hide content </b><div class="collapsible-content"><p>To use the collapsible content functionality, use the <code>collapsible</code> block tag. Any content inside this block will be hidden until the header text is clicked.</p>
+
+<p>See the markdown version of this file for examples.</p>
+</div></div>
+
+<div class="collapsible"><b class="collapsible-title">Click to show/hide image </b><div class="collapsible-content"><p><img src="/common/images/connect_keys2.png" alt="This is an image" /></p>
+</div></div>
+
+<div class="collapsible"><b class="collapsible-title">HTML Table </b><div class="collapsible-content"><table>
+  <tbody>
+    <tr>
+      <th>Col 1</th>
+      <th>Col 2</th>
+      <th>Col 3</th>
+    </tr>
+    <tr>
+      <td>Data 1</td>
+      <td>Data 2</td>
+      <td>Data 3</td>
+    </tr>
+    <tr>
+      <td>Data 4</td>
+      <td>Data 5</td>
+      <td>Data 6</td>
+    </tr>
+    <tr>
+      <td>Data 7</td>
+      <td>Data 8</td>
+      <td>Data 9</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+
+<div class="collapsible"><b class="collapsible-title">Markdown Table </b><div class="collapsible-content"><table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Col 1</th>
+      <th style="text-align: center">Col 2</th>
+      <th style="text-align: center">Col 3</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">Data 1</td>
+      <td style="text-align: center">Data 2</td>
+      <td style="text-align: center">Data 3</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Data 4</td>
+      <td style="text-align: center">Data 5</td>
+      <td style="text-align: center">Data 6</td>
+    </tr>
+    <tr>
+      <td style="text-align: center">Data 7</td>
+      <td style="text-align: center">Data 8</td>
+      <td style="text-align: center">Data 9</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+
+<div class="collapsible"><b class="collapsible-title">Click to show/hide list </b><div class="collapsible-content"><ul>
+  <li>List Item 1</li>
+  <li>List Item 2</li>
+  <li>List Item 3</li>
+</ul>
+</div></div>
+
+<div class="collapsible"><b class="collapsible-title">Click to show/hide included content </b><div class="collapsible-content"><p>To apply all changes you've made to the page (XML file), run the class generator.</p>
+<pre><code>php &lt;magento2&gt;/dev/tests/functional/utils/generate.php</code></pre>
+<p>The page will be updated in the <code>&lt;magento2&gt;/dev/tests/functional/generated</code> directory.</p>
+</div></div>
+
+<div class="collapsible"><b class="collapsible-title">Collapsible Code Examples</b><div class="collapsible-content"><p><strong>Normal Markdown</strong></p>
+
+<pre><code>&lt;div class="collapsible"&gt;
+  &lt;h4 class="collapsible-title"&gt;Collapsible Title&lt;/h4&gt;
+  &lt;div class="collapsible-content"&gt;
+    &lt;p&gt;Put collapsible content here.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+<p><strong>Highlighted Code</strong></p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;collapsible&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;h4</span> <span class="na">class=</span><span class="s">&quot;collapsible-title&quot;</span><span class="nt">&gt;</span>Collapsible Title<span class="nt">&lt;/h4&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;collapsible-content&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;p&gt;</span>Put collapsible content here.<span class="nt">&lt;/p&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span></code></pre></figure>
+</div></div>
+
+<h3 id="collapsible-group">Collapsible Group</h3>
+
+<div class="collapsible">
+  <b class="collapsible-title">Collapsible Topic 1</b>
+  <div class="collapsible-content">
+    <p>You can have multiple title-content pairs in a collapsible container.</p>
+  </div>
+  <b class="collapsible-title">Collapsible Topic 2</b>
+  <div class="collapsible-content">
+    <p>Each content is controlled by its preceding title. </p>
+  </div>
+  <b class="collapsible-title">Collapsible Topic 3</b>
+  <div class="collapsible-content">
+    <p>Clicking on each title will open its corresponding content and close any open contents.</p>
+  </div>
+</div>
+
+<h3 id="tooltips">Tooltips</h3>
+
+<p>You can use a glossary term’s UUID from the <a href="https://magento.github.io/glossary/" target="_blank">Magento Glossary</a> to add a tooltip for that term on the page.</p>
+
+<h4 id="examples-1">Examples</h4>
+
+<ul>
+  <li><span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span></li>
+  <li>Inline <span term-uuid="8f407f13-4350-449b-9dc5-217dcf01bc42" class="glossary-term" data-toggle="popover">Markup</span> text</li>
+</ul>
+
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+  
+
+  <div class="new-issue">
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/template.html" target="_blank">Give us feedback</a>
+  </div>
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.container -->
+
+
+	</div>
+	<!-- /.main-container -->
+
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div id="footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav">
+        <li><a href="/guides/v2.2/contributor-guide/contributing_docs.html">Become a Contributor</a>
+        <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
+        <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+        <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+        <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+        <li><a href="/guides/v2.2/release-notes/bk-release-notes.html">Release Notes</a></li>
+        <li><a href="/magento-third-party.html">Third-Party Licenses</a></li> 
+      </ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2017 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="/common/js/app.min.js"></script>
+
+<!-- Glossary integration -->
+<script src="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.js"></script>
+<script src="/common/js/glossary.tooltip.min.js"></script>
+<script>
+    $(document).ready(function(){
+      magento.glossary.init("https://magento.github.io/glossary/data/content-glossary.xml",function(term){return term.types.includes("glossary");},magento.glossary.tooltip.init);
+      });
+</script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+
