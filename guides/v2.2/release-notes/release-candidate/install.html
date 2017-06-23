@@ -874,7 +874,7 @@ inventoryQtyCounter
 
 <p>You may also add these two message consumers to the cron job. For this, add these lines in your <code>crontab.xml</code>:</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span></span>* * * * * ps ax | grep [s]haredCatalogUpdateCategoryPermissions &gt;&gt;/dev/null 2&gt;<span class="err">&amp;</span>1 || nohup php /var/www/html/magento2/bin/magento queue:consumers:start sharedCatalogUpdateCategoryPermissions <span class="err">&amp;</span>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml">* * * * * ps ax | grep [s]haredCatalogUpdateCategoryPermissions &gt;&gt;/dev/null 2&gt;<span class="err">&amp;</span>1 || nohup php /var/www/html/magento2/bin/magento queue:consumers:start sharedCatalogUpdateCategoryPermissions <span class="err">&amp;</span>
 * * * * * ps ax | grep [s]haredCatalogUpdatePrice &gt;&gt;/dev/null 2&gt;<span class="err">&amp;</span>1 || nohup php /var/www/html/magento2/bin/magento queue:consumers:start sharedCatalogUpdatePrice <span class="err">&amp;</span></code></pre></figure>
 
 <h4 id="specify-parameters-for-message-consumers">Specify parameters for message consumers</h4>
