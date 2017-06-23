@@ -4,7 +4,7 @@ group: release-notes
 subgroup: Magento 2.2.0 Release Candidate
 title: Install Magento 2.2.0 Release Candidate
 menu_title: Install Magento 2.2.0 Release Candidate
-menu_order: 2
+menu_order: 6
 level3_menu_node:
 level3_subgroup:
 version: 2.2
