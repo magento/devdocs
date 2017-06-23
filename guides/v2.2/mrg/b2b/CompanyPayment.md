@@ -1,7 +1,7 @@
 ---
 layout: default
 group: mrg
-subgroup: B2B
+subgroup: 30_B2B
 title: Magento_CompanyPayment module
 menu_title: CompanyPayment
 menu_order: 70

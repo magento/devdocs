@@ -1,7 +1,7 @@
 ---
 layout: default
 group: mrg
-subgroup: B2B
+subgroup: 30_B2B
 title: Magento_SharedCatalog module
 menu_title: SharedCatalog
 menu_order: 200

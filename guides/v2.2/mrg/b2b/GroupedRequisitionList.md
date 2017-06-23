@@ -1,7 +1,7 @@
 ---
 layout: default
 group: mrg
-subgroup: B2B
+subgroup: 30_B2B
 title: Magento_GroupedRequisitionList module
 menu_title: GroupedRequisitionList
 menu_order: 140

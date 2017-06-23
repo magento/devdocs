@@ -1,7 +1,7 @@
 ---
 layout: default
 group: mrg
-subgroup: 10_Introduction
+subgroup: 01_Introduction
 title: Introduction to Module Reference Guide
 landing-page: Module Reference Guide
 menu_title: INTRODUCTION

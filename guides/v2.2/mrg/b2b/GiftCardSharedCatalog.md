@@ -1,7 +1,7 @@
 ---
 layout: default
 group: mrg
-subgroup: B2B
+subgroup: 30_B2B
 title: Magento_GiftCardSharedCatalog module
 menu_title: GiftCardSharedCatalog
 menu_order: 130

@@ -1,7 +1,7 @@
 ---
 layout: default
 group: mrg
-subgroup: B2B
+subgroup: 30_B2B
 title: Magento_GiftCardRequisitionList module
 menu_title: GiftCardRequisitionList
 menu_order: 120

@@ -1,7 +1,7 @@
 ---
 layout: default
 group: mrg
-subgroup: B2B
+subgroup: 30_B2B
 title: Magento_ConfigurableSharedCatalog module
 menu_title: ConfigurableSharedCatalog
 menu_order: 100

@@ -1,7 +1,7 @@
 ---
 layout: default
 group: mrg
-subgroup: B2B
+subgroup: 30_B2B
 title: Magento_GiftCardNegotiableQuote module
 menu_title: GiftCardNegotiableQuote
 menu_order: 110
