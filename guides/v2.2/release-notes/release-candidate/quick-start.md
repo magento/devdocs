@@ -8,7 +8,7 @@ menu_order: 1000
 level3_menu_node:
 level3_subgroup:
 version: 2.2
-github_link: release-candidate/quick-start.md
+github_link: release-notes/release-candidate/quick-start.md
 ---
 
 We are pleased to present the Magento 2.2.0 CE, EE, and B2B Release Candidate 1. This QuickStart guide provides the basic information you need to start participating in our Magento 2.2.0 Release Candidate evaluation program.
