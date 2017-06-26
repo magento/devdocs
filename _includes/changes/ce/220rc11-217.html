@@ -1,10 +1,9 @@
-
-<h2 id="class">Class</h2>
+<h3 id="classes-220rc11-217">Changes in classes</h3>
 <table><tbody>
-    <tr>
-        <th>Target</th>
-        <th>What Changed</th>
-    </tr>
+<tr>
+    <th>What Changed</th>
+    <th>How Changed</th>
+</tr>
     <tr>
         <td>Magento\Sales\Model\Order\PaymentAdapter</td>
         <td>Class was removed.</td>
@@ -224,14 +223,6 @@
     <tr>
         <td>Magento\Framework\Shell::__construct</td>
         <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Framework\View\Result\Layout::render</td>
-        <td>[protected] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Framework\View\Result\Page::render</td>
-        <td>[protected] Method parameter changed.</td>
     </tr>
     <tr>
         <td>Magento\Framework\View\Page\Config\Renderer::renderAssetHtml</td>
@@ -2760,10 +2751,6 @@
     <tr>
         <td>Magento\Payment\Model\Method\AbstractMethod::GROUP_OFFLINE</td>
         <td>Constant has been added.</td>
-    </tr>
-    <tr>
-        <td>Magento\PageCache\Model\Config::__construct</td>
-        <td>[public] Method has been added.</td>
     </tr>
     <tr>
         <td>Magento\PageCache\Model\Config::_getReplacements</td>
@@ -9315,12 +9302,12 @@
     </tr>
 </tbody></table>
 
-<h2 id="interface">Interface</h2>
+<h3 id="interfaces-220rc11-217">Changes in interfaces</h3>
 <table><tbody>
-    <tr>
-        <th>Target</th>
-        <th>What Changed</th>
-    </tr>
+<tr>
+    <th>What Changed</th>
+    <th>How Changed</th>
+</tr>
     <tr>
         <td>Magento\Framework\Acl\CacheInterface</td>
         <td>Interface was removed.</td>
@@ -9363,10 +9350,6 @@
     </tr>
     <tr>
         <td>Magento\Sales\Api\CreditmemoCommentRepositoryInterface::getList</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Sales\Api\CreditmemoItemRepositoryInterface::getList</td>
         <td>[public] Method parameter changed.</td>
     </tr>
     <tr>
@@ -9454,14 +9437,6 @@
         <td>Interface was removed.</td>
     </tr>
     <tr>
-        <td>Magento\Framework\Acl\CacheInterface</td>
-        <td>Interface was removed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Sales\Model\Order\InvoiceNotifierInterface</td>
-        <td>Interface was removed.</td>
-    </tr>
-    <tr>
         <td>Magento\Deploy\Model\Deploy\DeployInterface</td>
         <td>Interface was removed.</td>
     </tr>
@@ -9514,87 +9489,7 @@
         <td>[public] Method has been added.</td>
     </tr>
     <tr>
-        <td>Magento\Vault\Api\PaymentTokenRepositoryInterface::getList</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Tax\Api\TaxRuleRepositoryInterface::getList</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Store\Api\Data\GroupInterface::getCode</td>
-        <td>[public] Method has been added.</td>
-    </tr>
-    <tr>
-        <td>Magento\Store\Api\Data\GroupInterface::setCode</td>
-        <td>[public] Method has been added.</td>
-    </tr>
-    <tr>
-        <td>Magento\Sales\Api\CreditmemoCommentRepositoryInterface::getList</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
         <td>Magento\Sales\Api\CreditmemoItemRepositoryInterface::getList</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Sales\Api\CreditmemoRepositoryInterface::getList</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Sales\Api\InvoiceCommentRepositoryInterface::getList</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Sales\Api\InvoiceItemRepositoryInterface::getList</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Sales\Api\InvoiceRepositoryInterface::getList</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Sales\Api\OrderAddressRepositoryInterface::getList</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Sales\Api\OrderItemRepositoryInterface::getList</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Sales\Api\OrderPaymentRepositoryInterface::getList</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Sales\Api\OrderRepositoryInterface::getList</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Sales\Api\OrderStatusHistoryRepositoryInterface::getList</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Sales\Api\ShipmentCommentRepositoryInterface::getList</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Sales\Api\ShipmentItemRepositoryInterface::getList</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Sales\Api\ShipmentRepositoryInterface::getList</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Sales\Api\ShipmentTrackRepositoryInterface::getList</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Sales\Api\TransactionRepositoryInterface::getList</td>
-        <td>[public] Method parameter changed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Quote\Api\CartRepositoryInterface::getList</td>
         <td>[public] Method parameter changed.</td>
     </tr>
     <tr>
