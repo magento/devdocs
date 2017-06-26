@@ -1887,12 +1887,6 @@
   </li>
   <li>Wait for components to update.</li>
   <li>
-    <p>Upgrade the database and schema:</p>
-
-    <pre><code>&lt;Magento root dir&gt;/bin/magento setup:upgrade
-</code></pre>
-  </li>
-  <li>
     <p>Commit and push the changes:</p>
 
     <pre><code>git add -A &amp;&amp; git commit -m "Install sample data"
@@ -1900,18 +1894,14 @@ git push origin &lt;branch name&gt;
 </code></pre>
   </li>
   <li>Wait for the project to deploy.</li>
-  <li>
-    <p>Verify the installation was successful by going to your <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span> main page.</p>
-
-    <p>The URL displays on the command line under the heading <code>Environment routes:</code> after the project deploys.</p>
-  </li>
-  <li>
-    <p>Take a snapshot of your environment:</p>
-
-    <pre><code>magento-cloud snapshot:create -e &lt;environment ID&gt;
-</code></pre>
-  </li>
+  <li>Verify the installation was successful by going to your <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span> main page.</li>
 </ol>
+
+<p>The URL displays on the command line under the heading <code>Environment routes:</code> after the project deploys.
+7.	Take a snapshot of your environment:</p>
+
+<pre><code>	magento-cloud snapshot:create -e &lt;environment ID&gt;
+</code></pre>
 
 <h4 id="related-topics">Related topics</h4>
 <ul>
