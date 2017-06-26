@@ -1,0 +1,1 @@
+/Users/lkrell/Documents/vagrant-docs/devdocs_internal/guides/v2.0/cloud/trouble/trouble-crypt-key-variable.md

@@ -5,13 +5,13 @@ subgroup: 080_setup
 title: Import Magento EE into Magento Enterprise Cloud Edition
 menu_title: Import Magento EE into Magento Enterprise Cloud Edition
 menu_order: 154
-menu_node: 
+menu_node:
 level3_menu_node: level3child
 level3_subgroup: import
 version: 2.0
 github_link: cloud/access-acct/first-time-setup_import-import.md
 ---
- 
+
 
 This topic discusses how to import code from your existing Magento EE project to your Magento Enterprise Cloud Edition's Git repository `master` branch.
 
@@ -102,7 +102,7 @@ This topic discusses how to import the [integration system]({{ page.baseurl }}cl
 </div>
 
 ### Drop and re-create the Cloud database
-SSH into the cloud environment and empty the existing database, if it is populated. If you have done any work you would like to refer to later that's been done in the Cloud environment, then make a backup of that first. 
+SSH into the cloud environment and empty the existing database, if it is populated. If you have done any work you would like to refer to later that's been done in the Cloud environment, then make a backup of that first.
 
 To drop and re-create the Cloud database:
 
@@ -122,7 +122,7 @@ To drop and re-create the Cloud database:
 5.  At the `MariaDB [main]>` prompt, enter `exit`.
 6.  At the shell command prompt, enter the following command to re-create the database.
 
-        zcat var/db.sql.tgz | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' | mysql -h <db-host> -P <db-port> -p -u <db-user> <db-name> 
+        zcat var/db.sql.tgz | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' | mysql -h <db-host> -P <db-port> -p -u <db-user> <db-name>
 
     For example,
 
@@ -152,7 +152,7 @@ To update the unsecure base URL:
 
     <div class="bs-callout bs-callout-warning" id="warning" markdown="1">
     The base URL _must_ end with a `/` character.
-    </div> 
+    </div>
 6.  Confirm the change by entering the following command:
 
         SELECT * from core_config_data;
@@ -165,6 +165,8 @@ For your system to be fully functional, you must also set unsecure and secure UR
 </div>
 
 ## Copy the encryption key {#cloud-import-key}
+The Magento EE encryption key is required as an environment variable in `env.php` for Integration, Staging, and Production. Without this key, the store encounters errors such as payments and shipping.
+
 To copy your Magento EE encryption key:
 
 1.  If you haven't done so already, SSH to the Cloud environment.
@@ -184,6 +186,10 @@ return array (
   ),
 );
 {% endhighlight %}
+
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+Don't forget to add this encryption key variable to `env.php` for all environments: Integration, Staging, and Production.
+</div>
 
 ## Import media {#cloud-import-media}
 To import media files into your Cloud environment:
