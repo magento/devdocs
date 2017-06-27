@@ -54,4 +54,4 @@ To go live:
 	We support `www.domain.tld CNAME <environment>-<project>.<region>.magentosite.cloud`
 
 	We don't support `domain.tld CNAME <environment>-<project>.<region>.magentosite.cloud`
-4.	Provide your SSL certificate to Support when requested.
+4.	For shared-SSL, Magento adds your domains to the shared certificate. If you purchased deployment of a Domain-Validated SSL certificate as part of your ECE account, provide this SSL certificate to Support through the ticket. Support will provide the SSL to Fastly for deployment.
