@@ -66,11 +66,11 @@ There are three Magento code repositories on GitHub where you can find Release C
 
 These instructions assume you have experience working with Github repositories. Refer to Github's documentation if you need help setting up [SSH keys](https://help.github.com/articles/connecting-to-github-with-ssh/){:target="	&#95;blank"} or [cloning repositories](https://help.github.com/articles/cloning-a-repository/){:target="	&#95;blank"}.
 
-1.  Clone the `magento2ce/` repository to your server's [docroot](http://devdocs.magento.com/guides/v2.1/install-gde/basics/basics_docroot.html):
+1.  Clone the `magento2/` repository to your server's [docroot](http://devdocs.magento.com/guides/v2.1/install-gde/basics/basics_docroot.html):
 
     ```
     cd /var/www/html
-    git clone -b 2.2.0-release-candidate git@github.com:magento/magento2ce.git
+    git clone -b 2.2.0-release-candidate git@github.com:magento/magento2.git
     ```
 
 2.  Clone the `magento2ee/` and `magento2b2b/` repositories inside the `magento2ce/` repository:
