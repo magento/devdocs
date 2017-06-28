@@ -13,7 +13,8 @@ github_link: config-guide/solr/solr-overview.md
 <img src="{{ site.baseurl }}common/images/ee-only_large.png" alt="This topic applies to Enterprise Edition only">
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-Solr is deprecated in Magento 2.1 and will be removed in 2.2.
+Solr is deprecated in Magento 2.1 and will not be supported in 2.2. 
+In a future release, Solr compatibility will be removed.
 
 If possible, use [Elastic Search]({{page.baseurl}}config-guide/elasticsearch/es-overview.html) as an alternative catalog search engine.
 </div>
