@@ -48,7 +48,6 @@ This page contains recent changes that we think you'd like to know about. We exc
 | [Step 3. Install](http://devdocs.magento.com/guides/v2.2/comp-mgr/extens-man/extensman-new-purchase.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Step 3. Extension Update](http://devdocs.magento.com/guides/v2.2/comp-mgr/extens-man/extensman-update.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Step 4. Uninstall](http://devdocs.magento.com/guides/v2.2/comp-mgr/extens-man/extensman-uninst-final.html){:target="_blank"} | 2.2 |  New | June 23  |
-
 | [Step 3. Data Option](http://devdocs.magento.com/guides/v2.2/comp-mgr/extens-man/extensman-uninst-data.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Step 2. Back up the file system and database](http://devdocs.magento.com/guides/v2.2/comp-mgr/module-man/compman-backup.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Run the Module Manager](http://devdocs.magento.com/guides/v2.2/comp-mgr/module-man/compman-checklist.html){:target="_blank"} | 2.2 |  New | June 23  |
