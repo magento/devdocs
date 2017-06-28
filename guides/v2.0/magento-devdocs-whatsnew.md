@@ -344,6 +344,8 @@ This page contains recent changes that we think you'd like to know about. We exc
 
 {% collapsibleh2 Feb 2017 %}
 
+| Description  | Versions applied to  | New or Updated | Date |
+|--------------|--------------|----------------------|--------|
 | [Magento Enterprise Cloud Edition (MECE) deployment]({{ page.baseurl }}cloud/reference/discover-deploy.html){:target="_blank"} | 2.x | Updated | Feb 23 |
 | [How to use logs to troubleshoot MECE]({{ page.baseurl }}cloud/trouble/environments-logs.html){:target="_blank"} | 2.x | New | Feb 23 |
 | [How to SSH in to an MECE integration, staging, or production system]({{ page.baseurl }}cloud/env/environments-ssh.html){:target="_blank"} | 2.x | Updated | Feb 23 |
