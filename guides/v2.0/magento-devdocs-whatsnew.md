@@ -66,8 +66,7 @@ This page contains recent changes that we think you'd like to know about. We exc
 | [Manage the cache](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-cache.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Code compiler](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-compiler.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Export the configuration](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-export.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [page name](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-import.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Import data from configuration files](http://devdocs.magento.com/guides/v2.2/link.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Import data from configuration files](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-import.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Set configuration values](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-set.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Configure and run cron](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-cron.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Set the Magento mode](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-mode.html){:target="_blank"} | 2.2 |  New | June 23  |
@@ -99,7 +98,7 @@ This page contains recent changes that we think you'd like to know about. We exc
 | [Use environment variables to override configuration settings](http://devdocs.magento.com/guides/v2.2/config-guide/prod/config-reference-var-name.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [File systems access permissions](http://devdocs.magento.com/guides/v2.2/config-guide/prod/prod_file-sys-perms.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Magento Optimization Guide](http://devdocs.magento.com/guides/v2.2/config-guide/prod/prod_perf-optimize.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [page name](http://devdocs.magento.com/guides/v2.2/config-guide/varnish/config-varnish-advanced.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Advanced Varnish configuration](http://devdocs.magento.com/guides/v2.2/config-guide/varnish/config-varnish-advanced.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Advanced Varnish configuration](http://devdocs.magento.com/guides/v2.2/link.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Configure Varnish and your web server](http://devdocs.magento.com/guides/v2.2/config-guide/varnish/config-varnish-configure.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Install Varnish](http://devdocs.magento.com/guides/v2.2/config-guide/varnish/config-varnish-install.html){:target="_blank"} | 2.2 |  New | June 23  |
@@ -108,8 +107,7 @@ This page contains recent changes that we think you'd like to know about. We exc
 | [Troubleshooting 503 errors](http://devdocs.magento.com/guides/v2.2/config-guide/varnish/tshoot-varnish-503.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [How Magento cache works with multiple Varnish instances](http://devdocs.magento.com/guides/v2.2/config-guide/varnish/use-multiple-varnish-cache.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [How Magento cache clearing works with Varnish](http://devdocs.magento.com/guides/v2.2/config-guide/varnish/use-varnish-cache.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [page name](http://devdocs.magento.com/guides/v2.2/ext-best-practices/security/writing-secure-code.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Writing secure code](http://devdocs.magento.com/guides/v2.2/link.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Writing secure code](http://devdocs.magento.com/guides/v2.2/ext-best-practices/security/writing-secure-code.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Serialized to JSON data upgrade](http://devdocs.magento.com/guides/v2.2/ext-best-practices/tutorials/serialized-to-json-data-upgrade.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [The di.xml file](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/build/di-xml-file.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Bulk Operations](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/bulk-operations.html){:target="_blank"} | 2.2 |  New | June 23  |
@@ -120,8 +118,7 @@ This page contains recent changes that we think you'd like to know about. We exc
 | [Example bulk operations implementation](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/implement-bulk.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Indexer optimization](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/indexer-batch.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Plugins (Interceptors)](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/plugins.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [page name](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/searching-with-repositories.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Searching with Repositories](http://devdocs.magento.com/guides/v2.2/link.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [earching with Repositories](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/searching-with-repositories.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [XSS prevention strategies](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/xss-protection.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [How CSS and LESS files are preprocessed and how to debug them](http://devdocs.magento.com/guides/v2.2/frontend-dev-guide/css-topics/css-preprocess.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Compile LESS using Grunt](http://devdocs.magento.com/guides/v2.2/frontend-dev-guide/css-topics/css_debug.html){:target="_blank"} | 2.2 |  New | June 23  |
@@ -176,8 +173,7 @@ This page contains recent changes that we think you'd like to know about. We exc
 | [Magento_SharedCatalog module](http://devdocs.magento.com/guides/v2.2/mrg/b2b/SharedCatalog..html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Magento_Analytics module](http://devdocs.magento.com/guides/v2.2/mrg/ce/Analytics/description.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Magento_CatalogAnalytics module](http://devdocs.magento.com/guides/v2.2/mrg/ce/CatalogAnalytics/description.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [pagename](http://devdocs.magento.com/guides/v2.2/mrg/ce/ce-intro.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Community Edition modules](http://devdocs.magento.com/guides/v2.2/link.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Community Edition modules](http://devdocs.magento.com/guides/v2.2/mrg/ce/ce-intro.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Magento_CustomerAnalytics module](http://devdocs.magento.com/guides/v2.2/mrg/ce/CustomerAnalytics/description.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Magento_CustomerAnalytics module](http://devdocs.magento.com/guides/v2.2/mrg/ce/CustomerAnalytics/description.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Magento_GoogleAnalytics module](http://devdocs.magento.com/guides/v2.2/mrg/ce/GoogleAnalytics/description.html){:target="_blank"} | 2.2 |  New | June 23  |
