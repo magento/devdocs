@@ -118,7 +118,7 @@ This page contains recent changes that we think you'd like to know about. We exc
 | [Example bulk operations implementation](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/implement-bulk.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Indexer optimization](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/indexer-batch.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Plugins (Interceptors)](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/plugins.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [earching with Repositories](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/searching-with-repositories.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Searching with Repositories](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/searching-with-repositories.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [XSS prevention strategies](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/xss-protection.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [How CSS and LESS files are preprocessed and how to debug them](http://devdocs.magento.com/guides/v2.2/frontend-dev-guide/css-topics/css-preprocess.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Compile LESS using Grunt](http://devdocs.magento.com/guides/v2.2/frontend-dev-guide/css-topics/css_debug.html){:target="_blank"} | 2.2 |  New | June 23  |
@@ -170,7 +170,7 @@ This page contains recent changes that we think you'd like to know about. We exc
 | [Magento_NegotiableQuoteSharedCatalog module](http://devdocs.magento.com/guides/v2.2/mrg/b2b/NegotiableQuoteSharedCatalog.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Magento_QuickOrder module](http://devdocs.magento.com/guides/v2.2/mrg/b2b/QuickOrder.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Magento_RequisitionList module](http://devdocs.magento.com/guides/v2.2/mrg/b2b/RequisitionList.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento_SharedCatalog module](http://devdocs.magento.com/guides/v2.2/mrg/b2b/SharedCatalog..html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Magento_SharedCatalog module](http://devdocs.magento.com/guides/v2.2/mrg/b2b/SharedCatalog.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Magento_Analytics module](http://devdocs.magento.com/guides/v2.2/mrg/ce/Analytics/description.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Magento_CatalogAnalytics module](http://devdocs.magento.com/guides/v2.2/mrg/ce/CatalogAnalytics/description.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Community Edition modules](http://devdocs.magento.com/guides/v2.2/mrg/ce/ce-intro.html){:target="_blank"} | 2.2 |  New | June 23  |
