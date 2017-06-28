@@ -11,7 +11,7 @@ github_link: cloud/trouble/trouble_crypt-key-variable.md
 ---
 
 ## Resolve issues with encryption key
-This topic discusses solutions to typical issues you might experience with Magento EE encryption key.
+This topic discusses solutions to typical issues you might experience with Magento EE encryption key in your environments.
 
 ### Ecryption key not in all environments {#cloud-trouble-nocrypt}
 All Cloud environments require the addition of your Magento EE encryption key to the `env.php` variables for Integration, Staging, and Production environments. If you didn't add the encryption key, the store will encounter authentication and authorization type errors for actions like completing a payment on a cart, processing a return, and adding shipping to orders.
