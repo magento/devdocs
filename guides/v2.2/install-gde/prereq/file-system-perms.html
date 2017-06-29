@@ -1130,7 +1130,7 @@ sudo passwd magento_user
 
 <p>For example, to add the user <code>magento_user</code> to the <code>apache</code> primary group on CentOS:</p>
 
-<pre><code>usermod -a -G apache magento_user
+<pre><code>sudo usermod -a -G apache magento_user
 </code></pre>
 
 <p>To confirm your Magento user is a member of the web server group, enter the following command:</p>
@@ -1174,7 +1174,7 @@ sudo passwd magento_user
     <pre><code>cd &lt;your Magento install dir&gt;
 find var generated vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \;
 find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
-chown -R :&lt;web server group&gt; .
+sudo chown -R :&lt;web server group&gt; .
 chmod u+x bin/magento
 </code></pre>
   </li>
