@@ -66,7 +66,6 @@ This page contains recent changes that we think you'd like to know about. We exc
 | Description  | Versions applied to  | New or Updated | Date |
 |--------------|--------------|----------------------|--------|
 | [B2B Developer Guide](http://devdocs.magento.com/guides/v2.2/b2b/bk-b2b.html){:target="_blank"} | 2.2  |  New | June 23  |
-| [Integrate with B2B using REST](http://devdocs.magento.com/guides/v2.2/b2b/integrations.html){:target="_blank"} | 2.2  |  New | June 23  |
 
 ### Component Manager and System Upgrade Guide
 
@@ -96,44 +95,17 @@ This page contains recent changes that we think you'd like to know about. We exc
 
 | Description  | Versions applied to  | New or Updated | Date |
 |--------------|--------------|----------------------|--------|
-| [Magento_Analytics module](http://devdocs.magento.com/guides/v2.2/mrg/ce/Analytics/description.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento_CatalogAnalytics module](http://devdocs.magento.com/guides/v2.2/mrg/ce/CatalogAnalytics/description.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento_CustomerAnalytics module](http://devdocs.magento.com/guides/v2.2/mrg/ce/CustomerAnalytics/description.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento_GoogleAnalytics module](http://devdocs.magento.com/guides/v2.2/mrg/ce/GoogleAnalytics/description.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento_QuoteAnalytics module](http://devdocs.magento.com/guides/v2.2/mrg/ce/QuoteAnalytics/description.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento_ReviewAnalytics module](http://devdocs.magento.com/guides/v2.2/mrg/ce/ReviewAnalytics/description.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento_SalesAnalytics module](http://devdocs.magento.com/guides/v2.2/mrg/ce/SalesAnalytics/description.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento_WishlistAnalytics module](http://devdocs.magento.com/guides/v2.2/mrg/ce/WishlistAnalytics/description.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento_Signifyd module](http://devdocs.magento.com/guides/v2.2/mrg/ee/Signifyd.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Advanced Reporting module](http://devdocs.magento.com/guides/v2.2/mrg/ce/Analytics/description.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [B2B modules](http://devdocs.magento.com/guides/v2.2/mrg/b2b/b2b-intro.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento_b2b module](http://devdocs.magento.com/guides/v2.2/mrg/b2b/B2b.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento_BundleNegotiableQuote module](http://devdocs.magento.com/guides/v2.2/mrg/b2b/BundleNegotiableQuote.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento_BundleRequisitionList module](http://devdocs.magento.com/guides/v2.2/mrg/b2b/BundleRequisitionList.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento_BundleSharedCatalog module](http://devdocs.magento.com/guides/v2.2/mrg/b2b/BundleSharedCatalog.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento_Company module](http://devdocs.magento.com/guides/v2.2/mrg/b2b/Company.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento_CompanyCredit module](http://devdocs.magento.com/guides/v2.2/mrg/b2b/CompanyCredit.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento_CompanyPayment module](http://devdocs.magento.com/guides/v2.2/mrg/b2b/CompanyPayment.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento_ConfigurableNegotiableQuote module](http://devdocs.magento.com/guides/v2.2/mrg/b2b/ConfigurableNegotiableQuote.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento_ConfigurableRequisitionList module](http://devdocs.magento.com/guides/v2.2/mrg/b2b/ConfigurableRequisitionList.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento_ConfigurableSharedCatalog module](http://devdocs.magento.com/guides/v2.2/mrg/b2b/ConfigurableSharedCatalog.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento_GiftCardNegotiableQuote module](http://devdocs.magento.com/guides/v2.2/mrg/b2b/GiftCardNegotiableQuote.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento_GiftCardRequisitionList module](http://devdocs.magento.com/guides/v2.2/mrg/b2b/GiftCardRequisitionList.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento_GiftCardSharedCatalog module](http://devdocs.magento.com/guides/v2.2/mrg/b2b/GiftCardSharedCatalog.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento_GroupedRequisitionList module](http://devdocs.magento.com/guides/v2.2/mrg/b2b/GroupedRequisitionList.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento_GroupedSharedCatalog module](http://devdocs.magento.com/guides/v2.2/mrg/b2b/GroupedSharedCatalog.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento_NegotiableQuote module](http://devdocs.magento.com/guides/v2.2/mrg/b2b/NegotiableQuote.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento_NegotiableQuoteSharedCatalog module](http://devdocs.magento.com/guides/v2.2/mrg/b2b/NegotiableQuoteSharedCatalog.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento_QuickOrder module](http://devdocs.magento.com/guides/v2.2/mrg/b2b/QuickOrder.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento_RequisitionList module](http://devdocs.magento.com/guides/v2.2/mrg/b2b/RequisitionList.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento_SharedCatalog module](http://devdocs.magento.com/guides/v2.2/mrg/b2b/SharedCatalog.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Magento_Signifyd module](http://devdocs.magento.com/guides/v2.2/mrg/ee/Signifyd.html){:target="_blank"} | 2.2 |  New | June 23  |
 
 ### REST API Reference
 
 | Description  | Versions applied to  | New or Updated | Date |
 |--------------|--------------|----------------------|--------|
-| [REST APIs](http://devdocs.magento.com/swagger/index_22.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [List of REST endpoints by module](http://devdocs.magento.com/guides/v2.2/rest/list.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [List of service names per module](http://devdocs.magento.com/guides/v2.2/rest/rest_endpoints.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Swagger documentation](http://devdocs.magento.com/swagger/index_22.html){:target="_blank"} | 2.2 |  Updated | June 23  |
+| [List of REST endpoints by module](http://devdocs.magento.com/guides/v2.2/rest/list.html){:target="_blank"} | 2.2 |  Updated | June 23  |
+| [List of service names per module](http://devdocs.magento.com/guides/v2.2/rest/rest_endpoints.html){:target="_blank"} | 2.2 |  Updated | June 23  |
 
 ### PHP Developer Guide
 
@@ -164,8 +136,11 @@ This page contains recent changes that we think you'd like to know about. We exc
 
 | Description  | Versions applied to  | New or Updated | Date |
 |--------------|--------------|----------------------|--------|
-| [Go live]({{ page.baseurl }}cloud/live/live.html){:target="_blank"} | 2.0, 2.1, 2.2 |  Update | June 29  |
-| [Magento application environment variables]({{ page.baseurl }}cloud/env/environment-vars_magento.html){:target="_blank"} | 2.0, 2.1, 2.2 |  Update | June 27  |
+| [Import Magento EE into Magento Enterprise Cloud Edition]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-import.html){:target="_blank"} | 2.0, 2.1, 2.2 |  Updated | June 29  |
+| [Prepare your existing Magento EE system]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-prepare.html){:target="_blank"} | 2.0, 2.1, 2.2 |  Updated | June 29  |
+| [Resolve issues with encryption key]({{ page.baseurl }}cloud/trouble/trouble-crypt-key-variable.html){:target="_blank"} | 2.0, 2.1, 2.2 |  New | June 29  |
+| [Go live]({{ page.baseurl }}cloud/live/live.html){:target="_blank"} | 2.0, 2.1, 2.2 |  Updated | June 29  |
+| [Magento application environment variables]({{ page.baseurl }}cloud/env/environment-vars_magento.html){:target="_blank"} | 2.0, 2.1, 2.2 |  Updated | June 27  |
 | [Writing secure code](http://devdocs.magento.com/guides/v2.2/ext-best-practices/security/writing-secure-code.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Serialized to JSON data upgrade](http://devdocs.magento.com/guides/v2.2/ext-best-practices/tutorials/serialized-to-json-data-upgrade.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Token-based authentication](http://devdocs.magento.com/guides/v2.2/get-started/authentication/gs-authentication-token.html){:target="_blank"} | 2.2 |  New | June 23  |
