@@ -44,7 +44,6 @@ Before you test any custom code in your local Magento Enterprise Cloud Edition e
 ### Development and testing {#cloud-req-devtest}
 For development and testing, we require the following:
 
-*	You must push code to the staging or production environment before the database is uploaded the first time
 *	You should test using either the integration or the staging environment (or both) on a regular basis throughout the project
 
 	You can enable and test individual features or extensions on different environments to make sure they are working before merging
