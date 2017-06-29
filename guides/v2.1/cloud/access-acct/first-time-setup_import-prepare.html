@@ -1258,6 +1258,14 @@
 
 								
 
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/trouble/trouble-crypt-key-variable.html">Resolve issues with encryption key</a></li>
+
+									
+
+								
+
 								
 								
 
@@ -1904,7 +1912,7 @@ mkdir .magento
 
     <p>See the following example:</p>
 
-    <pre><code>{ 
+    <pre><code>{
    "http-basic": {
       "repo.magento.com": {
       "username": "&lt;public-key&gt;",
@@ -2002,7 +2010,7 @@ mkdir .magento
 </ol>
 
 <h3 id="cloud-import-copykey">Copy the encryption key</h3>
-<p>To be able to decrypt encrypted data from your imported database, copy your encryption from your existing <code>env.php</code> file. <code>env.php</code> contains a nested <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> array storing configuration data.</p>
+<p>To be able to decrypt encrypted data from your imported database, copy your encryption from your existing <code>env.php</code> file. Each environment (Integration, Staging, and Production) has an <code>env.php</code> of environment variables. The file contains a nested <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> array storing configuration data.</p>
 
 <ol>
   <li>Open <code>&lt;Magento install dir&gt;/app/etc/env.php</code> in a text editor.</li>
@@ -2010,7 +2018,7 @@ mkdir .magento
   <li>
     <p>Copy the value to the clipboard and save it.</p>
 
-    <p>You must paste the encryption key into your Magento Enterprise Cloud Edition <code>env.php</code> file later.</p>
+    <p>You must paste the encryption key into your Magento Enterprise Cloud Edition <code>env.php</code> file in each environment in a later step.</p>
   </li>
 </ol>
 

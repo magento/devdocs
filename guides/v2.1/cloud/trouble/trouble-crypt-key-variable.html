@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Project directory structure | Magento 2 Developer Documentation</title>
+	<title>Resolve issues with encryption key | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.1/cloud/access-acct/first-time-setup_dir-structure.html">
+	<link rel="canonical" href="//guides/v2.1/cloud/trouble/trouble-crypt-key-variable.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -69,11 +69,11 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/cloud/access-acct/first-time-setup_dir-structure.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/cloud/trouble/trouble_crypt-key-variable.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/cloud/access-acct/first-time-setup_dir-structure.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/cloud/trouble/trouble_crypt-key-variable.html">Magento 2.1</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.2/cloud/access-acct/first-time-setup_dir-structure.html">Magento 2.2 RC</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.2/cloud/trouble/trouble_crypt-key-variable.html">Magento 2.2 RC</a></li>
 	
   </ul>
 
@@ -646,7 +646,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.1/cloud/access-acct/first-time-setup_dir-structure.html">Project directory structure</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/cloud/access-acct/first-time-setup_dir-structure.html">Project directory structure</a></li>
 
 									
 
@@ -1260,7 +1260,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/cloud/trouble/trouble-crypt-key-variable.html">Resolve issues with encryption key</a></li>
+									<li class="level-2  active "><a href="/guides/v2.1/cloud/trouble/trouble-crypt-key-variable.html">Resolve issues with encryption key</a></li>
 
 									
 
@@ -1777,7 +1777,7 @@
 
           
 
-          <span property="name">Project directory structure</span>
+          <span property="name">Resolve issues with encryption key</span>
 
         
 
@@ -1800,7 +1800,7 @@
 
 	
 
-	<h1 class="page-heading">Project directory structure</h1>
+	<h1 class="page-heading">Resolve issues with encryption key</h1>
 
   
 
@@ -1808,66 +1808,44 @@
 </section>
 
 
-			<h2 id="cloud-structure-local">Local project directory structure</h2>
-<p>Not including the Magento application itself, your local project has the following structure:</p>
+			<h2 id="resolve-issues-with-encryption-key">Resolve issues with encryption key</h2>
+<p>This topic discusses solutions to typical issues you might experience with Magento EE encryption key in your environments.</p>
 
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml">├── .git
-├── .gitignore
-├── .magento
-│   ├── routes.yaml
-│   └── services.yaml
-├── .magento.app.yaml
-├── auth.json
-├── composer.json
-├── composer.lock
-├── magento-vars.php
-├── php.ini
-└── README.md</code></pre></figure>
+<h3 id="cloud-trouble-nocrypt">Ecryption key not in all environments</h3>
+<p>When creating and setting up your ECE project, as a best practice you should install and deploy Magento across all environments starting with Integration to Staging to Production. During this process, the Magento EE encryption key should have been added as an environment variable to <code>env.php</code> per environment.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>When you push your local environment to the remote server, our deploy script uses the values defined by configuration files in the <code>.magento</code> directory, then the script deletes the directory and its contents. Your local development environment isn't affected.</p>
-</div>
+<p>All Cloud environments require this encryption key in all three environments or the store will encounter authentication and authorization errors for actions like completing a payment on a cart, processing a return, and adding shipping to orders.</p>
 
-<h2 id="cloud-structure-cloud">Magento Enterprise Cloud Edition directories</h2>
-<p>The following sections discuss information you need to know about directories in the systems deployed to Magento Enterprise Cloud Edition.</p>
+<p>To verify and update the encryption key environment variable:</p>
 
-<h3 id="magento-application-root-directory">Magento application root directory</h3>
-<p>In your <a href="/guides/v2.1/cloud/reference/discover-arch.html#cloud-arch-int">integration systems</a>, the Magento application is located in the <code>/app</code> directory.</p>
+<ol>
+  <li>
+    <p>SSH to each of the Cloud environments: Integration, Staging, and Production.</p>
 
-<p>In <a href="/guides/v2.1/cloud/reference/discover-arch.html#cloud-arch-stage">staging</a>, it’s located in the <code>/&lt;project code&gt;_stg</code> directory.</p>
+    <pre><code>magento-cloud environment:ssh
+</code></pre>
+  </li>
+  <li>Open <code>app/etc/env.php</code> in a text editor.</li>
+  <li>Verify the existing value of <code>key</code> for <code>crypt</code>. The value should be your <a href="/guides/v2.1/cloud/access-acct/first-time-setup_import-prepare.html#cloud-import-copykey">Magento EE key</a>.</li>
+</ol>
 
-<p>In <a href="/guides/v2.1/cloud/reference/discover-arch.html#cloud-arch-prod">production</a>, it’s located in the ` /<project code="">` directory.</project></p>
+<figure class="highlight"><pre><code class="language-php" data-lang="php">        <span class="k">return</span> <span class="k">array</span> <span class="p">(</span>
+          <span class="s1">&#39;crypt&#39;</span> <span class="o">=&gt;</span>
+          <span class="k">array</span> <span class="p">(</span>
+            <span class="s1">&#39;key&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&lt;your encryption key&gt;&#39;</span><span class="p">,</span>
+          <span class="p">),</span>
+        <span class="p">);</span>
+        </code></pre></figure>
 
-<h3 id="writable-directories">Writable directories</h3>
-<p>In integration, staging, and production, for security reasons, <em>only</em> the following directories are writable:</p>
+<ol>
+  <li>If the value is incorrect, add the key value, and save your changes to <code>env.php</code>.</li>
+  <li>Exit the text editor and repeat this process for each environment. Test store actions in each environment to verify if the issue persists, such as completing a cart purchase.</li>
+</ol>
 
+<h4 id="related-topics">Related topics</h4>
 <ul>
-  <li><code>var</code></li>
-  <li><code>pub/static</code></li>
-  <li><code>pub/media</code></li>
-  <li><code>app/etc</code></li>
-  <li><code>/tmp</code></li>
-</ul>
-
-<div class="bs-callout bs-callout-info" id="info">
-  <p>In a production system, each node in the three-node cluster has a <code>/tmp</code> directory that is not shared with the other nodes.</p>
-</div>
-
-<h3 id="logs">Logs</h3>
-<p>Logs for the integration, staging, and production environments are located under the <code>/var/log</code> directory. You can access that directory by opening an SSH tunnel to the environment using the <code>magento-cloud environment:ssh -e &lt;environment id&gt;</code> command.</p>
-
-<p>In staging and production environments, the deployment log is located in <code>/var/log/platform/&lt;project ID&gt;</code>.</p>
-
-<p>Magento logs are located in the <code>&lt;magento root dir&gt;/var/log</code> directory.</p>
-
-<h4 id="for-more-information">For more information</h4>
-
-<ul>
-  <li><a href="/guides/v2.1/cloud/access-acct/first-time-setup_template.html">auth.json</a></li>
-  <li><a href="">composer.json</a></li>
-  <li><a href="/guides/v2.1/cloud/project/project-conf-files_magento-app.html">.magento.app.yaml</a></li>
-  <li><a href="/guides/v2.1/cloud/project/project-conf-files_routes.html">routes.yaml</a></li>
-  <li><a href="/guides/v2.1/cloud/project/project-conf-files_services.html">services.yaml</a></li>
+  <li><a href="/guides/v2.1/cloud/env/environment-vars_over.html#cloud-import-key">List the current environment variables</a></li>
+  <li><a href="/guides/v2.1/cloud/env/environment-vars_over.html">Copy the encryption key</a></li>
 </ul>
 
 		</div>
@@ -1879,14 +1857,14 @@
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/access-acct/first-time-setup_dir-structure.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/trouble/trouble_crypt-key-variable.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
   
 
   <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/cloud/access-acct/first-time-setup_dir-structure.html" target="_blank">Give us feedback</a>
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/cloud/trouble/trouble-crypt-key-variable.html" target="_blank">Give us feedback</a>
   </div>
 
 </div>

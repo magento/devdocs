@@ -1243,6 +1243,14 @@
 
 								
 
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/cloud/trouble/trouble-crypt-key-variable.html">Resolve issues with encryption key</a></li>
+
+									
+
+								
+
 								
 								
 
@@ -1929,7 +1937,7 @@ Environment routes:
   <li>
     <p>At the shell command prompt, enter the following command to re-create the database.</p>
 
-    <pre><code>zcat var/db.sql.tgz | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' | mysql -h &lt;db-host&gt; -P &lt;db-port&gt; -p -u &lt;db-user&gt; &lt;db-name&gt; 
+    <pre><code>zcat var/db.sql.tgz | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' | mysql -h &lt;db-host&gt; -P &lt;db-port&gt; -p -u &lt;db-user&gt; &lt;db-name&gt;
 </code></pre>
 
     <p>For example,</p>
@@ -1992,6 +2000,8 @@ Environment routes:
 </div>
 
 <h2 id="cloud-import-key">Copy the encryption key</h2>
+<p>The Magento EE encryption key is required as an environment variable in <code>env.php</code> for Integration, Staging, and Production. If you deployed Magento when first creating a project across all environments, the encryption key should have been saved to <code>env.php</code>. If you have not deployed previously, you should verify and add the encryption key if needed in every environment. Without this key, the store encounters authentication and authorization errors such as payments and shipping.</p>
+
 <p>To copy your Magento EE encryption key:</p>
 
 <ol>
@@ -2003,17 +2013,23 @@ Environment routes:
   </li>
   <li>Open <code>app/etc/env.php</code> in a text editor.</li>
   <li>Replace the existing value of <code>key</code> with your <a href="/guides/v2.2/cloud/access-acct/first-time-setup_import-prepare.html#cloud-import-copykey">Magento EE key</a>.</li>
+</ol>
+
+<figure class="highlight"><pre><code class="language-php" data-lang="php">        <span class="k">return</span> <span class="k">array</span> <span class="p">(</span>
+          <span class="s1">&#39;crypt&#39;</span> <span class="o">=&gt;</span>
+          <span class="k">array</span> <span class="p">(</span>
+            <span class="s1">&#39;key&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&lt;your encryption key&gt;&#39;</span><span class="p">,</span>
+          <span class="p">),</span>
+        <span class="p">);</span>
+        </code></pre></figure>
+
+<ol>
   <li>Save your changes to <code>env.php</code> and exit the text editor.</li>
 </ol>
 
-<p>If <code>env.php</code> does not exist, create it with the following contents:</p>
-
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">return</span> <span class="k">array</span> <span class="p">(</span>
-  <span class="s1">&#39;crypt&#39;</span> <span class="o">=&gt;</span>
-  <span class="k">array</span> <span class="p">(</span>
-    <span class="s1">&#39;key&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&lt;your encryption key&gt;&#39;</span><span class="p">,</span>
-  <span class="p">),</span>
-<span class="p">);</span></code></pre></figure>
+<div class="bs-callout bs-callout-info" id="info">
+  <p>Don’t forget to add this encryption key variable to <code>env.php</code> for all environments: Integration, Staging, and Production.</p>
+</div>
 
 <h2 id="cloud-import-media">Import media</h2>
 <p>To import media files into your Cloud environment:</p>

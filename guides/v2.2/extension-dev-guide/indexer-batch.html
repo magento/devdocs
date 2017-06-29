@@ -1414,10 +1414,12 @@
       <td><code>catalog_product_attribute</code> (decimal values)</td>
       <td><code>catalog_product_index_eav_decimal</code>, <code>catalog_product_index_eav_decimal_replica</code></td>
     </tr>
+    <tr>
+      <td><code>catalogrule_rule</code></td>
+      <td><code>catalogrule_product</code>, <code>catalogrule_product_replica</code>, <code>catalogrule_product_price</code>, <code>catalogrule_product_price_replica</code>, <code>catalogrule_group_website</code>, <code>catalogrule_group_website_replica</code></td>
+    </tr>
   </tbody>
 </table>
-
-<p>The value of <code>table_suffix</code> column of the <code>indexer_state</code> table determines which table is used for read operations (which include partial reindexes, frontend calls, and searching by attributes), and which table is used for full reindexes. Initially, the value of<code>table_suffix</code> is an empty string. As an example, for indexer <code>catalog_product_prices</code>, this means Magento uses <code>catalog_product_index_price</code> for <em>read operations</em> and <code>catalog_product_index_price_replica</code> for <em>full reindexes</em>. Once the reindex is complete, the value of <code>table_suffix</code> is changed to <code>_replica</code> and Magento uses <code>catalog_product_index_price_replica</code> for <em>read operations</em> and <code>catalog_product_index_price</code> for <em>full reindexes</em>. The value of  <code>table_suffix</code> is changed to an empty string, and the cycle repeats.</p>
 
 <p>Make sure that these indexers are in “Update By Schedule” mode. If “Update On Save” mode is selected, some data can be lost if you make changes during full reindex.</p>
 
