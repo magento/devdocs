@@ -1773,7 +1773,15 @@
 </section>
 
 
-			<p>This section outlines the tasks you must perform before you can launch your live Magento store.</p>
+			<p>This section outlines the tasks you must perform before you can launch your live Magento store. When ready, you will enter a ticket with all required information through your Magento Cloud account.
+You need the following information to go live:</p>
+
+<ul>
+  <li>CNAME record information for configuring the DNS</li>
+  <li>SSL certificate if not using the shared-SSL</li>
+</ul>
+
+<p>As part of Magento Enterprise Cloud Edition, you have access to a Domain-Validated SSL certificate that is issued by GlobalSign. This SSL is shared with other ECE customers and included for all accounts. If you want to deploy an Extended Validation SSL for your company, this option can be purchased when you first sign-up with Magento Enterprise Cloud Edition. If you need to purchase this option, contact your account representative.</p>
 
 <p>To go live:</p>
 
@@ -1820,7 +1828,7 @@
 
     <p>We don’t support <code>domain.tld CNAME &lt;environment&gt;-&lt;project&gt;.&lt;region&gt;.magentosite.cloud</code></p>
   </li>
-  <li>Purchase an SSL certificate and provide it to Support when requested.</li>
+  <li>For shared-SSL, Magento adds your domains to the shared certificate. If you purchased deployment of a Domain-Validated SSL certificate as part of your ECE account, provide this SSL certificate to Support through the ticket. Support will provide the SSL to Fastly for deployment.</li>
 </ol>
 
 		</div>
