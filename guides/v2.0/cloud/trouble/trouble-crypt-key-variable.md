@@ -14,11 +14,13 @@ github_link: cloud/trouble/trouble_crypt-key-variable.md
 This topic discusses solutions to typical issues you might experience with Magento EE encryption key in your environments.
 
 ### Ecryption key not in all environments {#cloud-trouble-nocrypt}
-All Cloud environments require the addition of your Magento EE encryption key to the `env.php` variables for Integration, Staging, and Production environments. If you didn't add the encryption key, the store will encounter authentication and authorization type errors for actions like completing a payment on a cart, processing a return, and adding shipping to orders.
+When creating and setting up your ECE project, as a best practice you should install and deploy Magento across all environments starting with Integration to Staging to Production. During this process, the Magento EE encryption key should have been added as an environment variable to `env.php` per environment.
 
-To check the environment variable:
+All Cloud environments require this encryption key in all three environments or the store will encounter authentication and authorization errors for actions like completing a payment on a cart, processing a return, and adding shipping to orders.
 
-1.  SSH to each of the Cloud environments.
+To verify and update the encryption key environment variable:
+
+1.  SSH to each of the Cloud environments: Integration, Staging, and Production.
 
         magento-cloud environment:ssh
 2.  Open `app/etc/env.php` in a text editor.
@@ -32,8 +34,8 @@ To check the environment variable:
           ),
         );
         {% endhighlight %}
-4.  If the value is incorrect, add the key, save your changes to `env.php`, and exit the text editor.
-
+4.  If the value is incorrect, add the key value, and save your changes to `env.php`. If the file does not exist, create and save an `env.php` file using the format above. 
+5.  Exit the text editor and repeat this process for each environment. Test store actions in each environment to verify if the issue persists, such as completing a cart purchase.
 
 #### Related topics
 *	[List the current environment variables]({{page.baseurl}}cloud/env/environment-vars_over.html#cloud-import-key)

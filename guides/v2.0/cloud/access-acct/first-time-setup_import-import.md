@@ -165,7 +165,7 @@ For your system to be fully functional, you must also set unsecure and secure UR
 </div>
 
 ## Copy the encryption key {#cloud-import-key}
-The Magento EE encryption key is required as an environment variable in `env.php` for Integration, Staging, and Production. Without this key, the store encounters errors such as payments and shipping.
+The Magento EE encryption key is required as an environment variable in `env.php` for Integration, Staging, and Production. If you deployed Magento when first creating a project across all environments, the encryption key should have been saved to `env.php`. If you have not deployed previously, you should verify and add the encryption key if needed in every environment. Without this key, the store encounters authentication and authorization errors such as payments and shipping.
 
 To copy your Magento EE encryption key:
 
