@@ -99,13 +99,14 @@ This page contains recent changes that we think you'd like to know about. We exc
 | [B2B modules](http://devdocs.magento.com/guides/v2.2/mrg/b2b/b2b-intro.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Magento_Signifyd module](http://devdocs.magento.com/guides/v2.2/mrg/ee/Signifyd.html){:target="_blank"} | 2.2 |  New | June 23  |
 
-### REST API Reference
+### REST and SOAP References
 
 | Description  | Versions applied to  | New or Updated | Date |
 |--------------|--------------|----------------------|--------|
 | [Swagger documentation](http://devdocs.magento.com/swagger/index_22.html){:target="_blank"} | 2.2 |  Updated | June 23  |
 | [List of REST endpoints by module](http://devdocs.magento.com/guides/v2.2/rest/list.html){:target="_blank"} | 2.2 |  Updated | June 23  |
 | [List of service names per module](http://devdocs.magento.com/guides/v2.2/rest/rest_endpoints.html){:target="_blank"} | 2.2 |  Updated | June 23  |
+| [SOAP Reference](http://devdocs.magento.com/guides/v2.2/soap/bk-soap.html){:target="_blank"} | 2.2 |  Updated | June 23  |
 
 ### PHP Developer Guide
 
@@ -143,7 +144,6 @@ This page contains recent changes that we think you'd like to know about. We exc
 | [Magento application environment variables]({{ page.baseurl }}cloud/env/environment-vars_magento.html){:target="_blank"} | 2.0, 2.1, 2.2 |  Updated | June 27  |
 | [Writing secure code](http://devdocs.magento.com/guides/v2.2/ext-best-practices/security/writing-secure-code.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Serialized to JSON data upgrade](http://devdocs.magento.com/guides/v2.2/ext-best-practices/tutorials/serialized-to-json-data-upgrade.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Token-based authentication](http://devdocs.magento.com/guides/v2.2/get-started/authentication/gs-authentication-token.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Customize the list of shipping methods](http://devdocs.magento.com/guides/v2.2/howdoi/checkout/checkout_shipping_methods.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Clear directories during development](http://devdocs.magento.com/guides/v2.2/howdoi/php/php_clear-dirs.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [JavaScript Logger](http://devdocs.magento.com/guides/v2.2/javascript-dev-guide/javascript/js_logger.html){:target="_blank"} | 2.2 |  New | June 23  |
@@ -152,7 +152,6 @@ This page contains recent changes that we think you'd like to know about. We exc
 | [Typified element](http://devdocs.magento.com/guides/v2.2/mtf/mtf_entities/mtf_typified-element.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Quick start. Prepare Magento application](http://devdocs.magento.com/guides/v2.2/mtf/mtf_quickstart/mtf_quickstart_magento.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Signifyd fraud protection](http://devdocs.magento.com/guides/v2.2/payments-integrations/signifyd/signifyd.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [SOAP Reference](http://devdocs.magento.com/guides/v2.2/soap/bk-soap.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [JavaScript unit testing with Jasmine](http://devdocs.magento.com/guides/v2.2/test/js/jasmine.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Add custom fields that influence other Checkout fields](http://devdocs.magento.com/guides/v2.1/howdoi/checkout/checkout_custom_checkbox.html){:target="_blank"} | 2.0, 2.1  |  New | June 8  |
 
