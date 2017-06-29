@@ -8,9 +8,9 @@
 </div>
 <ol><li>To enable the Apache rewrite module, enter the following command:
 <pre>a2enmod rewrite</pre></li>
-<li>To enable Magento to use the distributed configuration file <code>.htaccess</code>see the guidelines in the <a href="http://httpd.apache.org/docs/current/mod/mod_rewrite.html" target="_blank">Apache 2.4 documentation</a>.<br>
+<li>To enable Magento to use the distributed configuration file <code>.htaccess</code>see the guidelines in the <a href="http://httpd.apache.org/docs/current/mod/mod_rewrite.html" target="_blank">Apache 2.4 documentation</a>.<br/>
 	Note that in Apache 2.4, the server's default site configuration file is <code>/etc/apache2/sites-available/000-default.conf</code><br>
-	For example, you can add the following to the end of <code>000-default.conf</code>:</br>
+	For example, you can add the following to the end of <code>000-default.conf</code>:<br/>
 	<pre>
 &lt;Directory "/var/www/html">
 	AllowOverride  &lt;value from Apache site>
