@@ -11,7 +11,7 @@ github_link: coding-standards/code-standard-javascript.md
 redirect_from: /guides/v1.0/coding-standards/code-standard-javascript.html
 ---
 
-Magento's JavaScript coding standard is based on the [Google JavaScript Style Guide][js-guide].
+Magento's JavaScript coding standard is based on the [Airbnb ES5 JavaScript Style Guide][airbnb].
 Developers writing {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} and {% glossarytooltip 5bfa8a8e-6f3e-4fed-a43e-62339916f02e %}jQuery{% endglossarytooltip %} code for Magento must follow this guide along with the additional, Magento-specific standards listed in this document.
 
 Use [RFC 2119](http://www.ietf.org/rfc/rfc2119.txt) to interpret the "must," "must not," "required," "shall," "shall not," "should," "should not," "recommended," "may," and "optional" keywords.
@@ -20,10 +20,10 @@ Magento uses the [jQuery library][jquery] including standard and custom [jQuery 
 For the jQuery widget coding standard, see [jQuery widget coding standard][jquery-widget-coding-standard].
 
 ## JSHint tool
-Use [JSHint][jshint] to ensure the quality of your JavaScript code.
+Use [ESLint][eslint] to ensure the quality of your JavaScript code.
 
-JSHint is a community-driven tool that detects errors and potential problems in JavaScript code.
-Its flexibility enables you to customize it to for specific coding standards and expected code execution environment.
+ESLint is a community-driven tool that detects errors and potential problems in JavaScript code.
+Its flexibility enables you to customize it to for specific coding standards and expected code execution environment. You can find a the ESLint configuration for Airbnb ES5 [here][es5-airbnb].
 
 ## Additional formatting standards
 
@@ -34,8 +34,8 @@ When you declare an anonymous function as an argument in a function call, indent
 {% highlight javascript %}
 
 myObject.myFunction(param1, function (a,b) {
-    //Function logic
-    return a > b;
+  //Function logic
+  return a > b;
 });
 
 {% endhighlight%}
@@ -48,13 +48,13 @@ This reduces the quantity of the changed lines in a diff and makes code safer in
 
 ### Indentation
 
-Indentation in Magento code uses four spaces.
+Indentation in Magento code uses two spaces.
 
 Tabs are not allowed as indentation.
 
 #### Wrapped lines
 
-Indent wrapped lines four spaces or left-aligned to the expression above.
+Indent wrapped lines two spaces or left-aligned to the expression above.
 
 ### Max line length
 
@@ -76,9 +76,9 @@ Lines must end with a single linefeed(LF) character represented as ordinal 10 or
 
 ### Multi-line string literals
 
-Use string concaternation for multi-line string literals:
+Use string concatenation for multi-line string literals:
 
-{% highlight javascript %} 
+{% highlight javascript %}
 var myString = 'JavaScript was originally developed in Netscape, by Brendan Eich. ' +
     'Battling with Microsoft over the Internet, Netscape considered their client-server solution ' +
     'as a distributed OS, running a portable version of Sun Microsystem&#8217;s Java. ' +
@@ -97,23 +97,32 @@ Never use parentheses for:
 * After keywords such as `return`, `throw`
 * For `case`, `in`, or `new`, and others keywords like them
 
-### Statements and conditions
+### Blocks
 
-Do not put statements on the same line as conditions.
+Use braces with all multiline blocks. May only omit braces if entire block can be written in one line and improves readability.
 
 {% highlight javascript %}
-// Incorrect
-if (true) return;
-if (true) blah();</pre>
+// Wrong
+if (true)
+  blah();
+
+function () { return false; }
 
 // Correct
+if (true) return;
+
 if (true) {
-    return;
+  return;
 }
 
 if (true) {
-    blah();
+  blah();
 }
+
+function () {
+  return false;
+}
+
 {% endhighlight %}
 
 ### Semicolons
@@ -121,15 +130,15 @@ Always put semicolons as statement terminators.
 
 The following code examples show the dangers of missing semicolons:
 
-{% highlight javascript %} 
+{% highlight javascript %}
 // Example 1: JavaScript Error
 MyClass.prototype.myMethod = function() {
-	   return 42;
+   return 42;
 }  // <-- Missing semicolon
 
 (function() {
-	 // Some initialization code wrapped in a function to create a scope for locals.
-})(); 
+  // Some initialization code wrapped in a function to create a scope for locals.
+})();
 {% endhighlight %}
 
 Since there is semicolon to end the first statement, the first function returns 42 and the script interprets 42 as a function.
@@ -138,11 +147,11 @@ When the script tries to call 42 as a function with the second function as a par
 {% highlight javascript %}
 // Example 2: Trying to do one thing on Internet Explorer and another on Firefox.
 var x = {
-    'i': 1,
-	  'j': 2
+  'i': 1,
+  'j': 2
  }  // <-- Missing semicolon
 
-[normalVersion, ffVersion][isIE](); 
+[normalVersion, ffVersion][isIE]();
 {% endhighlight %}
 
 A 'no such property in undefined' error appears during runtime when the script tries to call `x[ffVersion][isIE]()`.
@@ -172,7 +181,7 @@ JavaScript never ends a statement if the next token is an infix or bracket opera
 Use single quotes instead of double quotes for consistency.
 
 This is helpful when creating strings that include HTML:
-{% highlight javascript %} 
+{% highlight javascript %}
 var msg = '&lt;span class="text">Hello World!&lt;/div>';
 {% endhighlight %}
 
@@ -213,13 +222,13 @@ Use a variable initialized with a function expression to define a function withi
 {% highlight javascript %}
 // Wrong
 if (x) {
-    function foo() {}
+  function foo() {}
 }
 
 // Correct
 if (x) {
-    var foo = function() {}
-} 
+  var foo = function() {}
+}
 {% endhighlight %}
 
 ### Exceptions and custom exceptions
@@ -248,7 +257,7 @@ Foo.prototype.bar = function() {
 };
 {% endhighlight %}
 
-Or you can also use this style:
+Do not use:
 
 {% highlight javascript %}
 Foo.prototype = {
@@ -259,6 +268,9 @@ Foo.prototype = {
         // ...
     }
 };
+
+Assignment operations to constructor prototypes creating temporal coupling and sometimes other unwanted side effects.
+
 {% endhighlight %}
 
 ### Closures
@@ -268,7 +280,9 @@ A closure keeps a pointer to its enclosing scope, so attaching a closure to a DO
 {% highlight javascript %}
 // Wrong
 function foo(element, a, b) {
-    element.onclick = function() { /* uses a and b */ };
+  element.onclick = function() {
+    // uses a and b
+  };
 }
 {% endhighlight %}
 
@@ -280,11 +294,13 @@ In these situations, the code can be structured as follows:
 {% highlight javascript %}
 // Correct
 function foo(element, a, b) {
-    element.onclick = bar(a, b);
+  element.onclick = bar(a, b);
 }
 
 function bar(a, b) {
-    return function() { /* uses a and b */ }
+  return function() {
+    // uses a and b
+  }
 }
 {% endhighlight %}
 
@@ -294,7 +310,7 @@ function bar(a, b) {
 
 Single-line array and object initializers are allowed when they fit on a line as follows:
 
-{% highlight javascript %} 
+{% highlight javascript %}
     var arr = [1, 2, 3];  // No space after [ or before ].
     var obj = {a: 1, b: 2, c: 3};  // No space after { or before }.  
 {% endhighlight %}
@@ -336,13 +352,14 @@ Declare a variable with `var` wherever possible to avoid overwriting existing gl
 Using only one var per scope promotes readability.
 
 {% highlight javascript %}
-var foo == 'bar,'
+var foo = 'bar',
     num = 1,
     arr = [1, 2, 3];
 {% endhighlight %}
 
-[js-guide]: https://google.github.io/styleguide/jsguide.html
 [jquery]: https://jquery.com/
 [jquery-widgets]: http://api.jqueryui.com/category/widgets
 [jquery-widget-coding-standard]: {{page.baseurl}}coding-standards/code-standard-jquery-widgets.html
-[jshint]: http://www.JSHint.com
+[eslint]: http://eslint.org/
+[airbnb]: https://github.com/airbnb/javascript/tree/es5-deprecated/es5
+[es5-airbnb]: https://github.com/1hella/eslint-config-airbnb-es5

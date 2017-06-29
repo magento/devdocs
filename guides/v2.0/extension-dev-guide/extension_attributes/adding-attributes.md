@@ -72,7 +72,7 @@ We can add scalar and non-scalar extension attributes.
             $ourCustomData = $this->customDataRepository->get($entity->getId());
 
             $extensionAttributes = $entity->getExtensionAttributes(); /** get current extension attributes from entity **/
-            $extensionAttributes->setOurCustomData($ourCusomData);
+            $extensionAttributes->setOurCustomData($ourCustomData);
             $entity->setExtensionAttributes($extensionAttributes);
 
             return $entity;
@@ -97,7 +97,7 @@ Likewise afterSave plugin should take data from entity and do some manipulations
             ) {
                 $extensionAttributes = $entity->getExtensionAttributes(); /** get current extension attributes from entity **/
                 $ourCustomData = $extensionAttributes->getOurCustomData();
-                $this-customDataRepository->save($ourCustomData);
+                $this->customDataRepository->save($ourCustomData);
 
                 return $entity;
             }

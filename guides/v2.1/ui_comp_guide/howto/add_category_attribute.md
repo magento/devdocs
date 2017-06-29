@@ -1,7 +1,7 @@
 ---
 layout: default
 group: UI_Components_guide
-subgroup: howto
+subgroup: how tos
 title: How to add a Category Attribute
 menu_title: Creating and displaying a category attribute with UI Components
 menu_order: 3

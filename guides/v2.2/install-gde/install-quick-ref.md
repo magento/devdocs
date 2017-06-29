@@ -122,7 +122,7 @@ To run the Web Setup Wizard:
 
 1.	Enter the following URL in your browser's address or location field:
 
-		http://192.0.2.5/magento2
+		http://192.0.2.5/magento2/setup
 2.	At the welcome page, click **Agree and Setup Magento**.
 
 	![You must accept the license agreement to install the Magento software]({{ site.baseurl }}common/images/install_qr_wizard-welcome.png){:width="200px"}

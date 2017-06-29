@@ -141,4 +141,4 @@ var config = {
 </pre>
 
 ## Recommended reading ##
-<a href="{{page.baseurl}}frontend-dev-guide/javascript/custom_js.html" target="_blank">Use custom JavaScript</a>
+<a href="{{page.baseurl}}javascript-dev-guide/javascript/custom_js.html" target="_blank">Use custom JavaScript</a>

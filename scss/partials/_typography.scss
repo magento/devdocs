@@ -119,10 +119,16 @@ a:active {
     filter: hue-rotate(160deg);
   }
 
+  //Don't put icon after contributor avatars
+  &.avatar {
+    &:after {  
+        display: none;
+    }
+  }
+
 
 
 }
-
 
 .main-container h2:first-child {
   margin-top: 0;
@@ -308,4 +314,24 @@ p.q {
   h2 {
     font-size: 24px;
   }
+}
+
+/* Status Colors - Used in Component Status Page */
+
+.status{
+    padding: 2px;
+
+    &.red {
+        color:#ffffff;
+        background-color: #d04437;
+    }
+
+    &.yellow {
+        background-color: #f6c342;
+    }
+
+    &.green {
+        background-color: #14892c;
+        color: #ffffff;
+    }
 }

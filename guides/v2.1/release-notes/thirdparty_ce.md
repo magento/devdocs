@@ -1,10 +1,10 @@
 ---
 layout: default
 group: release-notes
-subgroup: 99_third
+subgroup: Third-party licenses
 menu_title: Magento CE third-party licenses
 menu_order: 1
-version: 2.1
+version: 2.2
 github_link: release-notes/thirdparty_ce.md
 ---
 

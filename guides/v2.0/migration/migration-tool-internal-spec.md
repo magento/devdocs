@@ -360,7 +360,7 @@ Options:
 
 * *move* - sets rule to move specified field from source document to destination document. NOTE: destination document name should be the same with the source document name. If source and destination document names are different - you need to use rename option for document that contains moved field
 
-* *transform* - is a option that allows user to migrate fields according to behavior described in handlers
+* *transform* - is an option that allows user to migrate fields according to behavior described in handlers
 
 * *handler* - describes transformation behavior for fields. To call the handler you need to specify a handler class name in a <handler> tag. Use <param> tag with the parameter name and value data to pass it to handler
 
