@@ -174,18 +174,17 @@ To copy your Magento EE encryption key:
         magento-cloud environment:ssh
 2.  Open `app/etc/env.php` in a text editor.
 3.  Replace the existing value of `key` with your [Magento EE key]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-prepare.html#cloud-import-copykey).
+
+        {% highlight php startinline=true %}
+        return array (
+          'crypt' =>
+          array (
+            'key' => '<your encryption key>',
+          ),
+        );
+        {% endhighlight %}
 4.  Save your changes to `env.php` and exit the text editor.
 
-If `env.php` does not exist, create it with the following contents:
-
-{% highlight php startinline=true %}
-return array (
-  'crypt' =>
-  array (
-    'key' => '<your encryption key>',
-  ),
-);
-{% endhighlight %}
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 Don't forget to add this encryption key variable to `env.php` for all environments: Integration, Staging, and Production.

@@ -34,7 +34,7 @@ To verify and update the encryption key environment variable:
           ),
         );
         {% endhighlight %}
-4.  If the value is incorrect, add the key value, and save your changes to `env.php`. If the file does not exist, create and save an `env.php` file using the format above. 
+4.  If the value is incorrect, add the key value, and save your changes to `env.php`. 
 5.  Exit the text editor and repeat this process for each environment. Test store actions in each environment to verify if the issue persists, such as completing a cart purchase.
 
 #### Related topics
