@@ -15,137 +15,23 @@ This page contains recent changes that we think you'd like to know about. We exc
 
 ## June 2017
 
+### Release Notes
+
 | Description  | Versions applied to  | New or Updated | Date |
 |--------------|--------------|----------------------|--------|
-| [Go live]({{ page.baseurl }}cloud/live/live.html){:target="_blank"} | 2.0, 2.1, 2.2 |  Update | June 29  |
-| [Magento application environment variables]({{ page.baseurl }}cloud/env/environment-vars_magento.html){:target="_blank"} | 2.0, 2.1, 2.2 |  Update | June 27  |
-| [B2B Developer Guide](http://devdocs.magento.com/guides/v2.2/b2b/bk-b2b.html){:target="_blank"} | 2.2  |  New | June 23  |
-| [Integrate with the CompanyCredit module](http://devdocs.magento.com/guides/v2.2/b2b/company-credit.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Manage company objects](http://devdocs.magento.com/guides/v2.2/b2b/company-object.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Company](http://devdocs.magento.com/guides/v2.2/b2b/company-parent.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Manage company structures](http://devdocs.magento.com/guides/v2.2/b2b/company-structures.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Manage company users](http://devdocs.magento.com/guides/v2.2/b2b/company-users.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Integrate with the Company module](http://devdocs.magento.com/guides/v2.2/b2b/company.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Manage company credit](http://devdocs.magento.com/guides/v2.2/b2b/credit-manage.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Company credit](http://devdocs.magento.com/guides/v2.2/b2b/credit-parent.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Develop B2B extensions](http://devdocs.magento.com/guides/v2.2/b2b/extensions.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Integrate with B2B using REST](http://devdocs.magento.com/guides/v2.2/b2b/integrations.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Negotiable quote checkout](http://devdocs.magento.com/guides/v2.2/b2b/negotiable-checkout.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Manage negotiable quotes](http://devdocs.magento.com/guides/v2.2/b2b/negotiable-manage.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Integrate with the NegotiableQuote module](http://devdocs.magento.com/guides/v2.2/b2b/negotiable-quote.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Update a negotiable quote](http://devdocs.magento.com/guides/v2.2/b2b/negotiable-update.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Negotiable Quotes](http://devdocs.magento.com/guides/v2.2/b2b/nqparent.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Manage company roles](http://devdocs.magento.com/guides/v2.2/b2b/roles.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Assign companies to a shared catalog](http://devdocs.magento.com/guides/v2.2/b2b/shared-cat-company.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Manage shared catalogs](http://devdocs.magento.com/guides/v2.2/b2b/shared-cat-manage.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Assign categories and products to a shared catalog](http://devdocs.magento.com/guides/v2.2/b2b/shared-cat-product-assign.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Integrate with the SharedCatalog module](http://devdocs.magento.com/guides/v2.2/b2b/shared-catalog.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Shared Catalog](http://devdocs.magento.com/guides/v2.2/b2b/shared-parent.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Upgrade the Magento application and modules](http://devdocs.magento.com/guides/v2.2/comp-mgr/bk-compman-upgrade-guide.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Command-line upgrade](http://devdocs.magento.com/guides/v2.2/comp-mgr/cli/cli-upgrade.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Run the Extension Manager](http://devdocs.magento.com/guides/v2.2/comp-mgr/extens-man/extensman-checklist.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Start the Extension Manager](http://devdocs.magento.com/guides/v2.2/comp-mgr/extens-man/extensman-main-pg.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Step 1: Readiness check](http://devdocs.magento.com/guides/v2.2/comp-mgr/extens-man/extensman-readiness.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Readiness check success](http://devdocs.magento.com/guides/v2.2/comp-mgr/extens-man/extensman-readiness-success.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Readiness check failure](http://devdocs.magento.com/guides/v2.2/comp-mgr/extens-man/extensman-readiness-fail.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Readiness check with multiple extension updates](http://devdocs.magento.com/guides/v2.2/comp-mgr/extens-man/extensman-readiness-multi.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Step 2. Back up the file system and database](http://devdocs.magento.com/guides/v2.2/comp-mgr/extens-man/extensman-backup.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Step 3](http://devdocs.magento.com/guides/v2.2/comp-mgr/extens-man/step3-parent.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Step 3. Install](http://devdocs.magento.com/guides/v2.2/comp-mgr/extens-man/extensman-new-purchase.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Step 3. Extension Update](http://devdocs.magento.com/guides/v2.2/comp-mgr/extens-man/extensman-update.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Step 4. Uninstall](http://devdocs.magento.com/guides/v2.2/comp-mgr/extens-man/extensman-uninst-final.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Step 3. Data Option](http://devdocs.magento.com/guides/v2.2/comp-mgr/extens-man/extensman-uninst-data.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Step 2. Back up the file system and database](http://devdocs.magento.com/guides/v2.2/comp-mgr/module-man/compman-backup.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Run the Module Manager](http://devdocs.magento.com/guides/v2.2/comp-mgr/module-man/compman-checklist.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Step 1. Readiness check](http://devdocs.magento.com/guides/v2.2/comp-mgr/module-man/compman-readiness.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Start the Module Manager](http://devdocs.magento.com/guides/v2.2/comp-mgr/module-man/compman-start.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Step 3. Enable/Disable](http://devdocs.magento.com/guides/v2.2/comp-mgr/module-man/modman-enable-disable.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Update and upgrade checklist](http://devdocs.magento.com/guides/v2.2/comp-mgr/prereq/prereq_compman-checklist.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Prerequisites](http://devdocs.magento.com/guides/v2.2/comp-mgr/prereq/prereq_compman.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Set up cron for update and upgrade](http://devdocs.magento.com/guides/v2.2/comp-mgr/prereq/prereq_cron.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Run System Upgrade](http://devdocs.magento.com/guides/v2.2/comp-mgr/upgrader/upgrade-checklist.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Step 4. Upgrade](http://devdocs.magento.com/guides/v2.2/comp-mgr/upgrader/upgrade.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Configuration Guide](http://devdocs.magento.com/guides/v2.2/config-guide/bk-config-guide.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [About Magento modes](http://devdocs.magento.com/guides/v2.2/config-guide/bootstrap/magento-modes.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Database caching](http://devdocs.magento.com/guides/v2.2/config-guide/cache/caching-database.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Static Content Signing](http://devdocs.magento.com/guides/v2.2/config-guide/cache/static-content-signing.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Manage the cache](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-cache.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Code compiler](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-compiler.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Export the configuration](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-export.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Import data from configuration files](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-import.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Configuration management](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-parent.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Set configuration values](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-set.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Configure and run cron](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-cron.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Set the Magento mode](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-mode.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Generate data for performance testing](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-perf-data.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Static files deployment strategies](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-deploy-strategies.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Static view files deployment](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view-parent.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Deploy static view files](http://devdocs.magento.com/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento's deployment configuration](http://devdocs.magento.com/guides/v2.2/config-guide/config/config-php.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Pipeline Deployment](http://devdocs.magento.com/guides/v2.2/config-guide/deployment/index.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Build System Setup](http://devdocs.magento.com/guides/v2.2/config-guide/deployment/pipeline/build-system.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Development System Setup](http://devdocs.magento.com/guides/v2.2/config-guide/deployment/pipeline/development-system.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Using CLI commands](http://devdocs.magento.com/guides/v2.2/config-guide/deployment/pipeline/example/cli.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Using environment variables](http://devdocs.magento.com/guides/v2.2/config-guide/deployment/pipeline/example/environment-variables.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Examples](http://devdocs.magento.com/guides/v2.2/config-guide/deployment/pipeline/example/index.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Using rsync](http://devdocs.magento.com/guides/v2.2/config-guide/deployment/pipeline/example/rsync.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Shared configuration](http://devdocs.magento.com/guides/v2.2/config-guide/deployment/pipeline/example/shared-configuration.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Overview](http://devdocs.magento.com/guides/v2.2/config-guide/deployment/pipeline/index.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Production System Setup](http://devdocs.magento.com/guides/v2.2/config-guide/deployment/pipeline/production-system.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Technical Details](http://devdocs.magento.com/guides/v2.2/config-guide/deployment/pipeline/technical-details.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Single machine deployment](http://devdocs.magento.com/guides/v2.2/config-guide/deployment/single-machine.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Configure 2.2 message queues](http://devdocs.magento.com/guides/v2.2/config-guide/mq/config-mq.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Manage message queues](http://devdocs.magento.com/guides/v2.2/config-guide/mq/manage-mysql.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Migrate message queue configuration](http://devdocs.magento.com/guides/v2.2/config-guide/mq/queue-migration.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento Enterprise B2B Extension configuration paths reference](http://devdocs.magento.com/guides/v2.2/config-guide/prod/config-reference-b2b.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [config.php reference](http://devdocs.magento.com/guides/v2.2/config-guide/prod/config-reference-configphp.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [env.php reference](http://devdocs.magento.com/guides/v2.2/config-guide/prod/config-reference-envphp.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [.gitignore reference](http://devdocs.magento.com/guides/v2.2/config-guide/prod/config-reference-gitignore.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Other configuration paths reference](http://devdocs.magento.com/guides/v2.2/config-guide/prod/config-reference-most.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Configuration reference](http://devdocs.magento.com/guides/v2.2/config-guide/prod/config-reference-parent.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Payment configuration paths reference](http://devdocs.magento.com/guides/v2.2/config-guide/prod/config-reference-payment.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Sensitive and system-specific](http://devdocs.magento.com/guides/v2.2/config-guide/prod/config-reference-sens.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Use environment variables to override configuration settings](http://devdocs.magento.com/guides/v2.2/config-guide/prod/config-reference-var-name.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [File systems access permissions](http://devdocs.magento.com/guides/v2.2/config-guide/prod/prod_file-sys-perms.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento Optimization Guide](http://devdocs.magento.com/guides/v2.2/config-guide/prod/prod_perf-optimize.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Advanced Varnish configuration](http://devdocs.magento.com/guides/v2.2/config-guide/varnish/config-varnish-advanced.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Advanced Varnish configuration](http://devdocs.magento.com/guides/v2.2/link.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Configure Varnish and your web server](http://devdocs.magento.com/guides/v2.2/config-guide/varnish/config-varnish-configure.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Install Varnish](http://devdocs.magento.com/guides/v2.2/config-guide/varnish/config-varnish-install.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Configure Magento to use Varnish](http://devdocs.magento.com/guides/v2.2/config-guide/varnish/config-varnish-magento.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Configure and use Varnish](http://devdocs.magento.com/guides/v2.2/config-guide/varnish/config-varnish.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Troubleshooting 503 errors](http://devdocs.magento.com/guides/v2.2/config-guide/varnish/tshoot-varnish-503.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [How Magento cache works with multiple Varnish instances](http://devdocs.magento.com/guides/v2.2/config-guide/varnish/use-multiple-varnish-cache.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [How Magento cache clearing works with Varnish](http://devdocs.magento.com/guides/v2.2/config-guide/varnish/use-varnish-cache.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Writing secure code](http://devdocs.magento.com/guides/v2.2/ext-best-practices/security/writing-secure-code.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Serialized to JSON data upgrade](http://devdocs.magento.com/guides/v2.2/ext-best-practices/tutorials/serialized-to-json-data-upgrade.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [The di.xml file](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/build/di-xml-file.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Bulk Operations](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/bulk-operations.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Code generation](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/code-generation.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Configuration importers](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/configuration/importers.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Sensitive and environment settings](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/configuration/sensitive-and-environment-settings.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Serialize Library](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/framework/serializer.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Example bulk operations implementation](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/implement-bulk.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Indexer optimization](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/indexer-batch.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Plugins (Interceptors)](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/plugins.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Searching with Repositories](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/searching-with-repositories.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [XSS prevention strategies](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/xss-protection.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [How CSS and LESS files are preprocessed and how to debug them](http://devdocs.magento.com/guides/v2.2/frontend-dev-guide/css-topics/css-preprocess.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Compile LESS using Grunt](http://devdocs.magento.com/guides/v2.2/frontend-dev-guide/css-topics/css_debug.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Layout overview](http://devdocs.magento.com/guides/v2.2/frontend-dev-guide/layouts/layout-overview.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Common layout customization tasks](http://devdocs.magento.com/guides/v2.2/frontend-dev-guide/layouts/xml-manage.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Templates XSS security](http://devdocs.magento.com/guides/v2.2/frontend-dev-guide/templates/template-security.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Uninstall a storefront theme](http://devdocs.magento.com/guides/v2.2/frontend-dev-guide/themes/theme-uninstall.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Additional tools for frontend developers](http://devdocs.magento.com/guides/v2.2/frontend-dev-guide/tools/tools_overview.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Using Grunt for Magento tasks](http://devdocs.magento.com/guides/v2.2/frontend-dev-guide/tools/using_grunt.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Token-based authentication](http://devdocs.magento.com/guides/v2.2/get-started/authentication/gs-authentication-token.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Customize the list of shipping methods](http://devdocs.magento.com/guides/v2.2/howdoi/checkout/checkout_shipping_methods.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Clear directories during development](http://devdocs.magento.com/guides/v2.2/howdoi/php/php_clear-dirs.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [2.2.x Release Information](http://devdocs.magento.com/guides/v2.2/release-notes/bk-release-notes.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Magento CE 2.2 Release Candidate Release Notes](http://devdocs.magento.com/guides/v2.2/release-notes/release-notes-2-2-prerelease1-CE.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Magento EE 2.2 Release Candidate Release Notes](http://devdocs.magento.com/guides/v2.2/release-notes/release-notes-2-2-prerelease1-EE.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Magento 2.2 backward incompatible changes](http://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes.html){:target="_blank"} | 2.2 |  New | June 23  |
+
+### Installation Guide
+
+| Description  | Versions applied to  | New or Updated | Date |
+|--------------|--------------|----------------------|--------|
 | [Change to a released version](http://devdocs.magento.com/guides/v2.2/install-gde/install/cli/dev_downgrade.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Check the Magento database status](http://devdocs.magento.com/guides/v2.2/install-gde/install/cli/install-cli-subcommands-db-status.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Enable or disable maintenance mode](http://devdocs.magento.com/guides/v2.2/install-gde/install/cli/install-cli-subcommands-maint.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Overview of ownership and permissions](http://devdocs.magento.com/guides/v2.2/install-gde/install/file-sys-perms-over.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Configure the Magento application](http://devdocs.magento.com/guides/v2.2/install-gde/install/hosted/post-install-config.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Configure the Magento application](http://devdocs.magento.com/guides/v2.2/install-gde/install/post-install-config.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Update installation dependencies](http://devdocs.magento.com/guides/v2.2/install-gde/install/prepare-install.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Installation quick reference (tutorial)](http://devdocs.magento.com/guides/v2.2/install-gde/install-quick-ref.html){:target="_blank"} | 2.2 |  New | June 23  |
@@ -160,7 +46,65 @@ This page contains recent changes that we think you'd like to know about. We exc
 | [Exceptions during installation](http://devdocs.magento.com/guides/v2.2/install-gde/trouble/tshoot_exceptions.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Errors installing optional sample data](http://devdocs.magento.com/guides/v2.2/install-gde/trouble/tshoot_sample-data.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Cannot write to the generated/code directory](http://devdocs.magento.com/guides/v2.2/install-gde/trouble/tshoot_var-gen-perms.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [JavaScript Logger](http://devdocs.magento.com/guides/v2.2/javascript-dev-guide/javascript/js_logger.html){:target="_blank"} | 2.2 |  New | June 23  |
+
+### Configuration Guide
+
+| Description  | Versions applied to  | New or Updated | Date |
+|--------------|--------------|----------------------|--------|
+| [Configuration Guide](http://devdocs.magento.com/guides/v2.2/config-guide/bk-config-guide.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Database caching](http://devdocs.magento.com/guides/v2.2/config-guide/cache/caching-database.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Static Content Signing](http://devdocs.magento.com/guides/v2.2/config-guide/cache/static-content-signing.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Magento's deployment configuration](hhttp://devdocs.magento.com/guides/v2.2/config-guide/config/config-php.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Pipeline Deployment](http://devdocs.magento.com/guides/v2.2/config-guide/deployment/index.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Single machine deployment](http://devdocs.magento.com/guides/v2.2/config-guide/deployment/single-machine.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Configure 2.2 message queues](http://devdocs.magento.com/guides/v2.2/config-guide/mq/config-mq.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Magento Optimization Guide](http://devdocs.magento.com/guides/v2.2/config-guide/prod/prod_perf-optimize.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Advanced Varnish configuration](http://devdocs.magento.com/guides/v2.2/config-guide/varnish/config-varnish-advanced.html){:target="_blank"} | 2.2 |  New | June 23  |
+
+### B2B Developer Guide
+
+| Description  | Versions applied to  | New or Updated | Date |
+|--------------|--------------|----------------------|--------|
+| [B2B Developer Guide](http://devdocs.magento.com/guides/v2.2/b2b/bk-b2b.html){:target="_blank"} | 2.2  |  New | June 23  |
+| [Integrate with B2B using REST](http://devdocs.magento.com/guides/v2.2/b2b/integrations.html){:target="_blank"} | 2.2  |  New | June 23  |
+
+### Component Manager and System Upgrade Guide
+
+| Description  | Versions applied to  | New or Updated | Date |
+|--------------|--------------|----------------------|--------|
+| [Upgrade the Magento application and modules](http://devdocs.magento.com/guides/v2.2/comp-mgr/bk-compman-upgrade-guide.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Command-line upgrade](http://devdocs.magento.com/guides/v2.2/comp-mgr/cli/cli-upgrade.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Run the Extension Manager](http://devdocs.magento.com/guides/v2.2/comp-mgr/extens-man/extensman-checklist.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Run the Module Manager](http://devdocs.magento.com/guides/v2.2/comp-mgr/module-man/compman-checklist.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Prerequisites](http://devdocs.magento.com/guides/v2.2/comp-mgr/prereq/prereq_compman.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Run System Upgrade](http://devdocs.magento.com/guides/v2.2/comp-mgr/upgrader/upgrade-checklist.html){:target="_blank"} | 2.2 |  New | June 23  |
+
+### Frontend Developer Guide
+
+| Description  | Versions applied to  | New or Updated | Date |
+|--------------|--------------|----------------------|--------|
+| [How CSS and LESS files are preprocessed and how to debug them](http://devdocs.magento.com/guides/v2.2/frontend-dev-guide/css-topics/css-preprocess.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Compile LESS using Grunt](http://devdocs.magento.com/guides/v2.2/frontend-dev-guide/css-topics/css_debug.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Layout overview](http://devdocs.magento.com/guides/v2.2/frontend-dev-guide/layouts/layout-overview.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Common layout customization tasks](http://devdocs.magento.com/guides/v2.2/frontend-dev-guide/layouts/xml-manage.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Templates XSS security](http://devdocs.magento.com/guides/v2.2/frontend-dev-guide/templates/template-security.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Uninstall a storefront theme](http://devdocs.magento.com/guides/v2.2/frontend-dev-guide/themes/theme-uninstall.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Additional tools for frontend developers](http://devdocs.magento.com/guides/v2.2/frontend-dev-guide/tools/tools_overview.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Using Grunt for Magento tasks](http://devdocs.magento.com/guides/v2.2/frontend-dev-guide/tools/using_grunt.html){:target="_blank"} | 2.2 |  New | June 23  |
+
+### Module Reference Guide
+
+| Description  | Versions applied to  | New or Updated | Date |
+|--------------|--------------|----------------------|--------|
+| [Magento_Analytics module](http://devdocs.magento.com/guides/v2.2/mrg/ce/Analytics/description.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Magento_CatalogAnalytics module](http://devdocs.magento.com/guides/v2.2/mrg/ce/CatalogAnalytics/description.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Magento_CustomerAnalytics module](http://devdocs.magento.com/guides/v2.2/mrg/ce/CustomerAnalytics/description.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Magento_GoogleAnalytics module](http://devdocs.magento.com/guides/v2.2/mrg/ce/GoogleAnalytics/description.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Magento_QuoteAnalytics module](http://devdocs.magento.com/guides/v2.2/mrg/ce/QuoteAnalytics/description.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Magento_ReviewAnalytics module](http://devdocs.magento.com/guides/v2.2/mrg/ce/ReviewAnalytics/description.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Magento_SalesAnalytics module](http://devdocs.magento.com/guides/v2.2/mrg/ce/SalesAnalytics/description.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Magento_WishlistAnalytics module](http://devdocs.magento.com/guides/v2.2/mrg/ce/WishlistAnalytics/description.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Magento_Signifyd module](http://devdocs.magento.com/guides/v2.2/mrg/ee/Signifyd.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [B2B modules](http://devdocs.magento.com/guides/v2.2/mrg/b2b/b2b-intro.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Magento_b2b module](http://devdocs.magento.com/guides/v2.2/mrg/b2b/B2b.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Magento_BundleNegotiableQuote module](http://devdocs.magento.com/guides/v2.2/mrg/b2b/BundleNegotiableQuote.html){:target="_blank"} | 2.2 |  New | June 23  |
@@ -182,121 +126,59 @@ This page contains recent changes that we think you'd like to know about. We exc
 | [Magento_QuickOrder module](http://devdocs.magento.com/guides/v2.2/mrg/b2b/QuickOrder.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Magento_RequisitionList module](http://devdocs.magento.com/guides/v2.2/mrg/b2b/RequisitionList.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Magento_SharedCatalog module](http://devdocs.magento.com/guides/v2.2/mrg/b2b/SharedCatalog.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento_Analytics module](http://devdocs.magento.com/guides/v2.2/mrg/ce/Analytics/description.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento_CatalogAnalytics module](http://devdocs.magento.com/guides/v2.2/mrg/ce/CatalogAnalytics/description.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Community Edition modules](http://devdocs.magento.com/guides/v2.2/mrg/ce/ce-intro.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento_CustomerAnalytics module](http://devdocs.magento.com/guides/v2.2/mrg/ce/CustomerAnalytics/description.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento_GoogleAnalytics module](http://devdocs.magento.com/guides/v2.2/mrg/ce/GoogleAnalytics/description.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento_QuoteAnalytics module](http://devdocs.magento.com/guides/v2.2/mrg/ce/QuoteAnalytics/description.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento_ReviewAnalytics module](http://devdocs.magento.com/guides/v2.2/mrg/ce/ReviewAnalytics/description.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento_Sales module](http://devdocs.magento.com/guides/v2.2/mrg/ce/Sales/description.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Sales](http://devdocs.magento.com/guides/v2.2/mrg/ce/Sales/Sales.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento_Sales module API](http://devdocs.magento.com/guides/v2.2/mrg/ce/Sales/services.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento_SalesAnalytics module](http://devdocs.magento.com/guides/v2.2/mrg/ce/SalesAnalytics/description.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento_WishlistAnalytics module](http://devdocs.magento.com/guides/v2.2/mrg/ce/WishlistAnalytics/description.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento_BundleStaging module](http://devdocs.magento.com/guides/v2.2/mrg/ee/BundleStaging.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento_CatalogImportExportStaging module](http://devdocs.magento.com/guides/v2.2/mrg/ee/CatalogImportExportStaging.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento_CatalogInventoryStaging module](http://devdocs.magento.com/guides/v2.2/mrg/ee/CatalogInventoryStaging.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento_CatalogRuleStaging module](http://devdocs.magento.com/guides/v2.2/mrg/ee/CatalogRuleStaging.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento_CatalogStaging module](http://devdocs.magento.com/guides/v2.2/mrg/ee/CatalogStaging.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento_CatalogUrlRewriteStaging module](http://devdocs.magento.com/guides/v2.2/mrg/ee/CatalogUrlRewriteStaging.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento_CheckoutStaging module](http://devdocs.magento.com/guides/v2.2/mrg/ee/CheckoutStaging.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento_CmsStaging module](http://devdocs.magento.com/guides/v2.2/mrg/ee/CmsStaging.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento_ConfigurableProductStaging module](http://devdocs.magento.com/guides/v2.2/mrg/ee/ConfigurableProductStaging.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento_DownloadableStaging module](http://devdocs.magento.com/guides/v2.2/mrg/ee/DownloadableStaging.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Enterprise Edition modules](http://devdocs.magento.com/guides/v2.2/mrg/ee/ee-intro.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento_GiftCardStaging module](http://devdocs.magento.com/guides/v2.2/mrg/ee/GiftCardStaging.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento_GiftMessageStaging module](http://devdocs.magento.com/guides/v2.2/mrg/ee/GiftMessageStaging.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento_GiftWrappingStaging module](http://devdocs.magento.com/guides/v2.2/mrg/ee/GiftWrappingStaging.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento_GoogleOptimizerStaging module](http://devdocs.magento.com/guides/v2.2/mrg/ee/GoogleOptimizerStaging.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento_GroupedProductStaging module](http://devdocs.magento.com/guides/v2.2/mrg/ee/GroupedProductStaging.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento_LayeredNavigationStaging module](http://devdocs.magento.com/guides/v2.2/mrg/ee/LayeredNavigationStaging.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento_MsrpStaging module](http://devdocs.magento.com/guides/v2.2/mrg/ee/MsrpStaging.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento_PaymentStaging module](http://devdocs.magento.com/guides/v2.2/mrg/ee/PaymentStaging.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento_ProductVideoStaging module](http://devdocs.magento.com/guides/v2.2/mrg/ee/ProductVideoStaging.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento_ReviewStaging module](http://devdocs.magento.com/guides/v2.2/mrg/ee/ReviewStaging.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento_RmaStaging module](http://devdocs.magento.com/guides/v2.2/mrg/ee/RmaStaging.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento_SalesRuleStaging module](http://devdocs.magento.com/guides/v2.2/mrg/ee/SalesRuleStaging.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento_SearchStaging module](http://devdocs.magento.com/guides/v2.2/mrg/ee/SearchStaging.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento_Signifyd module](http://devdocs.magento.com/guides/v2.2/mrg/ee/Signifyd.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento_Staging module](http://devdocs.magento.com/guides/v2.2/mrg/ee/Staging.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento_WeeeStaging module](http://devdocs.magento.com/guides/v2.2/mrg/ee/WeeeStaging.html){:target="_blank"} | 2.2 |  New | June 23  |
+
+### REST API Reference
+
+| Description  | Versions applied to  | New or Updated | Date |
+|--------------|--------------|----------------------|--------|
+| [REST APIs](http://devdocs.magento.com/swagger/index_22.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [List of REST endpoints by module](http://devdocs.magento.com/guides/v2.2/rest/list.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [List of service names per module](http://devdocs.magento.com/guides/v2.2/rest/rest_endpoints.html){:target="_blank"} | 2.2 |  New | June 23  |
+
+### PHP Developer Guide
+
+| Description  | Versions applied to  | New or Updated | Date |
+|--------------|--------------|----------------------|--------|
+| [The di.xml file](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/build/di-xml-file.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Bulk Operations](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/bulk-operations.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Code generation](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/code-generation.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Configuration importers](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/configuration/importers.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Sensitive and environment settings](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/configuration/sensitive-and-environment-settings.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Serialize Library](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/framework/serializer.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Example bulk operations implementation](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/implement-bulk.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Indexer optimization](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/indexer-batch.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Plugins (Interceptors)](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/plugins.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Searching with Repositories](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/searching-with-repositories.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [XSS prevention strategies](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/xss-protection.html){:target="_blank"} | 2.2 |  New | June 23  |
+
+### UI Components Guide
+
+| Description  | Versions applied to  | New or Updated | Date |
+|--------------|--------------|----------------------|--------|
+| [Using the new structure in UI components XML configuration](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/best-practices/semantic_config.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Magento custom Knockout.js bindings](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/concepts/knockout-bindings.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [UI components XML configuration structure](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/concepts/ui_comp_xmlconfig_structure.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Declare a custom UI component](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/howto/new_component_declaration.html){:target="_blank"} | 2.2 |  New | June 23  |
+
+### Additional updates
+
+| Description  | Versions applied to  | New or Updated | Date |
+|--------------|--------------|----------------------|--------|
+| [Go live]({{ page.baseurl }}cloud/live/live.html){:target="_blank"} | 2.0, 2.1, 2.2 |  Update | June 29  |
+| [Magento application environment variables]({{ page.baseurl }}cloud/env/environment-vars_magento.html){:target="_blank"} | 2.0, 2.1, 2.2 |  Update | June 27  |
+| [Writing secure code](http://devdocs.magento.com/guides/v2.2/ext-best-practices/security/writing-secure-code.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Serialized to JSON data upgrade](http://devdocs.magento.com/guides/v2.2/ext-best-practices/tutorials/serialized-to-json-data-upgrade.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Token-based authentication](http://devdocs.magento.com/guides/v2.2/get-started/authentication/gs-authentication-token.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Customize the list of shipping methods](http://devdocs.magento.com/guides/v2.2/howdoi/checkout/checkout_shipping_methods.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Clear directories during development](http://devdocs.magento.com/guides/v2.2/howdoi/php/php_clear-dirs.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [JavaScript Logger](http://devdocs.magento.com/guides/v2.2/javascript-dev-guide/javascript/js_logger.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Functional Testing Framework Configuration](http://devdocs.magento.com/guides/v2.2/mtf/configuration.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Test suite in the Functional Testing Framework](http://devdocs.magento.com/guides/v2.2/mtf/features/test_suite.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Typified element](http://devdocs.magento.com/guides/v2.2/mtf/mtf_entities/mtf_typified-element.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Quick start. Prepare Magento application](http://devdocs.magento.com/guides/v2.2/mtf/mtf_quickstart/mtf_quickstart_magento.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Signifyd fraud protection](http://devdocs.magento.com/guides/v2.2/payments-integrations/signifyd/signifyd.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento 2.2 backward incompatible changes](http://devdocs.magento.com/guides/v2.2/release-notes/backward-incompatible-changes.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [2.2.x Release Information](http://devdocs.magento.com/guides/v2.2/release-notes/bk-release-notes.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento CE Backward Incompatible Changes](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ce_changes.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento EE Backward Incompatible Changes](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ee_changes.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Component Status](http://devdocs.magento.com/guides/v2.2/release-notes/release-candidate/component-status.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Install the Release Candidate](http://devdocs.magento.com/guides/v2.2/release-notes/release-candidate/install.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Release Candidate QuickStart Guide](http://devdocs.magento.com/guides/v2.2/release-notes/release-candidate/quick-start.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Submit Comments on the Release Candidate](http://devdocs.magento.com/guides/v2.2/release-notes/release-candidate/submit-issues.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Submit PRs for the Release Candidate](http://devdocs.magento.com/guides/v2.2/release-notes/release-candidate/submit-PRs.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Release Candidate Testing Environments](http://devdocs.magento.com/guides/v2.2/release-notes/release-candidate/testing-environments.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento CE 2.2 Release Candidate Release Notes](http://devdocs.magento.com/guides/v2.2/release-notes/release-notes-2-2-prerelease1-CE.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento EE 2.2 Release Candidate Release Notes](http://devdocs.magento.com/guides/v2.2/release-notes/release-notes-2-2-prerelease1-EE.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [REST APIs](http://devdocs.magento.com/guides/v2.2/rest/apis.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [List of REST endpoints by module](http://devdocs.magento.com/guides/v2.2/rest/list.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [List of service names per module](http://devdocs.magento.com/guides/v2.2/rest/rest_endpoints.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [SOAP Reference](http://devdocs.magento.com/guides/v2.2/soap/bk-soap.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [JavaScript unit testing with Jasmine](http://devdocs.magento.com/guides/v2.2/test/js/jasmine.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Using the new structure in UI components XML configuration](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/best-practices/semantic_config.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Basic attributes](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/components/basic-attributes.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [ActionDelete component](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/components/ui-actiondelete.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [ActionsColumn component](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/components/ui-actionscolumn.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Bookmarks component](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/components/ui-bookmarks.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Button component](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/components/ui-button.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Checkbox component](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/components/ui-checkbox.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Checkboxset component](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/components/ui-checkboxset.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Column component](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/components/ui-column.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Columns component](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/components/ui-columns.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [ColumnsControls component](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/components/ui-columnscontrols.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Date component](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/components/ui-date.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [DateColumn component](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/components/ui-datecolumn.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [DragAndDrop component](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/components/ui-draganddrop.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [DynamicRows component](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/components/ui-dynamicrows.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Email component](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/components/ui-email.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Expandable Column сomponent](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/components/ui-expandable-column.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [ExportButton component](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/components/ui-exportbutton.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Fieldset сomponent](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/components/ui-fieldset.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [File component](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/components/ui-file.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [FileUploader component](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/components/ui-fileuploader.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Filters component](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/components/ui-filters.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [FiltersChips component](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/components/ui-filterschips.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Form component](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/components/ui-form.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Hidden component](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/components/ui-hidden.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [HtmlContent component](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/components/ui-htmlcontent.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Input component](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/components/ui-input.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [InsertForm component](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/components/ui-insertform.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [InsertListing component](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/components/ui-insertlisting.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [LinkColumn component](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/components/ui-linkcolumn.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Listing (grid) component](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/components/ui-listing-grid.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [MassActions component](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/components/ui-massactions.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Modal сomponent](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/components/ui-modal.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Multiline component](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/components/ui-multiline.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Multiselect component](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/components/ui-multiselect.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [MultiselectColumn component](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/components/ui-multiselectcolumn.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Nav component](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/components/ui-nav.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [OnOffColumn component](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/components/ui-onoffcolumn.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Paging component](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/components/ui-paging.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Radioset component](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/components/ui-radioset.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Range component](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/components/ui-range.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Search component](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/components/ui-search.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [SelectColumn component](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/components/ui-selectcolumn.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Sizes component](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/components/ui-sizes.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Tab component](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/components/ui-tab.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Text component](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/components/ui-text.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Textarea component](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/components/ui-textarea.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [ThumbnailColumn component](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/components/ui-thumbnailcolumn.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Toolbar component](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/components/ui-toolbar.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [TreeMassActions component](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/components/ui-treemassactions.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Wysiwyg component](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/components/ui-wysiwyg.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento custom Knockout.js bindings](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/concepts/knockout-bindings.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [UI components XML configuration structure](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/concepts/ui_comp_xmlconfig_structure.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Declare a custom UI component](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/howto/new_component_declaration.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Add custom fields that influence other Checkout fields](http://devdocs.magento.com/guides/v2.1/howdoi/checkout/checkout_custom_checkbox.html){:target="_blank"} | 2.0, 2.1  |  New | June 8  |
 
 {% collapsibleh2 May 2017 %}
