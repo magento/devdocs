@@ -1683,7 +1683,7 @@
 
 <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">class</span> <span class="err">%</span><span class="nc">Namespace</span><span class="o">%</span><span class="nx">_</span><span class="o">%</span><span class="nx">Module</span><span class="o">%</span><span class="nx">_Model_Cache_Type</span> <span class="k">extends</span> <span class="nx">\Magento\Cache\Frontend\Decorator\TagScope</span>
 <span class="p">{</span>
-  <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nx">\Magento\App\Cache\Type\FrontendPool</span> <span class="nv">$cacheFrontendPool</span><span class="p">)</span>
+  <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="nx">\Magento\Framework\App\Cache\Type\FrontendPool</span> <span class="nv">$cacheFrontendPool</span><span class="p">)</span>
   <span class="p">{</span> 
     <span class="k">parent</span><span class="o">::</span><span class="na">__construct</span><span class="p">(</span><span class="nv">$cacheFrontendPool</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;%cache_type_id%&#39;</span><span class="p">),</span> <span class="s1">&#39;%cache_type_tag%&#39;</span><span class="p">);</span>
   <span class="p">}</span>

@@ -851,6 +851,7 @@ Instead of changing argument name or type, introduce new event argument with new
 <ul>
   <li>Removing or renaming a class</li>
   <li>Removing or renaming a mix-in</li>
+  <li>Removing or renaming a variable</li>
 </ul>
 
 <h3 id="magento-apis">Magento APIs</h3>
@@ -915,7 +916,7 @@ After 2.1 releases, the version cannot change for 2.0 patch releases, but it can
     <p>Deliver fixes that bump the module setup/data version in the current, unpublished version before delivering it to previous minor versions.
 In cases where an urgent fix was delivered in a previous minor version, treat the fix for the current unpublished version as a high priority task.</p>
 
-    <p>For example, issue fixes that change the setup/upgrade version in the unreleased <code>develop </code>branch are delivered first before being ported into the released branches.
+    <p>For example, issue fixes that change the setup/upgrade version in the unreleased <code>develop</code> branch are delivered first before being ported into the released branches.
 If the fix was made for a released branch, a pull request for porting it into the <code>develop</code> branch must be created with a high priority and delivered as soon as possible.</p>
   </li>
   <li>
