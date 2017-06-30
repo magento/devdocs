@@ -28,40 +28,49 @@ This page contains recent changes that we think you'd like to know about. We exc
 
 | Description  | Versions applied to  | New or Updated | Date |
 |--------------|--------------|----------------------|--------|
-| [Change to a released version](http://devdocs.magento.com/guides/v2.2/install-gde/install/cli/dev_downgrade.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Change to a released version](http://devdocs.magento.com/guides/v2.2/install-gde/install/cli/dev_downgrade.html){:target="_blank"} | 2.2 |  Updated | June 23  |
 | [Check the Magento database status](http://devdocs.magento.com/guides/v2.2/install-gde/install/cli/install-cli-subcommands-db-status.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Enable or disable maintenance mode](http://devdocs.magento.com/guides/v2.2/install-gde/install/cli/install-cli-subcommands-maint.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Overview of ownership and permissions](http://devdocs.magento.com/guides/v2.2/install-gde/install/file-sys-perms-over.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Configure the Magento application](http://devdocs.magento.com/guides/v2.2/install-gde/install/post-install-config.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Update installation dependencies](http://devdocs.magento.com/guides/v2.2/install-gde/install/prepare-install.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Installation quick reference (tutorial)](http://devdocs.magento.com/guides/v2.2/install-gde/install-quick-ref.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Overview of ownership and permissions](http://devdocs.magento.com/guides/v2.2/install-gde/prereq/file-sys-perms-over.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento file system ownership and permissions](http://devdocs.magento.com/guides/v2.2/install-gde/prereq/file-sys-perms-parent.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Set pre-installation ownership and permissions](http://devdocs.magento.com/guides/v2.2/install-gde/prereq/file-system-perms.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Get the Magento CE metapackage](http://devdocs.magento.com/guides/v2.2/install-gde/prereq/integrator_install_ce.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Get the Magento EE metapackage](http://devdocs.magento.com/guides/v2.2/install-gde/prereq/integrator_install_ee.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [(Easy) Install the Magento archive on your server](http://devdocs.magento.com/guides/v2.2/install-gde/prereq/zip_install.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento 2.2.x technology stack requirements](http://devdocs.magento.com/guides/v2.2/install-gde/system-requirements-tech.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Access issues](http://devdocs.magento.com/guides/v2.2/install-gde/trouble/php/tshoot_access-main.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Exceptions during installation](http://devdocs.magento.com/guides/v2.2/install-gde/trouble/tshoot_exceptions.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Errors installing optional sample data](http://devdocs.magento.com/guides/v2.2/install-gde/trouble/tshoot_sample-data.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Cannot write to the generated/code directory](http://devdocs.magento.com/guides/v2.2/install-gde/trouble/tshoot_var-gen-perms.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Enable or disable maintenance mode](http://devdocs.magento.com/guides/v2.2/install-gde/install/cli/install-cli-subcommands-maint.html){:target="_blank"} | 2.2 |  Updated | June 23  |
+| [Overview of ownership and permissions](http://devdocs.magento.com/guides/v2.2/install-gde/install/file-sys-perms-over.html){:target="_blank"} | 2.2 |  Updated | June 23  |
+| [Configure the Magento application](http://devdocs.magento.com/guides/v2.2/install-gde/install/post-install-config.html){:target="_blank"} | 2.2 |  Updated | June 23  |
+| [Update installation dependencies](http://devdocs.magento.com/guides/v2.2/install-gde/install/prepare-install.html){:target="_blank"} | 2.2 |  Updated | June 23  |
+| [Installation quick reference (tutorial)](http://devdocs.magento.com/guides/v2.2/install-gde/install-quick-ref.html){:target="_blank"} | 2.2 |  Updated | June 23  |
+| [Overview of ownership and permissions](http://devdocs.magento.com/guides/v2.2/install-gde/prereq/file-sys-perms-over.html){:target="_blank"} | 2.2 |  Updated | June 23  |
+| [Set pre-installation ownership and permissions](http://devdocs.magento.com/guides/v2.2/install-gde/prereq/file-system-perms.html){:target="_blank"} | 2.2 |  Updated | June 23  |
+| [Get the Magento CE metapackage](http://devdocs.magento.com/guides/v2.2/install-gde/prereq/integrator_install_ce.html){:target="_blank"} | 2.2 |  Updated | June 23  |
+| [Get the Magento EE metapackage](http://devdocs.magento.com/guides/v2.2/install-gde/prereq/integrator_install_ee.html){:target="_blank"} | 2.2 |  Updated | June 23  |
+| [(Easy) Install the Magento archive on your server](http://devdocs.magento.com/guides/v2.2/install-gde/prereq/zip_install.html){:target="_blank"} | 2.2 |  Updated | June 23  |
+| [Magento 2.2.x technology stack requirements](http://devdocs.magento.com/guides/v2.2/install-gde/system-requirements-tech.html){:target="_blank"} | 2.2 |  Updated | June 23  |
+| [Access issues](http://devdocs.magento.com/guides/v2.2/install-gde/trouble/php/tshoot_access-main.html){:target="_blank"} | 2.2 |  Updated | June 23  |
+| [Exceptions during installation](http://devdocs.magento.com/guides/v2.2/install-gde/trouble/tshoot_exceptions.html){:target="_blank"} | 2.2 |  Updated | June 23  |
+| [Errors installing optional sample data](http://devdocs.magento.com/guides/v2.2/install-gde/trouble/tshoot_sample-data.html){:target="_blank"} | 2.2 |  Updated | June 23  |
+| [Cannot write to the generated/code directory](http://devdocs.magento.com/guides/v2.2/install-gde/trouble/tshoot_var-gen-perms.html){:target="_blank"} | 2.2 |  Updated | June 23  |
 
 ### Configuration Guide
 
 | Description  | Versions applied to  | New or Updated | Date |
 |--------------|--------------|----------------------|--------|
-| [Configuration Guide](http://devdocs.magento.com/guides/v2.2/config-guide/bk-config-guide.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Database caching](http://devdocs.magento.com/guides/v2.2/config-guide/cache/caching-database.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Configuration Guide](http://devdocs.magento.com/guides/v2.2/config-guide/bk-config-guide.html){:target="_blank"} | 2.2 |  Updated | June 23  |
+| [Database caching](http://devdocs.magento.com/guides/v2.2/config-guide/cache/caching-database.html){:target="_blank"} | 2.2 |  Updated | June 23  |
 | [Static Content Signing](http://devdocs.magento.com/guides/v2.2/config-guide/cache/static-content-signing.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Magento's deployment configuration](hhttp://devdocs.magento.com/guides/v2.2/config-guide/config/config-php.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Magento's deployment configuration](http://devdocs.magento.com/guides/v2.2/config-guide/config/config-php.html){:target="_blank"} | 2.2 |  Updated | June 23  |
 | [Pipeline Deployment](http://devdocs.magento.com/guides/v2.2/config-guide/deployment/index.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Single machine deployment](http://devdocs.magento.com/guides/v2.2/config-guide/deployment/single-machine.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Configure 2.2 message queues](http://devdocs.magento.com/guides/v2.2/config-guide/mq/config-mq.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Migrate message queue configuration](http://devdocs.magento.com/guides/v2.2/config-guide/mq/queue-migration.html) | 2.2 | Updated | June 23 |
-| [Magento Optimization Guide](http://devdocs.magento.com/guides/v2.2/config-guide/prod/prod_perf-optimize.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Magento Optimization Guide](http://devdocs.magento.com/guides/v2.2/config-guide/prod/prod_perf-optimize.html){:target="_blank"} | 2.2 |  Updated | June 23  |
 | [Configure Magento to use Varnish](http://devdocs.magento.com/guides/v2.2/config-guide/varnish/config-varnish-magento.html) | 2.2 | Updated | June 23 |
 | [Advanced Varnish configuration](http://devdocs.magento.com/guides/v2.2/config-guide/varnish/config-varnish-advanced.html){:target="_blank"} | 2.2 |  New | June 23  |
+
+### Magento Cloud updates
+
+| Description  | Versions applied to  | New or Updated | Date |
+|--------------|--------------|----------------------|--------|
+| [Import Magento EE into Magento Enterprise Cloud Edition]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-import.html){:target="_blank"} | 2.0, 2.1, 2.2 |  Updated | June 29  |
+| [Prepare your existing Magento EE system]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-prepare.html){:target="_blank"} | 2.0, 2.1, 2.2 |  Updated | June 29  |
+| [Resolve issues with encryption key]({{ page.baseurl }}cloud/trouble/trouble-crypt-key-variable.html){:target="_blank"} | 2.0, 2.1, 2.2 |  New | June 29  |
+| [Go live]({{ page.baseurl }}cloud/live/live.html){:target="_blank"} | 2.0, 2.1, 2.2 |  Updated | June 29  |
+| [Magento application environment variables]({{ page.baseurl }}cloud/env/environment-vars_magento.html){:target="_blank"} | 2.0, 2.1, 2.2 |  Updated | June 27  |
 
 ### B2B Developer Guide
 
@@ -112,17 +121,9 @@ This page contains recent changes that we think you'd like to know about. We exc
 
 ### Magento payment provider gateway
 
-| [Signifyd fraud protection](http://devdocs.magento.com/guides/v2.2/payments-integrations/signifyd/signifyd.html){:target="_blank"} | 2.2 |  New | June 23  |
-
-### Magento Cloud updates
-
 | Description  | Versions applied to  | New or Updated | Date |
 |--------------|--------------|----------------------|--------|
-| [Import Magento EE into Magento Enterprise Cloud Edition]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-import.html){:target="_blank"} | 2.0, 2.1, 2.2 |  Updated | June 29  |
-| [Prepare your existing Magento EE system]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-prepare.html){:target="_blank"} | 2.0, 2.1, 2.2 |  Updated | June 29  |
-| [Resolve issues with encryption key]({{ page.baseurl }}cloud/trouble/trouble-crypt-key-variable.html){:target="_blank"} | 2.0, 2.1, 2.2 |  New | June 29  |
-| [Go live]({{ page.baseurl }}cloud/live/live.html){:target="_blank"} | 2.0, 2.1, 2.2 |  Updated | June 29  |
-| [Magento application environment variables]({{ page.baseurl }}cloud/env/environment-vars_magento.html){:target="_blank"} | 2.0, 2.1, 2.2 |  Updated | June 27  |
+| [Signifyd fraud protection](http://devdocs.magento.com/guides/v2.2/payments-integrations/signifyd/signifyd.html){:target="_blank"} | 2.2 |  New | June 23  |
 
 ### REST and SOAP References
 
@@ -149,7 +150,7 @@ This page contains recent changes that we think you'd like to know about. We exc
 | [Searching with Repositories](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/searching-with-repositories.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [XSS prevention strategies](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/xss-protection.html){:target="_blank"} | 2.2 |  New | June 23  |
 
-### Functional Testing Framework Guide
+### Magento Testing Framework Guide
 
 | Description  | Versions applied to  | New or Updated | Date |
 |--------------|--------------|----------------------|--------|
@@ -158,7 +159,7 @@ This page contains recent changes that we think you'd like to know about. We exc
 | [Typified element](http://devdocs.magento.com/guides/v2.2/mtf/mtf_entities/mtf_typified-element.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Quick start. Prepare Magento application](http://devdocs.magento.com/guides/v2.2/mtf/mtf_quickstart/mtf_quickstart_magento.html){:target="_blank"} | 2.2 |  New | June 23  |
 
-### Extension Best Practices
+### Extension Developer Best Practices
 
 | Description  | Versions applied to  | New or Updated | Date |
 |--------------|--------------|----------------------|--------|
