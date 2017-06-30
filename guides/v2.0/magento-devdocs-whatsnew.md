@@ -58,7 +58,9 @@ This page contains recent changes that we think you'd like to know about. We exc
 | [Pipeline Deployment](http://devdocs.magento.com/guides/v2.2/config-guide/deployment/index.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Single machine deployment](http://devdocs.magento.com/guides/v2.2/config-guide/deployment/single-machine.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Configure 2.2 message queues](http://devdocs.magento.com/guides/v2.2/config-guide/mq/config-mq.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Migrate message queue configuration](http://devdocs.magento.com/guides/v2.2/config-guide/mq/queue-migration.html) | 2.2 | Updated | June 23 |
 | [Magento Optimization Guide](http://devdocs.magento.com/guides/v2.2/config-guide/prod/prod_perf-optimize.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Configure Magento to use Varnish](http://devdocs.magento.com/guides/v2.2/config-guide/varnish/config-varnish-magento.html) | 2.2 | Updated | June 23 |
 | [Advanced Varnish configuration](http://devdocs.magento.com/guides/v2.2/config-guide/varnish/config-varnish-advanced.html){:target="_blank"} | 2.2 |  New | June 23  |
 
 ### B2B Developer Guide
@@ -114,11 +116,11 @@ This page contains recent changes that we think you'd like to know about. We exc
 |--------------|--------------|----------------------|--------|
 | [The di.xml file](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/build/di-xml-file.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Bulk Operations](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/bulk-operations.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Example bulk operations implementation](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/implement-bulk.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Code generation](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/code-generation.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Configuration importers](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/configuration/importers.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Sensitive and environment settings](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/configuration/sensitive-and-environment-settings.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Serialize Library](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/framework/serializer.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Example bulk operations implementation](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/implement-bulk.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Indexer optimization](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/indexer-batch.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Plugins (Interceptors)](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/plugins.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Searching with Repositories](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/searching-with-repositories.html){:target="_blank"} | 2.2 |  New | June 23  |
