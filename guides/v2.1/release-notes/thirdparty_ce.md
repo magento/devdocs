@@ -3,6 +3,7 @@ layout: default
 group: release-notes
 subgroup: Third-party licenses
 menu_title: Magento CE third-party licenses
+title: Magento CE third-party licenses
 menu_order: 1
 version: 2.2
 github_link: release-notes/thirdparty_ce.md
@@ -12,17 +13,17 @@ This page contains links to license agreements of the third party components use
 
 Name|Version|License Name|Available From|Link to License
 ---|---|---|---|---
-Zend Framework|2.4.6|BSD-3-Clause|[Source](http://framework.zend.com/)|[License](https://framework.zend.com/license)
-colinmollenhour/credis || MIT|[Source](https://github.com/colinmollenhour/credis)|[License](https://github.com/colinmollenhour/credis/blob/master/LICENSE)
-colinmollenhour/php-redis-session-abstract || BSD-3-Clause|[Source](https://github.com/colinmollenhour/php-redis-session-abstract)|[License](https://github.com/colinmollenhour/php-redis-session-abstract#license)
+Zend Framework|2.7.7|BSD-3-Clause|[Source](http://framework.zend.com/)|[License](https://framework.zend.com/license)
+colinmollenhour/credis |1.6| MIT|[Source](https://github.com/colinmollenhour/credis)|[License](https://github.com/colinmollenhour/credis/blob/master/LICENSE)
+colinmollenhour/php-redis-session-abstract |1.2.2| BSD-3-Clause|[Source](https://github.com/colinmollenhour/php-redis-session-abstract)|[License](https://github.com/colinmollenhour/php-redis-session-abstract#license)
 colinmollenhour/cache-backend-file |1.4| BSD-3-Clause|[Source](https://github.com/colinmollenhour/Cm_Cache_Backend_Redis)|[License](https://github.com/colinmollenhour/Cm_Cache_Backend_Redis/blob/master/Cm/Cache/Backend/Redis.php)
-colinmollenhour/cache-backend-redis |1.9| BSD-3-Clause|[Source](https://github.com/colinmollenhour/Cm_Cache_Backend_File)|[License](https://github.com/colinmollenhour/Cm_Cache_Backend_File/blob/master/File.php)
-composer/composer |1.0.0-beta1| MIT|[Source](https://github.com/composer/composer)|[License](https://github.com/composer/composer/blob/master/LICENSE)
-monolog/monolog |1.16.0| MIT|[Source](https://github.com/Seldaek/monolog)|[License](https://github.com/Seldaek/monolog/blob/master/LICENSE)
+colinmollenhour/cache-backend-redis |1.10.2| BSD-3-Clause|[Source](https://github.com/colinmollenhour/Cm_Cache_Backend_File)|[License](https://github.com/colinmollenhour/Cm_Cache_Backend_File/blob/master/File.php)
+composer/composer |1.4.1| MIT|[Source](https://github.com/composer/composer)|[License](https://github.com/composer/composer/blob/master/LICENSE)
+monolog/monolog |1.17| MIT|[Source](https://github.com/Seldaek/monolog)|[License](https://github.com/Seldaek/monolog/blob/master/LICENSE)
 oyejorge/less.php |1.7.0| Apache-2.0|[Source](https://github.com/oyejorge/less.php)|[License](https://github.com/oyejorge/less.php/blob/master/LICENSE)
 pelago/emogrifier |0.1.1| MIT|[Source](https://github.com/jjriv/emogrifier)|[License](https://github.com/jjriv/emogrifier/blob/master/LICENSE)
-tubalmartin/cssmin |2.4.8-p4| BSD-3-Clause|[Source](https://github.com/tubalmartin/YUI-CSS-compressor-PHP-port)|
-braintree/braintree_php |3.7.0| MIT|[Source](https://github.com/braintree/braintree_php)|[License](https://github.com/braintree/braintree_php/blob/master/LICENSE)
+tubalmartin/cssmin |4.1.0| BSD-3-Clause|[Source](https://github.com/tubalmartin/YUI-CSS-compressor-PHP-port)|
+braintree/braintree_php |3.22.0| MIT|[Source](https://github.com/braintree/braintree_php)|[License](https://github.com/braintree/braintree_php/blob/master/LICENSE)
 symfony/console|2.3|MIT|[Source](https://github.com/symfony/console)|[License](https://github.com/symfony/console/blob/master/LICENSE)
 symfony/config || MIT|[Source](https://github.com/symfony/config)|[License](https://github.com/symfony/config/blob/master/LICENSE)
 symfony/dependency-injection || MIT|[Source](https://github.com/symfony/dependency-injection)|[License](https://github.com/symfony/dependency-injection/blob/master/LICENSE)
@@ -33,20 +34,21 @@ symfony/process |2.1| MIT|[Source](https://github.com/symfony/process)|[License]
 symfony/stopwatch || MIT|[Source](https://github.com/symfony/stopwatch)|[License](https://github.com/symfony/stopwatch/blob/master/LICENSE)
 symfony/yaml || MIT|[Source](https://github.com/symfony/yaml)|[License](https://github.com/symfony/yaml/blob/master/LICENSE)
 phpseclib/phpseclib |2.0| MIT|[Source](https://github.com/phpseclib/phpseclib)|[License](https://github.com/phpseclib/phpseclib/blob/master/LICENSE)
-tedivm/jshrink |1.0.1| BSD-3-Clause|[Source](https://github.com/tedious/Jshrink)|[License](https://github.com/tedious/JShrink/blob/master/LICENSE)
+tedivm/jshrink |1.1.0| BSD-3-Clause|[Source](https://github.com/tedious/Jshrink)|[License](https://github.com/tedious/JShrink/blob/master/LICENSE)
 sjparkinson/static-review |4.1| MIT|[Source](https://github.com/sjparkinson/static-review)|[License](https://github.com/sjparkinson/static-review/blob/master/LICENSE)
+ramsey/uuid|3.6.1|MIT|[Source][https://github.com/ramsey/uuid] | [License](https://github.com/ramsey/uuid/blob/master/LICENSE)
 phpunit/phpunit |4.1.0| BSD-3-Clause|[Source](https://github.com/sebastianbergmann/phpunit)|[License](https://github.com/sebastianbergmann/phpunit/blob/master/LICENSE)
 squizlabs/php_codesniffer |1.5.3| BSD-3-Clause|[Source](https://github.com/squizlabs/PHP_CodeSniffer)|[License](https://github.com/squizlabs/PHP_CodeSniffer/blob/master/licence.txt)
-phpmd/phpmd |2.3| BSD-3-Clause|[Source](https://github.com/phpmd/phpmd)|[License](https://github.com/phpmd/phpmd/blob/master/LICENSE)
-pdepend/pdepend |2.2.2| BSD-3-Clause|[Source](https://github.com/pdepend/pdepend)|[License](https://github.com/pdepend/pdepend/blob/master/LICENSE)
-fabpot/php-cs-fixer |1.2| MIT|[Source](https://www.versioneye.com/php/fabpot:php-cs-fixer/dev-master)|[License](http://spdx.org/licenses/MIT.html)
-lusitanian/oauth |0.3| MIT|[Source](https://github.com/Lusitanian/PHPoAuthLib)|[License](https://github.com/Lusitanian/PHPoAuthLib/blob/master/LICENSE)
-sebastian/phpcpd|2.0.0|BSD-3-Clause|[Source](https://github.com/sebastianbergmann/phpcpd)|[License](https://github.com/sebastianbergmann/phpcpd/blob/master/LICENSE)
+phpmd/phpmd |@stable| BSD-3-Clause|[Source](https://github.com/phpmd/phpmd)|[License](https://github.com/phpmd/phpmd/blob/master/LICENSE)
+pdepend/pdepend |2.5.0| BSD-3-Clause|[Source](https://github.com/pdepend/pdepend)|[License](https://github.com/pdepend/pdepend/blob/master/LICENSE)
+friendsofphp/php-cs-fixer |2.1.1| MIT|[Source](https://github.com/FriendsOfPHP/PHP-CS-Fixer)|[License](https://github.com/FriendsOfPHP/PHP-CS-Fixer/blob/master/LICENSE)
+lusitanian/oauth |0.8.10| MIT|[Source](https://github.com/Lusitanian/PHPoAuthLib)|[License](https://github.com/Lusitanian/PHPoAuthLib/blob/master/LICENSE)
+sebastian/phpcpd|2.0.4|BSD-3-Clause|[Source](https://github.com/sebastianbergmann/phpcpd)|[License](https://github.com/sebastianbergmann/phpcpd/blob/master/LICENSE)
 trentrichardson/jquery-timepicker-addon|1.4.3|MIT|[Source](https://github.com/trentrichardson/jQuery-Timepicker-Addon)|[License](https://github.com/trentrichardson/jQuery-Timepicker-Addon/blob/master/LICENSE-MIT)
 jquery|1.11.0 |MIT|[Source](https://jquery.com/)|[License](https://jquery.org/license/)
-blueimp/jquery-file-upload|1.4.3|MIT|[Source](https://github.com/blueimp/jQuery-File-Upload)|[License](https://opensource.org/licenses/MIT)
+blueimp/jquery-file-upload|5.6.14|MIT|[Source](https://github.com/blueimp/jQuery-File-Upload)|[License](https://github.com/blueimp/jQuery-File-Upload/blob/master/LICENSE)
 jqueryui|1.10.4||[Source](https://github.com/jquery/jqueryui.com)|[License](https://github.com/jquery/jqueryui.com/blob/master/LICENSE.txt)
-bootstrap|3.1.1 |MIT|[Source](http://getbootstrap.com)|[License](https://github.com/twbs/bootstrap/blob/master/LICENSE)
+bootstrap|3.1.0 |MIT|[Source](http://getbootstrap.com)|[License](https://github.com/twbs/bootstrap/blob/master/LICENSE)
 tiny_mce |3.4.7|GNU LGPL 2.1|[Source](https://www.tinymce.com)|[License](https://github.com/tinymce/tinymce/blob/master/LICENSE.TXT)
 doctrine/instantiator || MIT|[Source](https://github.com/doctrine/instantiator)|[License](https://github.com/doctrine/instantiator/blob/master/LICENSE)
 justinrainbow/json-schema || BSD-3-Clause|[Source](https://github.com/justinrainbow/json-schema)|[License](https://github.com/justinrainbow/json-schema/blob/master/LICENSE)
