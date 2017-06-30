@@ -97,7 +97,7 @@ This page contains recent changes that we think you'd like to know about. We exc
 
 | Description  | Versions applied to  | New or Updated | Date |
 |--------------|--------------|----------------------|--------|
-| [Advanced Reporting module](http://devdocs.magento.com/guides/v2.2/mrg/ce/Analytics/description.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Advanced Reporting modules](http://devdocs.magento.com/guides/v2.2/mrg/ce/Analytics/description.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [B2B modules](http://devdocs.magento.com/guides/v2.2/mrg/b2b/b2b-intro.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Magento_Signifyd module](http://devdocs.magento.com/guides/v2.2/mrg/ee/Signifyd.html){:target="_blank"} | 2.2 |  New | June 23  |
 
@@ -135,7 +135,16 @@ This page contains recent changes that we think you'd like to know about. We exc
 | [UI components XML configuration structure](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/concepts/ui_comp_xmlconfig_structure.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Declare a custom UI component](http://devdocs.magento.com/guides/v2.2/ui_comp_guide/howto/new_component_declaration.html){:target="_blank"} | 2.2 |  New | June 23  |
 
-### Additional updates
+### Functional Testing Framework Guide
+
+| Description  | Versions applied to  | New or Updated | Date |
+|--------------|--------------|----------------------|--------|
+| [Functional Testing Framework Configuration](http://devdocs.magento.com/guides/v2.2/mtf/configuration.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Test suite in the Functional Testing Framework](http://devdocs.magento.com/guides/v2.2/mtf/features/test_suite.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Typified element](http://devdocs.magento.com/guides/v2.2/mtf/mtf_entities/mtf_typified-element.html){:target="_blank"} | 2.2 |  New | June 23  |
+| [Quick start. Prepare Magento application](http://devdocs.magento.com/guides/v2.2/mtf/mtf_quickstart/mtf_quickstart_magento.html){:target="_blank"} | 2.2 |  New | June 23  |
+
+### Magento Cloud updates
 
 | Description  | Versions applied to  | New or Updated | Date |
 |--------------|--------------|----------------------|--------|
@@ -144,15 +153,16 @@ This page contains recent changes that we think you'd like to know about. We exc
 | [Resolve issues with encryption key]({{ page.baseurl }}cloud/trouble/trouble-crypt-key-variable.html){:target="_blank"} | 2.0, 2.1, 2.2 |  New | June 29  |
 | [Go live]({{ page.baseurl }}cloud/live/live.html){:target="_blank"} | 2.0, 2.1, 2.2 |  Updated | June 29  |
 | [Magento application environment variables]({{ page.baseurl }}cloud/env/environment-vars_magento.html){:target="_blank"} | 2.0, 2.1, 2.2 |  Updated | June 27  |
+
+### Additional updates
+
+| Description  | Versions applied to  | New or Updated | Date |
+|--------------|--------------|----------------------|--------|
 | [Writing secure code](http://devdocs.magento.com/guides/v2.2/ext-best-practices/security/writing-secure-code.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Serialized to JSON data upgrade](http://devdocs.magento.com/guides/v2.2/ext-best-practices/tutorials/serialized-to-json-data-upgrade.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Customize the list of shipping methods](http://devdocs.magento.com/guides/v2.2/howdoi/checkout/checkout_shipping_methods.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Clear directories during development](http://devdocs.magento.com/guides/v2.2/howdoi/php/php_clear-dirs.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [JavaScript Logger](http://devdocs.magento.com/guides/v2.2/javascript-dev-guide/javascript/js_logger.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Functional Testing Framework Configuration](http://devdocs.magento.com/guides/v2.2/mtf/configuration.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Test suite in the Functional Testing Framework](http://devdocs.magento.com/guides/v2.2/mtf/features/test_suite.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Typified element](http://devdocs.magento.com/guides/v2.2/mtf/mtf_entities/mtf_typified-element.html){:target="_blank"} | 2.2 |  New | June 23  |
-| [Quick start. Prepare Magento application](http://devdocs.magento.com/guides/v2.2/mtf/mtf_quickstart/mtf_quickstart_magento.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Signifyd fraud protection](http://devdocs.magento.com/guides/v2.2/payments-integrations/signifyd/signifyd.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [JavaScript unit testing with Jasmine](http://devdocs.magento.com/guides/v2.2/test/js/jasmine.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Add custom fields that influence other Checkout fields](http://devdocs.magento.com/guides/v2.1/howdoi/checkout/checkout_custom_checkbox.html){:target="_blank"} | 2.0, 2.1  |  New | June 8  |
