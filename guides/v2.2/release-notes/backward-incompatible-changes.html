@@ -698,7 +698,7 @@
   <li><a href="/guides/v2.2/release-notes/changes/ee_changes.html">Magento EE changes</a></li>
 </ul>
 
-<h2 id="api-changes">API Changes</h2>
+<h2 id="api-changes">API changes</h2>
 
 <p>Magento 2.2 introduces changes in several <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span> classes. These changes are designed to extend overall API coverage and improve developer experience with new features.</p>
 
@@ -709,7 +709,7 @@
 <p><strong>Class:</strong> <a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/DeploymentConfig/Reader.php" target="_blank"><code>Magento\Framework\App\DeploymentConfig\Reader</code></a><br />
 <strong>Action:</strong> Deprecated the method <code>loadConfigFile</code><br /></p>
 
-<h3 id="store-module">Store Module</h3>
+<h3 id="store-module">Store module</h3>
 
 <p>The Store <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> management has been updated to allow the retrieval of a store by its <span term-uuid="a3c8f20f-b067-414e-9781-06378c193155" class="glossary-term" data-toggle="popover">website</span> id.</p>
 
@@ -726,7 +726,7 @@
 <p><strong>Class:</strong> <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Store/Api/Data/GroupInterface.php"><code>Magento\Store\Api\Data\GroupInterface</code></a><br />
 <strong>Action:</strong> Added two methods <code>getCode()</code> and <code>setCode($code)</code><br /></p>
 
-<h3 id="customer-module">Customer Module</h3>
+<h3 id="customer-module">Customer module</h3>
 
 <p>Change was done in order to add default values to customer attributes.</p>
 
@@ -738,12 +738,12 @@
 
 <p><strong>Description:</strong> Retrieve and set default values to customer attributes<br /></p>
 
-<h3 id="wishlist-module">Wishlist Module</h3>
+<h3 id="wishlist-module">Wishlist module</h3>
 
 <p><strong>Class:</strong> <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Wishlist/Model/Wishlist.php" target="_blank"><code>Magento\Wishlist\Model\Wishlist</code></a><br />
 <strong>Action:</strong> The format of the string for the <code>buyRequest</code> parameter in the <code>addNewItem</code> method changed from serialized to JSON.<br /></p>
 
-<h3 id="messagequeue-module-api">MessageQueue Module API</h3>
+<h3 id="messagequeue-module-api">MessageQueue module API</h3>
 
 <p>The <code>Magento\Framework\MessageQueue\ConfigInterface</code> has been deprecated. 
 The following table lists the deprecated methods and their replacements.</p>
@@ -825,17 +825,17 @@ The following table lists the deprecated methods and their replacements.</p>
   </tbody>
 </table>
 
-<h3 id="error-processor-module">Error Processor Module</h3>
+<h3 id="error-processor-module">Error processor module</h3>
 
 <p><span term-uuid="53da11f1-d0b8-4a7e-b078-1e099462b409" class="glossary-term" data-toggle="popover">Exception</span> report files in <code>var/report</code> are now JSON encoded, and existing serialized files will not be readable by the upgraded Magento 2.2 instance.</p>
 
-<h3 id="braintree-module">Braintree Module</h3>
+<h3 id="braintree-module">Braintree module</h3>
 
 <p><strong>Class:</strong> <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Braintree/Model/Ui/ConfigProvider.php" target="_blank"><code>Magento\Braintree\Model\Ui\ConfigProvider</code></a><br />
 <strong>Action:</strong> The deprecated constant <code>PAYPAL_CODE</code> has been removed<br />
 <strong>Description</strong> Use <code>\Magento\Braintree\Model\Ui\PayPal\ConfigProvider::PAYPAL_CODE</code> instead.<br /></p>
 
-<h3 id="paypal-module">PayPal Module</h3>
+<h3 id="paypal-module">PayPal module</h3>
 
 <p><strong>Class:</strong> <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Paypal/Cron/FetchReports.php" target="_blank"><code>Magento\Paypal\Cron\FetchReports</code></a><br />
 <strong>Action:</strong></p>
@@ -987,9 +987,10 @@ In oder to adopt custom implementations of these interfaces, please, change meth
 <p><strong>Action:</strong> Section <code>Advanced</code> was disabled from <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span> Interface<br />
 <strong>Description:</strong> Magento does not support custom disabling/enabling modules output since 2.2.0 version. Section ‘Advanced’ was disabled. All custom settings from this section will be ignored.</p>
 
-<h2 id="database-schema-changes">Database Schema changes</h2>
+<h2 id="database-schema-changes">Database schema changes</h2>
 
 <h3 id="storegroup">store_group</h3>
+
 <p><strong>Action:</strong> New column <code>code</code> was added to <code>store_group</code> table. This column has a unique key.<br />
 <strong>Description:</strong> Data to this column for existing store Groups will be automatically filled based on Group names.</p>
 
@@ -1302,7 +1303,7 @@ It can be used to upgrade data in upgrade scripts.</p>
   <li>Update duplicate records at once</li>
 </ul>
 
-<h2 id="inputoutput-format-of-methods">Input/Output Format of Methods</h2>
+<h2 id="inputoutput-format-of-methods">Input/Output format of methods</h2>
 
 <p>The following methods now return JSON instead of a serialized string.</p>
 
@@ -1467,9 +1468,19 @@ It can be used to upgrade data in upgrade scripts.</p>
 
 <h2 id="changes-in-file-system">Changes in file system</h2>
 
-<h3 id="file-appetcconfiglocalphp-is-not-supported">File app/etc/config.local.php is not supported</h3>
-<p><strong>Description:</strong> file app/etc/config.local.php is not read anymore. CLI command <code>app:config:dump</code> writes data to app/etc/config.php instead. File app/etc/config.local.php may be removed manually.</p>
+<h3 id="file-appetcconfiglocalphp-is-not-supported">File <code>app/etc/config.local.php</code> is not supported</h3>
 
+<p><strong>Description:</strong> file app/etc/config.local.php is not read anymore.
+ CLI command <code>app:config:dump</code> writes data to <code>app/etc/config.php</code> instead. File <code>app/etc/config.local.php</code> may be removed manually.</p>
+
+<h3 id="directories-vardi-and-vargenerate-are-moved">Directories <code>var/di</code> and <code>var/generate</code> are moved</h3>
+
+<p><strong>Description:</strong></p>
+
+<ul>
+  <li><code>var/di</code> is moved to <code>generated/metadata</code></li>
+  <li><code>var/generate</code> is moved to <code>generated/code</code></li>
+</ul>
 
 		</div>
 		<!-- /.content-wrap -->
