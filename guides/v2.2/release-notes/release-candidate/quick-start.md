@@ -88,12 +88,7 @@ The Magento 2.2.0 EE Release Candidate evaluation is open to all Solution Partne
 
 * Sign the [Release Candidate Software agreement](https://magento.com/partners/portal/customer/account/login)
 
-* Provide GitHub account information. You can  provide one of the following:
-
-	* your Solution Partner GitHub account, clearly labeled with the name of the Partner, the Partner’s logo, and a link to the Partner’s website.
-
-
-	* an Individual Account for a Solution Partner Employee. The company name field must contain the Partner’s name or @partnername. Alternatively, the user’s profile must show that the developer is a member of the Solution Partner’s GitHub Organization.
+* Provide GitHub account information for an Individual Account for a Solution Partner Employee. The company name field must contain the Partner’s name or @partnername. Alternatively, the user’s profile must show that the developer is a member of the Solution Partner’s GitHub Organization.
 
 
 ## More information?
