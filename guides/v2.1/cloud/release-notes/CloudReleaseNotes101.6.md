@@ -25,7 +25,7 @@ In `magento-cloud-configuration` releases 101.6.2, 101.6.3, and 101.6.4 on Magen
 <!--- MAGECLOUD-683 -->* You can now log in to the Admin panel whether you’re in normal browser mode or incognito mode. Previously, you could log in to the Admin panel only when in browser incognito mode. 
 
 
-<!--- MAGECLOUD-614 -->* The `base_url` setting is no longer environment-dependent. (We’ve removed base_url from `config.local.php`.) 
+<!--- MAGECLOUD-614 -->* The `base_url` setting is no longer environment-dependent. (We’ve removed `base_url` from `config.local.php`.) 
 
 
 <!--- MAGECLOUD-717 -->* You can now successfully deploy when using the `.regenerate` flag. (We corrected an error in the `magento-cloud-configuration/pre-deploy.php` file.) Previously, a PHP fatal error occurred during deployment with `magento-cloud-configuration` 101.6.0. 
@@ -34,7 +34,6 @@ In `magento-cloud-configuration` releases 101.6.2, 101.6.3, and 101.6.4 on Magen
 
 ### 101.6.3 changes
 
-<!--- MAGECLOUD-792 -->* Magento no longer purges all Redis user sessions during deployment, but only the database where the cache is stored.
 
 <!--- MAGECLOUD-771 -->* You can now successfully deploy your Cloud installation with multiple locales to staging after upgrading to `magento-cloud-configuration` 101.6.2. 
 
