@@ -70,7 +70,7 @@ These instructions assume you have experience working with Github repositories. 
 
     ```
     cd /var/www/html
-    git clone -b develop git@github.com:magento/magento2.git
+    git clone -b develop git@github.com:magento/magento2.git magento2ce
     ```
 
 2.  Clone the `magento2ee/` and `magento2b2b/` repositories inside the `magento2ce/` repository:
