@@ -10,7 +10,7 @@ version: 2.1
 github_link: release-notes/tech_bull_21x_MasterCard.md
 ---
 
-*Technical Bulletin published on May 19, 2017.*
+*Technical Bulletin published on May 19, 2017 and edited on June 29, 2017.*
 
 MasterCard recently added a new series of Bank Identification Numbers (BIN). As of June 30, 2017, MasterCard may fine merchants who do not support cards that use this new range of BIN numbers, and transactions on your store for customers using cards with these new BINs may fail. 
 
@@ -30,10 +30,42 @@ However, if you are using an older version of Magento, you must upgrade by June 
 Consult the following tables to learn how to apply a fix to your specific Magento version.
 
 #### Magento 1.x patches
+Consult the following tables for guidelines for Magento 1.x EE and CE fixes.
+
+
+**Magento 1.x CE**
 
 <table>
   <tr>
-    <th>Magento 1.x version you are running….</th>
+    <th>Magento 1.x CE version you are running….</th>
+    <th>Information you need….</th>
+ 
+  </tr>
+
+
+  <tr>
+    <td>versions earlier than 1.5.0.0</td>
+    <td>Please upgrade to a later version of Magento </td>
+      </tr>
+
+      <tr>
+    <td>1.5.0.0 - 1.9.2.4</td>
+    <td>Install <a href="https://magento.com/tech-resources/download" target="_blank">Patch 8967</a>.</td>
+      </tr>
+
+<tr>
+    <td>1.9.2.4 and later</td>
+    <td>Your version supports the new MasterCard BIN numbers.</td>
+      </tr>
+
+</table>
+	
+
+**Magento 1.x EE** 
+
+<table>
+  <tr>
+    <th>Magento 1.x EE version you are running….</th>
     <th>Information you need….</th>
  
   </tr>
@@ -63,7 +95,6 @@ Consult the following tables to learn how to apply a fix to your specific Magent
       </tr>
 
 </table>
-	
 
 #### Access Magento 1.x patches
 
@@ -83,9 +114,6 @@ To get patches for Magento 1.x EE or CE
 
 #### Magento 2.x fix
 
-<div class="bs-callout bs-callout-warning" markdown="1">
-Magento 2.0.14 is scheduled for the end of May. This patch will include support for this MasterCard BIN update plus other critical security fixes. 
-</div>
 
 <table>
   <tr>

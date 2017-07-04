@@ -9,7 +9,7 @@ version: 2.2
 github_link: guides/v2.2/release-notes/pre-release/component-status.md
 ---
 
-**Last Updated:** June 23, 2017
+**Last Updated:** June 30, 2017
 
 This page shows the ongoing status of each component during the Magento 2.2 Release Candidate period and is intended to show you the readiness of different components.
 
@@ -27,14 +27,17 @@ Issues that are not related to the 2.2 release are not part of this report.
 | Name                                           | Status |
 | --- | --- |
 | Infrastructure/ Admin Framework                | <span class="status green">Green</span>  |
-| Infrastructure/ App Framework                  | <span class="status yellow">Yellow</span> |
-| Infrastructure/ Configuration Framework        | <span class="status green">Green</span>  |
+| Infrastructure/ App Framework                  | <span class="status green">Green</span>  |
+| Infrastructure/ Configuration Framework        | <span class="status yellow">Yellow</span> |
 | Infrastructure/ Dependency Injection Framework | <span class="status yellow">Yellow</span> |
 | Infrastructure/ Encryption                     | <span class="status yellow">Yellow</span> |
 | Infrastructure/ Functional Tests               | <span class="status green">Green</span>  |
+| Infrastructure/ Message Framework              | <span class="status green">Green</span>  |
 | Infrastructure/ Performance                    | <span class="status yellow">Yellow</span> |
-| Infrastructure/ Unit Tests                     | <span class="status yellow">Yellow</span> |
+| Infrastructure/ Unit Tests                     | <span class="status green">Green</span>  |
+| Lib/ Data Grid                                 | <span class="status green">Green</span>  |
 | Module/ AdminNotification                      | <span class="status green">Green</span>  |
+| Module/ Analyti                                | <span class="status red">Red</span>    |
 | Module/ Authorizenet                           | <span class="status red">Red</span>    |
 | Module/ Bundle                                 | <span class="status yellow">Yellow</span> |
 | Module/ Catalog                                | <span class="status red">Red</span>    |
@@ -46,10 +49,9 @@ Issues that are not related to the 2.2 release are not part of this report.
 | Module/ Checkout/ One Page Checkout            | <span class="status yellow">Yellow</span> |
 | Module/ Checkout/ Shopping Cart                | <span class="status yellow">Yellow</span> |
 | Module/ Cms/ CMS Content                       | <span class="status yellow">Yellow</span> |
-| Module/ Config                                 | <span class="status red">Red</span>    |
-| Module/ Cron                                   | <span class="status yellow">Yellow</span> |
-| Module/ Customer/ Customer Account             | <span class="status yellow">Yellow</span> |
-| Module/ Customer/ Customers                    | <span class="status green">Green</span>  |
+| Module/ Config                                 | <span class="status yellow">Yellow</span> |
+| Module/ Customer/ Customer Account             | <span class="status green">Green</span>  |
+| Module/ Customer/ Customers                    | <span class="status yellow">Yellow</span> |
 | Module/ CustomerImportExport                   | <span class="status green">Green</span>  |
 | Module/ Deploy                                 | <span class="status yellow">Yellow</span> |
 | Module/ Developer                              | <span class="status yellow">Yellow</span> |
@@ -57,24 +59,22 @@ Issues that are not related to the 2.2 release are not part of this report.
 | Module/ Downloadable                           | <span class="status yellow">Yellow</span> |
 | Module/ Email                                  | <span class="status yellow">Yellow</span> |
 | Module/ ImportExport                           | <span class="status yellow">Yellow</span> |
-| Module/ Indexer                                | <span class="status yellow">Yellow</span> |
 | Module/ Integration                            | <span class="status yellow">Yellow</span> |
-| Module/ Pagecache                              | <span class="status yellow">Yellow</span> |
+| Module/ Pagecache                              | <span class="status green">Green</span>  |
 | Module/ PasswordManagement                     | <span class="status yellow">Yellow</span> |
 | Module/ Payment/ Payment Methods               | <span class="status green">Green</span>  |
 | Module/ Paypal                                 | <span class="status yellow">Yellow</span> |
 | Module/ PayPal/ Billing Agreement              | <span class="status yellow">Yellow</span> |
 | Module/ Quote                                  | <span class="status red">Red</span>    |
 | Module/ Sales/ Order Management                | <span class="status red">Red</span>    |
-| Module/ SalesRule                              | <span class="status red">Red</span>    |
+| Module/ SalesRule                              | <span class="status yellow">Yellow</span> |
 | Module/ Sample Data                            | <span class="status green">Green</span>  |
 | Module/ Setup                                  | <span class="status yellow">Yellow</span> |
 | Module/ Store                                  | <span class="status yellow">Yellow</span> |
-| Module/ Swatches                               | <span class="status yellow">Yellow</span> |
 | Module/ Tax                                    | <span class="status red">Red</span>    |
 | Module/ Theme                                  | <span class="status green">Green</span>  |
 | Module/ Translation                            | <span class="status yellow">Yellow</span> |
-| Module/ UI                                     | <span class="status red">Red</span>    |
+| Module/ UI                                     | <span class="status green">Green</span>  |
 | Module/ UrlRewrite                             | <span class="status red">Red</span>    |
 | Module/ Webapi/ Web API Framework              | <span class="status red">Red</span>    |
 | Tools/ Console                                 | <span class="status green">Green</span>  |
@@ -85,14 +85,15 @@ Issues that are not related to the 2.2 release are not part of this report.
 | --- | --- |
 | Infrastructure/ Bulk Operations Framework | <span class="status yellow">Yellow</span> |
 | Module/ AdvancedCheckout                  | <span class="status green">Green</span>  |
-| Module/ CatalogPermissions                | <span class="status green">Green</span>  |
+| Module/ CatalogEvent                      | <span class="status green">Green</span>  |
+| Module/ CatalogPermissions                | <span class="status yellow">Yellow</span> |
 | Module/ CustomAttributeManagement         | <span class="status yellow">Yellow</span> |
 | Module/ CustomerCustomAttributes          | <span class="status green">Green</span>  |
-| Module/ CustomerSegment                   | <span class="status yellow">Yellow</span> |
+| Module/ CustomerSegment                   | <span class="status green">Green</span>  |
 | Module/ ElasticSearch                     | <span class="status yellow">Yellow</span> |
 | Module/ Staging                           | <span class="status red">Red</span>    |
 | Module/ Support                           | <span class="status green">Green</span>  |
-| Module/ TargetRule                        | <span class="status red">Red</span>    |
+| Module/ TargetRule                        | <span class="status yellow">Yellow</span> |
 
 ## B2B Modules
 
@@ -109,7 +110,7 @@ Issues that are not related to the 2.2 release are not part of this report.
 | ------------------------ | ------ |
 | DevImageBOX/ Mac         | <span class="status yellow">Yellow</span> |
 | Module/ Catalog/ Pricing | <span class="status yellow">Yellow</span> |
-| Module/ CompanyCred      | <span class="status red">Red</span>    |
-| Module/ FrontPermissio   | <span class="status green">Green</span>  |
-| Module/ RapidOrd         | <span class="status green">Green</span>  |
+| Module/ CompanyCred      | <span class="status yellow">Yellow</span> |
+| Module/ RapidOrd         | <span class="status yellow">Yellow</span> |
 | Module/ Requisition Lis  | <span class="status red">Red</span>    |
+
