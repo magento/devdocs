@@ -31,6 +31,7 @@ Plugins cannot be used with any of the following:
 * Static methods
 * `__construct`
 * Virtual types
+* Observers
 
 ### Declaring a plugin
 
