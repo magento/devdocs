@@ -22,6 +22,7 @@ In `magento-cloud-configuration` releases 101.6.2, 101.6.3, and 101.6.4 on Magen
 
 
 <!--- MAGECLOUD-587 -->* Magento now automatically sets the cookie domain to reflect the new domain when branching an environment in a PAAS environment. Previously, the Admin panel was inaccessible until the value of the `cookie_domain` is changed at the database level to the current domain.
+
 <!--- MAGECLOUD-683 -->* You can now log in to the Admin panel whether you’re in normal browser mode or incognito mode. Previously, you could log in to the Admin panel only when in browser incognito mode. 
 
 
@@ -45,7 +46,7 @@ In `magento-cloud-configuration` releases 101.6.2, 101.6.3, and 101.6.4 on Magen
 
 
 
-## How to get `magento-cloud-configuration` releases 101.6.2 and 101.6.3
+## How to get `magento-cloud-configuration` releases 101.6.x
 Magento Enterprise Cloud Edition periodically provides patch releases in components like `magento-cloud-configuration`.
 
 To test and apply these patches, see [Test general patches]({{ site.gdeurl21 }}cloud/project/project-patch.html#cloud-patch-gen).

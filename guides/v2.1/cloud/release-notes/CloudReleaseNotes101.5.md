@@ -2,8 +2,8 @@
 layout: default
 group: cloud
 subgroup: 030_ReleaseNotes
-title: magento-cloud-configuration release 101.5 Release Notes
-menu_title: magento-cloud-configuration release 101.5 Release Notes
+title: magento-cloud-configuration release 101.5.x Release Notes
+menu_title: magento-cloud-configuration release 101.5.x Release Notes
 menu_order: 49
 menu_node: 
 version: 2.1
