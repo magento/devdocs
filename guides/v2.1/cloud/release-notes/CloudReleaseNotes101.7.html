@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Step 2, Clone the project | Magento 2 Developer Documentation</title>
+	<title>magento-cloud-configuration release 101.7.x Release Notes | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.1/cloud/before/before-setup-env-2_clone.html">
+	<link rel="canonical" href="//guides/v2.1/cloud/release-notes/CloudReleaseNotes101.7.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -69,11 +69,11 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/cloud/before/before-setup-env-2_clone.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/cloud/release-notes/CloudReleaseNotes101.7.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/cloud/before/before-setup-env-2_clone.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/cloud/release-notes/CloudReleaseNotes101.7.html">Magento 2.1</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.2/cloud/before/before-setup-env-2_clone.html">Magento 2.2 RC</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.2/cloud/release-notes/CloudReleaseNotes101.7.html">Magento 2.2 RC</a></li>
 	
   </ul>
 
@@ -333,7 +333,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/cloud/release-notes/CloudReleaseNotes101.7.html">magento-cloud-configuration release 101.7.x Release Notes</a></li>
+									<li class="level-2  active "><a href="/guides/v2.1/cloud/release-notes/CloudReleaseNotes101.7.html">magento-cloud-configuration release 101.7.x Release Notes</a></li>
 
 									
 
@@ -595,7 +595,7 @@
 									
 
 
-											<li class="level3Child setupenv  active " data-menunode="setupenv"><a href="/guides/v2.1/cloud/before/before-setup-env-2_clone.html">Step 2, Clone the project</a>
+											<li class="level3Child setupenv " data-menunode="setupenv"><a href="/guides/v2.1/cloud/before/before-setup-env-2_clone.html">Step 2, Clone the project</a>
 
 
 									
@@ -1801,7 +1801,7 @@
 
           
 
-          <span property="name">Step 2, Clone the project</span>
+          <span property="name">magento-cloud-configuration release 101.7.x Release Notes</span>
 
         
 
@@ -1824,7 +1824,7 @@
 
 	
 
-	<h1 class="page-heading">Step 2, Clone the project</h1>
+	<h1 class="page-heading">magento-cloud-configuration release 101.7.x Release Notes</h1>
 
   
 
@@ -1832,145 +1832,43 @@
 </section>
 
 
-			
-<p>To clone the project’s <code class="highlighter-rouge">master</code> environment:</p>
+			<p>These Release Notes provide up-to-date information about changes, additions, and fixes to the Magento Enterprise Cloud Edition version 2.1.7, <code>magento-cloud-configuration</code> releases 101.7.3 and 101.7.4.</p>
 
-<ol>
-  <li>Log in to your local development machine as, or switch to, the <a href="/guides/v2.1/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a>.</li>
-  <li>Change to the web server or virtual host docroot.</li>
+<h2 id="changes-and-enhancements-in-this-release">Changes and enhancements in this release</h2>
+<p>In <code>magento-cloud-configuration</code> releases 101.7.3 and 101.7.4 on Magento Enterprise Edition 2.1.7, we provide the following improvements:</p>
+
+<h3 id="changes">101.7.3 changes</h3>
+
+<!--- MAGECLOUD-782 -->
+<ul>
   <li>
-    <p>Log in to your project:</p>
+    <p>Magento no longer throws an error when only the default store issued.  Previously, when only the default store is used, Magento threw the following error when running <code>php bin/magento magento-cloud:scd-dump</code>:</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud login
+    <pre><code>  Exception]                                                                                                                                               
+	Notice: Undefined index: stores in /app/vendor/magento/magento-cloud-configuration/src/Magento/MagentoCloud/Console/Command/SCDConfigDump.php on line 91  
 </code></pre>
-    </div>
   </li>
-  <li>
-    <p>List your projects:</p>
+</ul>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud project:list
-</code></pre>
-    </div>
-  </li>
-  <li>
-    <p>Clone a project.</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud project:get &lt;project ID&gt;
-</code></pre>
-    </div>
-
-    <p>When prompted for a directory name, enter <code class="highlighter-rouge">magento2</code>.</p>
-  </li>
-  <li>
-    <p>Change to the project directory.</p>
-
-    <p>For example, <code class="highlighter-rouge">cd magento2</code></p>
-  </li>
-  <li>
-    <p>List environments in the project:</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud environment:list
-</code></pre>
-    </div>
-
-    <div class="bs-callout bs-callout-info" id="info">
-      <p><code class="highlighter-rouge">magento-cloud environment:list</code> displays environment hierarchies whereas <code class="highlighter-rouge">git branch</code> displays does not. If you have any nested environments, use <code class="highlighter-rouge">magento-cloud environment:list</code>.</p>
-    </div>
-  </li>
-  <li>
-    <p>Fetch origin branches:</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code>git fetch origin
-</code></pre>
-    </div>
-  </li>
-  <li>
-    <p>Pull updated code:</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code>git pull origin &lt;environment ID&gt;
-</code></pre>
-    </div>
-  </li>
-</ol>
-
-<h2 id="change-the-magento-admin-url-user-name-and-password">Change the Magento Admin URL, user name, and password</h2>
-<p>This section discusses how to change <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span> parameters for security reasons. If you change the variables in the <code class="highlighter-rouge">master</code> branch, you have to do it only once because other environments inherit the variables from <code class="highlighter-rouge">master</code>.</p>
-
-<p>If your master branch is already configured, skip this section and continue with <a href="#setenv-new-env">Step 3: Clone or branch an environment</a>.</p>
-
-<p>If you’re not sure whether or not the master branch has been configured, enter the following command:</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>	magento-cloud variable:get -e &lt;environment ID&gt;
-</code></pre>
+<div class="bs-callout bs-callout-info" id="info">
+  <p>We've reverted the changes to image resizing that we introduced in 2.1.6. Unfortunately, certain image resizing changes introduced unanticipated problems. We have reverted these changes in this release, and will provide improvements to image resizing in a future product update.</p>
 </div>
 
-<ol>
-  <li>
-    <p>Set the variable values.</p>
+<h3 id="changes-1">101.7.4 changes</h3>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud variable:set &lt;name&gt; &lt;value&gt; -e &lt;environment ID&gt;
-</code></pre>
-    </div>
-  </li>
-  <li>
-    <p>To set the administrator’s user name to <code class="highlighter-rouge">meister_x2U8</code> in the <code class="highlighter-rouge">master</code> environment, enter:</p>
+<!--- MAGECLOUD-792 -->
+<ul>
+  <li>Magento no longer purges all Redis user sessions during deployment, but only the database where the cache is stored.</li>
+</ul>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud variable:set ADMIN_USERNAME meister_x2U8 -e master
-</code></pre>
-    </div>
-  </li>
-  <li>Wait for the project to redeploy.</li>
-  <li>
-    <p>To set the administrator’s password to <code class="highlighter-rouge">admin_A456</code>, enter:</p>
+<h2 id="how-to-get-magento-cloud-configuration-release-1017x">How to get <code>magento-cloud-configuration</code> release 101.7.x</h2>
+<p>Magento Enterprise Cloud Edition periodically provides patch releases in components like <code>magento-cloud-configuration</code>.</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud variable:set ADMIN_PASSWORD admin_A456 -e master
-</code></pre>
-    </div>
-  </li>
-  <li>Wait while the project redeploys.</li>
-  <li>
-    <p>To set the <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span> URI to <code class="highlighter-rouge">magento_A8v10</code>, enter:</p>
+<p>To test and apply these patches, see <a href="/guides/v2.1/cloud/project/project-patch.html#cloud-patch-gen">Test general patches</a>.</p>
 
-    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud variable:set ADMIN_URL magento_A8v10 -e master
-</code></pre>
-    </div>
-  </li>
-  <li>Wait while the project redeploys.</li>
-  <li>
-    <p>Log in to the Magento Admin using the values you just changed.</p>
+<h3 id="magento-ee-release-notes">Magento EE Release Notes</h3>
+<p>This Magento Enterprise Cloud Edition release corresponds to Magento Enterprise Edition 2.1.7.</p>
 
-    <p>The simplest way to do that is to use the environment routes that display when you redeploy the <code class="highlighter-rouge">master</code> branch. An example follows:</p>
-
-    <pre class="no-copy">Waiting for the activity ksvciptnzxfto (Steve Johnson added variable ADMIN_URL):
-    Building application 'mymagento' (runtime type: php:7.0, tree: 07263ba)
-    Slug already built for this tree id, skipping.
-
-    Re-deploying environment k4wtvm7ogzr5s-master.
-    Environment configuration:
-        mymagento (type: php:7.0, size: S, disk: 2048)
-        mysql (type: mysql:10.0, size: S, disk: 2048)
-        redis (type: redis:3.0, size: S)
-        solr (type: solr:4.10, size: S, disk: 1024)
-
-    Environment routes:
-        http://master-k4wtvm7ogzr5s.us.magentosite.cloud/ is served by application `mymagento`
-        https://master-k4wtvm7ogzr5s.us.magentosite.cloud/ is served by application `mymagento`
-
-In the preceding example, go to `http://master-k4wtvm7ogzr5s.us.magentosite.cloud/magento_A8v10` and log in using the user name `meister_x2U8` and password `admin_A456`
-	
-</pre>
-  </li>
-  <li>
-    <p>Take a snapshot of the master branch:</p>
-
-    <div class="highlighter-rouge"><pre class="highlight"><code>magento-cloud snapshot:create -e master
-</code></pre>
-    </div>
-  </li>
-</ol>
-
-<h4 id="next-step">Next step</h4>
-<p><a href="/guides/v2.1/cloud/before/before-setup-env-cron.html">Step 3, Set up cron</a></p>
 
 		</div>
 		<!-- /.content-wrap -->
@@ -1981,14 +1879,14 @@ In the preceding example, go to `http://master-k4wtvm7ogzr5s.us.magentosite.clou
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/before/before-setup-env-2_clone.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/cloud/release-notes/CloudReleaseNotes101.7.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
   
 
   <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/cloud/before/before-setup-env-2_clone.html" target="_blank">Give us feedback</a>
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/cloud/release-notes/CloudReleaseNotes101.7.html" target="_blank">Give us feedback</a>
   </div>
 
 </div>
