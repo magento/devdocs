@@ -26,21 +26,25 @@ Magento uses a custom [Grunt] task named `spec` to run Jasmine tests. The task c
 
 **Step 5.** In `<magento_root_dir>`, install all dependencies:
 
-    $ npm install
+{%highlight bash%}
+$   npm install
+{%endhighlight%}
 
 **Step 6.** In `<magento_root_dir>`, generate static view files in Magento that are going to be tested
 {:#prepare-step6}
 
-    $ php bin/magento setup:static-content:deploy -f
+{%highlight bash%}
+$   php bin/magento setup:static-content:deploy -f
+{%endhighlight%}
 
 Note that normally you don't have permissions to `<magento_root_dir>/app/code/`, in fact the generated static view file is being tested.
 
-<div class="bs-callout bs-callout-tip">
-  <p><b>For CentOS users</b></p>
-  <p>If the command fails with error message:</p>
-  <p><code>/var/www/html/magento2ce/node_modules/phantomjs-prebuilt/lib/phantom/bin/phantomjs: error while loading shared libraries: libfontconfig.so.1: cannot open shared object file: No such file or directory</code></p>
-  <p>install <a href="https://www.freedesktop.org/wiki/Software/fontconfig/" target="_blank">fonctconfig library</a>.</p>
-  <p><code>yum install fontconfig</code></p>
+<div class="bs-callout bs-callout-tip" markdown="1">
+**For CentOS users**<br/>
+If the command fails with error message: <br/>
+`/var/www/html/magento2ce/node_modules/phantomjs-prebuilt/lib/phantom/bin/phantomjs: error while loading shared libraries: libfontconfig.so.1: cannot open shared object file: No such file or directory`<br/>
+install [fonctconfig library](https://www.freedesktop.org/wiki/Software/fontconfig/){: target="_blank"}</a>.</p>
+  `$ yum install fontconfig`
 </div>
 
 Learn more in [Deploy static view files].
@@ -49,23 +53,15 @@ Learn more in [Deploy static view files].
 
 `Gruntfile.js` contains the test run task, so you can run **all tests** using the following command in in the Magento root directory:
 
-    $ grunt spec
-
-You can run a **single test** adding an optional parameter:
-
-    $ grunt spec --file=<path_to_test>
+{%highlight bash%}
+$   grunt spec:<THEME>
+{%endhighlight%}
 
   Example:
 
-    $ grunt spec --file="dev/tests/js/jasmine/tests/app/code/Magento/Ui/base/js/core/layout.test.js"
-
-If you want to run **tests for a theme**, enter:
-
-    $ grunt spec:<THEME>
-
-  Example:
-
-    $ grunt spec:backend
+{%highlight bash%}
+$   grunt spec:backend
+{%endhighlight%}
 
 ## Write a test {#write-test}
 
@@ -77,7 +73,7 @@ which tests a JS module:
 
 [`<magento_root_dir>/app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js`]{:target="_blank"}
 
-in its static representations generated in [Step 6] previously
+in its static representations generated in [Step 6] previously:
 
 `<magento_root_dir>/pub/static/<area>/<theme>/<localisation>/Magento_Ui/js/columns/actions.js`.
 
@@ -216,6 +212,51 @@ define([
 This topic doesn't provide Jasmine test writing methodology.
 
 [Learn more about testing with Jasmine.]
+
+## Known issues and solutions
+
+### Error: Cannot find module '&lt;module&gt;' {#cannot-find-module-error}
+
+#### Issue:
+
+An error message appears:
+
+```error
+Loading "Gruntfile.js" tasks...ERROR
+
+>> Error: Cannot find module '<module>'
+
+Warning: Task "spec" not found. Use --force to continue.
+```
+
+#### Solution:
+
+1. Make sure your Node.js version is up-to-date.
+2. Remove `package.json`, `Gruntfile.js`.
+3. Copy `package.json`, `Gruntfile.js` from `package.json.sample`, `Gruntfile.js.sample`.
+4. Delete the `node_modules` directory.
+5. Run `npm install` in your terminal.
+
+### Warning: Cannot read property 'pid' of undefined {#cannot-read-property-pid-warning}
+
+#### Issue:
+ 
+An error message appears:
+
+```error
+Warning: Cannot read property 'pid' of undefined
+
+Use --force to continue. Aborted due to warnings.
+```
+
+#### Solution:
+
+Run in your terminal:
+
+{%highlight bash%}
+$   cd <magento_root>/node_modules/grunt-contrib-jasmine
+$   npm install
+{%endhighlight%}
 
 <!-- LINK DEFINITIONS -->
 

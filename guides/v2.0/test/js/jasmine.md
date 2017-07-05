@@ -31,7 +31,7 @@ Magento uses a custom [Grunt] task named `spec` to run Jasmine tests. The task c
 $   npm install
 {%endhighlight%}
 
-**Step 6.** In `<magento_root_dir>`, generate static view files in Magento
+**Step 6.** In `<magento_root_dir>`, generate static view files in Magento that are going to be tested
 {:#prepare-step6}
 
 {%highlight bash%}
@@ -108,7 +108,7 @@ define([
 A Jasmine test consists of main two parts:
 
 - `describe` blocks
-- `it` blocks.
+- `it` blocks
 
 Both the `describe` and `it` functions contains two parameters:
 
