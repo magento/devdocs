@@ -32,7 +32,6 @@ In `magento-cloud-configuration` releases 101.6.2, 101.6.3, and 101.6.4 on Magen
 <!--- MAGECLOUD-717 -->* You can now successfully deploy when using the `.regenerate` flag. (We corrected an error in the `magento-cloud-configuration/pre-deploy.php` file.) Previously, a PHP fatal error occurred during deployment with `magento-cloud-configuration` 101.6.0. 
 
 
-
 ### 101.6.3 changes
 
 
