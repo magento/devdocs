@@ -530,9 +530,7 @@
 </section>
 
 
-			<h2 id="preface">Preface</h2>
-
-<p>Magento uses a custom <a href="http://gruntjs.com/">Grunt</a> task named <code>spec</code> to run Jasmine tests. The task collects the tests from <code>&lt;magento_root_dir&gt;dev/tests/js/jasmine/tests</code> and can be run for all tests, a theme, or a single test.</p>
+			<p>Magento uses a custom <a href="http://gruntjs.com/">Grunt</a> task named <code>spec</code> to run Jasmine tests. The task collects the tests from <code>&lt;magento_root_dir&gt;dev/tests/js/jasmine/tests</code> and can be run for all tests, a theme, or a single test.</p>
 
 <h2 id="prepare-environment">Prepare environment</h2>
 
@@ -546,22 +544,21 @@
 
 <p><strong>Step 5.</strong> In <code>&lt;magento_root_dir&gt;</code>, install all dependencies:</p>
 
-<pre><code>$ npm install
-</code></pre>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>  npm install</code></pre></figure>
 
 <p id="prepare-step6"><strong>Step 6.</strong> In <code>&lt;magento_root_dir&gt;</code>, generate static view files in Magento that are going to be tested</p>
 
-<pre><code>$ php bin/magento setup:static-content:deploy -f
-</code></pre>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>  php bin/magento setup:static-content:deploy -f</code></pre></figure>
 
 <p>Note that normally you don’t have permissions to <code>&lt;magento_root_dir&gt;/app/code/</code>, in fact the generated static view file is being tested.</p>
 
 <div class="bs-callout bs-callout-tip">
-  <p><b>For CentOS users</b></p>
-  <p>If the command fails with error message:</p>
-  <p><code>/var/www/html/magento2ce/node_modules/phantomjs-prebuilt/lib/phantom/bin/phantomjs: error while loading shared libraries: libfontconfig.so.1: cannot open shared object file: No such file or directory</code></p>
-  <p>install <a href="https://www.freedesktop.org/wiki/Software/fontconfig/" target="_blank">fonctconfig library</a>.</p>
-  <p><code>yum install fontconfig</code></p>
+  <p><strong>For CentOS users</strong><br />
+If the command fails with error message: <br />
+<code>/var/www/html/magento2ce/node_modules/phantomjs-prebuilt/lib/phantom/bin/phantomjs: error while loading shared libraries: libfontconfig.so.1: cannot open shared object file: No such file or directory</code><br />
+install <a href="https://www.freedesktop.org/wiki/Software/fontconfig/">fonctconfig library</a>:{: target=”_blank”}<br />
+<code>$ yum install fontconfig</code> (CentOS)<br />
+<code>$ apt-get install fontconfig</code> (Ubuntu)</p>
 </div>
 
 <p>Learn more in <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-static-view.html#config-cli-subcommands-xlate-dict">Deploy static view files</a>.</p>
@@ -570,28 +567,11 @@
 
 <p><code>Gruntfile.js</code> contains the test run task, so you can run <strong>all tests</strong> using the following command in in the Magento root directory:</p>
 
-<pre><code>$ grunt spec
-</code></pre>
-
-<p>You can run a <strong>single test</strong> adding an optional parameter:</p>
-
-<pre><code>$ grunt spec --file=&lt;path_to_test&gt;
-</code></pre>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>  grunt spec:&lt;THEME&gt;</code></pre></figure>
 
 <p>Example:</p>
 
-<pre><code>$ grunt spec --file="dev/tests/js/jasmine/tests/app/code/Magento/Ui/base/js/core/layout.test.js"
-</code></pre>
-
-<p>If you want to run <strong>tests for a theme</strong>, enter:</p>
-
-<pre><code>$ grunt spec:&lt;THEME&gt;
-</code></pre>
-
-<p>Example:</p>
-
-<pre><code>$ grunt spec:backend
-</code></pre>
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>  grunt spec:backend</code></pre></figure>
 
 <h2 id="write-test">Write a test</h2>
 
@@ -603,7 +583,7 @@
 
 <p><a href="https://github.com/magento/magento2/blob/53f18a0efc86c58b8e47a6b114f5db6746fc154c/app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js" target="_blank"><code>&lt;magento_root_dir&gt;/app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js</code></a></p>
 
-<p>in its static representations generated in <a href="#prepare-step6">Step 6</a> previously</p>
+<p>in its static representations generated in <a href="#prepare-step6">Step 6</a> previously:</p>
 
 <p><code>&lt;magento_root_dir&gt;/pub/static/&lt;area&gt;/&lt;theme&gt;/&lt;localisation&gt;/Magento_Ui/js/columns/actions.js</code>.</p>
 
@@ -739,6 +719,49 @@
 <p>This topic doesn’t provide Jasmine test writing methodology.</p>
 
 <p><a href="https://jasmine.github.io/edge/introduction.html">Learn more about testing with Jasmine.</a></p>
+
+<h2 id="known-issues-and-solutions">Known issues and solutions</h2>
+
+<h3 id="cannot-find-module-error">Error: Cannot find module ‘&lt;module&gt;’</h3>
+
+<h4 id="issue">Issue:</h4>
+
+<p>An error message appears:</p>
+
+<pre><code class="language-error">Loading "Gruntfile.js" tasks...ERROR
+
+&gt;&gt; Error: Cannot find module '&lt;module&gt;'
+
+Warning: Task "spec" not found. Use --force to continue.
+</code></pre>
+
+<h4 id="solution">Solution:</h4>
+
+<ol>
+  <li>Make sure your Node.js version is up-to-date.</li>
+  <li>Remove <code>package.json</code>, <code>Gruntfile.js</code>.</li>
+  <li>Copy <code>package.json</code>, <code>Gruntfile.js</code> from <code>package.json.sample</code>, <code>Gruntfile.js.sample</code>.</li>
+  <li>Delete the <code>node_modules</code> directory.</li>
+  <li>Run <code>npm install</code> in your terminal.</li>
+</ol>
+
+<h3 id="cannot-read-property-pid-warning">Warning: Cannot read property ‘pid’ of undefined</h3>
+
+<h4 id="issue-1">Issue:</h4>
+
+<p>An error message appears:</p>
+
+<pre><code class="language-error">Warning: Cannot read property 'pid' of undefined
+
+Use --force to continue. Aborted due to warnings.
+</code></pre>
+
+<h4 id="solution-1">Solution:</h4>
+
+<p>Run in your terminal:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nv">$ </span>  <span class="nb">cd</span> &lt;magento_root&gt;/node_modules/grunt-contrib-jasmine
+<span class="nv">$ </span>  npm install</code></pre></figure>
 
 <!-- LINK DEFINITIONS -->
 

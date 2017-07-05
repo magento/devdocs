@@ -762,9 +762,9 @@ git clone -b develop git@github.com:magento/magento2.git
 </code></pre>
   </li>
   <li>
-    <p>Clone the <code>magento2ee/</code> and <code>magento2b2b/</code> repositories inside the <code>magento2ce/</code> repository:</p>
+    <p>Clone the <code>magento2ee/</code> and <code>magento2b2b/</code> repositories inside the <code>magento2/</code> repository:</p>
 
-    <pre><code>cd /var/www/html/magento2ce
+    <pre><code>cd /var/www/html/magento2
 git clone -b 2.2.0-release-candidate git@github.com:magento/magento2ee.git
 git clone -b 1.1.0-release-candidate git@github.com:magento/magento2b2b.git
 </code></pre>
@@ -772,13 +772,13 @@ git clone -b 1.1.0-release-candidate git@github.com:magento/magento2b2b.git
 </ol>
 
 <h3 id="prepare-files-for-installation">Prepare files for installation</h3>
-<p>Create symlinks to the <code>magento2ee/</code> and <code>magento2b2b/</code> directories from the <code>magento2ce/</code> directory. Symlinks preserve the git history for each repository so that you can make code contributions.</p>
+<p>Create symlinks to the <code>magento2ee/</code> and <code>magento2b2b/</code> directories from the <code>magento2/</code> directory. Symlinks preserve the git history for each repository so that you can make code contributions.</p>
 
 <ol>
   <li>
-    <p>Change to the <code>magento2ce/</code> directory:</p>
+    <p>Change to the <code>magento2/</code> directory:</p>
 
-    <pre><code>cd /var/www/html/magento2ce
+    <pre><code>cd /var/www/html/magento2
 </code></pre>
   </li>
   <li>
@@ -801,11 +801,11 @@ git clone -b 1.1.0-release-candidate git@github.com:magento/magento2b2b.git
 
     <p>You should see output similar to the following:</p>
 
-    <pre><code>lrwxrwxrwx   1 root    root      57 Jun 22 22:43 B2b -&gt; /var/www/html/magento2ce/magento2b2b/app/code/Magento/B2b
+    <pre><code>lrwxrwxrwx   1 root    root      57 Jun 22 22:43 B2b -&gt; /var/www/html/magento2/magento2b2b/app/code/Magento/B2b
 drwxrwxr-x  15 magento magento 4.0K Jun 22 22:26 Backend
 drwxrwxr-x  11 magento magento 4.0K Jun 22 22:26 Backup
-lrwxrwxrwx   1 root    root      59 Jun 22 22:42 Banner -&gt; /var/www/html/magento2ce/magento2ee/app/code/Magento/Banner
-lrwxrwxrwx   1 root    root      74 Jun 22 22:42 BannerCustomerSegment -&gt; /var/www/html/magento2ce/magento2ee/app/code/Magento/BannerCustomerSegment
+lrwxrwxrwx   1 root    root      59 Jun 22 22:42 Banner -&gt; /var/www/html/magento2/magento2ee/app/code/Magento/Banner
+lrwxrwxrwx   1 root    root      74 Jun 22 22:42 BannerCustomerSegment -&gt; /var/www/html/magento2/magento2ee/app/code/Magento/BannerCustomerSegment
 </code></pre>
   </li>
 </ol>
@@ -814,7 +814,7 @@ lrwxrwxrwx   1 root    root      74 Jun 22 22:42 BannerCustomerSegment -&gt; /va
 </div>
 
 <h3 id="update-installation-dependencies">Update installation dependencies</h3>
-<p>From the <code>magento2ce/</code> directory, run Composer to update dependencies:</p>
+<p>From the <code>magento2/</code> directory, run Composer to update dependencies:</p>
 
 <pre><code>composer install
 </code></pre>
@@ -826,9 +826,9 @@ lrwxrwxrwx   1 root    root      74 Jun 22 22:42 BannerCustomerSegment -&gt; /va
 
 <ol>
   <li>
-    <p>Set file permissions on the <code>magento2ce/</code> installation directory:</p>
+    <p>Set file permissions on the <code>magento2/</code> installation directory:</p>
 
-    <pre><code>cd /var/www/html/magento2ce
+    <pre><code>cd /var/www/html/magento2
 find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \;
 find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
 chown -R :&lt;web-server-group&gt; .
@@ -841,7 +841,7 @@ chmod u+x bin/magento
 
     <p>For example:</p>
 
-    <p><code>http://localhost/magento2ce/setup</code></p>
+    <p><code>http://localhost/magento2/setup</code></p>
   </li>
 </ol>
 
