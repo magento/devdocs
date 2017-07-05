@@ -10,8 +10,6 @@ version: 2.2
 github_link: test/js/jasmine.md
 ---
 
-## Preface
-
 Magento uses a custom [Grunt] task named `spec` to run Jasmine tests. The task collects the tests from `<magento_root_dir>dev/tests/js/jasmine/tests` and can be run for all tests, a theme, or a single test.
 
 ## Prepare environment
@@ -43,8 +41,9 @@ Note that normally you don't have permissions to `<magento_root_dir>/app/code/`,
 **For CentOS users**<br/>
 If the command fails with error message: <br/>
 `/var/www/html/magento2ce/node_modules/phantomjs-prebuilt/lib/phantom/bin/phantomjs: error while loading shared libraries: libfontconfig.so.1: cannot open shared object file: No such file or directory`<br/>
-install [fonctconfig library](https://www.freedesktop.org/wiki/Software/fontconfig/){: target="_blank"}</a>.</p>
-  `$ yum install fontconfig`
+install [fonctconfig library](https://www.freedesktop.org/wiki/Software/fontconfig/):{: target="_blank"}<br/>
+`$ yum install fontconfig` (CentOS)<br/>
+`$ apt-get install fontconfig` (Ubuntu)
 </div>
 
 Learn more in [Deploy static view files].
@@ -57,7 +56,7 @@ Learn more in [Deploy static view files].
 $   grunt spec:<THEME>
 {%endhighlight%}
 
-  Example:
+Example:
 
 {%highlight bash%}
 $   grunt spec:backend
