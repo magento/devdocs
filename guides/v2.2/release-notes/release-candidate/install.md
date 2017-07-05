@@ -73,21 +73,21 @@ These instructions assume you have experience working with Github repositories. 
     git clone -b develop git@github.com:magento/magento2.git
     ```
 
-2.  Clone the `magento2ee/` and `magento2b2b/` repositories inside the `magento2ce/` repository:
+2.  Clone the `magento2ee/` and `magento2b2b/` repositories inside the `magento2/` repository:
 
     ```
-    cd /var/www/html/magento2ce
+    cd /var/www/html/magento2
     git clone -b 2.2.0-release-candidate git@github.com:magento/magento2ee.git
     git clone -b 1.1.0-release-candidate git@github.com:magento/magento2b2b.git
     ```
 
 ### Prepare files for installation
-Create symlinks to the `magento2ee/` and `magento2b2b/` directories from the `magento2ce/` directory. Symlinks preserve the git history for each repository so that you can make code contributions.
+Create symlinks to the `magento2ee/` and `magento2b2b/` directories from the `magento2/` directory. Symlinks preserve the git history for each repository so that you can make code contributions.
 
-1.  Change to the `magento2ce/` directory:
+1.  Change to the `magento2/` directory:
 
     ```
-    cd /var/www/html/magento2ce
+    cd /var/www/html/magento2
     ```
 
 1.  Create symlinks to the `magento2ee/` directory:
@@ -111,18 +111,18 @@ Create symlinks to the `magento2ee/` and `magento2b2b/` directories from the `ma
     You should see output similar to the following:
 
     ```
-    lrwxrwxrwx   1 root    root      57 Jun 22 22:43 B2b -> /var/www/html/magento2ce/magento2b2b/app/code/Magento/B2b
+    lrwxrwxrwx   1 root    root      57 Jun 22 22:43 B2b -> /var/www/html/magento2/magento2b2b/app/code/Magento/B2b
     drwxrwxr-x  15 magento magento 4.0K Jun 22 22:26 Backend
     drwxrwxr-x  11 magento magento 4.0K Jun 22 22:26 Backup
-    lrwxrwxrwx   1 root    root      59 Jun 22 22:42 Banner -> /var/www/html/magento2ce/magento2ee/app/code/Magento/Banner
-    lrwxrwxrwx   1 root    root      74 Jun 22 22:42 BannerCustomerSegment -> /var/www/html/magento2ce/magento2ee/app/code/Magento/BannerCustomerSegment
+    lrwxrwxrwx   1 root    root      59 Jun 22 22:42 Banner -> /var/www/html/magento2/magento2ee/app/code/Magento/Banner
+    lrwxrwxrwx   1 root    root      74 Jun 22 22:42 BannerCustomerSegment -> /var/www/html/magento2/magento2ee/app/code/Magento/BannerCustomerSegment
     ```
 <div class="bs-callout bs-callout-info" markdown="1">
 If you mistyped something when creating symlinks and need to remove them and try again, run the following command: `php -f ./magento2ee/dev/tools/build-ee.php -- --command unlink --ce-source .`
 </div>
 
 ### Update installation dependencies
-From the `magento2ce/` directory, run Composer to update dependencies:
+From the `magento2/` directory, run Composer to update dependencies:
 
 ```
 composer install
@@ -133,10 +133,10 @@ Refer to [Update installation dependencies](http://devdocs.magento.com/guides/v2
 ### Complete the installation
 Now that you've cloned all the repositories you need and prepared the files, proceed with the installation:
 
-1.  Set file permissions on the `magento2ce/` installation directory:
+1.  Set file permissions on the `magento2/` installation directory:
 
     ```
-    cd /var/www/html/magento2ce
+    cd /var/www/html/magento2
     find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \;
     find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
     chown -R :<web-server-group> .
@@ -148,7 +148,7 @@ Now that you've cloned all the repositories you need and prepared the files, pro
 
     For example:
 
-    `http://localhost/magento2ce/setup`
+    `http://localhost/magento2/setup`
 
 <div class="bs-callout bs-callout-info" markdown="1">
 You can also install using the [command line]({{ page.baseurl }}install-gde/install/cli/install-cli.html).
