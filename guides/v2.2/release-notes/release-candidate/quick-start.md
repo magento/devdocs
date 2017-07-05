@@ -86,7 +86,7 @@ We invite any Magento community member to participate in the Magento 2.2.0 CE Re
 
 The Magento 2.2.0 EE Release Candidate evaluation is open to all Solution Partners. To participate, you must:
 
-* Sign the [Release Candidate Software agreement](https://magento.com/partners/portal/customer/account/login)
+* Sign the [Release Candidate Software agreement](https://magento.com/partners/portal/customer/account/login/referer/aHR0cHM6Ly9tYWdlbnRvLmNvbS9wYXJ0bmVycy9wb3J0YWwvYWdyZWVtZW50Lw,,/). Note that the Magento Primary Contact must sign the agreement. 
 
 * Provide GitHub account information for an Individual Account for a Solution Partner Employee. The company name field must contain the Partner’s name or @partnername. Alternatively, the user’s profile must show that the developer is a member of the Solution Partner’s GitHub Organization.
 
