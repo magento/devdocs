@@ -2,11 +2,11 @@
 layout: default
 group: cloud
 subgroup: 030_ReleaseNotes
-title: magento-cloud-configuration release 101.4.1 Release Notes
-menu_title: magento-cloud-configuration release 101.4.1 Release Notes
+title: magento-cloud-configuration release 101.4.x Release Notes
+menu_title: magento-cloud-configuration release 101.4.x Release Notes
 menu_order: 50
 menu_node: 
-version: 2.0
+version: 2.1
 github_link: cloud/release-notes/CloudReleaseNotes101.4.md
 ---
  
