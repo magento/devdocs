@@ -118,5 +118,4 @@ To add your authentication keys:
 5.	Save your changes to `.gitignore` and exit the text editor.
 
 #### Next step
-[Step 6, Set file system permissions and ownership]({{ page.baseurl }}cloud/before/before-setup-env-perms.html)
-
+[Step 4, Set up cron]({{ page.baseurl }}cloud/before/before-setup-env-cron.html)

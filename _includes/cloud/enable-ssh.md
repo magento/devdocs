@@ -49,9 +49,15 @@ To create an SSH key pair:
 
 4. After creating the SSH, start the ssh-agent:
 
-	For MAC or Linux:
+	For Mac or Linux:
 
 		$ eval "$(ssh-agent -s)"
+	For Mac, you may also want to edit the  `~/.ssh/config` file to automatically load keys into the ssh-agent and store passphrases in your keychain.
+
+		Host *
+			AddKeysToAgent yes
+			UseKeychain yes
+			IdentityFile ~/.ssh/id_rsa
 
 	For Windows:
 
@@ -59,7 +65,7 @@ To create an SSH key pair:
 
 5. Add the SSH key to the ssh-agent. If you used a different name for the key file name, replace `id_rsa` with that file name.
 
-	For MAC or Linux:
+	For Mac or Linux:
 
 		ssh-add -K ~/.ssh/id_rsa
 
@@ -67,7 +73,7 @@ To create an SSH key pair:
 
 		ssh-add ~/.ssh/id_rsa
 
-6. [Add your SSH key to your GitHub account.](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/)
+6. [Add your SSH key to your GitHub account.](https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/) The instructions include Mac, Windows, and Linux.
 
 #### Test the SSH keys
 
@@ -121,3 +127,13 @@ To add an SSH key using the Web Interface:
 
 	![Add an SSH public key to your account]({{ site.baseurl }}common/images/cloud_add-public-key.png){:width="550px"}
 7.	Follow the prompts on your screen to complete the task.
+
+### Set global Git variables
+Set required global Git variables on the machine to commit or push to a Git branch. These variables set Git credentials for accessing your GitHub account.
+
+To set variables, enter the following commands on every workspace:
+
+	git config --global user.name "<your name>"
+	git config --global user.email <your e-mail address>
+
+For more information, see [First-Time Git Setup](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup#_first_time){:target="_blank"}
