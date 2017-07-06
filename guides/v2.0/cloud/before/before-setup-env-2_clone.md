@@ -42,10 +42,10 @@ To clone the project's `master` environment:
 
 5.	Fetch origin branches:
 
-		git fetch origin
+		git fetch magento
 6.	Pull updated code:
 
-		git pull origin <environment ID>
+		git pull magento <environment ID>
 
 ## Change the Magento Admin URL, user name, and password
 This section discusses how to change {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} parameters for security reasons. If you change the variables in the `master` branch, you have to do it only once because other environments inherit the variables from `master`.
