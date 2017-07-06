@@ -3,6 +3,7 @@ layout: default
 group: release-notes
 subgroup: Third-party licenses
 menu_title: Magento EE third-party licenses
+title: Magento EE third-party licenses
 menu_order: 2
 version: 2.2
 github_link: release-notes/thirdparty_ee.md
@@ -10,15 +11,13 @@ github_link: release-notes/thirdparty_ee.md
 
 This page contains links to license agreements of the third party components used within Magento EE.  Click the **License** links to view the end user license agreement for the corresponding software.
 
-
-
 Name|Version|License Name|Available From|Link to License
 ---|---|---|---|---
-elasticsearch/elasticsearch |2.0| Apache-2.0|[Source](https://github.com/elastic/elasticsearch-php)|[License](https://github.com/elastic/elasticsearch-php/blob/master/LICENSE)
-guzzlehttp/ringphp || MIT|[Source](https://github.com/guzzle/RingPHP)|[License](https://github.com/guzzle/RingPHP/blob/master/LICENSE)
-guzzlehttp/streams || MIT|[Source](https://github.com/guzzle/streams)|[License](https://github.com/guzzle/streams/blob/master/LICENSE)
+elasticsearch/elasticsearch |2.0| Apache 2.0/GNU LGPL-2.1|[Source](https://github.com/elastic/elasticsearch-php)|[License](https://github.com/elastic/elasticsearch-php/blob/master/LICENSE)
+guzzlehttp/ringphp |1.1.0| MIT|[Source](https://github.com/guzzle/RingPHP)|[License](https://github.com/guzzle/RingPHP/blob/master/LICENSE)
+guzzlehttp/streams |3.0.0| MIT|[Source](https://github.com/guzzle/streams)|[License](https://github.com/guzzle/streams/blob/master/LICENSE)
 solarium/solarium |3.8.1| NewBSD|[Source](https://github.com/solariumphp/solarium)|[License](https://github.com/solariumphp/solarium/blob/master/COPYING)
-php-amqplib/php-amqplib" |2.5.*| LGPL-2.1|[Source](https://github.com/php-amqplib/php-amqplib)|[License](https://github.com/php-amqplib/php-amqplib/blob/master/LICENSE)
+php-amqplib/php-amqplib |2.5.*| LGPL-2.1|[Source](https://github.com/php-amqplib/php-amqplib)|[License](https://github.com/php-amqplib/php-amqplib/blob/master/LICENSE)
 Zend Framework|2.7.7|BSD-3-Clause|[Source](http://framework.zend.com/)|[License](https://framework.zend.com/license)
 colinmollenhour/credis |1.6| MIT|[Source](https://github.com/colinmollenhour/credis)|[License](https://github.com/colinmollenhour/credis/blob/master/LICENSE)
 colinmollenhour/php-redis-session-abstract |1.2.2| BSD-3-Clause|[Source](https://github.com/colinmollenhour/php-redis-session-abstract)|[License](https://github.com/colinmollenhour/php-redis-session-abstract#license)
@@ -61,7 +60,7 @@ sebastian/phpcpd|2.0.4|BSD-3-Clause|[Source](https://github.com/sebastianbergman
 trentrichardson/jquery-timepicker-addon|1.4.3|MIT|[Source](https://github.com/trentrichardson/jQuery-Timepicker-Addon)|[License](https://github.com/trentrichardson/jQuery-Timepicker-Addon/blob/master/LICENSE-MIT)
 jquery|1.11.0 |MIT|[Source](https://jquery.com/)|[License](https://jquery.org/license/)
 blueimp/jquery-file-upload|5.6.14|MIT|[Source](https://github.com/blueimp/jQuery-File-Upload)|[License](https://github.com/blueimp/jQuery-File-Upload/blob/master/LICENSE)
-jqueryui|1.10.4||[Source](https://github.com/jquery/jqueryui.com)|[License](https://github.com/jquery/jqueryui.com/blob/master/LICENSE.txt)
+jqueryui|1.10.4|MIT|[Source](https://github.com/jquery/jqueryui.com)|[License](https://github.com/jquery/jqueryui.com/blob/master/LICENSE.txt)
 bootstrap|3.1.0 |MIT|[Source](http://getbootstrap.com)|[License](https://github.com/twbs/bootstrap/blob/master/LICENSE)
 tiny_mce |3.4.7|GNU LGPL 2.1|[Source](https://www.tinymce.com)|[License](https://github.com/tinymce/tinymce/blob/master/LICENSE.TXT)
 doctrine/instantiator |1.0.5| MIT|[Source](https://github.com/doctrine/instantiator)|[License](https://github.com/doctrine/instantiator/blob/master/LICENSE)
@@ -84,7 +83,7 @@ sebastian/version |1.0.6| BSD-3-Clause|[Source](https://github.com/sebastianberg
 seld/cli-prompt|1.0.3| MIT|[Source](https://github.com/Seldaek/cli-prompt)|[License](https://github.com/Seldaek/cli-prompt/blob/master/LICENSE)
 seld/jsonlint |1.6.0| MIT|[Source](https://github.com/Seldaek/jsonlint)|[License](https://github.com/Seldaek/jsonlint/blob/master/LICENSE)
 seld/phar-utils|1.0.1|MIT|[Source](https://github.com/Seldaek/phar-utils)|[License](https://github.com/Seldaek/phar-utils/blob/master/LICENSE)
-Cm ||BSD-3-Clause|[Source](https://github.com/colinmollenhour/Cm_RedisSession)|[License 1](https://github.com/colinmollenhour/Cm_RedisSession/blob/master/Cm_RedisSession.xml) [License 2](http://opensource.org/licenses/BSD-3-Clause)
+Cm_RedisSession ||BSD-3-Clause|[Source](https://github.com/colinmollenhour/Cm_RedisSession)|[License 1](https://github.com/colinmollenhour/Cm_RedisSession/blob/master/Cm_RedisSession.xml) [License 2](http://opensource.org/licenses/BSD-3-Clause)
 extjs |1.0.1|Open GPL 3.0 (when was included)|[Source](https://www.sencha.com/)|[License](https://www.gnu.org/licenses/lgpl.html)
 fotorama|4.6.4 |MIT|[Source](https://github.com/artpolikarpov/fotorama)|[License](https://github.com/artpolikarpov/fotorama/blob/master/MIT-LICENSE)
 knockoutjs|3.3.0 |MIT|[Source](http://knockoutjs.com/downloads/index.html)|[Source](https://github.com/knockout/knockout/blob/master/LICENSE)
