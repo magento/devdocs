@@ -92,9 +92,9 @@ Go to the Admin in default of developer mode and change the following settings f
 | ---------------- | -------------------- | ------ |
 | General Settings | Asynchronous Sending | Enable |
 
-#### Stores -> Index Management
+#### System -> Index Management
 
-Set all indexers to "Update on Schedule" mode.
+Set all indexers to "Update by Schedule" mode.
 
 
 ### Production Mode
