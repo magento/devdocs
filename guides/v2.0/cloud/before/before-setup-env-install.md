@@ -32,13 +32,13 @@ A sample result follows:
 	| ADMIN_USERNAME | meister_x2U8  | Yes       | No   |
 	+----------------+---------------+-----------+------+
 
+To install Magento, follow the instructions using one of these options:
+* [Install the Magento software using the command line]({{ page.baseurl }}install-gde/install/cli/install-cli.html)
+* [Install the Magento software using the Web Setup Wizard]({{ page.baseurl }}install-gde/install/web/install-web.html)
+
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 After you install Magento, set file system permissions and ownership as discussed in [Step 7, Set file system permissions and ownership]({{ page.baseurl }}cloud/before/before-setup-env-perms.html).
 </div>
 
 #### Next step
 [Step 7, Set file system permissions and ownership]({{ page.baseurl }}cloud/before/before-setup-env-perms.html)
-
-#### Related topics
-<ul><li><a href="{{ page.baseurl }}install-gde/install/web/install-web.html">Install the Magento software using the Web Setup Wizard</a></li>
-	<li><a href="{{ page.baseurl }}install-gde/install/cli/install-cli.html">Install the Magento software using the command line</a></li></ul>

@@ -17,3 +17,4 @@ The following topics discuss solutions to common issues with Magento Enterprise 
 *	[Resolve issues with a new project]({{page.baseurl}}cloud/trouble/trouble_proj-startover.html)
 *	[Component deployment failure]({{ page.baseurl }}cloud/trouble/trouble_comp-deploy-fail.html)
 *	[Troubleshoot Fastly]({{ page.baseurl }}cloud/trouble/trouble_fastly.html)
+*	[Resolve issues with encryption key]({{ page.baseurl }}cloud/trouble/trouble_crypt-key-variable.html)

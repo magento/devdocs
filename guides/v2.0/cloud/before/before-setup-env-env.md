@@ -15,9 +15,14 @@ github_link: cloud/before/before-setup-env-env.md
 {::options syntax_highlighter="rouge" /}
 
 
-Now that you've changed the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} variables, you should create a new environment for your development work; this new environment inherits the variable values from master.
+With your workspace configured, the project cloned, and cron set up, you can create a branch for development work.
 
-You can branch according to your own branching strategies, according to
+You should also configure the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} variables. For details, see [Add your local authentication keys to the project]({{ page.baseurl }}cloud/admin/admin-snap.html#add-keys-project) The new environment inherits the variable values from the master.
+
+You can branch according to your own branching strategies. For example, you could create a branch to:
+* Install and add Magento extensions and modules
+* Create custom code
+* Modify and export configurations
 
 After you create the branch, update project dependencies so you can install the Magento software locally.
 
@@ -30,7 +35,7 @@ After you create the branch, update project dependencies so you can install the 
 
 			magento-cloud environment:checkout
 
-	For example, to create a new branch named `sprint1` from master, enter
+	For example, to create a new branch named `sprint1` from master, enter:
 
 			magento-cloud environment:branch sprint1 master
 

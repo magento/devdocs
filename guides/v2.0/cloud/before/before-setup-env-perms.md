@@ -25,6 +25,3 @@ To set up file system permissions and ownership:
 		chmod u+x bin/magento
 
 {% include install/file-system-perms-twouser_cmds-only.md %}
-
-#### Next step
-[Step 7, Install Magento]({{ page.baseurl }}cloud/before/before-setup-env-install.html)
