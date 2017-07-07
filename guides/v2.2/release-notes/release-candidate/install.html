@@ -814,6 +814,10 @@ lrwxrwxrwx   1 root    root      74 Jun 22 22:42 BannerCustomerSegment -&gt; /va
 </div>
 
 <h3 id="update-installation-dependencies">Update installation dependencies</h3>
+<div class="bs-callout bs-callout-warning">
+  <p>If you’re installing EE or B2B, you must replace the <code>composer.json</code> and <code>composer.lock </code> files in the <code>magento2/</code> directory with the <code>composer.json</code> and <code>composer.lock</code> files from inside the <code>magento2ee</code> directory before updating dependencies.</p>
+</div>
+
 <p>From the <code>magento2/</code> directory, run Composer to update dependencies:</p>
 
 <pre><code>composer install
