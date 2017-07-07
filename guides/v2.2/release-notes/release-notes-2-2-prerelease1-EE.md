@@ -69,21 +69,6 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 
 
 
-## Breaking issues
-
-Here are some of the currently unresolved issues we are working on for this release:
-
-
-<!--- 70066-->* The catalog permissions indexer in a medium B2B installation can take a long time (for example, hours for B2B medium profile) and consumes excessive memory.
-
-<!--- 65555-->* Some `js.translation.js` files do not correctly regenerate during deployment. As a result, Magento does not display  translated theme strings.
-
-<!--- 57995-->* Magento does not properly display videos for simple products. It displays thumbnail images instead of the actual video. [GITHUB-6360](https://github.com/magento/magento2/issues/6360)
-
-<!--- 69636-->* Magento does not apply the Cart Price rules when sorting products by price. [GITHUB-7465](https://github.com/magento/magento2/issues/7465)
-
-
-
 ## System requirements
 Our technology stack is built on PHP and MySQL. For more information, see [System Requirements]({{ page.baseurl }}install-gde/system-requirements-tech.html).
 
