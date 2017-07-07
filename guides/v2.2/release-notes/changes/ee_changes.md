@@ -21,4 +21,4 @@ All changes are aggregated into two tables:
 
 ## 2.2.0 RC1.1 - 2.1.7 {#changes-220rc11}
 
-{% include changes/ce/220rc11-217.html %}
+{% include changes/ee/220rc11-217.html %}
