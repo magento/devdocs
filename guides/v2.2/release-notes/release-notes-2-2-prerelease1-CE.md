@@ -27,9 +27,6 @@ Looking for information about how Magento 2.2.0 Release Candidate evaluation pro
 Look for the following highlights in this release:
 
 
-* **Advanced Reporting** provides merchants with an improved, reliable, and compelling way to report on their products, orders, and customers. See the [Module Reference Guide]({{page.baseurl}}mrg/ce/Analytics/description.html) for more information.
-
-
 * **Significant enhancements in platform security and developer experience**. Security improvements include the removal of specific un-serialize calls and changed hashing algorithm to improve security for sensitive values. Developers will appreciate  improvements in debugging, customizations, and logging.
 
 
@@ -57,7 +54,6 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 <!--- 70318 -->* You cannot generate static content without a database connection. [GitHub-10041](https://github.com/magento/magento2/issues/10041)
 
 
-<!--- 70324-->* You cannot access the Advanced Reporting page. [GitHub-10072](https://github.com/magento/magento2/issues/10072)
 
 
 ## Breaking issues
