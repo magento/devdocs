@@ -1709,13 +1709,13 @@
     </li>
     <li>Enter the MySQL <code>root</code> user’s password when prompted.</li>
     <li>
-      <p>Enter the following commands in the order shown to create database instances named <code>magento_checkout</code> and <code>magento_oms</code> with the same user names and passwords:</p>
+      <p>Enter the following commands in the order shown to create database instances named <code>magento_quote</code> and <code>magento_sales</code> with the same user names and passwords:</p>
 
-      <pre><code>create database magento_checkout;
-GRANT ALL ON magento_checkout.* TO magento_checkout@localhost IDENTIFIED BY 'magento_checkout';
+      <pre><code>create database magento_quote;
+GRANT ALL ON magento_quote.* TO magento_quote@localhost IDENTIFIED BY 'magento_quote';
 
-create database magento_oms;
-GRANT ALL ON magento_oms.* TO magento_oms@localhost IDENTIFIED BY 'magento_oms';
+create database magento_sales;
+GRANT ALL ON magento_sales.* TO magento_sales@localhost IDENTIFIED BY 'magento_sales';
 </code></pre>
     </li>
     <li>
@@ -1726,13 +1726,13 @@ GRANT ALL ON magento_oms.* TO magento_oms@localhost IDENTIFIED BY 'magento_oms';
 
       <p>Checkout database:</p>
 
-      <pre><code>mysql -u magento_checkout -p
+      <pre><code>mysql -u magento_quote -p
 exit
 </code></pre>
 
       <p>Order management database:</p>
 
-      <pre><code>mysql -u magento_oms -p
+      <pre><code>mysql -u magento_sales -p
 exit
 </code></pre>
 
@@ -1789,7 +1789,7 @@ exit
 
     <p>For example,</p>
 
-    <pre><code>magento setup:db-schema:split-quote --host="localhost" --dbname="magento_checkout" --username="magento_checkout" --password="magento_checkout"
+    <pre><code>magento setup:db-schema:split-quote --host="localhost" --dbname="magento_quote" --username="magento_quote" --password="magento_quote"
 </code></pre>
 
     <p>The following message displays to confirm a successful setup:</p>
@@ -1805,7 +1805,7 @@ exit
 
     <p>For example,</p>
 
-    <pre><code>magento setup:db-schema:split-sales --host="localhost" --dbname="magento_oms" --username="magento_oms" --password="magento_oms"
+    <pre><code>magento setup:db-schema:split-sales --host="localhost" --dbname="magento_sales" --username="magento_sales" --password="magento_sales"
 </code></pre>
 
     <p>The following message displays to confirm a successful setup:</p>
