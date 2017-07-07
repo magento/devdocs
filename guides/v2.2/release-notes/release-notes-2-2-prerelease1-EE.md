@@ -13,8 +13,9 @@ github_link: release-notes/release-notes-2-2-prerelease1-EE.md
 *	TOC
 {:toc}
 
+*Release date: July 7, 2017*
 
-*Release date: June 23, 2017*
+*Notes updated: July 7, 2017*
 
 Magento Enterprise Edition 2.2.0 Release Candidate includes significant new features as well as many bug fixes.
 
@@ -51,6 +52,20 @@ Look for the following highlights in this release:
 * **Substantial performance gains from improvements in indexing, cart, and cache operations**. Customers can browse and shop on a storefront while indexers are running. (Long-running indexers operate in batches to better manage memory and run times.) Cart improvements enable a
 buyer to create a cart with more than 300 line items, and merchants can process a cart with at least 300 line items.
 
+## Issues logged in this Release Candidate
+The following fixed and open issues have been logged against the Magento 2.2.0 RC1.x release:
+
+### Fixed issues
+
+<!--- 70314 -->* The `cron:install` command now works as expected in Magento 2.2.0 RC1.x. Previously, the configuration for `crontab` commands contained double quotes that were not escaped, which caused invalid commands to be written to the `crontab` file. [GitHub-10040](https://github.com/magento/magento2/issues/10040)
+
+
+### Open issues
+
+<!--- 70318 -->* You cannot generate static content without a database connection. [GitHub-10041](https://github.com/magento/magento2/issues/10041)
+
+
+<!--- 70324-->* You cannot access the Advanced Reporting page. [GitHub-10072](https://github.com/magento/magento2/issues/10072)
 
 
 
