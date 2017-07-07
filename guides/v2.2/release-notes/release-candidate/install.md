@@ -122,6 +122,10 @@ If you mistyped something when creating symlinks and need to remove them and try
 </div>
 
 ### Update installation dependencies
+<div class="bs-callout bs-callout-warning" markdown="1">
+If you're installing EE or B2B, you must replace the `composer.json` and `composer.lock ` files in the `magento2/` directory with the `composer.json` and `composer.lock` files from inside the `magento2ee` directory before updating dependencies.
+</div>
+
 From the `magento2/` directory, run Composer to update dependencies:
 
 ```
