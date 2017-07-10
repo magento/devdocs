@@ -15,7 +15,7 @@ github_link: release-notes/release-notes-2-2-prerelease1-CE.md
 
 *Release date: July 7, 2017*
 
-*Notes updated: July 7, 2017*
+*Notes updated: July 10, 2017*
 
 
 Magento Community Edition 2.2.0 Release Candidate includes significant new features as well as many bug fixes.
@@ -50,15 +50,13 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 
 <!--- 70066 -->* We’ve improved the performance of the CatalogPermissions indexer in installations that contain many customer groups.
 
-<!--- 66480 -->* You can now successfully create a product  and assign it to a store without encountering the following error: `Unique constraint violation found`. [GitHub-6671](https://github.com/magento/magento2/issues/6671)
+<!--- 66480 -->* You can now successfully create a product and assign it to a store without encountering the following error: `Unique constraint violation found`. [GitHub-6671](https://github.com/magento/magento2/issues/6671)
 
 <!--- 62637 -->* You can now successfully set the **Enable Product** attribute to **no**. 
 
 
 
 ### Installation and Configuration 
-
-<!--- 70318 -->* You cannot generate static content without a database connection. [GitHub-10041](https://github.com/magento/magento2/issues/10041)
 
 
 <!--- 69854 -->* You can now successfully use the `config:set` command to set allowed or default currencies. 
@@ -99,16 +97,9 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 
 ### Search
 
-<!--- 63249 -->* ElasticSearch now includes data about composite products in its search index. Previously, search results did not include data about composite products. 
 
 <!--- 59477 -->* Attribute weighting now works correctly for the MySQL adapter. [GitHub-9020](https://github.com/magento/magento2/issues/9020)
 
-
-
-
-## Open issues found during this Release Candidate evaluation
-
-<!--- 70324-->* You cannot access the Advanced Reporting page. [GitHub-10072](https://github.com/magento/magento2/issues/10072)
 
 
 

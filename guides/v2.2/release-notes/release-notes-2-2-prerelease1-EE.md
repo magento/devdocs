@@ -15,7 +15,7 @@ github_link: release-notes/release-notes-2-2-prerelease1-EE.md
 
 *Release date: July 7, 2017*
 
-*Notes updated: July 7, 2017*
+*Notes updated: July 10, 2017*
 
 
 Magento Enterprise Edition 2.2.0 Release Candidate includes significant new features as well as many bug fixes.
@@ -71,9 +71,6 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 
 
 ### Installation and Configuration 
-
-<!--- 70318 -->* You cannot generate static content without a database connection. [GitHub-10041](https://github.com/magento/magento2/issues/10041)
-
 
 <!--- 69854 -->* You can now successfully use the `config:set` command to set allowed or default currencies. 
 
