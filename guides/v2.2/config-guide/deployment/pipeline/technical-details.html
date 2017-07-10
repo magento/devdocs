@@ -1871,23 +1871,12 @@
 <p>As the diagram shows, we get configuration values in the following order:</p>
 
 <ol>
-  <li>
-    <p>From an environment variable.</p>
-
-    <p>Environment variables, if they exist, override all other values.</p>
-  </li>
-  <li>From the shared configuration file, <code>config.php</code>.</li>
-  <li>
-    <p>From the system-specific configuration file, <code>env.php</code>.</p>
-
-    <p>Values in <code>env.php</code> override values in <code>config.php</code>.</p>
-
-    <p>Values in <code>config.php</code> and <code>env.php</code> override settings in the database.</p>
-  </li>
-  <li>From the database.</li>
+  <li>Environment variables, if they exist, override all other values.</li>
+  <li>From the shared configuration files <code>env.php</code> and <code>config.php</code>.
+Values in <code>env.php</code> override values in <code>config.php</code>.</li>
+  <li>From values stored in the database.</li>
+  <li>If no value exists in any of those sources, we use either the default value or NULL.</li>
 </ol>
-
-<p>If no value exists in any of those sources, we use either the default value or NULL.</p>
 
 <h3 id="manage-the-shared-configuration">Manage the shared configuration</h3>
 <p>The shared configuration is stored in <code>app/etc/config.php</code>, which should be in source control.</p>
@@ -1899,7 +1888,7 @@
 
 <p>Set the system-specific configuration in the Magento Admin in your development (or Cloud integration) system and write the configuration to <code>env.php</code> using the <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-export.html"><code>magento app:config:dump</code> command</a>.</p>
 
-<p>TBD, does <code>app:config:dump</code> write sensitive settings to env.php?</p>
+<p>This command also writes sensitive settings to <code>env.php</code>.</p>
 
 <h3 id="manage-the-sensitive-configuration">Manage the sensitive configuration</h3>
 <p>The sensitive configuration is also stored in <code>app/etc/env.php</code>.</p>
@@ -1912,7 +1901,8 @@
 </ul>
 
 <h3 id="configuration-settings-locked-in-the-magento-admin">Configuration settings locked in the Magento Admin</h3>
-<p>Any configuration settings in <code>config.php</code> or <code>env.php</code> are locked in the Magento Admin; that is, those settings cannot be changed in the Admin. The only way to change the settings is to change <code>config.php</code> or <code>env.php</code> using the <a href="/guides/v2.2/"><code>magento config:set --lock</code> command</a>.</p>
+<p>Any configuration settings in <code>config.php</code> or <code>env.php</code> are locked in the Magento Admin; that is, those settings cannot be changed in the Admin.
+Use the <a href="/guides/v2.2/"><code>magento config:set</code> or <code>magento config:set --lock</code></a> command to change the settings in the <code>config.php</code> or <code>env.php</code> files.</p>
 
 <h2 id="config-deploy-admin">Changes in the Magento Admin</h2>
 <p>We changed the following behavior in the Magento Admin in production mode:</p>
@@ -2004,11 +1994,7 @@
   <li>If you use Magento EE, stop queue workers.</li>
   <li>Use the <code>magento app:config:import</code> command to import configuration changes in the production system.</li>
   <li>If you installed components that changed the database schema, run <code>magento setup:upgrade --keep-generated</code> to update the database schema and data, preserving generated static files.</li>
-  <li>
-    <p>To set system-specific settings, use either the <code>magento config:set</code> command or environment variables.</p>
-
-    <p>TBD, update after <code>app:config:dump</code> writes to <code>env.php</code></p>
-  </li>
+  <li>To set system-specific settings, use either the <code>magento config:set</code> command or environment variables.</li>
   <li>To set sensitive settings, use either the <code>magento config:sensitive:set</code> command or environment variables.</li>
   <li>Clean (also referred to as <em>flush</em>) the Magento cache.</li>
   <li>End maintenance mode.</li>
@@ -2132,12 +2118,10 @@
 </code></pre>
 </div></div>
 
-<p><strong>env.php</strong></p>
+<p><br />
+<strong>env.php</strong></p>
 
-<p>The default email domain system-specific configuration setting is written to <code>app/etc/env.php</code> as follows:</p>
-
-<div class="collapsible"><b class="collapsible-title">Show env.php snippets: </b><div class="collapsible-content"><p>TBD</p>
-</div></div>
+<p>The default email domain system-specific configuration setting is written to <code>app/etc/env.php</code>.</p>
 
 <p>The PayPal settings are written to neither file because the <code>magento app:config:dump</code> command does not write sensitive settings. You must set the PayPal settings on the production system using the following commands:</p>
 
