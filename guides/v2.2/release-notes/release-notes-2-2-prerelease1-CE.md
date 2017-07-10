@@ -13,22 +13,21 @@ github_link: release-notes/release-notes-2-2-prerelease1-CE.md
 *	TOC
 {:toc}
 
-*Release date: June 23, 2017*
+*Release date: July 7, 2017*
+
+*Notes updated: July 10, 2017*
 
 
 Magento Community Edition 2.2.0 Release Candidate includes significant new features as well as many bug fixes.
 
-Looking for information about how Magento 2.2.0 Release Candidate evaluation program works? Check out the [Magento 2.2.0 Release Candidate QuickStart Guide]({{page.baseurl}}release-notes/release-candidate/quick-start.html) for more information.  This guide provides a handy overview of [Component Status]({{page.baseurl}}release-notes/release-candidate/component-status.html), too.
+Looking for information about how the Magento 2.2.0 Release Candidate evaluation program works? Check out the [Magento 2.2.0 Release Candidate QuickStart Guide]({{page.baseurl}}release-notes/release-candidate/quick-start.html) for more information.  This guide provides a handy overview of [Component Status]({{page.baseurl}}release-notes/release-candidate/component-status.html), too.
 
 ## Highlights
 
 Look for the following highlights in this release:
 
 
-* **Advanced Reporting** provides merchants with an improved, reliable, and compelling way to report on their products, orders, and customers. See the [Module Reference Guide]({{page.baseurl}}mrg/ce/Analytics/description.html) for more information.
-
-
-* **Significant enhancements in platform security and developer experience**. Security improvements include the removal of specific un-serialize calls and changed hashing algorithm to improve security for sensitive values. Developers will appreciate  improvements in debugging, customizations, and logging.
+* **Significant enhancements in platform security and developer experience**. Security improvements include the removal of specific un-serialize calls and changes to hashing algorithm to improve security for sensitive values. Developers will appreciate  improvements in debugging, customizations, and logging.
 
 
 
@@ -42,16 +41,70 @@ Look for the following highlights in this release:
 buyer to create a cart with more than 300 line items, and merchants can process a cart with at least 300 line items.
 
 
+## Issues fixed in this Release Candidate
+The following fixed and open issues have been logged against the Magento 2.2.0 RC1.x release.
 
-## Breaking issues
 
-Here are some of the currently unresolved issues we are working on for this release:
 
-<!--- 65555-->* Some `js.translation.js` files do not correctly regenerate during deployment. As a result, Magento does not display  translated theme strings.
+### Catalog
 
-<!--- 57995-->* Magento does not properly display videos for simple products. It displays thumbnail images instead of the actual video. [GITHUB-6360](https://github.com/magento/magento2/issues/6360)
+<!--- 70066 -->* We’ve improved the performance of the CatalogPermissions indexer in installations that contain many customer groups.
 
-<!--- 69636-->* Magento does not apply the Cart Price rules when sorting products by price. [GITHUB-7465](https://github.com/magento/magento2/issues/7465)
+<!--- 66480 -->* You can now successfully create a product and assign it to a store without encountering the following error: `Unique constraint violation found`. [GitHub-6671](https://github.com/magento/magento2/issues/6671)
+
+<!--- 62637 -->* You can now successfully set the **Enable Product** attribute to **no**. 
+
+
+
+### Installation and Configuration 
+
+
+<!--- 69854 -->* You can now successfully use the `config:set` command to set allowed or default currencies. 
+
+
+<!--- 67299, 67315 -->* The `catalog_url_rewrite_product_category` table is the same whether you’ve freshly installed or updated Magento 2.2. 
+
+
+<!--- 70314 -->* The `cron:install` command now works as expected in Magento 2.2.0 RC1.x. Previously, the configuration for `crontab` commands contained double quotes that were not escaped, which caused invalid commands to be written to the `crontab` file. [GitHub-10040](https://github.com/magento/magento2/issues/10040)
+
+
+
+### MBI
+
+<!--- 69615 -->* Requests for data transfer from Magento to MBI data now complete successfully. 
+
+
+
+
+### Miscellaneous
+
+<!--- 56062 -->* The Recently Viewed Products block now appears as expected when the full page cache is enabled. [GitHub-3890](https://github.com/magento/magento2/issues/3890)
+
+<!--- 59514 -->* The `tax_region_id` value is no longer hard-coded in the `\Magento\Tax\Setup\InstallData` file. 
+
+<!--- 69964 -->* PHPCS can now correctly parse the syntax of PHP 7.x return types. 
+
+<!--- 67619 -->* The Customer Segment page no longer shows non-matching customers when a customer logs in and you refresh the Customer Segment page. 
+
+<!--- 59801 -->* We’ve improved the performance of the Tax Rules form in installations containing many tax rates. 
+
+<!--- 69750 -->* Magento now successfully completes checkout when a custom address attribute is added. Previously, an error occurred during checkout when the user added a required custom address attribute. 
+
+<!--- 67296 -->* Magento now handles string localization when the string contains a quote (\’). Previously, localization did not work under these conditions. 
+
+
+
+
+### Search
+
+
+<!--- 59477 -->* Attribute weighting now works correctly for the MySQL adapter. [GitHub-9020](https://github.com/magento/magento2/issues/9020)
+
+
+
+
+
+
 
 
 ## System requirements

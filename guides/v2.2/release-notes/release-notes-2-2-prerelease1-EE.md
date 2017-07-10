@@ -13,19 +13,19 @@ github_link: release-notes/release-notes-2-2-prerelease1-EE.md
 *	TOC
 {:toc}
 
+*Release date: July 7, 2017*
 
-*Release date: June 23, 2017*
+*Notes updated: July 10, 2017*
+
 
 Magento Enterprise Edition 2.2.0 Release Candidate includes significant new features as well as many bug fixes.
 
-Looking for information about how Magento 2.2.0 Release Candidate evaluation program works? Check out the [Magento 2.2.0 Release Candidate QuickStart Guide]({{page.baseurl}}release-notes/release-candidate/quick-start.html) for more information. This guide provides a handy overview of [Component Status]({{page.baseurl}}release-notes/release-candidate/component-status.html), too.
+Looking for information about how the Magento 2.2.0 Release Candidate evaluation program works? Check out the [Magento 2.2.0 Release Candidate QuickStart Guide]({{page.baseurl}}release-notes/release-candidate/quick-start.html) for more information. This guide provides a handy overview of [Component Status]({{page.baseurl}}release-notes/release-candidate/component-status.html), too.
 
 
 ## Highlights
 
 Magento Enterprise Edition 2.2.0 Release Candidate 1 includes substantial new features as well as many bug fixes. Look for the following highlights in this release:
-
-Look for the following highlights in this release:
 
 * **Enhanced B2B feature set** removes points of friction from the B2B purchasing process. We reduce the cost and complexity of building a B2B site on Magento by providing company account management features out-of-the-box.  B2B companies can easily view and manage all of their quotes in the Magento Admin Panel. B2B APIs enable backend integrations, too. Read more about Magento B2B in the [B2B Developer Guide]({{page.baseurl}}b2b/bk-b2b.html).
 
@@ -34,11 +34,11 @@ Look for the following highlights in this release:
 
 
 * **Signifyd fraud protection** is now integrated with Magento. Signifyd identifies and rejects potential fraudulent orders and provides
-100% chargeback protection. We provide an introduction to Signifyd integration with Magento [here]({{page.baseurl}}mrg/ee/Signifyd.html)
+100% chargeback protection. We provide an introduction to Signifyd integration with Magento [here]({{page.baseurl}}mrg/ee/Signifyd.html).
 
 
 
-* **Significant enhancements in platform security and developer experience**. Security improvements include the removal of specific un-serialize calls and changed hashing algorithm to improve security for sensitive values. Developers will appreciate  improvements in debugging, customizations, and logging. We've introduced **Mass Asynchronous Operations as a framework feature** that leverages our queueing system to provide increased scalability for long running business processes.
+* **Significant enhancements in platform security and developer experience**. Security improvements include the removal of specific un-serialize calls and changes to hashing algorithm to improve security for sensitive values. Developers will appreciate  improvements in debugging, customizations, and logging. We've introduced **Mass Asynchronous Operations as a framework feature** that leverages our queueing system to provide increased scalability for long running business processes.
 
 
 
@@ -53,19 +53,73 @@ buyer to create a cart with more than 300 line items, and merchants can process 
 
 
 
-
-## Breaking issues
-
-Here are some of the currently unresolved issues we are working on for this release:
+## Issues fixed in this Release Candidate
+The following fixed and open issues have been logged against the Magento 2.2.0 RC1.x release.
 
 
-<!--- 70066-->* The catalog permissions indexer in a medium B2B installation can take a long time (for example, hours for B2B medium profile) and consumes excessive memory.
 
-<!--- 65555-->* Some `js.translation.js` files do not correctly regenerate during deployment. As a result, Magento does not display  translated theme strings.
+### Catalog
 
-<!--- 57995-->* Magento does not properly display videos for simple products. It displays thumbnail images instead of the actual video. [GITHUB-6360](https://github.com/magento/magento2/issues/6360)
+<!--- 70066 -->* We’ve improved the performance of the CatalogPermissions indexer in installations that contain many customer groups.
 
-<!--- 69636-->* Magento does not apply the Cart Price rules when sorting products by price. [GITHUB-7465](https://github.com/magento/magento2/issues/7465)
+<!--- 66480 -->* You can now successfully create a product  and assign it to a store without encountering the following error: `Unique constraint violation found`. [GitHub-6671](https://github.com/magento/magento2/issues/6671)
+
+<!--- 62637 -->* You can now successfully set the **Enable Product** attribute to **no**. 
+
+
+
+### Installation and Configuration 
+
+<!--- 69854 -->* You can now successfully use the `config:set` command to set allowed or default currencies. 
+
+
+<!--- 67299, 67315 -->* The `catalog_url_rewrite_product_category` table is the same whether you’ve freshly installed or updated Magento 2.2. 
+
+
+<!--- 70314 -->* The `cron:install` command now works as expected in Magento 2.2.0 RC1.x. Previously, the configuration for `crontab` commands contained double quotes that were not escaped, which caused invalid commands to be written to the `crontab` file. [GitHub-10040](https://github.com/magento/magento2/issues/10040)
+
+
+
+### MBI
+
+<!--- 69615 -->* Requests for data transfer from Magento to MBI data now complete successfully. 
+
+
+
+
+### Miscellaneous
+
+<!--- 56062 -->* The Recently Viewed Products block now appears as expected when the full page cache is enabled. [GitHub-3890](https://github.com/magento/magento2/issues/3890)
+
+<!--- 59514 -->* The `tax_region_id` value is no longer hard-coded in the `\Magento\Tax\Setup\InstallData` file. 
+
+<!--- 69964 -->* PHPCS can now correctly parse the syntax of PHP 7.x return types. 
+
+<!--- 67619 -->* The Customer Segment page no longer shows non-matching customers when a customer logs in and you refresh the Customer Segment page. 
+
+<!--- 59801 -->* We’ve improved the performance of the Tax Rules form in installations containing many tax rates. 
+
+<!--- 69750 -->* Magento now successfully completes checkout when a custom address attribute is added. Previously, an error occurred during checkout when the user added a required custom address attribute. 
+
+<!--- 67296 -->* Magento now handles string localization when the string contains a quote (\’). Previously, localization did not work under these conditions. 
+
+
+
+
+### Search
+
+<!--- 63249 -->* ElasticSearch now includes data about composite products in its search index. Previously, search results did not include data about composite products. 
+
+<!--- 59477 -->* Attribute weighting now works correctly for the MySQL adapter. [GitHub-9020](https://github.com/magento/magento2/issues/9020)
+
+
+
+
+## Open issues found during this Release Candidate evaluation
+
+<!--- 70324-->* You cannot access the Advanced Reporting page. [GitHub-10072](https://github.com/magento/magento2/issues/10072)
+
+
 
 
 
