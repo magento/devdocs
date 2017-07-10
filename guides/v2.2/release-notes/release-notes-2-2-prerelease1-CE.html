@@ -691,17 +691,26 @@
 
 			<ul id="markdown-toc">
   <li><a href="#highlights" id="markdown-toc-highlights">Highlights</a></li>
-  <li><a href="#breaking-issues" id="markdown-toc-breaking-issues">Breaking issues</a></li>
+  <li><a href="#issues-fixed-in-this-release-candidate" id="markdown-toc-issues-fixed-in-this-release-candidate">Issues fixed in this Release Candidate</a>    <ul>
+      <li><a href="#catalog" id="markdown-toc-catalog">Catalog</a></li>
+      <li><a href="#installation-and-configuration" id="markdown-toc-installation-and-configuration">Installation and Configuration</a></li>
+      <li><a href="#mbi" id="markdown-toc-mbi">MBI</a></li>
+      <li><a href="#miscellaneous" id="markdown-toc-miscellaneous">Miscellaneous</a></li>
+      <li><a href="#search" id="markdown-toc-search">Search</a></li>
+    </ul>
+  </li>
   <li><a href="#system-requirements" id="markdown-toc-system-requirements">System requirements</a></li>
   <li><a href="#installation" id="markdown-toc-installation">Installation</a></li>
   <li><a href="#credits" id="markdown-toc-credits">Credits</a></li>
 </ul>
 
-<p><em>Release date: June 23, 2017</em></p>
+<p><em>Release date: July 7, 2017</em></p>
+
+<p><em>Notes updated: July 10, 2017</em></p>
 
 <p>Magento Community Edition 2.2.0 Release Candidate includes significant new features as well as many bug fixes.</p>
 
-<p>Looking for information about how Magento 2.2.0 Release Candidate evaluation program works? Check out the <a href="/guides/v2.2/release-notes/release-candidate/quick-start.html">Magento 2.2.0 Release Candidate QuickStart Guide</a> for more information.  This guide provides a handy overview of <a href="/guides/v2.2/release-notes/release-candidate/component-status.html">Component Status</a>, too.</p>
+<p>Looking for information about how the Magento 2.2.0 Release Candidate evaluation program works? Check out the <a href="/guides/v2.2/release-notes/release-candidate/quick-start.html">Magento 2.2.0 Release Candidate QuickStart Guide</a> for more information.  This guide provides a handy overview of <a href="/guides/v2.2/release-notes/release-candidate/component-status.html">Component Status</a>, too.</p>
 
 <h2 id="highlights">Highlights</h2>
 
@@ -709,10 +718,7 @@
 
 <ul>
   <li>
-    <p><strong>Advanced Reporting</strong> provides merchants with an improved, reliable, and compelling way to report on their products, orders, and customers. See the <a href="/guides/v2.2/mrg/ce/Analytics/description.html">Module Reference Guide</a> for more information.</p>
-  </li>
-  <li>
-    <p><strong>Significant enhancements in platform security and developer experience</strong>. Security improvements include the removal of specific un-serialize calls and changed hashing algorithm to improve security for sensitive values. Developers will appreciate  improvements in debugging, customizations, and logging.</p>
+    <p><strong>Significant enhancements in platform security and developer experience</strong>. Security improvements include the removal of specific un-serialize calls and changes to hashing algorithm to improve security for sensitive values. Developers will appreciate  improvements in debugging, customizations, and logging.</p>
   </li>
   <li>
     <p><strong>Upgraded technology stack.</strong>  We’ve dropped support for PHP 5.6 and Varnish 3.  We now support PHP 7.1, along with Redis 3.2, MySQL 5.7, and Varnish 5 support. All third-party libraries have been upgraded to the latest stable version.</p>
@@ -726,23 +732,92 @@ buyer to create a cart with more than 300 line items, and merchants can process 
   </li>
 </ul>
 
-<h2 id="breaking-issues">Breaking issues</h2>
+<h2 id="issues-fixed-in-this-release-candidate">Issues fixed in this Release Candidate</h2>
+<p>The following fixed and open issues have been logged against the Magento 2.2.0 RC1.x release.</p>
 
-<p>Here are some of the currently unresolved issues we are working on for this release:</p>
+<h3 id="catalog">Catalog</h3>
 
-<!--- 65555-->
+<!--- 70066 -->
 <ul>
-  <li>Some <code>js.translation.js</code> files do not correctly regenerate during deployment. As a result, Magento does not display  translated theme strings.</li>
+  <li>We’ve improved the performance of the CatalogPermissions indexer in installations that contain many customer groups.</li>
 </ul>
 
-<!--- 57995-->
+<!--- 66480 -->
 <ul>
-  <li>Magento does not properly display videos for simple products. It displays thumbnail images instead of the actual video. <a href="https://github.com/magento/magento2/issues/6360">GITHUB-6360</a></li>
+  <li>You can now successfully create a product and assign it to a store without encountering the following error: <code>Unique constraint violation found</code>. <a href="https://github.com/magento/magento2/issues/6671">GitHub-6671</a></li>
 </ul>
 
-<!--- 69636-->
+<!--- 62637 -->
 <ul>
-  <li>Magento does not apply the Cart Price rules when sorting products by price. <a href="https://github.com/magento/magento2/issues/7465">GITHUB-7465</a></li>
+  <li>You can now successfully set the <strong>Enable Product</strong> attribute to <strong>no</strong>.</li>
+</ul>
+
+<h3 id="installation-and-configuration">Installation and Configuration</h3>
+
+<!--- 69854 -->
+<ul>
+  <li>You can now successfully use the <code>config:set</code> command to set allowed or default currencies.</li>
+</ul>
+
+<!--- 67299, 67315 -->
+<ul>
+  <li>The <code>catalog_url_rewrite_product_category</code> table is the same whether you’ve freshly installed or updated Magento 2.2.</li>
+</ul>
+
+<!--- 70314 -->
+<ul>
+  <li>The <code>cron:install</code> command now works as expected in Magento 2.2.0 RC1.x. Previously, the configuration for <code>crontab</code> commands contained double quotes that were not escaped, which caused invalid commands to be written to the <code>crontab</code> file. <a href="https://github.com/magento/magento2/issues/10040">GitHub-10040</a></li>
+</ul>
+
+<h3 id="mbi">MBI</h3>
+
+<!--- 69615 -->
+<ul>
+  <li>Requests for data transfer from Magento to MBI data now complete successfully.</li>
+</ul>
+
+<h3 id="miscellaneous">Miscellaneous</h3>
+
+<!--- 56062 -->
+<ul>
+  <li>The Recently Viewed Products block now appears as expected when the full page cache is enabled. <a href="https://github.com/magento/magento2/issues/3890">GitHub-3890</a></li>
+</ul>
+
+<!--- 59514 -->
+<ul>
+  <li>The <code>tax_region_id</code> value is no longer hard-coded in the <code>\Magento\Tax\Setup\InstallData</code> file.</li>
+</ul>
+
+<!--- 69964 -->
+<ul>
+  <li>PHPCS can now correctly parse the syntax of PHP 7.x return types.</li>
+</ul>
+
+<!--- 67619 -->
+<ul>
+  <li>The Customer Segment page no longer shows non-matching customers when a customer logs in and you refresh the Customer Segment page.</li>
+</ul>
+
+<!--- 59801 -->
+<ul>
+  <li>We’ve improved the performance of the Tax Rules form in installations containing many tax rates.</li>
+</ul>
+
+<!--- 69750 -->
+<ul>
+  <li>Magento now successfully completes checkout when a custom address attribute is added. Previously, an error occurred during checkout when the user added a required custom address attribute.</li>
+</ul>
+
+<!--- 67296 -->
+<ul>
+  <li>Magento now handles string localization when the string contains a quote (\’). Previously, localization did not work under these conditions.</li>
+</ul>
+
+<h3 id="search">Search</h3>
+
+<!--- 59477 -->
+<ul>
+  <li>Attribute weighting now works correctly for the MySQL adapter. <a href="https://github.com/magento/magento2/issues/9020">GitHub-9020</a></li>
 </ul>
 
 <h2 id="system-requirements">System requirements</h2>
