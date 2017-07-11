@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: 045_pipeline
+subgroup: 07_conf
 title: config.php reference
 menu_title: config.php reference
 menu_order: 5800
