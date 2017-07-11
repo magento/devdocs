@@ -1,10 +1,10 @@
 ---
 layout: default
 group: cloud
-subgroup: 160_live
+subgroup: 120_env
 title: Example of managing system-specific settings
 menu_title: Example of managing system-specific settings
-menu_order: 520
+menu_order: 92
 menu_node:
 level3_menu_node: level3child
 level3_subgroup: manageconfig

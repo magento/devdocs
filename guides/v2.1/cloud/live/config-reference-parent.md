@@ -1,10 +1,10 @@
 ---
 layout: default
 group: cloud
-subgroup: 160_live
+subgroup: 120_env
 title: Configuration reference
 menu_title: Configuration reference
-menu_order: 600
+menu_order: 100
 menu_node:
 level3_menu_node: level3parent
 level3_subgroup: configreference

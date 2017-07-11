@@ -1,10 +1,10 @@
 ---
 layout: default
 group: cloud
-subgroup: 160_live
+subgroup: 120_env
 title: Sensitive configuration paths reference
 menu_title: Sensitive configuration paths reference
-menu_order: 630
+menu_order: 103
 menu_node:
 level3_menu_node: level3child
 level3_subgroup: configreference

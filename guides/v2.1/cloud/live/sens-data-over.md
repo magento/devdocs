@@ -1,10 +1,10 @@
 ---
 layout: default
 group: cloud
-subgroup: 160_live
+subgroup: 120_env
 title: Overview of configuration management
 menu_title: Overview of configuration management
-menu_order: 510
+menu_order:  91
 menu_node:
 level3_menu_node: level3child
 level3_subgroup: manageconfig

@@ -1,10 +1,10 @@
 ---
 layout: default
 group: cloud
-subgroup: 160_live
+subgroup: 120_env
 title: All configuration paths except payments reference
 menu_title: All configuration paths except payments reference
-menu_order: 610
+menu_order: 101
 menu_node:
 level3_menu_node: level3child
 level3_subgroup: configreference
