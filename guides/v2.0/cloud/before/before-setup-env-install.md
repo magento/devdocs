@@ -37,6 +37,7 @@ The following results provides an example of variables:
 	+----------------+---------------+-----------+------+
 
 To install Magento, follow the instructions using one of these options:
+
 * [Install the Magento software using the command line]({{ page.baseurl }}install-gde/install/cli/install-cli.html)
 * [Install the Magento software using the Web Setup Wizard]({{ page.baseurl }}install-gde/install/web/install-web.html)
 
