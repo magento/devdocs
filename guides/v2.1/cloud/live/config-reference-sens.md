@@ -1,14 +1,12 @@
 ---
 layout: default
 group: cloud
-subgroup: 40_live
+subgroup: 167_configref
 title: Sensitive configuration paths reference
 menu_title: Sensitive configuration paths reference
-menu_order: 85
-menu_node: 
-level3_menu_node: level3child
-level3_subgroup: config-ref
-version: 2.0
+menu_order: 70
+menu_node:
+version: 2.1
 github_link: cloud/live/config-reference-sens.md
 ---
 
@@ -20,4 +18,3 @@ This topic lists only configuration paths for sensitive settings. For a list of 
 {% include cloud/config-vars.md %}
 
 {% include config/config-reference_sensitive.md %}
- 

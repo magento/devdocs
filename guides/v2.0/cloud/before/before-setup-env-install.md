@@ -4,7 +4,7 @@ group: cloud
 subgroup: 080_setup
 title: Step 6, Install Magento
 menu_title: Step 6, Install Magento
-menu_order: 166
+menu_order: 167
 level3_menu_node: level3child
 level3_subgroup: setupenv
 version: 2.0
@@ -12,6 +12,10 @@ github_link: cloud/before/before-setup-env-install.md
 ---
 
 {::options syntax_highlighter="rouge" /}
+
+With your workspace prepared, install Magento on your local to verify custom code, extensions, and more. This section discusses the install options and steps you should complete with your installation.
+
+Installation of Magento onto your local supports a command line option or a Web Setup Wizard. The CLI option also supports a Composer installation with sample data. For best information on your installation options and steps, see the [Installation Roadmap]({{ page.baseurl }}install-gde/install-roadmap_cli.html).
 
 To be able to customize the Magento software on your local machine, you should install it using the following information:
 
@@ -22,7 +26,7 @@ Before you begin, list the environment variables.
 
 	magento-cloud variable:get -e <environment ID>
 
-A sample result follows:
+The following results provides an example of variables:
 
 	+----------------+---------------+-----------+------+
 	| ID             | Value         | Inherited | JSON |

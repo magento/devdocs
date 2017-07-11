@@ -4,7 +4,7 @@ group: cloud
 subgroup: 080_setup
 title: Step 5, Clone or branch an environment
 menu_title: Step 5, Clone or branch an environment
-menu_order: 165
+menu_order: 166
 menu_node:
 level3_menu_node: level3child
 level3_subgroup: setupenv
@@ -21,7 +21,7 @@ You should also configure the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c
 
 You can branch according to your own branching strategies. For example, you could create a branch to:
 * Install and add Magento extensions and modules
-* Create custom code
+* Create custom code and front end themes
 * Modify and export configurations
 
 After you create the branch, update project dependencies so you can install the Magento software locally.

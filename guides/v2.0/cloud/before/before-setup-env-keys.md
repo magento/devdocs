@@ -4,7 +4,7 @@ group: cloud
 subgroup: 080_setup
 title: Step 3, Set up authentication keys
 menu_title: Step 3, Set up authentication keys
-menu_order: 163
+menu_order: 164
 level3_menu_node: level3child
 level3_subgroup: setupenv
 version: 2.0
@@ -13,7 +13,7 @@ github_link: cloud/before/before-setup-env-keys.md
 
 {::options syntax_highlighter="rouge" /}
 
-Add authentication keys to the project, which ensures you don't need to store the keys in the Git repository.
+Add authentication keys to the project to ensure you don't need to store the keys in the Git repository. These keys provide authentication between Git and Magento for your branches and local.
 
 Developers who need to update Magento dependencies or to install {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} also need to add authentication keys locally. To add keys locally, also perform the steps in [Add your local authentication keys to the project](#add-keys-project).
 

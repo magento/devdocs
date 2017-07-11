@@ -4,7 +4,7 @@ group: cloud
 subgroup: 080_setup
 title: Step 2, Clone the project
 menu_title: Step 2, Clone the project
-menu_order: 162
+menu_order: 163
 menu_node:
 level3_menu_node: level3child
 level3_subgroup: setupenv
@@ -13,7 +13,7 @@ github_link: cloud/before/before-setup-env-2_clone.md
 ---
 
 {::options syntax_highlighter="rouge" /}
-The Magento Enterprise Cloud Edition project is a Git repository of Magento code with a master origin. You work in code branches from the master environment to develop custom code, configure settings, and add Magento modules and extensions. To begin, you need to clone the `master` environment to your local.
+The Magento Enterprise Cloud Edition project is a Git repository of Magento code with a master origin. You work in code branches from the master environment to develop custom code, configure settings, and add Magento modules and extensions. To begin, you need to clone the `master` environment to your local. If you are new to Git workflow, processes, and GitHub, see Git [documentation](https://git-scm.com/documentation) and GitHub [guides](https://guides.github.com/) and [help](https://help.github.com/).
 
 Some of the commands in these instructions use Magento CLI commands and Git commands to access the `master` environment. If you are not familiar with Git commands, see the [GitHub Git](https://education.github.com/git-cheat-sheet-education.pdf) cheatsheet. For a full list of Magento CLI commands for ECE, enter `magento-cloud list` or see [List of Magento CLI commands]({{ page.baseurl }}cloud/before/before-workspace-cli.html#cloud-cli-commands).
 

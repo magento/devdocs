@@ -1,20 +1,17 @@
 ---
 layout: default
 group: cloud
-subgroup: Live
-title: Example of managing system-specific settings 
+subgroup: 163_config
+title: Example of managing system-specific settings
 menu_title: Example of managing system-specific settings
-menu_order: 15
-menu_node: 
-level3_menu_node: level3child
-level3_subgroup: sens-data
+menu_order: 30
 version: 2.1
 github_link: cloud/live/sens-data-initial.md
 ---
- 
-This topic discusses how to manage default {% glossarytooltip 05099dbb-d491-4e33-a065-16035cb2d4d9 %}locale{% endglossarytooltip %} and static file optimization settings in your integration system. _Static file optimization_ means merging and minifying {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} and Cascading Style Sheets, and minifying {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} templates. Static file optimization should be disabled in integration (where you're testing) and enabled in staging and production.  
 
-These particular settings are discussed only to explain how the procedure works; you can use the same procedure to manage any available settings. 
+This topic discusses how to manage default {% glossarytooltip 05099dbb-d491-4e33-a065-16035cb2d4d9 %}locale{% endglossarytooltip %} and static file optimization settings in your integration system. _Static file optimization_ means merging and minifying {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} and Cascading Style Sheets, and minifying {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} templates. Static file optimization should be disabled in integration (where you're testing) and enabled in staging and production.
+
+These particular settings are discussed only to explain how the procedure works; you can use the same procedure to manage any available settings.
 
 This example shows how to:
 
@@ -37,13 +34,13 @@ To complete the tasks discussed in this topic, you must have at minimum a projec
 ## Configuration settings you can change {#cloud-clp-settings}
 The following table shows the configuration settings affected by the `bin/magento magento-cloud:scd-dump` command. These are the configuration settings that you can manage in Git.
 
-| Description  | Path in Magento Admin (omitting **Stores** > **Configuration**) | 
+| Description  | Path in Magento Admin (omitting **Stores** > **Configuration**) |
 |--------------|--------------|----------------------|
-| Store locale  | General > **General**, **Locale Options** > **Locale**  |  
-| Static asset signing |  Advanced > **Developer**, **Static Files Settings** > **Static Files Signing** 
-| Server-side or client-side LESS compilation  | Advanced > **Developer**, **Frontend Developer Workflow** > **Workflow type** 
-|  HTML minification | Advanced > **Developer**, **Template Settings** > **Minify Html**  
-| JavaScript minification  | Advanced > **Developer**, **JavaScript Settings** > (several options)   
+| Store locale  | General > **General**, **Locale Options** > **Locale**  |
+| Static asset signing |  Advanced > **Developer**, **Static Files Settings** > **Static Files Signing**
+| Server-side or client-side LESS compilation  | Advanced > **Developer**, **Frontend Developer Workflow** > **Workflow type**
+|  HTML minification | Advanced > **Developer**, **Template Settings** > **Minify Html**
+| JavaScript minification  | Advanced > **Developer**, **JavaScript Settings** > (several options)
 | {% glossarytooltip 6c5cb4e9-9197-46f2-ba79-6147d9bfe66d %}CSS{% endglossarytooltip %} minification  | Advanced > **Developer**, **CSS Settings** > **Merge CSS Files** and **Minify CSS Files**
 | Disable modules output |  Advanced > **Advanced** > **Disable Modules Output** |
 
@@ -71,7 +68,7 @@ To synchronize your local system with the `master` branch:
 6.	Pull updated code.
 
 		git pull origin master
-		
+
 ### Step 2: Find Admin login information {#cloud-deploy-admin-login}
 To find login information for the integration server Admin:
 
@@ -91,8 +88,8 @@ This section discusses how to change the locale for the Default Config and also 
 To change locale and static file optimization settings:
 
 1.	Log in to the integration server Admin with the information you found in [Step 2: Find Admin login information](#cloud-deploy-admin-login).
-1.	Click **Stores** > Settings > **Configuration** > General > **General**. 
-2.	In the right pane, expand **Locale Options**. 
+1.	Click **Stores** > Settings > **Configuration** > General > **General**.
+2.	In the right pane, expand **Locale Options**.
 3.	From the **Locale** list, change the locale. (You can change it back later.)
 
 	The following figure shows an example.
@@ -117,7 +114,7 @@ To change locale and static file optimization settings:
 {% endcollapsibleh2 %}
 
 {% collapsibleh2 Step 2: Create config.local.php and transfer it to your local system %}
-This section discusses how to create `config.local.php` on the integration server using a command you run on your local machine. 
+This section discusses how to create `config.local.php` on the integration server using a command you run on your local machine.
 
 This procedure corresponds to step B, 1&ndash;2 of our [recommended procedure]({{ page.baseurl }}cloud/live/sens-data-over.html#cloud-config-specific-recomm). After you create `config.local.php`, transfer it to your local system so you can add it to Git.
 
@@ -144,7 +141,7 @@ The following snippet from `config.local.php` show an example of changing the de
           'allow_symlink' => '0',
           'minify_html' => '0',
         ),
-        
+
         ... more ...
 
         'js' =>
@@ -189,7 +186,7 @@ To verify your configuration changes:
 
 	![Can't edit certain values in the Admin]({{ site.baseurl }}common/images/cloud_var_not-editable.png){:width="550px"}
 6.	In the left navigation pane, click Advanced > **Developer**.
-7.	In the right pane, expand **Template Settings**, **JavaScript Settings**, and **CSS Settings**. 
+7.	In the right pane, expand **Template Settings**, **JavaScript Settings**, and **CSS Settings**.
 
 	Notice several fields cannot be edited, as shown in the following sample.
 
@@ -254,8 +251,3 @@ Wait for deployment to complete.
 Optionally [verify the changes](#cloud-set-verify), and verify that the changes are not editable in the Admin.
 
 {% endcollapsibleh2 %}
-
-
-
-
-

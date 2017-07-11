@@ -4,7 +4,7 @@ group: cloud
 subgroup: 080_setup
 title: Step 7, Set file system permissions and ownership
 menu_title: Step 7, Set file system permissions and ownership
-menu_order: 167
+menu_order: 168
 level3_menu_node: level3child
 level3_subgroup: setupenv
 version: 2.0

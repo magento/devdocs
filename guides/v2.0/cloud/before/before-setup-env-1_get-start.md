@@ -4,7 +4,7 @@ group: cloud
 subgroup: 080_setup
 title: Step 1, Get started setting up an environment
 menu_title: Step 1, Get started setting up an environment
-menu_order: 161
+menu_order: 162
 menu_node:
 level3_menu_node: level3child
 level3_subgroup: setupenv
