@@ -12,7 +12,7 @@ version: 2.1
 github_link: cloud/live/sens-data-over.md
 ---
 
-In `magento-cloud-configuration` release 101.4.1 on Magento Enterprise Cloud Edition 2.1.4, we provide the following improvements:
+In `magento-cloud-configuration` release 101.4.1 on Magento Enterprise Cloud Edition 2.1.4 and later, we provide the following improvements:
 
 *	Better way to [manage the configuration](#cloud-confman-over) so your integration, staging, and production systems stay in synchronization with each other more easily.
 
@@ -24,7 +24,7 @@ These new methods to manage your configuration are optional. You don't have to u
 </div>
 
 ### Managing the configuration {#cloud-confman-over}
-We <!-- help you protect sensitive settings and  -->make it easy to Example of managing system-specific settings as follows:
+We <!-- help you protect sensitive settings and  -->make it easy to manage system-specific settings as follows:
 
 <!-- *	A new method to manage sensitive settings (such as {% glossarytooltip 5b963536-8f03-45c4-963b-688021f4eea7 %}payment gateway{% endglossarytooltip %} passwords).
  -->
@@ -37,7 +37,7 @@ We <!-- help you protect sensitive settings and  -->make it easy to Example of m
 
 	<!-- Sensitive values are _not_ stored in `app/etc/config.local.php`. -->
 
-	`config.local.php` is a convenient way to move settings between systems. Managing `config.local.php` in source control means your settings for staging and production are always consistent. For example, you can disable static file optimization in your [integration]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int) system but enable it in both staging and production. After initially setting up the configuration, you don't need to touch it again because it's in source control.
+	`config.local.php` is a convenient way to move settings between systems. Managing `config.local.php` in source control means your settings for Integration, Staging, and Production environments are always consistent. For example, you can disable static file optimization in [Integration]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int) but enable it in both Staging and Production. After initially setting up the configuration, you don't need to touch it again because it's in source control.
 
 	(_Static file optimization_ means merging and minifying JavaScript and Cascading Style Sheets, and minifying HTML templates.)
 
