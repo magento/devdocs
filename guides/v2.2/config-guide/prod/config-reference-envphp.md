@@ -12,4 +12,16 @@ version: 2.2
 github_link: config-guide/prod/config-reference-envphp.md
 ---
 
-TBD
+The `env.php` file contains the following sections:
+
+| Name              | Description |
+| ----------------- | ----------- |
+| `backend`         |             |
+| `crypt`           |             |
+| `session`         |             |
+| `db`              |             |
+| `resource`        |             |
+| `x-frame-options` |             |
+| `MAGE_MODE`       |             |
+| `cache_types`     |             |
+| `install`         |             |

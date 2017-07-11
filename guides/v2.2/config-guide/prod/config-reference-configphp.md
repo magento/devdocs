@@ -12,12 +12,12 @@ version: 2.2
 github_link: config-guide/prod/config-reference-configphp.md
 ---
 
-TBD
-
 The `config.php` file contains the following sections:
 
-- `system`: all system configurations required for successful static content deployment
-- `scopes`: the list of stores, store groups and websites with related information
-- `i18n`:  all inline translations. This section is used for generating `js-translation.json`
-- `modules`: the list of enabled/disabled modules
-- `themes`: the configuration of installed themes
+| Name      | Description                                                                         |
+| --------- | ----------------------------------------------------------------------------------- |
+| `system`  | The system configurations required for static content deployment.                   |
+| `scopes`  | The list of stores, store groups and websites with related information.             |
+| `i18n`    | All inline translation data. Reading from this section is currently not supported.  |
+| `modules` | The list of enabled and disabled modules.                                           |
+| `themes`  | The configuration of installed themes.                                              |
