@@ -25,7 +25,7 @@ prices, taxes and product types, Magento can operate with. Here is the short lis
 - Manufacturer price (MSRP)
 
 Those prices are represented with a lot of price types, that are used in Magento internally (e.g. final price, minimum price, maximum price, regular price.) and are apart from, prices listed before,
-the code represeyntation of the prices we have. For instance, Special Price is represented by final price type in the code.
+the code representation of the prices we have. For instance, Special Price is represented by final price type in the code.
 
 ## Magento taxes classification
 
