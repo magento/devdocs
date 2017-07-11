@@ -19,15 +19,18 @@ This page lists system requirements for the Magento application.
 ## Magento 2.1.x
 [Magento 2.1.x technology stack requirements]({{ site.gdeurl21 }}install-gde/system-requirements-tech.html)
 
-### Major differences from 2.0.x 
+### Major differences from 2.0.x
 See the system requirements for the complete list of supported and compatible software.
 
 *	PHP
-	
+
 	*	Dropped support for PHP 5.5.x
 	*	*2.1.2 and later*: Added support for PHP 7.0.4
 *	MySQL (*2.1.2 and later*): Compatible with MySQL 5.7
 *	Added support for Elasticsearch 1.7 and 2.x (recommended)
 
 	*	If you get the Elasticsearch software from the Elasticsearch Linux repository, we support versions 2.x.
-	*	If you get the Elasticsearch software from their [Elasticsearch-PHP repository](https://github.com/elastic/elasticsearch-php){:target="_blank"}, we support the `2.0` branch.
+	*	If you get the Elasticsearch software from their [Elasticsearch-PHP repository](https://github.com/elastic/elasticsearch-php){:target="	&#95;blank"}, we support the `2.0` branch.
+
+## Magento 2.2.x
+[Magento 2.2.x technology stack requirements]({{ site.gdeurl22 }}install-gde/system-requirements-tech.html)
