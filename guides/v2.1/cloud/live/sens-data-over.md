@@ -1,11 +1,13 @@
 ---
 layout: default
 group: cloud
-subgroup: 163_config
+subgroup: 160_live
 title: Overview of configuration management
 menu_title: Overview of configuration management
-menu_order: 20
+menu_order: 510
 menu_node:
+level3_menu_node: level3child
+level3_subgroup: manageconfig
 version: 2.1
 github_link: cloud/live/sens-data-over.md
 ---

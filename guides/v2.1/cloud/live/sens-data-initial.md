@@ -1,10 +1,13 @@
 ---
 layout: default
 group: cloud
-subgroup: 163_config
+subgroup: 160_live
 title: Example of managing system-specific settings
 menu_title: Example of managing system-specific settings
-menu_order: 30
+menu_order: 520
+menu_node:
+level3_menu_node: level3child
+level3_subgroup: manageconfig
 version: 2.1
 github_link: cloud/live/sens-data-initial.md
 ---

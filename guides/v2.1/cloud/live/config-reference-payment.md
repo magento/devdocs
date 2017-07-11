@@ -1,11 +1,13 @@
 ---
 layout: default
 group: cloud
-subgroup: 167_configref
+subgroup: 160_live
 title: Payment configuration paths reference
 menu_title: Payment configuration paths reference
-menu_order: 60
+menu_order: 620
 menu_node:
+level3_menu_node: level3child
+level3_subgroup: configreference
 version: 2.1
 github_link: cloud/live/config-reference-payment.md
 ---
