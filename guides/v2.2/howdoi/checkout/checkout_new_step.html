@@ -1312,8 +1312,56 @@
     <span class="nt">&lt;/body&gt;</span>
 <span class="nt">&lt;/page&gt;</span></code></pre></figure>
 
+<h2 id="create-mixins-for-payment-and-shipping-steps-optional">Create mixins for payment and shipping steps (optional)</h2>
+
+<p>If your new step is the first step, you have to create mixins for the payment and shipping steps. Otherwise two steps will be activated on loading of the checkout.</p>
+
+<p>Create a mixin as follows:</p>
+
+<ol>
+  <li>Create a <code>Vendor/Module/view/base/requirejs-config.js</code> file with these contents;</li>
+</ol>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">config</span> <span class="o">=</span> <span class="p">{</span>
+<span class="s1">&#39;config&#39;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s1">&#39;mixins&#39;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s1">&#39;Magento_Checkout/js/view/shipping&#39;</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s1">&#39;Vendor_Module/js/view/shipping-payment-mixin&#39;</span><span class="o">:</span> <span class="kc">true</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;Magento_Checkout/js/view/payment&#39;</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s1">&#39;Vendor_Module/js/view/shipping-payment-mixin&#39;</span><span class="o">:</span> <span class="kc">true</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
+
+<ol>
+  <li>Create the mixin. We’ll use the same mixin for both payment and shipping:</li>
+</ol>
+
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">define</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="s1">&#39;ko&#39;</span>
+    <span class="p">],</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">ko</span><span class="p">)</span> <span class="p">{</span>
+        <span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
+
+        <span class="kd">var</span> <span class="nx">mixin</span> <span class="o">=</span> <span class="p">{</span>
+
+            <span class="nx">initialize</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+                <span class="k">this</span><span class="p">.</span><span class="nx">visible</span> <span class="o">=</span> <span class="nx">ko</span><span class="p">.</span><span class="nx">observable</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span> <span class="c1">// set visible to be initially false to have your step show first</span>
+                <span class="k">this</span><span class="p">.</span><span class="nx">_super</span><span class="p">();</span>
+
+                <span class="k">return</span> <span class="k">this</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">};</span>
+
+        <span class="k">return</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">target</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">return</span> <span class="nx">target</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="nx">mixin</span><span class="p">);</span>
+        <span class="p">};</span>
+    <span class="p">}</span>
+<span class="p">);</span></code></pre></figure>
+
 <div class="bs-callout bs-callout-info" id="info">
-  <p>For your changes to be applied, you might need to <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-cache.html">clean layout cache</a> and <a href="/guides/v2.2/howdoi/clean_static_cache.html">static view file cache</a>.</p>
+  <p>For your changes to be applied, you might need to <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-cache.html">clean layout cache</a> and <a href="/guides/v2.2/howdoi/clean_static_cache.html">static view file cache</a>. For more info on mixins go to <a href="http://devdocs.magento.com/guides/v2.1/javascript-dev-guide/javascript/js_mixins.html">JS Mixins</a>.</p>
 </div>
 
 		</div>
