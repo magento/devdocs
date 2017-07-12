@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Import an existing Magento project | Magento 2 Developer Documentation</title>
+	<title>Resolve issues with HTML minification | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.1/cloud/access-acct/first-time-setup_import-parent.html">
+	<link rel="canonical" href="//guides/v2.1/cloud/trouble/trouble-error-html-minification.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -69,11 +69,11 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/cloud/access-acct/first-time-setup_import-parent.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/cloud/trouble/trouble-error-HTML-minification.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/cloud/access-acct/first-time-setup_import-parent.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/cloud/trouble/trouble-error-HTML-minification.html">Magento 2.1</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.2/cloud/access-acct/first-time-setup_import-parent.html">Magento 2.2 RC</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.2/cloud/trouble/trouble-error-HTML-minification.html">Magento 2.2 RC</a></li>
 	
   </ul>
 
@@ -579,7 +579,7 @@
 
 									
 
-										<li class="level3Parent  active " id="import"><a href="#">Import an existing Magento project</a>
+										<li class="level3Parent " id="import"><a href="#">Import an existing Magento project</a>
 
 
 									
@@ -1370,7 +1370,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/cloud/trouble/trouble-error-html-minification.html">Resolve issues with HTML minification</a></li>
+									<li class="level-2  active "><a href="/guides/v2.1/cloud/trouble/trouble-error-html-minification.html">Resolve issues with HTML minification</a></li>
 
 									
 
@@ -1776,7 +1776,7 @@
 
           
 
-          <span property="name">Import an existing Magento project</span>
+          <span property="name">Resolve issues with HTML minification</span>
 
         
 
@@ -1799,7 +1799,7 @@
 
 	
 
-	<h1 class="page-heading">Import an existing Magento project</h1>
+	<h1 class="page-heading">Resolve issues with HTML minification</h1>
 
   
 
@@ -1807,7 +1807,32 @@
 </section>
 
 
-			
+			<h2 id="resolve-issues-with-html-minification">Resolve issues with HTML minification</h2>
+<p>This topic discusses solutions to typical issues you might experience by HTML minification.</p>
+
+<h3 id="website-load-errors-after-scd-dump-build-and-deploy">Website load errors after scd-dump, build, and deploy</h3>
+<!-- This issue will be resolved with a later release. -->
+<p>After using the command <code>php bin/magento magento-cloud:scd-dump</code> to generate config.local.php, your website may encounter errors after build and deploy. When accessing the site, you may recieve the error “failed to open stream: No such file or directory” for a series of files.</p>
+
+<p>The issue is due to an issue of enabling HTML minification and the setting in <code>config.local.php</code> when using <code>bin/magento magento-cloud:scd-dump</code>.</p>
+
+<p>As a work-around, complete the following:
+1. Copy the file <code>app/etc/config.local.php</code> to your local.
+2. Edit and remove the minify section from <code>config.local.php</code>:</p>
+
+<pre><code>'template' =&gt;
+      array (
+        'allow_symlink' =&gt; '0',
+        'minify_html' =&gt; '1',
+      ), 2. Modify the setting for minify in the database with this command:
+
+
+  update core_config_data set value=0 where path ='dev/template/minify_html' 3. Flush all caches.
+
+
+php bin/magento cache:flush
+redis-cli -h &lt;&gt; -p &lt;&gt; flushall 4. Remove all `base_url` related items in `config.local.php`. 5. Save changes and complete full deployment of `config.local.php`: push to Git branch, build and deploy, and deploy across environments as needed.
+</code></pre>
 
 		</div>
 		<!-- /.content-wrap -->
@@ -1818,14 +1843,14 @@
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/access-acct/first-time-setup_import-parent.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/trouble/trouble-error-HTML-minification.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
   
 
   <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/cloud/access-acct/first-time-setup_import-parent.html" target="_blank">Give us feedback</a>
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/cloud/trouble/trouble-error-html-minification.html" target="_blank">Give us feedback</a>
   </div>
 
 </div>

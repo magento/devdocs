@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Import an existing Magento project | Magento 2 Developer Documentation</title>
+	<title>Resolve issues with Google Analytics during deployment | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.1/cloud/access-acct/first-time-setup_import-parent.html">
+	<link rel="canonical" href="//guides/v2.1/cloud/trouble/trouble-google-analytics-deploy.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -69,11 +69,11 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/cloud/access-acct/first-time-setup_import-parent.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/cloud/trouble/trouble-google-analytics-deploy.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/cloud/access-acct/first-time-setup_import-parent.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/cloud/trouble/trouble-google-analytics-deploy.html">Magento 2.1</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.2/cloud/access-acct/first-time-setup_import-parent.html">Magento 2.2 RC</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.2/cloud/trouble/trouble-google-analytics-deploy.html">Magento 2.2 RC</a></li>
 	
   </ul>
 
@@ -579,7 +579,7 @@
 
 									
 
-										<li class="level3Parent  active " id="import"><a href="#">Import an existing Magento project</a>
+										<li class="level3Parent " id="import"><a href="#">Import an existing Magento project</a>
 
 
 									
@@ -1378,7 +1378,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/cloud/trouble/trouble-google-analytics-deploy.html">Resolve issues with Google Analytics during deployment</a></li>
+									<li class="level-2  active "><a href="/guides/v2.1/cloud/trouble/trouble-google-analytics-deploy.html">Resolve issues with Google Analytics during deployment</a></li>
 
 									
 
@@ -1776,7 +1776,7 @@
 
           
 
-          <span property="name">Import an existing Magento project</span>
+          <span property="name">Resolve issues with Google Analytics during deployment</span>
 
         
 
@@ -1799,7 +1799,7 @@
 
 	
 
-	<h1 class="page-heading">Import an existing Magento project</h1>
+	<h1 class="page-heading">Resolve issues with Google Analytics during deployment</h1>
 
   
 
@@ -1807,7 +1807,17 @@
 </section>
 
 
-			
+			<h2 id="resolve-issues-with-google-analytics-during-deployment">Resolve issues with Google Analytics during deployment</h2>
+<p>This topic discusses solutions to typical issues you might experience with Google Analytics during deployments from Integration to Staging to Production.</p>
+
+<h3 id="google-analytics-disables-when-deployed">Google Analytics disables when deployed</h3>
+<p>When deploying your code across environments, the build and deploy scripts verify the <code>master</code> branch is deployed to keep Google Analytics enabled. When deploying develop (or child) branches of master to developer environments (Integration), the deploy script disables Google Analytics. This is a working as intended feature to ensure developer data and interactions are not sent to or tracked by Google Analytics.</p>
+
+<p>For technical details, the deploy script checks the <code>MAGENTO_CLOUD_ENVIRONMENT</code> variable for the string branch name of <code>master</code> (case sensitive comparison) defined for <code>GIT_MASTER_BRANCH</code>. This variables cannot be directly modified. If the deploy script verifies the deployed branch is Master, Google Analytics remains enabled. If a different branch is deployed (not Master), the deploy script will disable Google Analytics.</p>
+
+<p>To always have Google Analytics enabled in Production, always deploy from the Master branch.</p>
+
+<p>As a best practice, we recommend deploying from Master branch to your Production environment.</p>
 
 		</div>
 		<!-- /.content-wrap -->
@@ -1818,14 +1828,14 @@
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/access-acct/first-time-setup_import-parent.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/trouble/trouble-google-analytics-deploy.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
   
 
   <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/cloud/access-acct/first-time-setup_import-parent.html" target="_blank">Give us feedback</a>
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/cloud/trouble/trouble-google-analytics-deploy.html" target="_blank">Give us feedback</a>
   </div>
 
 </div>

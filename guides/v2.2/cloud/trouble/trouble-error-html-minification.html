@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Blackfire integration | Magento 2 Developer Documentation</title>
+	<title>Resolve issues with HTML minification | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.2/cloud/project/project-integrate-blackfire.html">
+	<link rel="canonical" href="//guides/v2.2/cloud/trouble/trouble-error-html-minification.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -69,11 +69,11 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/cloud/project/project-integrate-blackfire.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/cloud/trouble/trouble-error-HTML-minification.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/cloud/project/project-integrate-blackfire.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/cloud/trouble/trouble-error-HTML-minification.html">Magento 2.1</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.2/cloud/project/project-integrate-blackfire.html">Magento 2.2 RC</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.2/cloud/trouble/trouble-error-HTML-minification.html">Magento 2.2 RC</a></li>
 	
   </ul>
 
@@ -983,7 +983,7 @@
 									
 
 
-											<li class="level3Child integrate  active " data-menunode="integrate"><a href="/guides/v2.2/cloud/project/project-integrate-blackfire.html">Blackfire integration</a>
+											<li class="level3Child integrate " data-menunode="integrate"><a href="/guides/v2.2/cloud/project/project-integrate-blackfire.html">Blackfire integration</a>
 
 
 									
@@ -1331,7 +1331,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.2/cloud/trouble/trouble-error-html-minification.html">Resolve issues with HTML minification</a></li>
+									<li class="level-2  active "><a href="/guides/v2.2/cloud/trouble/trouble-error-html-minification.html">Resolve issues with HTML minification</a></li>
 
 									
 
@@ -1725,7 +1725,7 @@
 
           
 
-          <span property="name">Blackfire integration</span>
+          <span property="name">Resolve issues with HTML minification</span>
 
         
 
@@ -1748,7 +1748,7 @@
 
 	
 
-	<h1 class="page-heading">Blackfire integration</h1>
+	<h1 class="page-heading">Resolve issues with HTML minification</h1>
 
   
 
@@ -1756,176 +1756,32 @@
 </section>
 
 
-			<h2 id="cloud-int-black">Get your Blackfire credentials</h2>
-<p>The account owner has access to the Blackfire credentials for your project. Contact the account owner for more information.</p>
+			<h2 id="resolve-issues-with-html-minification">Resolve issues with HTML minification</h2>
+<p>This topic discusses solutions to typical issues you might experience by HTML minification.</p>
 
-<h2 id="cloud-int-black-en">Enable the Blackfire integration</h2>
-<p>We recommend you enable the Blackfire integration in an environment (that is, branch). You can optionally merge the environment with its parent after you know it’s working.</p>
+<h3 id="website-load-errors-after-scd-dump-build-and-deploy">Website load errors after scd-dump, build, and deploy</h3>
+<!-- This issue will be resolved with a later release. -->
+<p>After using the command <code>php bin/magento magento-cloud:scd-dump</code> to generate config.local.php, your website may encounter errors after build and deploy. When accessing the site, you may recieve the error “failed to open stream: No such file or directory” for a series of files.</p>
 
-<p>To enable Blackfire:</p>
+<p>The issue is due to an issue of enabling HTML minification and the setting in <code>config.local.php</code> when using <code>bin/magento magento-cloud:scd-dump</code>.</p>
 
-<ol>
-  <li>Log in to the machine on which your SSH keys are stored.</li>
-  <li>
-    <p>Log in to your Magento Enterprise Cloud Edition project.</p>
+<p>As a work-around, complete the following:
+1. Copy the file <code>app/etc/config.local.php</code> to your local.
+2. Edit and remove the minify section from <code>config.local.php</code>:</p>
 
-    <pre><code>magento-cloud login
+<pre><code>'template' =&gt;
+      array (
+        'allow_symlink' =&gt; '0',
+        'minify_html' =&gt; '1',
+      ), 2. Modify the setting for minify in the database with this command:
+
+
+  update core_config_data set value=0 where path ='dev/template/minify_html' 3. Flush all caches.
+
+
+php bin/magento cache:flush
+redis-cli -h &lt;&gt; -p &lt;&gt; flushall 4. Remove all `base_url` related items in `config.local.php`. 5. Save changes and complete full deployment of `config.local.php`: push to Git branch, build and deploy, and deploy across environments as needed.
 </code></pre>
-  </li>
-  <li>
-    <p>List projects:</p>
-
-    <pre><code>magento-cloud project:list
-</code></pre>
-  </li>
-  <li>
-    <p>List environments in the project:</p>
-
-    <pre><code>magento-cloud environment:list -p &lt;project ID&gt;
-</code></pre>
-  </li>
-  <li>
-    <p>See what branch you’re currently in, if any.</p>
-
-    <pre><code>git branch
-</code></pre>
-  </li>
-  <li>
-    <p>If necessary, check out an existing branch:</p>
-
-    <pre><code>magento-cloud environment:checkout &lt;environment ID&gt;
-</code></pre>
-
-    <p>You can also create a new branch using the <code>magento-cloud environment:branch</code> command.</p>
-  </li>
-  <li>
-    <p>Back up the environment using a snapshot:</p>
-
-    <pre><code>magento-cloud snapshot:create -e &lt;environment ID&gt;
-</code></pre>
-  </li>
-  <li>Use a text editor to open <code>&lt;project root dir&gt;/.magento.app.yaml</code>.</li>
-  <li>
-    <p>Add the following to the <code>extensions</code> block under <code>runtime:</code></p>
-
-    <pre><code>    - name: blackfire
-      configuration:
-         server_id: "&lt;blackfire Server ID&gt;"
-         server_token: "&lt;blackfire Server token&gt;"
-</code></pre>
-
-    <p>Change <code>&lt;blackfire Server ID&gt;</code> and <code>&lt;blackfire Server token&gt;</code> to the values from your Blackfire account.</p>
-
-    <p>For example:</p>
-
-    <pre><code>runtime:
-  extensions:
-    - mcrypt
-    - redis
-    - xsl
-    - json
-    - name: blackfire
-      configuration:
-         server_id: "&lt;blackfire Server ID&gt;"
-         server_token: "&lt;blackfire Server token&gt;"
-</code></pre>
-  </li>
-  <li>Save your changes to <code>.magento.app.yaml</code> and exit the text editor.</li>
-  <li>
-    <p>Add, commit, and push your changes to the environment:</p>
-
-    <pre><code>git add -A
-git commit -m "&lt;message&gt;"
-git push origin
-</code></pre>
-
-    <p>If errors display during deployment, open <code>.magento.app.yaml</code> and check the syntax. Check indentation and spelling and try again.</p>
-  </li>
-</ol>
-
-<h2 id="cloud-int-black-verify">Verify it’s working</h2>
-<p>To verify Blackfire works, you can SSH to the environment and run a command as follows:</p>
-
-<ol>
-  <li>Log in to the Web UI.</li>
-  <li>In the right pane, click the name of your environment.</li>
-  <li>Hover the mouse pointer over <strong>Access site</strong>.</li>
-  <li>
-    <p>Copy the <strong>SSH access</strong> <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span> to the clipboard as the following figure shows.</p>
-
-    <p><img src="/common/images/cloud_ssh-access2.png" alt="Find the SSH URL for the environment" width="500px" /></p>
-  </li>
-  <li>Enter that command in your terminal window to log in using SSH.</li>
-  <li>
-    <p>Enter the following command:</p>
-
-    <pre><code>php --ri blackfire
-</code></pre>
-
-    <p>A sample result follows:</p>
-
-    <pre><code>blackfire
-
-Blackfire =&gt; enabled
-Blackfire =&gt; 1.10.3
-Timing measurement =&gt; cgt
-Num of CPU =&gt; 8
-Profiling heap memory =&gt; 0 Kb
-Main instance trigger mode =&gt; HTTP header triggered
-Main instance =&gt; enabled
-
-Main instance info
-Output stream =&gt; file
-Signature validated =&gt; no
-EnvId validated =&gt; no
-Fully decoded =&gt; no
-
-Directive =&gt; Local Value =&gt; Master Value
-blackfire.agent_socket =&gt; tcp://blackfire.platform.sh:8307 =&gt; tcp://blackfire.platform.sh:8307
-blackfire.agent_timeout =&gt; 10 =&gt; 10
-blackfire.env_id =&gt; no value =&gt; no value
-blackfire.env_token =&gt; no value =&gt; no value
-blackfire.log_level =&gt; 1 =&gt; 1
-blackfire.log_file =&gt; no value =&gt; no value
-</code></pre>
-  </li>
-</ol>
-
-<h2 id="cloud-int-black-profile">Profile your site</h2>
-<p>To start profiling your site using Blackfire:</p>
-
-<ol>
-  <li>
-    <p>Install the Blackfire.io Companion browser <span term-uuid="9fceecbe-31be-4e49-aac7-11d155a85382" class="glossary-term" data-toggle="popover">plug-in</span> for your browser.</p>
-
-    <p>For example, to install the Chrome Companion, see <a href="https://blackfire.io/docs/integrations/chrome" target="_blank">Blackfire.io documentation</a>.</p>
-  </li>
-  <li>
-    <p>Use the Web UI to find the <strong>Web access</strong> URL for your environment as the following figure shows:</p>
-
-    <p><img src="/common/images/cloud_web-access.png" alt="Find your environment's URL" width="500px" /></p>
-  </li>
-  <li>Go to your site using Chrome.</li>
-  <li>In the upper right corner of the Chrome window, click <img src="/common/images/cloud_blackfire-logo.png" alt="Start Blackfire" />.</li>
-  <li>
-    <p>Follow the prompts on your screen to set up a comparison, then click <strong>Profile!</strong> as the following figure shows.</p>
-
-    <p><img src="/common/images/cloud_blackfire.png" alt="Start profiling" /></p>
-  </li>
-</ol>
-
-<p>Using Blackfire is beyond the scope of this guide. For more information, see one of the following resources:</p>
-
-<ul>
-  <li><a href="https://blackfire.io/docs/cookbooks/profiling-http" target="_blank">Profiling HTTP requests</a></li>
-  <li><a href="https://blackfire.io/docs/reference-guide/index" target="_blank">Reference Guide</a></li>
-</ul>
-
-<h4 id="related-topics">Related topics</h4>
-<ul>
-  <li><a href="/guides/v2.2/cloud/project/project-start.html">Get started with a project</a></li>
-  <li><a href="/guides/v2.2/cloud/project/project-conf-files_magento-app.html"><code>.magento.app.yaml</code></a></li>
-</ul>
 
 		</div>
 		<!-- /.content-wrap -->
@@ -1936,14 +1792,14 @@ blackfire.log_file =&gt; no value =&gt; no value
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/project/project-integrate-blackfire.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/trouble/trouble-error-HTML-minification.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
   
 
   <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/cloud/project/project-integrate-blackfire.html" target="_blank">Give us feedback</a>
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/cloud/trouble/trouble-error-html-minification.html" target="_blank">Give us feedback</a>
   </div>
 
 </div>
