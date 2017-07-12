@@ -13,7 +13,9 @@ github_link: cloud/before/before-workspace-cli.md
 ---
 
 ## Install the command-line interface (CLI) {#cloud-ssh-cli-cli-install}
-The Magento Enterprise Cloud Edition command-line interface (CLI) tool helps you manage your projects and code branches on Magento Enterprise Cloud Edition.
+The Magento Enterprise Cloud Edition command-line interface (CLI) tool helps you manage your projects and code branches on Magento Enterprise Cloud Edition. For a list of available commands, see [List of Magento CLI commands](#cloud-cli-commands).
+
+These instructions discuss installation using commands for a Unix environment. For Windows, you can use any CLI tool, for example [Cygwin](https://www.cygwin.com/){:target="_blank"}.
 
 To install the Magento Enterprise Cloud Edition CLI:
 

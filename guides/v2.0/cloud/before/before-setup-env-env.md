@@ -20,6 +20,7 @@ With your workspace configured, the project cloned, and cron set up, you can cre
 You should also configure the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} variables. For details, see [Add your local authentication keys to the project]({{ page.baseurl }}cloud/admin/admin-snap.html#add-keys-project) The new environment inherits the variable values from the master.
 
 You can branch according to your own branching strategies. For example, you could create a branch to:
+
 * Install and add Magento extensions and modules
 * Create custom code and front end themes
 * Modify and export configurations

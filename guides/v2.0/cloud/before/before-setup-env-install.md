@@ -13,9 +13,9 @@ github_link: cloud/before/before-setup-env-install.md
 
 {::options syntax_highlighter="rouge" /}
 
-With your workspace prepared, install Magento on your local to verify custom code, extensions, and more. This section discusses the install options and steps you should complete with your installation.
+With your workspace prepared, install Magento on your local to verify custom code, extensions, and more. This section discusses the installation prep, options, and steps you should complete.
 
-Installation of Magento onto your local supports a command line option or a Web Setup Wizard. The CLI option also supports a Composer installation with sample data. For best information on your installation options and steps, see the [Installation Roadmap]({{ page.baseurl }}install-gde/install-roadmap_cli.html).
+## Prepare to install Magento
 
 To be able to customize the Magento software on your local machine, you should install it using the following information:
 
@@ -36,8 +36,13 @@ The following results provides an example of variables:
 	| ADMIN_USERNAME | meister_x2U8  | Yes       | No   |
 	+----------------+---------------+-----------+------+
 
+## Install Magento
+
+Installation of Magento onto your local supports a command line option or a Web Setup Wizard. The CLI option also supports a Composer installation with sample data. For best information on your installation options and steps, see the [Installation Roadmap]({{ page.baseurl }}install-gde/install-roadmap_cli.html).
+
 To install Magento, follow the instructions using one of these options:
 
+* [Update installation dependencies]({{ page.baseurl }}install-gde/install/prepare-install.html) With the Magento respository cloned, you need to update and resolve any dependencies using Composer commands.
 * [Install the Magento software using the command line]({{ page.baseurl }}install-gde/install/cli/install-cli.html)
 * [Install the Magento software using the Web Setup Wizard]({{ page.baseurl }}install-gde/install/web/install-web.html)
 

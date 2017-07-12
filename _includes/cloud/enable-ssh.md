@@ -3,6 +3,7 @@
 You must create an SSH keypair on every machine and workspace you and your team expect to work with and access Magento Enterprise Cloud Edition and GitHub branches. The SSH keys connect you to GitHub to manage branches and push code without having to constantly supply your username and password. You can add multiple SSH keys to GitHub per each workspace you use.
 
 The SSH keys require the following:
+
 * Set up SSH keys as the [Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html).
 * Create the keys using the email address used for the GitHub account.
 
