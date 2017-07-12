@@ -149,9 +149,9 @@ Additions since 2.1 are marked with asterisks (*).
     *POST   /V1/products/cost-information
     *POST   /V1/products/cost
     *POST   /V1/products/cost-delete
-    POST   /V1/products/special-price-information
-    POST   /V1/products/special-price
-    POST   /V1/products/special-price-delete
+    *POST   /V1/products/special-price-information
+    *POST   /V1/products/special-price
+    *POST   /V1/products/special-price-delete
     DELETE /V1/categories/:categoryId
     GET    /V1/categories/:categoryId
     POST   /V1/categories
