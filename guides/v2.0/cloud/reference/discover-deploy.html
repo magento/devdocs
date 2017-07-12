@@ -402,6 +402,59 @@
 
 
 								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/cloud/reference/discover-arch.html">Architecture</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2  active "><a href="/guides/v2.0/cloud/reference/discover-deploy.html">Deployment process</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/cloud/reference/git-integration.html">How Cloud Uses Git</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/cloud/reference/cloud-composer.html">How Cloud Uses Composer</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
 									<li class="level1 "><a class="nav-header" href="/guides/v2.0/cloud/access-acct/first-time-setup.html">First-time setup (developers)</a></li>
 									
 								
@@ -550,6 +603,16 @@
 									
 
 										<li class="level3Parent " id="setupenv"><a href="#">Set up an environment and install Magento locally</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child setupenv " data-menunode="setupenv"><a href="/guides/v2.0/cloud/before/before-setup-env-overview.html">Overview of a Magento Developer Environment</a>
 
 
 									
@@ -1054,59 +1117,6 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/cloud/reference/discover-arch.html">Architecture</a></li>
-									
-								
-
-									
-
-
-								
-
-									
-
-									<li class="level-2  active "><a href="/guides/v2.0/cloud/reference/discover-deploy.html">Deployment process</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/reference/git-integration.html">How Cloud Uses Git</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/reference/cloud-composer.html">How Cloud Uses Composer</a></li>
-
-									
-
-								
-
-								
-								
-
-
-
-						
-
-					
-
-						
-
-						
-
-							
-
-
-								
-
-
-								
 									<li class="level1 "><a class="nav-header" href="/guides/v2.0/cloud/live/stage-prod-live.html">From integration to live</a></li>
 									
 								
@@ -1259,6 +1269,22 @@
 									
 
 									<li class="level-2 "><a href="/guides/v2.0/cloud/trouble/trouble-crypt-key-variable.html">Resolve issues with encryption key</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/cloud/trouble/trouble-error-HTML-minification.html">Resolve issues with HTML minification</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/cloud/trouble/trouble-google-analytics-deploy.html">Resolve issues with Google Analytics during deployment</a></li>
 
 									
 
@@ -1751,7 +1777,7 @@ is what guarantees we can do deterministic deployments. The read-only file syste
 
 <p>When this script runs, you have access to all the services in your environment (Redis, database, and so on).</p>
 
-<p>There are two default deploy hooks. One is <code>pre-deploy.php</code>, which does some necessary cleanup and retrieval of 
+<p>There are two default deploy hooks. One is <code>pre-deploy.php</code>, which does some necessary cleanup and retrieval of
 resources that were generated in the build hook. The second is <code>bin/magento magento-cloud:deploy</code>, which does the following</p>
 
 <ul>

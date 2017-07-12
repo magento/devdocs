@@ -402,6 +402,59 @@
 
 
 								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/cloud/reference/discover-arch.html">Architecture</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/cloud/reference/discover-deploy.html">Deployment process</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/cloud/reference/git-integration.html">How Cloud Uses Git</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/cloud/reference/cloud-composer.html">How Cloud Uses Composer</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
 									<li class="level1 "><a class="nav-header" href="/guides/v2.0/cloud/access-acct/first-time-setup.html">First-time setup (developers)</a></li>
 									
 								
@@ -550,6 +603,16 @@
 									
 
 										<li class="level3Parent " id="setupenv"><a href="#">Set up an environment and install Magento locally</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child setupenv " data-menunode="setupenv"><a href="/guides/v2.0/cloud/before/before-setup-env-overview.html">Overview of a Magento Developer Environment</a>
 
 
 									
@@ -1054,59 +1117,6 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/cloud/reference/discover-arch.html">Architecture</a></li>
-									
-								
-
-									
-
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/reference/discover-deploy.html">Deployment process</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/reference/git-integration.html">How Cloud Uses Git</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/reference/cloud-composer.html">How Cloud Uses Composer</a></li>
-
-									
-
-								
-
-								
-								
-
-
-
-						
-
-					
-
-						
-
-						
-
-							
-
-
-								
-
-
-								
 									<li class="level1 "><a class="nav-header" href="/guides/v2.0/cloud/live/stage-prod-live.html">From integration to live</a></li>
 									
 								
@@ -1259,6 +1269,22 @@
 									
 
 									<li class="level-2 "><a href="/guides/v2.0/cloud/trouble/trouble-crypt-key-variable.html">Resolve issues with encryption key</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/cloud/trouble/trouble-error-HTML-minification.html">Resolve issues with HTML minification</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/cloud/trouble/trouble-google-analytics-deploy.html">Resolve issues with Google Analytics during deployment</a></li>
 
 									
 
@@ -1664,10 +1690,14 @@
 
 
 			
-<h2 id="add-authentication-keys-to-the-project">Add authentication keys to the project</h2>
-<p>This topic discusses how to add authentication keys to the project, which means the keys don’t have to be stored in the Git repository. (Developers who need to update Magento dependencies or to install <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span> need authentication keys locally; this is discussed in the next section.)</p>
+<p>Add authentication keys to the project to ensure you don’t need to store the keys in the Git repository. These keys provide authentication between Git and Magento for your branches and local.</p>
 
-<p><em>Only a <a href="/guides/v2.0/cloud/project/user-admin.html#cloud-role-project">project administrator</a> can perform this task.</em> The project administrator must have the public and private authentication keys for Magento Enterprise Cloud Edition. You should contact the Magento Enterprise Cloud Edition account owner to get the keys.</p>
+<p>Developers who need to update Magento dependencies or to install <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span> also need to add authentication keys locally. To add keys locally, also perform the steps in <a href="#add-keys-project">Add your local authentication keys to the project</a>.</p>
+
+<h2 id="add-authentication-keys-to-the-project">Add authentication keys to the project</h2>
+<p><em>Only a <a href="/guides/v2.0/cloud/project/user-admin.html#cloud-role-project">project administrator</a> can perform this task.</em> The project administrator must have the public and private authentication keys for Magento Enterprise Cloud Edition.</p>
+
+<p>Contact your Magento Enterprise Cloud Edition account owner to get the keys for these instructions.</p>
 
 <p>To set up authentication keys in the project:</p>
 
@@ -1729,18 +1759,22 @@ git add -A &amp;&amp; git commit -m "Remove auth.json" &amp;&amp; git push origi
   <li>Wait for the project to build and deploy.</li>
 </ol>
 
-<h2 id="add-your-local-authentication-keys-to-the-project">Add your local authentication keys to the project</h2>
-<p>Before you can upgrade the Magento software or install extensions, you must have authentication keys in the <code class="highlighter-rouge">auth.json</code> file in the Magento root directory. However, the authentication keys don’t need to be in the Git repository so you can add <code class="highlighter-rouge">auth.json</code> to <code class="highlighter-rouge">.gitignore</code>.</p>
+<h2 id="add-keys-project">Add your local authentication keys to the project</h2>
+<p>Before you can upgrade the Magento software or install extensions, you must have authentication keys in the <code class="highlighter-rouge">auth.json</code> file in the Magento root directory. Contact the project administrator or the account owner for the authentication keys. You need these keys to add them locally.</p>
+
+<p>These authentication keys don’t need to be in the Git repository. You can add <code class="highlighter-rouge">auth.json</code> to <code class="highlighter-rouge">.gitignore</code>.</p>
 
 <div class="bs-callout bs-callout-warning">
-  <p>Make sure your project administrator has added authentication keys to the project as discussed in the preceding section. Typically, either the project administrator or the account owner has the authentication keys. Contact one of them before you continue.</p>
+  <p>Ensure your project administrator has added authentication keys to the project as discussed in the preceding section.</p>
 </div>
 
-<p>To add your authentication keys:</p>
+<p>These instructions require having a cloned branch for development locally.</p>
+
+<p>To add your local authentication keys:</p>
 
 <ol>
   <li>
-    <p>If you haven’t done so already, log in to your Magento Enterprise Cloud Edition project, check out an environment, and pull updated code from the server.</p>
+    <p>If you haven’t done so already, log in to your Magento Enterprise Cloud Edition project, check out an environment, and pull updated code from the server. For additional information, see <a href="/guides/v2.0/cloud/before/before-setup-env-env.html">Step 5, Clone or branch an environment</a></p>
 
     <p>Use the following commands:</p>
 
@@ -1796,8 +1830,7 @@ auth.json
 </ol>
 
 <h4 id="next-step">Next step</h4>
-<p><a href="/guides/v2.0/cloud/before/before-setup-env-perms.html">Step 6, Set file system permissions and ownership</a></p>
-
+<p><a href="/guides/v2.0/cloud/before/before-setup-env-cron.html">Step 4, Set up cron</a></p>
 
 		</div>
 		<!-- /.content-wrap -->

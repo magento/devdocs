@@ -402,6 +402,59 @@
 
 
 								
+									<li class="level1  active "><a class="nav-header" href="/guides/v2.0/cloud/reference/discover-arch.html">Architecture</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/cloud/reference/discover-deploy.html">Deployment process</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/cloud/reference/git-integration.html">How Cloud Uses Git</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/cloud/reference/cloud-composer.html">How Cloud Uses Composer</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
 									<li class="level1 "><a class="nav-header" href="/guides/v2.0/cloud/access-acct/first-time-setup.html">First-time setup (developers)</a></li>
 									
 								
@@ -550,6 +603,16 @@
 									
 
 										<li class="level3Parent " id="setupenv"><a href="#">Set up an environment and install Magento locally</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child setupenv " data-menunode="setupenv"><a href="/guides/v2.0/cloud/before/before-setup-env-overview.html">Overview of a Magento Developer Environment</a>
 
 
 									
@@ -1054,59 +1117,6 @@
 
 
 								
-									<li class="level1  active "><a class="nav-header" href="/guides/v2.0/cloud/reference/discover-arch.html">Architecture</a></li>
-									
-								
-
-									
-
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/reference/discover-deploy.html">Deployment process</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/reference/git-integration.html">How Cloud Uses Git</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/reference/cloud-composer.html">How Cloud Uses Composer</a></li>
-
-									
-
-								
-
-								
-								
-
-
-
-						
-
-					
-
-						
-
-						
-
-							
-
-
-								
-
-
-								
 									<li class="level1 "><a class="nav-header" href="/guides/v2.0/cloud/live/stage-prod-live.html">From integration to live</a></li>
 									
 								
@@ -1259,6 +1269,22 @@
 									
 
 									<li class="level-2 "><a href="/guides/v2.0/cloud/trouble/trouble-crypt-key-variable.html">Resolve issues with encryption key</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/cloud/trouble/trouble-error-HTML-minification.html">Resolve issues with HTML minification</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/cloud/trouble/trouble-google-analytics-deploy.html">Resolve issues with Google Analytics during deployment</a></li>
 
 									
 
@@ -1665,20 +1691,34 @@
 
 			<p>Magento Enterprise Cloud Edition enables you to use the following three types of systems.</p>
 
-<h3 id="cloud-arch-int">Integration systems</h3>
-<p>This is the type of system on which individual developers customize the Magento application.</p>
+<h3 id="cloud-arch-int">Integration environment</h3>
+<p>Developers use the Integration environment to develop, deploy, and test the Magento application, custom code, extensions, and services. This environment does not support all Magento ECE services, for example, Fastly is not accessible in Integration.</p>
 
-<p>An integration system runs in a Linux container. You can have up to eight active <em>environments</em> (that is, Git branches) at a time to do your development and testing.</p>
+<p>An Integration system runs in a Linux container (LXC). You can have up to eight active <em>environments</em> (Git branches) at a time to development and test code. You can have more than eight branches, but not all will be active to access, view, and test in Integration.</p>
 
-<p>Use an integration system to write custom code and test it. Push your code to staging or production for iterative development.</p>
+<p>The process for developing in Integration requires the following process:</p>
 
-<h3 id="cloud-arch-stage">Staging system</h3>
-<p>This system runs on hardware similar to production.</p>
+<ul>
+  <li>Clone the master branch of Magento code from a Git repository</li>
+  <li>Branch and develop in a new Git Git branch on your local workspace</li>
+  <li>Push code to Git and the Integration environment for testing</li>
+</ul>
 
-<p>Staging is where you test your finalized code before deploying to your live production system.</p>
+<p>Additional sections in this guide provide instructions and walk-throughs for setting up your local, working with Git branches, and deploying code.</p>
 
-<h3 id="cloud-arch-prod">Production system</h3>
-<p>This system runs your public-facing store on triple-redundant hardware.</p>
+<h3 id="cloud-arch-stage">Staging environment</h3>
+<p>The Staging environment includes a system running on hardware similar to production. This environment includes all services and options used in Production, for example, Fastly, to provide a production-like environment for all testing. All code in Staging is read-only, requiring deploys of Git repositories.</p>
+
+<p>Additional sections in this guide provide instructions and walk-throughs for final code deployments and testing production level interactions in a safe Staging environment.</p>
+
+<p>We highly recommend fully testing every merchant and customer interaction in Staging prior to pushing to Production.</p>
+
+<h3 id="cloud-arch-prod">Production environment</h3>
+<p>The Production environment runs your public-facing Magento single and multisite storefronts. This system include triple-redundant High Availability hardware for continuous access for your customers. This system is read-only, requiring deployment across the architecture from Integration to Staging and finally Production.</p>
+
+<p>Additional sections in this guide provide walk-throughs for deploying to Production and Go Live requirements and processes.</p>
+
+<p>We highly recommend fully testing in Staging prior to pushing to Production.</p>
 
 <h4 id="advantage-of-redundant-hardware">Advantage of redundant hardware</h4>
 <p>Rather than running a traditional active-passive master or master-slave setup, Magento Enterprise Cloud Edition runs a triple-redundant multimaster where all three instances accept reads and writes. This architecture offers zero downtime when scaling, and also provides guaranteed transactional integrity.</p>
@@ -1720,7 +1760,7 @@
 </div>
 
 <h2 id="cloud-arch-services">Services</h2>
-<p>Each service runs in its own secure container; containers are managed together in the project. 
+<p>Each service runs in its own secure container; containers are managed together in the project.
 Some services are built-in, such as the following:</p>
 
 <ul>
@@ -1730,7 +1770,7 @@ Some services are built-in, such as the following:</p>
   <li>Secure Shell (SSH)</li>
 </ul>
 
-<p>You can even have multiple applications running in the same project. Building 
+<p>You can even have multiple applications running in the same project. Building
 a microservice oriented architecture with Magento Enterprise Cloud Edition is
 as easy as managing a monolithic application.</p>
 
@@ -1750,7 +1790,6 @@ as easy as managing a monolithic application.</p>
   <li><a href="/guides/v2.0/cloud/reference/discover-deploy.html">Deployment process</a></li>
   <li><a href="/guides/v2.0/cloud/requirements/cloud-requirements.html">Magento Enterprise Cloud Edition requirements</a></li>
 </ul>
-
 
 		</div>
 		<!-- /.content-wrap -->

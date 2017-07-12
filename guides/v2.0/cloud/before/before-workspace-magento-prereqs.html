@@ -402,6 +402,59 @@
 
 
 								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/cloud/reference/discover-arch.html">Architecture</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/cloud/reference/discover-deploy.html">Deployment process</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/cloud/reference/git-integration.html">How Cloud Uses Git</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/cloud/reference/cloud-composer.html">How Cloud Uses Composer</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
 									<li class="level1 "><a class="nav-header" href="/guides/v2.0/cloud/access-acct/first-time-setup.html">First-time setup (developers)</a></li>
 									
 								
@@ -550,6 +603,16 @@
 									
 
 										<li class="level3Parent " id="setupenv"><a href="#">Set up an environment and install Magento locally</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child setupenv " data-menunode="setupenv"><a href="/guides/v2.0/cloud/before/before-setup-env-overview.html">Overview of a Magento Developer Environment</a>
 
 
 									
@@ -1054,59 +1117,6 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/cloud/reference/discover-arch.html">Architecture</a></li>
-									
-								
-
-									
-
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/reference/discover-deploy.html">Deployment process</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/reference/git-integration.html">How Cloud Uses Git</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/reference/cloud-composer.html">How Cloud Uses Composer</a></li>
-
-									
-
-								
-
-								
-								
-
-
-
-						
-
-					
-
-						
-
-						
-
-							
-
-
-								
-
-
-								
 									<li class="level1 "><a class="nav-header" href="/guides/v2.0/cloud/live/stage-prod-live.html">From integration to live</a></li>
 									
 								
@@ -1259,6 +1269,22 @@
 									
 
 									<li class="level-2 "><a href="/guides/v2.0/cloud/trouble/trouble-crypt-key-variable.html">Resolve issues with encryption key</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/cloud/trouble/trouble-error-HTML-minification.html">Resolve issues with HTML minification</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/cloud/trouble/trouble-google-analytics-deploy.html">Resolve issues with Google Analytics during deployment</a></li>
 
 									
 
@@ -1663,31 +1689,23 @@
 </section>
 
 
-			<p>For you to install Magento locally, you must install the prequisite software:</p>
+			<p>Local installations of Magento require the following software installed.</p>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>Magento documentation provides installation instructions for installing software on CentOS or Ubuntu only. For information on installing software on Windows or MacOS, consult a community resource.</p>
+</div>
 
 <ul>
-  <li><a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git" target="_blank">Git</a> so you can interact with the Magento Enterprise Cloud Edition’s Git server.</li>
-  <li>
-    <p><a href="/guides/v2.0/install-gde/prereq/apache.html">Apache</a></p>
-
-    <p>You can also use nginx but those instructions aren’t documented at this time.</p>
-  </li>
-  <li>
-    <p><span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span></p>
-
-    <ul>
-      <li><a href="/guides/v2.0/install-gde/prereq/php-centos.html">CentOS</a></li>
-      <li><a href="/guides/v2.0/install-gde/prereq/php-ubuntu.html">Ubuntu</a></li>
-    </ul>
-  </li>
+  <li><a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git" target="_blank">Git</a> - Provides code branching and management for accessing Magento Enterprise Cloud Edition and your code respositories. Use Git command-line commands or applications of your choice to work with Git.
+  For more information, see <a href="/guides/v2.0/cloud/reference/cloud-composer.html">How Cloud uses Composer</a>.</li>
+  <li><a href="https://getcomposer.org/download/">Composer</a> - Used for dependency management. Composer enables us to manage the Magento components and their dependencies.
+  For more information, see <a href="/guides/v2.0/cloud/reference/cloud-composer.html">How Cloud uses Composer</a>.</li>
+  <li><a href="/guides/v2.0/install-gde/prereq/apache.html">Apache</a> (You can also use nginx but those instructions aren’t documented at this time.)</li>
+  <li><span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> - We recommend PHP 7.0. For information on installing PHP, see these instructions for <a href="/guides/v2.0/install-gde/prereq/php-centos.html">CentOS</a> and <a href="/guides/v2.0/install-gde/prereq/php-ubuntu.html">Ubuntu</a>.</li>
   <li><a href="/guides/v2.0/install-gde/prereq/mysql.html">MySQL</a></li>
 </ul>
 
 <p>You can also install <a href="/guides/v2.0/install-gde/prereq/optional.html">optional software</a> as well.</p>
-
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Magento documentation disucsses installing prerequisite software on CentOS or Ubuntu only. For information on installing software on Windows or MacOS, consult a community resource.</p>
-</div>
 
 <h4 id="next-step">Next step</h4>
 <p><a href="/guides/v2.0/cloud/before/before-workspace-php.html">Step 5, Set up PHP and MySQL</a></p>

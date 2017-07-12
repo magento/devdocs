@@ -402,6 +402,59 @@
 
 
 								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/cloud/reference/discover-arch.html">Architecture</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/cloud/reference/discover-deploy.html">Deployment process</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/cloud/reference/git-integration.html">How Cloud Uses Git</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/cloud/reference/cloud-composer.html">How Cloud Uses Composer</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
 									<li class="level1 "><a class="nav-header" href="/guides/v2.0/cloud/access-acct/first-time-setup.html">First-time setup (developers)</a></li>
 									
 								
@@ -550,6 +603,16 @@
 									
 
 										<li class="level3Parent " id="setupenv"><a href="#">Set up an environment and install Magento locally</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child setupenv " data-menunode="setupenv"><a href="/guides/v2.0/cloud/before/before-setup-env-overview.html">Overview of a Magento Developer Environment</a>
 
 
 									
@@ -1054,59 +1117,6 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/cloud/reference/discover-arch.html">Architecture</a></li>
-									
-								
-
-									
-
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/reference/discover-deploy.html">Deployment process</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/reference/git-integration.html">How Cloud Uses Git</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/reference/cloud-composer.html">How Cloud Uses Composer</a></li>
-
-									
-
-								
-
-								
-								
-
-
-
-						
-
-					
-
-						
-
-						
-
-							
-
-
-								
-
-
-								
 									<li class="level1 "><a class="nav-header" href="/guides/v2.0/cloud/live/stage-prod-live.html">From integration to live</a></li>
 									
 								
@@ -1259,6 +1269,22 @@
 									
 
 									<li class="level-2 "><a href="/guides/v2.0/cloud/trouble/trouble-crypt-key-variable.html">Resolve issues with encryption key</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/cloud/trouble/trouble-error-HTML-minification.html">Resolve issues with HTML minification</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/cloud/trouble/trouble-google-analytics-deploy.html">Resolve issues with Google Analytics during deployment</a></li>
 
 									
 
@@ -1664,6 +1690,10 @@
 
 
 			
+<p>With your workspace prepared, install Magento on your local to verify custom code, extensions, and more. This section discusses the installation prep, options, and steps you should complete.</p>
+
+<h2 id="prepare-to-install-magento">Prepare to install Magento</h2>
+
 <p>To be able to customize the Magento software on your local machine, you should install it using the following information:</p>
 
 <ul>
@@ -1677,7 +1707,7 @@
 </code></pre>
 </div>
 
-<p>A sample result follows:</p>
+<p>The following results provides an example of variables:</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>+----------------+---------------+-----------+------+
 | ID             | Value         | Inherited | JSON |
@@ -1689,14 +1719,22 @@
 </code></pre>
 </div>
 
+<h2 id="install-magento">Install Magento</h2>
+
+<p>Installation of Magento onto your local supports a command line option or a Web Setup Wizard. The CLI option also supports a Composer installation with sample data. For best information on your installation options and steps, see the <a href="/guides/v2.0/install-gde/install-roadmap_cli.html">Installation Roadmap</a>.</p>
+
+<p>After installing prerequisties, cloning the project and branch, configuring SSH keys, and adding Magento authentication keys, make sure to <a href="/guides/v2.0/install-gde/install/prepare-install.html">Update installation dependencies</a>. With the Magento respository cloned, you need to update and resolve any dependencies using Composer commands.</p>
+
+<p>To install, use one of the following options:
+* <a href="/guides/v2.0/install-gde/install/cli/install-cli.html">Install the Magento software using the command line</a>
+* <a href="/guides/v2.0/install-gde/install/web/install-web.html">Install the Magento software using the Web Setup Wizard</a></p>
+
 <div class="bs-callout bs-callout-info" id="info">
   <p>After you install Magento, set file system permissions and ownership as discussed in <a href="/guides/v2.0/cloud/before/before-setup-env-perms.html">Step 7, Set file system permissions and ownership</a>.</p>
 </div>
 
-<h4>Related topics</h4>
-<ul><li><a href="/guides/v2.0/install-gde/install/web/install-web.html">Install the Magento software using the Web Setup Wizard</a></li>
-	<li><a href="/guides/v2.0/install-gde/install/cli/install-cli.html">Install the Magento software using the command line</a></li></ul>
-
+<h4 id="next-step">Next step</h4>
+<p><a href="/guides/v2.0/cloud/before/before-setup-env-perms.html">Step 7, Set file system permissions and ownership</a></p>
 
 		</div>
 		<!-- /.content-wrap -->

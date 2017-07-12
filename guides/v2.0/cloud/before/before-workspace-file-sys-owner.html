@@ -402,6 +402,59 @@
 
 
 								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/cloud/reference/discover-arch.html">Architecture</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/cloud/reference/discover-deploy.html">Deployment process</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/cloud/reference/git-integration.html">How Cloud Uses Git</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/cloud/reference/cloud-composer.html">How Cloud Uses Composer</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
 									<li class="level1 "><a class="nav-header" href="/guides/v2.0/cloud/access-acct/first-time-setup.html">First-time setup (developers)</a></li>
 									
 								
@@ -550,6 +603,16 @@
 									
 
 										<li class="level3Parent " id="setupenv"><a href="#">Set up an environment and install Magento locally</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child setupenv " data-menunode="setupenv"><a href="/guides/v2.0/cloud/before/before-setup-env-overview.html">Overview of a Magento Developer Environment</a>
 
 
 									
@@ -1054,59 +1117,6 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/cloud/reference/discover-arch.html">Architecture</a></li>
-									
-								
-
-									
-
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/reference/discover-deploy.html">Deployment process</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/reference/git-integration.html">How Cloud Uses Git</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.0/cloud/reference/cloud-composer.html">How Cloud Uses Composer</a></li>
-
-									
-
-								
-
-								
-								
-
-
-
-						
-
-					
-
-						
-
-						
-
-							
-
-
-								
-
-
-								
 									<li class="level1 "><a class="nav-header" href="/guides/v2.0/cloud/live/stage-prod-live.html">From integration to live</a></li>
 									
 								
@@ -1259,6 +1269,22 @@
 									
 
 									<li class="level-2 "><a href="/guides/v2.0/cloud/trouble/trouble-crypt-key-variable.html">Resolve issues with encryption key</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/cloud/trouble/trouble-error-HTML-minification.html">Resolve issues with HTML minification</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.0/cloud/trouble/trouble-google-analytics-deploy.html">Resolve issues with Google Analytics during deployment</a></li>
 
 									
 
@@ -1671,7 +1697,7 @@
 <h3 id="mage-owner-create-user">Step 1: Create the Magento file system owner and give the user a strong password</h3>
 <p>This section discusses how to create the Magento file system owner. (Magento file system owner is another term for the <em>command-line user</em>.)</p>
 
-<div class="collapsible"><b class="collapsible-title">To create the Magento file system owner: </b><div class="collapsible-content"><p>Enter the following command as a user with <code>root</code> privileges:</p>
+<p>To create the Magento file system owner, enter the following command as a user with <code>root</code> privileges:</p>
 
 <pre><code>adduser &lt;username&gt;
 </code></pre>
@@ -1696,11 +1722,10 @@ sudo passwd magento_user
 <div class="bs-callout bs-callout-warning">
     <p>Because the point of creating this user is to provide added security, make sure you create a <a href="https://en.wikipedia.org/wiki/Password_strength" target="_blank">strong password</a>.</p>
 </div>
-</div></div>
 
 <h3 id="install-update-depend-user-findgroup">Step 2: Find the web server user’s group</h3>
 
-<div class="collapsible"><b class="collapsible-title">To find the web server user's group: </b><div class="collapsible-content"><p>To find the web server user’s group:</p>
+<p>To find the web server user’s group:</p>
 
 <ul>
   <li>
@@ -1714,11 +1739,10 @@ sudo passwd magento_user
     <p>Typically, the user name and the group name are both <code>www-data</code></p>
   </li>
 </ul>
-</div></div>
 
-<h3 id="install-update-depend-user-add2group">Step 3: Put the Magento file system owner in the web server’s group</h3>
+<h3 id="install-update-depend-user-add2group">Step 3: Put the Magento file system owner in the web server’s primary group</h3>
 
-<div class="collapsible"><b class="collapsible-title">To put the Magento file system owner in the web server's primary group: </b><div class="collapsible-content"><p>Asuming the typical Apache group name for CentOS and Ubuntu), enter the following command as a user with <code>root</code> privileges:</p>
+<p>Assuming the typical Apache group name for CentOS and Ubuntu), enter the following command as a user with <code>root</code> privileges:</p>
 
 <ul>
   <li>CentOS: <code>usermod -g apache &lt;username&gt;</code></li>
@@ -1746,7 +1770,6 @@ sudo passwd magento_user
   <li>Ubuntu: <code>service apache2 restart</code></li>
   <li>CentOS: <code>service httpd restart</code></li>
 </ul>
-</div></div>
 
 <h4 id="next-step">Next step</h4>
 <ul>
