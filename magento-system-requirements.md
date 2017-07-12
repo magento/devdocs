@@ -30,7 +30,7 @@ See the system requirements for the complete list of supported and compatible so
 *	Added support for Elasticsearch 1.7 and 2.x (recommended)
 
 	*	If you get the Elasticsearch software from the Elasticsearch Linux repository, we support versions 2.x.
-	*	If you get the Elasticsearch software from their [Elasticsearch-PHP repository](https://github.com/elastic/elasticsearch-php){:target="	&#95;blank"}, we support the `2.0` branch.
+	*	If you get the Elasticsearch software from their [Elasticsearch-PHP repository](https://github.com/elastic/elasticsearch-php){:target="&#95;blank"}, we support the `2.0` branch.
 
 ## Magento 2.2.x
 [Magento 2.2.x technology stack requirements]({{ site.gdeurl22 }}install-gde/system-requirements-tech.html)

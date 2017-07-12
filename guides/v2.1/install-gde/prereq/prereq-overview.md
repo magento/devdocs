@@ -6,7 +6,7 @@ title: Prerequisites
 menu_node: parent
 menu_title: Prerequisites
 menu_order: 1
-version: 2.1
+version: 2.2
 github_link: install-gde/prereq/prereq-overview.md
 ---
 
@@ -64,7 +64,7 @@ To install or upgrade Apache, see <a href="{{page.baseurl}}install-gde/prereq/ap
 
 	php -v
 
-You must run {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} version 5.6 or 7.0.x or later as the following result indicates:
+You must run {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} version 7.0.x or later as the following result indicates:
 
 	PHP 7.0.8-2+deb.sury.org~trusty+1 (cli) ( NTS )
 	Copyright (c) 1997-2016 The PHP Group
@@ -73,8 +73,8 @@ You must run {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% end
 
 To install PHP, see:
 
-*	<a href="{{page.baseurl}}install-gde/prereq/php-centos.html">PHP 5.5 or 5.6&mdash;CentOS</a>
-*	<a href="{{page.baseurl}}install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6&mdash;Ubuntu</a>
+*	<a href="{{page.baseurl}}install-gde/prereq/php-centos.html">PHP 7.0&mdash;CentOS</a>
+*	<a href="{{page.baseurl}}install-gde/prereq/php-ubuntu.html">PHP 7.0&mdash;Ubuntu</a>
 
 ### MySQL
 
@@ -109,8 +109,8 @@ To install or upgrade MySQL, see <a href="{{page.baseurl}}install-gde/prereq/mys
 
 *	<a href="{{site.baseurl}}magento-system-requirements.html">Magento system requirements</a>
 *	<a href="{{page.baseurl}}install-gde/prereq/apache.html">Apache</a>
-*	<a href="{{page.baseurl}}install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6&mdash;Ubuntu</a>
-*	<a href="{{page.baseurl}}install-gde/prereq/php-centos.html">PHP 5.5 or 5.6&mdash;CentOS</a>
+*	<a href="{{page.baseurl}}install-gde/prereq/php-ubuntu.html">PHP 7.0&mdash;Ubuntu</a>
+*	<a href="{{page.baseurl}}install-gde/prereq/php-centos.html">PHP 7.0&mdash;CentOS</a>
 *	<a href="{{page.baseurl}}install-gde/prereq/mysql.html">MySQL</a>
 *	<a href="{{page.baseurl}}install-gde/prereq/optional.html">Installing optional software</a>
 *	[How to get the Magento software]({{ page.baseurl }}install-gde/bk-install-guide.html)
