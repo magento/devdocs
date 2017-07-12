@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: 045_pipeline
+subgroup: 07_conf
 title: Use environment variables to override configuration settings
 menu_title: Use environment variables to override configuration settings
 menu_order: 5700
