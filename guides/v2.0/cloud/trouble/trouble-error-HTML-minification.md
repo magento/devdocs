@@ -7,7 +7,7 @@ menu_title: Resolve issues with HTML minification
 menu_order: 70
 menu_node:
 version: 2.0
-github_link: cloud/trouble/trouble-error-html-minification.md
+github_link: cloud/trouble/trouble-error-HTML-minification.md
 ---
 
 ## Resolve issues with HTML minification
