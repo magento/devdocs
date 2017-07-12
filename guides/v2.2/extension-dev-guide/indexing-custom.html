@@ -1331,11 +1331,12 @@
 <p>Finally, declare the indexer view (<code>merchandizing_popular_order</code>) that tracks sales (<code>Merchandizing/etc/mview.xml</code>):</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;../../../../../lib/internal/Magento/Framework/Mview/etc/mview.xsd&quot;</span><span class="nt">&gt;</span>
-<span class="nt">&lt;view</span> <span class="na">id=</span><span class="s">&quot; merchandizing_popular_order&quot;</span> <span class="na">class=</span><span class="s">&quot;Vendor\Merchandizing\Model\Indexer\Popular&quot;</span> <span class="na">group=</span><span class="s">&quot;indexer&quot;</span><span class="nt">&gt;</span>
-  <span class="nt">&lt;subscriptions&gt;</span>
-    <span class="nt">&lt;table</span> <span class="na">name=</span><span class="s">&quot;sales_order_flat&quot;</span> <span class="na">entity_column=</span><span class="s">&quot;order_id&quot;</span> <span class="nt">/&gt;</span>
-  <span class="nt">&lt;/subscriptions&gt;</span>
-<span class="nt">&lt;/view&gt;</span></code></pre></figure>
+  <span class="nt">&lt;view</span> <span class="na">id=</span><span class="s">&quot; merchandizing_popular_order&quot;</span> <span class="na">class=</span><span class="s">&quot;Vendor\Merchandizing\Model\Indexer\Popular&quot;</span> <span class="na">group=</span><span class="s">&quot;indexer&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;subscriptions&gt;</span>
+      <span class="nt">&lt;table</span> <span class="na">name=</span><span class="s">&quot;sales_order_flat&quot;</span> <span class="na">entity_column=</span><span class="s">&quot;order_id&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/subscriptions&gt;</span>
+  <span class="nt">&lt;/view&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <p>These settings start <code>&lt;VendorName&gt;\Merchandizing\Model\Indexer\Popular::execute</code> method every time an order is changed.</p>
 
