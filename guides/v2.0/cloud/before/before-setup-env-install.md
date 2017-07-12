@@ -4,7 +4,7 @@ group: cloud
 subgroup: 080_setup
 title: Step 6, Install Magento
 menu_title: Step 6, Install Magento
-menu_order: 166
+menu_order: 167
 level3_menu_node: level3child
 level3_subgroup: setupenv
 version: 2.0
@@ -12,6 +12,10 @@ github_link: cloud/before/before-setup-env-install.md
 ---
 
 {::options syntax_highlighter="rouge" /}
+
+With your workspace prepared, install Magento on your local to verify custom code, extensions, and more. This section discusses the installation prep, options, and steps you should complete.
+
+## Prepare to install Magento
 
 To be able to customize the Magento software on your local machine, you should install it using the following information:
 
@@ -22,7 +26,7 @@ Before you begin, list the environment variables.
 
 	magento-cloud variable:get -e <environment ID>
 
-A sample result follows:
+The following results provides an example of variables:
 
 	+----------------+---------------+-----------+------+
 	| ID             | Value         | Inherited | JSON |
@@ -32,12 +36,19 @@ A sample result follows:
 	| ADMIN_USERNAME | meister_x2U8  | Yes       | No   |
 	+----------------+---------------+-----------+------+
 
+## Install Magento
+
+Installation of Magento onto your local supports a command line option or a Web Setup Wizard. The CLI option also supports a Composer installation with sample data. For best information on your installation options and steps, see the [Installation Roadmap]({{ page.baseurl }}install-gde/install-roadmap_cli.html).
+
+After installing prerequisties, cloning the project and branch, configuring SSH keys, and adding Magento authentication keys, make sure to [Update installation dependencies]({{ page.baseurl }}install-gde/install/prepare-install.html). With the Magento respository cloned, you need to update and resolve any dependencies using Composer commands.
+
+To install, use one of the following options:
+* [Install the Magento software using the command line]({{ page.baseurl }}install-gde/install/cli/install-cli.html)
+* [Install the Magento software using the Web Setup Wizard]({{ page.baseurl }}install-gde/install/web/install-web.html)
+
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 After you install Magento, set file system permissions and ownership as discussed in [Step 7, Set file system permissions and ownership]({{ page.baseurl }}cloud/before/before-setup-env-perms.html).
 </div>
 
-<h4>Related topics</h4>
-<ul><li><a href="{{ page.baseurl }}install-gde/install/web/install-web.html">Install the Magento software using the Web Setup Wizard</a></li>
-	<li><a href="{{ page.baseurl }}install-gde/install/cli/install-cli.html">Install the Magento software using the command line</a></li></ul>
-
-
+#### Next step
+[Step 7, Set file system permissions and ownership]({{ page.baseurl }}cloud/before/before-setup-env-perms.html)
