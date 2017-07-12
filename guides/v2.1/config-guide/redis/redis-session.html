@@ -1686,10 +1686,10 @@
 <h2 id="config-redis-config">Configure Magento to use Redis for session storage</h2>
 <p>Following is a sample configuration to add to <code>&lt;your Magento install dir&gt;app/etc/env.php</code>:</p>
 
-<pre><code>'session' =&gt; 
+<pre><code>'session' =&gt;
 array (
   'save' =&gt; 'redis',
-  'redis' =&gt; 
+  'redis' =&gt;
   array (
     'host' =&gt; '127.0.0.1',
     'port' =&gt; '6379',
@@ -1802,6 +1802,11 @@ array (
 	<td>bot_first_lifetime</td>
 	<td><p>Lifetime, in seconds, of session for bots on the first write, or use <code>0</code> to disable.</p></td>
 	<td>60</td>
+</tr>
+<tr>
+	<td>bot_lifetime</td>
+	<td><p>Lifetime, in seconds, of session for bots on subsequent writes, or use <code>0</code> to disable.</p></td>
+	<td>7200</td>
 </tr>
 <tr>
 	<td>disable_locking</td>
