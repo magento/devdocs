@@ -17,10 +17,10 @@ The `env.php` file contains the following sections:
 | Name              | Description                                    |
 | ----------------- | ---------------------------------------------- |
 | `backend`         | Settings for the Admin area                    |
-| `crypt`           | The encryption key                             |
-| `session`         | Session storage                                |
+| `crypt`           | The encryption key for cryptographic functions |
+| `session`         | Session storage data                           |
 | `db`              | Database connection settings                   |
-| `resource`        | Resources                                      |
+| `resource`        | Mapping of resource name to a connection       |
 | `x-frame-options` | Setting for [x-frame-options][x-frame-options] |
 | `MAGE_MODE`       | The [Magento mode][magento-mode]               |
 | `cache_types`     | Cache storage settings                         |

@@ -13,10 +13,10 @@ github_link: config-guide/config/config-php.md
 
 Magento's deployment configuration consists of the shared and system-specific configuration for your installation. Magento's deployment configuration is divided between:
 
-*	`<Magento base dir>/app/etc/config.php`, referred to as the _shared_ configuration file, because you can check it in to source control and use it in your development, staging, and production systems
+*	[`app/etc/config.php`][config-php], referred to as the _shared_ configuration file, because you can check it in to source control and use it in your development, staging, and production systems
 
 	`config.php` contains the list of installed modules, themes, and language packages; and shared configuration settings
-*	`<Magento base dir>/app/etc/env.php`, which contains system-specific settings, such as:
+*	[`app/etc/env.php`][env-php], which contains system-specific settings, such as:
 
 Together, `config.php` and `env.php` are referred to as Magento's _deployment configuration_ because they are created during installation and are required to start Magento.
 
@@ -78,3 +78,6 @@ The only practical difference of a module being disabled and being completely ab
 
 ## Related topic
 <a href="{{page.baseurl}}config-guide/config/config-files.html">Module configuration files</a>
+
+[config-php]: {{page.baseurl}}config-guide/prod/config-reference-configphp.html
+[env-php]: {{page.baseurl}}config-guide/prod/config-reference-envphp.html
