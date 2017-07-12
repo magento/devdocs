@@ -18,5 +18,5 @@ The following topics discuss solutions to common issues with Magento Enterprise 
 *	[Component deployment failure]({{ page.baseurl }}cloud/trouble/trouble_comp-deploy-fail.html)
 *	[Troubleshoot Fastly]({{ page.baseurl }}cloud/trouble/trouble_fastly.html)
 *	[Resolve issues with encryption key]({{ page.baseurl }}cloud/trouble/trouble-crypt-key-variable.html)
-*	[Resolve issues with HTML minification]({{ page.baseurl }}cloud/trouble/trouble-error-HTML-minification.html)
+*	[Resolve issues with HTML minification]({{ page.baseurl }}cloud/trouble/trouble-error-html-minification.html)
 *	[Resolve issues with Google Analytics during deployment]({{ page.baseurl }}cloud/trouble/trouble-google-analytics-deploy.html)
