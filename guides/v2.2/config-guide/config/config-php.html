@@ -508,95 +508,6 @@
 
 									
 
-										<li class="level3Parent " id="config-ref"><a href="#">Configuration reference</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child config-ref " data-menunode="config-ref"><a href="/guides/v2.2/config-guide/prod/config-reference-sens.html">Sensitive and system-specific</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child config-ref " data-menunode="config-ref"><a href="/guides/v2.2/config-guide/prod/config-reference-payment.html">Payment configuration paths reference</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child config-ref " data-menunode="config-ref"><a href="/guides/v2.2/config-guide/prod/config-reference-most.html">Other configuration paths reference</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child config-ref " data-menunode="config-ref"><a href="/guides/v2.2/config-guide/prod/config-reference-b2b.html">Magento Enterprise B2B Extension configuration paths reference</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child config-ref " data-menunode="config-ref"><a href="/guides/v2.2/config-guide/prod/config-reference-gitignore.html">.gitignore reference</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child config-ref " data-menunode="config-ref"><a href="/guides/v2.2/config-guide/prod/config-reference-var-name.html">Use environment variables to override configuration settings</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child config-ref " data-menunode="config-ref"><a href="/guides/v2.2/config-guide/prod/config-reference-configphp.html">config.php reference</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child config-ref " data-menunode="config-ref"><a href="/guides/v2.2/config-guide/prod/config-reference-envphp.html">env.php reference</a>
-
-
-									
-
-								
-
-									
-
 										<li class="level3Parent " id="deployment-examples"><a href="#">Examples</a>
 
 
@@ -930,6 +841,95 @@
 									
 
 									<li class="level-2 "><a href="/guides/v2.2/config-guide/config/config-create.html">Create or extend configuration types</a></li>
+
+									
+
+								
+
+									
+
+										<li class="level3Parent " id="config-ref"><a href="#">Configuration reference</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child config-ref " data-menunode="config-ref"><a href="/guides/v2.2/config-guide/prod/config-reference-sens.html">Sensitive and system-specific</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child config-ref " data-menunode="config-ref"><a href="/guides/v2.2/config-guide/prod/config-reference-payment.html">Payment configuration paths reference</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child config-ref " data-menunode="config-ref"><a href="/guides/v2.2/config-guide/prod/config-reference-most.html">Other configuration paths reference</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child config-ref " data-menunode="config-ref"><a href="/guides/v2.2/config-guide/prod/config-reference-b2b.html">Magento Enterprise B2B Extension configuration paths reference</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child config-ref " data-menunode="config-ref"><a href="/guides/v2.2/config-guide/prod/config-reference-gitignore.html">.gitignore reference</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child config-ref " data-menunode="config-ref"><a href="/guides/v2.2/config-guide/prod/config-reference-var-name.html">Use environment variables to override configuration settings</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child config-ref " data-menunode="config-ref"><a href="/guides/v2.2/config-guide/prod/config-reference-configphp.html">config.php reference</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child config-ref " data-menunode="config-ref"><a href="/guides/v2.2/config-guide/prod/config-reference-envphp.html">env.php reference</a>
+
 
 									
 
@@ -1852,74 +1852,59 @@
 
 
 			<h2 id="config-php-overview">Purpose of the deployment configuration</h2>
-<div>
 
-  <p>Magento’s deployment configuration consists of the shared and system-specific configuration for your installation. Magento’s deployment configuration is divided between:</p>
+<p>Magento’s deployment configuration consists of the shared and system-specific configuration for your installation. Magento’s deployment configuration is divided between:</p>
 
-  <ul>
-    <li>
-      <p><code>&lt;Magento base dir&gt;/app/etc/config.php</code>, referred to as the <em>shared</em> configuration file, because you can check it in to source control and use it in your development, staging, and production systems</p>
+<ul>
+  <li>
+    <p><a href="/guides/v2.2/config-guide/prod/config-reference-configphp.html"><code>app/etc/config.php</code></a>, referred to as the <em>shared</em> configuration file, because you can check it in to source control and use it in your development, staging, and production systems</p>
 
-      <p><code>config.php</code> contains the list of installed modules, themes, and language packages; and shared configuration settings</p>
-    </li>
-    <li>
-      <p><code>&lt;Magento base dir&gt;/app/etc/env.php</code>, which contains system-specific settings, such as:</p>
+    <p><code>config.php</code> contains the list of installed modules, themes, and language packages; and shared configuration settings</p>
+  </li>
+  <li>
+    <p><a href="/guides/v2.2/config-guide/prod/config-reference-envphp.html"><code>app/etc/env.php</code></a>, which contains system-specific settings, such as:</p>
+  </li>
+</ul>
 
-      <ul>
-        <li>Database credentials and connection settings</li>
-        <li>i18n TBD</li>
-        <li>Cache storage settings</li>
-        <li>Session storage settings</li>
-        <li><a href="/guides/v2.2/config-guide/secy/secy-xframe.html">x-frame-options</a> setting</li>
-        <li>Enabled cache types</li>
-        <li>Your encryption key</li>
-        <li>Web routing parameters (base URLs, Magento Admin URI)</li>
-        <li><a href="/guides/v2.2/config-guide/bootstrap/magento-modes.html">Magento mode</a></li>
-        <li>Magento installation date</li>
-        <li>System-specific and sensitive configuration settings TBD</li>
-      </ul>
-    </li>
-  </ul>
+<p>Together, <code>config.php</code> and <code>env.php</code> are referred to as Magento’s <em>deployment configuration</em> because they are created during installation and are required to start Magento.</p>
 
-  <p>Together, <code>config.php</code> and <code>env.php</code> are referred to as Magento’s <em>deployment configuration</em> because they are created during installation and are required to start Magento.</p>
+<div class="bs-callout bs-callout-info" id="info">
+  <p>The Magento 2 deployment configuration replaces <code>local.xml</code> in Magento 1.x.</p>
+</div>
 
-  <div class="bs-callout bs-callout-info" id="info">
-    <p>The Magento 2 deployment configuration replaces <code>local.xml</code> in Magento 1.x.&lt;/p&gt;</p>
-  </div>
+<p>Unlike other <a href="/guides/v2.2/config-guide/config/config-files.html">module configuration files</a>, Magento’s deployment configuration is loaded into memory when Magento initializes, is not merged with any other files, and cannot be extended. (<code>config.php</code> and <code>env.php</code> are merged with each other, however.)</p>
 
-  <p>Unlike other <a href="/guides/v2.2/config-guide/config/config-files.html">module configuration files</a>, Magento’s deployment configuration is loaded into memory when Magento initializes, is not merged with any other files, and cannot be extended. (<code>config.php</code> and <code>env.php</code> are merged with each other, however.)</p>
+<h2 id="config-php-contents">Details about the deployment configuration</h2>
+<p><code>config.php</code> and <code>env.php</code> are <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> files that return a <a href="http://www.w3schools.com/php/php_arrays.asp" target="_blank">multi-dimensional associative array</a>, which is basically a hierarchical arrangement of configuration parameters and values.</p>
 
-  <h2 id="config-php-contents">Details about the deployment configuration</h2>
-  <p><code>config.php</code> and <code>env.php</code> are <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> files that return a <a href="http://www.w3schools.com/php/php_arrays.asp" target="_blank">multi-dimensional associative array</a>, which is basically a hierarchical arrangement of configuration parameters and values.</p>
+<p>On the top level of this array are <em>configuration segments</em>. A segment has arbitrary content (a scalar value or a nested array) distinguished by an arbitrary key—where both the key and its value are defined by the Magento framework.</p>
 
-  <p>On the top level of this array are <em>configuration segments</em>. A segment has arbitrary content (a scalar value or a nested array) distinguished by an arbitrary key—where both the key and its value are defined by the Magento framework.</p>
+<p><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/DeploymentConfig.php" target="_blank">Magento\Framework\App\DeploymentConfig</a> merely provides access to these sections but does not allow you to extend them.</p>
 
-  <p><a href="https://github.com/magento/magento2/blob/develop/lib/internal/Magento/Framework/App/DeploymentConfig.php" target="_blank">Magento\Framework\App\DeploymentConfig</a> merely provides access to these sections but does not allow you to extend them.</p>
+<p>On the next hierarchy level, items in each segment are ordered according to the <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> sequence definition, which is obtained by merging all modules’ configuration files, with the <span term-uuid="53da11f1-d0b8-4a7e-b078-1e099462b409" class="glossary-term" data-toggle="popover">exception</span> of disabled modules.</p>
 
-  <p>On the next hierarchy level, items in each segment are ordered according to the <span term-uuid="c1e4242b-1f1a-44c3-9d72-1d5b1435e142" class="glossary-term" data-toggle="popover">module</span> sequence definition, which is obtained by merging all modules’ configuration files, with the <span term-uuid="53da11f1-d0b8-4a7e-b078-1e099462b409" class="glossary-term" data-toggle="popover">exception</span> of disabled modules.</p>
+<p>The following sections discusses the structure and contents of the deployment configuration—<code>config.php</code> and <code>env.php</code>.</p>
 
-  <p>The following sections discusses the structure and contents of the deployment configuration—<code>config.php</code> and <code>env.php</code>.</p>
+<ul>
+  <li><a href="#config-php-contents-config-php">Manage installed modules</a></li>
+  <li><a href="#config-php-contents-env-php">System-specific configuration</a></li>
+</ul>
 
-  <ul>
-    <li><a href="#config-php-contents-config-php">Manage installed modules</a></li>
-    <li><a href="#config-php-contents-env-php">System-specific configuration</a></li>
-  </ul>
+<h2 id="config-php-contents-config-php">Manage installed modules</h2>
+<p><code>config.php</code> lists your installed modules. Magento provides both command-line and web-based utilities to manage modules (install, uninstall, enable, disable, or upgrade).</p>
 
-  <h3 id="config-php-contents-config-php">Manage installed modules</h3>
-  <p><code>config.php</code> lists your installed modules. Magento provides both command-line and web-based utilities to manage modules (install, uninstall, enable, disable, or upgrade).</p>
+<p>Examples:</p>
 
-  <p>Examples:</p>
+<ul>
+  <li>Uninstall components: <a href="/guides/v2.2/install-gde/install/cli/install-cli-uninstall.html">bin/magento setup:uninstall</a></li>
+  <li>Enable or disable components: <a href="/guides/v2.2/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable">bin/magento module:enable</a>, <a href="/guides/v2.2/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable">bin/magento module:disable</a>.</li>
+  <li><a href="/guides/v2.2/comp-mgr/module-man/compman-main-pg.html">Component Manager</a></li>
+  <li><a href="/guides/v2.2/comp-mgr/upgrader/upgrade-start.html">System Upgrade</a></li>
+</ul>
 
-  <ul>
-    <li>Uninstall components: <a href="/guides/v2.2/install-gde/install/cli/install-cli-uninstall.html">bin/magento setup:uninstall</a></li>
-    <li>Enable or disable components: <a href="/guides/v2.2/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable">bin/magento module:enable</a>, <a href="/guides/v2.2/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-disable">bin/magento module:disable</a>.</li>
-    <li><a href="/guides/v2.2/comp-mgr/module-man/compman-main-pg.html">Component Manager</a></li>
-    <li><a href="/guides/v2.2/comp-mgr/upgrader/upgrade-start.html">System Upgrade</a></li>
-  </ul>
+<p><code>config.php</code> snippet:</p>
 
-  <p><code>config.php</code> snippet: ADD CONFIGURATION TBD</p>
-
-  <figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">return</span> <span class="k">array</span> <span class="p">(</span>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">return</span> <span class="k">array</span> <span class="p">(</span>
   <span class="s1">&#39;modules&#39;</span> <span class="o">=&gt;</span>
   <span class="k">array</span> <span class="p">(</span>
     <span class="s1">&#39;Magento_Core&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
@@ -1935,109 +1920,15 @@
   <span class="p">),</span>
 <span class="p">);</span></code></pre></figure>
 
-  <p>The value <code>1</code> or <code>0</code> indicates whether a module is enabled or disabled.</p>
+<p>The value <code>1</code> or <code>0</code> indicates whether a module is enabled or disabled.</p>
 
-  <p>Disabled modules are not recognized by the Magento application; in other words, they don’t participate in merging configuration, in dependency injection, events, plug-ins, and so on. Disabled modules do not modify the <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span> or <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span> and don’t affect routing.</p>
+<p>Disabled modules are not recognized by the Magento application; in other words, they don’t participate in merging configuration, in dependency injection, events, plug-ins, and so on. Disabled modules do not modify the <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span> or <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span> and don’t affect routing.</p>
 
-  <p>The only practical difference of a module being disabled and being completely absent in the code base is that a disabled module is found by the autoloader, enabling its classes and constants to be reused in other code.</p>
+<p>The only practical difference of a module being disabled and being completely absent in the code base is that a disabled module is found by the autoloader, enabling its classes and constants to be reused in other code.</p>
 
-  <h3 id="config-php-contents-env-php">System-specific configuration</h3>
-  <p>The following table provides details about each <code>env.php</code> segment and its structure. Update TBD</p>
+<h2 id="related-topic">Related topic</h2>
+<p><a href="/guides/v2.2/config-guide/config/config-files.html">Module configuration files</a></p>
 
-  <table>
-  <tbody>
-    <tr>
-      <th>Segment</th>
-      <th>Key</th>
-      <th>Structure</th>
-    </tr>
-    <tr>
-      <td>Database</td>
-      <td><code>db</code></td>
-      <td><pre>__/db
-|__/connection
-| |__/[default]
-|   |-- host
-|   |-- dbname
-|   |-- username
-|   |-- password
-|   |-- model [mysql4]
-|   |-- initStatements [SET NAMES utf8;]
-|   |-- active [1]
-|-- table_prefix</pre></td>
-    </tr>
-    <tr>
-      <td>Resources</td>
-      <td><code>resource</code></td>
-      <td><pre>__/resource
- |__/default_setup
-   |-- connection [default]</pre></td>
-    </tr>
-    <tr>
-      <td>Session storage</td>
-      <td><code>session</code></td>
-      <td><pre>__/session
- |__/save
-   |-- &lt;files|db&gt;</pre></td>
-    </tr>
-    <tr>
-      <td>Admin URL path</td>
-      <td><code>backend</code></td>
-      <td><pre>__/backend
- |-- frontName</pre></td>
-    </tr>
-    <tr>
-      <td>Cache storage</td>
-      <td><code>cache</code></td>
-      <td><pre>__/cache
- |__/frontend
-   |__/See <a href="/guides/v2.2/config-guide/cache/caching_frontend-cache-types.html">frontend options</a></pre></td>
-    </tr>
-    <tr>
-      <td>Installation date</td>
-      <td><code>install</code></td>
-      <td><pre>__/install
- |-- date</pre></td>
-    </tr>
-    <tr>
-      <td>Encryption key</td>
-      <td><code>encrypt</code></td>
-      <td><pre>__/crypt
- |-- key</pre></td>
-    </tr>
-    <tr>
-      <td>Cache types</td>
-      <td><code>cache_types</code></td>
-      <td><pre>__/cache_types
- |-- &lt;enumerated <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span> types&gt;</pre></td>
-    </tr>
-     <tr>
-        <td>Message queues</td>
-        <td><code>queue</code></td>
-        <td><pre>__/queue
-    |__/amqp
-    |-- host
-    |-- port
-    |-- user
-    |-- password
-    |-- virtualhost
-    |-- ssl
-    |__/connections
-      |__/&lt;connection_name&gt;
-         |-- host
-         |-- port
-         |-- user
-         |-- password
-         |-- virtualhost
-         |-- ssl
-    </pre></td>
-      </tr>         
-  </tbody>
-</table>
-
-  <h4 id="related-topic">Related topic</h4>
-  <p><a href="/guides/v2.2/config-guide/config/config-files.html">Module configuration files</a></p>
-</div>
 
 		</div>
 		<!-- /.content-wrap -->

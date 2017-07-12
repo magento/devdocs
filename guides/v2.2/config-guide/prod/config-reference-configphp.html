@@ -508,95 +508,6 @@
 
 									
 
-										<li class="level3Parent " id="config-ref"><a href="#">Configuration reference</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child config-ref " data-menunode="config-ref"><a href="/guides/v2.2/config-guide/prod/config-reference-sens.html">Sensitive and system-specific</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child config-ref " data-menunode="config-ref"><a href="/guides/v2.2/config-guide/prod/config-reference-payment.html">Payment configuration paths reference</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child config-ref " data-menunode="config-ref"><a href="/guides/v2.2/config-guide/prod/config-reference-most.html">Other configuration paths reference</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child config-ref " data-menunode="config-ref"><a href="/guides/v2.2/config-guide/prod/config-reference-b2b.html">Magento Enterprise B2B Extension configuration paths reference</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child config-ref " data-menunode="config-ref"><a href="/guides/v2.2/config-guide/prod/config-reference-gitignore.html">.gitignore reference</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child config-ref " data-menunode="config-ref"><a href="/guides/v2.2/config-guide/prod/config-reference-var-name.html">Use environment variables to override configuration settings</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child config-ref  active " data-menunode="config-ref"><a href="/guides/v2.2/config-guide/prod/config-reference-configphp.html">config.php reference</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child config-ref " data-menunode="config-ref"><a href="/guides/v2.2/config-guide/prod/config-reference-envphp.html">env.php reference</a>
-
-
-									
-
-								
-
-									
-
 										<li class="level3Parent " id="deployment-examples"><a href="#">Examples</a>
 
 
@@ -930,6 +841,95 @@
 									
 
 									<li class="level-2 "><a href="/guides/v2.2/config-guide/config/config-create.html">Create or extend configuration types</a></li>
+
+									
+
+								
+
+									
+
+										<li class="level3Parent " id="config-ref"><a href="#">Configuration reference</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child config-ref " data-menunode="config-ref"><a href="/guides/v2.2/config-guide/prod/config-reference-sens.html">Sensitive and system-specific</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child config-ref " data-menunode="config-ref"><a href="/guides/v2.2/config-guide/prod/config-reference-payment.html">Payment configuration paths reference</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child config-ref " data-menunode="config-ref"><a href="/guides/v2.2/config-guide/prod/config-reference-most.html">Other configuration paths reference</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child config-ref " data-menunode="config-ref"><a href="/guides/v2.2/config-guide/prod/config-reference-b2b.html">Magento Enterprise B2B Extension configuration paths reference</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child config-ref " data-menunode="config-ref"><a href="/guides/v2.2/config-guide/prod/config-reference-gitignore.html">.gitignore reference</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child config-ref " data-menunode="config-ref"><a href="/guides/v2.2/config-guide/prod/config-reference-var-name.html">Use environment variables to override configuration settings</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child config-ref  active " data-menunode="config-ref"><a href="/guides/v2.2/config-guide/prod/config-reference-configphp.html">config.php reference</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child config-ref " data-menunode="config-ref"><a href="/guides/v2.2/config-guide/prod/config-reference-envphp.html">env.php reference</a>
+
 
 									
 
@@ -1851,17 +1851,38 @@
 </section>
 
 
-			<p>TBD</p>
+			<p>The <code>config.php</code> file contains the following sections:</p>
 
-<p>The <code>config.php</code> file contains the following sections:</p>
-
-<ul>
-  <li><code>system</code>: all system configurations required for successful static content deployment</li>
-  <li><code>scopes</code>: the list of stores, store groups and websites with related information</li>
-  <li><code>i18n</code>:  all inline translations. This section is used for generating <code>js-translation.json</code></li>
-  <li><code>modules</code>: the list of enabled/disabled modules</li>
-  <li><code>themes</code>: the configuration of installed themes</li>
-</ul>
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>system</code></td>
+      <td>The system configurations required for static content deployment.</td>
+    </tr>
+    <tr>
+      <td><code>scopes</code></td>
+      <td>The list of stores, store groups and websites with related information.</td>
+    </tr>
+    <tr>
+      <td><code>i18n</code></td>
+      <td>All inline translation data. Reading from this section is currently not supported.</td>
+    </tr>
+    <tr>
+      <td><code>modules</code></td>
+      <td>The list of enabled and disabled modules.</td>
+    </tr>
+    <tr>
+      <td><code>themes</code></td>
+      <td>The configuration of installed themes.</td>
+    </tr>
+  </tbody>
+</table>
 
 		</div>
 		<!-- /.content-wrap -->

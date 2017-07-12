@@ -508,95 +508,6 @@
 
 									
 
-										<li class="level3Parent " id="config-ref"><a href="#">Configuration reference</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child config-ref " data-menunode="config-ref"><a href="/guides/v2.2/config-guide/prod/config-reference-sens.html">Sensitive and system-specific</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child config-ref " data-menunode="config-ref"><a href="/guides/v2.2/config-guide/prod/config-reference-payment.html">Payment configuration paths reference</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child config-ref " data-menunode="config-ref"><a href="/guides/v2.2/config-guide/prod/config-reference-most.html">Other configuration paths reference</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child config-ref " data-menunode="config-ref"><a href="/guides/v2.2/config-guide/prod/config-reference-b2b.html">Magento Enterprise B2B Extension configuration paths reference</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child config-ref " data-menunode="config-ref"><a href="/guides/v2.2/config-guide/prod/config-reference-gitignore.html">.gitignore reference</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child config-ref " data-menunode="config-ref"><a href="/guides/v2.2/config-guide/prod/config-reference-var-name.html">Use environment variables to override configuration settings</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child config-ref " data-menunode="config-ref"><a href="/guides/v2.2/config-guide/prod/config-reference-configphp.html">config.php reference</a>
-
-
-									
-
-								
-
-									
-
-
-											<li class="level3Child config-ref  active " data-menunode="config-ref"><a href="/guides/v2.2/config-guide/prod/config-reference-envphp.html">env.php reference</a>
-
-
-									
-
-								
-
-									
-
 										<li class="level3Parent " id="deployment-examples"><a href="#">Examples</a>
 
 
@@ -930,6 +841,95 @@
 									
 
 									<li class="level-2 "><a href="/guides/v2.2/config-guide/config/config-create.html">Create or extend configuration types</a></li>
+
+									
+
+								
+
+									
+
+										<li class="level3Parent " id="config-ref"><a href="#">Configuration reference</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child config-ref " data-menunode="config-ref"><a href="/guides/v2.2/config-guide/prod/config-reference-sens.html">Sensitive and system-specific</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child config-ref " data-menunode="config-ref"><a href="/guides/v2.2/config-guide/prod/config-reference-payment.html">Payment configuration paths reference</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child config-ref " data-menunode="config-ref"><a href="/guides/v2.2/config-guide/prod/config-reference-most.html">Other configuration paths reference</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child config-ref " data-menunode="config-ref"><a href="/guides/v2.2/config-guide/prod/config-reference-b2b.html">Magento Enterprise B2B Extension configuration paths reference</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child config-ref " data-menunode="config-ref"><a href="/guides/v2.2/config-guide/prod/config-reference-gitignore.html">.gitignore reference</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child config-ref " data-menunode="config-ref"><a href="/guides/v2.2/config-guide/prod/config-reference-var-name.html">Use environment variables to override configuration settings</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child config-ref " data-menunode="config-ref"><a href="/guides/v2.2/config-guide/prod/config-reference-configphp.html">config.php reference</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child config-ref  active " data-menunode="config-ref"><a href="/guides/v2.2/config-guide/prod/config-reference-envphp.html">env.php reference</a>
+
 
 									
 
@@ -1851,7 +1851,59 @@
 </section>
 
 
-			<p>TBD</p>
+			<p>The <code>env.php</code> file contains the following sections:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>backend</code></td>
+      <td>Settings for the Admin area</td>
+    </tr>
+    <tr>
+      <td><code>crypt</code></td>
+      <td>The encryption key for cryptographic functions</td>
+    </tr>
+    <tr>
+      <td><code>session</code></td>
+      <td>Session storage data</td>
+    </tr>
+    <tr>
+      <td><code>db</code></td>
+      <td>Database connection settings</td>
+    </tr>
+    <tr>
+      <td><code>resource</code></td>
+      <td>Mapping of resource name to a connection</td>
+    </tr>
+    <tr>
+      <td><code>x-frame-options</code></td>
+      <td>Setting for <a href="/guides/v2.2/config-guide/secy/secy-xframe.html">x-frame-options</a></td>
+    </tr>
+    <tr>
+      <td><code>MAGE_MODE</code></td>
+      <td>The <a href="/guides/v2.2/config-guide/bootstrap/magento-modes.html">Magento mode</a></td>
+    </tr>
+    <tr>
+      <td><code>cache_types</code></td>
+      <td>Cache storage settings</td>
+    </tr>
+    <tr>
+      <td><code>install</code></td>
+      <td>The installation date</td>
+    </tr>
+    <tr>
+      <td><code>queue</code></td>
+      <td><a href="/guides/v2.2/config-guide/mq/rabbitmq-overview.html">Message queues</a> settings</td>
+    </tr>
+  </tbody>
+</table>
+
 
 		</div>
 		<!-- /.content-wrap -->
