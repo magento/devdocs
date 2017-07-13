@@ -58,7 +58,7 @@ The [CentOS]({{page.baseurl}}install-gde/prereq/php-centos.html) and [Ubuntu]({{
 *	<a href="http://php.net/manual/en/book.libxml.php" target="&#95;blank">libxml</a>
 *	<a href="http://php.net/manual/en/book.xsl.php" target="&#95;blank">xsl</a>
 *	<a href="http://php.net/manual/en/book.zip.php" target="&#95;blank">zip</a>
-<!-- *	[json](http://php.net/manual/en/book.json.php){:target="&#95;blank"} -->
+*	[json](http://php.net/manual/en/book.json.php){:target="&#95;blank"}
 *	[iconv](http://php.net/manual/en/book.iconv.php){:target="&#95;blank"}
 
 #### PHP OPcache
