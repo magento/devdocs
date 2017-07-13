@@ -5,13 +5,13 @@ subgroup: 080_setup
 title: Prepare your existing Magento EE system
 menu_title: Prepare your existing Magento EE system
 menu_order: 153
-menu_node: 
+menu_node:
 level3_menu_node: level3child
 level3_subgroup: import
 version: 2.0
 github_link: cloud/access-acct/first-time-setup_import-prepare.md
 ---
- 
+
 This topic discusses tasks you must perform in your existing Magento EE installation to prepare it to be imported into a Magento Enterprise Cloud Edition project.
 
 Before you continue, push all pending changes to Git.
@@ -91,7 +91,7 @@ To create a new `auth.json` in the {% glossarytooltip c57aef7c-97b4-4b2b-a999-80
 
     See the following example:
 
-        { 
+        {
            "http-basic": {
               "repo.magento.com": {
               "username": "<public-key>",
@@ -117,7 +117,7 @@ To edit `composer.json`:
     with
 
         "magento/magento-cloud-metapackage": "<version>",
-    
+
     <div class="bs-callout bs-callout-info" id="info" markdown="1">
     Both `<version>` values _must be the same_. In other words, if your current EE version is 2.1.3, your `magento-cloud-metapackage` version must also be 2.1.3.
     </div>
@@ -164,19 +164,19 @@ This section discusses how to use the [`magento setup:backup --media`]({{ page.b
         rsync /var/www/html/magento2/var/backups/1487962699_filesystem_media.tgz 43bkopvkhelhy-master-l8uv4kp@ssh.us.magentosite.cloud:var/media.tgz
 
 ### Copy the encryption key {#cloud-import-copykey}
-To be able to decrypt encrypted data from your imported database, copy your encryption from your existing `env.php` file. `env.php` contains a nested {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} array storing configuration data. 
+To be able to decrypt encrypted data from your imported database, copy your encryption from your existing `env.php` file. Each environment (Integration, Staging, and Production) has an `env.php` of environment variables. The file contains a nested {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} array storing configuration data.
 
 1.  Open `<Magento install dir>/app/etc/env.php` in a text editor.
 2.  Search for the value of `key` (it's in the `crypt` array).
 3.  Copy the value to the clipboard and save it.
 
-    You must paste the encryption key into your Magento Enterprise Cloud Edition `env.php` file later.
+    You must paste the encryption key into your Magento Enterprise Cloud Edition `env.php` file in each environment in a later step.
 
 ## Prepare the Magento EE database  {#cloud-import-prepare-db}
-Create a dump of the database you want to import using mysqldump. 
+Create a dump of the database you want to import using mysqldump.
 
 ### Create a database dump
-The following example shows how to compress the dump so it doesn't significantly interfere with traffic from in live site. 
+The following example shows how to compress the dump so it doesn't significantly interfere with traffic from in live site.
 
 In the example, the dump file is named `db.sql.gz`. It's a good idea to include the date in the file name if you do multiple dumps over time.
 

@@ -10,6 +10,8 @@ version: 2.0
 github_link: install-gde/prereq/integrator_install.md
 ---
 
+## Install Composer {#instgde-prereq-compose-install}
+
 {% include install/composer-clone.md %}
 
 #### Next step

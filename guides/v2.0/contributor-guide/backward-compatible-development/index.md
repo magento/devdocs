@@ -234,6 +234,7 @@ The following is a list of prohibited CSS/LESS changes:
 
 * Removing or renaming a class
 * Removing or renaming a mix-in
+* Removing or renaming a variable
 
 ### Magento APIs
 
@@ -291,7 +292,7 @@ Adding an argument to an event is allowed.
 2. Deliver fixes that bump the module setup/data version in the current, unpublished version before delivering it to previous minor versions.
    In cases where an urgent fix was delivered in a previous minor version, treat the fix for the current unpublished version as a high priority task.
 
-   For example, issue fixes that change the setup/upgrade version in the unreleased `develop `branch are delivered first before being ported into the released branches.
+   For example, issue fixes that change the setup/upgrade version in the unreleased `develop` branch are delivered first before being ported into the released branches.
    If the fix was made for a released branch, a pull request for porting it into the `develop` branch must be created with a high priority and delivered as soon as possible.
    
 3. The setup version of a module must be higher than previous releases of the same module.

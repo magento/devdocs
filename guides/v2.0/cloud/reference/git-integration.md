@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 15_reference
+subgroup: 065_reference
 title: How Cloud Uses Git
 menu_title: How Cloud Uses Git
 menu_node:

@@ -425,21 +425,19 @@ We are reviewing this section and will publish it soon.
 
 10.5. The [Airbnb JS Style Guide] SHOULD BE followed.
 
-10.5.1. ES2015 SHOULD be used as a JS standard.
+10.5.1. ES5 SHOULD be used as a JS standard.
 
 10.5.2. Language features (closures) MUST be used for scope management. There SHOULD be no `_` (underscore) naming convention for private properties.
 
-10.5.3. All asynchronous operations MUST be represented with ES2015 Promises.
+10.5.3. All asynchronous operations MUST be represented with JQuery AJAX calls.
 
 10.5.4. Global properties (window.*) MUST NOT be used. A module system SHOULD be used for shared objects.
 
 10.5.5. Modules MUST NOT have external side effects.
 
-10.5.6. Every ES2015 module MUST declare a default value.
+10.5.6. Function declarations MUST be used for private functions instead of function expressions.
 
-10.5.7. Function declarations MUST be used for private functions instead of function expressions.
-
-10.5.8. Re-declaration of function names MUST NOT be used.
+10.5.7. Re-declaration of function names MUST NOT be used.
 
 ## 11. Testing
 

@@ -2,17 +2,17 @@
 layout: default
 group: config-guide
 subgroup: 15_RabbitMQ
-title: Manage message queues with MySQL
-menu_title: MySQL message queues
+title: Manage message queues
+menu_title: Manage message queues
 menu_order: 3
-version: 2.0
+version: 2.1
 github_link: config-guide/mq/manage-mysql.md
 ---
 
 
-If you do not want to implement the RabbitMQ solution, you can manage message queues with cron jobs (or an external process manager)and the CLI to ensure that consumers are retrieving messages.
+If you do not want to implement the RabbitMQ solution, you can manage message queues with cron jobs (or an external process manager) and the CLI to ensure that consumers are retrieving messages.
 
-<h2>Process management</h2>
+## Process management
 
 Cron jobs are the default mechanism to restart consumers. Processes started by `cron` consume the specified number of messages, then die after that. Re-running `cron` restarts the consumer.
 
@@ -32,11 +32,11 @@ See <a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-cron.html">
 
 You can also use a process manager such as <a href="http://supervisord.org/index.html">Supervisor</a> to monitor the status of processes. The manager can use the CLI to restart the processes as needed.
 
-<h2>Command line interface</h2>
+## Command line interface
 
-<h3>Start consumers</h3>
+### Start consumers
 
-The CLI can be used to start consumers of the messages from the queue. Multiple consumers can be started at a same time.
+Use the `magento` command to start the message queue consumer.
 
 `./bin/magento queue:consumers:start <consumer_name> [--max-messages=<value>]`
 
@@ -44,18 +44,18 @@ where:
 
 `<consumer_name>` is the consumer to start.
 
-`--max-messages=<value>` defines the maximum number of messages to consume per invocation. If number of messages are less then defined maximum number of messages, then the consumer will receive all the available messages in a queue.
+`--max-messages=<value>` defines the maximum number of messages to consume per invocation. If the number of queued messages is less than the specified maximum number of messages, if there are fewer than the specified number of messages in the queue, the consumer will poll for new messages until it has processed that number of messages. The command can be launched again with cron within a configured period of time, or manually.
 
-If `--max-messages` is not defined, the consumer continues to receive endless number of new messages  
+Unless the `max-messages` option is specified, the process runs continuously.
 
-After getting all available messages, the CLI command terminates. The command can be launched again with cron within a configured period of time, or manually.
+### List consumers
 
-<h3>List consumers</h3>
 Use the following command to return a list of message queue consumers:
 
 ` ./bin/magento queue:consumers:list`
 
 #### Related Topics
+
 *	<a href="{{page.baseurl}}config-guide/mq/rabbitmq-overview.html">RabbitMQ Overview</a>
 *	<a href="{{page.baseurl}}config-guide/mq/config-mq.html">Configure message queues</a>
 *	<a href="{{page.baseurl}}config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a>

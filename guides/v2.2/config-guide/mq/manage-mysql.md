@@ -2,8 +2,8 @@
 layout: default
 group: config-guide
 subgroup: 15_RabbitMQ
-title: Manage message queues with MySQL
-menu_title: MySQL message queues
+title: Manage message queues
+menu_title: Manage message queues
 menu_order: 3
 version: 2.0
 github_link: config-guide/mq/manage-mysql.md
@@ -44,15 +44,13 @@ where:
 
 `<consumer_name>` is the consumer to start.
 
-`--max-messages=<value>` defines the maximum number of messages to consume per invocation. If number of messages are less then defined maximum number of messages, then the consumer will receive all the available messages in a queue.
+`--max-messages=<value>` defines the maximum number of messages to consume per invocation. If the number of queued messages is less than the specified maximum number of messages, if there are fewer than the specified number of messages in the queue, the consumer will poll for new messages until it has processed that number of messages. The command can be launched again with cron within a configured period of time, or manually.
 
-If `--max-messages` is not defined, the consumer continues to receive endless number of new messages
+If `--max-messages` is not specified, the process runs continuously.
 
-After getting all available messages, the CLI command terminates. The command can be launched again with cron within a configured period of time, or manually.
+`--batch-size=<value>` defines the number of messages to consume per batch. If specified, messages in a queue are consumed in batches of `<value>` each. This option is applicable for the batch consumer only.
 
-“`--batch-size=<value>` defines the number of messages to consume per batch. If specified, messages in a queue are consumed in batches of `<value>` each. This option is applicable for the batch consumer only.
-
-If `--batch-size` is not defined, the batch consumer receives all available messages in a queue.”
+If `--batch-size` is not defined, the batch consumer receives all available messages in a queue.
 
 <h3>List consumers</h3>
 Use the following command to return a list of message queue consumers:

@@ -97,7 +97,7 @@ Likewise afterSave plugin should take data from entity and do some manipulations
             ) {
                 $extensionAttributes = $entity->getExtensionAttributes(); /** get current extension attributes from entity **/
                 $ourCustomData = $extensionAttributes->getOurCustomData();
-                $this-customDataRepository->save($ourCustomData);
+                $this->customDataRepository->save($ourCustomData);
 
                 return $entity;
             }

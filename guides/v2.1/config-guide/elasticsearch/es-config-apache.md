@@ -49,7 +49,7 @@ This section discusses how to configure an Elasticsearch proxy using a virtual h
 
 		<VirtualHost *:8080>
 		   ProxyPass "/" "http://localhost:9200/"
-		   ProxyPassReverse "/" http://localhost:9200/"
+		   ProxyPassReverse "/" "http://localhost:9200/"
 		</VirtualHost>
 5.	Restart Apache:
 
