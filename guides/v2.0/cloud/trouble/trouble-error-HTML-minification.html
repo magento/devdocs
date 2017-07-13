@@ -1698,23 +1698,33 @@
 
 <p>The issue is due to an issue of enabling HTML minification and the setting in <code>config.local.php</code> when using <code>bin/magento magento-cloud:scd-dump</code>.</p>
 
-<p>As a work-around, complete the following:
-1. Copy the file <code>app/etc/config.local.php</code> to your local.
-2. Edit and remove the minify section from <code>config.local.php</code>:</p>
+<p>As a work-around, complete the following:</p>
 
-<pre><code>'template' =&gt;
-      array (
-        'allow_symlink' =&gt; '0',
-        'minify_html' =&gt; '1',
-      ), 2. Modify the setting for minify in the database with this command:
+<ol>
+  <li>Copy the file <code>app/etc/config.local.php</code> to your local.</li>
+  <li>
+    <p>Edit and remove the minify section from <code>config.local.php</code>:</p>
 
+    <p>‘template’ =&gt;
+       array (
+         ‘allow_symlink’ =&gt; ‘0’,
+         ‘minify_html’ =&gt; ‘1’,
+       ),</p>
+  </li>
+  <li>
+    <p>Modify the setting for minify in the database with this command:</p>
 
-  update core_config_data set value=0 where path ='dev/template/minify_html' 3. Flush all caches.
+    <p>update core_config_data set value=0 where path =’dev/template/minify_html’</p>
+  </li>
+  <li>
+    <p>Flush all caches.</p>
 
-
-php bin/magento cache:flush
-redis-cli -h &lt;&gt; -p &lt;&gt; flushall 4. Remove all `base_url` related items in `config.local.php`. 5. Save changes and complete full deployment of `config.local.php`: push to Git branch, build and deploy, and deploy across environments as needed.
-</code></pre>
+    <p>php bin/magento cache:flush
+ redis-cli -h &lt;&gt; -p &lt;&gt; flushall</p>
+  </li>
+  <li>Remove all <code>base_url</code> related items in <code>config.local.php</code>.</li>
+  <li>Save changes and complete full deployment of <code>config.local.php</code>: push to Git branch, build and deploy, and deploy across environments as needed.</li>
+</ol>
 
 		</div>
 		<!-- /.content-wrap -->
