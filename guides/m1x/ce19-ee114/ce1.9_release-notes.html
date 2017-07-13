@@ -30,6 +30,9 @@
 <p>These Release Notes contain the following information:</p>
 <ul class="level1"><li><a href="#upgrade">Important Upgrade Information</a></li>
 <li><a href="#ce19-patches">Recent Patches</a></li>
+
+
+<li><a href="#ce19-1934">Magento CE 1.9.3.4 Release Notes</a></li>
 <li><a href="#ce19-1933">Magento CE 1.9.3.3 Release Notes</a></li>
 <li><a href="#ce19-1932">Magento CE 1.9.3.2 Release Notes</a></li>
 <li><a href="#ce19-1931">Magento CE 1.9.3.1 Release Notes</a></li>
@@ -50,6 +53,40 @@
 <h2 id="upgrade">Important Upgrade Information</h2>
 <div class="msg-box important"><img src="{{ site.baseurl }}common/images/m1x/icon-important.png" alt="important" align="left" width="40"><span><strong>Important</strong>: Use CE 1.9.3.0 or later for <em>all new CE installations and upgrades</em> to get the latest fixes, features, and security updates.</span></div>
 
+
+
+
+<h2 id="ce19-1934">Magento CE 1.9.3.4 Release Notes</h2>
+ <p>This patch addresses both security and functional issues discovered when using the <code>SUPEE-9767</code> patch. We recommend upgrading your Magento store to this latest version. If you cannot directly upgrade to this patch, first install the latest version of Magento plus the <code>SUPEE-9767</code> patch before installing this patch.
+
+See  <a href="https://magento.com/security/patches/supee-9767" target="_blank">Magento Security Center</a> for a comprehensive discussion of these security issues.</p>
+
+ <p>This release also provides support for the following functional issues: </p>
+
+<h3>General fixes</h3>
+<ul><li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-9591" target="_blank">MPERF-9591</a>.-->We’ve restored missing <code>strip_tags</code> functionality in the checkout JavaScript.</li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-9583" target="_blank">MPERF-9583</a> .-->We’ve changed how Magento validates form keys during the generic five-step checkout process. Previously, customer registration failed during standard checkout processing if form key authentication was enabled.</li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-9585" target="_blank">MPERF-9585</a>. -->Magento now displays the <code>Allow_symlinks</code> message in the Admin message area as expected.</li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-9594" target="_blank">MPERF-9594</a>.  -->Magento now preserves the background transparency of uploaded images as expected. Previously, transparency was lost after the image was uploaded, resulting in an unusable image.</li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-9635" target="_blank">MPERF-9635</a>.  -->You can now use Checkout with Multiple Addresses when checkout form validation is enabled.</li>
+
+	</ul>
+
+<h3>Installation</h3>
+	<ul><li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-9592" target="_blank">MPERF-9592</a>. -->You can now install an extension as part of installing a package.</li>
+	<li><!-- <a href="https://jira.corp.magento.com/browse/MPERF-9581" target="_blank">MPERF-9581</a>. --> The Allow symlinks option is now disabled during installation or upgrade processes. Previously, when you changed the Allow symlinks setting to true in the database before upgrading and then installing the patch, this option remained enabled,  but you could no longer access it from the Admin panel.</li>
+</ul>
+
+
+
+<code>SUPEE-9767 v2</code> contains these fixes. This patch is available from <a href="https://magento.com/tech-resources/download" target="_blank">Magento Tech Resources</a>.</p>
+
+
+
+
+
+
+
 <h2 id="ce19-1933">Magento CE 1.9.3.3 Release Notes</h2>
  <p>This patch provides resolution of multiple critical security issues. These critical issues include remote code execution for authenticated Admin users, access control bypass, and cross-site request forgery issues. See  <a href="https://magento.com/security/patches/supee-9767" target="_blank">Magento Security Center</a> for a comprehensive discussion of these issues.</p>
 
@@ -63,6 +100,9 @@
 <p>This patch/release has known issues. Please see <a href="https://magento.com/security/patches/supee-9767" target="_blank">SUPEE-9767</a> for updates.</p>
 
 <p><b>Note:</b> Before applying this patch or updating to this release, disable the <b>Symlinks</b> setting in <b>System > Configuration > Advanced > Developer > Enable Symlinks</b>. If the <b>Symlinks</b> setting is enabled, it will override your configuration file settings. If that override occurs, you will need to directly modify the database to change those settings.</p>
+
+
+
 
 
 

@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: 045_pipeline
+subgroup: 07_conf
 title: .gitignore reference
 menu_title: .gitignore reference
 menu_order: 5600

@@ -1,11 +1,11 @@
 ---
 layout: default
 group: cloud
-subgroup: 15_reference
+subgroup: 065_reference
 title: Deployment process
 menu_title: Deployment process
 menu_order: 4
-menu_node: 
+menu_node:
 version: 2.0
 github_link: cloud/reference/discover-deploy.md
 ---
@@ -32,7 +32,7 @@ Deployment consists of the following phases:
 1.	[Phase 1: Configuration validation and code retrieval](#cloud-deploy-over-phases-conf)
 2.	[Phase 2: Build](#cloud-deploy-over-phases-build)
 3.	[Phase 3: Prepare slug](#cloud-deploy-over-phases-slug)
-4.	[Phase 4: Deploy slugs and cluster](#cloud-deploy-over-phases-slugclus) 
+4.	[Phase 4: Deploy slugs and cluster](#cloud-deploy-over-phases-slugclus)
 5.	[Phase 5: Deployment hooks](#cloud-deploy-over-phases-hook)
 6.	[Post-deployment: configure routing](#cloud-deploy-over-phases-route)
 
@@ -47,9 +47,9 @@ This phase also runs `composer install` to retrieve dependencies.
 
 ### Phase 2: Build {#cloud-deploy-over-phases-build}
 We build only what has changed since the last build. This is one of the things that
-make Magento Enterprise Cloud Edition so fast in deployment. 
+make Magento Enterprise Cloud Edition so fast in deployment.
 
-Magento Enterprise Cloud Edition builds the codebase. It runs hooks in the `build` section of `.magento.app.yaml`. 
+Magento Enterprise Cloud Edition builds the codebase. It runs hooks in the `build` section of `.magento.app.yaml`.
 
 The default Magento build hook is a CLI command called `magento-cloud:build`. It does the following:
 
@@ -63,7 +63,7 @@ anything was daemonized.
 
 But also know that once the application has been built it is going to be
 mounted on a read-only file system (you will be able to configure specific
-mount points that are going to be read/write). 
+mount points that are going to be read/write).
 
 This means you cannot FTP to the server and add modules. Instead, you must add code to your git repo and run `git push`, which builds and deploys the environment.
 
@@ -72,7 +72,7 @@ The result of the build phase is a read-only file system we refer to as a *slug*
 you push code, if a service did not change, you can use a slug from the archive.
 
 It also means that reverting a deployment is basically
-instantaneous. 
+instantaneous.
 
 ### Phase 4: Deploy slugs and cluster {#cloud-deploy-over-phases-slugclus}
 Now we provision your applications and all the {% glossarytooltip 74d6d228-34bd-4475-a6f8-0c0f4d6d0d61 %}backend{% endglossarytooltip %} services you
@@ -92,14 +92,14 @@ The last step runs a deployment script. You can use this for example to anonymiz
 
 When this script runs, you have access to all the services in your environment (Redis, database, and so on).
 
-There are two default deploy hooks. One is `pre-deploy.php`, which does some necessary cleanup and retrieval of 
+There are two default deploy hooks. One is `pre-deploy.php`, which does some necessary cleanup and retrieval of
 resources that were generated in the build hook. The second is `bin/magento magento-cloud:deploy`, which does the following
 
 *	If Magento is not installed, it installs Magento with `bin/magento setup:install`, updates the deployment configuration, `app/etc/env.php`, and the database for your specified environment (for example, Redis and {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %} URLs).
 
 *	If Magento is installed, performs any necessary upgrades.
 
-	The deployment script runs [`bin/magento setup:upgrade`]({{ page.baseurl }}install-gde/install/cli/install-cli-subcommands-db-upgr.html) to update the database schema and data (which is necessary after extension or core code updates), and also updates the [deployment configuration]({{ page.baseurl }}config-guide/config/config-php.html), `app/etc/env.php`, and the database for your environment. 
+	The deployment script runs [`bin/magento setup:upgrade`]({{ page.baseurl }}install-gde/install/cli/install-cli-subcommands-db-upgr.html) to update the database schema and data (which is necessary after extension or core code updates), and also updates the [deployment configuration]({{ page.baseurl }}config-guide/config/config-php.html), `app/etc/env.php`, and the database for your environment.
 
 	Finally, the deployment script and clears the Magento cache.
 

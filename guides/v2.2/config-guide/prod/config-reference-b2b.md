@@ -1,7 +1,7 @@
 ---
 layout: default
 group: config-guide
-subgroup: 045_pipeline
+subgroup: 07_conf
 title: Magento Enterprise B2B Extension configuration paths reference
 menu_title: Magento Enterprise B2B Extension configuration paths reference
 menu_order: 5500
