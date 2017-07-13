@@ -20,12 +20,11 @@ Upgrading the Magento applications and extensions you obtain from Magento Market
 {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} is required for developers who wish to contribute to the Magento 2 codebase or anyone who wishes to develop Magento extensions.
 
 ### Web servers
-Compatible: Apache 2.2, 2.4, {% glossarytooltip b14ef3d8-51fd-48fe-94df-ed069afb2cdc %}Nginx{% endglossarytooltip %} 1.8.*, 1.10.*, 1.11.*
-
 *	<a href="http://httpd.apache.org/download.cgi" target="&#95;blank">Apache 2.2 or 2.4</a>
 
 	In addition, the apache `mod_rewrite` module must be enabled. `mod_rewrite` enables the server to perform URL rewriting. For more information, see <a href="{{page.baseurl}}install-gde/prereq/apache.html">our Apache documentation</a>.
-*	nginx 1.8 (or <a href="http://nginx.org/en/linux_packages.html#mainline" target="&#95;blank">latest mainline version</a>)
+
+*	<a href="https://nginx.org/en/download.html" target="&#95;blank">nginx 1.x</a>
 
 ### Database
 MySQL 5.6, 5.7
