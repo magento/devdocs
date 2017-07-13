@@ -82,7 +82,7 @@ To install PHP 7 on CentOS 6 or 7:
 		yum -y update
 3.	Install all [required PHP extensions]({{page.baseurl}}install-gde/system-requirements-tech.html#required-php-extensions):
 
-		yum -y install php70u php70u-pdo php70u-mysqlnd php70u-opcache php70u-xml php70u-mcrypt php70u-gd php70u-devel php70u-mysql php70u-intl php70u-mbstring php70u-bcmath php70u-json php70u-iconv
+		yum -y install php70u php70u-pdo php70u-mysqlnd php70u-opcache php70u-xml php70u-mcrypt php70u-gd php70u-devel php70u-mysql php70u-intl php70u-mbstring php70u-bcmath php70u-json php70u-iconv php70u-soap
 
 	<div class="bs-callout bs-callout-info" id="info">
   		<p>The <code>bcmath</code> extension is required for Magento Enterprise Edition (EE) only.</p>
@@ -90,7 +90,7 @@ To install PHP 7 on CentOS 6 or 7:
 
 4.	Restart Apache: `service httpd restart`
 
-5.	Enter the following command to verify that PHP 7 is installed properly:
+5.	Verify that PHP 7 is installed properly:
 
 		php -v
 
@@ -104,7 +104,64 @@ To install PHP 7 on CentOS 6 or 7:
     The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="&#95;blank">PHP OPcache documentation</a>.
     </div>
 
-6.	Continue with [Required PHP settings]({{ page.baseurl }}install-gde/prereq/php-settings.html).
+6.	Verify that all [required PHP extensions]({{ page.baseurl }}install-gde/system-requirements-tech.html#required-php-extensions) were installed:
+
+		php -me
+
+    You should see output similar to the following:
+    <pre>
+    [PHP Modules]
+    bcmath
+    calendar
+    Core
+    ctype
+    curl
+    date
+    dom
+    exif
+    fileinfo
+    filter
+    ftp
+    gd
+    gettext
+    hash
+    iconv
+    intl
+    json
+    libxml
+    mbstring
+    mcrypt
+    mysqli
+    mysqlnd
+    openssl
+    pcntl
+    pcre
+    PDO
+    pdo_mysql
+    Phar
+    readline
+    Reflection
+    session
+    SimpleXML
+    soap
+    sockets
+    SPL
+    standard
+    tokenizer
+    wddx
+    xml
+    xmlreader
+    xmlwriter
+    xsl
+    Zend OPcache
+    zip
+    zlib
+
+    [Zend Modules]
+    Zend OPcache
+    </pre>
+
+7.	Continue with [Required PHP settings]({{ page.baseurl }}install-gde/prereq/php-settings.html).
 
 #### Next
 [Required PHP settings]({{ page.baseurl }}install-gde/prereq/php-settings.html)
