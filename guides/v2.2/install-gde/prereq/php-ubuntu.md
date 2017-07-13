@@ -56,7 +56,7 @@ To install PHP 7 on Ubuntu 14 or 16:
 		sudo apt-get install -y php7.0 libapache2-mod-php7.0 php7.0 php7.0-common php7.0-gd php7.0-mysql php7.0-mcrypt php7.0-curl php7.0-intl php7.0-xsl php7.0-mbstring php7.0-zip php7.0-bcmath php7.0-iconv
 
     <div class="bs-callout bs-callout-info" id="info" markdown="1">
-    The <code>bcmath</code> extension is required for Magento Enterprise Edition (EE) only.
+    The last command installs all [required PHP extensions]({{page.baseurl}}install-gde/system-requirements-tech.html#required-php-extensions). The <code>bcmath</code> extension is required for Magento Enterprise Edition (EE) only.
     </div>
 
 5.	Enter the following command to verify that PHP 7 is installed properly:

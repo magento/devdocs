@@ -80,7 +80,7 @@ To install PHP 7 on CentOS 6 or 7:
 
 		yum install -y http://dl.iuscommunity.org/pub/ius/stable/CentOS/7/x86_64/ius-release-1.0-14.ius.centos7.noarch.rpm
 		yum -y update
-3.	Enter the following command:
+3.	Install all [required PHP extensions]({{page.baseurl}}install-gde/system-requirements-tech.html#required-php-extensions):
 
 		yum -y install php70u php70u-pdo php70u-mysqlnd php70u-opcache php70u-xml php70u-mcrypt php70u-gd php70u-devel php70u-mysql php70u-intl php70u-mbstring php70u-bcmath php70u-json php70u-iconv
 

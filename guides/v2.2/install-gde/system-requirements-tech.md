@@ -11,17 +11,15 @@ github_link: install-gde/system-requirements-tech.md
 ---
 
 ### Operating systems (Linux x86-64)
-
 Linux distributions such as RedHat Enterprise Linux (RHEL), CentOS, Ubuntu, Debian, and so on.
 
 ### Memory requirement
 Upgrading the Magento applications and extensions you obtain from Magento Marketplaces and other sources can require up to 2GB of RAM. If you are using a system with less than 2GB of RAM, we recommend you create a [swap file]({{ page.baseurl }}comp-mgr/trouble/cman/out-of-memory.html); otherwise, your upgrade might fail.
 
 ### Composer (latest stable version)
-{% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} is required for developers who wish to contribute to the Magento 2 codebase or anyone who wishes to develop Magento extensions
+{% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} is required for developers who wish to contribute to the Magento 2 codebase or anyone who wishes to develop Magento extensions.
 
 ### Web servers
-
 Compatible: Apache 2.2, 2.4, {% glossarytooltip b14ef3d8-51fd-48fe-94df-ed069afb2cdc %}Nginx{% endglossarytooltip %} 1.8.*, 1.10.*, 1.11.*
 
 *	<a href="http://httpd.apache.org/download.cgi" target="&#95;blank">Apache 2.2 or 2.4</a>
@@ -30,21 +28,23 @@ Compatible: Apache 2.2, 2.4, {% glossarytooltip b14ef3d8-51fd-48fe-94df-ed069afb
 *	nginx 1.8 (or <a href="http://nginx.org/en/linux_packages.html#mainline" target="&#95;blank">latest mainline version</a>)
 
 ### Database
-
 MySQL 5.6, 5.7
 
 Magento is also compatible with MySQL NDB Cluster 7.4.&#42;, MariaDB 10.0, 10.1, 10.2, Percona 5.7 and other binary compatible MySQL technologies.
 
 ### PHP
-
 {% include install/php_2.2.md %}
 
-PHP documentation: <a href="{{page.baseurl}}install-gde/prereq/php-centos.html" target="&#95;blank">CentOS</a>, <a href="{{page.baseurl}}install-gde/prereq/php-ubuntu.html" target="&#95;blank">Ubuntu</a>
+#### Required PHP extensions
 
-#### Required PHP extensions:
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+The [CentOS]({{page.baseurl}}install-gde/prereq/php-centos.html) and [Ubuntu]({{page.baseurl}}install-gde/prereq/php-ubuntu.html) PHP installation instructions include a step for installing these extensions.
+</div>
 
 *	<a href="http://php.net/manual/en/book.bc.php" target="&#95;blank">bc-math</a> <img src="{{ site.baseurl }}common/images/ee-only_small.png">
+* <a href="http://php.net/manual/en/book.ctype.php" target="&#95;blank">ctype</a>
 *	<a href="http://php.net/manual/en/book.curl.php" target="&#95;blank">curl</a>
+* <a href="http://php.net/manual/en/book.dom.php" target="&#95;blank">dom</a>
 *	<a href="http://php.net/manual/en/book.image.php" target="&#95;blank">gd</a>, <a href="http://php.net/manual/en/book.imagick.php" target="&#95;blank">ImageMagick 6.3.7</a> (or later) or both
 *	<a href="http://php.net/manual/en/book.intl.php" target="&#95;blank">intl</a>
 *	<a href="http://php.net/manual/en/book.mbstring.php" target="&#95;blank">mbstring</a>
@@ -54,10 +54,11 @@ PHP documentation: <a href="{{page.baseurl}}install-gde/prereq/php-centos.html" 
 *	<a href="http://php.net/manual/en/ref.pdo-mysql.php" target="&#95;blank">PDO/MySQL</a>
 *	<a href="http://php.net/manual/en/book.simplexml.php" target="&#95;blank">SimpleXML</a>
 *	<a href="http://php.net/manual/en/book.soap.php" target="&#95;blank">soap</a>
-*	<a href="http://php.net/manual/en/book.xml.php" target="&#95;blank">xml</a>
+* <a href="http://php.net/manual/en/book.spl.php" target="&#95;blank">spl</a>
+*	<a href="http://php.net/manual/en/book.libxml.php" target="&#95;blank">libxml</a>
 *	<a href="http://php.net/manual/en/book.xsl.php" target="&#95;blank">xsl</a>
 *	<a href="http://php.net/manual/en/book.zip.php" target="&#95;blank">zip</a>
-*	[json](http://php.net/manual/en/book.json.php){:target="&#95;blank"}
+<!-- *	[json](http://php.net/manual/en/book.json.php){:target="&#95;blank"} -->
 *	[iconv](http://php.net/manual/en/book.iconv.php){:target="&#95;blank"}
 
 #### PHP OPcache
@@ -107,7 +108,6 @@ Mail Transfer Agent (MTA) or an SMTP server
 		Available for Magento EE only.
 
 ### Optional but recommended:
-
 *	<a href="http://xdebug.org/download.php" target="&#95;blank">php_xdebug2.2.0</a> or later (development environments only; can have an adverse effect on performance)
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -118,5 +118,4 @@ Mail Transfer Agent (MTA) or an SMTP server
 *	PHPUnit (as a command-line tool) 4.1 or later
 
 ### Documentation
-
 <a href="{{page.baseurl}}install-gde/prereq/prereq-overview.html">Install Magento prerequisites</a>
