@@ -11,24 +11,22 @@ version: 2.2
 github_link: install-gde/prereq/php-centos.md
 ---
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>If you must install both Apache and PHP, <a href="{{page.baseurl}}install-gde/prereq/apache.html">install Apache</a> first.</p></span>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+If you must install both Apache and PHP, <a href="{{page.baseurl}}install-gde/prereq/apache.html">install Apache</a> first.
 </div>
 
-<h2 id="php-support">PHP versions supported</h2>
-
+## PHP versions supported {#php-support}
 {% include install/php_2.2.md %}
 
-<h2 id="php-centos-help-beginner">Help if you're just starting out</h2>
+## Help if you're just starting out {#php-ubuntu-help-beginner}
 If you're new to all this and need some help getting started, we suggest the following:
 
-*	<a href="{{page.baseurl}}install-gde/basics/basics_magento-installed.html">Is the Magento software installed already?</a>
-*	<a href="{{page.baseurl}}install-gde/basics/basics_software.html">What is the software that the Magento server needs to run?</a>
-*	<a href="{{page.baseurl}}install-gde/basics/basics_os-version.html">What operating system is my server running?</a>
-*	<a href="{{page.baseurl}}install-gde/basics/basics_login.html">How do I log in to my Magento server using a terminal, command prompt, or SSH?</a>
+*	[Is the Magento software installed already?]({{page.baseurl}}install-gde/basics/basics_magento-installed.html)
+*	[What is the software that the Magento server needs to run?]({{page.baseurl}}install-gde/basics/basics_software.html)
+*	[What operating system is my server running?]({{page.baseurl}}install-gde/basics/basics_os-version.html)
+*	[How do I log in to my Magento server using a terminal, command prompt, or SSH?]({{page.baseurl}}install-gde/basics/basics_login.html)
 
-<h2 id="centos-verify-php">Verify PHP is installed</h2>
+## Verify PHP is installed {#centos-verify-php}
 To verify if PHP is installed already, enter `php -v`. If {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} is installed, a message similar to the following displays:
 
     PHP 7.0.20 (cli) (built: Jun  8 2017 09:31:38) ( NTS )
@@ -36,12 +34,11 @@ To verify if PHP is installed already, enter `php -v`. If {% glossarytooltip bf7
     Zend Engine v3.0.0, Copyright (c) 1998-2017 Zend Technologies
       with Zend OPcache v7.0.20, Copyright (c) 1999-2017, by Zend Technologies
 
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="&#95;blank">PHP OPcache documentation</a>.</p></span>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the [PHP OPcache documentation](http://php.net/manual/en/opcache.setup.php){:target="&#95;blank"}.
 </div>
 
-If PHP is installed, continue with the next prerequisite, <a href="{{page.baseurl}}install-gde/prereq/mysql.html">MySQL</a>.
+If PHP is installed, continue with the next prerequisite, [MySQL]({{page.baseurl}}install-gde/prereq/mysql.html).
 
 If PHP is *not* installed, see the [PHP 7 on CentOS 6 or 7](#php-centos-7) section.
 
@@ -59,8 +56,8 @@ In this topic, we show how to install PHP using the [Inline with Upstream Stable
 
 Before you continue, review their [Getting Started topic](https://ius.io/GettingStarted){:target="&#95;blank"}.
 
-<div class="bs-callout bs-callout-warning">
-    <p>Magento does <em>not</em> officially recommend using the IUS repository. We discuss it here for example purposes only.</p>
+<div class="bs-callout bs-callout-warning" markdown="1">
+Magento does <em>not</em> officially recommend using the IUS repository. We discuss it here for example purposes only.
 </div>
 
 ## PHP 7 on CentOS {#php-centos-7}
@@ -101,7 +98,7 @@ To install PHP 7 on CentOS 6 or 7:
 		Zend Engine v3.0.0, Copyright (c) 1998-2016 Zend Technologies with Zend OPcache v7.0.6-dev, Copyright (c) 1999-2016, by Zend Technologies
 
     <div class="bs-callout bs-callout-info" id="info" markdown="1">
-    The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="&#95;blank">PHP OPcache documentation</a>.
+    The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the  [PHP OPcache documentation](http://php.net/manual/en/opcache.setup.php){:target="&#95;blank"}.
     </div>
 
 6.	Verify that all [required PHP extensions]({{ page.baseurl }}install-gde/system-requirements-tech.html#required-php-extensions) were installed:
@@ -167,9 +164,8 @@ To install PHP 7 on CentOS 6 or 7:
 [Required PHP settings]({{ page.baseurl }}install-gde/prereq/php-settings.html)
 
 #### Related topics
-*	<a href="{{page.baseurl}}install-gde/prereq/php-ubuntu.html">PHP 7.0&mdash;Ubuntu</a>
-*	<a href="{{page.baseurl}}install-gde/prereq/apache.html">Apache</a>
-*	<a href="{{page.baseurl}}install-gde/prereq/mysql.html">MySQL</a>
-*	<a href="{{page.baseurl}}install-gde/prereq/security.html">Configuring security options</a>
-*	<a href="{{page.baseurl}}install-gde/prereq/optional.html">Installing optional software</a>
-*	<a href="{{page.baseurl}}install-gde/install/pre-install.html">Ways to install the Magento software</a>
+*	[MySQL]({{page.baseurl}}install-gde/prereq/mysql.html)
+*	[Apache]({{page.baseurl}}install-gde/prereq/apache.html)
+*	[PHP 7.0&mdash;Ubuntu]({{page.baseurl}}install-gde/prereq/php-ubuntu.html)
+*	[Configuring security options]({{page.baseurl}}install-gde/prereq/security.html)
+*	[Installing optional software]({{page.baseurl}}install-gde/prereq/optional.html)
