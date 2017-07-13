@@ -35,7 +35,7 @@ Do not start Magento 2 cron jobs.
 
 * Make sure your MySQL accounts have all the necessary privileges to access Magento databases.
 
-  If Binary Logging is enabled for your Magento 1 database, set the global [`log_bin_trust_function_creators`](https://dev.mysql.com/doc/refman/5.7/en/server-system-variables.html#sysvar_log_bin_trust_function_creators){:target="_blank"} MySQL system variable to `1`, or grant the SUPER privilege to your account.
+  If Binary Logging is enabled for your Magento 1 database, set the global [`log_bin_trust_function_creators`](https://dev.mysql.com/doc/refman/5.7/en/server-system-variables.html#sysvar_log_bin_trust_function_creators){:target="_blank"} MySQL system variable to `1`, or grant the [SUPER privilege](https://dev.mysql.com/doc/refman/5.7/en/privileges-provided.html#priv_super){:target="_blank"} to your account.
 
 *	To provide redundancy in the event of unexpected issues, we advise you to replicate your Magento 1 database.
 
