@@ -90,11 +90,12 @@ Finally, declare the indexer view (`merchandizing_popular_order`) that tracks sa
 
 {% highlight xml %}
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/Mview/etc/mview.xsd">
-<view id=" merchandizing_popular_order" class="Vendor\Merchandizing\Model\Indexer\Popular" group="indexer">
-  <subscriptions>
-    <table name="sales_order_flat" entity_column="order_id" />
-  </subscriptions>
-</view>
+  <view id=" merchandizing_popular_order" class="Vendor\Merchandizing\Model\Indexer\Popular" group="indexer">
+    <subscriptions>
+      <table name="sales_order_flat" entity_column="order_id" />
+    </subscriptions>
+  </view>
+</config>
 {% endhighlight %}
 
 These settings start `<VendorName>\Merchandizing\Model\Indexer\Popular::execute` method every time an order is changed.

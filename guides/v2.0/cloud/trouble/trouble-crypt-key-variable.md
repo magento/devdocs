@@ -7,7 +7,7 @@ menu_title: Resolve issues with encryption key
 menu_order: 60
 menu_node:
 version: 2.0
-github_link: cloud/trouble/trouble_crypt-key-variable.md
+github_link: cloud/trouble/trouble-crypt-key-variable.md
 ---
 
 ## Resolve issues with encryption key
@@ -34,7 +34,7 @@ To verify and update the encryption key environment variable:
           ),
         );
         {% endhighlight %}
-4.  If the value is incorrect, add the key value, and save your changes to `env.php`. 
+4.  If the value is incorrect, add the key value, and save your changes to `env.php`.
 5.  Exit the text editor and repeat this process for each environment. Test store actions in each environment to verify if the issue persists, such as completing a cart purchase.
 
 #### Related topics

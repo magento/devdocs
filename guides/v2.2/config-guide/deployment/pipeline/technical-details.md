@@ -27,18 +27,11 @@ To enable you to synchronize and maintain the configuration of your development 
 
 As the diagram shows, we get configuration values in the following order:
 
-1.	From an environment variable.
-
-	Environment variables, if they exist, override all other values.
-2.	From the shared configuration file, `config.php`.
-3.	From the system-specific configuration file, `env.php`.
-
-	Values in `env.php` override values in `config.php`.
-
-    Values in `config.php` and `env.php` override settings in the database.
-3.	From the database.
-
-If no value exists in any of those sources, we use either the default value or NULL.
+1. Environment variables, if they exist, override all other values.
+2. From the shared configuration files `env.php` and `config.php`.
+   Values in `env.php` override values in `config.php`.
+3. From values stored in the database.
+4. If no value exists in any of those sources, we use either the default value or NULL.
 
 ### Manage the shared configuration
 The shared configuration is stored in `app/etc/config.php`, which should be in source control.
@@ -50,7 +43,7 @@ The system-specific configuration is stored in `app/config/env.php`, which shoul
 
 Set the system-specific configuration in the Magento Admin in your development (or Cloud integration) system and write the configuration to `env.php` using the [`magento app:config:dump` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-export.html).
 
-TBD, does `app:config:dump` write sensitive settings to env.php?
+This command also writes sensitive settings to `env.php`.
 
 ### Manage the sensitive configuration
 The sensitive configuration is also stored in `app/etc/env.php`.
@@ -61,7 +54,8 @@ You can manage the sensitive configuration in any of the following ways:
 *	Save the sensitive configuration in `env.php` on your production system using the [`magento config:set:sensitive` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-set.html)
 
 ### Configuration settings locked in the Magento Admin
-Any configuration settings in `config.php` or `env.php` are locked in the Magento Admin; that is, those settings cannot be changed in the Admin. The only way to change the settings is to change `config.php` or `env.php` using the [`magento config:set --lock` command]({{ page.baseurl config-guide/cli/config-cli-subcommands-config-mgmt-set.html}}).
+Any configuration settings in `config.php` or `env.php` are locked in the Magento Admin; that is, those settings cannot be changed in the Admin.
+Use the [`magento config:set` or `magento config:set --lock`]({{ page.baseurl config-guide/cli/config-cli-subcommands-config-mgmt-set.html}}) command to change the settings in the `config.php` or `env.php` files.
 
 ## Changes in the Magento Admin {#config-deploy-admin}
 We changed the following behavior in the Magento Admin in production mode:
@@ -131,8 +125,6 @@ On your production system:
 4.  Use the `magento app:config:import` command to import configuration changes in the production system.
 5.  If you installed components that changed the database schema, run `magento setup:upgrade --keep-generated` to update the database schema and data, preserving generated static files.
 5.  To set system-specific settings, use either the `magento config:set` command or environment variables.
-
-    TBD, update after `app:config:dump` writes to `env.php`
 6.  To set sensitive settings, use either the `magento config:sensitive:set` command or environment variables.
 7.  Clean (also referred to as _flush_) the Magento cache.
 8.  End maintenance mode.
@@ -255,15 +247,10 @@ After you make the change in the Admin, run `php bin/magento app:config:dump` on
 
 {% endcollapsible %}
 
+<br/>
 **env.php**
 
-The default email domain system-specific configuration setting is written to `app/etc/env.php` as follows:
-
-{% collapsible Show env.php snippets: %}
-
-TBD
-
-{% endcollapsible %}
+The default email domain system-specific configuration setting is written to `app/etc/env.php`.
 
 The PayPal settings are written to neither file because the `magento app:config:dump` command does not write sensitive settings. You must set the PayPal settings on the production system using the following commands:
 
