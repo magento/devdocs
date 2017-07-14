@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>PHP 5.5, 5.6, or 7.0&mdash;Ubuntu | Magento 2 Developer Documentation</title>
+	<title>PHP 7.0 or 7.1 &mdash;Ubuntu | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -323,7 +323,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.2/install-gde/system-requirements2.html">Magento 2.1.x system requirements</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/install-gde/system-requirements2.html">Magento 2.2.x system requirements</a></li>
 									
 								
 
@@ -426,7 +426,7 @@
 									
 
 
-											<li class="level3Child php " data-menunode="php"><a href="/guides/v2.2/install-gde/prereq/php-centos.html">PHP 5.6 or 7.0&mdash;CentOS</a>
+											<li class="level3Child php " data-menunode="php"><a href="/guides/v2.2/install-gde/prereq/php-centos.html">PHP 7.0 or 7.1&mdash;CentOS</a>
 
 
 									
@@ -436,7 +436,7 @@
 									
 
 
-											<li class="level3Child php  active " data-menunode="php"><a href="/guides/v2.2/install-gde/prereq/php-ubuntu.html">PHP 5.5, 5.6, or 7.0&mdash;Ubuntu</a>
+											<li class="level3Child php  active " data-menunode="php"><a href="/guides/v2.2/install-gde/prereq/php-ubuntu.html">PHP 7.0 or 7.1&mdash;Ubuntu</a>
 
 
 									
@@ -948,7 +948,7 @@
 
           
 
-          <span property="name">PHP 5.5, 5.6, or 7.0&mdash;Ubuntu</span>
+          <span property="name">PHP 7.0 or 7.1 &mdash;Ubuntu</span>
 
         
 
@@ -971,7 +971,7 @@
 
 	
 
-	<h1 class="page-heading">PHP 5.5, 5.6, or 7.0&mdash;Ubuntu</h1>
+	<h1 class="page-heading">PHP 7.0 or 7.1 &mdash;Ubuntu</h1>
 
   
 
@@ -979,25 +979,11 @@
 </section>
 
 
-			<h4 id="contents">Contents</h4>
-
-<ul>
-  <li><a href="#php-support">PHP versions supported</a></li>
-  <li><a href="#php-ubuntu-help-beginner">Help if you’re just starting out</a></li>
-  <li><a href="#ubuntu-verify-php">Verify PHP is installed</a></li>
-  <li><a href="#instgde-prereq-php70-ubuntu">PHP 7.0 on Ubuntu 14 or 16</a></li>
-  <li><a href="#instgde-prereq-php5.66-install-ubuntu">PHP 5.6 on Ubuntu 14</a></li>
-  <li><a href="/guides/v2.2/install-gde/prereq/php-settings.html">Required PHP settings</a></li>
-</ul>
-
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>If you must install both Apache and PHP, <a href="/guides/v2.2/install-gde/prereq/apache.html">install Apache</a> first.</p></span>
+			<div class="bs-callout bs-callout-info" id="info">
+  <p>If you must install both Apache and PHP, <a href="/guides/v2.2/install-gde/prereq/apache.html">install Apache</a> first.</p>
 </div>
 
 <h2 id="php-support">PHP versions supported</h2>
-<p>Magento requires:</p>
-
 <div>
 
   <table>
@@ -1018,41 +1004,12 @@
         <td><img src="/common/images/green-check.png" alt="Supported" /></td>
         <td><img src="/common/images/red-x.png" alt="Not supported" /></td>
         <td><img src="/common/images/green-check.png" alt="Supported (2.1.2 and later)" /></td>
-        <td><img src="/common/images/red-x.png" alt="Not supported" /></td>
+        <td><img src="/common/images/green-check.png" alt="Supported (2.1.2 and later)" /></td>
       </tr>
     </tbody>
   </table>
 
-  <table>
-    <tbody>
-      <tr>
-        <td>5.6.0–5.6.4</td>
-        <td>5.6.5–5.6.x</td>
-      </tr>
-      <tr>
-        <td><img src="/common/images/red-x.png" alt="Not supported" /></td>
-        <td><img src="/common/images/green-check.png" alt="Supported" /></td>
-      </tr>
-    </tbody>
-  </table>
-
-  <table>
-    <tbody>
-      <tr>
-        <td>5.5.x</td>
-      </tr>
-      <tr>
-        <td><img src="/common/images/red-x.png" alt="Not supported" /></td>
-      </tr>
-    </tbody>
-  </table>
-
-  <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>Magento 2.1.x does not support <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> 5.5.</p></span>
-</div>
-
-  <h2 id="php-ubuntu-help-beginner">Help if you're just starting out</h2>
+  <h2 id="php-ubuntu-help-beginner">Help if you’re just starting out</h2>
   <p>If you’re new to all this and need some help getting started, we suggest the following:</p>
 
   <ul>
@@ -1063,18 +1020,17 @@
   </ul>
 
   <h2 id="ubuntu-verify-php">Verify PHP is installed</h2>
-  <p>To verify if PHP is installed already, enter <code>php -v</code>. If PHP is installed, messages similar to the following display:</p>
+  <p>To verify if PHP is installed already, enter <code>php -v</code>. If PHP is installed, a message similar to the following displays:</p>
 
-  <pre><code>PHP 5.6.4-1+deb.sury.org~precise+1 (cli) (built: Dec 21 2014 19:26:25)
-Copyright (c) 1997-2014 The PHP Group
-Zend Engine v2.6.0, Copyright (c) 1998-2014 Zend Technologies
-with Zend OPcache v7.0.4-dev, Copyright (c) 1999-2014, by Zend Technologies
+  <pre><code>PHP 7.0.21-1~ubuntu14.04.1+deb.sury.org+1 (cli) (built: Jul  6 2017 09:38:10) ( NTS )
+Copyright (c) 1997-2017 The PHP Group
+Zend Engine v3.0.0, Copyright (c) 1998-2017 Zend Technologies
+  with Zend OPcache v7.0.21-1~ubuntu14.04.1+deb.sury.org+1, Copyright (c) 1999-2017, by Zend Technologies
 </code></pre>
 
   <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p></span>
-</div>
+    <p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="&#95;blank">PHP OPcache documentation</a></p>
+  </div>
 
   <p>If PHP is installed, continue with the next prerequisite, <a href="/guides/v2.2/install-gde/prereq/mysql.html">MySQL</a>.</p>
 
@@ -1082,44 +1038,99 @@ with Zend OPcache v7.0.4-dev, Copyright (c) 1999-2014, by Zend Technologies
 
   <ul>
     <li><a href="#instgde-prereq-php70-ubuntu">PHP 7.0 on Ubuntu 14</a></li>
-    <li><a href="#instgde-prereq-php5.66-install-ubuntu">PHP 5.6 on Ubuntu 14<!--  or Ubuntu 12 --></a></li>
-    <li><a href="#instgde-prereq-php5.66-install-ubuntu12">PHP 5.6 on Ubuntu 12</a></li>
+    <li><a href="#instgde-prereq-php71-ubuntu">PHP 7.1 on Ubuntu 14</a></li>
   </ul>
 
-  <h2 id="instgde-prereq-php70-ubuntu">PHP 7.0 on Ubuntu 14 or 16</h2>
-
-  <div class="collapsible"><b class="collapsible-title">To install PHP 7 on Ubuntu 14: </b><div class="collapsible-content"><ol>
+  <h2 id="instgde-prereq-php70-ubuntu">PHP 7.0 on Ubuntu</h2>
+  <div class="collapsible"><b class="collapsible-title">To install PHP 7.0 on Ubuntu 14 or 16: </b><div class="collapsible-content"><ol>
   <li>
     <p>Enter the following commands in the order shown:</p>
 
     <pre><code>sudo apt-get -y update
 sudo add-apt-repository ppa:ondrej/php
 sudo apt-get -y update
-sudo apt-get install -y php7.0 libapache2-mod-php7.0 php7.0 php7.0-common php7.0-gd php7.0-mysql php7.0-mcrypt php7.0-curl php7.0-intl php7.0-xsl php7.0-mbstring php7.0-zip php7.0-bcmath php7.0-iconv
+sudo apt-get install -y php7.0 libapache2-mod-php7.0 php7.0 php7.0-common php7.0-gd php7.0-mysql php7.0-mcrypt php7.0-curl php7.0-intl php7.0-xsl php7.0-mbstring php7.0-zip php7.0-bcmath php7.0-iconv php7.0-soap
 </code></pre>
 
     <div class="bs-callout bs-callout-info" id="info">
-  		<p>The <code>bcmath</code> extension is required for Magento Enterprise Edition (EE) only.</p>
-</div>
+      <p>The last command installs all <a href="/guides/v2.2/install-gde/system-requirements-tech.html#required-php-extensions">required PHP extensions</a>. The <code>bcmath</code> extension is required for Magento Enterprise Edition (EE) only.</p>
+    </div>
   </li>
   <li>
-    <p>Enter the following command to verify PHP 7 installed properly:</p>
+    <p>Verify that PHP 7.0 is installed properly:</p>
 
     <pre><code>php -v
 </code></pre>
 
-    <p>Following is a sample response that indicates PHP 7.0.8 is installed:</p>
+    <p>The following response indicates that PHP 7.0.21 is installed:</p>
 
-    <pre><code>PHP 7.0.8-2+deb.sury.org~trusty+1 (cli) ( NTS )
-Copyright (c) 1997-2016 The PHP Group
-Zend Engine v3.0.0, Copyright (c) 1998-2016 Zend Technologies
-  with Zend OPcache v7.0.8-2+deb.sury.org~trusty+1, Copyright (c) 1999-2016, by Zend Technologies
+    <pre><code>PHP 7.0.21-1~ubuntu16.04.1+deb.sury.org+1 (cli) (built: Jul  6 2017 09:07:54) ( NTS )
+Copyright (c) 1997-2017 The PHP Group
+Zend Engine v3.0.0, Copyright (c) 1998-2016 Zend Technologies with Zend OPcache v7.0.21-1~ubuntu16.04.1+deb.sury.org+1, Copyright (c) 1999-2016, by Zend Technologies
 </code></pre>
 
     <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  	<p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p></span>
-</div>
+      <p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="&#95;blank">PHP OPcache documentation</a>.</p>
+    </div>
+  </li>
+  <li>
+    <p>Verify that all <a href="/guides/v2.2/install-gde/system-requirements-tech.html#required-php-extensions">required PHP extensions</a> were installed:</p>
+
+    <pre><code>php -me
+</code></pre>
+
+    <p>You should see output similar to the following:</p>
+    <pre>
+[PHP Modules]
+bcmath
+calendar
+Core
+ctype
+curl
+date
+dom
+exif
+fileinfo
+filter
+ftp
+gd
+gettext
+hash
+iconv
+intl
+json
+libxml
+mbstring
+mcrypt
+mysqli
+mysqlnd
+openssl
+pcntl
+pcre
+PDO
+pdo_mysql
+Phar
+readline
+Reflection
+session
+SimpleXML
+soap
+sockets
+SPL
+standard
+tokenizer
+wddx
+xml
+xmlreader
+xmlwriter
+xsl
+Zend OPcache
+zip
+zlib
+
+[Zend Modules]
+Zend OPcache
+</pre>
   </li>
   <li>
     <p>Continue with <a href="/guides/v2.2/install-gde/prereq/php-settings.html">Required PHP settings</a>.</p>
@@ -1127,36 +1138,96 @@ Zend Engine v3.0.0, Copyright (c) 1998-2016 Zend Technologies
 </ol>
 </div></div>
 
-  <h2 id="instgde-prereq-php5.66-install-ubuntu">PHP 5.6 on Ubuntu 14</h2>
-
-  <div class="collapsible"><b class="collapsible-title">To install PHP 5.6 or to upgrade from PHP 5.5 on Ubuntu 14: </b><div class="collapsible-content"><ol>
+  <h2 id="instgde-prereq-php71-ubuntu">PHP 7.1 on Ubuntu</h2>
+  <div class="collapsible"><b class="collapsible-title">To install PHP 7.1 on Ubuntu 14 or 16: </b><div class="collapsible-content"><ol>
   <li>
     <p>Enter the following commands in the order shown:</p>
 
-    <pre><code>apt-get -y update
-add-apt-repository ppa:ondrej/php
-apt-get -y update
-apt-get -y install php5.6 php5.6-mcrypt php5.6-mbstring php5.6-curl php5.6-cli php5.6-mysql php5.6-gd php5.6-intl php5.6-xsl
+    <pre><code>sudo apt-get -y update
+sudo add-apt-repository ppa:ondrej/php
+sudo apt-get -y update
+sudo apt-get install -y php7.1 libapache2-mod-php7.1 php7.1 php7.1-common php7.1-gd php7.1-mysql php7.1-mcrypt php7.1-curl php7.1-intl php7.1-xsl php7.1-mbstring php7.1-zip php7.1-bcmath php7.1-iconv php7.1-soap
 </code></pre>
+
+    <div class="bs-callout bs-callout-info" id="info">
+      <p>The last command installs all <a href="/guides/v2.2/install-gde/system-requirements-tech.html#required-php-extensions">required PHP extensions</a>. The <code>bcmath</code> extension is required for Magento Enterprise Edition (EE) only.</p>
+    </div>
   </li>
   <li>
-    <p>Enter the following command to verify PHP 5.6 installed properly:</p>
+    <p>Verify that PHP 7.1 is installed properly:</p>
 
     <pre><code>php -v
 </code></pre>
 
-    <p>Following is a sample response that indicates PHP 5.6 is installed:</p>
+    <p>The following response indicates that PHP 7.1.7 is installed:</p>
 
-    <pre><code>PHP 5.6.22-4+deb.sury.org~trusty+1 (cli)
-Copyright (c) 1997-2016 The PHP Group
-Zend Engine v2.6.0, Copyright (c) 1998-2016 Zend Technologies
-with Zend OPcache v7.0.6-dev, Copyright (c) 1999-2016, by Zend Technologies
+    <pre><code>PHP 7.1.7-1~ubuntu14.04.1+deb.sury.org+1 (cli) (built: Jul  6 2017 09:07:54) ( NTS )
+Copyright (c) 1997-2017 The PHP Group
+Zend Engine v3.1.0, Copyright (c) 1998-2017 Zend Technologies with Zend OPcache v7.1.7-1~ubuntu14.04.1+deb.sury.org+1, Copyright (c) 1999-2017, by Zend Technologies
 </code></pre>
 
     <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  		<p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p></span>
-</div>
+      <p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="&#95;blank">PHP OPcache documentation</a>.</p>
+    </div>
+  </li>
+  <li>
+    <p>Verify that all <a href="/guides/v2.2/install-gde/system-requirements-tech.html#required-php-extensions">required PHP extensions</a> were installed:</p>
+
+    <pre><code>php -me
+</code></pre>
+
+    <p>You should see output similar to the following:</p>
+    <pre>
+[PHP Modules]
+bcmath
+calendar
+Core
+ctype
+curl
+date
+dom
+exif
+fileinfo
+filter
+ftp
+gd
+gettext
+hash
+iconv
+intl
+json
+libxml
+mbstring
+mcrypt
+mysqli
+mysqlnd
+openssl
+pcntl
+pcre
+PDO
+pdo_mysql
+Phar
+readline
+Reflection
+session
+SimpleXML
+soap
+sockets
+SPL
+standard
+tokenizer
+wddx
+xml
+xmlreader
+xmlwriter
+xsl
+Zend OPcache
+zip
+zlib
+
+[Zend Modules]
+Zend OPcache
+</pre>
   </li>
   <li>
     <p>Continue with <a href="/guides/v2.2/install-gde/prereq/php-settings.html">Required PHP settings</a>.</p>
@@ -1168,15 +1239,13 @@ with Zend OPcache v7.0.6-dev, Copyright (c) 1999-2016, by Zend Technologies
   <p><a href="/guides/v2.2/install-gde/prereq/php-settings.html">Required PHP settings</a></p>
 
   <h4 id="related-topics">Related topics</h4>
-
   <ul>
     <li><a href="/guides/v2.2/install-gde/prereq/mysql.html">MySQL</a></li>
     <li><a href="/guides/v2.2/install-gde/prereq/apache.html">Apache</a></li>
-    <li><a href="/guides/v2.2/install-gde/prereq/php-centos.html">PHP 5.5 or 5.6—CentOS</a></li>
+    <li><a href="/guides/v2.2/install-gde/prereq/php-centos.html">PHP 7.0—CentOS</a></li>
     <li><a href="/guides/v2.2/install-gde/prereq/security.html">Configuring security options</a></li>
     <li><a href="/guides/v2.2/install-gde/prereq/optional.html">Installing optional software</a></li>
   </ul>
-
 </div>
 
 		</div>
@@ -1188,7 +1257,7 @@ with Zend OPcache v7.0.6-dev, Copyright (c) 1999-2016, by Zend Technologies
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/install-gde/prereq/php-ubuntu.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.2/install-gde/prereq/php-ubuntu.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>

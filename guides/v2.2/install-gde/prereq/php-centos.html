@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>PHP 5.6 or 7.0&mdash;CentOS | Magento 2 Developer Documentation</title>
+	<title>PHP 7.0 or 7.1&mdash;CentOS | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -323,7 +323,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.2/install-gde/system-requirements2.html">Magento 2.1.x system requirements</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/install-gde/system-requirements2.html">Magento 2.2.x system requirements</a></li>
 									
 								
 
@@ -426,7 +426,7 @@
 									
 
 
-											<li class="level3Child php  active " data-menunode="php"><a href="/guides/v2.2/install-gde/prereq/php-centos.html">PHP 5.6 or 7.0&mdash;CentOS</a>
+											<li class="level3Child php  active " data-menunode="php"><a href="/guides/v2.2/install-gde/prereq/php-centos.html">PHP 7.0 or 7.1&mdash;CentOS</a>
 
 
 									
@@ -436,7 +436,7 @@
 									
 
 
-											<li class="level3Child php " data-menunode="php"><a href="/guides/v2.2/install-gde/prereq/php-ubuntu.html">PHP 5.5, 5.6, or 7.0&mdash;Ubuntu</a>
+											<li class="level3Child php " data-menunode="php"><a href="/guides/v2.2/install-gde/prereq/php-ubuntu.html">PHP 7.0 or 7.1&mdash;Ubuntu</a>
 
 
 									
@@ -948,7 +948,7 @@
 
           
 
-          <span property="name">PHP 5.6 or 7.0&mdash;CentOS</span>
+          <span property="name">PHP 7.0 or 7.1&mdash;CentOS</span>
 
         
 
@@ -971,7 +971,7 @@
 
 	
 
-	<h1 class="page-heading">PHP 5.6 or 7.0&mdash;CentOS</h1>
+	<h1 class="page-heading">PHP 7.0 or 7.1&mdash;CentOS</h1>
 
   
 
@@ -979,27 +979,11 @@
 </section>
 
 
-			<h4 id="contents">Contents</h4>
-
-<ul>
-  <li><a href="#php-support">PHP versions supported</a></li>
-  <li><a href="#php-centos-help-beginner">Help if you’re just starting out</a></li>
-  <li><a href="#centos-verify-php">Verify PHP is installed</a></li>
-  <li><a href="#centos-php-repos">CentOS repositories</a></li>
-  <li><a href="#php-centos-7">PHP 7 on CentOS 6 or 7</a></li>
-  <li><a href="#instgde-prereq-php56-install-centos">PHP 5.6 on CentOS 6 or 7</a></li>
-  <li><a href="/guides/v2.2/install-gde/prereq/php-settings.html">Required PHP settings</a></li>
-</ul>
-
-<div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>If you must install both Apache and PHP, <a href="/guides/v2.2/install-gde/prereq/apache.html">install Apache</a> first.</p></span>
+			<div class="bs-callout bs-callout-info" id="info">
+  <p>If you must install both Apache and PHP, <a href="/guides/v2.2/install-gde/prereq/apache.html">install Apache</a> first.</p>
 </div>
 
 <h2 id="php-support">PHP versions supported</h2>
-
-<p>Magento requires:</p>
-
 <div>
 
   <table>
@@ -1020,40 +1004,12 @@
         <td><img src="/common/images/green-check.png" alt="Supported" /></td>
         <td><img src="/common/images/red-x.png" alt="Not supported" /></td>
         <td><img src="/common/images/green-check.png" alt="Supported (2.1.2 and later)" /></td>
-        <td><img src="/common/images/red-x.png" alt="Not supported" /></td>
+        <td><img src="/common/images/green-check.png" alt="Supported (2.1.2 and later)" /></td>
       </tr>
     </tbody>
   </table>
 
-  <table>
-    <tbody>
-      <tr>
-        <td>5.6.0–5.6.4</td>
-        <td>5.6.5–5.6.x</td>
-      </tr>
-      <tr>
-        <td><img src="/common/images/red-x.png" alt="Not supported" /></td>
-        <td><img src="/common/images/green-check.png" alt="Supported" /></td>
-      </tr>
-    </tbody>
-  </table>
-
-  <table>
-    <tbody>
-      <tr>
-        <td>5.5.x</td>
-      </tr>
-      <tr>
-        <td><img src="/common/images/red-x.png" alt="Not supported" /></td>
-      </tr>
-    </tbody>
-  </table>
-
-  <div class="bs-callout bs-callout-info" id="info">
-	<p>Magento 2.1.x no longer supports PHP 5.5.</p>
-</div>
-
-  <h2 id="php-centos-help-beginner">Help if you're just starting out</h2>
+  <h2 id="php-ubuntu-help-beginner">Help if you’re just starting out</h2>
   <p>If you’re new to all this and need some help getting started, we suggest the following:</p>
 
   <ul>
@@ -1064,25 +1020,31 @@
   </ul>
 
   <h2 id="centos-verify-php">Verify PHP is installed</h2>
-  <p>To verify if PHP is installed already, enter <code>php -v</code>. If <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> is installed, messages similar to the following display:</p>
+  <p>To verify if PHP is installed already, enter <code>php -v</code>. If <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> is installed, a message similar to the following displays:</p>
 
-  <pre><code>PHP 5.6.4 (cli) (built: Dec 20 2014 17:30:46)
-Copyright (c) 1997-2014 The PHP Group
-Zend Engine v2.6.0, Copyright (c) 1998-2014 Zend Technologies
-with Zend OPcache v7.0.4-dev, Copyright (c) 1999-2014, by Zend Technologies
+  <pre><code>PHP 7.0.20 (cli) (built: Jun  8 2017 09:31:38) ( NTS )
+Copyright (c) 1997-2017 The PHP Group
+Zend Engine v3.0.0, Copyright (c) 1998-2017 Zend Technologies
+  with Zend OPcache v7.0.20, Copyright (c) 1999-2017, by Zend Technologies
 </code></pre>
 
   <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
-  <p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p></span>
-</div>
+    <p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="&#95;blank">PHP OPcache documentation</a>.</p>
+  </div>
 
   <p>If PHP is installed, continue with the next prerequisite, <a href="/guides/v2.2/install-gde/prereq/mysql.html">MySQL</a>.</p>
 
-  <h2 id="centos-php-repos">CentOS repositories</h2>
-  <p>Linux systems provide software like PHP in one or more <em>repositories</em>. CentOS, unlike Ubuntu, has a set of <a href="https://wiki.centos.org/AdditionalResources/Repositories" target="_blank">officially recommended repositories</a>. Other repositories are considered less safe for the reasons stated on the CentOS wiki.</p>
+  <p>If PHP is <em>not</em> installed, see one of the following sections:</p>
 
-  <p>We’re not aware that you can install PHP 5.6 or 7.0 from a CentOS-recommended repository. Therefore, you must consider the following:</p>
+  <ul>
+    <li><a href="#php-centos-70">PHP 7.0 on CentOS 6 or 7</a></li>
+    <li><a href="#php-centos-71">PHP 7.1 on CentOS 6 or 7</a></li>
+  </ul>
+
+  <h2 id="centos-php-repos">CentOS repositories</h2>
+  <p>Linux systems provide software like PHP in one or more <em>repositories</em>. CentOS, unlike Ubuntu, has a set of <a href="https://wiki.centos.org/AdditionalResources/Repositories" target="&#95;blank">officially recommended repositories</a>. Other repositories are considered less safe for the reasons stated on the CentOS wiki.</p>
+
+  <p>We’re not aware that you can install PHP 7.0 or 7.1 from a CentOS-recommended repository. Therefore, you must consider the following:</p>
 
   <ul>
     <li>
@@ -1095,25 +1057,18 @@ with Zend OPcache v7.0.4-dev, Copyright (c) 1999-2014, by Zend Technologies
     </li>
   </ul>
 
-  <p>In this topic, we show how to install PHP using the <a href="https://ius.io/GettingStarted" target="_blank">Inline with Upstream Stable (IUS)</a> repository, which is <em>not</em> on the CentOS recommended list. However, packages installed from IUS do not use the same names as CentOS-provided packages, so <a href="https://ius.io/Philosophy" target="_blank">no existing system packages are replaced</a>.</p>
+  <p>In this topic, we show how to install PHP using the <a href="https://ius.io/GettingStarted" target="&#95;blank">Inline with Upstream Stable (IUS)</a> repository, which is <em>not</em> on the CentOS recommended list. However, packages installed from IUS do not use the same names as CentOS-provided packages, so <a href="https://ius.io/Philosophy" target="&#95;blank">no existing system packages are replaced</a>.</p>
 
-  <p>Before you continue, review their <a href="https://ius.io/GettingStarted" target="_blank">Getting Started topic</a>.</p>
+  <p>Before you continue, review their <a href="https://ius.io/GettingStarted" target="&#95;blank">Getting Started topic</a>.</p>
 
   <div class="bs-callout bs-callout-warning">
     <p>Magento does <em>not</em> officially recommend using the IUS repository. We discuss it here for example purposes only.</p>
-</div>
+  </div>
 
-  <p>Continue with one of the following sections:</p>
+  <h2 id="php-centos-70">PHP 7.0 on CentOS</h2>
+  <p>There is more than one way to install PHP 7.0 on CentOS; the following is a suggestion only. Consult a reference for additional options.</p>
 
-  <ul>
-    <li><a href="#php-centos-7">PHP 7 on CentOS 6 or 7</a></li>
-    <li><a href="#instgde-prereq-php56-install-centos">PHP 5.6 on CentOS 6 or 7</a></li>
-  </ul>
-
-  <h2 id="php-centos-7">PHP 7 on CentOS 6 or 7</h2>
-  <p>There is more than one way to install PHP 7 on CentOS; the following is a suggestion only. Consult a reference for additional options.</p>
-
-  <div class="collapsible"><b class="collapsible-title">To install PHP 7 on CentOS 6 or 7: </b><div class="collapsible-content"><ol>
+  <div class="collapsible"><b class="collapsible-title">To install PHP 7.0 on CentOS 6 or 7: </b><div class="collapsible-content"><ol>
   <li>
     <p><em>CentOS 6</em>. Enter the following commands in the order shown:</p>
 
@@ -1133,9 +1088,9 @@ yum -y update
 </code></pre>
   </li>
   <li>
-    <p>Enter the following command:</p>
+    <p>Install all <a href="/guides/v2.2/install-gde/system-requirements-tech.html#required-php-extensions">required PHP extensions</a>:</p>
 
-    <pre><code>yum -y install php70u php70u-pdo php70u-mysqlnd php70u-opcache php70u-xml php70u-mcrypt php70u-gd php70u-devel php70u-mysql php70u-intl php70u-mbstring php70u-bcmath php70u-json php70u-iconv
+    <pre><code>yum -y install php70u php70u-pdo php70u-mysqlnd php70u-opcache php70u-xml php70u-mcrypt php70u-gd php70u-devel php70u-mysql php70u-intl php70u-mbstring php70u-bcmath php70u-json php70u-iconv php70u-soap
 </code></pre>
 
     <div class="bs-callout bs-callout-info" id="info">
@@ -1146,23 +1101,80 @@ yum -y update
     <p>Restart Apache: <code>service httpd restart</code></p>
   </li>
   <li>
-    <p>Enter the following command to verify that PHP 7 is installed:</p>
+    <p>Verify that PHP 7.0 is installed properly:</p>
 
     <pre><code>php -v
 </code></pre>
 
-    <p>The following response indicates that PHP 7 is installed properly:</p>
+    <p>The following response indicates that PHP 7.0.3 is installed:</p>
 
     <pre><code>PHP 7.0.3 (cli) (built: Feb  4 2016 08:51:10) ( NTS )
 Copyright (c) 1997-2016 The PHP Group
-Zend Engine v3.0.0, Copyright (c) 1998-2016 Zend Technologies
-with Zend OPcache v7.0.6-dev, Copyright (c) 1999-2016, by Zend Technologies
+Zend Engine v3.0.0, Copyright (c) 1998-2016 Zend Technologies with Zend OPcache v7.0.6-dev, Copyright (c) 1999-2016, by Zend Technologies
 </code></pre>
 
     <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
- 	 <p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p></span>
-</div>
+      <p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the  <a href="http://php.net/manual/en/opcache.setup.php" target="&#95;blank">PHP OPcache documentation</a>.</p>
+    </div>
+  </li>
+  <li>
+    <p>Verify that all <a href="/guides/v2.2/install-gde/system-requirements-tech.html#required-php-extensions">required PHP extensions</a> were installed:</p>
+
+    <pre><code>php -me
+</code></pre>
+
+    <p>You should see output similar to the following:</p>
+    <pre>
+[PHP Modules]
+bcmath
+calendar
+Core
+ctype
+curl
+date
+dom
+exif
+fileinfo
+filter
+ftp
+gd
+gettext
+hash
+iconv
+intl
+json
+libxml
+mbstring
+mcrypt
+mysqli
+mysqlnd
+openssl
+pcntl
+pcre
+PDO
+pdo_mysql
+Phar
+readline
+Reflection
+session
+SimpleXML
+soap
+sockets
+SPL
+standard
+tokenizer
+wddx
+xml
+xmlreader
+xmlwriter
+xsl
+Zend OPcache
+zip
+zlib
+
+[Zend Modules]
+Zend OPcache
+</pre>
   </li>
   <li>
     <p>Continue with <a href="/guides/v2.2/install-gde/prereq/php-settings.html">Required PHP settings</a>.</p>
@@ -1170,10 +1182,10 @@ with Zend OPcache v7.0.6-dev, Copyright (c) 1999-2016, by Zend Technologies
 </ol>
 </div></div>
 
-  <h2 id="instgde-prereq-php56-install-centos">PHP 5.6 on CentOS 6 or 7</h2>
-  <p>There is more than one way to install PHP 5.6 on CentOS; the following is a suggestion only. Consult a reference for additional options.</p>
+  <h2 id="php-centos-71">PHP 7.1 on CentOS</h2>
+  <p>There is more than one way to install PHP 7.1 on CentOS; the following is a suggestion only. Consult a reference for additional options.</p>
 
-  <div class="collapsible"><b class="collapsible-title">To install PHP 5.6 on CentOS 6 or 7: </b><div class="collapsible-content"><ol>
+  <div class="collapsible"><b class="collapsible-title">To install PHP 7.1 on CentOS 6 or 7: </b><div class="collapsible-content"><ol>
   <li>
     <p><em>CentOS 6</em>. Enter the following commands in the order shown:</p>
 
@@ -1183,23 +1195,19 @@ wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
 wget https://centos6.iuscommunity.org/ius-release.rpm
 rpm -Uvh ius-release*.rpm
 yum -y update
-yum -y install php56u php56u-opcache php56u-xml php56u-mcrypt php56u-gd php56u-devel php56u-mysql php56u-intl php56u-mbstring php56u-bcmath
 </code></pre>
-
-    <div class="bs-callout bs-callout-info" id="info">
-  		<p>The <code>bcmath</code> extension is required for Magento Enterprise Edition (EE) only.</p>
-</div>
   </li>
   <li>
-    <p><em>CentOS 7</em>. Enter the following commands in the order shown:</p>
+    <p><em>CentOS 7</em>. Enter the following commands:</p>
 
-    <pre><code>yum -y update
-yum -y install epel-release
-wget https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
-wget https://centos7.iuscommunity.org/ius-release.rpm
-rpm -Uvh ius-release*.rpm
+    <pre><code>yum install -y http://dl.iuscommunity.org/pub/ius/stable/CentOS/7/x86_64/ius-release-1.0-14.ius.centos7.noarch.rpm
 yum -y update
-yum -y install php56u php56u-opcache php56u-xml php56u-mcrypt php56u-gd php56u-devel php56u-mysql php56u-intl php56u-mbstring php56u-bcmath
+</code></pre>
+  </li>
+  <li>
+    <p>Install all <a href="/guides/v2.2/install-gde/system-requirements-tech.html#required-php-extensions">required PHP extensions</a>:</p>
+
+    <pre><code>yum -y install php71u php71u-pdo php71u-mysqlnd php71u-opcache php71u-xml php71u-mcrypt php71u-gd php71u-devel php71u-mysql php71u-intl php71u-mbstring php71u-bcmath php71u-json php71u-iconv php71u-soap
 </code></pre>
 
     <div class="bs-callout bs-callout-info" id="info">
@@ -1210,23 +1218,80 @@ yum -y install php56u php56u-opcache php56u-xml php56u-mcrypt php56u-gd php56u-d
     <p>Restart Apache: <code>service httpd restart</code></p>
   </li>
   <li>
-    <p>Enter the following command to verify that PHP 5.6 is installed:</p>
+    <p>Verify that PHP 7.1 is installed properly:</p>
 
     <pre><code>php -v
 </code></pre>
 
-    <p>The following response indicates that PHP 5.6 is installed properly:</p>
+    <p>The following response indicates that PHP 7.1.6 is installed:</p>
 
-    <pre><code>PHP 5.6.18 (cli) (built: Feb  4 2016 09:29:52)
-Copyright (c) 1997-2016 The PHP Group
-Zend Engine v2.6.0, Copyright (c) 1998-2016 Zend Technologies
-with Zend OPcache v7.0.6-dev, Copyright (c) 1999-2016, by Zend Technologies
+    <pre><code>PHP 7.1.6 (cli) (built: Jan  9 2017 09:23:16) ( NTS )
+Copyright (c) 1997-2017 The PHP Group
+Zend Engine v3.1.0, Copyright (c) 1998-2017 Zend Technologies with Zend OPcache v7.1.6, Copyright (c) 1999-2017, by Zend Technologies
 </code></pre>
 
     <div class="bs-callout bs-callout-info" id="info">
-<span class="glyphicon-class">
- 	 <p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p></span>
-</div>
+      <p>The preceding message confirms that the <code>Zend OPcache</code> is installed. We strongly recommend using the OPcache for performance reasons. If your PHP distribution does not come with the OPcache, see the  <a href="http://php.net/manual/en/opcache.setup.php" target="&#95;blank">PHP OPcache documentation</a>.</p>
+    </div>
+  </li>
+  <li>
+    <p>Verify that all <a href="/guides/v2.2/install-gde/system-requirements-tech.html#required-php-extensions">required PHP extensions</a> were installed:</p>
+
+    <pre><code>php -me
+</code></pre>
+
+    <p>You should see output similar to the following:</p>
+    <pre>
+[PHP Modules]
+bcmath
+calendar
+Core
+ctype
+curl
+date
+dom
+exif
+fileinfo
+filter
+ftp
+gd
+gettext
+hash
+iconv
+intl
+json
+libxml
+mbstring
+mcrypt
+mysqli
+mysqlnd
+openssl
+pcntl
+pcre
+PDO
+pdo_mysql
+Phar
+readline
+Reflection
+session
+SimpleXML
+soap
+sockets
+SPL
+standard
+tokenizer
+wddx
+xml
+xmlreader
+xmlwriter
+xsl
+Zend OPcache
+zip
+zlib
+
+[Zend Modules]
+Zend OPcache
+</pre>
   </li>
   <li>
     <p>Continue with <a href="/guides/v2.2/install-gde/prereq/php-settings.html">Required PHP settings</a>.</p>
@@ -1238,14 +1303,12 @@ with Zend OPcache v7.0.6-dev, Copyright (c) 1999-2016, by Zend Technologies
   <p><a href="/guides/v2.2/install-gde/prereq/php-settings.html">Required PHP settings</a></p>
 
   <h4 id="related-topics">Related topics</h4>
-
   <ul>
-    <li><a href="/guides/v2.2/install-gde/prereq/php-ubuntu.html">PHP 5.5 or 5.6—Ubuntu</a></li>
-    <li><a href="/guides/v2.2/install-gde/prereq/apache.html">Apache</a></li>
     <li><a href="/guides/v2.2/install-gde/prereq/mysql.html">MySQL</a></li>
+    <li><a href="/guides/v2.2/install-gde/prereq/apache.html">Apache</a></li>
+    <li><a href="/guides/v2.2/install-gde/prereq/php-ubuntu.html">PHP 7.0—Ubuntu</a></li>
     <li><a href="/guides/v2.2/install-gde/prereq/security.html">Configuring security options</a></li>
     <li><a href="/guides/v2.2/install-gde/prereq/optional.html">Installing optional software</a></li>
-    <li><a href="/guides/v2.2/install-gde/install/pre-install.html">Ways to install the Magento software</a></li>
   </ul>
 </div>
 
@@ -1258,7 +1321,7 @@ with Zend OPcache v7.0.6-dev, Copyright (c) 1999-2016, by Zend Technologies
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/install-gde/prereq/php-centos.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.2/install-gde/prereq/php-centos.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>

@@ -323,7 +323,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.2/install-gde/system-requirements2.html">Magento 2.1.x system requirements</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/install-gde/system-requirements2.html">Magento 2.2.x system requirements</a></li>
 									
 								
 
@@ -426,7 +426,7 @@
 									
 
 
-											<li class="level3Child php " data-menunode="php"><a href="/guides/v2.2/install-gde/prereq/php-centos.html">PHP 5.6 or 7.0&mdash;CentOS</a>
+											<li class="level3Child php " data-menunode="php"><a href="/guides/v2.2/install-gde/prereq/php-centos.html">PHP 7.0 or 7.1&mdash;CentOS</a>
 
 
 									
@@ -436,7 +436,7 @@
 									
 
 
-											<li class="level3Child php " data-menunode="php"><a href="/guides/v2.2/install-gde/prereq/php-ubuntu.html">PHP 5.5, 5.6, or 7.0&mdash;Ubuntu</a>
+											<li class="level3Child php " data-menunode="php"><a href="/guides/v2.2/install-gde/prereq/php-ubuntu.html">PHP 7.0 or 7.1&mdash;Ubuntu</a>
 
 
 									
@@ -980,100 +980,89 @@
 
 
 			<h3 id="operating-systems-linux-x86-64">Operating systems (Linux x86-64)</h3>
-
-<p>Linux distributions such as RedHat Enterprise Linux (RHEL), CentOS, Ubuntu, Debian, and so on</p>
+<p>Linux distributions such as RedHat Enterprise Linux (RHEL), CentOS, Ubuntu, Debian, and so on.</p>
 
 <h3 id="memory-requirement">Memory requirement</h3>
 <p>Upgrading the Magento applications and extensions you obtain from Magento Marketplaces and other sources can require up to 2GB of RAM. If you are using a system with less than 2GB of RAM, we recommend you create a <a href="/guides/v2.2/comp-mgr/trouble/cman/out-of-memory.html">swap file</a>; otherwise, your upgrade might fail.</p>
 
 <h3 id="composer-latest-stable-version">Composer (latest stable version)</h3>
-<p><span term-uuid="d85e2d0a-221f-4d03-aa43-0cda9f50809e" class="glossary-term" data-toggle="popover">Composer</span> is required for developers who wish to contribute to the Magento 2 codebase or anyone who wishes to develop Magento extensions</p>
+<p><span term-uuid="d85e2d0a-221f-4d03-aa43-0cda9f50809e" class="glossary-term" data-toggle="popover">Composer</span> is required for developers who wish to contribute to the Magento 2 codebase or anyone who wishes to develop Magento extensions.</p>
 
 <h3 id="web-servers">Web servers</h3>
-
-<p>Compatible: Apache 2.2, 2.4, <span term-uuid="b14ef3d8-51fd-48fe-94df-ed069afb2cdc" class="glossary-term" data-toggle="popover">Nginx</span> 1.8.<em>, 1.10.</em>, 1.11.*</p>
-<hr />
-
 <ul>
   <li>
-    <p><a href="http://httpd.apache.org/download.cgi" target="_blank">Apache 2.2 or 2.4</a></p>
+    <p><a href="http://httpd.apache.org/download.cgi" target="&#95;blank">Apache 2.2 or 2.4</a></p>
 
     <p>In addition, the apache <code>mod_rewrite</code> module must be enabled. <code>mod_rewrite</code> enables the server to perform URL rewriting. For more information, see <a href="/guides/v2.2/install-gde/prereq/apache.html">our Apache documentation</a>.</p>
   </li>
   <li>
-    <p>nginx 1.8 (or <a href="http://nginx.org/en/linux_packages.html#mainline" target="_blank">latest mainline version</a>)</p>
+    <p><a href="https://nginx.org/en/download.html" target="&#95;blank">nginx 1.x</a></p>
   </li>
 </ul>
 
 <h3 id="database">Database</h3>
+<p>MySQL 5.6, 5.7</p>
 
-<p>MySQL 5.6, 5.7, MySQL NDB Cluster 7.4.*, MariaDB 10.0, 10.1, 10.2</p>
+<p>Magento is also compatible with MySQL NDB Cluster 7.4.*, MariaDB 10.0, 10.1, 10.2, Percona 5.7 and other binary compatible MySQL technologies.</p>
 
 <h3 id="php">PHP</h3>
-
-<p>Compatible: <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> 7.0.4+, 7.1.*</p>
-
 <div>
 
   <table>
     <tbody>
       <tr>
-        <td>7.0.0–7.0.3</td>
-        <td>7.0.4–7.0.x</td>
+        <td>7.0.0, 7.0.1</td>
+        <td>7.0.2</td>
+        <td>7.0.3</td>
+        <td>7.0.4</td>
+        <td>7.0.5</td>
+        <td>7.0.6–7.0.x</td>
         <td>7.1.x</td>
       </tr>
       <tr>
         <td><img src="/common/images/red-x.png" alt="Not supported" /></td>
         <td><img src="/common/images/green-check.png" alt="Supported" /></td>
+        <td><img src="/common/images/red-x.png" alt="Not supported" /></td>
+        <td><img src="/common/images/green-check.png" alt="Supported" /></td>
+        <td><img src="/common/images/red-x.png" alt="Not supported" /></td>
+        <td><img src="/common/images/green-check.png" alt="Supported (2.1.2 and later)" /></td>
         <td><img src="/common/images/green-check.png" alt="Supported (2.1.2 and later)" /></td>
       </tr>
     </tbody>
   </table>
 
-  <table>
-    <tbody>
-      <tr>
-        <td>5.x</td>
-      </tr>
-      <tr>
-        <td><img src="/common/images/red-x.png" alt="Not supported" /></td>
-      </tr>
-    </tbody>
-  </table>
+  <h4 id="required-php-extensions">Required PHP extensions</h4>
 
-  <p>PHP documentation: <a href="/guides/v2.2/install-gde/prereq/php-centos.html" target="_blank">CentOS</a>, <a href="/guides/v2.2/install-gde/prereq/php-ubuntu.html" target="_blank">Ubuntu</a></p>
-
-  <h4 id="required-php-extensions">Required PHP extensions:</h4>
+  <div class="bs-callout bs-callout-info" id="info">
+    <p>The <a href="/guides/v2.2/install-gde/prereq/php-centos.html">CentOS</a> and <a href="/guides/v2.2/install-gde/prereq/php-ubuntu.html">Ubuntu</a> PHP installation instructions include a step for installing these extensions.</p>
+  </div>
 
   <ul>
-    <li><a href="http://php.net/manual/en/book.bc.php" target="_blank">bc-math</a> <img src="/common/images/ee-only_small.png" /></li>
-    <li><a href="http://php.net/manual/en/book.curl.php" target="_blank">curl</a></li>
-    <li><a href="http://php.net/manual/en/book.image.php" target="_blank">gd</a>, <a href="http://php.net/manual/en/book.imagick.php" target="_blank">ImageMagick 6.3.7</a> (or later) or both</li>
-    <li><a href="http://php.net/manual/en/book.intl.php" target="_blank">intl</a></li>
-    <li><a href="http://php.net/manual/en/book.mbstring.php" target="_blank">mbstring</a></li>
-    <li><a href="http://php.net/manual/en/book.mcrypt.php" target="_blank">mcrypt</a></li>
-    <li><a href="http://php.net/manual/en/book.mhash.php" target="_blank">mhash</a></li>
-    <li><a href="http://php.net/manual/en/book.openssl.php" target="_blank">openssl</a></li>
-    <li><a href="http://php.net/manual/en/ref.pdo-mysql.php" target="_blank">PDO/MySQL</a></li>
-    <li><a href="http://php.net/manual/en/book.simplexml.php" target="_blank">SimpleXML</a></li>
-    <li><a href="http://php.net/manual/en/book.soap.php" target="_blank">soap</a></li>
-    <li><a href="http://php.net/manual/en/book.xml.php" target="_blank">xml</a></li>
-    <li><a href="http://php.net/manual/en/book.xsl.php" target="_blank">xsl</a></li>
-    <li><a href="http://php.net/manual/en/book.zip.php" target="_blank">zip</a></li>
-    <li>
-      <p>PHP 7 only:</p>
-
-      <ul>
-        <li><a href="http://php.net/manual/en/book.json.php" target="_blank">json</a></li>
-        <li><a href="http://php.net/manual/en/book.iconv.php" target="_blank">iconv</a></li>
-      </ul>
-    </li>
+    <li><a href="http://php.net/manual/en/book.bc.php" target="&#95;blank">bc-math</a> <img src="/common/images/ee-only_small.png" /></li>
+    <li><a href="http://php.net/manual/en/book.ctype.php" target="&#95;blank">ctype</a></li>
+    <li><a href="http://php.net/manual/en/book.curl.php" target="&#95;blank">curl</a></li>
+    <li><a href="http://php.net/manual/en/book.dom.php" target="&#95;blank">dom</a></li>
+    <li><a href="http://php.net/manual/en/book.image.php" target="&#95;blank">gd</a>, <a href="http://php.net/manual/en/book.imagick.php" target="&#95;blank">ImageMagick 6.3.7</a> (or later) or both</li>
+    <li><a href="http://php.net/manual/en/book.intl.php" target="&#95;blank">intl</a></li>
+    <li><a href="http://php.net/manual/en/book.mbstring.php" target="&#95;blank">mbstring</a></li>
+    <li><a href="http://php.net/manual/en/book.mcrypt.php" target="&#95;blank">mcrypt</a></li>
+    <li><a href="http://php.net/manual/en/book.mhash.php" target="&#95;blank">mhash</a></li>
+    <li><a href="http://php.net/manual/en/book.openssl.php" target="&#95;blank">openssl</a></li>
+    <li><a href="http://php.net/manual/en/ref.pdo-mysql.php" target="&#95;blank">PDO/MySQL</a></li>
+    <li><a href="http://php.net/manual/en/book.simplexml.php" target="&#95;blank">SimpleXML</a></li>
+    <li><a href="http://php.net/manual/en/book.soap.php" target="&#95;blank">soap</a></li>
+    <li><a href="http://php.net/manual/en/book.spl.php" target="&#95;blank">spl</a></li>
+    <li><a href="http://php.net/manual/en/book.libxml.php" target="&#95;blank">libxml</a></li>
+    <li><a href="http://php.net/manual/en/book.xsl.php" target="&#95;blank">xsl</a></li>
+    <li><a href="http://php.net/manual/en/book.zip.php" target="&#95;blank">zip</a></li>
+    <li><a href="http://php.net/manual/en/book.json.php" target="&#95;blank">json</a></li>
+    <li><a href="http://php.net/manual/en/book.iconv.php" target="&#95;blank">iconv</a></li>
   </ul>
 
   <h4 id="php-opcache">PHP OPcache</h4>
-  <p>We strongly recommend you verify the  <a href="http://php.net/manual/en/intro.opcache.php" target="_blank">PHP OPcache</a> is enabled for performance reasons. The OPcache is enabled in many PHP distributions. To verify if it is installed, see our PHP documentation for <a href="/guides/v2.2/install-gde/prereq/php-centos.html" target="_blank">CentOS</a> or <a href="/guides/v2.2/install-gde/prereq/php-ubuntu.html" target="_blank">Ubuntu</a>.</p>
+  <p>We strongly recommend you verify the  <a href="http://php.net/manual/en/intro.opcache.php" target="&#95;blank">PHP OPcache</a> is enabled for performance reasons. The OPcache is enabled in many PHP distributions. To verify if it is installed, see our PHP documentation for <a href="/guides/v2.2/install-gde/prereq/php-centos.html" target="&#95;blank">CentOS</a> or <a href="/guides/v2.2/install-gde/prereq/php-ubuntu.html" target="&#95;blank">Ubuntu</a>.</p>
 
-  <p>If you must install it separately, see the <a href="http://php.net/manual/en/opcache.setup.php" target="_blank">PHP OPcache documentation</a>.</p>
+  <p>If you must install it separately, see the <a href="http://php.net/manual/en/opcache.setup.php" target="&#95;blank">PHP OPcache documentation</a>.</p>
 
   <h4 id="php-settings">PHP settings</h4>
   <p>We recommend particular PHP configuration settings, such as <code>memory_limit</code>, that can avoid common problems when using Magento.</p>
@@ -1103,7 +1092,7 @@
   <h3 id="mail-server">Mail server</h3>
   <p>Mail Transfer Agent (MTA) or an SMTP server</p>
 
-  <h3 id="magento-can-utilize-the-following-technologies">Magento can utilize the following technologies:</h3>
+  <h3 id="magento-can-use-the-following-technologies">Magento can use the following technologies:</h3>
   <ul>
     <li><a href="/guides/v2.2/config-guide/redis/config-redis.html">Redis</a> version 3.2 (compatible with 2.4+ ) for page caching and session storage</li>
     <li><a href="/guides/v2.2/config-guide/varnish/config-varnish.html">Varnish</a> version 4.x or 5.0</li>
@@ -1119,7 +1108,7 @@
 
           <ul>
             <li>If you get the Elasticsearch software from the Elasticsearch Linux repository, we support versions 2.x.</li>
-            <li>If you get the Elasticsearch software from their <a href="https://github.com/elastic/elasticsearch-php" target="_blank">Elasticsearch-PHP repository</a>, we support the <code>2.0</code> branch.</li>
+            <li>If you get the Elasticsearch software from their <a href="https://github.com/elastic/elasticsearch-php" target="&#95;blank">Elasticsearch-PHP repository</a>, we support the <code>2.0</code> branch.</li>
           </ul>
         </li>
         <li>
@@ -1130,16 +1119,17 @@
         <li>
           <p>Three master databases</p>
 
-          <p>These <a href="/guides/v2.2/config-guide/multi-master/multi-master.html">master databases</a> provide scalability advantages for different functional areas of the Magento application: checkout, orders, and product data. Available for Magento EE only.</p>
+          <p>These <a href="/guides/v2.2/config-guide/multi-master/multi-master.html">master databases</a> provide scalability advantages for different functional areas of the Magento application (e.g., checkout, orders, and all remaining Magento2 application tables).</p>
+
+          <p>Available for Magento EE only.</p>
         </li>
       </ul>
     </li>
   </ul>
 
   <h3 id="optional-but-recommended">Optional but recommended:</h3>
-
   <ul>
-    <li><a href="http://xdebug.org/download.php" target="_blank">php_xdebug2.2.0</a> or later (development environments only; can have an adverse effect on performance)</li>
+    <li><a href="http://xdebug.org/download.php" target="&#95;blank">php_xdebug2.2.0</a> or later (development environments only; can have an adverse effect on performance)</li>
   </ul>
 
   <div class="bs-callout bs-callout-info" id="info">
@@ -1148,11 +1138,10 @@
 </div>
 
   <ul>
-    <li>PHPUnit (as a command-line tool) 4.1 or later</li>
+    <li>PHPUnit (as a command-line tool) 4.1.0</li>
   </ul>
 
   <h3 id="documentation">Documentation</h3>
-
   <p><a href="/guides/v2.2/install-gde/prereq/prereq-overview.html">Install Magento prerequisites</a></p>
 </div>
 

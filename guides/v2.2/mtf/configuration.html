@@ -1018,6 +1018,20 @@
             <span class="nt">&lt;/arguments&gt;</span>
         <span class="nt">&lt;/listener&gt;</span>
         <span class="nt">&lt;listener</span> <span class="na">class=</span><span class="s">&quot;Magento\Mtf\System\Event\StateListener&quot;</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;listener</span> <span class="na">class=</span><span class="s">&quot;Yandex\Allure\Adapter\AllureAdapter&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;arguments&gt;</span>
+                <span class="nt">&lt;string&gt;</span>var/allure-results<span class="nt">&lt;/string&gt;</span> <span class="c">&lt;!-- XML files output directory --&gt;</span>
+                <span class="nt">&lt;boolean&gt;</span>false<span class="nt">&lt;/boolean&gt;</span> <span class="c">&lt;!-- Whether to delete previous results on rerun --&gt;</span>
+                <span class="nt">&lt;array&gt;</span> <span class="c">&lt;!-- A list of custom annotations to ignore (optional) --&gt;</span>
+                    <span class="nt">&lt;element</span> <span class="na">key=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;string&gt;</span>ZephyrId<span class="nt">&lt;/string&gt;</span>
+                    <span class="nt">&lt;/element&gt;</span>
+                    <span class="nt">&lt;element</span> <span class="na">key=</span><span class="s">&quot;1&quot;</span><span class="nt">&gt;</span>
+                        <span class="nt">&lt;string&gt;</span>Group<span class="nt">&lt;/string&gt;</span>
+                    <span class="nt">&lt;/element&gt;</span>
+                <span class="nt">&lt;/array&gt;</span>
+            <span class="nt">&lt;/arguments&gt;</span>
+        <span class="nt">&lt;/listener&gt;</span>
     <span class="nt">&lt;/listeners&gt;</span>
 
     <span class="nt">&lt;php&gt;</span>
