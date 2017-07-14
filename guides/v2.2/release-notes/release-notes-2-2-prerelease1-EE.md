@@ -123,12 +123,6 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 <!--- 59477 -->* Attribute weighting now works correctly for the MySQL adapter. [GitHub-9020](https://github.com/magento/magento2/issues/9020)
 
 
-### Security
-
-<!--- 58973 -->* We’ve enhanced internal protections on order history information.
-
-
-
 
 
 

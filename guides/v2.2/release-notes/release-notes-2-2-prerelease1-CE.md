@@ -106,13 +106,6 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 
 
 
-### Security
-
-<!--- 58973 -->* We’ve enhanced internal protections on order history information.
-
-
-
-
 ## System requirements
 
 Our technology stack is built on PHP and MySQL. For more information, see [System Requirements]({{ page.baseurl }}install-gde/system-requirements-tech.html).
