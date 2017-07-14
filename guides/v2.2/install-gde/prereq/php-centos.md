@@ -196,7 +196,7 @@ There is more than one way to install PHP 7.1 on CentOS; the following is a sugg
 
 		php -v
 
-    The following response indicates that PHP 7.0.3 is installed:
+    The following response indicates that PHP 7.1.6 is installed:
 
 		PHP 7.1.6 (cli) (built: Jan  9 2017 09:23:16) ( NTS )
 		Copyright (c) 1997-2017 The PHP Group

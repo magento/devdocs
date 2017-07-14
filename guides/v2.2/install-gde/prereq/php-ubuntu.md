@@ -152,7 +152,7 @@ If PHP is *not* installed, see one of the following sections:
 
 		php -v
 
-    The following response indicates that PHP 7.0.21 is installed:
+    The following response indicates that PHP 7.1.7 is installed:
 
 		PHP 7.1.7-1~ubuntu14.04.1+deb.sury.org+1 (cli) (built: Jul  6 2017 09:07:54) ( NTS )
 		Copyright (c) 1997-2017 The PHP Group
