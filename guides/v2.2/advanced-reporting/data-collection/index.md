@@ -4,10 +4,10 @@ group: analytics
 subgroup: Advanced Reporting
 title: Data collection for advanced reporting
 menu_title: Data collection
-menu_order: 8
+menu_order: 2
 menu_node:
 version: 2.2
-github_link: advanced-reporting/data-collection.md
+github_link: advanced-reporting/data-collection/index.md
 ---
 
 A Magento instance collects data that the Magento Business Intelligence (MBI) service uses to build the advanced reports. You can configure data collection using a configuration file `/etc/analytics.xml`.
@@ -53,7 +53,7 @@ Configuration of data collection may be extended or changed in any module by add
 
 In accordance with the `app/code/Magento/Analytics/etc/analytics.xsd` schema
 
-![analytics.xsd schema](./images/analytics_xsd.png)
+![analytics.xsd schema](guides/v2.2/advanced-reporting/data-collection/images/analytics_xsd.png)
 
 the `/etc/analytics.xml` file may have the following nodes.
 

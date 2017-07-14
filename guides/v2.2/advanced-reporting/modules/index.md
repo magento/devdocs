@@ -8,7 +8,7 @@ menu_title: Modules
 menu_order: 1
 menu_node:
 version: 2.2
-github_link: advanced-reporting/modules.md
+github_link: advanced-reporting/modules/index.md
 ---
 
 Advanced reporting functionality is implemented in the following Magento modules:
