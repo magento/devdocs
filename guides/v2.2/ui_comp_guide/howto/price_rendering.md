@@ -34,7 +34,7 @@ Applying and rendering taxes is complicated, because one product can have few pr
 taxes should be applied to all of them, sometimes - no (for instance, taxes for regular price should be omitted).
 
 Example of pricing strategy for bundle product:
-<img src="{{ site.baseurl }}common/images/bundle_prices.png" />
+![]({{ site.baseurl }}common/images/bundle_prices.png)
 
 Taxes are kind of adjustments in Magento.
 
@@ -206,8 +206,8 @@ Lets see at the code of price-box component:
     }
 {%endhighlight%}
 
-Obviously we also have price-box template, which call <code>getPrices()</code> method.
-After calling those method standard Magento js <code>uiLayout</code> create prices, and put them into the cache.
+Obviously we also have price-box template, which call ``getPrices()`` method.
+After calling those method standard Magento js ``uiLayout`` create prices, and put them into the cache.
 Each price has its own template and common component, lets see the common component code:
 
 **Price component:**
