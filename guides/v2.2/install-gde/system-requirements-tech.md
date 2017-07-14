@@ -114,7 +114,7 @@ Mail Transfer Agent (MTA) or an SMTP server
 	<p>For details, see <a href="{{page.baseurl}}install-gde/trouble/tshoot_install-issues.html#known-devbeta-xdebug">Known issue with xdebug</a>.</p>
 </div>
 
-*	PHPUnit (as a command-line tool) 4.1 or later
+*	PHPUnit (as a command-line tool) 4.1.0
 
 ### Documentation
 <a href="{{page.baseurl}}install-gde/prereq/prereq-overview.html">Install Magento prerequisites</a>
