@@ -41,6 +41,7 @@ The preceding message confirms that the <code>Zend OPcache</code> is installed. 
 If PHP is installed, continue with the next prerequisite, [MySQL]({{page.baseurl}}install-gde/prereq/mysql.html).
 
 If PHP is *not* installed, see one of the following sections:
+
 * [PHP 7.0 on Ubuntu 14](#instgde-prereq-php70-ubuntu)
 * [PHP 7.1 on Ubuntu 14](#instgde-prereq-php71-ubuntu)
 
@@ -134,7 +135,7 @@ If PHP is *not* installed, see one of the following sections:
 {% endcollapsible %}
 
 ## PHP 7.1 on Ubuntu {#instgde-prereq-php71-ubuntu}
-{% collapsible To install PHP 7.0 on Ubuntu 14 or 16: %}
+{% collapsible To install PHP 7.1 on Ubuntu 14 or 16: %}
 
 1.	Enter the following commands in the order shown:
 

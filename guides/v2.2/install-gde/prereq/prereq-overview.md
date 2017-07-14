@@ -73,7 +73,7 @@ You must run {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% end
 
 To install PHP, see:
 
-*	<a href="{{page.baseurl}}install-gde/prereq/php-centos.html">7.0 or 7.1&mdash;CentOS</a>
+*	<a href="{{page.baseurl}}install-gde/prereq/php-centos.html">PHP 7.0 or 7.1&mdash;CentOS</a>
 *	<a href="{{page.baseurl}}install-gde/prereq/php-ubuntu.html">PHP 7.0 or 7.1&mdash;Ubuntu</a>
 
 ### MySQL

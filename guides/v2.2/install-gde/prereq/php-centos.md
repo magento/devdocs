@@ -40,7 +40,10 @@ The preceding message confirms that the <code>Zend OPcache</code> is installed. 
 
 If PHP is installed, continue with the next prerequisite, [MySQL]({{page.baseurl}}install-gde/prereq/mysql.html).
 
-If PHP is *not* installed, see the [PHP 7 on CentOS 6 or 7](#php-centos-7) section.
+If PHP is *not* installed, see one of the following sections:
+
+* [PHP 7.0 on CentOS 6 or 7](#php-centos-70)
+* [PHP 7.1 on CentOS 6 or 7](#php-centos-71)
 
 ## CentOS repositories {#centos-php-repos}
 Linux systems provide software like PHP in one or more *repositories*. CentOS, unlike Ubuntu, has a set of [officially recommended repositories](https://wiki.centos.org/AdditionalResources/Repositories){:target="&#95;blank"}. Other repositories are considered less safe for the reasons stated on the CentOS wiki.
@@ -60,7 +63,7 @@ Before you continue, review their [Getting Started topic](https://ius.io/Getting
 Magento does <em>not</em> officially recommend using the IUS repository. We discuss it here for example purposes only.
 </div>
 
-## PHP 7.0 on CentOS {#php-centos-7}
+## PHP 7.0 on CentOS {#php-centos-70}
 There is more than one way to install PHP 7.0 on CentOS; the following is a suggestion only. Consult a reference for additional options.
 
 {% collapsible To install PHP 7.0 on CentOS 6 or 7: %}
@@ -162,7 +165,7 @@ There is more than one way to install PHP 7.0 on CentOS; the following is a sugg
 
 {% endcollapsible %}
 
-## PHP 7.1 on CentOS {#php-centos-7}
+## PHP 7.1 on CentOS {#php-centos-71}
 There is more than one way to install PHP 7.1 on CentOS; the following is a suggestion only. Consult a reference for additional options.
 
 {% collapsible To install PHP 7.1 on CentOS 6 or 7: %}
