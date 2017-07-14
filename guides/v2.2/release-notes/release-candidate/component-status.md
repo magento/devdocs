@@ -9,7 +9,7 @@ version: 2.2
 github_link: guides/v2.2/release-notes/pre-release/component-status.md
 ---
 
-**Last Updated:** July 07, 2017
+**Last Updated:** July 14, 2017
 
 This page shows the ongoing status of each component during the Magento 2.2 Release Candidate period and is intended to show you the readiness of different components.
 
@@ -24,68 +24,52 @@ Issues that are not related to the 2.2 release are not part of this report.
 
 ## CE Modules
 
-| Name                                       | Status |
+| Name                                           | Status |
 | --- | --- |
-| Infrastructure/ Composer                   | <span class="status yellow">Yellow</span> |
-| Infrastructure/ Configuration Framework    | <span class="status yellow">Yellow</span> |
-| Infrastructure/ Integration Test Framework | <span class="status yellow">Yellow</span> |
-| Infrastructure/ Message Framework          | <span class="status yellow">Yellow</span> |
-| Infrastructure/ Performance                | <span class="status red">Red</span>    |
-| Infrastructure/ Unit Tests                 | <span class="status yellow">Yellow</span> |
-| Lib/ Data Grid                             | <span class="status yellow">Yellow</span> |
-| Module/ Analyti                            | <span class="status yellow">Yellow</span> |
-| Module/ Catalog                            | <span class="status red">Red</span>    |
-| Module/ CatalogImportExport                | <span class="status yellow">Yellow</span> |
-| Module/ CatalogInventory                   | <span class="status yellow">Yellow</span> |
-| Module/ CatalogSearch/ Search Frontend     | <span class="status yellow">Yellow</span> |
-| Module/ Checkout/ Guest Checkout           | <span class="status yellow">Yellow</span> |
-| Module/ Checkout/ Mini Shopping Cart       | <span class="status yellow">Yellow</span> |
-| Module/ Checkout/ One Page Checkout        | <span class="status yellow">Yellow</span> |
-| Module/ Checkout/ Shopping Cart            | <span class="status yellow">Yellow</span> |
-| Module/ Cms/ CMS Content                   | <span class="status yellow">Yellow</span> |
-| Module/ Config                             | <span class="status yellow">Yellow</span> |
-| Module/ Customer/ Customers                | <span class="status yellow">Yellow</span> |
-| Module/ CustomerImportExport               | <span class="status yellow">Yellow</span> |
-| Module/ Deploy                             | <span class="status yellow">Yellow</span> |
-| Module/ Email                              | <span class="status yellow">Yellow</span> |
-| Module/ Integration                        | <span class="status yellow">Yellow</span> |
-| Module/ Quote                              | <span class="status red">Red</span>    |
-| Module/ Reports                            | <span class="status yellow">Yellow</span> |
-| Module/ Sales/ Order Management            | <span class="status red">Red</span>    |
-| Module/ SalesRule                          | <span class="status yellow">Yellow</span> |
-| Module/ Sample Data                        | <span class="status yellow">Yellow</span> |
-| Module/ Tax                                | <span class="status yellow">Yellow</span> |
-| Module/ Translation                        | <span class="status yellow">Yellow</span> |
-| Module/ UI                                 | <span class="status yellow">Yellow</span> |
-| Module/ Webapi/ Web API Framework          | <span class="status red">Red</span>    |
-| Tools/ Dev Tools                           | <span class="status red">Red</span>    |
+| Infrastructure/ Dependency Injection Framework | <span class="status green">Green</span>  |
+| Infrastructure/ Performance                    | <span class="status yellow">Yellow</span> |
+| Module/ Catalog                                | <span class="status red">Red</span>    |
+| Module/ CatalogImportExport                    | <span class="status yellow">Yellow</span> |
+| Module/ CatalogInventory                       | <span class="status yellow">Yellow</span> |
+| Module/ CatalogSearch/ Search Frontend         | <span class="status yellow">Yellow</span> |
+| Module/ Config                                 | <span class="status green">Green</span>  |
+| Module/ CustomerImportExport                   | <span class="status green">Green</span>  |
+| Module/ Eav                                    | <span class="status green">Green</span>  |
+| Module/ Email                                  | <span class="status red">Red</span>    |
+| Module/ Integration                            | <span class="status yellow">Yellow</span> |
+| Module/ Payment/ Payment Methods               | <span class="status yellow">Yellow</span> |
+| Module/ PayPal/ Billing Agreement              | <span class="status green">Green</span>  |
+| Module/ Quote                                  | <span class="status red">Red</span>    |
+| Module/ Sales/ Order Management                | <span class="status yellow">Yellow</span> |
+| Module/ SalesRule                              | <span class="status yellow">Yellow</span> |
+| Module/ SalesSequence                          | <span class="status red">Red</span>    |
+| Module/ Sample Data                            | <span class="status green">Green</span>  |
+| Module/ Store                                  | <span class="status green">Green</span>  |
+| Module/ UI                                     | <span class="status green">Green</span>  |
+| Module/ Webapi/ Web API Framework              | <span class="status yellow">Yellow</span> |
+| Module/ Wishlist                               | <span class="status yellow">Yellow</span> |
+| Tools/ Dev Tools                               | <span class="status red">Red</span>    |
 
 ## EE Modules
 
 | Name                                      | Status |
 | --- | --- |
-| Infrastructure/ Amqp Framework            | <span class="status red">Red</span>    |
 | Infrastructure/ Bulk Operations Framework | <span class="status yellow">Yellow</span> |
 | Module/ CatalogPermissions                | <span class="status yellow">Yellow</span> |
-| Module/ CustomerCustomAttributes          | <span class="status yellow">Yellow</span> |
-| Module/ ElasticSearch                     | <span class="status yellow">Yellow</span> |
+| Module/ CatalogStaging                    | <span class="status yellow">Yellow</span> |
+| Module/ CustomerCustomAttributes          | <span class="status green">Green</span>  |
+| Module/ GiftRegistry                      | <span class="status green">Green</span>  |
+| Module/ Rma                               | <span class="status yellow">Yellow</span> |
 | Module/ Staging                           | <span class="status red">Red</span>    |
 
 ## B2B Modules
 
 | Name                    | Status |
 | --- | --- |
-| Module/ Company         | <span class="status red">Red</span>    |
-| Module/ NegotiableQuote | <span class="status red">Red</span>    |
+| Module/ Company         | <span class="status yellow">Yellow</span> |
+| Module/ CompanyCred     | <span class="status red">Red</span>    |
+| Module/ NegotiableQuote | <span class="status green">Green</span>  |
 | Module/ QuickOrd        | <span class="status yellow">Yellow</span> |
+| Module/ RapidOrd        | <span class="status green">Green</span>  |
+| Module/ Requisition Lis | <span class="status yellow">Yellow</span> |
 | Module/ SharedCatalog   | <span class="status red">Red</span>    |
-
-## Misc Modules
-
-| Name                     | Status |
-| ------------------------ | ------ |
-| Module/ Catalog/ Pricing | <span class="status yellow">Yellow</span> |
-| Module/ CompanyCred      | <span class="status red">Red</span>    |
-| Module/ RapidOrd         | <span class="status yellow">Yellow</span> |
-| Module/ Requisition Lis  | <span class="status red">Red</span>    |
-
