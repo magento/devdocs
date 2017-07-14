@@ -67,6 +67,7 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 
 <!--- 70314 -->* The `cron:install` command now works as expected in Magento 2.2.0 RC1.x. Previously, the configuration for `crontab` commands contained double quotes that were not escaped, which caused invalid commands to be written to the `crontab` file. [GitHub-10040](https://github.com/magento/magento2/issues/10040)
 
+<!--- 70318 -->* You can now generate static content without a database connection. [GitHub-10041](https://github.com/magento/magento2/issues/10041) 
 
 
 ### MBI
@@ -77,6 +78,9 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 
 
 ### Miscellaneous
+
+<!--- 69657 -->* Credit card information now persists as expected after a user enters a promotion code during checkout. Previously, After an user enters credit card information, then discount code and then press "Place Order". The credit card information fields are emptied and user has to enter the credit card information again to proceed with  the order transaction.
+
 
 <!--- 56062 -->* The Recently Viewed Products block now appears as expected when the full page cache is enabled. [GitHub-3890](https://github.com/magento/magento2/issues/3890)
 
@@ -102,7 +106,9 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 
 
 
+### Security
 
+<!--- 58973 -->* We’ve enhanced internal protections on order history information.
 
 
 
