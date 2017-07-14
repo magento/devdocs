@@ -13,9 +13,9 @@ github_link: release-notes/release-notes-2-2-prerelease1-EE.md
 *	TOC
 {:toc}
 
-*Release date: July 7, 2017*
+*Release date: July 14, 2017*
 
-*Notes updated: July 10, 2017*
+*Notes updated: July 14, 2017*
 
 
 Magento Enterprise Edition 2.2.0 Release Candidate includes significant new features as well as many bug fixes.
