@@ -4,7 +4,7 @@ group: analytics
 subgroup: Advanced Reporting
 title: Data collection for advanced reporting
 menu_title: Data collection
-menu_order: 2
+menu_order: 3
 menu_node:
 version: 2.2
 github_link: advanced-reporting/data-collection/index.md
@@ -53,7 +53,7 @@ Configuration of data collection may be extended or changed in any module by add
 
 In accordance with the `app/code/Magento/Analytics/etc/analytics.xsd` schema
 
-![analytics.xsd schema](guides/v2.2/advanced-reporting/data-collection/images/analytics_xsd.png)
+![analytics.xsd schema](./images/analytics_xsd.png)
 
 the `/etc/analytics.xml` file may have the following nodes.
 

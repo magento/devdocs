@@ -5,7 +5,7 @@ subgroup: Advanced Reporting
 title: Modules providing advanced reporting
 landing-page: Advanced Reporting
 menu_title: Modules
-menu_order: 1
+menu_order: 2
 menu_node:
 version: 2.2
 github_link: advanced-reporting/modules/index.md

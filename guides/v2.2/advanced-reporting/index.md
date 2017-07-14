@@ -4,7 +4,7 @@ group: analytics
 subgroup: Advanced Reporting
 title: Advanced Reporting
 menu_title: Advanced Reporting
-menu_order:
+menu_order: 1
 menu_node: parent
 version: 2.2
 github_link: advanced-reporting/index.md

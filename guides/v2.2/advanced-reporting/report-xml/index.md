@@ -4,7 +4,7 @@ group: analytics
 subgroup: Advanced Reporting
 title: Report XML
 menu_title: Report XML
-menu_order: 3
+menu_order: 4
 menu_node:
 version: 2.2
 github_link: advanced-reporting/report-xml/index.md
@@ -65,7 +65,7 @@ All report files must be located in the `etc` directory of a module, like this:
 
 The following is a visualized XML Schema for `reports.xml`:
  
-![A visualized XML Schema for `reports.xml`](guides/v2.2/advanced-reporting/report-xml/images/report_xsd.png)
+![A visualized XML Schema for `reports.xml`](./images/report_xsd.png)
 
 Report files can be located in any module that depends on the `Analytics` module (e.g. the `SalesAnalytics` module created for the reports related *Sales*).
 Each report is declared in the `<report>` node.
