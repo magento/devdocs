@@ -9,7 +9,7 @@ version: 2.2
 ---
 
 Sometimes it is important to render products on frontend without making additional requests to server.
-It can be useful in mini-cart, in some-widgets (recently viewed and recently compared) and in checkout, during customizations.
+It can be useful in mini-cart, in some widgets (recently viewed and recently compared) and in checkout, during customizations.
 
 So lets assume you need to retrieve product data anywhere on frontend. What you should do for this?
 
@@ -141,7 +141,7 @@ The same for the store.
                 this.productStorage.data.subscribe(this.dataCollectionHandler.bind(this));
                 this.productStorage.loadDataFromServer(currency, storeId, idsStorage.get());
             },
-   ```   
+```   
    
 ### Product Render Data Information Api
 
@@ -156,3 +156,55 @@ You should receive such response as:
 
 <img src="{{ site.baseurl }}common/images/product_render_request.png" alt="Response Result"/>
 
+Let`s consider the structure of this response (This structure can be represented by <code>\Magento\Catalog\Api\Data\ProductRenderInterface</code>).
+
+```
+[
+   item_id: {
+        //@see: \Magento\Catalog\Api\Data\ProductRender\ButtonInterface
+        'add_to_*_button': { //Any product button will be represented by this interface 
+            post_data: {...},
+            required_options: boolean,
+            url: string
+        },
+        //\Magento\Catalog\Api\Data\ProductRenderExtensionInterface
+        'extension_attributes': {
+            'review_html': '...'
+        },
+        //@see: \Magento\Catalog\Api\Data\ProductRender\ImageInterface[]
+        'images': [
+            {
+                'url': '...',
+                'code': '...',
+                'height': ...,
+                'width': ...,
+                'resized_height': ...,
+                ...
+            }
+        ],
+        'is_salable': boolean,
+        'name': '...',
+        //@see: \Magento\Catalog\Api\Data\ProductRender\PriceInfoInterface
+        'price_info': {
+            //@see \Magento\Catalog\Api\Data\ProductRender\FormattedPriceInfoInterface
+            //All prices are kind of html with currency symbol and rounding rules
+            'formatted_prices': {
+                'final_price': ...,
+                'max_price': ...,
+                'max_regular_price': ...,
+                'minimal_regular_price': ...,
+                ...
+            },
+            'final_price': ...,
+            'max_price': ...,
+            'max_regular_price': ...,
+            'minimal_regular_price': ...,
+            ...
+        },
+        'url': '...',
+        'type': '...', //enum: configurable, simple, virtual, etc...
+        'currency_code': '...', //e.g. USD
+        'store_id': ... //integer
+   }  
+]
+```
