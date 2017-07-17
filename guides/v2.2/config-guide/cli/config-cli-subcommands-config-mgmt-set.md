@@ -1,10 +1,10 @@
 ---
 layout: default
-group: config-guide 
+group: config-guide
 subgroup: 04_CLI
 title: Set configuration values
 menu_title: Set configuration values
-menu_node: 
+menu_node:
 level3_menu_node: level3child
 level3_subgroup: cli-config-mgmt
 menu_order: 252
@@ -37,7 +37,7 @@ Use the following commands:
 *   `config:set` sets any non-sensitive configuration value by its configuration path
 *   `config:sensitive:set` sets any sensitive configuration value by its configuration path
 *   `config:show` shows saved configuration values; values of encrypted settings are displayed as asterisks
-  
+
 ## First steps {#first}
 {% include install/first-steps-cli.html %}
 
@@ -148,21 +148,21 @@ Example to set the base URL for the default scope:
 Example to set the base URL for the `base` website:
 
     bin/magento config:set --scope=websites --scope-code=base web/unsecure/base_url http://example2.com/
-    
+
 Example to set the base URL for the `test` store view:
 
     bin/magento config:set --scope=stores --scope-code=test web/unsecure/base_url http://example3.com/
 
 ### Set configuration values that cannot be edited in the Magento Admin {#config-cli-config-file}
-If you use the `-l|--lock` option as follows, the configuration value is saved in `config.php` and the field for editing this value in Admin page is disabled.
+If you use the `-l|--lock` option as follows, the configuration value is saved in `env.php` and the field for editing this value in Admin page is disabled.
 
     bin/magento config:set --lock --scope=stores --scope-code=default web/unsecure/base_url http://example3.com
 
 If you use the `-l|--lock` option:
 
-*   Configuration values are saved in `<Magento base dir>/app/etc/config.php` 
+*   Configuration values are saved in `<Magento base dir>/app/etc/env.php`
 
-    Transfer `config.php` to another system to use the same configuration values there. For example, if you have a testing system, using the same `config.php` means you don't have to set the same configuration values again.
+    Transfer `env.php` to another system to use the same configuration values there. For example, if you have a testing system, using the same `env.php` means you don't have to set the same configuration values again.
 *   Configuration values _cannot_ be edited in the Admin.
 *   You can use `-l|-lock` to set configuration values if Magento is not installed. However, you can set values only for the default scope.
 
@@ -178,7 +178,7 @@ If you use the `--lock` option to set or change a value, you must use the [`mage
 Command options:
 
     magento config:show [--scope[="..."]] [--scope-code[="..."]] path
-    
+
 where
 
 * `--scope` is the scope of configuration (default, website, store). The default value is `default`
@@ -194,9 +194,9 @@ The `config:show` command displays the values of any [encrypted values]({{ page.
 **Show all saved configurations**:
 
     bin/magento config:show
-    
+
 Result:
-    
+
 <pre class="no-copy">web/unsecure/base_url - http://example.com/
 general/region/display_all - 1
 general/region/state_required - AT,BR,CA,CH,EE,ES,FI,LT,LV,RO,US
@@ -206,7 +206,7 @@ analytics/subscription/enabled - 1</pre>
 **Show all saved configurations for the `base` website**:
 
     bin/magento config:show --scope=websites --scope-code=base
-    
+
 Result:
 
 <pre class="no-copy">web/unsecure/base_url - http://example-for-website.com/
@@ -219,25 +219,23 @@ general/region/state_required - AT,BR,CA</pre>
 Result:
 
 <pre class="no-copy">web/unsecure/base_url - http://example.com/</pre>
-    
+
 **Show the base URL for the `base` website**:
 
     bin/magento config:show --scope=websites --scope-code=base web/unsecure/base_url
-    
+
 Result:
 
 <pre class="no-copy">web/unsecure/base_url - http://example-for-website.com/</pre>
-   
-    
+
+
 **Show the base URL for the `default` store**:
 
     bin/magento config:show --scope=stores --scope-code=default web/unsecure/base_url
-    
+
 Result:
 
 <pre class="no-copy">web/unsecure/base_url - http://example-for-store.com/</pre>
-    
+
 #### Related topic
 [Deployment general overview]({{ page.baseurl }}config-guide/deployment/pipeline/)
-
-
