@@ -188,7 +188,7 @@ gulp.task('default',
 */
 
 // Compile HTML, watch files for changes, and only recompile files that change; not the entire site:
-gulp.task('build', shell.task(['jekyll build --watch --incremental --verbose']));
+gulp.task('build', shell.task(['jekyll build --watch --incremental']));
 
 // Start a local webserver and launch the site in a browser.
 gulp.task('serve', function () {
