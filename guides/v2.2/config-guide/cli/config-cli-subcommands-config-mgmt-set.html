@@ -2066,7 +2066,7 @@ SELECT * FROM store_website;
 </code></pre>
 
   <h3 id="config-cli-config-file">Set configuration values that cannot be edited in the Magento Admin</h3>
-  <p>If you use the <code>-l|--lock</code> option as follows, the configuration value is saved in <code>config.php</code> and the field for editing this value in Admin page is disabled.</p>
+  <p>If you use the <code>-l|--lock</code> option as follows, the configuration value is saved in <code>env.php</code> and the field for editing this value in Admin page is disabled.</p>
 
   <pre><code>bin/magento config:set --lock --scope=stores --scope-code=default web/unsecure/base_url http://example3.com
 </code></pre>
@@ -2075,9 +2075,9 @@ SELECT * FROM store_website;
 
   <ul>
     <li>
-      <p>Configuration values are saved in <code>&lt;Magento base dir&gt;/app/etc/config.php</code></p>
+      <p>Configuration values are saved in <code>&lt;Magento base dir&gt;/app/etc/env.php</code></p>
 
-      <p>Transfer <code>config.php</code> to another system to use the same configuration values there. For example, if you have a testing system, using the same <code>config.php</code> means you don’t have to set the same configuration values again.</p>
+      <p>Transfer <code>env.php</code> to another system to use the same configuration values there. For example, if you have a testing system, using the same <code>env.php</code> means you don’t have to set the same configuration values again.</p>
     </li>
     <li>Configuration values <em>cannot</em> be edited in the Admin.</li>
     <li>You can use <code>-l|-lock</code> to set configuration values if Magento is not installed. However, you can set values only for the default scope.</li>
@@ -2164,7 +2164,6 @@ general/region/state_required - AT,BR,CA</pre>
 
   <h4 id="related-topic">Related topic</h4>
   <p><a href="/guides/v2.2/config-guide/deployment/pipeline/">Deployment general overview</a></p>
-
 </div>
 
 		</div>
