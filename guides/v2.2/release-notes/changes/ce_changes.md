@@ -15,6 +15,10 @@ All changes are aggregated into two tables:
 - that contains backward incompatible changes made to Magento classes
 - that contains backward incompatible changes made to the Magento interfaces
 
+## 2.2.0 RC1.4 - 2.2.0 RC1.3 {#changes-220rc13}
+
+{% include changes/ce/220rc14-220rc13.html %}
+
 ## 2.2.0 RC1.3 - 2.2.0 RC1.2 {#changes-220rc13}
 
 {% include changes/ce/220rc13-220rc12.html %}
