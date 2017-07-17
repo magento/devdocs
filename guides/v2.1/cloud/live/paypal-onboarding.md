@@ -4,7 +4,7 @@ group: cloud
 subgroup: 160_live
 title: Set up PayPal payment methods
 menu_title: Set up PayPal
-menu_order: 350
+menu_order: 250
 menu_node:
 version: 2.1
 github_link: cloud/live/paypal-onboarding.md
@@ -28,6 +28,7 @@ While we recommend having a PayPal merchant account prepared and configured, you
 ## Configure PayPal Express Checkout
 
 To configure PayPal Express Checkout:
+
 1. Access the Admin console for the environment you need to configure.
 2. In the left-side navigation, select __Stores__ > __Configuration__, then select __Sales__ > __Payment Methods__.
 3. For PayPal, select __Configure__. Configuration fields display in expandable sections for Express Checkout, Adveritise PayPal Credit, and Basic and Advanced settings.
