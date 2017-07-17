@@ -5,7 +5,7 @@ subgroup: 100_project
 title: Set up the elasticsearch service
 menu_title: Set up the elasticsearch service
 menu_order: 85
-menu_node: 
+menu_node:
 level3_menu_node: level3child
 level3_subgroup: services
 version: 2.0
@@ -58,17 +58,3 @@ In your `.magento.app.yaml`:
 relationships:
     elasticsearch: "elasticsearch:elasticsearch"
 {% endhighlight %}
-
-You can use the preceding service in a configuration file of your application as follows:
-
-{% highlight php startinline=true %}
-if (isset($_ENV['MAGENTO_CLOUD_RELATIONSHIPS'])) {
-  $relationships = json_decode(base64_decode($_ENV['MAGENTO_CLOUD_RELATIONSHIPS']), TRUE);
-
-  foreach ($relationships['elasticsearch'] as $endpoint) {
-    $container->setParameter('elasticsearch_host', $endpoint['host']);
-    $container->setParameter('elasticsearch_port', $endpoint['port']);
-  }
-}
-{% endhighlight %}
-
