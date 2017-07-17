@@ -5,7 +5,7 @@ subgroup: 100_project
 title: Backup and restore (snapshot)
 menu_title: Backup and restore (snapshot)
 menu_order: 25
-menu_node: 
+menu_node:
 level3_menu_node: level3child
 level3_subgroup: project
 version: 2.0
@@ -17,9 +17,13 @@ You can back up and restore an environment at any time using a *snapshot*. Creat
 A *snapshot* is a complete backup of an environment. It includes all
 persistent data from all running services (for example, your MySQL database, Redis, and so on) and any files stored on the mounted volumes.
 
+<div class="bs-callout bs-callout-warning" markdown="1">
+If you need to replace code in an environment, restoring a snapshot is not the recommended method. Every deploy will push the master branch code to the target environment. You need to remove the code from the branch prior to building and deploying. For details, see the [Deployment Process]({{page.baseurl}}cloud/reference/discover-deploy.html).
+</div>
+
 You can *restore* a snapshot up to 14 days after the snapshot was created.
 
-## Create a snapshot (back up)
+## Create a snapshot
 To back up an environment by creating a snapshot:
 
 1.	[Log in to your project]({{page.baseurl}}cloud/project/project-webint-basic.html#project-login).
