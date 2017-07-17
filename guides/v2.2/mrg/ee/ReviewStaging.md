@@ -1,15 +1,14 @@
 ---
 layout: default
 group: mrg
-subgroup: Enterprise Edition
+subgroup: 20_Enterprise Edition
+ee_only: true
 title: Module Reference Guide
 menu_title: ReviewStaging
 menu_order: 2
 version: 2.2
 github_link: mrg/ee/ReviewStaging.md
 ---
-
-![Magento EE logo]({{site.baseurl}}common/images/ee-only_large.png)
 
 ## Overview
 
@@ -19,7 +18,7 @@ The Magento_ReviewStaging {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e14
 
 The Magento_ReviewStaging module extends the following Magento_Review module functionality to be used in staging mode:
 
-- Adds Product Reviews grid on the Schedule Update form. 
+- Adds Product Reviews grid on the Schedule Update form.
 
 NOTE You cannot create an update for a product review.
 

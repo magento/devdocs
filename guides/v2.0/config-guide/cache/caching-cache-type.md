@@ -21,7 +21,7 @@ To create a new cache type:
 {% highlight php startinline %}
 class %Namespace%_%Module%_Model_Cache_Type extends \Magento\Cache\Frontend\Decorator\TagScope
 {
-  public function __construct(\Magento\App\Cache\Type\FrontendPool $cacheFrontendPool)
+  public function __construct(\Magento\Framework\App\Cache\Type\FrontendPool $cacheFrontendPool)
   { 
     parent::__construct($cacheFrontendPool->get('%cache_type_id%'), '%cache_type_tag%');
   }

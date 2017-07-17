@@ -301,3 +301,23 @@ p.q {
     font-size: 1.5em;
   }
 }
+
+/* Status Colors - Used in Component Status Page */
+
+.status{
+    padding: 2px;
+
+    &.red {
+        color:#ffffff;
+        background-color: #d04437;
+    }
+
+    &.yellow {
+        background-color: #f6c342;
+    }
+
+    &.green {
+        background-color: #14892c;
+        color: #ffffff;
+    }
+}

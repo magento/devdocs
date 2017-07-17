@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cli
-subgroup: 15_reference
+subgroup: 065_reference
 title: CLI command reference
 menu_title: CLI command reference
 menu_order: 2
@@ -60,5 +60,3 @@ You can preface or append any command with `help` to see more information on how
 	 --yes (-y)            Answer "yes" to all prompts
 	 --no (-n)             Answer "no" to all prompts
 	 --shell (-s)          Launch the shell
-
-
