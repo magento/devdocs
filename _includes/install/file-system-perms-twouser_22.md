@@ -98,7 +98,7 @@ To set ownership and permissions before you install the Magento software:
 
 		cd <your Magento install dir>
 		find var generated vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \;
-		find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
+		find var generated vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
 		sudo chown -R :<web server group> .
 		chmod u+x bin/magento
 
