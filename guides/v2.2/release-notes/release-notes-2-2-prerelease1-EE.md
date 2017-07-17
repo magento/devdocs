@@ -13,9 +13,9 @@ github_link: release-notes/release-notes-2-2-prerelease1-EE.md
 *	TOC
 {:toc}
 
-*Release date: July 7, 2017*
+*Release date: July 14, 2017*
 
-*Notes updated: July 10, 2017*
+*Notes updated: July 16, 2017*
 
 
 Magento Enterprise Edition 2.2.0 Release Candidate includes significant new features as well as many bug fixes.
@@ -58,6 +58,12 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 
 
 
+### Advanced reporting
+
+<!--- 69606 -->* We’ve resolved a conflict that occurred after you changed a base URL Previously, after you changed a `base_url` value (**Stores->Configuration->General->Web-> Base URLs(Secure)**), Magento would update the base URL, then resubscribe, potentially resulting in a failure during the next update secure `base_url` call. 
+
+
+
 ### Catalog
 
 <!--- 70066 -->* We’ve improved the performance of the CatalogPermissions indexer in installations that contain many customer groups.
@@ -79,6 +85,8 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 <!--- 70314 -->* The `cron:install` command now works as expected in Magento 2.2.0 RC1.x. Previously, the configuration for `crontab` commands contained double quotes that were not escaped, which caused invalid commands to be written to the `crontab` file. [GitHub-10040](https://github.com/magento/magento2/issues/10040)
 
 
+<!--- 70318 -->* You can now generate static content without a database connection. [GitHub-10041](https://github.com/magento/magento2/issues/10041) 
+
 
 ### MBI
 
@@ -88,6 +96,8 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 
 
 ### Miscellaneous
+
+<!--- 69657 -->* Credit card information now persists as expected after a user enters a promotion code during checkout. Previously, After an user enters credit card information, then discount code and then press "Place Order". The credit card information fields are emptied and user has to enter the credit card information again to proceed with  the order transaction.
 
 <!--- 56062 -->* The Recently Viewed Products block now appears as expected when the full page cache is enabled. [GitHub-3890](https://github.com/magento/magento2/issues/3890)
 
@@ -111,13 +121,6 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 <!--- 63249 -->* ElasticSearch now includes data about composite products in its search index. Previously, search results did not include data about composite products. 
 
 <!--- 59477 -->* Attribute weighting now works correctly for the MySQL adapter. [GitHub-9020](https://github.com/magento/magento2/issues/9020)
-
-
-
-
-## Open issues found during this Release Candidate evaluation
-
-<!--- 70324-->* You cannot access the Advanced Reporting page. [GitHub-10072](https://github.com/magento/magento2/issues/10072)
 
 
 
