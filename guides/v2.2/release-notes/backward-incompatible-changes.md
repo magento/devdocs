@@ -62,6 +62,19 @@ Change was done in order to add default values to customer attributes.
 **Class:** [`Magento\Wishlist\Model\Wishlist`]({{site.mage2200url}}app/code/Magento/Wishlist/Model/Wishlist.php){:target="_blank"}<br/>
 **Action:** The format of the string for the `buyRequest` parameter in the `addNewItem` method changed from serialized to JSON.<br/>
 
+### Recently Viewed and Recently Compared Widgets
+
+**Class:** [`Magento\Reports\Block\Product\Viewed`]({{site.mage2100url}}app/code/Magento/Reports/Block/Product/Viewed.php){:target="_blank"}<br/>
+**Action:** Deprecated <br/>
+**Class:** [`Magento\Reports\Block\Product\Compared`]({{site.mage2100url}}app/code/Magento/Reports/Block/Product/Compared.php){:target="_blank"}<br/>
+**Action:** Deprecated <br/>
+**Configuration** [`Magento\Reports\etc\widget.xml`]({{site.mage2100url}}app/code/Magento/Reports/etc/widget.xml){:target="_blank"}<br/>
+**Action:** Removed <br/>
+
+Please note, that all inheritance of old widget.xml file will break Magento. Instead of using Magento/Reports/etc/widget.xml, please
+see Magento/Catalog/etc/widget.xml
+
+
 ### MessageQueue Module API
 
 The `Magento\Framework\MessageQueue\ConfigInterface` has been deprecated. 

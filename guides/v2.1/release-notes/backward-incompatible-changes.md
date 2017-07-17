@@ -48,18 +48,6 @@ The {% glossarytooltip f3944faf-127e-4097-9918-a2e9c647d44f %}CMS{% endglossaryt
 **Action:** Added the setter method `setMetaTitle`<br/>
 **Description:** Set meta title field of CMS pages<br/>
 
-### Recently Viewed and Recently Compared Widgets
-
-**Class:** [`Magento\Reports\Block\Product\Viewed`]({{site.mage2100url}}app/code/Magento/Reports/Block/Product/Viewed.php){:target="_blank"}<br/>
-**Action:** Deprecated <br/>
-**Class:** [`Magento\Reports\Block\Product\Compared`]({{site.mage2100url}}app/code/Magento/Reports/Block/Product/Compared.php){:target="_blank"}<br/>
-**Action:** Deprecated <br/>
-**Configuration** [`Magento\Reports\etc\widget.xml`]({{site.mage2100url}}app/code/Magento/Reports/etc/widget.xml){:target="_blank"}<br/>
-**Action:** Removed <br/>
-
-Please note, that all inheritance of old widget.xml file will break Magento. Instead of using Magento/Reports/etc/widget.xml, please
-see Magento/Catalog/etc/widget.xml
-
 ### GiftcardAccount Module (EE Only)
 
 A data interfaces has been changed in the GiftcardAccount module.
