@@ -692,6 +692,7 @@
 			<ul id="markdown-toc">
   <li><a href="#highlights" id="markdown-toc-highlights">Highlights</a></li>
   <li><a href="#issues-fixed-in-this-release-candidate" id="markdown-toc-issues-fixed-in-this-release-candidate">Issues fixed in this Release Candidate</a>    <ul>
+      <li><a href="#advanced-reporting" id="markdown-toc-advanced-reporting">Advanced reporting</a></li>
       <li><a href="#catalog" id="markdown-toc-catalog">Catalog</a></li>
       <li><a href="#installation-and-configuration" id="markdown-toc-installation-and-configuration">Installation and Configuration</a></li>
       <li><a href="#mbi" id="markdown-toc-mbi">MBI</a></li>
@@ -699,15 +700,14 @@
       <li><a href="#search" id="markdown-toc-search">Search</a></li>
     </ul>
   </li>
-  <li><a href="#open-issues-found-during-this-release-candidate-evaluation" id="markdown-toc-open-issues-found-during-this-release-candidate-evaluation">Open issues found during this Release Candidate evaluation</a></li>
   <li><a href="#system-requirements" id="markdown-toc-system-requirements">System requirements</a></li>
   <li><a href="#installation" id="markdown-toc-installation">Installation</a></li>
   <li><a href="#credits" id="markdown-toc-credits">Credits</a></li>
 </ul>
 
-<p><em>Release date: July 7, 2017</em></p>
+<p><em>Release date: July 14, 2017</em></p>
 
-<p><em>Notes updated: July 10, 2017</em></p>
+<p><em>Notes updated: July 16, 2017</em></p>
 
 <p>Magento Enterprise Edition 2.2.0 Release Candidate includes significant new features as well as many bug fixes.</p>
 
@@ -746,6 +746,13 @@ buyer to create a cart with more than 300 line items, and merchants can process 
 <h2 id="issues-fixed-in-this-release-candidate">Issues fixed in this Release Candidate</h2>
 <p>The following fixed and open issues have been logged against the Magento 2.2.0 RC1.x release.</p>
 
+<h3 id="advanced-reporting">Advanced reporting</h3>
+
+<!--- 69606 -->
+<ul>
+  <li>We’ve resolved a conflict that occurred after you changed a base URL Previously, after you changed a <code>base_url</code> value (<strong>Stores-&gt;Configuration-&gt;General-&gt;Web-&gt; Base URLs(Secure)</strong>), Magento would update the base URL, then resubscribe, potentially resulting in a failure during the next update secure <code>base_url</code> call.</li>
+</ul>
+
 <h3 id="catalog">Catalog</h3>
 
 <!--- 70066 -->
@@ -780,6 +787,11 @@ buyer to create a cart with more than 300 line items, and merchants can process 
   <li>The <code>cron:install</code> command now works as expected in Magento 2.2.0 RC1.x. Previously, the configuration for <code>crontab</code> commands contained double quotes that were not escaped, which caused invalid commands to be written to the <code>crontab</code> file. <a href="https://github.com/magento/magento2/issues/10040">GitHub-10040</a></li>
 </ul>
 
+<!--- 70318 -->
+<ul>
+  <li>You can now generate static content without a database connection. <a href="https://github.com/magento/magento2/issues/10041">GitHub-10041</a></li>
+</ul>
+
 <h3 id="mbi">MBI</h3>
 
 <!--- 69615 -->
@@ -788,6 +800,11 @@ buyer to create a cart with more than 300 line items, and merchants can process 
 </ul>
 
 <h3 id="miscellaneous">Miscellaneous</h3>
+
+<!--- 69657 -->
+<ul>
+  <li>Credit card information now persists as expected after a user enters a promotion code during checkout. Previously, After an user enters credit card information, then discount code and then press “Place Order”. The credit card information fields are emptied and user has to enter the credit card information again to proceed with  the order transaction.</li>
+</ul>
 
 <!--- 56062 -->
 <ul>
@@ -834,13 +851,6 @@ buyer to create a cart with more than 300 line items, and merchants can process 
 <!--- 59477 -->
 <ul>
   <li>Attribute weighting now works correctly for the MySQL adapter. <a href="https://github.com/magento/magento2/issues/9020">GitHub-9020</a></li>
-</ul>
-
-<h2 id="open-issues-found-during-this-release-candidate-evaluation">Open issues found during this Release Candidate evaluation</h2>
-
-<!--- 70324-->
-<ul>
-  <li>You cannot access the Advanced Reporting page. <a href="https://github.com/magento/magento2/issues/10072">GitHub-10072</a></li>
 </ul>
 
 <h2 id="system-requirements">System requirements</h2>

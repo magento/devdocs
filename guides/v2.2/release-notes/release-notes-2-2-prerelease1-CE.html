@@ -704,9 +704,9 @@
   <li><a href="#credits" id="markdown-toc-credits">Credits</a></li>
 </ul>
 
-<p><em>Release date: July 7, 2017</em></p>
+<p><em>Release date: July 14, 2017</em></p>
 
-<p><em>Notes updated: July 10, 2017</em></p>
+<p><em>Notes updated: July 16, 2017</em></p>
 
 <p>Magento Community Edition 2.2.0 Release Candidate includes significant new features as well as many bug fixes.</p>
 
@@ -769,6 +769,11 @@ buyer to create a cart with more than 300 line items, and merchants can process 
   <li>The <code>cron:install</code> command now works as expected in Magento 2.2.0 RC1.x. Previously, the configuration for <code>crontab</code> commands contained double quotes that were not escaped, which caused invalid commands to be written to the <code>crontab</code> file. <a href="https://github.com/magento/magento2/issues/10040">GitHub-10040</a></li>
 </ul>
 
+<!--- 70318 -->
+<ul>
+  <li>You can now generate static content without a database connection. <a href="https://github.com/magento/magento2/issues/10041">GitHub-10041</a></li>
+</ul>
+
 <h3 id="mbi">MBI</h3>
 
 <!--- 69615 -->
@@ -777,6 +782,11 @@ buyer to create a cart with more than 300 line items, and merchants can process 
 </ul>
 
 <h3 id="miscellaneous">Miscellaneous</h3>
+
+<!--- 69657 -->
+<ul>
+  <li>Credit card information now persists as expected after a user enters a promotion code during checkout. Previously, After an user enters credit card information, then discount code and then press “Place Order”. The credit card information fields are emptied and user has to enter the credit card information again to proceed with  the order transaction.</li>
+</ul>
 
 <!--- 56062 -->
 <ul>
