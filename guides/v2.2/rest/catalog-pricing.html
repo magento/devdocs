@@ -1,0 +1,1477 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width initial-scale=1" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<title>Manage prices for multiple products | Magento 2 Developer Documentation</title>
+	<meta name="description" content="Magento 2 Developer Documentation.
+">
+	<meta http-equiv="last-modified" content="" />
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,600,300,800' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="/css/app.css" />
+	<link rel="stylesheet" href="/css/print.css" media="print" />
+	<link rel="canonical" href="//guides/v2.2/rest/catalog-pricing.html">
+
+    <!-- WebUI popover css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
+
+  <script>
+    var baseUrl = "/";
+  </script>
+
+	<!-- crazyegg -->
+	<script type="text/javascript">
+	setTimeout(function(){var a=document.createElement("script");
+	var b=document.getElementsByTagName("script")[0];
+	a.src=document.location.protocol+"//script.crazyegg.com/pages/scripts/0038/0321.js?"+Math.floor(new Date().getTime()/3600000);
+	a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+	</script>
+
+    <!-- heap analytics -->
+    <script type="text/javascript">
+        window.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=t.forceSSL||"https:"===document.location.protocol,a=document.createElement("script");a.type="text/javascript",a.async=!0,a.src=(r?"https:":"http:")+"//cdn.heapanalytics.com/js/heap-"+e+".js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(a,n);for(var o=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=["addEventProperties","addUserProperties","clearEventProperties","identify","removeEventProperty","setEventProperties","track","unsetEventProperty"],c=0;c<p.length;c++)heap[p[c]]=o(p[c])};
+        heap.load("2619540280");
+    </script>
+
+	<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="https://magento.com/favicon.ico">
+	<link rel="apple-touch-icon" type="image/png" href="https://magento.com/apple-touch-icon.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="57x57" href="https://magento.com/apple-touch-icon-57x57.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="72x72" href="https://magento.com/apple-touch-icon-72x72.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="76x76" href="https://magento.com/apple-touch-icon-76x76.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="114x114" href="https://magento.com/apple-touch-icon-114x114.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="120x120" href="https://magento.com/apple-touch-icon-120x120.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="144x144" href="https://magento.com/apple-touch-icon-144x144.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="152x152" href="https://magento.com/apple-touch-icon-152x152.png">
+	<link rel="apple-touch-icon" type="image/png" sizes="180x180" href="https://magento.com/apple-touch-icon-180x180.png">
+
+</head>
+<body>
+
+<header class="site-header">
+
+	<nav id="global-nav">
+
+		<div class="menu-btn"><a class="menu-trigger menu-icon" href="#"></a></div>
+
+		<div class="container">
+
+			<a class="logo" href="/guides/v2.2/"><img src="/i/m-logo.svg" alt=""><img src="/i/magento-logo.svg" alt="Magento" class="magento-logo" /><img src="/i/devdocs-logo.svg" alt="Devdocs" class="devdocs-logo" /></a>
+
+			
+<div class="version-switcher dropdown">
+	<button id="version-switcher-button" class="btn btn-small dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Magento 2.2 RC
+	</button>
+
+	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
+	
+		<li><a class="dropdown-item" href="/guides/v2.0/rest/catalog-pricing.html">Magento 2.0</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.1/rest/catalog-pricing.html">Magento 2.1</a></li>
+	
+		<li><a class="dropdown-item" href="/guides/v2.2/rest/catalog-pricing.html">Magento 2.2 RC</a></li>
+	
+  </ul>
+
+</div>
+
+
+
+			<!-- Main Navigation -->
+<div class="nav-main">
+  <ul>
+    <li class="first">
+      <a href="#">Setup and Deployment</a>
+        <ul class="menu nav">
+          <li><a href="https://magento.com/tech-resources/download" target="_blank">Get Started with Magento DevBox Beta</a></li>
+            <li><a href="/guides/v2.2/install-gde/bk-install-guide.html">Installation Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/comp-mgr/bk-compman-upgrade-guide.html">Extension Update and System Upgrade Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/config-guide/bk-config-guide.html">Configuration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/migration/bk-migration-guide.html">Migration Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/cloud/bk-cloud.html">Enterprise Cloud Edition Guide</a></li>
+          <li class="leaf"><a href="/magento-release-information.html">Release Information</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Development</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.2/architecture/bk-architecture.html">Architecture Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/extension-dev-guide/bk-extension-dev-guide.html">PHP Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/ext-best-practices/bk-ext-best-practices.html">Extension Developer Best Practices</a></li>
+          <li><a href="/guides/v2.2/payments-integrations/bk-payments-integrations.html">Payments Integrations</a></li>
+          <li class="leaf"><a href="/guides/v2.2/mrg/intro.html">Module Reference Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/coding-standards/bk-coding-standards.html">Coding Standards</a></li>
+          
+          <li class="first leaf"><a href="/guides/v2.2/contributor-guide/contributing.html">Contributor Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Frontend</a>
+        <ul class="menu nav">
+          <li class="first leaf"><a href="/guides/v2.2/frontend-dev-guide/bk-frontend-dev-guide.html">Frontend Developer Guide</a></li>
+          
+          <li class="leaf"><a href="/guides/v2.2/javascript-dev-guide/bk-javascript-dev-guide.html">JavaScript Developer Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/pattern-library/bk-pattern.html">Admin Design Pattern Library</a></li>
+          <li class="leaf"><a href="/guides/v2.2/design-styleguide/bk-styleguide.html">Admin Style Guide</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">API</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.2/get-started/bk-get-started-api.html">Get Started with Magento Web APIs</a></li>
+          <li class="leaf"><a href="/guides/v2.2/rest/bk-rest.html">REST API Reference</a></li>
+          <li class="leaf"><a href="/guides/v2.2/soap/bk-soap.html">SOAP API Reference</a></li>
+        </ul>
+    </li>
+
+    <li>
+        <a href="#">Testing</a>
+        <ul class="menu nav">
+          <li class="leaf"><a href="/guides/v2.2/test/testing.html">Magento Testing Guide</a></li>
+          <li class="leaf"><a href="/guides/v2.2/mtf/mtf_introduction.html">Functional Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/test/integration/integration_test_execution.html">Integration Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/test/js/jasmine.html">JavaScript Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/test/unit/unit_test_execution.html">PHP Unit Testing</a></li>
+          <li class="leaf"><a href="/guides/v2.2/get-started/web-api-functional-testing.html">Web API Functional Testing</a></li>
+        </ul>
+    </li>
+
+    <li>
+      <a href="/guides/v2.2/howdoi/bk-how-do-i.html">How Tos</a>
+    </li>
+
+    <li>
+      <a href="/videos/">Videos</a>
+    </li>
+  </ul>
+</div><!-- /.nav-main -->
+
+
+			<div class="search-btn">
+				<a class="search-trigger search-icon" href="//search.html"></a>
+			</div>
+
+			<form class="quick-search" action="/search.html" method="get">
+				<input type="search" name="q" placeholder="Search" />
+				<a href="#" class="quick-search-close">&times;</a>
+			</form>
+
+		</div>
+
+	</nav><!-- #global-nav -->
+
+</header>
+<div class="nav-main-fader"></div>
+
+
+<div id="gl-wrapper">
+
+	<!-- .main-container -->
+	<div class="main-container">
+		<a id="main-content"></a>
+
+
+<div class="container">
+
+    
+    <div class="message-banner">
+        <strong>Review our 2.2 release candidate!</strong> This beta version documentation includes B2B and more. <a href="/guides/v2.2/release-notes/release-candidate/quick-start.html">See the Quickstart Guide</a><br/>
+        Stay tuned — We'll roll out more 2.2 documentation updates in the coming weeks.
+    </div> 
+    
+
+	<!-- sidebar -->
+<aside class="sidebar">
+	<a href="#" class="toc-toggler">Table of Contents</a>
+	<div class="sidebar-wrapper">
+
+
+<h4>REST API Reference</h4>
+
+
+
+
+
+
+		<ul>
+
+		
+
+		
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+					
+					
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/rest/bk-rest.html">Overview</a></li>
+									
+								
+
+									
+
+
+								
+
+									
+
+									<li class="level-2"><a href="http://devdocs.magento.com/swagger/index_22.html">REST APIs</a></li>
+
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/rest/list.html">List of REST endpoints by module</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/rest/rest_endpoints.html">List of service names per module</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/rest/generate-local.html">Generate a local API reference</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/rest/anonymous-api-security.html">Restricting access to anonymous web APIs</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/rest/notes.html">REST usage notes</a></li>
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+						
+
+						
+
+							
+
+
+								
+
+
+								
+
+									
+
+										<li class="levela1"><span class="nav-header">Modules</span></li>
+
+									
+
+
+								
+
+									
+
+										<li class="level3Parent " id="catalog"><a href="#">Catalog</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child catalog  active " data-menunode="catalog"><a href="/guides/v2.2/rest/catalog-pricing.html">Manage prices for multiple products</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child catalog " data-menunode="catalog"><a href="/guides/v2.2/rest/catalog-notes.html">Usage notes</a>
+
+
+									
+
+								
+
+								
+								
+
+
+
+						
+
+					
+
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+				
+
+			
+
+		</ul>
+
+	</div>
+</aside>
+<!-- /sidebar -->
+
+
+	<section class="content">
+		<div class="content-wrap">
+			<!-- page-header -->
+<section class="page-intro">
+	
+
+  <nav class="breadcrumbs">
+
+    <a class="breadcrumb-item" href="/guides/v2.2/"><span>Home</span></a>
+
+    <ol class="breadcrumb list-unstyled" vocab="http://schema.org/" typeof="BreadcrumbList">
+
+    <!-- Iteration breadcrumb item -->
+    
+    
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item" property="itemListElement" typeof="ListItem">
+
+        
+          <a property="item" typeof="WebPage" href="/guides/v2.2/rest/bk-rest.html">
+            <span property="name">Overview</span>
+          </a>
+        
+
+        <meta property="position" content="1" />
+      </li>
+
+    
+
+      <!-- Skip if root -->
+      
+
+      <!-- Get breadcrumb title -->
+      
+
+      <!-- SEO data -->
+      
+
+      <li class="breadcrumb-item active" property="itemListElement" typeof="ListItem">
+
+        
+
+          
+
+          <span property="name">Manage prices for multiple products</span>
+
+        
+
+        <meta property="position" content="2" />
+      </li>
+
+    
+
+    
+
+
+
+    </ol>
+
+  </nav>
+
+
+
+	
+
+	
+
+	<h1 class="page-heading">Manage prices for multiple products</h1>
+
+  
+
+
+</section>
+
+
+			<p>Magento provides REST endpoints that allow you to update multiple special prices, tier prices, base prices, or cost values with a single call.</p>
+
+<p>The calls that update special and tier prices mimic the options available on a product’s <strong>Advanced Pricing</strong> screen in Admin.</p>
+
+<h2 id="manage-special-prices">Manage special prices</h2>
+
+<p>The  <code>SpecialPriceStorageInterface</code> service provides the means to efficiently schedule special prices for one or more products in a store’s catalog. When you use these calls, you do not provide detailed information about the product.</p>
+
+<p>The <code>POST /V1/products/special-price</code> call sets special prices for the following product types:</p>
+
+<ul>
+  <li>Simple</li>
+  <li>Bundle</li>
+  <li>Virtual</li>
+  <li>Downloadable</li>
+</ul>
+
+<p><strong>Service Name</strong></p>
+
+<p><code>SpecialPriceStorageInterface</code></p>
+
+<p><strong>REST Endpoints</strong></p>
+
+<pre><code>POST /V1/products/special-price
+POST /V1/products/special-price-information
+POST /V1/products/special-price-delete
+</code></pre>
+
+<p><strong>SpecialPriceStorageInterface Parameters</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Format</th>
+      <th>Requirements</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>price</code></td>
+      <td>The special price of the product</td>
+      <td>float</td>
+      <td>Required for setting or deleting a special price</td>
+    </tr>
+    <tr>
+      <td><code>store_id</code></td>
+      <td>The store ID  to apply the special price</td>
+      <td>integer</td>
+      <td>Required for setting or deleting a special price</td>
+    </tr>
+    <tr>
+      <td><code>sku</code></td>
+      <td>The SKU of the product</td>
+      <td>string</td>
+      <td>Required for setting or deleting a special price</td>
+    </tr>
+    <tr>
+      <td><code>skus</code></td>
+      <td>An array of SKU values that is specified when retrieving a list of special prices</td>
+      <td>array</td>
+      <td>Required for retrievals</td>
+    </tr>
+    <tr>
+      <td><code>price_from</code></td>
+      <td>The date and time the special price goes into effect. The date/time format is <code>YYYY-MM-DD hh:mm:ss</code>. The specified time must be later than the current time.</td>
+      <td>string</td>
+      <td>Required in Enterprise Edition. Optional in Community Edition.</td>
+    </tr>
+    <tr>
+      <td><code>price_to</code></td>
+      <td>The date and time the special price ends. The date/time format is <code>YYYY-MM-DD hh:mm:ss</code> If no value is specified, the special price does not expire.</td>
+      <td>string</td>
+      <td>Optional</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="set-special-prices">Set special prices</h3>
+
+<p>All calls to set special prices must include the <code>store_id</code>, <code>sku</code>, and <code>price</code> parameters. If the call is sent to an Enterprise Edition installation, the call must also include the <code>price_from</code> parameter. If the call is sent to a Community Edition installation, then the <code>price_from</code> parameter is optional.</p>
+
+<p>For bundled products, the value of the <code>price</code> parameter must be expressed as a discount percentage.</p>
+
+<p>You can set multiple special prices in a single call, as shown in the example below. The call sets special prices for a simple product, downloadable product, and bundle product for two days.</p>
+
+<p><strong>Sample Usage</strong></p>
+
+<p><code>POST /V1/products/special-price</code></p>
+
+<p><strong>Payload</strong></p>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;prices&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;price&quot;</span><span class="p">:</span> <span class="mf">29.95</span><span class="p">,</span>
+      <span class="nt">&quot;store_id&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nt">&quot;price_from&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-07-15 00:00:00&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;price_to&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-07-16 23:59:59&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;24-WB06&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;price&quot;</span><span class="p">:</span> <span class="mf">19.95</span><span class="p">,</span>
+      <span class="nt">&quot;store_id&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nt">&quot;price_from&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-07-15 00:00:00&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;price_to&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-07-16 23:59:59&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;240-LV06&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;price&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+      <span class="nt">&quot;store_id&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nt">&quot;price_from&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-07-15 00:00:00&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;price_to&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-07-16 23:59:59&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;24-WG080&quot;</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre></figure>
+
+<p><strong>Response</strong></p>
+
+<p><code>[]</code> (an empty array)</p>
+
+<h3 id="get-special-prices">Get special prices</h3>
+
+<p>The following call returns the special price information for three SKU values.</p>
+
+<p><strong>Sample Usage</strong></p>
+
+<p><code>POST /V1/products/special-price-information</code></p>
+
+<p><strong>Payload</strong></p>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;skus&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">&quot;24-WB06&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;240-LV06&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;24-WG080&quot;</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre></figure>
+
+<p><strong>Response</strong></p>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">[</span>
+    <span class="p">{</span>
+        <span class="nt">&quot;price&quot;</span><span class="p">:</span> <span class="mf">29.949999999999999</span><span class="p">,</span>
+        <span class="nt">&quot;store_id&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;24-WB06&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;price_from&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-07-15 00:00:00&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;price_to&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-07-16 23:59:59&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="nt">&quot;price&quot;</span><span class="p">:</span> <span class="mf">19.949999999999999</span><span class="p">,</span>
+        <span class="nt">&quot;store_id&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;240-LV06&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;price_from&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-07-15 00:00:00&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;price_to&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-07-16 23:59:59&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="nt">&quot;price&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+        <span class="nt">&quot;store_id&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;24-WG080&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;price_from&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-07-15 00:00:00&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;price_to&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-07-16 23:59:59&quot;</span>
+    <span class="p">}</span>
+<span class="p">]</span></code></pre></figure>
+
+<h3 id="delete-a-special-price">Delete a special price</h3>
+
+<p>If any item to be deleted has an invalid <code>price</code>, <code>store_id</code>, <code>sku</code> or date, Magento marks the item as failed and excludes it from the delete list. Valid items are deleted as requested.</p>
+
+<p><strong>Sample Usage</strong></p>
+
+<p><code>POST /V1/products/special-price-delete</code></p>
+
+<p><strong>Payload</strong></p>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;prices&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;price&quot;</span><span class="p">:</span> <span class="mf">29.95</span><span class="p">,</span>
+      <span class="nt">&quot;store_id&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nt">&quot;price_from&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-07-15 00:00:00&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;price_to&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-07-16 23:59:59&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;24-WB06&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;price&quot;</span><span class="p">:</span> <span class="mf">19.95</span><span class="p">,</span>
+      <span class="nt">&quot;store_id&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nt">&quot;price_from&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-07-15 00:00:00&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;price_to&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-07-16 23:59:59&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;240-LV06&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;price&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+      <span class="nt">&quot;store_id&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nt">&quot;price_from&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-07-15 00:00:00&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;price_to&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-07-16 23:59:59&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;24-WG080&quot;</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre></figure>
+
+<p><strong>Response</strong></p>
+
+<p><code>[]</code> (an empty array)</p>
+
+<h2 id="manage-tier-prices">Manage tier prices</h2>
+
+<p>Tier pricing offers a quantity discount to members of a specific customer group and website.  The  <code>TierPriceStorageInterface</code> service provides an efficient means to set tier prices for one or more products without requiring detailed information about each product.</p>
+
+<p>You can use REST endpoints to set tier prices for the following product types:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Product type</th>
+      <th>Tier price types</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Simple</td>
+      <td>fixed, discount</td>
+    </tr>
+    <tr>
+      <td>Bundle</td>
+      <td>discount</td>
+    </tr>
+    <tr>
+      <td>Virtual</td>
+      <td>fixed, discount</td>
+    </tr>
+    <tr>
+      <td>Downloadable</td>
+      <td>fixed, discount</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Service Name</strong></p>
+
+<p><code>TierPriceStorageInterface</code></p>
+
+<p><strong>REST Endpoints</strong></p>
+
+<pre><code>POST /V1/products/tier-prices
+PUT /V1/products/tier-prices
+POST /V1/products/tier-prices-information
+POST /V1/products/tier-prices-delete
+</code></pre>
+
+<p><strong>TierPriceStorageInterface Parameters</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Format</th>
+      <th>Requirements</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>price</code></td>
+      <td>The discounted product price for the quantity purchased</td>
+      <td>float</td>
+      <td>Required to set, update, or delete a tier price</td>
+    </tr>
+    <tr>
+      <td><code>price_type</code></td>
+      <td>Must be <code>fixed</code> (the set price) or <code>discount</code> (percent discount)</td>
+      <td>string</td>
+      <td>Required to set, update, or delete a tier price</td>
+    </tr>
+    <tr>
+      <td><code>website_id</code></td>
+      <td>The website ID  to apply the tier price</td>
+      <td>integer</td>
+      <td>Required to set, update, or delete a tier price</td>
+    </tr>
+    <tr>
+      <td><code>sku</code></td>
+      <td>The SKU of the product</td>
+      <td>string</td>
+      <td>Required to set, update, or delete a tier price</td>
+    </tr>
+    <tr>
+      <td><code>skus</code></td>
+      <td>An array of SKU values that is specified when retrieving a list of tier prices</td>
+      <td>array</td>
+      <td>Required for retrievals</td>
+    </tr>
+    <tr>
+      <td><code>customer_group</code></td>
+      <td>A specific customer group that qualifies to receive the tier price discount</td>
+      <td>string</td>
+      <td>Required to set, update, or delete a tier price</td>
+    </tr>
+    <tr>
+      <td><code>quantity</code></td>
+      <td>The quantity that must be purchased to receive the tier price</td>
+      <td>integer</td>
+      <td>Required to set, update, or delete a tier price</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="set-tier-prices">Set tier prices</h3>
+
+<p>The <code>POST /V1/products/tier-prices</code> call adds new tier prices or updates existing prices. You can specify tier prices for multiple products in the same call.</p>
+
+<p><strong>Sample Usage</strong></p>
+
+<p><code>POST /V1/products/tier-prices</code></p>
+
+<p><strong>Payload</strong></p>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;prices&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;price&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+      <span class="nt">&quot;price_type&quot;</span><span class="p">:</span> <span class="s2">&quot;fixed&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;website_id&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;24-UG04&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;customer_group&quot;</span><span class="p">:</span> <span class="s2">&quot;General&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;quantity&quot;</span><span class="p">:</span> <span class="mi">3</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;price&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+      <span class="nt">&quot;price_type&quot;</span><span class="p">:</span> <span class="s2">&quot;fixed&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;website_id&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;24-UG04&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;customer_group&quot;</span><span class="p">:</span> <span class="s2">&quot;General&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;quantity&quot;</span><span class="p">:</span> <span class="mi">5</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;price&quot;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+      <span class="nt">&quot;price_type&quot;</span><span class="p">:</span> <span class="s2">&quot;fixed&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;website_id&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;24-UG04&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;customer_group&quot;</span><span class="p">:</span> <span class="s2">&quot;General&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;quantity&quot;</span><span class="p">:</span> <span class="mi">10</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre></figure>
+
+<p><strong>Response</strong></p>
+
+<p><code>[]</code> (an empty array)</p>
+
+<h3 id="replace-existing-tier-prices">Replace existing tier prices</h3>
+
+<p>The replace request removes all existing tier prices for a specified product and adds new rows for this same product instead.</p>
+
+<p>The following example removes the $10 tier price for <code>sku</code> 24-UG04 and changes the customer group for the <code>sku</code>’s other tier prices.</p>
+
+<p><strong>Sample Usage</strong></p>
+
+<p><code>PUT /V1/products/tier-prices</code></p>
+
+<p><strong>Payload</strong></p>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;prices&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;price&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+      <span class="nt">&quot;price_type&quot;</span><span class="p">:</span> <span class="s2">&quot;fixed&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;website_id&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;24-UG04&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;customer_group&quot;</span><span class="p">:</span> <span class="s2">&quot;NOT LOGGED IN&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;quantity&quot;</span><span class="p">:</span> <span class="mi">5</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;price&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+      <span class="nt">&quot;price_type&quot;</span><span class="p">:</span> <span class="s2">&quot;fixed&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;website_id&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;24-UG04&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;customer_group&quot;</span><span class="p">:</span> <span class="s2">&quot;NOT LOGGED IN&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;quantity&quot;</span><span class="p">:</span> <span class="mi">310</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre></figure>
+
+<p><strong>Response</strong></p>
+
+<p><code>[]</code> (an empty array)</p>
+
+<h3 id="get-tier-prices">Get tier prices</h3>
+
+<p>Magento returns all active tier prices for the specified list of <code>skus</code>.</p>
+
+<p><strong>Sample Usage</strong></p>
+
+<p><code>V1/products/tier-prices-information</code></p>
+
+<p><strong>Payload</strong></p>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;skus&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">&quot;24-UG04&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;24-UG01&quot;</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre></figure>
+
+<p><strong>Response</strong></p>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">[</span>
+    <span class="p">{</span>
+        <span class="nt">&quot;price&quot;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+        <span class="nt">&quot;price_type&quot;</span><span class="p">:</span> <span class="s2">&quot;fixed&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;website_id&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;24-UG04&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;customer_group&quot;</span><span class="p">:</span> <span class="s2">&quot;General&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;quantity&quot;</span><span class="p">:</span> <span class="mi">5</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="nt">&quot;price&quot;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+        <span class="nt">&quot;price_type&quot;</span><span class="p">:</span> <span class="s2">&quot;fixed&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;website_id&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;24-UG04&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;customer_group&quot;</span><span class="p">:</span> <span class="s2">&quot;General&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;quantity&quot;</span><span class="p">:</span> <span class="mi">10</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="nt">&quot;price&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="nt">&quot;price_type&quot;</span><span class="p">:</span> <span class="s2">&quot;fixed&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;website_id&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;24-UG04&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;customer_group&quot;</span><span class="p">:</span> <span class="s2">&quot;General&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;quantity&quot;</span><span class="p">:</span> <span class="mi">3</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+        <span class="nt">&quot;price&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+        <span class="nt">&quot;price_type&quot;</span><span class="p">:</span> <span class="s2">&quot;discount&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;website_id&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+        <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;24-UG01&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;customer_group&quot;</span><span class="p">:</span> <span class="s2">&quot;General&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;quantity&quot;</span><span class="p">:</span> <span class="mi">3</span>
+    <span class="p">}</span>
+<span class="p">]</span></code></pre></figure>
+
+<h3 id="delete-tier-prices">Delete tier prices</h3>
+
+<p>You must specify each tier price that is to be deleted. You can delete multiple tier prices in a single call.</p>
+
+<p><strong>Sample Usage</strong></p>
+
+<p><code>POST /V1/products/tier-prices-delete</code></p>
+
+<p><strong>Payload</strong></p>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;prices&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;price&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+      <span class="nt">&quot;price_type&quot;</span><span class="p">:</span> <span class="s2">&quot;fixed&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;website_id&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;24-UG04&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;customer_group&quot;</span><span class="p">:</span> <span class="s2">&quot;General&quot;</span><span class="p">,</span>
+      <span class="nt">&quot;quantity&quot;</span><span class="p">:</span> <span class="mi">3</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre></figure>
+
+<p><strong>Response</strong></p>
+
+<p><code>[]</code> (an empty array)</p>
+
+<h2 id="manage-base-prices">Manage base prices</h2>
+
+<p>A base price is the price of a product, before any discounts or extra costs (such as shipping or taxes) are applied.  The  <code>BasePriceStorageInterface</code> service provides an efficient means to set base prices for one or more products without requiring detailed information about each product.</p>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>You cannot delete a base price. It can only be changed to another value (0 or greater).</p>
+</div>
+
+<p><strong>REST Endpoints</strong></p>
+
+<pre><code>POST /V1/products/base-price
+POST /V1/products/base-prices-information
+</code></pre>
+
+<p><strong>BasePriceStorageInterface Parameters</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Format</th>
+      <th>Requirements</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>price</code></td>
+      <td>The base price of the item</td>
+      <td>float</td>
+      <td>Required to set a base price</td>
+    </tr>
+    <tr>
+      <td><code>store_id</code></td>
+      <td>The store ID  to apply the base price</td>
+      <td>integer</td>
+      <td>Required to set a base price</td>
+    </tr>
+    <tr>
+      <td><code>sku</code></td>
+      <td>The SKU of the product</td>
+      <td>string</td>
+      <td>Required to set a base price</td>
+    </tr>
+    <tr>
+      <td><code>skus</code></td>
+      <td>An array of SKU values that is specified when retrieving a list of base prices</td>
+      <td>array</td>
+      <td>Required for retrievals</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="set-base-prices">Set base prices</h3>
+
+<p>The <code>POST /V1/products/base-price</code> call can set base prices for the following types of products:</p>
+
+<ul>
+  <li>Simple</li>
+  <li>Virtual</li>
+  <li>Downloadable</li>
+  <li>Bundle (fixed price type only)</li>
+</ul>
+
+<p>The following example sets the base price for a simple and a downloadable product.</p>
+
+<p><strong>Sample Usage</strong></p>
+
+<p><code>POST /V1/products/base-price</code></p>
+
+<p><strong>Payload</strong></p>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;prices&quot;</span><span class="p">:</span> <span class="p">[</span>
+  <span class="p">{</span>
+    <span class="nt">&quot;price&quot;</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
+    <span class="nt">&quot;store_id&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;24-UG04&quot;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="nt">&quot;price&quot;</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span>
+    <span class="nt">&quot;store_id&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;240-LV06&quot;</span>
+  <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre></figure>
+
+<p><strong>Response</strong></p>
+
+<p><code>[]</code> (an empty array)</p>
+
+<h3 id="get-base-prices">Get base prices</h3>
+
+<p>The following example returns the base prices for a simple and a downloadable product.</p>
+
+<p><strong>Sample Usage</strong></p>
+
+<p><code>POST /V1/products/base-prices-information</code></p>
+
+<p><strong>Payload</strong></p>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;skus&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">&quot;24-UG04&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;240-LV06&quot;</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre></figure>
+
+<p><strong>Response</strong></p>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">[</span>
+  <span class="p">{</span>
+    <span class="nt">&quot;price&quot;</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
+    <span class="nt">&quot;store_id&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;24-UG04&quot;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="nt">&quot;price&quot;</span><span class="p">:</span> <span class="mi">22</span><span class="p">,</span>
+    <span class="nt">&quot;store_id&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;240-LV06&quot;</span>
+  <span class="p">}</span>
+<span class="p">]</span></code></pre></figure>
+
+<h2 id="manage-cost-values">Manage cost values</h2>
+
+<p>The cost is the actual cost of a product. Tracking costs is optional, but having this information available can be helpful when you are setting discounts.</p>
+
+<p><strong>REST Endpoints</strong></p>
+
+<pre><code>POST /V1/products/cost
+POST /V1/products/cost-information
+POST /V1/products/cost-delete
+</code></pre>
+
+<p><strong>CostStorageInterface Parameters</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Format</th>
+      <th>Requirements</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>cost</code></td>
+      <td>The amount the item costs</td>
+      <td>float</td>
+      <td>Required to set or delete a cost value</td>
+    </tr>
+    <tr>
+      <td><code>store_id</code></td>
+      <td>The store ID  to apply the cost value</td>
+      <td>integer</td>
+      <td>Required to set or delete a cost value</td>
+    </tr>
+    <tr>
+      <td><code>sku</code></td>
+      <td>The SKU of the product</td>
+      <td>string</td>
+      <td>Required to set or delete a cost value</td>
+    </tr>
+    <tr>
+      <td><code>skus</code></td>
+      <td>An array of SKU values that is specified when retrieving a list of cost values</td>
+      <td>array</td>
+      <td>Required for retrievals</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="set-cost-values">Set cost values</h3>
+
+<p>The <code>POST /V1/products/cost</code> call can set the cost values for the following types of products:</p>
+
+<ul>
+  <li>Simple</li>
+  <li>Virtual</li>
+  <li>Downloadable</li>
+</ul>
+
+<p>The following example sets the cost value for a simple and a downloadable product.</p>
+
+<p><strong>Sample Usage</strong></p>
+
+<p><code>POST /V1/products/cost</code></p>
+
+<p><strong>Payload</strong></p>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;prices&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;cost&quot;</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
+      <span class="nt">&quot;store_id&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;24-WB03&quot;</span>
+    <span class="p">},</span>
+    <span class="p">{</span>
+      <span class="nt">&quot;cost&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+      <span class="nt">&quot;store_id&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;240-LV09&quot;</span>
+    <span class="p">}</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre></figure>
+
+<p><strong>Response</strong></p>
+
+<p><code>[]</code> (an empty array)</p>
+
+<h3 id="get-cost-values">Get cost values</h3>
+
+<p>The following example returns the cost values for a simple and a downloadable product.</p>
+
+<p><strong>Sample Usage</strong></p>
+
+<p><code>POST /V1/products/cost-information</code></p>
+
+<p><strong>Payload</strong></p>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;skus&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">&quot;24-WB03&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;240-LV09&quot;</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre></figure>
+
+<p><strong>Response</strong></p>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">[</span>
+  <span class="p">{</span>
+    <span class="nt">&quot;cost&quot;</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
+    <span class="nt">&quot;store_id&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;24-WB03&quot;</span>
+  <span class="p">},</span>
+  <span class="p">{</span>
+    <span class="nt">&quot;cost&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="nt">&quot;store_id&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;240-LV09&quot;</span>
+  <span class="p">}</span>
+<span class="p">]</span></code></pre></figure>
+
+<h3 id="delete-cost-values">Delete cost values</h3>
+
+<p>The following example deletes the previously-defined cost values for a simple and a downloadable product.</p>
+
+<p><strong>Sample Usage</strong></p>
+
+<p><code>POST /V1/products/cost-delete</code></p>
+
+<p><strong>Payload</strong></p>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;skus&quot;</span><span class="p">:</span> <span class="p">[</span>
+    <span class="s2">&quot;24-WB03&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;240-LV09&quot;</span>
+  <span class="p">]</span>
+<span class="p">}</span></code></pre></figure>
+
+<p><strong>Response</strong></p>
+
+<p><code>true</code>, indicating the cost values were deleted</p>
+
+		</div>
+		<!-- /.content-wrap -->
+
+		<div class="page-info">
+
+  
+
+  
+   <div class="github-link">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.2/rest/catalog-pricing.md" target="_blank">
+       Edit this page on GitHub
+     </a>
+   </div>
+  
+
+  <div class="new-issue">
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/rest/catalog-pricing.html" target="_blank">Give us feedback</a>
+  </div>
+
+</div>
+
+
+	</section>
+	<!-- /.content -->
+
+</div> <!-- /.container -->
+
+
+	</div>
+	<!-- /.main-container -->
+
+</div>
+<!-- /#gl-wrapper -->
+
+<!-- footer-->
+<div id="footer">
+  <div class="container">
+
+    <div class="copyright-links">
+      <ul class="nav">
+        <li><a href="/guides/v2.2/contributor-guide/contributing_docs.html">Become a Contributor</a>
+        <li><a href="https://magento.github.io/glossary/index.html?audience=developer">Glossary</a></li>
+        <li><a href="http://magento.com/legal/terms/privacy/">Privacy Policy</a></li>
+        <li><a href="http://magento.com/legal/terms/">Terms of Service</a></li>
+        <li><a href="http://magento.com/legal/licensing/">License/Trademark FAQ</a></li>
+        <li><a href="/guides/v2.2/release-notes/bk-release-notes.html">Release Notes</a></li>
+        <li><a href="/magento-third-party.html">Third-Party Licenses</a></li> 
+      </ul>
+    </div>
+
+		<div class="copyright-date">&copy; 2017 Magento. All rights reserved.</div>
+
+  </div>
+</div>
+<!-- / #footer -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="/common/js/app.min.js"></script>
+
+<!-- Glossary integration -->
+<script src="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.js"></script>
+<script src="/common/js/glossary.tooltip.min.js"></script>
+<script>
+    $(document).ready(function(){
+      magento.glossary.init("https://magento.github.io/glossary/data/content-glossary.xml",function(term){return term.types.includes("glossary");},magento.glossary.tooltip.init);
+      });
+</script>
+
+<script type="text/javascript">
+    (function() {
+        var didInit = false;
+        function initMunchkin() {
+            if(didInit === false) {
+                didInit = true;
+                Munchkin.init('585-GGD-959', {cookieAnon: false});
+            }
+        }
+        var s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.async = true;
+        s.src = '//munchkin.marketo.net/munchkin.js';
+        s.onreadystatechange = function() {
+            if (this.readyState == 'complete' || this.readyState == 'loaded') {
+                initMunchkin();
+            }
+        };
+        s.onload = initMunchkin;
+        document.getElementsByTagName('head')[0].appendChild(s);
+    })();
+</script>
+
+
+
+<!--Google Analytics-->
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-66243208-1', 'auto');
+    ga('send', 'pageview');
+</script>
+
+
+</body>
+</html>
+
