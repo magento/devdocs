@@ -1675,52 +1675,54 @@
 </section>
 
 
-			<p>Caching one of the most effective way of improving performance of web applications of all kinds. Generally speaking, there are two ways to cache: client-side (browser) and server-side. In addition, there are two types of content: public (available to multiple customers) and private (specific to one customer).</p>
+			<div>
 
-<p>Magento page caching is synonymous with <em>full-page caching</em>; in other words, we <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span> the entire page. The Magento application gives you the following options:</p>
+  <p>Caching is one of the most effective way of improving performance of web applications of all kinds. Generally speaking, there are two ways to cache: client-side (browser) and server-side. In addition, there are two types of content: public (available to multiple customers) and private (specific to one customer).</p>
 
-<ul>
-  <li>
-    <p>The default caching mechanism which stores cache files in any of the following:</p>
+  <p>Magento page caching is synonymous with <em>full-page caching</em>; in other words, we <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span> the entire page. The Magento application gives you the following options:</p>
 
-    <ul>
-      <li>
-        <p>On the file system.</p>
+  <ul>
+    <li>
+      <p>The default caching mechanism which stores cache files in any of the following:</p>
 
-        <p>You don’t need to do anything to use file-based caching.</p>
-      </li>
-      <li><a href="/guides/v2.1/config-guide/cache/caching-database.html">Database</a></li>
-      <li><a href="/guides/v2.1/config-guide/redis/redis-pg-cache.html">Redis</a></li>
-    </ul>
-  </li>
-  <li>
-    <p><a href="/guides/v2.1/config-guide/varnish/config-varnish.html">Varnish</a> (recommended)</p>
-  </li>
-</ul>
+      <ul>
+        <li>
+          <p>On the file system.</p>
 
-<h3 id="config-cache-over-cacheable">Cacheable and uncacheable pages</h3>
-<p><em>Cacheable</em> and <em>uncacheable</em> are terms we use to indicate whether or not a page should be cached at all. (By default, all pages are cacheable.) If any block in a <span term-uuid="73ab5daa-5857-4039-97df-11269b626134" class="glossary-term" data-toggle="popover">layout</span> is designated as uncacheable, the entire page is uncacheable.</p>
+          <p>You don’t need to do anything to use file-based caching.</p>
+        </li>
+        <li><a href="/guides/v2.1/config-guide/cache/caching-database.html">Database</a></li>
+        <li><a href="/guides/v2.1/config-guide/redis/redis-pg-cache.html">Redis</a></li>
+      </ul>
+    </li>
+    <li>
+      <p><a href="/guides/v2.1/config-guide/varnish/config-varnish.html">Varnish</a> (recommended)</p>
+    </li>
+  </ul>
 
-<p>To create an uncacheable page, mark any block on that page as uncacheable in the layout using <code>cacheable="false"</code>.</p>
+  <h3 id="config-cache-over-cacheable">Cacheable and uncacheable pages</h3>
+  <p><em>Cacheable</em> and <em>uncacheable</em> are terms we use to indicate whether or not a page should be cached at all. (By default, all pages are cacheable.) If any block in a <span term-uuid="73ab5daa-5857-4039-97df-11269b626134" class="glossary-term" data-toggle="popover">layout</span> is designated as uncacheable, the entire page is uncacheable.</p>
 
-<p>Examples of uncacheable pages include the compare products, cart, <span term-uuid="278c3ce0-cd4c-4ffc-a098-695d94d73bde" class="glossary-term" data-toggle="popover">checkout</span> pages, and so on.</p>
+  <p>To create an uncacheable page, mark any block on that page as uncacheable in the layout using <code>cacheable="false"</code>.</p>
 
-<p><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Paypal/view/frontend/layout/paypal_payflow_returnurl.xml" target="_blank">Example</a></p>
+  <p>Examples of uncacheable pages include the compare products, cart, <span term-uuid="278c3ce0-cd4c-4ffc-a098-695d94d73bde" class="glossary-term" data-toggle="popover">checkout</span> pages, and so on.</p>
 
-<div class="bs-callout bs-callout-warning">
+  <p><a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Paypal/view/frontend/layout/paypal_payflow_returnurl.xml" target="_blank">Example</a></p>
+
+  <div class="bs-callout bs-callout-warning">
     <p>Do not configure content pages (that is, catalog, product and CMS pages) to be uncacheable. Doing so has an adverse affect on performance.</p>
-       
 </div>
 
-<div class="bs-callout bs-callout-info" id="info">
+  <div class="bs-callout bs-callout-info" id="info">
   <p>Only HTTP <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html#sec9.3" target="_blank">GET</a> and <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html#sec9.4" target="_blank">HEAD</a> requests are cacheable. For more information about caching, see <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html" target="_blank">RFC-2616 section 13</a>.</p>
 </div>
 
-<h3 id="config-cache-over-pubpriv">Public and private content</h3>
-<p><em>Private</em> content on a page is intended for one user only; for example, a customer name or personalized recommendations for a logged-in customer. Rendering private content in a cached page is sometimes referred to as <em>hole punching</em> and we’ll discuss it in more detail in the next topic.</p>
+  <h3 id="config-cache-over-pubpriv">Public and private content</h3>
+  <p><em>Private</em> content on a page is intended for one user only; for example, a customer name or personalized recommendations for a logged-in customer. Rendering private content in a cached page is sometimes referred to as <em>hole punching</em> and we’ll discuss it in more detail in the next topic.</p>
 
-<h4 id="next">Next</h4>
-<p><a href="/guides/v2.1/config-guide/cache/cache-priv-priv.html">Public and private content</a></p>
+  <h4 id="next">Next</h4>
+  <p><a href="/guides/v2.1/config-guide/cache/cache-priv-priv.html">Public and private content</a></p>
+</div>
 
 		</div>
 		<!-- /.content-wrap -->

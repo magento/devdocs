@@ -313,6 +313,14 @@
 
 							
 
+								<li class="q "><a href="/guides/v2.2/frontend-dev-guide/cache_for_frontdevs.html">Magento cache overview</a></li>
+
+							
+
+								<li class="q "><a href="/guides/v2.2/frontend-dev-guide/theme-best-practice.html">Theme development best practices</a></li>
+
+							
+
 						
 
 					
@@ -347,14 +355,6 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.2/frontend-dev-guide/themes/theme-create.html">Create a new storefront theme</a></li>
-
-									
-
-								
-
-									
-
 									<li class="level-2 "><a href="/guides/v2.2/frontend-dev-guide/themes/theme-install.html">Install a a third-party storefront theme</a></li>
 
 									
@@ -363,7 +363,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.2/frontend-dev-guide/themes/theme-uninstall.html">Uninstall a storefront theme</a></li>
+									<li class="level-2 "><a href="/guides/v2.2/frontend-dev-guide/themes/theme-workflow.html">Theme development workflow</a></li>
 
 									
 
@@ -371,7 +371,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.2/frontend-dev-guide/themes/theme-structure.html">Magento theme structure</a></li>
+									<li class="level-2 "><a href="/guides/v2.2/frontend-dev-guide/themes/theme-create.html">Create a new storefront theme</a></li>
 
 									
 
@@ -387,15 +387,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.2/frontend-dev-guide/themes/theme-images.html">Configure images properties for a theme</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.2/frontend-dev-guide/themes/theme-inherit.html">Theme inheritance</a></li>
+									<li class="level-2 "><a href="/guides/v2.2/frontend-dev-guide/themes/theme-uninstall.html">Uninstall a storefront theme</a></li>
 
 									
 
@@ -411,7 +403,31 @@
 
 									
 
+									<li class="level-2 "><a href="/guides/v2.2/frontend-dev-guide/themes/theme-structure.html">Magento theme structure</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/frontend-dev-guide/themes/theme-inherit.html">Theme inheritance</a></li>
+
+									
+
+								
+
+									
+
 									<li class="level-2 "><a href="/guides/v2.2/frontend-dev-guide/themes/favicon.html">Adding custom favicons</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/frontend-dev-guide/themes/theme-images.html">Configure images properties for a theme</a></li>
 
 									
 
@@ -658,7 +674,28 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.2/frontend-dev-guide/css-topics/custom_preprocess.html">Add custom CSS preprocessor (like Sass)</a></li>
+										<li class="level3Parent " id="custom-preprocess"><a href="#">Using custom CSS preprocessor</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child custom-preprocess " data-menunode="custom-preprocess"><a href="/guides/v2.2/frontend-dev-guide/css-topics/custom_preprocess.html">Add custom CSS preprocessor</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child custom-preprocess " data-menunode="custom-preprocess"><a href="/guides/v2.2/frontend-dev-guide/css-topics/gulp_sass.html">Use Sass and Gulp preprocessor</a>
+
 
 									
 
@@ -1232,7 +1269,8 @@ variable @variable-x is undefined in file /var/www/magento2/var/view_preprocesse
 
 <p>In client-side compilation mode, most of the stylesheet customizations display immediately after you reload a page in a browser.</p>
 
-<p><span id="css_exception">There are certain types of changes</span>, that require you to clear the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory and trigger the compilation and <a href="/guides/v2.2/architecture/view/static-process.html#publish-static-view-files" target="_blank">publication</a> processes anew.</p>
+<h5 id="css_exception">When you need to clean static view files</h5>
+<p>There are certain types of changes, that require you to clear the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory and trigger the compilation and <a href="/guides/v2.2/architecture/view/static-process.html#publish-static-view-files" target="_blank">publication</a> processes anew.</p>
 
 <p>This is required in the following cases:</p>
 <ul>

@@ -272,6 +272,14 @@
 
 							
 
+								<li class="q "><a href="/guides/v2.1/frontend-dev-guide/cache_for_frontdevs.html">Magento cache overview</a></li>
+
+							
+
+								<li class="q "><a href="/guides/v2.1/frontend-dev-guide/theme-best-practice.html">Theme development best practices</a></li>
+
+							
+
 						
 
 					
@@ -306,14 +314,6 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/frontend-dev-guide/themes/theme-create.html">Create a new storefront theme</a></li>
-
-									
-
-								
-
-									
-
 									<li class="level-2 "><a href="/guides/v2.1/frontend-dev-guide/themes/theme-install.html">Install a a third-party storefront theme</a></li>
 
 									
@@ -330,7 +330,23 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/frontend-dev-guide/themes/theme-structure.html">Magento theme structure</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/frontend-dev-guide/themes/admin_theme_create.html">Create an Admin theme</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/frontend-dev-guide/themes/admin_theme_apply.html">Apply an Admin theme</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/frontend-dev-guide/themes/theme-create.html">Create a new storefront theme</a></li>
 
 									
 
@@ -346,7 +362,15 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/frontend-dev-guide/themes/theme-images.html">Configure images properties for a theme</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/frontend-dev-guide/themes/debug-theme.html">Locate templates, layouts, and styles</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/frontend-dev-guide/themes/theme-structure.html">Magento theme structure</a></li>
 
 									
 
@@ -362,14 +386,6 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/frontend-dev-guide/themes/debug-theme.html">Locate templates, layouts, and styles</a></li>
-
-									
-
-								
-
-									
-
 									<li class="level-2 "><a href="/guides/v2.1/frontend-dev-guide/themes/favicon.html">Adding custom favicons</a></li>
 
 									
@@ -378,23 +394,15 @@
 
 									
 
+									<li class="level-2 "><a href="/guides/v2.1/frontend-dev-guide/themes/theme-images.html">Configure images properties for a theme</a></li>
+
+									
+
+								
+
+									
+
 									<li class="level-2 "><a href="/guides/v2.1/frontend-dev-guide/themes/product-video.html">Configure product video</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/frontend-dev-guide/themes/admin_theme_create.html">Create an Admin theme</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.1/frontend-dev-guide/themes/admin_theme_apply.html">Apply an Admin theme</a></li>
 
 									
 
@@ -633,7 +641,28 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/frontend-dev-guide/css-topics/custom_preprocess.html">Add custom CSS preprocessor (like Sass)</a></li>
+										<li class="level3Parent " id="custom-preprocess"><a href="#">Using custom CSS preprocessor</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child custom-preprocess " data-menunode="custom-preprocess"><a href="/guides/v2.1/frontend-dev-guide/css-topics/custom_preprocess.html">Add custom CSS preprocessor</a>
+
+
+									
+
+								
+
+									
+
+
+											<li class="level3Child custom-preprocess " data-menunode="custom-preprocess"><a href="/guides/v2.1/frontend-dev-guide/css-topics/gulp-sass.html">Use Sass and Gulp preprocessor</a>
+
 
 									
 
@@ -1233,6 +1262,24 @@ After you customize the content of any <code>.less</code> file, changes are appl
 <li>After you <a href="#css_exception">customize the root source files or move the files included to the root files</a>, run the <code>clean</code> and <code>exec</code> commands, and the browser page reloads automatically.</li>
 
 </ul>
+
+<h2 id="source_maps">CSS source maps</h2>
+
+<p>When using Grunt for styles preprocessing, you can enable the CSS source maps generation in your browser. It will make the theme styles debugging easier.</p>
+
+<p>For each theme, Magento compliles all theme <code>.less</code> files into two CSS files: <code>styles-m.css</code> and <code>styles-l.css</code>. So when you debug a theme, you browser only sees <code>styles-m.css</code> and it might be difficult to define which exactly <code>.css</code> or <code>.less</code> file requires corrections. For example:</p>
+
+<p><img src="/common/images/fdg/no-map.png" alt="node declaration autocomplete" width="610px" /></p>
+
+<p>CSS source maps solve this issue. They help to find the <code>.less</code> file, where the style is specified. For example:</p>
+
+<p><img src="/common/images/fdg/with-map.png" alt="node declaration autocomplete" width="610px" /></p>
+
+<p>CSS source maps are generated automatically when you compile CSS for your theme using the <code>grunt less: &lt;theme&gt;</code> command. To use them, you need to enable source maps displaying in your browser.</p>
+
+<p>The path to the CSS source maps configuration differs, depending on the browser.</p>
+
+<p>In Google Chrome, to enable source maps generation, go to <strong>Inspect</strong> &gt; <strong>Settings</strong> &gt; <strong>Preferences</strong> &gt; <strong>Enable CSS source maps</strong>.</p>
 
 		</div>
 		<!-- /.content-wrap -->
