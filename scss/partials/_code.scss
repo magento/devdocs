@@ -1,11 +1,10 @@
 code, pre {
-  background-color: $light-gray-color;
+  background-color: rgba(0,0,0,.05);
   font-family: Monaco, Menlo, Consolas, "Courier New", monospace;
-	font-size: 14px;
 }
 
 code {
-  padding: 2px 4px;
+  padding: 1px 5px;
 	margin: 0;
 	border-radius: 3px;
   word-wrap: break-word;
