@@ -178,6 +178,7 @@ Additions since 2.1 are marked with asterisks (*).
     POST   /V1/products/:sku/websites
     PUT    /V1/products/:sku/websites
     DELETE /V1/products/:sku/websites/:websiteId
+    GET    /V1/products-render-info 
 
 ### CatalogInventory
 
