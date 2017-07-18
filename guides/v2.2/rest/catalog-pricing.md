@@ -14,6 +14,8 @@ github_link: rest/catalog-pricing.md
 
 Magento provides REST endpoints that allow you to update multiple special prices, tier prices, base prices, or cost values with a single call.
 
+The calls that update special and tier prices mimic the options available on a product's **Advanced Pricing** screen in Admin. 
+
 ## Manage special prices
 
 The  `SpecialPriceStorageInterface` service provides the means to efficiently schedule special prices for one or more products in a store's catalog. When you use these calls, you do not provide detailed information about the product.
@@ -145,7 +147,7 @@ The following call returns the special price information for three SKU values.
 
 ### Delete a special price
 
-If any item has an invalid `price`, `store_id`, `sku` or dates, they will be marked as failed and excluded from delete list
+If any item to be deleted has an invalid `price`, `store_id`, `sku` or date, Magento marks the item as failed and excludes it from the delete list. Valid items are deleted as requested.
 
 **Sample Usage**
 
@@ -215,13 +217,13 @@ POST /V1/products/tier-prices-delete
 
 Name | Description | Format | Requirements
 --- | --- | --- | ---
-`price` | The discounted product price for the quantity purchased. | float | Required to set, update, or delete a tier price
+`price` | The discounted product price for the quantity purchased | float | Required to set, update, or delete a tier price
 `price_type` | Must be `fixed` (the set price) or `discount` (percent discount) | string | Required to set, update, or delete a tier price
 `website_id` | The website ID  to apply the tier price | integer | Required to set, update, or delete a tier price
 `sku` | The SKU of the product | string | Required to set, update, or delete a tier price
 `skus` | An array of SKU values that is specified when retrieving a list of tier prices | array | Required for retrievals
-`customer_group` |  A specific customer group that qualifies to receive the tier price discount. | string | Required to set, update, or delete a tier price
-`quantity` | The quantity that must be purchased to receive the tier price.  | integer | Required to set, update, or delete a tier price
+`customer_group` |  A specific customer group that qualifies to receive the tier price discount | string | Required to set, update, or delete a tier price
+`quantity` | The quantity that must be purchased to receive the tier price | integer | Required to set, update, or delete a tier price
 
 ### Set tier prices
 
@@ -397,7 +399,7 @@ You must specify each tier price that is to be deleted. You can delete multiple 
 
 ## Manage base prices
 
-A base price is the price of a product, before any discounts or extra costs (such as shipping or taxes) are applied  The  `BasePriceStorageInterface` service provides an efficient means to set base prices for one or more products without requiring detailed information about each product.
+A base price is the price of a product, before any discounts or extra costs (such as shipping or taxes) are applied.  The  `BasePriceStorageInterface` service provides an efficient means to set base prices for one or more products without requiring detailed information about each product.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 You cannot delete a base price. It can only be changed to another value (0 or greater).
@@ -416,7 +418,7 @@ Name | Description | Format | Requirements
 --- | --- | --- | ---
 `price` | The base price of the item | float | Required to set a base price
 `store_id` | The store ID  to apply the base price | integer | Required to set a base price
-`sku` | The SKU of the product | string | Required
+`sku` | The SKU of the product | string | Required to set a base price
 `skus` | An array of SKU values that is specified when retrieving a list of base prices | array | Required for retrievals
 
 ### Set base prices
@@ -427,10 +429,6 @@ The `POST /V1/products/base-price` call can set base prices for the following ty
 * Virtual
 * Downloadable
 * Bundle (fixed price type only)
-
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
-To set a base price for a bundled product, you must disable the product's Dynamic Price attribute.
-</div>
 
 The following example sets the base price for a simple and a downloadable product.
 
@@ -443,16 +441,16 @@ The following example sets the base price for a simple and a downloadable produc
 {% highlight json %}
 {
   "prices": [
-    {
-		"price": 12,
-		"store_id": 0,
-		"sku": "24-UG04"
-	},
-	{
-		"price": 22,
-		"store_id": 0,
-		"sku": "240-LV06"
-	}
+  {
+    "price": 12,
+    "store_id": 0,
+    "sku": "24-UG04"
+  },
+  {
+    "price": 22,
+    "store_id": 0,
+    "sku": "240-LV06"
+  }
   ]
 }
 {% endhighlight %}
@@ -483,16 +481,16 @@ The following example returns the base prices for a simple and a downloadable pr
 
 {% highlight json %}
 [
-    {
-        "price": 12,
-        "store_id": 0,
-        "sku": "24-UG04"
-    },
-    {
-        "price": 22,
-        "store_id": 0,
-        "sku": "240-LV06"
-    }
+  {
+    "price": 12,
+    "store_id": 0,
+    "sku": "24-UG04"
+  },
+  {
+    "price": 22,
+    "store_id": 0,
+    "sku": "240-LV06"
+  }
 ]
 {% endhighlight %}
 
@@ -512,7 +510,7 @@ POST /V1/products/cost-delete
 
 Name | Description | Format | Requirements
 --- | --- | --- | ---
-`cost` | The amount the item costs. | float | Required to set or delete a cost value
+`cost` | The amount the item costs | float | Required to set or delete a cost value
 `store_id` | The store ID  to apply the cost value | integer | Required to set or delete a cost value
 `sku` | The SKU of the product | string | Required to set or delete a cost value
 `skus` | An array of SKU values that is specified when retrieving a list of cost values | array | Required for retrievals
@@ -537,15 +535,15 @@ The following example sets the cost value for a simple and a downloadable produc
 {
   "prices": [
     {
-		"cost": 18,
-		"store_id": 0,
-		"sku": "24-WB03"
-	},
-	{
-		"cost": 2,
-		"store_id": 0,
-		"sku": "240-LV09"
-	}
+      "cost": 18,
+      "store_id": 0,
+      "sku": "24-WB03"
+    },
+    {
+      "cost": 2,
+      "store_id": 0,
+      "sku": "240-LV09"
+    }
   ]
 }
 {% endhighlight %}
@@ -576,16 +574,16 @@ The following example returns the cost values for a simple and a downloadable pr
 
 {% highlight json %}
 [
-    {
-        "cost": 18,
-        "store_id": 0,
-        "sku": "24-WB03"
-    },
-    {
-        "cost": 2,
-        "store_id": 0,
-        "sku": "240-LV09"
-    }
+  {
+    "cost": 18,
+    "store_id": 0,
+    "sku": "24-WB03"
+  },
+  {
+    "cost": 2,
+    "store_id": 0,
+    "sku": "240-LV09"
+  }
 ]
 {% endhighlight %}
 
