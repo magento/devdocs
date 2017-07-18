@@ -12,12 +12,10 @@ github_link: cloud/live/paypal-onboarding.md
 
 Magento ECE provides an on-boarding tool to configure PayPal Express Checkout accounts directly through the Magento Admin panel. To better support going live and testing PayPal payment methods, you can enable and configure your PayPal Express Checkout account for sandbox or production accounts.
 
-You must configure either the sandbox or production account in every environment (Integration, Staging, and Production) using one of the following options:
+You can configure either the sandbox or production account in every environment:
 
-* __Configure per environment:__ Every environment supports configuring your PayPal Express account through the Magento Admin console: Integration, Staging, and Production. With this method, you do not need to deploy code and data changes for PayPal.
-* __Deploy code and data across all environments:__ You can configure PayPal Express Checkout through the Magento Admin console in the Integration environment then deploy the configurations, code, and data across to Staging and Production.
-
-  If you use this deployment method, you *must push code and data*. If you do not want to push data from Integration to Staging, configure PayPal per environment.
+* For Integration and Staging environments, we recommend setting Sandbox credentials.
+* For your Production environment, you can set Sandbox credentials for initial testing, then replace with live production credentials for a launched store.
 
 ## PayPal account
 
