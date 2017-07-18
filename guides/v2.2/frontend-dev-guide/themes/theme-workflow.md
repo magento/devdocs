@@ -91,14 +91,13 @@ For details, see [Apply and configure a storefront theme]({{page.baseurl}}fronte
 See [CSS preprocessing#client-side compilation mode]({{page.baseurl}}frontend-dev-guide/css-topics/css-preprocess.html#client-side)
 </div>
 
-<div class="flow-nav top-bottom"></div>
 </div>
 <div class="flow-column">
 <div class="flow-block" markdown="1">
 #### Server-side compilation (default)
 See [CSS preprocessing#server-side compilation mode]({{page.baseurl}}frontend-dev-guide/css-topics/css-preprocess.html#server-side)
 </div>
-<div class="flow-nav top-bottom"></div>
+
 </div>
 
 <div class="flow-column">
@@ -106,7 +105,7 @@ See [CSS preprocessing#server-side compilation mode]({{page.baseurl}}frontend-de
 #### Custom preprocessor
 See [Using custom CSS preprocessor]({{page.baseurl}}frontend-dev-guide/css-topics/custom-preprocess-parent.html)
 </div>
-<div class="flow-nav top-bottom"></div>
+
 </div>
 
 

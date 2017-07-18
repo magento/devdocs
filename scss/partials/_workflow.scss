@@ -7,7 +7,7 @@ $flow-block-border-color: #D7D7D7;
 $flow-block-padding: 1em;
 $flow-block-max-width: 320px;
 
-$flow-arrow-size: 20px;
+$flow-arrow-size: 16px;
 $flow-arrow-color: #979797;
 $flow-arrow-border: 2px dashed $flow-arrow-color;
 
@@ -33,6 +33,7 @@ $flow-arrow-border: 2px dashed $flow-arrow-color;
   align-items: center;
   justify-content: center;
   text-align: center;
+  min-width: 160px;
 
   .flow-block {
     margin-left: $flow-column-gutter/2;
@@ -171,7 +172,7 @@ $flow-arrow-border: 2px dashed $flow-arrow-color;
     display: block;
     width: 1px;
     height: 1.5em;
-    border: $flow-arrow-border;
+    border-right: $flow-arrow-border;
     margin-left: -2px;
     left: 50%;
     bottom: $flow-arrow-size/2;
@@ -183,7 +184,7 @@ $flow-arrow-border: 2px dashed $flow-arrow-color;
     width: 50%;
     left: 50%;
     height: 1px;
-    border: 2px dashed $flow-arrow-color;
+    border-top: $flow-arrow-border;
     bottom: 0;
   }
 
@@ -193,7 +194,7 @@ $flow-arrow-border: 2px dashed $flow-arrow-color;
     width: 50%;
     left: 0;
     height: 1px;
-    border: 2px dashed $flow-arrow-color;
+    border-top: $flow-arrow-border;
     bottom: 0;
   }
 
@@ -203,7 +204,7 @@ $flow-arrow-border: 2px dashed $flow-arrow-color;
     width: 100%;
     left: 0;
     height: 1px;
-    border: 2px dashed $flow-arrow-color;
+    border-top: $flow-arrow-border;
     bottom: 0;
   }
 
@@ -214,7 +215,7 @@ $flow-arrow-border: 2px dashed $flow-arrow-color;
     height: 100%;
     margin-left: -2px;
     left: 50%;
-    border: 2px dashed $flow-arrow-color;
+    border-top: $flow-arrow-border;
     bottom: 0;
   }
 
@@ -234,8 +235,8 @@ $flow-arrow-border: 2px dashed $flow-arrow-color;
     display: block;
     width: 1px;
     height: 1.5em;
-    border: $flow-arrow-border;
-    margin-left: -2px;
+    border-right: $flow-arrow-border;
+    margin-left: -1px;
     left: 50%;
     bottom: $flow-arrow-size/2;
   }
