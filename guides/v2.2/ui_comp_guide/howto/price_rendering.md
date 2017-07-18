@@ -11,18 +11,18 @@ github_link: ui_comp_guide/howto/price_rendering.md
 
 ## Magento price classification
 
-This article is about product pricing rendering. It discover how to render price for any product listing (category, widget, etc...) with help of Ui Component.
+This article is about product pricing rendering. It discover how to render price for any product listing (category, widget, etc) with help of Ui Component.
 Also article is about creating parent-child relationships between ui components and creating ui components dynamicly on frontend side.
 Mechanism of prices in Magento is a bit complicated. This is due to high variety of 
 prices, taxes and product types, Magento can operate with. Here is the short list of Magento prices:
 
 #### Short List of Magento Prices
-- Special Price. 
-- Tier Price. 
-- Grouped Price.
-- Minimum price of composite products
-- Price range of composite products
-- Manufacturer price (MSRP)
+1. Special Price. 
+2. Tier Price. 
+3. Grouped Price.
+4. Minimum price of composite products
+5. Price range of composite products
+6. Manufacturer price (MSRP)
 
 Those prices are represented with a lot of price types, that are used in Magento internally (e.g. final price, minimum price, maximum price, regular price.) and are apart from, prices listed before,
 the code representation of the prices we have. For instance, Special Price is represented by final price type in the code.
@@ -132,78 +132,77 @@ Adjustments should be applied only to one price. If we have special price, it sh
 </listing>
 {%endhighlight%}
 
-The main point is that we aggregate prices in price-box component, and then try to create prices for specific kind of product.
+The main point is that we aggregate prices in `price-box` component, and then try to create prices for specific kind of product.
 Note that in case of listing we can have few different types of products. And we should handle this.
 All prices will be created, but on template level we can ban some prices, if they do not match expectations:
 For example, if product do not have special price, we can just ignore special price.
 
-Lets see at the code of price-box component:
+Lets see at the code of `price-box` component:
 
 **Price box component:**
 
 {%highlight javascript%}
-        /**
-         * Retrieve array of prices, that should be rendered for specific product
-         *
-         * @param {Array} row
-         * @return {Array}
-         */
-        getPrices: function (row) {
-            var elems = this.elems() ? this.elems() : ko.getObservable(this, 'elems'),
-                result;
-            this.initPrices(row);    
-            result = _.filter(elems, function (elem) {
-                return elem.productType === row.productType;
-            });
+/**
+ * Retrieve array of prices, that should be rendered for specific product
+ *
+ * @param {Array} row
+ * @return {Array}
+ */
+getPrices: function (row) {
+    var elems = this.elems() ? this.elems() : ko.getObservable(this, 'elems'),
+        result;
+    this.initPrices(row);    
+    result = _.filter(elems, function (elem) {
+        return elem.productType === row.productType;
+    });
 
-            return result;
-        },
+    return result;
+},
 
-        /**
-         * Init dynamic price components
-         *
-         * @param {Array} row
-         * @returns {void}
-         */
-        initPrices: function (row) {
-            var prices = this.renders.prices;
-            _.sortBy(prices, this._comparePrices);
-    
-            _.each(prices, function (priceData) {
-                if (!priceData.component) {
-                    return;
-                }
-    
-                priceData.parent = this.name;
-                priceData.provider = this.provider;
-                priceData = utils.template(priceData, this);//convert to format compatible with uiLayout
-                prices.push(priceData);
-            }, this);
-    
-            layout(prices); //layout is service (abstract factory), which create tree of Ui Components from JSON
-        },
-        
-        
-        /**
-         * Sort callback to compare prices by sort order
-         *
-         * @param {Number} firstPrice
-         * @param {Number} secondPrice
-         * @returns {Number}
-         * @private
-         */
-        _comparePrices: function (firstPrice, secondPrice) {
-            if (firstPrice.sortOrder < secondPrice.sortOrder) {
-                return -1;
-            }
+/**
+ * Init dynamic price components
+ *
+ * @param {Array} row
+ * @returns {void}
+ */
+initPrices: function (row) {
+    var prices = this.renders.prices;
+    _.sortBy(prices, this._comparePrices);
 
-            if (firstPrice.sortOrder > secondPrice.sortOrder) {
-                return 1;
-            }
+    _.each(prices, function (priceData) {
+        if (!priceData.component) {
+            return;
+        }
 
-            return 0;
-        },
+        priceData.parent = this.name;
+        priceData.provider = this.provider;
+        priceData = utils.template(priceData, this);//convert to format compatible with uiLayout
+        prices.push(priceData);
+    }, this);
+
+    layout(prices); //layout is service (abstract factory), which create tree of Ui Components from JSON
+},
+
+
+/**
+ * Sort callback to compare prices by sort order
+ *
+ * @param {Number} firstPrice
+ * @param {Number} secondPrice
+ * @returns {Number}
+ * @private
+ */
+_comparePrices: function (firstPrice, secondPrice) {
+    if (firstPrice.sortOrder < secondPrice.sortOrder) {
+        return -1;
     }
+
+    if (firstPrice.sortOrder > secondPrice.sortOrder) {
+        return 1;
+    }
+
+    return 0;
+}
 {%endhighlight%}
 
 Obviously we also have price-box template, which call ``getPrices()`` method.
@@ -213,59 +212,59 @@ Each price has its own template and common component, lets see the common compon
 **Price component:**
 
 {%highlight javascript%}
-    /**
-     * Retrieve specific template
-     *
-     * @returns {String}
-     */
-    getBody: function () {
-        return this.bodyTmpl;
-    },
-    
-    /**
-     * Check if product has special price.
-     *
-     * @param {Object} row
-     * @return {HTMLElement} special price html
-     */
-    hasSpecialPrice: function (row) {
-        return row['price_info']['regular_price'] > row['price_info']['final_price'];
-    },
+/**
+ * Retrieve specific template
+ *
+ * @returns {String}
+ */
+getBody: function () {
+    return this.bodyTmpl;
+},
 
-    /**
-     * Get product regular price.
-     *
-     * @param {Object} row
-     * @return {HTMLElement} regular price html
-     */
-    getRegularPrice: function (row) {
-        return row['price_info']['formatted']['regular_price'];
-    },
-    
-    /**
-     * Get product final price.
-     *
-     * @param {Object} row
-     * @return {HTMLElement} final price html
-     */
-    getPrice: function (row) {
-        return row['price_info']['formatted']['final_price'];
-    },
-    
-    /**
-     * Get all price adjustments.
-     *
-     * @returns {Object}
-     */
-    getAdjustments: function () {
-        var adjustments = this.elems();
+/**
+ * Check if product has special price.
+ *
+ * @param {Object} row
+ * @return {HTMLElement} special price html
+ */
+hasSpecialPrice: function (row) {
+    return row['price_info']['regular_price'] > row['price_info']['final_price'];
+},
 
-        _.each(adjustments, function (adjustment) {
-            adjustment.source = this.source;
-        }, this);
+/**
+ * Get product regular price.
+ *
+ * @param {Object} row
+ * @return {HTMLElement} regular price html
+ */
+getRegularPrice: function (row) {
+    return row['price_info']['formatted']['regular_price'];
+},
 
-        return adjustments;
-    }
+/**
+ * Get product final price.
+ *
+ * @param {Object} row
+ * @return {HTMLElement} final price html
+ */
+getPrice: function (row) {
+    return row['price_info']['formatted']['final_price'];
+},
+
+/**
+ * Get all price adjustments.
+ *
+ * @returns {Object}
+ */
+getAdjustments: function () {
+    var adjustments = this.elems();
+
+    _.each(adjustments, function (adjustment) {
+        adjustment.source = this.source;
+    }, this);
+
+    return adjustments;
+}
 {%endhighlight%}
 
 How template it looks like?
@@ -273,26 +272,26 @@ How template it looks like?
 **Price template:**
 
 {%highlight html%}
-    <if args="isSalable($row()) && hasSpecialPrice($row())">
-        <span class="special-price">
-            <span class="price-container">
-                <span if="label"
-                      class="price-label"
-                      text="label"/>
-    
-                <span class="price-wrapper"
-                      css="priceWrapperCssClasses"
-                      attr="priceWrapperAttr"
-                      data-price-amount=""
-                      data-price-type="finalPrice"
-                      html="getPrice($row())"/>
-    
-                <each args="data: getAdjustments(), as: '$adj'">
-                    <render args="$adj.getBody()"/>
-                </each>
-            </span>
+<if args="isSalable($row()) && hasSpecialPrice($row())">
+    <span class="special-price">
+        <span class="price-container">
+            <span if="label"
+                  class="price-label"
+                  text="label"/>
+
+            <span class="price-wrapper"
+                  css="priceWrapperCssClasses"
+                  attr="priceWrapperAttr"
+                  data-price-amount=""
+                  data-price-type="finalPrice"
+                  html="getPrice($row())"/>
+
+            <each args="data: getAdjustments(), as: '$adj'">
+                <render args="$adj.getBody()"/>
+            </each>
         </span>
-    </if>
+    </span>
+</if>
 {%endhighlight%}
 
 So template check whether special price exists, and if yes, it loop through all adjustments that belongs to this price (You can configure them in xml, mentioned above).
@@ -300,15 +299,15 @@ Ordinarily in your adjustment template you have access to row data and can fetch
 
 **Tax template**:
 {%highlight html%}
-    <if args="displayBothPrices()">
-        <span class="price-wrapper price-excluding-tax"
-              attr="'data-label': $t('Excl. Tax')"
-              data-price-amount=""
-              data-price-type="basePrice"
-              html="getTax($row())"><!-- You can implement self::getTax function how you want -->
-        </span>
-    </if>
+<if args="displayBothPrices()">
+    <span class="price-wrapper price-excluding-tax"
+          attr="'data-label': $t('Excl. Tax')"
+          data-price-amount=""
+          data-price-type="basePrice"
+          html="getTax($row())"><!-- You can implement self::getTax function how you want -->
+    </span>
+</if>
 {%endhighlight%}
 
 Actually, Magento has example of product prices rendering. So it is acceptable, just to reuse them in your own ui Component. 
-Look into: **widget_recently_viewed.xml** and **widget_recently_compared.xml** ui components to find how it works and to reuse price rendering.
+Look into: `widget_recently_viewed.xml` and `widget_recently_compared.xml` ui components to find how it works and to reuse price rendering.
