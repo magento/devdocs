@@ -2,30 +2,57 @@
 layout: default
 group: cloud
 subgroup: 080_setup
-title: Overview of a Magento workspace
-menu_title: Overview of a Magento workspace
+title: Set up a project and dev workspace
+menu_title: Set up a project and dev workspace
 menu_order: 51
-menu_node: 
+menu_node:
 level3_menu_node: level3child
 level3_subgroup: workspace
 version: 2.0
 github_link: cloud/before/before-workspace.md
 ---
 
-The following sections discuss your options for setting up a Magento Enterprise Cloud Edition project.
+To develop, deploy, and test Magento Magento Enterprise Cloud Edition (ECE) and your custom code, extensions, and configurations, create a  project and setup your local workspace. The project is a Git repository of code managed in GitHub, with branches you develop and merge to the master for deployment across your cloud environments. A local workspace provides a system to clone branches from the master, develop code, and add extensions. This code is pushed for active testing in an Integration environment, merged to the master branch, then deployed to Staging and finally Production.
 
-We assume you'll install the Magento software so you can use the command line and the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} on your laptop. That means you must set up the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %} on your laptop so files and directories you created are owned by that user.
+This section walks through the steps for first time merchants with Magento, Magento SIs, and existing Mageneto merchants moving to the cloud. If you have already completed some of these steps, make sure to review the expected results to continue to the next. Some configurations and workflows differ for Magento Enterprise Cloud Edition than a typical Enterprise Edition installation.
 
-To be able to manage your projects, environments, and services, you must set up the Magento Enterprise Cloud Edition command-line interface (CLI) and Secure Shell (SSH). These tools enable you to perform tasks like:
+## Magento specific tools
 
-*	Work on a local branch
-*	Branch and merge in your project
-*	Push changes to the parent branch
-*	Pull changes from the parent branch
+When working on your local, you will be accessing the Magento CLI for issuing commands and the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}. We recommend specific tools for issuing commands.
 
-This guide assumes you're working on a UNIX system or in a UNIX shell environment. On Windows, you can use a UNIX environment like Cygwin or you can use Putty. The tool you use is up to you.
+You need to set up the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %} on your local so files and directories you created are owned by that user. For an overview of the file system owner, see [Overview of ownership and permissions]({{ page.baseurl }}install-gde/prereq/file-sys-perms-over.html)
+
+## Recommended tools
+This guide assumes you're working on a UNIX system or in a UNIX shell environment. Feel free to use any CLI tools of choice for issuing commands. For Windows users, we recommend a UNIX environment like [Cygwin](https://www.cygwin.com/){:target="_blank"}, [Putty](http://www.putty.org/), or Git Bash.
+
+For development on your local, use any development environment or tools easiest to use. For recommendations, many Magento developers use tools including [WebStorm](https://www.jetbrains.com/webstorm/), [PHPStorm](https://www.jetbrains.com/phpstorm/), and Atom.
+
+Developing code for Magento ECE requires working in Git branches. Your source code repositores will be hosted through GitHub. Not everyone remembers Git commands with ease. If you want a Git client, use any client of your choice. Some developers use clients including [GitKraken](https://www.gitkraken.com/) and [SmartGit](https://www.syntevo.com/smartgit/).
+
+## Prerequisites
+
+You need a fully set up Magento Enterprise Cloud Edition account to begin developing and launch your store on the Magento cloud. Have the following prepared to complete your initial workspace and project setup:
+
+ * Magento ECE account with an added user account (no need to have a project created yet)
+ * Magento authentication keys
+
+## Get started
+You should be ready to go! The following sections provide a link to the previous step, instructions, and a link to the next step to start developing:
+
+* Install all prerequisite software and tools on your local workspace
+* Set up the Magento ECE account and initial project
+* Install the Magento CLI
+* Set up SSH keys
+* Configure the Magento file system owner
+* Clone the project, create a branch
+* Set up Magento authentication keys (encryption keys)
+* Install Magento
+* Complete configurations and file/folder permissions
+* Verify install, branches, and get to coding!
+
 
 #### Next step
-[Step 1, Set up an account]({{ page.baseurl }}cloud/before/before-workspace-cloud-account.html)
+[Step 1, Set up an account and create a project]({{ page.baseurl }}cloud/before/before-workspace-cloud-account.html)
 
-
+#### Related information
+[Deployment process]({{ page.baseurl }}cloud/reference/discover-deploy.html)

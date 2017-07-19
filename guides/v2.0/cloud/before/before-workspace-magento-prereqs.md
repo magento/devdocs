@@ -12,10 +12,12 @@ version: 2.0
 github_link: cloud/before/before-workspace-magento-prereqs.md
 ---
 
-Local installations of Magento require the following software installed.
+Previous step: [Set up a project and dev workspace]({{ page.baseurl }}cloud/before/before-workspace.html)
+
+Install the following software package and tools on your local to develop and interact with Magento code. If you have these packages installed, check for any recommendations or notes and continue to the next step.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-Magento documentation provides installation instructions for installing software on CentOS or Ubuntu only. For information on installing software on Windows or MacOS, consult a community resource.
+Magento documentation provides installation instructions for installing software on CentOS or Ubuntu only. For installation information on Windows or MacOS, consult a community resource.
 </div>
 
 * [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git){:target="_blank"} - Provides code branching and management for accessing Magento Enterprise Cloud Edition and your code respositories. Use Git command-line commands or applications of your choice to work with Git.
