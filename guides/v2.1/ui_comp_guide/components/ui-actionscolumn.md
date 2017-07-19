@@ -71,7 +71,7 @@ ActionsColumn-specific configuration:
   <tr>
     <td><code>callback</code></td>
     <td>Custom action's handler.</td>
-    <td><a href="{{page.baseurl}}ui_comp_guide/components/listing/ui-column.md#column_action">ColumnAction</a> | Array &lt;ColumnAction&gt;  </td>
+    <td>ColumnAction | Array &lt;ColumnAction&gt;  </td>
     <td>Optional</td>
   </tr>
   <tr>
