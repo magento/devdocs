@@ -6,7 +6,7 @@ title: Component Status
 menu_title: Component Status
 menu_order: 6000
 version: 2.2
-github_link: guides/v2.2/release-notes/pre-release/component-status.md
+github_link: release-notes/release-candidate/component-status.md
 ---
 
 **Last Updated:** July 14, 2017
