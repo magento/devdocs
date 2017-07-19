@@ -16,7 +16,7 @@ Constructor: [app/code/Magento/Ui/view/base/web/js/grid/columns/actions.js]({{si
 
 ## Configuration options
 
-Extends all [Column]({{page.baseurl}}ui_comp_guide/components/listing/ui-column.md) configuration.
+Extends all [Column]({{page.baseurl}}ui_comp_guide/components/listing/ui-column.html) configuration.
 
 ActionsColumn-specific configuration:
 
