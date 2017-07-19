@@ -33,7 +33,7 @@ If you would like to help us by writing any of the topics that we have not yet g
 			- [`uiElement` as genaral component class]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uielement_concept.html)
 			- [`uiCollection` as general component for collections]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uicollection_concept.html)
 			- [`uiLayout`  as a built-in initializer]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uilayout_concept.html)
-			- `uiRegistry` as a in memory storage
+			- [`uiRegistry`  as a in memory storage]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uiregistry.html)			
 			- Linking properties of UI components
 		- [Require JS with UI components]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_requirejs_concept.html)
 	- Templates customization rules & techniques (using Knockout.js)
