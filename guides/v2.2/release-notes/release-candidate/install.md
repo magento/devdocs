@@ -8,7 +8,7 @@ menu_order: 2000
 level3_menu_node:
 level3_subgroup:
 version: 2.2
-github_link: release-candidate/install.md
+github_link: release-notes/release-candidate/install.md
 ---
 
 ## Installation

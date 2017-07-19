@@ -5,16 +5,16 @@ subgroup: 2.2.0 Release Candidate
 title: Submit Comments on the Release Candidate
 menu_title: Submit Comments on the Release Candidate
 menu_order: 3000
-level3_menu_node: 
-level3_subgroup: 
+level3_menu_node:
+level3_subgroup:
 version: 2.2
-github_link: release-candidate/submit-issues.md
+github_link: release-notes/release-candidate/submit-issues.md
 ---
 
 
 
 
-Your input is critical to the success of all editions of Magento 2.2.0! All feedback should be submitted [here](https://github.com/magento/magento2/issues). 
+Your input is critical to the success of all editions of Magento 2.2.0! All feedback should be submitted [here](https://github.com/magento/magento2/issues).
 
 
 
@@ -52,7 +52,7 @@ Example:
 
 #### Steps to reproduce
 
-The accurate description of the steps you took that lead to the issue report is potentially the most helpful information in your report.  Magento developers need this information to reproduce the issue and resolve it. Precisely describe each step you have taken to reproduce the issue.  Even minor differences can be crucial, so try to include as much information as possible. 
+The accurate description of the steps you took that lead to the issue report is potentially the most helpful information in your report.  Magento developers need this information to reproduce the issue and resolve it. Precisely describe each step you have taken to reproduce the issue.  Even minor differences can be crucial, so try to include as much information as possible.
 
 Example:
 
@@ -80,15 +80,8 @@ Actual result: The **Place Order** button is not visible, and you cannot place t
 
 You can assist Magento developers by providing any artifacts that you feel are potentially helpful, including browser logs and screenshots.
 
- 
+
 
 ### Suggestions for our documentation?
 
-We welcome feedback on the Merchant and Developer documentation. In particular, you can help us improve our documentation by identifying topics that are incomplete or missing.  
-
-
-
-
-
-
-
+We welcome feedback on the Merchant and Developer documentation. In particular, you can help us improve our documentation by identifying topics that are incomplete or missing.
