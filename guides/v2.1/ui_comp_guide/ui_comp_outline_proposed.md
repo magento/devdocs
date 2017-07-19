@@ -33,7 +33,7 @@ If you would like to help us by writing any of the topics that we have not yet g
 			- [`uiElement` as genaral component class]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uielement_concept.html)
 			- [`uiCollection` as general component for collections]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uicollection_concept.html)
 			- [`uiLayout`  as a built-in initializer]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uilayout_concept.html)
-			- [`uiRegistry`  as a in memory storage]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uiregistry.html)			
+			- [`uiRegistry`  as a in memory storage]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_uiregistry.html)
 			- Linking properties of UI components
 		- [Require JS with UI components]({{page.baseurl}}ui_comp_guide/concepts/ui_comp_requirejs_concept.html)
 	- Templates customization rules & techniques (using Knockout.js)
@@ -44,7 +44,7 @@ If you would like to help us by writing any of the topics that we have not yet g
 		- Custom bindings
 			- `afterRender` – allows you to call a method (piece of code that exist in context) after the  rendering of the current DOM node finished
 			- `autoselect` – when applied to `<input>` does text selection when `<input>` gets focus. (E.g.: via click)
-			- `bindHtml` – same as _html_ binding. But does useful fro Magento app additional staff: applies bindings and process [data-mage-init]({{page.baseurl}}/javascript-dev-guide/javascript/js_init.html#data_mage_init) declarations.
+			- `bindHtml` – similar to _html_ binding, but also applies bindings and process [data-mage-init]({{page.baseurl}}/javascript-dev-guide/javascript/js_init.html#data_mage_init) declarations.
 			- `collapsible` – allows you to build collapsible panels
 			- `datepicker` – only for inputs. Adds datepicker control via calendar.js widget.
 			- `fadeVisible` – show/hide an element via jQuery fadeIn/fadeout functions
