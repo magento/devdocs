@@ -18,7 +18,7 @@ This section walks through the steps for first time merchants with Magento, Mage
 
 ## Magento specific tools
 
-When working on your local, you will be accessing the Magento CLI for issuing commands and the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}. We recommend specific tools for issuing commands.
+When working on your local, you will be accessing the [Magento ECE CLI]({{ page.baseurl }}cloud/reference/cli-ref-topic.html) for issuing commands and the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}. We recommend specific tools for issuing commands.
 
 You need to set up the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %} on your local so files and directories you created are owned by that user. For an overview of the file system owner, see [Overview of ownership and permissions]({{ page.baseurl }}install-gde/prereq/file-sys-perms-over.html)
 
@@ -40,9 +40,9 @@ You need a fully set up Magento Enterprise Cloud Edition account to begin develo
 You should be ready to go! The following sections provide a link to the previous step, instructions, and a link to the next step to start developing:
 
 * Install all prerequisite software and tools on your local workspace
-* Set up the Magento ECE account and initial project
-* Install the Magento CLI
-* Set up SSH keys
+* Install Magento ECE CLI
+* Set up the Magento ECE account and initial project (generates your master branch)
+* Set up SSH keys 
 * Configure the Magento file system owner
 * Clone the project, create a branch
 * Set up Magento authentication keys (encryption keys)
