@@ -2,23 +2,36 @@
 layout: default
 group: cloud
 subgroup: 080_setup
-title: First-time setup (developers)
-menu_title: First-time setup (developers)
+title: First-time development setup
+menu_title: First-time development setup
 menu_order: 1
 menu_node: parent
 version: 2.0
 github_link: cloud/access-acct/first-time-setup.md
 ---
 
-![This guide applies to Enterprise Cloud Edition only]({{ site.baseurl }}common/images/ee-only_large.png) 
+To create an account and start developing Magento, you need a configured developer workspace, base Magento ECE code, and knowledge of the deployment workflow. These instructions guide through the entire process to create a development workspace on your local.
 
-These topics are intended for developers who set up the Magento Enterprise Cloud Edition and customize Magento application code. To participate in a Magento Enterprise Cloud edition *project*, you must be invited by the owner of the account.
+## Project user account {#account}
+Depending on the project owner, you may need to be invited by the owner to the project. This account gives you participation to the project and connects your local, credentials, and access to your company's Magento Enterprise Cloud Edition account. The account includes all source code and deployment environments.
 
-After you receive an invitation, you can complete the following tasks:
+After you receive an invitation, you can complete tasks to create your local, pull code, and deploy your store.
 
-*	[Set up your workspace]({{ page.baseurl }}cloud/before/before-workspace.html)
-*	Deploy the Magento software to the cloud:
+## Helpful knowledge {#knowledge}
+We highly recommend having experience with the following technologies and methodologies:
 
-	*	[Create a sample Magento project from a template]({{ page.baseurl }}cloud/access-acct/first-time-setup_template.html)
-	*	[Import an existing Magento project]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-first-steps.html)
-*	[Step 1, Get started setting up an environment]({{ page.baseurl }}cloud/before/before-setup-env-1_get-start.html)
+* Magento [technology stack]({{ page.baseurl }}architecture/tech-stack.html)
+* [Git](https://git-scm.com/) for repository and code management, [branching methodologies](https://git-scm.com/book/en/v2/Git-Branching-Branching-Workflows), and working with Magento Git code
+* [GitHub](https://github.com/) for managing your code and accessing Magento repos
+* [Fastly](https://www.fastly.com/) for CDN and caching, used in Staging and Production
+* [Galara Cluster](http://galeracluster.com/) for databases, used in Staging and Production (with triple reduncy failover in Production)
+
+## Create a local workspace
+For development, you need to install and configure a local workspace. To develop Magento code, you write code in Git branches from the Magento project master repository on a local system. You need to install a series of applications, configure user accounts and SSH credentials, prior to coding in branches.
+
+For complete steps, see [Set up a project and dev workspace]({{ page.baseurl }}cloud/before/before-workspace.html).
+
+#### Related topics
+*	[Set up a project and dev workspace]({{ page.baseurl }}cloud/before/before-workspace.html)
+* [Set up an account and project]({{ page.baseurl }}cloud/before/before-workspace-cloud-account.html)
+* [Install Magento prerequisites]({{ page.baseurl }}cloud/before/before-workspace-magento-prereqs.html)

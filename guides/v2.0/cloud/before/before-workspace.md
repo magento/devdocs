@@ -4,10 +4,8 @@ group: cloud
 subgroup: 080_setup
 title: Set up a project and dev workspace
 menu_title: Set up a project and dev workspace
-menu_order: 51
+menu_order: 5
 menu_node:
-level3_menu_node: level3child
-level3_subgroup: workspace
 version: 2.0
 github_link: cloud/before/before-workspace.md
 ---
@@ -39,10 +37,10 @@ You need a fully set up Magento Enterprise Cloud Edition account to begin develo
 ## Get started
 You should be ready to go! The following sections provide a link to the previous step, instructions, and a link to the next step to start developing:
 
+* Set up the Magento ECE account and initial project (generates your master branch)
 * Install all prerequisite software and tools on your local workspace
 * Install Magento ECE CLI
-* Set up the Magento ECE account and initial project (generates your master branch)
-* Set up SSH keys 
+* Set up SSH keys
 * Configure the Magento file system owner
 * Clone the project, create a branch
 * Set up Magento authentication keys (encryption keys)
@@ -52,7 +50,7 @@ You should be ready to go! The following sections provide a link to the previous
 
 
 #### Next step
-[Step 1, Set up an account and create a project]({{ page.baseurl }}cloud/before/before-workspace-cloud-account.html)
+[Set up an account and create a project]({{ page.baseurl }}cloud/before/before-workspace-cloud-account.html)
 
-#### Related information
+#### Related topics
 [Deployment process]({{ page.baseurl }}cloud/reference/discover-deploy.html)
