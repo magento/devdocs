@@ -2,8 +2,8 @@
 layout: default
 group: cloud
 subgroup: 100_project
-title: Backup and restore (snapshot)
-menu_title: Backup and restore (snapshot)
+title: Snapshots and Backup management
+menu_title: Snapshots and Backup management
 menu_order: 25
 menu_node:
 version: 2.0
@@ -16,7 +16,7 @@ A *snapshot* is a complete backup of an environment. It includes all
 persistent data from all running services (for example, your MySQL database, Redis, and so on) and any files stored on the mounted volumes.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-If you want to rollback to previous code or added extensions in an environment, restoring a snapshot is not the recommended method. Every deploy will push the master branch (code and extensions) to the target environment. You need to remove the code from the branch prior to building and deploying. For details, see the [Deployment Process]({{page.baseurl}}cloud/reference/discover-deploy.html).
+If you want to rollback to previous code or remove added extensions in an environment, restoring a snapshot is not the recommended method. See [Rollbacks to remove code](#rollback-code).
 </div>
 
 You can *restore* a snapshot up to 14 days after the snapshot was created.
@@ -26,7 +26,7 @@ We provide two methods for creating and managing snapshots:
 * Through the Magento Web Interface
 * Through Magento CLI commands
 
-## Create a snapshot
+## Create a snapshot {#create-snapshot}
 To create an environment snapshot using the Magento Web Interface:
 
 1.	[Log in to your project]({{page.baseurl}}cloud/project/project-webint-basic.html#project-login).
@@ -49,7 +49,7 @@ To create an environment snapshot using the Magento CLI:
 	For a full list of options, enter `magento-cloud snapshot:create --help`.
 3. Use the `magento-cloud snapshots` command so see the most recent snapshots. For a full list, enter `magento-cloud snapshot:list`.
 
-## Restore a snapshot
+## Restore a snapshot {#restore-snapshot}
 To restore an environment's snapshot using the Magento Web Interface:
 
 1.	[Log in to your project]({{page.baseurl}}cloud/project/project-webint-basic.html#project-login).
@@ -80,6 +80,12 @@ To restore an environment snapshot using the Magento CLI:
 
 	For a full list of options, enter `magento-cloud snapshot:restore --help`.
 
+## Rollbacks to remove code {#rollback-code}
+When completing a code deployment, we recommend creating a snapshot of the environment and backup of the database prior to deploy. 
+
+If you need to restore a snapshot specifically to remove new code and  added extensions, the process can be complicated depending on the amount of changes and when you rollback. Some rollbacks may require database changes.
+
+Specifically for code, you should investigate [reverting code](https://git-scm.com/docs/git-revert) changes from your branch before redeploying. If not, every deploy will push the master branch (code and extensions) again to the target environment. For details, see the [Deployment Process]({{page.baseurl}}cloud/reference/discover-deploy.html).
 
 #### Related topics
 *	[Basic project information]({{page.baseurl}}cloud/project/project-webint-basic.html)
