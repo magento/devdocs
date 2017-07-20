@@ -809,9 +809,7 @@
 
 									
 
-
-											<li class="level3Child project " data-menunode="project"><a href="/guides/v2.2/cloud/project/project-webint-basic.html">Basic project information</a>
-
+									<li class="level-2 "><a href="/guides/v2.2/cloud/project/project-webint-basic.html">Basic project information</a></li>
 
 									
 
@@ -819,9 +817,7 @@
 
 									
 
-
-											<li class="level3Child project " data-menunode="project"><a href="/guides/v2.2/cloud/project/project-webint-branch.html">Manage environments (branches)</a>
-
+									<li class="level-2 "><a href="/guides/v2.2/cloud/project/project-webint-branch.html">Manage branches</a></li>
 
 									
 
@@ -829,9 +825,7 @@
 
 									
 
-
-											<li class="level3Child project " data-menunode="project"><a href="/guides/v2.2/cloud/project/project-webint-snap.html">Backup and restore (snapshot)</a>
-
+									<li class="level-2 "><a href="/guides/v2.2/cloud/project/project-webint-snap.html">Snapshots and Backup management</a></li>
 
 									
 
@@ -1798,17 +1792,6 @@
 
 <figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">relationships</span><span class="p-Indicator">:</span>
     <span class="l-Scalar-Plain">elasticsearch</span><span class="p-Indicator">:</span> <span class="s">&quot;elasticsearch:elasticsearch&quot;</span></code></pre></figure>
-
-<p>You can use the preceding service in a configuration file of your application as follows:</p>
-
-<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_ENV</span><span class="p">[</span><span class="s1">&#39;MAGENTO_CLOUD_RELATIONSHIPS&#39;</span><span class="p">]))</span> <span class="p">{</span>
-  <span class="nv">$relationships</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span><span class="nb">base64_decode</span><span class="p">(</span><span class="nv">$_ENV</span><span class="p">[</span><span class="s1">&#39;MAGENTO_CLOUD_RELATIONSHIPS&#39;</span><span class="p">]),</span> <span class="k">TRUE</span><span class="p">);</span>
-
-  <span class="k">foreach</span> <span class="p">(</span><span class="nv">$relationships</span><span class="p">[</span><span class="s1">&#39;elasticsearch&#39;</span><span class="p">]</span> <span class="k">as</span> <span class="nv">$endpoint</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nv">$container</span><span class="o">-&gt;</span><span class="na">setParameter</span><span class="p">(</span><span class="s1">&#39;elasticsearch_host&#39;</span><span class="p">,</span> <span class="nv">$endpoint</span><span class="p">[</span><span class="s1">&#39;host&#39;</span><span class="p">]);</span>
-    <span class="nv">$container</span><span class="o">-&gt;</span><span class="na">setParameter</span><span class="p">(</span><span class="s1">&#39;elasticsearch_port&#39;</span><span class="p">,</span> <span class="nv">$endpoint</span><span class="p">[</span><span class="s1">&#39;port&#39;</span><span class="p">]);</span>
-  <span class="p">}</span>
-<span class="p">}</span></code></pre></figure>
 
 
 		</div>

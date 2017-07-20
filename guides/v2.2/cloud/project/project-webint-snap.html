@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Backup and restore (snapshot) | Magento 2 Developer Documentation</title>
+	<title>Snapshots and Backup management | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -809,9 +809,7 @@
 
 									
 
-
-											<li class="level3Child project " data-menunode="project"><a href="/guides/v2.2/cloud/project/project-webint-basic.html">Basic project information</a>
-
+									<li class="level-2 "><a href="/guides/v2.2/cloud/project/project-webint-basic.html">Basic project information</a></li>
 
 									
 
@@ -819,9 +817,7 @@
 
 									
 
-
-											<li class="level3Child project " data-menunode="project"><a href="/guides/v2.2/cloud/project/project-webint-branch.html">Manage environments (branches)</a>
-
+									<li class="level-2 "><a href="/guides/v2.2/cloud/project/project-webint-branch.html">Manage branches</a></li>
 
 									
 
@@ -829,9 +825,7 @@
 
 									
 
-
-											<li class="level3Child project  active " data-menunode="project"><a href="/guides/v2.2/cloud/project/project-webint-snap.html">Backup and restore (snapshot)</a>
-
+									<li class="level-2  active "><a href="/guides/v2.2/cloud/project/project-webint-snap.html">Snapshots and Backup management</a></li>
 
 									
 
@@ -1725,7 +1719,7 @@
 
           
 
-          <span property="name">Backup and restore (snapshot)</span>
+          <span property="name">Snapshots and Backup management</span>
 
         
 
@@ -1748,7 +1742,7 @@
 
 	
 
-	<h1 class="page-heading">Backup and restore (snapshot)</h1>
+	<h1 class="page-heading">Snapshots and Backup management</h1>
 
   
 
@@ -1761,10 +1755,21 @@
 <p>A <em>snapshot</em> is a complete backup of an environment. It includes all
 persistent data from all running services (for example, your MySQL database, Redis, and so on) and any files stored on the mounted volumes.</p>
 
+<div class="bs-callout bs-callout-warning">
+  <p>If you want to rollback to previous code or remove added extensions in an environment, restoring a snapshot is not the recommended method. See <a href="#rollback-code">Rollbacks to remove code</a>.</p>
+</div>
+
 <p>You can <em>restore</em> a snapshot up to 14 days after the snapshot was created.</p>
 
-<h2 id="create-a-snapshot-back-up">Create a snapshot (back up)</h2>
-<p>To back up an environment by creating a snapshot:</p>
+<p>We provide two methods for creating and managing snapshots:</p>
+
+<ul>
+  <li>Through the Magento Web Interface</li>
+  <li>Through Magento CLI commands</li>
+</ul>
+
+<h2 id="create-snapshot">Create a snapshot</h2>
+<p>To create an environment snapshot using the Magento Web Interface:</p>
 
 <ol>
   <li><a href="/guides/v2.2/cloud/project/project-webint-basic.html#project-login">Log in to your project</a>.</li>
@@ -1773,8 +1778,29 @@ persistent data from all running services (for example, your MySQL database, Red
   <li>You are required to confirm the action.</li>
 </ol>
 
-<h2 id="restore-a-snapshot">Restore a snapshot</h2>
-<p>To restore an environment’s snapshot:</p>
+<p>To create an environment snapshot using the Magento CLI:</p>
+
+<ol>
+  <li>Make sure you’re in the directory of the project and environment you want to snapshot.</li>
+  <li>
+    <p>Use the following command to create the snapshot:</p>
+
+    <pre><code> magento-cloud snapshot:create
+</code></pre>
+
+    <p>The following modifiers further specify how to create the snapshot:</p>
+
+    <pre><code> -p, --project=PROJECT          The project ID
+ -e, --environment=ENVIRONMENT  The environment ID
+</code></pre>
+
+    <p>For a full list of options, enter <code>magento-cloud snapshot:create --help</code>.</p>
+  </li>
+  <li>Use the <code>magento-cloud snapshots</code> command so see the most recent snapshots. For a full list, enter <code>magento-cloud snapshot:list</code>.</li>
+</ol>
+
+<h2 id="restore-snapshot">Restore a snapshot</h2>
+<p>To restore an environment’s snapshot using the Magento Web Interface:</p>
 
 <ol>
   <li><a href="/guides/v2.2/cloud/project/project-webint-basic.html#project-login">Log in to your project</a>.</li>
@@ -1788,6 +1814,41 @@ persistent data from all running services (for example, your MySQL database, Red
   </li>
   <li>You are required to confirm the action.</li>
 </ol>
+
+<p>To restore an environment snapshot using the Magento CLI:</p>
+
+<ol>
+  <li>Make sure you’re in the directory of the project and environment you want to snapshot.</li>
+  <li>
+    <p>List all available snapshots to copy the ID using this command:</p>
+
+    <pre><code> magento-cloud snapshot:list
+</code></pre>
+  </li>
+  <li>
+    <p>Use the following command to restore the snapshot using the ID you copied:</p>
+
+    <pre><code>     magento-cloud snapshot:restore &lt;id&gt;
+</code></pre>
+
+    <p>For example: <code>magento-cloud snapshot:restore 92c9a4b2aa75422efb3d</code></p>
+
+    <p>The following modifiers further specify how to restore the snapshot:</p>
+
+    <pre><code> -p, --project=PROJECT          The project ID
+ -e, --environment=ENVIRONMENT  The environment ID
+</code></pre>
+
+    <p>For a full list of options, enter <code>magento-cloud snapshot:restore --help</code>.</p>
+  </li>
+</ol>
+
+<h2 id="rollback-code">Rollbacks to remove code</h2>
+<p>When completing a code deployment, we recommend creating a snapshot of the environment and backup of the database prior to deploy.</p>
+
+<p>If you need to restore a snapshot specifically to remove new code and  added extensions, the process can be complicated depending on the amount of changes and when you rollback. Some rollbacks may require database changes.</p>
+
+<p>Specifically for code, you should investigate <a href="https://git-scm.com/docs/git-revert">reverting code</a> changes from your branch before redeploying. If not, every deploy will push the master branch (code and extensions) again to the target environment. For details, see the <a href="/guides/v2.2/cloud/reference/discover-deploy.html">Deployment Process</a>.</p>
 
 <h4 id="related-topics">Related topics</h4>
 <ul>

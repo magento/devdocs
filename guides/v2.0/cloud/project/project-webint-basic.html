@@ -814,9 +814,7 @@
 
 									
 
-
-											<li class="level3Child project  active " data-menunode="project"><a href="/guides/v2.0/cloud/project/project-webint-basic.html">Basic project information</a>
-
+									<li class="level-2  active "><a href="/guides/v2.0/cloud/project/project-webint-basic.html">Basic project information</a></li>
 
 									
 
@@ -824,9 +822,7 @@
 
 									
 
-
-											<li class="level3Child project " data-menunode="project"><a href="/guides/v2.0/cloud/project/project-webint-branch.html">Manage environments (branches)</a>
-
+									<li class="level-2 "><a href="/guides/v2.0/cloud/project/project-webint-branch.html">Manage branches</a></li>
 
 									
 
@@ -834,9 +830,7 @@
 
 									
 
-
-											<li class="level3Child project " data-menunode="project"><a href="/guides/v2.0/cloud/project/project-webint-snap.html">Backup and restore (snapshot)</a>
-
+									<li class="level-2 "><a href="/guides/v2.0/cloud/project/project-webint-snap.html">Snapshots and Backup management</a></li>
 
 									
 
@@ -1689,15 +1683,27 @@
 </section>
 
 
-			<h2 id="project-login">Log in to your project</h2>
-<p>The Web Interface <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span> for your project is available in the following ways:</p>
+			<p>Projects in Magento Enterprise Cloud Edition (ECE) represent the master branch and all children branches of your Magento code, extensions, themes, and more for your store and sites. These branches are fully functional environments with direct access for testing. To manage and review your project information, branches, SSH and URL links, and more, you can use the Magento Web Interface or CLI commands.</p>
+
+<p>The project console enables you to:</p>
 
 <ul>
-  <li>Your welcome e-mail</li>
+  <li>Create and manage projects</li>
+  <li>Access up to eight active branches using SSH, CLI, and web links</li>
+  <li>Configure environment settings, environment variables, and routes</li>
+  <li>Manage users</li>
+  <li>Manage Git branches</li>
+</ul>
+
+<h2 id="project-login">Log in to your project</h2>
+<p>The web console <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span> for your project is available in the following ways:</p>
+
+<ul>
+  <li>Your welcome e-mail to Magento ECE</li>
   <li>The Magento Enterprise Cloud Edition command-line interface (CLI)</li>
 </ul>
 
-<div class="collapsible collapsible-h3"><h3 class="collapsible-title">Find the project URL using the CLI </h3><div class="collapsible-content"><p>To find the project URL using the CLI:</p>
+<p>To find the project URL using the Magento CLI:</p>
 
 <ol>
   <li>Log in to the machine on which your SSH keys are stored.</li>
@@ -1726,25 +1732,24 @@
   </li>
   <li>Enter the value in the URL column in a web browser.</li>
 </ol>
-</div></div>
 
-<h3 id="log-in-to-the-project">Log in to the project</h3>
-<p>In a web browser, enter the project URL from your welcome e-mail or that you found using the CLI. When prompted, log in to your project using Bitbucket, GitHub, Google, or a e-mail address and password.</p>
+<p>In a web browser, enter the project URL to access the console and project. When prompted, log in to your project using Bitbucket, GitHub, Google, or an e-mail address and password.</p>
 
-<div class="collapsible"><b class="collapsible-title">Click to show/hide image </b><div class="collapsible-content"><p><img src="/common/images/cloud_project-login.png" alt="Log in to a project" width="450px" /></p>
-</div></div>
+<p><img src="/common/images/cloud_project-login.png" alt="Log in to a project" width="450px" /></p>
 
 <h2 id="project-access">Access your project and environments</h2>
 <p>The Web Interface provides several ways to access your project and environments:</p>
 
 <ul>
-  <li>Your <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span> URL (every environment, or branch, has a different URL)</li>
+  <li>Your <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span> URL for each active (up to eight)</li>
   <li>Secure Shell (SSH), a way to interact with services using a command terminal</li>
-  <li>Clone the project using the Magento Enterprise Cloud Edition CLI</li>
+  <li>Clone the project using the Magento ECE CLI</li>
   <li>Clone the project using Git</li>
 </ul>
 
-<div class="collapsible"><b class="collapsible-title">To access projects and environments: </b><div class="collapsible-content"><ol>
+<p>To access projects and environments through the Web Interface:</p>
+
+<ol>
   <li><a href="#project-login">Log in to your project</a>.</li>
   <li>
     <p>Hover the mouse pointer over <strong>Access Project</strong> as the following figure shows:</p>
@@ -1766,7 +1771,6 @@
     <p>Click either <strong>CLI</strong> or <strong>Git</strong> to display the appropriate clone command. Use the <img src="/common/images/cloud_copy-to-clipboard.png" alt="Copy to clipboard" /> (Copy to clipboard) button to copy the command to the clipboard.</p>
   </li>
 </ol>
-</div></div>
 
 <h2 id="project-conf">Get started configuring your project</h2>
 <p>Configuring a project means:</p>
@@ -1776,7 +1780,9 @@
   <li>Using a deploy key to pull code from a private repository</li>
 </ul>
 
-<div class="collapsible"><b class="collapsible-title">To configure your project: </b><div class="collapsible-content"><ol>
+<p>To configure your project:</p>
+
+<ol>
   <li><a href="#project-login">Log in to your project</a>.</li>
   <li>Click <img src="/common/images/cloud_edit-project.png" alt="configure your project" /> (Configure project) next to the project name.</li>
   <li>
@@ -1788,7 +1794,6 @@
     </ul>
   </li>
 </ol>
-</div></div>
 
 <h2 id="project-conf-env">Get started configuring an environment</h2>
 <p>Configuring an environment means:</p>
@@ -1800,7 +1805,9 @@
   <li>Managing users</li>
 </ul>
 
-<div class="collapsible"><b class="collapsible-title">To configure an environment: </b><div class="collapsible-content"><ol>
+<p>To configure an environment:</p>
+
+<ol>
   <li><a href="#project-login">Log in to your project</a>.</li>
   <li>
     <p>Click <strong>Configure environment</strong> under the project name, as the following figure shows.</p>
@@ -1869,7 +1876,6 @@
 <p>The following figure shows an example.</p>
 
 <p><img src="/common/images/cloud_routes.png" alt="Configure a route" /></p>
-</div></div>
 
 <h2 id="project-conf-hist">View environment history</h2>
 <p>An environment’s history includes:</p>
@@ -1881,7 +1887,9 @@
   <li>Code pushes</li>
 </ul>
 
-<div class="collapsible"><b class="collapsible-title">To view an environment's history: </b><div class="collapsible-content"><ol>
+<p>To view an environment’s history:</p>
+
+<ol>
   <li><a href="#project-login">Log in to your project</a>.</li>
   <li>
     <p>In the left pane, click the name of an environment.</p>
@@ -1905,7 +1913,6 @@
     </ul>
   </li>
 </ol>
-</div></div>
 
 <h4 id="related-topics">Related topics</h4>
 <ul>
