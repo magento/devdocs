@@ -2,17 +2,15 @@
 layout: default
 group: cloud
 subgroup: 100_project
-title: Manage environments (branches)
-menu_title: Manage environments (branches)
+title: Manage branches
+menu_title: Manage branches
 menu_order: 23
-menu_node: 
-level3_menu_node: level3child
-level3_subgroup: project
+menu_node:
 version: 2.0
 github_link: cloud/project/project-webint-branch.md
 ---
 
-A Magento Enterprise Cloud Edition *environment* is a Git *branch* and you can manage your environments using either the Web Interface, the Magento Enterprise Cloud Edition CLI, or Git commands.
+A Magento Enterprise Cloud Edition *environment* is a Git *branch*. You can manage your environments using either the Web Interface, the Magento Enterprise Cloud Edition CLI, or Git commands. Managing branches/environments uses [Git](https://git-scm.com/doc).
 
 For more information about managing environments using the CLI, see [Get started with an environment]({{page.baseurl}}cloud/env/environments-start.html).
 
@@ -23,13 +21,11 @@ This topic discusses how to use the Web Interface to:
 *	Merge (`git push`) to the environment's parent
 
 ## Add or delete an environment {#project-branch-add}
-This section discusses adding or deleting an environment (that is, a Git branch). You'll do your development in a branch and, when complete, merge (`git push`) the branch with its parent. Choose a parent branch that is related to the work you're going to do; for example, at the start of a sprint for developing Feature X, you'll probably choose the FeatureX branch as the parent.
+To best manage your code development, work in branches created from the project master. Complete development of code and added extensions in a branch and, when complete, merge (`git push`) the branch with its parent or master. Select and use a branching strategy best for your development efforts. For example, you may create a branch for a specific feature (Feature ABC). Multiple developers could create branches from parent branch Feature ABC, merging their work into the parent when complete. This branch can then merge with the project master branch for deployment.
 
-Deleting a branch by default makes the branch *inactive*. An inactive branch doesn't count against your total of eight possible project branches. You can either activate the branch later or you can [delete it entirely]({{page.baseurl}}cloud/howtos/environment-tutorial-env-merge.html#tut-env-delete) using the CLI.
+Your account supports up to eight active branches with full environment access for testing and an unlimited number of inactive branches. You manage active and inactive branches by deleting a branch. When deleted, it is deactivated and available from the project branches list. You can either activate the branch later or you can [delete it entirely]({{page.baseurl}}cloud/howtos/environment-tutorial-env-merge.html#tut-env-delete) using the CLI.
 
-{% collapsible Click to add an environment %}
-
-To add an environment:
+To add a branch:
 
 1.	[Log in to your project]({{page.baseurl}}cloud/project/project-webint-basic.html#project-login).
 2.	In the left navigation bar, click the name of the parent environment.
@@ -57,10 +53,6 @@ To add an environment:
 	*	[Get started with an environment]({{page.baseurl}}cloud/env/environments-start.html)
 	*	[How tos and tutorials]({{ page.baseurl }}cloud/howtos/how-to.html)
 
-{% endcollapsible %}
-
-{% collapsible Click to delete an environment %}
-
 To delete an environment and make it inactive:
 
 1.	[Log in to your project]({{page.baseurl}}cloud/project/project-webint-basic.html#project-login).
@@ -77,12 +69,8 @@ To delete an environment and make it inactive:
 
 	![Delete an environment]({{ site.baseurl }}common/images/cloud_environment-deleted.png)
 
-{% endcollapsible %}
-	
 ## Sync from the environment's parent {#project-branch-sync}
-Syncing an environment is the same as `git pull origin <parent>`. You sync to get updated code from a parent environment (that is, a Git branch).
-
-{% collapsible Click to show/hide content %}
+Syncing an environment (or branch) is the same as `git pull origin <parent>`. You sync to get updated code from a parent environment.
 
 To sync an environment with its parent:
 
@@ -95,12 +83,9 @@ To sync an environment with its parent:
 	![Choose what to sync]({{ site.baseurl }}common/images/cloud_environment-sync2.png)
 4.	Select the check box next to each item to sync and click **Sync**.
 
-{% endcollapsible %}
 
 ## Merge with the environment's parent {#project-branch-merge}
 Merging an environment is the same as `git push origin`. You merge to push updated code from an environment to its parent environment (that is, a Git branch).
-
-{% collapsible Click to show/hide content %}
 
 To merge an environment with its parent:
 
@@ -108,8 +93,6 @@ To merge an environment with its parent:
 2.	In the left pane, click the name of the branch you want to merge.
 3.	Click ![Merge an environment]({{ site.baseurl }}common/images/cloud_environment-merge.png){:width="30px"} (merge).
 4.	Click **Merge** to confirm the action.
-
-{% endcollapsible %}
 
 #### Related topics
 *	[Basic project information]({{page.baseurl}}cloud/project/project-webint-basic.html)
