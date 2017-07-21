@@ -2,18 +2,16 @@
 layout: default
 group: cloud
 subgroup: 080_setup
-title: Step 5, Clone or branch an environment
-menu_title: Step 5, Clone or branch an environment
-menu_order: 166
+title: Branch an environment
+menu_title: Branch an environment
+menu_order: 45
 menu_node:
-level3_menu_node: level3child
-level3_subgroup: setupenv
 version: 2.0
 github_link: cloud/before/before-setup-env-env.md
 ---
 
-{::options syntax_highlighter="rouge" /}
-
+#### Previous step:
+[Set up Magento cron]({{ page.baseurl }}cloud/before/before-setup-env-cron.html)
 
 With your workspace configured, the project cloned, and cron set up, you can create a branch for development work.
 
@@ -40,12 +38,12 @@ After you create the branch, update project dependencies so you can install the 
 
 			magento-cloud environment:branch sprint1 master
 
-3.	After the command completes, update dependencies:
+2.	After the command completes, update dependencies:
 
 		composer --no-ansi --no-interaction install --no-progress --prefer-dist --optimize-autoloader
-4.  Create a [snapshot]({{page.baseurl}}cloud/admin/admin-snap.html) of the environment.
+3.  Create a [snapshot]({{page.baseurl}}cloud/admin/admin-snap.html) of the environment.
 
 		magento-cloud snapshot:create -e <environment ID>
 
 #### Next step
-[Step 6, Install Magento]({{ page.baseurl }}cloud/before/before-setup-env-install.html)
+[Install Magento]({{ page.baseurl }}cloud/before/before-setup-env-install.html)

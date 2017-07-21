@@ -4,14 +4,13 @@ group: cloud
 subgroup: 080_setup
 title: Step 6, Install Magento
 menu_title: Step 6, Install Magento
-menu_order: 167
-level3_menu_node: level3child
-level3_subgroup: setupenv
+menu_order: 50
 version: 2.0
 github_link: cloud/before/before-setup-env-install.md
 ---
 
-{::options syntax_highlighter="rouge" /}
+#### Previous step:
+[Branch an environment]({{ page.baseurl }}cloud/before/before-setup-env-env.html)
 
 With your workspace prepared, install Magento on your local to verify custom code, extensions, and more. This section discusses the installation prep, options, and steps you should complete.
 
@@ -52,4 +51,4 @@ After you install Magento, set file system permissions and ownership as discusse
 </div>
 
 #### Next step
-[Step 7, Set file system permissions and ownership]({{ page.baseurl }}cloud/before/before-setup-env-perms.html)
+[Set file system permissions and ownership]({{ page.baseurl }}cloud/before/before-setup-env-perms.html)

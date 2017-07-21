@@ -11,9 +11,10 @@ version: 2.0
 github_link: cloud/before/before-setup-env-perms.md
 ---
 
-{::options syntax_highlighter="rouge" /}
+#### Previous step:
+[Branch an environment]({{ page.baseurl }}cloud/before/before-setup-env-env.html)
 
-To set up file system permissions and ownership:
+After you have installed Magento, you need to set the file file system permissions and ownership.
 
 1.  Log in to your Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html).
 2.  Enter the following commands in the order shown:
@@ -25,3 +26,18 @@ To set up file system permissions and ownership:
 		chmod u+x bin/magento
 
 {% include install/file-system-perms-twouser_cmds-only.md %}
+
+ADD CONTENT TO VERIFY THE MAGENTO
+
+With these steps completed, you should have:
+* Magento ECE account and initial project setup
+* A local workspace configured with installations of required software, Magento ECE CLI, and Magento
+* SSH keys set up
+* The Magento file system owner configured
+* A branch for your code
+* Magento authentication keys set up
+
+Begin developing and testing in your branch.
+
+#### Related topics
+links

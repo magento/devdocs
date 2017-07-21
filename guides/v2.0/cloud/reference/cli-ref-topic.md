@@ -2,8 +2,8 @@
 layout: default
 group: cli
 subgroup: 120_env
-title: CLI reference
-menu_title: CLI reference
+title: Magento CLI reference
+menu_title: Magento CLI reference
 menu_order: 3
 menu_node:
 version: 2.0

@@ -27,7 +27,27 @@ To best develop and manage your local, we recommend using a virtual machine. The
 
 For examples in this documentation, we use [Vagrant](https://www.vagrantup.com/) and [VirtualBox](https://www.virtualbox.org). If you want to use these, download and install a version for your workspace's OS:
 
-* [Vagrant](https://www.vagrantup.com/downloads.html) provides a single workflow for managing VMs, helps setup developer environments quickly, and isolates dependencies through one consistent environment.
+* [Vagrant](https://www.vagrantup.com/downloads.html) provides a single workflow for managing VMs, helps setup developer environments quickly, and isolates dependencies through one consistent environment. When installed, we also recommend the package [hostmanager](https://github.com/devopsgroup-io/vagrant-hostmanager).
+
+	Install the Vagrant hostmanager plugin (optional):
+		vagrant plugin install vagrant-hostmanager
+
+	Install Vagrant. For example, these commands install Vagrant with specific OS versions:
+
+	<ul><li>Ubuntu 12.04 LTS 64-bit: `vagrant init hashicorp/precise64`</li>
+	<li>Ubuntu 16.04.2 LTS 64-bit: `vagrant init ubuntu/xenial64`</li></ul>
+
+	You may want to create a Vagrant directory for the local environment. For example:
+			mkdir ~/localdev && cd ~/localdev
+
+	Install a box based on the OS. This command installs an Ubuntu box:
+			vagrant init ubuntu/xenial64
+
+	And start the VM:
+			vagrant up
+
+	If you installed hostmanager, update the hosts file on the active machines:
+			vagrant hostmanager
 * [VirtualBox](https://www.virtualbox.org/wiki/Downloads) extends support and features across all OS and platforms to create and manage multiple VMs and operating systems on your local.
 
 Select a preferred Unix-based OS for your virtual system, such as Denbian, CentOS, or Ubuntu. For examples in this documentation, we use Ubuntu.
@@ -40,6 +60,20 @@ Select a preferred Unix-based OS for your virtual system, such as Denbian, CentO
 
 ## PHP {#php}
 Install {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} on your local. We recommend PHP 7.0. For information on installing PHP, see these instructions for [CentOS]({{ page.baseurl }}install-gde/prereq/php-centos.html) and [Ubuntu]({{ page.baseurl }}install-gde/prereq/php-ubuntu.html). For instructions for another OS, see the [PHP documentation](http://php.net/manual/en/install.php).
+
+The following packages may also be helpful for your PHP installation:
+* [bcmath](http://php.net/manual/en/book.bc.php)
+* [curl](http://php.net/manual/en/book.curl.php)
+* ext-dom
+* [fpm](https://php-fpm.org/)
+* [gd](http://php.net/manual/en/book.image.php)
+* [intl](http://php.net/manual/en/book.intl.php)
+* [json](http://php.net/manual/en/ref.json.php)
+* [mbstring](http://php.net/manual/en/book.mbstring.php)
+* [mcrypt](http://php.net/manual/en/book.mcrypt.php)
+* [mysql](http://php.net/manual/en/set.mysqlinfo.php)
+* [xml](http://php.net/manual/en/book.xml.php)
+* [zip](http://php.net/manual/en/book.zip.php)
 
 ### Set up PHP memory limit {#cloud-first-php}
 When you're working with the Magento Cloud CLI, local environment settings come from the machine on which you're working, not from Magento Enterprise Cloud Edition. For example, certain actions (like debugging) require a larger PHP `memory_limit` than most PHP distributions provide by default.
@@ -67,9 +101,9 @@ Before working with your Magento Enterprise Cloud Edition project, make sure you
 We support installations of [Apache]({{ page.baseurl }}install-gde/prereq/apache.html) and [nginx](https://nginx.org/) for your web server. We do not provide documentation for an installation and configuration of nginx at this time. Please review the [nginx Wiki](https://www.nginx.com/resources/wiki/) for further instructions.
 
 ## Database {#database}
-You have multiple options for databases to use for your local. We recommend [MySQL]({{ page.baseurl }}install-gde/prereq/mysql.html). The Magento ECE environments use [Galara Cluster](http://galeracluster.com/) with triple reducency in the Production environment.
+You have multiple options for databases to use for your local. We recommend [MySQL]({{ page.baseurl }}install-gde/prereq/mysql.html). Regardless of database, you need to modify the `auto_increment_increment` value. The Magento ECE environments use [Mariadb](https://mariadb.org/), with a [Galara Cluster](http://galeracluster.com/) with triple reducency in the Production environment.
 
-### Set up MySQL auto-increment {#cloud-mysql}
+### Set up the auto-increment {#cloud-mysql}
 The MySQL configuration parameter [`auto_increment_increment`](http://dev.mysql.com/doc/refman/5.6/en/server-system-variables.html){:target="_blank"} is set to `1` by default in a local MySQL installation. You need to change this value to `3`.  The Magento Enterprise Cloud Edition database cluster includes 3 database implementations. The increment ensures data is unique across all databases for consistant data in the High Availability structure.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
@@ -139,4 +173,4 @@ To install the Magento Enterprise Cloud Edition CLI:
 You can also install [optional software]({{ page.baseurl }}install-gde/prereq/optional.html) as well.
 
 #### Next step
-[Step 5, Set up PHP and MySQL]({{ page.baseurl }}cloud/before/before-workspace-php.html)
+[Enable SSH keys]({{ page.baseurl }}cloud/before/before-workspace-php.html)

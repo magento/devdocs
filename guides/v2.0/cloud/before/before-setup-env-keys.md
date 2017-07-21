@@ -2,16 +2,15 @@
 layout: default
 group: cloud
 subgroup: 080_setup
-title: Step 3, Set up authentication keys
-menu_title: Step 3, Set up authentication keys
-menu_order: 164
-level3_menu_node: level3child
-level3_subgroup: setupenv
+title: Set up Magento authentication keys
+menu_title: Set up Magento authentication keys
+menu_order: 35
 version: 2.0
 github_link: cloud/before/before-setup-env-keys.md
 ---
 
-{::options syntax_highlighter="rouge" /}
+#### Previous step:
+[Clone the project]({{ page.baseurl }}cloud/before/before-setup-env-2_clone.html)
 
 Add authentication keys to the project to ensure you don't need to store the keys in the Git repository. These keys provide authentication between Git and Magento for your branches and local.
 
@@ -126,4 +125,4 @@ To add your local authentication keys:
 5.	Save your changes to `.gitignore` and exit the text editor.
 
 #### Next step
-[Step 4, Set up cron]({{ page.baseurl }}cloud/before/before-setup-env-cron.html)
+[Set up Magento cron]({{ page.baseurl }}cloud/before/before-setup-env-cron.html)
