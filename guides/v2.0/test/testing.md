@@ -38,7 +38,7 @@ When talking about testing in Magento 2, we have to distinguish between differen
 ## Unit  
   Unit tests are used to check a single unit of PHP code in isolation. They are usually written during development using [test-driven development](https://en.wikipedia.org/wiki/Test-driven_development){:target="_blank"} (TDD).  
 
-  Because they do not require the full Magento application stack to be initialized, they run an order of magnitude faster then integration tests.  
+  Because they do not require the full Magento application stack to be initialized, they run an order of magnitude faster than integration tests.  
 
   For more information, see [Running Unit Tests]({{page.baseurl}}test/unit/unit_test_execution.html).
 
