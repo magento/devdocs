@@ -133,7 +133,7 @@ See [Search using REST APIs]({{page.baseurl}}howdoi/webapi/search-criteria.html)
 
 **Sample Usage**
 
-`GET `
+`GET V1/team?searchCriteria[filter_groups][0][filters][0][field]=team_id&searchCriteria[filter_groups][0][filters][0][value]=0&searchCriteria[filter_groups][0][filters][0][condition_type]=gteq`
 
 **Payload**
 
