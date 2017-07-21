@@ -689,7 +689,7 @@
 </section>
 
 
-			<p><strong>Last Updated:</strong> July 14, 2017</p>
+			<p><strong>Last Updated:</strong> July 21, 2017</p>
 
 <p>This page shows the ongoing status of each component during the Magento 2.2 Release Candidate period and is intended to show you the readiness of different components.</p>
 
@@ -697,7 +697,7 @@
 
 <ul>
   <li><span class="status red">Red</span> - The module has critical and blocking issues that make this module unstable.</li>
-  <li><span class="status yellow">Yellow</span> - The module has some critical and major issues that may cause some problems.</li>
+  <li><span class="status yellow">Yellow</span> - The module has some issues that may cause problems, but it is still functional.</li>
   <li><span class="status green">Green</span> - The module has a few issues, but major functionality is not affected.</li>
 </ul>
 
@@ -715,84 +715,36 @@ Issues that are not related to the 2.2 release are not part of this report.</p>
   </thead>
   <tbody>
     <tr>
-      <td>Infrastructure/ Dependency Injection Framework</td>
-      <td><span class="status green">Green</span></td>
-    </tr>
-    <tr>
-      <td>Infrastructure/ Performance</td>
-      <td><span class="status yellow">Yellow</span></td>
-    </tr>
-    <tr>
       <td>Module/ Catalog</td>
       <td><span class="status red">Red</span></td>
     </tr>
     <tr>
-      <td>Module/ CatalogImportExport</td>
-      <td><span class="status yellow">Yellow</span></td>
-    </tr>
-    <tr>
       <td>Module/ CatalogInventory</td>
-      <td><span class="status yellow">Yellow</span></td>
-    </tr>
-    <tr>
-      <td>Module/ CatalogSearch/ Search Frontend</td>
-      <td><span class="status yellow">Yellow</span></td>
-    </tr>
-    <tr>
-      <td>Module/ Config</td>
-      <td><span class="status green">Green</span></td>
-    </tr>
-    <tr>
-      <td>Module/ CustomerImportExport</td>
-      <td><span class="status green">Green</span></td>
-    </tr>
-    <tr>
-      <td>Module/ Eav</td>
-      <td><span class="status green">Green</span></td>
-    </tr>
-    <tr>
-      <td>Module/ Email</td>
       <td><span class="status red">Red</span></td>
-    </tr>
-    <tr>
-      <td>Module/ Integration</td>
-      <td><span class="status yellow">Yellow</span></td>
-    </tr>
-    <tr>
-      <td>Module/ Payment/ Payment Methods</td>
-      <td><span class="status yellow">Yellow</span></td>
-    </tr>
-    <tr>
-      <td>Module/ PayPal/ Billing Agreement</td>
-      <td><span class="status green">Green</span></td>
-    </tr>
-    <tr>
-      <td>Module/ Quote</td>
-      <td><span class="status red">Red</span></td>
-    </tr>
-    <tr>
-      <td>Module/ Sales/ Order Management</td>
-      <td><span class="status yellow">Yellow</span></td>
     </tr>
     <tr>
       <td>Module/ SalesRule</td>
-      <td><span class="status yellow">Yellow</span></td>
+      <td><span class="status red">Red</span></td>
     </tr>
     <tr>
       <td>Module/ SalesSequence</td>
       <td><span class="status red">Red</span></td>
     </tr>
     <tr>
-      <td>Module/ Sample Data</td>
-      <td><span class="status green">Green</span></td>
+      <td>Module/ Integration</td>
+      <td><span class="status red">Red</span></td>
     </tr>
     <tr>
-      <td>Module/ Store</td>
-      <td><span class="status green">Green</span></td>
+      <td>Module/ Quote</td>
+      <td><span class="status red">Red</span></td>
     </tr>
     <tr>
-      <td>Module/ UI</td>
-      <td><span class="status green">Green</span></td>
+      <td>Module/ Deploy</td>
+      <td><span class="status yellow">Yellow</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Email</td>
+      <td><span class="status yellow">Yellow</span></td>
     </tr>
     <tr>
       <td>Module/ Webapi/ Web API Framework</td>
@@ -804,7 +756,435 @@ Issues that are not related to the 2.2 release are not part of this report.</p>
     </tr>
     <tr>
       <td>Tools/ Dev Tools</td>
-      <td><span class="status red">Red</span></td>
+      <td><span class="status yellow">Yellow</span></td>
+    </tr>
+    <tr>
+      <td>Module/ CatalogSearch/ Search Frontend</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Infrastructure/ Dependency Injection Framework</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Infrastructure/ Functional Tests</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Config</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Customer/ Customer Account</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ DHL</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Eav</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Pagecache</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Reports</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Store</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ UI</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ AdminNotification</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ AdvancedPricingImportExport</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Analytics</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Authorization</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Authorizenet</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Backend/ Dashboard</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Backup</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Braintree</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Bundle</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ BundleImportExport</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ CacheInvalidate</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Captcha</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ CatalogImportExport</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ CatalogRule</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ CatalogRuleConfigurable</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ CatalogSearch/ Search Terms</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ CatalogUrlRewrite</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ CatalogWidget</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Checkout/ Guest Checkout,</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Checkout/ Mini Shopping Cart</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Checkout/ One Page Checkout</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Checkout/ Shopping Cart</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ CheckoutAgreements</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Cms/ Blog</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Cms/ CMS Content</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Cms/ CMS Hierarchy</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ CmsUrlRewrite</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ ConfigurableImportExport</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ ConfigurableProduct</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Contact</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Cookie</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Cron</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ CurrencySymbol</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Customer/ Customer Groups</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Customer/ Customers</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Customer/ VAT ID</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ CustomerAnalytics</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ CustomerImportExport</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Developer</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Directory</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Downloadable</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ DownloadableImportExport</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ EncryptionKey</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ FedEx</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ GiftMessage</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ GoogleAdwords</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ GoogleAnalytics</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ GoogleOptimizer</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ GroupedImportExport</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ GroupedProduct</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ ImportExport</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Indexer</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ LayeredNavigation</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Marketplace</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Tools/ MediaStorage</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Msrp</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Multishipping</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ NewRelicReporting</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Newsletter</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ OfflinePayments</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ OfflineShipping</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Payment/ Fraud</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Payment/ Payment Methods</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Paypal</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ PayPal/ Billing Agreement</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Persistent</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ ProductAlert</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ ProductVideo</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ RequireJs</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Review</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Rss</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Rule</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Sales/ Order Management</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ SalesAnalytics</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Sample Data</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Search</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ PasswordManagement</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Sendfriend</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Shipping</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Sitemap</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Swagger</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Swatches</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Tax</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ TaxImportExport</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Theme</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Translation</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ UPS</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ UrlRewrite</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ User</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ USPS</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Variable</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Vault</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Store</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Webapi/ Web Hooks</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Weee</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Widget</td>
+      <td><span class="status green">Green</span></td>
     </tr>
   </tbody>
 </table>
@@ -820,19 +1200,19 @@ Issues that are not related to the 2.2 release are not part of this report.</p>
   </thead>
   <tbody>
     <tr>
-      <td>Infrastructure/ Bulk Operations Framework</td>
+      <td>Module/ Rma</td>
+      <td><span class="status yellow">Yellow</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Staging</td>
+      <td><span class="status yellow">Yellow</span></td>
+    </tr>
+    <tr>
+      <td>Module/ TargetRule</td>
       <td><span class="status yellow">Yellow</span></td>
     </tr>
     <tr>
       <td>Module/ CatalogPermissions</td>
-      <td><span class="status yellow">Yellow</span></td>
-    </tr>
-    <tr>
-      <td>Module/ CatalogStaging</td>
-      <td><span class="status yellow">Yellow</span></td>
-    </tr>
-    <tr>
-      <td>Module/ CustomerCustomAttributes</td>
       <td><span class="status green">Green</span></td>
     </tr>
     <tr>
@@ -840,12 +1220,268 @@ Issues that are not related to the 2.2 release are not part of this report.</p>
       <td><span class="status green">Green</span></td>
     </tr>
     <tr>
-      <td>Module/ Rma</td>
-      <td><span class="status yellow">Yellow</span></td>
+      <td>Module/ AdminGWS</td>
+      <td><span class="status green">Green</span></td>
     </tr>
     <tr>
-      <td>Module/ Staging</td>
-      <td><span class="status red">Red</span></td>
+      <td>Module/ AdvancedCatalog</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ AdvancedCheckout</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ AdvancedSearch</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ AsynchronousOperation</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Banner</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ BannerCustomerSegment</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ BundleStaging</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ CatalogEvent</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ CatalogImportExportStaging</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ CatalogInventoryStaging</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ CatalogRuleStaging</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ CatalogStaging</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ CatalogUrlRewriteStaging</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ CheckoutStaging</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ CmsStaging</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ ConfigurableProductStaging</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ CustomAttributeManagement</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ CustomerBalance</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ CustomerCustomAttributes</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ CustomerFinance</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ CustomerSegment</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Cybersource</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ DownloadableStaging</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ ElasticSearch</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Enterprise</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Eway</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ GiftCard</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ GiftCardAccount</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ GiftCardImportExport</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ GiftCardStaging</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ GiftMessageStaging</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ GiftWrapping</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ GiftWrappingStaging</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ GoogleOptimizerStaging</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ GoogleTagManager</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ GroupedProductStaging</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Invitation</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ LayeredNavigationStaging</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Logging</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ MsrpStaging</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ MultipleWishlist</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ PaymentStaging</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ PersistentHistory</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ PricePermissions</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ ProductVideoStaging</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ PromotionPermissions</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Reminder</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ ResourceConnections</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ ReviewStaging</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Reward</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ RmaStaging</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ SalesArchive</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ SalesRuleStaging</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ ScalableCheckout</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ ScalableOMS</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ ScheduledImportExport</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ SearchStaging</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Signifyd</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Solr</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Support</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ VersionsCms</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ VisualMerchandiser</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ WebsiteRestriction</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ WeeeStaging</td>
+      <td><span class="status green">Green</span></td>
+    </tr>
+    <tr>
+      <td>Module/ Worldpay</td>
+      <td><span class="status green">Green</span></td>
     </tr>
   </tbody>
 </table>
@@ -861,32 +1497,32 @@ Issues that are not related to the 2.2 release are not part of this report.</p>
   </thead>
   <tbody>
     <tr>
-      <td>Module/ Company</td>
-      <td><span class="status yellow">Yellow</span></td>
+      <td>Module/ SharedCatalog</td>
+      <td><span class="status red">Red</span></td>
     </tr>
     <tr>
-      <td>Module/ CompanyCred</td>
+      <td>Module/ Company</td>
       <td><span class="status red">Red</span></td>
+    </tr>
+    <tr>
+      <td>Module/ CompanyCredit</td>
+      <td><span class="status green">Green</span></td>
     </tr>
     <tr>
       <td>Module/ NegotiableQuote</td>
       <td><span class="status green">Green</span></td>
     </tr>
     <tr>
-      <td>Module/ QuickOrd</td>
-      <td><span class="status yellow">Yellow</span></td>
-    </tr>
-    <tr>
-      <td>Module/ RapidOrd</td>
+      <td>Module/ Requisition Lists</td>
       <td><span class="status green">Green</span></td>
     </tr>
     <tr>
-      <td>Module/ Requisition Lis</td>
-      <td><span class="status yellow">Yellow</span></td>
+      <td>Module/ CompanyPayment</td>
+      <td><span class="status green">Green</span></td>
     </tr>
     <tr>
-      <td>Module/ SharedCatalog</td>
-      <td><span class="status red">Red</span></td>
+      <td>Module/ QuickOrder</td>
+      <td><span class="status green">Green</span></td>
     </tr>
   </tbody>
 </table>

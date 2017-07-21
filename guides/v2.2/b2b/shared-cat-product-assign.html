@@ -825,31 +825,16 @@
 
 <h3 id="assign-categories-to-shared-catalog">Assign categories to shared catalog</h3>
 
-<p>In this example, the store has the following category structure:</p>
-
-<figure class="highlight"><pre><code class="language-xml" data-lang="xml">Root catalog (id 1)
-|-- Default category (id 2)
-|   |-- Category 1 (id 3)
-|   |-- Cateogry 2 (id 4)
-|   |-- Cateogry 3 (id 5)
-|   |-- Cateogry 4 (id 6)
-|   |-- Cateogry 5 (id 7)
-|   |-- Cateogry 6 (id 8)</code></pre></figure>
+<p>The following example adds the Luma Gear category (<code>id=3</code>) as well as its subcategories (<code>id=4,5,6</code>) to a custom shared catalog.</p>
 
 <p><strong>Sample usage</strong></p>
 
-<p><code>POST /V1/sharedCatalog/8/assignCategories</code></p>
+<p><code>POST /V1/sharedCatalog/2/assignCategories</code></p>
 
 <p><strong>Payload</strong></p>
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
   <span class="nt">&quot;categories&quot;</span><span class="p">:</span> <span class="p">[</span>
-    <span class="p">{</span>
-      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">1</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">2</span>
-    <span class="p">},</span>
     <span class="p">{</span>
       <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">3</span>
     <span class="p">},</span>
@@ -861,12 +846,6 @@
     <span class="p">},</span>
     <span class="p">{</span>
       <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">6</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">7</span>
-    <span class="p">},</span>
-    <span class="p">{</span>
-      <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">8</span>
     <span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre></figure>
@@ -883,7 +862,7 @@
 
 <p><strong>Sample usage</strong></p>
 
-<p><code>POST /V1/sharedCatalog/8/unassignCategories</code></p>
+<p><code>POST /V1/sharedCatalog/2/unassignCategories</code></p>
 
 <p><strong>Payload</strong></p>
 
@@ -909,7 +888,7 @@
 
 <p><strong>Sample Usage</strong></p>
 
-<p><code>GET  /V1/sharedCatalog/8/categories</code></p>
+<p><code>GET  /V1/sharedCatalog/2/categories</code></p>
 
 <p><strong>Payload</strong></p>
 
@@ -918,8 +897,6 @@
 <p><strong>Response</strong></p>
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">[</span>
-  <span class="mi">1</span><span class="p">,</span>
-  <span class="mi">2</span><span class="p">,</span>
   <span class="mi">3</span><span class="p">,</span>
   <span class="mi">4</span><span class="p">,</span>
   <span class="mi">5</span><span class="p">,</span>
@@ -928,7 +905,7 @@
 
 <h2 id="assign-products">Assign products</h2>
 
-<p>The <code>sharedCatalogProductManagementV1</code> service is based on <code>catalogProductManagementV1</code>. To return of products defined within a category, call <code>GET /V1/categories/:categoryId/products</code>.</p>
+<p>The <code>sharedCatalogProductManagementV1</code> service is based on <code>catalogProductManagementV1</code>. To return a list of products defined within a category, call <code>GET /V1/categories/:categoryId/products</code>.</p>
 
 <p><strong>Service name</strong></p>
 
@@ -936,8 +913,8 @@
 
 <p><strong>REST endpoints</strong></p>
 
-<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="err">POST</span>   <span class="err">/V</span><span class="mi">1</span><span class="err">/sharedCatalog/:id/assignProducts</span>
-<span class="err">POST</span>   <span class="err">/V</span><span class="mi">1</span><span class="err">/sharedCatalog/:id/unassignProducts</span>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="err">POST</span>  <span class="err">/V</span><span class="mi">1</span><span class="err">/sharedCatalog/:id/assignProducts</span>
+<span class="err">POST</span>  <span class="err">/V</span><span class="mi">1</span><span class="err">/sharedCatalog/:id/unassignProducts</span>
 <span class="err">GET</span>  <span class="err">/V</span><span class="mi">1</span><span class="err">/sharedCatalog/:id/products</span></code></pre></figure>
 
 <p><strong>Category parameters</strong></p>
@@ -967,29 +944,35 @@
 
 <h3 id="assign-products-to-shared-catalog">Assign products to shared catalog</h3>
 
-<p>The following example adds four products to the shared catalog. The specified products can be in any category.</p>
+<p>The following example adds two products each in the Bags, Fitness Equipment, and Watches categories to a custom shared catalog. The specified products do not have to be in the same category.</p>
 
 <p><strong>Sample usage</strong></p>
 
-<p><code>POST /V1/sharedCatalog/8/assignProducts</code></p>
+<p><code>POST /V1/sharedCatalog/2/assignProducts</code></p>
 
 <p><strong>Payload</strong></p>
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
-  <span class="nt">&quot;products&quot;</span><span class="p">:</span> <span class="p">[</span>
-  	<span class="p">{</span>
-  		<span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;product_dynamic_2&quot;</span>
-  	<span class="p">},</span>
-	  <span class="p">{</span>
-  		<span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;product_dynamic_3&quot;</span>
-	  <span class="p">},</span>
-	  <span class="p">{</span>
-  		<span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;product_dynamic_4&quot;</span>
-	  <span class="p">},</span>
-	 <span class="p">{</span>
-  		<span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;product_dynamic_5&quot;</span>
-	 <span class="p">}</span>
-  <span class="p">]</span>
+	<span class="nt">&quot;products&quot;</span><span class="p">:</span> <span class="p">[</span>
+    	<span class="p">{</span>
+        	<span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;24-MB01&quot;</span>
+    	<span class="p">},</span>
+    	<span class="p">{</span>
+        	<span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;24-MB04&quot;</span>
+    	<span class="p">},</span>
+    	<span class="p">{</span>
+        	<span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;24-UG06&quot;</span>
+    	<span class="p">},</span>
+    	<span class="p">{</span>
+        	<span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;24-UG07&quot;</span>
+    	<span class="p">},</span>
+    	<span class="p">{</span>
+        	<span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;24-MG04&quot;</span>
+    	<span class="p">},</span>
+    	<span class="p">{</span>
+        	<span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;24-MG01&quot;</span>
+    	<span class="p">}</span>
+	<span class="p">]</span>
 <span class="p">}</span></code></pre></figure>
 
 <p><strong>Response</strong></p>
@@ -1002,14 +985,14 @@
 
 <p><strong>Sample usage</strong></p>
 
-<p><code>POST /V1/sharedCatalog/8/unassignProducts</code></p>
+<p><code>POST /V1/sharedCatalog/2/unassignProducts</code></p>
 
 <p><strong>Payload</strong></p>
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
   <span class="nt">&quot;products&quot;</span><span class="p">:</span> <span class="p">[</span>
   	<span class="p">{</span>
-  		<span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;product_dynamic_2&quot;</span>
+  		<span class="nt">&quot;sku&quot;</span><span class="p">:</span> <span class="s2">&quot;24-MG01&quot;</span>
   	<span class="p">}</span>
   <span class="p">]</span>
 <span class="p">}</span></code></pre></figure>
@@ -1024,7 +1007,7 @@
 
 <p><strong>Sample Usage</strong></p>
 
-<p><code>GET  /V1/sharedCatalog/8/products</code></p>
+<p><code>GET  /V1/sharedCatalog/2/products</code></p>
 
 <p><strong>Payload</strong></p>
 
@@ -1033,9 +1016,11 @@
 <p><strong>Response</strong></p>
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">[</span>
-  <span class="s2">&quot;product_dynamic_3&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;product_dynamic_4&quot;</span><span class="p">,</span>
-  <span class="s2">&quot;product_dynamic_5&quot;</span>
+    <span class="s2">&quot;24-MB01&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;24-MB04&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;24-UG06&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;24-UG07&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;24-MG04&quot;</span>
 <span class="p">]</span></code></pre></figure>
 
 <h2 id="related-information">Related information</h2>

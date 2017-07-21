@@ -1006,9 +1006,100 @@
 
 <p><code>true</code>, indicating the request was successful</p>
 
-<h3 id="search-for-a-company">Search for a company</h3>
+<h3 id="search-for-companies">Search for companies</h3>
 
-<p>See <a href="/guides/v2.2/howdoi/webapi/search-criteria.html">Search using REST APIs</a> for information about constructing a query using the <code>GET  /V1/company/</code> endpoint.</p>
+<p>The following call returns all companies that are located in California (<code>region_id</code> = <code>12</code>)</p>
+
+<p>See <a href="/guides/v2.2/howdoi/webapi/search-criteria.html">Search using REST APIs</a> for information about constructing a search query.</p>
+
+<p><strong>Sample Usage</strong></p>
+
+<p><code>GET /V1/company?searchCriteria[filter_groups][0][filters][0][field]=region_id&amp;searchCriteria[filter_groups][0][filters][0][value]=12&amp;searchCriteria[filter_groups][0][filters][0][condition_type]=eq</code></p>
+
+<p><strong>Payload</strong></p>
+
+<p>None</p>
+
+<p><strong>Response</strong></p>
+
+<div class="collapsible"><b class="collapsible-title">Show code sample </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="nt">&quot;items&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nt">&quot;company_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Test Company&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;legal_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Test Company&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;company_email&quot;</span><span class="p">:</span> <span class="s2">&quot;newemail@example.com&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;street&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;100 Big Tree Avenue&quot;</span>
+            <span class="p">],</span>
+            <span class="nt">&quot;city&quot;</span><span class="p">:</span> <span class="s2">&quot;San Francisco&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;country_id&quot;</span><span class="p">:</span> <span class="s2">&quot;US&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;region&quot;</span><span class="p">:</span> <span class="s2">&quot;California&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;region_id&quot;</span><span class="p">:</span> <span class="s2">&quot;12&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;postcode&quot;</span><span class="p">:</span> <span class="s2">&quot;99999&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;telephone&quot;</span><span class="p">:</span> <span class="s2">&quot;4155551212&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;customer_group_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nt">&quot;sales_representative_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nt">&quot;reject_reason&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;rejected_at&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;super_user_id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+            <span class="nt">&quot;extension_attributes&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;applicable_payment_method&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="nt">&quot;available_payment_methods&quot;</span><span class="p">:</span> <span class="s2">&quot;banktransfer,cashondelivery,checkmo,payflowpro,payflow_advanced,payflow_link,braintree,cybersource,eway,authorizenet_directpost,free,braintree_paypal,paypal_billing_agreement,payflow_express_bml,paypal_express_bml,paypal_express,payflow_express,hosted_pro,worldpay,companycredit,purchaseorder,braintree_paypal_vault,braintree_cc_vault,payflowpro_cc_vault&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;use_config_settings&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                <span class="nt">&quot;quote_config&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;is_quote_enabled&quot;</span><span class="p">:</span> <span class="kc">true</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+            <span class="nt">&quot;status&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nt">&quot;company_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Widgets, Inc&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;legal_name&quot;</span><span class="p">:</span> <span class="s2">&quot;Widgets, Inc&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;company_email&quot;</span><span class="p">:</span> <span class="s2">&quot;widgetsinc@example.com&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;street&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="s2">&quot;8383 Wilshire Blvd&quot;</span><span class="p">,</span>
+                <span class="s2">&quot;Ste 1500&quot;</span>
+            <span class="p">],</span>
+            <span class="nt">&quot;city&quot;</span><span class="p">:</span> <span class="s2">&quot;Beverly Hills&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;country_id&quot;</span><span class="p">:</span> <span class="s2">&quot;US&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;region&quot;</span><span class="p">:</span> <span class="s2">&quot;California&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;region_id&quot;</span><span class="p">:</span> <span class="s2">&quot;12&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;postcode&quot;</span><span class="p">:</span> <span class="s2">&quot;90211&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;telephone&quot;</span><span class="p">:</span> <span class="s2">&quot;(310) 555-0000&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;customer_group_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nt">&quot;sales_representative_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nt">&quot;reject_reason&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;rejected_at&quot;</span><span class="p">:</span> <span class="kc">null</span><span class="p">,</span>
+            <span class="nt">&quot;super_user_id&quot;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+            <span class="nt">&quot;extension_attributes&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;applicable_payment_method&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="nt">&quot;available_payment_methods&quot;</span><span class="p">:</span> <span class="s2">&quot;banktransfer,cashondelivery,checkmo,payflowpro,payflow_advanced,payflow_link,braintree,cybersource,eway,authorizenet_directpost,free,braintree_paypal,paypal_billing_agreement,payflow_express_bml,paypal_express_bml,paypal_express,payflow_express,hosted_pro,worldpay,companycredit,purchaseorder,braintree_paypal_vault,braintree_cc_vault,payflowpro_cc_vault&quot;</span><span class="p">,</span>
+                <span class="nt">&quot;use_config_settings&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                <span class="nt">&quot;quote_config&quot;</span><span class="p">:</span> <span class="p">{</span>
+                    <span class="nt">&quot;is_quote_enabled&quot;</span><span class="p">:</span> <span class="kc">true</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;search_criteria&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;filter_groups&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="nt">&quot;filters&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="nt">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;region_id&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;12&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;condition_type&quot;</span><span class="p">:</span> <span class="s2">&quot;eq&quot;</span>
+                    <span class="p">}</span>
+                <span class="p">]</span>
+            <span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;total_count&quot;</span><span class="p">:</span> <span class="mi">2</span>
+<span class="p">}</span></code></pre></figure>
+</div></div>
 
 <h2 id="related-information">Related information</h2>
 

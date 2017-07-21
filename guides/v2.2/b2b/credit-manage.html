@@ -944,9 +944,67 @@
   <span class="nt">&quot;available_limit&quot;</span><span class="p">:</span> <span class="mi">500</span>
 <span class="p">}</span></code></pre></figure>
 
-<h3 id="search-for-credit-ids">Search for credit IDs</h3>
+<h3 id="search--credit-ids">Search  credit IDs</h3>
 
-<p>The <code>GET  /V1/companyCredits/</code> call returns a list of credits for companies that match the specified criteria. See <a href="/guides/v2.2/howdoi/webapi/search-criteria.html">Search using REST APIs</a> for information about constructing a query using the this endpoint.</p>
+<p>The following call returns information for all companies whose credit balance is 0.</p>
+
+<p>See <a href="/guides/v2.2/howdoi/webapi/search-criteria.html">Search using REST APIs</a> for information about constructing a search query.</p>
+
+<p><strong>Sample Usage</strong></p>
+
+<p><code>GET  /V1/companyCredits?searchCriteria[filter_groups][0][filters][0][field]=balance&amp;searchCriteria[filter_groups][0][filters][0][value]=0&amp;searchCriteria[filter_groups][0][filters][0][condition_type]=eq</code></p>
+
+<p><strong>Payload</strong></p>
+
+<p>Not applicable</p>
+
+<p><strong>Response</strong></p>
+
+<div class="collapsible"><b class="collapsible-title">Show code sample </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="nt">&quot;items&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="nt">&quot;company_id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="nt">&quot;credit_limit&quot;</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
+            <span class="nt">&quot;balance&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;currency_code&quot;</span><span class="p">:</span> <span class="s2">&quot;USD&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;exceed_limit&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;available_limit&quot;</span><span class="p">:</span> <span class="mi">1000</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+            <span class="nt">&quot;company_id&quot;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+            <span class="nt">&quot;balance&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;currency_code&quot;</span><span class="p">:</span> <span class="s2">&quot;USD&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;exceed_limit&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;available_limit&quot;</span><span class="p">:</span> <span class="mi">0</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+            <span class="nt">&quot;company_id&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+            <span class="nt">&quot;credit_limit&quot;</span><span class="p">:</span> <span class="mi">2000</span><span class="p">,</span>
+            <span class="nt">&quot;balance&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;currency_code&quot;</span><span class="p">:</span> <span class="s2">&quot;USD&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;exceed_limit&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;available_limit&quot;</span><span class="p">:</span> <span class="mi">2000</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;search_criteria&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;filter_groups&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="nt">&quot;filters&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="nt">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;balance&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;0&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;condition_type&quot;</span><span class="p">:</span> <span class="s2">&quot;eq&quot;</span>
+                    <span class="p">}</span>
+                <span class="p">]</span>
+            <span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;total_count&quot;</span><span class="p">:</span> <span class="mi">3</span>
+<span class="p">}</span></code></pre></figure>
+</div></div>
 
 <h2 id="balance-operations">Balance operations</h2>
 
@@ -1109,10 +1167,10 @@
 
 <p><strong>Payload</strong></p>
 
-<p>{
-  “purchaseOrder”: “A12345”,
-  “comment”: “Adding PO info”
-}</p>
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+  <span class="nt">&quot;purchaseOrder&quot;</span><span class="p">:</span> <span class="s2">&quot;A12345&quot;</span><span class="p">,</span>
+  <span class="nt">&quot;comment&quot;</span><span class="p">:</span> <span class="s2">&quot;Adding PO info&quot;</span>
+<span class="p">}</span></code></pre></figure>
 
 <p><strong>Response</strong></p>
 
@@ -1120,7 +1178,73 @@
 
 <h3 id="search-credit-history-ids">Search credit history IDs</h3>
 
-<p>The <code>GET  /V1/companyCredits/history</code> call returns a list of history IDs for companies that match the specified criteria. See <a href="/guides/v2.2/howdoi/webapi/search-criteria.html">Search using REST APIs</a> for information about constructing a query using the this endpoint.</p>
+<p>The following call returns a list instances in which the credit limit was set to a value higher than $500.</p>
+
+<p>See <a href="/guides/v2.2/howdoi/webapi/search-criteria.html">Search using REST APIs</a> for information about constructing a search query.</p>
+
+<p><strong>Sample Usage</strong></p>
+
+<p><code>GET /V1/companyCredits/history?searchCriteria[filter_groups][0][filters][0][field]=credit_limit&amp;searchCriteria[filter_groups][0][filters][0][value]=500&amp;searchCriteria[filter_groups][0][filters][0][condition_type]=gt</code></p>
+
+<p><strong>Payload</strong></p>
+
+<p>Not applicable</p>
+
+<p><strong>Response</strong></p>
+
+<figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
+    <span class="nt">&quot;items&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+            <span class="nt">&quot;company_credit_id&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="nt">&quot;user_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nt">&quot;user_type&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="nt">&quot;currency_credit&quot;</span><span class="p">:</span> <span class="s2">&quot;USD&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;currency_operation&quot;</span><span class="p">:</span> <span class="s2">&quot;USD&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;rate&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nt">&quot;rate_credit&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;amount&quot;</span><span class="p">:</span> <span class="mi">-250</span><span class="p">,</span>
+            <span class="nt">&quot;balance&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;credit_limit&quot;</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
+            <span class="nt">&quot;available_limit&quot;</span><span class="p">:</span> <span class="mi">1000</span><span class="p">,</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+            <span class="nt">&quot;datetime&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-06-12 02:26:28&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;purchase_order&quot;</span><span class="p">:</span> <span class="s2">&quot;A12345&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;comment&quot;</span><span class="p">:</span> <span class="s2">&quot;{\&quot;custom\&quot;:\&quot;Adding PO info\&quot;}&quot;</span>
+        <span class="p">},</span>
+        <span class="p">{</span>
+            <span class="nt">&quot;id&quot;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
+            <span class="nt">&quot;company_credit_id&quot;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+            <span class="nt">&quot;user_id&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nt">&quot;user_type&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+            <span class="nt">&quot;currency_credit&quot;</span><span class="p">:</span> <span class="s2">&quot;USD&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;currency_operation&quot;</span><span class="p">:</span> <span class="s2">&quot;USD&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;rate&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nt">&quot;rate_credit&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;amount&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;balance&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;credit_limit&quot;</span><span class="p">:</span> <span class="mi">2000</span><span class="p">,</span>
+            <span class="nt">&quot;available_limit&quot;</span><span class="p">:</span> <span class="mi">2000</span><span class="p">,</span>
+            <span class="nt">&quot;type&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+            <span class="nt">&quot;datetime&quot;</span><span class="p">:</span> <span class="s2">&quot;2017-07-20 21:28:35&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;comment&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span>
+        <span class="p">}</span>
+    <span class="p">],</span>
+    <span class="nt">&quot;search_criteria&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;filter_groups&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="nt">&quot;filters&quot;</span><span class="p">:</span> <span class="p">[</span>
+                    <span class="p">{</span>
+                        <span class="nt">&quot;field&quot;</span><span class="p">:</span> <span class="s2">&quot;credit_limit&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;value&quot;</span><span class="p">:</span> <span class="s2">&quot;500&quot;</span><span class="p">,</span>
+                        <span class="nt">&quot;condition_type&quot;</span><span class="p">:</span> <span class="s2">&quot;gt&quot;</span>
+                    <span class="p">}</span>
+                <span class="p">]</span>
+            <span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;total_count&quot;</span><span class="p">:</span> <span class="mi">2</span>
+<span class="p">}</span></code></pre></figure>
 
 <h2 id="related-information">Related information</h2>
 
