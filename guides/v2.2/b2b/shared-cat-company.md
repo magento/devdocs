@@ -45,7 +45,7 @@ If a specified company is already assigned to a different shared catalog, this r
 
 **Sample usage**
 
-`POST /V1/sharedCatalog/8/assignCompanies`
+`POST /V1/sharedCatalog/2/assignCompanies`
 
 **Payload**
 
@@ -73,7 +73,7 @@ When you unassign a company from a custom catalog, the system automatically assi
 
 **Sample usage**
 
-`POST /V1/sharedCatalog/8/unassignCompanies`
+`POST /V1/sharedCatalog/2/unassignCompanies`
 
 **Payload**
 
@@ -97,7 +97,7 @@ The `GET` call returns an array of company IDs.
 
 **Sample Usage**
 
-`GET  /V1/sharedCatalog/8/companies`
+`GET  /V1/sharedCatalog/2/companies`
 
 **Payload**
 

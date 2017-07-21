@@ -133,19 +133,19 @@ If you change the `status` to inactive, the account is locked. If the company us
 
 {% highlight json %}
 {
-	"customer": {
-		"id": 13,
-		"email": "mshaw@example.com",
-		"firstname": "Melanie",
-		"lastname": "Shaw",
-		"website_id": 1,
-		"extension_attributes": {
-    		"company_attributes": {
-    		"company_id": 2,
-    		"status": 0
-    		}
-		}
-	}
+  "customer": {
+    "id": 13,
+    "email": "mshaw@example.com",
+    "firstname": "Melanie",
+    "lastname": "Shaw",
+    "website_id": 1,
+    "extension_attributes": {
+      "company_attributes": {
+        "company_id": 2,
+        "status": 0
+        }
+      }
+  }
 }
 {% endhighlight %}
 

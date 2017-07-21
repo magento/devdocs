@@ -26,7 +26,6 @@ The `sharedCatalogCategoryManagementV1` service is based on `catalogCategoryMana
 Products that are defined within a category are not included when you assign a category to a shared catalog. You must add products separately.
 </div>
 
-
 **Service name**
 
 `sharedCatalogCategoryManagementV1`
@@ -51,35 +50,17 @@ Name | Description | Format | Requirements
 
 ### Assign categories to shared catalog
 
-In this example, the store has the following category structure:
-
-{% highlight xml %}
-Root catalog (id 1)
-|-- Default category (id 2)
-|   |-- Category 1 (id 3)
-|   |-- Cateogry 2 (id 4)
-|   |-- Cateogry 3 (id 5)
-|   |-- Cateogry 4 (id 6)
-|   |-- Cateogry 5 (id 7)
-|   |-- Cateogry 6 (id 8)
-
-{% endhighlight %}
+The following example adds the Luma Gear category (`id=3`) as well as its subcategories (`id=4,5,6`) to a custom shared catalog.
 
 **Sample usage**
 
-`POST /V1/sharedCatalog/8/assignCategories`
+`POST /V1/sharedCatalog/2/assignCategories`
 
 **Payload**
 
 {% highlight json %}
 {
   "categories": [
-    {
-      "id": 1
-    },
-    {
-      "id": 2
-    },
     {
       "id": 3
     },
@@ -91,12 +72,6 @@ Root catalog (id 1)
     },
     {
       "id": 6
-    },
-    {
-      "id": 7
-    },
-    {
-      "id": 8
     }
   ]
 }
@@ -114,7 +89,7 @@ The following example removes two categories from the shared catalog.
 
 **Sample usage**
 
-`POST /V1/sharedCatalog/8/unassignCategories`
+`POST /V1/sharedCatalog/2/unassignCategories`
 
 **Payload**
 
@@ -142,7 +117,7 @@ The `GET` call returns an array of catalog IDs.
 
 **Sample Usage**
 
-`GET  /V1/sharedCatalog/8/categories`
+`GET  /V1/sharedCatalog/2/categories`
 
 **Payload**
 
@@ -152,8 +127,6 @@ Not applicable
 
 {% highlight json %}
 [
-  1,
-  2,
   3,
   4,
   5,
@@ -163,7 +136,7 @@ Not applicable
 
 ## Assign products
 
-The `sharedCatalogProductManagementV1` service is based on `catalogProductManagementV1`. To return of products defined within a category, call `GET /V1/categories/:categoryId/products`.
+The `sharedCatalogProductManagementV1` service is based on `catalogProductManagementV1`. To return a list of products defined within a category, call `GET /V1/categories/:categoryId/products`.
 
 **Service name**
 
@@ -172,8 +145,8 @@ The `sharedCatalogProductManagementV1` service is based on `catalogProductManage
 **REST endpoints**
 
 {% highlight json %}
-POST   /V1/sharedCatalog/:id/assignProducts
-POST   /V1/sharedCatalog/:id/unassignProducts
+POST  /V1/sharedCatalog/:id/assignProducts
+POST  /V1/sharedCatalog/:id/unassignProducts
 GET  /V1/sharedCatalog/:id/products
 {% endhighlight %}
 
@@ -189,30 +162,36 @@ Name | Description | Format | Requirements
 
 ### Assign products to shared catalog
 
-The following example adds four products to the shared catalog. The specified products can be in any category.
+The following example adds two products each in the Bags, Fitness Equipment, and Watches categories to a custom shared catalog. The specified products do not have to be in the same category.
 
 **Sample usage**
 
-`POST /V1/sharedCatalog/8/assignProducts`
+`POST /V1/sharedCatalog/2/assignProducts`
 
 **Payload**
 
 {% highlight json %}
 {
-  "products": [
-  	{
-  		"sku": "product_dynamic_2"
-  	},
-	  {
-  		"sku": "product_dynamic_3"
-	  },
-	  {
-  		"sku": "product_dynamic_4"
-	  },
-	 {
-  		"sku": "product_dynamic_5"
-	 }
-  ]
+	"products": [
+    	{
+        	"sku": "24-MB01"
+    	},
+    	{
+        	"sku": "24-MB04"
+    	},
+    	{
+        	"sku": "24-UG06"
+    	},
+    	{
+        	"sku": "24-UG07"
+    	},
+    	{
+        	"sku": "24-MG04"
+    	},
+    	{
+        	"sku": "24-MG01"
+    	}
+	]
 }
 {% endhighlight %}
 
@@ -226,14 +205,14 @@ Unassigning a product does not remove it from its category or categories.
 
 **Sample usage**
 
-`POST /V1/sharedCatalog/8/unassignProducts`
+`POST /V1/sharedCatalog/2/unassignProducts`
 
 **Payload**
 {% highlight json %}
 {
   "products": [
   	{
-  		"sku": "product_dynamic_2"
+  		"sku": "24-MG01"
   	}
   ]
 }
@@ -249,7 +228,7 @@ The `GET` call returns an array of SKUs.
 
 **Sample Usage**
 
-`GET  /V1/sharedCatalog/8/products`
+`GET  /V1/sharedCatalog/2/products`
 
 **Payload**
 
@@ -259,9 +238,11 @@ Not applicable
 
 {% highlight json %}
 [
-  "product_dynamic_3",
-  "product_dynamic_4",
-  "product_dynamic_5"
+    "24-MB01",
+    "24-MB04",
+    "24-UG06",
+    "24-UG07",
+    "24-MG04"
 ]
 {% endhighlight %}
 
