@@ -2,161 +2,145 @@
 layout: default
 group: jsdg
 subgroup: 1_Javascript
-title: Frontend Product Repository
-menu_title: Frontend Product Repository
+title: Use the Frontend Product Repository
+menu_title: Use the Frontend Product Repository
 menu_order: 10
 version: 2.2
 ---
 
-Sometimes it is important to render products on frontend without making additional requests to server.
-It can be useful in mini-cart, in some widgets (recently viewed and recently compared) and in checkout, during customizations.
+The frontend product repository is a storage service that uses the local cache to get product information without making additional requests to the server.
+The product information it provides is useful for optimal mini-cart, widgets, and checkout customizations.
 
-So lets assume you need to retrieve product data anywhere on frontend. What you should do for this?
+This article contains code samples for common tasks when working with the frontend product repository.
 
-## Frontend data storage (Product Repository)
+## The product data storage
 
-From the interface represented below, you can see that there is ability to get all products we have saved in data storage.
-Data storage is high level interface of Javascript local storage. 
-Data storage has 2 sections:
+The frontend product repository uses the `product_data_storage` section of the data storage cache as its data source.
+This section is responsible for holding all product data that come from the server when a customer visits a product page.
 
-1. It is subsection of customer data ([Customer data (Public and private content)]({{page.baseurl}}config-guide/cache/cache-priv-priv.html)), named 'product_data_storage'.
-The main responsibility of this section is to get and to hold all products data, that come from server. It is useful, when 
-you have the list of product ids on front and on backend, and you need to get products data by this ids from the backend. 
-For example, if you need to get product data on front for "New products widget", you can pluginize or decorate `\Magento\Catalog\CustomerData\ProductsRenderInfoSection`
+## Instantiate the repository
 
-2. This section is just a cache. It saves all visited products by a customer, in order to reuse them in future.
-It can be useful in rendering customer specific information, e.g. recently viewed products. This section is named 'product_data_storage',
-and is situated in local storage root.
-
-If you want to get data for your product ids, you need to initialize your own instance of data-storage and set ids on what 
-you want to subscribe too.
+The following code snippet uses the [`Magento_Catalog/js/product/storage/storage-service`][storage-service]{:target="_blank"} to initialize the repository when the data storage cache itself initializes:
 
 {% highlight js %}
-/**
- * {Object} prototype - methods that will be added to all storage classes to prototype property.
- */
-prototype = {
+define([
+    'Magento_Catalog/js/product/storage/storage-service'
+]), function(storage){
+    'use strict';
 
-    /**
-     * Sets data to storage
-     *
-     * @param {*} data
-     */
-    set: function (data) {
-        ////Persisting data in data storage
-    },
+    return {
 
-    /**
-     * Adds some data to current storage data
-     *
-     * @param {*} data
-     */
-    add: function (data) {
-        ///Adding new data be merging existing and new one
-    },
+        ...
 
-    /**
-     * Gets current storage data
-     *
-     * @returns {*} data
-     */
-    get: function () {
-        //Retrieve current data
-    },
+        identifiersConfig: {
+            namespace: 'product_data_storage'
+        },
+
+        productStorageConfig: {
+            namespace: 'product_data_storage',
+            customerDataProvider: 'product_data_storage',
+            className: 'DataStorage'
+        },
+
+        initIdsStorage: function(){
+            storage.onStorageInit(this.identifiersConfig.namespace, this.idsStorageHandler.bind(this));
+            return this;
+        },
+
+        idsStorageHandler: function(idsStorage){
+            this.productStorage = storage.createStorage(this.productStorageConfig);
+        },
+
+        ...
     
-    setIds: function(productIds) {
-        //set product ids
-    },
-    
-    loadDataFromServer: function(currency, storeIds, ids) {
-        //
     }
-},
+
+}
 {% endhighlight %}
 
-### Instantiating frontend product repository
+## Use the repository
 
-You can instantiate repository with storage-service: `Magento_Catalog/js/product/storage/storage-service`, 
-using code like this:
+Subscribe a callback function to the product repository data to work with the cached data from recent server requests.
 
 {% highlight js %}
-/**
- * Initializes ids storage handler.
- *
- * @param {Object} idsStorage
- */
-idsStorageHandler: function (idsStorage) {
+
+...
+
+idsStorageHandler: function(idsStorage){
     this.productStorage = storage.createStorage(this.productStorageConfig);
     this.productStorage.data.subscribe(this.dataCollectionHandler.bind(this));
 },
-{% endhighlight %}
-   
-Of course, also you can subscribe on any data mutation.   
 
-### Reusing product repository
-
-So the code of reusing product repository will looks like this:
-{% highlight js %}
-/**
- * Initializes ids storage handler.
- *
- * @param {Object} idsStorage
- */
-idsStorageHandler: function (idsStorage) {
-    this.productStorage = storage.createStorage(this.productStorageConfig);
-    this.productStorage.setIds(idsStorage.get());
-    this.productStorage.data.subscribe(this.dataCollectionHandler.bind(this));
+dataCollectionHandler: function(data){
+    //Code to handle the data
 },
 
-/**
- * Product storage data handler
- *  
- * @param {Object} data - The latest version of your ids
- */
-dataCollectionHandler: function (data) {
-    data = this.filterData(data);// It is up to you
-    this.processData(data);// how implement this functions
-},
-{% endhighlight %}
-   
-### Getting product data from the server
-   
-Also you should be possible to fetch products data from server by IDs, aggregated on store front.
-In this case you need to use `this.productDataStorage.loadDataFromServer(currency, storeId, ids)` method.
-What you should know about fetching products data:
+...
 
-1. Products data has 3 dimensions: currency, scope (store or website) IDs and product IDs. 
-As data came from the server with formatted prices, we should be able to refresh price data according to chosen currency.
-The same for the store.
-2. You can handle the data, came from server, only in one way - subscribing on product data storage mutation.
-   
+{% endhighlight %}
+
+## Get data from the server
+
+Use the [`loadDataFromServer`][load-data-from-server]{:target="_blank"} method from the `data-storage` class to get product data from a list of IDs. 
+
 {% highlight js %}
-/**
- * Initializes ids storage handler.
- *
- * @param {Object} idsStorage
- */
-idsStorageHandler: function (idsStorage, currency, storeId) {
+
+...
+
+idsStorageHandler: function(idsStorage, currency, storeId){
     this.productStorage = storage.createStorage(this.productStorageConfig);
     this.productStorage.data.subscribe(this.dataCollectionHandler.bind(this));
     this.productStorage.loadDataFromServer(currency, storeId, idsStorage.get());
 },
+
+...
+
 {% endhighlight %}
-   
-### Product Render Data Information Api
 
-In order to get all information about the products, you can run next API method: 
+| Parameter  | Description                                     |
+| ---------- | ----------------------------------------------- |
+| `currency` | The currency data to get for the product        |
+| `store`    | The ID of the store associated with the product |
+| `ids`      | An object that contains the list of IDs as keys |
 
-```
-GET    /V1/products-render-info
-```
+In the preceding example the data is handled by the subscribed function `dataCollectionHandler`.
 
-You should pass entity_id of the products as the parameter in searchCriteria.
-You should receive such response as:
+### Specify REST resource
 
-![Response Result]({{ site.baseurl }}common/images/product_render_request.png)
+Use the following REST endpoint to get product information: 
 
-Let's consider the structure of this response (This structure can be represented by `\Magento\Catalog\Api\Data\ProductRenderInterface`).
+`/V1/products-render-info`
+
+For UI Components, add this information in the [`dataProvider`][datasource-component] entry inside your `etc/view/frontend/ui_component/<ui-component-name>.xml` file.
+
+The following example is from the [recently-viewed widget][recently-viewed-widget]{:target="_blank"}:
+
+{% highlight xml %}
+
+<argument name="dataProvider" xsi:type="configurableObject">
+    <argument name="data" xsi:type="array">
+        <item name="config" xsi:type="array">
+            <item name="productStorageConfig" xsi:type="array">
+                <item name="namespace" xsi:type="string">product_data_storage</item>
+                <item name="className" xsi:type="string">DataStorage</item>
+                <item name="updateRequestConfig" xsi:type="array">
+                    <item name="url" xsi:type="serviceUrl" path="/products-render-info"/>
+                </item>
+            </item>
+            <item name="identifiersConfig" xsi:type="array">
+              <item name="namespace" xsi:type="string">recently_viewed_product</item>
+            </item>
+        </item>
+    </argument>
+</argument>
+
+{% endhighlight %}
+
+This sets the appropriate information inside the `updateRequestConfig` object in the product storage configuration(`productStorageConfig` in the example code).
+
+The object structure for this REST response is represented by [`\Magento\Catalog\Api\Data\ProductRenderInterface`][product-render-interface]{:target="_blank"}:
+
+{% collapsible Show Object Structure %}
 
 {% highlight js %}
 [
@@ -208,3 +192,11 @@ Let's consider the structure of this response (This structure can be represented
    }  
 ]
 {% endhighlight %}
+
+{% endcollapsible %}
+
+[datasource-component]: {{page.baseurl}}ui_comp_guide/concepts/ui_comp_data_source.html
+[recently-viewed-widget]: https://github.com/magento/magento2/blob/develop/app/code/Magento/Catalog/view/frontend/ui_component/widget_recently_viewed.xml
+[product-render-interface]: https://github.com/magento/magento2/blob/develop/app/code/Magento/Catalog/Api/Data/ProductRenderInterface.php
+[storage-service]: https://github.com/magento/magento2/blob/develop/app/code/Magento/Catalog/view/frontend/web/js/product/storage/storage-service.js
+[load-data-from-server]: https://github.com/magento/magento2/blob/develop/app/code/Magento/Catalog/view/frontend/web/js/product/storage/data-storage.js#L213
