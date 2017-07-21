@@ -14,6 +14,10 @@ A Magento instance collects data that the Magento Business Intelligence (MBI) se
 
 The file describes the information being collected and how it is distributed among the data sets (files).
 
+## Setting
+
+
+
 ## Example
 
 An example of the `/etc/analytics.xml` file:
@@ -47,7 +51,7 @@ The example declares the following:
 
 ## Extensibility
 
-Configuration of data collection may be extended or changed in any module by adding the corresponding `<module_name>/etc/analytics.xml` file.
+Configuration of data collection may be extended or changed in any module adding the corresponding `<module_name>/etc/analytics.xml` file.
 
 ## Structure
 
