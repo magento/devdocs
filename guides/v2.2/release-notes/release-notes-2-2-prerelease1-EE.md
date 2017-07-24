@@ -75,7 +75,7 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 
 ### Import/export
 
-<!--- 67240 -->* Magento now accurately displays product information after import. Previously, Magento displayed duplicated or incomplete information on the product page after import. 
+<!--- 67240 -->* Magento now displays more verbose information about duplicated information with links to action for troubleshooting the import process.  Previously, Magento displayed duplicated or incomplete information on the product page after import. 
 
 <!--- 65667 -->* Magento now successfully imports customer multiselect attributes. Previously, when you imported a CSV file with either the option's ID numbers or the option's values, Magento returned an error. 
 
