@@ -8,6 +8,9 @@ menu_order: 5
 menu_node:
 version: 2.0
 github_link: cloud/before/before-workspace.md
+redirect from:
+  -  /guides/v2.0/cloud/access-acct/set-up-env.html
+  -  /guides/v2.1/cloud/access-acct/set-up-env.html
 ---
 
 To develop, deploy, and test Magento Magento Enterprise Cloud Edition (ECE) and your custom code, extensions, and configurations, create a  project and setup your local workspace. The project is a Git repository of code managed in GitHub, with branches you develop and merge to the master for deployment across your cloud environments. A local workspace provides a system to clone branches from the master, develop code, and add extensions. This code is pushed for active testing in an Integration environment, merged to the master branch, then deployed to Staging and finally Production.

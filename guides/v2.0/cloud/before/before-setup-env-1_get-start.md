@@ -1,13 +1,11 @@
 ---
 layout: default
 group: cloud
-subgroup: 080_setup
+subgroup:
 title: Step 1, Get started setting up an environment
 menu_title: Step 1, Get started setting up an environment
-menu_order: 
+menu_order:
 menu_node:
-level3_menu_node: level3child
-level3_subgroup: setupenv
 version: 2.0
 github_link: cloud/before/before-setup-env-1_get-started.md
 ---

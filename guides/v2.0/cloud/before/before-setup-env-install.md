@@ -87,7 +87,7 @@ To get the URI for the Magento store, enter this command:
 
 	php bin/magento info:adminuri
 
-##
+## Set file system permissions and ownership
 After you have installed Magento, you need to set the file system permissions and ownership.
 
 1.  Log in to your Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html).

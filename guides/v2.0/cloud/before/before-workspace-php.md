@@ -1,13 +1,11 @@
 ---
 layout: default
 group: cloud
-subgroup: 080_setup
+subgroup:
 title: Step 5, Set up PHP and MySQL
 menu_title: Step 5, Set up PHP and MySQL
-menu_order: 
+menu_order:
 menu_node:
-level3_menu_node: level3child
-level3_subgroup: workspace
 version: 2.0
 github_link: cloud/before/before-workspace-php.md
 ---
