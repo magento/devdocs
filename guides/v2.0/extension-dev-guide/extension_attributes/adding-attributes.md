@@ -174,11 +174,13 @@ For scalar attributes we can use next configuration:
 {% endhighlight %}
 
 For non-scalar attributes:
+{% highlight xml %}
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Api/etc/extension_attributes.xsd">
     <extension_attributes for="Magento\Catalog\Api\Data\ProductInterface">
         <attribute code="our_custom_data" type="Magento\SomeModule\Api\Data\CustomDataInterface[]" />
     </extension_attributes>
 </config>
+{% endhighlight %}
 
 In first case we will get the next result:
 
