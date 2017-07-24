@@ -1221,11 +1221,12 @@ Also we need to check whether we already has our <span term-uuid="45013f4a-21a9-
 <span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <p>For non-scalar attributes:</p>
-<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Api/etc/extension_attributes.xsd">
-    <extension_attributes for="Magento\Catalog\Api\Data\ProductInterface">
-        <attribute code="our_custom_data" type="Magento\SomeModule\Api\Data\CustomDataInterface[]" />
-    </extension_attributes>
-</config>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;config</span> <span class="na">xmlns:xsi=</span><span class="s">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</span> <span class="na">xsi:noNamespaceSchemaLocation=</span><span class="s">&quot;urn:magento:framework:Api/etc/extension_attributes.xsd&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;extension_attributes</span> <span class="na">for=</span><span class="s">&quot;Magento\Catalog\Api\Data\ProductInterface&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;attribute</span> <span class="na">code=</span><span class="s">&quot;our_custom_data&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\SomeModule\Api\Data\CustomDataInterface[]&quot;</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/extension_attributes&gt;</span>
+<span class="nt">&lt;/config&gt;</span></code></pre></figure>
 
 <p>In first case we will get the next result:</p>
 
