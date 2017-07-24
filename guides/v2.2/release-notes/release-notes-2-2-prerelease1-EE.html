@@ -694,6 +694,7 @@
   <li><a href="#issues-fixed-in-this-release-candidate" id="markdown-toc-issues-fixed-in-this-release-candidate">Issues fixed in this Release Candidate</a>    <ul>
       <li><a href="#advanced-reporting" id="markdown-toc-advanced-reporting">Advanced reporting</a></li>
       <li><a href="#catalog" id="markdown-toc-catalog">Catalog</a></li>
+      <li><a href="#importexport" id="markdown-toc-importexport">Import/export</a></li>
       <li><a href="#installation-and-configuration" id="markdown-toc-installation-and-configuration">Installation and Configuration</a></li>
       <li><a href="#mbi" id="markdown-toc-mbi">MBI</a></li>
       <li><a href="#miscellaneous" id="markdown-toc-miscellaneous">Miscellaneous</a></li>
@@ -705,9 +706,9 @@
   <li><a href="#credits" id="markdown-toc-credits">Credits</a></li>
 </ul>
 
-<p><em>Release date: July 14, 2017</em></p>
+<p><em>Release date: July 21, 2017</em></p>
 
-<p><em>Notes updated: July 16, 2017</em></p>
+<p><em>Notes updated: July 23, 2017</em></p>
 
 <p>Magento Enterprise Edition 2.2.0 Release Candidate includes significant new features as well as many bug fixes.</p>
 
@@ -770,6 +771,18 @@ buyer to create a cart with more than 300 line items, and merchants can process 
   <li>You can now successfully set the <strong>Enable Product</strong> attribute to <strong>no</strong>.</li>
 </ul>
 
+<h3 id="importexport">Import/export</h3>
+
+<!--- 67240 -->
+<ul>
+  <li>Magento now displays more verbose information about duplicated information with links to action for troubleshooting the import process.  Previously, Magento displayed duplicated or incomplete information on the product page after import.</li>
+</ul>
+
+<!--- 65667 -->
+<ul>
+  <li>Magento now successfully imports customer multiselect attributes. Previously, when you imported a CSV file with either the option’s ID numbers or the option’s values, Magento returned an error.</li>
+</ul>
+
 <h3 id="installation-and-configuration">Installation and Configuration</h3>
 
 <!--- 69854 -->
@@ -790,6 +803,11 @@ buyer to create a cart with more than 300 line items, and merchants can process 
 <!--- 70318 -->
 <ul>
   <li>You can now generate static content without a database connection. <a href="https://github.com/magento/magento2/issues/10041">GitHub-10041</a></li>
+</ul>
+
+<!--- 67020 -->
+<ul>
+  <li>Magento now handles the <code>catalog_product_entity_media_gallery_value.position</code>  value the same whether you’ve installed or upgraded the product. Previously, these values differed depending upon whether you upgraded or freshly installed your Magento code.</li>
 </ul>
 
 <h3 id="mbi">MBI</h3>
@@ -841,6 +859,31 @@ buyer to create a cart with more than 300 line items, and merchants can process 
   <li>Magento now handles string localization when the string contains a quote (\’). Previously, localization did not work under these conditions.</li>
 </ul>
 
+<!--- 70646 -->
+<ul>
+  <li>The <strong>Save</strong> button on the Create Shipping Label on an existing shipment now works as expected.</li>
+</ul>
+
+<!--- 70628 -->
+<ul>
+  <li>The Forgot Your Password? email now contains a link to reset your password. Previously, this link was missing from the Forgot Your Password? email.</li>
+</ul>
+
+<!--- 57753 -->
+<ul>
+  <li>You can now successfully create product attributes using the REST API. Previously, although the product was created, the attribute was not. <a href="https://github.com/magento/magento2/issues/6213">GitHub-6213</a></li>
+</ul>
+
+<!--- 70406 -->
+<ul>
+  <li>We’ve improved the performance of the CatalogPermission indexer. Previously, Magento performance degraded significantly during the indexing of large numbers of customer groups.</li>
+</ul>
+
+<!--- 69521 -->
+<ul>
+  <li>Magento now shows customer attributes in the Admin panel (as expected)  when the <strong>Show on Storefront</strong> option is set to <strong>No</strong>. Previously, when this setting was set to <strong>No</strong>, the attribute value would not appear in the customer account  section of the Admin panel customer account, but did appear in the orders section.</li>
+</ul>
+
 <h3 id="search">Search</h3>
 
 <!--- 63249 -->
@@ -851,6 +894,11 @@ buyer to create a cart with more than 300 line items, and merchants can process 
 <!--- 59477 -->
 <ul>
   <li>Attribute weighting now works correctly for the MySQL adapter. <a href="https://github.com/magento/magento2/issues/9020">GitHub-9020</a></li>
+</ul>
+
+<!--- 65245 -->
+<ul>
+  <li>Magento now sends the <code>parent_id</code> of a deleted configurable product variation to ElasticSearch. Previously, Magento didn’t send this information  to the ElasticSearch server  if  the simple product associated with a configurable product were changed.</li>
 </ul>
 
 <h2 id="system-requirements">System requirements</h2>
