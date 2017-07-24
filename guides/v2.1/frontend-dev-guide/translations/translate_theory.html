@@ -1146,6 +1146,12 @@ To make sure the strings of an email template are added to the dictionary, use t
 
 <figure class="highlight"><pre><code class="language-html" data-lang="html">    <span class="c">&lt;!-- ko i18n: &#39;You have no items in your shopping cart.&#39; --&gt;&lt;!-- /ko --&gt;</span></code></pre></figure>
 
+<ul>
+  <li>when a string is added as an attribute of an HTML element:</li>
+</ul>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">    <span class="nt">&lt;input</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">data-bind=</span><span class="s">&quot;attr: {placeholder: $t(&#39;First Name&#39;)}&quot;</span> <span class="nt">/&gt;</span></code></pre></figure>
+
 <h2 id="add_strings_ui_xml">Strings added in UI components configuration files</h2>
 
 <p>To ensure that the text you add in UI components configuration <code>.xml</code> files is added to the dictionary, use the <code>translate</code> attribute: set <code>translate=true</code> for the corresponding element. The following code sample is an illustration:</p>
