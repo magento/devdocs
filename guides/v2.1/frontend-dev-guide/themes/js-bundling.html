@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Customizing styles illustration | Magento 2 Developer Documentation</title>
+	<title>JavaScript Bundling | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.1/frontend-dev-guide/css-topics/css-practice.html">
+	<link rel="canonical" href="//guides/v2.1/frontend-dev-guide/themes/js-bundling.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -69,11 +69,11 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/frontend-dev-guide/css-topics/css-practice.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/frontend-dev-guide/themes/js-bundling.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/frontend-dev-guide/css-topics/css-practice.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/frontend-dev-guide/themes/js-bundling.html">Magento 2.1</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.2/frontend-dev-guide/css-topics/css-practice.html">Magento 2.2 RC</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.2/frontend-dev-guide/themes/js-bundling.html">Magento 2.2 RC</a></li>
 	
   </ul>
 
@@ -410,7 +410,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/frontend-dev-guide/themes/js-bundling.html">JavaScript Bundling</a></li>
+									<li class="level-2  active "><a href="/guides/v2.1/frontend-dev-guide/themes/js-bundling.html">JavaScript Bundling</a></li>
 
 									
 
@@ -633,7 +633,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.1/frontend-dev-guide/css-topics/css-practice.html">Customizing styles illustration</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/frontend-dev-guide/css-topics/css-practice.html">Customizing styles illustration</a></li>
 
 									
 
@@ -1071,7 +1071,7 @@
 
           
 
-          <span property="name">Customizing styles illustration</span>
+          <span property="name">JavaScript Bundling</span>
 
         
 
@@ -1094,7 +1094,7 @@
 
 	
 
-	<h1 class="page-heading">Customizing styles illustration</h1>
+	<h1 class="page-heading">JavaScript Bundling</h1>
 
   
 
@@ -1102,73 +1102,122 @@
 </section>
 
 
-			<h2 id="practice_over">What's in this topic</h2>
+			<p>JavaScript bundling is an optimization technique you can use to reduce the number of server requests for JavaScript files.
+Bundling accomplishes this by merging multiple JavaScript files together into one file to reduce the number of page requests.</p>
 
-<p>This topic features a step-by-step illustration of how to change a theme’s color scheme using Magento UI <span term-uuid="08968dbb-2eeb-45c7-ae95-ffca228a7575" class="glossary-term" data-toggle="popover">library</span>.</p>
+<h2 id="enable-javascript-bundling">Enable JavaScript bundling</h2>
 
-<h2>Changing theme color scheme</h2>
+<p>Magento must be set to <a href="/guides/v2.1/config-guide/bootstrap/magento-modes.html#mode-production">production mode</a> in order for bundling to work.</p>
 
-<p>OrangeCo created a custom <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span> that inherits from the Magento basic Blank theme.
-The following image illustrates how store pages look when the Blank theme is applied:</p>
+<p>To activate JavaScript bundling:</p>
 
-<div style="border: 1px solid #ABABAB">
-<img src="/common/images/practice_blank.png" alt="product page when Blank applied" />
-</div>
+<ol>
+  <li>Log in to the Admin area</li>
+  <li>Navigate to <code>Stores -&gt; Configuration -&gt; Advanced -&gt; Developer -&gt; Javascript Settings</code></li>
+  <li>Set <code>Enable Javascript Bundling</code> to <code>Yes</code>.</li>
+</ol>
 
-<p>In their Grey theme, OrangeCo wants to change the color scheme from white to grey.</p>
+<p>To optimize bundling, set the following settings to <code>Yes</code>:</p>
 
-<p>The Grey theme directory is <code>app/design/frontend/OrangeCo/grey</code>.</p>
+<ul>
+  <li><code>Javascript Settings -&gt; Merge JavaScript Files</code></li>
+  <li><code>Javascript Settings -&gt; Minify Javascript Files</code></li>
+  <li><code>Static Files Settings -&gt; Sign Static Files</code></li>
+</ul>
 
-<p>OrangeCo decided to use the Magento UI library, so to change the color scheme, they need to define new values for certain default LESS variables.
-To do this, they added an overriding <code>_theme.less</code> file in the <code>app/design/frontend/OrangeCo/grey/web/css/source</code> directory, with the following content:</p>
-<pre>
-//  Color nesting
-@page__background-color: @color-gray20;
-@sidebar__background-color: @color-gray40;
-@primary__color: @color-gray80;
-@border-color__base: @color-gray76;
+<h2 id="how-bundling-works-in-magento">How bundling works in Magento</h2>
 
-@link__color: @color-gray56;
-@link__hover__color: @color-gray60;
+<p>By default, Magento bundles all JavaScript files and loads them synchronously on every page load.
+This means that each bundle is loaded one after the other and causes delays for JavaScript behaviors on a page.</p>
 
-//  Buttons
-@button__color: @color-gray20;
-@button__background: @color-gray80;
-@button__border: 1px solid @border-color__base;
+<h3 id="excluding-files">Excluding files</h3>
 
-//  Primary button
-@button-primary__background: @color-orange-red1;
-@button-primary__border: 1px solid @color-orange-red2;
-@button-primary__color: @color-white;
-@button-primary__hover__background: darken(@color-orange-red1, 5%);
-@button-primary__hover__border: 1px solid @color-orange-red2;
-@button-primary__hover__color: @color-white;
+<p>The <code>&lt;exclude&gt;</code> entry in a theme’s <code>etc/view.xml</code> file tells Magento which files it should not bundle.
+JavaScript files excluded from bundling are loaded asynchronously by RequireJS as needed.</p>
 
-//  Navigation
-@navigation-level0-item__color: @color-gray80;
-@submenu-item__color: @color-gray80;
+<p>Do not bundle JavaScript files used for testing or development because these will get loaded on every page.</p>
 
-@navigation__background: @color-gray40;
-@navigation-desktop-level0-item__color: @color-gray80;
-@navigation-desktop-level0-item__hover__color: @color-gray34;
-@navigation-desktop-level0-item__active__color: @navigation-desktop-level0-item__color;
+<p>The following code snippet from <a href="https://github.com/magento/magento2/blob/develop/app/design/frontend/Magento/luma/etc/view.xml" target="_blank">Magento’s Luma theme</a> shows the types of files you should exclude in your theme.</p>
 
-//  Tabs
-@tab-control__background-color: @page__background-color;
+<div class="collapsible"><b class="collapsible-title">Show example </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;vars</span> <span class="na">module=</span><span class="s">&quot;Js_Bundle&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">&quot;bundle_size&quot;</span><span class="nt">&gt;</span>1MB<span class="nt">&lt;/var&gt;</span>
+<span class="nt">&lt;/vars&gt;</span>
+<span class="nt">&lt;exclude&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Lib::jquery/jquery.min.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Lib::jquery/jquery-ui-1.9.2.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Lib::jquery/jquery.ba-hashchange.min.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Lib::jquery/jquery.details.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Lib::jquery/jquery.details.min.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Lib::jquery/jquery.hoverIntent.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Lib::jquery/colorpicker/js/colorpicker.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Lib::requirejs/require.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Lib::requirejs/text.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Lib::date-format-normalizer.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Lib::legacy-build.min.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Lib::mage/captcha.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Lib::mage/dropdown_old.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Lib::mage/list.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Lib::mage/loader_old.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Lib::mage/webapi.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Lib::mage/zoom.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Lib::mage/translate-inline-vde.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Lib::mage/requirejs/mixins.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Lib::mage/requirejs/static.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Magento_Customer::js/zxcvbn.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Magento_Catalog::js/zoom.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Magento_Ui::js/lib/step-wizard.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Magento_Ui::js/form/element/ui-select.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Magento_Ui::js/form/element/file-uploader.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Magento_Ui::js/form/components/insert.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Magento_Ui::js/form/components/insert-listing.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;directory&quot;</span><span class="nt">&gt;</span>Magento_Ui::js/timeline<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;directory&quot;</span><span class="nt">&gt;</span>Magento_Ui::js/grid<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;directory&quot;</span><span class="nt">&gt;</span>Magento_Ui::js/dynamic-rows<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;directory&quot;</span><span class="nt">&gt;</span>Magento_Ui::templates/timeline<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;directory&quot;</span><span class="nt">&gt;</span>Magento_Ui::templates/grid<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;directory&quot;</span><span class="nt">&gt;</span>Magento_Ui::templates/dynamic-rows<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;directory&quot;</span><span class="nt">&gt;</span>Magento_Swagger::swagger-ui<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;directory&quot;</span><span class="nt">&gt;</span>Lib::modernizr<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;directory&quot;</span><span class="nt">&gt;</span>Lib::tiny_mce<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;directory&quot;</span><span class="nt">&gt;</span>Lib::varien<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;directory&quot;</span><span class="nt">&gt;</span>Lib::jquery/editableMultiselect<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;directory&quot;</span><span class="nt">&gt;</span>Lib::jquery/jstree<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;directory&quot;</span><span class="nt">&gt;</span>Lib::jquery/fileUploader<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;directory&quot;</span><span class="nt">&gt;</span>Lib::css<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;directory&quot;</span><span class="nt">&gt;</span>Lib::lib<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;directory&quot;</span><span class="nt">&gt;</span>Lib::extjs<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;directory&quot;</span><span class="nt">&gt;</span>Lib::prototype<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;directory&quot;</span><span class="nt">&gt;</span>Lib::scriptaculous<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;directory&quot;</span><span class="nt">&gt;</span>Lib::less<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;directory&quot;</span><span class="nt">&gt;</span>Lib::mage/adminhtml<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;directory&quot;</span><span class="nt">&gt;</span>Lib::mage/backend<span class="nt">&lt;/item&gt;</span>
+<span class="nt">&lt;/exclude&gt;</span></code></pre></figure>
+</div></div>
 
-//  Forms
-@form-element-input__background: @color-gray89;
-@form-element-input-placeholder__color: @color-gray60;
+<h3 id="setting-bundle-file-size">Setting bundle file size</h3>
 
-//  Header icons
-@header-icons-color: @color-gray89;
-@header-icons-color-hover: @color-gray60;
+<p>The <code>bundle_size</code> entry controls the file size of the generated bundles.
+Setting this to a large number will reduce the number of bundles generated, but the file sizes will be big.
+A small number will increase the number of bundles generated, but the file sizes will be smaller.</p>
 
-</pre>
+<p>You want to balance the number of files to download on a page with the size of the data.
+A single connection should be around 100kb.</p>
 
-<p>After the Grey theme is applied (and <a href="/guides/v2.1/howdoi/clean_static_cache.html">static files cache cleared</a>), store pages will look like following:</p>
+<h2 id="fine-tuning-your-theme">Fine tuning your theme</h2>
 
-<p><img src="/common/images/css_practice.png" alt="product page when Grey applied" /></p>
+<p>There are many ways to tune your theme’s <code>etc/view.xml</code> file.</p>
+
+<p>For example, Magento’s Luma theme is configured to work well for all pages, but 
+by adding or removing items inside <code>exclude</code>, you can maximize browser performance for home, catalog, or product pages.</p>
+
+<p>Follow these steps to help you identify which JavaScript files to bundle for your theme:</p>
+
+<ol>
+  <li>Create a blank page with the layouts you would like to tune.</li>
+  <li>Compare the JavaScript files loaded in the pages with the JavaScript files in Magento.</li>
+  <li>Use the results of that comparison to build your exclude list.</li>
+</ol>
+
 
 		</div>
 		<!-- /.content-wrap -->
@@ -1179,14 +1228,14 @@ To do this, they added an overriding <code>_theme.less</code> file in the <code>
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/frontend-dev-guide/css-topics/css-practice.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/frontend-dev-guide/themes/js-bundling.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
   
 
   <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/frontend-dev-guide/css-topics/css-practice.html" target="_blank">Give us feedback</a>
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/frontend-dev-guide/themes/js-bundling.html" target="_blank">Give us feedback</a>
   </div>
 
 </div>

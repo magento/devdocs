@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Add a custom breakpoint | Magento 2 Developer Documentation</title>
+	<title>JavaScript Bundling | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.2/frontend-dev-guide/responsive-web-design/rwd-breakpoints.html">
+	<link rel="canonical" href="//guides/v2.2/frontend-dev-guide/themes/js-bundling.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -69,11 +69,11 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/frontend-dev-guide/responsive-web-design/rwd-breakpoints.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/frontend-dev-guide/themes/js-bundling.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/frontend-dev-guide/responsive-web-design/rwd-breakpoints.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/frontend-dev-guide/themes/js-bundling.html">Magento 2.1</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.2/frontend-dev-guide/responsive-web-design/rwd-breakpoints.html">Magento 2.2 RC</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.2/frontend-dev-guide/themes/js-bundling.html">Magento 2.2 RC</a></li>
 	
   </ul>
 
@@ -443,7 +443,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.2/frontend-dev-guide/themes/js-bundling.html">JavaScript Bundling</a></li>
+									<li class="level-2  active "><a href="/guides/v2.2/frontend-dev-guide/themes/js-bundling.html">JavaScript Bundling</a></li>
 
 									
 
@@ -817,7 +817,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.2/frontend-dev-guide/responsive-web-design/rwd-breakpoints.html">Add a custom breakpoint</a></li>
+									<li class="level-2 "><a href="/guides/v2.2/frontend-dev-guide/responsive-web-design/rwd-breakpoints.html">Add a custom breakpoint</a></li>
 
 									
 
@@ -1089,7 +1089,7 @@
 
           
 
-          <span property="name">Add a custom breakpoint</span>
+          <span property="name">JavaScript Bundling</span>
 
         
 
@@ -1112,7 +1112,7 @@
 
 	
 
-	<h1 class="page-heading">Add a custom breakpoint</h1>
+	<h1 class="page-heading">JavaScript Bundling</h1>
 
   
 
@@ -1120,82 +1120,122 @@
 </section>
 
 
-			<h2>What's in this topic</h2>
+			<p>JavaScript bundling is an optimization technique you can use to reduce the number of server requests for JavaScript files.
+Bundling accomplishes this by merging multiple JavaScript files together into one file to reduce the number of page requests.</p>
 
-<p>Breakpoints are used in stylesheets to set up the screen width at which the design changes, for example from the mobile to the desktop version. Themes provided with Magento implement a list of <a href="/guides/v2.2/frontend-dev-guide/responsive-web-design/rwd_css.html#fedg_rwd_css_break">default breakpoints</a>. This topic describes how to add a custom breakpoint in your <span term-uuid="d2093e4a-2b71-48a3-99b7-b32af7158019" class="glossary-term" data-toggle="popover">theme</span>.</p>
+<h2 id="enable-javascript-bundling">Enable JavaScript bundling</h2>
 
-<h2 id="overview">Overview</h2>
-<p>To add a custom breakpoint in your theme, you need to do the following:</p>
+<p>Magento must be set to <a href="/guides/v2.2/config-guide/bootstrap/magento-modes.html#mode-production">production mode</a> in order for bundling to work.</p>
 
-<ol>
-  <li>Define a variable for the new breakpoint.</li>
-  <li>Override the <span term-uuid="08968dbb-2eeb-45c7-ae95-ffca228a7575" class="glossary-term" data-toggle="popover">library</span> <code>_responsive.less</code> file, and add the new rule for the new breakpoint.</li>
-  <li>Implement the screen changes for the new breakpoint.</li>
-</ol>
-
-<h2 id="add-a-new-breakpoint-variable">Add a new breakpoint variable</h2>
-
-<p>In your custom theme directory, add a <code>/web/css/source/variables.less</code> in one of the following ways:</p>
-
-<ul>
-  <li>if your theme <a href="/guides/v2.2/frontend-dev-guide/themes/theme-inherit.html">inherits</a> from the other, then copy the parent’s <code>variables.less</code>.</li>
-  <li>if your theme is a standalone one, add a new empty file.</li>
-</ul>
-
-<p>In <code>variable.less</code>, add the variable for your new breakpoint.</p>
-
-<p>For example:</p>
-
-<pre><code>@your__breakpoint: 1280px;
-</code></pre>
-
-<p>For variables’ naming rules see <a href="http://devdocs.magento.com/guides/v2.0/coding-standards/code-standard-less.html#variables">Less coding standards</a>.</p>
-
-<h2 id="override-responsiveless-from-the-library">Override <code>_responsive.less</code> from the library</h2>
-
-<p>According to the approach, implemented in the Magento UI library, the <code>.media-width()</code> mixin calls are defined in many places, but invoked in one place, in <code>lib/web/css/source/lib/_responsive.less</code>.</p>
-
-<p>To implement a new breakpoint, you need to edit the <code>.media-width()</code> mixin by adding the appropriate rule there. So you need to override the library <code>_responsive.less</code> in your theme, and add the customizations there.</p>
-
-<p>To do this, take the following steps:</p>
+<p>To activate JavaScript bundling:</p>
 
 <ol>
-  <li>Copy the <code>_responsive.less</code> file to your <code>&lt;your_theme_dir&gt;/web/css/source/lib/</code> directory from one of the following locations:
-    <ul>
-      <li><code>&lt;your_parent_theme_dir&gt;/web/css/source/lib/_responsive.less</code>: overriding <code>_responsive.less</code> in the parent theme. If there’s no such file or no parent theme, use the other option.</li>
-      <li><code>&lt;your_theme_dir&gt;/web/css/source/lib/_responsive.less</code>: the library file.</li>
-    </ul>
-  </li>
-  <li>In your <code>_responsive.less</code>, add the <code>.media-width</code> <span term-uuid="1a305bdb-9be8-44aa-adad-98758821d6a7" class="glossary-term" data-toggle="popover">mixin</span> rule for your breakpoint in the corresponding section (desktop or mobile, depending on the type of breakpoint you add).</li>
+  <li>Log in to the Admin area</li>
+  <li>Navigate to <code>Stores -&gt; Configuration -&gt; Advanced -&gt; Developer -&gt; Javascript Settings</code></li>
+  <li>Set <code>Enable Javascript Bundling</code> to <code>Yes</code>.</li>
 </ol>
 
-<p>Example:</p>
-
-<pre><code>&amp; when (@media-target = 'desktop'), (@media-target = 'all') {
-…
-    @media all and (min-width: @your__breakpoint) {
-        .media-width('min', @your__breakpoint);
-    }
-}
-</code></pre>
-
-<h2 id="add-media-width-calls-for-the-new-breakpoint">Add <code>.media-width()</code> calls for the new breakpoint</h2>
-
-<p>Now you can add a new <code>.media-width()</code> mixin call where necessary in your theme <code>.less </code> files.</p>
-
-<p>Example:</p>
-
-<pre><code>.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @your__breakpoint) {
-    //  Customization for @your__breakpoint breakpoint
-}
-</code></pre>
-
-<h2 id="related-reading">Related reading</h2>
+<p>To optimize bundling, set the following settings to <code>Yes</code>:</p>
 
 <ul>
-  <li>You can find information about the <code>_responsive.less</code> library file in the generated Magento UI library documentation. It is available in the following location in your Magento installation: <code>&lt;your_Magento_installation&gt;/pub/static/frontend/Magento/blank/en_US/css/docs/responsive.html</code>.</li>
-  <li><a href="/guides/v2.2/frontend-dev-guide/responsive-web-design/rwd_overview.html">How to make your theme responsive and mobile</a>.</li>
+  <li><code>Javascript Settings -&gt; Merge JavaScript Files</code></li>
+  <li><code>Javascript Settings -&gt; Minify Javascript Files</code></li>
+  <li><code>Static Files Settings -&gt; Sign Static Files</code></li>
 </ul>
+
+<h2 id="how-bundling-works-in-magento">How bundling works in Magento</h2>
+
+<p>By default, Magento bundles all JavaScript files and loads them synchronously on every page load.
+This means that each bundle is loaded one after the other and causes delays for JavaScript behaviors on a page.</p>
+
+<h3 id="excluding-files">Excluding files</h3>
+
+<p>The <code>&lt;exclude&gt;</code> entry in a theme’s <code>etc/view.xml</code> file tells Magento which files it should not bundle.
+JavaScript files excluded from bundling are loaded asynchronously by RequireJS as needed.</p>
+
+<p>Do not bundle JavaScript files used for testing or development because these will get loaded on every page.</p>
+
+<p>The following code snippet from <a href="https://github.com/magento/magento2/blob/develop/app/design/frontend/Magento/luma/etc/view.xml" target="_blank">Magento’s Luma theme</a> shows the types of files you should exclude in your theme.</p>
+
+<div class="collapsible"><b class="collapsible-title">Show example </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;vars</span> <span class="na">module=</span><span class="s">&quot;Js_Bundle&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;var</span> <span class="na">name=</span><span class="s">&quot;bundle_size&quot;</span><span class="nt">&gt;</span>1MB<span class="nt">&lt;/var&gt;</span>
+<span class="nt">&lt;/vars&gt;</span>
+<span class="nt">&lt;exclude&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Lib::jquery/jquery.min.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Lib::jquery/jquery-ui-1.9.2.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Lib::jquery/jquery.ba-hashchange.min.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Lib::jquery/jquery.details.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Lib::jquery/jquery.details.min.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Lib::jquery/jquery.hoverIntent.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Lib::jquery/colorpicker/js/colorpicker.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Lib::requirejs/require.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Lib::requirejs/text.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Lib::date-format-normalizer.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Lib::legacy-build.min.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Lib::mage/captcha.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Lib::mage/dropdown_old.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Lib::mage/list.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Lib::mage/loader_old.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Lib::mage/webapi.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Lib::mage/zoom.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Lib::mage/translate-inline-vde.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Lib::mage/requirejs/mixins.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Lib::mage/requirejs/static.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Magento_Customer::js/zxcvbn.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Magento_Catalog::js/zoom.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Magento_Ui::js/lib/step-wizard.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Magento_Ui::js/form/element/ui-select.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Magento_Ui::js/form/element/file-uploader.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Magento_Ui::js/form/components/insert.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;file&quot;</span><span class="nt">&gt;</span>Magento_Ui::js/form/components/insert-listing.js<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;directory&quot;</span><span class="nt">&gt;</span>Magento_Ui::js/timeline<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;directory&quot;</span><span class="nt">&gt;</span>Magento_Ui::js/grid<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;directory&quot;</span><span class="nt">&gt;</span>Magento_Ui::js/dynamic-rows<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;directory&quot;</span><span class="nt">&gt;</span>Magento_Ui::templates/timeline<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;directory&quot;</span><span class="nt">&gt;</span>Magento_Ui::templates/grid<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;directory&quot;</span><span class="nt">&gt;</span>Magento_Ui::templates/dynamic-rows<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;directory&quot;</span><span class="nt">&gt;</span>Magento_Swagger::swagger-ui<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;directory&quot;</span><span class="nt">&gt;</span>Lib::modernizr<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;directory&quot;</span><span class="nt">&gt;</span>Lib::tiny_mce<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;directory&quot;</span><span class="nt">&gt;</span>Lib::varien<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;directory&quot;</span><span class="nt">&gt;</span>Lib::jquery/editableMultiselect<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;directory&quot;</span><span class="nt">&gt;</span>Lib::jquery/jstree<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;directory&quot;</span><span class="nt">&gt;</span>Lib::jquery/fileUploader<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;directory&quot;</span><span class="nt">&gt;</span>Lib::css<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;directory&quot;</span><span class="nt">&gt;</span>Lib::lib<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;directory&quot;</span><span class="nt">&gt;</span>Lib::extjs<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;directory&quot;</span><span class="nt">&gt;</span>Lib::prototype<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;directory&quot;</span><span class="nt">&gt;</span>Lib::scriptaculous<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;directory&quot;</span><span class="nt">&gt;</span>Lib::less<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;directory&quot;</span><span class="nt">&gt;</span>Lib::mage/adminhtml<span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;item</span> <span class="na">type=</span><span class="s">&quot;directory&quot;</span><span class="nt">&gt;</span>Lib::mage/backend<span class="nt">&lt;/item&gt;</span>
+<span class="nt">&lt;/exclude&gt;</span></code></pre></figure>
+</div></div>
+
+<h3 id="setting-bundle-file-size">Setting bundle file size</h3>
+
+<p>The <code>bundle_size</code> entry controls the file size of the generated bundles.
+Setting this to a large number will reduce the number of bundles generated, but the file sizes will be big.
+A small number will increase the number of bundles generated, but the file sizes will be smaller.</p>
+
+<p>You want to balance the number of files to download on a page with the size of the data.
+A single connection should be around 100kb.</p>
+
+<h2 id="fine-tuning-your-theme">Fine tuning your theme</h2>
+
+<p>There are many ways to tune your theme’s <code>etc/view.xml</code> file.</p>
+
+<p>For example, Magento’s Luma theme is configured to work well for all pages, but 
+by adding or removing items inside <code>exclude</code>, you can maximize browser performance for home, catalog, or product pages.</p>
+
+<p>Follow these steps to help you identify which JavaScript files to bundle for your theme:</p>
+
+<ol>
+  <li>Create a blank page with the layouts you would like to tune.</li>
+  <li>Compare the JavaScript files loaded in the pages with the JavaScript files in Magento.</li>
+  <li>Use the results of that comparison to build your exclude list.</li>
+</ol>
+
 
 		</div>
 		<!-- /.content-wrap -->
@@ -1206,14 +1246,14 @@
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/frontend-dev-guide/responsive-web-design/rwd-breakpoints.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/frontend-dev-guide/themes/js-bundling.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
   
 
   <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/frontend-dev-guide/responsive-web-design/rwd-breakpoints.html" target="_blank">Give us feedback</a>
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/frontend-dev-guide/themes/js-bundling.html" target="_blank">Give us feedback</a>
   </div>
 
 </div>
