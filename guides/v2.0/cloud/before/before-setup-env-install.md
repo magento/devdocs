@@ -2,17 +2,21 @@
 layout: default
 group: cloud
 subgroup: 080_setup
-title: Step 6, Install Magento
-menu_title: Step 6, Install Magento
+title: Install Magento
+menu_title: Install Magento
 menu_order: 50
 version: 2.0
 github_link: cloud/before/before-setup-env-install.md
+redirect_from:
+  - /guides/v2.0/cloud/before/before-setup-env-perms.html
+  - /guides/v2.1/cloud/before/before-setup-env-perms.html
+  - /guides/v2.2/cloud/before/before-setup-env-perms.html
 ---
 
 #### Previous step:
 [Branch an environment]({{ page.baseurl }}cloud/before/before-setup-env-env.html)
 
-With your workspace prepared, install Magento on your local to verify custom code, extensions, and more. This section discusses the installation prep, options, and steps you should complete.
+With your workspace prepared, install Magento on your local to verify custom code, extensions, and more. This section includes the installation prep, options, and post-installation configuration you should complete.
 
 ## Prepare to install Magento
 
@@ -46,9 +50,67 @@ To install, use one of the following options:
 * [Install the Magento software using the command line]({{ page.baseurl }}install-gde/install/cli/install-cli.html)
 * [Install the Magento software using the Web Setup Wizard]({{ page.baseurl }}install-gde/install/web/install-web.html)
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
-After you install Magento, set file system permissions and ownership as discussed in [Step 7, Set file system permissions and ownership]({{ page.baseurl }}cloud/before/before-setup-env-perms.html).
-</div>
+For example, using the command line method:
 
-#### Next step
-[Set file system permissions and ownership]({{ page.baseurl }}cloud/before/before-setup-env-perms.html)
+1. Switch to the user:
+
+		sudo su - magento
+2. Change directories for the installation:
+
+		cd /app/bin
+3. Enter a CLI command with options for entering the name, email, admin credentials, URL, and additional information. For a list of all options, see [Installer help commands]({{ page.baseurl }}install-gde/install/cli/install-cli-install.html#instgde-cli-help-cmds).
+
+		php magento setup:install \
+  		--admin-firstname=John \
+  		--admin-lastname=Smith \
+  		--admin-email=jsmith@mail.com \
+		  --admin-user=admin \
+		  --admin-password=password1 \
+		  --base-url=http://magento.local/ \
+		  --db-host=localhost \
+		  --db-name=magento \
+		  --db-user=magento \
+		  --db-password=magento \
+		  --currency=USD \
+		  --timezone=America/Chicago \
+		  --language=en_US \
+		  --use-rewrites=1
+
+## Post-install configurations
+After installing Magento, [compile]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-compiler.html) and [deploy]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-static-view.html) the code:
+
+	php magento setup:di:compile
+	php magento setup:static:deploy
+
+## Magento store URI
+To get the URI for the Magento store, enter this command:
+
+	php bin/magento info:adminuri
+
+##
+After you have installed Magento, you need to set the file system permissions and ownership.
+
+1.  Log in to your Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html).
+2.  Enter the following commands in the order shown:
+
+		cd <your Magento install dir>
+		find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \;
+		find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
+		chown -R :<web server group> .
+		chmod u+x bin/magento
+
+{% include install/file-system-perms-twouser_cmds-only.md %}
+
+## Local workspace completed
+With these steps completed, you should have:
+* Magento ECE account and initial project setup
+* A local workspace configured with installations of required software, Magento ECE CLI, and Magento
+* SSH keys set up
+* The Magento file system owner configured
+* A branch for your code
+* Magento authentication keys set up
+
+Begin developing and testing in your branch.
+
+#### Related topics
+[Deployment workflow]({{ page.baseurl }}cloud/before/before-setup-env-perms.html)

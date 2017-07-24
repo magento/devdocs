@@ -4,7 +4,7 @@ group: cloud
 subgroup: 080_setup
 title: Overview of a Magento Developer Environment
 menu_title: Overview of a Magento Developer Environment
-menu_order: 161
+menu_order: 
 menu_node:
 level3_menu_node: level3child
 level3_subgroup: setupenv

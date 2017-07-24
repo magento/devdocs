@@ -10,6 +10,8 @@ version: 2.0
 github_link: cloud/before/before-workspace-ssh.md
 redirect_from:
   - /guides/v2.0/cloud/before/before-setup-env-1_get-start.html
+  - /guides/v2.1/cloud/before/before-setup-env-1_get-start.html
+  - /guides/v2.2/cloud/before/before-setup-env-1_get-start.html
 ---
 
 #### Previous step:

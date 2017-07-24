@@ -80,3 +80,4 @@ To complete the task, restart the web server:
 *	CentOS: `service httpd restart`
 
 #### Next step
+[Clone the project]({{ page.baseurl }}cloud/before/before-workspace-ssh.html)

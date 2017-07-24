@@ -10,7 +10,11 @@ version: 2.0
 github_link: cloud/before/before-workspace-magento-prereqs.md
 redirect_from:
   - /guides/v2.0/cloud/before/before-workspace-php.html
+  - /guides/v2.1/cloud/before/before-workspace-php.html
+  - /guides/v2.2/cloud/before/before-workspace-php.html
   - /guides/v2.0/cloud/before/before-workspace-cli.html
+  - /guides/v2.1/cloud/before/before-workspace-cli.html
+  - /guides/v2.2/cloud/before/before-workspace-cli.html
 ---
 
 #### Previous step:
@@ -25,32 +29,35 @@ Magento documentation provides installation instructions for installing software
 ## Virtual machine {#vm}
 To best develop and manage your local, we recommend using a virtual machine. The VM encapsulates your code, web services, testing and supports a Unix-based environment. Select a virtual system you prefer.
 
-For examples in this documentation, we use [Vagrant](https://www.vagrantup.com/) and [VirtualBox](https://www.virtualbox.org). If you want to use these, download and install a version for your workspace's OS:
+For examples in this documentation, we use [Vagrant](https://www.vagrantup.com/) and [VirtualBox](https://www.virtualbox.org). Vagrant provides a single workflow for managing VMs, helps setup developer environments quickly, and isolates dependencies through one consistent environment. VirtualBox manages the environment. Another option commonly used is [Docker](https://www.docker.com/), which uses containers instead of virtualization.
 
-* [Vagrant](https://www.vagrantup.com/downloads.html) provides a single workflow for managing VMs, helps setup developer environments quickly, and isolates dependencies through one consistent environment. When installed, we also recommend the package [hostmanager](https://github.com/devopsgroup-io/vagrant-hostmanager).
+### Vagrant {#vagrant}
+To download and install [Vagrant](https://www.vagrantup.com/downloads.html):
 
-	Install the Vagrant hostmanager plugin (optional):
+1. (optional) Install the Vagrant hostmanager plugin. we also recommend the package [hostmanager](https://github.com/devopsgroup-io/vagrant-hostmanager).
 		vagrant plugin install vagrant-hostmanager
 
-	Install Vagrant. For example, these commands install Vagrant with specific OS versions:
+2. Install Vagrant. For example, these commands install Vagrant with specific OS versions:
 
 	<ul><li>Ubuntu 12.04 LTS 64-bit: `vagrant init hashicorp/precise64`</li>
 	<li>Ubuntu 16.04.2 LTS 64-bit: `vagrant init ubuntu/xenial64`</li></ul>
 
-	You may want to create a Vagrant directory for the local environment. For example:
-			mkdir ~/localdev && cd ~/localdev
+3. You may want to create a Vagrant directory for the local environment. For example:
+		mkdir ~/localdev && cd ~/localdev
 
-	Install a box based on the OS. This command installs an Ubuntu box:
-			vagrant init ubuntu/xenial64
+4. Install a box based on the OS. This command installs an Ubuntu box:
+		vagrant init ubuntu/xenial64
 
-	And start the VM:
-			vagrant up
+5. And start the VM:
+		vagrant up
 
-	If you installed hostmanager, update the hosts file on the active machines:
-			vagrant hostmanager
-* [VirtualBox](https://www.virtualbox.org/wiki/Downloads) extends support and features across all OS and platforms to create and manage multiple VMs and operating systems on your local.
+6. If you installed hostmanager, update the hosts file on the active machines:
+		vagrant hostmanager
 
-Select a preferred Unix-based OS for your virtual system, such as Denbian, CentOS, or Ubuntu. For examples in this documentation, we use Ubuntu.
+### VirtualBox {#virtualbox}
+[VirtualBox](https://www.virtualbox.org/wiki/Downloads) extends support and features across all OS and platforms to create and manage multiple VMs and operating systems on your local.
+
+Select and download a preferred Unix-based OS for your virtual system, such as Denbian, CentOS, or Ubuntu. For examples in this documentation, we use Ubuntu. Run the installation to complete. You don't need to make additional configurations to run and manage VMs.
 
 ## Development tools {#devtools}
 * [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git){:target="_blank"} - Provides code branching and management for accessing Magento Enterprise Cloud Edition and your code respositories. Use Git command-line commands or applications of your choice to work with Git.
@@ -96,6 +103,13 @@ Before working with your Magento Enterprise Cloud Edition project, make sure you
 		*	CentOS: `service httpd restart`
 		*	Ubuntu: `service apache2 restart`
 	*	nginx: `service nginx restart`
+
+### Set up PHP-FPM configurations
+[PHP-FPM](https://php-fpm.org/)
+copy platform configs in place
+comment out /dev/stderr reference
+search and replace 'web' for 'www-data' (or maybe just add web user/group?)
+service php-fpm7.0 restart
 
 ## Web server {#webserver}
 We support installations of [Apache]({{ page.baseurl }}install-gde/prereq/apache.html) and [nginx](https://nginx.org/) for your web server. We do not provide documentation for an installation and configuration of nginx at this time. Please review the [nginx Wiki](https://www.nginx.com/resources/wiki/) for further instructions.
