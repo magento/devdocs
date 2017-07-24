@@ -13,9 +13,9 @@ github_link: release-notes/release-notes-2-2-prerelease1-EE.md
 *	TOC
 {:toc}
 
-*Release date: July 14, 2017*
+*Release date: July 21, 2017*
 
-*Notes updated: July 16, 2017*
+*Notes updated: July 23, 2017*
 
 
 Magento Enterprise Edition 2.2.0 Release Candidate includes significant new features as well as many bug fixes.
@@ -73,6 +73,15 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 <!--- 62637 -->* You can now successfully set the **Enable Product** attribute to **no**. 
 
 
+### Import/export
+
+<!--- 67240 -->* Magento now accurately displays product information after import. Previously, Magento displayed duplicated or incomplete information on the product page after import. 
+
+<!--- 65667 -->* Magento now successfully imports customer multiselect attributes. Previously, when you imported a CSV file with either the option's ID numbers or the option's values, Magento returned an error. 
+
+
+
+
 
 ### Installation and Configuration 
 
@@ -86,6 +95,10 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 
 
 <!--- 70318 -->* You can now generate static content without a database connection. [GitHub-10041](https://github.com/magento/magento2/issues/10041) 
+
+<!--- 67020 -->* Magento now handles the `catalog_product_entity_media_gallery_value.position`  value the same whether you’ve installed or upgraded the product. Previously, these values differed depending upon whether you upgraded or freshly installed your Magento code. 
+
+
 
 
 ### MBI
@@ -113,6 +126,17 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 
 <!--- 67296 -->* Magento now handles string localization when the string contains a quote (\’). Previously, localization did not work under these conditions. 
 
+<!--- 70646 -->* The **Save** button on the Create Shipping Label on an existing shipment now works as expected. 
+
+<!--- 70628 -->* The Forgot Your Password? email now contains a link to reset your password. Previously, this link was missing from the Forgot Your Password? email. 
+
+
+<!--- 57753 -->* You can now successfully create product attributes using the REST API. Previously, although the product was created, the attribute was not. [GitHub-6213](https://github.com/magento/magento2/issues/6213) 
+
+
+<!--- 70406 -->* We’ve improved the performance of the CatalogPermission indexer. Previously, Magento performance degraded significantly during the indexing of large numbers of customer groups. 
+
+<!--- 69521 -->* Magento now shows customer attributes in the Admin panel (as expected)  when the **Show on Storefront** option is set to **No**. Previously, when this setting was set to **No**, the attribute value would not appear in the customer account  section of the Admin panel customer account, but did appear in the orders section. 
 
 
 
@@ -122,6 +146,7 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 
 <!--- 59477 -->* Attribute weighting now works correctly for the MySQL adapter. [GitHub-9020](https://github.com/magento/magento2/issues/9020)
 
+<!--- 65245 -->* Magento now sends the `parent_id` of a deleted configurable product variation to ElasticSearch. Previously, Magento didn’t send this information  to the ElasticSearch server  if  the simple product associated with a configurable product were changed. 
 
 
 
