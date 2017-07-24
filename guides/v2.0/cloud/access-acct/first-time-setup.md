@@ -48,4 +48,5 @@ For complete steps, see [Set up a project and dev workspace]({{ page.baseurl }}c
 * [Set up Magento cron]({{ page.baseurl }}cloud/before/before-setup-env-cron.html)
 * [Clone or branch an environment]({{ page.baseurl }}cloud/before/before-setup-env-env.html)
 * [Install Magento]({{ page.baseurl }}cloud/before/before-setup-env-install.html)
-* [Set file system permissions and ownership]({{ page.baseurl }}cloud/before/before-setup-env-perms.html)
+* [First steps for importing Magento EE]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-first-steps.html)
+* [Set up Fastly]({{ page.baseurl }}cloud/access-acct/fastly.html)
