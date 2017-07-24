@@ -3,7 +3,7 @@ layout: default
 group: mrg
 subgroup: 10_Community Edition
 title: Magento_Sales module
-menu_title: Description
+menu_title: Sales
 menu_order: 8
 version: 2.2
 github_link: mrg/ce/Sales/description.md
