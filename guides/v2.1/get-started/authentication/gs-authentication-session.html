@@ -725,30 +725,29 @@
 
 <p>The Magento web <span term-uuid="786086f2-622b-4007-97fe-2c19e5283035" class="glossary-term" data-toggle="popover">API</span> framework uses your logged-in session information to verify your identity and authorize access to the requested resource.</p>
 
-<p>Customers can access resources that are configured with <code>anonymous</code> or <code>self</code> permission in the <code>webapi.xml</code> configuration file.</p>
+<p>Customers can access resources that are configured with <code>anonymous</code> or <code>self</code>  permission in the <code>webapi.xml</code> configuration file.</p>
+
 <p>Admins can access resources that are assigned to their Magento Admin profile.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
-<p>The Magento <span term-uuid="377dc0a3-b8a7-4dfa-808e-2de37e4c0029" class="glossary-term" data-toggle="popover">web API</span> framework enables guest users to access resources that are configured with <code>anonymous</code> permission. Any user that the framework cannot authenticate through existing authentication mechanisms is considered a guest user.</p></div>
+  <p>The Magento <span term-uuid="377dc0a3-b8a7-4dfa-808e-2de37e4c0029" class="glossary-term" data-toggle="popover">web API</span> framework enables guest users to access resources that are configured with <code>anonymous</code> permission. Any user that the framework cannot authenticate through existing authentication mechanisms is considered a guest user.</p>
+</div>
 
 <p>For example, if a customer is logged in to the Magento storefront and the <span term-uuid="312b4baf-15f7-4968-944e-c814d53de218" class="glossary-term" data-toggle="popover">JavaScript</span> <span term-uuid="f0dcf847-ce21-4b88-8b45-83e1cbf08100" class="glossary-term" data-toggle="popover">widget</span> invokes the <code>self</code> API, details for the logged-in customer are fetched:</p>
 
-<pre>GET /rest/V1/customers/me</pre>
+<p><code>GET /rest/V1/customers/me</code></p>
 
 <p>Similarly, if an admin is logged in to the Magento Admin
 and the JavaScript widget <code>Magento_Customer::group</code> API, details for the logged-in admin are fetched.
 The web API framework establishes the identity of the admin user based on logged-in session information and authorizes access to the <code>Magento_Customer::group</code> resource.</p>
 
-<h2>Next step</h2>
-<ul>
-   <li><a href="/guides/v2.1//get-started/gs-web-api-request.html">Step 2. Construct a request</a></li>
+<div class="bs-callout bs-callout-info" id="info">
+The session based authentication functionality is restricted to only allow for AJAX calls and not direct browser requests due to security vulnerabilities. A developer can create a custom storefront widget that can issue requests without additional authentication steps.
+</div>
 
-</ul>
-<h2>Related topic</h2>
-<ul>
+<h2 id="related-topic">Related topic</h2>
 
-   <li><a href="/guides/v2.1/extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a></li>
-</ul>
+<p><a href="/guides/v2.1/extension-dev-guide/service-contracts/service-to-web-service.html">Configure services as web APIs</a></p>
 
 		</div>
 		<!-- /.content-wrap -->
