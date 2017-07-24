@@ -69,6 +69,7 @@ Select and download a preferred Unix-based OS for your virtual system, such as D
 Install {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} on your local. We recommend PHP 7.0. For information on installing PHP, see these instructions for [CentOS]({{ page.baseurl }}install-gde/prereq/php-centos.html) and [Ubuntu]({{ page.baseurl }}install-gde/prereq/php-ubuntu.html). For instructions for another OS, see the [PHP documentation](http://php.net/manual/en/install.php).
 
 The following packages may also be helpful for your PHP installation:
+
 * [bcmath](http://php.net/manual/en/book.bc.php)
 * [curl](http://php.net/manual/en/book.curl.php)
 * ext-dom

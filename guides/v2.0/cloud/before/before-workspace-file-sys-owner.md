@@ -16,8 +16,8 @@ To enable the web server to write files and directories in the Magento file syst
 
 You need to create a new {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %} and put that user in the web server's group. If you use an existing user account, we recommend the user account has a strong password for security reasons.
 
-## Create the Magento file system owner and give the user a strong password {#mage-owner-create-user}
-This section discusses how to create the Magento file system owner. (Magento file system owner is another term for the *command-line user*.)
+## Create the Magento file system owner {#mage-owner-create-user}
+Create the Magento file system owner with a strong password. Magento file system owner is another term for the *command-line user*.
 
 To create the Magento file system owner, enter the following command as a user with `root` privileges:
 

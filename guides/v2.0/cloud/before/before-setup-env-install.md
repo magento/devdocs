@@ -39,6 +39,11 @@ The following results provides an example of variables:
 	| ADMIN_USERNAME | meister_x2U8  | Yes       | No   |
 	+----------------+---------------+-----------+------+
 
+## Set the DOCROOT
+Set the DOCROOT to the /magento directory until you complete all setup. If you change the DOCROOT to /magento/pub prior to completion, you will encounter issues running the Web Setup Wizard.
+
+For the Production environment, you should set the DOCROOT to /magento/pub, which helps restrict access to vulnerable areas of the system. The webserver DOCROOT should be set to /magento/pub only after Magento is installed (including any upgrades and patches), configured, and static files have been generated and populated in /magento/pub. Alternatively, you could also create a subdomain (for example, install.domain.com) and configure your webserver's DOCROOT to the Magento installed root folder.
+
 ## Install Magento
 
 Installation of Magento onto your local supports a command line option or a Web Setup Wizard. The CLI option also supports a Composer installation with sample data. For best information on your installation options and steps, see the [Installation Roadmap]({{ page.baseurl }}install-gde/install-roadmap_cli.html).
@@ -77,12 +82,25 @@ For example, using the command line method:
 		  --use-rewrites=1
 
 ## Post-install configurations
-After installing Magento, [compile]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-compiler.html) and [deploy]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-static-view.html) the code:
+After installing Magento, run the commands for [compile]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-compiler.html) and [deploy]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-static-view.html) for the code:
 
-	php magento setup:di:compile
-	php magento setup:static:deploy
+1. If you are not in the correct Magento user, switch:
 
-## Magento store URI
+	sudo su - magento
+2. Change directory to `app/bin`.
+3. Run the compile command:
+
+		php magento setup:di:compile
+3. When complete, Run the deploy command:
+
+		php magento setup:static:deploy
+
+Optionally, if you used Vagrant with the hostmanager plugin, update the hosts file:
+
+1. Access the localdev root for the Vagrant box.
+2. Enter the command `vagrant hostmanager` to update the hosts file.
+
+## Locate the Magento store URI
 To get the URI for the Magento store, enter this command:
 
 	php bin/magento info:adminuri
