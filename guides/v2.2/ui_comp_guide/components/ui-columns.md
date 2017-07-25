@@ -72,15 +72,15 @@ Columns-specific options:
       <code>dndConfig</code>
     </td>
     <td>
-      Configuration of the [DragAndDrop
-      component]({{page.baseurl}}ui_comp_guide/components/listing/ui-draganddrop.html).
+      Configuration of the <a href="{{page.baseurl}}ui_comp_guide/components/ui-draganddrop.html">DragAndDrop
+      component</a>.
     </td>
     <td>
       Object
     </td>
     <td>
       Specified in the <a href=
-      "{{page.baseurl}}ui_comp_guide/components/listing/ui-draganddrop.html">
+      "{{page.baseurl}}ui_comp_guide/components/ui-draganddrop.html">
       DragAndDrop component configuration</a>.
     </td>
   </tr>
@@ -90,7 +90,7 @@ Columns-specific options:
     </td>
     <td>
       Path to the <code>.html</code> template used for the <a href=
-      "{{page.baseurl}}ui_comp_guide/components/listing/ui-toolbar.html">
+      "{{page.baseurl}}ui_comp_guide/components/ui-toolbar.html">
       Toolbar component</a> when it receives a fixed position.
     </td>
     <td>
@@ -119,15 +119,16 @@ Columns-specific options:
       <code>editorConfig</code>
     </td>
     <td>
-      Configuration of the [InlineEditing
-      component]({{page.baseurl}}ui_comp_guide/components/listing/ui-inlineediting.html).
+      Configuration of the InlineEditing
+      component.
     </td>
     <td>
       Object
     </td>
     <td>
       Specified in the <a href=
-      "{{page.baseurl}}ui_comp_guide/components/listing/ui-inlineediting.html">
+      "{{page.baseurl}}ui_comp_guide/components/ui-inline
+      ui_comp_guide/components/ui-inlineediting.html">
       InlineEditing component configuration</a>.
     </td>
   </tr>

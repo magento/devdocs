@@ -25,7 +25,7 @@ Templates used by this component are:
 
 ## MultiselectColumn configuration
 
-Extends all [Column]({{page.baseurl}}ui_comp_guide/components/listing/ui-column.html) configuration.
+Extends all [Column]({{page.baseurl}}ui_comp_guide/components/ui-column.html) configuration.
 
 MultiselectColumn-specific configuration:
 
@@ -44,7 +44,7 @@ MultiselectColumn-specific configuration:
   </tr>
   <tr>
     <td><code>controlVisibility</code></td>
-    <td>Whether a user can control column's visibility handled by the <a href="{{page.baseurl}}ui_comp_guide/components/listing/ui-сolumnsсontrols.html">ColumnsControls component</a>.</td>
+    <td>Whether a user can control column's visibility handled by the <a href="{{page.baseurl}}ui_comp_guide/components/ui-сolumnsсontrols.html">ColumnsControls component</a>.</td>
     <td>String</td>
     <td><code>false</code></td>
   </tr>
