@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Magento_NegotiableQuote module | Magento 2 Developer Documentation</title>
+	<title>Magento_SalesAnalytics module | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.2/mrg/b2b/NegotiableQuote.html">
+	<link rel="canonical" href="//guides/v2.2/mrg/ce/SalesAnalytics.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -69,11 +69,11 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/mrg/b2b/NegotiableQuote.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/mrg/ce/SalesAnalytics.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/mrg/b2b/NegotiableQuote.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/mrg/ce/SalesAnalytics.html">Magento 2.1</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.2/mrg/b2b/NegotiableQuote.html">Magento 2.2 RC</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.2/mrg/ce/SalesAnalytics.html">Magento 2.2 RC</a></li>
 	
   </ul>
 
@@ -327,7 +327,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.2/mrg/ce/SalesAnalytics.html">SalesAnalytics</a></li>
+									<li class="level-2  active "><a href="/guides/v2.2/mrg/ce/SalesAnalytics.html">SalesAnalytics</a></li>
 
 									
 
@@ -729,7 +729,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.2/mrg/b2b/NegotiableQuote.html">NegotiableQuote</a></li>
+									<li class="level-2 "><a href="/guides/v2.2/mrg/b2b/NegotiableQuote.html">NegotiableQuote</a></li>
 
 									
 
@@ -1019,7 +1019,7 @@
 
           
 
-          <span property="name">Magento_NegotiableQuote module</span>
+          <span property="name">Magento_SalesAnalytics module</span>
 
         
 
@@ -1042,7 +1042,7 @@
 
 	
 
-	<h1 class="page-heading">Magento_NegotiableQuote module</h1>
+	<h1 class="page-heading">Magento_SalesAnalytics module</h1>
 
   
 
@@ -1050,60 +1050,12 @@
 </section>
 
 
-			<h2 id="overview">Overview</h2>
+			<div class="mrg-content">
+  <h1 id="magentosalesanalytics-module">Magento_SalesAnalytics module</h1>
 
-<p>The <code>Magento_NegotiableQuote</code> module allows a customer and a merchant (admin user) to negotiate product and/or shipping prices before the customer places an order. Its functionality is available for the company members only.</p>
+  <p>The Magento_SalesAnalytics module configures data definitions for a data collection related to the Sales module entities to be used in <a href="http://devdocs.magento.com/guides/v2.2/advanced-reporting/modules.html">Advanced Reporting</a>.</p>
 
-<p>Currently, B2B quoting is global–the price is given for the quote as a whole. Quoting per item is not supported. The quote lifecycle is managed via quote statuses. The quoting interface allows both a merchant and a customer to manage items in the quote (add, delete, change quantity) as well as make an offer (or request a quote) for items and/or for shipping. The negotiated price set in the negotiable quote is exactly the price that will be applied on a quote during checkout, order generation, and invoice generation.</p>
-
-<p>The module provides a set of configurations for the quoting feature, such as the ability to request a quote, configure the minimum quote amount, configure the default expiration period, configure attached files, and set email templates for quotes. The module provides web APIs and can be integrated with 3rd party solutions to manage negotiable quote in Magento.</p>
-
-<h2 id="installation-details">Installation details</h2>
-
-<p>The module heavily depends on the <code>Quote</code> and <code>Magento_Company</code> modules, which must be previously installed and enabled.</p>
-
-<p>Also, the module has dependency on the following Magento’s B2C modules: <code>Tax</code>, <code>Checkout</code>, and <code>CartPricingRules</code> modules.</p>
-
-<p>When working with the <code>SharedCatalog</code> module, <code>NegotiableQuote</code> will be restricted to the products added to the shared catalog and custom prices set in the shared catalog.</p>
-
-<p>The module does not create any backward incompatible changes. Can be deactivated and uninstalled at any time.</p>
-
-<h2 id="structure">Structure</h2>
-
-<p><a href="/guides/v2.2/extension-dev-guide/build/module-file-structure.html">Learn about a typical file structure for a Magento 2 module</a>.</p>
-
-<h2 id="extensibility">Extensibility</h2>
-
-<p>Magento_NegotiableQuote uses Extensible attributes to extend Magento_Quote. For more information about the Magento extensible attributes, see <a href="/guides/v2.2/extension-dev-guide/extension_attributes/adding-attributes.html">Adding extension attributes to entity</a>.</p>
-
-<p>Extension developers can interact with the Magento_NegotiableQuote module. For more information about the Magento extension mechanism, see <a href="/guides/v2.2/extension-dev-guide/plugins.html">Magento plug-ins</a>.</p>
-
-<p><a href="/guides/v2.2/extension-dev-guide/depend-inj.html">The Magento dependency injection mechanism</a> enables you to override the functionality of the Magento_NegotiableQuote module.</p>
-
-<h3 id="layouts">Layouts</h3>
-
-<p>You can extend and override layouts in the <code>Magento\NegotiableQuote\view\adminhtml\layout</code> and <code>Magento\NegotiableQuote\view\frontend\layout</code> directories.</p>
-
-<p>For more information about layouts, see the <a href="/guides/v2.2/frontend-dev-guide/layouts/layout-overview.html">Layout documentation</a>.</p>
-
-<h3 id="ui-components">UI components</h3>
-
-<p>The following directories contain extensible UI components:</p>
-
-<ul>
-  <li>
-    <p><code>Magento\NegotiableQuote\view\adminhtml\ui_component</code> -  company form, negotiable quote grid</p>
-  </li>
-  <li>
-    <p><code>Magento\NegotiableQuote\view\frontend\ui_component</code> - negotiable quote listing</p>
-  </li>
-</ul>
-
-<p>For more information, see <a href="/guides/v2.2/ui-components/ui-listing-grid.html">UI Listing/Grid Component</a> and <a href="/guides/v2.2/ui_comp_guide/components/ui-form.html">UI Form Component</a>.</p>
-
-<h2 id="additional-information">Additional information</h2>
-
-<p>You can track <a href="http://devdocs.magento.com/guides/v2.2/release-notes/changes/b2b_changes.html">backward incompatible changes made in a Magento B2b mainline after the Magento 2.2 release</a>.</p>
+</div>
 
 		</div>
 		<!-- /.content-wrap -->
@@ -1114,14 +1066,14 @@
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.2/mrg/b2b/NegotiableQuote.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.2/mrg/ce/SalesAnalytics.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
   
 
   <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/mrg/b2b/NegotiableQuote.html" target="_blank">Give us feedback</a>
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/mrg/ce/SalesAnalytics.html" target="_blank">Give us feedback</a>
   </div>
 
 </div>
