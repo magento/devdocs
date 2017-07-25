@@ -1,6 +1,6 @@
 ---
 layout: default
-group: cloud
+group: 
 subgroup:
 title: Set file system permissions and ownership
 menu_title: Set file system permissions and ownership

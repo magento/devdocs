@@ -1,6 +1,6 @@
 ---
 layout: default
-group: cloud
+group: 
 subgroup:
 title: Step 1, Get started setting up an environment
 menu_title: Step 1, Get started setting up an environment

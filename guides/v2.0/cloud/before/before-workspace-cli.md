@@ -1,6 +1,6 @@
 ---
 layout: default
-group: cloud
+group: 
 subgroup:
 title: Step 2, Install the CLI
 menu_title: Step 2, Install the CLI

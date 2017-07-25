@@ -1,6 +1,6 @@
 ---
 layout: default
-group: cloud
+group: 
 subgroup:
 title: Overview of a Magento Developer Environment
 menu_title: Overview of a Magento Developer Environment

@@ -1,7 +1,7 @@
 ---
 layout: default
-group: cloud
-subgroup: 
+group: 
+subgroup:
 title: Set up a Magento workspace
 menu_title: Set up a Magento workspace
 menu_order:

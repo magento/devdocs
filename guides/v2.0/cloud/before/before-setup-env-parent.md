@@ -1,6 +1,6 @@
 ---
 layout: default
-group: cloud
+group: 
 subgroup:
 title: Set up an environment and install Magento locally
 menu_title: Set up an environment and install Magento locally

@@ -1,6 +1,6 @@
 ---
 layout: default
-group: cloud
+group: 
 subgroup:
 title: Step 5, Set up PHP and MySQL
 menu_title: Step 5, Set up PHP and MySQL
