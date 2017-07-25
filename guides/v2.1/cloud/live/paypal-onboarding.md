@@ -10,7 +10,7 @@ version: 2.1
 github_link: cloud/live/paypal-onboarding.md
 ---
 
-Magento ECE provides an on-boarding tool to configure PayPal Express Checkout accounts directly through the Magento Admin panel. To better support going live and testing PayPal payment methods, you can enable and configure your PayPal Express Checkout account for sandbox or production accounts.
+Magento ECE provides an on-boarding tool to configure PayPal Express Checkout accounts directly through the Magento Admin panel. This tool is available for ECE 2.1.8 and later. To better support going live and testing PayPal payment methods, you can enable and configure your PayPal Express Checkout account for sandbox or production accounts.
 
 You can configure either the sandbox or production account in every environment:
 
@@ -19,9 +19,23 @@ You can configure either the sandbox or production account in every environment:
 
 ## PayPal account
 
-While we recommend having a PayPal merchant account prepared and configured, you can create a new account through the Admin panel. When connecting to PayPal, if the entered email address does not match an existing account, you will be prompted to create a new PayPal merchant account.
+While we recommend having a PayPal merchant account prepared and configured, you can create a new account or upgrade a personal account through the Admin panel.
+
+When connecting to PayPal to link your account, you have an option to login with an existing account or create a new one.
+
+* If the entered email address does not match an existing account, you will be prompted to create a new PayPal merchant account.
+* If you have an existing personal PayPal account, you can login with those credentials and upgrade this account to a business account as you complete the sync.
 
 ![Log in to PayPal]({{ site.baseurl }}common/images/cloud_paypal-access.png){:width="336px"}
+
+### PayPal limitations
+
+PayPal supports connecting for PayPal Express Checkout for countries across the globe except for the following limitations:
+
+* India, and Japan (future PayPal updates may support these accounts)
+* Israel
+
+Current or new business accounts are supported for Brazil. You cannot convert an existing personal PayPal account for Brazil during this process. If you need an account, please create a new business PayPal account when prompted to login.
 
 ## Configure PayPal Express Checkout
 
