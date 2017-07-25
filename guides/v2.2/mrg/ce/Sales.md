@@ -6,7 +6,7 @@ title: Magento_Sales module
 menu_title: Sales
 menu_order: 8
 version: 2.2
-github_link: mrg/ce/Sales/description.md
+github_link: mrg/ce/Sales.md
 ---
 
 Magento_Sales {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} is responsible for order processing and appearance in the system.
