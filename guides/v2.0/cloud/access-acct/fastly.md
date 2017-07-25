@@ -5,12 +5,12 @@ subgroup: 080_setup
 title: Set up Fastly
 menu_title: Set up Fastly
 menu_order: 500
-menu_node: 
+menu_node:
 version: 2.0
 github_link: cloud/access-acct/fastly.md
 ---
 
-[Fastly](https://www.fastly.com/why-fastly){:target="_blank"} is required for Magento Enterprise Cloud Edition. It works with Varnish to provide fast caching capabilities and a {% glossarytooltip f83f1fa7-7a64-467b-b629-c2d0c25d2e7f %}Content Delivery Network{% endglossarytooltip %} (CDN) for static assets.
+[Fastly](https://www.fastly.com/why-fastly){:target="_blank"} is required for Magento Enterprise Cloud Edition, and is used in Staging and Production environments. It works with Varnish to provide fast caching capabilities and a {% glossarytooltip f83f1fa7-7a64-467b-b629-c2d0c25d2e7f %}Content Delivery Network{% endglossarytooltip %} (CDN) for static assets.
 
 ## Get your Fastly credentials {#cloud-fastly-creds}
 To get Fastly credentials, open a [support ticket]({{ page.baseurl }}cloud/welcome/get-help.html). You must provide your fully-qualified {% glossarytooltip 41aee03b-a5d5-49c2-8839-894090ef4e86 %}domain{% endglossarytooltip %} name.
@@ -32,6 +32,8 @@ In the procedure that follows, make sure you *branch* a new environment; don't u
 {% endcollapsible %}
 
 ## Install Fastly in your new environment {#cloud-fastly-setup}
+Fastly is only available and supported in the Staging and Production environments. You cannot use Fastly in Intergration.
+
 1.	In your local environment root directory, enter the following commands in the order shown:
 
 		composer config repositories.fastly-magento2 git "https://github.com/fastly/fastly-magento2.git"
@@ -46,13 +48,13 @@ In the procedure that follows, make sure you *branch* a new environment; don't u
 		git add -A; git commit -m "Install Fastly"; git push origin <branch name>
 
 ## Enable Fastly using the Magento Admin {#cloud-fastly-admin}
-1.	Log in to your local {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} as an administrator. 
+1.	Log in to your local {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} as an administrator.
 
 	If you don't remember your login information, enter the following command:
 
 		magento-cloud var:list
 2.	Click **Stores** > Settings > **Configuration** > **Advanced** > **System**.
-3.	In the right pane, expand **Full Page Cache**. 
+3.	In the right pane, expand **Full Page Cache**.
 
 	The page is displayed as follows.
 
@@ -86,7 +88,7 @@ To configure Fastly in the Admin:
 
 1.	Log in to the Magento Admin as an administrator.
 2.	Click **Stores** > Settings > **Configuration** > **Advanced** > **System**.
-3.	In the right pane, expand **Full Page Cache**. 
+3.	In the right pane, expand **Full Page Cache**.
 4.	Expand **Fastly Configuration**.
 
 	You can then [choose caching options](https://github.com/fastly/fastly-magento2/blob/master/Documentation/CONFIGURATION.md#configure-the-module){:target="_blank"}.
@@ -118,11 +120,11 @@ A [Fastly VCL snippet](https://docs.fastly.com/guides/vcl-snippets/about-vcl-sni
 
 To use snippets, you must upload the Fastly VCL using the Magento Admin as follows:
 
-1.	Log in to the Magento Admin as an administrator. 
+1.	Log in to the Magento Admin as an administrator.
 2.	Click **Stores** > Settings > **Configuration** > **Advanced** > **System** as the following figure shows:
 
 	![Choose Fastly]({{ site.baseurl }}common/images/cloud_fastly_menu.png){:width="650px"}
-3.	In the right pane, expand **Full Page Cache**. 
+3.	In the right pane, expand **Full Page Cache**.
 4.	Click **Upload VCL to Fastly** as the following figure shows.
 
 	![Upload a Magento VCL to Fastly]({{ site.baseurl }}common/images/cloud_upload-vcl-to-fastly.png)

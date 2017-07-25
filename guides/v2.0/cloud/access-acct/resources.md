@@ -1,11 +1,11 @@
 ---
 layout: default
-group: cloud
-subgroup: 080_setup
+group:
+subgroup:
 title: Magento 2 resources
 menu_title: Magento 2 resources
-menu_order: 550
-menu_node: 
+menu_order:
+menu_node:
 version: 2.0
 github_link: cloud/access-acct/resources.md
 ---

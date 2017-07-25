@@ -85,8 +85,12 @@ Initially, a super user must create the project in any of the following ways:
 *	[Create a sample Magento project from a template]({{ page.baseurl }}cloud/access-acct/first-time-setup.html) - **Recommended.** We recommend creating and deploying your initial project using a sample project. You can import existing Magento extensions, code, and data at a later time.
 *	[Import an existing Magento project]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-first-steps.html) - Import from existing Magento code and data requires advanced experience.
 
-## Blackfire and New Relic credentials {#cloud-owner-creds}
-Your project includes Blackfire and New Relic credentials. Only you&mdash;the account owner&mdash;can access them. You should provide these credentials to technical people as needed.
+## Blackfire and New Relic {#cloud-owner-creds}
+Your project includes [Blackfire]({{ site.baseurl }}cloud/project/project-integrate-blackfire.html) and [New Relic]({{ site.baseurl }}cloud/project/project-integrate-github.html) services. Your project console displays your credentials for these services. Only the account owner has initial access to the credentials and services. You should provide these credentials to technical and developer resources as needed.
+
+[Blackfire](https://blackfire.io/magento) provides tools for reviewing and optimizing Magento and your store in your environments. The profiler checks every method and call, determining what occurs with performance metrics per step.
+
+[New Relic](https://newrelic.com) provides application metrics and performance information for Staging and Production environments.  This service is not the module or extension and does not provide infrastructure (hardware) monitoring. _Do not install_ the New Relic module with this service in ECE.
 
 ### Blackfire credentials
 To get your Blackfire credentials:
@@ -105,7 +109,7 @@ To get your Blackfire credentials:
 	![Your Blackfire credentials]({{ site.baseurl }}common/images/cloud_blackfire-account-info.png){:width="450px"}
 
 ### New Relic credentials
-Your New Relic credentials are displayed on the same page as Blackfire. You can create New Relic users and provide that information to the people responsible for administering New Relic.
+Your New Relic credentials are displayed on the same page as Blackfire. You may receive the initial New Relic invitiation through an e-mail. You can create New Relic users and provide that information to your technical resources responsible for administering New Relic. 
 
 #### Related topics
 [Set up a project and dev workspace]({{ page.baseurl }}cloud/access-acct/first-time-setup.html)
