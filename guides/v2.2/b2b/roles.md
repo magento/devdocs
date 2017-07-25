@@ -692,7 +692,515 @@ None
 
 ### Search for a role
 
-See [Search using REST APIs]({{page.baseurl}}howdoi/webapi/search-criteria.html) for information about constructing a query using the `GET  /V1/role/` endpoint.
+The following call returns all roles that have been created for a company  (`company_id` = `2`).
+
+See [Search using REST APIs]({{page.baseurl}}howdoi/webapi/search-criteria.html) for information about constructing a search query.
+
+**Sample Usage**
+
+`GET /V1/company/role?searchCriteria[filter_groups][0][filters][0][field]=company_id&searchCriteria[filter_groups][0][filters][0][value]=2&searchCriteria[filter_groups][0][filters][0][condition_type]=eq`
+
+**Payload**
+
+None
+
+**Response**
+
+{% collapsible Show code sample %}
+{% highlight json %}
+
+{
+    "items": [
+        {
+            "id": 2,
+            "role_name": "Default User",
+            "permissions": [
+                {
+                    "id": 26,
+                    "role_id": 2,
+                    "resource_id": "Magento_Company::index",
+                    "permission": "allow"
+                },
+                {
+                    "id": 27,
+                    "role_id": 2,
+                    "resource_id": "Magento_Sales::all",
+                    "permission": "allow"
+                },
+                {
+                    "id": 28,
+                    "role_id": 2,
+                    "resource_id": "Magento_Sales::place_order",
+                    "permission": "allow"
+                },
+                {
+                    "id": 29,
+                    "role_id": 2,
+                    "resource_id": "Magento_Sales::payment_account",
+                    "permission": "deny"
+                },
+                {
+                    "id": 30,
+                    "role_id": 2,
+                    "resource_id": "Magento_Sales::view_orders",
+                    "permission": "allow"
+                },
+                {
+                    "id": 31,
+                    "role_id": 2,
+                    "resource_id": "Magento_Sales::view_orders_sub",
+                    "permission": "deny"
+                },
+                {
+                    "id": 32,
+                    "role_id": 2,
+                    "resource_id": "Magento_NegotiableQuote::all",
+                    "permission": "allow"
+                },
+                {
+                    "id": 33,
+                    "role_id": 2,
+                    "resource_id": "Magento_NegotiableQuote::view_quotes",
+                    "permission": "allow"
+                },
+                {
+                    "id": 34,
+                    "role_id": 2,
+                    "resource_id": "Magento_NegotiableQuote::manage",
+                    "permission": "allow"
+                },
+                {
+                    "id": 35,
+                    "role_id": 2,
+                    "resource_id": "Magento_NegotiableQuote::checkout",
+                    "permission": "allow"
+                },
+                {
+                    "id": 36,
+                    "role_id": 2,
+                    "resource_id": "Magento_NegotiableQuote::view_quotes_sub",
+                    "permission": "deny"
+                },
+                {
+                    "id": 37,
+                    "role_id": 2,
+                    "resource_id": "Magento_Company::view",
+                    "permission": "allow"
+                },
+                {
+                    "id": 38,
+                    "role_id": 2,
+                    "resource_id": "Magento_Company::view_account",
+                    "permission": "allow"
+                },
+                {
+                    "id": 39,
+                    "role_id": 2,
+                    "resource_id": "Magento_Company::edit_account",
+                    "permission": "deny"
+                },
+                {
+                    "id": 40,
+                    "role_id": 2,
+                    "resource_id": "Magento_Company::view_address",
+                    "permission": "allow"
+                },
+                {
+                    "id": 41,
+                    "role_id": 2,
+                    "resource_id": "Magento_Company::edit_address",
+                    "permission": "deny"
+                },
+                {
+                    "id": 42,
+                    "role_id": 2,
+                    "resource_id": "Magento_Company::contacts",
+                    "permission": "allow"
+                },
+                {
+                    "id": 43,
+                    "role_id": 2,
+                    "resource_id": "Magento_Company::payment_information",
+                    "permission": "allow"
+                },
+                {
+                    "id": 44,
+                    "role_id": 2,
+                    "resource_id": "Magento_Company::user_management",
+                    "permission": "allow"
+                },
+                {
+                    "id": 45,
+                    "role_id": 2,
+                    "resource_id": "Magento_Company::roles_view",
+                    "permission": "deny"
+                },
+                {
+                    "id": 46,
+                    "role_id": 2,
+                    "resource_id": "Magento_Company::roles_edit",
+                    "permission": "deny"
+                },
+                {
+                    "id": 47,
+                    "role_id": 2,
+                    "resource_id": "Magento_Company::users_view",
+                    "permission": "allow"
+                },
+                {
+                    "id": 48,
+                    "role_id": 2,
+                    "resource_id": "Magento_Company::users_edit",
+                    "permission": "deny"
+                },
+                {
+                    "id": 49,
+                    "role_id": 2,
+                    "resource_id": "Magento_Company::credit",
+                    "permission": "deny"
+                },
+                {
+                    "id": 50,
+                    "role_id": 2,
+                    "resource_id": "Magento_Company::credit_history",
+                    "permission": "deny"
+                }
+            ],
+            "company_id": 2
+        },
+        {
+            "id": 3,
+            "role_name": "Senior Buyer",
+            "permissions": [
+                {
+                    "id": 51,
+                    "role_id": 3,
+                    "resource_id": "Magento_Company::index",
+                    "permission": "allow"
+                },
+                {
+                    "id": 52,
+                    "role_id": 3,
+                    "resource_id": "Magento_Sales::all",
+                    "permission": "allow"
+                },
+                {
+                    "id": 53,
+                    "role_id": 3,
+                    "resource_id": "Magento_Sales::place_order",
+                    "permission": "allow"
+                },
+                {
+                    "id": 54,
+                    "role_id": 3,
+                    "resource_id": "Magento_Sales::payment_account",
+                    "permission": "allow"
+                },
+                {
+                    "id": 55,
+                    "role_id": 3,
+                    "resource_id": "Magento_Sales::view_orders",
+                    "permission": "allow"
+                },
+                {
+                    "id": 56,
+                    "role_id": 3,
+                    "resource_id": "Magento_Sales::view_orders_sub",
+                    "permission": "allow"
+                },
+                {
+                    "id": 57,
+                    "role_id": 3,
+                    "resource_id": "Magento_NegotiableQuote::all",
+                    "permission": "allow"
+                },
+                {
+                    "id": 58,
+                    "role_id": 3,
+                    "resource_id": "Magento_NegotiableQuote::view_quotes",
+                    "permission": "allow"
+                },
+                {
+                    "id": 59,
+                    "role_id": 3,
+                    "resource_id": "Magento_NegotiableQuote::manage",
+                    "permission": "allow"
+                },
+                {
+                    "id": 60,
+                    "role_id": 3,
+                    "resource_id": "Magento_NegotiableQuote::checkout",
+                    "permission": "allow"
+                },
+                {
+                    "id": 61,
+                    "role_id": 3,
+                    "resource_id": "Magento_NegotiableQuote::view_quotes_sub",
+                    "permission": "allow"
+                },
+                {
+                    "id": 62,
+                    "role_id": 3,
+                    "resource_id": "Magento_Company::view",
+                    "permission": "allow"
+                },
+                {
+                    "id": 63,
+                    "role_id": 3,
+                    "resource_id": "Magento_Company::view_account",
+                    "permission": "allow"
+                },
+                {
+                    "id": 64,
+                    "role_id": 3,
+                    "resource_id": "Magento_Company::edit_account",
+                    "permission": "deny"
+                },
+                {
+                    "id": 65,
+                    "role_id": 3,
+                    "resource_id": "Magento_Company::view_address",
+                    "permission": "allow"
+                },
+                {
+                    "id": 66,
+                    "role_id": 3,
+                    "resource_id": "Magento_Company::edit_address",
+                    "permission": "deny"
+                },
+                {
+                    "id": 67,
+                    "role_id": 3,
+                    "resource_id": "Magento_Company::contacts",
+                    "permission": "allow"
+                },
+                {
+                    "id": 68,
+                    "role_id": 3,
+                    "resource_id": "Magento_Company::payment_information",
+                    "permission": "allow"
+                },
+                {
+                    "id": 69,
+                    "role_id": 3,
+                    "resource_id": "Magento_Company::user_management",
+                    "permission": "allow"
+                },
+                {
+                    "id": 70,
+                    "role_id": 3,
+                    "resource_id": "Magento_Company::roles_view",
+                    "permission": "allow"
+                },
+                {
+                    "id": 71,
+                    "role_id": 3,
+                    "resource_id": "Magento_Company::roles_edit",
+                    "permission": "allow"
+                },
+                {
+                    "id": 72,
+                    "role_id": 3,
+                    "resource_id": "Magento_Company::users_view",
+                    "permission": "allow"
+                },
+                {
+                    "id": 73,
+                    "role_id": 3,
+                    "resource_id": "Magento_Company::users_edit",
+                    "permission": "allow"
+                },
+                {
+                    "id": 74,
+                    "role_id": 3,
+                    "resource_id": "Magento_Company::credit",
+                    "permission": "allow"
+                },
+                {
+                    "id": 75,
+                    "role_id": 3,
+                    "resource_id": "Magento_Company::credit_history",
+                    "permission": "allow"
+                }
+            ],
+            "company_id": 2
+        },
+        {
+            "id": 4,
+            "role_name": "Junior Buyer",
+            "permissions": [
+                {
+                    "id": 76,
+                    "role_id": 4,
+                    "resource_id": "Magento_Company::index",
+                    "permission": "allow"
+                },
+                {
+                    "id": 77,
+                    "role_id": 4,
+                    "resource_id": "Magento_Sales::all",
+                    "permission": "allow"
+                },
+                {
+                    "id": 78,
+                    "role_id": 4,
+                    "resource_id": "Magento_Sales::place_order",
+                    "permission": "allow"
+                },
+                {
+                    "id": 79,
+                    "role_id": 4,
+                    "resource_id": "Magento_Sales::payment_account",
+                    "permission": "allow"
+                },
+                {
+                    "id": 80,
+                    "role_id": 4,
+                    "resource_id": "Magento_Sales::view_orders",
+                    "permission": "allow"
+                },
+                {
+                    "id": 81,
+                    "role_id": 4,
+                    "resource_id": "Magento_Sales::view_orders_sub",
+                    "permission": "deny"
+                },
+                {
+                    "id": 82,
+                    "role_id": 4,
+                    "resource_id": "Magento_NegotiableQuote::all",
+                    "permission": "allow"
+                },
+                {
+                    "id": 83,
+                    "role_id": 4,
+                    "resource_id": "Magento_NegotiableQuote::view_quotes",
+                    "permission": "allow"
+                },
+                {
+                    "id": 84,
+                    "role_id": 4,
+                    "resource_id": "Magento_NegotiableQuote::manage",
+                    "permission": "allow"
+                },
+                {
+                    "id": 85,
+                    "role_id": 4,
+                    "resource_id": "Magento_NegotiableQuote::checkout",
+                    "permission": "allow"
+                },
+                {
+                    "id": 86,
+                    "role_id": 4,
+                    "resource_id": "Magento_NegotiableQuote::view_quotes_sub",
+                    "permission": "allow"
+                },
+                {
+                    "id": 87,
+                    "role_id": 4,
+                    "resource_id": "Magento_Company::view",
+                    "permission": "allow"
+                },
+                {
+                    "id": 88,
+                    "role_id": 4,
+                    "resource_id": "Magento_Company::view_account",
+                    "permission": "allow"
+                },
+                {
+                    "id": 89,
+                    "role_id": 4,
+                    "resource_id": "Magento_Company::edit_account",
+                    "permission": "deny"
+                },
+                {
+                    "id": 90,
+                    "role_id": 4,
+                    "resource_id": "Magento_Company::view_address",
+                    "permission": "allow"
+                },
+                {
+                    "id": 91,
+                    "role_id": 4,
+                    "resource_id": "Magento_Company::edit_address",
+                    "permission": "deny"
+                },
+                {
+                    "id": 92,
+                    "role_id": 4,
+                    "resource_id": "Magento_Company::contacts",
+                    "permission": "allow"
+                },
+                {
+                    "id": 93,
+                    "role_id": 4,
+                    "resource_id": "Magento_Company::payment_information",
+                    "permission": "allow"
+                },
+                {
+                    "id": 94,
+                    "role_id": 4,
+                    "resource_id": "Magento_Company::user_management",
+                    "permission": "allow"
+                },
+                {
+                    "id": 95,
+                    "role_id": 4,
+                    "resource_id": "Magento_Company::roles_view",
+                    "permission": "allow"
+                },
+                {
+                    "id": 96,
+                    "role_id": 4,
+                    "resource_id": "Magento_Company::roles_edit",
+                    "permission": "deny"
+                },
+                {
+                    "id": 97,
+                    "role_id": 4,
+                    "resource_id": "Magento_Company::users_view",
+                    "permission": "allow"
+                },
+                {
+                    "id": 98,
+                    "role_id": 4,
+                    "resource_id": "Magento_Company::users_edit",
+                    "permission": "deny"
+                },
+                {
+                    "id": 99,
+                    "role_id": 4,
+                    "resource_id": "Magento_Company::credit",
+                    "permission": "allow"
+                },
+                {
+                    "id": 100,
+                    "role_id": 4,
+                    "resource_id": "Magento_Company::credit_history",
+                    "permission": "allow"
+                }
+            ],
+            "company_id": 2
+        }
+    ],
+    "search_criteria": {
+        "filter_groups": [
+            {
+                "filters": [
+                    {
+                        "field": "company_id",
+                        "value": "2",
+                        "condition_type": "eq"
+                    }
+                ]
+            }
+        ]
+    },
+    "total_count": 3
+}
+
+{% endhighlight %}
+{% endcollapsible %}
 
 ## Related information
 

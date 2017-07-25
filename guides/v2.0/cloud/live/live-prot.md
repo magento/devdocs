@@ -4,8 +4,8 @@ group: cloud
 subgroup: 160_live
 title: Protective block
 menu_title: Protective block
-menu_order: 900
-menu_node: 
+menu_order: 400
+menu_node:
 version: 2.0
 github_link: cloud/live/live-prot.md
 ---
@@ -41,7 +41,7 @@ We run two types of blocks:
 	The error message accompanying `git push` provides detailed information about the vulnerability.
 
 *	For production web sites, we run a "partial block" that allows the site
-to stay mostly online. 
+to stay mostly online.
 
 	Depending on the nature of the vulnerability,
 parts of a request, such as a query string, cookies or any additional

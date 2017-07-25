@@ -44,6 +44,7 @@ This command has no effect on cron jobs outside the `#~ MAGENTO START` and `#~ M
 </div>
 
 ## Run cron from the command line {#config-cli-cron-group-run}
+
 Command options:
 
 	magento cron:run [--group="<cron group name>"]
@@ -53,9 +54,8 @@ where `--group` specifies the cron group to run (omit this option to run cron fo
 To set up custom cron jobs and groups, see [Configure custom cron jobs and cron groups]({{ page.baseurl }}config-guide/cron/custom-cron.html).
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-You must run cron twice: the first time to discover tasks to run and the second time to run the tasks themselves.
+You must run cron twice: the first time to discover tasks to run and the second time — to run the tasks themselves. The second cron run must occur on or after the `scheduled_at` time for every task.
 </div>
-
 
 #### Related topics
 

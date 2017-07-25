@@ -4,7 +4,7 @@ group: cloud
 subgroup: 080_setup
 title: Step 3, Set up authentication keys
 menu_title: Step 3, Set up authentication keys
-menu_order: 163
+menu_order: 164
 level3_menu_node: level3child
 level3_subgroup: setupenv
 version: 2.0
@@ -13,10 +13,14 @@ github_link: cloud/before/before-setup-env-keys.md
 
 {::options syntax_highlighter="rouge" /}
 
-## Add authentication keys to the project
-This topic discusses how to add authentication keys to the project, which means the keys don't have to be stored in the Git repository. (Developers who need to update Magento dependencies or to install {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} need authentication keys locally; this is discussed in the next section.)
+Add authentication keys to the project to ensure you don't need to store the keys in the Git repository. These keys provide authentication between Git and Magento for your branches and local.
 
-_Only a [project administrator]({{ page.baseurl }}cloud/project/user-admin.html#cloud-role-project) can perform this task._ The project administrator must have the public and private authentication keys for Magento Enterprise Cloud Edition. You should contact the Magento Enterprise Cloud Edition account owner to get the keys.
+Developers who need to update Magento dependencies or to install {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} also need to add authentication keys locally. To add keys locally, also perform the steps in [Add your local authentication keys to the project](#add-keys-project).
+
+## Add authentication keys to the project
+_Only a [project administrator]({{ page.baseurl }}cloud/project/user-admin.html#cloud-role-project) can perform this task._ The project administrator must have the public and private authentication keys for Magento Enterprise Cloud Edition.
+
+Contact your Magento Enterprise Cloud Edition account owner to get the keys for these instructions.
 
 To set up authentication keys in the project:
 
@@ -60,16 +64,20 @@ To set up authentication keys in the project:
 		git add -A && git commit -m "Remove auth.json" && git push origin <branch name>
 12.	Wait for the project to build and deploy.
 
-## Add your local authentication keys to the project
-Before you can upgrade the Magento software or install extensions, you must have authentication keys in the `auth.json` file in the Magento root directory. However, the authentication keys don't need to be in the Git repository so you can add `auth.json` to `.gitignore`.
+## Add your local authentication keys to the project {#add-keys-project}
+Before you can upgrade the Magento software or install extensions, you must have authentication keys in the `auth.json` file in the Magento root directory. Contact the project administrator or the account owner for the authentication keys. You need these keys to add them locally.
+
+These authentication keys don't need to be in the Git repository. You can add `auth.json` to `.gitignore`.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-Make sure your project administrator has added authentication keys to the project as discussed in the preceding section. Typically, either the project administrator or the account owner has the authentication keys. Contact one of them before you continue.
+Ensure your project administrator has added authentication keys to the project as discussed in the preceding section.
 </div>
 
-To add your authentication keys:
+These instructions require having a cloned branch for development locally.
 
-1.	If you haven't done so already, log in to your Magento Enterprise Cloud Edition project, check out an environment, and pull updated code from the server.
+To add your local authentication keys:
+
+1.	If you haven't done so already, log in to your Magento Enterprise Cloud Edition project, check out an environment, and pull updated code from the server. For additional information, see [Step 5, Clone or branch an environment]({{ page.baseurl }}cloud/before/before-setup-env-env.html)
 
 	Use the following commands:
 
@@ -118,5 +126,4 @@ To add your authentication keys:
 5.	Save your changes to `.gitignore` and exit the text editor.
 
 #### Next step
-[Step 6, Set file system permissions and ownership]({{ page.baseurl }}cloud/before/before-setup-env-perms.html)
-
+[Step 4, Set up cron]({{ page.baseurl }}cloud/before/before-setup-env-cron.html)

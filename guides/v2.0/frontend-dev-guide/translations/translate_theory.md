@@ -57,6 +57,12 @@ To ensure that the text you add in `.html` templates of UI components is added t
     <!-- ko i18n: 'You have no items in your shopping cart.' --><!-- /ko -->
 {% endhighlight HTML%}	
 
+- when a string is added as an attribute of an HTML element:
+
+{% highlight HTML%}
+    <input type="text" data-bind="attr: {placeholder: $t('First Name')}" />
+{% endhighlight HTML%}
+
 <h2 id="add_strings_ui_xml">Strings added in UI components configuration files</h2>
 
 To ensure that the text you add in UI components configuration `.xml` files is added to the dictionary, use the `translate` attribute: set `translate=true` for the corresponding element. The following code sample is an illustration:

@@ -19,9 +19,9 @@ github_link: install-gde/prereq/install-rabbitmq.md
 
 RabbitMQ is is an open source message broker that offers a reliable, highly available, scalable and portable messaging system.
 
-Message queues provide an asynchronous communications mechanism in which the sender and the receiver of a message do not contact each other. Nor do they need to communicate with the message queue at the same time. When a sender places a messages onto a queue, it is stored until the recipient receives them. 
+Message queues provide an asynchronous communications mechanism in which the sender and the receiver of a message do not contact each other. Nor do they need to communicate with the message queue at the same time. When a sender places a messages onto a queue, it is stored until the recipient receives them.
 
-Magento 2.0 Enterprise Edition (EE) uses RabbitMQ to manage these message queues. RabbitMQ cannot be used with Community Edition (CE) installations.
+Magento Enterprise Edition (EE) uses RabbitMQ to manage these message queues. RabbitMQ cannot be used with Community Edition (CE) installations.
 
 The message queue system must be established before you install Magento. The basic sequence is
 
@@ -41,8 +41,8 @@ Detailed installation instructions are beyond the scope of this document. See [I
 To install RabbitMQ on Ubuntu 16 enter the following command:
 
     sudo apt install -y rabbitmq-server
-    
-This command also installs the required Erlang packages. 
+
+This command also installs the required Erlang packages.
 
 If you have an older version of Ubuntu, RabbitMQ recommends installing the package from their {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %}.
 
@@ -129,5 +129,3 @@ where:
 *	[How to get the Magento software]({{ page.baseurl }}install-gde/bk-install-guide.html)
 *	<a href="{{page.baseurl}}config-guide/mq/rabbitmq-overview.html">Message queue overview</a>
 *	<a href="{{page.baseurl}}config-guide/mq/config-mq.html">Configure message queues</a>
-
-

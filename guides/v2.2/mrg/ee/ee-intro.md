@@ -38,5 +38,6 @@ The following modules are described in detail:
 * RmaStaging
 * SalesRuleStaging
 * SearchStaging
+* Signifyd
 * Staging
 * WeeeStaging

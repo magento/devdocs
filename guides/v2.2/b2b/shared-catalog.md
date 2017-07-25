@@ -25,3 +25,4 @@ B2B provides two types of shared catalog: public and custom. A public catalog is
 * [Manage shared catalogs]({{page.baseurl}}b2b/shared-cat-manage.html)
 * [Assign categories and products]({{page.baseurl}}b2b/shared-cat-product-assign.html)
 * [Assign companies]({{page.baseurl}}b2b/shared-cat-company.html)
+* [Manage prices for multiple products]({{page.baseurl}}rest/catalog-pricing.html)

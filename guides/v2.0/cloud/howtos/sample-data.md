@@ -5,7 +5,7 @@ subgroup: How To
 title: Install optional sample data
 menu_title: Install optional sample data
 menu_order: 70
-menu_node: 
+menu_node:
 version: 2.0
 github_link: cloud/howtos/sample-data.md
 ---
@@ -14,11 +14,7 @@ This topic discusses how to install optional Magento sample data. Sample data si
 
 ### Get started
 
-{% collapsible To get started: %}
-
 {% include cloud/cli-get-started.md %}
-
-{% endcollapsible %}
 
 ### Install sample data
 To install sample data:
@@ -28,18 +24,15 @@ To install sample data:
 
 		<Magento root dir>/bin/magento sampledata:deploy
 3.	Wait for components to update.
-4.	Upgrade the database and schema:
-
-		<Magento root dir>/bin/magento setup:upgrade
 4.	Commit and push the changes:
 
 		git add -A && git commit -m "Install sample data"
 		git push origin <branch name>
-3.	Wait for the project to deploy.
-4.	Verify the installation was successful by going to your {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} main page.
+5.	Wait for the project to deploy.
+6.	Verify the installation was successful by going to your {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} main page.
 
-	The URL displays on the command line under the heading `Environment routes:` after the project deploys.
-5.	Take a snapshot of your environment:
+  The URL displays on the command line under the heading `Environment routes:` after the project deploys.
+7.	Take a snapshot of your environment:
 
 		magento-cloud snapshot:create -e <environment ID>
 

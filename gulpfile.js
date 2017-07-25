@@ -38,7 +38,7 @@ var gulp = require('gulp'),
         '_includes/**/*.html',
 			  '_layouts/**/*.html',
         '_videos/**/*',
-        'css/**/*.css',
+  //      'css/**/*.css',
         '*.html'
 		],
       styles: 'scss/**/*.scss',
@@ -54,6 +54,7 @@ var gulp = require('gulp'),
    destJS = 'common/js/',
    destImg = '_site/i/',
    destCSS = 'css/',
+   destCSS2 = '_site/css'
    destFonts = '_site/font/',
    destIcons = '_site/font/icons/',
 
@@ -136,6 +137,7 @@ gulp.task('styles', function () {
       .on('error', gutil.log)
       //.pipe(sourcemaps.write())
       .pipe(gulp.dest(destCSS))
+      .pipe(gulp.dest(destCSS2))
       .pipe(reload({stream: true}));
 
 });
@@ -143,7 +145,7 @@ gulp.task('styles', function () {
 // Compile html files. Use _config.yml
 gulp.task('jekyll', function (gulpCallBack) {
 
-   var jekyll = spawn('bundle', ['exec','jekyll','build'], {stdio: 'inherit'});
+   var jekyll = spawn('bundle', ['exec','jekyll','build', '--config', '_config.yml,_config.local.yml'], {stdio: 'inherit'});
 
    jekyll.on('error', function (error) {
       console.log(error.toString());
@@ -188,7 +190,7 @@ gulp.task('default',
 */
 
 // Compile HTML, watch files for changes, and only recompile files that change; not the entire site:
-gulp.task('build', shell.task(['jekyll build --watch --incremental --verbose']));
+gulp.task('build', shell.task(['jekyll build --watch --incremental']));
 
 // Start a local webserver and launch the site in a browser.
 gulp.task('serve', function () {

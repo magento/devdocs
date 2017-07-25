@@ -162,7 +162,8 @@ You can find the detailed information about the configuration and other options 
 
 In client-side compilation mode, most of the stylesheet customizations display immediately after you reload a page in a browser.
 
-<span id="css_exception">There are certain types of changes</span>, that require you to clear the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory and trigger the compilation and <a href="{{page.baseurl}}architecture/view/static-process.html#publish-static-view-files" target="_blank">publication</a> processes anew.
+##### When you need to clean static view files {#css_exception}
+There are certain types of changes, that require you to clear the <code>pub/static/frontend/&lt;Vendor&gt;/&lt;theme&gt;/&lt;locale&gt;</code> directory and trigger the compilation and <a href="{{page.baseurl}}architecture/view/static-process.html#publish-static-view-files" target="_blank">publication</a> processes anew.
 
 This is required in the following cases:
 <ul>
