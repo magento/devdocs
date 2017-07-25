@@ -17,7 +17,7 @@ redirect_from:
   - /guides/v2.1/cloud/access-acct/admin-env-vars.html
 ---
 
-To create an account and start developing Magento, you need a configured developer workspace, base Magento ECE code, and knowledge of the deployment workflow. These instructions guide through the entire process to create a development workspace on your local.
+To create an account and start developing Magento, you need a configured developer workspace, base Magento Enterprise Cloud Edition code, and knowledge of the deployment workflow. These instructions guide through the entire process to create a development workspace on your local.
 
 ## Project user account {#account}
 Depending on the project owner, you may need to be invited by the owner to the project. This account gives you participation to the project and connects your local, credentials, and access to your company's Magento Enterprise Cloud Edition account. The account includes all source code and deployment environments.

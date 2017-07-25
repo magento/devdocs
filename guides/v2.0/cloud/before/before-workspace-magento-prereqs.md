@@ -107,18 +107,11 @@ Before working with your Magento Enterprise Cloud Edition project, make sure you
 		*	Ubuntu: `service apache2 restart`
 	*	nginx: `service nginx restart`
 
-### Set up PHP-FPM configurations
-[PHP-FPM](https://php-fpm.org/)
-copy platform configs in place
-comment out /dev/stderr reference
-search and replace 'web' for 'www-data' (or maybe just add web user/group?)
-service php-fpm7.0 restart
-
 ## Web server {#webserver}
 We support installations of [Apache]({{ page.baseurl }}install-gde/prereq/apache.html) and [nginx](https://nginx.org/) for your web server. We do not provide documentation for an installation and configuration of nginx at this time. Please review the [nginx Wiki](https://www.nginx.com/resources/wiki/) for further instructions.
 
 ## Database {#database}
-You have multiple options for databases to use for your local. We recommend [MySQL]({{ page.baseurl }}install-gde/prereq/mysql.html). Regardless of database, you need to modify the `auto_increment_increment` value. The Magento ECE environments use [Mariadb](https://mariadb.org/), with a [Galara Cluster](http://galeracluster.com/) with triple reducency in the Production environment.
+You have multiple options for databases to use for your local. We recommend [MySQL]({{ page.baseurl }}install-gde/prereq/mysql.html). Regardless of database, you need to modify the `auto_increment_increment` value. The Magento Enterprise Cloud Edition environments use [Mariadb](https://mariadb.org/), with a [Galara Cluster](http://galeracluster.com/) with triple reducency in the Production environment.
 
 ### Set up the auto-increment {#cloud-mysql}
 The MySQL configuration parameter [`auto_increment_increment`](http://dev.mysql.com/doc/refman/5.6/en/server-system-variables.html){:target="_blank"} is set to `1` by default in a local MySQL installation. You need to change this value to `3`.  The Magento Enterprise Cloud Edition database cluster includes 3 database implementations. The increment ensures data is unique across all databases for consistant data in the High Availability structure.
@@ -153,7 +146,7 @@ If necessary, set `auto_increment_increment` to 3:
 
 			service mysqld restart
 
-## Magento ECE CLI {#cloud-ssh-cli-cli-install}
+## Magento Cloud CLI {#cloud-ssh-cli-cli-install}
 The Magento Enterprise Cloud Edition command-line interface (CLI) tool helps you manage your projects and code branches on Magento Enterprise Cloud Edition. For a list of available commands, see [Common Magento CLI commands]({{ page.baseurl }}cloud/env/environments-start.html).
 
 These instructions discuss installation using commands for a Unix environment. For Windows, we recommend using [Cygwin](https://www.cygwin.com/){:target="_blank"} or Git Bash.

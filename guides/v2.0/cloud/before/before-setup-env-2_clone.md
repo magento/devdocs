@@ -15,9 +15,9 @@ github_link: cloud/before/before-setup-env-2_clone.md
 #### Previous step:
 [Set up the Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html)
 
-The Magento Enterprise Cloud Edition (ECE) project is a Git repository of Magento code with a master origin. You work in code branches from the master environment to develop custom code, configure settings, and add Magento modules and extensions. To begin, you need to clone the `master` environment to your local. If you are new to Git workflow, processes, and GitHub, see Git [documentation](https://git-scm.com/documentation) and GitHub [guides](https://guides.github.com/) and [help](https://help.github.com/).
+The Magento Enterprise Cloud Edition project is a Git repository of Magento code with a master origin. You work in code branches from the master environment to develop custom code, configure settings, and add Magento modules and extensions. To begin, you need to clone the `master` environment to your local. If you are new to Git workflow, processes, and GitHub, see Git [documentation](https://git-scm.com/documentation) and GitHub [guides](https://guides.github.com/) and [help](https://help.github.com/).
 
-Some of the commands in these instructions use Magento CLI commands and Git commands to access the `master` environment. If you are not familiar with Git commands, see the [GitHub Git](https://education.github.com/git-cheat-sheet-education.pdf) cheatsheet. For a full list of Magento CLI commands for ECE, enter `magento-cloud list` or see [Magento CLI reference]({{ page.baseurl }}cloud/before/before-workspace-magento-prereqs.html#cloud-ssh-cli-cli-install).
+Some of the commands in these instructions use Magento CLI commands and Git commands to access the `master` environment. If you are not familiar with Git commands, see the [GitHub Git](https://education.github.com/git-cheat-sheet-education.pdf) cheatsheet. For a full list of Magento Cloud CLI commands, enter `magento-cloud list` or see [Magento CLI reference]({{ page.baseurl }}cloud/before/before-workspace-magento-prereqs.html#cloud-ssh-cli-cli-install).
 
 To clone the project's `master` environment:
 

@@ -123,8 +123,8 @@ After you have installed Magento, you need to set the file system permissions an
 
 ## Local workspace completed
 With these steps completed, you should have:
-* Magento ECE account and initial project setup
-* A local workspace configured with installations of required software, Magento ECE CLI, and Magento
+* Magento Enterprise Cloud Edition account and initial project setup
+* A local workspace configured with installations of required software, Magento Cloud CLI, and Magento
 * SSH keys set up
 * The Magento file system owner configured
 * A branch for your code
