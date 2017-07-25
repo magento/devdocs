@@ -121,6 +121,14 @@ After you have installed Magento, you need to set the file system permissions an
 
 {% include install/file-system-perms-twouser_cmds-only.md %}
 
+## Additional software and services
+For Integration development, you may also want to install additional tools, software, and services.
+
+* [Redis]({{ page.baseurl }}cloud/project/project-conf-files_services-redis.html)
+* [ElasticSearch]({{ page.baseurl }}cloud/project/project-conf-files_services-elastic.html)
+* [RabbitMQ]({{ page.baseurl }}cloud/project/project-conf-files_services-rabbit.html)
+* [Additional software]({{ page.baseurl }}install-gde/prereq/optional.html) for Magento
+
 ## Local workspace completed
 With these steps completed, you should have:
 * Magento Enterprise Cloud Edition account and initial project setup
