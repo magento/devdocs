@@ -44,7 +44,7 @@ There are three Magento code repositories on GitHub where you can find Release C
   </tr>
 <tr>
     <td><b>Magento CE</b></td>
-    <td><a href="https://github.com/magento/magento2ce">https://github.com/magento/magento2ce</a></td>
+    <td><a href="https://github.com/magento/magento2">https://github.com/magento/magento2</a></td>
     <td>2.2.0-release-candidate</td>
     <td>Publicly available</td>
 </tr>
@@ -70,7 +70,7 @@ These instructions assume you have experience working with Github repositories. 
 
     ```
     cd /var/www/html
-    git clone -b 2.2.0-release-candidate git@github.com:magento/magento2ce.git magento2
+    git clone -b 2.2.0-preview git@github.com:magento/magento2.git
     ```
 
 2.  Clone the `magento2ee/` and `magento2b2b/` repositories inside the `magento2/` repository:
