@@ -1,10 +1,10 @@
 ---
 layout: default
-group: cloud
-subgroup: 080_setup
+group: 
+subgroup:
 title: Create a new Magento project
 menu_title: Create a new Magento project
-menu_order: 
+menu_order:
 menu_node:
 version: 2.0
 github_link: cloud/access-acct/first-time-setup_template.md

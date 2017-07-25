@@ -10,14 +10,19 @@ version: 2.1
 github_link: cloud/before/before-project-owner.md
 ---
 
-## Account owner overview {#cloud-owner-over}
-After your company licenses the Magento Enterprise Cloud Edition, the only person who has access to it is the *account owner*&mdash;the person who purchased the software. The account owner is typically a "business user"&mdash; someone in the business or finance organization. 
+The account owner has sole authority over Magento Enterprise Cloud Edition (ECE) to manage your store, project and Git access, and more.
 
-This topic discusses initial tasks the account owner should perform to give technical people access to the project.
+As the account owner, you must complete the following, required by development and technical resources:
 
-Before you start, you must know the e-mail address for each user you'd like to add. After you add these users to the project, they receive an invitation to register with Magento Enterprise Cloud Edition.
+* Access to the ECE project through added user accounts
+* Generate Magento licensed keys
 
-## Sign up for an account {#cloud-first-acct}
+## What is the account owner {#cloud-owner-over}
+After your company licenses the Magento Enterprise Cloud Edition, the only person who has access to it is the *account owner*&mdash;the person who purchased the software. The account owner is typically a "business user"&mdash; someone in the business or finance organization. This is your point of contact with Magento regarding the ECE account overall.
+
+The owner can add accounts to provide access to code, manage branches, enter tickets, and support environments. These user accounts can include in-house development, consultants, and Magento solution specialists.
+
+## Sign up for a Magento EVE account {#cloud-first-acct}
 To sign up for a Magento Enterprise Cloud Edition account, contact [Magento Sales](https://magento.com/explore/contact-sales){:target="_blank"}. They will create your account and send you a welcome e-mail that provides instructions to access the project.
 
 The person who signs up for a Magento Enterprise Cloud Edition account is referred to as the *account owner*. You receive a welcome e-mail that enables you to set up the project initially.
@@ -34,18 +39,16 @@ As the account owner, you must create one set of keys for each technical person 
 
 We recommend against providing the keys over e-mail because it isn't secure; instead, use a company intranet portal or wiki.
 
-{% collapsible To create authentication keys: %}
+To create authentication keys:
 
 {% include cloud/auth-json.md %}
 
-{% endcollapsible %}
-
 ## Create project administrators {#cloud-owner-admins}
-As discussed in more detail in [Manage users]({{ page.baseurl }}cloud/project/user-admin.html), Magento Enterprise Cloud Edition has a number of user roles.
+As discussed in more detail in [Manage users]({{ page.baseurl }}cloud/project/user-admin.html), Magento ECE has a number of user roles. Typically, the only user the account owner must create is the *project administrator* (also referred to as the super user). This user can create other users and delegate roles as desired.
 
-Typically, the only user the account owner must create is the *project administrator* (also referred to as the super user). This user can create other users and delegate roles as desired.
+Before you start, create a list of e-mail address for the users you want to add. New accounts receive an invitation to register with Magento ECE and receive access based on the role. You can add and manage users at any time.
 
-{% collapsible To create project administrators: %}
+To create project administrators:
 
 1.  Log in to [your Magento Enterprise Cloud Edition account](https://accounts.magento.cloud){:target="_blank"}.
 2.  Click the **Projects** tab as the following figure shows.
@@ -79,17 +82,13 @@ The super users you add receive an e-mail inviting them to join the Magento Ente
 
 Initially, a super user must create the project in any of the following ways:
 
-*	[Create a sample Magento project from a template]({{ page.baseurl }}cloud/access-acct/first-time-setup_template.html)
-*	[Import an existing Magento project]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-first-steps.html)
-
-{% endcollapsible %}
+*	[Create a sample Magento project from a template]({{ page.baseurl }}cloud/access-acct/first-time-setup.html) - **Recommended.** We recommend creating and deploying your initial project using a sample project. You can import existing Magento extensions, code, and data at a later time.
+*	[Import an existing Magento project]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-first-steps.html) - Import from existing Magento code and data requires advanced experience.
 
 ## Blackfire and New Relic credentials {#cloud-owner-creds}
 Your project includes Blackfire and New Relic credentials. Only you&mdash;the account owner&mdash;can access them. You should provide these credentials to technical people as needed.
 
-{% collapsible To provide access to Blackfire and New Relic: %}
-
-### Blackfire credentials 
+### Blackfire credentials
 To get your Blackfire credentials:
 
 1.	As the Magento Enterprise Cloud Edition account owner, [log in]({{ page.baseurl }}cloud/project/project-webint-basic.html#project-login) to your Magento Enterprise Cloud Edition project.
@@ -108,4 +107,5 @@ To get your Blackfire credentials:
 ### New Relic credentials
 Your New Relic credentials are displayed on the same page as Blackfire. You can create New Relic users and provide that information to the people responsible for administering New Relic.
 
-{% endcollapsible %}
+#### Related topics
+[Set up a project and dev workspace]({{ page.baseurl }}cloud/access-acct/first-time-setup.html)

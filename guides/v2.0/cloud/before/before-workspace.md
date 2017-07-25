@@ -6,7 +6,7 @@ title: Set up a project and dev workspace
 menu_title: Set up a project and dev workspace
 menu_order: 5
 menu_node:
-level3_menu_node: level3parent
+level3_menu_node: level3child
 level3_subgroup: workspace
 version: 2.0
 github_link: cloud/before/before-workspace.md
