@@ -45,7 +45,7 @@ There are three Magento code repositories on GitHub where you can find Release C
 <tr>
     <td><b>Magento CE</b></td>
     <td><a href="https://github.com/magento/magento2">https://github.com/magento/magento2</a></td>
-    <td>2.2.0-release-candidate</td>
+    <td>2.2.0-preview</td>
     <td>Publicly available</td>
 </tr>
 <tr>
