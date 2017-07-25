@@ -17,7 +17,7 @@ You can configure either the sandbox or production account in every environment:
 * For Integration and Staging environments, we recommend setting Sandbox credentials.
 * For your Production environment, you can set Sandbox credentials for initial testing, then replace with live production credentials for a launched store.
 
-## PayPal account
+## PayPal account {#accounts}
 
 While we recommend having a PayPal merchant account prepared and configured, you can create a new account or upgrade a personal account through the Admin panel.
 
@@ -26,16 +26,18 @@ When connecting to PayPal to link your account, you have an option to login with
 * If the entered email address does not match an existing account, you will be prompted to create a new PayPal merchant account.
 * If you have an existing personal PayPal account, you can login with those credentials and upgrade this account to a business account as you complete the sync.
 
+Please note the [PayPal account limitations](#limitations) for further information.
+
 ![Log in to PayPal]({{ site.baseurl }}common/images/cloud_paypal-access.png){:width="336px"}
 
-### PayPal limitations
+### PayPal limitations {#limitations}
 
 PayPal supports connecting for PayPal Express Checkout for countries across the globe except for the following limitations:
 
 * India, and Japan (future PayPal updates may support these accounts)
 * Israel
 
-Current or new business accounts are supported for Brazil. You cannot convert an existing personal PayPal account for Brazil during this process. If you need an account, please create a new business PayPal account when prompted to login.
+For Brazil, you must have an existing PayPal business account to connect. You cannot convert an existing personal PayPal account for Brazil during this process. If you need an account, please create a new business PayPal account through [their website](https://www.paypal.com/us/webapps/mpp/account-selection).
 
 ## Configure PayPal Express Checkout
 
@@ -44,7 +46,7 @@ To configure PayPal Express Checkout:
 1. Access the Admin console for the environment you need to configure.
 2. In the left-side navigation, select __Stores__ > __Configuration__, then select __Sales__ > __Payment Methods__.
 3. For PayPal, select __Configure__. Configuration fields display in expandable sections for Express Checkout, Adveritise PayPal Credit, and Basic and Advanced settings.
-4. Connect your PayPal account. Until the account is connected, the options to enable are disabled.
+4. Connect your PayPal account. Until the account is connected, the options to enable are disabled. For details on available and supported accounts to connect and limitations, see [PayPal account](#accounts).
 
     * To connect your PayPal live account, click Connect with PayPal and follow the prompts.
     * To connect your sandbox account for testing, click Sandbox Credentials and follow the prompts.
