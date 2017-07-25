@@ -5,6 +5,8 @@ subgroup: 080_setup
 title: Install Magento
 menu_title: Install Magento
 menu_order: 50
+level3_menu_node: level3child
+level3_subgroup: workspace
 version: 2.0
 github_link: cloud/before/before-setup-env-install.md
 redirect_from:

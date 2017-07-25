@@ -6,6 +6,8 @@ title: Clone the project
 menu_title: Clone the project
 menu_order: 30
 menu_node:
+level3_menu_node: level3child
+level3_subgroup: workspace
 version: 2.0
 github_link: cloud/before/before-setup-env-2_clone.md
 ---

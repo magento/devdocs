@@ -6,6 +6,8 @@ title: Install Magento prerequisites
 menu_title: Install Magento prerequisites
 menu_order: 15
 menu_node:
+level3_menu_node: level3child
+level3_subgroup: workspace
 version: 2.0
 github_link: cloud/before/before-workspace-magento-prereqs.md
 redirect_from:

@@ -6,6 +6,8 @@ title: Enable SSH keys
 menu_title: Enable SSH keys
 menu_order: 20
 menu_node:
+level3_menu_node: level3child
+level3_subgroup: workspace
 version: 2.0
 github_link: cloud/before/before-workspace-ssh.md
 redirect_from:

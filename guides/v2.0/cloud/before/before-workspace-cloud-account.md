@@ -6,6 +6,8 @@ title: Set up an account and project
 menu_title: Set up an account and project
 menu_order: 10
 menu_node:
+level3_menu_node: level3child
+level3_subgroup: workspace
 version: 2.0
 github_link: cloud/before/before-workspace-cloud-account.md
 redirect_from:
