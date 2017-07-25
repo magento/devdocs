@@ -6,7 +6,9 @@ title: Magento_ReviewAnalytics module
 menu_title: ReviewAnalytics
 menu_order: 6
 version: 2.2
-github_link: mrg/ce/ReviewAnalytics/description.md
+github_link: mrg/ce/ReviewAnalytics.md
 ---
 
+<div class="mrg-content" markdown="1">
 {% remote_markdown https://raw.githubusercontent.com/magento/magento2/develop/app/code/Magento/ReviewAnalytics/README.md %}
+</div>
