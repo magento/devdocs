@@ -12,7 +12,7 @@ redirect_from: /guides/v1.0/get-started/gs-rest-ff-client.html
 
 This topic discusses how to use the <a href="https://addons.mozilla.org/en-US/firefox/addon/restclient/" target="_blank">Firefox REST Client</a> browser add-on to send a REST call that creates a new Magento customer.
 
-To do this, you need to set up an _integration_ that provides access to Magento customer resources. You set up the integration using the Magento Admin.
+To do this, you need to set up an _integration_ that provides access to Magento customer resources. You set up the integration using the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}.
 
 You don't need to do any coding in this example.
 
@@ -33,7 +33,7 @@ You don't need to do any coding in this example.
     &lt;/resources>
 &lt;/route>
 </pre></li></ol>
-<p>The <code>route url</code> specifies the URI of the REST call. (Step 10 shows the entire URL.)</p>
+<p>The <code>route url</code> specifies the URI of the REST call. (Step 10 shows the entire {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %}.)</p>
 <p>In this example, the URI is <code>POST /V1/customerAccounts</code></p>
 <div class="bs-callout bs-callout-info" id="info">
   <ul class="note"><li>Any value prefixed by a colon character is a required input.</li>
@@ -44,12 +44,12 @@ You don't need to do any coding in this example.
 
 <h2>Step 3: Find the service data object</h2>
 <div>
-<p>The service data object tells you what data to pass in to the REST API. The service data object is specified by the service interface method named by <code>service class</code> in <code>webapi.xml</code>.</p>
+<p>The service data object tells you what data to pass in to the REST {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %}. The service data object is specified by the service interface method named by <code>service class</code> in <code>webapi.xml</code>.</p>
 <p>Continuing the preceding example, the <code>createCustomer()</code> method on the <code>\Magento\Customer\Service\V1\CustomerAccountServiceInterface</code> specifies the data service object as follows:</p>
 <script src="https://gist.github.com/xcomSteveJohnson/9775420.js"></script>
 <p>In this case, the service object is <a href="{{ site.mage2000url }}app/code/Magento/Customer/Service/V1/Data/customer.php" target="_blank">\Magento\Customer\Service\V1\Data\customer</a>.</p>
 <div class="bs-callout bs-callout-info" id="info">
-  <p>To use <code>customer</code> as a JSON or XML parameter in the POST call payload, you must specify it as follows: <code>customer_details</code>. The parameter name is all lowercase with camel case strings separated by an underscore character. To use it as JSON input, <code>customer_details</code> must specify a <a href="http://www.json.com/" target="_blank">JSON</a> object.</p>
+  <p>To use <code>customer</code> as a JSON or {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} parameter in the POST call payload, you must specify it as follows: <code>customer_details</code>. The parameter name is all lowercase with camel case strings separated by an underscore character. To use it as JSON input, <code>customer_details</code> must specify a <a href="http://www.json.com/" target="_blank">JSON</a> object.</p>
   </div>
 </div>
 
@@ -80,14 +80,14 @@ You don't need to do any coding in this example.
 </div>
 
 <h2>Step 7: Create and activate the integration</h2>
-<div><p>For OAuth 1.0a authorization to work, you must create an integration that optionally has access to customer resources. (Although the <code>createCustomer</code> method can authenticate anonymously, it's good practice to grant access to customer objects anyway.)</p>
+<div><p>For OAuth 1.0a {% glossarytooltip 34ecb0ab-b8a3-42d9-a728-0b893e8c0417 %}authorization{% endglossarytooltip %} to work, you must create an integration that optionally has access to customer resources. (Although the <code>createCustomer</code> method can authenticate anonymously, it's good practice to grant access to customer objects anyway.)</p>
 <p>The integration also provides the following OAuth 1.0a authorization details:</p>
 <ul><li>Consumer key</li>
 <li>Consumer secret</li>
 <li>Access token</li>
 <li>Access token secret</li></ul>
 <p>To create the integration:</p>
-<ol><li>Log in to the Magento Admin as an administrator.</li>
+<ol><li>Log in to the Magento {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} as an administrator.</li>
 <li>Click <strong>System</strong> > <strong>Integrations</strong>.</li>
 <li>In the upper right corner, click <strong>Add New Integration</strong>.</li>
 <li>On the New Integration page, enter a unique name for the integration in the <strong>Name</strong> field.<br>

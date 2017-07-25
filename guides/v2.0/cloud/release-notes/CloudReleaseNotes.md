@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 03_ReleaseNotes
+subgroup: 030_ReleaseNotes
 title: Magento Enterprise Cloud Edition Release Notes
 menu_title: Magento Enterprise Cloud Edition Release Notes
 menu_order: 1
@@ -14,7 +14,12 @@ Release Notes provide important information about changes, fixes, and known issu
 
 The following Release Notes are available:
 
-*	[magento-cloud-configuration release 101.4.1 Release Notes]({{ page.baseurl }}cloud/release-notes/CloudReleaseNotes101.4.html)
+
+
+*	[magento-cloud-configuration release 101.7.x Release Notes]({{ page.baseurl }}cloud/release-notes/CloudReleaseNotes101.7.html)
+*	[magento-cloud-configuration release 101.6.x Release Notes]({{ page.baseurl }}cloud/release-notes/CloudReleaseNotes101.6.html)
+*	[magento-cloud-configuration release 101.5.x Release Notes]({{ page.baseurl }}cloud/release-notes/CloudReleaseNotes101.5.html)
+*	[magento-cloud-configuration release 101.4.x Release Notes]({{ page.baseurl }}cloud/release-notes/CloudReleaseNotes101.4.html)
 *	[Magento Enterprise Cloud Edition version 2.1.4 and 2.0.12]({{ page.baseurl }}cloud/release-notes/CloudReleaseNotes2.1.4.html)
 *	[Magento Enterprise Cloud Edition version 2.1.3 and 2.0.11]({{ page.baseurl }}cloud/release-notes/CloudReleaseNotes2.1.3.html)
 *	[Magento Enterprise Cloud Edition version 2.1.2 and 2.0.10]({{ page.baseurl }}cloud/release-notes/CloudReleaseNotes2.1.2.html)

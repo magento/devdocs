@@ -11,7 +11,7 @@ github_link: config-guide/mq/queue-migration.md
 
 ### Migrate from Magento 2.0 to 2.1 ###
 
-The `communication.xml` file was not changed between Magento 2.0 and 2.1. Replace the `queue.xml` file for each module that sends messages to the message queue.
+The `communication.xml` file was not changed between Magento 2.0 and 2.1. Replace the `queue.xml` file for each {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} that sends messages to the message queue.
 
 #### Replace the `queue.xml` file ####
 

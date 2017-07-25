@@ -1,11 +1,11 @@
 ---
 layout: default
 group: cloud
-subgroup: 10_project
+subgroup: 100_project
 title: Set up the elasticsearch service
 menu_title: Set up the elasticsearch service
 menu_order: 85
-menu_node: 
+menu_node:
 level3_menu_node: level3child
 level3_subgroup: services
 version: 2.0
@@ -14,7 +14,7 @@ github_link: cloud/project/project-conf-files_services-elastic.md
 
 [Elasticsearch](https://www.elastic.co){:target="_blank"} is an open source product that enables you to take data from any source, any format, and search, and visualize it in real time.
 
-*   Elasticsearch performs quick and advanced searches on products in the catalog
+*   Elasticsearch performs quick and advanced searches on products in the {% glossarytooltip 8d40d668-4996-4856-9f81-b1386cf4b14f %}catalog{% endglossarytooltip %}
 *   Elasticsearch analyzers support multiple languages
 *   Supports stop words and synonyms
 *   Indexing does not impact customers until reindex is completed
@@ -58,17 +58,3 @@ In your `.magento.app.yaml`:
 relationships:
     elasticsearch: "elasticsearch:elasticsearch"
 {% endhighlight %}
-
-You can use the preceding service in a configuration file of your application as follows:
-
-{% highlight php startinline=true %}
-if (isset($_ENV['MAGENTO_CLOUD_RELATIONSHIPS'])) {
-  $relationships = json_decode(base64_decode($_ENV['MAGENTO_CLOUD_RELATIONSHIPS']), TRUE);
-
-  foreach ($relationships['elasticsearch'] as $endpoint) {
-    $container->setParameter('elasticsearch_host', $endpoint['host']);
-    $container->setParameter('elasticsearch_port', $endpoint['port']);
-  }
-}
-{% endhighlight %}
-

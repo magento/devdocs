@@ -33,7 +33,7 @@ To set up custom cron jobs and groups, see [Configure custom cron jobs and cron 
 
 <div class="bs-callout bs-callout-info" id="info">
 <span class="glyphicon-class">
-  <p>You must run cron twice: the first time to discover tasks to run and the second time to run the tasks themselves.</p></span>
+  <p>You must run cron twice: the first time to discover tasks to run and the second time — to run the tasks themselves. The second cron run must occur on or after the `scheduled_at` time for every task.</p></span>
 </div>
 
 <h2 id="config-cli-cron-bkg">Run cron in the background</h2>

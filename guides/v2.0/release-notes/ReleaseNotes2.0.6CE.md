@@ -26,7 +26,7 @@ Backward-incompatible changes are documented in <a href="http://devdocs.magento.
 <h3>Fixed issues</h3>
 
 
-<!--- 51847 --> * Varnish no longer returns a 400 bad request error message when clearing its cache. Previously, this issue occurred with Magento instances running on GoDaddy. 
+<!--- 51847 --> * Varnish no longer returns a 400 bad request error message when clearing its {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %}. Previously, this issue occurred with Magento instances running on GoDaddy. 
 
 
 
@@ -36,7 +36,7 @@ Backward-incompatible changes are documented in <a href="http://devdocs.magento.
 
 
 
-<!-- 51809 -->* You can now use the Redis adapter to provide session storage in Magento 2.0.6. For more information, see <a href="http://devdocs.magento.com/guides/v2.0/config-guide/redis/config-redis.html">Redis for session storage</a>. 
+<!-- 51809 -->* You can now use the Redis {% glossarytooltip edb42858-1ff8-41f9-80a6-edf0d86d7e10 %}adapter{% endglossarytooltip %} to provide session storage in Magento 2.0.6. For more information, see <a href="http://devdocs.magento.com/guides/v2.0/config-guide/redis/config-redis.html">Redis for session storage</a>. 
 
 
 
@@ -50,9 +50,9 @@ The following list provides an overview of the security issues fixed in this rel
 
 <!-- 51808 -->*  Magento no longer allows authenticated customers to change other customers' account information using either SOAP or REST calls.  Magento  now confirms that the ID of the customer whose account is being edited matches the authentication token in use. 
 
-<!-- 51390 -->* Anonymous users can no longer retrieve the private data of registered customers. To prevent malicious attacks of this type, the <code>quote_id_mask</code> table of the Quote API no longer includes a <code>cart id mask</code> value. 
+<!-- 51390 -->* Anonymous users can no longer retrieve the private data of registered customers. To prevent malicious attacks of this type, the <code>quote_id_mask</code> table of the {% glossarytooltip 77e19d0d-e7b1-4d3d-9bad-e92fbb9fb59a %}Quote{% endglossarytooltip %} {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %} no longer includes a <code>cart id mask</code> value. 
 
-<!-- 51461 -->* Several parameters in the Authorize.net payment module are vulnerable to reflected Cross-Site Scripting (XSS) attacks. Existing protection against such malicious parameters is not enough to stop all types of attacks. 
+<!-- 51461 -->* Several parameters in the Authorize.net payment {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} are vulnerable to reflected Cross-Site Scripting (XSS) attacks. Existing protection against such malicious parameters is not enough to stop all types of attacks. 
 
 
 
@@ -70,7 +70,7 @@ The following list provides an overview of the security issues fixed in this rel
 <!-- 51370 -->* Magento no longer discloses information about its internal path during installation. 
 
 
-<!-- 51376 -->* Magento no longer discloses the administrator URL to an unauthenticated user during setup. 
+<!-- 51376 -->* Magento no longer discloses the administrator {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} to an unauthenticated user during setup. 
 
 
 <!-- 50955 -->* Application error messages no longer include the path to the file where the error occurred.  
@@ -78,7 +78,7 @@ The following list provides an overview of the security issues fixed in this rel
 
 
 <h3>System requirements</h3>
-Our technology stack is built on PHP and MySQL. Magento 2.0.1 and later support PHP 5.5, 5.6, 7.0.2, and MySQL 5.6. For more information, see 
+Our technology stack is built on {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} and MySQL. Magento 2.0.1 and later support PHP 5.5, 5.6, 7.0.2, and MySQL 5.6. For more information, see 
 [System Requirements]({{ site.baseurl }}magento-system-requirements.html){:target="_blank"}.
 
 <h3>Installation instructions</h3>
@@ -100,7 +100,7 @@ New users can now complete a full installation of Magento Community Edition 2.0.
 
 2.	Under **Download with Composer**, click **Download**.
 
-3.	Follow the instructions to download Composer, and get the Magento CE metapackage.
+3.	Follow the instructions to download Composer, and get the Magento CE {% glossarytooltip 7490850a-0654-4ce1-83ff-d88c1d7d07fa %}metapackage{% endglossarytooltip %}.
 
 
 <h4><b>Upgrade existing installations</b></h4>
@@ -109,7 +109,7 @@ If you installed Magento Community Edition 2.0.0 from an archive, you must perfo
 
 ##### <b>Upgrade an existing installation from the Setup Wizard</b>#####
 
-1.	Log in to Admin with Administrator privileges.
+1.	Log in to {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} with Administrator privileges.
 
 2.	On the Admin sidebar, click **System**. Under **Tools**,  choose **Web Setup Wizard**.
 
@@ -123,7 +123,7 @@ Developers who contribute to the CE code base can <a href="http://devdocs.magent
 
 1.	Go to the <a href="http://devdocs.magento.com/guides/v2.0/install-gde/install/cli/dev_options.html" target="_blank">Contributing Developers</a> page.
 
-2.	Follow the instructions to pull the updates from the repository and update Composer.
+2.	Follow the instructions to pull the updates from the repository and update {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %}.
 
 <h3>Migration toolkits</h3>
 The <a href="{{page.baseurl}}migration/migration-migrate.html" target="_blank">Data Migration Tool</a> helps transfer existing Magento 1.x store data to Magento 2.x. This command-line interface includes verification, progress tracking, logging, and testing functions. For installation instructions, see  <a href="{{page.baseurl}}migration/migration-tool-install.html" target="_blank">Install the Data Migration Tool</a>. Consider exploring or contributing to the <a href="https://github.com/magento/data-migration-tool" target="_blank"> Magento Data Migration repository</a>.

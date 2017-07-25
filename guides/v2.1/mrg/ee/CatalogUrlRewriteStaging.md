@@ -13,11 +13,11 @@ github_link: mrg/ee/CatalogUrlRewriteStaging.md
 
 ## Overview
 
-The Magento_CatalogUrlRewriteStaging module is a part of the staging functionality in Magento EE. It extends the Magento_CatalogUrlRewrite module.
+The Magento_CatalogUrlRewriteStaging {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} is a part of the staging functionality in Magento EE. It extends the Magento_CatalogUrlRewrite module.
 
 ## Implementation details
 
-The Magento_CatalogUrlRewriteStaging module disables an opportunity to change the URL for a product or category, when you schedule an update. It is a technical module that doesn't have any public calls to intercept.
+The Magento_CatalogUrlRewriteStaging module disables an opportunity to change the {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} for a product or category, when you schedule an update. It is a technical module that doesn't have any public calls to intercept.
 
 ## Dependencies
 

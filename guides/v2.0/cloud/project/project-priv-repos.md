@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 10_project
+subgroup: 100_project
 title: Pull code from a private Git repository
 menu_title: Pull code from a private Git repository
 menu_order: 600
@@ -10,7 +10,7 @@ version: 2.0
 github_link: cloud/project/project-priv-repos.md
 ---
 
-Your Magento Enterprise Cloud Edition project can include code located in a private Git repository (for example, a module or theme). To do so, you must add your project's public SSH key to your private Git repository and update your project's `composer.json`.
+Your Magento Enterprise Cloud Edition project can include code located in a private Git repository (for example, a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} or theme). To do so, you must add your project's public SSH key to your private Git repository and update your project's `composer.json`.
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>To add a deployment key to your private GitHub repository, you must be the administrator of that repository.</p>

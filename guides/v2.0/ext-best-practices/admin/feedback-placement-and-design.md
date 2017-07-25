@@ -19,7 +19,7 @@ For more detailed comments, please create a Pull Request on the specific page.
 * Things to Avoid
   * Icons in the Primary Navigation
   * Advertising in Navigation
-* Placement guidelines for extension types
+* Placement guidelines for {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} types
   * Standard Connector
   * Store Feature Connector
   * Connector with additional features

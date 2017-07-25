@@ -10,7 +10,7 @@ version: 2.2
 github_link: comp-mgr/upgrader/upgrade.md
 ---
 
-The components you're upgrading display. The following figure shows an example.
+The components you're upgrading are displayed. The following figure shows an example.
 
 <img src="{{ site.baseurl }}common/images/upgr_upgrade.png" width="550px" alt="Click upgrade to complete the task">
 
@@ -19,7 +19,7 @@ To complete the upgrade, click **Upgrade**. If the upgrade is successful, a page
 
 <img src="{{ site.baseurl }}common/images/upgr_success.png" width="350px" alt="Your upgrade was successful">
 
-Messages similar to the following display in the Console Log:
+Messages similar to the following are displayed in the Console Log:
 
 {% collapsible Click to view the Console Log %}
 
@@ -39,7 +39,7 @@ After the upgrade completes, restart Varnish if you use it for page caching.
 
 	service varnish restart
 
-Then access your storefront and verify everything is working properly.
+Then access your {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} and verify everything is working properly.
 
 ## Errors after upgrade
 After you finish your upgrade, errors might display.
@@ -47,7 +47,7 @@ After you finish your upgrade, errors might display.
 *	On the main storefront page, the following error might display.
 
 		We're sorry, an error has occurred while generating this email.
-*	On a category page, the following error might display:
+*	On a {% glossarytooltip 50e49338-1e6c-4473-8527-9e401d67ea2b %}category{% endglossarytooltip %} page, the following error might display:
 
 		We can't find products matching the selection.
 	

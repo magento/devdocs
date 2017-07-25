@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 40_live
+subgroup: 160_live
 title: Migrate data
 menu_title: Migrate data
 menu_order: 200
@@ -20,7 +20,7 @@ To migrate your database and code:
 	In the event of issues, make fixes in your integration system, test them, and push updated code to your staging repository using Git commands.
 
 ### Migrate static files {#cloud-live-migrate-static}
-This section discusses how to migrate static files from your `pub/media` directory to staging or production. We recommend using the Linux remote synchronization and file transfer command [`rsync`](https://en.wikipedia.org/wiki/Rsync){:target="_blank"}. rsync uses an algorithm that minimizes the amount of data by moving only the portions of files that have changed; in addition, it supports compression.
+This section discusses how to migrate {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} from your `pub/media` directory to staging or production. We recommend using the Linux remote synchronization and file transfer command [`rsync`](https://en.wikipedia.org/wiki/Rsync){:target="_blank"}. rsync uses an algorithm that minimizes the amount of data by moving only the portions of files that have changed; in addition, it supports compression.
 
 We suggest using the following syntax:
 

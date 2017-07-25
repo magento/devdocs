@@ -1,7 +1,8 @@
 ---
 layout: default
 group: mrg
-subgroup: Enterprise Edition
+subgroup: 20_Enterprise Edition
+ee_only: true
 title: Module Reference Guide
 menu_title: GoogleOptimizerStaging
 menu_order: 2
@@ -9,15 +10,13 @@ version: 2.2
 github_link: mrg/ee/GoogleOptimizerStaging.md
 ---
 
-![Magento EE logo]({{site.baseurl}}common/images/ee-only_large.png)
-
 ## Overview
 
-The Magento_GoogleOptimizerStaging module is a part of the staging functionality in Magento EE. It enables you to stage values of the product metadata.
+The Magento_GoogleOptimizerStaging {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} is a part of the staging functionality in Magento EE. It enables you to stage values of the product {% glossarytooltip 3f0f2ef1-ad38-41c6-bd1e-390daaa71d76 %}metadata{% endglossarytooltip %}.
 
 ## Implementation details
 
-The Magento_GoogleOptimizerStaging module enables you to stage parameters added by the Magento_GoogleOptimizer module in the Search Engine Optimization field set:
+The Magento_GoogleOptimizerStaging module enables you to stage parameters added by the Magento_GoogleOptimizer module in the {% glossarytooltip ae8f7f2b-ddfb-41ed-bec3-bed191406fdd %}Search Engine Optimization{% endglossarytooltip %} field set:
 
 - Meta Title
 - Meta Keywords

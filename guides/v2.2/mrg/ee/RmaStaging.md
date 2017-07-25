@@ -1,7 +1,8 @@
 ---
 layout: default
 group: mrg
-subgroup: Enterprise Edition
+subgroup: 20_Enterprise Edition
+ee_only: true
 title: Module Reference Guide
 menu_title: RmaStaging
 menu_order: 2
@@ -9,13 +10,11 @@ version: 2.2
 github_link: mrg/ee/RmaStaging.md
 ---
 
-![Magento EE logo]({{site.baseurl}}common/images/ee-only_large.png)
-
 ## Overview
 
-The Magento_RmaStaging module is a part of the staging functionality in Magento EE. It enables you to create updates for the parameters of the Autosettings field set of a product.
+The Magento_RmaStaging {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} is a part of the staging functionality in Magento EE. It enables you to create updates for the parameters of the Autosettings field set of a product.
 
-RMA stands for a return merchandise authorization.
+RMA stands for a return merchandise {% glossarytooltip 34ecb0ab-b8a3-42d9-a728-0b893e8c0417 %}authorization{% endglossarytooltip %}.
 
 ## Implementation details
 
@@ -29,7 +28,7 @@ You can find the list of modules that have dependencies on the Magento_RmaStagin
 
 ## Extension points
 
-Extension points enable extension developers to interact with the Magento_RmaStaging module. [The Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_RmaStaging module.
+{% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}Extension{% endglossarytooltip %} points enable extension developers to interact with the Magento_RmaStaging module. [The Magento dependency injection mechanism](http://devdocs.magento.com/guides/v2.2/extension-dev-guide/depend-inj.html) enables you to override the functionality of the Magento_RmaStaging module.
 
 ## Additional information
 

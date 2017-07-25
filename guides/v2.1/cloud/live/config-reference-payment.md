@@ -1,14 +1,14 @@
 ---
 layout: default
-group: 
-subgroup: 40_live
+group: cloud
+subgroup: 120_env
 title: Payment configuration paths reference
 menu_title: Payment configuration paths reference
-menu_order: 82
-menu_node: 
+menu_order: 102
+menu_node:
 level3_menu_node: level3child
-level3_subgroup: config-ref
-version: 2.0
+level3_subgroup: configreference
+version: 2.1
 github_link: cloud/live/config-reference-payment.md
 ---
 
@@ -22,4 +22,3 @@ To optionally override system-specific settings, you can use configuration varia
 {% include cloud/config-vars.md %}
 
 {% include config/config-reference_payment.md %}
- 

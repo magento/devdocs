@@ -10,7 +10,7 @@ version: 2.0
 github_link: howdoi/howdoi_template.md
 ---
 
-<!-- Author in Markdown but HTML also welcome -->
+<!-- Author in {% glossarytooltip a5ef9041-976f-4eb3-826e-bf836027d8c3 %}Markdown{% endglossarytooltip %} but {% glossarytooltip a2aff425-07dd-4bd6-9671-29b7edefa871 %}HTML{% endglossarytooltip %} also welcome -->
 
 <!-- Start with H2, not H1 -->
 

@@ -16,9 +16,9 @@ To use the Magento performance toolkit or another tool for performance testing, 
 
 You can adjust the amount of data you create using *profiles* (small, medium, large, and extra large). The next section discusses profiles in more detail.
 
-The following figure shows how a product displays on the storefront using the small profile:
+The following figure shows how a product displays on the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} using the small profile:
 
-<p><img src="{{ site.baseurl }}common/images/config_generate-data.png" alt="Sample storefront with generated data"></p>
+![Sample storefront with generated data]({{ site.baseurl }}common/images/config_generate-data.png){:width="550px"}
 
 This gives you an idea about what the data looks like.
 

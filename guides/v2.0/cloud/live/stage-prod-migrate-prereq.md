@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 40_live
+subgroup: 160_live
 title: Prepare to migrate data
 menu_title: Prepare to migrate data
 menu_order: 101
@@ -29,7 +29,7 @@ After setting this up, your workflow is to code and test in your integration sys
 ### Get your access URLs  {#cloud-live-migrate-urls}
 Your Magento Enterprise Cloud Edition OneDrive account includes an onboarding document that contains your Git, SSH, and project URLs for staging and production. You must know those URLs to continue.
 
-*	Git URL format:
+*	Git {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} format:
 
 	*	Staging: `git@git.ent.magento.cloud:<project ID>_stg.git`
 	*	Production: `git@git.ent.magento.cloud:<project ID>.git`

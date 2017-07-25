@@ -10,7 +10,7 @@ github_link: howdoi/checkout/checkout_zip.md
 ---
 ## What's in this topic
 
-When a shopper specifies the country and ZIP code in the shipping address during checkout or in the shopping cart, Magento checks if the format of the entered code is valid for the specified country. This validation is implemented using the input masks for the ZIP code field. In Magento, these input masks are regular expressions which define which format is allowed. 
+When a shopper specifies the country and ZIP code in the shipping address during {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} or in the shopping cart, Magento checks if the format of the entered code is valid for the specified country. This validation is implemented using the input masks for the ZIP code field. In Magento, these input masks are regular expressions which define which format is allowed. 
 This topic describes how a developer can add custom input masks. 
 
 

@@ -4,13 +4,13 @@ group: UI_Components_guide
 subgroup: concepts
 title: About the uiLayout service module
 menu_title: About the uiLayout service module
-menu_order: 13
+menu_order: 90
 version: 2.1
 github_link: ui_comp_guide/concepts/ui_comp_uilayout_concept.md
 ---
 
 ## Overview
-The `uiLayout` service module is used to initialize UI components.
+The `uiLayout` service {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} is used to initialize UI components.
 
 The source file of the `uiLayout` module is `<UI_Module_dir>/view/base/web/js/core/renderer/layout.js`.
 
@@ -29,7 +29,7 @@ The `uiLayout` module is a singleton. It returns `function run(nodes, parent, to
 * `{boolean} toCache`: defines whether argument `nodes` will be cached. The key for cache will be constructed from `nodes` object keys
 * `{boolean} toMerge`: defines whether the  argument `nodes` should be merged with the same one, that has been cached
 
-Arguments `toCache` and `toMerge` play together when a particular UI component instance need to be updated in runtime.
+Arguments `toCache` and `toMerge` play together when a particular {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %} instance need to be updated in runtime.
 
 ### The `nodes` argument
 
@@ -41,7 +41,7 @@ Each item in `nodes` array is an object with the following properties:
 
 * `{string} parent`: the `name` of the component's parent element (full name). If the parent component is not yet initialized, then `uiLayout` waits for it to appear in the `uiRegistry`.
 * `{string} template`: a path to `.html` template
-* `{string} component`: path to the JavaScript class (function-constructor) of the new component
+* `{string} component`: path to the {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} class (function-constructor) of the new component
 * `{object} config`: the object that contains the properties that you want to see in new UI component. In fact, they can also simply be added directly into item. That means, the following configurations will have the same result:
 
       var config1 = {name: 'myComp1', config: {myProp: '123123'}}

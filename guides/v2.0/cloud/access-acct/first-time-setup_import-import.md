@@ -1,17 +1,17 @@
 ---
 layout: default
 group: cloud
-subgroup: 08_setup
+subgroup: 080_setup
 title: Import Magento EE into Magento Enterprise Cloud Edition
 menu_title: Import Magento EE into Magento Enterprise Cloud Edition
 menu_order: 154
-menu_node: 
+menu_node:
 level3_menu_node: level3child
 level3_subgroup: import
 version: 2.0
 github_link: cloud/access-acct/first-time-setup_import-import.md
 ---
- 
+
 
 This topic discusses how to import code from your existing Magento EE project to your Magento Enterprise Cloud Edition's Git repository `master` branch.
 
@@ -27,7 +27,7 @@ Before you continue, make sure you have the [encryption key]({{ page.baseurl }}c
 ## Create a remote Git reference {#cloud-import-ref}
 This section discusses how to create a remote Git reference from your Cloud Git repository to the repository in which your Magento EE installation is located.
 
-Before you continue, make sure you know the SSH or HTTPS URL for your Magento EE installation Git repository.
+Before you continue, make sure you know the SSH or HTTPS {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} for your Magento EE installation Git repository.
 
 To create a remote Git reference:
 
@@ -98,11 +98,11 @@ To import the Magento database in Magento Enterprise Cloud Edition, you must kno
 *   The database name, user name, and password of the [Cloud database]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-prepare.html#cloud-import-pre-cloudb)
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-This topic discusses how to import the [integration system]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-int) database. The database connection information is different for [staging]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-stage) and [production]({{ page.baseurl }}cloud/discover-arch.html#cloud-arch-prod) systems. You'll need the assistance of Magento Support before you can migrate your integration system database to staging or production.
+This topic discusses how to import the [integration system]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int) database. The database connection information is different for [staging]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-stage) and [production]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-prod) systems. You'll need the assistance of Magento Support before you can migrate your integration system database to staging or production.
 </div>
 
 ### Drop and re-create the Cloud database
-SSH into the cloud environment and empty the existing database, if it is populated. If you have done any work you would like to refer to later that's been done in the Cloud environment, then make a backup of that first. 
+SSH into the cloud environment and empty the existing database, if it is populated. If you have done any work you would like to refer to later that's been done in the Cloud environment, then make a backup of that first.
 
 To drop and re-create the Cloud database:
 
@@ -122,7 +122,7 @@ To drop and re-create the Cloud database:
 5.  At the `MariaDB [main]>` prompt, enter `exit`.
 6.  At the shell command prompt, enter the following command to re-create the database.
 
-        zcat var/db.sql.tgz | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' | mysql -h <db-host> -P <db-port> -p -u <db-user> <db-name> 
+        zcat var/db.sql.tgz | sed -e 's/DEFINER[ ]*=[ ]*[^*]*\*/\*/' | mysql -h <db-host> -P <db-port> -p -u <db-user> <db-name>
 
     For example,
 
@@ -152,7 +152,7 @@ To update the unsecure base URL:
 
     <div class="bs-callout bs-callout-warning" id="warning" markdown="1">
     The base URL _must_ end with a `/` character.
-    </div> 
+    </div>
 6.  Confirm the change by entering the following command:
 
         SELECT * from core_config_data;
@@ -165,6 +165,8 @@ For your system to be fully functional, you must also set unsecure and secure UR
 </div>
 
 ## Copy the encryption key {#cloud-import-key}
+The Magento EE encryption key is required as an environment variable in `env.php` for Integration, Staging, and Production. If you deployed Magento when first creating a project across all environments, the encryption key should have been saved to `env.php`. If you have not deployed previously, you should verify and add the encryption key if needed in every environment. Without this key, the store encounters authentication and authorization errors such as payments and shipping.
+
 To copy your Magento EE encryption key:
 
 1.  If you haven't done so already, SSH to the Cloud environment.
@@ -172,18 +174,21 @@ To copy your Magento EE encryption key:
         magento-cloud environment:ssh
 2.  Open `app/etc/env.php` in a text editor.
 3.  Replace the existing value of `key` with your [Magento EE key]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-prepare.html#cloud-import-copykey).
+
+        {% highlight php startinline=true %}
+        return array (
+          'crypt' =>
+          array (
+            'key' => '<your encryption key>',
+          ),
+        );
+        {% endhighlight %}
 4.  Save your changes to `env.php` and exit the text editor.
 
-If `env.php` does not exist, create it with the following contents:
 
-{% highlight php startinline=true %}
-return array (
-  'crypt' =>
-  array (
-    'key' => '<your encryption key>',
-  ),
-);
-{% endhighlight %}
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+Don't forget to add this encryption key variable to `env.php` for all environments: Integration, Staging, and Production.
+</div>
 
 ## Import media {#cloud-import-media}
 To import media files into your Cloud environment:
@@ -203,18 +208,18 @@ On the Cloud environment, enter the following commands in the order shown:
 
     bin/magento setup:upgrade
     bin/magento magento setup:static-content:deploy
-    bin/magento cache:flush
+    bin/magento cache:clean
 
-After the cache flushes, enter `exit` to close the SSH tunnel.
+After the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %} flushes, enter `exit` to close the SSH tunnel.
 
 ## Verify the import
 To verify everything imported properly, perform the following tasks in your local Cloud development environment:
 
-1.  On your Cloud environment, enter the following commands to find the information to log in to the Magento Admin and to view the storefront:
+1.  On your Cloud environment, enter the following commands to find the information to log in to the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} and to view the storefront:
 
         magento-cloud environment:url
-2.  Log in to the Magento Admin using the user name and password of your Magento EE system.
+2.  Log in to the Magento {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} using the user name and password of your Magento EE system.
 3.  Make sure settings in the Admin are the same as your Magento EE system.
-3.  Access the storefront.
+3.  Access the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}.
 4.  Make sure categories, products, and so on display as you expect.
 5.  Test everything thoroughly.

@@ -11,10 +11,10 @@ github_link: comp-mgr/extens-man/extensman-main-pg.md
 ---
 
 ## Start the Extension Manager from the Magento Admin
-To start the Extension Manager:
+To start the {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}Extension{% endglossarytooltip %} Manager:
 
 1.	If you haven't done so already, create or get your [authentication keys]({{page.baseurl}}install-gde/prereq/connect-auth.html).
-2.	Log in to the Magento Admin as an administrator.
+2.	Log in to the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} as an administrator.
 3.	Click **System** > **Web Setup Wizard**.
 4.	Click **Extension Manager** as the following figure shows.
 

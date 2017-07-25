@@ -90,7 +90,7 @@ Selecting pool servers is up to you. If you use NTP pool servers, ntp.org recomm
 	If all else fails, try rebooting the server.
 
 <h2 id="install-optional-phpinfo">Create phpinfo.php</h2>
-<a href="http://php.net/manual/en/function.phpinfo.php" target="_blank"><code>phpinfo.php</code></a> displays a large amount of information about PHP and its extensions. 
+<a href="http://php.net/manual/en/function.phpinfo.php" target="_blank"><code>phpinfo.php</code></a> displays a large amount of information about {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} and its extensions. 
 
 <div class="bs-callout bs-callout-warning">
     <p>Use <code>phpinfo.php</code> in a development system <em>only</em>. It can be a security issue in production.</p>
@@ -104,7 +104,7 @@ phpinfo();</pre>
 
 For more information, see the <a href="http://php.net/manual/en/function.phpinfo.php" target="_blank">phpinfo manual page</a>.
 
-To view the results, enter the following URL in your browser's location or address field:
+To view the results, enter the following {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} in your browser's location or address field:
 
 	http://<web server host or IP>/phpinfo.php
 

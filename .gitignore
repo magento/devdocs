@@ -25,6 +25,7 @@ ignore
 /_config.sasha.yml
 /_config.tana.yml
 /_config.public.yml
+/_config.local.yml
 /*.yml
 !_config.devdocs.yml
 /gen_public.bat
@@ -37,3 +38,4 @@ Rakefile
 /vendor/
 /Gemfile.lock
 /node_modules/
+/package-lock.json

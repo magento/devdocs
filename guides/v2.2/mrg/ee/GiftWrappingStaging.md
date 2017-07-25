@@ -1,7 +1,8 @@
 ---
 layout: default
 group: mrg
-subgroup: Enterprise Edition
+subgroup: 20_Enterprise Edition
+ee_only: true
 title: Module Reference Guide
 menu_title: GiftWrappingStaging
 menu_order: 2
@@ -9,11 +10,9 @@ version: 2.2
 github_link: mrg/ee/GiftWrappingStaging.md
 ---
 
-![Magento EE logo]({{site.baseurl}}common/images/ee-only_large.png)
-
 ## Overview
 
-The Magento_GiftWrappingStaging module is a part of the staging functionality in Magento EE. It allows to stage value of 'Allow Gift Wrapping' flag and price of the wrapping for each product update.
+The Magento_GiftWrappingStaging {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} is a part of the staging functionality in Magento EE. It allows to stage value of 'Allow Gift Wrapping' flag and price of the wrapping for each product update.
 
 ## Implementation details
 

@@ -9,7 +9,7 @@ version: 2.0
 github_link: mtf/configuration.md
 ---
 
-The Functional Testing Framework configuration settings are located in two XML files:
+The Functional Testing Framework configuration settings are located in two {% glossarytooltip 8c0645c5-aa6b-4a52-8266-5659a8b9d079 %}XML{% endglossarytooltip %} files:
 
 - `phpunit.xml`
 - `config.xml`

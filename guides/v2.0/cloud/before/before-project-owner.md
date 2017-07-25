@@ -1,7 +1,7 @@
 ---
 layout: default
 group: cloud
-subgroup: 06_setup
+subgroup: 060_setup
 title: Account owner tasks
 menu_title: Account owner tasks
 menu_order: 1
@@ -41,7 +41,7 @@ We recommend against providing the keys over e-mail because it isn't secure; ins
 {% endcollapsible %}
 
 ## Create project administrators {#cloud-owner-admins}
-As discussed in more detail in [Manage users]({{ page.baseurl }}cloud/admin/admin-user-admin.html), Magento Enterprise Cloud Edition has a number of user roles.
+As discussed in more detail in [Manage users]({{ page.baseurl }}cloud/project/user-admin.html), Magento Enterprise Cloud Edition has a number of user roles.
 
 Typically, the only user the account owner must create is the *project administrator* (also referred to as the super user). This user can create other users and delegate roles as desired.
 
@@ -80,7 +80,7 @@ The super users you add receive an e-mail inviting them to join the Magento Ente
 Initially, a super user must create the project in any of the following ways:
 
 *	[Create a sample Magento project from a template]({{ page.baseurl }}cloud/access-acct/first-time-setup_template.html)
-*	[Import an existing Magento project]({{ page.baseurl }}cloud/access-acct/first-time-setup_import.html)
+*	[Import an existing Magento project]({{ page.baseurl }}cloud/access-acct/first-time-setup_import-first-steps.html)
 
 {% endcollapsible %}
 

@@ -11,7 +11,7 @@ version: 2.0
 github_link: install-gde/prereq/php-settings.md
 ---
 
-This topic discusses how to set required PHP options.
+This topic discusses how to set required {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} options.
 
 {% collapsible About required and recommended PHP options: %}
 

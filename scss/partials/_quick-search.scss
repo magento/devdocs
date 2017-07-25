@@ -9,15 +9,15 @@
   right: 0;
   z-index: 10;
 
-  padding-left: 280px;
+  padding-left: 260px;
   padding-right: 80px;
 
   @media (max-width:1200px) {
-    padding-left: 180px;
+    padding-left: 174px;
   }
 
   @media ( $large-screen ) {
-    padding-left: 330px;
+    padding-left: 320px;
   }
   @media ( $small-screen ) {
     padding-left: 20px;

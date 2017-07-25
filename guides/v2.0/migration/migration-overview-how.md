@@ -37,7 +37,7 @@ This guide provides information about migration using the Data Migration Tool th
 
 *	Delta (changes since the last run)
 
-Each mode is divided into steps, each of which is responsible for transferring particular data (for example, URL rewrite step, EAV step, settings step, and so on). At the begin of a run, a step checks the table structures of Magento 1 and Magento 2 for consistency. Then the actual data is transferred to Magento 2. In the end, this data is verified.
+Each mode is divided into steps, each of which is responsible for transferring particular data (for example, {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} rewrite step, EAV step, settings step, and so on). At the begin of a run, a step checks the table structures of Magento 1 and Magento 2 for consistency. Then the actual data is transferred to Magento 2. In the end, this data is verified.
 
 This section previews your migration experience by providing a high-level overview of the Data Migration Tool.
 
