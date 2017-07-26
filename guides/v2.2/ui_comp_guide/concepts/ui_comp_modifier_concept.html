@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>About the uiElement class | Magento 2 Developer Documentation</title>
+	<title>About PHP modifiers in UI components | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.2/ui_comp_guide/concepts/ui_comp_uielement_concept.html">
+	<link rel="canonical" href="//guides/v2.2/ui_comp_guide/concepts/ui_comp_modifier_concept.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -69,11 +69,11 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/ui_comp_guide/concepts/ui_comp_uielement_concept.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/ui_comp_guide/concepts/ui_comp_modifier_concept.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_uielement_concept.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/ui_comp_guide/concepts/ui_comp_modifier_concept.html">Magento 2.1</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_uielement_concept.html">Magento 2.2 RC</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_modifier_concept.html">Magento 2.2 RC</a></li>
 	
   </ul>
 
@@ -784,7 +784,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_modifier_concept.html">About PHP modifiers in UI components</a></li>
+									<li class="level-2  active "><a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_modifier_concept.html">About PHP modifiers in UI components</a></li>
 
 									
 
@@ -808,7 +808,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_uielement_concept.html">About the uiElement class</a></li>
+									<li class="level-2 "><a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_uielement_concept.html">About the uiElement class</a></li>
 
 									
 
@@ -1162,7 +1162,7 @@
 
           
 
-          <span property="name">About the uiElement class</span>
+          <span property="name">About PHP modifiers in UI components</span>
 
         
 
@@ -1185,7 +1185,7 @@
 
 	
 
-	<h1 class="page-heading">About the uiElement class</h1>
+	<h1 class="page-heading">About PHP modifiers in UI components</h1>
 
   
 
@@ -1193,92 +1193,111 @@
 </section>
 
 
-			<h2 id="what-is-the-uielement-class">What is the <code>uiElement</code> class</h2>
+			<h2 id="whats-in-this-topic">What’s in this topic</h2>
 
-<p>The <code>uiElement</code> class is a direct successor of the <a href="ui_comp_guide/concepts/ui_comp_uiclass_concept.html">uiClass library</a>.
-When creating a new component, use the <code>uiElement</code> class as a direct parent, if your component will be the last in the components hierarchy chain.</p>
+<p>This topic describes how to use <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> modifiers that are the server-side part of <a href="/guides/v2.2/ui_comp_guide/concepts//ui_comp_config_flow_concept.html">UI components configuration</a>. Using modifiers is optional and might be necessary when <a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_xmldeclaration_concept.html">static declaration in XML configuration files</a> is not suitable for the tasks. For example, in cases when additional data should be loaded from database. Or the other specific example is the <a href="/guides/v2.2/howdoi/customize_product.html">default product creation form</a>, for which the modifier is a place where validations are added to display only certain fields for certain <span term-uuid="6e836354-0067-48ac-84ce-a4ab7c0c492e" class="glossary-term" data-toggle="popover">product types</span>.</p>
 
-<p><code>uiElement</code> source code is <code>&lt;UI_Module_dir&gt;/view/base/web/js/lib/core/element/element.js</code>, in the Magento CE github repository: <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/lib/core/element/element.js">app/code/Magento/Ui/view/base/web/js/lib/core/element/element.js</a>.</p>
+<h2 id="general-implementation-overview">General implementation overview</h2>
 
-<h2 id="commonly-used-uielement-methods">Commonly used <code>uiElement</code> methods</h2>
+<p><code>DataProvider()</code> is a PHP part of a UI component, a class responsible for the component’s data and metadata preparation. The pool of modifiers (virtual type) is injected to this data provider using the <code>__construct()</code> method. The pool’s preference is defined in <code>di.xml</code>.</p>
+
+<p>So in runtime, the component structure set in the modifier is merged with the configuration that comes from the <span term-uuid="8c0645c5-aa6b-4a52-8266-5659a8b9d079" class="glossary-term" data-toggle="popover">XML</span> configuration.</p>
+
+<h2 id="adding-a-custom-php-modifier">Adding a custom PHP modifier</h2>
+
+<p>To add a PHP modifier for a UI component, take the following steps:</p>
+
+<p><strong>Step 1</strong></p>
+
+<p>In your custom module, add a class that implements <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/DataProvider/Modifier/ModifierInterface.php"><code>\Magento\Ui\DataProvider\Modifier\ModifierInterface</code></a> with the following methods:</p>
 
 <ul>
-  <li>
-    <p>The <code>initLinks()</code> method implements component communication by using <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/view/base/web/js/lib/core/element/links.js"><code>links.js</code></a>.  <code>initLinks()</code> introduces processing of the <a href="http://devdocs.magento.com/guides/v2.0/ui-components/ui_components_js.html#comp_link"><code>exports</code>, <code>imports</code>, <code>links</code> and <code>listens</code> properties</a>.</p>
-  </li>
-  <li>
-    <p>The <code>initObservable()</code> method allows you to declare observable variables within the same instance.</p>
+  <li><code>modifyData()</code>: for modifying UI component’s data (for example, the list of options for a select element)</li>
+  <li><code>modifyMeta()</code>: for modifying UI component’s <span term-uuid="3f0f2ef1-ad38-41c6-bd1e-390daaa71d76" class="glossary-term" data-toggle="popover">metadata</span> (for example, name, label, description, type)</li>
+</ul>
 
-    <p>Example:</p>
+<p>Sample modifier:</p>
 
-    <pre><code>initObservable: function () {
-    this._super();
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
 
-    this.track('childTemplate')
-    this.observe([
-        '%myVariable1%',
-        '%myVariable2%'
-    ]);
+<span class="k">use</span> <span class="nx">Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\AbstractModifier</span><span class="p">;</span>
 
-    return this;
-}
-</code></pre>
+<span class="k">class</span> <span class="nc">Example</span> <span class="k">extends</span> <span class="nx">AbstractModifier</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">modifyMeta</span><span class="p">(</span><span class="k">array</span> <span class="nv">$meta</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$meta</span><span class="p">[</span><span class="s1">&#39;test_fieldset_name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span>
+            <span class="s1">&#39;arguments&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+                <span class="s1">&#39;data&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+                    <span class="s1">&#39;config&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+                        <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="nx">__</span><span class="p">(</span><span class="s1">&#39;Label For Fieldset&#39;</span><span class="p">),</span>
+                        <span class="s1">&#39;sortOrder&#39;</span> <span class="o">=&gt;</span> <span class="mi">50</span><span class="p">,</span>
+                        <span class="s1">&#39;collapsible&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span>
+                    <span class="p">]</span>
+                <span class="p">]</span>
+            <span class="p">],</span>
+            <span class="s1">&#39;children&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+                <span class="s1">&#39;test_field_name&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+                    <span class="s1">&#39;arguments&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+                        <span class="s1">&#39;data&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+                            <span class="s1">&#39;config&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+                                <span class="s1">&#39;formElement&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;select&#39;</span><span class="p">,</span>
+                                <span class="s1">&#39;componentType&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;field&#39;</span><span class="p">,</span>
+                                <span class="s1">&#39;options&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+                                    <span class="p">[</span><span class="s1">&#39;value&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;test_value_1&#39;</span><span class="p">,</span> <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Test Value 1&#39;</span><span class="p">],</span>
+                                    <span class="p">[</span><span class="s1">&#39;value&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;test_value_2&#39;</span><span class="p">,</span> <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Test Value 2&#39;</span><span class="p">],</span>
+                                    <span class="p">[</span><span class="s1">&#39;value&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;test_value_3&#39;</span><span class="p">,</span> <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Test Value 3&#39;</span><span class="p">],</span>
+                                <span class="p">],</span>
+                                <span class="s1">&#39;visible&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+                                <span class="s1">&#39;required&#39;</span> <span class="o">=&gt;</span> <span class="mi">1</span><span class="p">,</span>
+                                <span class="s1">&#39;label&#39;</span> <span class="o">=&gt;</span> <span class="nx">__</span><span class="p">(</span><span class="s1">&#39;Label For Element&#39;</span><span class="p">)</span>
+                            <span class="p">]</span>
+                        <span class="p">]</span>
+                    <span class="p">]</span>
+                <span class="p">]</span>
+            <span class="p">]</span>
+        <span class="p">];</span>
 
-    <p>, where:</p>
+ <span class="k">return</span> <span class="nv">$meta</span><span class="p">;</span>
+    <span class="p">}</span>
 
-    <ul>
-      <li>
-        <p>the <code>observe()</code> method is a wrapper for the <code>ko.observable()</code> and <code>ko.observableArray()</code> methods. It converts the properties of the current method into the observable properties.
-<code>observe([{Boolean} isTracked,] {String|Array|Object} listOfProperties)</code>:</p>
+    <span class="sd">/**</span>
+<span class="sd">     * {@inheritdoc}</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">modifyData</span><span class="p">(</span><span class="k">array</span> <span class="nv">$data</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$data</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span></code></pre></figure>
 
-        <ul>
-          <li><code>isTracked</code> - <code>{Boolean}</code>, optional, - defines access usage: whether to use observable properties (<code>isTracked = false</code>) or property accessors (<code>isTracked = true</code>).</li>
-          <li><code>listOfProperties</code> - <code>{String}</code> is treated as space-separated list of properties’ names. Initial values will be used from current instance (when corresponding property exist).</li>
-          <li><code>listOfProperties</code> - <code>{Array}</code> a list of properties’ names. Initial values will be used from current instance (when corresponding property exist).</li>
-          <li><code>listOfProperties</code> - <code>{Object}</code> a list of properties’ names. Initial values will be used from this object.</li>
-        </ul>
-      </li>
-      <li>
-        <p>the <code>track(listOfProperties)</code> method is equal to <code>observe(true, listOfProperties)</code>.
-The main difference between <code>observe()</code> and <code>track()</code> is that <code>observe()</code> is mainly used without first boolean argument. So it really converts properties to observable functions. It changes how property can be accessed. Otherwise <code>track()</code> uses property accessors. So property access remains the same.</p>
+<p><strong>Step 2</strong></p>
 
-        <p>Example:</p>
+<p>Declare your modifier in your module Di configuration <code>&lt;Your_Module_dir&gt;/etc/adminhtml/di.xml</code>. This declaration looks like the following:</p>
 
-        <pre><code>this.observable = 1;
-this.observe('observable');
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;virtualType</span> <span class="na">name=</span><span class="s">&quot;%YourNamespace\YourModule\DataProvider\Modifier\Pool%&quot;</span> <span class="na">type=</span><span class="s">&quot;Magento\Ui\DataProvider\Modifier\Pool&quot;</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;arguments&gt;</span>
+         <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;modifiers&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+             <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;modifier_name&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                 <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;class&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>%YourNamespce\YourModule\Modifier\YourModifierClass%<span class="nt">&lt;/item&gt;</span>
+                 <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;sortOrder&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;number&quot;</span><span class="nt">&gt;</span>10<span class="nt">&lt;/item&gt;</span>
+             <span class="nt">&lt;/item&gt;</span>
+         <span class="nt">&lt;/argument&gt;</span>
+     <span class="nt">&lt;/arguments&gt;</span>
+<span class="nt">&lt;/virtualType&gt;</span></code></pre></figure>
 
-this.observable(2); // setter
-this.observable();  // getter
+<p>, where <code>YourNamespace\YourModule\DataProvider\Modifier\Pool</code> is a <a href="/guides/v2.2/extension-dev-guide/depend-inj.html#configuring-a-type">virtual class</a>.</p>
 
+<p>(If you want to use this sample in your <code>di.xml</code>, replace the sample values with with the real names of your entities.)</p>
 
-this.trackable = 1;
-this.track('trackable');
+<p><strong>Step 3</strong></p>
 
-this.trackable = 2; // setter
-this.trackable;     // getter
-</code></pre>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <p>The <code>initModules()</code> method initializes external UI components’ instances and links them to local variables. This method works with the <code>modules</code> section of the configuration, where we define the name of the external instance and the local variable. The <code>modules</code> section is an object where each key is the variable’s name and each value is the instance’s name. A developer does not need to be concerned with the instantiation of the module (external instance), because the <code>initModules()</code> method will resolve the variable when the instance is instantiated.</p>
+<p>To use your modifier, add a dependency on <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Ui/DataProvider/Modifier/PoolInterface.php"><code>\Magento\Ui\DataProvider\Modifier\PoolInterface</code></a> to your UI component data provider. For illustration see <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Catalog/Ui/DataProvider/Product/Form/ProductDataProvider.php"><code>\Magento\Catalog\Ui\DataProvider\Product\Form\ProductDataProvider</code></a></p>
 
-    <p>Example:</p>
+<h2 id="related-reading">Related reading</h2>
 
-    <pre><code>// Config, where the `modules` property is declared
-defaults: {
-    modules: {
-        '%myProperty%': '%linkToTheComponent%'
-    }
-}
-</code></pre>
-  </li>
-  <li>
-    <p>The <code>getTemplate()</code> method returns a file path to UI component’s template.</p>
-  </li>
-  <li>
-    <p>The <code>hasTemplate()</code> method verifies that the <code>template</code> property was specified in the instance configuration.</p>
-  </li>
+<ul>
+  <li><a href="/guides/v2.2/extension-dev-guide/depend-inj.html">Dependency injection</a></li>
+  <li><a href="/guides/v2.2/howdoi/customize_product.html#modifier">How Do I: Customize product creation form</a></li>
 </ul>
 
 		</div>
@@ -1290,14 +1309,14 @@ defaults: {
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/ui_comp_guide/concepts/ui_comp_uielement_concept.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/ui_comp_guide/concepts/ui_comp_modifier_concept.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
   
 
   <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/ui_comp_guide/concepts/ui_comp_uielement_concept.html" target="_blank">Give us feedback</a>
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/ui_comp_guide/concepts/ui_comp_modifier_concept.html" target="_blank">Give us feedback</a>
   </div>
 
 </div>
