@@ -26,13 +26,22 @@ Looking for the <a href= "http://devdocs.magento.com/guides/v2.0/cloud/release-n
 
 ## Highlights
 
-Magento 2.1.8 contains .  Look for the following highlights in this release:
+Magento 2.1.8 contains over 100 functional fixes and enhancements.  Look for the following highlights in this release:
 
-* enhancements to static content deployment
+* multiple enhancements to static content deployment and generation.
 
+* improvements to Elasticsearch performance, indexing of large catalogs, and URL re-writes. 
+
+
+
+
+## What's new in these release notes?
+
+With this release, we're inaugurating a new feature of our release notes: Acknowledgements of the contributions that community members have made to this Magento code branch.
 
 
 ## Fixed issues and enhancements
+This release includes both improvements we've made internally and those submitted by the community through our Community Engineering program.  
 
 
 
@@ -91,12 +100,6 @@ Magento 2.1.8 contains .  Look for the following highlights in this release:
 <!--- 68810 -->* You can now use special characters such as '%' in the WYSIWYG editor. 
 
 
-<!--- -->* 
-
-<!---  -->*
-
-
-
 
 ### Checkout
 
@@ -117,8 +120,8 @@ Magento 2.1.8 contains .  Look for the following highlights in this release:
 
 <!--- 63578 -->* Magento now correctly displays both configurable and simple products, their attribute values, and visibility values after import if SKU is an integer. [GitHub-5547](https://github.com/magento/magento2/issues/5547)
 
-<!--- 56988 -->* Magento now provides swatch input for the Admin Scope, and attribute fallback mechanism now reverts to the default option value
- if no values specified for specific store view. 
+<!--- 56988 -->* Magento now provides swatch input for the Admin Scope, and the attribute fall back mechanism now reverts to the default option value
+ if no values are specified for specific store view. 
 
 
 <!--- 69501 -->* Color swatches are now replaced by images on the Catalog and Product pages. 
@@ -144,7 +147,7 @@ Magento 2.1.8 contains .  Look for the following highlights in this release:
 <!--- 60723 -->* Nginx now redirects to the setup page when using port 81. 
 
 
-<!--- 60542 -->* The "Print Shipping Label" link now displays on the product frontend. Previously, the 
+<!--- 60542 -->* The "Print Shipping Label" link now displays on the product front end. Previously, the 
 layout for "Shipping and Tracking" block did work properly. 
 
 
@@ -159,7 +162,7 @@ layout for "Shipping and Tracking" block did work properly.
 <!--- 58855 -->* The Cart Price rule nows affects coupon life as expected. Previously, coupons did not persist longer than the current date if they did not have a designated end-date.  
 
 
-<!--- 69840 -->* Configuration values no longer return NULL when Redis reaches the linit set in the `max_memory` setting. Previously, when Redis met the limit specified in this setting, `ScopeConfig` returned a value of NULL for configuration options, which resulted in significant damage to data (for example, deleting all prices assigned to a website from the database).
+<!--- 69840 -->* Configuration values no longer return NULL when Redis reaches the limit set in the `max_memory` setting. Previously, when Redis met the limit specified in this setting, `ScopeConfig` returned a value of NULL for configuration options, which resulted in significant damage to data (for example, deleting all prices assigned to a website from the database).
 
 
 
