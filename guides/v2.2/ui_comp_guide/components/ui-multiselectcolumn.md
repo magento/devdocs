@@ -10,7 +10,7 @@ github_link: ui_comp_guide/components/ui-multiselectcolumn.md
 
 ## Overview
 
-The MultiselectColumn component implements a column with check boxes for selecting records. It also provides controls for selecting multiple records. 
+The MultiselectColumn component implements a column with check boxes for selecting records. It also provides controls for selecting multiple records.
 
 MultiselectColumn is a child of the [Listing component]({{page.baseurl}}ui_comp_guide/components/ui-listing-grid.html) and is rendered in its view. Like any component, it can hold the sort order value, which influences the order of all its child elements.
 
@@ -25,7 +25,7 @@ Templates used by this component are:
 
 ## MultiselectColumn configuration
 
-Extends all [Column]({{page.baseurl}}ui_comp_guide/components/listing/ui-column.html) configuration.
+Extends all [Column]({{page.baseurl}}ui_comp_guide/components/ui-column.html) configuration.
 
 MultiselectColumn-specific configuration:
 
@@ -44,7 +44,7 @@ MultiselectColumn-specific configuration:
   </tr>
   <tr>
     <td><code>controlVisibility</code></td>
-    <td>Whether a user can control column's visibility handled by the <a href="{{page.baseurl}}ui_comp_guide/components/listing/ui-сolumnsсontrols.html">ColumnsControls component</a>.</td>
+    <td>Whether a user can control column's visibility handled by the <a href="{{page.baseurl}}ui_comp_guide/components/ui-columnscontrols.html">ColumnsControls component</a>.</td>
     <td>String</td>
     <td><code>false</code></td>
   </tr>
@@ -104,7 +104,7 @@ Current implementation:
 </column>
 {% endhighlight %}
 
-Example of configuration modifications:
+Example configuration modifications:
 
 * Redefining the link to the template
 

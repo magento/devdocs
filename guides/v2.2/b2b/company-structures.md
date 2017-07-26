@@ -115,7 +115,7 @@ You cannot delete a team if members are assigned to it.
 
 **Sample Usage**
 
-`Delete /V1/team/4`
+`DELETE /V1/team/4`
 
 **Payload**
 
@@ -127,9 +127,64 @@ An empty array
 
 ### Search for a team
 
-See [Search using REST APIs]({{page.baseurl}}howdoi/webapi/search-criteria.html) for information about constructing a query using the `GET  /V1/team/` endpoint.
+The following query returns information about all teams (`team_id` &ge; `0`)
+
+See [Search using REST APIs]({{page.baseurl}}howdoi/webapi/search-criteria.html) for information about constructing a search query.
+
+**Sample Usage**
+
+`GET V1/team?searchCriteria[filter_groups][0][filters][0][field]=team_id&searchCriteria[filter_groups][0][filters][0][value]=0&searchCriteria[filter_groups][0][filters][0][condition_type]=gteq`
+
+**Payload**
+
+Not applicable
+
+**Response**
+{% collapsible Show code sample %}
+{% highlight json %}
+{
+    "items": [
+        {
+            "id": 1,
+            "name": "West",
+            "description": "California office"
+        },
+        {
+            "id": 2,
+            "name": "East",
+            "description": "New York office"
+        }
+    ],
+    "search_criteria": {
+        "filter_groups": [
+            {
+                "filters": [
+                    {
+                        "field": "team_id",
+                        "value": "0",
+                        "condition_type": "gteq"
+                    }
+                ]
+            }
+        ]
+    },
+    "total_count": 2
+}
+{% endhighlight %}
+{% endcollapsible %}
 
 ## Company hierarchies
+
+In the B2B storefront, a buyer can view the company structure represented as a hierarchy tree. The tree can display multiple levels of company subdivisions (teams) as well as company users. The company hierarchy can have any number of items and levels.
+
+You can use REST endpoints to retrieve the current structure and move teams and customers within the hierarchy. You cannot delete  teams or customers.
+
+
+**Service name**
+
+`companyHierarchyV1`
+
+**REST Endpoints**
 
 {% highlight json %}
 GET /V1/hierarchy/:id
@@ -138,111 +193,99 @@ PUT /V1/hierarchy/move/:id
 
 ### Return all information about the company hierarchy
 
-`GET /V1/heirarchy/:id`
+In the following example, the following company hierarchy has already been established:
 
-In the following example, there are three teams and nine customers. The customer with `entity_id` of `5` (and `structure_id` of `2` is the Company Admin. All other entities have a `structure_parent_id` of `2`, indicating no additional hierarchies have been set.
+```
+Admin (structure_id = 2)
+|-- East (team, structure_id = 8)
+|   |-- Bryce Martin (customer, structure_id = 4)
+|   |-- Melanie Shaw (customer, structure_id = 3)
+|
+|-- West (team, structure_id = 7)
+|   |-- Marcus Thomas (customer, structure_id = 6)
+|   |-- Teresa Gomez (customer, structure_id = 5)
+```
+
+**Sample Usage**
+
+`GET /V1/heirarchy/2`
+
+**Payload**
+
+Not applicable
 
 **Response**
 
+{% collapsible Show code sample %}
 {% highlight json %}
+
 [
   {
-    "structure_id": 16,
-    "entity_id": 5,
-    "entity_type": "team",
-    "structure_parent_id": 2
+    "structure_id": 6,
+    "entity_id": 7,
+    "entity_type": "customer",
+    "structure_parent_id": 7
+  },
+  {
+    "structure_id": 5,
+    "entity_id": 6,
+    "entity_type": "customer",
+    "structure_parent_id": 7
   },
   {
     "structure_id": 7,
-    "entity_id": 3,
+    "entity_id": 1,
     "entity_type": "team",
-    "structure_parent_id": 2
-  },
-  {
-    "structure_id": 15,
-    "entity_id": 4,
-    "entity_type": "team",
-    "structure_parent_id": 2
-  },
-  {
-    "structure_id": 13,
-    "entity_id": 18,
-    "entity_type": "customer",
-    "structure_parent_id": 2
-  },
-  {
-    "structure_id": 14,
-    "entity_id": 19,
-    "entity_type": "customer",
-    "structure_parent_id": 2
-  },
-  {
-    "structure_id": 12,
-    "entity_id": 17,
-    "entity_type": "customer",
-    "structure_parent_id": 2
-  },
-  {
-    "structure_id": 11,
-    "entity_id": 16,
-    "entity_type": "customer",
-    "structure_parent_id": 2
-  },
-  {
-    "structure_id": 10,
-    "entity_id": 15,
-    "entity_type": "customer",
-    "structure_parent_id": 2
-  },
-  {
-    "structure_id": 9,
-    "entity_id": 14,
-    "entity_type": "customer",
-    "structure_parent_id": 2
-  },
-  {
-    "structure_id": 8,
-    "entity_id": 13,
-    "entity_type": "customer",
     "structure_parent_id": 2
   },
   {
     "structure_id": 3,
-    "entity_id": 12,
+    "entity_id": 4,
     "entity_type": "customer",
+    "structure_parent_id": 8
+  },
+  {
+    "structure_id": 4,
+    "entity_id": 5,
+    "entity_type": "customer",
+    "structure_parent_id": 8
+  },
+  {
+    "structure_id": 8,
+    "entity_id": 2,
+    "entity_type": "team",
     "structure_parent_id": 2
   },
   {
     "structure_id": 2,
-    "entity_id": 5,
+    "entity_id": 3,
     "entity_type": "customer",
     "structure_parent_id": 0
   }
-]
+
 {% endhighlight %}
+{% endcollapsible %}
 
 ### Assign a new parent to teams and company users
 
-`PUT /V1/hierarchy/move/15`
+The following example moves Bryce Martin (`structure_id = 4`) to the West team (`structure_id = 7`)
+
+**Sample Usage**
+
+`PUT /V1/hierarchy/move/5`
+
+**Payload**
+
+{% highlight json %}
 {
   "newParentId": 7
 }
+{% endhighlight %}
 
-`PUT /V1/hierarchy/move/16`
+**Response**
 
-{
-  "newParentId": 7
-}
+`[]` (an empty array)
 
-`PUT /V1/hierarchy/move/8`
-{
-  "newParentId": 15
-}
-
-`PUT /V1/hierarchy/move/9`
-{
-  "newParentId": 16
-}
 
 ## Related information
 
