@@ -1869,32 +1869,27 @@
 <p>To modify the Varnish system configuration:</p>
 
 <ol>
-  <li>Open <code>/etc/sysconfig/varnish</code> (or <code>/etc/default/varnish</code> on Debian and Ubuntu) in a text editor.</li>
+  <li>
+    <p>Open <code>/etc/sysconfig/varnish</code> (or <code>/etc/default/varnish</code> on Debian and Ubuntu) in a text editor.</p>
+  </li>
   <li>
     <p>Set the Varnish listen port to 80:</p>
 
     <pre><code>VARNISH_LISTEN_PORT=80
 </code></pre>
-  </li>
-  <li>
-    <p>If necessary, comment out the following:</p>
 
-    <pre><code>## Alternative 1, Minimal configuration, no VCL
-#DAEMON_OPTS="-a :6081 \
-#             -T localhost:6082 \
-#             -b localhost:8080 \
-#             -u varnish -g varnish \
-#             -s file,/var/lib/varnish/varnish_storage.bin,1G"
-## Alternative 2, Configuration with VCL
-#DAEMON_OPTS="-a :6081 \
-#             -T localhost:6082 \
-#             -f /etc/varnish/default.vcl \
-#             -u varnish -g varnish \
-#             -S /etc/varnish/secret \
-#             -s file,/var/lib/varnish/varnish_storage.bin,1G"
+    <p>For Varnish 4.*, make sure that DAEMON_OPTS contains the correct listening port for the <code>-a</code> parameter (even if VARNISH_LISTEN_PORT is set to the correct value):</p>
+
+    <pre><code>DAEMON_OPTS="-a :80 \
+   -T localhost:6082 \
+   -f /etc/varnish/default.vcl \
+   -S /etc/varnish/secret \
+   -s malloc,256m"
 </code></pre>
   </li>
-  <li>Save your changes to <code>/etc/sysconfig/varnish</code> (or <code>/etc/default/varnish</code> on Debian and Ubuntu) and exit the text editor.</li>
+  <li>
+    <p>Save your changes to <code>/etc/sysconfig/varnish</code> (or <code>/etc/default/varnish</code> on Debian and Ubuntu) and exit the text editor.</p>
+  </li>
 </ol>
 
 <h3 id="config-varnish-config-default">Modify <code>default.vcl</code></h3>
