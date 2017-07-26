@@ -114,7 +114,7 @@ Columns-specific options:
       <code>editorConfig</code>
     </td>
     <td>
-      Configuration of the InlineEditing component</a>.
+      Configuration of the InlineEditing component.
     </td>
     <td>
       Object
