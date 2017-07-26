@@ -10,7 +10,7 @@ github_link: ui_comp_guide/components/ui-radioset.md
 
 ## Overview
 
-The Radioset component is a shortcut for [Chekboxset]({{page.baseurl}}ui_comp_guide/components/ui-сheckboxset.html), with the input type set to the radio button.
+The Radioset component is a shortcut for [Chekboxset](http://devdocs.magento.com/guides/v2.1/ui_comp_guide/components/ui-checkboxset.html), with the input type set to the radio button.
 
 ## Configuration options
 
