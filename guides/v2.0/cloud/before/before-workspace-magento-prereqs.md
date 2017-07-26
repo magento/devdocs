@@ -28,12 +28,17 @@ Install the following software packages and tools on your local to prepare for M
 Magento documentation provides installation instructions for installing software on CentOS or Ubuntu only. For installation information on Windows or MacOS, consult a community resource.
 </div>
 
-## Virtual machine {#vm}
-To best develop and manage your local, we recommend using a virtual machine. The VM encapsulates your code, web services, testing and supports a Unix-based environment. Select a virtual system you prefer.
+## Set up your Host
+To begin, install and set up a VM on your host computer. A VM gives you an environment to install a different Operating System, tools, software, a database, and Magento without requiring a customized system. You only need to install the VM software on your host. All other software can be installed and configured on your VM.
 
-For examples in this documentation, we use [Vagrant](https://www.vagrantup.com/) and [VirtualBox](https://www.virtualbox.org). Vagrant provides a single workflow for managing VMs, helps setup developer environments quickly, and isolates dependencies through one consistent environment. VirtualBox manages the environment. Another option commonly used is [Docker](https://www.docker.com/), which uses containers instead of virtualization.
+### Virtual machine {#vm}
+To best develop and manage your host, we recommend using a virtual machine. The VM encapsulates your code, web services, testing and supports a Unix-based environment. Select a virtual system you prefer.
 
-### Vagrant {#vagrant}
+For examples in this documentation, we use [Vagrant](https://www.vagrantup.com/) and [VirtualBox](https://www.virtualbox.org). Vagrant provides a single workflow for managing VMs, helps setup developer environments quickly, and isolates dependencies through one consistent environment. VirtualBox manages the environment.
+
+Another option commonly used is [Docker](https://www.docker.com/), which uses containers instead of virtualization.
+
+#### Vagrant {#vagrant}
 To download and install [Vagrant](https://www.vagrantup.com/downloads.html):
 
 1. (optional) Install the Vagrant hostmanager plugin. we also recommend the package [hostmanager](https://github.com/devopsgroup-io/vagrant-hostmanager).
@@ -56,10 +61,10 @@ To download and install [Vagrant](https://www.vagrantup.com/downloads.html):
 6. If you installed hostmanager, update the hosts file on the active machines:
 		vagrant hostmanager
 
-### VirtualBox {#virtualbox}
+#### VirtualBox {#virtualbox}
 [VirtualBox](https://www.virtualbox.org/wiki/Downloads) extends support and features across all OS and platforms to create and manage multiple VMs and operating systems on your local.
 
-Select and download a preferred Unix-based OS for your virtual system, such as Denbian, CentOS, or Ubuntu. For examples in this documentation, we use Ubuntu. Run the installation to complete. You don't need to make additional configurations to run and manage VMs.
+Select and download a preferred Unix-based OS for your virtual system, such as Debian, CentOS, or Ubuntu. For examples in this documentation, we use Ubuntu. Run the installation to complete. You don't need to make additional configurations to run and manage VMs.
 
 ## Development tools {#devtools}
 * [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git){:target="_blank"} - Provides code branching and management for accessing Magento Enterprise Cloud Edition and your code respositories. Use Git command-line commands or applications of your choice to work with Git.
