@@ -25,20 +25,18 @@ To change the Apache 2.2 listen port:
 To modify the Varnish system configuration:
 
 1.	Open `/etc/sysconfig/varnish` (or `/etc/default/varnish` on Debian and Ubuntu) in a text editor.
+
 2.	Set the Varnish listen port to 80:
 
 		VARNISH_LISTEN_PORT=80
-		
-For Varnish 4.* make sure that DAEMON_OPTS have the correct listening port for the `-a` parameter (even if VARNISH_LISTEN_PORT set to the correct one)
-	
-	DAEMON_OPTS="-a :80 \
-             -T localhost:6082 \
-             -f /etc/varnish/default.vcl \
-             -S /etc/varnish/secret \
-             -s malloc,256m"
-	     
-     	
 
+    For Varnish 4.&#42;, make sure that DAEMON_OPTS contains the correct listening port for the `-a` parameter (even if VARNISH_LISTEN_PORT is set to the correct value):
+
+		DAEMON_OPTS="-a :80 \
+		   -T localhost:6082 \
+		   -f /etc/varnish/default.vcl \
+		   -S /etc/varnish/secret \
+		   -s malloc,256m"		
 
 3.	Save your changes to `/etc/sysconfig/varnish` (or `/etc/default/varnish` on Debian and Ubuntu) and exit the text editor.
 
