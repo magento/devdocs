@@ -20,6 +20,7 @@ After using the command `php bin/magento magento-cloud:scd-dump` to generate con
 The issue is due to an issue of enabling HTML minification and the setting in `config.local.php` when using `bin/magento magento-cloud:scd-dump`.
 
 As a work-around, complete the following:
+
 1. Copy the file `app/etc/config.local.php` to your local.
 2. Edit and remove the minify section from `config.local.php`:
 

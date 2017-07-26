@@ -20,6 +20,7 @@ redirect from:
 The following sections discuss your options for setting up a Magento local environment for installing and developing code, extensions, and configurations. You should have a local workspace prepared with installed software, a Magento ECE account, and a project created. For details, see [Overview of a Magento workspace]({{ page.baseurl }}cloud/before/before-workspace.html).
 
 The steps in this section provide an order for setting up your local environment. You may be redirected to skip ahead or back through the steps, depending on your workspace needs.
+
 * Set up SSH keys (could have been completed with your workspace setup)
 * Clone the Magento Project, or master Git branch
 * Set up authentication keys for Magento and Git

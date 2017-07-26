@@ -43,6 +43,7 @@ Installation of Magento onto your local supports a command line option or a Web 
 After installing prerequisties, cloning the project and branch, configuring SSH keys, and adding Magento authentication keys, make sure to [Update installation dependencies]({{ page.baseurl }}install-gde/install/prepare-install.html). With the Magento respository cloned, you need to update and resolve any dependencies using Composer commands.
 
 To install, use one of the following options:
+
 * [Install the Magento software using the command line]({{ page.baseurl }}install-gde/install/cli/install-cli.html)
 * [Install the Magento software using the Web Setup Wizard]({{ page.baseurl }}install-gde/install/web/install-web.html)
 

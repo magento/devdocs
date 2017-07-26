@@ -110,7 +110,7 @@ Declare your modifier in your module Di configuration `<Your_Module_dir>/etc/adm
 
 **Step 3**
 
-To use your modifier, add a dependency on `\Magento\Ui\DataProvider\Modifier\PoolInterface` to your UI component data provider. For illustration see [`\Magento\Catalog\Ui\DataProvider\Product\Form\ProductDataProvider`]({{site.mage2100url}}app/code/Magento/Catalog/Ui/DataProvider/Product/Form/ProductDataProvider.php)
+To use your modifier, add a dependency on [`\Magento\Ui\DataProvider\Modifier\PoolInterface`]({{site.mage2100url}}app/code/Magento/Ui/DataProvider/Modifier/PoolInterface.php) to your UI component data provider. For illustration see [`\Magento\Catalog\Ui\DataProvider\Product\Form\ProductDataProvider`]({{site.mage2100url}}app/code/Magento/Catalog/Ui/DataProvider/Product/Form/ProductDataProvider.php)
 
 
 ## Related reading

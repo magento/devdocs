@@ -4,7 +4,7 @@ group: fedg
 subgroup: A_Themes
 title: Theme inheritance
 menu_title: Theme inheritance
-menu_order: 5
+menu_order: 70
 version: 2.0
 github_link: frontend-dev-guide/themes/theme-inherit.md
 redirect_from: /guides/v1.0/frontend-dev-guide/themes/theme-inherit.html
