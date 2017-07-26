@@ -12,22 +12,34 @@ version: 2.2
 github_link: config-guide/cli/config-cli-subcommands-config-mgmt-export.md
 ---
 
-In the Magento 2.2 and later [pipeline deployment model]({{ page.baseurl }}config-guide/deployment/pipeline/), you can maintain a consistent configuration across systems. After you configure settings in the Magento Admin on your development system, export those settings to configuration files using the following command:
+In the Magento 2.2 and later [pipeline deployment model]({{ page.baseurl }}config-guide/deployment/pipeline/), you can maintain a consistent configuration across systems.
+After you configure settings in the Magento Admin on your development system, export those settings to configuration files using the following command:
 
     magento app:config:dump
 
 As a result of the command execution, the following configuration files are updated:
 
-*	`app/etc/config.php`, the shared configuration file. This file should be included in source control so it can be shared between development, build, and production systems.
-*	`app/etc/env.php`, the system-specific configuration file. This file should _not_ be included in source control.
+*	[`app/etc/config.php`](#app-etc-config-php)
+*	[`app/etc/env.php`](#app-etc-env-php)
 
-	Instead, set system-specific settings on production using the [`magento config:set` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-set.html).
+## `app/etc/config.php` {#app-etc-config-php}
 
-<div class="bs-callout bs-callout-warning" id="warning" markdown="1">
-*	The `magento app:config:dump` command does not output the values of sensitive configuration settings. To set sensitive settings in the production system, use the [`magento config:sensitive:set` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-set.html)
-*	Configuration values are specified as either sensitive or system-specific by referencing [`Magento\Config\Model\Config\TypePool`]({{ site.mage2200url }}app/code/Magento/Config/Model/Config/TypePool.php){:target="_blank"} in the module's [`di.xml`]({{page.baseurl}}extension-dev-guide/build/di-xml-file.html#ext-di-sens) file.
-</div>
+This is the shared configuration file for all your Magento instances.
+Include this in your source control so it can be shared between the development, build, and production systems.
 
-#### Related topics
-*	[config.php reference]({{ page.baseurl }}config-guide/prod/config-reference-configphp.html)
-*	[env.php reference]({{ page.baseurl }}config-guide/prod/config-reference-envphp.html)
+See: [config.php reference]({{ page.baseurl }}config-guide/prod/config-reference-configphp.html)
+
+## `app/etc/env.php` {#app-etc-env-php}
+
+This is the environment-specific configuration file.
+It contains sensitive and system-specific settings for individual environments.
+
+Do _not_ include this file in source control.
+
+See: [env.php reference]({{ page.baseurl }}config-guide/prod/config-reference-envphp.html)
+
+### Sensitive or system-specific settings
+
+To set the sensitive settings written to `env.php`, use the [`magento config:sensitive:set`]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-set.html) command.
+
+Configuration values are specified as either sensitive or system-specific by referencing [`Magento\Config\Model\Config\TypePool`]({{ site.mage2200url }}app/code/Magento/Config/Model/Config/TypePool.php){:target="_blank"} in the module's [`di.xml`]({{page.baseurl}}extension-dev-guide/configuration/sensitive-and-environment-settings.html#how-to-specify-values-as-sensitive-or-system-specific) file.

@@ -4,7 +4,7 @@ group: fedg
 subgroup: A_Themes
 title: Create a new storefront theme
 menu_title: Create a new storefront theme
-menu_order: 2
+menu_order: 20
 version: 2.0
 github_link: frontend-dev-guide/themes/theme-create.md
 redirect_from: /guides/v1.0/frontend-dev-guide/themes/theme-create.html

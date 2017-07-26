@@ -8,7 +8,7 @@ menu_order: 2000
 level3_menu_node:
 level3_subgroup:
 version: 2.2
-github_link: release-candidate/install.md
+github_link: release-notes/release-candidate/install.md
 ---
 
 ## Installation
@@ -45,7 +45,7 @@ There are three Magento code repositories on GitHub where you can find Release C
 <tr>
     <td><b>Magento CE</b></td>
     <td><a href="https://github.com/magento/magento2">https://github.com/magento/magento2</a></td>
-    <td>develop</td>
+    <td>2.2.0-preview</td>
     <td>Publicly available</td>
 </tr>
 <tr>
@@ -66,11 +66,11 @@ There are three Magento code repositories on GitHub where you can find Release C
 
 These instructions assume you have experience working with Github repositories. Refer to Github's documentation if you need help setting up [SSH keys](https://help.github.com/articles/connecting-to-github-with-ssh/){:target="	&#95;blank"} or [cloning repositories](https://help.github.com/articles/cloning-a-repository/){:target="	&#95;blank"}.
 
-1.  Clone the `magento2/` repository to your server's [docroot](http://devdocs.magento.com/guides/v2.1/install-gde/basics/basics_docroot.html):
+1.  Clone the `magento2/` repository to your server's [docroot](http://devdocs.magento.com/guides/v2.2/install-gde/basics/basics_docroot.html):
 
     ```
     cd /var/www/html
-    git clone -b develop git@github.com:magento/magento2.git
+    git clone -b 2.2.0-preview git@github.com:magento/magento2.git
     ```
 
 2.  Clone the `magento2ee/` and `magento2b2b/` repositories inside the `magento2/` repository:
@@ -132,7 +132,7 @@ From the `magento2/` directory, run Composer to update dependencies:
 composer install
 ```
 
-Refer to [Update installation dependencies](http://devdocs.magento.com/guides/v2.1/install-gde/install/prepare-install.html) for more information.
+Refer to [Update installation dependencies](http://devdocs.magento.com/guides/v2.2/install-gde/install/prepare-install.html) for more information.
 
 ### Complete the installation
 Now that you've cloned all the repositories you need and prepared the files, proceed with the installation:

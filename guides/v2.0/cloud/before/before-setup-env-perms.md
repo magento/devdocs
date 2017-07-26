@@ -4,7 +4,7 @@ group: cloud
 subgroup: 080_setup
 title: Step 7, Set file system permissions and ownership
 menu_title: Step 7, Set file system permissions and ownership
-menu_order: 167
+menu_order: 168
 level3_menu_node: level3child
 level3_subgroup: setupenv
 version: 2.0
@@ -25,6 +25,3 @@ To set up file system permissions and ownership:
 		chmod u+x bin/magento
 
 {% include install/file-system-perms-twouser_cmds-only.md %}
-
-#### Next step
-[Step 7, Install Magento]({{ page.baseurl }}cloud/before/before-setup-env-install.html)

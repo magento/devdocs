@@ -265,9 +265,103 @@ None
 
 `true`, indicating the request was successful
 
-### Search for a company
+### Search for companies
 
-See [Search using REST APIs]({{page.baseurl}}howdoi/webapi/search-criteria.html) for information about constructing a query using the `GET  /V1/company/` endpoint.
+The following call returns all companies that are located in California (`region_id` = `12`)
+
+See [Search using REST APIs]({{page.baseurl}}howdoi/webapi/search-criteria.html) for information about constructing a search query.
+
+**Sample Usage**
+
+`GET /V1/company?searchCriteria[filter_groups][0][filters][0][field]=region_id&searchCriteria[filter_groups][0][filters][0][value]=12&searchCriteria[filter_groups][0][filters][0][condition_type]=eq`
+
+**Payload**
+
+None
+
+**Response**
+
+{% collapsible Show code sample %}
+{% highlight json %}
+{
+    "items": [
+        {
+            "id": 2,
+            "status": 1,
+            "company_name": "Test Company",
+            "legal_name": "Test Company",
+            "company_email": "newemail@example.com",
+            "street": [
+                "100 Big Tree Avenue"
+            ],
+            "city": "San Francisco",
+            "country_id": "US",
+            "region": "California",
+            "region_id": "12",
+            "postcode": "99999",
+            "telephone": "4155551212",
+            "customer_group_id": 1,
+            "sales_representative_id": 1,
+            "reject_reason": null,
+            "rejected_at": null,
+            "super_user_id": 3,
+            "extension_attributes": {
+                "applicable_payment_method": 0,
+                "available_payment_methods": "banktransfer,cashondelivery,checkmo,payflowpro,payflow_advanced,payflow_link,braintree,cybersource,eway,authorizenet_directpost,free,braintree_paypal,paypal_billing_agreement,payflow_express_bml,paypal_express_bml,paypal_express,payflow_express,hosted_pro,worldpay,companycredit,purchaseorder,braintree_paypal_vault,braintree_cc_vault,payflowpro_cc_vault",
+                "use_config_settings": 1,
+                "quote_config": {
+                    "is_quote_enabled": true
+                }
+            }
+        },
+        {
+            "id": 3,
+            "status": 1,
+            "company_name": "Widgets, Inc",
+            "legal_name": "Widgets, Inc",
+            "company_email": "widgetsinc@example.com",
+            "street": [
+                "8383 Wilshire Blvd",
+                "Ste 1500"
+            ],
+            "city": "Beverly Hills",
+            "country_id": "US",
+            "region": "California",
+            "region_id": "12",
+            "postcode": "90211",
+            "telephone": "(310) 555-0000",
+            "customer_group_id": 1,
+            "sales_representative_id": 1,
+            "reject_reason": null,
+            "rejected_at": null,
+            "super_user_id": 10,
+            "extension_attributes": {
+                "applicable_payment_method": 0,
+                "available_payment_methods": "banktransfer,cashondelivery,checkmo,payflowpro,payflow_advanced,payflow_link,braintree,cybersource,eway,authorizenet_directpost,free,braintree_paypal,paypal_billing_agreement,payflow_express_bml,paypal_express_bml,paypal_express,payflow_express,hosted_pro,worldpay,companycredit,purchaseorder,braintree_paypal_vault,braintree_cc_vault,payflowpro_cc_vault",
+                "use_config_settings": 1,
+                "quote_config": {
+                    "is_quote_enabled": true
+                }
+            }
+        }
+    ],
+    "search_criteria": {
+        "filter_groups": [
+            {
+                "filters": [
+                    {
+                        "field": "region_id",
+                        "value": "12",
+                        "condition_type": "eq"
+                    }
+                ]
+            }
+        ]
+    },
+    "total_count": 2
+}
+{% endhighlight %}
+{% endcollapsible %}
 
 ## Related information
 

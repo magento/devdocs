@@ -67,22 +67,22 @@ When B2B is enabled, the system creates a public shared catalog named `Default (
 
 **Response**
 
-The shared catalog `id`, such as `8`.
+The shared catalog `id`, such as `2`.
 
-### Update a shared catalog
+### Update a characteristics of a shared catalog
 
 You cannot change the `type` from public (`1`) to custom (`0`). If you need to replace the public shared catalog, create a custom catalog and change its type to public.
 
 **Sample Usage**
 
-`PUT  /V1/sharedCatalog/8`
+`PUT  /V1/sharedCatalog/2`
 
 {% highlight json %}
 
 {
   "sharedCatalog": {
-    "id": 8,
-    "name": "Sample",
+    "id": 2,
+    "name": "Custom shared catalog",
     "description": "Just a sample custom shared catalog.",
     "type": 0,
     "store_id": 0,
@@ -93,7 +93,7 @@ You cannot change the `type` from public (`1`) to custom (`0`). If you need to r
 
 **Response**
 
-The shared catalog `id`, such as `8`.
+The shared catalog `id`, such as `2`.
 
 ### Retrieve general information about a shared catalog
 
@@ -101,7 +101,7 @@ This call returns information about the specified shared catalog.
 
 **Sample Usage**
 
-`GET  /V1/sharedCatalog/8`
+`GET  /V1/sharedCatalog/2`
 
 **Payload**
 
@@ -111,15 +111,15 @@ Not applicable
 
 {% highlight json %}
 {
-  "id": 8,
-  "name": "Sample",
-  "description": null,
-  "customer_group_id": 10,
-  "type": 0,
-  "created_at": "2017-05-23 22:01:18",
-  "created_by": 1,
-  "store_id": 0,
-  "tax_class_id": 3
+    "id": 2,
+    "name": "Custom shared catalog",
+    "description": "Just a sample custom shared catalog.",
+    "customer_group_id": 4,
+    "type": 0,
+    "created_at": "2017-07-21 15:39:40",
+    "created_by": 1,
+    "store_id": 0,
+    "tax_class_id": 3
 }
 {% endhighlight %}
 
@@ -129,7 +129,7 @@ Only custom shared catalogs can be deleted. When a custom catalog is deleted, th
 
 **Sample Usage**
 
-`DELETE  /V1/sharedCatalog/8`
+`DELETE  /V1/sharedCatalog/2`
 
 **Payload**
 
@@ -141,7 +141,53 @@ Not applicable
 
 ### Search for a shared catalog
 
-See [Search using REST APIs]({{page.baseurl}}howdoi/webapi/search-criteria.html) for information about constructing a query using the `GET  /V1/sharedCatalog/` endpoint.
+The following search returns all the custom shared catalogs (`type = 0`) in the system.
+
+See [Search using REST APIs]({{page.baseurl}}howdoi/webapi/search-criteria.html) for information about constructing a search query.
+
+**Sample Usage**
+
+`GET V1/sharedCatalog?searchCriteria[filter_groups][0][filters][0][field]=type&searchCriteria[filter_groups][0][filters][0][value]=0&searchCriteria[filter_groups][0][filters][0][condition_type]=eq`
+
+**Payload**
+
+Not applicable
+
+**Response**
+
+{% highlight json %}
+
+{
+    "items": [
+        {
+            "id": 2,
+            "name": "Custom shared catalog",
+            "description": "Just a sample custom shared catalog.",
+            "customer_group_id": 4,
+            "type": 0,
+            "created_at": "2017-07-21 15:39:40",
+            "created_by": 1,
+            "store_id": 0,
+            "tax_class_id": 3
+        }
+    ],
+    "search_criteria": {
+        "filter_groups": [
+            {
+                "filters": [
+                    {
+                        "field": "type",
+                        "value": "0",
+                        "condition_type": "eq"
+                    }
+                ]
+            }
+        ]
+    },
+    "total_count": 1
+}
+
+{% endhighlight %}
 
 ## Related information
 

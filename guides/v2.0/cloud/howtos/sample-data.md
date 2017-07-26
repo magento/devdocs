@@ -5,7 +5,7 @@ subgroup: How To
 title: Install optional sample data
 menu_title: Install optional sample data
 menu_order: 70
-menu_node: 
+menu_node:
 version: 2.0
 github_link: cloud/howtos/sample-data.md
 ---
@@ -14,11 +14,7 @@ This topic discusses how to install optional Magento sample data. Sample data si
 
 ### Get started
 
-{% collapsible To get started: %}
-
 {% include cloud/cli-get-started.md %}
-
-{% endcollapsible %}
 
 ### Install sample data
 To install sample data:
