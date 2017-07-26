@@ -28,13 +28,17 @@ Looking for the <a href= "http://devdocs.magento.com/guides/v2.0/cloud/release-n
 
 Magento 2.1.8 contains .  Look for the following highlights in this release:
 
+* enhancements to static content deployment
+
+
+
 ## Fixed issues and enhancements
 
 
 
 ### Catalog 
 
-<!--- 58918 -->* You can now create a custom ategory attribute that you can use to upload a custom image for each category. Previously, you could create the attribute, but could not save the image. 
+<!--- 58918 -->* You can now create a custom category attribute that you can use to upload a custom image for each category. Previously, you could create the attribute, but could not save the image. 
 
 
 <!--- 58571 -->* The prices you assign to custom options no longer change unexpectedly after you save them.  [GitHub-6116](https://github.com/magento/magento2/issues/6116)
@@ -79,20 +83,12 @@ Magento 2.1.8 contains .  Look for the following highlights in this release:
 <!--- 67535 -->* Magento now correctly assigns images to duplicated products. 
 
 <!--- 57144 -->* You can now create a blank attribute option using the drop down input option on products that do not require an attribute. 
-
-
-
-Option "green" for attribute "color" is not selected. Blank (empty) value is selected.
-In Magento 1, merchant would frequently leave the value of attributes using the drop down input option blank on products that did not require that attribute. When creating new products, the attribute value would left blank.
-In Magento 2, value is assigned to the attribute for the product as soon as the product is created.
-
-Merchant would like the ability to create a blank attribute option for attributes with the drop down input type.
 [GitHub-3545](https://github.com/magento/magento2/issues/3545), [GitHub-5485](https://github.com/magento/magento2/issues/5485), [GitHub-4910](https://github.com/magento/magento2/issues/4910)
 
 
 
 
-<!--- 68810 -->* You can now use special characters like '%' in the WYSIWYG editor. 
+<!--- 68810 -->* You can now use special characters such as '%' in the WYSIWYG editor. 
 
 
 <!--- -->* 
@@ -112,10 +108,7 @@ Merchant would like the ability to create a blank attribute option for attribute
 
 ### Configurable products
 
-<!--- 62091 -->* 
-
-when you save a configurable product and then while it is saving you click on save again, it will remove the simple products assigned to that configurable Configurable products simple products get removed on product save
-
+<!--- 62091 -->* Magento no longer removes the simple products associated with a configurable product if you click on the **Save** button more than once while saving the configurable product. Previously, if you clicked on **Save** more than once during an attempt to save a configurable product, Magento removed the simple products that were assigned to it. 
 
 
 <!--- 61130 -->* Magento now correctly matches images to products. Previously, after you selected a configurable product, Magento displayed the images for another product.  
@@ -128,23 +121,21 @@ when you save a configurable product and then while it is saving you click on sa
  if no values specified for specific store view. 
 
 
-<!--- 69501 -->* Color swatches are now replaced by images on Catalog and Product pages. 
+<!--- 69501 -->* Color swatches are now replaced by images on the Catalog and Product pages. 
+
+
+
+
 
 
 
 ### General
-
-<!--- 64238 -->* mmap cannot allocate memory. Expected result:
-Reindex takes some time, Customer Grid (in backend -> System -> Index management) status is set to "Ready"
-Actual result:
-Reindex fails
+ 
+<!--- 64238 -->* Reindexing no longer fails due to mmap memory allocation issues when reindexing many (1,000,000) customers. Previously, when initiating reindexing through **System > Index management**, reindexing failed. 
 
 
 
-
-
-
-<!--- 57291 -->* Magento now successfully uploads the thumbnail images for email logos used in transactional emails. Previously, these thumbnail images were not displayed.
+<!--- 57291 -->* Magento now successfully uploads the thumbnail images for email logos that are used in transactional emails. Previously, these thumbnail images were not displayed.
 
 
 <!--- 57615 -->* Visual Merchandiser `Match products by rule` now works as expected. 
@@ -156,7 +147,8 @@ Reindex fails
 <!--- 60542 -->* The "Print Shipping Label" link now displays on the product frontend. Previously, the 
 layout for "Shipping and Tracking" block did work properly. 
 
-<!--- 60529 -->* Magento now displays Upsells  on the Product page. 
+
+<!--- 60529 -->* Magento now displays Up-sells on the Product page. 
 
 
 
@@ -167,7 +159,7 @@ layout for "Shipping and Tracking" block did work properly.
 <!--- 58855 -->* The Cart Price rule nows affects coupon life as expected. Previously, coupons did not persist longer than the current date if they did not have a designated end-date.  
 
 
-<!--- 69840 -->* Configuration values no longer return NULL when Redis reaches the linit set in the `max_memory` setting. Previously, when Redis met the limit specified in this setting, ScopeConfig returned a value of NULL for configuration options, which resulted in significant damage to data (for example, deleting all prices assigned to a website from the database).
+<!--- 69840 -->* Configuration values no longer return NULL when Redis reaches the linit set in the `max_memory` setting. Previously, when Redis met the limit specified in this setting, `ScopeConfig` returned a value of NULL for configuration options, which resulted in significant damage to data (for example, deleting all prices assigned to a website from the database).
 
 
 
@@ -180,17 +172,12 @@ layout for "Shipping and Tracking" block did work properly.
 
 
 
-<!--- 60777 -->* Static files not being generated correctly on prod(Race condition in merging files). broken front end. 
+<!--- 60777 -->* Static file generation is not longer affected by a race condition that affected merging CSS files. Previously, this race condition interferred with the proper generation of the product front end.  
 
 
 
 
-<!--- 59690 -->* 
-
- Expected result
-Image gets rendered in the description area
-Actual Result
-Image is not rendered, instead you get broken image link icon Inserted image in product description got broken on front end  [GitHub-6138](https://github.com/magento/magento2/issues/6138)
+<!--- 59690 -->* Magento now renders images as expected in the product description area. Previously, Magento did not render images in this area, and would display a broken link.  [GitHub-6138](https://github.com/magento/magento2/issues/6138)
 
 
 
@@ -211,7 +198,7 @@ Image is not rendered, instead you get broken image link icon Inserted image in 
 
 <!--- 61097 -->* We've updated UK mobile phone number validation. 
 
-<!--- 57060 -->*  You can now apply free shipping to a specified shipping method when you create order in the Admin. Previously, if you set up a price rule to provide free shipping for one specific shipping method (for exmaple, tablerates), Magento applies the rule  on the front end only, but not on the Admin order creation page. 
+<!--- 57060 -->*  You can now apply free shipping to a specified shipping method when you create order in the Admin. Previously, if you set up a price rule to provide free shipping for one specific shipping method (for example, table rates), Magento applies the rule  on the front end only, but not on the Admin order creation page. 
 
 
 <!--- 55361 -->* Cart Price rules are now applied as expected to payment method conditions. Previously, discounts set in Cart Price rules were not applied during checkout. 
@@ -224,20 +211,12 @@ Image is not rendered, instead you get broken image link icon Inserted image in 
 
 <!--- 60641 -->* Magento now saves a new product rule when its SKU attribute is enabled for Use for Promo Rule Conditions'. Previously, you could not save a new rule under these conditions. 
 
-<!--- 61262 -->* CMS Hierarchy menu is not shown when adding a page to hierarchy (when URL rewrite for new page exists) . EXPECTED RESULTS:
-When adding pages to the hierarchy, it should show the added page links without having to delete the URL rewrite
-ACTUAL RESULTS:
-When adding pages to the hierarchy, it does not show the added page links until deleting the URL rewrites.
-URL rewrites
-
-<!--- 63124 -->* Incorrect scope filter caching in UI grids. Grid should be reloaded. Previously, product name must be "Product default Store 2. Product data was not reloaded correctly - Product name is "Product default"
-  UI
-
-<!--- 60538 -->* Cache-miss when Fastly is enabled
-Fastly cache
+<!--- 61262 -->* You no longer need to delete the URL rewrite to force Magento to display links after adding pages to the CMS hierarchy. Previously, when you added new pages to the CMS hierarchy, Magento did not show the links to the new pages until you deleted the URL rewrites. 
 
 
+<!--- 63124 -->* Magento front-end scope filters now work as expected. Previously, Magento did not reload product information correctly when you applied a filter using **Catalog > Product**.
 
+<!--- 60538 -->* We fixed an issue where cache-misses sometimes occurred when Fastly cache was implemented. 
 
 
 
@@ -247,40 +226,32 @@ Fastly cache
 
 ### Gift cards
 
-<!--- 64675 -->* Gift card can be used twice exceeding balance amount. EXPECTED RESULTS:
-Non-active gift card should no longer be applied to the customer account after redirecting out of checkout and / or logging out of the customer account
-ACTUAL RESULTS:
-Non-active gift card that was previously applied to a registered customer's account prevents checkout.
+<!--- 64675 -->* Customers can no longer exceed a gift card balance by using the gift card twice. 
 
 
 
-<!--- 60680-->* Unable to save modified gift card product. Gift card should be saved according to new configuration Previously, Gift card amounts are still displayed
-"Gift card amount 1" = 10
-"Gift card amount 2" = 20. 
+<!--- 60680-->* You can now save the configuration settings of a gift card product. 
 
 
 
 ### Import/Export
-<!--- 62995 -->* Some imports do not auto generate the URL key for the product. Product imports not Auto-Generating URL Keys for SKUs. The URL key should be auto generated
-ACTUAL RESULTS:
-There is no URL key that is generated
 
-<!--- 60548 -->* Advanced Pricing is very slow to import. I am trying to upload advanced pricing. It will only allow for 300 or so rows to be uploaded at a time before the system freezes. The "Please Wait" will stay on screen for hours with no activity.
-
-<!--- 63589 -->* Imported configurable products with multiple super attributes do not retain super attribute ordering. Product super attribute order on the front-end product page should match the original product attribute order after export and import.
-The catalog_product_super_attribute table should match the original position values for the previously created product after importing. Previously, View front-end product page and note the attribute sort ordering does not match the order selected in step 5.
-Examine catalog_product_super_attribute table and note that the position values do not match the original attribute positions defined when creating the product configurations.
-In product export CSV, the configurable_variation_labels field does not affect the position of the super attributes for the imported products.
-
-[GitHub-6079](https://github.com/magento/magento2/issues/6079)
-<!--- 61027 -->* Product will be exported only once Product export duplicate rows for product with html special chars in data". Previously, Product exported twice (can be more if have more than one store);. 
-
-<!--- 58760 -->* Customer data imported to the shop.Error message appears: "Invalid data for insert".
-P. S. Error occurs because data rows which are going to be inserted have different keys 
- Customer Import - Invalid data for insert [GitHub-4921](https://github.com/magento/magento2/issues/4921)
+<!--- 62995 -->* We've fixed an issue where product URL keys (for SKUs) were not being autogenerated as expected during import.
 
 
-### Indexing
+<!--- 60548 -->* We've improved the import speed of advanced pricing data. Previously, the import process for this information frequently stopped after the import of approximately 300 rows of data, and Magento displayed this message: `Please Wait`. 
+
+
+
+<!--- 63589 -->* Magento now maintains super attribute ordering of configurable products with multiple super attributes after export or import. Previously, after import or export, the ordering of super attributes was not maintained. [GitHub-6079](https://github.com/magento/magento2/issues/6079)
+
+
+<!--- 61027 -->* Magento now exports rows only once when product information contains HTML special characters. Previously, Magento exported rows containing product information that included HTML characters at least twice.  
+
+
+
+<!--- 58760 -->* Magento now imports customer data as expected after the data passes the pre-import validation step. Previously, although data passed this validation step, an error would occur during import, and Magento displayed this message: `Invalid data for insert`. [GitHub-4921](https://github.com/magento/magento2/issues/4921), [GitHub-9469](https://github.com/magento/magento2/issues/9469)
+
 
 
 
@@ -291,14 +262,13 @@ P. S. Error occurs because data rows which are going to be inserted have differe
 <!--- 59775 -->* Static content deployment now generates secure content, whether content included secure or non-secure URLs.
 
 
-<!--- 62025 -->* Magento upgrade with sample data completes successfully on the first attempt. Previously, the upgrade process  failed with fatal errors during your first attemtp at upgrade, then succeeded upon re-try. 
+<!--- 62025 -->* Magento upgrade with sample data completes successfully on the first attempt. Previously, the upgrade process failed with fatal errors during your first attempt at upgrade, then succeeded upon re-try. 
 
 
+<!--- 63650 -->* Magento now moves the `sequence_*` table to the correct database after implementing a split database. 
 
-<!--- 63650 -->* Magento now moves `sequence_*` table to the correct database after implementing a split database. 
 
-
-<!--- 59622, 70177 -->*  You can now upgrade Magento 2.0 to version 2.1.x when the `auto_increment` in the database is greater than 1. Previously, when the `auto_increment` in the database exceeded 1, upgrade failed with this error: "The page URL key contains capital letters or disallowed symbols. 
+<!--- 59622, 70177 -->*  You can now upgrade Magento 2.0 to version 2.1.x when the `auto_increment` setting in the database is greater than 1. Previously, when the `auto_increment` value exceeded 1, upgrade failed with this error: "The page URL key contains capital letters or disallowed symbols. 
 
 
 
@@ -310,7 +280,7 @@ P. S. Error occurs because data rows which are going to be inserted have differe
 
 
 
-<!--- 63819 -->* The purchase date of an order is now displayed in the default time zone of the store and is the same date that is displayed in Order creation page. Previously, the Order table displayed an incorrect purchase date for the order. 
+<!--- 63819 -->* The purchase date of an order is now displayed in the default time zone of the store and is the same date that is displayed in the Order creation page. Previously, the Order table displayed an incorrect purchase date for the order. 
 
 
 <!--- 61059 -->* Magento no longer generates incorrect URLs in the site map when the **Use Secure URLs in Admin** is set to **Yes**. [GitHub-8644](https://github.com/magento/magento2/issues/8644) 
@@ -320,7 +290,7 @@ P. S. Error occurs because data rows which are going to be inserted have differe
 <!--- 63514 -->* Free shipping promotions no longer apply after you've removed the item that qualified for free shipping from your order. Previously, you could remove the qualifying item, and free shipping was still applied to the remaining order. [GitHub-9451](https://github.com/magento/magento2/issues/9451)
 
 
-<!--- 60326 -->* Magento now correctly identifies an order being processed when it is placed in a store configured for multiple curriences.  Previously, these orders always were identified as potentially fraudulent.
+<!--- 60326 -->* Magento now correctly identifies an order being processed when it is placed in a store configured for multiple currencies.  Previously, these orders always were identified as potentially fraudulent.
 
 
 
@@ -336,26 +306,23 @@ P. S. Error occurs because data rows which are going to be inserted have differe
 <!--- 64730 -->* You can now use PayPal Express to place an order. 
 
 
-<!--- 63702 -->* PayPal Express payments no longer fail when there is adequate product inventory to cover your order. Previously, you'd receive this error message: We can't place the order. [GitHub-6296](https://github.com/magento/magento2/issues/6296)
+<!--- 63702 -->* PayPal Express payments no longer fail when there is adequate product inventory to cover your order. Previously, you'd receive this error message: `We can't place the order`. [GitHub-6296](https://github.com/magento/magento2/issues/6296)
 
 
 ### Performance
 
-<!--- 58876 -->* We've improved Mass action performance and reduced the amount of memory that these operations consume. 
+<!--- 58876 -->* We've improved the performance of mass actions and reduced the amount of memory that these operations consume. 
 
 
 
 ### Reports
-<!--- 64297 -->* Website column is present in Customer Segment Report and contains correct data. Segments report: no websites shown in grid. Website column is present in Customer Segment Report grid and is blank.
+
+<!--- 64297 -->* The website column in Customer Segment report now contains correct data. Previously, this column was blank in the **Reports > Customer > Segments** report. 
 
 
 ### Sample data
 
-<!--- 64499 -->* 
-
-Error during Sample Data deploying using " auto_increment_increment = 3" as Mysql option
-
-"Something went wrong while installing sample data. Please check var/log/system.log for details. You can retry installing the data now or just start using Magento."
+<!--- 64499 -->* You can now successfully install Magento with sample data when   **auto_increment_increment** is set to **3**  in the `options` file. Previously, installation completed successfully, but Magento displayed this error: `Something went wrong while installing sample data. Please check var/log/system.log for details. You can retry installing the data now or just start using Magento.`
 
 
 
@@ -363,9 +330,9 @@ Error during Sample Data deploying using " auto_increment_increment = 3" as Mysq
 ### Search
 
 
-<!--- 58042 -->* ElasticSearch no longers fails when more than 100 attributes are involved, or when user-defined price attributes are searchable.
+<!--- 58042 -->* ElasticSearch no longer fails when more than 100 attributes are involved, or when user-defined price attributes are searchable.
 
-<!--- 65249 -->* Segmentation faults no longer occur when doing a `catalogsearch_fulltext` reindex, and indexing succeeds. Previously, in a large database (more than 70k products) the `catalogsearch_fulltext` (MySQL) reindex failed with a `Segmentation fault` message. [GitHub-7963](https://github.com/magento/magento2/issues/7963)
+<!--- 65249 -->* Segmentation faults no longer occur when doing a `catalogsearch_fulltext` re-index, and indexing succeeds. Previously, in a large database (more than 70,000 products) the `catalogsearch_fulltext` (MySQL) re-index failed with a `Segmentation fault` message. [GitHub-7963](https://github.com/magento/magento2/issues/7963)
 
 
 <!--- 53675 -->*  Sorting configurable products by price now works as expected when a simple product has a special price. [GitHub-4778](https://github.com/magento/magento2/issues/4778)
@@ -374,9 +341,7 @@ Error during Sample Data deploying using " auto_increment_increment = 3" as Mysq
 <!--- 57475 -->* Out-of-stock items no longer appear in layered navigation. Previously, when you selected any filter from the layered navigation, it returned products that did not have that option in stock. 
 
 
-<!--- 64959 -->* Grouped products are now included in Elasticsearch searches. 
-
-Grouped product is present in category. Previously, Grouped product is missing in category when using Elasticsearch as search engine. Category contains no products
+<!--- 64959 -->* Grouped products are now included in Elasticsearch searches.  Previously, Grouped products were missing from category results   when  Elasticsearch was used as the search engine. 
 
 
 
@@ -398,10 +363,10 @@ Grouped product is present in category. Previously, Grouped product is missing i
 
 
 
-<!--- 60762 -->* You can now change the End Time of an active update. 
+<!--- 60762 -->* You can now change the End time of an active update. 
 
 
-<!--- 66278 -->* The staging dashboard now loads without error when you sort by Status on the dashboard. Previously, the Staging dashboard broke and remained in an infinite loop when you attempted to sort by Status on the dashboard.
+<!--- 66278 -->* The staging dashboard now loads without error when you sort by status on the dashboard. Previously, the staging dashboard broke and remained in an infinite loop when you attempted to sort by Status on the dashboard.
 
 
 <!--- 61267 -->* The view/edit option for a scheduled change is now available for the duration that the scheduled change is in progress. Previously, this view/edit option was removed  while the scheduled change was still in progress, which left no way to edit  or remove it. 
@@ -410,7 +375,7 @@ Grouped product is present in category. Previously, Grouped product is missing i
 
 ### Tax
 
-<!--- 61131 -->* Magento now correctly calculates tax and order total when a discount is used. Previously, Magento calculated these values incorrectly when discount was used, and Catalog Prices were set to exclude tax. 
+<!--- 61131 -->* Magento now correctly calculates tax and order total when a discount is used. Previously, Magento calculated these values incorrectly when a discount was used, and Catalog Prices were set to exclude tax. 
 
 
 
