@@ -28,16 +28,16 @@ Looking for the <a href= "http://devdocs.magento.com/guides/v2.0/cloud/release-n
 
 Magento 2.1.8 contains over 100 functional fixes and enhancements.  Look for the following highlights in this release:
 
-* multiple enhancements to static content deployment and generation.
+* multiple enhancements to **static content deployment and generation**
 
-* improvements to Elasticsearch performance, indexing of large catalogs, and URL re-writes. 
+* improvements to **Elasticsearch performance**, indexing of large catalogs, and **URL re-writes**
 
-
+* **reduction in the amount of memory that mass actions require**, and improvements in their performance 
 
 
 ## What's new in these release notes?
 
-With this release, we're inaugurating a new feature of our release notes: Acknowledgements of the contributions that community members have made to this Magento code branch.
+With this release, we're inaugurating a new feature of our release notes: Descriptions of contributions that community members have made to the code that we are packaging in this release, and recognition of these contributing community members.
 
 
 ## Fixed issues and enhancements
@@ -335,7 +335,7 @@ layout for "Shipping and Tracking" block did work properly.
 
 <!--- 58042 -->* ElasticSearch no longer fails when more than 100 attributes are involved, or when user-defined price attributes are searchable.
 
-<!--- 65249 -->* Segmentation faults no longer occur when doing a `catalogsearch_fulltext` re-index, and indexing succeeds. Previously, in a large database (more than 70,000 products) the `catalogsearch_fulltext` (MySQL) re-index failed with a `Segmentation fault` message. [GitHub-7963](https://github.com/magento/magento2/issues/7963)
+<!--- 65249 -->* Segmentation faults no longer occur when doing a `catalogsearch_fulltext` re-index, and indexing succeeds. Previously, in a large database (more than 70,000 products), the `catalogsearch_fulltext` (MySQL) re-index failed with a `Segmentation fault` message. [GitHub-7963](https://github.com/magento/magento2/issues/7963)
 
 
 <!--- 53675 -->*  Sorting configurable products by price now works as expected when a simple product has a special price. [GitHub-4778](https://github.com/magento/magento2/issues/4778)
@@ -352,42 +352,42 @@ layout for "Shipping and Tracking" block did work properly.
 ### Shipping methods
 
 
-<!--- 59660 -->* Magento now displays the applicable flat rate USPS box methods during checkout. Previously, Magento displayed no methods. [GitHub-6798](https://github.com/magento/magento2/issues/6798)
+<!--- 59660 -->* Magento now displays the applicable flat-rate USPS box methods during checkout. Previously, Magento displayed no methods. [GitHub-6798](https://github.com/magento/magento2/issues/6798)
 
 
 
 ### Staging
 
 
-<!--- 60905 -->* Magento now displays the correct date and time for staging updates. Previously when you saved a new staging update, the scheduled time show was as an hour behind the specified time.
+<!--- 60905 -->* Magento now displays the correct date and time for staging updates. Previously, when you saved a new staging update, the scheduled time shown was as an hour later than the specified time.
 
 
 <!--- 61004 -->* You can now create a new scheduled update for a product. Previously. when you tried to create an update, Magento displayed this error:  `Uncaught TypeError: Failed to execute 'removeChild' on 'Node': parameter 1 is not of type 'Node'.`
 
 
 
-<!--- 60762 -->* You can now change the End time of an active update. 
+<!--- 60762 -->* You can now change the end time of an active update. 
 
 
-<!--- 66278 -->* The staging dashboard now loads without error when you sort by status on the dashboard. Previously, the staging dashboard broke and remained in an infinite loop when you attempted to sort by Status on the dashboard.
+<!--- 66278 -->* The staging dashboard now loads without error when you sort by status on the dashboard. Previously, the staging dashboard broke and remained in an infinite loop when you attempted to sort by status on the dashboard.
 
 
-<!--- 61267 -->* The view/edit option for a scheduled change is now available for the duration that the scheduled change is in progress. Previously, this view/edit option was removed  while the scheduled change was still in progress, which left no way to edit  or remove it. 
+<!--- 61267 -->* The view/edit option for a scheduled change is now available for the duration that the scheduled change is in progress. Previously, you could not view or edit a  scheduled change was it was in progress, which left no way to edit or remove it. 
 
 
 
 ### Tax
 
-<!--- 61131 -->* Magento now correctly calculates tax and order total when a discount is used. Previously, Magento calculated these values incorrectly when a discount was used, and Catalog Prices were set to exclude tax. 
+<!--- 61131 -->* Magento now correctly calculates tax and order totals when a discount is used. Previously, Magento calculated these values incorrectly when a discount was used, and catalog prices were set to exclude tax. 
 
 
 
 ### Web API
 
-<!--- 61907 -->* You can now use the REST API to successfully update customer information without unintentionally unsetting default billing and shipping address information. 
+<!--- 61907 -->* You can now use the REST API to successfully update customer information without unintentionally deleting default billing and shipping address information. 
 
 
-<!--- 61135 -->* You can now use the REST API to  add video to a product. [GitHub-7153](https://github.com/magento/magento2/issues/7153)
+<!--- 61135 -->* You can now use the REST API to  add video to a product description. [GitHub-7153](https://github.com/magento/magento2/issues/7153)
 
 
 
