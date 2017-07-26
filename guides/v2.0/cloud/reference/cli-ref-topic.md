@@ -2,9 +2,9 @@
 layout: default
 group: cli
 subgroup: 120_env
-title: Magento CLI reference
-menu_title: Magento CLI reference
-menu_order: 3
+title: Magento Cloud CLI
+menu_title: Magento Cloud CLI reference
+menu_order: 10
 menu_node:
 version: 2.0
 github_link: cloud/reference/cli-ref-topic.md
