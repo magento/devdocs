@@ -34,7 +34,7 @@ Filters-specific configuration:
     <td><code>chipsConfig</code></td>
     <td>Configuration passed to the <code>FiltersChips</code> component.</td>
     <td>Object</td>
-    <td>Configuration that is passed to the <a href="{{page.baseurl}}ui_comp_guide/components/listing/ui-filtersсhips.html">FiltersChips component</a>.</td>
+    <td>Configuration that is passed to the <a href="{{page.baseurl}}ui_comp_guide/components/ui-filterschips.html">FiltersChips component</a>.</td>
   </tr>
   <tr>
     <td><code>statefull</code></td>
@@ -61,4 +61,3 @@ Filters-specific configuration:
     <td>Contains definitions of the <code>text</code>, <code>select</code>,<code>dateRange</code> and <code>textRange</code> filter types.</td>
   </tr>
 </table>
-
