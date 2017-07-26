@@ -10,29 +10,39 @@ version: 2.2
 github_link: advanced-reporting/index.md
 ---
 
-Advanced reporting functionality is provided through integration of a Magento instance with the [Magento Business Intelligence] (MBI). Magento collects required data and sends them to the MBI. Where a Magento administrator can track advanced business reports. (**Magento Admin > Dashboard** the "Go to Advanced Reporting" button opens https://advancedreporting.rjmetrics.com/report with corresponding authorization).
+Advanced reporting functionality is provided through integration of a Magento instance with the [Magento Business Intelligence] (MBI).
+ Magento collects data and sends them to the MBI for analytics.
+ 
+ **Magento Admin > Dashboard > "Go to Advanced Reporting" button"** opens reports in  `https://advancedreporting.rjmetrics.com/report` with corresponding authorization.
  
 Learn more about:
 
-- Magento modules which implement the functionality 
-- Data collection configuration and settings
+- [Magento modules that implement the functionality][modules]
+- [Data collection configuration and settings][collection]
 
 ## Preconditions
 
-1. Уставновленный магазин с существующим доменным именем, работающий по хттпс.
-2. Сайт должен работать по хттпс и иметь действительный сертификат.
-3. Successful subscription
+1. A Magento store website with real domain name.
+2. The website works using HTTPS with valid certificate.
+3. Successful subscription to the Advanced reporting.
 
-для первой синхронизации данныз с мби может понадобиться до суток времени после успешной подписки.
+<div class="bs-callout bs-callout-info" markdown="1">
+First synchronization of a Magento instance and the MBI can take a day after successful subscription.
+</div>
 
 ## Extensibility
 
-Не рекомендуем расширять или изменять в этой версии.
+Though the Analytics module provides API, it is used specifically to interchange data with the MBI. We do not recommend to extend the advance reporting functionality in this version.
 
-## recommendations
+## Recommendations
 
-Во избежание непредвиденной нагрузки в прайм-тайм рекомендуем установить желаемое значение сбора данных
+To avoid system overload during its prime time, you can set the preferable time of a day for a data transfer.
+
+**Magento Admin > Stores > Settings > Configuration > General > Advanced Reporting**
+
 
 <!-- LINK DEFINITIONS -->
 
 [Magento Business Intelligence]: https://magento.com/products/business-intelligence
+[modules]: ./modules
+[collection]: ./data-collection
