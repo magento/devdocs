@@ -17,7 +17,7 @@ Advanced reporting functionality is implemented in the following Magento modules
   * enables subscription to the Magento Business Intelligence (MBI) and automatic re-subscription
   * changes the base URL with the same MBI account remained
   * declares the configuration schemas for [report data collection]
-  * collects the Magento instance data as [reports] for the MBI
+  * collects the Magento instance data as reports for the MBI
   * introduces API that provides the collected data
   * extends Magento configuration with the module parameters:
     * subscription status (enabled/disabled)
@@ -52,8 +52,7 @@ Advanced reporting functionality is implemented in the following Magento modules
 [SalesAnalytics]: {{page.baseurl}}mrg/ce/SalesAnalytics.html
 [WishlistAnalytics]: {{page.baseurl}}mrg/ce/WishlistAnalytics.html
 
-[data collection]: ./data-collection
-[reports]: ./report-xml
+[report data collection]: ./data-collection
 
 <!-- ABBREVIATIONS -->
 *[MBI]: Magento Business Analytics

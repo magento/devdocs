@@ -11,9 +11,9 @@ github_link: advanced-reporting/index.md
 ---
 
 Advanced reporting functionality is provided through integration of a Magento instance with the [Magento Business Intelligence] (MBI).
- Magento collects data and sends them to the MBI for analytics.
+Magento collects data and sends them to the MBI for analytics.
  
- **Magento Admin > Dashboard > "Go to Advanced Reporting" button"** opens reports in  `https://advancedreporting.rjmetrics.com/report` with corresponding authorization.
+**Magento Admin > Dashboard > "Go to Advanced Reporting" button"** opens reports in  `https://advancedreporting.rjmetrics.com/report` with corresponding authorization.
  
 Learn more about:
 
@@ -36,7 +36,7 @@ Though the Analytics module provides API, it is used specifically to interchange
 
 ## Recommendations
 
-To avoid system overload during its prime time, you can set the preferable time of a day for a data transfer.
+To avoid system overload during its prime time, you can set the preferable time of a day for a data collection.
 
 **Magento Admin > Stores > Settings > Configuration > General > Advanced Reporting**
 
