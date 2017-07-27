@@ -30,23 +30,24 @@ Fully access your Magento development and deployment through a UI console or CLI
 
 We deploy databases, web server, and caching servers across three environments for end-to-end testing while supporting continuous integration:
 
-* **Integration**: The ultimate developer environment providing up to eight active developer environments for an associated active Git branch. Actively develop, deploy, and test up to eight Git branches in this interactive environment. This environment is only accessible by your user accounts and is not public.
-* **Staging**: As code and extensions pass your tests, deploy the master Git branch to Staging for near-Production testing. Consider pulling your Production database into this environment for the best testing opportunity. This environment is only accessible by your user accounts and is not public.
-* **Production**: When code is ready, deploy the master Git branch into Production for your live store. The container includes a three node high-availability structure for your data, caching, and store. This is your live, public store environment.
+* **Integration**: The ultimate developer environment providing up to eight active developer environments for an associated active Git branch, database, environment variables, and configurations. Actively develop, deploy, and test up to eight Git branches in this interactive environment, one per active environment.
+* **Staging**: As code and extensions pass your tests, deploy the master Git branch to Staging for near-Production testing. Consider pulling your Production database into this environment for the best testing opportunity. This environment includes a database, environment variables, configurations, and Fastly for the pushed master branch of code.
+* **Production**: When code is ready, deploy the master Git branch into Production for your live store. The container includes a three node high-availability architecture for your data, caching, and store. This is your live, public store environment with environment variables, configurations, and Fastly.
 
 ### Details about the cloud {#details}
-* Every Magento Enterprise Cloud Edition plan includes eight _active_ environments for development and integration. Additional active environments are available at additional cost.
+* Every Magento Enterprise Cloud Edition plan includes eight _active_ environments for development and integration. Additional active environments are available at additional cost. Each active environment includes a database, environment variables, and configurations.
 * You have an unlimited number of *inactive* Git branches.
 * You can add fully managed services like MySQL, Elasticsearch, Redis, RabbitMQ, and so on, without requiring external add-ons.
 * We use a robust {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} build process.
 * You can increase the amount of memory and CPU as needed.
 
 ## Helpful terms {#terms}
-* **Active Environment**: An active environment is a fully accessible Git branch with a live development environment. You can access the Magento Admin and store to test as a merchant and customer.
+* **Active Environment**: An active environment is a fully accessible environment in the Integration enviornment. Each active environment provides a database, environment variables, routes, configurations, and one associated Git branch of code. You can access the Magento Admin and store to test as a merchant and customer for each of these environments, allowing you to develop custom code, add extensions, and integrate 3rd party systems in multiple environments for testing.
 * **Inactive Environment**: An inactive environment is a Git branch you either deleted from the Cloud Git repository or one that is not associated with the Cloud Git repository at all. For example, you might already have several Git branches with Magento code that you don't need to use for Magento Enterprise Cloud Edition. As long as you don't add those environments to the Cloud Git repo, they don't count against your total of eight active environments.
+* **Branch**: Magento Enterprise Cloud Edition is a Git driven code-base and environment. All code is written in branches, with a parent and child structure. These branches allow you to develop new features and modifications in multiple independant branches concurrently with other work, merging up into a parent branch.
 
 ## Where do I get started? {#getstarted}
-If you have experience with Magento 2 Enterprise Edition, we recommend reviewing content in these DevDocs to understand the differences between EE and ECE. If you are new to Magento and the Cloud, this guide introduces all aspects from getting started to going live and continuous deployments.
+If you have experience with Magento 2 Enterprise Edition, we recommend reviewing content in these DevDocs to understand the differences between EE and Enterprise Cloud Edition. If you are new to Magento and the Cloud, this guide introduces all aspects from getting started to going live and continuous integration deployments.
 
 We recommend the following starting points:
 

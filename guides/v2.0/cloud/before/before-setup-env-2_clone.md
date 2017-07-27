@@ -108,4 +108,4 @@ To set Admin variables:
 			magento-cloud snapshot:create -e master
 
 #### Next step
-[Step 3, Set up authentication keys]({{ page.baseurl }}cloud/before/before-setup-env-keys.html)
+[Set up authentication keys]({{ page.baseurl }}cloud/before/before-setup-env-keys.html)

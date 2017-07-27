@@ -40,7 +40,6 @@ For complete steps, see [Set up a project and dev workspace]({{ page.baseurl }}c
 
 #### Related topics
 *	[Set up a project and dev workspace]({{ page.baseurl }}cloud/before/before-workspace.html)
-* [Set up an account and project]({{ page.baseurl }}cloud/before/before-workspace-cloud-account.html)
 * [Install Magento prerequisites]({{ page.baseurl }}cloud/before/before-workspace-magento-prereqs.html)
 * [Enable SSH keys]({{ page.baseurl }}cloud/before/before-workspace-php.html)
 * [Set up the Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-ssh.html)

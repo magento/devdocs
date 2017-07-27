@@ -14,11 +14,25 @@ redirect from:
   -  /guides/v2.0/cloud/access-acct/set-up-env.html
   -  /guides/v2.1/cloud/access-acct/set-up-env.html
   -  /guides/v2.1/cloud/access-acct/set-up-env.html
+  - /guides/v2.0/cloud/access-acct/first-time-setup_template.html
+  - /guides/v2.1/cloud/access-acct/first-time-setup_template.html
+  - /guides/v2.2/cloud/access-acct/first-time-setup_template.html
 ---
 
 To develop, deploy, and test Magento Enterprise Cloud Edition and your custom code, extensions, and configurations, create a  project and setup your local workspace. The project is a Git repository with branches you develop and merge to the master for deployment across your cloud environments. A local workspace provides a system to clone branches from the master, develop code, and add extensions. This code is pushed for active testing in an Integration environment, merged to the master branch, then deployed to Staging and finally Production.
 
 This section walks through the steps for first time merchants with Magento, Magento SIs, and existing Mageneto merchants moving to the cloud. If you have already completed some of these steps, make sure to review the expected results to continue to the next. Some configurations and workflows differ for Magento Enterprise Cloud Edition than a typical Enterprise Edition installation.
+
+## Set up an account
+To begin working with a project and develop your store, you should have received an e-mail invitation to [create a Mangento Enterprise Cloud Edition account](https://accounts.magento.cloud){:target="_blank"}. The account provides access to your project for Magento development and deployment across all supported environments.
+
+You should receive an e-mail invitation to verify and access the project. If you don't see the invitation, check your junk e-mail folder. Click the **Verify my account** option in the email to verify and access your project account.
+
+When logged in, you should see a project named and ready to access.
+
+If the project name is **[UntitledProject]**, a Super User admin or the account owner needs to create the project. Only one of these users can create the project. For instructions, the project administrator or account owner should see [Create the Project]({{ page.baseurl }}cloud/before/cloud/before/before-project-owner.html#create-project)
+
+![Project owner needs to create the project]({{ site.baseurl }}common/images/cloud_project_new.png){:width="440px"}
 
 ## Magento specific tools
 When working on your local, you will be accessing the [Magento Cloud CLI]({{ page.baseurl }}cloud/reference/cli-ref-topic.html) for issuing commands and the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}. We recommend specific tools for issuing commands.
@@ -41,7 +55,6 @@ You need a fully set up Magento Enterprise Cloud Edition account to begin develo
 ## Get started
 You should be ready to go! The following sections provide a link to the previous step, instructions, and a link to the next step to start developing:
 
-* Set up the Magento Enterprise Cloud Edition account and initial project (generates your master branch)
 * Install all prerequisite software and tools on your local workspace
 * Install Magento Cloud CLI
 * Set up SSH keys
@@ -54,7 +67,7 @@ You should be ready to go! The following sections provide a link to the previous
 
 
 #### Next step
-[Set up an account and create a project]({{ page.baseurl }}cloud/before/before-workspace-cloud-account.html)
+[Install Magento prerequisites]({{ page.baseurl }}cloud/before/before-workspace-magento-prereqs.html)
 
 #### Related topics
 [Deployment process]({{ page.baseurl }}cloud/reference/discover-deploy.html)

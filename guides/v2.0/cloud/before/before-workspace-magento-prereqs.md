@@ -20,7 +20,7 @@ redirect_from:
 ---
 
 #### Previous step:
-[Set up an account and project]({{ page.baseurl }}cloud/before/before-workspace-cloud-account.html)
+[Set up a project and dev workspace]({{ page.baseurl }}cloud/before/before-workspace.html)
 
 Install the following software packages and tools on your local to prepare for Magento code development. If you already have these packages installed, check for any recommendations or notes and continue to the next step.
 
@@ -188,4 +188,4 @@ To install the Magento Enterprise Cloud Edition CLI:
 You can also install [optional software]({{ page.baseurl }}install-gde/prereq/optional.html) as well.
 
 #### Next step
-[Enable SSH keys]({{ page.baseurl }}cloud/before/before-workspace-php.html)
+[Enable SSH keys]({{ page.baseurl }}cloud/before/before-workspace-ssh.html)

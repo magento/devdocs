@@ -102,12 +102,7 @@ Optionally, if you used Vagrant with the hostmanager plugin, update the hosts fi
 1. Access the localdev root for the Vagrant box.
 2. Enter the command `vagrant hostmanager` to update the hosts file.
 
-## Locate the Magento store URI
-To get the URI for the Magento store, enter this command:
-
-	php bin/magento info:adminuri
-
-## Set file system permissions and ownership
+## Set file system permissions and ownership {#file-system-permissions}
 After you have installed Magento, you need to set the file system permissions and ownership.
 
 1.  Log in to your Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html).
@@ -129,16 +124,22 @@ For Integration development, you may also want to install additional tools, soft
 * [RabbitMQ]({{ page.baseurl }}cloud/project/project-conf-files_services-rabbit.html)
 * [Additional software]({{ page.baseurl }}install-gde/prereq/optional.html) for Magento
 
-## Local workspace completed
+## Verify your local workspace
+To verify the local, access the store using the URL you passed in the install command. For this example, the local Magento store should load using http://magento.local/. The Admin panel should open using http://magento.local/admin. If you change the URI for the Admin panel, use this command to locate it:
+
+	php bin/magento info:adminuri
+
+We recommend fully deploying this base Magento template across to Staging and Production. For details, see [Deployment workflow]({{ page.baseurl }}cloud/before/before-setup-env-perms.html). You should deploy prior to branching and developing to get an understanding of deploying Magento Enterprise Cloud Edition.
+
+When you are ready, start developing in your initial code branch. You can have up to 8 active branches including the Master.
+
 With these steps completed, you should have:
-* Magento Enterprise Cloud Edition account and initial project setup
+* Magento Enterprise Cloud Edition account and initial project setup and master branch
 * A local workspace configured with installations of required software, Magento Cloud CLI, and Magento
 * SSH keys set up
 * The Magento file system owner configured
-* A branch for your code
-* Magento authentication keys set up
-
-Begin developing and testing in your branch.
+* Your initial code branch
+* Magento authentication keys set up and configured in the project and local
 
 #### Related topics
 [Deployment workflow]({{ page.baseurl }}cloud/before/before-setup-env-perms.html)

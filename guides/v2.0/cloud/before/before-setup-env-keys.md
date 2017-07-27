@@ -19,7 +19,7 @@ Add authentication keys to the project to ensure you don't need to store the key
 Developers who need to update Magento dependencies or to install {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} also need to add authentication keys locally. You will add keys locally after your branch from the master. Those instructions are included in a [later step]({{ page.baseurl }}cloud/before/before-setup-env-env.html).
 
 ## Add authentication keys to the project
-_Only a [project administrator]({{ page.baseurl }}cloud/project/user-admin.html#cloud-role-project) can perform this task._ The project administrator must have the public and private authentication keys for Magento Enterprise Cloud Edition.
+_Only a [project administrator]({{ page.baseurl }}cloud/project/user-admin.html#cloud-role-project) with Super User access can perform this task._ The project administrator must have the public and private authentication keys for Magento Enterprise Cloud Edition.
 
 Contact your Magento Enterprise Cloud Edition account owner to get the keys for these instructions.
 
