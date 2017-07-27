@@ -39,6 +39,8 @@ Do not start Magento 2 cron jobs.
 
 *	To provide redundancy in the event of unexpected issues, we advise you to replicate your Magento 1 database.
 
+* We do not recommend creating new entities (products, categories, attributes, etc.) in your Magento 2 store before migration because the Data Migration Tool overwrites such new entities with the old ones from Magento 1.
+
 ## Extensions
 
 Migrate Magento 1 extension code to Magento 2.

@@ -55,9 +55,9 @@ In such migration testing, follow these steps:
 
 3. We recommend to stop all Magento 1.x cron jobs.
 
-   Still, if some jobs are required to run during migration, make sure they do not create new database entities or change the existing ones --- those which cannot be processed by the Delta mode because it does not "recognize" them.
+   Still, if some jobs are required to run during migration, make sure they do not create new database entities or change the existing ones in the way that such entities cannot be processed by the Delta mode.
 
-   For example: the `enterprise_salesarchive_archive_orders` cron job moves old orders to archive. The Delta mode "knows" this job, so running it during migration is safe.
+   For example: the `enterprise_salesarchive_archive_orders` cron job moves old orders to archive. Running this job during migration is safe because the Delta mode takes the job into account and thus properly processes the archived orders.
 
 {:start="4"}
 4. Use the Data Migration Tool to migrate settings and websites.
@@ -76,7 +76,7 @@ In such migration testing, follow these steps:
 
 ## Step 5: Make changes to the migrated data (if needed)
 
-Sometimes you may want to have your Magento 2 store with different directory structure, sales rules, CMS pages, etc. after migration.
+Sometimes you may want to have your Magento 2 store with different catalog structure, sales rules, CMS pages, etc. after migration.
 
 You need to be carfull because after such changes the next migration step (Incremental data update) might not work properly.
 
@@ -96,7 +96,7 @@ In case of such issues, press `Ctrl+C` to stop incremental migration and start i
   <p>Volume check warnings may appear in case you conduct testing of your Magento 2 site and run migration process at the same time. It happens because in Magento 2 you create entities that do not exist in Magento 1 instance.</p>
 </div>
 
-## Step 6: Go live
+## Step 7: Go live
 
 Now that your Magento 2 site is up-to-date with Magento 1 and is functioning normally, do the following to cut over to the new site:
 
