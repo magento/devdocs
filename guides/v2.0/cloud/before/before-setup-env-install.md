@@ -129,9 +129,9 @@ To verify the local, access the store using the URL you passed in the install co
 
 	php bin/magento info:adminuri
 
-We recommend fully deploying this base Magento template across to Staging and Production. For details, see [Deployment workflow]({{ page.baseurl }}cloud/before/before-setup-env-perms.html). You should deploy prior to branching and developing to get an understanding of deploying Magento Enterprise Cloud Edition.
+To verify the Integration master branch environment, log into the Project Web Interface and select your named project. In the list of branches, select the Master. Click Access site to pull up a list of URLs (HTTP and HTTPS) and click the preferred link to open the site. To view the admin, add /admin or other configured Admin URI.
 
-When you are ready, start developing in your initial code branch. You can have up to 8 active branches including the Master.
+![Click Access for list of URLs]({{ site.baseurl }}common/images/cloud-project-master-access.png){:width="297px"}
 
 With these steps completed, you should have:
 * Magento Enterprise Cloud Edition account and initial project setup and master branch
@@ -140,6 +140,11 @@ With these steps completed, you should have:
 * The Magento file system owner configured
 * Your initial code branch
 * Magento authentication keys set up and configured in the project and local
+
+## Next steps
+We recommend fully deploying this base Magento template across to Staging and Production. For details, see [Deployment workflow]({{ page.baseurl }}cloud/before/before-setup-env-perms.html). You should deploy prior to branching and developing to get an understanding of deploying Magento Enterprise Cloud Edition.
+
+When you are ready, start developing in your initial code branch. You can have up to 8 active branches including the Master.
 
 #### Related topics
 [Deployment workflow]({{ page.baseurl }}cloud/before/before-setup-env-perms.html)

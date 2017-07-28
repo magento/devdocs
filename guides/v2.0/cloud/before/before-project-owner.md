@@ -98,11 +98,11 @@ To create user accounts:
 
 	The page displays as follows.
 
-	![]({{ site.baseurl }}common/images/cloud_project-add-superuser.png){:width="500px"}
+	![Create the account]({{ site.baseurl }}common/images/cloud_project-add-superuser.png){:width="500px"}
 7.	Enter the user's e-mail address.
 8.	Select the access for the account:
 
-	*	For a project administrator account, select the **Super User** check box. This provides Admin rights for all settings and environments, including creating the project. If not selected, the account has only view options for all environments on a project.
+	*	For a project administrator account, select the **Super User** check box. This provides Admin rights for all settings and environments, including creating the project. If not selected, the account has only view options for all environments on a project and requires branch specific permissions.
 	*	Select permissions per specific environment (or branch) in the Integration environment: No access, Admin (change settings, execute action, merge code), Contributor (push code), or Reader (view only). As you add active environments, you can modify permissions per user.
 8.	Click **Add User**.
 

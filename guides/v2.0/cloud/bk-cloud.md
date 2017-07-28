@@ -20,10 +20,10 @@ redirect_from:
 
 ![This guide applies to Enterprise Cloud Edition only]({{ site.baseurl }}common/images/ee-only_large.png)
 
-Magento Enterprise Cloud Edition (ECE) is a managed and automated high-availability hosting platform for
-Magento. ECE combines Magento Enterprise and the Cloud with a few differences and added features, including Git integration and three key environments for development and live production.
+Magento Enterprise Cloud Edition is a managed and automated high-availability hosting platform for
+Magento. Enterprise Cloud Edition combines Magento Enterprise and the Cloud with a few differences and added features, including Git integration and three key environments for development and live production.
 
-You code, and we automatically put everything into production.
+Code, test, and deploy across development, staging, and finally production environment for continuous integration of your store.
 
 ## Direct access to your environments {#environments}
 Fully access your Magento development and deployment through a UI console or CLI. Your servers are within reach from development to production in the Amazon Web Services (AWS) cloud.
@@ -45,19 +45,23 @@ We deploy databases, web server, and caching servers across three environments f
 * **Active Environment**: An active environment is a fully accessible environment in the Integration enviornment. Each active environment provides a database, environment variables, routes, configurations, and one associated Git branch of code. You can access the Magento Admin and store to test as a merchant and customer for each of these environments, allowing you to develop custom code, add extensions, and integrate 3rd party systems in multiple environments for testing.
 * **Inactive Environment**: An inactive environment is a Git branch you either deleted from the Cloud Git repository or one that is not associated with the Cloud Git repository at all. For example, you might already have several Git branches with Magento code that you don't need to use for Magento Enterprise Cloud Edition. As long as you don't add those environments to the Cloud Git repo, they don't count against your total of eight active environments.
 * **Branch**: Magento Enterprise Cloud Edition is a Git driven code-base and environment. All code is written in branches, with a parent and child structure. These branches allow you to develop new features and modifications in multiple independant branches concurrently with other work, merging up into a parent branch.
+* **Local**: Your local is a workspace for developing Magento code including added extensions and 3rd party integrations. The local is typically a Virtual Machine (VM) with an entire environment of software, packages, database, web server, and more prerequisites to support an installed Magento and cloned Git branches. We provide full details on how to [set up your local for Magento development]({{ page.baseurl }}cloud/before/before-workspace.html).
+* **Project Web Interface**: The Web Interface is a [console for accessing your project](https://accounts.magento.cloud){:target="_blank"}, user accounts, and your Integration enviornment. You can modify environment settings, environment variables, routes, and manage environments. Links (store URL, SSH, Git) are provided for the eight active environments through the active Git branches.
 
 ## Where do I get started? {#getstarted}
 If you have experience with Magento 2 Enterprise Edition, we recommend reviewing content in these DevDocs to understand the differences between EE and Enterprise Cloud Edition. If you are new to Magento and the Cloud, this guide introduces all aspects from getting started to going live and continuous integration deployments.
 
+<div class="bs-callout bs-callout-warning" markdown="1">
+If you are the account owner, you should complete these tasks to give your technical staff and solution experts access: [Account owner tasks]({{ site.baseurl }}cloud/before/before-project-owner.html).
+</div>
+
 We recommend the following starting points:
 
 *	[Magento Enterprise Cloud Edition requirements]({{page.baseurl}}cloud/requirements/cloud-requirements.html)
-*	[Architecture]({{page.baseurl}}cloud/reference/discover-arch.html)
+*	[Cloud Architecture]({{page.baseurl}}cloud/reference/discover-arch.html)
 *	[Develop and Deploy Workflow]({{page.baseurl}}cloud/welcome/discover-workflow.html)
 *	[Deployment process]({{page.baseurl}}cloud/reference/discover-deploy.html)
-* [Set up a project and dev workspace]({{ page.baseurl }}cloud/before/before-workspace.html) (dev local, branch code, and install Magento)
-
-If you are the account owner, you should complete these tasks to give your technical staff and solution experts access: [Account owner tasks]({{ site.baseurl }}cloud/before/before-project-owner.html).
+* [Set up a project and dev workspace]({{page.baseurl}}cloud/before/before-workspace.html)
 
 ## Magento 2 resources
 If you would like to learn more about Magento 2, see the following resources:
@@ -69,18 +73,19 @@ If you would like to learn more about Magento 2, see the following resources:
 	*	[Magento 2.1.x](http://docs.magento.com/m2/ee/user_guide/getting-started.html?_ga=1.169393634.291740079.1474814112){:target="_blank"}
 *	Developer documentation
 
-	*	[Front end development]({{ page.baseurl}}frontend-dev-guide/bk-frontend-dev-guide.html)
-	*	[Customizing the Magento software]({{ page.baseurl}}extension-dev-guide/bk-extension-dev-guide.html)
-	*	[Installation]({{ page.baseurl}}install-gde/bk-install-guide.html), though we recommend following [Set up a project and dev workspace]({{ page.baseurl }}cloud/before/before-workspace.html)
-	*	[Configuration]({{ page.baseurl}}config-guide/bk-config-guide.html)
+	*	[Magento 2 Architecture guide]({{page.baseurl}}architecture/bk-architecture.html){:target="_blank"}
+  *	[Front end development]({{page.baseurl}}frontend-dev-guide/bk-frontend-dev-guide.html){:target="_blank"}
+	*	[Customizing the Magento software]({{page.baseurl}}extension-dev-guide/bk-extension-dev-guide.html){:target="_blank"}
+	*	[Installation]({{page.baseurl}}install-gde/bk-install-guide.html), though we recommend following [Set up a project and dev workspace]({{page.baseurl}}cloud/before/before-workspace.html){:target="_blank"}
+	*	[Configuration]({{page.baseurl}}config-guide/bk-config-guide.html){:target="_blank"}
 
 ## Technical support
-You can enter a support ticket through the Project console:
+You can enter a support ticket through the Project Web Interface:
 
 1.	Log in to your [Magento Cloud account](https://accounts.magento.cloud/){:target="_blank"}.
 2.	Click **Support** > **Submit ticket** from the top menu.
 
 	The following figure shows an example.
 
-	![]({{ site.baseurl }}common/images/cloud_support-ticket.png){:width="600px"}
-3.	Follow the prompts to open an issue with Support.
+	![Enter a support ticket]({{ site.baseurl }}common/images/cloud_support-ticket.png){:width="600px"}
+3.	Follow the prompts to open an issue with Support. Support will respond to your ticket in a timely manner.

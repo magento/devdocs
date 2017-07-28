@@ -24,71 +24,47 @@ redirect_from:
 
 Install the following software packages and tools on your local to prepare for Magento code development. If you already have these packages installed, check for any recommendations or notes and continue to the next step.
 
+To begin, install and set up a VM on your host computer (Windows, Mac OS, Linux-based system). A VM gives you an environment to install a different Operating System, tools, software, a database, and Magento without requiring a customized system. You only need to install the VM software on your host. All other software can be installed and configured on your VM.
+
+When you install and configure software on your local (or VM), you will first SSH into the VM and then complete installations. Follow the SSH instructions and commands for the VM software you install. For example, you would install PHP, nginx, and database on the VM via SSH.
+
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 Magento documentation provides installation instructions for installing software on CentOS or Ubuntu only. For installation information on Windows or MacOS, consult a community resource.
 </div>
 
-## Set up your Host
-To begin, install and set up a VM on your host computer. A VM gives you an environment to install a different Operating System, tools, software, a database, and Magento without requiring a customized system. You only need to install the VM software on your host. All other software can be installed and configured on your VM.
-
-### Virtual machine {#vm}
+## Virtual machine or container(host) {#vm}
 To best develop and manage your host, we recommend using a virtual machine. The VM encapsulates your code, web services, testing and supports a Unix-based environment. Select a virtual system you prefer.
 
-For examples in this documentation, we use [Vagrant](https://www.vagrantup.com/) and [VirtualBox](https://www.virtualbox.org). Vagrant provides a single workflow for managing VMs, helps setup developer environments quickly, and isolates dependencies through one consistent environment. VirtualBox manages the environment.
+For your VM, we recommend installing one of the following:
 
-Another option commonly used is [Docker](https://www.docker.com/), which uses containers instead of virtualization.
+* [Vagrant](https://www.vagrantup.com/docs/){:target="_blank"} for a virtual machine
+* [Docker](https://docs.docker.com/){:target="_blank"} for a container
 
-#### Vagrant {#vagrant}
-To download and install [Vagrant](https://www.vagrantup.com/downloads.html):
-
-1. (optional) Install the Vagrant hostmanager plugin. we also recommend the package [hostmanager](https://github.com/devopsgroup-io/vagrant-hostmanager).
-		vagrant plugin install vagrant-hostmanager
-
-2. Install Vagrant. For example, these commands install Vagrant with specific OS versions:
-
-	<ul><li>Ubuntu 12.04 LTS 64-bit: `vagrant init hashicorp/precise64`</li>
-	<li>Ubuntu 16.04.2 LTS 64-bit: `vagrant init ubuntu/xenial64`</li></ul>
-
-3. You may want to create a Vagrant directory for the local environment. For example:
-		mkdir ~/localdev && cd ~/localdev
-
-4. Install a box based on the OS. This command installs an Ubuntu box:
-		vagrant init ubuntu/xenial64
-
-5. And start the VM:
-		vagrant up
-
-6. If you installed hostmanager, update the hosts file on the active machines:
-		vagrant hostmanager
-
-#### VirtualBox {#virtualbox}
-[VirtualBox](https://www.virtualbox.org/wiki/Downloads) extends support and features across all OS and platforms to create and manage multiple VMs and operating systems on your local.
-
-Select and download a preferred Unix-based OS for your virtual system, such as Debian, CentOS, or Ubuntu. For examples in this documentation, we use Ubuntu. Run the installation to complete. You don't need to make additional configurations to run and manage VMs.
+When using Vagrant, we also recommend the package [hostmanager](https://github.com/devopsgroup-io/vagrant-hostmanager){:target="_blank"} and using [VirtualBox](https://www.virtualbox.org/wiki/Documentation){:target="_blank"} to manage the environment. VirtualBox extends support and features across all OS and platforms to create and manage multiple VMs and operating systems on your local.
 
 ## Development tools {#devtools}
-* [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git){:target="_blank"} - Provides code branching and management for accessing Magento Enterprise Cloud Edition and your code respositories. Use Git command-line commands or applications of your choice to work with Git.
+* [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git){:target="_blank"} - Provides code branching and management for accessing Magento Enterprise Cloud Edition and your code respositories. Use Git command-line commands or applications of your choice to work with Git. You can install this on your local VM or on your host.
 	For more information, see [How Cloud uses Git]({{ page.baseurl }}cloud/reference/git-integration.html).
-* [Composer](https://getcomposer.org/download/) - Used for dependency management. Composer enables us to manage the Magento components and their dependencies.
+* [Composer](https://getcomposer.org/download/){:target="_blank"} - Used for dependency management. Composer enables us to manage the Magento components and their dependencies. Install on your local VM.
 	For more information, see [How Cloud uses Composer]({{ page.baseurl }}cloud/reference/cloud-composer.html).
 
-## PHP {#php}
-Install {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} on your local. We recommend PHP 7.0. For information on installing PHP, see these instructions for [CentOS]({{ page.baseurl }}install-gde/prereq/php-centos.html) and [Ubuntu]({{ page.baseurl }}install-gde/prereq/php-ubuntu.html). For instructions for another OS, see the [PHP documentation](http://php.net/manual/en/install.php).
+## PHP (local) {#php}
+Install {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} on your local. We recommend PHP 7.0. For information on installing PHP, see these instructions for [CentOS]({{ page.baseurl }}install-gde/prereq/php-centos.html) and [Ubuntu]({{ page.baseurl }}install-gde/prereq/php-ubuntu.html). For instructions for another OS, see the [PHP documentation](http://php.net/manual/en/install.php){:target="_blank"}.
 
 The following packages may also be helpful for your PHP installation:
 
-* [bcmath](http://php.net/manual/en/book.bc.php)
-* [curl](http://php.net/manual/en/book.curl.php)
+* [bcmath](http://php.net/manual/en/book.bc.php){:target="_blank"}
+* [curl](http://php.net/manual/en/book.curl.php){:target="_blank"}
 * ext-dom
-* [fpm](https://php-fpm.org/)
-* [gd](http://php.net/manual/en/book.image.php)
-* [intl](http://php.net/manual/en/book.intl.php)
-* [json](http://php.net/manual/en/ref.json.php)
-* [mbstring](http://php.net/manual/en/book.mbstring.php)
-* [mcrypt](http://php.net/manual/en/book.mcrypt.php)
-* [mysql](http://php.net/manual/en/set.mysqlinfo.php)
-* [xml](http://php.net/manual/en/book.xml.php)
-* [zip](http://php.net/manual/en/book.zip.php)
+* [fpm](https://php-fpm.org/){:target="_blank"}
+* [gd](http://php.net/manual/en/book.image.php){:target="_blank"}
+* [intl](http://php.net/manual/en/book.intl.php){:target="_blank"}
+* [json](http://php.net/manual/en/ref.json.php){:target="_blank"}
+* [mbstring](http://php.net/manual/en/book.mbstring.php){:target="_blank"}
+* [mcrypt](http://php.net/manual/en/book.mcrypt.php){:target="_blank"}
+* [mysql](http://php.net/manual/en/set.mysqlinfo.php){:target="_blank"}
+* [xml](http://php.net/manual/en/book.xml.php){:target="_blank"}
+* [zip](http://php.net/manual/en/book.zip.php){:target="_blank"}
 
 ### Set up PHP memory limit {#cloud-first-php}
 When you're working with the Magento Cloud CLI, local environment settings come from the machine on which you're working, not from Magento Enterprise Cloud Edition. For example, certain actions (like debugging) require a larger PHP `memory_limit` than most PHP distributions provide by default.
@@ -112,11 +88,11 @@ Before working with your Magento Enterprise Cloud Edition project, make sure you
 		*	Ubuntu: `service apache2 restart`
 	*	nginx: `service nginx restart`
 
-## Web server {#webserver}
-We support installations of [Apache]({{ page.baseurl }}install-gde/prereq/apache.html) and [nginx](https://nginx.org/) for your web server. We do not provide documentation for an installation and configuration of nginx at this time. Please review the [nginx Wiki](https://www.nginx.com/resources/wiki/) for further instructions.
+## Web server (local) {#webserver}
+We support installations of [Apache]({{ page.baseurl }}install-gde/prereq/apache.html) and [nginx](https://nginx.org/){:target="_blank"} for your web server. We do not provide documentation for an installation and configuration of nginx at this time. Please review the [nginx Wiki](https://www.nginx.com/resources/wiki/) for further instructions.
 
-## Database {#database}
-You have multiple options for databases to use for your local. We recommend [MySQL]({{ page.baseurl }}install-gde/prereq/mysql.html). Regardless of database, you need to modify the `auto_increment_increment` value. The Magento Enterprise Cloud Edition environments use [Mariadb](https://mariadb.org/), with a [Galara Cluster](http://galeracluster.com/) with triple reducency in the Production environment.
+## Database (local) {#database}
+You have multiple options for databases to use for your local. One database option you may want to consider is MariaDB. The Magento Enterprise Cloud Edition environments use [Mariadb](https://mariadb.org/){:target="_blank"}, with a [Galara Cluster](http://galeracluster.com/){:target="_blank"} with triple reducency in the Production environment. Regardless of database, you need to modify the `auto_increment_increment` value.
 
 ### Set up the auto-increment {#cloud-mysql}
 The MySQL configuration parameter [`auto_increment_increment`](http://dev.mysql.com/doc/refman/5.6/en/server-system-variables.html){:target="_blank"} is set to `1` by default in a local MySQL installation. You need to change this value to `3`.  The Magento Enterprise Cloud Edition database cluster includes 3 database implementations. The increment ensures data is unique across all databases for consistant data in the High Availability structure.
@@ -151,8 +127,8 @@ If necessary, set `auto_increment_increment` to 3:
 
 			service mysqld restart
 
-## Magento Cloud CLI {#cloud-ssh-cli-cli-install}
-The Magento Enterprise Cloud Edition command-line interface (CLI) tool helps you manage your projects and code branches on Magento Enterprise Cloud Edition. For a list of available commands, see [Common Magento CLI commands]({{ page.baseurl }}cloud/env/environments-start.html).
+## Magento Cloud CLI (local) {#cloud-ssh-cli-cli-install}
+The Magento Enterprise Cloud Edition command-line interface (CLI) tool helps you manage your projects and code branches on Magento Enterprise Cloud Edition. For a list of available commands, see [Common Magento CLI commands]({{ page.baseurl }}cloud/reference/cli-ref-topic.html).
 
 These instructions discuss installation using commands for a Unix environment. For Windows, we recommend using [Cygwin](https://www.cygwin.com/){:target="_blank"} or Git Bash.
 
@@ -160,7 +136,7 @@ To install the Magento Enterprise Cloud Edition CLI:
 
 1.	Log in to your local development machine, or switch to, the [Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html).
 
-2.	Change to a directory to which the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %} has write access (for example, the web server docroot).
+2.	Change to a directory to which the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %} has write access, such as the home directory.
 
 3.	Enter the following command:
 
@@ -185,7 +161,7 @@ To install the Magento Enterprise Cloud Edition CLI:
 			magento-cloud list
 
 ## Additional options
-You can also install [optional software]({{ page.baseurl }}install-gde/prereq/optional.html) as well.
+You can also install [optional software]({{ page.baseurl }}install-gde/prereq/optional.html) as well. These packages should be installed on the local VM.
 
 #### Next step
 [Enable SSH keys]({{ page.baseurl }}cloud/before/before-workspace-ssh.html)

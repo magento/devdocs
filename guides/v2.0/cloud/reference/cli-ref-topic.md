@@ -1,6 +1,6 @@
 ---
 layout: default
-group: cli
+group: cloud
 subgroup: 120_env
 title: Magento Cloud CLI
 menu_title: Magento Cloud CLI reference

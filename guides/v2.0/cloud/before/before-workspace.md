@@ -30,14 +30,14 @@ You should receive an e-mail invitation to verify and access the project. If you
 
 When logged in, you should see a project named and ready to access.
 
-If the project name is **[UntitledProject]**, a Super User admin or the account owner needs to create the project. Only one of these users can create the project. For instructions, the project administrator or account owner should see [Create the Project]({{ page.baseurl }}cloud/before/cloud/before/before-project-owner.html#create-project)
+If the project name is **[UntitledProject]**, a Super User admin or the account owner needs to create the project. Only one of these users can create the project. For instructions, the project administrator or account owner should see [Create the Project]({{ page.baseurl }}cloud/before/cloud/before/before-project-owner.html#create-project).
 
 ![Project owner needs to create the project]({{ site.baseurl }}common/images/cloud_project_new.png){:width="440px"}
 
 ## Magento specific tools
 When working on your local, you will be accessing the [Magento Cloud CLI]({{ page.baseurl }}cloud/reference/cli-ref-topic.html) for issuing commands and the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %}. We recommend specific tools for issuing commands.
 
-You need to set up the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %} on your local so files and directories you created are owned by that user. For an overview of the file system owner, see [Overview of ownership and permissions]({{ page.baseurl }}install-gde/prereq/file-sys-perms-over.html)
+You need to set up the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %} on your local so files and directories you created are owned by that user. For an overview of the file system owner, see [Overview of ownership and permissions]({{ page.baseurl }}install-gde/prereq/file-sys-perms-over.html).
 
 ## Recommended tools
 This guide assumes you're working on a UNIX system or in a UNIX shell environment. Feel free to use any CLI tools of choice for issuing commands. For Windows users, we recommend a UNIX environment like [Cygwin](https://www.cygwin.com/){:target="_blank"}, [Putty](http://www.putty.org/), or Git Bash.
@@ -50,12 +50,12 @@ Developing code for Magento Enterprise Cloud Edition requires working in Git bra
 You need a fully set up Magento Enterprise Cloud Edition account to begin developing and launch your store on the Magento cloud. Have the following prepared to complete your initial workspace and project setup:
 
  * Magento Enterprise Cloud Edition account with an added user account (no need to have a project created yet)
- * Magento authentication keys
+ * Magento authentication keys from Magento Marketplace
 
 ## Get started
 You should be ready to go! The following sections provide a link to the previous step, instructions, and a link to the next step to start developing:
 
-* Install all prerequisite software and tools on your local workspace
+* Install all prerequisite software and tools on your host system (laptop, desktop, etc) and local workspace (VM)
 * Install Magento Cloud CLI
 * Set up SSH keys
 * Configure the Magento file system owner
