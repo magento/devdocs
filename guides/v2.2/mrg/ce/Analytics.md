@@ -7,6 +7,7 @@ menu_title: Analytics
 menu_order: 1
 version: 2.2
 github_link: mrg/ce/Analytics.md
+redirect_from: /guides/v2.2/mrg/ce/Analytics/description.html
 ---
 
 <div class="mrg-content" markdown="1">

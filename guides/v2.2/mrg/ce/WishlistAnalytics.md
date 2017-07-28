@@ -7,6 +7,7 @@ menu_title: WishlistAnalytics
 menu_order: 11
 version: 2.2
 github_link: mrg/ce/WishlistAnalytics.md
+redirect_from: /guides/v2.2/mrg/ce/WishlistAnalytics/description.html
 ---
 
 <div class="mrg-content" markdown="1">
