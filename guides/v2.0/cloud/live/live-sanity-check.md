@@ -2,17 +2,17 @@
 layout: default
 group: cloud
 subgroup: 160_live
-title: Build and deploy before pushing to staging or production
-menu_title: Build and deploy before pushing to staging or production
+title: Build and deploy on local
+menu_title: Build and deploy on local
 menu_order: 90
 menu_node:
 version: 2.0
 github_link: cloud/live/live-sanity-check.md
 ---
 
-You should complete development, prepare and push code, with a full build and deploy locally for an [Integration environment]({{ page.baseurl}}cloud/reference/discover-arch.html#cloud-arch-int) prior to fully deploying and testing to [Staging]({{ page.baseurl}}cloud/reference/discover-arch.html#cloud-arch-stage}}) then [Production]({{ page.baseurl}}cloud/reference/discover-arch.html#cloud-arch-prod}}). As detailed in the [Deployment process]({{ page.baseurl }}cloud/reference/discover-deploy.html), building and deployment is a five-phase process.
+You should complete development, prepare and push code, with a full build and deploy process on your local for an active [Integration environment]({{ page.baseurl}}cloud/reference/discover-arch.html#cloud-arch-int) before fully deploying and testing to [Staging]({{ page.baseurl}}cloud/reference/discover-arch.html#cloud-arch-stage}}) then [Production]({{ page.baseurl}}cloud/reference/discover-arch.html#cloud-arch-prod}}). For more information on the full five step process, see the [Deployment process]({{ page.baseurl }}cloud/reference/discover-deploy.html).
 
-These tasks walk through building and deploying locally, allowing you to test the process and expose any issues early for debugging. Fully testing builds and deploys along with full site testing can reduce the risk of issues or delays in final deploys and tests of your site.
+These tasks walk through building and deploying on your local, allowing you to test the process and expose any issues early for debugging. Fully testing builds and deploys along with full site testing can reduce the risk of issues or delays in final deploys and tests of your site.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
 We recommend completing your testing in an Integration active environment and the Staging environment. Only complete final tests for going live in the Production environment. Your Staging environment is best for testing with code, data, and services including Fastly, New Relic, and others. To complete heavy testing, you should deploy all code from Integration Master branch and data from Production to Staging. </div>
