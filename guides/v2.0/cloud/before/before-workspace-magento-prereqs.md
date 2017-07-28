@@ -92,14 +92,39 @@ Before working with your Magento Enterprise Cloud Edition project, make sure you
 We support installations of [Apache]({{ page.baseurl }}install-gde/prereq/apache.html) and [nginx](https://nginx.org/){:target="_blank"} for your web server. We do not provide documentation for an installation and configuration of nginx at this time. Please review the [nginx Wiki](https://www.nginx.com/resources/wiki/) for further instructions.
 
 ## Database (local) {#database}
-You have multiple options for databases to use for your local. One database option you may want to consider is MariaDB. The Magento Enterprise Cloud Edition environments use [Mariadb](https://mariadb.org/){:target="_blank"}, with a [Galara Cluster](http://galeracluster.com/){:target="_blank"} with triple reducency in the Production environment. Regardless of database, you need to modify the `auto_increment_increment` value.
-
-### Set up the auto-increment {#cloud-mysql}
-The MySQL configuration parameter [`auto_increment_increment`](http://dev.mysql.com/doc/refman/5.6/en/server-system-variables.html){:target="_blank"} is set to `1` by default in a local MySQL installation. You need to change this value to `3`.  The Magento Enterprise Cloud Edition database cluster includes 3 database implementations. The increment ensures data is unique across all databases for consistant data in the High Availability structure.
+You have multiple options for databases to use for your local. One database option you may want to consider is MariaDB. The Magento Enterprise Cloud Edition environments use [MariaDB](https://mariadb.org/){:target="_blank"}, with a [Galara Cluster](http://galeracluster.com/){:target="_blank"} with triple reducency in the Production environment. Regardless of database, you need to modify the `auto_increment_increment` value.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-Do not develop using hard-coded database IDs in your development. Due to the incremented data IDs, the referenced data will differ across the three nodes in Production.
+The Production environment in the 3 node infrastructure uses auto-incrementing by 3 for all data IDs. Do not develop using hard-coded database IDs in your development. Due to the incremented data IDs, the referenced data will differ across the three nodes in Production.
 </div>
+
+These example instructions detail how to install and create a MariaDB database for Magento:
+
+1. Use this command to create the database:
+
+    apt-get install mariadb-server
+2. Secure the database with the following command and completing all prompts:
+
+    mysql_secure_installation
+3. Access the MariaDB database.
+4. Grant all priviledges to the Magento account you created for the local:
+
+    grant all priviledges on <database> to '<account>'@'localhost' identified by '<password>';
+5. Finally create the database:
+
+    create database magento;
+    use magento;
+6. Exit when done.
+
+### Set up the auto-increment for MariaDB {#cloud-mysql}
+You need to set an auto-increment value for the MariaDB installation.
+
+1.	As a user with `root` privileges, open `/etc/mysql/mariadb.conf.d/50-server.cnf` in a text editor.
+2.	In the Basic Settings section, add `auto_increment_increment = 3`.
+3.	Restart the service: `service mysql restart`.
+
+### Set up the auto-increment for MySQL {#cloud-mysql}
+The MySQL configuration parameter [`auto_increment_increment`](http://dev.mysql.com/doc/refman/5.6/en/server-system-variables.html){:target="_blank"} is set to `1` by default in a local MySQL installation. You need to change this value to `3`.  The Magento Enterprise Cloud Edition database cluster includes 3 database implementations. The increment ensures data is unique across all databases for consistant data in the High Availability structure.
 
 To avoid issues, we recommend you set `auto_increment_increment=3`.
 

@@ -79,7 +79,7 @@ If you would like to learn more about Magento 2, see the following resources:
 	*	[Installation]({{page.baseurl}}install-gde/bk-install-guide.html), though we recommend following [Set up a project and dev workspace]({{page.baseurl}}cloud/before/before-workspace.html){:target="_blank"}
 	*	[Configuration]({{page.baseurl}}config-guide/bk-config-guide.html){:target="_blank"}
 
-## Technical support
+## Technical support {#gethelp}
 You can enter a support ticket through the Project Web Interface:
 
 1.	Log in to your [Magento Cloud account](https://accounts.magento.cloud/){:target="_blank"}.

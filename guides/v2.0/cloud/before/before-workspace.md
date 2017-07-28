@@ -21,7 +21,7 @@ redirect from:
 
 To develop, deploy, and test Magento Enterprise Cloud Edition and your custom code, extensions, and configurations, create a  project and setup your local workspace. The project is a Git repository with branches you develop and merge to the master for deployment across your cloud environments. A local workspace provides a system to clone branches from the master, develop code, and add extensions. This code is pushed for active testing in an Integration environment, merged to the master branch, then deployed to Staging and finally Production.
 
-This section walks through the steps for first time merchants with Magento, Magento SIs, and existing Mageneto merchants moving to the cloud. If you have already completed some of these steps, make sure to review the expected results to continue to the next. Some configurations and workflows differ for Magento Enterprise Cloud Edition than a typical Enterprise Edition installation.
+This section walks through the steps for first time merchants with Magento, Magento SIs, and existing Magento merchants moving to the cloud. If you have already completed some of these steps, make sure to review the expected results to continue to the next. Some configurations and workflows differ for Magento Enterprise Cloud Edition than a typical Enterprise Edition installation.
 
 ## Set up an account
 To begin working with a project and develop your store, you should have received an e-mail invitation to [create a Mangento Enterprise Cloud Edition account](https://accounts.magento.cloud){:target="_blank"}. The account provides access to your project for Magento development and deployment across all supported environments.

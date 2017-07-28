@@ -5,46 +5,35 @@ subgroup: 160_live
 title: Build and deploy before pushing to staging or production
 menu_title: Build and deploy before pushing to staging or production
 menu_order: 90
-menu_node: 
+menu_node:
 version: 2.0
 github_link: cloud/live/live-sanity-check.md
 ---
 
-This topic discusses tasks we strongly recommend you perform before pushing code from an [integration system]({{ page.baseurl}}cloud/reference/discover-arch.html#cloud-arch-int) to either [staging]({{ page.baseurl}}cloud/reference/discover-arch.html#cloud-arch-stage}}) or [production]({{ page.baseurl}}cloud/reference/discover-arch.html#cloud-arch-prod}}). Failure to perform these tasks can result in additional debugging and delays in testing your site.
+You should complete development, prepare and push code, with a full build and deploy locally for an [Integration environment]({{ page.baseurl}}cloud/reference/discover-arch.html#cloud-arch-int) prior to fully deploying and testing to [Staging]({{ page.baseurl}}cloud/reference/discover-arch.html#cloud-arch-stage}}) then [Production]({{ page.baseurl}}cloud/reference/discover-arch.html#cloud-arch-prod}}). As detailed in the [Deployment process]({{ page.baseurl }}cloud/reference/discover-deploy.html), building and deployment is a five-phase process.
 
-As discussed in [Deployment process]({{ page.baseurl }}cloud/reference/discover-deploy.html), building and deployment is a five-phase process. This topic discusses how to simulate build and deploy steps locally, which can expose issues early in your development process when they're easier to debug and fix.
+These tasks walk through building and deploying locally, allowing you to test the process and expose any issues early for debugging. Fully testing builds and deploys along with full site testing can reduce the risk of issues or delays in final deploys and tests of your site.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-Do your testing in an integration or staging environment _only_. Do not do any testing in production; the production environment is your live site; it shouldn't be used for testing.
+We recommend completing your testing in an Integration active environment and the Staging environment. Only complete final tests for going live in the Production environment. Your Staging environment is best for testing with code, data, and services including Fastly, New Relic, and others. To complete heavy testing, you should deploy all code from Integration Master branch and data from Production to Staging. </div>
 
-Your staging environment is better for testing because it has Fastly, New Relic, and so on. Your integration environment typically does not have Fastly or New Relic.
-</div>
-
-## Step 1: Push code to the Cloud server
+## Push code to the Cloud server
 Before you continue, make sure you push all current code to the remote Cloud server so that, in {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} of issues, you can recover the state of the Magento application.
 
-### Get started
-
-{% collapsible To get started: %}
+To prepare your code and branch:
 
 {% include cloud/cli-get-started.md %}
 
-{% endcollapsible %}
-
-### Push code to the remote server
-
-{% collapsible To push code to your remote server: %}
+To push code to your remote server:
 
 1.	If you haven't already done so, change to your project root directory.
-2.	Enter the following commands:
+2.	Enter the following commands to complete code commits:
 
 		git add -A && git commit -m "<comment>"
 		git push origin <branch name>
 3.	Wait for deployment to complete.
 
-{% endcollapsible %}
-
-## Step 2: Build phase
+## Build phase
 During the [build phase]({{ page.baseurl }}cloud/reference/discover-deploy.html#cloud-deploy-over-phases-build), we perform the following tasks:
 
 *	Apply patches distributed to all Magento Enterprise Cloud Edition customers
@@ -54,7 +43,7 @@ During the [build phase]({{ page.baseurl }}cloud/reference/discover-deploy.html#
 
 Before you continue, you must know the file system path to any patch we provided specifically to you. Typically, hot fixes are in the `<Magento root dir>/m2-hotfixes` directory.
 
-{% collapsible To build your site: %}
+To build your site:
 
 1.	Apply patches distributed to all Magento Enterprise Cloud Edition customers.
 
@@ -86,7 +75,7 @@ Before you continue, you must know the file system path to any patch we provided
 
 	If the `m2-hotfixes` directory is empty, skip this step.
 
-	If patches are present, output from this command is similar to the preceding command.
+	If patches are present, output from this command is similar to the patches command.
 4.	Enable all modules:
 
 		php bin/magento module:enable --all
@@ -100,9 +89,9 @@ Before you continue, you must know the file system path to any patch we provided
 	Messages similar to the following are displayed:
 
 		Compilation was started.
-		0% 1 sec 54.0 MiB%message% 0/7 [>---------------------------] 
-		0% 1 sec 54.0 MiBProxies code generation... 
-		0/7 [>---------------------------]   
+		0% 1 sec 54.0 MiB%message% 0/7 [>---------------------------]
+		0% 1 sec 54.0 MiBProxies code generation...
+		0/7 [>---------------------------]
 		0% 1 sec 54.0 MiB
 		Proxies code generation... 1/7 [====>-----------------------]  14% 1 sec 58.0 MiB
 		Repositories code generation... 1/7 [====>-----------------------]  14% 1 sec 58.0 MiB
@@ -111,21 +100,19 @@ Before you continue, you must know the file system path to any patch we provided
 		... more ...
 		Interception cache generation... 7/7 [============================] 100% 5 mins 324.0 MiB
 
-If errors display, debug them if possible or open a [support ticket]({{ page.baseurl }}cloud/welcome/get-help.html) to get additional assistance.
+If errors display, debug them if possible or open a [support ticket]({{ page.baseurl }}cloud/bk-cloud.html#gethelp) to get additional assistance.
 
 We strongly recommend you do all your testing in an integration or staging environment only, and _not_ in production.
 
-{% endcollapsible %}
+## Deploy phase
+We highly recommend having Magento already installed prior to deployment. During the [deployment phase]({{ page.baseurl }}cloud/reference/discover-deploy.html#cloud-deploy-over-phases-hook), we perform the following tasks:
 
-## Step 3: Deploy phase
-During the [deployment phase]({{ page.baseurl }}cloud/reference/discover-deploy.html#cloud-deploy-over-phases-hook), we perform the following tasks:
+*	Install the Magento application if needed
+*	If the Magento application is installed, upgrade components
+*	Clear the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %}
+*	Set the Magento application for [`production`]({{ page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-production) mode
 
-*	Installs the Magento application if it isn't already
-*	If the Magento application is installed, upgrades components
-*	Clears the {% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cache{% endglossarytooltip %}
-*	Sets the Magento application for [`production`]({{ page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-production) mode
-
-{% collapsible To deploy your site: %}
+To deploy your site:
 
 1.	If you haven't done so already, log in as or switch to the [Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html).
 2.	Change to your project root directory.
@@ -133,7 +120,7 @@ During the [deployment phase]({{ page.baseurl }}cloud/reference/discover-deploy.
 
 		php bin/magento setup:upgrade
 
-	(If you haven't installed the Magento application yet, use the [`magento setup:install`]({{ page.baseurl }}install-gde/install/cli/install-cli.html) command instead.)
+	We highly recommend having Magento already installed. If you haven't installed the Magento application yet, use the [`magento setup:install`]({{ page.baseurl }}install-gde/install/cli/install-cli.html) command instead. Be advised, you may encounter issues with enables modules on a fresh installation.
 4.	Clean the Magento cache:
 
 		php bin/magento cache:clean
@@ -141,11 +128,9 @@ During the [deployment phase]({{ page.baseurl }}cloud/reference/discover-deploy.
 
 		php bin/magento deploy:mode:set production
 
-If errors display, debug them if possible or open a [support ticket]() to get additional assistance.
+If errors display, debug them if possible or open a [support ticket]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html) to get additional assistance.
 
-We strongly recommend you do all your testing in an integration or staging environment only, and _not_ in production.
-
-{% endcollapsible %}
+We strongly recommend you do all your testing in an active Integration and Staging environment. Staging provides a near-production environment without being fully live to the public with all services and features available.
 
 #### Next step
 [Overview of staging and production]({{ page.baseurl }}cloud/live/stage-prod-over.html)

@@ -15,7 +15,10 @@ The Magento CLI is a cloud-specific verion of the Magento CLI we provide support
 
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-You must install the Magento CLI to your local workspace to issue commands. For details, see [Set up Secure Shell (SSH) and command-line access]({{page.baseurl}}cloud/access-acct/setup-ssh.html#cloud-ssh-cli-cli-install).
+You must install the Magento CLI to your local workspace to issue commands. For details, see:
+
+* [Install Magento prerequisites]({{ page.baseurl }}cloud/before/before-workspace-magento-prereqs.html)
+* [Enable SSH keys]({{ page.baseurl }}cloud/before/before-workspace-php.html)
 </div>
 
 The following Magento CLI commands can be run from any directory and run best from a project directory. When run from a project directory, you can omit the `-p <project ID>` parameter. These commands are meant to be used to manage Integration environments.
@@ -35,6 +38,10 @@ All listed commands include only the required information and options. These com
 
 `magento-cloud environment:list -p <project ID>`
 :	List the environments in the current project (that is, the project that corresponds to the directory in which you run the command).
+
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+`magento-cloud environment:list` displays environment hierarchies whereas `git branch` does not. If you have any nested environments, use `magento-cloud environment:list`.
+</div>
 
 `magento-cloud environment:branch <name> <parent branch>`
 :	Create a new branch; the environment has both a name and an ID

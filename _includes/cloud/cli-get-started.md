@@ -1,7 +1,7 @@
 <div markdown="1">
 
-1.	Log in to your local development machine, or switch to, the [Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html).
-2.	Change to a directory to which the Magento file system owner has write access, such as the web server docroot.
+1.	Log in to your local development system, or switch to, the [Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html).
+2.	Change to a directory to which the Magento file system owner has write access.
 2.	Log in to your project:
 
 		magento-cloud login
@@ -11,8 +11,7 @@
 4.	If necessary, clone a project.
 
 		magento-cloud project:get <project ID>
-
-	Typically, you should clone the project in the web server's docroot or a Virtual Host docroot.
+		
 4.	Change to a project directory.
 
 	For example, `cd /var/www/html/magento2`
