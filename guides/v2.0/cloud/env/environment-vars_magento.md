@@ -81,6 +81,10 @@ The following table lists variables that you can override using environment vari
 ## Add environment variables {#addvariables}
 You can add environment variables for active environments through the Project web interface and through the Magento Cloud CLI. To create variables through the Project web interface, see [Set environment variables]({{page.baseurl}}cloud/project/project-webint-basic.html#project-conf-env-var).
 
+<div class="bs-callout bs-callout-warning" markdown="1">
+Everytime you add or modify a variable using the web interface or the CLI, the branch will redeploy automatically.
+</div>
+
 To create a variable using the command line:
 
 1. Login to the Magento Cloud CLI. Enter the command `magento-cloud login` and provide your credentials.
