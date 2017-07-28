@@ -10,11 +10,11 @@ version: 2.2
 github_link: advanced-reporting/data-collection/index.md
 ---
 
-A Magento instance collects data that the Magento Business Intelligence (MBI) service uses to build the advanced reports. You can configure data collection using a configuration file `/etc/analytics.xml`. It declares:
+A Magento instance collects data that the Magento Business Intelligence (MBI) service uses to build the advanced reports. All the data are stored in the encrypted archive file which is securely transferred to the MBI. Data collection is declared in a configuration file `/etc/analytics.xml`. It declares:
 
-- which report files must be included into archive file
+- which report files must be included into the archive file
 - which provider classes must collect data for each report file
-- which data configuration must be applied to collected data
+- which report data configuration must be applied to collected data
 
 <div class="bs-callout bs-callout-caution" markdown="1" >
 The MBI service doesn't expect any changes of configuration in the current version. 
@@ -60,7 +60,7 @@ An example of the `/etc/analytics.xml` file:
 </config>
 {% endhighlight %}
 
-The example declares the following:
+The example configuration file declares the following:
 
 *   The `modules.csv`, `store_config.csv`, `stores.csv` report files must be included into the archive file prepared for the MBI service.
 *   `modules.csv` must contain data provided by the `\Magento\Analytics\ReportXml\ReportProvider` class. Provided data must be configured according to the `modules` report declarations defined in the `/etc/reports.xml` file.
@@ -69,7 +69,7 @@ The example declares the following:
 
 ## Extensibility
 
-Configuration of data collection can be extended or changed in any module adding the corresponding `<module_name>/etc/analytics.xml` file.
+Configuration of data collection can be extended or changed in any module adding the corresponding `<module_name>/etc/analytics.xml` file with nodes that must be changed or added.
 
 ## Structure
 
@@ -90,7 +90,7 @@ Configuration of an XML.
 
 ### `<file>`
 
-A report file (`.csv` by default) with collected data that must be transferred to the MBI service.
+A report file (`.csv` by default) with collected data to be added to the archive file.
 
 |Attribute|Description|Example value|Use|
 |---|---|---|---|
@@ -149,8 +149,10 @@ A class that provides data for a report file.
 
 |Attribute|Description|Example value|Use|
 |---|---|---|---|
-|`name`|A provider name. This name can be used for merging.|`modules`|Required|
-|`class`|Full name of a class that provides data. There is only one report provider in this version that is `"Magento\Analytics\ReportXml\ReportProvider"`|`"Magento\Analytics\ReportXml\ReportProvider"`|Required|
+|`name`|A provider name.|`modules`|Required|
+|`class`|Full name of a class that provides data.|`"Magento\Analytics\ReportXml\ReportProvider"`|Required|
+
+Currently there is only one report provider is available that is `Magento\Analytics\ReportXml\ReportProvider`.
 
 {% highlight xml %}
 ...
@@ -165,9 +167,7 @@ A class that provides data for a report file.
 
 ### `<parameters>`
 
-Parameters used by `<reportProvider>`. Each parameter is declared in `<name>` and is purposed for use by `<reportProvider>`.
-
-If `reportProvider class="Magento\Analytics\ReportXml\ReportProvider"`, then `<name>` references to the `<report name />` in `reports.xml`.
+Parameters used by `<reportProvider>`. Currently there is only one parameter is available. It is declared in `<name>`.
 
 {% highlight xml %}
 ...
@@ -180,13 +180,15 @@ If `reportProvider class="Magento\Analytics\ReportXml\ReportProvider"`, then `<n
 ...
 {% endhighlight %}
 
+If `reportProvider class="Magento\Analytics\ReportXml\ReportProvider"`, then `<name>` references to the `<report name />` in `reports.xml`.
+
 ### `<customProvider>`
 
-A class that provides data for a report file defined in `<file>`. It cannot contain any
+A class that provides data for a report file defined in `<file>`. It cannot contain any parameters.
 
 |Attribute|Description|Example value|Use|
 |---|---|---|---|
-|`name`|A provider name. This name can be used for merging.|"store_config"|Required|
+|`name`|A provider name.|"store_config"|Required|
 |`class`|Full name of a class that provides data.|`"Magento\Analytics\Model\StoreConfigurationProvider"`|Required|
 
 {% highlight xml %}
