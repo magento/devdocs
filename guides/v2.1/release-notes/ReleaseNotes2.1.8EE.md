@@ -97,14 +97,11 @@ This release includes both improvements we've made internally and those submitte
 
 
 
-<!--- 68810 -->* You can now use special characters such as '%' in the WYSIWYG editor. 
-
-
-
 ### Checkout
 
 <!--- 62628 -->* Your gift wrapping selection now appears in the shopping cart regardless of whether you've selected a shipping method. Previously, Magento did not display your gift wrapping choice until you selected a shipping method. 
 
+<!--- 65656 -->* You can complete your order after entering a new shipping address during checkout. Previously, Magento would not let you place an order if you entered a new shipping address during checkout. 
 
 
 
@@ -219,7 +216,7 @@ layout for "Shipping and Tracking" block did work properly.
 
 <!--- 63124 -->* Magento front-end scope filters now work as expected. Previously, Magento did not reload product information correctly when you applied a filter using **Catalog > Product**.
 
-<!--- 60538 -->* We fixed an issue where cache-misses sometimes occurred when Fastly cache was implemented. 
+<!--- 60538 -->* We fixed an issue where cache-misses sometimes occurred when Fastly cache was implemented. We fixed an issue where cache-misses sometimes occurred when Fastly cache was implemented. Previously, the header information included in the response sometimes prevented the caching of this page. To minimize this potential problem, Magento now does not include  header empty of real content  in the response. 
 
 
 
@@ -301,6 +298,9 @@ layout for "Shipping and Tracking" block did work properly.
 
 
 ### Payment methods
+
+
+<!--- 68811 -->*  Magento now permits you to run reference transactions in a different currency than the currency that the authorization uses. Previously, Magento did not support sending authorizations in any currency other than U.S. dollars.  
 
 
 <!--- 64922 -->* Magento now displays payment information when you review an order from the Magento Admin. Previously, if you viewed an order via **Sales > Orders** from the Magento Admin, the payment information would be missing. 
@@ -391,7 +391,7 @@ layout for "Shipping and Tracking" block did work properly.
 
 
 
-<!--- INTERNAL ONLY  64299, 64244, 64243, 64242, 64241, 64240, 70084, 67109, 67115, 67101, 66711, 70037, 70036, 67748, 69707, 68990, 68951, 70620, 70617, 60742, 69474, 67110, 64512, 67715, 69637, 66276, 67104, 67105, 67751, 68826 -->
+<!--- INTERNAL ONLY  64299, 64244, 64243, 64242, 64241, 64240, 70084, 67109, 67115, 67101, 66711, 70037, 70036, 67748, 69707, 68990, 68951, 70620, 70617, 60742, 69474, 67110, 64512, 67715, 69637, 66276, 67104, 67105, 67751, 68826, 67261 -->
 
 
 ## System requirements
