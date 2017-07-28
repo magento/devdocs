@@ -803,16 +803,23 @@
 
 <ul>
   <li>
-    <p>Migrate data from a replicated Magento 1 database instance</p>
+    <p><strong>Use a copy of the database from Magento 1 instance</strong> when performing migration testing. Do not involve the main instance of your Magento 1 store database so that your production environment is not affected.</p>
   </li>
   <li>
-    <p>Remove outdated and redundant data from your Magento 1 database (for example, you could remove logs, order quotes, recently viewed or compared products, visitors, event-specific categories, promotional rules, and so on)</p>
+    <p><strong>Remove outdated and redundant data</strong> from your Magento 1 database before migration.</p>
+
+    <p>Such data may include logs, order quotes, recently viewed or compared products, visitors, event-specific categories, promotional rules, etc.</p>
   </li>
   <li>
-    <p>To avoid any unexpected issues or conflicts please follow steps described in <a href="/guides/v2.2/migration/migration-migrate.html">General Rules for Successful Migration</a></p>
+    <p><strong>Follow our <a href="/guides/v2.2/migration/migration-migrate.html">General Rules for Successful Migration</a></strong> to avoid issues or conflicts.</p>
   </li>
   <li>
-    <p>To boost performance you can set <code>&lt;direct_document_copy&gt;1&lt;/direct_document_copy&gt;</code> option in your <code>config.xml</code>. In this case, Magento 1 and Magento 2 databases should be located in one MySQL instance, and the database account must access each database</p>
+    <p>To boost performance, you may <strong>enable the <code>direct_document_copy</code> option</strong> in your <code>config.xml</code>:</p>
+
+    <pre><code>  &lt;direct_document_copy&gt;1&lt;/direct_document_copy&gt;
+</code></pre>
+
+    <p>In this case, Magento 1 and Magento 2 databases must be located in the same MySQL instance, and the database account must have access to each database.</p>
   </li>
 </ul>
 

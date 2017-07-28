@@ -806,7 +806,11 @@
 </section>
 
 
-			<p>To migrate successfully and avoid issues, you need to thourougly plan and test your migration. We hope the guidelines below will help.</p>
+			<p>To migrate successfully and avoid issues, you need to thourougly plan and test your migration. We hope the guidelines below will prove helpful.</p>
+
+<h2 id="before-you-start-consider-upgrade">Before you start: Consider upgrade</h2>
+
+<p>Migration is a perfect moment to make serious changes and get your site ready for the next level of growth. Consider whether your new site needs to be designed with more hardware or a more advanced topology with better caching tiers, etc.</p>
 
 <h2 id="step-1-review-extensions-on-your-current-site">Step 1: Review extensions on your current site</h2>
 
@@ -818,30 +822,42 @@
     <p>Have you identified if you need all these extensions on your new site?  (There might be old ones you can safely remove.)</p>
   </li>
   <li>
-    <p>Have you determined if Magento 2 versions of your extensions exist?  (Visit <a href="https://marketplace.magento.com/">Magento Marketplace</a> to find the latest versions or contact your <span term-uuid="55774db9-bf9d-40f3-83db-b10cc5ae3b68" class="glossary-term" data-toggle="popover">extension</span> provider.)</p>
+    <p>Have you determined if Magento 2 versions of your extensions exist?  (Visit <a href="https://marketplace.magento.com">Magento Marketplace</a> to find the latest versions or contact your extension provider.)</p>
   </li>
   <li>
     <p>What database assets from your extensions do you want to migrate?</p>
   </li>
 </ul>
 
-<h2 id="step-2-plan-capacity">Step 2: Plan capacity</h2>
-
-<p>Consider whether the new site needs to be designed with more hardware or a more advanced topology with better caching tiers and so on. It’s a good time to make more serious changes to get your site ready for your next level of growth.</p>
-
-<h2 id="step-3-build-and-test-magento-2">Step 3: Build and test Magento 2</h2>
-
-<p>To prepare for the migration, make sure you do all of the following:</p>
+<h2 id="step-2-build-and-prepare-magento-2-store-for-migration">Step 2: Build and prepare Magento 2 store for migration</h2>
 
 <ul>
   <li>
-    <p>Set up a Magento 2.x system using a topology and design that at least matches your existing Magento 1 system</p>
+    <p>Set up a Magento 2 hardware system using topology and design that at least matches your existing Magento 1 system</p>
   </li>
   <li>
-    <p>To provide redundancy in the <span term-uuid="c57aef7c-97b4-4b2b-a999-8001accef1fe" class="glossary-term" data-toggle="popover">event</span> of unexpected issues, we advise you to replicate your Magento 1.x database and use this Magento 1.x data for your migration</p>
+    <p>Install Magento 2.x (with all modules of this release) and the Data Migration Tool on a system that meets the <a href="/guides/v2.1/install-gde/system-requirements-tech.html">Magento system requirements</a></p>
   </li>
   <li>
-    <p>Install Magento 2.x (with all modules of this release) on a system that meets our system requirements</p>
+    <p>Make your custom adjustments to the Data Migration Tool code in case you do not need to migrate some data (like CMS Pages, Sales Rules, etc.) or want to convert your Magento customization during migration. Read the Data Migration Tool’s <a href="/guides/v2.1/migration/migration-tool-internal-spec.html">Technical Specification</a> to better understand how migration works from inside</p>
+  </li>
+</ul>
+
+<h2 id="step-3-dry-run">Step 3: Dry run</h2>
+
+<p>Before you start migration on the production environment, it would be best to go through all the migration steps on your testing environment.</p>
+
+<p>In such migration testing, follow these steps:</p>
+
+<ul>
+  <li>
+    <p>Copy your Magento 1 store to a staging server</p>
+  </li>
+  <li>
+    <p>Fully migrate the replicated Magento 1 store to Magento 2</p>
+  </li>
+  <li>
+    <p>Thoroughly test your new store</p>
   </li>
 </ul>
 
@@ -849,45 +865,63 @@
 
 <ol>
   <li>
-    <p>Make sure that the Data Migration Tool has a network access to connect to Magento 1 and Magento 2 databases. Open ports in your firewall.</p>
+    <p>Make sure that the Data Migration Tool has a network access to connect to Magento 1 and Magento 2 databases. Open the corresponding ports in your firewall.</p>
   </li>
   <li>
-    <p>Stop all activity in the Magento 1.x <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span> Panel (except for order management, such as shipping, creating invoice, credit memos etc.). <strong>Note:</strong> activity cannot resume until your Magento 2 store goes live.</p>
+    <p>Stop all activities in the Magento 1.x Admin Panel, except for order management, such as shipping, creating invoice, credit memos, etc (the list of allowed activities can be extended by adjusting settings of the Delta mode in the Data Migration Tool). <strong>Note:</strong> such activities must not be resumed until your Magento 2 store goes live.</p>
   </li>
   <li>
-    <p>Stop all Magento 1.x cron jobs.</p>
+    <p>We recommend to stop all Magento 1.x cron jobs.</p>
+
+    <p>Still, if some jobs are required to run during migration, make sure they do not create new database entities or change the existing ones in the way that such entities cannot be processed by the Delta mode.</p>
+
+    <p>For example: the <code>enterprise_salesarchive_archive_orders</code> cron job moves old orders to archive. Running this job during migration is safe because the Delta mode takes the job into account and thus properly processes the archived orders.</p>
   </li>
+</ol>
+
+<ol start="4">
   <li>
     <p>Use the Data Migration Tool to migrate settings and websites.</p>
   </li>
   <li>
-    <p>Copy your Magento 1.x media files to Magento 2.x. (You must copy these manually from  from magento1-root/media to magento2-root/pub/media directory).</p>
-  </li>
-  <li>
-    <p>Use Data Migration Tool to bulk copy your data from Magento 1 database to Magento 2 database. If some of your extensions have data you want to migrate, you might need to install these extensions adapted for Magento 2. In case the extensions have a different structure in Magento 2 database, use the mapping files provided with the Data Migration Tool.</p>
-  </li>
-  <li>
-    <p>Reindex all Magento 2.x indexers. For details, see the <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-index.html">Configuration Guide</a>.</p>
-  </li>
-  <li>
-    <p>Thoroughly test your Magento 2.x site.</p>
+    <p>Copy your Magento 1.x media files to Magento 2.x.</p>
 
-    <p>Note that after such testing the next step (Incremental data update) might not work properly.</p>
+    <p>You must copy these files manually from the <code>magento1-root/media</code> directory to <code>magento2-root/pub/media</code>.</p>
   </li>
 </ol>
 
-<h2 id="step-5-update-incremental-data">Step 5: Update incremental data</h2>
+<ol start="6">
+  <li>
+    <p>Use the Data Migration Tool to bulk copy your data from Magento 1 database to Magento 2 database.</p>
 
-<p>Now that you’ve migrated your data, you must incrementally capture data updates that are added in Magento 1 store (such as new orders, reviews and changes in customer profiles) and migrate it to Magento 2 store.</p>
+    <p>If some of your extensions have data you want to migrate, you might need to install these extensions adapted for Magento 2. In case the extensions have a different structure in Magento 2 database, use the mapping files provided with the Data Migration Tool.</p>
+  </li>
+</ol>
+
+<ol start="7">
+  <li>Reindex all Magento 2.x indexers. For details, see the <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-index.html">Configuration guide</a>.</li>
+</ol>
+
+<h2 id="step-5-make-changes-to-the-migrated-data-if-needed">Step 5: Make changes to the migrated data (if needed)</h2>
+
+<p>Sometimes you may want to have your Magento 2 store with different catalog structure, sales rules, CMS pages, etc. after migration.</p>
+
+<p>You need to be carfull because after such changes the next migration step (Incremental data update) might not work properly.</p>
+
+<p>For example, a product deleted from Magento 2: the one that has been bought on your live Magento 1 store and which is not available anymore in your Magento 2 store. Transferring data about such purchase might cause an error while running the Data Migration Tool in Delta mode.</p>
+
+<h2 id="step-6-update-incremental-data">Step 6: Update incremental data</h2>
+
+<p>After migrating data, you must incrementally capture data updates that have been added in the Magento 1 store (such as new orders, reviews, and changes in customer profiles) and transfer these updates to the Magento 2 store using the Delta mode.</p>
 
 <ul>
   <li>
-    <p>Start the incremental migration; updates run continually.
-You can stop the updates at any time by pressing <code>Ctrl+C</code></p>
+    <p>Start the incremental migration; updates will run continually.
+You can stop transferring updates at any time by pressing <code>Ctrl+C</code></p>
   </li>
   <li>
-    <p>Test your Magento 2 site during this time so you can catch any issues as soon as possible.
-In case you find any issues, press <code>Ctrl+C</code> to stop incremental migration and start it again after issues are resolved</p>
+    <p>Test your Magento 2 site during this time to catch any issues as soon as possible.
+In case of such issues, press <code>Ctrl+C</code> to stop incremental migration and start it again after issues are resolved</p>
   </li>
 </ul>
 
@@ -895,20 +929,38 @@ In case you find any issues, press <code>Ctrl+C</code> to stop incremental migra
   <p>Volume check warnings may appear in case you conduct testing of your Magento 2 site and run migration process at the same time. It happens because in Magento 2 you create entities that do not exist in Magento 1 instance.</p>
 </div>
 
-<h2 id="step-6-go-live">Step 6: Go live</h2>
+<h2 id="step-7-go-live">Step 7: Go live</h2>
 
 <p>Now that your Magento 2 site is up-to-date with Magento 1 and is functioning normally, do the following to cut over to the new site:</p>
 
 <ol>
-  <li>Put your Magento 1 system in maintenance mode (DOWNTIME STARTS).</li>
-  <li>Press Control+C in the migration tool command window to stop incremental updates.</li>
-  <li>Start your Magento 2 cron jobs.</li>
-  <li>In your Magento 2 system, reindex the stock indexer. For more information, see the <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-index.html">Configuration Guide</a>.</li>
-  <li>Using a tool of your choice, hit pages in your Magento 2 system to <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span> pages in advance of customers using your <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span>.</li>
-  <li>Perform any final verification of your Magento 2 site.</li>
-  <li>Change DNS, load balancers, and so on to point to new production hardware (DOWNTIME ENDS)</li>
-  <li>Magento 2 store is ready to use. You and your customers can resume all activities.</li>
+  <li>
+    <p>Put your Magento 1 system in maintenance mode (DOWNTIME STARTS).</p>
+  </li>
+  <li>
+    <p>Press Control+C in the migration tool command window to stop incremental updates.</p>
+  </li>
+  <li>
+    <p>Start your Magento 2 cron jobs.</p>
+  </li>
+  <li>
+    <p>In your Magento 2 system, reindex the stock indexer. For more information, see the <a href="/guides/v2.1/config-guide/cli/config-cli-subcommands-index.html">Configuration guide</a>.</p>
+  </li>
+  <li>
+    <p>Using a tool of your choice, hit pages in your Magento 2 system to cache pages in advance of customers who use your storefront.</p>
+  </li>
+  <li>
+    <p>Perform any final verification of your Magento 2 site.</p>
+  </li>
+  <li>
+    <p>Change DNS, load balancers, and so on to point to new production hardware (DOWNTIME ENDS).</p>
+  </li>
+  <li>
+    <p>Magento 2 store is now ready to use. You and your customers can resume all activities.</p>
+  </li>
 </ol>
+
+<!-- LINK ADDRESSES -->
 
 		</div>
 		<!-- /.content-wrap -->
