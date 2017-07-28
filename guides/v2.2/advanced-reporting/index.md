@@ -22,7 +22,7 @@ Learn more about:
 
 ## Preconditions
 
-1. A Magento store website with real domain name.
+1. A Magento store website has a real domain name.
 2. The website works using HTTPS with valid certificate.
 3. Successful subscription to the Advanced reporting.
 
@@ -32,7 +32,7 @@ First synchronization of a Magento instance and the MBI can take a day after suc
 
 ## Extensibility
 
-Though the Analytics module provides API, it is used specifically to interchange data with the MBI. We do not recommend to extend the advance reporting functionality in this version.
+Though the Analytics module provides API, it is used specifically to interchange data with the MBI. We do not recommend to extend the advanced reporting functionality in this version.
 
 ## Recommendations
 
