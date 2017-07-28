@@ -7,6 +7,7 @@ menu_title: CatalogAnalytics
 menu_order: 2
 version: 2.2
 github_link: mrg/ce/CatalogAnalytics.md
+redirect_from: /guides/v2.2/mrg/ce/CatalogAnalytics/description.html
 ---
 
 <div class="mrg-content" markdown="1">

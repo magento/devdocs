@@ -7,6 +7,7 @@ menu_title: SalesAnalytics
 menu_order: 10
 version: 2.2
 github_link: mrg/ce/SalesAnalytics.md
+redirect_from: /guides/v2.2/mrg/ce/SalesAnalytics/description.html
 ---
 
 <div class="mrg-content" markdown="1">

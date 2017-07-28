@@ -7,6 +7,7 @@ menu_title: CustomerAnalytics
 menu_order: 3
 version: 2.2
 github_link: mrg/ce/CustomerAnalytics.md
+redirect_from: /guides/v2.2/mrg/ce/CustomerAnalytics/description.html
 ---
 
 <div class="mrg-content" markdown="1">
