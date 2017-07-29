@@ -14,3 +14,5 @@ github_link: howdoi/migrate/migrate-extensions.md
 Magento 1 extensions in most cases will not be compatible with Magento 2 code. Many {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} providers offer updated versions of their products available for purchase or download on the <a href="https://marketplace.magento.com/extensions.html" target="_blank">Magento Marketplace</a>. 
 
 Use this chance to review the list of extensions. To simplify future upgrades, install only the extensions that are required for your business.
+
+There are not any tools available for Migrate magento 1 extension to magento 2 from Magento yet. Its better to create your own extension with magento 2 coding standard from old extension of magento 1.
