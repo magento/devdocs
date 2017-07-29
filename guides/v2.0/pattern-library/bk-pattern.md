@@ -15,7 +15,7 @@ redirect_from: /guides/v1.0/pattern-library/bk-pattern.html
  
 Design patterns can be simple elements or complex pieces of functionality - like buttons, scroll bars, data tables and forms - that are standardized to be easily repeated and reused across a {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %} or application.
 
-Patterns include definitions, examples, instructions and specifications that break down spacial relationships and interactions / behaviors. 
+Patterns include definitions, examples, instructions and specifications that break down special relationships and interactions / behaviors. 
  
 <h3>Why use patterns?</h3>
  
@@ -23,7 +23,7 @@ Using patterns enhances customer experience through maintaining consistency and 
 
 Patterns libraries are designed to evolve over time, never going out of date. Changes should be communicated, as they occur, to the design community.
 
-<br> <br>
+<br>
 Find more details about the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} {% glossarytooltip 53755359-9916-4677-bff2-f7d26025095a %}Design Pattern{% endglossarytooltip %} {% glossarytooltip 08968dbb-2eeb-45c7-ae95-ffca228a7575 %}Library{% endglossarytooltip %} in the following topic:
 
 #### Container
@@ -49,7 +49,7 @@ Find more details about the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d7573
 #### Getting User Input
 <a href="getting-user-input/form_elements/form_elements.html">Form Elements</a><br>
 <a href="getting-user-input/image_uploader/image_uploader.html">Image Uploader</a><br>
-<a href="getting-user-input/date_time_selector/date_time_selector.html">Date and Time Selector</a>
+<a href="getting-user-input/date_time_selector/date_time_selector.html">Date and Time Selector</a><br>
 <a href="getting-user-input/use_default_config/use_default_config.html">Use Default Config</a><br>
 <a href="getting-user-input/select_from_list/select_from_list.html">Select From List</a>
 
@@ -65,9 +65,4 @@ Find more details about the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d7573
 
 
 #### General
-<a href="general/accessibilityguideline/accessibilityGuideline.html">Accessibility Guidelines</a><br>
-
-
-
-
-
+<a href="general/accessibilityguideline/accessibilityGuideline.html">Accessibility Guidelines</a>
