@@ -13,9 +13,9 @@ github_link: release-notes/release-notes-2-2-prerelease1-CE.md
 *	TOC
 {:toc}
 
-*Release date: July 21, 2017*
+*Release date: July 28, 2017*
 
-*Notes updated: July 23, 2017*
+*Notes updated: July 28, 2017*
 
 
 Magento Community Edition 2.2.0 Release Candidate includes significant new features as well as many bug fixes.
