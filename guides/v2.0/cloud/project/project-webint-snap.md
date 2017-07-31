@@ -6,8 +6,6 @@ title: Backup and restore (snapshot)
 menu_title: Backup and restore (snapshot)
 menu_order: 25
 menu_node:
-level3_menu_node: level3child
-level3_subgroup: project
 version: 2.0
 github_link: cloud/project/project-webint-snap.md
 redirect_from:
