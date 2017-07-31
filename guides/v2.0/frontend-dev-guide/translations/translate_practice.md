@@ -61,6 +61,11 @@ Open the newly generated <code>magento2/app/design/frontend/OrangeCo/orange/i18n
 
 </ol>
 
+Now you can run deploy command to get changes of localization,
+<pre>
+php bin/magento setup:static-content:deploy
+</pre>
+
 When the OrangeCo apply the orange theme, the custom strings are used instead default ones. 
 
 For example:
