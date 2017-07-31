@@ -14,9 +14,9 @@ github_link: cloud/before/before-workspace-file-sys-owner.md
 #### Previous step: {#mage-owner-about-group}
 [Enable SSH keys]({{ page.baseurl }}cloud/before/before-workspace-ssh.html)
 
-To enable the web server to write files and directories in the Magento file system but to also maintain *ownership* by the Magento file system owner, both users must be in the same group. This is necessary so both users can share access to Magento files, including files created using the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} or other web-based utilities.
+To enable the web server to write files and directories in the Magento file system but to also maintain *ownership* by the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %}, both users must be in the same group. This is necessary so both users can share access to Magento files, including files created using the {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} or other web-based utilities.
 
-You need to create a new {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %} and put that user in the web server's group. If you use an existing user account, we recommend the user account has a strong password for security reasons.
+You need to create a new Magento file system owner and put that user in the web server's group. If you use an existing user account, we recommend the user account has a strong password for security reasons.
 
 ## Create the Magento file system owner {#mage-owner-create-user}
 Create the Magento file system owner with a strong password. Magento file system owner is another term for the *command-line user*.

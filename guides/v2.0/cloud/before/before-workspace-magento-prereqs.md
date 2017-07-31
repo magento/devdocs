@@ -32,7 +32,7 @@ When you install and configure software on your local (or VM), you will first SS
 Magento documentation provides installation instructions for installing software on CentOS or Ubuntu only. For installation information on Windows or MacOS, consult a community resource.
 </div>
 
-## Virtual machine or container(host) {#vm}
+## Virtual machine or container (host) {#vm}
 To best develop and manage your host, we recommend using a virtual machine. The VM encapsulates your code, web services, testing and supports a Unix-based environment. Select a virtual system you prefer.
 
 For your VM, we recommend installing one of the following:
@@ -89,7 +89,8 @@ Before working with your Magento Enterprise Cloud Edition project, make sure you
 	*	nginx: `service nginx restart`
 
 ## Web server (local) {#webserver}
-We support installations of [Apache]({{ page.baseurl }}install-gde/prereq/apache.html) and [nginx](https://nginx.org/){:target="_blank"} for your web server. We do not provide documentation for an installation and configuration of nginx at this time. Please review the [nginx Wiki](https://www.nginx.com/resources/wiki/) for further instructions.
+We support installations of [Apache]({{ page.baseurl }}install-gde/prereq/apache.html) and [nginx](https://nginx.org/){:target="_blank"} for your web server.
+Further information for installing and configuring nginx is in-progress. At this time, please review the [nginx Wiki](https://www.nginx.com/resources/wiki/) for further instructions.
 
 ## Database (local) {#database}
 You have multiple options for databases to use for your local. One database option you may want to consider is MariaDB. The Magento Enterprise Cloud Edition environments use [MariaDB](https://mariadb.org/){:target="_blank"}, with a [Galara Cluster](http://galeracluster.com/){:target="_blank"} with triple reducency in the Production environment. Regardless of database, you need to modify the `auto_increment_increment` value.
@@ -98,22 +99,22 @@ You have multiple options for databases to use for your local. One database opti
 The Production environment in the 3 node infrastructure uses auto-incrementing by 3 for all data IDs. Do not develop using hard-coded database IDs in your development. Due to the incremented data IDs, the referenced data will differ across the three nodes in Production.
 </div>
 
-These example instructions detail how to install and create a MariaDB database for Magento:
+These example instructions detail how to install and create a MariaDB database for Magento on your local:
 
 1. Use this command to create the database:
 
-    apt-get install mariadb-server
+        apt-get install mariadb-server
 2. Secure the database with the following command and completing all prompts:
 
-    mysql_secure_installation
+        mysql_secure_installation
 3. Access the MariaDB database.
 4. Grant all priviledges to the Magento account you created for the local:
 
-    grant all priviledges on <database> to '<account>'@'localhost' identified by '<password>';
+        grant all priviledges on <database> to '<account>'@'localhost' identified by '<password>';
 5. Finally create the database:
 
-    create database magento;
-    use magento;
+        create database magento;
+        use magento;
 6. Exit when done.
 
 ### Set up the auto-increment for MariaDB {#cloud-mysql}
@@ -128,9 +129,7 @@ The MySQL configuration parameter [`auto_increment_increment`](http://dev.mysql.
 
 To avoid issues, we recommend you set `auto_increment_increment=3`.
 
-To view and set `auto_increment_increment`:
-
-First, view the current value:
+First, view the current value and verify if it is set to 3:
 
 	mysqladmin variables -u <root user name> -p | grep 'auto_increment'
 
@@ -146,7 +145,7 @@ If necessary, set `auto_increment_increment` to 3:
 
 			auto_increment_increment=3
 
-		Magento Enterprise Cloud Edition supports a High Availability configuration. This setting increments the database IDs in increments of three to ensure row uniqueness for Galara databases on each of the three HA nodes in production.
+	Magento Enterprise Cloud Edition supports a High Availability configuration. This setting increments the database IDs in increments of three to ensure row uniqueness for Galara databases on each of the three HA nodes in production.
 
 3.	Restart MySQL:
 
@@ -159,7 +158,7 @@ These instructions discuss installation using commands for a Unix environment. F
 
 To install the Magento Enterprise Cloud Edition CLI:
 
-1.	Log in to your local development machine, or switch to, the [Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html).
+1.	Log in to your local development machine or switch to the [Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html).
 
 2.	Change to a directory to which the {% glossarytooltip 5e7de323-626b-4d1b-a7e5-c8d13a92c5d3 %}Magento file system owner{% endglossarytooltip %} has write access, such as the home directory.
 
@@ -186,7 +185,7 @@ To install the Magento Enterprise Cloud Edition CLI:
 			magento-cloud list
 
 ## Additional options
-You can also install [optional software]({{ page.baseurl }}install-gde/prereq/optional.html) as well. These packages should be installed on the local VM.
+You can also install additional [optional software]({{ page.baseurl }}install-gde/prereq/optional.html). These packages should be installed on the local VM.
 
 #### Next step
 [Enable SSH keys]({{ page.baseurl }}cloud/before/before-workspace-ssh.html)

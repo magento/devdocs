@@ -43,7 +43,7 @@ To branch from master:
 2.	After the command completes, update dependencies:
 
 		composer --no-ansi --no-interaction install --no-progress --prefer-dist --optimize-autoloader
-3.  Create a [snapshot]({{page.baseurl}}cloud/admin/admin-snap.html) of the environment.
+3.  Create a [snapshot]({{page.baseurl}}cloud/project/project-webint-snap.html) of the environment.
 
 		magento-cloud snapshot:create -e <environment ID>
 

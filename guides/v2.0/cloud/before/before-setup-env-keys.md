@@ -14,13 +14,15 @@ github_link: cloud/before/before-setup-env-keys.md
 #### Previous step:
 [Clone the project]({{ page.baseurl }}cloud/before/before-setup-env-2_clone.html)
 
-Add authentication keys to the project to ensure you don't need to store the keys in the Git repository. These keys provide authentication between Git and Magento for your branches and local.
+Magento authentication keys provide authentication between Git and Magento for your branches and your local workspace. The project administrator or account owner should add the authentication keys to the project directly to ensure you don't need to store the keys in the Git repository. To generate a key, see [Get your authentication keys]({{ page.baseurl }}install-gde/prereq/connect-auth.html).
 
-Developers who need to update Magento dependencies or to install {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extension{% endglossarytooltip %} also need to add authentication keys locally. You will add keys locally after your branch from the master. Those instructions are included in a [later step]({{ page.baseurl }}cloud/before/before-setup-env-env.html).
+_Only a [project administrator]({{ page.baseurl }}cloud/project/user-admin.html#cloud-role-project) with Super User access can perform this task._ If you do not have Super User access to the project, have the project administrator add the keys using these instructions.
+
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+All developers working in code branches will need to add [Magento authentication keys]({{ page.baseurl }}install-gde/prereq/connect-auth.html) locally to update Magento dependencies and install {% glossarytooltip 55774db9-bf9d-40f3-83db-b10cc5ae3b68 %}extensions{% endglossarytooltip %}. We recommend you add the authentication keys locally after you branch from the master branch. Those instructions are included in a [later step]({{ page.baseurl }}cloud/before/before-setup-env-env.html).
+</div>
 
 ## Add authentication keys to the project
-_Only a [project administrator]({{ page.baseurl }}cloud/project/user-admin.html#cloud-role-project) with Super User access can perform this task._ The project administrator must have the public and private authentication keys for Magento Enterprise Cloud Edition. Contact your Magento Enterprise Cloud Edition account owner to get the keys for these instructions.
-
 To set up authentication keys in the project:
 
 1.	Log in to your Magento Enterprise Cloud Edition account at [https://accounts.magento.cloud](https://accounts.magento.cloud){:target="_blank"}.

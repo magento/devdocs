@@ -5,11 +5,14 @@ subgroup: 100_project
 title: Backup and restore (snapshot)
 menu_title: Backup and restore (snapshot)
 menu_order: 25
-menu_node: 
+menu_node:
 level3_menu_node: level3child
 level3_subgroup: project
 version: 2.0
 github_link: cloud/project/project-webint-snap.md
+redirect_from:
+  - /guides/v2.0/cloud/admin/admin-snap.html
+  - /guides/v2.1/cloud/admin/admin-snap.html
 ---
 
 You can back up and restore an environment at any time using a *snapshot*. Creating a snapshot backs up the environment and because an environment is deployed as a read-only file system, restoring a snapshot is very fast.

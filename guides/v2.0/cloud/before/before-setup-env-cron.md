@@ -22,4 +22,4 @@ We recommend you run cron as the [Magento file system owner]({{ page.baseurl }}c
 {% include config/setup-cron.md %}
 
 #### Next step
-[Clone or branch an environment]({{ page.baseurl }}cloud/before/before-setup-env-env.html)
+[Branch an environment]({{ page.baseurl }}cloud/before/before-setup-env-env.html)
