@@ -18,7 +18,7 @@ github_link: release-notes/ReleaseNotes2.1.8EE.md
 
 *Page updated: August , 2017*
 
-We are pleased to present Magento Enterprise Edition 2.1.8. This release includes important enhancements to the security of your Magento software.
+We are pleased to present Magento Enterprise Edition 2.1.8. This release includes important enhancements to your Magento software.
 
 
 Looking for the <a href= "http://devdocs.magento.com/guides/v2.0/cloud/release-notes/CloudReleaseNotes.html" target="_blank">Magento Enterprise Cloud Edition Release Notes</a>?
@@ -26,13 +26,16 @@ Looking for the <a href= "http://devdocs.magento.com/guides/v2.0/cloud/release-n
 
 ## Highlights
 
-Magento 2.1.8 contains over 100 functional fixes and enhancements.  Look for the following highlights in this release:
+Magento 2.1.8 contains over 80 functional fixes and enhancements as well as our first pull requests from the community.  Look for the following highlights in this release:
+
 
 * multiple enhancements to **static content deployment and generation**
 
-* improvements to **Elasticsearch performance**, indexing of large catalogs, and **URL re-writes**
+* improvements to **Elasticsearch performance**, indexing of large catalogs, cache tuning, and **URL re-writes**
 
-* **reduction in the amount of memory that mass actions require**, and improvements in their performance 
+* **reduction in the amount of memory that mass actions require**, and performance optimization  
+
+* Faster cloud deployments for multi-language sites
 
 
 ## What's new in these release notes?
