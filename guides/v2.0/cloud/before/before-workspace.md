@@ -23,7 +23,7 @@ To develop, deploy, and test Magento Enterprise Cloud Edition and your custom co
 
 This section walks through the steps for first time merchants with Magento, Magento SIs, and existing Magento merchants moving to the cloud. If you have already completed some of these steps, make sure to review the expected results to continue to the next. Some configurations and workflows differ for Magento Enterprise Cloud Edition than a typical Enterprise Edition installation.
 
-## Set up an account
+## Set up an account {#newaccount}
 To begin working with a project and develop your store, you should have received an e-mail invitation to [create a Mangento Enterprise Cloud Edition account](https://accounts.magento.cloud){:target="_blank"}. The account provides access to your project for Magento development and deployment across all supported environments.
 
 You should receive an e-mail invitation to verify and access the project. If you don't see the invitation, check your junk e-mail folder. Click the **Verify my account** option in the email to verify and access your project account.
@@ -49,8 +49,8 @@ Developing code for Magento Enterprise Cloud Edition requires working in Git bra
 ## Prerequisites
 You need a fully set up Magento Enterprise Cloud Edition account to begin developing and launch your store on the Magento cloud. Have the following prepared to complete your initial workspace and project setup:
 
- * Magento Enterprise Cloud Edition account with an added user account (no need to have a project created yet)
- * Magento authentication keys from Magento Marketplace
+ * Magento Enterprise Cloud Edition account with an added user account
+ * [Magento authentication keys]({{ page.baseurl }}install-gde/prereq/connect-auth.html) from Magento Marketplace
 
 ## Get started
 You should be ready to go! The following sections provide a link to the previous step, instructions, and a link to the next step to start developing:
