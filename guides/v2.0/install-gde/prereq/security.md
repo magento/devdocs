@@ -20,12 +20,18 @@ redirect_from: /guides/v1.0/install-gde/prereq/security.html
 ### Suggestion for installing the Magento software with Apache
 If you choose to enable SELinux, you might have issues running the installer unless you change the *security context* of some directories as follows:
 
-	chcon -R --type httpd_sys_rw_content_t <your Magento install dir>/app/etc
-	chcon -R --type httpd_sys_rw_content_t <your Magento install dir>/var
-	chcon -R --type httpd_sys_rw_content_t <your Magento install dir>/pub/media
-	chcon -R --type httpd_sys_rw_content_t <your Magento install dir>/pub/static
+	export mageroot="/path/to/your_magento_install_dir"
+  semanage fcontext -a -t httpd_sys_rw_content_t "${mageroot}/app/etc(/.*)?"
+	semanage fcontext -a -t httpd_sys_rw_content_t "${mageroot}/var(/.*)?"
+	semanage fcontext -a -t httpd_sys_rw_content_t "${mageroot}/pub/media(/.*)?"
+	semanage fcontext -a -t httpd_sys_rw_content_t "${mageroot}/pub/static(/.*)?"
+  restorecon -R ${mageroot}
 
-The preceding commands work only with the Apache web server. Because of the variety of configurations and security requirements, we don't guarantee these commands work in all situations. For more information, see:
+The first command sets an environment variable to the root directory of your Magento installation directory, verify and substitute the correct path.  The `semanage` commands set the default file context for directories that Magento needs to write to, and the `restorecon` command applies the contexts in policy to the files on disk.  
+
+New files will then automatically inherit the context of the directory they are created in, and stay with the file when it moves.  If you have a deployment method that creates files in a scratch directory then moves (ie `mv /home/frank/jar.css $mageroot/`) them into the web server's document root, you should use `restorecon` to restore the proper context to your files.
+
+This example is known to work with Apache, and may work with other packaged web servers, but because of the variety of configurations and security requirements, we don't guarantee these commands work in all situations.  For more information, see:
 
 *	<a href="http://linux.die.net/man/8/httpd_selinux" target="_blank">man page</a>
 *	<a href="http://www.serverlab.ca/tutorials/linux/web-servers-linux/configuring-selinux-policies-for-apache-web-servers/" target="_blank">serverlab</a>
