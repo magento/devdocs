@@ -692,12 +692,14 @@
 			<ul id="markdown-toc">
   <li><a href="#highlights" id="markdown-toc-highlights">Highlights</a></li>
   <li><a href="#issues-fixed-in-this-release-candidate" id="markdown-toc-issues-fixed-in-this-release-candidate">Issues fixed in this Release Candidate</a>    <ul>
-      <li><a href="#catalog" id="markdown-toc-catalog">Catalog</a></li>
-      <li><a href="#importexport" id="markdown-toc-importexport">Import/export</a></li>
       <li><a href="#installation-and-configuration" id="markdown-toc-installation-and-configuration">Installation and Configuration</a></li>
-      <li><a href="#mbi" id="markdown-toc-mbi">MBI</a></li>
+      <li><a href="#catalog" id="markdown-toc-catalog">Catalog</a></li>
+      <li><a href="#checkout" id="markdown-toc-checkout">Checkout</a></li>
+      <li><a href="#importexport" id="markdown-toc-importexport">Import/export</a></li>
+      <li><a href="#magento-business-intelligence" id="markdown-toc-magento-business-intelligence">Magento Business Intelligence</a></li>
       <li><a href="#miscellaneous" id="markdown-toc-miscellaneous">Miscellaneous</a></li>
       <li><a href="#search" id="markdown-toc-search">Search</a></li>
+      <li><a href="#url-rewrites" id="markdown-toc-url-rewrites">URL rewrites</a></li>
     </ul>
   </li>
   <li><a href="#system-requirements" id="markdown-toc-system-requirements">System requirements</a></li>
@@ -705,9 +707,9 @@
   <li><a href="#credits" id="markdown-toc-credits">Credits</a></li>
 </ul>
 
-<p><em>Release date: July 21, 2017</em></p>
+<p><em>Release date: July 28, 2017</em></p>
 
-<p><em>Notes updated: July 23, 2017</em></p>
+<p><em>Notes updated: July 28, 2017</em></p>
 
 <p>Magento Community Edition 2.2.0 Release Candidate includes significant new features as well as many bug fixes.</p>
 
@@ -736,41 +738,12 @@ buyer to create a cart with more than 300 line items, and merchants can process 
 <h2 id="issues-fixed-in-this-release-candidate">Issues fixed in this Release Candidate</h2>
 <p>The following fixed and open issues have been logged against the Magento 2.2.0 RC1.x release.</p>
 
-<h3 id="catalog">Catalog</h3>
-
-<!--- 70066 -->
-<ul>
-  <li>We’ve improved the performance of the CatalogPermissions indexer in installations that contain many customer groups.</li>
-</ul>
-
-<!--- 66480 -->
-<ul>
-  <li>You can now successfully create a product and assign it to a store without encountering the following error: <code>Unique constraint violation found</code>. <a href="https://github.com/magento/magento2/issues/6671">GitHub-6671</a></li>
-</ul>
-
-<!--- 62637 -->
-<ul>
-  <li>You can now successfully set the <strong>Enable Product</strong> attribute to <strong>no</strong>.</li>
-</ul>
-
-<h3 id="importexport">Import/export</h3>
-
-<!--- 67240 -->
-<ul>
-  <li>Magento now displays more verbose information about duplicated information with links to action for troubleshooting the import process.  Previously, Magento displayed duplicated or incomplete information on the product page after import.</li>
-</ul>
-
-<!--- 65667 -->
-<ul>
-  <li>Magento now successfully imports customer multiselect attributes. Previously, when you imported a CSV file with either the option’s ID numbers or the option’s values, Magento returned an error.</li>
-</ul>
-
-<!--- 67020 -->
-<ul>
-  <li>Magento now handles the <code>catalog_product_entity_media_gallery_value.position</code> value the same whether you’ve installed or upgraded the product. Previously, these values differed depending upon whether you upgraded or freshly installed your Magento code.</li>
-</ul>
-
 <h3 id="installation-and-configuration">Installation and Configuration</h3>
+
+<!--- 69675 -->
+<ul>
+  <li>We’ve fixed problems with the upgrade process from 2.1.7 EE to 2.2.0 EE. (RC1.6)</li>
+</ul>
 
 <!--- 69854 -->
 <ul>
@@ -789,10 +762,61 @@ buyer to create a cart with more than 300 line items, and merchants can process 
 
 <!--- 70318 -->
 <ul>
-  <li>You can now generate static content without a database connection. <a href="https://github.com/magento/magento2/issues/10041">GitHub-10041</a></li>
+  <li>You can now generate static content without a database connection. <a href="https://github.com/magento/magento2/issues/10041">GitHub-10041</a> (RC1.5)</li>
 </ul>
 
-<h3 id="mbi">MBI</h3>
+<!--- 67020 -->
+<ul>
+  <li>Magento now handles the <code>catalog_product_entity_media_gallery_value.position</code>  value the same whether you’ve installed or upgraded the product. Previously, these values differed depending upon whether you upgraded or freshly installed your Magento code. (RC1.5)</li>
+</ul>
+
+<h3 id="catalog">Catalog</h3>
+
+<!--- 70066 -->
+<ul>
+  <li>We’ve improved the performance of the CatalogPermissions indexer in installations that contain many customer groups.</li>
+</ul>
+
+<!--- 66480 -->
+<ul>
+  <li>You can now successfully create a product  and assign it to a store without encountering the following error: <code>Unique constraint violation found</code>. <a href="https://github.com/magento/magento2/issues/6671">GitHub-6671</a></li>
+</ul>
+
+<!--- 62637 -->
+<ul>
+  <li>You can now successfully set the <strong>Enable Product</strong> attribute to <strong>no</strong>.</li>
+</ul>
+
+<!--- 70790 -->
+<ul>
+  <li>You can now remove custom options from simple products. Previously, when you tried to remove a custom option from a product, Magento did not remove the options, and displayed an error message. (RC1.6)</li>
+</ul>
+
+<h3 id="checkout">Checkout</h3>
+
+<!--- 70618 -->
+<ul>
+  <li>Errors in shipping rates no longer occur when a customer changes the country during guest checkout and DHL is enabled. Previously,  a customer changing country during guest checkout resulted in inaccurate shipping rates. (RC1.6)</li>
+</ul>
+
+<!--- 70646 -->
+<ul>
+  <li>You can now save the settings you enter when creating a shipping label on an existing shipment.  Previously, clicking the Save button resulted in an error, and the shipping label was not saved. (RC1.5)</li>
+</ul>
+
+<h3 id="importexport">Import/export</h3>
+
+<!--- 67240 -->
+<ul>
+  <li>Magento now displays more verbose information about duplicated information with links to action for troubleshooting the import process.  Previously, Magento displayed duplicated or incomplete information on the product page after import. (RC1.5)</li>
+</ul>
+
+<!--- 65667 -->
+<ul>
+  <li>Magento now successfully imports customer multiselect attributes. Previously, when you imported a CSV file with either the option’s ID numbers or the option’s values, Magento returned an error. (RC1.5)</li>
+</ul>
+
+<h3 id="magento-business-intelligence">Magento Business Intelligence</h3>
 
 <!--- 69615 -->
 <ul>
@@ -836,46 +860,78 @@ buyer to create a cart with more than 300 line items, and merchants can process 
   <li>Magento now successfully completes checkout when a custom address attribute is added. Previously, an error occurred during checkout when the user added a required custom address attribute.</li>
 </ul>
 
-<!--- 67296 -->
-<ul>
-  <li>Magento now handles string localization when the string contains a quote (\’). Previously, localization did not work under these conditions.</li>
-</ul>
-
-<!--- 70646 -->
-<ul>
-  <li>The <strong>Save</strong> button on the Create Shipping Label on an existing shipment now works as expected.</li>
-</ul>
-
-<!--- 70628 -->
-<ul>
-  <li>The Forgot Your Password? email now contains a link to reset your password. Previously, this link was missing from the Forgot Your Password? email.</li>
-</ul>
-
 <!--- 57753 -->
 <ul>
-  <li>You can now successfully create product attributes using the REST API. Previously, although the product was created, the attribute was not. <a href="https://github.com/magento/magento2/issues/6213">GitHub-6213</a></li>
+  <li>You can now successfully create product attributes using the REST API. Previously, although the product was created, the attribute was not. <a href="https://github.com/magento/magento2/issues/6213">GitHub-6213</a> (RC1.5)</li>
 </ul>
 
 <!--- 70406 -->
 <ul>
-  <li>We’ve improved the performance of the CatalogPermission indexer. Previously, Magento performance degraded significantly during the indexing of large numbers of customer groups.</li>
+  <li>We’ve improved the performance of the CatalogPermission indexer. Previously, Magento performance degraded significantly during the indexing of large numbers of customer groups.(RC1.5)</li>
 </ul>
 
 <!--- 69521 -->
 <ul>
-  <li>Magento now shows customer attributes in the Admin panel (as expected)  when the <strong>Show on Storefront</strong> option is set to <strong>No</strong>. Previously, when this setting was set to <strong>No</strong>, the attribute value would not appear in the customer account  section of the Admin panel customer account, but did appear in the orders section.</li>
+  <li>Magento now shows customer attributes in the Admin panel (as expected)  when the <strong>Show on Storefront</strong> option is set to <strong>No</strong>. Previously, when this setting was set to <strong>No</strong>, the attribute value would not appear in the customer account  section of the Admin panel customer account, but did appear in the orders section. (RC1.5)</li>
+</ul>
+
+<!--- 67048 -->
+<ul>
+  <li>You can now add a <code>translate</code> attribute to any String argument in the <code>di.xml</code> file for any class. This attribute provides an ability on the level of dependency injection configuration to specify that an argument can be translated. The actual translation of strings is handled by another Magento component. (RC1.6)</li>
+</ul>
+
+<!--- 70642 -->
+<ul>
+  <li>You can upload a new logo (or change other display features) when editing a transactional email. Previously, Magento crashed after you tried to save changes you may have made to this feature. (RC1.6)</li>
+</ul>
+
+<!--- 70628 -->
+<ul>
+  <li>The Forgot Your Password? email now includes an active link to reset your password. (RC1.6)</li>
+</ul>
+
+<!--- 62405 -->
+<ul>
+  <li>Magento no longer discounts items that belong to an excluded category. Previously, you were unable to exclude products assigned to a specific category due to the cart price rule. (RC1.6)</li>
+</ul>
+
+<!--- 64901 -->
+<ul>
+  <li>Magento now supports new top level domains for email addresses. <a href="https://github.com/magento/magento2/issues/4547">GitHub-4547</a> (RC1.6)</li>
+</ul>
+
+<!--- 67296 -->
+<ul>
+  <li>String localizations now works as expected when  phrases include text wrapped with single quotation marks. (RC1.6)</li>
 </ul>
 
 <h3 id="search">Search</h3>
 
+<!--- 63249 -->
+<ul>
+  <li>ElasticSearch now includes data about composite products in its search index. Previously, search results did not include data about composite products.</li>
+</ul>
+
 <!--- 59477 -->
 <ul>
-  <li>Attribute weighting now works correctly for the MySQL adapter. <a href="https://github.com/magento/magento2/issues/9020">GitHub-9020</a>, <a href="https://github.com/magento/magento2/issues/6793">GitHub-6793</a></li>
+  <li>Attribute weighting now works correctly for the MySQL adapter. <a href="https://github.com/magento/magento2/issues/9020">GitHub-9020</a> (RC1.5)</li>
 </ul>
 
 <!--- 65245 -->
 <ul>
-  <li>Magento now sends the <code>parent_id</code> of a deleted configurable product variation to ElasticSearch. Previously, Magento didn’t send this information to the ElasticSearch server  if  the simple product associated with a configurable product were changed.</li>
+  <li>Magento now sends the <code>parent_id</code> of a deleted configurable product variation to ElasticSearch. Previously, Magento didn’t send this information  to the ElasticSearch server  if  the simple product associated with a configurable product were changed. (RC1.5)</li>
+</ul>
+
+<h3 id="url-rewrites">URL rewrites</h3>
+
+<!--- 70663 -->
+<ul>
+  <li>You can now assign products to a category when  <strong>Match Products by rule</strong> is enabled. (RC1.6)</li>
+</ul>
+
+<!--- 70651 -->
+<ul>
+  <li>URL rewrites now occur as expected when category or products are saved. Previously, URLs rewrites did not occur for all categories. (RC1.6)</li>
 </ul>
 
 <h2 id="system-requirements">System requirements</h2>
