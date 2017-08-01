@@ -84,9 +84,9 @@ To restore an environment snapshot using the Magento CLI:
 	For a full list of options, enter `magento-cloud snapshot:restore --help`.
 
 ## Rollbacks to remove code {#rollback-code}
-When completing a code deployment, we recommend creating a snapshot of the environment and backup of the database prior to deploy.
+We recommend creating a snapshot of the environment and a backup of the database prior to deployments.
 
-If you need to restore a snapshot specifically to remove new code and  added extensions, the process can be complicated depending on the amount of changes and when you rollback. Some rollbacks may require database changes.
+If you need to restore a snapshot specifically to remove new code and added extensions, the process can be complicated depending on the amount of changes and when you rollback. Some rollbacks may require database changes.
 
 Specifically for code, you should investigate [reverting code](https://git-scm.com/docs/git-revert) changes from your branch before redeploying. If not, every deploy will push the master branch (code and extensions) again to the target environment. For details, see the [Deployment Process]({{page.baseurl}}cloud/reference/discover-deploy.html).
 
