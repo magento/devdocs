@@ -11,36 +11,31 @@ version: 2.2
 github_link: advanced-reporting/modules/index.md
 ---
 
-Advanced reporting functionality is implemented in the following Magento modules:
+Advanced reporting functionality is implemented in the following Magento modules.
 
-* [Analytics]
-  * enables subscription to the Magento Business Intelligence (MBI) and automatic re-subscription
-  * changes the base URL with the same MBI account remained
-  * declares the configuration schemas for [report data collection]
-  * collects the Magento instance data as reports for the MBI
-  * introduces API that provides the collected data
-  * extends Magento configuration with the module parameters:
-    * subscription status (enabled/disabled)
-    * industry (a business area in which the instance website works)
-    * time of data collection (time of the day when the module collects data)
+[Analytics] implements the following:
 
-* [CatalogAnalytics]
-  * Configures data definitions for data collection related to the Catalog module entities
+  * Enabling subscription to the Magento Business Intelligence (MBI) and automatic re-subscription
+  * Changing the base URL without change of the MBI account
+  * Declaring the configuration schemas for [report data collection]
+  * Collecting the Magento instance data as reports for the MBI
+  * Introducing API that provides the collected data
+  * Extending Magento configuration with the module parameters:
+    * Subscription status (enabled/disabled)
+    * Industry (a business area in which the instance website works)
+    * Time of data collection (time of the day when the module collects data)
+
+[CatalogAnalytics] configures data definitions for data collection related to the Catalog module entities
   
-* [CustomerAnalytics]
-  * Configures data definitions for data collection related to the Customer module entities
+[CustomerAnalytics] configures data definitions for data collection related to the Customer module entities
   
-* [QuoteAnalytics]
-  * Configures data definitions for data collection related to the Quote module entities
+[QuoteAnalytics] configures data definitions for data collection related to the Quote module entities
   
-* [ReviewAnalytics]
-  * Configures data definitions for data collection related to the Review module entities
+[ReviewAnalytics] configures data definitions for data collection related to the Review module entities
   
-* [SalesAnalytics]
-  * Configures data definitions for data collection related to the Sales module entities
+[SalesAnalytics] configures data definitions for data collection related to the Sales module entities
   
-* [WishlistAnalytics]
-  * Configures data definitions for data collection related to the Review module entities
+[WishlistAnalytics] configures data definitions for data collection related to the Wishlist module entities
 
 <!-- LINK DEFINITIONS -->
 
