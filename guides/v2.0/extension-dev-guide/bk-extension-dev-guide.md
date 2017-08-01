@@ -28,7 +28,7 @@ The Magento application is made up of *Modules*, *Themes*, and *Language Package
 
 * <a href="{{page.baseurl}}frontend-dev-guide/themes/theme-general.html">*Themes*</a> provide a personalized touch for each Magento installation by changing the look and feel of the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} or {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %}.
 
-* <a href="{{page.baseurl}}frontend-dev-guide/translations/xlate.html">*Language packages*</a> assist in internationalization(I18n) and localization by providing translations for strings that display on the storefront and Admin.
+* <a href="{{page.baseurl}}frontend-dev-guide/translations/xlate.html">*Language packages*</a> assist in internationalization(i18n) and localization by providing translations for strings that display on the storefront and Admin.
 
 <div class="bs-callout bs-callout-info" id="info">
 <p>You must follow a <a href="http://www.php-fig.org/psr/psr-4/">PSR-4 compliant</a> structure when building a module.</p>

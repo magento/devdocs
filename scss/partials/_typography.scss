@@ -4,11 +4,15 @@ body {
   line-height: 1.4;
 }
 
-/*reset font size
-.main-container {
-  font-size: 16px;
-}*/
+h1, h2, h3, h4, h5, h6 {
+  text-rendering: optimizelegibility;
+}
 
+h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
+  font-weight: normal;
+  line-height: 1;
+  color: #999;
+}
 
 h1 {
   font-size: 38px;
@@ -24,7 +28,7 @@ h1.page-subtitle {
 }
 
 h2 {
-  font-size: 26px;
+  font-size: 1.625em;
   line-height: 1.3;
   font-weight: normal;
   letter-spacing: 0;
@@ -34,7 +38,7 @@ h2 {
 }
 
 h3 {
-  font-size: 22px;
+  font-size: 1.375em;
   line-height: 1.3;
   font-weight: 700;
   letter-spacing: 0;
@@ -43,16 +47,15 @@ h3 {
 }
 
 h4 {
-  font-size: 16px;
+  font-size: 1em;
   line-height: 1.3;
   font-weight: bold;
   margin: 1.5em 0 0.5em 0;
 }
 
 h5,.h5 {
-  font-size: 16px;
+  font-size: 1em;
 }
-
 
 h6 {
   font-size: 14px;
@@ -80,7 +83,7 @@ h4 small {
 
 p {
   line-height: 1.4;
-  margin: 0 0 15px;
+  margin: 0 0 0.625em;
 }
 
 
@@ -174,22 +177,13 @@ cite {
   text-align: center;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  text-rendering: optimizelegibility;
-}
-
-h1 small, h2 small, h3 small, h4 small, h5 small, h6 small {
-  font-weight: normal;
-  line-height: 1;
-  color: #999999;
-}
 
 
 
 
 ul, ol {
   padding: 0;
-  margin: 0 0 10px 25px;
+  margin: 0 0 .625em 1.56em;
 }
 ul ul, ul ol, ol ol, ol ul {
   margin-bottom: 0;
@@ -207,23 +201,27 @@ ul.inline, ol.inline {
 }
 ul.inline>li, ol.inline>li {
   display: inline-block;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-dl {
-  margin-bottom: 20px;
-}
-dt, dd {
-}
-dt {
-  font-weight: bold;
-}
-dd {
-  margin-left: 10px;
+  padding-left: .31em; //5px
+  padding-right: .31em;
 }
 
+dl {
+  font-size: 1em;
+  margin-bottom: 1.25em;
+}
+
+dl dt {
+  font-weight: 700;
+  margin: 1em 0 0.5em 0;
+}
+
+dl dd {
+  margin: 0;
+}
+
+
 hr {
-  margin: 20px 0;
+  margin: 1.25em 0;
   border: 0;
   border-top: 1px solid #eeeeee;
   border-bottom: 1px solid #ffffff;
@@ -249,14 +247,14 @@ blockquote cite {
 
 
 blockquote {
-  padding: 0 0 0 15px;
-  margin: 0 0 20px;
+  padding: 0 0 0 1em;
+  margin: 0 0 1.25em;
   border-left: 5px solid #eeeeee;
   margin: 2em 0 1em 0;
 }
 blockquote p {
   margin-bottom: 0;
-  font-size: 16px;
+  font-size: 1em;
   font-weight: 300;
   line-height: 1.3;
 }
@@ -274,25 +272,13 @@ q:before, q:after, blockquote:before, blockquote:after {
 }
 address {
   display: block;
-  margin-bottom: 20px;
+  margin-bottom: 1.25em;
   font-style: normal;
 }
 
 
 
 
-dl {
-  font-size: 16px;
-}
-
-dl dt {
-  font-weight: 700;
-  margin: 1em 0 0.5em 0;
-}
-
-dl dd {
-  margin: 0;
-}
 
 
 
@@ -300,7 +286,7 @@ dl dd {
 /* SRJ - reviewer question */
 
 p.q {
-	font-size: 15px;
+	font-size: 1em;
 	color: red;
 	/* display: none; */
 }
@@ -309,10 +295,10 @@ p.q {
 
 @media ( $small-screen ) {
   h1 {
-    font-size: 30px;
+    font-size: 1.875em;
   }
   h2 {
-    font-size: 24px;
+    font-size: 1.5em;
   }
 }
 

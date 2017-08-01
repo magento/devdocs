@@ -2,8 +2,8 @@
 layout: default
 group: cloud
 subgroup: 100_project
-title: Backup and restore (snapshot)
-menu_title: Backup and restore (snapshot)
+title: Snapshots and Backup management
+menu_title: Snapshots and Backup management
 menu_order: 25
 menu_node:
 version: 2.0

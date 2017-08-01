@@ -2,13 +2,13 @@
 layout: default
 group: release-notes
 subgroup: 2.2.0 Release Candidate
-title: Submit PRs for the Release Candidate 
+title: Submit PRs for the Release Candidate
 menu_title: Submit PRs for the Release Candidate
 menu_order: 4000
-level3_menu_node: 
-level3_subgroup: 
+level3_menu_node:
+level3_subgroup:
 version: 2.2
-github_link: release-candidate/submit-PRs.md
+github_link: release-notes/release-candidate/submit-PRs.md
 ---
 
 We welcome code contributions in the form of pull requests to the Magento GitHub code repositories.
@@ -38,7 +38,7 @@ Before you submit a pull request, make sure you first:
     <td><b>Magento EE</b></td>
     <td>https://github.com/magento/magento2ee</td>
     <td>Available after contract has been signed</td>
-</tr> 
+</tr>
 
 <tr>
     <td><b>Magento B2B</b></td>
@@ -71,10 +71,6 @@ A fix for the EE/B2B codebase might also require changes to the CE codebase. In 
 For any questions related to  Partner Contributions to the Magento codebase, please contact the Magento Community Engineering team at `engcom@magento.com`.
 
 
-## More information 
+## More information
 
 Don't want to submit a PR but would like to provide feedback? Submit an issue [here](https://github.com/magento/magento2/issues).
-
-
-
-
