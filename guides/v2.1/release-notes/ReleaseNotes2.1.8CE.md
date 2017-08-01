@@ -14,9 +14,6 @@ github_link: release-notes/ReleaseNotes2.1.8CE.md
 {:toc}
 
 
-*Release date: *
-
-
 *Page updated: August 2, 2017*
 
 
