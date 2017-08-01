@@ -14,10 +14,10 @@ github_link: release-notes/ReleaseNotes2.1.8CE.md
 {:toc}
 
 
-*Release date: August , 2017*
+*Release date: *
 
 
-*Page updated: August, 2017*
+*Page updated: August 2, 2017*
 
 
 We are pleased to present Magento Open Source (formerly Community Edition) 2.1.8. This release includes important enhancements to your Magento software.
@@ -39,7 +39,7 @@ Magento 2.1.8 contains over 100 functional fixes and enhancements as well as our
 
 * **reduction in the amount of memory that mass actions require**, and performance optimization  
 
-* Faster cloud deployments for multi-language sites
+* faster cloud deployments for multi-language sites
 
 
 ## What's new in these release notes?
@@ -65,16 +65,15 @@ This release includes both improvements we've made internally and those submitte
 
 
 
-<!--- 57153 -->* Magento now correctly displays custom options at the store view level. [GitHub-2908](https://github.com/magento/magento2/issues/2908), [GitHub-5885](https://github.com/magento/magento2/issues/5885), [GitHub-5612](https://github.com/magento/magento2/issues/5612)
+<!--- 57153 -->* Magento now correctly displays custom options at the store-view level. [GitHub-2908](https://github.com/magento/magento2/issues/2908), [GitHub-5885](https://github.com/magento/magento2/issues/5885), [GitHub-5612](https://github.com/magento/magento2/issues/5612)
 
 <!--- 57064 -->* The currency switcher now works for widgets on the home page. Previously, if your website supported multiple currencies, the currency switcher did not update the currencies for widgets on the home page. 
 
 
-<!--- 67628 -->* You can render the `tax_class_id` attribute nonsearchable. Previously, Magento displayed a 503 error under these circumstances.
 
 <!--- 62630 -->* Magento now accurately displays the total count of products on the Category page. 
 
-<!--- 61797 -->* When you delete an image in the Admin panel, Magento no longer deletes it on the server. Previously, Magento deleted it from the server as well, which caused errors for other products (example error message: `Cannot gather stats! Warning!stat(): stat failed for `). 
+<!--- 61797 -->* When you delete an image in the Admin panel, Magento no longer deletes it on the server. Previously, Magento deleted it from the server as well, which caused errors for other products (example error message: `Cannot gather stats! Warning!stat(): stat failed for`). 
 
 <!--- 61729 -->* Magento now displays only the price for product for the store view level. Previously, the category listing page showed the  default store view price as well as the  prices from other store views. 
 
@@ -90,7 +89,7 @@ This release includes both improvements we've made internally and those submitte
 <!--- 63157 -->* Magento now displays the correct image when you switch  between a configurable product's options. Previously, Magento loaded  product images from a different product. 
 
 
-<!--- 56937 -->*  You can now successfully set a SKU mask to empty. Previously,  when a product SKU mask was set to empty, Magento experienced problems loading the Product Add page. [GitHub-5618](https://github.com/magento/magento2/issues/5618)
+<!--- 56937 -->*  You can now successfully set an SKU mask to empty. Previously,  when a product SKU mask was set to empty, Magento experienced problems loading the Product Add page. [GitHub-5618](https://github.com/magento/magento2/issues/5618)
 
 <!--- 57607 -->*  You can now save product without checking any of its attribute values. Previously, you could save the product, but attribute values remained checked. [GitHub-7687](https://github.com/magento/magento2/issues/7687)
 
@@ -112,7 +111,7 @@ This release includes both improvements we've made internally and those submitte
 
 <!--- 69223 -->* Magento now successfully defines extension attributes for a quote billing address. [GitHub-9646](https://github.com/magento/magento2/issues/9646)  *fix submitted by community member @ekuusela*
 
-<!--- 68875 -->* Shipping method radio buttons are no longer disabled when the Checkout page is refreshed.  [GitHub-6 7497 866](https://github.com/magento/magento2/issues/7497)  *fix submitted by community member  @rachkulik*
+<!--- 68875 -->* Shipping method radio buttons are no longer disabled when the Checkout page is refreshed.  [GitHub-7497](https://github.com/magento/magento2/issues/7497), [GitHub-9485](https://github.com/magento/magento2/issues/9485)  *fix submitted by community member  @rachkulik*
 
 
 ### Configurable products
@@ -152,7 +151,7 @@ This release includes both improvements we've made internally and those submitte
 
 
 <!--- 60542 -->* The "Print Shipping Label" link now displays on the product front end. Previously, the 
-layout for "Shipping and Tracking" block did work properly. 
+layout for the "Shipping and Tracking" block did work properly. 
 
 
 <!--- 60529 -->* Magento now displays Up-sells on the Product page. 
@@ -172,7 +171,6 @@ layout for "Shipping and Tracking" block did work properly.
 
 
 
-<!--- 61916 -->* We've improved the algorithm that controls how URL rewrites on the Category Save page are processed. 
 
 
 <!--- 63814 -->* SalesRule now applies to auto-generated coupon codes as expected. 
@@ -188,9 +186,9 @@ layout for "Shipping and Tracking" block did work properly.
 
 
 
-<!--- 60599 -->* Magento now supports negative values in "Quantity" field for a product. [GitHub-7401](https://github.com/magento/magento2/issues/7401)
+<!--- 60599 -->* Magento now supports negative values in **Quantity** field for a product. [GitHub-7401](https://github.com/magento/magento2/issues/7401)
 
-<!--- 63454 -->* Magento now uses the address template from store view level of the placed order (similar to how order confirmation email works). Previously, Magento used the wrong address template used for order e-mails. 
+<!--- 63454 -->* Magento now uses the address template from store view level of the placed order (similar to how order confirmation email works). Previously, Magento used the wrong address template for order e-mails. 
 
 
 <!--- 62914 -->* Directive values can now be escaped with quotation marks. Previously,  all characters after quotation marks were removed after a save, which resulted in the failure to save widget conditions. [GitHub-3860](https://github.com/magento/magento2/issues/3860)
@@ -205,7 +203,6 @@ layout for "Shipping and Tracking" block did work properly.
 
 <!--- 61097 -->* We've updated UK mobile phone number validation. 
 
-<!--- 57060 -->*  You can now apply free shipping to a specified shipping method when you create order in the Admin. Previously, if you set up a price rule to provide free shipping for one specific shipping method (for example, table rates), Magento applies the rule  on the front end only, but not on the Admin order creation page. 
 
 
 <!--- 55361 -->* Cart Price rules are now applied as expected to payment method conditions. Previously, discounts set in Cart Price rules were not applied during checkout. 
@@ -213,7 +210,7 @@ layout for "Shipping and Tracking" block did work properly.
 <!--- 65161 -->* Customers can no longer apply a coupon code twice. Previously, the "Uses per Coupon" limit did not work for auto-generated coupons. 
 
 
-<!--- 57051 -->* Widgets now accept UTF-8 special characters type as input parameters. Previously, you could successfully create a widget, but UTF-8 special characters were broken. [GitHub-4232](https://github.com/magento/magento2/issues/4232)
+<!--- 57051, 67621 -->* Widgets now accept UTF-8 special characters type as input parameters. Previously, you could successfully create a widget, but UTF-8 special characters were broken. [GitHub-4232](https://github.com/magento/magento2/issues/4232) *fix submitted by community member @hostep*
 
 
 <!--- 60641 -->* Magento now saves a new product rule when its SKU attribute is enabled for Use for Promo Rule Conditions'. Previously, you could not save a new rule under these conditions. 
@@ -223,14 +220,10 @@ layout for "Shipping and Tracking" block did work properly.
 
 <!--- 63124 -->* Magento front-end scope filters now work as expected. Previously, Magento did not reload product information correctly when you applied a filter using **Catalog > Product**.
 
-<!--- 60538 -->* We fixed an issue where cache-misses sometimes occurred when Fastly cache was implemented. We fixed an issue where cache-misses sometimes occurred when Fastly cache was implemented. Previously, the header information included in the response sometimes prevented the caching of this page. To minimize this potential problem, Magento now does not include  header empty of real content  in the response. 
 
 <!--- 60538 -->* Resolved issue with selecting widgets in TinyMCE editor. [GitHub-9655](https://github.com/magento/magento2/issues/9655), [GitHub-9518](https://github.com/magento/magento2/issues/9518)  *fix submitted by community member @hostep*
 
 <!--- 69238 -->* Magento now preserves image transparency when resizing images. *fix submitted by community member @kassner*
-
-
-<!--- 67621 -->* Magento now displays UTF-8 special character issue in widgets as expected. [GitHub-4232](https://github.com/magento/magento2/issues/4232)  *fix submitted by community member @hostep*
 
 
 <!--- 67614 -->* You can now remove breadcrumbs without removing the page meta title from the category view and product view pages.  Previously, the page meta title is visible only if the breadcrumbs block was defined in XML.  [GitHub-4427](https://github.com/magento/magento2/issues/4427) *fix submitted by community member  @latenights*
@@ -303,7 +296,7 @@ layout for "Shipping and Tracking" block did work properly.
 <!--- 63819 -->* The purchase date of an order is now displayed in the default time zone of the store and is the same date that is displayed in the Order creation page. Previously, the Order table displayed an incorrect purchase date for the order. 
 
 
-<!--- 61059 -->* Magento no longer generates incorrect URLs in the site map when the **Use Secure URLs in Admin** is set to **Yes**. [GitHub-8644](https://github.com/magento/magento2/issues/8644) 
+<!--- 61059 -->* Magento no longer generates incorrect URLs in the site map when the **Use Secure URLs in Admin** setting is set to **Yes**. [GitHub-8644](https://github.com/magento/magento2/issues/8644) 
 
 
 
@@ -333,9 +326,11 @@ layout for "Shipping and Tracking" block did work properly.
 
 ### Performance
 
-<!--- 58876 -->* We've improved the performance of mass actions and reduced the amount of memory that these operations consume. 
+<!--- 58876 -->* We’ve optimized the performance of mass actions, which has resulted in faster response time and reduced memory usage. 
 
-<!--- 67724, 67725 -->* We’ve improved the performance of the Checkout page.  [GitHub-4868](https://github.com/magento/magento2/issues/4868), [GitHub-6997](https://github.com/magento/magento2/issues/6997), [GitHub-9364](https://github.com/magento/magento2/issues/9364) *fix submitted by community member  @hostep*
+<!--- 67724, 67725 -->* We’ve improved checkout speed by removing unused Widget JS, Widget Configuration, and regions based on your stores configuration to reduce asset load on checkout pages.  [GitHub-4868](https://github.com/magento/magento2/issues/4868), [GitHub-6997](https://github.com/magento/magento2/issues/6997), [GitHub-9364](https://github.com/magento/magento2/issues/9364) *fix submitted by community member  @hostep*
+
+<!--- 61916 -->* We've improved the algorithm that controls how URL rewrites on the Category Save page are processed. 
 
 
 ### Reports
@@ -355,7 +350,7 @@ layout for "Shipping and Tracking" block did work properly.
 
 ### Search
 
-<!--- 58042 -->* ElasticSearch no longer fails when more than 100 attributes are involved, or when user-defined price attributes are searchable.
+<!--- 58042 -->* Elasticsearch does not throw errors when there are more than 100 search able attributes or when user-defined price attributes are marked searchable.
 
 <!--- 65249 -->* Segmentation faults no longer occur when doing a `catalogsearch_fulltext` re-index, and indexing succeeds. Previously, in a large database (more than 70,000 products), the `catalogsearch_fulltext` (MySQL) re-index failed with a `Segmentation fault` message. [GitHub-7963](https://github.com/magento/magento2/issues/7963)
 
@@ -363,22 +358,28 @@ layout for "Shipping and Tracking" block did work properly.
 <!--- 53675 -->*  Sorting configurable products by price now works as expected when a simple product has a special price. [GitHub-4778](https://github.com/magento/magento2/issues/4778)
 
 
-<!--- 57475 -->* Out-of-stock items no longer appear in layered navigation. Previously, when you selected any filter from the layered navigation, it returned products that did not have that option in stock. 
+<!--- 57475 -->* Out-of-stock items no longer erroneously appear in results of layered nav when filter if that product option is no longer in stock.
 
 
-<!--- 64959 -->* Grouped products are now included in Elasticsearch searches.  Previously, Grouped products were missing from category results   when  Elasticsearch was used as the search engine. 
+<!--- 64959 -->* We've resolved an issue where grouped products were not displayed in category pages when Elasticsearch was used as the search engine.
+
+
+
+Grouped products are now included in Elasticsearch searches.  Previously, Grouped products were missing from category results   when  Elasticsearch was used as the search engine. 
+
+<!--- 67628 -->* You can render the `tax_class_id` attribute nonsearchable. Previously, Magento displayed a 503 error under these circumstances.
 
 
 ### Shipping methods
 
-<!--- 59660 -->* Magento now displays the applicable flat-rate USPS box methods during checkout. Previously, Magento displayed no methods. [GitHub-6798](https://github.com/magento/magento2/issues/6798)
+<!--- 59660 -->* We've resolved an issue where Magento did not display applicable flat-rate USPS box methods during checkout. [GitHub-6798](https://github.com/magento/magento2/issues/6798)
 
+<!--- 57060 -->*  You can now apply free shipping to a specified shipping method when you create order in the Admin. Previously, if you set up a price rule to provide free shipping for one specific shipping method (for example, table rates), Magento applies the rule  on the front end only, but not on the Admin order creation page. 
 
 
 ### Tax
 
-<!--- 61131 -->* Magento now correctly calculates tax and order totals when a discount is used. Previously, Magento calculated these values incorrectly when a discount was used, and catalog prices were set to exclude tax. 
-
+<!--- 61131 -->* Magento now correctly calculates tax and order totals when a discount is used for prices that include tax and catalog prices excluding tax.  Please note this is not a valid tax configuration and can introduce rounding errors. P
 
 ### Web API
 
