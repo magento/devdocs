@@ -16,7 +16,7 @@ A Magento instance collects data that the Magento Business Intelligence (MBI) se
 - which provider classes must collect data for each report file
 - which report data configuration must be applied to collected data
 
-<div class="bs-callout bs-callout-caution" markdown="1" >
+<div class="bs-callout bs-callout-warning" markdown="1" >
 This topic serves to provide better understanding of how data collection works. Any changes in configuraton files will cause issues, because the MBI service doesn't expect any changes of configuration in the current version. 
 </div>
 
