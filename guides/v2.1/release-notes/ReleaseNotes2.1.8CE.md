@@ -44,7 +44,9 @@ Magento 2.1.8 contains over 100 functional fixes and enhancements as well as our
 
 ## What's new in these release notes?
 
-With this release, we're inaugurating a new feature of our release notes: descriptions of community-supplied code fixes. If a community member has provided a fix, we identify the fix with the phrase, "*fix provided by community member xxx*". We've also included a table that identifes the GitHub issue, PR, and community member who created that PR. 
+With this release, we're inaugurating a new feature of our release notes: descriptions of community-supplied code fixes. Thank you, community members!
+
+If a community member has provided a fix, we identify the fix with the phrase, "*fix provided by community member xxx*". We've also included a table that identifes the GitHub issue, PR, and community member who created that PR. 
 
 
 ## Fixed issues and enhancements
