@@ -134,6 +134,7 @@ To verify the Integration master branch environment, log into the Project Web In
 ![Click Access for list of URLs]({{ site.baseurl }}common/images/cloud-project-master-access.png){:width="297px"}
 
 With these steps completed, you should have:
+
 * Magento Enterprise Cloud Edition account and initial project setup and master branch
 * A local workspace configured with installations of required software, Magento Cloud CLI, and Magento
 * SSH keys set up
