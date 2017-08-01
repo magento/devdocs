@@ -20,7 +20,7 @@ github_link: release-notes/ReleaseNotes2.1.8CE.md
 *Page updated: August, 2017*
 
 
-We are pleased to present Magento Enterprise Edition 2.1.8. This release includes important enhancements to your Magento software.
+We are pleased to present Magento Open Source (formerly Community Edition) 2.1.8. This release includes important enhancements to your Magento software.
 
 
 
@@ -30,7 +30,7 @@ Looking for the <a href= "http://devdocs.magento.com/guides/v2.0/cloud/release-n
 ## Highlights
 
 Magento 2.1.8 contains over 100 functional fixes and enhancements as well as our first pull requests from the community.  Look for the following highlights in this release:
- Look for the following highlights in this release:
+
 
 
 * multiple enhancements to **static content deployment and generation**
