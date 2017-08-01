@@ -28,7 +28,8 @@ Looking for the <a href= "http://devdocs.magento.com/guides/v2.0/cloud/release-n
 
 ## Highlights
 
-Magento 2.1.8 contains over 80 functional fixes and enhancements as well as our first pull requests from the community.  Look for the following highlights in this release:
+Magento 2.1.8 contains over 100 functional fixes and enhancements as well as our first pull requests from the community.  Look for the following highlights in this release:
+ Look for the following highlights in this release:
 
 
 * multiple enhancements to **static content deployment and generation**
@@ -42,29 +43,22 @@ Magento 2.1.8 contains over 80 functional fixes and enhancements as well as our 
 
 ## What's new in these release notes?
 
-With this release, we're inaugurating a new feature of our release notes: Descriptions of contributions that community members have made to the code that we are packaging in this release, and recognition of these contributing community members.
-
+With this release, we're inaugurating a new feature of our release notes: descriptions of community-supplied code fixes that we've merged with this release. If a community member has provided a fix, we identify the fix with the phrase, "*fix provided by community member xxx*". We're also incluing a table that identifes the GitHub issue, PR, and community member who created that PR. 
 
 
 ## Fixed issues and enhancements
-
-
-### Bundle
-
-<!--- 64296 -->*
-<!--- 62199 -->*
-<!--- 57008 -->*
-<!---  -->*
+This release includes both improvements we've made internally and those submitted by the community through our Community Engineering program.  
 
 
 ### Catalog 
+
 <!--- 58918 -->* You can now create a custom category attribute that you can use to upload a custom image for each category. Previously, you could create the attribute, but could not save the image. 
 
 
 <!--- 58571 -->* The prices you assign to custom options no longer change unexpectedly after you save them.  [GitHub-6116](https://github.com/magento/magento2/issues/6116)
 
 
-<!--- 59782 -->* Magento now correctly displays product information after you perform an operation on more than one item. Previously, product imformation was not correctly aligned on the page.  [GitHub-6867](https://github.com/magento/magento2/issues/6867)
+<!--- 59782 -->* Magento now correctly displays product information after you perform an operation on more than one item. Previously, product information was not correctly aligned on the page.  [GitHub-6867](https://github.com/magento/magento2/issues/6867)
 
 
 
@@ -73,12 +67,11 @@ With this release, we're inaugurating a new feature of our release notes: Descri
 <!--- 57064 -->* The currency switcher now works for widgets on the home page. Previously, if your website supported multiple currencies, the currency switcher did not update the currencies for widgets on the home page. 
 
 
-
 <!--- 67628 -->* You can render the `tax_class_id` attribute nonsearchable. Previously, Magento displayed a 503 error under these circumstances.
 
 <!--- 62630 -->* Magento now accurately displays the total count of products on the Category page. 
 
-<!--- 61797 -->* When you delete an image in the Admin panel, Magento no longer deletes it on the server. Previously, Magento deleted it from the server as well, which caused errors for other products (example error message: "Cannot gather stats! Warning!stat(): stat failed for "). 
+<!--- 61797 -->* When you delete an image in the Admin panel, Magento no longer deletes it on the server. Previously, Magento deleted it from the server as well, which caused errors for other products (example error message: `Cannot gather stats! Warning!stat(): stat failed for `). 
 
 <!--- 61729 -->* Magento now displays only the price for product for the store view level. Previously, the category listing page showed the  default store view price as well as the  prices from other store views. 
 
@@ -102,7 +95,7 @@ With this release, we're inaugurating a new feature of our release notes: Descri
 
 <!--- 67535 -->* Magento now correctly assigns images to duplicated products. 
 
-<!--- 57144 -->* You can now create a blank attribute option using the drop down input option on products that do not require an attribute. 
+<!--- 57144 -->* You can now create a blank attribute option using the drop-down input option on products that do not require an attribute. 
 [GitHub-3545](https://github.com/magento/magento2/issues/3545), [GitHub-5485](https://github.com/magento/magento2/issues/5485), [GitHub-4910](https://github.com/magento/magento2/issues/4910)
 
 
@@ -114,8 +107,13 @@ With this release, we're inaugurating a new feature of our release notes: Descri
 
 <!--- 65656 -->* You can complete your order after entering a new shipping address during checkout. Previously, Magento would not let you place an order if you entered a new shipping address during checkout. 
 
+<!--- 69223 -->* Magento now successfully defines extension attributes for a quote billing address. [GitHub-9646](https://github.com/magento/magento2/issues/9646)  *fix submitted by community member @ekuusela*
+
+<!--- 68875 -->* Shipping method radio buttons are no longer disabled when the Checkout page is refreshed.  [GitHub-6 7497 866](https://github.com/magento/magento2/issues/7497)  *fix submitted by community member  @rachkulik*
+
 
 ### Configurable products
+
 <!--- 62091 -->* Magento no longer removes the simple products associated with a configurable product if you click on the **Save** button more than once while saving the configurable product. Previously, if you clicked on **Save** more than once during an attempt to save a configurable product, Magento removed the simple products that were assigned to it. 
 
 
@@ -134,8 +132,9 @@ With this release, we're inaugurating a new feature of our release notes: Descri
 
 
 
-### General
 
+### General
+ 
 <!--- 64238 -->* Reindexing no longer fails due to mmap memory allocation issues when reindexing many (1,000,000) customers. Previously, when initiating reindexing through **System > Index management**, reindexing failed. 
 
 
@@ -223,6 +222,36 @@ layout for "Shipping and Tracking" block did work properly.
 
 <!--- 60538 -->* We fixed an issue where cache-misses sometimes occurred when Fastly cache was implemented. We fixed an issue where cache-misses sometimes occurred when Fastly cache was implemented. Previously, the header information included in the response sometimes prevented the caching of this page. To minimize this potential problem, Magento now does not include  header empty of real content  in the response. 
 
+<!--- 60538 -->* Resolved issue with selecting widgets in TinyMCE editor. [GitHub-9655](https://github.com/magento/magento2/issues/9655), [GitHub-9518](https://github.com/magento/magento2/issues/9518)  *fix submitted by community member @hostep*
+
+<!--- 69238 -->* Magento now preserves image transparency when resizing images. *fix submitted by community member @kassner*
+
+
+<!--- 67621 -->* Magento now displays UTF-8 special character issue in widgets as expected. [GitHub-4232](https://github.com/magento/magento2/issues/4232)  *fix submitted by community member @hostep*
+
+
+<!--- 67614 -->* You can now remove breadcrumbs without removing the page meta title from the category view and product view pages.  Previously, the page meta title is visible only if the breadcrumbs block was defined in XML.  [GitHub-4427](https://github.com/magento/magento2/issues/4427) *fix submitted by community member  @latenights*
+
+<!--- 68903 -->* The WYSIWYG editor now performs more consistently.  [GitHub-4828](https://github.com/magento/magento2/issues/4828), [GitHub-6222](https://github.com/magento/magento2/issues/6222),  [GitHub-6815](https://github.com/magento/magento2/issues/6815)  *fix submitted by community member @hostep*
+
+
+<!--- 69062 -->* The email logo image function now works as expected.   [GitHub-5352](https://github.com/magento/magento2/issues/5352),  [GitHub-5633](https://github.com/magento/magento2/issues/5633),  [GitHub-5916](https://github.com/magento/magento2/issues/5916) [GitHub-6275](https://github.com/magento/magento2/issues/6275),  [GitHub-9590](https://github.com/magento/magento2/issues/9590)  *fix submitted by community member  @hostep*
+
+
+<!--- 68774 -->* The login popup window now works as expected in portrait mode on an iPad. [GitHub-6451](https://github.com/magento/magento2/issues/6451)   *fix submitted by community member @ihor-sviziev*
+
+<!--- 69665 -->* The value of `item_zone` on the product detail page now remains set correctly when you change products via the related/upsell products list. [GitHub-9562](https://github.com/magento/magento2/issues/9562), [GitHub-6746](https://github.com/magento/magento2/issues/6746)   *fix submitted by community member @hostep*
+
+<!--- 69023 -->* Wishlists now display the correct product price.  [GitHub-6866](https://github.com/magento/magento2/issues/6866) *fix submitted by community member @hostep*
+
+<!--- 69541 -->* A JavaScript error no longer occurs on the Product page because Magento cannot read the 'oldPrice' value.  [GitHub-7959](https://github.com/magento/magento2/issues/7959) *fix submitted by community member @dreamworkers*
+
+<!--- 69019 -->* We resolved an issue where  interface constructors broke Magento compilation.   [GitHub-8607](https://github.com/magento/magento2/issues/8607)  *fix submitted by community member @LoganayakiK*
+
+<!--- 69922 -->* You can now set a negative quantity for a product.  [GitHub-9139](https://github.com/magento/magento2/issues/9139)  catalog *fix submitted by community member @poongud*
+
+
+<!--- 69543— -->*  Magento no longer caches layered navigation options with the wrong store ID.  [GitHub-9679](https://github.com/magento/magento2/issues/9679)  *fix submitted by community member @hostep*
 
 
 
@@ -254,8 +283,7 @@ layout for "Shipping and Tracking" block did work properly.
 
 <!--- 58760 -->* Magento now imports customer data as expected after the data passes the pre-import validation step. Previously, although data passed this validation step, an error would occur during import, and Magento displayed this message: `Invalid data for insert`. [GitHub-4921](https://github.com/magento/magento2/issues/4921), [GitHub-9469](https://github.com/magento/magento2/issues/9469)
 
-### Indexing
-<!--- 60969 -->*
+
 
 ### Installation and deployment
 
@@ -271,6 +299,7 @@ layout for "Shipping and Tracking" block did work properly.
 
 
 <!--- 59622, 70177 -->*  You can now upgrade Magento 2.0 to version 2.1.x when the `auto_increment` setting in the database is greater than 1. Previously, when the `auto_increment` value exceeded 1, upgrade failed with this error: "The page URL key contains capital letters or disallowed symbols. 
+
 
 
 ### Order management
@@ -297,6 +326,7 @@ layout for "Shipping and Tracking" block did work properly.
 
 ### Payment methods
 
+
 <!--- 68811 -->*  Magento now permits you to run reference transactions in a different currency than the currency that the authorization uses. Previously, Magento did not support sending authorizations in any currency other than U.S. dollars.  
 
 
@@ -309,15 +339,23 @@ layout for "Shipping and Tracking" block did work properly.
 <!--- 63702 -->* PayPal Express payments no longer fail when there is adequate product inventory to cover your order. Previously, you'd receive this error message: `We can't place the order`. [GitHub-6296](https://github.com/magento/magento2/issues/6296)
 
 
+
+
 ### Performance
 
 <!--- 58876 -->* We've improved the performance of mass actions and reduced the amount of memory that these operations consume. 
 
+<!--- 67724, 67725 -->* We’ve improved the performance of the Checkout page.  [GitHub-4868](https://github.com/magento/magento2/issues/4868), [GitHub-6997](https://github.com/magento/magento2/issues/6997), [GitHub-9364](https://github.com/magento/magento2/issues/9364) *fix submitted by community member  @hostep*
 
 
 ### Reports
 
 <!--- 64297 -->* The website column in Customer Segment report now contains correct data. Previously, this column was blank in the **Reports > Customer > Segments** report. 
+
+
+<!--- 68938 -->* You can now successfully export the Low Stock report.  [GitHub-9428](https://github.com/magento/magento2/issues/9428)  *fix submitted by community member  @mikebox*
+
+<!--- 67523 -->* Magento no longer logs constant critical errors in `var/log/system.log`.  [GitHub-5627](https://github.com/magento/magento2/issues/5627)  *fix submitted by community member @malachy-mcconnnell*
 
 
 ### Sample data

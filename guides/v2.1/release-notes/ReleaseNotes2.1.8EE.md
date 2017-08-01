@@ -25,7 +25,7 @@ Looking for the <a href= "http://devdocs.magento.com/guides/v2.0/cloud/release-n
 
 ## Highlights
 
-Magento 2.1.8 contains over 80 functional fixes and enhancements as well as our first pull requests from the community.  Look for the following highlights in this release:
+Magento 2.1.8 contains over 100 functional fixes and enhancements as well as our first pull requests from the community.  Look for the following highlights in this release:
 
 
 * multiple enhancements to **static content deployment and generation**
@@ -39,7 +39,7 @@ Magento 2.1.8 contains over 80 functional fixes and enhancements as well as our 
 
 ## What's new in these release notes?
 
-With this release, we're inaugurating a new feature of our release notes: Descriptions of contributions that community members have made to the code that we are packaging in this release, and recognition of these contributing community members.
+With this release, we're inaugurating a new feature of our release notes: descriptions of community-supplied code fixes that we've merged with this release. If a community member has provided a fix, we identify the fix with the phrase, "*fix provided by community member xxx*". We're also incluing a table that identifes the GitHub issue, PR, and community member who created that PR. 
 
 
 ## Fixed issues and enhancements
@@ -55,7 +55,7 @@ This release includes both improvements we've made internally and those submitte
 <!--- 58571 -->* The prices you assign to custom options no longer change unexpectedly after you save them.  [GitHub-6116](https://github.com/magento/magento2/issues/6116)
 
 
-<!--- 59782 -->* Magento now correctly displays product information after you perform an operation on more than one item. Previously, product imformation was not correctly aligned on the page.  [GitHub-6867](https://github.com/magento/magento2/issues/6867)
+<!--- 59782 -->* Magento now correctly displays product information after you perform an operation on more than one item. Previously, product information was not correctly aligned on the page.  [GitHub-6867](https://github.com/magento/magento2/issues/6867)
 
 
 
@@ -69,7 +69,7 @@ This release includes both improvements we've made internally and those submitte
 
 <!--- 62630 -->* Magento now accurately displays the total count of products on the Category page. 
 
-<!--- 61797 -->* When you delete an image in the Admin panel, Magento no longer deletes it on the server. Previously, Magento deleted it from the server as well, which caused errors for other products (example error message: "Cannot gather stats! Warning!stat(): stat failed for "). 
+<!--- 61797 -->* When you delete an image in the Admin panel, Magento no longer deletes it on the server. Previously, Magento deleted it from the server as well, which caused errors for other products (example error message: `Cannot gather stats! Warning!stat(): stat failed for `). 
 
 <!--- 61729 -->* Magento now displays only the price for product for the store view level. Previously, the category listing page showed the  default store view price as well as the  prices from other store views. 
 
@@ -93,7 +93,7 @@ This release includes both improvements we've made internally and those submitte
 
 <!--- 67535 -->* Magento now correctly assigns images to duplicated products. 
 
-<!--- 57144 -->* You can now create a blank attribute option using the drop down input option on products that do not require an attribute. 
+<!--- 57144 -->* You can now create a blank attribute option using the drop-down input option on products that do not require an attribute. 
 [GitHub-3545](https://github.com/magento/magento2/issues/3545), [GitHub-5485](https://github.com/magento/magento2/issues/5485), [GitHub-4910](https://github.com/magento/magento2/issues/4910)
 
 
@@ -239,11 +239,10 @@ layout for "Shipping and Tracking" block did work properly.
 
 <!--- 69062 -->* The email logo image function now works as expected.   [GitHub-5352](https://github.com/magento/magento2/issues/5352),  [GitHub-5633](https://github.com/magento/magento2/issues/5633),  [GitHub-5916](https://github.com/magento/magento2/issues/5916) [GitHub-6275](https://github.com/magento/magento2/issues/6275),  [GitHub-9590](https://github.com/magento/magento2/issues/9590)  *fix submitted by community member  @hostep*
 
-<!--- 67523 -->* Magento no longer logs constant critical errors in `var/log/system.log`.  [GitHub-5627](https://github.com/magento/magento2/issues/5627)   reports *fix submitted by community member @malachy-mcconnnell*
 
 <!--- 68774 -->* The login popup window now works as expected in portrait mode on an iPad. [GitHub-6451](https://github.com/magento/magento2/issues/6451)   *fix submitted by community member @ihor-sviziev*
 
-<!--- 69665 -->* The value of `item_zone` on the product detail page now remains set correctly when you change products via the related/upsell products list. [GitHub-9562](https://github.com/magento/magento2/issues/9562), [GitHub-6746](https://github.com/magento/magento2/issues/6746)  general *fix submitted by community member @hostep*
+<!--- 69665 -->* The value of `item_zone` on the product detail page now remains set correctly when you change products via the related/upsell products list. [GitHub-9562](https://github.com/magento/magento2/issues/9562), [GitHub-6746](https://github.com/magento/magento2/issues/6746)   *fix submitted by community member @hostep*
 
 <!--- 69023 -->* Wishlists now display the correct product price.  [GitHub-6866](https://github.com/magento/magento2/issues/6866) *fix submitted by community member @hostep*
 
@@ -363,8 +362,9 @@ layout for "Shipping and Tracking" block did work properly.
 <!--- 64297 -->* The website column in Customer Segment report now contains correct data. Previously, this column was blank in the **Reports > Customer > Segments** report. 
 
 
-<!--- 68938 -->* You can now successfully export the Low Stock report.  [GitHub-9428](https://github.com/magento/magento2/issues/9428) reports *fix submitted by community member  @mikebox*
+<!--- 68938 -->* You can now successfully export the Low Stock report.  [GitHub-9428](https://github.com/magento/magento2/issues/9428)  *fix submitted by community member  @mikebox*
 
+<!--- 67523 -->* Magento no longer logs constant critical errors in `var/log/system.log`.  [GitHub-5627](https://github.com/magento/magento2/issues/5627)  *fix submitted by community member @malachy-mcconnnell*
 
 
 ### Sample data
