@@ -40,7 +40,7 @@ Magento 2.1.8 contains over 100 functional fixes and enhancements as well as our
 
 ## What's new in these release notes?
 
-With this release, we're inaugurating a new feature of our release notes: descriptions of community-supplied code fixes. Thank you, community members!
+With this release, we're inaugurating a new feature of our release notes: descriptions of community-supplied code fixes that were submitted through the Community Engineering program. Thank you, community members!
 
 
 If a community member has provided a fix, we identify the fix with the phrase, "*fix provided by community member xxx*". We've also included a table that identifes the GitHub issue, PR, and community member who created that PR. 
@@ -61,9 +61,6 @@ This release includes both improvements we've made internally and those submitte
 
 <!--- 59782 -->* Magento now correctly displays product information after you perform an operation on more than one item. Previously, product information was not correctly aligned on the page.  [GitHub-6867](https://github.com/magento/magento2/issues/6867)
 
-
-
-<!--- 57153 -->* Magento now correctly displays custom options at the store view level. [GitHub-2908](https://github.com/magento/magento2/issues/2908), [GitHub-5885](https://github.com/magento/magento2/issues/5885), [GitHub-5612](https://github.com/magento/magento2/issues/5612)
 
 <!--- 57064 -->* The currency switcher now works for widgets on the home page. Previously, if your website supported multiple currencies, the currency switcher did not update the currencies for widgets on the home page. 
 
@@ -257,7 +254,7 @@ layout for "Shipping and Tracking" block did work properly.
 <!--- 69922 -->* You can now set a negative quantity for a product.  [GitHub-9139](https://github.com/magento/magento2/issues/9139)  catalog *fix submitted by community member @poongud*
 
 
-<!--- 69543— -->*  Magento no longer caches layered navigation options with the wrong store ID.  [GitHub-9679](https://github.com/magento/magento2/issues/9679)  *fix submitted by community member @hostep*
+<!--- 69543 -->*  Magento no longer caches layered navigation options with the wrong store ID.  [GitHub-9679](https://github.com/magento/magento2/issues/9679)  *fix submitted by community member @hostep*
 
 
 
@@ -301,9 +298,6 @@ layout for "Shipping and Tracking" block did work properly.
 <!--- 63020 -->*  Static content deployment (SCD) now works when multiple languages are specified. Previously, Magento displayed an error if you tried to deploy static content in more than one language (for example, `bin/magento setup:static-content:deploy en_CA fr_CA de_DE`).
 
 <!--- 59775 -->* Static content deployment now generates secure content, whether content included secure or non-secure URLs.
-
-
-<!--- 62025 -->* Magento upgrade with sample data completes successfully on the first attempt. Previously, the upgrade process failed with fatal errors during your first attempt at upgrade, then succeeded upon re-try. 
 
 
 <!--- 63650 -->* Magento now moves the `sequence_*` table to the correct database after implementing a split database. 
@@ -407,7 +401,7 @@ layout for "Shipping and Tracking" block did work properly.
 ### Staging
 
 
-<!--- 60905 -->* Magento now displays the correct date and time for staging updates. Previously, when you saved a new staging update, the scheduled time shown was as an hour later than the specified time.
+<!--- 60905 -->* Magento now displays the correct date and time for staging updates. Previously, when your current time in Daylight Saving time, and your target time was in Standard time, your target time was incorrect. 
 
 
 <!--- 61004 -->* You can now create a new scheduled update for a product. Previously. when you tried to create an update, Magento displayed this error:  `Uncaught TypeError: Failed to execute 'removeChild' on 'Node': parameter 1 is not of type 'Node'.`
@@ -420,7 +414,7 @@ layout for "Shipping and Tracking" block did work properly.
 <!--- 66278 -->* The staging dashboard now loads without error when you sort by status on the dashboard. Previously, the staging dashboard broke and remained in an infinite loop when you attempted to sort by status on the dashboard.
 
 
-<!--- 61267 -->* The view/edit option for a scheduled change is now available for the duration that the scheduled change is in progress. Previously, you could not view or edit a  scheduled change was it was in progress, which left no way to edit or remove it. 
+<!--- 61267 -->* The view/edit option for a scheduled change is now available for the duration that the scheduled change is in progress. Previously, you could not view or edit a  scheduled change when it was in progress, which left no way to edit or remove it. 
 
 
 
