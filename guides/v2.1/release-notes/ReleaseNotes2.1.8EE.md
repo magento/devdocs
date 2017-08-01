@@ -15,7 +15,6 @@ github_link: release-notes/ReleaseNotes2.1.8EE.md
 
 
 *Release date: August , 2017*
-
 *Page updated: August , 2017*
 
 We are pleased to present Magento Enterprise Edition 2.1.8. This release includes important enhancements to your Magento software.
@@ -106,9 +105,9 @@ This release includes both improvements we've made internally and those submitte
 
 <!--- 65656 -->* You can complete your order after entering a new shipping address during checkout. Previously, Magento would not let you place an order if you entered a new shipping address during checkout. 
 
-<!--- 69223 -->* Magento now successfully defines extension attributes for a quote billing address. [GitHub-9646](https://github.com/magento/magento2/issues/9646)  (fix submitted by community member @ekuusela)
+<!--- 69223 -->* Magento now successfully defines extension attributes for a quote billing address. [GitHub-9646](https://github.com/magento/magento2/issues/9646)  *fix submitted by community member @ekuusela*
 
-<!--- 68875 -->* Shipping method radio buttons are no longer disabled when the Checkout page is refreshed.  [GitHub-6 7497 866](https://github.com/magento/magento2/issues/7497)  (fix submitted by community member  @rachkulik)
+<!--- 68875 -->* Shipping method radio buttons are no longer disabled when the Checkout page is refreshed.  [GitHub-6 7497 866](https://github.com/magento/magento2/issues/7497)  *fix submitted by community member  @rachkulik*
 
 
 
@@ -225,37 +224,37 @@ layout for "Shipping and Tracking" block did work properly.
 
 <!--- 60538 -->* We fixed an issue where cache-misses sometimes occurred when Fastly cache was implemented. We fixed an issue where cache-misses sometimes occurred when Fastly cache was implemented. Previously, the header information included in the response sometimes prevented the caching of this page. To minimize this potential problem, Magento now does not include  header empty of real content  in the response. 
 
-<!--- 60538 -->* Resolved issue with selecting widgets in TinyMCE editor. [GitHub-9655](https://github.com/magento/magento2/issues/9655), [GitHub-9518](https://github.com/magento/magento2/issues/9518)  (fix submitted by community member @hostep)
+<!--- 60538 -->* Resolved issue with selecting widgets in TinyMCE editor. [GitHub-9655](https://github.com/magento/magento2/issues/9655), [GitHub-9518](https://github.com/magento/magento2/issues/9518)  *fix submitted by community member @hostep*
 
-<!--- 69238 -->* Magento now preserves image transparency when resizing images. (fix submitted by community member @kassner)
-
-
-<!--- 67621 -->* Magento now displays UTF-8 special character issue in widgets as expected. [GitHub-4232](https://github.com/magento/magento2/issues/4232)  (fix submitted by community member @hostep)
+<!--- 69238 -->* Magento now preserves image transparency when resizing images. *fix submitted by community member @kassner*
 
 
-<!--- 67614 -->* You can now remove breadcrumbs without removing the page meta title from the category view and product view pages.  Previously, the page meta title is visible only if the breadcrumbs block was defined in XML.  [GitHub-4427](https://github.com/magento/magento2/issues/4427) (fix submitted by community member  @latenights)
-
-<!--- 68903 -->* The WYSIWYG editor now performs more consistently.  [GitHub-4828](https://github.com/magento/magento2/issues/4828), [GitHub-6222](https://github.com/magento/magento2/issues/6222),  [GitHub-6815](https://github.com/magento/magento2/issues/6815)  (fix submitted by community member @hostep)
+<!--- 67621 -->* Magento now displays UTF-8 special character issue in widgets as expected. [GitHub-4232](https://github.com/magento/magento2/issues/4232)  *fix submitted by community member @hostep*
 
 
-<!--- 69062 -->* The email logo image function now works as expected.   [GitHub-5352](https://github.com/magento/magento2/issues/5352),  [GitHub-5633](https://github.com/magento/magento2/issues/5633),  [GitHub-5916](https://github.com/magento/magento2/issues/5916) [GitHub-6275](https://github.com/magento/magento2/issues/6275),  [GitHub-9590](https://github.com/magento/magento2/issues/9590) general (fix submitted by community member  @hostep)
+<!--- 67614 -->* You can now remove breadcrumbs without removing the page meta title from the category view and product view pages.  Previously, the page meta title is visible only if the breadcrumbs block was defined in XML.  [GitHub-4427](https://github.com/magento/magento2/issues/4427) *fix submitted by community member  @latenights*
 
-<!--- 67523 -->* Magento no longer logs constant critical errors in `var/log/system.log`.  [GitHub-5627](https://github.com/magento/magento2/issues/5627)   reports (fix submitted by community member @malachy-mcconnnell)
-
-<!--- 68774 -->* The login popup window now works as expected in portrait mode on an iPad. [GitHub-6451](https://github.com/magento/magento2/issues/6451)   (fix submitted by community member @ihor-sviziev)
-
-<!--- 69665 -->* The value of `item_zone` on the product detail page now remains set correctly when you change products via the related/upsell products list. [GitHub-9562](https://github.com/magento/magento2/issues/9562), [GitHub-6746](https://github.com/magento/magento2/issues/6746)  general (fix submitted by community member @hostep)
-
-<!--- 69023 -->* Wishlists now display the correct product price.  [GitHub-6866](https://github.com/magento/magento2/issues/6866) (fix submitted by community member @hostep)
-
-<!--- 69541 -->* A JavaScript error no longer occurs on the Product page because Magento cannot read the 'oldPrice' value.  [GitHub-7959](https://github.com/magento/magento2/issues/7959) (fix submitted by community member @dreamworkers)
-
-<!--- 69019 -->* We resolved an issue where  interface constructors broke Magento compilation.   [GitHub-8607](https://github.com/magento/magento2/issues/8607)  (fix submitted by community member @LoganayakiK)
-
-<!--- 69922 -->* You can now set a negative quantity for a product.  [GitHub-9139](https://github.com/magento/magento2/issues/9139)  catalog (fix submitted by community member @poongud)
+<!--- 68903 -->* The WYSIWYG editor now performs more consistently.  [GitHub-4828](https://github.com/magento/magento2/issues/4828), [GitHub-6222](https://github.com/magento/magento2/issues/6222),  [GitHub-6815](https://github.com/magento/magento2/issues/6815)  *fix submitted by community member @hostep*
 
 
-<!--- 69543— -->*  Magento no longer caches layered navigation options with the wrong store ID.  [GitHub-9679](https://github.com/magento/magento2/issues/9679)  (fix submitted by community member @hostep)
+<!--- 69062 -->* The email logo image function now works as expected.   [GitHub-5352](https://github.com/magento/magento2/issues/5352),  [GitHub-5633](https://github.com/magento/magento2/issues/5633),  [GitHub-5916](https://github.com/magento/magento2/issues/5916) [GitHub-6275](https://github.com/magento/magento2/issues/6275),  [GitHub-9590](https://github.com/magento/magento2/issues/9590)  *fix submitted by community member  @hostep*
+
+<!--- 67523 -->* Magento no longer logs constant critical errors in `var/log/system.log`.  [GitHub-5627](https://github.com/magento/magento2/issues/5627)   reports *fix submitted by community member @malachy-mcconnnell*
+
+<!--- 68774 -->* The login popup window now works as expected in portrait mode on an iPad. [GitHub-6451](https://github.com/magento/magento2/issues/6451)   *fix submitted by community member @ihor-sviziev*
+
+<!--- 69665 -->* The value of `item_zone` on the product detail page now remains set correctly when you change products via the related/upsell products list. [GitHub-9562](https://github.com/magento/magento2/issues/9562), [GitHub-6746](https://github.com/magento/magento2/issues/6746)  general *fix submitted by community member @hostep*
+
+<!--- 69023 -->* Wishlists now display the correct product price.  [GitHub-6866](https://github.com/magento/magento2/issues/6866) *fix submitted by community member @hostep*
+
+<!--- 69541 -->* A JavaScript error no longer occurs on the Product page because Magento cannot read the 'oldPrice' value.  [GitHub-7959](https://github.com/magento/magento2/issues/7959) *fix submitted by community member @dreamworkers*
+
+<!--- 69019 -->* We resolved an issue where  interface constructors broke Magento compilation.   [GitHub-8607](https://github.com/magento/magento2/issues/8607)  *fix submitted by community member @LoganayakiK*
+
+<!--- 69922 -->* You can now set a negative quantity for a product.  [GitHub-9139](https://github.com/magento/magento2/issues/9139)  catalog *fix submitted by community member @poongud*
+
+
+<!--- 69543— -->*  Magento no longer caches layered navigation options with the wrong store ID.  [GitHub-9679](https://github.com/magento/magento2/issues/9679)  *fix submitted by community member @hostep*
 
 
 
@@ -355,7 +354,7 @@ layout for "Shipping and Tracking" block did work properly.
 
 <!--- 58876 -->* We've improved the performance of mass actions and reduced the amount of memory that these operations consume. 
 
-<!--- 67724, 67725 -->* We’ve improved the performance of the Checkout page.  [GitHub-4868](https://github.com/magento/magento2/issues/4868), [GitHub-6997](https://github.com/magento/magento2/issues/6997), [GitHub-9364](https://github.com/magento/magento2/issues/9364) (fix submitted by community member  @hostep)
+<!--- 67724, 67725 -->* We’ve improved the performance of the Checkout page.  [GitHub-4868](https://github.com/magento/magento2/issues/4868), [GitHub-6997](https://github.com/magento/magento2/issues/6997), [GitHub-9364](https://github.com/magento/magento2/issues/9364) *fix submitted by community member  @hostep*
 
 
 
@@ -364,7 +363,7 @@ layout for "Shipping and Tracking" block did work properly.
 <!--- 64297 -->* The website column in Customer Segment report now contains correct data. Previously, this column was blank in the **Reports > Customer > Segments** report. 
 
 
-<!--- 68938 -->* You can now successfully export the Low Stock report.  [GitHub-9428](https://github.com/magento/magento2/issues/9428) reports (fix submitted by community member  @mikebox)
+<!--- 68938 -->* You can now successfully export the Low Stock report.  [GitHub-9428](https://github.com/magento/magento2/issues/9428) reports *fix submitted by community member  @mikebox*
 
 
 
