@@ -20,20 +20,20 @@ In `magento-cloud-configuration` release 101.4.1 on Magento Enterprise Cloud Edi
 *	Less time required to [build](#cloud-confman-scd-over) and deploy your project by reducing the time required for static file deployment.
 
 <div class="bs-callout bs-callout-info" markdown="1">
-These new methods to manage your configuration are optional. You don't have to use them, although we strongly recommend you do for faster deployments and consistent configurations across your environments.
+These new methods are optional but strongly recommended. The process ensures faster deployments and consistent configurations across your environments.
 </div>
 
 ### Managing the configuration {#cloud-confman-over}
-We <!-- help you protect sensitive settings and  -->make it easy to manage system-specific settings for your stores.
+We <!-- help you protect sensitive settings and  -->make it easy to manage system-specific settings for your stores by generating a single file with all of your Magento configurations.
 
 <!-- *	A new method to manage sensitive settings (such as {% glossarytooltip 5b963536-8f03-45c4-963b-688021f4eea7 %}payment gateway{% endglossarytooltip %} passwords).
  -->
- An improved method to manage system configuration settings for stores, sites, extensions, and static file optimization settings in a new configuration file, `app/etc/config.local.php`, which is in source control.
+ This new configuration management feature creates a file, `app/etc/config.local.php`, that includes all system configuration settings for stores, sites, extensions, and static file optimization settings. System values related to {% glossarytooltip a3e37235-4e8b-464f-a19d-4a120560206a %}static content{% endglossarytooltip %} deployment (for example, static file optimization) are also stored in `app/etc/config.local.php`. _Static file optimization_ means merging and minifying JavaScript and Cascading Style Sheets, and minifying HTML templates.
 
 <!-- *	In your [staging]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-stage) and [production]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-prod) systems, you manage sensitive settings by defining environment variables.
 
 You can change sensitive variables using the Magento Enterprise Cloud Edition [Web Interface]({{ page.baseurl }}cloud/project/project-webint-basic.html).  -->
-System values related to {% glossarytooltip a3e37235-4e8b-464f-a19d-4a120560206a %}static content{% endglossarytooltip %} deployment (for example, static file optimization) are also stored in `app/etc/config.local.php`. _Static file optimization_ means merging and minifying JavaScript and Cascading Style Sheets, and minifying HTML templates.
+
 
 <!-- Sensitive values are _not_ stored in `app/etc/config.local.php`. -->
 
