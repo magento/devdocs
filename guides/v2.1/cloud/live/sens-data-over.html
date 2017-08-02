@@ -1716,7 +1716,7 @@
 
 <ul>
   <li>
-    <p>Better way to <a href="#cloud-confman-over">manage the configuration</a> so your integration, staging, and production systems stay in synchronization with each other more easily.</p>
+    <p>Better way to <a href="#cloud-confman-over">manage the configuration</a> so your Integration, Staging, and Production environments stay in synchronization with each other more easily.</p>
 
     <!-- Sensitive data, such as payment processor passwords and API keys, are managed using either environment variables or using the Magento Admin only. -->
   </li>
@@ -1726,59 +1726,46 @@
 </ul>
 
 <div class="bs-callout bs-callout-info">
-  <p>These new methods to manage your configuration are optional. You don’t have to use them, although we strongly recommend you do.</p>
+  <p>These new methods are optional but strongly recommended. The process ensures faster deployments and consistent configurations across your environments.</p>
 </div>
 
 <h3 id="cloud-confman-over">Managing the configuration</h3>
-<p>We <!-- help you protect sensitive settings and  -->make it easy to manage system-specific settings as follows:</p>
+<p>We <!-- help you protect sensitive settings and  -->make it easy to manage system-specific settings for your stores by generating a single file with all of your Magento configurations.</p>
 
 <!-- *	A new method to manage sensitive settings (such as <span term-uuid="5b963536-8f03-45c4-963b-688021f4eea7" class="glossary-term" data-toggle="popover">payment gateway</span> passwords).
  -->
-<ul>
-  <li>An improved method to manage system configuration settings (such as store <span term-uuid="05099dbb-d491-4e33-a065-16035cb2d4d9" class="glossary-term" data-toggle="popover">locale</span> settings and static file optimization settings) in a new configuration file, <code>app/etc/config.local.php</code>, which is in source control.</li>
-</ul>
+<p>This new configuration management feature creates a file, <code>app/etc/config.local.php</code>, that includes all system configuration settings for stores, sites, extensions, and static file optimization settings. System values related to <span term-uuid="a3e37235-4e8b-464f-a19d-4a120560206a" class="glossary-term" data-toggle="popover">static content</span> deployment (for example, static file optimization) are also stored in <code>app/etc/config.local.php</code>. <em>Static file optimization</em> means merging and minifying JavaScript and Cascading Style Sheets, and minifying HTML templates.</p>
 
 <!-- *	In your [staging](/guides/v2.1/cloud/reference/discover-arch.html#cloud-arch-stage) and [production](/guides/v2.1/cloud/reference/discover-arch.html#cloud-arch-prod) systems, you manage sensitive settings by defining environment variables.
 
-	You can change sensitive variables using the Magento Enterprise Cloud Edition [Web Interface](/guides/v2.1/cloud/project/project-webint-basic.html).  -->
-<ul>
-  <li>
-    <p>System values related to <span term-uuid="a3e37235-4e8b-464f-a19d-4a120560206a" class="glossary-term" data-toggle="popover">static content</span> deployment (for example, static file optimization) are also stored in <code>app/etc/config.local.php</code>.</p>
+You can change sensitive variables using the Magento Enterprise Cloud Edition [Web Interface](/guides/v2.1/cloud/project/project-webint-basic.html).  -->
 
-    <!-- Sensitive values are _not_ stored in `app/etc/config.local.php`. -->
+<!-- Sensitive values are _not_ stored in `app/etc/config.local.php`. -->
 
-    <p><code>config.local.php</code> is a convenient way to move settings between systems. Managing <code>config.local.php</code> in source control means your settings for Integration, Staging, and Production environments are always consistent. For example, you can disable static file optimization in <a href="/guides/v2.1/cloud/reference/discover-arch.html#cloud-arch-int">Integration</a> but enable it in both Staging and Production. After initially setting up the configuration, you don’t need to touch it again because it’s in source control.</p>
-
-    <p>(<em>Static file optimization</em> means merging and minifying JavaScript and Cascading Style Sheets, and minifying HTML templates.)</p>
-  </li>
-</ul>
+<p><code>config.local.php</code> is a convenient way to move settings between your environments. You will add <code>config.local.php</code> to your <code>master</code> Git branch, storing the file in source control. Your Magento installation accesses the configurations stored in this file in your Integration, Staging, and Production environments for complete consistency.</p>
 
 <h3 id="cloud-confman-scd-over">Static content deployment performance</h3>
 <p>If you have a <code>config.local.php</code>, static files are deployed in the Magento Enterprise Cloud Edition <a href="/guides/v2.1/cloud/reference/discover-deploy.html#cloud-deploy-over-phases-build">build phase</a> instead of in the <a href="/guides/v2.1/cloud/reference/discover-deploy.html#cloud-deploy-over-phases-hook">deployment phase</a>, which decreases the amount of time required to deploy changes to Cloud.</p>
 
-<p>In other words, Cloud’s build phase is less time-consuming than deployment. Therefore, any change you make to your Cloud project deploys faster overall if there is a <code>config.local.php</code> compared to having no <code>config.local.php</code>.</p>
+<p>This makes Cloud’s build phase less time-consuming than deployment. Therefore, any change you make to your Cloud project deploys faster overall if there is a <code>config.local.php</code>.</p>
 
 <h3 id="cloud-confman-locked-over">Configuration settings locked in the Magento Admin</h3>
-<p>Settings in <code>config.local.php</code> are not editable in the <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span>. This also helps keep your settings consistent across the integration, staging, and production systems.</p>
+<p>Settings in <code>config.local.php</code> are not editable in the <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span>. This also helps keep your settings consistent across all environments.</p>
 
 <h3 id="how-to-get-magento-cloud-configuration-release-10141">How to get <code>magento-cloud-configuration</code> release 101.4.1</h3>
-<p>Magento Enterprise Cloud Edition periodically provides patch releases in components like <code>magento-cloud-configuration</code>.</p>
-
-<p>To test and apply the patch, see <a href="/guides/v2.1/cloud/project/project-patch.html#cloud-patch-gen">Test general patches</a>.</p>
+<p>Magento Enterprise Cloud Edition periodically provides patch releases in components like <code>magento-cloud-configuration</code>. To test and apply the patch, see <a href="/guides/v2.1/cloud/project/project-patch.html#cloud-patch-gen">Test general patches</a>.</p>
 
 <h2 id="cloud-config-manage-sens-over">Manage your configuration <!-- and protect sensitive settings --></h2>
-<p>Magento’s store configuration is located in the database and there is one database per system. This can make the configuration of multiple systems (such as staging and production) difficult.</p>
+<p>Magento’s store configuration is located in the database. When updating configurations in Integration, Staging, and Production environments, you would need to make those changes in the Admin per environment. By generating this file, all of your Magento configuration settings are exported from the database into a single text file. Magento accesses this file for configuration settings per environment.</p>
 
-<p>Starting with version <code>magento-cloud-configuration</code> release 101.4.1 on Magento Enterprise Cloud Edition 2.1.4, we store configuration values are specified in a new configuration file, <code>app/etc/config.local.php</code>, which is in source control.</p>
-
-<p>Using <code>config.local.php</code>, you can, for example, disable static file optimization in your integration system (where you are developing and testing) and enable static file optimization in staging and production.</p>
+<p>You can also modify the settings in each file per environment. For example, you may want to disable static file optimization in your Integration environment (where you are developing and testing) and enable it in Staging and Production environments. Modifying the file does require direct edits per environment.</p>
 
 <!-- *	Sensitive values, such as payment processor settings, are specified using environment variables. Viewing or changing environment variables is restricted to people who have at minimum a project reader role with [environment administrator](/guides/v2.1/cloud/project/user-admin.html#loud-role-env) privileges.
  -->
 
 <p>The following sections provide more detail.</p>
 
-<h3 id="cloud-config-specific-over">Example of managing system-specific settings</h3>
+<h2 id="cloud-config-specific-over">Example of managing system-specific settings</h2>
 <p>System settings refer to the configuration in the Magento <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span> in <strong>Stores</strong> &gt; Settings &gt; <strong>Configuration</strong>. A list of settings can be found in <a href="/guides/v2.1/cloud/live/cloud/live/sens-data-initial.html#cloud-clp-settings">Configuration settings you can change</a>.</p>
 
 <!-- #### How we set system values
@@ -1815,11 +1802,9 @@ In each of your Magento Enterprise Cloud Edition systems (integration, staging, 
   </li>
 </ol>
 
-<p>If no value exists in any of those sources, we use either the default value or NULL.</p>
+<p>If no value exists in any of those sources, we use either the default value or NULL. For an example of how this works, see <a href="/guides/v2.1/cloud/live/sens-data-initial.html">Example of managing system-specific settings</a>.</p>
 
-<p>For an example of how this works, see <a href="/guides/v2.1/cloud/live/sens-data-initial.html">Example of managing system-specific settings</a>.</p>
-
-<h4 id="cloud-config-specific-recomm">Recommended procedure to manage your settings</h4>
+<h2 id="cloud-config-specific-recomm">Recommended procedure to manage your settings</h2>
 <p>Managing store configuration is a complex task that’s mostly up to you. What locales do you want to use? What custom themes do you need? Only you can determine the answers to those questions.</p>
 
 <p>We can, however, help you manage those settings more easily. For example, suppose you want to change the default locale and also change a store’s static file optimization settings. Currently, the way you do that is to log in to the Admin on the integration server, save your settings, then (when testing is complete) manually change those settings in staging.</p>
@@ -1835,48 +1820,52 @@ In each of your Magento Enterprise Cloud Edition systems (integration, staging, 
 <p>Our recommended method relies on the following important points:</p>
 
 <ul>
-  <li>Do all of your configuration in your integration system’s <code>master</code> branch; the <code>master</code> branch is your “source of truth” for configuration management.</li>
+  <li>Complete all of your configuration in your Integration <code>master</code> branch. The <code>master</code> branch is your “source of truth” for configuration management.</li>
   <li>Transfer those settings using <code>config.local.php</code> to the other systems (local, staging, and production).</li>
 </ul>
 
-<p><strong>Step A</strong>. Create and configure stores and create <code>config.local.php</code> in your integration system.</p>
+<p>To generate and deploy:</p>
 
-<p><strong>Step B</strong>. Push <code>config.local.php</code> to your integration server’s <code>master</code> branch.</p>
-
-<p>The following procedure is required because there is no Git user on your integration server so you can’t use Git commands there. Instead, you generate the configuration on the integration server and transfer it to your local machine where you can push it.</p>
+<p><strong>Step A</strong>. Complete all configurations for your stores in the Admin console.</p>
 
 <ol>
-  <li>Generate <code>config.local.php</code> on your integration server’s <code>master</code> branch.</li>
-  <li>Transfer <code>config.local.php</code> to your local system using <code>rsync</code> or <code>scp</code> so you can add it to Git.</li>
-  <li>Add <code>config.local.php</code> to Git (again, in the <code>master</code> branch).</li>
-  <li>Push <code>config.local.php</code> to your integration server.</li>
+  <li>Log into your Integration environment for the <code>master</code> branch.</li>
+  <li>Create and configure stores.</li>
+  <li>Generate <code>config.local.php</code> on your Integration environment using the <code>magento-cloud:scd-dump</code> command. The command which populates <code>config.local.php</code> with only the configuration values necessary for static content deployment.</li>
 </ol>
 
-<p>You generate <code>config.local.php</code> using <code>magento app:config:scd-dump</code>, which populates <code>config.local.php</code> with only the configuration values necessary for static content deployment..</p>
+<p><strong>Step B</strong>. Push <code>config.local.php</code> to the Integration <code>master</code> branch. To push this file to the <code>master</code> Git branch, you need to complete a few extra steps because this environment is read-only.</p>
 
-<!-- *	`magento app:config:dump` populates `config.local.php` with all system configuration values _except_ sensitive values.
-*	`magento app:config:scd-dump` populates `config.local.php` with only the configuration values necessary for static content deployment. -->
+<ol>
+  <li>Transfer <code>config.local.php</code> to your local system using <code>rsync</code> or <code>scp</code>. You can only add this file to the Git branch through your local.</li>
+  <li>Add and push <code>config.local.php</code> to the Git <code>master</code> branch.</li>
+</ol>
 
-<p><strong>Step C</strong>. Magento Enterprise Cloud Edition automatically deploys the settings to your integration server.</p>
+<!-- *	`magento-cloud:dump` populates `config.local.php` with all system configuration values _except_ sensitive values.
+*	`magento-cloud:scd-dump` populates `config.local.php` with only the configuration values necessary for static content deployment. -->
 
-<p><strong>Step D</strong>. To change settings:</p>
+<p><strong>Step C</strong>. When you push to the Git branch, Magento Enterprise Cloud Edition automatically deploys the settings to your Integration environment for the <code>master</code> branch. This file is included in any branches from Master, transfering the locked configurations into those environments.</p>
+
+<p><strong>Step D</strong>. If you need to change any configuration settings on the Integration environment, we recommend completing them in the Integration environment for the <code>master</code> branch. You need to take a few extra steps because all Integration environments are read-only.</p>
+
+<p>To complete these changes:</p>
 
 <ol>
   <li>
-    <p>Delete <code>config.local.php</code> on your integration server.</p>
+    <p>Delete <code>config.local.php</code> on your Integration environment.</p>
 
-    <p>You must delete it to be able to change the same settings again. In other words, if you changed the store name, that setting isn’t editable in the Admin. You must delete <code>config.local.php</code> on the integration server to be able to change the store name again.</p>
+    <p>You must delete the file to change settings. The stored configurations in the file are blocked from editing in the Admin console. For example, if you want to change a store name, you can’t edit it until this file is removed.</p>
   </li>
-  <li>Make configuration changes in the Admin on the integration server.</li>
+  <li>Make configuration changes in the Admin on the Integration environment.</li>
   <li>Re-create <code>config.local.php</code> and repeat Step B.</li>
 </ol>
 
-<p>After you’ve configured the integration server and tested it thoroughly, see <a href="/guides/v2.1/cloud/live/stage-prod-over.html">Overview of staging and production</a> to start the process of migrating to a staging or production system.</p>
+<p>After you’ve configured the Integration environment and tested it thoroughly, see <a href="/guides/v2.1/cloud/live/stage-prod-over.html">Overview of staging and production</a> to start the process of migrating to a staging or production system.</p>
 
 <div class="bs-callout bs-callout-warning">
-  <p>We assume system settings are the same in staging and production. <!-- Only sensitive configuration values should change in those systems and you manage them using environment variables. --></p>
+  <p>We assume system settings are the same in Staging and Production environments. <!-- Only sensitive configuration values should change in those systems and you manage them using environment variables. --></p>
 
-  <p>If you choose to use different system settings in staging and production, you can manually edit <code>config.local.php</code>, but that is beyond scope of this guide.</p>
+  <p>If you choose to use different system settings in Staging and Production, you can manually edit <code>config.local.php</code>. We highly recommend making any configuration changes in Integration to deploy into Staging and Production.</p>
 </div>
 
 <h4 id="next-step">Next step</h4>
