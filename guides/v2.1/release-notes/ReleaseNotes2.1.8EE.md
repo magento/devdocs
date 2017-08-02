@@ -210,7 +210,7 @@ layout for the  "Shipping and Tracking" block did not -work properly.
 
 <!--- 69023 -->* Wishlists now display the correct product price.  [GitHub-6866](https://github.com/magento/magento2/issues/6866) *fix submitted by community member @hostep*
 
-<!--- 69541 -->* A JavaScript error no longer occurs on the Product page because Magento cannot read the `oldPrice` value.  [GitHub-7959](https://github.com/magento/magento2/issues/7959) *fix submitted by community member @dreamworkers*
+<!--- 69541 -->* We’ve fixed a JavaScript error on Product page that prevented  Magento from updating color swatches  or updating product prices correctly. [GitHub-7959](https://github.com/magento/magento2/issues/7959) *fix submitted by community member @dreamworkers*
 
 <!--- 69019 -->* We resolved an issue where  interface constructors broke Magento compilation.   [GitHub-8607](https://github.com/magento/magento2/issues/8607)  *fix submitted by community member @LoganayakiK*
 
