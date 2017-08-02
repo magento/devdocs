@@ -1,7 +1,7 @@
 ---
 layout: default
-group: howdoi
-subgroup: checkout
+group: checkout
+subgroup: 
 title: Add a custom template for a form field on Checkout page
 menu_title: Add a custom template for a form field on Checkout page
 menu_order: 7
@@ -14,7 +14,7 @@ This topic describes how to replace the {% glossarytooltip a2aff425-07dd-4bd6-96
 
 <h2> Overview </h2>
 
-The forms used on the Checkout page are implemented using Knockout JS. 
+The forms used on the Checkout page are implemented using Knockout JS.
 
 To change the template of the form field, do the following:
 
@@ -24,13 +24,13 @@ To change the template of the form field, do the following:
 There are more details about each step in the following sections.
 
 
-## Prerequisites 
+## Prerequisites
 
-[Set Magento to the developer mode]({{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html) while you perform all customizations and debugging. 
+[Set Magento to the developer mode]({{page.baseurl}}config-guide/cli/config-cli-subcommands-mode.html) while you perform all customizations and debugging.
 
 For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code. Instead, add your customizations in a separate {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}. For your checkout customization to be applied correctly, your custom module should [depend]({{page.baseurl}}extension-dev-guide/build/composer-integration.html) on the Magento_Checkout module.
 
-Do not use `Ui` for your custom module name, because `%Vendor%_Ui` notation, required when specifying paths, might cause issues. 
+Do not use `Ui` for your custom module name, because `%Vendor%_Ui` notation, required when specifying paths, might cause issues.
 
 ## Implement the HTML template for the field {#template}
 
@@ -61,7 +61,7 @@ Example of a field template:
 
 ## Specify the new template in layout {#layout}
 
-In your custom module directory, create a new `<your_module_dir>/view/frontend/layout/checkout_index_index.xml` file. 
+In your custom module directory, create a new `<your_module_dir>/view/frontend/layout/checkout_index_index.xml` file.
 In this file, add content similar to the following:
 
 {% highlight xml%}
@@ -110,9 +110,7 @@ In this file, add content similar to the following:
 
 ## Modifying the custom template after it was applied {#modify}
 
-If you modify your custom `.html` template after it was applied on the store pages, the changes will not apply until you do the following: 
+If you modify your custom `.html` template after it was applied on the store pages, the changes will not apply until you do the following:
 
 1. Delete all files in the `pub/static/frontend` and `var/view_preprocessed` directories.
 2. Reload the pages.
-
-

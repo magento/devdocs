@@ -1,7 +1,7 @@
 ---
 layout: default
-group: howdoi
-subgroup: checkout
+group: checkout
+subgroup: 
 title: Customize the view of a checkout step
 menu_title: Customize the view of a checkout step
 menu_order: 2
@@ -14,7 +14,7 @@ github_link: howdoi/checkout/checkout_customize.md
 This topic contains the basic information about how to customize the view of an existing {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} step. In the Magento application, checkout is implemented using UI components. You can customize each step by changing the {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} implementation or template for a component, adding, removing or disabling a component.
 
 
-## Change the component's .js implementation and template 
+## Change the component's .js implementation and template
 
 To change the `.js` implementation and template used for components rendering, you need to declare the new files in the checkout page {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %}. To do this, take the following steps:
 
@@ -36,7 +36,7 @@ To change the `.js` implementation and template used for components rendering, y
 </page>
 {%endhighlight xml%}
 
-3. In the `<Magento_Checkout_module_dir>/view/frontend/layout/checkout_index_index.xml` file, find the component that you need to customize. Copy the corresponding node and all parent nodes up to `<argument>`. There is no need to leave all the attributes and values of parente nodes, as you are not going to change them. 
+3. In the `<Magento_Checkout_module_dir>/view/frontend/layout/checkout_index_index.xml` file, find the component that you need to customize. Copy the corresponding node and all parent nodes up to `<argument>`. There is no need to leave all the attributes and values of parente nodes, as you are not going to change them.
 
 4. Change the path to the component's `.js` file, template or any other property.
 
@@ -89,7 +89,7 @@ The Magento_Shipping module adds a component rendered as a link to the Shipping 
 
 ## Add the new component to the checkout page layout
 
-Any {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %} is added in the `checkout_index_index.xml` similar to the way a [checkout step component is added]({{page.baseurl}}howdoi/checkout/checkout_new_step.html#add-your-step-to-the-checkout-page-layout). 
+Any {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %} is added in the `checkout_index_index.xml` similar to the way a [checkout step component is added]({{page.baseurl}}howdoi/checkout/checkout_new_step.html#add-your-step-to-the-checkout-page-layout).
 
 Make sure that you declare a component so that it is rendered correctly by the parent component. If a parent component is a general UI component (referenced by the `uiComponent` alias), its child components are rendered without any conditions. But if a parent component is a an extension of a general UI components, then children rendering might be restricted in certain way. For example a component can render only children from a certain `displayArea`.
 
@@ -107,14 +107,14 @@ To disable the component in your `checkout_index_index.xml` use the following in
 
 ## Remove a component
 
-To remove a component from layout rendering, you need to create a [plugin]({{page.baseurl}}extension-dev-guide/plugins.html) for the `\Magento\Checkout\Block\Checkout\LayoutProcessor::process` method. In your plugin, implement the around method removing the corresponding layout nodes at run-time. 
+To remove a component from layout rendering, you need to create a [plugin]({{page.baseurl}}extension-dev-guide/plugins.html) for the `\Magento\Checkout\Block\Checkout\LayoutProcessor::process` method. In your plugin, implement the around method removing the corresponding layout nodes at run-time.
 
 The following sample is an example of the around method removing a component:
 
 {%highlight php%}
 unset($jsLayout['components']['checkout']['children']['steps'][%path_to_target_node%]); //%path_to_target_node% is the path to the component's node in checkout_index_index.xml
 return $jsLayout;
-{%endhighlight%} 
+{%endhighlight%}
 
 (If you want to use this sample in your code, replace the `%path_to_target_node%` placeholder with real value.)
 

@@ -1,7 +1,7 @@
 ---
 layout: default
-group: howdoi
-subgroup: checkout
+group: checkout
+subgroup:
 title: Customize checkout
 menu_title: Customize checkout
 menu_node: parent
@@ -10,17 +10,15 @@ version: 2.0
 github_link: howdoi/checkout/checkout_overview.md
 ---
 
-## Customize checkout 
-
 ### Default checkout overview
 
-Magento {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} is implemented using the [UI components](http://devdocs.magento.com/guides/v2.1/ui_comp_guide/bk-ui_comps.html). 
+Magento {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} is implemented using the [UI components](http://devdocs.magento.com/guides/v2.1/ui_comp_guide/bk-ui_comps.html).
 Out of the box, the checkout consists of two steps:
- 
+
  - Shipping Information
  - Review and Payment Information
 
-The checkout totals and the corresponding side-bar are only displayed after the first step is completed. 
+The checkout totals and the corresponding side-bar are only displayed after the first step is completed.
 
 The only {% glossarytooltip 53da11f1-d0b8-4a7e-b078-1e099462b409 %}exception{% endglossarytooltip %} is checkout of virtual and/or downloadable products: if there are only these  types of products in the shopping cart, checkout is automatically transformed to one-step procedure, because shipping information is not required.
 
@@ -38,5 +36,4 @@ You can customize the default checkout in many ways. Here the following customiz
  - [Add a new field in address form]({{page.baseurl}}howdoi/checkout/checkout_new_field.html)
  - [Add custom shipping address renderer]({{page.baseurl}}howdoi/checkout/checkout_address.html)
 
-For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code, add your customizations in a custom {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}. 
-
+For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code, add your customizations in a custom {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.

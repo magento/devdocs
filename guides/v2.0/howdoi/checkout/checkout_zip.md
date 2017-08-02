@@ -1,7 +1,7 @@
 ---
 layout: default
-group: howdoi
-subgroup: checkout
+group: checkout
+subgroup:
 title: Add custom input mask for ZIP code
 menu_title: Add custom input mask for ZIP code
 menu_order: 6
@@ -10,16 +10,16 @@ github_link: howdoi/checkout/checkout_zip.md
 ---
 ## What's in this topic
 
-When a shopper specifies the country and ZIP code in the shipping address during {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} or in the shopping cart, Magento checks if the format of the entered code is valid for the specified country. This validation is implemented using the input masks for the ZIP code field. In Magento, these input masks are regular expressions which define which format is allowed. 
-This topic describes how a developer can add custom input masks. 
+When a shopper specifies the country and ZIP code in the shipping address during {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} or in the shopping cart, Magento checks if the format of the entered code is valid for the specified country. This validation is implemented using the input masks for the ZIP code field. In Magento, these input masks are regular expressions which define which format is allowed.
+This topic describes how a developer can add custom input masks.
 
 
 ## Adding custom input masks for ZIP code
 
-In Magento the input masks for the **ZIP code** field are specified in the `<Magento_Directory_module_dir>/etc/zip_codes.xml`. Input masks are specified per country, and are entered in the form of regular expressions. 
+In Magento the input masks for the **ZIP code** field are specified in the `<Magento_Directory_module_dir>/etc/zip_codes.xml`. Input masks are specified per country, and are entered in the form of regular expressions.
 The syntax of defined by the [zip_code.xsd]({{site.mage2000url}}app/code/Magento/Directory/etc/zip_codes.xsd) scheme.
 
-For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code. Add your customizations in a separate, custom module. For your ZIP code input mask customization to be applied correctly, your custom module should depend on the `Magento_Directory` module. Do not use `Ui` for your custom module name, because `%Vendor%_Ui` notation, required when specifying paths, might cause issues. 
+For the sake of compatibility, upgradability, and easy maintenance, do not edit the default Magento code. Add your customizations in a separate, custom module. For your ZIP code input mask customization to be applied correctly, your custom module should depend on the `Magento_Directory` module. Do not use `Ui` for your custom module name, because `%Vendor%_Ui` notation, required when specifying paths, might cause issues.
 
 
 To add custom ZIP code input masks or change the default ones, create a new `zip_code.xml` in the `<your_module_dir>/etc` directory.
@@ -31,7 +31,7 @@ The content of the file should be similar to the following sample:
 <?xml version="1.0"?>
 
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Directory:etc/zip_codes.xsd">
-	
+
 	<!-- Specify the country ISO code-->
 	<zip countryCode="US">
 		<!-- You can specify several patterns for one country -->

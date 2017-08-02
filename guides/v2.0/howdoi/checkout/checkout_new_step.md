@@ -1,7 +1,7 @@
 ---
 layout: default
-group: howdoi
-subgroup: checkout
+group: checkout
+subgroup: 
 title: Add a new checkout step
 menu_title: Add a new checkout step
 menu_order: 1
@@ -15,7 +15,7 @@ The default Magento {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}Ch
  - Shipping Information
  - Review and Payments Information
 
-You can add a custom checkout step, it should be implemented as a {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %}. For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code, add your customizations in a separate {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}. 
+You can add a custom checkout step, it should be implemented as a {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %}. For the sake of compatibility, upgradability and easy maintenance, do not edit the default Magento code, add your customizations in a separate {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %}.
 
 This topic describes how to create the {% glossarytooltip b00459e5-a793-44dd-98d5-852ab33fc344 %}frontend{% endglossarytooltip %} part of the component, implementing a checkout step, and how to add it to the checkout flow.
 
@@ -24,22 +24,22 @@ This topic describes how to create the {% glossarytooltip b00459e5-a793-44dd-98d
 
 To create the view part of the new checkout step:
 
-1. Add a module directory (not covered in this topic). See [Build your module]({{page.baseurl}}extension-dev-guide/build/build.html) for details). All custom files must be stored there. For your checkout customization to be applied correctly, your custom module should depend on the `Magento_Checkout` module. Do not use `Ui` for your custom module name, because `%Vendor%_Ui` notation, required when specifying paths, might cause issues. 
+1. Add a module directory (not covered in this topic). See [Build your module]({{page.baseurl}}extension-dev-guide/build/build.html) for details). All custom files must be stored there. For your checkout customization to be applied correctly, your custom module should depend on the `Magento_Checkout` module. Do not use `Ui` for your custom module name, because `%Vendor%_Ui` notation, required when specifying paths, might cause issues.
 1. Create the `.js` file implementing the view model.
 2. Create an `.html` template for the component.
 
-Each step is described in details in the following paragraphs. 
+Each step is described in details in the following paragraphs.
 
 ### Add the JavaScript file implementing the new step {#component}
 
-A new checkout step must be implemented as UI component. That is, its {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} implementation must be a JavaScript module. 
+A new checkout step must be implemented as UI component. That is, its {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} implementation must be a JavaScript module.
 
 The file must be stored under the `<your_module_dir>/view/frontend/web/js/view` directory.
 
 <div class="bs-callout bs-callout-info" id="info">
 <p><code>&lt;your_module_dir&gt;</code> notation stands for the path to your module directory from the root directory. Usually it will be one of the following: <code>app/code/&lt;YourVendor&gt;/&lt;YourModule&gt;</code> or <code>vendor/&lt;yourvendor&gt;/module-&lt;module&gt;-&lt;name&gt;</code>. For more details see <a href="{{page.baseurl}}frontend-dev-guide/conventions.html">Conventional notations for paths to modules and themes</a></p>
 </div>
- 
+
 A sample `my-step-view.js` with comments follows:
 
 {%highlight js%}
@@ -60,18 +60,18 @@ define(
         'use strict';
         /**
         *
-        * mystep - is the name of the component's .html template, 
+        * mystep - is the name of the component's .html template,
         * <Vendor>_<Module>  - is the name of the your module directory.
-        * 
+        *
         */
         return Component.extend({
             defaults: {
                 template: '<Vendor>_<Module>/mystep'
             },
- 
+
             //add here your logic to display step,
             isVisible: ko.observable(true),
- 
+
             /**
 			*
 			* @returns {*}
@@ -88,9 +88,9 @@ define(
                     'Step Title',
                     //observable property with logic when display step or hide step
                     this.isVisible,
-                     
+
                     _.bind(this.navigate, this),
- 
+
                     /**
 					* sort order value
 					* 'sort order value' < 10: step displays before shipping step;
@@ -99,19 +99,19 @@ define(
 					*/
                     15
                 );
- 
+
                 return this;
             },
- 
+
             /**
 			* The navigate() method is responsible for navigation between checkout step
 			* during checkout. You can add custom logic, for example some conditions
-			* for switching to your custom step 
+			* for switching to your custom step
 			*/
             navigate: function () {
- 
+
             },
- 
+
             /**
 			* @returns void
 			*/
@@ -138,7 +138,7 @@ A sample `mystep.html` follows:
     <div id="checkout-step-title"
          class="step-content"
          data-role="content">
- 
+
         <form data-bind="submit: navigateToNextStep" novalidate="novalidate">
             <div class="actions-toolbar">
                 <div class="primary">
@@ -154,7 +154,7 @@ A sample `mystep.html` follows:
 
 ## Add your step to the Checkout page layout
 
-For the new step to be displayed on the page, you need to declare it in the Checkout page layout, which is defined in `checkout_index_index.xml`. 
+For the new step to be displayed on the page, you need to declare it in the Checkout page layout, which is defined in `checkout_index_index.xml`.
 
 So you need to add an [extending]({{page.baseurl}}frontend-dev-guide/layouts/layout-extend.html) `checkout_index_index.xml` layout file in the following location: `<your_module_dir>/view/frontend/layout/checkout_index_index.xml`
 
