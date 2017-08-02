@@ -84,42 +84,20 @@
   </div>
 
 
+  <div class="nav-main-separator"></div>
+
+
   <div class="nav-main-item" tabindex="0" role="menuitem" aria-haspopup="true">
-    <a href="#" tabindex="-1"><em>&lt; name this category &gt;</em></a>
+    <a href="#" tabindex="-1">Functional Areas</a>
 
     <div class="nav-popup" role="menu" aria-hidden="true">
-      <div class="nav-section">
-        <div class="nav-section-title">Admin Categories</div>
-        <div class="columns">
-          <ul>
-            <li><a href="{{page.baseurl}}/b2b.html">Admin Workflow</a></li>
-            <li><a href="{{page.baseurl}}/b2b.html">Catalog</a></li>
-            <li><a href="{{page.baseurl}}/b2b.html">CMS</a></li>
-            <li><a href="{{page.baseurl}}/b2b.html">Customer</a></li>
-            <li><a href="{{page.baseurl}}/b2b.html">Marketing</a></li>
-            <li><a href="{{page.baseurl}}/b2b.html">Order Management</a></li>
-            <li><a href="{{page.baseurl}}/b2b.html">Promotions</a></li>
-            <li><a href="{{page.baseurl}}/b2b.html">Sales</a></li>
-            <li><a href="{{page.baseurl}}/b2b.html">Services</a></li>
-            <li><a href="{{page.baseurl}}/b2b.html">System</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="nav-section">
-        <div class="nav-section-title">Cross-Functional</div>
-        <ul>
-          <li><a href="{{page.baseurl}}/b2b.html">B2B</a></li>
-          <li><a href="{{page.baseurl}}/bi.html">Business Intelligence</a></li>
-          <li><a href="{{page.baseurl}}howdoi/checkout/checkout_overview.html">Checkout</a></li>
-          <li><a href="{{page.baseurl}}payments-integrations/bk-payments-integrations.html">Payment Integrations</a></li>
-          {% if page.guide_version == "2.1" %}
-            <li><a href="{{page.baseurl}}extension-dev-guide/staging.html">Staging</a></li>
-          {% endif %}
-          <li><a href="{{page.baseurl}}/crm.html">Customer Relations <abbr>(CRM)</abbr></a></li>
-        </ul>
-
-      </div>
-
+      <ul>
+        <li><a href="{{page.baseurl}}howdoi/checkout/checkout_overview.html">Checkout</a></li>
+        <li><a href="{{page.baseurl}}payments-integrations/bk-payments-integrations.html">Payment Integrations</a></li>
+        {% if page.guide_version == "2.1" %}
+          <li><a href="{{page.baseurl}}extension-dev-guide/staging.html">Staging</a></li>
+        {% endif %}
+      </ul>
     </div>
 
   </div>
@@ -131,7 +109,7 @@
     <div class="nav-popup" role="menu" aria-hidden="true">
       <ul>
         <li><a href="{{page.baseurl}}howdoi/bk-how-do-i.html">Basic How To's</a></li>
-        <li><a href="{{page.baseurl}}howdoi/bk-how-do-i.html">Order Processing with REST APIs</a></li>
+        <li><a href="{{page.baseurl}}get-started/order-tutorial/order-intro.html">Order Processing with REST APIs</a></li>
         <li><a href="{{site.baseurl}}videos/">Video Tutorials</a></li>
 
       </ul>

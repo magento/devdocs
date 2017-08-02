@@ -6,7 +6,7 @@ $.fn.mainNavigation = function(settings) {
 
 		settings = jQuery.extend({
 			menuActiveClass: 'active',
-			menuDelay: 50,
+			menuDelay: 40,
 			topLevelItemsSelector: '.nav-main-item',
 			popupSelector: '.nav-popup',
 		}, settings);
@@ -18,7 +18,8 @@ $.fn.mainNavigation = function(settings) {
 
 		var setupNavigation = function () {
 
-			topLevelItems.on('mouseenter focusin', handleMenuMouseEnter)
+			topLevelItems
+				.on('mouseenter focusin', handleMenuMouseEnter)
 				.on('mouseleave', handleMenuMouseLeave );
 
 			topLevelItems.children('a').on('click' ,function (e) {
@@ -40,8 +41,9 @@ $.fn.mainNavigation = function(settings) {
 		// mouseover, focusin:
 		var handleMenuMouseEnter = function (e) {
 			e.stopPropagation();
+			e.preventDefault();
 			var currentItem = $(this);
-
+			console.log('enter');
 			// Center the flyout menu
 			var popup = currentItem.find( settings.popupSelector );
 			if ( popup.find('.nav-section').length ) {
@@ -51,20 +53,27 @@ $.fn.mainNavigation = function(settings) {
 			}
 
 			// Delay the appearance of the popup menu
+			clearTimeout( window.navTimer );
 			window.navTimer = window.setTimeout( function () {
 				showPopup( currentItem );
 			}, settings.menuDelay );
-			clearTimeout( window.navcloseTimer );
+			//clearTimeout( window.navcloseTimer );
 		}
 
 
 		// mouseover, focusout
 		var handleMenuMouseLeave = function (e) {
 			e.stopPropagation();
+			e.preventDefault();
+			console.log('leave');
 			var currentItem = $(this);
+
+			hidePopup( currentItem );
+			/*
+			clearTimeout( window.navcloseTimer );
 			window.navcloseTimer = window.setTimeout( function () {
 				hidePopup( currentItem );
-			}, settings.menuDelay );
+			}, settings.menuDelay );*/
 			//hidePopup(currentItem);
 
 			clearTimeout( window.navTimer );
@@ -96,7 +105,7 @@ $.fn.mainNavigation = function(settings) {
 };
 
 
-var navMain = $('.nav-main');
+var navMain = $('.site-header .nav-main');
 navMain.mainNavigation();
 
 
@@ -106,7 +115,7 @@ navMain.mainNavigation();
 
 var menustate = "";
 if ( $('li.level3Child').is('li.active')) {
-	menustate = $('LI.active').attr('data-menunode');
+	menustate = $('li.active').attr('data-menunode');
 	$('#' + menustate).show(); //show parent
 	$('#' + menustate).removeClass('caretRight').addClass('caretDown') //submenu open indication
 	$('.' + menustate).show(); //show submenu

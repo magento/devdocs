@@ -3,9 +3,13 @@
 
   display: flex;
   float: left;
+  align-items: center;
+  justify-content: center;
+
   padding: 0 0 0 10px;
   position: relative;
   z-index: 9;
+
 
   // Common Styling
   ul {
@@ -88,6 +92,11 @@
 
 }
 
+.nav-main-separator {
+  border-left: 1px solid #ccc;
+  height: 1em;
+  margin: 0 -1px;
+}
 
 // Second Level
 .nav-popup {
