@@ -56,6 +56,10 @@ This release includes both improvements we've made internally and those submitte
 <!--- 58571 -->* The prices you assign to custom options no longer change unexpectedly after you save them.  [GitHub-6116](https://github.com/magento/magento2/issues/6116)
 
 
+<!--- 57153 -->* Magento now correctly displays custom options at the store-view level. [GitHub-2908](https://github.com/magento/magento2/issues/2908), [GitHub-5885](https://github.com/magento/magento2/issues/5885), [GitHub-5612](https://github.com/magento/magento2/issues/5612)
+
+
+
 <!--- 59782 -->* Magento now correctly displays product information after you perform an operation on more than one item. Previously, product information was not correctly aligned on the page.  [GitHub-6867](https://github.com/magento/magento2/issues/6867)
 
 
@@ -136,55 +140,29 @@ This release includes both improvements we've made internally and those submitte
  
 <!--- 64238 -->* Reindexing no longer fails due to mmap memory allocation issues when reindexing many (1,000,000) customers. Previously, when initiating reindexing through **System > Index management**, reindexing failed. 
 
-
-
-
-
 <!--- 57615 -->* Visual Merchandiser `Match products by rule` now works as expected. 
-
 
 <!--- 60723 -->* Nginx now redirects to the setup page when using port 81. 
 
-
 <!--- 60542 -->* The "Print Shipping Label" link now displays on the product front end. Previously, the 
-layout for the  "Shipping and Tracking" block did work properly. 
-
+layout for the  "Shipping and Tracking" block did not -work properly.
 
 <!--- 60529 -->* Magento now displays Up-sells on the Product page. 
 
-
-
 <!--- 59173 -->*  Magento no longer sends email when the **Disable email communication** setting is set to **yes**. Previously, Magento sent email even when this setting was enabled.  [GitHub-5988](https://github.com/magento/magento2/issues/5988)
-
-
 
 <!--- 58855 -->* The Cart Price rule nows affects coupon life as expected. Previously, coupons did not persist longer than the current date if they did not have a designated end-date.  
 
-
+. 
 <!--- 69840 -->* Configuration values no longer return NULL when Redis reaches the limit set in the `max_memory` setting. Previously, when Redis met the limit specified in this setting, `ScopeConfig` returned a value of NULL for configuration options, which resulted in significant damage to data (for example, deleting all prices assigned to a website from the database).
-
-
-
-
-
-
 
 <!--- 63814 -->* SalesRule now applies to auto-generated coupon codes as expected. 
 
-
-
-<!--- 60777 -->* Static file generation is not longer affected by a race condition that affected merging CSS files. Previously, this race condition interferred with the proper generation of the product front end.  
-
-
-
-
-
-
+<!--- 60777 -->* Static file generation is not longer affected by a race condition that affected merging CSS files. Previously, this race condition interfered with the proper generation of the product front end.  
 
 <!--- 60599 -->* Magento now supports negative values in **Quantity** field for a product. [GitHub-7401](https://github.com/magento/magento2/issues/7401)
 
 <!--- 63454 -->* Magento now uses the address template from store view level of the placed order (similar to how order confirmation email works). Previously, Magento used the wrong address template for order e-mails. 
-
 
 <!--- 62914 -->* Directive values can now be escaped with quotation marks. Previously,  all characters after quotation marks were removed after a save, which resulted in the failure to save widget conditions. [GitHub-3860](https://github.com/magento/magento2/issues/3860)
 
@@ -192,18 +170,13 @@ layout for the  "Shipping and Tracking" block did work properly.
 
 <!--- 55519 -->* You can now apply gift wrapping to a Grouped product. 
 
-
 <!--- 61266 -->* Magento no longer permits a shopper to place a re-order once you've disabled one of items in the order. 
 
-
 <!--- 61097 -->* We've updated UK mobile phone number validation. 
-
-
 
 <!--- 55361 -->* Cart Price rules are now applied as expected to payment method conditions. Previously, discounts set in Cart Price rules were not applied during checkout. 
 
 <!--- 65161 -->* Customers can no longer apply a coupon code twice. Previously, the "Uses per Coupon" limit did not work for auto-generated coupons. 
-
 
 <!--- 57051, 67621 -->* Widgets now accept UTF-8 special characters type as input parameters. Previously, you could successfully create a widget, but UTF-8 special characters were broken. [GitHub-4232](https://github.com/magento/magento2/issues/4232) *fix submitted by community member @hostep*
 
@@ -219,28 +192,17 @@ layout for the  "Shipping and Tracking" block did work properly.
 
 <!--- 60538 -->* Resolved issue with selecting widgets in TinyMCE editor. [GitHub-9655](https://github.com/magento/magento2/issues/9655), [GitHub-9518](https://github.com/magento/magento2/issues/9518)  *fix submitted by community member @hostep*
 
-
-
-
-
 <!--- 67614 -->* You can now remove breadcrumbs without removing the page meta title from the category view and product view pages.  Previously, the page meta title is visible only if the breadcrumbs block was defined in XML.  [GitHub-4427](https://github.com/magento/magento2/issues/4427) *fix submitted by community member  @latenights*
 
 <!--- 68903 -->* The WYSIWYG editor now performs more consistently.  [GitHub-4828](https://github.com/magento/magento2/issues/4828), [GitHub-6222](https://github.com/magento/magento2/issues/6222),  [GitHub-6815](https://github.com/magento/magento2/issues/6815)  *fix submitted by community member @hostep*
 
-
-
-
-
 <!--- 57291 -->* Magento now successfully uploads the thumbnail images for email logos that are used in transactional emails. Previously, these thumbnail images were not displayed.
-
 
 <!--- 59690 -->* Magento now renders images as expected in the product description area. Previously, Magento did not render images in this area, and would display a broken link.  [GitHub-6138](https://github.com/magento/magento2/issues/6138)
 
 <!--- 69238 -->* Magento now preserves image transparency when resizing images. *fix submitted by community member @kassner*
 
 <!--- 69062 -->* The email logo image function now works as expected.   [GitHub-5352](https://github.com/magento/magento2/issues/5352),  [GitHub-5633](https://github.com/magento/magento2/issues/5633),  [GitHub-5916](https://github.com/magento/magento2/issues/5916) [GitHub-6275](https://github.com/magento/magento2/issues/6275),  [GitHub-9590](https://github.com/magento/magento2/issues/9590)  *fix submitted by community member  @hostep*
-
-
 
 <!--- 68774 -->* The login popup window now works as expected in portrait mode on an iPad. [GitHub-6451](https://github.com/magento/magento2/issues/6451)   *fix submitted by community member @ihor-sviziev*
 
@@ -252,12 +214,11 @@ layout for the  "Shipping and Tracking" block did work properly.
 
 <!--- 69019 -->* We resolved an issue where  interface constructors broke Magento compilation.   [GitHub-8607](https://github.com/magento/magento2/issues/8607)  *fix submitted by community member @LoganayakiK*
 
-<!--- 69922 -->* You can now set a negative quantity for a product.  [GitHub-9139](https://github.com/magento/magento2/issues/9139)  catalog *fix submitted by community member @poongud*
-
+<!--- 69922 -->* You can now set a negative quantity for a product.  [GitHub-9139](https://github.com/magento/magento2/issues/9139) *fix submitted by community member @poongud*
 
 <!--- 69543 -->*  Magento no longer caches layered navigation options with the wrong store ID.  [GitHub-9679](https://github.com/magento/magento2/issues/9679)  *fix submitted by community member @hostep*
 
-
+<!--- 70077 -->* Magento now correctly displays user names that exceed 20 characters. 
 
 
 
@@ -275,7 +236,7 @@ layout for the  "Shipping and Tracking" block did work properly.
 
 ### Import/Export
 
-<!--- 62995 -->* We've fixed an issue where product URL keys (for SKUs) were not being autogenerated as expected during import.
+<!--- 62995 -->* We've fixed an issue where product URL keys (for SKUs) were no auto-generated as expected during import.
 
 
 <!--- 60548 -->* We've improved the import speed of advanced pricing data. Previously, the import process for this information frequently stopped after the import of approximately 300 rows of data, and Magento displayed this message: `Please Wait`. 
@@ -350,12 +311,12 @@ layout for the  "Shipping and Tracking" block did work properly.
 
 ### Performance
 
-we’ve optimized the performance of mass actions resulting in faster response time and reduced memory usage
+<!--- 58876 -->* We’ve optimized the performance of mass actions resulting in faster response time and reduced memory usage
+
 <!--- 67724, 67725 -->* We’ve improved checkout speed by removing unused Widget JS, Widget Configuration, and regions based on your stores configuration to reduce asset load on checkout pages.  [GitHub-4868](https://github.com/magento/magento2/issues/4868), [GitHub-6997](https://github.com/magento/magento2/issues/6997), [GitHub-9364](https://github.com/magento/magento2/issues/9364) *fix submitted by community member  @hostep*
 
 <!--- 61916 -->* We've improved the algorithm that controls how URL rewrites on the Category Save page are processed. 
 
-<!--- 67628 -->* You can render the `tax_class_id` attribute nonsearchable. Previously, Magento displayed a 503 error under these circumstances.
 
 
 ### Reports
@@ -378,7 +339,7 @@ we’ve optimized the performance of mass actions resulting in faster response t
 ### Search
 
 
-<!--- 58042 -->* Elasticsearch does not throw errors when there are more than 100 search able attributes or when user-defined price attributes are marked searchable.
+<!--- 58042 -->* Elasticsearch does not throw errors when there are more than 100 searchable attributes or when user-defined price attributes are marked searchable.
 
 <!--- 65249 -->* Segmentation faults no longer occur when doing a `catalogsearch_fulltext` re-index, and indexing succeeds. Previously, in a large database (more than 70,000 products), the `catalogsearch_fulltext` (MySQL) re-index failed with a `Segmentation fault` message. [GitHub-7963](https://github.com/magento/magento2/issues/7963)
 
@@ -386,11 +347,12 @@ we’ve optimized the performance of mass actions resulting in faster response t
 <!--- 53675 -->*  Sorting configurable products by price now works as expected when a simple product has a special price. [GitHub-4778](https://github.com/magento/magento2/issues/4778)
 
 
-<!--- 57475 -->* Out-of-stock items no longer erroneously appear in results of layered nav when filter if that product option is no longer in stock.
+<!--- 57475 -->* Out-of-stock items no longer erroneously appear in results of layered navigation when filter if that product option is no longer in stock.
 
 
 <!--- 64959 -->* We've resolved an issue where grouped products were not displayed in category pages when Elasticsearch was used as the search engine.
 
+<!--- 67628 -->* You can render the `tax_class_id` attribute nonsearchable. Previously, Magento displayed a 503 error under these circumstances.
 
 
 
