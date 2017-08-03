@@ -1775,12 +1775,15 @@
   <li>
     <p>rsync the <code>pub/media</code> directory from your local Magento server to staging or production:</p>
 
-    <pre><code>rsync -azvP pub/media/ &lt;developmemt machine user name&gt;@&lt;development machine host or IP&gt;:pub/media/ 
+    <pre><code>rsync -azvP pub/media/ &lt;developmemt machine user name&gt;@&lt;development machine host or IP&gt;:pub/media/
 </code></pre>
   </li>
 </ol>
 
 <h3 id="cloud-live-migrate-db">Migrate the database</h3>
+
+<p><strong>Prerequisite:</strong> A database dump (see Step 3) should include database triggers. For dumping them, make sure you have the <a href="https://dev.mysql.com/doc/refman/5.7/en/privileges-provided.html#priv_trigger">TRIGGER privilege</a>.</p>
+
 <p>To migrate the database:</p>
 
 <ol>
@@ -1799,7 +1802,7 @@
   <li>
     <p>Create a database dump:</p>
 
-    <pre><code>mysqldump -h &lt;database host&gt; --user=&lt;database user name&gt; --password=&lt;password&gt; --single-transaction main | gzip - &gt; /tmp/database.sql.gz
+    <pre><code>mysqldump -h &lt;database host&gt; --user=&lt;database user name&gt; --password=&lt;password&gt; --single-transaction --triggers main | gzip - &gt; /tmp/database.sql.gz
 </code></pre>
   </li>
   <li>
