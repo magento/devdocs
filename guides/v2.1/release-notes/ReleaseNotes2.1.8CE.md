@@ -385,6 +385,230 @@ layout for the "Shipping and Tracking" block did not work properly.
 
 
 
+## Community contributions
+
+We are grateful to the wider Magento community and would like to acknoweldge their contributions to this release. 
+
+The following table identifies contributions from our community members. This table lists the external pull requests, the GitHub issue number associated with it (if available), and the community member who contributed the pull request. 
+
+<table>
+  <tr>
+    <th>Pull request</th>
+    <th>Related GitHub issue</th>
+     <th>Contributing community member</th>
+
+
+  </tr>
+
+  <tr>
+    <td>8880</td>
+    <td>N/A</td>
+     <td>@WaPoNe</td>
+  </tr>
+
+  <tr>
+    <td>9092</td>
+    <td><a href="https://github.com/magento/magento2/issues/5627” target="_blank"> (GITHUB-5627)</a></td>
+    <td>@malachy-mcconnnell</td>
+  </tr>
+
+  </tr>
+  <tr>
+    <td>9324</td>
+    <td><a href="https://github.com/magento/magento2/issues/4427” target="_blank"> (GITHUB-4427)</a></td>
+    <td> @latenights</td>
+  </tr>
+
+</tr>
+  <tr>
+    <td>9332</td>
+    <td>N/A</td>
+    <td>@hostep</td>
+  </tr>
+
+</tr>
+  <tr>
+    <td>9333</td>
+    <td><a href="https://github.com/magento/magento2/issues/4232” target="_blank"> (GITHUB-4232)</a> </td>
+    <td>@hostep</td>
+  </tr>
+
+</tr>
+  <tr>
+    <td>9364</td>
+    <td><a href="https://github.com/magento/magento2/issues/4868” target="_blank"> (GITHUB-4868)</a>, <a href="https://github.com/magento/magento2/issues/6997” target="_blank"> (GITHUB-6997)</a>, <a href="https://github.com/magento/magento2/issues/9364” target="_blank"> (GITHUB-9364)</a></td>
+    <td>@hostep</td>
+  </tr>
+
+</tr>
+  <tr>
+    <td>9365</td>
+    <td><a href="https://github.com/magento/magento2/issues/4868” target="_blank"> (GITHUB-4868)</a>, <a href="https://github.com/magento/magento2/issues/6997” target="_blank"> (GITHUB-6997)</a>,<a href="https://github.com/magento/magento2/issues/9364” target="_blank"> (GITHUB-9364)</a></td>
+    <td>@hostep</td>
+  </tr>
+
+</tr>
+  <tr>
+    <td>9376</td>
+    <td>N/A</td>
+    <td>@navarr</td>
+  </tr>
+
+
+  <tr>
+    <td>9396</td>
+    <td><a href="https://github.com/magento/magento2/issues/6451” target="_blank"> (GITHUB-6451)</a></td>
+    <td>@ihor-sviziev</td>
+  </tr>
+
+
+  <tr>
+    <td>9485</td>
+    <td><a href="https://github.com/magento/magento2/issues/7497” target="_blank"> (GITHUB-7497)</a>, <a href="https://github.com/magento/magento2/issues/9485” target="_blank"> (GITHUB-9485)</a></td>
+    <td>@rachkulik</td>
+  </tr>
+
+  <tr>
+    <td>9487</td>
+    <td><a href="https://github.com/magento/magento2/issues/9428” target="_blank"> (GITHUB-9428)</a></td>
+    <td> @mikebox</td>
+  </tr>
+
+  <tr>
+    <td>9499</td>
+    <td><a href="https://github.com/magento/magento2/issues/4828” target="_blank"> (GITHUB-4828)</a>, <a href="https://github.com/magento/magento2/issues/6222” target="_blank"> (GITHUB-6222)</a>,  <a href="https://github.com/magento/magento2/issues/6815” target="_blank"> (GITHUB-6815)</a></td>
+    <td> @hostep</td>
+  </tr>
+
+  <tr>
+    <td>9500</td>
+    <td>N/A</td>
+    <td> @hostep</td>
+  </tr>
+
+
+  <tr>
+    <td>9524</td>
+    <td><a href="https://github.com/magento/magento2/issues/8607” target="_blank"> (GITHUB-8607)</a></td>
+    <td> @LoganayakiK</td>
+  </tr>
+
+  <tr>
+    <td>9571</td>
+    <td><a href="https://github.com/magento/magento2/issues/6866” target="_blank"> (GITHUB-6866)</a></td>
+    <td> @hostep</td>
+  </tr>
+
+  <tr>
+    <td>9590</td>
+    <td><a href="https://github.com/magento/magento2/issues/5352” target="_blank"> (GITHUB-5352)</a>,  <a href="https://github.com/magento/magento2/issues/5633” target="_blank"> (GITHUB-5633)</a>, <a href="https://github.com/magento/magento2/issues/5916” target="_blank"> (GITHUB-5916)</a>, <a href="https://github.com/magento/magento2/issues/6275” target="_blank"> (GITHUB-6275)</a>,  <a href="https://github.com/magento/magento2/issues/9590” target="_blank"> (GITHUB-9590)</a></td>
+    <td>@hostep</td>
+  </tr>
+
+  <tr>
+    <td>9601</td>
+    <td>N/A</td>
+    <td>@kassner</td>
+  </tr>
+
+  <tr>
+    <td>9647</td>
+    <td><a href="https://github.com/magento/magento2/issues/9646” target="_blank"> (GITHUB-9646)</a></td>
+    <td>@ekuusela</td>
+  </tr>
+ <tr>
+    <td>9653</td>
+    <td>N/A</td>
+    <td>@kassner</td>
+  </tr>
+
+ <tr>
+    <td>9655</td>
+    <td><a href="https://github.com/magento/magento2/issues/9518” target="_blank"> (GITHUB-9518)</a></td>
+    <td>@hostep</td>
+  </tr>
+
+ <tr>
+    <td>9660</td>
+    <td>N/A</td>
+    <td>@kassner</td>
+  </tr>
+
+ <tr>
+    <td>9661</td>
+    <td>N/A</td>
+    <td>@kassner</td>
+  </tr>
+
+ <tr>
+    <td>9662</td>
+    <td>N/A</td>
+    <td>@kassner</td>
+  </tr>
+
+ <tr>
+    <td>9704</td>
+    <td><a href="https://github.com/magento/magento2/issues/9679” target="_blank"> (GITHUB-9679)</a>
+</td>
+    <td> @hostep</td>
+  </tr>
+
+ <tr>
+    <td>9770</td>
+    <td><a href="https://github.com/magento/magento2/issues/9139” target="_blank"> (GITHUB-9139)</a>
+</td>
+    <td>@poongud</td>
+  </tr>
+
+<tr>
+    <td>9776</td>
+    <td><a href="https://github.com/magento/magento2/issues/7959” target="_blank"> (GITHUB-7959)</a></td>
+    <td>@dreamworkers</td>
+  </tr>
+
+<tr>
+    <td>9841</td>
+    <td><a href="https://github.com/magento/magento2/issues/9562” target="_blank"> (GITHUB-9562)</a>, 
+ <a href="https://github.com/magento/magento2/issues/6746” target="_blank"> (GITHUB-6746)</a></td>
+    <td> @hostep</td>
+  </tr>
+
+<tr>
+    <td>10011</td>
+    <td>N/A</td>
+    <td>@lazyguru</td>
+  </tr>
+
+<tr>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+
+<tr>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <!--- INTERNAL ONLY  64299, 64244, 64243, 64242, 64241, 64240, 70084, 67109, 67115, 67101, 66711, 70037, 70036, 67748, 69707, 68990, 68951, 70620, 70617, 60742, 69474, 67110, 64512, 67715, 69637, 66276, 67104, 67105, 67751, 68826, 67261 -->
 
 ## System requirements
