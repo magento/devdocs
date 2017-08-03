@@ -2,8 +2,8 @@
 layout: default
 group: cloud
 subgroup: 065_reference
-title: Architecture
-menu_title: Architecture
+title: Cloud Architecture
+menu_title: Cloud Architecture
 menu_order: 1
 menu_node: parent
 version: 2.0

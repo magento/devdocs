@@ -1,21 +1,21 @@
 ---
 layout: default
 group: cloud
-subgroup: 160_live
-title: Prepare to migrate data
-menu_title: Prepare to migrate data
-menu_order: 101
-menu_node: 
+subgroup: 160_deploy
+title: Prepare to deploy
+menu_title: Prepare to deploy
+menu_order: 60
+menu_node:
 level3_menu_node: level3child
 level3_subgroup: stage-prod
 version: 2.0
 github_link: cloud/live/stage-prod-migrate-prereq.md
 ---
 
-This topic discusses tasks you must perform before you migrate your database and code to staging or production:
+You'll complete the following tasks before you migrate your database and deploy code to Staging or Production:
 
 1.	Create a support ticket to [migrate deployment hooks](#cloud-live-migrate-yaml)
-2.	Get your [access URLs](#cloud-live-migrate-urls) for staging and production
+2.	Get your [access URLs](#cloud-live-migrate-urls) for Staging and Production
 3.	Set up [remote Git repositories](#cloud-live-migrate-git)
 4.	Set up your [SSH agent](#cloud-live-migrate-agent)
 5.	If you haven't done so already, upload any [Fastly VCL snippets]({{ page.baseurl }}cloud/access-acct/fastly.html#cloud-live-migrate-fastly-snip)
@@ -27,22 +27,22 @@ After setting this up, your workflow is to code and test in your integration sys
 {% include cloud/hooks.md %}
 
 ### Get your access URLs  {#cloud-live-migrate-urls}
-Your Magento Enterprise Cloud Edition OneDrive account includes an onboarding document that contains your Git, SSH, and project URLs for staging and production. You must know those URLs to continue.
+Your Magento Enterprise Cloud Edition OneDrive account includes an onboarding document that contains your Git, SSH, and project URLs for Staging and Production. You must know those URLs to continue.
 
 *	Git {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} format:
 
 	*	Staging: `git@git.ent.magento.cloud:<project ID>_stg.git`
 	*	Production: `git@git.ent.magento.cloud:<project ID>.git`
 
-*	SSH URL format: 
+*	SSH URL format:
 
-	*	Staging: `<project ID>_stg@<project ID>.ent.magento.cloud` 
-	*	Production: `<project ID>@<project ID>.ent.magento.cloud` 
+	*	Staging: `<project ID>_stg@<project ID>.ent.magento.cloud`
+	*	Production: `<project ID>@<project ID>.ent.magento.cloud`
 
-*	Web URL format: 
+*	Web URL format:
 
 	*	Staging: `http[s]://staging.<your domain>.c.<project ID>.ent.magento.cloud`
-	*	Production: 
+	*	Production:
 
 		*	Load balancer URL: `http[s]://<your domain>.c.<project ID>.ent.magento.cloud`
 		*	Direct access to one of the three redundant servers: `http[s]://<your domain>.{1|2|3}.<project ID>.ent.magento.cloud`
@@ -60,9 +60,9 @@ For example,
 	git remote add prod git@git.ent.magento.cloud:dr5q6no7mhqip.git
 
 ### Set up your SSH agent {#cloud-live-migrate-agent}
-You can use any SSH client you wish; however, this topic discusses using the OpenSSH client only. To learn how to use Putty and Pageant on Windows, for example, consult a reference such as [How-To Geek](http://www.howtogeek.com/125364/how-to-ssh-hop-with-key-forwarding-from-windows/){:target="_blank"}.
+You can use any SSH client you prefer or see our [Recommendeds tools]({{ page.baseurl }}cloud/before/before-workspace.html#recommended-tools). For these examples, we use the OpenSSH client.
 
-The SSH agent forwards authentication requests from staging or production to your working Magento system. (That is, the machine on which you did your deployment and testing.) An SSH agent enables you to log in to remote servers from the staging or production host using a local private SSH key. With a working SSH agent, you can easily copy files directly between the staging or production host and integration, or from another remote server.
+The SSH agent forwards authentication requests from Staging or Production to your working Magento system (that is, your local workspace). An SSH agent enables you to log in to remote servers from the staging or production host using a local private SSH key. With a working SSH agent, you can easily copy files directly between the staging or production host and integration, or from another remote server.
 
 To set up an SSH agent:
 
@@ -93,7 +93,7 @@ To set up an SSH agent:
 
 		Identity added: /home/magento_user/.ssh/id_rsa (/home/magento_user/.ssh/id_rsa)
 
-
+For more information on setting up SSH, see [Enable SSH keys]({{ page.baseurl }}cloud/before/before-workspace-ssh.html) as part of your local setup.
 
 #### Next step
 [Migrate data]({{ page.baseurl }}cloud/live/stage-prod-migrate.html)

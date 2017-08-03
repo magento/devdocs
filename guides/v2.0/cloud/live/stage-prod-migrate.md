@@ -1,16 +1,19 @@
 ---
 layout: default
 group: cloud
-subgroup: 160_live
+subgroup: 160_deploy
 title: Migrate data
 menu_title: Migrate data
-menu_order: 200
-menu_node: 
+menu_order: 70
+menu_node:
 level3_menu_node: level3child
 level3_subgroup: stage-prod
 version: 2.0
-github_link: cloud/live/stage-prod-migrate.md
+github_link: cloud/live/stage-prod-migrate-prereq.md
 ---
+
+#### Previous step:
+[Prepare to deploy]({{ page.baseurl }}cloud/live/stage-prod-migrate.html)
 
 To migrate your database and code:
 
@@ -54,7 +57,7 @@ To migrate static files:
 	*	Production: `ssh -A <project ID>@<project ID>.ent.magento.cloud`
 6.	rsync the `pub/media` directory from your local Magento server to staging or production:
 
-		rsync -azvP pub/media/ <developmemt machine user name>@<development machine host or IP>:pub/media/ 
+		rsync -azvP pub/media/ <developmemt machine user name>@<development machine host or IP>:pub/media/
 
 ### Migrate the database {#cloud-live-migrate-db}
 To migrate the database:
@@ -92,7 +95,7 @@ If you set up stored procedures or views in your database, the following error m
 
 The reason is that stored procedures and views both use `"DEFINER='root'@'localhost'"`, and you don't have `root` user access to the staging or production databases.
 
-To solve the issue, create another database dump, replacing the `DEFINER` string with an empty string. 
+To solve the issue, create another database dump, replacing the `DEFINER` string with an empty string.
 
 You can do this using a text editor or by using the following command:
 
@@ -102,7 +105,7 @@ Use the database dump you just created to [migrate the database](#cloud-live-mig
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>After migrating the database, you can set up your stored procedures or views in staging or production the same way you did in your integration environment.</p>
-</div> 
+</div>
 
 #### Next step
-[Test]({{ page.baseurl }}cloud/live/stage-prod-test.html)
+[Test deployment]({{ page.baseurl }}cloud/live/stage-prod-test.html)
