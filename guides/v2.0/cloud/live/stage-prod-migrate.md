@@ -5,7 +5,7 @@ subgroup: 160_live
 title: Migrate data
 menu_title: Migrate data
 menu_order: 200
-menu_node: 
+menu_node:
 level3_menu_node: level3child
 level3_subgroup: stage-prod
 version: 2.0
@@ -54,9 +54,12 @@ To migrate static files:
 	*	Production: `ssh -A <project ID>@<project ID>.ent.magento.cloud`
 6.	rsync the `pub/media` directory from your local Magento server to staging or production:
 
-		rsync -azvP pub/media/ <developmemt machine user name>@<development machine host or IP>:pub/media/ 
+		rsync -azvP pub/media/ <developmemt machine user name>@<development machine host or IP>:pub/media/
 
 ### Migrate the database {#cloud-live-migrate-db}
+
+**Prerequisite:** A database dump (see Step 3) should include database triggers. For dumping them, make sure you have the [TRIGGER privilege](https://dev.mysql.com/doc/refman/5.7/en/privileges-provided.html#priv_trigger).
+
 To migrate the database:
 
 1.	SSH to the master branch of your integration environment:
@@ -67,7 +70,7 @@ To migrate the database:
 		php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]))->database);'
 3.	Create a database dump:
 
-		mysqldump -h <database host> --user=<database user name> --password=<password> --single-transaction main | gzip - > /tmp/database.sql.gz
+		mysqldump -h <database host> --user=<database user name> --password=<password> --single-transaction --triggers main | gzip - > /tmp/database.sql.gz
 4.	Transfer the database dump to staging or production:
 
 	*	Staging: `rsync -azvP /tmp/database.sql.gz <project ID>_stg@<project ID>.ent.magento.cloud:/tmp`
@@ -92,7 +95,7 @@ If you set up stored procedures or views in your database, the following error m
 
 The reason is that stored procedures and views both use `"DEFINER='root'@'localhost'"`, and you don't have `root` user access to the staging or production databases.
 
-To solve the issue, create another database dump, replacing the `DEFINER` string with an empty string. 
+To solve the issue, create another database dump, replacing the `DEFINER` string with an empty string.
 
 You can do this using a text editor or by using the following command:
 
@@ -102,7 +105,7 @@ Use the database dump you just created to [migrate the database](#cloud-live-mig
 
 <div class="bs-callout bs-callout-info" id="info">
   <p>After migrating the database, you can set up your stored procedures or views in staging or production the same way you did in your integration environment.</p>
-</div> 
+</div>
 
 #### Next step
 [Test]({{ page.baseurl }}cloud/live/stage-prod-test.html)
