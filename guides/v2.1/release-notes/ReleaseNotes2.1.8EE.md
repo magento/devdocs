@@ -97,7 +97,7 @@ This release includes both improvements we've made internally and those submitte
 <!--- 57144 -->* You can now create a blank attribute option using the drop-down input option on products that do not require an attribute. 
 [GitHub-3545](https://github.com/magento/magento2/issues/3545), [GitHub-5485](https://github.com/magento/magento2/issues/5485), [GitHub-4910](https://github.com/magento/magento2/issues/4910)
 
-
+<!--- 69151 -->* Product link types are no longer hardcoded. *fix submitted by community member @kassner*
 
 
 ### Checkout
@@ -110,6 +110,7 @@ This release includes both improvements we've made internally and those submitte
 
 <!--- 68875 -->* Shipping method radio buttons are no longer disabled when the Checkout page is refreshed.  [GitHub-7497](https://github.com/magento/magento2/issues/7497), [GitHub-9485](https://github.com/magento/magento2/issues/9485)  *fix submitted by community member  @rachkulik*
 
+<!--- 68902 -->* Magento now highlights in any red fields that are missing shipping information when you proceed to checkout. *fix submitted by community member @hostep*
 
 
 
@@ -220,6 +221,12 @@ layout for the  "Shipping and Tracking" block did not -work properly.
 
 <!--- 70077 -->* Magento now correctly displays user names that exceed 20 characters. 
 
+<!--- 67522 -->* You can now upload .apng and .ico images as fav icons without error. *fix submitted by community member @WaPoNe*
+
+<!--- 67620 -->* Clicking **Insert image**  twice on the Add Banner page no longer produces a JavaScript error. *fix submitted by community member @hostep*
+
+<!--- 67753 -->* Dynamic dragging-and-dropping of rows now works correctly. *fix submitted by community member @ @navarr*
+
 
 
 
@@ -267,6 +274,7 @@ layout for the  "Shipping and Tracking" block did not -work properly.
 
 <!--- 59622, 70177 -->*  You can now upgrade Magento 2.0 to version 2.1.x when the `auto_increment` setting in the database is greater than 1. Previously, when the `auto_increment` value exceeded 1, upgrade failed with this error: "The page URL key contains capital letters or disallowed symbols. 
 
+<!--- 69235 -->* The `setup:di:compile` command no longer fails under these circumstances: 1) `magento/data-migration-tool` is a regular dependency; 2) you have not installed the `dev` dependencies with Composer (`--no-dev`).
 
 
 ### Order management
