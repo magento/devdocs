@@ -169,7 +169,7 @@ where
 <td>
 <p>Disable session locking entirely.</p>
 </td>
-<td>false</td>
+<td>0 (false)</td>
 </tr>
 <tr>
 <td>session-save-redis-min-lifetime</td>
