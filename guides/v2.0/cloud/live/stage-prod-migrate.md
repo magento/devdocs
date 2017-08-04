@@ -9,20 +9,20 @@ menu_node:
 level3_menu_node: level3child
 level3_subgroup: stage-prod
 version: 2.0
-github_link: cloud/live/stage-prod-migrate-prereq.md
+github_link: cloud/live/stage-prod-migrate.md
 ---
 
 #### Previous step:
 [Prepare to deploy]({{ page.baseurl }}cloud/live/stage-prod-migrate.html)
 
-To migrate your database and static files:
+To migrate your database and static files to Staging and Production:
 
 *	[Migrate static files](#cloud-live-migrate-static)
 *	[Migrate the database](#cloud-live-migrate-db)
 
 If you encounter errors or need to make changes, complete those updates on your local. Push the code changes to the Integration environment. Deploy the updated `master` branch again. See instructions in the [previous step]({{ page.baseurl }}cloud/live/stage-prod-migrate.html).
 
-### Migrate static files {#cloud-live-migrate-static}
+## Migrate static files {#cloud-live-migrate-static}
 This section discusses how to migrate {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} from your `pub/media` directory to staging or production. We recommend using the Linux remote synchronization and file transfer command [`rsync`](https://en.wikipedia.org/wiki/Rsync){:target="_blank"}. rsync uses an algorithm that minimizes the amount of data by moving only the portions of files that have changed; in addition, it supports compression.
 
 We suggest using the following syntax:
@@ -59,10 +59,15 @@ To migrate static files:
 
 		rsync -azvP pub/media/ <developmemt machine user name>@<development machine host or IP>:pub/media/
 
-### Migrate the database {#cloud-live-migrate-db}
+## Migrate the database {#cloud-live-migrate-db}
+
+**Prerequisite:** A database dump (see Step 3) should include database triggers. For dumping them, make sure you have the [TRIGGER privilege](https://dev.mysql.com/doc/refman/5.7/en/privileges-provided.html#priv_trigger){:target="_blank"}.
+
+This process migrates your Integration, or development, database to Staging or Production. For continuous integration deployments, you may overwrite vital database data in Staging and Production.
+
 To migrate the database:
 
-1.	SSH to the master branch of your integration environment:
+1.	SSH to the master branch of your Integration environment:
 
 		magento-cloud environment:ssh
 2.	Find the database login information:
@@ -70,8 +75,8 @@ To migrate the database:
 		php -r 'print_r(json_decode(base64_decode($_ENV["MAGENTO_CLOUD_RELATIONSHIPS"]))->database);'
 3.	Create a database dump:
 
-		mysqldump -h <database host> --user=<database user name> --password=<password> --single-transaction main | gzip - > /tmp/database.sql.gz
-4.	Transfer the database dump to staging or production:
+		mysqldump -h <database host> --user=<database user name> --password=<password> --single-transaction --triggers main | gzip - > /tmp/database.sql.gz
+4.	Transfer the database dump to Staging or Production:
 
 	*	Staging: `rsync -azvP /tmp/database.sql.gz <project ID>_stg@<project ID>.ent.magento.cloud:/tmp`
 	*	Production: `rsync -azvP /tmp/database.sql.gz <project ID>@<project ID>.ent.magento.cloud:/tmp`
@@ -88,7 +93,7 @@ To migrate the database:
 
 		zcat database.sql.gz | mysql -u user main
 
-#### Troubleshooting the database migration
+### Troubleshooting the database migration
 If you set up stored procedures or views in your database, the following error might display during the import:
 
 	ERROR 1277 (42000) at line <number>: Access denied; you need (at least one of) the SUPER privilege(s) for this operation
@@ -104,7 +109,7 @@ You can do this using a text editor or by using the following command:
 Use the database dump you just created to [migrate the database](#cloud-live-migrate-db).
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>After migrating the database, you can set up your stored procedures or views in staging or production the same way you did in your integration environment.</p>
+  <p>After migrating the database, you can set up your stored procedures or views in Staging or Production the same way you did in your Integration environment.</p>
 </div>
 
 #### Next step
