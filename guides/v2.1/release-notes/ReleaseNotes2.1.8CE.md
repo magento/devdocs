@@ -574,23 +574,6 @@ The following table identifies contributions from our community members. This ta
     <td> @hostep</td>
   </tr>
 
-<tr>
-    <td>10011</td>
-    <td>N/A</td>
-    <td>@lazyguru</td>
-  </tr>
-
-<tr>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-
-<tr>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
 
 </table>
 

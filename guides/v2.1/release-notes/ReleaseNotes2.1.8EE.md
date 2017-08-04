@@ -600,17 +600,6 @@ The following table identifies contributions from our community members. This ta
     <td>@lazyguru</td>
   </tr>
 
-<tr>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
-
-<tr>
-    <td></td>
-    <td></td>
-    <td></td>
-  </tr>
 
 </table>
 
