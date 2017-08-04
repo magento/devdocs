@@ -1,10 +1,10 @@
 ---
 layout: default
-group: cloud
-subgroup: 160_deploy
+group:
+subgroup:
 title: Overview of staging and production
 menu_title: Overview of staging and production
-menu_order: 50
+menu_order:
 menu_node:
 version: 2.0
 github_link: cloud/live/stage-prod-over.md

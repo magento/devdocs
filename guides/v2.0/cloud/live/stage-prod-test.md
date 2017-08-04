@@ -4,10 +4,8 @@ group: cloud
 subgroup: 160_deploy
 title: Test deployment
 menu_title: Test deployment
-menu_order: 80
+menu_order: 60
 menu_node:
-level3_menu_node: level3child
-level3_subgroup: stage-prod
 version: 2.0
 github_link: cloud/live/stage-prod-test.md
 ---

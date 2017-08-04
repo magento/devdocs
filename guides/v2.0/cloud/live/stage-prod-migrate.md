@@ -2,12 +2,10 @@
 layout: default
 group: cloud
 subgroup: 160_deploy
-title: Migrate data
-menu_title: Migrate data
-menu_order: 70
+title: Migrate data and files
+menu_title: Migrate data and static files
+menu_order: 50
 menu_node:
-level3_menu_node: level3child
-level3_subgroup: stage-prod
 version: 2.0
 github_link: cloud/live/stage-prod-migrate.md
 ---

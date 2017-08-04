@@ -12,41 +12,6 @@ github_link: cloud/reference/discover-arch.md
 
 Magento Enterprise Cloud Edition provides three environments to develop, test, and launch your store. These environments are read-only, accepting deployed code changes from Git branches in your project and supporting any development and branching methodology.
 
-The three environments are Integration (your development environment), Staging, and Production. The following table details the differences:
-
-<table>
-    <tbody>
-
-    <tr>
-        <td class="blank"></td>
-        <th>Integration</th>
-        <th>Staging</th>
-        <th>Production</th>
-    </tr>
-    <tr><td>Managed by a UI</td>
-    <td>Yes</td>
-    <td>No</td>
-    <td>No</td>
-    </tr>
-    <tr><td>Uses <code>.yaml</code> files for configuration</td>
-    <td>Yes</td>
-    <td>Requires support ticket for deployment settings</td>
-    <td>Requires support ticket for deployment settings</td>
-    </tr>
-    <tr><td>Multiple environments</td>
-    <td>Yes</td>
-    <td>No (master only)</td>
-    <td>No (master only)</td>
-    </tr>
-    <tr><td>Runs on dedicated hardware</td>
-    <td>No</td>
-    <td>Yes</td>
-    <td>Yes</td>
-    </tr>
-
-</tbody>
-</table>
-
 ## Integration environment {#cloud-arch-int}
 Developers use the Integration environment to develop, deploy, and test the Magento application, custom code, extensions, and services. This environment is a PAAS (Platform as a Service) providing up to eight active environments for eight active Git branches. Each branch deploys to an environment with a web server, database, and configured services to fully test your site.
 
@@ -113,6 +78,42 @@ The following figure shows the technology used in a Magento Enterprise Cloud Edi
 Magento Enterprise Cloud Edition seamlessly scales from the smallest six CPU cluster with 11.25GB of RAM to the largest 96 CPU cluster with 180GB of RAM. Our triple-redundant architecture means that upscaling can be conducted swiftly and without downtime. When upscaling, we rotate each of the three instances to upgrade without downtime of your site.
 
 In addition, extra web servers can be added to an existing cluster should the constriction be at the {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} level rather than the database level. This provides [*horizontal scaling*](https://en.wikipedia.org/wiki/Scalability#Horizontal_and_vertical_scaling){:target="_blank"} to complement the vertical scaling provided by extra CPUs on the database level.
+
+## Differences in environments
+The following table details the differences:
+
+<table>
+    <tbody>
+
+    <tr>
+        <td class="blank"></td>
+        <th>Integration</th>
+        <th>Staging</th>
+        <th>Production</th>
+    </tr>
+    <tr><td>Managed by a UI</td>
+    <td>Yes</td>
+    <td>No</td>
+    <td>No</td>
+    </tr>
+    <tr><td>Uses <code>.yaml</code> files for configuration</td>
+    <td>Yes</td>
+    <td>Requires support ticket for deployment settings</td>
+    <td>Requires support ticket for deployment settings</td>
+    </tr>
+    <tr><td>Multiple environments</td>
+    <td>Yes</td>
+    <td>No (master only)</td>
+    <td>No (master only)</td>
+    </tr>
+    <tr><td>Runs on dedicated hardware</td>
+    <td>No</td>
+    <td>Yes</td>
+    <td>Yes</td>
+    </tr>
+
+</tbody>
+</table>
 
 ## Projects {#cloud-arch-projects}
 The container for your Magento application is a *project*. The project is your Magento store code, extensions, and integrations in a Master Git branch. Each project supports up to eight active Integration *environments* with an associated active Git branch. Consider each of the eight Integration environments your development environment, allowing you to develop and test different branches simultaneously. Each environment is comprised of *services*, which are deployed inside highly restricted containers on a grid of servers.

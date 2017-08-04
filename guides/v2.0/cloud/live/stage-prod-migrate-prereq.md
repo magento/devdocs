@@ -4,10 +4,8 @@ group: cloud
 subgroup: 160_deploy
 title: Prepare to deploy
 menu_title: Prepare to deploy to Staging and Production
-menu_order: 60
+menu_order: 40
 menu_node:
-level3_menu_node: level3child
-level3_subgroup: stage-prod
 version: 2.0
 github_link: cloud/live/stage-prod-migrate-prereq.md
 ---
