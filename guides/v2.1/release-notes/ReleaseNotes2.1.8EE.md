@@ -432,7 +432,6 @@ The following table identifies contributions from our community members. This ta
     <td>@malachy-mcconnnell</td>
   </tr>
 
-  </tr>
   <tr>
     <td>9324</td>
     <td><a href="https://github.com/magento/magento2/issues/4427" target="_blank"> (GITHUB-4427)</a></td>
@@ -532,7 +531,7 @@ The following table identifies contributions from our community members. This ta
     <td><a href="https://github.com/magento/magento2/issues/9646" target="_blank"> (GITHUB-9646)</a></td>
     <td>@ekuusela</td>
   </tr>
-  
+
  <tr>
     <td>9653</td>
     <td>N/A</td>
