@@ -30,7 +30,7 @@ Fully access your Magento development and deployment through a UI console or CLI
 
 We deploy databases, web server, and caching servers across three environments for end-to-end testing while supporting continuous integration:
 
-* **Integration**: The ultimate developer environment providing up to eight active developer environments for an associated active Git branch, database, environment variables, and configurations. Actively develop, deploy, and test up to eight Git branches in this interactive environment, one per active environment.
+* **Integration**: The ultimate developer environment providing eight testable environments with your active Git branch, database, environment variables, and configurations. Actively develop, deploy, and test up to eight Git branches in this interactive environment, one per active environment.
 * **Staging**: As code and extensions pass your tests, deploy the master Git branch to Staging for near-Production testing. Consider pulling your Production database into this environment for the best testing opportunity. This environment includes a database, environment variables, configurations, and Fastly for the pushed master branch of code.
 * **Production**: When code is ready, deploy the master Git branch into Production for your live store. The container includes a three node high-availability architecture for your data, caching, and store. This is your live, public store environment with environment variables, configurations, and Fastly.
 
