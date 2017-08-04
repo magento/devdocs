@@ -19,9 +19,6 @@ github_link: release-notes/ReleaseNotes2.1.8EE.md
 We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.1.8. This release includes important enhancements to your Magento software.
 
 
-Looking for the <a href= "http://devdocs.magento.com/guides/v2.0/cloud/release-notes/CloudReleaseNotes.html" target="_blank">Magento Enterprise Cloud Edition Release Notes</a>?
-
-
 ## Highlights
 
 Magento 2.1.8 contains over 100 functional fixes and enhancements as well as pull requests from the community.  Look for the following highlights in this release:
