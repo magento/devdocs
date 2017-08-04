@@ -189,7 +189,7 @@ layout for the  "Shipping and Tracking" block did not -work properly.
 
 <!--- 63124 -->* Magento front-end scope filters now work as expected. Previously, Magento did not reload product information correctly when you applied a filter using **Catalog > Product**.
 
-<!--- 60538 -->* We fixed an issue where cache-misses sometimes occurred when Fastly cache was implemented. We fixed an issue where cache-misses sometimes occurred when Fastly cache was implemented. Previously, the header information included in the response sometimes prevented the caching of this page. To minimize this potential problem, Magento now does not include  header empty of real content  in the response. 
+<!--- 60538 -->* We fixed an issue where cache-misses sometimes occurred when Fastly cache was implemented.  Previously, the header information included in the response sometimes prevented the caching of this page. To minimize this potential problem, Magento now does not include  header empty of real content  in the response. 
 
 <!--- 60538 -->* Resolved issue with selecting widgets in TinyMCE editor. [GitHub-9655](https://github.com/magento/magento2/issues/9655), [GitHub-9518](https://github.com/magento/magento2/issues/9518)  *fix submitted by community member @hostep*
 
