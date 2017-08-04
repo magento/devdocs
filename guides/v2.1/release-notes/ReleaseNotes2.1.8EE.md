@@ -227,6 +227,7 @@ layout for the  "Shipping and Tracking" block did not -work properly.
 
 <!--- 67753 -->* Dynamic dragging-and-dropping of rows now works correctly. *fix submitted by community member @ @navarr*
 
+<!--- 69228 -->*  Magento now allows comma-separated X-Forwarded-For headers. This modification ensures that the correct client IP can be returned if the `getRemoteAddress` method gets one via the `alternativeHeaders` variable. (Magento accomplishes this by getting the first IP in the list after detecting for a comma-separated IP list.) *fix submitted by community member @kassner*
 
 
 

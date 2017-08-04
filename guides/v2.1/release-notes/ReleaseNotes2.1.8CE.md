@@ -266,6 +266,7 @@ layout for the "Shipping and Tracking" block did not work properly.
 
 <!--- 58760 -->* Magento now imports customer data as expected after the data passes the pre-import validation step. Previously, although data passed this validation step, an error would occur during import, and Magento displayed this message: `Invalid data for insert`. [GitHub-4921](https://github.com/magento/magento2/issues/4921), [GitHub-9469](https://github.com/magento/magento2/issues/9469)
 
+<!--- 69228 -->*  Magento now allows comma-separated X-Forwarded-For headers. This modification ensures that the correct client IP can be returned if the `getRemoteAddress` method gets one via the `alternativeHeaders` variable. (Magento accomplishes this by getting the first IP in the list after detecting for a comma-separated IP list.) *fix submitted by community member @kassner*
 
 
 ### Installation and deployment
