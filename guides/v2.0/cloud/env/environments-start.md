@@ -81,14 +81,14 @@ If you have a corporate firewall that blocks outgoing SSH connections, you can a
 
 <table>
 <tr>
-<td colspan="2">**Outbound IP addresses**</td>
-<td colspan="2">**Inbound IP addresses**</td>
+<th colspan="2"><b>Outbound IP addresses</b></th>
+<th colspan="2"><b>Inbound IP addresses</b></th>
 </tr>
 <tr>
-<td>**US Region**</td>
-<td>**EU Region**</td>
-<td>**US Region**</td>
-<td>**EU Region**</td>
+<td>US Region</td>
+<td>EU Region</td>
+<td>US Region</td>
+<td>EU Region</td>
 </tr>
 <tr>
 <td>

@@ -34,16 +34,41 @@ When accessing logs in Production, you may need to SSH into each of the three no
 
 For more information, see [View logs for troubleshooting]({{ page.baseurl }}cloud/trouble/environments-logs.html)
 
-## Check `master` in Staging and Production
+## Check the code base
 Verify your `master` code base correctly deployed to Staging and Production environments. The environments should have identical code bases.
-(instructions to verify)
 
 ## Check Fastly caching
-Verify Fastly is caching properly on Staging and Production
-1. walk through curl tests
+Verify Fastly is caching properly on Staging and Production. [Configuring Fastly]({{ page.baseurl }}cloud/access-acct/fastly.html) requires careful attention to details, using the correct Fastly Service ID and Fastly API key, and a proper VCL snippet uploaded.
+
+First, check for headers with a dig command to the URL. In a terminal application, enter `dig <url>` to verify Fastly services display in the headers. For additional `dig` tests, see Fastly's [Testing before changing DNS](https://docs.fastly.com/guides/basic-configuration/testing-setup-before-changing-domains){:target="_blank"}.
+
+Use a curl command to verify X-Magento-Tags exist. The command format differs for Staging and Production:
+
+* Staging: `curl http[s]://staging.<your domain>.c.<instanceid>.ent.magento.cloud -H "host: <url>" -k -vo /dev/null -HFastly-Debug:1`
+* Production: ` curl http[s]://<your domain>.{1|2|3}.<project ID>.ent.magento.cloud -H "host: <url>" -k -vo /dev/null -HFastly-Debug:1`
+
+Check the returned response headers and values:
+
+*	`Fastly-Magento-VCL-Uploaded` should be present
+*	`X-Magento-Tags` should be returned
+*	`Fastly-Module-Enabled` should be either `Yes` or the Fastly extension version number
+*	`X-Cache` should be either `HIT` or `HIT, HIT`
+*	[`Cache-Control: max-age`](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9){:target="_blank"} should be greater than 0
+*	[`Pragma`](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.32){:target="_blank"} should be `cache`
+
+To verify Fastly is enabled in Staging and Production, check the configuration in the Magento Admin for each environment:
+
+1. Log into the Admin console for Staging and Production using the URL with /admin (or the changed Admin URL).
+2. CLick to **Stores** > **Configuration** > **Advanced** > **System**. Scroll and click **Full Page Cache**.
+3. Ensure Fastly CDN is selected.
+4. Click on Fastly configuration and ensure the Fastly Service ID and Fastly API key are entered.
+
+The module must be enabled to cache your site. If you have additional extensions enabled that affect headers, one of them could cause issues with Fastly. If you have further issues, see [Set up Fastly]({{ page.baseurl }}cloud/access-acct/fastly.html) and [Fastly troubleshooting]({{ page.baseurl }}cloud/trouble/trouble_fastly.html).
 
 ## Complete UAT testing {#uat-testing}
-Complete User Acceptance Testing (UAT) on Staging and Production. The following are a quick list of possible tasks and areas to test. Your list may be longer.
+Complete User Acceptance Testing (UAT) on Staging and Production. The following tests are a quick list of possible tasks and areas to test as a Merchant and Customer. Your list may be longer and include additional tests for custom modules, extensions, and 3rd party integrations. When testing, use desktops, laptops, and mobile devices.
+
+If you encounter issues, save your reproduction steps, error messages, strange screen captures, and links. Use this information to investigate and fix issues in Integration environment code and configurations or environment settings.
 
 <table>
 <tr>
@@ -64,8 +89,26 @@ Complete User Acceptance Testing (UAT) on Staging and Production. The following 
 <li>Create a catalog with associated products</li>
 <li>Create products for your storefront, including all product types: simple, configurable, bundled, etc</li>
 <li>Add product images, swatches, videos, and other media options</li>
-<li>Configure prices, discounts, and pricing rules</li>
-<li>Modify inventory</li>
+<li>Configure price, discounts, pricing rules </li>
+<li>Configure advanced features including price ranges, featured products, availability dates</li>
+<li>Modify inventory and verify correct values display and change per increase and completed purchase</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>Carts & Checkout</td>
+<td>
+<ul>
+<li>Search for products and select filtering options</li>
+<li>Add products to the cart from search results, category pages, product pages</li>
+<li>Test all product types</li>
+<li>View the cart and modify contents by removing or changing amounts </li>
+<li>Go through checkout to verify the order amounts against the cart and product info</li>
+<li>Verify tax correctly calculates for the cart</li>
+<li>Complete a purchase with different options: add a coupon, select shipping, enter shipping and billing information, and payment information</li>
+<li>Verify payment gateways and options during checkout</li>
+<li>Check for on screen notifications, orders listed in the customer account, and email notifications</li>
+<li>Test guest and customer checkout</li>
 </ul>
 </td>
 </tr>
@@ -74,6 +117,7 @@ Complete User Acceptance Testing (UAT) on Staging and Production. The following 
 <td>
 <ul>
 <li>Create an order for a customer</li>
+<li>Search for and view orders</li>
 <li>Modify an order by adding and removing products, changing amounts, modifying shipping and billing information</li>
 <li>Handle a refund</li>
 <li>Cancel an order</li>
@@ -90,6 +134,8 @@ Complete User Acceptance Testing (UAT) on Staging and Production. The following 
 <li>Check Terms & Conditions, refund policy, and other policy information</li>
 <li>Check contant information, links, and more about your company</li>
 <li>Search for products and content, check filtering of results</li>
+<li>Verify the footer block and top navigation blocks</li>
+<li>Test the 404 and Maintenance pages</li>
 </ul>
 </td>
 </tr>
@@ -97,6 +143,7 @@ Complete User Acceptance Testing (UAT) on Staging and Production. The following 
 <td>Extensions</td>
 <td>
 <ul>
+<li>Verify all extension settings, especially for any taxation, shipping, and payment modules (example: order sent to warehouse and financial mgmt system)</li>
 <li>Test all customized module and installed Magento extension interactions</li>
 <li>Check data for any interactions that should complete (payments, orders, email notifications, etc)</li>
 <li>Check configurations per environment for your extensions</li>
@@ -109,20 +156,39 @@ Complete User Acceptance Testing (UAT) on Staging and Production. The following 
 <td>3rd party integrations</td>
 <td>
 <ul>
-<li>Verify data correctly saves in Magento and exports, pushes, or is accessible by the 3rd party service</li>
+<li>Verify data correctly saves in Magento and exports, pushes, or is accessible by the 3rd party service (example: orders display in 3rd party order mgmt system)</li>
 <li>Verify any configurations and interactions per integration</li>
 <li>Perform round trip tests originating in Magento and your 3rd party service</li>
 <li>Verify authentication completes</li>
-<li>Check for any logged issues to update code integrations</li>
+<li>Check for any logged issues to update code integrations or error messages in control panels</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>Backend testing</td>
+<td>
+<ul>
+<li>Test and clear cache </li>
+<li>Perform reindexes and verify results</li>
+<li>Check Magento cron jobs, check for any cron_schedule errors</li>
+<li>Verify and check for any shell script issues</li>
+<li>Check for any logged issues: Magento logs, PHP logs, MySQL logs, email logs</li>
 </ul>
 </td>
 </tr>
 </table>
 
 ## Complete load and stress tests
-Give info on pingdom, siege, etc - see bryan's notes
-Recommend sending in a ticket to advise
-Capture your findings and attach them to the ticket
+Before launching, we highly recommend performing extensive traffic and performance testing on your Staging and Production environments.  You should consider performance testing for your frontend and backend processes.
+
+Before you begin testing, please enter a ticket with support advising the environments you are testing, what tools you are using, and the time frame. Update the ticket with results and information to track performance. When you complete testing, add your updated results and note in the ticket testing is complete with a date and time stamp.
+
+For best results, we recommend the following tools:
+* [Siege](https://www.joedog.org/siege-home/){:target="_blank"}: Traffic shaping and testing software to push your store to the limit. Hit your site with a configurable number of simiulated clients. Siege supports basic authentication, cookies, HTTP, HTTPS and FTP protocols.
+* [Jmeter](http://jmeter.apache.org/){:target="_blank"}: Excellent load testing to help gauge performance for spiked traffic, like for flash sales. Create custom tests to run against your site.
+* New Relic (provided): Helps locate processes and areas of the site causing slow performance with tracked time spent per action like transmitting data, queries, Redis, and so on.
+* [Blackfire]({{ page.baseurl }}cloud/project/project-integrate-blackfire.html) (provided): Helps track through the issues New Relic finds and helps you dig deeper into the issue for specifics. Blackfire profiles the environment and helps locate bottlenecks indepth: process, method call, query, load, and so on.
+* [Pingdom](https://www.pingdom.com/){:target="_blank"}: Real-time analysis of your site pages load time with different origin locations.
 
 #### Related topic
 [Go live and launch]({{ page.baseurl }}cloud/live/live.html)

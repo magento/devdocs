@@ -5,7 +5,7 @@ subgroup: 010_welcome
 title: Cloud Architecture
 menu_title: Cloud Architecture
 menu_order: 20
-menu_node: parent
+menu_node: 
 version: 2.0
 github_link: cloud/reference/discover-arch.md
 ---

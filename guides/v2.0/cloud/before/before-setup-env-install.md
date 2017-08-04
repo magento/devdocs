@@ -67,12 +67,12 @@ For example, using the command line method:
 		cd /app/bin
 3. Enter a CLI command with options for entering the name, email, admin credentials, URL, and additional information. For a list of all options, see [Installer help commands]({{ page.baseurl }}install-gde/install/cli/install-cli-install.html#instgde-cli-help-cmds).
 
-		php magento setup:install \
-  		--admin-firstname=John \
-  		--admin-lastname=Smith \
-  		--admin-email=jsmith@mail.com \
-		  --admin-user=admin \
-		  --admin-password=password1 \
+    php magento setup:install \
+      --admin-firstname=John \
+      --admin-lastname=Smith \
+      --admin-email=jsmith@mail.com \
+      --admin-user=admin \
+      --admin-password=password1 \
 		  --base-url=http://magento.local/ \
 		  --db-host=localhost \
 		  --db-name=magento \
@@ -142,9 +142,9 @@ With these steps completed, you should have:
 * Magento authentication keys set up and configured in the project and local
 
 ## Next steps
-We recommend fully deploying this base Magento template across to Staging and Production. For details, see [Deployment workflow]({{ page.baseurl }}cloud/before/before-setup-env-perms.html). You should deploy prior to branching and developing to get an understanding of deploying Magento Enterprise Cloud Edition.
+We recommend fully deploying this base Magento template across to Staging and Production. For details, see [Deployment workflow]({{ page.baseurl }}cloud/reference/discover-deploy.html). You should deploy prior to branching and developing to get an understanding of deploying Magento Enterprise Cloud Edition.
 
 When you are ready, start developing in your initial code branch. You can have up to 8 active branches including the Master.
 
 #### Related topics
-[Deployment workflow]({{ page.baseurl }}cloud/before/before-setup-env-perms.html)
+[Deployment workflow]({{ page.baseurl }}cloud/reference/discover-deploy.html)

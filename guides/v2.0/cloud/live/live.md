@@ -10,6 +10,7 @@ version: 2.0
 github_link: cloud/live/live.md
 ---
 
+IN PROGRESS - consider making this a Go Live section with a launch checklist, ticket info, and what to do after launched. 
 When you are ready to go live, work through these checklists and tests to verify your store is fully prepared to launch. This topic should provide a launch prep checklist, what they need to do to enter a ticket, and finally how to cut over and test their live site.
 
 ## Launch checklist

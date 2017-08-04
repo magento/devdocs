@@ -3,7 +3,7 @@ layout: default
 group: cloud
 subgroup: 160_deploy
 title: Prepare to deploy to Staging and Production
-menu_title: Prepare to deploy
+menu_title: Prepare to deploy - Staging and Production
 menu_order: 40
 menu_node:
 version: 2.0
