@@ -10,12 +10,6 @@ version: 2.0
 github_link: cloud/live/stage-prod-over.md
 ---
 
-<style>
-td.blank {border: none!important;
-background: none!important;
-}
-</style>
-
 As discussed in more detail in [Cloud Architecture]({{ page.baseurl }}cloud/reference/discover-arch.html), Magento Enterprise Cloud Edition has three types of environments:
 
 *	*Integration*: provides eight active environments, including your project's `master` branch, for your developers to code, build, and test. You merge all of your final code to the `master` and deploy to Staging for extensive production-like testing.

@@ -1,11 +1,11 @@
 ---
 layout: default
-group: cloud
-subgroup: 020_requirements
+group: 
+subgroup:
 title: License and authentication requirements
 menu_title: License and authentication requirements
-menu_order: 2
-menu_node: 
+menu_order:
+menu_node:
 version: 2.0
 github_link: cloud/cloud-requirements-license.md
 ---

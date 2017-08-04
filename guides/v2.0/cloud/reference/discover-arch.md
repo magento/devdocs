@@ -1,16 +1,51 @@
 ---
 layout: default
 group: cloud
-subgroup: 065_reference
+subgroup: 010_welcome
 title: Cloud Architecture
 menu_title: Cloud Architecture
-menu_order: 1
+menu_order: 20
 menu_node: parent
 version: 2.0
 github_link: cloud/reference/discover-arch.md
 ---
 
 Magento Enterprise Cloud Edition provides three environments to develop, test, and launch your store. These environments are read-only, accepting deployed code changes from Git branches in your project and supporting any development and branching methodology.
+
+The three environments are Integration (your development environment), Staging, and Production. The following table details the differences:
+
+<table>
+    <tbody>
+
+    <tr>
+        <td class="blank"></td>
+        <th>Integration</th>
+        <th>Staging</th>
+        <th>Production</th>
+    </tr>
+    <tr><td>Managed by a UI</td>
+    <td>Yes</td>
+    <td>No</td>
+    <td>No</td>
+    </tr>
+    <tr><td>Uses <code>.yaml</code> files for configuration</td>
+    <td>Yes</td>
+    <td>Requires support ticket for deployment settings</td>
+    <td>Requires support ticket for deployment settings</td>
+    </tr>
+    <tr><td>Multiple environments</td>
+    <td>Yes</td>
+    <td>No (master only)</td>
+    <td>No (master only)</td>
+    </tr>
+    <tr><td>Runs on dedicated hardware</td>
+    <td>No</td>
+    <td>Yes</td>
+    <td>Yes</td>
+    </tr>
+
+</tbody>
+</table>
 
 ## Integration environment {#cloud-arch-int}
 Developers use the Integration environment to develop, deploy, and test the Magento application, custom code, extensions, and services. This environment is a PAAS (Platform as a Service) providing up to eight active environments for eight active Git branches. Each branch deploys to an environment with a web server, database, and configured services to fully test your site.

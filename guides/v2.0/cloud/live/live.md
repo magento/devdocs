@@ -1,15 +1,42 @@
 ---
 layout: default
 group: cloud
-subgroup: 160_live
-title: Go live
-menu_title: Go live
-menu_order: 300
+subgroup: 160_deploy
+title: Go live and launch
+menu_title: Go live and launch
+menu_order: 90
 menu_node:
 version: 2.0
 github_link: cloud/live/live.md
 ---
 
+INTRO!! This topic should provide a launch prep checklist, what they need to do to enter a ticket, and finally how to cut over and test their live site.
+
+## Launch checklist
+* Submit a ticket to provide correct domain names
+*	Ensure correct SSL/TLS certificates are in place
+*	Outgoing email has been tested
+*	All necessary redirects in-place
+*	Application has gone through QA testing (See above – Testing Phase)
+*	DNS: Zone’s root resource record can address a hostname
+*	DNS: TTL value is lowered as recommended
+*	Base URL is set correctly
+*	Change the default Magento Admin password
+*	Optimize all images for the web
+*	Enable minification for JS, CSS, and HTTP
+*	Make sure that pages are being correctly cached in the page cache and Fastly
+*	Make sure the Fastly Extension is up-to-date
+*	Make sure the Fastly VCL is up-to-date
+*	Make sure that the Fastly SSL certificate is setup for your domain(s)
+*	Review our documentation about going live
+*	Schedule the Go Live Preparation call with the support team
+
+We recommend that you review some performance tool kit options as part of your pre-launch readiness process.
+https://github.com/magento/magento2/tree/develop/setup/performance-toolkit
+And assess performance with 3rd party options:
+https://www.webpagetest.org/
+
+## Enter a ticket
 This section outlines the tasks you must perform before you can launch your live Magento store. When ready, you will enter a ticket with all required information through your Magento Cloud account.
 You need the following information to go live:
 
@@ -55,3 +82,16 @@ To go live:
 
 	We don't support `domain.tld CNAME <environment>-<project>.<region>.magentosite.cloud`
 4.	For shared-SSL, Magento adds your domains to the shared certificate. If you purchased deployment of a Domain-Validated SSL certificate as part of your ECE account, provide this SSL certificate to Support through the ticket. Support will provide the SSL to Fastly for deployment.
+
+## Cut over and go live
+* Magento Cloud CSE is available (contact has been made and acknowledged)
+* Update A and CNAME records for each of your domains and hostnames
+* Wait at least 5 minutes
+* Restart web browser
+* Test your website
+* The CSE will perform the following tasks as soon as cutover is completed:
+* Tag the cluster as High SLA
+* Activate Pingdom checks for domain names
+* Review state of monitoring and ensure all items are in green
+* Review the system logs
+* Check state and performance of CDN cache
