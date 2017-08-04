@@ -5,7 +5,7 @@ subgroup: 170_trouble
 title: Troubleshoot Fastly
 menu_title: Troubleshoot Fastly
 menu_order: 20
-menu_node: 
+menu_node:
 version: 2.0
 github_link: cloud/trouble/trouble_fastly.md
 ---
@@ -18,7 +18,7 @@ Response headers and values:
 *	`Fastly-Magento-VCL-Uploaded` should be present
 *	`X-Magento-Tags` should be returned
 *	`Fastly-Module-Enabled` should be either `Yes` or the Fastly extension version number
-*	`X-Cache` should be either `HIT` or `HIT, HIT` 
+*	`X-Cache` should be either `HIT` or `HIT, HIT`
 *	[`Cache-Control: max-age`](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9){:target="_blank"} should be greater than 0
 *	[`Pragma`](https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.32){:target="_blank"} should be `cache`
 
@@ -37,12 +37,12 @@ You should perform the test on your [staging]({{ page.baseurl }}cloud/reference/
 
 {% collapsible Test your staging or production site: %}
 
-This section discusses how to use `curl` to get response headers from your staging or production site (that is, the origin server). 
+This section discusses how to use `curl` to get response headers from your staging or production site (that is, the origin server).
 
 The URL format follows:
 
 *	Staging: `http[s]://staging.<your domain>.c.<project ID>.ent.magento.cloud`
-*	Production: 
+*	Production:
 
 	*	Load balancer URL: `http[s]://<your domain>.c.<project ID>.ent.magento.cloud`
 	*	Direct access to one of the three redundant servers: `http[s]://<your domain>.{1|2|3}.<project ID>.ent.magento.cloud`
@@ -168,4 +168,3 @@ If the issue persists, another extension is likely resetting these headers. Repe
 9.	If the results are the same, repeat the tasks discussed in this section to disable another extension.
 
 When you isolate the extension that is resetting Fastly headers, contact the extension developer for additional assistance.
-

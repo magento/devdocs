@@ -2,15 +2,21 @@
 layout: default
 group: cloud
 subgroup: 160_deploy
-title: Prepare to deploy
-menu_title: Prepare to deploy to Staging and Production
+title: Prepare to deploy to Staging and Production
+menu_title: Prepare to deploy
 menu_order: 40
 menu_node:
 version: 2.0
 github_link: cloud/live/stage-prod-migrate-prereq.md
 ---
 
-You'll complete the following tasks before you migrate your database and deploy code to Staging or Production:
+When you are ready to deploy your store, you need to complete deployment and testing in Staging first, then deploy to Production. The Staging environment provides a near-production environment with full services (including Fastly, New Relic, and Blackfire), database, web server, and more.
+
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+Make sure to complete all development and merging of your code to the `master	` branch in the Integration environment. Only the `master` branch is deployed to Staging then Production.
+</div>
+
+Complete the following tasks before you migrate your database and deploy code to Staging or Production:
 
 1.	Create a support ticket to [migrate deployment hooks](#cloud-live-migrate-yaml)
 2.	Get your [access URLs](#cloud-live-migrate-urls) for Staging and Production
@@ -18,7 +24,7 @@ You'll complete the following tasks before you migrate your database and deploy 
 4.	Set up your [SSH agent](#cloud-live-migrate-agent)
 5.	If you haven't done so already, upload any [Fastly VCL snippets]({{ page.baseurl }}cloud/access-acct/fastly.html#cloud-live-migrate-fastly-snip)
 
-After setting this up, your workflow is to code and test in your integration system, then push updates to your staging system using Git commands.
+After setting this up, your workflow is to code and test in your Integration environment, then push updates to the Staging environment by a ticket for directly using Git commands.
 
 ## Migrate deployment hooks in your `.magento.app.yaml` file {#cloud-live-migrate-yaml}
 
@@ -94,4 +100,4 @@ To set up an SSH agent:
 For more information on setting up SSH, see [Enable SSH keys]({{ page.baseurl }}cloud/before/before-workspace-ssh.html) as part of your local setup.
 
 #### Next step
-[Migrate data]({{ page.baseurl }}cloud/live/stage-prod-migrate.html)
+[Migrate data and static files]({{ page.baseurl }}cloud/live/stage-prod-migrate.html)

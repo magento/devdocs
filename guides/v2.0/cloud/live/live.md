@@ -10,14 +10,14 @@ version: 2.0
 github_link: cloud/live/live.md
 ---
 
-INTRO!! This topic should provide a launch prep checklist, what they need to do to enter a ticket, and finally how to cut over and test their live site.
+When you are ready to go live, work through these checklists and tests to verify your store is fully prepared to launch. This topic should provide a launch prep checklist, what they need to do to enter a ticket, and finally how to cut over and test their live site.
 
 ## Launch checklist
 * Submit a ticket to provide correct domain names
 *	Ensure correct SSL/TLS certificates are in place
 *	Outgoing email has been tested
 *	All necessary redirects in-place
-*	Application has gone through QA testing (See above – Testing Phase)
+*	Application has gone through QA testing (See [Test deployment]({{ page.baseurl }}cloud/live/stage-prod-test.html)
 *	DNS: Zone’s root resource record can address a hostname
 *	DNS: TTL value is lowered as recommended
 *	Base URL is set correctly

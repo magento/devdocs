@@ -41,6 +41,7 @@ With SSH keys added, you can access the environments to complete CLI commands wi
 Locate your Git and SSH URLs from the OneDrive onboarding document you received when you signed up for Magento Enterprise Cloud Edition.
 
 After you know these URLs, you can access those environments without further intervention.
+
 * Use the URLs to access the store as a customer.
 * Use the URL /admin to access the Admin panel.
 * Use SSH access and Git CLI commands to deploy updated code to Staging or Production. Magento Cloud CLI commands are not available in Staging and Production.
@@ -54,11 +55,7 @@ To learn more, check the following:
 * [Deployment process]({{ page.baseurl }}cloud/reference/discover-deploy.html)
 * [Protective block]({{ page.baseurl }}cloud/live/live-prot.html)
 *	[Build and deploy to your local]({{ page.baseurl }}cloud/live/live-sanity-check.html)
-*	Deploy to staging and production:
-
-	*	[Overview of staging and production]({{ page.baseurl }}cloud/live/stage-prod-over.html)
-	*	[Prepare to deploy]({{ page.baseurl }}cloud/live/stage-prod-migrate-prereq.html)
-	*	[Deploy code and data]({{ page.baseurl }}cloud/live/stage-prod-migrate.html)
-	*	[Test deployment]({{ page.baseurl }}cloud/live/stage-prod-test.html)
-
-* [Go live]({{ page.baseurl }}cloud/live/live.html)
+*	[Prepare to deploy]({{ page.baseurl }}cloud/live/stage-prod-migrate-prereq.html)
+*	[Deploy code and data]({{ page.baseurl }}cloud/live/stage-prod-migrate.html)
+*	[Test deployment]({{ page.baseurl }}cloud/live/stage-prod-test.html)
+* [Go live and launch]({{ page.baseurl }}cloud/live/live.html)

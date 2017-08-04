@@ -4,8 +4,8 @@ group: cloud
 subgroup: 170_trouble
 title: Incorrect credentials
 menu_title: Incorrect credentials
-menu_order: 5
-menu_node: 
+menu_order: 7
+menu_node:
 version: 2.0
 github_link: cloud/trouble/trouble_ce-creds.md
 ---
@@ -16,7 +16,7 @@ This topic discusses how to resolve issues with incorrect credentials in your `a
 ### Symptom
 The most common symptom of incorrect credentials is a deployment failure with an authentication error similar to the following:
 
-	The 'https://repo.magento.com/archives/magento/magento-cloud-configuration/magento-magento-cloud-configuration-1.0.3.0.zip' URL could not be accessed: HTTP/1.1 403 Forbidden  
+	The 'https://repo.magento.com/archives/magento/magento-cloud-configuration/magento-magento-cloud-configuration-1.0.3.0.zip' URL could not be accessed: HTTP/1.1 403 Forbidden
 
 To see the error log:
 

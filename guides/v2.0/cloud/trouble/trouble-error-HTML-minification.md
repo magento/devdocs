@@ -4,7 +4,7 @@ group: cloud
 subgroup: 170_trouble
 title: Resolve issues with HTML minification
 menu_title: Resolve issues with HTML minification
-menu_order: 70
+menu_order: 30
 menu_node:
 version: 2.0
 github_link: cloud/trouble/trouble-error-HTML-minification.md

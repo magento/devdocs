@@ -11,7 +11,7 @@ github_link: cloud/live/stage-prod-test.md
 ---
 
 #### Previous step:
-[Migrate data]({{ page.baseurl }}cloud/live/stage-prod-migrate.html)
+[Migrate data and static files]({{ page.baseurl }}cloud/live/stage-prod-migrate.html)
 
 When your code, database, and data is successfully migrated to Staging or Production, use the URLs in your onboarding document to test your application. The onboarding document is available in your Magento Enterprise Cloud Edition OneDrive account.
 
@@ -36,18 +36,18 @@ For more information, see [View logs for troubleshooting]({{ page.baseurl }}clou
 
 ## Check `master` in Staging and Production
 Verify your `master` code base correctly deployed to Staging and Production environments. The environments should have identical code bases.
-(instructions)
+(instructions to verify)
 
 ## Check Fastly caching
 Verify Fastly is caching properly on Staging and Production
 1. walk through curl tests
 
 ## Complete UAT testing {#uat-testing}
-Complete User Acceptance Testing (UAT) on Staging and Production. If you need help on those tests, see [UAT Testing](#uat-testing).
+Complete User Acceptance Testing (UAT) on Staging and Production. The following are a quick list of possible tasks and areas to test. Your list may be longer.
 
 <table>
 <tr>
-<td>User management</td>
+<td style="width:150px">User management</td>
 <td>
 <ul>
 <li>Create and edit customer accounts, verify emails</li>
@@ -123,3 +123,6 @@ Complete User Acceptance Testing (UAT) on Staging and Production. If you need he
 Give info on pingdom, siege, etc - see bryan's notes
 Recommend sending in a ticket to advise
 Capture your findings and attach them to the ticket
+
+#### Related topic
+[Go live and launch]({{ page.baseurl }}cloud/live/live.html)
