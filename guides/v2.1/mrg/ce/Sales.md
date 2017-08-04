@@ -2,21 +2,39 @@
 layout: default
 group: mrg
 subgroup: Community Edition
-title: Magento_Sales module API
-menu_title: Services/API
-menu_order: 3
+title: Magento_Sales module
+menu_title: Sales
+menu_order: 1
 version: 2.1
-tabgroup: sales-module
-tablabel: Services/APIs
-tabweight: 30
-level3_menu_node: level3child
-level3_subgroup: Sales
-github_link: mrg/ce/Sales/services.md
+github_link: mrg/ce/Sales.md
+redirect_from:
+    - guides/v2.1/mrg/ce/Sales/description.html
+    - guides/v2.1/mrg/ce/Sales/dependencies.html
+    - guides/v2.1/mrg/ce/Sales/services.html
 ---
 
-## InvoiceOrder
+Magento_Sales {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} is responsible for order processing and appearance in system.
 
-### Description
+Magento_Sales module manages next system entities and flows:
+
+* order management
+* {% glossarytooltip 631b9627-a367-4a56-b3b1-0f6ca8fe6e02 %}invoice{% endglossarytooltip %} management
+* {% glossarytooltip c8f00e9d-7f70-4561-9773-60da604ba5c9 %}shipment{% endglossarytooltip %} management (including track management)
+* credit memos management
+
+Magento_Sales module is required for Magento_Checkout module to perform {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} operations.
+
+## System requirements
+
+The Magento_Sales module does not have any specific system requirements.
+
+Depending on how many orders are being placed, there might be consideration for the database size.
+
+## Installation
+
+The Magento_Sales module is installed automatically during Magento installation.
+
+## InvoiceOrder
 
 The InvoiceOrder service introduces a capability to execute Magento native business flow of the Sales {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} using {% glossarytooltip 786086f2-622b-4007-97fe-2c19e5283035 %}API{% endglossarytooltip %}.
 
@@ -128,7 +146,7 @@ The service returns an identifier of the created Invoice.
 
 #### POST Endpoint
 
-`http://<magento_host>/rest/<store_code>/V1/order/<orderId>/invoice`
+`http://<magento_host>/rest/<store_code>/V1/<orderId>/invoice`
 
 #### REST declaration
 
@@ -201,8 +219,6 @@ The service implementation contains {% glossarytooltip 55774db9-bf9d-40f3-83db-b
 
 
 ## RefundInvoice
-
-### Description
 
 The RefundInvoice service introduces a capability to execute Magento native business flow of the Sales module using API.
 
@@ -440,7 +456,7 @@ The service returns an identifier of a created Credit Memo.
 
 #### POST Endpoint
 
-`http://<magento_host>/rest/<store_code>/V1/invoice/<invoiceId>/refund`
+`http://<magento_host>/rest/<store_code>/V1/<invoiceId>/refund`
 
 #### REST Declaration
 
@@ -511,8 +527,6 @@ The service contains extension points marked with `@api` annotation. Extension d
 |[`\Magento\Sales\Model\Order\RefundAdapterInterface`]{:target="_blank"}| An interface for a payment according to a selected option (online/offline). It returns Order with modified state, which contains payment specific information.|
 
 ## RefundOrder
-
-### Description
 
 With the RefundOrder service you can:
 
@@ -721,7 +735,7 @@ The service returns an identifier of a created Credit Memo.
 
 #### POST Endpoint
 
-`http://<magento_host>/rest/<store_code>/V1/order/<orderId>/refund`
+`http://<magento_host>/rest/<store_code>/V1/<orderId>/refund`
 
 #### REST Declaration
 
@@ -791,8 +805,6 @@ The service contains extension points marked with `@api` annotation. Extension d
 |[`\Magento\Sales\Model\Order\RefundAdapterInterface`]{:target="_blank"}| An interface for a payment according to a selected option (online/offline). It returns Order with modified state, which contains payment specific information.|
 
 ## ShipOrder
-
-### Description
 
 With the ShipOrder service you can:
 
@@ -943,7 +955,7 @@ The service returns the identifier of a created shipment.
 
 #### POST Endpoint
 
-`http://<magento_host>/rest/<store_code>/V1/order/<orderId>/ship`
+`http://<magento_host>/rest/<store_code>/V1/<orderId>/ship`
 
 #### REST Declaration
 
@@ -1032,3 +1044,4 @@ The service contains extension points marked with `@api` annotation. Extension d
 [`\Magento\Sales\Model\Order\Validation\InvoiceOrderInterface`]: {{site.mage2100url}}app/code/Magento/Sales/Model/Order/Validation/InvoiceOrderInterface.php
 [`\Magento\Sales\Model\Order\PaymentAdapterInterface`]: {{site.mage2100url}}app/code/Magento/Sales/Model/Order/PaymentAdapterInterface.php
 [`\Magento\Sales\Model\Order\RefundAdapterInterface`]: {{site.mage2100url}}app/code/Magento/Sales/Model/Order/RefundAdapterInterface.php
+

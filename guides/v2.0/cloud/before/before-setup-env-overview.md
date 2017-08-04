@@ -1,18 +1,13 @@
 ---
 layout: default
-group: cloud
-subgroup: 080_setup
+group: 
+subgroup:
 title: Overview of a Magento Developer Environment
 menu_title: Overview of a Magento Developer Environment
-menu_order: 161
+menu_order:
 menu_node:
-level3_menu_node: level3child
-level3_subgroup: setupenv
 version: 2.0
 github_link: cloud/before/before-setup-env-overview.md
-redirect from:
-  -  /guides/v2.0/cloud/access-acct/set-up-env.html
-  -  /guides/v2.1/cloud/access-acct/set-up-env.html
 ---
 
 {::options syntax_highlighter="rouge" /}

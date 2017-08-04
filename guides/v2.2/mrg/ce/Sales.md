@@ -4,12 +4,13 @@ group: mrg
 subgroup: 10_Community Edition
 title: Magento_Sales module
 menu_title: Sales
-menu_order: 8
+menu_order: 1
 version: 2.2
 github_link: mrg/ce/Sales.md
 redirect_from:
- - /guides/v2.2/mrg/ce/Sales/description.html
- - /guides/v2.2/mrg/ce/Sales/services.html
+    - guides/v2.2/mrg/ce/Sales/description.html
+    - guides/v2.2/mrg/ce/Sales/dependencies.html
+    - guides/v2.2/mrg/ce/Sales/services.html
 ---
 
 Magento_Sales {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} is responsible for order processing and appearance in the system.
