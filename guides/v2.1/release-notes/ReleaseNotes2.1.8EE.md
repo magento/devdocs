@@ -418,7 +418,6 @@ The following table identifies contributions from our community members. This ta
     <th>Related GitHub issue</th>
      <th>Contributing community member</th>
 
-
   </tr>
 
   <tr>
@@ -440,35 +439,31 @@ The following table identifies contributions from our community members. This ta
     <td> @latenights</td>
   </tr>
 
-</tr>
   <tr>
     <td>9332</td>
     <td>N/A</td>
     <td>@hostep</td>
   </tr>
 
-</tr>
   <tr>
     <td>9333</td>
     <td><a href="https://github.com/magento/magento2/issues/4232" target="_blank"> (GITHUB-4232)</a> </td>
     <td>@hostep</td>
   </tr>
 
-</tr>
+
   <tr>
     <td>9364</td>
     <td><a href="https://github.com/magento/magento2/issues/4868" target="_blank"> (GITHUB-4868)</a>, <a href="https://github.com/magento/magento2/issues/6997" target="_blank"> (GITHUB-6997)</a>, <a href="https://github.com/magento/magento2/issues/9364" target="_blank"> (GITHUB-9364)</a></td>
     <td>@hostep</td>
   </tr>
 
-</tr>
   <tr>
     <td>9365</td>
     <td><a href="https://github.com/magento/magento2/issues/4868" target="_blank"> (GITHUB-4868)</a>, <a href="https://github.com/magento/magento2/issues/6997" target="_blank"> (GITHUB-6997)</a>,<a href="https://github.com/magento/magento2/issues/9364" target="_blank"> (GITHUB-9364)</a></td>
     <td>@hostep</td>
   </tr>
 
-</tr>
   <tr>
     <td>9376</td>
     <td>N/A</td>
@@ -537,6 +532,7 @@ The following table identifies contributions from our community members. This ta
     <td><a href="https://github.com/magento/magento2/issues/9646" target="_blank"> (GITHUB-9646)</a></td>
     <td>@ekuusela</td>
   </tr>
+  
  <tr>
     <td>9653</td>
     <td>N/A</td>
