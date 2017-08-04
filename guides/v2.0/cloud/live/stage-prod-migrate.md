@@ -15,12 +15,12 @@ github_link: cloud/live/stage-prod-migrate-prereq.md
 #### Previous step:
 [Prepare to deploy]({{ page.baseurl }}cloud/live/stage-prod-migrate.html)
 
-To migrate your database and code:
+To migrate your database and static files:
 
 *	[Migrate static files](#cloud-live-migrate-static)
 *	[Migrate the database](#cloud-live-migrate-db)
 
-	In the event of issues, make fixes in your integration system, test them, and push updated code to your staging repository using Git commands.
+If you encounter errors or need to make changes, complete those updates on your local. Push the code changes to the Integration environment. Deploy the updated `master` branch again. See instructions in the [previous step]({{ page.baseurl }}cloud/live/stage-prod-migrate.html).
 
 ### Migrate static files {#cloud-live-migrate-static}
 This section discusses how to migrate {% glossarytooltip 363662cb-73f1-4347-a15e-2d2adabeb0c2 %}static files{% endglossarytooltip %} from your `pub/media` directory to staging or production. We recommend using the Linux remote synchronization and file transfer command [`rsync`](https://en.wikipedia.org/wiki/Rsync){:target="_blank"}. rsync uses an algorithm that minimizes the amount of data by moving only the portions of files that have changed; in addition, it supports compression.
