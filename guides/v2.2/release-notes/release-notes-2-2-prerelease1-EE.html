@@ -689,14 +689,19 @@
   <li><a href="#highlights" id="markdown-toc-highlights">Highlights</a></li>
   <li><a href="#issues-fixed-in-this-release-candidate" id="markdown-toc-issues-fixed-in-this-release-candidate">Issues fixed in this Release Candidate</a>    <ul>
       <li><a href="#installation-and-configuration" id="markdown-toc-installation-and-configuration">Installation and Configuration</a></li>
-      <li><a href="#advanced-reporting" id="markdown-toc-advanced-reporting">Advanced reporting</a></li>
       <li><a href="#catalog" id="markdown-toc-catalog">Catalog</a></li>
       <li><a href="#checkout" id="markdown-toc-checkout">Checkout</a></li>
       <li><a href="#importexport" id="markdown-toc-importexport">Import/export</a></li>
       <li><a href="#magento-business-intelligence" id="markdown-toc-magento-business-intelligence">Magento Business Intelligence</a></li>
       <li><a href="#miscellaneous" id="markdown-toc-miscellaneous">Miscellaneous</a></li>
+      <li><a href="#performance" id="markdown-toc-performance">Performance</a></li>
+      <li><a href="#rest-api" id="markdown-toc-rest-api">REST API</a></li>
       <li><a href="#search" id="markdown-toc-search">Search</a></li>
+      <li><a href="#shipping" id="markdown-toc-shipping">Shipping</a></li>
+      <li><a href="#staging" id="markdown-toc-staging">Staging</a></li>
+      <li><a href="#tax-rules" id="markdown-toc-tax-rules">Tax rules</a></li>
       <li><a href="#url-rewrites" id="markdown-toc-url-rewrites">URL rewrites</a></li>
+      <li><a href="#visual-merchandiser" id="markdown-toc-visual-merchandiser">Visual Merchandiser</a></li>
     </ul>
   </li>
   <li><a href="#system-requirements" id="markdown-toc-system-requirements">System requirements</a></li>
@@ -704,9 +709,9 @@
   <li><a href="#credits" id="markdown-toc-credits">Credits</a></li>
 </ul>
 
-<p><em>Release date: July 28, 2017</em></p>
+<p><em>Release date: August 4, 2017</em></p>
 
-<p><em>Notes updated: July 28, 2017</em></p>
+<p><em>Notes updated: August 7, 2017</em></p>
 
 <p>Magento Enterprise Edition 2.2.0 Release Candidate includes significant new features as well as many bug fixes.</p>
 
@@ -777,11 +782,14 @@ buyer to create a cart with more than 300 line items, and merchants can process 
   <li>Magento now handles the <code>catalog_product_entity_media_gallery_value.position</code>  value the same whether you’ve installed or upgraded the product. Previously, these values differed depending upon whether you upgraded or freshly installed your Magento code. (RC1.5)</li>
 </ul>
 
-<h3 id="advanced-reporting">Advanced reporting</h3>
-
-<!--- 69606 -->
+<!--- 70869 -->
 <ul>
-  <li>We’ve resolved a conflict that occurred after you changed a base URL. Previously, after you changed a <code>base_url</code> value (<strong>Stores-&gt;Configuration-&gt;General-&gt;Web-&gt; Base URLs (Secure)</strong>), Magento would update the base URL, then resubscribe, potentially resulting in a failure during the next update secure <code>base_url</code> call.</li>
+  <li>Magento no longer displays console errors after CSS merging and minification is enabled. Previously, when CSS merging and minification was enabled, the storefront was not displayed as expected, and the <code>styles-l.min.css</code> and <code>print.min.css</code> files could not be found. (RC1.8)</li>
+</ul>
+
+<!--- 68969 -->
+<ul>
+  <li>The contents of the <code>sales_sequence_meta</code> table is the same whether you install or upgrade Magento. (RC1.8)</li>
 </ul>
 
 <h3 id="catalog">Catalog</h3>
@@ -864,11 +872,6 @@ buyer to create a cart with more than 300 line items, and merchants can process 
   <li>The Customer Segment page no longer shows non-matching customers when a customer logs in and you refresh the Customer Segment page.</li>
 </ul>
 
-<!--- 59801 -->
-<ul>
-  <li>We’ve improved the performance of the Tax Rules form in installations containing many tax rates.</li>
-</ul>
-
 <!--- 69750 -->
 <ul>
   <li>Magento now successfully completes checkout when a custom address attribute is added. Previously, an error occurred during checkout when the user added a required custom address attribute.</li>
@@ -877,16 +880,6 @@ buyer to create a cart with more than 300 line items, and merchants can process 
 <!--- 70628 -->
 <ul>
   <li>The Forgot Your Password? email now contains a link to reset your password. Previously, this link was missing from the Forgot Your Password? email. (RC1.5)</li>
-</ul>
-
-<!--- 57753 -->
-<ul>
-  <li>You can now successfully create product attributes using the REST API. Previously, although the product was created, the attribute was not. <a href="https://github.com/magento/magento2/issues/6213">GitHub-6213</a> (RC1.5)</li>
-</ul>
-
-<!--- 70406 -->
-<ul>
-  <li>We’ve improved the performance of the CatalogPermission indexer. Previously, Magento performance degraded significantly during the indexing of large numbers of customer groups.(RC1.5)</li>
 </ul>
 
 <!--- 69521 -->
@@ -936,6 +929,45 @@ buyer to create a cart with more than 300 line items, and merchants can process 
   <li>String localizations now works as expected when  phrases include text wrapped with single quotation marks. (RC1.6)</li>
 </ul>
 
+<!--- 70473 -->
+<ul>
+  <li>Magento now displays company information on the Account Information section of the  Invoice, CreditMemo and Shipment pages. (RC1.8)</li>
+</ul>
+
+<!--- 70683 -->
+<ul>
+  <li>Magento now displays newly registered customers in the Admin customer list as expected. (RC1.8)</li>
+</ul>
+
+<!--- 69606 -->
+<ul>
+  <li>We’ve resolved a conflict that occurred after you changed a base URL. Previously, after you changed a <code>base_url</code> value (<strong>Stores-&gt;Configuration-&gt;General-&gt;Web-&gt; Base URLs (Secure)</strong>), Magento would update the base URL, then resubscribe, potentially resulting in a failure during the next update secure <code>base_url</code> call.</li>
+</ul>
+
+<h3 id="performance">Performance</h3>
+
+<!--- 69904 -->
+<ul>
+  <li>We’ve fixed an issue where errors occurred  in foreign keys after Magento added a message to the message queue. Previously, when a user configured a shared catalog, Magento front-end performance was detrimentally affected. (RC1.8)</li>
+</ul>
+
+<!--- 70406 -->
+<ul>
+  <li>We’ve improved the performance of the CatalogPermission indexer. Previously, Magento performance degraded significantly during the indexing of large numbers of customer groups.(RC1.5)</li>
+</ul>
+
+<h3 id="rest-api">REST API</h3>
+
+<!--- 70743 -->
+<ul>
+  <li>You can now use a REST request  to retrieve a shopping cart that contained a product with custom options.  Previously,  you could not use a REST request  to retrieve a shopping cart that contained a product with custom options. (RC1.8)</li>
+</ul>
+
+<!--- 57753 -->
+<ul>
+  <li>You can now successfully create product attributes using the REST API. Previously, although the product was created, the attribute was not. <a href="https://github.com/magento/magento2/issues/6213">GitHub-6213</a> (RC1.5)</li>
+</ul>
+
 <h3 id="search">Search</h3>
 
 <!--- 63249 -->
@@ -953,6 +985,37 @@ buyer to create a cart with more than 300 line items, and merchants can process 
   <li>Magento now sends the <code>parent_id</code> of a deleted configurable product variation to ElasticSearch. Previously, Magento didn’t send this information  to the ElasticSearch server  if  the simple product associated with a configurable product were changed. (RC1.5)</li>
 </ul>
 
+<h3 id="shipping">Shipping</h3>
+
+<!--- 70844 -->
+<ul>
+  <li>The DHL provider option is now available. (RC1.8)</li>
+</ul>
+
+<h3 id="staging">Staging</h3>
+
+<!--- 70922 -->
+<ul>
+  <li>Magento now applies all scheduled product changes to all scopes.  (RC1.8)</li>
+</ul>
+
+<!--- 70656 -->
+<ul>
+  <li>Magento now displays the correct content on the preview page for a scheduled update.  (RC1.8)</li>
+</ul>
+
+<h3 id="tax-rules">Tax rules</h3>
+
+<!--- 70641 -->
+<ul>
+  <li>You can now create a tax rule when running Magento in Mozilla Firefox and Internet Explorer. Previously, you could not select a tax rate, and Magento displayed an error.  (RC1.8)</li>
+</ul>
+
+<!--- 59801 -->
+<ul>
+  <li>We’ve improved the performance of the Tax Rules form in installations containing many tax rates.</li>
+</ul>
+
 <h3 id="url-rewrites">URL rewrites</h3>
 
 <!--- 70663 -->
@@ -963,6 +1026,13 @@ buyer to create a cart with more than 300 line items, and merchants can process 
 <!--- 70651 -->
 <ul>
   <li>URL rewrites now occur as expected when category or products are saved. Previously, URLs rewrites did not occur for all categories. (RC1.6)</li>
+</ul>
+
+<h3 id="visual-merchandiser">Visual Merchandiser</h3>
+
+<!--- 70896 -->
+<ul>
+  <li>The Add products by SKU option now works as expected. Previously, if you entered a product SKU, Magento deleted that product from the product list. (RC1.8)</li>
 </ul>
 
 <h2 id="system-requirements">System requirements</h2>
