@@ -132,7 +132,6 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 
 
 
-<!--- 70406 -->* We’ve improved the performance of the CatalogPermission indexer. Previously, Magento performance degraded significantly during the indexing of large numbers of customer groups.(RC1.5)
 
 <!--- 69521 -->* Magento now shows customer attributes in the Admin panel (as expected)  when the **Show on Storefront** option is set to **No**. Previously, when this setting was set to **No**, the attribute value would not appear in the customer account  section of the Admin panel customer account, but did appear in the orders section. (RC1.5)
 
@@ -164,6 +163,11 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 
 <!--- 70741 -->* You can now successfully add a related product to a configurable product. Previously, Magento displayed an error when you tried to edit a configurable product by adding a related, simple product.  (RC1.8)
 
+
+
+### Performance
+
+<!--- 70406 -->* We’ve improved the performance of the CatalogPermission indexer. Previously, Magento performance degraded significantly during the indexing of large numbers of customer groups.(RC1.5)
 
 
 ### REST API

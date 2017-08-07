@@ -149,7 +149,6 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 
 
 
-<!--- 70406 -->* We’ve improved the performance of the CatalogPermission indexer. Previously, Magento performance degraded significantly during the indexing of large numbers of customer groups.(RC1.5)
 
 <!--- 69521 -->* Magento now shows customer attributes in the Admin panel (as expected)  when the **Show on Storefront** option is set to **No**. Previously, when this setting was set to **No**, the attribute value would not appear in the customer account  section of the Admin panel customer account, but did appear in the orders section. (RC1.5)
 
@@ -174,10 +173,7 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 
 <!--- 64901 -->* Magento now supports new top level domains for email addresses. [GitHub-4547](https://github.com/magento/magento2/issues/4547) (RC1.6)
 
-
 <!--- 70518 -->* You can now override publishers configuration through the `env.php` file. (RC1.6)
-
-
 
 
 <!--- 67296 -->* String localizations now works as expected when  phrases include text wrapped with single quotation marks. (RC1.6)
@@ -188,7 +184,14 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 
 <!--- 70683 -->* Magento now displays newly registered customers in the Admin customer list as expected. (RC1.8)
 
-<!--- 70641 -->* You can now create a tax rule when running Magento in Mozilla Firefox and Internet Explorer. Previously, you could not select a tax rate, and Magento displayed an error. (RC1.8)
+
+
+### Performance
+
+<!--- 69904 -->* We’ve fixed an issue where errors occurred  in foreign keys after Magento added a message to the message queue. Previously, when a user configured a shared catalog, Magento front-end performance was detrimentally affected. (RC1.8)
+
+<!--- 70406 -->* We’ve improved the performance of the CatalogPermission indexer. Previously, Magento performance degraded significantly during the indexing of large numbers of customer groups.(RC1.5)
+
 
 
 ### REST API
