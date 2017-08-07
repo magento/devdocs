@@ -10,16 +10,20 @@ version: 2.0
 github_link: cloud/reference/discover-deploy.md
 ---
 
-Deploying Magento means simply pushing the source code to your Git repository. The branching structure of your Git repository is entirely up to you. Every project comes with a `master` Git branch in the Integration environment, which you push all code to and deploy across to Staging and Production. When you push code, build scripts parse configuration files committed to the repository, then providing info used by deploy scripts to rebuild the environment you are working in.
+When you deploy Magento Commerce in the Cloud, complete all of your development in your local Git branch and push the code to the Git repository. When you push code, build scripts parse configuration files committed to the repository, then providing info used by deploy scripts to rebuild the environment you are working in.
 
-If you are pushing directly to the Magento Enterprise Cloud Edition Git repository, you can track the ongoing build and deploy actions in your terminal and the Web Interface in real-time. If you are using external GitHub repositories, the log of the operations does not display in the GitHub session. You can still follow what's happening in their interface and in the Magento Enterprise Cloud Edition's Web Interface.
+For the Integration environment, every active branch deploys to a full environment for access and testing. To deploy to Staging and Production, your code must be merged to the `master` branch in Integration.
+
+You can track the ongoing build and deploy actions in your terminal and the Web Interface in real-time. If you are using external GitHub repositories, the log of the operations does not display in the GitHub session. You can still follow what's happening in their interface and in the Magento Commerce's Web Interface.
 
 ## Project configuration {#cloud-deploy-conf}
-What makes it all work is a set of YAML configuration files located in the project root directory. These files define your Magento installation and describe its dependencies. Configuration files specify, forexample, that Magento uses MySQL, some {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} extensions, and Elasticsearch. These are referred to as *services*. To learn more about those files, see the following:
+A set of YAML configuration files located in the project root directory define your Magento installation and describe its dependencies.
 
-*	[`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html)
-*	[`routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html)
-*	[`services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html)
+If you intend to make changes, modify the YAML files in your Git branch of code. The build and deploy scripts access those files for specifics.
+
+*	[`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html) defines how Magento is built and deployed.
+*	[`routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html) defines how an incoming URL is processed by Magento Commerce.
+*	[`services.yaml`]({{page.baseurl}}cloud/project/project-conf-files_services.html) defines the services Magento uses by name and version. For example, this file may include versions of MySQL, some PHP extensions, and Elasticsearch. These are referred to as *services*.
 
 ## Five phases of deployment {#cloud-deploy-over-phases}
 Deployment consists of the following phases:
@@ -32,7 +36,7 @@ Deployment consists of the following phases:
 6.	[Post-deployment: configure routing](#cloud-deploy-over-phases-route)
 
 ### Phase 1: Configuration validation and code retrieval {#cloud-deploy-over-phases-conf}
-The remote server gets your code using Git. When you initially set up a project from a template, we retrieve the code from the [the Magento ECE template](https://github.com/magento/magento-cloud){:target="_blank"}.
+The remote server gets your code using Git. When you initially set up a project from a template, we retrieve the code from the [the Magento Commerce template](https://github.com/magento/magento-cloud){:target="_blank"}.
 
 The built-in Git server checks what you are pushing: if you have a syntax error in a configuration file, our Git server refuses the push. For details, see [Protective Block]({{page.baseurl}}cloud/live/live-prot.html).
 
@@ -42,9 +46,9 @@ This phase also runs `composer install` to retrieve dependencies.
 
 ### Phase 2: Build {#cloud-deploy-over-phases-build}
 We build only what has changed since the last build. This is one of the things that
-make Magento Enterprise Cloud Edition so fast in deployment.
+make Magento Commerce so fast in deployment.
 
-Magento Enterprise Cloud Edition builds the codebase. It runs hooks in the `build` section of `.magento.app.yaml`.
+Magento Commerce builds the codebase. It runs hooks in the `build` section of `.magento.app.yaml`.
 
 The default Magento build hook is a CLI command called `magento-cloud:build`. It does the following:
 

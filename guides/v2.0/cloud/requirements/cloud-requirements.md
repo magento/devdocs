@@ -17,13 +17,12 @@ redirect from:
   -  /guides/v2.1/cloud/requirements/cloud-requirements-git.html
 ---
 
-
 The following requirements detail technologies, knowledges, accounts, and steps to complete when working with your Magento Commerce code and store in the Cloud.
 
 ## Prerequisite technologies and knowledges {#cloud-req-pre}
 The following technologies are requirements for developing and deploying your store code:
 
-*	Experienced with [Git](https://git-scm.com/docs/user-manual.html){:target="_blank"}
+*	Experienced with [Git](https://git-scm.com/docs/user-manual.html){:target="_blank"} | [videos](https://git-scm.com/videos){:target="_blank"}
 *	Experienced with [Composer](https://getcomposer.org/doc){:target="_blank"}
 *	Familiar with [Magento 2]({{ page.baseurl }}cloud/bk-cloud.html#magento2)
 *	Familiar with [Continuous Integration Best Practices](https://www.google.com/search?q=Continuous+Integration+Best+Practices){:target="_blank"}
