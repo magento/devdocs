@@ -65,7 +65,7 @@ where
 <td>2.5</td>
 </tr>
 <tr>
-<td>session-save-redis-persistent_id</td>
+<td>session-save-redis-persistent-id</td>
 <td>persistent_identifier</td>
 <td>
 <p>Unique string to enable persistent connections (for example, <code>sess-db0</code>).</p>
