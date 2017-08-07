@@ -84,9 +84,7 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 
 
 
-### Advanced reporting
 
-<!--- 69606 -->* We’ve resolved a conflict that occurred after you changed a base URL. Previously, after you changed a `base_url` value (**Stores->Configuration->General->Web-> Base URLs (Secure)**), Magento would update the base URL, then resubscribe, potentially resulting in a failure during the next update secure `base_url` call. 
 
 
 
@@ -184,6 +182,7 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 
 <!--- 70683 -->* Magento now displays newly registered customers in the Admin customer list as expected. (RC1.8)
 
+<!--- 69606 -->* We’ve resolved a conflict that occurred after you changed a base URL. Previously, after you changed a `base_url` value (**Stores->Configuration->General->Web-> Base URLs (Secure)**), Magento would update the base URL, then resubscribe, potentially resulting in a failure during the next update secure `base_url` call. 
 
 
 ### Performance
