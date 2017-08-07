@@ -41,10 +41,10 @@ The following results provides an example of variables:
 	| ADMIN_USERNAME | meister_x2U8  | Yes       | No   |
 	+----------------+---------------+-----------+------+
 
-## Set the DOCROOT
-Set the DOCROOT to the /magento directory until you complete all setup. If you change the DOCROOT to /magento/pub prior to completion, you will encounter issues running the Web Setup Wizard.
+## Set the docroot
+Set the docroot to the /magento directory until you complete all setup. If you change the DOCROOT to /magento/pub prior to completion, you will encounter issues running the Web Setup Wizard.
 
-For the Production environment, you should set the DOCROOT to /magento/pub, which helps restrict access to vulnerable areas of the system. The webserver DOCROOT should be set to /magento/pub only after Magento is installed (including any upgrades and patches), configured, and static files have been generated and populated in /magento/pub. Alternatively, you could also create a subdomain (for example, install.domain.com) and configure your webserver's DOCROOT to the Magento installed root folder.
+For the Production environment, you should set the docroot to /magento/pub, which helps restrict access to vulnerable areas of the system. The webserver DOCROOT should be set to /magento/pub only after Magento is installed (including any upgrades and patches), configured, and static files have been generated and populated in /magento/pub. Alternatively, you could also create a subdomain (for example, install.domain.com) and configure your webserver's DOCROOT to the Magento installed root folder.
 
 ## Install Magento
 
