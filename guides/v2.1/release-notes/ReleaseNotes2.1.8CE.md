@@ -103,8 +103,6 @@ This release includes both improvements we've made internally and those submitte
 
 ### Checkout
 
-<!--- 62628 -->* Your gift wrapping selection now appears in the shopping cart regardless of whether you've selected a shipping method. Previously, Magento did not display your gift wrapping choice until you selected a shipping method. 
-
 <!--- 65656 -->* You can complete your order after entering a new shipping address during checkout. Previously, Magento would not let you place an order if you entered a new shipping address during checkout. 
 
 <!--- 68875 -->* Shipping method radio buttons are no longer disabled when the Checkout page is refreshed.  [GitHub-7497](https://github.com/magento/magento2/issues/7497), [GitHub-9485](https://github.com/magento/magento2/issues/9485)  *Fix submitted by community member  <a href="https://github.com/rachkulik" target="_blank"> @rachkulik</a>*
@@ -175,9 +173,6 @@ layout for the "Shipping and Tracking" block did not work properly.
 
 <!--- 62914 -->* Directive values can now be escaped with quotation marks. Previously,  all characters after quotation marks were removed after a save, which resulted in the failure to save widget conditions. [GitHub-3860](https://github.com/magento/magento2/issues/3860)
 
-<!--- 62623 -->* Magento no longer displays the gift wrap tax when no gift wrap is selected. 
-
-<!--- 55519 -->* You can now apply gift wrapping to a Grouped product. 
 
 
 <!--- 61266 -->* Magento no longer permits a shopper to place a re-order once you've disabled one of items in the order. 
@@ -371,7 +366,7 @@ layout for the "Shipping and Tracking" block did not work properly.
 
 ### Tax
 
-<!--- 61131 -->* Magento now correctly calculates tax and order totals when a discount is used for prices that include tax and catalog prices excluding tax.  Please note this is not a valid tax configuration and can introduce rounding errors. P
+<!--- 61131 -->* Magento now correctly calculates tax and order totals when a discount is used for prices that include tax and catalog prices excluding tax.  Please note this is not a valid tax configuration and can introduce rounding errors. 
 
 ### Web API
 
@@ -397,182 +392,184 @@ The following table identifies contributions from our community members. This ta
   </tr>
 
   <tr>
-    <td>8880</td>
+    <td><a href="https://github.com/magento/magento2/pull/8880" target="_blank">8880</a></td>
     <td>N/A</td>
-     <td><a href="https://github.com/WaPoNe" target="_blank"> @WaPoNe</a></td>
+     <td><a href="https://github.com/WaPoNe" target="_blank">@WaPoNe</a></td>
   </tr>
 
   <tr>
-    <td>9092</td>
+    <td><a href="https://github.com/magento/magento2/pull/9092" target="_blank">9092</a></td>
     <td><a href="https://github.com/magento/magento2/issues/5627" target="_blank"> (GITHUB-5627)</a></td>
-    <td><a href="https://github.com/malachy-mcconnnell" target="_blank"> @malachy-mcconnnell</a></td>
+    <td><a href="https://github.com/malachy-mcconnnell" target="_blank">@malachy-mcconnnell</a></td>
   </tr>
 
   <tr>
-    <td>9324</td>
+    <td><a href="https://github.com/magento/magento2/pull/9324" target="_blank">9324</a></td>
     <td><a href="https://github.com/magento/magento2/issues/4427" target="_blank"> (GITHUB-4427)</a></td>
-    <td> <a href="https://github.com/latenights" target="_blank"> @latenights</a></td>
+    <td><a href="https://github.com/latenights" target="_blank">@latenights</a></td>
   </tr>
 
   <tr>
-    <td>9332</td>
+    <td><a href="https://github.com/magento/magento2/pull/9332" target="_blank">9332</a></td>
     <td>N/A</td>
-    <td><a href="https://github.com/hostep" target="_blank"> @hostep</a></td>
+    <td><a href="https://github.com/hostep" target="_blank">@hostep</a></td>
   </tr>
 
   <tr>
-    <td>9333</td>
+    <td><a href="https://github.com/magento/magento2/pull/9333" target="_blank">9333</a></td>
     <td><a href="https://github.com/magento/magento2/issues/4232" target="_blank"> (GITHUB-4232)</a> </td>
-    <td><a href="https://github.com/hostep" target="_blank"> @hostep</a></td>
+    <td><a href="https://github.com/hostep" target="_blank">@hostep</a></td>
   </tr>
 
 
   <tr>
-    <td>9364</td>
+    <td><a href="https://github.com/magento/magento2/pull/9364" target="_blank">9364</a></td>
     <td><a href="https://github.com/magento/magento2/issues/4868" target="_blank"> (GITHUB-4868)</a>, <a href="https://github.com/magento/magento2/issues/6997" target="_blank"> (GITHUB-6997)</a>, <a href="https://github.com/magento/magento2/issues/9364" target="_blank"> (GITHUB-9364)</a></td>
-    <td><a href="https://github.com/hostep" target="_blank"> @hostep</a></td>
+    <td><a href="https://github.com/hostep" target="_blank">@hostep</a></td>
   </tr>
 
   <tr>
-    <td>9365</td>
+    <td><a href="https://github.com/magento/magento2/pull/9365" target="_blank">9365</a></td>
     <td><a href="https://github.com/magento/magento2/issues/4868" target="_blank"> (GITHUB-4868)</a>, <a href="https://github.com/magento/magento2/issues/6997" target="_blank"> (GITHUB-6997)</a>,<a href="https://github.com/magento/magento2/issues/9364" target="_blank"> (GITHUB-9364)</a></td>
-    <td><a href="https://github.com/hostep" target="_blank"> @hostep</a></td>
+    <td><a href="https://github.com/hostep" target="_blank">@hostep</a></td>
   </tr>
 
   <tr>
-    <td>9376</td>
+    <td><a href="https://github.com/magento/magento2/pull/9376" target="_blank">9376</a></td>
     <td>N/A</td>
-    <td><a href="https://github.com/navarr" target="_blank"> @navarr</a></td>
+    <td><a href="https://github.com/navarr" target="_blank">@navarr</a></td>
   </tr>
 
 
   <tr>
-    <td>9396</td>
+    <td><a href="https://github.com/magento/magento2/pull/9396" target="_blank">9396</a></td>
     <td><a href="https://github.com/magento/magento2/issues/6451" target="_blank"> (GITHUB-6451)</a></td>
-    <td><a href="https://github.com/ihor-sviziev" target="_blank"> @ihor-sviziev</a></td>
+    <td><a href="https://github.com/ihor-sviziev" target="_blank">@ihor-sviziev</a></td>
   </tr>
 
 
   <tr>
-    <td>9485</td>
+    <td><a href="https://github.com/magento/magento2/pull/9485" target="_blank">9485</a></td>
     <td><a href="https://github.com/magento/magento2/issues/7497" target="_blank"> (GITHUB-7497)</a>, <a href="https://github.com/magento/magento2/issues/9485" target="_blank"> (GITHUB-9485)</a></td>
-    <td><a href="https://github.com/rachkulik" target="_blank"> @rachkulik</a></td>
+    <td><a href="https://github.com/rachkulik" target="_blank">@rachkulik</a></td>
   </tr>
 
   <tr>
-    <td>9487</td>
+    <td><a href="https://github.com/magento/magento2/pull/9487" target="_blank">9487</a></td>
     <td><a href="https://github.com/magento/magento2/issues/9428" target="_blank"> (GITHUB-9428)</a></td>
-    <td><a href="https://github.com/mikebox" target="_blank"> @mikebox</a></td>
+    <td><a href="https://github.com/mikebox" target="_blank">@mikebox</a></td>
   </tr>
 
   <tr>
-    <td>9499</td>
+    <td><a href="https://github.com/magento/magento2/pull/9499" target="_blank">9499</a></td>
     <td><a href="https://github.com/magento/magento2/issues/4828" target="_blank"> (GITHUB-4828)</a>, <a href="https://github.com/magento/magento2/issues/6222" target="_blank"> (GITHUB-6222)</a>,  <a href="https://github.com/magento/magento2/issues/6815" target="_blank"> (GITHUB-6815)</a></td>
-    <td><a href="https://github.com/hostep" target="_blank"> @hostep</a></td>
+    <td><a href="https://github.com/hostep" target="_blank">@hostep</a></td>
   </tr>
 
   <tr>
-    <td>9500</td>
+    <td><a href="https://github.com/magento/magento2/pull/9500" target="_blank">9500</a></td>
     <td>N/A</td>
-    <td><a href="https://github.com/hostep" target="_blank"> @hostep</a></td>
+    <td><a href="https://github.com/hostep" target="_blank">@hostep</a></td>
   </tr>
 
 
   <tr>
-    <td>9524</td>
+    <td><a href="https://github.com/magento/magento2/pull/9524" target="_blank">9524</a></td>
     <td><a href="https://github.com/magento/magento2/issues/8607" target="_blank"> (GITHUB-8607)</a></td>
-    <td><a href="https://github.com/LoganayakiK" target="_blank"> @LoganayakiK</a></td>
+    <td><a href="https://github.com/LoganayakiK" target="_blank">@LoganayakiK</a></td>
   </tr>
 
   <tr>
-    <td>9571</td>
+    <td><a href="https://github.com/magento/magento2/pull/9571" target="_blank">9571</a></td>
     <td><a href="https://github.com/magento/magento2/issues/6866" target="_blank"> (GITHUB-6866)</a></td>
-    <td><a href="https://github.com/hostep" target="_blank"> @hostep</a></td>
+    <td><a href="https://github.com/hostep" target="_blank">@hostep</a></td>
   </tr>
 
   <tr>
-    <td>9590</td>
+    <td><a href="https://github.com/magento/magento2/pull/9590" target="_blank">9590</a></td>
     <td><a href="https://github.com/magento/magento2/issues/5352" target="_blank"> (GITHUB-5352)</a>,  <a href="https://github.com/magento/magento2/issues/5633" target="_blank"> (GITHUB-5633)</a>, <a href="https://github.com/magento/magento2/issues/5916" target="_blank"> (GITHUB-5916)</a>, <a href="https://github.com/magento/magento2/issues/6275" target="_blank"> (GITHUB-6275)</a>,  <a href="https://github.com/magento/magento2/issues/9590" target="_blank"> (GITHUB-9590)</a></td>
-    <td><a href="https://github.com/hostep" target="_blank"> @hostep</a></td>
+    <td><a href="https://github.com/hostep" target="_blank">@hostep</a></td>
   </tr>
 
   <tr>
-    <td>9601</td>
+    <td><a href="https://github.com/magento/magento2/pull/9601" target="_blank">9601</a></td>
     <td>N/A</td>
-    <td><a href="https://github.com/kassner" target="_blank"> @kassner</a></td>
+    <td><a href="https://github.com/kassner" target="_blank">@kassner</a></td>
   </tr>
 
   <tr>
-    <td>9647</td>
+    <td><a href="https://github.com/magento/magento2/pull/9647" target="_blank">9647</a></td>
     <td><a href="https://github.com/magento/magento2/issues/9646" target="_blank"> (GITHUB-9646)</a></td>
-    <td><a href="https://github.com/ekuusela" target="_blank"> @ekuusela</a></td>
+    <td><a href="https://github.com/ekuusela" target="_blank">@ekuusela</a></td>
   </tr>
 
  <tr>
-    <td>9653</td>
+    <td><a href="https://github.com/magento/magento2/pull/9653" target="_blank">9653</a></td>
     <td>N/A</td>
-    <td><a href="https://github.com/kassner" target="_blank"> @kassner</a></td>
+    <td><a href="https://github.com/kassner" target="_blank">@kassner</a></td>
   </tr>
 
  <tr>
-    <td>9655</td>
+    <td><a href="https://github.com/magento/magento2/pull/9655" target="_blank">9655</a></td>
     <td><a href="https://github.com/magento/magento2/issues/9518" target="_blank"> (GITHUB-9518)</a></td>
-    <td><a href="https://github.com/hostep" target="_blank"> @hostep</a></td>
+    <td><a href="https://github.com/hostep" target="_blank">@hostep</a></td>
   </tr>
 
  <tr>
-    <td>9660</td>
+    <td><a href="https://github.com/magento/magento2/pull/9660" target="_blank">9660</a></td>
     <td>N/A</td>
-    <td><a href="https://github.com/kassner" target="_blank"> @kassner</a></td>
+    <td><a href="https://github.com/kassner" target="_blank">@kassner</a></td>
   </tr>
 
  <tr>
-    <td>9661</td>
+    <td><a href="https://github.com/magento/magento2/pull/9661" target="_blank">9661</a></td>
     <td>N/A</td>
-    <td><a href="https://github.com/kassner" target="_blank"> @kassner</a></td>
+    <td><a href="https://github.com/kassner" target="_blank">@kassner</a></td>
   </tr>
 
  <tr>
-    <td>9662</td>
+    <td><a href="https://github.com/magento/magento2/pull/9662" target="_blank">9662</a></td>
     <td>N/A</td>
-    <td><a href="https://github.com/kassner" target="_blank"> @kassner</a></td>
+    <td><a href="https://github.com/kassner" target="_blank">@kassner</a></td>
   </tr>
 
  <tr>
-    <td>9704</td>
+    <td><a href="https://github.com/magento/magento2/pull/9704" target="_blank">9704</a></td>
     <td><a href="https://github.com/magento/magento2/issues/9679" target="_blank"> (GITHUB-9679)</a>
 </td>
-    <td><a href="https://github.com/hostep" target="_blank"> @hostep</a></td>
+    <td><a href="https://github.com/hostep" target="_blank">@hostep</a></td>
   </tr>
 
  <tr>
-    <td>9770</td>
+    <td><a href="https://github.com/magento/magento2/pull/9770" target="_blank">9770</a></td>
     <td><a href="https://github.com/magento/magento2/issues/9139" target="_blank"> (GITHUB-9139)</a>
 </td>
-    <td><a href="https://github.com/poongud" target="_blank"> @poongud</a></td>
+    <td><a href="https://github.com/poongud" target="_blank">@poongud</a></td>
   </tr>
 
 <tr>
-    <td>9776</td>
+    <td><a href="https://github.com/magento/magento2/pull/9776" target="_blank">9776</a></td>
     <td><a href="https://github.com/magento/magento2/issues/7959" target="_blank"> (GITHUB-7959)</a></td>
-    <td><a href="https://github.com/dreamworkers" target="_blank"> @dreamworkers</a></td>
+    <td><a href="https://github.com/dreamworkers" target="_blank">@dreamworkers</a></td>
   </tr>
 
 <tr>
-    <td>9841</td>
+    <td><a href="https://github.com/magento/magento2/pull/9841" target="_blank">9841</a></td>
     <td><a href="https://github.com/magento/magento2/issues/9562" target="_blank"> (GITHUB-9562)</a>, 
  <a href="https://github.com/magento/magento2/issues/6746" target="_blank"> (GITHUB-6746)</a></td>
-    <td><a href="https://github.com/hostep" target="_blank"> @hostep</a></td>
+    <td><a href="https://github.com/hostep" target="_blank">@hostep</a></td>
   </tr>
 
 <tr>
-    <td>10011</td>
+    <td><a href="https://github.com/magento/magento2/pull/10011" target="_blank">10011</a></td>
     <td>N/A</td>
-    <td><a href="https://github.com/lazyguru" target="_blank"> @lazyguru</a></td>
+    <td><a href="https://github.com/lazyguru" target="_blank">@lazyguru</a></td>
   </tr>
 
 
 </table>
+
+
 
 
 
