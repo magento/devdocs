@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Supported browsers | Magento 2 Developer Documentation</title>
+	<title>nginx | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.2/install-gde/system-requirements_browsers.html">
+	<link rel="canonical" href="//guides/v2.2/install-gde/prereq/nginx.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -69,11 +69,11 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/install-gde/system-requirements_browsers.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/install-gde/prereq/nginx.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/install-gde/system-requirements_browsers.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/install-gde/prereq/nginx.html">Magento 2.1</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.2/install-gde/system-requirements_browsers.html">Magento 2.2 RC</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.2/install-gde/prereq/nginx.html">Magento 2.2 RC</a></li>
 	
   </ul>
 
@@ -342,7 +342,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.2/install-gde/system-requirements_browsers.html">Supported browsers</a></li>
+									<li class="level-2 "><a href="/guides/v2.2/install-gde/system-requirements_browsers.html">Supported browsers</a></li>
 
 									
 
@@ -416,7 +416,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.2/install-gde/prereq/nginx.html">nginx</a></li>
+									<li class="level-2  active "><a href="/guides/v2.2/install-gde/prereq/nginx.html">nginx</a></li>
 
 									
 
@@ -952,7 +952,7 @@
 
           
 
-          <span property="name">Supported browsers</span>
+          <span property="name">nginx</span>
 
         
 
@@ -975,7 +975,7 @@
 
 	
 
-	<h1 class="page-heading">Supported browsers</h1>
+	<h1 class="page-heading">nginx</h1>
 
   
 
@@ -983,23 +983,530 @@
 </section>
 
 
-			<h2 id="supported-browsers">Supported browsers</h2>
-<div>
+			<p>Magento supports nginx 1.8 (or the <a href="http://nginx.org/en/linux_packages.html#mainline">latest mainline version</a>). You must also install the latest version of <code>php-fpm</code>.</p>
 
-  <p>Storefront and Admin:</p>
+<p>Installation instructions vary based on which operating system you’re using:</p>
 
-  <ul>
-    <li>Internet Explorer 11 or later, Microsoft Edge, latest–1</li>
-    <li>Firefox latest, latest–1 (any operating system)</li>
-    <li>Chrome latest, latest–1 (any operating system)</li>
-    <li>Safari latest, latest–1 (Mac OS)</li>
-    <li>Safari Mobile for iPad 2, iPad Mini, iPad with Retina Display (iOS 7 or later), for desktop storefront</li>
-    <li>Safari Mobile for iPhone 4 or later; iOS 7 or later, for mobile storefront</li>
-    <li>Chrome for mobile latest–1 (Android 4 or later) for mobile storefront</li>
-  </ul>
+<ul>
+  <li><a href="/guides/v2.2/install-gde/prereq/nginx.hmtl/#ubuntu-16">Ubuntu 16</a></li>
+  <li><a href="/guides/v2.2/install-gde/prereq/nginx.hmtl/#centos-7">CentOS 7</a></li>
+</ul>
 
-  <p>where <em>latest–1</em> means one major version earlier than the latest released version.</p>
-</div>
+<h2 id="apache-help-beginner">Help if you’re just starting out</h2>
+<p>If you’re new to all this and need some help getting started, we suggest the following:</p>
+
+<ul>
+  <li><a href="/guides/v2.2/install-gde/basics/basics_magento-installed.html">Is the Magento software installed already?</a></li>
+  <li><a href="/guides/v2.2/install-gde/basics/basics_software.html">What is the software that the Magento server needs to run?</a></li>
+  <li><a href="/guides/v2.2/install-gde/basics/basics_os-version.html">What operating system is my server running?</a></li>
+  <li><a href="/guides/v2.2/install-gde/basics/basics_login.html">How do I log in to my Magento server using a terminal, command prompt, or SSH?</a></li>
+</ul>
+
+<h2 id="ubuntu-16">Ubuntu 16</h2>
+<p>The following section describes how to install Magento 2.x on Ubuntu 16 using nginx, PHP, and MySQL.</p>
+
+<h3 id="install-nginx">Install nginx</h3>
+
+<pre><code>apt-get -y install nginx
+</code></pre>
+
+<p>After completing the following sections and <a href="/guides/v2.2/install-gde/prereq/nginx.html#install-magento2-ubuntu">installing Magento</a>, we’ll use a sample configuration file to <a href="/guides/v2.2/install-gde/prereq/nginx.hmtl#configure-nginx-ubuntu">configure nginx</a>.</p>
+
+<h3 id="install-and-configure-php-fpm">Install and configure php-fpm</h3>
+<p>Magento requires several <a href="/guides/v2.2/install-gde/prereq/php-ubuntu.html">PHP extensions</a> to function properly. In addition to these extensions, you must also install and configure the <code>php-fpm</code> extension if you’re using nginx.</p>
+
+<p>To install and configure <code>php-fpm</code>:</p>
+
+<ol>
+  <li>
+    <p>Install <code>php-fpm</code> and <code>php-cli</code>:</p>
+
+    <pre><code> apt-get -y install php7.0-fpm php7.0-cli
+</code></pre>
+  </li>
+  <li>
+    <p>Open the <code>php.ini</code> files in an editor:</p>
+
+    <pre><code> vim /etc/php/7.0/fpm/php.ini
+ vim /etc/php/7.0/cli/php.ini
+</code></pre>
+  </li>
+  <li>
+    <p>Edit both files to match the following lines:</p>
+
+    <pre><code> memory_limit = 2G
+ max_execution_time = 1800
+ zlib.output_compression = On
+</code></pre>
+
+    <div class="bs-callout bs-callout-info">
+      <p>We recommend setting the memory limit to 2G when testing Magento. Refer to <a href="/guides/v2.2/install-gde/prereq/php-settings.html">Required PHP settings</a> for more information.</p>
+    </div>
+  </li>
+  <li>
+    <p>Save and exit the editor.</p>
+  </li>
+  <li>
+    <p>Restart the <code>php-fpm</code> service:</p>
+
+    <pre><code> systemctl restart php7.0-fpm
+</code></pre>
+  </li>
+</ol>
+
+<h3 id="install-and-configure-mysql">Install and configure MySQL</h3>
+<p>Refer to <a href="/guides/v2.2/install-gde/prereq/mysql.html">MySQL</a> for more information.</p>
+
+<h3 id="install-magento2-ubuntu">Install and configure Magento2</h3>
+<p>There are several ways to download the Magento software, including:</p>
+
+<ul>
+  <li>
+    <p><a href="/guides/v2.2/install-gde/prereq/zip_install.html">Download an archive</a></p>
+  </li>
+  <li>
+    <p><a href="/guides/v2.2/install-gde/prereq/integrator_install.html">Get the Composer metapackage</a></p>
+  </li>
+  <li>
+    <p><a href="/guides/v2.2/install-gde/prereq/dev_install.html">Clone the git repository</a></p>
+  </li>
+</ul>
+
+<p>For this example, we’ll download and extract an archive.</p>
+
+<ol>
+  <li>
+    <p>Change to the web server docroot directory, or to a directory you’ve configured as a virtual host docroot. For this example, we’re using the Ubuntu default <code>/var/www/html</code>.</p>
+
+    <pre><code> cd /var/www/html
+</code></pre>
+  </li>
+  <li>
+    <p>Download the Magento archive, extract it, and rename the folder <code>magento2/</code>:</p>
+
+    <pre><code> wget https://github.com/magento/magento2/archive/2.1.tar.gz
+ tar -xzvf 2.1.tar.gz
+ mv magento2-2.1/ magento2/
+</code></pre>
+  </li>
+  <li>
+    <p><a href="/guides/v2.2/install-gde/prereq/file-system-perms.html">Set directory ownership and file permissions</a>.</p>
+
+    <pre><code> cd /var/www/html/magento2
+ find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \;
+ find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
+ chown -R :www-data .
+ chmod u+x bin/magento
+</code></pre>
+  </li>
+  <li>
+    <p>Install Composer globally. You’ll need Composer to update dependencies before installing Magento:</p>
+
+    <pre><code> curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/bin --filename=composer
+</code></pre>
+  </li>
+  <li>
+    <p>Update Magento dependencies:</p>
+
+    <pre><code> cd /var/www/html/magento2
+ composer install -v
+</code></pre>
+  </li>
+  <li>
+    <p>If prompted, enter your <a href="/guides/v2.2/install-gde/prereq/connect-auth.html">Magento authentication keys</a>.</p>
+  </li>
+  <li>
+    <p>Install Magento from the <a href="/guides/v2.2/install-gde/install/cli/install-cli.html">command line</a>.</p>
+
+    <pre><code> cd /var/www/html/magento2/bin
+ ./magento setup:install --base-url=http://www.magento-dev.com/ --db-host=localhost --db-name=magento --db-user=magento --db-password=magento --admin-firstname=admin --admin-lastname=admin --admin-email=admin@admin.com --admin-user=admin --admin-password=admin123 --language=en_US --currency=USD --timezone=America/Chicago --use-rewrites=1
+</code></pre>
+
+    <p>Replace <code>http://www.magento-dev.com</code> with your domain name.</p>
+
+    <div class="bs-callout bs-callout-info">
+      <p>You cannot use the Web Setup Wizard when installing Magento on nginx. You must use the command line.</p>
+    </div>
+  </li>
+  <li>
+    <p>Switch to developer mode:</p>
+
+    <pre><code> cd /var/www/html/magento2/bin
+ ./magento deploy:mode:set developer
+</code></pre>
+  </li>
+</ol>
+
+<h3 id="configure-nginx-ubuntu">Configure nginx</h3>
+<p>We recommend configuring nginx using the <code>nginx.conf.sample</code> configuration file provided in the Magento installation directory and an nginx virtual host.</p>
+
+<p>These instructions assume you’re using the Ubuntu default location for the nginx virtual host (e.g., <code>/etc/nginx/sites-available</code>) and Ubuntu default docroot (e.g., <code>/var/www/html</code>), however, you can change these locations to suit your environment.</p>
+
+<ol>
+  <li>
+    <p>Create a new virtual host for your Magento site:</p>
+
+    <pre><code> vim /etc/nginx/sites-available/magento
+</code></pre>
+  </li>
+  <li>
+    <p>Add the following configuration:</p>
+
+    <pre><code> upstream fastcgi_backend {
+     server  unix:/run/php/php7.0-fpm.sock;
+ }
+
+ server {
+
+     listen 80;
+     server_name www.magento-dev.com;
+     set $MAGE_ROOT /var/www/html/magento2;
+     include /var/www/html/magento2/nginx.conf.sample;
+ }
+</code></pre>
+
+    <div class="bs-callout bs-callout-info" id="info">
+      <p>The <code>include</code> directive must point to the sample nginx configuration file in your Magento installation directory.</p>
+    </div>
+  </li>
+  <li>
+    <p>Replace <code>www.magento-dev.com</code> with your domain name. This must match the base URL you specified when installing Magento.</p>
+  </li>
+  <li>
+    <p>Save and exit the editor.</p>
+  </li>
+  <li>
+    <p>Activate the newly created virtual host by creating a symlink to it in the <code>/etc/nginx/sites-enabled</code> directory:</p>
+
+    <pre><code> ln -s /etc/nginx/sites-available/magento /etc/nginx/sites-enabled
+</code></pre>
+  </li>
+  <li>
+    <p>Verify that the syntax is correct:</p>
+
+    <pre><code> nginx -t
+</code></pre>
+  </li>
+  <li>
+    <p>Restart nginx:</p>
+
+    <pre><code> systemctl restart nginx
+</code></pre>
+  </li>
+</ol>
+
+<h3 id="verify-the-installation">Verify the installation</h3>
+<p>Open a web browser and navigate to your site’s base URL to <a href="/guides/v2.2/install-gde/install/verify.html">verify the installation.</a></p>
+
+<h2 id="centos-7">CentOS 7</h2>
+<p>The following section describes how to install Magento 2.x on CentOS 7 using nginx, PHP, and MySQL.</p>
+
+<h3 id="install-nginx-1">Install nginx</h3>
+
+<pre><code>yum -y install epel-release
+yum -y install nginx
+</code></pre>
+
+<p>After installation is complete, start nginx and configure it to start at boot time:</p>
+
+<pre><code>systemctl start nginx
+systemctl enable nginx
+</code></pre>
+
+<p>After completing the following sections and <a href="/guides/v2.2/install-gde/prereq/nginx.html#install-and-configure-magento2-centos">installing Magento</a>, we’ll use a sample configuration file to <a href="/guides/v2.2/install-gde/prereq/nginx.html#configure-nginx-centos">configure nginx</a>.</p>
+
+<h3 id="install-and-configure-php-fpm-1">Install and configure php-fpm</h3>
+<p>Magento requires several <a href="/guides/v2.2/install-gde/prereq/php-centos.html">PHP extensions</a> to function properly. In addition to these extensions, you must also install and configure the <code>php-fpm</code> extension if you’re using nginx.</p>
+
+<ol>
+  <li>
+    <p>Install <code>php-fpm</code>:</p>
+
+    <pre><code> yum -y install php70w-fpm
+</code></pre>
+  </li>
+  <li>
+    <p>Open the <code>/etc/php.ini</code> file in an editor.</p>
+  </li>
+  <li>
+    <p>Uncomment the <code>cgi.fix_pathinfo</code> line and change the value to <code>0</code>.</p>
+  </li>
+  <li>
+    <p>Edit the file to match the following lines:</p>
+
+    <pre><code> memory_limit = 2G
+ max_execution_time = 1800
+ zlib.output_compression = On
+</code></pre>
+
+    <div class="bs-callout bs-callout-info">
+      <p>We recommend setting the memory limit to 2G when testing Magento. Refer to <a href="/guides/v2.2/install-gde/prereq/php-settings.html">Required PHP settings</a> for more information.</p>
+    </div>
+  </li>
+  <li>
+    <p>Uncomment the session path directory and set the path:</p>
+
+    <pre><code> session.save_path = "/var/lib/php/session"
+</code></pre>
+  </li>
+  <li>
+    <p>Save and exit the editor.</p>
+  </li>
+  <li>
+    <p>Open <code>/etc/php-fpm.d/www.conf</code> in an editor.</p>
+  </li>
+  <li>
+    <p>Edit the file to match the following lines:</p>
+
+    <pre><code> user = nginx
+ group = nginx
+ listen = /run/php-fpm/php-fpm.sock
+ listen.owner = nginx
+ listen.group = nginx
+ listen.mode = 0660
+</code></pre>
+  </li>
+  <li>
+    <p>Uncomment the environment lines:</p>
+
+    <pre><code> env[HOSTNAME] = $HOSTNAME
+ env[PATH] = /usr/local/bin:/usr/bin:/bin
+ env[TMP] = /tmp
+ env[TMPDIR] = /tmp
+ env[TEMP] = /tmp
+</code></pre>
+  </li>
+  <li>
+    <p>Save and exit the editor.</p>
+  </li>
+  <li>
+    <p>Create a new directory for the PHP session path and change the owner to the <code>apache</code> user and group:</p>
+
+    <pre><code>mkdir -p /var/lib/php/session/
+chown -R apache:apache /var/lib/php/
+</code></pre>
+  </li>
+  <li>
+    <p>Create a new directory for the PHP session path and change the owner to the <code>apache</code> user and group:</p>
+
+    <pre><code>mkdir -p /run/php-fpm/
+chown -R apache:apache /run/php-fpm/
+</code></pre>
+  </li>
+  <li>
+    <p>Start the <code>php-fpm</code> service and configure it to start at boot time:</p>
+
+    <pre><code>systemctl start php-fpm
+systemctl enable php-fpm
+</code></pre>
+  </li>
+  <li>
+    <p>Verify that the <code>php-fpm</code> service is running:</p>
+
+    <pre><code>netstat -pl | grep php-fpm.sock
+</code></pre>
+  </li>
+</ol>
+
+<h3 id="install-and-configure-mysql-1">Install and configure MySQL</h3>
+<p>Refer to <a href="/guides/v2.2/install-gde/prereq/mysql.html">MySQL</a> for more information.</p>
+
+<h3 id="install-magento2-centos">Install and configure Magento2</h3>
+<p>There are several ways to download the Magento software, including:</p>
+
+<ul>
+  <li>
+    <p><a href="/guides/v2.2/install-gde/prereq/zip_install.html">Download an archive</a></p>
+  </li>
+  <li>
+    <p><a href="/guides/v2.2/install-gde/prereq/integrator_install.html">Get the Composer metapackage</a></p>
+  </li>
+  <li>
+    <p><a href="/guides/v2.2/install-gde/prereq/dev_install.html">Clone the git repository</a></p>
+  </li>
+</ul>
+
+<p>For this example, we’ll download and extract an archive.</p>
+
+<ol>
+  <li>
+    <p>Change to the web server docroot directory, or to a directory you’ve configured as a virtual host docroot. For this example, we’re using the CentoOS default <code>/usr/share/nginx/html</code>.</p>
+
+    <pre><code> cd /usr/share/nginx/html
+</code></pre>
+  </li>
+  <li>
+    <p>Download the Magento archive, extract it, and rename the folder <code>magento2/</code>:</p>
+
+    <pre><code> wget https://github.com/magento/magento2/archive/2.1.tar.gz
+ tar -xzvf 2.1.tar.gz
+ mv magento2-2.1/ magento2/
+</code></pre>
+  </li>
+  <li>
+    <p><a href="/guides/v2.2/install-gde/prereq/file-system-perms.html">Set directory ownership and file permissions</a>.</p>
+
+    <pre><code> cd /usr/share/nginx/html/magento2
+ find var vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \;
+ find var vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
+ chown -R :apache .
+ chmod u+x bin/magento
+</code></pre>
+  </li>
+  <li>
+    <p>Install Composer globally. You’ll need Composer to update dependencies before installing Magento:</p>
+
+    <pre><code> curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/bin --filename=composer
+</code></pre>
+  </li>
+  <li>
+    <p>Update Magento dependencies:</p>
+
+    <pre><code> cd /usr/share/nginx/html/magento2
+ composer install
+</code></pre>
+  </li>
+  <li>
+    <p>If prompted, enter your <a href="/guides/v2.2/install-gde/prereq/connect-auth.html">Magento authentication keys</a>.</p>
+  </li>
+  <li>
+    <p>Install Magento from the <a href="/guides/v2.2/install-gde/install/cli/install-cli.html">command line</a>.</p>
+
+    <pre><code> cd /usr/share/nginx/html/magento2/bin
+ ./magento setup:install --base-url=http://www.magento-dev.com/ \
+ --db-host=localhost --db-name=magento --db-user=magento --db-password=magento \
+ --admin-firstname=Magento --admin-lastname=User --admin-email=user@example.com \
+ --admin-user=admin --admin-password=admin123 --language=en_US \
+ --currency=USD --timezone=America/Chicago --use-rewrites=1
+</code></pre>
+
+    <p>Replace <code>http://www.magento-dev.com</code> with your domain name.</p>
+
+    <div class="bs-callout bs-callout-info">
+      <p>You cannot use the Web Setup Wizard when installing Magento on nginx. You must use the command line.</p>
+    </div>
+  </li>
+  <li>
+    <p>Switch Magento to developer mode:</p>
+
+    <pre><code> cd /usr/share/nginx/html/magento2/bin
+ ./magento deploy:mode:set developer
+</code></pre>
+  </li>
+</ol>
+
+<h3 id="configure-nginx-centos">Configure nginx</h3>
+<p>We recommend configuring nginx using the <code>nginx.conf.sample</code> configuration file provided in the Magento installation directory and an nginx virtual host.</p>
+
+<p>These instructions assume you’re using the CentOS default location for the nginx virtual host (e.g., <code>/etc/nginx/conf.d</code>) and default docroot (e.g., <code>/usr/share/nginx/html</code>), however, you can change these locations to suit your environment.</p>
+
+<ol>
+  <li>
+    <p>Create a new virtual host for your Magento site:</p>
+
+    <pre><code> vim /etc/nginx/conf.d/magento.conf
+</code></pre>
+  </li>
+  <li>
+    <p>Add the following configuration:</p>
+
+    <pre><code> upstream fastcgi_backend {
+     server  unix:/run/php-fpm/php-fpm.sock;
+ }
+
+ server {
+
+     listen 80;
+     server_name www.magento-dev.com;
+     set $MAGE_ROOT /usr/share/nginx/html/magento2;
+     include /usr/share/nginx/html/magento2/nginx.conf.sample;
+ }
+</code></pre>
+
+    <div class="bs-callout bs-callout-info" id="info">
+      <p>The <code>include</code> directive must point to the sample nginx configuration file in your Magento installation directory.</p>
+    </div>
+  </li>
+  <li>
+    <p>Replace <code>www.magento-dev.com</code> with your domain name.</p>
+  </li>
+  <li>
+    <p>Save and exit the editor.</p>
+  </li>
+  <li>
+    <p>Verify that the syntax is correct:</p>
+
+    <pre><code> nginx -t
+</code></pre>
+  </li>
+  <li>
+    <p>Restart nginx:</p>
+
+    <pre><code> systemctl restart nginx
+</code></pre>
+  </li>
+</ol>
+
+<h3 id="configure-selinux-and-firewalld">Configure SELinux and Firewalld</h3>
+<p>SELinux is enabled by default on CentOS 7. Use the following command to see if it’s running:</p>
+
+<pre><code>sestatus
+</code></pre>
+
+<p>To configure SELinux and firewalld:</p>
+
+<ol>
+  <li>
+    <p>Install SELinux management tools:</p>
+
+    <pre><code> yum -y install policycoreutils-python
+</code></pre>
+  </li>
+  <li>
+    <p>Run the following commands to change the security context for the Magento installation directory:</p>
+
+    <pre><code> semanage fcontext -a -t httpd_sys_rw_content_t '/usr/share/nginx/html/magento2/app/etc(/.*)?'
+ semanage fcontext -a -t httpd_sys_rw_content_t '/usr/share/nginx/html/magento2/var(/.*)?'
+ semanage fcontext -a -t httpd_sys_rw_content_t '/usr/share/nginx/html/magento2/pub/media(/.*)?'
+ semanage fcontext -a -t httpd_sys_rw_content_t '/usr/share/nginx/html/magento2/pub/static(/.*)?'
+ restorecon -Rv '/usr/share/nginx/html/magento2/'
+</code></pre>
+  </li>
+  <li>
+    <p>Install the firewalld package:</p>
+
+    <pre><code> yum -y install firewalld
+</code></pre>
+  </li>
+  <li>
+    <p>Start the firewall service and configure it to start at boot time:</p>
+
+    <pre><code> systemctl start firewalld
+ systemctl enable firewalld
+</code></pre>
+  </li>
+  <li>
+    <p>Run the following commands to open ports for HTTP and HTTPS so you can access the Magento base URL from a web browser:</p>
+
+    <pre><code> firewall-cmd --permanent --add-service=http
+ firewall-cmd --permanent --add-service=https
+ firewall-cmd --reload
+</code></pre>
+  </li>
+</ol>
+
+<h3 id="verify-the-installation-1">Verify the installation</h3>
+<p>Open a web browser and navigate to your site’s base URL to <a href="/guides/v2.2/install-gde/install/verify.html">verify the installation.</a></p>
+
+<h4 id="related-topics">Related topics:</h4>
+<ul>
+  <li><a href="/guides/v2.2/install-gde/prereq/php-ubuntu.html">PHP 5.5, 5.6, or 7.0—Ubuntu</a></li>
+  <li><a href="/guides/v2.2/install-gde/prereq/php-centos.html">PHP 5.5, 5.6, or 7.0—CentOS</a></li>
+  <li><a href="/guides/v2.2/install-gde/prereq/mysql.html">MySQL</a></li>
+  <li><a href="/guides/v2.2/install-gde/prereq/security.html">Configuring security options</a></li>
+  <li><a href="/guides/v2.2/install-gde/prereq/optional.html">Installing optional software</a></li>
+  <li><a href="/guides/v2.2/install-gde/bk-install-guide.html">Determine your installation or upgrade path</a></li>
+</ul>
 
 		</div>
 		<!-- /.content-wrap -->
@@ -1010,14 +1517,14 @@
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/install-gde/system-requirements_browsers.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/install-gde/prereq/nginx.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
   
 
   <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/install-gde/system-requirements_browsers.html" target="_blank">Give us feedback</a>
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/install-gde/prereq/nginx.html" target="_blank">Give us feedback</a>
   </div>
 
 </div>
