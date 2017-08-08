@@ -6,14 +6,12 @@ title: Branch an environment
 menu_title: Branch an environment
 menu_order: 45
 menu_node:
-level3_menu_node: level3child
-level3_subgroup: workspace
 version: 2.0
 github_link: cloud/before/before-setup-env-env.md
 ---
 
 #### Previous step:
-[Set up Magento cron]({{ page.baseurl }}cloud/before/before-setup-env-cron.html)
+[Set up authentication keys]({{ page.baseurl }}cloud/before/before-setup-env-keys.html)
 
 With your workspace configured, the project cloned, and cron set up, you can create a branch for development work.
 

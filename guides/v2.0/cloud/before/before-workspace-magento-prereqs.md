@@ -6,8 +6,6 @@ title: Install Magento prerequisites
 menu_title: Install Magento prerequisites
 menu_order: 15
 menu_node:
-level3_menu_node: level3child
-level3_subgroup: workspace
 version: 2.0
 github_link: cloud/before/before-workspace-magento-prereqs.md
 redirect_from:
@@ -43,7 +41,7 @@ For your VM, we recommend installing one of the following:
 When using Vagrant, we also recommend the package [hostmanager](https://github.com/devopsgroup-io/vagrant-hostmanager){:target="_blank"} and using [VirtualBox](https://www.virtualbox.org/wiki/Documentation){:target="_blank"} to manage the environment. VirtualBox extends support and features across all OS and platforms to create and manage multiple VMs and operating systems on your local.
 
 ## Development tools {#devtools}
-* [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git){:target="_blank"} - Provides code branching and management for accessing Magento Enterprise Cloud Edition and your code respositories. Use Git command-line commands or applications of your choice to work with Git. You can install this on your local VM or on your host.
+* [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git){:target="_blank"} - Provides code branching and management for accessing Magento Commerce and your code respositories. Use Git command-line commands or applications of your choice to work with Git. You can install this on your local VM or on your host.
 	For more information, see [How Cloud uses Git]({{ page.baseurl }}cloud/reference/git-integration.html).
 * [Composer](https://getcomposer.org/download/){:target="_blank"} - Used for dependency management. Composer enables us to manage the Magento components and their dependencies. Install on your local VM.
 	For more information, see [How Cloud uses Composer]({{ page.baseurl }}cloud/reference/cloud-composer.html).
@@ -67,11 +65,11 @@ The following packages may also be helpful for your PHP installation:
 * [zip](http://php.net/manual/en/book.zip.php){:target="_blank"}
 
 ### Set up PHP memory limit {#cloud-first-php}
-When you're working with the Magento Cloud CLI, local environment settings come from the machine on which you're working, not from Magento Enterprise Cloud Edition. For example, certain actions (like debugging) require a larger PHP `memory_limit` than most PHP distributions provide by default.
+When you're working with the Magento Cloud CLI, local environment settings come from the machine on which you're working, not from Magento Commerce. For example, certain actions (like debugging) require a larger PHP `memory_limit` than most PHP distributions provide by default.
 
 To set `memory_limit`:
 
-Before working with your Magento Enterprise Cloud Edition project, make sure you set the PHP `memory_limit` to at least `1G` for normal use or at least `2G` for debugging.
+Before working with your Magento Commerce (Cloud) project, make sure you set the PHP `memory_limit` to at least `1G` for normal use or at least `2G` for debugging.
 
 1.	Find your `php.ini` file using the following command:
 
@@ -89,11 +87,10 @@ Before working with your Magento Enterprise Cloud Edition project, make sure you
 	*	nginx: `service nginx restart`
 
 ## Web server (local) {#webserver}
-We support installations of [Apache]({{ page.baseurl }}install-gde/prereq/apache.html) and [nginx](https://nginx.org/){:target="_blank"} for your web server.
-Further information for installing and configuring nginx is in-progress. At this time, please review the [nginx Wiki](https://www.nginx.com/resources/wiki/) for further instructions.
+We support installations of [Apache]({{ page.baseurl }}install-gde/prereq/apache.html) and [nginx]({{ page.baseurl }}install-gde/prereq/nginx.html) for your web server.
 
 ## Database (local) {#database}
-You have multiple options for databases to use for your local. One database option you may want to consider is MariaDB. The Magento Enterprise Cloud Edition environments use [MariaDB](https://mariadb.org/){:target="_blank"}, with a [Galara Cluster](http://galeracluster.com/){:target="_blank"} with triple reducency in the Production environment. Regardless of database, you need to modify the `auto_increment_increment` value.
+You have multiple options for databases to use for your local. One database option you may want to consider is MariaDB. The Magento Commerce environments use [MariaDB](https://mariadb.org/){:target="_blank"}, with a [Galara Cluster](http://galeracluster.com/){:target="_blank"} with triple reducency in the Production environment. Regardless of database, you need to modify the `auto_increment_increment` value.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
 The Production environment in the 3 node infrastructure uses auto-incrementing by 3 for all data IDs. Do not develop using hard-coded database IDs in your development. Due to the incremented data IDs, the referenced data will differ across the three nodes in Production.
@@ -125,7 +122,7 @@ You need to set an auto-increment value for the MariaDB installation.
 3.	Restart the service: `service mysql restart`.
 
 ### Set up the auto-increment for MySQL {#cloud-mysql}
-The MySQL configuration parameter [`auto_increment_increment`](http://dev.mysql.com/doc/refman/5.6/en/server-system-variables.html){:target="_blank"} is set to `1` by default in a local MySQL installation. You need to change this value to `3`.  The Magento Enterprise Cloud Edition database cluster includes 3 database implementations. The increment ensures data is unique across all databases for consistant data in the High Availability structure.
+The MySQL configuration parameter [`auto_increment_increment`](http://dev.mysql.com/doc/refman/5.6/en/server-system-variables.html){:target="_blank"} is set to `1` by default in a local MySQL installation. You need to change this value to `3`.  The Magento Commerce database cluster includes 3 database implementations. The increment ensures data is unique across all databases for consistant data in the High Availability structure.
 
 To avoid issues, we recommend you set `auto_increment_increment=3`.
 
@@ -145,18 +142,18 @@ If necessary, set `auto_increment_increment` to 3:
 
 			auto_increment_increment=3
 
-	Magento Enterprise Cloud Edition supports a High Availability configuration. This setting increments the database IDs in increments of three to ensure row uniqueness for Galara databases on each of the three HA nodes in production.
+	Magento Commerce supports a High Availability configuration. This setting increments the database IDs in increments of three to ensure row uniqueness for Galara databases on each of the three HA nodes in production.
 
 3.	Restart MySQL:
 
 			service mysqld restart
 
 ## Magento Cloud CLI (local) {#cloud-ssh-cli-cli-install}
-The Magento Enterprise Cloud Edition command-line interface (CLI) tool helps you manage your projects and code branches on Magento Enterprise Cloud Edition. For a list of available commands, see [Common Magento CLI commands]({{ page.baseurl }}cloud/reference/cli-ref-topic.html).
+The Magento Commerce command-line interface (CLI) tool helps you manage your projects and code branches on Magento Commerce. For a list of available commands, see [Common Magento CLI commands]({{ page.baseurl }}cloud/reference/cli-ref-topic.html).
 
 These instructions discuss installation using commands for a Unix environment. For Windows, we recommend using [Cygwin](https://www.cygwin.com/){:target="_blank"} or Git Bash.
 
-To install the Magento Enterprise Cloud Edition CLI:
+To install the Magento Commerce CLI:
 
 1.	Log in to your local development machine or switch to the [Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html).
 
@@ -187,5 +184,5 @@ To install the Magento Enterprise Cloud Edition CLI:
 ## Additional options
 You can also install additional [optional software]({{ page.baseurl }}install-gde/prereq/optional.html). These packages should be installed on the local VM.
 
-#### Next step
+#### Next step:
 [Enable SSH keys]({{ page.baseurl }}cloud/before/before-workspace-ssh.html)

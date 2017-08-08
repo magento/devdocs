@@ -6,8 +6,6 @@ title: Clone the project
 menu_title: Clone the project
 menu_order: 30
 menu_node:
-level3_menu_node: level3child
-level3_subgroup: workspace
 version: 2.0
 github_link: cloud/before/before-setup-env-2_clone.md
 ---
@@ -15,7 +13,7 @@ github_link: cloud/before/before-setup-env-2_clone.md
 #### Previous step:
 [Set up the Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html)
 
-The Magento Enterprise Cloud Edition project is a Git repository of Magento code with a master origin. Develop your custom code and add extensions in one of eight active Git branches in your local. Each active environment includes a database and services to fully access the Magento site and store in the Integration environment.
+The Magento Commerce project is a Git repository of Magento code with a master origin. Develop your custom code and add extensions in one of eight active Git branches in your local. Each active environment includes a database and services to fully access the Magento site and store in the Integration environment.
 
 To begin, you need to clone the `master` environment to your local and add the Magento Admin URL, username, and password (to include with all branches). If you are new to Git workflow, processes, and commands, see Git [documentation](https://git-scm.com/documentation).
 
@@ -116,5 +114,5 @@ To set variables (with example values used):
 
 			magento-cloud snapshot:create -e master
 
-#### Next step
+#### Next step:
 [Set up authentication keys]({{ page.baseurl }}cloud/before/before-setup-env-keys.html)
