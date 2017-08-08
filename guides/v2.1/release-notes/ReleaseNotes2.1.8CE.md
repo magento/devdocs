@@ -107,8 +107,7 @@ This release includes both improvements we've made internally and those submitte
 
 <!--- 65656 -->* You can complete your order after entering a new shipping address during checkout. Previously, Magento would not let you place an order if you entered a new shipping address during checkout. 
 
-60542
-<!--- 68875 -->* Shipping method radio buttons are no longer disabled when the Checkout page is refreshed.  [GitHub-7497](https://github.com/magento/magento2/issues/7497), [GitHub-9485](https://github.com/magento/magento2/issues/9485)  *Fix submitted by community member  @rachkulik*
+<!--- 68875 -->* Shipping method radio buttons are no longer disabled when the Checkout page is refreshed.  [GitHub-7497](https://github.com/magento/magento2/issues/7497), [GitHub-9485](https://github.com/magento/magento2/issues/9485)  *Fix submitted by community member  <a href="https://github.com/rachkulik" target="_blank"> @rachkulik</a>*
 
 <!--- 68902 -->* Magento now highlights in any red fields that are missing shipping information when you proceed to checkout. *Fix submitted by community member @hostep*
 
@@ -220,7 +219,7 @@ layout for the "Shipping and Tracking" block did not work properly.
 
 <!--- 69541 -->* We’ve fixed a JavaScript error on Product page that prevented  Magento from updating color swatches  or updating product prices correctly. [GitHub-7959](https://github.com/magento/magento2/issues/7959) *Fix submitted by community member @dreamworkers*
 
-<!--- 69019 -->* We resolved an issue where  interface constructors broke Magento compilation.   [GitHub-8607](https://github.com/magento/magento2/issues/8607)  *Fix submitted by community member @LoganayakiK*
+<!--- 69019 -->* We resolved an issue where  interface constructors broke Magento compilation.   [GitHub-8607](https://github.com/magento/magento2/issues/8607)  *Fix submitted by community member <a href="https://github.com/LoganayakiK" target="_blank"> @LoganayakiK</a>*
 
 <!--- 69922 -->* You can now set a negative quantity for a product.  [GitHub-9139](https://github.com/magento/magento2/issues/9139), [GitHub-7401](https://github.com/magento/magento2/issues/7401)  *Fix submitted by community member @poongud*
 
@@ -326,7 +325,7 @@ layout for the "Shipping and Tracking" block did not work properly.
 
 ### Quotes
 
-<!--- 69223 -->* Magento now successfully defines extension attributes for a quote billing address. [GitHub-9646](https://github.com/magento/magento2/issues/9646)  *Fix submitted by community member @ekuusela*
+<!--- 69223 -->* Magento now successfully defines extension attributes for a quote billing address. [GitHub-9646](https://github.com/magento/magento2/issues/9646)  *Fix submitted by community member @<a href="https://github.com/ekuusela" target="_blank"> @ekuusela</a>*
 
 
 
@@ -335,7 +334,7 @@ layout for the "Shipping and Tracking" block did not work properly.
 <!--- 64297 -->* The website column in Customer Segment report now contains correct data. Previously, this column was blank in the **Reports > Customer > Segments** report. 
 
 
-<!--- 68938 -->* You can now successfully export the Low Stock report.  [GitHub-9428](https://github.com/magento/magento2/issues/9428)  *Fix submitted by community member  @mikebox*
+<!--- 68938 -->* You can now successfully export the Low Stock report.  [GitHub-9428](https://github.com/magento/magento2/issues/9428)  *Fix submitted by community member  <a href="https://github.com/mikebox" target="_blank"> @mikebox</a>*
 
 <!--- 67523 -->* We've changed the severity of some errors from critical to info in `var/log/system.log`.  [GitHub-5627](https://github.com/magento/magento2/issues/5627)  *Fix submitted by community member @malachy-mcconnnell*
 
@@ -482,7 +481,7 @@ The following table identifies contributions from our community members. This ta
   <tr>
     <td>9524</td>
     <td><a href="https://github.com/magento/magento2/issues/8607" target="_blank"> (GITHUB-8607)</a></td>
-    <td> <a href="https://github.com/LoganayakiK" target="_blank"> @LoganayakiK</a></td>
+    <td><a href="https://github.com/LoganayakiK" target="_blank"> @LoganayakiK</a></td>
   </tr>
 
   <tr>
