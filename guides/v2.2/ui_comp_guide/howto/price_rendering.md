@@ -2,8 +2,8 @@
 layout: default
 group: UI_Components_guide
 subgroup: how tos
-title: Render prices on frontend with Ui component
-menu_title: Render prices on frontend with Ui component
+title: Render prices on the frontend
+menu_title: Render prices on the frontend
 menu_order: 1
 version: 2.2
 github_link: ui_comp_guide/howto/price_rendering.md
