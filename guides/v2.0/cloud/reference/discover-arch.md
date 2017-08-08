@@ -5,17 +5,17 @@ subgroup: 010_welcome
 title: Cloud Architecture
 menu_title: Cloud Architecture
 menu_order: 20
-menu_node: 
+menu_node:
 version: 2.0
 github_link: cloud/reference/discover-arch.md
 ---
 
-Magento Enterprise Cloud Edition provides three environments to develop, test, and launch your store. These environments are read-only, accepting deployed code changes from Git branches in your project and supporting any development and branching methodology.
+Magento Commerce (Cloud) provides three environments to develop, test, and launch your store. These environments are read-only, accepting deployed code changes from Git branches in your project and supporting any development and branching methodology.
 
 ## Integration environment {#cloud-arch-int}
 Developers use the Integration environment to develop, deploy, and test the Magento application, custom code, extensions, and services. This environment is a PAAS (Platform as a Service) providing up to eight active environments for eight active Git branches. Each branch deploys to an environment with a web server, database, and configured services to fully test your site.
 
-The Integration environments run in a Linux container (LXC) on a grid of servers as a PAAS (Platform as a Service). You can have up to eight active *environments* (Git branches) at a time to development and test code. You can have more than eight branches, but not all will be active to access, view, and test in Integration. This environment does not support all Magento Enterprise Cloud Edition services, for example, Fastly is not accessible in Integration. All environments are read-only.
+The Integration environments run in a Linux container (LXC) on a grid of servers as a PAAS (Platform as a Service). You can have up to eight active *environments* (Git branches) at a time to development and test code. You can have more than eight branches, but not all will be active to access, view, and test in Integration. This environment does not support all services, for example, Fastly is not accessible in Integration. All environments are read-only.
 
 The process for developing in Integration requires the following process:
 
@@ -40,16 +40,14 @@ Additional sections in this guide provide walk-throughs for deploying to Product
 We highly recommend fully testing in Staging prior to pushing to Production.
 
 ### Advantage of redundant hardware
-Rather than running a traditional active-passive master or master-slave setup, Magento Enterprise Cloud Edition runs a triple-redundant multimaster where all three instances accept reads and writes. This architecture offers zero downtime when scaling, and also provides guaranteed transactional integrity.
+Rather than running a traditional active-passive master or master-slave setup, Magento Commerce (Cloud) runs a triple-redundant multimaster where all three instances accept reads and writes. This architecture offers zero downtime when scaling, and also provides guaranteed transactional integrity.
 
 Because of our unique triple-redundant hardware, we can provide you with a set of three gateway servers. Most external services enable you to {% glossarytooltip 34f8f61d-2b48-4628-be06-aaa6e32ddc1f %}whitelist{% endglossarytooltip %} multiple IPs, so having more than one fixed IP isn't usually a problem.
 
-These three gateways map to the three servers in your Magento Enterprise Cloud Edition cluster and retain permanent addresses.
-
-Furthermore, Magento Enterprise Cloud Edition is fully redundant and highly available at every level:
+These three gateways map to the three servers in your Production cluster and retain permanent addresses. It is fully redundant and highly available at every level:
 
 *	DNS
-*	{% glossarytooltip f83f1fa7-7a64-467b-b629-c2d0c25d2e7f %}Content Delivery Network{% endglossarytooltip %} (CDN)
+*	Content Delivery Network (CDN)
 *	Elastic load balancer (ELB)
 *	Three-server cluster comprising all Magento services, including the database and web server.
 
@@ -71,11 +69,11 @@ The Production environment has three VMs behind an Elastic Load Balancer managed
 * Elasticsearch
 * Galara database cluster with a MariaDB MySQL database per node with an auto-increment setting of 3 for unique IDs across every database
 
-The following figure shows the technology used in a Magento Enterprise Cloud Edition Production environment:
+The following figure shows the technology used in the Production environment:
 
-![Magento Enterprise Cloud Edition technology stack]({{ site.baseurl }}common/images/cloud_stack-diagram.png)
+![Production technology stack]({{ site.baseurl }}common/images/cloud_stack-diagram.png)
 
-Magento Enterprise Cloud Edition seamlessly scales from the smallest six CPU cluster with 11.25GB of RAM to the largest 96 CPU cluster with 180GB of RAM. Our triple-redundant architecture means that upscaling can be conducted swiftly and without downtime. When upscaling, we rotate each of the three instances to upgrade without downtime of your site.
+Magento Commerce seamlessly scales from the smallest six CPU cluster with 11.25GB of RAM to the largest 96 CPU cluster with 180GB of RAM. Our triple-redundant architecture means that upscaling can be conducted swiftly and without downtime. When upscaling, we rotate each of the three instances to upgrade without downtime of your site.
 
 In addition, extra web servers can be added to an existing cluster should the constriction be at the {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %} level rather than the database level. This provides [*horizontal scaling*](https://en.wikipedia.org/wiki/Scalability#Horizontal_and_vertical_scaling){:target="_blank"} to complement the vertical scaling provided by extra CPUs on the database level.
 
@@ -121,24 +119,21 @@ The container for your Magento application is a *project*. The project is your M
 When the project is deployed into Production, monitoring and failover happen automatically behind the scenes.
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>Magento Enterprise Cloud Edition currently supports the following services: PHP, MySQL (MariaDB), Solr (Magento 2.0.x), Elasticsearch (Magento 2.1.x and later), Redis, and RabbitMQ.</p>
+  <p>Magento Commerce (Cloud) currently supports the following services: PHP, MySQL (MariaDB), Solr (Magento 2.0.x), Elasticsearch (Magento 2.1.x and later), Redis, and RabbitMQ.</p>
 </div>
 
 ## Services {#cloud-arch-services}
-Each service runs in its own secure container. containers are managed together in the project.
-Some services are built-in, such as the following:
+Each service runs in its own secure container. containers are managed together in the project. Some services are built-in, such as the following:
 
 *	HTTP router (handling incoming requests, but also caching and redirects)
 *	PHP application server
 *	Git
 *	Secure Shell (SSH)
 
-You can even have multiple applications running in the same project. Building
-a microservice oriented architecture with Magento Enterprise Cloud Edition is
-as easy as managing a monolithic application.
+You can even have multiple applications running in the same project. Building a microservice oriented architecture with Magento Commerce is as easy as managing a monolithic application.
 
 ## Software versions {#cloud-arch-software}
-Magento Enterprise Cloud Edition uses:
+Magento Commerce uses:
 
 *	Operating system: Debian GNU/Linux 8 (jessie)
 *	Web server: {% glossarytooltip b14ef3d8-51fd-48fe-94df-ed069afb2cdc %}nginx{% endglossarytooltip %} 1.8
@@ -148,4 +143,4 @@ This software is *not* upgradable but versions for the following software is con
 #### Related topics
 *	[Develop and deploy workflow]({{page.baseurl}}cloud/welcome/discover-workflow.html)
 *	[Deployment process]({{page.baseurl}}cloud/reference/discover-deploy.html)
-*	[Magento Enterprise Cloud Edition requirements]({{page.baseurl}}cloud/requirements/cloud-requirements.html)
+*	[Magento Commerce requirements]({{page.baseurl}}cloud/requirements/cloud-requirements.html)

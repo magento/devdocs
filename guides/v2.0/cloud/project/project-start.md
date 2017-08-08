@@ -38,8 +38,8 @@ Not including the Magento application itself, your local project has the followi
   <p>When you push your local environment to the remote server, our deploy script uses the values defined by configuration files in the <code>.magento</code> directory, then the script deletes the directory and its contents. Your local development environment isn't affected.</p>
 </div>
 
-## Magento Enterprise Cloud Edition directories {#cloud-structure-cloud}
-The following sections discuss information you need to know about directories in the systems deployed to Magento Enterprise Cloud Edition.
+## Magento Commerce directories {#cloud-structure-cloud}
+The following sections discuss information you need to know about directories in the systems deployed to Magento Commerce.
 
 ### Magento application root directory
 The Magento application root directory is located in different locations depending on the environment:

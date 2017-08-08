@@ -31,7 +31,7 @@ After setting this up, your workflow is to code and test in your Integration env
 {% include cloud/hooks.md %}
 
 ## Get your access URLs  {#cloud-live-migrate-urls}
-Your Magento Enterprise Cloud Edition OneDrive account includes an onboarding document that contains your Git, SSH, and project URLs for Staging and Production. You must know those URLs to continue.
+Your Magento Commerce (Cloud) OneDrive account includes an onboarding document that contains your Git, SSH, and project URLs for Staging and Production. You must know those URLs to continue.
 
 *	Git {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} format:
 

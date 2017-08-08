@@ -2,9 +2,9 @@
 layout: default
 group: cloud
 subgroup: 010_welcome
-title: Welcome to Magento Commerce - Cloud
+title: Welcome to Magento Commerce (Cloud) (Cloud)
 landing-page: Cloud
-menu_title: Welcome to Magento Commerce - Cloud
+menu_title: Welcome to Magento Commerce (Cloud) (Cloud)
 menu_order: 10
 menu_node: parent
 version: 2.0
@@ -20,11 +20,9 @@ redirect_from:
 
 ![This guide applies to Magento Commerce available on Cloud only]({{ site.baseurl }}common/images/ee-only_large.png)
 
-Magento Commerce is a managed and automated high-availability hosting platform for Magento specifically created and hosted on the Cloud. This version combines Magento Enterprise and the Cloud with a few differences and added features, including Git integration and three key environments for development, staging, and live production.
+Magento Commerce (Cloud), formerly Enterprise Cloud Edition, is a managed and automated high-availability hosting platform for Magento specifically created and hosted on the Cloud. This version combines Magento Enterprise, Cloud hosting, with a few differences and added features including Git integration and three key environments for development, staging, and live production.
 
 Code, test, and deploy across development, staging, and finally production environment for continuous integration of your store.
-
-Magento Commerce provided on the Cloud was previously named Magento Enterprise Cloud Edition.
 
 ## Direct access to your environments {#environments}
 Fully access your Magento development and deployment through a UI console or CLI. Your servers are within reach from development to production in the Amazon Web Services (AWS) cloud.
@@ -36,7 +34,7 @@ We deploy databases, web server, and caching servers across three environments f
 * **Production**: When code is ready, deploy the master Git branch into Production for your live store. The container includes a three node high-availability architecture for your data, caching, and store. This is your live, public store environment with environment variables, configurations, and Fastly.
 
 ### Details about the cloud {#details}
-* Every Magento Commerce plan includes eight _active_ environments for development and integration. Additional active environments are available at additional cost. Each active environment includes a database, environment variables, and configurations.
+* Every Magento Commerce (Cloud) plan includes eight _active_ environments for development and integration. Additional active environments are available at additional cost. Each active environment includes a database, environment variables, and configurations.
 * You have an unlimited number of *inactive* Git branches.
 * You can add fully managed services like MySQL, Elasticsearch, Redis, RabbitMQ, and so on, without requiring external add-ons.
 * We use a robust {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} build process.

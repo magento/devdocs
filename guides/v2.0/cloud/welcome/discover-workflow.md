@@ -10,13 +10,13 @@ version: 2.0
 github_link: cloud/welcome/discover-workflow.md
 ---
 
-Everything in Magento Commerce is Git-driven. Your [project]({{ page.baseurl }}cloud/project/projects.html) is a Master Git branch cloned from a Magento 2 repository. We provide an [Integration]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int) infrastructure that supports up to eight fully active environments. Every active environment gives you the Magento and branch code installed and deployed, configurable services, and a database. You can access the store and Admin panel using provided URLs and [Magento Cloud command-line]({{ page.baseurl }}cloud/reference/cli-ref-topic.html).
+Everything in Magento Commerce (Cloud) is Git-driven. Your [project]({{ page.baseurl }}cloud/project/projects.html) is a Master Git branch cloned from a Magento 2 repository. We provide an [Integration]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int) infrastructure that supports up to eight fully active environments. Every active environment gives you the Magento and branch code installed and deployed, configurable services, and a database. You can access the store and Admin panel using provided URLs and [Magento Cloud command-line]({{ page.baseurl }}cloud/reference/cli-ref-topic.html).
 
 You can test every feature in isolation in the [Integration]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int) active environments, then deploy into [Staging]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-stage) and [Production]({{ page.baseurl }}cloud/reference/iscover-arch.html#cloud-arch-prod).
 
 The following figure shows how it works at a high level:
 
-![High-level view of Magento Commerce in the Cloud]({{ site.baseurl }}common/images/cloud_code-flow.png)
+![High-level view of Magento Commerce]({{ site.baseurl }}common/images/cloud_code-flow.png)
 
 * Create a project that clones Magento code from our repository into a Git `master` branch
 * Develop code and customizations in active branches to test in Integration environments

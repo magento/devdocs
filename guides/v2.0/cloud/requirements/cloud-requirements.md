@@ -77,9 +77,9 @@ For full details on going live, see our [checklist and guide]({{ page.baseurl }}
 *	Verify that the Fastly SSL certificate is setup for your domain(s)
 
 ## License and authentication requirements
-The [Account Owner]({{page.baseurl}}cloud/before/before-project-owner.html) creates the initial Magento Commerce account with a purchased subscription. This owner should invite all technical staff, consultants, and Magento partners involved in the code and production of the stores to the project. The invitation provides access to the Git code, environments, and ticketing for the project.
+The [Account Owner]({{page.baseurl}}cloud/before/before-project-owner.html) creates the initial Magento Commerce (Cloud) account with a purchased subscription. This owner should invite all technical staff, consultants, and Magento partners involved in the code and production of the stores to the project. The invitation provides access to the Git code, environments, and ticketing for the project.
 
-To work with and deploy stores, you must have all of the following to use Magento Commerce:
+To work with and deploy stores, you need the following:
 
 *	[An account]({{ page.baseurl }}cloud/before/before-project-owner.html#cloud-first-acct) already created or created via an invitation
 *	An [authentication key]({{page.baseurl}}cloud/before/before-project-owner.html#cloud-owner-keys) for each user who needs to contribute to the project

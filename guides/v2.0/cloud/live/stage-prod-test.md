@@ -13,7 +13,7 @@ github_link: cloud/live/stage-prod-test.md
 #### Previous step:
 [Migrate data and static files]({{ page.baseurl }}cloud/live/stage-prod-migrate.html)
 
-When your code, database, and data is successfully migrated to Staging or Production, use the URLs in your onboarding document to test your application. The onboarding document is available in your Magento Enterprise Cloud Edition OneDrive account.
+When your code, database, and data is successfully migrated to Staging or Production, use the URLs in your onboarding document to test your application. The onboarding document is available in your Magento Commerce (Cloud) OneDrive account.
 
 The URLs have the following format:
 
@@ -25,7 +25,7 @@ The URLs have the following format:
 
 	The production URL is used by the content delivery network (CDN).
 
-## Log files
+## Log files {#logs}
 If you encounter errors on deployment or other issues when testing, check the log files. Log files are located under the `var/log` directory.
 
 The deployment log is located in `/var/log/platform/<prodject ID>/post_deploy.log`. The value of `<project ID>` depends on the project ID and whether the environment is Staging or Production. For example, with a project ID of `yw1unoukjcawe`, the Staging user is `yw1unoukjcawe_stg` and the Production user is `yw1unoukjcawe`.
@@ -34,10 +34,13 @@ When accessing logs in Production, you may need to SSH into each of the three no
 
 For more information, see [View logs for troubleshooting]({{ page.baseurl }}cloud/trouble/environments-logs.html)
 
-## Check the code base
+## Check the code base {#codebase}
 Verify your `master` code base correctly deployed to Staging and Production environments. The environments should have identical code bases.
 
-## Check Fastly caching
+## Verify configuration settings {#configsettings}
+Check the Magento configuration settings through the Admin panel including the Base URL, Base Admin URL, multi-site settings, and more. If you need to make any additional changes, complete edits in your local Git branch and push to the `master` branch in Integration, Staging, and Production.
+
+## Check Fastly caching {#fastly}
 Verify Fastly is caching properly on Staging and Production. [Configuring Fastly]({{ page.baseurl }}cloud/access-acct/fastly.html) requires careful attention to details, using the correct Fastly Service ID and Fastly API key, and a proper VCL snippet uploaded.
 
 First, check for headers with a dig command to the URL. In a terminal application, enter `dig <url>` to verify Fastly services display in the headers. For additional `dig` tests, see Fastly's [Testing before changing DNS](https://docs.fastly.com/guides/basic-configuration/testing-setup-before-changing-domains){:target="_blank"}.
@@ -183,7 +186,10 @@ Before launching, we highly recommend performing extensive traffic and performan
 
 Before you begin testing, please enter a ticket with support advising the environments you are testing, what tools you are using, and the time frame. Update the ticket with results and information to track performance. When you complete testing, add your updated results and note in the ticket testing is complete with a date and time stamp.
 
+We recommend that you review the [Magento Performance Toolkit](https://github.com/magento/magento2/tree/develop/setup/performance-toolkit){:target="_blank"} options as part of your pre-launch readiness process.
+
 For best results, we recommend the following tools:
+
 * [Siege](https://www.joedog.org/siege-home/){:target="_blank"}: Traffic shaping and testing software to push your store to the limit. Hit your site with a configurable number of simiulated clients. Siege supports basic authentication, cookies, HTTP, HTTPS and FTP protocols.
 * [Jmeter](http://jmeter.apache.org/){:target="_blank"}: Excellent load testing to help gauge performance for spiked traffic, like for flash sales. Create custom tests to run against your site.
 * New Relic (provided): Helps locate processes and areas of the site causing slow performance with tracked time spent per action like transmitting data, queries, Redis, and so on.
@@ -192,3 +198,5 @@ For best results, we recommend the following tools:
 
 #### Related topic
 [Go live and launch]({{ page.baseurl }}cloud/live/live.html)
+[Go live checklist]({{ page.baseurl }}cloud/live/go-live-checklist.html)
+[Launch steps]({{ page.baseurl }}cloud/live/launch-steps.html)

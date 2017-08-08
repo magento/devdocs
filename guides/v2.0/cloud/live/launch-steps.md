@@ -7,69 +7,30 @@ menu_title: Launch steps
 menu_order: 20
 menu_node:
 version: 2.0
-github_link: cloud/live/go-live-ticket.md
+github_link: cloud/live/launch-steps.md
 ---
 
-REVISE - change the name - should cover the ticket and cutting over to live.
+#### Previous step:
+[Go live checklist]({{ page.baseurl }}cloud/live/go-live-checklist.html)
 
-This section outlines the tasks you must perform before you can launch your live Magento store.
+After testing and completing your launch checklist, you can start the final steps to launch. These steps include entering tickets, cutting over access, and finally testing your store(s) when live.
 
-## Enter a go live ticket {#live-ticket}
-When ready, you will enter a ticket with all required information through your Magento Cloud account.
-You need the following information to go live:
+Magento support staff work with you through the process, checking status, and helping if any questions or issues occur. All issues should be tracked with tickets to best capture what happened and how it was resolved. When you begin continuous iterations deploying updates to your launched store, you may have similar issues occur again. These tickets can help pinpoint the issues and help adjust your deployment tasks.
 
-* CNAME record information for configuring the DNS
-* SSL certificate if not using the shared-SSL
+## Contact Magento to go live {#contact}
+Contact Magento support and update any go live tickets with the intended date and time to switch over and launch your store(s).
 
-As part of Magento Enterprise Cloud Edition, you have access to a Domain-Validated SSL certificate that is issued by GlobalSign. This SSL is shared with other ECE customers and included for all accounts. If you want to deploy an Extended Validation SSL for your company, this option can be purchased when you first sign-up with Magento Enterprise Cloud Edition. If you need to purchase this option, contact your account representative.
+## Switch DNS to the new site {#dns}
+The Time-to-Live changed value is important for checking your changed domain. When you modify the A and CNAME records, the update will take the TTL configured time to update correctly. For details on DNS settings, see [DNS configurations]({{ page.baseurl }}cloud/live/go-live-checklist.html#dns).
 
-To go live:
+To cut over to the new site:
 
-1.	Log in to your Magento Cloud account.
-2.	Click **Support** > **Submit ticket** from the top menu.
+1. Access your DNS service.
+2. Update your A and CNAME records for your domains and hostnames.
+3. Wait for the TTL time to pass and restart your web browser.
+4. Access your store using the storefront domain.
 
-	The following figure shows an example.
+## Post-Launch {#postlaunch}
+Magento will activate checks and monitor the site to ensure all services and access are in the green. We remain on hand as needed to walk-through and check all system logs, services, caching, and functions are working as you and your customers need.
 
-	![]({{ site.baseurl }}common/images/cloud_support-ticket.png){:width="600px"}
-1.	Follow the prompts to open an issue with Support.
-
-	Support assists you with your live deployment and gives you an IP address for your live site so you can set up DNS.
-3.	Configure DNS.
-
-	After you've checked with your registrar about where to change your DNS settings, add a CNAME record that references the Master environment's host name: `<environment>-<project>.<region>.magentosite.cloud`
-
-	If you use multiple host names for your site, you must add a CNAME record for each of them.
-
-	<div class="bs-callout bs-callout-info" id="info">
-  		<p>This will not work for an <a href="https://blog.cloudflare.com/zone-apex-naked-domain-root-domain-cname-supp" target="_blank">apex domain</a> (also referred to as a <em>naked</em> domain). In that case, you must use a DNS provider that supports forwarding DNS queries.</p>
-	</div>
-
-	Some DNS providers you can consider follow:
-
-	*	CNAME with ALIAS record from [Dyn](http://dyn.com){:target="_blank"}
-	*	ANAME record on [DNS Made Easy](http://www.dnsmadeeasy.com){:target="_blank"}
-	*	ANAME at [easyDNS](https://www.easydns.com){:target="_blank"}
-	*	ACNAME at [CloudFlare](https://www.cloudflare.com){:target="_blank"}
-	*	ALIAS at [PointDNS](https://pointhq.com){:target="_blank"}
-
-	Magento does not endorse or support these companies; we mention them for your information only.
-
-	Many other providers also offer workarounds to accomplish this goal. The most common is to add a CNAME record for the `www` host on the domain and then use the DNS provider's redirection service to redirect the apex over to the `www` version of the domain. Consult your DNS provider to see how they support this.
-
-	We support `www.domain.tld CNAME <environment>-<project>.<region>.magentosite.cloud`
-
-	We don't support `domain.tld CNAME <environment>-<project>.<region>.magentosite.cloud`
-4.	For shared-SSL, Magento adds your domains to the shared certificate. If you purchased deployment of a Domain-Validated SSL certificate as part of your ECE account, provide this SSL certificate to Support through the ticket. Support will provide the SSL to Fastly for deployment.
-
-## Cut over and go live
-* Magento Cloud CSE is available (contact has been made and acknowledged)
-* Update A and CNAME records for each of your domains and hostnames
-* Wait at least 5 minutes
-* Restart web browser
-* Test your website
-* The CSE will perform the following tasks as soon as cutover is completed:
-* Tag the cluster as High SLA
-* Activate Pingdom checks for domain names
-* Review state of monitoring and ensure all items are in green
-* Review the system logs
-* Check state and performance of CDN cache
+If any issues occur, create and track issues with Support. Include as much information as possible including date/time, specific feature with a problem, symptoms and odd behaviors, extensions, and so on. We will investigate the logs, the issue, and work with you to resolve quickly as possible.
