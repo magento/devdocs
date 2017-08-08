@@ -4,7 +4,7 @@ group: release-notes
 subgroup: 02_rel-notes
 title: Magento CE 2.1.8 Release Notes
 menu_title: Magento CE 2.1.8 Release Notes
-menu_order: 162
+menu_order: 160
 level3_menu_node: level3child
 level3_subgroup: ce21-relnotes 
 github_link: release-notes/ReleaseNotes2.1.8CE.md
