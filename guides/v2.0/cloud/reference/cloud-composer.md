@@ -1,21 +1,21 @@
 ---
 layout: default
 group: cloud
-subgroup: 065_reference
-title: How Cloud Uses Composer
-menu_title: How Cloud Uses Composer
+subgroup: 010_welcome
+title: Composer in Cloud
+menu_title: Composer in Cloud
 menu_node:
-menu_order: 49
+menu_order: 45
 version: 2.0
 github_link: cloud/reference/cloud-composer.md
 ---
 
-This topic discusses how we use [Composer](https://getcomposer.org/doc){:target="_blank"} to manage dependencies and upgrades in Magento Enterprise Cloud Edition, and provides context about the packages that comprise Cloud, what the packages do, and how they fit together.
+Magento Commerce uses [Composer](https://getcomposer.org/doc){:target="_blank"} to manage dependencies and upgrades in Magento Commerce, and provides context about the packages that comprise Cloud, what the packages do, and how they fit together.
 
 ## Your project's Composer files
 Your project root directory contains `composer.json` and `composer.lock`.
 
-You edit `composer.json` to specify dependencies for your Magento Enterprise Cloud Edition project. (For example, when you install an extension, you update `composer.json`. you can either edit it manually or the [Component Manager]({{ page.baseurl }}comp-mgr/bk-compman-upgrade-guide.html) can do it for you.)
+You edit `composer.json` to specify dependencies for your Magento Commerce project. (For example, when you install an extension, you update `composer.json`. you can either edit it manually or the [Component Manager]({{ page.baseurl }}comp-mgr/bk-compman-upgrade-guide.html) can do it for you.)
 
 `composer.lock` stores a set of exact version dependencies that satisfy all of the version constraints of every requirement for every package in the dependency tree of the project.
 
@@ -38,8 +38,8 @@ The workflow is as follows:
 
 During the [build phase]({{ page.baseurl }}cloud/reference/discover-deploy.html), the Cloud environment runs `composer install` on a fresh clone of your Git branch to retrieve the latest dependencies.
 
-## Magento Enterprise Cloud Edition packages
-The following sections discuss the {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} packages used by Magento Enterprise Cloud Edition:
+## Magento Commerce (Cloud) packages
+The following sections discuss the {% glossarytooltip d85e2d0a-221f-4d03-aa43-0cda9f50809e %}Composer{% endglossarytooltip %} packages used by Magento Commerce:
 
 *	[`magento/magento-cloud-metapackage`](#cloud-composer-cloudmeta)
 *	[`magento/magento-cloud-configuration`](#cloud-composer-cloudconfig)
@@ -77,7 +77,7 @@ Magento contains two base packages, `magento/magento2-base` and `magento/magento
 
 These files are location-dependent, and cannot reside in the `vendor` directory. They are distributed as part of the base packages, and they rely on hooks located in the `magento/magento-composer-installer` package, which marshals them to the appropriate locations.
 
-One way in which Magento Enterprise Cloud Edition deploys differently than other Magento installations is that it does not marshal base packages on the Cloud environment. This could change in a future Cloud release, but for now, on the Cloud environment specifically, the marshaling functionality of `magento/magento-composer-installer` is disabled.
+One way in which Magento Commerce deploys differently than other Magento installations is that it does not marshal base packages on the Cloud environment. This could change in a future Cloud release, but for now, on the Cloud environment specifically, the marshaling functionality of `magento/magento-composer-installer` is disabled.
 
 Therefore, when upgrading to a new Cloud version or adding, removing, or changing any packages that rely on file marshaling, you must:
 
