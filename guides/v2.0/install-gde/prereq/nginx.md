@@ -4,7 +4,7 @@ group: install_pre
 subgroup: Prerequisites
 title: nginx
 menu_title: nginx
-menu_order: 25
+menu_order: 02
 version: 2.0
 github_link: install-gde/prereq/nginx.md
 ---
