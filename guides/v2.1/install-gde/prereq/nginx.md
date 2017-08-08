@@ -53,6 +53,10 @@ To install and configure `php-fpm`:
 		max_execution_time = 1800
 		zlib.output_compression = On
 
+    <div class="bs-callout bs-callout-info" markdown="1">
+We recommend setting the memory limit to 2G when testing Magento. Refer to [Required PHP settings]({{page.baseurl}}install-gde/prereq/php-settings.html) for more information.
+    </div>
+
 4. Save and exit the editor.
 
 5. Restart the `php-fpm` service:
@@ -100,7 +104,7 @@ For this example, we'll download and extract an archive.
 		cd /var/www/html/magento2
 		composer install -v
 
-7. When prompted, enter your [Magento authentication keys]({{page.baseurl}}install-gde/prereq/connect-auth.html).
+7. If prompted, enter your [Magento authentication keys]({{page.baseurl}}install-gde/prereq/connect-auth.html).
 
 8. Install Magento from the [command line]({{page.baseurl}}install-gde/install/cli/install-cli.html).
 
@@ -110,17 +114,13 @@ For this example, we'll download and extract an archive.
     Replace `http://www.magento-dev.com` with your domain name.
 
     <div class="bs-callout bs-callout-info" markdown="1">
-EDITOR'S NOTE: Explain issues with Web Setup Wizard.
+You cannot use the Web Setup Wizard when installing Magento on nginx. You must use the command line.
     </div>
 
 9. Switch to developer mode:
 
 		cd /var/www/html/magento2/bin
 		./magento deploy:mode:set developer
-
-		<div class="bs-callout bs-callout-info" markdown="1">
-EDITOR'S NOTE: Why am I having to do this manually? There's a directive for it i the magento.conf file.
-    </div>
 
 ### Configure nginx {#configure-nginx-ubuntu}
 We recommend configuring nginx using the `nginx.conf.sample` configuration file provided in the Magento installation directory and an nginx virtual host.
@@ -140,9 +140,8 @@ These instructions assume you're using the Ubuntu default location for the nginx
 		server {
 
 			listen 80;
-			server_name www.magento.com;
+			server_name www.magento-dev.com;
 			set $MAGE_ROOT /var/www/html/magento2;
-			set $MAGE_MODE developer;
 			include /var/www/html/magento2/nginx.conf.sample;
 		}
 
@@ -150,7 +149,7 @@ These instructions assume you're using the Ubuntu default location for the nginx
 The `include` directive must point to the sample nginx configuration file in your Magento installation directory.
     </div>
 
-3. Replace `www.magento.com` with your domain name. This must match the base URL you specified when installing Magento.
+3. Replace `www.magento-dev.com` with your domain name. This must match the base URL you specified when installing Magento.
 
 4. Save and exit the editor.
 
@@ -197,9 +196,13 @@ Magento requires several [PHP extensions]({{page.baseurl}}install-gde/prereq/php
 
 4. Edit the file to match the following lines:
 
-		memory_limit = 512M
+		memory_limit = 2G
 		max_execution_time = 1800
 		zlib.output_compression = On
+
+    <div class="bs-callout bs-callout-info" markdown="1">
+We recommend setting the memory limit to 2G when testing Magento. Refer to [Required PHP settings]({{page.baseurl}}install-gde/prereq/php-settings.html) for more information.
+    </div>
 
 5. Uncomment the session path directory and set the path:
 
@@ -302,17 +305,13 @@ For this example, we'll download and extract an archive.
     Replace `http://www.magento-dev.com` with your domain name.
 
     <div class="bs-callout bs-callout-info" markdown="1">
-EDITOR'S NOTE: Explain issues with Web Setup Wizard.
+You cannot use the Web Setup Wizard when installing Magento on nginx. You must use the command line.
     </div>
 
 8. Switch Magento to developer mode:
 
 		cd /usr/share/nginx/html/magento2/bin
 		./magento deploy:mode:set developer
-
-    <div class="bs-callout bs-callout-info" markdown="1">
-EDITOR'S NOTE: Why am I having to do this manually. There's a directive for it in the magento.conf file.
-    </div>
 
 ### Configure nginx {#configure-nginx-centos}
 We recommend configuring nginx using the `nginx.conf.sample` configuration file provided in the Magento installation directory and an nginx virtual host.
@@ -334,7 +333,6 @@ These instructions assume you're using the CentOS default location for the nginx
 			listen 80;
 			server_name www.magento-dev.com;
 			set $MAGE_ROOT /usr/share/nginx/html/magento2;
-			set $MAGE_MODE developer;
 			include /usr/share/nginx/html/magento2/nginx.conf.sample;
 		}
 
