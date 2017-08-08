@@ -67,15 +67,12 @@ Once the application has been built it is going to be mounted on a read-only fil
 This means you cannot FTP to the server and add modules. Instead, you must add code to your Git repo and run `git push`, which builds and deploys the environment.
 
 ### Phase 3: Prepare the slug {#cloud-deploy-over-phases-slug}
-The result of the build phase is a read-only file system we refer to as a *slug*. In this phase, we create an archive and put it in permanent storage. The next time
-you push code, if a service did not change, you can use a slug from the archive.
+The result of the build phase is a read-only file system we refer to as a *slug*. In this phase, we create an archive and put it in permanent storage. The next time you push code, if a service did not change, you can use a slug from the archive.
 
-It also means that reverting a deployment is basically
-instantaneous.
+It also means that reverting a deployment is basically instantaneous.
 
 ### Phase 4: Deploy slugs and cluster {#cloud-deploy-over-phases-slugclus}
-Now we provision your applications and all the {% glossarytooltip 74d6d228-34bd-4475-a6f8-0c0f4d6d0d61 %}backend{% endglossarytooltip %} services you
-need:
+Now we provision your applications and all the {% glossarytooltip 74d6d228-34bd-4475-a6f8-0c0f4d6d0d61 %}backend{% endglossarytooltip %} services you need:
 
 *	Mounts each service in its own container
 *	Mounts the read-write file system (mounted on a highly available distributed storage grid)
@@ -92,9 +89,8 @@ When this script runs, you have access to all the services in your environment (
 
 There are two default deploy hooks:
 
-* `pre-deploy.php`, which does some necessary cleanup and retrieval of
-resources that were generated in the build hook
-* `bin/magento magento-cloud:deploy` command
+* `pre-deploy.php` that completes necessary cleanup and retrieval of resources generated in the build hook
+* `bin/magento magento-cloud:deploy` that runs a series of commands and scripts
 
 `bin/magento magento-cloud:deploy` does the following:
 
@@ -115,9 +111,7 @@ resources that were generated in the build hook
 </div>
 
 ### Post-deployment: configure routing {#cloud-deploy-over-phases-route}
-While the deployment is running, we freeze the incoming traffic at the entry point
-for 60 seconds. We are now ready to configure routing so your
-web traffic will arrive at your newly created cluster.
+While the deployment is running, we freeze the incoming traffic at the entry point for 60 seconds. We are now ready to configure routing so your web traffic will arrive at your newly created cluster.
 
 #### Related topics
 *	[Get started with a project]({{page.baseurl}}cloud/project/project-start.html)

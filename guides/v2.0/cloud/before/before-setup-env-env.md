@@ -58,7 +58,7 @@ These instructions require having a cloned branch for development locally.
 
 To add your local authentication keys:
 
-1.	If you haven't done so already, log in to your Magento Enterprise Cloud Edition project, check out an environment, and pull updated code from the server. For additional information, see [Step 5, Clone or branch an environment]({{ page.baseurl }}cloud/before/before-setup-env-env.html)
+1.	If you haven't done so already, log in to your Magento Commerce project, check out an environment, and pull updated code from the server. For additional information, see [Step 5, Clone or branch an environment]({{ page.baseurl }}cloud/before/before-setup-env-env.html)
 
 		Use the following commands:
 

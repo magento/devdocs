@@ -16,9 +16,12 @@ redirect_from:
   - /guides/v2.0/cloud/welcome/get-help.html
   - /guides/v2.1/cloud/welcome/get-help.html
   - /guides/v2.2/cloud/welcome/get-help.html
+  - /guides/v2.0/cloud/welcome/10000-ft-overview.html
+  - /guides/v2.1/cloud/welcome/10000-ft-overview.html
+  - /guides/v2.2/cloud/welcome/10000-ft-overview.html
 ---
 
-![This guide applies to Magento Commerce available on Cloud only]({{ site.baseurl }}common/images/ee-only_large.png)
+![This guide applies to Magento Commerce (Cloud) only]({{ site.baseurl }}common/images/ee-only_large.png)
 
 Magento Commerce (Cloud), formerly Enterprise Cloud Edition, is a managed and automated high-availability hosting platform for Magento specifically created and hosted on the Cloud. This version combines Magento Enterprise, Cloud hosting, with a few differences and added features including Git integration and three key environments for development, staging, and live production.
 
@@ -45,7 +48,7 @@ You should become familiar with the following technologies:
 
 * [Git](https://git-scm.com/docs/user-manual.html){:target="_blank"}
 *	[Composer](https://getcomposer.org/doc){:target="_blank"}
-*	SSH
+*	[Secure Shell]({{page.baseurl}}cloud/env/environments-ssh.html) (SSH)
 * MySQL (including command-line interation)
 * Basic linux shell usage
 

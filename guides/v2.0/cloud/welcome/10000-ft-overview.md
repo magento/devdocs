@@ -1,10 +1,10 @@
 ---
 layout: default
-group: cloud
-subgroup: 010_welcome
+group:
+subgroup:
 title: The 10,000 ft overview
 menu_title: 10,000 ft overview
-menu_order: 15
+menu_order:
 menu_node:
 version: 2.0
 github_link: cloud/welcome/10000-ft-overview.md

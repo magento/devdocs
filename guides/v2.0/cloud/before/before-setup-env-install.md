@@ -134,7 +134,7 @@ To verify the Integration master branch environment, log into the Project Web In
 ![Click Access for list of URLs]({{ site.baseurl }}common/images/cloud-project-master-access.png){:width="297px"}
 
 With these steps completed, you should have:
-* Magento Enterprise Cloud Edition account and initial project setup and master branch
+* Magento Commerce account and initial project setup and master branch
 * A local workspace configured with installations of required software, Magento Cloud CLI, and Magento
 * SSH keys set up
 * The Magento file system owner configured
@@ -142,7 +142,7 @@ With these steps completed, you should have:
 * Magento authentication keys set up and configured in the project and local
 
 ## Next steps
-We recommend fully deploying this base Magento template across to Staging and Production. For details, see [Deployment workflow]({{ page.baseurl }}cloud/reference/discover-deploy.html). You should deploy prior to branching and developing to get an understanding of deploying Magento Enterprise Cloud Edition.
+We recommend fully deploying this base Magento template across to Staging and Production. For details, see [Deployment workflow]({{ page.baseurl }}cloud/reference/discover-deploy.html). You should deploy prior to branching and developing to get an understanding of deploying Magento Commerce.
 
 When you are ready, start developing in your initial code branch. You can have up to 8 active branches including the Master.
 
