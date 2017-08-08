@@ -94,11 +94,11 @@ This release includes both improvements we've made internally and those submitte
 <!--- 57144 -->* You can now create a blank attribute option using the drop-down input option on products that do not require an attribute. 
 [GitHub-3545](https://github.com/magento/magento2/issues/3545), [GitHub-5485](https://github.com/magento/magento2/issues/5485), [GitHub-4910](https://github.com/magento/magento2/issues/4910)
 
-<!--- 69151 -->* Product link types are no longer hardcoded. *Fix submitted by community member <a href="https://github.com/kassner" target="_blank">@kassner</a>*
+<!--- 69151 -->* Product link types are no longer hardcoded. *Fix submitted by community member <a href="https://github.com/kassner" target="_blank">@kassner</a> in pull request <a href="https://github.com/magento/magento2/pull/9601" target="_blank">9601</a>.*
 
 <!--- 59690 -->* Magento now renders images as expected in the product description area. Previously, Magento did not render images in this area, and would display a broken link.  [GitHub-6138](https://github.com/magento/magento2/issues/6138)
 
-<!--- 69238 -->* Magento now preserves image transparency when resizing images. *Fix submitted by community member <a href="https://github.com/kassner" target="_blank">@kassner</a>*
+<!--- 69238 -->* Magento now preserves image transparency when resizing images. *Fix submitted by community member <a href="https://github.com/kassner" target="_blank">@kassner</a> in pull request <a href="https://github.com/magento/magento2/pull/9662" target="_blank">9662</a>.*
 
 <!--- 69665 -->* The value of `item_zone` on the product detail page now remains set correctly when you change products via the related/upsell products list. [GitHub-9562](https://github.com/magento/magento2/issues/9562), [GitHub-6746](https://github.com/magento/magento2/issues/6746)   *Fix submitted by community member <a href="https://github.com/hostep" target="_blank">@hostep</a>*
 
@@ -112,9 +112,9 @@ This release includes both improvements we've made internally and those submitte
 
 
 
-<!--- 68875 -->* Shipping method radio buttons are no longer disabled when the Checkout page is refreshed.  [GitHub-7497](https://github.com/magento/magento2/issues/7497), [GitHub-9485](https://github.com/magento/magento2/issues/9485)  *Fix submitted by community member <a href="https://github.com/rachkulik" target="_blank">@rachkulik</a>*
+<!--- 68875 -->* Shipping method radio buttons are no longer disabled when the Checkout page is refreshed.  [GitHub-7497](https://github.com/magento/magento2/issues/7497), [GitHub-9485](https://github.com/magento/magento2/issues/9485)  *Fix submitted by community member <a href="https://github.com/rachkulik" target="_blank">@rachkulik</a> in pull request <a href="https://github.com/magento/magento2/pull/9485" target="_blank">9485</a>.*
 
-<!--- 68902 -->* Magento now highlights in any red fields that are missing shipping information when you proceed to checkout. *Fix submitted by community member <a href="https://github.com/hostep" target="_blank">@hostep</a>*
+<!--- 68902 -->* Magento now highlights in any red fields that are missing shipping information when you proceed to checkout. *Fix submitted by community member <a href="https://github.com/hostep" target="_blank">@hostep</a> in pull request <a href="https://github.com/magento/magento2/pull/9500" target="_blank">9500</a>.*
 
 
 
@@ -181,7 +181,7 @@ layout for the  "Shipping and Tracking" block did not work properly.
 
 <!--- 65161 -->* Customers can no longer apply a coupon code twice. Previously, the "Uses per Coupon" limit did not work for auto-generated coupons. 
 
-<!--- 57051, 67621 -->* Widgets now accept UTF-8 special characters type as input parameters. Previously, you could successfully create a widget, but UTF-8 special characters were broken. [GitHub-4232](https://github.com/magento/magento2/issues/4232) *Fix submitted by community member <a href="https://github.com/hostep" target="_blank">@hostep</a>*
+<!--- 57051, 67621 -->* Widgets now accept UTF-8 special characters type as input parameters. Previously, you could successfully create a widget, but UTF-8 special characters were broken. [GitHub-4232](https://github.com/magento/magento2/issues/4232) *Fix submitted by community member <a href="https://github.com/hostep" target="_blank">@hostep</a> in pull request <a href="https://github.com/magento/magento2/pull/9333" target="_blank">9333</a>.*
 
 
 <!--- 60641 -->* Magento now saves a new product rule when its SKU attribute is enabled for **Use for Promo Rule Conditions**. Previously, you could not save a new rule under these conditions. 
@@ -193,43 +193,43 @@ layout for the  "Shipping and Tracking" block did not work properly.
 
 <!--- 60538 -->* We fixed an issue where cache-misses sometimes occurred when Fastly cache was implemented.  Previously, the header information included in the response sometimes prevented the caching of this page. To minimize this potential problem, Magento now does not include  header empty of real content  in the response. 
 
-<!--- 60538 -->* Resolved issue with selecting widgets in TinyMCE. [GitHub-9655](https://github.com/magento/magento2/issues/9655), [GitHub-9518](https://github.com/magento/magento2/issues/9518)  *Fix submitted by community member <a href="https://github.com/hostep" target="_blank">@hostep</a>*
+<!--- 60538 -->* Resolved issue with selecting widgets in TinyMCE. [GitHub-9655](https://github.com/magento/magento2/issues/9655), [GitHub-9518](https://github.com/magento/magento2/issues/9518)  *Fix submitted by community member <a href="https://github.com/hostep" target="_blank">@hostep</a> *
 
-<!--- 67614 -->* You can now remove breadcrumbs without removing the page meta title from the category view and product view pages.  Previously, the page meta title is visible only if the breadcrumbs block was defined in XML.  [GitHub-4427](https://github.com/magento/magento2/issues/4427) *Fix submitted by community member  <a href="https://github.com/latenights" target="_blank">@latenights</a>*
+<!--- 67614 -->* You can now remove breadcrumbs without removing the page meta title from the category view and product view pages.  Previously, the page meta title is visible only if the breadcrumbs block was defined in XML.  [GitHub-4427](https://github.com/magento/magento2/issues/4427) *Fix submitted by community member  <a href="https://github.com/latenights" target="_blank">@latenights</a> in pull request <a href="https://github.com/magento/magento2/pull/9324" target="_blank">9324</a>.*
 
-<!--- 68903 -->* The WYSIWYG editor now performs more consistently.  [GitHub-4828](https://github.com/magento/magento2/issues/4828), [GitHub-6222](https://github.com/magento/magento2/issues/6222),  [GitHub-6815](https://github.com/magento/magento2/issues/6815)  *Fix submitted by community member <a href="https://github.com/hostep" target="_blank">@hostep</a>*
+<!--- 68903 -->* The WYSIWYG editor now performs more consistently.  [GitHub-4828](https://github.com/magento/magento2/issues/4828), [GitHub-6222](https://github.com/magento/magento2/issues/6222),  [GitHub-6815](https://github.com/magento/magento2/issues/6815)  *Fix submitted by community member <a href="https://github.com/hostep" target="_blank">@hostep</a> in pull request <a href="https://github.com/magento/magento2/pull/9499" target="_blank">9499</a>.*
 
 <!--- 57291 -->* Magento now successfully uploads the thumbnail images for email logos that are used in transactional emails. Previously, these thumbnail images were not displayed.
 
 
-<!--- 69062 -->* The email logo image function now works as expected.   [GitHub-5352](https://github.com/magento/magento2/issues/5352),  [GitHub-5633](https://github.com/magento/magento2/issues/5633),  [GitHub-5916](https://github.com/magento/magento2/issues/5916) [GitHub-6275](https://github.com/magento/magento2/issues/6275),  [GitHub-9590](https://github.com/magento/magento2/issues/9590)  *Fix submitted by community member  <a href="https://github.com/hostep" target="_blank">@hostep</a>*
+<!--- 69062 -->* The email logo image function now works as expected.   [GitHub-5352](https://github.com/magento/magento2/issues/5352),  [GitHub-5633](https://github.com/magento/magento2/issues/5633),  [GitHub-5916](https://github.com/magento/magento2/issues/5916) [GitHub-6275](https://github.com/magento/magento2/issues/6275),  [GitHub-9590](https://github.com/magento/magento2/issues/9590)  *Fix submitted by community member  <a href="https://github.com/hostep" target="_blank">@hostep</a> in pull request <a href="https://github.com/magento/magento2/pull/9590" target="_blank">9590</a>.*
 
-<!--- 68774 -->* The login popup window now works as expected in portrait mode on an iPad. [GitHub-6451](https://github.com/magento/magento2/issues/6451)   *Fix submitted by community member <a href="https://github.com/ihor-sviziev" target="_blank">@ihor-sviziev</a>*
+<!--- 68774 -->* The login popup window now works as expected in portrait mode on an iPad. [GitHub-6451](https://github.com/magento/magento2/issues/6451)   *Fix submitted by community member <a href="https://github.com/ihor-sviziev" target="_blank">@ihor-sviziev</a> in pull request <a href="https://github.com/magento/magento2/pull/9396" target="_blank">9396</a>.*
 
 
-<!--- 69023 -->* Wishlists now display the correct product price.  [GitHub-6866](https://github.com/magento/magento2/issues/6866) *Fix submitted by community member <a href="https://github.com/hostep" target="_blank">@hostep</a>*
+<!--- 69023 -->* Wishlists now display the correct product price.  [GitHub-6866](https://github.com/magento/magento2/issues/6866) *Fix submitted by community member <a href="https://github.com/hostep" target="_blank">@hostep</a> in pull request <a href="https://github.com/magento/magento2/pull/9571" target="_blank">9571</a>.*
 
-<!--- 69541 -->* We’ve fixed a JavaScript error on Product page that prevented  Magento from updating color swatches  or updating product prices correctly. [GitHub-7959](https://github.com/magento/magento2/issues/7959) *Fix submitted by community member <a href="https://github.com/dreamworkers" target="_blank">@dreamworkers</a>*
+<!--- 69541 -->* We’ve fixed a JavaScript error on Product page that prevented  Magento from updating color swatches  or updating product prices correctly. [GitHub-7959](https://github.com/magento/magento2/issues/7959) *Fix submitted by community member <a href="https://github.com/dreamworkers" target="_blank">@dreamworkers</a> in pull request <a href="https://github.com/magento/magento2/pull/7959" target="_blank">7959</a>.*
 
-<!--- 69019 -->* We resolved an issue where  interface constructors broke Magento compilation.   [GitHub-8607](https://github.com/magento/magento2/issues/8607)  *Fix submitted by community member <a href="https://github.com/LoganayakiK" target="_blank">@LoganayakiK</a>*
+<!--- 69019 -->* We resolved an issue where  interface constructors broke Magento compilation.   [GitHub-8607](https://github.com/magento/magento2/issues/8607)  *Fix submitted by community member <a href="https://github.com/LoganayakiK" target="_blank">@LoganayakiK</a> in pull request <a href="https://github.com/magento/magento2/pull/9524" target="_blank">9524</a>.*
 
-<!--- 69922 -->* You can now set a negative quantity for a product.  [GitHub-9139](https://github.com/magento/magento2/issues/9139), [GitHub-7401](https://github.com/magento/magento2/issues/7401) *Fix submitted by community member <a href="https://github.com/poongud" target="_blank">@poongud</a>*
+<!--- 69922 -->* You can now set a negative quantity for a product.  [GitHub-9139](https://github.com/magento/magento2/issues/9139), [GitHub-7401](https://github.com/magento/magento2/issues/7401) *Fix submitted by community member <a href="https://github.com/poongud" target="_blank">@poongud</a> in pull request <a href="https://github.com/magento/magento2/pull/9139" target="_blank">9139</a>.*
 
-<!--- 69543 -->*  Magento no longer caches layered navigation options with the wrong store ID.  [GitHub-9679](https://github.com/magento/magento2/issues/9679)  *Fix submitted by community member <a href="https://github.com/hostep" target="_blank">@hostep</a>*
+<!--- 69543 -->*  Magento no longer caches layered navigation options with the wrong store ID.  [GitHub-9679](https://github.com/magento/magento2/issues/9679)  *Fix submitted by community member <a href="https://github.com/hostep" target="_blank">@hostep</a> in pull request <a href="https://github.com/magento/magento2/pull/9704" target="_blank">9704</a>.*
 
 <!--- 70077 -->* Magento now correctly displays user names that exceed 20 characters. 
 
-<!--- 67522 -->* You can now upload `.apng` and `.ico` images as fav icons without error. *Fix submitted by community member <a href="https://github.com/WaPoNe" target="_blank">@WaPoNe</a>*
+<!--- 67522 -->* You can now upload `.apng` and `.ico` images as fav icons without error. *Fix submitted by community member <a href="https://github.com/WaPoNe" target="_blank">@WaPoNe</a> in pull request <a href="https://github.com/magento/magento2/pull/8880" target="_blank">8880</a>.*
 
-<!--- 67620 -->* Clicking **Insert image**  twice on the Add Banner page no longer produces a JavaScript error. *Fix submitted by community member <a href="https://github.com/hostep" target="_blank">@hostep</a>*
+<!--- 67620 -->* Clicking **Insert image**  twice on the Add Banner page no longer produces a JavaScript error. *Fix submitted by community member <a href="https://github.com/hostep" target="_blank">@hostep</a> in pull request <a href="https://github.com/magento/magento2/pull/9332" target="_blank">9332</a>.*
 
-<!--- 67753 -->* Dynamic dragging-and-dropping of rows now works correctly. *Fix submitted by community member <a href="https://github.com/navarr" target="_blank">@navarr</a>*
+<!--- 67753 -->* Dynamic dragging-and-dropping of rows now works correctly. *Fix submitted by community member <a href="https://github.com/navarr" target="_blank">@navarr</a> in pull request <a href="https://github.com/magento/magento2/pull/9376" target="_blank">9376</a>.*
 
-<!--- 69228 -->*  Magento now allows comma-separated X-Forwarded-For headers. This modification ensures that the correct client IP can be returned if the `getRemoteAddress` method gets one via the `alternativeHeaders` variable. (Magento accomplishes this by getting the first IP in the list after detecting for a comma-separated IP list.) *Fix submitted by community member <a href="https://github.com/kassner" target="_blank">@kassner</a>*
+<!--- 69228 -->*  Magento now allows comma-separated X-Forwarded-For headers. This modification ensures that the correct client IP can be returned if the `getRemoteAddress` method gets one via the `alternativeHeaders` variable. (Magento accomplishes this by getting the first IP in the list after detecting for a comma-separated IP list.) *Fix submitted by community member <a href="https://github.com/kassner" target="_blank">@kassner</a> in pull request <a href="https://github.com/magento/magento2/pull/9653" target="_blank">9653</a>.*
 
-<!--- 69236 -->* The Store Configuration page (**Stores > Configuration**) now loads templates for Change Email and for Change Email and Password forms. *Fix submitted by community member <a href="https://github.com/kassner" target="_blank">@kassner</a>*
+<!--- 69236 -->* The Store Configuration page (**Stores > Configuration**) now loads templates for Change Email and for Change Email and Password forms. *Fix submitted by community member <a href="https://github.com/kassner" target="_blank">@kassner</a> in pull request <a href="https://github.com/magento/magento2/pull/9661" target="_blank">9661</a>.*
 
-<!--- 69234 -->* We've removed a previously published fix that corrected a problem using the TinyMCE editor to select and edit images. [GitHub-9518](https://github.com/magento/magento2/issues/9518) *Fix submitted by community member <a href="https://github.com/hostep" target="_blank">@hostep</a>*
+<!--- 69234 -->* We've removed a previously published fix that corrected a problem using the TinyMCE editor to select and edit images. [GitHub-9518](https://github.com/magento/magento2/issues/9518) *Fix submitted by community member <a href="https://github.com/hostep" target="_blank">@hostep</a> in pull request <a href="https://github.com/magento/magento2/pull/9655" target="_blank">9655</a>.*
 
 
 ### Gift cards
@@ -325,13 +325,13 @@ layout for the  "Shipping and Tracking" block did not work properly.
 
 <!--- 58876 -->* We’ve optimized the performance of mass actions resulting in faster response time and reduced memory usage.
 
-<!--- 67724, 67725 -->* We’ve improved checkout speed by removing unused Widget JS, Widget Configuration, and regions based on your stores configuration to reduce asset load on checkout pages.  [GitHub-4868](https://github.com/magento/magento2/issues/4868), [GitHub-6997](https://github.com/magento/magento2/issues/6997), [GitHub-9364](https://github.com/magento/magento2/issues/9364) *Fix submitted by community member  <a href="https://github.com/hostep" target="_blank">@hostep</a>*
+<!--- 67724, 67725 -->* We’ve improved checkout speed by removing unused Widget JS, Widget Configuration, and regions based on your stores configuration to reduce asset load on checkout pages.  [GitHub-4868](https://github.com/magento/magento2/issues/4868), [GitHub-6997](https://github.com/magento/magento2/issues/6997), [GitHub-9364](https://github.com/magento/magento2/issues/9364) *Fix submitted by community member  <a href="https://github.com/hostep" target="_blank">@hostep</a> in pull request <a href="https://github.com/magento/magento2/pull/9365" target="_blank">9365</a>.*
 
 <!--- 61916 -->* We've improved the algorithm that controls how URL rewrites on the Category Save page are processed. 
 
 ### Quotes
 
-<!--- 69223 -->* Magento now successfully defines extension attributes for a quote billing address. [GitHub-9646](https://github.com/magento/magento2/issues/9646)  *Fix submitted by community member <a href="https://github.com/ekuusela" target="_blank">@ekuusela</a>*
+<!--- 69223 -->* Magento now successfully defines extension attributes for a quote billing address. [GitHub-9646](https://github.com/magento/magento2/issues/9646)  *Fix submitted by community member <a href="https://github.com/ekuusela" target="_blank">@ekuusela</a> in pull request <a href="https://github.com/magento/magento2/pull/9647" target="_blank">9647</a>.*
 
 
 ### Reports
@@ -339,7 +339,7 @@ layout for the  "Shipping and Tracking" block did not work properly.
 <!--- 64297 -->* The website column in Customer Segment report now contains correct data. Previously, this column was blank in the **Reports > Customer > Segments** report. 
 
 
-<!--- 68938 -->* You can now successfully export the Low Stock report.  [GitHub-9428](https://github.com/magento/magento2/issues/9428)  *Fix submitted by community member  @mikebox*
+<!--- 68938 -->* You can now successfully export the Low Stock report.  [GitHub-9428](https://github.com/magento/magento2/issues/9428)  *Fix submitted by community member <a href="https://github.com/mikebox" target="_blank">@mikebox</a> in pull request <a href="https://github.com/magento/magento2/pull/9487" target="_blank">9487</a>.
 
 <!--- 67523 -->* We've changed the severity of some errors from critical to info in `var/log/system.log`.  [GitHub-5627](https://github.com/magento/magento2/issues/5627)  *Fix submitted by community member <a href="https://github.com/malachy-mcconnnell" target="_blank">@malachy-mcconnnell</a>*
 
