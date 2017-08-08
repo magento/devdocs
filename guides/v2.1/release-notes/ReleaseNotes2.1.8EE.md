@@ -414,7 +414,7 @@ layout for the  "Shipping and Tracking" block did not work properly.
 
 ## Community contributions
 
-We are grateful to the wider Magento community and would like to acknoweldge their contributions to this release. 
+We are grateful to the wider Magento community and would like to acknowledge their contributions to this release. 
 
 The following table identifies contributions from our community members. This table lists the external pull requests, the GitHub issue number associated with it (if available), and the community member who contributed the pull request. 
 
