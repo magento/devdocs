@@ -100,7 +100,7 @@ This release includes both improvements we've made internally and those submitte
 
 <!--- 69238 -->* Magento now preserves image transparency when resizing images. *Fix submitted by community member <a href="https://github.com/kassner" target="_blank">@kassner</a> in pull request <a href="https://github.com/magento/magento2/pull/9662" target="_blank">9662</a>.*
 
-<!--- 69665 -->* The value of `item_zone` on the product detail page now remains set correctly when you change products via the related/upsell products list. [GitHub-9562](https://github.com/magento/magento2/issues/9562), [GitHub-6746](https://github.com/magento/magento2/issues/6746)   *Fix submitted by community member <a href="https://github.com/hostep" target="_blank">@hostep</a>*
+<!--- 69665 -->* The value of `item_zone` on the product detail page now remains set correctly when you change products via the related/upsell products list. [GitHub-9562](https://github.com/magento/magento2/issues/9562), [GitHub-6746](https://github.com/magento/magento2/issues/6746)   *Fix submitted by community member <a href="https://github.com/hostep" target="_blank">@hostep</a>.*
 
 
 
@@ -193,7 +193,7 @@ layout for the  "Shipping and Tracking" block did not work properly.
 
 <!--- 60538 -->* We fixed an issue where cache-misses sometimes occurred when Fastly cache was implemented.  Previously, the header information included in the response sometimes prevented the caching of this page. To minimize this potential problem, Magento now does not include  header empty of real content  in the response. 
 
-<!--- 60538 -->* Resolved issue with selecting widgets in TinyMCE. [GitHub-9655](https://github.com/magento/magento2/issues/9655), [GitHub-9518](https://github.com/magento/magento2/issues/9518)  *Fix submitted by community member <a href="https://github.com/hostep" target="_blank">@hostep</a> *
+<!--- 60538 -->* Resolved issue with selecting widgets in TinyMCE. [GitHub-9655](https://github.com/magento/magento2/issues/9655), [GitHub-9518](https://github.com/magento/magento2/issues/9518)  *Fix submitted by community member <a href="https://github.com/hostep" target="_blank">@hostep</a>.*
 
 <!--- 67614 -->* You can now remove breadcrumbs without removing the page meta title from the category view and product view pages.  Previously, the page meta title is visible only if the breadcrumbs block was defined in XML.  [GitHub-4427](https://github.com/magento/magento2/issues/4427) *Fix submitted by community member  <a href="https://github.com/latenights" target="_blank">@latenights</a> in pull request <a href="https://github.com/magento/magento2/pull/9324" target="_blank">9324</a>.*
 
@@ -341,7 +341,7 @@ layout for the  "Shipping and Tracking" block did not work properly.
 
 <!--- 68938 -->* You can now successfully export the Low Stock report.  [GitHub-9428](https://github.com/magento/magento2/issues/9428)  *Fix submitted by community member <a href="https://github.com/mikebox" target="_blank">@mikebox</a> in pull request <a href="https://github.com/magento/magento2/pull/9487" target="_blank">9487</a>.
 
-<!--- 67523 -->* We've changed the severity of some errors from critical to info in `var/log/system.log`.  [GitHub-5627](https://github.com/magento/magento2/issues/5627)  *Fix submitted by community member <a href="https://github.com/malachy-mcconnnell" target="_blank">@malachy-mcconnnell</a>*
+<!--- 67523 -->* We've changed the severity of some errors from critical to info in `var/log/system.log`.  [GitHub-5627](https://github.com/magento/magento2/issues/5627)  *Fix submitted by community member <a href="https://github.com/malachy-mcconnnell" target="_blank">@malachy-mcconnnell</a>.*
 
 
 ### Sample data
