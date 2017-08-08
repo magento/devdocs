@@ -30,6 +30,9 @@ To cut over to the new site:
 3. Wait for the TTL time to pass and restart your web browser.
 4. Access your store using the storefront domain.
 
+## Test the live store {#test}
+Complete a few UAT tests in your live store to make sure everything is loading and actions complete correctly. For a list of tests, see [Test deployment]({{ page.baseurl }}cloud/live/stage-prod-test.html).
+
 ## Post-Launch {#postlaunch}
 Magento will activate checks and monitor the site to ensure all services and access are in the green. We remain on hand as needed to walk-through and check all system logs, services, caching, and functions are working as you and your customers need.
 
