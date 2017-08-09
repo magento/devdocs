@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Set up the mysql service | Magento 2 Developer Documentation</title>
+	<title>magento-cloud-configuration release 101.8.x Release Notes | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.1/cloud/project/project-conf-files_services-mysql.html">
+	<link rel="canonical" href="//guides/v2.1/cloud/release-notes/CloudReleaseNotes101.8.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -69,11 +69,11 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/cloud/project/project-conf-files_services-mysql.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/cloud/release-notes/CloudReleaseNotes101.8.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/cloud/project/project-conf-files_services-mysql.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/cloud/release-notes/CloudReleaseNotes101.8.html">Magento 2.1</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.2/cloud/project/project-conf-files_services-mysql.html">Magento 2.2 RC</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.2/cloud/release-notes/CloudReleaseNotes101.8.html">Magento 2.2 RC</a></li>
 	
   </ul>
 
@@ -325,7 +325,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/cloud/release-notes/CloudReleaseNotes101.8.html">magento-cloud-configuration release 101.8.x Release Notes</a></li>
+									<li class="level-2  active "><a href="/guides/v2.1/cloud/release-notes/CloudReleaseNotes101.8.html">magento-cloud-configuration release 101.8.x Release Notes</a></li>
 
 									
 
@@ -864,7 +864,7 @@
 									
 
 
-											<li class="level3Child services  active " data-menunode="services"><a href="/guides/v2.1/cloud/project/project-conf-files_services-mysql.html">Set up the mysql service</a>
+											<li class="level3Child services " data-menunode="services"><a href="/guides/v2.1/cloud/project/project-conf-files_services-mysql.html">Set up the mysql service</a>
 
 
 									
@@ -1689,7 +1689,7 @@
 
           
 
-          <span property="name">Set up the mysql service</span>
+          <span property="name">magento-cloud-configuration release 101.8.x Release Notes</span>
 
         
 
@@ -1712,7 +1712,7 @@
 
 	
 
-	<h1 class="page-heading">Set up the mysql service</h1>
+	<h1 class="page-heading">magento-cloud-configuration release 101.8.x Release Notes</h1>
 
   
 
@@ -1720,104 +1720,43 @@
 </section>
 
 
-			<p>The <code>mysql</code> service provides data storage. It’s based on <a href="https://mariadb.com/products/subscription-plans" target="_blank">MariaDB</a>, supporting the <a href="https://www.percona.com/software/mysql-database/percona-server/xtradb" target="_blank">XtraDB</a> storage
-engine (equivalent to MySQL with InnoDB).</p>
+			<p>These Release Notes provide up-to-date information about changes, additions, and fixes to the Magento Enterprise Cloud Edition version 2.1.8, <code>magento-cloud-configuration</code> release 101.8.0.</p>
 
-<p>We support MariaDB version 10.0, which includes reimplemented features from MySQL 5.6 and 5.7.</p>
+<h2 id="changes-and-enhancements-in-this-release">Changes and enhancements in this release</h2>
+<p>In <code>magento-cloud-configuration</code> release 101.8.0, we provide the following improvements:</p>
 
-<p>To access the MariaDB database directly, <a href="/guides/v2.1/cloud/env/environments-start.html#env-start-tunn">open an SSH tunnel</a> and use the
-following command:</p>
-
-<pre><code>mysql -h database.internal -u user
-</code></pre>
-
-<h2 id="cloud-appyaml-mysqlusers">Set up multiple database users</h2>
-<p>You can optionally set up multiple databases as well as multiple users with different permissions. By default, there is one endpoint named <code>mysql</code> that has administrator access to all defined databases.</p>
-
-<p>To set up multiple databases and users, you must specify multiple endpoints. An <em>endpoint</em> is a user who has privileges you specify.</p>
-
-<div class="bs-callout bs-callout-warning" id="warning">
-  <p>You can’t use multiple <em>databases</em> with Magento Enterprise Cloud Edition at this time. You can, however, create multiple endpoints to restrict access to the <code>main</code> database.</p>
-</div>
-
-<p>To specify user access, use the <code>endpoints</code> nested array. Each endpoint can have access to one or more schemas (databases), and can have different levels of permission on each.</p>
-
-<p>The valid permission levels are:</p>
-
+<!--- MAGECLOUD-870 -->
 <ul>
-  <li><code>ro</code>: Only SELECT queries are allowed.</li>
-  <li><code>rw</code>: SELECT queries as well as INSERT/UPDATE/DELETE queries are allowed.</li>
-  <li><code>admin</code>: All queries are allowed, including DDL queries (CREATE TABLE, DROP TABLE, and so on).</li>
+  <li>Magento no longer automatically disables Google Analytics when deployed in the master branch.</li>
 </ul>
 
-<p>If no endpoints are defined, a single endpoint named <code>mysql</code> has <code>admin</code> access to the <code>main</code> database.</p>
-
-<p>Example:</p>
-
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">mysqldb</span><span class="p-Indicator">:</span>
-    <span class="l-Scalar-Plain">type</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">mysql:10.0</span>
-    <span class="l-Scalar-Plain">disk</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">2048</span>
-    <span class="l-Scalar-Plain">configuration</span><span class="p-Indicator">:</span>
-        <span class="l-Scalar-Plain">schemas</span><span class="p-Indicator">:</span>
-            <span class="p-Indicator">-</span> <span class="l-Scalar-Plain">main</span>
-        <span class="l-Scalar-Plain">endpoints</span><span class="p-Indicator">:</span>
-            <span class="l-Scalar-Plain">admin</span><span class="p-Indicator">:</span>
-                <span class="l-Scalar-Plain">default_schema</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">main</span>
-                <span class="l-Scalar-Plain">privileges</span><span class="p-Indicator">:</span>
-                    <span class="l-Scalar-Plain">main</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">admin</span>
-            <span class="l-Scalar-Plain">reporter</span><span class="p-Indicator">:</span>
-                <span class="l-Scalar-Plain">privileges</span><span class="p-Indicator">:</span>
-                    <span class="l-Scalar-Plain">main</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">ro</span>
-            <span class="l-Scalar-Plain">importer</span><span class="p-Indicator">:</span>
-                <span class="l-Scalar-Plain">privileges</span><span class="p-Indicator">:</span>
-                    <span class="l-Scalar-Plain">main</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">rw</span></code></pre></figure>
-
-<p>In the preceding example, the endpoint (that is, user) <code>reporter</code> has <code>ro</code> privileges to the <code>main</code> database and endpoint <code>importer</code> has <code>rw</code> access to the <code>main</code> database. This means that:</p>
-
+<!--- MAGECLOUD-860 -->
 <ul>
-  <li>The <code>admin</code> user has full control of the database.</li>
-  <li>The <code>repoter</code> user has SELECT privileges only.</li>
-  <li>The <code>importer</code> user has SELECT, INSERT, UPDATE, and DELETE privileges.</li>
+  <li>HTML minification now works as expected on Cloud.</li>
 </ul>
 
-<h2 id="relationship">Relationship</h2>
-<p>The format exposed in the <a href="/guides/v2.1/cloud/env/environment-vars_cloud.html"><code>$MAGENTO_CLOUD_RELATIONSHIPS</code></a> follows:</p>
+<!--- MAGECLOUD-808-->
+<ul>
+  <li>We’ve removed the patch that fixed SCD in a build with multiple languages because the patch functionality has been integrated into Magento 2.1.8.</li>
+</ul>
 
-<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="o">{</span>
-  <span class="s2">&quot;database&quot;</span>: <span class="o">[</span>
-    <span class="o">{</span>
-      <span class="s2">&quot;host&quot;</span>: <span class="s2">&quot;database.internal&quot;</span>,
-      <span class="s2">&quot;ip&quot;</span>: <span class="s2">&quot;192.0.2.150&quot;</span>,
-      <span class="s2">&quot;password&quot;</span>: <span class="s2">&quot;&quot;</span>,
-      <span class="s2">&quot;path&quot;</span>: <span class="s2">&quot;main&quot;</span>,
-      <span class="s2">&quot;port&quot;</span>: 3306,
-      <span class="s2">&quot;query&quot;</span>: <span class="o">{</span>
-          <span class="s2">&quot;is_master&quot;</span>: <span class="nb">true</span>
-      <span class="o">}</span>,
-      <span class="s2">&quot;scheme&quot;</span>: <span class="s2">&quot;mysql&quot;</span>,
-      <span class="s2">&quot;username&quot;</span>: <span class="s2">&quot;user&quot;</span>
-    <span class="o">}</span>
-  <span class="o">]</span>
-<span class="o">}</span></code></pre></figure>
+<!--- MAGECLOUD-150-->
+<ul>
+  <li>Magento Cloud now supports PayPal TPV tracking, which enables Cloud customers to send Magento Cloud-specific tracking codes to PayPal and Braintree.</li>
+</ul>
 
-<h2 id="usage-example">Usage example</h2>
-<p>In your <code>.magento/services.yaml</code>:</p>
+<!--- MAGECLOUD-459 -->
+<ul>
+  <li>The <code>deploy.log</code> file now contains the Magento version and <code>mcc</code> version.</li>
+</ul>
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">mysql</span><span class="p-Indicator">:</span>
-    <span class="l-Scalar-Plain">type</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">mysql:10.0</span>
-    <span class="l-Scalar-Plain">disk</span><span class="p-Indicator">:</span> <span class="l-Scalar-Plain">2048</span></code></pre></figure>
+<h2 id="how-to-get-magento-cloud-configuration-release-1018x">How to get <code>magento-cloud-configuration</code> release 101.8.x</h2>
+<p>Magento Enterprise Cloud Edition periodically provides patch releases in components like <code>magento-cloud-configuration</code>.</p>
 
-<p>In your <code>.magento.app.yaml</code>:</p>
+<p>To test and apply these patches, see <a href="/guides/v2.1/cloud/project/project-patch.html#cloud-patch-gen">Test general patches</a>.</p>
 
-<figure class="highlight"><pre><code class="language-yaml" data-lang="yaml"><span class="l-Scalar-Plain">relationships</span><span class="p-Indicator">:</span>
-    <span class="l-Scalar-Plain">database</span><span class="p-Indicator">:</span> <span class="s">&quot;mydatabase:mysql&quot;</span></code></pre></figure>
-
-<div class="bs-callout bs-callout-info" id="info">
-  <ul>
-    <li>If you configure one MySQL user, you cannot use the <a href="http://dev.mysql.com/doc/refman/5.6/en/show-grants.html" target="_blank"><code>DEFINER</code></a> access control mechanism for stored procedures and views.</li>
-    <li>MySQL errors such as <code>PDO Exception 'MySQL server has gone away</code> are usually the result of exhausting your existing disk space. Be sure you have sufficient space allocated to the service in <a href="/guides/v2.1/cloud/project/project-conf-files_magento-app.html#cloud-yaml-platform-disk"><code>.magento/services.yaml</code></a>.</li>
-  </ul>
-</div>
+<h3 id="magento-ee-release-notes">Magento EE Release Notes</h3>
+<p>This Magento Enterprise Cloud Edition release corresponds to Magento Enterprise Edition 2.1.8.</p>
 
 
 		</div>
@@ -1829,14 +1768,14 @@ following command:</p>
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/project/project-conf-files_services-mysql.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/cloud/release-notes/CloudReleaseNotes101.8.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
   
 
   <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/cloud/project/project-conf-files_services-mysql.html" target="_blank">Give us feedback</a>
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/cloud/release-notes/CloudReleaseNotes101.8.html" target="_blank">Give us feedback</a>
   </div>
 
 </div>

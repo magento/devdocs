@@ -325,6 +325,14 @@
 
 									
 
+									<li class="level-2 "><a href="/guides/v2.1/cloud/release-notes/CloudReleaseNotes101.8.html">magento-cloud-configuration release 101.8.x Release Notes</a></li>
+
+									
+
+								
+
+									
+
 									<li class="level-2  active "><a href="/guides/v2.1/cloud/release-notes/CloudReleaseNotes101.7.html">magento-cloud-configuration release 101.7.x Release Notes</a></li>
 
 									
@@ -1712,12 +1720,31 @@
 </section>
 
 
-			<p>These Release Notes provide up-to-date information about changes, additions, and fixes to the Magento Enterprise Cloud Edition version 2.1.7, <code>magento-cloud-configuration</code> releases 101.7.3 and 101.7.4.</p>
+			<p>These Release Notes provide up-to-date information about changes, additions, and fixes to the Magento Enterprise Cloud Edition version 2.1.7, <code>magento-cloud-configuration</code> releases 101.7.3, 101.7.4, and 101.7.5.</p>
 
 <h2 id="changes-and-enhancements-in-this-release">Changes and enhancements in this release</h2>
-<p>In <code>magento-cloud-configuration</code> releases 101.7.3 and 101.7.4 on Magento Enterprise Edition 2.1.7, we provide the following improvements:</p>
+<p>In <code>magento-cloud-configuration</code> releases 101.7.3, 101.7.4, and 101.7.5 on Magento Enterprise Edition 2.1.7, we provide the following improvements:</p>
 
-<h3 id="changes">101.7.3 changes</h3>
+<h3 id="changes">101.7.5 changes</h3>
+
+<!--- MAGECLOUD-870 -->
+<ul>
+  <li>Magento no longer automatically disables Google Analytics when deployed in the master branch.</li>
+</ul>
+
+<!--- MAGECLOUD-860 -->
+<ul>
+  <li>HTML minification now works as expected on Cloud.</li>
+</ul>
+
+<h3 id="changes-1">101.7.4 changes</h3>
+
+<!--- MAGECLOUD-792 -->
+<ul>
+  <li>Magento no longer purges all Redis user sessions during deployment, but only the database where the cache is stored.</li>
+</ul>
+
+<h3 id="changes-2">101.7.3 changes</h3>
 
 <!--- MAGECLOUD-782 -->
 <ul>
@@ -1733,13 +1760,6 @@
 <div class="bs-callout bs-callout-info" id="info">
   <p>We've reverted the changes to image resizing that we introduced in 2.1.6. Unfortunately, certain image resizing changes introduced unanticipated problems. We have reverted these changes in this release, and will provide improvements to image resizing in a future product update.</p>
 </div>
-
-<h3 id="changes-1">101.7.4 changes</h3>
-
-<!--- MAGECLOUD-792 -->
-<ul>
-  <li>Magento no longer purges all Redis user sessions during deployment, but only the database where the cache is stored.</li>
-</ul>
 
 <h2 id="how-to-get-magento-cloud-configuration-release-1017x">How to get <code>magento-cloud-configuration</code> release 101.7.x</h2>
 <p>Magento Enterprise Cloud Edition periodically provides patch releases in components like <code>magento-cloud-configuration</code>.</p>
