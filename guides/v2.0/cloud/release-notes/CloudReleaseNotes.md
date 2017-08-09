@@ -15,7 +15,7 @@ Release Notes provide important information about changes, fixes, and known issu
 The following Release Notes are available:
 
 
-
+*	[magento-cloud-configuration release 101.8.x Release Notes]({{ page.baseurl }}cloud/release-notes/CloudReleaseNotes101.8.html)
 *	[magento-cloud-configuration release 101.7.x Release Notes]({{ page.baseurl }}cloud/release-notes/CloudReleaseNotes101.7.html)
 *	[magento-cloud-configuration release 101.6.x Release Notes]({{ page.baseurl }}cloud/release-notes/CloudReleaseNotes101.6.html)
 *	[magento-cloud-configuration release 101.5.x Release Notes]({{ page.baseurl }}cloud/release-notes/CloudReleaseNotes101.5.html)
