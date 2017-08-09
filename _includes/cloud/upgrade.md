@@ -2,17 +2,13 @@
 
 This information details how to upgrade Magento Commerce (Cloud) from any version after 2.0.4. If you're currently using version 2.0.4, see [Upgrade from version 2.0.4](#cloud-upgrade-204).
 
-When you upgrade Magento Commerce (Cloud), you also upgrade with patches and available hotfixes as part of the `magento-cloud-metapackage`.
+When you upgrade Magento Commerce (Cloud), you also upgrade with patches and available hotfixes as part of the `magento-cloud-metapackage`. Make sure you have `auth.json` in your project root folder if there isn’t one already. 
 
 For more information on Composer, see [Composer in Cloud]({{ page.baseurl }}cloud/reference/cloud-composer.html).
 
 <div class="bs-callout bs-callout-warning" markdown="1">
 Always upgrade your local system first, then your [integration system]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int) (that is, the remote Cloud server). Resolve any issues before upgrading either [staging]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-stage) or [production]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-prod).
 </div>
-
-## Prerequisite: create `auth.json` (if necessary)
-
-{% include cloud/auth-json.md %}
 
 ## Upgrade to the latest version
 We recommend that you first back up the database of the system you are upgrading. Use the following steps to back up your integration, staging, and production systems.
