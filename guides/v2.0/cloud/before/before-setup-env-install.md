@@ -5,8 +5,6 @@ subgroup: 080_setup
 title: Install Magento
 menu_title: Install Magento
 menu_order: 50
-level3_menu_node: level3child
-level3_subgroup: workspace
 version: 2.0
 github_link: cloud/before/before-setup-env-install.md
 redirect_from:
@@ -142,9 +140,7 @@ With these steps completed, you should have:
 * Magento authentication keys set up and configured in the project and local
 
 ## Next steps
-We recommend fully deploying this base Magento template across to Staging and Production. For details, see [Deployment workflow]({{ page.baseurl }}cloud/reference/discover-deploy.html). You should deploy prior to branching and developing to get an understanding of deploying Magento Commerce.
+We strongly recommend fully deploying this base Magento template `master` branch without any code or configuration changes to Staging and Production.
 
-When you are ready, start developing in your initial code branch. You can have up to 8 active branches including the Master.
-
-#### Related topics
-[Deployment workflow]({{ page.baseurl }}cloud/reference/discover-deploy.html)
+#### Next step:
+[First time deployment]({{ page.baseurl }}cloud/access-acct/first-time-deploy.html)

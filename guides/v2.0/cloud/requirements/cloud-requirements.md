@@ -88,8 +88,9 @@ The [Account Owner]({{page.baseurl}}cloud/before/before-project-owner.html) crea
 
 To work with and deploy stores, you need the following:
 
-*	[An account]({{ page.baseurl }}cloud/before/before-project-owner.html#cloud-first-acct) already created or created via an invitation
-*	A Magento [authentication key]({{page.baseurl}}cloud/before/before-project-owner.html#cloud-owner-keys) for each user who contributes to the project
+*	[Magento Commerce (Cloud) account]({{ page.baseurl }}cloud/before/before-project-owner.html#cloud-first-acct) already created or created via an invitation
+*	[Project invitiation]({{ page.baseurl }}cloud/before/before-project-owner.html#cloud-first-acct##cloud-owner-admins) for contributing developers from the Account Owner or a super user
+*	Magento [authentication key]({{page.baseurl}}cloud/before/before-project-owner.html#cloud-owner-keys) for each user who contributes to the project
 
 Your Magento Commerce account must *authenticate* using any of the following:
 

@@ -10,12 +10,14 @@ version: 2.0
 github_link: cloud/reference/cloud-composer.md
 ---
 
-We use [Composer](https://getcomposer.org/doc){:target="_blank"} to manage dependencies and upgrades in Magento Commerce and provide context about the included packages, what the packages do, and how they fit together.
+We use [Composer](https://getcomposer.org/doc){:target="_blank"} to manage dependencies and upgrades in Magento Commerce and provide context about the included packages, what the packages do, and how they fit together. We highly recommend experience with Composer.
+
+The following sections detail the specifics of Magento Commerce composer packages, how they work, and what they do within the code base.
 
 ## Your project's Composer files
 Your project root directory contains `composer.json` and `composer.lock`.
 
-You edit `composer.json` to specify dependencies for your Magento Commerce project. (For example, when you install an extension, you update `composer.json`. you can either edit it manually or the [Component Manager]({{ page.baseurl }}comp-mgr/bk-compman-upgrade-guide.html) can do it for you.)
+You edit `composer.json` to specify dependencies for your Magento Commerce project. For example, when you install an extension, you update `composer.json` to add the extension to the list. you can either edit it manually or the [Component Manager]({{ page.baseurl }}comp-mgr/bk-compman-upgrade-guide.html) can do it for you.
 
 `composer.lock` stores a set of exact version dependencies that satisfy all of the version constraints of every requirement for every package in the dependency tree of the project.
 
@@ -27,11 +29,11 @@ The following commands determine what's in `composer.lock`:
 
 *	`composer install` reads `composer.lock`, not `composer.json`, to download dependencies.
 
-	Therefore, you must keep an up-to-date copy of `composer.lock` in your Cloud Git repository.
+	You must keep an up-to-date copy of `composer.lock` in your Cloud Git repository.
 
 The workflow is as follows:
 
-1.	Make a change to `composer.json` (for example, install an extension).
+1.	Make a change to `composer.json`. For example, edit this file when installing an extension.
 2.	Run `composer update`
 3.	Add `composer.lock` to or update it in your Cloud Git repository.
 4.	Push the changes to the Cloud environment, which causes Cloud to build and deploy the environment.
@@ -81,7 +83,7 @@ One way in which Magento Commerce deploys differently than other Magento install
 
 Therefore, when upgrading to a new Cloud version or adding, removing, or changing any packages that rely on file marshaling, you must:
 
-1.	Run `composer update` locally
+1.	Run `composer update` locally.
 
 	The new version of the base packages are marshaled out into the Cloud project root directory, which means files are added, removed, and changed.
 

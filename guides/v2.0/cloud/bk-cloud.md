@@ -2,9 +2,9 @@
 layout: default
 group: cloud
 subgroup: 010_welcome
-title: Welcome to Magento Commerce (Cloud) (Cloud)
+title: Welcome to Magento Commerce (Cloud)
 landing-page: Cloud
-menu_title: Welcome to Magento Commerce (Cloud) (Cloud)
+menu_title: Welcome to Magento Commerce (Cloud)
 menu_order: 10
 menu_node: parent
 version: 2.0

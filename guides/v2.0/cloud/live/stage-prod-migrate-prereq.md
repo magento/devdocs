@@ -3,7 +3,7 @@ layout: default
 group: cloud
 subgroup: 160_deploy
 title: Prepare to deploy to Staging and Production
-menu_title: Prepare to deploy - Staging and Production
+menu_title: Prepare to deploy to Staging and Production
 menu_order: 40
 menu_node:
 version: 2.0
@@ -13,7 +13,7 @@ github_link: cloud/live/stage-prod-migrate-prereq.md
 When you are ready to deploy your store, you need to complete deployment and testing in Staging first, then deploy to Production. The Staging environment provides a near-production environment with full services (including Fastly, New Relic, and Blackfire), database, web server, and more.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-Make sure to complete all development and merging of your code to the `master	` branch in the Integration environment. Only the `master` branch is deployed to Staging then Production.
+Make sure to complete all development and merging of your code to the `master` branch in the Integration environment. Only the `master` branch is deployed to Staging then Production.
 </div>
 
 Complete the following tasks before you migrate your database and deploy code to Staging or Production:
