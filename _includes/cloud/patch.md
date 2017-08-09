@@ -26,6 +26,8 @@ There are two types of patches:
 Always test a patch your local system. When complete, push the local Git branch to deploy your [Integration environment]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int) environment. Resolve any issues before you deploy to [Staging]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-stage) or [Production]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-prod).
 </div>
 
+For more information on Composer, see [Composer in Cloud]({{ page.baseurl }}cloud/reference/cloud-composer.html).
+
 ## Upgrade a Magento Commerce patch {#upgrade-patch}
 When you perform a Magento Commerce upgrade, you automatically upgrade with patches and hotfixes through the `composer update` command.
 
