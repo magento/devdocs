@@ -13,9 +13,9 @@ github_link: release-notes/release-notes-2-2-prerelease1-CE.md
 *	TOC
 {:toc}
 
-*Release date: July 28, 2017*
+*Release date: August 4, 2017*
 
-*Notes updated: July 28, 2017*
+*Notes updated: August 7, 2017*
 
 
 Magento Community Edition 2.2.0 Release Candidate includes significant new features as well as many bug fixes.
@@ -64,6 +64,10 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 <!--- 67020 -->* Magento now handles the `catalog_product_entity_media_gallery_value.position`  value the same whether you’ve installed or upgraded the product. Previously, these values differed depending upon whether you upgraded or freshly installed your Magento code. (RC1.5)
 
 
+<!--- 70869 -->* Magento no longer displays console errors after CSS merging and minification is enabled. Previously, when CSS merging and minification was enabled, the storefront was not displayed as expected, and the `styles-l.min.css` and `print.min.css` files could not be found. (RC1.8)
+
+<!--- 68969 -->* The contents of the `sales_sequence_meta` table is the same whether you install or upgrade Magento. (RC1.8)
+
 
 
 
@@ -78,6 +82,8 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 <!--- 62637 -->* You can now successfully set the **Enable Product** attribute to **no**. 
 
 <!--- 70790 -->* You can now remove custom options from simple products. Previously, when you tried to remove a custom option from a product, Magento did not remove the options, and displayed an error message. (RC1.6) 
+
+
 
 ### Checkout
 
@@ -120,15 +126,12 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 
 <!--- 67619 -->* The Customer Segment page no longer shows non-matching customers when a customer logs in and you refresh the Customer Segment page. 
 
-<!--- 59801 -->* We’ve improved the performance of the Tax Rules form in installations containing many tax rates. 
 
 <!--- 69750 -->* Magento now successfully completes checkout when a custom address attribute is added. Previously, an error occurred during checkout when the user added a required custom address attribute. 
 
 
-<!--- 57753 -->* You can now successfully create product attributes using the REST API. Previously, although the product was created, the attribute was not. [GitHub-6213](https://github.com/magento/magento2/issues/6213) (RC1.5)
 
 
-<!--- 70406 -->* We’ve improved the performance of the CatalogPermission indexer. Previously, Magento performance degraded significantly during the indexing of large numbers of customer groups.(RC1.5)
 
 <!--- 69521 -->* Magento now shows customer attributes in the Admin panel (as expected)  when the **Show on Storefront** option is set to **No**. Previously, when this setting was set to **No**, the attribute value would not appear in the customer account  section of the Admin panel customer account, but did appear in the orders section. (RC1.5)
 
@@ -148,11 +151,30 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 <!--- 64901 -->* Magento now supports new top level domains for email addresses. [GitHub-4547](https://github.com/magento/magento2/issues/4547) (RC1.6)
 
 
-
-
 <!--- 67296 -->* String localizations now works as expected when  phrases include text wrapped with single quotation marks. (RC1.6)
 
 
+<!--- 70473 -->* Magento now displays company information in the Account Information section of the Invoice, CreditMemo and Shipment pages. (RC1.8)
+
+
+
+
+<!--- 70683 -->* Magento now displays newly registered customers in the Admin customer list as expected. (RC1.8)
+
+<!--- 70741 -->* You can now successfully add a related product to a configurable product. Previously, Magento displayed an error when you tried to edit a configurable product by adding a related, simple product.  (RC1.8)
+
+
+
+### Performance
+
+<!--- 70406 -->* We’ve improved the performance of the CatalogPermission indexer. Previously, Magento performance degraded significantly during the indexing of large numbers of customer groups.(RC1.5)
+
+
+### REST API
+
+<!--- 70743 -->* You can now use a REST request  to retrieve a shopping cart that contained a product with custom options.  Previously,  you could not use a REST request  to retrieve a shopping cart that contained a product with custom options. (RC1.8)
+
+<!--- 57753 -->* You can now successfully create product attributes using the REST API. Previously, although the product was created, the attribute was not. [GitHub-6213](https://github.com/magento/magento2/issues/6213) (RC1.5)
 
 
 
@@ -165,6 +187,20 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 <!--- 59477 -->* Attribute weighting now works correctly for the MySQL adapter. [GitHub-9020](https://github.com/magento/magento2/issues/9020) (RC1.5)
 
 <!--- 65245 -->* Magento now sends the `parent_id` of a deleted configurable product variation to ElasticSearch. Previously, Magento didn’t send this information  to the ElasticSearch server  if  the simple product associated with a configurable product were changed. (RC1.5)
+
+
+### Shipping
+
+<!--- 70844 -->* The DHL provider option is now available. (RC1.8)
+
+
+
+### Tax rules
+
+<!--- 70641 -->* You can now create a tax rule when running Magento in Mozilla Firefox and Internet Explorer. Previously, you could not select a tax rate, and Magento displayed an error. (RC1.8)
+
+<!--- 59801 -->* We’ve improved the performance of the Tax Rules form in installations containing many tax rates. 
+
 
 
 ### URL rewrites
