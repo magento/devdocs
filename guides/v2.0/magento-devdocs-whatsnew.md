@@ -13,7 +13,33 @@ github_link: magento-devdocs-whatsnew.md
 
 This page contains recent changes that we think you'd like to know about. We exclude from this list proofreading, spelling checks, and all minor updates.
 
-## June 2017
+
+## August 2017
+
+Description  | Versions applied to  | New or Updated | Date 
+-------------|--------------|----------------------|--------
+Added a [new topic](http://devdocs.magento.com/guides/v2.1/install-gde/prereq/nginx.html) describing how to install Magento 2 on an nginx web server (Ubuntu 16 and CentOS 7).|2.x|New|Aug 08
+Added backward incompatible changes for 2.2.0 RC1.8 in [Open Source](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ce_changes.html) and [Commerce](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ee_changes.html)|2.2.x|Updated|Aug 07
+[Migrating data to Cloud: add triggers to DB dump command](http://devdocs.magento.com/guides/v2.2/cloud/live/stage-prod-migrate.html#cloud-live-migrate-db)|2.x|Updated|Aug 03
+
+{% collapsibleh2 July 2017 %}
+
+Description  | Versions applied to  | New or Updated | Date 
+-------------|--------------|----------------------|--------
+[Added generated BICs for delta RC1.6-RC1.5](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ce_changes.html)|2.2.x|Updated|Jul 31
+[Migration Best Practices: use a copy of your DB when testing migration](http://devdocs.magento.com/guides/v2.1/migration/migration-overview-practices.html)<br/>[Migration Plan: recommendations on system upgrade, dry run, cron jobs, changes in migrated data](http://devdocs.magento.com/guides/v2.1/migration/migration-plan.html)<br/>[Data Migration Tool Preconditions: avoid creating new entities in Magento 2 before migration](http://devdocs.magento.com/guides/v2.1/migration/migration-tool-preconditions.html)|2.x|Updated|Jul 28
+[Added generated BICs for delta RC1.5-RC1.4](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ce_changes.html)|2.2.x|Updated|Jul 24
+[Technical Guidelines 2.2](http://devdocs.magento.com/guides/v2.1/coding-standards/technical-guidelines/technical-guidelines.html)|2.2.x|New|Jul 21
+[Added BICs for delta Magento CE 2.2.0 RC1.4-RC1.3](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ce_changes.html)<br/>[Added BICs for delta Magento EE 2.2.0 RC1.4-RC1.3](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ee_changes.html)|2.2.x|Updated|Jul 17
+[Backward compatible changes for delta Magento 2.2.0 RC1.3 and RC1.2](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ce_changes.html#changes-220rc13)|2.2.x|Updated|Jul 12
+[Fix code example on the video tutorial page]()|2.x|Updated|Jul 10
+[Cron groups: run twice when using the command line]()|2.x|Updated|Jul 07
+[Added tables with BICs for delta 2.2.0-RC1.2 and 2.2.0-RC1.1](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ce_changes.html)|2.2.x|Updated|Jul 07
+[Added known issues to Jasmine tests](http://devdocs.magento.com/guides/v2.1/test/js/jasmine.html#known-issues-and-solutions)|2.x|Updated|Jul 05
+[Added BIC about moved directories]()|2.2.x|Updated|Jul 03
+{% endcollapsibleh2 %}
+
+{% collapsibleh2 June 2017 %}
 
 ### Release Notes
 
@@ -180,6 +206,7 @@ This page contains recent changes that we think you'd like to know about. We exc
 | [Clear directories during development](http://devdocs.magento.com/guides/v2.2/howdoi/php/php_clear-dirs.html){:target="_blank"} | 2.2 |  New | June 23  |
 | [Add custom fields that influence other Checkout fields](http://devdocs.magento.com/guides/v2.1/howdoi/checkout/checkout_custom_checkbox.html){:target="_blank"} | 2.0, 2.1  |  New | June 8  |
 | [JavaScript unit testing with Jasmine](http://devdocs.magento.com/guides/v2.2/test/js/jasmine.html){:target="_blank"} | 2.2 |  New | June 23  |
+{% endcollapsibleh2 %}
 
 {% collapsibleh2 May 2017 %}
 | Description  | Versions applied to  | New or Updated | Date |
