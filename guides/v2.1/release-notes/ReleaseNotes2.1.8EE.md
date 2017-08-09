@@ -158,8 +158,6 @@ layout for the  "Shipping and Tracking" block did not work properly.
 
 <!--- 58855 -->* The Cart Price rule nows affects coupon life as expected. Previously, coupons did not persist longer than the current date if they did not have a designated end-date.  
 
-. 
-
 <!--- 63814 -->* SalesRule now applies to auto-generated coupon codes as expected. 
 
 <!--- 60777 -->* Static file generation is no longer affected by a race condition that affected merging CSS files. Previously, this race condition interfered with the proper generation of the product front end.  
@@ -210,7 +208,7 @@ layout for the  "Shipping and Tracking" block did not work properly.
 
 <!--- 69023 -->* Wishlists now display the correct product price.  [GitHub-6866](https://github.com/magento/magento2/issues/6866) *Fix submitted by community member <a href="https://github.com/hostep" target="_blank">Pieter Hoste</a> in pull request <a href="https://github.com/magento/magento2/pull/9571" target="_blank">9571</a>.*
 
-<!--- 69541 -->* We’ve fixed a JavaScript error on Product page that prevented  Magento from updating color swatches  or updating product prices correctly. [GitHub-7959](https://github.com/magento/magento2/issues/7959) *Fix submitted by community member <a href="https://github.com/dreamworkers" target="_blank">Abhisek Pandev</a> in pull request <a href="https://github.com/magento/magento2/pull/7959" target="_blank">7959</a>.*
+<!--- 69541 -->* We’ve fixed a JavaScript error on Product page that prevented  Magento from updating color swatches  or updating product prices correctly. [GitHub-7959](https://github.com/magento/magento2/issues/7959) *Fix submitted by community member <a href="https://github.com/dreamworkers" target="_blank">Abhisek Pandey</a> in pull request <a href="https://github.com/magento/magento2/pull/7959" target="_blank">7959</a>.*
 
 <!--- 69019 -->* We resolved an issue where  interface constructors broke Magento compilation.   [GitHub-8607](https://github.com/magento/magento2/issues/8607)  *Fix submitted by community member <a href="https://github.com/LoganayakiK" target="_blank">@LoganayakiK</a> in pull request <a href="https://github.com/magento/magento2/pull/9524" target="_blank">9524</a>.*
 
@@ -340,7 +338,7 @@ layout for the  "Shipping and Tracking" block did not work properly.
 <!--- 64297 -->* The website column in Customer Segment report now contains correct data. Previously, this column was blank in the **Reports > Customer > Segments** report. 
 
 
-<!--- 68938 -->* You can now successfully export the Low Stock report.  [GitHub-9428](https://github.com/magento/magento2/issues/9428)  *Fix submitted by community member <a href="https://github.com/mikebox" target="_blank">Jayakanth Rajan</a> in pull request <a href="https://github.com/magento/magento2/pull/9487" target="_blank">9487</a>.
+<!--- 68938 -->* You can now successfully export the Low Stock report.  [GitHub-9428](https://github.com/magento/magento2/issues/9428)  *Fix submitted by community member <a href="https://github.com/mikebox" target="_blank">Jayakanth Rajan</a> in pull request <a href="https://github.com/magento/magento2/pull/9487" target="_blank">9487</a>.*
 
 <!--- 67523 -->* We've changed the severity of some errors from critical to info in `var/log/system.log`.  [GitHub-5627](https://github.com/magento/magento2/issues/5627)  *Fix submitted by community member <a href="https://github.com/malachy-mcconnnell" target="_blank">@malachy-mcconnnell</a>.*
 
@@ -586,7 +584,7 @@ The following table identifies contributions from our community members. This ta
 <tr>
     <td><a href="https://github.com/magento/magento2/pull/9776" target="_blank">9776</a></td>
     <td><a href="https://github.com/magento/magento2/issues/7959" target="_blank"> (GITHUB-7959)</a></td>
-    <td><a href="https://github.com/dreamworkers" target="_blank">Abhisek Pandev</a></td>
+    <td><a href="https://github.com/dreamworkers" target="_blank">Abhisek Pandey</a></td>
   </tr>
 
 <tr>
