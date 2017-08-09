@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Snapshots and Backup management | Magento 2 Developer Documentation</title>
+	<title>Set up PayPal payment methods | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.1/cloud/project/project-webint-snap.html">
+	<link rel="canonical" href="//guides/v2.1/cloud/live/paypal-onboarding.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -69,11 +69,11 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/cloud/project/project-webint-snap.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/cloud/live/paypal-onboarding.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/cloud/project/project-webint-snap.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/cloud/live/paypal-onboarding.html">Magento 2.1</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.2/cloud/project/project-webint-snap.html">Magento 2.2 RC</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.2/cloud/live/paypal-onboarding.html">Magento 2.2 RC</a></li>
 	
   </ul>
 
@@ -771,7 +771,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.1/cloud/project/project-webint-snap.html">Snapshots and Backup management</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/cloud/project/project-webint-snap.html">Snapshots and Backup management</a></li>
 
 									
 
@@ -1194,7 +1194,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/cloud/live/paypal-onboarding.html">Set up PayPal</a></li>
+									<li class="level-2  active "><a href="/guides/v2.1/cloud/live/paypal-onboarding.html">Set up PayPal</a></li>
 
 									
 
@@ -1697,7 +1697,7 @@
 
           
 
-          <span property="name">Snapshots and Backup management</span>
+          <span property="name">Set up PayPal payment methods</span>
 
         
 
@@ -1720,7 +1720,7 @@
 
 	
 
-	<h1 class="page-heading">Snapshots and Backup management</h1>
+	<h1 class="page-heading">Set up PayPal payment methods</h1>
 
   
 
@@ -1728,111 +1728,79 @@
 </section>
 
 
-			<p>You can back up and restore an environment at any time using a <em>snapshot</em>. Creating a snapshot backs up the environment and because an environment is deployed as a read-only file system, restoring a snapshot is very fast.</p>
+			<p>Magento ECE provides an on-boarding tool to configure PayPal Express Checkout accounts directly through the Magento Admin panel. This tool is available for ECE 2.1.8 and later. To better support going live and testing PayPal payment methods, you can enable and configure your PayPal Express Checkout account for sandbox or production accounts.</p>
 
-<p>A <em>snapshot</em> is a complete backup of an environment. It includes all
-persistent data from all running services (for example, your MySQL database, Redis, and so on) and any files stored on the mounted volumes.</p>
-
-<div class="bs-callout bs-callout-warning">
-  <p>If you want to rollback to previous code or remove added extensions in an environment, restoring a snapshot is not the recommended method. See <a href="#rollback-code">Rollbacks to remove code</a>.</p>
-</div>
-
-<p>You can <em>restore</em> a snapshot up to 14 days after the snapshot was created.</p>
-
-<p>We provide two methods for creating and managing snapshots:</p>
+<p>You can configure either the sandbox or production account in every environment:</p>
 
 <ul>
-  <li>Through the Magento Web Interface</li>
-  <li>Through Magento CLI commands</li>
+  <li>For Integration and Staging environments, we recommend setting Sandbox credentials.</li>
+  <li>For your Production environment, you can set Sandbox credentials for initial testing, then replace with live production credentials for a launched store.</li>
 </ul>
 
-<h2 id="create-snapshot">Create a snapshot</h2>
-<p>To create an environment snapshot using the Magento Web Interface:</p>
+<h2 id="accounts">PayPal account</h2>
 
-<ol>
-  <li><a href="/guides/v2.1/cloud/project/project-webint-basic.html#project-login">Log in to your project</a>.</li>
-  <li>In the left pane, click the name of the environment to back up.</li>
-  <li>In the top pane, click <img src="/common/images/cloud_snapshots.png" alt="Take a snapshot of an environment" width="30px" /> (snapshots).</li>
-  <li>You are required to confirm the action.</li>
-</ol>
+<p>While we recommend having a PayPal merchant account prepared and configured, you can create a new account or upgrade a personal account through the Admin panel.</p>
 
-<p>To create an environment snapshot using the Magento CLI:</p>
+<p>PayPal on-boarding supports connecting with the following accounts:</p>
 
-<ol>
-  <li>Make sure you’re in the directory of the project and environment you want to snapshot.</li>
-  <li>
-    <p>Use the following command to create the snapshot:</p>
-
-    <pre><code> magento-cloud snapshot:create
-</code></pre>
-
-    <p>The following modifiers further specify how to create the snapshot:</p>
-
-    <pre><code> -p, --project=PROJECT          The project ID
- -e, --environment=ENVIRONMENT  The environment ID
-</code></pre>
-
-    <p>For a full list of options, enter <code>magento-cloud snapshot:create --help</code>.</p>
-  </li>
-  <li>Use the <code>magento-cloud snapshots</code> command so see the most recent snapshots. For a full list, enter <code>magento-cloud snapshot:list</code>.</li>
-</ol>
-
-<h2 id="restore-snapshot">Restore a snapshot</h2>
-<p>To restore an environment’s snapshot using the Magento Web Interface:</p>
-
-<ol>
-  <li><a href="/guides/v2.1/cloud/project/project-webint-basic.html#project-login">Log in to your project</a>.</li>
-  <li>In the left pane, click the name of the environment to restore.</li>
-  <li>
-    <p>In the environment’s history, click the <strong>restore</strong> link next to the snapshot to restore.</p>
-
-    <p>The following figure shows an example.</p>
-
-    <p><img src="/common/images/cloud_snapshot-restore.png" alt="Take a snapshot of an environment" /></p>
-  </li>
-  <li>You are required to confirm the action.</li>
-</ol>
-
-<p>To restore an environment snapshot using the Magento CLI:</p>
-
-<ol>
-  <li>Make sure you’re in the directory of the project and environment you want to snapshot.</li>
-  <li>
-    <p>List all available snapshots to copy the ID using this command:</p>
-
-    <pre><code> magento-cloud snapshot:list
-</code></pre>
-  </li>
-  <li>
-    <p>Use the following command to restore the snapshot using the ID you copied:</p>
-
-    <pre><code>     magento-cloud snapshot:restore &lt;id&gt;
-</code></pre>
-
-    <p>For example: <code>magento-cloud snapshot:restore 92c9a4b2aa75422efb3d</code></p>
-
-    <p>The following modifiers further specify how to restore the snapshot:</p>
-
-    <pre><code> -p, --project=PROJECT          The project ID
- -e, --environment=ENVIRONMENT  The environment ID
-</code></pre>
-
-    <p>For a full list of options, enter <code>magento-cloud snapshot:restore --help</code>.</p>
-  </li>
-</ol>
-
-<h2 id="rollback-code">Rollbacks to remove code</h2>
-<p>We recommend creating a snapshot of the environment and a backup of the database prior to deployments.</p>
-
-<p>If you need to restore a snapshot specifically to remove new code and added extensions, the process can be complicated depending on the amount of changes and when you rollback. Some rollbacks may require database changes.</p>
-
-<p>Specifically for code, you should investigate <a href="https://git-scm.com/docs/git-revert">reverting code</a> changes from your branch before redeploying. If not, every deploy will push the master branch (code and extensions) again to the target environment. For details, see the <a href="/guides/v2.1/cloud/reference/discover-deploy.html">Deployment Process</a>.</p>
-
-<h4 id="related-topics">Related topics</h4>
 <ul>
-  <li><a href="/guides/v2.1/cloud/project/project-webint-basic.html">Basic project information</a></li>
-  <li><a href="/guides/v2.1/cloud/project/project-webint-branch.html">Manage environments (branches)</a></li>
-  <li><a href="/guides/v2.1/cloud/project/project-start.html">Get started with a project</a></li>
+  <li>PayPal Business account</li>
+  <li>PayPal personal account, converting to a Business account. If you have an existing personal PayPal account, you can login with those credentials and upgrade this account to a business account as you complete the sync.</li>
+</ul>
+
+<p>If you do not have an existing PayPal account, you have an option to create a new one. Enter an e-mail address for a new account. If a matching PayPal account is not found, you will be prompted to create a new PayPal Business account. Or you can create an account directly through <a href="https://www.paypal.com/us/webapps/mpp/account-selection">PayPal</a>.</p>
+
+<p>Please note the <a href="#limitations">PayPal account limitations</a> for further information.</p>
+
+<p><img src="/common/images/cloud_paypal-access.png" alt="Log in to PayPal" width="336px" /></p>
+
+<h3 id="limitations">PayPal limitations</h3>
+
+<p>PayPal supports connecting PayPal Express Checkout for countries across the globe except for the following limitations:</p>
+
+<ul>
+  <li>India, and Japan (future PayPal updates may support these accounts)</li>
+  <li>Israel</li>
+</ul>
+
+<p>For Brazil, you must have an existing PayPal business account to connect. You cannot convert an existing personal PayPal account for Brazil during this process. If you need an account, please create a new business PayPal account through <a href="https://www.paypal.com/us/webapps/mpp/account-selection">their website</a>.</p>
+
+<h2 id="configure-paypal-express-checkout">Configure PayPal Express Checkout</h2>
+
+<p>To configure PayPal Express Checkout:</p>
+
+<ol>
+  <li>Access the Admin console for the environment you need to configure.</li>
+  <li>In the left-side navigation, select <strong>Stores</strong> &gt; <strong>Configuration</strong>, then select <strong>Sales</strong> &gt; <strong>Payment Methods</strong>.</li>
+  <li>For PayPal, select <strong>Configure</strong>. Configuration fields display in expandable sections for Express Checkout, Adveritise PayPal Credit, and Basic and Advanced settings.</li>
+  <li>
+    <p>Connect your PayPal account. Until the account is connected, the options to enable are disabled. For details on available and supported accounts to connect and limitations, see <a href="#accounts">PayPal account</a>.</p>
+
+    <ul>
+      <li>To connect your PayPal live account, click Connect with PayPal and follow the prompts. Any customer purchases using a live PayPal complete and actively charge customers in a live store.</li>
+      <li>To connect your sandbox account for testing, click Sandbox Credentials and follow the prompts. Any customer purchases using a Sandbox PayPal complete without actively charging customers.</li>
+    </ul>
+  </li>
+  <li>
+    <p>Configure the Express Checkout settings to authenticate and use the PayPal API:</p>
+
+    <ul>
+      <li><strong>Email Associated with PayPal Merchant Account</strong> (Optional) enter the email address associated with your PayPal merchant account. This email is case-sensitive.</li>
+      <li><strong>API Authentication Methods</strong> as API Signature or API Certificate.</li>
+      <li>API Username, Password, and Signature captured from your PayPal account.</li>
+      <li><strong>Sandbox Mode</strong> select Yes or No to indicate if the credentials you entered are for sandbox. If you entered production credentials, select No.</li>
+      <li><strong>API Uses Proxy</strong> select Yes or No to set if the system uses a proxy server to establish a connection between Magento and the PayPal payment system. If Yes, enter the proxy host and port.</li>
+    </ul>
+  </li>
+  <li>For detailed information and steps for configuring your account, see <a href="http://docs.magento.com/m2/ce/user_guide/payment/paypal-express-checkout.html">PayPal Express Checkout</a> starting with Step 2 Complete the Required Settings.</li>
+</ol>
+
+<p>With the account configured and authenticated, you can enable and disable PayPal payment options under Required PayPal Settings:</p>
+
+<ul>
+  <li><strong>Enable this Solution</strong> displays the PayPal payment method to customers through the website.</li>
+  <li><strong>Enable In-Context Checkout Experience</strong></li>
+  <li><strong>Enable PayPal Credit</strong> allows customers to PayPal credit financing without additional costs. PayPal pays the order up-front, handling all repayments for the credit directly with the customer.</li>
 </ul>
 
 		</div>
@@ -1844,14 +1812,14 @@ persistent data from all running services (for example, your MySQL database, Red
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/project/project-webint-snap.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/cloud/live/paypal-onboarding.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
   
 
   <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/cloud/project/project-webint-snap.html" target="_blank">Give us feedback</a>
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/cloud/live/paypal-onboarding.html" target="_blank">Give us feedback</a>
   </div>
 
 </div>
