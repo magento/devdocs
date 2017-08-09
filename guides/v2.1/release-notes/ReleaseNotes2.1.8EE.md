@@ -70,10 +70,10 @@ This release includes both improvements we've made internally and those submitte
 
 <!--- 61797 -->* When you delete an image in Admin, Magento no longer deletes it on the server. Previously, Magento deleted it from the server as well, which caused errors for other products (example error message: `Cannot gather stats! Warning!stat(): stat failed for`). 
 
-<!--- 61729 -->* Magento now displays the price for a product for the store view level only. Previously, the category listing page showed the  default store view price as well as the  prices from other store views. 
+<!--- 61729 -->* Magento now displays  the price for a product for the store view level only. Previously, the category listing page showed the  default store view price as well as the  prices from other store views. 
 
 
-<!--- 69386 -->* Magento previously displayed a 404 error message instead of a product image when the product_image_white_borders parameter wasn't enabled. The product image is now displayed correctly. 
+<!--- 69386 -->* Magento previously displayed a 404 error message instead of a product image when the `product_image_white_borders` parameter wasn't enabled. The product image is now displayed correctly. 
 
 <!--- 63656 -->* The product attribute `category_ids` can have only **Global** scope. Previously, you could change the scope value of `category_ids` to **Store**. 
 
@@ -95,11 +95,11 @@ This release includes both improvements we've made internally and those submitte
 <!--- 57144 -->* You can now create a blank attribute option using the drop-down input option on products that do not require an attribute. 
 [GitHub-3545](https://github.com/magento/magento2/issues/3545), [GitHub-5485](https://github.com/magento/magento2/issues/5485), [GitHub-4910](https://github.com/magento/magento2/issues/4910)
 
-<!--- 69151 -->* Product link types are no longer hardcoded. *Fix submitted by community member <a href="https://github.com/kassner" target="_blank">@kassner</a> in pull request <a href="https://github.com/magento/magento2/pull/9601" target="_blank">9601</a>.*
+<!--- 69151 -->* Product link types are no longer hardcoded. *Fix submitted by community member <a href="https://github.com/kassner" target="_blank">Rafael Kassner</a> in pull request <a href="https://github.com/magento/magento2/pull/9601" target="_blank">9601</a>.*
 
 <!--- 59690 -->* Magento now renders images as expected in the product description area. Previously, Magento did not render images in this area, and would display a broken link.  [GitHub-6138](https://github.com/magento/magento2/issues/6138)
 
-<!--- 69238 -->* Magento now preserves image transparency when resizing images. *Fix submitted by community member <a href="https://github.com/kassner" target="_blank">@kassner</a> in pull request <a href="https://github.com/magento/magento2/pull/9662" target="_blank">9662</a>.*
+<!--- 69238 -->* Magento now preserves image transparency when resizing images. *Fix submitted by community member <a href="https://github.com/kassner" target="_blank">Rafael Kassner</a> in pull request <a href="https://github.com/magento/magento2/pull/9662" target="_blank">9662</a>.*
 
 <!--- 69665 -->* The value of `item_zone` on the product detail page now remains set correctly when you change products via the related/upsell products list. [GitHub-9562](https://github.com/magento/magento2/issues/9562), [GitHub-6746](https://github.com/magento/magento2/issues/6746)   *Fix submitted by community member <a href="https://github.com/hostep" target="_blank">@Pieter Hoste</a>.*
 
@@ -146,11 +146,13 @@ This release includes both improvements we've made internally and those submitte
  
 <!--- 64238 -->* Reindexing no longer fails due to mmap memory allocation issues when reindexing many (1,000,000) customers. Previously, when initiating reindexing through **System > Index management**, reindexing failed. 
 
+<!--- 57291 -->* Magento now successfully uploads the thumbnail images for email logos that are used in transactional emails. Previously, these thumbnail images were not displayed.
+
+
 <!--- 57615 -->* Visual Merchandiser `Match products by rule` now works as expected. 
 
 
-<!--- 60542 -->* The **Print Shipping Label** link now displays on the product front end. Previously, the 
-layout for the  "Shipping and Tracking" block did not work properly.
+<!--- 60542 -->* The **Print Shipping Label** link now displays on the product front end. Previously, the layout for the "Shipping and Tracking" block did not work properly. 
 
 <!--- 60529 -->* Magento now displays Up-sells on the Product page. 
 
@@ -192,13 +194,12 @@ layout for the  "Shipping and Tracking" block did not work properly.
 
 <!--- 60538 -->* We fixed an issue where cache-misses sometimes occurred when Fastly cache was implemented.  Previously, the header information included in the response sometimes prevented the caching of this page. To minimize this potential problem, Magento now does not include  header empty of real content  in the response. 
 
-<!--- 60538 -->* Resolved issue with selecting widgets in TinyMCE. [GitHub-9655](https://github.com/magento/magento2/issues/9655), [GitHub-9518](https://github.com/magento/magento2/issues/9518)  *Fix submitted by community member <a href="https://github.com/hostep" target="_blank">Pieter Hoste</a>.*
+<!--- 69152 -->* Resolved issue with selecting widgets in TinyMCE. [GitHub-9655](https://github.com/magento/magento2/issues/9655), [GitHub-9518](https://github.com/magento/magento2/issues/9518)  *Fix submitted by community member <a href="https://github.com/hostep" target="_blank">Pieter Hoste</a> in pull request <a href="https://github.com/magento/magento2/pull/9540" target="_blank">9540</a>.*
 
 <!--- 67614 -->* You can now remove breadcrumbs without removing the page meta title from the category view and product view pages.  Previously, the page meta title is visible only if the breadcrumbs block was defined in XML.  [GitHub-4427](https://github.com/magento/magento2/issues/4427) *Fix submitted by community member  <a href="https://github.com/latenights" target="_blank">@latenights</a> in pull request <a href="https://github.com/magento/magento2/pull/9324" target="_blank">9324</a>.*
 
 <!--- 68903 -->* The WYSIWYG editor now performs more consistently.  [GitHub-4828](https://github.com/magento/magento2/issues/4828), [GitHub-6222](https://github.com/magento/magento2/issues/6222),  [GitHub-6815](https://github.com/magento/magento2/issues/6815)  *Fix submitted by community member <a href="https://github.com/hostep" target="_blank">Pieter Hoste</a> in pull request <a href="https://github.com/magento/magento2/pull/9499" target="_blank">9499</a>.*
 
-<!--- 57291 -->* Magento now successfully uploads the thumbnail images for email logos that are used in transactional emails. Previously, these thumbnail images were not displayed.
 
 
 <!--- 69062 -->* The email logo image function now works as expected.   [GitHub-5352](https://github.com/magento/magento2/issues/5352),  [GitHub-5633](https://github.com/magento/magento2/issues/5633),  [GitHub-5916](https://github.com/magento/magento2/issues/5916) [GitHub-6275](https://github.com/magento/magento2/issues/6275),  [GitHub-9590](https://github.com/magento/magento2/issues/9590)  *Fix submitted by community member  <a href="https://github.com/hostep" target="_blank">Pieter Hoste</a> in pull request <a href="https://github.com/magento/magento2/pull/9590" target="_blank">9590</a>.*
@@ -224,9 +225,8 @@ layout for the  "Shipping and Tracking" block did not work properly.
 
 <!--- 67753 -->* Dynamic dragging-and-dropping of rows now works correctly. *Fix submitted by community member <a href="https://github.com/navarr" target="_blank">Navarr Barnier</a> in pull request <a href="https://github.com/magento/magento2/pull/9376" target="_blank">9376</a>.*
 
-<!--- 69228 -->*  Magento now allows comma-separated X-Forwarded-For headers. This modification ensures that the correct client IP can be returned if the `getRemoteAddress` method gets one via the `alternativeHeaders` variable. (Magento accomplishes this by getting the first IP in the list after detecting for a comma-separated IP list.) *Fix submitted by community member <a href="https://github.com/kassner" target="_blank">@kassner</a> in pull request <a href="https://github.com/magento/magento2/pull/9653" target="_blank">9653</a>.*
 
-<!--- 69236 -->* The Store Configuration page (**Stores > Configuration**) now loads templates for Change Email and for Change Email and Password forms. *Fix submitted by community member <a href="https://github.com/kassner" target="_blank">@kassner</a> in pull request <a href="https://github.com/magento/magento2/pull/9661" target="_blank">9661</a>.*
+<!--- 69236 -->* The Store Configuration page (**Stores > Configuration**) now loads templates for Change Email and for Change Email and Password forms. *Fix submitted by community member <a href="https://github.com/kassner" target="_blank">Rafael Kassner</a> in pull request <a href="https://github.com/magento/magento2/pull/9661" target="_blank">9661</a>.*
 
 <!--- 69234 -->* We've removed a previously published fix that corrected a problem using the TinyMCE editor to select and edit images. [GitHub-9518](https://github.com/magento/magento2/issues/9518) *Fix submitted by community member <a href="https://github.com/hostep" target="_blank">Pieter Hoste</a> in pull request <a href="https://github.com/magento/magento2/pull/9655" target="_blank">9655</a>.*
 
@@ -259,6 +259,7 @@ layout for the  "Shipping and Tracking" block did not work properly.
 
 <!--- 58760 -->* Magento now imports customer data as expected after the data passes the pre-import validation step. Previously, although data passed this validation step, an error would occur during import, and Magento displayed this message: `Invalid data for insert`. [GitHub-4921](https://github.com/magento/magento2/issues/4921), [GitHub-9469](https://github.com/magento/magento2/issues/9469)
 
+<!--- 69228 -->*  Magento now allows comma-separated X-Forwarded-For headers. This modification ensures that the correct client IP can be returned if the `getRemoteAddress` method gets one via the `alternativeHeaders` variable. (Magento accomplishes this by getting the first IP in the list after detecting for a comma-separated IP list.) *Fix submitted by community member <a href="https://github.com/kassner" target="_blank">Rafael Kassner</a>.*
 
 
 
@@ -528,7 +529,7 @@ The following table identifies contributions from our community members. This ta
   <tr>
     <td><a href="https://github.com/magento/magento2/pull/9601" target="_blank">9601</a></td>
     <td>N/A</td>
-    <td><a href="https://github.com/kassner" target="_blank">@kassner</a></td>
+    <td><a href="https://github.com/kassner" target="_blank">Rafael Kassner</a></td>
   </tr>
 
   <tr>
@@ -552,19 +553,19 @@ The following table identifies contributions from our community members. This ta
  <tr>
     <td><a href="https://github.com/magento/magento2/pull/9660" target="_blank">9660</a></td>
     <td>N/A</td>
-    <td><a href="https://github.com/kassner" target="_blank">@kassner</a></td>
+    <td><a href="https://github.com/kassner" target="_blank">Rafael Kassner</a></td>
   </tr>
 
  <tr>
     <td><a href="https://github.com/magento/magento2/pull/9661" target="_blank">9661</a></td>
     <td>N/A</td>
-    <td><a href="https://github.com/kassner" target="_blank">@kassner</a></td>
+    <td><a href="https://github.com/kassner" target="_blank">Rafael Kassner</a></td>
   </tr>
 
  <tr>
     <td><a href="https://github.com/magento/magento2/pull/9662" target="_blank">9662</a></td>
     <td>N/A</td>
-    <td><a href="https://github.com/kassner" target="_blank">@kassner</a></td>
+    <td><a href="https://github.com/kassner" target="_blank">Rafael Kassner</a></td>
   </tr>
 
  <tr>
