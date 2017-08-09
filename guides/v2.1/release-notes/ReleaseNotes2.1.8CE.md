@@ -2,8 +2,8 @@
 layout: default
 group: release-notes
 subgroup: 02_rel-notes
-title: Magento CE 2.1.8 Release Notes
-menu_title: Magento CE 2.1.8 Release Notes
+title: Magento Open Source 2.1.8 Release Notes
+menu_title: Magento Open Source 2.1.8 Release Notes
 menu_order: 160
 level3_menu_node: level3child
 level3_subgroup: ce21-relnotes 
@@ -14,9 +14,9 @@ github_link: release-notes/ReleaseNotes2.1.8CE.md
 {:toc}
 
 
-*Code released: August 8, 2017*
+*Code released: August 9, 2017*
 
-*Page updated: August 8, 2017*
+*Page updated: August 9, 2017*
 
 
 We are pleased to present Magento Open Source (formerly Community Edition) 2.1.8. This release includes important enhancements to your Magento software.

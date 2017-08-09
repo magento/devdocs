@@ -2,8 +2,8 @@
 layout: default
 group: release-notes
 subgroup: 02_rel-notes
-title: Magento EE 2.1.8 Release Notes
-menu_title: Magento EE 2.1.8 Release Notes
+title: Magento Commerce 2.1.8 Release Notes
+menu_title: Magento Commerce 2.1.8 Release Notes
 menu_order: 258
 level3_menu_node: level3child
 level3_subgroup: ee21-relnotes 
@@ -13,9 +13,9 @@ github_link: release-notes/ReleaseNotes2.1.8EE.md
 *	TOC
 {:toc}
 
-*Code released: August 8, 2017*
+*Code released: August 9, 2017*
 
-*Page updated: August 8, 2017*
+*Page updated: August 9, 2017*
 
 We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.1.8. This release includes important enhancements to your Magento software.
 
