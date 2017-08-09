@@ -10,7 +10,7 @@ version: 2.0
 github_link: cloud/reference/cloud-composer.md
 ---
 
-Magento Commerce uses [Composer](https://getcomposer.org/doc){:target="_blank"} to manage dependencies and upgrades in Magento Commerce, and provides context about the packages that comprise Cloud, what the packages do, and how they fit together.
+We use [Composer](https://getcomposer.org/doc){:target="_blank"} to manage dependencies and upgrades in Magento Commerce and provide context about the included packages, what the packages do, and how they fit together.
 
 ## Your project's Composer files
 Your project root directory contains `composer.json` and `composer.lock`.

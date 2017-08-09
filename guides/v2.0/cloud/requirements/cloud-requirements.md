@@ -25,7 +25,7 @@ The following requirements detail technologies, knowledges, accounts, and steps 
 ## Prerequisite technologies and knowledges {#cloud-req-pre}
 The following technologies are requirements for developing and deploying your store code:
 
-*	Experienced with [Git](https://git-scm.com/docs/user-manual.html){:target="_blank"} | [videos](https://git-scm.com/videos){:target="_blank"}
+*	Experienced with [Git](https://git-scm.com/docs/user-manual.html){:target="_blank"}
 *	Experienced with [Composer](https://getcomposer.org/doc){:target="_blank"}
 *	Familiar with [Magento 2]({{ page.baseurl }}cloud/bk-cloud.html#magento2)
 *	Familiar with [Continuous Integration Best Practices](https://www.google.com/search?q=Continuous+Integration+Best+Practices){:target="_blank"}
@@ -44,6 +44,7 @@ We assume you have a good working knowledge of Git. If not, consult the followin
 *	[Git documentation](https://git-scm.com/documentation){:target="_blank"}
 *	[Git reference](https://git-scm.com/docs){:target="_blank"}
 *	[Git tutorial](http://git-scm.com/docs/gittutorial){:target="_blank"}
+*	[Git videos](https://git-scm.com/videos){:target="_blank"}
 
 Before getting started, make sure you have a <a href="https://git-scm.com/downloads" target="_blank">Git client</a> installed on your computer to be able to interact with Magento Commerce.
 
@@ -73,28 +74,14 @@ For development and testing, we recommend the following:
 *	Test your site in an Integration (development) and Staging (near-production) environment as you complete modifications
 
 	You can enable and test individual features, new extensions, and 3rd party integration on different environments prior to merging into a single environment.
-*	Verify [`magento setup:install`]({{ page.baseurl }}install-gde/install/cli/install-cli-install.html) and [`magento setup:upgrade`]({{ page.baseurl }}comp-mgr/cli/cli-upgrade.html) commands work during the build and deploy process and that any extensions and customizations compile correctly in [PRODUCTION mode]({{ page.baseurl }}config-guide/bootstrap/magento-modes.html#mode-production)
+*	Verify [`magento setup:install`]({{ page.baseurl }}install-gde/install/cli/install-cli-install.html) and [`magento setup:upgrade`]({{ page.baseurl }}comp-mgr/cli/cli-upgrade.html) commands work during the build and deploy process and that any extensions and customizations compile correctly in [Production mode]({{ page.baseurl }}config-guide/bootstrap/magento-modes.html#mode-production)
 
-  You can set an environment variable or enter a CLI command for this specific mode.
+    You can set an environment variable or enter a CLI command for this specific mode.
 *	Fully [test your site]({{ page.baseurl }}cloud/live/stage-prod-test.html) in Staging as a merchant and customer prior to Production deployment
 *	Verify the Fastly VCL is uploaded to Fastly
 *	Send a ticket with all storefront domains when going live (to be added to the shared SSL (HTTPS) certificate)
 *	For custom deploy hooks in Integration, open a Support ticket to have them added to the Staging and Production deployment process
 *	Profile key flows and customizations using Blackfire.io
-
-## Before you go live {#cloud-req-live}
-For full details on going live, see our [checklist and guide]({{ page.baseurl }}cloud/live/live.html).
-
-*	Schedule the Go Live Preparation call with the support team
-*	Adjust DNS TTL in advance
-*	Change the default {% glossarytooltip 18b930cf-09cc-47c9-a5e5-905f86c43f81 %}Magento Admin{% endglossarytooltip %} password
-*	Optimize all images for the web
-*	Enable minification for JS, CSS, and HTTP
-*	Verify pages are being correctly cached in the page cache and Fastly
-
-	*	Verify the Fastly Extension is up-to-date
-	*	Verify the Fastly VCL is up-to-date
-*	Verify that the Fastly SSL certificate is setup for your domain(s)
 
 ## License and authentication requirements
 The [Account Owner]({{page.baseurl}}cloud/before/before-project-owner.html) creates the initial Magento Commerce (Cloud) account with a purchased subscription. This owner should invite all technical staff, consultants, and Magento partners involved in the code and production of the stores to the project. The invitation provides access to the Git code, environments, and ticketing for the project.
@@ -102,7 +89,7 @@ The [Account Owner]({{page.baseurl}}cloud/before/before-project-owner.html) crea
 To work with and deploy stores, you need the following:
 
 *	[An account]({{ page.baseurl }}cloud/before/before-project-owner.html#cloud-first-acct) already created or created via an invitation
-*	An [authentication key]({{page.baseurl}}cloud/before/before-project-owner.html#cloud-owner-keys) for each user who needs to contribute to the project
+*	A Magento [authentication key]({{page.baseurl}}cloud/before/before-project-owner.html#cloud-owner-keys) for each user who contributes to the project
 
 Your Magento Commerce account must *authenticate* using any of the following:
 
@@ -113,4 +100,6 @@ Your Magento Commerce account must *authenticate* using any of the following:
 
 #### Related topics
 *	[Cloud Architexture]({{ page.baseurl }}cloud/reference/discover-arch.html)
+*	[First-time development setup]({{page.baseurl}}cloud/access-acct/first-time-setup.html)
 *	[Develop and Deploy Workflow]({{ page.baseurl }}cloud/welcome/discover-workflow.html)
+*	[Go live and launch]({{ page.baseurl }}cloud/live/live.html)
