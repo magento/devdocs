@@ -8,16 +8,16 @@ There are two types of patches:
 
     These patches are provided for all Magento Enterprise Cloud Edition customers in a GitHub repository that's referenced in your `composer.json`. We apply these patches automatically during the build phase.
 
-    To install general patches, use `composer update`, test your system, and push the patches to the remote server. 
+    To install general patches, use `composer update`, test your system, and push the patches to the remote server.
 
 *   [Custom patches](#cloud-patch-custom)
 
     Custom patches can be provided by Magento to address a specific issue you raised in a Support ticket. Third-party extension developers can also provide a custom patch.
 
-    Copy custom patches to the `m2-hotfixes` directory and test them on your locally. After successfully testing them, push the patches to the remote server. 
+    Copy custom patches to the `m2-hotfixes` directory and test them on your locally. After successfully testing them, push the patches to the remote server.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-Always test a patch your local system, then your [integration environment]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int) system (that is, the remote Cloud server). Resolve any issues before you patch either [staging]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-stage) or [production]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-prod).
+Always test a patch your local system, then your [Integration environment]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int) system (that is, the remote Cloud server). Resolve any issues before you patch either [Staging]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-stage) or [Production]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-prod).
 </div>
 
 ## Test general patches {#cloud-patch-gen}
@@ -25,14 +25,12 @@ Always test a patch your local system, then your [integration environment]({{ pa
 
 The procedure you use is slightly different, depending on the type of environment: [integration]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int), [staging]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-stage), or [production]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-prod).
 
-{% collapsibleh3 Get started %}
+### Get started {#gen-getstarted}
 We recommend you test a patch in the `master` branch.
 
 {% include cloud/cli-get-started.md %}
 
-{% endcollapsibleh3 %}
-
-{% collapsibleh3 Test a general patch on your local system %}
+### Test a general patch on your local system {#gen-testlocal}
 
 To test a general patch on your local system:
 
@@ -56,9 +54,7 @@ To test a general patch on your local system:
 		git add -A && git commit -m "Apply patch"
 		git push origin <branch name>
 
-{% endcollapsibleh3 %}
-
-{% collapsibleh3 Push a general patch to the staging or production environment %}
+### Push a general patch to the staging or production environment {#gen-pushpatch}
 After you've successfully tested a patch locally and on your integration environment, you can push the patch to staging or production as follows:
 
 1.  Open an SSH connection to your staging or production server:
@@ -82,21 +78,17 @@ After you've successfully tested a patch locally and on your integration environ
 		git add -A && git commit -m "Apply patch"
 		git push origin master
 
-{% endcollapsibleh3 %}
-
 ## Test custom patches {#cloud-patch-custom}
 *Custom patches* are provided to specific customers in a Support ticket. Before you continue, make sure the patch file we provided you is available.
 
 The procedure you use is slightly different, depending on the type of environment: [integration]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int), [staging]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-stage), or [production]({{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-prod).
 
-{% collapsibleh3 Get started %}
+### Get started {#custom-getstarted}
 We recommend you test a patch locally in the `master` branch.
 
 {% include cloud/cli-get-started.md %}
 
-{% endcollapsibleh3 %}
-
-{% collapsibleh3 Test a custom patch on your local system %}
+### Test a custom patch on your local system {#custom-testlocal}
 
 To test a custom patch on your local system:
 
@@ -120,9 +112,7 @@ To test a custom patch on your local system:
 		git add -A && git commit -m "Apply patch"
 		git push origin <branch name>
 
-{% endcollapsibleh3 %}
-
-{% collapsibleh3 Push a custom patch to a staging or production environment %}
+### Push a custom patch to a staging or production environment {#custom-pushpatch}
 
 After you've successfully tested a custom patch locally and on your integration environment, you can push the patch to staging or production as follows:
 
@@ -134,7 +124,7 @@ After you've successfully tested a custom patch locally and on your integration 
 
 		mkdir <Magento project root dir>/m2-hotfixes
 3.	Copy the patch file to that directory.
-	
+
 	We suggest using the following command:
 
 		rsync -azvP <source> <destination>
@@ -156,11 +146,9 @@ After you've successfully tested a custom patch locally and on your integration 
 3.	Clean the Magento cache:
 
 		php <Magento project root dir>/bin/magento cache:clean
-		
+
 	You can also clean the cache using the [Magento Admin](http://docs.magento.com/m2/ee/user_guide/system/cache-management.html){:target="_blank"}.
 4.	After testing the patch, push it to the remote server and deploy it:
 
 		git add -A && git commit -m "Apply patch"
 		git push origin <branch name>
-
-{% endcollapsibleh3 %}
