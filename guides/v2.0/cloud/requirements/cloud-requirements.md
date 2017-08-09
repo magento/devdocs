@@ -26,15 +26,11 @@ The following requirements detail technologies, knowledges, accounts, and steps 
 The following technologies are requirements for developing and deploying your store code:
 
 *	Experienced with [Git](https://git-scm.com/docs/user-manual.html){:target="_blank"}
-*	Experienced with [Composer](https://getcomposer.org/doc){:target="_blank"}
-
-  For info on how we use Composer, see [Compose for Cloud]({{ page.baseurl }}cloud/reference/cloud-composer.html).
+*	Experienced with [Composer](https://getcomposer.org/doc){:target="_blank"}. For info on how we use Composer, see [Compose for Cloud]({{ page.baseurl }}cloud/reference/cloud-composer.html).
 *	Familiar with [Magento 2]({{ page.baseurl }}cloud/bk-cloud.html#magento2)
 *	Familiar with [Continuous Integration Best Practices](https://www.google.com/search?q=Continuous+Integration+Best+Practices){:target="_blank"}
 *	Understand [cloud architecture]({{ page.baseurl }}cloud/reference/discover-arch.html) for Magento Commerce
-*	Set up a [local development environment]({{ page.baseurl }}cloud/before/before-workspace.html)
-
-  Your local workspace works best as a virtual system (VM or container) with all prerequisities installed and the project `master` Git branch cloned. Develop in branches to add modules, extensions, 3rd party integrations, and configurations.
+*	Set up a [local development environment]({{ page.baseurl }}cloud/before/before-workspace.html). Your local workspace works best as a virtual system (VM or container) with all prerequisities installed and the project `master` Git branch cloned. Develop in branches to add modules, extensions, 3rd party integrations, and configurations.
 *	Obtain [`repo.magento.com` credentials]({{ page.baseurl }}install-gde/prereq/connect-auth.html) in your account
 *	Obtain an invite by the Account Owner or a super user to the project
 

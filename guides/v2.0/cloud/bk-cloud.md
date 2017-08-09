@@ -21,8 +21,6 @@ redirect_from:
   - /guides/v2.2/cloud/welcome/10000-ft-overview.html
 ---
 
-![This guide applies to Magento Commerce (Cloud) only]({{ site.baseurl }}common/images/ee-only_large.png)
-
 Magento Commerce (Cloud), formerly Enterprise Cloud Edition, is a managed and automated high-availability hosting platform for Magento specifically created and hosted on the Cloud. This version combines Magento Enterprise, Cloud hosting, with a few differences and added features including Git integration and three key environments for development, staging, and live production.
 
 Code, test, and deploy across development, staging, and finally production environment for continuous integration of your store.

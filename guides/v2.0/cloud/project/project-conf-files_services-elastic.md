@@ -21,7 +21,7 @@ github_link: cloud/project/project-conf-files_services-elastic.md
 
 We support Elasticsearch versions 1.4, 1.7, and 2.4. The default version is 1.7.
 
-![This feature is supported in Magento 2.1 only]({{ site.baseurl }}common/images/2.1-only_small.png). We support Elasticsearch for all environments starting with Magento Commerce (Cloud) 2.1 and later.
+![This feature is supported in Magento 2.1 only]({{ site.baseurl }}common/images/2.1-only_small.png) We support Elasticsearch for all environments starting with Magento Commerce (Cloud) 2.1 and later.
 
 We recommend installing and configuring Elasticsearch in all of your environments: Integration, Staging, and Production. All configuration settings should be in the following files in your branch then deployed. The following sections provide configuration information and supported plugins.
 
