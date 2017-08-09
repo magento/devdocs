@@ -197,6 +197,6 @@ For best results, we recommend the following tools:
 * [WebPageTest](https://www.webpagetest.org/){:target="_blank"} and [Pingdom](https://www.pingdom.com/){:target="_blank"}: Real-time analysis of your site pages load time with different origin locations. Pingdom may cost a fee. WebPageTest is a free tool.
 
 #### Related topic
-[Go live and launch]({{ page.baseurl }}cloud/live/live.html)
-[Go live checklist]({{ page.baseurl }}cloud/live/go-live-checklist.html)
-[Launch steps]({{ page.baseurl }}cloud/live/launch-steps.html)
+* [Go live and launch]({{ page.baseurl }}cloud/live/live.html)
+* [Go live checklist]({{ page.baseurl }}cloud/live/go-live-checklist.html)
+* [Launch steps]({{ page.baseurl }}cloud/live/launch-steps.html)

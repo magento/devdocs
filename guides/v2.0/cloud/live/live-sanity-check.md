@@ -138,4 +138,4 @@ To deploy your site:
 If errors display, debug them if possible or open a [support ticket]({{ page.baseurl }}cloud/bk-cloud.html#gethelp) to get additional assistance.
 
 #### Next step
-[Overview of staging and production]({{ page.baseurl }}cloud/live/stage-prod-over.html)
+[Overview of staging and production]({{ page.baseurl }}cloud/live/stage-prod-migrate-prereq.html)

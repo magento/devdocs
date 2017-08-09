@@ -11,7 +11,7 @@ github_link: cloud/live/stage-prod-migrate.md
 ---
 
 #### Previous step:
-[Prepare to deploy]({{ page.baseurl }}cloud/live/stage-prod-migrate.html)
+[Prepare to deploy to Staging and Production]({{ page.baseurl }}cloud/live/stage-prod-migrate.html)
 
 To migrate your database and static files to Staging and Production:
 

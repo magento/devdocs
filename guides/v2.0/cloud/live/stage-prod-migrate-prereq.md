@@ -10,6 +10,9 @@ version: 2.0
 github_link: cloud/live/stage-prod-migrate-prereq.md
 ---
 
+#### Previous step:
+[Build and deploy on local]({{ page.baseurl }}cloud/live/live-sanity-check.html)
+
 When you are ready to deploy your store, you need to complete deployment and testing in Staging first, then deploy to Production. The Staging environment provides a near-production environment with full services (including Fastly, New Relic, and Blackfire), database, web server, and more.
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
