@@ -12,7 +12,7 @@ github_link: cloud/access-acct/first-time-deploy.md
 #### Previous step:
 [Install Magento]({{ page.baseurl }}cloud/before/before-setup-env-install.html)
 
-<div class="bs-callout bs-callout-warning" markdown="1">
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
 You only need to complete this step one time for a new project. As a best practice, you need to have the template Magento Commerce project (or `master` branch) fully deployed across all environments to ensure all future code pushes correctly deploy.
 </div>
 
@@ -112,12 +112,12 @@ To set up an SSH agent:
 
 For more information on setting up SSH, see [Enable SSH keys]({{ page.baseurl }}cloud/before/before-workspace-ssh.html) as part of your local setup.
 
-### SSH and Git pull
+### SSH and pull the Git branch {#git}
 
-1. Open an SSH connection to your staging or production server:
+1. Open an SSH connection to your Staging or Production environment:
 
-  * Staging: `ssh -A <project ID>_stg@<project ID>.ent.magento.cloud`
-  * Production: `ssh -A <project ID>@<project ID>.ent.magento.cloud`
+    * Staging: `ssh -A <project ID>_stg@<project ID>.ent.magento.cloud`
+    * Production: `ssh -A <project ID>@<project ID>.ent.magento.cloud`
 2. Pull the `master` branch to the server.
 
         git pull origin master
@@ -127,5 +127,6 @@ When this code is fully deployed to those environments, you can begin developmen
 
 #### Related topics
 
+* [Cloud Architecture]({{ page.baseurl }}cloud/reference/discover-arch.html)
 * [Deploy your store]({{ page.baseurl }}cloud/live/stage-prod-live.html)
 * [Deployment workflow]({{ page.baseurl }}cloud/reference/discover-deploy.html)

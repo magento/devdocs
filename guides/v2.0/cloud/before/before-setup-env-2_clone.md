@@ -25,7 +25,7 @@ To clone the project's `master` environment to your local:
 
 1.	Log in to your local development machine with a [Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html) account.
 
-2.  Change to the web server or virtual host DOCROOT.
+2.  Change to the web server or virtual host docroot.
 
 3.	Log in to the Magento Cloud CLI:
 
