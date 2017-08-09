@@ -378,7 +378,7 @@ We are grateful to the wider Magento community and would like to acknowledge the
 
 The following table identifies contributions from our community members. This table lists the external pull requests, the GitHub issue number associated with it (if available), and the community member who contributed the pull request. 
 
-<<table>
+<table>
   <tr>
     <th>Pull request</th>
     <th>Related GitHub issue</th>
@@ -489,7 +489,7 @@ The following table identifies contributions from our community members. This ta
   <tr>
     <td><a href="https://github.com/magento/magento2/pull/9601" target="_blank">9601</a></td>
     <td>N/A</td>
-    <td><a href="https://github.com/kassner" target="_blank">@Rafael Kassner</a></td>
+    <td><a href="https://github.com/kassner" target="_blank">Rafael Kassner</a></td>
   </tr>
 
   <tr>
@@ -501,7 +501,7 @@ The following table identifies contributions from our community members. This ta
  <tr>
     <td><a href="https://github.com/magento/magento2/pull/9653" target="_blank">9653</a></td>
     <td>N/A</td>
-    <td><a href="https://github.com/kassner" target="_blank">Rafael Kassner</a></td>
+    <td><a href="https://github.com/kassner" target="_blank">@kassner</a></td>
   </tr>
 
  <tr>
@@ -563,6 +563,8 @@ The following table identifies contributions from our community members. This ta
 
 
 </table>
+
+
 
 
 
