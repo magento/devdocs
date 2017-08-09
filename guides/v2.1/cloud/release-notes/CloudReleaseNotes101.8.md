@@ -20,7 +20,7 @@ In `magento-cloud-configuration` release 101.8.0, we provide the following impro
 
 <!--- MAGECLOUD-860 -->* HTML minification now works as expected on Cloud. 
 
-<!--- MAGECLOUD-808-->* We’ve removed the patch that fixed SCD in builds with multiple languages because the patch functionality has been integrated into Magento 2.1.8. 
+<!--- MAGECLOUD-808-->* We’ve removed the patch that fixed SCD in a build with multiple languages because the patch functionality has been integrated into Magento 2.1.8. 
 
 <!--- MAGECLOUD-150-->* Magento Cloud now supports PayPal TPV tracking, which enables Cloud customers to send Magento Cloud-specific tracking codes to PayPal and Braintree. 
 
