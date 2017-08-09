@@ -27,6 +27,8 @@ The following technologies are requirements for developing and deploying your st
 
 *	Experienced with [Git](https://git-scm.com/docs/user-manual.html){:target="_blank"}
 *	Experienced with [Composer](https://getcomposer.org/doc){:target="_blank"}
+
+  For info on how we use Composer, see [Compose for Cloud]({{ page.baseurl }}cloud/reference/cloud-composer.html).
 *	Familiar with [Magento 2]({{ page.baseurl }}cloud/bk-cloud.html#magento2)
 *	Familiar with [Continuous Integration Best Practices](https://www.google.com/search?q=Continuous+Integration+Best+Practices){:target="_blank"}
 *	Understand [cloud architecture]({{ page.baseurl }}cloud/reference/discover-arch.html) for Magento Commerce
