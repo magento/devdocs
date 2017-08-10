@@ -24,7 +24,7 @@ For more information on the full five step process, see the [Deployment process]
 We highly recommend completing your testing in an Integration active environment and the Staging environment. Only complete final tests for going live in the Production environment. Your Staging environment is best for testing with code, data, and services including Fastly, New Relic, and others.
 </div>
 
-## Push code to the Cloud server
+## Push code to Git and Cloud
 Before you continue, make sure you push all current code to the remote Cloud server so that, in {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} of issues, you can recover the state of the Magento application.
 
 To prepare your code and branch:
@@ -45,8 +45,10 @@ During the [build phase]({{ page.baseurl }}cloud/reference/discover-deploy.html#
 
 *	Apply patches distributed to all Magento Commerce (Cloud) accounts
 *	Apply patches we provided specifically to you
-*	Enable all modules
+*	Enable all modules to build
 *	Compile code and the {% glossarytooltip 2be50595-c5c7-4b9d-911c-3bf2cd3f7beb %}dependency injection{% endglossarytooltip %} configuration
+
+The build also checks for a [configuration file]({{page.baseurl}}cloud/live/sens-data-over.html). If the file exists, the static file deployment is also completed during the build stage. If not, it's completed in the deployment stage.
 
 Before you continue, you must know the file system path to any patch we provided specifically to you. Typically, hot fixes are in the `<Magento root dir>/m2-hotfixes` directory.
 
@@ -111,7 +113,7 @@ If errors display, debug them if possible or open a [support ticket]({{ page.bas
 
 We strongly recommend you do all your testing in an integration or staging environment only, and _not_ in production.
 
-## Deploy phase
+## Deploy phase {#deploy}
 We highly recommend having Magento already installed prior to deployment. During the [deployment phase]({{ page.baseurl }}cloud/reference/discover-deploy.html#cloud-deploy-over-phases-hook), we perform the following tasks:
 
 *	Install the Magento application if needed
@@ -127,7 +129,7 @@ To deploy your site:
 
 		php bin/magento setup:upgrade
 
-	We highly recommend having Magento already installed. If you haven't installed the Magento application yet, use the [`magento setup:install`]({{ page.baseurl }}install-gde/install/cli/install-cli.html) command instead. Be advised, you may encounter issues with enabled modules on a fresh installation.
+	We highly recommend having Magento already installed if you followed the [First time deployment]({{ page.baseurl }}cloud/access-acct/first-time-deploy.html). If you haven't installed the Magento application yet, use the [`magento setup:install`]({{ page.baseurl }}install-gde/install/cli/install-cli.html) command instead. Be advised, you may encounter issues with enabled modules on a fresh installation.
 4.	Clean the Magento cache:
 
 		php bin/magento cache:clean
@@ -138,4 +140,4 @@ To deploy your site:
 If errors display, debug them if possible or open a [support ticket]({{ page.baseurl }}cloud/bk-cloud.html#gethelp) to get additional assistance.
 
 #### Next step
-[Overview of staging and production]({{ page.baseurl }}cloud/live/stage-prod-migrate-prereq.html)
+[Prepare to deploy to Staging and Production]({{ page.baseurl }}cloud/live/stage-prod-migrate-prereq.html)

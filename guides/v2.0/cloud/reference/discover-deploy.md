@@ -123,6 +123,13 @@ If deployment completes without issues or errors, the maintenance mode is remove
 
 To review build and deploy logs, see [Use logs for troubleshooting]({{page.baseurl}}cloud/trouble/environments-logs.html).
 
+#### Deployment steps
+*	[Build and deploy to your local]({{ page.baseurl }}cloud/live/live-sanity-check.html)
+*	[Prepare to deploy]({{ page.baseurl }}cloud/live/stage-prod-migrate-prereq.html)
+*	[Deploy code and data]({{ page.baseurl }}cloud/live/stage-prod-migrate.html)
+*	[Test deployment]({{ page.baseurl }}cloud/live/stage-prod-test.html)
+* [Go live and launch]({{ page.baseurl }}cloud/live/live.html)
+
 #### Related topics
 * [Deployment troubleshooting]({{page.baseurl}}cloud/access-acct/trouble.html)
 *	[Get started with a project]({{page.baseurl}}cloud/project/project-start.html)
