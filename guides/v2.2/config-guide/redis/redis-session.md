@@ -12,7 +12,7 @@ github_link: config-guide/redis/redis-session.md
 
 <h2 id="reds-cache-prereq">Prerequisite</h2>
 
-Before you continue, [install Redis]({{page.baseurl}}config-guide/redis/config-redis.html#config-redis-install).
+If Redis will be used for default or page cacheing, you must [install Redis]({{page.baseurl}}config-guide/redis/config-redis.html#config-redis-install) before continuing. .
 
 <h2 id="config-redis-config">Configure Magento to use Redis for session storage</h2>
 

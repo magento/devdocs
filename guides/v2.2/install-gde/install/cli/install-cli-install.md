@@ -251,7 +251,7 @@ The following table discusses the meanings of installation option names and valu
 
     <li><code>files</code> to store session data in the file system. File-based session storage is appropriate unless the Magento file system access is slow, you have a clustered database, or you want to store session data in Redis.</li>
 
-    <li><code>redis</code> to store session data in <a href="{{page.baseurl}}config-guide/redis/config-redis.html">Redis</a>. Do not specify this option unless Redis is already installed. See <a href="{{page.baseurl}}config-guide/redis/redis-session.html">Use Redis for session storage</a> for additional information about configuring support for Redis. </li>
+    <li><code>redis</code> to store session data in <a href="{{page.baseurl}}config-guide/redis/config-redis.html">Redis</a>. If you will be using Redis for default or page cacheing, Redis must be already installed. See <a href="{{page.baseurl}}config-guide/redis/redis-session.html">Use Redis for session storage</a> for additional information about configuring support for Redis. </li>
 	</ul></td>
 		<td><p>No</p></td>
 	</tr>
