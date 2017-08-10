@@ -64,7 +64,6 @@ To migrate static files:
 **Prerequisite:** A database dump (see Step 3) should include database triggers. For dumping them, make sure you have the [TRIGGER privilege](https://dev.mysql.com/doc/refman/5.7/en/privileges-provided.html#priv_trigger){:target="_blank"}.
 
 This process migrates your Integration, or development, database to Staging or Production. For continuous integration deployments, you may overwrite vital database data in Staging and Production.
-
 To migrate the database:
 
 1.	SSH to the master branch of your Integration environment:
@@ -76,6 +75,7 @@ To migrate the database:
 3.	Create a database dump:
 
 		mysqldump -h <database host> --user=<database user name> --password=<password> --single-transaction --triggers main | gzip - > /tmp/database.sql.gz
+
 4.	Transfer the database dump to Staging or Production:
 
 	*	Staging: `rsync -azvP /tmp/database.sql.gz <project ID>_stg@<project ID>.ent.magento.cloud:/tmp`

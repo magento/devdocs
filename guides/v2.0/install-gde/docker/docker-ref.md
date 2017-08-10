@@ -11,6 +11,8 @@ version: 2.0
 github_link: install-gde/docker/docker-ref.md
 ---
  
+{% include_relative inc/deprecated-note.html %}
+
 ## System requirements {#devbox-sys-req}
 To use the Magento DevBox, you must have a system with the following:
 

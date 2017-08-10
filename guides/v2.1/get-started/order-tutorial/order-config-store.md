@@ -15,8 +15,6 @@ ee_only: false
 
 The default Luma store needs additional configuration to run the REST calls mentioned in this tutorial.
 
-If you are using the DevBox installation, the {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} to Admin is `http://127.0.0.1:<port>/admin`. Use the `docker-compose ps` command to determine the web server listen port, as discussed in [Stop, start, restart, and view port mappings]({{page.baseurl}}install-gde/docker/docker-commands.html#Stop-start-restart-and-view-port-mappings-). 
-
 ### Set the payment method {#set-payment}
 
 Since the Luma store is for demonstration purposes only, it is not set up to handle credit card payments. However, it can simulate any of the following offline payment methods:
