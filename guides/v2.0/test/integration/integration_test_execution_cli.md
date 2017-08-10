@@ -3,8 +3,7 @@ layout: default
 group: integration-testing
 subgroup: 20_Running_Integration_Tests
 title: Running Integration Tests in the CLI
-menu_title: Running Integration Tests in the CLI
-menu_node: parent
+menu_title: In the CLI
 contributor_name: Vinai Kopp
 contributor_link: http://vinaikopp.com/
 version: 2.0

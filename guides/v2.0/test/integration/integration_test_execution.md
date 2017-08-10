@@ -1,7 +1,7 @@
 ---
 layout: default
 group: integration-testing
-subgroup: 10_Running_Integration_Tests
+subgroup: 20_Running_Integration_Tests
 title: Running Integration Tests
 menu_title: Running Integration Tests
 menu_node: parent

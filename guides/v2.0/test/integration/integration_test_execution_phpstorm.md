@@ -1,10 +1,9 @@
 ---
 layout: default
 group: integration-testing
-subgroup: 40_Running_Integration_Tests
+subgroup: 20_Running_Integration_Tests
 title: Running Integration Tests in PHPStorm
-menu_title: Running Integration Tests in PHPStorm
-menu_node: parent
+menu_title: In PHPStorm
 contributor_name: Vinai Kopp
 contributor_link: http://vinaikopp.com/
 version: 2.0
