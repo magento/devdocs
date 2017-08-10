@@ -15,7 +15,7 @@ github_link: release-notes/ReleaseNotes2.1.8EE.md
 
 *Code released: August 9, 2017*
 
-*Page updated: August 9, 2017*
+*Page updated: August 10, 2017*
 
 We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.1.8. This release includes important enhancements to your Magento software.
 
@@ -52,9 +52,6 @@ This release includes both improvements we've made internally and those submitte
 
 
 <!--- 58571 -->* The prices you assign to custom options no longer change unexpectedly after you save them.  [GitHub-6116](https://github.com/magento/magento2/issues/6116)
-
-
-<!--- 57153 -->* Magento now correctly displays custom options at the store-view level. [GitHub-2908](https://github.com/magento/magento2/issues/2908), [GitHub-5885](https://github.com/magento/magento2/issues/5885), [GitHub-5612](https://github.com/magento/magento2/issues/5612)
 
 
 
@@ -131,7 +128,7 @@ This release includes both improvements we've made internally and those submitte
 <!--- 63578 -->* Magento now correctly displays both configurable and simple products, their attribute values, and visibility values after import if SKU is an integer. [GitHub-5547](https://github.com/magento/magento2/issues/5547)
 
 <!--- 56988 -->* Magento now provides swatch input for the Admin Scope, and the attribute fall back mechanism now reverts to the default option value
- if no values are specified for specific store view. 
+ if no values are specified for specific store view. [GitHub-5143](https://github.com/magento/magento2/issues/5143), [GitHub-5142](https://github.com/magento/magento2/issues/5142)
 
 
 <!--- 69501 -->* Color swatches are now replaced by images on the Catalog and Product pages. 
@@ -301,7 +298,7 @@ This release includes both improvements we've made internally and those submitte
 <!--- 63514 -->* Free shipping promotions no longer apply after you've removed the item that qualified for free shipping from your order. Previously, you could remove the qualifying item, and free shipping was still applied to the remaining order. [GitHub-9451](https://github.com/magento/magento2/issues/9451)
 
 
-<!--- 60326 -->* Magento now correctly identifies an order being processed when it is placed in a store configured for multiple currencies.  Previously, these orders always were identified as potentially fraudulent.
+<!--- 60326 -->* Magento now correctly identifies an order being processed when it is placed in a store configured for multiple currencies.  Previously, these orders always were identified as potentially fraudulent. [GitHub-4263](https://github.com/magento/magento2/issues/4263)
 
 
 
