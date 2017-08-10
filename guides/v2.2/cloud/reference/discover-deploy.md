@@ -111,7 +111,7 @@ There are two default deploy hooks:
 
 *	If Magento is **not installed**, it installs Magento with `bin/magento setup:install`, updates the deployment configuration, `app/etc/env.php`, and the database for your specified environment (for example, Redis and {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %} URLs).
 
-  **Important: **When you completed the [First time deployment]({{ page.baseurl }}cloud/access-acct/first-time-deploy.html) during setup, Magento Commerce was installed and deployed across all environments.
+  Important: When you completed the [First time deployment]({{ page.baseurl }}cloud/access-acct/first-time-deploy.html) during setup, Magento Commerce was installed and deployed across all environments.
 
 *	If Magento **is installed**, performs any necessary upgrades. The deployment script runs [`bin/magento setup:upgrade`]({{ page.baseurl }}install-gde/install/cli/install-cli-subcommands-db-upgr.html) to update the database schema and data (which is necessary after extension or core code updates), and also updates the [deployment configuration]({{ page.baseurl }}config-guide/config/config-php.html), `app/etc/env.php`, and the database for your environment. Finally, the deployment script clears the Magento cache.
 
