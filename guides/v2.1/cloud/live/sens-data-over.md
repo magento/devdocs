@@ -2,8 +2,8 @@
 layout: default
 group: cloud
 subgroup: 120_env
-title: Overview of configuration management
-menu_title: Overview of configuration management
+title: Configuration management
+menu_title: Configuration management
 menu_order:  91
 menu_node:
 level3_menu_node: level3child
