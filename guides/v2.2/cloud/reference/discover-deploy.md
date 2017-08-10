@@ -56,9 +56,7 @@ If you have a syntax error in a configuration file, our Git server refuses the p
 This phase also runs `composer install` to retrieve dependencies.
 
 ### Phase 2: Build {#cloud-deploy-over-phases-build}
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
-Helpful Note: During this phase, the site is not in maintenance and cannot be brought down if errors or issues occur.
-</div>
+**Helpful Note:** During this phase, the site is not in maintenance and will not be brought down if errors or issues occur.
 
 We build only what has changed since the last build.
 
@@ -96,9 +94,7 @@ Now we provision your applications and all the {% glossarytooltip 74d6d228-34bd-
 </div>
 
 ### Phase 5: Deployment hooks {#cloud-deploy-over-phases-hook}
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
-Helpful Note: During this phase, the site is in maintenance mode until the deploy completes.
-</div>
+**Helpful Note:** During this phase, the site is in maintenance mode until the deploy completes.
 
 The last step runs a deployment script. You can use this for example to anonymize data in development environments, clear caches, ping external continuous integration tools, and so on.
 
@@ -115,13 +111,9 @@ There are two default deploy hooks:
 
 *	If Magento is **not installed**, it installs Magento with `bin/magento setup:install`, updates the deployment configuration, `app/etc/env.php`, and the database for your specified environment (for example, Redis and {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %} URLs).
 
-  **Important:** When you completed the [First time deployment]({{ page.baseurl }}cloud/access-acct/first-time-deploy.html) during setup, Magento Commerce was installed and deployed across all environments.
+  **Important: **When you completed the [First time deployment]({{ page.baseurl }}cloud/access-acct/first-time-deploy.html) during setup, Magento Commerce was installed and deployed across all environments.
 
-*	If Magento **is installed**, performs any necessary upgrades.
-
- The deployment script runs [`bin/magento setup:upgrade`]({{ page.baseurl }}install-gde/install/cli/install-cli-subcommands-db-upgr.html) to update the database schema and data (which is necessary after extension or core code updates), and also updates the [deployment configuration]({{ page.baseurl }}config-guide/config/config-php.html), `app/etc/env.php`, and the database for your environment.
-
- Finally, the deployment script clears the Magento cache.
+*	If Magento **is installed**, performs any necessary upgrades. The deployment script runs [`bin/magento setup:upgrade`]({{ page.baseurl }}install-gde/install/cli/install-cli-subcommands-db-upgr.html) to update the database schema and data (which is necessary after extension or core code updates), and also updates the [deployment configuration]({{ page.baseurl }}config-guide/config/config-php.html), `app/etc/env.php`, and the database for your environment. Finally, the deployment script clears the Magento cache.
 
 *	Sets the mode to either [`developer`]({{ page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-developer}}) or [`production`]({{ page.baseurl}}config-guide/bootstrap/magento-modes.html#mode-production) based on the environment variable [`APPLICATION_MODE`]({{ page.baseurl }}cloud/env/environment-vars_magento.html).
 
