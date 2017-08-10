@@ -988,7 +988,7 @@
 		<p>This option enables those customers to share the database server with more than one Magento installation.</p></td>
 		<td><p>No</p></td>
 	</tr>
-	
+
 	<tr>
 		<td><p>--language</p></td>
 		<td><p>Language code to use in the Admin and storefront. (If you have not done so already, you can view the list of language codes by entering <code>magento info:language:list</code> from the <code>bin</code> directory.)</p></td>
@@ -1037,11 +1037,11 @@
 		<p><code>0</code> disables the use of the key.</p></td>
 		<td><p>No</p></td>
 	</tr>
-	<!-- <tr> 
+	<!-- <tr>
 		<td>enable_modules=&lt;list>}</td>
 		<td><p>Enable modules that are installed but disabled where <code>&lt;list></code> is a comma-separated list of modules (no spaces allowed). Use <code>php index.php help module-list</code> to list enabled and disabled modules.</p>
 		<p>To enable and disable modules after installing Magento, see <a href="/guides/v2.2/install-gde/install/cli/install-cli-subcommands-enable.html">Enable and disable modules</a>.</p>
-		<p>For important information about module dependencies, see <a href="/guides/v2.2/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-modules">About enabling and disabling modules</a>.</p></td>  
+		<p>For important information about module dependencies, see <a href="/guides/v2.2/install-gde/install/cli/install-cli-subcommands-enable.html#instgde-cli-subcommands-enable-modules">About enabling and disabling modules</a>.</p></td>
 		<td>No</td>
 	</tr>
 	<tr>
@@ -1055,8 +1055,10 @@
 		<td><p>--session-save</p></td>
 		<td><p>Use any of the following:</p>
 		<ul><li><code>db</code> to store session data in the <a href="/guides/v2.2/config-guide/cache/caching-database.html">database</a>. Choose database storage if you have a clustered database; otherwise, there might not be much benefit over file-based storage.</li>
-			
-			<li><code>files</code> to store session data in the file system. File-based session storage is appropriate unless the Magento file system access is slow or you have a clustered database.</li>
+
+    <li><code>files</code> to store session data in the file system. File-based session storage is appropriate unless the Magento file system access is slow, you have a clustered database, or you want to store session data in Redis.</li>
+
+    <li><code>redis</code> to store session data in <a href="/guides/v2.2/config-guide/redis/config-redis.html">Redis</a>. If you will be using Redis for default or page cacheing, Redis must be already installed. See <a href="/guides/v2.2/config-guide/redis/redis-session.html">Use Redis for session storage</a> for additional information about configuring support for Redis. </li>
 	</ul></td>
 		<td><p>No</p></td>
 	</tr>
@@ -1177,7 +1179,7 @@
     <p>Messages similar to the following display to indicate a successful installation:</p>
 
     <pre><code>Post installation file permissions check...
-For security, remove write permissions from these directories: '/var/www/html/magento2/app/etc'	
+For security, remove write permissions from these directories: '/var/www/html/magento2/app/etc'
 [Progress: 274 / 274]
 [SUCCESS]: Magento installation complete.
 [SUCCESS]: Admin Panel URI: /admin_puu71q
@@ -1230,7 +1232,7 @@ For security, remove write permissions from these directories: '/var/www/html/ma
     <p>Messages similar to the following display to indicate a successful installation:</p>
 
     <pre><code>Post installation file permissions check...
-For security, remove write permissions from these directories: '/var/www/html/magento2/app/etc'	
+For security, remove write permissions from these directories: '/var/www/html/magento2/app/etc'
 [Progress: 274 / 274]
 [SUCCESS]: Magento installation complete.
 [SUCCESS]: Admin Panel URI: /admin_puu71q
@@ -1286,7 +1288,7 @@ For security, remove write permissions from these directories: '/var/www/html/ma
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/install-gde/install/cli/install-cli-install.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.2/install-gde/install/cli/install-cli-install.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>

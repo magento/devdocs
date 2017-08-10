@@ -1848,79 +1848,149 @@
 </section>
 
 
-			<h2 id="reds-sess-prereq">Prerequisite</h2>
+			<p>Magento provides command line options to configure Redis page and default caching. Although you can also configure caching by editing the <code>&lt;Magento install dir&gt;app/etc/env.php</code> file, the command line is the recommended method, especially for initial configuration. The command line provides validation, thereby ensuring the configuration is syntactically correct.</p>
+
+<h2 id="reds-sess-prereq">Prerequisite</h2>
 <p>Before you continue, <a href="/guides/v2.2/config-guide/redis/config-redis.html#config-redis-install">install Redis</a>.</p>
 
-<h2 id="config-redis-config">Configure Magento to use Redis for default and page caching</h2>
-<p>Following is a sample configuration that causes Magento to use Redis for both the default cache (<code>default</code> array) and the full page cache (<code>page_cache</code> array). Magento’s caching is implemented by <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/App/CacheInterface.php" target="_blank"><code>Magento\Framework\App\CacheInterface</code></a>.</p>
+<h2 id="config-redis-config">Configure Redis default caching</h2>
 
-<p>Add a configuration similar to the following to <code>&lt;your Magento install dir&gt;app/etc/env.php</code>:</p>
+<p>Run the <code>setup:config:set</code> command and specify parameters that specific to Redis default caching.</p>
 
-<pre><code>'cache' =&gt;
-array(
-   'frontend' =&gt;
-   array(
-      'default' =&gt;
-      array(
-         'backend' =&gt; 'Cm_Cache_Backend_Redis',
-         'backend_options' =&gt;
-         array(
-            'server' =&gt; '127.0.0.1',
-            'database' =&gt; '0',
-            'port' =&gt; '6379'
-            ),
-    ),
-    'page_cache' =&gt;
-    array(
-      'backend' =&gt; 'Cm_Cache_Backend_Redis',
-      'backend_options' =&gt;
-       array(
-         'server' =&gt; '127.0.0.1',
-         'port' =&gt; '6379',
-         'database' =&gt; '1',
-         'compress_data' =&gt; '0'
-       )
-    )
-  )
-),
-</code></pre>
+<p><code>bin/magento setup:config:set --cache-backend=redis --cache-backend-redis-&lt;parameter_name&gt;=&lt;parameter_value&gt;...</code></p>
 
 <p>where</p>
 
+<p><code>--cache-backend=redis</code> enables Redis default caching. If this feature has already been enabled, omit this parameter.</p>
+
+<p><code>--cache-backend-redis-&lt;parameter_name&gt;=&lt;parameter_value&gt;</code> refers to any number of the following parameters that can be used to configure default caching:</p>
+
 <table>
 <tbody>
-	<tr>
-		<th>Parameter</th>
-		<th>Meaning</th>
-	</tr>
 <tr>
-	<td>default, page_cache</td>
-	<td><p>Specify the segment name to use a particular segment or a default shortcut for all other caches.</p>
-		<p>The <code>default</code> cache segment enables you to configure all cache segments except for <code>page_cache</code> (the full page cache).</p></td>
+<th>Command line parameter</th>
+<th>Parameter</th>
+<th>Meaning</th>
+<th>Default value</th>
 </tr>
 <tr>
-	<td>server</td>
-	<td>Absolute URL to your Redis server, or <code>127.0.0.1</code> if Redis is installed on the Magento server, or a an absolute path to a UNIX socket.</td>
+<td>cache-backend-redis-server</td>
+<td>server</td>
+<td>Fully qualified host name, IP address, or a an absolute path to a UNIX socket. The default value of <code>127.0.0.1</code> indicates Redis is installed on the Magento server.</td>
+<td><code>127.0.0.1</code></td>
 </tr>
 <tr>
-	<td>port</td>
-	<td>Redis server listen port</td>
+<td>cache-backend-redis-port</td>
+<td>port</td>
+<td>Redis server listen port</td>
+<td>6379</td>
 </tr>
 <tr>
-	<td>database</td>
-	<td><p>Required if you use Redis for both the default and full page cache. You must specify the database number of one of the caches; the other cache uses <code>0</code> by default.</p>
-	<p><strong>Important</strong>: If you use Redis for more than one type of caching (for example, default cache and page cache), the database numbers must be different.</p></td>
-</tr>
-<tr>
-	<td>password</td>
-	<td>Specifies a password if your Redis server requires authentication.</td>
-</tr>
-<tr>
-	<td>compress_data</td>
-	<td>Required only for the full page cache. Set to <code>1</code> to compress the full page cache. Redis chooses a compression algorithm in the following order, based on availability: <a href="https://github.com/google/snappy" target="_blank">snappy</a>, <a href="https://github.com/Cyan4973/lz4" target="_blank">l4z</a>, or <a href="http://oldhome.schmorp.de/marc/liblzf.html" target="_blank">lzf</a>. If none of them available, Redis uses gzip.</td>
+<td>cache-backend-redis-db</td>
+<td>database</td>
+<td>
+<p>Required if you use Redis for both the default and full page cache. You must specify the database number of one of the caches; the other cache uses <code>0</code> by default.</p>
+<p><strong>Important</strong>: If you use Redis for more than one type of caching (for example, default cache and page cache), the database numbers must be different.</p>
+</td>
+<td>0</td>
 </tr>
 </tbody>
 </table>
+
+<h2 id="example-command">Example command</h2>
+
+<p>The following example enables Redis default caching, sets the host to <code>redis.example.com</code> and assigns the database number to 1. All other parameters are set to the default value.</p>
+
+<p><code>bin/magento setup:config:set --cache-backend=redis --cache-backend-redis-server=redis.example.com --cache-backend-redis-db=1</code></p>
+
+<h2 id="configure-redis-page-caching">Configure Redis page caching</h2>
+
+<p>To configure Redis page caching on Magento, run the <code>setup:config:set</code> command with additional parameters.</p>
+
+<p><code>bin/magento setup:config:set --page-cache=redis --page-cache-redis-&lt;parameter_name&gt;=&lt;parameter_value&gt;...</code></p>
+
+<p>where</p>
+
+<p><code>--page-cache=redis</code> enables Redis page caching. If this feature has already been enabled, omit this parameter.</p>
+
+<p><code>--page-cache-redis-&lt;parameter_name&gt;=&lt;parameter_value&gt;</code> refers to any number of the following parameters that can be used to configure page caching:</p>
+
+<table>
+<tbody>
+<tr>
+<th>Command line parameter</th>
+<th>Parameter</th>
+<th>Meaning</th>
+<th>Default value</th>
+</tr>
+<tr>
+<td>page-cache-redis-server</td>
+<td>server</td>
+<td>Fully qualified host name, IP address, or a an absolute path to a UNIX socket. The default value of <code>127.0.0.1</code> indicates Redis is installed on the Magento server.</td>
+<td><code>127.0.0.1</code></td>
+</tr>
+<tr>
+<td>page-cache-redis-port</td>
+<td>port</td>
+<td>Redis server listen port</td>
+<td>6379</td>
+</tr>
+<tr>
+<td>page-cache-redis-db</td>
+<td>database</td>
+<td>
+<p>Required if you use Redis for both the default and full page cache. You must specify the database number of one of the caches; the other cache uses <code>0</code> by default.</p>
+<p><strong>Important</strong>: If you use Redis for more than one type of caching (for example, default cache and page cache), the database numbers must be different.</p>
+</td>
+<td>0</td>
+</tr>
+<tr>
+<td>page-cache-redis-compress-data</td>
+<td>compress_data</td>
+<td>Required only for the full page cache. Set to <code>1</code> to compress the full page cache. Redis chooses a compression algorithm in the following order, based on availability: <a href="https://github.com/google/snappy" target="_blank">snappy</a>, <a href="https://github.com/Cyan4973/lz4" target="_blank">l4z</a>, or <a href="http://oldhome.schmorp.de/marc/liblzf.html" target="_blank">lzf</a>. If none of them available, Redis uses gzip.</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="example-command-1">Example command</h2>
+
+<p>The following example enables Redis page caching, sets the host to <code>redis.example.com</code> and assigns the database number to 2. All other parameters are set to the default value.</p>
+
+<p><code>bin/magento setup:config:set --page-cache=redis --page-cache-redis-server=redis.example.com --page-cache-redis-db=2</code></p>
+
+<h2 id="results">Results</h2>
+
+<p>As a result of the two example commands, Magento adds lines similar to the following to <code>&lt;Magento install dir&gt;app/etc/env.php</code>:</p>
+
+<pre><code>'cache' =&gt;
+  array(
+    'frontend' =&gt;
+      array(
+        'default' =&gt;
+          array(
+            'backend' =&gt; 'Cm_Cache_Backend_Redis',
+            'backend_options' =&gt;
+              array(
+                'server' =&gt; 'redis.example.com',
+                'database' =&gt; '1',
+                'port' =&gt; '6379'
+              ),
+        ),
+        'page_cache' =&gt;
+          array(
+            'backend' =&gt; 'Cm_Cache_Backend_Redis',
+            'backend_options' =&gt;
+              array(
+                'server' =&gt; 'redis.example.com',
+                'port' =&gt; '6379',
+                'database' =&gt; '2',
+                'compress_data' =&gt; '0'
+              )
+        )
+    )
+  ),
+</code></pre>
 
 <h2 id="redis-verify">Basic verification</h2>
 
@@ -2004,7 +2074,7 @@ array(
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/config-guide/redis/redis-pg-cache.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.2/config-guide/redis/redis-pg-cache.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
