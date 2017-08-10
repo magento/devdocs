@@ -950,7 +950,7 @@
 
 <p><em>Code released: August 9, 2017</em></p>
 
-<p><em>Page updated: August 9, 2017</em></p>
+<p><em>Page updated: August 10, 2017</em></p>
 
 <p>We are pleased to present Magento Open Source (formerly Community Edition) 2.1.8. This release includes important enhancements to your Magento software.</p>
 
@@ -963,7 +963,7 @@
     <p><strong>multiple enhancements to static content deployment and generation</strong></p>
   </li>
   <li>
-    <p><strong>improvements to Elasticsearch performance</strong>, indexing of large catalogs, cache tuning, and <strong>URL re-writes</strong></p>
+    <p><strong>improvements to indexing of large catalogs, cache tuning, and **URL re-writes</strong></p>
   </li>
   <li>
     <p><strong>reduction in the amount of memory that mass actions require</strong>, and performance optimization</p>
@@ -997,11 +997,6 @@
 <!--- 59782 -->
 <ul>
   <li>Magento now correctly displays product information after you perform an operation on more than one item. Previously, product information was not correctly aligned on the page.  <a href="https://github.com/magento/magento2/issues/6867">GitHub-6867</a></li>
-</ul>
-
-<!--- 57153 -->
-<ul>
-  <li>Magento now correctly displays custom options at the store-view level. <a href="https://github.com/magento/magento2/issues/2908">GitHub-2908</a>, <a href="https://github.com/magento/magento2/issues/5885">GitHub-5885</a>, <a href="https://github.com/magento/magento2/issues/5612">GitHub-5612</a></li>
 </ul>
 
 <!--- 57064 -->
@@ -1480,11 +1475,6 @@
 
 <h3 id="search">Search</h3>
 
-<!--- 58042 -->
-<ul>
-  <li>Elasticsearch does not throw errors when there are more than 100 searchable attributes or when user-defined price attributes are marked searchable.</li>
-</ul>
-
 <!--- 65249 -->
 <ul>
   <li>Segmentation faults no longer occur when doing a <code>catalogsearch_fulltext</code> re-index, and indexing succeeds. Previously, in a large database (more than 70,000 products), the <code>catalogsearch_fulltext</code> (MySQL) re-index failed with a <code>Segmentation fault</code> message. <a href="https://github.com/magento/magento2/issues/7963">GitHub-7963</a></li>
@@ -1498,11 +1488,6 @@
 <!--- 57475 -->
 <ul>
   <li>Out-of-stock items no longer erroneously appear in results of layered navigation if that product option is out-of-stock.</li>
-</ul>
-
-<!--- 64959 -->
-<ul>
-  <li>We’ve resolved an issue where grouped products were not displayed in category pages when Elasticsearch was used as the search engine.</li>
 </ul>
 
 <!--- 67628 -->
