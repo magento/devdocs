@@ -16,7 +16,7 @@ github_link: release-notes/ReleaseNotes2.1.8CE.md
 
 *Code released: August 9, 2017*
 
-*Page updated: August 9, 2017*
+*Page updated: August 10, 2017*
 
 
 We are pleased to present Magento Open Source (formerly Community Edition) 2.1.8. This release includes important enhancements to your Magento software.
@@ -29,7 +29,7 @@ Magento 2.1.8 contains over 100 functional fixes and enhancements as well as pul
 
 * **multiple enhancements to static content deployment and generation**
 
-* **improvements to Elasticsearch performance**, indexing of large catalogs, cache tuning, and **URL re-writes**
+* **improvements to indexing of large catalogs, cache tuning, and **URL re-writes**
 
 * **reduction in the amount of memory that mass actions require**, and performance optimization  
 
@@ -57,8 +57,6 @@ This release includes both improvements we've made internally and those submitte
 <!--- 59782 -->* Magento now correctly displays product information after you perform an operation on more than one item. Previously, product information was not correctly aligned on the page.  [GitHub-6867](https://github.com/magento/magento2/issues/6867)
 
 
-
-<!--- 57153 -->* Magento now correctly displays custom options at the store-view level. [GitHub-2908](https://github.com/magento/magento2/issues/2908), [GitHub-5885](https://github.com/magento/magento2/issues/5885), [GitHub-5612](https://github.com/magento/magento2/issues/5612)
 
 <!--- 57064 -->* The currency switcher now works for widgets on the home page. Previously, if your website supported multiple currencies, the currency switcher did not update the currencies for widgets on the home page. 
 
@@ -336,8 +334,6 @@ This release includes both improvements we've made internally and those submitte
 
 ### Search
 
-<!--- 58042 -->* Elasticsearch does not throw errors when there are more than 100 searchable attributes or when user-defined price attributes are marked searchable.
-
 <!--- 65249 -->* Segmentation faults no longer occur when doing a `catalogsearch_fulltext` re-index, and indexing succeeds. Previously, in a large database (more than 70,000 products), the `catalogsearch_fulltext` (MySQL) re-index failed with a `Segmentation fault` message. [GitHub-7963](https://github.com/magento/magento2/issues/7963)
 
 
@@ -346,8 +342,6 @@ This release includes both improvements we've made internally and those submitte
 
 <!--- 57475 -->* Out-of-stock items no longer erroneously appear in results of layered navigation if that product option is out-of-stock.
 
-
-<!--- 64959 -->* We've resolved an issue where grouped products were not displayed in category pages when Elasticsearch was used as the search engine.
 
 <!--- 67628 -->* You can render the `tax_class_id` attribute nonsearchable. Previously, Magento displayed a 503 error under these circumstances.
 
