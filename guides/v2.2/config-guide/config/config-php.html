@@ -1850,16 +1850,20 @@
 
 			<h2 id="config-php-overview">Purpose of the deployment configuration</h2>
 
-<p>Magento’s deployment configuration consists of the shared and system-specific configuration for your installation. Magento’s deployment configuration is divided between:</p>
+<p>Magento’s deployment configuration consists of the shared and system-specific configuration for your installation. Magento’s deployment configuration is divided between <a href="/guides/v2.2/config-guide/prod/config-reference-configphp.html"><code>app/etc/config.php</code></a> and <a href="/guides/v2.2/config-guide/prod/config-reference-envphp.html"><code>app/etc/env.php</code></a>.</p>
 
 <ul>
   <li>
-    <p><a href="/guides/v2.2/config-guide/prod/config-reference-configphp.html"><code>app/etc/config.php</code></a>, referred to as the <em>shared</em> configuration file, because you can check it in to source control and use it in your development, staging, and production systems</p>
+    <p><code>app/etc/config.php</code> is the <em>shared</em> configuration file.
+This file contains the list of installed modules, themes, and language packages; and shared configuration settings.</p>
 
-    <p><code>config.php</code> contains the list of installed modules, themes, and language packages; and shared configuration settings</p>
+    <p>Check this file in to source control and use it in your development, staging, and production systems.</p>
+
+    <p>As of the 2.2 release, the <code>app/etc/config.php</code> file is no longer an entry in the <code>.gitignore</code> file.
+This was done to facilitate <a href="/guides/v2.2/config-guide/deployment/">pipeline deployment</a>.</p>
   </li>
   <li>
-    <p><a href="/guides/v2.2/config-guide/prod/config-reference-envphp.html"><code>app/etc/env.php</code></a>, which contains system-specific settings, such as:</p>
+    <p><code>app/etc/env.php</code> contains settings that are specific to the installation environment.</p>
   </li>
 </ul>
 
