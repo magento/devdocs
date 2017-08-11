@@ -707,11 +707,6 @@ GET    /V1/returns/:id/labels
 
 <p>Additions since 2.1 are marked with asterisks (*).</p>
 
-<h3 id="analytics">Analytics</h3>
-
-<pre><code>*GET    /V1/analytics/link
-</code></pre>
-
 <h3 id="backend">Backend</h3>
 
 <pre><code>GET    /V1/modules
@@ -810,6 +805,7 @@ DELETE /V1/categories/:categoryId/products/:sku
 POST   /V1/products/:sku/websites
 PUT    /V1/products/:sku/websites
 DELETE /V1/products/:sku/websites/:websiteId
+*GET   /V1/products-render-info
 </code></pre>
 
 <h3 id="cataloginventory">CatalogInventory</h3>
