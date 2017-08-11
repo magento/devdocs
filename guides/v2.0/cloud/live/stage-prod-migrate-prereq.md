@@ -19,22 +19,27 @@ When you are ready to deploy your store, you need to complete deployment and tes
 Make sure to complete all development and merging of your code to the `master` branch in the Integration environment. Only the `master` branch is deployed to Staging then Production.
 </div>
 
-Complete the following tasks before you migrate your database and deploy code to Staging or Production:
+For **first time setup** to migrate your database and deploy code to Staging or Production, you will:
 
-1.	Create a support ticket to [migrate deployment hooks](#cloud-live-migrate-yaml)
-2.	Get your [access URLs](#cloud-live-migrate-urls) for Staging and Production
-3.	Set up [remote Git repositories](#cloud-live-migrate-git)
-4.	Set up your [SSH agent](#cloud-live-migrate-agent)
-5.	If you haven't done so already, upload any [Fastly VCL snippets]({{ page.baseurl }}cloud/access-acct/fastly.html#cloud-live-migrate-fastly-snip)
+1.	Create a support ticket to [migrate deployment hooks](#cloud-live-migrate-yaml). If you haven't already, also include your public SSH keys to add to Staging and Production.
+2.	Get your [access URLs](#cloud-live-migrate-urls) for Staging and Production. You will use these often for SSH access.
+3.	Set up [remote Git repositories](#cloud-live-migrate-git) on Staging and Production.
+4.	Just once, set up your [SSH agent](#cloud-live-migrate-agent) for Staging and Production.
 
-After setting this up, your workflow is to code and test in your Integration environment, then push updates to the Staging environment by a ticket for directly using Git commands.
+For **continuous integration** after first time setup, you will:
+* Code and test in your Integration environment
+* SSH into Staging and use Git commands for pushing code, files, etc
+* Test in Staging
+* SSH into Production and use Git commands for pushing code, files, etc
+
+If you haven't done so already, upload any [Fastly VCL snippets]({{ page.baseurl }}cloud/access-acct/fastly.html#cloud-live-migrate-fastly-snip) in your Integration environment `master` Magento Admin panel. Fastly is available in Staging and Production.
 
 ## Migrate deployment hooks in your `.magento.app.yaml` file {#cloud-live-migrate-yaml}
 
 {% include cloud/hooks.md %}
 
 ## Get your access URLs  {#cloud-live-migrate-urls}
-Your Magento Commerce (Cloud) OneDrive account includes an onboarding document that contains your Git, SSH, and project URLs for Staging and Production. You must know those URLs to continue.
+Your Magento Commerce (Cloud) OneDrive account includes an onboarding document that contains your Git, SSH, and project URLs for Staging and Production. You'll use this information for accessing the environments.
 
 *	Git {% glossarytooltip a05c59d3-77b9-47d0-92a1-2cbffe3f8622 %}URL{% endglossarytooltip %} format:
 
@@ -55,35 +60,41 @@ Your Magento Commerce (Cloud) OneDrive account includes an onboarding document t
 		*	Direct access to one of the three redundant servers: `http[s]://<your domain>.{1|2|3}.<project ID>.ent.magento.cloud`
 
 ## Set up remote Git repositories {#cloud-live-migrate-git}
-When you know your Git URLs, you must set them up as remote upstream repositories so you can push code to them.
+You only need to set these up once. When you know your Git URLs, you need to set them up as remote upstream repositories so you can push code to them.
 
-Command syntax:
+Basically, you configure these remote repositories using these instructions to SSH into the environements and push code and migrate data and files using Git commands.
+
+Using a terminal connection, enter Git commands to add the remote repositories.
+
+The Git command syntax is:
 
 	git remote add <remote repository name> <remote repository URL>
 
-For example,
+The following commands are examples for setting up remotes on Staging and Production:
 
 	git remote add staging git@git.ent.magento.cloud:dr5q6no7mhqip_stg.git
 	git remote add prod git@git.ent.magento.cloud:dr5q6no7mhqip.git
 
-## Set up your SSH agent {#cloud-live-migrate-agent}
-You can use any SSH client you prefer or see our [Recommendeds tools]({{ page.baseurl }}cloud/before/before-workspace.html#recommended-tools). For these examples, we use the OpenSSH client.
+## Set up your SSH agent and add the SSH key {#cloud-live-migrate-agent}
+You only need to set these up once. You can use any terminal client you prefer for SSH access, or see our [Recommendeds tools]({{ page.baseurl }}cloud/before/before-workspace.html#recommended-tools). For these examples, we use the OpenSSH client.
 
-The SSH agent forwards authentication requests from Staging or Production to your working Magento system (that is, your local workspace). An SSH agent enables you to log in to remote servers from the staging or production host using a local private SSH key. With a working SSH agent, you can easily copy files directly between the staging or production host and integration, or from another remote server.
+The SSH agent forwards authentication requests from Staging or Production environments to your local with a working Magento system. An SSH agent helps you log in to the remote servers from the Staging or Production host using a local private SSH key.
+
+**What does that mean?** This agent helps you migrate files between Integration, Staging, and Production environments just through SSH access. After you push your Git code, you can SSH into Staging and Production and update code, data, and files with this set up.
 
 To set up an SSH agent:
 
-1.	Log in to local development machine.
-2.	Enter the following command:
+1.	Log in to your local system.
+2.	Enter the following command to check if the SSH agent is running and list fingerprints of all identities currently represented by the agent:
 
 		ssh-add -l
 
 	One of the following messages displays:
 
-	*	Working SSH agent: `2048 ab:de:56:94:e3:1e:71:c3:4f:df:e1:62:8d:29:a5:c0 /home/magento_user/.ssh/id_rsa (RSA)`
+	*	Displays a working and running SSH agent: `2048 ab:de:56:94:e3:1e:71:c3:4f:df:e1:62:8d:29:a5:c0 /home/magento_user/.ssh/id_rsa (RSA)`
 
-		Skip the next step and continue with step 4.
-	*	SSH agent not started: `Could not open a connection to your authentication agent.`
+		Skip to step 4.
+	*	The SSH agent has not started: `Could not open a connection to your authentication agent.`
 
 		Continue with step 3.
 
@@ -91,8 +102,8 @@ To set up an SSH agent:
 
 		eval $(ssh-agent -s)
 
-	The agent's process ID (PID) displays.
-4.	Add your SSH key to the agent:
+	The agent starts and displays the process ID (PID).
+4.	Add your public SSH key to the agent to SSH into environments and complete Git commands. This is the same SSH key you provided in a ticket for access to Staging and Production.
 
 		ssh-add ~/.ssh/id_rsa
 
