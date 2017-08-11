@@ -1,10 +1,10 @@
 ---
 layout: default
-group: cloud
-subgroup: 080_setup
+group: 
+subgroup:
 title: Project directory structure
 menu_title: Project directory structure
-menu_order: 600
+menu_order:
 menu_node:
 version: 2.0
 github_link: cloud/access-acct/first-time-setup_dir-structure.md

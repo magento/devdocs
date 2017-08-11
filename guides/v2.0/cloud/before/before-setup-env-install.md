@@ -5,8 +5,6 @@ subgroup: 080_setup
 title: Install Magento
 menu_title: Install Magento
 menu_order: 50
-level3_menu_node: level3child
-level3_subgroup: workspace
 version: 2.0
 github_link: cloud/before/before-setup-env-install.md
 redirect_from:
@@ -41,10 +39,10 @@ The following results provides an example of variables:
 	| ADMIN_USERNAME | meister_x2U8  | Yes       | No   |
 	+----------------+---------------+-----------+------+
 
-## Set the DOCROOT
-Set the DOCROOT to the /magento directory until you complete all setup. If you change the DOCROOT to /magento/pub prior to completion, you will encounter issues running the Web Setup Wizard.
+## Set the docroot
+Set the docroot to the /magento directory until you complete all setup. If you change the DOCROOT to /magento/pub prior to completion, you will encounter issues running the Web Setup Wizard.
 
-For the Production environment, you should set the DOCROOT to /magento/pub, which helps restrict access to vulnerable areas of the system. The webserver DOCROOT should be set to /magento/pub only after Magento is installed (including any upgrades and patches), configured, and static files have been generated and populated in /magento/pub. Alternatively, you could also create a subdomain (for example, install.domain.com) and configure your webserver's DOCROOT to the Magento installed root folder.
+For the Production environment, you should set the docroot to /magento/pub, which helps restrict access to vulnerable areas of the system. The webserver DOCROOT should be set to /magento/pub only after Magento is installed (including any upgrades and patches), configured, and static files have been generated and populated in /magento/pub. Alternatively, you could also create a subdomain (for example, install.domain.com) and configure your webserver's DOCROOT to the Magento installed root folder.
 
 ## Install Magento
 
@@ -67,12 +65,12 @@ For example, using the command line method:
 		cd /app/bin
 3. Enter a CLI command with options for entering the name, email, admin credentials, URL, and additional information. For a list of all options, see [Installer help commands]({{ page.baseurl }}install-gde/install/cli/install-cli-install.html#instgde-cli-help-cmds).
 
-		php magento setup:install \
-  		--admin-firstname=John \
-  		--admin-lastname=Smith \
-  		--admin-email=jsmith@mail.com \
-		  --admin-user=admin \
-		  --admin-password=password1 \
+    php magento setup:install \
+      --admin-firstname=John \
+      --admin-lastname=Smith \
+      --admin-email=jsmith@mail.com \
+      --admin-user=admin \
+      --admin-password=password1 \
 		  --base-url=http://magento.local/ \
 		  --db-host=localhost \
 		  --db-name=magento \
@@ -135,7 +133,7 @@ To verify the Integration master branch environment, log into the Project Web In
 
 With these steps completed, you should have:
 
-* Magento Enterprise Cloud Edition account and initial project setup and master branch
+* Magento Commerce account and initial project setup and master branch
 * A local workspace configured with installations of required software, Magento Cloud CLI, and Magento
 * SSH keys set up
 * The Magento file system owner configured
@@ -143,9 +141,7 @@ With these steps completed, you should have:
 * Magento authentication keys set up and configured in the project and local
 
 ## Next steps
-We recommend fully deploying this base Magento template across to Staging and Production. For details, see [Deployment workflow]({{ page.baseurl }}cloud/before/before-setup-env-perms.html). You should deploy prior to branching and developing to get an understanding of deploying Magento Enterprise Cloud Edition.
+We strongly recommend fully deploying this base Magento template `master` branch without any code or configuration changes to Staging and Production.
 
-When you are ready, start developing in your initial code branch. You can have up to 8 active branches including the Master.
-
-#### Related topics
-[Deployment workflow]({{ page.baseurl }}cloud/before/before-setup-env-perms.html)
+#### Next step:
+[First time deployment]({{ page.baseurl }}cloud/access-acct/first-time-deploy.html)
