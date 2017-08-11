@@ -5,7 +5,7 @@ subgroup: 100_project
 title: services.yaml
 menu_title: services.yaml
 menu_order: 81
-menu_node: 
+menu_node:
 level3_menu_node: level3child
 level3_subgroup: services
 version: 2.0
@@ -24,7 +24,7 @@ This file is located at `.magento/services.yaml` in your project.
 [Sample `services.yaml` file](https://github.com/magento/magento-cloud/blob/master/.magento/services.yaml){:target="_blank"}
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>Changes you make using <code>.yaml</code> files affect your <a href="{{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int">integration environment</a> only. For technical reasons, neither <a href="{{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-stage">staging</a> nor <a href="{{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-prod">production</a> environments use <code>.yaml</code> files. To make these changes in a staging or production environment, you must create a <a href="{{ page.baseurl }}cloud/welcome/get-help.html">Support issue</a>.</p>
+  <p>Changes you make using <code>.yaml</code> files affect your <a href="{{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int">integration environment</a> only. For technical reasons, neither <a href="{{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-stage">staging</a> nor <a href="{{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-prod">production</a> environments use <code>.yaml</code> files. To make these changes in a staging or production environment, you must create a <a href="{{ page.baseurl }}cloud/bk-cloud.html#gethelp">Support issue</a>.</p>
 </div>
 
 
@@ -66,7 +66,7 @@ We support and deploy the following services for you:
 
 ### `disk` {#cloud-yaml-services-disk}
 
-`disk` specifies the size of the persistent disk storage (in MB) allocated to the service. 
+`disk` specifies the size of the persistent disk storage (in MB) allocated to the service.
 
 For example, the current default storage amount per project is 5GB (meaning 5120MB), which you can distribute between your application and each of its services. (See [`.magento.app.yaml`]({{page.baseurl}}cloud/project/project-conf-files_magento-app.html).)
 

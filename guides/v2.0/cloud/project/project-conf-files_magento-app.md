@@ -5,7 +5,7 @@ subgroup: 100_project
 title: .magento.app.yaml
 menu_title: .magento.app.yaml
 menu_order: 50
-menu_node: 
+menu_node:
 version: 2.0
 github_link: cloud/project/project-conf-files_magento-app.md
 ---
@@ -18,7 +18,7 @@ This file controls the application and the way it is built and deployed on Magen
 [Sample `.magento.app.yaml`](https://github.com/magento/magento-cloud/blob/master/.magento.app.yaml){:target="_blank"}
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>Changes you make using <code>.yaml</code> files affect your <a href="{{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int">integration environment</a> only. For technical reasons, neither <a href="{{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-stage">staging</a> nor <a href="{{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-prod">production</a> environments use <code>.yaml</code> files. To make these changes in a staging or production environment, you must create a <a href="{{ page.baseurl }}cloud/welcome/get-help.html">Support ticket</a>.</p>
+  <p>Changes you make using <code>.yaml</code> files affect your <a href="{{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-int">integration environment</a> only. For technical reasons, neither <a href="{{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-stage">staging</a> nor <a href="{{ page.baseurl }}cloud/reference/discover-arch.html#cloud-arch-prod">production</a> environments use <code>.yaml</code> files. To make these changes in a staging or production environment, you must create a <a href="{{ page.baseurl }}cloud/bk-cloud.html#gethelp">Support ticket</a>.</p>
 </div>
 
 The following sections discuss properties in `.magento.app.yaml`.
@@ -29,13 +29,11 @@ The following sections discuss properties in `.magento.app.yaml`.
 ## `name` property {#name}
 `name` identifies the application in the project. Magento Enterprise Cloud Edition
 supports multiple applications in a project, so each application
-must have a *unique name* in a project. 
-
-{% collapsible name property: %}
+must have a *unique name* in a project.
 
 `name` can consist only of lower case alphanumeric characters; that is, `a`&ndash;`z` and `0`&ndash;`9`. `name`
 is used in the [`routes.yaml`]({{page.baseurl}}cloud/project/project-conf-files_routes.html) to define the HTTP upstream
-(by default, `php:php`). 
+(by default, `php:php`).
 
 For example, if the value of `name` is `app`, you must use `app:php` in the upstream field. You can also use this name in multi-application relationships.
 
@@ -43,7 +41,6 @@ For example, if the value of `name` is `app`, you must use `app:php` in the upst
   <p>If you change the name you should think about updating your other configuration files (<code>routes.yaml</code> or the different <code>.magento.app.yaml</code>, you will have in a multi-application project. Changing the name has no effect on your different services (such as databases).</p>
 </div>
 
-{% endcollapsible %}
 
 ## `type` and `build` {#cloud-yaml-platform-type}
 The `type`  and `build` properties are used to build and run the project. The only supported `type` currently is {% glossarytooltip bf703ab1-ca4b-48f9-b2b7-16a81fd46e02 %}PHP{% endglossarytooltip %}.
@@ -66,26 +63,20 @@ Example:
 `access` defines the user roles who can log in using SSH to the
 environments to which they have access.
 
-{% collapsible access property %}
-
 Possible values are:
 
 	ssh: admin
 	ssh: contributor
 	ssh: viewer
 
-{% endcollapsible %}
-
 ## `relationships`  {#cloud-yaml-platform-rel}
 `relationships` defines how services are mapped in your
 application.
 
-{% collapsible relationships %}
-
 The left-hand side is the name of the relationship as it will be exposed
 to the application in the `MAGENTO_CLOUD_RELATIONSHIPS` environment
 variable. The right-hand side is in the form
-`<service name>:<endpoint name>`, where `<service name>` comes from 
+`<service name>:<endpoint name>`, where `<service name>` comes from
  `.magento/services.yaml` and  `<endpoint name>` should be the same as the
  value of `type`  declared in that same file.
 
@@ -98,12 +89,10 @@ Example of valid options are:
 
 See also [`services.yaml` documentation]({{page.baseurl}}cloud/project/project-conf-files_services.html) for a full list of currently supported service types and endpoints.
 
-{% endcollapsible %}
 
 ## `web` {#cloud-yaml-platform-web}
 `web` defines how your application is exposed to the web (in HTTP). Here we tell the web application how to serve content, from the front-controller script to a non-static request to an `index.php` file on the root. We support any directory structure so the static file can be in a sub directory, and the `index.php` file can be further down.
 
-{% collapsible web %}
 
 `web` supports the following:
 
@@ -111,7 +100,7 @@ See also [`services.yaml` documentation]({{page.baseurl}}cloud/project/project-c
     that is exposed on the web. Typical values include `/public` and `/web`.
 -   `passthru`: The URL used in the event a static file or PHP file could not be found. This would typically be your applications front controller, often `/index.php` or `/app.php`.
 -   `index_files`: To use a static file (for example, `index.html`) to serve
-    your application. This key expects a collection. 
+    your application. This key expects a collection.
 
     For this to
     work, the static file(s) should be included in your whitelist. For example,
@@ -135,8 +124,6 @@ Our default configuration allows the following:
 *   From the root (`/`) path, only web, media, and `robots.txt` files can be accessed
 *   From the `/pub/static` and `/pub/media` paths, any file can be accessed
 
-{% endcollapsible %}
-
 ## `disk` {#cloud-yaml-platform-disk}
 `disk` defines the size of the persistent disk size of the
 application in MB.
@@ -149,8 +136,6 @@ application in MB.
 `mounts` is an object whose keys are paths relative to the root of
 the application. It's in the form `volume_id[/subpath]`.
 
-{% collapsible mounts property %}
-
 The format is:
 
 	"/public/sites/default/files": "shared:files/files"
@@ -159,13 +144,11 @@ The format is:
   <p><code>shared</code> means that the volume is shared between your applications inside an environment. The <code>disk</code> key defines the size available for that <code>shared</code> volume.</p>
 </div>
 
-{% endcollapsible %}
 
 ## `dependencies` {#cloud-yaml-platform-dep}
 `dependencies` enables you to specify dependencies that your
 application might need during the build process.
 
-{% collapsible dependencies property %}
 
 Magento Enterprise Cloud Edition supports dependencies on the following
 languages:
@@ -185,7 +168,6 @@ You can specify those dependencies as follows:
 	nodejs:
 	   grunt-cli: "~0.3"
 
-{% endcollapsible %}
 
 ## `hooks` {#cloud-yaml-platform-hooks}
 The `hooks` (also referred to as `deployment hooks`) enable you to define shell
@@ -194,7 +176,6 @@ commands to run during the deployment process.
 They can be executed at various points in the lifecycle of the
 application.
 
-{% collapsible hooks property %}
 
 Possible hooks are:
 
@@ -241,13 +222,11 @@ hooks:
     grunt
 {% endhighlight %}
 
-{% endcollapsible %}
-
 ## `crons` {#cloud-yaml-platform-cron}
 `crons` describes processes that are triggered on a
 schedule.
 
-{% collapsible More information about crons: %}
+More information about crons:
 
 `crons` supports the following:
 
@@ -260,8 +239,7 @@ A sample Magento cron job follows:
     cronrun:
         spec: "*/5 * * * *"
         cmd: "php bin/magento cron:run"
-        
-{% endcollapsible %}
+
 
 ## Configure PHP options {#cloud-yaml-platform-php}
 You can choose which version of PHP you want to run in your `.magento.app.yaml` file.:
@@ -296,18 +274,18 @@ To view the current list of PHP extensions, SSH into your environment and enter 
 
 	php -m
 
-Magento requires the following PHP extensions that are enabled by default: 
+Magento requires the following PHP extensions that are enabled by default:
 
 *	<a href="http://php.net/manual/en/book.curl.php" target="_blank">curl</a>
 *	<a href="http://php.net/manual/en/book.image.php" target="_blank">gd</a>
 *	<a href="http://php.net/manual/en/book.intl.php" target="_blank">intl</a>
-*	PHP 7 only: 
+*	PHP 7 only:
 
 	*	[json](http://php.net/manual/en/book.json.php){:target="_blank"}
 	*	[iconv](http://php.net/manual/en/book.iconv.php){:target="_blank"}
 *	<a href="http://php.net/manual/en/book.mcrypt.php" target="_blank">mcrypt</a>
 *	<a href="http://php.net/manual/en/ref.pdo-mysql.php" target="_blank">PDO/MySQL</a>
-*	<a href="http://php.net/manual/en/book.bc.php" target="_blank">bc-math</a> 
+*	<a href="http://php.net/manual/en/book.bc.php" target="_blank">bc-math</a>
 *	<a href="http://php.net/manual/en/book.mbstring.php" target="_blank">mbstring</a>
 *	<a href="http://php.net/manual/en/book.mhash.php" target="_blank">mhash</a>
 *	<a href="http://php.net/manual/en/book.openssl.php" target="_blank">openssl</a>
@@ -315,7 +293,7 @@ Magento requires the following PHP extensions that are enabled by default:
 *	<a href="http://php.net/manual/en/book.soap.php" target="_blank">soap</a>
 *	<a href="http://php.net/manual/en/book.xml.php" target="_blank">xml</a>
 *	<a href="http://php.net/manual/en/book.zip.php" target="_blank">zip</a>
- 
+
 You must install the following extensions:
 
 *   <a href="http://php.net/manual/en/book.imagick.php" target="_blank">ImageMagick 6.3.7</a> (or later)
@@ -324,7 +302,7 @@ You must install the following extensions:
 *	<a href="http://php.net/manual/en/book.xsl.php" target="_blank">xsl</a>
 *	[redis](https://pecl.php.net/package/redis){:target="_blank"}
 
-In addition, we strongly recommend you enable `opcache`. 
+In addition, we strongly recommend you enable `opcache`.
 
 Other PHP extensions you can optionally install:
 
@@ -334,6 +312,7 @@ Other PHP extensions you can optionally install:
 *	[gearman](http://php.net/manual/en/book.gearman.php){:target="_blank"}
 *	[geoip](http://php.net/manual/en/book.geoip.php){:target="_blank"}
 *	[imap](http://php.net/manual/en/book.imap.php){:target="_blank"}
+*	[ioncube](https://www.ioncube.com/loaders.php){:target="_blank"}
 *	[pecl-http](https://pecl.php.net/package/pecl_http){:target="_blank"}
 *	[pinba](http://pinba.org){:target="_blank"}
 *	[propro](https://pecl.php.net/package/propro){:target="_blank"}

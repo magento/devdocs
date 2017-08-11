@@ -11,6 +11,8 @@ version: 2.0
 github_link: install-gde/docker/docker-over.md
 ---
 
+{% include_relative inc/deprecated-note.html %}
+
 The Magento DevBox is the simplest way yet to install a Magento development system. DevBox puts the Magento application in a [Docker](https://www.docker.com){:target="_blank"} container but all _you_ have to do to set it up is run a script. No more installing an operating system, web server, PHP, and so on.
 
 DevBox is primarily intended for developers but anyone can use it, whether you're a Magento newbie or just want to check out the Magento application. You should _not_ use Magento DevBox in production.
@@ -23,7 +25,6 @@ Optional sample data takes a few additional minutes.
 
 ## Get Magento DevBox now
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
-*   DevBox is currently undergoing an update and is not available for download. A new version will be available in the near future. Please check back for updates.
 *   Magento DevBox should be used in development only. (You should _not_ use it in production.)
 *   Magento DevBox is Beta software. Report any issues on the [DevBox GitHub repository](https://github.com/magento/magento2devbox-web/issues){:target="_blank"}.
 </div>

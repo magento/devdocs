@@ -106,18 +106,6 @@
         <td>Class was removed.</td>
     </tr>
     <tr>
-        <td>Magento\Integration\Setup\UpgradeData</td>
-        <td>Class was removed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Integration\Plugin\Model\AdminUser</td>
-        <td>Class was removed.</td>
-    </tr>
-    <tr>
-        <td>Magento\Integration\Plugin\Model\CustomerUser</td>
-        <td>Class was removed.</td>
-    </tr>
-    <tr>
         <td>Magento\Indexer\Model\Processor\Handler</td>
         <td>Class was removed.</td>
     </tr>
@@ -514,6 +502,18 @@
         <td>[protected] Property has been removed.</td>
     </tr>
     <tr>
+        <td>Magento\Framework\ObjectManager\Code\Generator\Repository::NO_SUCH_ENTITY_EXCEPTION</td>
+        <td>Constant has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\ObjectManager\Code\Generator\Repository::INPUT_EXCEPTION</td>
+        <td>Constant has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\ObjectManager\Code\Generator\Repository::SEARCH_CRITERIA</td>
+        <td>Constant has been removed.</td>
+    </tr>
+    <tr>
         <td>Magento\Framework\Module\Plugin\DbStatusValidator::aroundDispatch</td>
         <td>[public] Method has been removed.</td>
     </tr>
@@ -540,6 +540,10 @@
     <tr>
         <td>Magento\Framework\HTTP\Adapter\Curl::__construct</td>
         <td>[public] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Framework\Data\Argument\Interpreter\StringUtils::__construct</td>
+        <td>[public] Method parameter changed.</td>
     </tr>
     <tr>
         <td>Magento\Framework\Css\PreProcessor\FileGenerator\RelatedGenerator::__construct</td>
@@ -630,6 +634,34 @@
         <td>[protected] Property has been removed.</td>
     </tr>
     <tr>
+        <td>Magento\UrlRewrite\Model\Storage\AbstractStorage::doFindAllByData</td>
+        <td>[protected] Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\UrlRewrite\Model\Storage\AbstractStorage::doFindOneByData</td>
+        <td>[protected] Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\UrlRewrite\Model\Storage\AbstractStorage::doReplace</td>
+        <td>[protected] Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\UrlRewrite\Model\Storage\DbStorage::prepareSelect</td>
+        <td>[protected] Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\UrlRewrite\Model\Storage\DbStorage::doFindAllByData</td>
+        <td>[protected] Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\UrlRewrite\Model\Storage\DbStorage::doFindOneByData</td>
+        <td>[protected] Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\UrlRewrite\Model\Storage\DbStorage::doReplace</td>
+        <td>[protected] Method parameter changed.</td>
+    </tr>
+    <tr>
         <td>Magento\Ui\Component\Listing\Columns\Date::__construct</td>
         <td>[public] Method parameter changed.</td>
     </tr>
@@ -651,6 +683,10 @@
     </tr>
     <tr>
         <td>Magento\Tax\Setup\InstallData::__construct</td>
+        <td>[public] Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Tax\Setup\UpgradeData::__construct</td>
         <td>[public] Method parameter changed.</td>
     </tr>
     <tr>
@@ -714,6 +750,10 @@
         <td>[protected] Property has been removed.</td>
     </tr>
     <tr>
+        <td>Magento\Store\App\Config\Source\RuntimeConfigSource::__construct</td>
+        <td>[public] Method parameter changed.</td>
+    </tr>
+    <tr>
         <td>Magento\Store\App\Action\Plugin\Context::aroundDispatch</td>
         <td>[public] Method has been removed.</td>
     </tr>
@@ -728,6 +768,10 @@
     <tr>
         <td>Magento\Store\App\Action\Plugin\StoreCheck::aroundDispatch</td>
         <td>[public] Method has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\SampleData\Model\Dependency::__construct</td>
+        <td>[public] Method parameter changed.</td>
     </tr>
     <tr>
         <td>Magento\SalesInventory\Model\Plugin\Order\ReturnToStockInvoice::aroundExecute</td>
@@ -938,6 +982,10 @@
         <td>[public] Method has been removed.</td>
     </tr>
     <tr>
+        <td>Magento\ImportExport\Controller\Adminhtml\Import\Start::__construct</td>
+        <td>[public] Method parameter changed.</td>
+    </tr>
+    <tr>
         <td>Magento\GroupedProduct\Model\Sales\AdminOrder\Product\Quote\Plugin\Initializer::aroundInit</td>
         <td>[public] Method has been removed.</td>
     </tr>
@@ -1078,6 +1126,10 @@
         <td>[public] Method has been removed.</td>
     </tr>
     <tr>
+        <td>Magento\Config\Controller\Adminhtml\System\AbstractConfig::__construct</td>
+        <td>[public] Method parameter changed.</td>
+    </tr>
+    <tr>
         <td>Magento\Config\App\Config\Type\System::__construct</td>
         <td>[public] Method parameter changed.</td>
     </tr>
@@ -1090,12 +1142,24 @@
         <td>[public] Method parameter changed.</td>
     </tr>
     <tr>
+        <td>Magento\CatalogUrlRewrite\Observer\CategoryProcessUrlRewriteMovingObserver::__construct</td>
+        <td>[public] Method parameter changed.</td>
+    </tr>
+    <tr>
         <td>Magento\CatalogUrlRewrite\Observer\CategoryProcessUrlRewriteSavingObserver::__construct</td>
         <td>[public] Method parameter changed.</td>
     </tr>
     <tr>
         <td>Magento\CatalogUrlRewrite\Observer\CategoryProcessUrlRewriteSavingObserver::$urlPersist</td>
         <td>[protected] Property has been removed.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogUrlRewrite\Observer\UrlRewriteHandler::__construct</td>
+        <td>[public] Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\CatalogUrlRewrite\Model\Storage\DbStorage::prepareSelect</td>
+        <td>[protected] Method parameter changed.</td>
     </tr>
     <tr>
         <td>Magento\CatalogUrlRewrite\Model\Category\Plugin\Storage::aroundReplace</td>
@@ -4571,6 +4635,10 @@
     </tr>
     <tr>
         <td>Magento\UrlRewrite\Model\MergeDataProvider</td>
+        <td>Class was added.</td>
+    </tr>
+    <tr>
+        <td>Magento\UrlRewrite\Model\Exception\UrlAlreadyExistsException</td>
         <td>Class was added.</td>
     </tr>
     <tr>
@@ -8866,15 +8934,7 @@
         <td>Class was added.</td>
     </tr>
     <tr>
-        <td>Magento\Config\Controller\Adminhtml\System\ConfigSectionChecker</td>
-        <td>Class was added.</td>
-    </tr>
-    <tr>
         <td>Magento\Config\Controller\Adminhtml\System\Config\AbstractScopeConfig</td>
-        <td>Class was added.</td>
-    </tr>
-    <tr>
-        <td>Magento\Config\Console\CommandList</td>
         <td>Class was added.</td>
     </tr>
     <tr>
@@ -11234,6 +11294,18 @@
         <td>[public] Method parameter changed.</td>
     </tr>
     <tr>
+        <td>Magento\Catalog\Api\Data\EavAttributeInterface::setIsUsedInGrid</td>
+        <td>[public] Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Api\Data\EavAttributeInterface::setIsVisibleInGrid</td>
+        <td>[public] Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Api\Data\EavAttributeInterface::setIsFilterableInGrid</td>
+        <td>[public] Method has been added.</td>
+    </tr>
+    <tr>
         <td>Magento\Backend\Block\Widget\Grid\ExportInterface::getExportButtonHtml</td>
         <td>[public] Method has been added.</td>
     </tr>
@@ -11400,6 +11472,18 @@
     <tr>
         <td>Magento\Quote\Api\CartRepositoryInterface::getList</td>
         <td>[public] Method parameter changed.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Api\Data\EavAttributeInterface::setIsUsedInGrid</td>
+        <td>[public] Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Api\Data\EavAttributeInterface::setIsVisibleInGrid</td>
+        <td>[public] Method has been added.</td>
+    </tr>
+    <tr>
+        <td>Magento\Catalog\Api\Data\EavAttributeInterface::setIsFilterableInGrid</td>
+        <td>[public] Method has been added.</td>
     </tr>
     <tr>
         <td>Magento\Catalog\Api\Data\ProductAttributeInterface::CODE_TIER_PRICE_FIELD_PERCENTAGE_VALUE</td>
@@ -11794,11 +11878,11 @@
         <td>Interface was added.</td>
     </tr>
     <tr>
-        <td>Magento\Sitemap\Model\ItemResolver\ConfigReaderInterface</td>
+        <td>Magento\Sitemap\Model\ItemProvider\ConfigReaderInterface</td>
         <td>Interface was added.</td>
     </tr>
     <tr>
-        <td>Magento\Sitemap\Model\ItemResolver\ItemResolverInterface</td>
+        <td>Magento\Sitemap\Model\ItemProvider\ItemProviderInterface</td>
         <td>Interface was added.</td>
     </tr>
     <tr>

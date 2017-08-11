@@ -10,6 +10,8 @@ version: 2.0
 github_link: install-gde/docker/docker-phpstorm-parent.md
 ---
 
+{% include_relative inc/deprecated-note.html %}
+
 These topics discuss how to configure Xdebug, PHPUnit, and PhpStorm to test and debug Magento DevBox code:
 
 *	[PhpStorm prerequisites]({{ page.baseurl }}install-gde/docker/docker-phpstorm-prereq.html)
