@@ -107,9 +107,10 @@ If you've cloned Magento 2 from the GitHub repository, follow the steps below to
 
 2. Open `composer.json` in a text editor.
 
-3. Find the value of the `version` tag.
+3. Find the value of the `version` tag by search **"magento/data-migration-tool"**.
 
-This is the version of your Data Migration Tool.
+4. Value of **"magento/data-migration-tool": "2.1.7"** means your data-migration version is 2.1.7
+
 
 ## Related topics
 
