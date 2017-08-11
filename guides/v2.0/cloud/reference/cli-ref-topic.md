@@ -2,8 +2,8 @@
 layout: default
 group: cloud
 subgroup: 120_env
-title: Magento Cloud CLI
-menu_title: Magento Cloud CLI reference
+title: Magento Cloud CLI reference
+menu_title: Magento Cloud CLI
 menu_order: 10
 menu_node:
 version: 2.0

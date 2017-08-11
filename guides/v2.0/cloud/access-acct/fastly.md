@@ -1,16 +1,16 @@
 ---
 layout: default
 group: cloud
-subgroup: 080_setup
+subgroup: 100_project
 title: Set up Fastly
 menu_title: Set up Fastly
-menu_order: 500
+menu_order: 30
 menu_node:
 version: 2.0
 github_link: cloud/access-acct/fastly.md
 ---
 
-[Fastly](https://www.fastly.com/why-fastly){:target="_blank"} is required for Magento Enterprise Cloud Edition, and is used in Staging and Production environments. It works with Varnish to provide fast caching capabilities and a {% glossarytooltip f83f1fa7-7a64-467b-b629-c2d0c25d2e7f %}Content Delivery Network{% endglossarytooltip %} (CDN) for static assets.
+[Fastly](https://www.fastly.com/why-fastly){:target="_blank"} is required for Magento Enterprise Cloud Edition, and is used in Staging and Production environments. It works with Varnish to provide fast caching capabilities and a {% glossarytooltip f83f1fa7-7a64-467b-b629-c2d0c25d2e7f %}Content Delivery Network{% endglossarytooltip %} (CDN) for static assets. Fastly is not available in Integration environments.
 
 ## Get your Fastly credentials {#cloud-fastly-creds}
 To get Fastly credentials, open a [support ticket]({{ page.baseurl }}cloud/welcome/get-help.html). You must provide your fully-qualified {% glossarytooltip 41aee03b-a5d5-49c2-8839-894090ef4e86 %}domain{% endglossarytooltip %} name.

@@ -78,10 +78,6 @@ The Magento Community Edition (CE) REST APIs are available on all EE and CE inst
 
 Additions since 2.1 are marked with asterisks (*).
 
-### Analytics
-
-    *GET    /V1/analytics/link
-
 ### Backend
 
     GET    /V1/modules
@@ -178,6 +174,7 @@ Additions since 2.1 are marked with asterisks (*).
     POST   /V1/products/:sku/websites
     PUT    /V1/products/:sku/websites
     DELETE /V1/products/:sku/websites/:websiteId
+    *GET   /V1/products-render-info
 
 ### CatalogInventory
 

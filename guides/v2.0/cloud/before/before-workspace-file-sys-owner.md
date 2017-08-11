@@ -6,8 +6,6 @@ title: Set up the Magento file system owner
 menu_title: Set up the Magento file system owner
 menu_order: 25
 menu_node:
-level3_menu_node: level3child
-level3_subgroup: workspace
 version: 2.0
 github_link: cloud/before/before-workspace-file-sys-owner.md
 ---
@@ -81,5 +79,5 @@ To complete the task, restart the web server:
 *	Ubuntu: `service apache2 restart`
 *	CentOS: `service httpd restart`
 
-#### Next step
+#### Next step:
 [Clone the project]({{ page.baseurl }}cloud/before/before-setup-env-2_clone.html)
