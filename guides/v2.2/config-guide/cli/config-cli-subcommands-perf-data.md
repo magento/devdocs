@@ -169,13 +169,13 @@ For example, `/var/www/html/magento2/setup/performance-toolkit/profiles/ce`
 Before running the data generator, disable all cron jobs running on the server. Disabling cron jobs prevents the data generator from performing actions that conflict with active cron jobs and avoids unnecessary errors.
 </div>
 
-Run the command as discussed in this section. After the command runs, it rebuilds indexers.
+Run the command as discussed in this section. After the command runs, you must [reindex all indexers]({{page.baseurl}}config-guide/cli/config-cli-subcommands-index.html#config-cli-subcommands-index-reindex).
 
 Command options:
 
 	magento setup:perf:generate-fixtures {path to profile}
 
-where `<path to profile>` specifies the absolute file system path to and name of a profile.
+Where `<path to profile>` specifies the absolute file system path to, and name of, a profile.
 
 For example,
 
