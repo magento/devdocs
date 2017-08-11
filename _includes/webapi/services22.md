@@ -34,9 +34,6 @@ The Web APIs for Magento EE are available on EE installations only. EE installat
 
   The Magento CE Web APIs are available on all EE and CE installations.
 
-### Analytics
-    analyticsLinkProviderV1 *
-
 ### Backend
     backendModuleServiceV1
 
@@ -70,6 +67,7 @@ The Web APIs for Magento EE are available on EE installations only. EE installat
     catalogProductLinkRepositoryV1
     catalogProductLinkTypeListV1
     catalogProductMediaAttributeManagementV1
+    catalogProductRenderListV1 *
     catalogProductRepositoryV1
     catalogProductTierPriceManagementV1
     catalogProductTypeListV1
