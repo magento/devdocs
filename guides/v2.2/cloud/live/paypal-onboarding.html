@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Run a PHP debugger | Magento 2 Developer Documentation</title>
+	<title>Set up PayPal payment methods | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.2/cloud/howtos/debug.html">
+	<link rel="canonical" href="//guides/v2.2/cloud/live/paypal-onboarding.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -69,11 +69,11 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/cloud/howtos/debug.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/cloud/live/paypal-onboarding.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/cloud/howtos/debug.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/cloud/live/paypal-onboarding.html">Magento 2.1</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.2/cloud/howtos/debug.html">Magento 2.2 RC</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.2/cloud/live/paypal-onboarding.html">Magento 2.2 RC</a></li>
 	
   </ul>
 
@@ -611,7 +611,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.2/cloud/live/paypal-onboarding.html">Set up PayPal</a></li>
+									<li class="level-2  active "><a href="/guides/v2.2/cloud/live/paypal-onboarding.html">Set up PayPal</a></li>
 
 									
 
@@ -1277,7 +1277,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.2/cloud/howtos/debug.html">Run a PHP debugger</a></li>
+									<li class="level-2 "><a href="/guides/v2.2/cloud/howtos/debug.html">Run a PHP debugger</a></li>
 
 									
 
@@ -1527,7 +1527,7 @@
 
           
 
-          <span property="name">Run a PHP debugger</span>
+          <span property="name">Set up PayPal payment methods</span>
 
         
 
@@ -1550,7 +1550,7 @@
 
 	
 
-	<h1 class="page-heading">Run a PHP debugger</h1>
+	<h1 class="page-heading">Set up PayPal payment methods</h1>
 
   
 
@@ -1558,132 +1558,79 @@
 </section>
 
 
-			<p>This topic discusses how to run a <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> debugger using Xdebug as an example.</p>
+			<p>Magento Commerce (Cloud) provides an on-boarding tool to configure PayPal Express Checkout accounts directly through the Magento Admin panel. This tool is available for ECE 2.1.8 and later. To better support going live and testing PayPal payment methods, you can enable and configure your PayPal Express Checkout account for sandbox or production accounts.</p>
 
-<h3 id="get-started">Get started</h3>
+<p>You can configure either the sandbox or production account in every environment:</p>
 
-<div class="collapsible"><b class="collapsible-title">Click to expand/collapse content </b><div class="collapsible-content"><div>
+<ul>
+  <li>For Integration and Staging environments, we recommend setting Sandbox credentials.</li>
+  <li>For your Production environment, you can set Sandbox credentials for initial testing, then replace with live production credentials for a launched store.</li>
+</ul>
 
-  <ol>
-    <li>Log in to your local development system, or switch to, the <a href="/guides/v2.2/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a>.</li>
-    <li>Change to a directory to which the Magento file system owner has write access.</li>
-    <li>
-      <p>Log in to your project:</p>
+<h2 id="accounts">PayPal account</h2>
 
-      <pre><code>magento-cloud login
-</code></pre>
-    </li>
-    <li>
-      <p>List your projects:</p>
+<p>While we recommend having a PayPal merchant account prepared and configured, you can create a new account or upgrade a personal account through the Admin panel.</p>
 
-      <pre><code>magento-cloud project:list
-</code></pre>
-    </li>
-    <li>
-      <p>If necessary, clone a project.</p>
+<p>PayPal on-boarding supports connecting with the following accounts:</p>
 
-      <pre><code>magento-cloud project:get &lt;project ID&gt;
-</code></pre>
-    </li>
-    <li>
-      <p>Change to a project directory.</p>
+<ul>
+  <li>PayPal Business account</li>
+  <li>PayPal personal account, converting to a Business account. If you have an existing personal PayPal account, you can login with those credentials and upgrade this account to a business account as you complete the sync.</li>
+</ul>
 
-      <p>For example, <code>cd /var/www/html/magento2</code></p>
-    </li>
-    <li>
-      <p>List environments in the project:</p>
+<p>If you do not have an existing PayPal account, you have an option to create a new one. Enter an e-mail address for a new account. If a matching PayPal account is not found, you will be prompted to create a new PayPal Business account. Or you can create an account directly through <a href="https://www.paypal.com/us/webapps/mpp/account-selection">PayPal</a>.</p>
 
-      <pre><code>magento-cloud environment:list
-</code></pre>
+<p>Please note the <a href="#limitations">PayPal account limitations</a> for further information.</p>
 
-      <div class="bs-callout bs-callout-info" id="info">
-  		<p><code>magento-cloud environment:list</code> displays environment hierarchies whereas <code>git branch</code> displays does not. If you have any nested environments, use <code>magento-cloud environment:list</code>.</p>
-</div>
-    </li>
-    <li>
-      <p>Fetch origin branches:</p>
+<p><img src="/common/images/cloud_paypal-access.png" alt="Log in to PayPal" width="336px" /></p>
 
-      <pre><code>git fetch origin
-</code></pre>
-    </li>
-    <li>
-      <p>Check out an environment:</p>
+<h3 id="limitations">PayPal limitations</h3>
 
-      <pre><code>magento-cloud environment:checkout &lt;environment ID&gt;
-</code></pre>
+<p>PayPal supports connecting PayPal Express Checkout for countries across the globe except for the following limitations:</p>
 
-      <p>To create a new environment, use <code>magento-cloud environment:branch &lt;environment name&gt; &lt;parent environment ID&gt;</code></p>
-    </li>
-    <li>
-      <p>Pull updated code:</p>
+<ul>
+  <li>India, and Japan (future PayPal updates may support these accounts)</li>
+  <li>Israel</li>
+</ul>
 
-      <pre><code>git pull origin &lt;environment ID&gt;
-</code></pre>
-    </li>
-    <li>
-      <p>Create a <a href="/guides/v2.2/cloud/project/project-webint-snap.html">snapshot</a> of the environment.</p>
+<p>For Brazil, you must have an existing PayPal business account to connect. You cannot convert an existing personal PayPal account for Brazil during this process. If you need an account, please create a new business PayPal account through <a href="https://www.paypal.com/us/webapps/mpp/account-selection">their website</a>.</p>
 
-      <pre><code>magento-cloud snapshot:create -e &lt;environment ID&gt;
-</code></pre>
-    </li>
-  </ol>
-</div>
-</div></div>
+<h2 id="configure-paypal-express-checkout">Configure PayPal Express Checkout</h2>
 
-<h3 id="set-up-xdebug">Set up Xdebug</h3>
-
-<div class="collapsible"><b class="collapsible-title">Click to expand/collapse content </b><div class="collapsible-content"><p>To set up Xdebug:</p>
+<p>To configure PayPal Express Checkout:</p>
 
 <ol>
-  <li>Open <code>.magento.app.yaml</code> in a text editor.</li>
+  <li>Access the Admin console for the environment you need to configure.</li>
+  <li>In the left-side navigation, select <strong>Stores</strong> &gt; <strong>Configuration</strong>, then select <strong>Sales</strong> &gt; <strong>Payment Methods</strong>.</li>
+  <li>For PayPal, select <strong>Configure</strong>. Configuration fields display in expandable sections for Express Checkout, Adveritise PayPal Credit, and Basic and Advanced settings.</li>
   <li>
-    <p>In the <code>runtime</code> section, under <code>extensions</code>, add <code>xdebug</code>.</p>
+    <p>Connect your PayPal account. Until the account is connected, the options to enable are disabled. For details on available and supported accounts to connect and limitations, see <a href="#accounts">PayPal account</a>.</p>
 
-    <p>An example follows:</p>
-
-    <pre><code>runtime:
-   extensions:
-      - mcrypt
-      - redis
-      - xsl
-      - json
-      - xdebug
-</code></pre>
-  </li>
-  <li>Save your changes to <code>.magento.app.yaml</code> and exit the text editor.</li>
-  <li>
-    <p>Add, commit, and push the changes to redeploy the environment:</p>
-
-    <pre><code>git add -A
-git commit -m "Add xdebug"
-git push origin &lt;environment ID&gt;
-</code></pre>
+    <ul>
+      <li>To connect your PayPal live account, click Connect with PayPal and follow the prompts. Any customer purchases using a live PayPal complete and actively charge customers in a live store.</li>
+      <li>To connect your sandbox account for testing, click Sandbox Credentials and follow the prompts. Any customer purchases using a Sandbox PayPal complete without actively charging customers.</li>
+    </ul>
   </li>
   <li>
-    <p>Get the environment’s SSH URL:</p>
+    <p>Configure the Express Checkout settings to authenticate and use the PayPal API:</p>
 
-    <pre><code>magento-cloud environment:ssh --pipe -e &lt;environment ID&gt;
-</code></pre>
+    <ul>
+      <li><strong>Email Associated with PayPal Merchant Account</strong> (Optional) enter the email address associated with your PayPal merchant account. This email is case-sensitive.</li>
+      <li><strong>API Authentication Methods</strong> as API Signature or API Certificate.</li>
+      <li>API Username, Password, and Signature captured from your PayPal account.</li>
+      <li><strong>Sandbox Mode</strong> select Yes or No to indicate if the credentials you entered are for sandbox. If you entered production credentials, select No.</li>
+      <li><strong>API Uses Proxy</strong> select Yes or No to set if the system uses a proxy server to establish a connection between Magento and the PayPal payment system. If Yes, enter the proxy host and port.</li>
+    </ul>
   </li>
-  <li>
-    <p>To use Xdebug, SSH to the environment as follows:</p>
-
-    <pre><code>ssh -R &lt;xdebug listen port&gt;:&lt;host&gt;:&lt;xdebug listen port&gt; &lt;SSH URL&gt;
-</code></pre>
-
-    <p>For example,</p>
-
-    <pre><code>ssh -R 9000:localhost:9000 pwga8A0bhuk7o-mybranch@ssh.us.magentosite.cloud
-</code></pre>
-  </li>
+  <li>For detailed information and steps for configuring your account, see <a href="http://docs.magento.com/m2/ce/user_guide/payment/paypal-express-checkout.html">PayPal Express Checkout</a> starting with Step 2 Complete the Required Settings.</li>
 </ol>
-</div></div>
 
-<h4 id="related-topics">Related topics</h4>
+<p>With the account configured and authenticated, you can enable and disable PayPal payment options under Required PayPal Settings:</p>
+
 <ul>
-  <li><a href="/guides/v2.2/cloud/howtos/install-components.html">Install components</a></li>
-  <li><a href="/guides/v2.2/cloud/howtos/update-components.html">Update components</a></li>
-  <li><a href="/guides/v2.2/cloud/howtos/environment-tutorial-env-merge.html">Merge and delete an environment</a></li>
+  <li><strong>Enable this Solution</strong> displays the PayPal payment method to customers through the website.</li>
+  <li><strong>Enable In-Context Checkout Experience</strong></li>
+  <li><strong>Enable PayPal Credit</strong> allows customers to PayPal credit financing without additional costs. PayPal pays the order up-front, handling all repayments for the credit directly with the customer.</li>
 </ul>
 
 		</div>
@@ -1695,14 +1642,14 @@ git push origin &lt;environment ID&gt;
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/howtos/debug.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.1/cloud/live/paypal-onboarding.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
   
 
   <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/cloud/howtos/debug.html" target="_blank">Give us feedback</a>
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/cloud/live/paypal-onboarding.html" target="_blank">Give us feedback</a>
   </div>
 
 </div>
