@@ -267,9 +267,6 @@ The following fixed issues have been logged against the Magento 2.2.0 RC1.x rele
 
 
 
-## Issues resolved in Release Candidate 1.x
-
-
 
 
 ## System requirements
