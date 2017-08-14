@@ -21,18 +21,27 @@ redirect_from:
   - /guides/v2.2/cloud/welcome/10000-ft-overview.html
 ---
 
-Magento Commerce (Cloud), formerly Enterprise Cloud Edition, is a managed and automated high-availability hosting platform for Magento specifically created and hosted on the Cloud. This version combines Magento Enterprise, Cloud hosting, with a few differences and added features including Git integration and three key environments for development, staging, and live production.
+Magento Commerce (Cloud), formerly Enterprise Cloud Edition, is a managed and automated high-availability hosting platform for Magento specifically created and hosted on the Cloud. This version combines Magento Commerce, Cloud hosting, with a few differences and added features including Git integration and three key environments for development, staging, and live production.
 
 Code, test, and deploy across development, staging, and finally production environment for continuous integration of your store.
 
 ## Direct access to your environments {#environments}
 Fully access your Magento development and deployment through a UI console or CLI. Your servers are within reach from development to production in the Amazon Web Services (AWS) cloud.
 
-We deploy databases, web server, and caching servers across three environments for end-to-end testing while supporting continuous integration:
+We deploy databases, web server, and caching servers across three environments for end-to-end testing while supporting continuous integration.
 
-* **Integration**: The ultimate developer environment providing eight testable environments with your active Git branch, database, environment variables, and configurations. Actively develop, deploy, and test up to eight Git branches in this interactive environment, one per active environment.
-* **Staging**: As code and extensions pass your tests, deploy the master Git branch to Staging for near-Production testing. Consider pulling your Production database into this environment for the best testing opportunity. This environment includes a database, environment variables, configurations, and Fastly for the pushed master branch of code.
-* **Production**: When code is ready, deploy the master Git branch into Production for your live store. The container includes a three node high-availability architecture for your data, caching, and store. This is your live, public store environment with environment variables, configurations, and Fastly.
+### Starter environments {#starter}
+For Starter subscriptions, you receive the following environments:
+
+* **Master**: The Master branch for your project is your live store(s) and Production environment. This environment includes your active `master` Git branch, database, web server, caching, services, environment variables, and configurations. This is a read-only environment that you deploy to.
+* **Development active branches**: You have a number of active Git branches, each with a complete environment to develop and test your code. Each environment includes your active Git branch, database, web server, caching, services, environment variables, and configurations.
+
+### Pro environments {#pro}
+For Pro subscriptions, you receive the following environments:
+
+* **Integration**: The ultimate developer environment providing eight testable environments with your active Git branch, database, web server, caching, services, environment variables, and configurations. Actively develop, deploy, and test up to eight Git branches in this interactive environment, one per active environment.
+* **Staging**: As code and extensions pass your tests, deploy the master Git branch to Staging for near-Production testing. Consider pulling your Production database into this environment for the best testing opportunity. This environment includes a database, web server, caching, services, environment variables, configurations, and Fastly for the pushed master branch of code.
+* **Production**: When code is ready, deploy the master Git branch into Production for your live store. The container includes a three node high-availability architecture for your data, services, caching, and store. This is your live, public store environment with environment variables, configurations, and Fastly.
 
 ### Details about the cloud {#details}
 * Every Magento Commerce (Cloud) plan includes eight _active_ environments for development and integration. Additional active environments are available at additional cost. Each active environment includes a database, environment variables, and configurations.
