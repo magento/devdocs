@@ -16,7 +16,7 @@ github_link: release-notes/ReleaseNotes2.1.8CE.md
 
 *Code released: August 9, 2017*
 
-*Page updated: August 10, 2017*
+*Page updated: August 14, 2017*
 
 
 We are pleased to present Magento Open Source (formerly Community Edition) 2.1.8. This release includes important enhancements to your Magento software.

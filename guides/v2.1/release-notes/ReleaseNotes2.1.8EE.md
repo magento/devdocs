@@ -15,7 +15,7 @@ github_link: release-notes/ReleaseNotes2.1.8EE.md
 
 *Code released: August 9, 2017*
 
-*Page updated: August 10, 2017*
+*Page updated: August 14, 2017*
 
 We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.1.8. This release includes important enhancements to your Magento software.
 
