@@ -46,31 +46,46 @@ buyer to create a cart with more than 300 line items, and merchants can process 
 
 
 ## Issues fixed in this Release Candidate (RC 2.x)
-The following fixed and open issues have been logged against the Magento 2.2.0 RC2.x release. Issues fixed in the  Release Candidate 1.x are listed below. 
+The following fixed issues have been logged against the Magento 2.2.0 RC2.1 release. Issues fixed in the  Release Candidate 1.x are listed below. 
 
 
 
 ### Installation and Configuration 
 
+<!--- 70705 -->* The installation process no longer stops when loading the Magento_Tax module. [GitHub-10138](https://github.com/magento/magento2/issues/10138)
+
+
 ### Catalog
 
-### Checkout
+<!--- MAGETWO-69717 -->* You can now successfully add a product to the compare list. Previously, when you tried to add a product to a compare list, Magento displayed an error. 
 
-### Import/export
+<!--- MAGETWO-70877 -->* You can now successfully add a product to the compare list. Previously, when you tried to add a product to a compare list, Magento displayed an error.
+
 
 ### Miscellaneous
 
-### Performance
+<!--- MAGETWO-64047 -->* A null value may now be specified to unset the special_price attribute. 
 
-### Search
+<!--- MAGETWO-70642 -->* You can upload a new logo (or change other display features) when editing a transactional email. Previously, Magento crashed after you tried to save changes you may have made to this feature.
+
+<!--- 71180 -->* Customers can now place orders are expected when Magento is running a French locale in production mode. Previously, customers could not complete a transaction in a storefront running a French locale, although they could if they switched to the storefront running the English locale. 
+
+<!--- 71173 -->* You can now enable JavaScript minification without error. Previously, after enabling JS minification, the Magento  Admin displayed 404 errors when accessing JavaScript elements. 
+
 
 ### Shipping
 
-### Staging
+<!--- MAGETWO-67283 -->* When upgrading Magento from 2.1.x to 2.2, the quote_address.free_shipping is the same whether you upgraded from a previous installation of Magento or performed a fresh installation. Previously, different upgrade/installation options affected the contents of this table.
 
-### Tax rules
+<!--- MAGETWO-70861-->* Errors in shipping rates no longer occur when a customer changes the country during guest checkout and DHL is enabled. Previously, a customer changing country during guest checkout resulted in inaccurate shipping rates.
+
 
 ### URL rewrites
+
+<!--- MAGETWO-70663 -->* You can now assign products to a category when **Match Products by rule** is enabled.
+
+<!--- MAGETWO-70779 -->* Magento now saves Category URL rewrites as expected.
+
 
 
 
@@ -83,6 +98,7 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 
 ## Issues resolved in Release Candidate 1.x
 
+The following fixed issues have been logged against the Magento 2.2.0 RC1.x release and documented in previously released release notes. 
 
 ### Installation and Configuration 
 
