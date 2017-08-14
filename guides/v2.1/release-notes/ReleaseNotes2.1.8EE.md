@@ -15,7 +15,7 @@ github_link: release-notes/ReleaseNotes2.1.8EE.md
 
 *Code released: August 9, 2017*
 
-*Page updated: August 10, 2017*
+*Page updated: August 14, 2017*
 
 We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.1.8. This release includes important enhancements to your Magento software.
 
@@ -254,7 +254,7 @@ This release includes both improvements we've made internally and those submitte
 
 
 
-<!--- 58760 -->* Magento now imports customer data as expected after the data passes the pre-import validation step. Previously, although data passed this validation step, an error would occur during import, and Magento displayed this message: `Invalid data for insert`. [GitHub-4921](https://github.com/magento/magento2/issues/4921), [GitHub-9469](https://github.com/magento/magento2/issues/9469)
+<!--- 58760 -->* Magento now imports customer data as expected after the data passes the pre-import validation step. Previously, although data passed this validation step, an error would occur during import, and Magento displayed this message: `Invalid data for insert`. [GitHub-4291](https://github.com/magento/magento2/issues/4291), [GitHub-9469](https://github.com/magento/magento2/issues/9469)
 
 <!--- 69228 -->*  Magento now allows comma-separated X-Forwarded-For headers. This modification ensures that the correct client IP can be returned if the `getRemoteAddress` method gets one via the `alternativeHeaders` variable. (Magento accomplishes this by getting the first IP in the list after detecting for a comma-separated IP list.) *Fix submitted by community member <a href="https://github.com/kassner" target="_blank">Rafael Kassner</a>.*
 
