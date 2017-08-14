@@ -1694,6 +1694,10 @@
       <li><code>french.mysite.mg</code> with website code <code>french</code> and store view code <code>fr</code></li>
       <li><code>german.mysite.mg</code> with website code <code>german</code> and store view code <code>de</code></li>
     </ul>
+
+    <div class="bs-callout bs-callout-tip">
+      <p>Refer to <a href="/guides/v2.1/config-guide/multi-site/ms_websites.html#step-2-create-websites">Create websites</a> and <a href="/guides/v2.1/config-guide/multi-site/ms_websites.html#step-4-create-store-views">Create store views</a> for help locating these values.</p>
+    </div>
   </li>
 </ul>
 
@@ -1704,7 +1708,7 @@
   <li><a href="/guides/v2.1/config-guide/multi-site/ms_websites.html">Set up websites, stores, and store views</a> in the <span term-uuid="18b930cf-09cc-47c9-a5e5-905f86c43f81" class="glossary-term" data-toggle="popover">Magento Admin</span>.</li>
   <li>Create one <a href="#ms-nginx-vhosts">nginx virtual host</a> per Magento <span term-uuid="a3c8f20f-b067-414e-9781-06378c193155" class="glossary-term" data-toggle="popover">website</span>.</li>
   <li>
-    <p>Pass the values of the <a href="#ms-nginx-vars">Magento variables</a> <code>$MAGE_RUN_TYPE</code> and <code>$MAGE_RUN_CODE</code> to nginx using the Magento-provided <code>nginx.conf.sample</code>.</p>
+    <p>Pass the values of the <a href="/guides/v2.1/config-guide/multi-site/ms_over.html">Magento variables</a> <code>$MAGE_RUN_TYPE</code> and <code>$MAGE_RUN_CODE</code> to nginx using the Magento-provided <code>nginx.conf.sample</code>.</p>
 
     <ul>
       <li>
