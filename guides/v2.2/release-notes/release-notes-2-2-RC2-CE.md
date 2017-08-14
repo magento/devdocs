@@ -2,8 +2,8 @@
 layout: default
 group: release-notes
 subgroup: 2.2.0 Release Candidate
-title: Magento CE 2.2 Release Candidate 2 Release Notes
-menu_title: Magento CE 2.2 Release Candidate 2 Release Notes
+title: Magento Open Source 2.2 Release Candidate 2 Release Notes
+menu_title: Magento Open Source 2.2 Release Candidate 2 Release Notes
 menu_order: 480
 level3_menu_node:
 level3_subgroup:
@@ -18,7 +18,7 @@ github_link: release-notes/release-notes-2-2-RC2-CE.md
 *Notes updated: August 14, 2017*
 
 
-Magento Community Edition 2.2.0 Release Candidate 2.x includes significant new features as well as many bug fixes.
+Magento Open Source 2.2.0 Release Candidate 2.x (formerly Community Edition) includes significant new features as well as many bug fixes.
 
 Looking for information about how the Magento 2.2.0 Release Candidate evaluation program works? Check out the [Magento 2.2.0 Release Candidate QuickStart Guide]({{page.baseurl}}release-notes/release-candidate/quick-start.html) for more information.  This guide provides a handy overview of [Component Status]({{page.baseurl}}release-notes/release-candidate/component-status.html), too.
 
@@ -45,8 +45,43 @@ Look for the following highlights in this release:
 buyer to create a cart with more than 300 line items, and merchants can process a cart with at least 300 line items.
 
 
-## Issues fixed in this Release Candidate
-The following fixed and open issues have been logged against the Magento 2.2.0 RC1.x release.
+## Issues fixed in this Release Candidate (RC 2.x)
+The following fixed and open issues have been logged against the Magento 2.2.0 RC2.x release. Issues fixed in the  Release Candidate 1.x are listed below. 
+
+
+
+### Installation and Configuration 
+
+### Catalog
+
+### Checkout
+
+### Import/export
+
+### Miscellaneous
+
+### Performance
+
+### Search
+
+### Shipping
+
+### Staging
+
+### Tax rules
+
+### URL rewrites
+
+
+
+
+
+
+
+
+
+
+## Issues resolved in Release Candidate 1.x
 
 
 ### Installation and Configuration 
@@ -213,6 +248,11 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 
 
 <!--- 70651 -->* URL rewrites now occur as expected when category or products are saved. Previously, URLs rewrites did not occur for all categories. (RC1.6)
+
+
+
+## Issues resolved in Release Candidate 1.x
+
 
 
 
