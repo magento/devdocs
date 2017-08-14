@@ -4,7 +4,7 @@ group: release-notes
 subgroup: 2.2.0 Release Candidate
 title: Magento CE 2.2 Release Candidate 2 Release Notes
 menu_title: Magento CE 2.2 Release Candidate 2 Release Notes
-menu_order: 500
+menu_order: 480
 level3_menu_node:
 level3_subgroup:
 github_link: release-notes/release-notes-2-2-RC2-CE.md
@@ -21,6 +21,10 @@ github_link: release-notes/release-notes-2-2-RC2-CE.md
 Magento Community Edition 2.2.0 Release Candidate 2.x includes significant new features as well as many bug fixes.
 
 Looking for information about how the Magento 2.2.0 Release Candidate evaluation program works? Check out the [Magento 2.2.0 Release Candidate QuickStart Guide]({{page.baseurl}}release-notes/release-candidate/quick-start.html) for more information.  This guide provides a handy overview of [Component Status]({{page.baseurl}}release-notes/release-candidate/component-status.html), too.
+
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+We will provide a Composer-based installation option for 2.2.0 Release Candidate 2.x soon. 
+</div>
 
 ## Highlights
 
