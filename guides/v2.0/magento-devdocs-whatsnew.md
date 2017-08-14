@@ -18,6 +18,9 @@ This page contains recent changes that we think you'd like to know about. We exc
 
 Description  | Versions applied to  | New or Updated | Date 
 -------------|--------------|----------------------|--------
+[Update docs about config.php being in .gitignore]()|2.2.x|Updated|Aug 11
+[Major revisions for deployment content]()|2.0.x, 2.1.x, 2.2.x|Updated|Aug 11
+Added backward incompatible changes for delta of 2.1.8 and 2.1.7 versions in [Open Source](http://devdocs.magento.com/guides/v2.1/release-notes/changes/ce_changes.html) and [Commerce](http://devdocs.magento.com/guides/v2.1/release-notes/changes/ee_changes.html)|2.1.x|Updated|Aug 10
 Added a [new topic](http://devdocs.magento.com/guides/v2.1/install-gde/prereq/nginx.html) describing how to install Magento 2 on an nginx web server (Ubuntu 16 and CentOS 7).|2.x|New|Aug 08
 Added backward incompatible changes for 2.2.0 RC1.8 in [Open Source](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ce_changes.html) and [Commerce](http://devdocs.magento.com/guides/v2.2/release-notes/changes/ee_changes.html)|2.2.x|Updated|Aug 07
 [Migrating data to Cloud: add triggers to DB dump command](http://devdocs.magento.com/guides/v2.2/cloud/live/stage-prod-migrate.html#cloud-live-migrate-db)|2.x|Updated|Aug 03
