@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Install optional sample data | Magento 2 Developer Documentation</title>
+	<title>First time deployment | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.1/cloud/howtos/sample-data.html">
+	<link rel="canonical" href="//guides/v2.1/cloud/access-acct/first-time-deploy.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -69,11 +69,11 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/cloud/howtos/sample-data.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/cloud/access-acct/first-time-deploy.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/cloud/howtos/sample-data.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/cloud/access-acct/first-time-deploy.html">Magento 2.1</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.2/cloud/howtos/sample-data.html">Magento 2.2 RC</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.2/cloud/access-acct/first-time-deploy.html">Magento 2.2 RC</a></li>
 	
   </ul>
 
@@ -489,7 +489,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/cloud/access-acct/first-time-deploy.html">First time deployment</a></li>
+									<li class="level-2  active "><a href="/guides/v2.1/cloud/access-acct/first-time-deploy.html">First time deployment</a></li>
 
 									
 
@@ -1318,7 +1318,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.1/cloud/howtos/sample-data.html">Install optional sample data</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/cloud/howtos/sample-data.html">Install optional sample data</a></li>
 
 									
 
@@ -1584,7 +1584,7 @@
 
           
 
-          <span property="name">Install optional sample data</span>
+          <span property="name">First time deployment</span>
 
         
 
@@ -1607,7 +1607,7 @@
 
 	
 
-	<h1 class="page-heading">Install optional sample data</h1>
+	<h1 class="page-heading">First time deployment</h1>
 
   
 
@@ -1615,112 +1615,174 @@
 </section>
 
 
-			<p>This topic discusses how to install optional Magento sample data. Sample data simulates an active Magento store, including customers, products, and other data.</p>
+			<h4 id="previous-step">Previous step:</h4>
+<p><a href="/guides/v2.1/cloud/before/before-setup-env-install.html">Install Magento</a></p>
 
-<h3 id="get-started">Get started</h3>
-
-<div>
-
-  <ol>
-    <li>Log in to your local development system, or switch to, the <a href="/guides/v2.1/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a>.</li>
-    <li>Change to a directory to which the Magento file system owner has write access.</li>
-    <li>
-      <p>Log in to your project:</p>
-
-      <pre><code>magento-cloud login
-</code></pre>
-    </li>
-    <li>
-      <p>List your projects:</p>
-
-      <pre><code>magento-cloud project:list
-</code></pre>
-    </li>
-    <li>
-      <p>If necessary, clone a project.</p>
-
-      <pre><code>magento-cloud project:get &lt;project ID&gt;
-</code></pre>
-    </li>
-    <li>
-      <p>Change to a project directory.</p>
-
-      <p>For example, <code>cd /var/www/html/magento2</code></p>
-    </li>
-    <li>
-      <p>List environments in the project:</p>
-
-      <pre><code>magento-cloud environment:list
-</code></pre>
-
-      <div class="bs-callout bs-callout-info" id="info">
-  		<p><code>magento-cloud environment:list</code> displays environment hierarchies whereas <code>git branch</code> displays does not. If you have any nested environments, use <code>magento-cloud environment:list</code>.</p>
+<div class="bs-callout bs-callout-info" id="info">
+  <p>You only need to complete this step one time for a new project. As a best practice, you need to have the template Magento Commerce project (or <code>master</code> branch) fully deployed across all environments to ensure all future code pushes correctly deploy.</p>
 </div>
-    </li>
-    <li>
-      <p>Fetch origin branches:</p>
 
-      <pre><code>git fetch origin
-</code></pre>
-    </li>
-    <li>
-      <p>Check out an environment:</p>
+<p>After fully setting up your local workspace, you should have the cloned Integration <code>master</code> branch on your local. To finish your initial setup, we <strong>strongly recommend fully deploying</strong> <code>master</code> branch to Staging and Production environments. You only need to push this branch from Integration to Staging and Production once without any changes. This fully installs the base Magento Commerce application into those environments.</p>
 
-      <pre><code>magento-cloud environment:checkout &lt;environment ID&gt;
-</code></pre>
+<p>This initial push provides the following benefits:</p>
 
-      <p>To create a new environment, use <code>magento-cloud environment:branch &lt;environment name&gt; &lt;parent environment ID&gt;</code></p>
-    </li>
-    <li>
-      <p>Pull updated code:</p>
+<ul>
+  <li>Fully installs Magento in each environment</li>
+  <li>Allows the build/deploy scripts to use the <code>setup:upgrade</code> command instead of <code>setup:install</code> (important for adding extensions)</li>
+  <li>
+    <p>Protects against errors and failures when installing with added modules and extensions</p>
 
-      <pre><code>git pull origin &lt;environment ID&gt;
-</code></pre>
-    </li>
-    <li>
-      <p>Create a <a href="/guides/v2.1/cloud/project/project-webint-snap.html">snapshot</a> of the environment.</p>
+    <p>Not all extensions are correctly tested with the setup:install command and application modes. If you initially install Magento code with added 3rd party extensions or custom code, you may receive errors and build/deploy failures. By deploying the unmodified Magento template, all future deployments to Staging and Production typically do not encounter installation issues from 3rd party and custom code.</p>
+  </li>
+</ul>
 
-      <pre><code>magento-cloud snapshot:create -e &lt;environment ID&gt;
-</code></pre>
-    </li>
-  </ol>
+<h2 id="prereqs">Prerequisites</h2>
+<p>To deploy, you need the following:</p>
 
-  <h3 id="install-sample-data">Install sample data</h3>
-  <p>To install sample data:</p>
+<ul>
+  <li>A project with an unmodified Magento Commerce template <code>master</code> branch (projects created using the import option may encounter issues)</li>
+  <li>Staging and Production environments provisioned</li>
+  <li>SSH access to Staging and Production environments</li>
+</ul>
 
-  <ol>
-    <li>If you have not done so already, check out the environment in which to install sample data.</li>
-    <li>
-      <p>Enter the following commands at a terminal prompt:</p>
+<h2 id="ticket">Enter a ticket</h2>
+<p>If you need environments provisioned and SSH access, enter a <a href="/guides/v2.1/cloud/bk-cloud.html#gethelp">Support ticket</a>.</p>
 
-      <pre><code>&lt;Magento root dir&gt;/bin/magento sampledata:deploy
-</code></pre>
-    </li>
-    <li>Wait for components to update.</li>
-    <li>
-      <p>Commit and push the changes:</p>
+<p>To request environment provisioning, you will need to have cleared a payment for the Magento Commerce (Cloud) subscription and completed an on-boarding call with Magento.</p>
 
-      <pre><code>git add -A &amp;&amp; git commit -m "Install sample data"
-git push origin &lt;branch name&gt;
-</code></pre>
-    </li>
-    <li>Wait for the project to deploy.</li>
-    <li>Verify the installation was successful by going to your <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span> main page.</li>
-  </ol>
-
-  <p>The URL displays on the command line under the heading <code>Environment routes:</code> after the project deploys.
-7.	Take a snapshot of your environment:</p>
-
-  <pre><code>	magento-cloud snapshot:create -e &lt;environment ID&gt;
-</code></pre>
-
-  <h4 id="related-topics">Related topics</h4>
-  <ul>
-    <li><a href="/guides/v2.1/cloud/howtos/install-components.html">Install components</a></li>
-    <li><a href="/guides/v2.1/cloud/howtos/update-components.html">Update components</a></li>
-    <li><a href="/guides/v2.1/cloud/howtos/environment-tutorial-env-merge.html">Merge and delete an environment</a></li>
-  </ul>
+<div class="bs-callout bs-callout-info" id="info">
+  <p>If you do not have these environments provisioned, create any code in a branch but do not merge it to <code>master</code>. Only merge after you have fully deployed across the provisioned environments.</p>
 </div>
+
+<p>To receive SSH access, provide public SSH keys in the ticket for the environments. You should receive the SSH URL for these environments in your project information from Magento.</p>
+
+<h2 id="deploy-to-staging-and-production">Deploy to Staging and Production</h2>
+<p>You can SSH into the Staging and Production environments to push the <code>master</code> branch. You’ll need the SSH and Git with your project ID. The formats are as follows:</p>
+
+<ul>
+  <li>
+    <p>Git URL format:</p>
+
+    <ul>
+      <li>Staging: <code>git@git.ent.magento.cloud:&lt;project ID&gt;_stg.git</code></li>
+      <li>Production: <code>git@git.ent.magento.cloud:&lt;project ID&gt;.git</code></li>
+    </ul>
+  </li>
+  <li>
+    <p>SSH URL format:</p>
+
+    <ul>
+      <li>Staging: <code>&lt;project ID&gt;_stg@&lt;project ID&gt;.ent.magento.cloud</code></li>
+      <li>Production: <code>&lt;project ID&gt;@&lt;project ID&gt;.ent.magento.cloud</code></li>
+    </ul>
+  </li>
+</ul>
+
+<p>As part of pushing the code, you may need to:</p>
+
+<ul>
+  <li><a href="#cloud-live-migrate-git">Set up remote Git repos</a></li>
+  <li><a href="#cloud-live-migrate-agent">Set up the SSH agent</a> on environments</li>
+</ul>
+
+<p>After that is set up, you can SSH into the environment and use Git commands to push the branches.</p>
+
+<h3 id="cloud-live-migrate-git">Set up remote Git repositories</h3>
+<p>When you know your Git URLs, you must set them up as remote upstream repositories so you can push code to them.</p>
+
+<p>Command syntax:</p>
+
+<pre><code>git remote add &lt;remote repository name&gt; &lt;remote repository URL&gt;
+</code></pre>
+
+<p>For example,</p>
+
+<pre><code>git remote add staging git@git.ent.magento.cloud:dr5q6no7mhqip_stg.git
+git remote add prod git@git.ent.magento.cloud:dr5q6no7mhqip.git
+</code></pre>
+
+<h3 id="cloud-live-migrate-agent">Set up your SSH agent</h3>
+<p>You can use any SSH client you prefer or see our <a href="/guides/v2.1/cloud/before/before-workspace.html#recommended-tools">Recommendeds tools</a>. For these examples, we use the OpenSSH client.</p>
+
+<p>The SSH agent forwards authentication requests from Staging or Production to your working Magento system (that is, your local workspace). An SSH agent enables you to log in to remote servers from the staging or production host using a local private SSH key. With a working SSH agent, you can easily copy files directly between the staging or production host and integration, or from another remote server.</p>
+
+<p>To set up an SSH agent:</p>
+
+<ol>
+  <li>Log in to local development machine.</li>
+  <li>
+    <p>Enter the following command:</p>
+
+    <pre><code>ssh-add -l
+</code></pre>
+
+    <p>One of the following messages displays:</p>
+
+    <ul>
+      <li>
+        <p>Working SSH agent: <code>2048 ab:de:56:94:e3:1e:71:c3:4f:df:e1:62:8d:29:a5:c0 /home/magento_user/.ssh/id_rsa (RSA)</code></p>
+
+        <p>Skip the next step and continue with step 4.</p>
+      </li>
+      <li>
+        <p>SSH agent not started: <code>Could not open a connection to your authentication agent.</code></p>
+
+        <p>Continue with step 3.</p>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>To start the SSH agent, enter the following command:</p>
+
+    <pre><code>  eval $(ssh-agent -s)
+</code></pre>
+
+    <p>The agent’s process ID (PID) displays.</p>
+  </li>
+  <li>
+    <p>Add your SSH key to the agent:</p>
+
+    <pre><code>  ssh-add ~/.ssh/id_rsa
+</code></pre>
+
+    <p>A message similar to the following displays:</p>
+
+    <pre><code>  Identity added: /home/magento_user/.ssh/id_rsa (/home/magento_user/.ssh/id_rsa)
+</code></pre>
+  </li>
+</ol>
+
+<p>For more information on setting up SSH, see <a href="/guides/v2.1/cloud/before/before-workspace-ssh.html">Enable SSH keys</a> as part of your local setup.</p>
+
+<h3 id="git">SSH and pull the Git branch</h3>
+
+<ol>
+  <li>
+    <p>Open an SSH connection to your Staging or Production environment:</p>
+
+    <ul>
+      <li>Staging: <code>ssh -A &lt;project ID&gt;_stg@&lt;project ID&gt;.ent.magento.cloud</code></li>
+      <li>Production: <code>ssh -A &lt;project ID&gt;@&lt;project ID&gt;.ent.magento.cloud</code></li>
+    </ul>
+  </li>
+  <li>
+    <p>Pull the <code>master</code> branch to the server.</p>
+
+    <pre><code> git pull origin master
+</code></pre>
+  </li>
+</ol>
+
+<h2 id="code">You’re ready to code!</h2>
+<p>When this code is fully deployed to those environments, you can begin development, add extensions, and more!</p>
+
+<h4 id="related-topics">Related topics</h4>
+
+<ul>
+  <li><a href="/guides/v2.1/cloud/reference/discover-arch.html">Cloud Architecture</a></li>
+  <li><a href="/guides/v2.1/cloud/live/stage-prod-live.html">Deploy your store</a></li>
+  <li><a href="/guides/v2.1/cloud/reference/discover-deploy.html">Deployment workflow</a></li>
+</ul>
 
 		</div>
 		<!-- /.content-wrap -->
@@ -1731,14 +1793,14 @@ git push origin &lt;branch name&gt;
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/howtos/sample-data.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/access-acct/first-time-deploy.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
   
 
   <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/cloud/howtos/sample-data.html" target="_blank">Give us feedback</a>
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.1/cloud/access-acct/first-time-deploy.html" target="_blank">Give us feedback</a>
   </div>
 
 </div>

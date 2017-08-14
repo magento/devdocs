@@ -456,6 +456,14 @@
 
 									
 
+									<li class="level-2 "><a href="/guides/v2.2/cloud/access-acct/first-time-deploy.html">First time deployment</a></li>
+
+									
+
+								
+
+									
+
 										<li class="level3Parent " id="import"><a href="#">Import an existing Magento project</a>
 
 
@@ -1622,7 +1630,7 @@
   <li>
     <p>Find your <code>php.ini</code> file using the following command:</p>
 
-    <pre><code>    php --ini
+    <pre><code>php --ini
 </code></pre>
 
     <p>Use the value of <code>Loaded Configuration File</code>.</p>
@@ -1719,7 +1727,7 @@
   <li>
     <p>Add or edit the following line in the <code>[mysqld]</code> section:</p>
 
-    <pre><code>    auto_increment_increment=3
+    <pre><code>auto_increment_increment=3
 </code></pre>
 
     <p>Magento Commerce supports a High Availability configuration. This setting increments the database IDs in increments of three to ensure row uniqueness for Galara databases on each of the three HA nodes in production.</p>
@@ -1727,7 +1735,7 @@
   <li>
     <p>Restart MySQL:</p>
 
-    <pre><code>    service mysqld restart
+    <pre><code>service mysqld restart
 </code></pre>
   </li>
 </ol>
@@ -1749,7 +1757,7 @@
   <li>
     <p>Enter the following command:</p>
 
-    <pre><code>    curl -sS https://accounts.magento.cloud/cli/installer | php
+    <pre><code>curl -sS https://accounts.magento.cloud/cli/installer | php
 </code></pre>
   </li>
   <li>
@@ -1764,7 +1772,7 @@
 
     <p>You can also add the <code>&lt;magento user home dir&gt;/.magento-cloud/bin</code> to the Magento user’s <code>PATH</code>. 	If the user name is <code>magento_user</code>, the command is similar to the following:</p>
 
-    <pre><code>    export PATH=$PATH:/home/magento_user/.magento-cloud/bin
+    <pre><code>export PATH=$PATH:/home/magento_user/.magento-cloud/bin
 </code></pre>
 
     <p>Consult operating system documentation for details.</p>
@@ -1772,7 +1780,7 @@
   <li>
     <p>Verify the <code>magento-cloud</code> command is in your path by entering the following command:</p>
 
-    <pre><code>    magento-cloud list
+    <pre><code>magento-cloud list
 </code></pre>
   </li>
 </ol>
