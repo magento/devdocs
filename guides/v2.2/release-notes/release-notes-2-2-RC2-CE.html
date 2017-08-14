@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Magento CE 2.2 Release Candidate 2 Release Notes | Magento 2 Developer Documentation</title>
+	<title>Magento Open Source 2.2 Release Candidate 2 Release Notes | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -295,7 +295,15 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.2/release-notes/release-notes-2-2-RC2-CE.html">Magento CE 2.2 Release Candidate 2 Release Notes</a></li>
+									<li class="level-2  active "><a href="/guides/v2.2/release-notes/release-notes-2-2-RC2-CE.html">Magento Open Source 2.2 Release Candidate 2 Release Notes</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.2/release-notes/release-notes-2-2-RC2-EE.html">Magento Commerce 2.2 Release Candidate 2 Release Notes</a></li>
 
 									
 
@@ -304,14 +312,6 @@
 									
 
 									<li class="level-2 "><a href="/guides/v2.2/release-notes/release-notes-2-2-prerelease1-CE.html">Magento CE 2.2 Release Candidate Release Notes</a></li>
-
-									
-
-								
-
-									
-
-									<li class="level-2 "><a href="/guides/v2.2/release-notes/release-notes-2-2-RC2-EE.html">Magento EE 2.2 Release Candidate 2 Release Notes</a></li>
 
 									
 
@@ -671,7 +671,7 @@
 
           
 
-          <span property="name">Magento CE 2.2 Release Candidate 2 Release Notes</span>
+          <span property="name">Magento Open Source 2.2 Release Candidate 2 Release Notes</span>
 
         
 
@@ -694,7 +694,7 @@
 
 	
 
-	<h1 class="page-heading">Magento CE 2.2 Release Candidate 2 Release Notes</h1>
+	<h1 class="page-heading">Magento Open Source 2.2 Release Candidate 2 Release Notes</h1>
 
   
 
@@ -704,19 +704,27 @@
 
 			<ul id="markdown-toc">
   <li><a href="#highlights" id="markdown-toc-highlights">Highlights</a></li>
-  <li><a href="#issues-fixed-in-this-release-candidate" id="markdown-toc-issues-fixed-in-this-release-candidate">Issues fixed in this Release Candidate</a>    <ul>
+  <li><a href="#issues-fixed-in-this-release-candidate-rc-2x" id="markdown-toc-issues-fixed-in-this-release-candidate-rc-2x">Issues fixed in this Release Candidate (RC 2.x)</a>    <ul>
       <li><a href="#installation-and-configuration" id="markdown-toc-installation-and-configuration">Installation and Configuration</a></li>
       <li><a href="#catalog" id="markdown-toc-catalog">Catalog</a></li>
+      <li><a href="#miscellaneous" id="markdown-toc-miscellaneous">Miscellaneous</a></li>
+      <li><a href="#shipping" id="markdown-toc-shipping">Shipping</a></li>
+      <li><a href="#url-rewrites" id="markdown-toc-url-rewrites">URL rewrites</a></li>
+    </ul>
+  </li>
+  <li><a href="#issues-resolved-in-release-candidate-1x" id="markdown-toc-issues-resolved-in-release-candidate-1x">Issues resolved in Release Candidate 1.x</a>    <ul>
+      <li><a href="#installation-and-configuration-1" id="markdown-toc-installation-and-configuration-1">Installation and Configuration</a></li>
+      <li><a href="#catalog-1" id="markdown-toc-catalog-1">Catalog</a></li>
       <li><a href="#checkout" id="markdown-toc-checkout">Checkout</a></li>
       <li><a href="#importexport" id="markdown-toc-importexport">Import/export</a></li>
       <li><a href="#magento-business-intelligence" id="markdown-toc-magento-business-intelligence">Magento Business Intelligence</a></li>
-      <li><a href="#miscellaneous" id="markdown-toc-miscellaneous">Miscellaneous</a></li>
+      <li><a href="#miscellaneous-1" id="markdown-toc-miscellaneous-1">Miscellaneous</a></li>
       <li><a href="#performance" id="markdown-toc-performance">Performance</a></li>
       <li><a href="#rest-api" id="markdown-toc-rest-api">REST API</a></li>
       <li><a href="#search" id="markdown-toc-search">Search</a></li>
-      <li><a href="#shipping" id="markdown-toc-shipping">Shipping</a></li>
+      <li><a href="#shipping-1" id="markdown-toc-shipping-1">Shipping</a></li>
       <li><a href="#tax-rules" id="markdown-toc-tax-rules">Tax rules</a></li>
-      <li><a href="#url-rewrites" id="markdown-toc-url-rewrites">URL rewrites</a></li>
+      <li><a href="#url-rewrites-1" id="markdown-toc-url-rewrites-1">URL rewrites</a></li>
     </ul>
   </li>
   <li><a href="#system-requirements" id="markdown-toc-system-requirements">System requirements</a></li>
@@ -728,9 +736,13 @@
 
 <p><em>Notes updated: August 14, 2017</em></p>
 
-<p>Magento Community Edition 2.2.0 Release Candidate 2.x includes significant new features as well as many bug fixes.</p>
+<p>Magento Open Source 2.2.0 Release Candidate 2.x (formerly Community Edition) includes significant new features as well as many bug fixes.</p>
 
 <p>Looking for information about how the Magento 2.2.0 Release Candidate evaluation program works? Check out the <a href="/guides/v2.2/release-notes/release-candidate/quick-start.html">Magento 2.2.0 Release Candidate QuickStart Guide</a> for more information.  This guide provides a handy overview of <a href="/guides/v2.2/release-notes/release-candidate/component-status.html">Component Status</a>, too.</p>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>We will provide a Composer-based installation option for 2.2.0 Release Candidate 2.x soon.</p>
+</div>
 
 <h2 id="highlights">Highlights</h2>
 
@@ -752,10 +764,79 @@ buyer to create a cart with more than 300 line items, and merchants can process 
   </li>
 </ul>
 
-<h2 id="issues-fixed-in-this-release-candidate">Issues fixed in this Release Candidate</h2>
-<p>The following fixed and open issues have been logged against the Magento 2.2.0 RC1.x release.</p>
+<h2 id="issues-fixed-in-this-release-candidate-rc-2x">Issues fixed in this Release Candidate (RC 2.x)</h2>
+<p>The following fixed issues have been logged against the Magento 2.2.0 RC2.1 release. Issues fixed in the  Release Candidate 1.x are listed below.</p>
 
 <h3 id="installation-and-configuration">Installation and Configuration</h3>
+
+<!--- 70705 -->
+<ul>
+  <li>The installation process no longer stops when loading the Magento_Tax module. <a href="https://github.com/magento/magento2/issues/10138">GitHub-10138</a> (RC2.0)</li>
+</ul>
+
+<h3 id="catalog">Catalog</h3>
+
+<!--- 69717 -->
+<ul>
+  <li>Custom option IDs no longer change during import. Previously, custom option ID values were deleted, and new values were added. (RC2.0)</li>
+</ul>
+
+<!--- 70877 -->
+<ul>
+  <li>You can now successfully add a product to the compare list. Previously, when you tried to add a product to a compare list, Magento displayed an error. (RC2.0)</li>
+</ul>
+
+<h3 id="miscellaneous">Miscellaneous</h3>
+
+<!--- 64047 -->
+<ul>
+  <li>A null value may now be specified to unset the special_price attribute. (RC2.0)</li>
+</ul>
+
+<!--- 70642 -->
+<ul>
+  <li>You can upload a new logo (or change other display features) when editing a transactional email. Previously, Magento displayed an error after you tried to save changes you may have made to this feature. (RC2.0)</li>
+</ul>
+
+<!--- 71180 -->
+<ul>
+  <li>Customers can now place orders as expected when Magento is running a French locale in production mode. Previously, customers could not complete a transaction in a storefront running a French locale, although they could if they switched to the storefront running the English locale. (RC2.0)</li>
+</ul>
+
+<!--- 71173 -->
+<ul>
+  <li>You can now enable JavaScript minification without error. Previously, after enabling JS minification, the Magento  Admin displayed 404 errors when accessing JavaScript elements. (RC2.0)</li>
+</ul>
+
+<h3 id="shipping">Shipping</h3>
+
+<!--- MAGETWO-67283 -->
+<ul>
+  <li>When upgrading Magento from 2.1.x to 2.2, the <code>quote_address.free_shipping</code> column is the same whether you upgraded from a previous installation of Magento or performed a fresh installation. Previously, different upgrade/installation options affected the contents of this column.(RC2.0)</li>
+</ul>
+
+<!--- MAGETWO-70861-->
+<ul>
+  <li>Errors in shipping rates no longer occur when a customer changes the country during guest checkout and DHL is enabled. Previously, a customer changing country during guest checkout resulted in inaccurate shipping rates. (RC2.0)</li>
+</ul>
+
+<h3 id="url-rewrites">URL rewrites</h3>
+
+<!--- MAGETWO-70663 -->
+<ul>
+  <li>You can now assign products to a category when <strong>Match Products by rule</strong> is enabled. (RC2.0)</li>
+</ul>
+
+<!--- MAGETWO-70779 -->
+<ul>
+  <li>Magento now saves Category URL rewrites as expected. (RC2.0)</li>
+</ul>
+
+<h2 id="issues-resolved-in-release-candidate-1x">Issues resolved in Release Candidate 1.x</h2>
+
+<p>The following fixed issues have been logged against the Magento 2.2.0 RC1.x release and documented in previously released release notes.</p>
+
+<h3 id="installation-and-configuration-1">Installation and Configuration</h3>
 
 <!--- 69675 -->
 <ul>
@@ -797,7 +878,7 @@ buyer to create a cart with more than 300 line items, and merchants can process 
   <li>The contents of the <code>sales_sequence_meta</code> table is the same whether you install or upgrade Magento. (RC1.8)</li>
 </ul>
 
-<h3 id="catalog">Catalog</h3>
+<h3 id="catalog-1">Catalog</h3>
 
 <!--- 70066 -->
 <ul>
@@ -850,7 +931,7 @@ buyer to create a cart with more than 300 line items, and merchants can process 
   <li>Requests for data transfer from Magento to MBI data now complete successfully.</li>
 </ul>
 
-<h3 id="miscellaneous">Miscellaneous</h3>
+<h3 id="miscellaneous-1">Miscellaneous</h3>
 
 <!--- 69657 -->
 <ul>
@@ -894,7 +975,7 @@ buyer to create a cart with more than 300 line items, and merchants can process 
 
 <!--- 70642 -->
 <ul>
-  <li>You can upload a new logo (or change other display features) when editing a transactional email. Previously, Magento crashed after you tried to save changes you may have made to this feature. (RC1.6)</li>
+  <li>You can upload a new logo (or change other display features) when editing a transactional email. Previously, Magento displayed an error after you tried to save changes you may have made to this feature. (RC1.6)</li>
 </ul>
 
 <!--- 70628 -->
@@ -968,7 +1049,7 @@ buyer to create a cart with more than 300 line items, and merchants can process 
   <li>Magento now sends the <code>parent_id</code> of a deleted configurable product variation to ElasticSearch. Previously, Magento didn’t send this information  to the ElasticSearch server  if  the simple product associated with a configurable product were changed. (RC1.5)</li>
 </ul>
 
-<h3 id="shipping">Shipping</h3>
+<h3 id="shipping-1">Shipping</h3>
 
 <!--- 70844 -->
 <ul>
@@ -987,7 +1068,7 @@ buyer to create a cart with more than 300 line items, and merchants can process 
   <li>We’ve improved the performance of the Tax Rules form in installations containing many tax rates.</li>
 </ul>
 
-<h3 id="url-rewrites">URL rewrites</h3>
+<h3 id="url-rewrites-1">URL rewrites</h3>
 
 <!--- 70663 -->
 <ul>
