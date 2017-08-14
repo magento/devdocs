@@ -2,9 +2,9 @@
 layout: default
 group: release-notes
 subgroup: 2.2.0 Release Candidate
-title: Magento EE 2.2 Release Candidate 2 Release Notes
-menu_title: Magento EE 2.2 Release Candidate 2 Release Notes
-menu_order: 700
+title: Magento Commerce 2.2 Release Candidate 2 Release Notes
+menu_title: Magento Commerce 2.2 Release Candidate 2 Release Notes
+menu_order: 680
 level3_menu_node:
 level3_subgroup:
 github_link: release-notes/release-notes-2-2-RC2-EE.md
@@ -19,9 +19,13 @@ github_link: release-notes/release-notes-2-2-RC2-EE.md
 *Notes updated: August 14, 2017*
 
 
-Magento Enterprise Edition 2.2.0 Release Candidate 2.x includes significant new features as well as many bug fixes.
+Magento Commerce 2.2.0 Release Candidate 2.x (formerly Enterprise Edition) includes significant new features as well as many bug fixes.
 
 Looking for information about how the Magento 2.2.0 Release Candidate evaluation program works? Check out the [Magento 2.2.0 Release Candidate QuickStart Guide]({{page.baseurl}}release-notes/release-candidate/quick-start.html) for more information. This guide provides a handy overview of [Component Status]({{page.baseurl}}release-notes/release-candidate/component-status.html), too.
+
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+We will provide a Composer-based installation option for 2.2.0 Release Candidate 2.x soon. 
+</div>
 
 
 ## Highlights
@@ -54,9 +58,66 @@ buyer to create a cart with more than 300 line items, and merchants can process 
 
 
 
-## Issues fixed in this Release Candidate
-The following fixed and open issues have been logged against the Magento 2.2.0 RC1.x release.
+## Issues fixed in this Release Candidate (RC 2.x)
+The following fixed and open issues have been logged against the Magento 2.2.0 RC2.x release. Issues fixed in the  Release Candidate 1.x are listed below. 
 
+### Installation and Configuration 
+
+<!--- 70705 -->* The installation process no longer stops when loading the Magento_Tax module. [GitHub-10138](https://github.com/magento/magento2/issues/10138) (RC2.0)
+
+
+### Catalog
+
+<!--- 69717 -->* Custom option IDs no longer change during import. Previously, custom option ID values were deleted, and new values were added. (RC2.0)
+
+<!--- 70877 -->* You can now successfully add a product to the compare list. Previously, when you tried to add a product to a compare list, Magento displayed an error. (RC2.0)
+
+<!--- 67618 -->* View permissions to high-level product categories now work as expected. Previously,  a user restricted to browse a category could still see the category in the top-level navigation menu if the page were previously cached in FPC. (RC2.0)
+
+<!--- 70750 -->* Magento now displays an accurate view of high-level product categories based on viewer permission. Previously, Magento displayed only the product categories that users who belonged to the NOT_LOGGED_IN customer group were permitted to view, no matter which user logged in. (RC2.0)
+
+
+
+### Miscellaneous
+
+<!--- 64047 -->* A null value may now be specified to unset the special_price attribute. (RC2.0)
+
+<!--- 70642 -->* You can upload a new logo (or change other display features) when editing a transactional email. Previously, Magento displayed an error after you tried to save changes you may have made to this feature. (RC2.0)
+
+<!--- 71180 -->* Customers can now place orders as expected when Magento is running a French locale in production mode. Previously, customers could not complete a transaction in a storefront running a French locale, although they could if they switched to the storefront running the English locale. (RC2.0)
+
+<!--- 71173 -->* You can now enable JavaScript minification without error. Previously, after enabling JS minification, the Magento  Admin displayed 404 errors when accessing JavaScript elements. (RC2.0)
+
+
+<!--- 70517 -->* You can now successfully check out when the **Deferred Stock Update** option is enabled, and the AMQP connection is not configured. Previously, checkout failed, and Magento displayed this message: 
+Error Connecting to server (0): Failed to parse address ":" {"exception":"[object](PhpAmqpLib\\Exception\\AMQPRuntimeException(code: 0): Error Connecting to server (0): Failed to parse address \":\" at vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php:106)"} (RC2.0)
+
+
+### Shipping
+
+<!--- 67283 -->* When upgrading Magento from 2.1.x to 2.2, the `quote_address.free_shipping` column is the same whether you upgraded from a previous installation of Magento or performed a fresh installation. Previously, different upgrade/installation options affected the contents of this column.(RC2.0)
+
+<!--- 70861-->* Errors in shipping rates no longer occur when a customer changes the country during guest checkout and DHL is enabled. Previously, a customer changing country during guest checkout resulted in inaccurate shipping rates. (RC2.0)
+
+### Staging
+
+<!--- 70671 -->*  You can now preview an update from the dashboard and click on links and see how the entire instance would look like for a store between some dates. Previously, the links from the Preview page were broken. (RC2.0)
+
+<!--- 70708 -->* You can now change the Start Date for a campaign. (RC2.0)
+
+
+### URL rewrites
+
+<!--- 70663 -->* You can now assign products to a category when **Match Products by rule** is enabled. (RC2.0)
+
+<!--- 70779 -->* Magento now saves Category URL rewrites as expected. (RC2.0)
+
+
+
+
+
+
+## Issues resolved in Release Candidate 1.x
 
 ### Installation and Configuration 
 
