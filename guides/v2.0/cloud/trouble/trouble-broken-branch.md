@@ -22,9 +22,9 @@ If your build broke in this situation, we recommend force resetting the code fro
 
 1. If you have code commits for your branch, you should move those commits to a new branch. When [resetting your code](https://git-scm.com/docs/git-reset){:target="_blank"} branch, you will lose any and all code commits.
 
-  We recommend using [`git stash`](https://git-scm.com/docs/git-stash){:target="_blank"} to save your current branch. You can pull code from the stash into your reset branch.
+    We recommend using [`git stash`](https://git-scm.com/docs/git-stash){:target="_blank"} to save your current branch. You can pull code from the stash into your reset branch.
 
-  Or you can create a branch of the commits to add the work back after resetting the branch.
+    Or you can create a branch of the commits to add the work back after resetting the branch.
 2. Force reset your code branch on your local. This will force return the code to the current remote branch.
 
     git reset --hard
