@@ -10,7 +10,7 @@ version: 2.0
 github_link: install-gde/docker/docker-phpstorm-debug.md
 ---
  
-{% include_relative inc/deprecated-note.html %}
+{% include install/docker/deprecated-note.html %}
 
 This topic discusses how to debug custom code using PhpStorm and the Chrome web browser using Xdebug.
 
