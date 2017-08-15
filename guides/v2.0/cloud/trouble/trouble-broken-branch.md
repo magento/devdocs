@@ -11,7 +11,7 @@ github_link: cloud/trouble/trouble-broken-branch.md
 ---
 
 ## Resolve issues with broken Git branches
-This topic discusses solutions to typical issues you might experience with broken branches. You should have experience with Git [branches and commits](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging){:target="_blank"} to effectively fix your branch. Additional information is linked as needed to help understand Git and Magento Commerce (Cloud) builds and deployments.
+This topic discusses solutions to typical issues you might experience with broken branches. You should have experience with Git [branches and commits](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging){:target="_blank"} to effectively fix your branch. Additional information is linked as needed to help understand Git and {{site.data.var.<ece>}} builds and deployments.
 
 ## Broken build trying to force build using the Magento Cloud CLI {#cli-build}
 When we initially provision your project, you receive a cloned `master` branch. You should clone the `master` to your local workspace and create a branch from it to complete all of your development.
