@@ -16,16 +16,13 @@ github_link: release-notes/release-notes-2-2-RC2-EE.md
 
 *Release date: August 14, 2017*
 
-*Notes updated: August 14, 2017*
+*Notes updated: August 15, 2017*
 
 
 Magento Commerce 2.2.0 Release Candidate 2.x (formerly Enterprise Edition) includes significant new features as well as many bug fixes.
 
 Looking for information about how the Magento 2.2.0 Release Candidate evaluation program works? Check out the [Magento 2.2.0 Release Candidate QuickStart Guide]({{page.baseurl}}release-notes/release-candidate/quick-start.html) for more information. This guide provides a handy overview of [Component Status]({{page.baseurl}}release-notes/release-candidate/component-status.html), too.
 
-<div class="bs-callout bs-callout-info" id="info" markdown="1">
-We will provide a Composer-based installation option for 2.2.0 Release Candidate 2.x soon. 
-</div>
 
 
 ## Highlights
