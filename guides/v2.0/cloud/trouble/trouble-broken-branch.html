@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Prepare to deploy to Staging and Production | Magento 2 Developer Documentation</title>
+	<title>Resolve a broken branch | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.0/cloud/live/stage-prod-migrate-prereq.html">
+	<link rel="canonical" href="//guides/v2.0/cloud/trouble/trouble-broken-branch.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -69,11 +69,11 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/cloud/live/stage-prod-migrate-prereq.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/cloud/trouble/trouble-broken-branch.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/cloud/live/stage-prod-migrate-prereq.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/cloud/trouble/trouble-broken-branch.html">Magento 2.1</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.2/cloud/live/stage-prod-migrate-prereq.html">Magento 2.2 RC</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.2/cloud/trouble/trouble-broken-branch.html">Magento 2.2 RC</a></li>
 	
   </ul>
 
@@ -930,7 +930,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.0/cloud/live/stage-prod-migrate-prereq.html">Prepare to deploy to Staging and Production</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/cloud/live/stage-prod-migrate-prereq.html">Prepare to deploy to Staging and Production</a></li>
 
 									
 
@@ -1100,7 +1100,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/cloud/trouble/trouble-broken-branch.html">Resolve a broken branch</a></li>
+									<li class="level-2  active "><a href="/guides/v2.0/cloud/trouble/trouble-broken-branch.html">Resolve a broken branch</a></li>
 
 									
 
@@ -1458,7 +1458,7 @@
 
           
 
-          <span property="name">Prepare to deploy to Staging and Production</span>
+          <span property="name">Resolve a broken branch</span>
 
         
 
@@ -1481,7 +1481,7 @@
 
 	
 
-	<h1 class="page-heading">Prepare to deploy to Staging and Production</h1>
+	<h1 class="page-heading">Resolve a broken branch</h1>
 
   
 
@@ -1489,161 +1489,90 @@
 </section>
 
 
-			<h4 id="previous-step">Previous step:</h4>
-<p><a href="/guides/v2.0/cloud/live/live-sanity-check.html">Build and deploy on local</a></p>
+			<h2 id="resolve-issues-with-broken-git-branches">Resolve issues with broken Git branches</h2>
+<p>This topic discusses solutions to typical issues you might experience with broken branches. You should have experience with Git <a href="https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging" target="_blank">branches and commits</a> to effectively fix your branch. Additional information is linked as needed to help understand Git and Magento Commerce (Cloud) builds and deployments.</p>
 
-<p>When you are ready to deploy your store, you need to complete deployment and testing in Staging first, then deploy to Production. The Staging environment provides a near-production environment with full services (including Fastly, New Relic, and Blackfire), database, web server, and more.</p>
+<p>To review logs, see <a href="/guides/v2.0/cloud/access-acct/trouble.html">Troubleshoot your deployment</a>.</p>
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>Make sure to complete all development and merging of your code to the <code>master</code> branch in the Integration environment. Only the <code>master</code> branch is deployed to Staging then Production.</p>
-</div>
+<h2 id="patches">Issues with installing patches</h2>
+<p>When you push your code, the build and deploy phases begin. Patch and available hotfix installation is part of the process. If you receive errors indicating the patches could not be installed and the build failed, you can run the following command locally to identify any errors:</p>
 
-<p>For <strong>first time setup</strong> to migrate your database and deploy code to Staging or Production, you will:</p>
+<pre><code>git apply &lt;path to patch&gt;
+</code></pre>
+
+<p>Make note of the errors. These may help determine what fixes are required. We can also help further with those speified errors.</p>
+
+<p>You should apply patches in your local on your Git branch then push to the remote for normal build and deploy scripts to run. For full instructions, see <a href="/guides/v2.0/cloud/project/project-patch.html">Patch and test Magento Commerce</a>.</p>
+
+<h2 id="compile">Code compile issues</h2>
+<p>If you receive build errors due to compilation of your code, you may have disabled modules that are not correctly enabling for the compile commands.</p>
+
+<p>To enable all modules:</p>
 
 <ol>
-  <li>Create a support ticket to <a href="#cloud-live-migrate-yaml">migrate deployment hooks</a>. If you haven’t already, also include your public SSH keys to add to Staging and Production.</li>
-  <li>Get your <a href="#cloud-live-migrate-urls">access URLs</a> for Staging and Production. You will use these often for SSH access.</li>
-  <li>Set up <a href="#cloud-live-migrate-git">remote Git repositories</a> on Staging and Production.</li>
-  <li>Just once, set up your <a href="#cloud-live-migrate-agent">SSH agent</a> for Staging and Production.</li>
+  <li>Log into your local machine, SSH into your Magento local system.</li>
+  <li>
+    <p>Enter the following CLI commands:</p>
+
+    <pre><code> bin/magento module:enable --all
+ bin/magento setup:di:compile
+</code></pre>
+  </li>
 </ol>
 
-<p>For <strong>continuous integration</strong> after first time setup, you will:
-* Code and test in your Integration environment
-* SSH into Staging and use Git commands for pushing code, files, etc
-* Test in Staging
-* SSH into Production and use Git commands for pushing code, files, etc</p>
+<p>These commands enable all extensions and run the compile part of the build. Verify if you continue to encounter errors or issues.</p>
 
-<p>If you haven’t done so already, upload any <a href="/guides/v2.0/cloud/access-acct/fastly.html#cloud-live-migrate-fastly-snip">Fastly VCL snippets</a> in your Integration environment <code>master</code> Magento Admin panel. Fastly is available in Staging and Production.</p>
+<h2 id="cli-build">Broken build trying to force build using the Magento Cloud CLI</h2>
+<p>When we initially provision your project, you receive a cloned <code>master</code> branch. You should clone the <code>master</code> to your local workspace and create a branch from it to complete all of your development.</p>
 
-<h2 id="cloud-live-migrate-yaml">Migrate deployment hooks in your <code>.magento.app.yaml</code> file</h2>
+<p>When you want to build and deploy the code to the Integration environment, you should not force the build using the Magento Cloud CLI commands to initiate a build command. This can cause the build to break. The command may check for specific variables and settings not in your local but in the remote environment. The automated build process also runs a specific series of scripts and commands when you push your code to your remote Git branch and environment.</p>
 
-<div>
+<p>If your build broke in this situation, we recommend force resetting the code from the remote and following build and deploy processes. The branch could have inaccurate files, incomplete steps, that require fully resetting the code and building normally.</p>
 
-  <p>For technical reasons, Magento Commerce staging and production systems don’t implement any deployment hooks automatically. These hooks, defined in the <code>hooks</code> section of your <a href="/guides/v2.0/cloud/project/project-conf-files_magento-app.html#cloud-yaml-platform-hooks"><code>.magento.app.yaml</code> file</a>, must be manually migrated to staging or production.</p>
+<ol>
+  <li>
+    <p>If you have code commits for your branch, you should move those commits to a new branch. When <a href="https://git-scm.com/docs/git-reset" target="_blank">resetting your code</a> branch, you will lose any and all code commits.</p>
 
-  <p>Create a <a href="/guides/v2.0/cloud/bk-cloud.html#gethelp">support ticket</a> to let us help you implement any deployment hooks you set up.</p>
+    <p>We recommend using <a href="https://git-scm.com/docs/git-stash" target="_blank"><code>git stash</code></a> to save your current branch. You can pull code from the stash into your reset branch.</p>
 
-  <p>Among the settings you can request us to enable are Xdebug and PHPUnit, which assists you in troubleshooting any coding issues you might have during deployment. Because of its memory requirements, we recommend you disable Xdebug before your site is live.</p>
+    <p>Or you can create a branch of the commits to add the work back after resetting the branch.</p>
+  </li>
+  <li>
+    <p>You will need to locate a specific commit number to reset back to. If you do not include a <commit ID=""> SHA or ID, the reset will reference the latest commit.</commit></p>
 
-  <p>If you have your SSH keys added to Staging and Production environments per a ticket, you can also directly SSH into the environment to use Git CLI commands for deployments.</p>
+    <p>To get a log of commits, you can use the <a href="https://git-scm.com/docs/git-log" target="_blank"><code>git log</code></a> command for a verbose list of commits to copy an ID:</p>
 
-  <div class="bs-callout bs-callout-info" id="info">
-  <p>You can optionally replace the <code>hooks</code> section with a shell script that you can maintain without intervention. You need only to create a support ticket the first time you'd like to use the shell script.</p>
-</div>
-
-  <h2 id="cloud-live-migrate-urls">Get your access URLs</h2>
-  <p>Your Magento Commerce (Cloud) OneDrive account includes an onboarding document that contains your Git, SSH, and project URLs for Staging and Production. You’ll use this information for accessing the environments.</p>
-
-  <ul>
-    <li>
-      <p>Git <span term-uuid="a05c59d3-77b9-47d0-92a1-2cbffe3f8622" class="glossary-term" data-toggle="popover">URL</span> format:</p>
-
-      <ul>
-        <li>Staging: <code>git@git.ent.magento.cloud:&lt;project ID&gt;_stg.git</code></li>
-        <li>Production: <code>git@git.ent.magento.cloud:&lt;project ID&gt;.git</code></li>
-      </ul>
-    </li>
-    <li>
-      <p>SSH URL format:</p>
-
-      <ul>
-        <li>Staging: <code>&lt;project ID&gt;_stg@&lt;project ID&gt;.ent.magento.cloud</code></li>
-        <li>Production: <code>&lt;project ID&gt;@&lt;project ID&gt;.ent.magento.cloud</code></li>
-      </ul>
-    </li>
-    <li>
-      <p>Web URL format:</p>
-
-      <ul>
-        <li>Staging: <code>http[s]://staging.&lt;your domain&gt;.c.&lt;project ID&gt;.ent.magento.cloud</code></li>
-        <li>
-          <p>Production:</p>
-
-          <ul>
-            <li>Load balancer URL: <code>http[s]://&lt;your domain&gt;.c.&lt;project ID&gt;.ent.magento.cloud</code></li>
-            <li>Direct access to one of the three redundant servers: <code>http[s]://&lt;your domain&gt;.{1|2|3}.&lt;project ID&gt;.ent.magento.cloud</code></li>
-          </ul>
-        </li>
-      </ul>
-    </li>
-  </ul>
-
-  <h2 id="cloud-live-migrate-git">Set up remote Git repositories</h2>
-  <p>You only need to set these up once. When you know your Git URLs, you need to set them up as remote upstream repositories so you can push code to them.</p>
-
-  <p>Basically, you configure these remote repositories using these instructions to SSH into the environements and push code and migrate data and files using Git commands.</p>
-
-  <p>Using a terminal connection, enter Git commands to add the remote repositories.</p>
-
-  <p>The Git command syntax is:</p>
-
-  <pre><code>git remote add &lt;remote repository name&gt; &lt;remote repository URL&gt;
+    <pre><code> git log
 </code></pre>
 
-  <p>The following commands are examples for setting up remotes on Staging and Production:</p>
+    <p>Or use the <a href="https://git-scm.com/docs/git-reflog" target="_blank"><code>git reflog</code></a> command for a list of commit IDs with commit message:</p>
 
-  <pre><code>git remote add staging git@git.ent.magento.cloud:dr5q6no7mhqip_stg.git
-git remote add prod git@git.ent.magento.cloud:dr5q6no7mhqip.git
+    <pre><code> git reflog
+</code></pre>
+  </li>
+  <li>
+    <p>Force reset your code branch on your local. This will force return the code to the current remote branch.</p>
+
+    <pre><code> git reset --hard &lt;commit ID&gt;
 </code></pre>
 
-  <h2 id="cloud-live-migrate-agent">Set up your SSH agent and add the SSH key</h2>
-  <p>You only need to set these up once. You can use any terminal client you prefer for SSH access, or see our <a href="/guides/v2.0/cloud/before/before-workspace.html#recommended-tools">Recommendeds tools</a>. For these examples, we use the OpenSSH client.</p>
+    <div class="bs-callout bs-callout-warning">
+      <p>You will lose committed code, if any. Make sure to backup, stash, or make a new branch to save your code.</p>
+    </div>
+  </li>
+  <li>
+    <p>Push code to start a normal build and deploy process. For the full process, see <a href="/guides/v2.0/cloud/live/live-sanity-check.html">Build and deploy on local</a>.</p>
+  </li>
+</ol>
 
-  <p>The SSH agent forwards authentication requests from Staging or Production environments to your local with a working Magento system. An SSH agent helps you log in to the remote servers from the Staging or Production host using a local private SSH key.</p>
+<p>You should have a successful build. At this point, If you have code commits, commit those to the reset branch. Fully test to ensure the changes are correctly working.</p>
 
-  <p><strong>What does that mean?</strong> This agent helps you migrate files between Integration, Staging, and Production environments just through SSH access. After you push your Git code, you can SSH into Staging and Production and update code, data, and files with this set up.</p>
-
-  <p>To set up an SSH agent:</p>
-
-  <ol>
-    <li>Log in to your local system.</li>
-    <li>
-      <p>Enter the following command to check if the SSH agent is running and list fingerprints of all identities currently represented by the agent:</p>
-
-      <pre><code>ssh-add -l
-</code></pre>
-
-      <p>One of the following messages displays:</p>
-
-      <ul>
-        <li>
-          <p>Displays a working and running SSH agent: <code>2048 ab:de:56:94:e3:1e:71:c3:4f:df:e1:62:8d:29:a5:c0 /home/magento_user/.ssh/id_rsa (RSA)</code></p>
-
-          <p>Skip to step 4.</p>
-        </li>
-        <li>
-          <p>The SSH agent has not started: <code>Could not open a connection to your authentication agent.</code></p>
-
-          <p>Continue with step 3.</p>
-        </li>
-      </ul>
-    </li>
-    <li>
-      <p>To start the SSH agent, enter the following command:</p>
-
-      <pre><code>eval $(ssh-agent -s)
-</code></pre>
-
-      <p>The agent starts and displays the process ID (PID).</p>
-    </li>
-    <li>
-      <p>Add your public SSH key to the agent to SSH into environments and complete Git commands. This is the same SSH key you provided in a ticket for access to Staging and Production.</p>
-
-      <pre><code>ssh-add ~/.ssh/id_rsa
-</code></pre>
-
-      <p>A message similar to the following displays:</p>
-
-      <pre><code>Identity added: /home/magento_user/.ssh/id_rsa (/home/magento_user/.ssh/id_rsa)
-</code></pre>
-    </li>
-  </ol>
-
-  <p>For more information on setting up SSH, see <a href="/guides/v2.0/cloud/before/before-workspace-ssh.html">Enable SSH keys</a> as part of your local setup.</p>
-
-  <h4 id="next-step">Next step</h4>
-  <p><a href="/guides/v2.0/cloud/live/stage-prod-migrate.html">Migrate and deploy</a></p>
-</div>
+<h4 id="related-topics">Related topics</h4>
+<ul>
+  <li><a href="/guides/v2.0/cloud/access-acct/first-time-setup.html">First-time development setup</a></li>
+  <li><a href="/guides/v2.0/cloud/live/live-sanity-check.html">Build and deploy on local</a></li>
+  <li><a href="/guides/v2.0/cloud/reference/discover-deploy.html">Deployment Process</a></li>
+</ul>
 
 		</div>
 		<!-- /.content-wrap -->
@@ -1654,14 +1583,14 @@ git remote add prod git@git.ent.magento.cloud:dr5q6no7mhqip.git
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/live/stage-prod-migrate-prereq.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/trouble/trouble-broken-branch.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
   
 
   <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.0/cloud/live/stage-prod-migrate-prereq.html" target="_blank">Give us feedback</a>
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.0/cloud/trouble/trouble-broken-branch.html" target="_blank">Give us feedback</a>
   </div>
 
 </div>

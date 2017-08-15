@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Branch an environment | Magento 2 Developer Documentation</title>
+	<title>Resolve a broken branch | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.2/cloud/before/before-setup-env-env.html">
+	<link rel="canonical" href="//guides/v2.2/cloud/trouble/trouble-broken-branch.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -69,11 +69,11 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/cloud/before/before-setup-env-env.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/cloud/trouble/trouble-broken-branch.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/cloud/before/before-setup-env-env.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/cloud/trouble/trouble-broken-branch.html">Magento 2.1</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.2/cloud/before/before-setup-env-env.html">Magento 2.2 RC</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.2/cloud/trouble/trouble-broken-branch.html">Magento 2.2 RC</a></li>
 	
   </ul>
 
@@ -440,7 +440,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.2/cloud/before/before-setup-env-env.html">Branch an environment</a></li>
+									<li class="level-2 "><a href="/guides/v2.2/cloud/before/before-setup-env-env.html">Branch an environment</a></li>
 
 									
 
@@ -1173,7 +1173,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.2/cloud/trouble/trouble-broken-branch.html">Resolve a broken branch</a></li>
+									<li class="level-2  active "><a href="/guides/v2.2/cloud/trouble/trouble-broken-branch.html">Resolve a broken branch</a></li>
 
 									
 
@@ -1543,7 +1543,7 @@
 
           
 
-          <span property="name">Branch an environment</span>
+          <span property="name">Resolve a broken branch</span>
 
         
 
@@ -1566,7 +1566,7 @@
 
 	
 
-	<h1 class="page-heading">Branch an environment</h1>
+	<h1 class="page-heading">Resolve a broken branch</h1>
 
   
 
@@ -1574,134 +1574,90 @@
 </section>
 
 
-			<h4 id="previous-step">Previous step:</h4>
-<p><a href="/guides/v2.2/cloud/before/before-setup-env-keys.html">Set up authentication keys</a></p>
+			<h2 id="resolve-issues-with-broken-git-branches">Resolve issues with broken Git branches</h2>
+<p>This topic discusses solutions to typical issues you might experience with broken branches. You should have experience with Git <a href="https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging" target="_blank">branches and commits</a> to effectively fix your branch. Additional information is linked as needed to help understand Git and Magento Commerce (Cloud) builds and deployments.</p>
 
-<p>With your workspace configured, the project cloned, and cron set up, you can create a branch for development work.</p>
+<p>To review logs, see <a href="/guides/v2.2/cloud/access-acct/trouble.html">Troubleshoot your deployment</a>.</p>
 
-<p>You can branch according to your own branching strategies. For example, you could create a branch to:</p>
+<h2 id="patches">Issues with installing patches</h2>
+<p>When you push your code, the build and deploy phases begin. Patch and available hotfix installation is part of the process. If you receive errors indicating the patches could not be installed and the build failed, you can run the following command locally to identify any errors:</p>
 
+<pre><code>git apply &lt;path to patch&gt;
+</code></pre>
+
+<p>Make note of the errors. These may help determine what fixes are required. We can also help further with those speified errors.</p>
+
+<p>You should apply patches in your local on your Git branch then push to the remote for normal build and deploy scripts to run. For full instructions, see <a href="/guides/v2.2/cloud/project/project-patch.html">Patch and test Magento Commerce</a>.</p>
+
+<h2 id="compile">Code compile issues</h2>
+<p>If you receive build errors due to compilation of your code, you may have disabled modules that are not correctly enabling for the compile commands.</p>
+
+<p>To enable all modules:</p>
+
+<ol>
+  <li>Log into your local machine, SSH into your Magento local system.</li>
+  <li>
+    <p>Enter the following CLI commands:</p>
+
+    <pre><code> bin/magento module:enable --all
+ bin/magento setup:di:compile
+</code></pre>
+  </li>
+</ol>
+
+<p>These commands enable all extensions and run the compile part of the build. Verify if you continue to encounter errors or issues.</p>
+
+<h2 id="cli-build">Broken build trying to force build using the Magento Cloud CLI</h2>
+<p>When we initially provision your project, you receive a cloned <code>master</code> branch. You should clone the <code>master</code> to your local workspace and create a branch from it to complete all of your development.</p>
+
+<p>When you want to build and deploy the code to the Integration environment, you should not force the build using the Magento Cloud CLI commands to initiate a build command. This can cause the build to break. The command may check for specific variables and settings not in your local but in the remote environment. The automated build process also runs a specific series of scripts and commands when you push your code to your remote Git branch and environment.</p>
+
+<p>If your build broke in this situation, we recommend force resetting the code from the remote and following build and deploy processes. The branch could have inaccurate files, incomplete steps, that require fully resetting the code and building normally.</p>
+
+<ol>
+  <li>
+    <p>If you have code commits for your branch, you should move those commits to a new branch. When <a href="https://git-scm.com/docs/git-reset" target="_blank">resetting your code</a> branch, you will lose any and all code commits.</p>
+
+    <p>We recommend using <a href="https://git-scm.com/docs/git-stash" target="_blank"><code>git stash</code></a> to save your current branch. You can pull code from the stash into your reset branch.</p>
+
+    <p>Or you can create a branch of the commits to add the work back after resetting the branch.</p>
+  </li>
+  <li>
+    <p>You will need to locate a specific commit number to reset back to. If you do not include a <commit ID=""> SHA or ID, the reset will reference the latest commit.</commit></p>
+
+    <p>To get a log of commits, you can use the <a href="https://git-scm.com/docs/git-log" target="_blank"><code>git log</code></a> command for a verbose list of commits to copy an ID:</p>
+
+    <pre><code> git log
+</code></pre>
+
+    <p>Or use the <a href="https://git-scm.com/docs/git-reflog" target="_blank"><code>git reflog</code></a> command for a list of commit IDs with commit message:</p>
+
+    <pre><code> git reflog
+</code></pre>
+  </li>
+  <li>
+    <p>Force reset your code branch on your local. This will force return the code to the current remote branch.</p>
+
+    <pre><code> git reset --hard &lt;commit ID&gt;
+</code></pre>
+
+    <div class="bs-callout bs-callout-warning">
+      <p>You will lose committed code, if any. Make sure to backup, stash, or make a new branch to save your code.</p>
+    </div>
+  </li>
+  <li>
+    <p>Push code to start a normal build and deploy process. For the full process, see <a href="/guides/v2.2/cloud/live/live-sanity-check.html">Build and deploy on local</a>.</p>
+  </li>
+</ol>
+
+<p>You should have a successful build. At this point, If you have code commits, commit those to the reset branch. Fully test to ensure the changes are correctly working.</p>
+
+<h4 id="related-topics">Related topics</h4>
 <ul>
-  <li>Install and add Magento extensions and modules</li>
-  <li>Create custom code and front end themes</li>
-  <li>Modify and export configurations</li>
+  <li><a href="/guides/v2.2/cloud/access-acct/first-time-setup.html">First-time development setup</a></li>
+  <li><a href="/guides/v2.2/cloud/live/live-sanity-check.html">Build and deploy on local</a></li>
+  <li><a href="/guides/v2.2/cloud/reference/discover-deploy.html">Deployment Process</a></li>
 </ul>
-
-<p>After you create the branch, update project dependencies so you can install the Magento software locally. You should also <a href="#add-keys-project">Add your local authentication keys to the project</a>.</p>
-
-<p>To branch from master:</p>
-
-<ol>
-  <li>
-    <p>Do any of the following:</p>
-
-    <ul>
-      <li>
-        <p>To create a new environment, enter the following command:</p>
-
-        <pre><code>magento-cloud environment:branch &lt;environment name&gt; &lt;parent environment ID&gt;
-</code></pre>
-      </li>
-      <li>
-        <p>To check out an existing environment, enter the following command:</p>
-
-        <pre><code>magento-cloud environment:checkout
-</code></pre>
-      </li>
-    </ul>
-
-    <p>For example, to create a new branch named <code>sprint1</code> from master, enter:</p>
-
-    <pre><code>    magento-cloud environment:branch sprint1 master
-</code></pre>
-  </li>
-  <li>
-    <p>After the command completes, update dependencies:</p>
-
-    <pre><code>composer --no-ansi --no-interaction install --no-progress --prefer-dist --optimize-autoloader
-</code></pre>
-  </li>
-  <li>
-    <p>Create a <a href="/guides/v2.2/cloud/project/project-webint-snap.html">snapshot</a> of the environment.</p>
-
-    <pre><code>magento-cloud snapshot:create -e &lt;environment ID&gt;
-</code></pre>
-  </li>
-</ol>
-
-<h2 id="add-keys-project">Add your local authentication keys to the project</h2>
-<p>Before you can upgrade the Magento software or install extensions, you must have authentication keys in the <code>auth.json</code> file in the Magento root directory. Contact the project administrator or the account owner for the authentication keys. You need these keys to add them locally.</p>
-
-<p>These authentication keys don’t need to be in the Git repository. You can add <code>auth.json</code> to <code>.gitignore</code>.</p>
-
-<div class="bs-callout bs-callout-warning">
-  <p>Ensure your project administrator has added authentication keys to the project as discussed in the preceding section.</p>
-</div>
-
-<p>These instructions require having a cloned branch for development locally.</p>
-
-<p>To add your local authentication keys:</p>
-
-<ol>
-  <li>
-    <p>If you haven’t done so already, log in to your Magento Commerce project, check out an environment, and pull updated code from the server. For additional information, see <a href="/guides/v2.2/cloud/before/before-setup-env-env.html">Step 5, Clone or branch an environment</a></p>
-
-    <pre><code>Use the following commands:
-
-        magento-cloud login
-        magento-cloud environment:list
-        magento-cloud environment:checkout &lt;env ID&gt;
-        git pull origin &lt;branch name&gt;
-</code></pre>
-  </li>
-  <li>
-    <p>Create a file named <code>auth.json</code> in the Magento project root directory and add your authentication keys to it.</p>
-
-    <pre><code>&lt;div class="bs-callout bs-callout-info" markdown="1"&gt;
-If you have an `auth.json` file already, contact your project administrator to make sure a project variable has been defined. If there is no project variable that defines authentication keys, skip this step and continue with [Step 7: Set file system permissions and ownership](#setup-env-perms).
-&lt;/div&gt;
-
-A sample `auth.json` follows. Replace the same values with your keys.
-
-    ``` json
-    {
-       "http-basic": {
-          "repo.magento.com": {
-             "username": "&lt;your public key&gt;",
-             "password": "&lt;your private key&gt;"
-          }
-       }
-    }
-    ```
-</code></pre>
-  </li>
-  <li>Save your changes to <code>auth.json</code> and exit the text editor.</li>
-  <li>Open <code>.gitignore</code> in a text editor.</li>
-  <li>
-    <p>Add <code>auth.json</code> to it anywhere.</p>
-
-    <p>A snippet from <code>.gitignore</code> follows:</p>
-
-    <pre><code>    &lt;pre class="no-copy"&gt;
-    /.buildpath
-    /.cache
-    /.metadata
-    /.project
-    /.settings
-    atlassian*
-    /nbproject
-    /sitemap
-    /.idea
-    /.gitattributes
-    auth.json
-    &lt;/pre&gt;
-</code></pre>
-  </li>
-  <li>Save your changes to <code>.gitignore</code> and exit the text editor.</li>
-</ol>
-
-<h4 id="next-step">Next step</h4>
-<p><a href="/guides/v2.2/cloud/before/before-setup-env-install.html">Install Magento</a></p>
 
 		</div>
 		<!-- /.content-wrap -->
@@ -1712,14 +1668,14 @@ A sample `auth.json` follows. Replace the same values with your keys.
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/before/before-setup-env-env.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/cloud/trouble/trouble-broken-branch.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
   
 
   <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/cloud/before/before-setup-env-env.html" target="_blank">Give us feedback</a>
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/cloud/trouble/trouble-broken-branch.html" target="_blank">Give us feedback</a>
   </div>
 
 </div>

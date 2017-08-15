@@ -1052,7 +1052,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.1/cloud/live/stage-prod-migrate.html">Migrate data and static files</a></li>
+									<li class="level-2 "><a href="/guides/v2.1/cloud/live/stage-prod-migrate.html">Migrate and deploy</a></li>
 
 									
 
@@ -1207,6 +1207,14 @@
 									
 
 									<li class="level-2 "><a href="/guides/v2.1/cloud/trouble/trouble-google-analytics-deploy.html">Resolve issues with Google Analytics during deployment</a></li>
+
+									
+
+								
+
+									
+
+									<li class="level-2 "><a href="/guides/v2.1/cloud/trouble/trouble-broken-branch.html">Resolve a broken branch</a></li>
 
 									
 
@@ -1631,7 +1639,10 @@
   <p>We highly recommend completing your testing in an Integration active environment and the Staging environment. Only complete final tests for going live in the Production environment. Your Staging environment is best for testing with code, data, and services including Fastly, New Relic, and others.</p>
 </div>
 
-<h2 id="push-code-to-git-and-cloud">Push code to Git and Cloud</h2>
+<h2 id="composer">Update composer if you add extensions</h2>
+<p>If you modified your <a href="/guides/v2.1/cloud/cloud-composer.html">composer.json</a> to add modules, we recommend running the <code>composer update</code> command in a terminal. This command updates any dependencies in the <code>composer.lock</code>. During the build phase, we run <code>composer install</code> on a fresh clone of your Git branch of code to retrieve the latest dependencies.</p>
+
+<h2 id="push">Push code to Git and Cloud</h2>
 <p>Before you continue, make sure you push all current code to the remote Cloud server so that, in <span term-uuid="c57aef7c-97b4-4b2b-a999-8001accef1fe" class="glossary-term" data-toggle="popover">event</span> of issues, you can recover the state of the Magento application.</p>
 
 <p>To prepare your code and branch:</p>
@@ -1642,46 +1653,42 @@
     <li>Log in to your local development system, or switch to, the <a href="/guides/v2.1/cloud/before/before-workspace-file-sys-owner.html">Magento file system owner</a>.</li>
     <li>Change to a directory to which the Magento file system owner has write access.</li>
     <li>
-      <p>Log in to your project:</p>
+      <p>Enter the following command in a terminal to log in to your project:</p>
 
       <pre><code>magento-cloud login
 </code></pre>
     </li>
     <li>
-      <p>List your projects:</p>
+      <p>List your projects. With the project ID, you can complete additional commands.</p>
 
       <pre><code>magento-cloud project:list
 </code></pre>
     </li>
     <li>
-      <p>If necessary, clone a project.</p>
+      <p>If necessary, clone the project to your local. You should have cloned when setting up your local development workspace.</p>
 
       <pre><code>magento-cloud project:get &lt;project ID&gt;
 </code></pre>
     </li>
+    <li>Change to a project directory. For example, <code>cd /var/www/html/magento2</code></li>
     <li>
-      <p>Change to a project directory.</p>
-
-      <p>For example, <code>cd /var/www/html/magento2</code></p>
-    </li>
-    <li>
-      <p>List environments in the project:</p>
+      <p>List environments in the project. Every environment includes an active Git branch of your code, database, environment variables, configurations, and services.</p>
 
       <pre><code>magento-cloud environment:list
 </code></pre>
 
       <div class="bs-callout bs-callout-info" id="info">
-  		<p><code>magento-cloud environment:list</code> displays environment hierarchies whereas <code>git branch</code> displays does not. If you have any nested environments, use <code>magento-cloud environment:list</code>.</p>
+  		<p><code>magento-cloud environment:list</code> displays environment hierarchies whereas <code>git branch</code> displays does not. If you have any nested environments, use <code>magento-cloud environment:list</code> to see the full list.</p>
 </div>
     </li>
     <li>
-      <p>Fetch origin branches:</p>
+      <p>Fetch origin branches to get the latest code:</p>
 
       <pre><code>git fetch origin
 </code></pre>
     </li>
     <li>
-      <p>Check out an environment:</p>
+      <p>Check out, or switch to, a specific branch and environment. Git commands only checkout the Git branch. The Magento Cloud command also switches to the active environment.</p>
 
       <pre><code>magento-cloud environment:checkout &lt;environment ID&gt;
 </code></pre>
@@ -1689,34 +1696,34 @@
       <p>To create a new environment, use <code>magento-cloud environment:branch &lt;environment name&gt; &lt;parent environment ID&gt;</code></p>
     </li>
     <li>
-      <p>Pull updated code:</p>
+      <p>Pull any updated code to your local for the environment ID (which is the Git branch):</p>
 
       <pre><code>git pull origin &lt;environment ID&gt;
 </code></pre>
     </li>
     <li>
-      <p>Create a <a href="/guides/v2.1/cloud/project/project-webint-snap.html">snapshot</a> of the environment.</p>
+      <p>Create a <a href="/guides/v2.1/cloud/project/project-webint-snap.html">snapshot</a> of the environment as a backup:</p>
 
       <pre><code>magento-cloud snapshot:create -e &lt;environment ID&gt;
 </code></pre>
     </li>
   </ol>
 
-  <p>To push code to your remote server:</p>
+  <p>To push code to your remote environment:</p>
 
   <ol>
     <li>If you haven’t already, change to your project root directory.</li>
     <li>
-      <p>Enter the following commands to complete code commits:</p>
+      <p>Enter the following commands to complete code commits in a terminal:</p>
 
       <pre><code>git add -A &amp;&amp; git commit -m "&lt;comment&gt;"
 git push origin &lt;branch name&gt;
 </code></pre>
     </li>
-    <li>Wait for deployment to complete.</li>
+    <li>The build and deploy phases begin. Wait for the deployment to complete.</li>
   </ol>
 
-  <h2 id="build-phase">Build phase</h2>
+  <h2 id="build">Build phase</h2>
   <p>During the <a href="/guides/v2.1/cloud/reference/discover-deploy.html#cloud-deploy-over-phases-build">build phase</a>, we perform the following tasks:</p>
 
   <ul>
