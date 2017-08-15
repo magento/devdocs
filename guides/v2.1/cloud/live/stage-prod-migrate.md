@@ -2,8 +2,8 @@
 layout: default
 group: cloud
 subgroup: 160_deploy
-title: Migrate data and static files
-menu_title: Migrate data and static files
+title: Migrate and deploy
+menu_title: Migrate and deploy
 menu_order: 50
 menu_node:
 version: 2.1
@@ -15,7 +15,7 @@ github_link: cloud/live/stage-prod-migrate.md
 
 To migrate your database and static files to Staging and Production:
 
-*	[Migrate static files](#cloud-live-migrate-static)
+*	[Migrate static files and deploy code](#cloud-live-migrate-static)
 *	[Migrate the database](#cloud-live-migrate-db)
 
 If you encounter errors or need to make changes, complete those updates on your local. Push the code changes to the Integration environment. Deploy the updated `master` branch again. See instructions in the [previous step]({{ page.baseurl }}cloud/live/stage-prod-migrate.html).

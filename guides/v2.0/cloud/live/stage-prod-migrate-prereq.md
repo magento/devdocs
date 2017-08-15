@@ -114,4 +114,4 @@ To set up an SSH agent:
 For more information on setting up SSH, see [Enable SSH keys]({{ page.baseurl }}cloud/before/before-workspace-ssh.html) as part of your local setup.
 
 #### Next step
-[Migrate data and static files]({{ page.baseurl }}cloud/live/stage-prod-migrate.html)
+[Migrate and deploy]({{ page.baseurl }}cloud/live/stage-prod-migrate.html)

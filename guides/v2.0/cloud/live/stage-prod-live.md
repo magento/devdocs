@@ -56,6 +56,6 @@ To learn more, check the following:
 * [Protective block]({{ page.baseurl }}cloud/live/live-prot.html)
 *	[Build and deploy to your local]({{ page.baseurl }}cloud/live/live-sanity-check.html)
 *	[Prepare to deploy]({{ page.baseurl }}cloud/live/stage-prod-migrate-prereq.html)
-*	[Deploy code and data]({{ page.baseurl }}cloud/live/stage-prod-migrate.html)
+*	[Migrate and deploy]({{ page.baseurl }}cloud/live/stage-prod-migrate.html)
 *	[Test deployment]({{ page.baseurl }}cloud/live/stage-prod-test.html)
 * [Go live and launch]({{ page.baseurl }}cloud/live/live.html)
