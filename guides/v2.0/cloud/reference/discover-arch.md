@@ -30,6 +30,8 @@ The Staging environment provides a near-Production environment to test your site
 
 Additional sections in this guide provide instructions and walk-throughs for final code deployments and testing production level interactions in a safe Staging environment. For best performance and feature testing, replicate your Production database into Staging.
 
+We walk you through [deploying to Staging]({{page.baseurl}}cloud/live/stage-prod-live.html) and [testing your store(s)]({{page.baseurl}}cloud/live/stage-prod-test.html) requirements and processes.
+
 We highly recommend fully testing every merchant and customer interaction in Staging prior to pushing to Production.
 
 ## Production environment {#cloud-arch-prod}
