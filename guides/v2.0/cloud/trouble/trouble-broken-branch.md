@@ -32,8 +32,8 @@ To enable all modules:
 1. Log into your local machine, SSH into your Magento local system.
 2. Enter the following CLI commands:
 
-      bin/magento module:enable --all
-      bin/magento setup:di:compile
+        bin/magento module:enable --all
+        bin/magento setup:di:compile
 
 These commands enable all extensions and run the compile part of the build. Verify if you continue to encounter errors or issues.
 
