@@ -18,7 +18,7 @@ To review logs, see [Troubleshoot your deployment]({{ page.baseurl }}cloud/acces
 ## Issues with installing patches {#patches}
 When you push your code, the build and deploy phases begin. Patch and available hotfix installation is part of the process. If you receive errors indicating the patches could not be installed and the build failed, you can run the following command locally to identify any errors:
 
-  git apply <path to patch>
+    git apply <path to patch>
 
 Make note of the errors. These may help determine what fixes are required. We can also help further with those speified errors.
 
@@ -32,8 +32,8 @@ To enable all modules:
 1. Log into your local machine, SSH into your Magento local system.
 2. Enter the following CLI commands:
 
-    bin/magento module:enable --all
-    bin/magento setup:di:compile
+      bin/magento module:enable --all
+      bin/magento setup:di:compile
 
 These commands enable all extensions and run the compile part of the build. Verify if you continue to encounter errors or issues.
 
@@ -46,25 +46,25 @@ If your build broke in this situation, we recommend force resetting the code fro
 
 1. If you have code commits for your branch, you should move those commits to a new branch. When [resetting your code](https://git-scm.com/docs/git-reset){:target="_blank"} branch, you will lose any and all code commits.
 
-  We recommend using [`git stash`](https://git-scm.com/docs/git-stash){:target="_blank"} to save your current branch. You can pull code from the stash into your reset branch.
+    We recommend using [`git stash`](https://git-scm.com/docs/git-stash){:target="_blank"} to save your current branch. You can pull code from the stash into your reset branch.
 
-  Or you can create a branch of the commits to add the work back after resetting the branch.
-2. You will need to locate a specific commit number to reset back to. If you do not include a <commit> SHA or ID, the reset will reference the latest commit.
+    Or you can create a branch of the commits to add the work back after resetting the branch.
+2. You will need to locate a specific commit number to reset back to. If you do not include a <commit ID> SHA or ID, the reset will reference the latest commit.
 
-  To get a log of commits, you can use the [`git log`](https://git-scm.com/docs/git-log){:target="_blank"} command for a verbose list of commits to copy an ID:
+    To get a log of commits, you can use the [`git log`](https://git-scm.com/docs/git-log){:target="_blank"} command for a verbose list of commits to copy an ID:
 
-    git log
+      git log
 
-  Or use the [`git reflog`](https://git-scm.com/docs/git-reflog){:target="_blank"} command for a list of commit IDs with commit message:
+    Or use the [`git reflog`](https://git-scm.com/docs/git-reflog){:target="_blank"} command for a list of commit IDs with commit message:
 
-    git reflog
+      git reflog
 3. Force reset your code branch on your local. This will force return the code to the current remote branch.
 
-    git reset --hard <commit>
+      git reset --hard <commit ID>
 
-  <div class="bs-callout bs-callout-danger" markdown="1">
-  You will lose committed code, if any. Make sure to backup, stash, or make a new branch to save your code.
-  </div>
+    <div class="bs-callout bs-callout-danger" markdown="1">
+    You will lose committed code, if any. Make sure to backup, stash, or make a new branch to save your code.
+    </div>
 4. Push code to start a normal build and deploy process. For the full process, see [Build and deploy on local]({{ page.baseurl }}cloud/live/live-sanity-check.html).
 
 You should have a successful build. At this point, If you have code commits, commit those to the reset branch. Fully test to ensure the changes are correctly working.
