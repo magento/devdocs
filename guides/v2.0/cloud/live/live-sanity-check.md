@@ -24,23 +24,26 @@ For more information on the full five step process, see the [Deployment process]
 We highly recommend completing your testing in an Integration active environment and the Staging environment. Only complete final tests for going live in the Production environment. Your Staging environment is best for testing with code, data, and services including Fastly, New Relic, and others.
 </div>
 
-## Push code to Git and Cloud
+## Update composer if you add extensions {#composer}
+If you modified your [composer.json]({{ page.baseurl }}cloud/cloud-composer.html) to add modules, we recommend running the `composer update` command in a terminal. This command updates any dependencies in the `composer.lock`. During the build phase, we run `composer install` on a fresh clone of your Git branch of code to retrieve the latest dependencies.
+
+## Push code to Git and Cloud {#push}
 Before you continue, make sure you push all current code to the remote Cloud server so that, in {% glossarytooltip c57aef7c-97b4-4b2b-a999-8001accef1fe %}event{% endglossarytooltip %} of issues, you can recover the state of the Magento application.
 
 To prepare your code and branch:
 
 {% include cloud/cli-get-started.md %}
 
-To push code to your remote server:
+To push code to your remote environment:
 
 1.	If you haven't already, change to your project root directory.
-2.	Enter the following commands to complete code commits:
+2.	Enter the following commands to complete code commits in a terminal:
 
 		git add -A && git commit -m "<comment>"
 		git push origin <branch name>
-3.	Wait for deployment to complete.
+3.	The build and deploy phases begin. Wait for the deployment to complete.
 
-## Build phase
+## Build phase {#build}
 During the [build phase]({{ page.baseurl }}cloud/reference/discover-deploy.html#cloud-deploy-over-phases-build), we perform the following tasks:
 
 *	Apply patches distributed to all Magento Commerce (Cloud) accounts

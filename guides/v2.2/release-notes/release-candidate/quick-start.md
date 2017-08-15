@@ -11,7 +11,7 @@ version: 2.2
 github_link: release-notes/release-candidate/quick-start.md
 ---
 
-We are pleased to present the Magento 2.2.0 CE, EE, and B2B Release Candidate 1. This QuickStart guide provides the basic information you need to start participating in our Magento 2.2.0 Release Candidate evaluation program.
+We are pleased to present the Magento 2.2.0 CE, EE, and B2B Release Candidates 1 and 2. This QuickStart guide provides the basic information you need to start participating in our Magento 2.2.0 Release Candidate evaluation program.
 
 This guide covers:
 

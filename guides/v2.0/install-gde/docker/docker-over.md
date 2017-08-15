@@ -11,7 +11,7 @@ version: 2.0
 github_link: install-gde/docker/docker-over.md
 ---
 
-{% include_relative inc/deprecated-note.html %}
+{% include install/docker/deprecated-note.html %}
 
 The Magento DevBox is the simplest way yet to install a Magento development system. DevBox puts the Magento application in a [Docker](https://www.docker.com){:target="_blank"} container but all _you_ have to do to set it up is run a script. No more installing an operating system, web server, PHP, and so on.
 
