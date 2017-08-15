@@ -22,13 +22,26 @@ If your build broke in this situation, we recommend force resetting the code fro
 
 1. If you have code commits for your branch, you should move those commits to a new branch. When [resetting your code](https://git-scm.com/docs/git-reset){:target="_blank"} branch, you will lose any and all code commits.
 
-    We recommend using [`git stash`](https://git-scm.com/docs/git-stash){:target="_blank"} to save your current branch. You can pull code from the stash into your reset branch.
+  We recommend using [`git stash`](https://git-scm.com/docs/git-stash){:target="_blank"} to save your current branch. You can pull code from the stash into your reset branch.
 
-    Or you can create a branch of the commits to add the work back after resetting the branch.
-2. Force reset your code branch on your local. This will force return the code to the current remote branch.
+  Or you can create a branch of the commits to add the work back after resetting the branch.
+2. You will need to locate a specific commit number to reset back to. If you do not include a <commit> SHA or ID, the reset will reference the latest commit.
 
-    git reset --hard
-3. Push code to start a normal build and deploy process. For the full process, see [Build and deploy on local]({{ page.baseurl }}cloud/live/live-sanity-check.html).
+  To get a log of commits, you can use the [`git log`](https://git-scm.com/docs/git-log){:target="_blank"} command for a verbose list of commits to copy an ID:
+
+    git log
+
+  Or use the [`git reflog`](https://git-scm.com/docs/git-reflog){:target="_blank"} command for a list of commit IDs with commit message:
+
+    git reflog
+3. Force reset your code branch on your local. This will force return the code to the current remote branch.
+
+    git reset --hard <commit>
+
+  <div class="bs-callout bs-callout-danger" markdown="1">
+  You will lose committed code, if any. Make sure to backup, stash, or make a new branch to save your code.
+  </div>
+4. Push code to start a normal build and deploy process. For the full process, see [Build and deploy on local]({{ page.baseurl }}cloud/live/live-sanity-check.html).
 
 You should have a successful build. At this point, If you have code commits, commit those to the reset branch. Fully test to ensure the changes are correctly working.
 
