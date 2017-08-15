@@ -53,16 +53,16 @@ If your build broke in this situation, we recommend force resetting the code fro
 
     To get a log of commits, you can use the [`git log`](https://git-scm.com/docs/git-log){:target="_blank"} command for a verbose list of commits to copy an ID:
 
-      git log
+        git log
 
     Or use the [`git reflog`](https://git-scm.com/docs/git-reflog){:target="_blank"} command for a list of commit IDs with commit message:
 
-      git reflog
+        git reflog
 3. Force reset your code branch on your local. This will force return the code to the current remote branch.
 
-      git reset --hard <commit ID>
+        git reset --hard <commit ID>
 
-    <div class="bs-callout bs-callout-danger" markdown="1">
+    <div class="bs-callout bs-callout-warning" markdown="1">
     You will lose committed code, if any. Make sure to backup, stash, or make a new branch to save your code.
     </div>
 4. Push code to start a normal build and deploy process. For the full process, see [Build and deploy on local]({{ page.baseurl }}cloud/live/live-sanity-check.html).
