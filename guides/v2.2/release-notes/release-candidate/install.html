@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Install the Release Candidate | Magento 2 Developer Documentation</title>
+	<title>Install the release candidate | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -335,7 +335,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.2/release-notes/release-candidate/install.html">Install the Release Candidate</a></li>
+									<li class="level-2  active "><a href="/guides/v2.2/release-notes/release-candidate/install.html">Install the release candidate</a></li>
 
 									
 
@@ -671,7 +671,7 @@
 
           
 
-          <span property="name">Install the Release Candidate</span>
+          <span property="name">Install the release candidate</span>
 
         
 
@@ -694,7 +694,7 @@
 
 	
 
-	<h1 class="page-heading">Install the Release Candidate</h1>
+	<h1 class="page-heading">Install the release candidate</h1>
 
   
 
@@ -702,9 +702,137 @@
 </section>
 
 
-			<h2 id="installation">Installation</h2>
+			<p>We now offer <span term-uuid="7490850a-0654-4ce1-83ff-d88c1d7d07fa" class="glossary-term" data-toggle="popover">metapackages</span> for installing the latest release candidate code using <a href="https://getcomposer.org/">Composer</a>.</p>
 
-<p>The Magento Release Candidate 1 installation process is the same for CE and EE:</p>
+<div class="bs-callout bs-callout-tip">
+  <p>You can still install release candidate code by <a href="#install-with-github">cloning Github repositories</a>, but we recommend using Composer.</p>
+</div>
+
+<h2 id="install-with-composer">Install with Composer</h2>
+<p>The Composer installation process is the same for Magento Open Source and Magento Commerce:</p>
+
+<ul>
+  <li>
+    <p>Get the Composer metapackage</p>
+  </li>
+  <li>
+    <p>Install the Magento Commerce for B2B extension (optional)</p>
+  </li>
+  <li>
+    <p>Complete the installation</p>
+  </li>
+  <li>
+    <p>Install sample data (optional)</p>
+  </li>
+  <li>
+    <p>Complete Magento Commerce for B2B post-installation configuration</p>
+  </li>
+</ul>
+
+<div class="bs-callout bs-callout-warning">
+  <p>The Magento Commerce for B2B extension is only available for Magento Commerce v2.2.0. You can install it after installing Magento Commerce.</p>
+</div>
+
+<h3 id="get-the-composer-metapackage">Get the Composer metapackage</h3>
+<p>Before you begin, install Composer:</p>
+
+<pre><code>curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/bin --filename=composer
+</code></pre>
+
+<ol>
+  <li>
+    <p>Log in to your Magento server as, or switch to, the <a href="/guides/v2.2/install-gde/prereq/file-sys-perms-over.html">Magento file system owner</a>.</p>
+  </li>
+  <li>
+    <p>Change to the web server docroot directory, or to a directory you’ve configured as a virtual host docroot.</p>
+  </li>
+  <li>
+    <p>Download the Magento Open Source or Magento Commerce metapackage.</p>
+
+    <ul>
+      <li>
+        <p>Enter the following command for Magento Open Source:</p>
+
+        <pre><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition &lt;install-directory-name&gt; 2.2.0-rc2
+</code></pre>
+      </li>
+      <li>
+        <p>Enter the following command for Magento Commerce:</p>
+
+        <pre><code>composer create-project --repository-url=https://repo.magento.com/ magento/project-enterprise-edition &lt;install-directory-name&gt; 2.2.0-rc2
+</code></pre>
+      </li>
+    </ul>
+
+    <p>When prompted, enter your <a href="/guides/v2.2/install-gde/prereq/connect-auth.html">authentication keys</a>. Your <em>public key</em> is your username; your <em>private key</em> is your password.</p>
+
+    <p>This command creates the project and downloads dependencies for it. The project is in a directory named <code>&lt;installation-directory-name&gt;</code> if you provided the parameter or <code>project-enterprise-edition</code> if you did not.</p>
+  </li>
+</ol>
+
+<div class="bs-callout bs-callout-info" id="info">
+  <p>The following error indicates your tokens are incorrect:</p>
+
+  <pre><code>Could not find package magento/project-enterprise-edition with version 2.2.0-rc2
+</code></pre>
+
+  <p>If the following error displays, see <a href="/guides/v2.2/install-gde/trouble/tshoot_composer-fail.html">troubleshooting</a>:</p>
+
+  <pre><code>file_get_contents(app/etc/NonComposerComponentRegistration.php): failed to open stream: No such file or directory
+</code></pre>
+</div>
+
+<h3 id="install-the-b2b-extension-optional">Install the B2B extension (optional)</h3>
+<p>Change to your installation directory and enter the following command to update your <code>composer.json</code> file and install the Magento Commerce for B2B extension:</p>
+
+<pre><code>composer require magento/extension-b2b
+</code></pre>
+
+<p>When prompted, enter your <a href="/guides/v2.2/install-gde/prereq/connect-auth.html">authentication keys</a>. Your <em>public key</em> is your username; your <em>private key</em> is your password.</p>
+
+<div class="bs-callout bs-callout-info">
+  <p>If you installed EE prior to installing B2B, run the following commands after Composer finishes updating modules:</p>
+
+  <pre><code>bin/magento setup:upgrade
+
+bin/magento setup:di:compile
+
+bin/magento setup:static-content:deploy
+</code></pre>
+</div>
+
+<h3 id="complete-the-installation">Complete the installation</h3>
+<p>Now that you’ve downloaded all dependencies, proceed with the installation:</p>
+
+<ol>
+  <li>
+    <p>Set file permissions on the <code>&lt;install-directory-name&gt;</code>:</p>
+
+    <pre><code>cd /var/www/html/magento2
+find var generated vendor pub/static pub/media app/etc -type f -exec chmod g+w {} \;
+find var generated vendor pub/static pub/media app/etc -type d -exec chmod g+ws {} \;
+chown -R :&lt;web-server-group&gt; .
+chmod u+x bin/magento
+</code></pre>
+    <p>Refer to <a href="/guides/v2.2/install-gde/prereq/file-system-perms.html">Set file system ownership and permissions</a> for more information.</p>
+  </li>
+  <li>
+    <p>Open a web browser and go to <code>http://&lt;Magento-host-or-IP&gt;/&lt;path-to-magento- root&gt;/setup</code> to launch the <a href="/guides/v2.2/install-gde/install/web/install-web.html">Web Setup Wizard</a>.</p>
+
+    <p>For example:</p>
+
+    <p><code>http://localhost/magento2ee/setup</code></p>
+  </li>
+</ol>
+
+<div class="bs-callout bs-callout-info">
+  <p>You can also install using the <a href="/guides/v2.2/install-gde/install/cli/install-cli.html">command line</a>.</p>
+</div>
+
+<p>After completing the installation, you must follow the <a href="#b2b-post-install-steps-and-configuration">B2B post-install steps and configuration</a>.</p>
+
+<h2 id="install-with-github">Install with Github</h2>
+<p>The Github installation process is the same for Magento Open Source and Magento Commerce:</p>
 
 <ul>
   <li>
@@ -723,17 +851,16 @@
     <p>Install sample data (optional)</p>
   </li>
   <li>
-    <p>Complete B2B post-installation configuration</p>
+    <p>Complete Magento Commerce for B2B post-installation configuration</p>
   </li>
 </ul>
 
 <div class="bs-callout bs-callout-warning">
-  <p>If you want to evaluate the new B2B module, you must install it when you install EE. The B2B module is only available for Magento EE v2.2.0.</p>
+  <p>If you want to evaluate the new Magento Commerce for B2B extension, you must install it when you install Magento Commerce. The Magento Commerce for B2B extension is only available for Magento Commerce v2.2.0.</p>
 </div>
 
-<h3 id="release-candidate-1-code-repositories">Release Candidate 1 code repositories</h3>
-
-<p>There are three Magento code repositories on GitHub where you can find Release Candidate 1 code. When cloning repositories, be sure to checkout the specified branches.</p>
+<h3 id="release-candidate-code-repositories">Release candidate code repositories</h3>
+<p>There are three Magento code repositories on GitHub where you can find release candidate code. When cloning repositories, be sure to checkout the specified branches.</p>
 
 <table>
   <tr>
@@ -743,19 +870,19 @@
     <th><b>Availability</b></th>
   </tr>
 <tr>
-    <td><b>Magento CE</b></td>
+    <td><b>Magento Open Source</b></td>
     <td><a href="https://github.com/magento/magento2">https://github.com/magento/magento2</a></td>
     <td>2.2.0-preview</td>
     <td>Publicly available</td>
 </tr>
 <tr>
-    <td><b>Magento EE</b></td>
+    <td><b>Magento Open Source</b></td>
     <td><a href="https://github.com/magento/magento2ee">https://github.com/magento/magento2ee</a></td>
     <td>2.2.0-release-candidate</td>
     <td>Available after contract has been signed</td>
 </tr>
 <tr>
-    <td><b>Magento B2B</b></td>
+    <td><b>Magento Commerce for B2B</b></td>
     <td><a href="https://github.com/magento/magento2b2b">https://github.com/magento/magento2b2b</a></td>
     <td>1.0.0-release-candidate</td>
     <td>Available after contract has been signed</td>
@@ -763,8 +890,7 @@
 </table>
 
 <h3 id="clone-the-magento-github-repositories">Clone the Magento Github repositories</h3>
-
-<p>These instructions assume you have experience working with Github repositories. Refer to Github’s documentation if you need help setting up <a href="https://help.github.com/articles/connecting-to-github-with-ssh/" target="	&#95;blank">SSH keys</a> or <a href="https://help.github.com/articles/cloning-a-repository/" target="	&#95;blank">cloning repositories</a>.</p>
+<p>These instructions assume you have experience working with Github repositories. Refer to Github’s documentation if you need help setting up <a href="https://help.github.com/articles/connecting-to-github-with-ssh/" target="&#95;blank">SSH keys</a> or <a href="https://help.github.com/articles/cloning-a-repository/" target="&#95;blank">cloning repositories</a>.</p>
 
 <ol>
   <li>
@@ -828,7 +954,7 @@ lrwxrwxrwx   1 root    root      74 Jun 22 22:42 BannerCustomerSegment -&gt; /va
 
 <h3 id="update-installation-dependencies">Update installation dependencies</h3>
 <div class="bs-callout bs-callout-warning">
-  <p>If you’re installing EE or B2B, you must replace the <code>composer.json</code> and <code>composer.lock </code> files in the <code>magento2/</code> directory with the <code>composer.json</code> and <code>composer.lock</code> files from inside the <code>magento2ee</code> directory before updating dependencies.</p>
+  <p>If you’re installing Magento Commerce or Magento Commerce for B2B, you must replace the <code>composer.json</code> and <code>composer.lock </code> files in the <code>magento2/</code> directory with the <code>composer.json</code> and <code>composer.lock</code> files from inside the <code>magento2ee</code> directory before updating dependencies.</p>
 </div>
 
 <p>From the <code>magento2/</code> directory, run Composer to update dependencies:</p>
@@ -838,7 +964,7 @@ lrwxrwxrwx   1 root    root      74 Jun 22 22:42 BannerCustomerSegment -&gt; /va
 
 <p>Refer to <a href="http://devdocs.magento.com/guides/v2.2/install-gde/install/prepare-install.html">Update installation dependencies</a> for more information.</p>
 
-<h3 id="complete-the-installation">Complete the installation</h3>
+<h3 id="complete-the-installation-1">Complete the installation</h3>
 <p>Now that you’ve cloned all the repositories you need and prepared the files, proceed with the installation:</p>
 
 <ol>
@@ -866,18 +992,16 @@ chmod u+x bin/magento
   <p>You can also install using the <a href="/guides/v2.2/install-gde/install/cli/install-cli.html">command line</a>.</p>
 </div>
 
-<h3 id="install-sample-data-optional">Install sample data (optional)</h3>
-<p>The Release Candidate 1 repositories don’t contain any sample data, but you can <a href="/guides/v2.2/install-gde/install/sample-data-after-clone.html">install sample data</a> with another repository after you finish installing the Release Candidate.</p>
+<h2 id="install-sample-data-optional">Install sample data (optional)</h2>
+<p>The release candidate repositories don’t contain any sample data, but you can <a href="/guides/v2.2/install-gde/install/sample-data-after-clone.html">install sample data</a> with another repository after you finish installing the release candidate.</p>
 
 <h2 id="b2b-post-install-steps-and-configuration">B2B post-install steps and configuration</h2>
-
-<p>After installing the B2B module, follow these instructions to launch B2B.</p>
+<p>After installing the Magento Commerce for B2B extension, follow these instructions to launch Magento Commerce for B2B.</p>
 
 <h3 id="message-queues">Message queues</h3>
 
 <h4 id="start-message-consumers">Start message consumers</h4>
-
-<p>The B2B module uses MySQL for message queue management. To succesfully launch the B2B module, start the message consumer services after installation.</p>
+<p>The Magento Commerce for B2B extension uses MySQL for message queue management. To succesfully launch the Magento Commerce for B2B extension, start the message consumer services after installation.</p>
 
 <ol>
   <li>
@@ -910,14 +1034,12 @@ inventoryQtyCounter
 <p>Refer to <a href="/guides/v2.2/config-guide/mq/manage-mysql.html">Manage message queues with MySQL</a> for more information.</p>
 
 <h4 id="add-message-consumers-to-cron">Add message consumers to cron</h4>
-
 <p>You may also add these two message consumers to the cron job. For this, add these lines in your <code>crontab.xml</code>:</p>
 
 <figure class="highlight"><pre><code class="language-xml" data-lang="xml">* * * * * ps ax | grep [s]haredCatalogUpdateCategoryPermissions &gt;&gt;/dev/null 2&gt;<span class="err">&amp;</span>1 || nohup php /var/www/html/magento2/bin/magento queue:consumers:start sharedCatalogUpdateCategoryPermissions <span class="err">&amp;</span>
 * * * * * ps ax | grep [s]haredCatalogUpdatePrice &gt;&gt;/dev/null 2&gt;<span class="err">&amp;</span>1 || nohup php /var/www/html/magento2/bin/magento queue:consumers:start sharedCatalogUpdatePrice <span class="err">&amp;</span></code></pre></figure>
 
 <h4 id="specify-parameters-for-message-consumers">Specify parameters for message consumers</h4>
-
 <p>Depending on your system configuration, to prevent possible issues, you may also need to specify the following parameters when starting the services:</p>
 
 <ul>
@@ -930,7 +1052,6 @@ inventoryQtyCounter
 </ul>
 
 <h3 id="enable-b2b-features-in-magento-admin">Enable B2B Features in Magento Admin</h3>
-
 <ol>
   <li>
     <p>Access the Magento Admin and click <strong>Stores</strong> &gt; <strong>Configuration</strong> &gt; <strong>General</strong> &gt; <strong>B2B Features</strong>.</p>
