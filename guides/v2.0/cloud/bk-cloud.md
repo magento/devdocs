@@ -56,7 +56,7 @@ See [Magento Commerce requirements]({{page.baseurl}}cloud/requirements/cloud-req
 If you have experience with {{site.data.var.<ee>}} 2, we recommend reviewing content in these DevDocs to understand the differences between EE and Enterprise Cloud Edition. If you are new to Magento and the Cloud, this guide introduces all aspects from getting started to going live and continuous integration deployments.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
-If you are the account owner, you should complete these tasks to give your technical staff and solution experts access: [Account owner tasks]({{ site.baseurl }}cloud/before/before-project-owner.html).
+If you are the account owner, you should complete these tasks to give your technical staff and solution experts access: [Account owner tasks]({{ page.baseurl }}cloud/before/before-project-owner.html).
 </div>
 
 We recommend the following starting points:
