@@ -105,9 +105,9 @@ These example instructions detail how to install and create a MariaDB database f
 
 		mysql_secure_installation
 3. Access the MariaDB database.
-4. Grant all priviledges to the Magento account you created for the local:
+4. Grant all privileges to the Magento account you created for the local:
 
-		grant all priviledges on <database> to '<account>'@'localhost' identified by '<password>';
+		grant all privileges on <database> to '<account>'@'localhost' identified by '<password>';
 5. Finally create the database:
 
 		create database magento;
@@ -122,7 +122,7 @@ You need to set an auto-increment value for the MariaDB installation.
 3.	Restart the service: `service mysql restart`.
 
 ### Set up the auto-increment for MySQL {#cloud-mysql}
-The MySQL configuration parameter [`auto_increment_increment`](http://dev.mysql.com/doc/refman/5.6/en/server-system-variables.html){:target="_blank"} is set to `1` by default in a local MySQL installation. You need to change this value to `3`.  The {{site.data.var.<ee>}} database cluster includes 3 database implementations. The increment ensures data is unique across all databases for consistant data in the High Availability structure.
+The MySQL configuration parameter [`auto_increment_increment`](http://dev.mysql.com/doc/refman/5.6/en/server-system-variables.html){:target="_blank"} is set to `1` by default in a local MySQL installation. You need to change this value to `3`.  The {{site.data.var.<ee>}} database cluster includes 3 database implementations. The increment ensures data is unique across all databases for consistent data in the High Availability structure.
 
 To avoid issues, we recommend you set `auto_increment_increment=3`.
 
