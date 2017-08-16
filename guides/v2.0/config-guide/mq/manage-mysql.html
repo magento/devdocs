@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Manage message queues with MySQL | Magento 2 Developer Documentation</title>
+	<title>Manage message queues | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -1544,7 +1544,7 @@
 
           
 
-          <span property="name">Manage message queues with MySQL</span>
+          <span property="name">Manage message queues</span>
 
         
 
@@ -1567,7 +1567,7 @@
 
 	
 
-	<h1 class="page-heading">Manage message queues with MySQL</h1>
+	<h1 class="page-heading">Manage message queues</h1>
 
   
 
@@ -1575,13 +1575,12 @@
 </section>
 
 
-			<p>If you do not want to implement the RabbitMQ solution, you can manage message queues with cron jobs (or an external process manager)and the CLI to ensure that consumers are retrieving messages.</p>
+			<p>If you don’t want to implement the RabbitMQ solution, you can manage message queues with cron jobs (or an external process manager) and the command line to ensure that consumers are retrieving messages.</p>
 
-<h2>Process management</h2>
+<h2 id="process-management">Process management</h2>
+<p>Cron jobs are the default mechanism to restart consumers. Processes started by <code>cron</code> consume the specified number of messages and then terminate. Re-running <code>cron</code> restarts the consumer.</p>
 
-<p>Cron jobs are the default mechanism to restart consumers. Processes started by <code>cron</code> consume the specified number of messages, then die after that. Re-running <code>cron</code> restarts the consumer.</p>
-
-<p>A magic method, whose name is the same as the consumer name, is used as a callback when declaring new <code>consumer run</code> job in <code>crontab.xml</code>. Using magic methods allows you to pass the name of the consumer implicitly via method name. Alternatively, virtual types based on abstract consumer runner should be declared with concrete consumer name specified as an argument (this approach is more complex and required extra configuration).</p>
+<p>A magic method, whose name is the same as the consumer name, is used as a callback when declaring a new <code>consumer run</code> job in <code>crontab.xml</code>. Using magic methods allows you to pass the name of the consumer implicitly via method name. Alternatively, virtual types based on abstract consumer runner should be declared with a concrete consumer name specified as an argument (this approach is more complex and requires extra configuration).</p>
 
 <p>The following shows a <code>crontab</code> group entry:</p>
 
@@ -1591,32 +1590,35 @@
     <span class="nt">&lt;/job&gt;</span>
 <span class="nt">&lt;/group&gt;</span></code></pre></figure>
 
-<p>See <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a> for more information about using cron with Magento.</p>
+<div class="bs-callout bs-callout-tip" id="info">
+  <p>How often you check message queues depends on your business logic and available system resources. In general, you’ll probably want to check for newly created customers and send welcome emails more frequently than a more resource intensive process (e.g., updating your catalog). You should define <code>cron</code> schedules according to your business needs.</p>
 
-<p>You can also use a process manager such as <a href="http://supervisord.org/index.html">Supervisor</a> to monitor the status of processes. The manager can use the CLI to restart the processes as needed.</p>
+  <p>See <a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a> for more information about using <code>cron</code> with Magento.</p>
+</div>
 
-<h2>Command line interface</h2>
+<p>You can also use a process manager, such as <a href="http://supervisord.org/index.html">Supervisor</a>, to monitor the status of processes. The manager can use the command line to restart processes as needed.</p>
 
-<h3>Start consumers</h3>
+<h2 id="command-line-interface">Command line interface</h2>
 
-<p>The CLI can be used to start consumers of the messages from the queue. Multiple consumers can be started at a same time.</p>
+<h3 id="start-consumers">Start consumers</h3>
+<p>Use the <code>magento</code> command to start message queue consumers. You can start multiple consumers simultaneously.</p>
 
-<p><code>./bin/magento queue:consumers:start &lt;consumer_name&gt; [--max-messages=&lt;value&gt;]</code></p>
+<pre><code>./bin/magento queue:consumers:start &lt;consumer_name&gt; [--max-messages=&lt;value&gt;]
+</code></pre>
 
-<p>where:</p>
+<p>Where <code>&lt;consumer_name&gt;</code> is the consumer to start and <code>--max-messages=&lt;value&gt;</code> specifies the maximum number of messages to consume per invocation.</p>
 
-<p><code>&lt;consumer_name&gt;</code> is the consumer to start.</p>
+<div class="bs-callout bs-callout-info" id="info">
+  <p>If the number of queued messages is less than the specified max, the consumer polls for new messages until it has processed the max. If you don’t specify <code>--max-messages</code>, the process runs continuously.</p>
+</div>
 
-<p><code>--max-messages=&lt;value&gt;</code> defines the maximum number of messages to consume per invocation. If number of messages are less then defined maximum number of messages, then the consumer will receive all the available messages in a queue.</p>
+<p>After consuming all available messages, the command terminates. You can run the command again manually or with a cron job.</p>
 
-<p>If <code>--max-messages</code> is not defined, the consumer continues to receive endless number of new messages</p>
-
-<p>After getting all available messages, the CLI command terminates. The command can be launched again with cron within a configured period of time, or manually.</p>
-
-<h3>List consumers</h3>
+<h3 id="list-consumers">List consumers</h3>
 <p>Use the following command to return a list of message queue consumers:</p>
 
-<p><code> ./bin/magento queue:consumers:list</code></p>
+<pre><code>./bin/magento queue:consumers:list
+</code></pre>
 
 <h4 id="related-topics">Related Topics</h4>
 <ul>
@@ -1624,6 +1626,7 @@
   <li><a href="/guides/v2.0/config-guide/mq/config-mq.html">Configure message queues</a></li>
   <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-cron.html">Configure and run cron</a></li>
   <li><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands.html">Command-line configuration</a></li>
+  <li><a href="/guides/v2.0/extension-dev-guide/message-queues.html">Message Queues</a></li>
 </ul>
 
 		</div>
