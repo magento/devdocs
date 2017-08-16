@@ -2,8 +2,8 @@
 layout: default
 group: release-notes
 subgroup: 2.2.0 Release Candidate
-title: Install the release candidate
-menu_title: Install the release candidate
+title: Install the Release Candidate
+menu_title: Install the Release Candidate
 menu_order: 2000
 level3_menu_node:
 level3_subgroup:
