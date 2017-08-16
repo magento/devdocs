@@ -67,7 +67,7 @@ The Production environment has three VMs behind an Elastic Load Balancer managed
 * GlusterFS file server for managing all static file deployments and syncs with four directoris mounted: `var`, `pub/media`, `pub/static`, and `app/etc`
 * Redis server, one per VM with only one active and the other two as replicas
 * Elasticsearch
-* Galara database cluster with a MariaDB MySQL database per node with an auto-increment setting of 3 for unique IDs across every database
+* Galera database cluster with a MariaDB MySQL database per node with an auto-increment setting of 3 for unique IDs across every database
 
 The following figure shows the technology used in the Production environment:
 
