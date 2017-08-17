@@ -578,19 +578,25 @@
 </section>
 
 
-			<p>Magento’s JavaScript coding standard is based on the <a href="https://github.com/airbnb/javascript/tree/es5-deprecated/es5">Airbnb ES5 JavaScript Style Guide</a>.
-Developers writing <span term-uuid="312b4baf-15f7-4968-944e-c814d53de218" class="glossary-term" data-toggle="popover">JavaScript</span> and <span term-uuid="5bfa8a8e-6f3e-4fed-a43e-62339916f02e" class="glossary-term" data-toggle="popover">jQuery</span> code for Magento must follow this guide along with the additional, Magento-specific standards listed in this document.</p>
+			<p>Use Magento’s <a href="https://github.com/magento/magento2/blob/develop/dev/tests/static/testsuite/Magento/Test/Js/_files/eslint/.eslintrc-magento">ESLint Rules</a> to make sure your code adheres to Magento’s coding standards.
+Developers writing <span term-uuid="312b4baf-15f7-4968-944e-c814d53de218" class="glossary-term" data-toggle="popover">JavaScript</span> and <span term-uuid="5bfa8a8e-6f3e-4fed-a43e-62339916f02e" class="glossary-term" data-toggle="popover">jQuery</span> code for Magento must adhere to these guidelines and follow the standards listed in this document.</p>
 
 <p>Use <a href="http://www.ietf.org/rfc/rfc2119.txt">RFC 2119</a> to interpret the “must,” “must not,” “required,” “shall,” “shall not,” “should,” “should not,” “recommended,” “may,” and “optional” keywords.</p>
 
 <p>Magento uses the <a href="https://jquery.com/">jQuery library</a> including standard and custom <a href="http://api.jqueryui.com/category/widgets">jQuery widgets</a>.
 For the jQuery widget coding standard, see <a href="/guides/v2.0/coding-standards/code-standard-jquery-widgets.html">jQuery widget coding standard</a>.</p>
 
-<h2 id="jshint-tool">JSHint tool</h2>
-<p>Use <a href="http://eslint.org/">ESLint</a> to ensure the quality of your JavaScript code.</p>
+<h2 id="eslint-and-jscs-tools">Eslint and JSCS tools</h2>
+
+<p>Use <a href="http://eslint.org/">ESLint</a> and <a href="http://jscs.info/">JSCS</a> to ensure the quality of your JavaScript code.</p>
 
 <p>ESLint is a community-driven tool that detects errors and potential problems in JavaScript code.
-Its flexibility enables you to customize it to for specific coding standards and expected code execution environment. You can find a the ESLint configuration for Airbnb ES5 <a href="https://github.com/1hella/eslint-config-airbnb-es5">here</a>.</p>
+It can use custom rules to enforce specific coding standards.</p>
+
+<ul>
+  <li><a href="https://github.com/magento/magento2/blob/develop/dev/tests/static/testsuite/Magento/Test/Js/_files/eslint/.eslintrc-magento">Magento ESLint Rules</a></li>
+  <li><a href="https://github.com/magento/magento2/blob/develop/dev/tests/static/testsuite/Magento/Test/Js/_files/jscs/.jscsrc">Magento JSCS Rules</a></li>
+</ul>
 
 <h2 id="additional-formatting-standards">Additional formatting standards</h2>
 
