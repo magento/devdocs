@@ -15,7 +15,6 @@ By default, all modules are configured so that a module's output can be written 
 If a merchant used the Admin to disable a module's output in a previous release, you must manually configure the system to migrate these settings.
 </div>
 
-
 ## Disable module output in a pipeline deployment
 
 Use the following steps to disable module output in pipeline or any other deployment with multiple instances of Magento.
@@ -57,7 +56,7 @@ For more information about this command, see [Export the configuration]({{page.b
 
 The procedure for disabling module output on a single instance of Magento is easier because the changes don't have to be distributed.
 
-To disable module output in a simple deployment, add the `advanced` and `modules_disable_output` sections to the `<Magento_install_dir>/app/etc/config.php` file (if they don't already exist), as shown below:
+Archive the original `<Magento_install_dir>/app/etc/config.php` file. Then add the `advanced` and `modules_disable_output` sections to the `config.php` file (if they don't already exist), as shown below:
 
 ```
 'advanced' =>
