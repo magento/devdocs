@@ -11,13 +11,13 @@ github_link: install-gde/prereq/install-rabbitmq.md
 
 ![EE]({{ site.baseurl }}common/images/ee-only_large.png)
 
-<div class="bs-callout bs-callout-warning">
-  <p><a href="http://rabbitmq.com">RabbitMQ</a> must be installed and configured after Magento Community Edition and before Magento Enterprise Edition.</p>
+<div class="bs-callout bs-callout-warning" markdown="1">
+You must install and configure [RabbitMQ](http://rabbitmq.com){:target="&#95;blank"} _after_ installing Magento Community Edition or _before_ installing Magento Enterprise Edition.
 </div>
 
-<h2 id="overview">RabbitMQ Overview</h2>
+## RabbitMQ Overview {#overview}
 
-RabbitMQ is is an open source message broker that offers a reliable, highly available, scalable and portable messaging system.
+RabbitMQ is an open source message broker that offers a reliable, highly available, scalable and portable messaging system.
 
 Message queues provide an asynchronous communications mechanism in which the sender and the receiver of a message do not contact each other. Nor do they need to communicate with the message queue at the same time. When a sender places a messages onto a queue, it is stored until the recipient receives them.
 
@@ -29,14 +29,11 @@ The message queue system must be established before you install Magento. The bas
 2. Configure RabbitMQ.
 3. Configure your message queue topology.
 
-<div class="bs-callout bs-callout-info" id="info">
-  <p>A basic message queue system can be implemented on EE without using RabbitMQ. See <a href="{{page.baseurl}}config-guide/mq/manage-mysql.html">Configure message queues</a></p>
+<div class="bs-callout bs-callout-info" id="info" markdown="1">
+A basic message queue system can be implemented on EE without using RabbitMQ. See [Configure message queues]({{page.baseurl}}config-guide/mq/manage-mysql.html) for more information.
 </div>
 
-
-<h2 id="ubuntu-install">Install RabbitMQ on Ubuntu</h2>
-
-Detailed installation instructions are beyond the scope of this document. See [Installing on Debian/Ubuntu](https://www.rabbitmq.com/install-debian.html) for more information.
+## Install RabbitMQ on Ubuntu {#ubuntu-install}
 
 To install RabbitMQ on Ubuntu 16 enter the following command:
 
@@ -46,34 +43,35 @@ This command also installs the required Erlang packages.
 
 If you have an older version of Ubuntu, RabbitMQ recommends installing the package from their {% glossarytooltip a3c8f20f-b067-414e-9781-06378c193155 %}website{% endglossarytooltip %}.
 
-1. Download [rabbitmq-server_3.6.6-1_all.deb](https://www.rabbitmq.com/releases/rabbitmq-server/v3.6.6/rabbitmq-server_3.6.6-1_all.deb).
+1. Download [rabbitmq-server_3.6.6-1_all.deb](https://www.rabbitmq.com/releases/rabbitmq-server/v3.6.6/rabbitmq-server_3.6.6-1_all.deb){:target="&#95;blank"}.
 2. Install the package with `dpkg`.
 
-<h2 id ="centos-install">Install RabbitMQ on CentOS</h2>
+Refer to [Installing on Debian/Ubuntu](https://www.rabbitmq.com/install-debian.html){:target="&#95;blank"} for more information.
 
-Detailed installation instructions are beyond the scope of this document. See [Installing on RPM-based Linux](https://www.rabbitmq.com/install-rpm.html) for more information.
+## Install RabbitMQ on CentOS {#centos-install}
 
-<h3>Install Erlang</h3>
+### Install Erlang
 RabbitMQ was written using the Erlang programming language, which must be installed on the same system as RabbitMQ.
 
-See <a href="https://www.erlang-solutions.com/resources/download.html" target="_blank">Manual installation</a> for more information.
+See [Manual installation](https://www.erlang-solutions.com/resources/download.html){:target="&#95;blank"} for more information.
 
 Run the following commands to install this feature.
 
 1. `wget http://packages.erlang-solutions.com/erlang-solutions-1.0-1.noarch.rpm`
 2. `rpm -Uvh erlang-solutions-1.0-1.noarch.rpm`
 
-
-<h3>Install RabbitMQ</h3>
+### Install RabbitMQ
 The RabbitMQ server is included on CentOS, but the version is often old. RabbitMQ recommends installing the package from their website.
 
-1. Download [rabbitmq-server-3.5.6-1.noarch.rpm](https://www.rabbitmq.com/releases/rabbitmq-server/v3.5.6/rabbitmq-server-3.5.6-1.noarch.rpm).
+1. Download [rabbitmq-server-3.5.6-1.noarch.rpm](https://www.rabbitmq.com/releases/rabbitmq-server/v3.5.6/rabbitmq-server-3.5.6-1.noarch.rpm){:target="&#95;blank"}.
 2. Run the following commands as a user with root permissions:
 
-`rpm --import https://www.rabbitmq.com/rabbitmq-signing-key-public.asc`
+`rpm --import https://www.rabbitmq.com/rabbitmq-signing-key-public.asc{:target="&#95;blank"}
 `yum install rabbitmq-server-3.5.6-1.noarch.rpm`
 
-<h2 id="config">Configure RabbitMQ</h2>
+Refer to [Installing on RPM-based Linux](https://www.rabbitmq.com/install-rpm.html){:target="&#95;blank"} for more information.
+
+## Configure RabbitMQ {#config}
 Review the official RabbitMQ documentation to configure and manage RabbitMQ. Pay attention to the following items:
 
 * Environment variables
@@ -113,19 +111,18 @@ where:
 <td>amqp-virtualhost</td>
 <td><p>The virtual host for connecting to RabbitMQ. The default is <code>/</code>. </p>
 <p>For additional information, see RabbitMQ documentation:</p>
-<ul><li><a href="https://www.rabbitmq.com/vhosts.html" target="_blank">Virtual hosts</a></li>
-<li><a href="https://www.rabbitmq.com/access-control.html" target="_blank">Access control</a></li></ul></td>
+<ul><li><a href="https://www.rabbitmq.com/vhosts.html" target="&#95;blank">Virtual hosts</a></li>
+<li><a href="https://www.rabbitmq.com/access-control.html" target="&#95;blank">Access control</a></li></ul></td>
 </tr>
 </table>
 
 
 #### Related topics
-
-*	<a href="{{page.baseurl}}install-gde/prereq/optional.html">Installing optional software</a>
-*	<a href="{{page.baseurl}}install-gde/prereq/apache.html">Apache</a>
-*	<a href="{{page.baseurl}}install-gde/prereq/php-ubuntu.html">PHP 5.5, 5.6, or 7.0&mdash;Ubuntu</a>
-*	<a href="{{page.baseurl}}install-gde/prereq/php-centos.html">PHP 5.5, 5.6, or 7.0&mdash;CentOS</a>
-*	<a href="{{page.baseurl}}install-gde/prereq/security.html">Configuring security options</a>
+*	[Installing optional software]({{page.baseurl}}install-gde/prereq/optional.html)
+*	[Apache]({{page.baseurl}}install-gde/prereq/apache.html)
+*	[PHP 5.5, 5.6, or 7.0&mdash;Ubuntu]({{page.baseurl}}install-gde/prereq/php-ubuntu.html)
+*	[PHP 5.5, 5.6, or 7.0&mdash;CentOS]({{page.baseurl}}install-gde/prereq/php-centos.html)
+*	[Configuring security options]({{page.baseurl}}install-gde/prereq/security.html)
 *	[How to get the Magento software]({{ page.baseurl }}install-gde/bk-install-guide.html)
-*	<a href="{{page.baseurl}}config-guide/mq/rabbitmq-overview.html">Message queue overview</a>
-*	<a href="{{page.baseurl}}config-guide/mq/config-mq.html">Configure message queues</a>
+*	[Message queue overview]({{page.baseurl}}config-guide/mq/rabbitmq-overview.html)
+*	[Configure message queues]({{page.baseurl}}config-guide/mq/config-mq.html)

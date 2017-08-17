@@ -8,10 +8,10 @@ menu_order: 1000
 level3_menu_node:
 level3_subgroup:
 version: 2.2
-github_link: release-candidate/quick-start.md
+github_link: release-notes/release-candidate/quick-start.md
 ---
 
-We are pleased to present the Magento 2.2.0 CE, EE, and B2B Release Candidate 1. This QuickStart guide provides the basic information you need to start participating in our Magento 2.2.0 Release Candidate evaluation program.
+We are pleased to present the Magento 2.2.0 CE, EE, and B2B Release Candidates 1 and 2. This QuickStart guide provides the basic information you need to start participating in our Magento 2.2.0 Release Candidate evaluation program.
 
 This guide covers:
 
@@ -86,7 +86,7 @@ We invite any Magento community member to participate in the Magento 2.2.0 CE Re
 
 The Magento 2.2.0 EE Release Candidate evaluation is open to all Solution Partners. To participate, you must:
 
-* Sign the [Release Candidate Software agreement](https://magento.com/partners/portal/customer/account/login/referer/aHR0cHM6Ly9tYWdlbnRvLmNvbS9wYXJ0bmVycy9wb3J0YWwvYWdyZWVtZW50Lw,,/). Note that the Magento Primary Contact must sign the agreement. 
+* Sign the [Release Candidate Software agreement](https://magento.com/partners/portal/customer/account/login/referer/aHR0cHM6Ly9tYWdlbnRvLmNvbS9wYXJ0bmVycy9wb3J0YWwvYWdyZWVtZW50Lw,,/). Note that the Magento Primary Contact must sign the agreement.
 
 * Provide GitHub account information for an Individual Account for a Solution Partner Employee. The company name field must contain the Partner’s name or @partnername. Alternatively, the user’s profile must show that the developer is a member of the Solution Partner’s GitHub Organization.
 

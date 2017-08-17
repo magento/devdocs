@@ -1,13 +1,11 @@
 ---
 layout: default
-group: cloud
-subgroup: 080_setup
+group: 
+subgroup:
 title: Step 5, Set up PHP and MySQL
 menu_title: Step 5, Set up PHP and MySQL
-menu_order: 57
+menu_order:
 menu_node:
-level3_menu_node: level3child
-level3_subgroup: workspace
 version: 2.0
 github_link: cloud/before/before-workspace-php.md
 ---
@@ -60,7 +58,7 @@ If necessary, set `auto_increment_increment` to 3:
 		auto_increment_increment=3
 
 		Magento Enterprise Cloud Edition supports a High Availability configuration. This setting increments the database IDs in increments of three to ensure row uniqueness for Galara databases on each of the three HA nodes in production.
-		
+
 3.	Restart MySQL:
 
 		service mysqld restart

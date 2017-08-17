@@ -11,12 +11,17 @@ github_link: config-guide/config/config-php.md
 
 ## Purpose of the deployment configuration {#config-php-overview}
 
-Magento's deployment configuration consists of the shared and system-specific configuration for your installation. Magento's deployment configuration is divided between:
+Magento's deployment configuration consists of the shared and system-specific configuration for your installation. Magento's deployment configuration is divided between [`app/etc/config.php`][config-php] and [`app/etc/env.php`][env-php].
 
-*	[`app/etc/config.php`][config-php], referred to as the _shared_ configuration file, because you can check it in to source control and use it in your development, staging, and production systems
+* `app/etc/config.php` is the _shared_ configuration file.
+  This file contains the list of installed modules, themes, and language packages; and shared configuration settings.
 
-	`config.php` contains the list of installed modules, themes, and language packages; and shared configuration settings
-*	[`app/etc/env.php`][env-php], which contains system-specific settings, such as:
+  Check this file in to source control and use it in your development, staging, and production systems.
+
+  As of the 2.2 release, the `app/etc/config.php` file is no longer an entry in the `.gitignore` file.
+  This was done to facilitate [pipeline deployment][pipeline-deployment].
+	
+* `app/etc/env.php` contains settings that are specific to the installation environment.
 
 Together, `config.php` and `env.php` are referred to as Magento's _deployment configuration_ because they are created during installation and are required to start Magento.
 
@@ -81,3 +86,4 @@ The only practical difference of a module being disabled and being completely ab
 
 [config-php]: {{page.baseurl}}config-guide/prod/config-reference-configphp.html
 [env-php]: {{page.baseurl}}config-guide/prod/config-reference-envphp.html
+[pipeline-deployment]: {{page.baseurl}}config-guide/deployment/

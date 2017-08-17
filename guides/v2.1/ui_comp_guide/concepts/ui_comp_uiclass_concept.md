@@ -9,7 +9,7 @@ version: 2.1
 github_link: ui_comp_guide/concepts/ui_comp_uiclass_concept.md
 ---
 
-## What is `uiClass`
+## What is `uiClass`?
 
 The `uiClass` is an abstract class from which all components are extended. The `uiClass` is a low-level class and is rarely used as direct parent for UI components' classes.
 

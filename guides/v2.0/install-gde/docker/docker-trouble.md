@@ -10,6 +10,8 @@ version: 2.0
 github_link: install-gde/docker/docker-trouble.md
 ---
 
+{% include install/docker/deprecated-note.html %}
+
 This topic discusses suggested solutions to issues you might counter when installing or using Magento DevBox.
 
 {% collapsibleh2 Problem: Cannot install Magento %}

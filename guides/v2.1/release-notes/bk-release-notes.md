@@ -26,4 +26,4 @@ Looking for [Magento Enterprise Cloud Edition Release Notes]({{ site.gdeurl }}cl
 ## Third-party license agreements
 
 * [Magento CE third-party licenses]({{page.baseurl}}release-notes/thirdparty_ce.html)
-* *[Magento EE third-party licenses]({{page.baseurl}}release-notes/thirdparty_ee.html)
+* [Magento EE third-party licenses]({{page.baseurl}}release-notes/thirdparty_ee.html)

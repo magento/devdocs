@@ -145,10 +145,70 @@ Not applicable
 }
 {% endhighlight %}
 
-### Search for credit IDs
+### Search  credit IDs
 
-The `GET  /V1/companyCredits/` call returns a list of credits for companies that match the specified criteria. See [Search using REST APIs]({{page.baseurl}}howdoi/webapi/search-criteria.html) for information about constructing a query using the this endpoint.
+The following call returns information for all companies whose credit balance is 0.
 
+See [Search using REST APIs]({{page.baseurl}}howdoi/webapi/search-criteria.html) for information about constructing a search query.
+
+**Sample Usage**
+
+`GET  /V1/companyCredits?searchCriteria[filter_groups][0][filters][0][field]=balance&searchCriteria[filter_groups][0][filters][0][value]=0&searchCriteria[filter_groups][0][filters][0][condition_type]=eq`
+
+**Payload**
+
+Not applicable
+
+**Response**
+
+{% collapsible Show code sample %}
+{% highlight json %}
+{
+    "items": [
+        {
+            "id": 2,
+            "company_id": 2,
+            "credit_limit": 1000,
+            "balance": 0,
+            "currency_code": "USD",
+            "exceed_limit": false,
+            "available_limit": 1000
+        },
+        {
+            "id": 3,
+            "company_id": 3,
+            "balance": 0,
+            "currency_code": "USD",
+            "exceed_limit": false,
+            "available_limit": 0
+        },
+        {
+            "id": 4,
+            "company_id": 4,
+            "credit_limit": 2000,
+            "balance": 0,
+            "currency_code": "USD",
+            "exceed_limit": false,
+            "available_limit": 2000
+        }
+    ],
+    "search_criteria": {
+        "filter_groups": [
+            {
+                "filters": [
+                    {
+                        "field": "balance",
+                        "value": "0",
+                        "condition_type": "eq"
+                    }
+                ]
+            }
+        ]
+    },
+    "total_count": 3
+}
+{% endhighlight %}
+{% endcollapsible %}
 
 ## Balance operations
 
@@ -230,7 +290,6 @@ This call decreases the company credit with an Update (operation type = 2), Purc
 
 `true`, indicating the decrease to the company credit balance succeeded
 
-
 ## Credit history
 
 A Reimburse transaction can be updated to include a purchase order and comment.
@@ -254,10 +313,12 @@ This call updates the credit history to specify a purchase order number.
 
 **Payload**
 
+{% highlight json %}
 {
   "purchaseOrder": "A12345",
   "comment": "Adding PO info"
 }
+{% endhighlight %}
 
 **Response**
 
@@ -265,7 +326,75 @@ This call updates the credit history to specify a purchase order number.
 
 ### Search credit history IDs
 
-The `GET  /V1/companyCredits/history` call returns a list of history IDs for companies that match the specified criteria. See [Search using REST APIs]({{page.baseurl}}howdoi/webapi/search-criteria.html) for information about constructing a query using the this endpoint.
+The following call returns a list instances in which the credit limit was set to a value higher than $500.
+
+See [Search using REST APIs]({{page.baseurl}}howdoi/webapi/search-criteria.html) for information about constructing a search query.
+
+
+**Sample Usage**
+
+`GET /V1/companyCredits/history?searchCriteria[filter_groups][0][filters][0][field]=credit_limit&searchCriteria[filter_groups][0][filters][0][value]=500&searchCriteria[filter_groups][0][filters][0][condition_type]=gt`
+
+**Payload**
+
+Not applicable
+
+**Response**
+{% highlight json %}
+{
+    "items": [
+        {
+            "id": 6,
+            "company_credit_id": 2,
+            "user_id": 1,
+            "user_type": 2,
+            "currency_credit": "USD",
+            "currency_operation": "USD",
+            "rate": 1,
+            "rate_credit": 0,
+            "amount": -250,
+            "balance": 0,
+            "credit_limit": 1000,
+            "available_limit": 1000,
+            "type": 4,
+            "datetime": "2017-06-12 02:26:28",
+            "purchase_order": "A12345",
+            "comment": "{\"custom\":\"Adding PO info\"}"
+        },
+        {
+            "id": 7,
+            "company_credit_id": 4,
+            "user_id": 1,
+            "user_type": 2,
+            "currency_credit": "USD",
+            "currency_operation": "USD",
+            "rate": 1,
+            "rate_credit": 0,
+            "amount": 0,
+            "balance": 0,
+            "credit_limit": 2000,
+            "available_limit": 2000,
+            "type": 1,
+            "datetime": "2017-07-20 21:28:35",
+            "comment": ""
+        }
+    ],
+    "search_criteria": {
+        "filter_groups": [
+            {
+                "filters": [
+                    {
+                        "field": "credit_limit",
+                        "value": "500",
+                        "condition_type": "gt"
+                    }
+                ]
+            }
+        ]
+    },
+    "total_count": 2
+}
+{% endhighlight %}
 
 ## Related information
 

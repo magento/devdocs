@@ -244,8 +244,9 @@ The `bin/magento setup:config:set` command no longer has the `--definition-forma
 ## Changes in UI
 
 ### Advanced section in System Configurations
-**Action:** Section `Advanced` was disabled from {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} Interface<br/>
-**Description:** Magento does not support custom disabling/enabling modules output since 2.2.0 version. Section 'Advanced' was disabled. All custom settings from this section will be ignored. 
+
+**Action:** Section `Advanced` was removed from {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} Interface<br/>
+**Description:** Magento does not support disabling/enabling modules output from the Admin Panel in 2.2.0 version. Module output can still be enabled/disabled in configuration files.
 
 ## Database schema changes
 

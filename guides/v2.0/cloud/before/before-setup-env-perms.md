@@ -1,19 +1,18 @@
 ---
 layout: default
-group: cloud
-subgroup: 080_setup
-title: Step 7, Set file system permissions and ownership
-menu_title: Step 7, Set file system permissions and ownership
-menu_order: 168
-level3_menu_node: level3child
-level3_subgroup: setupenv
+group: 
+subgroup:
+title: Set file system permissions and ownership
+menu_title: Set file system permissions and ownership
+menu_order:
 version: 2.0
 github_link: cloud/before/before-setup-env-perms.md
 ---
 
-{::options syntax_highlighter="rouge" /}
+#### Previous step:
+[Install Magento]({{ page.baseurl }}cloud/before/before-setup-env-install.html)
 
-To set up file system permissions and ownership:
+After you have installed Magento, you need to set the file file system permissions and ownership.
 
 1.  Log in to your Magento server as, or switch to, the [Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html).
 2.  Enter the following commands in the order shown:
