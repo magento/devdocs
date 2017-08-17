@@ -11,19 +11,19 @@ github_link: coding-standards/code-standard-javascript.md
 redirect_from: /guides/v1.0/coding-standards/code-standard-javascript.html
 ---
 
-Magento's JavaScript coding standard is based on the [Airbnb ES5 JavaScript Style Guide][airbnb].
-Developers writing {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} and {% glossarytooltip 5bfa8a8e-6f3e-4fed-a43e-62339916f02e %}jQuery{% endglossarytooltip %} code for Magento must follow this guide along with the additional, Magento-specific standards listed in this document.
+Magento's JavaScript coding standard is based on the own set of [rules][eslint-rules].
+Developers writing {% glossarytooltip 312b4baf-15f7-4968-944e-c814d53de218 %}JavaScript{% endglossarytooltip %} and {% glossarytooltip 5bfa8a8e-6f3e-4fed-a43e-62339916f02e %}jQuery{% endglossarytooltip %} code for Magento must abide this rules and follow Magento-specific standards listed in this document.
 
 Use [RFC 2119](http://www.ietf.org/rfc/rfc2119.txt) to interpret the "must," "must not," "required," "shall," "shall not," "should," "should not," "recommended," "may," and "optional" keywords.
 
 Magento uses the [jQuery library][jquery] including standard and custom [jQuery widgets][jquery-widgets].
 For the jQuery widget coding standard, see [jQuery widget coding standard][jquery-widget-coding-standard].
 
-## JSHint tool
-Use [ESLint][eslint] to ensure the quality of your JavaScript code.
+## Eslint and JSCS tools
+Use [ESLint][eslint] and [JSCS][jscs] to ensure the quality of your JavaScript code.
 
 ESLint is a community-driven tool that detects errors and potential problems in JavaScript code.
-Its flexibility enables you to customize it to for specific coding standards and expected code execution environment. You can find a the ESLint configuration for Airbnb ES5 [here][es5-airbnb].
+Its flexibility enables you to customize it to for specific coding standards and expected code execution environment. You can find a the ESLint configuration [here][eslint-rules] and JSCS [here][jscs-rules].
 
 ## Additional formatting standards
 
@@ -361,5 +361,6 @@ var foo = 'bar',
 [jquery-widgets]: http://api.jqueryui.com/category/widgets
 [jquery-widget-coding-standard]: {{page.baseurl}}coding-standards/code-standard-jquery-widgets.html
 [eslint]: http://eslint.org/
-[airbnb]: https://github.com/airbnb/javascript/tree/es5-deprecated/es5
-[es5-airbnb]: https://github.com/1hella/eslint-config-airbnb-es5
+[jscs]: http://jscs.info/
+[eslint-rules]: https://github.com/magento/magento2/blob/develop/dev/tests/static/testsuite/Magento/Test/Js/_files/eslint/.eslintrc-magento
+[jscs-rules]: https://github.com/magento/magento2/blob/develop/dev/tests/static/testsuite/Magento/Test/Js/_files/jscs/.jscsrc
