@@ -68,4 +68,6 @@ array (
 )
 ```
 
+where the `array` beneath `modules_disable_output` contains a list of modules. A value of `1` disables output for that module.
+
 As a sample result of this configuration, customers can no longer sign up to receive newsletters.
