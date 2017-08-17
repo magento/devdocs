@@ -15,13 +15,13 @@ By default, all modules are configured so that a module's output can be written 
 If a merchant used the Admin to disable a module's output in a previous release, you must manually configure the system to migrate these settings.
 </div>
 
+
 ## Disable module output in a pipeline deployment
 
 Use the following steps to disable module output in pipeline or any other deployment with multiple instances of Magento.
 
 1. Edit the `Backend` module's `config.xml` file.
 2. Export the configuration changes.
-3. Import the configuration changes into the database.
 
 ### Edit the `Backend` module's `config.xml` file
 
@@ -37,11 +37,11 @@ Archive the original `config.xml` file. Then add lines similar to the following 
 
 where
 
-- `<module_disable_output>` contains a list of modules.
+- `<modules_disable_output>` contains a list of modules.
 - `<Magento_Newsletter></Magento_Newsletter>` specifies which module to disable output.
 - `1` is the flag that disables output for the `Magento_Newsletter` module.
 
-As a sample result of this configuration, on the Create a New User Account page, the **Sign Up for Newsletter** checkbox is disabled.
+As a sample result of this configuration, customers can no longer sign up to receive newsletters.
 
 ### Export the configuration changes
 
@@ -53,19 +53,11 @@ The results are written to the `<Magento_install_dir>/app/etc/config.php` file.
 
 For more information about this command, see [Export the configuration]({{page.baseurl}}config-guide/cli/config-cli-subcommands-config-mgmt-export.html).
 
-### Import the configuration changes into the database
-
-Run the following command to import the configuration changes into the database:
-
-`magento app:config:import`
-
-For more information about this command, see [Import data from configuration files]({{page.baseurl}}config-guide/cli/config-cli-subcommands-config-mgmt-import.html).
-
 ## Disable module output in a simple deployment
 
 The procedure for disabling module output on a single instance of Magento is easier because the changes don't have to be distributed.
 
-To disable module output in a simple deployment, add the `advanced` and `modules_disable_output` sections to the `<Magento_install_dir>/app/etc/config.php` file, as shown below:
+To disable module output in a simple deployment, add the `advanced` and `modules_disable_output` sections to the `<Magento_install_dir>/app/etc/config.php` file (if they don't already exist), as shown below:
 
 ```
 'advanced' =>
@@ -76,3 +68,5 @@ array (
   ),
 )
 ```
+
+As a sample result of this configuration, customers can no longer sign up to receive newsletters.
