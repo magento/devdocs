@@ -423,7 +423,7 @@ We are reviewing this section and will publish it soon.
 
 10.4. The [W3C Content Security Policy] MUST be followed.
 
-10.5. The [Airbnb JS Style Guide] SHOULD BE followed.
+10.5. ESLint [rules][rules] SHOULD BE followed.
 
 10.5.1. ES5 SHOULD be used as a JS standard.
 
@@ -512,5 +512,5 @@ class SampleEventObserverThatModifiesInputs
 [HTTP Protocol]: https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol
 [HTTP Status Code]: https://www.w3.org/Protocols/rfc2616/rfc2616-sec9.html
 [W3C Content Security Policy]: https://w3c.github.io/webappsec-csp/
-[Airbnb JS Style Guide]: https://github.com/airbnb/javascript
+[rules]: https://github.com/magento/magento2/blob/develop/dev/tests/static/testsuite/Magento/Test/Js/_files/eslint/.eslintrc-magento
 [CLI Command Naming Guidelines]: {{page.baseurl}}extension-dev-guide/cli-cmds/cli-naming-guidelines.html
