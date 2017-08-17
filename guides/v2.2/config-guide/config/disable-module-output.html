@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Troubleshooting 503 errors | Magento 2 Developer Documentation</title>
+	<title>Disable module output | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.2/config-guide/varnish/tshoot-varnish-503.html">
+	<link rel="canonical" href="//guides/v2.2/config-guide/config/disable-module-output.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -69,11 +69,11 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/config-guide/varnish/tshoot-varnish-503.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/config-guide/config/disable-module-output.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/config-guide/varnish/tshoot-varnish-503.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/config-guide/config/disable-module-output.html">Magento 2.1</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.2/config-guide/varnish/tshoot-varnish-503.html">Magento 2.2 RC</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.2/config-guide/config/disable-module-output.html">Magento 2.2 RC</a></li>
 	
   </ul>
 
@@ -849,7 +849,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.2/config-guide/config/disable-module-output.html">Disable module output</a></li>
+									<li class="level-2  active "><a href="/guides/v2.2/config-guide/config/disable-module-output.html">Disable module output</a></li>
 
 									
 
@@ -1221,7 +1221,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.2/config-guide/varnish/tshoot-varnish-503.html">Troubleshooting 503 errors</a></li>
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/varnish/tshoot-varnish-503.html">Troubleshooting 503 errors</a></li>
 
 									
 
@@ -1825,7 +1825,7 @@
 
           
 
-          <span property="name">Troubleshooting 503 errors</span>
+          <span property="name">Disable module output</span>
 
         
 
@@ -1848,7 +1848,7 @@
 
 	
 
-	<h1 class="page-heading">Troubleshooting 503 errors</h1>
+	<h1 class="page-heading">Disable module output</h1>
 
   
 
@@ -1856,77 +1856,69 @@
 </section>
 
 
-			<h2 id="backend-fetch-failed-errors">Backend Fetch Failed errors</h2>
-
-<p>If the length of <span term-uuid="0bc9c8bc-de1a-4a06-9c99-a89a29c30645" class="glossary-term" data-toggle="popover">cache</span> tags used by Magento exceed Varnish’s default of 8192 bytes, you can see HTTP 503 (Backend Fetch Failed) errors in the browser. The errors might display similar to the following:</p>
-
-<pre><code>Error 503 Backend fetch failed
-Backend fetch failed
-</code></pre>
-
-<p>To resolve this issue, increase the default value of the <code>http_resp_hdr_len</code> parameter in your Varnish configuration file. The <code>http_resp_hdr_len</code> parameter specifies the max header length <em>within</em> the total default response size of 323768 bytes.</p>
+			<p>By default, all modules are configured so that a module’s output can be written to a view. Turning off output offers a way to essentially disable a module that can’t be disabled due to hard dependencies. For example, the <code>Customer</code> module depends on the <code>Review</code> module, so the <code>Review</code> module can’t be disabled. However, if you don’t want customers to be able to provide reviews, you could turn off output from the <code>Review</code> module.</p>
 
 <div class="bs-callout bs-callout-info" id="info">
-	If the `http_resp_hdr_len` value exceeds 32K, you must also increase the default response size using the `http_resp_size` parameter.
+  <p>If a merchant used the Admin to disable a module’s output in a previous release, you must manually configure the system to migrate these settings.</p>
 </div>
 
+<h2 id="disable-module-output-in-a-pipeline-deployment">Disable module output in a pipeline deployment</h2>
+
+<p>Use the following steps to disable module output in pipeline or any other deployment with multiple instances of Magento.</p>
+
 <ol>
-  <li>
-    <p>As a user with <code>root</code> privileges, open your Vanish configuration file in a text editor:</p>
-
-    <ul>
-      <li>CentOS 6: <code>/etc/sysconfig/varnish</code></li>
-      <li>CentOS 7: <code>/etc/varnish/varnish.params</code></li>
-      <li>Ubuntu: <code>/etc/default/varnish</code></li>
-    </ul>
-  </li>
-  <li>Search for the <code>http_resp_hdr_len</code> parameter.</li>
-  <li>If the parameter doesn’t exist, add it after <code>thread_pool_max</code>.</li>
-  <li>
-    <p>Set <code>http_resp_hdr_len</code> to a value equal to the product count of your largest <span term-uuid="50e49338-1e6c-4473-8527-9e401d67ea2b" class="glossary-term" data-toggle="popover">category</span> multiplied by 21. (Each product tag is about 21 characters in length.)</p>
-
-    <p>For example, setting the value to 65536 bytes should work if your largest category has 3,000 products.</p>
-
-    <p>For example:</p>
-
-    <pre><code>-p http_resp_hdr_len=65536 \
-</code></pre>
-  </li>
-  <li>
-    <p>Set the <code>http_resp_size</code> to a value that accommodates the increased response header length.</p>
-
-    <p>For example, using the sum of the increased header length and default response size is a good starting point (e.g., 65536 + 32768 = 98304):</p>
-
-    <pre><code>-p http_resp_size=98304 \
-</code></pre>
-
-    <p>A snippet follows:</p>
-
-    <pre><code># DAEMON_OPTS is used by the init script.
-DAEMON_OPTS="-a ${VARNISH_LISTEN_ADDRESS}:${VARNISH_LISTEN_PORT} \
-     -f ${VARNISH_VCL_CONF} \
-     -T ${VARNISH_ADMIN_LISTEN_ADDRESS}:${VARNISH_ADMIN_LISTEN_PORT} \
-     -p thread_pool_min=${VARNISH_MIN_THREADS} \
-     -p thread_pool_max=${VARNISH_MAX_THREADS} \
-     -p http_resp_hdr_len=65536 \
-     -p http_resp_size=98304 \
-     -S ${VARNISH_SECRET_FILE} \
-     -s ${VARNISH_STORAGE}"
-</code></pre>
-  </li>
+  <li>Edit the <code>Backend</code> module’s <code>config.xml</code> file.</li>
+  <li>Export the configuration changes.</li>
 </ol>
 
-<h2 id="health-check-timeouts">Health check timeouts</h2>
+<h3 id="edit-the-backend-modules-configxml-file">Edit the <code>Backend</code> module’s <code>config.xml</code> file</h3>
 
-<p>If you disable the cache while Varnish is configured as the caching application and while Magento is in developer mode, it might become impossible to log in to the <span term-uuid="29ddb393-ca22-4df9-a8d4-0024d75739b1" class="glossary-term" data-toggle="popover">Admin</span>.</p>
+<p>Archive the original <code>config.xml</code> file. Then add lines similar to the following to the <code>&lt;Magento_install_dir&gt;/vendor/Magento/Backend/etc/config.xml</code> file directly under the <code>&lt;default&gt;</code> element:</p>
 
-<p>This situation could happen because the default health check has a <code>timeout</code> value of 2 seconds. It could take more than 2 seconds for the health check to collect and merge information on every health check request. If this occurs in 6 out of 10 health checks, the Magento server is consindered unhealthy. Varnish serves stale content when the server is unhealthy.</p>
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;advanced&gt;</span>
+    <span class="nt">&lt;modules_disable_output&gt;</span>
+        <span class="nt">&lt;Magento_Newsletter&gt;</span>1<span class="nt">&lt;/Magento_Newsletter&gt;</span>
+    <span class="nt">&lt;/modules_disable_output&gt;</span>
+<span class="nt">&lt;/advanced&gt;</span></code></pre></figure>
 
-<p>Because Admin is accessed through Varnish, you cannot log in to Admin to enable caching (unless Magento becomes healthy again).  However, you can use the following command to enable cache:</p>
+<p>where</p>
 
-<p><code>bin/magento cache:enable</code></p>
+<ul>
+  <li><code>&lt;modules_disable_output&gt;</code> contains a list of modules.</li>
+  <li><code>&lt;Magento_Newsletter&gt;&lt;/Magento_Newsletter&gt;</code> specifies which module to disable output.</li>
+  <li><code>1</code> is the flag that disables output for the <code>Magento_Newsletter</code> module.</li>
+</ul>
 
-<p>For more information about using the command line, see <a href="/guides/v2.2/config-guide/cli/config-cli-commands.html">Get started with command-line configuration</a>.</p>
+<p>As a sample result of this configuration, customers can no longer sign up to receive newsletters.</p>
+
+<h3 id="export-the-configuration-changes">Export the configuration changes</h3>
+
+<p>Run the following command to export the configuration changes:</p>
+
+<p><code>magento app:config:dump</code></p>
+
+<p>The results are written to the <code>&lt;Magento_install_dir&gt;/app/etc/config.php</code> file.</p>
+
+<p>For more information about this command, see <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-export.html">Export the configuration</a>.</p>
+
+<h2 id="disable-module-output-in-a-simple-deployment">Disable module output in a simple deployment</h2>
+
+<p>The procedure for disabling module output on a single instance of Magento is easier because the changes don’t have to be distributed.</p>
+
+<p>Archive the original <code>&lt;Magento_install_dir&gt;/app/etc/config.php</code> file. Then add the <code>advanced</code> and <code>modules_disable_output</code> sections to the <code>config.php</code> file (if they don’t already exist), as shown below:</p>
+
+<pre><code>'advanced' =&gt;
+array (
+  'modules_disable_output' =&gt;
+  array (
+    'Magento_Newsletter' =&gt; '1',
+  ),
+)
+</code></pre>
+
+<p>where the <code>array</code> beneath <code>modules_disable_output</code> contains a list of modules. A value of <code>1</code> disables output for that module.</p>
+
+<p>As a sample result of this configuration, customers can no longer sign up to receive newsletters.</p>
 
 		</div>
 		<!-- /.content-wrap -->
@@ -1937,14 +1929,14 @@ DAEMON_OPTS="-a ${VARNISH_LISTEN_ADDRESS}:${VARNISH_LISTEN_PORT} \
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.2/config-guide/varnish/tshoot-varnish-503.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.2/config-guide/config/disable-module-output.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
   
 
   <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/config-guide/varnish/tshoot-varnish-503.html" target="_blank">Give us feedback</a>
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/config-guide/config/disable-module-output.html" target="_blank">Give us feedback</a>
   </div>
 
 </div>
