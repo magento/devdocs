@@ -9,14 +9,14 @@ version: 2.2
 github_link: ui_comp_guide/howto/price_rendering.md
 ---
 
-## Magento price classification
+This article shows how templates and UI components work together to render the price for any product listing(e.g. category, widget, etc).
 
-This article is about product pricing rendering. It discover how to render price for any product listing (category, widget, etc) with help of Ui Component.
-Also article is about creating parent-child relationships between ui components and creating ui components dynamicly on frontend side.
-Mechanism of prices in Magento is a bit complicated. This is due to high variety of 
-prices, taxes and product types, Magento can operate with. Here is the short list of Magento prices:
+## About Magento price handling
 
-#### Short List of Magento Prices
+Magento is able to operate with a variety of prices, taxes, and product types.
+
+The following is a short list of Magento prices:
+
 1. Special Price. 
 2. Tier Price. 
 3. Grouped Price.
@@ -24,29 +24,35 @@ prices, taxes and product types, Magento can operate with. Here is the short lis
 5. Price range of composite products
 6. Manufacturer price (MSRP)
 
-Those prices are represented with a lot of price types, that are used in Magento internally (e.g. final price, minimum price, maximum price, regular price.) and are apart from, prices listed before,
-the code representation of the prices we have. For instance, Special Price is represented by final price type in the code.
+Magento represents these prices as price types (e.g. final price, minimum price, maximum price, regular price) and are separate from the actual price in the code.
+For example, Special Price is represented by the final price type in the code.
 
-## Magento taxes classification
+### Magento taxes classification
 
-Magento has 3 generic types of taxes: Tax, Fixed Product Tax and Tax for Fixed Product Tax.
-Applying and rendering taxes is complicated, because one product can have few prices shown, and sometimes 
-taxes should be applied to all of them, sometimes - no (for instance, taxes for regular price should be omitted).
+Magento handles taxes as price adjustments and has 3 generic types of taxes:
 
-Example of pricing strategy for bundle product:
+* Tax
+* Fixed Product Tax
+* Tax for Fixed Product Tax
+
+Applying and rendering taxes is complicated.
+A product can have more than one price shown and taxes may or may not apply to all of them.
+
+Example of pricing strategy for bundled products:
+<br/>
 ![]({{ site.baseurl }}common/images/bundle_prices.png)
 
-Taxes are kind of adjustments in Magento.
+## How to render prices with UI Components
 
-## How to render prices with Ui Component
+For pages such as a product page, use a [form component][form-component].
 
-First of all, form or listing component should be created.
-For pages, like product page this should be _form_ component, and for pages like product listing, widgets - _listing_ component.
-Lets consider price rendering on example of listing component.
-Lets assume we have only simple products, with 2 types of prices: **regular price** and **special price**, and with one type of adjustments - **tax**.
-Adjustments should be applied only to one price. If we have special price, it should be it, otherwise - regular price.
+For pages such as a product listing page or widgets, use a [listing component][listing-component].
 
-**Listing example**:
+For the purposes of this article, we will use a listing component to render simple products with two types of prices, **regular price** and **special price**, and one type of adjustment, **tax**.
+
+### XML configuration
+
+The [XML configuration file][ui-component-declaration] for UI components shows the parent-child relationship between different UI components and tells Magento which template files to use when rendering.
 
 {%highlight xml%}
 <listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
@@ -132,14 +138,11 @@ Adjustments should be applied only to one price. If we have special price, it sh
 </listing>
 {%endhighlight%}
 
-The main point is that we aggregate prices in `price-box` component, and then try to create prices for specific kind of product.
-Note that in case of listing we can have few different types of products. And we should handle this.
-All prices will be created, but on template level we can ban some prices, if they do not match expectations:
-For example, if product do not have special price, we can just ignore special price.
+A good example from the Magento codebase is the Catalog module's [`widget_recently_viewed.xml`][widget-recently-viewed-xml]{:target="_blank"} file.
 
-Lets see at the code of `price-box` component:
+### Price box component
 
-**Price box component:**
+In the following code sample, the `price-box` component aggregates and creates the `price` components for a specific product.
 
 {%highlight javascript%}
 /**
@@ -205,11 +208,12 @@ _comparePrices: function (firstPrice, secondPrice) {
 }
 {%endhighlight%}
 
-Obviously we also have price-box template, which call ``getPrices()`` method.
-After calling those method standard Magento js ``uiLayout`` create prices, and put them into the cache.
-Each price has its own template and common component, lets see the common component code:
+The preceding code sample is based on the Catalog module's [`price-box` component][price-box]{:target="_blank"}.
 
-**Price component:**
+### Price component
+
+In our example, each price is configured to have its own template, but they all share a common price component called `final-price`.
+This component is defined in the following code sample:
 
 {%highlight javascript%}
 /**
@@ -267,9 +271,14 @@ getAdjustments: function () {
 }
 {%endhighlight%}
 
-How template it looks like?
+This code sample is based on the Catalog module's [`final-price` component][final-price]{:target="_blank"}.
 
-**Price template:**
+### Price template
+
+The following code sample is for the special price template.
+It calls the `hasSpecialPrice` function to check if a special price exists for a product.
+
+If a product has a special price, it calls `getPrice` to get the value and renders any adjustments configured for the price.
 
 {%highlight html%}
 <if args="isSalable($row()) && hasSpecialPrice($row())">
@@ -294,10 +303,12 @@ How template it looks like?
 </if>
 {%endhighlight%}
 
-So template check whether special price exists, and if yes, it loop through all adjustments that belongs to this price (You can configure them in xml, mentioned above).
-Ordinarily in your adjustment template you have access to row data and can fetch product taxes as you want.
+This example is based on the [`special_price.html` template file][special-price-html]{:target="_blank"} for Magento Catalog.
 
-**Tax template**:
+### Tax template
+
+The following is sample template code that is rendered for the tax adjustment component:
+
 {%highlight html%}
 <if args="displayBothPrices()">
     <span class="price-wrapper price-excluding-tax"
@@ -309,5 +320,16 @@ Ordinarily in your adjustment template you have access to row data and can fetch
 </if>
 {%endhighlight%}
 
-Actually, Magento has example of product prices rendering. So it is acceptable, just to reuse them in your own ui Component. 
-Look into: `widget_recently_viewed.xml` and `widget_recently_compared.xml` ui components to find how it works and to reuse price rendering.
+## Related Topics
+
+* [Form component][form-component]
+* [Listing component][listing-component]
+* [Declaring UI Components][ui-component-declaration]
+
+[form-component]: {{page.baseurl}}ui_comp_guide/components/ui-form.html
+[listing-component]: {{page.baseurl}}ui_comp_guide/components/ui-listing-grid.html
+[special-price-html]: https://github.com/magento/magento2/blob/develop/app/code/Magento/Catalog/view/base/web/template/product/price/special_price.html
+[widget-recently-viewed-xml]: https://github.com/magento/magento2/blob/develop/app/code/Magento/Catalog/view/frontend/ui_component/widget_recently_viewed.xml
+[ui-component-declaration]: {{page.baseurl}}ui_comp_guide/howto/new_component_declaration.html
+[price-box]: https://github.com/magento/magento2/blob/develop/app/code/Magento/Catalog/view/base/web/js/product/list/columns/price-box.js
+[final-price]: https://github.com/magento/magento2/blob/develop/app/code/Magento/Catalog/view/base/web/js/product/list/columns/final-price.js
