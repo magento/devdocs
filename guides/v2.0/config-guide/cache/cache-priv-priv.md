@@ -254,7 +254,7 @@ Other examples:
 
 -   [Customer]({{ site.mage2000url }}app/code/Magento/Customer/etc/frontend/sections.xml){:target="&#95;blank"}
 
-### Cacheable page checklist
+## Cacheable page checklist
 -   Pages use GET requests
 
 -   Pages render only cacheable blocks
@@ -267,7 +267,7 @@ Other examples:
 
 -   Declare a custom HTTP context variable if you plan to show different public content with the same URL
 
-### Non-cacheable page checklist
+## Non-cacheable page checklist
 -   Use POST requests to modify Magento state (e.g., adding to shopping cart, wishlist, etc.)
 
 -   Blocks that can't be cached should be marked as non-cacheable in the layout
