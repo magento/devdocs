@@ -8,12 +8,16 @@ menu_order: 50
 menu_node:
 version: 2.0
 github_link: cloud/project/project-conf-files_magento-app.md
+redirect_from:
+  - /guides/v2.0/cloud/before/before-setup-env-cron.html
+  - /guides/v2.1/cloud/before/before-setup-env-cron.html
+  - /guides/v2.2/cloud/before/before-setup-env-cron.html
 ---
 
 ## About `.magento.app.yaml` {#cloud-yaml-platform}
-Magento Enterprise Cloud Edition supports multiple applications per project but typically, a project is composed of a single application, in which case you can simply put a `.magento.app.yaml` at the root of your repository.
+Magento Commerce supports multiple applications per project but typically, a project is composed of a single application, in which case you can simply put a `.magento.app.yaml` at the root of your repository.
 
-This file controls the application and the way it is built and deployed on Magento Enterprise Cloud Edition.
+This file controls the application and the way it is built and deployed on Magento Commerce.
 
 [Sample `.magento.app.yaml`](https://github.com/magento/magento-cloud/blob/master/.magento.app.yaml){:target="_blank"}
 
@@ -27,7 +31,7 @@ The following sections discuss properties in `.magento.app.yaml`.
 `.magento.app.yaml` has many default values; see the [sample `.magento.app.yaml`](https://github.com/magento/magento-cloud/blob/master/.magento.app.yaml){:target="_blank"}.
 
 ## `name` property {#name}
-`name` identifies the application in the project. Magento Enterprise Cloud Edition
+`name` identifies the application in the project. Magento Commerce
 supports multiple applications in a project, so each application
 must have a *unique name* in a project.
 
@@ -150,7 +154,7 @@ The format is:
 application might need during the build process.
 
 
-Magento Enterprise Cloud Edition supports dependencies on the following
+Magento Commerce supports dependencies on the following
 languages:
 
 *	PHP
@@ -223,8 +227,7 @@ hooks:
 {% endhighlight %}
 
 ## `crons` {#cloud-yaml-platform-cron}
-`crons` describes processes that are triggered on a
-schedule.
+`crons` describes processes that are triggered on a schedule. We recommend you run cron as the [Magento file system owner]({{ page.baseurl }}cloud/before/before-workspace-file-sys-owner.html). Do not run cron as `root`. We also recommend against running cron as the web server user.
 
 More information about crons:
 
@@ -331,7 +334,7 @@ Other PHP extensions you can optionally install:
 
 ### Customize `php.ini` settings {#cloud-yaml-platform-php-set}
 You can also create and push a `php.ini` file that is appended to
-the configuration maintained by Magento Enterprise Cloud Edition.
+the configuration maintained by Magento Commerce.
 
 In your repository, the `php.ini` file should be added to the root of
 the application (the repository root).

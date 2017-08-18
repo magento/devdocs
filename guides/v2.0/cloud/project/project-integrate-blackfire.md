@@ -5,12 +5,16 @@ subgroup: 100_project
 title: Blackfire integration
 menu_title: Blackfire integration
 menu_order: 105
-menu_node: 
+menu_node:
 level3_menu_node: level3child
 level3_subgroup: integrate
 version: 2.0
 github_link: cloud/project/project-integrate-blackfire.md
 ---
+
+This topic provides information for setting up your Blackfire credentials and integration.
+
+For full details on integrations, also review [Blackfire's complete Magento Commerce (Cloud)](https://support.blackfire.io/blackfire-on-magento-cloud){:target="_blank"} guide.
 
 ## Get your Blackfire credentials {#cloud-int-black}
 The account owner has access to the Blackfire credentials for your project. Contact the account owner for more information.

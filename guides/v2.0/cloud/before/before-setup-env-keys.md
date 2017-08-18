@@ -5,8 +5,6 @@ subgroup: 080_setup
 title: Set up Magento authentication keys
 menu_title: Set up Magento authentication keys
 menu_order: 35
-level3_menu_node: level3child
-level3_subgroup: workspace
 version: 2.0
 github_link: cloud/before/before-setup-env-keys.md
 ---
@@ -25,7 +23,7 @@ All developers working in code branches will need to add [Magento authentication
 ## Add authentication keys to the project
 To set up authentication keys in the project:
 
-1.	Log in to your Magento Enterprise Cloud Edition account at [https://accounts.magento.cloud](https://accounts.magento.cloud){:target="_blank"}.
+1.	Log in to your Magento Commerce account at [https://accounts.magento.cloud](https://accounts.magento.cloud){:target="_blank"}.
 2.	If necessary, click the **Projects** tab.
 3.	Click the name of your project.
 4.	In the upper left corner of the page, next to the project name, click ![Configure Project button]({{ site.baseurl }}common/images/cloud_configure-project-butt.png) (Configure Project) as the following figure shows.
@@ -69,5 +67,5 @@ To set up authentication keys in the project:
 Save these authentication keys. You will need to add them to your branch in a [later step]({{ page.baseurl }}cloud/before/before-setup-env-env.html).
 </div>
 
-#### Next step
-[Set up Magento cron]({{ page.baseurl }}cloud/before/before-setup-env-cron.html)
+#### Next step:
+[Branch an environment]({{ page.baseurl }}cloud/before/before-setup-env-env.html)

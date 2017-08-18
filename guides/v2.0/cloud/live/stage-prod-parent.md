@@ -1,14 +1,11 @@
 ---
 layout: default
-group: cloud
-subgroup: 160_live
-title: Migrate to staging and production
-menu_title: Migrate to staging and production
-menu_order: 100
-menu_node: 
-level3_menu_node: level3parent
-level3_subgroup: stage-prod
+group:
+subgroup: 
+title: Deploy to Staging and Production
+menu_title: Deploy to Staging and Production
+menu_order:
+menu_node:
 version: 2.0
 github_link: cloud/howtos/stage-prod-parent.md
 ---
-

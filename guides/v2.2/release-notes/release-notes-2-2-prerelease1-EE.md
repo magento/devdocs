@@ -4,7 +4,7 @@ group: release-notes
 subgroup: 2.2.0 Release Candidate
 title: Magento EE 2.2 Release Candidate Release Notes
 menu_title: Magento EE 2.2 Release Candidate Release Notes
-menu_order: 700
+menu_order: 780
 level3_menu_node:
 level3_subgroup:
 github_link: release-notes/release-notes-2-2-prerelease1-EE.md
@@ -13,9 +13,10 @@ github_link: release-notes/release-notes-2-2-prerelease1-EE.md
 *	TOC
 {:toc}
 
-*Release date: July 28, 2017*
 
-*Notes updated: July 28, 2017*
+*Release date: August 4, 2017*
+
+*Notes updated: August 7, 2017*
 
 
 Magento Enterprise Edition 2.2.0 Release Candidate includes significant new features as well as many bug fixes.
@@ -75,13 +76,15 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 
 <!--- 67020 -->* Magento now handles the `catalog_product_entity_media_gallery_value.position`  value the same whether you’ve installed or upgraded the product. Previously, these values differed depending upon whether you upgraded or freshly installed your Magento code. (RC1.5)
 
+<!--- 70869 -->* Magento no longer displays console errors after CSS merging and minification is enabled. Previously, when CSS merging and minification was enabled, the storefront was not displayed as expected, and the `styles-l.min.css` and `print.min.css` files could not be found. (RC1.8)
+
+<!--- 68969 -->* The contents of the `sales_sequence_meta` table is the same whether you install or upgrade Magento. (RC1.8)
 
 
 
 
-### Advanced reporting
 
-<!--- 69606 -->* We’ve resolved a conflict that occurred after you changed a base URL. Previously, after you changed a `base_url` value (**Stores->Configuration->General->Web-> Base URLs (Secure)**), Magento would update the base URL, then resubscribe, potentially resulting in a failure during the next update secure `base_url` call. 
+
 
 
 
@@ -135,7 +138,6 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 
 <!--- 67619 -->* The Customer Segment page no longer shows non-matching customers when a customer logs in and you refresh the Customer Segment page. 
 
-<!--- 59801 -->* We’ve improved the performance of the Tax Rules form in installations containing many tax rates. 
 
 <!--- 69750 -->* Magento now successfully completes checkout when a custom address attribute is added. Previously, an error occurred during checkout when the user added a required custom address attribute. 
 
@@ -143,10 +145,8 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 <!--- 70628 -->* The Forgot Your Password? email now contains a link to reset your password. Previously, this link was missing from the Forgot Your Password? email. (RC1.5)
 
 
-<!--- 57753 -->* You can now successfully create product attributes using the REST API. Previously, although the product was created, the attribute was not. [GitHub-6213](https://github.com/magento/magento2/issues/6213) (RC1.5)
 
 
-<!--- 70406 -->* We’ve improved the performance of the CatalogPermission indexer. Previously, Magento performance degraded significantly during the indexing of large numbers of customer groups.(RC1.5)
 
 <!--- 69521 -->* Magento now shows customer attributes in the Admin panel (as expected)  when the **Show on Storefront** option is set to **No**. Previously, when this setting was set to **No**, the attribute value would not appear in the customer account  section of the Admin panel customer account, but did appear in the orders section. (RC1.5)
 
@@ -171,16 +171,33 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 
 <!--- 64901 -->* Magento now supports new top level domains for email addresses. [GitHub-4547](https://github.com/magento/magento2/issues/4547) (RC1.6)
 
-
 <!--- 70518 -->* You can now override publishers configuration through the `env.php` file. (RC1.6)
-
-
 
 
 <!--- 67296 -->* String localizations now works as expected when  phrases include text wrapped with single quotation marks. (RC1.6)
 
 
+<!--- 70473 -->* Magento now displays company information on the Account Information section of the  Invoice, CreditMemo and Shipment pages. (RC1.8)
 
+
+<!--- 70683 -->* Magento now displays newly registered customers in the Admin customer list as expected. (RC1.8)
+
+<!--- 69606 -->* We’ve resolved a conflict that occurred after you changed a base URL. Previously, after you changed a `base_url` value (**Stores->Configuration->General->Web-> Base URLs (Secure)**), Magento would update the base URL, then resubscribe, potentially resulting in a failure during the next update secure `base_url` call. 
+
+
+### Performance
+
+<!--- 69904 -->* We’ve fixed an issue where errors occurred  in foreign keys after Magento added a message to the message queue. Previously, when a user configured a shared catalog, Magento front-end performance was detrimentally affected. (RC1.8)
+
+<!--- 70406 -->* We’ve improved the performance of the CatalogPermission indexer. Previously, Magento performance degraded significantly during the indexing of large numbers of customer groups.(RC1.5)
+
+
+
+### REST API
+
+<!--- 70743 -->* You can now use a REST request  to retrieve a shopping cart that contained a product with custom options.  Previously,  you could not use a REST request  to retrieve a shopping cart that contained a product with custom options. (RC1.8)
+
+<!--- 57753 -->* You can now successfully create product attributes using the REST API. Previously, although the product was created, the attribute was not. [GitHub-6213](https://github.com/magento/magento2/issues/6213) (RC1.5)
 
 
 
@@ -194,6 +211,25 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 <!--- 65245 -->* Magento now sends the `parent_id` of a deleted configurable product variation to ElasticSearch. Previously, Magento didn’t send this information  to the ElasticSearch server  if  the simple product associated with a configurable product were changed. (RC1.5)
 
 
+### Shipping
+
+<!--- 70844 -->* The DHL provider option is now available. (RC1.8)
+
+
+### Staging
+
+<!--- 70922 -->* Magento now applies all scheduled product changes to all scopes.  (RC1.8)
+
+<!--- 70656 -->* Magento now displays the correct content on the preview page for a scheduled update.  (RC1.8)
+
+
+### Tax rules
+
+<!--- 70641 -->* You can now create a tax rule when running Magento in Mozilla Firefox and Internet Explorer. Previously, you could not select a tax rate, and Magento displayed an error.  (RC1.8)
+
+<!--- 59801 -->* We’ve improved the performance of the Tax Rules form in installations containing many tax rates. 
+
+
 
 ### URL rewrites
 
@@ -201,6 +237,11 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 
 
 <!--- 70651 -->* URL rewrites now occur as expected when category or products are saved. Previously, URLs rewrites did not occur for all categories. (RC1.6)
+
+
+### Visual Merchandiser
+
+<!--- 70896 -->* The Add products by SKU option now works as expected. Previously, if you entered a product SKU, Magento deleted that product from the product list. (RC1.8)
 
 
 
