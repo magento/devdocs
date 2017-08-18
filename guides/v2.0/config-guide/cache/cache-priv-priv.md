@@ -111,9 +111,9 @@ In addition to the standard expiration model, Magento can invalidate the cache a
 
 To create a link between a product page and a product model:
 
-1. Identify the product in the model layer:
+<ol><li>Identify the product in the model layer:
 
-		{% highlight php startinline=true %}
+{% highlight php startinline=true %}
 use Magento\Framework\Object\IdentityInterface;
 
 class Product implements IdentityInterface
@@ -134,11 +134,11 @@ class Product implements IdentityInterface
          return array(self::CACHE_TAG . '_' . $this->getId());
     }
 }
-		{% endhighlight %}
+{% endhighlight %}
+</li>
+<li>Identify the product in the view layer:
 
-2. Identify the product in the view layer:
-
-		{% highlight php startinline=true %}
+{% highlight php startinline=true %}
 class View extends AbstractProduct implements \Magento\Framework\Object\IdentityInterface
 {
     /**
@@ -151,26 +151,13 @@ class View extends AbstractProduct implements \Magento\Framework\Object\Identity
         return $this->getProduct()->getIndetities();
     }
 }
-		{% endhighlight %}
-
+{% endhighlight %}
+</li></ol>
 Now that there's a link between the model and view, Magento will remove product page content from the cache whenever there's a product change in the backend.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
 Magento uses cache tags for link creation. The performance of cache storage has a direct dependency on the number of tags per cache record, so try to minimize the number of tags and use them only for entities that are used in production mode. In other words, don't use invalidation for actions related to store setup.
 </div>
-
-### Cacheable page checklist
--   Pages use GET requests
-
--   Pages render only cacheable blocks
-
--   Pages render without sensitive private data; session and customer DTO objects are be empty.
-
--   Functionality specific to both current session (customer) and page should be written using JavaScript (e.g., related product listing should exclude items that are already in the shopping cart)
-
--   Model and block level should identify themselves for invalidation support
-
--   Declare a custom HTTP context variable if you plan to show different public content with the same URL
 
 ## Private content
 Since private content is specific to individual users, it's reasonable to handle it on the client (i.e., web browser).
@@ -209,7 +196,7 @@ Replace private data in blocks with placeholders (using [Knockout](http://knocko
 
 Initialize the component as follows:
 
-{% highlight javascript %}
+{% highlight html %}
 <script type="text/x-magento-init">
     {"<css-selector>": {"Magento_Ui/js/core/app": <?php echo $block->getJsLayout();?>}}
 </script>
@@ -267,6 +254,18 @@ Other examples:
 
 -   [Customer]({{ site.mage2000url }}app/code/Magento/Customer/etc/frontend/sections.xml){:target="&#95;blank"}
 
+### Cacheable page checklist
+-   Pages use GET requests
+
+-   Pages render only cacheable blocks
+
+-   Pages render without sensitive private data; session and customer DTO objects are be empty.
+
+-   Functionality specific to both current session (customer) and page should be written using JavaScript (e.g., related product listing should exclude items that are already in the shopping cart)
+
+-   Model and block level should identify themselves for invalidation support
+
+-   Declare a custom HTTP context variable if you plan to show different public content with the same URL
 
 ### Non-cacheable page checklist
 -   Use POST requests to modify Magento state (e.g., adding to shopping cart, wishlist, etc.)
