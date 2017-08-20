@@ -120,7 +120,7 @@ The `SerializerInterface` interface and its implementations only exist since Mag
 Because of this, it is not posssible to use these classes in code that has to be compatible with Magento 2.1 or 2.0.  
 
 In code that is compatible with earlier versions of Magento 2, constructor dependency injection can not be used to get an instance of `SerializerInterface`.  
-Instead, a runtime check against the Magento 2 version has to be made, and if the version is 2.2.0 or newer, the `SerializerInterface` can be instantiated by directly accessimg the object manager using a static method.  
+Instead, a runtime check against the Magento 2 version has to be made, and if the version is 2.2.0 or newer, the `SerializerInterface` can be instantiated by directly accessing the object manager using a static method.  
 If an earlier version of Magento 2 is being used, the appropriate native PHP serialization function has to be used, e.g. `\serialize()` or `\json_encode()`, depending on the usercase.  
 
 Here is an example:
