@@ -20,7 +20,7 @@ You can extensively customize the user interface by using HTML, CSS, and {% glos
 
 Presentation layer is Top layer among four layer(Presentationa,Service,Domain and Persistence layer) described by magento architecture.
 
-## Who uses the presentation layer?
+## Who uses the Presentation layer?
 
 Three types of Magento users interact with presentation layer code. Magento uses *areas* to efficiently make web service calls, loading only the dependent code that is required for the particular type of user. Types of users and their associated areas include:
 
