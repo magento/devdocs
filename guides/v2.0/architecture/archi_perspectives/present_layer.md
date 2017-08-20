@@ -12,7 +12,13 @@ redirect_from: /guides/v1.0/architecture/archi_perspectives/present_layer.html
 
 ## What is Magento Presentation layer?
 
-When you interact with the Magento web interface, you are directly working with *presentation layer* code. The presentation layer contains both view elements (layouts, blocks, templates) and controllers, which process commands to and from the user interface. Presentation code controls web user interaction with the product and its appearance. You can extensively customize the user interface by using HTML, CSS, and {% glossarytooltip ae0f1f68-c466-4189-88fd-6cd8b23c804f %}PHTML{% endglossarytooltip %} files to modify elements of the presentation layer.
+When you interact with the Magento web interface, you are directly working with *presentation layer* code.
+
+The presentation layer contains both view elements **(layouts, blocks, templates)** and **controllers**, which process commands to and from the user interface. Presentation code controls web user interaction with the product and its appearance.
+
+You can extensively customize the user interface by using HTML, CSS, and {% glossarytooltip ae0f1f68-c466-4189-88fd-6cd8b23c804f %}PHTML{% endglossarytooltip %} files to modify elements of the presentation layer. Presentation layer represents sites look and feel.
+
+Presentation layer is Top layer among four layer(Presentationa,Service,Domain and Persistence layer) described by magento architecture.
 
 ## Who uses the presentation layer?
 
