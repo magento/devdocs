@@ -47,8 +47,7 @@ The service contract of a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e14
 
 * data (or *entity*) interfaces in the `Api/Data` directory. *Data entities* are data structures passed to and returned from service interfaces.
 (Reference for [Catalog API/Data]({{site.mage2200url}}app/code/Magento/Customer/Api/Data))
-
-In Data directory file, You can **get()** and **set()** method of your entity table plus set and get extension attributes.
+* In Data directory file, You can **get()** and **set()** method of your entity table plus set and get **ExtensionAttributes()**.
 
 Typically, service contracts provide three distinct types of interfaces:
 
