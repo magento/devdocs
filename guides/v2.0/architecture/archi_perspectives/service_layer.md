@@ -43,11 +43,12 @@ External applications can make requests for business logic with simple SOAP and 
 The service contract of a {% glossarytooltip c1e4242b-1f1a-44c3-9d72-1d5b1435e142 %}module{% endglossarytooltip %} is defined by the set of interfaces in the module's `/Api`. It typically consists of:
 
 * service interfaces in the `/Api` {% glossarytooltip 621ef86b-7314-4fbc-a80d-ab7fa45a27cb %}namespace{% endglossarytooltip %} of the module.
-(Reference for [Catalog API],({{site.mage2200url}}app/code/Magento/Customer/Api))
+(Reference for [Catalog API]({{site.mage2200url}}app/code/Magento/Customer/Api))
 
 * data (or *entity*) interfaces in the `Api/Data` directory. *Data entities* are data structures passed to and returned from service interfaces.
-(Reference for [Catalog API/Data],({{site.mage2200url}}app/code/Magento/Customer/Api/Data))
-In Data directory file, You can **get()** and **set()** method of your entity.
+(Reference for [Catalog API/Data]({{site.mage2200url}}app/code/Magento/Customer/Api/Data))
+
+In Data directory file, You can **get()** and **set()** method of your entity table plus set and get extension attributes.
 
 Typically, service contracts provide three distinct types of interfaces:
 
