@@ -43,7 +43,7 @@ Look for the following highlights in this release:
 buyer to create a cart with more than 300 line items, and merchants can process a cart with at least 300 line items.
 
 
-## Issues fixed in this Release Candidate (RC 2.x)
+## Issues fixed in this Release Candidate (RC 2x)
 The following fixed issues have been logged against the Magento 2.2.0 RC2x release. Issues fixed in the  Release Candidate 1.x are listed below. 
 
 
@@ -60,7 +60,7 @@ The following fixed issues have been logged against the Magento 2.2.0 RC2x relea
 
 ### Cart
 
-<!--- 70806 -->* The Persistent Shopping Cart feature now works as expected when enabled. This feature (Store > Configurations > CUSTOMERS > Persistent Shopping Cart > General Options > Enable Persistence = Yes) persists information about viewing, comparison, wish list and last ordered items under a long-term cookie. (RC21)
+<!--- 70806 -->* The Persistent Shopping Cart feature now works as expected when enabled. This feature (**Store > Configurations > CUSTOMERS > Persistent Shopping Cart > General Options > Enable Persistence = Yes**) persists information about viewing, comparison, wish list and last ordered items under a long-term cookie. (RC21)
 
 
 ### Catalog

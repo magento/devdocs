@@ -64,15 +64,15 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 <!--- 71257 -->* The ability to disable module output has been removed from Admin. If you disabled module output from Admin in a previous release, you must manually configure these settings. See [Disable module output]({{page.baseurl}}config-guide/config/disable-module-output.html) for details. (RC21)
 
 
-<!--- 70516 -->* Magento no longer indicates errors when you install without AMQP. Previously, Magento displayed the following error: 
+<!--- 70516 -->* Magento no longer indicates errors when you install without AMQP. Previously, Magento displayed the following error: (RC21)
 
-report.CRITICAL: Error Connecting to server (0): Failed to parse address ":" {"exception":"[object] (PhpAmqpLib\\Exception\\AMQPRuntimeException(code: 0): Error Connecting to server (0): Failed to parse address \":\" at /vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php:106)"} []
-(RC21)
+	report.CRITICAL: Error Connecting to server (0): Failed to parse address ":" {"exception":"[object] (PhpAmqpLib\\Exception\\AMQPRuntimeException(code: 0): Error Connecting to server (0): Failed to parse address \":\" at /vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php:106)"} []
+
 
 
 ### Cart
 
-<!--- 70806 -->* The Persistent Shopping Cart feature now works as expected when enabled. This feature (Store > Configurations > CUSTOMERS > Persistent Shopping Cart > General Options > Enable Persistence = Yes) persists information about viewing, comparison, wish list and last ordered items under a long-term cookie. (RC21)
+<!--- 70806 -->* The Persistent Shopping Cart feature now works as expected when enabled. This feature (**Store > Configurations > CUSTOMERS > Persistent Shopping Cart > General Options > Enable Persistence = Yes**) persists information about viewing, comparison, wish list and last ordered items under a long-term cookie. (RC21)
 
 
 
@@ -87,14 +87,10 @@ report.CRITICAL: Error Connecting to server (0): Failed to parse address ":" {"e
 <!--- 70750 -->* Magento now displays an accurate view of high-level product categories based on viewer permission. Previously, Magento displayed only the product categories that users who belonged to the NOT_LOGGED_IN customer group were permitted to view, no matter which user logged in. (RC2.0)
 
 
-<!--- 70571 -->* You can now activate DEBUG logging while running Magento in production mode. (This feature is available, but disabled by default.) (RC21)
-
 <!--- 71242 -->* We’ve resolved failures with indexing in installations that implemented catalogs containing at least 5,000 - 6,000 SKUs. (RC21)
 
 
 <!--- 70619 -->* You can now successfully filter category products using the scope selector. (RC21)
-
-<!---  -->*
 
 
 ### Checkout
