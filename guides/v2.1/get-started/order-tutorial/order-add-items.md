@@ -109,6 +109,84 @@ The following example adds the downloadable product Advanced Pilates & Yoga (`sk
 {% endhighlight %}
 
 
+### Add a configurable product to a cart {#add-configurable}
+
+The requirements for adding a configurable product to a cart you have to get super attribute value of configurable product. You must specify the `sku`, the quantity, and quote ID as below way.
+
+The following example adds the configurable product from sampledata Chaz Kangeroo Hoodie (`sku`: MH01)
+
+For this product,
+We have to pass option_id and option_value in configurable_item_options array.
+For here, option_id for color is 93 and option_id for size is 142.
+option_value for gray is 52 and option_value for small is 168.
+
+**Endpoint**
+
+`POST http://<host>/rest/default/V1/carts/mine/items`
+
+**Headers**
+
+`Content-Type` `application/json`
+
+`Authorization` `Bearer <customer token>`
+
+**Payload**
+
+{% highlight json %}
+{
+  "cartItem": {
+    "sku": "MH01",
+    "qty": 1,
+    "quote_id": "4",
+    "product_option": {
+      "extension_attributes": {
+        "configurable_item_options": [
+          {
+            "option_id": "93",
+            "option_value": 52
+          },
+          {
+            "option_id": "142",
+            "option_value": 168
+          }
+        ]
+      }
+    },
+    "extension_attributes": {}
+  }
+}
+{% endhighlight %}
+
+**Response**
+
+{% highlight json %}
+{
+    "item_id": 9,
+    "sku": "MH01-S-Gray",
+    "qty": 1,
+    "name": "Chaz Kangeroo Hoodie",
+    "price": 52,
+    "product_type": "configurable",
+    "quote_id": "4",
+    "product_option": {
+        "extension_attributes": {
+            "configurable_item_options": [
+                {
+                  "option_id": "93",
+                  "option_value": 52
+                },
+                {
+                  "option_id": "142",
+                  "option_value": 168
+                }
+            ]
+        }
+    }
+}
+{% endhighlight %}
+
+
+
 ### Add a bundle product to a cart {#add-bundle}
 
 The sample data provides one bundled product, the Sprite Yoga Companion Kit (`sku`: `24-WG080`). The kit contains the following items:
