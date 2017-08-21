@@ -12,6 +12,8 @@ version: 2.0
 github_link: config-guide/cache/cache-priv-priv.md
 ---
 
+{::options syntax_highlighter="rouge" /}
+
 Caching is one of the most effective ways to improve website performance. Retrieving stored ({% glossarytooltip 0bc9c8bc-de1a-4a06-9c99-a89a29c30645 %}cached{% endglossarytooltip %}) content from a previous request for the same client instead of requesting files from your server every time someone visits your site is a more efficient use of network bandwidth.
 
 The Magento page cache library contains a simple PHP reverse proxy that enables full page caching out of the box. A reverse proxy acts as an intermediary between visitors and your application and can reduce the load on your server.
@@ -33,9 +35,9 @@ By default, all pages in Magento are cacheable, but you can disable caching if n
 ### Disable caching
 To disable caching, add a `cacheable="false"` attribute to any block in your layout.
 
-{% highlight xml %}
+``` xml
 <block class="Magento\Paypal\Block\Payflow\Link\Iframe" template="payflowlink/redirect.phtml" cacheable="false"/>
-{% endhighlight %}
+```
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 Magento disables page caching if at least one non-cacheable block is present in the layout.
@@ -43,7 +45,7 @@ Magento disables page caching if at least one non-cacheable block is present in 
 
 You can also disable caching with HTTP headers. Use the controller to return an object that contains methods for manipulating the cache:
 
-{% highlight php startinline=true %}
+``` php?start_inline=1
 class DynamicController extends \Magento\Framework\App\Action\Action
 {
     protected $pageFactory;
@@ -68,12 +70,12 @@ class DynamicController extends \Magento\Framework\App\Action\Action
         return $page;
     }
 }
-{% endhighlight %}
+```
 
 ### Define caching policy
 You can use the Admin to define caching policies or you can define them programmatically in a controller:
 
-{% highlight php startinline=true %}
+``` php?start_inline=1
 class DynamicController extends \Magento\Framework\App\Action\Action
 {
     protected $pageFactory;
@@ -98,7 +100,7 @@ class DynamicController extends \Magento\Framework\App\Action\Action
         return $page;
     }
 }
-{% endhighlight %}
+```
 
 <div class="bs-callout bs-callout-info" id="info" markdown="1">
 -   You should take caching into account even if you need to refresh data every second. Lots of visitors can get content from the cache within a one-second time period.
@@ -111,48 +113,45 @@ In addition to the standard expiration model, Magento can invalidate the cache a
 
 To create a link between a product page and a product model:
 
-<ol><li>Identify the product in the model layer:
+1. Identify the product in the model layer:
 
-{% highlight php startinline=true %}
+   ``` php?start_inline=1
 use Magento\Framework\Object\IdentityInterface;
-
 class Product implements IdentityInterface
 {
-
-     /**
-      * Product cache tag
-      */
-     const CACHE_TAG = 'catalog_product';
-
-    /**
-     * Get identities
-     *
-     * @return array
-     */
-    public function getIdentities()
-    {
-         return array(self::CACHE_TAG . '_' . $this->getId());
-    }
+        /**
+          * Product cache tag
+          */
+        const CACHE_TAG = 'catalog_product';
+        /**
+         * Get identities
+         *
+         * @return array
+         */
+        public function getIdentities()
+        {
+             return array(self::CACHE_TAG . '_' . $this->getId());
+        }
 }
-{% endhighlight %}
-</li>
-<li>Identify the product in the view layer:
+   ```
 
-{% highlight php startinline=true %}
+2. Identify the product in the view layer:
+
+   ``` php?start_inline=1
 class View extends AbstractProduct implements \Magento\Framework\Object\IdentityInterface
 {
-    /**
-     * Return identifiers for produced content
-     *
-     * @return array
-     */
-    public function getIdentities()
-    {
-        return $this->getProduct()->getIndetities();
-    }
+        /**
+         * Return identifiers for produced content
+         *
+         * @return array
+         */
+        public function getIdentities()
+        {
+            return $this->getProduct()->getIndetities();
+        }
 }
-{% endhighlight %}
-</li></ol>
+   ```
+
 Now that there's a link between the model and view, Magento will remove product page content from the cache whenever there's a product change in the backend.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
@@ -175,7 +174,7 @@ The public method `getSectionData` must return an array with data for private bl
 
 Add the following to your component's {% glossarytooltip 2be50595-c5c7-4b9d-911c-3bf2cd3f7beb %}dependency injection{% endglossarytooltip %} configuration (`di.xml`):
 
-{% highlight xml %}
+``` xml
 <type name="Magento\Customer\CustomerData\SectionPoolInterface">
     <arguments>
         <argument name="sectionSourceMap" xsi:type="array">
@@ -183,7 +182,7 @@ Add the following to your component's {% glossarytooltip 2be50595-c5c7-4b9d-911c
         </argument>
     </arguments>
 </type>
-{% endhighlight %}
+```
 
 ### Create a block and template {#config-cache-priv-how-block}
 To render private content, create a block and a template to display user-agnostic data; this data is replaced with user-specific data by the {% glossarytooltip 9bcc648c-bd08-4feb-906d-1e24c4f2f422 %}UI component{% endglossarytooltip %}.
@@ -192,33 +191,33 @@ To render private content, create a block and a template to display user-agnosti
 Do _not_ use the `$_isScopePrivate` property in your blocks. This property is obsolete and won't work properly.
 </div>
 
-Replace private data in blocks with placeholders (using [Knockout](http://knockoutjs.com/documentation/introduction.html){:target="_blank"} syntax). The init scope on the root element is `data-bind="scope: 'compareProducts'"`, where you define the scope name (`compareProducts` in this example) in your {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %}.
+Replace private data in blocks with placeholders (using [Knockout](http://knockoutjs.com/documentation/introduction.html){:target="&#95;blank"} syntax). The init scope on the root element is `data-bind="scope: 'compareProducts'"`, where you define the scope name (`compareProducts` in this example) in your {% glossarytooltip 73ab5daa-5857-4039-97df-11269b626134 %}layout{% endglossarytooltip %}.
 
 Initialize the component as follows:
 
-{% highlight html %}
+``` html
 <script type="text/x-magento-init">
     {"<css-selector>": {"Magento_Ui/js/core/app": <?php echo $block->getJsLayout();?>}}
 </script>
-{% endhighlight %}
+```
 
-[Example]({{ site.mage2000url }}app/code/Magento/Catalog/view/frontend/templates/product/compare/sidebar.phtml#L46-L48){:target="_blank"}
+[Example]({{ site.mage2000url }}app/code/Magento/Catalog/view/frontend/templates/product/compare/sidebar.phtml#L46-L48){:target="&#95;blank"}
 
 ### Configure a UI component {#config-cache-priv-how-ui}
 The UI component renders block data on the Magento {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %}. To initialize the UI component, you must call the initialization method `_super()`.
 
-[Example]({{ site.mage2000url }}app/code/Magento/Catalog/view/frontend/web/js/view/compare-products.js){:target="_blank"}
+[Example]({{ site.mage2000url }}app/code/Magento/Catalog/view/frontend/web/js/view/compare-products.js){:target="&#95;blank"}
 
 All properties are available in the template.
 
-[Example of defining a UI component in a layout]({{ site.mage2000url }}app/code/Magento/Catalog/view/frontend/layout/default.xml#L11-L22){:target="_blank"}
+[Example of defining a UI component in a layout]({{ site.mage2000url }}app/code/Magento/Catalog/view/frontend/layout/default.xml#L11-L22){:target="&#95;blank"}
 
 ### Invalidate private content
 Specify actions that trigger cache invalidation for private content blocks in a `sections.xml` configuration file in the `Vendor/ModuleName/etc/frontend` directory. Magento invalidates the cache on a POST or PUT request.
 
 The following example adds comments to [app/code/Magento/Catalog/etc/frontend/sections.xml]({{ site.mage2000url }}app/code/Magento/Catalog/etc/frontend/sections.xml){:target="&#95;blank"} to show you what the code is doing.
 
-{% highlight xml %}
+``` xml
 <?xml version="1.0"?>
 <!--
 /**
@@ -242,7 +241,7 @@ The following example adds comments to [app/code/Magento/Catalog/etc/frontend/se
         <section name="compare-products"/>
     </action>
 </config>
-{% endhighlight %}
+```
 
 <div class="bs-callout bs-callout-warning" markdown="1">
 Use only HTTP POST or PUT methods to change state (e.g., adding to a shopping cart, adding to a wishlist, etc.) and don't expect to see caching on these methods. Using GET or HEAD methods might trigger caching and prevent updates to private content. For more information about caching, see [RFC-2616 section 13](https://www.w3.org/Protocols/rfc2616/rfc2616-sec13.html) {:target="&#95;blank"}
