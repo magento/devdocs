@@ -14,9 +14,9 @@ github_link: release-notes/release-notes-2-2-RC2-EE.md
 {:toc}
 
 
-*Release date: August 14, 2017*
+*Release date: August 19, 2017*
 
-*Notes updated: August 15, 2017*
+*Notes updated: August 21, 2017*
 
 
 Magento Commerce 2.2.0 Release Candidate 2.x (formerly Enterprise Edition) includes significant new features as well as many bug fixes.
@@ -30,9 +30,6 @@ Looking for information about how the Magento 2.2.0 Release Candidate evaluation
 Magento Enterprise Edition 2.2.0 Release Candidate 2 includes substantial new features as well as many bug fixes. Look for the following highlights in this release:
 
 * **Enhanced B2B feature set** removes points of friction from the B2B purchasing process. We reduce the cost and complexity of building a B2B site on Magento by providing company account management features out-of-the-box.  B2B companies can easily view and manage all of their quotes in the Magento Admin Panel. B2B APIs enable backend integrations, too. Read more about Magento B2B in the [B2B Developer Guide]({{page.baseurl}}b2b/bk-b2b.html).
-
-
-* **Advanced Reporting** provides merchants with an improved, reliable, and compelling way to report on their products, orders, and customers. See the [Module Reference Guide]({{page.baseurl}}mrg/ce/Analytics/description.html) for more information.
 
 
 * **Signifyd fraud protection** is now integrated with Magento. Signifyd identifies and rejects potential fraudulent orders and provides
@@ -58,9 +55,21 @@ buyer to create a cart with more than 300 line items, and merchants can process 
 ## Issues fixed in this Release Candidate (RC 2.x)
 The following fixed and open issues have been logged against the Magento 2.2.0 RC2.x release. Issues fixed in the  Release Candidate 1.x are listed below. 
 
+
 ### Installation and Configuration 
 
 <!--- 70705 -->* The installation process no longer stops when loading the Magento_Tax module. [GitHub-10138](https://github.com/magento/magento2/issues/10138) (RC2.0)
+
+<!--- 70571 -->* You can now activate DEBUG logging while running Magento in production mode. (This feature is available, but disabled by default.) (RC21)
+
+<!--- 71257 -->* The ability to disable module output has been removed from Admin. If you disabled module output from Admin in a previous release, you must manually configure these settings. See [Disable module output]({{page.baseurl}}config-guide/config/disable-module-output.html) for details. (RC21)
+
+
+
+### Cart
+
+<!--- 70806 -->* The Persistent Shopping Cart feature now works as expected when enabled. This feature (Store > Configurations > CUSTOMERS > Persistent Shopping Cart > General Options > Enable Persistence = Yes) persists information about viewing, comparison, wish list and last ordered items under a long-term cookie. (RC21)
+
 
 
 ### Catalog
@@ -73,6 +82,25 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 
 <!--- 70750 -->* Magento now displays an accurate view of high-level product categories based on viewer permission. Previously, Magento displayed only the product categories that users who belonged to the NOT_LOGGED_IN customer group were permitted to view, no matter which user logged in. (RC2.0)
 
+
+<!--- 70571 -->* You can now activate DEBUG logging while running Magento in production mode. (This feature is available, but disabled by default.) (RC21)
+
+<!--- 71242 -->* We’ve resolved failures with indexing in installations that implemented catalogs containing at least 5,000 - 6,000 SKUs. (RC21)
+
+
+<!---  -->*
+
+<!---  -->*
+
+
+### Checkout
+
+<!--- 70846 -->* Magento now displays white space after the first address field of the customer address field during checkout. (RC21)
+
+
+### Email
+
+<!--- 71349 -->* You can now configure an email return-path. (RC21)
 
 
 ### Miscellaneous
@@ -88,6 +116,12 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 
 <!--- 70517 -->* You can now successfully check out when the **Deferred Stock Update** option is enabled, and the AMQP connection is not configured. Previously, checkout failed, and Magento displayed this message: 
 Error Connecting to server (0): Failed to parse address ":" {"exception":"[object](PhpAmqpLib\\Exception\\AMQPRuntimeException(code: 0): Error Connecting to server (0): Failed to parse address \":\" at vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php:106)"} (RC2.0)
+
+<!--- 70816 -->* The WSDL listing now lists all available methods at all times without requiring authorization. (RC21)
+
+<!--- 71030 -->* Magento now plays the sound from only the video you’ve selected. Previously, when you clicked on a video associated with a configurable product, Magento played the soundtrack from both the selected video and the video of its parent. (RC21)
+
+
 
 
 ### Shipping

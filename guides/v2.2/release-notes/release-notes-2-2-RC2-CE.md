@@ -13,9 +13,9 @@ github_link: release-notes/release-notes-2-2-RC2-CE.md
 *	TOC
 {:toc}
 
-*Release date: August 14, 2017*
+*Release date: August 19, 2017*
 
-*Notes updated: August 15, 2017*
+*Notes updated: August 21, 2017*
 
 
 Magento Open Source 2.2.0 Release Candidate 2.x (formerly Community Edition) includes significant new features as well as many bug fixes.
@@ -52,12 +52,33 @@ The following fixed issues have been logged against the Magento 2.2.0 RC2.1 rele
 
 <!--- 70705 -->* The installation process no longer stops when loading the Magento_Tax module. [GitHub-10138](https://github.com/magento/magento2/issues/10138) (RC2.0)
 
+<!--- 70571 -->* You can now activate DEBUG logging while running Magento in production mode. (This feature is available, but disabled by default.) (RC21) 
+
+<!--- 71257 -->* The ability to disable module output has been removed from Admin. If you disabled module output from Admin in a previous release, you must manually configure these settings. See [Disable module output]({{page.baseurl}}config-guide/config/disable-module-output.html) for details. (RC21)
+
+
+### Cart
+
+<!--- 70806 -->* The Persistent Shopping Cart feature now works as expected when enabled. This feature (Store > Configurations > CUSTOMERS > Persistent Shopping Cart > General Options > Enable Persistence = Yes) persists information about viewing, comparison, wish list and last ordered items under a long-term cookie. (RC21)
+
 
 ### Catalog
 
 <!--- 69717 -->* Custom option IDs no longer change during import. Previously, custom option ID values were deleted, and new values were added. (RC2.0)
 
 <!--- 70877 -->* You can now successfully add a product to the compare list. Previously, when you tried to add a product to a compare list, Magento displayed an error. (RC2.0)
+
+<!--- 71242 -->* We’ve resolved failures with indexing in installations that implemented catalogs containing at least 5,000 - 6,000 SKUs. (RC21)
+
+
+### Checkout
+
+<!--- 70846 -->* Magento now displays white space after the first address field of the customer address field during checkout. (RC21)
+
+
+### Email
+
+<!--- 71349 -->* You can now configure an email return-path. (RC21)
 
 
 ### Miscellaneous
@@ -70,19 +91,23 @@ The following fixed issues have been logged against the Magento 2.2.0 RC2.1 rele
 
 <!--- 71173 -->* You can now enable JavaScript minification without error. Previously, after enabling JS minification, the Magento  Admin displayed 404 errors when accessing JavaScript elements. (RC2.0)
 
+<!--- 70816 -->* The WSDL listing now lists all available methods at all times without requiring authorization. (RC21)
+
+<!--- 71030 -->* Magento now plays the sound from only the video you’ve selected. Previously, when you clicked on a video associated with a configurable product, Magento played the soundtrack from both the selected video and the video of its parent. (RC21)
+
 
 ### Shipping
 
-<!--- MAGETWO-67283 -->* When upgrading Magento from 2.1.x to 2.2, the `quote_address.free_shipping` column is the same whether you upgraded from a previous installation of Magento or performed a fresh installation. Previously, different upgrade/installation options affected the contents of this column.(RC2.0)
+<!--- 67283 -->* When upgrading Magento from 2.1.x to 2.2, the `quote_address.free_shipping` column is the same whether you upgraded from a previous installation of Magento or performed a fresh installation. Previously, different upgrade/installation options affected the contents of this column.(RC2.0)
 
-<!--- MAGETWO-70861-->* Errors in shipping rates no longer occur when a customer changes the country during guest checkout and DHL is enabled. Previously, a customer changing country during guest checkout resulted in inaccurate shipping rates. (RC2.0)
+<!--- 70861-->* Errors in shipping rates no longer occur when a customer changes the country during guest checkout and DHL is enabled. Previously, a customer changing country during guest checkout resulted in inaccurate shipping rates. (RC2.0)
 
 
 ### URL rewrites
 
-<!--- MAGETWO-70663 -->* You can now assign products to a category when **Match Products by rule** is enabled. (RC2.0)
+<!--- 70663 -->* You can now assign products to a category when **Match Products by rule** is enabled. (RC2.0)
 
-<!--- MAGETWO-70779 -->* Magento now saves Category URL rewrites as expected. (RC2.0)
+<!--- 70779 -->* Magento now saves Category URL rewrites as expected. (RC2.0)
 
 
 
