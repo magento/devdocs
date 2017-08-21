@@ -44,7 +44,8 @@ buyer to create a cart with more than 300 line items, and merchants can process 
 
 
 ## Issues fixed in this Release Candidate (RC 2.x)
-The following fixed issues have been logged against the Magento 2.2.0 RC2.1 release. Issues fixed in the  Release Candidate 1.x are listed below. 
+The following fixed issues have been logged against the Magento 2.2.0 RC2x release. Issues fixed in the  Release Candidate 1.x are listed below. 
+
 
 
 

@@ -19,7 +19,7 @@ github_link: release-notes/release-notes-2-2-RC2-EE.md
 *Notes updated: August 21, 2017*
 
 
-Magento Commerce 2.2.0 Release Candidate 2.x (formerly Enterprise Edition) includes significant new features as well as many bug fixes.
+Magento Commerce 2.2.0 Release Candidate 2x (formerly Enterprise Edition) includes significant new features as well as many bug fixes.
 
 Looking for information about how the Magento 2.2.0 Release Candidate evaluation program works? Check out the [Magento 2.2.0 Release Candidate QuickStart Guide]({{page.baseurl}}release-notes/release-candidate/quick-start.html) for more information. This guide provides a handy overview of [Component Status]({{page.baseurl}}release-notes/release-candidate/component-status.html), too.
 
@@ -51,9 +51,8 @@ Magento Enterprise Edition 2.2.0 Release Candidate 2 includes substantial new fe
 buyer to create a cart with more than 300 line items, and merchants can process a cart with at least 300 line items.
 
 
-
-## Issues fixed in this Release Candidate (RC 2.x)
-The following fixed and open issues have been logged against the Magento 2.2.0 RC2.x release. Issues fixed in the  Release Candidate 1.x are listed below. 
+## Issues fixed in this Release Candidate (RC 2x)
+The following fixed and open issues have been logged against the Magento 2.2.0 RC2x release. Issues fixed in the  Release Candidate 1.x are listed below. 
 
 
 ### Installation and Configuration 
@@ -64,6 +63,11 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 
 <!--- 71257 -->* The ability to disable module output has been removed from Admin. If you disabled module output from Admin in a previous release, you must manually configure these settings. See [Disable module output]({{page.baseurl}}config-guide/config/disable-module-output.html) for details. (RC21)
 
+
+<!--- 70516 -->* Magento no longer indicates errors when you install without AMQP. Previously, Magento displayed the following error: 
+
+report.CRITICAL: Error Connecting to server (0): Failed to parse address ":" {"exception":"[object] (PhpAmqpLib\\Exception\\AMQPRuntimeException(code: 0): Error Connecting to server (0): Failed to parse address \":\" at /vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php:106)"} []
+(RC21)
 
 
 ### Cart
@@ -88,7 +92,7 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 <!--- 71242 -->* We’ve resolved failures with indexing in installations that implemented catalogs containing at least 5,000 - 6,000 SKUs. (RC21)
 
 
-<!---  -->*
+<!--- 70619 -->* You can now successfully filter category products using the scope selector. (RC21)
 
 <!---  -->*
 
@@ -101,6 +105,9 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 ### Email
 
 <!--- 71349 -->* You can now configure an email return-path. (RC21)
+
+<!--- 65631 -->* Magento now sends email that provides updates on the status of RMA authorization. (RC21)
+
 
 
 ### Miscellaneous
@@ -121,7 +128,11 @@ Error Connecting to server (0): Failed to parse address ":" {"exception":"[objec
 
 <!--- 71030 -->* Magento now plays the sound from only the video you’ve selected. Previously, when you clicked on a video associated with a configurable product, Magento played the soundtrack from both the selected video and the video of its parent. (RC21)
 
+<!--- 71434 -->* Varnish now caches pages with `.html` extensions. (RC21)
 
+<!--- 69757 -->* Magento now displays uncorrupted information in the shared catalogs  bulk operations  report. Previously, error information was corrupted. (RC21)
+
+<!--- 70853 -->* We’ve fixed an SQL error that previously caused a logical error during the creation of a TargetRule. (This issue affected the `modifyConditionByCategoryIdsAttribute` function.) (RC21)
 
 
 ### Shipping
@@ -130,11 +141,14 @@ Error Connecting to server (0): Failed to parse address ":" {"exception":"[objec
 
 <!--- 70861-->* Errors in shipping rates no longer occur when a customer changes the country during guest checkout and DHL is enabled. Previously, a customer changing country during guest checkout resulted in inaccurate shipping rates. (RC2.0)
 
+
 ### Staging
 
 <!--- 70671 -->*  You can now preview an update from the dashboard and click on links and see how the entire instance would look like for a store between some dates. Previously, the links from the Preview page were broken. (RC2.0)
 
 <!--- 70708 -->* You can now change the Start Date for a campaign. (RC2.0)
+
+<!--- 71373 -->* You can now install Magento Commerce without Staging modules. (RC21)
 
 
 ### URL rewrites
