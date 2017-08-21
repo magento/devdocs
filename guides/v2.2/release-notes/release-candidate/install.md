@@ -47,11 +47,11 @@ Before you begin, install Composer:
 
     -   Enter the following command for {{site.data.var.ce}}:
 
-            composer create-project -s RC --repository-url=https://repo.magento.com/ magento/project-community-edition <install-directory-name> 2.2.0-rc20
+            composer create-project -s RC --repository-url=https://repo.magento.com/ magento/project-community-edition <install-directory-name> 2.2.0-rc21
 
     -   Enter the following command for {{site.data.var.ee}}:
 
-            composer create-project -s RC --repository-url=https://repo.magento.com/ magento/project-enterprise-edition <install-directory-name> 2.2.0-rc20
+            composer create-project -s RC --repository-url=https://repo.magento.com/ magento/project-enterprise-edition <install-directory-name> 2.2.0-rc21
 
 	When prompted, enter your <a href="{{page.baseurl}}install-gde/prereq/connect-auth.html">authentication keys</a>. Your *public key* is your username; your *private key* is your password.
 
@@ -60,7 +60,7 @@ Before you begin, install Composer:
   <div class="bs-callout bs-callout-info" id="info" markdown="1">
 The following error indicates your tokens are incorrect:
 
-    Could not find package magento/project-enterprise-edition with version 2.2.0-rc2
+    Could not find package magento/project-enterprise-edition with version 2.2.0-rc21
 
 If the following error displays, see [troubleshooting]({{page.baseurl}}install-gde/trouble/tshoot_composer-fail.html):
 
