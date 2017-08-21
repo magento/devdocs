@@ -756,7 +756,20 @@
 <p><strong>Class:</strong> <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Wishlist/Model/Wishlist.php" target="_blank"><code>Magento\Wishlist\Model\Wishlist</code></a><br />
 <strong>Action:</strong> The format of the string for the <code>buyRequest</code> parameter in the <code>addNewItem</code> method changed from serialized to JSON.<br /></p>
 
-<h3 id="messagequeue-module-api">MessageQueue module API</h3>
+<h3 id="recently-viewed-and-recently-compared-widgets">Recently Viewed and Recently Compared Widgets</h3>
+
+<p><strong>Class:</strong> <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Reports/Block/Product/Viewed.php" target="_blank"><code>Magento\Reports\Block\Product\Viewed</code></a><br />
+<strong>Action:</strong> Deprecated <br /></p>
+
+<p><strong>Class:</strong> <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Reports/Block/Product/Compared.php" target="_blank"><code>Magento\Reports\Block\Product\Compared</code></a><br />
+<strong>Action:</strong> Deprecated <br /></p>
+
+<p><strong>Configuration</strong> <a href="https://github.com/magento/magento2/blob/2.1/app/code/Magento/Reports/etc/widget.xml" target="_blank"><code>Magento\Reports\etc\widget.xml</code></a><br />
+<strong>Action:</strong> Removed <br /></p>
+
+<p>Please note, that all inheritance of old widget.xml file will break Magento. Use <code>Magento/Catalog/etc/widget.xml</code> instead of <code>Magento/Reports/etc/widget.xml</code>.</p>
+
+<h3 id="messagequeue-module-api">MessageQueue Module API</h3>
 
 <p>The <code>Magento\Framework\MessageQueue\ConfigInterface</code> has been deprecated. 
 The following table lists the deprecated methods and their replacements.</p>

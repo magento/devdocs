@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Alert widget | Magento 2 Developer Documentation</title>
+	<title>Use the Frontend Product Repository | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.2/javascript-dev-guide/widgets/widget_alert.html">
+	<link rel="canonical" href="//guides/v2.2/javascript-dev-guide/javascript/product-frontend-storage.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -69,11 +69,11 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/javascript-dev-guide/widgets/widget_alert.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/javascript-dev-guide/widgets/widget_alert.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/">Magento 2.1</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.2/javascript-dev-guide/widgets/widget_alert.html">Magento 2.2 RC</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.2/">Magento 2.2 RC</a></li>
 	
   </ul>
 
@@ -372,7 +372,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.2/javascript-dev-guide/javascript/product-frontend-storage.html">Use the Frontend Product Repository</a></li>
+									<li class="level-2  active "><a href="/guides/v2.2/javascript-dev-guide/javascript/product-frontend-storage.html">Use the Frontend Product Repository</a></li>
 
 									
 
@@ -457,7 +457,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.2/javascript-dev-guide/widgets/widget_alert.html">Alert widget</a></li>
+									<li class="level-2 "><a href="/guides/v2.2/javascript-dev-guide/widgets/widget_alert.html">Alert widget</a></li>
 
 									
 
@@ -731,7 +731,7 @@
 
           
 
-          <span property="name">Alert widget</span>
+          <span property="name">Use the Frontend Product Repository</span>
 
         
 
@@ -754,7 +754,7 @@
 
 	
 
-	<h1 class="page-heading">Alert widget</h1>
+	<h1 class="page-heading">Use the Frontend Product Repository</h1>
 
   
 
@@ -762,111 +762,191 @@
 </section>
 
 
-			<h2 id="alert_overview">Overview</h2>
+			<p>The frontend product repository is a storage service that uses the local cache to get product information without making additional requests to the server.
+The product information it provides is useful for optimal mini-cart, widgets, and checkout customizations.</p>
 
-<p>The Magento alert widget implements a modal pop-up window with a confirmation button. It extends the <a href="/guides/v2.2/javascript-dev-guide/widgets/widget_modal.html">Magento modal widget</a>.</p>
+<p>This article contains code samples for common tasks when working with the frontend product repository.</p>
 
-<p>The alert <span term-uuid="f0dcf847-ce21-4b88-8b45-83e1cbf08100" class="glossary-term" data-toggle="popover">widget</span> source is <a href="https://github.com/magento/magento2/blob/2.0/app/code/Magento/Ui/view/base/web/js/modal/alert.js" target="_blank"><code>&lt;Magento_Ui_module_dir&gt;/view/base/web/js/modal/alert.js</code></a></p>
+<h2 id="the-product-data-storage">The product data storage</h2>
 
-<p>The widget can be used for implementing alert windows for both Admin and <span term-uuid="1a70d3ac-6bd9-475a-8937-5f80ca785c14" class="glossary-term" data-toggle="popover">storefront</span>. The design patterns for the pop-up modal windows in the Admin are described in the <a href="/guides/v2.2/pattern-library/containers/slideouts-modals-overlays/slideouts-modals-overalys.html#modals">Magento Admin Pattern Library, the Slide-out Panels, Modal Windows, and Overlays topic.</a></p>
+<p>The frontend product repository uses the <code>product_data_storage</code> section of the data storage cache as its data source.
+This section is responsible for holding all product data that come from the server when a customer visits a product page.</p>
 
-<h2 id="alert_initialize">Initialize the alert widget</h2>
+<h2 id="instantiate-the-repository">Instantiate the repository</h2>
 
-<p>The alert widget can be initialized with or without binding to a certain element.</p>
+<p>The following code snippet uses the <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Catalog/view/frontend/web/js/product/storage/storage-service.js" target="_blank"><code>Magento_Catalog/js/product/storage/storage-service</code></a> to initialize the repository when the data storage cache itself initializes:</p>
 
-<p><strong>Example1</strong>: initialization on an element</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">define</span><span class="p">([</span>
+    <span class="s1">&#39;Magento_Catalog/js/product/storage/storage-service&#39;</span>
+<span class="p">]),</span> <span class="kd">function</span><span class="p">(</span><span class="nx">storage</span><span class="p">){</span>
+    <span class="s1">&#39;use strict&#39;</span><span class="p">;</span>
 
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#init_element&#39;</span><span class="p">).</span><span class="nx">alert</span><span class="p">({</span>
-    <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Warning&#39;</span><span class="p">,</span>
-    <span class="nx">content</span><span class="o">:</span> <span class="s1">&#39;Warning content&#39;</span><span class="p">,</span>
-    <span class="nx">actions</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">always</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){}</span>
+    <span class="k">return</span> <span class="p">{</span>
+
+        <span class="p">...</span>
+
+        <span class="nx">identifiersConfig</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">namespace</span><span class="o">:</span> <span class="s1">&#39;product_data_storage&#39;</span>
+        <span class="p">},</span>
+
+        <span class="nx">productStorageConfig</span><span class="o">:</span> <span class="p">{</span>
+            <span class="nx">namespace</span><span class="o">:</span> <span class="s1">&#39;product_data_storage&#39;</span><span class="p">,</span>
+            <span class="nx">customerDataProvider</span><span class="o">:</span> <span class="s1">&#39;product_data_storage&#39;</span><span class="p">,</span>
+            <span class="nx">className</span><span class="o">:</span> <span class="s1">&#39;DataStorage&#39;</span>
+        <span class="p">},</span>
+
+        <span class="nx">initIdsStorage</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){</span>
+            <span class="nx">storage</span><span class="p">.</span><span class="nx">onStorageInit</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">identifiersConfig</span><span class="p">.</span><span class="nx">namespace</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">idsStorageHandler</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">));</span>
+            <span class="k">return</span> <span class="k">this</span><span class="p">;</span>
+        <span class="p">},</span>
+
+        <span class="nx">idsStorageHandler</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">idsStorage</span><span class="p">){</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">productStorage</span> <span class="o">=</span> <span class="nx">storage</span><span class="p">.</span><span class="nx">createStorage</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">productStorageConfig</span><span class="p">);</span>
+        <span class="p">},</span>
+
+        <span class="p">...</span>
+    
     <span class="p">}</span>
-<span class="p">});</span></code></pre></figure>
 
-<p><strong>Example2</strong>: standalone initialization</p>
-
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">require</span><span class="p">([</span>
-    <span class="s1">&#39;Magento_Ui/js/modal/alert&#39;</span>
-<span class="p">],</span> <span class="kd">function</span><span class="p">(</span><span class="nx">alert</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// Variable that represents the `alert` function</span>
- 
-    <span class="nx">alert</span><span class="p">({</span>
-        <span class="nx">title</span><span class="o">:</span> <span class="s1">&#39;Some title&#39;</span><span class="p">,</span>
-        <span class="nx">content</span><span class="o">:</span> <span class="s1">&#39;Some content&#39;</span><span class="p">,</span>
-        <span class="nx">actions</span><span class="o">:</span> <span class="p">{</span>
-            <span class="nx">always</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){}</span>
-        <span class="p">}</span>
-    <span class="p">});</span>
- 
-<span class="p">});</span></code></pre></figure>
-
-<p>For details about how to initialize a widget in a<code>.phtml</code> template, refer to the <a href="/guides/v2.2/javascript-dev-guide/javascript/js_init.html" target="_blank">Javascript initialization</a> topic.</p>
-
-<h2 id="alert_options">Options</h2>
-<p>The alert widget has the following options:</p>
-
-<ul>
-<li><a href="#alert_actions">actions</a></li>
-<li><a href="#alert_autoopen">autoOpen</a></li>
-<li><a href="#alert_clickableOverlay">clickableOverlay</a></li>
-<li><a href="#alert_content">content</a></li>
-<li><a href="#alert_focus">focus</a></li>
-<li><a href="#alert_title">title</a></li>
-</ul>
-
-<h3 id="alert_actions"><code>actions</code></h3>
-
-<p>Widget callbacks.</p>
-
-<p><strong>Type</strong>: Object.</p>
-
-<p><strong>Default value</strong>:</p>
-
-<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">actions</span><span class="o">:</span> <span class="p">{</span>
-    <span class="nx">always</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){}</span>
 <span class="p">}</span></code></pre></figure>
 
-<h3 id="alert_autoopen">autoOpen</h3>
-<p>Automatically open the alert window when the widget is initialized.</p>
+<h2 id="use-the-repository">Use the repository</h2>
 
-<p><strong>Type</strong>: Boolean</p>
+<p>Subscribe a callback function to the product repository data to work with the cached data from recent server requests.</p>
 
-<p><strong>Default value</strong>: <code>false</code></p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">...</span>
 
-<h3 id="alert_clickableOverlay">clickableOverlay</h3>
-<p>Close the alert window when a user clicks on the overlay.</p>
+<span class="nx">idsStorageHandler</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">idsStorage</span><span class="p">){</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">productStorage</span> <span class="o">=</span> <span class="nx">storage</span><span class="p">.</span><span class="nx">createStorage</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">productStorageConfig</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">productStorage</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">dataCollectionHandler</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">));</span>
+<span class="p">},</span>
 
-<p><strong>Type</strong>: Boolean</p>
+<span class="nx">dataCollectionHandler</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">){</span>
+    <span class="c1">//Code to handle the data</span>
+<span class="p">},</span>
 
-<p><strong>Default value</strong>: <code>true</code></p>
+<span class="p">...</span></code></pre></figure>
 
-<h3 id="alert_content"><code>content</code></h3>
+<h2 id="get-data-from-the-server">Get data from the server</h2>
 
-<p>The text displayed in the alert window.</p>
+<p>Use the <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Catalog/view/frontend/web/js/product/storage/data-storage.js#L213" target="_blank"><code>loadDataFromServer</code></a> method from the <code>data-storage</code> class to get product data from a list of IDs.</p>
 
-<p><strong>Type</strong>: String.</p>
+<figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">...</span>
 
-<h3 id="alert_focus"><code>focus</code></h3>
-<p>The selector of the element to be in focus when the alert window opens.
-If <code>focus</code> is not specified or set to empty string, the focus is on the close button. If focusing is not requried, set <code>focus</code> to <code>none</code>.</p>
+<span class="nx">idsStorageHandler</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">idsStorage</span><span class="p">,</span> <span class="nx">currency</span><span class="p">,</span> <span class="nx">storeId</span><span class="p">){</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">productStorage</span> <span class="o">=</span> <span class="nx">storage</span><span class="p">.</span><span class="nx">createStorage</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">productStorageConfig</span><span class="p">);</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">productStorage</span><span class="p">.</span><span class="nx">data</span><span class="p">.</span><span class="nx">subscribe</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">dataCollectionHandler</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">));</span>
+    <span class="k">this</span><span class="p">.</span><span class="nx">productStorage</span><span class="p">.</span><span class="nx">loadDataFromServer</span><span class="p">(</span><span class="nx">currency</span><span class="p">,</span> <span class="nx">storeId</span><span class="p">,</span> <span class="nx">idsStorage</span><span class="p">.</span><span class="nx">get</span><span class="p">());</span>
+<span class="p">},</span>
 
-<p><strong>Type</strong>: String.</p>
+<span class="p">...</span></code></pre></figure>
 
-<p><strong>Default value</strong>: <code>''</code></p>
+<table>
+  <thead>
+    <tr>
+      <th>Parameter</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>currency</code></td>
+      <td>The currency data to get for the product</td>
+    </tr>
+    <tr>
+      <td><code>store</code></td>
+      <td>The ID of the store associated with the product</td>
+    </tr>
+    <tr>
+      <td><code>ids</code></td>
+      <td>An object that contains the list of IDs as keys</td>
+    </tr>
+  </tbody>
+</table>
 
-<h3 id="alert_title"><code>title</code></h3>
-<p>The title of the alert window.</p>
+<p>In the preceding example the data is handled by the subscribed function <code>dataCollectionHandler</code>.</p>
 
-<p><strong>Type</strong>: String.</p>
+<h3 id="specify-rest-resource">Specify REST resource</h3>
 
-<p><strong>Default value</strong>: <code>''</code></p>
+<p>Use the following REST endpoint to get product information:</p>
 
-<h2 id="alert_events">Events</h2>
+<p><code>/V1/products-render-info</code></p>
 
-<p>The alert widget implements a single event: the <code>always</code> callback.</p>
+<p>For UI Components, add this information in the <a href="/guides/v2.2/ui_comp_guide/concepts/ui_comp_data_source.html"><code>dataProvider</code></a> entry inside your <code>etc/view/frontend/ui_component/&lt;ui-component-name&gt;.xml</code> file.</p>
 
-<h2 id="alert_key_navigation">Keyboard navigation</h2>
-<p>The keyboard navigation for the alert windows is similar to the <a href="/guides/v2.2/javascript-dev-guide/widgets/widget_modal.html#key_navigation">navigation of the modal widget</a>.</p>
+<p>The following example is from the <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Catalog/view/frontend/ui_component/widget_recently_viewed.xml" target="_blank">recently-viewed widget</a>:</p>
+
+<figure class="highlight"><pre><code class="language-xml" data-lang="xml"><span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;dataProvider&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;configurableObject&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;argument</span> <span class="na">name=</span><span class="s">&quot;data&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;config&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;productStorageConfig&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;namespace&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>product_data_storage<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;className&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>DataStorage<span class="nt">&lt;/item&gt;</span>
+                <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;updateRequestConfig&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+                    <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;url&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;serviceUrl&quot;</span> <span class="na">path=</span><span class="s">&quot;/products-render-info&quot;</span><span class="nt">/&gt;</span>
+                <span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;identifiersConfig&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;array&quot;</span><span class="nt">&gt;</span>
+              <span class="nt">&lt;item</span> <span class="na">name=</span><span class="s">&quot;namespace&quot;</span> <span class="na">xsi:type=</span><span class="s">&quot;string&quot;</span><span class="nt">&gt;</span>recently_viewed_product<span class="nt">&lt;/item&gt;</span>
+            <span class="nt">&lt;/item&gt;</span>
+        <span class="nt">&lt;/item&gt;</span>
+    <span class="nt">&lt;/argument&gt;</span>
+<span class="nt">&lt;/argument&gt;</span></code></pre></figure>
+
+<p>This sets the appropriate information inside the <code>updateRequestConfig</code> object in the product storage configuration(<code>productStorageConfig</code> in the example code).</p>
+
+<p>The object structure for this REST response is represented by <a href="https://github.com/magento/magento2/blob/develop/app/code/Magento/Catalog/Api/Data/ProductRenderInterface.php" target="_blank"><code>\Magento\Catalog\Api\Data\ProductRenderInterface</code></a>:</p>
+
+<div class="collapsible"><b class="collapsible-title">Show Object Structure </b><div class="collapsible-content"><figure class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">[</span>
+   <span class="nx">item_id</span><span class="o">:</span> <span class="p">{</span>
+        <span class="c1">//@see: \Magento\Catalog\Api\Data\ProductRender\ButtonInterface</span>
+        <span class="s1">&#39;add_to_*_button&#39;</span><span class="o">:</span> <span class="p">{</span> <span class="c1">//Any product button will be represented by this interface </span>
+            <span class="nx">post_data</span><span class="o">:</span> <span class="p">{...},</span>
+            <span class="nx">required_options</span><span class="o">:</span> <span class="kr">boolean</span><span class="p">,</span>
+            <span class="nx">url</span><span class="o">:</span> <span class="nx">string</span>
+        <span class="p">},</span>
+        <span class="c1">//\Magento\Catalog\Api\Data\ProductRenderExtensionInterface</span>
+        <span class="s1">&#39;extension_attributes&#39;</span><span class="o">:</span> <span class="p">{</span>
+            <span class="s1">&#39;review_html&#39;</span><span class="o">:</span> <span class="s1">&#39;...&#39;</span>
+        <span class="p">},</span>
+        <span class="c1">//@see: \Magento\Catalog\Api\Data\ProductRender\ImageInterface[]</span>
+        <span class="s1">&#39;images&#39;</span><span class="o">:</span> <span class="p">[</span>
+            <span class="p">{</span>
+                <span class="s1">&#39;url&#39;</span><span class="o">:</span> <span class="s1">&#39;...&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;code&#39;</span><span class="o">:</span> <span class="s1">&#39;...&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;height&#39;</span><span class="o">:</span> <span class="p">...,</span>
+                <span class="s1">&#39;width&#39;</span><span class="o">:</span> <span class="p">...,</span>
+                <span class="s1">&#39;resized_height&#39;</span><span class="o">:</span> <span class="p">...,</span>
+                <span class="p">...</span>
+            <span class="p">}</span>
+        <span class="p">],</span>
+        <span class="s1">&#39;is_salable&#39;</span><span class="o">:</span> <span class="kr">boolean</span><span class="p">,</span>
+        <span class="s1">&#39;name&#39;</span><span class="o">:</span> <span class="s1">&#39;...&#39;</span><span class="p">,</span>
+        <span class="c1">//@see: \Magento\Catalog\Api\Data\ProductRender\PriceInfoInterface</span>
+        <span class="s1">&#39;price_info&#39;</span><span class="o">:</span> <span class="p">{</span>
+            <span class="c1">//@see \Magento\Catalog\Api\Data\ProductRender\FormattedPriceInfoInterface</span>
+            <span class="c1">//All prices are kind of html with currency symbol and rounding rules</span>
+            <span class="s1">&#39;formatted_prices&#39;</span><span class="o">:</span> <span class="p">{</span>
+                <span class="s1">&#39;final_price&#39;</span><span class="o">:</span> <span class="p">...,</span>
+                <span class="s1">&#39;max_price&#39;</span><span class="o">:</span> <span class="p">...,</span>
+                <span class="s1">&#39;max_regular_price&#39;</span><span class="o">:</span> <span class="p">...,</span>
+                <span class="s1">&#39;minimal_regular_price&#39;</span><span class="o">:</span> <span class="p">...,</span>
+                <span class="p">...</span>
+            <span class="p">},</span>
+            <span class="s1">&#39;final_price&#39;</span><span class="o">:</span> <span class="p">...,</span>
+            <span class="s1">&#39;max_price&#39;</span><span class="o">:</span> <span class="p">...,</span>
+            <span class="s1">&#39;max_regular_price&#39;</span><span class="o">:</span> <span class="p">...,</span>
+            <span class="s1">&#39;minimal_regular_price&#39;</span><span class="o">:</span> <span class="p">...,</span>
+            <span class="p">...</span>
+        <span class="p">},</span>
+        <span class="s1">&#39;url&#39;</span><span class="o">:</span> <span class="s1">&#39;...&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;type&#39;</span><span class="o">:</span> <span class="s1">&#39;...&#39;</span><span class="p">,</span> <span class="c1">//enum: configurable, simple, virtual, etc</span>
+        <span class="s1">&#39;currency_code&#39;</span><span class="o">:</span> <span class="s1">&#39;...&#39;</span><span class="p">,</span> <span class="c1">//e.g. USD</span>
+        <span class="s1">&#39;store_id&#39;</span><span class="o">:</span> <span class="p">...</span> <span class="c1">//integer</span>
+   <span class="p">}</span>  
+<span class="p">]</span></code></pre></figure>
+</div></div>
+
 
 		</div>
 		<!-- /.content-wrap -->
@@ -876,15 +956,9 @@ If <code>focus</code> is not specified or set to empty string, the focus is on t
   
 
   
-   <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/javascript-dev-guide/widgets/widget_alert.md" target="_blank">
-       Edit this page on GitHub
-     </a>
-   </div>
-  
 
   <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/javascript-dev-guide/widgets/widget_alert.html" target="_blank">Give us feedback</a>
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/javascript-dev-guide/javascript/product-frontend-storage.html" target="_blank">Give us feedback</a>
   </div>
 
 </div>
