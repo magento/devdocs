@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Enable profiling (MAGE_PROFILER) | Magento 2 Developer Documentation</title>
+	<title>Custom logging | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.2/config-guide/bootstrap/mage-profiler.html">
+	<link rel="canonical" href="//guides/v2.2/config-guide/log/log-intro.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -69,11 +69,11 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/config-guide/bootstrap/mage-profiler.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/config-guide/log/log-intro.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/config-guide/bootstrap/mage-profiler.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/config-guide/log/log-intro.html">Magento 2.1</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.2/config-guide/bootstrap/mage-profiler.html">Magento 2.2 RC</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.2/config-guide/log/log-intro.html">Magento 2.2 RC</a></li>
 	
   </ul>
 
@@ -424,7 +424,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.2/config-guide/bootstrap/mage-profiler.html">Enable profiling (MAGE_PROFILER)</a></li>
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/bootstrap/mage-profiler.html">Enable profiling (MAGE_PROFILER)</a></li>
 
 									
 
@@ -1602,7 +1602,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.2/config-guide/log/log-intro.html">Custom logging</a></li>
+									<li class="level1  active "><a class="nav-header" href="/guides/v2.2/config-guide/log/log-intro.html">Custom logging</a></li>
 									
 								
 
@@ -1870,7 +1870,7 @@
 
           
 
-          <span property="name">Enable profiling (MAGE_PROFILER)</span>
+          <span property="name">Custom logging</span>
 
         
 
@@ -1893,7 +1893,7 @@
 
 	
 
-	<h1 class="page-heading">Enable profiling (MAGE_PROFILER)</h1>
+	<h1 class="page-heading">Custom logging</h1>
 
   
 
@@ -1901,49 +1901,33 @@
 </section>
 
 
-			<h2 id="dirs-introduction">Introduction to Magento profiling</h2>
-<p>Magento profiling enables you to:</p>
+			<h2 id="config-log-over">Logging overview</h2>
+<p>Logs provide visibility into Magento system processes; for example, debugging information that assists you with understanding when an error occurred or what lead to the error.</p>
+
+<p>This topic focuses on file-based logging, although Magento provides the flexibility to store logs in the database as well.</p>
+
+<p>We recommend using centralized application logging for the following reasons:</p>
 
 <ul>
   <li>
-    <p>Enable a built-in profiler.</p>
-
-    <p>You can use a built-in profiler with Magento to perform tasks such as analyzing performance. (The nature of profiling depends on the analytical tools you use. We support multiple formats, including HTML.)</p>
+    <p>It allows storage of logs on a server other than the application server and decreases disk I/O operations, simplifying support of the application server.</p>
   </li>
   <li>
-    <p>Displays dependency graphs on a Magento page. A <em>dependency graph</em> is a list of object dependencies and all of their all their dependencies, and all the dependencies for those dependencies, and so on.</p>
-
-    <p>You should be particularly interested in the list of <em>unused dependencies</em>, which are objects that were created because they were requested in some constructor, but were never used (that is, none of their methods were called). As a result, processor time and memory spent to create these dependencies are wasted.</p>
+    <p>It makes processing of logs data more effective by using special tools without impact to a production server (for example, <a href="https://www.elastic.co/products/logstash" target="_blank">logstash</a>, <a href="https://devcenter.heroku.com/articles/logplex" target="_blank">logplex</a>, or <a href="http://www.fluentd.org" target="_blank">fluentd</a>).</p>
   </li>
 </ul>
 
-<p>Magento provides the base functionality in <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Profiler.php" target="_blank">Magento\Framework\Profiler</a>.</p>
+<div class="bs-callout bs-callout-info" id="info">
+  <p>Magento does not recommend or endorse any particular logging solution.</p>
+</div>
 
-<h2 id="dirs-set">Set MAGE_PROFILER</h2>
-<p><code>MAGE_PROFILER</code> supports the following values:</p>
+<h3 id="magento-psr-3-compliance">Magento PSR-3 compliance</h3>
+<p>The <a href="https://zendframework.github.io/zend-log/psr3" target="_blank">PSR-3 standard</a> defines a common <span term-uuid="bf703ab1-ca4b-48f9-b2b7-16a81fd46e02" class="glossary-term" data-toggle="popover">PHP</span> interface for logging libraries. The main goal of PSR-3 is to allow libraries to receive a <code>Psr\Log\LoggerInterface</code> object and write logs to it in a simple and universal way.</p>
 
-<ul>
-  <li>
-    <p><code>1</code> to enable a specific profiler’s output.</p>
+<p>This provides the ability for the implementation to be replaced easily without worry that such replacement may break the application code. It also guarantees a custom component will work even when the Magento log implementation is changed in a future version of the system.</p>
 
-    <p>You can also use one of the following values to enable a specific profiler:</p>
-
-    <ul>
-      <li><code>firebug</code> which uses <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Profiler/Driver/Standard/Output/Firebug.php" target="_blank">Magento\Framework\Profiler\Driver\Standard\Output\Firebug</a></li>
-      <li><code>csvfile</code> which uses <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Profiler/Driver/Standard/Output/Csvfile.php" target="_blank">Magento\Framework\Profiler\Driver\Standard\Output\Csvfile</a></li>
-      <li>Any other value (except <code>2</code>), including an empty value, which uses <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Profiler/Driver/Standard/Output/Html.php" target="_blank">Magento\Framework\Profiler\Driver\Standard\Output\Html</a></li>
-    </ul>
-  </li>
-  <li>
-    <p><code>2</code> to enable dependency graphs.</p>
-
-    <p>Dependency graphs typically display at the bottom of a page. The following figure shows portion of the output:</p>
-
-    <p><img src="/common/images/config_depend-graphs.png" width="650px" /></p>
-  </li>
-</ul>
-
-<p>You can set the value of <code>MAGE_PROFILER</code> in any of the ways discussed in <a href="/guides/v2.2/config-guide/bootstrap/magento-how-to-set.html">Set the value of bootstrap parameters</a>.</p>
+<h4 id="next">Next</h4>
+<p><a href="/guides/v2.2/config-guide/log/log-magento.html">Magento logging in more detail</a></p>
 
 		</div>
 		<!-- /.content-wrap -->
@@ -1954,14 +1938,14 @@
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/config-guide/bootstrap/mage-profiler.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/config-guide/log/log-intro.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
   
 
   <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/config-guide/bootstrap/mage-profiler.html" target="_blank">Give us feedback</a>
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/config-guide/log/log-intro.html" target="_blank">Give us feedback</a>
   </div>
 
 </div>

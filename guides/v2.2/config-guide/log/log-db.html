@@ -5,7 +5,7 @@
 	<meta name="viewport" content="width=device-width initial-scale=1" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Enable profiling (MAGE_PROFILER) | Magento 2 Developer Documentation</title>
+	<title>Example&mdash;logging database activity | Magento 2 Developer Documentation</title>
 	<meta name="description" content="Magento 2 Developer Documentation.
 ">
 	<meta http-equiv="last-modified" content="" />
@@ -14,7 +14,7 @@
 
 	<link rel="stylesheet" href="/css/app.css" />
 	<link rel="stylesheet" href="/css/print.css" media="print" />
-	<link rel="canonical" href="//guides/v2.2/config-guide/bootstrap/mage-profiler.html">
+	<link rel="canonical" href="//guides/v2.2/config-guide/log/log-db.html">
 
     <!-- WebUI popover css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.webui-popover/1.2.1/jquery.webui-popover.min.css">
@@ -69,11 +69,11 @@
 
 	<ul class="dropdown-menu dropdown-menu-left" aria-labelledby="version-switcher-button">
 	
-		<li><a class="dropdown-item" href="/guides/v2.0/config-guide/bootstrap/mage-profiler.html">Magento 2.0</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.0/config-guide/log/log-db.html">Magento 2.0</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.1/config-guide/bootstrap/mage-profiler.html">Magento 2.1</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.1/config-guide/log/log-db.html">Magento 2.1</a></li>
 	
-		<li><a class="dropdown-item" href="/guides/v2.2/config-guide/bootstrap/mage-profiler.html">Magento 2.2 RC</a></li>
+		<li><a class="dropdown-item" href="/guides/v2.2/config-guide/log/log-db.html">Magento 2.2 RC</a></li>
 	
   </ul>
 
@@ -424,7 +424,7 @@
 
 									
 
-									<li class="level-2  active "><a href="/guides/v2.2/config-guide/bootstrap/mage-profiler.html">Enable profiling (MAGE_PROFILER)</a></li>
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/bootstrap/mage-profiler.html">Enable profiling (MAGE_PROFILER)</a></li>
 
 									
 
@@ -1621,7 +1621,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.2/config-guide/log/log-db.html">Example&mdash;logging database activity</a></li>
+									<li class="level-2  active "><a href="/guides/v2.2/config-guide/log/log-db.html">Example&mdash;logging database activity</a></li>
 
 									
 
@@ -1870,7 +1870,7 @@
 
           
 
-          <span property="name">Enable profiling (MAGE_PROFILER)</span>
+          <span property="name">Example&mdash;logging database activity</span>
 
         
 
@@ -1893,7 +1893,7 @@
 
 	
 
-	<h1 class="page-heading">Enable profiling (MAGE_PROFILER)</h1>
+	<h1 class="page-heading">Example&mdash;logging database activity</h1>
 
   
 
@@ -1901,49 +1901,35 @@
 </section>
 
 
-			<h2 id="dirs-introduction">Introduction to Magento profiling</h2>
-<p>Magento profiling enables you to:</p>
+			<h2 id="examplemdashlogging-database-activity">Example—logging database activity</h2>
+<p>To log database activity, use <a href="https://github.com/magento/magento2/blob/2.1/lib/internal/Magento/Framework/DB/LoggerInterface.php" target="_blank"><code>Magento\Framework\DB\LoggerInterface</code></a>, which has two implementations:</p>
 
 <ul>
-  <li>
-    <p>Enable a built-in profiler.</p>
-
-    <p>You can use a built-in profiler with Magento to perform tasks such as analyzing performance. (The nature of profiling depends on the analytical tools you use. We support multiple formats, including HTML.)</p>
-  </li>
-  <li>
-    <p>Displays dependency graphs on a Magento page. A <em>dependency graph</em> is a list of object dependencies and all of their all their dependencies, and all the dependencies for those dependencies, and so on.</p>
-
-    <p>You should be particularly interested in the list of <em>unused dependencies</em>, which are objects that were created because they were requested in some constructor, but were never used (that is, none of their methods were called). As a result, processor time and memory spent to create these dependencies are wasted.</p>
-  </li>
+  <li>Logs nothing (default): <a href="https://github.com/magento/magento2/blob/2.1/lib/internal/Magento/Framework/DB/Logger/Quiet.php" target="_blank"><code>Magento\Framework\DB\Logger\Quiet</code></a></li>
+  <li>Logs to the Magento <code>var/log</code> directory: <a href="https://github.com/magento/magento2/blob/2.1/lib/internal/Magento/Framework/DB/Logger/File.php" target="_blank"><code>Magento\Framework\DB\Logger\File</code></a></li>
 </ul>
 
-<p>Magento provides the base functionality in <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Profiler.php" target="_blank">Magento\Framework\Profiler</a>.</p>
+<p>To change the preference to <code>\Magento\Framework\DB\Logger\File</code>, edit your <code>app/etc/di.xml</code>.</p>
 
-<h2 id="dirs-set">Set MAGE_PROFILER</h2>
-<p><code>MAGE_PROFILER</code> supports the following values:</p>
+<p>First, change the default preference</p>
 
-<ul>
-  <li>
-    <p><code>1</code> to enable a specific profiler’s output.</p>
+<pre><code>&lt;preference for="Magento\Framework\DB\LoggerInterface" type="Magento\Framework\DB\Logger\Quiet"/&gt;
+</code></pre>
 
-    <p>You can also use one of the following values to enable a specific profiler:</p>
+<p>to</p>
 
-    <ul>
-      <li><code>firebug</code> which uses <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Profiler/Driver/Standard/Output/Firebug.php" target="_blank">Magento\Framework\Profiler\Driver\Standard\Output\Firebug</a></li>
-      <li><code>csvfile</code> which uses <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Profiler/Driver/Standard/Output/Csvfile.php" target="_blank">Magento\Framework\Profiler\Driver\Standard\Output\Csvfile</a></li>
-      <li>Any other value (except <code>2</code>), including an empty value, which uses <a href="https://github.com/magento/magento2/blob/2.0/lib/internal/Magento/Framework/Profiler/Driver/Standard/Output/Html.php" target="_blank">Magento\Framework\Profiler\Driver\Standard\Output\Html</a></li>
-    </ul>
-  </li>
-  <li>
-    <p><code>2</code> to enable dependency graphs.</p>
+<pre><code>&lt;preference for="Magento\Framework\DB\LoggerInterface" type="Magento\Framework\DB\Logger\File"/&gt;
+</code></pre>
 
-    <p>Dependency graphs typically display at the bottom of a page. The following figure shows portion of the output:</p>
+<p>After that, add the following block to configure file-based logging:</p>
 
-    <p><img src="/common/images/config_depend-graphs.png" width="650px" /></p>
-  </li>
-</ul>
+<figure class="highlight"><pre><code class="language-php" data-lang="php"><span class="o">&lt;</span><span class="nx">type</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;Magento\Framework\DB\Logger\File&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">arguments</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">argument</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;logAllQueries&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;boolean&quot;</span><span class="o">&gt;</span><span class="k">true</span><span class="o">&lt;/</span><span class="nx">argument</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nx">argument</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&quot;debugFile&quot;</span> <span class="nx">xsi</span><span class="o">:</span><span class="nx">type</span><span class="o">=</span><span class="s2">&quot;string&quot;</span><span class="o">&gt;</span><span class="nb">log</span><span class="o">/</span><span class="nx">db</span><span class="o">.</span><span class="nb">log</span><span class="o">&lt;/</span><span class="nx">argument</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="nx">arguments</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="nx">type</span><span class="o">&gt;</span></code></pre></figure>
 
-<p>You can set the value of <code>MAGE_PROFILER</code> in any of the ways discussed in <a href="/guides/v2.2/config-guide/bootstrap/magento-how-to-set.html">Set the value of bootstrap parameters</a>.</p>
 
 		</div>
 		<!-- /.content-wrap -->
@@ -1954,14 +1940,14 @@
 
   
    <div class="github-link">
-     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/config-guide/bootstrap/mage-profiler.md" target="_blank">
+     <a class="improve-page" href="https://github.com/magento/devdocs/tree/develop/guides/v2.0/config-guide/log/log-db.md" target="_blank">
        Edit this page on GitHub
      </a>
    </div>
   
 
   <div class="new-issue">
-    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/config-guide/bootstrap/mage-profiler.html" target="_blank">Give us feedback</a>
+    <a href="https://github.com/magento/devdocs/issues/new?title=&body=Feedback on page: /guides/v2.2/config-guide/log/log-db.html" target="_blank">Give us feedback</a>
   </div>
 
 </div>
