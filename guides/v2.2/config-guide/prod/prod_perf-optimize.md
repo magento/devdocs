@@ -117,11 +117,7 @@ Switching to production mode improves store front responsiveness and prevents lo
 Run the following commands to switch to production mode:
 
 ~~~
-bin/magento setup:static-content:deploy
-bin/magento setup:di:compile
 bin/magento deploy:mode:set -s production
-bin/magento index:reindex
-bin/magento cache:flush
 ~~~
 
 ### Optimizing Asset Performance
