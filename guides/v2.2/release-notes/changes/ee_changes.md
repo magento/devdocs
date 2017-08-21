@@ -2,13 +2,13 @@
 layout: default
 group: release-notes
 subgroup: Backward Incompatibility
-title: Magento EE Backward Incompatible Changes
-menu_title: Magento EE changes
+title: Magento Commerce Backward Incompatible Changes
+menu_title: Magento Commerce changes
 version: 2.2
 github_link: release-notes/changes/ee_changes.md
 ---
 
-This topic provides details about backward incompatible changes related to Magento EE 2.2.
+This topic provides details about backward incompatible changes related to Magento Commerce 2.2.
 
 All changes are aggregated into two tables:
 
