@@ -17,7 +17,7 @@ You can adjust the amount of data you create using *profiles* (small, medium, la
 
 The following figure shows how a product is displayed on the {% glossarytooltip 1a70d3ac-6bd9-475a-8937-5f80ca785c14 %}storefront{% endglossarytooltip %} using the small profile:
 
-![Sample storefront with generated data]){{ site.baseurl }}common/images/config_generate-data.png){:width="550px"}
+![Sample storefront with generated data]({{ site.baseurl }}common/images/config_generate-data.png){:width="550px"}
 
 ## First steps {#config-cli-before}
 {% include install/first-steps-cli.html %}
