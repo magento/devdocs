@@ -66,7 +66,7 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 
 <!--- 70516 -->* Magento no longer indicates errors when you install without AMQP. Previously, Magento displayed the following error: (RC21)
 
-	report.CRITICAL: Error Connecting to server (0): Failed to parse address ":" {"exception":"[object] (PhpAmqpLib\\Exception\\AMQPRuntimeException(code: 0): Error Connecting to server (0): Failed to parse address \":\" at /vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php:106)"} []
+	`report.CRITICAL: Error Connecting to server (0): Failed to parse address ":" {"exception":"[object] (PhpAmqpLib\\Exception\\AMQPRuntimeException(code: 0): Error Connecting to server (0): Failed to parse address \":\" at /vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php:106)"} []`
 
 
 
@@ -118,7 +118,7 @@ The following fixed and open issues have been logged against the Magento 2.2.0 R
 
 
 <!--- 70517 -->* You can now successfully check out when the **Deferred Stock Update** option is enabled, and the AMQP connection is not configured. Previously, checkout failed, and Magento displayed this message: 
-Error Connecting to server (0): Failed to parse address ":" {"exception":"[object](PhpAmqpLib\\Exception\\AMQPRuntimeException(code: 0): Error Connecting to server (0): Failed to parse address \":\" at vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php:106)"} (RC2.0)
+`Error Connecting to server (0): Failed to parse address ":" {"exception":"[object](PhpAmqpLib\\Exception\\AMQPRuntimeException(code: 0): Error Connecting to server (0): Failed to parse address \":\" at vendor/php-amqplib/php-amqplib/PhpAmqpLib/Wire/IO/StreamIO.php:106)"}` (RC2.0)
 
 <!--- 70816 -->* The WSDL listing now lists all available methods at all times without requiring authorization. (RC21)
 
