@@ -120,8 +120,8 @@ The `SerializerInterface` interface and its implementations only exist since Mag
 Because of this, it is not posssible to use these classes in code that has to be compatible with Magento 2.1 or 2.0.  
 
 In code that is compatible with earlier versions of Magento 2, constructor dependency injection can not be used to get an instance of `SerializerInterface`.  
-Instead, a runtime check against the Magento 2 version has to be made, and if the version is 2.2.0 or newer, the `SerializerInterface` can be instantiated by directly accessing the object manager using a static method.  
-If an earlier version of Magento 2 is being used, the appropriate native PHP serialization function has to be used, e.g. `\serialize()` or `\json_encode()`, depending on the usercase.  
+Instead, a runtime check if the `SerializerInterface` definition exists can made, and if it does, it can be instantiated by directly accessing the object manager using a static method. Alternatively a check against the Magento 2 version or the `magento/framework` composer package version would work, too.  
+If the interface does not exist or an earlier version of Magento 2 is being executed, the appropriate native PHP serialization function has to be called, e.g. `\serialize()` or `\json_encode()`, depending on the usercase.  
 
 Here is an example:
 
@@ -129,19 +129,12 @@ Here is an example:
 
 ```
 /**
- * @var \Magento\Framework\App\ProductMetadataInterface
- */
-private $productMetadata;
-
-// ...
-
-/**
  * @param mixed $data
  * @return string
  */
  private function serialize($data)
  {
-    if (version_compare('2.2.0', $this->productMetadata->getVersion(), '<=')) {
+    if (class_exists(\Magento\Framework\Serialize\SerializerInterface::class)) {
         $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
         $serializer = $objectManager->create(\Magento\Framework\Serialize\SerializerInterface::class);
         return $serializer->serialize($data);
