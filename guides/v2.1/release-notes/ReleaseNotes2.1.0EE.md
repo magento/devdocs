@@ -2,8 +2,8 @@
 layout: default
 group: release-notes
 subgroup: 02_rel-notes
-title: Magento EE 2.1.0 Release Notes
-menu_title: Magento EE 2.1.0 Release Notes
+title: Magento Commerce 2.1.0 Release Notes
+menu_title: Magento Commerce 2.1.0 Release Notes
 menu_order: 299
 level3_menu_node: level3child
 level3_subgroup: ee21-relnotes
@@ -11,17 +11,17 @@ version: 2.1
 github_link: release-notes/ReleaseNotes2.1.0EE.md
 ---
 
-We are pleased to present Magento Enterprise Edition 2.1.0 General Availability. This release includes numerous functional fixes and enhancements.
+We are pleased to present Magento Commerce (formerly Enterprise Edition) 2.1.0 General Availability. This release includes numerous functional fixes and enhancements.
 
 
 Backward-incompatible changes are documented in [Magento 2.1 backward incompatible changes]({{ page.baseurl }}release-notes/backward-incompatible-changes.html).
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>This version of the Magento Enterprise Edition 2.1.0 Release Notes varies from the version of the Release Notes that we published with the June 23, 2016 GA release. We've identified these  changes in italics below.  The code base has not changed.</p>
+  <p>This version of the Magento Magento Commerce 2.1.0 Release Notes varies from the version of the Release Notes that we published with the June 23, 2016 GA release. We've identified these  changes in italics below.  The code base has not changed.</p>
 </div>
 
 ### Highlights
-Magento Enterprise Edition 2.1.0 includes several new and exciting features:
+Magento Magento Commerce 2.1.0 includes several new and exciting features:
 
 * **Content Staging and Preview**  improves sales and productivity by enabling merchants to bring fresh and exciting shopping experiences to market faster than ever before. Marketers and merchandisers can easily create, preview, and schedule a wide range of content updates without involving IT. They can make updates to products, categories, {% glossarytooltip f3944faf-127e-4097-9918-a2e9c647d44f %}CMS{% endglossarytooltip %} content, promotions, and pricing, and can preview these changes by date or {% glossarytooltip ca5a9ff1-8182-4fc4-a34b-9b3f831dbf3f %}store view{% endglossarytooltip %} to ensure a flawless shopper experience. User-friendly dashboards provide visibility into all scheduled site changes so merchants can easily coordinate campaigns to maximize their sales impact. Updates are automatically published and removed at scheduled times for greater efficiency.
 
@@ -1272,7 +1272,7 @@ For more information, [System Requirements]({{ site.baseurl }}magento-system-req
 
 ### Installation and upgrade instructions
 
-You can install Magento Enterprise Edition 2.1 General Availability (GA) using Composer.
+You can install Magento Magento Commerce 2.1 General Availability (GA) using Composer.
 
 
 {% include install/releasenotes/ee_install_21.md %}

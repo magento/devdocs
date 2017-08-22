@@ -2,8 +2,8 @@
 layout: default
 group: release-notes
 subgroup: 02_rel-notes
-title: Magento CE 2.1.0 Release Notes
-menu_title: Magento CE 2.1.0  Release Notes
+title: Magento Open Source 2.1.0 Release Notes
+menu_title: Magento Open Source 2.1.0  Release Notes
 menu_order: 199
 level3_menu_node: level3child
 level3_subgroup: ce21-relnotes
@@ -11,20 +11,20 @@ version: 2.1
 github_link: release-notes/ReleaseNotes2.1.0CE.md
 ---
 
-We are pleased to present Magento Community Edition 2.1.0 General Availability. This release includes numerous functional fixes and enhancements.
+We are pleased to present Magento Open Source (formerly Community Edition) 2.1.0 General Availability. This release includes numerous functional fixes and enhancements.
 
 
 Backward-incompatible changes are documented in [Magento 2.1 backward incompatible changes]({{ page.baseurl }}release-notes/backward-incompatible-changes.html).
 
 
 <div class="bs-callout bs-callout-info" id="info">
-  <p>This version of the Magento Community Edition 2.1.0 Release Notes varies from the version of the Release Notes that we published with the June 23, 2016 GA release. We've identified these  changes in italics below.  The code base has not changed.</p>
+  <p>This version of the Magento Open Source 2.1.0 Release Notes varies from the version of the Release Notes that we published with the June 23, 2016 GA release. We've identified these  changes in italics below.  The code base has not changed.</p>
 </div>
 
 
 
 ### Highlights
-Magento Community Edition 2.1.0 includes several new and exciting features:
+Magento Open Source 2.1.0 includes several new and exciting features:
 
 
 * **PayPal enhancements** include PayPal in-context {% glossarytooltip 278c3ce0-cd4c-4ffc-a098-695d94d73bde %}checkout{% endglossarytooltip %} and saved credit cards. In-context checkout helps to increase {% glossarytooltip 38c73ce4-8f01-4f74-ab30-1134cec5664f %}conversion{% endglossarytooltip %} rates 69 bps by allowing shoppers to pay with PayPal without leaving the merchant’s site. PayPal saved credit cards boost repeat purchases by allowing merchants to securely store credit card information with PayPal so customers do not need to re-enter it in checkout or when reordering items from the {% glossarytooltip 29ddb393-ca22-4df9-a8d4-0024d75739b1 %}Admin{% endglossarytooltip %} interface.
@@ -1104,7 +1104,7 @@ For more information, [System Requirements]({{ site.baseurl }}magento-system-req
 
 ### Installation and upgrade instructions
 
-You can install Magento Community Edition 2.1.0 (General Availability) release either Github or by using Composer.
+You can install Magento Open Source 2.1.0 (General Availability) release either Github or by using Composer.
 
 {% include install/releasenotes/ce_install_21.md %}
 
