@@ -90,7 +90,7 @@ Before working with your {{site.data.var.<ece>}} project, make sure you set the 
 We support installations of [Apache]({{ page.baseurl }}install-gde/prereq/apache.html) and [nginx]({{ page.baseurl }}install-gde/prereq/nginx.html) for your web server.
 
 ## Database (local) {#database}
-You have multiple options for databases to use for your local. One database option you may want to consider is MariaDB. The {{site.data.var.<ee>}} environments use [MariaDB](https://mariadb.org/){:target="_blank"}, with a [Galara Cluster](http://galeracluster.com/){:target="_blank"} with triple reducency in the Production environment. Regardless of database, you need to modify the `auto_increment_increment` value.
+You have multiple options for databases to use for your local. One database option you may want to consider is MariaDB. The {{site.data.var.<ee>}} environments use [MariaDB](https://mariadb.org/){:target="_blank"}, with a [Galera Cluster](http://galeracluster.com/){:target="_blank"} with triple reducency in the Production environment. Regardless of database, you need to modify the `auto_increment_increment` value.
 
 <div class="bs-callout bs-callout-warning" markdown="1">
 The Production environment in the 3 node infrastructure uses auto-incrementing by 3 for all data IDs. Do not develop using hard-coded database IDs in your development. Due to the incremented data IDs, the referenced data will differ across the three nodes in Production.
@@ -105,9 +105,9 @@ These example instructions detail how to install and create a MariaDB database f
 
 		mysql_secure_installation
 3. Access the MariaDB database.
-4. Grant all priviledges to the Magento account you created for the local:
+4. Grant all privileges to the Magento account you created for the local:
 
-		grant all priviledges on <database> to '<account>'@'localhost' identified by '<password>';
+		grant all privileges on <database> to '<account>'@'localhost' identified by '<password>';
 5. Finally create the database:
 
 		create database magento;
@@ -122,7 +122,7 @@ You need to set an auto-increment value for the MariaDB installation.
 3.	Restart the service: `service mysql restart`.
 
 ### Set up the auto-increment for MySQL {#cloud-mysql}
-The MySQL configuration parameter [`auto_increment_increment`](http://dev.mysql.com/doc/refman/5.6/en/server-system-variables.html){:target="_blank"} is set to `1` by default in a local MySQL installation. You need to change this value to `3`.  The {{site.data.var.<ee>}} database cluster includes 3 database implementations. The increment ensures data is unique across all databases for consistant data in the High Availability structure.
+The MySQL configuration parameter [`auto_increment_increment`](http://dev.mysql.com/doc/refman/5.6/en/server-system-variables.html){:target="_blank"} is set to `1` by default in a local MySQL installation. You need to change this value to `3`.  The {{site.data.var.<ee>}} database cluster includes 3 database implementations. The increment ensures data is unique across all databases for consistent data in the High Availability structure.
 
 To avoid issues, we recommend you set `auto_increment_increment=3`.
 
@@ -142,7 +142,7 @@ If necessary, set `auto_increment_increment` to 3:
 
 		auto_increment_increment=3
 
-	{{site.data.var.<ee>}} supports a High Availability configuration. This setting increments the database IDs in increments of three to ensure row uniqueness for Galara databases on each of the three HA nodes in production.
+	{{site.data.var.<ee>}} supports a High Availability configuration. This setting increments the database IDs in increments of three to ensure row uniqueness for Galera databases on each of the three HA nodes in production.
 
 3.	Restart MySQL:
 
