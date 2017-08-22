@@ -560,7 +560,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-spt-util.html">Run the support utilities (Enterprise Edition only)</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-spt-util.html">Run the support utilities (Magento Commerce only)</a></li>
 
 									
 
@@ -1076,7 +1076,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/mq/rabbitmq-overview.html">Message Queues (Enterprise Edition only)</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/mq/rabbitmq-overview.html">Message Queues (Magento Commerce only)</a></li>
 									
 								
 
@@ -1121,7 +1121,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/solr/solr-overview.html">Install and configure Solr (Enterprise Edition only)</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/solr/solr-overview.html">Install and configure Solr (Magento Commerce only)</a></li>
 									
 								
 
@@ -1166,7 +1166,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/multi-master/multi-master.html">Split database performance solution (Enterprise Edition only)</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/multi-master/multi-master.html">Split database performance solution (Magento Commerce only)</a></li>
 									
 								
 
@@ -1581,9 +1581,9 @@
 <p>This topic discusses how to get started with the split database solution by:</p>
 
 <ol>
-  <li>Installing Magento 2 EE with a single master database (named <code class="highlighter-rouge">magento</code>)</li>
+  <li>Installing Magento Commerce with a single master database (named <code class="highlighter-rouge">magento</code>)</li>
   <li>Creating two additional master databases for <span term-uuid="278c3ce0-cd4c-4ffc-a098-695d94d73bde" class="glossary-term" data-toggle="popover">checkout</span> and OMS (named <code class="highlighter-rouge">magento_quote</code> and <code class="highlighter-rouge">magento_sales</code>)</li>
-  <li>Configuring EE to use the checkout and sales databases</li>
+  <li>Configuring Magento Commerce to use the checkout and sales databases</li>
 </ol>
 
 <div class="bs-callout bs-callout-info" id="info">
@@ -1591,8 +1591,8 @@
   <p>This guide assumes all three databases are on the same host as the Magento application and that they're named <code>magento</code>, <code>magento_quote</code>, and <code>magento_sales</code>. However, the choice of where to locate the databases and what they're named is up to you. We hope our examples make the instructions easier to follow.</p></span>
 </div>
 
-<h2 id="config-ee-multidb-master-install">Install the Magento EE software</h2>
-<p>You can enable split databases at any time after you install the Magento EE software; in other words, you can add split databases to an EE system that already has checkout and order data. Use the instructions in the Magento 2 EE README or the <a href="/guides/v2.0/install-gde/bk-install-guide.html">installation guide</a> to install the Magento 2 EE software using a single master database.</p>
+<h2 id="config-ee-multidb-master-install">Install the Magento Commerce software</h2>
+<p>You can enable split databases at any time after you install the Magento Commerce software; in other words, you can add split databases to a Magento Commerce system that already has checkout and order data. Use the instructions in the Magento Commerce README or the <a href="/guides/v2.0/install-gde/bk-install-guide.html">installation guide</a> to install the Magento Commerce software using a single master database.</p>
 
 <div>
 

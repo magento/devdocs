@@ -560,7 +560,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-spt-util.html">Run the support utilities (Enterprise Edition only)</a></li>
+									<li class="level-2 "><a href="/guides/v2.0/config-guide/cli/config-cli-subcommands-spt-util.html">Run the support utilities (Magento Commerce only)</a></li>
 
 									
 
@@ -1076,7 +1076,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/mq/rabbitmq-overview.html">Message Queues (Enterprise Edition only)</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/mq/rabbitmq-overview.html">Message Queues (Magento Commerce only)</a></li>
 									
 								
 
@@ -1121,7 +1121,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/solr/solr-overview.html">Install and configure Solr (Enterprise Edition only)</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/solr/solr-overview.html">Install and configure Solr (Magento Commerce only)</a></li>
 									
 								
 
@@ -1166,7 +1166,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/multi-master/multi-master.html">Split database performance solution (Enterprise Edition only)</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.0/config-guide/multi-master/multi-master.html">Split database performance solution (Magento Commerce only)</a></li>
 									
 								
 
@@ -1575,7 +1575,7 @@
 </section>
 
 
-			<p><img src="/common/images/ee-only_large.png" alt="This topic applies to Enterprise Edition only" /></p>
+			<p><img src="/common/images/ee-only_large.png" alt="This topic applies to Magento Commerce only" /></p>
 
 <div class="bs-callout bs-callout-warning">
   <p>Solr is deprecated in Magento 2.1 and will not be supported in 2.2.
@@ -1584,7 +1584,7 @@ In a future release, Solr compatibility will be removed.</p>
   <p>If possible, use <a href="/guides/v2.0/config-guide/elasticsearch/es-overview.html">Elastic Search</a> as an alternative catalog search engine.</p>
 </div>
 
-<p>The following topics discuss how to configure Solr to work with Magento EE:</p>
+<p>The following topics discuss how to configure Solr to work with Magento Commerce:</p>
 
 <ul>
   <li><a href="#config-solr-copy-config-files">Copy the Magento Solr configuration and start Solr</a></li>
@@ -1600,16 +1600,16 @@ In a future release, Solr compatibility will be removed.</p>
 
 <ol>
   <li>
-    <p>As a user with <code>root</code> privileges, enter the following commands in the order shown to copy over the Solr configuration with the one packaged with Magento EE:</p>
+    <p>As a user with <code>root</code> privileges, enter the following commands in the order shown to copy over the Solr configuration with the one packaged with Magento Commerce:</p>
 
     <div class="highlighter-rouge"><pre class="highlight"><code>cd &lt;your Solr install dir&gt;/example/solr
 cp -R collection1 magento2
 cd magento2
-cp -R &lt;your Magento EE install dir&gt;/vendor/magento/module-solr/conf/* ./conf/
+cp -R &lt;your Magento Commerce install dir&gt;/vendor/magento/module-solr/conf/* ./conf/
 </code></pre>
     </div>
 
-    <p>For example, if Solr is installed in <code>/opt/solr/solr-4.10.4</code> and Magento EE is installed in <code>/var/www/magento/html/magento2ee</code>, enter:</p>
+    <p>For example, if Solr is installed in <code>/opt/solr/solr-4.10.4</code> and Magento Commerce is installed in <code>/var/www/magento/html/magento2ee</code>, enter:</p>
 
     <div class="highlighter-rouge"><pre class="highlight"><code>cd /opt/solr/solr/solr-4.10.4/example/solr
 cp -R collection1 magento2
@@ -1619,7 +1619,7 @@ cp -R /var/www/html/magento2ee/vendor/magento/module-solr/conf/* ./conf/
     </div>
 
     <div class="bs-callout bs-callout-info" id="info">
- <p>If you're prompted to overwrite files, try the command <code>\cp -R &lt;your Magento EE install dir&gt;/vendor/magento/module-solr/conf/* .</code></p>
+ <p>If you're prompted to overwrite files, try the command <code>\cp -R &lt;your Magento Commerce install dir&gt;/vendor/magento/module-solr/conf/* .</code></p>
 </div>
   </li>
   <li>
@@ -1674,7 +1674,7 @@ java -jar start.jar
 </ol>
 
 <h3 id="config-solr-magento">Configure Magento to work with Solr</h3>
-<p>This section discusses how to configure Magento EE to use the Solr search engine.</p>
+<p>This section discusses how to configure Magento Commerce to use the Solr search engine.</p>
 
 <p>To configure Magento to work with Solr:</p>
 

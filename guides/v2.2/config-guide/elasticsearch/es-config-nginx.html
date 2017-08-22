@@ -788,7 +788,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-spt-util.html">Run the support utilities (Enterprise Edition only)</a></li>
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-spt-util.html">Run the support utilities (Magento Commerce only)</a></li>
 
 									
 
@@ -1427,7 +1427,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.2/config-guide/elasticsearch/es-overview.html">Install and configure Elasticsearch (Enterprise Edition only)</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/config-guide/elasticsearch/es-overview.html">Install and configure Elasticsearch (Magento Commerce only)</a></li>
 									
 								
 
@@ -1488,7 +1488,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.2/config-guide/mq/rabbitmq-overview.html">Message Queues (Enterprise Edition only)</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/config-guide/mq/rabbitmq-overview.html">Message Queues (Magento Commerce only)</a></li>
 									
 								
 
@@ -1541,7 +1541,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.2/config-guide/multi-master/multi-master.html">Split database performance solution (Enterprise Edition only)</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/config-guide/multi-master/multi-master.html">Split database performance solution (Magento Commerce only)</a></li>
 									
 								
 
@@ -1901,7 +1901,7 @@
 </section>
 
 
-			<p><img src="/common/images/ee-only_large.png" alt="This topic applies to Enterprise Edition only" /></p>
+			<p><img src="/common/images/ee-only_large.png" alt="This topic applies to Magento Commerce only" /></p>
 
 <h4 id="contents">Contents</h4>
 
@@ -2293,7 +2293,7 @@ htpasswd -c /etc/nginx/passwd/.magento_elasticsearch magento_elasticsearch
         <div class="highlighter-rouge"><pre class="highlight"><code>location /elasticsearch {
 auth_basic "Restricted - elasticsearch";
 auth_basic_user_file /etc/nginx/passwd/.htpasswd_magento_elasticsearch;
-	
+
 proxy_pass http://127.0.0.1:9200;
 proxy_redirect off;
 proxy_set_header Host $host;

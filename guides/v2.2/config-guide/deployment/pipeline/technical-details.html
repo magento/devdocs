@@ -788,7 +788,7 @@
 
 									
 
-									<li class="level-2 "><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-spt-util.html">Run the support utilities (Enterprise Edition only)</a></li>
+									<li class="level-2 "><a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-spt-util.html">Run the support utilities (Magento Commerce only)</a></li>
 
 									
 
@@ -1427,7 +1427,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.2/config-guide/elasticsearch/es-overview.html">Install and configure Elasticsearch (Enterprise Edition only)</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/config-guide/elasticsearch/es-overview.html">Install and configure Elasticsearch (Magento Commerce only)</a></li>
 									
 								
 
@@ -1488,7 +1488,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.2/config-guide/mq/rabbitmq-overview.html">Message Queues (Enterprise Edition only)</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/config-guide/mq/rabbitmq-overview.html">Message Queues (Magento Commerce only)</a></li>
 									
 								
 
@@ -1541,7 +1541,7 @@
 
 
 								
-									<li class="level1 "><a class="nav-header" href="/guides/v2.2/config-guide/multi-master/multi-master.html">Split database performance solution (Enterprise Edition only)</a></li>
+									<li class="level1 "><a class="nav-header" href="/guides/v2.2/config-guide/multi-master/multi-master.html">Split database performance solution (Magento Commerce only)</a></li>
 									
 								
 
@@ -1931,12 +1931,12 @@ Values in <code class="highlighter-rouge">env.php</code> override values in <cod
 <h3 id="manage-the-shared-configuration">Manage the shared configuration</h3>
 <p>The shared configuration is stored in <code class="highlighter-rouge">app/etc/config.php</code>, which should be in source control.</p>
 
-<p>Set the shared configuration in the Magento Admin in your development (or Magento Enterprise Cloud Edition <em>integration</em>) system and write the configuration to <code class="highlighter-rouge">config.php</code> using the <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-export.html"><code class="highlighter-rouge">magento app:config:dump</code> command</a>.</p>
+<p>Set the shared configuration in the Magento Admin in your development (or Magento Commerce (Cloud) <em>integration</em>) system and write the configuration to <code class="highlighter-rouge">config.php</code> using the <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-export.html"><code class="highlighter-rouge">magento app:config:dump</code> command</a>.</p>
 
 <h3 id="manage-the-system-specific-configuration">Manage the system-specific configuration</h3>
 <p>The system-specific configuration is stored in <code class="highlighter-rouge">app/config/env.php</code>, which should <em>not</em> be in source control.</p>
 
-<p>Set the system-specific configuration in the Magento Admin in your development (or Cloud integration) system and write the configuration to <code class="highlighter-rouge">env.php</code> using the <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-export.html"><code class="highlighter-rouge">magento app:config:dump</code> command</a>.</p>
+<p>Set the system-specific configuration in the Magento Admin in your development (or Magento Commerce (Cloud) integration) system and write the configuration to <code class="highlighter-rouge">env.php</code> using the <a href="/guides/v2.2/config-guide/cli/config-cli-subcommands-config-mgmt-export.html"><code class="highlighter-rouge">magento app:config:dump</code> command</a>.</p>
 
 <p>This command also writes sensitive settings to <code class="highlighter-rouge">env.php</code>.</p>
 
@@ -2041,7 +2041,7 @@ Use the <a href="/guides/v2.2/"><code class="highlighter-rouge">magento config:s
 <ol>
   <li>Start maintenance mode.</li>
   <li>Pull code and configuration updates from source control.</li>
-  <li>If you use Magento EE, stop queue workers.</li>
+  <li>If you use Magento Commerce, stop queue workers.</li>
   <li>Use the <code class="highlighter-rouge">magento app:config:import</code> command to import configuration changes in the production system.</li>
   <li>If you installed components that changed the database schema, run <code class="highlighter-rouge">magento setup:upgrade --keep-generated</code> to update the database schema and data, preserving generated static files.</li>
   <li>To set system-specific settings, use either the <code class="highlighter-rouge">magento config:set</code> command or environment variables.</li>

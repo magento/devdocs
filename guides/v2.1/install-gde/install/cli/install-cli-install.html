@@ -990,7 +990,7 @@
 		<p>This option enables those customers to share the database server with more than one Magento installation.</p></td>
 		<td><p>No</p></td>
 	</tr>
-	
+
 	<tr>
 		<td><p>--language</p></td>
 		<td><p>Language code to use in the Admin and storefront. (If you have not done so already, you can view the list of language codes by entering <code>magento info:language:list</code> from the <code>bin</code> directory.)</p></td>
@@ -1039,7 +1039,7 @@
 		<p><code>0</code> disables the use of the key.</p></td>
 		<td><p>No</p></td>
 	</tr>
-	<!-- <tr> 
+	<!-- <tr>
 		<td>enable_modules=&lt;list>}</td>
 		<td><p>Enable modules that are installed but disabled where <code>&lt;list></code> is a comma-separated list of modules (no spaces allowed). Use <code>php index.php help module-list</code> to list enabled and disabled modules.</p>
 		<p>To enable and disable modules after installing Magento, see <a href="/guides/v2.1/install-gde/install/cli/install-cli-subcommands-enable.html">Enable and disable modules</a>.</p>
@@ -1057,7 +1057,7 @@
 		<td><p>--session-save</p></td>
 		<td><p>Use any of the following:</p>
 		<ul><li><code>db</code> to store session data in the <a href="/guides/v2.1/config-guide/cache/caching-database.html">database</a>. Choose database storage if you have a clustered database; otherwise, there might not be much benefit over file-based storage.</li>
-			
+
 			<li><code>files</code> to store session data in the file system. File-based session storage is appropriate unless the Magento file system access is slow or you have a clustered database.</li>
 	</ul></td>
 		<td><p>No</p></td>
@@ -1085,23 +1085,23 @@
 	</tr>
 <tr>
 <td><p>--amqp-host</p></td>
-<td><p>Enterprise Edition only. Do not use the --amqp options unless you have already set up an installation of RabbitMQ. See <a href="/guides/v2.1/install-gde/prereq/install-rabbitmq.html">RabbitMQ installation</a> for more information about .</p>
+<td><p>Magento Commerce only. Do not use the --amqp options unless you have already set up an installation of RabbitMQ. See <a href="/guides/v2.1/install-gde/prereq/install-rabbitmq.html">RabbitMQ installation</a> for more information about .</p>
 <p>The host name where RabbitMQ is installed.</p></td>
 <td><p>No</p></td>
 </tr>
 <tr>
 <td><p>--amqp-port</p></td>
-<td><p>Enterprise Edition only. The port to use to connect to RabbitMQ. The default is <code>5672</code>.</p></td>
+<td><p>Magento Commerce only. The port to use to connect to RabbitMQ. The default is <code>5672</code>.</p></td>
 <td><p>No</p></td>
 </tr>
 <tr>
 <td><p>--amqp-user</p></td>
-<td><p>Enterprise Edition only. The user name for connecting to RabbitMQ. Do not use the default user <code>guest</code>.</p></td>
+<td><p>Magento Commerce only. The user name for connecting to RabbitMQ. Do not use the default user <code>guest</code>.</p></td>
 <td><p>No</p></td>
 </tr>
 <tr>
 <td><p>--amqp-password</p></td>
-<td><p>Enterprise Edition only. The password for connecting to RabbitMQ. Do not use the default password <code>guest</code>.</p></td>
+<td><p>Magento Commerce only. The password for connecting to RabbitMQ. Do not use the default password <code>guest</code>.</p></td>
 <td><p>No</p></td>
 </tr>
 	</tbody>
@@ -1180,7 +1180,7 @@
     <p>Messages similar to the following display to indicate a successful installation:</p>
 
     <div class="highlighter-rouge"><pre class="highlight"><code>Post installation file permissions check...
-For security, remove write permissions from these directories: '/var/www/html/magento2/app/etc'	
+For security, remove write permissions from these directories: '/var/www/html/magento2/app/etc'
 [Progress: 274 / 274]
 [SUCCESS]: Magento installation complete.
 [SUCCESS]: Admin Panel URI: /admin_puu71q
@@ -1235,7 +1235,7 @@ For security, remove write permissions from these directories: '/var/www/html/ma
     <p>Messages similar to the following display to indicate a successful installation:</p>
 
     <div class="highlighter-rouge"><pre class="highlight"><code>Post installation file permissions check...
-For security, remove write permissions from these directories: '/var/www/html/magento2/app/etc'	
+For security, remove write permissions from these directories: '/var/www/html/magento2/app/etc'
 [Progress: 274 / 274]
 [SUCCESS]: Magento installation complete.
 [SUCCESS]: Admin Panel URI: /admin_puu71q
