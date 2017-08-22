@@ -15,7 +15,7 @@ redirect_from: /guides/v1.0/migration/migration-overview-supported.html
 
 The Data Migration Tool supports migration from the following versions:
 
-* Enterprise Edition (EE):
+* {{site.data.var.ee}}:
 
     * 1.11.x
 
@@ -25,7 +25,7 @@ The Data Migration Tool supports migration from the following versions:
 
     * 1.14.x
 
-* Community Edition (CE):
+* {{site.data.var.ce}}:
 
     * 1.6.x
 
@@ -35,7 +35,7 @@ The Data Migration Tool supports migration from the following versions:
 
     * 1.9.x
 
-If you migrate from CE to EE, the following versions are supported:
+If you migrate from {{site.data.var.ce}} to {{site.data.var.ee}}, the following versions are supported:
 
 * 1.6.x
 

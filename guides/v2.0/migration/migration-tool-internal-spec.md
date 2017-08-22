@@ -32,7 +32,7 @@ The following diagram represents directory structure of Data Migration Tool:
 <pre>
 
 ├── etc                                    --- all configuration files
-│   ├── ce-to-ce                           --- configuration files for migration from Magento CE 1 to Magento 2 CE
+│   ├── ce-to-ce                           --- configuration files for migration from {{site.data.var.ce}} 1 to {{site.data.var.ce}} 2
 │   │   ├── 1.9.1.1
 │   │   │   ├── config.xml.dist
 │   │   │   └── map.xml.dist
@@ -44,8 +44,8 @@ The following diagram represents directory structure of Data Migration Tool:
 │   │   ├── deltalog.xml.dist
 │   │   └── settings.xml.dist
 │   │   ├── ........
-│   ├── ce-to-ee                            --- configuration files for migration from Magento CE 1 to Magento 2 EE
-│   ├── ee-to-ee                            --- configuration files for migration from Magento EE 1 to Magento 2 EE
+│   ├── ce-to-ee                            --- configuration files for migration from {{site.data.var.ce}} 1 to {{site.data.var.ee}} 2
+│   ├── ee-to-ee                            --- configuration files for migration from {{site.data.var.ee}} 1 to {{site.data.var.ee}} 2
 │   ├── class-map.xsd
 │   ├── config.xsd
 │   ├── map.xsd
