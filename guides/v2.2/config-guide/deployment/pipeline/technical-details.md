@@ -36,12 +36,12 @@ As the diagram shows, we get configuration values in the following order:
 ### Manage the shared configuration
 The shared configuration is stored in `app/etc/config.php`, which should be in source control.
 
-Set the shared configuration in the Magento Admin in your development (or Magento Enterprise Cloud Edition _integration_) system and write the configuration to `config.php` using the [`magento app:config:dump` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-export.html).
+Set the shared configuration in the Magento Admin in your development (or {{site.data.var.ece}} _integration_) system and write the configuration to `config.php` using the [`magento app:config:dump` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-export.html).
 
 ### Manage the system-specific configuration
 The system-specific configuration is stored in `app/config/env.php`, which should _not_ be in source control.
 
-Set the system-specific configuration in the Magento Admin in your development (or Cloud integration) system and write the configuration to `env.php` using the [`magento app:config:dump` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-export.html).
+Set the system-specific configuration in the Magento Admin in your development (or {{site.data.var.ece}} integration) system and write the configuration to `env.php` using the [`magento app:config:dump` command]({{ page.baseurl }}config-guide/cli/config-cli-subcommands-config-mgmt-export.html).
 
 This command also writes sensitive settings to `env.php`.
 
@@ -121,7 +121,7 @@ On your production system:
 
 1.  Start maintenance mode.
 2.  Pull code and configuration updates from source control.
-3.  If you use Magento EE, stop queue workers.
+3.  If you use {{site.data.var.ee}}, stop queue workers.
 4.  Use the `magento app:config:import` command to import configuration changes in the production system.
 5.  If you installed components that changed the database schema, run `magento setup:upgrade --keep-generated` to update the database schema and data, preserving generated static files.
 5.  To set system-specific settings, use either the `magento config:set` command or environment variables.
